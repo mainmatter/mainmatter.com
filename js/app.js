@@ -1,6 +1,7 @@
 (function($) {
-  $.fn.slidingContentBox = function() {
+  $.fn.slidingContentBox = function(menuContainer) {
     var sectionsContainer = $(this);
+    var menuContainer = $(menuContainer);
 
     function setupInitialSection() {
       var anchor = window.location.href.split('#')[1];
@@ -14,7 +15,7 @@
     }
 
     function setAvtiveMenuItem(activeItemId) {
-      $('.menu a').each(function() {
+      menuContainer.find('a').each(function() {
         var item = $(this);
         if (item.attr('id') == 'menu-' + activeItemId) {
           item.addClass('active');
@@ -25,7 +26,7 @@
     }
 
     function setupMenuEvents() {
-      $('.menu a').on('click', function(event) {
+      $.merge(menuContainer.find('a'), $('.content-slider-trigger')).on('click', function(event) {
         var section = $($(this).attr('href'));
         setAvtiveMenuItem(section.attr('id'));
         sectionsContainer.animate({
@@ -42,7 +43,7 @@
 })(jQuery);
 
 $(document).ready(function() {
-  $('.sections').slidingContentBox();
+  $('.sections').slidingContentBox('.menu');
   $('#imprintLink').on('click', function() {
     $('#imprint').slideToggle();
     return false;
