@@ -34,6 +34,10 @@ h5 {
   font-size: 1.1em;
 }
 
+section.post ul {
+  list-style: none;
+  margin: 5px 0 0 0;
+}
 
 section.photo {
   text-align: center;
