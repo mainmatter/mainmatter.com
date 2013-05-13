@@ -1,0 +1,278 @@
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+  font-size: 1em;
+  line-height: 150%;
+  background-color: #eee;
+  color: #000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+p {
+  margin: 1em 0;
+}
+
+a {
+  color: #000;
+  background-color: #ddd;
+  text-decoration: none;
+  padding: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+
+a:hover, a:visited {
+  color: #fff;
+  background-color: #0480c1;
+}
+
+a.important {
+  font-size: 125%;
+}
+
+a.veryImportant {
+  font-size: 160%;
+}
+
+a.superImportant {
+  font-size: 250%;
+}
+
+table {
+  font-size: inherit;
+  font: 100%;
+}
+
+strong {
+  background-color: #fffebb;
+  font-weight: normal;
+  padding: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+
+div.blocker {
+	font-size: 1px;
+	clear: both;
+	height: 0;
+}
+
+#head {
+  display: none;
+}
+
+#logLogo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: none;
+}
+
+#content {
+	margin: 7em auto 0 auto;
+	width: 600px;
+	font-size: 100%;
+	background-color: #fff;
+	-moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-box-shadow: 0 2px 2px rgba(100, 100, 100, 0.5);
+  -webkit-box-shadow: 0 2px 2px rgba(100, 100, 100, 0.5);
+}
+
+#contentHead {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}	
+
+#contentHead h2 {
+	height: 10px;
+	overflow: hidden;
+	padding: 0;
+  margin: 0;
+}
+
+#contentHead h2 span {
+  display: block;
+  margin: 30px;
+	
+}
+
+#contentBody {
+  margin: 0;
+  width: 600px;
+}
+  	
+#contentBody div.logo {
+  text-align: center;
+  padding: 20px 0 10px 0;
+  z-index: 2;
+  position: relative;
+}
+
+#contentBody div.logo img {
+  margin: 10px;
+  border: none;
+}
+
+#contentBody div.logo a {
+  background: none;
+}
+
+#footer {
+  margin: 0 auto;
+	width: 50em;
+}
+
+div.section p {
+  text-align: justify;
+}
+
+div.section h2 {
+  display: none;
+}
+
+#mainContent {
+  overflow: hidden;
+  position: relative;
+}
+
+#mainContent div.sections div.section {
+  z-index: 1;
+  position: relative;
+  width: 560px;
+  padding: 20px;
+}
+
+#mainContent div.sections div.section p {
+  margin: 0 0 15px 0;
+}
+
+#mainContent div.sections div.section h3 {
+  margin: 20px 0 5px 0;
+  text-shadow: 0 1px -1px #999;
+}
+
+#mainContent div.sections div.section a.get, a.bugs, a.video, a.slides, a.demo {
+  font-size: 65%;
+  text-shadow: none;
+}
+
+ul.clients {
+  text-align: center;
+  list-style: none;
+}
+
+ul.clients li {
+  display: inline-block;
+	margin: .2em;
+}
+
+ul.menu {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  background-color: #ddd;
+  margin: 10px 0 0 0;
+  padding: 15px;
+  z-index: 2;
+  position: relative;
+}
+
+ul.menu li {
+  display: inline;
+  margin: 0 5px 0 5px;
+}
+
+ul.menu li a {
+  display: inline-block;
+  background: #bbb url(/images/overlay.png) top left repeat-x;
+  text-decoration: none;
+  padding: 5px 8px;
+  margin: -5px 0 -5px 0;
+  font-weight: bold;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-box-shadow: 0 2px 2px rgba(100, 100, 100, 0.5);
+  -webkit-box-shadow: 0 2px 2px rgba(100, 100, 100, 0.5);
+  text-shadow: 0 1px -1px #999;
+}
+
+ul.menu li a:hover, ul.menu li a.active, ul.menu li a:active {
+  color: #fff;
+  background-color: #0480c1;
+  text-shadow: 0 1px -1px #222;
+}
+
+#footer {
+  padding: 20px;
+ 	text-align: center;
+ 	width: 500px;
+}
+
+#imprintLink, #imprintLink:hover {
+ 	font-size: .7em;
+ 	text-decoration: none;
+ 	background: transparent;
+ 	color: #000;
+ 	text-shadow: 0 2px -2px #fff;
+}
+
+#imprint {
+  text-align: justify;
+  margin: 20px 0 0 0;
+  background-color: #fff;
+  padding: 20px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-box-shadow: 0 2px 2px rgba(100, 100, 100, 0.5);
+  -webkit-box-shadow: 0 2px 2px rgba(100, 100, 100, 0.5);
+}
+
+#imprint h3, #imprint h4 {
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+#imprint h3 {
+  font-size: .9em;
+}
+
+#imprint h4 {
+  font-size: .8em;
+}
+
+#imprint p {
+  font-size: .8em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+#imprint address {
+  font-size: .8em;
+  margin: -10px 0 10px 0;
+  padding: 0;
+}
