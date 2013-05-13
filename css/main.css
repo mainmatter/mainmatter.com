@@ -223,6 +223,14 @@ ul.menu li a:hover, ul.menu li a.active, ul.menu li a:active {
   text-shadow: 0 1px -1px #222;
 }
 
+ul.contact-options {
+  list-style: none;
+}
+
+ul.contact-options li {
+  margin: .2em;
+}
+
 #footer {
   padding: 20px;
  	text-align: center;
