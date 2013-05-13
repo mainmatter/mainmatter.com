@@ -87,43 +87,43 @@ div.blocker {
   -webkit-box-shadow: 0 2px 2px rgba(100, 100, 100, 0.5);
 }
 
-#contentHead {
+#content-head {
 	margin: 0;
 	padding: 0;
 	text-align: center;
 }	
 
-#contentHead h2 {
+#content-head h2 {
 	height: 10px;
 	overflow: hidden;
 	padding: 0;
   margin: 0;
 }
 
-#contentHead h2 span {
+#content-head h2 span {
   display: block;
   margin: 30px;
 	
 }
 
-#contentBody {
+#content-body {
   margin: 0;
   width: 600px;
 }
   	
-#contentBody div.logo {
+#content-body div.logo {
   text-align: center;
   padding: 20px 0 10px 0;
   z-index: 2;
   position: relative;
 }
 
-#contentBody div.logo img {
+#content-body div.logo img {
   margin: 10px;
   border: none;
 }
 
-#contentBody div.logo a {
+#content-body div.logo a {
   background: none;
 }
 
@@ -136,16 +136,16 @@ section p {
   text-align: justify;
 }
 
-#mainContent {
+#main-content {
   overflow: hidden;
 }
 
-#mainContent .sections {
+#main-content .sections {
   overflow: hidden;
   position: relative;
 }
 
-#mainContent .sections section {
+#main-content .sections section {
   z-index: 1;
   position: relative;
   padding: 20px;
@@ -155,7 +155,7 @@ section p {
   margin: 0 0 15px 0;
 }
 
-#mainContent .sections section h3 {
+#main-content .sections section h3 {
   margin: 20px 0 5px 0;
   text-shadow: 0 1px -1px #999;
 }
@@ -220,7 +220,7 @@ ul.contact-options li {
  	width: 500px;
 }
 
-#imprintLink, #imprintLink:hover {
+#imprint-link, #imprint-ink:hover {
  	font-size: .7em;
  	text-decoration: none;
  	background: transparent;

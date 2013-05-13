@@ -44,7 +44,7 @@
 
 $(document).ready(function() {
   $('.sections').slidingContentBox('.menu');
-  $('#imprintLink').on('click', function() {
+  $('#imprint-link').on('click', function() {
     $('#imprint').slideToggle();
     return false;
   });
