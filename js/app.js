@@ -43,4 +43,8 @@
 
 $(document).ready(function() {
   $('.sections').slidingContentBox();
+  $('#imprintLink').on('click', function() {
+    $('#imprint').slideToggle();
+    return false;
+  });
 });
