@@ -1,4 +1,4 @@
-simplabs.github.com
-===================
+simplabs.github.io
+==================
 
-the simplabs.com website
+the http://simplabs.com website
