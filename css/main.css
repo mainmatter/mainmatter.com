@@ -39,6 +39,7 @@ a {
 a:hover, a:visited {
   color: #fff;
   background-color: #0480c1;
+  -webkit-transition: all .25s;
 }
 
 a.important {
@@ -152,7 +153,6 @@ div.section h2 {
 }
 
 #mainContent div.sections {
-  background: inherit none repeat scroll 0 0;
   overflow: hidden;
   position: relative;
 }
