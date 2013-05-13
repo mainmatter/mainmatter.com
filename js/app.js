@@ -6,8 +6,8 @@
     function setupInitialSection() {
       var anchor = window.location.href.split('#')[1];
       var initialSection = $('#' + anchor);
-      if (!initialSection.is('.section')) {
-        initialSection = $('.sections .section:first-child');
+      if (!initialSection.is('section')) {
+        initialSection = $('.sections section:first-child');
       }
       sectionsContainer.css('height', initialSection.outerHeight());
       sectionsContainer.scrollTop(initialSection.position().top);

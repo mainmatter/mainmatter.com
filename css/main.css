@@ -140,11 +140,11 @@ div.blocker {
 	width: 50em;
 }
 
-div.section p {
+section p {
   text-align: justify;
 }
 
-div.section h2 {
+section h2 {
   display: none;
 }
 
@@ -152,29 +152,24 @@ div.section h2 {
   overflow: hidden;
 }
 
-#mainContent div.sections {
+#mainContent .sections {
   overflow: hidden;
   position: relative;
 }
 
-#mainContent div.sections div.section {
+#mainContent .sections section {
   z-index: 1;
   position: relative;
   padding: 20px;
 }
 
-#mainContent div.sections div.section p {
+#mainContent .sections section p {
   margin: 0 0 15px 0;
 }
 
-#mainContent div.sections div.section h3 {
+#mainContent .sections section h3 {
   margin: 20px 0 5px 0;
   text-shadow: 0 1px -1px #999;
-}
-
-#mainContent div.sections div.section a.get, a.bugs, a.video, a.slides, a.demo {
-  font-size: 65%;
-  text-shadow: none;
 }
 
 ul.clients {
