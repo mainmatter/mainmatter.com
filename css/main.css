@@ -73,10 +73,6 @@ div.blocker {
 	height: 0;
 }
 
-#head {
-  display: none;
-}
-
 #logLogo {
   position: fixed;
   top: 0;
@@ -142,10 +138,6 @@ div.blocker {
 
 section p {
   text-align: justify;
-}
-
-section h2 {
-  display: none;
 }
 
 #mainContent {
