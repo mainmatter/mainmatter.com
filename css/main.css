@@ -156,13 +156,17 @@ div.section h2 {
 
 #mainContent {
   overflow: hidden;
+}
+
+#mainContent div.sections {
+  background: inherit none repeat scroll 0 0;
+  overflow: hidden;
   position: relative;
 }
 
 #mainContent div.sections div.section {
   z-index: 1;
   position: relative;
-  width: 560px;
   padding: 20px;
 }
 
