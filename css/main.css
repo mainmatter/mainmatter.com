@@ -69,6 +69,10 @@ div.blocker {
 	height: 0;
 }
 
+#main {
+  padding: 0 0 20px 0;
+}
+
 #logLogo {
   position: fixed;
   top: 0;
