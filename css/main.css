@@ -218,6 +218,32 @@ ul.contact-options li {
   margin: .2em;
 }
 
+ul.contact-options li a:before {
+  font-family: FontAwesome;
+  padding: 0 5px 0 0;
+}
+
+ul.contact-options li a.email-link:before {
+  content: "\f0e0";
+}
+
+ul.contact-options li a.github-link:before {
+  content: "\f09b";
+}
+
+ul.contact-options li a.twitter-link:before {
+  content: "\f099";
+}
+
+ul.contact-options li a.linked-in-link:before {
+  content: "\f08c";
+}
+
+ul.contact-options li a.xing-link:before {
+  content: "\f007";
+}
+
+
 #footer {
   padding: 20px 0 0 0;
  	text-align: center;
