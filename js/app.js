@@ -12,7 +12,7 @@
       sectionsContainer.css('height', initialSection.outerHeight());
       sectionsContainer.scrollTop(initialSection.position().top);
       setAvtiveMenuItem(initialSection.attr('id'));
-      $(document).scrollTop(0);
+      window.location.hash = '';
     }
 
     function setAvtiveMenuItem(activeItemId) {
