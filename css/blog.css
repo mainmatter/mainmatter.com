@@ -106,3 +106,7 @@ section.link span.description {
 .gist .gist-meta {
   font-size: .8em;
 }
+
+#footer {
+  padding: 0 0 20px 0 !important;
+}
