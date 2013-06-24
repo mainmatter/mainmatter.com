@@ -9,6 +9,10 @@ section h4 a {
   text-decoration: none !important;
 }
 
+.sections h3 a i {
+  margin: 0 0 0 3px;
+}
+
 h3 {
   border-bottom: 10px solid #eee;
   margin: 0 0 30px 0;
