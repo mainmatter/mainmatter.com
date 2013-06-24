@@ -125,6 +125,8 @@ div.blocker {
 #content-body div.logo img {
   margin: 10px;
   border: none;
+  width: 232px;
+  height: 50px;
 }
 
 #content-body div.logo a {
