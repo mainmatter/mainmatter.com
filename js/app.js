@@ -4,7 +4,7 @@
     var menuContainer = $(menuContainer);
 
     function setupInitialSection() {
-      var anchor = window.location.href.split('#')[1];
+      var anchor = window.location.hash.replace('#', '');
       var initialSection = $('#' + anchor);
       if (!initialSection.is('section')) {
         initialSection = $('.sections section:first-child');
