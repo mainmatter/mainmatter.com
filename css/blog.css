@@ -1,12 +1,12 @@
-.section h4 a:active, .section h4 a:hover, .section h4 a.active {
+.section h4 a {
   color: #000 !important;
   background-color: transparent !important;
 }
 
-h3 a, h3 a:active, h3 a:hover, h4 a, h4 a:active, h4 a:hover {
+.sections h3 a {
   color: #000 !important;
-  background-color: #fff;
-  text-decoration: none;
+  background-color: #ddd !important;
+  text-decoration: none !important;
 }
 
 h3 {
