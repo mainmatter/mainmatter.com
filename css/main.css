@@ -50,6 +50,10 @@ a.very-important {
   font-size: 160%;
 }
 
+a.super-important {
+  font-size: 200%;
+}
+
 table {
   font-size: inherit;
   font: 100%;
@@ -95,7 +99,7 @@ div.blocker {
 	margin: 0;
 	padding: 0;
 	text-align: center;
-}	
+}
 
 #content-head h2 {
 	height: 10px;
@@ -107,14 +111,14 @@ div.blocker {
 #content-head h2 span {
   display: block;
   margin: 30px;
-	
+
 }
 
 #content-body {
   margin: 0;
   width: 600px;
 }
-  	
+
 #content-body div.logo {
   text-align: center;
   padding: 20px 0 10px 0;
