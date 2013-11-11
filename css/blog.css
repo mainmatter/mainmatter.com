@@ -100,12 +100,12 @@ section.link span.description {
   font-size: .9em;
 }
 
-.gist {
+div.code {
+  background-color: #f8f8ff;
+  overflow-x: scroll;
   line-height: 120%;
-}
-
-.gist .gist-meta {
-  font-size: .8em;
+  border: 1px solid #ddd;
+  border-radius: 3px;
 }
 
 #footer {
