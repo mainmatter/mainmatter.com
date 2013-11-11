@@ -104,8 +104,10 @@ div.code {
   background-color: #f8f8ff;
   overflow-x: scroll;
   line-height: 120%;
+  font-size: 120%;
   border: 1px solid #ddd;
   border-radius: 3px;
+  margin: 1em 0;
 }
 
 #footer {
