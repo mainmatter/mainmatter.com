@@ -198,7 +198,7 @@ ul.menu li {
 
 ul.menu li a {
   display: inline-block;
-  background: #bbb url(/images/overlay.png) top left repeat-x;
+  background-color: #bbb;
   text-decoration: none;
   padding: 5px 8px;
   margin: -5px 0 -5px 0;
