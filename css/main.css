@@ -125,6 +125,10 @@ div.blocker {
   padding: 35px 0 20px 0;
 }
 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  background-image: url(/images/header-logo@2x.png);
+}
+
 #footer {
   margin: 0 auto;
 	width: 50em;
