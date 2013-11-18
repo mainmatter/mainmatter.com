@@ -77,13 +77,6 @@ div.blocker {
   padding: 0 0 20px 0;
 }
 
-#logLogo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  border: none;
-}
-
 #content {
 	margin: 7em auto 0 auto;
 	width: 600px;
