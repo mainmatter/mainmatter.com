@@ -126,7 +126,9 @@ div.blocker {
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  background-image: url(/images/header-logo@2x.png);
+  #content-body div.logo a {
+    background-image: url(/images/header-logo@2x.png);
+  }
 }
 
 #footer {
