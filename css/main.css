@@ -119,6 +119,7 @@ div.blocker {
 #content-body div.logo a {
   display: block;
   background: transparent url(/images/header-logo.png) no-repeat center center;
+  background-size: 232px 50px;
   border: none;
   width: 100%;
   height: 50px;
