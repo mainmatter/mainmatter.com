@@ -141,6 +141,10 @@ section p {
   text-align: justify;
 }
 
+section ul {
+  margin-left: 20px;
+}
+
 #main-content {
   overflow: hidden;
 }
