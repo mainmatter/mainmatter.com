@@ -138,7 +138,8 @@ section p {
 }
 
 section ul {
-  margin-left: 20px;
+  margin: 1em 0;
+  list-style-position: inside;
 }
 
 #main-content {
