@@ -36,9 +36,10 @@ h3 a {
 }
 
 h4 {
-  margin: 0 0 10px 0;
+  margin: 0;
   padding: 0 0 5px 0;
   font-size: 1.1em;
+  border-bottom: 2px solid #eee;
 }
 
 section.post ul {
