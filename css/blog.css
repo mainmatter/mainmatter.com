@@ -2,22 +2,22 @@
   margin-bottom: 40px !important;
 }
 
-section h4 a {
+section h3 a {
   color: #000 !important;
   background-color: transparent !important;
 }
 
-.sections h3 a {
+.sections h2 a {
   color: #000 !important;
   background-color: #ddd !important;
   text-decoration: none !important;
 }
 
-.sections h3 a i {
+.sections h2 a i {
   margin: 0 0 0 3px;
 }
 
-h3 {
+h2 {
   border-bottom: 10px solid #eee;
   margin: 0 0 30px 0;
   padding: 0 0 5px 0;
@@ -25,7 +25,7 @@ h3 {
   text-align: right;
 }
 
-h4 {
+h3 {
   border-bottom: 5px solid #eee;
   margin: 0 0 20px 0;
   padding: 0 0 5px 0;
@@ -33,11 +33,11 @@ h4 {
   line-height: 110%;
 }
 
-h4 a {
+h3 a {
   display: block;
 }
 
-h5 {
+h4 {
   margin: 0 0 10px 0;
   padding: 0 0 5px 0;
   font-size: 1.1em;
