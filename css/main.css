@@ -15,10 +15,6 @@ body {
   color: #000;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
-}
-
 h1 {
   margin-bottom: 1em;
 }
@@ -94,14 +90,14 @@ div.blocker {
 	text-align: center;
 }
 
-#content-head h2 {
+#content-head h1 {
 	height: 10px;
 	overflow: hidden;
 	padding: 0;
   margin: 0;
 }
 
-#content-head h2 span {
+#content-head h1 span {
   display: block;
   margin: 30px;
 }
@@ -163,8 +159,13 @@ section ul {
   margin: 0 0 15px 0;
 }
 
-#main-content .sections section h3 {
-  margin: 20px 0 5px 0;
+#main-content .sections section h2 {
+  margin: 0 0 5px 0;
+  text-shadow: 0 1px -1px #999;
+}
+
+#main-content .sections section h2:not(:first-child) {
+  margin-top: 40px;
   text-shadow: 0 1px -1px #999;
 }
 
