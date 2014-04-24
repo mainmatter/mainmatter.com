@@ -162,12 +162,11 @@ section ul {
 
 #main-content .sections section h2 {
   margin: 0 0 5px 0;
-  text-shadow: 0 1px -1px #999;
+  border-bottom: 5px solid #eee;
 }
 
 #main-content .sections section h2:not(:first-child) {
   margin-top: 40px;
-  text-shadow: 0 1px -1px #999;
 }
 
 ul.clients {
@@ -206,13 +205,11 @@ ul.menu li a {
   -webkit-border-radius: 3px;
   -moz-box-shadow: 0 2px 2px rgba(100, 100, 100, 0.5);
   -webkit-box-shadow: 0 2px 2px rgba(100, 100, 100, 0.5);
-  text-shadow: 0 1px -1px #999;
 }
 
 ul.menu li a:hover, ul.menu li a.active, ul.menu li a:active {
   color: #fff;
   background-color: #0480c1;
-  text-shadow: 0 1px -1px #222;
 }
 
 ul.contact-options {
@@ -260,7 +257,6 @@ ul.contact-options li a.xing-link:before {
  	text-decoration: none;
  	background: transparent;
  	color: #000;
- 	text-shadow: 0 2px -2px #fff;
 }
 
 #imprint {
