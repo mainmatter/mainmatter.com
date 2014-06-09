@@ -14,7 +14,7 @@ h3 {
   margin-top: 10px;
 }
 
-#paging {
+#paging .row {
   border-top: 1px solid #ccc;
   padding: 50px 0 0 0;
 }
