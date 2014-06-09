@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>simplabs{{page.title}}</title>
-    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Software Engineering with Ruby on Rails, iOS, JavaScript and HTML5."/>
   	<meta name="keywords" content="ruby, rails, javascript, software engineering, consulting, software architecture, software design, freelancer, consultant, freiberufler, nosql" />
 		<meta name="language" content="en"/>
 		<meta name="content-language" content="en"/>
 		<meta name="publisher" content="Marco Otte-Witte" />
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+    <title>simplabs{{page.title}}</title>
     <link rel="shortcut icon" type="image/x-icon" href="/images/simplabs.ico" />
     <link rel="apple-touch-icon" href="/images/apple-57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-114.png">
     <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-144.png">
-	</head>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu:300,400">
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
 	<body>
-    <div id="content">
-      <div id="content-head">
-        <h1>simplabs - simple web Engineering</h1>
-        <div class="logo">
+    <div class="container">
+      <div id="header" class="row">
+        <div class="col-md-12">
           <a href="/" title="simplabs.com - home"></a>
         </div>
-        <div class="menu">
-          <ul>
-            {% if page.url == "/index.html" %}
-              <li><a href="/" class="active">About</a></li>
-            {% else %}
-              <li><a href="/">About</a></li>
-            {% endif %}
-            {% if page.url == "/open-source/index.html" %}
-              <li><a href="/open-source" class="active">Open Source</a></li>
-            {% else %}
-              <li><a href="/open-source">Open Source</a></li>
-            {% endif %}
+      </div>
+      <div id="menu" class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <ul class="nav nav-tabs nav-justified">
             {% if page.url == "/clients/index.html" %}
               <li><a href="/clients" class="active">Clients</a></li>
             {% else %}
@@ -49,34 +49,21 @@
             {% endif %}
             <li><a href="http://log.simplabs.com">Blog</a></li>
           </ul>
-          <div class="blocker">&nbsp;</div>
         </div>
       </div>
-      <div id="content-body">
-        <div id="main-content">
-          <div class="sections">
-            {{ content }}
-          </div>
+      <div id="main-content" class="row">
+        <div class="col-md-6 col-md-offset-3">
+          {{ content }}
         </div>
-        <div class="blocker">&nbsp;</div>
+      </div>
+      <div id="footer" class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <ul class="nav nav-tabs nav-justified">
+            <li><a href="/imprint">Imprint</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div id="footer">
-      <a href="#imprint" title="Imprint" id="imprint-link">Imprint</a>
-      <div id="imprint" style="display: none;">
-        <h3>Publisher information according to §6 Teledienstgesetz (TDG)</h3>
-        <p>
-          <strong>Responsible according to §6 MDStV: Marco Otte-Witte</strong>
-        </p>
-        <address class="adr">Marco Otte-Witte, <span class="street-address">Fraunhoferstr. 9</span>, <span class="postal-code">80469</span> <span class="locality">München</span>, <span class="country-name">Germany</span></address>
-        <h4>Exclusion of Liability</h4>
-        <p>
-          I check and update the information on this website constantly. Despite all accurateness, the data can change in the meantime. <strong>Liability concerning timeliness, correctness and completeness of the available information can not be assumed</strong>. This applies also for all other websites which are referred via hyperlink. I am not responsible for the content of these websites.
-        </p>
-      </div>
-    </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="/js/app.js"></script>
     <script type="text/javascript">
       var _gauges = _gauges || [];
       (function() {
