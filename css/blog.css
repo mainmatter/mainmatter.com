@@ -7,15 +7,14 @@ h2 a:hover {
   color: #0480c1;
 }
 
-h3 a {
-  display: block;
+h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
 }
 
-h4 {
-  margin: 0;
-  padding: 0 0 5px 0;
-  font-size: 1.1em;
-  border-bottom: 2px solid #eee;
+section {
+  margin: 0 0 50px 0;
 }
 
 section.post ul {
