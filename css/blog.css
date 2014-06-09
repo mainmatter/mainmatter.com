@@ -14,16 +14,18 @@ h3 {
   margin-top: 10px;
 }
 
-#paging .previous, #paging .next {
+#paging .previous a, #paging .next a {
   border-top: 1px solid #ccc;
   padding: 50px 0 0 0;
+  display: block;
+  width: 100%;
 }
 
-#paging .previous {
+#paging .previous a {
   text-align: left;
 }
 
-#paging .next {
+#paging .next a {
   text-align: right;
 }
 
