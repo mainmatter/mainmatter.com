@@ -27,11 +27,11 @@ h4.date {
 }
 
 h4.date a {
-  background-color: #fff !important;
+  background-color: transparent !important;
 }
 
 h4.date a:hover {
-  background-color: #fff;
+  background-color: transparent;
   color: #0480c1;
 }
 
