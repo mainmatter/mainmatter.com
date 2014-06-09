@@ -1,3 +1,12 @@
+h2 a {
+  background-color: #fff;
+}
+
+h2 a:hover {
+  background-color: #fff;
+  color: #0480c1;
+}
+
 h3 a {
   display: block;
 }
