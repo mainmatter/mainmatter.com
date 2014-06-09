@@ -26,6 +26,7 @@ h3 {
 
 #paging a:hover {
   background-color: #fff;
+  color: #0480c1;
 }
 
 #paging a.previous {
