@@ -1,5 +1,5 @@
 h2 a {
-  background-color: #fff;
+  background-color: #fff !important;
 }
 
 h2 a:hover {
