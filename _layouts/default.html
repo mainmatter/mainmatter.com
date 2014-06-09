@@ -19,17 +19,14 @@
     <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-144.png">
 	</head>
 	<body>
-    <div id="main">
-      <div id="content">
-        <div id="content-head">
-          <h1><span>simple web Engineering</span></h1>
+    <div id="content">
+      <div id="content-head">
+        <h1>simplabs - simple web Engineering</h1>
+        <div class="logo">
+          <a href="/" title="simplabs.com - home"></a>
         </div>
-        <div id="content-body">
-          <div class="logo">
-            <a href="/" title="simplabs.com - home"></a>
-            <div class="blocker">&nbsp;</div>
-          </div>
-          <ul class="menu">
+        <div class="menu">
+          <ul>
             {% if page.url == "/index.html" %}
               <li><a href="/" class="active">About</a></li>
             {% else %}
@@ -52,27 +49,30 @@
             {% endif %}
             <li><a href="http://log.simplabs.com">Blog</a></li>
           </ul>
-          <div id="main-content">
-            <div class="sections">
-              {{ content }}
-            </div>
-          </div>
           <div class="blocker">&nbsp;</div>
         </div>
       </div>
-      <div id="footer">
-        <a href="#imprint" title="Imprint" id="imprint-link">Imprint</a>
-        <div id="imprint" style="display: none;">
-          <h3>Publisher information according to §6 Teledienstgesetz (TDG)</h3>
-          <p>
-            <strong>Responsible according to §6 MDStV: Marco Otte-Witte</strong>
-          </p>
-          <address class="adr">Marco Otte-Witte, <span class="street-address">Fraunhoferstr. 9</span>, <span class="postal-code">80469</span> <span class="locality">München</span>, <span class="country-name">Germany</span></address>
-          <h4>Exclusion of Liability</h4>
-          <p>
-            I check and update the information on this website constantly. Despite all accurateness, the data can change in the meantime. <strong>Liability concerning timeliness, correctness and completeness of the available information can not be assumed</strong>. This applies also for all other websites which are referred via hyperlink. I am not responsible for the content of these websites.
-          </p>
+      <div id="content-body">
+        <div id="main-content">
+          <div class="sections">
+            {{ content }}
+          </div>
         </div>
+        <div class="blocker">&nbsp;</div>
+      </div>
+    </div>
+    <div id="footer">
+      <a href="#imprint" title="Imprint" id="imprint-link">Imprint</a>
+      <div id="imprint" style="display: none;">
+        <h3>Publisher information according to §6 Teledienstgesetz (TDG)</h3>
+        <p>
+          <strong>Responsible according to §6 MDStV: Marco Otte-Witte</strong>
+        </p>
+        <address class="adr">Marco Otte-Witte, <span class="street-address">Fraunhoferstr. 9</span>, <span class="postal-code">80469</span> <span class="locality">München</span>, <span class="country-name">Germany</span></address>
+        <h4>Exclusion of Liability</h4>
+        <p>
+          I check and update the information on this website constantly. Despite all accurateness, the data can change in the meantime. <strong>Liability concerning timeliness, correctness and completeness of the available information can not be assumed</strong>. This applies also for all other websites which are referred via hyperlink. I am not responsible for the content of these websites.
+        </p>
       </div>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
