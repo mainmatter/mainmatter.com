@@ -14,16 +14,16 @@ h3 {
   margin-top: 10px;
 }
 
-#paging div {
+#paging div.previous, #paging div.next {
   border-top: 1px solid #ccc;
   padding: 50px 0 0 0;
 }
 
-#paging .previous a {
+#paging div.previous {
   text-align: left;
 }
 
-#paging .next a {
+#paging div.next {
   text-align: right;
 }
 
