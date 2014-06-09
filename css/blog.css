@@ -26,6 +26,15 @@ h4.date {
   border-bottom: 1px solid #ccc;
 }
 
+h4.date a {
+  background-color: #fff !important;
+}
+
+h4.date a:hover {
+  background-color: #fff;
+  color: #0480c1;
+}
+
 #paging div.links {
   border-top: 1px solid #ccc;
 }
