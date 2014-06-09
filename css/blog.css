@@ -16,11 +16,16 @@ h3 {
 
 #paging div.links {
   border-top: 1px solid #ccc;
-  padding: 20px 0 0 0;
 }
 
 #paging a {
   display: block;
+  padding: 20px 0;
+  background-color: #fff;
+}
+
+#paging a:hover {
+  background-color: #fff;
 }
 
 #paging a.previous {
