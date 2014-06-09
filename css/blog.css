@@ -14,6 +14,19 @@ h3 {
   margin-top: 10px;
 }
 
+#paging {
+  border-top: 1px solid #ccc;
+  padding: 50px 0 0 0;
+}
+
+#paging .previous {
+  text-align: left;
+}
+
+#paging .next {
+  text-align: right;
+}
+
 section {
   margin: 0 0 50px 0;
 }
@@ -27,8 +40,8 @@ section.photo {
   text-align: center;
 }
 
-section.photo img {
-  border: solid 15px #eee;
+section.photo a {
+  padding: 0;
 }
 
 section.caption p {
