@@ -14,11 +14,9 @@ h3 {
   margin-top: 10px;
 }
 
-#paging .previous a, #paging .next a {
+#paging div {
   border-top: 1px solid #ccc;
   padding: 50px 0 0 0;
-  display: block;
-  width: 100%;
 }
 
 #paging .previous a {
