@@ -36,6 +36,11 @@
       <div id="menu" class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12">
           <ul class="nav nav-tabs nav-justified">
+            {% if page.url == "/index.html" %}
+              <li><a href="/" class="active">Who we are</a></li>
+            {% else %}
+              <li><a href="/">Who we are</a></li>
+            {% endif %}
             {% if page.url == "/clients/index.html" %}
               <li><a href="/clients" class="active">Clients</a></li>
             {% else %}
