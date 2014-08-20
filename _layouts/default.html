@@ -30,31 +30,13 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2 col-xs-12">
             <ul class="nav navbar-nav">
-              {% if page.url == "/index.html" %}
-                <li><a href="/" class="logo active">&nbsp;</a></li>
-              {% else %}
-                <li><a href="/" class="logo">&nbsp;</a></li>
-              {% endif %}
-              {% if page.url == "/who-we-are/index.html" %}
-                <li><a href="/who-we-are" class="active">Who we are</a></li>
-              {% else %}
-                <li><a href="/who-we-are">Who we are</a></li>
-              {% endif %}
-              {% if page.url == "/what-we-do/index.html" %}
-                <li><a href="/what-we-do" class="active">What we do</a></li>
-              {% else %}
-                <li><a href="/what-we-do">What we do</a></li>
-              {% endif %}
-              {% if page.url == "/what-we-use/index.html" %}
-                <li><a href="/what-we-use" class="active">What we use</a></li>
-              {% else %}
-                <li><a href="/what-we-use">What we use</a></li>
-              {% endif %}
-              {% if page.url == "/clients/index.html" %}
-                <li><a href="/clients" class="active">Clients</a></li>
-              {% else %}
-                <li><a href="/clients">Clients</a></li>
-              {% endif %}
+              {% for link in site.navigation %}
+                {% assign active = nil %}
+                {% if page.url == link.file %}
+                  {% assign active = 'active' %}
+                {% endif %}
+                <li><a href="{{link.url}}" class="{{link.class}} {{active}}">{{link.title}}</a></li>
+              {% endfor %}
             </ul>
           </div>
         </div>
