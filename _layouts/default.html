@@ -25,47 +25,55 @@
     <![endif]-->
   </head>
 	<body>
+    <nav id="main-menu" class="navbar" role="navigation">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 col-xs-12">
+            <ul class="nav navbar-nav">
+              <li><a href="/" class="logo">&nbsp;</a></li>
+              {% if page.url == "/who-we-are/index.html" %}
+                <li><a href="/who-we-are" class="active">Who we are</a></li>
+              {% else %}
+                <li><a href="/who-we-are">Who we are</a></li>
+              {% endif %}
+              {% if page.url == "/what-we-do/index.html" %}
+                <li><a href="/what-we-do" class="active">What we do</a></li>
+              {% else %}
+                <li><a href="/what-we-do">What we do</a></li>
+              {% endif %}
+              {% if page.url == "/what-we-use/index.html" %}
+                <li><a href="/what-we-use" class="active">What we use</a></li>
+              {% else %}
+                <li><a href="/what-we-use">What we use</a></li>
+              {% endif %}
+              {% if page.url == "/clients/index.html" %}
+                <li><a href="/clients" class="active">Clients</a></li>
+              {% else %}
+                <li><a href="/clients">Clients</a></li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div class="container">
-      <div id="header" class="row">
-        <div class="col-md-12 col-xs-12">
-          <a href="/" title="simplabs.com - home"></a>
-        </div>
-      </div>
-      <div id="menu" class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12">
-          <ul class="nav nav-tabs nav-justified">
-            {% if page.url == "/index.html" %}
-              <li><a href="/" class="active">Who we are</a></li>
-            {% else %}
-              <li><a href="/">Who we are</a></li>
-            {% endif %}
-            {% if page.url == "/clients/index.html" %}
-              <li><a href="/clients" class="active">Clients</a></li>
-            {% else %}
-              <li><a href="/clients">Clients</a></li>
-            {% endif %}
-            {% if page.url == "/contact/index.html" %}
-              <li><a href="/contact" class="active">Contact</a></li>
-            {% else %}
-              <li><a href="/contact">Contact</a></li>
-            {% endif %}
-            <li><a href="http://log.simplabs.com">Blog</a></li>
-          </ul>
-        </div>
-      </div>
       <div id="main-content" class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12">
-          {{ content }}
-        </div>
-      </div>
-      <div id="footer" class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12">
-          <ul class="nav nav-tabs nav-justified">
-            <li><a href="/imprint">Imprint</a></li>
-          </ul>
+          <img src="/images/header-logo.png">
         </div>
       </div>
     </div>
+    <nav id="footer" class="navbar" role="navigation">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 col-xs-12">
+            <ul class="nav navbar-nav nav-justified">
+              <li><a href="/imprint" class="logo">Imprint</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
     <script type="text/javascript">
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
