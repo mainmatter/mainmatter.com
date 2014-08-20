@@ -8,8 +8,8 @@ body {
 }
 
 a, a:visited {
-  color: #333;
-  background-color: #ddd;
+  color: #0480c1;
+  background-color: #eee;
   text-decoration: none;
   padding: 2px;
   border-radius: 2px;
@@ -29,11 +29,27 @@ p {
 }
 
 strong {
-  background-color: #fffebb;
+  background-color: #fbfeda;
   font-weight: normal;
   padding: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
+}
+
+h1, h2 {
+  font-family: 'Ubuntu', sans-serif;
+  color: #676767;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: lighter;
+}
+
+h2 {
+  font-weight: lighter;
+  font-size: 20px;
+  margin-top: 30px;
 }
 
 #main-menu {
@@ -47,6 +63,7 @@ strong {
       width: 20%;
 
       a {
+        color: #333;
         white-space: nowrap;
         background-color: #fff;
         text-align: center;
@@ -98,6 +115,19 @@ strong {
 
 #main-content {
   padding: 50px 0;
+}
+
+#index {
+  text-align: center;
+
+  #main-logo {
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    margin-top: 50px;
+    line-height: 30px;
+  }
 }
 
 h2 {
