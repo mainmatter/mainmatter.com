@@ -30,7 +30,11 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2 col-xs-12">
             <ul class="nav navbar-nav">
-              <li><a href="/" class="logo">&nbsp;</a></li>
+              {% if page.url == "/index.html" %}
+                <li><a href="/" class="logo active">&nbsp;</a></li>
+              {% else %}
+                <li><a href="/" class="logo">&nbsp;</a></li>
+              {% endif %}
               {% if page.url == "/who-we-are/index.html" %}
                 <li><a href="/who-we-are" class="active">Who we are</a></li>
               {% else %}
