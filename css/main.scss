@@ -15,15 +15,12 @@ a, a:visited {
   border-bottom: 2px solid #eee;
   text-decoration: none;
   padding: 2px;
-  border-radius: 2px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
+  transition: all .25s;
 }
 
 a:hover {
   color: #676767;
   border-bottom: 2px solid #0480c1;
-  -webkit-transition: all .25s;
   text-decoration: none;
 }
 
@@ -33,15 +30,12 @@ p {
 
 strong {
   background-color: #fbfeda;
-  font-weight: normal;
+  font-weight: inherit;
   padding: 2px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
 }
 
 h1, h2 {
   font-family: 'Ubuntu', sans-serif;
-  color: #676767;
 }
 
 h1 {
@@ -53,6 +47,18 @@ h2 {
   font-weight: lighter;
   font-size: 20px;
   margin-top: 30px;
+}
+
+#main-content {
+  padding: 50px 0;
+
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 #main-menu {
@@ -122,10 +128,6 @@ h2 {
       color: #0480c1;
     }
   }
-}
-
-#main-content {
-  padding: 50px 0;
 }
 
 #index {
@@ -253,102 +255,78 @@ h2 {
   }
 }
 
-h2 {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: lighter;
-  font-size: 20px;
-  margin-top: 30px;
-}
+#contact {
+  ul {
+    margin-bottom: 10px;
+    list-style-type: none;
+    padding: 0;
+  }
 
-#main-content h2:first-child {
-  margin-top: 0;
-}
+  .email-link:before {
+    font-family: 'FontAwesome';
+    content: "\f0e0\00a0";
+  }
 
-#main-content p:last-child {
-  margin-bottom: 0;
-}
-
-#contact ul {
-  margin-bottom: 10px;
-  list-style-type: none;
-  padding: 0;
-}
-
-#contact .email-link:before {
-  font-family: 'FontAwesome';
-  content: "\f0e0\00a0";
-}
-
-#contact .github-link:before {
-  font-family: 'FontAwesome';
-  content: "\f09b\00a0";
-}
-
-#contact .twitter-link:before {
-  font-family: 'FontAwesome';
-  content: "\f099\00a0";
-}
-
-#clients ul {
-  margin-bottom: 0;
-  list-style-type: none;
-  padding: 0;
-  text-align: center;
-}
-
-#clients ul li {
-  display: inline-block;
-  margin: 10px;
-}
-
-#clients a {
-  display: inline-block;
-  background-color: #fff;
+  .twitter-link:before {
+    font-family: 'FontAwesome';
+    content: "\f099\00a0";
+  }
 }
 
 #clients {
+  ul {
+    margin-bottom: 0;
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
 
-  i.sauspiel {
-    @include icon("/images/logos/sauspiel", "png", 200px, 88px);
-  }
+    li {
+      display: inline-block;
+      margin: 10px;
+    }
 
-  i.skatstube {
-    @include icon("/images/logos/skatstube", "png", 75px, 75px);
-  }
+    i.sauspiel {
+      @include icon("/images/logos/sauspiel", "png", 200px, 88px);
+    }
 
-  i.blackberry {
-    @include icon("/images/logos/blackberry", "png", 150px, 29px);
-  }
+    i.skatstube {
+      @include icon("/images/logos/skatstube", "png", 75px, 75px);
+    }
 
-  i.elab {
-    @include icon("/images/logos/elab", "png", 132px, 40px);
-  }
+    i.blackberry {
+      @include icon("/images/logos/blackberry", "png", 150px, 29px);
+    }
 
-  i.munich-re {
-    @include icon("/images/logos/munich-re", "png", 175px, 43px);
-  }
+    i.elab {
+      @include icon("/images/logos/elab", "png", 132px, 40px);
+    }
 
-  i.pointoo {
-    @include icon("/images/logos/pointoo", "png", 125px, 38px);
-  }
+    i.munich-re {
+      @include icon("/images/logos/munich-re", "png", 175px, 43px);
+    }
 
-  i.medikompass {
-    @include icon("/images/logos/medikompass", "png", 125px, 24px);
-  }
+    i.pointoo {
+      @include icon("/images/logos/pointoo", "png", 125px, 38px);
+    }
 
-  i.experteer {
-    @include icon("/images/logos/experteer", "png", 259px, 50px);
-  }
+    i.medikompass {
+      @include icon("/images/logos/medikompass", "png", 125px, 24px);
+    }
 
-  i.bokowskylaymann {
-    @include icon("/images/logos/bokowskylaymann", "png", 145px, 30px);
-  }
+    i.experteer {
+      @include icon("/images/logos/experteer", "png", 259px, 50px);
+    }
 
-  i.steria-mummert {
-    @include icon("/images/logos/steria-mummert", "png", 150px, 53px);
-  }
+    i.bokowskylaymann {
+      @include icon("/images/logos/bokowskylaymann", "png", 145px, 30px);
+    }
 
-  i.scoreloop {
-    @include icon("/images/logos/scoreloop", "png", 200px, 54px);
+    i.steria-mummert {
+      @include icon("/images/logos/steria-mummert", "png", 150px, 53px);
+    }
+
+    i.scoreloop {
+      @include icon("/images/logos/scoreloop", "png", 200px, 54px);
+    }
   }
 }
