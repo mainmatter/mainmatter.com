@@ -154,6 +154,27 @@ h2 {
   }
 }
 
+#what-we-use {
+  .tools {
+    margin: 20px;
+
+    & > div {
+      text-align: center;
+
+      & > a {
+        border: none;
+      }
+
+      p {
+        text-align: center;
+        font-style: italic;
+        font-size: 12px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
 #contact {
   #gmap_canvas {
     height: 300px;
