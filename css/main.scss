@@ -145,6 +145,15 @@ h2 {
   }
 }
 
+#who-we-are {
+  .love:before {
+    font-family: 'FontAwesome';
+    content: "\f004";
+    color: red;
+    font-style: normal;
+  }
+}
+
 #contact {
   #gmap_canvas {
     height: 300px;
