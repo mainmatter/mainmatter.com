@@ -8,3 +8,10 @@
     }
   }
 }
+
+@mixin icon($image, $type, $width, $height) {
+  display: inline-block;
+  width: $width;
+  height: $height;
+  @include background-image-retina($image, $type, $width, $height);
+}

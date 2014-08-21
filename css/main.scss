@@ -134,9 +134,7 @@ h2 {
   #main-logo {
     display: block;
     margin: 0 auto;
-    width: 300px;
-    height: 52px;
-    @include background-image-retina("/images/logo", "png", 300px, 52px);
+    @include icon("/images/logo", "png", 300px, 52px);
     margin-bottom: 30px;
   }
 
@@ -165,10 +163,7 @@ h2 {
   }
 
   i.munich-ember-meetup {
-    display: block;
-    width: 84px;
-    height: 90px;
-    @include background-image-retina("/images/logos/munich-ember-meetup", "png", 84px, 90px);
+    @include icon("/images/logos/munich-ember-meetup", "png", 84px, 90px);
   }
 
   a.inline {
@@ -196,70 +191,48 @@ h2 {
       }
     }
 
-    i {
-      display: inline-block;
-      height: 20px;
-
-      &.github {
-        width: 75px;
-        @include background-image-retina("/images/logos/github", "png", 75px, 20px);
-      }
-
-      &.jquery {
-        width: 82px;
-        @include background-image-retina("/images/logos/jquery", "png", 82px, 20px);
-      }
-
-      &.cocoapods {
-        width: 93px;
-        @include background-image-retina("/images/logos/cocoapods", "png", 93px, 20px);
-      }
-
-      &.goliath {
-        width: 69px;
-        @include background-image-retina("/images/logos/goliath", "png", 69px, 20px);
-      }
-
-      &.campfire {
-        width: 25px;
-        @include background-image-retina("/images/logos/campfire", "png", 25px, 20px);
-      }
-
-      &.travis {
-        width: 48px;
-        @include background-image-retina("/images/logos/travis", "png", 48px, 20px);
-      }
-
-      &.docker {
-        width: 84px;
-        @include background-image-retina("/images/logos/docker", "png", 84px, 20px);
-      }
-
-      &.sinatra {
-        width: 29px;
-        @include background-image-retina("/images/logos/sinatra", "png", 29px, 20px);
-      }
+    i.github {
+      @include icon("/images/logos/github", "png", 75px, 20px);
     }
 
-    &:first-of-type {
-      i {
-        height: 100px;
+    i.jquery {
+      @include icon("/images/logos/jquery", "png", 82px, 20px);
+    }
 
-        &.ruby-on-rails {
-          width: 77px;
-          @include background-image-retina("/images/logos/ruby-on-rails", "png", 77px, 100px);
-        }
+    i.cocoapods {
+      @include icon("/images/logos/cocoapods", "png", 93px, 20px);
+    }
 
-        &.emberjs {
-          width: 105px;
-          @include background-image-retina("/images/logos/emberjs", "png",105px, 100px);
-        }
+    i.goliath {
+      @include icon("/images/logos/goliath", "png", 69px, 20px);
+    }
 
-        &.swift {
-          width: 100px;
-          @include background-image-retina("/images/logos/swift", "png", 100px, 100px);
-        }
-      }
+    i.campfire {
+      @include icon("/images/logos/campfire", "png", 25px, 20px);
+    }
+
+    i.travis {
+      @include icon("/images/logos/travis", "png", 48px, 20px);
+    }
+
+    i.docker {
+      @include icon("/images/logos/docker", "png", 84px, 20px);
+    }
+
+    i.sinatra {
+      @include icon("/images/logos/sinatra", "png", 29px, 20px);
+    }
+
+    i.ruby-on-rails {
+      @include icon("/images/logos/ruby-on-rails", "png", 77px, 100px);
+    }
+
+    i.emberjs {
+      @include icon("/images/logos/emberjs", "png",105px, 100px);
+    }
+
+    i.swift {
+      @include icon("/images/logos/swift", "png", 100px, 100px);
     }
   }
 }
@@ -333,68 +306,49 @@ h2 {
   background-color: #fff;
 }
 
-#clients a.sauspiel {
-  width: 200px;
-  height: 88px;
-  @include background-image-retina("/images/logos/sauspiel", "png", 200px, 88px);
-}
+#clients {
 
-#clients a.skatstube {
-  width: 75px;
-  height: 75px;
-  @include background-image-retina("/images/logos/skatstube", "png", 75px, 75px);
-}
+  i.sauspiel {
+    @include icon("/images/logos/sauspiel", "png", 200px, 88px);
+  }
 
-#clients a.blackberry {
-  width: 150px;
-  height: 29px;
-  @include background-image-retina("/images/logos/blackberry", "png", 150px, 29px);
-}
+  i.skatstube {
+    @include icon("/images/logos/skatstube", "png", 75px, 75px);
+  }
 
-#clients a.elab {
-  width: 132px;
-  height: 40px;
-  @include background-image-retina("/images/logos/elab", "png", 132px, 40px);
-}
+  i.blackberry {
+    @include icon("/images/logos/blackberry", "png", 150px, 29px);
+  }
 
-#clients a.munich-re {
-  width: 175px;
-  height: 43px;
-  @include background-image-retina("/images/logos/munich-re", "png", 175px, 43px);
-}
+  i.elab {
+    @include icon("/images/logos/elab", "png", 132px, 40px);
+  }
 
-#clients a.pointoo {
-  width: 125px;
-  height: 38px;
-  @include background-image-retina("/images/logos/pointoo", "png", 125px, 38px);
-}
+  i.munich-re {
+    @include icon("/images/logos/munich-re", "png", 175px, 43px);
+  }
 
-#clients a.medikompass {
-  width: 125px;
-  height: 24px;
-  @include background-image-retina("/images/logos/medikompass", "png", 125px, 24px);
-}
+  i.pointoo {
+    @include icon("/images/logos/pointoo", "png", 125px, 38px);
+  }
 
-#clients a.experteer {
-  width: 259px;
-  height: 50px;
-  @include background-image-retina("/images/logos/experteer", "png", 259px, 50px);
-}
+  i.medikompass {
+    @include icon("/images/logos/medikompass", "png", 125px, 24px);
+  }
 
-#clients a.bokowskylaymann {
-  width: 145px;
-  height: 30px;
-  @include background-image-retina("/images/logos/bokowskylaymann", "png", 145px, 30px);
-}
+  i.experteer {
+    @include icon("/images/logos/experteer", "png", 259px, 50px);
+  }
 
-#clients a.steria-mummert {
-  width: 150px;
-  height: 53px;
-  @include background-image-retina("/images/logos/steria-mummert", "png", 150px, 53px);
-}
+  i.bokowskylaymann {
+    @include icon("/images/logos/bokowskylaymann", "png", 145px, 30px);
+  }
 
-#clients a.scoreloop {
-  width: 200px;
-  height: 54px;
-  @include background-image-retina("/images/logos/scoreloop", "png", 200px, 54px);
+  i.steria-mummert {
+    @include icon("/images/logos/steria-mummert", "png", 150px, 53px);
+  }
+
+  i.scoreloop {
+    @include icon("/images/logos/scoreloop", "png", 200px, 54px);
+  }
 }
