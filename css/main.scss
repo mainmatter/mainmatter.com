@@ -1,6 +1,8 @@
 ---
 ---
 
+@import 'helpers';
+
 body {
   line-height: 1.7;
   font-weight: 300;
@@ -74,12 +76,14 @@ h2 {
 
         &.logo {
           text-align: left;
-          background: #fff url(/images/menu-logo.png) center left no-repeat;
+          @include background-image-retina("/images/menu-logo", "png", 100px, 18px);
+          background-position: center left;
+          background-repeat: no-repeat;
           -webkit-transition: background .25s;
           min-width: 100px;
 
           &:hover, &.active {
-            background: #fff url(/images/menu-logo-active.png) center left no-repeat;
+            @include background-image-retina("/images/menu-logo-active", "png", 100px, 18px);
             border-bottom: none;
             margin-bottom: 0;
           }
@@ -128,6 +132,11 @@ h2 {
   text-align: center;
 
   #main-logo {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: 52px;
+    @include background-image-retina("/images/logo", "png", 300px, 52px);
     margin-bottom: 30px;
   }
 
@@ -155,6 +164,13 @@ h2 {
     font-style: normal;
   }
 
+  i.munich-ember-meetup {
+    display: block;
+    width: 84px;
+    height: 90px;
+    @include background-image-retina("/images/logos/munich-ember-meetup", "png", 84px, 90px);
+  }
+
   a.inline {
     float: left;
     border: none;
@@ -177,6 +193,72 @@ h2 {
         font-style: italic;
         font-size: 12px;
         margin-top: 10px;
+      }
+    }
+
+    i {
+      display: inline-block;
+      height: 20px;
+
+      &.github {
+        width: 75px;
+        @include background-image-retina("/images/logos/github", "png", 75px, 20px);
+      }
+
+      &.jquery {
+        width: 82px;
+        @include background-image-retina("/images/logos/jquery", "png", 82px, 20px);
+      }
+
+      &.cocoapods {
+        width: 93px;
+        @include background-image-retina("/images/logos/cocoapods", "png", 93px, 20px);
+      }
+
+      &.goliath {
+        width: 69px;
+        @include background-image-retina("/images/logos/goliath", "png", 69px, 20px);
+      }
+
+      &.campfire {
+        width: 25px;
+        @include background-image-retina("/images/logos/campfire", "png", 25px, 20px);
+      }
+
+      &.travis {
+        width: 48px;
+        @include background-image-retina("/images/logos/travis", "png", 48px, 20px);
+      }
+
+      &.docker {
+        width: 84px;
+        @include background-image-retina("/images/logos/docker", "png", 84px, 20px);
+      }
+
+      &.sinatra {
+        width: 29px;
+        @include background-image-retina("/images/logos/sinatra", "png", 29px, 20px);
+      }
+    }
+
+    &:first-of-type {
+      i {
+        height: 100px;
+
+        &.ruby-on-rails {
+          width: 77px;
+          @include background-image-retina("/images/logos/ruby-on-rails", "png", 77px, 100px);
+        }
+
+        &.emberjs {
+          width: 105px;
+          @include background-image-retina("/images/logos/emberjs", "png",105px, 100px);
+        }
+
+        &.swift {
+          width: 100px;
+          @include background-image-retina("/images/logos/swift", "png", 100px, 100px);
+        }
       }
     }
   }
@@ -254,135 +336,65 @@ h2 {
 #clients a.sauspiel {
   width: 200px;
   height: 88px;
-  background-size: 200px 88px;
-  background-image: url(/images/logos/sauspiel.png);
+  @include background-image-retina("/images/logos/sauspiel", "png", 200px, 88px);
 }
 
 #clients a.skatstube {
   width: 75px;
   height: 75px;
-  background-size: 75px 75px;
-  background-image: url(/images/logos/skatstube.png);
+  @include background-image-retina("/images/logos/skatstube", "png", 75px, 75px);
 }
 
 #clients a.blackberry {
   width: 150px;
   height: 29px;
-  background-size: 150px 29px;
-  background-image: url(/images/logos/blackberry.png);
+  @include background-image-retina("/images/logos/blackberry", "png", 150px, 29px);
 }
 
 #clients a.elab {
   width: 132px;
   height: 40px;
-  background-size: 132px 40px;
-  background-image: url(/images/logos/elab.png);
+  @include background-image-retina("/images/logos/elab", "png", 132px, 40px);
 }
 
 #clients a.munich-re {
   width: 175px;
   height: 43px;
-  background-size: 175px 43px;
-  background-image: url(/images/logos/munich-re.png);
+  @include background-image-retina("/images/logos/munich-re", "png", 175px, 43px);
 }
 
 #clients a.pointoo {
   width: 125px;
   height: 38px;
-  background-size: 125px 38px;
-  background-image: url(/images/logos/pointoo.png);
+  @include background-image-retina("/images/logos/pointoo", "png", 125px, 38px);
 }
 
 #clients a.medikompass {
   width: 125px;
   height: 24px;
-  background-size: 125px 24px;
-  background-image: url(/images/logos/medikompass.png);
+  @include background-image-retina("/images/logos/medikompass", "png", 125px, 24px);
 }
 
 #clients a.experteer {
   width: 259px;
   height: 50px;
-  background-size: 259px 50px;
-  background-image: url(/images/logos/experteer.png);
+  @include background-image-retina("/images/logos/experteer", "png", 259px, 50px);
 }
 
 #clients a.bokowskylaymann {
   width: 145px;
   height: 30px;
-  background-size: 145px 30px;
-  background-image: url(/images/logos/bokowskylaymann.png);
+  @include background-image-retina("/images/logos/bokowskylaymann", "png", 145px, 30px);
 }
 
 #clients a.steria-mummert {
   width: 150px;
   height: 53px;
-  background-size: 150px 53px;
-  background-image: url(/images/logos/steria-mummert.png);
+  @include background-image-retina("/images/logos/steria-mummert", "png", 150px, 53px);
 }
 
 #clients a.scoreloop {
   width: 200px;
   height: 54px;
-  background-size: 200px 54px;
-  background-image: url(/images/logos/scoreloop.png);
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  #clients a.sauspiel {
-    background-image: url(/images/logos/sauspiel@2x.png);
-  }
-
-  #clients a.skatstube {
-    background-image: url(/images/logos/skatstube@2x.png);
-  }
-
-  #clients a.blackberry {
-    background-image: url(/images/logos/blackberry@2x.png);
-  }
-
-  #clients a.elab {
-    background-image: url(/images/logos/elab@2x.png);
-  }
-
-  #clients a.munich-re {
-    background-image: url(/images/logos/munich-re@2x.png);
-  }
-
-  #clients a.pointoo {
-    background-image: url(/images/logos/pointoo@2x.png);
-  }
-
-  #clients a.medikompass {
-    background-image: url(/images/logos/medikompass@2x.png);
-  }
-
-  #clients a.experteer {
-    background-image: url(/images/logos/experteer@2x.png);
-  }
-
-  #clients a.bokowskylaymann {
-    background-image: url(/images/logos/bokowskylaymann@2x.png);
-  }
-
-  #clients a.steria-mummert {
-    background-image: url(/images/logos/steria-mummert@2x.png);
-  }
-
-  #clients a.scoreloop {
-    background-image: url(/images/logos/scoreloop@2x.png);
-  }
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  #header a {
-    background-image: url(/images/header-logo@2x.png);
-  }
-  #menu a.logo {
-    background-image: url(/images/menu-logo@2x.png);
-  }
-
-  #menu a.logo:hover, #menu a.logo.active {
-    background-image: url(/images/menu-logo-active@2x.png);
-  }
+  @include background-image-retina("/images/logos/scoreloop", "png", 200px, 54px);
 }

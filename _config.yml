@@ -1,6 +1,9 @@
 name: simplabs.com
 highlighter: false
 
+sass:
+  sass_dir: css
+
 navigation:
   - title: "&nbsp;"
     url: /
