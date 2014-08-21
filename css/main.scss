@@ -24,6 +24,17 @@ a:hover {
   text-decoration: none;
 }
 
+a.super {
+  color: #0480c1;
+  background-color: #eee;
+  border-radius: 2px;
+}
+
+a.super:hover {
+  color: #fff;
+  background-color: #0480c1;
+}
+
 p {
   text-align: justify;
 }
@@ -174,16 +185,6 @@ h2 {
   h2 {
     margin-top: 50px;
     line-height: 30px;
-
-    a {
-      color: #0480c1;
-      background-color: #eee;
-    }
-
-    a:hover {
-      color: #fff;
-      background-color: #0480c1;
-    }
   }
 }
 
@@ -202,6 +203,12 @@ h2 {
   a.inline {
     float: left;
     border: none;
+  }
+}
+
+#what-we-do {
+  h2.contact {
+    text-align: center;
   }
 }
 
