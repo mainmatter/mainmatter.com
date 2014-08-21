@@ -123,7 +123,6 @@ h2 {
 }
 
 #footer {
-  font-size: 12px;
   border-top: 1px solid #ccc;
   margin-bottom: 0;
 
@@ -132,6 +131,11 @@ h2 {
 
     li {
       width: 33%;
+
+      &.license {
+        width: 100%;
+        font-size: 12px;
+      }
 
       a {
         color: #333;
