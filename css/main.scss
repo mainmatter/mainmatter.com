@@ -78,14 +78,14 @@ h2 {
         text-align: center;
         margin-bottom: 3px;
         border-bottom: none;
-        -webkit-transition: border-bottom .25s;
+        transition: border-bottom .25s;
 
         &.logo {
           text-align: left;
           @include background-image-retina("/images/menu-logo", "png", 100px, 18px);
           background-position: center left;
           background-repeat: no-repeat;
-          -webkit-transition: background .25s;
+          transition: background .25s;
           min-width: 100px;
 
           &:hover, &.active {
@@ -102,6 +102,23 @@ h2 {
         }
       }
     }
+
+    @media (max-width: 768px) {
+      li {
+        width: 100%;
+
+        a {
+          display: block;
+          transition: none;
+          margin-left: 30px;
+
+          &.logo {
+            margin-bottom: 0;
+            background-position: center center;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -115,17 +132,27 @@ h2 {
 
     li {
       width: 33%;
+
+      a {
+        color: #333;
+        background-color: #fff;
+        border: none;
+
+        &:hover, &.active {
+          background-color: #fff;
+          color: #0480c1;
+        }
+      }
     }
-  }
 
-  a {
-    color: #333;
-    background-color: #fff;
-    border: none;
+    @media (max-width: 768px) {
+      li {
+        width: 100%;
 
-    &:hover, &.active {
-      background-color: #fff;
-      color: #0480c1;
+        a {
+          margin-left: 30px;
+        }
+      }
     }
   }
 }
