@@ -9,4 +9,4 @@ The source code for http://simplabs.com
 
 Copyright &copy; 2014 Marco Otte-Witte (http://simplabs.com), released under
 the
-[Attribution-NonCommercial 4.0 International license](http://creativecommons.org/licenses/by-nc/4.0/).
+[Creative Commons Attribution-NonCommercial 4.0 International license](http://creativecommons.org/licenses/by-nc/4.0/).
