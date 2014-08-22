@@ -1,14 +1,14 @@
 h2 {
   margin-top: 0;
-}
 
-h2 a {
-  background-color: #fff !important;
-}
+  a {
+    background-color: #fff !important;
 
-h2 a:hover {
-  background-color: #fff;
-  color: #0480c1;
+    &:hover {
+      background-color: #fff;
+      color: #0480c1;
+    }
+  }
 }
 
 h3 {
@@ -24,63 +24,15 @@ h4.date {
   font-size: 11px;
   text-align: right;
   border-bottom: 1px solid #ccc;
-}
 
-h4.date a {
-  background-color: transparent !important;
-}
+  a {
+    background-color: transparent !important;
 
-h4.date a:hover {
-  background-color: transparent;
-  color: #0480c1;
-}
-
-#paging div.links {
-  border-top: 1px solid #ccc;
-}
-
-#paging a {
-  display: block;
-  padding: 20px 0;
-  background-color: #fff;
-}
-
-#paging a:hover {
-  background-color: #fff;
-  color: #0480c1;
-}
-
-#paging a.previous {
-  float: left;
-}
-
-#paging a.next {
-  float: right;
-}
-
-section {
-  margin: 0 0 50px 0;
-}
-
-section.post ul {
-  margin: 5px 0 10px 0;
-}
-
-section.photo {
-  text-align: center;
-}
-
-section.photo a {
-  padding: 0;
-}
-
-section.caption p {
-  font-size: 12px;
-  text-align: center;
-}
-
-section.quote {
-  text-align: center;
+    &:hover {
+      background-color: transparent;
+      color: #0480c1;
+    }
+  }
 }
 
 blockquote {
@@ -89,36 +41,7 @@ blockquote {
   margin: 0 30px 5px 30px;
 }
 
-section.quote div.source {
-  text-align: left;
-  font-size: 12px;
-  margin: 0 30px 0 30px;
-}
-
-section.conversation ul {
-  list-style: none;
-  margin: 5px 0 0 0;
-}
-
-section.conversation ul li span.label {
-  background: #eee;
-  padding: 2px;
-}
-
-section.video {
-  text-align: center;
-}
-
-section.video div.caption {
-  font-size: 12px;
-}
-
-section.link span.description {
-  display: block;
-  font-size: 12px;
-}
-
-div.code {
+.code {
   background-color: #f8f8ff;
   overflow-x: scroll;
   line-height: 120%;
@@ -126,10 +49,97 @@ div.code {
   border: 1px solid #ddd;
   border-radius: 0;
   margin: 10px 0;
+
+  pre {
+    margin: 0;
+    border: none;
+    background-color: transparent;
+  }
 }
 
-div.code pre {
-  margin: 0;
-  border: none;
-  background-color: transparent;
+#paging {
+  div.links {
+    border-top: 1px solid #ccc;
+  }
+
+  a {
+    display: block;
+    padding: 20px 0;
+    background-color: #fff;
+
+    &:hover {
+      background-color: #fff;
+      color: #0480c1;
+    }
+
+    &.previous {
+      float: left;
+    }
+
+    &.next {
+      float: right;
+    }
+  }
+}
+
+section {
+  margin: 0 0 50px 0;
+
+  &.post {
+    ul {
+      margin: 5px 0 10px 0;
+    }
+  }
+
+  &.photo {
+    text-align: center;
+
+    a {
+      padding: 0;
+    }
+  }
+
+  &.caption {
+    p {
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+
+  &.quote {
+    text-align: center;
+
+    .source {
+      text-align: left;
+      font-size: 12px;
+      margin: 0 30px 0 30px;
+    }
+  }
+
+  &.conversation {
+    ul {
+      list-style: none;
+      margin: 5px 0 0 0;
+
+      li span.label {
+        background: #eee;
+        padding: 2px;
+      }
+    }
+  }
+
+  &.video {
+    text-align: center;
+
+    .caption {
+      font-size: 12px;
+    }
+  }
+
+  &.link {
+    .description {
+      display: block;
+      font-size: 12px;
+    }
+  }
 }
