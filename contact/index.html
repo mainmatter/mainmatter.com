@@ -37,11 +37,12 @@ title: ' - Contact'
             scrollwheel:            false,
             disableDoubleClickZoom: true
           });
+          var icon   = new google.maps.MarkerImage('/images/map-marker@2x.png', null, null, null, new google.maps.Size(20, 20));
           var marker = new google.maps.Marker({
             map:       map,
             position:  position,
             clickable: false,
-            icon:      '/images/map-marker.png'
+            icon:      icon
           });
         });
         </script>
