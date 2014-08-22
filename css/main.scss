@@ -200,9 +200,12 @@ h2 {
     @include icon("/images/logos/munich-ember-meetup", "png", 84px, 90px);
   }
 
-  a.inline {
-    float: left;
-    border: none;
+  p.munich-ember-meetup {
+    text-align: center;
+
+    a {
+      border: none;
+    }
   }
 }
 
