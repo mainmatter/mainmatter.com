@@ -406,6 +406,11 @@ h2 {
     font-size: 14px;
     border-radius: 2px;
     margin: 10px 0;
+    word-wrap: normal;
+
+    code {
+      white-space: pre;
+    }
   }
 
   #footer {
