@@ -373,6 +373,11 @@ h2 {
 }
 
 #blog {
+  h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
   h3 {
     font-family: 'Ubuntu', sans-serif;
     font-weight: normal;
@@ -386,15 +391,6 @@ h2 {
     font-size: 11px;
     text-align: right;
     border-bottom: 1px solid #ccc;
-
-    a {
-      background-color: transparent !important;
-
-      &:hover {
-        background-color: transparent;
-        color: #0480c1;
-      }
-    }
   }
 
   blockquote {
@@ -403,36 +399,28 @@ h2 {
     margin: 0 30px 5px 30px;
   }
 
-  .code {
+  pre {
+    border: none;
     background-color: #f8f8ff;
     overflow-x: scroll;
     line-height: 120%;
     font-size: 120%;
-    border: 1px solid #ddd;
     border-radius: 0;
     margin: 10px 0;
+  }
 
-    pre {
-      margin: 0;
-      border: none;
-      background-color: transparent;
+  #footer {
+    ul {
+      li {
+        width: 100%;
+      }
     }
   }
 
   #paging {
-    div.links {
-      border-top: 1px solid #ccc;
-    }
-
     a {
       display: block;
-      padding: 20px 0;
-      background-color: #fff;
-
-      &:hover {
-        background-color: #fff;
-        color: #0480c1;
-      }
+      margin: 20px 0;
 
       &.previous {
         float: left;
