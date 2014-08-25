@@ -4,6 +4,9 @@ highlighter: false
 sass:
   sass_dir: css
 
+gems:
+  - jekyll-sitemap
+
 navigation:
   - title: "&nbsp;"
     url: /
