@@ -195,11 +195,19 @@ h2 {
     @include icon("/images/logos/munich-ember-meetup", "png", 84px, 90px);
   }
 
-  p.munich-ember-meetup {
+  i.bits-connect {
+    @include icon("/images/logos/bits-connect", "png", 72px, 90px);
+  }
+
+  p.associations {
     text-align: center;
 
     a {
       border: none;
+
+      &:first-child {
+        margin-right: 20px;
+      }
     }
   }
 }
