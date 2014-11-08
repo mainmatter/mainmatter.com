@@ -372,6 +372,14 @@ h2 {
     i.scoreloop {
       @include icon("/images/logos/scoreloop", "png", 200px, 54px);
     }
+
+    i.embedd {
+      @include icon("/images/logos/embedd", "png", 104px, 20px);
+    }
+
+    i.terminapp {
+      @include icon("/images/logos/terminapp", "png", 60px, 60px);
+    }
   }
 }
 
