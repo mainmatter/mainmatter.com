@@ -365,6 +365,10 @@ h2 {
       @include icon("/images/logos/bokowskylaymann", "png", 145px, 30px);
     }
 
+    i.xbav {
+      @include icon("/images/logos/xbav", "png", 108px, 60px);
+    }
+
     i.steria-mummert {
       @include icon("/images/logos/steria-mummert", "png", 150px, 53px);
     }
