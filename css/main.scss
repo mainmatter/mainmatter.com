@@ -60,6 +60,13 @@ h2 {
   margin-top: 30px;
 }
 
+.love:before {
+  font-family: 'FontAwesome';
+  content: "\f004";
+  color: red;
+  font-style: normal;
+}
+
 #main-content {
   padding: 50px 0;
 
@@ -184,13 +191,6 @@ h2 {
 }
 
 #who-we-are {
-  .love:before {
-    font-family: 'FontAwesome';
-    content: "\f004";
-    color: red;
-    font-style: normal;
-  }
-
   i.munich-ember-meetup {
     @include icon("/images/logos/munich-ember-meetup", "png", 84px, 90px);
   }
