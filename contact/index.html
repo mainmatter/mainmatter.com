@@ -29,13 +29,10 @@ title: ' - Contact'
         google.maps.event.addDomListener(window, 'load', function() {
           var position = new google.maps.LatLng(48.1213732, 11.5723481);
           var map      = new google.maps.Map(document.getElementById('map-canvas'), {
-            zoom:                   16,
-            center:                 position,
-            mapTypeId:              google.maps.MapTypeId.ROADMAP,
-            disableDefaultUI:       true,
-            draggable:              false,
-            scrollwheel:            false,
-            disableDoubleClickZoom: true
+            zoom:             16,
+            center:           position,
+            mapTypeId:        google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true
           });
           var icon   = new google.maps.MarkerImage('/images/map-marker@2x.png', null, null, null, new google.maps.Size(20, 20));
           var marker = new google.maps.Marker({
