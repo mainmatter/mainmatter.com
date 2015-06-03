@@ -188,6 +188,19 @@ h2 {
     margin-top: 50px;
     line-height: 30px;
   }
+
+  .workshop-notice {
+    text-align: center;
+    margin-top: 30px;
+
+    a {
+      color: #e04a31;
+
+      &:hover {
+        border-bottom: 2px solid #e04a31;
+      };
+    }
+  }
 }
 
 #who-we-are {
