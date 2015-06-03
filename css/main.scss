@@ -382,6 +382,10 @@ h2 {
       @include icon("/images/logos/xbav", "png", 108px, 60px);
     }
 
+    i.campus {
+      @include icon("/images/logos/campus", "png", 169px, 76px);
+    }
+
     i.steria-mummert {
       @include icon("/images/logos/steria-mummert", "png", 150px, 53px);
     }
