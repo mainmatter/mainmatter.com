@@ -79,6 +79,19 @@ h2 {
   }
 }
 
+.workshop-notice {
+  text-align: center;
+  margin-top: 30px;
+
+  a {
+    color: #e04a31;
+
+    &:hover {
+      border-bottom: 2px solid #e04a31;
+    };
+  }
+}
+
 #main-menu {
   border-bottom: 1px solid #ccc;
   margin-bottom: 0;
@@ -187,19 +200,6 @@ h2 {
   h2 {
     margin-top: 50px;
     line-height: 30px;
-  }
-
-  .workshop-notice {
-    text-align: center;
-    margin-top: 30px;
-
-    a {
-      color: #e04a31;
-
-      &:hover {
-        border-bottom: 2px solid #e04a31;
-      };
-    }
   }
 }
 
