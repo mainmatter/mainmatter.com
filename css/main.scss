@@ -357,6 +357,10 @@ h2 {
       @include icon("/images/logos/medikompass", "png", 125px, 24px);
     }
 
+    i.generali {
+      @include icon("/images/logos/generali", "png", 124px, 100px);
+    }
+
     i.experteer {
       @include icon("/images/logos/experteer", "png", 259px, 50px);
     }
