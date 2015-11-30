@@ -11,19 +11,28 @@ navigation:
     url: /
     file: /index.html
     class: logo
-  - title: What we do
-    url: /what-we-do
-    file: /what-we-do/index.html
+  - title: Services
+    url: /services
+    file: /services/index.html
     class:
-  - title: What we use
-    url: /what-we-use
-    file: /what-we-use/index.html
+  - title: Process
+    url: /process
+    file: /process/index.html
     class:
-  - title: Who we are
-    url: /who-we-are
-    file: /who-we-are/index.html
+  - title: Cases
+    url: /cases
+    file: /cases/index.html
     class:
-  - title: Clients
+    - title: About
+    url: /about
+    file: /about/index.html
+    class:
+    - title: Clients
     url: /clients
     file: /clients/index.html
     class:
+  - title: Blog
+    url: log.simplabs.com
+    file: 
+    class:
+  
