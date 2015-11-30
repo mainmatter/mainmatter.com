@@ -79,7 +79,7 @@ body {
 	width: 100%;
 	background-image: url('../images/index-banner.png');
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: 100% 300px;
 }
 
 
@@ -95,6 +95,7 @@ body {
 
 #footer {
   border-top: 1px solid #ccc;
+  background-color: #fff;
 
   #footer-logo {
     font-size: 10.8px;
