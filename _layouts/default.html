@@ -25,17 +25,22 @@
     <![endif]-->
   </head>
 	<body>
-    <nav id="main-menu" class="navbar" role="navigation">
+    <nav id="main-menu" class="navbar navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="row">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">
+              <img src="/images/logo.png" srcset="/images/logo.png 2x">
+            </a>
+          </div>
           <ul class="nav navbar-nav">
-            {% for link in site.navigation %}
-              {% assign active = nil %}
-              {% if page.url == link.file %}
-                {% assign active = 'active' %}
-              {% endif %}
-              <li><a href="{{link.url}}" class="{{link.class}} {{active}}">{{link.title}}</a></li>
-            {% endfor %}
+            <li><a href="/services">Services</a></li>
+            <li><a href="/process">Process</a></li>
+            <li><a href="/cases">Cases</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/clients">Clients</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li class="navbar-right"><a href="/contact">Contact Us</a></li>
           </ul>
         </div>
       </div>
@@ -45,11 +50,14 @@
       {{content}}
     </div>
 
-   <nav id= "footer" class= "navbar" role= "navigation">
+   <nav id= "footer" class= "navbar navbar-fixed-bottom" role= "navigation">
       <div class= "container">
         <div class= "row">
-          <i id="footer-logo"></i>
-          <ul class="nav navbar-nav nav-justified">
+          <div class="navbar-left" id="footer-logo">
+            <p class="navbar-text">&copy; 2015</p>
+            <i></i>
+          </div>
+          <ul class="nav navbar-nav nav-justified navbar-right">
             <li><a href="https://simplabs.de">deutsch</a></li>
             <li><a href="/imprint">Imprint</a></li>
             <li><a href="/contact">Contact</a></li>
