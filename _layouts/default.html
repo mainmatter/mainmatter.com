@@ -25,16 +25,21 @@
     <![endif]-->
   </head>
 	<body>
-    <nav id="main-menu" class="navbar navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="row">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="index.html">
-              <img src="/images/logo.png" srcset="/images/logo.png 2x">
-            </a>
-          </div>
+    <nav id="main-menu" class="navbar navbar-static-top" role="navigation">
+      <div>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>    
+        </div>
+        <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/services">Services</a></li>
+            <li class="navbar-left"><a class="navbar-brand" href="index">
+              <img src="/images/logo.png" srcset="/images/logo.png 2x"></a>
+            </li>
+            <li class ="active"><a href="/services">Services</a></li>
             <li><a href="/process">Process</a></li>
             <li><a href="/cases">Cases</a></li>
             <li><a href="/about">About</a></li>
@@ -43,16 +48,16 @@
             <li class="navbar-right"><a href="/contact">Contact Us</a></li>
           </ul>
         </div>
-      </div>
+    </div>
     </nav>
 
     <div id="main-content">
       {{content}}
     </div>
 
-   <nav id= "footer" class= "navbar navbar-fixed-bottom" role= "navigation">
-      <div class= "container">
-        <div class= "row">
+   <nav id= "footer" class="navbar" role="navigation">
+      <div>
+        <div class="container">
           <div class="navbar-left" id="footer-logo">
             <p class="navbar-text">&copy; 2015</p>
             <i></i>
