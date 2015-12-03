@@ -18,7 +18,14 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:300,400">
-    <link rel="stylesheet" href="/css/basic_layout.css">
+    <link rel="stylesheet" href="/css/basic-layout.css">
+    
+    {% if page.custom_css %}
+      {% for stylesheet in page.custom_css %}
+      <link rel="stylesheet" href="/css/{{ stylesheet }}.css">
+      {% endfor %}
+    {% endif %}
+
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -36,7 +43,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="navbar-left"><a class="navbar-brand" href="index">
+            <li class="navbar-left"><a class="navbar-brand" href="/index.html">
               <img src="/images/logo.png" srcset="/images/logo.png 2x"></a>
             </li>
             <li class ="active"><a href="/services">Services</a></li>
@@ -57,7 +64,7 @@
 
    <nav id= "footer" class="navbar" role="navigation">
       <div>
-        <div class="container">
+        <div class="container-fluid">
           <div class="navbar-left" id="footer-logo">
             <p class="navbar-text">&copy; 2015</p>
             <i></i>

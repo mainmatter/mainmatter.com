@@ -1,0 +1,86 @@
+---
+---
+
+@import 'helpers';
+
+#index-banner {
+  height: 500px;
+  width: 100%;
+  margin-right: 0;
+  color: #fff;
+  text-align: center;
+  background-image: url('../images/index-banner.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+
+  .col-md-6 {
+    @include vertical-align();
+    font-size: 80%;
+  }
+
+  h2 {
+    margin: 0 auto;
+    text-transform: uppercase;
+  }
+
+  span {
+    background-color: #000;
+    padding: 3px;
+  }
+}
+
+.main-section{
+  width: 100%;
+  text-align: left;
+}
+
+.case-study{
+  padding: 50px;
+
+  h4 {
+    color: #2b98de;
+    font-weight: 300;
+  }
+
+  p {
+    text-align: justify;
+    font-size: 11px;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+  }
+
+  .case-study-tags{
+    color: #999999;
+    font-weight: 400;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding-top: 20px;
+
+    .case-study-tags-left {
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .case-study-tags-right {
+      text-transform: uppercase;
+      text-align: right;
+    }
+  }
+
+}
+
+.contact-section {
+	height: 100px;
+	width: 100%;
+  margin: 0 0 0 0;
+	background-image: url('../images/contact-banner-background.png');
+	background-repeat: no-repeat;
+
+  div {
+    margin-top: 20px;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+  }
+}

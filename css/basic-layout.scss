@@ -54,38 +54,7 @@ body {
 }
 
 #content {
-  padding:  0;
-}
-
-#index-banner {
-	height: 500px;
-	width: 100%;
-  color: #fff;
-  text-align: center;
-	background-image: url('../images/index-banner.png');
-	background-repeat: no-repeat;
-	background-size: 100% 500px;
-
-
-  .container {
-    @include vertical-align();
-    font-size: 80%;
-  }
-
-  h2 {
-    margin: 0 auto;
-    text-transform: uppercase;
-  }
-
-  span {
-    background-color: #000;
-    padding: 3px;
-  }
-
-  @media (max-width: 768px) {
-    height: 800px;
-  }
-
+  
 }
 
 .blue-btn {
@@ -113,78 +82,9 @@ body {
 
 }
 
-.main-section{
-  width: 100%;
-  text-align: left;
-  height: 300px;
-}
-
-.case-study{
-  float: left;
-  width: 50%;
-  padding: 40px;
-
-  h4 {
-    color: #2b98de;
-    font-weight: 300;
-  }
-
-  p{
-    text-align: justify;
-    font-size: 11px;
-    padding-top: 10px;
-    padding-bottom: 10px; 
-  }
-
-  .case-study-tags{
-    color: #999999;
-    font-weight: 400;
-    font-size: 11px;
-    text-transform: uppercase;
-    padding-top: 20px;
-
-    .case-study-tags-left {
-      text-align: left;
-      text-transform: uppercase;
-    }
-
-    .case-study-tags-right {
-      float: none;
-      float: right;
-      text-align: right;
-    }
-  }
-
-}
-
-.contact-section {
-	height: 100px;
-	width: 100%;
-	background-image: url('../images/contact-banner-background.png');
-	background-repeat: no-repeat;
-	background-size: 100% 100px;
-
-  p {
-    position: relative;
-    top: 40px;
-    float: left;
-    color: #fff;
-    width: 50%;
-    text-align: center;
-    font-size: 20px;
-  }
-
-  div {
-    float: left;
-    @include vertical-align();
-    width: 50%;
-    text-align: center;
-  }
-
-}
-
 #footer {
-  clear: left;
+  margin-bottom: 0;
+  bottom: 0;
   border-top: 1px solid #ccc;
   background-color: #fff;
   height: 50px;
@@ -194,6 +94,7 @@ body {
     font-size: 10.8px;
     margin-bottom: 0;
     padding-bottom: 0;
+    margin-left: 0;
 
     i {
     	margin-top: 19px;
