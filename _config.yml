@@ -11,17 +11,13 @@ navigation:
     url: /
     file: /index.html
     class: logo
-  - title: Services
-    url: /services
-    file: /services/index.html
-    class:
-  - title: Process
-    url: /process
-    file: /process/index.html
-    class:
   - title: Cases
     url: /cases
     file: /cases/index.html
+    class:
+  - title: Contact
+    url: /contact
+    file: /contact/index.html
     class:
     - title: About
     url: /about
