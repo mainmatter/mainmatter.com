@@ -152,6 +152,7 @@ body {
 
   .col-md-6 {
     @include vertical-align();
+    font-size: 80%
   }
 
   h2 {
@@ -168,11 +169,10 @@ body {
   }
 }
 
-.contact-section-2 {
+.contact-section {
   height: 100px;
   width: 100%;
   margin: 0 0 0 0;
-  background-image: url('../images/other-contact-banner.png');
   background-repeat: no-repeat;
   background-size: 100% 100px;
   color: #fff;
@@ -181,4 +181,8 @@ body {
   .col-md-6 {
     @include vertical-align();
   }
+}
+
+.other-contact-bg {
+  background-image: url('../images/other-contact-banner.png');
 }
