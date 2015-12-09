@@ -37,11 +37,8 @@
 }
 
 #contact-main-section {
-  padding-top: 20px;
-
-  .row {
-    padding: 20px 50px 30px 20px;
-  }
+  padding-top: 50px;
+  padding-bottom: 50px;
 
   h3 {
     text-align: left;
@@ -51,6 +48,10 @@
     padding: 0;
   }
 
+  hr {
+    margin-top: 100px;
+  }
+
   p {
     font-size: 12px;
     padding: 15px 5px 5px 5px;
@@ -58,17 +59,22 @@
 
   a {
     color: #2b98de;
-    text-decoration: underline;
+    padding: 15px 5px 5px 5px;
   }
 
-  img {
-    padding: 8.5px;
+  .email-link:before {
+    font-family: 'FontAwesome';
+    content: "\f0e0\00a0";
+  }
+
+  .twitter-link:before {
+    font-family: 'FontAwesome';
+    content: "\f099\00a0";
   }
 
   #map-canvas {
     padding: 15px 5px 5px 5px;
     height: 300px;
-    width: 90%;
   }
 
 }

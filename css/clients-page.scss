@@ -87,38 +87,3 @@
   }
 }
 
-.case-study{
-  padding: 50px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-
-  h4 {
-    color: #2b98de;
-    font-weight: 300;
-  }
-
-  p {
-    text-align: justify;
-    font-size: 11px;
-    padding-top: 10px;
-    padding-bottom: 10px; 
-  }
-
-  .case-study-tags{
-    color: #999999;
-    font-weight: 400;
-    font-size: 11px;
-    text-transform: uppercase;
-    padding-top: 20px;
-
-    .case-study-tags-left {
-      text-align: left;
-      text-transform: uppercase;
-    }
-
-    .case-study-tags-right {
-      text-transform: uppercase;
-      text-align: right;
-    }
-  }
-}
