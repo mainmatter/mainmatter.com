@@ -73,13 +73,13 @@ body {
   padding: 5px 50px 5px 50px;
 }
 
-.outline-blue {
+.case-study-button {
   border-color: #2b98de;
   background-color: #fff;
   color: #2b98de;
 }
 
-.outline-white {
+.contact-button {
   border-color: #fff;
   background-color: #2b98de;
   color: #fff;
@@ -100,6 +100,10 @@ body {
     margin-bottom: 0;
     padding-bottom: 0;
     margin-left: 0;
+    text-align: left;
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
 
     i {
     	margin-top: 19px;
@@ -108,16 +112,20 @@ body {
   }
   
   ul {
-    width: 40%;
 
     li {
-      width: 20%;
 
       a {
       	font-size: 11px;
         color: #000;
         background-color: #fff;
         border: none;
+        text-align: right;
+
+        @media screen and (max-width: 768px) {
+          text-align: center;
+          margin-left: 30px;
+        }
 
         &:hover, &.active {
           background-color: #fff;
@@ -127,6 +135,7 @@ body {
     }
   }
 
+  
 }
 
 .top-other-banner {
