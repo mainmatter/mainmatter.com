@@ -5,6 +5,7 @@
 
 
 .cases-and-blog-articles {
+  padding: 10px;
 
   .categories {
     color: #999999;
@@ -34,7 +35,7 @@
       padding: 20px;
     }
 
-    .case-description {
+    .description {
       text-align: center;
       color: #000;
       font-weight: 300;
@@ -67,14 +68,7 @@
     .code-snippet {
       padding: 10px;
     
-      pre {
-        padding: 30px;
-        background-color: #f6f6f6;
-        text-align: left;
-        border: none;
-        border-radius: 0;
-        overflow: auto;
-      }
+      overflow: auto;
 
       span {
         background-color: #fff;
@@ -83,5 +77,30 @@
         text-align: left;
       }
     }
+  }
+
+  .author-and-date {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-width: 2px 0 0px 0;
+    border-top: 2px solid #efefef;
+
+    .date {
+      font-weight: bold;
+      font-size: 10px;
+    }
+
+    i.author-image {
+      @include icon("/images/map-marker", "png", 125px, 125px);
+      background-color: #efefef;
+    }
+
+    .author {
+      margin-top: 0;
+      margin-left: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
   }   
 }

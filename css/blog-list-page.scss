@@ -1,0 +1,47 @@
+---
+---
+
+@import 'helpers';
+
+.blog-list {
+ padding-top: 20px;
+ padding-bottom: 40px;
+
+ .blog-list-item {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-width: 0 0 2px 0;
+  border-bottom: 2px solid #efefef;
+  
+    .blog-categories {
+      color: #2b98de;
+      font-weight: bold;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    .blog-date-and-author {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      font-size: 10px;
+    }
+
+    h3 {
+      color: #2b98de;
+      font-weight: lighter;
+      margin-top: 0;
+    }
+
+    p {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: justify;
+    }
+
+  }
+  .blog-navigate {
+    margin-top: 20px;
+  }
+
+}
+

@@ -1,10 +1,14 @@
 name: simplabs.com
 
+
+
 sass:
   sass_dir: css
 
 gems:
   - jekyll-sitemap
+
+highlighter: pygments
 
 navigation:
   - title: "&nbsp;"
@@ -39,3 +43,4 @@ navigation:
     url: /contact
     file: /contact/index.html
     class:
+

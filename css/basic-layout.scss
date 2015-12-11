@@ -71,6 +71,11 @@ body {
   text-align: center;
   font-size: 11px;
   padding: 5px 50px 5px 50px;
+
+  a:hover {
+    font-weight: bold;
+    text-decoration: none;
+  }
 }
 
 .case-study-button {
