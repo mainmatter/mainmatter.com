@@ -11,10 +11,6 @@ gems:
 highlighter: pygments
 
 navigation:
-  - title: "&nbsp;"
-    url: /
-    file: /index.html
-    class: logo
   - title: Sevrvices
     url: /services
     file: /services/index.html
@@ -27,20 +23,17 @@ navigation:
     url: /cases
     file: /cases/index.html
     class:
-    - title: About
+  - title: About
     url: /about
     file: /about/index.html
     class:
-    - title: Clients
+  - title: Clients
     url: /clients
     file: /clients/index.html
     class:
   - title: Blog
-    url: log.simplabs.com
-    file: 
+    url: /blog
+    file: /blog/index.html
     class:
-    - title: Contact
-    url: /contact
-    file: /contact/index.html
-    class:
+    
 

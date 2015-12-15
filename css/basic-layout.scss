@@ -47,16 +47,22 @@ body {
     }
 
     .navbar-nav > li.navbar-right {
-      float: right !important;
+      float: right;
     }
   }
 
-  a:hover {
+  a:hover, .active {
     color: #2b98de;
     background-color: #fff;
     padding-bottom: 2px;
     border-bottom: solid 2px #2b98de;
   }
+
+  .navbar-brand:hover {
+    border: none;
+  }
+
+
   
 }
 
