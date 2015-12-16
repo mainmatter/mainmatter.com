@@ -18,53 +18,22 @@ title:
   <div class="row">
     <div class="blog-list col-md-8 col-md-offset-2">
 
-      <div class="blog-list-item">
-        <div class="blog-categories">
-          Blog Category 1, Category 2, Category 3
+      {% for post in site.posts %}
+        <div class="blog-list-item">
+          <div class="blog-categories">
+            {{ post.categories }}
+          </div>
+          <div class="blog-date-and-author">
+            <span class="date pull-left">{{ post.date | date: '%B %d, %Y' }}</span>
+            <span class="author pull-right">{{ post.author }}</span>
+          </div>
+          <br>
+          <h3>{{ post.title }}</h3>
+          <p>
+          {{ post.excerpt | remove: '<h4>' | remove: '</h4>' }}</p>
+          <span class="custom-button case-study-button"><a href="{{ post.url }}">Read on</a></span>
         </div>
-        <div class="blog-date-and-author">
-          <span class="date pull-left">11.12.2015</span>
-          <span class="author pull-right">Ganesh Balasubramanian</span>
-        </div>
-        <br>
-        <h3>Blog Article Title</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Fusce</strong> finibus eros quis turpis eleifend, sit amet luctus urna pulvinar. Vestibulum blandit <strong>interdum</strong> nisi. Integer eget <strong>dignissim elit</strong>, non laoreet sapien.</p>
-        
-        <span class="custom-button case-study-button"><a href="/blog/article-layout.html">Read on</a></span>
-      </div>
-
-      <div class="blog-list-item">
-        <div class="blog-categories">
-          Blog Category 1
-        </div>
-        <div class="blog-date-and-author">
-          <span class="date pull-left">11.12.2015</span>
-          <span class="author pull-right">Ganesh Balasubramanian</span>
-        </div>
-        <br>
-        <h3>Blog Article Title</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Fusce</strong> finibus eros quis turpis eleifend, sit amet luctus urna pulvinar. Vestibulum blandit <strong>interdum</strong> nisi. Integer eget <strong>dignissim elit</strong>, non laoreet sapien.</p>
-        <span class="custom-button case-study-button"><a href="/blog/article-layout.html">Read on</a></span>
-      </div>
-
-      <div class="blog-list-item">
-        <div class="blog-categories">
-          Blog Category 1, Category 2
-        </div>
-        <div class="blog-date-and-author">
-          <span class="date pull-left">11.12.2015</span>
-          <span class="author pull-right">Marco Otte-Witte</span>
-        </div>
-        <br>
-        <h3>Blog Article Title</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Fusce</strong> finibus eros quis turpis eleifend, sit amet luctus urna pulvinar. Vestibulum blandit <strong>interdum</strong> nisi. Integer eget <strong>dignissim elit</strong>, non laoreet sapien.</p>
-        <span class="custom-button case-study-button"><a href="/blog/article-layout.html">Read on</a></span>
-      </div>
-
-      <p class="blog-navigate">
-        <a class="pull-left" href="">Previous Articles</a>
-        <a class="pull-right" href="">Next Articles</a>
-      </p>
+      {% endfor %}
     </div>
   </div>
 </div>

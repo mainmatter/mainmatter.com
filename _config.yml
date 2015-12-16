@@ -11,7 +11,7 @@ gems:
 highlighter: pygments
 
 navigation:
-  - title: Sevrvices
+  - title: Services
     url: /services
     file: /services/index.html
     class:

@@ -7,7 +7,35 @@
 .cases-and-blog-articles {
   padding: 10px;
 
-  .categories {
+  h1 {
+    /*For title*/
+    text-align: center;
+    color: #2b98de;
+    font-weight: 300;
+    font-size: 32px;
+    padding: 20px;
+  }
+
+  h2 {
+    /*For Subtitle*/
+    text-align: center;
+    color: #2b98de;
+    font-weight: 200;
+    font-size: 24px;
+    padding: 20px;
+  }
+
+  h4 {
+    /*For description or excerpt*/
+    text-align: center;
+    font-size: 14px;
+    color: #000;
+    font-weight: 300;
+    padding: 0 20px 40px 20px;
+  }
+
+  h6 {
+    /*For Categories*/
     color: #999999;
     font-weight: 500;
     font-size: 9px;
@@ -16,68 +44,42 @@
     padding-top: 30px;
   }
 
+  p {
+    text-align: justify;
+    color: #999999;
+    font-size: 12px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
 
-  .case {
+  .embed-responsive-item{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    height: 330px;
+  }
 
-    h1 {
-      text-align: center;
-      color: #2b98de;
-      font-weight: 300;
-      font-size: 32px;
-      padding: 20px;
-    }
+  .media-subtitle {
+    background-color: #fff;
+    font-size: 12px;
+    color: #999999;
+    text-align: left;
+    padding: 15px;
+  }
 
-    h2 {
-      text-align: center;
-      color: #2b98de;
-      font-weight: 200;
-      font-size: 24px;
-      padding: 20px;
-    }
+  .code-snippet {
+    padding: 10px;
+  
+    overflow: auto;
 
-    .description {
-      text-align: center;
-      color: #000;
-      font-weight: 300;
-      padding: 0 20px 40px 20px;
-    }
-
-    p {
-      text-align: justify;
-      color: #999999;
-      font-size: 12px;
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-
-    .embed-responsive-item{
-      text-align: center;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      height: 330px;
-    }
-
-    .media-subtitle {
+    span {
       background-color: #fff;
       font-size: 12px;
       color: #999999;
       text-align: left;
-      padding: 15px;
-    }
-
-    .code-snippet {
-      padding: 10px;
-    
-      overflow: auto;
-
-      span {
-        background-color: #fff;
-        font-size: 12px;
-        color: #999999;
-        text-align: left;
-      }
     }
   }
+  
 
   .author-and-date {
     padding-top: 20px;
