@@ -12,10 +12,11 @@ body {
   text-transform: uppercase;
 }
 
-a.custom-button:hover {
-    font-weight: bold;
-    text-decoration: none;
-  }
+.custom-button:hover {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
+}
 
 .case-study-button {  color: #2b98de; }
 .contact-button { color: #fff; }
