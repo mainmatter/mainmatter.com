@@ -1,0 +1,97 @@
+
+body {
+  color: #676767;
+}
+
+.case-study-button {
+  border-color: #2b98de;
+  background-color: #fff;
+}
+
+.contact-button {
+  border-color: #fff;
+  background-color: #2b98de;
+}
+
+#main-menu {
+  background-color: #fff;
+
+  a:hover, .active { 
+    background-color: #fff;
+    border-bottom-color: #2b98de;
+  }
+}
+
+#footer {
+  background-color: #fff;
+
+  ul {
+    li {
+      a {
+        background-color: #fff;
+
+        &:hover, &.active {
+          background-color: #fff;
+          color: #0480c1;
+        }
+      }
+    }
+  }
+}
+
+.top-other-banner {
+  color: #fff;
+  span {  background-color: #000; }
+}
+
+.bottom-other-banner { color: #fff; }
+
+.case-study {
+  h4 { color: #2b98de; }
+  .case-study-tags {  color: #999999;}
+}
+
+.title-bottom-border {  border-color: #efefef; }
+
+.about-main {
+  h3 {  color: #2b98de; }
+  a: hover { color: #2b98de; }
+}
+
+.blog-list {
+  
+  .blog-list-item {
+    border-bottom-color: #efefef; 
+
+    .blog-categories {  color: #2b98de;}
+    h3 {  color: #2b98de; }
+  }
+}
+
+.cases-and-blog-articles {
+  
+   h1 { color: #2b98de; }
+   h2 { color: #2b98de; }
+   h3 { color: #2b98de; }
+   h4 { color: #000;}
+   h6 { color: #999999; }
+}
+
+#contact-main-section {
+
+  h3 {  color: #2b98de;}
+}
+
+#index-banner {
+  color: #fff;
+  span {  background-color: #000; }
+}
+
+.process-main {
+  h3 {  color: #2b98de;}
+  hr{  border-bottom-color: #efefef; }
+}
+
+.services-main {
+  h3 {  color: #2b98de;}
+}

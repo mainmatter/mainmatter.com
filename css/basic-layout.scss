@@ -2,15 +2,16 @@
 ---
 
 @import 'helpers';
-
-body {
-  height: 100%;
-  line-height: 1.7;
-  font-weight: 300;
-  font-family: 'Ubuntu', sans-serif;
-  letter-spacing: 1px;
-  color: #676767;
-}
+@import 'typography';
+@import 'colour-scheme';
+@import 'about-page';
+@import 'blog-list-page';
+@import 'cases-and-blog';
+@import 'clients-page';
+@import 'contact';
+@import 'home-page';
+@import 'process-page';
+@import 'services-page';
 
 @media screen and (max-width: 768px) {
     body { padding-top: 0px; }
@@ -19,13 +20,17 @@ body {
 #main-menu {
   margin-bottom: 0;
   background-color: #fff;
-  font-size: 14px;
   text-align: center;
 
   a {
-    color: #000;
     padding-bottom: 2px;
     display: inline-block;
+  }
+
+  a:hover, .active {
+    padding-bottom: 2px;
+    border-bottom-width: 2px;
+    border-bottom-style: solid; 
   }
 
   img {
@@ -39,7 +44,6 @@ body {
     .navbar-nav {
       width: 100%;
       text-align: center;
-
     }
 
     .navbar-nav > li {
@@ -48,28 +52,11 @@ body {
       margin-top: 0;
     }
 
-    .navbar-nav > li.navbar-right {
-      float: right;
-    }
+    .navbar-nav > li.navbar-right { float: right; }
   }
 
-  a:hover, .active {
-    color: #2b98de;
-    font-weight: bold;
-    background-color: #fff;
-    padding-bottom: 2px;
-    border-bottom: solid 2px #2b98de;
-  }
-
-  .navbar-brand {
-    width: 100%;
-  }
-  .navbar-brand:hover {
-    border: none;
-  }
-
-
-  
+  .navbar-brand { width: 100%; }
+  .navbar-brand:hover { border: none; }  
 }
 
 #main-content {
@@ -79,49 +66,25 @@ body {
 .custom-button {
   border-style: solid;
   border-width: 3px;
-  text-transform: uppercase;
   text-align: center;
-  font-size: 11px;
   padding: 5px 50px 5px 50px;
-
-  a:hover {
-    font-weight: bold;
-    text-decoration: none;
-  }
 }
-
-.case-study-button {
-  border-color: #2b98de;
-  background-color: #fff;
-  color: #2b98de;
-}
-
-.contact-button {
-  border-color: #fff;
-  background-color: #2b98de;
-  color: #fff;
-}
-
-
 
 #footer {
   margin-bottom: 0;
   bottom: 0;
-  border-top: 1px solid #ccc;
-  background-color: #fff;
   height: 50px;
   width: 100%;
   text-align: center;
 
   #footer-logo {
-    font-size: 10.8px;
     margin-bottom: 0;
     padding-bottom: 0;
     margin-left: 0;
+    border: none;
     text-align: left;
-    @media screen and (max-width: 768px) {
-      text-align: center;
-    }
+
+    @media screen and (max-width: 768px) { text-align: center; }
 
     i {
     	margin-top: 19px;
@@ -134,54 +97,27 @@ body {
     li {
 
       a {
-      	font-size: 11px;
-        color: #000;
-        background-color: #fff;
         border: none;
         text-align: center;
 
-        @media screen and (max-width: 768px) {
-          text-align: center;
-        }
-
-        &:hover, &.active {
-          background-color: #fff;
-          color: #0480c1;
-        }
+        @media screen and (max-width: 768px) { text-align: center; }        
       }
     }
   }
-
-  
 }
 
 .top-other-banner {
   height: 150px;
   width: 100%;
-  color: #fff;
   text-align: center;
   background-image: url('../images/cases-banner.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
 
-  div {
-    @include vertical-align();
-    font-size: 80%
-  }
-
-  h2 {
-    margin: 0 auto;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-
-  p { padding: 10px;}
-  
-  span {
-    background-color: #000;
-    padding: 3px;
-  }
+  div { @include vertical-align(); }
+  p { padding: 3px;}
+  span {  padding: 3px;}
 }
 
 .banner-small {
@@ -204,8 +140,7 @@ body {
     }
   }
 
-  @media (max-width: 768px) {
-    padding-top: 15px;   }
+  @media (max-width: 768px) {  padding-top: 15px;}
 }
 
 .other-contact-bg {
@@ -215,50 +150,32 @@ body {
 .bottom-other-banner {
   height: 50px;
   width: 100%;
-  color: #fff;
   text-align: center;
   background-image: url('../images/other-contact-banner.png');
   background-repeat: no-repeat;
   background-size: 100% 50px;
 }
 
-.case-study{
+.case-study {
   padding: 50px;
   margin-top: 50px;
   margin-bottom: 50px;
 
-  h4 {
-    color: #2b98de;
-    font-weight: 300;
-  }
-
   p {
     text-align: justify;
-    font-size: 11px;
     padding-top: 10px;
     padding-bottom: 10px; 
   }
 
-  .case-study-tags{
-    color: #999999;
-    font-weight: 400;
-    font-size: 11px;
-    text-transform: uppercase;
+  .case-study-tags {
     padding-top: 20px;
-
-    .case-study-tags-left {
-      text-align: left;
-      text-transform: uppercase;
-    }
-
-    .case-study-tags-right {
-      text-transform: uppercase;
-      text-align: right;
-    }
+    .case-study-tags-left { text-align: left;}
+    .case-study-tags-right {  text-align: right;}
   }
 }
 
 .title-bottom-border {
   border-width: 0 0 1px 0;
-  border-bottom: 1px solid #efefef;
+  border-bottom-style: solid;
+  margin-left: -20px;
 }

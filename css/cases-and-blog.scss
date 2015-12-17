@@ -1,8 +1,4 @@
----
----
-
 @import 'helpers';
-
 
 .cases-and-blog-articles {
   padding: 10px;
@@ -10,53 +6,35 @@
   h1 {
     /*For title*/
     text-align: center;
-    color: #2b98de;
-    font-weight: 300;
-    font-size: 32px;
     padding: 20px;
   }
 
   h2 {
     /*For Subtitle*/
     text-align: center;
-    color: #2b98de;
-    font-weight: 200;
-    font-size: 24px;
     padding: 10px;
   }
 
   h3 {
     /*For sub-subtitle*/
     text-align: left;
-    color: #2b98de;
-    font-weight: 200;
-    font-size: 18px;
     padding: 10px;
   }
 
   h4 {
     /*For description or excerpt*/
     text-align: center;
-    font-size: 14px;
-    color: #000;
-    font-weight: 300;
     padding: 0 20px 40px 20px;
   }
 
   h6 {
     /*For Categories*/
-    color: #999999;
-    font-weight: 500;
-    font-size: 14px;
     text-align: center;
-    text-transform: uppercase;
     padding-top: 30px;
   }
 
   p {
     text-align: justify;
-    color: #999999;
-    font-size: 14px;
     padding: 10px;
     margin-bottom: 10px;
   }
@@ -64,10 +42,6 @@
   pre {
     white-space: nowrap;
     overflow-x: visible;
-  }
-
-  blockquote {
-    font-weight: bold;
   }
 
   .embed-responsive-item{
@@ -79,31 +53,24 @@
   
 
   .author-and-date {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px;
     border-width: 2px 0 0px 0;
     border-top: 2px solid #efefef;
+    text-align: right;
 
-    .date {
-      font-weight: bold;
-      font-size: 12px;
-    }
-
+    i { margin-left: 10px; }
     i.ganesh {
-      @include icon("/images/authors/ganesh-bala", "jpg", 125px, 125px);
-      background-color: #efefef;
+      @include icon("/images/authors/ganesh-bala", "jpg", 125px, 125px);  
     }
 
     i.marco {
       @include icon("/images/authors/ganesh-bala", "jpg", 125px, 125px);
-      background-color: #efefef;
     }
 
     .author {
       margin-top: 0;
       margin-left: 10px;
-      font-size: 18px;
-      font-weight: bold;
+
     }
 
   }   

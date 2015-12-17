@@ -21,13 +21,27 @@
             {{content}}
             <div class="row author-and-date">
               <div class="col-md-12">
-                <p class="date row">{{ page.date | date: '%B %d, %Y' }}</p>
                 <div class="row">
-                  <i class="{{ page.author }} pull-left"></i>
-                  <span class="author">{{ page.author | upcase }}</span>
+                  <i class="{{ page.author }} pull-right"></i>
+                  <div class="author pull-right">
+                    <span>{{ page.author | upcase }}</span><br>
+                    <span class="date">{{ page.date | date: '%B %d, %Y' }}</span>
+                  </div>
+
                 </div>
               </div>
             </div>
+            <div id="disqus_thread"></div>
+             <script type="text/javascript">
+               var disqus_shortname = 'simplabscom-log';
+               (function() {
+                 var dsq = document.createElement('script');
+                 dsq.type = 'text/javascript';
+                 dsq.async = true;
+                 dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+               })();
+             </script>
           </div>
         </div>
       </div>

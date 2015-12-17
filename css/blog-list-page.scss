@@ -1,5 +1,3 @@
----
----
 
 @import 'helpers';
 
@@ -11,11 +9,9 @@
   padding-top: 30px;
   padding-bottom: 30px;
   border-width: 0 0 2px 0;
-  border-bottom: 2px solid #efefef;
+  border-bottom-style: solid;
   
     .blog-categories {
-      color: #2b98de;
-      font-weight: bold;
       padding-top: 5px;
       padding-bottom: 5px;
     }
@@ -23,27 +19,19 @@
     .blog-date-and-author {
       padding-top: 5px;
       padding-bottom: 5px;
-      font-size: 12px;
     }
 
-    h3 {
-      color: #2b98de;
-      font-weight: lighter;
-      margin-top: 0;
-    }
+    h3 {  margin-top: 0; }
 
     h4 {
       padding-top: 10px;
       padding-bottom: 10px;
       text-align: justify;
-      font-weight: lighter;
-      font-size: 14px;
     }
-
   }
+  
   .blog-navigate {
     margin-top: 20px;
   }
-
 }
 

@@ -1,36 +1,14 @@
----
----
-
 @import 'helpers';
 
 .about-main {
  padding-top: 50px;
  padding-bottom: 50px;
 
-  h3 {
-    text-align: left;
-    color: #2b98de;
-    font-weight: lighter;
-    font-size: 24px;
-    
-  }
+  h3 { text-align: left; }
 
-  p {
-    font-size: 12px;
-    padding: 15px 60px 5px 20px;
-  }
+  p { padding: 15px 15px 5px 15px; }
 
-  .love:before {
-  font-family: 'FontAwesome';
-  content: "\f004";
-  color: red;
-  font-style: normal;
-  }
-
-  a:hover {
-    text-decoration: underline;
-    color: #2b98de;
-  }
+  a:hover { text-decoration: underline; }
 
   i.munich-ember-meetup {
     @include icon("/images/logos/munich-ember-meetup", "png", 84px, 90px);

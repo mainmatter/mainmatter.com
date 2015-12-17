@@ -1,40 +1,5 @@
----
----
 
 @import 'helpers';
-
-#contact-banner {
-  height: 150px;
-  width: 100%;
-  color: #fff;
-  text-align: center;
-  background-image: url('../images/cases-banner.png');
-  background-repeat: no-repeat;
-  background-size: 100% 150px;
-
-
-  .col-md-6 {
-    @include vertical-align();
-    font-size: 80%;
-  }
-
-  h2 {
-    margin: 0 auto;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  
-  span {
-    background-color: #000;
-    padding: 3px;
-  }
-}
-
-.pad-with-btm-border {
-  padding-bottom: 150px;
-  border-width: 0 0 1px 0;
-  border-bottom: 1px solid #efefef;
-}
 
 #contact-main-section {
   padding-top: 50px;
@@ -42,25 +7,14 @@
 
   h3 {
     text-align: left;
-    color: #2b98de;
-    font-weight: lighter;
-    font-size: 24px;
     padding: 0;
   }
 
-  hr {
-    margin-top: 100px;
-  }
+  hr {  margin-top: 100px; }
 
-  p {
-    font-size: 12px;
-    padding: 15px 5px 5px 5px;
-  }
+  p { padding: 15px 5px 5px 5px; }
 
-  a {
-    color: #2b98de;
-    padding: 15px 5px 5px 5px;
-  }
+  a { padding: 15px 5px 5px 5px; }
 
   .email-link:before {
     font-family: 'FontAwesome';

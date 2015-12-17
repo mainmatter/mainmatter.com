@@ -25,9 +25,9 @@ Once the previous versions are uninstalled, install the 1.0.0 release:
 
 With 1.0.0 all modules that it defines now live in the ember-simple-auth namespace as opposed to the simple-auth namespace of previous versions. All the import statements that import code from Ember Simple Auth need to be updated accordingly, e.g.
 
-{% highlight js lineos %}
+``` js
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
-{% endhighlight %}
+```
 becomes
 
 {% highlight js lineos %}

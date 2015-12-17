@@ -1,13 +1,9 @@
----
----
-
 @import 'helpers';
 
 #index-banner {
   height: 500px;
   width: 100%;
   margin-right: 0;
-  color: #fff;
   text-align: center;
   background-image: url('../images/index-banner.png');
   background-repeat: no-repeat;
@@ -24,10 +20,7 @@
     text-transform: uppercase;
   }
 
-  span {
-    background-color: #000;
-    padding: 3px;
-  }
+  span {  padding: 3px; }
 }
 
 .main-section{

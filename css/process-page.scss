@@ -1,27 +1,12 @@
----
----
-
 @import 'helpers';
 
 .process-main {
   padding: 20px 0 40px 0;
   text-align: center;
 
-  h3 {
-    color: #2b98de;
-    font-weight: lighter;
-    font-size: 24px;
-    padding-bottom: 10px;
-  }
+  h3 {  padding-bottom: 10px;}
 
-  p {
-    font-size: 12px;
-    padding: 10px 20px 10px 20px;
-
-    a {
-      text-decoration: underline;
-    }
-  }
+  p { padding: 10px 20px 10px 20px; }
 
   i {
     filter: gray; /* IE6-9 */
@@ -40,10 +25,6 @@
 
   .tool-highlight {
     padding: 5px 30px 5px 30px;
-
-    p {
-      font-size: 11px;
-    }
 
     i {
       min-height: 100px;
@@ -102,6 +83,6 @@
 
   hr {
     border-width: 0 0 3px 0;
-    border-bottom: 3px solid #efefef;
+    border-bottom-style: solid;
   }
 }

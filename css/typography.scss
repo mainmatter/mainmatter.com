@@ -1,0 +1,177 @@
+
+body {
+  height: 100%;
+  line-height: 1.7;
+  font-weight: 300;
+  font-family: 'Ubuntu', sans-serif;
+  letter-spacing: 1px;
+}
+
+.custom-button {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+a.custom-button:hover {
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+.case-study-button {  color: #2b98de; }
+.contact-button { color: #fff; }
+
+#main-menu { 
+  font-size: 14px; 
+
+  a { color: #000; }
+
+  a:hover, .active {
+    color: #2b98de;
+    font-weight: bold;
+  }
+}
+
+#footer {
+  #footer-logo { font-size: 10.8px; }
+
+  ul {
+    li {
+      a {
+        font-size: 11px;
+        color: #000;
+      }
+    }
+  }
+}
+
+.top-other-banner {
+  font-size: 80%;
+  h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.case-study {
+  h4 {  font-weight: 300; }
+  p { font-size: 11px; }
+
+  .case-study-tags {
+    font-weight: 400;
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+}
+
+.about-main {
+  h3 {
+    font-weight: lighter;
+    font-size: 24px;
+  }
+
+  p { font-size: 12px; }
+
+  .love:before {
+  font-family: 'FontAwesome';
+  content: "\f004";
+  color: red;
+  font-style: normal;
+  }
+}
+
+.blog-list {
+  
+  .blog-list-item {
+
+    .blog-categories {  font-weight: bold; }
+    .blog-date-and-author { font-size: 12px; }
+    h3 {  font-weight: lighter; }
+    
+    h4 {
+      font-weight: lighter;
+      font-size: 14px;
+    }
+  }
+}
+
+.cases-and-blog-articles {
+
+  h1 {
+    font-weight: 300;
+    font-size: 32px;
+  }
+
+  h2 {
+    font-weight: 200;
+    font-size: 24px;
+  }
+
+  h3 {
+    font-weight: 200;
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  h6 {
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  p { font-size: 14px;}
+  blockquote {  font-weight: bold; }
+
+  .author-and-date {
+
+    .date {
+      font-weight: bold;
+      font-size: 12px;
+
+    }
+
+    i { background-color: #efefef; }
+
+    .author {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+}
+
+#contact-main-section {
+  h3 {
+    font-weight: lighter;
+    font-size: 24px;
+  }
+
+  p { font-size: 12px;}
+}
+
+.process-main {
+  h3 {
+    font-weight: lighter;
+    font-size: 24px;
+  }
+  p {
+    font-size: 16px;
+  }
+
+}
+.tools-section {
+    p { font-size: 14px;}
+}
+
+.services-main {
+  
+  h3 {
+    font-weight: lighter;
+    font-size: 24px;
+  }
+
+  p { font-size: 14px;  }
+}
