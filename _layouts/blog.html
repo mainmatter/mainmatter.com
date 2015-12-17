@@ -23,8 +23,8 @@
               <div class="col-md-12">
                 <p class="date row">{{ page.date | date: '%B %d, %Y' }}</p>
                 <div class="row">
-                  <i class="author-image pull-left"></i>
-                  <span class="author">{{ page.author }}</span>
+                  <i class="{{ page.author }} pull-left"></i>
+                  <span class="author">{{ page.author | upcase }}</span>
                 </div>
               </div>
             </div>

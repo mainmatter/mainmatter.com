@@ -25,12 +25,11 @@ title:
           </div>
           <div class="blog-date-and-author">
             <span class="date pull-left">{{ post.date | date: '%B %d, %Y' }}</span>
-            <span class="author pull-right">{{ post.author }}</span>
+            <span class="author pull-right">{{ post.author | upcase }}</span>
           </div>
           <br>
           <h3>{{ post.title }}</h3>
-          <p>
-          {{ post.excerpt | remove: '<h4>' | remove: '</h4>' }}</p>
+          {{ post.excerpt }}
           <span class="custom-button case-study-button"><a href="{{ post.url }}">Read on</a></span>
         </div>
       {% endfor %}
