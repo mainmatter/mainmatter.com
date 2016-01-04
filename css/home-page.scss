@@ -12,7 +12,15 @@
 
   .col-md-6 {
     @include vertical-align();
-    font-size: 80%;
+
+    h2 {
+      font-size: 34px;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 16px;
+    }
   }
 
   h2 {
