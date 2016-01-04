@@ -126,15 +126,15 @@
 }
 
 .top-banner {
-  height: 150px;
-  width: 100%;
   text-align: center;
   background-image: url('../images/cases-banner.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
+  .row {
+    padding: 20px 0;
+  }
 
-  div { @include vertical-align(); }
   p { padding: 3px;}
   span {  padding: 3px;}
 }
