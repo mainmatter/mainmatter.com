@@ -70,10 +70,23 @@
 }
 
 .custom-button {
-  border-style: solid;
-  border-width: 3px;
+  border: 2px solid #2b98de;
   text-align: center;
   padding: 5px 50px 5px 50px;
+
+  &:hover {
+    background-color: #2b98de;
+    color: #fff;
+  }
+
+  &.contact-button {
+    border-color: #fff;
+
+    &:hover {
+      background-color: #fff;
+      color: #2b98de;
+    }
+  }
 }
 
 #footer {
