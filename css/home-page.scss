@@ -1,17 +1,13 @@
 @import 'helpers';
 
-#index-banner {
-  height: 500px;
+.top-banner {
   width: 100%;
-  margin-right: 0;
-  text-align: center;
   background-image: url('../images/index-banner.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  padding: 100px 0;
 
-
-  .col-md-6 {
-    @include vertical-align();
+  .col-md-10 {
 
     h2 {
       font-size: 34px;
@@ -32,10 +28,13 @@
 }
 
 .main-section{
-  width: 100%;
   text-align: left;
 }
 
-.home-contact-bg {
+.footer {
+  width: 100%;
   background-image: url('../images/contact-banner-background.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 20px 0;
 }

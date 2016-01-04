@@ -144,22 +144,14 @@
   background-image: url('../images/top-banner-small.png');
 }
 
-.contact-section {
-  height: 100px;
-  width: 100%;
-  margin: 0 0 0 0;
+.footer {
   background-repeat: no-repeat;
   background-size: 100% 100px;
   color: #fff;
-  text-align: center;
 
-  @media (min-width: 768px) {
-    div {
-      @include vertical-align();
-    }
+  .contact-button {
+    margin-top: 4px;
   }
-
-  @media (max-width: 768px) {  padding-top: 15px;}
 }
 
 .other-contact-bg {
@@ -176,7 +168,6 @@
 }
 
 .case-study {
-  padding: 50px;
   margin-top: 50px;
   margin-bottom: 50px;
 
