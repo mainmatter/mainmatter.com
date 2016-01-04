@@ -14,7 +14,7 @@
 @import 'services-page';
 
 @media screen and (max-width: 768px) {
-    body { padding-top: 0px; }
+  body { padding-top: 0px; }
 }
 
 #main-menu {
@@ -22,15 +22,21 @@
   background-color: #fff;
   text-align: center;
 
+  li.page {
+    width: 10%;
+  }
+
   a {
-    padding-bottom: 2px;
+    padding: 15px;
     display: inline-block;
   }
 
   a:hover, .active {
-    padding-bottom: 2px;
-    border-bottom-width: 2px;
-    border-bottom-style: solid; 
+    font-weight: normal;
+
+    span {
+      border-bottom: 2px solid #2b98de;
+    }
   }
 
   img {

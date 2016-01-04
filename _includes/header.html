@@ -11,7 +11,9 @@
             {% if page.url == link.file %}
               {% assign active = 'active' %}
             {% endif %}
-            <li class=""><a href="{{link.url}}" class="{{link.class}} {{active}}">{{link.title}}</a></li>
+            <li class="page">
+              <a href="{{link.url}}" class="{{link.class}} {{active}}"><span>{{link.title}}</span></a>
+            </li>
           {% endfor %}
           <li class="navbar-right"><a href="/contact">Contact Us</a></li>
         </ul>
