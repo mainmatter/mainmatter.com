@@ -69,6 +69,26 @@
   min-height: 100%;
 }
 
+#main-section {
+  margin: 50px auto;
+
+  & > .row {
+    margin: 25px auto;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+hr {
+  margin: 0;
+}
+
 .custom-button {
   border: 2px solid #2b98de;
   text-align: center;
@@ -170,9 +190,6 @@
 }
 
 .case-study {
-  margin-top: 50px;
-  margin-bottom: 50px;
-
   p {
     text-align: justify;
     padding-top: 10px;

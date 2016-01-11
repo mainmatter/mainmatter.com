@@ -1,34 +1,9 @@
+#map-canvas {
+  height: 250px;
+  margin: 0 0 10px;
+}
 
-@import 'helpers';
-
-#contact-main-section {
-  padding-top: 50px;
-  padding-bottom: 50px;
-
-  h3 {
-    text-align: left;
-    padding: 0;
-  }
-
-  hr {  margin-top: 100px; }
-
-  p { padding: 15px 5px 5px 5px; }
-
-  a { padding: 15px 5px 5px 5px; }
-
-  .email-link:before {
-    font-family: 'FontAwesome';
-    content: "\f0e0\00a0";
-  }
-
-  .twitter-link:before {
-    font-family: 'FontAwesome';
-    content: "\f099\00a0";
-  }
-
-  #map-canvas {
-    padding: 15px 5px 5px 5px;
-    height: 300px;
-  }
-
+.address > span {
+  display: block;
+  clear: both;
 }
