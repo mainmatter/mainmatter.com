@@ -373,6 +373,10 @@ h2 {
       @include icon("/images/logos/xbav", "png", 108px, 60px);
     }
 
+    i.robinhood {
+      @include icon("/images/logos/robinhood", "png", 229px, 40px);
+    }
+
     i.campus {
       @include icon("/images/logos/campus", "png", 169px, 76px);
     }
