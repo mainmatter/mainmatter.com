@@ -150,14 +150,20 @@ hr {
   background-image: url('../images/cases-banner.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  padding: 20px 0;
 
   .row {
     padding: 20px 0;
   }
 
+  h2 {
+    margin: 0 auto 10px auto;
+  }
+
   p {
     margin: 0;
   }
+
   span {  padding: 3px;}
 }
 
