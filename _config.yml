@@ -24,10 +24,6 @@ navigation:
     url: /process
     file: /process/index.html
     class:
-  - title: Cases
-    url: /cases
-    file: /cases/index.html
-    class:
   - title: About
     url: /about
     file: /about/index.html
