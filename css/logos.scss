@@ -109,3 +109,15 @@ i.docker {
 i.sinatra {
   @include icon("/images/logos/sinatra", "png", 29px, 20px);
 }
+
+i.emberjs-logo {
+  @include icon("/images/logos/emberjs", "png", 105px, 100px);
+}
+
+i.rails-logo {
+  @include icon("/images/logos/ruby-on-rails", "png", 77px, 100px);
+}
+
+i.swift-logo {
+  @include icon("/images/logos/swift", "png", 100px, 100px);
+}
