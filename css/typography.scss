@@ -12,6 +12,8 @@ i.love:before {
   content: "\f004";
   color: red;
   font-style: normal;
+  filter: none;
+  -webkit-filter: none;
 }
 
 h4 {

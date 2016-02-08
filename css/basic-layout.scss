@@ -4,14 +4,9 @@
 @import 'helpers';
 @import 'typography';
 @import 'colour-scheme';
-@import 'about-page';
 @import 'blog-list-page';
 @import 'cases-and-blog';
-@import 'clients-page';
-@import 'contact';
-@import 'home-page';
-@import 'process-page';
-@import 'services-page';
+@import 'logos';
 
 @media screen and (max-width: 768px) {
   body { padding-top: 0px; }
@@ -179,6 +174,11 @@ hr {
   padding: 20px 0;
   height: 180px;
 
+  &.main-page {
+    padding: 100px 0;
+    height: auto;
+  }
+
   .row {
     padding: 20px 0;
   }
@@ -201,8 +201,11 @@ hr {
 }
 
 .footer {
+  width: 100%;
+  background-image: url('../images/contact-banner-background.png');
   background-repeat: no-repeat;
-  background-size: 100% 100px;
+  background-size: 100% 100%;
+  padding: 20px 0;
   color: #fff;
 
   .contact-button {
@@ -242,4 +245,14 @@ hr {
     width: 100%;
     text-align: center;
   }
+}
+
+#map-canvas {
+  height: 250px;
+  margin: 0 0 10px;
+}
+
+.address > span {
+  display: block;
+  clear: both;
 }
