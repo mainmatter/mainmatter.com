@@ -7,6 +7,13 @@ body {
   text-align: justify;
 }
 
+i.love:before {
+  font-family: 'FontAwesome';
+  content: "\f004";
+  color: red;
+  font-style: normal;
+}
+
 h4 {
   font-size: 20px;
 }
@@ -77,12 +84,7 @@ h3 {
 
   p { font-size: 12px; }
 
-  .love:before {
-  font-family: 'FontAwesome';
-  content: "\f004";
-  color: red;
-  font-style: normal;
-  }
+  
 }
 
 .blog-list {
