@@ -1,11 +1,6 @@
 
 @import 'helpers';
 
-.client-logos{
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
-
   i {
     min-height: 100px;
     background-repeat: no-repeat;
@@ -84,5 +79,3 @@
   i.terminapp {
     @include icon("/images/logos/terminapp", "png", 40px, 40px);
   }
-}
-

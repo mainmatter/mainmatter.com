@@ -177,7 +177,7 @@ hr {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   padding: 20px 0;
-  min-height: 181px;
+  height: 180px;
 
   .row {
     padding: 20px 0;
@@ -189,6 +189,7 @@ hr {
 
   p {
     margin: 0;
+    overflow: show;
   }
 
   span {  padding: 3px;}
@@ -222,17 +223,10 @@ hr {
   background-size: 100% 50px;
 }
 
-.case-study {
+.content-teaser {
   p {
-    text-align: justify;
     padding-top: 10px;
     padding-bottom: 10px; 
-  }
-
-  .case-study-tags {
-    padding-top: 20px;
-    .case-study-tags-left { text-align: left;}
-    .case-study-tags-right {  text-align: right;}
   }
 }
 
@@ -240,4 +234,12 @@ hr {
   border-width: 0 0 1px 0;
   border-bottom-style: solid;
   margin-left: -20px;
+}
+
+.client-logos {
+  a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 }
