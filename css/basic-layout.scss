@@ -67,6 +67,16 @@
 
 #main-content {
   min-height: 100%;
+
+  .text-section {
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .section-divider {
+    margin: 50px 0;
+  }
 }
 
 #main-section {
