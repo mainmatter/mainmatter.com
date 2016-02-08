@@ -7,13 +7,16 @@ body {
   text-align: justify;
 }
 
-i.love:before {
-  font-family: 'FontAwesome';
-  content: "\f004";
-  color: red;
-  font-style: normal;
+i.love {
   filter: none;
-  -webkit-filter: none;
+  -webkit-filter: grayscale(0);
+
+  &:before {
+    font-family: 'FontAwesome';
+    content: "\f004";
+    color: red;
+    font-style: normal;
+  }
 }
 
 h4 {
