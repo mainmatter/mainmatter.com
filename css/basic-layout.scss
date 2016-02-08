@@ -69,6 +69,22 @@
   min-height: 100%;
 
   .text-section {
+    &:after {
+      margin-left: 15px;
+      width: calc(50% - 15px);
+      border-bottom: 1px solid #eee;
+      padding-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    &:last-child {
+      &:after {
+        border-bottom: none;
+        padding-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
     p:last-child {
       margin-bottom: 0;
     }
