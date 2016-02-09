@@ -102,6 +102,12 @@ h3, h4 {
   }
 }
 
+.contact-banner {
+  h4 {
+    color: $secondary-highlight-color;
+  }
+}
+
 .tools {
   .other-tools:after {
     border-bottom-color: $border-color;
