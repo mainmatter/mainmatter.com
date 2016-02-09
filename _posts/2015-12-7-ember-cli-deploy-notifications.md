@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: article
 title: "ember-cli-deploy-notifications"
 categories: ember-cli
 author: "ganesh balasubramanian"

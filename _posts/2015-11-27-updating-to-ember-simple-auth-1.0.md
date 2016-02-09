@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: article
 title: "Updating to Ember Simple Auth 1.0"
 categories: ember, authentication
 author: "marco otte-witte"
