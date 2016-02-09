@@ -22,12 +22,17 @@
   a {
     padding: 15px;
     display: inline-block;
-  }
+    border-bottom: none;
 
-  a:hover, .active {
     span {
-      border-bottom-width: 2px;
-      border-bottom-style: solid;
+      border-bottom: 1px solid transparent;
+    }
+
+    &:hover, &.active {
+      span {
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+      }
     }
   }
 
@@ -48,9 +53,11 @@
       float: none;
       display: inline-block;
       margin-top: 0;
-    }
 
-    .navbar-nav > li.navbar-right { float: right; }
+      &.navbar-right {
+        float: right;
+      }
+    }
   }
 
   .navbar-brand { width: 100%; }

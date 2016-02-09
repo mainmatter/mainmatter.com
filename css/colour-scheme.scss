@@ -12,12 +12,39 @@ body {
   color: $primary-text-color;
 }
 
+a {
+  color: $primary-highlight-color;
+  transition: border-bottom-color ease-in-out .15s;
+
+  &:hover {
+    color: $primary-highlight-color;
+    border-bottom-color: $primary-highlight-color;
+  };
+}
+
 h3 {
   color: $primary-highlight-color;
 }
 
+#main-menu {
+  a {
+    transition: color ease-in-out .15s;
+
+    span {
+      transition: border-bottom-color ease-in-out .15s;
+    }
+
+    &:hover, &.active {
+      span {
+        border-bottom-color: $primary-highlight-color;
+      }
+    }
+  }
+}
+
 .custom-button {
   border-color: $primary-highlight-color;
+  transition: color ease-in-out .15s, background-color ease-in-out .15s;
 
   &:hover {
     background-color: $primary-highlight-color;

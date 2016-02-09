@@ -5,8 +5,8 @@ i {
   background-position: center center;
   background-size: contain;
   filter: gray;
-  filter: grayscale(1);
   -webkit-filter: grayscale(1);
+  transition: filter ease-in-out .15s, -webkit-filter ease-in-out .15s;
 }
 
 i:hover {

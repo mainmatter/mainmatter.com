@@ -7,6 +7,21 @@ body {
   text-align: justify;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  a {
+    border-bottom: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    text-decoration: none;
+  };
+}
+
 i.love {
   filter: none;
   -webkit-filter: grayscale(0);
@@ -60,6 +75,15 @@ h3 {
   }
 }
 
+.client-logos {
+  a {
+    border-bottom: none;
+  }
+}
+
+.main-tools a.icon, .other-tools a {
+  border-bottom: none;
+}
 
 .articles {
   .article-meta {
