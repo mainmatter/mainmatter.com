@@ -267,6 +267,13 @@ hr {
   }
 
   .other-tools {
+    &:after {
+      margin-left: 15px;
+      padding-top: 60px;
+      width: calc(100% - 15px);
+      border-bottom: 1px solid #eee;
+    }
+
     a {
       display: block;
       width: 100%;
