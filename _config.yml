@@ -6,14 +6,13 @@ sass:
 gems:
   - jekyll-sitemap
 
-
 markdown: kramdown
+highlighter: rouge
 
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
 
-excerpt_separator: <!-break->
+excerpt_separator: <!--break-->
   
 navigation:
   - title: Services
@@ -36,5 +35,3 @@ navigation:
     url: /blog
     file: /blog/index.html
     class:
-    
-

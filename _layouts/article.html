@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   {% include head.html %}
-  <body>
+	<body>
     {% include nav.html %}
+
     <div id="main-content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12 top-banner banner-small">
+      <div class="top-banner">
+        <div class="container">
+          <div class="row">
             <div class="col-md-6 col-md-offset-3">
-              <h2>our blog</h2>
-            </div>
+              <h2>simplabs Blog</h2>
+              <p>TODO</p>
+          	</div>
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="row cases-and-blog-articles">
-          <div class="col-md-8 col-md-offset-2">
-            <h6>{{ page.categories }}</h6>
-            <h1>{{ page.title }}</h1>
-            {{content}}
-            <div class="row author-and-date">
-              <div class="col-md-12">
-                <div class="row">
-                  <i class="{{ page.author }} pull-right"></i>
-                  <div class="author pull-right">
-                    <span>{{ page.author | upcase }}</span><br>
-                    <span class="date">{{ page.date | date: '%B %d, %Y' }}</span>
-                  </div>
 
-                </div>
+      <div class="container" id="main-section">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="row content-section separated">
+              <div class="col-md-12">
+                <h3>{{ page.title }}</h3>
+                {{content}}
+                <i class="{{ page.author }} pull-right"></i><div class="author pull-right">  <span>{{ page.author | upcase }}</span><br>  <span class="date">{{ page.date | date: '%B %d, %Y' }}</span></div>
               </div>
             </div>
-            <div id="disqus_thread"></div>
-             <script type="text/javascript">
-               var disqus_shortname = 'simplabscom-log';
-               (function() {
-                 var dsq = document.createElement('script');
-                 dsq.type = 'text/javascript';
-                 dsq.async = true;
-                 dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-               })();
-             </script>
+            <div class="row content-section">
+              <div class="col-md-12">
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                  var disqus_shortname = 'simplabscom-log';
+                  (function() {
+                    var dsq = document.createElement('script');
+                    dsq.type = 'text/javascript';
+                    dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                  })();
+                </script>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="bottom-other-banner"></div>
+  
+      {% include contact_banner.html %}
     </div>
+
    {% include footer.html %}
-  </body>
+
+   {% include analytics.html %}
+	</body>
 </html>

@@ -2,7 +2,7 @@
 layout: article
 title: "ember-cli-deploy-notifications"
 categories: ember-cli
-author: "ganesh balasubramanian"
+author: "Ganesh Balasubramanian"
 ---
 
 A few weeks ago a new version of the “official” ember deployment solution ember-cli-deploy was released:
@@ -11,7 +11,7 @@ A few weeks ago a new version of the “official” ember deployment solution em
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Aaron Chambers and me gave detailed walkthroughs of the basic ideas behind the pipeline at the [Ember-London](https://vimeo.com/139125310) and [Ember.js-Munich](https://www.youtube.com/watch?v=d4xwIv_9Cg0) meetups respectively.
-<!-break->
+<!--break-->
 
 The new release encourages heavy use of [deploy plugins](http://emberobserver.com/categories/ember-cli-deploy-plugins) that all implement different parts of a deployment via [hooks](http://ember-cli.com/ember-cli-deploy/docs/v0.5.x/pipeline-hooks/) and are themselves Ember CLI addons. What wasn’t available though was a plugin for notifying external webservices (e.g. an error-tracking service) during or after deployments so we decided to write one.
 
