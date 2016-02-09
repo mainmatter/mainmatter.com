@@ -10,11 +10,11 @@ With Ember Simple Auth 1.0.0 having been released a few days ago, a lot of peopl
 
 As 1.0.0 marks the first stable release of Ember Simple Auth, upcoming versions will adhere to the Semantic Versioning rule of not including breaking changes in patch level or minor releases. In fact, Ember Simple Auth will follow Ember’s example and only make additive, backwards compatible changes in all 1.x releases and only remove deprecated parts of the library in the next major release.
 
-## Uninstall previous versions
+#### Uninstall previous versions
 
 Ember Simple Auth 1.0.0 is only distributed as an Ember CLI Addon and drops the previous bower distribution as well as the individual ember-cli-simple-auth-* packages. The first step when upgrading to 1.0.0 is to uninstall these packages from the application. To do that simply remove the ember-simple-auth package from bower.json as well as all ember-cli-simple-auth-* packages from packages.json.
 
-## Install 1.0.0
+#### Install 1.0.0
 
 Once the previous versions are uninstalled, install the 1.0.0 release:
 
@@ -22,7 +22,7 @@ Once the previous versions are uninstalled, install the 1.0.0 release:
 ember install ember-simple-auth
 ```
 
-## Fix the imports
+#### Fix the imports
 
 With 1.0.0 all modules that it defines now live in the ember-simple-auth namespace as opposed to the simple-auth namespace of previous versions. All the import statements that import code from Ember Simple Auth need to be updated accordingly, e.g.
 
@@ -37,7 +37,7 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 
 Also the modules for the OAuth 2.0 authenticator and authorizer have been renamed from just **oauth2** to **oauth2-password-grant** and **oauth2-bearer** respectively so that **'simple-auth/authenticators/oauth2'** is now **'ember-simple-auth/authenticators/oauth2-password-grant'** and **'simple-auth/authorizers/oauth2'** is now **'ember-simple-auth/authorizers/oauth2-bearer'**.
 
-## Inject the session service
+#### Inject the session service
 
 With Ember Simple Auth 1.0.0 the session is no longer automatically injected into all routes, controllers and components but instead is now available as an Ember.Service so in all routes, controllers and components that use the session (or back a template that uses it), that session service needs to be injected, e.g.:
 
@@ -49,7 +49,7 @@ export default Ember.Controller.extend({
 });
 ```
 
-## Define Authenticators and Authorizers
+#### Define Authenticators and Authorizers
 
 Ember Simple Auth 1.0.0 does not automatically merge all the predefined authenticators and authorizers into the application anymore but instead requires authenticators and authorizers the application actually uses to be defined explicitly. So if you e.g. were previously using the OAuth 2.0 authenticator simply define an authenticator that extends the OAuth 2.0 authenticator in app/authenticators:
 
@@ -78,7 +78,7 @@ this.get('session').authenticate('authenticator:oauth2', identification, passwor
 
 Also authenticators and authorizers are not configured via config/environment.js anymore but instead the respective properties are simply overridden in the extended classes as for the serverTokenRevocationEndpoint property in the example above.
 
-## Setup authorization
+#### Setup authorization
 
 Ember Simple Auth’s old auto-authorization mechanism was complex (especially when working with cross origin requests where configuring the crossOriginWhitelist was causing big problems for many people) and has been removed in 1.0.0. Instead authorization is now explicit. To authorize a block of code use the session service’s authorize method, e.g.:
 
@@ -100,11 +100,11 @@ export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
 });
 ```
 
-## Migrating custom sessions
+#### Migrating custom sessions
 
 While previous versions of Ember Simple Auth allowed to configure a custom session class in order to add properties and methods to the session, Ember Simple Auth 1.0.0 makes the session private and only exposes the session service. In order to migrate a custom session class to work with the service there are 2 options.
 
-### Extend the session service
+#### Extend the session service
 
 You can simply extend the session service and add custom properties and methods in the subclass, e.g.:
 
@@ -128,7 +128,7 @@ account: Ember.computed('data.authenticated.account_id', function() {
 });
 ```
 
-### Create dedicated services
+#### Create dedicated services
 
 You can also create dedicated services that use the session service internally, e.g.:
 
@@ -155,7 +155,7 @@ In this case the session service remains unchanged and whenever you need the cur
 
 Both solutions work fine but the latter results in cleaner code and better separation of concerns.
 
-## Session Stores
+#### Session Stores
 
 Previous versions of Ember Simple Auth allowed the session store to be configured in config/environment.js. Ember Simple Auth 1.0.0 removes that configuration setting and will always use the 'application' session store. If not overridden by the application that session store will be an instance of the new AdaptiveStore that internally uses the LocalStorageStore if localStorage storage is available and the CookieStore if it is not. To customize the application store, define it in app/session-stores/application.js, extend a predefined session store and customize properties (as done for authenticators and authorizers as described above) or implement a fully custom store, e.g.:
 
@@ -170,7 +170,7 @@ export default CookieStore.extend({
 
 Ember Simple Auth 1.0.0 will also automatically use the EphemeralStore when running tests so there is no need anymore to configure that for the test environment (in fact the configuration setting has been removed).
 
-## Update acceptance tests
+#### Update acceptance tests
 
 While previous versions of Ember Simple Auth automatically injected the test helpers, version 1.0.0 requires them to be imported in the respective acceptance tests, e.g.:
 

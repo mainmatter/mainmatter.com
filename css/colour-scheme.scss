@@ -8,6 +8,8 @@ $secondary-highlight-color: #fff;
 
 $border-color: #eee;
 
+$code-background-color: #f5f6f7;
+
 body {
   color: $primary-text-color;
 }
@@ -22,8 +24,12 @@ a {
   };
 }
 
-h3 {
+h3, h4 {
   color: $primary-highlight-color;
+}
+
+.highlight {
+  background-color: $code-background-color;
 }
 
 #main-menu {
@@ -112,42 +118,4 @@ h3 {
   strong {
     background-color: $secondary-background-color;
   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.blog-list {
-  
-  .blog-list-item {
-    border-bottom-color: #efefef; 
-
-    .blog-categories {  color: #2b98de;}
-    h3 {  color: #2b98de; }
-  }
-}
-
-.cases-and-blog-articles {
-  
-   h1 { color: #2b98de; }
-   h2 { color: #2b98de; }
-   h3 { color: #2b98de; }
-   h4 { color: #000;}
-   h6 { color: #999999; }
 }

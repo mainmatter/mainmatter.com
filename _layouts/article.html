@@ -16,14 +16,14 @@
         </div>
       </div>
 
-      <div class="container" id="main-section">
+      <div class="container article" id="main-section">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
             <div class="row content-section separated">
               <div class="col-md-12">
-                <h3>{{ page.title }}</h3>
-                {{content}}
-                <i class="{{ page.author }} pull-right"></i><div class="author pull-right">  <span>{{ page.author | upcase }}</span><br>  <span class="date">{{ page.date | date: '%B %d, %Y' }}</span></div>
+                <h3>{{page.title}}</h3>
+                {{page.content}}
+                <i class="{{page.author}} pull-right"></i><div class="author pull-right">  <span>{{page.author | upcase}}</span><br>  <span class="date">{{page.date | date: '%B %d, %Y'}}</span></div>
               </div>
             </div>
             <div class="row content-section">

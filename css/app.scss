@@ -115,6 +115,23 @@
   }
 }
 
+h3 {
+  margin: 0 0 40px 0;
+}
+
+h4 {
+  margin: 40px 0 20px 0;
+}
+
+p, pre {
+  margin: 0 0 20px 0;
+}
+
+.highlight {
+  border: none;
+  padding: 20px;
+}
+
 .custom-button {
   display: inline-block;
   border-width: 2px;
@@ -270,6 +287,20 @@
     .separated:last-child:after {
       padding-top: 0;
       border-bottom: none;
+    }
+  }
+}
+
+.article {
+  p {
+    width: 83.33333333%;
+    margin-right: auto;
+    margin-left: auto;
+
+    &:first-of-type {
+      margin-bottom: 40px;
+      font-weight: 400;
+      font-size: 16px;
     }
   }
 }
