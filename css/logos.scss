@@ -121,3 +121,7 @@ i.rails-logo {
 i.swift-logo {
   @include icon("/images/logos/swift", "png", 100px, 100px);
 }
+
+i.simplabs {
+  @include icon("/images/menu-logo-active", "png", 60px, 10.8px);
+}

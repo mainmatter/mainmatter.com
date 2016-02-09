@@ -1,24 +1,53 @@
+$primary-text-color: #676767;
+$primary-background-color: #fff;
+$primary-highlight-color: #2b98de;
+
+$border-color: #eee;
 
 body {
-  color: #676767;
+  color: $primary-text-color;
 }
 
-.case-study-button {
-  border-color: #2b98de;
-  background-color: #fff;
-}
+.custom-button {
+  border-color: $primary-highlight-color;
 
-.contact-button {
-  border-color: #fff;
-  background-color: #2b98de;
+  &:hover {
+    background-color: $primary-highlight-color;
+    color: $primary-background-color;
+  }
+
+  &.contact-button {
+    border-color: $primary-background-color;
+
+    &:hover {
+      background-color: $primary-background-color;
+      color: $primary-highlight-color;
+    }
+  }
 }
 
 #main-menu {
-  background-color: #fff;
+  background-color: $primary-background-color;
 
   a:hover, .active { 
-    background-color: #fff;
-    border-bottom-color: #2b98de;
+    background-color: $primary-background-color;
+    border-bottom-color: $primary-highlight-color;
+
+    span {
+      border-bottom-color: $primary-highlight-color;
+    }
+  }
+}
+
+#main-content {
+  .content-section.split-section:after {
+    border-bottom-color: $border-color;
+  }
+}
+
+.tools {
+  .other-tools:after {
+    border-bottom-color: $border-color;
   }
 }
 

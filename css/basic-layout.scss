@@ -1,20 +1,9 @@
----
----
-
-@import 'helpers';
-@import 'typography';
-@import 'colour-scheme';
-@import 'blog-list-page';
-@import 'cases-and-blog';
-@import 'logos';
-
 @media screen and (max-width: 768px) {
   body { padding-top: 0px; }
 }
 
 #main-menu {
   margin-bottom: 0;
-  background-color: #fff;
   text-align: center;
 
   li.page {
@@ -30,7 +19,8 @@
     font-weight: normal;
 
     span {
-      border-bottom: 2px solid #2b98de;
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
     }
   }
 
@@ -74,7 +64,8 @@
       &:after {
         margin-left: 15px;
         width: calc(50% - 15px);
-        border-bottom: 1px solid #eee;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
         padding-top: 60px;
         margin-bottom: 60px;
       }
@@ -109,23 +100,10 @@
 }
 
 .custom-button {
-  border: 2px solid #2b98de;
+  border-width: 2px;
+  border-style: solid;
   text-align: center;
   padding: 5px 50px 5px 50px;
-
-  &:hover {
-    background-color: #2b98de;
-    color: #fff;
-  }
-
-  &.contact-button {
-    border-color: #fff;
-
-    &:hover {
-      background-color: #fff;
-      color: #2b98de;
-    }
-  }
 }
 
 .contact-banner {
@@ -155,11 +133,12 @@
     border: none;
     text-align: left;
 
-    @media screen and (max-width: 768px) { text-align: center; }
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
 
     i {
     	margin-top: 19px;
-    	@include icon("/images/menu-logo-active", "png", 60px, 10.8px);
     }
   }
   
@@ -170,8 +149,6 @@
       a {
         border: none;
         text-align: center;
-
-        @media screen and (max-width: 768px) { text-align: center; }        
       }
     }
   }
@@ -241,7 +218,8 @@
       margin-left: 15px;
       padding-top: 60px;
       width: calc(100% - 15px);
-      border-bottom: 1px solid #eee;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
     }
 
     a {
