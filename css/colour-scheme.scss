@@ -1,6 +1,10 @@
 $primary-text-color: #676767;
+
 $primary-background-color: #fff;
+$secondary-background-color: #000;
+
 $primary-highlight-color: #2b98de;
+$secondary-highlight-color: #fff;
 
 $border-color: #eee;
 
@@ -8,19 +12,23 @@ body {
   color: $primary-text-color;
 }
 
+h3 {
+  color: $primary-highlight-color;
+}
+
 .custom-button {
   border-color: $primary-highlight-color;
 
   &:hover {
     background-color: $primary-highlight-color;
-    color: $primary-background-color;
+    color: $secondary-highlight-color;
   }
 
   &.contact-button {
-    border-color: $primary-background-color;
+    border-color: $secondary-highlight-color;
 
     &:hover {
-      background-color: $primary-background-color;
+      background-color: $secondary-highlight-color;
       color: $primary-highlight-color;
     }
   }
@@ -29,12 +37,28 @@ body {
 #main-menu {
   background-color: $primary-background-color;
 
-  a:hover, .active { 
-    background-color: $primary-background-color;
-    border-bottom-color: $primary-highlight-color;
+  a {
+    color: $primary-text-color;
 
-    span {
+    &:hover, &.active { 
+      color: $primary-highlight-color;
+      background-color: $primary-background-color;
       border-bottom-color: $primary-highlight-color;
+
+      span {
+        border-bottom-color: $primary-highlight-color;
+      }
+    }
+  }
+}
+
+#footer {
+  a {
+    color: $primary-text-color;
+
+    &:hover, &.active {
+      background-color: $primary-background-color;
+      color: $primary-text-color;
     }
   }
 }
@@ -51,41 +75,36 @@ body {
   }
 }
 
-#footer {
-  background-color: #fff;
-
-  ul {
-    li {
-      a {
-        background-color: #fff;
-
-        &:hover, &.active {
-          background-color: #fff;
-          color: #0480c1;
-        }
-      }
-    }
-  }
+.contact-button {
+  color: $secondary-highlight-color;
 }
 
 .top-banner {
-  color: #fff;
-  span {  background-color: #000; }
+  color: $primary-background-color;
+
+  strong {
+    background-color: $secondary-background-color;
+  }
 }
 
-.bottom-other-banner { color: #fff; }
 
-.case-study {
-  h4 { color: #2b98de; }
-  .case-study-tags {  color: #999999;}
-}
 
-.title-bottom-border {  border-color: #efefef; }
 
-.about-main {
-  h3 {  color: #2b98de; }
-  a: hover { color: #2b98de; }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .blog-list {
   
@@ -104,23 +123,4 @@ body {
    h3 { color: #2b98de; }
    h4 { color: #000;}
    h6 { color: #999999; }
-}
-
-#contact-main-section {
-
-  h3 {  color: #2b98de;}
-}
-
-#index-banner {
-  color: #fff;
-  span {  background-color: #000; }
-}
-
-.process-main {
-  h3 {  color: #2b98de;}
-  hr{  border-bottom-color: #efefef; }
-}
-
-.services-main {
-  h3 {  color: #2b98de;}
 }

@@ -24,7 +24,6 @@ h4 {
 }
 
 h3 {
-  color: #2b98de;
   margin-top: 0;
   font-weight: lighter;
   font-size: 28px;
@@ -40,23 +39,8 @@ h3 {
   text-decoration: none;
 }
 
-.contact-button { color: #fff; }
-
-#main-menu { 
-  a { color: #000; }
-
-  a:hover, .active {
-    color: #2b98de;
-    font-weight: bold;
-  }
-}
-
 #footer {
   font-size: 12px;
-
-  a {
-    color: #000;
-  }
 }
 
 .top-banner {
@@ -69,28 +53,29 @@ h3 {
   p {
     font-size: 16px;
   }
-}
 
-.case-study {
-  h4 {  font-weight: 300; }
-
-  .case-study-tags {
-    font-weight: 400;
-    font-size: 11px;
-    text-transform: uppercase;
+  strong {
+    font-weight: normal;
   }
 }
 
-.about-main {
-  h3 {
-    font-weight: lighter;
-    font-size: 28px;
-  }
 
-  p { font-size: 12px; }
 
-  
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .blog-list {
   
@@ -154,37 +139,4 @@ h3 {
     }
   }
 
-}
-
-#contact-main-section {
-  h3 {
-    font-weight: lighter;
-    font-size: 28px;
-  }
-
-  p { font-size: 12px;}
-}
-
-.process-main {
-  h3 {
-    font-weight: lighter;
-    font-size: 28px;
-  }
-  p {
-    font-size: 16px;
-  }
-
-}
-.tools-section {
-    p { font-size: 14px;}
-}
-
-.services-main {
-  
-  h3 {
-    font-weight: lighter;
-    font-size: 28px;
-  }
-
-  p { font-size: 14px;  }
 }
