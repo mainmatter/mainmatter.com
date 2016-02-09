@@ -108,10 +108,6 @@
   }
 }
 
-hr {
-  margin: 0;
-}
-
 .custom-button {
   border: 2px solid #2b98de;
   text-align: center;
@@ -129,6 +125,19 @@ hr {
       background-color: #fff;
       color: #2b98de;
     }
+  }
+}
+
+.contact-banner {
+  width: 100%;
+  background-image: url('../images/contact-banner-background.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 20px 0;
+  color: #fff;
+
+  .contact-button {
+    margin-top: 4px;
   }
 }
 
@@ -197,48 +206,11 @@ hr {
   span {  padding: 3px;}
 }
 
-.banner-small {
-  height: 100px;
-  background-image: url('../images/top-banner-small.png');
-}
-
-.footer {
-  width: 100%;
-  background-image: url('../images/contact-banner-background.png');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 20px 0;
-  color: #fff;
-
-  .contact-button {
-    margin-top: 4px;
-  }
-}
-
-.other-contact-bg {
-  background-image: url('../images/other-contact-banner.png');
-}
-
-.bottom-other-banner {
-  height: 50px;
-  width: 100%;
-  text-align: center;
-  background-image: url('../images/other-contact-banner.png');
-  background-repeat: no-repeat;
-  background-size: 100% 50px;
-}
-
 .content-teaser {
   p {
     padding-top: 10px;
     padding-bottom: 10px; 
   }
-}
-
-.title-bottom-border {
-  border-width: 0 0 1px 0;
-  border-bottom-style: solid;
-  margin-left: -20px;
 }
 
 .client-logos {
