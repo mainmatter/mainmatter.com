@@ -98,8 +98,6 @@
   margin: 60px auto;
 
   & > .row {
-    margin: 25px auto;
-
     &:first-child {
       margin-top: 0;
     }
@@ -250,7 +248,7 @@ hr {
     text-align: center;
 
     i {
-      height: 80px;
+      height: 100px;
     }
   }
 }
@@ -261,7 +259,7 @@ hr {
       margin-bottom: 60px;
     }
 
-    .tool {
+    i {
       width: 130px;
     }
   }
