@@ -1,6 +1,5 @@
 ---
 layout: blog
-custom_css: cases-and-blog
 title: "Updating to Ember Simple Auth 1.0"
 categories: ember, authentication
 author: "marco otte-witte"

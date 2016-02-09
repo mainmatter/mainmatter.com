@@ -1,6 +1,5 @@
 ---
 layout: blog
-custom_css: cases-and-blog
 title: "ember-cli-deploy-notifications"
 categories: ember-cli
 author: "ganesh balasubramanian"

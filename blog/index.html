@@ -1,40 +1,39 @@
 ---
 layout: default
-custom_css: blog-list-page
-title:
+title: " - Blog"
 ---
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12 top-banner banner-small">
+<div class="top-banner">
+  <div class="container">
+    <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h2>our blog</h2>
-      </div>
+        <h2>Our Blog</h2>
+        <p>TODO</p>
+    	</div>
     </div>
   </div>
 </div>
 
-<div class="container">
+<div class="container articles" id="main-section">
   <div class="row">
-    <div class="blog-list col-md-8 col-md-offset-2">
-
+    <div class="col-md-10 col-md-offset-1">
       {% for post in site.posts %}
-        <div class="blog-list-item">
-          <div class="blog-categories">
-            {{ post.categories }}
+        <div class="row content-section separated">
+          <div class="col-md-12">
+            <p class="article-meta">
+              <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
+              <span class="author pull-right">{{ post.author | upcase }}</span>
+            </p>
+            <h3>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </h3>
+            {{ post.excerpt }}
+            <a href="{{ post.url }}" class="custom-button">Read on</a>
           </div>
-          <div class="blog-date-and-author">
-            <span class="date pull-left">{{ post.date | date: '%B %d, %Y' }}</span>
-            <span class="author pull-right">{{ post.author | upcase }}</span>
-          </div>
-          <br>
-          <h3>{{ post.title }}</h3>
-          {{ post.excerpt }}
-          <a href="{{ post.url }}" class="custom-button case-study-button">Read on</a>
         </div>
       {% endfor %}
     </div>
   </div>
 </div>
 
-<div class="bottom-other-banner"></div>
+{% include contact_banner.html %}

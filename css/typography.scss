@@ -33,9 +33,10 @@ h3 {
 .custom-button {
   font-size: 12px;
   text-transform: uppercase;
+  
 }
 
-.custom-button:hover {
+.custom-button, .custom-button:hover {
   text-decoration: none;
 }
 
@@ -59,6 +60,12 @@ h3 {
   }
 }
 
+
+.articles {
+  .article-meta {
+    font-size: 12px;
+  }
+}
 
 
 
