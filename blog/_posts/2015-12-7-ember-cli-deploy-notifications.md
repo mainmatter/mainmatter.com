@@ -1,5 +1,6 @@
 ---
 layout: article
+section: Blog
 title: "ember-cli-deploy-notifications"
 author: "Ganesh Balasubramanian"
 ---

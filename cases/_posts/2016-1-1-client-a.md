@@ -1,5 +1,6 @@
 ---
 layout: case
+section: Cases
 title: "Ember Simple Auth 1.0"
 permalink: /cases/client-a
 ---

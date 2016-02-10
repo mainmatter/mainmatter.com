@@ -1,5 +1,6 @@
 ---
 layout: article
+section: Blog
 title: "Updating to Ember Simple Auth 1.0"
 author: "Marco Otte-Witte"
 github-handle: marcoow
