@@ -3,7 +3,7 @@
 
 @import 'typography';
 @import 'colour-scheme';
-@import 'logos';
+@import 'icons';
 @import 'syntax';
 
 @media screen and (max-width: 768px) {
@@ -123,6 +123,15 @@ h4 {
 
 p, pre {
   margin: 0 0 20px 0;
+}
+
+ul {
+  margin-left: 0;
+  padding-left: 0;
+
+  li {
+    margin-left: 1em;
+  }
 }
 
 .highlight {
@@ -290,15 +299,37 @@ p, pre {
 }
 
 .article {
-  p {
+  p, ul {
     width: 83.33333333%;
     margin-right: auto;
     margin-left: auto;
+  }
 
+  p {
     &:first-of-type {
       margin-bottom: 40px;
       font-weight: 400;
       font-size: 16px;
     }
+  }
+
+  .article-meta {
+    margin: 0 0 20px 0;
+  }
+}
+
+.author {
+  span, i.author {
+    display: block;
+  }
+
+  span.author {
+    margin: 10px 0;
+  }
+
+  i.author {
+    margin: 0 auto;
+    filter: none;
+    -webkit-filter: none;
   }
 }

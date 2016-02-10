@@ -125,3 +125,23 @@ i.swift-logo {
 i.simplabs {
   @include icon("/images/menu-logo-active", "png", 60px, 10.8px);
 }
+
+i.marco {
+  @include icon("/images/authors/marco", "jpg", 100px, 100px);
+}
+
+i.ganesh {
+  @include icon("/images/authors/ganesh", "jpg", 100px, 100px);
+}
+
+i.oliver {
+  @include icon("/images/authors/oliver", "jpg", 100px, 100px);
+}
+
+i.michael {
+  @include icon("/images/authors/michael", "jpg", 100px, 100px);
+}
+
+i.clemens {
+  @include icon("/images/authors/clemens", "jpg", 100px, 100px);
+}

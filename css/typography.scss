@@ -100,10 +100,6 @@ h4 {
 
 .article-meta {
   font-size: 12px;
-
-  a, a:hover {
-    border-bottom: none;
-  }
 }
 
 .article {
@@ -115,5 +111,21 @@ h4 {
     font-weight: 400;
     font-size: 16px;
     text-align: center;
+  }
+
+  .article-meta {
+    text-align: center;
+  }
+}
+
+.author {
+  text-align: center;
+
+  a, a:hover {
+    border-bottom: none;
+
+    i {
+      font-size: 28px;
+    }
   }
 }
