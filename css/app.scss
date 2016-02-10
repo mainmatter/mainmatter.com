@@ -6,10 +6,6 @@
 @import 'icons';
 @import 'syntax';
 
-@media screen and (max-width: 768px) {
-  body { padding-top: 0px; }
-}
-
 #main-menu {
   margin-bottom: 0;
   text-align: center;
@@ -178,10 +174,6 @@ ul {
     border: none;
     text-align: left;
 
-    @media screen and (max-width: 768px) {
-      text-align: center;
-    }
-
     i {
     	margin-top: 19px;
     }
@@ -337,5 +329,35 @@ ul {
     margin: 0 auto;
     filter: none;
     -webkit-filter: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #main-menu {
+    li.page {
+      width: 100%;
+    }
+  }
+
+  #main-content {
+    .content-section.separated.split-section:after {
+      width: calc(100% - 30px);
+    }
+  }
+
+  .tools .main-tools {
+    .tool {
+      margin-bottom: 60px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .contact-banner {
+    .contact-button {
+      float: none !important;
+    }
   }
 }

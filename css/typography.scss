@@ -129,3 +129,13 @@ h4 {
     }
   }
 }
+
+@media screen and (max-width: 767px) {
+  .contact-banner {
+    text-align: center;
+  }
+
+  #footer #footer-logo {
+    text-align: center !important;
+  }
+}
