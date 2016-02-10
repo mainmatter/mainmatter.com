@@ -18,20 +18,15 @@ navigation:
   - title: Services
     url: /services
     file: /services/index.html
-    class:
   - title: Process
     url: /process
     file: /process/index.html
-    class:
   - title: About
     url: /about
     file: /about/index.html
-    class:
   - title: Clients
     url: /clients
     file: /clients/index.html
-    class:
   - title: Blog
     url: /blog
     file: /blog/index.html
-    class:
