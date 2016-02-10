@@ -19,7 +19,7 @@ a {
 
   &:hover {
     text-decoration: none;
-  };
+  }
 }
 
 .highlight {
@@ -95,6 +95,14 @@ h4 {
 .articles {
   .article-meta {
     font-size: 12px;
+  }
+}
+
+.article-meta {
+  font-size: 12px;
+
+  a, a:hover {
+    border-bottom: none;
   }
 }
 

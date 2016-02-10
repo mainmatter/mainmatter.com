@@ -3,8 +3,6 @@
 
 @import 'typography';
 @import 'colour-scheme';
-@import 'blog-list-page';
-@import 'cases-and-blog';
 @import 'logos';
 @import 'syntax';
 
@@ -277,10 +275,6 @@ p, pre {
 }
 
 .articles {
-  .article-meta {
-    font-size: 12px;
-  }
-
   .custom-button {
     margin: 10px 0 0 0;
   }

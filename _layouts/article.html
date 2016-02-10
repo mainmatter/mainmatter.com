@@ -23,7 +23,24 @@
               <div class="col-md-12">
                 <h3>{{page.title}}</h3>
                 {{page.content}}
-                <i class="{{page.author}} pull-right"></i><div class="author pull-right">  <span>{{page.author | upcase}}</span><br>  <span class="date">{{page.date | date: '%B %d, %Y'}}</span></div>
+                <p class="article-meta">
+                  <span class="date">{{page.date | date: '%B %d, %Y'}}</span>
+                  <span class="author pull-right">
+                    {{page.author | upcase}}
+
+                    {% if page.github-handle %}
+                      <a href="http://github.com/{{page.github-handle}}">
+                        <i class="fa fa-github"></i>
+                      </a>
+                    {% endif %}
+
+                    {% if page.twitter-handle %}
+                      <a href="http://twitter.com/{{page.twitter-handle}}">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    {% endif %}
+                  </span>
+                </p>
               </div>
             </div>
             <div class="row content-section">

@@ -1,7 +1,6 @@
 ---
 layout: article
 title: "ember-cli-deploy-notifications"
-categories: ember-cli
 author: "Ganesh Balasubramanian"
 ---
 
