@@ -7,8 +7,8 @@
             <img src="/images/logo.png" srcset="/images/logo.png 2x"></a>
           </li>
           {% for link in site.navigation %}
-            {% assign active = nil %}
-            {% if page.url == link.file %}
+            {% assign active = false %}
+            {% if page.url contains link.url %}
               {% assign active = 'active' %}
             {% endif %}
             <li class="page">
