@@ -9,7 +9,7 @@ i {
   transition: filter ease-in-out .15s, -webkit-filter ease-in-out .15s;
 }
 
-i:hover {
+i:hover, i.contact {
   filter: none;
   -webkit-filter: none;
 }
