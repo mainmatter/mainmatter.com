@@ -77,13 +77,13 @@
       &:after {
         margin-left: 15px;
         padding-top: 60px;
-        width: calc(100% - 15px);
+        width: calc(100% - 30px);
         border-bottom-width: 1px;
         border-bottom-style: solid;
       }
 
       &.split-section:after {
-        width: calc(50% - 15px);
+        width: calc(50% - 30px);
       }
     }
 
