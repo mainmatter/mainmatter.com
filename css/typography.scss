@@ -149,7 +149,11 @@ h4 {
     text-align: center;
   }
 
-  #footer #footer-logo {
-    text-align: center !important;
+  #footer {
+    text-align: center;
+
+    #footer-logo {
+      text-align: center !important;
+    }
   }
 }

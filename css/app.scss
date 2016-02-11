@@ -35,24 +35,15 @@
     height: 17px;
   }
 
-  @media (min-width: 768px) {
-    .navbar-nav {
-      width: 100%;
-    }
-
-    .navbar-nav > li {
-      float: none;
-      display: inline-block;
-      margin-top: 0;
-
-      &.navbar-right {
-        float: right;
-      }
-    }
+  .navbar-nav {
+    width: 100%;
   }
 
-  .navbar-brand { width: 100%; }
-  .navbar-brand:hover { border: none; }  
+  .navbar-nav > li {
+    float: none;
+    display: inline-block;
+  }
+
 }
 
 #main-content {
