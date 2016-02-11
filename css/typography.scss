@@ -130,6 +130,14 @@ h4 {
   }
 }
 
+.error-page {
+  text-align: center;
+
+  a.home-link {
+    border-bottom: none;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .contact-banner {
     text-align: center;
