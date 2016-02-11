@@ -2,13 +2,12 @@
 ---
 
 @import 'typography';
-@import 'colour-scheme';
+@import 'color-scheme';
 @import 'icons';
 @import 'syntax';
 
 #main-menu {
   margin-bottom: 0;
-  text-align: center;
 
   li.page {
     width: 10%;
@@ -34,13 +33,11 @@
   img {
     width: 100px;
     height: 17px;
-    text-align: center;
   }
 
   @media (min-width: 768px) {
     .navbar-nav {
       width: 100%;
-      text-align: center;
     }
 
     .navbar-nav > li {
@@ -138,7 +135,6 @@ ul {
   display: inline-block;
   border-width: 2px;
   border-style: solid;
-  text-align: center;
   padding: 5px 50px 5px 50px;
 }
 
@@ -148,7 +144,6 @@ ul {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   padding: 20px 0;
-  color: #fff;
 
   .contact-button {
     margin-top: 4px;
@@ -164,14 +159,12 @@ ul {
   bottom: 0;
   height: 50px;
   width: 100%;
-  text-align: center;
 
   #footer-logo {
     margin-bottom: 0;
     padding-bottom: 0;
     margin-left: 0;
     border: none;
-    text-align: left;
 
     i {
     	margin-top: 19px;
@@ -184,14 +177,12 @@ ul {
 
       a {
         border: none;
-        text-align: center;
       }
     }
   }
 }
 
 .top-banner {
-  text-align: center;
   background-image: url('../images/page-banner.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -232,7 +223,6 @@ ul {
   a {
     display: block;
     width: 100%;
-    text-align: center;
 
     i {
       height: 100px;
@@ -248,18 +238,6 @@ ul {
 
     i {
       width: 130px;
-    }
-  }
-
-  .other-tools {
-    a {
-      display: block;
-      width: 100%;
-      text-align: center;
-
-      i {
-        height: 40px;
-      }
     }
   }
 }
@@ -305,8 +283,6 @@ ul {
   p {
     &:first-of-type {
       margin-bottom: 40px;
-      font-weight: 400;
-      font-size: 16px;
     }
   }
 

@@ -55,11 +55,14 @@ h4 {
 .custom-button {
   font-size: 12px;
   text-transform: uppercase;
-  
 }
 
 .custom-button, .custom-button:hover {
   text-decoration: none;
+}
+
+#main-menu {
+  text-align: center;
 }
 
 #footer {
@@ -67,6 +70,8 @@ h4 {
 }
 
 .top-banner {
+  text-align: center;
+  
   h2 {
     font-size: 34px;
     text-transform: uppercase;
@@ -84,11 +89,12 @@ h4 {
 
 .client-logos {
   a {
+    text-align: center;
     border-bottom: none;
   }
 }
 
-.main-tools a.icon, .other-tools a {
+.main-tools a.icon {
   border-bottom: none;
 }
 
