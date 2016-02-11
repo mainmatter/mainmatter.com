@@ -26,20 +26,16 @@ i.blackberry {
   @include icon("/images/logos/blackberry", "png", 100px, 20px);
 }
 
-i.elab {
-  @include icon("/images/logos/elab", "png", 100px, 30px);
-}
-
 i.munich-re {
   @include icon("/images/logos/munich-re", "png", 85px, 21px);
 }
 
 i.pointoo {
-  @include icon("/images/logos/pointoo", "png", 100px, 31px);
+  @include icon("/images/logos/pointoo", "png", 100px, 30px);
 }
 
 i.medikompass {
-  @include icon("/images/logos/medikompass", "png", 100px, 20px);
+  @include icon("/images/logos/medikompass", "png", 100px, 19px);
 }
 
 i.generali {
@@ -48,10 +44,6 @@ i.generali {
 
 i.experteer {
   @include icon("/images/logos/experteer", "png", 130px, 25px);
-}
-
-i.bokowskylaymann {
-  @include icon("/images/logos/bokowskylaymann", "png", 145px, 30px);
 }
 
 i.xbav {
@@ -63,7 +55,7 @@ i.campus {
 }
 
 i.steria-mummert {
-  @include icon("/images/logos/steria-mummert", "png", 90px, 40px);
+  @include icon("/images/logos/steria-mummert", "png", 90px, 32px);
 }
 
 i.scoreloop {
@@ -71,43 +63,19 @@ i.scoreloop {
 }
 
 i.embedd {
-  @include icon("/images/logos/embedd", "png", 75px, 15px);
+  @include icon("/images/logos/embedd", "png", 75px, 14px);
 }
 
 i.terminapp {
   @include icon("/images/logos/terminapp", "png", 40px, 40px);
 }
 
-i.github {
-  @include icon("/images/logos/github", "png", 75px, 20px);
+i.robinhood {
+  @include icon("/images/logos/robinhood", "png", 130px, 23px);
 }
 
-i.jquery {
-  @include icon("/images/logos/jquery", "png", 82px, 20px);
-}
-
-i.cocoapods {
-  @include icon("/images/logos/cocoapods", "png", 93px, 20px);
-}
-
-i.goliath {
-  @include icon("/images/logos/goliath", "png", 69px, 20px);
-}
-
-i.campfire {
-  @include icon("/images/logos/campfire", "png", 25px, 20px);
-}
-
-i.travis {
-  @include icon("/images/logos/travis", "png", 48px, 20px);
-}
-
-i.docker {
-  @include icon("/images/logos/docker", "png", 84px, 20px);
-}
-
-i.sinatra {
-  @include icon("/images/logos/sinatra", "png", 29px, 20px);
+i.phoenix-logo {
+  @include icon("/images/logos/phoenix", "png", 100px, 100px);
 }
 
 i.emberjs-logo {
@@ -123,7 +91,7 @@ i.swift-logo {
 }
 
 i.simplabs {
-  @include icon("/images/menu-logo-active", "png", 60px, 10.8px);
+  @include icon("/images/menu-logo-active", "png", 60px, 11px);
 }
 
 i.marco {
