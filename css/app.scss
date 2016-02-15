@@ -101,7 +101,7 @@ h3 {
 }
 
 h4 {
-  margin: 40px 0 20px 0;
+  margin: 0 0 20px 0;
 }
 
 p, pre {
@@ -211,13 +211,16 @@ ul {
 }
 
 .client-logos {
+  text-align: center;
+
   a {
     display: block;
     width: 100%;
+    height: 100px;
+  }
 
-    i {
-      height: 100px;
-    }
+  i {
+    height: 80px;
   }
 }
 
@@ -259,6 +262,10 @@ ul {
 }
 
 .article {
+  h4 {
+    margin-top: 40px;
+  }
+
   p, ul {
     width: 83.33333333%;
     margin-right: auto;
