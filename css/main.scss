@@ -333,6 +333,10 @@ h2 {
       @include icon("/images/logos/sauspiel", "png", 200px, 88px);
     }
 
+    i.shuddle {
+      @include icon("/images/logos/shuddle", "png", 272px, 50px);
+    }
+
     i.skatstube {
       @include icon("/images/logos/skatstube", "png", 75px, 75px);
     }
