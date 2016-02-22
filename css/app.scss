@@ -225,13 +225,11 @@ ul {
 }
 
 .tools {
-  .main-tools {
-    .row:first-child {
-      margin-bottom: 60px;
-    }
+  .tool {
+    text-align: center;
 
     i {
-      width: 130px;
+      height: 110px;
     }
   }
 }
@@ -319,16 +317,6 @@ ul {
   #main-content {
     .content-section.separated.split-section:after {
       width: calc(100% - 30px);
-    }
-  }
-
-  .tools .main-tools {
-    .tool {
-      margin-bottom: 60px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
     }
   }
 
