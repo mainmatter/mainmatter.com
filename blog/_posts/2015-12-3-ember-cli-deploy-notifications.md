@@ -2,7 +2,9 @@
 layout: article
 section: Blog
 title: "ember-cli-deploy-notifications"
-author: "Ganesh Balasubramanian"
+author: "Michael Klein"
+twitter-handle: LevelbossMike
+github-handle: LevelbossMike
 ---
 
 A few weeks ago a new version of the “official” ember deployment solution ember-cli-deploy was released:
@@ -15,15 +17,17 @@ Aaron Chambers and me gave detailed walkthroughs of the basic ideas behind the p
 
 The new release encourages heavy use of [deploy plugins](http://emberobserver.com/categories/ember-cli-deploy-plugins) that all implement different parts of a deployment via [hooks](http://ember-cli.com/ember-cli-deploy/docs/v0.5.x/pipeline-hooks/) and are themselves Ember CLI addons. What wasn’t available though was a plugin for notifying external webservices (e.g. an error-tracking service) during or after deployments so we decided to write one.
 
-## Introducing ember-cli-deploy-notifications
+#### Introducing ember-cli-deploy-notifications
 
-[ember-cli-deploy-notifications](https://github.com/simplabs/ember-cli-deploy-notifications) makes it easy to notify external services by adding them to a notifications.services.<service> property in config/deploy.js. First you have to install the addon:
+[ember-cli-deploy-notifications](https://github.com/simplabs/ember-cli-deploy-notifications) makes it easy to notify external services by adding them to a notifications.services.\<service\> property in config/deploy.js. First you have to install the addon:
 
-> ember install ember-cli-deploy-notifications
+```bash
+ember install ember-cli-deploy-notifications
+```
 
 The second step is to configure the services that you want to notify while executing the deployment pipeline.
 
-{% highlight js lineos %}
+```js
 // config/deploy.js
 module.exports = function(deployTarget) {
   var ENV = {
@@ -42,19 +46,23 @@ module.exports = function(deployTarget) {
 
   return ENV;
 }
-{% endhighlight %}
+```
 
-Every time a new revision gets activated now by ember-cli-deploy, **ember-cli-deploy-notifications** will sent a **POST** request to the bugsnag service to notify it of the newly activated deployment revision.
+Every time a new revision gets activated now by ember-cli-deploy, ember-cli-deploy-notifications will sent a POST request to the bugsnag service to notify it of the newly activated deployment revision.
+
+#### Customization
+
+We figured out that there are a lot of different internal and external services that users of ember-cli-deploy wanted to notify when executing the deploy pipeline. Thus we wanted to make ember-cli-deploy-notifications as flexible as possible but still keep things easy and simple for the most basic use cases.
 
 Based on that assumption we came up with the idea of _“preconfigured”_ and _“custom”_ services.
 
-## Custom services
+**Custom services**
 
 Services need to be configured with values for **url**, **headers**, **method** and **body**. We figured out that these are all the necessary parts of a webservice request that you need to be able to customize.
 
 Additionally you need to provide a property named the same as the hook that you want the service to be notified on when running through the deploy pipeline (as we wouldn’t know when to notify a service otherwise):
 
-{% highlight js lineos %}
+```js
 // config/deploy.js
 module.exports = function(deployTarget) {
   var ENV = {
@@ -82,11 +90,40 @@ module.exports = function(deployTarget) {
 
   return ENV;
 };
-{% endhighlight %}
+```
+url, headers, method and body are the basic ideas behind the service abstraction in ember-cli-deploy-notifications but to keep things simple you don’t have to provide headers and method for every custom service as these properties will default to {} and 'POST' respectively.
+
+As you can see service configuration properties can either be defined directly or generated dynamically based on the deployment context. this will always point to the service’s configuration itself in all of these functions which enables you to do things like this:
+
+```js
+// config/deploy.js
+module.exports = function(deployTarget) {
+  var ENV = {
+    // ...
+
+    notifications: {
+      services: {
+        slack: {
+          webhookURL: ''
+          url: function() {
+            return this.webhookURL;
+          },
+          body: {
+            text: 'A new revision was deployed!'
+          },
+          didActivate: true
+        }
+      }
+    }
+  };
+
+  return ENV;
+};
+```
 
 The configuration properties named the same as ember-cli-deploy’s pipeline-hooks can also be used to override configuration defaults on a per hook basis:
 
-{% highlight js lineos %}
+```js
 // config/deploy.js
 module.exports = function(deployTarget) {
   var ENV = {
@@ -112,15 +149,15 @@ module.exports = function(deployTarget) {
 
   return ENV;
 };
-{% endhighlight %}
+```
 
-## Preconfigured services
+**Preconfigured services**
 
 As we wanted to make it as easy as possible to get started with ember-cli-deploy-notifications there are already some preconfigured services.
 
 Preconfigured services differ from custom services in the fact that the community has already provided a default configuration for these services. For example the popular error tracking service [bugsnag](https://bugsnag.com/) is already preconfigured which makes it easy to use out of the box with ember-cli-deploy-notifications:
 
-{% highlight js lineos %}
+```js
 // config/deploy.js
 module.exports = function(deployTarget) {
   var ENV = {
@@ -138,11 +175,11 @@ module.exports = function(deployTarget) {
 
   return ENV;
 };
-{% endhighlight %}
+```
 
 There is also a preconfigured service for slack.
 
-## Next Steps
+#### Next Steps
 
 We are excited to share this small ember-cli-deploy plugin with the ember community and would like to hear your feedback! We are already using it in client projects and, though pretty small, found it to be a very useful addition to our deployment workflow.
 
