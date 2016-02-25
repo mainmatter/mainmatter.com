@@ -7,6 +7,7 @@ github-handle: marcoow
 twitter-handle: marcoow
 ---
 We are happy to announce the first public release of the [rails_api_auth gem](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fsimplabs%2Frails_api_auth&t=MTA1OWQxNDc4MDVkNjhmNjE0ZWEzZWU4NTcwOGZjNWFiNzNkZDU0ZSxhbG5RV1Z6cg%3D%3D). rails_api_auth is a **lightweight Rails Engine that implements the _“Resource Owner Password Credentials Grant”_ OAuth 2.0 flow** as well as Facebook authentication and is **built for usage in API projects**. If you’re building a client side application with e.g. a browser MVC like [Ember.js](http://t.umblr.com/redirect?z=http%3A%2F%2Femberjs.com&t=MjA4OTRjMDdhYmQ1NWI2NTBmY2ZmMDA5OTk5ZDMzYjJkY2IyNWQ3ZCxhbG5RV1Z6cg%3D%3D) (where you might be using [Ember Simple Auth](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fsimplabs%2Fember-simple-auth&t=MzllYWNlMTRhODUyOTM3YmU2ZmMzNThiMWExYmVjZTk5ZTRmNmE2YyxhbG5RV1Z6cg%3D%3D) which works great with rails_api_auth of course), a mobile app or anything else that’s backed by a Rails-based API, rails_api_auth is for you.
+
 <!--break-->
 
 #### Why another Authentication Engine?
@@ -22,7 +23,6 @@ The _“Resource Owner Password Credentials Grant”_ flow defines 2 endpoints -
 ```
 token  POST /token  oauth2#create
 revoke POST /revoke oauth2#destroy
-
 ```
 
 Both of these endpoints are already implemented in the engine. To validate that incoming requests include a valid Bearer token, the library defines the `authenticate!` method that is easily added as a `before_action` in authenticated-only controllers:

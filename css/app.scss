@@ -100,7 +100,7 @@ h3 {
   margin: 0 0 40px 0;
 }
 
-h4 {
+h4, h5 {
   margin: 0 0 20px 0;
 }
 
@@ -259,8 +259,15 @@ ul {
   }
 }
 
+iframe.twitter-tweet {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 0 !important;
+  margin-bottom: 20px !important;
+}
+
 .article {
-  h4 {
+  h4, h5 {
     margin-top: 40px;
   }
 

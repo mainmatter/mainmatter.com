@@ -8,13 +8,14 @@ twitter-handle: marcoow
 ---
 
 [The last blog post](http://log.simplabs.com/post/90339547725/using-ember-simple-auth-with-ember-cli "Using Ember Simple Auth with ember-cli") showed how to use [Ember Simple Auth](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fsimplabs%2Fember-simple-auth&t=ZmM4MGVkMWQxMWVhOTNhYjc3YzkzNzg1MDg5NjBlMzhiNDk0NzFkNSxROWdOazNNeg%3D%3D) with [Ember CLI](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fstefanpenner%2Fember-cli&t=NjM0MGJhMWU0YWE2MjU0OWY2MmIxOTJhN2UzZDk5ZWI1MTM3MTI4MixROWdOazNNeg%3D%3D) to implement session handling and authentication. **This post shows how to test that code**.
+
 <!--break-->
 
 #### The testing package
 
 First of all **install the new [ember-cli-simple-auth-testing package](http://t.umblr.com/redirect?z=https%3A%2F%2Fwww.npmjs.org%2Fpackage%2Fember-cli-simple-auth-testing&t=MDQxZjE0NzQyNDcwNjg4ZjU1OTI0NTUwYWU4YzAzNjk5YTA3MjM5ZCxROWdOazNNeg%3D%3D)**:
 
-```
+```bash
 npm install --save-dev ember-cli-simple-auth-testing
 ember generate ember-cli-simple-auth-testing
 ```

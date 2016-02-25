@@ -8,13 +8,14 @@ twitter-handle: marcoow
 ---
 
 With the latest release of [Ember Simple Auth](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fsimplabs%2Fember-simple-auth&t=YzZkOWJhZGFhNjcxODNmYTAwMGY4Y2Q5YjUyOTc3YTFiNGMzMjE2NSxkVjZXdHB1dQ%3D%3D "Ember Simple Auth @ github"), using the library with [ember-cli](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fstefanpenner%2Fember-cli&t=OTJiOTE1NTNlNDFmNmFkY2UyYzJkYzAwYThhNzdjYjBhNDdkOWNhYixkVjZXdHB1dQ%3D%3D "ember-cli @ github") has become much simpler. As ember-cli in general is still pretty new to many people though, **this post describes how to setup a project using Ember Simple Auth with ember-cli**.
+
 <!--break-->
 
 #### Setting up the basic project
 
 First of all you need to install [PhantomJS](http://t.umblr.com/redirect?z=http%3A%2F%2Fphantomjs.org&t=ODYyNGFhNDNiMzJmNTE1MGFmNDQ4ZjA0OTBhNmMzZmNjYWU5MGNkZCxkVjZXdHB1dQ%3D%3D), [bower](http://t.umblr.com/redirect?z=http%3A%2F%2Fbower.io&t=NGMzODhhOTVkNmM5OGZlZjc5MzM4YWViYTU1NDFlYTY1MDYzNzFiOSxkVjZXdHB1dQ%3D%3D) and of course ember-cli (Ember Simple Auth requires **at least Ember CLI 0.0.44**):
 
-```
+```bash
 npm install -g phantomjs
 npm install -g bower
 npm install -g ember-cli
@@ -22,13 +23,13 @@ npm install -g ember-cli
 
 Then use ember-cli to create the new project:
 
-```
+```bash
 ember new my-auth-app
 ```
 
 At this point the basic project is set up and ready to run:
 
-```
+```bash
 cd my-auth-app
 ember server
 ```
@@ -37,7 +38,7 @@ ember server
 
 Installing Ember Simple Auth in an ember-cli project is really easy now. All you have to do is install [the ember-cli addon from npm](http://t.umblr.com/redirect?z=https%3A%2F%2Fwww.npmjs.org%2Fpackage%2Fember-cli-simple-auth&t=OWMzNDI3YTFjZTRmNWJhNTJiYjYzNGY5ZGY2ODc0Yzc5NDljMTRiNyxkVjZXdHB1dQ%3D%3D "Ember CLI Simple Auth @npm"):
 
-```
+```bash
 npm install --save-dev ember-cli-simple-auth
 ember generate ember-cli-simple-auth
 ```
@@ -55,22 +56,20 @@ Router.map(function() {
 …
 ```
 
-```
+```hbs {% raw  %}
 // app/templates/application.hbs
 …
-{% raw  %}
 {{#if session.isAuthenticated}}
   <a {{ action 'invalidateSession' }}>Logout</a>
 {{else}}
   {{#link-to 'login'}}Login{{/link-to}}
 {{/if}}
-{% endraw %}
 …
-```
+{% endraw %}```
 
 Also implement the `ApplicationRouteMixin` in the project’s application route:
 
-```
+```js
 // app/routes/application.js
 import Ember from 'ember';
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
@@ -82,7 +81,7 @@ export default Ember.Route.extend(ApplicationRouteMixin);
 
 To actually give the user the option to login, we need to add an authentication package for Ember Simple Auth. Let’s assume you have an OAuth 2.0 compatible server running at `http://localhost:3000`. To use that, install the [OAuth 2.0 extension library](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fsimplabs%2Fember-simple-auth%2Ftree%2Fmaster%2Fpackages%2Fember-simple-auth-oauth2&t=MTI2ODQ3OTI4MjljOWY0ODRiYjM4MTE3MzVkNTE2Njc1ZmFmZWFlYixkVjZXdHB1dQ%3D%3D "Ember Simple Auth OAuth 2.0 @ github") which again is as easy as installing the [package from npm](http://t.umblr.com/redirect?z=https%3A%2F%2Fwww.npmjs.org%2Fpackage%2Fember-cli-simple-auth-oauth2&t=NzFlZjAzMWJjNGY1NWQ1OWQzZjg4MWJjMDQ3ZTliMmQ2YmI5M2E2MCxkVjZXdHB1dQ%3D%3D "Ember CLI Simple Auth OAuth 2.0 @ npm"):
 
-```
+```bash
 npm install --save-dev ember-cli-simple-auth-oauth2
 ember generate ember-cli-simple-auth-oauth2
 ```
@@ -91,7 +90,7 @@ Like the ember-cli-simple-auth package this will setup itself so that nothing el
 
 The OAuth 2.0 authentication mechanism needs a login form, so let’s create that:
 
-```
+```hbs {% raw  %}
 // app/templates/login.hbs
 <form {{action 'authenticate' on='submit'}}>
   <label for="identification">Login</label>
@@ -100,11 +99,11 @@ The OAuth 2.0 authentication mechanism needs a login form, so let’s create tha
   {{input id='password' placeholder='Enter Password' type='password' value=password}}
   <button type="submit">Login</button>
 </form>
-```
+{% endraw %}```
 
 Then implement the `LoginControllerMixin` in the login controller and make that use the OAuth 2.0 authenticator to perform the actual authentication:
 
-```
+```js
 // app/controllers/login.js
 import Ember from 'ember';
 import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
@@ -116,7 +115,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
 
 As the OAuth 2.0 authenticator would by default use the same domain and port to send the authentication requests to that the Ember.js is loaded from you need to configure it to use `http://localhost:3000` instead:
 
-```
+```js
 // config/environment.js
 if (environment === 'development') {
   …

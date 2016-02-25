@@ -10,6 +10,7 @@ twitter-handle: marcoow
 **Update:**_I released an Ember.js plugin that makes it very easy to implement an authentication system as described in this post: [Ember.SimpleAuth](http://log.simplabs.com/post/63565686488/ember-simpleauth>%20title=)._
 
 When we started our first [ember.js](http://t.umblr.com/redirect?z=http%3A%2F%2Femberjs.com&t=NWQ4ZDBhNTZjMWMyMWIzMWI4OTNhNDEzYTE0MTRhOTQyYTFlMTEyNixLN2pJZjZOSg%3D%3D "ember.js") project in June 2013, [one of the first things we implemented was authentication](http://log.simplabs.com/post/53016599611/authentication-in-ember-js "the original post on authentication with ember.js"). Now, almost 2 months later, **it has become clear that our initial approach was not really the best and had some shortcomings. So I implemented a better authentication** (mostly based on [the](http://t.umblr.com/redirect?z=http%3A%2F%2Fwww.embercasts.com%2Fepisodes%2Fclient-side-authentication-part-1&t=MDEzNWE1OTA0ZTQ5YjU2OTNhNzk2YzU1ZGQ3N2JmMzU1ZWQ3MGNmYyxLN2pJZjZOSg%3D%3D "Client Side Authentication Part 1") [embercasts](http://t.umblr.com/redirect?z=http%3A%2F%2Fwww.embercasts.com%2Fepisodes%2Fclient-side-authentication-part-2&t=NzdlYWM2MWI0YjM1NWU4NTM2NmU3YTM4NjE1YmY4Yjk2ZDE2ZDk5NCxLN2pJZjZOSg%3D%3D "Client Side Authentication Part 2") on authentication).
+
 <!--break-->
 
 _I’m using the latest (as of early August 2013) [ember.js](http://t.umblr.com/redirect?z=http%3A%2F%2Femberjs.com&t=NWQ4ZDBhNTZjMWMyMWIzMWI4OTNhNDEzYTE0MTRhOTQyYTFlMTEyNixLN2pJZjZOSg%3D%3D "ember.js") and [handlebars](http://t.umblr.com/redirect?z=http%3A%2F%2Fhandlebarsjs.com&t=ZDA5MGZjOTJkYjBkYTU4MjU1M2I5NmI4NmZhZTk0NDYzYzFhZjRkOSxLN2pJZjZOSg%3D%3D "handlebars") releases in this example._
@@ -59,7 +60,6 @@ The template is just a simple form (actual elements, classes etc. of course depe
 #### Logging out
 
 Logging out is actually pretty simple as well. The **client just sends a `DELETE` to the same `/session` route** that makes the server reset the authentication token in the database so that the token on the client side is invalidated. The client also deletes the saved session information in `App.Session` so there’s no stale data.
-
 
 <script src="https://gist.github.com/marcoow/6184657.js"></script>
 
