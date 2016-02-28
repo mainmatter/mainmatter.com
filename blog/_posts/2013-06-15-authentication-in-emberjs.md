@@ -23,50 +23,165 @@ The only more elaborate sample project I found was the [ember-auth](https://gith
 
 The general route to go with authentication in ember.js is to use **token based authentication** where the client submits the regular username/password credentials to the server once and if those are valid receives an authentication token in response. That token is then sent along with every request the client makes to the server. Having understood this the first thing to do is to implement a regular login form with username and password fields:
 
-<script src="https://gist.github.com/marcoow/5796390.js"></script>
+```hbs {% raw  %}
+<form>
+  <label for="loginOrEmail">Login or Email</label>
+  {{view Ember.TextField valueBinding="loginOrEmail" placeholder="Login or Email"}}
+  <label for="password">Password</label>
+  {{view Ember.TextField valueBinding="password" placeholder="Password"}}
+  <button {{action 'createSession'}}>Login</button>
+</form>
+{% endraw %}```
 
 That template is backed by a route that handles the submission event and posts the data to the /session route on the server - which then responds with either status 401 or 200 and a JSON containing the authentication token and the id of the authenticated user:
 
-<script src="https://gist.github.com/marcoow/5796405.js"></script>
+
+```js
+App.SessionsNewRoute = Ember.Route.extend({
+  events: {
+    createSession: function() {
+      var router = this;
+      var loginOrEmail = this.controller.get('loginOrEmail');
+      var password = this.controller.get('password');
+      if (!Ember.isEmpty(loginOrEmail) && !Ember.isEmpty(password)) {
+        $.post('/session', {
+          session: { login_or_email: loginOrEmail, password: password }
+        }, function(data) {
+          var authToken = data.session.auth_token;
+          App.Store.authToken = authToken;
+          App.Auth = Ember.Object.create({
+            authToken: data.session.auth_token,
+            accountId: data.session.account_id
+          });
+          router.transitionTo('index');
+        });
+      }
+    }
+  }
+});
+```
 
 I’m using a route instead of a controller here as redirecting should only be done from routes and not controllers. See e.g. [this SO post](http://stackoverflow.com/questions/11552417/emberjs-how-to-transition-to-a-router-from-a-controllers-action/11555014#11555014) for more info.
 
 The response JSON from the server would look somehow like this in the successful login case:
 
-<script src="https://gist.github.com/marcoow/5796414.js"></script>
+```json
+{
+  session: {
+    auth_token: '<SOME RANDOM AUTH TOKEN>',
+    account_id: '<ID OF AUTHENTICATED USER>'
+  }
+}
+```
 
 At this point the client has the authentication data necessary to authenticate itself against the server. As tat authentication data would be lost every time the application on the client reloads and we don’t want to force a new login every time the user reloads the page we can simply **store that data in a cookie (of course you could use local storage etc.)**:
 
-<script src="https://gist.github.com/marcoow/5796434.js"></script>
+```js
+$.cookie('auth_token', App.Auth.get('authToken'));
+$.cookie('auth_account', App.Auth.get('accountId'));
+```
 
 #### Making authenticated requests
 
 The next step is to actually send the authentication token to the server. As the only point point of interaction between client and server in an ember.js app is **when the store adapter reads or writes data, the token has to be integrated in that adapter somehow**. As there’s not (yet) any out-off-the-box support for authentication in the [DS.RESTAdapter](https://github.com/emberjs/data/blob/master/packages/ember-data/lib/adapters/rest_adapter.js), I simply added it myself:
 
-<script src="https://gist.github.com/marcoow/5796449.js"></script>
+```js
+App.AuthenticatedRESTAdapter = DS.RESTAdapter.extend({
+  ajax: function(url, type, hash) {
+    hash         = hash || {};
+    hash.headers = hash.headers || {};
+    hash.headers['X-AUTHENTICATION-TOKEN'] = this.authToken;
+    return this._super(url, type, hash);
+  }
+});
+```
 
 Now the adapter will pass along the authentication token with every request to the server. One thing that should be made sure though is that whenever the adapter sees **a [401](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#401) response which would mean that for some reason the authentication token became invalid, the session data on the client is deleted** and we require a fresh login:
 
-<script src="https://gist.github.com/marcoow/5796465.js"></script>
+```js
+DS.rejectionHandler = function(reason) {
+  if (reason.status === 401) {
+    App.Auth.destroy();
+  }
+  throw reason;
+};
+```
 
 #### Enforcing authentication on the client
 
 Now that the general authentication mechanism is in place it would be cool to have a way of enforcing authentication on the client for specific routes so the user never gets to see any pages that they aren’t allowed to. This can be done by simply **introducing a custom route class that will check for the presence of a session and if none is present redirects to the login screen**. Any other routes that require authentication can then inherit from that one instead if the regular [`Ember.Route`](http://emberjs.com/api/classes/Ember.Route.html)
 
-<script src="https://gist.github.com/marcoow/5796474.js"></script>
+```js
+App.AuthenticatedRoute = Ember.Route.extend({
+  enter: function() {
+    if (!Ember.isEmpty(App.Auth.get('authToken')) && !Ember.isEmpty(App.Auth.get('accountId'))) {
+      this.transitionTo('sessions.new');
+    }
+  }
+});
+```
 
 This is actually very similar to the concept of an `AuthController` in Rails with a [`before_filter`](http://api.rubyonrails.org/classes/AbstractController/Callbacks/ClassMethods.html#method-i-before_filter) that enforces authentication:
 
-<script src="https://gist.github.com/marcoow/5796491.js"></script>
+```rb
+class AuthenticatedController < ApplicationController
+
+  ensure_authenticated_user
+
+end
+```
 
 #### Cleanup
 
 As the code is now spread up into a number of files and classes, I added a `Session` model:
 
-<script src="https://gist.github.com/marcoow/5796500.js"></script>
+```js
+App.Session = DS.Model.extend({
+  authToken: DS.attr('string'),
+  account:   DS.belongsTo('App.Account')
+});
+```
 
 alongside an `App.AuthManager` accompanied by a custom initializer to clean it up:
 
-<script src="https://gist.github.com/marcoow/5796505.js"></script>
+```js
+App.AuthManager = Ember.Object.extend({
+  init: function() {
+    this._super();
+    var authToken     = $.cookie('auth_token');
+    var authAccountId = $.cookie('auth_account');
+    if (!Ember.isEmpty(authToken) && !Ember.isEmpty(authAccountId)) {
+      this.authenticate(authToken, authAccountId);
+    }
+  },
+
+  isAuthenticated: function() {
+    return !Ember.isEmpty(this.get('session.authToken')) && !Ember.isEmpty(this.get('session.account'));
+  },
+
+  authenticate: function(authToken, accountId) {
+    var account = App.Account.find(accountId);
+    this.set('session', App.Session.createRecord({
+      authToken: authToken,
+      account:   account
+    }));
+  },
+
+  reset: function() {
+    this.set('session', null);
+  },
+
+  sessionObserver: function() {
+    App.Store.authToken = this.get('session.authToken');
+    if (Ember.isEmpty(this.get('session'))) {
+      $.removeCookie('auth_token');
+      $.removeCookie('auth_account');
+    } else {
+      $.cookie('auth_token', this.get('session.authToken'));
+      $.cookie('auth_account', this.get('session.account.id'));
+    }
+  }.observes('session')
+});
+```
 
 This is simple authentication with ember.js!
