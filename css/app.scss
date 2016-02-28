@@ -316,6 +316,10 @@ iframe.twitter-tweet {
 
 @media screen and (max-width: 767px) {
   #main-menu {
+    .navbar-left {
+      display: none !important;
+    }
+
     li.page {
       width: 100%;
     }
