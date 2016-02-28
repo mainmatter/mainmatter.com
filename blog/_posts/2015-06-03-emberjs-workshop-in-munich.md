@@ -7,7 +7,7 @@ github-handle: marcoow
 twitter-handle: marcoow
 ---
 
-We are organizing a [three day Ember.js Workshop in Munich from July 22nd to 24th](http://t.umblr.com/redirect?z=http%3A%2F%2Fember-workshop.simplabs.com&t=NjYxYmZhNWU4ODkyZWVjN2UxZjM4MjBhZmRiNjNjMTdmZDMyMDJlNCxkNDZld0hqaw%3D%3D "Ember.js Workshop in Munich, July 22nd-24th"), **taking participants through building a full Ember.js application**. 
+We are organizing a [three day Ember.js Workshop in Munich from July 22nd to 24th](http://ember-workshop.simplabs.com), **taking participants through building a full Ember.js application**. 
 
 <!--break-->
 
@@ -28,4 +28,4 @@ The topics we will cover are:
 * Animations and Effects with Liquid Fire
 * Realtime Data with Websockets
 
-**There will also be a Welcome Party** at the first evening and luch served at the Workshop Venue! [Register now](http://t.umblr.com/redirect?z=http%3A%2F%2Fember-workshop.simplabs.com&t=NjYxYmZhNWU4ODkyZWVjN2UxZjM4MjBhZmRiNjNjMTdmZDMyMDJlNCxkNDZld0hqaw%3D%3D "Ember.js Workshop in Munich, July 22nd-24th") as we only have limited capacities.
+**There will also be a Welcome Party** at the first evening and luch served at the Workshop Venue! [Register now](http://ember-workshop.simplabs.com "Ember.js Workshop in Munich, July 22nd-24th") as we only have limited capacities.

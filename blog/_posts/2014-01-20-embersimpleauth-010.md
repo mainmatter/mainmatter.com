@@ -7,7 +7,7 @@ github-handle: marcoow
 twitter-handle: marcoow
 ---
 
-Since [Ember.SimpleAuth](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fsimplabs%2Fember-simple-auth&t=NGQyMmRiOWYyZWY1MTVjMjY4NmRkMjY2YzAzZjI3MjkzOWU4MWM4ZixERXJFdjFpTw%3D%3D "Ember.SimpleAuth on github") was released in October 2013, there were lots of issues reported, pull requests submitted and merged etc. **Now all this feedback together with some fundamental design improvements results in the [release of the 0.1.0 version of Ember.SimpleAuth](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fsimplabs%2Fember-simple-auth%2Freleases%2Ftag%2F0.1.0&t=MDkzYmRmNjdlN2VhYjhmMWYwN2QyMDU3OWY5NDRkOTAwMTIxMThlOCxERXJFdjFpTw%3D%3D "release notes for Ember.SimpleAuth 0.1.0").** This is hopefully paving the way for a soon-to-be-released version 1.0.
+Since [Ember.SimpleAuth](https://github.com/simplabs/ember-simple-auth) was released in October 2013, there were lots of issues reported, pull requests submitted and merged etc. **Now all this feedback together with some fundamental design improvements results in the [release of the 0.1.0 version of Ember.SimpleAuth](https://github.com/simplabs/ember-simple-auth/releases/tag/0.1.0).** This is hopefully paving the way for a soon-to-be-released version 1.0.
 
 <!--break-->
 
@@ -23,7 +23,7 @@ App.LoginController = Ember.Controller.extend(Ember.SimpleAuth.LoginControllerMi
 
 This **makes implementations cleaner and also helps defining the public API that Ember.SimpleAuth** will settle on in the long term.
 
-Other changes include the introduction of store strategies (Ember.SimpleAuth comes with a cookie store that is equivalent to the old store, a store that uses the browser’s localStorage API and which is the new default as well as an in-memory store which is mainly useful for testing) as well as error handling/token invalidation, added callback actions like `sessionInvalidationSucceeded` etc. See the [README](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fsimplabs%2Fember-simple-auth%23readme&t=NzQ4YmQ0YTI0ZTc4MTQ4YzMwNTZjY2NlNmQ2ZmNjYWFiZWY2N2RkMSxERXJFdjFpTw%3D%3D "Ember.SimpleAuth's README on github") and the [API docs](http://t.umblr.com/redirect?z=http%3A%2F%2Fember-simple-auth.simplabs.com%2Fapi.html&t=NTNmMmM5Y2FlOGU2ZmRiM2ZhYzc1NmU2YjMzNjBiNzE5NjA3NDM0NCxERXJFdjFpTw%3D%3D "Ember.SimpleAuth's API docs") for complete documentation.
+Other changes include the introduction of store strategies (Ember.SimpleAuth comes with a cookie store that is equivalent to the old store, a store that uses the browser’s localStorage API and which is the new default as well as an in-memory store which is mainly useful for testing) as well as error handling/token invalidation, added callback actions like `sessionInvalidationSucceeded` etc. See the [README](https://github.com/simplabs/ember-simple-auth#readme) and the [API docs](http://ember-simple-auth.com/api/) for complete documentation.
 
 #### Upgrading
 
@@ -81,7 +81,7 @@ to this:
 <form {{action authenticate on='submit'}}>
 {% endraw %}```
 
-These are really the only changes needed if your application is using Ember.SimpleAuth’s default settings, the default OAuth 2.0 mechanism etc. For other scenarios, see the [README](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fsimplabs%2Fember-simple-auth%23readme&t=NzQ4YmQ0YTI0ZTc4MTQ4YzMwNTZjY2NlNmQ2ZmNjYWFiZWY2N2RkMSxERXJFdjFpTw%3D%3D "Ember.SimpleAuth's README on github"), [API docs](http://t.umblr.com/redirect?z=http%3A%2F%2Fember-simple-auth.simplabs.com%2Fapi.html&t=NTNmMmM5Y2FlOGU2ZmRiM2ZhYzc1NmU2YjMzNjBiNzE5NjA3NDM0NCxERXJFdjFpTw%3D%3D "Ember.SimpleAuth's API docs") and also the [examples provided in the repository](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fsimplabs%2Fember-simple-auth%2Ftree%2Fmaster%2Fexamples&t=MWI1ZDZlNDY0NWRkM2YxNmIyZWIwMDBjNTM2ODFlOThmYmQ4ZGU2MCxERXJFdjFpTw%3D%3D "Ember.SimpleAuth's examples").
+These are really the only changes needed if your application is using Ember.SimpleAuth’s default settings, the default OAuth 2.0 mechanism etc. For other scenarios, see the [README](https://github.com/simplabs/ember-simple-auth#readme), [API docs](http://ember-simple-auth.com/api/) and also the [examples provided in the repository](https://github.com/simplabs/ember-simple-auth/tree/master/examples).
 
 #### Outlook
 

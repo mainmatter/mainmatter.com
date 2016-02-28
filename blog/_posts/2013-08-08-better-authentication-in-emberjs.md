@@ -9,13 +9,13 @@ twitter-handle: marcoow
 
 **Update:**_I released an Ember.js plugin that makes it very easy to implement an authentication system as described in this post: [Ember.SimpleAuth](http://log.simplabs.com/post/63565686488/ember-simpleauth>%20title=)._
 
-When we started our first [ember.js](http://t.umblr.com/redirect?z=http%3A%2F%2Femberjs.com&t=NWQ4ZDBhNTZjMWMyMWIzMWI4OTNhNDEzYTE0MTRhOTQyYTFlMTEyNixLN2pJZjZOSg%3D%3D "ember.js") project in June 2013, [one of the first things we implemented was authentication](http://log.simplabs.com/post/53016599611/authentication-in-ember-js "the original post on authentication with ember.js"). Now, almost 2 months later, **it has become clear that our initial approach was not really the best and had some shortcomings. So I implemented a better authentication** (mostly based on [the](http://t.umblr.com/redirect?z=http%3A%2F%2Fwww.embercasts.com%2Fepisodes%2Fclient-side-authentication-part-1&t=MDEzNWE1OTA0ZTQ5YjU2OTNhNzk2YzU1ZGQ3N2JmMzU1ZWQ3MGNmYyxLN2pJZjZOSg%3D%3D "Client Side Authentication Part 1") [embercasts](http://t.umblr.com/redirect?z=http%3A%2F%2Fwww.embercasts.com%2Fepisodes%2Fclient-side-authentication-part-2&t=NzdlYWM2MWI0YjM1NWU4NTM2NmU3YTM4NjE1YmY4Yjk2ZDE2ZDk5NCxLN2pJZjZOSg%3D%3D "Client Side Authentication Part 2") on authentication).
+When we started our first [ember.js](http://emberjs.com) project in June 2013, [one of the first things we implemented was authentication](http://log.simplabs.com/post/53016599611/authentication-in-ember-js "the original post on authentication with ember.js"). Now, almost 2 months later, **it has become clear that our initial approach was not really the best and had some shortcomings. So I implemented a better authentication** (mostly based on [the](http://www.embercasts.com/episodes/client-side-authentication-part-1) [embercasts](http://www.embercasts.com/episodes/client-side-authentication-part-2) on authentication).
 
 <!--break-->
 
-_I’m using the latest (as of early August 2013) [ember.js](http://t.umblr.com/redirect?z=http%3A%2F%2Femberjs.com&t=NWQ4ZDBhNTZjMWMyMWIzMWI4OTNhNDEzYTE0MTRhOTQyYTFlMTEyNixLN2pJZjZOSg%3D%3D "ember.js") and [handlebars](http://t.umblr.com/redirect?z=http%3A%2F%2Fhandlebarsjs.com&t=ZDA5MGZjOTJkYjBkYTU4MjU1M2I5NmI4NmZhZTk0NDYzYzFhZjRkOSxLN2pJZjZOSg%3D%3D "handlebars") releases in this example._
+_I’m using the latest (as of early August 2013) [ember.js](http://emberjs.com) and [handlebars](http://handlebarsjs.com) releases in this example._
 
-_**Update:**I changed the section on actually using the token to use [$.ajaxPrefilter](http://t.umblr.com/redirect?z=http%3A%2F%2Fapi.jquery.com%2FjQuery.ajaxPrefilter%2F&t=ZDRmNTJiNWIzOWQ4YWJjNGIyZTJiZmY2NDEwYWRiMTU2NjY3ZTA5ZCxLN2pJZjZOSg%3D%3D "documentation for $.ajaxPrefilter") instead of a custom ember-data adapter (thanks to [Marc for the comment](http://log.simplabs.com/post/57702291669/better-authentication-in-ember-js#comment-1035275502 "Marc's comment on the topic")!)_
+_**Update:**I changed the section on actually using the token to use [$.ajaxPrefilter](http://api.jquery.com/jQuery.ajaxPrefilter/) instead of a custom ember-data adapter (thanks to [Marc for the comment](http://log.simplabs.com/post/57702291669/better-authentication-in-ember-js#comment-1035275502 "Marc's comment on the topic")!)_
 
 #### The basics
 
@@ -33,7 +33,7 @@ When this has run I can always access the current _“session”_ information as
 
 This _“session”_ object will also load the actual account record from the server if the `authAccountId` is set (`this.set('authAccount', App.Account.find(authAccountId));`. This allows us to e.g. use `App.Session.authAccount.fullName` in our templates to display the user’s name or similar data.)
 
-To actually use the `authToken` when making server requests, **we register an [AJAX prefilter](http://t.umblr.com/redirect?z=http%3A%2F%2Fapi.jquery.com%2FjQuery.ajaxPrefilter%2F&t=ZDRmNTJiNWIzOWQ4YWJjNGIyZTJiZmY2NDEwYWRiMTU2NjY3ZTA5ZCxLN2pJZjZOSg%3D%3D "documentation for $.ajaxPrefilter") that adds the authentication token in a header as long as the request is sent to our domain**:
+To actually use the `authToken` when making server requests, **we register an [AJAX prefilter](http://api.jquery.com/jQuery.ajaxPrefilter/) that adds the authentication token in a header as long as the request is sent to our domain**:
 
 <script src="https://gist.github.com/marcoow/6499654.js"></script>
 

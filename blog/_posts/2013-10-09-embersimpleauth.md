@@ -9,11 +9,11 @@ twitter-handle: marcoow
 
 **Update: [Ember.SimpleAuth 0.1.0 has been released!](http://log.simplabs.com/post/73940085063/ember-simpleauth-0-1-0)** The information in this is (partially) outdated.
 
-After I wrote 2 [blog](http://log.simplabs.com/post/53016599611/authentication-in-ember-js "the initial post") [posts](http://log.simplabs.com/post/57702291669/better-authentication-in-ember-js "the second post with a refined implementation") on implementing token based authentication in [Ember.js](http://t.umblr.com/redirect?z=http%3A%2F%2Femberjs.com&t=ZDkxNTMzNDIwMGQzMzdhYWE0MDk5ZGVkMDY0ODRmMGM1YjlhNDgzNyxVQVZnNHhXVA%3D%3D "Ember.js") applications and got quite some feedback, good suggestions etc., I thought it **would be nice to pack all these ideas in an Ember.js plugin** so everybody could easily integrate that into their applications. Now **I finally managed to release version 0.0.1 of that plugin**: [Ember.SimpleAuth](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fsimplabs%2Fember-simple-auth&t=MTNiNGVmNWRiYmEyZTM0NGY0NzgyNTNhNTcyNzM0MjEyOWRiYjllYixVQVZnNHhXVA%3D%3D "Ember.SimpleAuth at github").
+After I wrote 2 [blog](http://log.simplabs.com/post/53016599611/authentication-in-ember-js "the initial post") [posts](http://log.simplabs.com/post/57702291669/better-authentication-in-ember-js "the second post with a refined implementation") on implementing token based authentication in [Ember.js](http://emberjs.com) applications and got quite some feedback, good suggestions etc., I thought it **would be nice to pack all these ideas in an Ember.js plugin** so everybody could easily integrate that into their applications. Now **I finally managed to release version 0.0.1 of that plugin**: [Ember.SimpleAuth](https://github.com/simplabs/ember-simple-auth).
 
 <!--break-->
 
-Instead of providing a heavyweight out-of-the-box solution with predefined routes, controllers etc., Ember.SimpleAuth defines lightweight mixins that the application code implements. It also **does not dictate anything with respect to application structure, routing etc**. However, setting up Ember.SimpleAuth is **very straight forward** and it can be **completely customized**. The requirements on the server interface are minimal ([see the README for more information on the server side](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fsimplabs%2Fember-simple-auth%23the-server-side&t=ZTE5YjhkOTI5MDBkYTk0ZjQ4YzZkZDkzZWNiNjAyZDZmYTI1ZjE4OSxVQVZnNHhXVA%3D%3D "Documentation of the server side requirements in the README")).
+Instead of providing a heavyweight out-of-the-box solution with predefined routes, controllers etc., Ember.SimpleAuth defines lightweight mixins that the application code implements. It also **does not dictate anything with respect to application structure, routing etc**. However, setting up Ember.SimpleAuth is **very straight forward** and it can be **completely customized**. The requirements on the server interface are minimal ([see the README for more information on the server side](https://github.com/simplabs/ember-simple-auth#the-server-side)).
 
 #### Using Ember.SimpleAuth
 
@@ -64,6 +64,6 @@ App.ProtectedRoute = Ember.Route.extend(Ember.SimpleAuth.AuthenticatedRouteMixin
 
 #### More
 
-There is more documentation as well as examples in the [repository on github](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fsimplabs%2Fember-simple-auth&t=MTNiNGVmNWRiYmEyZTM0NGY0NzgyNTNhNTcyNzM0MjEyOWRiYjllYixVQVZnNHhXVA%3D%3D "Ember.SimpleAuth at github"). Also the **code base is quite small so I suggest to read through it** to better understand what’s going on internally.
+There is more documentation as well as examples in the [repository on github](https://github.com/simplabs/ember-simple-auth). Also the **code base is quite small so I suggest to read through it** to better understand what’s going on internally.
 
-Patches, bug reports etc. are highly appreciated of course - [get started by forking the project on github](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fsimplabs%2Fember-simple-auth&t=MTNiNGVmNWRiYmEyZTM0NGY0NzgyNTNhNTcyNzM0MjEyOWRiYjllYixVQVZnNHhXVA%3D%3D "Ember.SimpleAuth at github")!
+Patches, bug reports etc. are highly appreciated of course - [get started by forking the project on github](https://github.com/simplabs/ember-simple-auth)!

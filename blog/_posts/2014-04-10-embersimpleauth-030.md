@@ -14,7 +14,7 @@ Ember.SimpleAuth 0.3.0 was just released. The **main change in this release is t
 These extension libraries are:
 
 * **ember-simple-auth-oauth2**: includes the OAuth 2.0 authenticator and authorizer which are just one option out of many and probably not needed in many projects (e.g. when using a custom authenticator)
-* **ember-simple-auth-devise**: new authenticator/authorizer package that is compatible with the Ruby gem [devise](http://t.umblr.com/redirect?z=http%3A%2F%2Fgithub.com%2Fplataformatec%2Fdevise&t=NmUyMzI4ZjZlODA3MWIyNDIxNGE4NmU5MzBjODM0ODdhZWIxM2IzZSxCV25Ra0hGRw%3D%3D "devise on github").
+* **ember-simple-auth-devise**: new authenticator/authorizer package that is compatible with the Ruby gem [devise](https://github.com/plataformatec/devise).
 * **ember-simple-auth-cookie-store**: The cookie store which is probably only used in few projects.
 
 There are hopefully more extension libraries to come as people start to provide more authenticators, authorizers and other components and now there’s a (more or less, pre 1.0) stable API for these libraries as well as a set of tasks to build and test them
@@ -32,4 +32,4 @@ Ember.Application.initializer({
 });
 ```
 
-For more information about this release see the release notes at: [https://github.com/simplabs/ember-simple-auth/releases/tag/0.3.0](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fsimplabs%2Fember-simple-auth%2Freleases%2Ftag%2F0.3.0&t=NDA4ZDUwOWY1MWI1ZTUxMmM0MGI5YWE0MTJkMjM4NWU3YjQ4ZWM0MCxCV25Ra0hGRw%3D%3D)
+For more information about this release see the release notes at: [https://github.com/simplabs/ember-simple-auth/releases/tag/0.3.0](https://github.com/simplabs/ember-simple-auth/releases/tag/0.3.0)

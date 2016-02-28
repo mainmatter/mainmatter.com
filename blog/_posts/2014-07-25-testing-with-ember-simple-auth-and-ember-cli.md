@@ -7,13 +7,13 @@ github-handle: marcoow
 twitter-handle: marcoow
 ---
 
-[The last blog post](http://log.simplabs.com/post/90339547725/using-ember-simple-auth-with-ember-cli "Using Ember Simple Auth with ember-cli") showed how to use [Ember Simple Auth](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fsimplabs%2Fember-simple-auth&t=ZmM4MGVkMWQxMWVhOTNhYjc3YzkzNzg1MDg5NjBlMzhiNDk0NzFkNSxROWdOazNNeg%3D%3D) with [Ember CLI](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fstefanpenner%2Fember-cli&t=NjM0MGJhMWU0YWE2MjU0OWY2MmIxOTJhN2UzZDk5ZWI1MTM3MTI4MixROWdOazNNeg%3D%3D) to implement session handling and authentication. **This post shows how to test that code**.
+[The last blog post](http://log.simplabs.com/post/90339547725/using-ember-simple-auth-with-ember-cli "Using Ember Simple Auth with ember-cli") showed how to use [Ember Simple Auth](https://github.com/simplabs/ember-simple-auth) with [Ember CLI](https://github.com/ember-cli/ember-cli) to implement session handling and authentication. **This post shows how to test that code**.
 
 <!--break-->
 
 #### The testing package
 
-First of all **install the new [ember-cli-simple-auth-testing package](http://t.umblr.com/redirect?z=https%3A%2F%2Fwww.npmjs.org%2Fpackage%2Fember-cli-simple-auth-testing&t=MDQxZjE0NzQyNDcwNjg4ZjU1OTI0NTUwYWU4YzAzNjk5YTA3MjM5ZCxROWdOazNNeg%3D%3D)**:
+First of all **install the new [ember-cli-simple-auth-testing package](https://www.npmjs.com/package/ember-cli-simple-auth-testing)**:
 
 ```bash
 npm install --save-dev ember-cli-simple-auth-testing
@@ -33,7 +33,7 @@ export default function startApp(attrs) {
 
 #### Configuring the `test` environment
 
-The next step is to configure the `test` environment. As the tests should be isolated and leave no traces of any kind so that subsequent tests don’t have implicit dependencies on the ones that have run earlier, Ember Simple Auth’s default `localStorage` store cannot be used as that would leave data in the `localStorage`. **Instead configure the [ephemeral store](http://t.umblr.com/redirect?z=http%3A%2F%2Fember-simple-auth.simplabs.com%2Fember-simple-auth-api-docs.html%23SimpleAuth-Stores-Ephemeral&t=NzQ0YTEzNTVhMTMyNmM3ZjQzZmQ5YmI1NDk0ZWMxY2YyNjFhM2Y2OCxROWdOazNNeg%3D%3D) to be used in the `test` environment**:
+The next step is to configure the `test` environment. As the tests should be isolated and leave no traces of any kind so that subsequent tests don’t have implicit dependencies on the ones that have run earlier, Ember Simple Auth’s default `localStorage` store cannot be used as that would leave data in the `localStorage`. **Instead configure the [ephemeral store](http://ember-simple-auth.simplabs.com/ember-simple-auth-api-docs.html#SimpleAuth-Stores-Ephemeral) to be used in the `test` environment**:
 
 ```js
 // config/environment.js
@@ -72,4 +72,4 @@ test('a protected route is not accessible when the session is not authenticated'
 });
 ```
 
-This is how easy it is to test session handling and authentication with Ember Simple Auth and Ember CLI. The full example project can be [found on github](http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fsimplabs%2Fember-cli-simple-auth-example&t=ZjQ0ODFmZDE5ZjFhYjdjMmZkMzVkZDllZTA3MTJkMmNiNzdlZDRlYixROWdOazNNeg%3D%3D)
+This is how easy it is to test session handling and authentication with Ember Simple Auth and Ember CLI. The full example project can be [found on github](https://github.com/simplabs/ember-simple-auth-example)
