@@ -329,6 +329,14 @@ iframe.twitter-tweet {
     .content-section.separated.split-section:after {
       width: calc(100% - 30px);
     }
+
+    .content-teaser {
+      margin-bottom: 60px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .contact-banner {
