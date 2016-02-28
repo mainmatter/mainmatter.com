@@ -21,11 +21,11 @@ _**Update:**I changed the section on actually using the token to use [$.ajaxPref
 
 The basic approach is still the same as in our initial implementation - we have a **`/session` route in our Rails app that the client `POST`s its credentials to and if those are valid gets back an authentication token** together with an id that identifies the user’s account on the server side.
 
-This data is stored in a _“session”_ object on the client side (while technically there is no session in this stateless authentication mechanism, I still call it session in absence of an idea for a better name). The **authentication token is then sent in a header** with every request the client makes.
+This data is stored in a _"session"_ object on the client side (while technically there is no session in this stateless authentication mechanism, I still call it session in absence of an idea for a better name). The **authentication token is then sent in a header** with every request the client makes.
 
-#### The client _“session”_
+#### The client _"session"_
 
-The _“session”_ object on the client side is a **plain `Ember.Object` that simply keeps the data that is received from the server** on session creation. It also stores the authentication token and the user’s account ID in cookies so the user doesn’t have to login again after a page reload (As [Ed points out in a comment on the old post](http://log.simplabs.com/post/53016599611/authentication-in-ember-js#comment-958979257 "Ed's comment on the old post") it’s a security issue to store the authentication token in a cookie without the user’s permission - I think using a session cookie like I do should be ok as it’s deleted when the browser window is closed. Of course you could also use sth. like localStorage like [Marc points out below](http://log.simplabs.com/post/57702291669/better-authentication-in-ember-js#comment-997461654)). I’m creating this object in an initializer so I can be sure it exists (of course it might be empty) when the application starts.
+The _"session"_ object on the client side is a **plain `Ember.Object` that simply keeps the data that is received from the server** on session creation. It also stores the authentication token and the user’s account ID in cookies so the user doesn’t have to login again after a page reload (As [Ed points out in a comment on the old post](http://log.simplabs.com/post/53016599611/authentication-in-ember-js#comment-958979257 "Ed's comment on the old post") it’s a security issue to store the authentication token in a cookie without the user’s permission - I think using a session cookie like I do should be ok as it’s deleted when the browser window is closed. Of course you could also use sth. like localStorage like [Marc points out below](http://log.simplabs.com/post/57702291669/better-authentication-in-ember-js#comment-997461654)). I’m creating this object in an initializer so I can be sure it exists (of course it might be empty) when the application starts.
 
 ```js
 Ember.Application.initializer({
@@ -55,9 +55,9 @@ Ember.Application.initializer({
 });
 ```
 
-When this has run I can always access the current _“session”_ information as `App.Session`. Notice the `.create()` at the end of the initializer that creates an instance of the `Ember.Object` right away. When we need to **check whether a user is authenticated we can simply check for presence of the `authToken` property**. Of course we could add a `isAuthenticated()` method that could perform additional checks but we didn’t have the need for that yet.
+When this has run I can always access the current _"session"_ information as `App.Session`. Notice the `.create()` at the end of the initializer that creates an instance of the `Ember.Object` right away. When we need to **check whether a user is authenticated we can simply check for presence of the `authToken` property**. Of course we could add a `isAuthenticated()` method that could perform additional checks but we didn’t have the need for that yet.
 
-This _“session”_ object will also load the actual account record from the server if the `authAccountId` is set (`this.set('authAccount', App.Account.find(authAccountId));`. This allows us to e.g. use `App.Session.authAccount.fullName` in our templates to display the user’s name or similar data.)
+This _"session"_ object will also load the actual account record from the server if the `authAccountId` is set (`this.set('authAccount', App.Account.find(authAccountId));`. This allows us to e.g. use `App.Session.authAccount.fullName` in our templates to display the user’s name or similar data.)
 
 To actually use the `authToken` when making server requests, **we register an [AJAX prefilter](http://api.jquery.com/jQuery.ajaxPrefilter/) that adds the authentication token in a header as long as the request is sent to our domain**:
 

@@ -7,7 +7,7 @@ twitter-handle: LevelbossMike
 github-handle: LevelbossMike
 ---
 
-A few weeks ago a new version of the _“official”_ ember deployment solution [ember-cli-deploy](http://ember-cli.com/ember-cli-deploy/) was released:
+A few weeks ago a new version of the _"official"_ ember deployment solution [ember-cli-deploy](http://ember-cli.com/ember-cli-deploy/) was released:
 
 <blockquote class="twitter-tweet" lang="de"><p lang="en" dir="ltr">ember-cli-deploy 0.5 is now released and ready for use with a great docs site and already-rich plugin ecosystem: <a href="https://t.co/6yhjmjQrYD">https://t.co/6yhjmjQrYD</a></p>&mdash; Luke Melia (@lukemelia) <a href="https://twitter.com/lukemelia/status/659787938625134592">29. Oktober 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -54,7 +54,7 @@ Every time a new revision gets activated now by `ember-cli-deploy`, `ember-cli-d
 
 We figured out that there are a lot of different internal and external services that users of ember-cli-deploy wanted to notify when executing the deploy pipeline. Thus **we wanted to make `ember-cli-deploy-notifications` as flexible as possible but still keep things easy and simple** for the most basic use cases.
 
-Based on that assumption we came up with the idea of _“preconfigured”_ and _“custom”_ services.
+Based on that assumption we came up with the idea of _"preconfigured"_ and _"custom"_ services.
 
 ##### Custom services
 
