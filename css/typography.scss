@@ -28,8 +28,10 @@ code {
 }
 
 .highlight {
+  word-wrap: normal;
+
   code {
-    white-space: pre;
+    white-space: nowrap;
   }
 }
 
@@ -73,6 +75,10 @@ h5 {
 
 #main-menu {
   text-align: center;
+
+  ul li a {
+    white-space: nowrap;
+  }
 }
 
 #footer {

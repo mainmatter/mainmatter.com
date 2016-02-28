@@ -91,7 +91,6 @@ h2 {
 
       a {
         color: #333;
-        white-space: nowrap;
         background-color: #fff;
         text-align: center;
         margin-bottom: 3px;
@@ -437,11 +436,6 @@ h2 {
     font-size: 14px;
     border-radius: 2px;
     margin: 10px 0;
-    word-wrap: normal;
-
-    code {
-      white-space: pre;
-    }
   }
 
   #footer {
