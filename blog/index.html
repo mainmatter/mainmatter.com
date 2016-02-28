@@ -1,0 +1,39 @@
+---
+layout: default
+title: Blog
+---
+
+<div class="top-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <h2>Our Blog</h2>
+        <p>We write about <strong>Ember.js</strong>, <strong>Ruby on Rails</strong> as well as <strong>Elixir</strong> and <strong>Phoenix</strong>.</p>
+    	</div>
+    </div>
+  </div>
+</div>
+
+<div class="container articles" id="main-section">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 col-sm-12">
+      {% for post in site.categories.blog %}
+        <div class="row content-section separated">
+          <div class="col-sm-12">
+            <p class="article-meta">
+              <span class="date">{{post.date | date: '%B %d, %Y'}}</span>
+              <span class="author pull-right">{{post.author | upcase}}</span>
+            </p>
+            <h3>
+              <a href="{{post.url}}">{{post.title}}</a>
+            </h3>
+            {{post.excerpt}}
+            <a href="{{post.url}}" class="custom-button">Read on</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% include contact_banner.html %}

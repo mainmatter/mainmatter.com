@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+	<body>
+    {% include nav.html %}
+
+    <div id="main-content">
+      <div class="top-banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+              <h2>{{page.title}}</h2>
+              <p>{{page.excerpt}}</p>
+          	</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="main-section">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 col-sm-12">
+            <div class="row content-section article">
+              <div class="col-sm-12">
+                {{page.content}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      {% include contact_banner.html %}
+    </div>
+
+   {% include footer.html %}
+
+   {% include analytics.html %}
+	</body>
+</html>

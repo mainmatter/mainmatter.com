@@ -1,0 +1,335 @@
+---
+---
+
+@import 'typography';
+@import 'color-scheme';
+@import 'icons';
+@import 'syntax';
+
+#main-menu {
+  margin-bottom: 0;
+
+  li.page {
+    width: 9%;
+  }
+
+  a {
+    padding: 15px;
+    display: inline-block;
+    border-bottom: none;
+
+    span {
+      border-bottom: 1px solid transparent;
+    }
+
+    &:hover, &.active {
+      span {
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+      }
+    }
+  }
+
+  img {
+    width: 100px;
+    height: 17px;
+  }
+
+  .navbar-nav {
+    width: 100%;
+  }
+
+  .navbar-nav > li {
+    float: none;
+    display: inline-block;
+  }
+
+}
+
+#main-content {
+  min-height: 100%;
+
+  .content-section {
+    margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.separated {
+      &:after {
+        margin-left: 15px;
+        padding-top: 60px;
+        width: calc(100% - 30px);
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+      }
+
+      &.split-section:after {
+        width: calc(50% - 30px);
+      }
+    }
+
+    &.split-section:last-child:after {
+      border-bottom: none;
+      padding-top: 0;
+      margin-bottom: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+#main-section {
+  margin: 60px auto;
+
+  & > .row {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+h3 {
+  margin: 0 0 40px 0;
+}
+
+h4, h5 {
+  margin: 0 0 20px 0;
+}
+
+p, pre {
+  margin: 0 0 20px 0;
+}
+
+ul {
+  margin-left: 0;
+  padding-left: 0;
+
+  li {
+    margin-left: 1em;
+  }
+}
+
+.highlight {
+  border: none;
+  padding: 20px;
+}
+
+.custom-button {
+  display: inline-block;
+  border-width: 2px;
+  border-style: solid;
+  padding: 5px 50px 5px 50px;
+}
+
+.contact-banner {
+  width: 100%;
+  background-image: url('../images/contact-banner-background.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 20px 0;
+
+  .contact-button {
+    margin-top: 4px;
+  }
+
+  h4 {
+    margin: 10px 0;
+  }
+}
+
+#footer {
+  margin-bottom: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+
+  #footer-logo {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-left: 0;
+    border: none;
+
+    i {
+    	margin-top: 19px;
+    }
+  }
+  
+  ul {
+
+    li {
+
+      a {
+        border: none;
+      }
+    }
+  }
+}
+
+.top-banner {
+  background-image: url('../images/page-banner.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 20px 0;
+  height: 180px;
+
+  &.main-page {
+    padding: 100px 0;
+    height: auto;
+  }
+
+  .row {
+    padding: 20px 0;
+  }
+
+  h2 {
+    margin: 0 auto 10px auto;
+  }
+
+  p {
+    margin: 0;
+    overflow: show;
+  }
+
+  strong {
+    padding: 3px;
+  }
+}
+
+.content-teaser {
+  p {
+    padding-top: 10px;
+    padding-bottom: 10px; 
+  }
+}
+
+.client-logos {
+  text-align: center;
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100px;
+  }
+
+  i {
+    height: 80px;
+  }
+}
+
+.tools {
+  .tool {
+    text-align: center;
+
+    i {
+      height: 110px;
+    }
+  }
+}
+
+#map-canvas {
+  height: 250px;
+  margin: 0 0 10px;
+}
+
+.address > span {
+  display: block;
+  clear: both;
+}
+
+.articles {
+  .custom-button {
+    margin: 10px 0 0 0;
+  }
+}
+
+#main-content {
+  .articles {
+    .separated:last-child:after {
+      padding-top: 0;
+      border-bottom: none;
+    }
+  }
+}
+
+iframe.twitter-tweet {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 0 !important;
+  margin-bottom: 20px !important;
+}
+
+.article {
+  h4, h5 {
+    margin-top: 40px;
+  }
+
+  p, ul {
+    width: 83.33333333%;
+    margin-right: auto;
+    margin-left: auto;
+
+    img {
+      max-width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  p {
+    &:first-of-type {
+      margin-bottom: 40px;
+    }
+  }
+
+  .article-meta {
+    margin: 0 0 20px 0;
+  }
+}
+
+.author {
+  span, i.author {
+    display: block;
+  }
+
+  span.author {
+    margin: 10px 0;
+  }
+
+  i.author {
+    margin: 0 auto;
+    filter: none;
+    -webkit-filter: none;
+  }
+}
+
+.error-page {
+  padding-top: 100px;
+}
+
+@media screen and (max-width: 767px) {
+  #main-menu {
+    li.page {
+      width: 100%;
+    }
+  }
+
+  #main-content {
+    .content-section.separated.split-section:after {
+      width: calc(100% - 30px);
+    }
+  }
+
+  .contact-banner {
+    .contact-button {
+      float: none !important;
+    }
+  }
+}

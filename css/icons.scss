@@ -1,0 +1,119 @@
+@import 'helpers';
+
+i {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  filter: gray;
+  -webkit-filter: grayscale(1);
+  transition: filter ease-in-out .15s, -webkit-filter ease-in-out .15s;
+}
+
+i:hover, i.contact, .client-logos a:hover i {
+  filter: none;
+  -webkit-filter: none;
+}
+
+i.sauspiel {
+  @include icon("/images/logos/sauspiel", "png", 125px, 55px);
+}
+
+i.shuddle {
+  @include icon("/images/logos/shuddle", "png", 136px, 25px);
+}
+
+i.skatstube {
+  @include icon("/images/logos/skatstube", "png", 50px, 50px);
+}
+
+i.blackberry {
+  @include icon("/images/logos/blackberry", "png", 100px, 20px);
+}
+
+i.munich-re {
+  @include icon("/images/logos/munich-re", "png", 85px, 21px);
+}
+
+i.pointoo {
+  @include icon("/images/logos/pointoo", "png", 100px, 30px);
+}
+
+i.medikompass {
+  @include icon("/images/logos/medikompass", "png", 100px, 19px);
+}
+
+i.generali {
+  @include icon("/images/logos/generali", "png", 62px, 50px);
+}
+
+i.experteer {
+  @include icon("/images/logos/experteer", "png", 130px, 25px);
+}
+
+i.xbav {
+  @include icon("/images/logos/xbav", "png", 54px, 30px);
+}
+
+i.campus {
+  @include icon("/images/logos/campus", "png", 85px, 38px);
+}
+
+i.loconet {
+  @include icon("/images/logos/loconet", "png", 35px, 35px);
+}
+
+i.scoreloop {
+  @include icon("/images/logos/scoreloop", "png", 100px, 27px);
+}
+
+i.embedd {
+  @include icon("/images/logos/embedd", "png", 75px, 14px);
+}
+
+i.terminapp {
+  @include icon("/images/logos/terminapp", "png", 40px, 40px);
+}
+
+i.robinhood {
+  @include icon("/images/logos/robinhood", "png", 130px, 23px);
+}
+
+i.phoenix-logo {
+  @include icon("/images/logos/phoenix", "png", 100px, 100px);
+}
+
+i.emberjs-logo {
+  @include icon("/images/logos/emberjs", "png", 105px, 100px);
+}
+
+i.rails-logo {
+  @include icon("/images/logos/ruby-on-rails", "png", 110px, 39px);
+}
+
+i.swift-logo {
+  @include icon("/images/logos/swift", "png", 100px, 100px);
+}
+
+i.simplabs {
+  @include icon("/images/menu-logo-active", "png", 60px, 11px);
+}
+
+i.marco {
+  @include icon("/images/authors/marco", "jpg", 100px, 100px);
+}
+
+i.ganesh {
+  @include icon("/images/authors/ganesh", "jpg", 100px, 100px);
+}
+
+i.oliver {
+  @include icon("/images/authors/oliver", "jpg", 100px, 100px);
+}
+
+i.michael {
+  @include icon("/images/authors/michael", "jpg", 100px, 100px);
+}
+
+i.clemens {
+  @include icon("/images/authors/clemens", "jpg", 100px, 100px);
+}

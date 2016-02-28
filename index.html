@@ -2,10 +2,53 @@
 layout: default
 title:
 ---
-<section id="index">
-  <i id="main-logo"></i>
-  <h1>We build solutions for the web and mobile devices.</h1>
-  <h2>simplabs focusses on <strong>Ruby on Rails, Ember.js and Swift</strong>. We also offer <strong>individual and group training</strong> as well as <strong>technology consulting</strong>.</h2>
-  <h2><a href="/contact" class="super">Contact us</a> to discuss how we can help you.</h2>
-  <h2><strong>We are hosting a <a href="https://ember-workshop.simplabs.com">3 day Ember.js 2.0 Workshop</a> in Berlin in January!</strong></h2>
-</section>
+<div class="top-banner main-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+        <h2>We build solutions for the web and mobile devices.</h2>
+        <p><strong>simplabs</strong> focusses on <strong>Ruby on Rails</strong>, <strong>Ember.js</strong> and <strong>Elixir/Phoenix</strong>.</p>
+        <p>We also offer Individual and Group <strong>Training</strong> as well as <strong>Technology Consulting</strong>.</p>
+    	</div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="main-section">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 col-sm-12">
+      <div class="row content-section separated client-logos">
+        <div class="col-sm-3 col-xs-6">
+          <i class="generali"></i>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <i class="shuddle"></i>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <i class="robinhood"></i>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <i class="terminapp"></i>
+        </div>
+      </div>
+      <div class="row content-section">
+        <div class="col-sm-6">
+        	<div class="content-teaser">
+        		<h4>Ember.js 2.x Workshop</h4>
+        		<p>We are organizing a <strong>3 day Ember.js 2.x Workshop</strong> that takes participants through building a full Ember.js app (a music player) using <strong>modern Ember.js patterns</strong> available in Ember.js 2.x like Data down, Actions up, contextual components, closure actions etc.</p>
+        		<a href="http://ember-workshop.simplabs.com" class="custom-button">learn more</a>
+        	</div>
+        </div>
+        <div class="col-sm-6">
+        	<div class="content-teaser">
+        		<h4>Sponsoring EmberConf</h4>
+        		<p>simplabs is proud to <strong>sponsor EmberConf 2016 in Portland, OR</strong>. EmberConf is the flagship event of the Ember community. It's two days of sessions, talks, and good times with the Ember Core Team and community members from around the world.</p>
+        		<a href="http://emberconf.com" class="custom-button">learn more</a>
+        	</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include contact_banner.html %}

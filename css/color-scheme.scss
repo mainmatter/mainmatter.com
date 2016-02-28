@@ -1,0 +1,126 @@
+$primary-text-color: #676767;
+
+$primary-background-color: #fff;
+$secondary-background-color: #000;
+
+$primary-highlight-color: #2b98de;
+$secondary-highlight-color: #fff;
+
+$border-color: #eee;
+
+$code-background-color: #f5f6f7;
+$code-text-color: #000;
+
+body {
+  color: $primary-text-color;
+}
+
+a {
+  color: $primary-highlight-color;
+  transition: border-bottom-color ease-in-out .15s;
+
+  &:hover {
+    color: $primary-highlight-color;
+    border-bottom-color: $primary-highlight-color;
+  };
+}
+
+h3, h4, h5 {
+  color: $primary-highlight-color;
+}
+
+.highlight, code {
+  background-color: $code-background-color;
+}
+
+code {
+  color: $code-text-color;
+}
+
+#main-menu {
+  a {
+    transition: color ease-in-out .15s;
+
+    span {
+      transition: border-bottom-color ease-in-out .15s;
+    }
+
+    &:hover, &.active {
+      span {
+        border-bottom-color: $primary-highlight-color;
+      }
+    }
+  }
+}
+
+.custom-button {
+  border-color: $primary-highlight-color;
+  transition: color ease-in-out .15s, background-color ease-in-out .15s;
+
+  &:hover {
+    background-color: $primary-highlight-color;
+    color: $secondary-highlight-color;
+  }
+
+  &.contact-button {
+    border-color: $secondary-highlight-color;
+
+    &:hover {
+      background-color: $secondary-highlight-color;
+      color: $primary-highlight-color;
+    }
+  }
+}
+
+#main-menu {
+  background-color: $primary-background-color;
+
+  a {
+    color: $primary-text-color;
+
+    &:hover, &.active { 
+      color: $primary-highlight-color;
+      background-color: $primary-background-color;
+      border-bottom-color: $primary-highlight-color;
+
+      span {
+        border-bottom-color: $primary-highlight-color;
+      }
+    }
+  }
+}
+
+#footer {
+  a {
+    color: $primary-text-color;
+
+    &:hover, &.active {
+      background-color: $primary-background-color;
+      color: $primary-text-color;
+    }
+  }
+}
+
+#main-content {
+  .content-section.separated:after {
+    border-bottom-color: $border-color;
+  }
+}
+
+.contact-banner {
+  h4 {
+    color: $secondary-highlight-color;
+  }
+}
+
+.contact-button {
+  color: $secondary-highlight-color;
+}
+
+.top-banner {
+  color: $primary-background-color;
+
+  strong {
+    background-color: $secondary-background-color;
+  }
+}
