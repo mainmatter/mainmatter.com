@@ -16,12 +16,12 @@ excerpt_separator: <!--break-->
   
 navigation:
   - title: Services
-    url: /services
+    url: /services/
   - title: Process
-    url: /process
+    url: /process/
   - title: About
-    url: /about
+    url: /about/
   - title: Clients
-    url: /clients
+    url: /clients/
   - title: Blog
-    url: /blog
+    url: /blog/
