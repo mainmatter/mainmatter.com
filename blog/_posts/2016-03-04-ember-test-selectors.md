@@ -22,7 +22,7 @@ This approach simply selects elements by their position in the rendered HTML. Fo
 ```html
 <article>
   <h1>Post Title</h1>
-  <p>Post Body…</p<>
+  <p>Post Body…</p>
 </article>
 ```
 
