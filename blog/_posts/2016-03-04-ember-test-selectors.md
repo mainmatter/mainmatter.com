@@ -11,11 +11,11 @@ We just released [ember-test-selectors](https://github.com/simplabs/ember-test-s
 
 <!--break-->
 
-### Why even use `data` attributes as test selectors?
+#### Why even use `data` attributes as test selectors?
 
 Integration and acceptance tests usually __interact with and assert on the presence of certain elements__ in the markup that an application renders. These elements are identified using CSS selectors. Most projects use one of three approaches for CSS selectors in tests:
 
-#### Selectors based on HTML structure
+##### Selectors based on HTML structure
 
 This approach simply selects elements by their position in the rendered HTML. For the following template:
 
@@ -28,7 +28,7 @@ This approach simply selects elements by their position in the rendered HTML. Fo
 
 one might select the post's title with the selector `'article h1'`. Of course this breaks when changing the `<h1>` to a `<h2>` while the functionality being tested is probably not affected by that change.
 
-#### Selectors based on CSS classes
+##### Selectors based on CSS classes
 
 This approach selects elements by CSS classes. For the following template:
 
@@ -43,7 +43,7 @@ one might select the post title with the selector `'.post-title'`. This of cours
 
 Many projects use CSS classes with special prefixes that are only used for testing to overcome this problem like `'js-post-title'`. While that approach is definitely more stable it is often hard to maintain. Also it doesn't easily allow to encode additional information like e.g. the post's id.
 
-#### Selectors based on `data` attributes
+##### Selectors based on `data` attributes
 
 This approach uses HTML 5 `data` attributes to select elements. For the following template:
 
@@ -72,7 +72,7 @@ one would select the post's title with the selector `*[data-test-selector="post-
 </article>
 ```
 
-### Future Plans
+#### Future Plans
 
 We have some future plans for ember-test-selectors to make working with data attributes as test selectors even more convenient:
 
