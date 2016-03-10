@@ -108,6 +108,8 @@ code {
 }
 
 .contact-banner {
+  background-color: $primary-highlight-color;
+
   h4 {
     color: $secondary-highlight-color;
   }
@@ -119,6 +121,7 @@ code {
 
 .top-banner {
   color: $primary-background-color;
+  background-color: $primary-highlight-color;
 
   strong {
     background-color: $secondary-background-color;

@@ -131,9 +131,6 @@ ul {
 
 .contact-banner {
   width: 100%;
-  background-image: url('../images/contact-banner-background.png');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
   padding: 20px 0;
 
   .contact-button {
@@ -178,9 +175,6 @@ ul {
 }
 
 .top-banner {
-  background-image: url('../images/page-banner.png');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
   padding: 20px 0;
   height: 180px;
 
@@ -212,6 +206,19 @@ ul {
 
   strong {
     padding: 3px;
+  }
+}
+
+.top-banner, .contact-banner {
+  background-image: url('../images/banner-background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6/2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+    & {
+      background-image: url('../images/banner-background@2x.png');
+    }
   }
 }
 
