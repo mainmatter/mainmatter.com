@@ -85,7 +85,7 @@ h5 {
   font-size: 12px;
 }
 
-.top-banner {
+.primary-banner {
   text-align: center;
   
   h2 {
@@ -96,6 +96,16 @@ h5 {
 
   strong {
     font-weight: normal;
+  }
+}
+
+.secondary-banner {
+  &.workshop-banner {
+    text-align: center;
+
+    a {
+      font-size: 22px;
+    }
   }
 }
 
@@ -157,7 +167,7 @@ h5 {
 }
 
 @media screen and (max-width: 767px) {
-  .contact-banner {
+  .secondary-banner {
     text-align: center;
   }
 
