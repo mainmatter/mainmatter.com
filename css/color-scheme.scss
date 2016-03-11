@@ -11,6 +11,10 @@ $border-color: #eee;
 $code-background-color: #f5f6f7;
 $code-text-color: #000;
 
+$workshop-primary-text-color: #000;
+$workshop-primary-background-color: #e7f2ef;
+$workshop-primary-highlight-color: #e04a31;
+
 body {
   color: $primary-text-color;
 }
@@ -107,11 +111,24 @@ code {
   }
 }
 
-.contact-banner {
+.secondary-banner {
   background-color: $primary-highlight-color;
 
   h4 {
     color: $secondary-highlight-color;
+  }
+
+  &.workshop-banner {
+    color: $workshop-primary-text-color;
+    background-color: $workshop-primary-background-color;
+
+    a {
+      color: $workshop-primary-highlight-color;
+    }
+
+    &:hover a {
+      border-bottom-color: $workshop-primary-highlight-color;
+    }
   }
 }
 
@@ -119,7 +136,7 @@ code {
   color: $secondary-highlight-color;
 }
 
-.top-banner {
+.primary-banner {
   color: $primary-background-color;
   background-color: $primary-highlight-color;
 

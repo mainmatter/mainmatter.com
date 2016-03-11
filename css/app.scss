@@ -129,9 +129,17 @@ ul {
   padding: 5px 50px 5px 50px;
 }
 
-.contact-banner {
+.secondary-banner {
   width: 100%;
   padding: 20px 0;
+
+  &.workshop-banner {
+    background-image: none;
+
+    a {
+      display: inline-block;
+    }
+  }
 
   .contact-button {
     margin-top: 4px;
@@ -174,7 +182,7 @@ ul {
   }
 }
 
-.top-banner {
+.primary-banner {
   padding: 20px 0;
   height: 180px;
 
@@ -209,7 +217,7 @@ ul {
   }
 }
 
-.top-banner, .contact-banner {
+.primary-banner, .secondary-banner {
   background-image: url('../images/banner-background.png');
   background-repeat: no-repeat;
   background-position: center;
@@ -358,7 +366,7 @@ iframe.twitter-tweet {
     }
   }
 
-  .contact-banner {
+  .secondary-banner {
     .contact-button {
       float: none !important;
     }
