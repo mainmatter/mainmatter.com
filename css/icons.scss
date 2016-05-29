@@ -22,6 +22,10 @@ i.shuddle {
   @include icon("/images/logos/shuddle", "png", 136px, 25px);
 }
 
+i.hopskipdrive {
+  @include icon("/images/logos/hopskipdrive", "png", 92px, 40px);
+}
+
 i.skatstube {
   @include icon("/images/logos/skatstube", "png", 50px, 50px);
 }
