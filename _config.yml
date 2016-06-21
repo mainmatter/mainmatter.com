@@ -5,6 +5,7 @@ sass:
 
 gems:
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 markdown: kramdown
 highlighter: rouge
@@ -25,3 +26,15 @@ navigation:
     url: /clients/
   - title: Blog
     url: /blog/
+
+title: simplabs
+author: simplabs GmbH
+description: simplabs builds solutions for the web and mobile devices
+
+url: simplabs.com
+logo: /images/logo@2x.png
+
+twitter:
+  username: simplabs
+facebook:
+  publisher: https://www.facebook.com/simplabs/
