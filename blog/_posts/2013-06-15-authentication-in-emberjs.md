@@ -83,7 +83,7 @@ $.cookie('auth_account', App.Auth.get('accountId'));
 
 #### Making authenticated requests
 
-The next step is to actually send the authentication token to the server. As the only point point of interaction between client and server in an ember.js app is **when the store adapter reads or writes data, the token has to be integrated in that adapter somehow**. As there’s not (yet) any out-off-the-box support for authentication in the [DS.RESTAdapter](https://github.com/emberjs/data/blob/master/packages/ember-data/lib/adapters/rest_adapter.js), I simply added it myself:
+The next step is to actually send the authentication token to the server. As the only point point of interaction between client and server in an ember.js app is **when the store adapter reads or writes data, the token has to be integrated in that adapter somehow**. As there’s not (yet) any out-off-the-box support for authentication in the DS.RESTAdapter, I simply added it myself:
 
 ```js
 App.AuthenticatedRESTAdapter = DS.RESTAdapter.extend({

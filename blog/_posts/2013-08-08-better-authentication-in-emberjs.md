@@ -7,15 +7,15 @@ github-handle: marcoow
 twitter-handle: marcoow
 ---
 
-**Update:**_I released an Ember.js plugin that makes it very easy to implement an authentication system as described in this post: [Ember.SimpleAuth](http://log.simplabs.com/post/63565686488/ember-simpleauth>%20title=)._
+**Update:**_I released an Ember.js plugin that makes it very easy to implement an authentication system as described in this post: [Ember.SimpleAuth](http://simplabs.com/blog/2013/06/15/authentication-in-emberjs.html)._
 
-When we started our first [ember.js](http://emberjs.com) project in June 2013, [one of the first things we implemented was authentication](http://log.simplabs.com/post/53016599611/authentication-in-ember-js "the original post on authentication with ember.js"). Now, almost 2 months later, **it has become clear that our initial approach was not really the best and had some shortcomings. So I implemented a better authentication** (mostly based on [the](http://www.embercasts.com/episodes/client-side-authentication-part-1) [embercasts](http://www.embercasts.com/episodes/client-side-authentication-part-2) on authentication).
+When we started our first [ember.js](http://emberjs.com) project in June 2013, one of the first things we implemented was authentication. Now, almost 2 months later, **it has become clear that our initial approach was not really the best and had some shortcomings. So I implemented a better authentication** (mostly based on [the](http://www.embercasts.com/episodes/client-side-authentication-part-1) [embercasts](http://www.embercasts.com/episodes/client-side-authentication-part-2) on authentication).
 
 <!--break-->
 
 _I’m using the latest (as of early August 2013) [ember.js](http://emberjs.com) and [handlebars](http://handlebarsjs.com) releases in this example._
 
-_**Update:**I changed the section on actually using the token to use [$.ajaxPrefilter](http://api.jquery.com/jQuery.ajaxPrefilter/) instead of a custom ember-data adapter (thanks to [Marc for the comment](http://log.simplabs.com/post/57702291669/better-authentication-in-ember-js#comment-1035275502 "Marc's comment on the topic")!)_
+_**Update:**I changed the section on actually using the token to use [$.ajaxPrefilter](http://api.jquery.com/jQuery.ajaxPrefilter/) instead of a custom ember-data adapter (thanks to Marc for the comment!)_
 
 #### The basics
 
@@ -25,7 +25,7 @@ This data is stored in a _"session"_ object on the client side (while technicall
 
 #### The client _"session"_
 
-The _"session"_ object on the client side is a **plain `Ember.Object` that simply keeps the data that is received from the server** on session creation. It also stores the authentication token and the user’s account ID in cookies so the user doesn’t have to login again after a page reload (As [Ed points out in a comment on the old post](http://log.simplabs.com/post/53016599611/authentication-in-ember-js#comment-958979257 "Ed's comment on the old post") it’s a security issue to store the authentication token in a cookie without the user’s permission - I think using a session cookie like I do should be ok as it’s deleted when the browser window is closed. Of course you could also use sth. like localStorage like [Marc points out below](http://log.simplabs.com/post/57702291669/better-authentication-in-ember-js#comment-997461654)). I’m creating this object in an initializer so I can be sure it exists (of course it might be empty) when the application starts.
+The _"session"_ object on the client side is a **plain `Ember.Object` that simply keeps the data that is received from the server** on session creation. It also stores the authentication token and the user’s account ID in cookies so the user doesn’t have to login again after a page reload (As Ed points out in a comment on the old post it’s a security issue to store the authentication token in a cookie without the user’s permission - I think using a session cookie like I do should be ok as it’s deleted when the browser window is closed. Of course you could also use sth. like localStorage like Marc points out. I’m creating this object in an initializer so I can be sure it exists (of course it might be empty) when the application starts.
 
 ```js
 Ember.Application.initializer({

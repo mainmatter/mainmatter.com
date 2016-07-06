@@ -81,7 +81,7 @@ to this:
 <form {{action authenticate on='submit'}}>
 {% endraw %}```
 
-These are really the only changes needed if your application is using Ember.SimpleAuth’s default settings, the default OAuth 2.0 mechanism etc. For other scenarios, see the [README](https://github.com/simplabs/ember-simple-auth#readme), [API docs](http://ember-simple-auth.com/api/) and also the [examples provided in the repository](https://github.com/simplabs/ember-simple-auth/tree/master/examples).
+These are really the only changes needed if your application is using Ember.SimpleAuth’s default settings, the default OAuth 2.0 mechanism etc. For other scenarios, see the [README](https://github.com/simplabs/ember-simple-auth#readme), [API docs](http://ember-simple-auth.com/api/) and also the examples provided in the repository.
 
 #### Outlook
 
