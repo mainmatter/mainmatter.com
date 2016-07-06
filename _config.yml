@@ -38,3 +38,6 @@ twitter:
   username: simplabs
 facebook:
   publisher: https://www.facebook.com/simplabs/
+
+exclude: [vendor]
+
