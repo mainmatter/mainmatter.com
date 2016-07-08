@@ -9,7 +9,7 @@ twitter-handle: marcoow
 
 **Update:**_I released an Ember.js plugin that makes it very easy to implement an authentication system as described in this post: [Ember.SimpleAuth](http://simplabs.com/blog/2013/06/15/authentication-in-emberjs.html)._
 
-When we started our first [ember.js](http://emberjs.com) project in June 2013, one of the first things we implemented was authentication. Now, almost 2 months later, **it has become clear that our initial approach was not really the best and had some shortcomings. So I implemented a better authentication** (mostly based on [the](http://www.embercasts.com/episodes/client-side-authentication-part-1) [embercasts](http://www.embercasts.com/episodes/client-side-authentication-part-2) on authentication).
+When we started our first [ember.js](http://emberjs.com) project in June 2013, one of the first things we implemented was authentication. Now, almost 2 months later, **it has become clear that our initial approach was not really the best and had some shortcomings. So I implemented a better authentication** (mostly based on the embercasts on authentication).
 
 <!--break-->
 

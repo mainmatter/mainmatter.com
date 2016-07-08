@@ -10,7 +10,6 @@ With Ember Simple Auth 1.0.0 having been released a few days ago, a lot of peopl
 
 As 1.0.0 marks the first stable release of Ember Simple Auth, upcoming versions will adhere to the Semantic Versioning rule of not including breaking changes in patch level or minor releases. In fact, Ember Simple Auth will follow Ember’s example and only make additive, backwards compatible changes in all 1.x releases and only remove deprecated parts of the library in the next major release.
 
-![ESA](/images/cases/esa.png)
 
 #### Uninstall previous versions
 
