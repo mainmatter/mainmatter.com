@@ -79,7 +79,7 @@ export default Ember.Route.extend(ApplicationRouteMixin);
 
 #### Setting up authentication
 
-To actually give the user the option to login, we need to add an authentication package for Ember Simple Auth. Let’s assume you have an OAuth 2.0 compatible server running at `http://localhost:3000`. To use that, install the [OAuth 2.0 extension library](https://github.com/simplabs/ember-simple-auth/tree/master/packages/ember-simple-auth-oauth2) which again is as easy as installing the [package from npm](https://www.npmjs.com/package/ember-cli-simple-auth-oauth2):
+To actually give the user the option to login, we need to add an authentication package for Ember Simple Auth. Let’s assume you have an OAuth 2.0 compatible server running at `http://localhost:3000`. To use that, install the [OAuth 2.0 extension library](https://github.com/simplabs/ember-simple-auth/blob/master/addon/authenticators/oauth2-password-grant.js) which again is as easy as installing the [package from npm](https://www.npmjs.com/package/ember-cli-simple-auth-oauth2):
 
 ```bash
 npm install --save-dev ember-cli-simple-auth-oauth2
@@ -129,4 +129,4 @@ You also need to make sure that your server allows cross origin requests by [ena
 
 #### Conclusion
 
-This is how you set up an ember-cli project with Ember Simple Auth. For further documentation and examples see the [github repository](https://github.com/simplabs/ember-simple-auth) and the [API docs for Ember Simple Auth](http://ember-simple-auth.simplabs.com/ember-simple-auth-api-docs.html) and the [OAuth 2.0 extension library](http://ember-simple-auth.simplabs.com/ember-simple-auth-oauth2-api-docs.html).
+This is how you set up an ember-cli project with Ember Simple Auth. For further documentation and examples see the [github repository](https://github.com/simplabs/ember-simple-auth) and the [API docs for Ember Simple Auth](http://ember-simple-auth.com/api/) and the [OAuth 2.0 extension library](http://ember-simple-auth.com/api/).

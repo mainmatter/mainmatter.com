@@ -33,7 +33,7 @@ export default function startApp(attrs) {
 
 #### Configuring the `test` environment
 
-The next step is to configure the `test` environment. As the tests should be isolated and leave no traces of any kind so that subsequent tests don’t have implicit dependencies on the ones that have run earlier, Ember Simple Auth’s default `localStorage` store cannot be used as that would leave data in the `localStorage`. **Instead configure the [ephemeral store](http://ember-simple-auth.simplabs.com/ember-simple-auth-api-docs.html#SimpleAuth-Stores-Ephemeral) to be used in the `test` environment**:
+The next step is to configure the `test` environment. As the tests should be isolated and leave no traces of any kind so that subsequent tests don’t have implicit dependencies on the ones that have run earlier, Ember Simple Auth’s default `localStorage` store cannot be used as that would leave data in the `localStorage`. **Instead configure the [ephemeral store](http://ember-simple-auth.com/api/classes/EphemeralStore.html) to be used in the `test` environment**:
 
 ```js
 // config/environment.js

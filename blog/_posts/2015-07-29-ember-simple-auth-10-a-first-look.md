@@ -78,4 +78,4 @@ While previous versions of Ember Simple Auth provided 3 different versions (AMD,
 *   The code should be reviewed and cleaned up before the final 1.0 release - much of it is still what I wrote almost 2 years ago when I was still relatively new to Ember and could probably be greatly improved.
 *   The setup of the AJAX prefilter should be decoupled from the library so that it’s opt-in and could be replaced with a different approach (e.g. sth. that sets a property on the application’s Ember Data adapter instead) - see [#522](https://github.com/simplabs/ember-simple-auth/pull/522) and [#270](https://github.com/simplabs/ember-simple-auth/issues/270). A compatibility Addon should be extracted that implements the current behavior of setting up the prefilter automatically.
 
-You can track the progress in the [`jj-abrams` branch](https://github.com/simplabs/ember-simple-auth/compare/jj-abrams) and if you want to submit a PR for any of the above mentioned tasks that would be greatly appreciated of course!
+You can track the progress in the `jj-abrams` branch and if you want to submit a PR for any of the above mentioned tasks that would be greatly appreciated of course!
