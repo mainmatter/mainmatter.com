@@ -15,7 +15,7 @@ When we started our first [ember.js](http://emberjs.com) project in June 2013, o
 
 _I’m using the latest (as of early August 2013) [ember.js](http://emberjs.com) and [handlebars](http://handlebarsjs.com) releases in this example._
 
-_**Update:**I changed the section on actually using the token to use [$.ajaxPrefilter](http://api.jquery.com/jQuery.ajaxPrefilter/) instead of a custom ember-data adapter (thanks to Marc for the comment!)_
+_**Update:**I changed the section on actually using the token to use [$.ajaxPrefilter](http://api.jquery.com/jQuery.ajaxPrefilter/) instead of a custom ember-data adapter_
 
 #### The basics
 
