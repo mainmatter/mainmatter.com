@@ -31,10 +31,13 @@ title: simplabs
 author: simplabs GmbH
 description: simplabs builds solutions for the web and mobile devices
 
-url: simplabs.com
+url: http://simplabs.com
 logo: /images/logo@2x.png
 
 twitter:
   username: simplabs
 facebook:
   publisher: https://www.facebook.com/simplabs/
+
+exclude: [vendor]
+

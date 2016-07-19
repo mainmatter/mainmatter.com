@@ -7,7 +7,7 @@ twitter-handle: LevelbossMike
 github-handle: LevelbossMike
 ---
 
-A few weeks ago a new version of the _"official"_ ember deployment solution [ember-cli-deploy](http://ember-cli.com/ember-cli-deploy/) was released:
+A few weeks ago a new version of the _"official"_ ember deployment solution [ember-cli-deploy](http://ember-cli-deploy.com/) was released:
 
 <blockquote class="twitter-tweet" lang="de"><p lang="en" dir="ltr">ember-cli-deploy 0.5 is now released and ready for use with a great docs site and already-rich plugin ecosystem: <a href="https://t.co/6yhjmjQrYD">https://t.co/6yhjmjQrYD</a></p>&mdash; Luke Melia (@lukemelia) <a href="https://twitter.com/lukemelia/status/659787938625134592">29. Oktober 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -15,7 +15,7 @@ A few weeks ago a new version of the _"official"_ ember deployment solution [emb
 
 Aaron Chambers and me gave detailed walkthroughs of the basic ideas behind the pipeline at the [Ember-London](https://vimeo.com/139125310) and [Ember.js-Munich](https://www.youtube.com/watch?v=d4xwIv_9Cg0) meetups respectively.
 
-The new release **encourages heavy use of [deploy plugins](http://emberobserver.com/categories/ember-cli-deploy-plugins) that all implement different parts of a deployment via [hooks](http://ember-cli.com/ember-cli-deploy/docs/v0.5.x/pipeline-hooks/)** and are themselves Ember CLI addons. What wasn’t available though was a plugin for notifying external webservices (e.g. an error-tracking service) during or after deployments so we decided to write one.
+The new release **encourages heavy use of [deploy plugins](http://emberobserver.com/categories/ember-cli-deploy-plugins) that all implement different parts of a deployment via [hooks](http://ember-cli-deploy.com/docs/v0.5.x/pipeline-hooks/)** and are themselves Ember CLI addons. What wasn’t available though was a plugin for notifying external webservices (e.g. an error-tracking service) during or after deployments so we decided to write one.
 
 #### Introducing ember-cli-deploy-notifications
 
@@ -94,7 +94,7 @@ module.exports = function(deployTarget) {
 
 `url`, `headers`, `method` and `body` are the basic ideas behind the service abstraction in ember-cli-deploy-notifications but to keep things simple you don’t have to provide `headers` and `method` for every custom service as these properties will default to `{}` and `'POST'` respectively.
 
-As you can see service configuration properties can either be defined directly or generated dynamically based on the [deployment context](http://ember-cli.com/ember-cli-deploy/docs/v0.5.x/deployment-context/). `this` will always point to the service’s configuration itself in all of these functions which enables you to do things like this:
+As you can see service configuration properties can either be defined directly or generated dynamically based on the [deployment context](http://ember-cli-deploy.com/docs/v0.5.x/deployment-context/). `this` will always point to the service’s configuration itself in all of these functions which enables you to do things like this:
 
 ```js
 // config/deploy.js

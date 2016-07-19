@@ -7,7 +7,7 @@ github-handle: marcoow
 twitter-handle: marcoow
 ---
 
-[The last blog post](http://log.simplabs.com/post/90339547725/using-ember-simple-auth-with-ember-cli "Using Ember Simple Auth with ember-cli") showed how to use [Ember Simple Auth](https://github.com/simplabs/ember-simple-auth) with [Ember CLI](https://github.com/ember-cli/ember-cli) to implement session handling and authentication. **This post shows how to test that code**.
+[The last blog post](http://simplabs.com/blog/2014/06/30/using-ember-simple-auth-with-ember-cli.html "Using Ember Simple Auth with ember-cli") showed how to use [Ember Simple Auth](https://github.com/simplabs/ember-simple-auth) with [Ember CLI](https://github.com/ember-cli/ember-cli) to implement session handling and authentication. **This post shows how to test that code**.
 
 <!--break-->
 
@@ -33,7 +33,7 @@ export default function startApp(attrs) {
 
 #### Configuring the `test` environment
 
-The next step is to configure the `test` environment. As the tests should be isolated and leave no traces of any kind so that subsequent tests don’t have implicit dependencies on the ones that have run earlier, Ember Simple Auth’s default `localStorage` store cannot be used as that would leave data in the `localStorage`. **Instead configure the [ephemeral store](http://ember-simple-auth.simplabs.com/ember-simple-auth-api-docs.html#SimpleAuth-Stores-Ephemeral) to be used in the `test` environment**:
+The next step is to configure the `test` environment. As the tests should be isolated and leave no traces of any kind so that subsequent tests don’t have implicit dependencies on the ones that have run earlier, Ember Simple Auth’s default `localStorage` store cannot be used as that would leave data in the `localStorage`. **Instead configure the [ephemeral store](http://ember-simple-auth.com/api/classes/EphemeralStore.html) to be used in the `test` environment**:
 
 ```js
 // config/environment.js
