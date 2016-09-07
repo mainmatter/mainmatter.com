@@ -32,8 +32,8 @@ author: simplabs GmbH
 description: simplabs builds solutions for the web and mobile devices
 
 url: http://simplabs.com
-logo: /images/apple-144.png
-image: /images/apple-144.png
+logo: http://simplabs.com/images/apple-144.png
+image: http://simplabs.com/images/apple-144.png
 
 twitter:
   username: simplabs
