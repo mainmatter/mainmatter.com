@@ -2,4 +2,4 @@
 set -e # halt script on error
 
 bundle exec jekyll build
-bundle exec htmlproofer ./_site --check-html --url-ignore https://t.co/6yhjmjQrYD --only-4xx
+bundle exec htmlproofer ./_site --check-html --url-ignore https://t.co/6yhjmjQrYD --only-4xx --url-swap simplabs.com:localhost\:4000
