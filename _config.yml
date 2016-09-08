@@ -28,12 +28,11 @@ navigation:
     url: /blog/
 
 title: simplabs
-author: simplabs GmbH
+author: simplabs
 description: simplabs builds solutions for the web and mobile devices
 
 url: http://simplabs.com
-logo: http://simplabs.com/images/apple-144.png
-image: http://simplabs.com/images/apple-144.png
+logo: /images/apple-144.png
 
 twitter:
   username: simplabs
@@ -41,3 +40,14 @@ facebook:
   publisher: https://www.facebook.com/simplabs/
 
 exclude: [vendor]
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      image: 
+        twitter: /images/apple-144.png
+        facebook: /images/apple-144.png
+        height: 144
+        width: 144
