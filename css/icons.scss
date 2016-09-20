@@ -82,6 +82,14 @@ i.robinhood {
   @include icon("/images/logos/robinhood", "png", 130px, 23px);
 }
 
+i.boldpoker {
+  @include icon("/images/logos/bold-poker", "png", 60px, 60px);
+}
+
+i.trainline {
+  @include icon("/images/logos/trainline", "png", 147px, 32px);
+}
+
 i.phoenix-logo {
   @include icon("/images/logos/phoenix", "png", 100px, 100px);
 }
