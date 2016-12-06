@@ -24,7 +24,20 @@ One challenge with making the cookies session store both in the browser as well 
 ember-cookies exposes a cookies service that provides read, write and clear methods:
 
 ```js
-TODO: sample
+// app/controllers/application.js
+import Ember from 'ember';
+
+const { inject: { service } } = Ember;
+
+export default Ember.Controller.extend({
+  cookies: service(),
+  intl: service(),
+
+  beforeModel() {
+    let locale = this.get('cookies').read('locale');
+    this.get('intl').set('locale', locale);
+  }
+});
 ```
 
 #### Using Ember Simple Auth with FastBoot
