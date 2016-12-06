@@ -7,21 +7,21 @@ github-handle: marcoow
 twitter-handle: marcoow
 ---
 
-Since FastBoot was first announced earlier this year it was clear to us that we wanted to have out-of-the-box support for it in Ember Simple Auth. We wanted to make sure that Ember Simple Auth did not keep anyone from adopting FastBoot and adopting FastBoot did not mean people would have to figure out their own authentication and authorization solutions. Today we're happy to announce the availability of Ember Simple Auth 1.2.0-beta.1, the first release with out-of-the-box (and of course fully backwards compatible) support for FastBoot.
+Ever since <a href="https://www.youtube.com/watch?v=o12-90Dm-Qs">FastBoot was first announced at EmberConf 2015</a> it was clear to us that we wanted to have out-of-the-box support for it in Ember Simple Auth. Our goal was to make sure that Ember Simple Auth did not keep anyone from adopting FastBoot and adopting FastBoot would not result in people having to figure out their own authentication and authorization solutions. Today we're happy to announce the availability of <a href="https://github.com/simplabs/ember-simple-auth/releases/tag/1.2.0-beta.1">Ember Simple Auth 1.2.0-beta.1</a>, the first release with out-of-the-box support for FastBoot.
 
 <!--break-->
 
-#### Seamless authentication/authorization handling
+#### Seamless Session Synchronization
 
-Ember Simple Auth 1.2 seamlessly synchronizes the session state between the browser and server. When a user logs in to an application and refeshes the page, triggering a request that's handled by the FastBoot server, Ember Simple Auth will send the session state along with that request, pick it up in the app instance that's running in the FastBoot server and make sure the Ember route is being executed in the correct session context. If the session turns out to be invalid for some reason the user will be redirected to the login page via a proper HTTP redirect.
+Ember Simple Auth 1.2 seamlessly synchronizes the session state between the browser and FastBoot server. When a user logs in to an Ember.js application and refreshes the page or comes back to the app later - triggering a request that's handled by the FastBoot server - Ember Simple Auth will send the session state along with that request, pick it up in the app instance that's running in the FastBoot server and make sure the Ember route is being loaded and rendered in the correct session context. If the session turns out to be invalid for some reason, the server will invalidate it and the user will be redirected to the login page via a proper HTTP redirect.
 
-#### How does this work?
+#### Under the hood
 
-Ember Simple Auth has always had the concept of session stores that persist the session state so that it survives page reloads. One of these already existing session stores turned out to be the perfect fit for the aforementioned session syncing mechanism and that's the cookie session store. A cookie for a particular origin will be sent along with all requests to that origin and can be modified by the server in the response. The latter characteristic is necessary in order for the server to be able to invalidate the session if it turns out to be invalid. Cookies also have another important characteristic which is the fact that they will be sent by the browser automatically which is important as we need to make sure that the session cookies is also sent along with the initial request when the Ember is not running yet and no JS can be used to inject any session information into the request.
+Ember Simple Auth has always had the concept of session stores that persist the session state so that it survives page reloads (or users leaving the app and coming back later). One of these session stores turned out to be the perfect fit for the aforementioned session syncing mechanism – the cookie session store. Browsers will automatically send cookies for a particular origin along with any request to that origin. Also, servers can modify cookies sent by the browser and include updates in the response that the browser will automatically pick up - effectively enabling bidirectional state synchronization.
 
-One challenge with making the cookies session store both in the browser as well as in Node though was that the API for cookies is obviously totally different in both environments. In the browser you'd rely on `document.cookie` while in the server side cookies are being read and written via the `Cookie` and `Set-Cookie` headers. That meant we had to come up with a way to read and write cookies via a common interface that abstracts these environment specific APIs (much like what ember-network does for the fetch API). Therefore we created ember-cookies which is a cookies abstraction that works in the browser as well as in Node and that's now being used internally by the cookie session store.
+The main challenge with enabling the cookie session store to run both in the browser as well as in Node though was that the APIs for cookie handling are obviously totally different in both environments. In the browser there is `document.cookie` while in server apps running in Node, cookies are being read and written via the `Cookie` and `Set-Cookie` headers. That meant we had to come up with a way to read and write cookies via a common interface that we could rely on in the cookie session store and that abstracted these environment specific APIs under the hood (much like what <a href="https://github.com/tomdale/ember-network">ember-network</a> does for the <a href="https://github.com/tomdale/ember-network">fetch API</a>). Therefore we created <a href="https://github.com/simplabs/ember-cookies">ember-cookies</a> which is a cookies abstraction that works in the browser as well as in Node and that's now being used internally by the cookie session store.
 
-ember-cookies exposes a cookies service that provides read, write and clear methods:
+ember-cookies exposes a cookies service with <a href="https://github.com/simplabs/ember-cookies#api">`read`, `write` and `clear` methods</a>:
 
 ```js
 // app/controllers/application.js
@@ -42,7 +42,7 @@ export default Ember.Controller.extend({
 
 #### Using Ember Simple Auth with FastBoot
 
-As most of Ember Simple Auth's support for FastBoot is based on the cookie session store, applications aiming to use ESA with FastBoot have to use that store. In order to do so, simply define the application session store as
+As most of Ember Simple Auth's support for FastBoot is based on the cookie session store, enabling FastBoot support is as easy as defining the application session store as:
 
 ```js
 // app/session-stores/application.js
@@ -51,8 +51,21 @@ import Cookie from 'ember-simple-auth/session-stores/cookie';
 export default Cookie.extend();
 ```
 
-Everything else will continue to work as it did before. Ember Simple Auth 1.2 is a completely backwards compatible update that does not introduce any breaking changes. Applications that already use the cookie session store will automatically be ready for FastBoot while applications using the `localStorage` or adaptive session stores will only have to switch to the cookie session store to just work(™) with FastBoot.
+If you're interested in learning more about the underlying concepts check out the <a href="https://www.youtube.com/watch?v=jcAgi7fpTw8&index=6&list=PL4eq2DPpyBbmrPasP06vK7cUkPUCNn_rW">talk about Authentication and Session Management in FastBoot</a> that I gave at <a href="http://embercamp.com">EmberCamp</a> in London in June.
 
-If you're interested in knowing more about the underlying concepts check out my talk about Auth* handling with FastBoot that I gave at EmberCamp in London in June.
+#### A Community Effort
 
-As this is a beta release and there are probably some rough edges we'd ask everyone to try it, regardless of whether they're using FastBoot already or not and report bugs, outdated or bad documentation etc. on github.
+This certainly is one of the larger releases in Ember Simple Auth's history and a lot of people have helped to make it happen. We'd like to thank all of our (at the time of this writing) <a href="https://github.com/simplabs/ember-simple-auth/graphs/contributors">141 contributors</a> and in particular mention <a href="https://github.com/stevenwu">Steven Wu</a>, <a href="https://github.com/kylemellander">Kyle Mellander</a>, <a href="https://github.com/arjansingh">Arjan Singh</a> and <a href="https://github.com/josemarluedke">Josemar Luedke</a> who have contributed a lot of thought in particular to the FastBoot effort and ember-cookies.
+
+#### Other Changes
+
+Out-of-the-box support for FastBoot is probably the most relevant new feature in this release but there are quite some other changes as well, including:
+
+* The default cookie names that the cookie session store uses are now compliant with RFC 2616, see <a href="https://github.com/simplabs/ember-simple-auth/pull/978">#978</a>
+* Server responses are now validated in authenticators, preventing successful logins when required data is actually missing, see <a href="https://github.com/simplabs/ember-simple-auth/pull/957">#957</a>
+* The OAuth 2.0 Passwort Grant authenticator can now send custom headers along with authentication requests, see <a href="https://github.com/simplabs/ember-simple-auth/pull/1018">#1018</a>
+* Routes like the login route can now be configured inline in routes using the respective mixins as opposed to `config/environment.js`, see <a href="https://github.com/simplabs/ember-simple-auth/pull/1041">#1041</a>
+
+#### Try it!
+
+As this is a beta release and there are probably some rough edges we'd ask everyone to try it, regardless of whether they're using FastBoot already or not and report bugs, outdated or bad documentation etc. on <a href="https://github.com/simplabs/ember-simple-auth/releases">github</a>.
