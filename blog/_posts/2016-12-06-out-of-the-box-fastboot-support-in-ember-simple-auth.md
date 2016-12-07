@@ -68,8 +68,8 @@ In addition to these changes, fixed issues include:
 
 #### A Community Effort
 
-This certainly is one of the larger releases in Ember Simple Auth's history and <strong>a lot of people have helped to make it happen</strong>. We'd like to thank all of our (at the time of this writing) <a href="https://github.com/simplabs/ember-simple-auth/graphs/contributors">141 contributors</a> and in particular mention <a href="https://github.com/stevenwu">Steven Wu</a>, <a href="https://github.com/kylemellander">Kyle Mellander</a>, <a href="https://github.com/arjansingh">Arjan Singh</a> and <a href="https://github.com/josemarluedke">Josemar Luedke</a> who have made awesome contributions in particular to the FastBoot effort and ember-cookies.
+This certainly is one of the larger releases in Ember Simple Auth's history and <strong>a lot of people have helped to make it happen</strong>. We'd like to thank all of our (at the time of this writing) <a href="https://github.com/simplabs/ember-simple-auth/graphs/contributors">141 contributors</a>, with particular mention to <a href="https://github.com/stevenwu">Steven Wu</a>, <a href="https://github.com/kylemellander">Kyle Mellander</a>, <a href="https://github.com/arjansingh">Arjan Singh</a> and <a href="https://github.com/josemarluedke">Josemar Luedke</a> for awesome contributions to the Fastboot effort and ember-cookies.
 
 #### Try it!
 
-As this is a beta release and <strong>there are probably some rough edges</strong> we'd ask everyone to try it, regardless of whether they're using FastBoot already or not and <strong>report bugs, outdated or bad documentation etc. on <a href="https://github.com/simplabs/ember-simple-auth/releases">github</a></strong>.
+As this is a beta release, <strong>there are probably some rough edges</strong>. We'd like everyone to try it, regardless of whether they're using Fastboot already or not and <strong>report bugs, outdated or bad documentation etc. on <a href="https://github.com/simplabs/ember-simple-auth/releases">github</a></strong>.
