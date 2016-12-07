@@ -53,13 +53,16 @@ export default Cookie.extend();
 
 If you're interested in learning more about the underlying concepts check out the <a href="https://www.youtube.com/watch?v=jcAgi7fpTw8&index=6&list=PL4eq2DPpyBbmrPasP06vK7cUkPUCNn_rW">talk about Authentication and Session Management in FastBoot</a> that I gave at <a href="http://embercamp.com">EmberCamp</a> in London in June.
 
-#### Other Changes
+#### Other Changes and Fixes
 
-Out-of-the-box support for FastBoot is probably the most relevant new feature in this release but there are <strong>quite some other changes</strong> as well, including:
+Out-of-the-box support for FastBoot is likely the most prominent addition in this release but there are <strong>quite some other changes</strong> as well, including:
 
 * The default cookie names that the cookie session store uses are now compliant with RFC 2616, see <a href="https://github.com/simplabs/ember-simple-auth/pull/978">#978</a>
 * Server responses are now validated in authenticators, preventing successful logins when required data is actually missing, see <a href="https://github.com/simplabs/ember-simple-auth/pull/957">#957</a>
 * The OAuth 2.0 Password Grant authenticator can now send custom headers along with authentication requests, see <a href="https://github.com/simplabs/ember-simple-auth/pull/1018">#1018</a>
+
+In addition to these changes, fixed issues include:
+
 * Routes like the login route can now be configured inline in routes using the respective mixins as opposed to `config/environment.js`, see <a href="https://github.com/simplabs/ember-simple-auth/pull/1041">#1041</a>
 * The cookie session store will now rewrite its cookies when any of its configurable properties (like cookie name) change, see <a href="https://github.com/simplabs/ember-simple-auth/pull/1056">#1056</a>
 
