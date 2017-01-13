@@ -9,11 +9,11 @@ twitter-handle: tobiasbieniek
 
 In March 2016 we have released the first version of
 [ember-test-selectors](https://github.com/simplabs/ember-test-selectors) and
-today we are proud to present you with our next milestone: `v0.1.0`.
+today we are proud to present you with our next milestone: `0.1.0`.
 
-While `v0.1.0` does not sound like much has changed, the addon has actually
-gained a lot of new functionality and can be considered our release candidate
-for `v1.0.0`.
+While `0.1.0` does not sound like much has changed, the addon has actually
+gained a lot of new functionality and should be considered our release candidate
+for `1.0.0`.
 
 This blog post will highlight the major changes in this release, and will
 give you a short introduction into *how* we have implemented these new
@@ -29,12 +29,12 @@ with `data-test-` in your templates:
 
 ```handlebars
 {% raw %}<article>
-  <h1 data-test-selector="post-title">{{post.title}}</h1>
+  <h1 data-test-post-title>{{post.title}}</h1>
   <p>{{post.body}}</p>
 </article>{% endraw %}
 ```
 
-... so that you can use these as CSS/jQuery selectors in your acceptance and integration tests:
+... so that you can use these as selectors in your acceptance and integration tests:
 
 ```js
 assert.equal(find(testSelector('post-title')).text(), 'my first blog post');
@@ -81,7 +81,7 @@ initializer and utility function in there. Since both of those are part
 of our `addon` and `app` folders, which are included in your builds by
 default, we borrowed a ["trick"](https://github.com/ember-cli/ember-cli-chai/blob/master/index.js#L119-L123)
 from [ember-cli-chai](https://github.com/ember-cli/ember-cli-chai/) which
-only includes both folders if we are in testing mode. 
+only includes both folders if we are in [testing mode](#testing-in-production-mode). 
 
 ```js
 module.exports = {
@@ -113,8 +113,9 @@ these properties were not stripped from the template yet.
 
 To modify templates from within an addon our best bet was to use an
 <abbr title="Abstract Syntax Tree">AST</abbr> transform on the Handlebars
-AST, that we get from the template parser. This can be accomplished using by
-registering a Handlebars AST plugin in the [`setupPreprocessorRegistry()`](https://ember-cli.com/api/classes/Addon.html#method_setupPreprocessorRegistry)
+AST, that we get from the template parser. This can be accomplished by
+registering a Handlebars AST plugin in the 
+[`setupPreprocessorRegistry()`](https://ember-cli.com/api/classes/Addon.html#method_setupPreprocessorRegistry)
 hook of the addon:
 
 ```js
@@ -179,9 +180,8 @@ of the `some-component` invocation is now gone.
 
 #### Stripping out `data-test-*` properties in JS files
 
-Now that we are able to automatically bind `data-test-*` properties, maybe it
-makes sense to also use them inside the class as *computed* properties.
-
+While one way of assigning data attributes to a component is in the template,
+data attributes can also be defined as properties on the component class.
 So instead of assigning `data-test-comment-id` inside the loop:
 
 ```handlebars
@@ -190,7 +190,8 @@ So instead of assigning `data-test-comment-id` inside the loop:
 {{/each}}
 ```
 
-... we use a computed property inside the component that mirrors `comment.id`:
+... we could also use a computed property inside the component that mirrors
+`comment.id`:
 
 ```js
 export default Ember.Component({
@@ -229,7 +230,7 @@ module.exports = function(babel) {
 With the Babel plugin done, all we had left to do was making sure that your
 app actually uses that plugin at build time. While this is not quite public
 API and may change in the future we have found a way to accomplish that in the
-official [ember-cli-htmlbars-inline-precompile](https://github.com/ember-cli/ember-cli-htmlbars-inline-precompile/blob/master/index.js#L64-L69)
+official [ember-cli-htmlbars-inline-precompile](https://github.com/ember-cli/ember-cli-htmlbars-inline-precompile/blob/v0.3.6/index.js#L64-L69)
 addon:
 
 ```js
@@ -288,7 +289,7 @@ var app = new EmberApp({
 ```
 
 Note that using the `environments` option still works, but is deprecated and
-will be removed by the time we release `v1.0.0`.
+will be removed by the time we release `1.0.0`.
 
 
 #### Simplified `testSelector()` import
