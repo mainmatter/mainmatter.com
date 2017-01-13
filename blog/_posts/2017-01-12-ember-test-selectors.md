@@ -304,8 +304,6 @@ we were able to simplify that import to just this:
 import testSelector from 'ember-test-selectors';
 ```
 
-----
-
 We hope you enjoyed reading about our progress on this project and we would
 love to get feedback on what else we can improve. Feel free to
 [reach out](https://github.com/simplabs/ember-test-selectors/issues/new)!
