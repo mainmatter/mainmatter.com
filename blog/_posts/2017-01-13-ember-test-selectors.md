@@ -9,7 +9,7 @@ twitter-handle: tobiasbieniek
 
 In March 2016 we have released the first version of
 [ember-test-selectors](https://github.com/simplabs/ember-test-selectors) and
-today we are proud to present you with our next milestone: `0.1.0`.
+today we are proud to present you our next milestone: `0.1.0`.
 
 While `0.1.0` does not sound like much has changed, the addon has actually
 gained a lot of new functionality and should be considered our release candidate
