@@ -125,3 +125,7 @@ i.michael {
 i.clemens {
   @include icon("/images/authors/clemens", "jpg", 100px, 100px);
 }
+
+i.tobias {
+  @include icon("/images/authors/tobias", "jpg", 100px, 100px);
+}
