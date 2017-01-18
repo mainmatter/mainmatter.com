@@ -103,6 +103,17 @@ module.exports = {
 };
 ```
 
+__UPDATE:__ After releasing `0.1.0` we were notified that this feature was
+not working for component integration tests, which was actually a pretty
+obvious problem as initializers are not running for these kinds of
+tests. After thinking about the issue for a few hours we came up with a
+solution that seems to work even better now. Instead of calling
+`Component.reopen()` in an initializer we are now doing it in a file in our
+`vendor` folder, which is always being run before any tests are executed.
+
+We have released `0.1.1` including this change and are now also warning you
+if you try to use `data-test-*` attributes on tagless components.
+
 
 #### Stripping out `data-test-*` attributes in templates
 
