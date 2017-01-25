@@ -8,7 +8,7 @@ title: Workshops
     <div class="row">
       <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
         <h2>Our Workshops</h2>
-        <p>We are <strong>Open Source enthusiasts</strong> from Munich, Germany.</p>
+        <p>We offer a <strong>variety of Workshops</strong> to help teams advance their skills.</p>
     	</div>
     </div>
   </div>
@@ -17,34 +17,20 @@ title: Workshops
 <div class="container" id="main-section">
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-sm-12">
-      <div class="row content-section split-section separated">
-        <div class="col-sm-6">
-          <h3>Bavarian Engineering</h3>
+      {% for post in site.categories.workshops %}
+        <div class="row content-section separated workshop">
+          <div class="col-sm-3 icon">
+            <i class="emberjs-logo"></i>
+          </div>
+          <div class="col-sm-9">
+            <h4>
+              <a href="{{post.url}}">{{post.title}}</a>
+            </h4>
+            {{post.excerpt}}
+            <a href="{{post.url}}" class="custom-button">Learn more</a>
+          </div>
         </div>
-        <div class="col-sm-6">
-          <p>simplabs is located in <strong>Munich, Germany</strong> and works for <a href="/clients/">clients all over the world</a>. We offer software engineering, technology consulting and training with web and mobile technologies. If we cannot provide something ourselves, we have a <strong>network of trusted engineers and designers</strong> that we work with.</p>
-        </div>
-      </div>
-
-      <div class="row content-section split-section separated">
-        <div class="col-sm-6">
-          <h3>simplabs <i class="love"></i> Open Source</h3>
-        </div>
-        <div class="col-sm-6">
-          <p><strong>simplabs loves Open Source</strong> and we don't only <a href="/process/">use it to implement our client's projects</a> but also <strong>actively maintain</strong> <a href="https://github.com/simplabs">a number of projects ourselves</a>.</p>
-          <p>Using open source ensures our <strong>projects are based on a solid foundation</strong> and benefit from the community behind it.</p>
-        </div>
-      </div>
-
-      <div class="row content-section split-section separated">
-        <div class="col-sm-6">
-          <h3>Community Engagement</h3>
-        </div>
-        <div class="col-sm-6">
-          <p>We <strong>sponsor conferences</strong> like <a href="http://emberconf.com">EmberConf</a> and  <a href="http://rubyday.it">RubyDay.it</a>, <strong>organize the <a href="http://www.meetup.com/Ember-js-Munich/">Munich Ember.js Meetup</a></strong> and help girls and women learn Rails at <a href="http://railsgirls.com">Rails Girls</a>.</p>
-          <p>Reaching out to the community is the best way to move open source forward, which <strong>eventually benefits everyone</strong>.</p>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </div>

@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'bundler'
+
+Bundler.setup(:development)
+
+require 'httparty'
+require 'active_support/core_ext/hash/keys'
+require 'active_support/core_ext/string/inflections'
+
+# argh, good old Ruby SSL errors… This should be fixed, it's rediculous to merge this as it is 😳
+courses = HTTParty.get('https://api.mike.works/api/v1/courses', verify: false).parsed_response.deep_symbolize_keys
+
+courses[:data].each do |course|
+  attributes = course[:attributes]
+  title, summary, created_at = attributes.values_at(:title, :summary, :'created-at')
+  slug = "#{created_at[0..9]}-#{title.parameterize.downcase}"
+  
+
+  filename = File.expand_path("../../workshops/_posts/#{slug}.md", __FILE__)
+  File.open(filename, 'a+') do |file|
+    file << <<~CONTENT
+      ---
+      layout: workshop
+      title: "#{title}"
+      permalink: /workshops/#{slug}
+      ---
+      #{summary}
+    CONTENT
+  end
+end
