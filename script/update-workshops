@@ -18,7 +18,7 @@ courses[:data].each do |course|
   
 
   filename = File.expand_path("../../workshops/_posts/#{slug}.md", __FILE__)
-  File.open(filename, 'a+') do |file|
+  File.open(filename, 'w') do |file|
     file << <<~CONTENT
       ---
       layout: workshop
@@ -26,6 +26,8 @@ courses[:data].each do |course|
       permalink: /workshops/#{slug}
       ---
       #{summary}
+
+      <!--break-->
     CONTENT
   end
 end
