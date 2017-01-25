@@ -25,6 +25,8 @@ navigation:
     url: /about/
   - title: Clients
     url: /clients/
+  - title: Workshops
+    url: /workshops/
   - title: Blog
     url: /blog/
 
