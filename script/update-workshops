@@ -24,10 +24,8 @@ courses[:data].each do |course|
       layout: workshop
       title: "#{title}"
       permalink: /workshops/#{slug}
+      summary: "#{summary.gsub("\n", '\n')}"
       ---
-      #{summary}
-
-      <!--break-->
     CONTENT
   end
 end
