@@ -17,28 +17,45 @@ course_data[:data].each do |course|
   title, description, category, created_at = attributes.values_at(:title, :description, :category, :'created-at')
   slug = "#{created_at[0..9]}-#{title.parameterize.downcase}"
 
-  course = {
+  course_yaml = {
     layout:      'workshop',
     title:       title,
     permalink:   "/workshops/#{slug}",
     category:    category,
-    description: description.gsub("'", "\'")
+    description: description
   }
 
   stage_data = HTTParty.get("https://api.mike.works/api/v1/courses/#{id}/stages", verify: false, format: :json).parsed_response.deep_symbolize_keys
-  course[:stages] = stage_data[:data].map do |stage|
+  course_yaml[:stages] = stage_data[:data].map do |stage|
     attributes = stage[:attributes]
     title, description, duration = attributes.values_at(:title, :description, :duration)
-    {
+    stage_yaml = {
       title:       title,
-      description: description.gsub("'", "\'"),
+      description: description,
       duration:    duration
     }
+
+    stage_yaml[:agenda_items] = stage[:relationships][:'agenda-items'][:data].map do |agenda_item_ref|
+      id, type = agenda_item_ref.values_at(:id, :type)
+      agenda_item = stage_data[:included].find { |include| include[:type] == type && include[:id] == id }
+      attributes = agenda_item[:attributes]
+      title, description, item_type, start_time, duration = attributes.values_at(:title, :description, :duration, :'item-type', :'start-time', :duration)
+
+      {
+        title:       title,
+        description: description,
+        item_type:   item_type,
+        start_time:  start_time,
+        duration:    duration
+      }
+    end
+
+    stage_yaml
   end
 
   filename = File.expand_path("../../workshops/_posts/#{slug}.md", __FILE__)
   File.open(filename, 'w') do |file|
-    file << course.deep_stringify_keys.to_yaml
+    file << course_yaml.deep_stringify_keys.to_yaml
     file << "---"
   end
 end
