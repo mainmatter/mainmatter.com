@@ -17,26 +17,28 @@ course_data[:data].each do |course|
   title, description, category, created_at = attributes.values_at(:title, :description, :category, :'created-at')
   slug = "#{created_at[0..9]}-#{title.parameterize.downcase}"
 
-  #stage_data = HTTParty.get("https://api.mike.works/api/v1/courses/#{id}/stages", verify: false, format: :json).parsed_response.deep_symbolize_keys
-  #stages = stage_data[:data].map do |stage|
-  #  attributes = stage[:attributes]
-  #  title, description, duration = attributes.values_at(:title, :description, :duration)
-  #  <<~CONTENT
-  #    - title: "#{title}"
-  #    - description: "#{description}"
-  #    - duration: #{duration}
-  #  CONTENT
-  #end
+  course = {
+    layout:      'workshop',
+    title:       title,
+    permalink:   "/workshops/#{slug}",
+    category:    category,
+    description: description.gsub("'", "\'")
+  }
+
+  stage_data = HTTParty.get("https://api.mike.works/api/v1/courses/#{id}/stages", verify: false, format: :json).parsed_response.deep_symbolize_keys
+  course[:stages] = stage_data[:data].map do |stage|
+    attributes = stage[:attributes]
+    title, description, duration = attributes.values_at(:title, :description, :duration)
+    {
+      title:       title,
+      description: description.gsub("'", "\'"),
+      duration:    duration
+    }
+  end
 
   filename = File.expand_path("../../workshops/_posts/#{slug}.md", __FILE__)
   File.open(filename, 'w') do |file|
-    file << {
-      'layout'      => 'workshop',
-      'title'       => title,
-      'permalink'   => "/workshops/#{slug}",
-      'category'    => category,
-      'description' => description
-    }.to_yaml
+    file << course.deep_stringify_keys.to_yaml
     file << "---"
   end
 end
