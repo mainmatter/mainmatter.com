@@ -13,7 +13,7 @@ courses = HTTParty.get('https://api.mike.works/api/v1/courses', verify: false).p
 
 courses[:data].each do |course|
   attributes = course[:attributes]
-  title, summary, created_at = attributes.values_at(:title, :summary, :'created-at')
+  title, description, created_at = attributes.values_at(:title, :description, :'created-at')
   slug = "#{created_at[0..9]}-#{title.parameterize.downcase}"
   
 
@@ -24,7 +24,7 @@ courses[:data].each do |course|
       layout: workshop
       title: "#{title}"
       permalink: /workshops/#{slug}
-      summary: "#{summary.gsub("\n", '\n')}"
+      description: "#{description.gsub("\n", '\n')}"
       ---
     CONTENT
   end
