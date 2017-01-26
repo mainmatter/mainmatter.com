@@ -9,23 +9,34 @@ require 'active_support/core_ext/hash/keys'
 require 'active_support/core_ext/string/inflections'
 
 # argh, good old Ruby SSL errors… This should be fixed, it's rediculous to merge this as it is 😳
-courses = HTTParty.get('https://api.mike.works/api/v1/courses', verify: false).parsed_response.deep_symbolize_keys
+course_data = HTTParty.get('https://api.mike.works/api/v1/courses', verify: false).parsed_response.deep_symbolize_keys
 
-courses[:data].each do |course|
+course_data[:data].each do |course|
   attributes = course[:attributes]
-  title, description, created_at = attributes.values_at(:title, :description, :'created-at')
+  id = course[:id]
+  title, description, category, created_at = attributes.values_at(:title, :description, :category, :'created-at')
   slug = "#{created_at[0..9]}-#{title.parameterize.downcase}"
-  
+
+  #stage_data = HTTParty.get("https://api.mike.works/api/v1/courses/#{id}/stages", verify: false, format: :json).parsed_response.deep_symbolize_keys
+  #stages = stage_data[:data].map do |stage|
+  #  attributes = stage[:attributes]
+  #  title, description, duration = attributes.values_at(:title, :description, :duration)
+  #  <<~CONTENT
+  #    - title: "#{title}"
+  #    - description: "#{description}"
+  #    - duration: #{duration}
+  #  CONTENT
+  #end
 
   filename = File.expand_path("../../workshops/_posts/#{slug}.md", __FILE__)
   File.open(filename, 'w') do |file|
-    file << <<~CONTENT
-      ---
-      layout: workshop
-      title: "#{title}"
-      permalink: /workshops/#{slug}
-      description: "#{description.gsub("\n", '\n')}"
-      ---
-    CONTENT
+    file << {
+      'layout'      => 'workshop',
+      'title'       => title,
+      'permalink'   => "/workshops/#{slug}",
+      'category'    => category,
+      'description' => description
+    }.to_yaml
+    file << "---"
   end
 end

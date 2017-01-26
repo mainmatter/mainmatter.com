@@ -12,8 +12,11 @@
           <div class="col-md-10 col-md-offset-1 col-sm-12">
             <div class="row content-section separated workshop">
               <div class="col-sm-12">
+                <div class="workshop-meta">
+                  <span class="category">{{page.category}}</span>
+                </div>
                 <h3>{{page.title}}</h3>
-                {{page.description}}
+                {{page.description | markdownify}}
               </div>
             </div>
           </div>
