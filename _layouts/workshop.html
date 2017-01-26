@@ -10,42 +10,15 @@
       <div class="container" id="main-section">
         <div class="row">
           <div class="col-md-10 col-md-offset-1 col-sm-12">
-            <div class="row content-section separated article">
+            <div class="row content-section separated workshop">
               <div class="col-sm-12">
-                <div class="article-meta">
-                  <span class="date">{{page.date | date: '%B %d, %Y'}}</span>
-                </div>
                 <h3>{{page.title}}</h3>
-                {{page.content}}
-              </div>
-            </div>
-            <div class="row content-section separated">
-              <div class="col-sm-12">
-                <p class="author">
-                  <i class="{{page.author | split: ' ' | first | downcase}} img-circle author"></i>
-                  <span class="author">
-                    {{page.author | upcase}}
-                  </span>
-
-                  {% if page.github-handle %}
-                    <a href="http://github.com/{{page.github-handle}}">
-                      <i class="fa fa-github"></i>
-                    </a>
-                  {% endif %}
-
-                  {% if page.twitter-handle %}
-                    <a href="http://twitter.com/{{page.twitter-handle}}">
-                      <i class="fa fa-twitter"></i>
-                    </a>
-                  {% endif %}
-                </p>
+                {{page.description}}
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {% include ember_workshop_banner.html %}
 
       {% include contact_banner.html %}
     </div>
