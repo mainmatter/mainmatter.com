@@ -56,7 +56,7 @@ import filterByProperty from 'app/computeds/filter-by';
 
 …
 
-activeUsers: filterByProperty('users' 'filter')
+filteredUsers: filterByProperty('users' 'filter')
 ```
 
 ```hbs {% raw %}
