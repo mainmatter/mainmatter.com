@@ -49,7 +49,7 @@ With Computed Properties doing something like this would not currently be possib
 
 #### Enter Class based Computed Properties
 
-With the Class based Computed Properties that ember-classy-computeds enables it is actually possible now to implement something like the above example so that the above mentioned `filterByProperty` macro is now possible and would actually update correctly when any of the user's `isActive`, `isBlocked` etc. properties change although it is not actually possible to know what these properties might be at runtime. This allows keeping the filtering logic in JavaScript as opposed to in the template:
+With the Class based Computed Properties that ember-classy-computed enables it is actually possible now to implement something like the above example so that the above mentioned `filterByProperty` macro is now possible and would actually update correctly when any of the user's `isActive`, `isBlocked` etc. properties change although it is not actually possible to know what these properties might be at runtime. This allows keeping the filtering logic in JavaScript as opposed to in the template:
 
 ```js
 import filterByProperty from 'app/computeds/filter-by';
@@ -70,7 +70,7 @@ The implementation for the Computed Property macro looks something like this:
 ```js
 // app/computeds/filter-by.js
 import Ember from 'ember';
-import { ClassBasedComputedProperty } from 'ember-classy-computeds';
+import { ClassBasedComputedProperty } from 'ember-classy-computed';
 
 const { observer, computed: { filter }, defineProperty } = Ember;
 
@@ -105,4 +105,4 @@ Comparing this code to the implementation of the [`filter-by` helper](https://gi
 
 #### Notice
 
-ember-classy-computeds is currently at a very early stage and we haven't thoroughly tested the implementation just yet. We have also not done any performance evaluation to get a better understanding of what the performance implications are. That is to say, while we encourage everyone to try this out, be aware you're currently doing so at your own risk as this is most likely not production ready (yet). We have the feeling though that this will be a valuable addition to Computed Properties in the future and can close the gap that currently exists between Computed Properties and template helpers.
+ember-classy-computed is currently at a very early stage and we haven't thoroughly tested the implementation just yet. We have also not done any performance evaluation to get a better understanding of what the performance implications are. That is to say, while we encourage everyone to try this out, be aware you're currently doing so at your own risk as this is most likely not production ready (yet). We have the feeling though that this will be a valuable addition to Computed Properties in the future and can close the gap that currently exists between Computed Properties and template helpers.
