@@ -49,7 +49,7 @@ With Computed Properties doing something like this would not currently be possib
 
 #### Enter Class based Computed Properties
 
-With the Class based Computed Properties that ember-classy-computed enables it is actually possible now to implement something like the above example so that the above mentioned `filterByProperty` macro is now possible and would actually update correctly when any of the user's `isActive`, `isBlocked` etc. properties change although it is not actually possible to know what these properties might be at runtime. This allows keeping the filtering logic in JavaScript as opposed to in the template:
+With the Class based Computed Properties that ember-classy-computed enables it is actually possible now to implement something like the above mentioned `filterByProperty` macro. That computed property returned by that macro can now correctly be invalidated when any of the user's `isActive`, `isBlocked` etc. properties change although it is not actually possible to know what these properties might be at runtime. This allows keeping the filtering logic in JavaScript as opposed to in the template:
 
 ```js
 import filterByProperty from 'app/computeds/filter-by';
