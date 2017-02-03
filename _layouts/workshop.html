@@ -17,6 +17,24 @@
                 </div>
                 <h3>{{page.title}}</h3>
                 {{page.description | markdownify}}
+                {% for stage in page.stages %}
+                  <div class="row content-section separated workshop">
+                    <div class="col-sm-3 icon">
+                      <i class="emberjs-logo"></i>
+                    </div>
+                    <div class="col-sm-9">
+                      <div class="stage-meta">
+                        <span class="module">MODULE {{forloop.index}}</span>
+                        <span class="module-duration pull-right">DURATION: {{stage.duration}} MINUTES</span>
+                      </div>
+                      <h4>
+                        {{stage.title}}
+                      </h4>
+                      {{stage.description | markdownify}}
+                      <a href="" class="custom-button">AGENDA</a>
+                    </div>
+                  </div>
+                {% endfor %}
               </div>
             </div>
           </div>
