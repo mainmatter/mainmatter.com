@@ -31,7 +31,23 @@
                         {{stage.title}}
                       </h4>
                       {{stage.description | markdownify}}
-                      <a href="" class="custom-button">AGENDA</a>
+                      <a class="custom-button" role="button" data-toggle="collapse" href="#agenda-{{forloop.index}}" aria-expanded="false" aria-controls="agenda-{{forloop.index}}">AGENDA</a>
+                      <div class="collapse" id="agenda-{{forloop.index}}">
+                        {% for item in stage.agenda_items %}
+                          <div class="col-sm-3">
+                          </div>
+                          <div class="col-sm-9">
+                            <div class="item-meta">
+                              <span class="item">{{stage.title}}</span>
+                              <span class="item-duration pull-right">DURATION: {{item.item_type}} MINUTES</span>
+                            </div>
+                            <h4>
+                              {{item.title}}
+                            </h4>
+                            {{item.description | markdownify}}
+                          </div>
+                        {% endfor %}
+                      </div>
                     </div>
                   </div>
                 {% endfor %}
