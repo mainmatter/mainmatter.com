@@ -16,7 +16,9 @@
                   <span class="category">{{page.category}}</span>
                 </div>
                 <h3>{{page.title}}</h3>
-                {{page.description | markdownify}}
+                <div class="description">
+                  {{page.description | markdownify}}
+                </div>
                 {% for stage in page.stages %}
                   <div class="row stage">
                     <div class="col-sm-2 number">

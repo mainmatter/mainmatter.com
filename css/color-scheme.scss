@@ -164,6 +164,9 @@ code {
 }
 
 .workshop {
+  .description:after {
+    border-bottom-color: $border-color;
+  }
   .stage {
     .number > div {
       .icon {

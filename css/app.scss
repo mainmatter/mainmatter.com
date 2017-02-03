@@ -368,9 +368,22 @@ iframe.twitter-tweet {
     margin-left: auto;
   }
 
-  p {
-    &:first-of-type {
-      margin-bottom: 40px;
+  .description {
+    margin-bottom: 60px;
+
+    &:after {
+      content: " ";
+      clear: both;
+      padding-top: 40px;
+      width: 100%;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      display: table;
+      box-sizing: border-box;
+    }
+
+    &.split-section:after {
+      width: calc(50% - 30px);
     }
   }
 
@@ -379,7 +392,7 @@ iframe.twitter-tweet {
   }
 
   .stage {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 
     &:last-child {
       margin-bottom: 0;
