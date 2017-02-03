@@ -10,7 +10,7 @@
       <div class="container" id="main-section">
         <div class="row">
           <div class="col-md-10 col-md-offset-1 col-sm-12">
-            <div class="row content-section separated workshop">
+            <div class="row content-section workshop">
               <div class="col-sm-12">
                 <div class="workshop-meta">
                   <span class="category">{{page.category}}</span>
@@ -19,10 +19,14 @@
                 {{page.description | markdownify}}
                 {% for stage in page.stages %}
                   <div class="row stage">
-                    <div class="col-sm-3 icon">
-                      {{forloop.index}}
+                    <div class="col-sm-2 number">
+                      <div>
+                        <div class="icon">
+                          <span>{{forloop.index}}</span>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-10">
                       <div class="stage-meta">
                         <span class="module">Module {{forloop.index}}</span>
                         <span class="duration pull-right">Duration: {{stage.duration}} minutes</span>

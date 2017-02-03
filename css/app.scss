@@ -358,12 +358,12 @@ iframe.twitter-tweet {
 }
 
 .workshop {
-  h4, h5 {
-    margin-top: 40px;
+  h4 {
+    text-align: left;
+    margin-top: 10px;
   }
 
   p, ul {
-    width: 83.33333333%;
     margin-right: auto;
     margin-left: auto;
   }
@@ -379,8 +379,42 @@ iframe.twitter-tweet {
   }
 
   .stage {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     p {
       margin: 0 0 20px 0;
+    }
+
+    .number > div {
+      position: relative;
+      width: 100%;
+
+      &:before{
+      	content: "";
+      	display: block;
+      	padding-top: 100%;
+      }
+
+      .icon {
+        background-image: url('../images/banner-background.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 300% 300%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        filter: none;
+        -webkit-filter: none;
+      	position:  absolute;
+      	top: 0;
+      	left: 0;
+      	bottom: 0;
+      	right: 0;
+      }
     }
   }
 }

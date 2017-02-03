@@ -162,3 +162,13 @@ code {
     background-color: $secondary-background-color;
   }
 }
+
+.workshop {
+  .stage {
+    .number > div {
+      .icon {
+        color: #fff;
+      }
+    }
+  }
+}
