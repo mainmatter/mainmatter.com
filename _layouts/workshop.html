@@ -18,21 +18,22 @@
                 <h3>{{page.title}}</h3>
                 {{page.description | markdownify}}
                 {% for stage in page.stages %}
-                  <div class="row content-section separated workshop">
+                  <div class="row stage">
                     <div class="col-sm-3 icon">
-                      <i class="emberjs-logo"></i>
+                      {{forloop.index}}
                     </div>
                     <div class="col-sm-9">
                       <div class="stage-meta">
-                        <span class="module">MODULE {{forloop.index}}</span>
-                        <span class="module-duration pull-right">DURATION: {{stage.duration}} MINUTES</span>
+                        <span class="module">Module {{forloop.index}}</span>
+                        <span class="duration pull-right">Duration: {{stage.duration}} minutes</span>
                       </div>
                       <h4>
                         {{stage.title}}
                       </h4>
                       {{stage.description | markdownify}}
-                      <a class="custom-button" role="button" data-toggle="collapse" href="#agenda-{{forloop.index}}" aria-expanded="false" aria-controls="agenda-{{forloop.index}}">AGENDA</a>
-                      <div class="collapse" id="agenda-{{forloop.index}}">
+                      <a class="custom-button" role="button" data-toggle="collapse" href="#agenda-{{forloop.index}}" aria-expanded="false" aria-controls="agenda-{{forloop.index}}">Agenda</a>
+                      <!--
+                      <div class="collapse agenda" id="agenda-{{forloop.index}}">
                         {% for item in stage.agenda_items %}
                           <div class="col-sm-3">
                           </div>
@@ -48,6 +49,7 @@
                           </div>
                         {% endfor %}
                       </div>
+                      -->
                     </div>
                   </div>
                 {% endfor %}

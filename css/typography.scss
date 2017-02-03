@@ -120,12 +120,6 @@ h5 {
   border-bottom: none;
 }
 
-.articles {
-  .article-meta {
-    font-size: 12px;
-  }
-}
-
 .article-meta {
   font-size: 12px;
 }
@@ -154,6 +148,38 @@ h5 {
 
     i {
       font-size: 28px;
+    }
+  }
+}
+
+.workshop-meta {
+  font-size: 12px;
+}
+
+.workshop {
+  h3, h4, h5 {
+    text-align: center;
+  }
+
+  p:first-of-type {
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .workshop-meta {
+    text-align: center;
+  }
+
+  .stage {
+    p {
+      font-weight: normal;
+      text-align: justify;
+    }
+
+    .stage-meta {
+      font-size: 12px;
+      text-transform: uppercase;
     }
   }
 }

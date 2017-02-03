@@ -357,6 +357,34 @@ iframe.twitter-tweet {
   margin: 60px auto;
 }
 
+.workshop {
+  h4, h5 {
+    margin-top: 40px;
+  }
+
+  p, ul {
+    width: 83.33333333%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  p {
+    &:first-of-type {
+      margin-bottom: 40px;
+    }
+  }
+
+  .workshop-meta {
+    margin: 0 0 20px 0;
+  }
+
+  .stage {
+    p {
+      margin: 0 0 20px 0;
+    }
+  }
+}
+
 .error-page {
   padding-top: 100px;
 }
