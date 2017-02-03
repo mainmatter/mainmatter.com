@@ -190,6 +190,23 @@ h5 {
       }
     }
   }
+
+  .agenda-item {
+    font-size: 14px;
+
+    .start-time {
+      text-align: right;
+    }
+
+    .item-meta {
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    h5 {
+      text-align: left;
+    }
+  }
 }
 
 .error-page {

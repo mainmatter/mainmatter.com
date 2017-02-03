@@ -38,25 +38,26 @@
                       </h4>
                       {{stage.description | markdownify}}
                       <a class="custom-button" role="button" data-toggle="collapse" href="#agenda-{{forloop.index}}" aria-expanded="false" aria-controls="agenda-{{forloop.index}}">Agenda</a>
-                      <!--
-                      <div class="collapse agenda" id="agenda-{{forloop.index}}">
-                        {% for item in stage.agenda_items %}
-                          <div class="col-sm-3">
-                          </div>
-                          <div class="col-sm-9">
-                            <div class="item-meta">
-                              <span class="item">{{stage.title}}</span>
-                              <span class="item-duration pull-right">DURATION: {{item.item_type}} MINUTES</span>
-                            </div>
-                            <h4>
-                              {{item.title}}
-                            </h4>
-                            {{item.description | markdownify}}
-                          </div>
-                        {% endfor %}
-                      </div>
-                      -->
                     </div>
+                  </div>
+                  <div class="row agenda-items" id="agenda-items-{{forloop.index}}">
+                    {% for item in stage.agenda_items %}
+                      <div class="row agenda-item" id="agenda-{{forloop.index}}">
+                        <div class="col-sm-2 start-time">
+                          {{item.start_time}}
+                        </div>
+                        <div class="col-sm-8">
+                          <div class="item-meta">
+                            <span class="state">{{stage.title}}</span>
+                            <span class="duration pull-right">Duration: {{item.duration}} minutes</span>
+                          </div>
+                          <h5>
+                            {{item.title}}
+                          </h5>
+                          {{item.description | markdownify}}
+                        </div>
+                      </div>
+                    {% endfor %}
                   </div>
                 {% endfor %}
               </div>
