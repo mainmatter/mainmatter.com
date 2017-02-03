@@ -39,13 +39,14 @@ course_data[:data].each do |course|
       id, type = agenda_item_ref.values_at(:id, :type)
       agenda_item = stage_data[:included].find { |include| include[:type] == type && include[:id] == id }
       attributes = agenda_item[:attributes]
-      title, description, item_type, start_time, duration = attributes.values_at(:title, :description, :duration, :'item-type', :'start-time', :duration)
+      title, description, duration, item_type, start_time = attributes.values_at(:title, :description, :duration, :'item-type', :'start-time', :duration)
+      start_time = start_time.to_s
 
       {
         title:       title,
         description: description,
         item_type:   item_type,
-        start_time:  start_time,
+        start_time:  "#{start_time[0...(start_time.length - 2)]}:#{start_time[-2..-1]}",
         duration:    duration
       }
     end

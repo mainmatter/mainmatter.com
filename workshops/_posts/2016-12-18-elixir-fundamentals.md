@@ -16,40 +16,40 @@ stages:
   agenda_items:
   - title: Lunch
     description: Break for Lunch
-    item_type: 60
-    start_time: break
-    duration: 1230
+    item_type: break
+    start_time: '12:30'
+    duration: 60
   - title: 'EXERCISE: Serializer Protocol'
     description: 'Given a list of values, we want to be able to generate a string
       representation, either in CSV or JSON array format. Design a protocol, and adopt
       that behavior in each of two modules: `CSVSerializer` and `JSONSerializer`.'
-    item_type: 30
-    start_time: exercise
-    duration: 1200
+    item_type: exercise
+    start_time: '12:00'
+    duration: 30
   - title: 'EXERCISE: Mission Control'
     description: We've got a set of tests for a couple of Elixir modules that are
       used to control a space ship. Alter the code to make the unit tests pass, and
       ensure that you've kept as much of each module's internal functionality private
       as possible.
-    item_type: 30
-    start_time: exercise
-    duration: 945
+    item_type: exercise
+    start_time: '9:45'
+    duration: 30
   - title: 'EXERCISE: Extending a Module'
     description: 'The `use` macro can essentially be used to decorate a module with
       some code from another module.
 
 '
-    item_type: 30
-    start_time: exercise
-    duration: 1045
+    item_type: exercise
+    start_time: '10:45'
+    duration: 30
   - title: Protocols & Behaviors
     description: |-
       Protocols are a mechanism for **polymorphism in Elixir**, where an implementation of a certain contract is defined on a per-type basis. In other languages, this contract would be called an interface (Java), or a pure abstract class (C++)
 
       Under the hood, part of how this works is by way of a **Behavior**: a definition of a set of functions that modules who adopt this behavior must implement.
-    item_type: 45
-    start_time: lecture
-    duration: 1115
+    item_type: lecture
+    start_time: '11:15'
+    duration: 45
   - title: Modules & Three Important Directives
     description: 'Modules are just a group of several functions, some of which may
       be private and some of which may be public. Modules give us the ability to define
@@ -57,24 +57,24 @@ stages:
       were unavailable in the world of anonymous functions.
 
 '
-    item_type: 30
-    start_time: lecture
-    duration: 915
+    item_type: lecture
+    start_time: '9:15'
+    duration: 30
   - title: Basic Metaprogramming
     description: 'While the `use` macro is not strictly a directive, it''s of particular
       importance when considering "mixins" for common functionality, shared across
       multiple concrete modules.
 
 '
-    item_type: 30
-    start_time: lecture
-    duration: 1015
+    item_type: lecture
+    start_time: '10:15'
+    duration: 30
   - title: Welcome Back
     description: We'll recap the ground we covered in day 1 of this training, so it's
       fresh in your mind, as we continue building up toward Elixir proficiency!
-    item_type: 15
-    start_time: lecture
-    duration: 900
+    item_type: lecture
+    start_time: '9:00'
+    duration: 15
 - title: Working With Data Structures
   description: Earlier we outlined and worked with several different types of data
     structures. Let's take a closer look at some of these methods.
@@ -84,25 +84,25 @@ stages:
     description: We'll round out the course by recapping everything we've learned,
       and finish with some tips for next steps in your mission to become an ace Elixir
       developer!
-    item_type: 15
-    start_time: lecture
-    duration: 1645
+    item_type: lecture
+    start_time: '16:45'
+    duration: 15
   - title: 'EXERCISE: Map, Filter, Reduce'
     description: We have a program that starts with a list of objects read from a
       file. Using the built-in functions available in the `Enum` and `Map` modules,
       filter out "inactive" items (objects where the "active" attribute is not `true`),
       and then log a list of object names to the console.
-    item_type: 30
-    start_time: exercise
-    duration: 1415
+    item_type: exercise
+    start_time: '14:15'
+    duration: 30
   - title: 'EXERCISE: Skimming a good book'
     description: 'Given the entire text of the book ~Gulliver''s Travels~, find the
       highest- Scrabble-scoring word within the first 1000 lines.
 
 '
-    item_type: 30
-    start_time: exercise
-    duration: 1615
+    item_type: exercise
+    start_time: '16:15'
+    duration: 30
   - title: Lazy Operations with Streams
     description: 'Elixir''s `Stream` module offers some of the same capabilities that
       we enjoy in the `Enum` module, but when working with Streams, computations are
@@ -110,15 +110,15 @@ stages:
       huge) collections.
 
 '
-    item_type: 30
-    start_time: lecture
-    duration: 1545
+    item_type: lecture
+    start_time: '15:45'
+    duration: 30
   - title: 'EXERCISE: Comprehensions'
     description: Take another pass at the previous exercise, and use a comprehension
       to devise a concise solution.
-    item_type: 30
-    start_time: exercise
-    duration: 1515
+    item_type: exercise
+    start_time: '15:15'
+    duration: 30
   - title: Taming List Enumeration with Comprehensions
     description: 'Often we find ourselves looping over something enumerable; mapping
       values into another list; and potentially filtering out some unwanted items.
@@ -126,16 +126,16 @@ stages:
       sugar for this kind of task.
 
 '
-    item_type: 30
-    start_time: lecture
-    duration: 1445
+    item_type: lecture
+    start_time: '14:45'
+    duration: 30
   - title: Enum & Map
     description: We've learned about how to create and work with **list** and **map**
       literals in very basic ways. Let's take a look into some of the tooling that
       Elixir provides as core language features, for working with these data structures.
-    item_type: 45
-    start_time: lecture
-    duration: 1330
+    item_type: lecture
+    start_time: '13:30'
+    duration: 45
 - title: Liftoff
   description: 'Elixir is in a fairly unique position as a programming language, in
     that it combines contemporary language features and excellent developer ergonomics
@@ -149,23 +149,23 @@ stages:
       machine that supports other languages
 
 '
-    item_type: 30
-    start_time: lecture
-    duration: 900
+    item_type: lecture
+    start_time: '9:00'
+    duration: 30
   - title: 'EXERCISE: Reading a CSV File'
     description: We're going to have to take a few things for granted, since we're
       just starting out, but let's use some existing well-documented code to read
       a CSV file into memory, and print some information about it to the console.
-    item_type: 30
-    start_time: exercise
-    duration: 1030
+    item_type: exercise
+    start_time: '10:30'
+    duration: 30
   - title: IO & Files
     description: As with most programming languages, it's useful to know how to interact
       with files and humans. We'll take care of this early on, and notice a few things
       that foreshadow some interesting aspects of Elixir's concurrency model.
-    item_type: 30
-    start_time: lecture
-    duration: 1000
+    item_type: lecture
+    start_time: '10:00'
+    duration: 30
   - title: Interactive Elixir
     description: |-
       **Elixir's interactive shell (IEx)** is one of the most powerful tools in your toolbox. We'll outline some of the most useful features for beginners, including:
@@ -173,9 +173,9 @@ stages:
       - Getting metadata about a value
       - Accessing embedded documentation
       - Inspecting the state of a particular process
-    item_type: 30
-    start_time: lecture
-    duration: 930
+    item_type: lecture
+    start_time: '9:30'
+    duration: 30
 - title: Types, Operators & Control Flow
   description: 'Our journey starts with basic types and procedural logic. Even if
     you''re experienced in a wide range of programming languages, there''s going to
@@ -190,24 +190,24 @@ stages:
       You'll be given an Elixir module that's currently a little messy and confusing. Untangle it by replacing all of the if/else logic with `cond` statements, `case`.statements and by applying pattern matching in function clauses.
 
       Remember: your goal is to make your code as easy to read and maintain as possible: be clever, but not confusing.
-    item_type: 30
-    start_time: exercise
-    duration: 1700
+    item_type: exercise
+    start_time: '17:00'
+    duration: 30
   - title: Recap & Wrap Up
     description: We'll go over everything we've covered today, and connect them back
       to the big picture. This is a great time for Q&A that's broader than the specific
       topics we've covered so far.
-    item_type: 15
-    start_time: lecture
-    duration: 1730
+    item_type: lecture
+    start_time: '17:30'
+    duration: 15
   - title: 'EXERCISE: Function Refactoring'
     description: We've got an Elixir module that involves some code that could benefit
       from some pattern matching magic. Refactor the monolith function so all use
       of if/else are replaced by creating new functions oriented toward handling that
       specific pattern of arguments.
-    item_type: 30
-    start_time: exercise
-    duration: 1630
+    item_type: exercise
+    start_time: '16:30'
+    duration: 30
   - title: Pattern Matching & Guards
     description: 'This modern language feature allows **destructed assignment**, and
       is often used to define several variants of a function, each to handle a specific
@@ -215,9 +215,9 @@ stages:
       be a lot of internal function complexity by huge amounts.
 
 '
-    item_type: 30
-    start_time: lecture
-    duration: 1600
+    item_type: lecture
+    start_time: '16:00'
+    duration: 30
   - title: 'EXERCISE: Fibonacci Pyramid'
     description: |-
       Using our knowledge of functions and recursion in Elixir, let's build a function that writes a Fibonacci pyramid to the console.
@@ -225,63 +225,63 @@ stages:
       ![Fibonacci Numbers](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/PascalTriangleFibanacci.svg/720px-PascalTriangleFibanacci.svg.png)
 
       20 levels deep!
-    item_type: 30
-    start_time: exercise
-    duration: 1445
+    item_type: exercise
+    start_time: '14:45'
+    duration: 30
   - title: Lunch
     description: Break for Lunch
-    item_type: 45
-    start_time: break
-    duration: 1245
+    item_type: break
+    start_time: '12:45'
+    duration: 45
   - title: 'EXERCISE: Building up a List'
     description: Assembling a bunch of items in a list is really fast, as long as
       we do it in a way that doesn't involve moving existing items around in memory.
       We'll write two programs, one which assembles a bunch of dictionary words into
       a tuple, and another that uses a list instead.
-    item_type: 25
-    start_time: exercise
-    duration: 1535
+    item_type: exercise
+    start_time: '15:35'
+    duration: 25
   - title: Tuples & Lists
     description: Often times we find ourselves needing to work with several objects
       in a "collection", and will need to choose between Elixir's **List** and **Tuple**
       types. We'll compare and contrast tuples and lists, and write a few programs
       highlighting the benefits of each.
-    item_type: 30
-    start_time: lecture
-    duration: 1415
+    item_type: lecture
+    start_time: '14:15'
+    duration: 30
   - title: Associative Data Structures
     description: 'We have two main associative data structures in Elixir: **keyword
       lists** and **maps**. Let''s learn more about them!'
-    item_type: 20
-    start_time: lecture
-    duration: 1515
+    item_type: lecture
+    start_time: '15:15'
+    duration: 20
   - title: Functions
     description: It stands to reason that functions are really important in a functional
       programming language. We'll build and work with named and anonymous functions,
       combine functions together to form pipelines, and even map out some higher-order
       functions of our own.
-    item_type: 45
-    start_time: lecture
-    duration: 1330
+    item_type: lecture
+    start_time: '13:30'
+    duration: 45
   - title: 'EXERCISE: Projectile Motion'
     description: We'll create a simple program that calculates an object's projectile
       motion, given a launch angle and initial velocity.
-    item_type: 30
-    start_time: exercise
-    duration: 1145
+    item_type: exercise
+    start_time: '11:45'
+    duration: 30
   - title: 'EXERCISE: String Acrobatics'
     description: We've got a bunch of functions that do various things to string values,
       but our tests are failing. Let's fix that!
-    item_type: 30
-    start_time: exercise
-    duration: 1215
+    item_type: exercise
+    start_time: '12:15'
+    duration: 30
   - title: Math & Strings
     description: "There's no getting away from these kinds of things. Eventually you're
       going to need to work with numbers and text, so we'll start with a crash course
       in some core APIs (including a dip in the Erlang pool) that will make life easy.
       \n\nThere's a lot of capability here, but we'll stay close to the commonly-useful
       and pragmatic path."
-    item_type: 45
-    start_time: lecture
-    duration: 1100
+    item_type: lecture
+    start_time: '11:00'
+    duration: 45
 ---

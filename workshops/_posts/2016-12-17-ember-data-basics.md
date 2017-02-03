@@ -20,23 +20,23 @@ stages:
       in the server-rendered HTML, and immediately injected into the client-side ember-data
       store upon app boot. We'll study low-level use of the shoebox directly, and
       then introduce an addon that automates shoebox/ember-data integration.
-    item_type: 30
-    start_time: lecture
-    duration: 1630
+    item_type: lecture
+    start_time: '16:30'
+    duration: 30
   - title: Peek, Fetch or Find
     description: We'll explore these three ways of retrieving data from the ember-data's
       store, providing practical real-world use cases for each.
-    item_type: 30
-    start_time: lecture
-    duration: 1600
+    item_type: lecture
+    start_time: '16:00'
+    duration: 30
   - title: 'Exercise: Harness the Power of Caching'
     description: I have an app that requires use of a really slow API, so any use
       of clever caching will dramatically improve the end user's experience. By employing
       the fastboot store, and ember-data's client-side caching strategies, reduce
       the *time to first [meaningful] interaction* as much as possible.
-    item_type: 30
-    start_time: exercise
-    duration: 1700
+    item_type: exercise
+    start_time: '17:00'
+    duration: 30
 - title: Massaging JSON
   description: |-
     Ember-data serializers are the tool for transforming your API's representation of data into what your ember app expects. We'll examine several common use cases for massaging JSON, including:
@@ -57,18 +57,18 @@ stages:
       * `DS.ActiveModelSerializer`
 
       We'll study each of these, and explore the kinds of JSON they're designed to work with.
-    item_type: 45
-    start_time: lecture
-    duration: 1330
+    item_type: lecture
+    start_time: '13:30'
+    duration: 45
   - title: 'Exercise: Building Serializers for Awful JSON'
     description: I've added some new features to the apps we wrote adapters for, earlier
       today. The JSON for these new records doesn't align well with what ember-data
       expects to see by default. Split up into teams, and work together to massage
       this JSON until all tests pass. Each group will present their solution to the
       rest of the workshop.
-    item_type: 60
-    start_time: exercise
-    duration: 1500
+    item_type: exercise
+    start_time: '15:00'
+    duration: 60
   - title: Functional JSON Massaging
     description: We rarely have the luxury of working with ideal JSON contracts, and
       often need to write code to transform between our API's representation of a
@@ -77,9 +77,9 @@ stages:
       for using easily-testable and re-usable pure functions and JavaScript's built-in
       higher order functions to massage your JSON, leaving it as a well-organized
       and easy-to-understand pipeline of function calls.
-    item_type: 45
-    start_time: lecture
-    duration: 1415
+    item_type: lecture
+    start_time: '14:15'
+    duration: 45
 - title: JSON-API
   description: "[JSON-API](http://jsonapi.org/) is a spec for JSON contracts between
     APIs and their clients. Because ember-data uses JSON-API by default, and as a
@@ -100,15 +100,15 @@ stages:
       * Providing a URL for retrieving related records at a later time
 
       We'll look at examples for each, and discuss use of the `include` queryParam for requesting inclusion of related records.
-    item_type: 30
-    start_time: lecture
-    duration: 930
+    item_type: lecture
+    start_time: '9:30'
+    duration: 30
   - title: Basic Objects, Errors and Metadata
     description: We'll work through some examples of how basic objects are defined,
       according to the JSON-API standard.
-    item_type: 30
-    start_time: lecture
-    duration: 900
+    item_type: lecture
+    start_time: '9:00'
+    duration: 30
 - title: Custom Transforms
   description: By specifying custom ember-data transforms, we can define new types
     of attributes on our model. We'll build our own "color", "array" and "object"
@@ -120,18 +120,18 @@ stages:
       data on our large example app:\n\n* RGB color\n* Array\n* Object\n \nWith reasonable
       unit tests for at least one of the three. Ensure that you handle important edge
       cases (like null value) appropriately."
-    item_type: 60
-    start_time: exercise
-    duration: 1800
+    item_type: exercise
+    start_time: '18:00'
+    duration: 60
   - title: Transforms vs. Other Options
     description: Ember-data transforms allow us to define other types of model attributes.
       We'll look at the practical differences between using transforms, compared to
       computed properties or serializer logic. Then, we'll finish by defining the
       parts needed for a complete ember-data transform, and go through a non-trivial
       example together.
-    item_type: 30
-    start_time: lecture
-    duration: 1730
+    item_type: lecture
+    start_time: '17:30'
+    duration: 30
 - title: Building Requests
   description: Ember-data adapters are responsible for building URLs, and making other
     customizations to outgoing requests. We'll begin by establishing the URL & JSON
@@ -149,14 +149,14 @@ stages:
       * `DS.ActiveModelAdapter`
 
       We'll look at the kinds of APIs these types of adapters are designed to work with, and the types of functionality they each provide.
-    item_type: 45
-    start_time: lecture
-    duration: 1000
+    item_type: lecture
+    start_time: '10:00'
+    duration: 45
   - title: Lunch
     description: Break for Lunch
-    item_type: 60
-    start_time: break
-    duration: 1230
+    item_type: break
+    start_time: '12:30'
+    duration: 60
   - title: Request Types & Customizing URL Building
     description: |-
       We often need to customize the way URLs are built for creating, updating, deleting or retrieving resources. We'll study **ember-data's 10 request types**, each of which comes with its own url-building customization hook. We'll examine several examples in detail:
@@ -166,15 +166,15 @@ stages:
       * Moving queryParams to path params
 
       Finally, we'll look at the caching ramifications of different types of requests, and provide some battle-tested patterns for adapter customization.
-    item_type: 45
-    start_time: lecture
-    duration: 1045
+    item_type: lecture
+    start_time: '10:45'
+    duration: 45
   - title: 'Exercise: Building Adapters for Awful APIs'
     description: I've got four apps that will work properly only when the ember-data
       adapter layer is sufficiently customized. Separate into four teams, and each
       team will fix one app using the adapter strategies we've outlined this morning.
       Each group will present their solution(s) to the rest of the group when complete.
-    item_type: 60
-    start_time: exercise
-    duration: 1130
+    item_type: exercise
+    start_time: '11:30'
+    duration: 60
 ---
