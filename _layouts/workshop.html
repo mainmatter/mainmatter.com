@@ -42,19 +42,25 @@
                   </div>
                   <div class="row agenda-items collapse" id="agenda-items-{{forloop.index}}">
                     {% for item in stage.agenda_items %}
-                      <div class="row agenda-item" id="agenda-{{forloop.index}}">
-                        <div class="col-sm-2 start-time">
-                          {{item.start_time}}
-                        </div>
-                        <div class="col-sm-8">
-                          <div class="item-meta">
-                            <span class="state">{{stage.title}}</span>
-                            <span class="duration pull-right">Duration: {{item.duration}} minutes</span>
+                      <div class="agenda-item" id="agenda-{{forloop.index}}">
+                        <div class="row">
+                          <div class="col-sm-8 col-sm-offset-2">
+                            <div class="item-meta">
+                              <span class="state">{{stage.title}}</span>
+                              <span class="duration pull-right">Duration: {{item.duration}} minutes</span>
+                            </div>
                           </div>
-                          <h5>
-                            {{item.title}}
-                          </h5>
-                          {{item.description | markdownify}}
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-2 start-time">
+                            {{item.start_time}}   
+                          </div>
+                          <div class="col-sm-8">
+                            <h5>
+                              {{item.title}}
+                            </h5>
+                            {{item.description | markdownify}}
+                          </div>
                         </div>
                       </div>
                     {% endfor %}

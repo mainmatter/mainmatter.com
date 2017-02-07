@@ -174,4 +174,9 @@ code {
       }
     }
   }
+  .agenda-item {
+    .start-time {
+      color: $primary-highlight-color;
+    }
+  }
 }

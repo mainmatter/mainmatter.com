@@ -437,10 +437,16 @@ iframe.twitter-tweet {
 
   .agenda-item {
     margin: 0 0 40px 0;
+    padding: 15px;
 
     h5 {
       margin: 10px 0;
     }
+
+    .start-time{
+      margin-top: 4px;
+    }
+    
   }
 }
 

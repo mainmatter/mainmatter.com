@@ -194,8 +194,14 @@ h5 {
   .agenda-item {
     font-size: 14px;
 
+    h5 {
+      text-align: left;
+    }
+
     .start-time {
+      font-size: 18px;
       text-align: right;
+      font-weight: 800;
     }
 
     .item-meta {
@@ -203,9 +209,7 @@ h5 {
       text-transform: uppercase;
     }
 
-    h5 {
-      text-align: left;
-    }
+    
   }
 }
 
