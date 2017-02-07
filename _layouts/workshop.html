@@ -37,10 +37,10 @@
                         {{stage.title}}
                       </h4>
                       {{stage.description | markdownify}}
-                      <a class="custom-button" role="button" data-toggle="collapse" href="#agenda-{{forloop.index}}" aria-expanded="false" aria-controls="agenda-{{forloop.index}}">Agenda</a>
+                      <a class="custom-button" role="button" data-toggle="collapse" href="#agenda-items-{{forloop.index}}" aria-expanded="false" aria-controls="agenda-{{forloop.index}}">Agenda</a>
                     </div>
                   </div>
-                  <div class="row agenda-items" id="agenda-items-{{forloop.index}}">
+                  <div class="row agenda-items collapse" id="agenda-items-{{forloop.index}}">
                     {% for item in stage.agenda_items %}
                       <div class="row agenda-item" id="agenda-{{forloop.index}}">
                         <div class="col-sm-2 start-time">
