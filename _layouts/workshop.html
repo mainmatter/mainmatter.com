@@ -38,12 +38,20 @@
                       </h4>
                       {{stage.description | markdownify}}
 
+                      <script>
+                        var expand = function(element) {
+                          if(document.getElementById(element).style.display == 'block')
+                            document.getElementById(element).style.display = 'none';
+                          else
+                            document.getElementById(element).style.display = 'block';
+                        };
+                      </script>
                       {% unless stage.agenda_items == empty %}
-                        <a class="custom-button" role="button" data-toggle="collapse" href="#agenda-items-{{forloop.index}}" aria-expanded="false" aria-controls="agenda-{{forloop.index}}">Agenda</a>
+                        <a class="custom-button" href="javascript:;" onclick=expand('agenda-items-{{forloop.index}}')>Agenda</a>
                       {% endunless %}
                     </div>
                   </div>
-                  <div class="row agenda-items collapse" id="agenda-items-{{forloop.index}}">
+                  <div class="row agenda-items" id="agenda-items-{{forloop.index}}">
                     {% for item in stage.agenda_items %}
                       <div class="agenda-item" id="agenda-{{forloop.index}}">
                         <div class="row">

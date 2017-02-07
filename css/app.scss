@@ -435,18 +435,22 @@ iframe.twitter-tweet {
     }
   }
 
-  .agenda-item {
-    margin: 0 0 25px 0;
-    padding: 15px;
-
-    h5 {
-      margin: 10px 0;
-    }
-
-    .start-time{
-      margin-top: 4px;
-    }
+  .agenda-items {
+    display: none;
     
+    .agenda-item {
+      margin: 0 0 25px 0;
+      padding: 15px;
+
+      h5 {
+        margin: 10px 0;
+      }
+
+      .start-time{
+        margin-top: 4px;
+      }
+      
+    }
   }
 }
 
