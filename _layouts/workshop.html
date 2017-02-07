@@ -37,7 +37,10 @@
                         {{stage.title}}
                       </h4>
                       {{stage.description | markdownify}}
-                      <a class="custom-button" role="button" data-toggle="collapse" href="#agenda-items-{{forloop.index}}" aria-expanded="false" aria-controls="agenda-{{forloop.index}}">Agenda</a>
+
+                      {% unless stage.agenda_items == empty %}
+                        <a class="custom-button" role="button" data-toggle="collapse" href="#agenda-items-{{forloop.index}}" aria-expanded="false" aria-controls="agenda-{{forloop.index}}">Agenda</a>
+                      {% endunless %}
                     </div>
                   </div>
                   <div class="row agenda-items collapse" id="agenda-items-{{forloop.index}}">
