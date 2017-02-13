@@ -149,10 +149,12 @@ addon is installed through `ember install ember-moment` we don't need this
 method and have to overwrite it to make sure it does not complain about a
 missing name.
 
-The `afterInstall` hook is the important part in which we tell Ember CLI to
-add the `moment` Bower package to the host app once our addon itself was
-installed. Since the
+The `afterInstall` hook is the important part. The
 [`addBowerPackageToProject()`](https://ember-cli.com/api/classes/Blueprint.html#method_addBowerPackageToProject)
+method installs the `moment` Bower package into the application by adding it
+to the host app `bower.json` file. That way the Moment.js files will be present
+in the top level `bower_components` folder of the application instead of being
+available only inside of the addon. Since the `addBowerPackageToProject()`
 method returns a `Promise` we have to return it from the `afterInstall` hook
 to make sure that Ember CLI waits for the installation to finish.
 
@@ -257,10 +259,14 @@ finally `import()` it in the `included()` hook and everything works again.
 As we are using npm now we can also take advantage of the way that npm
 resolves dependencies. That means instead of using a blueprint to install
 the npm package into the host app we declare `moment` as a dependency of
-the addon instead:
+the addon instead in our `package.json` file:
 
-```
-npm install --save moment
+```json
+{
+  "dependencies": {
+    "moment": "^2.17.1"
+  }
+}
 ```
 
 Since npm deduplicates packages during installation we can not be certain about
