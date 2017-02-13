@@ -283,6 +283,12 @@ Everything should work fine now and we can remove the `ember-moment` blueprint
 and the `moment` dependency from the host app again since that is now a
 subdependency via `ember-moment`.
 
+If you want to see these things applied to a real addon visit the code of the
+[`ember-cli-moment-shim`](https://github.com/jasonmit/ember-cli-moment-shim)
+addon and have a look at their `index.js` file. They do support fastboot too
+though which makes the code a little more complicated compared to our
+simplified example here.
+
 
 #### App vs. Addon again
 
