@@ -75,15 +75,17 @@ import ClassBasedComputedProperty from 'ember-classy-computed';
 const { observer, computed: { filter }, defineProperty } = Ember;
 
 const DynamicFilterByComputed = ClassBasedComputedProperty.extend({
-  filterPropertyDidChange: observer('filterProperty', function() {
-    let filterProperty = this.get('filterProperty');
-    let property = filter(`collection.@each.${filterProperty}`, (item) => item.get(filterProperty));
-    defineProperty(this, 'content', property);
-
+  contentDidChange: observer('content', function() {
     // This method is provided by the ClassBasedComputedProperty
     // base class and invalidates the computed property so that
     // it will get recomputed on the next access.
     this.invalidate();
+  }),
+
+  filterPropertyDidChange: observer('filterProperty', function() {
+    let filterProperty = this.get('filterProperty');
+    let property = filter(`collection.@each.${filterProperty}`, (item) => item.get(filterProperty));
+    defineProperty(this, 'content', property);
   }),
 
   // This method is called whenever the computed property on the context object
