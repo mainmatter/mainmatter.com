@@ -9,8 +9,8 @@ twitter-handle: tobiasbieniek
 
 tl;dr Use npm instead of Bower whenever you can!
 
-With Ember 2.11 we are now using the `ember-source` [npm][npm] module and no
-longer the `ember` [Bower][Bower] package. In the upcoming Ember CLI 2.12
+With Ember 2.11 we are now using the [`ember-source`][ember-source] module and
+no longer the `ember` [Bower][Bower] package. In the upcoming Ember CLI 2.12
 Bower will also no longer be installed by default and only install lazily
 when an addon requests it. All this indicates that from now on we should
 try to use npm packages instead of Bower whenever possible. This blog post
@@ -307,7 +307,7 @@ to the build pipeline to make this work and we will explain how to do that in
 a future blog post.
 
 
-[npm]: https://www.npmjs.com/
+[ember-source]: https://www.npmjs.com/package/ember-source
 [Bower]: https://bower.io/
 [Moment.js]: https://momentjs.com/
 [AMD]: https://github.com/amdjs/amdjs-api/blob/master/AMD.md
