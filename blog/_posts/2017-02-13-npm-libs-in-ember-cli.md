@@ -11,8 +11,8 @@ tl;dr Use npm instead of Bower whenever you can!
 
 With Ember 2.11 we are now using the [`ember-source`][ember-source] module and
 no longer the `ember` [Bower][Bower] package. In the upcoming Ember CLI 2.12
-Bower will also no longer be installed by default and only install lazily
-when an addon requests it. All this indicates that from now on we should
+release, Bower will also no longer be installed by default and only install
+lazily when an addon requests it. All this indicates that from now on we should
 try to use npm packages instead of Bower whenever possible. This blog post
 will explain how we can do that and what options are available to us.
 
@@ -35,9 +35,9 @@ following line to our `ember-cli-build.js` file:
 app.import('bower_components/moment/moment.js');
 ```
 
-This `import()` call will tell Ember CLI to add the `moment.js` file to the
-resulting `vendor.js` file and after that the `moment` global should be
-available to our app.
+This `import()` call tells Ember CLI to add the `moment.js` file to the
+generated `vendor.js` file to make the `moment` global available to the
+app.
 
 As we prefer to use ES6 imports instead of globals we will generate a so-called
 "vendor shim" which essentially just wraps the global and provides us with a
@@ -68,10 +68,10 @@ parts it starts to make sense.
 The files that the Ember CLI build pipeline generates use the
 [Asynchronous Module Definition][AMD] (or shorter: AMD). The `define()` call in
 the code above defines a new AMD module with the name `moment` and the return
-value of the `vendorModule()` function describes what the module exports, or
+value of the `vendorModule` function describes what the module exports, or
 what we can import from that module in our own code. In this case we export
-something called `default` to which we assign the `moment` global. You can find
-more information on "default exports" and ES6 modules in general in the
+an object with a `default` property that contains the `moment` global. You can
+find more information on "default exports" and ES6 modules in general in the
 [Exploring ES6](http://exploringjs.com/es6/ch_modules.html) ebook.
 
 To use this vendor shim we will have to `app.import()` it like we did with the
@@ -92,7 +92,7 @@ app of the addon, but not for any other app using the addon. That means we
 can't just call `app.import()` in the `ember-cli-build.js` file like we did
 above.
 
-The solution to that is using the [`included()`][included-hook] in our
+The solution to that is using the [`included()`][included-hook] in the
 `index.js` file of the addon:
 
 ```js
@@ -187,14 +187,16 @@ That was easy! So where is the problem now?
 
 Remember how we called `this.import()` to import the `moment.js` file into the
 build pipeline and the `vendor.js` file? The `import()` method currently only
-works for files inside the `bower_components` and `vendor` folders. This was
-done for reasons of build performance but might be something that will be
-support at some point in the future once other issues are resolved.
+works for files inside the `bower_components` and `vendor` folders, but not the
+`node_modules` folder. This was done for reasons of build performance but might
+change at some point in the future once other issues are resolved. As we cannot
+simply import `moment` from the `node_modules` folder we have to find another
+way for loading the newly installed dependency into the app.
 
 At this point we could just stop and give up, but instead we will use a
 workaround that "moves" the file into our `vendor` folder and import it from
-there. Instead of actually moving it though we will tell Ember CLI to move it
-automatically as part of the build process.
+there. Instead of actually moving it as part of the installation process though
+we tell Ember CLI to move it automatically as part of the build process.
 
 To implement this we will need the fundamental
 [broccoli-funnel](https://github.com/broccolijs/broccoli-funnel) and
@@ -285,11 +287,12 @@ subdependency via `ember-moment`.
 #### App vs. Addon again
 
 Now that we have converted our `ember-moment` addon to use npm instead of
-Bower, how could we do the same if imported Moment.js in our app directly?
+Bower, how could we do the same if we wanted to use Moment.js in our app
+directly without an additional addon?
 
 Unfortunately there is currently no perfect solution for this and the best
-way is using an "in-repo-addon" for that. You could for example generate
-a `ember-moment` in-repo-addon:
+way is using an [in-repo-addon](https://ember-cli.com/extending/#in-repo-addons)
+for that. You could for example generate a `ember-moment` in-repo-addon:
 
 ```
 ember generate in-repo-addon ember-moment
@@ -298,7 +301,7 @@ ember generate in-repo-addon ember-moment
 and use the same code as above inside the `lib/ember-moment/index.js` file.
 
 
-#### CommonJS and ES6 modules 
+#### Next: CommonJS and ES6 modules 
 
 Things get a little more complicated when you want to use npm packages that
 are not distributed in a prebuilt form like Moment.js. If they instead export
