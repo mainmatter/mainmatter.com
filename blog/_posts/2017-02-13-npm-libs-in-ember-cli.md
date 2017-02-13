@@ -1,19 +1,19 @@
 ---
 layout: article
 section: Blog
-title: Using NPM libraries in Ember CLI
+title: Using npm libraries in Ember CLI
 author: "Tobias Bieniek"
 github-handle: Turbo87
 twitter-handle: tobiasbieniek
 ---
 
-tl;dr Use NPM instead of Bower whenever you can!
+tl;dr Use npm instead of Bower whenever you can!
 
-With Ember 2.11 we are now using the `ember-source` [NPM][NPM] module and no
+With Ember 2.11 we are now using the `ember-source` [npm][npm] module and no
 longer the `ember` [Bower][Bower] package. In the upcoming Ember CLI 2.12
 Bower will also no longer be installed by default and only install lazily
 when an addon requests it. All this indicates that from now on we should
-try to use NPM packages instead of Bower whenever possible. This blog post
+try to use npm packages instead of Bower whenever possible. This blog post
 will explain how we can do that and what options are available to us.
 
 <!--break-->
@@ -157,22 +157,22 @@ method returns a `Promise` we have to return it from the `afterInstall` hook
 to make sure that Ember CLI waits for the installation to finish.
 
 
-#### NPM vs. Bower
+#### npm vs. Bower
 
 <blockquote class="twitter-tweet" data-lang="de"><p lang="en" dir="ltr">&quot;What&#39;s bower?&quot;<br>&quot;A package manager, install it with npm.&quot;<br>&quot;What&#39;s npm?&quot;<br>&quot;A package manager, you can install it with brew&quot;<br>&quot;What&#39;s brew?&quot;<br>...</p>&mdash; Stefan Baumgartner (@ddprrt) <a href="https://twitter.com/ddprrt/status/529909875347030016">5. November 2014</a></blockquote>
 
-In an effort to simplify the situation the Ember team decided to focus on NPM
+In an effort to simplify the situation the Ember team decided to focus on npm
 in the future. Bower support will still be available to support older addons
 for now, but might be deprecated at some point. That means that we should
-modify our `ember-moment` addon above to install Moment.js via NPM instead of
+modify our `ember-moment` addon above to install Moment.js via npm instead of
 Bower.
 
-Fortunately for us Moment.js is also distributed on NPM so we can just
+Fortunately for us Moment.js is also distributed on npm so we can just
 `npm install --save moment` instead of using Bower and we're done, right?
 Well, not quite. Unfortunately for the time being things are a little more
 complicated, but the Ember CLI team has plans to make it easier in the future.
 
-Let's start with the simple part: Installing via NPM instead of Bower. Instead
+Let's start with the simple part: Installing via npm instead of Bower. Instead
 of using `addBowerPackageToProject()` to install Moment.js we can use the
 [`addPackageToProject()`](https://ember-cli.com/api/classes/Blueprint.html#method_addPackageToProject)
 method instead:
@@ -199,7 +199,7 @@ automatically as part of the build process.
 To implement this we will need the fundamental
 [broccoli-funnel](https://github.com/broccolijs/broccoli-funnel) and
 [broccoli-merge-trees](https://github.com/broccolijs/broccoli-merge-trees)
-NPM packages:
+npm packages:
 
 ```
 npm install --save broccoli-funnel broccoli-merge-trees
@@ -250,18 +250,18 @@ Now that we've imported the `moment.js` file into our `vendor` tree we can
 finally `import()` it in the `included()` hook and everything works again.
 
 
-#### NPM dependencies
+#### npm dependencies
 
-As we are using NPM now we can also take advantage of the way that NPM
+As we are using npm now we can also take advantage of the way that npm
 resolves dependencies. That means instead of using a blueprint to install
-the NPM package into the host app we declare `moment` as a dependency of
+the npm package into the host app we declare `moment` as a dependency of
 the addon instead:
 
 ```
 npm install --save moment
 ```
 
-Since NPM deduplicates packages during installation we can not be certain about
+Since npm deduplicates packages during installation we can not be certain about
 the path where `moment` is actually installed though. We need to use a resolver
 algorithm to find the file inside the `node_modules` folder. Fortunately
 Node.js has that algorithm built-in and we can just use it through the
@@ -284,7 +284,7 @@ subdependency via `ember-moment`.
 
 #### App vs. Addon again
 
-Now that we have converted our `ember-moment` addon to use NPM instead of
+Now that we have converted our `ember-moment` addon to use npm instead of
 Bower, how could we do the same if imported Moment.js in our app directly?
 
 Unfortunately there is currently no perfect solution for this and the best
@@ -300,14 +300,14 @@ and use the same code as above inside the `lib/ember-moment/index.js` file.
 
 #### CommonJS and ES6 modules 
 
-Things get a little more complicated when you want to use NPM packages that
+Things get a little more complicated when you want to use npm packages that
 are not distributed in a prebuilt form like Moment.js. If they instead export
 only CommonJS modules or ES6 modules we will need to add a few more plugins
 to the build pipeline to make this work and we will explain how to do that in
 a future blog post.
 
 
-[NPM]: https://www.npmjs.com/
+[npm]: https://www.npmjs.com/
 [Bower]: https://bower.io/
 [Moment.js]: https://momentjs.com/
 [AMD]: https://github.com/amdjs/amdjs-api/blob/master/AMD.md
