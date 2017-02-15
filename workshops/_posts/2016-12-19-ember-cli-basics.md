@@ -14,12 +14,6 @@ stages:
     designed to steer users away from potential snags.
   duration: 120
   agenda_items:
-  - title: 'EXERCISE: Building your first Broccoli Plugins'
-    description: We'll put our newfound skills to use, and build our first two broccoli
-      plugins
-    item_type: exercise
-    start_time: '10:05'
-    duration: 55
   - title: Welcome & Kick Off
     description: We'll go through the day's agenda, and highlight some goals for the
       training.
@@ -44,6 +38,12 @@ stages:
     item_type: lecture
     start_time: '9:45'
     duration: 20
+  - title: 'EXERCISE: Building your first Broccoli Plugins'
+    description: We'll put our newfound skills to use, and build our first two broccoli
+      plugins
+    item_type: exercise
+    start_time: '10:05'
+    duration: 55
 - title: Apps & Addons
   description: The contents of your `ember-cli-build` file is on center stage when
     consuming ember-cli's asset pipeline features. We'll dive into some features exposed
@@ -51,14 +51,13 @@ stages:
     studies.
   duration: 210
   agenda_items:
-  - title: 'EXERCISE: Tweaking trees in the right places'
-    description: We've covered the various trees in an ember-cli build, and means
-      of customizing them. You'll be provided with some broccoli plugins, which you
-      must insert into the build in the right places. Some of these will operate on
-      the trees while JS and CSS remain in individual files, and some will need to
-      operate on the concatenated and minified production assets.
-    item_type: exercise
-    start_time: '13:30'
+  - title: Importing Assets
+    description: One of the most common things a team needs to do in their `ember-cli-build.js`
+      file is import a third party library into their app. We'll look at the the best
+      way for getting this done, and provide some tips and tricks for consming as
+      many things as possible via ES6 modules instead of globals.
+    item_type: lecture
+    start_time: '11:00'
     duration: 30
   - title: 'EXERCISE: Globals to ES6'
     description: Consuming as much as possible by way of ES6 modules is the way to
@@ -69,27 +68,6 @@ stages:
     item_type: exercise
     start_time: '11:30'
     duration: 30
-  - title: Anatomy of EmberApp and EmberAddon
-    description: "`ember-cli-build.js` and `index.js` are the main focus of the ember-cli
-      public API surface. We'll overview the various hooks, member data and other
-      capabilities available to you when working with these files, and the important
-      objects contained therein."
-    item_type: lecture
-    start_time: '14:00'
-    duration: 30
-  - title: Lunch
-    description: Break for Lunch
-    item_type: break
-    start_time: '12:45'
-    duration: 45
-  - title: Importing Assets
-    description: One of the most common things a team needs to do in their `ember-cli-build.js`
-      file is import a third party library into their app. We'll look at the the best
-      way for getting this done, and provide some tips and tricks for consming as
-      many things as possible via ES6 modules instead of globals.
-    item_type: lecture
-    start_time: '11:00'
-    duration: 30
   - title: Trees aplenty
     description: Having worked with broccoli already, we are already familiar with
       the concept of a tree. Ember app builds have several trees, and provide a few
@@ -98,6 +76,28 @@ stages:
     item_type: lecture
     start_time: '12:00'
     duration: 45
+  - title: Lunch
+    description: Break for Lunch
+    item_type: break
+    start_time: '12:45'
+    duration: 45
+  - title: 'EXERCISE: Tweaking trees in the right places'
+    description: We've covered the various trees in an ember-cli build, and means
+      of customizing them. You'll be provided with some broccoli plugins, which you
+      must insert into the build in the right places. Some of these will operate on
+      the trees while JS and CSS remain in individual files, and some will need to
+      operate on the concatenated and minified production assets.
+    item_type: exercise
+    start_time: '13:30'
+    duration: 30
+  - title: Anatomy of EmberApp and EmberAddon
+    description: "`ember-cli-build.js` and `index.js` are the main focus of the ember-cli
+      public API surface. We'll overview the various hooks, member data and other
+      capabilities available to you when working with these files, and the important
+      objects contained therein."
+    item_type: lecture
+    start_time: '14:00'
+    duration: 30
 - title: Codegen & Commands
   description: |-
     Ember-cli's blueprints and command features are incredibly powerful, and are tremendously under-utilized in the ember community. In this unit, we'll explore:
@@ -106,6 +106,20 @@ stages:
     * Testing on the node.js side
   duration: 165
   agenda_items:
+  - title: Adding Commands
+    description: |-
+      Like many modern tools, much of the amazing stuff we appreciate about ember-cli comes from the ability to extend it by way of libraries. We've already looked at how this can be done with broccoli plugins, but we can also change ember-cli's code generation features, and even add brand new commands!
+
+      We'll first look at an addon that adds new commands to ember-cli, and discuss positional and named options, default values, and automatic `ember help` generation.
+    item_type: lecture
+    start_time: '14:30'
+    duration: 30
+  - title: 'EXERCISE: A new command'
+    description: Add a new command to ember-cli, to broadcast a slack message to a
+      particular channel.
+    item_type: exercise
+    start_time: '15:00'
+    duration: 30
   - title: Beautiful Blueprints
     description: 'We can build our own blueprints for dynamic code generation, and
       study how options and `locals` turn our parameterized code templates into code.
@@ -117,6 +131,13 @@ stages:
     item_type: lecture
     start_time: '15:30'
     duration: 30
+  - title: 'EXERCISE: Computed property macro blueprint'
+    description: Build a blueprint that makes a new computed property in the `app/cp`
+      folder of your app, using command line arguments to dynamically specify local
+      names (and number) of arguments passed to the macro.
+    item_type: exercise
+    start_time: '16:00'
+    duration: 30
   - title: Testing Commands and Blueprints
     description: One of the challenges around building ember addons that are more
       tool oriented than client-side oriented, is that the existing testing stories
@@ -127,31 +148,10 @@ stages:
     item_type: lecture
     start_time: '16:30'
     duration: 30
-  - title: 'EXERCISE: A new command'
-    description: Add a new command to ember-cli, to broadcast a slack message to a
-      particular channel.
-    item_type: exercise
-    start_time: '15:00'
-    duration: 30
-  - title: 'EXERCISE: Computed property macro blueprint'
-    description: Build a blueprint that makes a new computed property in the `app/cp`
-      folder of your app, using command line arguments to dynamically specify local
-      names (and number) of arguments passed to the macro.
-    item_type: exercise
-    start_time: '16:00'
-    duration: 30
   - title: Wrap Up & Goodbye
     description: We'll recap the things we've learned today, and discuss resources
       for continued research and practice.
     item_type: lecture
     start_time: '17:00'
     duration: 15
-  - title: Adding Commands
-    description: |-
-      Like many modern tools, much of the amazing stuff we appreciate about ember-cli comes from the ability to extend it by way of libraries. We've already looked at how this can be done with broccoli plugins, but we can also change ember-cli's code generation features, and even add brand new commands!
-
-      We'll first look at an addon that adds new commands to ember-cli, and discuss positional and named options, default values, and automatic `ember help` generation.
-    item_type: lecture
-    start_time: '14:30'
-    duration: 30
 ---

@@ -21,6 +21,12 @@ stages:
     efficiently caching responses, sometimes eliminating network requests entirely.\n\n "
   duration: 60
   agenda_items:
+  - title: Basic Objects, Errors and Metadata
+    description: We'll work through some examples of how basic objects are defined,
+      according to the JSON-API standard.
+    item_type: lecture
+    start_time: '9:00'
+    duration: 30
   - title: Relationships & Compound Documents
     description: |-
       In JSON-API, we can define relationships in multiple ways:
@@ -31,12 +37,6 @@ stages:
       We'll look at examples for each, and discuss use of the `include` queryParam for requesting inclusion of related records.
     item_type: lecture
     start_time: '9:30'
-    duration: 30
-  - title: Basic Objects, Errors and Metadata
-    description: We'll work through some examples of how basic objects are defined,
-      according to the JSON-API standard.
-    item_type: lecture
-    start_time: '9:00'
     duration: 30
 - title: Building Requests
   description: Ember-data adapters are responsible for building URLs, and making other
@@ -58,11 +58,6 @@ stages:
     item_type: lecture
     start_time: '10:00'
     duration: 45
-  - title: Lunch
-    description: Break for Lunch
-    item_type: break
-    start_time: '12:30'
-    duration: 60
   - title: Request Types & Customizing URL Building
     description: |-
       We often need to customize the way URLs are built for creating, updating, deleting or retrieving resources. We'll study **ember-data's 10 request types**, each of which comes with its own url-building customization hook. We'll examine several examples in detail:
@@ -82,6 +77,11 @@ stages:
       Each group will present their solution(s) to the rest of the group when complete.
     item_type: exercise
     start_time: '11:30'
+    duration: 60
+  - title: Lunch
+    description: Break for Lunch
+    item_type: break
+    start_time: '12:30'
     duration: 60
 - title: Massaging JSON
   description: |-
@@ -106,15 +106,6 @@ stages:
     item_type: lecture
     start_time: '13:30'
     duration: 45
-  - title: 'Exercise: Building Serializers for Awful JSON'
-    description: I've added some new features to the apps we wrote adapters for, earlier
-      today. The JSON for these new records doesn't align well with what ember-data
-      expects to see by default. Split up into teams, and work together to massage
-      this JSON until all tests pass. Each group will present their solution to the
-      rest of the workshop.
-    item_type: exercise
-    start_time: '15:00'
-    duration: 60
   - title: Functional JSON Massaging
     description: We rarely have the luxury of working with ideal JSON contracts, and
       often need to write code to transform between our API's representation of a
@@ -126,11 +117,26 @@ stages:
     item_type: lecture
     start_time: '14:15'
     duration: 45
+  - title: 'Exercise: Building Serializers for Awful JSON'
+    description: I've added some new features to the apps we wrote adapters for, earlier
+      today. The JSON for these new records doesn't align well with what ember-data
+      expects to see by default. Split up into teams, and work together to massage
+      this JSON until all tests pass. Each group will present their solution to the
+      rest of the workshop.
+    item_type: exercise
+    start_time: '15:00'
+    duration: 60
 - title: The Store
   description: 'Ember-data''s store is the main API surface that developers interact
     with, in order to initiate requests for data. '
   duration: 60
   agenda_items:
+  - title: Peek, Fetch or Find
+    description: We'll explore these three ways of retrieving data from the ember-data's
+      store, providing practical real-world use cases for each.
+    item_type: lecture
+    start_time: '16:00'
+    duration: 30
   - title: Fastboot's Shoebox
     description: Ember Fastboot, the framework's server-side rendering technology,
       comes with a feature called the shoebox store whereby JSON data can be embedded
@@ -139,12 +145,6 @@ stages:
       then introduce an addon that automates shoebox/ember-data integration.
     item_type: lecture
     start_time: '16:30'
-    duration: 30
-  - title: Peek, Fetch or Find
-    description: We'll explore these three ways of retrieving data from the ember-data's
-      store, providing practical real-world use cases for each.
-    item_type: lecture
-    start_time: '16:00'
     duration: 30
   - title: 'Exercise: Harness the Power of Caching'
     description: I have an app that requires use of a really slow API, so any use
@@ -160,14 +160,6 @@ stages:
     custom ember-data transforms.
   duration: 90
   agenda_items:
-  - title: 'Exercise: Three Transforms'
-    description: "Build three transforms so that you can access some interesting API
-      data on our large example app:\n\n* RGB color\n* Array\n* Object\n \nWith reasonable
-      unit tests for at least one of the three. Ensure that you handle important edge
-      cases (like null value) appropriately."
-    item_type: exercise
-    start_time: '18:00'
-    duration: 60
   - title: Transforms vs. Other Options
     description: Ember-data transforms allow us to define other types of model attributes.
       We'll look at the practical differences between using transforms, compared to
@@ -177,4 +169,12 @@ stages:
     item_type: lecture
     start_time: '17:30'
     duration: 30
+  - title: 'Exercise: Three Transforms'
+    description: "Build three transforms so that you can access some interesting API
+      data on our large example app:\n\n* RGB color\n* Array\n* Object\n \nWith reasonable
+      unit tests for at least one of the three. Ensure that you handle important edge
+      cases (like null value) appropriately."
+    item_type: exercise
+    start_time: '18:00'
+    duration: 60
 ---

@@ -15,21 +15,6 @@ stages:
     cover the various micro-libraries that serve as Ember's foundation.
   duration: 120
   agenda_items:
-  - title: The Ember Ecosystem
-    description: One of the great strengths of ember.js is the surrounding ecosystem
-      of official and community libraries, build tools, conferences and resources.
-      We'll give you a comprehensive introduction to many aspects of the ember world,
-      so you know just where to go for libraries, questions, documentation and events!
-    item_type: lecture
-    start_time: '10:30'
-    duration: 30
-  - title: Structure of an App
-    description: We'll create a new ember app using ember-cli, and explore the code
-      that's been generated for us. Some of these folders contain **JavaScript**,
-      some contain **Handlebars templates** and some contain **CSS**.
-    item_type: lecture
-    start_time: '9:45'
-    duration: 45
   - title: Philosophy of Ember
     description: Ember aims to be a complete and holistic solution to building complex
       single-page web applications. We'll discuss the advantages and challenges of
@@ -39,12 +24,50 @@ stages:
     item_type: lecture
     start_time: '9:00'
     duration: 45
+  - title: Structure of an App
+    description: We'll create a new ember app using ember-cli, and explore the code
+      that's been generated for us. Some of these folders contain **JavaScript**,
+      some contain **Handlebars templates** and some contain **CSS**.
+    item_type: lecture
+    start_time: '9:45'
+    duration: 45
+  - title: The Ember Ecosystem
+    description: One of the great strengths of ember.js is the surrounding ecosystem
+      of official and community libraries, build tools, conferences and resources.
+      We'll give you a comprehensive introduction to many aspects of the ember world,
+      so you know just where to go for libraries, questions, documentation and events!
+    item_type: lecture
+    start_time: '10:30'
+    duration: 30
 - title: Routing & Top-Level Templates
   description: One of the important ideas at the core of Ember is URL-driven application
     state. Great state management is what makes the difference between single page
     apps that delight users, and those that frustrate them.
   duration: 225
   agenda_items:
+  - title: Router & Routes
+    description: We'll study Ember's **Router**, and examine its conceptual foundation
+      as a finite state machine, and introduce the concept of **Routes**, a hierarchy
+      of objects that perform transitions between router states.
+    item_type: lecture
+    start_time: '11:00'
+    duration: 45
+  - title: Template Basics
+    description: Each route has a **top-level template** paired with it, representing
+      part of the **view hierarchy** of a particular "page" in your single-page application.
+      For now, we'll treat templates as a superset of HTML. We'll introduce the powerful
+      `{{link-to}}` helper as a means of building internal URLs.
+    item_type: lecture
+    start_time: '11:45'
+    duration: 15
+  - title: 'Exercise: Static Data in Routes & Placeholder Templates'
+    description: We'll learn how to **decompose the design of our app into a hierarchy
+      of routes and top-level templates**. For now, these templates will return static
+      data, but we'll build in a means of navigating between pages, examining the
+      types of transitions that take place in a variety of situations.
+    item_type: exercise
+    start_time: '12:00'
+    duration: 30
   - title: Handlebars Helpers
     description: Handlebars helpers provide a mean of bringing declarative logic into
       our templates, including iteration through arrays, conditionals and more! We'll
@@ -54,40 +77,17 @@ stages:
     item_type: lecture
     start_time: '12:30'
     duration: 45
-  - title: 'Exercise: Static Data in Routes & Placeholder Templates'
-    description: We'll learn how to **decompose the design of our app into a hierarchy
-      of routes and top-level templates**. For now, these templates will return static
-      data, but we'll build in a means of navigating between pages, examining the
-      types of transitions that take place in a variety of situations.
-    item_type: exercise
-    start_time: '12:00'
-    duration: 30
-  - title: Lunch
-    description: Break for lunch
-    item_type: break
-    start_time: '13:45'
-    duration: 60
   - title: 'Exercise: Bound & Unbound Handlebars Helpers'
     description: We'll build one bound and one unbound handlebars helper, as part
       of our large project.
     item_type: exercise
     start_time: '13:15'
     duration: 30
-  - title: Template Basics
-    description: Each route has a **top-level template** paired with it, representing
-      part of the **view hierarchy** of a particular "page" in your single-page application.
-      For now, we'll treat templates as a superset of HTML. We'll introduce the powerful
-      `{{link-to}}` helper as a means of building internal URLs.
-    item_type: lecture
-    start_time: '11:45'
-    duration: 15
-  - title: Router & Routes
-    description: We'll study Ember's **Router**, and examine its conceptual foundation
-      as a finite state machine, and introduce the concept of **Routes**, a hierarchy
-      of objects that perform transitions between router states.
-    item_type: lecture
-    start_time: '11:00'
-    duration: 45
+  - title: Lunch
+    description: Break for lunch
+    item_type: break
+    start_time: '13:45'
+    duration: 60
 - title: Objects, Properties & Actions
   description: |-
     Nearly all of Ember's important types extend from a core `Ember.Object` class, which we'll study, and compare to JavaScript's `Object` and `Class` concepts.
@@ -100,30 +100,6 @@ stages:
     * the `{{mut}}` helper
   duration: 150
   agenda_items:
-  - title: Computed Properties
-    description: Computed properties are a performant and intuitive way to define
-      values that are based on other values. We'll take a short trip through the internal
-      implementation of a computed property, and contrast it with the more expensive
-      and error-prone concept of **Observers**.
-    item_type: lecture
-    start_time: '16:45'
-    duration: 30
-  - title: 'Exercise: Services'
-    description: We'll improve our bound handlebars helper, and take advantage of
-      a service, so that we can share the concept of "current time" across many flavors
-      of objects, and perform more efficient DOM updates.
-    item_type: exercise
-    start_time: '16:15'
-    duration: 30
-  - title: Services
-    description: Services are a means of sharing state & functionality across various
-      aspects of an app. We'll explain what makes services a simple, but powerful
-      concept, and illustrate service use via `Ember.inject`. Finally, we'll get a
-      sneak preview of the important role services play in the upcoming **engines**
-      framework feature, and explore the "*do's and don'ts of service design**.
-    item_type: lecture
-    start_time: '15:45'
-    duration: 30
   - title: Objects
     description: |-
       We'll look at `Ember.Object` in detail, including:
@@ -144,12 +120,46 @@ stages:
     item_type: exercise
     start_time: '15:15'
     duration: 30
+  - title: Services
+    description: Services are a means of sharing state & functionality across various
+      aspects of an app. We'll explain what makes services a simple, but powerful
+      concept, and illustrate service use via `Ember.inject`. Finally, we'll get a
+      sneak preview of the important role services play in the upcoming **engines**
+      framework feature, and explore the "*do's and don'ts of service design**.
+    item_type: lecture
+    start_time: '15:45'
+    duration: 30
+  - title: 'Exercise: Services'
+    description: We'll improve our bound handlebars helper, and take advantage of
+      a service, so that we can share the concept of "current time" across many flavors
+      of objects, and perform more efficient DOM updates.
+    item_type: exercise
+    start_time: '16:15'
+    duration: 30
+  - title: Computed Properties
+    description: Computed properties are a performant and intuitive way to define
+      values that are based on other values. We'll take a short trip through the internal
+      implementation of a computed property, and contrast it with the more expensive
+      and error-prone concept of **Observers**.
+    item_type: lecture
+    start_time: '16:45'
+    duration: 30
 - title: Components
   description: Components play an increasingly central role in modern web app development,
     as a mean for defining encapsulated pieces of UI and having well-defined contracts
     with the outside world.
   duration: 240
   agenda_items:
+  - title: Component Basics
+    description: We'll examine a simple component and clearly define the types of
+      things that belong in the **hbs** and **js** files. By passing data through
+      the component's interface to the outside world, we can control its initial state,
+      and the signals we receive in response to user actions. Finally, we'll study
+      the component lifecycle hooks, and provide examples for common uses of each
+      one.
+    item_type: lecture
+    start_time: '9:00'
+    duration: 30
   - title: 'Exercise: A Simple Component'
     description: |
       We'll build a simple component, whose purpose is to encapsulate a piece of UI, including its:
@@ -163,19 +173,21 @@ stages:
     item_type: exercise
     start_time: '9:30'
     duration: 45
-  - title: Lunch
-    description: Break for lunch
-    item_type: break
-    start_time: '12:15'
-    duration: 45
-  - title: 'Exercise: Customizing the Component Boundary'
-    description: "We'll practice our new knowledge of component boundary customization
-      by:\n* Adding some classes to a few `{{link-to}}` components in our app\n* Building
-      a basic textarea component, with CSS for basic validation styling\n* Adding
-      a DOM attribute to the textarea component, with any validation error messages\n*
-      Displaying and styling the validation error(s) with CSS \n"
+  - title: Complex Components
+    description: |-
+      In the real world, we build components up to form larger components, and often need to weave pieces of complex UI together. We'll look at two concepts in particular:
+      * The `{{component}}` helper
+      * The `{{yield}}` helper, and the concept of exposing component internals to the outside world
+    item_type: lecture
+    start_time: '10:15'
+    duration: 30
+  - title: 'Exercise: Complex Components'
+    description: |-
+      We'll use our knowledge of **yield** to make two new components:
+      * One that generates a list of items based on an array
+      * One that exposes important values to its **block**
     item_type: exercise
-    start_time: '11:45'
+    start_time: '10:45'
     duration: 30
   - title: Customizing the Component Boundary
     description: |-
@@ -189,32 +201,20 @@ stages:
     item_type: lecture
     start_time: '11:15'
     duration: 30
-  - title: 'Exercise: Complex Components'
-    description: |-
-      We'll use our knowledge of **yield** to make two new components:
-      * One that generates a list of items based on an array
-      * One that exposes important values to its **block**
+  - title: 'Exercise: Customizing the Component Boundary'
+    description: "We'll practice our new knowledge of component boundary customization
+      by:\n* Adding some classes to a few `{{link-to}}` components in our app\n* Building
+      a basic textarea component, with CSS for basic validation styling\n* Adding
+      a DOM attribute to the textarea component, with any validation error messages\n*
+      Displaying and styling the validation error(s) with CSS \n"
     item_type: exercise
-    start_time: '10:45'
+    start_time: '11:45'
     duration: 30
-  - title: Complex Components
-    description: |-
-      In the real world, we build components up to form larger components, and often need to weave pieces of complex UI together. We'll look at two concepts in particular:
-      * The `{{component}}` helper
-      * The `{{yield}}` helper, and the concept of exposing component internals to the outside world
-    item_type: lecture
-    start_time: '10:15'
-    duration: 30
-  - title: Component Basics
-    description: We'll examine a simple component and clearly define the types of
-      things that belong in the **hbs** and **js** files. By passing data through
-      the component's interface to the outside world, we can control its initial state,
-      and the signals we receive in response to user actions. Finally, we'll study
-      the component lifecycle hooks, and provide examples for common uses of each
-      one.
-    item_type: lecture
-    start_time: '9:00'
-    duration: 30
+  - title: Lunch
+    description: Break for lunch
+    item_type: break
+    start_time: '12:15'
+    duration: 45
 - title: Testing
   description: |-
     A great testing story is a critical part of any serious tech stack, and the Ember community has put a lot of time into making this a great strength of the framework. We'll cover examples and best practices in areas of :
@@ -225,21 +225,26 @@ stages:
     * Writing sustainable tests
   duration: 240
   agenda_items:
-  - title: 'Exercise: Writing Acceptance Tests'
-    description: We'll incrementally write an acceptance test to test one of the critical
-      workflows in our app, using Qunit 3's **development mode**, and **Pretender**
-      to mock AJAX JSON responses without using our usual REST API.
-    item_type: exercise
-    start_time: '16:15'
-    duration: 45
-  - title: Acceptance Tests
-    description: |-
-      Acceptance tests are great for ensuring that critical workflows work as expected. They're much slower than unit or component integration tests, since they are run against your app as a whole, but this is a great way to ensure that the whole thing works together as expected. We'll explore topics relevant to acceptance testing like:
-      * Async test helpers
-      * Maintainable CSS selectors for tests
-      * Mocking data with Pretender
+  - title: A Single-Page App Testing Primer
+    description: We'll go over the unique challenges and concerns that pertain to
+      writing, debugging and maintaining tests for a Single-Page App.
     item_type: lecture
-    start_time: '15:45'
+    start_time: '13:00'
+    duration: 30
+  - title: Unit Testing
+    description: |-
+      Unit tests are great for testing algorithmic complexity. In particular, they're the go-to flavor of test for models, handlebars helpers, utility functions, and other common things like computed property macros. We'll cover concepts like:
+      * Mocking data
+      * Testing setup/teardown hooks
+      * The Qunit assertion library
+    item_type: lecture
+    start_time: '13:30'
+    duration: 30
+  - title: 'Exercise: Writing Unit Tests'
+    description: We'll write some unit tests for the handlebars helpers we wrote earlier,
+      and build a computed property marco, complete with unit tests!
+    item_type: exercise
+    start_time: '14:00'
     duration: 30
   - title: Component Testing
     description: |-
@@ -260,25 +265,20 @@ stages:
     item_type: exercise
     start_time: '15:00'
     duration: 45
-  - title: 'Exercise: Writing Unit Tests'
-    description: We'll write some unit tests for the handlebars helpers we wrote earlier,
-      and build a computed property marco, complete with unit tests!
-    item_type: exercise
-    start_time: '14:00'
-    duration: 30
-  - title: A Single-Page App Testing Primer
-    description: We'll go over the unique challenges and concerns that pertain to
-      writing, debugging and maintaining tests for a Single-Page App.
-    item_type: lecture
-    start_time: '13:00'
-    duration: 30
-  - title: Unit Testing
+  - title: Acceptance Tests
     description: |-
-      Unit tests are great for testing algorithmic complexity. In particular, they're the go-to flavor of test for models, handlebars helpers, utility functions, and other common things like computed property macros. We'll cover concepts like:
-      * Mocking data
-      * Testing setup/teardown hooks
-      * The Qunit assertion library
+      Acceptance tests are great for ensuring that critical workflows work as expected. They're much slower than unit or component integration tests, since they are run against your app as a whole, but this is a great way to ensure that the whole thing works together as expected. We'll explore topics relevant to acceptance testing like:
+      * Async test helpers
+      * Maintainable CSS selectors for tests
+      * Mocking data with Pretender
     item_type: lecture
-    start_time: '13:30'
+    start_time: '15:45'
     duration: 30
+  - title: 'Exercise: Writing Acceptance Tests'
+    description: We'll incrementally write an acceptance test to test one of the critical
+      workflows in our app, using Qunit 3's **development mode**, and **Pretender**
+      to mock AJAX JSON responses without using our usual REST API.
+    item_type: exercise
+    start_time: '16:15'
+    duration: 45
 ---
