@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   {% include head.html %}
+  <script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
 	<body>
     {% include nav.html %}
 
@@ -38,16 +39,8 @@
                       </h4>
                       {{stage.description | markdownify}}
 
-                      <script>
-                        var expand = function(element) {
-                          if(document.getElementById(element).style.display == 'block')
-                            document.getElementById(element).style.display = 'none';
-                          else
-                            document.getElementById(element).style.display = 'block';
-                        };
-                      </script>
                       {% unless stage.agenda_items == empty %}
-                        <a class="custom-button" href="javascript:;" onclick=expand('agenda-items-{{forloop.index}}')>Agenda</a>
+                        <a class="custom-button" href="#" data-toggle-agenda-items="#agenda-items-{{forloop.index}}" data-alternative-text="Close Agenda">Agenda</a>
                       {% endunless %}
                     </div>
                   </div>
@@ -89,5 +82,28 @@
    {% include footer.html %}
 
    {% include analytics.html %}
+
+   <script>
+     // execute callback when the page is ready:
+     Zepto(function($) {
+       $('[data-toggle-agenda-items]').each(function(i, elem) {
+         var toggle = $(elem);
+         toggle.on('click', function(e) {
+           e.preventDefault();
+
+           var currentText = toggle.text();
+           toggle.text(toggle.data('alternative-text'));
+           toggle.data('alternative-text', currentText);
+
+           var items = $(toggle.data('toggle-agenda-items'));
+           if (parseInt(items.css('max-height')) > 0) {
+             items.css('max-height', 0);
+           } else {
+             items.css('max-height', items[0].scrollHeight);
+           }
+         });
+       });
+     });
+   </script>
 	</body>
 </html>

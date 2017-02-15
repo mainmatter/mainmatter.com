@@ -436,8 +436,12 @@ iframe.twitter-tweet {
   }
 
   .agenda-items {
-    display: none;
-    
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.5s ease-in-out;
+    -moz-transition: max-height 0.5s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
+
     .agenda-item {
       margin: 0 0 25px 0;
       padding: 15px;
