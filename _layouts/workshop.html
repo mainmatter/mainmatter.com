@@ -40,13 +40,13 @@
                       {{stage.description | markdownify}}
 
                       {% unless stage.agenda_items == empty %}
-                        <a class="custom-button" href="#" data-toggle-agenda-items="#agenda-items-{{forloop.index}}" data-alternative-text="Close Agenda">Agenda</a>
+                        <a class="custom-button" data-toggle-agenda-items="#agenda-items-{{forloop.index}}" data-alternative-text="Close Agenda">Agenda</a>
                       {% endunless %}
                     </div>
                   </div>
                   <div class="row agenda-items" id="agenda-items-{{forloop.index}}">
                     {% for item in stage.agenda_items %}
-                      <div class="agenda-item" id="agenda-{{forloop.index}}">
+                      <div class="agenda-item">
                         <div class="row">
                           <div class="col-sm-8 col-sm-offset-2">
                             <div class="item-meta">
