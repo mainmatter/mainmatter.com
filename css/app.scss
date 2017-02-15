@@ -64,10 +64,6 @@
         border-bottom-width: 1px;
         border-bottom-style: solid;
       }
-
-      &.split-section:after {
-        width: calc(50% - 30px);
-      }
     }
 
     &.split-section:last-child:after {
