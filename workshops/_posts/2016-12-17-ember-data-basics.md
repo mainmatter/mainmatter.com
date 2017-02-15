@@ -8,6 +8,7 @@ description: |-
 
 
   We'll cover all of the basics you need to know in order to make ember-data the best part of working with your back end, diving deep into adapters, serializers and the store.
+image: "/images/workshops/2016-12-17-ember-data-basics.png"
 stages:
 - title: JSON-API
   description: "[JSON-API](http://jsonapi.org/) is a spec for JSON contracts between

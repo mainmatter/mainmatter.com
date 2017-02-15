@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require 'rubygems'
 require 'bundler'
+require 'open-uri'
 
 Bundler.setup(:development)
 
@@ -16,13 +17,21 @@ course_data[:data].each do |course|
   id = course[:id]
   title, description, category, created_at = attributes.values_at(:title, :description, :category, :'created-at')
   slug = "#{created_at[0..9]}-#{title.parameterize.downcase}"
+  image = attributes[:'image-info'][:square2x][:url]
+  image_name = "images/workshops/#{slug}.png"
+  open(image) do |image|
+    File.open(image_name, 'wb') do |file|
+      file.puts image.read
+    end
+  end
 
   course_yaml = {
     layout:      'workshop',
     title:       title,
     permalink:   "/workshops/#{slug}",
     category:    category,
-    description: description
+    description: description,
+    image:       "/#{image_name}"
   }
 
   stage_data = HTTParty.get("https://api.mike.works/api/v1/courses/#{id}/stages", verify: false, format: :json).parsed_response.deep_symbolize_keys
