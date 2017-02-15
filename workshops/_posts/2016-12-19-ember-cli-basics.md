@@ -8,6 +8,42 @@ description: "Ember-cli is truly a world class build tool, and it's more capable
   than angular-cli and react-create-app, as continuations of the idea that Single
   Page Apps are deserving of first class tools, optimized for their specific needs."
 stages:
+- title: Broccoli Basics
+  description: Broccoli is a fast, robust and portable asset pipeline, built with
+    ember-cli in mind. It uses node's `fs` module as it's API, and is deliberately
+    designed to steer users away from potential snags.
+  duration: 120
+  agenda_items:
+  - title: 'EXERCISE: Building your first Broccoli Plugins'
+    description: We'll put our newfound skills to use, and build our first two broccoli
+      plugins
+    item_type: exercise
+    start_time: '10:05'
+    duration: 55
+  - title: Welcome & Kick Off
+    description: We'll go through the day's agenda, and highlight some goals for the
+      training.
+    item_type: lecture
+    start_time: '9:00'
+    duration: 15
+  - title: Standalone Use with Broccoli-CLI
+    description: 'Broccoli has its own CLI, and although it''s missing some of the
+      stuff we take for granted in ember-cli, it can be useful to look at broccoli
+      independently, in order to understand where it ends and where there rest of
+      ember-cli begins '
+    item_type: lecture
+    start_time: '9:15'
+    duration: 30
+  - title: Debugging & Developing Plugins
+    description: Broccoli plugins can be thought of as streams, or lazily evaluated
+      pieces in a functional chain. Because of this characteristic of laziness, we
+      must take a different approach to debugging, relative to how we treat synchronous
+      client-side code. You'll be provided with suggestions for an easy and intuitive
+      broccoli plugin development workflow, that will maximize time spent getting
+      results, and minimize time spent scratching your head.
+    item_type: lecture
+    start_time: '9:45'
+    duration: 20
 - title: Apps & Addons
   description: The contents of your `ember-cli-build` file is on center stage when
     consuming ember-cli's asset pipeline features. We'll dive into some features exposed
@@ -62,42 +98,6 @@ stages:
     item_type: lecture
     start_time: '12:00'
     duration: 45
-- title: Broccoli Basics
-  description: Broccoli is a fast, robust and portable asset pipeline, built with
-    ember-cli in mind. It uses node's `fs` module as it's API, and is deliberately
-    designed to steer users away from potential snags.
-  duration: 120
-  agenda_items:
-  - title: 'EXERCISE: Building your first Broccoli Plugins'
-    description: We'll put our newfound skills to use, and build our first two broccoli
-      plugins
-    item_type: exercise
-    start_time: '10:05'
-    duration: 55
-  - title: Welcome & Kick Off
-    description: We'll go through the day's agenda, and highlight some goals for the
-      training.
-    item_type: lecture
-    start_time: '9:00'
-    duration: 15
-  - title: Standalone Use with Broccoli-CLI
-    description: 'Broccoli has its own CLI, and although it''s missing some of the
-      stuff we take for granted in ember-cli, it can be useful to look at broccoli
-      independently, in order to understand where it ends and where there rest of
-      ember-cli begins '
-    item_type: lecture
-    start_time: '9:15'
-    duration: 30
-  - title: Debugging & Developing Plugins
-    description: Broccoli plugins can be thought of as streams, or lazily evaluated
-      pieces in a functional chain. Because of this characteristic of laziness, we
-      must take a different approach to debugging, relative to how we treat synchronous
-      client-side code. You'll be provided with suggestions for an easy and intuitive
-      broccoli plugin development workflow, that will maximize time spent getting
-      results, and minimize time spent scratching your head.
-    item_type: lecture
-    start_time: '9:45'
-    duration: 20
 - title: Codegen & Commands
   description: |-
     Ember-cli's blueprints and command features are incredibly powerful, and are tremendously under-utilized in the ember community. In this unit, we'll explore:

@@ -26,7 +26,8 @@ course_data[:data].each do |course|
   }
 
   stage_data = HTTParty.get("https://api.mike.works/api/v1/courses/#{id}/stages", verify: false, format: :json).parsed_response.deep_symbolize_keys
-  course_yaml[:stages] = stage_data[:data].map do |stage|
+  sorted_stages = stage_data[:data].sort_by { |stage| stage[:attributes][:order] }
+  course_yaml[:stages] = sorted_stages.map do |stage|
     attributes = stage[:attributes]
     title, description, duration = attributes.values_at(:title, :description, :duration)
     stage_yaml = {

@@ -6,45 +6,6 @@ category: Back End Development
 description: Phoenix Framework draws heavily upon important foundations in the opinionated
   web frameworks that came before it, like Ruby on Rails.
 stages:
-- title: Writing Modular Programs
-  description: Elixirs module system allows us to define layers of related functions.
-    In this part of the course, we'll explore the concepts of modules, and the ability
-    to reference code in one module from another.
-  duration: 90
-  agenda_items:
-  - title: Basic Metaprogramming
-    description: 'While the `use` macro is not strictly a directive, it''s of particular
-      importance when considering "mixins" for common functionaliy across multiple
-      modules.
-
-'
-    item_type: lecture
-    start_time: '9:35'
-    duration: 25
-  - title: Modules & Three Important Directives
-    description: Modules are just a group of several functions, some of which may
-      be private and some of which may be public. Modules give us the ability to define
-      named functions using the `def` macro, which offer a few other features that
-      were unavailable in the world of anonymous functions
-    item_type: lecture
-    start_time: '9:00'
-    duration: 15
-  - title: 'EXERCISE: Mission Control'
-    description: 'We''ve got a set of tests for a couple of Elixir modules that are
-      used to control a space ship. Alter the code to make the unit tests pass, and
-      ensure that you''ve kept as much of each module''s internal functionality private
-      as possible.
-
-'
-    item_type: exercise
-    start_time: '9:15'
-    duration: 20
-  - title: 'EXERCISE: Extending a module'
-    description: 'The `use` macro can essentially be used to decorate a module with
-      some code from another '
-    item_type: exercise
-    start_time: '10:00'
-    duration: 30
 - title: The First Sip
   description: Before we jump right into the framework, we need to at least know the
     basics of the programming language we're working with.
@@ -80,107 +41,6 @@ stages:
     item_type: lecture
     start_time: '9:15'
     duration: 20
-- title: Managing Data
-  description: |-
-    Data is an integral part of virtually any web application, and a great persistence library make a huge difference in performance and maintainability.
-
-    Thankfully, the Elixir ecosystem has us covered in spades. Ecto is a thin layer of functions that allow us to build composable queries, validate fields, and seamlessly transform records between our DB and application representations.
-  duration: 225
-  agenda_items:
-  - title: Lunch
-    description: Break for Lunch
-    item_type: break
-    start_time: '12:00'
-    duration: 45
-  - title: 'EXERCISE: Query Olympics'
-    description: You'll be given a list of database queries for you and your classmates
-      to make using Ecto. Each query is worth a certain number of points. Highest
-      number of points after the exercise is done, wins!
-    item_type: exercise
-    start_time: '11:15'
-    duration: 45
-  - title: Quick Queries
-    description: While we could use SQL syntax to retrieve records from our database,
-      doing so would open us up to a world of pain. Ecto provides an approachable
-      and composable way of building queries, while stopping short of doing us any
-      "automatic favors" (i.e., N+1 queries) that so often degrade performance.
-    item_type: lecture
-    start_time: '10:45'
-    duration: 30
-  - title: Managing Migrations
-    description: |-
-      If you've never used code to manage changes to your database schema, you're missing out. Migrations allow us to change our schema in (ideally) reversible steps, so we can apply and un-apply a set of changes while building features.
-      Even if you've seen migrations before, there are some useful things to know about how they work with Ecto, and in particular, Postgres. We'll look, specifically at:
-      - Postgres array and jsonb column types
-      - Changing column types, while remaining backwards compatible
-    item_type: lecture
-    start_time: '9:20'
-    duration: 25
-  - title: 'EXERCISE: Models & Validation'
-    description: Create models and appropriate validations for a blog post/comment
-      app.
-    item_type: exercise
-    start_time: '10:15'
-    duration: 30
-  - title: Intro to Ecto
-    description: "Heavy persistence libraries like ActiveRecord offer convenience,
-      but often become performance bottlenecks. We could make every DB query explicitly,
-      but then we're trading in all of our ergonomics for performance.\n\nEcto manages
-      to strike an enjoyable balance, where we are asked to be deliberate about the
-      records we fetch from a database but (most of the time) aren't dragged into
-      the world of writing SQL queries explicitly.\n\nYou'll be amazed at how much
-      we can do with just simple functions, and will never look at other persistence
-      frameworks quite the same way again. "
-    item_type: lecture
-    start_time: '9:00'
-    duration: 20
-  - title: Cracking Changesets
-    description: "This is one of my favorite parts about Ecto, and one of the parts
-      you'll be most often working with. In contrast to other persistence libraries,
-      **the concept of the shape of a record (schema) and the logic for checking the
-      validity of values (validations)  are decoupled**.  There are some incredibly
-      exciting consequences of this design decision.\n\nEcto ships with a bunch of
-      validations, and because it's so quick and easy, we'll write a few of our own. "
-    item_type: lecture
-    start_time: '9:45'
-    duration: 30
-- title: Users & Authentication
-  description: |-
-    Nearly every app we build these days requires some sort of authentication, and probably a user account to go along with it.  Even if your app is an oddball and doesn't need this, user accounts provide us with a well-understood set of use cases that will serve as an excellent case study.
-
-    Let's put some of our newfound Phoenix knowledge into practice as we implement a secure user account feature set. The goal will be to reduce explicit management of authorization & authentication on a per-resource basis as much as possible.
-  duration: 150
-  agenda_items:
-  - title: Wrap Up & Goodbye
-    description: We'll recap everything we've learned
-    item_type: lecture
-    start_time: '16:45'
-    duration: 15
-  - title: 'EXERCISE: Roles'
-    description: We often have a concept of roles (or an equivalent concept masquerading
-      as other flags/fields) built on top of our authentication. We'll add roles to
-      our JWT, and design a plug that will raise an error if a user attempts to access
-      a controller action without having the required roles.
-    item_type: exercise
-    start_time: '16:00'
-    duration: 45
-  - title: 'EXERCISE: Registration'
-    description: "Creating new users will serve to highlight a few concepts at the
-      model layer \n* Server-side validation, including writing our own validator\n*
-      Safely handling passwords\n* Keeping slightly different changeset-generating
-      functions organized\n\nWe'll also have an opportunity to start defining routes
-      that require a user to be authenticated, and routes that don't."
-    item_type: exercise
-    start_time: '14:30'
-    duration: 45
-  - title: 'EXERCISE: Login & Logout'
-    description: |-
-      For our purposes, we'll use a JSON Web Token (JWT) and the OAuth 2 password grant standard, as a mechanism and vehicle for authentication. You will be provided with a client-side app that will talk to our Phoenix, via JSON.
-
-      We'll validate a user's credentials in a way that's not incredibly sensitive to timing or brute force attacks, and then assemble our little piece of session state (the JWT) before encrypting it and handing it back to the client.
-    item_type: exercise
-    start_time: '15:15'
-    duration: 45
 - title: Types, Operators & Control Flow
   description: One must crawl before one walks, and it all starts with basic types
     and procedural logic. Even if you're experienced in a wide range of programming
@@ -285,6 +145,79 @@ stages:
     item_type: lecture
     start_time: '10:45'
     duration: 30
+- title: Writing Modular Programs
+  description: Elixirs module system allows us to define layers of related functions.
+    In this part of the course, we'll explore the concepts of modules, and the ability
+    to reference code in one module from another.
+  duration: 90
+  agenda_items:
+  - title: Basic Metaprogramming
+    description: 'While the `use` macro is not strictly a directive, it''s of particular
+      importance when considering "mixins" for common functionaliy across multiple
+      modules.
+
+'
+    item_type: lecture
+    start_time: '9:35'
+    duration: 25
+  - title: Modules & Three Important Directives
+    description: Modules are just a group of several functions, some of which may
+      be private and some of which may be public. Modules give us the ability to define
+      named functions using the `def` macro, which offer a few other features that
+      were unavailable in the world of anonymous functions
+    item_type: lecture
+    start_time: '9:00'
+    duration: 15
+  - title: 'EXERCISE: Mission Control'
+    description: 'We''ve got a set of tests for a couple of Elixir modules that are
+      used to control a space ship. Alter the code to make the unit tests pass, and
+      ensure that you''ve kept as much of each module''s internal functionality private
+      as possible.
+
+'
+    item_type: exercise
+    start_time: '9:15'
+    duration: 20
+  - title: 'EXERCISE: Extending a module'
+    description: 'The `use` macro can essentially be used to decorate a module with
+      some code from another '
+    item_type: exercise
+    start_time: '10:00'
+    duration: 30
+- title: Working With Data Structures
+  description: 'Earlier we outlined and worked with several different types of data
+    structures. Let''s take a closer look at some ways
+
+'
+  duration: 135
+  agenda_items:
+  - title: 'EXERCISE: Map, Filter, Reduce'
+    description: We have a program that starts with a list of objects read from a
+      file. Using the built-in functions available in the `Enum` and `Map` modules,
+      filter out "inactive" items (objects where the "active" attribute is not `true`),
+      and then log a list of object names to the console.
+    item_type: exercise
+    start_time: '10:30'
+    duration: 30
+  - title: Lunch
+    description: Break for Lunch
+    item_type: break
+    start_time: '12:00'
+    duration: 45
+  - title: 'EXERCISE: Comprehensions'
+    description: Take another pass at the previous exercise, and use a comprehension
+      to devise a concise solution.
+    item_type: exercise
+    start_time: '11:30'
+    duration: 30
+  - title: Taming List Enumeration with Comprehensions
+    description: Often we find ourselves looping over something enumerable, mapping
+      values into another list, and potentially filtering out some unwanted items.
+      **Comprehensions use a generator and a filter** to provide some excellent syntactic
+      sugar for this kind of task.
+    item_type: lecture
+    start_time: '11:00'
+    duration: 30
 - title: Request, Response
   description: A Phoenix app can basically be boiled down to a function that receives
     a HTTP request, and returns a response. We'll begin with this premise, and start
@@ -341,40 +274,6 @@ stages:
     item_type: lecture
     start_time: '12:45'
     duration: 25
-- title: Working With Data Structures
-  description: 'Earlier we outlined and worked with several different types of data
-    structures. Let''s take a closer look at some ways
-
-'
-  duration: 135
-  agenda_items:
-  - title: 'EXERCISE: Map, Filter, Reduce'
-    description: We have a program that starts with a list of objects read from a
-      file. Using the built-in functions available in the `Enum` and `Map` modules,
-      filter out "inactive" items (objects where the "active" attribute is not `true`),
-      and then log a list of object names to the console.
-    item_type: exercise
-    start_time: '10:30'
-    duration: 30
-  - title: Lunch
-    description: Break for Lunch
-    item_type: break
-    start_time: '12:00'
-    duration: 45
-  - title: 'EXERCISE: Comprehensions'
-    description: Take another pass at the previous exercise, and use a comprehension
-      to devise a concise solution.
-    item_type: exercise
-    start_time: '11:30'
-    duration: 30
-  - title: Taming List Enumeration with Comprehensions
-    description: Often we find ourselves looping over something enumerable, mapping
-      values into another list, and potentially filtering out some unwanted items.
-      **Comprehensions use a generator and a filter** to provide some excellent syntactic
-      sugar for this kind of task.
-    item_type: lecture
-    start_time: '11:00'
-    duration: 30
 - title: Testing
   description: "Testing ergonomics is perhaps the most impactful factor in determining
     whether writing tests is an enjoyable part of day-to-day development, or an annoying
@@ -397,6 +296,70 @@ stages:
       even easier!
     item_type: lecture
     start_time: '16:30'
+    duration: 30
+- title: Managing Data
+  description: |-
+    Data is an integral part of virtually any web application, and a great persistence library make a huge difference in performance and maintainability.
+
+    Thankfully, the Elixir ecosystem has us covered in spades. Ecto is a thin layer of functions that allow us to build composable queries, validate fields, and seamlessly transform records between our DB and application representations.
+  duration: 225
+  agenda_items:
+  - title: Lunch
+    description: Break for Lunch
+    item_type: break
+    start_time: '12:00'
+    duration: 45
+  - title: 'EXERCISE: Query Olympics'
+    description: You'll be given a list of database queries for you and your classmates
+      to make using Ecto. Each query is worth a certain number of points. Highest
+      number of points after the exercise is done, wins!
+    item_type: exercise
+    start_time: '11:15'
+    duration: 45
+  - title: Quick Queries
+    description: While we could use SQL syntax to retrieve records from our database,
+      doing so would open us up to a world of pain. Ecto provides an approachable
+      and composable way of building queries, while stopping short of doing us any
+      "automatic favors" (i.e., N+1 queries) that so often degrade performance.
+    item_type: lecture
+    start_time: '10:45'
+    duration: 30
+  - title: Managing Migrations
+    description: |-
+      If you've never used code to manage changes to your database schema, you're missing out. Migrations allow us to change our schema in (ideally) reversible steps, so we can apply and un-apply a set of changes while building features.
+      Even if you've seen migrations before, there are some useful things to know about how they work with Ecto, and in particular, Postgres. We'll look, specifically at:
+      - Postgres array and jsonb column types
+      - Changing column types, while remaining backwards compatible
+    item_type: lecture
+    start_time: '9:20'
+    duration: 25
+  - title: 'EXERCISE: Models & Validation'
+    description: Create models and appropriate validations for a blog post/comment
+      app.
+    item_type: exercise
+    start_time: '10:15'
+    duration: 30
+  - title: Intro to Ecto
+    description: "Heavy persistence libraries like ActiveRecord offer convenience,
+      but often become performance bottlenecks. We could make every DB query explicitly,
+      but then we're trading in all of our ergonomics for performance.\n\nEcto manages
+      to strike an enjoyable balance, where we are asked to be deliberate about the
+      records we fetch from a database but (most of the time) aren't dragged into
+      the world of writing SQL queries explicitly.\n\nYou'll be amazed at how much
+      we can do with just simple functions, and will never look at other persistence
+      frameworks quite the same way again. "
+    item_type: lecture
+    start_time: '9:00'
+    duration: 20
+  - title: Cracking Changesets
+    description: "This is one of my favorite parts about Ecto, and one of the parts
+      you'll be most often working with. In contrast to other persistence libraries,
+      **the concept of the shape of a record (schema) and the logic for checking the
+      validity of values (validations)  are decoupled**.  There are some incredibly
+      exciting consequences of this design decision.\n\nEcto ships with a bunch of
+      validations, and because it's so quick and easy, we'll write a few of our own. "
+    item_type: lecture
+    start_time: '9:45'
     duration: 30
 - title: Real Time
   description: One of the places where Elixir and Phoenix leave the competition in
@@ -431,5 +394,42 @@ stages:
       in the context of Phoenix channels. "
     item_type: lecture
     start_time: '12:45'
+    duration: 45
+- title: Users & Authentication
+  description: |-
+    Nearly every app we build these days requires some sort of authentication, and probably a user account to go along with it.  Even if your app is an oddball and doesn't need this, user accounts provide us with a well-understood set of use cases that will serve as an excellent case study.
+
+    Let's put some of our newfound Phoenix knowledge into practice as we implement a secure user account feature set. The goal will be to reduce explicit management of authorization & authentication on a per-resource basis as much as possible.
+  duration: 150
+  agenda_items:
+  - title: Wrap Up & Goodbye
+    description: We'll recap everything we've learned
+    item_type: lecture
+    start_time: '16:45'
+    duration: 15
+  - title: 'EXERCISE: Roles'
+    description: We often have a concept of roles (or an equivalent concept masquerading
+      as other flags/fields) built on top of our authentication. We'll add roles to
+      our JWT, and design a plug that will raise an error if a user attempts to access
+      a controller action without having the required roles.
+    item_type: exercise
+    start_time: '16:00'
+    duration: 45
+  - title: 'EXERCISE: Registration'
+    description: "Creating new users will serve to highlight a few concepts at the
+      model layer \n* Server-side validation, including writing our own validator\n*
+      Safely handling passwords\n* Keeping slightly different changeset-generating
+      functions organized\n\nWe'll also have an opportunity to start defining routes
+      that require a user to be authenticated, and routes that don't."
+    item_type: exercise
+    start_time: '14:30'
+    duration: 45
+  - title: 'EXERCISE: Login & Logout'
+    description: |-
+      For our purposes, we'll use a JSON Web Token (JWT) and the OAuth 2 password grant standard, as a mechanism and vehicle for authentication. You will be provided with a client-side app that will talk to our Phoenix, via JSON.
+
+      We'll validate a user's credentials in a way that's not incredibly sensitive to timing or brute force attacks, and then assemble our little piece of session state (the JWT) before encrypting it and handing it back to the client.
+    item_type: exercise
+    start_time: '15:15'
     duration: 45
 ---

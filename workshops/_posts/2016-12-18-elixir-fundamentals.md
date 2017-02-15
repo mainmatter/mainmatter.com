@@ -8,134 +8,6 @@ description: |-
 
   This course provides a strong foundation for writing general-purpose functional code, and is intended for developers already proficient in another language.
 stages:
-- title: Writing Modular Programs
-  description: Elixir's module system allows us to define layers of related functions.
-    In this part of the course, we'll explore the concepts of modules, and the ability
-    to reference code in one module from another.
-  duration: 240
-  agenda_items:
-  - title: Lunch
-    description: Break for Lunch
-    item_type: break
-    start_time: '12:30'
-    duration: 60
-  - title: 'EXERCISE: Serializer Protocol'
-    description: 'Given a list of values, we want to be able to generate a string
-      representation, either in CSV or JSON array format. Design a protocol, and adopt
-      that behavior in each of two modules: `CSVSerializer` and `JSONSerializer`.'
-    item_type: exercise
-    start_time: '12:00'
-    duration: 30
-  - title: 'EXERCISE: Mission Control'
-    description: We've got a set of tests for a couple of Elixir modules that are
-      used to control a space ship. Alter the code to make the unit tests pass, and
-      ensure that you've kept as much of each module's internal functionality private
-      as possible.
-    item_type: exercise
-    start_time: '9:45'
-    duration: 30
-  - title: 'EXERCISE: Extending a Module'
-    description: 'The `use` macro can essentially be used to decorate a module with
-      some code from another module.
-
-'
-    item_type: exercise
-    start_time: '10:45'
-    duration: 30
-  - title: Protocols & Behaviors
-    description: |-
-      Protocols are a mechanism for **polymorphism in Elixir**, where an implementation of a certain contract is defined on a per-type basis. In other languages, this contract would be called an interface (Java), or a pure abstract class (C++)
-
-      Under the hood, part of how this works is by way of a **Behavior**: a definition of a set of functions that modules who adopt this behavior must implement.
-    item_type: lecture
-    start_time: '11:15'
-    duration: 45
-  - title: Modules & Three Important Directives
-    description: 'Modules are just a group of several functions, some of which may
-      be private and some of which may be public. Modules give us the ability to define
-      named functions using the `def` macro, which offer a few other features that
-      were unavailable in the world of anonymous functions.
-
-'
-    item_type: lecture
-    start_time: '9:15'
-    duration: 30
-  - title: Basic Metaprogramming
-    description: 'While the `use` macro is not strictly a directive, it''s of particular
-      importance when considering "mixins" for common functionality, shared across
-      multiple concrete modules.
-
-'
-    item_type: lecture
-    start_time: '10:15'
-    duration: 30
-  - title: Welcome Back
-    description: We'll recap the ground we covered in day 1 of this training, so it's
-      fresh in your mind, as we continue building up toward Elixir proficiency!
-    item_type: lecture
-    start_time: '9:00'
-    duration: 15
-- title: Working With Data Structures
-  description: Earlier we outlined and worked with several different types of data
-    structures. Let's take a closer look at some of these methods.
-  duration: 210
-  agenda_items:
-  - title: Recap & Wrap Up
-    description: We'll round out the course by recapping everything we've learned,
-      and finish with some tips for next steps in your mission to become an ace Elixir
-      developer!
-    item_type: lecture
-    start_time: '16:45'
-    duration: 15
-  - title: 'EXERCISE: Map, Filter, Reduce'
-    description: We have a program that starts with a list of objects read from a
-      file. Using the built-in functions available in the `Enum` and `Map` modules,
-      filter out "inactive" items (objects where the "active" attribute is not `true`),
-      and then log a list of object names to the console.
-    item_type: exercise
-    start_time: '14:15'
-    duration: 30
-  - title: 'EXERCISE: Skimming a good book'
-    description: 'Given the entire text of the book ~Gulliver''s Travels~, find the
-      highest- Scrabble-scoring word within the first 1000 lines.
-
-'
-    item_type: exercise
-    start_time: '16:15'
-    duration: 30
-  - title: Lazy Operations with Streams
-    description: 'Elixir''s `Stream` module offers some of the same capabilities that
-      we enjoy in the `Enum` module, but when working with Streams, computations are
-      performed lazily. This is particularly useful for dealing with huge (or infinitely
-      huge) collections.
-
-'
-    item_type: lecture
-    start_time: '15:45'
-    duration: 30
-  - title: 'EXERCISE: Comprehensions'
-    description: Take another pass at the previous exercise, and use a comprehension
-      to devise a concise solution.
-    item_type: exercise
-    start_time: '15:15'
-    duration: 30
-  - title: Taming List Enumeration with Comprehensions
-    description: 'Often we find ourselves looping over something enumerable; mapping
-      values into another list; and potentially filtering out some unwanted items.
-      **Comprehensions use a generator and a filter** to provide some excellent syntactic
-      sugar for this kind of task.
-
-'
-    item_type: lecture
-    start_time: '14:45'
-    duration: 30
-  - title: Enum & Map
-    description: We've learned about how to create and work with **list** and **map**
-      literals in very basic ways. Let's take a look into some of the tooling that
-      Elixir provides as core language features, for working with these data structures.
-    item_type: lecture
-    start_time: '13:30'
-    duration: 45
 - title: Liftoff
   description: 'Elixir is in a fairly unique position as a programming language, in
     that it combines contemporary language features and excellent developer ergonomics
@@ -283,5 +155,133 @@ stages:
       and pragmatic path."
     item_type: lecture
     start_time: '11:00'
+    duration: 45
+- title: Writing Modular Programs
+  description: Elixir's module system allows us to define layers of related functions.
+    In this part of the course, we'll explore the concepts of modules, and the ability
+    to reference code in one module from another.
+  duration: 240
+  agenda_items:
+  - title: Lunch
+    description: Break for Lunch
+    item_type: break
+    start_time: '12:30'
+    duration: 60
+  - title: 'EXERCISE: Serializer Protocol'
+    description: 'Given a list of values, we want to be able to generate a string
+      representation, either in CSV or JSON array format. Design a protocol, and adopt
+      that behavior in each of two modules: `CSVSerializer` and `JSONSerializer`.'
+    item_type: exercise
+    start_time: '12:00'
+    duration: 30
+  - title: 'EXERCISE: Mission Control'
+    description: We've got a set of tests for a couple of Elixir modules that are
+      used to control a space ship. Alter the code to make the unit tests pass, and
+      ensure that you've kept as much of each module's internal functionality private
+      as possible.
+    item_type: exercise
+    start_time: '9:45'
+    duration: 30
+  - title: 'EXERCISE: Extending a Module'
+    description: 'The `use` macro can essentially be used to decorate a module with
+      some code from another module.
+
+'
+    item_type: exercise
+    start_time: '10:45'
+    duration: 30
+  - title: Protocols & Behaviors
+    description: |-
+      Protocols are a mechanism for **polymorphism in Elixir**, where an implementation of a certain contract is defined on a per-type basis. In other languages, this contract would be called an interface (Java), or a pure abstract class (C++)
+
+      Under the hood, part of how this works is by way of a **Behavior**: a definition of a set of functions that modules who adopt this behavior must implement.
+    item_type: lecture
+    start_time: '11:15'
+    duration: 45
+  - title: Modules & Three Important Directives
+    description: 'Modules are just a group of several functions, some of which may
+      be private and some of which may be public. Modules give us the ability to define
+      named functions using the `def` macro, which offer a few other features that
+      were unavailable in the world of anonymous functions.
+
+'
+    item_type: lecture
+    start_time: '9:15'
+    duration: 30
+  - title: Basic Metaprogramming
+    description: 'While the `use` macro is not strictly a directive, it''s of particular
+      importance when considering "mixins" for common functionality, shared across
+      multiple concrete modules.
+
+'
+    item_type: lecture
+    start_time: '10:15'
+    duration: 30
+  - title: Welcome Back
+    description: We'll recap the ground we covered in day 1 of this training, so it's
+      fresh in your mind, as we continue building up toward Elixir proficiency!
+    item_type: lecture
+    start_time: '9:00'
+    duration: 15
+- title: Working With Data Structures
+  description: Earlier we outlined and worked with several different types of data
+    structures. Let's take a closer look at some of these methods.
+  duration: 210
+  agenda_items:
+  - title: Recap & Wrap Up
+    description: We'll round out the course by recapping everything we've learned,
+      and finish with some tips for next steps in your mission to become an ace Elixir
+      developer!
+    item_type: lecture
+    start_time: '16:45'
+    duration: 15
+  - title: 'EXERCISE: Map, Filter, Reduce'
+    description: We have a program that starts with a list of objects read from a
+      file. Using the built-in functions available in the `Enum` and `Map` modules,
+      filter out "inactive" items (objects where the "active" attribute is not `true`),
+      and then log a list of object names to the console.
+    item_type: exercise
+    start_time: '14:15'
+    duration: 30
+  - title: 'EXERCISE: Skimming a good book'
+    description: 'Given the entire text of the book ~Gulliver''s Travels~, find the
+      highest- Scrabble-scoring word within the first 1000 lines.
+
+'
+    item_type: exercise
+    start_time: '16:15'
+    duration: 30
+  - title: Lazy Operations with Streams
+    description: 'Elixir''s `Stream` module offers some of the same capabilities that
+      we enjoy in the `Enum` module, but when working with Streams, computations are
+      performed lazily. This is particularly useful for dealing with huge (or infinitely
+      huge) collections.
+
+'
+    item_type: lecture
+    start_time: '15:45'
+    duration: 30
+  - title: 'EXERCISE: Comprehensions'
+    description: Take another pass at the previous exercise, and use a comprehension
+      to devise a concise solution.
+    item_type: exercise
+    start_time: '15:15'
+    duration: 30
+  - title: Taming List Enumeration with Comprehensions
+    description: 'Often we find ourselves looping over something enumerable; mapping
+      values into another list; and potentially filtering out some unwanted items.
+      **Comprehensions use a generator and a filter** to provide some excellent syntactic
+      sugar for this kind of task.
+
+'
+    item_type: lecture
+    start_time: '14:45'
+    duration: 30
+  - title: Enum & Map
+    description: We've learned about how to create and work with **list** and **map**
+      literals in very basic ways. Let's take a look into some of the tooling that
+      Elixir provides as core language features, for working with these data structures.
+    item_type: lecture
+    start_time: '13:30'
     duration: 45
 ---

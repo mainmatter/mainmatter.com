@@ -39,6 +39,111 @@ stages:
     item_type: lecture
     start_time: '9:00'
     duration: 45
+- title: Routing & Top-Level Templates
+  description: One of the important ideas at the core of Ember is URL-driven application
+    state. Great state management is what makes the difference between single page
+    apps that delight users, and those that frustrate them.
+  duration: 225
+  agenda_items:
+  - title: Handlebars Helpers
+    description: Handlebars helpers provide a mean of bringing declarative logic into
+      our templates, including iteration through arrays, conditionals and more! We'll
+      examine different ways of building helpers, covering use cases for both **bound**
+      and **unbound** varieties. Finally, we'll introduce the powerful concept of
+      **subexpressions**, which allow helpers to be composed together.
+    item_type: lecture
+    start_time: '12:30'
+    duration: 45
+  - title: 'Exercise: Static Data in Routes & Placeholder Templates'
+    description: We'll learn how to **decompose the design of our app into a hierarchy
+      of routes and top-level templates**. For now, these templates will return static
+      data, but we'll build in a means of navigating between pages, examining the
+      types of transitions that take place in a variety of situations.
+    item_type: exercise
+    start_time: '12:00'
+    duration: 30
+  - title: Lunch
+    description: Break for lunch
+    item_type: break
+    start_time: '13:45'
+    duration: 60
+  - title: 'Exercise: Bound & Unbound Handlebars Helpers'
+    description: We'll build one bound and one unbound handlebars helper, as part
+      of our large project.
+    item_type: exercise
+    start_time: '13:15'
+    duration: 30
+  - title: Template Basics
+    description: Each route has a **top-level template** paired with it, representing
+      part of the **view hierarchy** of a particular "page" in your single-page application.
+      For now, we'll treat templates as a superset of HTML. We'll introduce the powerful
+      `{{link-to}}` helper as a means of building internal URLs.
+    item_type: lecture
+    start_time: '11:45'
+    duration: 15
+  - title: Router & Routes
+    description: We'll study Ember's **Router**, and examine its conceptual foundation
+      as a finite state machine, and introduce the concept of **Routes**, a hierarchy
+      of objects that perform transitions between router states.
+    item_type: lecture
+    start_time: '11:00'
+    duration: 45
+- title: Objects, Properties & Actions
+  description: |-
+    Nearly all of Ember's important types extend from a core `Ember.Object` class, which we'll study, and compare to JavaScript's `Object` and `Class` concepts.
+
+    Some types of ember objects, like Routes, Controllers and Components can **handle user interactions by way of actions**. We'll cover strategies and best practices for action handling, including:
+    * the `{{action}}` helper
+    * closure actions
+    * action bubbling
+    * the `{{route action}}` helper
+    * the `{{mut}}` helper
+  duration: 150
+  agenda_items:
+  - title: Computed Properties
+    description: Computed properties are a performant and intuitive way to define
+      values that are based on other values. We'll take a short trip through the internal
+      implementation of a computed property, and contrast it with the more expensive
+      and error-prone concept of **Observers**.
+    item_type: lecture
+    start_time: '16:45'
+    duration: 30
+  - title: 'Exercise: Services'
+    description: We'll improve our bound handlebars helper, and take advantage of
+      a service, so that we can share the concept of "current time" across many flavors
+      of objects, and perform more efficient DOM updates.
+    item_type: exercise
+    start_time: '16:15'
+    duration: 30
+  - title: Services
+    description: Services are a means of sharing state & functionality across various
+      aspects of an app. We'll explain what makes services a simple, but powerful
+      concept, and illustrate service use via `Ember.inject`. Finally, we'll get a
+      sneak preview of the important role services play in the upcoming **engines**
+      framework feature, and explore the "*do's and don'ts of service design**.
+    item_type: lecture
+    start_time: '15:45'
+    duration: 30
+  - title: Objects
+    description: |-
+      We'll look at `Ember.Object` in detail, including:
+      * using the KVO-compliant **get** and **set** methods
+      * adding instance and static methods with `reopen` and `reopenClass`
+      * lifecycle hooks
+      * events
+    item_type: lecture
+    start_time: '14:45'
+    duration: 30
+  - title: 'Exercise: Extending Object'
+    description: |-
+      We'll create our own subclass of `Ember.Object` using `extend()`, and incorporate:
+      * proper handling of setup and tear-down logic
+      * firing events using `Ember.Evented`
+      * getting and setting properties
+      * reopening
+    item_type: exercise
+    start_time: '15:15'
+    duration: 30
 - title: Components
   description: Components play an increasingly central role in modern web app development,
     as a mean for defining encapsulated pieces of UI and having well-defined contracts
@@ -175,110 +280,5 @@ stages:
       * The Qunit assertion library
     item_type: lecture
     start_time: '13:30'
-    duration: 30
-- title: Routing & Top-Level Templates
-  description: One of the important ideas at the core of Ember is URL-driven application
-    state. Great state management is what makes the difference between single page
-    apps that delight users, and those that frustrate them.
-  duration: 225
-  agenda_items:
-  - title: Handlebars Helpers
-    description: Handlebars helpers provide a mean of bringing declarative logic into
-      our templates, including iteration through arrays, conditionals and more! We'll
-      examine different ways of building helpers, covering use cases for both **bound**
-      and **unbound** varieties. Finally, we'll introduce the powerful concept of
-      **subexpressions**, which allow helpers to be composed together.
-    item_type: lecture
-    start_time: '12:30'
-    duration: 45
-  - title: 'Exercise: Static Data in Routes & Placeholder Templates'
-    description: We'll learn how to **decompose the design of our app into a hierarchy
-      of routes and top-level templates**. For now, these templates will return static
-      data, but we'll build in a means of navigating between pages, examining the
-      types of transitions that take place in a variety of situations.
-    item_type: exercise
-    start_time: '12:00'
-    duration: 30
-  - title: Lunch
-    description: Break for lunch
-    item_type: break
-    start_time: '13:45'
-    duration: 60
-  - title: 'Exercise: Bound & Unbound Handlebars Helpers'
-    description: We'll build one bound and one unbound handlebars helper, as part
-      of our large project.
-    item_type: exercise
-    start_time: '13:15'
-    duration: 30
-  - title: Template Basics
-    description: Each route has a **top-level template** paired with it, representing
-      part of the **view hierarchy** of a particular "page" in your single-page application.
-      For now, we'll treat templates as a superset of HTML. We'll introduce the powerful
-      `{{link-to}}` helper as a means of building internal URLs.
-    item_type: lecture
-    start_time: '11:45'
-    duration: 15
-  - title: Router & Routes
-    description: We'll study Ember's **Router**, and examine its conceptual foundation
-      as a finite state machine, and introduce the concept of **Routes**, a hierarchy
-      of objects that perform transitions between router states.
-    item_type: lecture
-    start_time: '11:00'
-    duration: 45
-- title: Objects, Properties & Actions
-  description: |-
-    Nearly all of Ember's important types extend from a core `Ember.Object` class, which we'll study, and compare to JavaScript's `Object` and `Class` concepts.
-
-    Some types of ember objects, like Routes, Controllers and Components can **handle user interactions by way of actions**. We'll cover strategies and best practices for action handling, including:
-    * the `{{action}}` helper
-    * closure actions
-    * action bubbling
-    * the `{{route action}}` helper
-    * the `{{mut}}` helper
-  duration: 150
-  agenda_items:
-  - title: Computed Properties
-    description: Computed properties are a performant and intuitive way to define
-      values that are based on other values. We'll take a short trip through the internal
-      implementation of a computed property, and contrast it with the more expensive
-      and error-prone concept of **Observers**.
-    item_type: lecture
-    start_time: '16:45'
-    duration: 30
-  - title: 'Exercise: Services'
-    description: We'll improve our bound handlebars helper, and take advantage of
-      a service, so that we can share the concept of "current time" across many flavors
-      of objects, and perform more efficient DOM updates.
-    item_type: exercise
-    start_time: '16:15'
-    duration: 30
-  - title: Services
-    description: Services are a means of sharing state & functionality across various
-      aspects of an app. We'll explain what makes services a simple, but powerful
-      concept, and illustrate service use via `Ember.inject`. Finally, we'll get a
-      sneak preview of the important role services play in the upcoming **engines**
-      framework feature, and explore the "*do's and don'ts of service design**.
-    item_type: lecture
-    start_time: '15:45'
-    duration: 30
-  - title: Objects
-    description: |-
-      We'll look at `Ember.Object` in detail, including:
-      * using the KVO-compliant **get** and **set** methods
-      * adding instance and static methods with `reopen` and `reopenClass`
-      * lifecycle hooks
-      * events
-    item_type: lecture
-    start_time: '14:45'
-    duration: 30
-  - title: 'Exercise: Extending Object'
-    description: |-
-      We'll create our own subclass of `Ember.Object` using `extend()`, and incorporate:
-      * proper handling of setup and tear-down logic
-      * firing events using `Ember.Evented`
-      * getting and setting properties
-      * reopening
-    item_type: exercise
-    start_time: '15:15'
     duration: 30
 ---
