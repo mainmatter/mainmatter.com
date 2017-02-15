@@ -35,7 +35,7 @@
                         <span class="duration pull-right">Duration: {{stage.duration}} minutes</span>
                       </div>
                       <h4>
-                        {{stage.title}}
+                        <span class="number">{{forloop.index}} &mdash; </span>{{stage.title}}
                       </h4>
                       {{stage.description | markdownify}}
 
@@ -57,7 +57,7 @@
                         </div>
                         <div class="row">
                           <div class="col-sm-2 start-time">
-                            {{item.start_time}}   
+                            {{item.start_time}}
                           </div>
                           <div class="col-sm-8">
                             <h5>

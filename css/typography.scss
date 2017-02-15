@@ -208,8 +208,6 @@ h5 {
       font-size: 12px;
       text-transform: uppercase;
     }
-
-    
   }
 }
 
@@ -224,6 +222,14 @@ h5 {
 @media screen and (max-width: 767px) {
   .secondary-banner {
     text-align: center;
+  }
+
+  .workshop {
+    .agenda-item {
+      .start-time {
+        text-align: left;
+      }
+    }
   }
 
   #footer {

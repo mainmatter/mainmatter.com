@@ -272,10 +272,6 @@ ul {
 }
 
 .workshops {
-  .icon {
-    text-align: center;
-  }
-
   h3 {
     margin-bottom: 10px;
   }
@@ -357,6 +353,10 @@ iframe.twitter-tweet {
   h4 {
     text-align: left;
     margin-top: 10px;
+
+    .number {
+      display: none;
+    }
   }
 
   p, ul {
@@ -439,7 +439,7 @@ iframe.twitter-tweet {
     transition: max-height 0.5s ease-in-out;
 
     .agenda-item {
-      margin: 0 0 20px 0;
+      margin: 0 0 40px 0;
       padding: 0 15px;
 
       &:last-child {
@@ -453,7 +453,6 @@ iframe.twitter-tweet {
       .start-time{
         margin-top: 4px;
       }
-      
     }
   }
 }
@@ -491,6 +490,26 @@ iframe.twitter-tweet {
 
       &:last-child {
         margin-bottom: 0;
+      }
+    }
+
+    .workshops {
+      .icon {
+        margin-bottom: 20px;
+      }
+    }
+
+    .workshop {
+      .stage {
+        .number {
+          display: none;
+        }
+
+        h4 {
+          .number {
+            display: inline;
+          }
+        }
       }
     }
   }
