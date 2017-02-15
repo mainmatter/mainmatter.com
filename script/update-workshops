@@ -5,70 +5,82 @@ require 'open-uri'
 
 Bundler.setup(:development)
 
+require 'colored'
 require 'httparty'
 require 'active_support/core_ext/hash/keys'
 require 'active_support/core_ext/string/inflections'
 
-# argh, good old Ruby SSL errors… This should be fixed, it's rediculous to merge this as it is 😳
-course_data = HTTParty.get('https://api.mike.works/api/v1/courses', verify: false).parsed_response.deep_symbolize_keys
-
-course_data[:data].each do |course|
-  attributes = course[:attributes]
-  id = course[:id]
-  title, description, category, created_at = attributes.values_at(:title, :description, :category, :'created-at')
-  slug = "#{created_at[0..9]}-#{title.parameterize.downcase}"
-  image = attributes[:'image-info'][:square2x][:url]
-  image_name = "images/workshops/#{slug}.png"
-  open(image) do |image|
-    File.open(image_name, 'wb') do |file|
-      file.puts image.read
+begin
+  # argh, good old Ruby SSL errors… This should be fixed, it's rediculous to merge this as it is 😳
+  course_data = HTTParty.get('https://api.mike.works/api/v1/courses', verify: false).parsed_response.deep_symbolize_keys
+  
+  count = 0
+  course_data[:data].each do |course|
+    attributes = course[:attributes]
+    id = course[:id]
+    title, description, category, created_at = attributes.values_at(:title, :description, :category, :'created-at')
+    slug = "#{created_at[0..9]}-#{title.parameterize.downcase}"
+    image = attributes[:'image-info'][:square2x][:url]
+    image_name = "images/workshops/#{slug}.png"
+    open(image) do |image|
+      File.open(image_name, 'wb') do |file|
+        file.puts image.read
+      end
     end
-  end
-
-  course_yaml = {
-    layout:      'workshop',
-    title:       title,
-    permalink:   "/workshops/#{slug}",
-    category:    category,
-    description: description,
-    image:       "/#{image_name}"
-  }
-
-  stage_data = HTTParty.get("https://api.mike.works/api/v1/courses/#{id}/stages", verify: false, format: :json).parsed_response.deep_symbolize_keys
-  sorted_stages = stage_data[:data].sort_by { |stage| stage[:attributes][:order] }
-  course_yaml[:stages] = sorted_stages.map do |stage|
-    attributes = stage[:attributes]
-    title, description, duration = attributes.values_at(:title, :description, :duration)
-    stage_yaml = {
+  
+    course_yaml = {
+      layout:      'workshop',
       title:       title,
+      permalink:   "/workshops/#{slug}",
+      category:    category,
       description: description,
-      duration:    duration
+      image:       "/#{image_name}"
     }
-
-    sorted_agenda_items = stage_yaml[:agenda_items] = stage[:relationships][:'agenda-items'][:data].map do |agenda_item_ref|
-      id, type = agenda_item_ref.values_at(:id, :type)
-      stage_data[:included].find { |include| include[:type] == type && include[:id] == id }
-    end.sort_by { |agenda_item| agenda_item[:attributes][:'start-time'] }
-    stage_yaml[:agenda_items] = sorted_agenda_items.map do |agenda_item|
-      attributes = agenda_item[:attributes]
-      title, description, duration, item_type, start_time = attributes.values_at(:title, :description, :duration, :'item-type', :'start-time', :duration)
-      start_time = start_time.to_s
-
-      {
+  
+    stage_data = HTTParty.get("https://api.mike.works/api/v1/courses/#{id}/stages", verify: false, format: :json).parsed_response.deep_symbolize_keys
+    sorted_stages = stage_data[:data].sort_by { |stage| stage[:attributes][:order] }
+    course_yaml[:stages] = sorted_stages.map do |stage|
+      attributes = stage[:attributes]
+      title, description, duration = attributes.values_at(:title, :description, :duration)
+      stage_yaml = {
         title:       title,
         description: description,
-        item_type:   item_type,
-        start_time:  "#{start_time[0...(start_time.length - 2)]}:#{start_time[-2..-1]}",
         duration:    duration
       }
+  
+      sorted_agenda_items = stage_yaml[:agenda_items] = stage[:relationships][:'agenda-items'][:data].map do |agenda_item_ref|
+        id, type = agenda_item_ref.values_at(:id, :type)
+        stage_data[:included].find { |include| include[:type] == type && include[:id] == id }
+      end.sort_by { |agenda_item| agenda_item[:attributes][:'start-time'] }
+      stage_yaml[:agenda_items] = sorted_agenda_items.map do |agenda_item|
+        attributes = agenda_item[:attributes]
+        title, description, duration, item_type, start_time = attributes.values_at(:title, :description, :duration, :'item-type', :'start-time', :duration)
+        start_time = start_time.to_s
+  
+        {
+          title:       title,
+          description: description,
+          item_type:   item_type,
+          start_time:  "#{start_time[0...(start_time.length - 2)]}:#{start_time[-2..-1]}",
+          duration:    duration
+        }
+      end
+  
+      stage_yaml
     end
-
-    stage_yaml
+  
+    filename = File.expand_path("../../workshops/_posts/#{slug}.md", __FILE__)
+    File.open(filename, 'w') do |file|
+      file << course_yaml.deep_stringify_keys.to_yaml
+      file << "---"
+    end
+  
+    count = count + 1
+    puts "\tCreated #{filename}".blue
   end
-
-  filename = File.expand_path("../../workshops/_posts/#{slug}.md", __FILE__)
-  File.open(filename, 'w') do |file|
-    file << course_yaml.deep_stringify_keys.to_yaml
-    file << "---"
-  end
+  
+  puts "\nCreated #{count} Workshops".green
+rescue => e
+  puts "Could not sync Workshops: #{e.class.name} - #{e.message}\n".red
+  puts e.backtrace.map { |line| "\t#{line}"}.join("\n")
 end

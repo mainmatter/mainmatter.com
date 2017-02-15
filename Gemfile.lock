@@ -211,6 +211,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  colored
   github-pages
   html-proofer
   httparty
