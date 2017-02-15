@@ -2,7 +2,7 @@
 <html lang="en">
   {% include head.html %}
   <script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
-	<body>
+  <body>
     {% include nav.html %}
 
     <div id="main-content">
@@ -79,31 +79,30 @@
       {% include contact_banner.html %}
     </div>
 
-   {% include footer.html %}
+    {% include footer.html %}
 
-   {% include analytics.html %}
+    {% include analytics.html %}
 
-   <script>
-     // execute callback when the page is ready:
-     Zepto(function($) {
-       $('[data-toggle-agenda-items]').each(function(i, elem) {
-         var toggle = $(elem);
-         toggle.on('click', function(e) {
-           e.preventDefault();
-
-           var currentText = toggle.text();
-           toggle.text(toggle.data('alternative-text'));
-           toggle.data('alternative-text', currentText);
-
-           var items = $(toggle.data('toggle-agenda-items'));
-           if (parseInt(items.css('max-height')) > 0) {
-             items.css('max-height', 0);
-           } else {
-             items.css('max-height', items[0].scrollHeight);
-           }
-         });
-       });
-     });
-   </script>
-	</body>
+    <script>
+      Zepto(function($) {
+        $('[data-toggle-agenda-items]').each(function(i, elem) {
+          var toggle = $(elem);
+          toggle.on('click', function(e) {
+            e.preventDefault();
+      
+            var currentText = toggle.text();
+            toggle.text(toggle.data('alternative-text'));
+            toggle.data('alternative-text', currentText);
+      
+            var items = $(toggle.data('toggle-agenda-items'));
+            if (parseInt(items.css('max-height')) > 0) {
+              items.css('max-height', 0);
+            } else {
+              items.css('max-height', items[0].scrollHeight);
+            }
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
