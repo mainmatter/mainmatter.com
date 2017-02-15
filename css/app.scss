@@ -398,7 +398,7 @@ iframe.twitter-tweet {
   .stage {
     margin-bottom: 60px;
 
-    &:last-child {
+    &:last-of-type {
       margin-bottom: 0;
     }
 
@@ -443,8 +443,12 @@ iframe.twitter-tweet {
     transition: max-height 0.5s ease-in-out;
 
     .agenda-item {
-      margin: 0 0 25px 0;
+      margin: 0 0 20px 0;
       padding: 15px;
+
+      &:last-child {
+        margin-bottom: 60px;
+      }
 
       h5 {
         margin: 10px 0;
@@ -454,6 +458,14 @@ iframe.twitter-tweet {
         margin-top: 4px;
       }
       
+    }
+  }
+}
+
+#main-content {
+  .content-section {
+    &.workshop {
+      margin-bottom: -60px;
     }
   }
 }
