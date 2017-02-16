@@ -26,7 +26,7 @@ a {
   color: $primary-highlight-color;
   transition: border-bottom-color ease-in-out .15s;
 
-  &:hover {
+  &:hover, &:active, &:focus {
     color: $primary-highlight-color;
     border-bottom-color: $primary-highlight-color;
   };
@@ -160,5 +160,23 @@ code {
 
   strong {
     background-color: $secondary-background-color;
+  }
+}
+
+.workshop {
+  .description:after {
+    border-bottom-color: $border-color;
+  }
+  .stage {
+    .number > div {
+      .icon {
+        color: $secondary-highlight-color;
+      }
+    }
+  }
+  .agenda-item {
+    .start-time {
+      color: $primary-highlight-color;
+    }
   }
 }
