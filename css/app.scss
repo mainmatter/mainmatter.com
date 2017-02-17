@@ -81,6 +81,10 @@
 #main-section {
   margin: 60px auto;
 
+  &.index {
+    margin-top: 0;
+  }
+
   & > .row {
     &:first-child {
       margin-top: 0;
@@ -233,15 +237,45 @@ ul {
 
 .client-logos {
   text-align: center;
-
-  a {
-    display: block;
-    width: 100%;
-    height: 100px;
-  }
+  position: relative;
+  padding-top: 60px;
 
   i {
     height: 80px;
+  }
+}
+
+#main-section.index {
+  .client-logos {
+    i {
+      opacity: 1;
+      -webkit-transition: opacity 0.15s ease-in-out;
+      -moz-transition: opacity 0.15s ease-in-out;
+      transition: opacity 0.15s ease-in-out;
+    }
+
+    a {
+      position: absolute;
+      display: block;
+      width: 100%;
+      top: calc(50% - 1em - 50px);
+      z-index: 9999;
+      padding: 50px;
+      opacity: 0;
+      -webkit-transition: opacity 0.15s ease-in-out;
+      -moz-transition: opacity 0.15s ease-in-out;
+      transition: opacity 0.15s ease-in-out;
+    }
+
+    &:hover {
+      i {
+        opacity: 0.15;
+      }
+
+      a {
+        opacity: 1;
+      }
+    }
   }
 }
 
