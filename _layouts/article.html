@@ -7,7 +7,19 @@
     <div id="main-content">
       {% include blog_header.html %}
 
-      {% include elixir_workshop_banner.html %}
+      <div id="workshop-banner"></div>
+      {% capture elixir_banner %}
+        {% include elixir_workshop_banner.html %}
+      {% endcapture %}
+      {% capture ember_banner %}
+        {% include ember_workshop_banner.html %}
+      {% endcapture %}
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var banners = new Array('{{ elixir_banner | strip_newlines}}', '{{ ember_banner | strip_newlines}}');
+          document.getElementById('workshop-banner').innerHTML += banners[Math.floor(Math.random() * banners.length)];;
+        }, false);
+      </script>
 
       <div class="container" id="main-section">
         <div class="row">
@@ -72,8 +84,9 @@
       {% include contact_banner.html %}
     </div>
 
-   {% include footer.html %}
+    {% include footer.html %}
 
-   {% include analytics.html %}
+    {% include analytics.html %}
+      
 	</body>
 </html>
