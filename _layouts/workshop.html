@@ -75,19 +75,9 @@
           </div>
         </div>
       </div>
-      <div id="workshop-banner"></div>
-      {% capture elixir_banner %}
-        {% include elixir_workshop_banner.html %}
-      {% endcapture %}
-      {% capture ember_banner %}
-        {% include ember_workshop_banner.html %}
-      {% endcapture %}
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          var banners = new Array('{{ elixir_banner | strip_newlines}}', '{{ ember_banner | strip_newlines}}');
-          document.getElementById('workshop-banner').innerHTML += banners[Math.floor(Math.random() * banners.length)];;
-        }, false);
-      </script>
+
+      {% include random_workshop_banner.html}
+      
       {% include contact_banner.html %}
     </div>
 
