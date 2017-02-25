@@ -6,8 +6,9 @@
   {% include ember_workshop_banner.html %}
 {% endcapture %}
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var banners = new Array('{{ elixir_banner | strip_newlines}}', '{{ ember_banner | strip_newlines}}');
-    document.getElementById('workshop-banner').innerHTML += banners[Math.floor(Math.random() * banners.length)];;
-  }, false);
+  Zepto(function($) {
+    var workshopBanners = new Array('{{ elixir_banner | strip_newlines}}', '{{ ember_banner | strip_newlines}}');
+    var banner = workshopBanners[Math.floor(Math.random() * workshopBanners.length)];
+    $('#workshop-banner').html(banner);
+  });
 </script>
