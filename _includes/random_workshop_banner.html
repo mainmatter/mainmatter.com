@@ -1,0 +1,14 @@
+<div id="workshop-banner"></div>
+{% capture elixir_banner %}
+  {% include elixir_workshop_banner.html %}
+{% endcapture %}
+{% capture ember_banner %}
+  {% include ember_workshop_banner.html %}
+{% endcapture %}
+<script>
+  Zepto(function($) {
+    var workshopBanners = new Array('{{ elixir_banner | strip_newlines}}', '{{ ember_banner | strip_newlines}}');
+    var banner = workshopBanners[Math.floor(Math.random() * workshopBanners.length)];
+    $('#workshop-banner').html(banner);
+  });
+</script>
