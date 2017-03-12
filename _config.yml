@@ -21,12 +21,12 @@ navigation:
     url: /services/
   - title: Process
     url: /process/
+  - title: Workshops
+    url: /workshops/
   - title: About
     url: /about/
   - title: Clients
     url: /clients/
-  - title: Workshops
-    url: /workshops/
   - title: Blog
     url: /blog/
 
