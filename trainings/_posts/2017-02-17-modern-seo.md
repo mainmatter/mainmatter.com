@@ -1,12 +1,12 @@
 ---
 layout: workshop
 title: Modern SEO
-permalink: "/workshops/2017-02-17-modern-seo"
+permalink: "/trainings/2017-02-17-modern-seo"
 category: Front End Development
 description: Getting the most out of search engines and social networking is more
   important than ever! Take advantage of Google, Facebook and Twitter’s most advanced
   features, and boost user engagement.
-image: "/images/workshops/2017-02-17-modern-seo.png"
+image: "/images/trainings/2017-02-17-modern-seo.png"
 stages:
 - title: Modern SEO
   description: "Some aspects of SEO seem like black magic, but there’s a lot that

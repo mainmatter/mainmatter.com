@@ -1,12 +1,12 @@
 ---
 layout: workshop
 title: Sass Fundamentals
-permalink: "/workshops/2017-02-16-sass-fundamentals"
+permalink: "/trainings/2017-02-16-sass-fundamentals"
 category: Front End Development
 description: Sass addresses many of the maintainability problems we typically experience
   when writing CSS, and makes writing styles fun again! This basic course will help
   you make the most out of this awesome preprocessor.
-image: "/images/workshops/2017-02-16-sass-fundamentals.png"
+image: "/images/trainings/2017-02-16-sass-fundamentals.png"
 stages:
 - title: Sass Fundamentals
   description: |-

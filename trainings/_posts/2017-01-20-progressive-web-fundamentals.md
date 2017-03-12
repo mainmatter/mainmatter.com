@@ -1,12 +1,12 @@
 ---
 layout: workshop
 title: Progressive Web Fundamentals
-permalink: "/workshops/2017-01-20-progressive-web-fundamentals"
+permalink: "/trainings/2017-01-20-progressive-web-fundamentals"
 category: Front End Development
 description: Progressive Web App technologies let you delight your users with the
   best modern browsers have to offer, without sacrificing compatibility for legacy
   environments.
-image: "/images/workshops/2017-01-20-progressive-web-fundamentals.png"
+image: "/images/trainings/2017-01-20-progressive-web-fundamentals.png"
 stages:
 - title: Server-Side Rendering
   description: We'll examine server-side rendering technology in general, and then

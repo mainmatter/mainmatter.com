@@ -1,14 +1,14 @@
 ---
 layout: workshop
 title: Ember-Data Basics
-permalink: "/workshops/2016-12-17-ember-data-basics"
+permalink: "/trainings/2016-12-17-ember-data-basics"
 category: Front End Development
 description: |-
   Harness the power of the official persistence library of the Ember.js framework.
 
 
   We'll cover all of the basics you need to know in order to make ember-data the best part of working with your back end, diving deep into adapters, serializers and the store.
-image: "/images/workshops/2016-12-17-ember-data-basics.png"
+image: "/images/trainings/2016-12-17-ember-data-basics.png"
 stages:
 - title: JSON-API
   description: "[JSON-API](http://jsonapi.org/) is a spec for JSON contracts between
