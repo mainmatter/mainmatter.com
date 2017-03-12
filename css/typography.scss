@@ -105,6 +105,11 @@ h5 {
 
     a {
       font-size: 22px;
+      border-bottom: none;
+
+      span, small {
+        border-bottom: 1px solid transparent;
+      }
     }
   }
 }
