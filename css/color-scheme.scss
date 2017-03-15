@@ -121,31 +121,44 @@ code {
     color: $secondary-highlight-color;
   }
 
-  &.ember-workshop-banner {
-    background-color: $ember-workshop-primary-background-color;
-
+  &.workshop-banner {
     a {
-      color: $ember-workshop-primary-text-color;
+      span, small {
+        transition: border-bottom-color ease-in-out .15s;
+        border-bottom-color: transparent;
+      }
     }
 
-    &:hover a {
-      border-bottom-color: $ember-workshop-primary-text-color;
-    }
-  }
+    &.ember-workshop-banner {
+      background-color: $ember-workshop-primary-background-color;
 
-  &.workshop-banner.elixir-workshop-banner {
-    background: $elixir-workshop-primary-background-color;
-    background: -webkit-linear-gradient(135deg,  $elixir-workshop-primary-background-color, $elixir-workshop-secondary-background-color);
-    background: -o-linear-gradient(135deg, $elixir-workshop-primary-background-color, $elixir-workshop-secondary-background-color);
-    background: -moz-linear-gradient(135deg, $elixir-workshop-primary-background-color, $elixir-workshop-secondary-background-color);
-    background: linear-gradient(135deg, $elixir-workshop-primary-background-color, $elixir-workshop-secondary-background-color);
+      a {
+        color: $ember-workshop-primary-text-color;
 
-    a {
-      color: $elixir-workshop-primary-text-color;
+        &:hover {
+          span, small {
+            border-bottom-color: $ember-workshop-primary-text-color;
+          }
+        }
+      }
     }
 
-    &:hover a {
-      border-bottom-color: $elixir-workshop-primary-text-color;
+    &.elixir-workshop-banner {
+      background: $elixir-workshop-primary-background-color;
+      background: -webkit-linear-gradient(135deg,  $elixir-workshop-primary-background-color, $elixir-workshop-secondary-background-color);
+      background: -o-linear-gradient(135deg, $elixir-workshop-primary-background-color, $elixir-workshop-secondary-background-color);
+      background: -moz-linear-gradient(135deg, $elixir-workshop-primary-background-color, $elixir-workshop-secondary-background-color);
+      background: linear-gradient(135deg, $elixir-workshop-primary-background-color, $elixir-workshop-secondary-background-color);
+
+      a {
+        color: $elixir-workshop-primary-text-color;
+
+        &:hover {
+          span, small {
+            border-bottom-color: $elixir-workshop-primary-text-color;
+          }
+        }
+      }
     }
   }
 }

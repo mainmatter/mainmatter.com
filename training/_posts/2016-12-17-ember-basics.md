@@ -1,13 +1,13 @@
 ---
 layout: workshop
 title: Ember Basics
-permalink: "/workshops/2016-12-17-ember-basics"
+permalink: "/training/2016-12-17-ember-basics"
 category: Front End Development
 description: "A thorough introduction to this opinionated, productivity-oriented web
   framework, covering all the basics you need to know, in order to get up and running
   successfully!\n\nThis course serves as a solid foundation for a deep understanding
   of emberjs and modern javascript development. "
-image: "/images/workshops/2016-12-17-ember-basics.png"
+image: "/images/training/2016-12-17-ember-basics.png"
 stages:
 - title: Anatomy of an Ember App
   description: In this unit, we'll go through the tools involved in a professional

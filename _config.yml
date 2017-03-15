@@ -19,14 +19,14 @@ excerpt_separator: <!--break-->
 navigation:
   - title: Services
     url: /services/
-  - title: Process
-    url: /process/
+  - title: Work
+    url: /work/
+  - title: Training
+    url: /training/
   - title: About
     url: /about/
   - title: Clients
     url: /clients/
-  - title: Workshops
-    url: /workshops/
   - title: Blog
     url: /blog/
 

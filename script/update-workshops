@@ -20,7 +20,7 @@ begin
     title, description, category, created_at = attributes.values_at(:title, :description, :category, :'created-at')
     slug = "#{created_at[0..9]}-#{title.parameterize.downcase}"
     image = attributes[:'image-info'][:square2x][:url]
-    image_name = "images/workshops/#{slug}.png"
+    image_name = "images/training/#{slug}.png"
     open(image) do |image|
       File.open(image_name, 'wb') do |file|
         file.puts image.read
@@ -30,7 +30,7 @@ begin
     course_yaml = {
       layout:      'workshop',
       title:       title,
-      permalink:   "/workshops/#{slug}",
+      permalink:   "/training/#{slug}",
       category:    category,
       description: description,
       image:       "/#{image_name}"
@@ -68,7 +68,7 @@ begin
       stage_yaml
     end
   
-    filename = File.expand_path("../../workshops/_posts/#{slug}.md", __FILE__)
+    filename = File.expand_path("../../training/_posts/#{slug}.md", __FILE__)
     File.open(filename, 'w') do |file|
       file << course_yaml.deep_stringify_keys.to_yaml
       file << "---"
