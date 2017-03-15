@@ -21,8 +21,8 @@ navigation:
     url: /services/
   - title: Work
     url: /work/
-  - title: Trainings
-    url: /trainings/
+  - title: Training
+    url: /training/
   - title: About
     url: /about/
   - title: Clients
