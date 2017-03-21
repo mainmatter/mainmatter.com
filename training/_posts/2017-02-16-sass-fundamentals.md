@@ -1,6 +1,7 @@
 ---
 layout: workshop
 title: Sass Fundamentals
+weight: 60
 permalink: "/training/2017-02-16-sass-fundamentals"
 category: Front End Development
 description: Sass addresses many of the maintainability problems we typically experience

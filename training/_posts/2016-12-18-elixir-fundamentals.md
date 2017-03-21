@@ -1,6 +1,7 @@
 ---
 layout: workshop
 title: Elixir Fundamentals
+weight: 30
 permalink: "/training/2016-12-18-elixir-fundamentals"
 category: Back End Development
 description: |-
