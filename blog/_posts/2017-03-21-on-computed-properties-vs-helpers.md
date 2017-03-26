@@ -280,11 +280,10 @@ The intention of this post is not to say template helpers are bad and computed
 properties should be used for everything. That would be a pretty ignorant
 statement to make. __There are original concerns of the template layer that are
 best implemented in helpers__ - typical examples being translating strings,
-formatting numbers and dates etc. We use template helpers almost exclusively
-for these things in our projects (besides things like the `action`, `hash` or
-`mut` helpers of course). This is usually only a small part of any application
-though - we will often only have a few helpers defined in pretty big and
-involved applications.
+formatting numbers or dates etc. We use template helpers almost exclusively for
+this kind of functionality which is usually only a small part part of any
+application though - we often only have a few helpers defined even in pretty
+big and involved applications.
 
 ##### Missing a property context
 
