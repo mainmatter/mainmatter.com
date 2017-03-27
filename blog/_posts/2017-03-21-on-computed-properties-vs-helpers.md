@@ -127,7 +127,7 @@ into the template via helpers illustrates how much harder it becomes to
 understand the template now:
 
 ```hbs {% raw %}
-{{#each (take 1 (filter-by (shuffle users) 'state' 'active')) as |user|}}
+{{#each (take 1 (shuffle (filter-by users 'state' 'active'))) as |user|}}
   {{user.name}}
 {{/each}}
 {% endraw %}```
