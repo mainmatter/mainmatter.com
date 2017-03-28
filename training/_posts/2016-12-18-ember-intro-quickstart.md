@@ -1,7 +1,7 @@
 ---
 layout: workshop
 title: Ember Intro Quickstart
-weight: 10
+weight: 1
 permalink: "/training/2016-12-18-ember-intro-quickstart"
 category: Front End Development
 description: |-

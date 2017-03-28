@@ -1,7 +1,7 @@
 ---
 layout: workshop
 title: Phoenix Fundamentals
-weight: 35
+weight: 2
 permalink: "/training/2016-12-19-phoenix-fundamentals"
 category: Back End Development
 description: |-

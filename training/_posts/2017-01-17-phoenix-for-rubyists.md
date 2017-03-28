@@ -1,7 +1,7 @@
 ---
 layout: workshop
 title: Phoenix for Rubyists
-weight: 40
+weight: 2
 permalink: "/training/2017-01-17-phoenix-for-rubyists"
 category: Back End Development
 description: Phoenix Framework draws heavily upon important foundations in the opinionated
