@@ -18,6 +18,13 @@ begin
     attributes = course[:attributes]
     id = course[:id]
     title, description, category, created_at = attributes.values_at(:title, :description, :category, :'created-at')
+    weight = if title =~ /ember/i
+      1
+    elsif title =~ /elixir|erlang|phoenix/i
+      2
+    else
+      3
+    end
     slug = "#{created_at[0..9]}-#{title.parameterize.downcase}"
     image = attributes[:'image-info'][:square2x][:url]
     image_name = "images/training/#{slug}.png"
@@ -30,6 +37,7 @@ begin
     course_yaml = {
       layout:      'workshop',
       title:       title,
+      weight:      weight, 
       permalink:   "/training/#{slug}",
       category:    category,
       description: description,

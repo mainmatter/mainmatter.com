@@ -45,11 +45,12 @@ facebook:
 exclude: [vendor]
 
 defaults:
-  - scope:
-    path: ""
+  -
+    scope:
+      path: ""
     values:
-    image: 
-    twitter: /images/apple-144.png
-    facebook: /images/apple-144.png
-    height: 144
-    width: 144
+      image: 
+        twitter: /images/apple-144.png
+        facebook: /images/apple-144.png
+        height: 144
+        width: 144

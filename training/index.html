@@ -24,17 +24,6 @@ title: Training
         </div>
       </div>
 
-      <!-- assign weight to every post, not working properly -->
-      {% for post in site.categories.training %}
-        {% if post.title contains 'ember' %}
-          {% assign weight = 1 %}
-        {% elsif post.title contains 'elixir' or 'phoenix' %}
-          {% assign weight = 2 %}
-        {% else %}
-          {% assign weight = 3 %}
-        {% endif %}
-      {% endfor %}
-
       {% assign sorted_posts = site.categories.training | sort: 'weight' %}
       {% for post in sorted_posts %}
         <div class="row content-section separated">
