@@ -4,11 +4,11 @@ layout: null
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-  	<title>{{ site.title | xml_escape }} - training</title>
-		<description>Posts categorized as 'training'</description>
-		<link>{{ site.url }}</link>
-		<atom:link href="{{ site.url }}/feed.training.xml" rel="self" type="application/rss+xml" />
-    {% for post in site.categories.training %}
+    <title>{{ site.title | xml_escape }} - blog</title>
+    <description>Posts categorized as 'blog'</description>
+    <link>{{ site.url }}</link>
+    <atom:link href="{{ site.url }}/feed.blog.xml" rel="self" type="application/rss+xml" />
+    {% for post in site.categories.blog %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
         <description>{{ post.content | xml_escape }}</description>
@@ -17,5 +17,5 @@ layout: null
         <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
       </item>
     {% endfor %}
-	</channel>
+  </channel>
 </rss>
