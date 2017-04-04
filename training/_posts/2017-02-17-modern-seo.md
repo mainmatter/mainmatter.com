@@ -1,6 +1,7 @@
 ---
 layout: workshop
 title: Modern SEO
+weight: 3
 permalink: "/training/2017-02-17-modern-seo"
 category: Front End Development
 description: Getting the most out of search engines and social networking is more

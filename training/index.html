@@ -24,7 +24,8 @@ title: Training
         </div>
       </div>
 
-      {% for post in site.categories.training %}
+      {% assign sorted_posts = site.categories.training | sort: 'weight' %}
+      {% for post in sorted_posts %}
         <div class="row content-section separated">
           <div class="col-sm-3 icon">
             <img src="{{post.image}}" class="img-responsive" alt="Image: {{post.title}}">

@@ -1,6 +1,7 @@
 ---
 layout: workshop
 title: Ember-Data Basics
+weight: 1
 permalink: "/training/2016-12-17-ember-data-basics"
 category: Front End Development
 description: |-
