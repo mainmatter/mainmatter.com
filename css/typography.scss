@@ -114,6 +114,13 @@ h5 {
   }
 }
 
+#main-section.index {
+  p:first-child {
+    font-weight: 400;
+    text-align: center;
+  }
+}
+
 .client-logos {
   a {
     text-align: center;
