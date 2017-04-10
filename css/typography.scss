@@ -87,7 +87,7 @@ h5 {
 
 .primary-banner {
   text-align: center;
-  
+
   h2 {
     font-size: 40px;
     text-transform: uppercase;
@@ -122,9 +122,10 @@ h5 {
 }
 
 #main-section.index {
-  p:first-child {
-    font-weight: 400;
-    text-align: center;
+  .content-section:first-of-type {
+    p {
+      text-align: center;
+    }
   }
 }
 

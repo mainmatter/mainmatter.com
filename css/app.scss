@@ -265,10 +265,12 @@ ul {
     }
   }
 
-  p:first-child {
-    width: 83.33333333%;
-    margin-right: auto;
-    margin-left: auto;
+  .content-section:first-of-type {
+    p {
+      width: 83.33333333%;
+      margin-right: auto;
+      margin-left: auto;
+    }
   }
 }
 
