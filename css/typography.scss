@@ -97,6 +97,13 @@ h5 {
   strong {
     font-weight: normal;
   }
+
+  &.main-page {
+    h2 {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
 }
 
 .secondary-banner {
