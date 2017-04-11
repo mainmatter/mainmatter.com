@@ -81,10 +81,6 @@
 #main-section {
   margin: 60px auto;
 
-  &.index {
-    margin-top: 0;
-  }
-
   & > .row {
     &:first-child {
       margin-top: 0;
@@ -187,7 +183,7 @@ ul {
   height: 180px;
 
   &.main-page {
-    padding: 100px 0;
+    padding: 150px 0;
     height: auto;
 
     p {
@@ -234,7 +230,6 @@ ul {
 .client-logos {
   text-align: center;
   position: relative;
-  padding-top: 60px;
 
   i {
     height: 80px;
@@ -252,7 +247,7 @@ ul {
       position: absolute;
       display: block;
       width: 100%;
-      top: calc(50% - 1em - 50px);
+      top: calc(50% - 1em - 80px);
       z-index: 9999;
       padding: 50px;
       opacity: 0;
@@ -267,6 +262,14 @@ ul {
       a {
         opacity: 1;
       }
+    }
+  }
+
+  .content-section:first-of-type {
+    p {
+      width: 83.33333333%;
+      margin-right: auto;
+      margin-left: auto;
     }
   }
 }

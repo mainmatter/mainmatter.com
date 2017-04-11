@@ -87,15 +87,22 @@ h5 {
 
 .primary-banner {
   text-align: center;
-  
+
   h2 {
-    font-size: 34px;
+    font-size: 40px;
     text-transform: uppercase;
     font-weight: bold;
   }
 
   strong {
     font-weight: normal;
+  }
+
+  &.main-page {
+    h2 {
+      font-size: 48px;
+      line-height: 120%;
+    }
   }
 }
 
@@ -110,6 +117,14 @@ h5 {
       span, small {
         border-bottom: 1px solid transparent;
       }
+    }
+  }
+}
+
+#main-section.index {
+  .content-section:first-of-type {
+    p {
+      text-align: center;
     }
   }
 }
