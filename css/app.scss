@@ -502,6 +502,7 @@ ul {
 
 @media screen and (max-width: 767px) {
   #main-menu {
+
     .navbar-left {
       display: none !important;
     }
@@ -509,6 +510,10 @@ ul {
     li.page {
       width: 100%;
     }
+  }
+
+  #menu-toggle:not(:checked) + .navbar-nav {
+    display: none;
   }
 
   #main-content {
