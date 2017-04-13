@@ -514,8 +514,22 @@ ul {
       cursor: pointer;
     }
 
+    .navbar-nav {
+      position: absolute;
+      transition: opacity 0.15s ease-in-out;
+      margin-top: 0;
+
+      li {
+        margin-left: 0;
+      }
+    }
+
     #menu-toggle:not(:checked) + .navbar-nav {
-      display: none;
+      opacity: 0;
+    }
+
+    #menu-toggle:checked + .navbar-nav {
+      opacity: 1;
     }
   }
 
