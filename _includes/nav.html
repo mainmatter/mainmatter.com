@@ -2,23 +2,34 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-xs-12">
-        <ul class="nav navbar-nav">
-          <li class="navbar-left">
+        <div class="navbar-header">
+          <span class="navbar-left">
             <a class="navbar-brand" href="/">
               <img src="/images/logo.png" srcset="/images/logo@2x.png 2x" alt="simplabs logo">
             </a>
-          </li>
-          {% for link in site.navigation %}
-            {% assign active = false %}
-            {% if page.url contains link.url %}
-              {% assign active = 'active' %}
-            {% endif %}
-            <li class="page">
-              <a href="{{link.url}}" class="{{active}}"><span>{{link.title}}</span></a>
+          </span>
+          <label for="menu-toggle" class="navbar-toggle collapsed">
+            <i class="fa fa-bars"></i>
+          </label>
+        </div>
+        <input type="checkbox" id="menu-toggle" class="hidden"/>
+          <ul class="nav navbar-nav">
+            <li class="navbar-left">
+              <a class="navbar-brand" href="/">
+                <img src="/images/logo.png" srcset="/images/logo@2x.png 2x" alt="simplabs logo">
+              </a>
             </li>
-          {% endfor %}
-          <li class="navbar-right"><a href="/contact/">Contact Us</a></li>
-        </ul>
+            {% for link in site.navigation %}
+              {% assign active = false %}
+              {% if page.url contains link.url %}
+                {% assign active = 'active' %}
+              {% endif %}
+              <li class="page">
+                <a href="{{link.url}}" class="{{active}}"><span>{{link.title}}</span></a>
+              </li>
+            {% endfor %}
+            <li class="navbar-right"><a href="/contact/">Contact Us</a></li>
+          </ul>
       </div>
     </div>
   </div>

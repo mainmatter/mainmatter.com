@@ -193,3 +193,11 @@ code {
     }
   }
 }
+
+@media screen and (max-width: 767px) {
+  #main-menu {
+    .navbar-nav {
+      background: $primary-background-color;
+    }
+  }
+}
