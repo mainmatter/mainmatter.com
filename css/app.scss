@@ -589,4 +589,18 @@ ul {
       float: none !important;
     }
   }
+
+  .primary-banner {
+    height: 200px;
+
+    h2 {
+      font-size: 36px;
+    }
+
+    &.main-page {
+      h2 {
+        font-size: 36px;
+      }
+    }
+  }
 }
