@@ -185,7 +185,7 @@ ul {
 
 .primary-banner {
   padding: 20px 0;
-  height: 250px;
+  height: 180px;
 
   &.main-page {
     padding: 150px 0;
@@ -587,6 +587,17 @@ ul {
   .secondary-banner {
     .contact-button {
       float: none !important;
+    }
+  }
+
+  .primary-banner {
+    padding: 20px 0;
+    height: 250px;
+
+    &.main-page {
+      h2 {
+        font-size: 46px;
+      }
     }
   }
 }
