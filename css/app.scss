@@ -591,12 +591,15 @@ ul {
   }
 
   .primary-banner {
-    padding: 20px 0;
-    height: 250px;
+    height: 200px;
+
+    h2 {
+      font-size: 36px;
+    }
 
     &.main-page {
       h2 {
-        font-size: 46px;
+        font-size: 36px;
       }
     }
   }
