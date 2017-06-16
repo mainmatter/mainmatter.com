@@ -7,12 +7,12 @@ category: Front End Development
 description: JavaScript is flexible enough to do just about anything, and while this
   is one of its great strengths, it's also what makes best practices less clear. This
   deep dive into the fundamentals and latest advances in the language will help you
-  know how to make the most of it!
+  learn how to make the most of it!
 image: "/images/training/2017-05-12-modern-javascript.png"
 stages:
 - title: Modules, Functions and Types
   description: Mastering the fundamentals of JavaScript pays huge dividends, as we
-    start diving into the language features that are bit newer and more complex.
+    start diving into the language features that are slightly newer and more complex.
   duration: 270
   agenda_items:
   - title: Welcome
@@ -31,9 +31,9 @@ stages:
     start_time: '9:15'
     duration: 20
   - title: Basic Functions
-    description: Functions are first class values in JavaScript, meaning that can
-      exist on their own, and can be used wherever any other value can be used. We'll
-      look at the basics of how functions are declared, defined and used in JavaScript.
+    description: Functions are first class values in JavaScript, meaning they can
+      exist on their own and used wherever any other value can be used. We'll look
+      at the basics of how functions are declared, defined and used in JavaScript.
     item_type: lecture
     start_time: '9:35'
     duration: 25
@@ -46,9 +46,9 @@ stages:
     duration: 20
   - title: 'EXERCISE: Two Kinds of Color'
     description: Using a property descriptor, define a property on an object that's
-      **derived** from other values. We should be able to get and set this property,
-      just as if it were value based, and the getter and setter you define, should
-      take care of keeping all of the dependencies properly in sync.
+      **derived** from other values. We should be able to get and set this property
+      just as if it were value based, and the getter and setter you define should
+      keep all of the dependencies in sync properly.
     item_type: exercise
     start_time: '10:20'
     duration: 30
@@ -62,7 +62,7 @@ stages:
     start_time: '10:50'
     duration: 20
   - title: 'EXERCISE: Refactoring into Modules'
-    description: Take a solution from the previous exercise, and refactor it, so that
+    description: Take a solution from the previous exercise and refactor it, so that
       the heavy lifting is done by two pure functions in a separate module.
     item_type: exercise
     start_time: '11:10'
@@ -82,8 +82,8 @@ stages:
     start_time: '11:30'
     duration: 30
   - title: 'EXERCISE: Functional Cart'
-    description: 'Build a shopping cart, making use of the ability for a closure to
-      hold state, and functions defined within that closer to access said state. '
+    description: Build a shopping cart that takes advantage of a closure's ability
+      to hold state (and functions defined within that closure to access that state).
     item_type: exercise
     start_time: '12:00'
     duration: 30
@@ -94,7 +94,7 @@ stages:
     duration: 60
 - title: Working with Data
   description: We'll dive deep into JavaScript data structures and control flow, touching
-    on some new concepts, and some old ones that you probably haven't used in a while.
+    on some new concepts and some old ones that you probably haven't used in a while.
   duration: 185
   agenda_items:
   - title: Arrays
@@ -106,13 +106,13 @@ stages:
     duration: 30
   - title: 'EXERCISE: Map, Filter, Reduce'
     description: Using our knowledge of how higher order functions on the Array prototype
-      work, we'll implement our own map, filter, reduce and forEach functions
+      work, we'll implement our own map, filter, reduce and forEach functions.
     item_type: exercise
     start_time: '14:00'
     duration: 30
   - title: Control Flow
     description: Control flow statements like `if` and `switch` give us the ability
-      to define various paths that can our program can take, under certain circumstances.
+      to define various paths that our program can take, under different circumstances.
       We'll look at how these work in detail, including some non-traditional (but
       very useful) use cases.
     item_type: lecture
@@ -120,9 +120,9 @@ stages:
     duration: 30
   - title: 'EXERCISE: Versioned Documents'
     description: Progressive Web Apps often need to store data in some durable medium.
-      It's a good idea version long-living data, since old data may need to work with
-      new versions of the application. We'll use our newfound knowledge of control
-      flow statements, to "upgrade" a versioned data structure, to the current version,
+      It's a good idea to version long-living data since old data may need to work
+      with new versions of the application. We'll use our newfound knowledge of control
+      flow statements to "upgrade" a versioned data structure to the current version,
       so that the rest of our app need not worry about it.
     item_type: exercise
     start_time: '15:00'
@@ -138,7 +138,7 @@ stages:
   - title: 'EXERCISE: Fibonacci Numbers'
     description: Implement a function that returns a Fibonacci sequence of a specified
       length. Ensure that your solution works for sequences up to 10 million numbers
-      long.
+      long!
     item_type: exercise
     start_time: '15:50'
     duration: 30
@@ -152,20 +152,19 @@ stages:
   description: JavaScript's internal event loop and the fact that all the code we
     write is "non-blocking" allows it to keep track of tons asynchronous processes
     while still operating on a single thread. We'll look at some low-level patterns
-    for managing asynchrony and concurrency, and then build all the way up to modern
-    language features like async and await.
+    for managing asynchrony and concurrency, then build all the way up to modern language
+    features like async and await.
   duration: 300
   agenda_items:
   - title: Welcome
-    description: We'll recap the ground we've covered so far, and review the day's
-      agenda
+    description: We'll recap everything we've covered so far, and review today's agenda.
     item_type: lecture
     start_time: '9:00'
     duration: 15
   - title: Promises
     description: Promises can be thought of as "eventual values", and are a great
       abstraction of some asynchronous work. We'll review basic promise usage, error
-      handling, and techniques for grouping promises together in sequence, or in parallel.
+      handling, and techniques for grouping promises together in sequence or in parallel.
     item_type: lecture
     start_time: '9:15'
     duration: 30
@@ -173,8 +172,8 @@ stages:
     description: Often, when a single page app boots up, requests for remote data
       at various URLs will be sent out as part of the startup process. Occasionally,
       we can see multiple requests going out for the exact same resources. We'll build
-      a utility that ensures that request for data that's already on its way, link
-      together and are all resolved by the same promise.
+      a utility that ensures that request for data that's already on its way are link
+      together and resolved by the same promise.
     item_type: exercise
     start_time: '9:45'
     duration: 45
@@ -211,8 +210,8 @@ stages:
     duration: 30
   - title: 'EXERCISE: Write an Integration Test'
     description: Integration tests are a perfect place to use `async` and `await`,
-      because we often want to perform a series of simulated user interactions, and
-      wait for each one to complete before proceeding further in the test.
+      because we often want to perform a series of simulated user interactions and
+      wait for each one to complete, before proceeding further in the test.
     item_type: exercise
     start_time: '12:30'
     duration: 30
@@ -224,13 +223,14 @@ stages:
 - title: Advanced Data Structures
   description: With the ES2015 version of the JavaScript specification came several
     new data structures like Map, Set, WeakMap, WeakSet and Proxy. We’ll look at the
-    motivations for adding these features to the language, and get hands-on solving
-    some problems that would be much more difficult were it not for these new constructs.
+    motivations for adding these features to the language and get hands-on experience
+    solving some problems that would be much more difficult were it not for these
+    new constructs.
   duration: 165
   agenda_items:
   - title: Maps and Sets
-    description: "`Map` and `Set` are new data structures, that have distinct advantages
-      in certain use cases. We’ll study both in detail, including their “weak” counterparts:
+    description: "`Map` and `Set` are new data structures that have distinct advantages
+      in various use cases. We’ll study both in detail, including their “weak” counterparts:
       `WeakMap` and `WeakSet`."
     item_type: lecture
     start_time: '14:00'
@@ -243,7 +243,7 @@ stages:
     duration: 45
   - title: Proxies
     description: "`Proxy` can “wrap” JavaScript objects or functions, potentially
-      intercepting or modifying certain things along the way."
+      intercepting or modifying certain behaviors along the way."
     item_type: lecture
     start_time: '15:15'
     duration: 30
@@ -256,8 +256,8 @@ stages:
     start_time: '15:45'
     duration: 45
   - title: Wrap up and Recap
-    description: We'll recap all the ground we've covered today, and set our sights
-      on tomorrow's agenda.
+    description: We'll recap everything we've covered today, and set our sights on
+      tomorrow's agenda.
     item_type: lecture
     start_time: '16:30'
     duration: 15
@@ -265,21 +265,21 @@ stages:
   description: The controversy around class stems from the illusion of removing prototypal
     inheritance from JavaScript. It is, in fact, just syntactic sugar on top of the
     same prototypes we’ve been using all along. However, in removing some of the noise
-    required for writing object-oriented code, and in making some typical prototypal
+    that typically accompanies object-oriented JavaScript, and in making some typical
     traps more difficult to fall into, using classes can result in more readable and
     robust code.
   duration: 275
   agenda_items:
   - title: Welcome
-    description: We'll recap the ground we've covered so far, and review the day's
-      agenda
+    description: We'll recap everything we've covered so far, and review the day's
+      agenda.
     item_type: lecture
     start_time: '9:00'
     duration: 15
   - title: Classes in JavaScript
     description: While `class` doesn’t allow us to do anything that wasn’t possible
-      with direct use of prototypes, many things are much cleaner and easier. We’ll
-      look at constructors, member and static functions, and the upcoming “member
+      with the direct use of prototypes, many things are easier and much cleaner.
+      We’ll look at constructors, member and static functions, and the upcoming “member
       and instance field” TC39 proposals.
     item_type: lecture
     start_time: '9:15'
@@ -292,14 +292,14 @@ stages:
     duration: 30
   - title: Decorators
     description: Decorators allow us to do things at class construction time. Several
-      uses of decorators are possible with the current draft spec (or when using typescript)
+      uses of decorators are possible with the current draft spec (or when using Typescript)
       and a variety of proposals for new decorators are already in development!
     item_type: lecture
     start_time: '10:15'
     duration: 30
   - title: 'PROJECT: Memoized functions'
     description: 'Memoization is a technique that can be used with pure functions,
-      where output values are “remembered” for a input argument(s). Thus, re-invoking
+      where output values are “remembered” for an input argument(s). Thus, re-invoking
       the function with the same arguments will return the same “remembered” result.
       We’ll implement a `@memoize` function decorator, so that we can apply this technique
       easily and cleanly in our code. '
@@ -307,9 +307,11 @@ stages:
     start_time: '10:45'
     duration: 45
   - title: Inheritance Patterns
-    description: While `class` is only syntactic sugar on top of JavaScript’s prototypal
-      inheritance, the new syntax does may concepts like applying "mixins" more clean
-      and intuitive.
+    description: While it's true that `class` is only syntactic sugar on top of JavaScript’s
+      prototypal inheritance, the new syntax makes it easier and cleaner to implement
+      things like "mixins". We'll select a few important design patterns from the
+      famous ["Gang of Four" design patterns book](https://www.amazon.com/Design-patterns-elements-reusable-object-oriented-x/dp/0201633612)
+      and implement them using classes.
     item_type: lecture
     start_time: '11:30'
     duration: 20
@@ -334,7 +336,7 @@ stages:
   - title: Advanced Debugging Tools & Techniques
     description: Chrome and Node.js have recently undergone major advancements in
       their debugging tools. We’ll learn how to make the most of these tools, and
-      demonstrate how life is now a little easier, when it comes to debugging async
+      demonstrate how life is now a little easier when it comes to debugging async
       code, or long chains of promises.
     item_type: lecture
     start_time: '13:35'
@@ -365,23 +367,24 @@ stages:
     duration: 10
   - title: High level architecture of a modern JS runtime
     description: 'We’ll take a quick look at the architecture of the V8 Runtime that
-      ships with Google Chrome and Node.js. In understanding how it works, and how
-      it tries to speed up our code, we’ll learn the things we need to avoid.
+      ships with Google Chrome and Node.js. In understanding how V8 Runtime works
+      and how it tries to speed up our code, we’ll learn about patterns we need to
+      avoid.
 
 '
     item_type: lecture
     start_time: '15:45'
     duration: 30
   - title: 'EXERCISE: Finding and fixing de-optimizations'
-    description: Using the guidelines for writing fast JavaScript, and the new techniques
-      we’ve learned for training when code becomes “hot”, or when it becomes “cold”
-      again, identify and fix some performance bugs.
+    description: Using the guidelines for writing fast JavaScript, and new techniques
+      we’ve learned about when code becomes “hot” or “cold” again, let's identify
+      and fix some performance bugs.
     item_type: exercise
     start_time: '16:15'
     duration: 30
   - title: Wrap up and Recap
-    description: Our final rap up, full-course recap, and suggested reading & learning
-      for taking this new knowledge further!
+    description: Our final rap up with a full-course recap, suggested reading and
+      learning to take this new knowledge further!
     item_type: lecture
     start_time: '16:45'
     duration: 15
