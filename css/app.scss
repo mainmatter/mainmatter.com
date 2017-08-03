@@ -412,13 +412,17 @@ ul {
       width: 100%;
       border-bottom-width: 1px;
       border-bottom-style: solid;
-      display: table;
       box-sizing: border-box;
     }
 
     &.split-section:after {
       width: calc(50% - 30px);
     }
+  }
+
+  .primary-banner {
+    height: 50%;
+    margin: 0 0 70px 0;
   }
 
   .workshop-meta {
