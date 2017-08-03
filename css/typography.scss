@@ -23,6 +23,21 @@ a {
   }
 }
 
+blockquote {
+  text-align: center;
+  font-style: italic;
+  font-size: 16px;
+
+  &:before {
+    font-size: 90px;
+    line-height: 30px;
+  }
+
+  cite {
+    font-weight: bold;
+  }
+}
+
 code {
   white-space: normal;
 }
