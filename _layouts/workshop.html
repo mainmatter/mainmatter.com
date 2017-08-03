@@ -18,6 +18,7 @@
                 <h3>{{page.title}}</h3>
                 <div class="description">
                   {{page.description | markdownify}}
+                  <a class="custom-button" href="/contact/">Contact us for further informations</a>
                 </div>
                 {% for stage in page.stages %}
                   <div class="row stage">
@@ -75,9 +76,7 @@
         </div>
       </div>
 
-      {% include random_workshop_banner.html %}
-
-      {% include contact_banner.html %}
+      {% include workshop_contact_banner.html %}
     </div>
 
     {% include footer.html %}
