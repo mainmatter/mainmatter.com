@@ -18,9 +18,26 @@
                 <h3>{{page.title}}</h3>
                 <div class="description">
                   {{page.description | markdownify}}
-                  <a class="custom-button" href="/contact/">Contact us for further informations</a>
                 </div>
-                <div class="primary-banner"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="secondary-banner contact-banner">
+        <div class="container">
+          <div class="row">
+            <a class="custom-button contact-button" href="/contact/">Contact us for further informations</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="main-section">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 col-sm-12">
+            <div class="row content-section workshop">
+              <div class="col-sm-12">
                 {% for stage in page.stages %}
                   <div class="row stage">
                     <div class="col-sm-2 number">

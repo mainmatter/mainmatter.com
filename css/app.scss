@@ -142,9 +142,16 @@ ul {
     }
   }
 
+  &.contact-banner {
+    .custom-button {
+      margin-left: 33%;
+      margin-right: 33%;
+    }
+  }
+
   .contact-button {
     margin-top: 4px;
-  }
+    }
 
   h4 {
     margin: 10px 0;
