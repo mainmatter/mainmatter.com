@@ -196,7 +196,7 @@ data attributes can also be defined as properties on the component class.
 So instead of assigning `data-test-comment-id` inside the loop:
 
 ```handlebars
-{% raw %}{{#each comments as |comment|}}
+{{#each comments as |comment|}}
   {{comment-list-item comment=comment data-test-comment-id=comment.id}}
 {{/each}}
 ```
