@@ -142,16 +142,9 @@ ul {
     }
   }
 
-  &.contact-banner {
-    .custom-button {
-      margin-left: 33%;
-      margin-right: 33%;
-    }
-  }
-
   .contact-button {
     margin-top: 4px;
-    }
+  }
 
   h4 {
     margin: 10px 0;
@@ -411,25 +404,6 @@ ul {
     p {
       width: 83.33333333%;
     }
-
-    &:after {
-      content: " ";
-      clear: both;
-      padding-top: 40px;
-      width: 100%;
-      border-bottom-width: 1px;
-      border-bottom-style: solid;
-      box-sizing: border-box;
-    }
-
-    &.split-section:after {
-      width: calc(50% - 30px);
-    }
-  }
-
-  .primary-banner {
-    height: 50%;
-    margin: 0 0 70px 0;
   }
 
   .workshop-meta {
