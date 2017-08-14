@@ -404,21 +404,6 @@ ul {
     p {
       width: 83.33333333%;
     }
-
-    &:after {
-      content: " ";
-      clear: both;
-      padding-top: 40px;
-      width: 100%;
-      border-bottom-width: 1px;
-      border-bottom-style: solid;
-      display: table;
-      box-sizing: border-box;
-    }
-
-    &.split-section:after {
-      width: calc(50% - 30px);
-    }
   }
 
   .workshop-meta {
