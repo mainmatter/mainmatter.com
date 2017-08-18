@@ -1,39 +1,45 @@
 # Creating Web Components with Glimmer
 
-At [this year's EmberConf the Ember core team officially announced](https://youtu.be/TEuY4GqwrUE?t=58m43s) the release of [Glimmer](https://glimmerjs.com/) - a light-weight JavaScript library aimed to provide an useful toolset for creating fast and reusable UI components. Powered by the already battle-tested Ember-CLI, developers can now build their Glimmer apps in an easy and efficient manner as they already came to love building applications in Ember.js before.
+At [this year's EmberConf the Ember core team officially announced](https://youtu.be/TEuY4GqwrUE?t=58m43s) the release of [Glimmer](https://glimmerjs.com/) - a light-weight JavaScript library aimed to provide an useful toolset for creating fast and reusable UI components. Powered by the already battle-tested Ember-CLI, developers can build their Glimmer apps in an easy and efficient manner as they already came to love building applications in Ember.js before.
 
-Additionally, Glimmer allows the creation of components according to the Custom Elements v1 specification, making it possible to build native web components which may be used in applications of ????? I dunno all kinds of technological backgrounds?????.
+In addition to building standalone Glimmer applications, the library allows the creation of components according to the Custom Elements v1 specification, making it possible to build native web components which can be reused across all kinds of front end stacks.
 
-Before diving into how we can build a Glimmer powered web components, let’s have a quick recap on what custom elements in general:
+Before diving into how to build Glimmer powered web components, here is a quick recap of what Custom Elements are:
 
+## Creating native, reusable web components based on the Custom Elements spec v1
 
-Creating native, reusable web components with the Custom Elements spec v1
+Custom Elements describes a technology which is - alongside of HTML template, Shadow DOM and HTML import - an integral part of the [current Web Component specification](https://www.w3.org/wiki/WebComponents/).
+The Custom Elements spec describes capabilities for creating custom HTML elements which can be used just like native HTML elements: `<my-customelement>`.
+The [current version of this specification](https://www.w3.org/TR/custom-elements/) defines  a `CustomElementRegistry` interface; in the browser environment the registry is represented by the global `customElements` object and using its `define` method, custom elements as extensions of the HTMLElement base class can be registered as follows:
 
-Custom Elements describes the capability to create customized HTML elements which can used with the traditional angle-bracket notation: `<my-customelement>`.
-The current version v1 of this specification includes the definition of a `CustomElementRegistry` interface that allows to register custom elements based on extensions from the HTML element base class:
+```
+customElements.define(elementName, constructor, options);
+```
 
-    ```
-    class CustomElementClass extends HTMLElement {
-      // ...
-    }
+A specific custom element, for example `my-customelement`, can then be registered like so:
 
-    customElements.define('my-customelement', CustomElementClass);
-    ```
+```
+class CustomElementClass extends HTMLElement {
+  // ...
+}
 
-???? And it even proposes the ability to inherit from other DOM interfaces, allowing for the customization of built-in elements: ????
+customElements.define('my-customelement', CustomElementClass);
+```
 
-   ```
-    class AutoPlayVideoClass extends HTMLVideoElement {
-      // ...
-    }
-    customElements.define('my-video`, AutoPlayVideoClass, { is: 'video'});
-   ```
-(??? This part hasn’t even been implemented in any browser yet. Not really sure if this is actually a promising thing of the spec anymore and this might better be left out of the blog post after all ????)
+Finally, a custom element that has been registered via the `CustomElementRegistry` can simply be used anywhere in HTML like any other tag:
 
-Finally, a custom element that has been registered via the `CustomElementRegistry` can simply be used anywhere in HTML templates as a tag:
-
-
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Custom Element Demo</title>
+  </head>
+  <body>
     <my-customelement></my-customelement>
+    <script src="/path/to/script/registering/custom-element.js"></script>
+  </body>
+</html>
+```
 
 Being able to encapsulate functionality as components and to easily reuse them via HTML is so powerful for several reasons: ????
 First, it allows….
@@ -57,7 +63,7 @@ You can also check out the project on [Github](???? link to the repo, currently:
 To get started with an initial, running project setup, we will be using [Ember CLI](https://ember-cli.com/) for scaffolding and configuration of our Glimmer app. From  `ember-cli@2.14.beta` onwards, we can get started to create a Glimmer-backed web component by using the `ember new` generator, the [respective glimmer blueprint](https://github.com/glimmerjs/glimmer-blueprint) and the `--web-component` flag:
 
 ```
-    ember new glimmer-map -b @glimmer/blueprint --web-component
+ember new glimmer-map -b @glimmer/blueprint --web-component
 ```
 generating the needed scaffolding for our first Glimmer app. As soon as the Glimmer app is booted up via a simple `ember serve` and we navigate to the typical `http://localhost:4200`, we will find that our first component project is not only served and rendered, but inspecting the Page Source we will also see that the `glimmer-map` is not represented as a custom element; instead a placeholder element `#app` as well as a script tag containing `app.js` are loaded only, generating the DOM finally on runtime.
 
@@ -74,41 +80,41 @@ Following the new folder structure planned out in the [module unification RFC](h
 
 Leveraging the benefits of [TypeScript](https://www.typescriptlang.org/) we are even able to use types while developing our component, but we are not forced to do so. Since TypeScript is a mere super set of JavaScript, syntactically correct, plain JavaScript will evaluate as valid TypeScript as well.
 
-Also, if we have a closer look on our app setup, we will find out, how our Glimmer app can be bother booted up, but also be rendered as a custom element later on when reused.
+Also, if we have a closer look on our app setup, we will find out, how our Glimmer app can be both booted up and also be rendered as a custom element later on when reused.
 Under the hood, Glimmer’s `renderComponent` API, is taking care of initial setup and rendering of the component into the aforementioned placeholder in the DOM and the `initializeCustomElements` API for registering the component as a native custom element:
 
 In `glimmer-web-component/src/initialize-custom-elements.ts`:
 
 ```
-    function initializeCustomElement(app: Application, name: string): void {
-      function GlimmerElement() {
-        return Reflect.construct(HTMLElement, [], GlimmerElement);
+function initializeCustomElement(app: Application, name: string): void {
+  function GlimmerElement() {
+    return Reflect.construct(HTMLElement, [], GlimmerElement);
+  }
+  GlimmerElement.prototype = Object.create(HTMLElement.prototype, {
+    constructor: { value: GlimmerElement },
+    connectedCallback: {
+      value: function connectedCallback(): void {
+        let placeholder = document.createElement('span');
+        let parent = this.parentNode;
+
+        parent.insertBefore(placeholder, this);
+        parent.removeChild(this);
+
+        app.renderComponent(name, parent, placeholder);
+
+        whenRendered(app, () => {
+          let customElement = this as Element;
+          let glimmerElement = placeholder.previousElementSibling;
+
+          placeholder.remove();
+          assignAttributes(customElement, glimmerElement);
+        });
       }
-      GlimmerElement.prototype = Object.create(HTMLElement.prototype, {
-        constructor: { value: GlimmerElement },
-        connectedCallback: {
-          value: function connectedCallback(): void {
-            let placeholder = document.createElement('span');
-            let parent = this.parentNode;
-
-            parent.insertBefore(placeholder, this);
-            parent.removeChild(this);
-
-            app.renderComponent(name, parent, placeholder);
-
-            whenRendered(app, () => {
-              let customElement = this as Element;
-              let glimmerElement = placeholder.previousElementSibling;
-
-              placeholder.remove();
-              assignAttributes(customElement, glimmerElement);
-            });
-          }
-        }
-      });
-
-      window.customElements.define(name, GlimmerElement);
     }
+  });
+
+  window.customElements.define(name, GlimmerElement);
+}
 ```
 
 Interesting to note here as well is the call to the `assignAttributes` method, ensuring that any top-level attributes defined on our custom element are later on also mapped to attributes on our rendered Glimmer component.
@@ -119,39 +125,51 @@ Creating a Glimmer Element Class for further reusage
 
 In our `src/ui/components/glimmer-map/component.ts` file, we can setup our map for display by taking advantage of the component lifecycle hooks - similar to the ones we became familiar with in Ember components.
 
-First, let’s import all the modules we will need for creating the component. We can import the default export of the `@glimmer/component` module, as well as from the `leaflet` package to get started:
+So far the blueprint for our component module has already been setup by Ember CLI's generator to import the default export of the `@glimmer/component`:
 
 ```
-    // src/ui/components/glimmer-map/component.ts
-    import Component from '@glimmer/component';
-    import L from 'leaflet';
+// src/ui/components/glimmer-map/component.ts
+import Component from '@glimmer/component';
 
-    export default class GlimmerMap extends Component {
+export default class GlimmerMap extends Component {
 
+}
+```
+As we would like to create a map based on `Leaflet.js`, let's also get that dependency installed in our project:
+
+```
+yarn add leaflet
+```
+
+Similar to many other npm packages that you will find out there, the Leaflet dependency exports its internals via the CommonJS module syntax.
+Since the [glimmer-application-pipeline](https://github.com/glimmerjs/glimmer-application-pipeline) only supports the import of modules following the ES6 syntax out of the box, we can make ends meet by configuring rollup in our `ember-cli-build.js` as [also seen in the glimmer-application-pipeline documentation](https://github.com/glimmerjs/glimmer-application-pipeline#importing-commonjs-modules) and install the `rollup-plugin-node-resolve` and `rollup-plugin-commonjs` dependencies:
+
+```
+yarn add --dev rollup-plugin-node-resolve
+yarn add --dev rollup-plugin-commonjs
+```
+
+```
+// ember-cli-build.js
+
+'use strict';
+
+const GlimmerApp = require('@glimmer/application-pipeline').GlimmerApp;
+const resolve = require('rollup-plugin-node-resolve');
+const commonjs = require('rollup-plugin-commonjs');
+
+module.exports = function(defaults) {
+  let app = new GlimmerApp(defaults, {
+    rollup: {
+      plugins: [
+        resolve({ jsnext: true, module: true, main: true }),
+        commonjs()
+      ]
     }
-```
+  });
 
-Since the [glimmer-application-pipeline](https://github.com/glimmerjs/glimmer-application-pipeline) only supports ES6 module syntax for imports out of the box, we will also have to configure rollup in our `ember-cli-build.js` as [also seen in the glimmer-application-pipeline documentation](https://github.com/glimmerjs/glimmer-application-pipeline#importing-commonjs-modules) and install the `rollup-plugin-node-resolve` and `rollup-plugin-commonjs` dependencies:
-
-```
-    'use strict';
-
-    const GlimmerApp = require('@glimmer/application-pipeline').GlimmerApp;
-    const resolve = require('rollup-plugin-node-resolve');
-    const commonjs = require('rollup-plugin-commonjs');
-
-    module.exports = function(defaults) {
-      let app = new GlimmerApp(defaults, {
-        rollup: {
-          plugins: [
-            resolve({ jsnext: true, module: true, main: true }),
-            commonjs()
-          ]
-        }
-      });
-
-      return app.toTree();
-    };
+  return app.toTree();
+};
 ```
 
 Now for creating and rendering our map, let’s use the `didInsertElement` hook for our first render, ensuring that the component is readily waiting in the DOM for further setup:
@@ -167,8 +185,9 @@ Now for creating and rendering our map, let’s use the `didInsertElement` hook 
         this.renderMap();
       }
 
-      createMapInstance() {
-        const map = L.map(this.mapTarget).setView([41.08, 11.068], 12);;
+      createMapInstance()
+        const element = this.element.children[0];
+        const map = L.map(element).setView([41.08, 11.068], 12);;
         this.map = map;
       }
 
