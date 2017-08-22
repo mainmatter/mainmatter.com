@@ -1,6 +1,17 @@
-# Creating Web Components with Glimmer
+---
+layout: article
+section: Blog
+title: Creating Web Components with Glimmer
+author: "Jessica Jordan"
+github-handle: jessica-jordan
+twitter-handle: jjordan_dev
+---
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.8/webcomponents-lite.js"></script>
 
 At [this year's EmberConf the Ember core team officially announced](https://youtu.be/TEuY4GqwrUE?t=58m43s) the release of [Glimmer](https://glimmerjs.com/) - a light-weight JavaScript library aimed to provide an useful toolset for creating fast and reusable UI components. Powered by the already battle-tested Ember-CLI, developers can build their Glimmer apps in an easy and efficient manner as they already came to love building applications in Ember.js before.
+
+<!--break-->
 
 In addition to building standalone Glimmer applications, the library allows the creation of components according to the Custom Elements v1 specification, making it possible to build native web components which can be reused across all kinds of front end stacks.
 
@@ -59,11 +70,12 @@ Let’s now dive into how we can create our own custom elements using Glimmer.
 
 A common use case for a reusable component is the interactive view of a street map which usually can be embedded into websites and apps quickly with some configuration using services like the Google Maps API or Leaflet. What if we could create our own custom element that can simply be shared and reused using HTML alone?
 
-In the following we will create a simple street map based on [Leaflet.js](http://leafletjs.com/) which can exactly be used re-used that way as a custom element in any other application or static website.
+In the following we will create a simple street map based on [Leaflet.js](http://leafletjs.com/) which can be re-used as such a custom element in any other application or static website:
 
-[INSERT IMAGE OF COMPONENT HERE]
+![Screenshot of Final Glimmer Map Component Example - Open Street Map View Centered on Munich](/images/glimmer-map-screenshot-final.png)
 
-You can also check out the project on [Github](???? link to the repo, currently: https://github.com/jessica-jordan/glimmer-map ???? ).
+
+You can also check out the project on [Github](https://github.com/jessica-jordan/glimmer-map).
 
 ### Starting a new Glimmer Web Component Project
 
@@ -74,19 +86,20 @@ ember new glimmer-map -b @glimmer/blueprint --web-component
 ```
 generating the needed scaffolding for our first Glimmer app. As soon as the Glimmer app is booted up via a simple `ember serve` and we navigate to the typical `http://localhost:4200`, we will find that our first component project is already rendered with a "Hello Glimmer!" headline:
 
-[IMG of first page]
+![Screenshot of First Page of a New Glimmer App - Headline: Hello Glimmer!](/images/glimmer-map-startup.png)
 
 Let's have a look at our project's file structure as well; following the new folder structure planned out in the [module unification RFC](https://github.com/emberjs/rfcs/pull/143) we can already find our `component.ts` and `template.hbs` files for creating our component co-located in the same directory below the `src` directory:
 
-  ```
-    -- src
-      |-- ui
-         |-- components
-            |-- glimmer-map
-               |-- component.ts
-               |-- template.hbs
-   ```
 
+```
+-- src
+  |-- ui
+     |-- components
+        |-- glimmer-map
+           |-- component.ts
+           |-- template.hbs
+```
+   
 Leveraging the benefits of [TypeScript](https://www.typescriptlang.org/) we are even able to use types while developing our component, but we are not forced to do so. Since TypeScript is a mere super set of JavaScript, syntactically correct, plain JavaScript will evaluate as valid TypeScript as well.
 
 Also, if we have a closer look on our app setup, we will find out, how our Glimmer app can be both booted up and also be rendered as a custom element later on when reused.
@@ -98,7 +111,7 @@ In `glimmer-web-component/src/initialize-custom-elements.ts`:
 function initializeCustomElement(app: Application, name: string): void {
   // ...
   GlimmerElement.prototype = Object.create(HTMLElement.prototype, {
-    constructor: { value: GlimmerElement },
+    // ...
     connectedCallback: {
       value: function connectedCallback(): void {
         // ...
@@ -178,89 +191,89 @@ module.exports = function(defaults) {
 Now for creating and rendering our map, let’s use the `didInsertElement` hook for our first render, ensuring that the component is readily waiting in the DOM for further setup:
 
 ```
-    // src/ui/components/glimmer-map/component.ts
-    import Component, { tracked } from "@glimmer/component";
-    import L from 'leaflet';
+// src/ui/components/glimmer-map/component.ts
+import Component, { tracked } from "@glimmer/component";
+import L from 'leaflet';
 
-    export default class GlimmerMap extends Component {
-      didInsertElement() {
-        this.createMapInstance();
-        this.renderMap();
-      }
+export default class GlimmerMap extends Component {
+  didInsertElement() {
+    this.createMapInstance();
+    this.renderMap();
+  }
 
-      createMapInstance()
-        const element = this.element.children[0];
-        const map = L.map(element).setView([41.08, 11.068], 12);;
-        this.map = map;
-      }
+  createMapInstance()
+    const element = this.element.children[0];
+    const map = L.map(element).setView([41.08, 11.068], 12);;
+    this.map = map;
+  }
 
-      renderMap() {
-        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox.streets',
-        accessToken: 'your.mapbox.access.token'
-    }).addTo(this.map);
-      }
-    }
+  renderMap() {
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'your.mapbox.access.token'
+}).addTo(this.map);
+  }
+}
 ```
 
-And let's also add the needed markup into our `template.hbs`
+Also, let's add the needed markup into our `template.hbs`
 
 ```
-    // src/ui/components/glimmer-map/template.hbs
-    <div class="glimmer-map">
-      <div id="map"></div>
-    </div>
+// src/ui/components/glimmer-map/template.hbs
+<div class="glimmer-map">
+  <div id="map"></div>
+</div>
 ```
 
 With this setup, our map already renders for the map points set intially:
 
-[SCREENSHOT OF MAP W/O USER INPUT]
+![Screenshot of Open Street Map View of First Pass on the Glimmer Map Component](/images/glimmer-map-screenshot.png)
 
 We also aim to make our map respond to user input. Specifically, we would like to be able to set the marker to different locations on the map using a property for the horizontal position (`x`) and the vertical position (`y`) easily.  To allow a re-render of the component on any changes to these properties, we can make use of the `@tracked` decorators:
 
 ```
-    // src/ui/components/glimmer-map/component.ts
-    export default class GlimmerMap extends Component {  
-      @tracked
-      x: number = 11.6020;
+// src/ui/components/glimmer-map/component.ts
+export default class GlimmerMap extends Component {  
+  @tracked
+  x: number = 11.6020;
 
-      @tracked
-      y: number = 48.1351;
-     // ...
-    }
+  @tracked
+  y: number = 48.1351;
+ // ...
+}
 ```
 
 And promote the changes to these properties via actions by updating our template
 
 ```
-    // src/ui/components/glimmer-map/template.hbs
-    <div class="glimmer-map">
-      <div id="map" width={{width}} height={{height}}></div>
-      E: <input class="x-coord" type="number" step="0.0001" value={{x}} oninput={{action setView x y}}/>
-      N: <input class="y-coord" type="number" step="0.0001" value={{y}} oninput={{action setView x y}} />
-    </div>
+// src/ui/components/glimmer-map/template.hbs
+<div class="glimmer-map">
+  <div id="map" width={{width}} height={{height}}></div>
+  E: <input class="x-coord" type="number" step="0.0001" value={{x}} oninput={{action setView x y}}/>
+  N: <input class="y-coord" type="number" step="0.0001" value={{y}} oninput={{action setView x y}} />
+</div>
 ```
 
 and the respective `component.ts` file:
 
 ```
-    // src/ui/components/glimmer-map/component.ts
-    export default class GlimmerMap extends Component {
-      @tracked
-      x: number = 11.6020;
+// src/ui/components/glimmer-map/component.ts
+export default class GlimmerMap extends Component {
+  @tracked
+  x: number = 11.6020;
 
-      @tracked
-      y: number = 48.1351;
+  @tracked
+  y: number = 48.1351;
 
-      //...
-      setView() {
-        this.x = this.element.getElementsByClassName('x-coord')[0].value;
-        this.y = this.element.getElementsByClassName('y-coord')[0].value;
-        this.map.setView([this.y, this.x], 12);
-      }
-    }
+  //...
+  setView() {
+    this.x = this.element.getElementsByClassName('x-coord')[0].value;
+    this.y = this.element.getElementsByClassName('y-coord')[0].value;
+    this.map.setView([this.y, this.x], 12);
+  }
+}
 ```
 
 With this we are already done and can get started with distributing our component.
@@ -271,32 +284,35 @@ With this we are already done and can get started with distributing our componen
 As mentioned in the beginning of this article, the current blueprint for Glimmer web components comes with a wrapper for being able to package and reuse our Glimmer components as custom elements. To create our assets needed for reusage, let’s build those as we are already used to when building Ember apps:
 
 ```
-    ember build --production
+ember build --production
 ```
 
 This will store all the assets needed for reusing our custom element in the `/dist` directory of the project. For our example, only the `app.js` file has to be copied to be reused in our target app where we would like to use the `glimmer-map` web component. Adding in the external stylesheet for the styles of our map, as well as a [polyfill for ensuring cross-browser support for all custom element features](https://github.com/webcomponents/webcomponentsjs) finalizes our example:
 
 ```
-    // your/other/app/template/or/plain/html/page.html
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <!-- ... -->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
-          integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
-          crossorigin=""/>
-          <script src="/assets/webcomponentsjs/webcomponents-lite.js"></script>
-    </head>
-    <body>
-        <glimmer-map></glimmer-map>
-        <script src="app.js"></script>
-    </body>
-    </html>
+// your/other/app/template/or/plain/html/page.html
+<!DOCTYPE html>
+<html>
+	<head>
+	    <!-- ... -->
+	    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+	      integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+	      crossorigin=""/>
+	      <script src="/assets/webcomponentsjs/webcomponents-lite.js"></script>
+	</head>
+	<body>
+	    <glimmer-map></glimmer-map>
+	    <script src="app.js"></script>
+	</body>
+</html>
 ```
 
 And finally, we can see our Glimmer-based street map being rendered just as seen below:
 
-[INSERT COMPONENT HERE]
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+      integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
+    <glimmer-map height="300"></glimmer-map>
+    <script src="../../js/glimmer-map.js"></script>
 
 ## And the Glimmer Component story is not over yet
 
