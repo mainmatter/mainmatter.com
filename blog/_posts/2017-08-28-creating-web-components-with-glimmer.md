@@ -246,7 +246,7 @@ With this setup, our map already renders for the map points set intially:
 
 ![Screenshot of Open Street Map View of First Pass on the Glimmer Map Component](/images/posts/2017-08-30-creating-web-components-with-glimmer/glimmer-map-screenshot.jpg)
 
-We also aim to make our map respond to user input. Specifically, we would like to be able to set the marker to different locations on the map using a property for the longitude (`lon`) and the latitude (`lat`) easily.  To allow a re-render of the component on any changes to these properties, we can make use of the `@tracked` decorators:
+We also aim to make our map respond to user input. Specifically, we would like to be able to set the marker to different locations on the map using a property for the longitude (`lon`) and the latitude (`lat`) easily.  To allow any property changes to be reflected in the component's DOM, we can make use of the `@tracked` decorator:
 
 ```ts
 // src/ui/components/glimmer-map/component.ts
@@ -259,7 +259,7 @@ export default class GlimmerMap extends Component {
  // ...
 }
 ```
-
+Anytime there is a change to one of the tracked properties' values, a re-render of the component with a newly updated DOM will follow.
 And promote the changes to these properties via actions by updating our template
 
 ```hbs {% raw %}
