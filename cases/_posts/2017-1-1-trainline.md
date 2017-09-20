@@ -9,8 +9,8 @@ permalink: /cases/trainline
 <div class="row content-section">
   <div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-5 col-md-offset-1">
     <h3>trainline</h3>
-    <p>trainline is the <strong>leading booking site for european train tickets</strong>. They are selling tickets to customers worldwide, enabling more than 125,000 journeys every single day in and across 24 countries, covering 86 different carriers.</p>
-    <p>simplabs's team merged with trainline's internal engineering team and helped them build and extend a mobile site, accompanying the existing dektop app.</p>
+    <p>trainline is the <strong>leading booking site for European train tickets</strong>. They are selling tickets to customers worldwide, enabling more than 125,000 journeys every single day in and across 24 countries, covering 86 different carriers.</p>
+    <p>simplabs' team merged with trainline's internal engineering team and helped them build and extend a mobile site, accompanying the existing desktop app.</p>
   </div>
   <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-pull-6 col-sm-offset-1 col-md-3 col-md-offset-2">
     <img src="/images/cases/trainline/mobile.png" class="img-responsive">
