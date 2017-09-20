@@ -10,7 +10,7 @@ permalink: /cases/trainline
   <div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-5 col-md-offset-1">
     <h3>trainline</h3>
     <p>trainline is the <strong>leading booking site for european train tickets</strong>. They are selling tickets to customers worldwide, enabling more than 125,000 journeys every single day in and across 24 countries, covering 86 different carriers.</p>
-    <p>trainline is also an early Ember.js adopter, having started to build their desktop website with Ember.js' predecessor SproutCore as early as 2010 and sticked with the ecosystem ever since.</p>
+    <p>trainline is also an early Ember.js adopter. They started building their desktop website with Ember.js' predecessor, SproutCore, as early as 2010 and have stuck with the ecosystem ever since.</p>
   </div>
   <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-pull-6 col-sm-offset-1 col-md-3 col-md-offset-2">
     <img src="/images/cases/trainline/mobile.png" class="img-responsive">
