@@ -38,8 +38,8 @@ i.munich-re {
   @include icon("/images/logos/munich-re", "png", 85px, 21px);
 }
 
-i.pointoo {
-  @include icon("/images/logos/pointoo", "png", 100px, 30px);
+i.dim3 {
+  @include icon("/images/logos/dim3", "png", 100px, 35px);
 }
 
 i.medikompass {
@@ -128,4 +128,12 @@ i.clemens {
 
 i.tobias {
   @include icon("/images/authors/tobias", "jpg", 100px, 100px);
+}
+
+i.jessica {
+  @include icon("/images/authors/jessica", "jpg", 100px, 100px);
+}
+
+i.andy {
+  @include icon("/images/authors/andy", "jpg", 100px, 100px);
 }

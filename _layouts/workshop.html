@@ -19,6 +19,19 @@
                 <div class="description">
                   {{page.description | markdownify}}
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% include workshop_contact_banner.html %}
+
+      <div class="container" id="main-section">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 col-sm-12">
+            <div class="row content-section workshop">
+              <div class="col-sm-12">
                 {% for stage in page.stages %}
                   <div class="row stage">
                     <div class="col-sm-2 number">
@@ -74,10 +87,7 @@
           </div>
         </div>
       </div>
-
-      {% include random_workshop_banner.html %}
-
-      {% include contact_banner.html %}
+      {% include workshop_contact_banner.html %}
     </div>
 
     {% include footer.html %}

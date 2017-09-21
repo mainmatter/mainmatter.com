@@ -118,6 +118,30 @@ ul {
   }
 }
 
+blockquote {
+  border: none;
+  width: 83.33333333%;
+  margin: 0 auto;
+  padding: 0;
+
+  &:before {
+    display: block;
+    content: "\201d";
+  }
+}
+
+blockquote {
+  border: none;
+  width: 83.33333333%;
+  margin: 0 auto;
+  padding: 0;
+
+  &:before {
+    display: block;
+    content: "\201d";
+  }
+}
+
 .highlight {
   border: none;
   padding: 20px;
@@ -349,6 +373,7 @@ ul {
       max-width: 100%;
       margin-right: auto;
       margin-left: auto;
+      display: block;
     }
   }
 
@@ -383,6 +408,22 @@ ul {
   margin: 60px auto;
 }
 
+.case {
+  .emphasis {
+    text-align: center;
+  }
+
+  .secondary-banner {
+    &.quote-banner {
+      padding: 50px 0 20px 0;
+      margin-bottom: 60px;
+      background-image: none;
+      margin-left: calc(-1 * ((100vw - 100%) / 2));
+      width: 100vw;
+    }
+  }
+}
+
 .workshop {
   h4 {
     text-align: left;
@@ -403,21 +444,6 @@ ul {
 
     p {
       width: 83.33333333%;
-    }
-
-    &:after {
-      content: " ";
-      clear: both;
-      padding-top: 40px;
-      width: 100%;
-      border-bottom-width: 1px;
-      border-bottom-style: solid;
-      display: table;
-      box-sizing: border-box;
-    }
-
-    &.split-section:after {
-      width: calc(50% - 30px);
     }
   }
 
@@ -580,6 +606,14 @@ ul {
             display: inline;
           }
         }
+      }
+    }
+  }
+
+  .case {
+    .content-section {
+      > div:last-of-type {
+        margin-top: 20px;
       }
     }
   }

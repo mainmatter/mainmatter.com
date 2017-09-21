@@ -8,7 +8,7 @@ title: Training
     <div class="row">
       <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
         <h2>Training</h2>
-        <p>We offer <strong>Individual and Group Trainings</strong> to help teams advance their skills.</p>
+        <p>We offer <strong>individual and group training</strong> to help teams advance their skills.</p>
     	</div>
     </div>
   </div>
@@ -17,13 +17,21 @@ title: Training
 <div class="container workshops" id="main-section">
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-sm-12">
-      <div class="row content-section separated">
+      <div class="row content-section">
         <div class="col-sm-12">
-          <p>We offer a <strong>variety of Developer Trainings</strong> to help teams advance their skills in many frontend and backend topics. Professional Developer trainings can <strong>dramatically improve developer's productivity</strong> (we're usually told between 8% and 20%) and thus provide a manifold Return on Investment. All of the <strong>Workshops can be customized to meet your team's specific needs</strong> - <a href="/contact/">contact us</a> to discuss how we can help you best.</p>
-          <p><strong>All of simplabs' Workshops are taught by <a href="http://twitter.com/michaellnorth?lang=de">Mike North</a>.</strong> Mike is a global speaker, trainer, Front End Masters instructor and Pluralsight author. He <strong>has taught developers all over the world how to use Phoenix, Elixir and Ember.js</strong>.</p>
+          <p>We offer a <strong>variety of developer training</strong> to help teams advance their skills in many frontend and backend topics. Professional Developer training can <strong>dramatically improve developer's productivity</strong> (we're usually told between 8% and 20%) and thus provide a manifold Return on Investment. All of the <strong>Workshops can be customized to meet your team's specific needs</strong> - <a href="/contact/">contact us</a> to discuss how we can help you best.</p>
+          <p><strong>All of simplabs' Workshops are taught by <a href="http://twitter.com/michaellnorth">Mike North</a>.</strong> Mike is a global speaker, trainer, Front End Masters instructor and Pluralsight author. He <strong>has taught developers all over the world how to use Phoenix, Elixir and Ember.js</strong>.</p>
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
+{% include workshop_contact_banner.html %}
+
+<div class="container workshops" id="main-section">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 col-sm-12">
       {% assign sorted_posts = site.categories.training | sort: 'weight' %}
       {% for post in sorted_posts %}
         <div class="row content-section separated">
@@ -43,6 +51,5 @@ title: Training
   </div>
 </div>
 
-{% include random_workshop_banner.html %}
 {% include intercom.html %}
-{% include contact_banner.html %}
+{% include workshop_contact_banner.html %}

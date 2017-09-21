@@ -176,6 +176,20 @@ code {
   }
 }
 
+.case {
+  .secondary-banner {
+    &.quote-banner {
+      blockquote {
+        color: $secondary-highlight-color;
+
+        footer, footer:before, cite {
+          color: $secondary-highlight-color;
+        }
+      }
+    }
+  }
+}
+
 .workshop {
   .description:after {
     border-bottom-color: $border-color;
