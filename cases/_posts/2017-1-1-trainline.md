@@ -13,7 +13,7 @@ permalink: /cases/trainline
     <p>simplabs' team worked closely with Trainline’s internal engineering team and <strong>helped them build and extend a mobile site</strong> to accompany the existing desktop app.</p>
   </div>
   <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-pull-6 col-sm-offset-1 col-md-3 col-md-offset-2">
-    <img src="/images/cases/trainline/mobile.png" class="img-responsive">
+    <img src="/images/cases/trainline/mobile.png" class="img-responsive" alt="Mobile">
   </div>
 </div>
 
