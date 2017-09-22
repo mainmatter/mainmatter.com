@@ -130,18 +130,6 @@ blockquote {
   }
 }
 
-blockquote {
-  border: none;
-  width: 83.33333333%;
-  margin: 0 auto;
-  padding: 0;
-
-  &:before {
-    display: block;
-    content: "\201d";
-  }
-}
-
 .highlight {
   border: none;
   padding: 20px;
