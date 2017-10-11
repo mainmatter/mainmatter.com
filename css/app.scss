@@ -130,6 +130,46 @@ blockquote {
   }
 }
 
+#contact-form {
+  display: block;
+  float: left;
+
+  #name-input {
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #a6a6a6;
+  }
+
+  #name-input::placeholder {
+    opacity: 0.5;
+  }
+
+  #email-input {
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #a6a6a6;
+  }
+
+  #email-input::placeholder {
+    opacity: 0.5;
+  }
+
+  #message-input {
+    width: 100%;
+    min-height: 150px;
+    border-color: #a6a6a6;
+  }
+
+  #message-input::placeholder {
+    opacity: 0.5;
+  }
+
+  .send-button {
+    float: right;
+    border-radius: 0px;
+  }
+}
+
 .highlight {
   border: none;
   padding: 20px;

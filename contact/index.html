@@ -23,7 +23,38 @@ title: Contact
         </div>
         <div class="col-sm-6">
           <p>Send us an email or contact us on Twitter to discuss what we can do for you.</p>
-          <p><a href="mailto:info@simplabs.com?subject=Hi!" title="Email us" class="email-link"><i class="fa fa-envelope contact"></i> info@simplabs.com</a></p>
+          <form id="contact-form">
+            <input type="text" id="name-input" name="name" placeholder="Your name">
+            <input type="email" id="email-input" name="email" placeholder="Your email">
+            <textarea id="message-input" name="message" placeholder="Your message"></textarea>
+            <button class="custom-button send-button" type="submit">Send</button>
+          </form>
+          <script>
+            $('#contact-form').submit(function (event) {
+              event.preventDefault()
+             
+              var data = {
+                name: $('#name-input').val(),
+                email: $('#email-input').val(),
+                message: $('#message-input').val()
+              }
+             
+              $.ajax({
+                type: 'POST',
+                url: 'https://syxdnw6dbe.execute-api.eu-central-1.amazonaws.com/production',
+                dataType: 'json',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function () {
+                  alert("Thank you! Your message has been successfully sent!");
+                  $('#contact-form')[0].reset();
+                },
+                error: function () {
+                  alert("Ooops, something went wrong!")
+                }
+              })
+            })
+          </script>
           <p><a href="https://twitter.com/simplabs" title="@simplabs on Twitter" class="twitter-link"><i class="fa fa-twitter contact"></i> @simplabs</a></p>
         </div>
       </div>

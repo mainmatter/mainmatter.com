@@ -77,6 +77,14 @@ code {
       color: $primary-highlight-color;
     }
   }
+
+  &.send-button {
+    color: $primary-highlight-color;
+
+    &:hover {
+      color: $secondary-highlight-color;
+    }
+  }
 }
 
 #main-menu {
