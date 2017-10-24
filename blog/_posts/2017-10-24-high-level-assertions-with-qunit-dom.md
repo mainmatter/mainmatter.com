@@ -235,4 +235,4 @@ Moving the tests to `async/await` and `qunit-dom` makes them a lot more
 readable and easier to understand for new developers and is just a few
 keystrokes away if you're already using Ember.js for your frontend projects.
 If you need help refactoring your tests or even your production code to be
-more structured and understandable feel free to [contact us](<https://simplabs.com/contact/).
+more structured and understandable feel free to [contact us](https://simplabs.com/contact/).
