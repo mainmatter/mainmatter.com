@@ -10,7 +10,8 @@ twitter-handle: tobiasbieniek
 At [EmberFest](https://emberfest.eu/) this year we presented and released
 [`qunit-dom`](https://github.com/simplabs/qunit-dom). A plugin for
 [QUnit](https://qunitjs.com/) providing High Level DOM Assertions with the
-goal to reduce test complexity for all QUnit users.
+goal to reduce test complexity for all QUnit users. This blog post will show
+you how to write simpler tests using `async/await` and `qunit-dom`.
 
 As an introduction to what this means let's start with an example template
 for an Ember app that we will write a test for:
