@@ -17,16 +17,14 @@ title: Contact
 <div class="container" id="main-section">
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-sm-12">
-      <div class="row content-section split-section separated">
+      <div class="row content-section split-section">
         <div class="col-sm-6">
           <h3>Get in touch with us</h3>
-        </div>
-        <div class="col-sm-6">
-          <p>Send us an email or contact us on Twitter to discuss what we can do for you.</p>
+          <p>Please fill out our contact form.</p>
           <form id="contact-form">
-            <input type="text" id="name-input" name="name" placeholder="Your name">
-            <input type="email" id="email-input" name="email" placeholder="Your email">
-            <textarea id="message-input" name="message" placeholder="Your message"></textarea>
+            <input type="text" id="name-input" name="name" placeholder=" Your name">
+            <input type="email" id="email-input" name="email" placeholder=" Your email">
+            <textarea id="message-input" name="message" placeholder=" Your message"></textarea>
             <button class="custom-button send-button" type="submit">Send</button>
           </form>
           <script>
@@ -55,16 +53,23 @@ title: Contact
               })
             })
           </script>
-          <p><a href="https://twitter.com/simplabs" title="@simplabs on Twitter" class="twitter-link"><i class="fa fa-twitter contact"></i> @simplabs</a></p>
         </div>
-      </div>
-
-      <div class="row content-section split-section separated">
-        <div class="col-sm-6">
-          <h3>Munich Office</h3>
-        </div>
-        <div class="col-sm-6">
-          <p>Of course you're also welcome to <strong>visit us in our office in Munich, Germany.</strong></p>
+        <div id="address" class="col-sm-6">
+          <p>
+            <span class="address">
+              <span><strong>simplabs GmbH</strong></span>
+              <span>Claude-Lorrain-Str. 7</span>
+              <span>81543 München</span>
+              <span>Germany</span>
+            </span>
+          </p>
+          <p>
+            <span class="address">
+              <span>Call us: +49 89 462 565 03</span>
+              <span>Send us an email: <a href="mailto:info@simplabs.com?subject=Hi!" title="Email us" class="email-link">info@simplabs.com</a></span>
+              <span>Contact us via Twitter: <a href="https://twitter.com/simplabs" title="@simplabs on Twitter" class="twitter-link">@simplabs</a></span>
+            </span>
+          </p>
           <div id="map-canvas">
             <script src="//maps.google.com/maps/api/js?sensor=false"></script>
             <script>  
@@ -86,15 +91,6 @@ title: Contact
               });
             </script>
           </div>
-          <p>
-            <span class="address">
-              <span>simplabs GmbH</span>
-              <span>+49 89 462 565 03</span>
-              <span>Claude-Lorrain-Str. 7</span>
-              <span>81543 München</span>
-              <span>Germany</span>
-            </span>
-          </p>
         </div>
       </div>
     </div>

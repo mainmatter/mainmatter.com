@@ -137,36 +137,28 @@ blockquote {
   #name-input {
     margin-bottom: 10px;
     width: 100%;
-    border: 1px solid #a6a6a6;
-  }
-
-  #name-input::placeholder {
-    opacity: 0.5;
+    border: 1px solid rgba(166, 166, 166, 0.7);
   }
 
   #email-input {
     margin-bottom: 10px;
     width: 100%;
-    border: 1px solid #a6a6a6;
-  }
-
-  #email-input::placeholder {
-    opacity: 0.5;
+    border: 1px solid rgba(166, 166, 166, 0.7);
   }
 
   #message-input {
     width: 100%;
-    min-height: 150px;
-    border-color: #a6a6a6;
-  }
-
-  #message-input::placeholder {
-    opacity: 0.5;
+    min-height: 360px;
+    resize: none;
+    border-color: rgba(166, 166, 166, 0.7);
   }
 
   .send-button {
     float: right;
     border-radius: 0px;
+    font-size: 16px;
+    text-align: center;
+    padding: 3px 50px;
   }
 }
 
@@ -344,6 +336,15 @@ blockquote {
 #map-canvas {
   height: 250px;
   margin: 0 0 10px;
+}
+
+#address {
+  p {
+    font-size: 14px;
+    &:first-of-type {
+      margin-top: 110px;
+    }
+  }
 }
 
 .address > span {
