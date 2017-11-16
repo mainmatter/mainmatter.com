@@ -9,7 +9,7 @@ twitter-handle: tobiasbieniek
 
 Back in January we wrote about the
 [latest changes](https://simplabs.com/blog/2017/01/13/ember-test-selectors.html)
-in [ember-test-selectors](https://github.com/simplabs/ember-test-selectors)
+in [`ember-test-selectors`](https://github.com/simplabs/ember-test-selectors)
 and how we implemented them. Since then we adjusted a few things and this blog
 post should give you an idea what has happened so far and what else will happen
 before we feel comfortable promoting the addon to v1.0.0.
@@ -36,7 +36,7 @@ property on the `user-list` component it will take the value of the
 `data-test-user-list` property on the parent component and pass that as a
 positional parameter to the `user-list` component.
 
-In v0.2.0 of ember-test-selectors we introduced another Handlebars AST
+In v0.2.0 of `ember-test-selectors` we introduced another Handlebars AST
 transform which transforms all such valueless `data-test-foo` instances to
 `data-test-foo=true` by default.
 
@@ -96,7 +96,7 @@ major Babel versions with the same addon.
 
 In April we were notified by [Luke Melia](https://github.com/lukemelia) that
 test-selectors in templates in an addon that he extracted were stripped
-unconditionally. It turned out that if ember-test-selectors was used as a
+unconditionally. It turned out that if `ember-test-selectors` was used as a
 nested addon some of the build logic that we had in place was not working
 properly.
 
@@ -108,9 +108,9 @@ and rely on correct test-selector stripping depending on the build environment.
 
 #### v0.3.7: Deprecation of the `testSelector` helper function
 
-Triggered by [Kelly Selden](https://github.com/kellyselden) a
-[discussion](https://github.com/simplabs/ember-test-selectors/issues/121)
-started about the `testSelector` helper function in ember-test-selectors.
+A few weeks later [Kelly Selden](https://github.com/kellyselden) triggered a
+[conversation](https://github.com/simplabs/ember-test-selectors/issues/121)
+about the `testSelector` helper function in `ember-test-selectors`.
 
 The purpose of the `testSelector` function is turning:
 
@@ -130,7 +130,7 @@ After discussing back and forth and coming up with
 [alternative APIs](https://github.com/simplabs/ember-test-selectors/pull/122)
 we decided the best way forward was actually to not use any helpers at all.
 This has the advantage of not hiding the actual CSS selector that is being used
-and requiring less knowledge of how ember-test-selectors works to understand
+and requiring less knowledge of how `ember-test-selectors` works to understand
 what any test code is doing.
 
 Following the discussion we have deprecated the `testSelector` helper function
@@ -144,7 +144,7 @@ for you automatically.
 
 Only a few weeks ago [Chris Garrett](https://github.com/pzuraq/), better known
 as @pzuraq, approached us about supporting Ember 1.11 and 1.12 in
-ember-test-selectors. He was working on some projects that were started in the
+`ember-test-selectors`. He was working on some projects that were started in the
 early days of Ember and to be able to upgrade them confidently to a newer Ember
 version he needed to write better tests. For those tests he wanted to use
 test-selectors, but since they required a newer Ember version he was stuck in
@@ -158,7 +158,7 @@ seem like a good solution to us so we dug deeper.
 
 Thanks to [ember-try](https://github.com/ember-cli/ember-try) it was very fast
 and easy to try out our addon on many different Ember versions and we quickly
-discovered that the Handlebars AST had changed between Ember 2.12 and 2.13 in
+discovered that the Handlebars AST had changed between Ember 1.12 and 1.13 in
 a way that caused our transforms to crash.
 
 The AST for a template like:
@@ -188,14 +188,14 @@ MustacheStatement {
 }
 ```
 
-but in Ember 2.12 it looks more like this:
+but in Ember 1.12 it looks more like this:
 
 ```kotlin
 MustacheStatement {
   path: PathExpression {
     original: "user-list"
   }
-  sexpr: SexprStatement {
+  sexpr: SymbolicExpression {
     params: []
     hash: Hash {
       pairs: [
@@ -218,7 +218,7 @@ instead.
 
 Once we had that conditional in place all our tests were 🍏 again and we were
 able to adjust our range of supported Ember versions all the way down to
-Ember 2.11.
+Ember 1.11.
 
 
 #### Conclusion
