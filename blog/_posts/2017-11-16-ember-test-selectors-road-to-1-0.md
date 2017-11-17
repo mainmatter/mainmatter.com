@@ -40,8 +40,8 @@ In v0.2.0 of `ember-test-selectors` we introduced another Handlebars AST
 transform which transforms all such valueless `data-test-foo` instances to
 `data-test-foo=true` by default.
 
-While that seems to work quite well it creates issues in other places as you
-can see in the following template: 
+While that seems like a convenient thing, it has drawbacks and does not always
+work as expected, as you can see in the following template: 
 
 ```handlebars
 {% raw %}{{! works }}
@@ -69,12 +69,12 @@ in an upcoming release and remove the transform completely for the v1.0.0 releas
 
 #### v0.3.0: Support for Babel 6
 
-This year (2017) the Babel ecosystem finally moved from Babel 5 to Babel 6,
+This year (2017) the Ember ecosystem finally moved from Babel 5 to Babel 6,
 which happened mostly without issues for app developers as it was just
 a dependency upgrade from `ember-cli-babel@5` to `ember-cli-babel@6`. Some
 app developers might think they are still only using Babel 5 for their app,
 but it is very likely that some of their addons are already using Babel 6 under
-the hood since in the Ember ecosystem each addon controls its own transpilation.
+the hood since all Ember addons controls their own transpilation.
 
 For addons that rely on Babel transforms the upgrade unfortunately was not
 quite as smooth, as the Babel transforms API had changed significantly with
@@ -86,7 +86,7 @@ the same addon instead of having to publish two different variants of the addon
 each targeting a different Babel version.
 
 Fortunately at [EmberConf](http://emberconf.com/) in March we found a solution:
-The addon is now checking the dependencies of your project and figuring out
+The addon now checks the dependencies of your project and figures out
 which version of `ember-cli-babel` you use. Based on that information we inject
 different Babel transforms into the build pipeline so that we can support both
 major Babel versions with the same addon.
@@ -213,8 +213,8 @@ MustacheStatement {
 
 As you can see the AST looks almost similar, but not exactly the same.
 In the end we figured out we could check if the `MustacheStatement` has
-a `sexpr` property, and in that case use the `hash` property inside of it
-instead.
+a `sexpr` property, and in that case use the `hash` property inside of
+that instead.
 
 Once we had that conditional in place all our tests were 🍏 again and we were
 able to adjust our range of supported Ember versions all the way down to
