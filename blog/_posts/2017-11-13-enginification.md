@@ -15,11 +15,18 @@ ran into along the way and how we solved them. So let's dive right in!
 
 <!--break-->
 
-### Attack plan
+### Status quo
 
-Ember.js v2.14, 39 routes, 28 services, 77 components
+The Ember.js app is a mobile client for searching and booking train tickets
+with multiple carriers in Europe. The basic flow through the app is as follows:
+a user enters an origin and arrival station and specifies the dates and
+companions of the journey. After a search is initiated the results are shown, a
+specific trip is chosen, details like seating preference and passenger details
+are entered, the payment is processed and at the end, the details of the booked
+trip are shown and the purchased tickets can be downloaded.
 
-The generated assets have the following sizes and time to first render is Xs.
+At the moment Ember.js v2.14 is used and the app has 39 routes, 28 services, 77
+components, 24 models which result in the following asset sizes:
 
 |-------------|--------------------------------|
 | Asset       | Size                           |
@@ -29,24 +36,27 @@ The generated assets have the following sizes and time to first render is Xs.
 | `app.css`   | 104.31 KB (19.25 KB gzipped)   |
 |-------------|--------------------------------|
 
-The app itself contains a flow, where the user enters origin and arrival
-stations, selects departure and return dates and defines passengers. After
-search is hit, the results are shown, a specific connection is chosen, details
-like seating preference are entered and passenegr details are entered, the
-payment is processed and at the end, the details of the booked trip are shown
-and the purchased tickets can be downloaded.
+Taken from the [Ember Engine RFC](https://github.com/emberjs/rfcs/blob/master/text/0010-engines.md):
+
+> Engines allow multiple logical applications to be composed together into a
+> single application from the user's perspective.
 
 When a user loads the app, the first thing is to specify the search parameters.
-There is no need for loading everything after the search screens. That's why we
-started to optimize the initial load times by extracting all of the not
-initially needed functionality - from now on called booking flow - into an
-engine.
+There is no need for all the functionality after a search is initiated. That's
+why we started to optimize the load times by extracting all of the not
+initially needed functionality into an Ember Engine, resulting in a reduced
+bundle size of the initially needed assets.
 
+### Extract common stuff used in app into an addon
 
-### Extract common stuff used in app and the engine
+One fundamental design of engines is that they are isolated from the hosting
+app. It is possible to pass in services but apart from that, engines don't have
+acces to the hosting app.
+In order for components, helpers and styles to be reused, those common
+functionality needs to be put into an addon, which then the app and the engine
+depend on.
 
-Since the main app and booking flow will have some overlap, an in-repo addon
-with common components and styles is created:
+We're using an in repo addon for that:
 
 ```sh
 ember generate in-repo-addon common
@@ -95,7 +105,7 @@ themselves.
 
 So the corresponding files are moved to the in-repo addon as well. Why we're
 putting them within `lib/common/app/styles/common/...` will be more clear once
-we import them in the engine:
+we `@import` them in the engines' style definitions:
 
 
 ```sh
@@ -138,8 +148,9 @@ create the engine, which will contain most of the application code.
 
 ### Move stuff into engine
 
-An engine is basically an Ember.js addon, so there is no restriction of using
-it as an in-repo addon as well:
+An engine is basically an Ember.js addon. Since the engine won't be reused
+within another application, we decided to go with the in-repo solution for the
+engine as well:
 
 ```sh
 ember generate in-repo-addon booking-flow
@@ -172,23 +183,9 @@ can re-use the common stuff within the engine. Let's take a look at
 
 After that we can start to move all the routes, components, services which are
 only used within the booking-flow engine into the corresponding folders within
-`lib/booking-flow/addon/`. The nice thing about ember engines is that they
+`lib/booking-flow/addon/`. The nice thing about Ember Engines is that they
 don't introduce any new concepts in terms of location of the files. So a simple
 `git mv` does the trick.
-
-Within the app we are using some npm dependencies via
-[ember-browserify](https://github.com/ef4/ember-browserify). Since those
-dependencies are not used in the app but within the engine now, we had to
-mitigate this as described [in ember-browserify's README](https://github.com/ef4/ember-browserify#using-ember-browserify-in-addons).
-So the dependencies are included properly, we need to import them in the engine
-from somwhere within `lib/booking-flow/app/`:
-
-```js
-// lib/booking-flow/app/index.js
-
-import mailcheck from 'npm:mailcheck';
-import creditCardType from 'npm:credit-card-type';
-```
 
 The booking-flow addon should use the same style definitions as the hosting
 app, so we'd like to import the common style definitions within the
@@ -232,7 +229,7 @@ defitions. And since we namespaced the files in the `common` addon under the
 
 So now we have moved all the non-essential logic not needed at the beginning of
 the app into an in-repo engine. As a next optimization, let's make use of a
-nifty feature of ember engines…
+nifty feature of Ember Engines…
 
 ### Make it lazy
 
@@ -257,25 +254,26 @@ module.exports = EngineAddon.extend({
 }
 ```
 
-And é voila: we now have 3 more separate assets, which are loaded on demand
-once we navigate into a route within the engine. Since the original assets only
-contain the crucial logic, they have shrunken in size as well:
+And et voilà: we now have 3 more separate assets, which are loaded on demand
+once we navigate into a route within the engine. Since the initial assets only
+contain the essential logic needed for the search, they have shrunken in size
+as well:
 
 |--------------------------|--------------------------------|------------------------------|
 | Asset                    | Before                         | After                        |
 |--------------------------|--------------------------------|------------------------------|
-| `app.js`                 | 627.03 KB (117.22 KB gzipped)  | 364.78 KB (76.98 KB gzipped) |
-| `vendor.js`              | 1.51 MB (342.87 KB gzipped)    | 1.32 MB (317.71 KB gzipped)  |
-| `app.css`                | 104.31 KB (19.25 KB gzipped)   | 42.8 KB (8.94 KB gzipped)    |
+| `app.js`                 | 627.03 KB (117.22 KB gzipped)  | 375.01 KB (78.23 KB gzipped) |
+| `vendor.js`              | 1.51 MB (342.87 KB gzipped)    | 1.6 MB (364.5 KB gzipped)    |
+| `app.css`                | 104.31 KB (19.25 KB gzipped)   | 58.65 KB (12.17 KB gzipped)  |
 |--------------------------|--------------------------------|------------------------------|
-| `booking-flow.js`        |                                | 309.18 KB (52.5 KB gzipped)  |
-| `booking-flow-vendor.js` |                                | 285.58 KB (46.87 KB gzipped) |
-| `booking-flow.css`       |                                | 46.36 KB (8.13 KB gzipped)   |
+| `booking-flow.js`        |                                | 290.47 KB (48.48 KB gzipped) |
+| `booking-flow-vendor.js` |                                | 117 B (127 B gzipped)        |
+| `booking-flow.css`       |                                | 45.24 KB (7.97 KB gzipped)   |
 |--------------------------|--------------------------------|------------------------------|
 
 ### Conclusion
 
-- in-repo addon for common styles/components/helpers
-- in-repo engine for non-critical stuff
-- app/ containing everything crucial for landing page
-- reduced initial asset sizes
+We created an in-repo addon for commonly used components, helpers and style
+definitions. After that, everything which is not needed for the initial search
+screen has been moved into an in-repo engine. This helped us reduce the size of
+the initially served assets.
