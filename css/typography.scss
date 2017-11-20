@@ -179,6 +179,13 @@ h5 {
   .article-meta {
     text-align: center;
   }
+
+  blockquote {
+    &:before {
+      font-size: 60px;
+      line-height: 0;
+    }
+  }
 }
 
 .author {

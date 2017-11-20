@@ -14,6 +14,10 @@ $code-text-color: #000;
 $success-color: #5cb85c;
 $error-color: #d9534f;
 
+$table-border-color: #000;
+$table-title-color: #000;
+$table-background-color: #f5f6f7;
+
 $ember-workshop-primary-background-color: #e7f2ef;
 $ember-workshop-primary-text-color: #e04a31;
 
@@ -58,6 +62,27 @@ form {
     &::placeholder {
       color: lighten($primary-text-color, 25%);
     }
+  }
+}
+
+table {
+  thead {
+    border-bottom-color: $table-border-color;
+    color: $table-title-color;
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid $table-border-color;
+
+      &:nth-child(odd) {
+        background-color: $table-background-color;
+      }
+    }
+  }
+
+  td, th {
+    padding: 5px 10px;
   }
 }
 
