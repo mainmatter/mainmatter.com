@@ -9,21 +9,22 @@ twitter-handle: pangratz
 
 We recently improved the initial load time of an Ember.js app for mobile
 clients, by using [Ember Engines](http://ember-engines.com/) and extracting
-functionality out of the app. In this blog post we're going to show how we
-extracted an engine out of an existing app and discuss some smaller issues we
-ran into along the way and how we solved them. So let's dive right in!
+functionality and leveraging that to lazily loaded parts of the app's code. In
+this blog post we're going to show how we extracted the engine out of the app
+and discuss some smaller issues we ran into along the way and how we solved
+them. So let's dive right in!
 
 <!--break-->
 
 #### Status quo
 
-The Ember.js app is a mobile client for searching and booking train tickets
-with multiple carriers in Europe. The basic flow through the app is as follows:
-a user enters an origin and arrival station and specifies the dates and
-companions of the journey. After a search is initiated the results are shown, a
-specific trip is chosen, details like seating preference and passenger details
-are entered, the payment is processed and at the end, the details of the booked
-trip are shown and the purchased tickets can be downloaded.
+The app is a mobile ticket counter for rail tickets. The basic flow through the
+app is as follows: a user enters an origin and arrival station and specifies
+the dates and companions of the journey. After a search is initiated the
+results are shown, a specific trip is chosen, details like seating preference
+and passenger details are entered, the payment is processed and at the end, the
+details of the booked trip are shown and the purchased tickets can be
+downloaded.
 
 At the moment Ember.js v2.14 is used and the app has 39 routes, 28 services, 77
 components, 24 models which result in the following asset sizes:
@@ -55,8 +56,8 @@ hosting app. It is possible to pass in services from the hosting app but apart
 from that, engines don't have access to anything of the app which mounts the
 engine.
 In order for components, helpers and styles to be accessible from both the host
-app and the engine, those common functionality needs to be put into an addon,
-which then the app and the engine depend on.
+app and the engine, those common element needs to be put into an addon, which
+then the app and the engine depend on.
 
 We're using an in repo addon for that:
 
@@ -66,8 +67,7 @@ ember generate in-repo-addon common
 
 After the addon is created, we want to move common components and helpers into
 the addon. Let's look at the `loading-indicator` component: it shows a loading
-animation of 3 dots, which will definitely be used in the host app and the
-engine:
+animation of 3 dots, which is used in the host app and the engine:
 
 ```sh
 ember generate component loading-indicator --in-repo common
@@ -209,7 +209,7 @@ module.exports = EngineAddon.extend({
 ```
 
 By this we can import the variables, colors and mixins in the engines' style
-defitions. And since we namespaced the files in the `common` addon under the
+definitions. And since we namespaced the files in the `common` addon under the
 `common/` folder, we get distinct import paths:
 
 ```scss
@@ -234,7 +234,7 @@ nifty feature of Ember Engines…
 
 After we extracted the `common` addon and the `booking-flow` engine, we are
 ready to load the engine lazily to actually reduce the amount of JavaScript
-that needs to be loaded, parsed and compile to boot up the application.  This
+that needs to be loaded, parsed and compiled to boot up the application. This
 is as hard work as switching a boolean:
 
 ```js
