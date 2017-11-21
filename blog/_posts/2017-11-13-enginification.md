@@ -103,9 +103,7 @@ The application uses
 [ember-cli-sass](https://github.com/aexmachina/ember-cli-sass) for its styles
 and defines a number of variables for colors, sizes etc. In order for those to
 be accessible from both the host app and the engine, these style definitions
-need to be moved into the common addon as well.
-Why we're putting them within `lib/common/app/styles/common/...` will be more
-clear once we `@import` them in the engines' style definitions:
+need to be moved into the common addon as well:
 
 ```sh
 git mv app/styles/vars.scss \
