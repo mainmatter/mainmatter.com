@@ -137,8 +137,10 @@ form {
     border-bottom-width: 2px;
     border-bottom-style: solid;
     width: 100%;
+  }
 
-    &:focus {
+  input, textarea, button {
+    &:focus, &:active {
       outline: none;
     }
   }
@@ -323,11 +325,6 @@ pre.highlight {
   textarea {
     height: 100px;
   }
-}
-
-#map-canvas {
-  height: 250px;
-  margin: 0 0 10px;
 }
 
 .address, .contact {
