@@ -17,8 +17,8 @@ kramdown:
 excerpt_separator: <!--break-->
   
 navigation:
-  - title: Services
-    url: /services/
+  - title: What we do
+    url: /what-we-do/
   - title: Work
     url: /work/
   - title: Training
