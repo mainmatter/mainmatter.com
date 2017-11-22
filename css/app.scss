@@ -126,7 +126,6 @@ blockquote {
 
   &:before {
     display: block;
-    content: "\201d";
   }
 }
 
@@ -195,6 +194,25 @@ pre.highlight {
   }
 }
 
+.client-banner {
+  text-align: center;
+  position: relative;
+  width: 200%;
+  margin: 0 0 3% -50%;
+
+  a {
+    border: none;
+    display: inline-block;
+    margin-right: 20px;
+
+    i {
+      vertical-align: middle;
+      background-size: 100%;
+      max-width: 100px;
+    }
+  }
+}
+
 .primary-banner {
   padding: 20px 0;
   height: 180px;
@@ -254,31 +272,34 @@ pre.highlight {
 }
 
 #main-section.index {
-  .client-logos {
-    i {
-      opacity: 1;
-      transition: opacity 0.15s ease-in-out;
-    }
+  .quotes {
+    position: relative;
+    overflow: hidden;
 
-    a {
-      position: absolute;
+    &, li {
       display: block;
-      width: 100%;
-      top: calc(50% - 1em - 80px);
-      z-index: 9999;
-      padding: 50px;
-      opacity: 0;
-      transition: opacity 0.15s ease-in-out;
     }
 
-    &:hover {
-      i {
-        opacity: 0.15;
-      }
+    ul {
+      padding: 0;
 
-      a {
-        opacity: 1;
+      li {
+        position: absolute;
+        list-style: none;
+        transition: opacity 0.8s ease-in-out;
       }
+    }
+
+    p {
+      font-size: 13px;
+
+      &:before {
+        font-size: 20px;
+      }
+    }
+
+    cite {
+      font-size: 11px;
     }
   }
 

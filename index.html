@@ -16,41 +16,77 @@ title:
 <div class="container index" id="main-section">
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-sm-12">
-      <div class="row content-section separated">
+      <div class="row content-section">
         <div class="col-sm-12">
           <p>Our team of technology experts builds ambitious solutions for clients across the world, from startups to long-established businesses. We specialize in <strong>modern, convention-based tools like Ember.js, Elixir and Phoenix</strong> as well as Ruby on Rails. We like to <strong>move fast without breaking things</strong> and ask our clients to take an active role in the development process.</p>
         </div>
       </div>
-      <div class="row content-section separated client-logos">
-        <a href="/clients">see a list of all our clients</a>
-        <div class="col-sm-3 col-xs-6">
-          <i class="generali"></i>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <i class="hopskipdrive"></i>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <i class="robinhood"></i>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <i class="trainline"></i>
+      <div class="row content-section separated">
+        <div class="col-sm-10 col-sm-offset-1">
+          <div class="row quotes">
+            <ul>
+              <li style="opacity: 1">
+                <blockquote>
+                  <p>It has been an absolute pleasure to work with simplabs. Their <strong>team of experienced JavaScript engineers</strong> quickly slotted in to our in-house development teams. Their expertise with modern, agile software development best practices and tools meant they were able to work with our processes to <strong>deliver fantastic customer experiences</strong>.</p>
+                  <footer><cite>Mark Holt, Trainline CTO</cite></footer>
+                </blockquote>
+              </li>
+              <li style="opacity: 0">
+                <blockquote>
+                  <p>simplabs' highly skilled engineers delivered a solid and well architected foundation for our web app. Working with them also helped us establish best practices and a lean process internally. Working with them was a pleasure.</p>
+                  <footer><cite>Andreas Knürr, Timify CEO</cite></footer>
+                </blockquote>
+              </li>
+              <li style="opacity: 0">
+                <blockquote>
+                  <p>simplabs’ expertise in developing Ember.js based applications helped us significantly to define and develop the new DD-WRT NXT user experience. It was impressive to see in what short time such a complex application leveraging a customer backend interface could be implemented. simplabs' work did provide the new foundation for our UI and our in-house development team greatly benefitted from their know how.</p>
+                  <footer><cite>Peter Steinhäuser, embeDD CEO</cite></footer>
+                </blockquote>
+              </li>
+            </ul>
+            <script type="text/javascript">
+              Zepto(function($) {
+                var parent = $('.quotes');
+                var elements = parent.find('ul li');
+                var maxHeights = elements.map(function(i, elem) {
+                  return elem.scrollHeight;
+                });
+                debugger;
+                var maxHeight = Math.max.apply(null, maxHeights);
+                elements.each(function(i, elem) {
+                  $(elem).css('height', maxHeight + 'px');
+                });
+                parent.css('height', maxHeight + 'px');
+
+                var i = 0;
+                setInterval(function() {
+                  elements.css('opacity', 0);
+                  $(elements[i % elements.length]).css('opacity', 1);
+                  i++;
+                }, 8000);
+              }); 
+            </script>
+          </div>
         </div>
       </div>
-      <div class="row content-section">
-        <div class="col-sm-6 content-teaser">
-          <div>
-            <h4>Web components with Glimmer.js</h4>
-            <p><a href="https://glimmerjs.com">Glimmer.js</a> can be used to build <strong>native web components</strong> for reuse in any frontend stack. This article goes deep into how and why to do that.</p>
-            <a href="https://simplabs.com/blog/2017/08/28/creating-web-components-with-glimmer.html" class="custom-button">learn more</a>
-          </div>
-        </div>
-        <div class="col-sm-6 content-teaser">
-          <div>
-            <h4>Feel the Glimmer at ParisJS</h4>
-            <p><a href="https://twitter.com/marcoow">@marcoow</a> will be speaking about the <strong>internals of Ember's Glimmer VM, <a href="https://glimmerjs.com">Glimmer.js</a></strong> and its role in the <strong>future of <a href="https://emberjs.com">Ember.js</a></strong> at the next <a href="https://www.meetup.com/Paris-js/events/244179664/">ParisJS</a> on Nov 29th.</p>
-            <a href="https://www.meetup.com/Paris-js/events/244179664/" class="custom-button">learn more</a>
-          </div>
-        </div>
+    </div>
+  </div>
+</div>
+
+<div class="client-banner">
+  <div class="container">
+    <div class="row">
+      <a href="http://www.hopskipdrive.com" title="HopSkipDrive"><i class="hopskipdrive"></i></a>
+      <a href="http://generali.de"  title="Generali"><i class="generali"></i></a>
+      <a href="https://www.robinhood.org/" title="The Robin Hood Foundation"><i class="robinhood"></i></a>
+      <a href="https://www.thetrainline.com/"  title="Trainline"><i class="trainline"></i></a>
+      <a href="http://terminapp.com" title="TerminApp"><i class="terminapp"></i></a>
+      <a href="http://medikompass.de"  title="Medikompass GmbH"><i class="medikompass"></i></a>
+      <a href="https://boldpoker.net/" title="Bold Poker"><i class="boldpoker"></i></a>
+      <a href="http://www.sauspiel.de"  title="Sauspiel GmbH"><i class="sauspiel"></i></a>
+      <a href="http://loconet.info"  title="LoCoNET"><i class="loconet"></i></a>
+      <a href="http://www.dim3.com/" title="DIM3"><i class="dim3"></i></a>
+      <a href=""><i class="scoreloop"></i></a>
       </div>
     </div>
   </div>
