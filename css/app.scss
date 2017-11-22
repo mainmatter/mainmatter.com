@@ -197,8 +197,7 @@ pre.highlight {
 .client-banner {
   text-align: center;
   position: relative;
-  width: 200%;
-  margin: 0 0 3% -50%;
+  margin-bottom: 3%;
 
   a {
     border: none;
@@ -644,6 +643,13 @@ pre.highlight {
       h2 {
         font-size: 36px;
       }
+    }
+  }
+
+  .client-banner {
+    a {
+      display: block;
+      margin-bottom: 5%;
     }
   }
 }
