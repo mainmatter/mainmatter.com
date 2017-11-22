@@ -78,7 +78,6 @@ form {
 }
 
 .custom-button {
-  background-color: $secondary-highlight-color;
   border-color: $primary-highlight-color;
   transition: color ease-in-out .15s, background-color ease-in-out .15s;
 
@@ -97,9 +96,11 @@ form {
   }
 
   &.send-button {
+    background-color: $secondary-highlight-color;
     color: $primary-highlight-color;
 
     &:hover {
+      background-color: $primary-highlight-color;
       color: $secondary-highlight-color;
     }
   }
