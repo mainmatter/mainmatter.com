@@ -78,6 +78,7 @@ form {
 }
 
 .custom-button {
+  background-color: $secondary-highlight-color;
   border-color: $primary-highlight-color;
   transition: color ease-in-out .15s, background-color ease-in-out .15s;
 
