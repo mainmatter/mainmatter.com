@@ -130,16 +130,43 @@ blockquote {
   }
 }
 
+form {
+  input, textarea {
+    margin: 0 0 20px 0;
+    border-width: 0;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    width: 100%;
+  }
+
+  input, textarea, button {
+    &:focus, &:active {
+      outline: none;
+    }
+  }
+
+  textarea {
+    resize: none;
+  }
+}
+
 pre.highlight {
   border: none;
   padding: 20px;
 }
 
-.custom-button {
+.custom-button, .custom-label {
   display: inline-block;
   border-width: 2px;
   border-style: solid;
-  padding: 5px 50px 5px 50px;
+}
+
+.custom-button {
+  padding: 5px 50px;
+}
+
+.custom-label {
+  padding: 5px 10px;
 }
 
 .secondary-banner {
@@ -301,14 +328,24 @@ pre.highlight {
   }
 }
 
-#map-canvas {
-  height: 250px;
-  margin: 0 0 10px;
+#contact-form {
+  textarea {
+    height: 100px;
+  }
+
+  .custom-label {
+    position: absolute;
+    margin-left: 5px;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+  }
 }
 
-.address > span {
-  display: block;
-  clear: both;
+.address, .contact {
+  & > span {
+    display: block;
+    clear: both;
+  }
 }
 
 .articles {

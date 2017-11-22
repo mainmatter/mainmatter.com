@@ -17,51 +17,79 @@ title: Contact
 <div class="container" id="main-section">
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-sm-12">
-      <div class="row content-section split-section separated">
-        <div class="col-sm-6">
+      <div class="row content-section split-section">
+        <div class="col-sm-12">
           <h3>Get in touch with us</h3>
         </div>
         <div class="col-sm-6">
-          <p>Send us an email or contact us on Twitter to discuss what we can do for you.</p>
-          <p><a href="mailto:info@simplabs.com?subject=Hi!" title="Email us" class="email-link"><i class="fa fa-envelope contact"></i> info@simplabs.com</a></p>
-          <p><a href="https://twitter.com/simplabs" title="@simplabs on Twitter" class="twitter-link"><i class="fa fa-twitter contact"></i> @simplabs</a></p>
-        </div>
-      </div>
+          <form id="contact-form">
+            <input type="text" name="name" placeholder="your name">
+            <input type="email" name="email" placeholder="your email">
+            <textarea name="message" placeholder="how can we help you?"></textarea>
+            <button class="custom-button send-button" type="submit">Send</button>
+            <span class="custom-label error">Please retry.</span>
+            <span class="custom-label success">Thanks, we'll be in touch!</span>
+          </form>
+          <script>
+            Zepto(function($) {
+              function displayLabel(label) {
+                label.css({ opacity: 1 });
+                setTimeout(function() {
+                  label.css({ opacity: 0 });
+                }, 3500);
+              }
 
-      <div class="row content-section split-section separated">
-        <div class="col-sm-6">
-          <h3>Munich Office</h3>
-        </div>
-        <div class="col-sm-6">
-          <p>Of course you're also welcome to <strong>visit us in our office in Munich, Germany.</strong></p>
-          <div id="map-canvas">
-            <script src="//maps.google.com/maps/api/js?sensor=false"></script>
-            <script>  
-            google.maps.event.addDomListener(window, 'load', function() {
-                var position = new google.maps.LatLng(48.1213732, 11.5723481);
-                var map      = new google.maps.Map(document.getElementById('map-canvas'), {
-                  zoom:             16,
-                  center:           position,
-                  mapTypeId:        google.maps.MapTypeId.ROADMAP,
-                  disableDefaultUI: true
-                });
-                var icon   = new google.maps.MarkerImage('/images/map-marker@2x.png', null, null, null, new google.maps.Size(20, 20));
-                var marker = new google.maps.Marker({
-                  map:       map,
-                  position:  position,
-                  clickable: false,
-                  icon:      icon
+              var form = $('#contact-form');
+              form.submit(function(event) {
+                event.preventDefault();
+
+                var button = form.find('button[type="submit"]');
+                button.prop('disabled', true);
+                button.text('Sending…');
+                var data = {
+                  name: form.find('[name="name"]').val(),
+                  email: $('[name="email"]').val(),
+                  message: $('[name="message"]').val()
+                };
+
+                $.ajax({
+                  type: 'POST',
+                  url: 'https://guqdu9qkgf.execute-api.eu-central-1.amazonaws.com/production',
+                  dataType: 'json',
+                  contentType: 'application/json',
+                  data: JSON.stringify(data),
+                  success: function() {
+                    var successLabel = form.find('.success');
+                    displayLabel(successLabel);
+                    form[0].reset();
+                  },
+                  error: function() {
+                    var successLabel = form.find('.error');
+                    displayLabel(successLabel);
+                  },
+                  complete: function() {
+                    button.prop('disabled', false);
+                    button.text('Send');
+                  }
                 });
               });
-            </script>
-          </div>
+            });
+          </script>
+        </div>
+        <div class="col-sm-6">
           <p>
             <span class="address">
               <span>simplabs GmbH</span>
-              <span>+49 89 462 565 03</span>
               <span>Claude-Lorrain-Str. 7</span>
               <span>81543 München</span>
               <span>Germany</span>
+            </span>
+          </p>
+          <p>
+            <span class="contact">
+              <span><i class="fa fa-phone"></i> +49 89 462 565 03</span>
+              <span><i class="fa fa-envelope"></i> <a href="mailto:info@simplabs.com?subject=Hi!" title="Email us" class="email-link">info@simplabs.com</a></span>
+              <span><i class="fa fa-twitter"></i> <a href="https://twitter.com/simplabs" title="@simplabs on Twitter" class="twitter-link">@simplabs</a></span>
             </span>
           </p>
         </div>

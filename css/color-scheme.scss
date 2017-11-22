@@ -11,6 +11,9 @@ $border-color: #eee;
 $code-background-color: #f5f6f7;
 $code-text-color: #000;
 
+$success-color: #5cb85c;
+$error-color: #d9534f;
+
 $ember-workshop-primary-background-color: #e7f2ef;
 $ember-workshop-primary-text-color: #e04a31;
 
@@ -42,6 +45,20 @@ h3, h4, h5 {
 
 code {
   color: $code-text-color;
+}
+
+form {
+  input, textarea {
+    border-bottom-color: $border-color;
+
+    &:focus {
+      border-bottom-color: $primary-highlight-color;
+    }
+
+    &::placeholder {
+      color: lighten($primary-text-color, 25%);
+    }
+  }
 }
 
 #main-menu {
@@ -77,6 +94,28 @@ code {
       color: $primary-highlight-color;
     }
   }
+
+  &.send-button {
+    color: $primary-highlight-color;
+
+    &:hover {
+      color: $secondary-highlight-color;
+    }
+  }
+}
+
+.custom-label {
+  color: $secondary-highlight-color;
+}
+
+.custom-label.success {
+  border-color: $success-color;
+  background-color: $success-color;
+}
+
+.custom-label.error {
+  border-color: $error-color;
+  background-color: $error-color;
 }
 
 #main-menu {

@@ -50,6 +50,12 @@ code {
   }
 }
 
+.address {
+  span:first-of-type {
+    font-weight: bold;
+  }
+}
+
 i.love {
   filter: none;
   -webkit-filter: grayscale(0);
@@ -79,7 +85,7 @@ h5 {
   font-weight: 300;
 }
 
-.custom-button {
+.custom-button, .custom-label {
   font-size: 12px;
   text-transform: uppercase;
 }
