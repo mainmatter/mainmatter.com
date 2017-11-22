@@ -44,6 +44,20 @@ code {
   color: $code-text-color;
 }
 
+form {
+  input, textarea {
+    border-bottom-color: $border-color;
+
+    &:focus {
+      border-bottom-color: $primary-highlight-color;
+    }
+
+    &::placeholder {
+      color: lighten($primary-text-color, 25%);
+    }
+  }
+}
+
 #main-menu {
   a {
     transition: color ease-in-out .15s;

@@ -50,6 +50,12 @@ code {
   }
 }
 
+.address {
+  span:first-of-type {
+    font-weight: bold;
+  }
+}
+
 i.love {
   filter: none;
   -webkit-filter: grayscale(0);

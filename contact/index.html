@@ -18,17 +18,18 @@ title: Contact
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-sm-12">
       <div class="row content-section split-section">
-        <div class="col-sm-6">
+        <div class="col-sm-12">
           <h3>Get in touch with us</h3>
-          <p>Please fill out our contact form.</p>
+        </div>
+        <div class="col-sm-6">
           <form id="contact-form">
-            <input type="text" id="name-input" name="name" placeholder=" Your name">
-            <input type="email" id="email-input" name="email" placeholder=" Your email">
-            <textarea id="message-input" name="message" placeholder=" Your message"></textarea>
+            <input type="text" name="name" placeholder="your name">
+            <input type="email" name="email" placeholder="your email">
+            <textarea name="message" placeholder="how can we help you?"></textarea>
             <button class="custom-button send-button" type="submit">Send</button>
           </form>
           <script>
-            $('#contact-form').submit(function (event) {
+            $('#contact-form').submit(function(event) {
               event.preventDefault()
              
               var data = {
@@ -54,20 +55,20 @@ title: Contact
             })
           </script>
         </div>
-        <div id="address" class="col-sm-6">
+        <div class="col-sm-6">
           <p>
             <span class="address">
-              <span><strong>simplabs GmbH</strong></span>
+              <span>simplabs GmbH</span>
               <span>Claude-Lorrain-Str. 7</span>
               <span>81543 München</span>
               <span>Germany</span>
             </span>
           </p>
           <p>
-            <span class="address">
-              <span>Call us: +49 89 462 565 03</span>
-              <span>Send us an email: <a href="mailto:info@simplabs.com?subject=Hi!" title="Email us" class="email-link">info@simplabs.com</a></span>
-              <span>Contact us via Twitter: <a href="https://twitter.com/simplabs" title="@simplabs on Twitter" class="twitter-link">@simplabs</a></span>
+            <span class="contact">
+              <span><i class="fa fa-phone"></i> +49 89 462 565 03</span>
+              <span><i class="fa fa-envelope"></i> <a href="mailto:info@simplabs.com?subject=Hi!" title="Email us" class="email-link">info@simplabs.com</a></span>
+              <span><i class="fa fa-twitter"></i> <a href="https://twitter.com/simplabs" title="@simplabs on Twitter" class="twitter-link">@simplabs</a></span>
             </span>
           </p>
           <div id="map-canvas">

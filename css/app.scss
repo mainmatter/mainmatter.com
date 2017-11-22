@@ -130,35 +130,21 @@ blockquote {
   }
 }
 
-#contact-form {
-  display: block;
-  float: left;
-
-  #name-input {
-    margin-bottom: 10px;
+form {
+  input, textarea {
+    margin: 0 0 20px 0;
+    border-width: 0;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
     width: 100%;
-    border: 1px solid rgba(166, 166, 166, 0.7);
+
+    &:focus {
+      outline: none;
+    }
   }
 
-  #email-input {
-    margin-bottom: 10px;
-    width: 100%;
-    border: 1px solid rgba(166, 166, 166, 0.7);
-  }
-
-  #message-input {
-    width: 100%;
-    min-height: 360px;
+  textarea {
     resize: none;
-    border-color: rgba(166, 166, 166, 0.7);
-  }
-
-  .send-button {
-    float: right;
-    border-radius: 0px;
-    font-size: 16px;
-    text-align: center;
-    padding: 3px 50px;
   }
 }
 
@@ -333,23 +319,22 @@ pre.highlight {
   }
 }
 
+#contact-form {
+  textarea {
+    height: 100px;
+  }
+}
+
 #map-canvas {
   height: 250px;
   margin: 0 0 10px;
 }
 
-#address {
-  p {
-    font-size: 14px;
-    &:first-of-type {
-      margin-top: 110px;
-    }
+.address, .contact {
+  & > span {
+    display: block;
+    clear: both;
   }
-}
-
-.address > span {
-  display: block;
-  clear: both;
 }
 
 .articles {
