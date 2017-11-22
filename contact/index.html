@@ -27,32 +27,53 @@ title: Contact
             <input type="email" name="email" placeholder="your email">
             <textarea name="message" placeholder="how can we help you?"></textarea>
             <button class="custom-button send-button" type="submit">Send</button>
+            <span class="custom-label error">Please retry.</span>
+            <span class="custom-label success">Thanks, we'll be in touch!</span>
           </form>
           <script>
-            $('#contact-form').submit(function(event) {
-              event.preventDefault()
-             
-              var data = {
-                name: $('#name-input').val(),
-                email: $('#email-input').val(),
-                message: $('#message-input').val()
+            Zepto(function($) {
+              function displayLabel(label) {
+                label.css({ opacity: 1 });
+                setTimeout(function() {
+                  label.css({ opacity: 0 });
+                }, 3500);
               }
-             
-              $.ajax({
-                type: 'POST',
-                url: 'https://guqdu9qkgf.execute-api.eu-central-1.amazonaws.com/production',
-                dataType: 'json',
-                contentType: 'application/json',
-                data: JSON.stringify(data),
-                success: function () {
-                  alert("Thank you! Your message has been successfully sent!");
-                  $('#contact-form')[0].reset();
-                },
-                error: function () {
-                  alert("Ooops, something went wrong!")
-                }
-              })
-            })
+
+              var form = $('#contact-form');
+              form.submit(function(event) {
+                event.preventDefault();
+
+                var button = form.find('button[type="submit"]');
+                button.prop('disabled', true);
+                button.text('Sending…');
+                var data = {
+                  name: form.find('[name="name"]').val(),
+                  email: $('[name="email"]').val(),
+                  message: $('[name="message"]').val()
+                };
+
+                $.ajax({
+                  type: 'POST',
+                  url: 'https://guqdu9qkgf.execute-api.eu-central-1.amazonaws.com/production',
+                  dataType: 'json',
+                  contentType: 'application/json',
+                  data: JSON.stringify(data),
+                  success: function() {
+                    var successLabel = form.find('.success');
+                    displayLabel(successLabel);
+                    form[0].reset();
+                  },
+                  error: function() {
+                    var successLabel = form.find('.error');
+                    displayLabel(successLabel);
+                  },
+                  complete: function() {
+                    button.prop('disabled', false);
+                    button.text('Send');
+                  }
+                });
+              });
+            });
           </script>
         </div>
         <div class="col-sm-6">
