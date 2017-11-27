@@ -8,19 +8,18 @@ twitter-handle: pangratz
 ---
 
 We recently improved the initial load time of an Ember.js app for mobile
-clients, by using [Ember Engines](http://ember-engines.com/) and extracting
-functionality and leveraging that to lazily loaded parts of the app's code. In
-this blog post we're going to show how we extracted the engine out of the app
-and discuss some smaller issues we ran into along the way and how we solved
-them. So let's dive right in!
+clients, by using [Ember Engines](http://ember-engines.com/) and leveraging
+that to lazily loaded parts of the app's code. In this blog post we're going to
+show how we extracted the engine out of the app and discuss some smaller issues
+we ran into along the way and how we solved them. So let's dive right in!
 
 <!--break-->
 
 #### Status quo
 
 The app is a mobile ticket counter for rail tickets. The basic flow through the
-app is as follows: a user enters an origin and arrival station and specifies
-the dates and companions of the journey. After a search is initiated the
+app is as follows: a user enters an departure and arrival station and specifies
+the dates and passengers of the journey. After a search is initiated the
 results are shown, a specific trip is chosen, details like seating preference
 and passenger details are entered, the payment is processed and at the end, the
 details of the booked trip are shown and the purchased tickets can be
@@ -56,7 +55,7 @@ hosting app. It is possible to pass in services from the hosting app but apart
 from that, engines don't have access to anything of the app which mounts the
 engine.
 In order for components, helpers and styles to be accessible from both the host
-app and the engine, those common element needs to be put into an addon, which
+app and the engine, those common elements need to be put into an addon, which
 then the app and the engine depend on.
 
 We're using an in repo addon for that:
