@@ -15,10 +15,10 @@ stages:
   description: "[JSON-API](http://jsonapi.org/) is a spec for JSON contracts between
     APIs and their clients. Because ember-data uses JSON-API by default, and as a
     guide for its internal data structures, it's useful to be familiar with it when
-    working with ember-data.\n\n> If you’ve ever argued with your team about the way
+    working with ember-data.\n\n If you’ve ever argued with your team about the way
     your JSON responses should be formatted, JSON API can be your anti-bikeshedding
-    tool.\n\n> By following shared conventions, you can increase productivity, take
-    advantage of generalized tooling, and focus on what matters: your application.\n\n>
+    tool.\n\n By following shared conventions, you can increase productivity, take
+    advantage of generalized tooling, and focus on what matters: your application.\n\n
     Clients built around JSON API are able to take advantage of its features around
     efficiently caching responses, sometimes eliminating network requests entirely.\n\n "
   duration: 60
