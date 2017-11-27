@@ -434,6 +434,14 @@ pre.highlight {
   h3 {
     text-align: left;
   }
+
+  .ember-images {
+    img {
+      display: block;
+      float: left;
+      margin-bottom: 40px;
+    }
+  }
 }
 
 .workshop {
