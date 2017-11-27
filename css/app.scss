@@ -6,12 +6,9 @@
 @import 'icons';
 @import 'syntax';
 
+
 #main-menu {
   margin-bottom: 0;
-
-  li.page {
-    width: 8%;
-  }
 
   a {
     padding: 15px 0;
@@ -42,6 +39,7 @@
   .navbar-nav > li {
     float: none;
     display: inline-block;
+    width: 10%;
   }
 
   .navbar-header {
@@ -537,6 +535,14 @@ pre.highlight {
 
 .error-page {
   padding-top: 100px;
+}
+
+@media screen and (max-width: 1024px) {
+  #main-menu {
+    .navbar-nav > li {
+      width: auto;
+    }
+  }
 }
 
 @media screen and (max-width: 767px) {
