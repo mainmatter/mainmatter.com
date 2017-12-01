@@ -433,16 +433,25 @@ pre.highlight {
 .clients {
   margin-top: 5%;
 
-  a {
-    border: none;
-  }
+  table {
+    width: 100%;
+    table-layout: fixed;
 
-  i {
-    display: inline-block;
-    vertical-align: middle;
-    background-size: 70%;
-    max-width: 100px;
-    margin-right: 3%;
+    td {
+      width: 100px;
+      text-align: center;
+
+      a {
+        border: none;
+      }
+
+      i {
+        display: inline-block;
+        vertical-align: middle;
+        background-size: 70%;
+        max-width: 100px;
+      }
+    }
   }
 }
 
