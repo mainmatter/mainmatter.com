@@ -197,15 +197,24 @@ pre.highlight {
   position: relative;
   margin-bottom: 3%;
 
-  a {
-    border: none;
-    display: inline-block;
-    margin-right: 20px;
+  table {
+    width: 100%;
+    table-layout: fixed;
 
-    i {
-      vertical-align: middle;
-      background-size: 100%;
-      max-width: 100px;
+    td {
+      width: 100px;
+      text-align: center;
+
+      a {
+        border: none;
+      }
+
+      i {
+        display: inline-block;
+        vertical-align: middle;
+        background-size: 100%;
+        max-width: 90px;
+      }
     }
   }
 }
