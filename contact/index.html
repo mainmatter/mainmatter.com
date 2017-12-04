@@ -47,65 +47,67 @@ title: Contact
               var email = form.find('[name="email"]').val();
               var message = form.find('[name="message"]').val();
 
-              function removeWarning() {
-                document.getElementById(this.id + "_error").innerHTML = "";
-              }
-
-              name.onkeyup = removeWarning;
-              email.onkeyup = removeWarning;
-              message.onkeyup = removeWarning;
-
-              form.submit(function(event) {
+              function nameValidation(name) {
                 if (name == "" || name == null) {
                   name_error = "Please enter your name.";
                   document.getElementById("name_error").innerHTML = name_error;
-
-                  event.preventDefault();
+                  return false;
                 }
+                return true;
+              }
 
+              function emailValidation(email) {
                 if (email == "" || email == null) {
                   email_error = "Please enter a valid email address.";
                   document.getElementById("email_error").innerHTML = email_error;
-
-                  event.preventDefault();
+                  return false;
                 }
+                return true;
+              }
 
+              function messageValidation(message) {
                 if (message == "" || message == null) {
                   message_error = "Please enter your message.";
                   document.getElementById("message_error").innerHTML = message_error;
+                  return false;
+                }
+                return true;
+              }
 
+              form.submit(function(event) {
+                if ((nameValidation(name) == true) && (emailValidation(email) == true) && (messageValidation(message) == true)) {
+                  var button = form.find('button[type="submit"]');
+                  button.prop('disabled', true);
+                  button.text('Sending…');
+                  var data = {
+                    name: form.find('[name="name"]').val(),
+                    email: $('[name="email"]').val(),
+                    message: $('[name="message"]').val()
+                  };
+
+                  $.ajax({
+                    type: 'POST',
+                    url: 'https://guqdu9qkgf.execute-api.eu-central-1.amazonaws.com/production',
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    data: JSON.stringify(data),
+                    success: function() {
+                      var successLabel = form.find('.success');
+                      displayLabel(successLabel);
+                      form[0].reset();
+                    },
+                    error: function() {
+                      var successLabel = form.find('.error');
+                      displayLabel(successLabel);
+                    },
+                    complete: function() {
+                      button.prop('disabled', false);
+                      button.text('Send');
+                    }
+                  });
+                } else {
                   event.preventDefault();
                 }
-
-                var button = form.find('button[type="submit"]');
-                button.prop('disabled', true);
-                button.text('Sending…');
-                var data = {
-                  name: form.find('[name="name"]').val(),
-                  email: $('[name="email"]').val(),
-                  message: $('[name="message"]').val()
-                };
-
-                $.ajax({
-                  type: 'POST',
-                  url: 'https://guqdu9qkgf.execute-api.eu-central-1.amazonaws.com/production',
-                  dataType: 'json',
-                  contentType: 'application/json',
-                  data: JSON.stringify(data),
-                  success: function() {
-                    var successLabel = form.find('.success');
-                    displayLabel(successLabel);
-                    form[0].reset();
-                  },
-                  error: function() {
-                    var successLabel = form.find('.error');
-                    displayLabel(successLabel);
-                  },
-                  complete: function() {
-                    button.prop('disabled', false);
-                    button.text('Send');
-                  }
-                });
               });
             });
           </script>
