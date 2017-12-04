@@ -3,7 +3,7 @@ layout: workshop
 title: Modern JavaScript
 weight: 3
 permalink: "/training/2017-05-12-modern-javascript"
-category: Front End Development
+category: Front End
 description: JavaScript is flexible enough to do just about anything, and while this
   is one of its great strengths, it's also what makes best practices less clear. This
   deep dive into the fundamentals and latest advances in the language will help you

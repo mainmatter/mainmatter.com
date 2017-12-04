@@ -3,7 +3,7 @@ layout: workshop
 title: Ember Basics
 weight: 1
 permalink: "/training/2016-12-17-ember-basics"
-category: Front End Development
+category: Front End
 description: "A thorough introduction to this opinionated, productivity-oriented web
   framework, covering all the basics you need to know, in order to get up and running
   successfully!\n\nThis course serves as a solid foundation for a deep understanding

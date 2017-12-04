@@ -3,7 +3,7 @@ layout: workshop
 title: Sass Fundamentals
 weight: 3
 permalink: "/training/2017-02-16-sass-fundamentals"
-category: Front End Development
+category: Front End
 description: Sass addresses many of the maintainability problems we typically experience
   when writing CSS, and makes writing styles fun again! This basic course will help
   you make the most out of this awesome preprocessor.
