@@ -47,26 +47,12 @@ title: Contact
               var email = form.find('[name="email"]').val();
               var message = form.find('[name="message"]').val();
 
-              function nameValidation(name) {
-                if (name == "" || name == null) {
+              function formValidation(name, email, message) {
+                if((name == "") && (email == "") && (message == "")) {
                   name_error = "Please enter your name.";
                   document.getElementById("name_error").innerHTML = name_error;
-                  return false;
-                }
-                return true;
-              }
-
-              function emailValidation(email) {
-                if (email == "" || email == null) {
                   email_error = "Please enter a valid email address.";
                   document.getElementById("email_error").innerHTML = email_error;
-                  return false;
-                }
-                return true;
-              }
-
-              function messageValidation(message) {
-                if (message == "" || message == null) {
                   message_error = "Please enter your message.";
                   document.getElementById("message_error").innerHTML = message_error;
                   return false;
@@ -75,7 +61,7 @@ title: Contact
               }
 
               form.submit(function(event) {
-                if ((nameValidation(name) == true) && (emailValidation(email) == true) && (messageValidation(message) == true)) {
+                if (formValidation(name, email, message) == true) {
                   var button = form.find('button[type="submit"]');
                   button.prop('disabled', true);
                   button.text('Sending…');
