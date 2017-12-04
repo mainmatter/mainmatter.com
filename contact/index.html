@@ -23,9 +23,12 @@ title: Contact
         </div>
         <div class="col-sm-6">
           <form id="contact-form">
-            <input type="text" name="name" placeholder="your name">
-            <input type="email" name="email" placeholder="your email">
-            <textarea name="message" placeholder="how can we help you?"></textarea>
+            <span class="error"><p id="name_error"></p></span>
+            <input type="text" id="name" name="name" placeholder="your name">
+            <span class="error"><p id="email_error"></p></span>
+            <input type="email" id="email" name="email" placeholder="your email">
+            <span class="error"><p id="message_error"></p></span>
+            <textarea name="message" id="message" placeholder="how can we help you?"></textarea>
             <button class="custom-button send-button" type="submit">Send</button>
             <span class="custom-label error">Please retry.</span>
             <span class="custom-label success">Thanks, we'll be in touch!</span>
@@ -40,8 +43,39 @@ title: Contact
               }
 
               var form = $('#contact-form');
+              var name = form.find('[name="name"]').val();
+              var email = form.find('[name="email"]').val();
+              var message = form.find('[name="message"]').val();
+
+              function removeWarning() {
+                document.getElementById(this.id + "_error").innerHTML = "";
+              }
+
+              name.onkeyup = removeWarning;
+              email.onkeyup = removeWarning;
+              message.onkeyup = removeWarning;
+
               form.submit(function(event) {
-                event.preventDefault();
+                if (name == "" || name == null) {
+                  name_error = "Please enter your name.";
+                  document.getElementById("name_error").innerHTML = name_error;
+
+                  event.preventDefault();
+                }
+
+                if (email == "" || email == null) {
+                  email_error = "Please enter a valid email address.";
+                  document.getElementById("email_error").innerHTML = email_error;
+
+                  event.preventDefault();
+                }
+
+                if (message == "" || message == null) {
+                  message_error = "Please enter your message.";
+                  document.getElementById("message_error").innerHTML = message_error;
+
+                  event.preventDefault();
+                }
 
                 var button = form.find('button[type="submit"]');
                 button.prop('disabled', true);
