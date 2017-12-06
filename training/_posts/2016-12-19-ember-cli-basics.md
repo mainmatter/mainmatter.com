@@ -3,7 +3,7 @@ layout: workshop
 title: Ember-CLI Basics
 weight: 1
 permalink: "/training/2016-12-19-ember-cli-basics"
-category: Front End Development
+category: Front End
 description: "Ember-cli is truly a world class build tool, and it's more capable and
   versatile than most people think! \n\nWe need look no further for proof of its impact
   than angular-cli and react-create-app, as continuations of the idea that Single

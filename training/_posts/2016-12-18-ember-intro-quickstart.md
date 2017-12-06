@@ -3,7 +3,7 @@ layout: workshop
 title: Ember Intro Quickstart
 weight: 1
 permalink: "/training/2016-12-18-ember-intro-quickstart"
-category: Front End Development
+category: Front End
 description: |-
   In this abbreviated intro course, you'll get a taste for what the Ember.js framework has to offer. We'll focus on two of the most important aspects of building a single page app: **routing and components**.
 
