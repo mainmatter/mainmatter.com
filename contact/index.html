@@ -119,6 +119,9 @@ title: Contact
                     complete: function() {
                       button.prop('disabled', false);
                       button.text('Send');
+                      setTimeout(function() {
+                        location.reload(true);
+                      }, 1000);
                     }
                   });
                 } else {
