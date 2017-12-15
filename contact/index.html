@@ -23,12 +23,9 @@ title: Contact
         </div>
         <div class="col-sm-6">
           <form id="contact-form">
-            <span class="error"><p id="name_error"></p></span>
-            <input type="text" id="name" name="name" placeholder="your name">
-            <span class="error"><p id="email_error"></p></span>
-            <input type="email" id="email" name="email" placeholder="your email">
-            <span class="error"><p id="message_error"></p></span>
-            <textarea name="message" id="message" placeholder="how can we help you?"></textarea>
+            <input type="text" name="name" placeholder="your name" required>
+            <input type="email" name="email" placeholder="your email" required>
+            <textarea name="message" placeholder="how can we help you?" required></textarea>
             <button class="custom-button send-button" type="submit">Send</button>
             <span class="custom-label error">Please retry.</span>
             <span class="custom-label success">Thanks, we'll be in touch!</span>
@@ -43,98 +40,38 @@ title: Contact
               }
 
               var form = $('#contact-form');
-              var name = form.find('[name="name"]');
-              var email = form.find('[name="email"]');
-              var message = form.find('[name="message"]');
-
-              function nameValidation(name) {
-                dataIsValid = true;
-                if(!name.val().length) {
-                  name_error = "Please enter your name.";
-                  document.getElementById("name_error").innerHTML = name_error;
-                  dataIsValid = false;
-                }
-                return dataIsValid;
-              }
-
-              function emailValidation(email) {
-                dataIsValid = true;
-                if(!email.val().length) {
-                  email_error = "Please enter a valid email address.";
-                  document.getElementById("email_error").innerHTML = email_error;
-                  dataIsValid = false;
-                }
-                return dataIsValid;
-              }
-
-              function messageValidation(message) {
-                dataIsValid = true;
-                if(!message.val().length) {
-                  message_error = "Please enter your message.";
-                  document.getElementById("message_error").innerHTML = message_error;
-                  dataIsValid = false;
-                }
-                return dataIsValid;
-              }
-
-              function formValidation() {
-                dataIsValid = true;
-                if((!nameValidation(name)) || (!emailValidation(email)) || (!messageValidation(message))){
-                  dataIsValid = false;
-                }
-                return dataIsValid;
-              }
-
               form.submit(function(event) {
                 event.preventDefault();
 
-                if(formValidation()) {
-                  var button = form.find('button[type="submit"]');
-                  button.prop('disabled', true);
-                  button.text('Sending…');
-                  var data = {
-                    name: form.find('[name="name"]').val(),
-                    email: $('[name="email"]').val(),
-                    message: $('[name="message"]').val()
-                  };
-                  document.getElementById("name_error").style.display = 'none';
-                  document.getElementById("email_error").style.display = 'none';
-                  document.getElementById("message_error").style.display = 'none';
+                var button = form.find('button[type="submit"]');
+                button.prop('disabled', true);
+                button.text('Sending…');
+                var data = {
+                  name: form.find('[name="name"]').val(),
+                  email: $('[name="email"]').val(),
+                  message: $('[name="message"]').val()
+                };
 
-                  $.ajax({
-                    type: 'POST',
-                    url: 'https://guqdu9qkgf.execute-api.eu-central-1.amazonaws.com/production',
-                    dataType: 'json',
-                    contentType: 'application/json',
-                    data: JSON.stringify(data),
-                    success: function() {
-                      var successLabel = form.find('.success');
-                      displayLabel(successLabel);
-                      form[0].reset();
-                    },
-                    error: function() {
-                      var successLabel = form.find('.error');
-                      displayLabel(successLabel);
-                    },
-                    complete: function() {
-                      button.prop('disabled', false);
-                      button.text('Send');
-                      setTimeout(function() {
-                        location.reload(true);
-                      }, 1000);
-                    }
-                  });
-                } else {
-                  if(nameValidation(name)) {
-                    document.getElementById("name_error").style.display = 'none';
+                $.ajax({
+                  type: 'POST',
+                  url: 'https://guqdu9qkgf.execute-api.eu-central-1.amazonaws.com/production',
+                  dataType: 'json',
+                  contentType: 'application/json',
+                  data: JSON.stringify(data),
+                  success: function() {
+                    var successLabel = form.find('.success');
+                    displayLabel(successLabel);
+                    form[0].reset();
+                  },
+                  error: function() {
+                    var successLabel = form.find('.error');
+                    displayLabel(successLabel);
+                  },
+                  complete: function() {
+                    button.prop('disabled', false);
+                    button.text('Send');
                   }
-                  if(emailValidation(email)) {
-                    document.getElementById("email_error").style.display = 'none';
-                  }
-                  if(messageValidation(message)) {
-                    document.getElementById("message_error").style.display = 'none';
-                  }
-                }
+                });
               });
             });
           </script>
