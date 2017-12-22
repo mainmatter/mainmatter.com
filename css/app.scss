@@ -281,34 +281,6 @@ pre.highlight {
 }
 
 #main-section.index {
-  .client-logos {
-    i {
-      opacity: 1;
-      transition: opacity 0.15s ease-in-out;
-    }
-
-    a {
-      position: absolute;
-      display: block;
-      width: 100%;
-      top: calc(50% - 1em - 80px);
-      z-index: 9999;
-      padding: 50px;
-      opacity: 0;
-      transition: opacity 0.15s ease-in-out;
-    }
-
-    &:hover {
-      i {
-        opacity: 0.15;
-      }
-
-      a {
-        opacity: 1;
-      }
-    }
-  }
-
   .content-section:first-of-type {
     p {
       width: 83.33333333%;
