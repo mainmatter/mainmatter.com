@@ -7,6 +7,7 @@ gems:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-feed
+  - jekyll-redirect-from
 
 markdown: kramdown
 highlighter: rouge
@@ -21,8 +22,6 @@ navigation:
     url: /services/
   - title: Work
     url: /work/
-  - title: Training
-    url: /training/
   - title: About
     url: /about/
   - title: Clients

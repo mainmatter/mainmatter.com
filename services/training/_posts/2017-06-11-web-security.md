@@ -2,7 +2,8 @@
 layout: workshop
 title: Web Security
 weight: 3
-permalink: "/training/2017-06-11-web-security"
+permalink: "/services/training/2017-06-11-web-security"
+redirect_from: "/training/2017-06-11-web-security"
 category: Security
 description: Security is an increasingly important part of building modern web applications,
   but developers often fall victim to the pressure of tight deadlines. In this course,

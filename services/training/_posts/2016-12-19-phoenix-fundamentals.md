@@ -2,7 +2,8 @@
 layout: workshop
 title: Phoenix Fundamentals
 weight: 2
-permalink: "/training/2016-12-19-phoenix-fundamentals"
+permalink: "/services/training/2016-12-19-phoenix-fundamentals"
+redirect_from: "/training/2016-12-19-phoenix-fundamentals"
 category: Back End & Full Stack
 description: |-
   Phoenix makes building robust, high-performance web applications easier and more fun than you ever thought possible.

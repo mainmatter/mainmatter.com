@@ -2,7 +2,8 @@
 layout: workshop
 title: Phoenix for Rubyists
 weight: 2
-permalink: "/training/2017-01-17-phoenix-for-rubyists"
+permalink: "/services/training/2017-01-17-phoenix-for-rubyists"
+redirect_from: "/training/2017-01-17-phoenix-for-rubyists"
 category: Back End & Full Stack
 description: Phoenix Framework draws heavily upon important foundations in the opinionated
   web frameworks that came before it, like Ruby on Rails.

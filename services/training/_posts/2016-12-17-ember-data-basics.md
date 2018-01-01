@@ -2,7 +2,8 @@
 layout: workshop
 title: Ember-Data Basics
 weight: 1
-permalink: "/training/2016-12-17-ember-data-basics"
+permalink: "/services/training/2016-12-17-ember-data-basics"
+redirect_from: "/training/2016-12-17-ember-data-basics"
 category: Front End
 description: |-
   Harness the power of the official persistence library of the Ember.js framework.

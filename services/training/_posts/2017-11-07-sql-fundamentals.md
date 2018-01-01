@@ -2,7 +2,8 @@
 layout: workshop
 title: SQL Fundamentals
 weight: 3
-permalink: "/training/2017-11-07-sql-fundamentals"
+permalink: "/services/training/2017-11-07-sql-fundamentals"
+redirect_from: "/training/2017-11-07-sql-fundamentals"
 category: Back End & Full Stack
 description: Most web applications rely on storing their data in a relational database,
   consisting of tables which are comprised of columns and rows. PostgreSQL, MySQL
@@ -231,7 +232,7 @@ stages:
     item_type: lecture
     start_time: '9:30'
     duration: 30
-  - title: Boost JOIN performance via INDEXes
+  - title: 'EXERCISE: Boost JOIN performance via INDEXes'
     description: 'You may have noticed that our database query times increased over
       the last few exercises. One contributor to this problem has to do with the JOINs
       we added in exercise 4. Adding an index will tell the database to keep track
