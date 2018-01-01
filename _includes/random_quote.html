@@ -1,17 +1,13 @@
-<!-- TODO: move quotes into a collection -->
 <div id="random-quote"></div>
-{% capture embedd %}
-  {% include quotes/embedd.html %}
-{% endcapture %}
-{% capture timify %}
-  {% include quotes/timify.html %}
-{% endcapture %}
-{% capture trainline %}
-  {% include quotes/trainline.html %}
-{% endcapture %}
 <script>
   Zepto(function($) {
-    var quotes = new Array('{{ embedd | strip_newlines | replace: "'", "&#39;" }}', '{{ timify | strip_newlines | replace: "'", "&#39;" }}', '{{ trainline | strip_newlines | replace: "'", "&#39;" }}');
+    var quotes = [];
+    {% for quote in site.quotes %}
+      {% capture _quote %}
+        {{ quote.content }}
+      {% endcapture %}
+      quotes.push('{{ _quote | strip_newlines | replace: "'", "&#39;" }}');
+    {% endfor %}
     var quote = quotes[Math.floor(Math.random() * quotes.length)];
     $('#random-quote').html(quote);
   });
