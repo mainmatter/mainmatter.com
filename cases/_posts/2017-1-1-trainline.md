@@ -21,10 +21,7 @@ permalink: /cases/trainline
   <div class="container">
     <div class="row content-section">
       <div class="col-xs-12 col-md-10 col-md-offset-1">
-        <blockquote>
-          <p>It has been an absolute pleasure to work with simplabs. Their team of experienced JavaScript engineers quickly slotted in to our in-house development teams. Their expertise with modern, agile software development best practices and tools meant they were able to work with our processes to deliver fantastic customer experiences.</p>
-          <footer><cite>Mark Holt, Trainline CTO</cite></footer>
-        </blockquote>
+        {% include_relative quotes/trainline.html %}
       </div>
     </div>
   </div>
