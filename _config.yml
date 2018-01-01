@@ -30,6 +30,10 @@ navigation:
   - title: Blog
     url: /blog/
 
+collections:
+  quotes:
+    output: false
+
 title: simplabs
 author: simplabs
 description: Solid engineering for ambitious projects
