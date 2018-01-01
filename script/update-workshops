@@ -35,13 +35,14 @@ begin
     end
   
     course_yaml = {
-      layout:      'workshop',
-      title:       title,
-      weight:      weight, 
-      permalink:   "/training/#{slug}",
-      category:    category,
-      description: description,
-      image:       "/#{image_name}"
+      layout:        'workshop',
+      title:         title,
+      weight:        weight, 
+      permalink:     "/services/training/#{slug}",
+      redirect_from: "/training/#{slug}",
+      category:      category,
+      description:   description,
+      image:         "/#{image_name}"
     }
   
     stage_data = HTTParty.get("https://api.mike.works/api/v1/courses/#{id}/stages", format: :json).parsed_response.deep_symbolize_keys
@@ -76,7 +77,7 @@ begin
       stage_yaml
     end
   
-    filename = File.expand_path("../../training/_posts/#{slug}.md", __FILE__)
+    filename = File.expand_path("../../services/training/_posts/#{slug}.md", __FILE__)
     File.open(filename, 'w') do |file|
       file << course_yaml.deep_stringify_keys.to_yaml
       file << "---"

@@ -2,7 +2,8 @@
 layout: workshop
 title: Progressive Web Fundamentals
 weight: 3
-permalink: "/training/2017-01-20-progressive-web-fundamentals"
+permalink: "/services/training/2017-01-20-progressive-web-fundamentals"
+redirect_from: "/training/2017-01-20-progressive-web-fundamentals"
 category: Front End
 description: Progressive Web App technologies let you delight your users with the
   best modern browsers have to offer, without sacrificing compatibility for legacy

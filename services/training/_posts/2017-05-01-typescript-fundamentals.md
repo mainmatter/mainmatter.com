@@ -2,7 +2,8 @@
 layout: workshop
 title: TypeScript Fundamentals
 weight: 3
-permalink: "/training/2017-05-01-typescript-fundamentals"
+permalink: "/services/training/2017-05-01-typescript-fundamentals"
+redirect_from: "/training/2017-05-01-typescript-fundamentals"
 category: Front End
 description: Adding strong typing to large JavaScript apps with TypeScript helps reduce
   bugs, and keep developers on the performant and maintainable path. In this course,
