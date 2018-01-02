@@ -137,3 +137,15 @@ i.jessica {
 i.andy {
   @include icon("/images/authors/andy", "jpg", 100px, 100px);
 }
+
+#main-menu {
+  i.simplabs {
+    @include icon("/images/logo", "png", 100px, 17px);
+  }
+
+  &.scrolled {
+    i.simplabs {
+      @include icon("/images/logo-white", "png", 100px, 17px);
+    }
+  }
+}

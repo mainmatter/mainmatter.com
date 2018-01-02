@@ -80,7 +80,12 @@ table {
 }
 
 #main-menu {
+  transition: background-color 0.25s linear;
+  background-color: $primary-background-color;
+
   a {
+    color: $primary-text-color;
+    background-color: transparent;
     transition: color ease-in-out .15s;
 
     span {
@@ -88,8 +93,25 @@ table {
     }
 
     &:hover, &.active {
+      color: $primary-highlight-color;
+      border-bottom-color: $primary-highlight-color;
+
       span {
         border-bottom-color: $primary-highlight-color;
+      }
+    }
+  }
+
+  &.scrolled {
+    background-color: $primary-highlight-color;
+
+    a {
+      color: $secondary-highlight-color;
+
+      &.active {
+        span {
+          border-bottom-color: $secondary-highlight-color;
+        }
       }
     }
   }
@@ -136,24 +158,6 @@ table {
 .custom-label.error {
   border-color: $error-color;
   background-color: $error-color;
-}
-
-#main-menu {
-  background-color: $primary-background-color;
-
-  a {
-    color: $primary-text-color;
-
-    &:hover, &.active { 
-      color: $primary-highlight-color;
-      background-color: $primary-background-color;
-      border-bottom-color: $primary-highlight-color;
-
-      span {
-        border-bottom-color: $primary-highlight-color;
-      }
-    }
-  }
 }
 
 #footer {
