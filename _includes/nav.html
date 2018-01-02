@@ -13,23 +13,23 @@
           </label>
         </div>
         <input type="checkbox" id="menu-toggle" class="hidden"/>
-          <ul class="nav navbar-nav">
-            <li class="navbar-left">
-              <a class="navbar-brand" href="/">
-                <i class="simplabs"></i>
-              </a>
-            </li>
-            <li class="page">
-              <a href="/services/" class="{% if page.url contains "/services/" %}active{% endif %}"><span>Services</span></a>
-            </li>
-            <li class="page">
-              <a href="/work/" class="{% if page.url contains "/work/" %}active{% endif %}"><span>Work</span></a>
-            </li>
-            <li class="page">
-              <a href="/about/" class="{% if page.url contains "/about/" %}active{% endif %}"><span>About</span></a>
-            </li>
-            <li class="navbar-right"><a href="/contact/">Contact Us</a></li>
-          </ul>
+        <ul class="nav navbar-nav">
+          <li class="navbar-left">
+            <a class="navbar-brand" href="/">
+              <i class="simplabs"></i>
+            </a>
+          </li>
+          <li class="page">
+            <a href="/services/" class="{% if page.url contains "/services/" %}active{% endif %}"><span>Services</span></a>
+          </li>
+          <li class="page">
+            <a href="/work/" class="{% if page.url contains "/work/" %}active{% endif %}"><span>Work</span></a>
+          </li>
+          <li class="page">
+            <a href="/about/" class="{% if page.url contains "/about/" %}active{% endif %}"><span>About</span></a>
+          </li>
+          <li class="navbar-right"><a href="/contact/">Contact Us</a></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -43,6 +43,6 @@
   	  } else {
   	    $('#main-menu').removeClass('scrolled');
   	  }
-    })
+    });
   });
 </script>
