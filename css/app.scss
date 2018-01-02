@@ -210,13 +210,27 @@ pre.highlight {
     	margin-top: 19px;
     }
   }
-  
-  ul {
+
+  .navbar-nav {
 
     li {
+      float: none;
+
+      &:first-child {
+        padding-top: 10px;
+      }
+
+      &:last-child {
+        padding-bottom: 10px;
+      }
 
       a {
         border: none;
+      }
+
+      a, span {
+        display: block;
+        padding: 5px 15px;
       }
     }
   }
