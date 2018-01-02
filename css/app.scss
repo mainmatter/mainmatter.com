@@ -6,8 +6,29 @@
 @import 'icons';
 @import 'syntax';
 
+body {
+  padding-top: 50px;
+}
+
 #main-menu {
   margin-bottom: 0;
+
+  i.simplabs {
+    filter: none;
+    -webkit-filter: none;
+  }
+
+  &.scrolled {
+    i.simplabs {
+      filter: gray;
+      -webkit-filter: grayscale(1);
+
+      &:hover {
+        filter: none;
+        -webkit-filter: none;
+      }
+    }
+  }
 
   li.page {
     width: 8%;
@@ -26,6 +47,7 @@
       span {
         border-bottom-width: 2px;
         border-bottom-style: solid;
+        transition: border-bottom-color 0.25s linear;
       }
     }
   }

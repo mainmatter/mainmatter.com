@@ -1,11 +1,11 @@
-<nav id="main-menu" class="navbar navbar-static-top" role="navigation">
+<nav id="main-menu" class="navbar navbar-static-top navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-xs-12">
         <div class="navbar-header">
           <span class="navbar-left">
             <a class="navbar-brand" href="/">
-              <img src="/images/logo.png" srcset="/images/logo@2x.png 2x" alt="simplabs logo">
+              <i class="simplabs"></i>
             </a>
           </span>
           <label for="menu-toggle" class="navbar-toggle collapsed">
@@ -16,7 +16,7 @@
           <ul class="nav navbar-nav">
             <li class="navbar-left">
               <a class="navbar-brand" href="/">
-                <img src="/images/logo.png" srcset="/images/logo@2x.png 2x" alt="simplabs logo">
+                <i class="simplabs"></i>
               </a>
             </li>
             <li class="page">
@@ -34,3 +34,15 @@
     </div>
   </div>
 </nav>
+<script type="text/javascript">
+  Zepto(function($) {
+    $(window).scroll(function(){
+    	var scroll = $(window).scrollTop();
+  	  if (scroll > 50) {
+  	    $('#main-menu').addClass('scrolled');
+  	  } else {
+  	    $('#main-menu').removeClass('scrolled');
+  	  }
+    })
+  });
+</script>
