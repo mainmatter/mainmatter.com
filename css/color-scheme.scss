@@ -108,9 +108,25 @@ table {
     a {
       color: $secondary-highlight-color;
 
-      &.active {
+      &:hover, &.active {
         span {
           border-bottom-color: $secondary-highlight-color;
+        }
+      }
+    }
+
+    li.page {
+      .nav-hover {
+        background-color: $primary-highlight-color;
+
+        a {
+          color: $secondary-highlight-color;
+
+          &.active {
+            span {
+              border-bottom-color: $secondary-highlight-color;
+            }
+          }
         }
       }
     }
