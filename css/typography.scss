@@ -127,21 +127,6 @@ h5 {
   }
 }
 
-.secondary-banner {
-  &.workshop-banner {
-    text-align: center;
-
-    a {
-      font-size: 22px;
-      border-bottom: none;
-
-      span, small {
-        border-bottom: 1px solid transparent;
-      }
-    }
-  }
-}
-
 #main-section.index {
   .content-section:first-of-type {
     p {
