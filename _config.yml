@@ -17,14 +17,6 @@ kramdown:
 
 excerpt_separator: <!--break-->
   
-navigation:
-  - title: Services
-    url: /services/
-  - title: Work
-    url: /work/
-  - title: About
-    url: /about/
-
 collections:
   quotes:
     output: false

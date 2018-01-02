@@ -19,15 +19,15 @@
                 <img src="/images/logo.png" srcset="/images/logo@2x.png 2x" alt="simplabs logo">
               </a>
             </li>
-            {% for link in site.navigation %}
-              {% assign active = false %}
-              {% if page.url contains link.url %}
-                {% assign active = 'active' %}
-              {% endif %}
-              <li class="page">
-                <a href="{{link.url}}" class="{{active}}"><span>{{link.title}}</span></a>
-              </li>
-            {% endfor %}
+            <li class="page">
+              <a href="/services/" class="{% if page.url contains "/services/" %}active{% endif %}"><span>Services</span></a>
+            </li>
+            <li class="page">
+              <a href="/work/" class="{% if page.url contains "/work/" %}active{% endif %}"><span>Work</span></a>
+            </li>
+            <li class="page">
+              <a href="/about/" class="{% if page.url contains "/about/" %}active{% endif %}"><span>About</span></a>
+            </li>
             <li class="navbar-right"><a href="/contact/">Contact Us</a></li>
           </ul>
       </div>
