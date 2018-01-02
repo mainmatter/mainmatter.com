@@ -102,6 +102,12 @@ table {
     }
   }
 
+  li.page {
+    .nav-hover {
+      background-color: $primary-background-color;
+    }
+  }
+
   &.scrolled {
     background-color: $primary-highlight-color;
 

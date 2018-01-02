@@ -31,7 +31,35 @@ body {
   }
 
   li.page {
-    width: 8%;
+    padding: 0 20px;
+    position: relative;
+
+    .nav-hover {
+      transition: opacity 0.15s ease-in-out, visibility 0.15s ease-in-out, background-color 0.25s linear;
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      list-style-type: none;
+      left: calc(-50% + 10px);
+      top: 50px;
+      padding: 5px 0;
+
+      li {
+        margin: 0;
+
+        a {
+          display: block;
+          padding: 5px 10px;
+        }
+      }
+    }
+
+    &:hover {
+      .nav-hover {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 
   a {
