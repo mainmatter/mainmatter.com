@@ -24,8 +24,6 @@ navigation:
     url: /work/
   - title: About
     url: /about/
-  - title: Clients
-    url: /clients/
   - title: Blog
     url: /blog/
 
