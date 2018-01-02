@@ -24,8 +24,6 @@ navigation:
     url: /work/
   - title: About
     url: /about/
-  - title: Blog
-    url: /blog/
 
 collections:
   quotes:
