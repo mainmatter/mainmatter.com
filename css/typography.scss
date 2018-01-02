@@ -127,31 +127,6 @@ h5 {
   }
 }
 
-.secondary-banner {
-  &.workshop-banner {
-    text-align: center;
-
-    a {
-      font-size: 22px;
-      border-bottom: none;
-
-      span, small {
-        border-bottom: 1px solid transparent;
-      }
-    }
-  }
-
-  &.cookie-banner {
-    a {
-      text-decoration: underline;
-    }
-
-    .cookie-button {
-      text-decoration: none;
-    }
-  }
-}
-
 #main-section.index {
   .content-section:first-of-type {
     p {
@@ -207,6 +182,16 @@ h5 {
     i {
       font-size: 28px;
     }
+  }
+}
+
+.cookie-banner {
+  a {
+    text-decoration: underline;
+  }
+
+  .cookie-button {
+    text-decoration: none;
   }
 }
 
