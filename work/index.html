@@ -1,52 +1,88 @@
 ---
 layout: default
-title: How we work
+title: Work
 ---
 
 <div class="primary-banner">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
-        <h2>How we work</h2>
-        <p>We specialize in <strong>convention-based tools</strong> and like to <strong>move fast without breaking things</strong>.</p>
+        <h2>Work</h2>
+        <p>We have a track record of successful <strong>projects for international clients</strong>.</p>
     	</div>
     </div>
   </div>
 </div>
 
-<div class="container tools" id="main-section">
-  <div class="row">
+<div class="container" id="main-section">
+  {% for post in site.categories.cases %}
+    <div class="row content-section separated">
+      <div class="col-sm-6">
+        <h3><a href="{{post.url}}">{{post.title}}</a></h3>
+      </div>
+      <div class="col-sm-6">
+        <p>{{post.excerpt}}</p>
+        <a href="{{post.url}}" class="custom-button">learn more</a>
+      </div>
+    </div>
+  {% endfor %}
+
+  <div class="row content-section client-logos">
     <div class="col-md-10 col-md-offset-1 col-sm-12">
-      <div class="row content-section">
-        <div class="col-sm-12">
-          <h3>Our Toolbox</h3>
-          <p><strong>Ember.js, Elixir and Phoenix</strong> as well as Ruby on Rails are the foundation of our toolbox. The <strong>convention-based approach</strong> that they all share make them a great fit for successful <strong>projects that stay healthy over a long time</strong> and are simple for our clients to take over once we have left.</p>
+      <div class="row">
+        <div class="col-sm-3 col-xs-6">
+          <a href="http://www.hopskipdrive.com" title="HopSkipDrive"><i class="hopskipdrive"></i></a>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <a href="http://generali.de"  title="Generali"><i class="generali"></i></a>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <a href="https://www.robinhood.org/" title="The Robin Hood Foundation"><i class="robinhood"></i></a>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <a href="https://www.thetrainline.com/"  title="Trainline"><i class="trainline"></i></a>
         </div>
       </div>
-      <div class="row content-section">
-        <div class="col-sm-12">
-          <div class="row">
-            <div class="col-sm-4 col-xs-6 tool">
-              <a href="http://emberjs.com" class="icon"><i class="emberjs-logo"></i></a>
-            </div>
-            <div class="col-sm-4 col-xs-6 tool">
-              <a href="http://www.phoenixframework.org/" class="icon"><i class="phoenix-logo"></i></a>
-            </div>
-            <div class="col-sm-4 col-xs-6 tool">
-              <a href="http://rubyonrails.org" class="icon"><i class="rails-logo"></i></a>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-sm-3 col-xs-6">
+          <a href="http://embedd.com" title="embeDD"><i class="embedd"></i></a>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <a href="http://xbav.de" title="xbAV"><i class="xbav"></i></a>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <i class="campus"></i>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <a href="http://experteer.de" title="Experteer"><i class="experteer"></i></a>
         </div>
       </div>
-      <div class="row content-section separated">
-        <div class="col-sm-12">
-          <p>We will however choose whatever technology is best suited to get a particular job done, which in some cases might not be one of the above three. We keep our eyes open and <strong>love exploring new technical opportunities</strong>.</p>
+      <div class="row">
+        <div class="col-sm-3 col-xs-6">
+          <a href="http://terminapp.com" title="TerminApp"><i class="terminapp"></i></a>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <a href="http://medikompass.de"  title="Medikompass GmbH"><i class="medikompass"></i></a>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <a href="https://boldpoker.net/" title="Bold Poker"><i class="boldpoker"></i></a>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <a href="http://www.sauspiel.de"  title="Sauspiel GmbH"><i class="sauspiel"></i></a>
         </div>
       </div>
-      <div class="row content-section">
-        <div class="col-sm-12">
-          <h3>Our Process</h3>
-          <p>We are <strong>enthusiastic about agile practices</strong> and a flexible development process. While we don't think planning is evil per se, <strong>we don't overplan and aim to keep the process lean</strong>. Projects start off with a kick-off workshop to get everybody on the same page and then iterate in one or two week long sprints. We <strong>require clients to actively participate</strong> in projects and will communicate openly and often - not only to give status updates but also to explain <strong>the how and why behind design decisions we make</strong>.</p>
+      <div class="row">
+        <div class="col-sm-3 col-xs-6">
+          <a href="http://loconet.info"  title="LoCoNET"><i class="loconet"></i></a>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <a href="http://www.dim3.com/" title="DIM3"><i class="dim3"></i></a>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <i class="scoreloop"></i>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <i class="shuddle"></i>
         </div>
       </div>
     </div>
