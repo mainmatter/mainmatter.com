@@ -21,6 +21,11 @@
           </li>
           <li class="page">
             <a href="/services/" class="{% if page.url contains "/services/" %}active{% endif %}"><span>Services</span></a>
+            <ul class="nav-hover">
+              <li><a href="/services/engineering/" class="{% if page.url contains "/services/engineering/" %}active{% endif %}"><span>Software Engineering</span></a></li>
+              <li><a href="/services/team-augmentation/" class="{% if page.url contains "/services/team-augmentation/" %}active{% endif %}"><span>Team Augmentation</span></a></li>
+              <li><a href="/services/training/" class="{% if page.url contains "/services/training/" %}active{% endif %}"><span>Training</span></a></li>
+            </ul>
           </li>
           <li class="page">
             <a href="/work/" class="{% if page.url contains "/work/" %}active{% endif %}"><span>Work</span></a>
