@@ -21,7 +21,7 @@ title: Work
         <h3><a href="{{post.url}}">{{post.title}}</a></h3>
       </div>
       <div class="col-sm-6">
-        <p>{{post.excerpt}}</p>
+        {{post.excerpt | markdownify}}
         <a href="{{post.url}}" class="custom-button">learn more</a>
       </div>
     </div>
