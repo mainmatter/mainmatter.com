@@ -2,13 +2,12 @@
 layout: case
 section: Cases
 title: "Trainline"
-excerpt: "a mobile train ticket counter"
+subtitle: "a mobile train ticket counter"
 permalink: /cases/trainline
 ---
 
 <div class="row content-section">
   <div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-5 col-md-offset-1">
-    <h3>trainline</h3>
     <p>Trainline is <strong>Europe's leading independent train ticket retailer</strong> and train travel app. They sell tickets to customers worldwide, enabling more than 125,000 journeys every single day in and across 24 countries, covering 87 different rail carriers.</p>
     <p>simplabs' team worked closely with Trainline’s internal engineering team and <strong>helped them build and extend a mobile site</strong> to accompany the existing desktop app.</p>
   </div>
