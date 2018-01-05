@@ -2,7 +2,7 @@
 layout: case
 section: Cases
 title: "Trainline"
-excerpt: "a mobile train ticket counter"
+subtitle: "a mobile train ticket counter"
 permalink: /cases/trainline
 ---
 
