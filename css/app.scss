@@ -513,6 +513,21 @@ pre.highlight {
   margin: 60px auto;
 }
 
+.cases {
+  .logo {
+    margin-top: 68px;
+    display: block;
+    border: none;
+
+    &:hover {
+      i {
+        filter: none;
+        -webkit-filter: none;
+      }
+    }
+  }
+}
+
 .case {
   .emphasis {
     text-align: center;
@@ -712,6 +727,12 @@ pre.highlight {
           }
         }
       }
+    }
+  }
+
+  .cases {
+    .logo {
+      display: none;
     }
   }
 
