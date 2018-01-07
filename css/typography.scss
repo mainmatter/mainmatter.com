@@ -137,10 +137,18 @@ h5 {
   }
 }
 
-#main-section.index {
-  .content-section:first-of-type {
-    p {
+#main-section {
+  .content-section.statement {
+    h4 {
       text-align: center;
+    }
+  }
+
+  &.index {
+    .content-section:first-of-type {
+      p {
+        text-align: center;
+      }
     }
   }
 }
