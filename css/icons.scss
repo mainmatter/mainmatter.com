@@ -74,8 +74,16 @@ i.embedd {
   @include icon("/images/logos/embedd", "png", 75px, 14px);
 }
 
+i.embedd-big {
+  @include icon("/images/logos/embedd-big", "png", 300px, 66px);
+}
+
 i.timify {
   @include icon("/images/logos/timify", "png", 28px, 40px);
+}
+
+i.timify-big {
+  @include icon("/images/logos/timify-big", "png", 126px, 180px);
 }
 
 i.robinhood {
@@ -88,6 +96,10 @@ i.boldpoker {
 
 i.trainline {
   @include icon("/images/logos/trainline", "png", 147px, 32px);
+}
+
+i.trainline-big {
+  @include icon("/images/logos/trainline-big", "png", 300px, 65px);
 }
 
 i.phoenix-logo {

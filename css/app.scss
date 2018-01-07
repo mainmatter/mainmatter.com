@@ -547,15 +547,13 @@ pre.highlight {
 
 .cases {
   .logo {
-    margin-top: 68px;
+    margin-top: 70px;
     display: block;
     border: none;
 
-    &:hover {
-      i {
-        filter: none;
-        -webkit-filter: none;
-      }
+    i {
+      filter: none;
+      -webkit-filter: none;
     }
   }
 }
