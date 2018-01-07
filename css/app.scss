@@ -130,6 +130,12 @@ body {
     p:last-child {
       margin-bottom: 0;
     }
+
+    &.statement {
+      h4 {
+        margin: 0;
+      }
+    }
   }
 }
 
