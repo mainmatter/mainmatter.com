@@ -15,81 +15,85 @@ title: Work
 </div>
 
 <div class="container cases" id="main-section">
-  {% for post in site.categories.cases %}
-    <div class="row content-section separated">
-      <div class="col-sm-6">
-        <a href="{{post.url}}" class="logo"><i class="{{post.icon}}"></i></a>
-      </div>
-      <div class="col-sm-6">
-        <h3><a href="{{post.url}}">{{post.title}}</a></h3>
-        {{post.excerpt | markdownify}}
-        <a href="{{post.url}}" class="custom-button">learn more</a>
-      </div>
-    </div>
-  {% endfor %}
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 col-sm-12">
+      {% for post in site.categories.cases %}
+        <div class="row content-section separated">
+          <div class="col-sm-6">
+            <a href="{{post.url}}" class="logo"><i class="{{post.icon}}"></i></a>
+          </div>
+          <div class="col-sm-6">
+            <h3><a href="{{post.url}}">{{post.title}}</a></h3>
+            {{post.excerpt | markdownify}}
+            <a href="{{post.url}}" class="custom-button">learn more</a>
+          </div>
+        </div>
+      {% endfor %}
 
-  <div class="row content-section separated statement">
-    <div class="col-xs-12">
-      <h4>We have completed <strong>x projects</strong> for <strong>y clients</strong> in <strong>z countries</strong>:</h4>
-    </div>
-  </div>
+      <div class="row content-section separated statement">
+        <div class="col-xs-12">
+          <h4>We have completed <strong>x projects</strong> for <strong>y clients</strong> in <strong>z countries</strong>:</h4>
+        </div>
+      </div>
 
-  <div class="row content-section client-logos">
-    <div class="col-sm-12">
-      <div class="row">
-        <div class="col-sm-3 col-xs-6">
-          <a href="http://www.hopskipdrive.com" title="HopSkipDrive"><i class="hopskipdrive"></i></a>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <a href="http://generali.de"  title="Generali"><i class="generali"></i></a>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <a href="https://www.robinhood.org/" title="The Robin Hood Foundation"><i class="robinhood"></i></a>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <a href="https://www.thetrainline.com/"  title="Trainline"><i class="trainline"></i></a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-3 col-xs-6">
-          <a href="http://embedd.com" title="embeDD"><i class="embedd"></i></a>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <a href="http://xbav.de" title="xbAV"><i class="xbav"></i></a>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <i class="campus"></i>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <a href="http://experteer.de" title="Experteer"><i class="experteer"></i></a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-3 col-xs-6">
-          <a href="http://terminapp.com" title="TerminApp"><i class="terminapp"></i></a>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <a href="http://medikompass.de"  title="Medikompass GmbH"><i class="medikompass"></i></a>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <a href="https://boldpoker.net/" title="Bold Poker"><i class="boldpoker"></i></a>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <a href="http://www.sauspiel.de"  title="Sauspiel GmbH"><i class="sauspiel"></i></a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-3 col-xs-6">
-          <a href="http://loconet.info"  title="LoCoNET"><i class="loconet"></i></a>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <a href="http://www.dim3.com/" title="DIM3"><i class="dim3"></i></a>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <i class="scoreloop"></i>
-        </div>
-        <div class="col-sm-3 col-xs-6">
-          <i class="shuddle"></i>
+      <div class="row content-section client-logos">
+        <div class="col-sm-12">
+          <div class="row">
+            <div class="col-sm-3 col-xs-6">
+              <a href="http://www.hopskipdrive.com" title="HopSkipDrive"><i class="hopskipdrive"></i></a>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+              <a href="http://generali.de"  title="Generali"><i class="generali"></i></a>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+              <a href="https://www.robinhood.org/" title="The Robin Hood Foundation"><i class="robinhood"></i></a>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+              <a href="https://www.thetrainline.com/"  title="Trainline"><i class="trainline"></i></a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 col-xs-6">
+              <a href="http://embedd.com" title="embeDD"><i class="embedd"></i></a>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+              <a href="http://xbav.de" title="xbAV"><i class="xbav"></i></a>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+              <i class="campus"></i>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+              <a href="http://experteer.de" title="Experteer"><i class="experteer"></i></a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 col-xs-6">
+              <a href="http://terminapp.com" title="TerminApp"><i class="terminapp"></i></a>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+              <a href="http://medikompass.de"  title="Medikompass GmbH"><i class="medikompass"></i></a>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+              <a href="https://boldpoker.net/" title="Bold Poker"><i class="boldpoker"></i></a>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+              <a href="http://www.sauspiel.de"  title="Sauspiel GmbH"><i class="sauspiel"></i></a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 col-xs-6">
+              <a href="http://loconet.info"  title="LoCoNET"><i class="loconet"></i></a>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+              <a href="http://www.dim3.com/" title="DIM3"><i class="dim3"></i></a>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+              <i class="scoreloop"></i>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+              <i class="shuddle"></i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
