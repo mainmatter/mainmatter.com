@@ -14,8 +14,8 @@ i:hover, i.contact, .client-logos a:hover i {
   -webkit-filter: none;
 }
 
-i.sauspiel {
-  @include icon("/images/logos/sauspiel", "png", 125px, 55px);
+i.neighbourhoodie {
+  @include icon("/images/logos/neighbourhoodie", "png", 140px, 26px);
 }
 
 i.shuddle {
@@ -42,8 +42,8 @@ i.dim3 {
   @include icon("/images/logos/dim3", "png", 100px, 35px);
 }
 
-i.medikompass {
-  @include icon("/images/logos/medikompass", "png", 100px, 19px);
+i.mvb {
+  @include icon("/images/logos/mvb", "png", 100px, 27px);
 }
 
 i.generali {
@@ -66,8 +66,8 @@ i.loconet {
   @include icon("/images/logos/loconet", "png", 35px, 35px);
 }
 
-i.scoreloop {
-  @include icon("/images/logos/scoreloop", "png", 100px, 27px);
+i.medify {
+  @include icon("/images/logos/medify", "png", 50px, 50px);
 }
 
 i.embedd {
@@ -90,8 +90,8 @@ i.robinhood {
   @include icon("/images/logos/robinhood", "png", 130px, 23px);
 }
 
-i.boldpoker {
-  @include icon("/images/logos/bold-poker", "png", 60px, 60px);
+i.ringler {
+  @include icon("/images/logos/ringler", "png", 55px, 60px);
 }
 
 i.trainline {
