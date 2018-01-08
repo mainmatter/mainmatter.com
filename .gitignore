@@ -19,3 +19,4 @@ doc/
 _site
 .DS_Store
 .sass-cache
+.jekyll-metadata
