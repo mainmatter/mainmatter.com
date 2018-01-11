@@ -18,6 +18,9 @@ $table-border-color: #000;
 $table-title-color: #000;
 $table-background-color: #f5f6f7;
 
+$emberfest-background-color: #bdccd4;
+$emberfest-color: #fff;
+
 body {
   color: $primary-text-color;
 }
@@ -227,6 +230,11 @@ table {
 
   h4 {
     color: $secondary-highlight-color;
+  }
+
+  &.emberfest-banner {
+    background-color: $emberfest-background-color;
+    color: $emberfest-color;
   }
 }
 

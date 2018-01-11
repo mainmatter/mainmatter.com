@@ -244,6 +244,14 @@ pre.highlight {
   h4 {
     margin: 10px 0;
   }
+
+  &.wide-banner {
+    padding: 50px 0;
+    margin-bottom: 60px;
+    background-image: none;
+    margin-left: calc(-1 * ((100vw - 100%) / 2));
+    width: 100vw;
+  }
 }
 
 #footer {
@@ -543,16 +551,6 @@ pre.highlight {
 .case {
   .emphasis {
     text-align: center;
-  }
-
-  .secondary-banner {
-    &.quote-banner {
-      padding: 50px 0;
-      margin-bottom: 60px;
-      background-image: none;
-      margin-left: calc(-1 * ((100vw - 100%) / 2));
-      width: 100vw;
-    }
   }
 }
 
