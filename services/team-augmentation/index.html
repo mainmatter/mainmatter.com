@@ -35,15 +35,19 @@ title: Team Augmentation
         </div>
       </div>
 
-      {% assign trainline = site.categories.cases | where: "key", "trainline" | first %}
-      <div class="row content-section split-section separated">
-        <div class="col-sm-6">
-          <a href="{{trainline.url}}" class="logo"><i class="{{trainline.icon}}"></i></a>
-        </div>
-        <div class="col-sm-6">
-          <h3><a href="{{trainline.url}}">{{trainline.title}}</a></h3>
-          {{trainline.excerpt | markdownify}}
-          <a href="{{trainline.url}}" class="custom-button">learn more</a>
+      <div class="secondary-banner wide-banner crosslink-banner">
+        {% assign trainline = site.categories.cases | where: "key", "trainline" | first %}
+        <div class="container">
+          <div class="row content-section split-section separated case-teaser">
+            <div class="col-sm-6">
+              <a href="{{trainline.url}}" class="logo"><i class="{{trainline.icon}}"></i></a>
+            </div>
+            <div class="col-sm-6">
+              <h3><a href="{{trainline.url}}">{{trainline.title}}</a></h3>
+              {{trainline.excerpt | markdownify}}
+              <a href="{{trainline.url}}" class="custom-button">learn more</a>
+            </div>
+          </div>
         </div>
       </div>
 

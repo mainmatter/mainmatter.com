@@ -26,7 +26,7 @@ title: Software Engineering
         </div>
       </div>
 
-      <div class="row content-section split-section separated">
+      <div class="row content-section split-section">
         <div class="col-sm-6">
           <h3>Instant Productivity</h3>
         </div>
@@ -35,15 +35,19 @@ title: Software Engineering
         </div>
       </div>
 
-      {% assign timify = site.categories.cases | where: "key", "timify" | first %}
-      <div class="row content-section split-section separated">
-        <div class="col-sm-6">
-          <a href="{{timify.url}}" class="logo"><i class="{{timify.icon}}"></i></a>
-        </div>
-        <div class="col-sm-6">
-          <h3><a href="{{timify.url}}">{{timify.title}}</a></h3>
-          {{timify.excerpt | markdownify}}
-          <a href="{{timify.url}}" class="custom-button">learn more</a>
+      <div class="secondary-banner wide-banner crosslink-banner">
+        {% assign timify = site.categories.cases | where: "key", "timify" | first %}
+        <div class="container">
+          <div class="row content-section split-section case-teaser">
+            <div class="col-sm-6">
+              <a href="{{timify.url}}" class="logo"><i class="{{timify.icon}}"></i></a>
+            </div>
+            <div class="col-sm-6">
+              <h3><a href="{{timify.url}}">{{timify.title}}</a></h3>
+              {{timify.excerpt | markdownify}}
+              <a href="{{timify.url}}" class="custom-button">learn more</a>
+            </div>
+          </div>
         </div>
       </div>
 
