@@ -35,6 +35,18 @@ title: Software Engineering
         </div>
       </div>
 
+      {% assign timify = site.categories.cases | where: "key", "timify" | first %}
+      <div class="row content-section split-section separated">
+        <div class="col-sm-6">
+          <a href="{{timify.url}}" class="logo"><i class="{{timify.icon}}"></i></a>
+        </div>
+        <div class="col-sm-6">
+          <h3><a href="{{timify.url}}">{{timify.title}}</a></h3>
+          {{timify.excerpt | markdownify}}
+          <a href="{{timify.url}}" class="custom-button">learn more</a>
+        </div>
+      </div>
+
       <div class="row content-section split-section separated">
         <div class="col-sm-6">
           <h3>Take over once you're ready</h3>
