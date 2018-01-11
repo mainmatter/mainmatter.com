@@ -20,7 +20,7 @@ icon: trainline-big
   </div>
 </div>
 
-<div class="secondary-banner quote-banner">
+<div class="secondary-banner wide-banner quote-banner">
   <div class="container">
     <div class="row content-section">
       <div class="col-xs-12 col-md-10 col-md-offset-1">

@@ -146,9 +146,10 @@ h5 {
 }
 
 #main-section {
-  .content-section.statement {
+  .content-section.statement, .secondary-banner.statement {
     h4 {
       text-align: center;
+      line-height: 1.5;
     }
   }
 
