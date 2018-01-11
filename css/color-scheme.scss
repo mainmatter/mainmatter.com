@@ -21,6 +21,8 @@ $table-background-color: #f5f6f7;
 $emberfest-background-color: #bdccd4;
 $emberfest-color: #fff;
 
+$crosslink-background-color: #f8f8f8;
+
 body {
   color: $primary-text-color;
 }
@@ -242,6 +244,10 @@ table {
   &.emberfest-banner {
     background-color: $emberfest-background-color;
     color: $emberfest-color;
+  }
+
+  &.crosslink-banner {
+    background-color: $crosslink-background-color;
   }
 }
 
