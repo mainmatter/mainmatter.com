@@ -18,6 +18,14 @@ body {
     -webkit-filter: none;
   }
 
+  input[type=checkbox] {
+    display: none;
+
+    &:checked ~ .collapse {
+      display: block;
+    }
+  }
+
   &.scrolled {
     i.simplabs {
       filter: gray;
@@ -30,8 +38,7 @@ body {
     }
   }
 
-  li.page {
-    padding: 0 20px;
+  li.nav-item {
     position: relative;
 
     .nav-hover {
@@ -62,17 +69,7 @@ body {
     }
   }
 
-  li.contact {
-    padding: 10px 0;
-
-    a {
-      padding: 5px;
-    }
-  }
-
   a {
-    padding: 15px 0;
-    display: inline-block;
     border-bottom: none;
 
     span {
@@ -91,21 +88,6 @@ body {
   img {
     width: 100px;
     height: 17px;
-  }
-
-  .navbar-nav {
-    width: 100%;
-  }
-
-  .navbar-nav > li {
-    float: none;
-    display: inline-block;
-  }
-
-  .navbar-header {
-    .navbar-left {
-      display: none;
-    }
   }
 }
 
@@ -675,11 +657,11 @@ pre.highlight {
       }
     }
 
-    li.page {
+    li.nav-item {
       width: 100%;
     }
 
-    .navbar-toggle {
+    .navbar-toggler {
       cursor: pointer;
       margin-top: 0;
       margin-bottom: 0;
