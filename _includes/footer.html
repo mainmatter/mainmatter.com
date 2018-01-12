@@ -1,31 +1,26 @@
-<nav id="footer" class="navbar" role="navigation">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <div id="footer-logo" class="navbar-left">
-          <span class="navbar-text">&copy; 2014-2018</span>
-          <i class="simplabs"></i>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="/imprint/">Imprint</a></li>
-          <li><a href="/contact/">Contact</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><span class="section-head">Cases</span></li>
-          {% for post in site.categories.cases %}
-            <li><a href="{{post.url}}">{{post.title}}</a></li>
-          {% endfor %}
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="/services/ember/">Ember.js</a></li>
-          <li><a href="/services/elixir-phoenix/">Elixir &amp; Phoenix</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="/services/engineering/">Software Engineering</a></li>
-          <li><a href="/services/team-augmentation/">Team Augmentation</a></li>
-          <li><a href="/services/training/">Training</a></li>
-        </ul>
-      </div>
-    </div>
+<nav id="footer" class="navbar navbar-expand">
+  <div class="navbar-brand">
+    <span class="navbar-text">&copy; 2014-2018</span>
+    <i class="simplabs"></i>
   </div>
+
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="/imprint/">Imprint</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><span class="section-head">Cases</span></li>
+    {% for post in site.categories.cases %}
+      <li><a href="{{post.url}}">{{post.title}}</a></li>
+    {% endfor %}
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="/services/ember/">Ember.js</a></li>
+    <li><a href="/services/elixir-phoenix/">Elixir &amp; Phoenix</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="/services/engineering/">Software Engineering</a></li>
+    <li><a href="/services/team-augmentation/">Team Augmentation</a></li>
+    <li><a href="/services/training/">Training</a></li>
+  </ul>
 </nav>
