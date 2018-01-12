@@ -15,8 +15,8 @@ icon: trainline-big
     <p>Trainline is <strong>Europe's leading independent train ticket retailer</strong> and train travel app. They sell tickets to customers worldwide, enabling more than 125,000 journeys every single day in and across 24 countries, covering 87 different rail carriers.</p>
     <p>simplabs' team worked closely with Trainline’s in-house engineering team and <strong>helped them build and extend a mobile site</strong> to accompany the existing desktop app.</p>
   </div>
-  <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-pull-6 col-sm-offset-1 col-md-2 col-md-offset-3">
-    <img src="/images/cases/trainline/mobile.png" class="img-responsive" alt="Mobile">
+  <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-pull-6 col-sm-offset-1 col-md-3 col-md-offset-2">
+    <img src="/images/cases/trainline/mobile.png" class="img-fluid" alt="Mobile">
   </div>
 </div>
 
