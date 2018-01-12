@@ -103,6 +103,7 @@ body {
 
     &.separated {
       &:after {
+        content: ' ';
         margin-left: 15px;
         padding-top: 60px;
         width: calc(100% - 30px);
