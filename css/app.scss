@@ -238,45 +238,27 @@ pre.highlight {
 }
 
 #footer {
-  margin-bottom: 0;
-  bottom: 0;
-  height: 50px;
-  width: 100%;
+  .container > * {
+    align-self: flex-start;
+  }
 
-  #footer-logo {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    margin-left: 0;
-    border: none;
+  .navbar-brand {
+    padding: 0;
 
     .navbar-text {
-      margin-left: 0;
-    }
-
-    i {
-    	margin-top: 19px;
+      padding: .5rem 0;
     }
   }
 
   .navbar-nav {
     li {
-      float: none;
-
-      &:first-child {
-        padding-top: 10px;
-      }
-
-      &:last-child {
-        padding-bottom: 10px;
-      }
-
       a {
         border: none;
       }
 
       a, span {
         display: block;
-        padding: 5px 15px;
+        padding: .5rem 0;
       }
     }
   }

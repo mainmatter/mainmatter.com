@@ -1,39 +1,39 @@
 <nav id="main-menu" class="navbar navbar-expand-md fixed-top">
   <div class="container">
-  <a class="navbar-brand" href="/">
-    <i class="simplabs"></i>
-  </a>
-
-  <input type="checkbox" id="navbar-toggle-cbox" class="hidden">
-  <label for="navbar-toggle-cbox" class="navbar-toggler hidden-md-up" aria-controls="navbar-header">
-    <i class="fa fa-bars"></i>
-  </label>
-
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item {% if page.url contains "/services/" %}active{% endif %}">
-        <a href="/services/" class="nav-link"><span>Services</span></a>
-        <ul class="nav-hover">
-          <li><a href="/services/engineering/" class="{% if page.url contains "/services/engineering/" %}active{% endif %}"><span>Software Engineering</span></a></li>
-          <li><a href="/services/team-augmentation/" class="{% if page.url contains "/services/team-augmentation/" %}active{% endif %}"><span>Team Augmentation</span></a></li>
-          <li><a href="/services/training/" class="{% if page.url contains "/services/training/" %}active{% endif %}"><span>Training</span></a></li>
-        </ul>
-      </li>
-      <li class="nav-item page {% if page.url contains "/work/" %}active{% endif %}">
-        <a href="/work/" class="nav-link"><span>Work</span></a>
-      </li>
-      <li class="nav-item {% if page.url contains "/about/" %}active{% endif %}">
-        <a href="/about/" class="nav-link"><span>About</span></a>
-      </li>
-      <li class="nav-item page {% if page.url contains "/blog/" %}active{% endif %}">
-        <a href="/blog/" class="nav-link"><span>Blog</span></a>
-      </li>
-      <li class="nav-item contact">
-        <a href="/contact/" class="nav-link">Work with us</a>
-      </li>
-    </ul>
+    <a class="navbar-brand" href="/">
+      <i class="simplabs"></i>
+    </a>
+    
+    <input type="checkbox" id="navbar-toggle-cbox" class="hidden">
+    <label for="navbar-toggle-cbox" class="navbar-toggler hidden-md-up" aria-controls="navbar-header">
+      <i class="fa fa-bars"></i>
+    </label>
+    
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item {% if page.url contains "/services/" %}active{% endif %}">
+          <a href="/services/" class="nav-link"><span>Services</span></a>
+          <ul class="nav-hover">
+            <li><a href="/services/engineering/" class="{% if page.url contains "/services/engineering/" %}active{% endif %}"><span>Software Engineering</span></a></li>
+            <li><a href="/services/team-augmentation/" class="{% if page.url contains "/services/team-augmentation/" %}active{% endif %}"><span>Team Augmentation</span></a></li>
+            <li><a href="/services/training/" class="{% if page.url contains "/services/training/" %}active{% endif %}"><span>Training</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-item page {% if page.url contains "/work/" %}active{% endif %}">
+          <a href="/work/" class="nav-link"><span>Work</span></a>
+        </li>
+        <li class="nav-item {% if page.url contains "/about/" %}active{% endif %}">
+          <a href="/about/" class="nav-link"><span>About</span></a>
+        </li>
+        <li class="nav-item page {% if page.url contains "/blog/" %}active{% endif %}">
+          <a href="/blog/" class="nav-link"><span>Blog</span></a>
+        </li>
+        <li class="nav-item contact">
+          <a href="/contact/" class="nav-link">Work with us</a>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
 </nav>
 <script type="text/javascript">
   Zepto(function($) {
