@@ -294,6 +294,16 @@ h5 {
     }
   }
 
+  #main-menu {
+    input[type=checkbox]:checked {
+      & ~ .navbar-collapse {
+        .navbar-nav {
+          text-align: center;
+        }
+      }
+    }
+  }
+
   #footer {
     text-align: center;
 
