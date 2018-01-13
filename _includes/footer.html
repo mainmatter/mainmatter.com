@@ -1,49 +1,56 @@
 <nav id="footer" class="navbar navbar-expand-md">
   <div class="container">
-    <div class="navbar-brand">
-      <span class="navbar-text">&copy; 2014-2018</span>
-      <i class="simplabs"></i>
-    </div>
+    <div class="navbar-collapse">
+      <div class="navbar-brand">
+        <span class="navbar-text">&copy; 2014-2018</span>
+        <i class="simplabs"></i>
+      </div>
 
-    <ul class="navbar-nav flex-column">
-      <li class="nav-item">
-        <a href="/imprint/">Imprint</a>
-      </li>
-      <li class="nav-item">
-        <a href="/contact/">Contact</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav flex-column">
-      <li class="nav-item">
-        <span class="section-head">Cases</span>
-      </li>
-      {% for post in site.categories.cases %}
+      <ul class="navbar-nav flex-column ml-auto">
         <li class="nav-item">
-          <a href="{{post.url}}">{{post.title}}</a>
+          <a href="/imprint/">Imprint</a>
         </li>
-      {% endfor %}
-    </ul>
-    <ul class="navbar-nav flex-column">
-      <li class="nav-item">
-        <a href="/services/ember/">Ember.js</a>
-      </li>
-      <li class="nav-item">
-        <a href="/services/elixir-phoenix/">Elixir &amp; Phoenix</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav flex-column">
-      <li class="nav-item">
-        <a href="/services/">Services</a>
-      </li>
-      <li class="nav-item">
-        <a href="/services/engineering/">Software Engineering</a>
-      </li>
-      <li class="nav-item">
-        <a href="/services/team-augmentation/">Team Augmentation</a>
-      </li>
-      <li class="nav-item">
-        <a href="/services/training/">Training</a>
-      </li>
-    </ul>
+        <li class="nav-item">
+          <a href="/contact/">Contact</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav flex-column ml-auto">
+        <li class="nav-item">
+          <a href="/work/" class="section-head">Work</a>
+        </li>
+        {% for post in site.categories.cases %}
+          <li class="nav-item">
+            <a href="{{post.url}}">{{post.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      <ul class="navbar-nav flex-column ml-auto">
+        <li class="nav-item">
+          <span class="section-head">
+            Expertise
+          </span>
+        </li>
+        <li class="nav-item">
+          <a href="/services/ember/">Ember.js</a>
+        </li>
+        <li class="nav-item">
+          <a href="/services/elixir-phoenix/">Elixir &amp; Phoenix</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav flex-column ml-auto">
+        <li class="nav-item">
+          <a href="/services/" class="section-head">Services</a>
+        </li>
+        <li class="nav-item">
+          <a href="/services/engineering/">Software Engineering</a>
+        </li>
+        <li class="nav-item">
+          <a href="/services/team-augmentation/">Team Augmentation</a>
+        </li>
+        <li class="nav-item">
+          <a href="/services/training/">Training</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

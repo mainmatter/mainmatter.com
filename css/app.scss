@@ -251,7 +251,7 @@ pre.highlight {
 
 
 #footer {
-  .container > * {
+  .navbar-collapse > * {
     align-self: flex-start;
   }
 
@@ -264,14 +264,12 @@ pre.highlight {
   }
 
   .navbar-nav {
-    li {
-      a {
-        border: none;
-      }
+    .nav-item {
+      padding: .2rem 0;
 
-      a, span {
-        display: block;
-        padding: .5rem 0;
+      a {
+        padding: 0;
+        border: none;
       }
     }
   }
@@ -720,6 +718,16 @@ pre.highlight {
           }
         }
       }
+    }
+  }
+
+  #footer {
+    .navbar-brand {
+      margin: 0;
+    }
+
+    .navbar-nav {
+      margin-bottom: 1rem;
     }
   }
 
