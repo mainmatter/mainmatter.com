@@ -6,7 +6,7 @@ title: Work
 <div class="primary-banner">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+      <div class="col col-lg-10 offset-lg-1">
         <h2>Work</h2>
         <p>We have a track record of successful <strong>projects for international clients</strong>.</p>
     	</div>
@@ -16,13 +16,13 @@ title: Work
 
 <div class="container" id="main-section">
   <div class="row">
-    <div class="col-md-10 offset-md-1 col-sm-12">
+    <div class="col col-lg-10 offset-lg-1">
       {% for post in site.categories.cases %}
         <div class="row content-section separated case-teaser">
-          <div class="col-sm-6">
+          <div class="col-md-6">
             <a href="{{post.url}}" class="logo"><i class="{{post.icon}}"></i></a>
           </div>
-          <div class="col-sm-6">
+          <div class="col-md-6">
             <h3><a href="{{post.url}}">{{post.title}}</a></h3>
             {{post.excerpt | markdownify}}
             <a href="{{post.url}}" class="custom-button">learn more</a>
