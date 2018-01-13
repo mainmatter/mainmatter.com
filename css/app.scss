@@ -20,10 +20,6 @@ body {
 
   input[type=checkbox] {
     display: none;
-
-    &:checked ~ .collapse {
-      display: block;
-    }
   }
 
   &.scrolled {
@@ -666,7 +662,7 @@ pre.highlight {
       margin-bottom: 0;
     }
 
-    .navbar-nav {
+    .navbar-collapse {
       position: absolute;
       transition: opacity 0.15s ease-in-out;
       margin-top: 0;
@@ -676,13 +672,25 @@ pre.highlight {
       }
     }
 
-    #menu-toggle {
-      &:not(:checked) + .navbar-nav {
-        opacity: 0;
-      }
+    input[type=checkbox] {
+      &:checked {
+        & ~ .collapse {
+          display: block;
+        }
 
-      &:checked + .navbar-nav {
-        opacity: 1;
+        & ~ .navbar-collapse {
+          width: 100%;
+          top: 60px;
+          left: 0;
+
+          .navbar-nav {
+            padding-bottom: .5rem;
+          }
+
+          .contact {
+            display: none;
+          }
+        }
       }
     }
   }

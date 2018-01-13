@@ -134,6 +134,11 @@ table {
       }
     }
 
+    .navbar-toggler {
+      transition: color ease-in-out .15s;
+      color: $secondary-highlight-color;
+    }
+
     li.nav-item {
       .nav-hover {
         background-color: $primary-highlight-color;
@@ -306,6 +311,24 @@ table {
   #main-menu {
     .navbar-nav {
       background: $primary-background-color;
+    }
+
+    input[type=checkbox]:checked {
+      & ~ .navbar-collapse {
+        .navbar-nav {
+          transition: background-color 0.25s linear;
+        }
+      }
+    }
+
+    &.scrolled {
+      input[type=checkbox]:checked {
+        & ~ .navbar-collapse {
+          .navbar-nav {
+            background-color: $primary-highlight-color;
+          }
+        }
+      }
     }
   }
 }
