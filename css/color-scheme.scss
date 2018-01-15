@@ -247,6 +247,10 @@ table {
 
   &.crosslink-banner {
     background-color: $crosslink-background-color;
+
+    h4 {
+      color: $primary-highlight-color;
+    }
   }
 }
 
