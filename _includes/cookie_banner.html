@@ -1,0 +1,21 @@
+<div class="cookie-banner" id="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <p>This website uses cookies. <a href="/privacy/">Learn more</a></p>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <a class="custom-button cookie-button pull-right" onclick="acceptFunction()">Ok!</a>
+        <script>
+          function acceptFunction() {
+            var banner = document.getElementById("banner");
+            var cookies_accepted = true;
+            if (cookies_accepted) {
+              banner.style.display = 'none';
+            }
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
