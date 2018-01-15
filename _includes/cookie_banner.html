@@ -1,18 +1,17 @@
-<div class="cookie-banner" id="banner">
+<div class="cookie-banner" id="cookie-banner">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6 col-xs-12">
         <p>This website uses cookies. <a href="/privacy/">Learn more</a></p>
       </div>
       <div class="col-md-6 col-sm-6 col-xs-12">
-        <a class="custom-button cookie-button pull-right" onclick="acceptFunction()">Ok!</a>
+        <a class="custom-button cookie-button pull-right" onclick="setCookie('cookiesAccepted', 'true', 365)">Ok!</a>
         <script>
-          function acceptFunction() {
-            var banner = document.getElementById("banner");
-            var cookies_accepted = true;
-            if (cookies_accepted) {
-              banner.style.display = 'none';
-            }
+          function setCookie(name, value, days) {
+            var d = new Date;
+            d.setTime(d.getTime() + 24*60*60*1000*days);
+            document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+            document.getElementById('cookie-banner').style.display = 'none';
           }
         </script>
       </div>

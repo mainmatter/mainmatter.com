@@ -16,7 +16,14 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:300,400">
   <link rel="stylesheet" href="/css/app.css">
-  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+  <script>
+    function checkCookies() {
+      if (document.cookie.includes('cookiesAccepted=true')) {
+        document.getElementById('cookie-banner').style.display = 'none';
+      }
+    }
+    window.onload = checkCookies;
+  </script>
   <!--[if lt IE 9]>
     <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
