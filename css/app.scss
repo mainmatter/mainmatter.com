@@ -138,6 +138,10 @@ body {
       margin-bottom: 0;
     }
   }
+
+  .secondary-banner:last-child {
+    margin-bottom: -60px;
+  }
 }
 
 h3 {
@@ -207,6 +211,11 @@ pre.highlight {
 .custom-button {
   padding: 5px 50px;
   cursor: pointer;
+
+  i {
+    filter: none;
+    -webkit-filter: none;
+  }
 }
 
 .custom-label {
@@ -242,6 +251,10 @@ pre.highlight {
     background-image: none;
     margin-left: calc(-1 * ((100vw - 100%) / 2));
     width: 100vw;
+  }
+
+  & + .secondary-banner {
+    margin-top: -60px;
   }
 }
 
