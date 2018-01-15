@@ -59,6 +59,11 @@ code {
 }
 
 .case-teaser {
+  h5 {
+    font-size: 28px;
+    text-transform: uppercase;
+  }
+
   .logo {
     text-align: center;
   }
@@ -294,6 +299,10 @@ h5 {
 @media screen and (max-width: 767px) {
   .secondary-banner {
     text-align: center;
+
+    &.wide-banner {
+      text-align: justify;
+    }
   }
 
   .workshop {

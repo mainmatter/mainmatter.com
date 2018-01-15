@@ -513,9 +513,12 @@ pre.highlight {
 }
 
 .case-teaser {
+  h5 {
+    align-self: flex-start!important;
+    width: 100%;
+  }
+
   .logo {
-    margin-top: 70px;
-    display: block;
     border: none;
 
     i {
@@ -740,7 +743,7 @@ pre.highlight {
   }
 
   .case-teaser {
-    .logo {
+    h5, .logo {
       display: none;
     }
   }

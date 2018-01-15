@@ -19,8 +19,9 @@ title: Work
     <div class="col col-lg-10 offset-lg-1">
       {% for post in site.categories.cases %}
         <div class="row content-section separated case-teaser">
-          <div class="col-md-6">
-            <a href="{{post.url}}" class="logo"><i class="{{post.icon}}"></i></a>
+          <div class="col-sm-6 col-lg-5 offset-lg-1 d-flex flex-wrap justify-content-center">
+            <h5>Client Case</h5>
+            <a href="{{post.url}}" class="logo align-self-stretch"><i class="{{post.icon}}"></i></a>
           </div>
           <div class="col-md-6">
             <h3><a href="{{post.url}}">{{post.title}}</a></h3>

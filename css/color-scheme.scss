@@ -1,4 +1,5 @@
 $primary-text-color: #676767;
+$secondary-text-color: #ddd;
 
 $primary-background-color: #fff;
 $secondary-background-color: #000;
@@ -286,6 +287,12 @@ table {
         }
       }
     }
+  }
+}
+
+.case-teaser {
+  h5 {
+    color: $secondary-text-color;
   }
 }
 
