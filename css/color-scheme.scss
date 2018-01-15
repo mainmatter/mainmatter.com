@@ -120,6 +120,16 @@ table {
     }
   }
 
+  &.cookie-button {
+    border-color: $secondary-highlight-color;
+    color: $secondary-highlight-color;
+
+    &:hover {
+      background-color: $secondary-highlight-color;
+      color: #252e39;
+    }
+  }
+
   &.send-button {
     background-color: $secondary-highlight-color;
     color: $primary-highlight-color;
