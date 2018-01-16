@@ -188,21 +188,31 @@ pre.highlight {
   h4 {
     margin: 10px 0;
   }
-}
 
-.cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding-top: 20px;
-  padding-bottom: 5px;
-  background: #252e39;
-  color: #fff;
-  z-index: 9999;
+  &.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    background: #2b98df;
+    color: #fff;
+    z-index: 9999;
 
-  .cookie-button {
-    cursor: pointer;
+    a {
+      color: #fff;
+      text-decoration: underline;
+
+      &:hover {
+        color: #000;
+      }
+    }
+
+    .cookie-button {
+      text-decoration: none;
+      cursor: pointer;
+    }
   }
 }
 
@@ -689,13 +699,17 @@ pre.highlight {
     .contact-button {
       float: none !important;
     }
-  }
 
-  .cookie-banner {
-    text-align: center;
+    &.cookie-banner {
+      text-align: center;
 
-    .cookie-button {
-      float: none !important;
+      a {
+        display: inline-block;
+      }
+
+      .cookie-button {
+        float: none !important;
+      }
     }
   }
 

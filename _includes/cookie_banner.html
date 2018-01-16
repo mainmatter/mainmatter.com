@@ -1,18 +1,32 @@
-<div class="cookie-banner" id="cookie-banner">
+<div class="secondary-banner cookie-banner" id="cookie-banner">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6 col-xs-12">
         <p>This website uses cookies. <a href="/privacy/">Learn more</a></p>
       </div>
       <div class="col-md-6 col-sm-6 col-xs-12">
-        <a class="custom-button cookie-button pull-right" onclick="setCookie('cookiesAccepted', 'true', 365)">Ok!</a>
+        <a class="custom-button cookie-button pull-right" id="cookie-button">Ok!</a>
         <script>
-          function setCookie(name, value, days) {
-            var d = new Date;
-            d.setTime(d.getTime() + 24*60*60*1000*days);
-            document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
-            document.getElementById('cookie-banner').style.display = 'none';
-          }
+          Zepto(function($) {
+            if (document.cookie.includes('cookiesAccepted=true')) {
+              let banner = document.getElementById('cookie-banner');
+              banner.parentNode.removeChild(banner);
+            }
+          });
+
+          Zepto(function($) {
+            let banner = document.getElementById('cookie-banner');
+            let button = document.getElementById('cookie-button');
+            $(button).on('click', function() {
+              var name = 'cookiesAccepted';
+              var value = 'true';
+              var days = 365;
+              var d = new Date;
+              d.setTime(d.getTime() + 24*60*60*1000*days);
+              document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+              banner.parentNode.removeChild(banner);
+            });
+          });
         </script>
       </div>
     </div>
