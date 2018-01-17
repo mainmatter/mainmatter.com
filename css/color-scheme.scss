@@ -24,6 +24,10 @@ $emberfest-color: #fff;
 
 $crosslink-background-color: #f8f8f8;
 
+$elixir-workshop-primary-background-color: #6c2580;
+$elixir-workshop-secondary-background-color: #e54e22;
+$elixir-workshop-primary-text-color: #fff;
+
 body {
   color: $primary-text-color;
 }
@@ -254,6 +258,33 @@ table {
 
     h4 {
       color: $primary-highlight-color;
+    }
+  }
+
+  &.workshop-banner {
+    a {
+      span, small {
+        transition: border-bottom-color ease-in-out .15s;
+        border-bottom-color: transparent;
+      }
+    }
+  
+    &.elixir-workshop-banner {
+      background: $elixir-workshop-primary-background-color;
+      background: -webkit-linear-gradient(135deg,  $elixir-workshop-primary-background-color, $elixir-workshop-secondary-background-color);
+      background: -o-linear-gradient(135deg, $elixir-workshop-primary-background-color, $elixir-workshop-secondary-background-color);
+      background: -moz-linear-gradient(135deg, $elixir-workshop-primary-background-color, $elixir-workshop-secondary-background-color);
+      background: linear-gradient(135deg, $elixir-workshop-primary-background-color, $elixir-workshop-secondary-background-color);
+  
+      a {
+        color: $elixir-workshop-primary-text-color;
+  
+        &:hover {
+          span, small {
+            border-bottom-color: $elixir-workshop-primary-text-color;
+          }
+        }
+      }
     }
   }
 }

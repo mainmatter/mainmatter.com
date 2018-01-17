@@ -244,6 +244,14 @@ pre.highlight {
   & + .secondary-banner {
     margin-top: -60px;
   }
+
+  &.workshop-banner {
+    background-image: none;
+  
+    a {
+      display: inline-block;
+    }
+  }
 }
 
 #footer {
