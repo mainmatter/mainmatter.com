@@ -439,7 +439,6 @@ pre.highlight {
   }
 
   p, ul {
-    width: 83.33333333%;
     margin-right: auto;
     margin-left: auto;
 
@@ -451,10 +450,9 @@ pre.highlight {
     }
   }
 
-  p {
-    &:first-of-type {
-      margin-bottom: 40px;
-    }
+  p:first-of-type {
+    width: 83.33333333%;
+    margin-bottom: 40px;
   }
 
   .article-meta {
