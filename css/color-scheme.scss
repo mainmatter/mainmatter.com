@@ -243,6 +243,10 @@ table {
   &.emberfest-banner {
     background-color: $emberfest-background-color;
     color: $emberfest-color;
+
+    a.logo {
+      border: none;
+    }
   }
 
   &.crosslink-banner {
