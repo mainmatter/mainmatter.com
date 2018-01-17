@@ -7,10 +7,10 @@ title: Blog
 
 <div class="container articles" id="main-section">
   <div class="row">
-    <div class="col-md-10 offset-md-1 col-sm-12">
+    <div class="col col-lg-10 offset-lg-1">
       {% for post in site.categories.blog %}
         <div class="row content-section separated">
-          <div class="col-sm-12">
+          <div class="col-12">
             <p class="article-meta">
               <span class="date">{{post.date | date: '%B %d, %Y'}}</span>
               <span class="author pull-right">{{post.author | upcase}}</span>
