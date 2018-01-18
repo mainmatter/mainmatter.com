@@ -328,13 +328,9 @@ h5 {
     }
   }
 
-  #main-menu {
-    input[type=checkbox]:checked {
-      & ~ .navbar-collapse {
-        .navbar-nav {
-          text-align: center;
-        }
-      }
+  .navbar-collapse {
+    .navbar-nav {
+      text-align: center;
     }
   }
 
