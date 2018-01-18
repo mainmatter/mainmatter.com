@@ -668,34 +668,32 @@ pre.highlight {
 
     .navbar-collapse {
       position: absolute;
-      transition: opacity 0.15s ease-in-out;
       margin-top: 0;
+      width: 100%;
+      top: 60px;
+      left: 0;
+
+      .navbar-nav {
+        padding-bottom: .5rem;
+      }
+
+      .contact {
+        display: none;
+      }
 
       li {
         margin-left: 0;
       }
     }
 
-    input[type=checkbox] {
-      &:checked {
-        & ~ .collapse {
-          display: block;
-        }
+    .collapse {
+      display: block;
+      opacity: 0;
+      transition: opacity 0.15s ease-in-out;
+    }
 
-        & ~ .navbar-collapse {
-          width: 100%;
-          top: 60px;
-          left: 0;
-
-          .navbar-nav {
-            padding-bottom: .5rem;
-          }
-
-          .contact {
-            display: none;
-          }
-        }
-      }
+    input[type=checkbox]:checked ~ .collapse {
+      opacity: 1;
     }
   }
 
