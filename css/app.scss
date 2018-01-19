@@ -196,23 +196,12 @@ pre.highlight {
     right: 0;
     padding-top: 20px;
     padding-bottom: 5px;
-    background: #2b98df;
-    color: #fff;
     z-index: 9999;
+    background-image: none;
+  }
 
-    a {
-      color: #fff;
-      text-decoration: underline;
-
-      &:hover {
-        color: #000;
-      }
-    }
-
-    .cookie-button {
-      text-decoration: none;
-      cursor: pointer;
-    }
+  .cookie-button {
+    cursor: pointer;
   }
 }
 

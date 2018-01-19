@@ -122,11 +122,10 @@ table {
 
   &.cookie-button {
     border-color: $secondary-highlight-color;
-    color: $secondary-highlight-color;
 
     &:hover {
       background-color: $secondary-highlight-color;
-      color: #252e39;
+      color: $primary-highlight-color;
     }
   }
 
@@ -234,6 +233,25 @@ table {
             border-bottom-color: $elixir-workshop-primary-text-color;
           }
         }
+      }
+    }
+  }
+
+  &.cookie-banner {
+    background-color: $primary-highlight-color;
+    color: $secondary-highlight-color;
+
+    a {
+      color: $secondary-highlight-color;
+
+      &:hover {
+        color: $code-text-color;
+      }
+    }
+
+    .cookie-button {
+      &:hover {
+        color: $primary-highlight-color;
       }
     }
   }
