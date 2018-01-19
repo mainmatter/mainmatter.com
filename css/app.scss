@@ -460,6 +460,7 @@ pre.highlight {
   }
 
   p, ul {
+    width: 83.33333333%;
     margin-right: auto;
     margin-left: auto;
 
@@ -471,9 +472,12 @@ pre.highlight {
     }
   }
 
-  p:first-of-type {
-    width: 83.33333333%;
-    margin-bottom: 40px;
+  & > .col > p:first-of-type {
+    width: 100%;
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
   }
 
   .article-meta {
