@@ -212,6 +212,12 @@ table {
   background-color: $error-color;
 }
 
+.article {
+  & > .col > p:first-of-type {
+    border-bottom-color: $border-color;
+  }
+}
+
 #footer {
   a {
     color: $primary-text-color;
