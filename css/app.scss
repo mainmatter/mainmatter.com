@@ -209,7 +209,7 @@ pre.highlight {
 }
 
 .custom-button {
-  padding: 5px 50px;
+  padding: 5px 35px;
 
   i {
     filter: none;
@@ -752,8 +752,18 @@ pre.highlight {
   }
 
   .secondary-banner {
+    #contact-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .contact-button {
       float: none !important;
+    }
+
+    h4 {
+      text-align: center;
     }
   }
 
