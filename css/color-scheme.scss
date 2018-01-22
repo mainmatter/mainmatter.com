@@ -232,10 +232,6 @@ table {
   &.cookie-banner {
     a {
       color: $secondary-highlight-color;
-
-      &:hover {
-        color: $code-text-color;
-      }
     }
   }
 }

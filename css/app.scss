@@ -195,6 +195,10 @@ pre.highlight {
     bottom: 0;
     z-index: 9999;
     background-image: none;
+
+    p {
+      margin: 0;
+    }
   }
 }
 
@@ -683,12 +687,6 @@ pre.highlight {
     }
 
     &.cookie-banner {
-      text-align: center;
-
-      a {
-        display: inline-block;
-      }
-
       .cookie-button {
         float: none !important;
       }
