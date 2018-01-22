@@ -696,12 +696,12 @@ pre.highlight {
     }
 
     .collapse {
-      display: block;
       opacity: 0;
       transition: opacity 0.15s ease-in-out;
     }
 
     input[type=checkbox]:checked ~ .collapse {
+      display: block;
       opacity: 1;
     }
   }
