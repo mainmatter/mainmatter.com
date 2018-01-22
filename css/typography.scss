@@ -140,6 +140,16 @@ h5 {
       }
     }
   }
+
+  &.cookie-banner {
+    a {
+      text-decoration: underline;
+    }
+
+    .cookie-button {
+      text-decoration: none;
+    }
+  }
 }
 
 #main-section.index {

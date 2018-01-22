@@ -163,6 +163,7 @@ pre.highlight {
 
 .custom-button {
   padding: 5px 50px;
+  cursor: pointer;
 }
 
 .custom-label {
@@ -188,7 +189,19 @@ pre.highlight {
   h4 {
     margin: 10px 0;
   }
+
+  &.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    z-index: 9999;
+    background-image: none;
+
+    p {
+      margin: 0;
+    }
+  }
 }
+
 
 #footer {
   margin-bottom: 0;
@@ -292,7 +305,7 @@ pre.highlight {
       display: block;
       width: 100%;
       top: calc(50% - 1em - 80px);
-      z-index: 9999;
+      z-index: 9998;
       padding: 50px;
       opacity: 0;
       transition: opacity 0.15s ease-in-out;
@@ -671,6 +684,12 @@ pre.highlight {
   .secondary-banner {
     .contact-button {
       float: none !important;
+    }
+
+    &.cookie-banner {
+      .cookie-button {
+        float: none !important;
+      }
     }
   }
 
