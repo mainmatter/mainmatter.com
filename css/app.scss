@@ -752,6 +752,12 @@ pre.highlight {
   }
 
   .secondary-banner {
+    #contact-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .contact-button {
       float: none !important;
     }
