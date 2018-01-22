@@ -111,16 +111,7 @@ table {
     color: $secondary-highlight-color;
   }
 
-  &.contact-button {
-    border-color: $secondary-highlight-color;
-
-    &:hover {
-      background-color: $secondary-highlight-color;
-      color: $primary-highlight-color;
-    }
-  }
-
-  &.cookie-button {
+  &.contact-button, &.cookie-button {
     border-color: $secondary-highlight-color;
 
     &:hover {
@@ -191,6 +182,7 @@ table {
 
 .secondary-banner {
   background-color: $primary-highlight-color;
+  color: $secondary-highlight-color;
 
   h4 {
     color: $secondary-highlight-color;
@@ -238,9 +230,6 @@ table {
   }
 
   &.cookie-banner {
-    background-color: $primary-highlight-color;
-    color: $secondary-highlight-color;
-
     a {
       color: $secondary-highlight-color;
 
@@ -248,17 +237,17 @@ table {
         color: $code-text-color;
       }
     }
-
-    .cookie-button {
-      &:hover {
-        color: $primary-highlight-color;
-      }
-    }
   }
 }
 
 .contact-button {
   color: $secondary-highlight-color;
+}
+
+.cookie-button {
+  &:hover {
+    color: $primary-highlight-color;
+  }
 }
 
 .primary-banner {

@@ -163,6 +163,7 @@ pre.highlight {
 
 .custom-button {
   padding: 5px 50px;
+  cursor: pointer;
 }
 
 .custom-label {
@@ -192,16 +193,8 @@ pre.highlight {
   &.cookie-banner {
     position: fixed;
     bottom: 0;
-    left: 0;
-    right: 0;
-    padding-top: 20px;
-    padding-bottom: 5px;
     z-index: 9999;
     background-image: none;
-  }
-
-  .cookie-button {
-    cursor: pointer;
   }
 }
 
