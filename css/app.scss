@@ -703,6 +703,10 @@ pre.highlight {
     input[type=checkbox]:checked ~ .collapse {
       display: block;
       opacity: 1;
+
+      .nav-hover {
+        display: none;
+      }
     }
   }
 
