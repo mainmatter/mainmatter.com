@@ -184,6 +184,14 @@ h5 {
   }
 }
 
+.contact-banner {
+  .row {
+    div:last-child {
+      text-align: right;
+    }
+  }
+}
+
 .client-logos {
   a {
     text-align: center;
@@ -312,8 +320,16 @@ h5 {
 }
 
 @media screen and (max-width: 767px) {
-  .secondary-banner {
-    text-align: center;
+  .contact-banner {
+    h4 {
+      text-align: center;
+    }
+
+    .row {
+      div:last-child {
+        text-align: center;
+      }
+    }
 
     &.wide-banner {
       text-align: justify;
