@@ -32,8 +32,8 @@ permalink: /cases/trainline
 
 <div class="row content-section">
   <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1">
-    <p>simplabs <strong>spearheaded several engineering efforts focussed around mobile performance</strong>, improved load times, server side rendering and localization. We helped <strong>establish modern and idiomatic practices for developing mobile apps</strong> and helped trainline's internal engineering team internalize those through code reviews..</p>
-    <p>In addition to supporting trainline with engineering resources and expertise we were also able to help <strong>improve the engineering process</strong>, establishing and solidifying a sprint based approach, resulting in improved plan-ability and developer insight.</p>
+    <p>simplabs <strong>spearheaded several engineering efforts focussed around mobile performance</strong>, improved load times, server side rendering and localization. We helped <strong>establish modern and idiomatic practices for developing mobile apps</strong> and helped trainline's internal engineering team internalize those through code reviews.</p>
+    <p>In addition to supporting trainline with engineering resources and expertise, we were able to help <strong>improve the engineering process</strong>, establishing and solidifying a sprint based approach, resulting in improved plan-ability and developer insight.</p>
   </div>
   <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-1 col-md-2">
     <img src="/images/cases/trainline/mobile-payment.png" class="img-responsive" alt="Mobile Payment">
