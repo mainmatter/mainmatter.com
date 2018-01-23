@@ -10,7 +10,7 @@ permalink: /cases/expedition
   <div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-offset-1 col-md-push-5">
     <h3>Expedition</h3>
     <p>Expedition is an online travel magazine for global citizens. It lets travellers experience the world's best destinations through the eyes of a local.</p>
-    <p>The team approached simplabs when they needed help laying the <strong>groundwork for some advanced features</strong> in their <a href="/services/elixir-phoenix/">Elixir and Phoenix</a> based API as well as making sure their <a href="/services/ember/">Ember.js</a> based client was following best practices.</p>
+    <p>The team approached simplabs when they needed help laying the <strong>groundwork for some advanced features</strong> in their Elixir and Phoenix based API as well as making sure their Ember.js based client was following best practices.</p>
   </div>
   <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-sm-pull-6 col-md-5 col-md-offset-1">
     <img src="/images/cases/expedition/start-page.png" class="img-responsive" alt="Home Page">
