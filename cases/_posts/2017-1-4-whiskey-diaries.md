@@ -9,7 +9,7 @@ permalink: /cases/whiskey-diaries
 <div class="row content-section">
   <div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-offset-1 col-md-push-5">
     <h3>The Whiskey Diaries</h3>
-    <p>The Whiskey Diaries is an online travel magazine for global citizens. Bla bla.</p>
+    <p>The Whiskey Diaries is an online travel magazine for global citizens. TODO: get input from Bryan.</p>
     <p>The team approached simplabs when they needed help laying the <strong>groundwork for some advanced features</strong> in their <a href="/services/elixir-phoenix/">Elixir and Phoenix</a> based API.</p>
   </div>
   <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-sm-pull-6 col-md-5 col-md-offset-1">
