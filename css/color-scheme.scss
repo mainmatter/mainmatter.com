@@ -245,15 +245,20 @@ table {
 
 .secondary-banner {
   background-color: $primary-highlight-color;
-  color: $secondary-highlight-color;
 
   h4 {
     color: $secondary-highlight-color;
   }
 
   &.cookie-banner {
+    color: $secondary-highlight-color;
+
     a {
       color: $secondary-highlight-color;
+
+      &:not([href]):hover {
+        color: $primary-highlight-color;
+      }
     }
   }
 
