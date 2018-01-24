@@ -1,9 +1,12 @@
 ---
 layout: case
 section: Cases
+key: expedition
 title: "Expedition"
 subtitle: "Explore The Unknown"
-permalink: /cases/expedition
+excerpt: "simplabs **spearheaded development efforts for some advanced functionality for Expedition's** API based on Elixir and Phoenix. We provided their team with a well architected foundation to extend upon."
+permalink: /cases/expedition.html
+icon: expedition-big
 ---
 
 <div class="row content-section">

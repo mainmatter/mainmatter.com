@@ -58,10 +58,6 @@ i.xbav {
   @include icon("/images/logos/xbav", "png", 54px, 30px);
 }
 
-i.campus {
-  @include icon("/images/logos/campus", "png", 85px, 38px);
-}
-
 i.loconet {
   @include icon("/images/logos/loconet", "png", 35px, 35px);
 }
@@ -100,6 +96,14 @@ i.trainline {
 
 i.trainline-big {
   @include icon("/images/logos/trainline-big", "png", 300px, 65px);
+}
+
+i.expedition {
+  @include icon("/images/logos/expedition", "png", 33px, 40px);
+}
+
+i.expedition-big {
+  @include icon("/images/logos/expedition-big", "png", 149px, 180px);
 }
 
 i.phoenix-logo {
