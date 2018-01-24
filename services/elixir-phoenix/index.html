@@ -17,12 +17,29 @@ title: Elixir &amp; Phoenix
 <div class="container" id="main-section">
   <div class="row">
     <div class="col col-lg-10 offset-lg-1">
-      <div class="row content-section split-section separated">
+      <div class="row content-section split-section">
         <div class="col-12 col-md-6">
           <h3>The best of all worlds</h3>
         </div>
         <div class="col-12 col-md-6">
           <p>Elixir combines the <strong>expressiveness and simplicity of Ruby</strong> with the performance and stability of the <strong>Erlang VM</strong>. Phoenix builds on the concepts first introduced by Ruby on Rails, combining them with a number of architectural improvements. Together, they form a <strong>modern and capable stack for building ambitious projects</strong> based on an established and <strong>battle-proven foundation</strong>.</p>
+        </div>
+      </div>
+
+      <div class="secondary-banner wide-banner crosslink-banner">
+        {% assign expedition = site.categories.cases | where: "key", "expedition" | first %}
+        <div class="container">
+          <div class="row content-section split-section separated case-teaser">
+            <div class="col-12 col-md-6 col-lg-5 offset-lg-1 d-flex flex-wrap justify-content-center">
+              <h5>Client Case</h5>
+              <a href="{{expedition.url}}" class="logo align-self-stretch"><i class="{{expedition.icon}}"></i></a>
+            </div>
+            <div class="col-12 col-md-6 col-lg-5">
+              <h3><a href="{{expedition.url}}">{{expedition.title}}</a></h3>
+              {{expedition.excerpt | markdownify}}
+              <a href="{{expedition.url}}" class="custom-button">learn more</a>
+            </div>
+          </div>
         </div>
       </div>
 
