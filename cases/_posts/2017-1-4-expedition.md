@@ -32,7 +32,7 @@ permalink: /cases/expedition
 
 <div class="row content-section">
   <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1">
-    <p>simplabs' team built prototype implementations for a number of advanced features. Leveraging the <strong>Elixir's and the Phoenix's capabilities</strong> we were able to implement <strong>advanced mechanics with clean and concise code</strong> that would have taken much more effort and resulted in significantly higher complexity with other technologies. The Whiskey Diaries' team benefitted from our foundational work that we <strong>handed over in an open and well-communicated way</strong>.</p>
+    <p>simplabs' team built prototype implementations for a number of advanced features. Leveraging <strong>Elixir's and Phoenix's capabilities</strong> we were able to implement <strong>advanced mechanics with clean and concise code</strong> that would have taken much more effort and resulted in significantly higher complexity with other technologies. The Whiskey Diaries' team benefitted from our foundational work, <strong>handed over in an open and well-communicated way</strong>.</p>
   </div>
   <div class="col-xs-12 col-sm-6 col-md-5">
     <img src="/images/cases/expedition/map.png" class="img-responsive" alt="Map">
