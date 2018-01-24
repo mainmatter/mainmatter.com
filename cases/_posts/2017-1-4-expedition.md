@@ -23,7 +23,7 @@ permalink: /cases/expedition
       <div class="col-xs-12 col-md-10 col-md-offset-1">
         <blockquote>
           <p>simplabs brought wisdom, flexibility, and sane solutions when facing complex problems. They went above and beyond to work with our unique situation - would recommend 1000x.</p>
-          <footer><cite>Bryan Langslet, The Whiskey Diaries CEO</cite></footer>
+          <footer><cite>Bryan Langslet, Expedition CEO</cite></footer>
         </blockquote>
       </div>
     </div>
