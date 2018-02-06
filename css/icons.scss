@@ -137,3 +137,7 @@ i.jessica {
 i.andy {
   @include icon("/images/authors/andy", "jpg", 100px, 100px);
 }
+
+i.niklas {
+  @include icon("/images/authors/niklas", "jpg", 100px, 100px);
+}
