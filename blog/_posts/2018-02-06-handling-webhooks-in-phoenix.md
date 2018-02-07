@@ -17,6 +17,29 @@ Use `forward` on `MyApp.router` to forward `conn` to a custom plug which maps th
 
 #### lv;e (long version; enjoy!)
 
+Let's say we're receiving webhooks which contain an `event` key. It describes the event which triggered the webhook and we can use it to determine what code we are going to run.
+
+This is the initial code in the router:
+
+```elixir
+scope "/", MyAppWeb do
+  post("/webhook", WebhookController, :hook)
+end
+```
+
+And in the controller:
+
+```elixir
+def hook(conn, params) do
+  case params["event"] do
+    "addition" -> #handle addition
+    "subtraction" -> #handle subtraction
+    "multiplication" -> #handle multiplication
+    "divison" -> #handle division
+  end
+end
+```
+
 Let's restate the problem:
 * all incoming webhooks go to the same route and therefore, the same controller action
 * many different possible webhook payloads
@@ -30,19 +53,18 @@ I actually came up with three different ways of solving this problem; only the l
 
 #### Multiple function clauses
 
-This is the simplest way to run specific code based on the request payload that I could come up with. It involves pattern matching on the function's arguments, i.e. the request's payload. Only one route is needed and only one controller action is needed, but we write multiple clauses of that function.
-Let's say we're receiving webhooks which contain an `event` key. It describes the event which triggered the webhook and we can use it to determine what code we are going to run.
+This is the simplest way to run specific code based on the request payload that I could come up with. It involves pattern matching on the function's arguments, i.e. the request's payload. Only one route is needed and only one controller action is needed, but we write multiple clauses of that function to match a certain value of the event key.
 
 Here's our controller with the multiple clauses:
 
-```ruby
-def hook(%{event: "addition"} = params), do: add(params)
-def hook(%{event: "subtract"} = params), do: subtract(params)
-def hook(%{event: "multiply"} = params), do: multiply(params)
-def hook(%{event: "divide"} = params), do: divide(params)
+```elixir
+def hook(conn, %{"event" => "addition"} = params), do: add(params)
+def hook(conn, %{"event" => "subtraction"} = params), do: subtract(params)
+def hook(conn, %{"event" => "multiplication"} = params), do: multiply(params)
+def hook(conn, %{"event" => "division"} = params), do: divide(params)
 ```
 
-The request payload will match the clauses for the `hook/1` function and execute different functions depending on what `event` was passed in. This solution is simple and clean, but it doesn't fit well with the idea that a controller action should handle a specific request. The router serves no real purpose and our code has the potential to get very messy, quickly.
+The request payload will match the clauses for the `hook/2` function and execute different functions depending on what `event` was passed in. This solution is simple, but it doesn't fit well with the idea that a controller action should handle a specific request. The router serves no real purpose and our code has the potential to get very messy. Furthermore, the code isn't much improved as all we've done is move the pattern matching on the `event` key from the `case` statement to the function clause `params`.
 
 #### Shunting incoming connections
 
@@ -50,7 +72,7 @@ What if we could interfere with the incoming connection before it hits the route
 
 The router would look something like this:
 
-```ruby
+```elixir
 scope "/webhook", MyAppWeb do
   post("/add", WebhookController, :add)
   post("/subtract", WebhookController, :subtract)
@@ -61,11 +83,11 @@ end
 
 And the controller:
 
-```ruby
-def add(params), do: #handle addition event
-def subtract(params), do: #handle subtraction event
-def multiply(params), do: #handle multiplication event
-def divide(params), do: #handle division
+```elixir
+def add(conn, params), do: #handle addition
+def subtract(conn, params), do: #handle subtraction
+def multiply(conn, params), do: #handle multiplication
+def divide(conn, params), do: #handle division
 ```
 
 In this case, each controller action performs a specific function, the router maps each incoming request to these actions and the code is easily maintainable, well-structured and won't become jumbled over time. To achieve this however, we need to change a couple of things.
@@ -74,7 +96,7 @@ First off, we need to interfere with the incoming `conn` before it hits the rout
 
 Let's add a plug called `MyApp.WebhookShunt` to the endpoint, just before the router.
 
-```ruby
+```elixir
 defmodule MyApp.Endpoint do
   # ...
   plug(MyApp.WebhookShunt)
@@ -84,7 +106,7 @@ end
 
 And let's create a file called `webhook_shunt.ex` and add it to our `plugs` folder:
 
-```ruby
+```elixir
 defmodule MyAppWeb.Plug.WebhookShunt do
   alias Plug.Conn
 
@@ -102,7 +124,7 @@ Let's examine the code above, you'll notice there are two functions already defi
 
 Both of these need to be implemented in a module plug. Let's modify `call/2` to match the `addition` event in the request payload and change the request path to the route we defined for addition:
 
-```ruby
+```elixir
 defmodule MyAppWeb.Plug.WebhookShunt do
   alias Plug.Conn
 
@@ -140,7 +162,7 @@ I think this approach is better; we don't need to modify the endpoint, the route
 
 Let's setup our webhook path in `router.ex`:
 
-```ruby
+```elixir
 scope "/", MyAppWeb do
   forward("/webhook", Plugs.WebhookShunt)
 end
@@ -150,20 +172,20 @@ As long as your external APIs makes a request to this path when you do the setup
 
 Let's also add a second `call/2` clause to handle the `subtraction` event in the WebhookShunt:
 
-```ruby
+```elixir
 defmodule MyAppWeb.Plugs.WebhookShunt do
   alias Plug.Conn
   alias MyAppWeb.WebhookRouter
 
   def init(opts), do: opts
 
-  def call(%Conn{params: %{"event" => "addition"}} = conn, _opts) do
+  def call(%Conn{params: %{"event" => "addition"}} = conn, opts) do
     conn
     |> change_path_info(["webhook", "add"])
     |> WebhookRouter.call(opts)
   end
 
-  def call(%Conn{params: %{"event" => "subtraction"}} = conn, _opts) do
+  def call(%Conn{params: %{"event" => "subtraction"}} = conn, opts) do
     conn
     |> change_path_info(["webhook", "subtract"])
     |> WebhookRouter.call(opts)
@@ -179,7 +201,7 @@ Note: if you can't configure your API to send only the webhooks you're intereste
 
 Let's also create `webhook_router.ex` in the `_web` directory:
 
-```ruby
+```elixir
 defmodule MyAppWeb.WebhookRouter do
   use MyAppWeb, :router
 
@@ -192,9 +214,9 @@ end
 
 The router is called from the WebhookShunt with `WebhookRouter.call(opts)`, and maps the modified `conn`s to the appropriate controller action on the controller, which looks like this:
 
-```ruby
-def add(params), do: #handle addition event
-def subtract(params), do: #handle subtraction event
+```elixir
+def add(conn, params), do: #handle addition event
+def subtract(conn, params), do: #handle subtraction event
 ```
 
 I left out `multiply` and `divide` for brevity, as the the code is identical other than naming.
