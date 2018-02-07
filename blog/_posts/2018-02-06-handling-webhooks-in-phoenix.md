@@ -41,15 +41,16 @@ end
 ```
 
 Let's restate the problem:
-* all incoming webhooks go to the same route and therefore, the same controller action
-* many different possible webhook payloads
-* different computation required depending on payload
 
-I actually came up with three different ways of solving this problem; only the last was to my satsifaction. I will, however, go through all three approaches, as they proved interesting learning opportunities.
+* all incoming webhooks go to the same route and therefore, the same controller action;
+* many different possible webhook payloads;
+* different computation required depending on payload.
 
-1. multiple function clauses for controller action
-2. plug called from endpoint
-3. plug and second router
+I actually came up with three different ways of solving this problem; only the last was to my satsifaction. I will, however, go through all three approaches, as they proved interesting learning opportunities:
+
+1. multiple function clauses for controller action;
+2. plug called from endpoint;
+3. plug and second router.
 
 #### Multiple function clauses
 
@@ -119,8 +120,9 @@ end
 The core components of a Phoenix application are plugs. This includes endpoints, routers and controllers. There are two flavors of `Plug`, function plugs and module plugs. We'll be using the latter in this example, but I highly suggest checking out the [docs](https://hexdocs.pm/plug/readme.html).
 
 Let's examine the code above, you'll notice there are two functions already defined:
-* `init/1` which initializes any arguments or options to be passed to `call/2` (executed at compile time)
-* `call/2` which transforms the connection (it's actually a simple function plug and is executed at run time)
+
+* `init/1` which initializes any arguments or options to be passed to `call/2` (executed at compile time);
+* `call/2` which transforms the connection (it's actually a simple function plug and is executed at run time).
 
 Both of these need to be implemented in a module plug. Let's modify `call/2` to match the `addition` event in the request payload and change the request path to the route we defined for addition:
 
@@ -143,16 +145,22 @@ end
 
 `change_path_info/2` changes the `path_info` property on the `conn`, based on the request payload matched in `call/2`, in this case to `"webhook/add"`. You'll notice I also added a no-op function clause for `call/2`. If other routes are added and don't need to be manipulated in the same way as the ones above, we need to make sure the request gets through to the router unmodified.
 
-This solution isn't great however. We are placing code in the endpoint, which will be executed no matter what the request path is. This isn't ideal, and may cause issues down the line.
+This solution isn't great however. We are placing code in the endpoint, which will be executed no matter what the request path is. Furthermore, the endpoint is only supposed to:
+
+* provide a wrapper for starting and stopping the endpoint as part of a supervision tree;
+* define an initial plug pipeline for requests to pass through;
+* host web specific configuration for your application.
+
+Interfering with the request to map it to a route at this point would be unidiomatic Phoenix. It would also make the app slower, and harder to maintain and debug.
 
 #### Forwarding conn to the shunt and calling another router
 
 Instead of intercepting the `conn` in the endpoint, we could forward it from the application's main router to the `WebhookShunt`, modify it and call a second router who's sole purpose would be to handle the hooks.
 
-1. The request hits router which has one path for all webhooks (`"/webhook"`)
-2. `conn` is forwarded to the WebhookShunt which modifies the path based on the request payload
-3. The WebhookShunt calls the WebhookRouter, passing it the modified `conn`
-4. The WebhookRouter matches the `conn` path and calls the appropriate action on the WebhookController
+1. The request hits router which has one path for all webhooks (`"/webhook"`).
+2. `conn` is forwarded to the WebhookShunt which modifies the path based on the request payload.
+3. The WebhookShunt calls the WebhookRouter, passing it the modified `conn`.
+4. The WebhookRouter matches the `conn` path and calls the appropriate action on the WebhookController.
 
 I.e.,
 
@@ -215,8 +223,8 @@ end
 The router is called from the WebhookShunt with `WebhookRouter.call(opts)`, and maps the modified `conn`s to the appropriate controller action on the controller, which looks like this:
 
 ```elixir
-def add(conn, params), do: #handle addition event
-def subtract(conn, params), do: #handle subtraction event
+def add(conn, params), do: #handle addition
+def subtract(conn, params), do: #handle subtraction
 ```
 
 I left out `multiply` and `divide` for brevity, as the the code is identical other than naming.
