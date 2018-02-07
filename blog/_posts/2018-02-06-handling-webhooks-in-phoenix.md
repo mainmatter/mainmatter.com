@@ -94,7 +94,7 @@ defmodule MyAppWeb.Plug.WebhookShunt do
 end
 ```
 
-The core components of a Phoenix appplication are plugs. This includes endpoints, routers and controllers. There are two flavors of `Plug`, function plugs and module plugs. We'll be using the latter in this example, but I highly suggest checking out the [docs](https://hexdocs.pm/plug/readme.html).
+The core components of a Phoenix application are plugs. This includes endpoints, routers and controllers. There are two flavors of `Plug`, function plugs and module plugs. We'll be using the latter in this example, but I highly suggest checking out the [docs](https://hexdocs.pm/plug/readme.html).
 
 Let's examine the code above, you'll notice there are two functions already defined:
 * `init/1` which initializes any arguments or options to be passed to `call/2` (executed at compile time)
@@ -148,7 +148,7 @@ end
 
 As long as your external APIs makes a request to this path when you do the setup for the webhook callbacks, every incoming request to this path will be forwarded to the WebhookShunt.
 
-Let's also add a second `call/2` clauses to handle the `subtraction` event in the WebhookShunt:
+Let's also add a second `call/2` clause to handle the `subtraction` event in the WebhookShunt:
 
 ```ruby
 defmodule MyAppWeb.Plugs.WebhookShunt do
