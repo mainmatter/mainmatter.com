@@ -138,7 +138,7 @@ stages:
     duration: 20
   - title: Full Text Search
     description: |-
-      When implementing a search-engine-like feature on a web application, typically the results must very closely match the search term. In the past, this limitation was countered by adding new system components like Apache [Solr](http://lucene.apache.org/solr/) and [Lucene](https://lucene.apache.org/core/). Setting these up is a daunting task, to say the least, and is absolutely overkill for many use cases.
+      When implementing a search-engine-like feature on a web application, typically the results must very closely match the search term. In the past, this limitation was countered by adding new system components like Apache [Solr](http://lucene.apache.org/solr/) and [Lucene]( [Apache Lucene - Apache Lucene Core]https://lucene.apache.org/core/). Setting these up is a daunting task, to say the least, and is absolutely overkill for many use cases.
 
       Thankfully, modern versions of PostgreSQL and MySQL feature simplified versions of this technology. We can perform a search against multiple fields, specifying how much “weight” should be given to each field.
     item_type: lecture
