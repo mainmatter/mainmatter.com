@@ -35,7 +35,7 @@ icon: trainline-big
 
 <div class="row content-section">
   <div class="col-12 col-md-6 col-lg-5 offset-lg-1">
-    <p>simplabs <strong>spearheaded several engineering efforts focussed around mobile performance</strong>, improved load times, server side rendering and localization. We helped <strong>establish modern and idiomatic practices for developing mobile apps</strong> and helped Trainline's in-house engineering team internalize those through code reviews.</p>
+    <p>simplabs <strong>spearheaded several engineering efforts focused around mobile performance</strong>, improved load times, server side rendering and localization. We helped <strong>establish modern and idiomatic practices for developing mobile apps</strong> and helped Trainline's in-house engineering team internalize those through code reviews.</p>
     <p>In addition to supporting Trainline with engineering resources and expertise, we were able to help <strong>improve the engineering process</strong> by establishing and solidifying a sprint based approach. This resulted in more efficient prioritization and a better sense of progress by both engineers and management.</p>
   </div>
   <div class="col-8 offset-2 col-md-6 offset-md-0 col-lg-3">
