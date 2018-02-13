@@ -3,33 +3,34 @@
     <a class="navbar-brand" href="/">
       <i class="simplabs"></i>
     </a>
-    
+
     <input type="checkbox" id="navbar-toggle-cbox" class="hidden">
     <label for="navbar-toggle-cbox" class="navbar-toggler hidden-md-up" aria-controls="navbar-header">
       <i class="fa fa-bars"></i>
     </label>
     
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item {% if page.url contains "/services/" %}active{% endif %}">
-          <a href="/services/" class="nav-link"><span>Services</span></a>
+    
+    <div class="collapse navbar-collapse justify-content-end">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="/services/" class="nav-link {% if page.url contains "/services/" %}active{% endif %}"><span>Services</span></a>
           <ul class="nav-hover">
-            <li><a href="/services/engineering/" class="{% if page.url contains "/services/engineering/" %}active{% endif %}"><span>Software Engineering</span></a></li>
-            <li><a href="/services/team-augmentation/" class="{% if page.url contains "/services/team-augmentation/" %}active{% endif %}"><span>Team Augmentation</span></a></li>
-            <li><a href="/services/training/" class="{% if page.url contains "/services/training/" %}active{% endif %}"><span>Training</span></a></li>
+            <li><a href="/services/engineering/" class="nav-link {% if page.url contains "/services/engineering/" %}active{% endif %}"><span>Software Engineering</span></a></li>
+            <li><a href="/services/team-augmentation/" class="nav-link {% if page.url contains "/services/team-augmentation/" %}active{% endif %}"><span>Team Augmentation</span></a></li>
+            <li><a href="/services/training/" class="nav-link {% if page.url contains "/services/training/" %}active{% endif %}"><span>Training</span></a></li>
           </ul>
         </li>
-        <li class="nav-item {% if page.url contains "/work/" %}active{% endif %}">
-          <a href="/work/" class="nav-link"><span>Work</span></a>
+        <li class="nav-item">
+          <a href="/work/" class="nav-link {% if page.url contains "/work/" %}active{% endif %}"><span>Work</span></a>
         </li>
-        <li class="nav-item {% if page.url contains "/about/" %}active{% endif %}">
-          <a href="/about/" class="nav-link"><span>About</span></a>
+        <li class="nav-item">
+          <a href="/about/" class="nav-link {% if page.url contains "/about/" %}active{% endif %}"><span>About</span></a>
         </li>
-        <li class="nav-item {% if page.url contains "/blog/" %}active{% endif %}">
-          <a href="/blog/" class="nav-link"><span>Blog</span></a>
+        <li class="nav-item">
+          <a href="/blog/" class="nav-link {% if page.url contains "/blog/" %}active{% endif %}"><span>Blog</span></a>
         </li>
-        <li class="nav-item contact">
-          <a href="/contact/" class="nav-link">Work with us</a>
+        <li class="nav-item">
+          <a href="/contact/" class="nav-link contact {% if page.url contains "/contact/" %}active{% endif %}">Work with us</a>
         </li>
       </ul>
     </div>
@@ -37,13 +38,19 @@
 </nav>
 <script type="text/javascript">
   Zepto(function($) {
-    $(window).scroll(function(){
+    var mainMenu = $('#main-menu');
+    function setMainMenuScrolledClass() {
     	var scroll = $(window).scrollTop();
   	  if (scroll > 50) {
-  	    $('#main-menu').addClass('scrolled');
+  	    mainMenu.addClass('scrolled');
   	  } else {
-  	    $('#main-menu').removeClass('scrolled');
+  	    mainMenu.removeClass('scrolled');
   	  }
+    };
+
+    $(window).scroll(function(){
+    	setMainMenuScrolledClass();
     });
+    setMainMenuScrolledClass();
   });
 </script>

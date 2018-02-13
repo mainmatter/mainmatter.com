@@ -9,83 +9,40 @@
 @import 'syntax';
 
 body {
-  padding-top: 50px;
+  padding-top: 60px;
 }
 
 #main-menu {
-  margin-bottom: 0;
-
-  i.simplabs {
-    filter: none;
-    -webkit-filter: none;
-  }
-
   input[type=checkbox] {
     display: none;
   }
 
-  &.scrolled {
-    i.simplabs {
-      filter: gray;
-      -webkit-filter: grayscale(1);
+  .nav-hover {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    margin-left: -.5rem;
+    padding: .5rem 0 .5rem 0;
+    transform: translateY(-.75rem);
+    transition: all .2s ease-in-out 0s, visibility 0s linear .2s;
 
-      &:hover {
-        filter: none;
-        -webkit-filter: none;
+    li {
+      margin: 0 .5rem;
+
+      a {
+        padding: 0;
+        margin: .125rem .5rem;
       }
     }
   }
 
-  li.nav-item {
-    position: relative;
-
+  .nav-item:hover {
     .nav-hover {
-      transition: opacity 0.15s ease-in-out, visibility 0.15s ease-in-out, background-color 0.25s linear;
-      opacity: 0;
-      visibility: hidden;
-      position: absolute;
-      list-style-type: none;
-      left: calc(-50% + 10px);
-      top: 50px;
-      padding: 5px 0;
-
-      li {
-        margin: 0;
-
-        a {
-          display: block;
-          padding: 5px 10px;
-        }
-      }
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0%);
+      transition-delay: 0s, 0s;
     }
-
-    &:hover {
-      .nav-hover {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-  }
-
-  a {
-    border-bottom: none;
-
-    span {
-      border-bottom: 1px solid transparent;
-    }
-
-    &:hover, &.active {
-      span {
-        border-bottom-width: 2px;
-        border-bottom-style: solid;
-        transition: border-bottom-color 0.25s linear;
-      }
-    }
-  }
-
-  img {
-    width: 100px;
-    height: 17px;
   }
 }
 
@@ -631,136 +588,4 @@ pre.highlight {
 
 .error-page {
   padding-top: 100px;
-}
-
-@media screen and (max-width: 767px) {
-  #main-menu {
-    .navbar-nav {
-      .navbar-left {
-        display: none !important;
-      }
-    }
-
-    .navbar-header {
-      .navbar-left {
-        display: block;
-      }
-    }
-
-    li.nav-item {
-      width: 100%;
-    }
-
-    .navbar-toggler {
-      cursor: pointer;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    .navbar-collapse {
-      position: absolute;
-      margin-top: 0;
-      width: 100%;
-      top: 60px;
-      left: 0;
-
-      .navbar-nav {
-        padding-bottom: .5rem;
-      }
-
-      .contact {
-        display: none;
-      }
-
-      li {
-        margin-left: 0;
-      }
-    }
-
-    .collapse {
-      opacity: 0;
-      transition: opacity 0.15s ease-in-out;
-    }
-
-    input[type=checkbox]:checked ~ .collapse {
-      display: block;
-      opacity: 1;
-
-      .nav-hover {
-        display: none;
-      }
-    }
-  }
-
-  #main-content {
-    .content-teaser {
-      margin-bottom: 60px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    .workshops {
-      .icon {
-        margin-bottom: 20px;
-      }
-    }
-
-    .workshop {
-      .stage {
-        .number {
-          display: none;
-        }
-
-        h4 {
-          .number {
-            display: inline;
-          }
-        }
-      }
-    }
-  }
-
-  #footer {
-    .navbar-brand {
-      margin: 0;
-    }
-
-    .navbar-nav {
-      margin-bottom: 1rem;
-    }
-  }
-
-  .case-teaser {
-    h5, .logo {
-      display: none;
-    }
-  }
-
-  .case {
-    .content-section {
-      > div:last-of-type {
-        margin-top: 20px;
-      }
-    }
-  }
-
-  .primary-banner {
-    height: 220px;
-
-    h2 {
-      font-size: 36px;
-    }
-
-    &.main-page {
-      h2 {
-        font-size: 36px;
-      }
-    }
-  }
-
-  #contact-form {
-    margin-bottom: 20px;
-  }
 }

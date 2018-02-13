@@ -1,3 +1,7 @@
+html {
+  font-size: 1rem;
+}
+
 body {
   height: 100%;
   line-height: 1.7;
@@ -5,7 +9,6 @@ body {
   font-family: 'Ubuntu', sans-serif;
   letter-spacing: 1px;
   text-align: justify;
-  font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -113,12 +116,6 @@ h5 {
   text-decoration: none;
 }
 
-#main-menu {
-  ul li a {
-    white-space: nowrap;
-  }
-}
-
 #footer {
   font-size: 12px;
 
@@ -128,6 +125,23 @@ h5 {
 
   .section-head {
     text-decoration: underline;
+  }
+}
+
+#main-menu {
+  font-size: .9rem;
+
+  a.contact {
+    font-weight: normal;
+  }
+
+  .nav-hover {
+    list-style-type: none;
+
+    a {
+      font-size: .8rem;
+      border-bottom: 2px solid transparent;
+    }
   }
 }
 

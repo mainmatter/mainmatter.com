@@ -2,10 +2,11 @@ $primary-text-color: #676767;
 $secondary-text-color: #ddd;
 
 $primary-background-color: #fff;
-$secondary-background-color: #000;
+$secondary-background-color: #1e6db2;
 
 $primary-highlight-color: #2b98de;
-$secondary-highlight-color: #fff;
+$secondary-highlight-color: #1e6db2;
+$ternary-highlight-color: #fff;
 
 $border-color: #eee;
 
@@ -34,11 +35,10 @@ body {
 
 a {
   color: $primary-highlight-color;
-  transition: border-bottom-color ease-in-out .15s;
+  transition: color ease-in-out .15s;
 
   &:hover, &:active, &:focus {
-    color: $primary-highlight-color;
-    border-bottom-color: $primary-highlight-color;
+    color: $secondary-highlight-color;
   };
 }
 
@@ -89,86 +89,6 @@ table {
   }
 }
 
-#main-menu {
-  transition: background-color 0.25s linear;
-  background-color: $primary-background-color;
-
-  a {
-    color: $primary-text-color;
-    background-color: transparent;
-    transition: color ease-in-out .15s;
-
-    span {
-      transition: border-bottom-color ease-in-out .15s;
-    }
-
-    &:hover, &.active {
-      color: $primary-highlight-color;
-      border-bottom-color: $primary-highlight-color;
-
-      span {
-        border-bottom-color: $primary-highlight-color;
-      }
-    }
-  }
-
-  li.nav-item {
-    .nav-hover {
-      background-color: $primary-background-color;
-    }
-  }
-
-  li.contact {
-    a {
-      transition: color ease-in-out .15s, background-color ease-in-out .15s;
-      background-color: $primary-highlight-color;
-      color: $secondary-highlight-color;
-    }
-  }
-
-  &.scrolled {
-    background-color: $primary-highlight-color;
-
-    a {
-      color: $secondary-highlight-color;
-
-      &:hover, &.active {
-        span {
-          border-bottom-color: $secondary-highlight-color;
-        }
-      }
-    }
-
-    .navbar-toggler {
-      transition: color ease-in-out .15s;
-      color: $secondary-highlight-color;
-    }
-
-    li.nav-item {
-      .nav-hover {
-        background-color: $primary-highlight-color;
-
-        a {
-          color: $secondary-highlight-color;
-
-          &.active {
-            span {
-              border-bottom-color: $secondary-highlight-color;
-            }
-          }
-        }
-      }
-    }
-
-    li.contact {
-      a {
-        background-color: $secondary-highlight-color;
-        color: $primary-highlight-color;
-      }
-    }
-  }
-}
-
 .custom-button {
   border-color: $primary-highlight-color;
   transition: color ease-in-out .15s, background-color ease-in-out .15s;
@@ -215,6 +135,45 @@ table {
 .article {
   & > .col > p:first-of-type {
     border-bottom-color: $border-color;
+  }
+}
+
+#main-menu {
+  transition: background-color ease-in-out .15s;
+  background-color: $primary-background-color;
+
+  a.active, a.contact {
+    color: $secondary-highlight-color;
+  }
+
+  .nav-hover {
+    background-color: $primary-background-color;
+
+    a {
+      transition: border-bottom-color ease-in-out .15s;
+
+      &:hover, &.active {
+        border-bottom-color: $secondary-highlight-color;
+      }
+    }
+  }
+
+  &.scrolled {
+    background-color: $secondary-background-color;
+
+    a {
+      color: $ternary-highlight-color;
+    }
+
+    .nav-hover {
+      background-color: $secondary-background-color;
+
+      a {
+        &:hover, &.active {
+          border-bottom-color: $ternary-highlight-color;
+        }
+      }
+    }
   }
 }
 
@@ -356,32 +315,6 @@ table {
   .agenda-item {
     .start-time {
       color: $primary-highlight-color;
-    }
-  }
-}
-
-@media screen and (max-width: 767px) {
-  #main-menu {
-    .navbar-nav {
-      background: $primary-background-color;
-    }
-
-    input[type=checkbox]:checked {
-      & ~ .navbar-collapse {
-        .navbar-nav {
-          transition: background-color 0.25s linear;
-        }
-      }
-    }
-
-    &.scrolled {
-      input[type=checkbox]:checked {
-        & ~ .navbar-collapse {
-          .navbar-nav {
-            background-color: $primary-highlight-color;
-          }
-        }
-      }
     }
   }
 }
