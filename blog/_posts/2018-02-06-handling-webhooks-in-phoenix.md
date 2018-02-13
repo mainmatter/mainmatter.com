@@ -6,7 +6,7 @@ author: "Niklas Long"
 github-handle: niklaslong
 ---
 
-I recently had to implement a controller which took care of receiving and processing webhooks. The thing is, the source site (API) could send requests with many different payloads to the webhook callback url and my first implementation consisted of only one bloated controller action responsible for handling them. This didn't really seem to fit with my goal of keeping controller actions concise and focussed. So I set out to find a better solution.
+I recently had to implement a controller which took care of receiving and processing webhooks. The thing is, the application had to receive webhooks which often contained very different information, and they were all going to one route and one controller action. This didn't really seem to fit with my goal of keeping controller actions concise and focused. So I set out to find a better solution.
 
 <!--break-->
 
@@ -22,9 +22,9 @@ I.e.,
 
 Let's restate the problem:
 
-* all requests are being sent to the same webhook callback url;
-* there are many different possible request payloads;
-* app requires different computation depending on payload.
+* all requests are being sent to the same webhook callback url
+* there are many different possible request payloads
+* app requires different computation depending on payload
 
 Let's say we're receiving webhooks which contain an `event` key in the request body. It describes the event which triggered the webhook and we can use it to determine what code we are going to run.
 
@@ -53,11 +53,11 @@ All incoming webhooks go to the same route and therefore, the same controller ac
 
 It took three refactors to get to a satisfactory solution. I will, however explain each one in this post, as they are logical steps in reaching the final solution and proved interesting learning opportunities:
 
-1. multiple function clauses for controller action;
-2. plug called from endpoint;
-3. plug and second router.
+1. Multiple function clauses for controller action
+2. Plug called from endpoint
+3. Plug and second router
 
-#### multiple function clauses
+#### Multiple function clauses
 
 Let's start seperating the computation into smaller fragments by moving the pattern matching from the `case` statement to the function's definition. We are still using only one route and only one controller action, but we write multiple clauses of that function to match a certain value of the `event` key in the params.
 
@@ -72,7 +72,7 @@ def hook(conn, %{"event" => "division"} = params), do: divide(params)
 
 The request payload will match the clauses for the `hook/2` function and execute different functions depending on what `event` was passed in. This refactor is a step in the right direction, but it still doesn't fit well with the idea that a controller action should handle one specific request. The router serves no real purpose, as there is still only one route, and our code has the potential to get very messy.
 
-#### shunting incoming connections
+#### Shunting incoming connections
 
 What if we could interfere with the incoming webhook before it hits the router? We could then modify the path of the request depending on the params, match a route and execute the corresponding controller action.
 
@@ -126,8 +126,8 @@ The core components of a Phoenix application are plugs. This includes endpoints,
 
 Let's examine the code above, you'll notice there are two functions already defined:
 
-* `init/1` which initializes any arguments or options to be passed to `call/2` (executed at compile time);
-* `call/2` which transforms the connection (it's actually a simple function plug and is executed at run time).
+* `init/1` which initializes any arguments or options to be passed to `call/2` (executed at compile time)
+* `call/2` which transforms the connection (it's actually a simple function plug and is executed at run time)
 
 Both of these need to be implemented in a module plug. Let's modify `call/2` to match the `addition` event in the request payload and change the request path to the route we defined for addition:
 
@@ -153,20 +153,20 @@ end
 
 This strategy isn't great however. We are placing code in the endpoint, which will be executed no matter what the request path is. Furthermore, the endpoint is only supposed to (from the [docs](https://hexdocs.pm/phoenix/Phoenix.Endpoint.html#content)):
 
-* provide a wrapper for starting and stopping the endpoint as part of a supervision tree;
-* define an initial plug pipeline for requests to pass through;
-* host web specific configuration for your application.
+* provide a wrapper for starting and stopping the endpoint as part of a supervision tree
+* define an initial plug pipeline for requests to pass through
+* host web specific configuration for your application
 
 Interfering with the request to map it to a route at this point would be unidiomatic Phoenix. It would also make the app slower, and harder to maintain and debug.
 
-#### forwarding conn to the shunt and calling another router
+#### Forwarding conn to the shunt and calling another router
 
 Instead of intercepting the `%Conn{}` in the endpoint, we could forward it from the application's main router to the `WebhookShunt`, modify it and call a second router who's sole purpose would be to handle the incoming webhooks.
 
-1. The request hits router which has one path for all webhooks (`"/webhook"`).
-2. `%Conn{}` is forwarded to the WebhookShunt which modifies the path based on the request payload.
-3. The WebhookShunt calls the WebhookRouter, passing it the modified `%Conn{}`.
-4. The WebhookRouter matches the `%Conn{}` path and calls the appropriate action on the WebhookController.
+1. The request hits router which has one path for all webhooks (`"/webhook"`)
+2. `%Conn{}` is forwarded to the `WebhookShunt` which modifies the path based on the request payload
+3. The `WebhookShunt` calls the `WebhookRouter`, passing it the modified `%Conn{}`
+4. The `WebhookRouter` matches the `%Conn{}` path and calls the appropriate action on the `WebhookController`
 
 I.e.,
 
@@ -182,7 +182,7 @@ scope "/", MyAppWeb do
 end
 ```
 
-As long as your external APIs makes a request to this path when you do the setup for the webhook callbacks, every incoming request to this path will be forwarded to the WebhookShunt.
+As long as your external APIs makes a request to this path when you do the setup for the webhook callbacks, every incoming request to this path will be forwarded to the `WebhookShunt`.
 
 Let's refactor `call/2` to handle all events by replacing the hardcoded `"addition"` event and path with the `event` variable:
 
@@ -224,7 +224,7 @@ defmodule MyAppWeb.WebhookRouter do
 end
 ```
 
-The router is called from the WebhookShunt with `WebhookRouter.call(conn, opts)`, and maps the modified `%Conn{}`s to the appropriate controller action on the controller, which looks like this:
+The `WebhookRouter` is called from the `WebhookShunt` with `WebhookRouter.call(conn, opts)`, and maps the modified `%Conn{}`s to the appropriate controller action on the `WebhookController`, which looks like this:
 
 ```elixir
 def add(conn, params), do: #handle addition
