@@ -231,10 +231,6 @@ table {
 
 #main-content {
   .content-section {
-    &.separated:after {
-      border-bottom-color: $border-color;
-    }
-
     &.statement {
       h4 {
         color: $primary-text-color;

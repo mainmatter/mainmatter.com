@@ -97,17 +97,6 @@ body {
       margin-bottom: 0;
     }
 
-    &.separated {
-      &:after {
-        content: ' ';
-        margin-left: 15px;
-        padding-top: 60px;
-        width: calc(100% - 30px);
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-      }
-    }
-
     &.split-section:last-child:after {
       border-bottom: none;
       padding-top: 0;
@@ -438,15 +427,6 @@ pre.highlight {
   }
 }
 
-#main-content {
-  .articles, .workshops {
-    .separated:last-child:after {
-      padding-top: 0;
-      border-bottom: none;
-    }
-  }
-}
-
 .twitter-tweet {
   margin-left: auto !important;
   margin-right: auto !important;
@@ -711,10 +691,6 @@ pre.highlight {
   }
 
   #main-content {
-    .content-section.separated.split-section:after {
-      width: calc(100% - 30px);
-    }
-
     .content-teaser {
       margin-bottom: 60px;
 
