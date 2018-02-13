@@ -122,10 +122,6 @@ h5 {
   .navbar-brand {
     font-size: 12px;
   }
-
-  .section-head {
-    text-decoration: underline;
-  }
 }
 
 #main-menu {
@@ -357,7 +353,9 @@ h5 {
       }
     }
   }
+}
 
+@include media-breakpoint-down(sm) {
   .navbar-collapse {
     .navbar-nav {
       text-align: center;

@@ -8,6 +8,10 @@ $primary-highlight-color: #2b98de;
 $secondary-highlight-color: #1e6db2;
 $ternary-highlight-color: #fff;
 
+$primary-lowlight-color: #ccc;
+
+
+
 $border-color: #eee;
 
 $code-background-color: #f5f6f7;
@@ -176,13 +180,16 @@ table {
 }
 
 #footer {
-  a {
-    color: $primary-text-color;
+  .section-head, .section-head:hover, .section-head:active {
+    color: $primary-highlight-color;
+  }
 
-    &:hover, &.active {
-      background-color: $primary-background-color;
-      color: $primary-text-color;
-    }
+  a, a:hover, a:active {
+    color: $primary-text-color;
+  }
+
+  .navbar-text {
+    color: $primary-lowlight-color;
   }
 }
 

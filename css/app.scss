@@ -218,27 +218,12 @@ pre.highlight {
 
 
 #footer {
-  .navbar-collapse > * {
-    align-self: flex-start;
+  .navbar-text {
+    padding-top: .2rem;
   }
 
-  .navbar-brand {
-    padding: 0;
-
-    .navbar-text {
-      padding: .5rem 0;
-    }
-  }
-
-  .navbar-nav {
-    .nav-item {
-      padding: .2rem 0;
-
-      a {
-        padding: 0;
-        border: none;
-      }
-    }
+  .nav-item {
+    padding-bottom: .25rem;
   }
 }
 
@@ -619,6 +604,20 @@ pre.highlight {
 
     .nav-hover {
       display: none;
+    }
+  }
+
+  #footer {
+    .navbar-text {
+      display: block;
+    }
+
+    .navbar-text, .nav-item, .navbar-brand {
+      margin: 0;
+    }
+
+    .navbar-text, .navbar-brand, .navbar-nav {
+      padding-bottom: 1rem;
     }
   }
 }
