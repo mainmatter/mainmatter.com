@@ -8,8 +8,10 @@
 @import 'icons';
 @import 'syntax';
 
+$top-spacing: 60px;
+
 body {
-  padding-top: 60px;
+  padding-top: $top-spacing;
 }
 
 #main-menu {
@@ -588,4 +590,35 @@ pre.highlight {
 
 .error-page {
   padding-top: 100px;
+}
+
+@include media-breakpoint-down(sm) {
+  #main-menu {
+    .navbar-toggler {
+      margin-bottom: 0;
+    }
+
+    .collapse {
+      display: block;
+      position: absolute;
+      top: $top-spacing;
+      left: 0;
+      width: 100%;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-.75rem);
+      transition: all .15s ease-in-out 0s, visibility 0s linear .15s;
+    }
+
+    .nav-collapse-state:checked ~ .collapse {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0%);
+      transition-delay: 0s, 0s;
+    }
+
+    .nav-hover {
+      display: none;
+    }
+  }
 }

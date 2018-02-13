@@ -8,6 +8,7 @@ gems:
   - jekyll-seo-tag
   - jekyll-feed
   - jekyll-redirect-from
+  - jekyll-octicons
 
 markdown: kramdown
 highlighter: rouge

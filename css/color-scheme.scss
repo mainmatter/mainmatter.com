@@ -168,10 +168,8 @@ table {
     .nav-hover {
       background-color: $secondary-background-color;
 
-      a {
-        &:hover, &.active {
-          border-bottom-color: $ternary-highlight-color;
-        }
+      a:hover, a.active {
+        border-bottom-color: $ternary-highlight-color;
       }
     }
   }
@@ -315,6 +313,28 @@ table {
   .agenda-item {
     .start-time {
       color: $primary-highlight-color;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #main-menu {
+    .collapse {
+      background-color: $primary-background-color;
+    }
+
+    .navbar-toggler path {
+      fill: $primary-highlight-color;
+    }
+
+    &.scrolled {
+      .collapse {
+        background-color: $secondary-background-color;
+      }
+
+      .navbar-toggler path {
+        fill: $ternary-highlight-color;
+      }
     }
   }
 }
