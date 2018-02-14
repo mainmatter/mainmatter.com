@@ -10,7 +10,7 @@ description: Most web applications rely on storing their data in a relational da
   they have a LOT in common.
 image: "/images/training/2017-11-07-sql-fundamentals.png"
 stages:
-- title: Foundations of Relational Databases
+- title: Foundation of Relational Databases
   description: Before we dive into our workshop project, we will spend some time to
     lay the foundation for relational databases and SQL. Learning whether a given
     task is best handled by your database or application layer is a big part of ensuring
@@ -93,7 +93,7 @@ stages:
     item_type: lecture
     start_time: '11:30'
     duration: 30
-  - title: 'EXERCISE: Filtering via WHERE clauses'
+  - title: EXERCISE 2 - Filtering via WHERE clauses
     description: "We’ll add WHERE clauses to the collection queries for two pages
       on our app. \n* On the products list page, we’ll allow the user to filter by
       those products that need to be reordered, those that are discontinued, or the
@@ -231,7 +231,7 @@ stages:
     item_type: lecture
     start_time: '9:30'
     duration: 30
-  - title: 'EXERCISE: Boost JOIN performance via INDEXes'
+  - title: Boost JOIN performance via INDEXes
     description: 'You may have noticed that our database query times increased over
       the last few exercises. One contributor to this problem has to do with the JOINs
       we added in exercise 4. Adding an index will tell the database to keep track
