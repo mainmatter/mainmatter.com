@@ -223,7 +223,7 @@ pre.highlight {
     	margin-top: 19px;
     }
   }
-  
+
   ul {
 
     li {
@@ -280,7 +280,7 @@ pre.highlight {
 .content-teaser {
   p {
     padding-top: 10px;
-    padding-bottom: 10px; 
+    padding-bottom: 10px;
   }
 }
 
@@ -402,7 +402,12 @@ pre.highlight {
     margin-top: 40px;
   }
 
-  p, ul {
+  ol {
+    list-style-position: inside;
+    padding: 0;
+  }
+
+  p, ul, ol {
     width: 83.33333333%;
     margin-right: auto;
     margin-left: auto;
