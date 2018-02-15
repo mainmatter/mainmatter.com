@@ -3,6 +3,12 @@ html {
 }
 
 body {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: lighter;
+  text-align: justify;
+}
+/*
+body {
   height: 100%;
   line-height: 1.7;
   font-weight: 300;
@@ -116,11 +122,16 @@ h5 {
   text-decoration: none;
 }
 
+*/
 #footer {
   font-size: 12px;
 
   .navbar-brand {
     font-size: 12px;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
 
@@ -140,7 +151,7 @@ h5 {
     }
   }
 }
-
+/*
 .primary-banner {
   text-align: center;
 
@@ -354,7 +365,7 @@ h5 {
     }
   }
 }
-
+*/
 @include media-breakpoint-down(sm) {
   .navbar-collapse {
     .navbar-nav {

@@ -19,6 +19,10 @@ body {
     display: none;
   }
 
+  a {
+    margin: 0 .25rem;
+  }
+
   .nav-hover {
     position: absolute;
     visibility: hidden;
@@ -48,6 +52,9 @@ body {
   }
 }
 
+
+
+/*
 #main-content {
   min-height: 100%;
 
@@ -215,7 +222,7 @@ pre.highlight {
     }
   }
 }
-
+*/
 
 #footer {
   .navbar-text {
@@ -226,7 +233,7 @@ pre.highlight {
     padding-bottom: .25rem;
   }
 }
-
+/*
 .primary-banner {
   padding: 20px 0;
   height: 180px;
@@ -576,6 +583,8 @@ pre.highlight {
 .error-page {
   padding-top: 100px;
 }
+
+*/
 
 @include media-breakpoint-down(sm) {
   #main-menu {
