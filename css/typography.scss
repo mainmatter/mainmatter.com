@@ -7,6 +7,19 @@ body {
   font-weight: lighter;
   text-align: justify;
 }
+
+h1 {
+  text-align: left;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.primary-banner {
+  strong {
+    font-weight: normal;
+  }
+}
+
 /*
 body {
   height: 100%;

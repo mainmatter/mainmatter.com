@@ -1,0 +1,5 @@
+body.index {
+  .primary-banner {
+    height: calc(100vH - #{$top-spacing});
+  }
+}

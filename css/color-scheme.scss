@@ -1,8 +1,9 @@
-$primary-text-color: #676767;
+$primary-text-color: #333;
 $secondary-text-color: #ddd;
 
 $primary-background-color: #fff;
 $secondary-background-color: #1e6db2;
+$ternary-background-color: #000;
 
 $primary-highlight-color: #2b98de;
 $secondary-highlight-color: #1e6db2;
@@ -44,6 +45,10 @@ a {
   &:hover, &:active, &:focus {
     color: $secondary-highlight-color;
   };
+}
+
+h1 {
+  color: $primary-highlight-color;
 }
 
 /*
@@ -193,6 +198,13 @@ table {
 
   .navbar-text {
     color: $primary-lowlight-color;
+  }
+}
+
+.primary-banner {
+  strong {
+    color: $ternary-highlight-color;
+    background-color: $ternary-background-color;
   }
 }
 
