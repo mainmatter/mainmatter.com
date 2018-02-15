@@ -11,6 +11,8 @@ $ternary-highlight-color: #fff;
 
 $primary-lowlight-color: #ccc;
 
+$primary-shadow-color: #bbb;
+
 
 
 $border-color: #eee;
@@ -205,6 +207,29 @@ table {
   strong {
     color: $ternary-highlight-color;
     background-color: $ternary-background-color;
+  }
+}
+
+.content-section {
+  &.highlight {
+    background-color: $secondary-background-color;
+    color: $ternary-highlight-color;
+  }
+
+  h2 {
+    color: $primary-highlight-color;
+  }
+
+  .teaser-image {
+    box-shadow: 0 0 1rem $primary-shadow-color;
+  }
+
+  &.quote {
+    blockquote {
+      &:before {
+        color: $secondary-highlight-color;
+      }
+    }
   }
 }
 
