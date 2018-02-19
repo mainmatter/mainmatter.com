@@ -248,6 +248,17 @@ table {
   }
 }
 
+.contact-banner {
+  .container {
+    background-color: $secondary-background-color;
+    color: $ternary-highlight-color;
+  }
+
+  a {
+    color: $ternary-highlight-color;
+  }
+}
+
 /*
 #main-content {
   .content-section {
