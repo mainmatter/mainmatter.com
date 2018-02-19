@@ -17,6 +17,16 @@ h4 {
   font-size: 1.2rem;
 }
 
+a {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  a, a:hover {
+    text-decoration: none;
+  }
+}
+
 strong {
   font-weight: bolder;
 }
@@ -199,6 +209,10 @@ h5 {
 #main-menu {
   font-size: .9rem;
 
+  a {
+    text-decoration: none;
+  }
+
   a.contact {
     font-weight: normal;
   }
@@ -212,6 +226,17 @@ h5 {
     }
   }
 }
+
+.contact-banner {
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 /*
 .primary-banner {
   text-align: center;
