@@ -14,6 +14,7 @@ $quaternary-highlight-color: #6cbef2;
 $primary-lowlight-color: #ccc;
 
 $primary-shadow-color: #bbb;
+$secondary-shadow-color: #444;
 
 
 
@@ -200,11 +201,6 @@ table {
 }
 
 .content-section {
-  &.highlight {
-    background-color: $secondary-background-color;
-    color: $ternary-highlight-color;
-  }
-
   h2 {
     color: $primary-highlight-color;
   }
@@ -212,6 +208,10 @@ table {
   &.highlight {
     h2, .more {
       color: $ternary-highlight-color;
+    }
+
+    .teaser-image {
+      box-shadow: 0 0 .5rem $secondary-shadow-color;
     }
   }
 
@@ -223,6 +223,19 @@ table {
     blockquote {
       &:before {
         color: $secondary-highlight-color;
+      }
+    }
+  }
+
+  &.highlight {
+    background-color: $secondary-background-color;
+    color: $ternary-highlight-color;
+
+    &.quote {
+      blockquote {
+        &:before {
+          color: $ternary-highlight-color;
+        }
       }
     }
   }
