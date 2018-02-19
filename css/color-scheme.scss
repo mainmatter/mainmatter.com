@@ -8,6 +8,7 @@ $ternary-background-color: #000;
 $primary-highlight-color: #2b98de;
 $secondary-highlight-color: #1e6db2;
 $ternary-highlight-color: #fff;
+$quaternary-highlight-color: #6cbef2;
 
 $primary-lowlight-color: #ccc;
 
@@ -182,8 +183,9 @@ table {
     a {
       color: $ternary-highlight-color;
     }
-    #simplabs-logo path {
-      fill: $ternary-highlight-color !important;
+
+    .logo path {
+      fill: $ternary-highlight-color;
     }
 
     .nav-hover {

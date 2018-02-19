@@ -10,6 +10,17 @@ body.index {
       margin-bottom: 0;
     }
   }
+
+  .clients {
+    .logo {
+      height: 5rem;
+      max-width: 12rem;
+
+      * {
+        fill: $quaternary-highlight-color;
+      }
+    }
+  }
 }
 
 @include media-breakpoint-down(sm) {
