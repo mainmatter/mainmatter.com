@@ -4,6 +4,7 @@ $secondary-text-color: #ddd;
 $primary-background-color: #fff;
 $secondary-background-color: #1e6db2;
 $ternary-background-color: #000;
+$quaternary-highlight-color: #6cbef2;
 
 $primary-highlight-color: #2b98de;
 $secondary-highlight-color: #1e6db2;
@@ -48,10 +49,6 @@ a {
   &:hover, &:active, &:focus {
     color: $secondary-highlight-color;
   };
-}
-
-h1 {
-  color: $primary-highlight-color;
 }
 
 /*
@@ -155,10 +152,10 @@ table {
 
 #main-menu {
   transition: background-color ease-in-out .15s;
-  background-color: $primary-background-color;
+  background-color: $secondary-background-color;
 
-  a.active, a.contact {
-    color: $secondary-highlight-color;
+  a {
+    color: $ternary-highlight-color;
   }
 
   .logo * {
@@ -166,32 +163,12 @@ table {
   }
 
   .nav-hover {
-    background-color: $primary-background-color;
+    background-color: $secondary-background-color;
 
     a {
       transition: border-bottom-color ease-in-out .15s;
 
       &:hover, &.active {
-        border-bottom-color: $secondary-highlight-color;
-      }
-    }
-  }
-
-  &.scrolled {
-    background-color: $secondary-background-color;
-
-    a {
-      color: $ternary-highlight-color;
-    }
-
-    .logo path {
-      fill: $ternary-highlight-color;
-    }
-
-    .nav-hover {
-      background-color: $secondary-background-color;
-
-      a:hover, a.active {
         border-bottom-color: $ternary-highlight-color;
       }
     }
@@ -213,6 +190,9 @@ table {
 }
 
 .primary-banner {
+  background-color: $secondary-background-color;
+  color: $ternary-highlight-color;
+
   strong {
     color: $ternary-highlight-color;
     background-color: $ternary-background-color;
@@ -395,21 +375,11 @@ table {
 @include media-breakpoint-down(sm) {
   #main-menu {
     .collapse {
-      background-color: $primary-background-color;
+      background-color: $secondary-background-color;
     }
 
     .navbar-toggler path {
-      fill: $primary-highlight-color;
-    }
-
-    &.scrolled {
-      .collapse {
-        background-color: $secondary-background-color;
-      }
-
-      .navbar-toggler path {
-        fill: $ternary-highlight-color;
-      }
+      fill: $ternary-highlight-color;
     }
   }
 }

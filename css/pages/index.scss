@@ -1,7 +1,17 @@
 body.index {
+  @include custom-header(
+    $primary-highlight-color,
+    $secondary-highlight-color,
+    $primary-background-color,
+    $ternary-highlight-color,
+    $secondary-background-color
+  );
+
   .primary-banner {
     height: 60vH;
     min-height: 500px;
+    background-color: $primary-background-color;
+    color: $primary-highlight-color;
 
     .logo {
       height: 12rem;
@@ -22,10 +32,8 @@ body.index {
       }
     }
   }
-}
 
-@include media-breakpoint-down(sm) {
-  body.index {
+  @include media-breakpoint-down(sm) {
     .primary-banner {
       height: 50vH;
     }

@@ -3,6 +3,7 @@
 
 @import 'vendor/bootstrap';
 
+@import 'helpers';
 @import 'variables';
 @import 'typography';
 @import 'color-scheme';
@@ -10,5 +11,5 @@
 @import 'syntax';
 @import 'layout';
 
-
 @import 'pages/index';
+@import 'pages/services';

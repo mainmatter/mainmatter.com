@@ -23,3 +23,69 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
+@mixin custom-header($primary-foreground, $secondary-foreground, $primary-background, $scrolled-foreground, $scrolled-background) {
+  #main-menu {
+    background-color: $primary-background-color;
+
+    a {
+      color: $primary-foreground;
+
+      &:hover, &:active, &:focus, &.active, &.contact {
+        color: $secondary-foreground;
+      }
+    }
+
+    .nav-hover {
+      background-color: $primary-background;
+
+      a {
+        &:hover, &.active {
+          border-bottom-color: $secondary-foreground;
+        }
+      }
+    }
+
+    &.scrolled {
+      background-color: $scrolled-background;
+
+      a {
+        color: $scrolled-foreground;
+      }
+
+      .logo path {
+        fill: $scrolled-foreground;
+      }
+
+      .nav-hover {
+        background-color: $scrolled-background;
+
+        a:hover, a.active {
+          border-bottom-color: $scrolled-foreground;
+        }
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      #main-menu {
+        .collapse {
+          background-color: $primary-background;
+        }
+
+        .navbar-toggler path {
+          fill: $primary-foreground;
+        }
+
+        &.scrolled {
+          .collapse {
+            background-color: $scrolled-background;
+          }
+
+          .navbar-toggler path {
+            fill: $scrolled-foreground;
+          }
+        }
+      }
+    }
+  }
+}
