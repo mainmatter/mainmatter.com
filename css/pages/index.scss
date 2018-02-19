@@ -1,10 +1,14 @@
 body.index {
   .primary-banner {
     height: 80vH;
-  }
 
-  p:last-of-type {
-    margin-bottom: 0;
+    .logo {
+      height: 12rem;
+    }
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
   }
 }
 

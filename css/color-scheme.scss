@@ -182,9 +182,8 @@ table {
     a {
       color: $ternary-highlight-color;
     }
-
-    .logo * {
-      fill: $ternary-highlight-color;
+    #simplabs-logo path {
+      fill: $ternary-highlight-color !important;
     }
 
     .nav-hover {
