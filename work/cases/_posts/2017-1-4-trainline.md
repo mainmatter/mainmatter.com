@@ -5,7 +5,8 @@ key: trainline
 title: "Trainline"
 subtitle: "a mobile train ticket counter"
 excerpt: "simplabs **helped Europe's leading independent train ticket retailer build their mobile web site** using Ember.js. We worked closely with trainline's in-house engineering team, helping to establish best practices and a smooth process."
-permalink: /cases/trainline.html
+permalink: /work/cases/trainline.html
+redirect_from: /cases/trainline.html
 icon: trainline-big
 ---
 

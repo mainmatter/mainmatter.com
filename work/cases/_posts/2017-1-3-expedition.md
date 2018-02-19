@@ -5,7 +5,8 @@ key: expedition
 title: "Expedition"
 subtitle: "Explore The Unknown"
 excerpt: "simplabs **spearheaded development efforts for some advanced functionality for Expedition's** API based on Elixir and Phoenix. We provided their team with a well architected foundation to extend upon."
-permalink: /cases/expedition.html
+permalink: /work/cases/expedition.html
+redirect_from: /cases/expedition.html
 icon: expedition-big
 ---
 
