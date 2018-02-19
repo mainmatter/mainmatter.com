@@ -1,5 +1,17 @@
 body.index {
   .primary-banner {
-    height: calc(100vH - #{$top-spacing});
+    height: 80vH;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  body.index {
+    .primary-banner {
+      height: 50vH;
+    }
   }
 }

@@ -160,6 +160,10 @@ table {
     color: $secondary-highlight-color;
   }
 
+  .logo * {
+    transition: fill ease-in-out .15s;
+  }
+
   .nav-hover {
     background-color: $primary-background-color;
 
@@ -177,6 +181,10 @@ table {
 
     a {
       color: $ternary-highlight-color;
+    }
+
+    .logo * {
+      fill: $ternary-highlight-color;
     }
 
     .nav-hover {
@@ -218,6 +226,12 @@ table {
 
   h2 {
     color: $primary-highlight-color;
+  }
+
+  &.highlight {
+    h2, .more {
+      color: $ternary-highlight-color;
+    }
   }
 
   .teaser-image {
