@@ -1,0 +1,39 @@
+body.timify-case {
+  $timify-primary-background-color: #d15052;
+  $timify-primary-highlight-color: #fff;
+  $timify-secondary-highlight-color: #d15052;
+
+  @include custom-header(
+    $timify-primary-highlight-color,
+    $timify-primary-highlight-color,
+    $timify-primary-background-color,
+    $timify-primary-highlight-color,
+    $timify-primary-background-color
+  );
+
+  #main-menu {
+    .logo * {
+      fill: $ternary-highlight-color;
+    }
+  }
+
+  .primary-banner {
+    background-color: $timify-primary-background-color;
+  }
+
+  .content-section {
+    h2 {
+      color: $timify-secondary-highlight-color;
+    }
+
+    a {
+      color: $timify-secondary-highlight-color;
+    }
+
+    &.quote {
+      blockquote:before {
+        color: $timify-secondary-highlight-color;
+      }
+    }
+  }
+}
