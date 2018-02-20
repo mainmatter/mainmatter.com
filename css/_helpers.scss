@@ -67,23 +67,21 @@
     }
 
     @include media-breakpoint-down(sm) {
-      #main-menu {
+      .collapse {
+        background-color: $primary-background;
+      }
+
+      .navbar-toggler path {
+        fill: $primary-foreground;
+      }
+
+      &.scrolled {
         .collapse {
-          background-color: $primary-background;
+          background-color: $scrolled-background;
         }
 
         .navbar-toggler path {
-          fill: $primary-foreground;
-        }
-
-        &.scrolled {
-          .collapse {
-            background-color: $scrolled-background;
-          }
-
-          .navbar-toggler path {
-            fill: $scrolled-foreground;
-          }
+          fill: $scrolled-foreground;
         }
       }
     }
