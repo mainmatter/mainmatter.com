@@ -86,6 +86,14 @@ h1 {
       }
     }
   }
+
+  div.row {
+    margin-bottom: 2rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .contact-banner {
@@ -635,6 +643,12 @@ pre.highlight {
 */
 
 @include media-breakpoint-down(sm) {
+  .content-section {
+    div.row {
+      margin-bottom: 0;
+    }
+  }
+
   #main-menu {
     .navbar-toggler {
       margin-bottom: 0;

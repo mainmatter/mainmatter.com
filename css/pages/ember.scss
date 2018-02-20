@@ -43,9 +43,25 @@ body.ember {
     }
 
     &.open-source {
+      h2 {
+        .octicon {
+          height: 2rem;
+          width: 2rem;
+          vertical-align: text-bottom;
+
+          * {
+            fill: $ember-primary-highlight-color;
+          }
+        }
+      }
+
       .logo {
         height: 2rem;
       }
+    }
+
+    .we-can-ember {
+      width: 60%;
     }
   }
 }
