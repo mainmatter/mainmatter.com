@@ -11,7 +11,7 @@ $secondary-highlight-color: #1e6db2;
 $ternary-highlight-color: #fff;
 $quaternary-highlight-color: #6cbef2;
 
-$primary-lowlight-color: #ccc;
+$primary-lowlight-color: #c8d0d4;
 
 $primary-shadow-color: #bbb;
 $secondary-shadow-color: #444;
@@ -237,6 +237,12 @@ table {
           color: $ternary-highlight-color;
         }
       }
+    }
+  }
+
+  &.separated {
+    &:after {
+      border-bottom-color: $primary-lowlight-color;
     }
   }
 }

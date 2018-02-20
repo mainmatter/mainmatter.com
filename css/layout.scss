@@ -69,6 +69,10 @@ h1 {
     margin-bottom: 2.5rem;
   }
 
+  p:last-child {
+    margin-bottom: 0;
+  }
+
   .teaser-image {
     margin-bottom: 1.5rem;
   }
@@ -84,6 +88,17 @@ h1 {
         left: 0;
         top: -1.3rem;
       }
+    }
+  }
+
+  &.separated {
+    &:after {
+      content: '';
+      display: block;
+      margin: 4rem 0 -4rem 33.33333%;
+      width: 33.33333%;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
     }
   }
 
@@ -646,6 +661,15 @@ pre.highlight {
   .content-section {
     div.row {
       margin-bottom: 0;
+    }
+
+    &.separated {
+      &:after {
+        margin-left: 16.66666%;
+        width: 66.66666%;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+      }
     }
   }
 
