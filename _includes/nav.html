@@ -38,19 +38,31 @@
 </nav>
 <script type="text/javascript">
   Zepto(function($) {
+    var lastScrollTop;
     var mainMenu = $('#main-menu');
-    function setMainMenuScrolledClass() {
-    	var scroll = $(window).scrollTop();
-  	  if (scroll > 50) {
+    var mainMenuHeight = mainMenu.height();
+    var win = $(window);
+
+    function setMainMenuScrolledClass(scrollTop) {
+  	  if (scrollTop > mainMenuHeight) {
   	    mainMenu.addClass('scrolled');
   	  } else {
   	    mainMenu.removeClass('scrolled');
   	  }
     };
 
-    $(window).scroll(function(){
-    	setMainMenuScrolledClass();
+    win.scroll(function() {
+      var scrollTop = win.scrollTop();
+      setMainMenuScrolledClass(scrollTop);
+
+      if (lastScrollTop < scrollTop && scrollTop > mainMenuHeight * 2) {
+        mainMenu.addClass('scrollUp');
+      } else if (lastScrollTop > scrollTop) {
+        mainMenu.removeClass('scrollUp');
+      }
+      lastScrollTop = scrollTop;
     });
-    setMainMenuScrolledClass();
+
+    setMainMenuScrolledClass(win.scrollTop());
   });
 </script>

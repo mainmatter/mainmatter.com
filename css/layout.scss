@@ -7,6 +7,13 @@ h1 {
 }
 
 #main-menu {
+  position: fixed;
+  transition: background-color ease-in-out .15s, transform ease-in-out .3s;
+
+  &.scrollUp {
+    transform: translateY(-10rem);
+  }
+
   input[type=checkbox] {
     display: none;
   }
@@ -674,6 +681,10 @@ pre.highlight {
   }
 
   #main-menu {
+    &.scrollUp {
+      transform: none;
+    }
+
     .navbar-toggler {
       margin-bottom: 0;
     }
