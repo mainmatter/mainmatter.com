@@ -10,13 +10,20 @@ class: index
         <h1>Solid engineering for ambitious projects</h1>
         <p>We build <strong>custom web and mobile solutions</strong> for our clients to rely on.</p>
     	</div>
-      <div class="col-sm-3 offset-sm-1 d-none d-sm-block">
+      <div class="col-sm-3 offset-sm-1 d-none d-sm-block" id="main-logo">
         {% include svgs/logos/simplabs-ball.svg class="logo" alt="logo - simplabs" %}
       </div>
     </div>
   </div>
 </div>
-
+<script type="text/javascript">
+  Zepto(function($) {
+    var timerFunction = window.requestAnimationFrame ? window.requestAnimationFrame : window.setTimeout;
+    timerFunction(function() {
+      $('#main-logo .logo').addClass('animate');
+    });
+  });
+</script>
 
 <div class="content-section highlight">
   <div class="container">

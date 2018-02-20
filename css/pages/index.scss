@@ -15,6 +15,14 @@ body.index {
 
     .logo {
       height: 12rem;
+      opacity: 0;
+      transform: rotate(330deg);
+      transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+
+      &.animate {
+        opacity: 1;
+        transform: rotate(360deg);
+      }
     }
 
     p:last-of-type {
