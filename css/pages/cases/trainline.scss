@@ -1,0 +1,39 @@
+body.trainline-case {
+  $trainline-primary-background-color: #00c6a6;
+  $trainline-primary-highlight-color: #fff;
+  $trainline-secondary-highlight-color: #00c6a6;
+
+  @include custom-header(
+    $trainline-primary-highlight-color,
+    $trainline-primary-highlight-color,
+    $trainline-primary-background-color,
+    $trainline-primary-highlight-color,
+    $trainline-primary-background-color
+  );
+
+  #main-menu {
+    .logo * {
+      fill: $ternary-highlight-color;
+    }
+  }
+
+  .primary-banner {
+    background-color: $trainline-primary-background-color;
+  }
+
+  .content-section {
+    h2 {
+      color: $trainline-secondary-highlight-color;
+    }
+
+    a {
+      color: $trainline-secondary-highlight-color;
+    }
+
+    &.quote {
+      blockquote:before {
+        color: $trainline-secondary-highlight-color;
+      }
+    }
+  }
+}
