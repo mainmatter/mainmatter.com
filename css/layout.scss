@@ -670,8 +670,12 @@ pre.highlight {
       margin-bottom: 0;
     }
 
-    .col-12 {
+    div.col-12 {
       margin-bottom: 1rem;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
 
     &.separated {
