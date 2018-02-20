@@ -80,8 +80,8 @@ h1 {
     margin-bottom: 0;
   }
 
-  .teaser-image {
-    margin-bottom: 1.5rem;
+  .teaser-image + *, .teaser-link + * {
+    margin-top: 1.5rem;
   }
 
   &.quote {
@@ -106,6 +106,30 @@ h1 {
       width: 33.33333%;
       border-bottom-width: 1px;
       border-bottom-style: solid;
+    }
+  }
+
+  &.subhead {
+    margin-bottom: 0;
+
+    h4 {
+      position: relative;
+
+      &:before, &:after {
+        content: '';
+        height: 1px;
+        width: 1.5rem;
+        position: absolute;
+        top: 50%;
+      }
+
+      &:before {
+        left: -2.5rem;
+      }
+
+      &:after {
+        right: -2.5rem;
+      }
     }
   }
 
@@ -684,6 +708,14 @@ pre.highlight {
         width: 66.66666%;
         border-bottom-width: 1px;
         border-bottom-style: solid;
+      }
+    }
+
+    &.subhead {
+      h4 {
+        &:before, &:after {
+          display: none;
+        }
       }
     }
   }
