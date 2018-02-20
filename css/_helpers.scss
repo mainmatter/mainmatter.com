@@ -26,7 +26,7 @@
 
 @mixin custom-header($primary-foreground, $secondary-foreground, $primary-background, $scrolled-foreground, $scrolled-background) {
   #main-menu {
-    background-color: $primary-background-color;
+    background-color: $primary-background;
 
     a {
       color: $primary-foreground;

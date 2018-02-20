@@ -1,0 +1,51 @@
+body.ember {
+  $ember-primary-background-color: #f53f2b;
+  $ember-primary-highlight-color: #fff;
+  $ember-secondary-highlight-color: #f53f2b;
+
+  @include custom-header(
+    $ember-primary-highlight-color,
+    $ember-primary-highlight-color,
+    $ember-primary-background-color,
+    $ember-primary-highlight-color,
+    $ember-primary-background-color
+  );
+
+  #main-menu {
+    .logo * {
+      fill: $ternary-highlight-color;
+    }
+  }
+
+  .primary-banner {
+    background-color: $ember-primary-background-color;
+  }
+
+  .content-section {
+    h2 {
+      color: $ember-secondary-highlight-color;
+    }
+
+    a {
+      color: $ember-secondary-highlight-color;
+    }
+
+    &.highlight {
+      background-color: $ember-primary-background-color;
+
+      h2 {
+        color: $ember-primary-highlight-color;
+      }
+
+      a {
+        color: $ember-primary-highlight-color;
+      }
+    }
+
+    &.open-source {
+      .logo {
+        height: 2rem;
+      }
+    }
+  }
+}
