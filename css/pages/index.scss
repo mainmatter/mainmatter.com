@@ -8,7 +8,7 @@ body.index {
   );
 
   .primary-banner {
-    height: 60vH;
+    height: calc(100vH - #{$top-spacing} - 2.5rem);
     min-height: 500px;
     background-color: $primary-background-color;
     color: $primary-highlight-color;
