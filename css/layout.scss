@@ -153,6 +153,13 @@ h1 {
   }
 }
 
+.address, .contact {
+  & > span {
+    display: block;
+    clear: both;
+  }
+}
+
 /*
 #main-content {
   min-height: 100%;
