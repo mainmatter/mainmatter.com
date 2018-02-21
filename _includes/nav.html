@@ -43,7 +43,7 @@
     var mainMenuHeight = mainMenu.height();
     var win = $(window);
 
-    function setMainMenuScrolledClass(scrollTop) {
+    function setScrolledClass(scrollTop) {
   	  if (scrollTop > mainMenuHeight) {
   	    mainMenu.addClass('scrolled');
   	  } else {
@@ -53,7 +53,7 @@
 
     win.scroll(function() {
       var scrollTop = win.scrollTop();
-      setMainMenuScrolledClass(scrollTop);
+      setScrolledClass(scrollTop);
 
       if (lastScrollTop < scrollTop && scrollTop > mainMenuHeight * 2) {
         mainMenu.addClass('scrollUp');
@@ -63,6 +63,6 @@
       lastScrollTop = scrollTop;
     });
 
-    setMainMenuScrolledClass(win.scrollTop());
+    setScrolledClass(win.scrollTop());
   });
 </script>

@@ -8,10 +8,11 @@ h1 {
 
 #main-menu {
   position: fixed;
-  transition: background-color ease-in-out .15s, transform ease-in-out .3s;
+  transition: background-color ease-in-out .15s 0s, transform ease-in-out .3s 0s;
 
   &.scrollUp {
     transform: translateY(-10rem);
+    transition-delay: 0s, .5s;
   }
 
   input[type=checkbox] {
