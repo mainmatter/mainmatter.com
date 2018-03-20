@@ -7,13 +7,10 @@
     <div class="primary-banner d-flex align-items-center">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-12 col-sm-8">
-            <h1>{{page.title}}</h1>
-            <p>{{page.subtitle | markdownify}}</p>
+          <div class="col-12 col-sm-8 offset-sm-2 text-center">
+            <h1 class="text-center">{{page.title}}</h1>
+            {{page.subtitle | markdownify}}
         	</div>
-          <div class="col-sm-3 offset-sm-1 d-none d-sm-block">
-            <!-- TODO: icon -->
-          </div>
         </div>
       </div>
     </div>

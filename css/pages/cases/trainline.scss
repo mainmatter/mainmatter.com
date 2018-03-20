@@ -1,14 +1,16 @@
 body.trainline-case {
-  $trainline-primary-background-color: #00c6a6;
+  $trainline-primary-menu-background-color: transparent;
+  $trainline-primary-menu-scrolled-background-color: #00c6a6;
+  $trainline-primary-header-background-color: #00c6a6;
   $trainline-primary-highlight-color: #fff;
   $trainline-secondary-highlight-color: #00c6a6;
 
   @include custom-header(
     $trainline-primary-highlight-color,
     $trainline-primary-highlight-color,
-    $trainline-primary-background-color,
+    $trainline-primary-menu-background-color,
     $trainline-primary-highlight-color,
-    $trainline-primary-background-color
+    $trainline-primary-menu-scrolled-background-color
   );
 
   #main-menu {
@@ -18,7 +20,8 @@ body.trainline-case {
   }
 
   .primary-banner {
-    background-color: $trainline-primary-background-color;
+    background: url("/images/cases/trainline/header-background.jpg") $trainline-primary-header-background-color no-repeat;
+    background-size: cover;
   }
 
   .content-section {

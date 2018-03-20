@@ -4,4 +4,13 @@ body.services {
       fill: $ternary-highlight-color;
     }
   }
+
+  .content-section.highlight {
+    background-color: #3795d2;
+    color: #fff;
+
+    a {
+      color: #fff;
+    }
+  }
 }
