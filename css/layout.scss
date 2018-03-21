@@ -53,24 +53,26 @@ h1 {
 }
 
 .primary-banner {
-  padding: calc(#{$top-spacing} + 2.5rem) 0;
+  padding: calc(#{$top-spacing} + 4rem) 0 2rem 0;
+
+  h1 {
+    margin: 4rem 0 1rem 0;
+  }
 
   strong {
     padding: 2px 4px;
   }
+
+  .icon {
+    width: 25%;
+  }
 }
 
 .content-section {
-  margin-top: 4rem;
   padding: 4rem 0;
-  margin-bottom: 4rem;
-
-  & ~ .content-section {
-    margin-top: -4rem;
-  }
 
   h2 {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
   }
 
   p:last-child {

@@ -1,15 +1,48 @@
 body.services {
-  #main-menu {
-    .logo * {
-      fill: $ternary-highlight-color;
+  $primary-background-color: #fff;
+  $primary-foreground-color: #000;
+  $primary-highlight-color: #007df6;
+  $secondary-background-color: #007df6;
+  $secondard-foreground-color: #fff;
+
+  @include custom-header(
+    $primary-foreground-color,
+    $primary-foreground-color,
+    $primary-background-color,
+    $secondard-foreground-color,
+    $secondary-background-color
+  );
+
+  .primary-banner {
+    background-color: $primary-background-color;
+    color: $primary-foreground-color;
+
+    h1 {
+      color: $primary-highlight-color;
+    }
+
+    strong {
+      background-color: $primary-highlight-color;
+    }
+
+    .icon path {
+      fill: $primary-foreground-color !important;
     }
   }
 
-  .content-section.highlight {
-    background-color: #3795d2;
-    color: #fff;
+  .content-section {
+    h2 {
+      color: $primary-highlight-color;
+    }
 
-    a {
+    &.highlight {
+      background-color: $secondary-background-color;
+      color: $secondard-foreground-color;
+    }
+
+    // TODO: this does not belong here actually!
+    &.case-timify {
+      background-color: #da2b36;
       color: #fff;
     }
   }
