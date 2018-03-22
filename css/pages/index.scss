@@ -1,16 +1,14 @@
 body.index {
   @include custom-header(
-    $primary-highlight-color,
-    $primary-highlight-color,
+    $primary-text-color,
     $primary-background-color,
     $ternary-highlight-color,
-    $secondary-background-color
+    $secondary-background-color,
+    $primary-highlight-color,
+    $primary-text-color
   );
 
   .primary-banner {
-    background-color: $primary-background-color;
-    color: $primary-highlight-color;
-
     .logo {
       height: 12rem;
       opacity: 0;

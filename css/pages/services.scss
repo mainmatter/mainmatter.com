@@ -1,12 +1,12 @@
 body.services {
-  $primary-background-color: #fff;
-  $primary-foreground-color: #000;
+  $primary-background-color: $quaternary-background-color;
+  $primary-foreground-color: #fff;
   $primary-highlight-color: #007df6;
   $secondary-background-color: #007df6;
   $secondard-foreground-color: #fff;
+  $ternary-background-color: #000;
 
   @include custom-header(
-    $primary-foreground-color,
     $primary-foreground-color,
     $primary-background-color,
     $secondard-foreground-color,
@@ -15,18 +15,17 @@ body.services {
 
   .primary-banner {
     background-color: $primary-background-color;
-    color: $primary-foreground-color;
 
     h1 {
       color: $primary-highlight-color;
     }
 
     strong {
-      background-color: $primary-highlight-color;
+      background-color: $ternary-background-color;
     }
 
     .icon path {
-      fill: $primary-foreground-color !important;
+      fill: $primary-highlight-color;
     }
   }
 

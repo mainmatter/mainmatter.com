@@ -24,28 +24,30 @@
   transform: translateY(-50%);
 }
 
-@mixin custom-header($primary-foreground, $secondary-foreground, $primary-background, $scrolled-foreground, $scrolled-background) {
+@mixin custom-header($foreground, $background, $scrolled-foreground, $scrolled-background, $logo-ball: $foreground, $logo-text: $foreground, $scrolled-logo-ball: $scrolled-foreground, $scrolled-logo-text: $scrolled-foreground) {
   #main-menu {
-    background-color: $primary-background;
+    background-color: $background;
 
     a {
-      color: $primary-foreground;
-
-      &:hover, &:active, &:focus, &.active, &.contact {
-        color: $secondary-foreground;
-      }
+      color: $foreground;
     }
 
     .logo path {
-      fill: $primary-foreground;
+      &.ball {
+        fill: $logo-ball;
+      }
+
+      &.text {
+        fill: $logo-text;
+      }
     }
 
     .nav-hover {
-      background-color: $primary-background;
+      background-color: $background;
 
       a {
         &:hover, &.active {
-          border-bottom-color: $secondary-foreground;
+          border-bottom-color: $foreground;
         }
       }
     }
@@ -58,7 +60,13 @@
       }
 
       .logo path {
-        fill: $scrolled-foreground;
+        &.ball {
+          fill: $scrolled-logo-ball;
+        }
+
+        &.text {
+          fill: $scrolled-logo-text;
+        }
       }
 
       .nav-hover {
@@ -72,11 +80,11 @@
 
     @include media-breakpoint-down(sm) {
       .collapse {
-        background-color: $primary-background;
+        background-color: $background;
       }
 
       .navbar-toggler path {
-        fill: $primary-foreground;
+        fill: $foreground;
       }
 
       &.scrolled {

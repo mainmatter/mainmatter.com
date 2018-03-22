@@ -205,8 +205,9 @@ table {
 }
 
 .primary-banner {
-  background-color: $secondary-background-color;
-  color: $ternary-highlight-color;
+  h1 {
+    color: $primary-highlight-color;
+  }
 
   strong {
     color: $ternary-highlight-color;
