@@ -41,9 +41,26 @@ body.services {
     }
 
     // TODO: this does not belong here actually!
-    &.case-timify {
+    &.case.timify {
       background-color: #da2b36;
       color: #fff;
+      padding: 2rem 0;
+
+      .logo path {
+        fill: $ternary-highlight-color;
+      }
+
+      a {
+        color: #fff;
+      }
     }
+  }
+
+  a.ember {
+    color: #fa3a1e;
+  }
+
+  a.elixir {
+    color: #92369b;
   }
 }

@@ -208,14 +208,6 @@ table {
     h2, .more {
       color: $ternary-highlight-color;
     }
-
-    .teaser-image {
-      box-shadow: 0 0 .5rem $secondary-shadow-color;
-    }
-  }
-
-  .teaser-image {
-    box-shadow: 0 0 1rem $primary-shadow-color;
   }
 
   &.quote {
