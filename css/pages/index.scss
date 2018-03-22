@@ -15,7 +15,7 @@ body.index {
       height: 12rem;
       opacity: 0;
       transform: rotate(330deg);
-      transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+      transition: transform .5s ease-in-out, opacity .5s ease-in-out;
 
       &.animate {
         opacity: 1;
@@ -35,6 +35,14 @@ body.index {
 
       * {
         fill: $quaternary-highlight-color;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .clients {
+      div:nth-child(1), div:nth-child(2) {
+        margin-bottom: 1rem;
       }
     }
   }
