@@ -1,13 +1,4 @@
 body.index {
-  @include custom-header(
-    $primary-text-color,
-    $primary-background-color,
-    $ternary-highlight-color,
-    $secondary-background-color,
-    $primary-highlight-color,
-    $primary-text-color
-  );
-
   .primary-banner {
     .logo {
       height: 12rem;

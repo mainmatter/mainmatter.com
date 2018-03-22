@@ -1,10 +1,10 @@
 $primary-text-color: #000;
-$secondary-text-color: #ddd;
+$secondary-text-color: #fff;
 
 $primary-background-color: #fff;
 $secondary-background-color: #007df6;
 $ternary-background-color: #000;
-$quaternary-background-color: #d9e1ea;
+$quaternary-background-color: #eff1f5;
 
 $primary-highlight-color: #007df6;
 $secondary-highlight-color: #1e6db2;
@@ -159,15 +159,13 @@ table {
 */
 
 #main-menu {
-  background-color: $secondary-background-color;
+  background-color: $primary-background-color;
 
   a {
-    color: $ternary-highlight-color;
+    color: $primary-text-color;
   }
 
-  .logo * {
-    transition: fill ease-in-out .15s;
-
+  .logo path {
     &.ball {
       fill: $primary-highlight-color;
     }
@@ -178,13 +176,37 @@ table {
   }
 
   .nav-hover {
+    background-color: $primary-background-color;
+
+    a {
+      &:hover, &.active {
+        border-bottom-color: $primary-text-color;
+      }
+    }
+  }
+
+  &.scrolled {
     background-color: $secondary-background-color;
 
     a {
-      transition: border-bottom-color ease-in-out .15s;
+      color: $secondary-text-color;
+    }
 
-      &:hover, &.active {
-        border-bottom-color: $ternary-highlight-color;
+    .logo path {
+      &.ball {
+        fill: $secondary-text-color;
+      }
+
+      &.text {
+        fill: $secondary-text-color;
+      }
+    }
+
+    .nav-hover {
+      background-color: $secondary-background-color;
+
+      a:hover, a.active {
+        border-bottom-color: $secondary-text-color;
       }
     }
   }
@@ -424,11 +446,21 @@ table {
 @include media-breakpoint-down(sm) {
   #main-menu {
     .collapse {
-      background-color: $secondary-background-color;
+      background-color: $primary-background-color;
     }
 
     .navbar-toggler path {
-      fill: $ternary-highlight-color;
+      fill: $primary-highlight-color;
+    }
+
+    &.scrolled {
+      .collapse {
+        background-color: $secondary-background-color;
+      }
+
+      .navbar-toggler path {
+        fill: $ternary-highlight-color;
+      }
     }
   }
 }
