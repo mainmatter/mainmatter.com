@@ -4,12 +4,12 @@ $secondary-text-color: #ddd;
 $primary-background-color: #fff;
 $secondary-background-color: #007df6;
 $ternary-background-color: #000;
-$quaternary-highlight-color: #6cbef2;
+$quaternary-background-color: #d9e1ea;
 
 $primary-highlight-color: #007df6;
 $secondary-highlight-color: #1e6db2;
 $ternary-highlight-color: #fff;
-$quaternary-highlight-color: #6cbef2;
+$quaternary-highlight-color: #000;
 
 $primary-lowlight-color: #c8d0d4;
 
@@ -167,6 +167,14 @@ table {
 
   .logo * {
     transition: fill ease-in-out .15s;
+
+    &.ball {
+      fill: $primary-highlight-color;
+    }
+
+    &.text {
+      fill: $primary-text-color;
+    }
   }
 
   .nav-hover {
@@ -220,14 +228,14 @@ table {
   &.quote {
     blockquote {
       &:before {
-        color: $secondary-highlight-color;
+        color: $primary-highlight-color;
       }
     }
   }
 
   &.highlight {
-    background-color: $secondary-background-color;
-    color: $ternary-highlight-color;
+    background-color: $quaternary-background-color;
+    color: $quaternary-highlight-color;
 
     &.quote {
       blockquote {
@@ -396,6 +404,16 @@ table {
   }
 }
 */
+
+.simplabs-logo {
+  path.ball {
+    fill: $primary-highlight-color;
+  }
+
+  path.text {
+    fill: $primary-text-color;
+  }
+}
 
 @include media-breakpoint-down(sm) {
   #main-menu {

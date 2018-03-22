@@ -15,12 +15,14 @@ h1 {
     display: none;
   }
 
-  a {
-    margin: 0 .25rem;
-  }
-
   .logo {
     height: 1rem;
+  }
+
+  .nav-item:last-child {
+    a {
+      padding-right: 0;
+    }
   }
 
   .nav-hover {
@@ -53,7 +55,7 @@ h1 {
 }
 
 .primary-banner {
-  padding: calc(#{$top-spacing} + 4rem) 0 2rem 0;
+  padding: calc(#{$top-spacing} + 4rem) 0 4rem 0;
 
   h1 {
     margin: 4rem 0 1rem 0;
@@ -695,6 +697,10 @@ pre.highlight {
 */
 
 @include media-breakpoint-down(sm) {
+  .primary-banner {
+    padding: 2rem 0;
+  }
+
   .content-section {
     div.row {
       margin-bottom: 0;

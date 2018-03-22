@@ -8,8 +8,6 @@ body.index {
   );
 
   .primary-banner {
-    height: calc(100vH - #{$top-spacing} - 2.5rem);
-    min-height: 500px;
     background-color: $primary-background-color;
     color: $primary-highlight-color;
 
@@ -38,12 +36,6 @@ body.index {
       * {
         fill: $quaternary-highlight-color;
       }
-    }
-  }
-
-  @include media-breakpoint-down(sm) {
-    .primary-banner {
-      height: 50vH;
     }
   }
 }
