@@ -1,12 +1,12 @@
-$primary-text-color: #333;
+$primary-text-color: #000;
 $secondary-text-color: #ddd;
 
 $primary-background-color: #fff;
-$secondary-background-color: #1e6db2;
+$secondary-background-color: #007df6;
 $ternary-background-color: #000;
 $quaternary-highlight-color: #6cbef2;
 
-$primary-highlight-color: #2b98de;
+$primary-highlight-color: #007df6;
 $secondary-highlight-color: #1e6db2;
 $ternary-highlight-color: #fff;
 $quaternary-highlight-color: #6cbef2;
@@ -50,6 +50,13 @@ a {
   &:hover, &:active, &:focus {
     color: $secondary-highlight-color;
   };
+}
+
+// TODO: cleanup later!
+#main-logo {
+  path {
+    fill: #007df6;
+  }
 }
 
 /*
