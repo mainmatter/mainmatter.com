@@ -1,7 +1,7 @@
 body.index {
   @include custom-header(
     $primary-highlight-color,
-    $secondary-highlight-color,
+    $primary-highlight-color,
     $primary-background-color,
     $ternary-highlight-color,
     $secondary-background-color
