@@ -1,13 +1,14 @@
 body.ember {
-  $ember-primary-background-color: #f53f2b;
-  $ember-primary-highlight-color: #fff;
-  $ember-secondary-highlight-color: #f53f2b;
+  $ember-background-color: #f53d2b;
+  $ember-foreground-color: #fff;
+  $ember-secondary-background-color: #fff;
+  $ember-secondary-foreground-color: #f53d2b;
 
   @include custom-header(
-    $ember-primary-highlight-color,
-    $ember-primary-background-color,
-    $ember-primary-highlight-color,
-    $ember-primary-background-color
+    $ember-foreground-color,
+    $ember-background-color,
+    $ember-secondary-foreground-color,
+    $ember-secondary-background-color,
   );
 
   #main-menu {
@@ -17,31 +18,44 @@ body.ember {
   }
 
   .primary-banner {
-    background-color: $ember-primary-background-color;
+    background-color: $ember-background-color;
+    color: $ember-foreground-color;
+
+    h1 {
+      color: $ember-foreground-color;
+    }
   }
 
   .content-section {
+    background-color: $ember-background-color;
+    color: $ember-foreground-color;
+
     h2 {
-      color: $ember-secondary-highlight-color;
+      color: $ember-foreground-color;
     }
 
     a {
-      color: $ember-secondary-highlight-color;
+      color: $ember-secondary-foreground-color;
     }
 
     &.highlight {
-      background-color: $ember-primary-background-color;
+      background-color: $ember-secondary-background-color;
+      color: $primary-text-color;
 
       h2 {
-        color: $ember-primary-highlight-color;
-      }
-
-      a {
-        color: $ember-primary-highlight-color;
+        color: $ember-secondary-foreground-color;
       }
     }
 
     &.open-source {
+      .project {
+        background-color: $ember-secondary-background-color;
+        color: $ember-secondary-foreground-color;
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0px 0px 12px #888;
+      }
+
       h2 {
         .octicon {
           height: 2rem;
@@ -49,7 +63,7 @@ body.ember {
           vertical-align: text-bottom;
 
           * {
-            fill: $ember-primary-highlight-color;
+            fill: $ember-foreground-color;
           }
         }
       }
