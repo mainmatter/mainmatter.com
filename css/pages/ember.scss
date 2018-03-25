@@ -48,15 +48,9 @@ body.ember {
     }
 
     &.open-source {
-      .project {
-        background-color: $ember-secondary-background-color;
-        color: $ember-secondary-foreground-color;
-        width: 100%;
-        padding: 1rem;
-        box-shadow: 0px 0px 12px #888;
-      }
-
       h2 {
+        margin-bottom: 2rem;
+
         .octicon {
           height: 2rem;
           width: 2rem;
@@ -68,8 +62,10 @@ body.ember {
         }
       }
 
-      .logo {
-        height: 2rem;
+      .teaser {
+        .teaser-image {
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);
+        }
       }
     }
 
