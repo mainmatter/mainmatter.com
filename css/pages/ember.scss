@@ -88,6 +88,24 @@ body.ember {
       }
     }
 
+    &.community {
+      background: $ember-background-color url("/images/community-banner.jpg") center center no-repeat;
+      background-size: contain;
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: .9rem;
+      }
+
+      a {
+        color: $ember-foreground-color;
+        font-weight: bold;
+      }
+    }
+
     .we-can-ember {
       width: 60%;
     }
