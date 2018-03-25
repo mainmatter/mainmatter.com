@@ -19,6 +19,14 @@ body.index {
     }
   }
 
+  .cases {
+    h2 {
+      a {
+        color: $primary-text-color;
+      }
+    }
+  }
+
   .clients {
     .logo {
       height: 5rem;
