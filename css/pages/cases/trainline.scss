@@ -1,15 +1,14 @@
 body.trainline-case {
   $trainline-primary-menu-background-color: transparent;
-  $trainline-primary-menu-scrolled-background-color: #02f3c1;
-  $trainline-primary-header-background-color: #00c6a6;
-  $trainline-primary-highlight-color: #fff;
-  $trainline-secondary-highlight-color: #00c6a6;
+  $trainline-highlight-color: #02f3c1;
+  $trainline-secondary-background-color: #02f3c1;
+  $trainline-secondary-foreground-color: #fff;
 
   @include custom-header(
-    $trainline-primary-highlight-color,
+    $secondary-text-color,
     $trainline-primary-menu-background-color,
-    $trainline-primary-highlight-color,
-    $trainline-primary-menu-scrolled-background-color
+    $trainline-secondary-foreground-color,
+    $trainline-secondary-background-color
   );
 
   #main-menu {
@@ -19,22 +18,53 @@ body.trainline-case {
   }
 
   .primary-banner {
-    background: url("/images/cases/trainline/header-background.jpg") $trainline-primary-header-background-color no-repeat;
+    background: url("/images/cases/trainline/header-background.jpg") $trainline-primary-menu-background-color no-repeat;
     background-size: cover;
+
+    h1 {
+      color: $secondary-text-color;
+    }
   }
 
   .content-section {
     h2 {
-      color: $trainline-secondary-highlight-color;
+      color: $trainline-highlight-color;
     }
 
     a {
-      color: $trainline-secondary-highlight-color;
+      color: $trainline-highlight-color;
     }
 
     &.quote {
       blockquote:before {
-        color: $trainline-secondary-highlight-color;
+        color: $trainline-highlight-color;
+      }
+    }
+  }
+
+  .contact-banner {
+    .container {
+      background-color: $trainline-secondary-background-color;
+      color: $trainline-secondary-foreground-color;
+    }
+
+    a {
+      color: $trainline-secondary-foreground-color;
+    }
+
+    .icon-contact * {
+      fill: $trainline-secondary-foreground-color;
+    }
+  }
+
+  #footer {
+    .section-head {
+      color: $trainline-highlight-color;
+    }
+
+    .simplabs-logo {
+      .ball {
+        fill: $trainline-highlight-color;
       }
     }
   }
