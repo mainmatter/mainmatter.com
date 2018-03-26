@@ -53,6 +53,37 @@ body.services {
         }
       }
     }
+
+    &.case.trainline {
+      background: url("/images/cases/trainline/teaser-background.jpg") #02f3c1 center right no-repeat;
+      background-size: cover;
+      color: #fff;
+      padding: 2rem 0;
+      margin-top: 6rem;
+
+      .logo {
+        width: 10rem;
+        margin-bottom: 1rem;
+
+        * {
+          fill: $ternary-highlight-color;
+        }
+      }
+
+      .teaser-image {
+        margin-top: -6rem;
+      }
+
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      @media screen and (max-width: 767px) {
+        margin-top: 0;
+        background: #02f3c1;
+      }
+    }
   }
 
   a.ember {
