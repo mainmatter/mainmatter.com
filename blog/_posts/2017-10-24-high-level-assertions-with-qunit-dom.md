@@ -5,6 +5,7 @@ title: High Level Assertions with qunit-dom
 author: "Tobias Bieniek"
 github-handle: Turbo87
 twitter-handle: tobiasbieniek
+topic: js
 ---
 
 At [EmberFest](https://emberfest.eu/) this year we presented and released

@@ -26,16 +26,13 @@ body.ember {
     }
   }
 
+
   .content-section {
     background-color: $ember-background-color;
     color: $ember-foreground-color;
 
-    h2 {
+    h2, a, code {
       color: $ember-foreground-color;
-    }
-
-    a {
-      color: $ember-secondary-foreground-color;
     }
 
     &.highlight {
@@ -85,6 +82,27 @@ body.ember {
             font-style: italic;
           }
         }
+      }
+    }
+
+    &.posts {
+      h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 2.5rem;
+      }
+
+      h4 {
+        font-size: 1rem;
+        text-decoration: underline;
+      }
+
+      p {
+        font-size: .8rem;
+      }
+
+      .col-sm-6 {
+        margin-bottom: 2.5rem;
       }
     }
 

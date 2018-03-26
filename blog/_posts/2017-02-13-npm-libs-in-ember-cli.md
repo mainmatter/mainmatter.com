@@ -5,6 +5,7 @@ title: Using npm libraries in Ember CLI
 author: "Tobias Bieniek"
 github-handle: Turbo87
 twitter-handle: tobiasbieniek
+topic: ember
 ---
 
 tl;dr Use npm instead of Bower whenever you can!

@@ -5,6 +5,7 @@ title: "ember-test-selectors: The road to 1.0"
 author: "Tobias Bieniek"
 github-handle: Turbo87
 twitter-handle: tobiasbieniek
+topic: ember
 ---
 
 Back in January we wrote about the

@@ -77,7 +77,7 @@ class: ember
 
 <div class="content-section talks">
   <div class="container">
-    <div class="row">
+    <div class="row talks">
       <div class="col-12">
         <h2 class="text-center">We share our expertise</h2>
       </div>
@@ -86,22 +86,38 @@ class: ember
           <a href="https://www.youtube.com/watch?v=wFJPIjRTIVU"><img src="/images/talks/animate-the-web-with-ember.jpg" alt="Animate the Web with Ember.js" class="img-fluid teaser-image"></a>
           <h5>Animate the Web with Ember.js <span class="speaker">&mdash; Jessica Jordan at EmberConf 2017</span></h5>
         </div>
-        <a href="https://www.youtube.com/watch?v=wFJPIjRTIVU" class="custom-button">watch video</a>
       </div>
       <div class="col-12 col-sm-4 d-flex flex-column justify-content-between teaser">
         <div>
           <a href="https://pusher.com/sessions/meetup/emberfest/high-level-abstractions"><img src="/images/talks/high-level-assertions.jpg" alt="High Level Assertions" class="img-fluid teaser-image"></a>
           <h5>High Level Assertions <span class="speaker">&mdash; Tobias Bieniek at EmberFest 2017</span></h5>
         </div>
-        <a href="https://pusher.com/sessions/meetup/emberfest/high-level-abstractions" class="custom-button">watch video</a>
       </div>
       <div class="col-12 col-sm-4 d-flex flex-column justify-content-between teaser">
         <div>
           <a href="https://www.youtube.com/watch?v=81-jwnlg1pQ"><img src="/images/talks/better-test-selectors-leveraging-the-complete-ember-toolbelt.jpg" alt="Better Test Selectors Leveraging the Complete Ember Toolbelt" class="img-fluid teaser-image"></a>
           <h5>Better Test Selectors Leveraging the Complete Ember Toolbelt <span class="speaker">&mdash; Marco Otte-Witte at EmberCamp 2017</span></h5>
         </div>
-        <a href="https://www.youtube.com/watch?v=81-jwnlg1pQ" class="custom-button">watch video</a>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-section posts">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="text-center">From the Blog</h3>
+      </div>
+      {% assign ember_posts = site.categories.blog | where: "topic", "ember" %}
+      {% for post in ember_posts limit:4 %}
+        <div class="col-12 col-sm-6">
+          <div>
+            <h4>{{post.title}}</h4>
+            {{post.excerpt | markdownify}}
+          </div>
+        </div>
+      {%endfor %}
     </div>
   </div>
 </div>

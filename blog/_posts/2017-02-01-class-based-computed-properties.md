@@ -5,6 +5,7 @@ title: Class based Computed Properties
 author: "Marco Otte-Witte"
 github-handle: marcoow
 twitter-handle: marcoow
+topic: ember
 ---
 
 We think Computed Properties in Ember are awesome. We also think they [are in many cases the better alternative to template helpers](https://speakerdeck.com/marcoow/templates-and-logic-in-ember) as they allow for cleaner separation of where a computation is triggered and the implementation of that computation. In some cases though it is currently very hard to do things in Computed Properties (and Computed Property macros in particular) that are possible with Class based helpers. With the __introduction of Class based Computed Properties__ we're aiming at making these scenarios solvable easily.

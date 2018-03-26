@@ -5,6 +5,7 @@ title: "The most important command when working with XCode 6"
 author: "Marco Otte-Witte"
 github-handle: marcoow
 twitter-handle: marcoow
+topic: ios
 ---
 
 ```bash

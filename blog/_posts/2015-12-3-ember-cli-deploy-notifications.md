@@ -5,6 +5,7 @@ title: "ember-cli-deploy-notifications"
 author: "Michael Klein"
 twitter-handle: LevelbossMike
 github-handle: LevelbossMike
+topic: ember
 ---
 
 A few weeks ago a new version of the _"official"_ ember deployment solution [ember-cli-deploy](http://ember-cli-deploy.com/) was released:

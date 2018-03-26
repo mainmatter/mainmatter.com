@@ -5,6 +5,7 @@ title: "Ember.SimpleAuth 0.3.0"
 author: "Marco Otte-Witte"
 github-handle: marcoow
 twitter-handle: marcoow
+topic: ember
 ---
 
 Ember.SimpleAuth 0.3.0 was just released. The **main change in this release is the split of Ember.SimpleAuth into one core library and a set of extension libraries**. These extension libraries include everything that’s not mandatorily required for Ember.SimpleAuth like authenticators, stores etc. so that every application would only have to load whatever it needs.
