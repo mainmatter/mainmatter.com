@@ -31,12 +31,26 @@ body.services {
       color: #fff;
       padding: 2rem 0;
 
-      .logo path {
-        fill: $ternary-highlight-color;
+      .logo {
+        width: 40rem;
+        margin-right: 1rem;
+
+        * {
+          fill: $ternary-highlight-color;
+        }
       }
 
       a {
         color: #fff;
+        text-decoration: none;
+      }
+
+      @media screen and (max-width: 767px) {
+        .logo {
+          width: 50%;
+          display: block;
+          margin: 0 auto 1rem auto;
+        }
       }
     }
   }
