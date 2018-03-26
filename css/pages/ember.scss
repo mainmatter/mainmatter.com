@@ -1,43 +1,29 @@
 body.ember {
-  $ember-background-color: #f53d2b;
-  $ember-foreground-color: #fff;
-  $ember-secondary-background-color: #fff;
-  $ember-secondary-foreground-color: #f53d2b;
+  $ember-foreground-color: #f53d2b;
+  $ember-secondary-background-color: #f53d2b;
+  $ember-secondary-foreground-color: #fff;
 
   @include custom-header(
     $ember-foreground-color,
-    $ember-background-color,
+    $primary-background-color,
     $ember-secondary-foreground-color,
     $ember-secondary-background-color,
   );
 
-  #main-menu {
-    .logo * {
-      fill: $ternary-highlight-color;
-    }
+  a {
+    color: $ember-foreground-color;
   }
 
   .primary-banner {
-    background-color: $ember-background-color;
-    color: $ember-foreground-color;
-
     h1 {
       color: $ember-foreground-color;
     }
   }
 
-
   .content-section {
-    background-color: $ember-background-color;
-    color: $ember-foreground-color;
-
-    h2, a, code {
-      color: $ember-foreground-color;
-    }
-
     &.highlight {
       background-color: $ember-secondary-background-color;
-      color: $primary-text-color;
+      color: $ember-secondary-foreground-color;
 
       h2 {
         color: $ember-secondary-foreground-color;
@@ -54,7 +40,7 @@ body.ember {
           vertical-align: text-bottom;
 
           * {
-            fill: $ember-foreground-color;
+            fill: $primary-text-color;
           }
         }
       }
@@ -101,13 +87,17 @@ body.ember {
         font-size: .8rem;
       }
 
+      code {
+        color: $primary-text-color;
+      }
+
       .col-sm-6 {
         margin-bottom: 2.5rem;
       }
     }
 
     &.community {
-      background: $ember-background-color url("/images/community-banner.jpg") center center no-repeat;
+      background: $primary-background-color url("/images/community-banner.jpg") center center no-repeat;
       background-size: contain;
 
       h2 {
@@ -119,13 +109,31 @@ body.ember {
       }
 
       a {
-        color: $ember-foreground-color;
         font-weight: bold;
       }
     }
+  }
 
-    .we-can-ember {
-      width: 60%;
+  .contact-banner {
+    .container {
+      background-color: $ember-secondary-background-color;
+      color: $ember-secondary-foreground-color;
+    }
+
+    .icon-contact * {
+      fill: $ember-secondary-foreground-color;
+    }
+  }
+
+  #footer {
+    .section-head {
+      color: $ember-foreground-color;
+    }
+
+    .simplabs-logo {
+      .ball {
+        fill: $ember-foreground-color;
+      }
     }
   }
 }
