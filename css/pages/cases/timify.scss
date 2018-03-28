@@ -126,7 +126,13 @@ body.timify-case {
     text-decoration: none;
   }
 
-  @media screen and (max-width: 767px) {
+  @include media-breakpoint-down(md) {
+    .logo {
+      width: 20rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
     .logo {
       width: 30%;
       display: block;
