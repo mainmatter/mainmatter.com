@@ -1,13 +1,14 @@
-$timify-primary-background-color: #da2b36;
-$timify-primary-highlight-color: #fff;
-$timify-secondary-highlight-color: #d15052;
+$timify-primary-menu-background-color: transparent;
+$timify-highlight-color: #ca3b44;
+$timify-secondary-background-color: #ca3b44;
+$timify-secondary-foreground-color: #fff;
 
 body.timify-case {
   @include custom-header(
-    $timify-primary-highlight-color,
-    $timify-primary-background-color,
-    $timify-primary-highlight-color,
-    $timify-primary-background-color
+    $secondary-text-color,
+    $timify-primary-menu-background-color,
+    $timify-secondary-foreground-color,
+    $timify-secondary-background-color
   );
 
   #main-menu {
@@ -17,40 +18,109 @@ body.timify-case {
   }
 
   .primary-banner {
-    background-color: $timify-primary-background-color;
+    background: url("/images/cases/timify/header-background.jpg") $timify-primary-menu-background-color no-repeat;
+    background-size: cover;
+
+    h1 {
+      color: $secondary-text-color;
+    }
   }
 
   .content-section {
     h2 {
-      color: $timify-secondary-highlight-color;
+      color: $timify-highlight-color;
     }
 
     a {
-      color: $timify-secondary-highlight-color;
+      color: $timify-highlight-color;
     }
 
-    &.quote {
-      blockquote:before {
-        color: $timify-secondary-highlight-color;
+    &.highlight {
+      background-color: $timify-secondary-background-color;
+      color: $timify-secondary-foreground-color;
+    }
+
+    &.banner {
+      background: url("/images/cases/timify/banner-background.jpg") $timify-secondary-background-color center right no-repeat;
+      background-size: cover;
+      color: $timify-secondary-foreground-color;
+
+      h3, h4 {
+        font-family: helvetica neue;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      h4 {
+        font-size: 2rem;
+        margin-top: 1rem;
+        font-weight: lighter;
+        line-height: 1.4em;
+      }
+    }
+  }
+
+  .contact-banner {
+    .container {
+      background-color: $timify-secondary-background-color;
+      color: $timify-secondary-foreground-color;
+    }
+
+    a {
+      color: $timify-secondary-foreground-color;
+    }
+
+    .icon-contact * {
+      fill: $timify-secondary-foreground-color;
+    }
+  }
+
+  #footer {
+    .section-head {
+      color: $timify-highlight-color;
+    }
+
+    .simplabs-logo {
+      .ball {
+        fill: $timify-highlight-color;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .primary-banner {
+      padding: #{$top-spacing} 0 10rem 0;
+    }
+
+    .content-section {
+      &.intro {
+        padding-top: 0;
+        margin-top: -100px;
+
+        p:first-of-type {
+          margin-top: 100px;
+        }
       }
     }
   }
 }
 
 .content-section.case-teaser.timify {
-  background-color: $timify-primary-background-color;
+  background-color: $timify-secondary-background-color;
   color: #fff;
   padding: 2rem 0;
-
+ 
   .logo {
     width: 40rem;
     margin-right: 1rem;
-
+ 
     * {
       fill: $ternary-highlight-color;
-    }
-  }
-
+     }
+   }
+ 
   a {
     color: #fff;
     text-decoration: none;
