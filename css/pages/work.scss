@@ -5,4 +5,10 @@ body.work {
       max-width: 12rem;
     }
   }
+
+  .content-section.case-teaser.expedition {
+    @include media-breakpoint-up(xl) {
+      margin-top: 0;
+    }
+  }
 }

@@ -124,8 +124,7 @@ body.expedition-case {
   background: url("/images/cases/expedition/teaser-background.jpg") $expedition-secondary-background-color center right no-repeat;
   background-size: cover;
   color: #fff;
-  padding: 2rem 0;
-  margin-top: 7rem;
+  padding: 4rem 0;
 
   .logo {
     height: 10rem;
@@ -141,11 +140,21 @@ body.expedition-case {
     text-decoration: none;
   }
 
-  .teaser-image {
-    margin-top: -7rem;
+  @media screen and (max-width: 767px) {
+    .logo {
+      width: 30%;
+      display: block;
+      margin: 0 auto 1rem auto;
+    }
   }
 
-  @media screen and (max-width: 767px) {
+  @include media-breakpoint-up(xl) {
+    margin-top: 7rem;
+
+    .teaser-image {
+      margin-top: -7rem;
+    }
+
     .logo {
       width: 30%;
       display: block;
