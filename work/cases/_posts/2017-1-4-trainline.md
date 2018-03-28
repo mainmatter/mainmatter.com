@@ -41,6 +41,7 @@ class: trainline-case
   <div class="container">
     <div class="row">
       <div class="col-12 col-sm-6 d-flex flex-column justify-content-center">
+        <h2>sustainable added value</h2>
         <p>simplabs <strong>spearheaded several engineering efforts focused around mobile performance</strong>, improved load times, server side rendering and localization. We helped <strong>establish modern and idiomatic practices for developing mobile apps</strong> and helped Trainline's in-house engineering team internalize those through code reviews.</p>
         <p>In addition to supporting Trainline with engineering resources and expertise, we were able to help <strong>improve the engineering process</strong> by establishing and solidifying a sprint based approach. This resulted in more efficient prioritization and a better sense of progress by both engineers and management.</p>
       </div>
