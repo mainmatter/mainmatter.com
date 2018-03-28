@@ -10,21 +10,24 @@ redirect_from: /cases/expedition.html
 class: expedition-case
 ---
 
-<div class="row content-section">
-  <div class="col-12 col-md-6 order-md-2 col-lg-5">
-    <h3>Expedition</h3>
-    <p>Expedition is an online travel magazine for global citizens. It lets travellers experience the world's best destinations through the eyes of a local.</p>
-    <p>The team approached simplabs when they needed help laying the <strong>groundwork for some advanced features</strong> in their Elixir and Phoenix based API as well as making sure their Ember.js based client was following best practices.</p>
-  </div>
-  <div class="col-12 col-md-6 order-md-1 col-lg-5 offset-lg-1">
-    <img src="/images/cases/expedition/start-page.png" class="img-fluid" alt="Home Page">
+<div class="content-section intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 order-md-2 d-flex flex-column justify-content-center">
+        <p>Expedition is an online travel magazine for global citizens. It lets travellers experience the world's best destinations through the eyes of a local.</p>
+        <p>The team approached simplabs when they needed help laying the <strong>groundwork for some advanced features</strong> in their Elixir and Phoenix based API as well as making sure their Ember.js based client was following best practices.</p>
+      </div>
+      <div class="col-12 col-md-6 order-md-1 d-flex align-items-center justify-content-center">
+        <img src="/images/cases/expedition/start-page.png" class="img-fluid" alt="Home Page">
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="secondary-banner wide-banner quote-banner">
+<div class="content-section quote">
   <div class="container">
-    <div class="row content-section">
-      <div class="col-12 col-lg-10 offset-lg-1">
+    <div class="row">
+      <div class="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
         <blockquote>
           <p>simplabs brought wisdom, flexibility, and sane solutions when facing complex problems. They went above and beyond to work with our unique situation - would recommend 1000x.</p>
           <footer><cite>Bryan Langslet, Expedition CEO</cite></footer>
@@ -34,11 +37,27 @@ class: expedition-case
   </div>
 </div>
 
-<div class="row content-section">
-  <div class="col-12 col-md-6 col-lg-5 offset-lg-1">
-    <p>simplabs' team built prototype implementations for a number of advanced features. Leveraging <strong>Elixir's and Phoenix's capabilities</strong> we were able to implement <strong>advanced mechanics with clean and concise code</strong> that would have taken much more effort and resulted in significantly higher complexity with other technologies. Expedition' team benefitted from our foundational work, <strong>handed over in an open and well-communicated way</strong>.</p>
+<div class="content-section banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-10 offset-sm-1 col-lg-6 offset-lg-2">
+        <h3>Explore The Unknown</h3>
+        <h4>See the world’s <strong>best destinations</strong> through the <em>eyes of a local</em></h4>
+      </div>
+    </div>
   </div>
-  <div class="col-12 col-md-6 col-lg-5">
-    <img src="/images/cases/expedition/map.png" class="img-fluid" alt="Map">
+</div>
+
+<div class="content-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
+        <h2>long-term enablement</h2>
+        <p>simplabs' team built prototype implementations for a number of advanced features. Leveraging <strong>Elixir's and Phoenix's capabilities</strong> we were able to implement <strong>advanced mechanics with clean and concise code</strong> that would have taken much more effort and resulted in significantly higher complexity with other technologies. Expedition' team benefitted from our foundational work, <strong>handed over in an open and well-communicated way</strong>.</p>
+      </div>
+      <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
+        <img src="/images/cases/expedition/map.png" class="img-fluid" alt="Map">
+      </div>
+    </div>
   </div>
 </div>

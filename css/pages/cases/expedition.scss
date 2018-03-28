@@ -1,0 +1,121 @@
+$expedition-primary-menu-background-color: transparent;
+$expedition-highlight-color: #052d57;
+$expedition-secondary-background-color: #052d57;
+$expedition-secondary-foreground-color: #fff;
+
+body.expedition-case {
+  @include custom-header(
+    $secondary-text-color,
+    $expedition-primary-menu-background-color,
+    $expedition-secondary-foreground-color,
+    $expedition-secondary-background-color
+  );
+
+  #main-menu {
+    .logo * {
+      fill: $ternary-highlight-color;
+    }
+  }
+
+  .primary-banner {
+    background: url("/images/cases/expedition/header-background.jpg") $expedition-primary-menu-background-color no-repeat;
+    background-size: cover;
+
+    h1 {
+      color: $secondary-text-color;
+    }
+
+    strong {
+      color: $primary-text-color;
+      background-color: $primary-background-color;
+    }
+  }
+
+  .content-section {
+    h2 {
+      color: $expedition-highlight-color;
+    }
+
+    a {
+      color: $expedition-highlight-color;
+    }
+
+    &.highlight {
+      background-color: $expedition-secondary-background-color;
+      color: $expedition-secondary-foreground-color;
+    }
+
+    &.quote {
+      blockquote {
+        &:before {
+          color: $expedition-highlight-color;
+        }
+      }
+    }
+
+    &.banner {
+      background: url("/images/cases/expedition/banner-background.jpg") $expedition-secondary-background-color center right no-repeat;
+      background-size: cover;
+      color: $expedition-secondary-foreground-color;
+
+      h3, h4 {
+        font-family: helvetica neue;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      h4 {
+        font-size: 2rem;
+        margin-top: 1rem;
+        font-weight: lighter;
+        line-height: 1.4em;
+      }
+    }
+  }
+
+  .contact-banner {
+    .container {
+      background-color: $expedition-secondary-background-color;
+      color: $expedition-secondary-foreground-color;
+    }
+
+    a {
+      color: $expedition-secondary-foreground-color;
+    }
+
+    .icon-contact * {
+      fill: $expedition-secondary-foreground-color;
+    }
+  }
+
+  #footer {
+    .section-head {
+      color: $expedition-highlight-color;
+    }
+
+    .simplabs-logo {
+      .ball {
+        fill: $expedition-highlight-color;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .primary-banner {
+      padding: #{$top-spacing} 0 10rem 0;
+    }
+
+    .content-section {
+      &.intro {
+        padding-top: 0;
+        margin-top: -60px;
+
+        p:first-of-type {
+          margin-top: 60px;
+        }
+      }
+    }
+  }
+}
