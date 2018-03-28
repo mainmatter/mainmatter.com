@@ -119,3 +119,37 @@ body.expedition-case {
     }
   }
 }
+
+.content-section.case-teaser.expedition {
+  background: url("/images/cases/expedition/teaser-background.jpg") $expedition-secondary-background-color center right no-repeat;
+  background-size: cover;
+  color: #fff;
+  padding: 2rem 0;
+  margin-top: 7rem;
+
+  .logo {
+    height: 10rem;
+    margin-left: 1rem;
+
+    * {
+      fill: $ternary-highlight-color;
+    }
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .teaser-image {
+    margin-top: -7rem;
+  }
+
+  @media screen and (max-width: 767px) {
+    .logo {
+      width: 30%;
+      display: block;
+      margin: 0 auto 1rem auto;
+    }
+  }
+}
