@@ -28,6 +28,10 @@ body.index {
   }
 
   .clients {
+    a {
+      color: $primary-text-color;
+    }
+
     .logo {
       height: 5rem;
       max-width: 12rem;
@@ -38,8 +42,21 @@ body.index {
     }
   }
 
+  .cases, .clients {
+    padding-bottom: 2rem;
+
+    .more {
+      color: $primary-text-color;
+      font-size: .8rem;
+      margin-top: 2rem;
+      display: block;
+    }
+  }
+
   @include media-breakpoint-down(sm) {
     .clients {
+      padding-bottom: 4rem;
+
       div:nth-child(1), div:nth-child(2) {
         margin-bottom: 1rem;
       }
