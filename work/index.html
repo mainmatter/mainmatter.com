@@ -7,33 +7,45 @@ class: work
 <div class="primary-banner d-flex align-items-center">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-12 col-sm-8">
+      <div class="col-12 col-sm-8 offset-sm-2">
         <h1>Work</h1>
         <p>We have a track record of successful <strong>projects for international clients</strong>.</p>
     	</div>
-      <div class="col-sm-3 offset-sm-1 d-none d-sm-block">
-        <!-- TODO: icon -->
-      </div>
     </div>
   </div>
 </div>
 
-{% for post in site.categories.cases %}
-<div class="content-section {% unless forloop.last %}separated{% endunless %}">
+<div class="content-section case-teaser trainline">
   <div class="container">
-    <div class="row">
-      <div class="col-12 col-sm-6 teaser {% cycle 'order-sm-1', 'order-sm-2' %}">
-        <a href="{{post.url}}"><img src="/images/cases/{{post.key}}/teaser.png" class="img-fluid teaser-image" alt="client case - timify"></a>
+    <a href="/work/cases/trainline.html">
+      <div class="row align-items-center">
+        <div class="col-12 col-sm-6">
+          {% include svgs/logos/trainline.svg class="logo" alt="logo - Trainline" %}
+          <p>simplabs <strong>helped Europe’s leading independent train ticket retailer build their mobile web site</strong> using Ember.js. We worked closely with trainline’s in-house engineering team, helping to establish best practices and a smooth process.</p>
+        </div>
+        <div class="col-12 col-sm-3 offset-sm-1 d-none d-sm-block">
+          <img src="/images/cases/trainline/mobile.png" class="img-fluid teaser-image" alt="client case - trainline">
+        </div>
       </div>
-      <div class="col-12 col-sm-6 teaser {% cycle 'order-sm-2', 'order-sm-1' %}">
-        <h4>{{post.title}}</h4>
-        {{post.excerpt | markdownify}}
-        <p><a href="{{post.url}}">Read Case</a></p>
-      </div>
-    </div>
+    </a>
   </div>
 </div>
-{% endfor %}
+
+<div class="content-section case-teaser timify">
+  <div class="container">
+    <a href="/work/cases/timify.html">
+      <div class="row align-items-center">
+        <div class="col-12 col-sm-5 d-none d-sm-block">
+          <img src="/images/cases/timify/daily-view.png" class="img-fluid teaser-image" alt="client case - timify">
+        </div>
+        <div class="col-12 offset-sm-1 col-sm-6 d-block d-sm-flex">
+          {% include svgs/logos/timify.svg class="logo" alt="logo - Timify" %}
+          <p>simplabs built the <strong>first version of Timify’s core product, providing them with a solid foundation</strong> for the future. The newly built in-house engineering team was able to pick that up and continue development afterwards.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
 
 <div class="content-section subhead">
   <div class="container">
@@ -45,54 +57,56 @@ class: work
   </div>
 </div>
 
-<div class="content-section clients">
-  <div class="container">
-    <div class="row">
-      <div class="col-6 col-sm-4 align-items-center justify-content-center d-flex">
-        <a href="http://www.hopskipdrive.com" title="HopSkipDrive" target="_blank"><i class="hopskipdrive logo"></i></a>
-    	</div>
-      <div class="col-6 col-sm-4 align-items-center justify-content-center d-flex">
-        <a href="http://generali.de"  title="Generali" target="_blank"><i class="generali logo"></i></a>
-    	</div>
-      <div class="col-6 col-sm-4 align-items-center justify-content-center d-flex">
-        <a href="https://www.robinhood.org/" title="The Robin Hood Foundation" target="_blank"><i class="robinhood logo"></i></a>
-    	</div>
-      <div class="col-6 col-sm-4 align-items-center justify-content-center d-flex">
-        <a href="https://www.thetrainline.com/"  title="Trainline" target="_blank"><i class="trainline logo"></i></a>
-    	</div>
-      <div class="col-6 col-sm-4 align-items-center justify-content-center d-flex">
-        <a href="http://embedd.com" title="embeDD" target="_blank"><i class="embedd logo"></i></a>
-    	</div>
-      <div class="col-6 col-sm-4 align-items-center justify-content-center d-flex">
-        <a href="http://xbav.de" title="xbAV" target="_blank"><i class="xbav logo"></i></a>
-    	</div>
-      <div class="col-6 col-sm-4 align-items-center justify-content-center d-flex">
-        <a href="http://experteer.de" title="Experteer" target="_blank"><i class="experteer logo"></i></a>
-    	</div>
-      <div class="col-6 col-sm-4 align-items-center justify-content-center d-flex">
-        <a href="http://timify.com" title="Timify" target="_blank"><i class="timify logo"></i></a>
-    	</div>
-      <div class="col-6 col-sm-4 align-items-center justify-content-center d-flex">
-        <a href="https://www.mvb-online.de"  title="MVB Marketing- und Verlagsservice des Buchhandels GmbH" target="_blank"><i class="mvb logo"></i></a>
-    	</div>
-      <div class="col-6 col-sm-4 align-items-center justify-content-center d-flex">
-        <a href="http://www.ringler.ch/" title="Ringler Informatik AG" target="_blank"><i class="ringler logo"></i></a>
-    	</div>
-      <div class="col-6 col-sm-4 align-items-center justify-content-center d-flex">
-        <a href="http://www.neighbourhood.ie"  title="Neighbourhoodie Software" target="_blank"><i class="neighbourhoodie logo"></i></a>
-    	</div>
-      <div class="col-6 col-sm-4 align-items-center justify-content-center d-flex">
-        <a href="http://loconet.info"  title="LoCoNET" target="_blank"><i class="loconet logo"></i></a>
-    	</div>
-      <div class="col-6 col-sm-4 align-items-center justify-content-center d-flex">
-        <a href="http://www.dim3.com/" title="DIM3" target="_blank"><i class="dim3 logo"></i></a>
-    	</div>
-      <div class="col-6 col-sm-4 align-items-center justify-content-center d-flex">
-        <a href="https://www.medify.co.uk" title="Medify Ltd" target="_blank"><i class="medify logo"></i></a>
-    	</div>
-      <div class="col-6 col-sm-4 align-items-center justify-content-center d-flex">
-        <i class="shuddle logo"></i>
-    	</div>
+<div class="content-section highlight clients">
+  <a href="/work/">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 col-sm-3 d-flex justify-content-center">
+          <a href="http://www.hopskipdrive.com" title="HopSkipDrive" target="_blank"><i class="hopskipdrive logo"></i></a>
+    	  </div>
+        <div class="col-6 col-sm-3 d-flex justify-content-center">
+          <a href="http://generali.de"  title="Generali" target="_blank"><i class="generali logo"></i></a>
+    	  </div>
+        <div class="col-6 col-sm-3 d-flex justify-content-center">
+          <a href="https://www.robinhood.org/" title="The Robin Hood Foundation" target="_blank"><i class="robinhood logo"></i></a>
+    	  </div>
+        <div class="col-6 col-sm-3 d-flex justify-content-center">
+          <a href="https://www.thetrainline.com/"  title="Trainline" target="_blank"><i class="trainline logo"></i></a>
+    	  </div>
+        <div class="col-6 col-sm-3 d-flex justify-content-center">
+          <a href="http://embedd.com" title="embeDD" target="_blank"><i class="embedd logo"></i></a>
+    	  </div>
+        <div class="col-6 col-sm-3 d-flex justify-content-center">
+          <a href="http://xbav.de" title="xbAV" target="_blank"><i class="xbav logo"></i></a>
+    	  </div>
+        <div class="col-6 col-sm-3 d-flex justify-content-center">
+          <a href="http://experteer.de" title="Experteer" target="_blank"><i class="experteer logo"></i></a>
+    	  </div>
+        <div class="col-6 col-sm-3 d-flex justify-content-center">
+          <a href="http://timify.com" title="Timify" target="_blank"><i class="timify logo"></i></a>
+    	  </div>
+        <div class="col-6 col-sm-3 d-flex justify-content-center">
+          <a href="https://www.mvb-online.de"  title="MVB Marketing- und Verlagsservice des Buchhandels GmbH" target="_blank"><i class="mvb logo"></i></a>
+    	  </div>
+        <div class="col-6 col-sm-3 d-flex justify-content-center">
+          <a href="http://www.ringler.ch/" title="Ringler Informatik AG" target="_blank"><i class="ringler logo"></i></a>
+    	  </div>
+        <div class="col-6 col-sm-3 d-flex justify-content-center">
+          <a href="http://www.neighbourhood.ie"  title="Neighbourhoodie Software" target="_blank"><i class="neighbourhoodie logo"></i></a>
+    	  </div>
+        <div class="col-6 col-sm-3 d-flex justify-content-center">
+          <a href="http://loconet.info"  title="LoCoNET" target="_blank"><i class="loconet logo"></i></a>
+    	  </div>
+        <div class="col-6 col-sm-3 d-flex justify-content-center">
+          <a href="http://www.dim3.com/" title="DIM3" target="_blank"><i class="dim3 logo"></i></a>
+    	  </div>
+        <div class="col-6 col-sm-3 d-flex justify-content-center">
+          <a href="https://www.medify.co.uk" title="Medify Ltd" target="_blank"><i class="medify logo"></i></a>
+    	  </div>
+        <div class="col-6 col-sm-3 d-flex justify-content-center">
+          <i class="shuddle logo"></i>
+    	  </div>
+      </div>
     </div>
   </div>
 </div>

@@ -1,9 +1,9 @@
-body.trainline-case {
-  $trainline-primary-menu-background-color: transparent;
-  $trainline-highlight-color: #53dbc2;
-  $trainline-secondary-background-color: #53dbc2;
-  $trainline-secondary-foreground-color: #fff;
+$trainline-primary-menu-background-color: transparent;
+$trainline-highlight-color: #53dbc2;
+$trainline-secondary-background-color: #53dbc2;
+$trainline-secondary-foreground-color: #fff;
 
+body.trainline-case {
   @include custom-header(
     $secondary-text-color,
     $trainline-primary-menu-background-color,
@@ -83,5 +83,36 @@ body.trainline-case {
         }
       }
     }
+  }
+}
+
+.content-section.case-teaser.trainline {
+  background: url("/images/cases/trainline/teaser-background.jpg") $trainline-highlight-color center right no-repeat;
+  background-size: cover;
+  color: #fff;
+  padding: 2rem 0;
+  margin-top: 6rem;
+
+  .logo {
+    width: 10rem;
+    margin-bottom: 1rem;
+
+    * {
+      fill: $ternary-highlight-color;
+    }
+  }
+
+  .teaser-image {
+    margin-top: -6rem;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-top: 0;
+    background: $trainline-highlight-color;
   }
 }

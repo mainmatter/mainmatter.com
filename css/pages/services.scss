@@ -24,66 +24,6 @@ body.services {
       background-color: $secondary-background-color;
       color: $secondary-text-color;
     }
-
-    // TODO: this does not belong here actually!
-    &.case.timify {
-      background-color: #da2b36;
-      color: #fff;
-      padding: 2rem 0;
-
-      .logo {
-        width: 40rem;
-        margin-right: 1rem;
-
-        * {
-          fill: $ternary-highlight-color;
-        }
-      }
-
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
-
-      @media screen and (max-width: 767px) {
-        .logo {
-          width: 30%;
-          display: block;
-          margin: 0 auto 1rem auto;
-        }
-      }
-    }
-
-    &.case.trainline {
-      background: url("/images/cases/trainline/teaser-background.jpg") #02f3c1 center right no-repeat;
-      background-size: cover;
-      color: #fff;
-      padding: 2rem 0;
-      margin-top: 6rem;
-
-      .logo {
-        width: 10rem;
-        margin-bottom: 1rem;
-
-        * {
-          fill: $ternary-highlight-color;
-        }
-      }
-
-      .teaser-image {
-        margin-top: -6rem;
-      }
-
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
-
-      @media screen and (max-width: 767px) {
-        margin-top: 0;
-        background: #02f3c1;
-      }
-    }
   }
 
   a.ember {

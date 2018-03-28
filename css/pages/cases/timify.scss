@@ -1,8 +1,8 @@
-body.timify-case {
-  $timify-primary-background-color: #d15052;
-  $timify-primary-highlight-color: #fff;
-  $timify-secondary-highlight-color: #d15052;
+$timify-primary-background-color: #da2b36;
+$timify-primary-highlight-color: #fff;
+$timify-secondary-highlight-color: #d15052;
 
+body.timify-case {
   @include custom-header(
     $timify-primary-highlight-color,
     $timify-primary-background-color,
@@ -33,6 +33,34 @@ body.timify-case {
       blockquote:before {
         color: $timify-secondary-highlight-color;
       }
+    }
+  }
+}
+
+.content-section.case-teaser.timify {
+  background-color: $timify-primary-background-color;
+  color: #fff;
+  padding: 2rem 0;
+
+  .logo {
+    width: 40rem;
+    margin-right: 1rem;
+
+    * {
+      fill: $ternary-highlight-color;
+    }
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 767px) {
+    .logo {
+      width: 30%;
+      display: block;
+      margin: 0 auto 1rem auto;
     }
   }
 }
