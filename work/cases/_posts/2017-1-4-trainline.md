@@ -27,7 +27,7 @@ class: trainline-case
 <div class="content-section quote highlight">
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
         <blockquote>
           <p>It has been an absolute pleasure to work with simplabs. Their team of experienced JavaScript engineers quickly slotted in to our in-house development teams. Their expertise with modern, agile software development best practices and tools meant they were able to work with our processes to deliver fantastic customer experiences.</p>
           <footer><cite>Mark Holt, Trainline CTO</cite></footer>
