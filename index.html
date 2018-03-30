@@ -25,15 +25,34 @@ class: index
   });
 </script>
 
-<div class="content-section highlight">
+<div class="content-section" id="mission-statement">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
+      <div class="col-12 col-sm-8">
         <p>Our team of technology experts builds ambitious solutions for clients across the world, from startups to long-established businesses. We like to <strong>move fast without breaking things</strong> and invite our clients to take an active role in the development process.</p>
       </div>
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  Zepto(function($) {
+    var win = $(window);
+    var missionStatement = $('#mission-statement');
+    if (win.scrollTop() === 0) {
+      missionStatement.addClass('fadeOut');
+      function fadeInMissionStatement() {
+        if (win.scrollTop() + win.height() > missionStatement.offset().top ) {
+          win.off('scroll', fadeInMissionStatement);
+          var timerFunction = window.requestAnimationFrame ? window.requestAnimationFrame : window.setTimeout;
+          timerFunction(function() {
+            missionStatement.addClass('fadeIn');
+          });
+        }
+      }
+      win.on('scroll', fadeInMissionStatement);
+    }
+  });
+</script>
 
 <div class="content-section cases">
   <div class="container">

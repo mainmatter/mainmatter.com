@@ -1,6 +1,8 @@
 body.index {
   .primary-banner {
     padding: calc(#{$top-spacing} + 6rem) 0 6rem 0;
+    height: 100vh;
+    min-height: 30rem;
 
     .logo {
       height: 12rem;
@@ -16,6 +18,19 @@ body.index {
 
     p:last-of-type {
       margin-bottom: 0;
+    }
+  }
+
+  #mission-statement {
+    padding-top: 0;
+
+    &.fadeOut {
+      opacity: 0;
+      transition: opacity 1s ease-in-out .5s;
+    }
+
+    &.fadeIn {
+      opacity: 1;
     }
   }
 
