@@ -21,8 +21,9 @@ body.trainline-case {
     background: url("/images/cases/trainline/header-background.jpg") $trainline-primary-menu-background-color no-repeat;
     background-size: cover;
 
-    h1 {
-      color: $secondary-text-color;
+    .logo {
+      width: 20rem;
+      margin: 4rem 0;
     }
   }
 

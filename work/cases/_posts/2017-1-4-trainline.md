@@ -8,6 +8,7 @@ excerpt: "simplabs **helped Europe's leading independent train ticket retailer b
 permalink: /work/cases/trainline.html
 redirect_from: /cases/trainline.html
 class: trainline-case
+logo: "/images/logos/trainline.svg"
 ---
 
 <div class="content-section intro">
