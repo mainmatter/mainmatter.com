@@ -38,6 +38,10 @@ body.index {
     h2 {
       color: $primary-text-color;
     }
+
+    &.case-teaser.trainline {
+      margin-top: 0;
+    }
   }
 
   .cases {
