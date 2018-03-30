@@ -126,13 +126,14 @@ body.timify-case {
     text-decoration: none;
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
     .logo {
       width: 20rem;
+      margin: 0 1rem 0 0;
     }
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(xs) {
     .logo {
       width: 30%;
       display: block;
