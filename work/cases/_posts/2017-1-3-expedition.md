@@ -14,7 +14,7 @@ class: expedition-case
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-6 order-md-2 d-flex flex-column justify-content-center">
-        <p>Expedition is an online travel magazine for global citizens. It lets travellers experience the world's best destinations through the eyes of a local.</p>
+        <p>Expedition is an <strong>online travel magazine for global citizens</strong>. It lets travellers experience the world's best destinations through the eyes of a local.</p>
         <p>The team approached simplabs when they needed help laying the <strong>groundwork for some advanced features</strong> in their Elixir and Phoenix based API as well as making sure their Ember.js based client was following best practices.</p>
       </div>
       <div class="col-12 col-md-6 order-md-1 d-flex align-items-center justify-content-center">
@@ -53,7 +53,8 @@ class: expedition-case
     <div class="row">
       <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
         <h2>long-term enablement</h2>
-        <p>simplabs' team built prototype implementations for a number of advanced features. Leveraging <strong>Elixir's and Phoenix's capabilities</strong> we were able to implement <strong>advanced mechanics with clean and concise code</strong> that would have taken much more effort and resulted in significantly higher complexity with other technologies. Expedition' team benefitted from our foundational work, <strong>handed over in an open and well-communicated way</strong>.</p>
+        <p>simplabs' team built prototype implementations for a number of advanced features in Expedition's system. Leveraging <strong>Elixir's and Phoenix's capabilities</strong> we were able to implement <strong>advanced mechanics with clean and concise code</strong> with significantly less effort and complexity compared with more traditional tools.</p>
+        <p>Expedition's in-house team was able to expand on our foundational work, <strong>handed over in an open and well-communicated way</strong>.</p>
       </div>
       <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
         <img src="/images/cases/expedition/map.png" class="img-fluid" alt="Map">
