@@ -15,34 +15,39 @@ redirect_from: "/training/"
   </div>
 </div>
 
-<div class="container workshops" id="main-section">
-  <div class="row">
-    <div class="col col-lg-10 offset-lg-1">
-      <div class="row content-section">
-        <div class="col-sm-12">
-          <p>Training workshops <strong>give engineering teams a jump start</strong> when approaching new technologies, leading to dramatically improved productivity. We offer <strong>on-site workshops with customized agendas</strong> for the best outcome for your team. <a href="/contact/">Contact us</a> to schedule a workshop today.</p>
-        </div>
+<div class="content-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
+        <h2>A jumpstart for tech teams</h2>
+        <p>Approaching new technologies can be overwhelming at times. Our technology experts help teams <strong>identify the core concepts and ideas</strong> behind a particular technology, understand them well and <strong>apply them successfully for the long term</strong>. We are experts in a wide range of topics, from languages and frameworks to architecture and process best practices and <strong>share our expertise</strong> so others can grow from it.</p>
       </div>
-      {% assign sorted_posts = site.categories.training | sort: 'weight' %}
-      {% for post in sorted_posts %}
-        <div class="row content-section">
-          <div class="col-sm-3 icon">
-            <img src="{{post.image}}" class="img-fluid" alt="Image: {{post.title}}">
-          </div>
-          <div class="col-sm-9">
-            <h4>
-              <a href="{{post.url}}.html">{{post.title}}</a>
-            </h4>
-            {{post.description | markdownify}}
-            <a href="{{post.url}}.html" class="custom-button">Learn more</a>
-          </div>
-        </div>
-      {% endfor %}
     </div>
   </div>
 </div>
 
-{% include intercom.html %}
+<div class="content-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
+        <h2>Reviews</h2>
+        <p>Teams that have existing products and need to ensure they are set up for long-term success can benefit from our <strong>code and architecture reviews</strong>. We will break down the application's architecture, identify bad our outdated patterns and give guidance for the future. We deliver an <strong>extensive report with a list of findings, explanations as well as suggested fixes</strong> and priorisations.</p>
+        <p>We have reviewed applications for various clients in the past, covering technology stacks from Ruby on Rails to <a href="/services/ember/">Ember.js</a> and <a href="/services/elixir/">Elixir/Phoenix</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
+        <h2>Guidance</h2>
+        <p>Sometimes teams need someone to help <strong>kick-off a project and make sure the right decisions are made early on</strong>. Our technology experts have years of experience with various technology stacks and can help <strong>define architectures, make technology decisions</strong> and setup a stable engineering process to get a project going and ensure its long term integrity.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="contact-banner">
   <a href="/contact/">
@@ -59,3 +64,5 @@ redirect_from: "/training/"
     </div>
   </a>
 </div>
+
+{% include intercom.html %}
