@@ -25,6 +25,18 @@ logo: "/images/logos/trainline.svg"
   </div>
 </div>
 
+<div class="content-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-6 d-flex flex-column justify-content-center">
+        <h2>mobile web vs. mobile apps</h2>
+        <p>Websites that force visitors into installing a native app when visited from a mobile device are usually perceived as annoying and have a high bounce rate. Providing users what they are looking for in their browsers results in significantly higher user satisfaction. Moden technologies like Progressive Web Apps allow combining the best of both worlds with app grade experiences delivered instantly.</p>
+        <p><a href="/contact/">Talk to our experts</a> to find out how we can improve the experience of your mobile users.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="content-section quote highlight">
   <div class="container">
     <div class="row">
