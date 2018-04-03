@@ -117,3 +117,37 @@ body.trainline-case {
     background: $trainline-highlight-color;
   }
 }
+
+.case-teaser-small.trainline {
+  background: url("/images/cases/trainline/mobile.png") $trainline-secondary-background-color right 10% top -80% no-repeat;
+  background-size: 30%;
+  color: $trainline-secondary-foreground-color;
+  box-shadow: 0px 0px 20px #bbb;
+  padding: 2rem;
+  width: 100%;
+
+  a {
+    color: $trainline-secondary-foreground-color;
+    text-decoration: none;
+    display: block;
+  }
+
+  strong {
+    background-color: $ternary-background-color;
+    color: $secondary-text-color;
+    font-weight: normal;
+  }
+
+  .logo {
+    width: 50%;
+    margin-bottom: 1rem;
+
+    * {
+      fill: $ternary-highlight-color;
+    }
+  }
+
+  p {
+    width: 50%;
+  }
+}

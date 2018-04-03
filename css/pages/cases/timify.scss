@@ -141,3 +141,33 @@ body.timify-case {
     }
   }
 }
+
+.case-teaser-small.timify {
+  background: url("/images/cases/timify/daily-view.png") $timify-secondary-background-color right 10% top 20% no-repeat;
+  background-size: 40%;
+  color: $timify-secondary-foreground-color;
+  box-shadow: 0px 0px 20px #bbb;
+  padding: 2rem;
+  width: 100%;
+
+  a {
+    color: $timify-secondary-foreground-color;
+    text-decoration: none;
+    display: block;
+  }
+
+  strong {
+    background-color: $ternary-background-color;
+    color: $secondary-text-color;
+    font-weight: normal;
+  }
+
+  .logo {
+    width: 25%;
+    margin-bottom: 1rem;
+
+    * {
+      fill: $timify-secondary-foreground-color;
+    }
+  }
+}
