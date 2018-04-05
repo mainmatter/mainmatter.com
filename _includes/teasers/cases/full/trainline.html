@@ -1,0 +1,16 @@
+{% assign trainline = site.categories.cases | where: "key", "trainline" | first %}
+<div class="content-section case-teaser trainline">
+  <div class="container">
+    <a href="{{trainline.url}}">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6">
+          {% include svgs/logos/trainline.svg class="logo" alt="logo - Trainline" %}
+          {{trainline.excerpt | markdownify}}
+        </div>
+        <div class="col-12 col-md-3 offset-md-1 d-none d-md-block">
+          <img src="/images/cases/trainline/mobile.png" class="img-fluid teaser-image" alt="client case - trainline">
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
