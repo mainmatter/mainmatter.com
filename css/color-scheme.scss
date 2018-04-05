@@ -45,11 +45,12 @@ body {
 
 a {
   color: $primary-highlight-color;
-  transition: color ease-in-out .15s;
+  text-decoration: underline;
 
   &:hover, &:active, &:focus {
-    color: $secondary-highlight-color;
-  };
+    color: $primary-highlight-color;
+    text-decoration: none;
+  }
 }
 
 // TODO: cleanup later!
