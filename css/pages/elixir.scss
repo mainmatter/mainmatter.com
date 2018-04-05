@@ -1,0 +1,12 @@
+body.elixir {
+  $elixir-foreground-color: #483159;
+  $elixir-secondary-background-color: #483159;
+  $elixir-secondary-foreground-color: #fff;
+
+  @include custom-header(
+    $elixir-foreground-color,
+    $primary-background-color,
+    $elixir-secondary-foreground-color,
+    $elixir-secondary-background-color,
+  );
+}
