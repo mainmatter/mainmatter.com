@@ -3,12 +3,23 @@ layout: default
 title: Elixir &amp; Phoenix
 ---
 
-<div class="primary-banner">
+<div class="primary-banner d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-sm-8 offset-sm-2">
+        <h1>Elixir &amp; Phoenix</h1>
+        <p><strong>Tools for the future</strong> based on a <strong>solid foundation</strong></p>
+    	</div>
+    </div>
+  </div>
+</div>
+
+<div class="content-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1">
-        <h2>Elixir &amp; Phoenix</h2>
-        <p><strong>Tools for the future</strong> based on a <strong>solid foundation</strong></p>
+      <div class="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
+        <h2>The best of all worlds</h2>
+        <p>Elixir combines the <strong>expressiveness and simplicity of Ruby</strong> with the performance and stability of the <strong>Erlang VM</strong>. Phoenix builds on the concepts first introduced by Ruby on Rails, combining them with a number of architectural improvements. Together, they form a <strong>modern and capable stack for building ambitious projects</strong> based on an established and <strong>battle-proven foundation</strong>.</p>
     	</div>
     </div>
   </div>
@@ -16,46 +27,13 @@ title: Elixir &amp; Phoenix
 
 {% include teasers/cases/full/expedition.html %}
 
-<div class="container" id="main-section">
-  <div class="row">
-    <div class="col col-lg-10 offset-lg-1">
-      <div class="row content-section split-section">
-        <div class="col-12 col-md-6">
-          <h3>The best of all worlds</h3>
-        </div>
-        <div class="col-12 col-md-6">
-          <p>Elixir combines the <strong>expressiveness and simplicity of Ruby</strong> with the performance and stability of the <strong>Erlang VM</strong>. Phoenix builds on the concepts first introduced by Ruby on Rails, combining them with a number of architectural improvements. Together, they form a <strong>modern and capable stack for building ambitious projects</strong> based on an established and <strong>battle-proven foundation</strong>.</p>
-        </div>
-      </div>
-
-      <div class="secondary-banner wide-banner crosslink-banner">
-        {% assign expedition = site.categories.cases | where: "key", "expedition" | first %}
-        <div class="container">
-          <div class="row content-section split-section case-teaser">
-            <div class="col-12 col-md-6 col-lg-5 offset-lg-1 d-flex flex-wrap justify-content-center">
-              <h5>Client Case</h5>
-              <a href="{{expedition.url}}" class="logo align-self-stretch"><i class="{{expedition.icon}}"></i></a>
-            </div>
-            <div class="col-12 col-md-6 col-lg-5">
-              <h3><a href="{{expedition.url}}">{{expedition.title}}</a></h3>
-              {{expedition.excerpt | markdownify}}
-              <a href="{{expedition.url}}" class="custom-button">learn more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row content-section split-section">
-        <div class="col-12 col-md-6">
-          <h3>We've been there early on</h3>
-        </div>
-        <div class="col-12 col-md-6">
-          <p>simplabs was an <strong>early adopter of Elixir and Phoenix</strong>, offering <a href="https://elixir-phoenix-workshop.simplabs.com">trainings</a> and leveraging the potential of the stack for our <a href="/work/">clients</a> early on.</p>
-          <p>We are organizing the <a href="https://www.meetup.com/Elixir-Munich/">Elixir Munich</a> meetup and have been <strong>actively involved with conferences</strong> like <a href="https://elixirconf.com/">ElixirConf</a> and <a href="https://elixirconf.eu/">ElixirConf EU</a>.</p>
-        </div>
-      </div>
-
-      {% include elixir_workshop_banner.html %}
+<div class="content-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
+        <p>simplabs was an <strong>early adopter of Elixir and Phoenix</strong>, offering <a href="https://elixir-phoenix-workshop.simplabs.com">trainings</a> and leveraging the potential of the stack for our <a href="/work/">clients</a> early on. We are organizing the <a href="https://www.meetup.com/Elixir-Munich/">Elixir Munich</a> meetup and have been <strong>actively involved with conferences</strong> like <a href="https://elixirconf.com/">ElixirConf</a> and <a href="https://elixirconf.eu/">ElixirConf EU</a>.</p>
+        <p>We believe that Elixir and Phoenix have a bright future ahead of them and enable our clients to be a part of that.</p>
+    	</div>
     </div>
   </div>
 </div>
