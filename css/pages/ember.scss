@@ -114,6 +114,73 @@ body.ember {
     }
   }
 
+  .case-teaser-small {
+    box-shadow: 0px 0px 20px #bbb;
+    padding: 2rem;
+    width: 100%;
+    min-height: 12rem;
+
+    .description {
+      width: 60%;
+    }
+
+    &.ember-simple-auth {
+      background: url("/images/logos/ember-simple-auth.svg") #eb4831 right 2rem center no-repeat;
+      background-size: 30%;
+      color: #fff;
+
+      a {
+        color: #fff;
+      }
+
+      .octicon * {
+        fill: #fff;
+      }
+    }
+
+    &.ember-test-selectors {
+      background: url("/images/logos/ember-test-selectors.svg") #99ffcc right 2rem center no-repeat;
+      background-size: 30%;
+      color: #000;
+
+      a {
+        color: #000;
+      }
+
+      .octicon * {
+        fill: #000;
+      }
+    }
+
+    &.ember-cookies {
+      background: url("/images/logos/ember-cookies.svg") #f9d72f right 2rem center no-repeat;
+      background-size: 30%;
+      color: #000;
+
+      a {
+        color: #000;
+      }
+
+      .octicon * {
+        fill: #000;
+      }
+    }
+
+    &.qunit-dom {
+      background: url("/images/logos/qunit-dom.svg") #ff1659 right 2rem center no-repeat;
+      background-size: 30%;
+      color: #fff;
+
+      a {
+        color: #fff;
+      }
+
+      .octicon * {
+        fill: #fff;
+      }
+    }
+  }
+
   .contact-banner {
     .container {
       background-color: $ember-secondary-background-color;
