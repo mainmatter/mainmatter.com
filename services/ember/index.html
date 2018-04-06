@@ -117,7 +117,7 @@ class: ember
         <div class="col-12 col-sm-5 {% cycle 'offset-sm-1', '' %} col-lg-4 {% cycle 'offset-lg-2', '' %}">
           <div>
             <h4>{{post.title}}</h4>
-            {{post.excerpt | markdownify}}
+            {{post.excerpt | markdownify | strip_html | truncatewords: 25}}
           </div>
         </div>
       {%endfor %}
