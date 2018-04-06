@@ -109,12 +109,12 @@ class: ember
 <div class="content-section posts">
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
         <h3 class="text-center">From the Blog</h3>
       </div>
       {% assign ember_posts = site.categories.blog | where: "topic", "ember" %}
       {% for post in ember_posts limit:4 %}
-        <div class="col-12 col-sm-6">
+        <div class="col-12 col-sm-5 {% cycle 'offset-sm-1', '' %} col-lg-4 {% cycle 'offset-lg-2', '' %}">
           <div>
             <h4>{{post.title}}</h4>
             {{post.excerpt | markdownify}}
