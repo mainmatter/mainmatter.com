@@ -333,6 +333,8 @@ pre.highlight {
 */
 
 #footer {
+  margin: 3rem 0 0 0;
+
   .navbar-text {
     padding-top: .2rem;
   }
@@ -348,6 +350,7 @@ pre.highlight {
   .copyright {
     flex: 0 1 100%;
     text-align: right;
+    margin-top: 3rem;
   }
 }
 
