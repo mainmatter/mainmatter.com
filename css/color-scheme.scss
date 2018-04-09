@@ -159,6 +159,15 @@ table {
 
 */
 
+.button {
+  color: $secondary-text-color;
+  background-color: $primary-highlight-color;
+
+  &:hover {
+    background-color: darken($primary-highlight-color, 10%);
+  };
+}
+
 #main-menu {
   background-color: $primary-background-color;
 
@@ -445,6 +454,18 @@ table {
 
   path.text {
     fill: $primary-text-color;
+  }
+}
+
+#cookie-banner {
+  background-color: $quaternary-background-color;
+
+  .button {
+    background-color: $ternary-background-color;
+
+    &:hover {
+      background-color: $ternary-background-color;
+    }
   }
 }
 
