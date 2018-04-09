@@ -24,12 +24,22 @@
   transform: translateY(-50%);
 }
 
-@mixin custom-color-scheme($foreground, $background, $scrolled-foreground, $scrolled-background, $logo-ball: $foreground, $logo-text: $foreground, $scrolled-logo-ball: $scrolled-foreground, $scrolled-logo-text: $scrolled-foreground) {
+@mixin custom-color-scheme(
+  $menu-foreground,
+  $menu-background,
+  $menu-scrolled-foreground,
+  $menu-scrolled-background,
+  $highlight,
+  $logo-ball: $menu-foreground,
+  $logo-text: $menu-foreground,
+  $scrolled-logo-ball: $menu-scrolled-foreground,
+  $scrolled-logo-text: $menu-scrolled-foreground
+) {
   #main-menu {
-    background-color: $background;
+    background-color: $menu-background;
 
     a {
-      color: $foreground;
+      color: $menu-foreground;
     }
 
     .logo path {
@@ -43,20 +53,20 @@
     }
 
     .nav-hover {
-      background-color: $background;
+      background-color: $menu-background;
 
       a {
         &:hover, &.active {
-          border-bottom-color: $foreground;
+          border-bottom-color: $menu-foreground;
         }
       }
     }
 
     &.scrolled {
-      background-color: $scrolled-background;
+      background-color: $menu-scrolled-background;
 
       a {
-        color: $scrolled-foreground;
+        color: $menu-scrolled-foreground;
       }
 
       .logo path {
@@ -70,32 +80,48 @@
       }
 
       .nav-hover {
-        background-color: $scrolled-background;
+        background-color: $menu-scrolled-background;
 
         a:hover, a.active {
-          border-bottom-color: $scrolled-foreground;
+          border-bottom-color: $menu-scrolled-foreground;
         }
       }
     }
 
     @include media-breakpoint-down(sm) {
       .collapse {
-        background-color: $background;
+        background-color: $menu-background;
       }
 
       .navbar-toggler path {
-        fill: $foreground;
+        fill: $menu-foreground;
       }
 
       &.scrolled {
         .collapse {
-          background-color: $scrolled-background;
+          background-color: $menu-scrolled-background;
         }
 
         .navbar-toggler path {
-          fill: $scrolled-foreground;
+          fill: $menu-scrolled-foreground;
         }
       }
+    }
+  }
+
+  #footer {
+    .section-head {
+      color: $highlight;
+    }
+
+    .simplabs-logo {
+      .ball {
+        fill: $highlight;
+      }
+    }
+
+    a:hover, a:active {
+      color: $highlight;
     }
   }
 }
