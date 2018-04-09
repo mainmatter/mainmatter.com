@@ -344,6 +344,11 @@ pre.highlight {
   .logo {
     height: .8rem;
   }
+
+  .copyright {
+    flex: 0 1 100%;
+    text-align: right;
+  }
 }
 /*
 .primary-banner {
@@ -778,6 +783,10 @@ pre.highlight {
 
     .navbar-text, .navbar-brand, .navbar-nav {
       padding-bottom: 1rem;
+    }
+
+    .copyright {
+      text-align: center;
     }
   }
 }
