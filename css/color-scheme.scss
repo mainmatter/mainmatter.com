@@ -220,6 +220,10 @@ table {
 
   a, a:hover, a:active {
     color: $primary-text-color;
+
+    &:hover {
+      color: $primary-highlight-color;
+    }
   }
 
   .navbar-text {
