@@ -54,15 +54,53 @@ body.index {
 
   .clients {
     a {
-      color: $primary-text-color;
+      display: block;
+      position: relative;
+    }
+
+    .link-text {
+      opacity: 0;
+      transition: transform ease-in-out .15s, opacity ease-in-out .15s, background-color ease-in-out .15s;
+      background-color: #007df6;
+      color: white;
+      padding: .2rem .5rem;
+      border-radius: .15rem;
+      box-shadow: 0px 0px 20px #bbb;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      will-change: transform;
+
+      &:hover {
+        background-color: darken(#007df6, 10%);
+      }
     }
 
     .logo {
+      transition: all ease-in-out .15s;
+      will-change: transform;
+      opacity: 1;
       height: 5rem;
       max-width: 12rem;
 
       * {
         fill: $quaternary-highlight-color;
+      }
+    }
+
+    &:hover {
+      .link-text {
+        transition: transform ease-in-out .15s .15s, opacity ease-in-out .15s .15s, background-color ease-in-out .15s;
+        opacity: 1;
+        transform: translate(-50%, -75%);
+      }
+
+      .logo {
+        filter: blur(.1rem);
+        opacity: .5;
+        transform: translatey(-.2rem);
       }
     }
   }
