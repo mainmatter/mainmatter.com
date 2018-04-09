@@ -120,8 +120,8 @@ body.trainline-case {
 }
 
 .case-teaser-small.trainline {
-  background: url("/images/cases/trainline/mobile.png") $trainline-secondary-background-color right 10% top -80% no-repeat;
-  background-size: 30%;
+  background: url("/images/cases/trainline/mobile.png") $trainline-secondary-background-color right 1rem top 1rem no-repeat;
+  background-size: contain;
   color: $trainline-secondary-foreground-color;
   box-shadow: 0px 0px 20px #bbb;
   padding: 2rem;

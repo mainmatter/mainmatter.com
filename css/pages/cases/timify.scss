@@ -149,8 +149,8 @@ body.timify-case {
 }
 
 .case-teaser-small.timify {
-  background: url("/images/cases/timify/daily-view.png") $timify-secondary-background-color right 10% top 20% no-repeat;
-  background-size: 40%;
+  background: url("/images/cases/timify/daily-view.png") $timify-secondary-background-color right -3rem top -4rem no-repeat;
+  background-size: contain;
   color: $timify-secondary-foreground-color;
   box-shadow: 0px 0px 20px #bbb;
   padding: 2rem;
@@ -181,5 +181,17 @@ body.timify-case {
     * {
       fill: $timify-secondary-foreground-color;
     }
+  }
+
+  @include media-breakpoint-down(md) {
+    background-position: right -5rem top -5rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    background-position: right -3rem top -4rem;
+  }
+
+  @include media-breakpoint-down(xs) {
+    background-position: right -5rem top -5rem;
   }
 }
