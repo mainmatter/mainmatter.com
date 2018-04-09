@@ -4,7 +4,7 @@ $trainline-secondary-background-color: #53dbc2;
 $trainline-secondary-foreground-color: #fff;
 
 body.trainline-case {
-  @include custom-header(
+  @include custom-color-scheme(
     $secondary-text-color,
     $trainline-primary-menu-background-color,
     $trainline-secondary-foreground-color,

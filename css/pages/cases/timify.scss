@@ -4,7 +4,7 @@ $timify-secondary-background-color: #d6303b;
 $timify-secondary-foreground-color: #fff;
 
 body.timify-case {
-  @include custom-header(
+  @include custom-color-scheme(
     $secondary-text-color,
     $timify-primary-menu-background-color,
     $timify-secondary-foreground-color,

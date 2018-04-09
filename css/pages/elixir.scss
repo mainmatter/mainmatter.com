@@ -3,7 +3,7 @@ body.elixir {
   $elixir-secondary-background-color: #483159;
   $elixir-secondary-foreground-color: #fff;
 
-  @include custom-header(
+  @include custom-color-scheme(
     $elixir-foreground-color,
     $primary-background-color,
     $elixir-secondary-foreground-color,

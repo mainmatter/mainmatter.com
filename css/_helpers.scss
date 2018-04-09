@@ -24,7 +24,7 @@
   transform: translateY(-50%);
 }
 
-@mixin custom-header($foreground, $background, $scrolled-foreground, $scrolled-background, $logo-ball: $foreground, $logo-text: $foreground, $scrolled-logo-ball: $scrolled-foreground, $scrolled-logo-text: $scrolled-foreground) {
+@mixin custom-color-scheme($foreground, $background, $scrolled-foreground, $scrolled-background, $logo-ball: $foreground, $logo-text: $foreground, $scrolled-logo-ball: $scrolled-foreground, $scrolled-logo-text: $scrolled-foreground) {
   #main-menu {
     background-color: $background;
 

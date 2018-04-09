@@ -4,7 +4,7 @@ $expedition-secondary-background-color: #052d57;
 $expedition-secondary-foreground-color: #fff;
 
 body.expedition-case {
-  @include custom-header(
+  @include custom-color-scheme(
     $secondary-text-color,
     $expedition-primary-menu-background-color,
     $expedition-secondary-foreground-color,
