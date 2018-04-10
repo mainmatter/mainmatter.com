@@ -24,6 +24,35 @@ body.services {
       background-color: $secondary-background-color;
       color: $secondary-text-color;
     }
+
+    &.service {
+      a {
+        text-decoration: none;
+
+        p {
+          color: $primary-text-color;
+        }
+      }
+
+      .icon {
+        transition: all ease-in-out .15s;
+
+        * {
+          fill: $primary-text-color !important;
+          transition: all ease-in-out .15s;
+        }
+      }
+
+      &:hover {
+        .icon {
+          transform: translateY(-.15rem);
+
+          * {
+            fill: $primary-highlight-color !important;
+          }
+        }
+      }
+    }
   }
 
   a.ember {
