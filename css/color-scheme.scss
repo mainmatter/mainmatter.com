@@ -307,6 +307,12 @@ table {
   a {
     color: $ternary-highlight-color;
   }
+
+  .icon-contact {
+    * {
+      fill: $secondary-text-color !important;
+    }
+  }
 }
 
 .teaser {
