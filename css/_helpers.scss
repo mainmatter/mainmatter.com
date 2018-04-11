@@ -40,6 +40,12 @@
 
     a {
       color: $menu-foreground;
+
+      &:hover, &.active {
+        span {
+          border-bottom-color: $menu-foreground;
+        }
+      }
     }
 
     .logo path {
@@ -67,6 +73,12 @@
 
       a {
         color: $menu-scrolled-foreground;
+
+        &:hover, &.active {
+          span {
+            border-bottom-color: $menu-scrolled-foreground;
+          }
+        }
       }
 
       .logo path {

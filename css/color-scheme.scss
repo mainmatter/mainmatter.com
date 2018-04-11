@@ -173,6 +173,12 @@ table {
 
   a {
     color: $primary-text-color;
+
+    &:hover, &.active {
+      span {
+        border-bottom-color: $primary-text-color;
+      }
+    }
   }
 
   .logo path {
@@ -187,12 +193,6 @@ table {
 
   .nav-hover {
     background-color: $primary-background-color;
-
-    a {
-      &:hover, &.active {
-        border-bottom-color: $primary-text-color;
-      }
-    }
   }
 
   &.scrolled {
@@ -201,6 +201,12 @@ table {
 
     a {
       color: $secondary-text-color;
+
+      &:hover, &.active {
+        span {
+          border-bottom-color: $secondary-text-color;
+        }
+      }
     }
 
     .logo path {

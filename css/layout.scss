@@ -6,6 +6,12 @@ h1 {
   position: fixed;
   transition: background-color ease-in-out .15s 0s, transform ease-in-out .3s 0s;
 
+  a {
+    span {
+      padding: .1rem 0;
+    }
+  }
+
   &.scrollUp {
     transform: translateY(-10rem);
     transition-delay: 0s, .5s;
