@@ -12,8 +12,12 @@ body.services {
       background-color: $ternary-background-color;
     }
 
-    .icon path {
-      fill: $primary-highlight-color;
+    .icon {
+      width: unset;
+
+      path {
+        fill: $primary-text-color !important;
+      }
     }
   }
 
