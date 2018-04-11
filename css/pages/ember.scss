@@ -16,21 +16,17 @@ body.ember {
   }
 
   .primary-banner {
-    h1 {
-      color: $ember-foreground-color;
+    p {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    .icon {
+      width: unset;
     }
   }
 
   .content-section {
-    &.highlight {
-      background-color: $ember-secondary-background-color;
-      color: $ember-secondary-foreground-color;
-
-      h2 {
-        color: $ember-secondary-foreground-color;
-      }
-    }
-
     &.open-source {
       h2 {
         margin-bottom: 2rem;
@@ -55,6 +51,9 @@ body.ember {
 
     &.talks {
       .teaser {
+        transition: all ease-in-out .15s;
+        margin-bottom: 1rem;
+
         .teaser-image {
           box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);
         }
@@ -69,6 +68,10 @@ body.ember {
             font-style: italic;
           }
         }
+
+        &:hover {
+          transform: translateY(-.1rem);
+        }
       }
     }
 
@@ -79,9 +82,23 @@ body.ember {
         margin-bottom: 2.5rem;
       }
 
+      a {
+        text-decoration: none;
+        color: $primary-text-color;
+        display: block;
+        transition: all ease-in-out .15s;
+
+        &:hover {
+          transform: translateX(.1rem);
+          h4 {
+            color: $ember-foreground-color;
+          }
+        }
+      }
+
       h4 {
+        transition: all ease-in-out .15s;
         font-size: 1rem;
-        text-decoration: underline;
       }
 
       p {
@@ -94,6 +111,10 @@ body.ember {
 
       .col-sm-6 {
         margin-bottom: 2.5rem;
+      }
+
+      .post {
+        margin-bottom: 2rem;
       }
     }
 
@@ -120,15 +141,29 @@ body.ember {
     padding: 2rem;
     width: 100%;
     min-height: 12rem;
+    border-radius: .15rem;
+    transition: all ease-in-out .15s;
 
-    .description {
+    &:hover {
+      transform: translateY(-.1rem);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    p {
       width: 60%;
     }
 
     &.ember-simple-auth {
-      background: url("/images/logos/ember-simple-auth.svg") #eb4831 right 2rem center no-repeat;
+      background: url("/images/logos/ember-simple-auth.svg") #fff right 2rem center no-repeat;
       background-size: 30%;
       color: #fff;
+
+      .description {
+        background-color: #eb4831;
+      }
 
       a {
         color: #fff;
@@ -140,9 +175,13 @@ body.ember {
     }
 
     &.ember-test-selectors {
-      background: url("/images/logos/ember-test-selectors.svg") #99ffcc right 2rem center no-repeat;
+      background: url("/images/logos/ember-test-selectors.svg") #fff right 2rem center no-repeat;
       background-size: 30%;
       color: #000;
+
+      .description {
+        background-color: #a0fdcd;
+      }
 
       a {
         color: #000;
@@ -154,9 +193,13 @@ body.ember {
     }
 
     &.ember-cookies {
-      background: url("/images/logos/ember-cookies.svg") #f9d72f right 2rem center no-repeat;
+      background: url("/images/logos/ember-cookies.svg") #fff right 2rem center no-repeat;
       background-size: 30%;
       color: #000;
+
+      .description {
+        background-color: #F4ED20;
+      }
 
       a {
         color: #000;
@@ -168,9 +211,13 @@ body.ember {
     }
 
     &.qunit-dom {
-      background: url("/images/logos/qunit-dom.svg") #ff1659 right 2rem center no-repeat;
+      background: url("/images/logos/qunit-dom.svg") #fff right 2rem center no-repeat;
       background-size: 30%;
       color: #fff;
+
+      .description {
+        background-color: #fa245c;
+      }
 
       a {
         color: #fff;

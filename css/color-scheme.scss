@@ -264,12 +264,6 @@ table {
     color: $primary-text-color;
   }
 
-  &.highlight {
-    h2, .more {
-      color: $ternary-highlight-color;
-    }
-  }
-
   &.quote {
     blockquote {
       &:before {
@@ -279,8 +273,14 @@ table {
   }
 
   &.highlight {
-    background-color: $quaternary-background-color;
-    color: $quaternary-highlight-color;
+    background-color: $primary-background-color;
+
+    .container {
+      background-color: $quaternary-background-color;
+      color: $quaternary-highlight-color;
+      padding: 2rem;
+      border-radius: .15rem;
+    }
 
     &.quote {
       blockquote {
