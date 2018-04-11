@@ -93,11 +93,20 @@ body.trainline-case {
 }
 
 .content-section.case-teaser.trainline {
-  background: url("/images/cases/trainline/teaser-background.jpg") $trainline-highlight-color center right no-repeat;
-  background-size: cover;
-  color: #fff;
-  padding: 2rem 0;
-  margin-top: 6rem;
+  .container {
+    background: url("/images/cases/trainline/teaser-background.jpg") $trainline-highlight-color center right no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 2rem;
+    border-radius: .15rem;
+    transition: all ease-in-out .15s;
+    margin-top: 6rem;
+
+    &:hover {
+      transform: translateY(-.1rem);
+      background-color: darken($trainline-highlight-color, 5%);
+    }
+  }
 
   .logo {
     width: 10rem;

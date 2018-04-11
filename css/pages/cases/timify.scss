@@ -118,9 +118,18 @@ body.timify-case {
 }
 
 .content-section.case-teaser.timify {
-  background-color: $timify-secondary-background-color;
-  color: #fff;
-  padding: 2rem 0;
+  .container {
+    background-color: $timify-secondary-background-color;
+    color: #fff;
+    padding: 2rem;
+    border-radius: .15rem;
+    transition: all ease-in-out .15s;
+
+    &:hover {
+      transform: translateY(-.1rem);
+      background-color: darken($timify-secondary-background-color, 5%);
+    }
+  }
  
   .logo {
     width: 40rem;

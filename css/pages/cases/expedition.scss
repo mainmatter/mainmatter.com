@@ -126,10 +126,22 @@ body.expedition-case {
 }
 
 .content-section.case-teaser.expedition {
-  background: url("/images/cases/expedition/teaser-background.jpg") $expedition-secondary-background-color center right no-repeat;
-  background-size: cover;
-  color: #fff;
-  padding: 4rem 0;
+  .container {
+    background: url("/images/cases/expedition/teaser-background.jpg") $expedition-secondary-background-color center right no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 2rem;
+    border-radius: .15rem;
+    transition: all ease-in-out .15s;
+    
+    margin-top: 6rem;
+
+    &:hover {
+      transform: translateY(-.1rem);
+      background-color: darken($expedition-secondary-background-color, 5%);
+    }
+  }
+  
 
   .logo {
     height: 10rem;
