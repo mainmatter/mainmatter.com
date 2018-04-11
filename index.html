@@ -20,7 +20,7 @@ class: index
   Zepto(function($) {
     var timerFunction = window.requestAnimationFrame ? window.requestAnimationFrame : window.setTimeout;
     timerFunction(function() {
-      $('#main-logo .logo').addClass('animate');
+      $('#main-logo .logo').addClass('visible');
     });
   });
 </script>
@@ -54,7 +54,7 @@ class: index
   });
 </script>
 
-<div class="content-section" id="mission-statement">
+<div class="content-section">
   <div class="container">
     <div class="row">
       <div class="col-12 col-sm-8">
