@@ -310,6 +310,11 @@ table {
   .container {
     background-color: $secondary-background-color;
     color: $ternary-highlight-color;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
+
+    &:hover {
+      background-color: darken($secondary-background-color, 5%);
+    }
   }
 
   a {

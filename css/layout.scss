@@ -154,6 +154,11 @@ h1 {
   .container {
     padding: 2rem;
     border-radius: .15rem;
+    transition: all ease-in-out .15s;
+
+    &:hover {
+      transform: translateY(-.1rem);
+    }
   }
 
   .icon-contact {
