@@ -47,6 +47,10 @@ body.trainline-case {
     .container {
       background-color: $trainline-secondary-background-color;
       color: $trainline-secondary-foreground-color;
+
+      &:hover {
+        background-color: darken($trainline-secondary-background-color, 5%);
+      }
     }
 
     a {

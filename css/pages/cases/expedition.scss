@@ -80,6 +80,10 @@ body.expedition-case {
     .container {
       background-color: $expedition-secondary-background-color;
       color: $expedition-secondary-foreground-color;
+
+      &:hover {
+        background-color: darken($expedition-secondary-background-color, 5%);
+      }
     }
 
     a {

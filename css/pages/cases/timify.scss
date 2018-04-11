@@ -72,6 +72,10 @@ body.timify-case {
     .container {
       background-color: $timify-secondary-background-color;
       color: $timify-secondary-foreground-color;
+
+      &:hover {
+        background-color: darken($timify-secondary-background-color, 5%);
+      }
     }
 
     a {
