@@ -197,7 +197,7 @@ table {
 
   &.scrolled {
     background-color: $secondary-background-color;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, .1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
 
     a {
       color: $secondary-text-color;
@@ -221,7 +221,7 @@ table {
 
     .nav-hover {
       background-color: $secondary-background-color;
-      box-shadow: 0px 8px 20px rgba(0, 0, 0, .1);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, .15);
 
       a:hover, a.active {
         border-bottom-color: $secondary-text-color;
@@ -325,7 +325,7 @@ table {
 
 .teaser {
   .teaser-image {
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .15);
   }
 }
 /*
