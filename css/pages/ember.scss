@@ -1,8 +1,8 @@
-body.ember {
-  $ember-foreground-color: #f53d2b;
-  $ember-secondary-background-color: #f53d2b;
-  $ember-secondary-foreground-color: #fff;
+$ember-foreground-color: #f53d2b;
+$ember-secondary-background-color: #f53d2b;
+$ember-secondary-foreground-color: #fff;
 
+body.ember {
   @include custom-color-scheme(
     $ember-foreground-color,
     $primary-background-color,
@@ -207,5 +207,51 @@ body.ember {
         fill: $ember-foreground-color;
       }
     }
+  }
+}
+
+.tech-teaser-small.ember {
+  background: url("/images/icons/hamster.svg") $ember-secondary-background-color right 2rem bottom 2rem no-repeat;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, .15);
+  background-size: 35%;
+  padding: 2rem;
+  width: 100%;
+  border-radius: .15rem;
+  transition: all ease-in-out .15s;
+  min-height: 15rem;
+
+  &:hover {
+    transform: translateY(-.1rem);
+    background-color: darken($ember-secondary-background-color, 5%);
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+  a {
+    color: $ember-secondary-foreground-color;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+  }
+
+  strong {
+    background-color: $ternary-background-color;
+    color: $secondary-text-color;
+    font-weight: normal;
+  }
+
+  .logo {
+    width: 50%;
+    margin-bottom: 1rem;
+
+    * {
+      fill: $ternary-highlight-color !important;
+    }
+  }
+
+  p {
+    width: 50%;
   }
 }
