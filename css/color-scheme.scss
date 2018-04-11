@@ -164,7 +164,7 @@ table {
   background-color: $primary-highlight-color;
 
   &:hover {
-    background-color: darken($primary-highlight-color, 10%);
+    background-color: darken($primary-highlight-color, 5%);
   };
 }
 

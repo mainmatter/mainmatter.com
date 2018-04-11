@@ -156,10 +156,11 @@ body.timify-case {
   padding: 2rem;
   width: 100%;
   border-radius: .15rem;
-  transition: transform ease-in-out .15s;
+  transition: all ease-in-out .15s;
 
   &:hover {
     transform: translateY(-.1rem);
+    background-color: darken($timify-secondary-background-color, 5%);
   }
 
   a {
