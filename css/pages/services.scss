@@ -1,9 +1,11 @@
 body.services {
   .primary-banner {
     background-color: $primary-background-color;
+    padding: calc(55px + 8rem) 0 4rem 0;
 
-    h1 {
-      color: $primary-highlight-color;
+    p {
+      font-size: 1.5rem;
+      font-weight: 400;
     }
 
     strong {
@@ -16,8 +18,8 @@ body.services {
   }
 
   .content-section {
-    h2 {
-      color: $primary-highlight-color;
+    h3 {
+      font-size: 1.5rem;
     }
 
     &.highlight {
@@ -27,6 +29,7 @@ body.services {
 
     &.service {
       a {
+        color: $primary-text-color;
         text-decoration: none;
 
         p {
@@ -44,12 +47,22 @@ body.services {
       }
 
       &:hover {
+        h3 {
+          color: $primary-highlight-color;
+        }
+
         .icon {
           transform: translateY(-.15rem);
 
           * {
             fill: $primary-highlight-color !important;
           }
+        }
+      }
+
+      @include media-breakpoint-down(sm) {
+        h3 {
+          color: $primary-highlight-color;
         }
       }
     }
