@@ -2,6 +2,10 @@ h1 {
   margin-bottom: 2rem;
 }
 
+strong {
+  border-radius: .15rem;
+}
+
 #main-menu {
   position: fixed;
   transition: background-color ease-in-out .15s 0s, transform ease-in-out .3s 0s;
