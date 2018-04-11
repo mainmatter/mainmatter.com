@@ -1,5 +1,5 @@
 {% assign timify = site.categories.cases | where: "key", "timify" | first %}
-<div class="case-teaser-small timify">
+<div class="case-teaser-small timify d-flex">
   <a href="{{timify.url}}">
     {% include svgs/logos/timify.svg class="logo" alt="logo - Timify" %}
     {{timify.subtitle | markdownify}}

@@ -1,5 +1,5 @@
 {% assign trainline = site.categories.cases | where: "key", "trainline" | first %}
-<div class="case-teaser-small trainline">
+<div class="case-teaser-small trainline d-flex">
   <a href="{{trainline.url}}">
     {% include svgs/logos/trainline.svg class="logo" alt="logo - Trainline" %}
     {{trainline.subtitle | markdownify}}
