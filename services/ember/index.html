@@ -7,11 +7,21 @@ class: ember
 <div class="primary-banner">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-12 col-md-8 offset-md-1">
-        <p>simplabs is the <strong>leading Ember consultancy in Europe</strong>. We have been an <strong>active member of the Ember Ecosystem</strong> from the early days and are involved in several Ember.js core teams.</p>
+      <div class="col-12 col-md-6 offset-md-1">
+        <p>We are Ember experts. In fact, <strong>we help building</strong> its ecosystem.</p>
     	</div>
-      <div class="d-none d-md-block col-md-2">
+      <div class="d-none d-md-block col-md-4">
         {% include svgs/logos/ember.svg class="icon" alt="icon - Ember.js" %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-8 offset-md-1">
+        <p>simplabs has been an <strong>active member of the Ember Ecosystem</strong> from the early days. We are the <strong>leading Ember consultancy in Europe</strong> and are involved in several Ember.js core teams like Ember CLI, Ember Data and Ember Learning. We also maintain a number of widely adopted addons.</p>
       </div>
     </div>
   </div>
@@ -74,10 +84,12 @@ class: ember
 <div class="content-section community">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-sm-4 offset-sm-4">
+      <div class="left-image d-none d-md-block"></div>
+      <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 main">
         <h2 class="text-center">Community Engagement</h2>
         <p class="text-center">Ember.js is a project built by an open community and <strong>simplabs is an active member of that community</strong>. We support the <a href="https://www.meetup.com/Ember-js-Munich/">Ember.js Munich</a> and <a href="https://www.meetup.com/Ember-js-Berlin/">Ember.js Berlin</a> meetups as well as <a href="https://emberfest.eu">EmberFest</a>, the european Ember Community Conference.</p>
     	</div>
+      <div class="right-image d-none d-md-block"></div>
     </div>
   </div>
 </div>
@@ -88,25 +100,25 @@ class: ember
       <div class="col-12">
         <h2 class="text-center">We share our expertise</h2>
       </div>
-      <div class="col-12 col-sm-6 d-flex flex-column justify-content-between teaser">
+      <div class="col-12 col-sm-6 col-md-5 offset-md-1 d-flex flex-column justify-content-between teaser">
         <div>
           <a href="https://www.youtube.com/watch?v=h3YtViXranw&t=1s"><img src="/images/talks/everything-they-didnt-tell-you-about-the-ember-community.png" alt="Everything they didn’t tell you about the Ember Community" class="img-fluid teaser-image"></a>
           <h5>Everything they didn’t tell you about the Ember Community <span class="speaker">&mdash; Jessica Jordan at EmberConf 2018</span></h5>
         </div>
       </div>
-      <div class="col-12 col-sm-6 d-flex flex-column justify-content-between teaser">
+      <div class="col-12 col-sm-6 col-md-5 d-flex flex-column justify-content-between teaser">
         <div>
           <a href="https://www.youtube.com/watch?v=8D-O4cSteRk"><img src="/images/talks/the-next-generation-of-testing.png" alt="The Next Generation of Testing" class="img-fluid teaser-image"></a>
           <h5>The Next Generation of Testing <span class="speaker">&mdash; Tobias Bieniek at EmberFest 2018</span></h5>
         </div>
       </div>
-      <div class="col-12 col-sm-6 d-flex flex-column justify-content-between teaser">
+      <div class="col-12 col-sm-6 col-md-5 offset-md-1 d-flex flex-column justify-content-between teaser">
         <div>
           <a href="https://www.youtube.com/watch?v=81-jwnlg1pQ"><img src="/images/talks/better-test-selectors-leveraging-the-complete-ember-toolbelt.jpg" alt="Better Test Selectors Leveraging the Complete Ember Toolbelt" class="img-fluid teaser-image"></a>
           <h5>Better Test Selectors Leveraging the Complete Ember Toolbelt <span class="speaker">&mdash; Marco Otte-Witte at EmberCamp 2017</span></h5>
         </div>
       </div>
-      <div class="col-12 col-sm-6 d-flex flex-column justify-content-between teaser">
+      <div class="col-12 col-sm-6 col-md-5 d-flex flex-column justify-content-between teaser">
         <div>
           <a href="https://www.youtube.com/watch?v=wFJPIjRTIVU"><img src="/images/talks/animate-the-web-with-ember.jpg" alt="Animate the Web with Ember.js" class="img-fluid teaser-image"></a>
           <h5>Animate the Web with Ember.js <span class="speaker">&mdash; Jessica Jordan at EmberConf 2017</span></h5>
@@ -119,7 +131,7 @@ class: ember
 <div class="content-section posts">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
+      <div class="col-12">
         <h3 class="text-center">From the Blog</h3>
       </div>
       {% assign ember_posts = site.categories.blog | where: "topic", "ember" %}

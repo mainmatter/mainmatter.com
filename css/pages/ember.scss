@@ -76,6 +76,8 @@ body.ember {
     }
 
     &.posts {
+      padding-top: 0;
+
       h3 {
         font-size: 1.5rem;
         font-weight: bold;
@@ -119,8 +121,41 @@ body.ember {
     }
 
     &.community {
-      background: $primary-background-color url("/images/community-banner.jpg") center center no-repeat;
-      background-size: contain;
+      .row {
+        position: relative;
+
+        .main {
+          padding: 4rem;
+          background: url("/images/ember-community/emberfest.jpg") top center no-repeat;
+          background-size: cover;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
+          border-radius: .15rem;
+          z-index: 10;
+        }
+
+        .left-image, .right-image {
+          position: absolute;
+          background-size: cover;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
+          border-radius: .15rem;
+          z-index: 9;
+          width: 40%;
+          height: 75%;
+        }
+
+        .left-image {
+          background: url("/images/ember-community/emberconf.jpg") center center no-repeat;
+          top: 12.5%;
+          right: 60%;
+        }
+
+        .right-image {
+          background: url("/images/ember-community/workshop.jpg") center center no-repeat;
+          top: 12.5%;
+          left: 60%;
+        }
+      }
+      
 
       h2 {
         font-size: 1.2rem;
@@ -162,7 +197,7 @@ body.ember {
       color: #fff;
 
       .description {
-        background-color: #eb4831;
+        color: #eb4831;
       }
 
       a {
@@ -180,7 +215,7 @@ body.ember {
       color: #000;
 
       .description {
-        background-color: #a0fdcd;
+        color: #a0fdcd;
       }
 
       a {
@@ -198,7 +233,7 @@ body.ember {
       color: #000;
 
       .description {
-        background-color: #F4ED20;
+        color: #F4ED20;
       }
 
       a {
@@ -216,7 +251,7 @@ body.ember {
       color: #fff;
 
       .description {
-        background-color: #fa245c;
+        color: #fa245c;
       }
 
       a {
