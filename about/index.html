@@ -1,56 +1,83 @@
 ---
 layout: default
 title: About
+class: about
 ---
 
-<div class="primary-banner">
+<div class="primary-banner d-flex align-items-center">
   <div class="container">
-    <div class="row">
-      <div class="col col-lg-10 offset-lg-1">
-        <h2>About</h2>
-        <p>We are an international team of <strong>Web and Open Source enthusiasts</strong>.</p>
+    <div class="row align-items-center">
+      <div class="col-12 col-md-8 offset-md-1">
+        <p>We are an international team of <strong>Web and Open Source enthusiasts</strong>. We value expertise and a passion for technology higher than location and work for clients across the world.</p>
     	</div>
+      <div class="d-none d-md-block col-md-2">
+        {% include svgs/logos/simplabs-ball.svg class="icon" alt="icon - simplabs" %}
+      </div>
     </div>
   </div>
 </div>
 
-<div class="content-section">
+<div class="content-section tiles">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-sm-8">
+      <div class="col-12 col-md-4 offset-md-1 d-flex align-items-stretch image-tile image-tile-from-left image-tile-1">
+        <div></div>
+      </div>
+      <div class="col-12 col-md-6">
         <p>simplabs was <strong>boot-strapped in Munich, Germany</strong> in 2013 as a technology consultancy focussed on <strong>modern web engineering</strong>. We have since then built ambitious applications for various international clients, from startups to long-established businesses.</p>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="container" id="main-section">
-  <div class="row">
-    <div class="col col-lg-10 offset-lg-1">
-      <div class="row content-section split-section">
-        <div class="col-sm-6">
-          <h3>Values</h3>
-        </div>
-        <div class="col-sm-6">
-          <p>We have a <strong>passion for technology</strong> and value conventions-based tools. We like to <strong>move fast without breaking things</strong> and leverage extensive testing and constant reviews to ensure we deliver high quality results.</p>
-          <p>We <i class="love"></i> Open Source and take an <strong>active role in the projects that we leverage for our clients</strong>, contributing code and supporting the communities.</p>
-        </div>
+    <div class="row">
+      <div class="d-none d-md-flex col-md-6 offset-md-1 align-items-stretch image-tile image-tile-from-left image-tile-2">
+        <div></div>
       </div>
-
-      <div class="row content-section split-section">
-        <div class="col-sm-6">
-          <h3>Expertise over Location</h3>
-        </div>
-        <div class="col-sm-6">
-          <p>We value <strong>expertise and a passion for technology higher than location</strong>. Our distributed team of technology experts works from various locations in Europe for clients across the world.</p>
-          <p>Being a remote culture doesn't mean everyone needs to be remote at all times though. We have <strong>regular company events</strong> to connect offline and spend some time together - we even invite our clients to join us!</p>
-          <img src="/images/oktoberfest.jpg" class="img-fluid" alt="🍻">
-        </div>
+      <div class="d-none d-md-flex col-md-4 align-items-stretch image-tile image-tile-from-right image-tile-3">
+        <div></div>
       </div>
-
-      {% include stack_crosslink.html %}
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-5 offset-md-1">
+        <p>We have a <strong>passion for technology</strong> and value conventions-based tools. We like to <strong>move fast without breaking things</strong> and leverage extensive testing and constant reviews to ensure we deliver high quality results.</p>
+        <p>We <i class="love"></i> Open Source and take an <strong>active role in the projects that we leverage for our clients</strong>, contributing code and supporting the communities.</p>
+      </div>
+      <div class="d-none d-md-flex col-md-5 align-items-stretch image-tile image-tile-from-right image-tile-4">
+        <div></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-4 offset-md-1 d-flex align-items-stretch image-tile image-tile-from-left image-tile-5">
+        <div></div>
+      </div>
+      <div class="col-12 col-md-6">
+        <p>We value <strong>expertise and a passion for technology higher than location</strong>. Our distributed team of technology experts works from various locations in Europe for clients across the world.</p>
+        <p>Being a remote culture doesn't mean everyone needs to be remote at all times though. We have <strong>regular company events</strong> to connect offline and spend some time together - we even invite our clients to join us!</p>
+      </div>
     </div>
   </div>
 </div>
 
 {% include contact_banner.html %}
+
+<script type="text/javascript">
+  Zepto(function($) {
+    var win = $(window);
+    $('.image-tile-from-left, .image-tile-from-right').forEach(function(element, i) {
+      element = $(element);
+      if (win.scrollTop() + win.height() > element.offset().top) {
+        window.setTimeout(function() {
+          window.requestAnimationFrame(function() {
+            element.addClass('visible');
+          });
+        }, i * 150);
+      } else {
+        win.on('scroll', function() {
+          if (win.scrollTop() + win.height() > element.offset().top) {
+            window.requestAnimationFrame(function() {
+              element.addClass('visible');
+            });
+          }
+        });
+      }
+    });
+  });
+</script>
