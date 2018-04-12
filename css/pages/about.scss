@@ -12,10 +12,6 @@ body.about {
   .content-section {
     &.tiles {
       .image-tile {
-        @include media-breakpoint-up(md) {
-          transition: all ease-out .5s;
-        }
-
         & > div {
           box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
           background-size: cover;
@@ -25,6 +21,9 @@ body.about {
         }
 
         @include media-breakpoint-up(md) {
+          transition: all ease-out .5s;
+          will-change: transform, opacity;
+
           &.image-tile-from-left {
             opacity: 0;
             transform: translateX(-75vw);
