@@ -10,6 +10,94 @@ body.elixir {
     $elixir-secondary-background-color,
     $elixir-foreground-color
   );
+
+  a {
+    color: $elixir-foreground-color;
+  }
+
+  .primary-banner {
+    p {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    .icon {
+      width: unset;
+      height: 5rem;
+      vertical-align: middle;
+    }
+  }
+
+  .content-section {
+    &.services {
+      .service {
+        text-align: center;
+
+        h3 {
+          transition: all ease-in-out .15s;
+          font-size: 1rem;
+        }
+
+        a {
+          text-decoration: none;
+          color: $primary-text-color;
+          display: block;
+
+          &:hover {
+            h3 {
+              color: $elixir-foreground-color;
+            }
+
+            .icon {
+              transform: translateY(-.15rem);
+
+              * {
+                fill: $elixir-foreground-color !important;
+              }
+            }
+          }
+        }
+
+        .icon {
+         height: 5rem;
+         margin-bottom: .5rem;
+         transition: all ease-in-out .15s;
+
+          * {
+            transition: all ease-in-out .15s;
+            fill: $primary-text-color !important;
+          }
+        }
+      }
+    }
+  }
+
+  .contact-banner {
+    .container {
+      background-color: $elixir-secondary-background-color;
+      color: $elixir-secondary-foreground-color;
+    }
+
+    a {
+      color: $elixir-secondary-foreground-color;
+    }
+
+    .icon-contact * {
+      fill: $elixir-secondary-foreground-color;
+    }
+  }
+
+  #footer {
+    .section-head {
+      color: $elixir-foreground-color;
+    }
+
+    .simplabs-logo {
+      .ball {
+        fill: $elixir-foreground-color;
+      }
+    }
+  }
 }
 
 .tech-teaser-small.elixir {
