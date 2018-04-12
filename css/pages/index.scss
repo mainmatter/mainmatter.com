@@ -44,11 +44,55 @@ body.index {
     }
 
     &.work {
+      padding-top: 0;
+
       .container {
         background-color: $quaternary-background-color;
         color: $quaternary-highlight-color;
         padding: 2rem;
         border-radius: .15rem;
+      }
+    }
+
+    &.services {
+      .service {
+        text-align: center;
+
+        h3 {
+          transition: all ease-in-out .15s;
+          font-size: 1rem;
+        }
+
+        a {
+          text-decoration: none;
+          color: $primary-text-color;
+          display: block;
+
+          &:hover {
+            h3 {
+              color: $primary-highlight-color;
+            }
+
+            .icon {
+              transform: translateY(-.15rem);
+
+              * {
+                fill: $primary-highlight-color !important;
+              }
+            }
+          }
+        }
+
+        .icon {
+         height: 5rem;
+         margin-bottom: .5rem;
+         transition: all ease-in-out .15s;
+
+          * {
+            transition: all ease-in-out .15s;
+            fill: $primary-text-color !important;
+          }
+        }
       }
     }
   }
