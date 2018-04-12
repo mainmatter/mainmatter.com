@@ -169,6 +169,12 @@ body.ember {
         font-weight: bold;
       }
     }
+
+    &.quote {
+      blockquote:before {
+        color: $ember-foreground-color;
+      }
+    }
   }
 
   .case-teaser-small {
