@@ -132,6 +132,7 @@ body.services {
     &.tech-teasers {
       position: relative;
       padding: 2rem 0;
+      margin: 4rem 0 0 0;
 
       @include media-breakpoint-down(sm) {
         padding: 0;
@@ -189,6 +190,10 @@ body.services {
           background-color: darken(#483159, 5%);
         }
       }
+    }
+
+    &.case-teaser.timify, &.case-teaser.trainline {
+      margin: 6rem 0 4rem 0;
     }
   }
 }
