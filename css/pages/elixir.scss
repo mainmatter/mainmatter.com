@@ -1,13 +1,14 @@
 $elixir-foreground-color: #483159;
 $elixir-secondary-background-color: #483159;
 $elixir-secondary-foreground-color: #fff;
+$elixir-ternary-highlight-color: #f8511e;
 
 body.elixir {
   @include custom-color-scheme(
-    $elixir-foreground-color,
-    $primary-background-color,
-    $elixir-secondary-foreground-color,
-    $elixir-secondary-background-color,
+    $secondary-text-color,
+    transparent,
+    $secondary-text-color,
+    transparent,
     $elixir-foreground-color
   );
 
@@ -16,19 +17,61 @@ body.elixir {
   }
 
   .primary-banner {
+    position: relative;
+    transition: all ease-out .25s;
+    color: $primary-text-color;
+    padding: calc(55px + 8rem) 0 4rem 0;
+
     p {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: 400;
     }
 
     .icon {
+      transition: all ease-out .25s;
       width: unset;
       height: 5rem;
       vertical-align: middle;
     }
+
+    .background {
+      position: absolute;
+      top: -10rem;
+      right: 0;
+      left: 0;
+      bottom: 15rem;
+      transform: skew(0, -1deg);
+      background: linear-gradient(135deg, $elixir-secondary-background-color, $elixir-ternary-highlight-color);
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
+      transition: all ease-out .25s;
+    }
+
+    &.scrolled {
+      color: $secondary-text-color;
+
+      .icon {
+        transition: all ease-out .25s;
+
+        * {
+          fill: $secondary-text-color !important;
+        }
+      }
+
+      .background {
+        bottom: 0;
+        transform: skew(0, 2deg);
+      }
+    }
   }
 
   .content-section {
+    h2 {
+      text-transform: uppercase;
+      font-size: 2rem;
+      margin: 0;
+      font-weight: 600;
+    }
+
     &.services {
       .service {
         text-align: center;
@@ -73,8 +116,10 @@ body.elixir {
   }
 
   .contact-banner {
-    .container {
-      background-color: $elixir-secondary-background-color;
+    .background {
+      background: linear-gradient(135deg, $elixir-secondary-background-color, $elixir-ternary-highlight-color);
+      background-size: auto 200%;
+      background-position: 0 100%;
       color: $elixir-secondary-foreground-color;
     }
 
@@ -84,6 +129,12 @@ body.elixir {
 
     .icon-contact * {
       fill: $elixir-secondary-foreground-color;
+    }
+
+    &:hover {
+      .background {
+        background-position: 0 0;
+      }
     }
   }
 
