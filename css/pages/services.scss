@@ -86,10 +86,25 @@ body.services {
         transition: all ease-in-out .15s;
       }
 
+      .octicon {
+        transition: all ease-in-out .15s;
+
+        * {
+          transition: all ease-in-out .15s;
+        }
+      }
+
       &:hover {
         h2 {
           color: $primary-highlight-color;
-          transform: translateY(-.1rem);
+
+          .octicon {
+            transform: translateX(.15rem);
+
+            * {
+              fill: $primary-highlight-color;
+            }
+          }
         }
       }
     }
@@ -105,6 +120,12 @@ body.services {
     @include media-breakpoint-down(sm) {
       h2 {
         color: $primary-highlight-color;
+
+        .octicon {
+          * {
+            fill: $primary-highlight-color;
+          }
+        }
       }
     }
 
