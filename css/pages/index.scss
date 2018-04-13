@@ -71,43 +71,17 @@ body.index {
       }
     }
 
-    &.services {
+    &.services-teaser {
       .service {
-        text-align: center;
-
-        h3 {
-          transition: all ease-in-out .15s;
-          font-size: 1rem;
-        }
-
-        a {
-          text-decoration: none;
-          color: $primary-text-color;
-          display: block;
-
-          &:hover {
-            h3 {
-              color: $primary-highlight-color;
-            }
-
-            .icon {
-              transform: translateY(-.15rem);
-
-              * {
-                fill: $primary-highlight-color !important;
-              }
-            }
+        &:hover {
+          h3 {
+            color: $primary-highlight-color;
           }
-        }
-
-        .icon {
-         height: 5rem;
-         margin-bottom: .5rem;
-         transition: all ease-in-out .15s;
-
-          * {
-            transition: all ease-in-out .15s;
-            fill: $primary-text-color !important;
+        
+          .icon {
+            * {
+              fill: $primary-highlight-color !important;
+            }
           }
         }
       }
