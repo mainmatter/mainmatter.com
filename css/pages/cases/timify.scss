@@ -118,17 +118,33 @@ body.timify-case {
 }
 
 .content-section.case-teaser.timify {
-  .container {
-    background-color: $timify-secondary-background-color;
-    color: #fff;
-    padding: 2rem;
-    border-radius: .15rem;
-    transition: all ease-in-out .15s;
+  position: relative;
+  transition: all ease-in-out .15s;
+  margin-top: 2rem;
 
-    &:hover {
-      transform: translateY(-.1rem);
+  .background {
+    background-color: $timify-secondary-background-color;
+    transition: all ease-in-out .15s;
+    transform: skew(0, -1deg);
+    position: absolute;
+    top: 0;
+    right: -10rem;
+    left: -10rem;
+    bottom: 0;
+  }
+
+  &:hover {
+    transform: translateY(-.1rem);
+
+    .background {
       background-color: darken($timify-secondary-background-color, 5%);
     }
+  }
+
+  .container {
+    color: #fff;
+    border-radius: .15rem;
+    transition: all ease-in-out .15s;
   }
  
   .logo {
@@ -137,12 +153,20 @@ body.timify-case {
  
     * {
       fill: $ternary-highlight-color;
-     }
-   }
- 
+    }
+  }
+
+  .teaser-image {
+    margin-top: -8rem;
+  }
+
   a {
     color: #fff;
     text-decoration: none;
+
+    p {
+      color: $secondary-text-color;
+    }
   }
 
   @include media-breakpoint-down(sm) {

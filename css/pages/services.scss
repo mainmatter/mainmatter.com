@@ -1,13 +1,59 @@
 body.services {
+  @include custom-color-scheme(
+    $secondary-text-color,
+    transparent,
+    $secondary-text-color,
+    $primary-highlight-color,
+    $primary-highlight-color
+  );
+
   .primary-banner {
+    position: relative;
     background-color: $primary-background-color;
     padding: calc(55px + 8rem) 0 4rem 0;
+    transition: all ease-out .25s;
+    color: $primary-text-color;
+    padding: calc(55px + 10rem) 0 4rem 0;
 
     p {
       font-size: 1.8rem;
       font-weight: 400;
-      text-decoration: underline;
-      text-decoration-color: $primary-highlight-color;
+    }
+
+    .icon {
+      transition: all ease-out .25s;
+      width: unset;
+
+      * {
+        fill: $primary-text-color !important;
+      }
+    }
+
+    .background {
+      position: absolute;
+      top: -10rem;
+      right: -10rem;
+      left: -10rem;
+      bottom: 15rem;
+      transform: skew(0, -2deg);
+      background-color: $primary-highlight-color;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
+      transition: all ease-out .25s;
+    }
+
+    &.scrolled {
+      color: $secondary-text-color;
+
+      .icon {transition: all ease-out .25s;
+        * {
+          fill: $secondary-text-color !important;
+        }
+      }
+
+      .background {
+        bottom: 0;
+        transform: skew(0, 2deg);
+      }
     }
   }
 
@@ -21,33 +67,91 @@ body.services {
       color: $secondary-text-color;
     }
 
-    &.service {
+    h2 {
+      text-transform: uppercase;
+      font-size: 2rem;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    a {
+      color: $primary-text-color;
+      text-decoration: none;
+
+      p {
+        color: $primary-text-color;
+      }
+
       h2 {
-        text-transform: uppercase;
-        font-size: 2rem;
-        margin: 0;
         transition: all ease-in-out .15s;
       }
 
-      a {
-        color: $primary-text-color;
-        text-decoration: none;
+      &:hover {
+        h2 {
+          color: $primary-highlight-color;
+          transform: translateY(-.1rem);
+        }
+      }
+    }
 
-        p {
-          color: $primary-text-color;
+    .icon {
+      width: 75%;
+
+      * {
+        fill: $primary-text-color !important;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      h2 {
+        color: $primary-highlight-color;
+      }
+    }
+
+    &.tech-teasers {
+      position: relative;
+      padding: 2rem 0;
+
+      .background {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: skew(0, -1deg);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
+
+        .background-ember {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 50%;
+          background-color: #f53d2b;
         }
 
-        &:hover {
-          h2 {
-            color: $primary-highlight-color;
-            transform: translateY(-.1rem);
-          }
+        .background-elixir {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          right: 0;
+          background-color: #483159;
         }
       }
 
-      @include media-breakpoint-down(sm) {
-        h2 {
-          color: $primary-highlight-color;
+      .tech-teaser-small {
+        box-shadow: none;
+        background-color: transparent;
+      }
+
+      &:hover {
+        .background-ember {
+          background-color: darken(#f53d2b, 5%);
+        }
+
+        .background-elixir {
+          background-color: darken(#483159, 5%);
         }
       }
     }

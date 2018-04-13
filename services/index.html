@@ -5,6 +5,7 @@ class: services
 ---
 
 <div class="primary-banner">
+  <div class="background"></div>
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-10 offset-md-1">
@@ -13,6 +14,18 @@ class: services
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  Zepto(function($) {
+    var win = $(window);
+    win.on('scroll', function() {
+      if (win.scrollTop() <= 0) {
+        $('.primary-banner').removeClass('scrolled');
+      } else {
+        $('.primary-banner').addClass('scrolled');
+      }
+    });
+  });
+</script>
 
 <div class="content-section service">
   <a href="/services/engineering/">
