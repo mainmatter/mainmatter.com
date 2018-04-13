@@ -168,8 +168,8 @@ strong {
   .background {
     position: absolute;
     top: 0;
-    right: -10rem;
-    left: -10rem;
+    right: 0;
+    left: 0;
     bottom: 0;
     transform: skew(0, -1deg);
     background-color: $secondary-background-color;

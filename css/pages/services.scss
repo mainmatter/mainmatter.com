@@ -32,8 +32,8 @@ body.services {
     .background {
       position: absolute;
       top: -10rem;
-      right: -10rem;
-      left: -10rem;
+      right: 0;
+      left: 0;
       bottom: 15rem;
       transform: skew(0, -1deg);
       background-color: $primary-highlight-color;
@@ -112,6 +112,10 @@ body.services {
       position: relative;
       padding: 2rem 0;
 
+      @include media-breakpoint-down(sm) {
+        padding: 0;
+      }
+
       .background {
         position: absolute;
         top: 0;
@@ -128,6 +132,11 @@ body.services {
           left: 0;
           right: 50%;
           background-color: #f53d2b;
+
+          @include media-breakpoint-down(sm) {
+            right: 0;
+            bottom: 50%;
+          }
         }
 
         .background-elixir {
@@ -137,6 +146,11 @@ body.services {
           left: 50%;
           right: 0;
           background-color: #483159;
+
+          @include media-breakpoint-down(sm) {
+            left: 0;
+            top: 50%;
+          }
         }
       }
 
