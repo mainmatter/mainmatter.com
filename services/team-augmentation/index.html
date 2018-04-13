@@ -5,36 +5,37 @@ class: services
 ---
 
 <div class="primary-banner d-flex align-items-center">
+  <div class="background"></div>
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-12 col-md-8 offset-md-1">
-        <p><strong>Bring in the experts</strong> when you need them.</p>
+      <div class="col-12 col-md-10 offset-md-1">
+        <p>Bring in the experts when you need them.</p>
     	</div>
-      <div class="d-none d-md-block col-md-2">
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  Zepto(function($) {
+    var win = $(window);
+    win.on('scroll', function() {
+      if (win.scrollTop() <= 0) {
+        $('.primary-banner').removeClass('scrolled');
+      } else {
+        $('.primary-banner').addClass('scrolled');
+      }
+    });
+  });
+</script>
+
+<div class="content-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-4 offset-md-1">
         {% include svgs/icons/team-augmentation.svg class="icon" alt="icon - Team Augmentation" %}
       </div>
-    </div>
-  </div>
-</div>
-
-<div class="content-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-10 offset-md-1">
-        <h3>Embedded Experts</h3>
+      <div class="col-12 col-md-6">
         <p>Our <strong>technology experts can merge with our client's in-house engineering teams</strong> and share their know how. We will spearhead development initiatives, establish best practices and a smooth process as well as <strong>train in-house engineers on the job</strong> via reviews and pairing sessions.</p>
         <p>We will make sure our clients' in-house engineering team has the <strong>expertise and confidence to successfully run their project</strong> once we have left.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="content-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-10 offset-md-1">
-        <h3>Boost productivity</h3>
-        <p>Bringing in experienced engineers can <strong>boost productivity significantly</strong>, ensuring critical milestones are reached on time without sacrificing quality. simplabs' team is well-established, has been working together for years and will make a <strong>positive impact on our clients' projects instantly</strong>.</p>
       </div>
     </div>
   </div>
@@ -45,16 +46,23 @@ class: services
 <div class="content-section">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-10 offset-md-1">
-        <h3>Benefit from our expertise</h3>
-        <p>Our engineers are experts in the respective technologies that we use. In fact, <strong>we actively contribute to the tools and frameworks</strong> we build projects on and chances are you're already running code that our team wrote.</p>
+      <div class="col-12 col-md-4 offset-md-1">
+        <h2>Boost Productivity</h2>
+      </div>
+      <div class="col-12 col-md-6">
+        <p>Bringing in experienced engineers can <strong>boost productivity significantly</strong>, ensuring critical milestones are reached on time without sacrificing quality. simplabs' team is well-established, has been working together for years and will make a <strong>positive impact on our clients' projects instantly</strong>.</p>
+        <p>Our engineers are technology experts. In fact, <strong>we actively contribute to the tools and frameworks</strong> we build projects on and chances are you're already running code that our team wrote.</p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="content-section">
+<div class="content-section tech-teasers">
   <div class="container">
+    <div class="background">
+      <div class="background-ember"></div>
+      <div class="background-elixir"></div>
+    </div>
     <div class="row d-flex d-justify-content-between">
       <div class="col-12 col-md-6 d-flex">
         {% include teasers/tech/small/ember.html %}

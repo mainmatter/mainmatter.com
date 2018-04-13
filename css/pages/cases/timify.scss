@@ -124,6 +124,7 @@ body.timify-case {
 
   .background {
     background-color: $timify-secondary-background-color;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .15);
     transition: all ease-in-out .15s;
     transform: skew(0, -1deg);
     position: absolute;
