@@ -77,14 +77,29 @@ class: services
       <div class="background-elixir"></div>
     </div>
     <div class="row d-flex d-justify-content-between">
-      <div class="col-12 col-md-6 d-flex">
+      <div class="col-12 col-md-6 d-flex" data-mirror-hover=".background-ember">
         {% include teasers/tech/small/ember.html %}
       </div>
-      <div class="col-12 col-md-6 d-flex">
+      <div class="col-12 col-md-6 d-flex" data-mirror-hover=".background-elixir">
         {% include teasers/tech/small/elixir.html %}
       </div>
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  Zepto(function($) {
+    var mirrorHoverElements = $('[data-mirror-hover]');
+    mirrorHoverElements.forEach(function(element) {
+      element = $(element);
+      var mirrorElement = $(element.data('mirror-hover'));
+      element.on('mouseenter', function() {
+        mirrorElement.addClass('hover');
+      });
+      element.on('mouseleave', function() {
+        mirrorElement.removeClass('hover');
+      });
+    });
+  });
+</script>
 
 {% include contact_banner.html %}

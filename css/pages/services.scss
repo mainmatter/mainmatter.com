@@ -131,7 +131,7 @@ body.services {
 
     &.tech-teasers {
       position: relative;
-      padding: 2rem 0;
+      padding: 0;
       margin: 4rem 0 0 0;
 
       @include media-breakpoint-down(sm) {
@@ -159,6 +159,10 @@ body.services {
             right: 0;
             bottom: 50%;
           }
+
+          &:hover, &.hover {
+            background-color: darken(#f53d2b, 5%);
+          }
         }
 
         .background-elixir {
@@ -173,21 +177,19 @@ body.services {
             left: 0;
             top: 50%;
           }
+
+          &:hover, &.hover {
+            background-color: darken(#483159, 5%);
+          }
         }
       }
 
       .tech-teaser-small {
         box-shadow: none;
         background-color: transparent;
-      }
 
-      &:hover {
-        .background-ember {
-          background-color: darken(#f53d2b, 5%);
-        }
-
-        .background-elixir {
-          background-color: darken(#483159, 5%);
+        a {
+          color: $secondary-text-color;
         }
       }
     }
