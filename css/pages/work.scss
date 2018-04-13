@@ -13,9 +13,14 @@ body.work {
     }
   }
 
-  .content-section.case-teaser.expedition {
-    @include media-breakpoint-up(xl) {
-      margin-top: 0;
+  .content-section {
+    &.case-teaser {
+      margin: 0;
+      margin-bottom: -.1rem;
+
+      &.trainline {
+        margin-top: 4rem;
+      }
     }
   }
 }
