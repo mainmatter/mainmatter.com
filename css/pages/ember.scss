@@ -4,8 +4,8 @@ $ember-secondary-foreground-color: #fff;
 
 body.ember {
   @include custom-color-scheme(
-    $ember-foreground-color,
-    $primary-background-color,
+    $ember-secondary-foreground-color,
+    $ember-secondary-background-color,
     $ember-secondary-foreground-color,
     $ember-secondary-background-color,
     $ember-foreground-color
@@ -16,13 +16,49 @@ body.ember {
   }
 
   .primary-banner {
+    position: relative;
+    padding: calc(55px + 8rem) 0 4rem 0;
+    transition: all ease-out .25s;
+    color: $primary-text-color;
+    padding: calc(55px + 10rem) 0 4rem 0;
+
     p {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: 400;
     }
 
     .icon {
+      transition: all ease-out .25s;
       width: unset;
+    }
+
+    .background {
+      position: absolute;
+      top: -10rem;
+      right: 0;
+      left: 0;
+      bottom: 15rem;
+      transform: skew(0, -1deg);
+      background-color: $ember-secondary-background-color;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
+      transition: all ease-out .25s;
+    }
+
+    &.scrolled {
+      color: $secondary-text-color;
+
+      .icon {
+        transition: all ease-out .25s;
+
+        * {
+          fill: $secondary-text-color !important;
+        }
+      }
+
+      .background {
+        bottom: 0;
+        transform: skew(0, 2deg);
+      }
     }
   }
 
