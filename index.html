@@ -22,6 +22,10 @@ class: index
     timerFunction(function() {
       $('#main-logo .logo').addClass('animate');
     });
+    var win = $(window);
+    win.on('scroll', function() {
+      $('.primary-banner').addClass('scrolled');
+    });
   });
 </script>
 

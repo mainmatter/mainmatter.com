@@ -4,20 +4,10 @@ body.services {
     padding: calc(55px + 8rem) 0 4rem 0;
 
     p {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: 400;
-    }
-
-    strong {
-      background-color: $ternary-background-color;
-    }
-
-    .icon {
-      width: unset;
-
-      path {
-        fill: $primary-text-color !important;
-      }
+      text-decoration: underline;
+      text-decoration-color: $primary-highlight-color;
     }
   }
 
@@ -32,6 +22,13 @@ body.services {
     }
 
     &.service {
+      h2 {
+        text-transform: uppercase;
+        font-size: 2rem;
+        margin: 0;
+        transition: all ease-in-out .15s;
+      }
+
       a {
         color: $primary-text-color;
         text-decoration: none;
@@ -39,44 +36,20 @@ body.services {
         p {
           color: $primary-text-color;
         }
-      }
 
-      .icon {
-        transition: all ease-in-out .15s;
-
-        * {
-          fill: $primary-text-color !important;
-          transition: all ease-in-out .15s;
-        }
-      }
-
-      &:hover {
-        h3 {
-          color: $primary-highlight-color;
-        }
-
-        .icon {
-          transform: translateY(-.15rem);
-
-          * {
-            fill: $primary-highlight-color !important;
+        &:hover {
+          h2 {
+            color: $primary-highlight-color;
+            transform: translateY(-.1rem);
           }
         }
       }
 
       @include media-breakpoint-down(sm) {
-        h3 {
+        h2 {
           color: $primary-highlight-color;
         }
       }
     }
-  }
-
-  a.ember {
-    color: #fa3a1e;
-  }
-
-  a.elixir {
-    color: #92369b;
   }
 }
