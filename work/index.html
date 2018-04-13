@@ -4,15 +4,28 @@ title: Work
 class: work
 ---
 
-<div class="primary-banner d-flex align-items-center">
+<div class="primary-banner">
+  <div class="background"></div>
   <div class="container">
     <div class="row align-items-center">
       <div class="col-12 col-md-10 offset-md-1">
-        <p>We have a track record of <strong>successful projects for international clients</strong>.</p>
+        <p>We have a track record of successful projects for international clients.</p>
     	</div>
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  Zepto(function($) {
+    var win = $(window);
+    win.on('scroll', function() {
+      if (win.scrollTop() <= 0) {
+        $('.primary-banner').removeClass('scrolled');
+      } else {
+        $('.primary-banner').addClass('scrolled');
+      }
+    });
+  });
+</script>
 
 {% include teasers/cases/full/trainline.html %}
 

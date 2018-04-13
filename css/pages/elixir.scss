@@ -66,6 +66,7 @@ body.elixir {
 
   .content-section {
     h2 {
+      color: $elixir-foreground-color;
       text-transform: uppercase;
       font-size: 2rem;
       margin: 0;
