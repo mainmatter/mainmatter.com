@@ -9,7 +9,7 @@ class: ember
   <div class="container">
     <div class="row align-items-center">
       <div class="col-12 col-md-6 offset-md-1">
-        <p>We are Ember experts. In fact, we help building it.</p>
+        <p>We are Europe's leading Ember experts.</p>
     	</div>
       <div class="d-none d-md-block col-md-4">
         {% include svgs/logos/ember.svg class="icon" alt="icon - Ember.js" %}
@@ -101,15 +101,14 @@ class: ember
   </div>
 </div>
 
-<div class="content-section community">
+<div class="community-banner">
+  <div class="background"></div>
   <div class="container">
-    <div class="row">
-      <div class="left-image d-none d-md-block"></div>
-      <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 main">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-6 offset-md-3">
         <h2 class="text-center">Community Engagement</h2>
-        <p class="text-center">Ember.js is a project built by an open community and <strong>simplabs is an active member of that community</strong>. We support the <a href="https://www.meetup.com/Ember-js-Munich/">Ember.js Munich</a> and <a href="https://www.meetup.com/Ember-js-Berlin/">Ember.js Berlin</a> meetups as well as <a href="https://emberfest.eu">EmberFest</a>, the european Ember Community Conference.</p>
+        <p class="text-center">Ember.js is a project built by an open community and <strong>we are an active member of that community</strong>. We support the <a href="https://www.meetup.com/Ember-js-Munich/">Ember.js Munich</a> and <a href="https://www.meetup.com/Ember-js-Berlin/">Ember.js Berlin</a> meetups are are co-organizers of <a href="https://emberfest.eu">EmberFest</a>, the european Ember Community Conference.</p>
     	</div>
-      <div class="right-image d-none d-md-block"></div>
     </div>
   </div>
 </div>
@@ -130,8 +129,8 @@ class: ember
 <div class="content-section talks">
   <div class="container">
     <div class="row talks">
-      <div class="col-12">
-        <h2 class="text-center">We share our expertise</h2>
+      <div class="col-12 col-md-10 offset-md-1">
+        <h2>We share our expertise</h2>
       </div>
       <div class="col-12 col-sm-6 col-md-5 offset-md-1 d-flex flex-column justify-content-between teaser">
         <div>
@@ -164,8 +163,8 @@ class: ember
 <div class="content-section posts">
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <h3 class="text-center">From the Blog</h3>
+      <div class="col-12 col-md-10 offset-md-1">
+        <h3>From the Blog</h3>
       </div>
       {% assign ember_posts = site.categories.blog | where: "topic", "ember" %}
       {% for post in ember_posts limit:4 %}

@@ -156,56 +156,7 @@ body.ember {
       }
     }
 
-    &.community {
-      .row {
-        position: relative;
-
-        .main {
-          padding: 4rem;
-          background: url("/images/ember-community/emberfest.jpg") top center no-repeat;
-          background-size: cover;
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
-          border-radius: .15rem;
-          z-index: 10;
-        }
-
-        .left-image, .right-image {
-          position: absolute;
-          background-size: cover;
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
-          border-radius: .15rem;
-          z-index: 9;
-          width: 40%;
-          height: 75%;
-        }
-
-        .left-image {
-          background: url("/images/ember-community/emberconf.jpg") center center no-repeat;
-          top: 12.5%;
-          right: 60%;
-        }
-
-        .right-image {
-          background: url("/images/ember-community/workshop.jpg") center center no-repeat;
-          top: 12.5%;
-          left: 60%;
-        }
-      }
-      
-
-      h2 {
-        font-size: 1.2rem;
-      }
-
-      p {
-        font-size: .9rem;
-      }
-
-      a {
-        font-weight: bold;
-      }
-    }
-
+    
     &.quote {
       blockquote:before {
         color: $ember-foreground-color;
@@ -300,10 +251,40 @@ body.ember {
     }
   }
 
+  .community-banner {
+    position: relative;
+    transition: all ease-out .15s;
+    padding: 2rem;
+    margin-bottom: -2rem;
+    z-index: 99;
+
+    .background {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      transform: skew(0, -1deg);
+      background: url("/images/ember-community/emberconf.jpg") left center no-repeat, url("/images/ember-community/tomster.jpg") center center no-repeat, url("/images/ember-community/workshop.jpg") right center no-repeat;
+      background-size: contain;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
+    }
+
+    &:hover {
+      transform: translateY(-.1rem);
+    }
+  }
+
   .contact-banner {
-    .container {
+    .background {
       background-color: $ember-secondary-background-color;
       color: $ember-secondary-foreground-color;
+    }
+
+    &:hover {
+      .background {
+        background-color: darken($ember-secondary-background-color, 5%);
+      }
     }
 
     a {
