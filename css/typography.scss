@@ -1,6 +1,6 @@
 $font-weight-light: 300;
 $font-weight-normal: 400;
-$font-weight-bold: 500;
+$font-weight-bold: 700;
 
 html {
   font-size: 1.2rem;
@@ -8,7 +8,7 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
-  font-weight: $font-weight-light;
+  font-weight: $font-weight-normal;
 }
 
 h1 {

@@ -10,14 +10,23 @@ body.services {
   .primary-banner {
     position: relative;
     background-color: $primary-background-color;
-    padding: calc(55px + 8rem) 0 4rem 0;
     transition: all ease-out .25s;
     color: $primary-text-color;
-    padding: calc(55px + 10rem) 0 4rem 0;
+    padding: calc(55px + 4rem) 0 4rem 0;
 
-    p {
-      font-size: 1.8rem;
-      font-weight: 400;
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin: 0;
+      color: $primary-text-color;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 2rem;
+        border-bottom: .25rem solid $primary-highlight-color;
+        margin-top: .5rem;
+      }
     }
 
     .icon {
@@ -67,11 +76,34 @@ body.services {
       color: $secondary-text-color;
     }
 
+    &.service {
+      a {
+        border-bottom: .15rem solid $primary-highlight-color;
+        transition: all ease-in-out .15s;
+        font-weight: 400;
+        display: inline-block;
+
+        span {
+          display: inline-block;
+          transition: transform ease-in-out .15s;
+        }
+
+        &:hover {
+          color: $primary-highlight-color;
+          transform: translateY(-.15rem);
+
+          span {
+            transform: translateX(.15rem);
+          }
+        }
+      }
+    }
+
     h2 {
       text-transform: uppercase;
-      font-size: 2rem;
-      margin: 0;
-      font-weight: 600;
+      font-size: 1.25rem;
+      margin: 0 0 1.5rem 0;
+      font-weight: 800;
     }
 
     a {
