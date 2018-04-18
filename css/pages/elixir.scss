@@ -207,55 +207,70 @@ body.elixir {
 .content-section {
   &.services-teaser {
     .service {
-      a {
-        text-decoration: none;
-        color: $primary-text-color;
-        display: block;
+      padding: .5rem;
 
-        &:hover {
-          h3 {
-            color: $primary-highlight-color;
-
-            .octicon {
-              transform: translateX(.15rem);
-
-              * {
-                fill: $primary-highlight-color !important;
-              }
-            }
-          }
-
-          .icon {
-            * {
-              fill: $primary-highlight-color !important;
-            }
-          }
-        }
+      &:first-child {
+        padding-left: 0;
       }
 
-      h3 {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        transition: all ease-out .15s;
+      &:last-child {
+        padding-right: 0;
+      }
 
-        .octicon {
-          vertical-align: middle;
-          transition: all ease-out .15s;
+      a {
+        display: block;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
+        border-radius: .15rem;
+        transition: all ease-in-out .15s;
+        border: 1px solid $quaternary-background-color;
+        text-decoration: none;
+        padding: 1rem;
+        position: relative;
+        color: $primary-text-color;
+
+        .icon {
+          height: 2rem;
+          margin-right: .5rem;
 
           * {
-            transition: all ease-out .15s;
+            fill: $primary-text-color !important;
           }
         }
-      }
 
-      .icon {
-        height: 4rem;
-        margin-right: 1rem;
+        &:hover {
+          transform: translateY(-.15rem);
 
-        * {
-          transition: all ease-out .15s;
-          fill: $primary-text-color !important;
+          .more {
+            color: $elixir-foreground-color;
+
+            &:after {
+              transform: translateX(.15rem);
+            }
+          }
+        }
+
+        h3 {
+          font-weight: 600;
+          font-size: 1rem;
+
+          .octicon {
+            vertical-align: middle;
+          }
+        }
+
+        p {
+          font-size: .9rem;
+          font-weight: 300;
+
+          &.more {
+            transition: all ease-in-out .15s;
+
+            &:after {
+              content: '→';
+              transition: transform ease-in-out .15s;
+              display: inline-block;
+            }
+          }
         }
       }
     }

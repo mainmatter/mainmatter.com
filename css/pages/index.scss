@@ -74,14 +74,8 @@ body.index {
     &.services-teaser {
       .service {
         &:hover {
-          h3 {
+          .more {
             color: $primary-highlight-color;
-          }
-        
-          .icon {
-            * {
-              fill: $primary-highlight-color !important;
-            }
           }
         }
       }
