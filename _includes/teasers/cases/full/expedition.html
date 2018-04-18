@@ -1,14 +1,13 @@
 {% assign expedition = site.categories.cases | where: "key", "expedition" | first %}
 <div class="content-section case-teaser expedition">
-  <div class="background"></div>
   <div class="container">
     <a href="{{expedition.url}}">
       <div class="row align-items-center">
-        <div class="col-12 offset-lg-1 col-lg-6 d-block d-sm-flex align-items-center">
+        <div class="col-12 col-lg-6 d-flex">
           {{expedition.excerpt | markdownify}}
-          <img src="/images/logos/expedition-big@2x.png" class="img-fluid logo" alt="log - expediton">
+          {% include svgs/logos/expedition.svg class="logo" alt="logo - Expedition" %}
         </div>
-        <div class="col-12 col-lg-5 d-none d-lg-block">
+        <div class="col-12 col-lg-6 d-none d-lg-block">
           <img src="/images/cases/expedition/start-page.png" class="img-fluid teaser-image" alt="client case - expedition">
         </div>
       </div>

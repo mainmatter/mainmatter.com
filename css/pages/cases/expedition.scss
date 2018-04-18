@@ -131,60 +131,59 @@ body.expedition-case {
   margin: 4rem 0 2rem 0;
   padding: 3rem 0;
 
-  .background {
+  .container {
     background: url("/images/cases/expedition/teaser-background.jpg") $expedition-secondary-background-color center right no-repeat;
     background-size: cover;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, .15);
     transition: all ease-in-out .15s;
-    transform: skew(0, -1deg);
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
+    border-radius: .15rem;
   }
 
   &:hover {
     transform: translateY(-.1rem);
 
-    .background {
+    .container {
       background-color: darken($expedition-secondary-background-color, 5%);
     }
   }
 
   .logo {
-    height: 10rem;
-    margin-left: 1rem;
+    width: 40rem;
+    margin: 1rem 1rem 1rem 0;
 
     * {
       fill: $ternary-highlight-color;
     }
   }
 
+  .teaser-image {
+    margin-top: -7rem;
+    padding-top: 3rem;
+  }
+
   a {
+    display: block;
     color: #fff;
     text-decoration: none;
   }
 
-  @media screen and (max-width: 767px) {
-    .logo {
-      width: 30%;
-      display: block;
-      margin: 0 auto 1rem auto;
+  p {
+    margin: 1rem;
+  }
+
+  @include media-breakpoint-down(xs) {
+    .container {
+      border-radius: 0;
     }
   }
 
-  @include media-breakpoint-up(xl) {
-    margin-top: 7rem;
-
-    .teaser-image {
-      margin-top: -7rem;
+  @include media-breakpoint-down(sm) {
+    .logo {
+      width: 30rem;
     }
 
-    .logo {
-      width: 30%;
-      display: block;
-      margin: 0 auto 1rem auto;
+    .col-12 {
+      margin-bottom: 0;
     }
   }
 }

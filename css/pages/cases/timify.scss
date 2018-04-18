@@ -140,7 +140,7 @@ body.timify-case {
  
   .logo {
     width: 40rem;
-    margin-right: 1rem;
+    margin: 1rem 1rem 1rem 0;
  
     * {
       fill: $ternary-highlight-color;
@@ -153,6 +153,7 @@ body.timify-case {
   }
 
   a {
+    display: block;
     color: #fff;
     text-decoration: none;
 
@@ -161,18 +162,13 @@ body.timify-case {
     }
   }
 
-  @include media-breakpoint-down(sm) {
-    .logo {
-      width: 20rem;
-      margin: 0 1rem 0 0;
-    }
+  p {
+    margin: 1rem 1rem 1rem 0;
   }
 
   @include media-breakpoint-down(xs) {
-    .logo {
-      width: 30%;
-      display: block;
-      margin: 0 auto 1rem auto;
+    .container {
+      border-radius: 0;
     }
   }
 }
