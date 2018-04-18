@@ -3,15 +3,19 @@ layout: default
 title:
 class: index
 ---
-<div class="primary-banner d-flex align-items-center">
-  <div class="container">
+<div class="primary-banner d-flex align-items-stretch">
+  <div class="container d-flex flex-column justify-content-between">
     <div class="row align-items-center">
-      <div class="col-12 col-sm-8">
+      <div class="col-12 col-md-8">
         <h1>Solid engineering for ambitious projects</h1>
-        <p>We build <strong>custom web and mobile solutions</strong> for our clients to rely on.</p>
     	</div>
-      <div class="col-sm-3 offset-sm-1 d-none d-sm-block" id="main-logo">
-        {% include svgs/logos/simplabs-ball.svg class="logo" alt="logo - simplabs" %}
+      <div class="col-sm-3 offset-md-1 d-none d-md-block" id="main-logo">
+      {% include svgs/logos/simplabs-ball.svg class="logo img-fluid" alt="logo - simplabs" %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-8">
+        <p>Our team of technology experts builds ambitious web and mobile solutions for clients across the world. We like to <strong>move fast without breaking things</strong> and invite our clients to take on an active role in the project.</p>
       </div>
     </div>
   </div>
@@ -22,45 +26,10 @@ class: index
     timerFunction(function() {
       $('#main-logo .logo').addClass('animate');
     });
-    var win = $(window);
-    win.on('scroll', function() {
-      $('.primary-banner').addClass('scrolled');
-    });
   });
 </script>
 
-<div class="content-section" id="mission-statement">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-sm-8">
-        <p>Our team of technology experts builds ambitious solutions for clients across the world, from startups to long-established businesses. We like to <strong>move fast without breaking things</strong> and invite our clients to take an active role in the development process.</p>
-      </div>
-    </div>
-  </div>
-</div>
-<script type="text/javascript">
-  Zepto(function($) {
-    var win = $(window);
-    var missionStatement = $('#mission-statement');
-    if (win.scrollTop() === 0) {
-      missionStatement.addClass('fadeOut');
-      function fadeInMissionStatement() {
-        if (win.scrollTop() + win.height() > missionStatement.offset().top ) {
-          win.off('scroll', fadeInMissionStatement);
-          var timerFunction = window.requestAnimationFrame ? window.requestAnimationFrame : window.setTimeout;
-          timerFunction(function() {
-            missionStatement.addClass('fadeIn');
-          });
-        }
-      }
-      win.on('scroll', fadeInMissionStatement);
-    }
-  });
-</script>
-
-{% include teasers/services.html %}
-
-<div class="content-section work">
+<div class="content-section">
   <div class="container">
     <div class="row d-flex d-justify-content-between cases">
       <div class="col-12 col-md-6 d-flex">
@@ -70,6 +39,47 @@ class: index
         {% include teasers/cases/small/timify.html %}
       </div>
     </div>
+  </div>
+</div>
+
+<div class="content-section service-teasers">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <h2>Services</h2>
+        <p>We turn ideas into products and help tech teams move faster with confidence.</p>
+      </div>
+      <div class="col-12 col-lg-8">
+        <div class="row">
+          <div class="col-12 d-flex flex-column justify-content-between service-teaser">
+            <h3>Full Stack Engineering</h3>
+            <div class="d-flex flex-column justify-content-between align-items-start">
+              <p>We turn ideas into successful products, working closely with our clients in short iterations.</p>
+              <a href="/services/engineering/">Full Stack Engineering <span>&raquo;</span></a>
+            </div>
+        	</div>
+          <div class="col-12 d-flex flex-column justify-content-between service-teaser">
+            <h3>Team Augmentation</h3>
+            <div class="d-flex flex-column justify-content-between align-items-start">
+              <p>Our technology experts can merge with our clients' in-house engineering teams, spearhead development initiatives and establish best practices.</p>
+              <a href="/services/team-augmentation/">Team Augmentation <span>&raquo;</span></a>
+            </div>
+        	</div>
+          <div class="col-12 d-flex flex-column justify-content-between service-teaser">
+            <h3>Tutoring</h3>
+            <div class="d-flex flex-column justify-content-between align-items-start">
+              <p>We tutor teams, raising their experience and confidence levels when taking on new technologies or projects.</p>
+              <a href="/services/training/">Tutoring <span>&raquo;</span></a>
+            </div>
+        	</div>
+        </div>
+    	</div>
+    </div>
+  </div>
+</div>
+
+<div class="content-section work">
+  <div class="container">
     <div class="row clients">
       <div class="col-12">
         <a href="/work/">
@@ -89,6 +99,53 @@ class: index
           </div>
           <span class="link-text button">our clients</span>
         </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-section news-teasers">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2>News</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-4 ">
+        <div class="d-flex flex-column justify-content-between news-teaser">
+          <h3>JSConf.eu</h3>
+          <div class="d-flex flex-column justify-content-between align-items-start">
+            <p>
+              {% include svgs/logos/jsconfeu.svg class="logo" alt="logo - JSConf EU" %}
+              We will be at JSConf EU in Berlin, June 2nd and 3rd, 2018 and we will have <a href="https://twitter.com/locks">@locks</a> from the Ember.js core team join us at our booth!
+            </p>
+            <a href="http://2018.jsconf.eu">JSConf EU 2018 <span>&raquo;</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 ">
+        <div class="d-flex flex-column justify-content-between news-teaser">
+          <h3>EmberFest 2018</h3>
+          <div class="d-flex flex-column justify-content-between align-items-start">
+            <p>
+              simplabs is part of the organizational committee behind EmberFest 2018 and we are looking forward to meeting up with the community in Amsterdam this fall!
+            </p>
+            <a href="http://emberfest.eu">EmberFest 2018 <span>&raquo;</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 ">
+        <div class="d-flex flex-column justify-content-between news-teaser">
+          <h3>CodeBot supports ES2017</h3>
+          <div class="d-flex flex-column justify-content-between align-items-start">
+            <p>
+              {% include svgs/logos/codebot.svg class="logo" alt="logo - CodeBot" %}
+              Our Slack Bot CodeBot, that takes any JavaScript code you send it, runs it and returns with the result and captured log output is now running Node 9 and thus supports all the latest and greatest of JavaScript.
+            </p>
+            <a href="http://codebot.chat">CodeBot <span>&raquo;</span></a>
+          </div>
+      	</div>
       </div>
     </div>
   </div>

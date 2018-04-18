@@ -1,24 +1,14 @@
 body.index {
   #main-menu {
     background-color: transparent;
-
-    a {
-      color: $secondary-text-color
-    }
   }
   
   .primary-banner {
-    background-color: $secondary-background-color;
-    padding: calc(#{$top-spacing} + 6rem) 0 6rem 0;
-    height: 100vh;
-    min-height: 30rem;
-    transition: clip-path ease-in-out .25s, -webkit-clip-path ease-in-out .25s;
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
-    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+    padding: 4rem 0;
 
-    &.scrolled {
-      clip-path: polygon(0 0, 100% 0%, 100% 25%, 0 51%);
-      -webkit-clip-path: polygon(0 0, 100% 0%, 100% 25%, 0 51%);
+    h1 {
+      font-weight: 600;
+      margin: 0 0 1rem 0;
     }
 
     .logo {
@@ -60,9 +50,11 @@ body.index {
       margin-top: 0;
     }
 
-    &.work {
-      padding-top: 0;
+    &.case-teaser.service-teasers {
+      margin-top: 0;
+    }
 
+    &.work {
       .container {
         background-color: $quaternary-background-color;
         color: $quaternary-highlight-color;
