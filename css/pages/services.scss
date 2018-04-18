@@ -71,11 +71,6 @@ body.services {
       font-size: 1.5rem;
     }
 
-    &.highlight {
-      background-color: $secondary-background-color;
-      color: $secondary-text-color;
-    }
-
     &.service {
       a {
         border-bottom: .15rem solid $primary-highlight-color;
@@ -107,9 +102,6 @@ body.services {
     }
 
     a {
-      color: $primary-text-color;
-      text-decoration: none;
-
       p {
         color: $primary-text-color;
       }
