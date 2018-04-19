@@ -1,4 +1,13 @@
 body.index {
+  @include custom-color-scheme(
+    $primary-text-color,
+    transparent,
+    $secondary-text-color,
+    $secondary-background-color,
+    $primary-highlight-color,
+    $primary-highlight-color
+  );
+
   #main-menu {
     background-color: transparent;
   }
