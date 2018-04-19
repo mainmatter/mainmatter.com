@@ -154,8 +154,6 @@ body.index {
 
   @include media-breakpoint-down(sm) {
     .clients {
-      padding-bottom: 4rem;
-
       div:nth-child(1), div:nth-child(2) {
         margin-bottom: 1rem;
       }

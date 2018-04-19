@@ -740,7 +740,7 @@ pre.highlight {
 
 @include media-breakpoint-down(sm) {
   .primary-banner {
-    padding: 2rem 0;
+    padding: calc(#{$top-spacing} + 4rem) 0 2rem 0;
   }
 
   .content-section {
@@ -767,6 +767,14 @@ pre.highlight {
           display: none;
         }
       }
+    }
+  }
+
+  .contact-banner {
+    padding: 0;
+
+    .container {
+      border-radius: 0;
     }
   }
 
