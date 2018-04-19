@@ -1,7 +1,7 @@
 body.index {
   @include custom-color-scheme(
     $primary-text-color,
-    transparent,
+    $primary-background-color,
     $secondary-text-color,
     $secondary-background-color,
     $primary-highlight-color,
