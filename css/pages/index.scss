@@ -98,11 +98,10 @@ body.index {
   }
 
   .clients {
-    padding-top: 2rem;
-
     a {
       display: block;
       position: relative;
+      padding: 2rem 0;
     }
 
     .link-text {
@@ -145,8 +144,6 @@ body.index {
   }
 
   .cases, .clients {
-    padding-bottom: 2rem;
-
     .more {
       color: $primary-text-color;
       font-size: .8rem;
