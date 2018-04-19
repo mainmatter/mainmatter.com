@@ -4,108 +4,28 @@ title: Leading Ember Expertise
 class: ember
 ---
 
-<div class="primary-banner">
-  <div class="background"></div>
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-12 col-md-6 offset-md-1">
-        <p>We are Europe's leading Ember experts.</p>
+<div class="primary-banner d-flex align-items-stretch">
+  <div class="container d-flex flex-column justify-content-between">
+    <div class="row justify-content-stretch">
+      <div class="col-12 col-md-8">
+        <h1>We are Europe's leading Ember experts.</h1>
     	</div>
-      <div class="d-none d-md-block col-md-4">
-        {% include svgs/logos/ember.svg class="icon" %}
+      <div class="col-sm-3 offset-md-1 d-none d-md-flex flex-column justify-content-center">
+        {% include svgs/logos/ember.svg class="icon img-fluid" %}
       </div>
     </div>
-  </div>
-</div>
-<script>
-  Zepto(function($) {
-    var win = $(window);
-    win.on('scroll', function() {
-      if (win.scrollTop() <= 0) {
-        $('.primary-banner').removeClass('scrolled');
-      } else {
-        $('.primary-banner').addClass('scrolled');
-      }
-    });
-  });
-</script>
-
-<div class="content-section">
-  <div class="container">
     <div class="row">
-      <div class="col-12 col-md-8 offset-md-1">
-        <p>simplabs has been an <strong>active member of the Ember Ecosystem</strong> from the early days. We are the <strong>leading Ember consultancy in Europe</strong> and are involved in several Ember.js core teams like Ember CLI, Ember Data and Ember Learning. We also maintain a number of widely adopted addons.</p>
+      <div class="col-12 col-md-8">
+        <p>simplabs has been an active member of the Ember Ecosystem from the early days. We are the leading Ember consultancy in Europe and are <strong>involved in several Ember.js core teams</strong> like Ember CLI, Ember Data and Ember Learning. We also maintain a number of widely adopted addons.</p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="content-section">
+<div class="content-section quote highlight">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-10 offset-md-1">
-        <h3>Stability without Stagnation</h3>
-        <p>In the fast moving and ever changing frontend world, <strong>Ember.js is the stable foundation to build on for the long term</strong>. While leading technological innovation in many areas, it emphasizes stability and backwards-compatibility and supports projects that are built to last.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="content-section open-source">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-5 offset-md-1">
-        <h3>We {% octicon heart %} Open Source</h3>
-      </div>
-      <div class="col-md-5">
-        <p>Our engineers are engaged in <strong>several Ember.js core teams</strong> like Ember Data, Ember CLI and Ember Learning.</p>
-        <p>Besides that, we maintain a number of popular addons in the ecosystem.</p>
-      </div>
-    </div>
-    <div class="row d-flex d-justify-content-between">
-      <div class="col-12 col-md-5 d-flex offset-md-1">
-        <div class="d-flex justify-content-stretch case-teaser-small ember-simple-auth">
-          <a href="https://github.com/simplabs/ember-simple-auth" class="d-flex flex-column justify-content-between">
-            {% include svgs/logos/ember-simple-auth.svg class="logo img-fluid" %}
-            <p>Authentication management for Ember.js applications {% octicon chevron-right height:"15" width:"10" %}</p>
-          </a>
-        </div>
-      </div>
-      <div class="col-12 col-md-5 d-flex">
-        <div class="d-flex justify-content-stretch case-teaser-small ember-test-selectors">
-          <a href="https://github.com/simplabs/ember-test-selectors" class="d-flex flex-column justify-content-between">
-            {% include svgs/logos/ember-test-selectors.svg class="logo img-fluid" %}
-            <p>Enabling better element selectors in Ember.js tests {% octicon chevron-right height:"15" width:"10" %}</p>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="row d-flex d-justify-content-between">
-      <div class="col-12 col-md-5 d-flex offset-md-1">
-        <div class="d-flex justify-content-stretch case-teaser-small ember-cookies">
-          <a href="https://github.com/simplabs/ember-cookies" class="d-flex flex-column justify-content-between">
-            {% include svgs/logos/ember-cookies.svg class="logo img-fluid" %}
-            <p>Cookies abstraction for Ember.js with FastBoot support {% octicon chevron-right height:"15" width:"10" %}</p>
-          </a>
-        </div>
-      </div>
-      <div class="col-12 col-md-5 d-flex">
-        <div class="d-flex justify-content-stretch case-teaser-small qunit-dom">
-          <a href="https://qunit-dom.com" class="d-flex flex-column justify-content-between">
-            {% include svgs/logos/qunit-dom.svg class="logo img-fluid" %}
-            <p>High Level DOM Assertions for QUnit {% octicon chevron-right height:"15" width:"10" %}</p>
-          </a>
-        </div>
-      </div>
-    </div>
-    </div>
-  </div>
-</div>
-
-<div class="content-section quote">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-sm-10 offset-sm-1">
+      <div class="col-12">
         <blockquote>
           <p>simplabs’ expertise in developing Ember.js based applications helped us significantly to define and develop the new DD-WRT NXT user experience. It was impressive to see in what short time such a complex application leveraging a customer backend interface could be implemented. simplabs' work did provide the new foundation for our UI and our in-house development team greatly benefitted from their know how.</p>
           <footer><cite>Peter Steinhäuser, embeDD CEO</cite></footer>
@@ -115,11 +35,58 @@ class: ember
   </div>
 </div>
 
-<div class="community-banner">
-  <div class="background"></div>
+<div class="content-section service-teasers">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <h2>We {% octicon heart width="36" height="36" %} Open Source</h2>
+        <p>Our engineers are engaged in <strong>several Ember.js core teams</strong> like Ember Data, Ember CLI and Ember Learning.</p>
+        <p>Besides that, we maintain a number of popular addons in the ecosystem.</p>
+      </div>
+      <div class="col-12 col-lg-8">
+        <div class="row">
+          <div class="col-12 d-flex">
+            <div class="d-flex justify-content-stretch case-teaser-small ember-simple-auth">
+              <a href="https://github.com/simplabs/ember-simple-auth" class="d-flex align-items-center">
+                {% include svgs/logos/ember-simple-auth.svg class="logo" %}
+                <p>Authentication management for Ember.js applications <span class="more">&raquo;</span></p>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 d-flex">
+            <div class="d-flex justify-content-stretch case-teaser-small ember-test-selectors">
+              <a href="https://github.com/simplabs/ember-test-selectors" class="d-flex align-items-center">
+                {% include svgs/logos/ember-test-selectors.svg class="logo" %}
+                <p>Enabling better element selectors in Ember.js tests <span class="more">&raquo;</span></p>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 d-flex">
+            <div class="d-flex justify-content-stretch case-teaser-small ember-cookies">
+              <a href="https://github.com/simplabs/ember-cookies" class="d-flex align-items-center">
+                {% include svgs/logos/ember-cookies.svg class="logo" %}
+                <p>Cookies abstraction for Ember.js with FastBoot support <span class="more">&raquo;</span></p>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 d-flex">
+            <div class="d-flex justify-content-stretch case-teaser-small qunit-dom">
+              <a href="https://qunit-dom.com" class="d-flex align-items-center">
+                {% include svgs/logos/qunit-dom.svg class="logo" %}
+                <p>High Level DOM Assertions for QUnit <span class="more">&raquo;</span></p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-section community-banner">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-12 col-md-6 offset-md-3">
+      <div class="col-12 col-lg-6 offset-lg-3">
         <h2 class="text-center">Community Engagement</h2>
         <p class="text-center">Ember.js is a project built by an open community and <strong>we are an active member of that community</strong>. We support the <a href="https://www.meetup.com/Ember-js-Munich/">Ember.js Munich</a> and <a href="https://www.meetup.com/Ember-js-Berlin/">Ember.js Berlin</a> meetups are are co-organizers of <a href="https://emberfest.eu">EmberFest</a>, the european Ember Community Conference.</p>
     	</div>
@@ -130,36 +97,36 @@ class: ember
 <div class="content-section talks">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-5 offset-md-1">
-        <h3>We share our Expertise</h3>
-      </div>
-      <div class="col-md-5">
+      <div class="col-12 col-lg-4">
+        <h2>We share our Expertise</h2>
         <p>Every new projects gives us the opportunity to learn and grow our expertise. We share what we learn with the community via talks at conferences and meetups and on our blog.</p>
       </div>
-    </div>
-    <div class="row talks">
-      <div class="col-12 col-sm-6 col-md-5 offset-md-1 d-flex flex-column justify-content-between teaser">
-        <div>
-          <a href="https://www.youtube.com/watch?v=h3YtViXranw&t=1s"><img src="/images/talks/everything-they-didnt-tell-you-about-the-ember-community.png" alt="Everything they didn’t tell you about the Ember Community" class="img-fluid teaser-image"></a>
-          <h5>Everything they didn’t tell you about the Ember Community <span class="speaker">&mdash; Jessica Jordan at EmberConf 2018</span></h5>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-5 d-flex flex-column justify-content-between teaser">
-        <div>
-          <a href="https://www.youtube.com/watch?v=8D-O4cSteRk"><img src="/images/talks/the-next-generation-of-testing.png" alt="The Next Generation of Testing" class="img-fluid teaser-image"></a>
-          <h5>The Next Generation of Testing <span class="speaker">&mdash; Tobias Bieniek at EmberFest 2018</span></h5>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-5 offset-md-1 d-flex flex-column justify-content-between teaser">
-        <div>
-          <a href="https://www.youtube.com/watch?v=81-jwnlg1pQ"><img src="/images/talks/better-test-selectors-leveraging-the-complete-ember-toolbelt.jpg" alt="Better Test Selectors Leveraging the Complete Ember Toolbelt" class="img-fluid teaser-image"></a>
-          <h5>Better Test Selectors Leveraging the Complete Ember Toolbelt <span class="speaker">&mdash; Marco Otte-Witte at EmberCamp 2017</span></h5>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-5 d-flex flex-column justify-content-between teaser">
-        <div>
-          <a href="https://www.youtube.com/watch?v=wFJPIjRTIVU"><img src="/images/talks/animate-the-web-with-ember.jpg" alt="Animate the Web with Ember.js" class="img-fluid teaser-image"></a>
-          <h5>Animate the Web with Ember.js <span class="speaker">&mdash; Jessica Jordan at EmberConf 2017</span></h5>
+      <div class="col-12 col-lg-8">
+        <div class="row talks">
+          <div class="col-12 col-lg-6 d-flex flex-column justify-content-between teaser">
+            <a href="https://www.youtube.com/watch?v=h3YtViXranw&t=1s">
+              <img src="/images/talks/everything-they-didnt-tell-you-about-the-ember-community.png" alt="Everything they didn’t tell you about the Ember Community" class="img-fluid teaser-image">
+              <h5>Everything they didn’t tell you about the Ember Community <span class="speaker">&mdash; Jessica Jordan at EmberConf 2018 <span class="more">&raquo;</span></span></h5>
+            </a>
+          </div>
+          <div class="col-12 col-lg-6 d-flex flex-column justify-content-between teaser">
+            <a href="https://www.youtube.com/watch?v=8D-O4cSteRk">
+              <img src="/images/talks/the-next-generation-of-testing.png" alt="The Next Generation of Testing" class="img-fluid teaser-image">
+              <h5>The Next Generation of Testing <span class="speaker">&mdash; Tobias Bieniek at EmberFest 2018 <span class="more">&raquo;</span></span></h5>
+            </a>
+          </div>
+          <div class="col-12 col-lg-6 d-flex flex-column justify-content-between teaser">
+            <a href="https://www.youtube.com/watch?v=81-jwnlg1pQ">
+              <img src="/images/talks/better-test-selectors-leveraging-the-complete-ember-toolbelt.jpg" alt="Better Test Selectors Leveraging the Complete Ember Toolbelt" class="img-fluid teaser-image">
+              <h5>Better Test Selectors Leveraging the Complete Ember Toolbelt <span class="speaker">&mdash; Marco Otte-Witte at EmberCamp 2017 <span class="more">&raquo;</span></span></h5>
+            </a>
+          </div>
+          <div class="col-12 col-lg-6 d-flex flex-column justify-content-between teaser">
+            <a href="https://www.youtube.com/watch?v=wFJPIjRTIVU">
+              <img src="/images/talks/animate-the-web-with-ember.jpg" alt="Animate the Web with Ember.js" class="img-fluid teaser-image">
+              <h5>Animate the Web with Ember.js <span class="speaker">&mdash; Jessica Jordan at EmberConf 2017 <span class="more">&raquo;</span></span></h5>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -169,18 +136,21 @@ class: ember
 <div class="content-section posts">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-10 offset-md-1">
+      <div class="col-12 col-lg-4">
         <h3>From the Blog</h3>
       </div>
-      {% assign ember_posts = site.categories.blog | where: "topic", "ember" %}
-      {% for post in ember_posts limit:4 %}
-        <div class="col-12 col-md-5 {% cycle 'offset-md-1', '' %} post">
-          <a href="{{post.url}}">
-            <h4>{{post.title}}</h4>
-            {{post.excerpt | markdownify | strip_html | truncatewords: 25}}
-          </a>
+      <div class="col-12 col-lg-8">
+        <div class="row">
+          {% assign ember_posts = site.categories.blog | where: "topic", "ember" %}
+          {% for post in ember_posts limit:4 %}
+            <div class="col-12 post">
+              <h4>{{post.title}}</h4>
+              <p>{{post.excerpt | markdownify | strip_html | truncatewords: 25}}</p>
+              <a href="{{post.url}}">{{post.title}} <span class="more">&raquo;</span></a>
+            </div>
+          {%endfor %}
         </div>
-      {%endfor %}
+      </div>
     </div>
   </div>
 </div>

@@ -16,65 +16,38 @@ body.ember {
   }
 
   .primary-banner {
-    position: relative;
-    padding: calc(55px + 8rem) 0 4rem 0;
-    transition: all ease-out .25s;
-    color: $primary-text-color;
-    padding: calc(55px + 10rem) 0 4rem 0;
-
-    p {
-      font-size: 1.8rem;
-      font-weight: 400;
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 0 0 2.5rem 0;
+      color: $ember-foreground-color;
     }
 
     .icon {
       transition: all ease-out .25s;
-      width: unset;
-    }
-
-    .background {
-      position: absolute;
-      top: -10rem;
-      right: 0;
-      left: 0;
-      bottom: 15rem;
-      transform: skew(0, -1deg);
-      background-color: $ember-secondary-background-color;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
-      transition: all ease-out .25s;
-    }
-
-    &.scrolled {
-      color: $secondary-text-color;
-
-      .icon {
-        transition: all ease-out .25s;
-
-        * {
-          fill: $secondary-text-color !important;
-        }
-      }
-
-      .background {
-        bottom: 0;
-        transform: skew(0, 2deg);
-      }
+      width: 100%;
     }
   }
 
   .content-section {
+    h2 {
+      &:after {
+        content: '';
+        border-bottom: .15rem solid $primary-text-color;
+        display: block;
+        margin-top: .5rem;
+        width: 2rem;
+      }
+    }
+
     &.open-source {
+      padding: 0 0 4rem 0;
+
       h2 {
         margin-bottom: 2rem;
 
-        .octicon {
-          height: 2rem;
-          width: 2rem;
-          vertical-align: text-bottom;
-
-          * {
-            fill: $primary-text-color;
-          }
+        .more {
+          color: $primary-text-color;
         }
       }
 
@@ -86,18 +59,21 @@ body.ember {
     }
 
     &.talks {
+      padding-bottom: 2rem;
+
       .teaser {
-        transition: all ease-in-out .15s;
         margin-bottom: 1rem;
 
         .teaser-image {
           box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);
+          width: 100%;
         }
 
         h5 {
           font-size: .8rem;
           font-weight: bold;
           padding: .5rem 1rem;
+          margin-top: 0;
 
           .speaker {
             font-weight: lighter;
@@ -105,8 +81,28 @@ body.ember {
           }
         }
 
-        &:hover {
-          transform: translateY(-.1rem);
+        a {
+          color: $primary-text-color;
+          text-decoration: none;
+          border-bottom: none;
+          transition: all ease-in-out .15s;
+
+          .more {
+            transition: all ease-in-out .15s;
+          }
+
+          &:hover {
+            transform: translateY(-.15rem);
+
+            span {
+              transform: none;
+            }
+
+            .more {
+              transform: translateX(.15rem);
+              color: $ember-foreground-color;
+            }
+          }
         }
       }
     }
@@ -118,20 +114,6 @@ body.ember {
         font-size: 1.5rem;
         font-weight: bold;
         margin-bottom: 2.5rem;
-      }
-
-      a {
-        text-decoration: none;
-        color: $primary-text-color;
-        display: block;
-        transition: all ease-in-out .15s;
-
-        &:hover {
-          transform: translateX(.1rem);
-          h4 {
-            color: $ember-foreground-color;
-          }
-        }
       }
 
       h4 {
@@ -153,6 +135,26 @@ body.ember {
 
       .post {
         margin-bottom: 2rem;
+
+        p {
+          margin-bottom: .5rem;
+        }
+
+        a {
+          text-decoration: none;
+          color: $primary-text-color;
+          display: inline-block;
+          transition: all ease-in-out .15s;
+          border-bottom-color: $ember-foreground-color;
+
+          &:hover {
+            color: $ember-foreground-color;
+
+            .more {
+              transform: translateX(.15rem);
+            }
+          }
+        }
       }
     }
 
@@ -172,11 +174,16 @@ body.ember {
     transition: all ease-in-out .15s;
     border: 1px solid $quaternary-background-color;
     border-bottom: 5px solid $quaternary-background-color;
+    margin: 0 0 2rem 0;
+
+    .more {
+      display: inline-block;
+    }
 
     &:hover {
       transform: translateY(-.15rem);
 
-      .octicon {
+      .more {
         transform: translatex(.15rem);
       }
     }
@@ -186,30 +193,25 @@ body.ember {
       color: $primary-text-color;
       display: block;
       padding: 2rem;
+      border-bottom: none;
+      transition: all ease-in-out .15s;
     }
 
     .logo {
-      width: 6rem;
-      margin-bottom: .5rem;
+      width: 8rem;
+      margin-right: 2rem;
     }
 
-    .octicon {
-      transition: all ease-in-out .15s;
-      vertical-align: middle;
-
-      * {
-        transition: all ease-in-out .15s;
-      }
+    .more {
+      transition: transform ease-in-out .15s;
     }
 
     &.ember-simple-auth {
       border-bottom-color: #eb4831;
 
       &:hover {
-        .octicon {
-          * {
-            fill: #eb4831 !important;
-          }
+        a {
+          color: #eb4831;
         }
       }
     }
@@ -218,10 +220,8 @@ body.ember {
       border-bottom-color: #a0fdcd;
 
       &:hover {
-        .octicon {
-          * {
-            fill: #a0fdcd !important;
-          }
+        a {
+          color: #a0fdcd;
         }
       }
     }
@@ -230,10 +230,8 @@ body.ember {
       border-bottom-color: #fb9906;
 
       &:hover {
-        .octicon {
-          * {
-            fill: #fb9906 !important;
-          }
+        a {
+          color: #fb9906;
         }
       }
     }
@@ -242,53 +240,51 @@ body.ember {
       border-bottom-color: #fa245c;
 
       &:hover {
-        .octicon {
-          * {
-            fill: #fa245c !important;
-          }
+        a {
+          color: #fa245c;
         }
       }
     }
   }
 
   .community-banner {
-    position: relative;
-    transition: all ease-out .15s;
-    padding: 2rem;
-    margin-bottom: -2rem;
-    z-index: 99;
-
-    .background {
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      transform: skew(0, -1deg);
-      background: url("/images/ember-community/emberconf.jpg") left center no-repeat, url("/images/ember-community/tomster.jpg") center center no-repeat, url("/images/ember-community/workshop.jpg") right center no-repeat;
-      background-size: contain;
+    .container {
+      background: url("/images/ember-community/tomster.jpg") center center no-repeat;
+      background-size: cover;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
+      padding: 2rem;
     }
 
-    &:hover {
-      transform: translateY(-.1rem);
-    }
-  }
-
-  .contact-banner {
-    .background {
-      background-color: $ember-secondary-background-color;
-      color: $ember-secondary-foreground-color;
-    }
-
-    &:hover {
-      .background {
-        background-color: darken($ember-secondary-background-color, 5%);
+    h2 {
+      &:after {
+        display: none;
       }
     }
 
     a {
+      color: $primary-text-color;
+      border-bottom-color: $ember-foreground-color;
+
+      &:hover {
+        color: $ember-foreground-color;
+      }
+    }
+  }
+
+  .contact-banner {
+    a {
       color: $ember-secondary-foreground-color;
+
+      .container {
+        background-color: $ember-secondary-background-color;
+        color: $ember-secondary-foreground-color;
+      }
+
+      &:hover {
+        .container {
+          background-color: darken($ember-secondary-background-color, 5%);
+        }
+      }
     }
 
     .icon-contact * {
