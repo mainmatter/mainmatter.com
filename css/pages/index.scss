@@ -44,6 +44,14 @@ body.index {
   .content-section {
     h2 {
       color: $primary-text-color;
+
+      &:after {
+        content: '';
+        border-bottom: .15rem solid $primary-text-color;
+        display: block;
+        margin-top: .5rem;
+        width: 2rem;
+      }
     }
 
     &.case-teaser.trainline {
