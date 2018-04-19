@@ -1,9 +1,9 @@
 body.services {
   @include custom-color-scheme(
     $secondary-text-color,
-    transparent,
+    $secondary-background-color,
     $secondary-text-color,
-    $primary-highlight-color,
+    $secondary-background-color,
     $primary-highlight-color
   );
 
@@ -15,18 +15,10 @@ body.services {
     padding: calc(55px + 4rem) 0 4rem 0;
 
     h1 {
-      font-size: 1.75rem;
+      font-size: 2rem;
       font-weight: 600;
       margin: 0;
       color: $primary-text-color;
-
-      &:after {
-        content: '';
-        display: block;
-        width: 2rem;
-        border-bottom: .25rem solid $primary-highlight-color;
-        margin-top: .5rem;
-      }
     }
 
     .icon {
@@ -72,10 +64,13 @@ body.services {
     }
 
     h2 {
-      text-transform: uppercase;
-      font-size: 1.25rem;
-      margin: 0 0 1.5rem 0;
-      font-weight: 800;
+      &:after {
+        content: '';
+        border-bottom: .15rem solid $primary-text-color;
+        display: block;
+        margin-top: .5rem;
+        width: 2rem;
+      }
     }
 
     a {
@@ -194,14 +189,33 @@ body.services {
         }
       }
     }
-
-    &.case-teaser.timify, &.case-teaser.trainline {
-      margin: 6rem 0 4rem 0;
-    }
   }
 }
 
 .content-section {
+  a {
+    border-bottom: .15rem solid $primary-highlight-color;
+    transition: all ease-in-out .15s;
+    font-weight: 400;
+    display: inline-block;
+    text-decoration: none;
+    color: $primary-text-color;
+    font-size: .9rem;
+
+    span {
+      display: inline-block;
+      transition: transform ease-in-out .15s;
+    }
+
+    &:hover {
+      color: $primary-highlight-color;
+
+      span {
+        transform: translateX(.15rem);
+      }
+    }
+  }
+
   &.service-teasers {
     a {
       border-bottom: .15rem solid $primary-highlight-color;

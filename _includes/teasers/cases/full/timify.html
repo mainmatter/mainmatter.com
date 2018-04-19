@@ -1,7 +1,7 @@
 {% assign timify = site.categories.cases | where: "key", "timify" | first %}
 <div class="content-section case-teaser timify">
-  <div class="container">
-    <a href="{{timify.url}}">
+  <a href="{{timify.url}}">
+    <div class="container">
       <div class="row align-items-center">
         <div class="col-12 col-lg-6 d-none d-lg-block">
           <img src="/images/cases/timify/daily-view.png" class="img-fluid teaser-image" alt="client case - timify">
@@ -11,6 +11,6 @@
           {{timify.excerpt | markdownify}}
         </div>
       </div>
-    </a>
-  </div>
+    </div>
+  </a>
 </div>

@@ -95,7 +95,7 @@ body.trainline-case {
 .content-section.case-teaser.trainline {
   position: relative;
   transition: all ease-in-out .15s;
-  margin: 4rem 0 2rem 0;
+  margin-top: 2rem;
   padding: 3rem 0;
 
   .container {
@@ -130,6 +130,7 @@ body.trainline-case {
   a {
     display: block;
     text-decoration: none;
+    border-bottom: none;
   }
 
   @include media-breakpoint-down(xs) {
@@ -165,6 +166,7 @@ body.trainline-case {
     text-decoration: none;
     display: block;
     width: 100%;
+    border-bottom: none;
   }
 
   strong {

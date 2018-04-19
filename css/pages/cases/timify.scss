@@ -122,14 +122,6 @@ body.timify-case {
   transition: all ease-in-out .15s;
   margin-top: 2rem;
 
-  &:hover {
-    transform: translateY(-.1rem);
-
-    .container {
-      background-color: darken($timify-secondary-background-color, 5%);
-    }
-  }
-
   .container {
     background-color: $timify-secondary-background-color;
     color: #fff;
@@ -156,6 +148,15 @@ body.timify-case {
     display: block;
     color: #fff;
     text-decoration: none;
+    border-bottom: none;
+
+    &:hover {
+      transform: translateY(-.1rem);
+
+      .container {
+        background-color: darken($timify-secondary-background-color, 5%);
+      }
+    }
 
     p {
       color: $secondary-text-color;
@@ -193,6 +194,7 @@ body.timify-case {
     text-decoration: none;
     display: block;
     width: 100%;
+    border-bottom: none;
   }
 
   strong {

@@ -5,35 +5,22 @@ class: services
 ---
 
 <div class="primary-banner d-flex align-items-center">
-  <div class="background"></div>
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-12 col-md-10 offset-md-1">
+      <div class="col-12 col-md-8">
         <h1>Bring in the experts when you need them.</h1>
     	</div>
     </div>
   </div>
 </div>
-<script>
-  Zepto(function($) {
-    var win = $(window);
-    win.on('scroll', function() {
-      if (win.scrollTop() <= 0) {
-        $('.primary-banner').removeClass('scrolled');
-      } else {
-        $('.primary-banner').addClass('scrolled');
-      }
-    });
-  });
-</script>
 
 <div class="content-section">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-4 offset-md-1">
+      <div class="col-12 col-lg-4">
         {% include svgs/icons/team-augmentation.svg class="icon" %}
       </div>
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-lg-8">
         <p>Our <strong>technology experts can merge with our client's in-house engineering teams</strong> and share their know how. We will spearhead development initiatives, establish best practices and a smooth process as well as <strong>train in-house engineers on the job</strong> via reviews and pairing sessions.</p>
         <p>We will make sure our clients' in-house engineering team has the <strong>expertise and confidence to successfully run their project</strong> once we have left.</p>
       </div>
@@ -41,25 +28,38 @@ class: services
   </div>
 </div>
 
-{% include teasers/cases/full/trainline.html %}
+<div class="d-none d-md-block">
+  {% include teasers/cases/full/trainline.html %}
+</div>
+<div class="d-block d-md-none">
+  <div class="content-section">
+    <div class="container">
+      <div class="row d-flex d-justify-content-between cases">
+        <div class="col-12 col-md-6 d-flex">
+          {% include teasers/cases/small/trainline.html %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="content-section">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-10 offset-md-1">
+      <div class="col-12">
         <h2>Boost Productivity</h2>
       </div>
-      <div class="col-12 col-md-5 offset-md-1">
+      <div class="col-12 col-lg-6">
         <p>Bringing in experienced engineers can <strong>boost productivity significantly</strong>, ensuring critical milestones are reached on time without sacrificing quality. simplabs' team is well-established, has been working together for years and will make a <strong>positive impact on our clients' projects instantly</strong>.</p>
       </div>
-      <div class="col-12 col-md-5">
+      <div class="col-12 col-lg-6">
         <p>Our engineers are technology experts. In fact, <strong>we actively contribute to the tools and frameworks</strong> we build projects on and chances are you're already running code that our team wrote.</p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="content-section highlight">
+<div class="content-section">
   <div class="container">
     <div class="row d-flex d-justify-content-between">
       <div class="col-12 col-md-6 d-flex">

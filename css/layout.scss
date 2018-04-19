@@ -167,12 +167,12 @@ strong {
 
   a {
     display: block;
-  }
 
-  &:hover {
-    .container {
-      background-color: darken($secondary-background-color, 5%);
-      transform: translateY(-.1rem);
+    &:hover {
+      .container {
+        background-color: darken($secondary-background-color, 5%);
+        transform: translateY(-.1rem);
+      }
     }
   }
 }

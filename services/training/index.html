@@ -6,38 +6,25 @@ class: services
 ---
 
 <div class="primary-banner">
-  <div class="background"></div>
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-12 col-md-8 offset-md-1">
+      <div class="col-12 col-md-8">
         <h1>Raising confidence for increased productivity and quality.</h1>
     	</div>
-      <div class="d-none d-md-block col-md-2">
-        {% include svgs/icons/training.svg class="icon" %}
+      <div class="col-sm-3 offset-md-1 d-none d-md-block" id="main-logo">
+        {% include svgs/icons/training.svg class="icon img-fluid" %}
       </div>
     </div>
   </div>
 </div>
-<script>
-  Zepto(function($) {
-    var win = $(window);
-    win.on('scroll', function() {
-      if (win.scrollTop() <= 0) {
-        $('.primary-banner').removeClass('scrolled');
-      } else {
-        $('.primary-banner').addClass('scrolled');
-      }
-    });
-  });
-</script>
 
 <div class="content-section">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-4 offset-md-1">
+      <div class="col-12 col-lg-4">
         <h2>Jumpstarts for tech teams</h2>
       </div>
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-lg-8">
         <p>Approaching new technologies can be overwhelming at times. Our technology experts help teams <strong>identify the core concepts and ideas</strong> behind a particular technology, understand them well and <strong>apply them successfully for the long term</strong>. We are experts in a wide range of topics, from languages and frameworks to architecture and process best practices and <strong>share our expertise</strong> so others can grow from it.</p>
       </div>
     </div>
@@ -47,13 +34,11 @@ class: services
 <div class="content-section">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-10 offset-md-1">
+      <div class="col-12 col-lg-4">
         <h2>Reviews</h2>
       </div>
-      <div class="col-12 col-md-5 offset-md-1">
+      <div class="col-12 col-lg-8">
         <p>Teams that have existing products and need to ensure they are set up for long-term success can benefit from our <strong>code and architecture reviews</strong>. We will break down the application's architecture, identify bad our outdated patterns and give guidance for the future. We deliver an <strong>extensive report with a list of findings, explanations as well as suggested fixes</strong> and priorisations.</p>
-      </div>
-      <div class="col-12 col-md-5">
         <p>We have reviewed applications for various clients in the past, covering technology stacks from Ruby on Rails to <a href="/services/ember/">Ember.js</a> and <a href="/services/elixir/">Elixir/Phoenix</a>.</p>
       </div>
     </div>
@@ -63,22 +48,18 @@ class: services
 <div class="content-section">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-4 offset-md-1">
+      <div class="col-12 col-lg-4">
         <h2>Architecture Guidance</h2>
       </div>
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-lg-8">
         <p>Sometimes teams need someone to help <strong>kick-off a project and make sure the right decisions are made early on</strong>. Our technology experts have years of experience with various technology stacks and can help <strong>define architectures, make technology decisions</strong> and setup a stable engineering process to get a project going and ensure its long term integrity.</p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="content-section tech-teasers">
+<div class="content-section">
   <div class="container">
-    <div class="background">
-      <div class="background-ember"></div>
-      <div class="background-elixir"></div>
-    </div>
     <div class="row d-flex d-justify-content-between">
       <div class="col-12 col-md-6 d-flex">
         {% include teasers/tech/small/ember.html %}
@@ -91,4 +72,3 @@ class: services
 </div>
 
 {% include contact_banner.html %}
-{% include intercom.html %}
