@@ -41,10 +41,12 @@ body.ember {
     }
 
     &.open-source {
-      padding: 0 0 4rem 0;
-
       h2 {
         margin-bottom: 2rem;
+
+        .octicon {
+          vertical-align: middle;
+        }
 
         .more {
           color: $primary-text-color;
