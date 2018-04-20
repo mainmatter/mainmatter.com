@@ -166,6 +166,12 @@ body.ember {
         color: $ember-foreground-color;
       }
     }
+
+    &.case-teaser {
+      a {
+        color: $primary-text-color;
+      }
+    }
   }
 
   .case-teaser-small {
