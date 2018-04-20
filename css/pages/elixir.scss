@@ -5,72 +5,45 @@ $elixir-ternary-highlight-color: #f8511e;
 
 body.elixir {
   @include custom-color-scheme(
-    $secondary-text-color,
-    transparent,
-    $secondary-text-color,
-    transparent,
+    $elixir-secondary-foreground-color,
+    linear-gradient(135deg, $elixir-secondary-background-color, $elixir-ternary-highlight-color),
+    $elixir-secondary-foreground-color,
+    linear-gradient(135deg, $elixir-secondary-background-color, $elixir-ternary-highlight-color),
     $elixir-foreground-color
   );
 
-  a {
-    color: $elixir-foreground-color;
-  }
-
   .primary-banner {
-    position: relative;
-    transition: all ease-out .25s;
-    color: $primary-text-color;
-    padding: calc(55px + 8rem) 0 4rem 0;
-
-    p {
-      font-size: 1.8rem;
-      font-weight: 400;
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 0 0 2.5rem 0;
+      color: $elixir-foreground-color;
     }
 
     .icon {
       transition: all ease-out .25s;
-      width: unset;
-      height: 5rem;
-      vertical-align: middle;
-    }
-
-    .background {
-      position: absolute;
-      top: -10rem;
-      right: 0;
-      left: 0;
-      bottom: 15rem;
-      transform: skew(0, -1deg);
-      background: linear-gradient(135deg, $elixir-secondary-background-color, $elixir-ternary-highlight-color);
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
-      transition: all ease-out .25s;
-    }
-
-    &.scrolled {
-      color: $secondary-text-color;
-
-      .icon {
-        transition: all ease-out .25s;
-
-        * {
-          fill: $secondary-text-color !important;
-        }
-      }
-
-      .background {
-        bottom: 0;
-        transform: skew(0, 2deg);
-      }
+      width: 50%;
+      max-height: 6rem;
     }
   }
 
   .content-section {
     h2 {
-      color: $elixir-foreground-color;
-      text-transform: uppercase;
-      font-size: 2rem;
-      margin: 0;
-      font-weight: 600;
+      &:after {
+        content: '';
+        border-bottom: .15rem solid $primary-text-color;
+        display: block;
+        margin-top: .5rem;
+        width: 2rem;
+      }
+    }
+
+    a {
+      border-bottom-color: $elixir-foreground-color;
+
+      &:hover {
+        color: $elixir-foreground-color;
+      }
     }
 
     &.services {
@@ -118,12 +91,15 @@ body.elixir {
     //TODO: move this elsewhere later:
 
     &.case-teaser.expedition {
-      margin-bottom: 0;
+      a {
+        color: $secondary-text-color;
+        border-bottom: none;
+      }
     }
   }
 
   .contact-banner {
-    .background {
+    .container {
       background: linear-gradient(135deg, $elixir-secondary-background-color, $elixir-ternary-highlight-color);
       background-size: auto 200%;
       background-position: 0 100%;
@@ -132,16 +108,16 @@ body.elixir {
 
     a {
       color: $elixir-secondary-foreground-color;
+
+      &:hover {
+        .container {
+          background-position: 0 0;
+        }
+      }
     }
 
     .icon-contact * {
       fill: $elixir-secondary-foreground-color;
-    }
-
-    &:hover {
-      .background {
-        background-position: 0 0;
-      }
     }
   }
 

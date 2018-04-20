@@ -4,54 +4,75 @@ title: Elixir &amp; Phoenix
 class: elixir
 ---
 
-<div class="primary-banner">
-  <div class="background"></div>
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-12 col-md-6 offset-md-1">
-        <p>A server stack for the future, built on an established foundation.</p>
+<div class="primary-banner d-flex align-items-stretch">
+  <div class="container d-flex flex-column justify-content-between">
+    <div class="row justify-content-stretch">
+      <div class="col-12 col-md-8">
+        <h1>A server stack for the future, built on an established foundation.</h1>
     	</div>
-      <div class="d-none d-md-block col-md-4">
-        <img src="/images/logos/elixir.png" class="icon" alt="icon - Elixir">
-        {% include svgs/logos/phoenix.svg class="icon" %}
+      <div class="col-sm-3 offset-md-1 d-none d-md-flex align-items-center">
+        {% include svgs/logos/elixir.svg class="icon img-fluid" %}
+        {% include svgs/logos/phoenix.svg class="icon img-fluid" %}
       </div>
     </div>
   </div>
 </div>
-<script>
-  Zepto(function($) {
-    var win = $(window);
-    win.on('scroll', function() {
-      if (win.scrollTop() <= 0) {
-        $('.primary-banner').removeClass('scrolled');
-      } else {
-        $('.primary-banner').addClass('scrolled');
-      }
-    });
-  });
-</script>
 
 <div class="content-section">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-4 offset-md-1">
+      <div class="col-12 col-lg-4">
         <h2>The best of all worlds</h2>
       </div>
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-lg-8">
         <p>Elixir combines the <strong>expressiveness and simplicity of Ruby</strong> with the performance and stability of the <strong>Erlang VM</strong>. Phoenix builds on the concepts first introduced by Ruby on Rails, combining them with a number of architectural improvements. Together, they form a <strong>modern and capable stack for building ambitious projects</strong> based on an established and <strong>battle-proven foundation</strong>.</p>
-      </div>
+    	</div>
     </div>
   </div>
 </div>
 
 {% include teasers/cases/full/expedition.html %}
 
-{% include teasers/services.html %}
+<div class="content-section service-teasers">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <h2>Services</h2>
+        <p>We turn ideas into products and help tech teams move faster with confidence.</p>
+      </div>
+      <div class="col-12 col-lg-8">
+        <div class="row">
+          <div class="col-12 d-flex flex-column justify-content-between service-teaser">
+            <h3>Full Stack Engineering</h3>
+            <div class="d-flex flex-column justify-content-between align-items-start">
+              <p>We turn our clients' ideas into successful products, working closely with them in short iterations.</p>
+              <a href="/services/engineering/">Full Stack Engineering <span>&raquo;</span></a>
+            </div>
+        	</div>
+          <div class="col-12 d-flex flex-column justify-content-between service-teaser">
+            <h3>Team Augmentation</h3>
+            <div class="d-flex flex-column justify-content-between align-items-start">
+              <p>Our technology experts can merge with our clients' in-house engineering teams, spearhead development initiatives and establish best practices.</p>
+              <a href="/services/team-augmentation/">Team Augmentation <span>&raquo;</span></a>
+            </div>
+        	</div>
+          <div class="col-12 d-flex flex-column justify-content-between service-teaser">
+            <h3>Tutoring</h3>
+            <div class="d-flex flex-column justify-content-between align-items-start">
+              <p>We tutor teams, raising their experience and confidence levels when taking on new technologies or projects.</p>
+              <a href="/services/training/">Tutoring <span>&raquo;</span></a>
+            </div>
+        	</div>
+        </div>
+    	</div>
+    </div>
+  </div>
+</div>
 
 <div class="content-section">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-sm-10 offset-sm-1">
+      <div class="col-12 col-lg-8 offset-lg-4">
         <p>simplabs was an <strong>early adopter of Elixir and Phoenix</strong>, offering <a href="https://elixir-phoenix-workshop.simplabs.com">trainings</a> and leveraging the potential of the stack for our <a href="/work/">clients</a> early on. We are organizing the <a href="https://www.meetup.com/Elixir-Munich/">Elixir Munich</a> meetup and have been <strong>actively involved with conferences</strong> like <a href="https://elixirconf.com/">ElixirConf</a> and <a href="https://elixirconf.eu/">ElixirConf EU</a>.</p>
         <p>We believe that Elixir and Phoenix have a bright future ahead of them and enable our clients to be a part of that.</p>
     	</div>

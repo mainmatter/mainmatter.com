@@ -1,0 +1,10 @@
+<svg viewBox="0 0 268 414" class="{{include.class}}">
+    <g transform="matrix(1,0,0,1,-466.964,-1024.87)">
+        <g transform="matrix(2,0,0,2,-135.703,-41.6198)">
+            <path d="M432.513,658.537C426.59,638.126 411.931,622.294 398.912,606.069C392.715,598.347 386.726,590.742 382.796,581.525C376.315,566.33 374.798,549.553 373.671,533.246C347.906,542.361 332.627,573.211 322.134,595.982C311.349,619.387 301.162,643.615 301.336,669.923C301.628,714.159 339.612,748.212 383.901,738.259C420.449,730.045 443.437,694.943 432.513,658.537Z" style="fill:url(#_Linear1);"/>
+        </g>
+    </g>
+    <defs>
+        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.266e-15,-206.754,206.754,1.266e-15,368.289,740)"><stop offset="0" style="stop-color:rgb(38,34,98);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(90,38,108);stop-opacity:1"/></linearGradient>
+    </defs>
+</svg>
