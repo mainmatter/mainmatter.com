@@ -114,17 +114,6 @@ strong {
     }
   }
 
-  &.separated {
-    &:after {
-      content: '';
-      display: block;
-      margin: 4rem 0 -4rem 33.33333%;
-      width: 33.33333%;
-      border-bottom-width: 1px;
-      border-bottom-style: solid;
-    }
-  }
-
   &.subhead {
     margin-bottom: 0;
 
@@ -227,15 +216,6 @@ strong {
 
       &:last-of-type {
         margin-bottom: 0;
-      }
-    }
-
-    &.separated {
-      &:after {
-        margin-left: 16.66666%;
-        width: 66.66666%;
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
       }
     }
 

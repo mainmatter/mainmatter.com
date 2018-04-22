@@ -192,12 +192,6 @@ a {
     }
   }
 
-  &.separated {
-    &:after {
-      border-bottom-color: $primary-lowlight-color;
-    }
-  }
-
   &.subhead {
     h4 {
       &:before, &:after {
