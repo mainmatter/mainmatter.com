@@ -12,7 +12,11 @@ body.ember {
   );
 
   a {
-    color: $ember-foreground-color;
+    border-bottom-color: $ember-foreground-color;
+
+    &:hover {
+      color: $ember-foreground-color;
+    }
   }
 
   .primary-banner {
@@ -84,21 +88,16 @@ body.ember {
         }
 
         a {
-          color: $primary-text-color;
-          text-decoration: none;
           border-bottom: none;
-          transition: all ease-in-out .15s;
 
           .more {
+            display: inline-block;
             transition: all ease-in-out .15s;
           }
 
           &:hover {
+            color: $primary-text-color;
             transform: translateY(-.15rem);
-
-            span {
-              transform: none;
-            }
 
             .more {
               transform: translateX(.15rem);
@@ -141,22 +140,6 @@ body.ember {
         p {
           margin-bottom: .5rem;
         }
-
-        a {
-          text-decoration: none;
-          color: $primary-text-color;
-          display: inline-block;
-          transition: all ease-in-out .15s;
-          border-bottom-color: $ember-foreground-color;
-
-          &:hover {
-            color: $ember-foreground-color;
-
-            .more {
-              transform: translateX(.15rem);
-            }
-          }
-        }
       }
     }
 
@@ -197,12 +180,9 @@ body.ember {
     }
 
     a {
-      text-decoration: none;
-      color: $primary-text-color;
       display: block;
       padding: 2rem;
       border-bottom: none;
-      transition: all ease-in-out .15s;
     }
 
     .logo {
@@ -275,15 +255,6 @@ body.ember {
       margin-left: 1rem;
     }
 
-    a {
-      color: $primary-text-color;
-      border-bottom-color: $ember-foreground-color;
-
-      &:hover {
-        color: $ember-foreground-color;
-      }
-    }
-
     @include media-breakpoint-down(md) {
       .container {
         background: url("/images/ember-community/tomster.jpg") top center no-repeat;
@@ -351,7 +322,6 @@ body.ember {
 
   a {
     color: $ember-secondary-foreground-color;
-    text-decoration: none;
     display: block;
     width: 100%;
     padding: 4rem 2rem;

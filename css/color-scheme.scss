@@ -44,12 +44,14 @@ body {
 }
 
 a {
-  color: $primary-highlight-color;
-  text-decoration: underline;
+  border-bottom: .15rem solid $primary-highlight-color;
+  transition: all ease-in-out .15s;
+  color: $primary-text-color;
 
-  &:hover, &:active, &:focus {
-    color: $primary-highlight-color;
-    text-decoration: none;
+  &.more {
+    &:hover {
+      color: $primary-highlight-color;
+    }
   }
 }
 
@@ -74,6 +76,7 @@ a {
 
   a {
     color: $primary-text-color;
+    border-bottom: none;
 
     &:hover, &.active {
       span {
@@ -138,6 +141,7 @@ a {
 
   a {
     color: $primary-text-color;
+    border-bottom: none;
 
     &:hover, &:active {
       color: $primary-highlight-color;

@@ -172,6 +172,10 @@ body.trainline-case {
     display: block;
     width: 100%;
     border-bottom: none;
+
+    &:after {
+      display: none;
+    }
   }
 
   strong {

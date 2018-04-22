@@ -29,10 +29,6 @@ h4 {
   font-size: 1.25rem;
 }
 
-a {
-  text-decoration: underline;
-}
-
 h1, h2, h3, h4, h5, h6 {
   a, a:hover {
     text-decoration: none;
@@ -41,6 +37,15 @@ h1, h2, h3, h4, h5, h6 {
 
 strong {
   font-weight: $font-weight-bold;
+}
+
+a {
+  font-weight: 400;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .primary-banner {
@@ -57,27 +62,12 @@ strong {
 .content-section {
   h2 {
     font-size: 1.75rem;
-
-    .more {
-      font-size: .8rem;
-      text-decoration: underline;
-      line-height: 1.2;
-      padding-top: 1.2rem;
-    }
   }
 
   h3 {
     font-size: 1.5rem;
 
     a:hover {
-      text-decoration: underline;
-    }
-  }
-
-  .teaser {
-    font-size: .9rem;
-
-    a {
       text-decoration: underline;
     }
   }
@@ -114,6 +104,7 @@ strong {
 
   a {
     text-decoration: none;
+    font-size: .8rem;
   }
 
   .section-head {
@@ -153,6 +144,7 @@ strong {
 .contact-banner {
   a {
     text-decoration: none;
+    border-bottom: none;
   }
 }
 

@@ -6,6 +6,26 @@ strong {
   border-radius: .15rem;
 }
 
+a {
+  display: inline-block;
+  text-decoration: none;
+
+  &.more {
+    &:after {
+      content: '»';
+      display: inline-block;
+      margin-left: .15rem;
+      transition: transform ease-in-out .15s;
+    }
+
+    &:hover {
+      &:after {
+        transform: translateX(.15rem);
+      }
+    }
+  }
+}
+
 #main-menu {
   position: fixed;
   transition: background-color ease-in-out .15s 0s, transform ease-in-out .3s 0s;
