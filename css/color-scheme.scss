@@ -191,14 +191,6 @@ a {
       }
     }
   }
-
-  &.subhead {
-    h4 {
-      &:before, &:after {
-        background-color: $primary-lowlight-color;
-      }
-    }
-  }
 }
 
 .contact-banner {

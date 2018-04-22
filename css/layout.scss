@@ -113,30 +113,6 @@ strong {
       }
     }
   }
-
-  &.subhead {
-    margin-bottom: 0;
-
-    h4 {
-      position: relative;
-
-      &:before, &:after {
-        content: '';
-        height: 1px;
-        width: 1.5rem;
-        position: absolute;
-        top: 50%;
-      }
-
-      &:before {
-        left: -2.5rem;
-      }
-
-      &:after {
-        right: -2.5rem;
-      }
-    }
-  }
 }
 
 .contact-banner {
@@ -216,14 +192,6 @@ strong {
 
       &:last-of-type {
         margin-bottom: 0;
-      }
-    }
-
-    &.subhead {
-      h4 {
-        &:before, &:after {
-          display: none;
-        }
       }
     }
   }
