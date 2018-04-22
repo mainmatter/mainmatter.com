@@ -5,27 +5,14 @@ class: work
 ---
 
 <div class="primary-banner">
-  <div class="background"></div>
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-12 col-md-10 offset-md-1">
-        <p>We have a track record of successful projects for international clients.</p>
+      <div class="col-12 col-md-8">
+        <h1>We have a track record of successful projects for international clients.</h1>
     	</div>
     </div>
   </div>
 </div>
-<script>
-  Zepto(function($) {
-    var win = $(window);
-    win.on('scroll', function() {
-      if (win.scrollTop() <= 0) {
-        $('.primary-banner').removeClass('scrolled');
-      } else {
-        $('.primary-banner').addClass('scrolled');
-      }
-    });
-  });
-</script>
 
 {% include teasers/cases/full/trainline.html %}
 
@@ -33,65 +20,101 @@ class: work
 
 {% include teasers/cases/full/expedition.html %}
 
-<div class="content-section subhead">
+<div class="content-section clients">
   <div class="container">
     <div class="row">
-      <div class="col-12 d-flex justify-content-center">
-        <h4>We have helped clients across the world</h4>
-    	</div>
-    </div>
-  </div>
-</div>
-
-<div class="content-section clients">
-  <a href="/work/">
-    <div class="container">
-      <div class="row">
-        <div class="col-6 col-sm-3 d-flex justify-content-center">
-          <a href="http://www.hopskipdrive.com" title="HopSkipDrive" target="_blank"><i class="hopskipdrive logo"></i></a>
-    	  </div>
-        <div class="col-6 col-sm-3 d-flex justify-content-center">
-          <a href="http://generali.de"  title="Generali" target="_blank"><i class="generali logo"></i></a>
-    	  </div>
-        <div class="col-6 col-sm-3 d-flex justify-content-center">
-          <a href="https://www.robinhood.org/" title="The Robin Hood Foundation" target="_blank"><i class="robinhood logo"></i></a>
-    	  </div>
-        <div class="col-6 col-sm-3 d-flex justify-content-center">
-          <a href="https://www.thetrainline.com/"  title="Trainline" target="_blank"><i class="trainline logo"></i></a>
-    	  </div>
-        <div class="col-6 col-sm-3 d-flex justify-content-center">
-          <a href="http://embedd.com" title="embeDD" target="_blank"><i class="embedd logo"></i></a>
-    	  </div>
-        <div class="col-6 col-sm-3 d-flex justify-content-center">
-          <a href="http://xbav.de" title="xbAV" target="_blank"><i class="xbav logo"></i></a>
-    	  </div>
-        <div class="col-6 col-sm-3 d-flex justify-content-center">
-          <a href="http://experteer.de" title="Experteer" target="_blank"><i class="experteer logo"></i></a>
-    	  </div>
-        <div class="col-6 col-sm-3 d-flex justify-content-center">
-          <a href="http://timify.com" title="Timify" target="_blank"><i class="timify logo"></i></a>
-    	  </div>
-        <div class="col-6 col-sm-3 d-flex justify-content-center">
-          <a href="https://www.mvb-online.de"  title="MVB Marketing- und Verlagsservice des Buchhandels GmbH" target="_blank"><i class="mvb logo"></i></a>
-    	  </div>
-        <div class="col-6 col-sm-3 d-flex justify-content-center">
-          <a href="http://www.ringler.ch/" title="Ringler Informatik AG" target="_blank"><i class="ringler logo"></i></a>
-    	  </div>
-        <div class="col-6 col-sm-3 d-flex justify-content-center">
-          <a href="http://www.neighbourhood.ie"  title="Neighbourhoodie Software" target="_blank"><i class="neighbourhoodie logo"></i></a>
-    	  </div>
-        <div class="col-6 col-sm-3 d-flex justify-content-center">
-          <a href="http://loconet.info"  title="LoCoNET" target="_blank"><i class="loconet logo"></i></a>
-    	  </div>
-        <div class="col-6 col-sm-3 d-flex justify-content-center">
-          <a href="http://www.dim3.com/" title="DIM3" target="_blank"><i class="dim3 logo"></i></a>
-    	  </div>
-        <div class="col-6 col-sm-3 d-flex justify-content-center">
-          <a href="https://www.medify.co.uk" title="Medify Ltd" target="_blank"><i class="medify logo"></i></a>
-    	  </div>
-        <div class="col-6 col-sm-3 d-flex justify-content-center">
-          <i class="shuddle logo"></i>
-    	  </div>
+      <div class="col-12 col-lg-4">
+        <h2>Clients</h2>
+        <p>We have helped clients across the world</p>
+      </div>
+      <div class="col-12 col-lg-8">
+        <div class="row">
+          <div class="col-6 col-sm-4 d-flex justify-content-center">
+            <a href="http://www.hopskipdrive.com" title="HopSkipDrive" target="_blank">
+              {% include svgs/logos/hopskipdrive.svg class="logo img-fluid" %}
+            </a>
+      	  </div>
+          <div class="col-6 col-sm-4 d-flex justify-content-center">
+            <a href="http://generali.de"  title="Generali" target="_blank">
+              {% include svgs/logos/generali.svg class="logo img-fluid" %}
+            </a>
+      	  </div>
+          <div class="col-6 col-sm-4 d-flex justify-content-center">
+            <a href="https://www.robinhood.org/" title="The Robin Hood Foundation" target="_blank">
+              <i class="robinhood logo"></i>
+            </a>
+      	  </div>
+          <div class="col-6 col-sm-4 d-flex justify-content-center">
+            <a href="https://www.thetrainline.com/"  title="Trainline" target="_blank">
+              {% include svgs/logos/trainline.svg class="logo img-fluid" %}
+            </a>
+      	  </div>
+          <div class="col-6 col-sm-4 d-flex justify-content-center">
+            <a href="http://clark.de" title="Clark" target="_blank">
+              {% include svgs/logos/clark.svg class="logo img-fluid" %}
+            </a>
+      	  </div>
+          <div class="col-6 col-sm-4 d-flex justify-content-center">
+            <a href="http://xbav.de" title="xbAV" target="_blank">
+              {% include svgs/logos/xbav.svg class="logo img-fluid" %}
+            </a>
+      	  </div>
+          <div class="col-6 col-sm-4 d-flex justify-content-center">
+            <a href="http://experteer.de" title="Experteer" target="_blank">
+              {% include svgs/logos/experteer.svg class="logo img-fluid" %}
+            </a>
+      	  </div>
+          <div class="col-6 col-sm-4 d-flex justify-content-center">
+            <a href="http://timify.com" title="Timify" target="_blank">
+              {% include svgs/logos/timify.svg class="logo img-fluid" %}
+            </a>
+      	  </div>
+          <div class="col-6 col-sm-4 d-flex justify-content-center">
+            <a href="https://www.mvb-online.de"  title="MVB Marketing- und Verlagsservice des Buchhandels GmbH" target="_blank">
+              <i class="mvb logo"></i>
+            </a>
+      	  </div>
+          <div class="col-6 col-sm-4 d-flex justify-content-center">
+            <a href="http://www.ringler.ch/" title="Ringler Informatik AG" target="_blank">
+              <i class="ringler logo"></i>
+            </a>
+      	  </div>
+          <div class="col-6 col-sm-4 d-flex justify-content-center">
+            <a href="http://www.neighbourhood.ie"  title="Neighbourhoodie Software" target="_blank">
+              {% include svgs/logos/neighbourhoodie.svg class="logo img-fluid" %}
+            </a>
+      	  </div>
+          <div class="col-6 col-sm-4 d-flex justify-content-center">
+            <a href="http://embedd.com" title="embeDD" target="_blank">
+              {% include svgs/logos/embedd.svg class="logo img-fluid" %}
+            </a>
+      	  </div>
+          <div class="col-6 col-sm-4 d-flex justify-content-center">
+            <a href="http://loconet.info"  title="LoCoNET" target="_blank">
+              {% include svgs/logos/loconet.svg class="logo img-fluid" %}
+            </a>
+      	  </div>
+          <div class="col-6 col-sm-4 d-flex justify-content-center">
+            <a href="http://www.dim3.com/" title="DIM3" target="_blank">
+              {% include svgs/logos/dim3.svg class="logo img-fluid" %}
+            </a>
+      	  </div>
+          <div class="col-6 col-sm-4 d-flex justify-content-center">
+            <a href="https://expedition.ws" title="Expedition" target="_blank">
+              {% include svgs/logos/expedition.svg class="logo img-fluid" %}
+            </a>
+      	  </div>
+          <div class="col-6 col-sm-4 d-flex justify-content-center">
+            <a href="https://www.medify.co.uk" title="Medify Ltd" target="_blank">
+              <i class="medify logo"></i>
+            </a>
+      	  </div>
+          <div class="col-6 col-sm-4 d-flex justify-content-center">
+            <a href="https://www.erdil.fr" title="ERDiL" target="_blank">
+              {% include svgs/logos/erdil.svg class="logo img-fluid" %}
+            </a>
+      	  </div>
+        </div>
       </div>
     </div>
   </div>

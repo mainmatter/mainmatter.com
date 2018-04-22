@@ -2,14 +2,6 @@ i {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  filter: gray;
-  -webkit-filter: grayscale(1);
-  transition: filter ease-in-out .15s, -webkit-filter ease-in-out .15s;
-}
-
-i:hover, i.contact, .client-logos a:hover i {
-  filter: none;
-  -webkit-filter: none;
 }
 
 i.neighbourhoodie {

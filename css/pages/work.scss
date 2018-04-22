@@ -1,58 +1,24 @@
 body.work {
   @include custom-color-scheme(
     $secondary-text-color,
-    transparent,
+    $secondary-background-color,
     $secondary-text-color,
-    $primary-highlight-color,
+    $secondary-background-color,
     $primary-highlight-color
   );
 
   .primary-banner {
     position: relative;
     background-color: $primary-background-color;
-    padding: calc(55px + 8rem) 0 4rem 0;
     transition: all ease-out .25s;
     color: $primary-text-color;
-    padding: calc(55px + 10rem) 0 4rem 0;
+    padding: calc(55px + 4rem) 0 4rem 0;
 
-    p {
-      font-size: 1.8rem;
-      font-weight: 400;
-    }
-
-    .icon {
-      transition: all ease-out .25s;
-      width: unset;
-
-      * {
-        fill: $primary-text-color !important;
-      }
-    }
-
-    .background {
-      position: absolute;
-      top: -10rem;
-      right: 0;
-      left: 0;
-      bottom: 15rem;
-      transform: skew(0, -1deg);
-      background-color: $primary-highlight-color;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
-      transition: all ease-out .25s;
-    }
-
-    &.scrolled {
-      color: $secondary-text-color;
-
-      .icon {transition: all ease-out .25s;
-        * {
-          fill: $secondary-text-color !important;
-        }
-      }
-
-      .background {
-        bottom: 0;
-      }
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 0;
+      color: $primary-text-color;
     }
   }
 
@@ -64,9 +30,34 @@ body.work {
   }
 
   .content-section {
-    &.case-teaser {
-      margin: 0;
-      margin-bottom: -.1rem;
+    h2 {
+      &:after {
+        content: '';
+        border-bottom: .15rem solid $primary-text-color;
+        display: block;
+        margin-top: .5rem;
+        width: 2rem;
+      }
+    }
+
+    &.clients {
+      a {
+        border-bottom: none;
+        display: block;
+        height: 4rem;
+        width: 100%;
+        padding: 1rem;
+        margin: 0 0 2rem 0;
+      }
+
+      .logo {
+        width: 100%;
+        max-height: 3rem;
+
+        * {
+          fill: $primary-text-color !important;
+        }
+      }
     }
   }
 }
