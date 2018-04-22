@@ -44,38 +44,24 @@ class: elixir
 
 {% include teasers/cases/full/expedition.html %}
 
-<div class="content-section service-teasers">
+<div class="content-section posts">
   <div class="container">
     <div class="row">
       <div class="col-12 col-lg-4">
-        <h2>Services</h2>
-        <p>We turn ideas into products and help tech teams move faster with confidence.</p>
+        <h2>From the Blog</h2>
       </div>
       <div class="col-12 col-lg-8">
         <div class="row">
-          <div class="col-12 d-flex flex-column justify-content-between service-teaser">
-            <h3>Full Stack Engineering</h3>
-            <div class="d-flex flex-column justify-content-between align-items-start">
-              <p>We turn our clients' ideas into successful products, working closely with them in short iterations.</p>
-              <a href="/services/engineering/" class="more">Full Stack Engineering</a>
+          {% assign ember_posts = site.categories.blog | where: "topic", "elixir" %}
+          {% for post in ember_posts limit:4 %}
+            <div class="col-12 post">
+              <h4>{{post.title}}</h4>
+              <p>{{post.excerpt | markdownify | strip_html | truncatewords: 25}}</p>
+              <a href="{{post.url}}" class="more">{{post.title}}</a>
             </div>
-        	</div>
-          <div class="col-12 d-flex flex-column justify-content-between service-teaser">
-            <h3>Team Augmentation</h3>
-            <div class="d-flex flex-column justify-content-between align-items-start">
-              <p>Our technology experts can merge with our clients' in-house engineering teams, spearhead development initiatives and establish best practices.</p>
-              <a href="/services/team-augmentation/" class="more">Team Augmentation</a>
-            </div>
-        	</div>
-          <div class="col-12 d-flex flex-column justify-content-between service-teaser">
-            <h3>Tutoring</h3>
-            <div class="d-flex flex-column justify-content-between align-items-start">
-              <p>We tutor teams, raising their experience and confidence levels when taking on new technologies or projects.</p>
-              <a href="/services/training/" class="more">Tutoring</a>
-            </div>
-        	</div>
+          {%endfor %}
         </div>
-    	</div>
+      </div>
     </div>
   </div>
 </div>
