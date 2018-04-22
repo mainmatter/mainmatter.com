@@ -139,6 +139,10 @@ body.expedition-case {
     border-radius: .15rem;
   }
 
+  a {
+    border-bottom: none;
+  }
+
   &:hover {
     transform: translateY(-.1rem);
 
