@@ -9,7 +9,8 @@ body.elixir {
     linear-gradient(135deg, $elixir-secondary-background-color, $elixir-ternary-highlight-color),
     $elixir-secondary-foreground-color,
     linear-gradient(135deg, $elixir-secondary-background-color, $elixir-ternary-highlight-color),
-    $elixir-foreground-color
+    $elixir-foreground-color,
+    linear-gradient(135deg, $elixir-secondary-background-color, $elixir-ternary-highlight-color)
   );
 
   .primary-banner {
@@ -24,10 +25,6 @@ body.elixir {
       transition: all ease-out .25s;
       width: 50%;
       max-height: 6rem;
-
-      * {
-        fill: unset !important;
-      }
     }
   }
 
@@ -84,24 +81,18 @@ body.elixir {
 
   .contact-banner {
     .container {
-      background: linear-gradient(135deg, $elixir-secondary-background-color, $elixir-ternary-highlight-color);
+      transition: all ease-out .15s;
       background-size: auto 200%;
       background-position: 0 100%;
-      color: $elixir-secondary-foreground-color;
     }
 
     a {
-      color: $elixir-secondary-foreground-color;
-
       &:hover {
         .container {
+          background-size: auto 200%;
           background-position: 0 0;
         }
       }
-    }
-
-    .icon-contact * {
-      fill: $elixir-secondary-foreground-color;
     }
   }
 

@@ -7,6 +7,14 @@ body.services {
     $primary-highlight-color
   );
 
+  .primary-banner {
+    .icon {
+      * {
+        fill: $primary-text-color !important;
+      }
+    }
+  }
+
   .content-section {
     .icon {
       * {

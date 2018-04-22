@@ -5,6 +5,7 @@ body.index {
     $secondary-text-color,
     $secondary-background-color,
     $primary-highlight-color,
+    darken($primary-highlight-color, 5),
     $primary-highlight-color
   );
 
