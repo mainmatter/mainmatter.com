@@ -67,21 +67,14 @@ strong {
 
 .primary-banner {
   padding: calc(#{$top-spacing} + 4rem) 0 4rem 0;
+  transition: all ease-out .25s;
 
   h1 {
-    margin: 4rem 0 1rem 0;
+    margin: 0;
   }
 
   p {
-    text-align: justify;
-  }
-
-  strong {
-    padding: 2px 4px;
-  }
-
-  .icon {
-    width: 25%;
+    margin-top: 1rem;
   }
 }
 
@@ -90,6 +83,13 @@ strong {
 
   h2 {
     margin-bottom: 2rem;
+
+    &:after {
+      content: '';
+      display: block;
+      margin-top: .5rem;
+      width: 2rem;
+    }
   }
 
   p:last-child {

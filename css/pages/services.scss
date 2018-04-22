@@ -7,72 +7,7 @@ body.services {
     $primary-highlight-color
   );
 
-  .primary-banner {
-    position: relative;
-    background-color: $primary-background-color;
-    transition: all ease-out .25s;
-    color: $primary-text-color;
-    padding: calc(55px + 4rem) 0 4rem 0;
-
-    h1 {
-      font-size: 2rem;
-      font-weight: 600;
-      margin: 0;
-      color: $primary-text-color;
-    }
-
-    .icon {
-      transition: all ease-out .25s;
-      width: unset;
-
-      * {
-        fill: $primary-text-color !important;
-      }
-    }
-
-    .background {
-      position: absolute;
-      top: -10rem;
-      right: 0;
-      left: 0;
-      bottom: 15rem;
-      transform: skew(0, -1deg);
-      background-color: $primary-highlight-color;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
-      transition: all ease-out .25s;
-    }
-
-    &.scrolled {
-      color: $secondary-text-color;
-
-      .icon {transition: all ease-out .25s;
-        * {
-          fill: $secondary-text-color !important;
-        }
-      }
-
-      .background {
-        bottom: 0;
-        transform: skew(0, 2deg);
-      }
-    }
-  }
-
   .content-section {
-    h3 {
-      font-size: 1.5rem;
-    }
-
-    h2 {
-      &:after {
-        content: '';
-        border-bottom: .15rem solid $primary-text-color;
-        display: block;
-        margin-top: .5rem;
-        width: 2rem;
-      }
-    }
-
     a {
       p {
         color: $primary-text-color;

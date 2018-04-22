@@ -44,6 +44,11 @@ strong {
 }
 
 .primary-banner {
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
   strong {
     font-weight: $font-weight-normal;
   }
@@ -51,6 +56,8 @@ strong {
 
 .content-section {
   h2 {
+    font-size: 1.75rem;
+
     .more {
       font-size: .8rem;
       text-decoration: underline;
@@ -60,6 +67,8 @@ strong {
   }
 
   h3 {
+    font-size: 1.5rem;
+
     a:hover {
       text-decoration: underline;
     }

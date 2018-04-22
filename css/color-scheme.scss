@@ -151,7 +151,13 @@ a {
 
 .primary-banner {
   h1 {
-    color: $primary-highlight-color;
+    color: $primary-text-color;
+  }
+
+  .icon {
+    * {
+      fill: $primary-text-color !important;
+    }
   }
 
   strong {
@@ -163,6 +169,10 @@ a {
 .content-section {
   h2 {
     color: $primary-text-color;
+
+    &:after {
+      border-bottom: .15rem solid $primary-text-color;
+    }
   }
 
   &.quote {
