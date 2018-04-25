@@ -62,3 +62,16 @@ class: expedition-case
     </div>
   </div>
 </div>
+
+<div class="content-section">
+  <div class="container">
+    <div class="row d-flex d-justify-content-between">
+      <div class="col-12 col-md-6 d-flex">
+        {% include teasers/tech/small/ember.html %}
+      </div>
+      <div class="col-12 col-md-6 d-flex">
+        {% include teasers/tech/small/elixir.html %}
+      </div>
+    </div>
+  </div>
+</div>
