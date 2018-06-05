@@ -9,13 +9,14 @@ twitter-handle: tobiasbieniek
 
 At simplabs we ❤️ [ember-intl] and use it for all our projects where
 translations or other localizations are needed. ember-intl is based on the
-native [Intl] APIs that were introduced in all newer browsers a while ago.
+native [Intl] APIs that were introduced in [all newer browsers] a while ago.
 Unfortunately some users are still using browsers that don't support them and
 this blog post will show you our preferred way to load the necessary polyfill
 and the associated data.
 
 [ember-intl]: https://github.com/ember-intl/ember-intl
 [Intl]: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Intl
+[all newer browsers]: https://caniuse.com/#feat=internationalization
 
 <!--break-->
 
@@ -30,10 +31,12 @@ size out of proportion.
 
 The solution to this problem is "side-loading". After you have determined what
 language/locale your users would like to see you load the translations using an
-AJAX request and after that has finished call `setLocale()` to activate the new
-translations. It looks roughly like this:
+AJAX request and after that has finished you call `setLocale()` to activate the
+new translations. It looks roughly like this:
 
 ```js
+// app/routes/application.js
+
 async beforeModel() {
   let locale = figureOutLocale(); // e.g. "de" or "fr-ch"
 
@@ -107,7 +110,7 @@ that small. `intl.min.js` downloads roughly 40 kB and each locale script
 another 25 kB of uncompressed JavaScript code. It would be much better if we
 would only load them if the browser actually needed the polyfill...
 
-Let's turn of the `autoPolyfill` option and implement lazy loading of the
+Let's turn off the `autoPolyfill` option and implement lazy loading of the
 polyfill files instead.
 
 The first thing we need for this is a function that downloads JS code and then
@@ -164,9 +167,7 @@ the user chooses. For that reason we implement two more methods on the `intl`
 service:
  
 - a `loadPolyfillData()` method
-
-- a `loadLocale()` method that combines `loadTranslations()` and
-  `loadPolyfillData()`
+- a `loadLocale()` method that combines `loadTranslations()` and `loadPolyfillData()`
 
 ```js
 import IntlService from 'ember-intl/services/intl';
@@ -196,6 +197,10 @@ export default IntlService.extend({
 If we now switch our `application` route implementation from
 `loadTranslations()` to `loadLocale()` we should see the locale data being
 requested too in IE10.
+
+In case you're wondering what "locale data" actually means: it includes
+information for the Intl.js polyfill on how to format dates, time and numbers
+and several other things that are handled in a locale-aware way in the Intl API.
 
 
 #### Summary
