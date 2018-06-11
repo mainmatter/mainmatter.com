@@ -93,7 +93,7 @@ before it starts. 🎉
 
 As mentioned in the intro [some browsers](https://caniuse.com/#feat=internationalization)
 need a polyfill for the new `Intl` APIs. ember-intl makes this easy for us as
-it supports a `autoPolyfill` option in its config file. Setting this option to
+it supports an `autoPolyfill` option in its config file. Setting this option to
 `true` will automatically add script tags like this to your `index.html` file:
 
 ```html
@@ -103,7 +103,7 @@ it supports a `autoPolyfill` option in its config file. Setting this option to
 <script src="/assets/intl/locales/fr.js"></script>
 ```
 
-That is nice as a first step, but should not be used for any real user-facing
+That is a nice first step, but should not be used for any real user-facing
 apps. The reason for this is that it adds a significant number of additional
 HTTP requests to the startup time of your app, and those requests aren't even
 that small. `intl.min.js` downloads roughly 40 kB and each locale script
@@ -174,9 +174,15 @@ import IntlService from 'ember-intl/services/intl';
 import fetch from 'fetch';
 
 export default IntlService.extend({
-  async loadTranslations(locale) { ... }, 
+  async loadTranslations(locale) {
+    let response = await fetch(`/translations/${locale}.json`);
+    let translations = await response.json();
+    this.addTranslations(locale, translations);
+  }, 
 
-  async loadPolyfill(locale) { ... }, 
+  async loadPolyfill(locale) {
+    await loadJS('/assets/intl/intl.min.js');
+  }, 
 
   async loadPolyfillData(locale) { 
     await loadJS(`/assets/intl/locales/${locale}.js`);
@@ -196,7 +202,7 @@ export default IntlService.extend({
 
 If we now switch our `application` route implementation from
 `loadTranslations()` to `loadLocale()` we should see the locale data being
-requested too in IE10.
+requested in IE10.
 
 In case you're wondering what "locale data" actually means: it includes
 information for the Intl.js polyfill on how to format dates, time and numbers
@@ -209,7 +215,7 @@ In this blog post we have learned how to reduce our bundle size in several ways
 when using the [ember-intl] addon. We are now loading only the code and data
 that we actually need for the specific browser. Most users don't pay the extra
 cost of loading the polyfill and related data, and for the browsers that do
-need it it's available on demand.
+need it, it's available on demand.
 
 If you have any questions about these patterns or need help implementing them
 in your apps feel free to [contact us](https://simplabs.com/contact/).
