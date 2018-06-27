@@ -43,13 +43,10 @@ already in place. The `cargo new` command also supports a `--lib` option, which
 will create a library project instead. The difference between them is that
 binary projects have a `main()` function and get compiled to executables, while
 library projects are used to share code and functionality at
-<https://crates.io/>.
+[crates.io](https://crates.io).
 
-Fun fact: did you know that [crates.io] is an open-source project itself and
-built with Rust and [Ember.js]?
-
-[crates.io]: https://github.com/rust-lang/crates.io
-[Ember.js]: https://emberjs.com/ 
+Fun fact: did you know that [crates.io](https://github.com/rust-lang/crates.io)
+is an open-source project itself and built with Rust and [Ember.js](https://emberjs.com/)?
 
 Now that we have created the project let's see if it runs:
 
