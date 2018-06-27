@@ -17,6 +17,10 @@ client with actix.
 
 <!--break-->
 
+**Since we have written this blog post actix 0.6 was released with several
+breaking changes. The content of this blog post is conceptually still relevant
+though and the code examples should work fine if you make sure to use the
+correct dependency versions.**
 
 #### The Goal
 
