@@ -73,9 +73,9 @@ actix = "0.5"
 ```
 
 Now, whenever we build the project again, `cargo` will make sure to download
-the necessary dependencies from crates.io and build them, before building the
+the necessary dependencies from crates.io and build them before building the
 actual project. `cargo` is using a build cache though, so don't worry if it
-takes a long time if you first try to build it, the following builds should be
+takes a long time if you first try to build it. The following builds should be
 much faster.
 
 It's time to implement a basic `Actor` as the base for our experiment. We don't
@@ -282,7 +282,7 @@ call `poll()` on, or we'll attach it to the actor in a more convenient way
 by implementing the `StreamHandler` trait from `actix`:
 
 ```rust
-impl StreamHandler<String, io::Error> for TcpClientActor {
+impl StreamHandler<String, std::io::Error> for TcpClientActor {
     fn handle(&mut self, line: String, _ctx: &mut Self::Context) {
         println!("{}", line);
     }
@@ -343,7 +343,7 @@ for `ReceivedLine` messages, and print them to the terminal once received.
 
 Next, we will need to adjust our `TcpClientActor` implementation to no longer
 print messages by itself, but instead forward them to the second actor. For that
-the `TcpClientActor` needs to now where to send them. We could save the
+the `TcpClientActor` needs to know where to send them. We could save the
 `Addr<_, ConsoleLogger>` instance in the `TcpClientActor` struct, but that
 would create a tight coupling between those actors, and we want the
 `TcpClientActor` implementation to be as generic as possible.
