@@ -47,7 +47,7 @@ The Breethe app consists of two main screens, the Start page with the search for
 
 ![The two main screens of the Breethe PWA](/images/posts/2018-07-03-building-a-pwa-with -glimmer-js/breethe-screens.png)
 
-As Glimmer.js is a UI component library only and does not include any routing functionality, we used added the Navigo router to set up logic that maps the current route to the corresponding application state and vice versa:
+As Glimmer.js is _"only"_ a UI component library and does not include any routing functionality, we used added the Navigo router to set up logic that maps the current route to the corresponding application state and vice versa:
 
 ```ts
 _setupRouting() {
@@ -152,11 +152,11 @@ The `loading` and `locations` properties are tracked properties so that changing
 
 This is just a brief overview of how an application built with Glimmer.js works. We will cover some of these things in more detail in future posts, particularly how we load and manage data with Orbit.js. For a closer look on the inner workings of Breethe, check out the [code on github](https://github.com/simplabs/breethe-client).
 
-#### From Glimmer.js Ember.js
+#### From Glimmer.js to Ember.js
 
 Besides making the Glimmer VM available to be used outside of Ember.js and offering a solution for situations where bundle size and load time performance is of crucial importance, Glimmer.js also serves as a testbed for new features and changes that will later make their way into the Ember.js framework. It is not bound to the strong stability guarantees that Ember.js makes and thus a great environment for experimenting with new approaches to existing problems that will usually require a few iterations until the API is stable.
 
-Some of these new things have already found their way back into Ember.js are (at least in some form):
+Some of these new things have already found their way back into Ember.js (at least in some form):
 
 * The `@` syntax as shown above that clearly distinguishes properties that are set on a component instance vs. attributes that are set on a component's root DOM element - [this PR](https://github.com/emberjs/ember.js/commit/4bd3d7b882484919682ab0cdb57f81584abc503a) enables the feature flag by default.
 * The possibility to use ES2015 classes instead of Ember.js' own object model - see [this blog post](https://medium.com/build-addepar/es-classes-in-ember-js-63e948e9d78e) for more information.
@@ -179,9 +179,9 @@ module('Component: MeasurementRow', function(hooks) {
   test('PPM Case', async function(assert) {
     await this.render(hbs`
       <MeasurementRow
-        @value=12
-        @parameter=pm25
-        @unit=ppm
+        @value="12"
+        @parameter="pm25"
+        @unit="ppm"
       />
     `);
     let label = this.containerElement.querySelector('[data-test-measurement-label]').textContent.trim();
@@ -189,8 +189,8 @@ module('Component: MeasurementRow', function(hooks) {
     let unit = this.containerElement.querySelector('[data-test-measurement-unit]').textContent.trim();
 
     assert.equal(label, 'PM25', 'Parameter is rendered');
-    assert.equal(value, `12`, 'Value is rendered');
-    assert.equal(unit, `ppm`, 'Unit is rendered');
+    assert.equal(value, '12', 'Value is rendered');
+    assert.equal(unit, 'ppm', 'Unit is rendered');
   });
 });
 ```
