@@ -197,6 +197,8 @@ module('Component: MeasurementRow', function(hooks) {
 
 This test case tests the `MeasurementRow` component by passing a set of properties and asserting that the DOM contains the expected elements with the expected content. The key element to notice is the invocation of `setupRenderingTest` which sets the test case up as a rendering test. Rendering tests have a `render` method that takes a template and renders that into the testing container. The rendered component's root element can then be accessed via the test's `containerElement` property.
 
+We use `data-test-` attributes in this test to select elements in the DOM (e.g. `this.containerElement.querySelector('[data-test-measurement-label]')`). That allows using expressive selectors in tests without relying on DOM structure or CSS class names. As these attributes are only needed for testing, we strip them from the templates in production builds so that we don't grow the bundle size unnecessarily. For a full-featured addon that makes that approach conveniently available for Ember.js applications, check out [`ember-test-selectors`](https://ember-test-selectors.com).
+
 Glimmer.js' testing APIs still have some shortcomings (see [this issue](https://github.com/glimmerjs/glimmer.js/issues/14)) and are not entirely ready for prime time. In order to test some more advanced component behaviors, we use [Puppeteer](https://pptr.dev) to run the entire application in a headless browser.
 
 #### Outlook
