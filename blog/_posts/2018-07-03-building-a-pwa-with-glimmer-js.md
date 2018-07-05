@@ -166,7 +166,7 @@ Eventually it will be possible to seamlessly use Glimmer.js components in Ember.
 
 #### Testing
 
-Glimmer.js uses the new testing APIs that are also now available for Ember.js applications. These allow writing concise tests for asserting components render the expected results for a given set of properties and attributes:
+Glimmer.js' testing APIs are very similar to what Ember.js uses for [component tests](https://guides.emberjs.com/release/testing/testing-components/). The idea is to render a particular component with a given set of properties and attributes and assert on the generated DOM:
 
 ```js
 import { module, test } from 'qunit';
@@ -195,10 +195,12 @@ module('Component: MeasurementRow', function(hooks) {
 });
 ```
 
-This test case tests the `MeasurementRow` component by passing a set of properties and asserting that the DOM contains the expected elements with the expected content. The key element to be aware here is the invocation of `setupRenderingTest` which sets this test case up as a rendering test, which for example makes the `this.render` method available. For a more detailed overview of these API see the [talk on the topic](https://www.youtube.com/watch?v=8D-O4cSteRk) that [@TobiasBieniek](https://twitter.com/TobiasBieniek) gave at this year's EmberConf.
+This test case tests the `MeasurementRow` component by passing a set of properties and asserting that the DOM contains the expected elements with the expected content. The key element to notice is the invocation of `setupRenderingTest` which sets the test case up as a rendering test. Rendering tests have a `render` method that takes a template and renders that into the testing container. The rendered component's root element can then be accessed via the test's `containerElement` property.
+
+Glimmer.js' testing APIs still have some shortcomings (see [this issue](https://github.com/glimmerjs/glimmer.js/issues/14)) and are not entirely ready for prime time. In order to test some more advanced component behaviors, we use [Puppeteer](https://pptr.dev) to run the entire application in a headless browser.
 
 #### Outlook
 
-In future posts, we will look at some specific aspects of the application in more detail, including service workers and offline functionality, server side rendering (which enables progressive enhancement where JavaScript is not even needed in the browser anymore to be able to use the application) and how we optimized the app's CSS using[css-blocks](http://css-blocks.com).
+In future posts, we will look at some specific aspects of the application in more detail, including service workers and offline functionality (and testing that with Puppeteer), server side rendering (which enables progressive enhancement where JavaScript is not even needed in the browser anymore to be able to use the application) and how we optimized the app's CSS using [css-blocks](http://css-blocks.com).
 
 Stay tuned 👋
