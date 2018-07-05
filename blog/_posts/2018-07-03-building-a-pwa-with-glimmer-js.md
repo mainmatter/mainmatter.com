@@ -13,41 +13,41 @@ We recently set out to build a progressive web app with [Glimmer.js](http://glim
 
 #### Breethe
 
-While this project was mostly meant as a technology spike to validate Glimmer's suitability for real projects as well as testing some techniques for running and serving web apps that we had in our minds for some time, we wanted to build something useful and meaningful. What we built is Breethe, a progressive web app that gives users quick and easy access to air quality data for locations around the world. Pollution and global warming are getting worse rather than better and having easy access to data that shows how bad the situation actually is, is the first step for everyone to question their decisions and maybe change a few things that can help improve the situation.
+While this project was mostly meant as a technology spike to validate Glimmer's suitability for real projects as well as testing some techniques for running and serving web apps that we had in our minds for some time, we wanted to build something useful and meaningful. What we came up with is [Breethe](https://breethe.app), a progressive web app that gives users quick and easy access to air quality data for locations around the world. Pollution and global warming are getting worse rather than better and having easy access to data that shows how bad the situation actually is, is the first step for everyone to question their decisions and maybe change a few things in their daily lives.
 
 ![Video of the Breethe PWA](/images/posts/2018-07-03-building-a-pwa-with -glimmer-js/breethe-video.gif)
 
-The application is fully open source and [available on GitHub](https://github.com/simplabs/breethe-client).
+The application is open source and [available on GitHub](https://github.com/simplabs/breethe-client).
 
 #### Glimmer.js
 
-Glimmer.js is a thin component library built on top of Ember.js's rendering engine, the Glimmer VM. It is optimized for small file size and maximum runtime performance and thus a great fit for situations where a full-featured framework like Ember.js is not needed and too heavyweight.
+Glimmer.js is a thin component library built on top of Ember.js's rendering engine, the Glimmer VM. It is optimized for small application bundle sizes and maximum runtime performance and thus a great fit for situations where a full-featured framework like Ember.js is not needed and too heavyweight.
 
 Glimmer.js provides functionality for defining, composing and rendering components and keeps the DOM in sync with the component tree's internal state. It uses Ember CLI, the battle-tested command-line interface tool (CLI) from the Ember project, to help create and manage applications. Glimmer.js is written in TypeScript and so are applications built with it.
 
-As it is built on the Glimmer VM, it uses Handlebars-like syntax for its templates, e.g.:
+Glimmer.js templates use Handlebars-like syntax, e.g.:
 
 ```hbs {% raw %}
 {{#each measurementLists.first key="@index"}}
-	<MeasurementRow
-  	@value={{measurement.value}}
-	  @parameter={{measurement.parameter}}
-	  @unit={{measurement.unit}}
-	/>
+  <MeasurementRow
+    @value={{measurement.value}}
+    @parameter={{measurement.parameter}}
+    @unit={{measurement.unit}}
+  />
 {{/each}}
 {% endraw %}```
 
-These templates then get compiled to opcodes that the Glimmer VM (yes, this is a full-fledged VM that runs inside your JavaScript VM in the browser) processes and translates into DOM operations in the browser. For a detailed overview of how that works and why it results in very small bundle sizes as well as super fast initial and update renders, watch the talk I gave at the Ember.js Munich meetup last year:
+These templates then get compiled to bytecode that the Glimmer VM (yes, this is a full-fledged VM that runs inside the JavaScript VM inside the browser) processes and translates into DOM operations. For a detailed overview of how that works and why it results in very small bundle sizes as well as super fast initial and update renders, watch the talk I gave at the [Ember.js Munich](https://www.meetup.com/Ember-js-Munich/) meetup last year:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vIRZDCyfOJc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="video"></iframe>
 
 #### Building Breethe with Glimmer.js
 
-The Breethe app consists of two main screens, the Start page with the search form and the results page that shows the data and an air quality score for a particular location. These two screens are implemented in two components that the app's main component renders depending on the current state of the app.
+The Breethe app consists of two main screens, the Start page with the search form and the results page that shows the data and an air quality score for a particular location. These two screens are implemented via two components so that depending on the current state of the app, the correct one is rendered.
 
 ![The two main screens of the Breethe PWA](/images/posts/2018-07-03-building-a-pwa-with -glimmer-js/breethe-screens.png)
 
-As Glimmer.js is _"only"_ a UI component library and does not include any routing functionality, we used added the Navigo router to set up logic that maps the current route to the corresponding application state and vice versa:
+As Glimmer.js is _"only"_ a UI component library and does not include any routing functionality, we used the [Navigo](https://github.com/krasimir/navigo) router to set up logic that maps the current URL to the corresponding application state and vice versa:
 
 ```ts
 _setupRouting() {
@@ -72,7 +72,7 @@ _setupRouting() {
 }
 ```
 
-First of all, we create a new router instance. Then we map URLs to the corresponding states of the app. The routes `/`, `/search` and `/search/:searchTerm` all map to the `MODE_SEARCH` mode that renders the search form and search results if there are any. The `/location/:locationId` route maps to the `MODE_RESULTS` mode that renders the component that displays a particular location's data and quality score. We use the `mode` property in two tracked properties `isSearchMode` and `isResultsMode`. [Tracked properties](https://glimmerjs.com/guides/tracked-properties) are Glimmer's equivalent to Ember's computed properties and will result in the component being re-rendered when their value changes.
+First of all, we create a new router instance. We then map URLs to the corresponding states of the app. The routes `/`, `/search` and `/search/:searchTerm` all map to the `MODE_SEARCH` mode that renders the search form and search results if there are any. The `/location/:locationId` route maps to the `MODE_RESULTS` mode that renders a particular location's data and quality score. We use the `mode` property in two tracked properties `isSearchMode` and `isResultsMode`. [Tracked properties](https://glimmerjs.com/guides/tracked-properties) are Glimmer's equivalent to Ember's computed properties and will result in the component being re-rendered when their value changes.
 
 ```ts
 @tracked('mode')
@@ -86,7 +86,7 @@ get isResultsMode(): boolean {
 }
 ```
 
-We can then use these properties in the template to render the respective component for the mode:
+These tracked properties are then used in the template to render the respective component for the current mode:
 
 ```hbs {% raw %}
 {{#if isSearchMode}}
@@ -107,7 +107,7 @@ The `Search` component renders the `SearchForm` component that implements the te
 />
 {% endraw %}```
 
-`{% raw %}@onSubmit={{action searchByTerm}}{% endraw %}` assigns the `searchByTerm` method of the `Search` component as an action to the `@onSubmit` property of the `SearchForm` component. Whenever the search form is submitted, the component will invoke the assigned action:
+`{% raw %}@onSubmit={{action searchByTerm}}{% endraw %}` assigns the `searchByTerm` method of the `Search` component as an action to the `@onSubmit` property of the `SearchForm` component. Whenever the search form is submitted, the `SearchForm` component invokes the assigned action:
 
 ```ts
 submitSearch(event) {
@@ -130,7 +130,7 @@ async searchByTerm(searchTerm) {
 }
 ```
 
-The `loading` and `locations` properties are tracked properties so that changing them, results in the component to be re-rendered. They are used in the component's template like this:
+The `loading` and `locations` properties are tracked properties so that changing them results in the component to be re-rendered. They are used in the template like this:
 
 ```hbs {% raw %}
 <div class="results">
@@ -154,15 +154,15 @@ This is just a brief overview of how an application built with Glimmer.js works.
 
 #### From Glimmer.js to Ember.js
 
-Besides making the Glimmer VM available to be used outside of Ember.js and offering a solution for situations where bundle size and load time performance is of crucial importance, Glimmer.js also serves as a testbed for new features and changes that will later make their way into the Ember.js framework. It is not bound to the strong stability guarantees that Ember.js makes and thus a great environment for experimenting with new approaches to existing problems that will usually require a few iterations until the API is stable.
+Besides making the Glimmer VM available to be used outside of Ember.js and offering a solution for situations where bundle size and load time performance is of crucial importance, Glimmer.js also serves as a testbed for new features and changes that will later make their way into the Ember.js framework. It is not bound to the strong stability guarantees that Ember.js offers and thus a great environment for experimenting with new approaches to existing problems that will usually require a few iterations until the API becomes stable.
 
-Some of these new things have already found their way back into Ember.js (at least in some form):
+Some new things that originate in experiments done in Glimmer.js have already found their way back into Ember.js (at least in some form):
 
 * The `@` syntax as shown above that clearly distinguishes properties that are set on a component instance vs. attributes that are set on a component's root DOM element - [this PR](https://github.com/emberjs/ember.js/commit/4bd3d7b882484919682ab0cdb57f81584abc503a) enables the feature flag by default.
 * The possibility to use ES2015 classes instead of Ember.js' own object model - see [this blog post](https://medium.com/build-addepar/es-classes-in-ember-js-63e948e9d78e) for more information.
 * Template-only components that do not have a wrapping `<div>` - can be enabled as an [optional feature](https://github.com/emberjs/ember-optional-features).
 
-Eventually it will be possible to seamlessly use Glimmer.js components in Ember.js applications (see the [quest issue](https://github.com/emberjs/ember.js/issues/16301) for more information). That will also enable "upgrading" Glimmer.js applications to Ember.js once they reach a certain size and complexity and the additional features and concepts that Ember.js provides over Glimmer.js justify a more heavyweight framework.
+Eventually it will be possible to seamlessly use Glimmer.js components in Ember.js applications (see the [quest issue](https://github.com/emberjs/ember.js/issues/16301) for more information). That will also enable _"upgrading"_ Glimmer.js applications to Ember.js once they reach a certain size and complexity and the additional features and concepts that Ember.js provides over Glimmer.js justify a more heavyweight framework.
 
 #### Testing
 
