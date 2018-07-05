@@ -13,7 +13,7 @@ We recently set out to build a progressive web app with [Glimmer.js](http://glim
 
 #### Breethe
 
-While this project was mostly meant as a technology spike to validate Glimmer's suitability for real projects as well as testing some techniques for running and serving web apps that we had in our minds for some time, we wanted to build something useful and meaningful. What we built is Breethe, a progressive web apps that gives users quick and easy access to air quality data for locations around the world. Pollution and global warming are getting worse rather than better and having easy access to data that shows how bad the situation actually is is the first step for everyone to question their decisions and maybe change a few things that can help improve the situation.
+While this project was mostly meant as a technology spike to validate Glimmer's suitability for real projects as well as testing some techniques for running and serving web apps that we had in our minds for some time, we wanted to build something useful and meaningful. What we built is Breethe, a progressive web app that gives users quick and easy access to air quality data for locations around the world. Pollution and global warming are getting worse rather than better and having easy access to data that shows how bad the situation actually is, is the first step for everyone to question their decisions and maybe change a few things that can help improve the situation.
 
 ![Video of the Breethe PWA](/images/posts/2018-07-03-building-a-pwa-with -glimmer-js/breethe-video.gif)
 
@@ -21,7 +21,7 @@ The application is fully open source and [available on GitHub](https://github.co
 
 #### Glimmer.js
 
-Glimmer.js is a thin component library built on top of Ember.js's rendering engine, the Glimmer VM. It is optimized for small file size and maximum runtime performance and thus a great fit for situations where a full-featured framework like Ember.js is not needed and too heavy weight.
+Glimmer.js is a thin component library built on top of Ember.js's rendering engine, the Glimmer VM. It is optimized for small file size and maximum runtime performance and thus a great fit for situations where a full-featured framework like Ember.js is not needed and too heavyweight.
 
 Glimmer.js provides functionality for defining, composing and rendering components and keeps the DOM in sync with the component tree's internal state. It uses Ember CLI, the battle-tested command-line interface tool (CLI) from the Ember project, to help create and manage applications. Glimmer.js is written in TypeScript and so are applications built with it.
 
@@ -162,7 +162,7 @@ Some of these new things have already found their way back into Ember.js (at lea
 * The possibility to use ES2015 classes instead of Ember.js' own object model - see [this blog post](https://medium.com/build-addepar/es-classes-in-ember-js-63e948e9d78e) for more information.
 * Template-only components that do not have a wrapping `<div>` - can be enabled as an [optional feature](https://github.com/emberjs/ember-optional-features).
 
-Eventually it will be possible to seamlessly use Glimmer.js components in Ember.js applications (see the [quest issue](https://github.com/emberjs/ember.js/issues/16301) for more information). That will also enable "upgrading" Glimmer.js applications to Ember.js once they reach a certain size and complexity and the additional features and concepts that Ember.js provides over Glimmer.js justify a more heavy-weight framework.
+Eventually it will be possible to seamlessly use Glimmer.js components in Ember.js applications (see the [quest issue](https://github.com/emberjs/ember.js/issues/16301) for more information). That will also enable "upgrading" Glimmer.js applications to Ember.js once they reach a certain size and complexity and the additional features and concepts that Ember.js provides over Glimmer.js justify a more heavyweight framework.
 
 #### Testing
 
