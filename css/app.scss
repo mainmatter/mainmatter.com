@@ -600,6 +600,18 @@ pre.highlight {
   padding-top: 100px;
 }
 
+.header-note {
+  font-size: 16px;
+  color: $primary-text-color;
+  font-weight: bold;
+}
+
+.jobs {
+  li {
+    margin-top: 1rem;
+  }
+}
+
 @media screen and (max-width: 767px) {
   #main-menu {
     .navbar-nav {
