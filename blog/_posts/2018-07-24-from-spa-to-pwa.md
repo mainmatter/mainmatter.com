@@ -179,8 +179,3 @@ The main keys in the manifest are `name`, `icons`, `background_color`,
 Breethe, when installed to the user's home screen on iOS shows up like this:
 
 ![The Breethe app icon on the home screen](/images/posts/2018-07-24-from-spa-to-pwa/breethe-app-icon.png)
-
-Chrome on Android will even automatically offer installing the app to the home
-screen when it notice an App Manifest:
-
-TODO: add screenshot
