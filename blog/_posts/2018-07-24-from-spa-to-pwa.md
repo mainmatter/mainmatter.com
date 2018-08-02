@@ -7,11 +7,12 @@ github-handle: marcoow
 twitter-handle: marcoow
 ---
 
-Progressive Web Apps are the next level of browser based applications. They
-offer a rich user experience that parallels what users know and expect from
-native apps and combine that with the benefits that browser based applications
-provide. In this post, we'll look at how to turn a Single Page App into a
-Progressive Web App.
+Progressive Web Apps are the next level of browser based applications. While
+Single Page Apps (SPAs) already meant a giant leap forward for web apps, PWAs
+are taking things even one step further. They offer a rich user experience that
+parallels what users know and expect from native apps and combine that with the
+benefits that browser based applications provide. In this post, we'll look at
+how to turn a Single Page App into a Progressive Web App.
 
 <!--break-->
 
@@ -28,9 +29,10 @@ decisions and maybe change a few things in their daily lives.
 
 The application is [open source](https://github.com/simplabs/breethe-client)
 and we encourage everyone interested to look through the source for reference.
-To learn more about how we built Breethe with Glimmer.js, refer to the previous
-post in this series. However, none of the contents in this post are specific to
-Glimmer.js in any way but generally applicable to all frontend stacks.
+To learn more about how we built Breethe with Glimmer.js, refer to the [previous
+post in this series](/blog/2018/07/03/building-a-pwa-with-glimmer-js.html).
+None of the contents in this post are specific to Glimmer.js in any way though,
+but all generally applicable to all frontend stacks.
 
 #### Progressive Web Apps
 
@@ -43,9 +45,10 @@ the orignal iPhone:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y1B2c3ZD9fk?start=4451" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="video"></iframe>
 
 Unfortunately that idea was one of the few of Jobs' that never really took off.
-In fact, Apple released a native SDK for the iPhone in 2008. That change in
-strategy lead to a huge market for native mobile apps and played a significant
-role in mobile devices becoming ever more ubiquitous over the past decade
+In fact, Apple released the first native SDK for the iPhone in 2008. That
+change in strategy lead to a huge market for native mobile apps and played a
+significant role in mobile devices becoming ever more ubiquitous over the past
+decade
 ([not always to the benefit of everyone](https://en.wikipedia.org/wiki/Mobile_phone_overuse)
 as is becoming more and more obvious recently).
 
@@ -62,13 +65,13 @@ potential users are lost before they even install the app where they then
 * users that are on the mobile website already, when asked to install the app,
   need to leave that website, go to the app store, download the app and
   continue through the installation process
-* once the app is installed, all input that was made on the website before is
-  lost and needs to be restored besides users potentially needing to login in
-  the app again
+* once the app is installed, all input that potentially was made on the website
+  before is lost and needs to be restored besides users potentially needing to
+  login in the app again
 * native apps are
   [relatively large on average](https://sweetpricing.com/blog/2017/02/average-app-file-size/),
-  leading to long download times in particular on often spotty mobile
-  connections
+  leading to long download times which is particularly painful on often spotty
+  mobile connections
 
 In contrast, web apps are easily accessible via the browser without forcing
 users to go through an app store and installation process and load almost
@@ -76,16 +79,16 @@ instantaneously - if done right, even on spotty mobile connections.
 
 Another advantage of native apps is mostly a historic one now. Historically,
 apps were able to offer a better user experience both in terms of the purely
-visual experience and also terms of features. With the quickly evolving web
+visual experience and also in terms of features. With the quickly evolving web
 platform and capabilities of modern browsers, this is no longer the case though
 and web apps are now capable of offering equal if not better user experiences
-than native apps. Combined with almost instantaneous load times and superior
-discoverability, Progressive Web Apps are clearly the better choice than native
-apps for the vast majority of use cases now.
+compared to native apps. Combined with almost instantaneous load times and
+superior discoverability, Progressive Web Apps are clearly the better choice
+than native apps for the vast majority of use cases now.
 
 This has only been the case relatively recently though. While Chrome and
-Firefox supported Service Workers (which are the main ingredient for PWAs) for
-quite some time, two major browsers were falling behind - namely Safari and
+Firefox supported Service Workers (which are the main building block for PWAs)
+for quite some time, two major browsers were falling behind - namely Safari and
 Internet Explorer. These two (actually not Internet Explorer but its successor
 Edge) have finally caught up recently and
 [Service Workers are now supported by all major browsers](https://caniuse.com/#feat=serviceworkers),
@@ -98,7 +101,7 @@ A decade after the introduction of the original iPhone (and a detour via the
 Progressive Web Apps are ready to be used and they are here to stay. And we are
 only getting started - as Progressive Web Apps have only recently really took
 off, it's fair to expect massive improvements in terms of what's possible over
-the next years.
+the next coming years.
 
 #### What are PWAs?
 
@@ -118,7 +121,7 @@ Progressive Web Apps have some distinct characteristics, the main ones being:
 We will be focussing on 2 of these characteristics in this article -
 Installability and Connectivity Independence.
 
-##### Installability
+#### Installability
 
 Progressive Web apps can be installed on the user's home screen and thus
 _"taken out of the browser"_ so that they mingle with the user's native apps
@@ -179,3 +182,148 @@ The main keys in the manifest are `name`, `icons`, `background_color`,
 Breethe, when installed to the user's home screen on iOS shows up like this:
 
 ![The Breethe app icon on the home screen](/images/posts/2018-07-24-from-spa-to-pwa/breethe-app-icon.png)
+
+When launched from the home screen, it starts up like a native app, without any
+browser UI:
+
+![The Breethe PWA starting up standalone](/images/posts/2018-07-24-from-spa-to-pwa/breethe-startup-standalone.gif)
+
+#### Connectivity Independence
+
+The main requirement for any web application to be able to work independently
+of the network is that it must be able to start up while there is no network at
+all. For an application that runs in a browser that is essentially made for
+loading anything that it requires remotely, that is no easy task. One of the
+first approaches for achieving just this, was
+[Google Gears](https://en.wikipedia.org/wiki/Gears_(software)). Gears was
+released as early as 2007 as a proprietary extension for Chrome and allowed
+offline usage of e.g. Gmail. Gears never really took off in the broader
+ecosystem though and was discontinued in 2010.
+
+Many of the orignal ideas behind Gears found their way into the HTML5 spec
+though, in particular the idea of Gear's `LocalServer` module that allowed
+running a local server inside of the browser. That server would be able to
+handle any requests made by the browser instead of actually sending these
+request over the network. This is essentially (besides some other features)
+what service workers are. They are standalone pieces of JavaScript code that
+gets installed into the users browser and are subsequently able to intercept
+any request that the browser makes and serve the response from their internal
+cache instead of relying on the remote server's response.
+
+Installing a service worker is as simple as running a little script:
+
+```html {% raw %}
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').catch(function() {
+      // handle errors
+    });
+  }
+</script>
+{% endraw %}```
+
+This calls the navigator's `serviceWorker` API's `register` method (if the
+browser supports that API), passing the name of the JavaScript file with the
+service worker code as an argument. The `register` method returns a promise
+that rejects if the service worker could not successfully be registered.
+
+Once the service worker is registered, it will start receiving various events
+during the
+[service worker lifecycle](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers#Basic_architecture).
+The first event in that lifecycle is the _"install"_ event which is typically
+used to pre-cache resources and thus make them available for later offline use.
+In the Breethe PWA, we use that event to preload all of the app's essential
+resources:
+
+```js
+const CACHE_NAME = 'breethe-cache-v1';
+const PRE_CACHED_ASSETS = [
+  '/app.js',
+  '/app.css',
+  '/index.html'
+];
+
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(function(cache) {
+      let cachePromises = PRE_CACHED_ASSETS.map(function(asset) {
+        var url = new URL(asset, location.href);
+        var request = new Request(url);
+        return fetch(request).then(function(response) {
+          return cache.put(asset, response);
+        });
+      });
+
+      return Promise.all(cachePromises);
+    })
+  );
+});
+```
+
+Here, when the _"install"_ event is fired, we open the service worker cache,
+request the critical assets and store them in the service worker's cache.
+
+The next event in the lifecycle is the _"activate"_ event that is typically
+used to delete old caches so that when the service worker is updated, no stale
+data is left on the user's device. In the Breethe PWA, we only use one cache
+and when the service worker is activated, simply delete all caches that are not
+that current one:
+
+```js
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        // delete old caches
+        cacheNames.map(function(cacheName) {
+          if (cacheName !== CACHE_NAME) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
+```
+
+After the service worker is installed and activated, it starts receiving
+_"fetch"_ events whenever the browser makes a request for any remote resource.
+This is the relevant event that we need to listen for in order to make sure the
+PWA can start up successfully if the network is down. In the case of an SPA
+where there only is one HTML document that is `index.html`, this is as easy as
+always serving that when the original request fails:
+
+```js
+self.addEventListener('fetch', function(event) {
+  if (event.request.headers.get('accept').startsWith('text/html')) {
+    event.respondWith(
+      fetch(event.request).catch(error => {
+        return caches.match('index.html');
+      })
+    );
+  }
+});
+```
+
+Here, we first check whether the request is an HTML request (in reality in
+Breethe,
+[we check a few other things as well](https://github.com/simplabs/breethe-client/blob/master/lib/service-worker/workers/service-worker.js#L88))
+and if that is the case, try making the request and loading the resource from
+the network first. If that fails and the promise returned from `fetch` rejects
+(one possible reason for that being that the device is offline), we simply
+serve the `index.html` from the service worker's cache so that the app can
+start up successfully in the browser. All of the application's assets that are
+referenced in `index.html` are cached to and served from the service worker's
+cache as well in a
+[separate event handler](https://github.com/simplabs/breethe-client/blob/master/lib/service-worker/workers/service-worker.js#L65).
+
+Allowing apps to start up offline with Service Workers is very straight forward
+and does not even require implementing a whole lot of logic -
+[Breethe's service worker](https://github.com/simplabs/breethe-client/blob/master/lib/service-worker/workers/service-worker.js)
+does not even have 100 lines of code. Of course being able to start up the app
+while offline only solves half of the problem though when all of the app's data
+is loaded from a remote API and thus would be unavailable when offline.
+
+##### Offline Data
+
+TODO
