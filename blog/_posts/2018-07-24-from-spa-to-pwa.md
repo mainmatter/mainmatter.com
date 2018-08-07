@@ -8,11 +8,11 @@ twitter-handle: marcoow
 ---
 
 Progressive Web Apps are the next level of browser based applications. While
-Single Page Apps (SPAs) already meant a giant leap forward for web apps, PWAs
-are taking things even one step further. They offer a rich user experience that
-parallels what users know and expect from native apps and combine that with the
-benefits that browser based applications provide. In this post, we'll look at
-how to turn a Single Page App into a Progressive Web App.
+Single Page Apps (SPAs) already meant a giant leap forward, PWAs are taking
+things even one step further. They offer a rich user experience that parallels
+what users know and expect from native apps and combine that with the benefits
+that browser based applications provide. In this post, we'll look at how to
+turn a Single Page App into a Progressive Web App.
 
 <!--break-->
 
@@ -21,24 +21,25 @@ how to turn a Single Page App into a Progressive Web App.
 Throughout this post, we will use [Breethe](https://breethe.app) as an example.
 Breethe is a Progressive Web App that gives users quick and easy access to air
 quality data for locations around the world. Pollution and global warming are
-getting worse rather than better and having easy access to data that shows how
-bad the situation actually is, is the first step for everyone to question their
+getting worse rather than better and having access to data that shows how bad
+the situation actually is, is the first step for everyone to question their
 decisions and maybe change a few things in their daily lives.
 
 ![Video of the Breethe PWA](/images/posts/2018-07-24-from-spa-to-pwa/breethe-video.gif)
 
 The application is [open source](https://github.com/simplabs/breethe-client)
 and we encourage everyone interested to look through the source for reference.
-To learn more about how we built Breethe with Glimmer.js, refer to the [previous
-post in this series](/blog/2018/07/03/building-a-pwa-with-glimmer-js.html).
+To learn more about how we built Breethe with
+[Glimmer.js](http://glimmerjs.com), refer to the
+[previous post in this series](/blog/2018/07/03/building-a-pwa-with-glimmer-js.html).
 None of the contents in this post are specific to Glimmer.js in any way though,
 but all generally applicable to all frontend stacks.
 
 #### Progressive Web Apps
 
-In short, Progressive Web Apps are websites that look and behave like native
-apps. While the idea of building apps with web technologies has been around for
-a long time, it never really took off until recently. In fact, Steve Jobs
+In short, Progressive Web Apps are **web apps that look and behave like native
+apps**. While the idea of building apps with web technologies has been around
+for a long time, it never really took off until recently. In fact, Steve Jobs
 himself introduced the idea at WWDC 2007, just shortly after the unveiling of
 the orignal iPhone:
 
@@ -52,8 +53,8 @@ decade
 ([not always to the benefit of everyone](https://en.wikipedia.org/wiki/Mobile_phone_overuse)
 as is becoming more and more obvious recently).
 
-While native apps can enable great things and previously unforeseen use cases,
-they have some drawbacks. They generally
+While native apps enable great things and previously unforeseen use cases, they
+come with some drawbacks. They generally
 [show high conversion rates](https://jmango360.com/wiki/mobile-app-vs-mobile-website-statistics/)
 which is the main reason why marketing departments keep pushing for them. On
 the downside though, they have some significant drawbacks, the main one being
@@ -70,27 +71,28 @@ potential users are lost before they even install the app where they then
   login in the app again
 * native apps are
   [relatively large on average](https://sweetpricing.com/blog/2017/02/average-app-file-size/),
-  leading to long download times which is particularly painful on often spotty
+  leading to long download times which are particularly painful on often spotty
   mobile connections
 
-In contrast, web apps are easily accessible via the browser without forcing
+In contrast, **web apps are easily accessible via the browser** without forcing
 users to go through an app store and installation process and load almost
 instantaneously - if done right, even on spotty mobile connections.
 
 Another advantage of native apps is mostly a historic one now. Historically,
-apps were able to offer a better user experience both in terms of the purely
-visual experience and also in terms of features. With the quickly evolving web
-platform and capabilities of modern browsers, this is no longer the case though
-and web apps are now capable of offering equal if not better user experiences
-compared to native apps. Combined with almost instantaneous load times and
-superior discoverability, Progressive Web Apps are clearly the better choice
-than native apps for the vast majority of use cases now.
+native apps were able to offer a better user experience both in terms of the
+purely visual experience and also in terms of features. With the quickly
+evolving web platform and capabilities of modern browsers, this is no longer
+the case though and **web apps are now capable of offering equal if not better
+user experiences compared to native apps**. Combined with almost instantaneous
+load times and superior discoverability, Progressive Web Apps are clearly the
+better choice than native apps in a large number of scenarios now.
 
 This has only been the case relatively recently though. While Chrome and
 Firefox supported Service Workers (which are the main building block for PWAs)
 for quite some time, two major browsers were falling behind - namely Safari and
 Internet Explorer. These two (actually not Internet Explorer but its successor
-Edge) have finally caught up recently and
+[Edge](https://www.microsoft.com/de-de/windows/microsoft-edge)) have finally
+caught up recently and
 [Service Workers are now supported by all major browsers](https://caniuse.com/#feat=serviceworkers),
 making Progressive Web Apps a viable alternative to native apps for most
 businesses with ca. 84% of the global user base on browsers and OSes capable of
@@ -100,25 +102,25 @@ A decade after the introduction of the original iPhone (and a detour via the
 [multi-billion native app economy](https://www.appannie.com/en/insights/market-data/predictions-app-economy-2018/)),
 Progressive Web Apps are ready to be used and they are here to stay. And we are
 only getting started - as Progressive Web Apps have only recently really took
-off, it's fair to expect massive improvements in terms of what's possible over
-the next coming years.
+off, **it's fair to expect massive improvements in terms of what's possible
+over the next coming years**.
 
 #### What are PWAs?
 
 Progressive Web Apps have some distinct characteristics, the main ones being:
 
-* Progressiveness: they work for every user, regardless of their device or
+* **Progressiveness**: they work for every user, regardless of their device or
   browser of choice; depending on the capabilities of that environment, they
   will enable more or less of their functionality
-* Responsiveness: they fit any form factor and screen sizes
-* Connectivity Independence: they work on low quality networks or without any
-  network at all (and thus fully offline)
-* App-likeliness: they offer the rich user experience that users know and love
-  from native apps
-* Installability: they can be installed on the user's home screen without
+* **Responsiveness**: they fit any form factor and screen sizes
+* **Connectivity Independence**: they work on low quality networks or without
+  any network at all (and thus fully offline)
+* **App-likeliness**: they offer the rich user experience that users know and
+  love from native apps
+* **Installability**: they can be installed on the user's home screen without
   having to go through an app store
 
-We will be focussing on 2 of these characteristics in this article -
+We will be focussing on two of these characteristics in this article -
 Installability and Connectivity Independence.
 
 #### Installability
@@ -129,8 +131,11 @@ without the user noticing a difference. That characteristic is enabled by the
 [_"App Manifest"_](https://developers.google.com/web/fundamentals/web-app-manifest/)
 that describes how an app is supposed to behave when run _"outside"_ of the
 browser. The App Manifest is a simple JSON file with key/value pairs that
-configure the main aspects of the app. The App Manifest for Breethe looks like
-this:
+configure the main aspects of the app.
+
+The
+[App Manifest for Breethe](https://github.com/simplabs/breethe-client/blob/master/public/manifest.webmanifest)
+looks like this:
 
 ```json
 {
@@ -191,10 +196,10 @@ browser UI:
 #### Connectivity Independence
 
 The main requirement for any web application to be able to work independently
-of the network is that it must be able to start up while there is no network at
-all. For an application that runs in a browser that is essentially made for
-loading anything that it requires remotely, that is no easy task. One of the
-first approaches for achieving just this, was
+of the network is that it **must be able to start up while there is no network
+at all** and the device is offline. For an application that runs in a browser
+that is essentially made for loading anything that it requires remotely, that
+is no easy task. One of the first approaches for achieving just this was
 [Google Gears](https://en.wikipedia.org/wiki/Gears_(software)). Gears was
 released as early as 2007 as a proprietary extension for Chrome and allowed
 offline usage of e.g. Gmail. Gears never really took off in the broader
@@ -203,12 +208,12 @@ ecosystem though and was discontinued in 2010.
 Many of the orignal ideas behind Gears found their way into the HTML5 spec
 though, in particular the idea of Gear's `LocalServer` module that allowed
 running a local server inside of the browser. That server would be able to
-handle any requests made by the browser instead of actually sending these
-request over the network. This is essentially (besides some other features)
-what service workers are. They are standalone pieces of JavaScript code that
-gets installed into the users browser and are subsequently able to intercept
-any request that the browser makes and serve the response from their internal
-cache instead of relying on the remote server's response.
+handle any requests made by the browser instead of actually sending the request
+over the network. This is essentially (besides some other features) what
+service workers offer. They are standalone pieces of JavaScript code that get
+installed into the users browser and are subsequently able to intercept any
+request that the browser makes and serve the response from their internal cache
+instead of relying on the remote server's response.
 
 Installing a service worker is as simple as running a little script:
 
@@ -289,9 +294,10 @@ self.addEventListener('activate', function(event) {
 After the service worker is installed and activated, it starts receiving
 _"fetch"_ events whenever the browser makes a request for any remote resource.
 This is the relevant event that we need to listen for in order to make sure the
-PWA can start up successfully if the network is down. In the case of an SPA
-where there only is one HTML document that is `index.html`, this is as easy as
-always serving that when the original request fails:
+PWA can start up successfully if the device is offline. In the case of an SPA
+where there only is one HTML document (which is `index.html`), this is as easy
+as always serving that from the service worker's cache when the original
+request fails:
 
 ```js
 self.addEventListener('fetch', function(event) {
@@ -305,8 +311,8 @@ self.addEventListener('fetch', function(event) {
 });
 ```
 
-Here, we first check whether the request is an HTML request (in reality in
-Breethe,
+Here, we first check whether the request is asking for an HTML document (in
+reality in Breethe,
 [we check a few other things as well](https://github.com/simplabs/breethe-client/blob/master/lib/service-worker/workers/service-worker.js#L88))
 and if that is the case, try making the request and loading the resource from
 the network first. If that fails and the promise returned from `fetch` rejects
@@ -321,8 +327,9 @@ Allowing apps to start up offline with Service Workers is very straight forward
 and does not even require implementing a whole lot of logic -
 [Breethe's service worker](https://github.com/simplabs/breethe-client/blob/master/lib/service-worker/workers/service-worker.js)
 does not even have 100 lines of code. Of course being able to start up the app
-while offline only solves half of the problem though when all of the app's data
-is loaded from a remote API and thus would be unavailable when offline.
+while the device is offline only solves half of the problem though when all of
+the app's data is loaded from a remote API and thus would be unavailable when
+offline.
 
 ##### Offline Data
 
@@ -331,9 +338,9 @@ thus making it available for offline use. The
 [WebStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
 defines `localStorage` and `sessionStorage` which can be used for storing
 key/value pairs. Cookies have been around for quite some time and cannot only
-be used for tracking users or keeping their sessions alive but also for storing
-simple data. When dealing with bigger, structured data sets though, the storage
-API of choice is generally
+be used for tracking users or keeping their sessions alive when the browser is
+closed but also for storing simple data. When dealing with bigger, structured
+datasets though, the storage API of choice is generally
 [`IndexedDB`](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API).
 
 `IndexedDB` is a transactional database system, similar to SQL-based RDBMS:
@@ -354,12 +361,13 @@ openRequest.onsuccess = function(event) {
 
 `IndexedDB`'s API can be a bit cumbersome to use though which is why instead of
 interfacing with it directly, developers typically leverage libraries that
-abstract the internals of it behind a more convenient API. For Breethe, we used
-Orbit.js but there are other libraries like [PouchDB](https://pouchdb.com) or
+abstract its complexity behind more convenient APIs. For Breethe, we used
+[Orbit.js](http://orbitjs.com) but there are other libraries like
+[PouchDB](https://pouchdb.com) or
 [localForage](https://localforage.github.io/localForage/).
 
-Orbit.js works based on a schema definition that defines the models, their
-attributes and relationships. In the case of Breethe which works with
+Orbit.js works based on a schema definition that defines the models it operates
+on, their attributes and relationships. In the case of Breethe which works with
 measurement locations and data points,
 [the schema](https://github.com/simplabs/breethe-client/blob/master/src/utils/data/schema.ts)
 looks like this:
@@ -411,7 +419,8 @@ const store = new Store({ schema });
 ```
 
 Stores in Orbit.js are backed by sources. In the case of Breethe, we use a
-[json:api](http://jsonapi.org) source:
+[json:api](http://jsonapi.org) source for loading data from a
+[server API](https://github.com/simplabs/breethe-server):
 
 ```typescript
 import JSONAPISource from '@orbit/jsonapi';
@@ -442,42 +451,43 @@ store.on('transform', (transform) => {
 ```
 
 With this setup, all data that ever gets loaded by the app while the device is
-online, is available for later offline use where it will be read from
-`IndexedDB`. This mechanism works the other way round as well of course such
-that the app could buffer any modifications to data in the store in `IndexedDB`
-while offline and sync these changes back to the remote API once the device
-comes online again - refer to the
+online is available for later offline use where it will be read from
+`IndexedDB` instead. This mechanism works the other way round as well of course
+such that the app could buffer any modifications to data in the store in
+`IndexedDB` while offline and sync these changes back to the remote API once
+the device comes back online - refer to the
 [Orbit.js docs](http://orbitjs.com/v0.15/guide/) for more information about
 advanced mechanics like this.
 
 With the combination of service workers and `IndexedDB`, PWAs are fully
 independent of the network status and offer the same experience as native apps
 when the device is offline. Modern libraries like Orbit.js make it easy to
-manage data independent of the network condition and abstract most of the
+manage data independently of the network condition and abstract most of the
 details behind convenient APIs.
 
 #### Testing
 
 Testing is an essential part of modern software engineering and we at simplabs
-(and I'm sure this is true for anyone reading this as well) would never ship
-code that is not fully tested - as we could not know whether it actually works
-or whether we subsequently break it. The first thing that comes to mind when
-thinking about tests is usually unit tests that test a small part of an app (a
-unit) in isolation. Depending on the framework of choice and its testing
-philosophy and tools, there might also be means of
+(and I'm sure this is true for anyone reading this as well) would **never ship
+code that is not fully tested** - as we could not know whether the code
+actually works or whether we subsequently break it when making changes. The
+first thing that comes to mind when thinking about tests are typically unit
+tests that test a small part of an app (a unit) in isolation. Depending on the
+framework of choice and its testing philosophy and tools, there might also be
+means of
 [higher level test](https://guides.emberjs.com/release/testing/testing-components/)
 that test larger subsets of an app (and we have
 [quite](https://github.com/simplabs/breethe-client/blob/master/src/ui/components/MeasurementRow/component-test.ts) [some](https://github.com/simplabs/breethe-client/blob/master/src/ui/components/SearchForm/component-test.ts)
 of these for Breethe).
 
-Testing PWAs, in particular their correct offline behavior, is slightly
-different though as it requires the correct interplay of various parts that
-cannot really be isolated - namely the app itself, the service worker, storage
-APIs like `IndexedDB` and the browser. A proper PWA test suite needs to take
-all of these parts into account and have a higher level perspective on the
-system under test than is possible in a unit test. A great tool for running
-tests like these is Google's puppeteer that allows running and controlling a
-headless instance of Chrome.
+Testing PWAs, in particular their offline behavior, is slightly different
+though as it requires the correct interplay of various parts that cannot be
+isolated well - namely the app itself, the service worker, storage APIs like
+`IndexedDB` and the browser. A proper PWA test suite needs to take all of these
+parts into account and have a higher level perspective on the system under test
+than is the case in a unit test. A great tool for tests like these is Google's
+[puppeteer](https://pptr.dev) that allows running and controlling a headless
+instance of Chrome.
 
 Combining puppeteer with mocha allows for writing high level test cases that
 test a PWA in its entirety:
@@ -529,7 +539,7 @@ to create a new browser object (which will start an actual instance of Chrome
 in the background), open a page, interact with DOM elements and assert on their
 presence and state. It starts by going through the app's main flow once so data
 is loaded from the API and `IndexedDB` is populated. It then disables the
-network `page.setOfflineMode(true)`, reloads the page (which is then served
+network (`page.setOfflineMode(true)`), reloads the page (which is then served
 from the service worker that was registered during first load) and asserts on
 the DOM correctly being generated from the data read from `IndexedDB`.
 
@@ -546,8 +556,8 @@ completes in
 This post and the
 [previous one](/blog/2018/07/03/building-a-pwa-with-glimmer-js.html) have given
 an overview of how to write an SPA (in this case with Glimmer.js) and then
-turning it into a PWA. With Breethe, we haven't stopped there though but
-employed server side rendering to combine the advantages of these with the
-advantages of classic server rendered websites. In the next post in this
-series, we will look into how we did that and discuss what the advantages are
-in more detail.
+turning that into a [Progressive Web App](http://breethe.app). With Breethe, we
+haven't stopped there though but employed server side rendering to combine the
+advantages of a PWA with those of classic server rendered websites. In the next
+post in this series, we will have a detailed look at what specifically those
+advantages are and how we were able to achieve them.
