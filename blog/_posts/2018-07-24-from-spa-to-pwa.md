@@ -326,4 +326,134 @@ is loaded from a remote API and thus would be unavailable when offline.
 
 ##### Offline Data
 
-TODO
+The web platform provides a number of APIs for storing data in the browser and
+thus making it available for offline use. The
+[WebStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
+defines `localStorage` and `sessionStorage` which can be used for storing
+key/value pairs. Cookies have been around for quite some time and cannot only
+be used for tracking users or keeping their sessions alive but also for storing
+simple data. When dealing with bigger, structured data sets though, the storage
+API of choice is generally
+[`IndexedDB`](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API).
+
+`IndexedDB` is a transactional database system, similar to SQL-based RDBMS:
+
+```js
+let openRequest = window.indexedDB.open('MyTestDatabase');
+openRequest.onsuccess = function(event) {
+  let db = event.target.result;
+  var transaction = db.transaction(['locations']);
+  var objectStore = transaction.objectStore('locations');
+  var request = objectStore.get('1');
+  request.onsuccess = function(event) {
+    let location = request.result
+    alert(`Loaded location ${location.name}`);
+  };
+};
+```
+
+`IndexedDB`'s API can be a bit cumbersome to use though which is why instead of
+interfacing with it directly, developers typically leverage libraries that
+abstract the internals of it behind a more convenient API. For Breethe, we used
+Orbit.js but there are other libraries like [PouchDB](https://pouchdb.com) or
+[localForage](https://localforage.github.io/localForage/).
+
+Orbit.js works based on a schema definition that defines the models, their
+attributes and relationships. In the case of Breethe which works with
+measurement locations and data points,
+[the schema](https://github.com/simplabs/breethe-client/blob/master/src/utils/data/schema.ts)
+looks like this:
+
+```typescript
+import { SchemaSettings } from '@orbit/data';
+import { ModelDefinition } from '@orbit/data';
+
+export const location: ModelDefinition = {
+  attributes: {
+    label: { type: 'string' },
+    coordinates: { type: 'string' }
+  },
+  relationships: {
+    measurements: { type: 'hasMany', model: 'measurement', inverse: 'location' }
+  }
+};
+
+export const measurement: ModelDefinition = {
+  attributes: {
+    parameter: { type: 'string' },
+    measuredAt: { type: 'string' },
+    unit: { type: 'string' },
+    value: { type: 'string' },
+    qualityIndex: { type: 'string' }
+  },
+  relationships: {
+    location: { type: 'hasOne', model: 'location', inverse: 'measurements' }
+  }
+};
+
+export const schema: SchemaSettings = {
+  models: {
+    location,
+    measurement
+  }
+};
+```
+
+The `location` model represents a measurement location that air quality data
+has been recorded for. Each location has a number of `measurements` that
+represent individual data points for particular parameters, e.g. 42.38 µg/m³
+for Ozone (O₃). With that schema, a store can be instantiated:
+
+```typescript
+import Store from '@orbit/store';
+
+const store = new Store({ schema });
+```
+
+Stores in Orbit.js are backed by sources. In the case of Breethe, we use a
+[json:api](http://jsonapi.org) source:
+
+```typescript
+import JSONAPISource from '@orbit/jsonapi';
+
+const remote = new JSONAPISource({
+  schema,
+  name: 'remote',
+  host: 'https://api.breethe.app'
+});
+```
+
+In order to be able to use the data loaded from the remote store when the app
+is offline, Breethe defines a second source that is backed by `IndexedDB` and
+that all data that enters the store via the remote source is synced into:
+
+```typescript
+import IndexedDBSource from '@orbit/indexeddb';
+
+const backup = new IndexedDBSource({
+  schema,
+  name: 'backup'
+});
+
+// when the store changes, sync the changes into the backup source
+store.on('transform', (transform) => {
+  backup.sync(transform);
+});
+```
+
+With this setup, all data that ever gets loaded by the app while the device is
+online, is available for later offline use where it will be read from
+`IndexedDB`. This mechanism works the other way round as well of course such
+that the app could buffer any modifications to data in the store in `IndexedDB`
+while offline and sync these changes back to the remote API once the device
+comes online again - refer to the
+[Orbit.js docs](http://orbitjs.com/v0.15/guide/) for more information about
+advanced mechanics like this.
+
+With the combination of service workers and `IndexedDB`, PWAs are fully
+independent of the network status and offer the same experience as native apps
+when the device is offline. Modern libraries like Orbit.js make it easy to
+manage data independent of the network condition and abstract most of the
+details behind convenient APIs.
+
+#### Testing
