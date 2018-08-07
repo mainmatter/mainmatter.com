@@ -457,3 +457,97 @@ manage data independent of the network condition and abstract most of the
 details behind convenient APIs.
 
 #### Testing
+
+Testing is an essential part of modern software engineering and we at simplabs
+(and I'm sure this is true for anyone reading this as well) would never ship
+code that is not fully tested - as we could not know whether it actually works
+or whether we subsequently break it. The first thing that comes to mind when
+thinking about tests is usually unit tests that test a small part of an app (a
+unit) in isolation. Depending on the framework of choice and its testing
+philosophy and tools, there might also be means of
+[higher level test](https://guides.emberjs.com/release/testing/testing-components/)
+that test larger subsets of an app (and we have
+[quite](https://github.com/simplabs/breethe-client/blob/master/src/ui/components/MeasurementRow/component-test.ts) [some](https://github.com/simplabs/breethe-client/blob/master/src/ui/components/SearchForm/component-test.ts)
+of these for Breethe).
+
+Testing PWAs, in particular their correct offline behavior, is slightly
+different though as it requires the correct interplay of various parts that
+cannot really be isolated - namely the app itself, the service worker, storage
+APIs like `IndexedDB` and the browser. A proper PWA test suite needs to take
+all of these parts into account and have a higher level perspective on the
+system under test than is possible in a unit test. A great tool for running
+tests like these is Google's puppeteer that allows running and controlling a
+headless instance of Chrome.
+
+Combining puppeteer with mocha allows for writing high level test cases that
+test a PWA in its entirety:
+
+```js
+describe('when offline', function() {
+  async function visit(route, callback) {
+    let browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+    let page = await browser.newPage();
+    await page.goto(route);
+
+    try {
+      await callback(page);
+    } finally {
+      await browser.close();
+    }
+  }
+
+  it('works offline', async function() {
+    await visit('/', async (page) => {
+      // go through the flow online first so we populate IndexedDB
+      await page.type('[data-test-search-input]', 'Salzburg');
+      await page.click('[data-test-search-submit]');
+      await page.waitForSelector('[data-test-search-result="Salzburg"]');
+      await page.click('[data-test-search-result="Salzburg"] a');
+      await page.waitForSelector('[data-test-measurement="PM10"] [data-test-measurement-value="15"]');
+      await page.click('[data-test-home-link]');
+      await page.waitForSelector('[data-test-search]');
+
+      await page.setOfflineMode(true);
+      await page.reload();
+
+      // click the recent location
+      await page.waitForSelector('[data-test-search-result="Salzburg"]');
+      await page.click('[data-test-search-result="Salzburg"] a');
+      // check the correct data is still present
+      let element = await page.waitForSelector('[data-test-measurement="PM10"] [data-test-measurement-value="15"]');
+      expect(page.url()).to.match(/\/location\/2$/);
+
+      expect(element).to.be.ok;
+    });
+  });
+});
+```
+
+This test uses
+[puppeteer's API](https://github.com/GoogleChrome/puppeteer/blob/v1.5.0/docs/api.md)
+to create a new browser object (which will start an actual instance of Chrome
+in the background), open a page, interact with DOM elements and assert on their
+presence and state. It starts by going through the app's main flow once so data
+is loaded from the API and `IndexedDB` is populated. It then disables the
+network `page.setOfflineMode(true)`, reloads the page (which is then served
+from the service worker that was registered during first load) and asserts on
+the DOM correctly being generated from the data read from `IndexedDB`.
+
+A testing setup like this makes it easy to achieve decent test coverage for
+PWAs, testing all of the parts involved - the app itself but also the service
+worker and storage APIs like `IndexedDB`. These test are even reasonably fast
+to execute -
+[Breethe's suite of puppeteer tests](https://github.com/simplabs/breethe-client/tree/master/integration-tests)
+completes in
+[around 1min](https://travis-ci.org/simplabs/breethe-client/jobs/403597086#L683).
+
+#### Outlook
+
+This post and the
+[previous one](/blog/2018/07/03/building-a-pwa-with-glimmer-js.html) have given
+an overview of how to write an SPA (in this case with Glimmer.js) and then
+turning it into a PWA. With Breethe, we haven't stopped there though but
+employed server side rendering to combine the advantages of these with the
+advantages of classic server rendered websites. In the next post in this
+series, we will look into how we did that and discuss what the advantages are
+in more detail.
