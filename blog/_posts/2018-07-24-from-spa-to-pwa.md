@@ -182,7 +182,7 @@ The main keys in the manifest are `name`, `icons`, `background_color`,
 * `display`: tells the browser how to display the app when started from the
   home screen; this should usually be `"standalone"`
 * `orientation`: the orientation to launch the app with if only one orientation
-  is supported or makes sense for the app
+  is supported
 
 Breethe, when installed to the user's home screen on iOS shows up like this:
 
@@ -230,7 +230,7 @@ Installing a service worker is as simple as running a little script:
 This calls the navigator's `serviceWorker` API's `register` method (if the
 browser supports that API), passing the name of the JavaScript file with the
 service worker code as an argument. The `register` method returns a promise
-that rejects if the service worker could not successfully be registered.
+that rejects if the service worker could not be registered successfully.
 
 Once the service worker is registered, it will start receiving various events
 during the
@@ -352,7 +352,7 @@ openRequest.onsuccess = function(event) {
   var transaction = db.transaction(['locations']);
   var objectStore = transaction.objectStore('locations');
   var request = objectStore.get('1');
-  request.onsuccess = function(event) {
+  request.onsuccess = function() {
     let location = request.result
     alert(`Loaded location ${location.name}`);
   };
@@ -414,6 +414,7 @@ for Ozone (O₃). With that schema, a store can be instantiated:
 
 ```typescript
 import Store from '@orbit/store';
+import schema from './schema';
 
 const store = new Store({ schema });
 ```
