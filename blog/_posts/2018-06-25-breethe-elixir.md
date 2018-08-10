@@ -1,26 +1,26 @@
 ---
 layout: article
 section: Blog
-title: "Elixir/Phoenix Breethe.app part 1: Data"
+title: "Elixir/Phoenix Breethe part 1: Data"
 author: "Niklas Long"
 github-handle: niklaslong
 ---
 
-Over the last couple of months, we have been building an Elixir umbrella app to serve as our back end for breethe.app, which provides instant access to up to date air quality data for locations across the world. In the next couple of posts, I will be going through the application's code with the aim of explaining some of the strategies we employed and decisions we made along the way.
+Over the last couple of months, we have been building an Elixir umbrella app to serve as our server for [Breethe](https://breethe.app), which provides instant access to up to date air quality data for locations across the world. In the next couple of posts, I will be going through the application's code with the aim of explaining some of the strategies we employed and decisions we made along the way.
 
 <!--break-->
 
-The breethe.app project is intirely open-source. Please take a look at the code for the [client](https://github.com/simplabs/breethe-client) and the [back end](https://github.com/simplabs/breethe-server), the latter being the focus of this series of posts. We've also written and will be writing on our blog about the client and the back end in future, so stay tuned!
+The Breethe project is intirely open-source. Please take a look at the code for the [client](https://github.com/simplabs/breethe-client) and the [server](https://github.com/simplabs/breethe-server), the latter being the focus of this series of posts. We've also written and will be writing on our blog about the client and the server in future, so stay tuned!
 
-Breethe.app is an air quality app. This means our back end interacts with with a number of external APIs to aggregate the data:
+Breethe is an air quality app. This means our server interacts with with a number of external APIs to aggregate the data:
 
 * [OpenAQ API](https://openaq.org/) - provides the airquality data
 * [Google's geocoding API](https://developers.google.com/maps/documentation/geocoding/intro) - helps us obtain precise and consistent location data
 
-As mentioned in passing above, the Elixir back end is actually an umbrella application. If you don't know what these are, they're basically a container for mix apps. Our umbrella contains:
+As mentioned in passing above, the Elixir server is actually an umbrella application. If you don't know what these are, they're basically a container for mix apps. Our umbrella contains:
 
-* a mix application named `breethe` which handles our _data_
-* a Phoenix application (named `breethe_web`) which is the _webserver_
+* a mix application, named `breethe`, which handles our _data_
+* a Phoenix application, named `breethe_web`, which is the _webserver_
 
 Both of these apps live inside the `apps` directory of our project. Below are the trees for each of their `lib` directories - don't worry about the details for now, we'll be taking a pretty close look at both of them.
 
@@ -74,9 +74,12 @@ lib
 └── breethe_web.ex
 ```
 
-In this first post we'll take a look at the _data_ application, namely the `data` and `sources` directory. Future posts will cover the Phoenix _webserver_ application, testing and other aspects of the umbrella app.
+This umbrella structure is useful to seperate our application's concerns. Each application is contained within it's own mix project, meaning the _data_ is mostly decoupled from the _webserver_. As well as providing structure, this decoupling makes it easy to change the _data_ application without affecting the _webserver_ if, for example, we decide to use another external API for the airquality data instead of OpenAQ. This is because the _webserver_ interfaces with the _data_ app through it's `Breethe` module **only**. Conversely, we could also change the _webserver_ without affecting the _data_ app if need be.
 
-The `data` directory contains our models, which we will take a look at first. The `sources` directory contains code to coordinate the interaction of our application with the external APIs mentioned above.
+
+The `Breethe` module as well as the optimisations we implemented for the _data_ app using `Task` will be the subject of a later post. We will also cover the Phoenix webserver application, testing and other aspects of the umbrella app in future.
+
+In this first post we'll take a look at the _data_ application, namely the `data` and `sources` directory. The `data` directory contains our models, which we will take a look at first. The `sources` directory contains code to coordinate the interaction of our application with the external APIs mentioned above.
 
 Let's dive in!
 
@@ -94,42 +97,11 @@ Our app has two data models:
 - Locations
 - Measurements
 
-We are using [Ecto](https://github.com/elixir-ecto/ecto) as our DB wrapper. Below are the two schemas. I left out module aliases and module names for brevity but the full code for the models can be found [here](https://github.com/simplabs/breethe-server/tree/master/apps/breethe/lib/breethe/data).
+and Locations _has many_ Measurements.
 
-```elixir
-# location.ex
+[Ecto](https://github.com/elixir-ecto/ecto) is our DB wrapper of choice and the full code for the models can be found [here](https://github.com/simplabs/breethe-server/tree/master/apps/breethe/lib/breethe/data).
 
-schema "locations" do
-  has_many(:measurements, Measurement)
-
-  field(:identifier, :string)
-  field(:label, :string)
-  field(:city, :string)
-  field(:country, :string)
-  field(:last_updated, :utc_datetime)
-  field(:available_parameters, {:array, ParameterEnum})
-  field(:coordinates, Geo.Geometry)
-
-  timestamps()
-end
-```
-
-```elixir
-# measurement.ex
-
-schema "measurements" do
-  belongs_to(:location, Location)
-
-  field(:parameter, ParameterEnum)
-  field(:measured_at, :utc_datetime)
-  field(:value, :float)
-  field(:unit, UnitEnum)
-
-  timestamps()
-end
-```
-
-Most of this code is pretty straight-forward. One thing to note, is that we are using the [Geo](https://github.com/bryanjos/geo) library and the [GeoPostgis](https://github.com/bryanjos/geo_postgis) postgrex extension which allows us to store and interact with the geographic data we have for our `locations`. This is used on the `coordinates` field above:
+One thing to note, is that we are using the [Geo](https://github.com/bryanjos/geo) library and the [GeoPostgis](https://github.com/bryanjos/geo_postgis) postgrex extension which allows us to store and interact with the geographic data we have for our `locations`. This is used on the `coordinates` field:
 
 ```elixir
 field(:coordinates, Geo.Geometry)
@@ -157,22 +129,18 @@ field(:unit, UnitEnum)
 
 The `parameter` field will store the pollutant measured. It can be one of 7 types, defined by the `ParameterEnum` above:
 
-
 - `:pm10` - coarse particles with a diameter between 2.5 and 10 μm (micrometers)
 - `:pm25` - fine particles with a diameter of 2.5 μm or less
-- `:so2` - _sulfure dioxide_, a major air pollutant that has a significant effect on human health
-- `:no2` - _nitrogen dioxide_, gets in the air from burning fuel (car, trucks, power-plants, etc...)
-- `:o3` - _ozone_, good in the stratosphere, bad at ground level
-- `:co` - _carbon monoxide_, created when burning fossil fuels
-- `:bc` - _black carbon_, a component of fine particulate matter - causes human morbidity and premature mortality
+- `:so2` - _sulfure dioxide_
+- `:no2` - _nitrogen dioxide_
+- `:o3` - _ozone_
+- `:co` - _carbon monoxide_
+- `:bc` - _black carbon_
 
 The `unit` field will store the unit of the measurement. It is defined by the `UnitEnum` above and can be one of two types:
 
 - `:micro_grams_m3` - micrograms per cubic meter (µg/m³)
-- `:ppm` - parts per million (ppm) (needs to be removed as it is unused troughout the app)
-
-All of the data our app will handle will be in µg/m³ as we convert the measurements we _can_ to use µg/m³. We can't do the ppm - µg/m³ conversion for `:pm10`, `:pm25` and `:bc`, but the values should already be in µg/m³.
-
+- `:ppm` - parts per million (ppm)
 
 #### Data sources
 
@@ -199,7 +167,7 @@ The `open_aq` directory contains two files:
 
 We won't go into the specifics of these files here, but feel free to [peruse the code](https://github.com/simplabs/breethe-server/tree/master/apps/breethe/lib/breethe/sources) at your leisure!
 
-You'll notice there is another file named `open_aq.ex` in the root of our `sources` folder. It contains functions that will orchestrate the querying of the data from the two aforementioned sources based on input. Let's take a look at these in greater detail, starting with the function heads and working our way inwards:
+You'll notice there is another file named `open_aq.ex` in the root of our `sources` folder. It contains functions that will orchestrate the querying of the data from the two aforementioned sources based on input:
 
 ```elixir
 # open_aq.ex
@@ -217,74 +185,11 @@ def get_latest_measurements(location_id) do
 end
 ```
 
-Firstly, let me give you a little context concerning the function parameters. We want to be able to search `locations` both by `search_term` (e.g.: `"Münich"`) or `lat, lon` (e.g.: `51.1789,-1.8261`).
-
-Searching by `search_term` will be a manual search by the user by using the search field on the client. Searching by `lat,lon` will be useful when using the user's device location to carry out the search.
+There are two clauses of the `get_locations` function; the first accepts a `search_term` (e.g.: `"München"`) and the second, geographical coordinates, `lat, lon` (e.g.: `51.1789,-1.8261`). Searching by `search_term` will be a manual search by the user by using the search field on the client. Searching by `lat,lon` will be useful when using the user's device location to carry out the search.
 
 Lastly, when searching for a location's `measurements`, the location will already be known and we simply pass in the `location_id` to initiate the search.
 
-So with that in mind, let's flesh these out starting with `get_locations/1`:
-
-``` elixir
-# open_aq.ex
-
-def get_locations(search_term) do
-    case Google.Geocoding.find_location(search_term) do
-      [lat, lon] -> get_locations(lat, lon)
-      [] -> []
-    end
-  end
-```
-
-The [OpenAQ API](https://openaq.org/) will always need to be queried using `lat,lon` for `locations`. Therefore, the first step is converting the `search_term` into accurate `lat,lon` data we can use. We'll use the [Google geocoding API](https://developers.google.com/maps/documentation/geocoding/intro) to do this by calling `Google.Geocoding.find_location(search_term)`.
-
-We then call the second clause, `get_locations/2`, passing it the previously returned `lat,lon` as arguments.
-
-```elixir
-# open_aq.ex
-
-def get_locations(lat, lon) do
-  locations = OpenAQ.Locations.get_locations(lat, lon)
-
-  locations
-    |> Enum.reject(fn location -> location.label end)
-    |> Enum.map(fn location ->
-      {location_lat, location_lon} = location.coordinates.coordinates
-
-      {:ok, _pid} =
-        Task.Supervisor.start_child(TaskSupervisor, fn ->
-          address = Google.Geocoding.find_location(location_lat, location_lon)
-
-          Data.update_location_label(location, address)
-        end)
-    end)
-
-    locations
-  end
-end
-```
-
-This function is going to take care of querying the [OpenAQ API](https://openaq.org/) for locations. This is what `OpenAQ.Locations.get_locations(lat, lon)` is doing. The `lat,lon` will be provided either by `get_locations/1` or by the user's device location.
-
-The [OpenAQ API](https://openaq.org/) aggregates location and measurement data from different sources and doesn't always produce a user-friendly identifier (e.g, an address) for locations. This is where the pipe chain comes in. `Enum.reject` returns the locations for which `location.label` evaluates to a _falsy_ value. These are then passed to `Enum.map`, which queries [Google's geocoding API](https://developers.google.com/maps/documentation/geocoding/intro) with each location's coordinates: `Google.Geocoding.find_location(location_lat, location_lon)`. The API then returns a more user-friendly address that we store using `Data.update_location_label(location, address)`.
-
-This is all executed asynchronously in a `Task`, which we will explain in more detail in a future post about the performance optimisations we implemented in the application.
-
-Lastly, as an Elixir function returns the last evaluated expression, we call `locations` at the bottom of the function to return the locations stored in the `locations` variable.
-
-The last function I mentioned above is `get_latest_measurements/1`:
-
-```elixir
-# open_aq.ex
-
-def get_latest_measurements(location_id) do
-  OpenAQ.Measurements.get_latest(location_id)
-end
-```
-
-This simply queries the API and returns the measurements for a particular location using the `location_id`.
-
-As mentioned earlier in this section, these three functions in the `OpenAQ` module are very important as they are the functions through which we interact with our APIs. These functions get called at the top level of our data  application (`breethe.ex`) and each call functions defined in the modules contained in the `google` or `open_aq` directories.
+These three functions in the `OpenAQ` module get called at the top level of our data application (`breethe.ex`). They are the interface through which the rest of our _data_ application interacts with the external APIs.
 
 #### Data context and composable queries
 
@@ -370,7 +275,7 @@ You'll notice the functions take in `query` as a parameter. As stated in the [do
 
 In our `preload_measurements/1` example, `Measurement` will be passed to `last_24/1`. This works because the `Measurement` module implements `Ecto.Queryable` protocol. The query resulting from that first invocation will be passed on as an argument to the next function in the chain, which returns another query, which is passed to the next function and so on...
 
-Using queries has greatly improved our code clarity, composability and maintainability. There is less code duplication throughout our code base and actually makes writing this kind of code much faster. Also, who doesn't like a good-looking pipe chain?
+Using queries has greatly improved our code clarity, composability and maintainability. There is less code duplication throughout our code base and reusing the queries actually makes writing this kind of code much faster. Also, who doesn't like a good-looking pipe chain?
 
 #### closing remarks
 
