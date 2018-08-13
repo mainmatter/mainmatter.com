@@ -607,8 +607,17 @@ pre.highlight {
 }
 
 .jobs {
-  li {
-    margin-top: 1rem;
+  .job-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-in, margin-top 0.5s ease-in, opacity 0.5s ease-in;
+
+    &.open {
+      opacity: 1;
+      margin-top: 40px;
+      transition: max-height 0.5s ease-out, margin-top 0.5s ease-out, opacity 0.5s ease-out;
+    }
   }
 }
 
