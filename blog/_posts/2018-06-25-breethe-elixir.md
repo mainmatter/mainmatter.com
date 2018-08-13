@@ -1,26 +1,26 @@
 ---
 layout: article
 section: Blog
-title: "Elixir/Phoenix Breethe part 1: Data"
+title: "Building an Elixir and Phoenix Umbrella API App | part 1"
 author: "Niklas Long"
 github-handle: niklaslong
 ---
 
-Over the last couple of months, we have been building an Elixir umbrella app to serve as the server for [Breethe](https://breethe.app), which provides instant access to up to date air quality data for locations across the world. In the next couple of posts, I will be going through the application's code with the aim of explaining some of the strategies we employed and decisions we made along the way.
+Over the last couple of months, we have been building an Elixir umbrella app to serve as the server for [Breethe](https://breethe.app), which provides instant access to up to date air quality data for locations across the world. In this series of posts, I will be going through the application's code with the aim of explaining some of the strategies we employed and decisions we made along the way.
 
 <!--break-->
 
-The Breethe project is intirely open-source. Please take a look at the code for the [client](https://github.com/simplabs/breethe-client) and the [server](https://github.com/simplabs/breethe-server), the latter being the focus of this series of posts. We've also written and will be writing on our blog about the client and the server in future, so stay tuned!
+The Breethe project is entirely open-source. Please take a look at the code for the [client](https://github.com/simplabs/breethe-client) and the [server](https://github.com/simplabs/breethe-server), the latter being the focus of this series of posts. We've also written and will be writing on our blog about the client and the server in future, so stay tuned!
 
 Breethe is an air quality app. This means the server interacts with with a number of external APIs to aggregate the data:
 
-* [OpenAQ API](https://openaq.org/) - provides the airquality data
+* [OpenAQ API](https://openaq.org/) - provides the air quality data
 * [Google's geocoding API](https://developers.google.com/maps/documentation/geocoding/intro) - helps us obtain precise and consistent location data
 
 As mentioned in passing above, the Elixir server is actually an umbrella application. If you don't know what these are, they're basically a container for mix apps. The umbrella contains:
 
-* a mix application, named `breethe`, which handles the _data_
-* a Phoenix application, named `breethe_web`, which is the _webserver_
+* a mix app, named `breethe`, which handles the _data_
+* a Phoenix app, named `breethe_web`, which is the _webserver_
 
 Both of these apps live inside the `apps` directory of the project. Below are the trees for each of their `lib` directories - don't worry about the details for now, we'll be taking a pretty close look at both of them.
 
@@ -74,12 +74,12 @@ lib
 └── breethe_web.ex
 ```
 
-This umbrella structure is useful to seperate the application's concerns. Each application is contained within it's own mix project, meaning the _data_ is mostly decoupled from the _webserver_. As well as providing structure, this decoupling makes it easy to change the _data_ application without affecting the _webserver_ if, for example, we decide to use another external API for the airquality data instead of [OpenAQ](https://openaq.org/). This is because the _webserver_ interfaces with the _data_ app through it's `Breethe` module **only**. Conversely, we could also change the _webserver_ without affecting the _data_ app if need be.
+This umbrella structure is useful to separate the application's concerns. Each app is contained within it's own mix project, meaning the _data_ app is mostly decoupled from the _webserver_. As well as providing structure, this decoupling makes it easy to change the _data_ app without affecting the _webserver_ if, for example, we decided to use another external API for the air quality data instead of [OpenAQ](https://openaq.org/). This is because the _webserver_ interfaces with the _data_ app through it's `Breethe` module **only**. Conversely, we could also change the _webserver_ without affecting the _data_ app if need be.
 
 
-The `Breethe` module as well as the optimisations we implemented for the _data_ app using `Task` will be the subject of a later post. We will also cover the Phoenix webserver application, testing and other aspects of the umbrella app in future.
+The `Breethe` module as well as the optimisations we implemented for the _data_ app using `Task` will be the subject of a later post. We will also cover the Phoenix _webserver_, testing and other aspects of the umbrella application in future.
 
-In this first post we'll take a look at the _data_ application, namely the `data` and `sources` directory. The `data` directory contains the models, which we will take a look at first. The `sources` directory contains code to coordinate the interaction of the application with the external APIs mentioned above.
+In this first post we'll take a look at the _data_ app, namely the `data` and `sources` directory. The `data` directory contains the models, which we will take a look at first. The `sources` directory contains code to coordinate the interaction of the app with the external APIs mentioned above.
 
 Let's dive in!
 
@@ -135,7 +135,7 @@ The `parameter` field will store the pollutant measured. It can be one of 7 type
 
 - `:pm10` - coarse particles with a diameter between 2.5 and 10 μm (micrometers)
 - `:pm25` - fine particles with a diameter of 2.5 μm or less
-- `:so2` - sulfure dioxide
+- `:so2` - sulfur dioxide
 - `:no2` - nitrogen dioxide
 - `:o3` - ozone
 - `:co` - carbon monoxide
@@ -162,16 +162,16 @@ sources
 
 Let's clarify this tree a little:
 
-The `google` directory contains a single file called `geocoding.ex`. That module uses [Google's geocoding API](https://developers.google.com/maps/documentation/geocoding/intro) to translate location adresses inputed by the user into precise coordinates. These coordinates can then be used to query [OpenAQ](https://openaq.org/) for the airquality data.
+The `google` directory contains a single module named `Geocoding`. That module uses [Google's geocoding API](https://developers.google.com/maps/documentation/geocoding/intro) to translate location addresses inputed by the user into precise coordinates. These coordinates can then be used to query [OpenAQ](https://openaq.org/) for the air quality data.
 
-The `open_aq` directory contains two files:
+The `open_aq` directory contains two modules:
 
-- `locations.ex`: contains code to query [OpenAQ](https://openaq.org/) for location data
-- `measurements.ex`: contains code to query [OpenAQ](https://openaq.org/) for measurement data based on location
+- `Locations`: queries [OpenAQ](https://openaq.org/) for location data
+- `Measurements`: queries [OpenAQ](https://openaq.org/) for measurement data based on location
 
 We won't go into their specifics here, but feel free to [peruse the code](https://github.com/simplabs/breethe-server/tree/master/apps/breethe/lib/breethe/sources) at your leisure!
 
-You'll notice there is another file named `open_aq.ex` in the root of the `sources` folder. It contains functions that will orchestrate the querying of the data from [OpenAQ](https://openaq.org/) and [Google's geocoding API](https://developers.google.com/maps/documentation/geocoding/intro) based on input:
+You'll notice there is another module named `OpenAQ` in the root of the `sources` folder. It orchestrates the querying of the data from [OpenAQ](https://openaq.org/) and [Google's geocoding API](https://developers.google.com/maps/documentation/geocoding/intro) based on input:
 
 ```elixir
 # open_aq.ex
@@ -193,7 +193,7 @@ There are two clauses of the `get_locations` function; the first accepts a `sear
 
 Lastly, when searching for a location's `measurements`, the location is already known and we simply pass in the `location_id` to initiate the search.
 
-These three functions in the `OpenAQ` module get called at the top level of the _data_ application (`breethe.ex`). They are the interface through which the rest of the _data_ application interacts with the external APIs.
+These three functions in the `OpenAQ` module get called at the top level of the _data_ app(`breethe.ex`). They are the interface through which the rest of the _data_ app interacts with the external APIs.
 
 #### Data context and composable queries
 
@@ -212,7 +212,7 @@ We've had a look at `location.ex` and `measurement.ex` but not `data.ex`. The `D
 
 The question is this: where should we put the code to interface with the DB layer?
 
-Initially we started by having that code spread out in the data application: we wrote private functions directly where we needed them, in the `sources` directory for example (_keeping it simple and stupid_). This quickly became impractical as the application grew. Keeping track of _where_ the code was accessing _what_ was becoming complicated. Grouping all this functionality in a module was our next approach. A context in Phoenix 1.3 is a dedicated module to groupe related functionality together, which seemed perfect to solve this problem.
+Initially we started by having that code spread out in the _data_ app: we wrote private functions directly where we needed them, in the `sources` directory for example (_keeping it simple and stupid_). This quickly became impractical as the application grew. Keeping track of _where_ the code was accessing _what_ was becoming complicated. Grouping all this functionality in a module was our next approach. A context in Phoenix 1.3 is a dedicated module to bundle related functions together, which seemed perfect to solve this problem.
 
 The `Data` module is the context. It groups all functionality related to interfacing with the DB layer in a single module. We'll take a look at a few examples, but please explore the [full code for this module](https://github.com/simplabs/breethe-server/blob/master/apps/breethe/lib/breethe/data/data.ex) as well.
 
@@ -283,4 +283,4 @@ Using queries has greatly improved our code clarity, composability and maintaina
 
 #### closing remarks
 
-I hope this first post has given you a good overview of how the umbrella is structured as well as clarified some finer implementation points for the _data_ application. See you in part 2!
+I hope this first post has given you a good overview of how the umbrella is structured as well as clarified some finer implementation points for the _data_ app. See you in part 2!
