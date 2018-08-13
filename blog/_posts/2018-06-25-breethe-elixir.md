@@ -6,20 +6,20 @@ author: "Niklas Long"
 github-handle: niklaslong
 ---
 
-Over the last couple of months, we have been building an Elixir umbrella app to serve as our server for [Breethe](https://breethe.app), which provides instant access to up to date air quality data for locations across the world. In the next couple of posts, I will be going through the application's code with the aim of explaining some of the strategies we employed and decisions we made along the way.
+Over the last couple of months, we have been building an Elixir umbrella app to serve as the server for [Breethe](https://breethe.app), which provides instant access to up to date air quality data for locations across the world. In the next couple of posts, I will be going through the application's code with the aim of explaining some of the strategies we employed and decisions we made along the way.
 
 <!--break-->
 
 The Breethe project is intirely open-source. Please take a look at the code for the [client](https://github.com/simplabs/breethe-client) and the [server](https://github.com/simplabs/breethe-server), the latter being the focus of this series of posts. We've also written and will be writing on our blog about the client and the server in future, so stay tuned!
 
-Breethe is an air quality app. This means our server interacts with with a number of external APIs to aggregate the data:
+Breethe is an air quality app. This means the server interacts with with a number of external APIs to aggregate the data:
 
 * [OpenAQ API](https://openaq.org/) - provides the airquality data
 * [Google's geocoding API](https://developers.google.com/maps/documentation/geocoding/intro) - helps us obtain precise and consistent location data
 
 As mentioned in passing above, the Elixir server is actually an umbrella application. If you don't know what these are, they're basically a container for mix apps. Our umbrella contains:
 
-* a mix application, named `breethe`, which handles our _data_
+* a mix application, named `breethe`, which handles the _data_
 * a Phoenix application, named `breethe_web`, which is the _webserver_
 
 Both of these apps live inside the `apps` directory of our project. Below are the trees for each of their `lib` directories - don't worry about the details for now, we'll be taking a pretty close look at both of them.
@@ -104,10 +104,12 @@ and Locations _has many_ Measurements.
 One thing to note, is that we are using the [Geo](https://github.com/bryanjos/geo) library and the [GeoPostgis](https://github.com/bryanjos/geo_postgis) postgrex extension which allows us to store and interact with the geographic data we have for our `locations`. This is used on the `coordinates` field:
 
 ```elixir
+# location.ex
+
 field(:coordinates, Geo.Geometry)
 ```
 
-Our application will interact with a few external APIs and we need to make sure the data that we accept and store remains consistent. One strategy we are using to enforce this is the use of [EctoEnum](https://github.com/gjaldon/ecto_enum). This allows us to define custom Enum types, thus restricting the possible values our data can take on certain fields of our models:
+Our application will interact with a few external APIs and we need to make sure the data we accept and store remains consistent. One tool we are using to enforce this is [EctoEnum](https://github.com/gjaldon/ecto_enum). This allows us to define custom Enum types, thus restricting the possible values the data can take on certain fields of the models:
 
 ```elixir
 # ecto_enums.ex
@@ -123,6 +125,8 @@ If we try to pass a value the custom type doesn't define, an error will be raise
 These custom types are used for our `measurements`:
 
 ```elixir
+# measurement.ex
+
 field(:parameter, ParameterEnum)
 field(:unit, UnitEnum)
 ```
@@ -131,11 +135,11 @@ The `parameter` field will store the pollutant measured. It can be one of 7 type
 
 - `:pm10` - coarse particles with a diameter between 2.5 and 10 μm (micrometers)
 - `:pm25` - fine particles with a diameter of 2.5 μm or less
-- `:so2` - _sulfure dioxide_
-- `:no2` - _nitrogen dioxide_
-- `:o3` - _ozone_
-- `:co` - _carbon monoxide_
-- `:bc` - _black carbon_
+- `:so2` - sulfure dioxide
+- `:no2` - nitrogen dioxide
+- `:o3` - ozone
+- `:co` - carbon monoxide
+- `:bc` - black carbon
 
 The `unit` field will store the unit of the measurement. It is defined by the `UnitEnum` above and can be one of two types:
 
@@ -144,7 +148,7 @@ The `unit` field will store the unit of the measurement. It is defined by the `U
 
 #### Data sources
 
-Our data sources live and breathe in the aptly named `sources` folder:
+The data sources live and breathe in the aptly named `sources` folder:
 
 ```
 sources
@@ -158,14 +162,14 @@ sources
 
 Let's clarify this tree a little:
 
-The `google` directory contains a single file called `geocoding.ex`. In that file we have written code which will request data from [Google's geocoding API](https://developers.google.com/maps/documentation/geocoding/intro) and allows us to convert between coordinates and addresses. This is how we get accurate locations which we then use to query the [OpenAQ API](https://openaq.org/).
+The `google` directory contains a single file called `geocoding.ex`. That module uses [Google's geocoding API](https://developers.google.com/maps/documentation/geocoding/intro) to translate location adresses inputed by the user into precise coordinates. These coordinates can then be used to query the [OpenAQ API](https://openaq.org/) for the airquality data.
 
 The `open_aq` directory contains two files:
 
 - `locations.ex`: contains code to query the [OpenAQ API](https://openaq.org/) for location data
 - `measurements.ex`: contains code to query [OpenAQ API](https://openaq.org/) for measurement data based on location
 
-We won't go into the specifics of these files here, but feel free to [peruse the code](https://github.com/simplabs/breethe-server/tree/master/apps/breethe/lib/breethe/sources) at your leisure!
+We won't go into their specifics here, but feel free to [peruse the code](https://github.com/simplabs/breethe-server/tree/master/apps/breethe/lib/breethe/sources) at your leisure!
 
 You'll notice there is another file named `open_aq.ex` in the root of our `sources` folder. It contains functions that will orchestrate the querying of the data from the two aforementioned sources based on input:
 
@@ -187,9 +191,9 @@ end
 
 There are two clauses of the `get_locations` function; the first accepts a `search_term` (e.g.: `"München"`) and the second, geographical coordinates, `lat, lon` (e.g.: `51.1789,-1.8261`). Searching by `search_term` will be a manual search by the user by using the search field on the client. Searching by `lat,lon` will be useful when using the user's device location to carry out the search.
 
-Lastly, when searching for a location's `measurements`, the location will already be known and we simply pass in the `location_id` to initiate the search.
+Lastly, when searching for a location's `measurements`, the location is already known and we simply pass in the `location_id` to initiate the search.
 
-These three functions in the `OpenAQ` module get called at the top level of our data application (`breethe.ex`). They are the interface through which the rest of our _data_ application interacts with the external APIs.
+These three functions in the `OpenAQ` module get called at the top level of our _data_ application (`breethe.ex`). They are the interface through which the rest of our _data_ application interacts with the external APIs.
 
 #### Data context and composable queries
 
