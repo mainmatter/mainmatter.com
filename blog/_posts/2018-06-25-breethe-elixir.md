@@ -74,7 +74,7 @@ lib
 └── breethe_web.ex
 ```
 
-This umbrella structure is useful to separate the application's concerns. Each app is contained within it's own mix project, meaning the _data_ app is mostly decoupled from the _webserver_. As well as providing structure, this decoupling makes it easy to change the _data_ app without affecting the _webserver_ if, for example, we decided to use another external API for the air quality data instead of [OpenAQ](https://openaq.org/). This is because the _webserver_ interfaces with the _data_ app through it's `Breethe` module **only**. Conversely, we could also change the _webserver_ without affecting the _data_ app if need be.
+This umbrella structure is useful to separate the application's concerns. Each app is contained within it's own mix project, meaning the _data_ app is mostly decoupled from the _webserver_. As well as providing structure, this decoupling makes it easy to change the _data_ app without affecting the _webserver_ if, for example, we decided to use another external API for the air quality data instead of [OpenAQ](https://openaq.org/). This is because the _webserver_ accesses the _data_ app through it's _public API_, the `Breethe` module (`breethe.ex`), **only**. Conversely, we could also change the _webserver_ without affecting the _data_ app if need be.
 
 
 The `Breethe` module as well as the optimisations we implemented for the _data_ app using `Task` will be the subject of a later post. We will also cover the Phoenix _webserver_, testing and other aspects of the umbrella application in future.
@@ -193,7 +193,7 @@ There are two clauses of the `get_locations` function; the first accepts a `sear
 
 Lastly, when searching for a location's `measurements`, the location is already known and we simply pass in the `location_id` to initiate the search.
 
-These three functions in the `OpenAQ` module get called at the top level of the _data_ app(`breethe.ex`). They are the interface through which the rest of the _data_ app interacts with the external APIs.
+These three functions in the `OpenAQ` module get called at the top level of the _data_ app, in the `Breethe` module. They are the interface through which the rest of the _data_ app interacts with the external APIs.
 
 #### Data context and composable queries
 
@@ -246,7 +246,7 @@ Let's start with `get_location/1`. This function is used throughout the app to r
 
 You may have noticed `preload_measurements/1` is defined as a private function, which only makes it available to other functions within the `Data` module. This is to keep the interface to the DB layer as small as possible. In this way, the _preloading_ of the `measurements` is coupled to a function dealing with `locations` directly and is therefore only done when necessary.
 
-Now the next issue is with filtering the returned results from the DB. Being an air quality app, we only want to return up-to-date data. To achieve this in a pretty clean way, we wrote composable queries using [Ecto's Query DSL](https://hexdocs.pm/ecto/Ecto.Query.html).
+The next issue is with filtering the returned results from the DB. Being an air quality app, we only want to return up-to-date data. To achieve this in a pretty clean way, we wrote composable queries using [Ecto's Query DSL](https://hexdocs.pm/ecto/Ecto.Query.html).
 
 The idea is to encapsulate a query expression in a function defined on the schema's module and then compose them using a pipe chain. For example, `preload_measurements/1` uses one such pipe chain:
 
@@ -281,6 +281,6 @@ In our `preload_measurements/1` example, `Measurement` will be passed to `last_2
 
 Using queries has greatly improved our code clarity, composability and maintainability. There is less code duplication throughout our code base and reusing the queries actually makes writing this kind of code much faster. Also, who doesn't like a good-looking pipe chain?
 
-#### closing remarks
+#### Closing remarks
 
-I hope this first post has given you a good overview of how the umbrella is structured as well as clarified some finer implementation points for the _data_ app. See you in part 2!
+I hope this first post has given you a good overview of how the umbrella is structured as well as clarified some finer implementation points for the _data_ app. See you in part 2 for a more in depth discussion of the _data_ app's _public api_, the `Breethe` module. Spoiler alert, things go async...
