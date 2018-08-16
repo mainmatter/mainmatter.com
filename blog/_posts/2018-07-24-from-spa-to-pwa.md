@@ -207,7 +207,7 @@ released as early as 2007 as a proprietary extension for Chrome and allowed
 offline usage of e.g. Gmail. Gears never really took off in the broader
 ecosystem though and was discontinued in 2010.
 
-Many of the orignal ideas behind Gears found their way into the HTML5 spec
+Many of the original ideas behind Gears found their way into the HTML5 spec
 though, in particular the idea of Gear's `LocalServer` module that allowed
 running a local server inside of the browser. That server would be able to
 handle any requests made by the browser instead of actually sending the request
