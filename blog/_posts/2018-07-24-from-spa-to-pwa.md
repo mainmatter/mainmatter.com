@@ -85,7 +85,9 @@ evolving web platform and capabilities of modern browsers, this is no longer
 the case though and **web apps are now capable of offering equal if not better
 user experiences compared to native apps**. Combined with almost instantaneous
 load times and superior discoverability, Progressive Web Apps are clearly the
-better choice than native apps in a large number of scenarios now.
+better choice than native apps in a large number of scenarios now –
+[Appscope](https://appsco.pe) is a great resource for discovering PWAs of all
+kinds.
 
 This has only been the case relatively recently though. While Chrome and
 Firefox supported Service Workers (which are the main building block for PWAs)
