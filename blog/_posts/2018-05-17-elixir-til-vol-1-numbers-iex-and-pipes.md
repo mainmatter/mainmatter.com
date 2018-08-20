@@ -91,7 +91,7 @@ iex(3)> :math.pi()
 
 #### To float and back again
 
-If you've carefully read the Elixir docs, you'll have realized by now there's explicite `Integer.to_float` or `Float.to_integer` functions. Well, as always, Elixir has got you covered:
+If you've carefully read the Elixir docs, you'll have realized by now there's explicit `Integer.to_float` or `Float.to_integer` functions. Well, as always, Elixir has got you covered:
 
 ```elixir
 iex(1)> 3 / 1
@@ -127,7 +127,7 @@ You can find the documentation for `v/1` and many other useful functions in the 
 #### r/1 with the rythm
 
 Let's say you've started IEx with a Mix project using `iex -S mix` and you've just aliased loads of module names, set loads of variables but something isn't quite working.
-You double check your code and sure enough, you've mispelled the `params` variable with `prams`. You promptly fix it, but hate the prospect of starting all over again with the aliasing and the variabling in a fresh IEx shell.
+You double check your code and sure enough, you've misspelled the `params` variable with `prams`. You promptly fix it, but hate the prospect of starting all over again with the aliasing and the variabling in a fresh IEx shell.
 `r/1` to the rescue! `r(module)` recompiles and reloads the given `module`, so you can resume your debugging activities forthwith.
 
 ```
@@ -255,7 +255,7 @@ iex(4)> 23 |> Kernel.+(2)
   4
   ```
 
-  And finally, let's replace the reference to our lambda with the actual lamdba:
+  And finally, let's replace the reference to our lambda with the actual lambda:
 
   ```elixir
   iex(6)> 2 |> (fn x -> x + 2 end).()
@@ -263,7 +263,7 @@ iex(4)> 23 |> Kernel.+(2)
   ```
 
 #### Pry me a river
-Sometimes you need to quickly inspect the data being passed through a pipechain. Often `IO.inspect` will do the trick:
+Sometimes you need to quickly inspect the data being passed through a pipe-chain. Often `IO.inspect` will do the trick:
 
 ```elixir
 |> ...
@@ -271,7 +271,7 @@ Sometimes you need to quickly inspect the data being passed through a pipechain.
 |> ...
 ```
 
-However, if you want to interact with the data you could write a one-arity lamdba and chuck it into your pipe when needed:
+However, if you want to interact with the data you could write a one-arity lambda and chuck it into your pipe when needed:
 
 ```elixir
 |> ...
@@ -287,7 +287,7 @@ In the _piping to an anonymous function_ example, I mentioned in passing that th
   &(&1 + 2)
 ```
 
-The capture `&` operator can be used to create a lambda definition without explicitely naming the function arguments. In this case, `&1` serves as a placeholder for the first argument (`x` in the _classic_ lambda definition).
+The capture `&` operator can be used to create a lambda definition without explicitly naming the function arguments. In this case, `&1` serves as a placeholder for the first argument (`x` in the _classic_ lambda definition).
 The example above creates a one-arity lambda, but we could also create a two arity lambda:
 
 ```elixir
@@ -300,4 +300,4 @@ Which would be equivalent to:
 fn x, y -> x + y end
 ```
 
-The lambda's arguments are defined by `&n` with `n` being the _nth_ argument of the function (you can therefore create lamdas with _n_-arity).
+The lambda's arguments are defined by `&n` with `n` being the _nth_ argument of the function (you can therefore create lambdas with _n_-arity).
