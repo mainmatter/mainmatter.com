@@ -520,7 +520,7 @@ describe('when offline', function() {
       await page.click('[data-test-home-link]');
       await page.waitForSelector('[data-test-search]');
 
-      await page.setOfflineMode(true);
+      await page.setOfflineMode(true); // simulate the browser being offline
       await page.reload();
 
       // click the recent location
