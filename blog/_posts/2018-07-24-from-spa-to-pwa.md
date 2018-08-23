@@ -8,11 +8,11 @@ twitter-handle: marcoow
 ---
 
 Progressive Web Apps are the next level of browser based applications. While
-Single Page Apps (SPAs) already meant a giant leap forward, PWAs are taking
-things even one step further. They offer a rich user experience that parallels
-what users know and expect from native apps and combine that with the benefits
-that browser based applications provide. In this post, we'll look at how to
-turn a Single Page App into a Progressive Web App.
+Single Page Apps (SPAs) have already meant a giant leap forward, PWAs are
+taking things even one step further. They offer a rich user experience that
+parallels what users know and expect from native apps and combine that with the
+benefits that browser based applications provide. In this post, we'll look at
+how to turn a Single Page App into a Progressive Web App.
 
 <!--break-->
 
@@ -21,9 +21,9 @@ turn a Single Page App into a Progressive Web App.
 Throughout this post, we will use [Breethe](https://breethe.app) as an example.
 Breethe is a Progressive Web App that gives users quick and easy access to air
 quality data for locations around the world. Pollution and global warming are
-getting worse rather than better and having access to data that shows how bad
-the situation actually is, is the first step for everyone to question their
-decisions and maybe change a few things in their daily lives.
+getting worse rather than better and having access to data that shows the depth
+of the situation is the first step for everyone to question their decisions and
+maybe change a few things in their daily lives.
 
 ![Video of the Breethe PWA](/images/posts/2018-07-24-from-spa-to-pwa/breethe-video.gif)
 
@@ -49,9 +49,7 @@ Unfortunately that idea was one of the few of Jobs' that never really took off.
 In fact, Apple released the first native SDK for the iPhone in 2008. That
 change in strategy lead to a huge market for native mobile apps and played a
 significant role in mobile devices becoming ever more ubiquitous over the past
-decade
-([not always to the benefit of everyone](https://en.wikipedia.org/wiki/Mobile_phone_overuse)
-as is becoming more and more obvious recently).
+decade.
 
 While native apps enable great things and previously unforeseen use cases, they
 come with some drawbacks. They generally
@@ -71,12 +69,12 @@ potential users are lost before they even install the app where they then
   login in the app again
 * native apps are
   [relatively large on average](https://sweetpricing.com/blog/2017/02/average-app-file-size/),
-  leading to long download times which are particularly painful on often spotty
-  mobile connections
+  leading to long download times which are particularly painful on less
+  reliable mobile connections
 
 In contrast, **web apps are easily accessible via the browser** without forcing
 users to go through an app store and installation process and load almost
-instantaneously - if done right, even on spotty mobile connections.
+instantaneously - if done right, even on unreliable mobile connections.
 
 Another advantage of native apps is mostly a historic one now. Historically,
 native apps were able to offer a better user experience both in terms of the
@@ -97,8 +95,8 @@ Internet Explorer. These two (actually not Internet Explorer but its successor
 caught up recently and
 [Service Workers are now supported by all major browsers](https://caniuse.com/#feat=serviceworkers),
 making Progressive Web Apps a viable alternative to native apps for most
-businesses with ca. 84% of the global user base on browsers and OSes capable of
-running PWAs as of July 2018.
+businesses with approximately 84% of the global user base on browsers and OSes
+capable of running PWAs as of July 2018.
 
 A decade after the introduction of the original iPhone (and a detour via the
 [multi-billion native app economy](https://www.appannie.com/en/insights/market-data/predictions-app-economy-2018/)),
@@ -199,13 +197,13 @@ browser UI:
 
 The main requirement for any web application to be able to work independently
 of the network is that it **must be able to start up while there is no network
-at all** and the device is offline. For an application that runs in a browser
-that is essentially made for loading anything that it requires remotely, that
-is no easy task. One of the first approaches for achieving just this was
+at all** and the device is offline. For a browser-based application designed to
+load all required assets remotely, that is no easy task. One of the first
+approaches for achieving this was
 [Google Gears](https://en.wikipedia.org/wiki/Gears_(software)). Gears was
 released as early as 2007 as a proprietary extension for Chrome and allowed
 offline usage of e.g. Gmail. Gears never really took off in the broader
-ecosystem though and was discontinued in 2010.
+ecosystem and was discontinued in 2010.
 
 Many of the original ideas behind Gears found their way into the HTML5 spec
 though, in particular the idea of Gear's `LocalServer` module that allowed
@@ -339,10 +337,10 @@ The web platform provides a number of APIs for storing data in the browser and
 thus making it available for offline use. The
 [WebStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
 defines `localStorage` and `sessionStorage` which can be used for storing
-key/value pairs. Cookies have been around for quite some time and cannot only
-be used for tracking users or keeping their sessions alive when the browser is
-closed but also for storing simple data. When dealing with bigger, structured
-datasets though, the storage API of choice is generally
+key/value pairs. Cookies have been around for quite some time and not only can
+they be used for tracking users or keeping their sessions alive when the
+browser is closed but also for storing simple data. When dealing with bigger,
+structured datasets though, the storage API of choice is generally
 [`IndexedDB`](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API).
 
 `IndexedDB` is a transactional database system, similar to SQL-based RDBMS:
@@ -453,12 +451,12 @@ store.on('transform', (transform) => {
 });
 ```
 
-With this setup, all data that ever gets loaded by the app while the device is
-online is available for later offline use where it will be read from
-`IndexedDB` instead. This mechanism works the other way round as well of course
-such that the app could buffer any modifications to data in the store in
-`IndexedDB` while offline and sync these changes back to the remote API once
-the device comes back online - refer to the
+With this setup, all data that gets loaded by the app while the device is
+online is available for later offline use, where it will be read from
+`IndexedDB` instead. This mechanism works the other way round as well of
+course, such that the app could buffer any modifications to data in the store
+in `IndexedDB` while offline and then sync these changes back to the remote API
+once the device comes back online - refer to the
 [Orbit.js docs](http://orbitjs.com/v0.15/guide/) for more information about
 advanced mechanics like this.
 
@@ -480,7 +478,8 @@ framework of choice and its testing philosophy and tools, there might also be
 means of
 [higher level test](https://guides.emberjs.com/release/testing/testing-components/)
 that test larger subsets of an app (and we have
-[quite](https://github.com/simplabs/breethe-client/blob/master/src/ui/components/MeasurementRow/component-test.ts) [some](https://github.com/simplabs/breethe-client/blob/master/src/ui/components/SearchForm/component-test.ts)
+[quite](https://github.com/simplabs/breethe-client/blob/master/src/ui/components/MeasurementRow/component-test.ts)
+[a lot](https://github.com/simplabs/breethe-client/blob/master/src/ui/components/SearchForm/component-test.ts)
 of these for Breethe).
 
 Testing PWAs, in particular their offline behavior, is slightly different
