@@ -1,0 +1,226 @@
+@import "custom.variables";
+
+$nav-link-padding-x: 1rem;
+$nav-link-padding-y: 1rem;
+
+.navbar {
+  background-color: transparent;
+  transform: translateY(0%);
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+  @include media-breakpoint-up(md) {
+    &.fixed-top {
+      position: relative;
+    }
+  }
+
+  .navbar-brand {
+    transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+
+    .navbar-brand-image {
+      background-color: transparent;
+      background-image: url("../../images/simplabs-logo-ball-blue.svg");
+      background-size: cover;
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+
+  .navbar-toggler {
+    border: none;
+    margin: 0;
+    transition: background-color 0.35s ease;
+    z-index: 1030;
+
+    &:focus,
+    &.focus {
+      outline: 0;
+      box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+      background: none;
+      background-color: $blue;
+      display: block;
+      height: 0.125rem;
+      transition: background-color 0.35s ease;
+      width: 1.5rem;
+
+      &:nth-child(2) {
+        margin: 0.5rem 0;
+        transform: scaleX(0.6667);
+        transform-origin: right center;
+        transition: transform 0.35s ease, background-color 0.35s ease;
+      }
+    }
+  }
+
+  .navbar-collapse {
+    font-weight: $font-weight-normal;
+    text-align: center;
+
+    @include media-breakpoint-down(sm) {
+      display: block;
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+      pointer-events: none;
+      transform: translateY(-1rem);
+      transition: background-color 0.2s ease-in-out, height 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+      width: 100%;
+    }
+
+    @include media-breakpoint-up(md) {
+      padding-bottom: 0;
+      padding-top: 0;
+      text-align: left;
+    }
+
+    .navbar-nav {
+      padding-bottom: 5rem - $nav-link-padding-y;
+      padding-top: 4rem - $nav-link-padding-y;
+
+      @media (min-width: 320px) and (orientation: landscape) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2rem;
+      }
+
+      @include media-breakpoint-up(md) {
+        padding-bottom: 0;
+        padding-left: 1rem;
+        padding-top: 0;
+      }
+
+      .nav-item {
+        .nav-link {
+          color: $white;
+          font-size: 1.5rem;
+          padding: $nav-link-padding-y 0;
+          transition: color 0.2s ease-in-out;
+
+          @include media-breakpoint-up(md) {
+            color: $text;
+            font-size: 1rem;
+            padding: 0 $nav-link-padding-x;
+
+            &:hover,
+            &:focus {
+              color: darken($blue, 2.5%);
+            }
+          }
+        }
+      }
+    }
+
+    .btn-work-with-us {
+      background-color: $blue;
+      border: 2px solid $white;
+      color: $white;
+      font-size: 1.5rem;
+      font-weight: $font-weight-normal;
+      margin-bottom: 4.5rem - $navbar-padding-y;
+      padding: 0.5rem 1.25rem;
+      transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+      @media (min-width: 320px) and (orientation: landscape) {
+        margin-bottom: 2rem;
+      }
+
+      @include media-breakpoint-up(md) {
+        background-color: $white;
+        color: $text;
+        border: 2px solid $text;
+        margin-bottom: 0;
+        font-size: 1rem;
+
+        &:not(:disabled):not(.disabled):active,
+        &:not(:disabled):not(.disabled).active {
+          background-color: #006cd9;
+        }
+
+        &:disabled,
+        &.disabled {
+          background-color: #f6f6f6;
+          color: #9daab7;
+        }
+
+        &:hover {
+          background-color: $black;
+          border-color: $black;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+input.toggler[type=checkbox] {
+  display: none;
+  left: 0;
+  position: absolute;
+  top: 1000%;
+}
+
+input.toggler[type=checkbox]:checked + .navbar {
+  background-color: $blue;
+
+  .navbar-brand {
+    .navbar-brand-image {
+      background-image: url("../../images/simplabs-logo-white.svg");
+    }
+  }
+
+  .navbar-toggler {
+    .navbar-toggler-icon {
+      background-color: $white;
+
+      &:nth-child(2) {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  .navbar-collapse {
+    @include media-breakpoint-down(sm) {
+      height: 100vh;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .navbar.scrolled {
+    background-color: $blue;
+
+    .navbar-brand {
+      .navbar-brand-image {
+        background-image: url("../../images/simplabs-logo-ball-white.svg");
+      }
+    }
+
+    .navbar-toggler {
+      .navbar-toggler-icon {
+        background-color: $white;
+      }
+    }
+
+    .navbar-collapse {
+      background-color: $blue;
+
+      .navbar-nav {
+        .nav-item {
+          .nav-link {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

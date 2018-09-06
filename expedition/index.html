@@ -1,0 +1,188 @@
+---
+layout: default
+title: Expedition
+---
+
+  <body class="page-expedition">
+    <header>
+      <div class="jumbotron jumbotron-fluid jumbotron-fluid-expedition">
+        <div class="container container-jumbotron">
+          <div class="jumbotron-header-wrapper">
+            <h1 class="jumbotron-header">
+              an online travel magazine for global citizens
+            </h1>
+          </div>
+        </div>
+
+        <div class="jumbotron-background">
+          <div class="jumbotron-background-item jumbotron-background-item-primary">
+            <img alt="Image" class="img-fluid jumbotron-background-item-image"
+                 src="../images/jumbotron/jumbotron-background-item.png" />
+          </div>
+          <div class="jumbotron-background-item jumbotron-background-item-secondary">
+            <img alt="Image" class="img-fluid jumbotron-background-item-image"
+                 src="../images/expedition/expedition-logo-white.svg" />
+          </div>
+          <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+          <div class="jumbotron-background-item jumbotron-background-item-secondary">
+            <img alt="Image" class="img-fluid jumbotron-background-item-image"
+                 src="../images/expedition/website-preview-1.png" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container-fluid container-fluid-introduction">
+        <div class="container container-introduction">
+          <div class="row row-introduction">
+            <div class="col col-introduction">
+              <div class="introduction">
+                <p class="introduction-text">
+                  Expedition is an online travel magazine for global citizens. It lets travellers experience the world's best destinations through the eyes of a local.
+                </p>
+
+                <p class="introduction-text">
+                  The team approached simplabs when they needed help laying the <strong>foundation for advanced features</strong> in their Elixir and Phoenix based API as well as making sure their Ember.js based client was following best practices.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container container-quote container-quote-expedition">
+        <div class="row row-quote">
+          <div class="col col-quote">
+            <div class="quote">
+              <p class="quote-text">
+                simplabs brought wisdom, flexibility, and sane solutions when facing complex problems. They went above
+                and beyond to work with our unique situation - would recommend 1000x.
+              </p>
+
+              <p class="quote-author">
+                Bryan Langslet, Expedition CEO
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+          class="container-fluid container-fluid-service container-fluid-service container-fluid-service-optimizing-prototype">
+        <div class="container container-service">
+          <div class="row row-service">
+            <div class="col col-service">
+              <div class="service service-floated-right">
+                <div class="service-description">
+                  <p class="service-description-header">
+                    long-term enablement
+                  </p>
+
+                  <p class="service-description-text">
+                    simplabs' team built prototype implementations for a number of advanced features in Expedition's system. Leveraging Elixir's and Phoenix's capabilities we were able to implement advanced mechanics with clean and concise code with significantly less effort and complexity compared with more traditional tools.
+                  </p>
+
+                  <p class="service-description-text">
+                    Expedition's in-house team was able to expand on our foundational work, <strong>handed over in an open and well-communicated way</strong>.
+                  </p>
+                </div>
+
+                <div class="service-preview">
+                  <img alt="Image" class="service-preview-image img-fluid"
+                       src="../images/expedition/website-preview-1.png" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-service-background container-service-background-floated-right"></div>
+        </div>
+      </div>
+
+      <div class="container-fluid container-fluid-service container-fluid-expedition-our-expertise">
+        <div class="container container-service">
+          <div class="row row-service">
+            <div class="col col-service">
+              <div class="service">
+                <div class="service-description">
+                  <p class="service-description-header">
+                    our expertise
+                  </p>
+
+                  <p class="service-description-text">
+                    We develop deep expertise in the tools that we specialize in and take an active role in the communities.
+                  </p>
+                </div>
+
+                <div class="service-preview">
+                  <a class="card card-ember-small card-our-expertise card-our-expertise-small" href="/ember/index.html">
+                    <div class="card-body">
+                      <h5 class="card-title">Ember.js</h5>
+
+                      <p class="card-text">
+                        work with Europe's leading Ember experts
+                      </p>
+                    </div>
+                    <div class="card-background-wrapper">
+                      <div class="card-background"></div>
+                    </div>
+                  </a>
+
+                  <a class="card card-elixir-phoenix-small card-our-expertise card-our-expertise-small" href="/elixir/index.html">
+                    <div class="card-body">
+                      <h5 class="card-title">Elixir & Phoenix</h5>
+
+                      <p class="card-text">
+                        a modern server stack that combines the best of all worlds
+                      </p>
+                    </div>
+                    <div class="card-background-wrapper">
+                      <div class="card-background"></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% include contact_banner.html %}
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+    <script>
+        Zepto(function ($) {
+            let lastScrollTop;
+            const mainMenu = $('.navbar');
+            const mainMenuHeight = mainMenu.height();
+            const win = $(window);
+
+            function setScrolledClass(scrollTop) {
+                if (scrollTop > mainMenuHeight) {
+                    mainMenu.addClass('scrolled');
+                } else {
+                    mainMenu.removeClass('scrolled');
+                }
+            }
+
+            win.scroll(function () {
+                const scrollTop = win.scrollTop();
+
+                setScrolledClass(scrollTop);
+
+                if (lastScrollTop < scrollTop && scrollTop > mainMenuHeight * 2) {
+                    mainMenu.addClass('scrollUp');
+                } else if (lastScrollTop > scrollTop) {
+                    mainMenu.removeClass('scrollUp');
+                }
+
+                lastScrollTop = scrollTop;
+            });
+
+            setScrolledClass(win.scrollTop());
+        });
+    </script>
+  </body>
+</html>

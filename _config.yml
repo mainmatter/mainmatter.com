@@ -15,7 +15,7 @@ kramdown:
   input: GFM
 
 excerpt_separator: <!--break-->
-  
+
 navigation:
   - title: Services
     url: /services/
@@ -25,10 +25,6 @@ navigation:
     url: /training/
   - title: About
     url: /about/
-  - title: Clients
-    url: /clients/
-  - title: Blog
-    url: /blog/
 
 title: simplabs
 author: simplabs
@@ -49,8 +45,8 @@ defaults:
     scope:
       path: ""
     values:
-      image: 
+      image:
         twitter: /images/apple-144.png
         facebook: /images/apple-144.png
         height: 144
-        width: 144
+width: 144

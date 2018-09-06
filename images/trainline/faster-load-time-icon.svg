@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Trainline" transform="translate(-605.000000, -2973.000000)" fill="#FFFFFF">
+            <g id="Added-Value" transform="translate(80.000000, 2736.000000)">
+                <g id="Molecules/Cards/Features" transform="translate(480.000000, 192.000000)">
+                    <g id="icon">
+                        <g id="Atoms/Icons/80/White/Time" transform="translate(40.000000, 40.000000)">
+                            <g id="Icn" transform="translate(5.000000, 5.000000)">
+                                <path d="M35,0 C54.3294231,0 70,15.6692308 70,35 C70,54.3294231 54.3294231,70 35,70 C15.6705769,70 0,54.3294231 0,35 C0,15.6692308 15.6705769,0 35,0 Z M37.6923077,64.4875 C51.8767308,63.2019231 63.2019231,51.8767308 64.4875,37.6923077 L59.5,37.6923077 L59.5,32.3076923 L64.4875,32.3076923 C63.2019231,18.1232692 51.8767308,6.79807692 37.6923077,5.51115385 L37.6923077,10.5 L32.3076923,10.5 L32.3076923,5.51115385 C18.1232692,6.79807692 6.79807692,18.1232692 5.5125,32.3076923 L10.5,32.3076923 L10.5,37.6923077 L5.5125,37.6923077 C6.79807692,51.8767308 18.1232692,63.2019231 32.3076923,64.4875 L32.3076923,59.5 L37.6923077,59.5 L37.6923077,64.4875 Z M37.6923077,17.4995962 L37.6923077,32.3072885 L44.4230769,32.3072885 L44.4230769,37.6919038 L32.3076923,37.6919038 L32.3076923,17.4995962 L37.6923077,17.4995962 Z" id="Combined-Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

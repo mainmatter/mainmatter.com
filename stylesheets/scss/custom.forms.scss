@@ -1,0 +1,76 @@
+@import "./custom.variables";
+@import "../../../node_modules/bootstrap/scss/variables";
+
+.form-group {
+  margin-bottom: 2rem;
+  position: relative;
+
+  > .label {
+    color: $white;
+  }
+
+  &.invalid {
+    .form-control {
+      border-color: $red;
+      color: $red;
+    }
+
+    &:after,
+    &::after {
+      background-color: $red;
+      background-image: url("../../images/icons/form-invalid.svg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      border: none;
+      border-radius: 50%;
+      bottom: 13px;
+      content: "";
+      display: block;
+      height: 1.5rem;
+      position: absolute;
+      right: 12px;
+      width: 1.5rem;
+    }
+  }
+}
+
+.form-control {
+  color: $text;
+  border: none;
+  font-weight: $font-weight-medium;
+
+  &:focus,
+  &:hover {
+    border-color: #8eaece;
+  }
+
+  &:focus {
+    &::placeholder {
+      font-weight: $font-weight-medium;
+      opacity: 1;
+    }
+  }
+
+  &::placeholder {
+    color: rgba($text, 0.5);
+    font-weight: $font-weight-medium;
+    opacity: 0.5;
+  }
+}
+
+.form-control-textarea {
+  resize: none;
+}
+
+.btn-submit-wrapper {
+  text-align: right;
+
+  .btn-submit {
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      width: auto;
+    }
+  }
+}

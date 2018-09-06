@@ -1,0 +1,15 @@
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  background-color: $grey;
+  padding: 1rem;
+  color: $text;
+
+  p {
+    text-align: right;
+  }
+
+  a {
+    color: $text;
+  }
+}

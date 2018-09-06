@@ -1,0 +1,43 @@
+.our-expertise-description {
+  font-size: 16px;
+  margin-bottom: 2.5em;
+
+  @include media-breakpoint-up(lg) {
+    max-width: 18em;
+  }
+
+  .text {
+    margin-top: 1.5em;
+    margin-bottom: 2.5em;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 2em;
+      margin-bottom: 1em;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 3em;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.card-our-expertise-small-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @include media-breakpoint-up(lg) {
+    justify-content: flex-end;
+  }
+}

@@ -1,101 +1,376 @@
----
-layout: default
-title: Contact
----
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
 
-<div class="primary-banner">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
-        <h2>Contact us</h2>
-        <p>Send us an <strong>email</strong> or contact us on <strong>Twitter</strong> to discuss what we can do for you.
-      </div>
-    </div>
-  </div>
-</div>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="../stylesheets/css/custom.bootstrap.css" rel="stylesheet" type="text/css">
 
-<div class="container" id="main-section">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1 col-sm-12">
-      <div class="row content-section split-section">
-        <div class="col-sm-12">
-          <h3>Get in touch with us</h3>
+    <title>simplabs - Contact Us</title>
+  </head>
+
+  <body class="page-contact-us">
+    <header>
+      <input class="toggler" id="toggler" role="button" type="checkbox">
+
+      <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="/">
+            <div class="navbar-brand-image"></div>
+          </a>
+
+          <label class="navbar-toggler" for="toggler">
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+          </label>
+
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item nav-item-services">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Work</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+              </li>
+            </ul>
+
+            <a class="btn btn-work-with-us" href="#" role="button">Work with us</a>
+          </div>
         </div>
-        <div class="col-sm-6">
-          <form id="contact-form">
-            <input type="text" name="name" placeholder="your name" required>
-            <input type="email" name="email" placeholder="your email" required>
-            <textarea name="message" placeholder="how can we help you?" required></textarea>
-            <button class="custom-button send-button" type="submit">Send</button>
-            <span class="custom-label error">Please retry.</span>
-            <span class="custom-label success">Thanks, we'll be in touch!</span>
-          </form>
-          <script>
-            Zepto(function($) {
-              function displayLabel(label) {
-                label.css({ opacity: 1 });
-                setTimeout(function() {
-                  label.css({ opacity: 0 });
-                }, 3500);
-              }
+      </nav>
 
-              var form = $('#contact-form');
-              form.submit(function(event) {
+      <div class="jumbotron jumbotron-fluid jumbotron-fluid-contact-us">
+        <div class="container container-jumbotron">
+          <div class="jumbotron-header-wrapper">
+            <h1 class="jumbotron-header">
+              let us know how we can help you
+            </h1>
+          </div>
+        </div>
+
+        <div class="jumbotron-background">
+          <div class="jumbotron-background-item jumbotron-background-item-primary">
+            <img alt="Image" class="img-fluid jumbotron-background-item-image"
+                 src="../images/jumbotron/jumbotron-background-item.png" />
+          </div>
+          <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+          <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+          <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container-fluid container-fluid-contact-us">
+        <div class="container container-contact-us">
+          <div class="row row-contact-us">
+            <div class="col col-contact-us">
+              <div class="contact-us">
+                <div class="contact-us-map">
+                  <img alt="Image" class="contact-us-map-image img-fluid" src="../images/map.png" />
+
+                  <div class="contact-us-map-popover popover popover-map bs-popover-top">
+                    <img alt="simplabs logo" class="img-fluid popover-logo" src="../images/simplabs-logo-blue.svg">
+
+                    <div class="popover-body">
+                      <address class="popover-address">
+                        <span>Claude-Lorrain-Str. 7</span>
+                        <span>81543 München</span>
+                        <span>Germany</span>
+                      </address>
+
+                      <a class="popover-phone" href="tel:+49 89 462 565 03" rel="nofollow">+49 89 462 565 03</a>
+
+                      <a class="popover-email" href="mailto:info@simplabs.com">info@simplabs.com</a>
+
+                      <a class="popover-link" href="#">@simplabs</a>
+                    </div>
+
+                    <div class="arrow"></div>
+                  </div>
+                </div>
+
+                <div class="contact-us-form">
+                  <form class="form">
+                    <div class="form-group">
+                      <label class="label" for="name">Your name</label>
+                      <input type="text" class="form-control" id="name" placeholder="Enter name">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="label" for="email">Email</label>
+                      <input type="email" class="form-control" id="email" placeholder="Enter email">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="label" for="howCanWeHelpYou">How can we help you?</label>
+                      <textarea class="form-control form-control-textarea" id="howCanWeHelpYou"
+                                placeholder="Tell us about your project" rows="8" data-gramm_editor="false"></textarea>
+                    </div>
+
+                    <div class="btn-submit-wrapper">
+                      <button type="submit" class="btn btn-ghost-white btn-submit">Submit</button>
+                    </div>
+                  </form>
+
+                  <div class="submission-state submission-state-in-progress">
+                    <div class="submission-state-icon"></div>
+
+                    <p class="submission-state-text">
+                      The message is being sent…
+                    </p>
+                  </div>
+
+                  <div class="submission-state submission-state-successful">
+                    <div class="submission-state-icon">
+                      <img alt="Icon" class="img-fluid" src="../images/icons/form-submission-successful.svg" />
+                    </div>
+
+                    <p class="submission-state-text">
+                      Thanks, we'll be in touch!
+                    </p>
+                  </div>
+
+                  <div class="submission-state submission-state-failed">
+                    <div class="submission-state-icon">
+                      <img alt="Icon" class="img-fluid" src="../images/icons/form-submission-failed.svg" />
+                    </div>
+
+                    <p class="submission-state-text">
+                      An error occurred &mdash; please try again.
+                    </p>
+
+                    <div class="btn-go-back-wrapper">
+                      <button class="btn btn-ghost-white btn-go-back">Go back</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container container-footer">
+        <div class="row justify-content-between">
+          <div class="col-md-auto col-copyright">
+            <div class="copyright-container">
+              <a class="copyright-container-logo" href="#">
+                <img class="copyright-container-logo-image img-fluid"
+                     src="../images/simplabs-logo-blue.svg" />
+              </a>
+
+              <p class="copyright-container-text">&copy; 2014-2018 simplabs GmbH</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-auto col-md-auto col-nav">
+            <ul class="nav flex-column">
+              <li class="nav-item nav-item-header">
+                <span class="nav-header">Services</span>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Software Engineering</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Team Augmentation</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Training</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-sm-auto col-md-auto col-nav">
+            <ul class="nav flex-column">
+              <li class="nav-item nav-item-header">
+                <span class="nav-header">Expertise</span>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ember.js</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Elixir & Phoenix</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-sm-auto col-md-auto col-nav">
+            <ul class="nav flex-column">
+              <li class="nav-item nav-item-header">
+                <span class="nav-header">Work</span>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Trainline</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Expedition</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Timify</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">DD-WRT NXT</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-sm-auto col-md-auto col-nav">
+            <ul class="nav flex-column">
+              <li class="nav-item nav-item-header">
+                <span class="nav-header">Connect</span>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">GitHub</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Twitter</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Imprint</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+    <script>
+        Zepto(function ($) {
+            let lastScrollTop;
+            const mainMenu = $('.navbar');
+            const mainMenuHeight = mainMenu.height();
+            const win = $(window);
+
+            function setScrolledClass(scrollTop) {
+                if (scrollTop > mainMenuHeight) {
+                    mainMenu.addClass('scrolled');
+                } else {
+                    mainMenu.removeClass('scrolled');
+                }
+            }
+
+            win.scroll(function () {
+                const scrollTop = win.scrollTop();
+
+                setScrolledClass(scrollTop);
+
+                if (lastScrollTop < scrollTop && scrollTop > mainMenuHeight * 2) {
+                    mainMenu.addClass('scrollUp');
+                } else if (lastScrollTop > scrollTop) {
+                    mainMenu.removeClass('scrollUp');
+                }
+
+                lastScrollTop = scrollTop;
+            });
+
+            setScrolledClass(win.scrollTop());
+
+            const submitButton = $('.btn-submit');
+            const goBackButton = $('.btn-go-back');
+
+            submitButton.on('click', (event) => {
                 event.preventDefault();
 
-                var button = form.find('button[type="submit"]');
-                button.prop('disabled', true);
-                button.text('Sending…');
-                var data = {
-                  name: form.find('[name="name"]').val(),
-                  email: $('[name="email"]').val(),
-                  message: $('[name="message"]').val()
-                };
+                hideForm()
+                    .then(() => showSubmissionState('submission-state-in-progress'))
+                    .then(() => hideSubmissionState('submission-state-in-progress'))
+                    .then(() => showSubmissionState('submission-state-successful'))
+                    .then(() => hideSubmissionState('submission-state-successful'))
+                    .then(() => showSubmissionState('submission-state-failed'));
 
-                $.ajax({
-                  type: 'POST',
-                  url: 'https://guqdu9qkgf.execute-api.eu-central-1.amazonaws.com/production',
-                  dataType: 'json',
-                  contentType: 'application/json',
-                  data: JSON.stringify(data),
-                  success: function() {
-                    var successLabel = form.find('.success');
-                    displayLabel(successLabel);
-                    form[0].reset();
-                  },
-                  error: function() {
-                    var successLabel = form.find('.error');
-                    displayLabel(successLabel);
-                  },
-                  complete: function() {
-                    button.prop('disabled', false);
-                    button.text('Send');
-                  }
-                });
-              });
+                function hideForm() {
+                    return new Promise((resolve) => {
+                        const form = $('.form');
+
+                        form.addClass('hidden');
+                        resolve();
+                    });
+                }
+
+                function showSubmissionState(type) {
+                    return new Promise((resolve) => {
+                        setTimeout(() => {
+                            const submissionState = $(`.${type}`);
+
+                            submissionState.addClass('shown');
+                            resolve();
+                        }, 200);
+                    })
+                }
+
+                function hideSubmissionState(type) {
+                    return new Promise((resolve) => {
+                        setTimeout(() => {
+                            const submissionState = $(`.${type}`);
+
+                            submissionState.removeClass('shown');
+                            submissionState.addClass('hidden');
+                            resolve();
+                        }, 2000);
+                    })
+                }
             });
-          </script>
-        </div>
-        <div class="col-sm-6">
-          <p>
-            <span class="address">
-              <span>simplabs GmbH</span>
-              <span>Claude-Lorrain-Str. 7</span>
-              <span>81543 München</span>
-              <span>Germany</span>
-            </span>
-          </p>
-          <p>
-            <span class="contact">
-              <span><i class="fa fa-phone"></i> +49 89 462 565 03</span>
-              <span><i class="fa fa-envelope"></i> <a href="mailto:info@simplabs.com?subject=Hi!" title="Email us" class="email-link">info@simplabs.com</a></span>
-              <span><i class="fa fa-twitter"></i> <a href="https://twitter.com/simplabs" title="@simplabs on Twitter" class="twitter-link">@simplabs</a></span>
-            </span>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-{% include contact_banner.html %}
+            goBackButton.on('click', (event) => {
+                event.preventDefault();
+
+                hideSubmissionState('submission-state-failed')
+                    .then(() => showForm());
+
+                function showForm() {
+                    return new Promise((resolve) => {
+                        setTimeout(() => {
+                            const form = $('.form');
+
+                            form.removeClass('hidden');
+                            resolve();
+                        }, 200);
+                    });
+                }
+
+                function hideSubmissionState(type) {
+                    return new Promise((resolve) => {
+                        const submissionState = $(`.${type}`);
+
+                        submissionState.removeClass('shown');
+                        submissionState.addClass('hidden');
+                        resolve();
+                    })
+                }
+            });
+        });
+    </script>
+  </body>
+</html>

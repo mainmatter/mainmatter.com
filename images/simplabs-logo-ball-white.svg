@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="136px" height="24px" viewBox="0 0 136 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Atoms / Logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Organisms/Header/Default" transform="translate(0.000000, -52.000000)">
+            <g id="Header" transform="translate(0.000000, 40.000000)">
+                <g id="Navigation" transform="translate(0.000000, 8.000000)">
+                    <g id="Atoms-/-Logo" transform="translate(0.000000, 4.000000)">
+                        <g>
+                            <path d="M12.972973,13.8356757 L21.3405405,18.9145946 C19.3398036,21.5915348 16.300249,23.2974554 12.972973,23.6108108 L12.972973,13.8356757 Z M22.5145946,17.0075676 L12.972973,11.2151351 L12.972973,0 C19.0780968,0.560692212 23.7463168,5.68757404 23.7340541,11.8183784 C23.7312763,13.6187821 23.3140122,15.3943742 22.5145946,17.0075676 Z M1.19351351,6.66162162 L10.7481081,12.4735135 L10.7481081,23.5913514 C4.66051176,23.0255045 0.0038925271,17.9192419 0,11.8054054 C0.0014128013,10.022349 0.409608109,8.26311601 1.19351351,6.66162162 Z M10.7481081,9.85297297 L2.34810811,4.74810811 C4.34618531,2.04366718 7.40061212,0.317149485 10.7481081,0 L10.7481081,9.85297297 Z" id="Sign" fill="#ffffff" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

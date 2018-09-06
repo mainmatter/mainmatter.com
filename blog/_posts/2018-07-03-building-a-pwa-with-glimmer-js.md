@@ -5,6 +5,7 @@ title: "Building a PWA with Glimmer.js"
 author: "Marco Otte-Witte"
 github-handle: marcoow
 twitter-handle: marcoow
+category: ember
 ---
 
 We recently set out to build a progressive web app with

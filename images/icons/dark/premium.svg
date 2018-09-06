@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>Atoms/Icons/80/Premium</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M36,51.2419167 L51.5062355,59.3425022 L48.5938112,42.0919773 L61.0896161,29.8478896 L43.7834034,27.2870643 L36,11.6192165 L28.2165966,27.2870643 L10.9103839,29.8478896 L23.4061888,42.0919773 L20.4937645,59.3425022 L36,51.2419167 Z M36,56.8830833 L13.8879794,68.4345854 L18.0411206,43.8351936 L0.221999054,26.3750228 L24.9008021,22.7232647 L36,0.380783546 L47.0991979,22.7232647 L71.7780009,26.3750228 L53.9588794,43.8351936 L58.1120206,68.4345854 L36,56.8830833 Z" id="path-1"></path>
+        <filter x="-1.4%" y="-1.5%" width="105.6%" height="102.9%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="2" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.0901960784   0 0 0 0 0.882352941   0 0 0 0 0.996078431  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+        <path d="M38,51.2419167 L53.5062355,59.3425022 L50.5938112,42.0919773 L63.0896161,29.8478896 L45.7834034,27.2870643 L38,11.6192165 L30.2165966,27.2870643 L12.9103839,29.8478896 L25.4061888,42.0919773 L22.4937645,59.3425022 L38,51.2419167 Z M38,56.8830833 L15.8879794,68.4345854 L20.0411206,43.8351936 L2.22199905,26.3750228 L26.9008021,22.7232647 L38,0.380783546 L49.0991979,22.7232647 L73.7780009,26.3750228 L55.9588794,43.8351936 L60.1120206,68.4345854 L38,56.8830833 Z" id="path-4"></path>
+        <filter x="-0.7%" y="-0.7%" width="101.4%" height="101.5%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="1" dy="0" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.152941176   0 0 0 0 0.321568627  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Atoms/Icons/80/Premium" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon" transform="translate(4.000000, 4.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Mask" fill-rule="nonzero">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                <use fill="#FF2752" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <g id="Star" mask="url(#mask-2)" fill-rule="nonzero">
+                <use fill="#000000" fill-rule="evenodd" xlink:href="#path-4"></use>
+                <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+            </g>
+        </g>
+    </g>
+</svg>

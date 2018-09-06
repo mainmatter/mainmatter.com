@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>Atoms/Icons/80/Fullstack</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M25.767767,41.232233 L22.232233,44.767767 L12.4644661,35 L22.232233,25.232233 L25.767767,28.767767 L19.5355339,35 L25.767767,41.232233 Z M50.4644661,35 L44.232233,28.767767 L47.767767,25.232233 L57.5355339,35 L47.767767,44.767767 L44.232233,41.232233 L50.4644661,35 Z M35.6176855,23.2419909 L40.3823145,24.7580091 L33.3823145,46.7580091 L28.6176855,45.2419909 L35.6176855,23.2419909 Z M69.4644503,28.5798994 L64.5355497,29.4201006 C62.4516424,17.1952041 52.8049557,7.54838878 40.5798987,5.46445022 L41.4201013,0.535549785 C55.7378526,2.97621848 67.023818,14.2623343 69.4644503,28.5798994 Z M28.5798987,0.535549785 L29.4201013,5.46445022 C17.1950443,7.54838878 7.5483576,17.1952041 5.46445035,29.4201006 L0.535549653,28.5798994 C2.97618199,14.2623343 14.2621474,2.97621848 28.5798987,0.535549785 Z M41.4201013,69.4644502 L40.5798987,64.5355498 C52.8049557,62.4516112 62.4516424,52.8047959 64.5355497,40.5798994 L69.4644503,41.4201006 C67.023818,55.7376657 55.7378526,67.0237815 41.4201013,69.4644502 Z M0.535549653,41.4201006 L5.46445035,40.5798994 C7.5483576,52.8047959 17.1950443,62.4516112 29.4201013,64.5355498 L28.5798987,69.4644502 C14.2621474,67.0237815 2.97618199,55.7376657 0.535549653,41.4201006 Z" id="path-1"></path>
+        <filter x="-1.5%" y="-1.5%" width="105.8%" height="102.9%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="2" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.0901960784   0 0 0 0 0.882352941   0 0 0 0 0.996078431  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+        <filter x="-1.5%" y="-1.5%" width="105.8%" height="102.9%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="2" dy="0" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.152941176   0 0 0 0 0.321568627  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <path d="M27.767767,41.232233 L24.232233,44.767767 L14.4644661,35 L24.232233,25.232233 L27.767767,28.767767 L21.5355339,35 L27.767767,41.232233 Z M52.4644661,35 L46.232233,28.767767 L49.767767,25.232233 L59.5355339,35 L49.767767,44.767767 L46.232233,41.232233 L52.4644661,35 Z M37.6176855,23.2419909 L42.3823145,24.7580091 L35.3823145,46.7580091 L30.6176855,45.2419909 L37.6176855,23.2419909 Z M71.4644503,28.5798994 L66.5355497,29.4201006 C64.4516424,17.1952041 54.8049557,7.54838878 42.5798987,5.46445022 L43.4201013,0.535549785 C57.7378526,2.97621848 69.023818,14.2623343 71.4644503,28.5798994 Z M30.5798987,0.535549785 L31.4201013,5.46445022 C19.1950443,7.54838878 9.5483576,17.1952041 7.46445035,29.4201006 L2.53554965,28.5798994 C4.97618199,14.2623343 16.2621474,2.97621848 30.5798987,0.535549785 Z M43.4201013,69.4644502 L42.5798987,64.5355498 C54.8049557,62.4516112 64.4516424,52.8047959 66.5355497,40.5798994 L71.4644503,41.4201006 C69.023818,55.7376657 57.7378526,67.0237815 43.4201013,69.4644502 Z M2.53554965,41.4201006 L7.46445035,40.5798994 C9.5483576,52.8047959 19.1950443,62.4516112 31.4201013,64.5355498 L30.5798987,69.4644502 C16.2621474,67.0237815 4.97618199,55.7376657 2.53554965,41.4201006 Z" id="path-5"></path>
+        <filter x="-0.7%" y="-0.7%" width="101.5%" height="101.5%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="1" dy="0" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.152941176   0 0 0 0 0.321568627  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Atoms/Icons/80/Fullstack" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Full-stack-icon" transform="translate(5.000000, 5.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Combined-Shape" fill-rule="nonzero">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                <use fill="#FF2752" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-1"></use>
+            </g>
+            <g id="Combined-Shape" mask="url(#mask-2)" fill-rule="nonzero">
+                <use fill="#000000" fill-rule="evenodd" xlink:href="#path-5"></use>
+                <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+            </g>
+        </g>
+    </g>
+</svg>

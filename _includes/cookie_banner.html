@@ -1,26 +1,26 @@
-<div class="secondary-banner cookie-banner" id="cookie-banner">
-  <div class="container">
+<div class="container-fluid cookie-banner" id="cookie-banner">
     <div class="row">
-      <div class="col-md-6 col-sm-6 col-xs-12">
-        <p>This website uses cookies. <a href="/privacy/">Learn more</a></p>
-      </div>
-      <div class="col-md-6 col-sm-6 col-xs-12">
-        <a class="custom-button cookie-button pull-right" id="cookie-button">Ok</a>
+        <div class="col">
+            <p>
+                This website uses cookies; <a href="/imprint/">learn more</a>
+                <a class="btn btn-cookie-banner" id="cookie-button">Ok</a>
+            </p>
+        </div>
         <script>
-          Zepto(function($) {
-            var banner = $('#cookie-banner');
-            if (document.cookie.includes('cookiesAccepted=true')) {
-              banner.remove();
-            }
+            Zepto(function ($) {
+                var banner = $('#cookie-banner');
+                if (document.cookie.includes('cookiesAccepted=true')) {
+                    banner.remove();
+                }
 
-            var button = $('#cookie-button');
-            button.on('click', function() {
-              document.cookie = "cookiesAccepted=true;path=/;expires=Mon, 24 Mar 2319 09:52:10 GMT";
-              banner.remove();
+                var button = $('#cookie-button');
+                button.on('click', function () {
+                    document.cookie =
+                        "cookiesAccepted=true;path=/;expires=Mon, 24 Mar 2319 09:52:10 GMT";
+                    banner.remove();
+                });
             });
-          });
         </script>
-      </div>
     </div>
-  </div>
+</div>
 </div>

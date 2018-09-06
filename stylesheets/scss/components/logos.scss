@@ -1,0 +1,140 @@
+.container-fluid-logos {
+  font-size: 16px;
+
+  .container-logos {
+    padding: 0;
+
+    .row-logos {
+      margin: 0;
+      padding: 0;
+
+      .col-logo {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 5em;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        position: relative;
+
+        img {
+          left: 50%;
+          position: absolute;
+          top: 50%;
+          transform: translate3d(-50%, -50%, 0);
+          transition: opacity 0.25s ease;
+          -webkit-backface-visibility: hidden;
+        }
+
+        img:first-child {
+          opacity: 1;
+          z-index: 200;
+        }
+
+        img:last-child {
+          opacity: 0;
+          z-index: 100;
+        }
+      }
+
+      .col-logo:hover {
+        text-decoration: none;
+
+        img:first-child {
+          opacity: 0;
+        }
+
+        img:last-child {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.container-fluid-logos-homepage {
+  margin-top: 0 !important;
+
+  .container-logos {
+    .row-logos {
+      flex-wrap: nowrap;
+      margin-bottom: 2em;
+
+      .col-logo {
+        flex-basis: calc(100% / 3);
+        height: 3em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        padding: 0;
+        width: calc(100% / 3);
+
+        @include media-breakpoint-up(md) {
+          flex-basis: calc(100% / 5);
+          margin-left: 0;
+          margin-right: 0;
+          width: calc(100% / 5);
+        }
+      }
+    }
+
+    .row-see-our-work {
+      margin-bottom: 4rem;
+      text-align: center;
+
+      @include media-breakpoint-up(md) {
+        margin-bottom: 8rem;
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 12rem;
+      }
+
+      .btn {
+        width: 100%;
+
+        @include media-breakpoint-up(sm) {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+.container-fluid-logos-work {
+  margin-top: 7.5vw !important;
+
+  @include media-breakpoint-up(xxl) {
+    margin-top: 6em !important;
+  }
+
+  .container-logos {
+    .row-logos {
+      @include media-breakpoint-up(md) {
+        padding-left: 0;
+      }
+
+      @include media-breakpoint-up(lg) {
+        padding-left: 6em;
+      }
+
+      @include media-breakpoint-up(xl) {
+        padding-left: 8em;
+      }
+
+      .col-logo {
+        margin-bottom: 1em;
+        margin-top: 1em;
+
+        > img {
+          max-width: 75%;
+
+          @include media-breakpoint-up(md) {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,58 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   {% include head.html %}
-	<body>
-    {% include nav.html %}
 
-    <div id="main-content">
-      {% include blog_header.html %}
+  <body class="page-article">
+      {% include nav.html %}
+    <header>
+      <div class="jumbotron jumbotron-fluid jumbotron-fluid-article">
+        <div class="container container-jumbotron">
+          <div class="jumbotron-header-wrapper">
+            <h1 class="jumbotron-header">
+                {{page.title}}
+            </h1>
+          </div>
+        </div>
 
-      <div class="container" id="main-section">
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1 col-sm-12">
-            <div class="row content-section separated article">
-              <div class="col-sm-12">
-                <div class="article-meta">
-                  <span class="date">{{page.date | date: '%B %d, %Y'}}</span>
-                </div>
-                <h3>{{page.title}}</h3>
-                {{page.content}}
-              </div>
-            </div>
-            <div class="row content-section">
-              <div class="col-sm-12">
-                <p class="author">
-                  <i class="{{page.author | split: ' ' | first | downcase}} img-circle author"></i>
-                  <span class="author">
-                    {{page.author | upcase}}
-                  </span>
+        <div class="jumbotron-background">
+          <div class="jumbotron-background-item jumbotron-background-item-primary">
+            <img alt="Image" class="img-fluid jumbotron-background-item-image"
+                 src="../images/jumbotron/jumbotron-background-item.png" />
+          </div>
+          <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+          <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+          <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+        </div>
+      </div>
+    </header>
 
-                  {% if page.github-handle %}
-                    <a href="http://github.com/{{page.github-handle}}">
-                      <i class="fa fa-github"></i>
-                    </a>
-                  {% endif %}
+    <main>
+      <div class="container-fluid container-fluid-article">
+        <div class="container container-article">
+          <div class="row row-article">
+            <div class="col col-article">
+              <div class="article">
+                <div class="article-content">
+                  <div class="article-section">
+                    <div class="article-text">
+                        {{page.content}}
+                    </div>
+                  </div>
+
+                <div class="article-info">
+                  <div class="article-info-user-picture">
+                    <img alt="Image" class="{{page.author | split: ' ' | first | downcase}} img-fluid" src="/images/authors/{{page.author | split: ' ' | first | downcase}}@2x.jpg" />
+                  </div>
+
+                  <div class="article-info-info">
+                    <p class="article-info-user-name">
+                      {{page.author | upcase}}
+                    </p>
+
+                    <p class="article-info-date">
+                      {{page.date | date: '%B %d, %Y'}}
+                    </p>
+                  </div>
 
                   {% if page.twitter-handle %}
-                    <a href="http://twitter.com/{{page.twitter-handle}}">
-                      <i class="fa fa-twitter"></i>
+                  <div class="article-info-links">
+                    <a class="article-info-link" href="http://twitter.com/{{page.twitter-handle}}">
+                      <img alt="Image" class="img-fluid" src="/images/icons/twitter.svg" />
                     </a>
-                  {% endif %}
-                </p>
+                    {% endif %}
+
+                    {% if page.github-handle %}
+                    <a class="article-info-link" href="http://github.com/{{page.github-handle}}">
+                      <img alt="Image" class="img-fluid" src="/images/icons/github.svg" />
+                    </a>
+                    {% endif %}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {% include footer.html %}
 
-    {% include contact_banner.html %}
+      {% include analytics.html %}
+    </main>
 
-    {% include cookie_banner.html %}
-    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        Zepto(function ($) {
+            let lastScrollTop;
+            const mainMenu = $('.navbar');
+            const mainMenuHeight = mainMenu.height();
+            const win = $(window);
 
-    {% include footer.html %}
+            function setScrolledClass(scrollTop) {
+                if (scrollTop > mainMenuHeight) {
+                    mainMenu.addClass('scrolled');
+                } else {
+                    mainMenu.removeClass('scrolled');
+                }
+            }
 
-    {% include analytics.html %}
+            win.scroll(function () {
+                const scrollTop = win.scrollTop();
 
-	</body>
+                setScrolledClass(scrollTop);
+
+                if (lastScrollTop < scrollTop && scrollTop > mainMenuHeight * 2) {
+                    mainMenu.addClass('scrollUp');
+                } else if (lastScrollTop > scrollTop) {
+                    mainMenu.removeClass('scrollUp');
+                }
+
+                lastScrollTop = scrollTop;
+            });
+
+            setScrolledClass(win.scrollTop());
+        });
+
+        hljs.initHighlightingOnLoad();
+    </script>
+  </body>
 </html>
