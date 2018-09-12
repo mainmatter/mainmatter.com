@@ -375,7 +375,7 @@ title: Ember
                   <div class="blog blog-ember">
                     <div class="blog-posts">
                         {% for post in site.categories.blog %}
-                        {% if post.category = "ember" %}
+                        {% if post.category == "ember" %}
                       <a class="blog-post blog-post-ember" href="{{post.url}}">
                         <div class="blog-post-wrapper">
                           <p class="blog-post-category">
