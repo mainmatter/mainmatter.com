@@ -120,6 +120,17 @@ title: Contact Us
   <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
   <script>
     Zepto(function ($) {
+      function displayLabel(label) {
+        label.css({
+          opacity: 1
+        });
+        setTimeout(function () {
+          label.css({
+            opacity: 0
+          });
+        }, 3500);
+      }
+
       let lastScrollTop;
       const mainMenu = $('.navbar');
       const mainMenuHeight = mainMenu.height();
