@@ -1,41 +1,40 @@
 {% include head.html %}
 
-  <body class="page-article">
-      {% include nav.html %}
-    <header>
-      <div class="jumbotron jumbotron-fluid jumbotron-fluid-article">
-        <div class="container container-jumbotron">
-          <div class="jumbotron-header-wrapper">
-            <h1 class="jumbotron-header">
-                {{page.title}}
-            </h1>
-          </div>
-        </div>
-
-        <div class="jumbotron-background">
-          <div class="jumbotron-background-item jumbotron-background-item-primary">
-            <img alt="Image" class="img-fluid jumbotron-background-item-image"
-                 src="../images/jumbotron/jumbotron-background-item.png" />
-          </div>
-          <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
-          <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
-          <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+<body class="page-article">
+  {% include nav.html %}
+  <header>
+    <div class="jumbotron jumbotron-fluid jumbotron-fluid-article">
+      <div class="container container-jumbotron">
+        <div class="jumbotron-header-wrapper">
+          <h1 class="jumbotron-header">
+            {{page.title}}
+          </h1>
         </div>
       </div>
-    </header>
 
-    <main>
-      <div class="container-fluid container-fluid-article">
-        <div class="container container-article">
-          <div class="row row-article">
-            <div class="col col-article">
-              <div class="article">
-                <div class="article-content">
-                  <div class="article-section">
-                    <div class="article-text">
-                        {{page.content}}
-                    </div>
+      <div class="jumbotron-background">
+        <div class="jumbotron-background-item jumbotron-background-item-primary">
+          <img alt="Image" class="img-fluid jumbotron-background-item-image" src="../images/jumbotron/jumbotron-background-item.png" />
+        </div>
+        <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+        <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+        <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-fluid container-fluid-article">
+      <div class="container container-article">
+        <div class="row row-article">
+          <div class="col col-article">
+            <div class="article">
+              <div class="article-content">
+                <div class="article-section">
+                  <div class="article-text">
+                    {{page.content}}
                   </div>
+                </div>
                 <div class="article-info">
                   <div class="article-info-user-picture">
                     <img alt="Image" class="{{page.author | split: ' ' | first | downcase}} img-fluid" src="/images/authors/{{page.author | split: ' ' | first | downcase}}@2x.jpg" />
@@ -73,48 +72,49 @@
       {% include footer.html %}
 
       {% include analytics.html %}
-    </main>
+  </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script>
-        Zepto(function ($) {
-            let lastScrollTop;
-            const mainMenu = $('.navbar');
-            const mainMenuHeight = mainMenu.height();
-            const win = $(window);
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    Zepto(function ($) {
+      let lastScrollTop;
+      const mainMenu = $('.navbar');
+      const mainMenuHeight = mainMenu.height();
+      const win = $(window);
 
-            function setScrolledClass(scrollTop) {
-                if (scrollTop > mainMenuHeight) {
-                    mainMenu.addClass('scrolled');
-                } else {
-                    mainMenu.removeClass('scrolled');
-                }
-            }
+      function setScrolledClass(scrollTop) {
+        if (scrollTop > mainMenuHeight) {
+          mainMenu.addClass('scrolled');
+        } else {
+          mainMenu.removeClass('scrolled');
+        }
+      }
 
-            win.scroll(function () {
-                const scrollTop = win.scrollTop();
+      win.scroll(function () {
+        const scrollTop = win.scrollTop();
 
-                setScrolledClass(scrollTop);
+        setScrolledClass(scrollTop);
 
-                if (lastScrollTop < scrollTop && scrollTop > mainMenuHeight * 2) {
-                    mainMenu.addClass('scrollUp');
-                } else if (lastScrollTop > scrollTop) {
-                    mainMenu.removeClass('scrollUp');
-                }
+        if (lastScrollTop < scrollTop && scrollTop > mainMenuHeight * 2) {
+          mainMenu.addClass('scrollUp');
+        } else if (lastScrollTop > scrollTop) {
+          mainMenu.removeClass('scrollUp');
+        }
 
-                lastScrollTop = scrollTop;
-            });
+        lastScrollTop = scrollTop;
+      });
 
-            setScrolledClass(win.scrollTop());
-        });
+      setScrolledClass(win.scrollTop());
+    });
 
-        hljs.initHighlightingOnLoad();
+    hljs.initHighlightingOnLoad();
 
-        document.querySelectorAll('h4').forEach(tag => tag.classList.add('article-subheader'));
-        document.querySelectorAll('p').forEach(tag => tag.classList.add('article-text'));
-        document.querySelectorAll('pre').forEach(tag => tag.classList.add('article-code-wrapper'));
-        document.querySelectorAll('code').forEach(tag => tag.classList.add('article-text-code'));
-    </script>
-  </body>
+    document.querySelectorAll('h4').forEach(tag => tag.classList.add('article-subheader'));
+    document.querySelectorAll('p').forEach(tag => tag.classList.add('article-text'));
+    document.querySelectorAll('pre').forEach(tag => tag.classList.add('article-code-wrapper'));
+    document.querySelectorAll('code').forEach(tag => tag.classList.add('article-text-code'));
+  </script>
+</body>
+
 </html>
