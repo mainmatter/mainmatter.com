@@ -16,16 +16,6 @@ kramdown:
 
 excerpt_separator: <!--break-->
 
-navigation:
-  - title: Services
-    url: /services/
-  - title: Work
-    url: /work/
-  - title: Training
-    url: /training/
-  - title: About
-    url: /about/
-
 title: simplabs
 author: simplabs
 description: Solid engineering for ambitious projects
