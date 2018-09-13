@@ -1,17 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include head.html %}
-	<body>
-    {% include nav.html %}
+{% include head.html %}
+{% include zepto.html %}
 
-    <div id="main-content">
-      {{content}}
-    </div>
+<body>
+  {% include nav.html %}
 
-   {% include cookie_banner.html %}
+  <div id="main-content">
+    {{content}}
+  </div>
 
-   {% include footer.html %}
+  {% include cookie_banner.html %}
 
-   {% include analytics.html %}
-	</body>
+  {% include footer.html %}
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+  <script>
+    Zepto(function ($) {
+      let lastScrollTop;
+      const mainMenu = $('.navbar');
+      const mainMenuHeight = mainMenu.height();
+      const win = $(window);
+
+      function setScrolledClass(scrollTop) {
+        if (scrollTop > mainMenuHeight) {
+          mainMenu.addClass('scrolled');
+        } else {
+          mainMenu.removeClass('scrolled');
+        }
+      }
+
+      win.scroll(function () {
+        const scrollTop = win.scrollTop();
+
+        setScrolledClass(scrollTop);
+
+        if (lastScrollTop < scrollTop && scrollTop > mainMenuHeight * 2) {
+          mainMenu.addClass('scrollUp');
+        } else if (lastScrollTop > scrollTop) {
+          mainMenu.removeClass('scrollUp');
+        }
+
+        lastScrollTop = scrollTop;
+      });
+
+      setScrolledClass(win.scrollTop());
+    });
+  </script>
+
+  {% include analytics.html %}
+</body>
+
 </html>

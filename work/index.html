@@ -238,40 +238,6 @@ title: Work
 
     {% include contact_banner.html %}
   </main>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
-  <script>
-    Zepto(function ($) {
-      let lastScrollTop;
-      const mainMenu = $('.navbar');
-      const mainMenuHeight = mainMenu.height();
-      const win = $(window);
-
-      function setScrolledClass(scrollTop) {
-        if (scrollTop > mainMenuHeight) {
-          mainMenu.addClass('scrolled');
-        } else {
-          mainMenu.removeClass('scrolled');
-        }
-      }
-
-      win.scroll(function () {
-        const scrollTop = win.scrollTop();
-
-        setScrolledClass(scrollTop);
-
-        if (lastScrollTop < scrollTop && scrollTop > mainMenuHeight * 2) {
-          mainMenu.addClass('scrollUp');
-        } else if (lastScrollTop > scrollTop) {
-          mainMenu.removeClass('scrollUp');
-        }
-
-        lastScrollTop = scrollTop;
-      });
-
-      setScrolledClass(win.scrollTop());
-    });
-  </script>
 </body>
 
 </html>
