@@ -49,4 +49,5 @@ defaults:
         twitter: /images/apple-144.png
         facebook: /images/apple-144.png
         height: 144
-width: 144
+        width: 144
+
