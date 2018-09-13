@@ -5,6 +5,7 @@ title: "Autodiscovery for the Ember.js component playground"
 author: "Tobias Bieniek"
 github-handle: Turbo87
 twitter-handle: tobiasbieniek
+category: ember
 ---
 
 In our [previous post] about [`ember-freestyle`][ember-freestyle] we have setup

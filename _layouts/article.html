@@ -110,6 +110,11 @@
         });
 
         hljs.initHighlightingOnLoad();
+
+        document.querySelectorAll('h4').forEach(tag => tag.classList.add('article-subheader'));
+        document.querySelectorAll('p').forEach(tag => tag.classList.add('article-text'));
+        document.querySelectorAll('pre').forEach(tag => tag.classList.add('article-code-wrapper'));
+        document.querySelectorAll('code').forEach(tag => tag.classList.add('article-text-code'));
     </script>
   </body>
 </html>

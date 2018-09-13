@@ -5,6 +5,7 @@ title: A Little Encouragement Goes a Long Way in 2018
 author: "Jessica Jordan"
 github-handle: jessica-jordan
 twitter-handle: jjordan_dev
+category: ember
 ---
 
 In May 2018, Ember Core team member Katie Gengler published [Ember's 2018 Roadmap: A Call for Blog Posts](https://www.emberjs.com/blog/2018/05/02/ember-2018-roadmap-call-for-posts.html). With this  call-to-action she invites the community to give feedback on their hopes and wishes for Ember moving forward.
