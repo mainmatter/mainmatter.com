@@ -64,7 +64,7 @@ title: Contact Us
 
                   <div class="form-group">
                     <label class="label" for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email"required>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" required>
                   </div>
 
                   <div class="form-group">
@@ -230,31 +230,31 @@ title: Contact Us
     });
 
     goBackButton.on('click', (event) => {
-    event.preventDefault();
+      event.preventDefault();
 
-    hideSubmissionState('submission-state-failed')
-      .then(() => showForm());
+      hideSubmissionState('submission-state-failed')
+        .then(() => showForm());
 
-    function showForm() {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          const form = $('.form');
+      function showForm() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            const form = $('.form');
 
-          form.removeClass('hidden');
+            form.removeClass('hidden');
+            resolve();
+          }, 200);
+        });
+      }
+
+      function hideSubmissionState(type) {
+        return new Promise((resolve) => {
+          const submissionState = $(`.${type}`);
+
+          submissionState.removeClass('shown');
+          submissionState.addClass('hidden');
           resolve();
-        }, 200);
-      });
-    }
-
-    function hideSubmissionState(type) {
-      return new Promise((resolve) => {
-        const submissionState = $(`.${type}`);
-
-        submissionState.removeClass('shown');
-        submissionState.addClass('hidden');
-        resolve();
-      })
-    }
+        })
+      }
     });
   </script>
 </body>
