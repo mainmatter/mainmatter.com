@@ -1,0 +1,30 @@
+/*
+Sass::SyntaxError: ".article-section code" failed to @extend ".article-text-code".
+The selector ".article-text-code" was not found.
+Use "@extend .article-text-code !optional" if the extend should be able to fail.
+
+
+Backtrace:
+article.scss:3
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/extend.rb:56:in `block in check_extends_fired!'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/util/subset_map.rb:105:in `block in each_value'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/util/subset_map.rb:105:in `each'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/util/subset_map.rb:105:in `each_value'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/extend.rb:51:in `check_extends_fired!'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/extend.rb:16:in `visit'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/tree/root_node.rb:39:in `css_tree'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/exec/sass_scss.rb:391:in `run'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/exec/base.rb:52:in `parse'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/exec/base.rb:19:in `parse!'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Sass::SyntaxError: \".article-section code\" failed to @extend \".article-text-code\".\A The selector \".article-text-code\" was not found.\A Use \"@extend .article-text-code !optional\" if the extend should be able to fail.\A "; }

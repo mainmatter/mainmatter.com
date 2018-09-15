@@ -31,9 +31,7 @@
             <div class="article">
               <div class="article-content">
                 <div class="article-section">
-                  <div class="article-text">
-                    {{page.content}}
-                  </div>
+                  {{page.content}}
                 </div>
                 <div class="article-info">
                   <div class="article-info-user-picture">
@@ -109,11 +107,6 @@
     });
 
     hljs.initHighlightingOnLoad();
-
-    document.querySelectorAll('h4').forEach(tag => tag.classList.add('article-subheader'));
-    document.querySelectorAll('p').forEach(tag => tag.classList.add('article-text'));
-    document.querySelectorAll('pre').forEach(tag => tag.classList.add('article-code-wrapper'));
-    document.querySelectorAll('code').forEach(tag => tag.classList.add('article-text-code'));
   </script>
 </body>
 

@@ -1,0 +1,13 @@
+.article-section {
+    code {
+        @extend .article-text-code;
+    }
+
+    h4 h2 {
+        @extend .article-subheader;
+    }
+
+    p {
+        @extend .article-text;
+    }
+}
