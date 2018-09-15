@@ -3,7 +3,8 @@
         @extend .article-text-code;
     }
 
-    h4 h2 {
+    h4,
+    h2 {
         @extend .article-subheader;
     }
 

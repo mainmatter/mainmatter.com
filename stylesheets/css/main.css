@@ -7920,7 +7920,9 @@ a.text-dark:focus {
 .article .article-content .article-header,
 .article .article-content .article-subheader,
 .article .article-content .article-section h4,
-.article-section .article .article-content h4 {
+.article-section .article .article-content h4,
+.article .article-content .article-section h2,
+.article-section .article .article-content h2 {
   color: #0d182f;
   font-weight: 900; }
 
@@ -7936,13 +7938,17 @@ a.text-dark:focus {
     letter-spacing: 0.0416em;
     line-height: 1.1666em;
     margin-bottom: 0.6666em; } }
-.article .article-content .article-subheader, .article .article-content .article-section h4, .article-section .article .article-content h4 {
+.article .article-content .article-subheader, .article .article-content .article-section h4, .article-section .article .article-content h4,
+.article .article-content .article-section h2,
+.article-section .article .article-content h2 {
   font-size: 1.25em;
   line-height: 1.4em;
   margin-bottom: 1.2em; }
 
 @media (min-width: 768px) {
-  .article .article-content .article-subheader, .article .article-content .article-section h4, .article-section .article .article-content h4 {
+  .article .article-content .article-subheader, .article .article-content .article-section h4, .article-section .article .article-content h4,
+  .article .article-content .article-section h2,
+  .article-section .article .article-content h2 {
     font-size: 2em;
     letter-spacing: 0.0312em;
     line-height: 1.25em;
