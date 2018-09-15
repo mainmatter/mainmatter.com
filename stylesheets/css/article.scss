@@ -8,6 +8,12 @@
         @extend .article-subheader;
     }
 
+    h4:before,
+    h2:before {
+        content: "\A";
+        white-space: pre;
+    }
+
     p {
         @extend .article-text;
     }

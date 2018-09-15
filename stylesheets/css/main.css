@@ -1,3 +1,8 @@
+.article-section h4:before,
+.article-section h2:before {
+  content: "\A";
+  white-space: pre; }
+
 :root {
   --blue: #007df7;
   --indigo: #6610f2;
