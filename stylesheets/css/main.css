@@ -8137,7 +8137,8 @@ a.text-dark:focus {
 
 .blog .blog-posts .blog-post .blog-post-wrapper {
   transform: translateX(0);
-  transition: transform 0.3s ease; }
+  transition: transform 0.3s ease;
+  width: 50em !important; }
 
 .blog .blog-posts .blog-post .blog-post-category {
   color: #0d182f;
@@ -8168,7 +8169,8 @@ a.text-dark:focus {
   font-size: 1em;
   font-weight: 300;
   line-height: 1.5em;
-  padding-right: 1em; }
+  padding-right: 1em;
+  margin-right: 4em; }
 
 @media (min-width: 768px) {
   .blog .blog-posts .blog-post .blog-post-text {
