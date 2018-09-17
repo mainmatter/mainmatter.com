@@ -3,77 +3,73 @@ layout: default
 title: Blog
 ---
 
-<body class="page-blog">
-  <header>
-    <div class="jumbotron jumbotron-fluid jumbotron-fluid-blog">
-      <div class="container container-jumbotron">
-        <div class="jumbotron-header-wrapper">
-          <h1 class="jumbotron-header">
-            Blog
-          </h1>
-        </div>
-      </div>
-
-      <div class="jumbotron-background">
-        <div class="jumbotron-background-item jumbotron-background-item-primary">
-          <img alt="Image" class="img-fluid jumbotron-background-item-image" src="../images/jumbotron/jumbotron-background-item.png" />
-        </div>
-        <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
-        <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
-        <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+<header class="page-blog">
+  <div class="jumbotron jumbotron-fluid jumbotron-fluid-blog">
+    <div class="container container-jumbotron">
+      <div class="jumbotron-header-wrapper">
+        <h1 class="jumbotron-header">
+          Blog
+        </h1>
       </div>
     </div>
-  </header>
 
-  <main>
-    <div class="container-fluid container-fluid-blog">
-      <div class="container container-blog">
-        <div class="row row-blog">
-          <div class="col col-blog">
-            <div class="blog blog-blog">
-              <div class="blog-posts">
-                {% for post in site.categories.blog %}
-                <a class="blog-post blog-post-{{post.category}}" href="{{post.url}}">
-                  <div class="blog-post-wrapper">
-                    <p class="blog-post-category">
-                      {{post.category}}
-                    </p>
+    <div class="jumbotron-background">
+      <div class="jumbotron-background-item jumbotron-background-item-primary">
+        <img alt="Image" class="img-fluid jumbotron-background-item-image" src="../images/jumbotron/jumbotron-background-item.png" />
+      </div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+    </div>
+  </div>
+</header>
 
-                    <p class="blog-post-header">
-                      {{post.title}}
-                    </p>
+<main>
+  <div class="container-fluid container-fluid-blog">
+    <div class="container container-blog">
+      <div class="row row-blog">
+        <div class="col col-blog">
+          <div class="blog blog-blog">
+            <div class="blog-posts">
+              {% for post in site.categories.blog %}
+              <a class="blog-post blog-post-{{post.category}}" href="{{post.url}}">
+                <div class="blog-post-wrapper">
+                  <p class="blog-post-category">
+                    {{post.category}}
+                  </p>
 
-                    <p class="blog-post-text">
-                      {{post.excerpt | strip_html}}
-                    </p>
+                  <p class="blog-post-header">
+                    {{post.title}}
+                  </p>
 
-                    <div class="blog-post-info">
-                      <div class="blog-post-info-user-picture">
-                        <img alt="Image" class="img-fluid" src="/images/authors/{{post.author | split: ' ' | first | downcase}}@2x.jpg" />
-                      </div>
+                  <p class="blog-post-text">
+                    {{post.excerpt | strip_html}}
+                  </p>
 
-                      <div>
-                        <p class="blog-post-info-user-name">
-                          {{post.author | upcase}}
-                        </p>
+                  <div class="blog-post-info">
+                    <div class="blog-post-info-user-picture">
+                      <img alt="Image" class="img-fluid" src="/images/authors/{{post.author | split: ' ' | first | downcase}}@2x.jpg" />
+                    </div>
 
-                        <p class="blog-post-info-date">
-                          {{post.date | date: '%B %d, %Y'}}
-                        </p>
-                      </div>
+                    <div>
+                      <p class="blog-post-info-user-name">
+                        {{post.author | upcase}}
+                      </p>
+
+                      <p class="blog-post-info-date">
+                        {{post.date | date: '%B %d, %Y'}}
+                      </p>
                     </div>
                   </div>
-                </a>
-                {% endfor %}
-              </div>
+                </div>
+              </a>
+              {% endfor %}
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    {% include contact_banner.html %}
-  </main>
-</body>
-
-</html>
+  {% include contact_banner.html %}
+</main>

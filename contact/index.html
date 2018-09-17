@@ -3,111 +3,109 @@ layout: default
 title: Contact Us
 ---
 
-<body class="page-contact-us">
-  <header>
-    <div class="jumbotron jumbotron-fluid jumbotron-fluid-contact-us">
-      <div class="container container-jumbotron">
-        <div class="jumbotron-header-wrapper">
-          <h1 class="jumbotron-header">
-            let us know how we can help you
-          </h1>
-        </div>
-      </div>
-
-      <div class="jumbotron-background">
-        <div class="jumbotron-background-item jumbotron-background-item-primary">
-          <img alt="Image" class="img-fluid jumbotron-background-item-image" src="../images/jumbotron/jumbotron-background-item.png" />
-        </div>
-        <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
-        <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
-        <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+<header class="page-contact-us">
+  <div class="jumbotron jumbotron-fluid jumbotron-fluid-contact-us">
+    <div class="container container-jumbotron">
+      <div class="jumbotron-header-wrapper">
+        <h1 class="jumbotron-header">
+          let us know how we can help you
+        </h1>
       </div>
     </div>
-  </header>
 
-  <main>
-    <div class="container-fluid container-fluid-contact-us">
-      <div class="container container-contact-us">
-        <div class="row row-contact-us">
-          <div class="col col-contact-us">
-            <div class="contact-us">
-              <div class="contact-us-map">
-                <img alt="Image" class="contact-us-map-image img-fluid" src="../images/map.png" />
+    <div class="jumbotron-background">
+      <div class="jumbotron-background-item jumbotron-background-item-primary">
+        <img alt="Image" class="img-fluid jumbotron-background-item-image" src="../images/jumbotron/jumbotron-background-item.png" />
+      </div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+    </div>
+  </div>
+</header>
 
-                <div class="contact-us-map-popover popover popover-map bs-popover-top">
-                  <img alt="simplabs logo" class="img-fluid popover-logo" src="../images/simplabs-logo-blue.svg">
+<main>
+  <div class="container-fluid container-fluid-contact-us">
+    <div class="container container-contact-us">
+      <div class="row row-contact-us">
+        <div class="col col-contact-us">
+          <div class="contact-us">
+            <div class="contact-us-map">
+              <img alt="Image" class="contact-us-map-image img-fluid" src="../images/map.png" />
 
-                  <div class="popover-body">
-                    <address class="popover-address">
-                      <span>Claude-Lorrain-Str. 7</span>
-                      <span>81543 München</span>
-                      <span>Germany</span>
-                    </address>
+              <div class="contact-us-map-popover popover popover-map bs-popover-top">
+                <img alt="simplabs logo" class="img-fluid popover-logo" src="../images/simplabs-logo-blue.svg">
 
-                    <a class="popover-phone" href="tel:+49 89 462 565 03" rel="nofollow">+49 89 462 565 03</a>
+                <div class="popover-body">
+                  <address class="popover-address">
+                    <span>Claude-Lorrain-Str. 7</span>
+                    <span>81543 München</span>
+                    <span>Germany</span>
+                  </address>
 
-                    <a class="popover-email" href="mailto:info@simplabs.com">info@simplabs.com</a>
+                  <a class="popover-phone" href="tel:+49 89 462 565 03" rel="nofollow">+49 89 462 565 03</a>
 
-                    <a class="popover-link" href="https://twitter.com/simplabs">@simplabs</a>
-                  </div>
+                  <a class="popover-email" href="mailto:info@simplabs.com">info@simplabs.com</a>
 
-                  <div class="arrow"></div>
+                  <a class="popover-link" href="https://twitter.com/simplabs">@simplabs</a>
                 </div>
+
+                <div class="arrow"></div>
+              </div>
+            </div>
+
+            <div class="contact-us-form">
+              <form class="form">
+                <div class="form-group">
+                  <label class="label" for="name">Your name</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="label" for="email">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="label" for="howCanWeHelpYou">How can we help you?</label>
+                  <textarea class="form-control form-control-textarea" id="howCanWeHelpYou" name="message" placeholder="Tell us about your project"
+                    rows="8" data-gramm_editor="false" required></textarea>
+                </div>
+
+                <div class="btn-submit-wrapper">
+                  <button type="submit" class="btn btn-ghost-white btn-submit">Submit</button>
+                </div>
+              </form>
+
+              <div class="submission-state submission-state-in-progress">
+                <div class="submission-state-icon"></div>
+
+                <p class="submission-state-text">
+                  The message is being sent…
+                </p>
               </div>
 
-              <div class="contact-us-form">
-                <form class="form">
-                  <div class="form-group">
-                    <label class="label" for="name">Your name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="label" for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="label" for="howCanWeHelpYou">How can we help you?</label>
-                    <textarea class="form-control form-control-textarea" id="howCanWeHelpYou" name="message"
-                      placeholder="Tell us about your project" rows="8" data-gramm_editor="false" required></textarea>
-                  </div>
-
-                  <div class="btn-submit-wrapper">
-                    <button type="submit" class="btn btn-ghost-white btn-submit">Submit</button>
-                  </div>
-                </form>
-
-                <div class="submission-state submission-state-in-progress">
-                  <div class="submission-state-icon"></div>
-
-                  <p class="submission-state-text">
-                    The message is being sent…
-                  </p>
+              <div class="submission-state submission-state-successful">
+                <div class="submission-state-icon">
+                  <img alt="Icon" class="img-fluid" src="../images/icons/form-submission-successful.svg" />
                 </div>
 
-                <div class="submission-state submission-state-successful">
-                  <div class="submission-state-icon">
-                    <img alt="Icon" class="img-fluid" src="../images/icons/form-submission-successful.svg" />
-                  </div>
+                <p class="submission-state-text">
+                  Thanks, we'll be in touch!
+                </p>
+              </div>
 
-                  <p class="submission-state-text">
-                    Thanks, we'll be in touch!
-                  </p>
+              <div class="submission-state submission-state-failed">
+                <div class="submission-state-icon">
+                  <img alt="Icon" class="img-fluid" src="../images/icons/form-submission-failed.svg" />
                 </div>
 
-                <div class="submission-state submission-state-failed">
-                  <div class="submission-state-icon">
-                    <img alt="Icon" class="img-fluid" src="../images/icons/form-submission-failed.svg" />
-                  </div>
+                <p class="submission-state-text">
+                  An error occurred &mdash; please try again.
+                </p>
 
-                  <p class="submission-state-text">
-                    An error occurred &mdash; please try again.
-                  </p>
-
-                  <div class="btn-go-back-wrapper">
-                    <button class="btn btn-ghost-white btn-go-back">Go back</button>
-                  </div>
+                <div class="btn-go-back-wrapper">
+                  <button class="btn btn-ghost-white btn-go-back">Go back</button>
                 </div>
               </div>
             </div>
@@ -115,141 +113,139 @@ title: Contact Us
         </div>
       </div>
     </div>
-  </main>
+  </div>
+</main>
 
-  <script>
-    Zepto(function ($) {
-      let lastScrollTop;
-      const mainMenu = $('.navbar');
-      const mainMenuHeight = mainMenu.height();
-      const win = $(window);
+<script>
+  Zepto(function ($) {
+    let lastScrollTop;
+    const mainMenu = $('.navbar');
+    const mainMenuHeight = mainMenu.height();
+    const win = $(window);
 
-      function displayLabel(label) {
-        label.css({
-          opacity: 1
-        });
-        setTimeout(function () {
-          label.css({
-            opacity: 0
-          });
-        }, 3500);
-      }
-
-      function setScrolledClass(scrollTop) {
-        if (scrollTop > mainMenuHeight) {
-          mainMenu.addClass('scrolled');
-        } else {
-          mainMenu.removeClass('scrolled');
-        }
-      }
-
-      win.scroll(function () {
-        const scrollTop = win.scrollTop();
-
-        setScrolledClass(scrollTop);
-
-        if (lastScrollTop < scrollTop && scrollTop > mainMenuHeight * 2) {
-          mainMenu.addClass('scrollUp');
-        } else if (lastScrollTop > scrollTop) {
-          mainMenu.removeClass('scrollUp');
-        }
-
-        lastScrollTop = scrollTop;
+    function displayLabel(label) {
+      label.css({
+        opacity: 1
       });
-      setScrolledClass(win.scrollTop());
+      setTimeout(function () {
+        label.css({
+          opacity: 0
+        });
+      }, 3500);
+    }
 
-      const submitButton = $('.btn-submit');
-      const goBackButton = $('.btn-go-back');
-      var form = $('.form');
-      form.submit(function (event) {
-        event.preventDefault();
-        hideForm().then(() => showSubmissionState('submission-state-in-progress'))
+    function setScrolledClass(scrollTop) {
+      if (scrollTop > mainMenuHeight) {
+        mainMenu.addClass('scrolled');
+      } else {
+        mainMenu.removeClass('scrolled');
+      }
+    }
 
-        function hideForm() {
-          return new Promise((resolve) => {
-            const form = $('.form');
+    win.scroll(function () {
+      const scrollTop = win.scrollTop();
 
-            form.addClass('hidden');
-            resolve();
-          });
-        }
+      setScrolledClass(scrollTop);
 
-        function hideSubmissionState(type) {
-          return new Promise((resolve) => {
+      if (lastScrollTop < scrollTop && scrollTop > mainMenuHeight * 2) {
+        mainMenu.addClass('scrollUp');
+      } else if (lastScrollTop > scrollTop) {
+        mainMenu.removeClass('scrollUp');
+      }
+
+      lastScrollTop = scrollTop;
+    });
+    setScrolledClass(win.scrollTop());
+
+    const submitButton = $('.btn-submit');
+    const goBackButton = $('.btn-go-back');
+    var form = $('.form');
+    form.submit(function (event) {
+      event.preventDefault();
+      hideForm().then(() => showSubmissionState('submission-state-in-progress'))
+
+      function hideForm() {
+        return new Promise((resolve) => {
+          const form = $('.form');
+
+          form.addClass('hidden');
+          resolve();
+        });
+      }
+
+      function hideSubmissionState(type) {
+        return new Promise((resolve) => {
+          const submissionState = $(`.${type}`);
+
+          submissionState.removeClass('shown');
+          submissionState.addClass('hidden');
+          resolve();
+        })
+      }
+
+      function showSubmissionState(type) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
             const submissionState = $(`.${type}`);
 
-            submissionState.removeClass('shown');
-            submissionState.addClass('hidden');
+            submissionState.addClass('shown');
             resolve();
-          })
+          }, 200);
+        })
+      }
+
+      var button = form.find('button[type="submit"]');
+      button.prop('disabled', true);
+      button.text('Sending…');
+      var data = {
+        name: form.find('[name="name"]').val(),
+        email: $('[name="email"]').val(),
+        message: $('[name="message"]').val()
+      };
+
+      $.ajax({
+        type: 'POST',
+        url: 'https://guqdu9qkgf.execute-api.eu-central-1.amazonaws.com/production',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        success: function () {
+          hideForm().then(() => hideSubmissionState('submission-state-in-progress'))
+          hideForm().then(() => showSubmissionState('submission-state-successful'))
+          var successLabel = form.find('.submission-state-successful');
+          displayLabel(successLabel);
+          form[0].reset();
+        },
+        error: function () {
+          hideForm().then(() => hideSubmissionState('submission-state-in-progress'))
+          hideForm().then(() => showSubmissionState('ssubmission-state-failed'))
+          var successLabel = form.find('.submission-state-failed');
+          displayLabel(successLabel);
+        },
+        complete: function () {
+          button.prop('disabled', false);
+          button.text('Send');
         }
-
-        function showSubmissionState(type) {
-          return new Promise((resolve) => {
-            setTimeout(() => {
-              const submissionState = $(`.${type}`);
-
-              submissionState.addClass('shown');
-              resolve();
-            }, 200);
-          })
-        }
-
-        var button = form.find('button[type="submit"]');
-        button.prop('disabled', true);
-        button.text('Sending…');
-        var data = {
-          name: form.find('[name="name"]').val(),
-          email: $('[name="email"]').val(),
-          message: $('[name="message"]').val()
-        };
-
-        $.ajax({
-          type: 'POST',
-          url: 'https://guqdu9qkgf.execute-api.eu-central-1.amazonaws.com/production',
-          dataType: 'json',
-          contentType: 'application/json',
-          data: JSON.stringify(data),
-          success: function () {
-            hideForm().then(() => hideSubmissionState('submission-state-in-progress'))
-            hideForm().then(() => showSubmissionState('submission-state-successful'))
-            var successLabel = form.find('.submission-state-successful');
-            displayLabel(successLabel);
-            form[0].reset();
-          },
-          error: function () {
-            hideForm().then(() => hideSubmissionState('submission-state-in-progress'))
-            hideForm().then(() => showSubmissionState('ssubmission-state-failed'))
-            var successLabel = form.find('.submission-state-failed');
-            displayLabel(successLabel);
-          },
-          complete: function () {
-            button.prop('disabled', false);
-            button.text('Send');
-          }
-        });
-      });
-
-      goBackButton.on('click', (event) => {
-        event.preventDefault();
-
-        hideSubmissionState('submission-state-failed')
-          .then(() => showForm());
-
-        function showForm() {
-          return new Promise((resolve) => {
-            setTimeout(() => {
-              const form = $('.form');
-
-              form.removeClass('hidden');
-              resolve();
-            }, 200);
-          });
-        }
-
       });
     });
-  </script>
-</body>
 
-</html>
+    goBackButton.on('click', (event) => {
+      event.preventDefault();
+
+      hideSubmissionState('submission-state-failed')
+        .then(() => showForm());
+
+      function showForm() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            const form = $('.form');
+
+            form.removeClass('hidden');
+            resolve();
+          }, 200);
+        });
+      }
+
+    });
+  });
+</script>
