@@ -7123,11 +7123,7 @@ a.text-dark:hover, a.text-dark:focus {
         .article .article-content .article-section + .article-section {
           margin-top: 6em; } }
     .article .article-content .article-header,
-    .article .article-content .article-subheader,
-    .article .article-content .article-section h4,
-    .article-section .article .article-content h4,
-    .article .article-content .article-section h2,
-    .article-section .article .article-content h2 {
+    .article .article-content .article-subheader {
       color: #0d182f;
       font-weight: 900; }
     .article .article-content .article-header {
@@ -7141,32 +7137,28 @@ a.text-dark:hover, a.text-dark:focus {
           letter-spacing: 0.0416em;
           line-height: 1.1666em;
           margin-bottom: 0.6666em; } }
-    .article .article-content .article-subheader, .article .article-content .article-section h4, .article-section .article .article-content h4,
-    .article .article-content .article-section h2,
-    .article-section .article .article-content h2 {
+    .article .article-content .article-subheader {
       font-size: 1.25em;
       line-height: 1.4em;
       margin-bottom: 1.2em; }
       @media (min-width: 768px) {
-        .article .article-content .article-subheader, .article .article-content .article-section h4, .article-section .article .article-content h4,
-        .article .article-content .article-section h2,
-        .article-section .article .article-content h2 {
+        .article .article-content .article-subheader {
           font-size: 2em;
           letter-spacing: 0.0312em;
           line-height: 1.25em;
           margin-bottom: 1em; } }
-    .article .article-content .article-text, .article .article-content .article-section p, .article-section .article .article-content p {
+    .article .article-content .article-text {
       color: #0d182f;
       font-size: 1em;
       font-weight: 300;
       line-height: 1.5em; }
       @media (min-width: 768px) {
-        .article .article-content .article-text, .article .article-content .article-section p, .article-section .article .article-content p {
+        .article .article-content .article-text {
           font-size: 1.25em;
           line-height: 1.6em; } }
-    .article .article-content .article-text + .article-text, .article .article-content .article-section p + .article-text, .article-section .article .article-content p + .article-text, .article .article-content .article-section .article-text + p, .article-section .article .article-content .article-text + p, .article .article-content .article-section p + p, .article-section .article .article-content p + p {
+    .article .article-content .article-text + .article-text {
       margin-top: 2.5em; }
-    .article .article-content .article-text-code, .article .article-content .article-section code, .article-section .article .article-content code {
+    .article .article-content .article-text-code {
       color: #dc3968; }
     .article .article-content ol,
     .article .article-content ul {
@@ -9515,10 +9507,5 @@ footer {
   @media (min-width: 1280px) {
     footer {
       margin-top: 12rem; } }
-
-.article-section h4:before,
-.article-section h2:before {
-  content: "\A";
-  white-space: pre; }
 
 /*# sourceMappingURL=main.css.map */
