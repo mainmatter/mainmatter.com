@@ -26,133 +26,47 @@ title: Services
 </header>
 
 <main>
-  <div class="container-fluid container-fluid-service container-fluid-service-full-stack-engineering">
-    <div class="container container-service">
-      <div class="row row-service">
-        <div class="col col-service">
-          <a class="service service-floated-left" href="/full-stack-engineering/index.html">
-            <div class="service-preview">
-              <div class="circle circle-service">
-                <img alt="fullstack" class="circle-image img-fluid" src="../images/icons/dark/fullstack.svg">
-              </div>
-            </div>
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-sm-5">
+        <img alt="fullstack" class="mx-auto d-block" src="../images/icons/dark/fullstack.svg">
+      </div>
+      <div class="col-sm-5">
+        <h2 class="font-weight-black text-dark-blue mb-4">Full Stack Engineering</h2>
+        <p class="lead">We turn ideas into successful products, working closely with our clients in short iterations. Our solutions are well architected and easy to maintain and extend by our clients once they are ready to take over themselves.</p>
+        <a href="/full-stack-engineering/index.html" class="text-arrow mt-4">Learn More</a>
+      </div>
+    </div>
+  </div><!--container-->
 
-            <div class="service-description">
-              <p class="service-description-header">
-                Full Stack Engineering
-              </p>
-
-              <p class="service-description-text">
-                We turn ideas into successful products, working closely with our clients in short iterations. Our
-                solutions are well architected and easy to maintain and extend by our clients once they are ready to
-                take over themselves.
-              </p>
-
-              <p class="service-description-link">Learn more</p>
-            </div>
-          </a>
+  <div class="container">
+    <div class="bg-light-blue p-5">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-sm-5">
+          <h2 class="font-weight-black text-dark-blue mb-4">Team Augmentation</h2>
+          <p class="lead">Not all engineering teams have the experience or confidence to make big decisions and complete large scale projects on time and budget. Our technology experts can merge with our clients' in-house engineering teams, spearhead development initiatives, establish best practices and install a smooth process.</p>
+          <a href="/full-stack-engineering/index.html" class="text-arrow mt-4">Learn More</a>
+        </div>
+        <div class="col-sm-5">
+          <img alt="fullstack" class="mx-auto d-block" src="../images/icons/dark/team.svg">
         </div>
       </div>
     </div>
-  </div>
+  </div><!--container-->
 
-  <div class="container-fluid container-fluid-service container-fluid-service-grey container-fluid-service-team-augmentation">
-    <div class="container container-service">
-      <div class="row row-service">
-        <div class="col col-service">
-          <a class="service service-floated-right" href="/team-augmentation/index.html">
-            <div class="service-description">
-              <p class="service-description-header">
-                Team Augmentation
-              </p>
-
-              <p class="service-description-text">
-                Not all engineering teams have the experience or confidence to make big decisions and complete large
-                scale projects on time and budget. Our technology experts can merge with our clients' in-house
-                engineering teams, spearhead development initiatives, establish best practices and install a smooth
-                process.
-              </p>
-
-              <p class="service-description-link">Learn more</p>
-            </div>
-
-            <div class="service-preview">
-              <div class="circle circle-white circle-service">
-                <img alt="team" class="circle-image img-fluid" src="../images/icons/dark/team.svg">
-              </div>
-            </div>
-          </a>
-        </div>
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-sm-5">
+        <img alt="fullstack" class="mx-auto d-block" src="../images/icons/dark/tutoring.svg">
       </div>
-
-      <div class="container-service-background container-service-background-floated-right"></div>
-    </div>
-  </div>
-
-  <div class="container-fluid container-fluid-service container-fluid-service-tutoring-augmentation">
-    <div class="container container-service">
-      <div class="row row-service">
-        <div class="col col-service">
-          <a class="service service-floated-left" href="/training/index.html">
-            <div class="service-preview">
-              <div class="circle circle-service">
-                <img alt="tutoring" class="circle-image img-fluid" src="../images/icons/dark/tutoring.svg">
-              </div>
-            </div>
-
-            <div class="service-description">
-              <p class="service-description-header">
-                Tutoring
-              </p>
-
-              <p class="service-description-text">
-                simplabs offers individual and group training by tutors with extensive experience in the respective
-                technologies. From introductory workshops on frameworks like Ember.js or Phoenix to advanced classes
-                on distributed systems design, authentication, deployment or scalability, we set up customized
-                training sessions that suit the needs of our clients and their teams.
-              </p>
-
-              <p class="service-description-link">Learn more</p>
-            </div>
-          </a>
-        </div>
+      <div class="col-sm-5">
+        <h2 class="font-weight-black text-dark-blue mb-4">Tutoring</h2>
+        <p class="lead">simplabs offers individual and group training by tutors with extensive experience in the respective technologies. From introductory workshops on frameworks like Ember.js or Phoenix to advanced classes on distributed systems design, authentication, deployment or scalability, we set up customized training sessions that suit the needs of our clients and their teams.</p>
+        <a href="/full-stack-engineering/index.html" class="text-arrow mt-4">Learn More</a>
       </div>
     </div>
-  </div>
+  </div><!--container-->
+
 
   {% include contact_banner.html %}
 </main>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
-<script>
-  Zepto(function ($) {
-    let lastScrollTop;
-    const mainMenu = $('.navbar');
-    const mainMenuHeight = mainMenu.height();
-    const win = $(window);
-
-    function setScrolledClass(scrollTop) {
-      if (scrollTop > mainMenuHeight) {
-        mainMenu.addClass('scrolled');
-      } else {
-        mainMenu.removeClass('scrolled');
-      }
-    }
-
-    win.scroll(function () {
-      const scrollTop = win.scrollTop();
-
-      setScrolledClass(scrollTop);
-
-      if (lastScrollTop < scrollTop && scrollTop > mainMenuHeight * 2) {
-        mainMenu.addClass('scrollUp');
-      } else if (lastScrollTop > scrollTop) {
-        mainMenu.removeClass('scrollUp');
-      }
-
-      lastScrollTop = scrollTop;
-    });
-
-    setScrolledClass(win.scrollTop());
-  });
-</script>

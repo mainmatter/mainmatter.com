@@ -1,3 +1,34 @@
+.section-client {
+  background-size: cover;
+}
+
+.section-client-illustration {
+  overflow: hidden;
+  height: 400px;
+}
+
+.section-client--trainline {
+  background-color: $trainline;
+  background-image: url("../../images/trainline/case-study-background-1.jpg");
+}
+
+.section-client--ddwrt {
+  background-color: $dd-wrt;
+  background-image: url("../../images/dd-wrt/case-study-background-1.jpg");
+}
+
+.section-client--timify {
+  background-color: $timify;
+  background-image: url("../../images/timify/case-study-background-1.jpg");
+}
+
+.section-client--expedition {
+  background-color: $expedition;
+  background-image: url("../../images/expedition/case-study-background-1.jpg");
+}
+
+
+// REMOVE BELOW
 
 .container-fluid-case-study {
   font-size: 16px;

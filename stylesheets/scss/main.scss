@@ -1,1 +1,17 @@
 @import "./custom.bootstrap.scss";
+
+.bg-light-blue {
+  background-color: $light-blue !important;
+}
+
+.font-weight-black {
+  font-weight: $font-weight-black !important;
+}
+
+.text-dark-blue {
+  color: $headlines !important;
+}
+
+.w-200 {
+  width: 200%;
+}
