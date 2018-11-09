@@ -95,60 +95,15 @@ title: Team Augmentation
     </div>
   </div>
 
-  <div class="container-fluid container-fluid-service container-fluid-team-augmentation-our-expertise">
-    <div class="container container-service">
-      <div class="row row-service">
-        <div class="col col-service">
-          <div class="service">
-            <div class="service-description">
-              <p class="service-description-header">
-                our expertise
-              </p>
-
-              <p class="service-description-text">
-                We are experts in Ember.js and Elixir & Phoenix frameworks.
-              </p>
-
-              <p class="service-description-text">
-                It allows us to build solid projects and our clients can easily maintain them after we finish our
-                work.
-              </p>
-            </div>
-
-            <div class="service-preview">
-              <a class="card card-ember-small card-our-expertise card-our-expertise-small" href="/ember/index.html">
-                <div class="card-body">
-                  <h5 class="card-title">Ember.js</h5>
-
-                  <p class="card-text">
-                    simplabs has been an active member of Ember Ecosystem from the early days.
-                  </p>
-                </div>
-                <div class="card-background-wrapper">
-                  <div class="card-background"></div>
-                </div>
-              </a>
-
-              <a class="card card-elixir-phoenix-small card-our-expertise card-our-expertise-small" href="/elixir/index.html">
-                <div class="card-body">
-                  <h5 class="card-title">Elixir & Phoenix</h5>
-
-                  <p class="card-text">
-                    simplabs was an early adopter of Elixir & Phoenix, organizing meetups and conferences.
-                  </p>
-                </div>
-                <div class="card-background-wrapper">
-                  <div class="card-background"></div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-service-background container-service-background-floated-left"></div>
-    </div>
-  </div>
-
+  {% include expertise_section.html %}
   {% include contact_banner.html %}
 </main>
+
+<script type="text/javascript" src="./../node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="./../node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+<script type="text/javascript">
+  $(function() {
+    $('.card-expertise').matchHeight();
+  });
+</script>
