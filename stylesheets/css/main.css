@@ -295,9 +295,9 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0;
   font-family: "Nunito Sans", sans-serif;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.2;
-  color: #0d182f; }
+  color: inherit; }
 
 h1, .h1 {
   font-size: 5rem; }
@@ -2889,6 +2889,22 @@ input.toggler[type=checkbox]:checked + .navbar {
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
 
+.text-arrow {
+  display: block;
+  position: relative;
+  padding-left: 16px; }
+  .text-arrow::before {
+    border: solid #007df7;
+    border-width: 0 3px 3px 0;
+    content: "";
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    left: 0;
+    position: absolute;
+    top: 8px;
+    transform: rotate(-45deg); }
+
 .card {
   border: none;
   margin-bottom: 2rem; }
@@ -3031,7 +3047,7 @@ input.toggler[type=checkbox]:checked + .navbar {
     .card .card-body .card-title {
       font-family: "Nunito Sans", sans-serif;
       font-size: 1rem;
-      font-weight: 900;
+      font-weight: 700;
       margin-bottom: 1rem;
       overflow-wrap: normal; }
     .card .card-body .card-text {
@@ -4074,7 +4090,7 @@ input.toggler[type=checkbox]:checked + .navbar {
   padding: 0.5rem 0.75rem;
   margin-bottom: 0;
   font-size: 1rem;
-  color: #0d182f;
+  color: inherit;
   background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb; }
   .popover-header:empty {
@@ -7427,6 +7443,29 @@ a.text-dark:hover, a.text-dark:focus {
         font-size: 1em;
         line-height: 1.5em; } }
 
+.section-client {
+  background-size: cover; }
+
+.section-client-illustration {
+  overflow: hidden;
+  height: 400px; }
+
+.section-client--trainline {
+  background-color: #2ec2a7;
+  background-image: url("../../images/trainline/case-study-background-1.jpg"); }
+
+.section-client--ddwrt {
+  background-color: #48abe4;
+  background-image: url("../../images/dd-wrt/case-study-background-1.jpg"); }
+
+.section-client--timify {
+  background-color: #e44852;
+  background-image: url("../../images/timify/case-study-background-1.jpg"); }
+
+.section-client--expedition {
+  background-color: #634cc4;
+  background-image: url("../../images/expedition/case-study-background-1.jpg"); }
+
 .container-fluid-case-study {
   font-size: 16px; }
   @media (min-width: 768px) {
@@ -7889,6 +7928,12 @@ footer {
       color: #0066cc; }
     footer .nav-link:hover {
       color: #007df7; }
+
+.bg-line {
+  background-image: url("../../images/icons/dark/line.svg");
+  background-position: left top;
+  background-size: .25em 1em;
+  background-repeat: repeat-x; }
 
 .container-fluid-introduction {
   font-size: 16px; }
@@ -9507,5 +9552,17 @@ footer {
   @media (min-width: 1280px) {
     footer {
       margin-top: 12rem; } }
+
+.bg-light-blue {
+  background-color: #f3f6fb !important; }
+
+.font-weight-black {
+  font-weight: 900 !important; }
+
+.text-dark-blue {
+  color: #0d182f !important; }
+
+.w-200 {
+  width: 200%; }
 
 /*# sourceMappingURL=main.css.map */
