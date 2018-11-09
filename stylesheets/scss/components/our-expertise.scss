@@ -1,3 +1,17 @@
+.card-expertise {
+  background-size: cover;
+}
+
+.card-expertise--ember {
+  background-color: $ember;
+  background-image: url(../../images/card/ember-background-small.png);
+}
+
+.card-expertise--elixir {
+  background-color: $elixir;
+  background-image: url(../../images/card/elixir-phoenix-background-small.png);
+}
+
 .our-expertise-description {
   font-size: 16px;
   margin-bottom: 2.5em;

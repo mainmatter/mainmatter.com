@@ -8183,6 +8183,17 @@ footer {
           transform-origin: left top;
           transition: all 0.2s ease-in-out; }
 
+.card-expertise {
+  background-size: cover; }
+
+.card-expertise--ember {
+  background-color: #dd4025;
+  background-image: url(../../images/card/ember-background-small.png); }
+
+.card-expertise--elixir {
+  background-color: #502a6b;
+  background-image: url(../../images/card/elixir-phoenix-background-small.png); }
+
 .our-expertise-description {
   font-size: 16px;
   margin-bottom: 2.5em; }
