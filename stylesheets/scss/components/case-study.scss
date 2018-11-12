@@ -12,6 +12,10 @@
   background-image: url("../../images/trainline/case-study-background-1.jpg");
 }
 
+.bg-trainline {
+  background-color: $trainline !important;
+}
+
 .section-client--ddwrt {
   background-color: $dd-wrt;
   background-image: url("../../images/dd-wrt/case-study-background-1.jpg");
@@ -22,11 +26,22 @@
   background-image: url("../../images/timify/case-study-background-1.jpg");
 }
 
+.bg-timify {
+  background-color: $timify !important;
+}
+
 .section-client--expedition {
   background-color: $expedition;
   background-image: url("../../images/expedition/case-study-background-1.jpg");
 }
 
+.icon-circle {
+  display: flex;
+  margin: auto;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
 
 // REMOVE BELOW
 
