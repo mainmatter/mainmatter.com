@@ -15,3 +15,21 @@
 .w-200 {
   width: 200%;
 }
+
+.icon-circle {
+  display: flex;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.icon-circle-sm {
+  @extend .icon-circle;
+  height: 150px;
+  width: 150px;
+}
+
+.icon-circle-lg {
+  @extend .icon-circle;
+  width: 300px;
+  height: 300px;
+}

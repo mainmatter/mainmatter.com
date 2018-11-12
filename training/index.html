@@ -58,7 +58,9 @@ title: Training
           </p>
         </div>
         <div class="col-sm-5">
-          <img alt="fullstack" class="mx-auto d-block img-circle" src="../images/icons/dark/reviews.svg">
+          <div class="icon-circle-lg bg-white">
+            <img alt="fullstack" class="mx-auto d-block" src="../images/icons/dark/reviews.svg">
+          </div>
         </div>
       </div>
     </div>
@@ -86,3 +88,12 @@ title: Training
   {% include expertise_section.html %}
   {% include contact_banner.html %}
 </main>
+
+<script type="text/javascript" src="./../node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="./../node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+<script type="text/javascript">
+  $(function() {
+    $('.card-expertise').matchHeight();
+  });
+</script>
