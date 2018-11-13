@@ -27,21 +27,20 @@ title: Ember
 </header>
 
 <main>
-  <div class="container-fluid container-fluid-introduction">
-    <div class="container container-introduction">
-      <div class="row row-introduction">
-        <div class="col col-introduction">
-          <div class="introduction">
-            <p class="introduction-text">
-              simplabs has been an active member of the Ember Ecosystem from the early days. We are the leading Ember
-              consultancy in Europe and are <strong>involved in Ember.js core teams</strong> like Ember CLI and Ember
-              Learning. We also maintain a number of widely adopted addons.
-            </p>
-          </div>
-        </div>
+  <div class="container">
+    <div class="row justify-content-start">
+      <div class="col-sm-2 bg-line mx-3">
       </div>
-    </div>
-  </div>
+      <div class="col-sm-6 offset-sm-1">
+        <p class="lead mb-4">
+          simplabs has been an active member of the Ember Ecosystem from the early days. We are the leading Ember
+          consultancy in Europe and are <strong>involved in Ember.js core teams</strong> like Ember CLI and Ember
+          Learning. We also maintain a number of widely adopted addons.
+        </p>
+      </div>
+    </div>   
+  </div><!--container-->
+
 
   <div class="container container-quote container-quote-ember">
     <div class="row row-quote">
@@ -62,157 +61,114 @@ title: Ember
     </div>
   </div>
 
-  <div class="container-fluid container-fluid-service container-fluid-service-we-love-open-source">
-    <div class="container container-service">
-      <div class="row row-service">
-        <div class="col col-service">
-          <div class="service">
-            <div class="service-description">
-              <p class="service-description-header">
-                we love open source
-              </p>
-
-              <p class="service-description-text">
-                Our engineers are engaged in Ember.js core teams like Ember CLI and Ember Learning.
-              </p>
-              <p class="service-description-text">
-                Besides that, we maintain a number of popular addons in the ecosystem.
-              </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h2 class="my-4 font-weight-black text-lowercase">We love open source</h2>
+        <p class="lead mb-4">
+          Our engineers are engaged in Ember.js core teams like Ember CLI and Ember Learning.
+        </p>
+        <p class="lead">
+          Besides that, we maintain a number of popular addons in the ecosystem.
+        </p>
+      </div><!--col-->
+      <div class="col-sm-8">
+        <div class="d-flex flex-column flex-md-row justify-content-between section-features">
+          <div class="section-features-item w-50">
+            <div class="icon-circle-sm bg-timify align-items-center">
+              <img alt="faster" class="img-fluid d-block mx-auto w-50" src="../images/ember/we-love-open-source-icon-1.svg" />
             </div>
-
-            <div class="service-preview">
-              <div class="service-preview-card-wrapper">
-                <a class="card card-we-love-open-source card-we-love-open-source-authentication-management" href="https://github.com/simplabs/ember-simple-auth">
-                  <div class="card-image-wrapper">
-                    <img alt="Image" class="card-image img-fluid" src="../images/ember/we-love-open-source-icon-1.svg" />
-                  </div>
-
-                  <div class="card-body">
-                    <p class="card-title">
-                      Authentication management for Ember.js applications
-                    </p>
-                  </div>
-                </a>
-
-                <a class="card card-we-love-open-source card-we-love-open-source-enabling-better-element-selectors"
-                  href="https://github.com/simplabs/ember-test-selectors">
-                  <div class="card-image-wrapper">
-                    <img alt="Image" class="card-image img-fluid" src="../images/ember/we-love-open-source-icon-2.svg" />
-                  </div>
-
-                  <div class="card-body">
-                    <p class="card-title">
-                      Enabling better element selectors in Ember.js tests
-                    </p>
-                  </div>
-                </a>
-              </div>
-
-              <div class="service-preview-card-wrapper">
-                <a class="card card-we-love-open-source card-we-love-open-source-cookies-abstraction" href="https://github.com/simplabs/ember-cookies">
-                  <div class="card-image-wrapper">
-                    <img alt="Image" class="card-image img-fluid" src="../images/ember/we-love-open-source-icon-3.svg" />
-                  </div>
-
-                  <div class="card-body">
-                    <p class="card-title">
-                      Cookies abstraction for Ember.js with FastBoot support
-                    </p>
-                  </div>
-                </a>
-
-                <a class="card card-we-love-open-source card-we-love-open-source-high-level-dom" href="https://github.com/simplabs/qunit-dom">
-                  <div class="card-image-wrapper">
-                    <img alt="Image" class="card-image img-fluid" src="../images/ember/we-love-open-source-icon-4.svg" />
-                  </div>
-
-                  <div class="card-body">
-                    <p class="card-title">
-                      High Level DOM Assertions for QUnit
-                    </p>
-                  </div>
-                </a>
-              </div>
+            <h4 class="p-4">Authentication management for Ember.js applications</h4>
+          </div><!--section-features-item-->
+          <div class="section-features-item w-50">
+            <div class="icon-circle-sm bg-timify align-items-center">
+              <img alt="faster" class="img-fluid d-block mx-auto w-75" src="../images/ember/we-love-open-source-icon-2.svg" />
             </div>
-          </div>
-        </div>
+            <h4 class="p-4">Enabling better element selectors in Ember.js tests</h4>
+          </div><!--section-features-item-->
+        </div><!--flex row-->
+
+        <div class="d-flex flex-column flex-md-row justify-content-between section-features">
+          <div class="section-features-item w-50">
+            <div class="icon-circle-sm bg-timify align-items-center">
+              <img alt="faster" class="img-fluid d-block mx-auto w-75" src="../images/ember/we-love-open-source-icon-3.svg" />
+            </div>
+            <h4 class="p-4">Cookies abstraction for Ember.js with FastBoot support</h4>
+          </div><!--section-features-item-->
+          <div class="section-features-item w-50">
+            <div class="icon-circle-sm bg-timify align-items-center">
+              <img alt="faster" class="img-fluid d-block mx-auto w-75" src="../images/ember/we-love-open-source-icon-4.svg" />
+            </div>
+            <h4 class="p-4">High Level DOM Assertions for QUnit</h4>
+          </div><!--section-features-item-->
+        </div><!--flex row-->
       </div>
     </div>
-  </div>
+  </div><!--container-->
 
-  <div class="container-fluid container-fluid-service container-fluid-service-ember-community-engagement">
-    <div class="container container-service">
-      <div class="row row-service">
-        <div class="col col-service">
-          <div class="service">
-            <div class="service-preview">
-              <img alt="Image" class="service-preview-image img-fluid" src="../images/ember/preview-1.png" />
-            </div>
 
-            <div class="service-description">
-              <p class="service-description-header">
-                community engagement
-              </p>
-
-              <p class="service-description-text">
-                Ember.js is a project built by an open community and <strong>we are an active member of the community</strong>.
-                We support the <a href="https://www.meetup.com/Ember-js-Munich/">Ember.js Munich</a> and
-                <a href="https://www.meetup.com/Ember-js-Berlin/">Ember.js Berlin</a> meetups are are
-                co-organizers of EmberFest, the
-                european Ember Community Conference.
-              </p>
-
-              <div class="service-description-logos-wrapper">
-                <a class="service-description-logo-wrapper" href="https://www.meetup.com/Ember-js-Munich/">
-                  <img alt="Image" class="service-description-logo img-fluid" src="../images/ember/ember-logo-colorful-1.png" />
-                </a>
-
-                <a class="service-description-logo-wrapper" href="https://www.meetup.com/Ember-js-Berlin/">
-                  <img alt="Image" class="service-description-logo img-fluid" src="../images/ember/ember-logo-colorful-2.png" />
-                </a>
-
-                <a class="service-description-logo-wrapper" href="http://emberfest.eu">
-                  <img alt="Image" class="service-description-logo img-fluid" src="../images/ember/ember-logo-colorful-3.svg" />
-                </a>
-
-                <a class="service-description-logo-wrapper" href="https://emberconf.com">
-                  <img alt="Image" class="service-description-logo img-fluid" src="../images/ember/ember-logo-colorful-4.svg" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-sm-5">
+        <img alt="fullstack" class="mx-auto d-block" src="../images/ember/preview-1.png">
       </div>
-    </div>
-  </div>
+      <div class="col-sm-5">
+        <h2 class="font-weight-black text-dark-blue mb-4">Community engagement</h2>
+        <p class="lead">
+          Ember.js is a project built by an open community and <strong>we are an active member of the community</strong>.
+          We support the <a href="https://www.meetup.com/Ember-js-Munich/">Ember.js Munich</a> and
+          <a href="https://www.meetup.com/Ember-js-Berlin/">Ember.js Berlin</a> meetups are are
+          co-organizers of EmberFest, the
+          european Ember Community Conference.
+        </p>
+        
+        <div>
+          <a class="" href="https://www.meetup.com/Ember-js-Munich/">
+            <img alt="Image" class="img-fluid" src="../images/ember/ember-logo-colorful-1.png" />
+          </a>
 
-  <div class="container-fluid container-fluid-case-study">
-    <div class="container container-case-study">
-      <div class="row row-case-study">
-        <div class="col col-case-study">
-          <a class="case-study case-study-full-width case-study-trainline" href="/trainline/index.html">
-            <div class="case-study-description">
-              <div class="case-study-description-image-wrapper">
-                <img alt="Image" class="case-study-description-image img-fluid" src="../images/trainline/trainline-logo-white.svg" />
-              </div>
+          <a class="" href="https://www.meetup.com/Ember-js-Berlin/">
+            <img alt="Image" class="img-fluid" src="../images/ember/ember-logo-colorful-2.png" />
+          </a>
 
-              <p class="case-study-description-text">
-                trainline is Europe’s leading independent rail and coach platform. We helped them build their mobile
-                web app to leverage the full potential of the market.
-              </p>
-            </div>
+          <a class="" href="http://emberfest.eu">
+            <img alt="Image" class="img-fluid" src="../images/ember/ember-logo-colorful-3.svg" />
+          </a>
 
-            <div class="case-study-preview">
-              <img alt="Image" class="case-study-preview-image img-fluid" src="../images/trainline/screen-1.png">
-            </div>
-
-            <div class="case-study-background-wrapper">
-              <div class="case-study-background"></div>
-            </div>
+          <a class="" href="https://emberconf.com">
+            <img alt="Image" class="img-fluid" src="../images/ember/ember-logo-colorful-4.svg" />
           </a>
         </div>
+
       </div>
     </div>
+  </div><!--container-->
+
+
+
+  <div class="container">
+    <a href="/trainline/index.html">
+      <div class="section-client section-client--trainline text-white mb-5">
+        <div class="row align-items-end">
+          <div class="col-sm-6">
+            <div class="p-5">
+              <div class="client-logo my-4 d-flex">
+                <img alt="Image" class="img-fluid" src="/images/trainline/trainline-logo-white.svg" />
+              </div>
+              <h3 class="my-4">Leveraging Trainline's full market potential</h3>
+              <p class="mb-5">
+                Trainline is Europe’s leading independent rail and coach platform. We helped them build their mobile web app to leverage the full potential of the market.
+              </p>
+            </div>
+          </div><!--col-->
+          <div class="col-sm-6">
+            <div class="section-client-illustration text-center">
+              <img alt="Image" class="w-75" src="../images/trainline/screen-1.png">
+            </div>
+          </div><!--col-->
+        </div><!--row-->
+      </div><!--section-client-->
+    </a>
   </div>
 
   <div class="container-fluid container-fluid-service container-fluid-service-we-share-our-expertise">
