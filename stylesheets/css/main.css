@@ -7941,60 +7941,6 @@ footer {
   background-size: .25em 1em;
   background-repeat: repeat-x; }
 
-.container-fluid-introduction {
-  font-size: 16px; }
-  @media (min-width: 768px) {
-    .container-fluid-introduction {
-      font-size: 12px; } }
-  @media (min-width: 992px) {
-    .container-fluid-introduction {
-      font-size: 14px; } }
-  @media (min-width: 1200px) {
-    .container-fluid-introduction {
-      font-size: 16px; } }
-  .container-fluid-introduction .container-introduction {
-    padding: 0; }
-  .container-fluid-introduction .row-introduction,
-  .container-fluid-introduction .col-introduction {
-    margin: 0;
-    padding: 0; }
-  .container-fluid-introduction .introduction {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    position: relative; }
-    .container-fluid-introduction .introduction::before {
-      background-image: url("../../images/icons/dark/line.svg");
-      content: "";
-      display: none;
-      height: 0.25rem;
-      left: 0;
-      position: absolute;
-      top: 0.8em;
-      width: 10em; }
-      @media (min-width: 768px) {
-        .container-fluid-introduction .introduction::before {
-          display: inline-block;
-          width: 5em; } }
-      @media (min-width: 992px) {
-        .container-fluid-introduction .introduction::before {
-          width: 10em; } }
-    .container-fluid-introduction .introduction .introduction-text {
-      font-size: 1em;
-      line-height: 1.5em; }
-      @media (min-width: 768px) {
-        .container-fluid-introduction .introduction .introduction-text {
-          font-size: 1.25em;
-          line-height: 1.6em;
-          max-width: 30em; } }
-    .container-fluid-introduction .introduction .introduction-text + .introduction-text {
-      margin-top: 3em; }
-      @media (min-width: 768px) {
-        .container-fluid-introduction .introduction .introduction-text + .introduction-text {
-          margin-top: 2.4em; } }
-
 .container-fluid-logos {
   font-size: 16px; }
   .container-fluid-logos .container-logos {
@@ -8088,107 +8034,6 @@ footer {
         .container-fluid-logos-work .container-logos .row-logos .col-logo > img {
           max-width: 100%; } }
 
-.container-fluid-news {
-  font-size: 16px; }
-  @media (min-width: 768px) {
-    .container-fluid-news {
-      font-size: 12px; } }
-  @media (min-width: 992px) {
-    .container-fluid-news {
-      font-size: 14px; } }
-  @media (min-width: 1200px) {
-    .container-fluid-news {
-      font-size: 16px; } }
-  .container-fluid-news .container-news {
-    padding: 0; }
-  .container-fluid-news .row-news,
-  .container-fluid-news .col-news {
-    margin: 0;
-    padding: 0; }
-  .container-fluid-news .news .news-header {
-    color: #0d182f;
-    font-size: 2em;
-    font-weight: 900;
-    letter-spacing: 0.0375em;
-    line-height: 1.25em;
-    margin-bottom: 1em; }
-    @media (min-width: 768px) {
-      .container-fluid-news .news .news-header {
-        font-size: 4em;
-        line-height: 1.2em;
-        margin-bottom: 0.6em; } }
-  .container-fluid-news .news .swiper-container-news .swiper-wrapper-news {
-    align-items: stretch;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    overflow-x: scroll; }
-    @media (min-width: 992px) {
-      .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news {
-        max-width: 22em; } }
-    @media (min-width: 1280px) {
-      .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news {
-        max-width: 22.5em; } }
-    .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news:not(:disabled):not(.disabled):active .service-description .service-link, .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news:not(:disabled):not(.disabled).active .service-description .service-link {
-      color: #0066cc; }
-      .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news:not(:disabled):not(.disabled):active .service-description .service-link::before, .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news:not(:disabled):not(.disabled).active .service-description .service-link::before {
-        border-color: #006cd9; }
-    .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news:hover .swiper-slide-news-body .swiper-slide-news-body-link {
-      padding-left: calc(8px + 1.5em);
-      text-decoration: none; }
-    @media (min-width: 992px) {
-      .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-image-wrapper {
-        max-height: 8em; } }
-    .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-body {
-      padding: 2em 2em 4em 2em; }
-      @media (min-width: 992px) {
-        .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-body {
-          padding: 2em; } }
-      .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-body .swiper-slide-news-body-header {
-        color: #0d182f;
-        font-size: 1.25em;
-        font-weight: 900;
-        line-height: 1.4em;
-        margin-bottom: 0.8em; }
-        @media (min-width: 768px) {
-          .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-body .swiper-slide-news-body-header {
-            line-height: 2em;
-            margin-bottom: 0.4em; } }
-      .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-body .swiper-slide-news-body-text {
-        color: #0d182f;
-        font-size: 1em;
-        font-weight: 300;
-        line-height: 1.5em;
-        margin-bottom: 2em; }
-        @media (min-width: 768px) {
-          .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-body .swiper-slide-news-body-text {
-            font-size: 1.25em;
-            line-height: 1.6em;
-            margin-bottom: 1.6em; } }
-      .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-body .swiper-slide-news-body-link {
-        color: #007df7;
-        display: inline-block;
-        font-family: "Nunito Sans", sans-serif;
-        font-weight: 700;
-        font-size: 1em;
-        padding-left: calc(8px + 0.75em);
-        position: relative;
-        transition: all 0.2s ease-in-out; }
-        .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-body .swiper-slide-news-body-link::before {
-          border: solid #007df7;
-          border-width: 0 3px 3px 0;
-          content: "";
-          display: inline-block;
-          height: 8px;
-          width: 8px;
-          left: 0;
-          position: absolute;
-          top: 50%;
-          transform: rotate(-45deg);
-          transform-origin: left top;
-          transition: all 0.2s ease-in-out; }
-
 .card-expertise {
   background-size: cover; }
 
@@ -8199,39 +8044,6 @@ footer {
 .card-expertise--elixir {
   background-color: #502a6b;
   background-image: url(../../images/card/elixir-phoenix-background-small.png); }
-
-.our-expertise-description {
-  font-size: 16px;
-  margin-bottom: 2.5em; }
-  @media (min-width: 992px) {
-    .our-expertise-description {
-      max-width: 18em; } }
-  .our-expertise-description .text {
-    margin-top: 1.5em;
-    margin-bottom: 2.5em; }
-    @media (min-width: 768px) {
-      .our-expertise-description .text {
-        margin-top: 2em;
-        margin-bottom: 1em; } }
-    @media (min-width: 992px) {
-      .our-expertise-description .text {
-        margin-bottom: 3em; } }
-    .our-expertise-description .text:last-child {
-      margin: 0; }
-
-.card-our-expertise-small-container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-end; }
-  @media (min-width: 768px) {
-    .card-our-expertise-small-container {
-      flex-direction: row;
-      justify-content: space-between; } }
-  @media (min-width: 992px) {
-    .card-our-expertise-small-container {
-      justify-content: flex-end; } }
 
 .container-quote {
   background-color: #f3f6fb;
