@@ -115,7 +115,7 @@ title: Elixir
             support theElixir Munich meetup and have been sponsors of ElixirConf and
             ElixirConf EU for years.
           </p>
-          <div class="d-flex flex-row justify-content-between">
+          <div class="d-flex flex-row justify-content-between mt-4">
             <a class="d-block p-2" href="https://www.meetup.com/Elixir-Munich/">
               <img alt="Image" class="img-fluid" src="../images/elixir/elixir-logo-colorful-1.png" />
             </a>
@@ -134,70 +134,59 @@ title: Elixir
     </div>
   </div><!--container-->
 
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h2 class="text-lowercase font-weight-black mb-4">From the blog</h2>
+        <p class="lead">
+          We share our experience with Elixir and Phoenix in our blog.
+        </p>
+      </div><!--col-->
+      <div class="col-sm-7 offset-sm-1">
+        <div class="blog blog-elixir">
+          <div class="blog-posts">
+            {% assign counter = 0 %}
+            {% for post in site.categories.blog %}
+            {% if post.category == "elixir" and counter < 3 %} {% assign counter=counter | plus:1 %} <a class="blog-post blog-post-elixir"
+              href="{{post.url}}">
+              <div class="blog-post-wrapper">
+                <p class="blog-post-category">
+                  {{post.category}}
+                </p>
 
+                <p class="blog-post-header">
+                  {{post.title}}
+                </p>
 
+                <p class="blog-post-text">
+                  {{post.excerpt | strip_html}}
+                </p>
+                <div class="blog-post-info">
+                  <div class="blog-post-info-user-picture">
+                    <img alt="Image" class="img-fluid" src="/images/authors/{{post.author | split: ' ' | first | downcase}}@2x.jpg" />
+                  </div>
 
-  <div class="container-fluid container-fluid-service container-fluid-service-from-the-blog">
-    <div class="container container-service">
-      <div class="row row-service">
-        <div class="col col-service">
-          <div class="service">
-            <div class="service-description">
-              <p class="service-description-header">
-                from the blog
-              </p>
+                  <div>
+                    <p class="blog-post-info-user-name">
+                      {{post.author | upcase}}
+                    </p>
 
-              <p class="service-description-text">
-                We share our experience with Elixir and Phoenix in our blog.
-              </p>
-            </div>
-
-            <div class="service-preview">
-              <div class="blog blog-elixir">
-                <div class="blog-posts">
-                  {% assign counter = 0 %}
-                  {% for post in site.categories.blog %}
-                  {% if post.category == "elixir" and counter < 3 %} {% assign counter=counter | plus:1 %} <a class="blog-post blog-post-elixir"
-                    href="{{post.url}}">
-                    <div class="blog-post-wrapper">
-                      <p class="blog-post-category">
-                        {{post.category}}
-                      </p>
-
-                      <p class="blog-post-header">
-                        {{post.title}}
-                      </p>
-
-                      <p class="blog-post-text">
-                        {{post.excerpt | strip_html}}
-                      </p>
-                      <div class="blog-post-info">
-                        <div class="blog-post-info-user-picture">
-                          <img alt="Image" class="img-fluid" src="/images/authors/{{post.author | split: ' ' | first | downcase}}@2x.jpg" />
-                        </div>
-
-                        <div>
-                          <p class="blog-post-info-user-name">
-                            {{post.author | upcase}}
-                          </p>
-
-                          <p class="blog-post-info-date">
-                            {{post.date | date: '%B %d, %Y'}}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    </a>
-                    {% endif %}
-                    {% endfor %}
+                    <p class="blog-post-info-date">
+                      {{post.date | date: '%B %d, %Y'}}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+              </a>
+              {% endif %}
+              {% endfor %}
           </div>
-        </div>
+        </div><!--blog-->
       </div>
     </div>
-  </div>
+  </div><!--container-->
+
+
 
   {% include contact_banner.html %}
 </main>
