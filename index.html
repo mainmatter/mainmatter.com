@@ -6,7 +6,7 @@ title:
   <div class="jumbotron jumbotron-fluid jumbotron-fluid-homepage">
     <div class="container container-jumbotron">
       <div class="jumbotron-header-wrapper">
-        <h1 class="jumbotron-header">solid engineering for ambitious projects</h1>
+        <h1 class="jumbotron-header text-lowercase">Solid engineering for ambitious projects</h1>
       </div>
     </div>
 
@@ -28,145 +28,140 @@ title:
 </header>
 
 <main>
-    <div class="container">
-      <div class="row justify-content-start">
-        <div class="col-sm-2 bg-line mx-3">
-        </div>
-        <div class="col-sm-6 offset-sm-1">
+
+  <div class="container">
+    {% include intro.html
+      content="<p>Our team of technology experts builds ambitious web and mobile solutions for clients across the world. <strong>We like to move fast without breaking things</strong> and invite our clients to take on an active role in projects.</p>"
+    %}
+  </div><!--container-->
+
+  <div class="container">
+    <div class="section-services">
+
+      <div class="row justify-content-start mb-5">
+        <div class="col-sm-6">
+          <h2 class="display-4 font-weight-black text-lowercase mb-4">Services</h2>
           <p class="lead">
-            Our team of technology experts builds ambitious web and mobile solutions for clients across the world. We like to <strong>move fast without breaking things</strong> and invite our clients to take on an active role in projects.
+            Whether you're looking get your project going, boost your productivity, or make better technology decisions, our team has the skills and expertise you need.
           </p>
         </div>
-      </div>   
-    </div><!--container-->
+      </div>
 
-    <div class="container">
-      <div class="section-services">
-
-        <div class="row justify-content-start mb-5">
-          <div class="col-sm-6">
-            <h2 class="display-4 font-weight-black text-lowercase mb-4">Services</h2>
-            <p class="lead">
-              Whether you're looking get your project going, boost your productivity, or make better technology decisions, our team has the skills and expertise you need.
-            </p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-4">
-            <img alt="Full Stack Engineering image" class="mx-auto d-block" src="/images/icons/dark/fullstack.svg">
-            <h3 class="my-4 font-weight-black">Full-Stack Engineering</h3>
-            <p class="pr-3 mb-3">We turn our clients' ideas into successful products, working closely with them in short iterations.</p>
-            <a href="full-stack-engineering/index.html" class="text-arrow">Learn More</a>
-          </div><!--col-->
-
-          <div class="col-sm-4">
-            <img alt="Team Augmentation image" class="mx-auto d-block" src="/images/icons/dark/team.svg">
-            <h3 class="my-4 font-weight-black">Team Augmentation</h3>
-            <p class="pr-3 mb-3">Our technology experts can merge with our clients' in-house engineering teams, spearhead development initiatives and establish best practices.</p>
-            <a href="team-augmentation/index.html" class="text-arrow">Learn More</a>
-          </div><!--col-->
-
-          <div class="col-sm-4">
-            <img alt="Tutoring Augmentation image" class="mx-auto d-block" src="/images/icons/dark/tutoring.svg">
-            <h3 class="my-4 font-weight-black">Tutoring</h3>
-            <p class="pr-3 mb-3">We tutor teams, raising their experience and confidence levels when taking on new technologies or projects.</p>
-            <a href="training/index.html" class="text-arrow">Learn More</a>
-          </div><!--col-->
-        </div><!--row-->
-      </div><!--section-services-->
-    </div><!--container-->
-    <div class="container">
       <div class="row">
-        <div class="col-sm-6">
-          <div class="section-client section-client--trainline text-white p-5 text-center mb-2">
-            <div class="client-logo my-4 d-flex">
-              <img alt="Image" class="img-fluid align-self-center mx-auto" src="/images/trainline/trainline-logo-white.svg" />
-            </div>
-            <h3 class="my-4">Leveraging Trainline's full market potential</h3>
-            <p class="mb-5">
-              a mobile train ticket counter for Europe's leading independent rail and coach platform
-            </p>
-          </div>
+        <div class="col-sm-4">
+          <img alt="Full Stack Engineering image" class="mx-auto d-block" src="/images/icons/dark/fullstack.svg">
+          <h3 class="my-4 font-weight-black">Full-Stack Engineering</h3>
+          <p class="pr-3 mb-3">We turn our clients' ideas into successful products, working closely with them in short iterations.</p>
+          <a href="full-stack-engineering/index.html" class="text-arrow">Learn More</a>
         </div><!--col-->
-        <div class="col-sm-6">
-          <div class="section-client section-client--timify text-white p-5 text-center">
-            <div class="client-logo my-4">
-              <img alt="Image" class="img-fluid align-self-center mx-auto" src="/images/timify/timify-logo-white.svg" />
-            </div>
-            <h3 class="my-4">Laying out a solid foundation for Timify</h3>
-            <p class="mb-5">
-              a mobile train ticket counter for Europe's leading independent rail and coach platform
-            </p>
-          </div>
+
+        <div class="col-sm-4">
+          <img alt="Team Augmentation image" class="mx-auto d-block" src="/images/icons/dark/team.svg">
+          <h3 class="my-4 font-weight-black">Team Augmentation</h3>
+          <p class="pr-3 mb-3">Our technology experts can merge with our clients' in-house engineering teams, spearhead development initiatives and establish best practices.</p>
+          <a href="team-augmentation/index.html" class="text-arrow">Learn More</a>
+        </div><!--col-->
+
+        <div class="col-sm-4">
+          <img alt="Tutoring Augmentation image" class="mx-auto d-block" src="/images/icons/dark/tutoring.svg">
+          <h3 class="my-4 font-weight-black">Tutoring</h3>
+          <p class="pr-3 mb-3">We tutor teams, raising their experience and confidence levels when taking on new technologies or projects.</p>
+          <a href="training/index.html" class="text-arrow">Learn More</a>
         </div><!--col-->
       </div><!--row-->
-      <div class="d-flex flex-row justify-content-between my-4 px-4">
-        <a class="" href="https://www.xbav.de/">
-          <img alt="Logo" class="img-fluid" src="/images/logos/xbav.svg" />
-        </a>
-
-        <a class="" href="https://www.clark.de/">
-          <img alt="Logo" class="img-fluid" src="/images/logos/clark.svg" />
-        </a>
-
-        <a class="" href="http://loconet.info/">
-          <img alt="Logo" class="img-fluid" src="/images/logos/loconet.svg" />
-        </a>
-
-        <a class="" href="https://www.experteer.de/">
-          <img alt="Logo" class="img-fluid" src="/images/logos/experteer.svg" />
-        </a>
-
-        <a class="" href="http://embedd.com/">
-          <img alt="Logo" class="img-fluid" src="/images/logos/embed.svg" />
-        </a>
-      </div>
-      <div class="text-center">
-        <a class="btn btn-outline-dark mx-auto" href="#">Our Work</a>
-      </div>
-    </div><!--container-->
-    
-    <div class="container">
-      <div class="row justify-content-start mb-5">
-        <div class="col-sm-12">
-          <h2 class="display-4 font-weight-black text-lowercase mb-4">News</h2>
+    </div><!--section-services-->
+  </div><!--container-->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="section-client section-client--trainline text-white p-5 text-center mb-2">
+          <div class="client-logo my-4 d-flex">
+            <img alt="Image" class="img-fluid align-self-center mx-auto" src="/images/trainline/trainline-logo-white.svg" />
+          </div>
+          <h3 class="my-4">Leveraging Trainline's full market potential</h3>
+          <p class="mb-5">
+            A mobile train ticket counter for Europe's leading independent rail and coach platform.
+          </p>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 col-md-4">
-          <a href="#" class="d-block mt-4 px-3 text-dark">
-            <div class="d-flex"></div>
-            <img alt="Image" class="img-fluid" src="/images/news-1.png" />
-            <h4 class="font-weight-bold my-4">JSConf.eu</h4>
-            <p>
-              We will be at JSConf EU in Berlin, June 2nd and 3rd, 2018 and we will have @locks from the
-              Ember.js core team join us at our booth!
-            </p>
-          </a>
-        </div><!--col-->
-        <div class="col-sm-4">
-          <a href="#" class="d-block mt-4 px-3 text-dark">
-            <img alt="Image" class="img-fluid" src="/images/news-1.png" />
-            <h4 class="font-weight-bold my-4">EmberFest 2018</h4>
-            <p>
-              We will be at JSConf EU in Berlin, June 2nd and 3rd, 2018 and we will have @locks from the
-              Ember.js core team join us at our booth!
-            </p>
-          </a>
-        </div><!--col-->
-        <div class="col-sm-4">
-          <a href="#" class="d-block mt-4 px-3 text-dark">
-            <img alt="Image" class="img-fluid" src="/images/news-1.png" />
-            <h4 class="font-weight-bold my-4">CodeBot Supports ES2017</h4>
-            <p>
-              We will be at JSConf EU in Berlin, June 2nd and 3rd, 2018 and we will have @locks from the
-              Ember.js core team join us at our booth!
-            </p>
-          </a>
-        </div><!--col-->
+      </div><!--col-->
+      <div class="col-sm-6">
+        <div class="section-client section-client--timify text-white p-5 text-center">
+          <div class="client-logo my-4">
+            <img alt="Image" class="img-fluid align-self-center mx-auto" src="/images/timify/timify-logo-white.svg" />
+          </div>
+          <h3 class="my-4">Laying out a solid foundation for Timify</h3>
+          <p class="mb-5">
+            We worked with Timify to get their appointment scheduling service to market in time.
+          </p>
+        </div>
+      </div><!--col-->
+    </div><!--row-->
+    <div class="d-flex flex-row justify-content-between my-4 px-2">
+      <a class="p-1" href="https://www.xbav.de/">
+        <img alt="Logo" class="img-fluid" src="/images/logos/xbav.svg" />
+      </a>
+
+      <a class="p-1" href="https://www.clark.de/">
+        <img alt="Logo" class="img-fluid" src="/images/logos/clark.svg" />
+      </a>
+
+      <a class="p-1" href="http://loconet.info/">
+        <img alt="Logo" class="img-fluid" src="/images/logos/loconet.svg" />
+      </a>
+
+      <a class="p-1" href="https://www.experteer.de/">
+        <img alt="Logo" class="img-fluid" src="/images/logos/experteer.svg" />
+      </a>
+
+      <a class="p-1" href="http://embedd.com/">
+        <img alt="Logo" class="img-fluid" src="/images/logos/embed.svg" />
+      </a>
+    </div><!--logos-->
+    <div class="text-center">
+      <a class="btn btn-outline-dark mx-auto" href="./work/index.html">Our Work</a>
+    </div>
+  </div><!--container-->
+  
+  <div class="container">
+    <div class="row justify-content-start mb-5">
+      <div class="col-sm-12">
+        <h2 class="display-4 font-weight-black text-lowercase mb-4">News</h2>
       </div>
     </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <a href="#" class="d-block mt-4 px-3 text-dark">
+          <div class="d-flex"></div>
+          <img alt="Image" class="img-fluid" src="/images/news-1.png" />
+          <h4 class="font-weight-bold my-4">JSConf.eu</h4>
+          <p>
+            We will be at JSConf EU in Berlin, June 2nd and 3rd, 2018 and we will have @locks from the
+            Ember.js core team join us at our booth!
+          </p>
+        </a>
+      </div><!--col-->
+      <div class="col-sm-4">
+        <a href="#" class="d-block mt-4 px-3 text-dark">
+          <img alt="Image" class="img-fluid" src="/images/news-1.png" />
+          <h4 class="font-weight-bold my-4">EmberFest 2018</h4>
+          <p>
+            We will be at JSConf EU in Berlin, June 2nd and 3rd, 2018 and we will have @locks from the
+            Ember.js core team join us at our booth!
+          </p>
+        </a>
+      </div><!--col-->
+      <div class="col-sm-4">
+        <a href="#" class="d-block mt-4 px-3 text-dark">
+          <img alt="Image" class="img-fluid" src="/images/news-1.png" />
+          <h4 class="font-weight-bold my-4">CodeBot Supports ES2017</h4>
+          <p>
+            We will be at JSConf EU in Berlin, June 2nd and 3rd, 2018 and we will have @locks from the
+            Ember.js core team join us at our booth!
+          </p>
+        </a>
+      </div><!--col-->
+    </div>
+  </div>
   {% include contact_banner.html %}
 </main>
 
