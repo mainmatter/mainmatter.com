@@ -61,26 +61,14 @@ title: Team Augmentation
   <div class="container">
     <div class="row justify-content-end">
       <div class="col-sm-10">
-        <div class="section-client section-client--trainline text-white mb-5">
-          <div class="row align-items-end">
-            <div class="col-sm-6">
-              <div class="p-5">
-                <div class="client-logo my-4 d-flex">
-                  <img alt="Image" class="img-fluid" src="/images/trainline/trainline-logo-white.svg" />
-                </div>
-                <h3 class="my-4">Leveraging Trainline's full market potential</h3>
-                <p class="mb-5">
-                  Trainline is Europe’s leading independent rail and coach platform. We helped them build their mobile web app to leverage the full potential of the market.
-                </p>
-              </div>
-            </div><!--col-->
-            <div class="col-sm-6">
-              <div class="section-client-illustration text-center">
-                <img alt="Image" class="w-75" src="../images/trainline/screen-1.png">
-              </div>
-            </div><!--col-->
-          </div><!--row-->
-        </div><!--section-client-->
+        {% include client_banner.html
+          client="trainline"
+          title="Leveraging Trainline's full market potential"
+          description="<p>Trainline is Europe’s leading independent rail and coach platform. We helped them build their mobile web app to leverage the full potential of the market.</p>"
+          logo_url="../images/trainline/trainline-logo-white.svg"
+          image_url="../images/trainline/screen-1.png"
+          image_class="w-75"
+        %}
       </div>
     </div>
   </div>
