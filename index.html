@@ -74,26 +74,21 @@ title:
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
-        <div class="section-client section-client--trainline text-white p-5 text-center mb-2">
-          <div class="client-logo my-4 d-flex">
-            <img alt="Image" class="img-fluid align-self-center mx-auto" src="/images/trainline/trainline-logo-white.svg" />
-          </div>
-          <h3 class="my-4">Leveraging Trainline's full market potential</h3>
-          <p class="mb-5">
-            A mobile train ticket counter for Europe's leading independent rail and coach platform.
-          </p>
-        </div>
+
+        {% include client_banner.html
+          client="trainline"
+          title="Leveraging Trainline's full market potential"
+          description="<p>Trainline is Europe’s leading independent rail and coach platform. We helped them build their mobile web app to leverage the full potential of the market.</p>"
+          logo_url="../images/trainline/trainline-logo-white.svg"
+        %} 
       </div><!--col-->
       <div class="col-sm-6">
-        <div class="section-client section-client--timify text-white p-5 text-center">
-          <div class="client-logo my-4">
-            <img alt="Image" class="img-fluid align-self-center mx-auto" src="/images/timify/timify-logo-white.svg" />
-          </div>
-          <h3 class="my-4">Laying out a solid foundation for Timify</h3>
-          <p class="mb-5">
-            We worked with Timify to get their appointment scheduling service to market in time.
-          </p>
-        </div>
+        {% include client_banner.html
+          client="timify"
+          title="Laying out a solid foundation for Timify"
+          description="<p>We worked with Timify to get their appointment scheduling service to market in time, enabling their long term success.</p>" 
+          logo_url="../images/timify/timify-logo-white.svg"
+        %}  
       </div><!--col-->
     </div><!--row-->
     <div class="d-flex flex-row justify-content-between my-4 px-2">
@@ -171,6 +166,7 @@ title:
 <script type="text/javascript">
   $(function() {
     $('.section-services p').matchHeight();
+    $('.section-client').matchHeight();
     $('.section-client .client-logo').matchHeight();
   });
 </script>
