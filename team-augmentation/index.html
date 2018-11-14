@@ -27,21 +27,11 @@ title: Team Augmentation
 <main>
 
   <div class="container">
-    <div class="row justify-content-start">
-      <div class="col-sm-2 bg-line mx-3">
-      </div>
-      <div class="col-sm-6 offset-sm-1">
-        <p class="lead mb-4">
-          Our technology experts can merge with our client's in-house engineering teams and share their know how.
-              We will spearhead development initiatives, establish best practices and a smooth process as well as
-              train in-house engineers on the job via reviews and pairing sessions.
-        </p>
-        <p class="lead">
-          We will make sure our clients' in-house engineering team has the <strong>expertise and confidence</strong>
-              to successfully run their project once we have left.
-        </p>
-      </div>
-    </div>   
+    {% include intro.html
+      content=
+      "<p>Our technology experts can merge with our client's in-house engineering teams and share their know how. We will spearhead development initiatives, establish best practices and a smooth process as well as train in-house engineers on the job via reviews and pairing sessions.</p>
+      <p>We will make sure our clients' in-house engineering team has the <strong>expertise and confidence</strong> to successfully run their project once we have left.</p>"
+    %}  
   </div><!--container-->
 
   <div class="container">

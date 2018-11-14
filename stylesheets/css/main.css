@@ -422,6 +422,9 @@ h6, .h6 {
     h6, .h6 {
       font-size: 1.25rem; } }
 
+p {
+  margin-bottom: 2em; }
+
 .img-fluid {
   max-width: 100%;
   height: auto; }
@@ -3406,7 +3409,7 @@ input.toggler[type=checkbox]:checked + .navbar {
     padding: 0; }
   .jumbotron-fluid .jumbotron-header-wrapper .jumbotron-header {
     color: #0d182f;
-    font-size: 2em;
+    font-size: 3em;
     font-weight: 900;
     letter-spacing: 0.0375em;
     line-height: 1.25em; }
