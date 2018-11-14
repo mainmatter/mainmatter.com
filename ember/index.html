@@ -28,17 +28,14 @@ title: Ember
 
 <main>
   <div class="container">
-    <div class="row justify-content-start">
-      <div class="col-sm-2 bg-line mx-3">
-      </div>
-      <div class="col-sm-6 offset-sm-1">
-        <p class="lead mb-4">
+    {% include intro.html
+      content=
+      "<p>
           simplabs has been an active member of the Ember Ecosystem from the early days. We are the leading Ember
           consultancy in Europe and are <strong>involved in Ember.js core teams</strong> like Ember CLI and Ember
           Learning. We also maintain a number of widely adopted addons.
-        </p>
-      </div>
-    </div>   
+        </p>"
+    %}   
   </div><!--container-->
 
 

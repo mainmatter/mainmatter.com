@@ -26,16 +26,10 @@ title: About
 
 <main>
   <div class="container">
-    <div class="row justify-content-start">
-      <div class="col-sm-2 bg-line mx-3">
-      </div>
-      <div class="col-sm-6 offset-sm-1">
-        <p class="lead mb-4">
-          We are an international team of Web and Open Source enthusiasts. We value expertise and a passion for
-          technology higher than location and work for clients across the world.
-        </p>
-      </div>
-    </div>   
+    {% include intro.html
+      content=
+      "<p>We are an international team of Web and Open Source enthusiasts. We value expertise and a passion for technology higher than location and work for clients across the world.</p>"
+    %}
   </div><!--container-->
 
 

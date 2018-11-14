@@ -30,19 +30,23 @@ title: Expedition
 
 <main>
   <div class="container">
+    {% include intro.html
+      content=
+      "<p>
+          Expedition is an online travel magazine for global citizens. It lets travellers experience the world's
+          best destinations through the eyes of a local.
+        </p>
+        <p>
+          The team approached simplabs when they needed help laying the <strong>foundation for advanced features</strong>
+          in their Elixir and Phoenix based API as well as making sure their Ember.js based client was following
+          best practices.
+        </p>"
+    %} 
     <div class="row justify-content-start">
       <div class="col-sm-2 bg-line mx-3">
       </div>
       <div class="col-sm-6 offset-sm-1">
-        <p class="lead mb-4">
-          Expedition is an online travel magazine for global citizens. It lets travellers experience the world's
-          best destinations through the eyes of a local.
-        </p>
-        <p class="lead">
-          The team approached simplabs when they needed help laying the <strong>foundation for advanced features</strong>
-          in their Elixir and Phoenix based API as well as making sure their Ember.js based client was following
-          best practices.
-        </p>
+        
       </div>
     </div>   
   </div><!--container-->
