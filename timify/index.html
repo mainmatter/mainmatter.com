@@ -30,20 +30,11 @@ title: Timify
 
 <main>
   <div class="container">
-    <div class="row justify-content-start">
-      <div class="col-sm-2 bg-line mx-3">
-      </div>
-      <div class="col-sm-6 offset-sm-1">
-        <p class="lead mb-4">
-          Timify is an online appointment scheduling service that connects service providers with clients.
-        </p>
-        <p class="lead">
-          They have <strong>helped over 17.000 businesses worldwide</strong> make their online appointment
-          scheduling easier and more accessible, allowing them to improve their customer service and spur
-          revenue.
-        </p>
-      </div>
-    </div>   
+    {% include intro.html
+      content=
+      "<p>Timify is an online appointment scheduling service that connects service providers with clients.</p><p>They have <strong>helped over 17.000 businesses worldwide</strong> make their online appointment scheduling easier and more accessible, allowing them to improve their customer service and spur revenue.</p>"
+    %}
+ 
   </div><!--container-->
 
   <div class="container">
