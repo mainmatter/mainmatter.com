@@ -67,29 +67,13 @@ title: Elixir
 
   <div class="container">
 
-    <a href="/expedition/index.html">
-    <div class="section-client section-client--expedition text-white mb-5">
-      <div class="row align-items-end">
-        <div class="col-sm-6">
-          <div class="p-5">
-            <div class="client-logo my-4 d-flex">
-              <img alt="Image" class="w-25" src="../images/expedition/expedition-logo-white.svg"/>
-            </div>
-            <h3 class="my-4">An online travel magazine for global citizens</h3>
-            <p class="mb-5">
-              We spearheaded development efforts for advanced functionality of Expedition’s API that their internal
-              team could build upon.
-            </p>
-          </div>
-        </div><!--col-->
-        <div class="col-sm-6">
-          <div class="section-client-illustration">
-            <img alt="Image" class="w-100" src="../images/expedition/website-preview-1.png">
-          </div>
-        </div><!--col-->
-      </div><!--row-->
-    </div><!--section-client-->
-    </a>
+    {% include client_banner.html
+      client="expedition"
+      title="An online travel magazine for global citizens"
+      description="<p>An online travel magazine for global citizens.</p>" 
+      logo_url="../images/expedition/expedition-logo-white.svg"
+      image_url=""
+    %} 
   </div><!--container-->
 
   <div class="container">
