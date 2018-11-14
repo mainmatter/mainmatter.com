@@ -81,26 +81,14 @@ title: Full Stack Engineering
   <div class="container">
     <div class="row justify-content-end">
       <div class="col-sm-10">
-        <div class="section-client section-client--timify text-white mb-5">
-          <div class="row align-items-end">
-            <div class="col-sm-6">
-              <div class="p-5">
-                <div class="client-logo my-4 d-flex">
-                  <img alt="Image" class="img-fluid" src="../images/timify/timify-logo-white.svg" />
-                </div>
-                <h3 class="my-4">Laying out a solid foundation for Timify</h3>
-                <p class="mb-5">
-                  We worked with Timify to get their appointment scheduling service to market in time, enabling their long term success.
-                </p>
-              </div>
-            </div><!--col-->
-            <div class="col-sm-6">
-              <div class="section-client-illustration">
-                <img alt="Image" class="w-200" src="../images/timify/website-preview-1.png">
-              </div>
-            </div><!--col-->
-          </div><!--row-->
-        </div><!--section-client-->
+        {% include client_banner.html
+          client="timify"
+          title="Laying out a solid foundation for Timify"
+          description="<p>We worked with Timify to get their appointment scheduling service to market in time, enabling their long term success.</p>" 
+          logo_url="../images/timify/timify-logo-white.svg"
+          image_url="../images/timify/website-preview-1.png"
+          image_class="w-200"
+        %} 
       </div>
     </div>
   </div>
