@@ -121,8 +121,19 @@ title: DD-WRT
     </div>
   </div>
 
-
-  {% include expertise_section.html %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-6">
+        <h2 class="display-4 font-weight-black text-lowercase mb-4">Our Expertise</h2>
+        <p class="lead mb-4">We develop deep expertise in the tools that we specialize in and take an active role in the communities.</p>
+      </div>
+      <div class="col-sm-6">
+        {% include expertise_card.html
+          expertise="ember" title="Ember.js" description="<p>We are Europe's leading Ember experts withe people involved in Ember.js core teams like Ember CLI and Ember Learning.</p><p>We have been hosting and supporting several Ember.js meetups and co-organize EmberFest, the european Ember community conference.</p>"
+        %}
+      </div>
+    </div>
+  </div><!--container-->
 
   {% include contact_banner.html %}
 </main>
