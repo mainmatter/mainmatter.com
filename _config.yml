@@ -1,7 +1,7 @@
 name: simplabs.com
 
 sass:
-  sass_dir: css
+  sass_dir: /stylesheets/css
 
 gems:
   - jekyll-sitemap
