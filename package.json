@@ -6,7 +6,8 @@
   "scripts": {
     "http-server": "./node_modules/.bin/http-server",
     "sass": "sass --watch ./application/stylesheets/scss/custom.bootstrap.scss:./application/stylesheets/css/custom.bootstrap.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "conpile": ""
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,10 @@
     "zepto": "^1.2.0"
   },
   "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.1",
     "http-server": "^0.11.1"
   }
 }
