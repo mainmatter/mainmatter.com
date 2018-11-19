@@ -20,3 +20,5 @@ gulp.task('watch:js', function () {
 gulp.task('watch:css', function () {
     gulp.watch('./stylesheets/css/*.css', ['css']);
 });
+
+gulp.task('tasks', gulp.series('js', 'watch:js', 'watch:css'))

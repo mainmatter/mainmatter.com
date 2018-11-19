@@ -6,7 +6,8 @@
   "scripts": {
     "http-server": "./node_modules/.bin/http-server",
     "sass": "sass --watch ./application/stylesheets/scss/custom.bootstrap.scss:./application/stylesheets/css/custom.bootstrap.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp tasks"
   },
   "repository": {
     "type": "git",
