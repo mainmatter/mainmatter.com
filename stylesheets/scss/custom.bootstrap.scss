@@ -34,13 +34,10 @@
 @import "./components/contact-us";
 @import "./components/description";
 @import "./components/footer";
-@import "./components/introduction";
 @import "./components/logos";
 @import "./components/news";
 @import "./components/our-expertise";
 @import "./components/quote";
-@import "./components/service";
-@import "./components/spearhead";
 @import "./components/work-with-us";
 @import "./components/imprint";
 @import "./components/cookie-banner";
@@ -87,3 +84,56 @@ footer {
     margin-top: 12rem;
   }
 }
+
+.bg-light-blue {
+  background-color: $light-blue !important;
+}
+
+.bg-line {
+  background-image: url("../../images/icons/dark/line.svg");
+  background-position: left top;
+  background-size: .25em 1em;
+  background-repeat: repeat-x;
+}
+
+.font-weight-black {
+  font-weight: $font-weight-black !important;
+}
+
+.text-dark-blue {
+  color: $headlines !important;
+}
+
+.icon-circle {
+  display: flex;
+  border-radius: 50%;
+}
+
+.icon-circle-sm {
+  @extend .icon-circle;
+  height: 100px;
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.icon-circle-lg {
+  @extend .icon-circle;
+  width: 240px;
+  height: 240px;
+}
+
+.img-2x {
+  width: 100%;
+}
+
+@include media-breakpoint-up(md) {
+  .img-2x {
+    width: 200%;
+  }
+  .img-pull {
+    transform: translateX(-50%);
+  }
+}
+
+
+

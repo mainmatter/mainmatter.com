@@ -46,3 +46,13 @@ h6, .h6 {
     font-size: $h6-font-size;
   }
 }
+
+p {
+  margin-bottom: 2em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+

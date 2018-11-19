@@ -29,126 +29,98 @@ title: Expedition
 </header>
 
 <main>
-  <div class="container-fluid container-fluid-introduction">
-    <div class="container container-introduction">
-      <div class="row row-introduction">
-        <div class="col col-introduction">
-          <div class="introduction">
-            <p class="introduction-text">
-              Expedition is an online travel magazine for global citizens. It lets travellers experience the world's
-              best destinations through the eyes of a local.
-            </p>
-
-            <p class="introduction-text">
-              The team approached simplabs when they needed help laying the <strong>foundation for advanced features</strong>
-              in their Elixir and Phoenix based API as well as making sure their Ember.js based client was following
-              best practices.
-            </p>
-          </div>
-        </div>
+  <div class="container">
+    {% include intro.html
+      content=
+      "<p>
+          Expedition is an online travel magazine for global citizens. It lets travellers experience the world's
+          best destinations through the eyes of a local.
+        </p>
+        <p>
+          The team approached simplabs when they needed help laying the <strong>foundation for advanced features</strong>
+          in their Elixir and Phoenix based API as well as making sure their Ember.js based client was following
+          best practices.
+        </p>"
+    %} 
+    <div class="row justify-content-start">
+      <div class="col-sm-2 bg-line mx-3">
       </div>
-    </div>
-  </div>
+      <div class="col-sm-6 offset-sm-1">
+        
+      </div>
+    </div>   
+  </div><!--container-->
+
 
   <div class="container container-quote container-quote-expedition">
     <div class="row row-quote">
       <div class="col col-quote">
         <div class="quote">
-          <p class="quote-text">
-            simplabs brought wisdom, flexibility, and sane solutions when facing complex problems. They went above
-            and beyond to work with our unique situation - would recommend 1000x.
-          </p>
-
-          <p class="quote-author">
-            Bryan Langslet, Expedition CEO
-          </p>
+          <p class="quote-text">simplabs brought wisdom, flexibility, and sane solutions when facing complex problems. They went above and beyond to work with our unique situation - would recommend 1000x.</p>
+          <p class="quote-author">Bryan Langslet, Expedition CEO</p>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="container-fluid container-fluid-service container-fluid-service container-fluid-service-optimizing-prototype">
-    <div class="container container-service">
-      <div class="row row-service">
-        <div class="col col-service">
-          <div class="service service-floated-right">
-            <div class="service-description">
-              <p class="service-description-header">
-                long-term enablement
-              </p>
-
-              <p class="service-description-text">
-                simplabs' team built prototype implementations for a number of advanced features in Expedition's
-                system. Leveraging Elixir's and Phoenix's capabilities we were able to implement advanced mechanics
-                with clean and concise code with significantly less effort and complexity compared with more
-                traditional tools.
-              </p>
-
-              <p class="service-description-text">
-                Expedition's in-house team was able to expand on our foundational work, <strong>handed over in an
-                  open and well-communicated way</strong>.
-              </p>
-            </div>
-
-            <div class="service-preview">
-              <img alt="Image" class="service-preview-image img-fluid" src="../images/expedition/website-preview-1.png" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-service-background container-service-background-floated-right"></div>
-    </div>
-  </div>
-
-  <div class="container-fluid container-fluid-service container-fluid-expedition-our-expertise">
-    <div class="container container-service">
-      <div class="row row-service">
-        <div class="col col-service">
-          <div class="service">
-            <div class="service-description">
-              <p class="service-description-header">
-                our expertise
-              </p>
-
-              <p class="service-description-text">
-                We develop deep expertise in the tools that we specialize in and take an active role in the
-                communities.
-              </p>
-            </div>
-
-            <div class="service-preview">
-              <a class="card card-ember-small card-our-expertise card-our-expertise-small" href="/ember/index.html">
-                <div class="card-body">
-                  <h5 class="card-title">Ember.js</h5>
-
-                  <p class="card-text">
-                    work with Europe's leading Ember experts
-                  </p>
+  <div class="container-fluid px-0">
+    <div class="row justify-content-end">
+      <div class="col-sm-11">
+          <div class="container">
+              <div class="row justify-content-start align-items-center">
+                <div class="col-md-5 order-2">
+                  <img alt="fullstack" class="mx-auto d-block img-2x" src="../images/expedition/website-preview-1.png">
                 </div>
-                <div class="card-background-wrapper">
-                  <div class="card-background"></div>
+                <div class="col-md-6 order-1">
+                  <div class="p-5">
+                    <h2 class="font-weight-black text-dark-blue mb-4 text-lowercase">Long-term enablement</h2>
+                    <p class="lead mb-4">
+                      simplabs' team built prototype implementations for a number of advanced features in Expedition's
+                      system. Leveraging Elixir's and Phoenix's capabilities we were able to implement advanced mechanics
+                      with clean and concise code with significantly less effort and complexity compared with more
+                      traditional tools.
+                    </p>
+                    <p class="lead">
+                      Expedition's in-house team was able to expand on our foundational work, <strong>handed over in an open and well-communicated way</strong>.
+                    </p>
+                  </div>
                 </div>
-              </a>
-
-              <a class="card card-elixir-phoenix-small card-our-expertise card-our-expertise-small" href="/elixir/index.html">
-                <div class="card-body">
-                  <h5 class="card-title">Elixir & Phoenix</h5>
-
-                  <p class="card-text">
-                    a modern server stack that combines the best of all worlds
-                  </p>
-                </div>
-                <div class="card-background-wrapper">
-                  <div class="card-background"></div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
+              </div>
+          </div><!--container-->
       </div>
     </div>
-  </div>
+  </div><!--container-fluid-->
+
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-6">
+        <h2 class="display-4 font-weight-black text-lowercase mb-4">Our Expertise</h2>
+        <p class="lead mb-4">We develop deep expertise in the tools that we specialize in and take an active role in the communities.</p>
+      </div>
+      <div class="col-sm-3">
+          {% include expertise_card.html
+            expertise="ember" title="Ember.js"
+            description="<p>simplabs has been an active member of Ember Ecosystem from the early days.</p>"
+          %}
+      </div>
+      <div class="col-sm-3">
+        {% include expertise_card.html
+          expertise="elixir" title="Elixir & Phoenix" 
+          description="<p>simplabs was an early adopter of Elixir & Phoenix, organizing meetups and conferences.</p>"
+        %}
+      </div>
+    </div>
+  </div><!--container-->
 
   {% include contact_banner.html %}
 </main>
+
+<script type="text/javascript" src="./../node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="./../node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+<script type="text/javascript">
+  $(function() {
+    $('.card-expertise').matchHeight();
+  });
+</script>

@@ -29,188 +29,142 @@ title: Elixir
 </header>
 
 <main>
-  <div class="container-fluid container-fluid-introduction">
-    <div class="container container-introduction">
-      <div class="row row-introduction">
-        <div class="col col-introduction">
-          <div class="introduction">
-            <p class="introduction-text">
-              Elixir combines the expressiveness and simplicity of Ruby with the performance and stability of the
-              Erlang VM. Phoenix builds on the concepts first introduced by Ruby on Rails, combining them with a
-              number of architectural improvements.
-            </p>
+  <div class="container">
+    {% include intro.html
+      content=
+      "<p>
+          Elixir combines the expressiveness and simplicity of Ruby with the performance and stability of the Erlang VM. Phoenix builds on the concepts first introduced by Ruby on Rails, combining them with a number of architectural improvements.
+        </p>
+        <p>
+          Together, they form a <strong>modern and capable stack for building ambitious projects</strong> based on an established and battle-proven foundation.
+        </p>"
+    %}    
+  </div><!--container-->
 
-            <p class="introduction-text">
-              Together, they form a <strong>modern and capable stack for building ambitious projects</strong> based
-              on an established and battle-proven foundation.
+  <div class="container">
+    <div class="row justify-content-start mb-5">
+      <div class="col-sm-10">
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="lead">
+              simplabs was an early adopter of Elixir and Phoenix, offering <a href="https://elixir-phoenix-workshop.simplabs.com/">trainings</a>
+              and leveraging the potential of the stack for our <a href="/work">clients</a> early on.
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <p class="lead">
+              We are organizing the <a href="https://www.meetup.com/Elixir-Munich/">Elixir Munich</a> meetup and
+              have been actively involved with
+              conferences like <a href="http://elixirconf.com">ElixirConf</a> and <a href="https://www.elixirconf.eu/">ElixirConf
+                EU</a>.
             </p>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div><!--container-->
 
-  <div class="container-fluid container-fluid-service">
-    <div class="container container-service">
-      <div class="row row-service">
-        <div class="col col-service">
-          <div class="service">
-            <div class="service-description service-description-multiple-columns">
-              <div class="service-description-text-wrapper">
-                <p class="service-description-text">
-                  simplabs was an early adopter of Elixir and Phoenix, offering <a href="https://elixir-phoenix-workshop.simplabs.com/">trainings</a>
-                  and leveraging the potential of the stack for our <a href="/work">clients</a> early on.
+
+  <div class="container">
+
+    {% include client_banner.html
+      client="expedition"
+      title="An online travel magazine for global citizens"
+      description="<p>An online travel magazine for global citizens.</p>" 
+      logo_url="../images/expedition/expedition-logo-white.svg"
+      image_url="../images/expedition/website-preview-1.png"
+      image_class="img-2x"
+    %} 
+  </div><!--container-->
+
+  <div class="container">
+    <div class="bg-light-blue p-5">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-sm-5">
+          <div class="icon-circle-lg bg-white mx-auto my-4">
+            <img alt="fullstack" class="d-block img-fluid mx-auto py-4" src="../images/icons/dark/crowd.svg">
+          </div>
+        </div>
+
+        <div class="col-sm-5">
+          <h2 class="font-weight-black text-dark-blue mb-4 text-lowercase">Community engagement</h2>
+          <p class="lead mb-4">
+            Elixir and Phoenix are open community projects and <strong>we are an active member of the community</strong>.
+            We support theElixir Munich meetup and have been sponsors of ElixirConf and
+            ElixirConf EU for years.
+          </p>
+          <div class="d-flex flex-row justify-content-between mt-4">
+            <a class="d-block p-2" href="https://www.meetup.com/Elixir-Munich/">
+              <img alt="Image" class="img-fluid" src="../images/elixir/elixir-logo-colorful-1.png" />
+            </a>
+
+            <a class="d-block p-2" href="http://elixirconf.com">
+              <img alt="Image" class="img-fluid" src="../images/elixir/elixir-logo-colorful-2.png" />
+            </a>
+
+            <a class="d-block p-2" href="https://www.elixirconf.eu/">
+              <img alt="Image" class="img-fluid" src="../images/elixir/elixir-logo-colorful-3.png" />
+            </a>
+          </div>
+        </div><!--col-->
+        
+      </div>
+    </div>
+  </div><!--container-->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h2 class="text-lowercase font-weight-black mb-4">From the blog</h2>
+        <p class="lead">
+          We share our experience with Elixir and Phoenix in our blog.
+        </p>
+      </div><!--col-->
+      <div class="col-sm-7 offset-sm-1">
+        <div class="blog blog-elixir">
+          <div class="blog-posts">
+            {% assign counter = 0 %}
+            {% for post in site.categories.blog %}
+            {% if post.category == "elixir" and counter < 3 %} {% assign counter=counter | plus:1 %} <a class="blog-post blog-post-elixir"
+              href="{{post.url}}">
+              <div class="blog-post-wrapper">
+                <p class="blog-post-category">
+                  {{post.category}}
                 </p>
 
-                <p class="service-description-text">
-                  We are organizing the <a href="https://www.meetup.com/Elixir-Munich/">Elixir Munich</a> meetup and
-                  have been actively involved with
-                  conferences like <a href="http://elixirconf.com">ElixirConf</a> and <a href="https://www.elixirconf.eu/">ElixirConf
-                    EU</a>.
+                <p class="blog-post-header">
+                  {{post.title}}
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="container-fluid container-fluid-case-study">
-    <div class="container container-case-study">
-      <div class="row row-case-study">
-        <div class="col col-case-study">
-          <a class="case-study case-study-expedition" href="/expedition/index.html">
-            <div class="case-study-description">
-              <div class="case-study-description-image-wrapper">
-                <img alt="Image" class="case-study-description-image img-fluid" src="../images/expedition/expedition-logo-white.svg" />
-              </div>
+                <p class="blog-post-text">
+                  {{post.excerpt | strip_html}}
+                </p>
+                <div class="blog-post-info">
+                  <div class="blog-post-info-user-picture">
+                    <img alt="Image" class="img-fluid" src="/images/authors/{{post.author | split: ' ' | first | downcase}}@2x.jpg" />
+                  </div>
 
-              <p class="case-study-description-text">
-                We spearheaded development efforts for advanced functionality of Expedition’s API that their internal
-                team could build upon.
-              </p>
-            </div>
+                  <div>
+                    <p class="blog-post-info-user-name">
+                      {{post.author | upcase}}
+                    </p>
 
-            <div class="case-study-preview">
-              <img alt="Image" class="case-study-preview-image img-fluid" src="../images/expedition/website-preview-1.png">
-            </div>
-
-            <div class="case-study-background-wrapper">
-              <div class="case-study-background"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid container-fluid-service container-fluid-service-grey container-fluid-service-elixir-community-engagement">
-    <div class="container container-service">
-      <div class="row row-service">
-        <div class="col col-service">
-          <div class="service service-floated-left">
-            <div class="service-preview">
-              <div class="circle circle-white circle-service">
-                <img alt="crowd" class="circle-image img-fluid" src="../images/icons/dark/crowd.svg" />
-              </div>
-            </div>
-
-            <div class="service-description">
-              <p class="service-description-header">
-                community engagement
-              </p>
-
-              <p class="service-description-text">
-                Elixir and Phoenix are open community projects and <strong>we are an active member of the community</strong>.
-                We
-                support theElixir Munich meetup and have been sponsors of ElixirConf and
-                ElixirConf EU for years.
-              </p>
-
-              <div class="service-description-logos-wrapper">
-                <a class="service-description-logo-wrapper" href="https://www.meetup.com/Elixir-Munich/">
-                  <img alt="Image" class="service-description-logo img-fluid" src="../images/elixir/elixir-logo-colorful-1.png" />
-                </a>
-
-                <a class="service-description-logo-wrapper" href="http://elixirconf.com">
-                  <img alt="Image" class="service-description-logo img-fluid" src="../images/elixir/elixir-logo-colorful-2.png" />
-                </a>
-
-                <a class="service-description-logo-wrapper" href="https://www.elixirconf.eu/">
-                  <img alt="Image" class="service-description-logo img-fluid" src="../images/elixir/elixir-logo-colorful-3.png" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-service-background container-service-background-floated-left"></div>
-    </div>
-  </div>
-
-  <div class="container-fluid container-fluid-service container-fluid-service-from-the-blog">
-    <div class="container container-service">
-      <div class="row row-service">
-        <div class="col col-service">
-          <div class="service">
-            <div class="service-description">
-              <p class="service-description-header">
-                from the blog
-              </p>
-
-              <p class="service-description-text">
-                We share our experience with Elixir and Phoenix in our blog.
-              </p>
-            </div>
-
-            <div class="service-preview">
-              <div class="blog blog-elixir">
-                <div class="blog-posts">
-                  {% assign counter = 0 %}
-                  {% for post in site.categories.blog %}
-                  {% if post.category == "elixir" and counter < 3 %} {% assign counter=counter | plus:1 %} <a class="blog-post blog-post-elixir"
-                    href="{{post.url}}">
-                    <div class="blog-post-wrapper">
-                      <p class="blog-post-category">
-                        {{post.category}}
-                      </p>
-
-                      <p class="blog-post-header">
-                        {{post.title}}
-                      </p>
-
-                      <p class="blog-post-text">
-                        {{post.excerpt | strip_html}}
-                      </p>
-                      <div class="blog-post-info">
-                        <div class="blog-post-info-user-picture">
-                          <img alt="Image" class="img-fluid" src="/images/authors/{{post.author | split: ' ' | first | downcase}}@2x.jpg" />
-                        </div>
-
-                        <div>
-                          <p class="blog-post-info-user-name">
-                            {{post.author | upcase}}
-                          </p>
-
-                          <p class="blog-post-info-date">
-                            {{post.date | date: '%B %d, %Y'}}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    </a>
-                    {% endif %}
-                    {% endfor %}
+                    <p class="blog-post-info-date">
+                      {{post.date | date: '%B %d, %Y'}}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+              </a>
+              {% endif %}
+              {% endfor %}
           </div>
-        </div>
+        </div><!--blog-->
       </div>
     </div>
-  </div>
+  </div><!--container-->
+
+
 
   {% include contact_banner.html %}
 </main>

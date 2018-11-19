@@ -29,111 +29,57 @@ title: DD-WRT
 </header>
 
 <main>
-  <div class="container-fluid container-fluid-introduction">
-    <div class="container container-introduction">
-      <div class="row row-introduction">
-        <div class="col col-introduction">
-          <div class="introduction">
-            <p class="introduction-text">
-              DD-WRT is a Linux based firmware for wireless routers. Originally designed for the Linksys WRT54G
-              series, it now runs on a wide variety of models and is <strong>installed on millions of devices
-                worldwide</strong>.
-            </p>
+  <div class="container">
+    {% include intro.html
+      content=
+      "<p>DD-WRT is a Linux based firmware for wireless routers. Originally designed for the Linksys WRT54G series, it now runs on a wide variety of models and is <strong>installed on millions of devices worldwide</strong>.</p><p>When embeDD, the company behind DD-WRT, was looking to re-engineer the old web interface and put the project on a stable foundation that would support development efforts for the long term, they reached out to simplabs for guidance.</p>"
+    %}  
+  </div><!--container-->
 
-            <p class="introduction-text">
-              When embeDD, the company behind DD-WRT, was looking to re-engineer the old web interface and put the
-              project on a stable foundation that would support development efforts for the long term, they reached
-              out to simplabs for guidance.
-            </p>
+  <div class="container">
+    <div class="bg-light-blue p-5">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-sm-5">
+          <h2 class="font-weight-black text-dark-blue mb-4">Accommodating a special environment</h2>
+          <p class="lead mb-4">Shipping a single page app bundled with a router firmware is substantially different from serving it via the open web. The first step for us was to understand the characteristic aspects of the environment, like limited hardware capabilities and slow update cycles. We then came up with an approach for the project based on Ember.js that was <strong>tailored to the particular requirements and limitations</strong> of the use case.</p>
+        </div>
+        <div class="col-sm-5">
+          <img class="img-fluid" alt="DD-WRT UI Screenshot" src="../images/dd-wrt/website-preview-1.png">
+        </div>
+      </div>
+    </div>
+  </div><!--container-->
+
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-sm-5">
+        <img alt="fullstack" class="img-fluid" src="../images/dd-wrt/website-preview-2.png">
+      </div>
+      <div class="col-sm-5">
+        <h2 class="font-weight-black text-dark-blue mb-4">The Solution</h2>
+        <p class="lead mb-4">We completed the prototype implementation of the architecture in just over 6 weeks, defining the structure for the application and establishing good Ember.js patterns. That prototype laid the foundation for subsequent engineering efforts taken on by embeDD's in-house engineering team.
+        </p>
+      </div>
+    </div>
+  </div><!--container-->
+
+  <div class="container">
+    <div class="bg-light-blue p-5">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-sm-5">
+          <h2 class="font-weight-black text-dark-blue mb-4 text-lowercase">Enabling long term success</h2>
+          <p class="lead mb-4">
+            In order to enable the client to continue the project successfully and ensure it would be a long term success, we <strong>coached embeDD's engineers and reviewed their work</strong> for an extended period of time after handing over the project.
+          </p>
+        </div>
+        <div class="col-sm-5">
+          <div class="icon-circle-lg bg-white">
+            <img alt="educate icon" class="mx-auto d-block" src="../images/icons/dark/educate.svg">
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="container-fluid container-fluid-service container-fluid-service-grey container-fluid-service-analyzing-the-environment">
-    <div class="container container-service">
-      <div class="row row-service">
-        <div class="col col-service">
-          <div class="service service-floated-right">
-            <div class="service-description">
-              <p class="service-description-header">
-                accommodating a special environment
-              </p>
-
-              <p class="service-description-text">
-                Shipping a single page app bundled with a router firmware is substantially different from serving it
-                via the open web. The first step for us was to understand the characteristic aspects of the
-                environment, like limited hardware capabilities and slow update cycles. We then came up with an
-                approach for the project based on Ember.js that was <strong>tailored to the particular requirements
-                  and limitations</strong> of the use case.
-              </p>
-            </div>
-
-            <div class="service-preview">
-              <img alt="Image" class="service-preview-image img-fluid" src="../images/dd-wrt/website-preview-1.png" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-service-background container-service-background-floated-right"></div>
-    </div>
-  </div>
-
-  <div class="container-fluid container-fluid-service container-fluid-service-finding-the-solution">
-    <div class="container container-service">
-      <div class="row row-service">
-        <div class="col col-service">
-          <div class="service service-floated-left">
-            <div class="service-preview">
-              <img alt="Image" class="service-preview-image img-fluid" src="../images/dd-wrt/website-preview-2.png" />
-            </div>
-
-            <div class="service-description">
-              <p class="service-description-header">
-                The solution
-              </p>
-
-              <p class="service-description-text">
-                We completed the prototype implementation of the architecture in just over 6 weeks, defining the
-                structure for the application and establishing good Ember.js patterns. That prototype laid the
-                foundation for subsequent engineering efforts taken on by embeDD's in-house engineering team.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid container-fluid-service container-fluid-service-grey container-fluid-service-ensuring-the-long-term-success">
-    <div class="container container-service">
-      <div class="row row-service">
-        <div class="col col-service">
-          <div class="service service-floated-right">
-            <div class="service-description">
-              <p class="service-description-header">
-                enabling long term success
-              </p>
-
-              <p class="service-description-text">
-                In order to enable the client to continue the project successfully and ensure it would be a long term
-                success, we <strong>coached embeDD's engineers and reviewed their work</strong> for an extended
-                period of time after handing over the project.
-              </p>
-            </div>
-
-            <div class="service-preview">
-              <div class="circle circle-service">
-                <img alt="educate" class="circle-image img-fluid" src="../images/icons/dark/educate.svg">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  </div><!--container-->
 
   <div class="container container-quote container-quote-dd-wrt">
     <div class="row row-quote">
@@ -154,56 +100,28 @@ title: DD-WRT
     </div>
   </div>
 
-  <div class="container-fluid container-fluid-service container-fluid-service-dd-wrt-our-expertise">
-    <div class="container container-service">
-      <div class="row row-service">
-        <div class="col col-service">
-          <div class="service">
-            <div class="service-description">
-              <p class="service-description-header">
-                our expertise
-              </p>
-
-              <p class="service-description-text">
-                We are experts in Ember.js and Elixir & Phoenix frameworks.
-              </p>
-
-              <p class="service-description-text">
-                It allows us to build solid projects and our clients can easily maintain them after we finish our
-                work.
-              </p>
-            </div>
-
-            <div class="service-preview">
-              <a class="card card-ember-big card-our-expertise card-our-expertise-big" href="/ember/index.html">
-                <div class="card-body">
-                  <p class="card-title">
-                    Ember.js
-                  </p>
-
-                  <p class="card-text">
-                    simplabs has been an active member of Ember Ecosystem from the early days.
-                  </p>
-
-                  <p class="card-text">
-                    We are the leading Ember consultancy in Europe and are involved in several Ember.js core
-                    teamslike Ember CLI, Ember Data and Ember Learning.
-                  </p>
-
-                  <p class="card-text card-text-mobile">
-                    simplabs has been an active member of Ember Ecosystem from the early days.
-                  </p>
-                </div>
-                <div class="card-background-wrapper">
-                  <div class="card-background"></div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-6">
+        <h2 class="display-4 font-weight-black text-lowercase mb-4">Our Expertise</h2>
+        <p class="lead mb-4">We develop deep expertise in the tools that we specialize in and take an active role in the communities.</p>
+      </div>
+      <div class="col-sm-6">
+        {% include expertise_card.html
+          expertise="ember" title="Ember.js" description="<p>We are Europe's leading Ember experts withe people involved in Ember.js core teams like Ember CLI and Ember Learning.</p><p>We have been hosting and supporting several Ember.js meetups and co-organize EmberFest, the european Ember community conference.</p>"
+        %}
       </div>
     </div>
-  </div>
+  </div><!--container-->
 
   {% include contact_banner.html %}
 </main>
+
+<script type="text/javascript" src="./../node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="./../node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+<script type="text/javascript">
+  $(function() {
+    $('.card-expertise').matchHeight();
+  });
+</script>

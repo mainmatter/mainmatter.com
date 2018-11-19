@@ -295,9 +295,9 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0;
   font-family: "Nunito Sans", sans-serif;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.2;
-  color: #0d182f; }
+  color: inherit; }
 
 h1, .h1 {
   font-size: 5rem; }
@@ -421,6 +421,12 @@ h6, .h6 {
   @media (min-width: 768px) {
     h6, .h6 {
       font-size: 1.25rem; } }
+
+p {
+  margin-bottom: 2em; }
+
+p:last-child {
+  margin-bottom: 0; }
 
 .img-fluid {
   max-width: 100%;
@@ -2889,6 +2895,22 @@ input.toggler[type=checkbox]:checked + .navbar {
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
 
+.text-arrow {
+  display: block;
+  position: relative;
+  padding-left: 16px; }
+  .text-arrow::before {
+    border: solid #007df7;
+    border-width: 0 3px 3px 0;
+    content: "";
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    left: 0;
+    position: absolute;
+    top: 8px;
+    transform: rotate(-45deg); }
+
 .card {
   border: none;
   margin-bottom: 2rem; }
@@ -3031,7 +3053,7 @@ input.toggler[type=checkbox]:checked + .navbar {
     .card .card-body .card-title {
       font-family: "Nunito Sans", sans-serif;
       font-size: 1rem;
-      font-weight: 900;
+      font-weight: 700;
       margin-bottom: 1rem;
       overflow-wrap: normal; }
     .card .card-body .card-text {
@@ -3390,7 +3412,7 @@ input.toggler[type=checkbox]:checked + .navbar {
     padding: 0; }
   .jumbotron-fluid .jumbotron-header-wrapper .jumbotron-header {
     color: #0d182f;
-    font-size: 2em;
+    font-size: 3em;
     font-weight: 900;
     letter-spacing: 0.0375em;
     line-height: 1.25em; }
@@ -4074,7 +4096,7 @@ input.toggler[type=checkbox]:checked + .navbar {
   padding: 0.5rem 0.75rem;
   margin-bottom: 0;
   font-size: 1rem;
-  color: #0d182f;
+  color: inherit;
   background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb; }
   .popover-header:empty {
@@ -7427,236 +7449,34 @@ a.text-dark:hover, a.text-dark:focus {
         font-size: 1em;
         line-height: 1.5em; } }
 
-.container-fluid-case-study {
-  font-size: 16px; }
-  @media (min-width: 768px) {
-    .container-fluid-case-study {
-      font-size: 12px; } }
-  @media (min-width: 992px) {
-    .container-fluid-case-study {
-      font-size: 14px; } }
-  @media (min-width: 1200px) {
-    .container-fluid-case-study {
-      font-size: 16px; } }
-  .container-fluid-case-study .container-case-study {
-    padding: 0; }
-    .container-fluid-case-study .container-case-study .row-case-study,
-    .container-fluid-case-study .container-case-study .col-case-study {
-      margin: 0;
-      padding: 0; }
-    @media (min-width: 768px) {
-      .container-fluid-case-study .container-case-study .col-case-study {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-end; } }
-  .container-fluid-case-study .case-study {
-    display: block;
-    min-height: 18em;
-    position: relative;
-    width: 100%; }
-    @media (min-width: 768px) {
-      .container-fluid-case-study .case-study {
-        min-height: 25em; } }
-    .container-fluid-case-study .case-study:hover {
-      text-decoration: none; }
-      .container-fluid-case-study .case-study:hover .case-study-background {
-        transform: scale(1.2); }
-    @media (min-width: 768px) {
-      .container-fluid-case-study .case-study .case-study-description {
-        margin-left: 5em;
-        max-width: 24em; } }
-    .container-fluid-case-study .case-study .case-study-description .case-study-description-image-wrapper {
-      text-align: center; }
-      @media (min-width: 768px) {
-        .container-fluid-case-study .case-study .case-study-description .case-study-description-image-wrapper {
-          text-align: left; } }
-    .container-fluid-case-study .case-study .case-study-description .case-study-description-text {
-      color: #ffffff;
-      font-size: 1em;
-      font-weight: 400;
-      line-height: 1.5em;
-      padding: 0 1em;
-      text-align: center;
-      margin: 0 0 2.5rem 0; }
-      @media (min-width: 768px) {
-        .container-fluid-case-study .case-study .case-study-description .case-study-description-text {
-          font-size: 1.25em;
-          line-height: 1.2em;
-          padding: 0;
-          text-align: left; } }
-    .container-fluid-case-study .case-study .case-study-preview {
-      bottom: 0;
-      display: none;
-      left: 0;
-      overflow: hidden;
-      position: absolute;
-      right: 0;
-      top: 0; }
-      @media (min-width: 768px) {
-        .container-fluid-case-study .case-study .case-study-preview {
-          display: block; } }
-      .container-fluid-case-study .case-study .case-study-preview .case-study-preview-image {
-        position: absolute; }
-    .container-fluid-case-study .case-study .case-study-background-wrapper {
-      bottom: 0;
-      left: 0;
-      overflow: hidden;
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: -1; }
-      .container-fluid-case-study .case-study .case-study-background-wrapper .case-study-background {
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-        transition: transform .75s;
-        z-index: -1; }
-  @media (min-width: 768px) {
-    .container-fluid-case-study .case-study-timify {
-      max-width: 58em; } }
-  .container-fluid-case-study .case-study-timify .case-study-description {
-    padding-top: 1.5em; }
-    @media (min-width: 768px) {
-      .container-fluid-case-study .case-study-timify .case-study-description {
-        padding-top: 5em; } }
-    .container-fluid-case-study .case-study-timify .case-study-description .case-study-description-image-wrapper {
-      margin-bottom: 1.5em; }
-      @media (min-width: 768px) {
-        .container-fluid-case-study .case-study-timify .case-study-description .case-study-description-image-wrapper {
-          margin-bottom: 3em; } }
-      .container-fluid-case-study .case-study-timify .case-study-description .case-study-description-image-wrapper .case-study-description-image {
-        height: 4em; }
-        @media (min-width: 768px) {
-          .container-fluid-case-study .case-study-timify .case-study-description .case-study-description-image-wrapper .case-study-description-image {
-            height: 6em; } }
-  .container-fluid-case-study .case-study-timify .case-study-preview .case-study-preview-image {
-    max-width: 76%;
-    right: -32%;
-    top: 14%; }
-  .container-fluid-case-study .case-study-timify .case-study-background-wrapper .case-study-background {
-    background-color: #e44852;
-    background-image: url("../../images/timify/case-study-background-1.jpg"); }
-  .container-fluid-case-study .case-study-timify.case-study-full-width {
-    max-width: none; }
-    @media (min-width: 768px) {
-      .container-fluid-case-study .case-study-timify.case-study-full-width .case-study-description {
-        max-width: 27em; } }
-  @media (min-width: 768px) {
-    .container-fluid-case-study .case-study-trainline {
-      max-width: 58em; } }
-  .container-fluid-case-study .case-study-trainline .case-study-description {
-    padding-top: 2.625em; }
-    @media (min-width: 768px) {
-      .container-fluid-case-study .case-study-trainline .case-study-description {
-        padding-top: 5em;
-        max-width: 22em; } }
-    .container-fluid-case-study .case-study-trainline .case-study-description .case-study-description-image-wrapper {
-      margin-bottom: 2.625em; }
-      @media (min-width: 768px) {
-        .container-fluid-case-study .case-study-trainline .case-study-description .case-study-description-image-wrapper {
-          margin-bottom: 6em; } }
-      @media (min-width: 768px) {
-        .container-fluid-case-study .case-study-trainline .case-study-description .case-study-description-image-wrapper .case-study-description-image {
-          height: 2.5em; } }
-  .container-fluid-case-study .case-study-trainline .case-study-preview .case-study-preview-image {
-    max-width: 32%;
-    right: 8%;
-    top: 16%; }
-  .container-fluid-case-study .case-study-trainline .case-study-background-wrapper .case-study-background {
-    background-color: #2ec2a7;
-    background-image: url("../../images/trainline/case-study-background-1.jpg"); }
-  .container-fluid-case-study .case-study-trainline-team-augmentation .case-study-preview .case-study-preview-image {
-    max-width: 36%; }
-  .container-fluid-case-study .case-study-trainline.case-study-full-width {
-    max-width: none; }
-    @media (min-width: 768px) {
-      .container-fluid-case-study .case-study-trainline.case-study-full-width .case-study-description {
-        max-width: 27em; } }
-  @media (min-width: 768px) {
-    .container-fluid-case-study .case-study-expedition {
-      max-width: 58em; } }
-  .container-fluid-case-study .case-study-expedition .case-study-description {
-    padding-top: 2em; }
-    @media (min-width: 768px) {
-      .container-fluid-case-study .case-study-expedition .case-study-description {
-        padding-top: 5em; } }
-    .container-fluid-case-study .case-study-expedition .case-study-description .case-study-description-image-wrapper {
-      margin-bottom: 2em; }
-      @media (min-width: 768px) {
-        .container-fluid-case-study .case-study-expedition .case-study-description .case-study-description-image-wrapper {
-          margin-bottom: 3em; } }
-  .container-fluid-case-study .case-study-expedition .case-study-preview .case-study-preview-image {
-    max-width: 72%;
-    right: -32%;
-    top: 50%;
-    transform: translateY(-50%); }
-  .container-fluid-case-study .case-study-expedition .case-study-background-wrapper .case-study-background {
-    background-color: #634cc4;
-    background-image: url("../../images/expedition/case-study-background-1.jpg"); }
-  @media (min-width: 768px) {
-    .container-fluid-case-study .case-study-dd-wrt {
-      max-width: 58em; } }
-  .container-fluid-case-study .case-study-dd-wrt .case-study-description {
-    padding-top: 2em; }
-    @media (min-width: 768px) {
-      .container-fluid-case-study .case-study-dd-wrt .case-study-description {
-        padding-top: 7em; } }
-    .container-fluid-case-study .case-study-dd-wrt .case-study-description .case-study-description-image-wrapper {
-      margin-bottom: 2em; }
-      @media (min-width: 768px) {
-        .container-fluid-case-study .case-study-dd-wrt .case-study-description .case-study-description-image-wrapper {
-          margin-bottom: 4em; } }
-      .container-fluid-case-study .case-study-dd-wrt .case-study-description .case-study-description-image-wrapper .case-study-description-image {
-        height: 1.4375em; }
-  .container-fluid-case-study .case-study-dd-wrt .case-study-preview .case-study-preview-image {
-    max-width: 72%;
-    right: -32%;
-    top: 50%;
-    transform: translateY(-50%); }
-  .container-fluid-case-study .case-study-dd-wrt .case-study-background-wrapper .case-study-background {
-    background-color: #48abe4;
-    background-image: url("../../images/dd-wrt/case-study-background-1.jpg"); }
+.section-client {
+  background-size: cover; }
 
-.container-fluid-case-study-multiple-cases {
-  margin-bottom: 1.5em; }
-  @media (min-width: 768px) {
-    .container-fluid-case-study-multiple-cases {
-      margin-bottom: 2em; } }
-  @media (min-width: 768px) {
-    .container-fluid-case-study-multiple-cases .container-case-study-multiple-cases .col-case-study {
-      justify-content: space-between; } }
-  @media (min-width: 768px) {
-    .container-fluid-case-study-multiple-cases .case-study {
-      max-height: 34em;
-      width: 50%; } }
-  @media (min-width: 768px) {
-    .container-fluid-case-study-multiple-cases .case-study:first-child {
-      margin-right: 1em; } }
-  .container-fluid-case-study-multiple-cases .case-study:last-child {
-    margin-top: 2em; }
-    @media (min-width: 768px) {
-      .container-fluid-case-study-multiple-cases .case-study:last-child {
-        margin-left: 1em;
-        margin-top: 0; } }
-  .container-fluid-case-study-multiple-cases .case-study .case-study-description {
-    margin: 0 auto; }
-    .container-fluid-case-study-multiple-cases .case-study .case-study-description .case-study-description-image-wrapper {
-      text-align: center; }
-    .container-fluid-case-study-multiple-cases .case-study .case-study-description .case-study-description-text {
-      text-align: center; }
+.section-client-illustration {
+  overflow: hidden;
+  height: 400px; }
 
-.container-fluid-case-study-multiple-cases-work {
-  margin-top: 2em !important; }
+.section-client--trainline {
+  background-color: #2ec2a7;
+  background-image: url("../../images/trainline/case-study-background-1.jpg"); }
 
-.container-fluid-case-study-timify-work {
-  margin-top: 2em !important; }
+.bg-trainline {
+  background-color: #2ec2a7 !important; }
+
+.section-client--dd-wrt {
+  background-color: #48abe4;
+  background-image: url("../../images/dd-wrt/case-study-background-1.jpg"); }
+
+.section-client--timify {
+  background-color: #e44852;
+  background-image: url("../../images/timify/case-study-background-1.jpg"); }
+
+.bg-timify {
+  background-color: #e44852 !important; }
+
+.section-client--expedition {
+  background-color: #634cc4;
+  background-image: url("../../images/expedition/case-study-background-1.jpg"); }
 
 .circle {
   align-items: center;
@@ -7890,60 +7710,6 @@ footer {
     footer .nav-link:hover {
       color: #007df7; }
 
-.container-fluid-introduction {
-  font-size: 16px; }
-  @media (min-width: 768px) {
-    .container-fluid-introduction {
-      font-size: 12px; } }
-  @media (min-width: 992px) {
-    .container-fluid-introduction {
-      font-size: 14px; } }
-  @media (min-width: 1200px) {
-    .container-fluid-introduction {
-      font-size: 16px; } }
-  .container-fluid-introduction .container-introduction {
-    padding: 0; }
-  .container-fluid-introduction .row-introduction,
-  .container-fluid-introduction .col-introduction {
-    margin: 0;
-    padding: 0; }
-  .container-fluid-introduction .introduction {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    position: relative; }
-    .container-fluid-introduction .introduction::before {
-      background-image: url("../../images/icons/dark/line.svg");
-      content: "";
-      display: none;
-      height: 0.25rem;
-      left: 0;
-      position: absolute;
-      top: 0.8em;
-      width: 10em; }
-      @media (min-width: 768px) {
-        .container-fluid-introduction .introduction::before {
-          display: inline-block;
-          width: 5em; } }
-      @media (min-width: 992px) {
-        .container-fluid-introduction .introduction::before {
-          width: 10em; } }
-    .container-fluid-introduction .introduction .introduction-text {
-      font-size: 1em;
-      line-height: 1.5em; }
-      @media (min-width: 768px) {
-        .container-fluid-introduction .introduction .introduction-text {
-          font-size: 1.25em;
-          line-height: 1.6em;
-          max-width: 30em; } }
-    .container-fluid-introduction .introduction .introduction-text + .introduction-text {
-      margin-top: 3em; }
-      @media (min-width: 768px) {
-        .container-fluid-introduction .introduction .introduction-text + .introduction-text {
-          margin-top: 2.4em; } }
-
 .container-fluid-logos {
   font-size: 16px; }
   .container-fluid-logos .container-logos {
@@ -8037,139 +7803,16 @@ footer {
         .container-fluid-logos-work .container-logos .row-logos .col-logo > img {
           max-width: 100%; } }
 
-.container-fluid-news {
-  font-size: 16px; }
-  @media (min-width: 768px) {
-    .container-fluid-news {
-      font-size: 12px; } }
-  @media (min-width: 992px) {
-    .container-fluid-news {
-      font-size: 14px; } }
-  @media (min-width: 1200px) {
-    .container-fluid-news {
-      font-size: 16px; } }
-  .container-fluid-news .container-news {
-    padding: 0; }
-  .container-fluid-news .row-news,
-  .container-fluid-news .col-news {
-    margin: 0;
-    padding: 0; }
-  .container-fluid-news .news .news-header {
-    color: #0d182f;
-    font-size: 2em;
-    font-weight: 900;
-    letter-spacing: 0.0375em;
-    line-height: 1.25em;
-    margin-bottom: 1em; }
-    @media (min-width: 768px) {
-      .container-fluid-news .news .news-header {
-        font-size: 4em;
-        line-height: 1.2em;
-        margin-bottom: 0.6em; } }
-  .container-fluid-news .news .swiper-container-news .swiper-wrapper-news {
-    align-items: stretch;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    overflow-x: scroll; }
-    @media (min-width: 992px) {
-      .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news {
-        max-width: 22em; } }
-    @media (min-width: 1280px) {
-      .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news {
-        max-width: 22.5em; } }
-    .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news:not(:disabled):not(.disabled):active .service-description .service-link, .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news:not(:disabled):not(.disabled).active .service-description .service-link {
-      color: #0066cc; }
-      .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news:not(:disabled):not(.disabled):active .service-description .service-link::before, .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news:not(:disabled):not(.disabled).active .service-description .service-link::before {
-        border-color: #006cd9; }
-    .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news:hover .swiper-slide-news-body .swiper-slide-news-body-link {
-      padding-left: calc(8px + 1.5em);
-      text-decoration: none; }
-    @media (min-width: 992px) {
-      .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-image-wrapper {
-        max-height: 8em; } }
-    .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-body {
-      padding: 2em 2em 4em 2em; }
-      @media (min-width: 992px) {
-        .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-body {
-          padding: 2em; } }
-      .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-body .swiper-slide-news-body-header {
-        color: #0d182f;
-        font-size: 1.25em;
-        font-weight: 900;
-        line-height: 1.4em;
-        margin-bottom: 0.8em; }
-        @media (min-width: 768px) {
-          .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-body .swiper-slide-news-body-header {
-            line-height: 2em;
-            margin-bottom: 0.4em; } }
-      .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-body .swiper-slide-news-body-text {
-        color: #0d182f;
-        font-size: 1em;
-        font-weight: 300;
-        line-height: 1.5em;
-        margin-bottom: 2em; }
-        @media (min-width: 768px) {
-          .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-body .swiper-slide-news-body-text {
-            font-size: 1.25em;
-            line-height: 1.6em;
-            margin-bottom: 1.6em; } }
-      .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-body .swiper-slide-news-body-link {
-        color: #007df7;
-        display: inline-block;
-        font-family: "Nunito Sans", sans-serif;
-        font-weight: 700;
-        font-size: 1em;
-        padding-left: calc(8px + 0.75em);
-        position: relative;
-        transition: all 0.2s ease-in-out; }
-        .container-fluid-news .news .swiper-container-news .swiper-wrapper-news .swiper-slide-news .swiper-slide-news-body .swiper-slide-news-body-link::before {
-          border: solid #007df7;
-          border-width: 0 3px 3px 0;
-          content: "";
-          display: inline-block;
-          height: 8px;
-          width: 8px;
-          left: 0;
-          position: absolute;
-          top: 50%;
-          transform: rotate(-45deg);
-          transform-origin: left top;
-          transition: all 0.2s ease-in-out; }
+.card-expertise {
+  background-size: cover; }
 
-.our-expertise-description {
-  font-size: 16px;
-  margin-bottom: 2.5em; }
-  @media (min-width: 992px) {
-    .our-expertise-description {
-      max-width: 18em; } }
-  .our-expertise-description .text {
-    margin-top: 1.5em;
-    margin-bottom: 2.5em; }
-    @media (min-width: 768px) {
-      .our-expertise-description .text {
-        margin-top: 2em;
-        margin-bottom: 1em; } }
-    @media (min-width: 992px) {
-      .our-expertise-description .text {
-        margin-bottom: 3em; } }
-    .our-expertise-description .text:last-child {
-      margin: 0; }
+.card-expertise--ember {
+  background-color: #dd4025;
+  background-image: url(../../images/card/ember-background-small.png); }
 
-.card-our-expertise-small-container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-end; }
-  @media (min-width: 768px) {
-    .card-our-expertise-small-container {
-      flex-direction: row;
-      justify-content: space-between; } }
-  @media (min-width: 992px) {
-    .card-our-expertise-small-container {
-      justify-content: flex-end; } }
+.card-expertise--elixir {
+  background-color: #502a6b;
+  background-image: url(../../images/card/elixir-phoenix-background-small.png); }
 
 .container-quote {
   background-color: #f3f6fb;
@@ -8261,1058 +7904,6 @@ footer {
 
 .container-quote-ember::after, .container-quote-ember::before {
   background-color: #dd4025; }
-
-.container-fluid-service {
-  font-size: 16px;
-  overflow: hidden; }
-  @media (min-width: 768px) {
-    .container-fluid-service {
-      font-size: 12px; } }
-  @media (min-width: 992px) {
-    .container-fluid-service {
-      font-size: 14px; } }
-  @media (min-width: 1200px) {
-    .container-fluid-service {
-      font-size: 16px; } }
-  .container-fluid-service .container-service,
-  .container-fluid-service .row-service,
-  .container-fluid-service .col-service {
-    height: 100%; }
-  .container-fluid-service .container-service,
-  .container-fluid-service .col-service {
-    padding: 0; }
-  .container-fluid-service .row-service {
-    margin: 0; }
-  .container-fluid-service .service {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start; }
-    @media (min-width: 768px) {
-      .container-fluid-service .service {
-        align-items: center;
-        flex-direction: row;
-        justify-content: space-between; } }
-    .container-fluid-service .service .service-description {
-      width: 100%; }
-      @media (min-width: 768px) {
-        .container-fluid-service .service .service-description {
-          max-width: 28em; } }
-      .container-fluid-service .service .service-description .service-description-header {
-        color: #0d182f;
-        font-family: "Nunito Sans", sans-serif;
-        font-size: 2em;
-        font-weight: 900;
-        letter-spacing: 0.0375em;
-        line-height: 1.25em;
-        margin-bottom: 1em; }
-        @media (min-width: 768px) {
-          .container-fluid-service .service .service-description .service-description-header {
-            font-size: 4em;
-            line-height: 1.2em;
-            margin-bottom: 0.6em; } }
-      .container-fluid-service .service .service-description .service-description-text {
-        color: #0d182f;
-        font-family: "Nunito Sans", sans-serif;
-        font-size: 1em;
-        font-weight: 300;
-        line-height: 1.5em; }
-        @media (min-width: 768px) {
-          .container-fluid-service .service .service-description .service-description-text {
-            font-size: 1.25em;
-            line-height: 1.6em; } }
-      .container-fluid-service .service .service-description .service-description-text + .service-description-text {
-        margin-top: 2em; }
-    .container-fluid-service .service .service-description-multiple-columns {
-      max-width: none;
-      width: auto; }
-      @media (min-width: 768px) {
-        .container-fluid-service .service .service-description-multiple-columns .service-description-header {
-          max-width: 9.3333em; } }
-      .container-fluid-service .service .service-description-multiple-columns .service-description-text-wrapper {
-        align-items: stretch;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: flex-start; }
-        @media (min-width: 768px) {
-          .container-fluid-service .service .service-description-multiple-columns .service-description-text-wrapper {
-            flex-direction: row; } }
-        @media (min-width: 768px) {
-          .container-fluid-service .service .service-description-multiple-columns .service-description-text-wrapper .service-description-text {
-            flex-basis: 0;
-            flex-grow: 1;
-            max-width: 22.4em; } }
-        .container-fluid-service .service .service-description-multiple-columns .service-description-text-wrapper .service-description-text + .service-description-text {
-          margin-top: 2em; }
-          @media (min-width: 768px) {
-            .container-fluid-service .service .service-description-multiple-columns .service-description-text-wrapper .service-description-text + .service-description-text {
-              margin-left: 1.6em;
-              margin-top: 0; } }
-  .container-fluid-service .service-floated-left .service-description {
-    order: 1; }
-    @media (min-width: 768px) {
-      .container-fluid-service .service-floated-left .service-description {
-        order: 2; } }
-  .container-fluid-service .service-floated-left .service-preview {
-    order: 2; }
-    @media (min-width: 768px) {
-      .container-fluid-service .service-floated-left .service-preview {
-        order: 1; } }
-  .container-fluid-service .service-floated-right .service-description {
-    order: 1; }
-    @media (min-width: 768px) {
-      .container-fluid-service .service-floated-right .service-description {
-        order: 1; } }
-  .container-fluid-service .service-floated-right .service-preview {
-    order: 2; }
-    @media (min-width: 768px) {
-      .container-fluid-service .service-floated-right .service-preview {
-        order: 2; } }
-
-.container-fluid-service.container-fluid-service-grey {
-  background-color: #f3f6fb; }
-  @media (min-width: 768px) {
-    .container-fluid-service.container-fluid-service-grey {
-      background-color: transparent; } }
-  .container-fluid-service.container-fluid-service-grey .container-service {
-    background-color: #f3f6fb;
-    position: relative; }
-    .container-fluid-service.container-fluid-service-grey .container-service .container-service-background {
-      background-color: #f3f6fb;
-      bottom: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: -1; }
-    .container-fluid-service.container-fluid-service-grey .container-service .container-service-background-floated-left {
-      right: 100%; }
-    .container-fluid-service.container-fluid-service-grey .container-service .container-service-background-floated-right {
-      left: 100%; }
-  .container-fluid-service.container-fluid-service-grey .service {
-    margin-bottom: 2em;
-    margin-top: 2em; }
-    @media (min-width: 768px) {
-      .container-fluid-service.container-fluid-service-grey .service {
-        margin-bottom: 0;
-        margin-top: 0; } }
-    @media (min-width: 768px) {
-      .container-fluid-service.container-fluid-service-grey .service .service-description {
-        margin-bottom: 6em;
-        margin-top: 6em; } }
-
-.container-fluid-service-cards {
-  margin-top: 2em !important;
-  overflow: visible; }
-
-.container-fluid-news {
-  margin-top: 25vw !important; }
-  @media (min-width: 1280px) {
-    .container-fluid-news {
-      margin-top: 20em !important; } }
-
-@media (min-width: 768px) {
-  .container-fluid-service-full-stack-engineering .service,
-  .container-fluid-service-team-augmentation .service,
-  .container-fluid-service-tutoring-augmentation .service,
-  .container-fluid-service-we-are-experts .service,
-  .container-fluid-service-jumpstarts-for-tech-teams .service,
-  .container-fluid-service-reviews .service,
-  .container-fluid-service-architecture-guidance .service,
-  .container-fluid-service-ensuring-the-long-term-success .service,
-  .container-fluid-service-elixir-community-engagement .service {
-    justify-content: space-around; } }
-.container-fluid-service-full-stack-engineering .service .service-preview,
-.container-fluid-service-team-augmentation .service .service-preview,
-.container-fluid-service-tutoring-augmentation .service .service-preview,
-.container-fluid-service-we-are-experts .service .service-preview,
-.container-fluid-service-jumpstarts-for-tech-teams .service .service-preview,
-.container-fluid-service-reviews .service .service-preview,
-.container-fluid-service-architecture-guidance .service .service-preview,
-.container-fluid-service-ensuring-the-long-term-success .service .service-preview,
-.container-fluid-service-elixir-community-engagement .service .service-preview {
-  margin-bottom: 0; }
-.container-fluid-service-full-stack-engineering .service-floated-left .service-description,
-.container-fluid-service-team-augmentation .service-floated-left .service-description,
-.container-fluid-service-tutoring-augmentation .service-floated-left .service-description,
-.container-fluid-service-we-are-experts .service-floated-left .service-description,
-.container-fluid-service-jumpstarts-for-tech-teams .service-floated-left .service-description,
-.container-fluid-service-reviews .service-floated-left .service-description,
-.container-fluid-service-architecture-guidance .service-floated-left .service-description,
-.container-fluid-service-ensuring-the-long-term-success .service-floated-left .service-description,
-.container-fluid-service-elixir-community-engagement .service-floated-left .service-description {
-  order: 2; }
-  @media (min-width: 768px) {
-    .container-fluid-service-full-stack-engineering .service-floated-left .service-description,
-    .container-fluid-service-team-augmentation .service-floated-left .service-description,
-    .container-fluid-service-tutoring-augmentation .service-floated-left .service-description,
-    .container-fluid-service-we-are-experts .service-floated-left .service-description,
-    .container-fluid-service-jumpstarts-for-tech-teams .service-floated-left .service-description,
-    .container-fluid-service-reviews .service-floated-left .service-description,
-    .container-fluid-service-architecture-guidance .service-floated-left .service-description,
-    .container-fluid-service-ensuring-the-long-term-success .service-floated-left .service-description,
-    .container-fluid-service-elixir-community-engagement .service-floated-left .service-description {
-      order: 2; } }
-.container-fluid-service-full-stack-engineering .service-floated-left .service-preview,
-.container-fluid-service-team-augmentation .service-floated-left .service-preview,
-.container-fluid-service-tutoring-augmentation .service-floated-left .service-preview,
-.container-fluid-service-we-are-experts .service-floated-left .service-preview,
-.container-fluid-service-jumpstarts-for-tech-teams .service-floated-left .service-preview,
-.container-fluid-service-reviews .service-floated-left .service-preview,
-.container-fluid-service-architecture-guidance .service-floated-left .service-preview,
-.container-fluid-service-ensuring-the-long-term-success .service-floated-left .service-preview,
-.container-fluid-service-elixir-community-engagement .service-floated-left .service-preview {
-  order: 1; }
-  @media (min-width: 768px) {
-    .container-fluid-service-full-stack-engineering .service-floated-left .service-preview,
-    .container-fluid-service-team-augmentation .service-floated-left .service-preview,
-    .container-fluid-service-tutoring-augmentation .service-floated-left .service-preview,
-    .container-fluid-service-we-are-experts .service-floated-left .service-preview,
-    .container-fluid-service-jumpstarts-for-tech-teams .service-floated-left .service-preview,
-    .container-fluid-service-reviews .service-floated-left .service-preview,
-    .container-fluid-service-architecture-guidance .service-floated-left .service-preview,
-    .container-fluid-service-ensuring-the-long-term-success .service-floated-left .service-preview,
-    .container-fluid-service-elixir-community-engagement .service-floated-left .service-preview {
-      order: 1; } }
-.container-fluid-service-full-stack-engineering .service-floated-right .service-description,
-.container-fluid-service-team-augmentation .service-floated-right .service-description,
-.container-fluid-service-tutoring-augmentation .service-floated-right .service-description,
-.container-fluid-service-we-are-experts .service-floated-right .service-description,
-.container-fluid-service-jumpstarts-for-tech-teams .service-floated-right .service-description,
-.container-fluid-service-reviews .service-floated-right .service-description,
-.container-fluid-service-architecture-guidance .service-floated-right .service-description,
-.container-fluid-service-ensuring-the-long-term-success .service-floated-right .service-description,
-.container-fluid-service-elixir-community-engagement .service-floated-right .service-description {
-  order: 2; }
-  @media (min-width: 768px) {
-    .container-fluid-service-full-stack-engineering .service-floated-right .service-description,
-    .container-fluid-service-team-augmentation .service-floated-right .service-description,
-    .container-fluid-service-tutoring-augmentation .service-floated-right .service-description,
-    .container-fluid-service-we-are-experts .service-floated-right .service-description,
-    .container-fluid-service-jumpstarts-for-tech-teams .service-floated-right .service-description,
-    .container-fluid-service-reviews .service-floated-right .service-description,
-    .container-fluid-service-architecture-guidance .service-floated-right .service-description,
-    .container-fluid-service-ensuring-the-long-term-success .service-floated-right .service-description,
-    .container-fluid-service-elixir-community-engagement .service-floated-right .service-description {
-      order: 1; } }
-.container-fluid-service-full-stack-engineering .service-floated-right .service-preview,
-.container-fluid-service-team-augmentation .service-floated-right .service-preview,
-.container-fluid-service-tutoring-augmentation .service-floated-right .service-preview,
-.container-fluid-service-we-are-experts .service-floated-right .service-preview,
-.container-fluid-service-jumpstarts-for-tech-teams .service-floated-right .service-preview,
-.container-fluid-service-reviews .service-floated-right .service-preview,
-.container-fluid-service-architecture-guidance .service-floated-right .service-preview,
-.container-fluid-service-ensuring-the-long-term-success .service-floated-right .service-preview,
-.container-fluid-service-elixir-community-engagement .service-floated-right .service-preview {
-  order: 1; }
-  @media (min-width: 768px) {
-    .container-fluid-service-full-stack-engineering .service-floated-right .service-preview,
-    .container-fluid-service-team-augmentation .service-floated-right .service-preview,
-    .container-fluid-service-tutoring-augmentation .service-floated-right .service-preview,
-    .container-fluid-service-we-are-experts .service-floated-right .service-preview,
-    .container-fluid-service-jumpstarts-for-tech-teams .service-floated-right .service-preview,
-    .container-fluid-service-reviews .service-floated-right .service-preview,
-    .container-fluid-service-architecture-guidance .service-floated-right .service-preview,
-    .container-fluid-service-ensuring-the-long-term-success .service-floated-right .service-preview,
-    .container-fluid-service-elixir-community-engagement .service-floated-right .service-preview {
-      order: 2; } }
-
-.container-fluid-service-full-stack-engineering .service:not(:disabled):not(.disabled):active .service-description .service-description-link, .container-fluid-service-full-stack-engineering .service:not(:disabled):not(.disabled).active .service-description .service-description-link,
-.container-fluid-service-team-augmentation .service:not(:disabled):not(.disabled):active .service-description .service-description-link,
-.container-fluid-service-team-augmentation .service:not(:disabled):not(.disabled).active .service-description .service-description-link,
-.container-fluid-service-tutoring-augmentation .service:not(:disabled):not(.disabled):active .service-description .service-description-link,
-.container-fluid-service-tutoring-augmentation .service:not(:disabled):not(.disabled).active .service-description .service-description-link {
-  color: #0066cc; }
-  .container-fluid-service-full-stack-engineering .service:not(:disabled):not(.disabled):active .service-description .service-description-link::before, .container-fluid-service-full-stack-engineering .service:not(:disabled):not(.disabled).active .service-description .service-description-link::before,
-  .container-fluid-service-team-augmentation .service:not(:disabled):not(.disabled):active .service-description .service-description-link::before,
-  .container-fluid-service-team-augmentation .service:not(:disabled):not(.disabled).active .service-description .service-description-link::before,
-  .container-fluid-service-tutoring-augmentation .service:not(:disabled):not(.disabled):active .service-description .service-description-link::before,
-  .container-fluid-service-tutoring-augmentation .service:not(:disabled):not(.disabled).active .service-description .service-description-link::before {
-    border-color: #006cd9; }
-.container-fluid-service-full-stack-engineering .service:hover .service-description .service-description-link,
-.container-fluid-service-team-augmentation .service:hover .service-description .service-description-link,
-.container-fluid-service-tutoring-augmentation .service:hover .service-description .service-description-link {
-  padding-left: calc(8px + 1.5em);
-  text-decoration: none; }
-.container-fluid-service-full-stack-engineering .service .service-description .service-description-link,
-.container-fluid-service-team-augmentation .service .service-description .service-description-link,
-.container-fluid-service-tutoring-augmentation .service .service-description .service-description-link {
-  color: #007df7;
-  display: inline-block;
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 700;
-  font-size: 1em;
-  margin-top: 2em;
-  padding-left: calc(8px + 0.75em);
-  position: relative;
-  transition: all 0.2s ease-in-out; }
-  @media (min-width: 768px) {
-    .container-fluid-service-full-stack-engineering .service .service-description .service-description-link,
-    .container-fluid-service-team-augmentation .service .service-description .service-description-link,
-    .container-fluid-service-tutoring-augmentation .service .service-description .service-description-link {
-      margin-top: 3em; } }
-  .container-fluid-service-full-stack-engineering .service .service-description .service-description-link::before,
-  .container-fluid-service-team-augmentation .service .service-description .service-description-link::before,
-  .container-fluid-service-tutoring-augmentation .service .service-description .service-description-link::before {
-    border: solid #007df7;
-    border-width: 0 3px 3px 0;
-    content: "";
-    display: inline-block;
-    height: 8px;
-    width: 8px;
-    left: 0;
-    position: absolute;
-    top: 50%;
-    transform: rotate(-45deg);
-    transform-origin: left top;
-    transition: all 0.2s ease-in-out; }
-
-.container-fluid-service-we-are-experts {
-  margin-top: 5vw !important; }
-  @media (min-width: 1280px) {
-    .container-fluid-service-we-are-experts {
-      margin-top: 4em !important; } }
-
-@media (min-width: 768px) {
-  .container-fluid-team-augmentation-our-expertise .service .service-description,
-  .container-fluid-training-our-expertise .service .service-description,
-  .container-fluid-service-timify-our-expertise .service .service-description,
-  .container-fluid-service-trainline-our-expertise .service .service-description,
-  .container-fluid-expedition-our-expertise .service .service-description,
-  .container-fluid-service-dd-wrt-our-expertise .service .service-description {
-    padding-right: 2em;
-    max-width: 50%; } }
-.container-fluid-team-augmentation-our-expertise .service .service-preview,
-.container-fluid-training-our-expertise .service .service-preview,
-.container-fluid-service-timify-our-expertise .service .service-preview,
-.container-fluid-service-trainline-our-expertise .service .service-preview,
-.container-fluid-expedition-our-expertise .service .service-preview,
-.container-fluid-service-dd-wrt-our-expertise .service .service-preview {
-  align-items: stretch;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  margin-top: 2.5em; }
-  @media (min-width: 768px) {
-    .container-fluid-team-augmentation-our-expertise .service .service-preview,
-    .container-fluid-training-our-expertise .service .service-preview,
-    .container-fluid-service-timify-our-expertise .service .service-preview,
-    .container-fluid-service-trainline-our-expertise .service .service-preview,
-    .container-fluid-expedition-our-expertise .service .service-preview,
-    .container-fluid-service-dd-wrt-our-expertise .service .service-preview {
-      flex-direction: row;
-      margin-bottom: 6em;
-      margin-top: 6em; } }
-
-.container-fluid-service-trainline-our-expertise .service .service-preview,
-.container-fluid-expedition-our-expertise .service .service-preview,
-.container-fluid-service-dd-wrt-our-expertise .service .service-preview {
-  margin-right: 0 !important; }
-
-.container-fluid-service-defining-the-problem {
-  overflow: visible; }
-  @media (min-width: 768px) {
-    .container-fluid-service-defining-the-problem {
-      padding-bottom: 2em;
-      padding-top: 4em; } }
-  .container-fluid-service-defining-the-problem .service {
-    margin-bottom: 0 !important; }
-    @media (min-width: 768px) {
-      .container-fluid-service-defining-the-problem .service {
-        position: relative; } }
-    .container-fluid-service-defining-the-problem .service .service-description {
-      margin-bottom: 2.5em; }
-      @media (min-width: 768px) {
-        .container-fluid-service-defining-the-problem .service .service-description {
-          margin-bottom: 0;
-          margin-left: 2em; } }
-      @media (min-width: 992px) {
-        .container-fluid-service-defining-the-problem .service .service-description {
-          margin-left: 4em; } }
-      @media (min-width: 1200px) {
-        .container-fluid-service-defining-the-problem .service .service-description {
-          margin-left: 6em; } }
-    @media (max-width: 767.98px) {
-      .container-fluid-service-defining-the-problem .service .service-preview {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        width: 100%; } }
-    @media (min-width: 768px) {
-      .container-fluid-service-defining-the-problem .service .service-preview {
-        bottom: 0;
-        position: absolute;
-        left: 60%; } }
-    .container-fluid-service-defining-the-problem .service .service-preview .service-preview-image {
-      max-height: 24em;
-      max-width: none; }
-      @media (min-width: 768px) {
-        .container-fluid-service-defining-the-problem .service .service-preview .service-preview-image {
-          max-height: 45em;
-          max-width: none; } }
-
-@media (min-width: 768px) {
-  .container-fluid-service-delivering-high-quality {
-    padding-bottom: 6em;
-    padding-top: 6em; } }
-@media (min-width: 768px) {
-  .container-fluid-service-delivering-high-quality .service {
-    justify-content: flex-end;
-    position: relative; } }
-.container-fluid-service-delivering-high-quality .service .service-description {
-  margin-bottom: 2.5em; }
-  @media (min-width: 768px) {
-    .container-fluid-service-delivering-high-quality .service .service-description {
-      margin-bottom: 0; } }
-@media (max-width: 767.98px) {
-  .container-fluid-service-delivering-high-quality .service .service-preview {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    width: 100%; } }
-@media (min-width: 768px) {
-  .container-fluid-service-delivering-high-quality .service .service-preview {
-    position: absolute;
-    right: 60%;
-    top: 50%;
-    transform: translateY(-50%); } }
-.container-fluid-service-delivering-high-quality .service .service-preview .service-preview-image {
-  max-height: 26em;
-  max-width: none; }
-  @media (min-width: 768px) {
-    .container-fluid-service-delivering-high-quality .service .service-preview .service-preview-image {
-      max-height: 40em;
-      max-width: none; } }
-
-@media (min-width: 768px) {
-  .container-fluid-service-mobile-web-mobile-apps {
-    padding-top: 5em; } }
-.container-fluid-service-mobile-web-mobile-apps .service {
-  margin-bottom: 0 !important; }
-  @media (min-width: 768px) {
-    .container-fluid-service-mobile-web-mobile-apps .service {
-      position: relative; } }
-  .container-fluid-service-mobile-web-mobile-apps .service .service-description {
-    margin-bottom: 2.5em; }
-    @media (min-width: 768px) {
-      .container-fluid-service-mobile-web-mobile-apps .service .service-description {
-        margin-bottom: 0;
-        margin-left: 2em; } }
-    @media (min-width: 992px) {
-      .container-fluid-service-mobile-web-mobile-apps .service .service-description {
-        margin-left: 4em; } }
-    @media (min-width: 1200px) {
-      .container-fluid-service-mobile-web-mobile-apps .service .service-description {
-        margin-left: 6em; } }
-  @media (max-width: 767.98px) {
-    .container-fluid-service-mobile-web-mobile-apps .service .service-preview {
-      align-items: flex-start;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: center;
-      width: 100%; } }
-  @media (min-width: 768px) {
-    .container-fluid-service-mobile-web-mobile-apps .service .service-preview {
-      bottom: 0;
-      position: absolute;
-      right: 2em; } }
-  @media (min-width: 992px) {
-    .container-fluid-service-mobile-web-mobile-apps .service .service-preview {
-      right: 4em; } }
-  @media (min-width: 1200px) {
-    .container-fluid-service-mobile-web-mobile-apps .service .service-preview {
-      right: 6em; } }
-  .container-fluid-service-mobile-web-mobile-apps .service .service-preview .service-preview-image {
-    max-height: 28em;
-    max-width: none; }
-    @media (min-width: 768px) {
-      .container-fluid-service-mobile-web-mobile-apps .service .service-preview .service-preview-image {
-        max-height: 50em;
-        max-width: none; } }
-
-@media (min-width: 992px) {
-  .container-fluid-service-optimized-engineering .service {
-    justify-content: space-around; } }
-.container-fluid-service-optimized-engineering .service .service-description {
-  margin-bottom: 2.5em; }
-  @media (min-width: 768px) {
-    .container-fluid-service-optimized-engineering .service .service-description {
-      margin-bottom: 0; } }
-@media (max-width: 767.98px) {
-  .container-fluid-service-optimized-engineering .service .service-preview {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    width: 100%; } }
-.container-fluid-service-optimized-engineering .service .service-preview .service-preview-image {
-  max-height: 30em;
-  max-width: none; }
-  @media (min-width: 768px) {
-    .container-fluid-service-optimized-engineering .service .service-preview .service-preview-image {
-      max-height: 50em;
-      max-width: none; } }
-
-.container-fluid-service-optimizing-prototype {
-  overflow: visible; }
-  @media (min-width: 768px) {
-    .container-fluid-service-optimizing-prototype {
-      padding-bottom: 2em;
-      padding-top: 3em; } }
-  .container-fluid-service-optimizing-prototype .service {
-    margin-bottom: 0 !important; }
-    @media (min-width: 768px) {
-      .container-fluid-service-optimizing-prototype .service {
-        position: relative; } }
-    .container-fluid-service-optimizing-prototype .service .service-description {
-      margin-bottom: 2.5em; }
-      @media (min-width: 768px) {
-        .container-fluid-service-optimizing-prototype .service .service-description {
-          margin-bottom: 0;
-          margin-left: 2em; } }
-      @media (min-width: 992px) {
-        .container-fluid-service-optimizing-prototype .service .service-description {
-          margin-left: 4em; } }
-      @media (min-width: 1200px) {
-        .container-fluid-service-optimizing-prototype .service .service-description {
-          margin-left: 6em; } }
-    @media (max-width: 767.98px) {
-      .container-fluid-service-optimizing-prototype .service .service-preview {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        width: 100%; } }
-    @media (min-width: 768px) {
-      .container-fluid-service-optimizing-prototype .service .service-preview {
-        bottom: 0;
-        position: absolute;
-        left: 60%; } }
-    .container-fluid-service-optimizing-prototype .service .service-preview .service-preview-image {
-      max-height: 22em;
-      max-width: none; }
-      @media (min-width: 768px) {
-        .container-fluid-service-optimizing-prototype .service .service-preview .service-preview-image {
-          max-height: 42em;
-          max-width: none; } }
-
-@media (min-width: 768px) {
-  .container-fluid-service-long-term-enablement {
-    padding-bottom: 8em;
-    padding-top: 8em; } }
-@media (min-width: 768px) {
-  .container-fluid-service-long-term-enablement .service {
-    justify-content: flex-end;
-    position: relative; } }
-.container-fluid-service-long-term-enablement .service .service-description {
-  margin-bottom: 2.5em; }
-  @media (min-width: 768px) {
-    .container-fluid-service-long-term-enablement .service .service-description {
-      margin-bottom: 0; } }
-@media (max-width: 767.98px) {
-  .container-fluid-service-long-term-enablement .service .service-preview {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    width: 100%; } }
-@media (min-width: 768px) {
-  .container-fluid-service-long-term-enablement .service .service-preview {
-    position: absolute;
-    right: 60%;
-    top: 50%;
-    transform: translateY(-50%); } }
-.container-fluid-service-long-term-enablement .service .service-preview .service-preview-image {
-  max-height: 22em;
-  max-width: none; }
-  @media (min-width: 768px) {
-    .container-fluid-service-long-term-enablement .service .service-preview .service-preview-image {
-      max-height: 40em;
-      max-width: none; } }
-
-@media (min-width: 768px) {
-  .container-fluid-service-analyzing-the-environment {
-    padding-top: 3em; } }
-@media (min-width: 768px) {
-  .container-fluid-service-analyzing-the-environment .service {
-    position: relative; } }
-.container-fluid-service-analyzing-the-environment .service .service-description {
-  margin-bottom: 2.5em; }
-  @media (min-width: 768px) {
-    .container-fluid-service-analyzing-the-environment .service .service-description {
-      margin-bottom: 0;
-      margin-left: 2em; } }
-  @media (min-width: 992px) {
-    .container-fluid-service-analyzing-the-environment .service .service-description {
-      margin-left: 4em; } }
-  @media (min-width: 1200px) {
-    .container-fluid-service-analyzing-the-environment .service .service-description {
-      margin-left: 6em; } }
-@media (max-width: 767.98px) {
-  .container-fluid-service-analyzing-the-environment .service .service-preview {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    width: 100%; } }
-@media (min-width: 768px) {
-  .container-fluid-service-analyzing-the-environment .service .service-preview {
-    bottom: 4em;
-    position: absolute;
-    left: 60%; } }
-.container-fluid-service-analyzing-the-environment .service .service-preview .service-preview-image {
-  max-height: 20em;
-  max-width: none; }
-  @media (min-width: 768px) {
-    .container-fluid-service-analyzing-the-environment .service .service-preview .service-preview-image {
-      max-height: 44em;
-      max-width: none; } }
-
-.container-fluid-service-finding-the-solution {
-  overflow: visible; }
-  @media (min-width: 768px) {
-    .container-fluid-service-finding-the-solution {
-      padding-bottom: 5em;
-      padding-top: 5em; } }
-  .container-fluid-service-finding-the-solution .service {
-    margin-bottom: 2em; }
-    @media (min-width: 768px) {
-      .container-fluid-service-finding-the-solution .service {
-        justify-content: flex-end;
-        margin-bottom: 0;
-        position: relative; } }
-    .container-fluid-service-finding-the-solution .service .service-description {
-      margin-bottom: 2.5em; }
-      @media (min-width: 768px) {
-        .container-fluid-service-finding-the-solution .service .service-description {
-          margin-bottom: 0; } }
-    @media (max-width: 767.98px) {
-      .container-fluid-service-finding-the-solution .service .service-preview {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        width: 100%; } }
-    @media (min-width: 768px) {
-      .container-fluid-service-finding-the-solution .service .service-preview {
-        position: absolute;
-        right: 60%;
-        top: 50%;
-        transform: translateY(-50%); } }
-    .container-fluid-service-finding-the-solution .service .service-preview .service-preview-image {
-      max-height: 20em;
-      max-width: none; }
-      @media (min-width: 768px) {
-        .container-fluid-service-finding-the-solution .service .service-preview .service-preview-image {
-          max-height: 34em;
-          max-width: none; } }
-
-.container-fluid-service-we-love-open-source .service,
-.container-fluid-service-we-share-our-expertise .service,
-.container-fluid-service-from-the-blog .service {
-  align-items: flex-start;
-  flex-direction: column; }
-  @media (min-width: 992px) {
-    .container-fluid-service-we-love-open-source .service,
-    .container-fluid-service-we-share-our-expertise .service,
-    .container-fluid-service-from-the-blog .service {
-      flex-direction: row; } }
-  .container-fluid-service-we-love-open-source .service .service-description,
-  .container-fluid-service-we-share-our-expertise .service .service-description,
-  .container-fluid-service-from-the-blog .service .service-description {
-    margin-bottom: 2.5em; }
-    @media (min-width: 768px) {
-      .container-fluid-service-we-love-open-source .service .service-description,
-      .container-fluid-service-we-share-our-expertise .service .service-description,
-      .container-fluid-service-from-the-blog .service .service-description {
-        max-width: none; } }
-    @media (min-width: 992px) {
-      .container-fluid-service-we-love-open-source .service .service-description,
-      .container-fluid-service-we-share-our-expertise .service .service-description,
-      .container-fluid-service-from-the-blog .service .service-description {
-        margin-bottom: 0;
-        max-width: 24em; } }
-  .container-fluid-service-we-love-open-source .service .service-preview,
-  .container-fluid-service-we-share-our-expertise .service .service-preview,
-  .container-fluid-service-from-the-blog .service .service-preview {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 100%; }
-    .container-fluid-service-we-love-open-source .service .service-preview .service-preview-card-wrapper,
-    .container-fluid-service-we-share-our-expertise .service .service-preview .service-preview-card-wrapper,
-    .container-fluid-service-from-the-blog .service .service-preview .service-preview-card-wrapper {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      width: 100%; }
-      @media (min-width: 768px) {
-        .container-fluid-service-we-love-open-source .service .service-preview .service-preview-card-wrapper,
-        .container-fluid-service-we-share-our-expertise .service .service-preview .service-preview-card-wrapper,
-        .container-fluid-service-from-the-blog .service .service-preview .service-preview-card-wrapper {
-          flex-direction: row;
-          justify-content: space-evenly; } }
-      @media (min-width: 992px) {
-        .container-fluid-service-we-love-open-source .service .service-preview .service-preview-card-wrapper,
-        .container-fluid-service-we-share-our-expertise .service .service-preview .service-preview-card-wrapper,
-        .container-fluid-service-from-the-blog .service .service-preview .service-preview-card-wrapper {
-          flex-direction: row;
-          justify-content: flex-end; } }
-    .container-fluid-service-we-love-open-source .service .service-preview .service-preview-card-wrapper + .service-preview-card-wrapper,
-    .container-fluid-service-we-share-our-expertise .service .service-preview .service-preview-card-wrapper + .service-preview-card-wrapper,
-    .container-fluid-service-from-the-blog .service .service-preview .service-preview-card-wrapper + .service-preview-card-wrapper {
-      margin-top: 1em; }
-      @media (min-width: 768px) {
-        .container-fluid-service-we-love-open-source .service .service-preview .service-preview-card-wrapper + .service-preview-card-wrapper,
-        .container-fluid-service-we-share-our-expertise .service .service-preview .service-preview-card-wrapper + .service-preview-card-wrapper,
-        .container-fluid-service-from-the-blog .service .service-preview .service-preview-card-wrapper + .service-preview-card-wrapper {
-          margin-top: 2em; } }
-
-.container-fluid-service-from-the-blog .service .service-preview {
-  justify-content: center; }
-  @media (min-width: 992px) {
-    .container-fluid-service-from-the-blog .service .service-preview {
-      justify-content: flex-end; } }
-
-.container-fluid-service-ember-community-engagement .service-preview {
-  display: none; }
-  @media (min-width: 768px) {
-    .container-fluid-service-ember-community-engagement .service-preview {
-      display: block; } }
-@media (min-width: 768px) {
-  .container-fluid-service-ember-community-engagement .service-description {
-    margin-left: 2em;
-    margin-right: 2em; } }
-@media (min-width: 992px) {
-  .container-fluid-service-ember-community-engagement .service-description {
-    margin-right: 4em; } }
-@media (min-width: 1200px) {
-  .container-fluid-service-ember-community-engagement .service-description {
-    margin-right: 6em; } }
-.container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between; }
-  .container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper .service-description-logo-wrapper {
-    align-items: center;
-    display: flex;
-    flex-basis: 50%;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    height: 50%;
-    justify-content: center; }
-    @media (min-width: 768px) {
-      .container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper .service-description-logo-wrapper {
-        flex-basis: auto; } }
-    .container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(1) {
-      order: 1; }
-      @media (min-width: 768px) {
-        .container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(1) {
-          order: 1; } }
-      .container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(1) .service-description-logo {
-        height: 5em; }
-        @media (min-width: 768px) {
-          .container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(1) .service-description-logo {
-            height: 4em; } }
-    .container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(2) {
-      order: 3; }
-      @media (min-width: 768px) {
-        .container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(2) {
-          order: 2; } }
-      .container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(2) .service-description-logo {
-        height: 5em; }
-        @media (min-width: 768px) {
-          .container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(2) .service-description-logo {
-            height: 4em; } }
-    .container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(3) {
-      order: 2; }
-      @media (min-width: 768px) {
-        .container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(3) {
-          order: 3; } }
-      @media (min-width: 768px) {
-        .container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(3) .service-description-logo {
-          height: 1.25em; } }
-    .container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(4) {
-      order: 4; }
-      @media (min-width: 768px) {
-        .container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(4) {
-          order: 4; } }
-      .container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(4) .service-description-logo {
-        height: 3.5em; }
-        @media (min-width: 768px) {
-          .container-fluid-service-ember-community-engagement .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(4) .service-description-logo {
-            height: 3em; } }
-
-.container-fluid-service-elixir-community-engagement .service .service-description .service-description-logos-wrapper {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 2em; }
-  .container-fluid-service-elixir-community-engagement .service .service-description .service-description-logos-wrapper .service-description-logo-wrapper {
-    align-items: center;
-    display: flex;
-    flex-basis: 100%;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    margin-top: 2em; }
-    @media (min-width: 768px) {
-      .container-fluid-service-elixir-community-engagement .service .service-description .service-description-logos-wrapper .service-description-logo-wrapper {
-        flex-basis: auto;
-        margin-top: 0; } }
-    .container-fluid-service-elixir-community-engagement .service .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(1) .service-description-logo {
-      height: 5em; }
-      @media (min-width: 768px) {
-        .container-fluid-service-elixir-community-engagement .service .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(1) .service-description-logo {
-          height: 4em; } }
-    .container-fluid-service-elixir-community-engagement .service .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(2) .service-description-logo {
-      height: 1.75em; }
-      @media (min-width: 768px) {
-        .container-fluid-service-elixir-community-engagement .service .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(2) .service-description-logo {
-          height: 1.5em; } }
-    .container-fluid-service-elixir-community-engagement .service .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(3) .service-description-logo {
-      height: 1.5em; }
-      @media (min-width: 768px) {
-        .container-fluid-service-elixir-community-engagement .service .service-description .service-description-logos-wrapper .service-description-logo-wrapper:nth-child(3) .service-description-logo {
-          height: 1.375em; } }
-
-@media (min-width: 768px) {
-  .container-fluid-service-we-move-fast-without-breaking-things {
-    padding-top: 3em; } }
-@media (min-width: 768px) {
-  .container-fluid-service-we-move-fast-without-breaking-things .service {
-    position: relative; } }
-.container-fluid-service-we-move-fast-without-breaking-things .service .service-description {
-  margin-bottom: 2.5em; }
-  @media (min-width: 768px) {
-    .container-fluid-service-we-move-fast-without-breaking-things .service .service-description {
-      margin-bottom: 0;
-      margin-left: 2em; } }
-  @media (min-width: 992px) {
-    .container-fluid-service-we-move-fast-without-breaking-things .service .service-description {
-      margin-left: 4em; } }
-  @media (min-width: 1200px) {
-    .container-fluid-service-we-move-fast-without-breaking-things .service .service-description {
-      margin-left: 6em; } }
-@media (max-width: 767.98px) {
-  .container-fluid-service-we-move-fast-without-breaking-things .service .service-preview {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    width: 100%; } }
-@media (min-width: 768px) {
-  .container-fluid-service-we-move-fast-without-breaking-things .service .service-preview {
-    bottom: 4em;
-    position: absolute;
-    left: 60%; } }
-.container-fluid-service-we-move-fast-without-breaking-things .service .service-preview .service-preview-image {
-  width: 100%; }
-  @media (min-width: 768px) {
-    .container-fluid-service-we-move-fast-without-breaking-things .service .service-preview .service-preview-image {
-      height: 44em;
-      max-width: 200%;
-      width: initial; } }
-
-.container-fluid-service-we-love-remote-culture {
-  overflow: visible !important; }
-  .container-fluid-service-we-love-remote-culture .service .service-description {
-    margin-bottom: 2.5em; }
-    @media (min-width: 768px) {
-      .container-fluid-service-we-love-remote-culture .service .service-description {
-        margin-left: 2em;
-        margin-right: 2em; } }
-    @media (min-width: 992px) {
-      .container-fluid-service-we-love-remote-culture .service .service-description {
-        margin-right: 4em; } }
-    @media (min-width: 1200px) {
-      .container-fluid-service-we-love-remote-culture .service .service-description {
-        margin-right: 6em; } }
-  @media (max-width: 767.98px) {
-    .container-fluid-service-we-love-remote-culture .service .service-preview {
-      align-items: flex-start;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-      width: 100%; } }
-  .container-fluid-service-we-love-remote-culture .service .service-preview .service-preview-image {
-    width: 100%; }
-
-.container-fluid-service-but-are-always-happy {
-  overflow: visible !important; }
-  .container-fluid-service-but-are-always-happy .service .service-description {
-    margin-bottom: 2.5em; }
-    @media (min-width: 768px) {
-      .container-fluid-service-but-are-always-happy .service .service-description {
-        margin-left: 2em;
-        margin-right: 2em; } }
-    @media (min-width: 992px) {
-      .container-fluid-service-but-are-always-happy .service .service-description {
-        margin-left: 4em; } }
-    @media (min-width: 1200px) {
-      .container-fluid-service-but-are-always-happy .service .service-description {
-        margin-left: 6em; } }
-  @media (max-width: 767.98px) {
-    .container-fluid-service-but-are-always-happy .service .service-preview {
-      align-items: flex-start;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-      width: 100%; } }
-  .container-fluid-service-but-are-always-happy .service .service-preview .service-preview-image {
-    width: 100%; }
-
-.container-fluid-service-photo {
-  overflow: visible !important; }
-  .container-fluid-service-photo .service .service-preview {
-    align-items: flex-start;
-    display: none;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    width: 100%; }
-    @media (min-width: 768px) {
-      .container-fluid-service-photo .service .service-preview {
-        display: flex; } }
-    .container-fluid-service-photo .service .service-preview .service-preview-image {
-      width: 100%; }
-
-.container-spearhead {
-  font-size: 16px; }
-  @media (min-width: 768px) {
-    .container-spearhead {
-      font-size: 12px; } }
-  @media (min-width: 992px) {
-    .container-spearhead {
-      font-size: 14px; } }
-  @media (min-width: 1200px) {
-    .container-spearhead {
-      font-size: 16px; } }
-  .container-spearhead .spearhead {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-between; }
-    @media (min-width: 992px) {
-      .container-spearhead .spearhead {
-        flex-direction: row; } }
-  .container-spearhead .spearhead-description {
-    margin-bottom: 2em; }
-    @media (min-width: 992px) {
-      .container-spearhead .spearhead-description {
-        margin-bottom: 0;
-        max-width: 22em; } }
-  .container-spearhead .spearhead-description-header {
-    font-size: 1.5em;
-    font-weight: 900;
-    letter-spacing: 1px;
-    line-height: 32px;
-    margin-bottom: 1em; }
-    @media (min-width: 768px) {
-      .container-spearhead .spearhead-description-header {
-        font-size: 3em;
-        line-height: 56px;
-        margin-bottom: 0.6666em; } }
-  .container-spearhead .spearhead-description-text {
-    font-size: 1em;
-    line-height: 1.5em; }
-    @media (min-width: 768px) {
-      .container-spearhead .spearhead-description-text {
-        font-size: 1.25em;
-        line-height: 1.6em; } }
-  .container-spearhead .spearhead-feature-wrapper {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    width: 100%; }
-    @media (min-width: 768px) {
-      .container-spearhead .spearhead-feature-wrapper {
-        flex-direction: row; } }
-    @media (min-width: 992px) {
-      .container-spearhead .spearhead-feature-wrapper {
-        justify-content: flex-start;
-        width: auto; } }
-  .container-spearhead .spearhead-feature {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    padding: 0.5em 0; }
-    @media (min-width: 768px) {
-      .container-spearhead .spearhead-feature {
-        flex-direction: column;
-        max-width: 10em;
-        padding: 0; } }
-  .container-spearhead .spearhead-feature + .spearhead-feature {
-    margin-top: 1em; }
-    @media (min-width: 768px) {
-      .container-spearhead .spearhead-feature + .spearhead-feature {
-        margin-top: 0; } }
-    @media (min-width: 992px) {
-      .container-spearhead .spearhead-feature + .spearhead-feature {
-        margin-left: 5em; } }
-  .container-spearhead .spearhead-feature-image-wrapper {
-    align-items: center;
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    height: 4em;
-    width: 4em; }
-    @media (min-width: 768px) {
-      .container-spearhead .spearhead-feature-image-wrapper {
-        height: 10em;
-        margin-bottom: 2em;
-        width: 10em; } }
-  .container-spearhead .spearhead-feature-image {
-    height: 2em;
-    width: 2em; }
-    @media (min-width: 768px) {
-      .container-spearhead .spearhead-feature-image {
-        height: 5em;
-        width: 5em; } }
-  .container-spearhead .spearhead-feature-text {
-    font-size: 1em;
-    font-weight: 900;
-    margin-left: 1em; }
-    @media (min-width: 768px) {
-      .container-spearhead .spearhead-feature-text {
-        font-size: 1.25em;
-        margin-left: 0;
-        text-align: center; } }
-
-.container-spearhead-timify .spearhead-feature-image-wrapper {
-  background-color: #e44852; }
-
-.container-spearhead-trainline .spearhead-feature-image-wrapper {
-  background-color: #2ec2a7; }
 
 .container-fluid-work-with-us {
   font-size: 16px;
@@ -9467,7 +8058,8 @@ footer {
   bottom: 0;
   background-color: #f3f6fb;
   padding: 1rem;
-  color: #0d182f; }
+  color: #0d182f;
+  z-index: 100; }
   .cookie-banner p {
     text-align: right; }
   .cookie-banner a {
@@ -9507,5 +8099,43 @@ footer {
   @media (min-width: 1280px) {
     footer {
       margin-top: 12rem; } }
+
+.bg-light-blue {
+  background-color: #f3f6fb !important; }
+
+.bg-line {
+  background-image: url("../../images/icons/dark/line.svg");
+  background-position: left top;
+  background-size: .25em 1em;
+  background-repeat: repeat-x; }
+
+.font-weight-black {
+  font-weight: 900 !important; }
+
+.text-dark-blue {
+  color: #0d182f !important; }
+
+.icon-circle, .icon-circle-sm, .icon-circle-lg {
+  display: flex;
+  border-radius: 50%; }
+
+.icon-circle-sm {
+  height: 100px;
+  width: 100px;
+  flex-shrink: 0; }
+
+.icon-circle-lg {
+  width: 240px;
+  height: 240px; }
+
+.img-2x {
+  width: 100%; }
+
+@media (min-width: 768px) {
+  .img-2x {
+    width: 200%; }
+
+  .img-pull {
+    transform: translateX(-50%); } }
 
 /*# sourceMappingURL=main.css.map */
