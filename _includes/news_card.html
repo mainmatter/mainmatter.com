@@ -1,8 +1,11 @@
-<a href="#" class="d-block mt-4 px-3 text-dark">
-  <div class="d-flex"></div>
-  <img alt="Image" class="img-fluid" src="/images/news-1.png" />
-  <h4 class="font-weight-bold my-4">JSConf.eu</h4>
-  <p>We will be at JSConf EU in Berlin, June 2nd and 3rd, 2018 and we will have @locks from the
-    Ember.js core team join us at our booth!
-  </p>
+<a href="{{ include.url }}" class="d-block mt-4 text-dark">
+  <div class="d-flex flex-column">
+  	<div class="px-3">
+  		<img alt="{{ include.title }}" class="img-fluid" src="{{ include.image_url }}" />
+  	</div>
+	<div class="my-4 px-3">
+		<h4 class="font-weight-bold">{{ include.title }}</h4>
+		<p>{{ include.content }}</p>
+	</div>
+  </div>
 </a>
