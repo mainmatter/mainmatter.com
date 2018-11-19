@@ -6,8 +6,7 @@
   "scripts": {
     "http-server": "./node_modules/.bin/http-server",
     "sass": "sass --watch ./application/stylesheets/scss/custom.bootstrap.scss:./application/stylesheets/css/custom.bootstrap.css",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "conpile": ""
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
