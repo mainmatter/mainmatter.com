@@ -37,7 +37,6 @@ title: Expedition
     {% include intro.html content=intro_content %}
   </div><!--container-->
 
-
   <div class="container container-quote container-quote-expedition">
     <div class="row row-quote">
       <div class="col col-quote">
@@ -52,31 +51,23 @@ title: Expedition
   <div class="container-fluid px-0">
     <div class="row justify-content-end">
       <div class="col-sm-11">
-          <div class="container">
-              <div class="row justify-content-start align-items-center">
-                <div class="col-md-5 order-2">
-                  <img alt="fullstack" class="mx-auto d-block img-2x" src="../images/expedition/website-preview-1.png">
-                </div>
-                <div class="col-md-6 order-1">
-                  <div class="p-5">
-                    <h2 class="font-weight-black text-dark-blue mb-4 text-lowercase">Long-term enablement</h2>
-                    <p class="lead mb-4">
-                      simplabs' team built prototype implementations for a number of advanced features in Expedition's
-                      system. Leveraging Elixir's and Phoenix's capabilities we were able to implement advanced mechanics
-                      with clean and concise code with significantly less effort and complexity compared with more
-                      traditional tools.
-                    </p>
-                    <p class="lead">
-                      Expedition's in-house team was able to expand on our foundational work, <strong>handed over in an open and well-communicated way</strong>.
-                    </p>
-                  </div>
-                </div>
+        <div class="container">
+          <div class="row justify-content-start align-items-center">
+            <div class="col-md-5 order-2">
+              <img alt="fullstack" class="mx-auto d-block img-2x" src="../images/expedition/website-preview-1.png">
+            </div>
+            <div class="col-md-6 order-1">
+              <div class="p-5">
+                <h2 class="font-weight-black text-dark-blue mb-4 text-lowercase">Long-term enablement</h2>
+                <p class="lead mb-4">simplabs' team built prototype implementations for a number of advanced features in Expedition's system. Leveraging Elixir's and Phoenix's capabilities we were able to implement advanced mechanics with clean and concise code with significantly less effort and complexity compared with more traditional tools.</p>
+                <p class="lead">Expedition's in-house team was able to expand on our foundational work, <strong>handed over in an open and well-communicated way</strong>.</p>
               </div>
-          </div><!--container-->
+            </div>
+          </div>
+        </div><!--container-->
       </div>
     </div>
   </div><!--container-fluid-->
-
 
   <div class="container">
     <div class="row justify-content-center">
@@ -85,15 +76,22 @@ title: Expedition
         <p class="lead mb-4">We develop deep expertise in the tools that we specialize in and take an active role in the communities.</p>
       </div>
       <div class="col-sm-3">
-          {% include expertise_card.html
-            expertise="ember" title="Ember.js"
-            description="<p>simplabs has been an active member of Ember Ecosystem from the early days.</p>"
-          %}
+        {% capture expertise_card_description--ember %}
+          <p>simplabs has been an active member of Ember Ecosystem from the early days.</p>
+        {% endcapture %}
+
+        {% include expertise_card.html
+          expertise="ember" title="Ember.js"
+          description=expertise_card_description--ember
+        %}
       </div>
       <div class="col-sm-3">
+        {% capture expertise_card_description--elixir %}
+          <p>simplabs was an early adopter of Elixir & Phoenix, organizing meetups and conferences.</p>
+        {% endcapture %}
         {% include expertise_card.html
           expertise="elixir" title="Elixir & Phoenix" 
-          description="<p>simplabs was an early adopter of Elixir & Phoenix, organizing meetups and conferences.</p>"
+          description=expertise_card_description--elixir
         %}
       </div>
     </div>
