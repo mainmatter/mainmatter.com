@@ -25,10 +25,11 @@ title: About
 </header>
 
 <main>
+  {% capture intro_content %}
+    <p>We are an international team of Web and Open Source enthusiasts. We value expertise and a passion for technology higher than location and work for clients across the world.</p>
+  {% endcapture %}
   <div class="container">
-    {% include intro.html
-      content="<p>We are an international team of Web and Open Source enthusiasts. We value expertise and a passion for technology higher than location and work for clients across the world.</p>"
-    %}
+    {% include intro.html content=intro_content %}
   </div><!--container-->
 
   <div class="container-fluid px-0">
