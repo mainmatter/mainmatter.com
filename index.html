@@ -28,16 +28,16 @@ title:
 </header>
 
 <main>
-
+  {% capture intro_content %}
+    <p>Our team of technology experts builds ambitious web and mobile solutions for clients across the world. <strong>We like to move fast without breaking things</strong> and invite our clients to take on an active role in projects.</p>
+  {% endcapture %}
   <div class="container">
-    {% include intro.html
-      content="<p>Our team of technology experts builds ambitious web and mobile solutions for clients across the world. <strong>We like to move fast without breaking things</strong> and invite our clients to take on an active role in projects.</p>"
-    %}
+    {% include intro.html content=intro_content %}
   </div><!--container-->
+
 
   <div class="container">
     <div class="section-services">
-
       <div class="row justify-content-start mb-5">
         <div class="col-sm-6">
           <h2 class="display-4 font-weight-black text-lowercase mb-4">Services</h2>
@@ -71,22 +71,33 @@ title:
       </div><!--row-->
     </div><!--section-services-->
   </div><!--container-->
+
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
+        {% capture client_banner_description--trainline %}
+          <p>Trainline is Europe’s leading independent rail and coach platform. We worked with Trainline to deliver a scalable, high-performance mobile web app, along with an improved engineer process, enabling Trainline to achieve their business goals for years to come.</p>
+        {% endcapture %}
+
         {% include client_banner.html
           client="trainline"
           title="Leveraging Trainline's full market potential"
-          description="<p>Trainline is Europe’s leading independent rail and coach platform. We worked with Trainline to deliver a scalable, high-performance mobile web app, along with an improved engineer process, enabling Trainline to achieve their business goals for years to come.</p>"
+          description=client_banner_description--trainline
           logo_url="../images/trainline/trainline-logo-white.svg"
-        %} 
+          image_class="w-75"
+        %}
       </div><!--col-->
       <div class="col-sm-6">
+        {% capture client_banner_description--timify %}
+          <p>When Timify decided it was time to re-engineer their existing product, they trusted us to bring them into the future. We added engineering capacity to Timify's team and helped to build a solid foundation that enabled them to iterate fast and launch on-schedule, without sacrificing quality.</p>
+        {% endcapture %}
+         
         {% include client_banner.html
           client="timify"
           title="Laying out a solid foundation for Timify"
-          description="<p>When Timify decided it was time to re-engineer their existing product, they trusted us to bring them into the future. We added engineering capacity to Timify's team and helped to build a solid foundation that enabled them to iterate fast and launch on-schedule, without sacrificing quality.</p>" 
+          description=client_banner_description--timify 
           logo_url="../images/timify/timify-logo-white.svg"
+          image_class="img-2x"
         %}  
       </div><!--col-->
     </div><!--row-->

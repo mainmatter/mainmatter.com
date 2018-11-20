@@ -88,12 +88,8 @@ title: DD-WRT
       <div class="col col-quote">
         <div class="quote">
           <p class="quote-text">
-            simplabs’ expertise in developing Ember.js based applications helped us significantly to define and
-            develop the new DD-WRT NXT user experience. It was impressive to see in what short time such a complex
-            application leveraging a customer backend interface could be implemented. simplabs' work did provide the
-            new foundation for our UI and our in-house development team greatly benefitted from their know how.
+            simplabs’ expertise in developing Ember.js based applications helped us significantly to define and develop the new DD-WRT NXT user experience. It was impressive to see in what short time such a complex application leveraging a customer backend interface could be implemented. simplabs' work did provide the new foundation for our UI and our in-house development team greatly benefitted from their know how.
           </p>
-
           <p class="quote-author">
             Peter Steinhäuser, embeDD CEO
           </p>
@@ -109,9 +105,10 @@ title: DD-WRT
         <p class="lead mb-4">We develop deep expertise in the tools that we specialize in and take an active role in the communities.</p>
       </div>
       <div class="col-sm-6">
-        {% include expertise_card.html
-          expertise="ember" title="Ember.js" description="<p>We are Europe's leading Ember experts withe people involved in Ember.js core teams like Ember CLI and Ember Learning.</p><p>We have been hosting and supporting several Ember.js meetups and co-organize EmberFest, the european Ember community conference.</p>"
-        %}
+        {% capture expertise_card_description--ember %}
+          <p>We are Europe's leading Ember experts withe people involved in Ember.js core teams like Ember CLI and Ember Learning.</p><p>We have been hosting and supporting several Ember.js meetups and co-organize EmberFest, the european Ember community conference.</p>
+        {% endcapture %}
+        {% include expertise_card.html expertise="ember" title="Ember.js" description=expertise_card_description--ember %}
       </div>
     </div>
   </div><!--container-->
