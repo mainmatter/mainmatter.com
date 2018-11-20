@@ -92,14 +92,19 @@ title: Full Stack Engineering
   <div class="container">
     <div class="row justify-content-end">
       <div class="col-sm-10">
+        {% capture client_banner_description--timify %}
+          <p>When Timify decided it was time to re-engineer their existing product, they trusted us to bring them into the future. We added engineering capacity to Timify's team and helped to build a solid foundation that enabled them to iterate fast and launch on-schedule, without sacrificing quality.</p>
+        {% endcapture %}
+         
         {% include client_banner.html
           client="timify"
           title="Laying out a solid foundation for Timify"
-          description="<p>We worked with Timify to get their appointment scheduling service to market in time, enabling their long term success.</p>" 
+          description=client_banner_description--timify 
           logo_url="../images/timify/timify-logo-white.svg"
           image_url="../images/timify/website-preview-1.png"
           image_class="img-2x"
-        %} 
+        %}
+
       </div>
     </div>
   </div>
