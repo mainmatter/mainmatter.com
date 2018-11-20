@@ -29,12 +29,14 @@ title: DD-WRT
 </header>
 
 <main>
+  {% capture intro_content %}
+    <p>DD-WRT is a Linux based firmware for wireless routers. Originally designed for the Linksys WRT54G series, it now runs on a wide variety of models and is <strong>installed on millions of devices worldwide</strong>.</p>
+    <p>When embeDD, the company behind DD-WRT, was looking to re-engineer the old web interface and put the project on a stable foundation that would support development efforts for the long term, they reached out to simplabs for guidance.</p>
+  {% endcapture %}
   <div class="container">
-    {% include intro.html
-      content=
-      "<p>DD-WRT is a Linux based firmware for wireless routers. Originally designed for the Linksys WRT54G series, it now runs on a wide variety of models and is <strong>installed on millions of devices worldwide</strong>.</p><p>When embeDD, the company behind DD-WRT, was looking to re-engineer the old web interface and put the project on a stable foundation that would support development efforts for the long term, they reached out to simplabs for guidance.</p>"
-    %}  
+    {% include intro.html content=intro_content %}
   </div><!--container-->
+
 
   <div class="container">
     <div class="bg-light-blue p-5">

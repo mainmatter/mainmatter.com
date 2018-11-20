@@ -29,14 +29,12 @@ title: Timify
 </header>
 
 <main>
+  {% capture intro_content %}
+    <p>Timify is an online appointment scheduling service that connects service providers with clients.</p><p>They have <strong>helped over 17.000 businesses worldwide</strong> make their online appointment scheduling easier and more accessible, allowing them to improve their customer service and spur revenue.</p>
+  {% endcapture %}
   <div class="container">
-    {% include intro.html
-      content=
-      "<p>Timify is an online appointment scheduling service that connects service providers with clients.</p><p>They have <strong>helped over 17.000 businesses worldwide</strong> make their online appointment scheduling easier and more accessible, allowing them to improve their customer service and spur revenue.</p>"
-    %}
- 
+    {% include intro.html content=intro_content %}
   </div><!--container-->
-
 
   <div class="container-fluid px-0">
     <div class="row justify-content-end">

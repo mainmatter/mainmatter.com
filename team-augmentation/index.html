@@ -26,12 +26,12 @@ title: Team Augmentation
 
 <main>
 
+  {% capture intro_content %}
+    <p>Our technology experts can merge with our client's in-house engineering teams and share their know how. We will spearhead development initiatives, establish best practices and a smooth process as well as train in-house engineers on the job via reviews and pairing sessions.</p>
+    <p>We will make sure our clients' in-house engineering team has the <strong>expertise and confidence</strong> to successfully run their project once we have left.</p>
+  {% endcapture %}
   <div class="container">
-    {% include intro.html
-      content=
-      "<p>Our technology experts can merge with our client's in-house engineering teams and share their know how. We will spearhead development initiatives, establish best practices and a smooth process as well as train in-house engineers on the job via reviews and pairing sessions.</p>
-      <p>We will make sure our clients' in-house engineering team has the <strong>expertise and confidence</strong> to successfully run their project once we have left.</p>"
-    %}  
+    {% include intro.html content=intro_content %}
   </div><!--container-->
 
   <div class="container">

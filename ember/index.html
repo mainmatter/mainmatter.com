@@ -27,15 +27,11 @@ title: Ember
 </header>
 
 <main>
+  {% capture intro_content %}
+    <p>simplabs has been an active member of the Ember Ecosystem from the early days. We are the leading Ember consultancy in Europe and are <strong>involved in Ember.js core teams</strong> like Ember CLI and Ember Learning. We also maintain a number of widely adopted addons.</p>
+  {% endcapture %}
   <div class="container">
-    {% include intro.html
-      content=
-      "<p>
-          simplabs has been an active member of the Ember Ecosystem from the early days. We are the leading Ember
-          consultancy in Europe and are <strong>involved in Ember.js core teams</strong> like Ember CLI and Ember
-          Learning. We also maintain a number of widely adopted addons.
-        </p>"
-    %}   
+    {% include intro.html content=intro_content %}
   </div><!--container-->
 
 

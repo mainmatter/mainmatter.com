@@ -29,17 +29,15 @@ title: Elixir
 </header>
 
 <main>
+  {% capture intro_content %}
+    <p>Elixir combines the expressiveness and simplicity of Ruby with the performance and stability of the Erlang VM. Phoenix builds on the concepts first introduced by Ruby on Rails, combining them with a number of architectural improvements.</p>
+    <p>Together, they form a <strong>modern and capable stack for building ambitious projects</strong> based on an established and battle-proven foundation.</p>
+  {% endcapture %}
   <div class="container">
-    {% include intro.html
-      content=
-      "<p>
-          Elixir combines the expressiveness and simplicity of Ruby with the performance and stability of the Erlang VM. Phoenix builds on the concepts first introduced by Ruby on Rails, combining them with a number of architectural improvements.
-        </p>
-        <p>
-          Together, they form a <strong>modern and capable stack for building ambitious projects</strong> based on an established and battle-proven foundation.
-        </p>"
-    %}    
+    {% include intro.html content=intro_content %}
   </div><!--container-->
+
+ 
 
   <div class="container">
     <div class="row justify-content-start mb-5">
