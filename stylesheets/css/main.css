@@ -7454,7 +7454,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .section-client-illustration {
   overflow: hidden;
-  height: 400px; }
+  height: 500px; }
 
 .section-client--trainline {
   background-color: #2ec2a7;
@@ -8136,6 +8136,9 @@ footer {
     width: 200%; }
 
   .img-pull {
-    transform: translateX(-50%); } }
+    transform: translateX(-50%); }
+
+  .img-pull-up {
+    transform: translateY(-25%); } }
 
 /*# sourceMappingURL=main.css.map */
