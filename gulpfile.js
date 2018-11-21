@@ -6,13 +6,13 @@ const browsersync = require("browser-sync").create();
 const cp = require("child_process");
 const cssnano = require("cssnano");
 const del = require("del");
-const eslint = require("gulp-eslint");
 const gulp = require("gulp");
+const gulpcli = require("gulp-cli");
 const plumber = require("gulp-plumber");
 const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
-const uglify = require("gulp-uglify");
+const uglify = require('gulp-uglify-es').default;
 const webpack = require("webpack");
 const webpackconfig = require("./webpack.config.js");
 const webpackstream = require("webpack-stream");
@@ -57,18 +57,15 @@ function scriptsLint() {
   return gulp
     .src(["./js/**/*", "./gulpfile.js"])
     .pipe(plumber())
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
 }
 
 // Transpile, concatenate and minify scripts
 function scripts() {
   return (
     gulp
-      .src(["./js/**/*"])
+      .src(["./js/"])
       .pipe(plumber())
-      .pipe(webpackstream(webpackconfig), webpack)
+      //.pipe(webpackstream(webpackconfig), webpack)
       .pipe(uglify())
       // folder only, filename is specified in webpack config
       .pipe(gulp.dest("./_site/js/"))
