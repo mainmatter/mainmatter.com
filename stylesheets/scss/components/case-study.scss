@@ -4,7 +4,7 @@
 
 .section-client-illustration {
   overflow: hidden;
-  height: 500px;
+  height: 400px;
 }
 
 .section-client--trainline {
@@ -33,4 +33,11 @@
 .section-client--expedition {
   background-color: $expedition;
   background-image: url("../../images/expedition/case-study-background-1.jpg");
+}
+
+@include media-breakpoint-up(md) {
+  .section-client-illustration {
+    overflow: hidden;
+    height: 500px;
+  }
 }

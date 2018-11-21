@@ -7454,7 +7454,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .section-client-illustration {
   overflow: hidden;
-  height: 500px; }
+  height: 400px; }
 
 .section-client--trainline {
   background-color: #2ec2a7;
@@ -7478,6 +7478,10 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #634cc4;
   background-image: url("../../images/expedition/case-study-background-1.jpg"); }
 
+@media (min-width: 768px) {
+  .section-client-illustration {
+    overflow: hidden;
+    height: 500px; } }
 .circle {
   align-items: center;
   background-color: transparent;
