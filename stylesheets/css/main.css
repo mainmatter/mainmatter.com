@@ -8120,13 +8120,13 @@ footer {
   border-radius: 50%; }
 
 .icon-circle-sm {
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   flex-shrink: 0; }
 
 .icon-circle-lg {
-  width: 240px;
-  height: 240px; }
+  width: 180px;
+  height: 180px; }
 
 .img-2x {
   width: 100%; }
@@ -8139,6 +8139,14 @@ footer {
     transform: translateX(-50%); }
 
   .img-pull-up {
-    transform: translateY(-25%); } }
+    transform: translateY(-25%); }
+
+  .icon-circle-sm {
+    height: 100px;
+    width: 100px; }
+
+  .icon-circle-lg {
+    width: 240px;
+    height: 240px; } }
 
 /*# sourceMappingURL=main.css.map */
