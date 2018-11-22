@@ -13,9 +13,6 @@ const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const uglify = require('gulp-uglify-es').default;
-const webpack = require("webpack");
-const webpackconfig = require("./webpack.config.js");
-const webpackstream = require("webpack-stream");
 
 // BrowserSync
 function browserSync(done) {
