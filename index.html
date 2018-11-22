@@ -74,7 +74,7 @@ title:
 
   <div class="container">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-6 d-flex align-items-stretch">
         {% capture client_banner_description--trainline %}
           <p>Trainline is Europe’s leading independent rail and coach platform. We worked with Trainline to deliver a scalable, high-performance mobile web app, along with an improved engineer process, enabling Trainline to achieve their business goals for years to come.</p>
         {% endcapture %}
@@ -87,7 +87,7 @@ title:
           image_class="w-75"
         %}
       </div><!--col-->
-      <div class="col-sm-6">
+      <div class="col-sm-6 d-flex align-items-stretch">
         {% capture client_banner_description--timify %}
           <p>When Timify decided it was time to re-engineer their existing product, they trusted us to bring them into the future. We added engineering capacity to Timify's team and helped to build a solid foundation that enabled them to iterate fast and launch on-schedule, without sacrificing quality.</p>
         {% endcapture %}
@@ -162,14 +162,3 @@ title:
   </div>
   {% include contact_banner.html %}
 </main>
-
-<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="./node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
-
-<script type="text/javascript">
-  $(function() {
-    $('.section-services p').matchHeight();
-    $('.section-client').matchHeight();
-    $('.section-client .client-logo').matchHeight();
-  });
-</script>
