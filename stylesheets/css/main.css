@@ -7476,16 +7476,16 @@ a.text-dark:hover, a.text-dark:focus {
   background-image: url("../../images/expedition/case-study-background-1.jpg"); }
 
 .bg-hover-animate {
-  background-size: 150%;
-  background-position: center center;
+  background-size: auto 100%;
+  background-position: center right;
   background-repeat: no-repeat;
-  transition: background-size .75s linear;
-  -moz-transition: background-size .75s linear;
-  -ms-transition: background-size .75s linear;
-  -o-transition: background-size .75s linear;
-  -webkit-transition: background-size .75s linear; }
+  transition: background-size .75s;
+  -moz-transition: background-size .75s;
+  -ms-transition: background-size .75s;
+  -o-transition: background-size .75s;
+  -webkit-transition: background-size .75s; }
   .bg-hover-animate:hover {
-    background-size: 200%; }
+    background-size: auto 130%; }
 
 @media (min-width: 768px) {
   .section-client-illustration {
