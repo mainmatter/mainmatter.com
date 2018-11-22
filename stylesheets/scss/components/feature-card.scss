@@ -1,0 +1,16 @@
+.feature-card {
+	.text-arrow {
+		margin-left: 0;
+		transition: all .75s ease-in-out;
+		-moz-transition: all .75s ease-in-out;
+		-ms-transition: all .75s ease-in-out;
+		-o-transition: all .75s ease-in-out;
+		-webkit-transition: all .75s ease-in-out;
+	}
+}
+
+.feature-card:hover {
+	.text-arrow {
+		margin-left: 20px;
+	}
+}
