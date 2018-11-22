@@ -29,19 +29,17 @@ title: Timify
 </header>
 
 <main>
+  {% capture intro_content %}
+    <p>Timify is an online appointment scheduling service that connects service providers with clients.</p><p>They have <strong>helped over 17.000 businesses worldwide</strong> make their online appointment scheduling easier and more accessible, allowing them to improve their customer service and spur revenue.</p>
+  {% endcapture %}
   <div class="container">
-    {% include intro.html
-      content=
-      "<p>Timify is an online appointment scheduling service that connects service providers with clients.</p><p>They have <strong>helped over 17.000 businesses worldwide</strong> make their online appointment scheduling easier and more accessible, allowing them to improve their customer service and spur revenue.</p>"
-    %}
- 
+    {% include intro.html content=intro_content %}
   </div><!--container-->
-
 
   <div class="container-fluid px-0">
     <div class="row justify-content-end">
       <div class="col-sm-11">
-        <div class="bg-light-blue">
+        <div class="bg-light-blue py-5">
           <div class="container">
               <div class="row justify-content-start align-items-center">
                 <div class="col-md-5 order-2">
@@ -108,7 +106,7 @@ title: Timify
 
           <div class="col-md-4">
             <div class="flex-column d-flex text-center">
-              <div class="icon-circle-sm bg-trainline align-items-center mx-auto">
+              <div class="icon-circle-sm bg-timify align-items-center mx-auto">
                 <img alt="faster" class="img-fluid d-block mx-auto w-50" src="../images/spearhead/premium-subscriptions.svg"/>
               </div>
               <h4 class="py-4 text-dark">Premium Subscriptions</h4>
@@ -117,7 +115,7 @@ title: Timify
 
           <div class="col-md-4">
             <div class="flex-column d-flex text-center">
-              <div class="icon-circle-sm bg-trainline align-items-center mx-auto">
+              <div class="icon-circle-sm bg-timify align-items-center mx-auto">
                 <img alt="faster" class="img-fluid d-block mx-auto w-50" src="../images/spearhead/payment-integration.svg"/>
               </div>
               <h4 class="py-4 text-dark">Payment Integration</h4>
@@ -126,7 +124,7 @@ title: Timify
 
           <div class="col-md-4">
             <div class="flex-column d-flex text-center">
-              <div class="icon-circle-sm bg-trainline align-items-center mx-auto">
+              <div class="icon-circle-sm bg-timify align-items-center mx-auto">
                 <img alt="faster" class="img-fluid d-block mx-auto w-50" src="../images/spearhead/application-localization.svg"/>
               </div>
               <h4 class="py-4 text-dark">Application Localization</h4>
@@ -185,8 +183,12 @@ title: Timify
         <p class="lead mb-4">We develop deep expertise in the tools that we specialize in and take an active role in the communities.</p>
       </div>
       <div class="col-sm-6">
+        {% capture expertise_card_description--ember %}
+          <p>We are Europe's leading Ember experts withe people involved in Ember.js core teams like Ember CLI and Ember Learning.</p><p>We have been hosting and supporting several Ember.js meetups and co-organize EmberFest, the european Ember community conference.</p>
+        {% endcapture %}
+
         {% include expertise_card.html
-          expertise="ember" title="Ember.js" description="<p>We are Europe's leading Ember experts withe people involved in Ember.js core teams like Ember CLI and Ember Learning.</p><p>We have been hosting and supporting several Ember.js meetups and co-organize EmberFest, the european Ember community conference.</p>"
+          expertise="ember" title="Ember.js" description=expertise_card_description--ember
         %}
       </div>
     </div>
@@ -194,12 +196,3 @@ title: Timify
 
   {% include contact_banner.html %}
 </main>
-
-<script type="text/javascript" src="./../node_modules/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="./../node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
-
-<script type="text/javascript">
-  $(function() {
-    $('.card-expertise').matchHeight();
-  });
-</script>

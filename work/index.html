@@ -26,19 +26,27 @@ title: Work
 <main>
 
   <div class="container">
+    {% capture client_banner_description--trainline %}
+      <p>Trainline is Europe’s leading independent rail and coach platform. We worked with Trainline to deliver a scalable, high-performance mobile web app, along with an improved engineer process, enabling Trainline to achieve their business goals for years to come.</p>
+    {% endcapture %}
+
     {% include client_banner.html
       client="trainline"
       title="Leveraging Trainline's full market potential"
-      description="<p>Trainline is Europe’s leading independent rail and coach platform. We worked with Trainline to deliver a scalable, high-performance mobile web app, along with an improved engineer process, enabling Trainline to achieve their business goals for years to come.</p>"
+      description=client_banner_description--trainline
       logo_url="../images/trainline/trainline-logo-white.svg"
       image_url="../images/trainline/screen-1.png"
       image_class="w-75"
     %} 
+
+    {% capture client_banner_description--timify %}
+      <p>When Timify decided it was time to re-engineer their existing product, they trusted us to bring them into the future. We added engineering capacity to Timify's team and helped to build a solid foundation that enabled them to iterate fast and launch on-schedule, without sacrificing quality.</p>
+    {% endcapture %}
      
     {% include client_banner.html
       client="timify"
       title="Laying out a solid foundation for Timify"
-      description="<p>When Timify decided it was time to re-engineer their existing product, they trusted us to bring them into the future. We added engineering capacity to Timify's team and helped to build a solid foundation that enabled them to iterate fast and launch on-schedule, without sacrificing quality.</p>" 
+      description=client_banner_description--timify 
       logo_url="../images/timify/timify-logo-white.svg"
       image_url="../images/timify/website-preview-1.png"
       image_class="img-2x"
@@ -46,19 +54,26 @@ title: Work
  
     <div class="row">
       <div class="col-sm-6">
+        {% capture client_banner_description--dd-wrt %}
+          <p>DD-WRT is a Linux based firmware for wireless routers. Originally designed for the Linksys WRT54G series, it now runs on a wide variety of models and is installed on millions of devices worldwide.</p>
+        {% endcapture %}
+
         {% include client_banner.html
           client="dd-wrt"
           title="A modern UI for an open-source router firmware"
-          description="<p>A modern UI for an open-source router firmware.</p>" 
+          description=client_banner_description--dd-wrt
           logo_url="../images/dd-wrt/dd-wrt-logo-white.svg"
           image_url=""
         %} 
       </div>
       <div class="col-sm-6">
+        {% capture client_banner_description--expedition %}
+          <p>Expedition is an online travel magazine for global citizens. It lets travellers experience the world's best destinations through the eyes of a local.</p>
+        {% endcapture %}
         {% include client_banner.html
           client="expedition"
           title="An online travel magazine for global citizens"
-          description="<p>An online travel magazine for global citizens.</p>" 
+          description=client_banner_description--expedition
           logo_url="../images/expedition/expedition-logo-white.svg"
           image_url=""
         %}  
@@ -78,93 +93,77 @@ title: Work
   </div> 
 
 
-  <div class="container-fluid container-fluid-logos container-fluid-logos-work">
-    <div class="container container-logos">
-      <div class="row row-logos align-items-center text-center">
-        <a class="col-6 col-md-3 col-logo" href="https://www.hopskipdrive.com/">
-          <img alt="Logo" class="img-fluid" src="../images/logos/hop-skip-drive.svg" />
-          <img alt="Logo" class="img-fluid" src="../images/logos/colorful/hop-skip-drive.svg" />
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row align-items-center text-center">
+        <a class="col-6 col-md-3 color-hover p-2" href="https://www.hopskipdrive.com/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/hop-skip-drive.svg" />
         </a>
 
-        <a class="col-6 col-md-3 col-logo" href="https://www.generali.com/">
-          <img alt="Logo" class="img-fluid" src="../images/logos/generali.svg" />
-          <img alt="Logo" class="img-fluid" src="../images/logos/colorful/generali.svg" />
+        <a class="col-6 col-md-3 color-hover p-2" href="https://www.generali.com/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/generali.svg" />
         </a>
 
-        <a class="col-6 col-md-3 col-logo" href="https://www.robinhood.org/">
-          <img alt="Logo" class="img-fluid" src="../images/logos/robin-hood.svg" />
-          <img alt="Logo" class="img-fluid" src="../images/logos/colorful/robin-hood.svg" />
+        <a class="col-6 col-md-3 color-hover p-2r" href="https://www.robinhood.org/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/robin-hood.svg" />
         </a>
 
-        <a class="col-6 col-md-3 col-logo" href="https://www.thetrainline.com/">
-          <img alt="Logo" class="img-fluid" src="../images/logos/trainline.svg" />
-          <img alt="Logo" class="img-fluid" src="../images/logos/colorful/trainline.svg" />
+        <a class="col-6 col-md-3 color-hover p-2" href="https://www.thetrainline.com/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/trainline.svg" />
         </a>
       </div>
 
-      <div class="row row-logos align-items-center text-center">
-        <a class="col-6 col-md-3 col-logo" href="">
-          <img alt="Logo" class="img-fluid" src="../images/logos/clark.svg" />
-          <img alt="Logo" class="img-fluid" src="../images/logos/colorful/clark.svg" />
+      <div class="row align-items-center text-center">
+        <a class="col-6 col-md-3 color-hover p-2" href="">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/clark.svg" />
         </a>
 
-        <a class="col-6 col-md-3 col-logo" href="http://xbav.de/">
-          <img alt="Logo" class="img-fluid" src="../images/logos/xbav.svg" />
-          <img alt="Logo" class="img-fluid" src="../images/logos/colorful/xbav.svg" />
+        <a class="col-6 col-md-3 color-hover p-2" href="http://xbav.de/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/xbav.svg" />
         </a>
 
-        <a class="col-6 col-md-3 col-logo" href="http://experteer.de/">
-          <img alt="Logo" class="img-fluid" src="../images/logos/experteer.svg" />
-          <img alt="Logo" class="img-fluid" src="../images/logos/colorful/experteer.svg" />
+        <a class="col-6 col-md-3 color-hover p-2" href="http://experteer.de/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/experteer.svg" />
         </a>
 
-        <a class="col-6 col-md-3 col-logo" href="https://www.timify.com/">
-          <img alt="Logo" class="img-fluid" src="../images/logos/timify.svg" />
-          <img alt="Logo" class="img-fluid" src="../images/logos/colorful/timify.svg" />
+        <a class="col-6 col-md-3 color-hover p-2" href="https://www.timify.com/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/timify.svg" />
         </a>
       </div>
 
-      <div class="row row-logos align-items-center text-center">
-        <a class="col-6 col-md-3 col-logo" href="https://www.mvb-online.de/">
-          <img alt="Logo" class="img-fluid" src="../images/logos/mvb.svg" />
-          <img alt="Logo" class="img-fluid" src="../images/logos/colorful/mvb.svg" />
+      <div class="row align-items-center text-center">
+        <a class="col-6 col-md-3 color-hover p-2" href="https://www.mvb-online.de/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/mvb.svg" />
         </a>
 
-        <a class="col-6 col-md-3 col-logo" href="http://www.ringler.ch/">
-          <img alt="Logo" class="img-fluid" src="../images/logos/ringler.svg" />
-          <img alt="Logo" class="img-fluid" src="../images/logos/colorful/ringler.svg" />
+        <a class="col-6 col-md-3 color-hover p-2" href="http://www.ringler.ch/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/ringler.svg" />
         </a>
 
-        <a class="col-6 col-md-3 col-logo" href="https://neighbourhood.ie/">
-          <img alt="Logo" class="img-fluid" src="../images/logos/neighbourhoodie-software.svg" />
-          <img alt="Logo" class="img-fluid" src="../images/logos/colorful/neighbourhoodie-software.svg" />
+        <a class="col-6 col-md-3 color-hover p-2" href="https://neighbourhood.ie/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/neighbourhoodie-software.svg" />
         </a>
 
-        <a class="col-6 col-md-3 col-logo" href="http://embedd.com/">
-          <img alt="Logo" class="img-fluid" src="../images/logos/embed.svg" />
-          <img alt="Logo" class="img-fluid" src="../images/logos/colorful/embed.svg" />
+        <a class="col-6 col-md-3 color-hover p-2" href="http://embedd.com/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/embed.svg" />
         </a>
       </div>
 
-      <div class="row row-logos align-items-center text-center">
-        <a class="col-6 col-md-3 col-logo" href="http://loconet.info/">
-          <img alt="Logo" class="img-fluid" src="../images/logos/loconet.svg" />
-          <img alt="Logo" class="img-fluid" src="../images/logos/colorful/loconet.svg" />
+      <div class="row align-items-center text-center">
+        <a class="col-6 col-md-3 color-hover p-2" href="http://loconet.info/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/loconet.svg" />
         </a>
 
-        <a class="col-6 col-md-3 col-logo" href="https://www.dim3.com/">
-          <img alt="Logo" class="img-fluid" src="../images/logos/dim3.svg" />
-          <img alt="Logo" class="img-fluid" src="../images/logos/colorful/dim3.svg" />
+        <a class="col-6 col-md-3 color-hover p-2" href="https://www.dim3.com/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/dim3.svg" />
         </a>
 
-        <a class="col-6 col-md-3 col-logo" href="https://expedition.ws/">
-          <img alt="Logo" class="img-fluid" src="../images/logos/expedition.svg" />
-          <img alt="Logo" class="img-fluid" src="../images/logos/expedition.svg" />
+        <a class="col-6 col-md-3 color-hover p-2" href="https://expedition.ws/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/expedition.svg" />
         </a>
 
-        <a class="col-6 col-md-3 col-logo" href="http://loconet.info/">
-          <img alt="Logo" class="img-fluid" src="../images/logos/erdil.svg" />
-          <img alt="Logo" class="img-fluid" src="../images/logos/colorful/erdil.svg" />
+        <a class="col-6 col-md-3 color-hover p-2" href="http://loconet.info/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/erdil.svg" />
         </a>
       </div>
     </div>
@@ -172,12 +171,3 @@ title: Work
 
   {% include contact_banner.html %}
 </main>
-
-<script type="text/javascript" src="./../node_modules/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="./../node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
-
-<script type="text/javascript">
-  $(function() {
-    $('.section-client .client-logo').matchHeight();
-  });
-</script>

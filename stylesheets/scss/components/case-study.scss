@@ -1,5 +1,4 @@
 .section-client {
-  background-size: cover;
 }
 
 .section-client-illustration {
@@ -33,4 +32,26 @@
 .section-client--expedition {
   background-color: $expedition;
   background-image: url("../../images/expedition/case-study-background-1.jpg");
+}
+
+.bg-hover-animate {
+  background-size: auto 100%;
+  background-position: center right;
+  background-repeat: no-repeat;
+  transition: background-size .75s;
+  -moz-transition: background-size .75s;
+  -ms-transition: background-size .75s;
+  -o-transition: background-size .75s;
+  -webkit-transition: background-size .75s;
+  &:hover {
+    background-size: auto 130%;
+    
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .section-client-illustration {
+    overflow: hidden;
+    height: 500px;
+  }
 }

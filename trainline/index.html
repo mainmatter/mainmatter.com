@@ -29,11 +29,11 @@ title: Trainline
 
 <main>
 
+  {% capture intro_content %}
+    <p>Trainline is <strong>Europe's leading independent rail and coach platform</strong>. They sell tickets to customers worldwide, enabling more than 125,000 journeys every single day in and across 36 countries, covering 150 different carriers.</p><p>simplabs worked closely with Trainline’s in-house engineering team and built a mobile web app to accompany the existing desktop app. A dedicated site for mobile devices allowed Trainline to better serve customers on the go and leverage the full market potential.</p>
+  {% endcapture %}
   <div class="container">
-    {% include intro.html
-      content=
-      "<p>Trainline is <strong>Europe's leading independent rail and coach platform</strong>. They sell tickets to customers worldwide, enabling more than 125,000 journeys every single day in and across 36 countries, covering 150 different carriers.</p><p>simplabs worked closely with Trainline’s in-house engineering team and built a mobile web app to accompany the existing desktop app. A dedicated site for mobile devices allowed Trainline to better serve customers on the go and leverage the full market potential.</p>"
-    %} 
+    {% include intro.html content=intro_content %}
   </div><!--container-->
 
   <div class="container">
@@ -125,9 +125,12 @@ title: Trainline
         <h2 class="display-4 font-weight-black text-lowercase mb-4">Our Expertise</h2>
         <p class="lead mb-4">We develop deep expertise in the tools that we specialize in and take an active role in the communities.</p>
       </div>
+      {% capture expertise_card_description--ember %}
+        <p>We are Europe's leading Ember experts withe people involved in Ember.js core teams like Ember CLI and Ember Learning.</p><p>We have been hosting and supporting several Ember.js meetups and co-organize EmberFest, the european Ember community conference.</p>
+      {% endcapture %}
       <div class="col-sm-6">
         {% include expertise_card.html
-          expertise="ember" title="Ember.js" description="<p>We are Europe's leading Ember experts withe people involved in Ember.js core teams like Ember CLI and Ember Learning.</p><p>We have been hosting and supporting several Ember.js meetups and co-organize EmberFest, the european Ember community conference.</p>"
+          expertise="ember" title="Ember.js" description=expertise_card_description--ember
         %}
       </div>
     </div>
@@ -135,12 +138,3 @@ title: Trainline
 
   {% include contact_banner.html %}
 </main>
-
-<script type="text/javascript" src="./../node_modules/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="./../node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
-
-<script type="text/javascript">
-  $(function() {
-    $('.card-expertise').matchHeight();
-  });
-</script>

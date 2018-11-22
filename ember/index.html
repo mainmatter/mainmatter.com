@@ -27,15 +27,11 @@ title: Ember
 </header>
 
 <main>
+  {% capture intro_content %}
+    <p>simplabs has been an active member of the Ember Ecosystem from the early days. We are the leading Ember consultancy in Europe and are <strong>involved in Ember.js core teams</strong> like Ember CLI and Ember Learning. We also maintain a number of widely adopted addons.</p>
+  {% endcapture %}
   <div class="container">
-    {% include intro.html
-      content=
-      "<p>
-          simplabs has been an active member of the Ember Ecosystem from the early days. We are the leading Ember
-          consultancy in Europe and are <strong>involved in Ember.js core teams</strong> like Ember CLI and Ember
-          Learning. We also maintain a number of widely adopted addons.
-        </p>"
-    %}   
+    {% include intro.html content=intro_content %}
   </div><!--container-->
 
 
@@ -44,10 +40,7 @@ title: Ember
       <div class="col col-quote">
         <div class="quote">
           <p class="quote-text">
-            simplabs’ expertise in developing Ember.js based applications helped us significantly to define and
-            develop the new DD-WRT NXT user experience. It was impressive to see in what short time such a complex
-            application leveraging a customer backend interface could be implemented. simplabs' work did provide the
-            new foundation for our UI and our in-house development team greatly benefitted from their know how.
+            simplabs’ expertise in developing Ember.js based applications helped us significantly to define and develop the new DD-WRT NXT user experience. It was impressive to see in what short time such a complex application leveraging a customer backend interface could be implemented. simplabs' work did provide the new foundation for our UI and our in-house development team greatly benefitted from their know how.
           </p>
 
           <p class="quote-author">
@@ -127,11 +120,7 @@ title: Ember
       <div class="col-md-5 offset-md-1 order-md-2 order-1">
         <h2 class="font-weight-black text-dark-blue mb-4">Community engagement</h2>
         <p class="lead">
-          Ember.js is a project built by an open community and <strong>we are an active member of the community</strong>.
-          We support the <a href="https://www.meetup.com/Ember-js-Munich/">Ember.js Munich</a> and
-          <a href="https://www.meetup.com/Ember-js-Berlin/">Ember.js Berlin</a> meetups are are
-          co-organizers of EmberFest, the
-          european Ember Community Conference.
+          Ember.js is a project built by an open community and <strong>we are an active member of the community</strong>. We support the <a href="https://www.meetup.com/Ember-js-Munich/">Ember.js Munich</a> and <a href="https://www.meetup.com/Ember-js-Berlin/">Ember.js Berlin</a> meetups are are co-organizers of EmberFest, the european Ember Community Conference.
         </p>
         
         <div class="d-flex flex-row justify-content-between align-items-center mt-4">
@@ -159,14 +148,18 @@ title: Ember
 
 
   <div class="container">
+      {% capture client_banner_description--trainline %}
+        <p>Trainline is Europe’s leading independent rail and coach platform. We worked with Trainline to deliver a scalable, high-performance mobile web app, along with an improved engineer process, enabling Trainline to achieve their business goals for years to come.</p>
+      {% endcapture %}
+
       {% include client_banner.html
         client="trainline"
         title="Leveraging Trainline's full market potential"
-        description="<p>Trainline is Europe’s leading independent rail and coach platform. We helped them build their mobile web app to leverage the full potential of the market.</p>"
+        description=client_banner_description--trainline
         logo_url="../images/trainline/trainline-logo-white.svg"
         image_url="../images/trainline/screen-1.png"
         image_class="w-75"
-      %}
+      %} 
   </div>
 
 
@@ -178,8 +171,7 @@ title: Ember
           Our engineers are engaged in Ember.js core teams like Ember CLI and Ember Learning.
         </p>
         <p class="lead">
-          Every new projects gives us the opportunity to learn and grow our expertise. We share what we learn
-          with the community via talks at conferences and meetups and on our blog.
+          Every new projects gives us the opportunity to learn and grow our expertise. We share what we learn with the community via talks at conferences and meetups and on our blog.
         </p>
       </div><!--col-->
       <div class="col-sm-7 offset-sm-1">

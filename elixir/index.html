@@ -29,16 +29,12 @@ title: Elixir
 </header>
 
 <main>
+  {% capture intro_content %}
+    <p>Elixir combines the expressiveness and simplicity of Ruby with the performance and stability of the Erlang VM. Phoenix builds on the concepts first introduced by Ruby on Rails, combining them with a number of architectural improvements.</p>
+    <p>Together, they form a <strong>modern and capable stack for building ambitious projects</strong> based on an established and battle-proven foundation.</p>
+  {% endcapture %}
   <div class="container">
-    {% include intro.html
-      content=
-      "<p>
-          Elixir combines the expressiveness and simplicity of Ruby with the performance and stability of the Erlang VM. Phoenix builds on the concepts first introduced by Ruby on Rails, combining them with a number of architectural improvements.
-        </p>
-        <p>
-          Together, they form a <strong>modern and capable stack for building ambitious projects</strong> based on an established and battle-proven foundation.
-        </p>"
-    %}    
+    {% include intro.html content=intro_content %}
   </div><!--container-->
 
   <div class="container">
@@ -66,14 +62,16 @@ title: Elixir
 
 
   <div class="container">
-
+    {% capture client_banner_description--expedition %}
+      <p>Expedition is an online travel magazine for global citizens. It lets travellers experience the world's best destinations through the eyes of a local.</p>
+    {% endcapture %}
     {% include client_banner.html
       client="expedition"
       title="An online travel magazine for global citizens"
-      description="<p>An online travel magazine for global citizens.</p>" 
+      description=client_banner_description--expedition 
       logo_url="../images/expedition/expedition-logo-white.svg"
       image_url="../images/expedition/website-preview-1.png"
-      image_class="img-2x"
+      image_class="img-2x img-pull-up"
     %} 
   </div><!--container-->
 
@@ -87,27 +85,22 @@ title: Elixir
         </div>
 
         <div class="col-sm-5">
-          <h2 class="font-weight-black text-dark-blue mb-4 text-lowercase">Community engagement</h2>
-          <p class="lead mb-4">
-            Elixir and Phoenix are open community projects and <strong>we are an active member of the community</strong>.
-            We support theElixir Munich meetup and have been sponsors of ElixirConf and
-            ElixirConf EU for years.
-          </p>
-          <div class="d-flex flex-row justify-content-between mt-4">
-            <a class="d-block p-2" href="https://www.meetup.com/Elixir-Munich/">
-              <img alt="Image" class="img-fluid" src="../images/elixir/elixir-logo-colorful-1.png" />
-            </a>
-
-            <a class="d-block p-2" href="http://elixirconf.com">
-              <img alt="Image" class="img-fluid" src="../images/elixir/elixir-logo-colorful-2.png" />
-            </a>
-
-            <a class="d-block p-2" href="https://www.elixirconf.eu/">
-              <img alt="Image" class="img-fluid" src="../images/elixir/elixir-logo-colorful-3.png" />
-            </a>
+          <div class="py-5">
+            <h2 class="font-weight-black text-dark-blue mb-4 text-lowercase">Community engagement</h2>
+            <p class="lead mb-4">Elixir and Phoenix are open community projects and <strong>we are an active member of the community</strong>. We support theElixir Munich meetup and have been sponsors of ElixirConf and ElixirConf EU for years.</p>
+            <div class="d-flex flex-row justify-content-between mt-4">
+              <a class="d-block p-2" href="https://www.meetup.com/Elixir-Munich/">
+                <img alt="Image" class="img-fluid" src="../images/elixir/elixir-logo-colorful-1.png" />
+              </a>
+              <a class="d-block p-2" href="http://elixirconf.com">
+                <img alt="Image" class="img-fluid" src="../images/elixir/elixir-logo-colorful-2.png" />
+              </a>
+              <a class="d-block p-2" href="https://www.elixirconf.eu/">
+                <img alt="Image" class="img-fluid" src="../images/elixir/elixir-logo-colorful-3.png" />
+              </a>
+            </div>
           </div>
         </div><!--col-->
-        
       </div>
     </div>
   </div><!--container-->

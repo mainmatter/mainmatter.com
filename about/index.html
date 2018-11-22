@@ -25,10 +25,11 @@ title: About
 </header>
 
 <main>
+  {% capture intro_content %}
+    <p>We are an international team of Web and Open Source enthusiasts. We value expertise and a passion for technology higher than location and work for clients across the world.</p>
+  {% endcapture %}
   <div class="container">
-    {% include intro.html
-      content="<p>We are an international team of Web and Open Source enthusiasts. We value expertise and a passion for technology higher than location and work for clients across the world.</p>"
-    %}
+    {% include intro.html content=intro_content %}
   </div><!--container-->
 
   <div class="container-fluid px-0">
@@ -58,45 +59,48 @@ title: About
     </div>
   </div><!--container-fluid-->
 
-  <div class="container">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-sm-5">
-        <img alt="fullstack" class="img-fluid py-2" src="../images/photo/about-preview-2.jpg">
-      </div>
-      <div class="col-sm-5">
-        <h2 class="font-weight-black text-dark-blue mb-4">Moving fast without breaking things</h2>
-        <p class="lead mb-4">
-          We have a passion for technology and value conventions-based tools. We like to move fast without
-          breaking things and leverage extensive testing and constant reviews to ensure we deliver high quality
-          results.
-        </p>
-        <p class="lead">
-          We Open Source and take an active role in the projects that we leverage for our clients, contributing
-          code and supporting the communities.
-        </p>
-      </div>
-    </div>
-  </div><!--container-->
 
-  <div class="container">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-sm-5">
-        <h2 class="font-weight-black text-dark-blue mb-4">Expertise over location</h2>
-        <p class="lead mb-4">
-          We value expertise and a passion for technology higher than location. Our distributed team of
-          technology experts works from various locations in Europe for clients across the world.
-        </p>
-        <p class="lead">
-          Being a remote culture doesn't mean everyone needs to be remote at all times though. We have regular
-          company events to connect offline and spend some time together - we even invite our clients to join
-          us!
-        </p>
-      </div>
-      <div class="col-sm-5">
-        <img alt="fullstack" class="img-fluid py-2" src="../images/photo/about-preview-3.jpg" >
-      </div>
-    </div>
-  </div><!--container-->
+  <div class="container-fluid px-0">
+    <div class="row justify-content-center">
+      <div class="col-sm-12">
+        <div class="container">
+          <div class="row justify-content-start align-items-center">
+            <div class="col-md-6 order-1">
+              <img alt="fullstack" class="mx-auto d-block img-fluid" src="../images/photo/about-preview-2.jpg">
+            </div>
+            <div class="col-md-6 order-2">
+              <div class="p-5">
+                <h2 class="font-weight-black text-dark-blue mb-4">Moving fast without breaking things</h2>
+                <p class="lead mb-4">We have a passion for technology and value conventions-based tools. We like to move fast without breaking things and leverage extensive testing and constant reviews to ensure we deliver high quality results.</p>
+                <p class="lead">We Open Source and take an active role in the projects that we leverage for our clients, contributing code and supporting the communities.</p>
+              </div>
+            </div>
+          </div>
+        </div><!--container-->
+      </div><!--col-->
+    </div><!--row-->
+  </div><!--container-fluid-->
+
+  <div class="container-fluid px-0">
+    <div class="row justify-content-center">
+      <div class="col-sm-12">
+        <div class="container">
+          <div class="row justify-content-start align-items-center">
+            <div class="col-md-6 order-2">
+              <img alt="fullstack" class="mx-auto d-block img-fluid" src="../images/photo/about-preview-3.jpg">
+            </div>
+            <div class="col-md-6 order-1">
+              <div class="p-5">
+                <h2 class="font-weight-black text-dark-blue mb-4">Expertise over location</h2>
+                <p class="lead mb-4">We value expertise and a passion for technology higher than location. Our distributed team of technology experts works from various locations in Europe for clients across the world.</p>
+                <p class="lead">Being a remote culture doesn't mean everyone needs to be remote at all times though. We have regular company events to connect offline and spend some time together - we even invite our clients to join us!</p>
+              </div>
+            </div>
+          </div>
+        </div><!--container-->
+      </div><!--col-->
+    </div><!--row-->
+  </div><!--container-fluid-->
 
 
   {% include contact_banner.html %}
