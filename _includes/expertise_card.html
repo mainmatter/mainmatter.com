@@ -1,6 +1,6 @@
-<a href="/{{ include.expertise }}/index.html" class="d-flex align-items-stretch">
+<a href="/{{ include.expertise }}/index.html" class="d-flex align-items-stretch" aria-label="{{ include.title }}">
 	<div class="card-expertise card-expertise--{{ include.expertise }} p-5 text-white bg-hover-animate">
   	<h3 class="my-4 font-weight-black">{{ include.title }}</h3>
-  	<div class="lead">{{ include.description }}</div>
+  	<div class="lead" aria-hidden="true">{{ include.description }}</div>
 	</div>
 </a>

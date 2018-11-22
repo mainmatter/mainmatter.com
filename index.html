@@ -49,24 +49,39 @@ title:
 
       <div class="row">
         <div class="col-sm-4">
-          <div class="p-4"><img alt="Full-Stack Engineering image" class="mx-auto d-block" src="/images/icons/dark/fullstack.svg"></div>
-          <h3 class="my-4 font-weight-black">Full-Stack Engineering</h3>
-          <p class="pr-3 mb-3">We take the lead and turn our clients' ideas into successful products, working closely with them in short iterations.</p>
-          <a href="full-stack-engineering/index.html" class="text-arrow">Learn More</a>
+          <a class="feature-card d-block" href="full-stack-engineering/index.html" aria-label="Learn more about Full-Stack Engineering Services">
+            <div class="p-4">
+              <img alt="Full-Stack Engineering image" class="mx-auto d-block" src="/images/icons/dark/fullstack.svg">
+            </div>
+            <h3 class="my-4 font-weight-black text-dark">Full-Stack Engineering</h3>
+            <p class="pr-3 mb-3 text-dark" aria-hidden="true">We take the lead and turn our clients' ideas into successful products, working closely with them in short iterations.</p>
+            <div class="text-arrow" aria-hidden="true">Learn More</div>
+          </a>
         </div><!--col-->
 
         <div class="col-sm-4">
-          <div class="p-4"><img alt="Team Augmentation image" class="mx-auto d-block" src="/images/icons/dark/team.svg"></div>
-          <h3 class="my-4 font-weight-black">Team Augmentation</h3>
-          <p class="pr-3 mb-3">Our technology experts step in and merge with our clients' in-house engineering teams, spearhead development initiatives, and establish best practices to get their projects across the finish line.</p>
-          <a href="team-augmentation/index.html" class="text-arrow">Learn More</a>
+          <a class="feature-card d-block" href="team-augmentation/index.html" aria-label="Learn more about Team Augmentation Services">
+            <div class="p-4">
+              <img alt="Team Augmentation image" class="mx-auto d-block" src="/images/icons/dark/team.svg">
+            </div>
+            <h3 class="my-4 font-weight-black text-dark">Team Augmentation</h3>
+            <p class="pr-3 mb-3 text-dark" aria-hidden="true">Our technology experts step in and merge with our clients' in-house engineering teams, spearhead development initiatives, and establish best practices to get their projects across the finish line.</p>
+            <div class="text-arrow" aria-hidden="true">Learn More</div>
+          </a>
+
         </div><!--col-->
 
         <div class="col-sm-4">
-          <div class="p-4"><img alt="Tutoring Augmentation image" class="mx-auto d-block" src="/images/icons/dark/tutoring.svg"></div>
-          <h3 class="my-4 font-weight-black">Tutoring</h3>
-          <p class="pr-3 mb-3">We tutor teams, raising their experience and confidence levels when taking on new technologies or projects.</p>
-          <a href="training/index.html" class="text-arrow">Learn More</a>
+
+          <a class="feature-card d-block" href="training/index.html" aria-label="Learn more about Tutoring Services">
+            <div class="p-4">
+              <img alt="Tutoring image" class="mx-auto d-block" src="/images/icons/dark/tutoring.svg">
+            </div>
+            <h3 class="my-4 font-weight-black text-dark">Tutoring</h3>
+            <p class="pr-3 mb-3 text-dark" aria-hidden="true">We tutor teams, raising their experience and confidence levels when taking on new technologies or projects.</p>
+            <div class="text-arrow" aria-hidden="true">Learn More</div>
+          </a>
+    
         </div><!--col-->
       </div><!--row-->
     </div><!--section-services-->
@@ -76,7 +91,7 @@ title:
     <div class="row">
       <div class="col-sm-6 d-flex align-items-stretch">
         {% capture client_banner_description--trainline %}
-          <p>Trainline is Europe’s leading independent rail and coach platform. We worked with Trainline to deliver a scalable, high-performance mobile web app, along with an improved engineer process, enabling Trainline to achieve their business goals for years to come.</p>
+          
         {% endcapture %}
 
         {% include client_banner.html
@@ -89,7 +104,7 @@ title:
       </div><!--col-->
       <div class="col-sm-6 d-flex align-items-stretch">
         {% capture client_banner_description--timify %}
-          <p>When Timify decided it was time to re-engineer their existing product, they trusted us to bring them into the future. We added engineering capacity to Timify's team and helped to build a solid foundation that enabled them to iterate fast and launch on-schedule, without sacrificing quality.</p>
+         
         {% endcapture %}
          
         {% include client_banner.html
@@ -101,7 +116,7 @@ title:
         %}  
       </div><!--col-->
     </div><!--row-->
-    <div class="d-flex flex-row justify-content-between my-4 px-2">
+    <div class="d-flex flex-row justify-content-between my-4 px-2 align-items-center">
       <a class="p-1 color-hover" href="https://www.xbav.de/">
         <img alt="Logo" class="img-fluid" src="/images/logos/colorful/xbav.svg" />
       </a>

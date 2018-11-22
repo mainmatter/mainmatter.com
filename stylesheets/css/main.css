@@ -7449,6 +7449,9 @@ a.text-dark:hover, a.text-dark:focus {
         font-size: 1em;
         line-height: 1.5em; } }
 
+.section-client-logo {
+  height: 5rem; }
+
 .section-client-illustration {
   overflow: hidden;
   height: 400px; }
@@ -7479,13 +7482,13 @@ a.text-dark:hover, a.text-dark:focus {
   background-size: auto 100%;
   background-position: center right;
   background-repeat: no-repeat;
-  transition: background-size .75s;
-  -moz-transition: background-size .75s;
-  -ms-transition: background-size .75s;
-  -o-transition: background-size .75s;
-  -webkit-transition: background-size .75s; }
+  transition: background-size .75s ease-in-out;
+  -moz-transition: background-size .75s ease-in-out;
+  -ms-transition: background-size .75s ease-in-out;
+  -o-transition: background-size .75s ease-in-out;
+  -webkit-transition: background-size .75s ease-in-out; }
   .bg-hover-animate:hover {
-    background-size: auto 130%; }
+    background-size: auto 110%; }
 
 @media (min-width: 768px) {
   .section-client-illustration {
@@ -7670,6 +7673,17 @@ a.text-dark:hover, a.text-dark:focus {
   @media (min-width: 768px) {
     .description-text + .description-text {
       margin-top: 3em; } }
+
+.feature-card .text-arrow {
+  margin-left: 0;
+  transition: all .75s ease-in-out;
+  -moz-transition: all .75s ease-in-out;
+  -ms-transition: all .75s ease-in-out;
+  -o-transition: all .75s ease-in-out;
+  -webkit-transition: all .75s ease-in-out; }
+
+.feature-card:hover .text-arrow {
+  margin-left: 20px; }
 
 footer {
   padding-bottom: 2rem;
