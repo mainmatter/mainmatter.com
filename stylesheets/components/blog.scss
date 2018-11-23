@@ -73,7 +73,7 @@
         color: $text;
         display: inline-block;
         font-size: 0.875em;
-        font-weight: $font-weight-medium;
+        font-weight: $font-weight-bold;
         line-height: 1.1428em;
         margin-bottom: 1.1428em;
       }
@@ -99,7 +99,7 @@
       .blog-post-text {
         color: $text;
         font-size: 1em;
-        font-weight: $font-weight-light;
+        font-weight: $font-weight-normal;
         line-height: 1.5em;
         padding-right: 1em;
 
@@ -145,7 +145,7 @@
         .blog-post-info-user-name {
           color: $text;
           font-size: 0.875em;
-          font-weight: $font-weight-medium;
+          font-weight: $font-weight-bold;
           line-height: 1.7142em;
 
           @include media-breakpoint-up(md) {
