@@ -5,6 +5,7 @@ title: "Updating to Ember Simple Auth 1.0"
 author: "Marco Otte-Witte"
 github-handle: marcoow
 twitter-handle: marcoow
+category: ember
 ---
 
 With Ember Simple Auth 1.0.0 having been [released a few days ago](https://github.com/simplabs/ember-simple-auth/releases/tag/1.0.0), a lot of people will want to upgrade their applications to it so they can finally make the switch to Ember.js 2.0\. While quite a big part of the [public API](http://ember-simple-auth.com/api/) has been changed in 1.0.0, **updating an application from Ember Simple Auth 0.8.0 or earlier versions is actually not as hard as it might appear** at first glance. This post explains the steps that are necessary to bring an application to 1.0.0.

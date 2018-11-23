@@ -5,6 +5,7 @@ title: New features for ember-test-selectors
 author: "Tobias Bieniek"
 github-handle: Turbo87
 twitter-handle: tobiasbieniek
+category: ember
 ---
 
 In March 2016 we have released the first version of
