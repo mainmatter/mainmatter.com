@@ -1,7 +1,7 @@
 name: simplabs.com
 
 sass:
-  sass_dir: css
+  sass_dir: stylesheets
 
 gems:
   - jekyll-sitemap
@@ -28,7 +28,7 @@ twitter:
 facebook:
   publisher: https://www.facebook.com/simplabs/
 
-exclude: [vendor]
+exclude: [vendor, Gemfile, Gemfile.lock, README.md]
 
 defaults:
   -
