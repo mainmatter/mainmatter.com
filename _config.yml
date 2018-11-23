@@ -28,7 +28,7 @@ twitter:
 facebook:
   publisher: https://www.facebook.com/simplabs/
 
-exclude: [vendor]
+exclude: [vendor, Gemfile, Gemfile.lock]
 
 defaults:
   -
