@@ -330,7 +330,7 @@ And finally, we can see our Glimmer-based street map being rendered just as seen
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
   integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
 <glimmer-map height="300"></glimmer-map>
-<script src="/js/glimmer-map.js"></script>
+<script src="/assets/posts/2017-08-30-creating-web-components-with-glimmer/glimmer-map.js"></script>
 
 
 #### And the Glimmer Component story is not over yet
