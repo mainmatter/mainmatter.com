@@ -118,11 +118,6 @@ title: Contact Us
 
 <script>
   Zepto(function ($) {
-    let lastScrollTop;
-    const mainMenu = $('.navbar');
-    const mainMenuHeight = mainMenu.height();
-    const win = $(window);
-
     function displayLabel(label) {
       label.css({
         opacity: 1
@@ -133,29 +128,6 @@ title: Contact Us
         });
       }, 3500);
     }
-
-    function setScrolledClass(scrollTop) {
-      if (scrollTop > mainMenuHeight) {
-        mainMenu.addClass('scrolled');
-      } else {
-        mainMenu.removeClass('scrolled');
-      }
-    }
-
-    win.scroll(function () {
-      const scrollTop = win.scrollTop();
-
-      setScrolledClass(scrollTop);
-
-      if (lastScrollTop < scrollTop && scrollTop > mainMenuHeight * 2) {
-        mainMenu.addClass('scrollUp');
-      } else if (lastScrollTop > scrollTop) {
-        mainMenu.removeClass('scrollUp');
-      }
-
-      lastScrollTop = scrollTop;
-    });
-    setScrolledClass(win.scrollTop());
 
     const submitButton = $('.btn-submit');
     const goBackButton = $('.btn-go-back');
