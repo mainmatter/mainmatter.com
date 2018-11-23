@@ -95,7 +95,7 @@
     .article-text {
       color: $text;
       font-size: 1em;
-      font-weight: $font-weight-light;
+      font-weight: $font-weight-normal;
       line-height: 1.5em;
 
       @include media-breakpoint-up(md) {

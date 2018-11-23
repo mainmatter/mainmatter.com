@@ -36,7 +36,7 @@
 .form-control {
   color: $text;
   border: none;
-  font-weight: $font-weight-medium;
+  font-weight: $font-weight-bold;
 
   &:focus,
   &:hover {
@@ -45,14 +45,14 @@
 
   &:focus {
     &::placeholder {
-      font-weight: $font-weight-medium;
+      font-weight: $font-weight-bold;
       opacity: 1;
     }
   }
 
   &::placeholder {
     color: rgba($text, 0.5);
-    font-weight: $font-weight-medium;
+    font-weight: $font-weight-bold;
     opacity: 0.5;
   }
 }
