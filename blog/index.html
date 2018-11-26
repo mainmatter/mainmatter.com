@@ -25,42 +25,37 @@ title: Blog
 </header>
 
 <main>
-  <div class="container-fluid container-fluid-blog">
-    <div class="container container-blog">
-      <div class="row row-blog">
-        <div class="col col-blog">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-8">
           <div class="blog blog-blog">
             <div class="blog-posts">
               {% for post in site.categories.blog %}
-              <a class="blog-post blog-post-{{post.category}}" href="{{post.url}}">
+              <a class="blog-post blog-post-{{post.category}}" href="{{post.url}}" aria-label="{{post.title}}">
                 <div class="blog-post-wrapper">
-                  <p class="blog-post-category">
-                    {{post.category}}
-                  </p>
+                  <p class="blog-post-category">{{post.category}}</p>
+                  <div class="text-dark">
+                    <h2 class="font-weight-black mb-4">{{post.title}}</h2>
+                    <p aria-hidden="true">{{post.excerpt | strip_html}}</p>
+                  </div>
 
-                  <p class="blog-post-header">
-                    {{post.title}}
-                  </p>
-
-                  <p class="blog-post-text">
-                    {{post.excerpt | strip_html}}
-                  </p>
-
-                  <div class="blog-post-info">
-                    <div class="blog-post-info-user-picture">
+                  <div class="d-flex align-items-center mt-4">
+                    <div class="img-circle mr-2">
                       <img alt="Image" class="img-fluid" src="/images/authors/{{post.author | split: ' ' | first | downcase}}@2x.jpg" />
                     </div>
 
-                    <div>
-                      <p class="blog-post-info-user-name">
+                    <div class="text-muted">
+                      <div class="font-weight-bold">
                         {{post.author | upcase}}
-                      </p>
+                      </div>
 
-                      <p class="blog-post-info-date">
+                      <div class="small">
                         {{post.date | date: '%B %d, %Y'}}
-                      </p>
+                      </div>
                     </div>
                   </div>
+
                 </div>
               </a>
               {% endfor %}
