@@ -17,7 +17,7 @@ how to turn a Single Page App into a Progressive Web App.
 
 <!--break-->
 
-#### Breethe
+## Breethe
 
 Throughout this post, we will use [Breethe](https://breethe.app) as an example.
 Breethe is a Progressive Web App that gives users quick and easy access to air
@@ -36,7 +36,7 @@ To learn more about how we built Breethe with
 None of the contents in this post are specific to Glimmer.js in any way though,
 but all generally applicable to all frontend stacks.
 
-#### Progressive Web Apps
+## Progressive Web Apps
 
 In short, Progressive Web Apps are **web apps that look and behave like native
 apps**. While the idea of building apps with web technologies has been around
@@ -106,7 +106,7 @@ only getting started - as Progressive Web Apps have only recently really took
 off, **it's fair to expect massive improvements in terms of what's possible
 over the next coming years**.
 
-#### What are PWAs?
+### What are PWAs?
 
 Progressive Web Apps have some distinct characteristics, the main ones being:
 
@@ -124,7 +124,7 @@ Progressive Web Apps have some distinct characteristics, the main ones being:
 We will be focussing on two of these characteristics in this article -
 Installability and Connectivity Independence.
 
-#### Installability
+### Installability
 
 Progressive Web apps can be installed on the user's home screen and thus
 _"taken out of the browser"_ so that they mingle with the user's native apps
@@ -194,7 +194,7 @@ browser UI:
 
 ![The Breethe PWA starting up standalone](/images/posts/2018-07-24-from-spa-to-pwa/breethe-startup-standalone.gif)
 
-#### Connectivity Independence
+### Connectivity Independence
 
 The main requirement for any web application to be able to work independently
 of the network is that it **must be able to start up while there is no network
@@ -332,7 +332,7 @@ while the device is offline only solves half of the problem though when all of
 the app's data is loaded from a remote API and thus would be unavailable when
 offline.
 
-##### Offline Data
+### Offline Data
 
 The web platform provides a number of APIs for storing data in the browser and
 thus making it available for offline use. The
@@ -467,7 +467,7 @@ when the device is offline. Modern libraries like Orbit.js make it easy to
 manage data independently of the network condition and abstract most of the
 details behind convenient APIs.
 
-#### Testing
+### Testing
 
 Testing is an essential part of modern software engineering and we at simplabs
 (and I'm sure this is true for anyone reading this as well) would **never ship
@@ -554,7 +554,7 @@ to execute -
 completes in
 [around 1min](https://travis-ci.org/simplabs/breethe-client/jobs/403597086#L683).
 
-#### Outlook
+### Outlook
 
 This post and the
 [previous one](/blog/ember/2018/07/03/building-a-pwa-with-glimmer-js.html) have given

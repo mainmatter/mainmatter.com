@@ -26,45 +26,55 @@
   </header>
 
   <main>
-    <div class="container-fluid container-fluid-article">
-      <div class="container container-article">
-        <div class="row row-article">
-          <div class="col col-article">
-            <div class="article">
-              <div class="article-content">
-                <div class="article-section">
-                  {{page.content}}
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-8">
+          <div class="article">
+            <div class="article-content">
+
+              <div class="article-section mb-4">
+                {{page.content}}
+              </div>
+
+              <div class="d-flex align-items-center mt-4">
+                <div class="img-circle-lg mr-2">
+                  <img alt="Image" class="{{page.author | split: ' ' | first | downcase}} img-fluid" src="/images/authors/{{page.author | split: ' ' | first | downcase}}@2x.jpg" />
                 </div>
-                <div class="article-info">
-                  <div class="article-info-user-picture">
-                    <img alt="Image" class="{{page.author | split: ' ' | first | downcase}} img-fluid" src="/images/authors/{{page.author | split: ' ' | first | downcase}}@2x.jpg" />
-                  </div>
 
-                  <div class="article-info-info">
-                    <p class="article-info-user-name">
-                      {{page.author | upcase}}
-                    </p>
+                <div>
 
-                    <p class="article-info-date">
-                      {{page.date | date: '%B %d, %Y'}}
-                    </p>
-                  </div>
+                  <div class="font-weight-bold text-dark h4 align-middle">
+                    {{page.author | upcase}}
 
-                  <div class="article-info-links">
                     {% if page.twitter-handle %}
                     <a class="article-info-link" href="http://twitter.com/{{page.twitter-handle}}">
-                      <img alt="Image" class="img-fluid" src="/images/icons/twitter.svg" />
+                      <img alt="Image" src="/images/icons/twitter.svg" />
                     </a>
                     {% endif %}
 
                     {% if page.github-handle %}
                     <a class="article-info-link" href="http://github.com/{{page.github-handle}}">
-                      <img alt="Image" class="img-fluid" src="/images/icons/github.svg" />
+                      <img alt="Image" src="/images/icons/github.svg" />
                     </a>
                     {% endif %}
+
+                  </div>
+
+                  <div class="small text-muted">
+                    {{page.date | date: '%B %d, %Y'}}
                   </div>
                 </div>
-              </div>
+
+                <div class="article-info-links ml-3">
+                  
+
+
+
+                </div>
+
+              </div><!--article-info-->
+              
+              
             </div>
           </div>
         </div>
