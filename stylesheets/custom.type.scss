@@ -9,7 +9,6 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: 1.5rem; // 24px
-  letter-spacing: 2px;
 
   @include media-breakpoint-up(md) {
     font-size: $h2-font-size;

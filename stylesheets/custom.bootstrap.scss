@@ -118,6 +118,16 @@ footer {
   color: $headlines !important;
 }
 
+.img-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    height: 100%;
+  }
+}
+
 .icon-circle {
   display: flex;
   border-radius: 50%;
@@ -181,6 +191,7 @@ footer {
 .btn {
   border-width: 2px;
 }
+
 
 
 
