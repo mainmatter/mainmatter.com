@@ -115,6 +115,7 @@ title: Elixir
       </div><!--col-->
       <div class="col-sm-7 offset-sm-1">
         <div class="blog blog-elixir">
+
           <div class="blog-posts">
             {% assign counter = 0 %}
             {% for post in site.categories.blog %}
@@ -124,34 +125,36 @@ title: Elixir
                 <p class="blog-post-category">
                   {{post.category}}
                 </p>
+                <div class="text-dark">
+                  <h2 class="mb-4 font-weight-black">
+                    {{post.title}}
+                  </h2>
+                  <p>
+                    {{post.excerpt | strip_html}}
+                  </p>
+                </div>
 
-                <p class="blog-post-header">
-                  {{post.title}}
-                </p>
-
-                <p class="blog-post-text">
-                  {{post.excerpt | strip_html}}
-                </p>
-                <div class="blog-post-info">
-                  <div class="blog-post-info-user-picture">
+                <div class="d-flex align-items-center mt-4">
+                  <div class="img-circle mr-2">
                     <img alt="Image" class="img-fluid" src="/images/authors/{{post.author | split: ' ' | first | downcase}}@2x.jpg" />
                   </div>
 
-                  <div>
-                    <p class="blog-post-info-user-name">
+                  <div class="text-muted">
+                    <div class="font-weight-bold">
                       {{post.author | upcase}}
-                    </p>
+                    </div>
 
-                    <p class="blog-post-info-date">
+                    <div class="small">
                       {{post.date | date: '%B %d, %Y'}}
-                    </p>
+                    </div>
                   </div>
-                </div>
+                </div><!--blog-post-info-->
               </div>
               </a>
               {% endif %}
               {% endfor %}
           </div>
+
         </div><!--blog-->
       </div>
     </div>
