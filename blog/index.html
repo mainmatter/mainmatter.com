@@ -29,7 +29,7 @@ title: Blog
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-sm-8">
-          <div class="blog blog-blog">
+          <div class="blog">
             <div class="blog-posts">
               {% for post in site.categories.blog %}
               <a class="blog-post blog-post-{{post.category}}" href="{{post.url}}" aria-label="{{post.title}}">
@@ -54,12 +54,12 @@ title: Blog
                         {{post.date | date: '%B %d, %Y'}}
                       </div>
                     </div>
-                  </div>
+                  </div><!--blog-post-info-->
 
                 </div>
               </a>
               {% endfor %}
-            </div>
+            </div><!--blog-posts-->
           </div>
         </div>
       </div>
