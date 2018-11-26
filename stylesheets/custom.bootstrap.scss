@@ -128,6 +128,16 @@ footer {
   }
 }
 
+.img-circle-lg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    height: 100%;
+  }
+}
+
 .icon-circle {
   display: flex;
   border-radius: 50%;
