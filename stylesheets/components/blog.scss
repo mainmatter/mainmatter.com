@@ -77,39 +77,6 @@
         margin-bottom: 1.1428em;
       }
 
-      .blog-post-header {
-        color: $headlines;
-        font-size: 1em;
-        font-weight: $font-weight-black;
-        letter-spacing: 0.0625em;
-        line-height: 1.5em;
-        margin-bottom: 1em;
-        padding-right: 1em;
-
-        @include media-breakpoint-up(md) {
-          font-size: 2em;
-          letter-spacing: 0.0312em;
-          line-height: 1.25em;
-          margin-bottom: 0.5em;
-          padding-right: 1em;
-        }
-      }
-
-      .blog-post-text {
-        color: $text;
-        font-size: 1em;
-        font-weight: $font-weight-normal;
-        line-height: 1.5em;
-        padding-right: 1em;
-
-        @include media-breakpoint-up(md) {
-          font-size: 1.25em;
-          line-height: 1.6em;
-          margin-bottom: 1.6em;
-          padding-right: 1.6em;
-        }
-      }
-
       .blog-post-info {
         align-items: center;
         display: flex;
