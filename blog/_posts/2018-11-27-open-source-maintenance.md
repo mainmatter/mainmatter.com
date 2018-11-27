@@ -219,6 +219,9 @@ change, and label it properly as either `enhancement`, `bug`, `breaking`, or
 any of the other supported/configured labels. To ensure that all of our projects
 use the same set of labels we use [github-label-sync].
 
+An [example changelog](https://github.com/simplabs/qunit-dom/blob/master/CHANGELOG.md)
+can be seen on our qunit-dom project. 
+
 
 #### Summary
 
