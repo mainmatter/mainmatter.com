@@ -98,7 +98,7 @@ You can find more information on testing in Ember.js on the official
 But this topic not limited to just Ember.js, other ecosystems have similar
 tools. For Node.js the most popular testing solutions these days are [Jest]
 and [Mocha]. In the [Rust] ecosystem testing is already built into their
-main CLI tool [cargo], but there are [plenty of crates](https://github.com/rust-unofficial/awesome-rust#testing)
+package manager [cargo], but there are [plenty of crates](https://github.com/rust-unofficial/awesome-rust#testing)
 to make testing even more pleasant, including the very valuable [proptest]
 crate.
 
@@ -145,6 +145,7 @@ You can find instruction on how to configure this in their official
 [Jest]: https://jestjs.io/
 [Mocha]: https://mochajs.org/
 [Rust]: https://www.rust-lang.org/
+[cargo]: https://doc.rust-lang.org/cargo/
 [proptest]: https://github.com/altsysrq/proptest/
 [ESLint]: https://eslint.org/
 [Prettier]: https://prettier.io/
