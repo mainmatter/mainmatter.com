@@ -117,6 +117,27 @@ Again, similar tools exist for example for Rust ([clippy] and [rustfmt]) and
 Python ([pyflakes] and [black]).
 
 
+#### Continuous Integration
+
+The above points about testing and linting are nice to have, but if nobody runs
+your tests then they don't provide any value. This is where continuous
+integration (or short "CI") systems come into play. These kinds of systems are
+coupled to your version control servers and automatically run linting checks and
+tests whenever you upload new commits to the server.
+
+Most of the time we use [TravisCI] for this purpose, which is coupled to GitHub,
+free for open source projects, and supports Linux, Mac and soon Windows too.
+Alternatives include [CircleCI] (based on Docker images) and [AppVeyor], which
+we currently use to test Windows support on projects where this is relevant.
+
+One important thing to mention here is that CI can not only run your test suite
+but can often also do other things like publishing new versions of your
+projects. On most of our projects we have configured TravisCI to automatically
+publish new releases to [npm] whenever we push a new git tag to the server.
+You can find instruction on how to configure this in their official
+[documentation](https://docs.travis-ci.com/user/deployment/npm/).
+
+
 [git]: https://git-scm.com/
 [GitHub]: https://github.com/
 [Fork]: https://git-fork.com/
@@ -131,3 +152,6 @@ Python ([pyflakes] and [black]).
 [rustfmt]: https://github.com/rust-lang/rustfmt
 [pyflakes]: https://github.com/PyCQA/pyflakes
 [black]: https://github.com/ambv/black
+[TravisCI]: https://travis-ci.com/
+[CircleCI]: https://circleci.com/
+[AppVeyor]: https://www.appveyor.com/
