@@ -83,6 +83,51 @@ gph
 # click on the link in the console output to open a new GitHub PR for the branch
 ```
 
+
+#### Tests
+
+Having a good test suite is very important to be able to change code and be
+confident that the change is not breaking anything. This is one of the major
+reasons why we love [Ember.js], because it comes with a great testing system
+out-of-the-box and allows us to write tests for all of the critical parts of
+the apps that we develop.
+
+You can find more information on testing in Ember.js on the official
+[guides](https://guides.emberjs.com/release/testing/).
+
+But this topic not limited to just Ember.js, other ecosystems have similar
+tools. For Node.js the most popular testing solutions these days are [Jest]
+and [Mocha]. In the [Rust] ecosystem testing is already built into their
+main CLI tool [cargo], but there are [plenty of crates](https://github.com/rust-unofficial/awesome-rust#testing)
+to make testing even more pleasant, including the very valuable [proptest]
+crate.
+
+
+#### Linting
+
+Similar to testing frameworks, a lot of ecosystems have tools to run "static
+analysis" on your code to find bugs before you even run the applications. These
+tools are often called "Linters".
+
+Very popular in the JavaScript world is [ESLint], which we often run in
+combination with [Prettier], to also ensure that our code is formatted in a
+consistent way.
+
+Again, similar tools exist for example for Rust ([clippy] and [rustfmt]) and
+Python ([pyflakes] and [black]).
+
+
 [git]: https://git-scm.com/
 [GitHub]: https://github.com/
 [Fork]: https://git-fork.com/
+[Ember.js]: https://emberjs.com/
+[Jest]: https://jestjs.io/
+[Mocha]: https://mochajs.org/
+[Rust]: https://www.rust-lang.org/
+[proptest]: https://github.com/altsysrq/proptest/
+[ESLint]: https://eslint.org/
+[Prettier]: https://prettier.io/
+[clippy]: https://github.com/rust-lang/rust-clippy
+[rustfmt]: https://github.com/rust-lang/rustfmt
+[pyflakes]: https://github.com/PyCQA/pyflakes
+[black]: https://github.com/ambv/black
