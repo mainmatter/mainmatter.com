@@ -190,6 +190,36 @@ If configured, dependabot can also automatically merge those Pull Requests once
 CI has finished and the test suite passed.
 
 
+#### Changelogs
+
+While Semantic Versioning helps your users to know if they need to expect
+breaking changes from a release, it is much better to have a human-readable
+list of changes that went into a release. This is what a "Changelog" is for.
+Typically this is a `CHANGELOG.md` file in the root folder of your project
+that lists all your released versions including the changes that went into
+each release.
+
+It can be quite tedious to write these things by hand, but fortunately there
+are generators that can do most of the work for us. These generators can be
+divided into two groups:
+
+1. the first group is based on [semantic commit messages](https://seesparkbox.com/foundry/semantic_commit_messages)
+   and lists all of the commits that are part of a certain release
+2. the second group is based upon GitHub Pull Requests (or similar) and uses
+   issue/PR labels to categorize changes
+
+While "semantic commit messages" seem to be quite popular we prefer the second
+group of changelog generators, as listing each commit often results in a long
+list of very fine-grained changes that are not directly helpful to the user.
+
+Instead we use [lerna-changelog] to generate our changelogs from all of the
+merged pull requests that went into each of the releases. To make this work
+properly it is important to focus each pull request on only one single, logical
+change, and label it properly as either `enhancement`, `bug`, `breaking`, or
+any of the other supported/configured labels. To ensure that all of our projects
+use the same set of labels we use [github-label-sync].
+
+
 [git]: https://git-scm.com/
 [GitHub]: https://github.com/
 [Fork]: https://git-fork.com/
@@ -213,3 +243,5 @@ CI has finished and the test suite passed.
 [pip]: https://pip.pypa.io/
 [Greenkeeper]: https://greenkeeper.io/
 [dependabot]: https://dependabot.com/
+[lerna-changelog]: https://github.com/lerna/lerna-changelog/
+[github-label-sync]: https://github.com/Financial-Times/github-label-sync/
