@@ -138,6 +138,36 @@ You can find instruction on how to configure this in their official
 [documentation](https://docs.travis-ci.com/user/deployment/npm/).
 
 
+#### Semantic Versioning
+
+Semantic Versioning (or short "semver") is a way to assign meaning to version
+numbers, and specifically to version number changes. The official
+[specification](https://semver.org/) is a little longer, but there are five
+important rules:
+
+1. version numbers have three main parts called major, minor and patch version
+   (Example: `v3.0.1`, major is `3`, minor is `0` and patch version is `1`)
+2. when your release includes any changes that might break the apps of existing
+   users you should increase the **major** version
+3. when your release includes only bug fixes you should increase the **patch**
+   version
+4. for all other changes you should increase the **minor** version
+5. if your version is below `v1.0.0` (e.g. `v0.4.3`) you can release breaking
+   changes without increasing the major version because the project is
+   considered "unstable"
+
+Since the majority of package managers including [npm], [yarn], [cargo] and
+[pip] follow these semantics when resolving dependencies, it is very important
+to comply with these rules. But they are also useful in order for your users
+to get a sense of what they can expect from a new release.
+
+While this can be controversial, we consider dropping support for older Node.js,
+Python, Ruby, or other language releases a breaking change. This means that if
+your package [declares](https://docs.npmjs.com/files/package.json#engines)
+that it works with Node.js 4, and you release a new version that needs at least
+Node.js 6, then you should increase the **major** version.
+
+
 [git]: https://git-scm.com/
 [GitHub]: https://github.com/
 [Fork]: https://git-fork.com/
@@ -156,3 +186,6 @@ You can find instruction on how to configure this in their official
 [TravisCI]: https://travis-ci.com/
 [CircleCI]: https://circleci.com/
 [AppVeyor]: https://www.appveyor.com/
+[npm]: https://npmjs.com/
+[yarn]: https://yarnpkg.com/
+[pip]: https://pip.pypa.io/
