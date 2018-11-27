@@ -220,6 +220,13 @@ any of the other supported/configured labels. To ensure that all of our projects
 use the same set of labels we use [github-label-sync].
 
 
+#### Summary
+
+We hope that this blog post helped you improve your processes and speed up your
+own development. If you need help with any of these topics or if you have
+questions we encourage you to [contact us](https://simplabs.com/contact/)!
+
+
 [git]: https://git-scm.com/
 [GitHub]: https://github.com/
 [Fork]: https://git-fork.com/
