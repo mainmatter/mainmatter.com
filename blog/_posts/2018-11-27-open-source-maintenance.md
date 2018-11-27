@@ -168,6 +168,28 @@ that it works with Node.js 4, and you release a new version that needs at least
 Node.js 6, then you should increase the **major** version.
 
 
+#### Dependency Update Services
+
+Any sufficiently large open source project has at least a few dependencies that
+it is built upon, and even smaller projects typically have at least a dependency
+on a test framework. While keeping the dependencies of a single project
+up-to-date is a manageable task, it is becoming a full-time job once you
+maintain dozens or hundreds of separate projects.
+
+Fortunately for us this is a task that can be automated quite well, at least
+if you have a good test suite and continuous integration set up. While we
+first used [Greenkeeper] for this task, we have lately transitioned to using
+[dependabot], which supports not only npm, but all sorts of different package
+managers, language ecosystems, and even monorepos.
+
+The way this work is that dependabot will automatically open Pull Requests on
+your projects, whenever one of your dependencies has published a new version.
+This will cause your CI service to run the test suite against that new
+dependency version and tell you whether it is compatible with your code or not.
+If configured, dependabot can also automatically merge those Pull Requests once
+CI has finished and the test suite passed.
+
+
 [git]: https://git-scm.com/
 [GitHub]: https://github.com/
 [Fork]: https://git-fork.com/
@@ -189,3 +211,5 @@ Node.js 6, then you should increase the **major** version.
 [npm]: https://npmjs.com/
 [yarn]: https://yarnpkg.com/
 [pip]: https://pip.pypa.io/
+[Greenkeeper]: https://greenkeeper.io/
+[dependabot]: https://dependabot.com/
