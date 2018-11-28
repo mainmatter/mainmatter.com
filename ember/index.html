@@ -278,12 +278,12 @@ title: Ember
           <div class="blog-posts">
             {% assign counter = 0 %}
             {% for post in site.categories.blog %}
-            {% if post.category == "ember" and counter < 3 %} {% assign counter=counter | plus:1 %} <a class="blog-post blog-post-ember"
+            {% if post.category == "ember" and counter < 3 %} {% assign counter=counter | plus:1 %} <a class="blog-post blog-post-ember mb-5 d-block"
               href="{{post.url}}">
               <div class="blog-post-wrapper">
-                <p class="blog-post-category">
+                <div class="blog-post-category font-weight-bold mb-0">
                   {{post.category}}
-                </p>
+                </div>
                 <div class="text-dark">
                   <h2 class="mb-4 font-weight-black">
                     {{post.title}}
@@ -298,12 +298,12 @@ title: Ember
                     <img alt="Image" class="img-fluid" src="/images/authors/{{post.author | split: ' ' | first | downcase}}@2x.jpg" />
                   </div>
 
-                  <div class="text-muted">
-                    <div class="font-weight-bold">
+                  <div>
+                    <div class="font-weight-bold text-dark">
                       {{post.author | upcase}}
                     </div>
 
-                    <div class="small">
+                    <div class="small text-muted">
                       {{post.date | date: '%B %d, %Y'}}
                     </div>
                   </div>
