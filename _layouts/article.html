@@ -36,11 +36,10 @@
                 {{page.content}}
               </div>
 
-              <div class="d-flex align-items-center mt-4">
+              <div class="article-info d-flex align-items-center mt-4">
                 <div class="img-circle-lg mr-2">
                   <img alt="Image" class="{{page.author | split: ' ' | first | downcase}} img-fluid" src="/images/authors/{{page.author | split: ' ' | first | downcase}}@2x.jpg" />
                 </div>
-
                 <div class="ml-2">
                   <div class="font-weight-bold text-dark h4 align-middle d-flex align-items-center">
                     <div class="mr-2">{{page.author | upcase}}</div>
@@ -50,22 +49,31 @@
                         <img alt="Twitter Icon" src="/images/icons/twitter.svg" />
                       </a>
                       {% endif %}
-
                       {% if page.github-handle %}
                       <a class="article-info-link" href="http://github.com/{{page.github-handle}}">
                         <img alt="GitHub Icon" src="/images/icons/github.svg" />
                       </a>
                       {% endif %}
                     </div>
-
                   </div>
-
                   <div class="small text-muted">
                     {{page.date | date: '%B %d, %Y'}}
                   </div>
                 </div>
-
               </div><!--article-info-->
+
+
+              <div class="mt-5 bg-light-blue p-5">
+                <img alt="simplabs logo" class="mb-4" src="/images/simplabs-logo-blue.svg">
+
+                <p>simplabs is a Web Engineering Consultancy based in Munich, Germany. We work for clients all over the world, offering Software Engineering, Technology Consulting as well as Individual and Group Training with modern Web Technologies. We specialize in a set of conventions-based tools like Ember.js, Elixir and, Phoenix as well as Ruby on Rails and like to move fast without breaking things.</p>
+
+                <p><span class="font-weight-bold">Interested on what we can do for your business?</span> Head to <a href="/services">www.simplabs.com/services</a> for an overview of our services.</p>
+
+                <p><span class="font-weight-bold">Curious about how we work?</span> Read more about us at <a href="/about">www.simplabs.com/about</a>.</p>
+
+                
+              </div>
               
               
             </div>
