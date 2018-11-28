@@ -32,9 +32,9 @@ title: Blog
           <div class="blog">
             <div class="blog-posts">
               {% for post in site.categories.blog %}
-              <a class="blog-post blog-post-{{post.category}}" href="{{post.url}}" aria-label="{{post.title}}">
+              <a class="blog-post blog-post-{{post.category}} mb-5 d-block" href="{{post.url}}" aria-label="{{post.title}}">
                 <div class="blog-post-wrapper">
-                  <p class="blog-post-category">{{post.category}}</p>
+                  <div class="blog-post-category mb-0 font-weight-bold">{{post.category}}</div>
                   <div class="text-dark">
                     <h2 class="font-weight-black mb-4">{{post.title}}</h2>
                     <p aria-hidden="true">{{post.excerpt | strip_html}}</p>
@@ -45,12 +45,12 @@ title: Blog
                       <img alt="Image" class="img-fluid" src="/images/authors/{{post.author | split: ' ' | first | downcase}}@2x.jpg" />
                     </div>
 
-                    <div class="text-muted">
-                      <div class="font-weight-bold">
+                    <div>
+                      <div class="font-weight-bold text-dark">
                         {{post.author | upcase}}
                       </div>
 
-                      <div class="small">
+                      <div class="small text-muted">
                         {{post.date | date: '%B %d, %Y'}}
                       </div>
                     </div>
