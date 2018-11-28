@@ -41,35 +41,28 @@
                   <img alt="Image" class="{{page.author | split: ' ' | first | downcase}} img-fluid" src="/images/authors/{{page.author | split: ' ' | first | downcase}}@2x.jpg" />
                 </div>
 
-                <div>
+                <div class="ml-2">
+                  <div class="font-weight-bold text-dark h4 align-middle d-flex align-items-center">
+                    <div class="mr-2">{{page.author | upcase}}</div>
+                    <div class="text-nowrap">
+                      {% if page.twitter-handle %}
+                      <a class="article-info-link" href="http://twitter.com/{{page.twitter-handle}}">
+                        <img alt="Twitter Icon" src="/images/icons/twitter.svg" />
+                      </a>
+                      {% endif %}
 
-                  <div class="font-weight-bold text-dark h4 align-middle">
-                    {{page.author | upcase}}
-
-                    {% if page.twitter-handle %}
-                    <a class="article-info-link" href="http://twitter.com/{{page.twitter-handle}}">
-                      <img alt="Image" src="/images/icons/twitter.svg" />
-                    </a>
-                    {% endif %}
-
-                    {% if page.github-handle %}
-                    <a class="article-info-link" href="http://github.com/{{page.github-handle}}">
-                      <img alt="Image" src="/images/icons/github.svg" />
-                    </a>
-                    {% endif %}
+                      {% if page.github-handle %}
+                      <a class="article-info-link" href="http://github.com/{{page.github-handle}}">
+                        <img alt="GitHub Icon" src="/images/icons/github.svg" />
+                      </a>
+                      {% endif %}
+                    </div>
 
                   </div>
 
                   <div class="small text-muted">
                     {{page.date | date: '%B %d, %Y'}}
                   </div>
-                </div>
-
-                <div class="article-info-links ml-3">
-                  
-
-
-
                 </div>
 
               </div><!--article-info-->
