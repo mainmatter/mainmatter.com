@@ -17,7 +17,7 @@ how to turn a Single Page App into a Progressive Web App.
 
 <!--break-->
 
-## Breethe
+### Breethe
 
 Throughout this post, we will use [Breethe](https://breethe.app) as an example.
 Breethe is a Progressive Web App that gives users quick and easy access to air
@@ -36,7 +36,7 @@ To learn more about how we built Breethe with
 None of the contents in this post are specific to Glimmer.js in any way though,
 but all generally applicable to all frontend stacks.
 
-## Progressive Web Apps
+### Progressive Web Apps
 
 In short, Progressive Web Apps are **web apps that look and behave like native
 apps**. While the idea of building apps with web technologies has been around
@@ -554,7 +554,7 @@ to execute -
 completes in
 [around 1min](https://travis-ci.org/simplabs/breethe-client/jobs/403597086#L683).
 
-### Outlook
+#### Outlook
 
 This post and the
 [previous one](/blog/ember/2018/07/03/building-a-pwa-with-glimmer-js.html) have given
