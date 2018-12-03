@@ -10,6 +10,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    opacity: 0.8;
     background-blend-mode: soft-light;
     background-size: cover;
     transition: transform .75s ease-in-out;
@@ -60,7 +61,7 @@
 
 .section-client-illustration {
   overflow: hidden;
-  height: 400px;
+  height: 300px;
 }
 
 .bg-trainline {
