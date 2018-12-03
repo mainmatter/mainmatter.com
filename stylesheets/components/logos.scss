@@ -1,0 +1,14 @@
+.color-hover {
+  filter: grayscale(100%) brightness(20%);
+  -webkit-filter: grayscale(100%) brightness(20%);
+  -webkit-transition: .3s -webkit-filter linear;
+  -moz-transition: .3s -moz-filter linear;
+  -moz-transition: .3s filter linear;
+  -ms-transition: .3s -ms-filter linear;
+  -o-transition: .3s -o-filter linear;
+  transition: .3s filter linear, .3s -webkit-filter linear;
+  &:hover {
+    filter: grayscale(0%) brightness(100%);
+    -webkit-filter: grayscale(0%) brightness(100%);
+  }
+}
