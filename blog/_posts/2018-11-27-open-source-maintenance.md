@@ -20,7 +20,7 @@ code {
 }
 </style>
 
-#### Git
+### Git
 
 Version control systems have always been an important part of professional
 software development, but the development of [git] over a decade ago and the
@@ -89,7 +89,7 @@ gph
 ```
 
 
-#### Tests
+### Tests
 
 Having a good test suite is very important to be able to change code and be
 confident that the change is not breaking anything. This is one of the major
@@ -108,7 +108,7 @@ to make testing even more pleasant, including the very valuable [proptest]
 crate.
 
 
-#### Linting
+### Linting
 
 Similar to testing frameworks, a lot of ecosystems have tools to run "static
 analysis" on your code to find bugs before you even run the applications. These
@@ -122,7 +122,7 @@ Again, similar tools also exist in other ecosystems like Rust ([clippy] and
 [rustfmt]), Python ([pyflakes] and [black]) or Elixir (`mix format`).
 
 
-#### Continuous Integration
+### Continuous Integration
 
 The above points about testing and linting are nice to have, but if nobody runs
 your tests then they don't provide any value. This is where continuous
@@ -145,7 +145,7 @@ You can find instruction on how to configure this in their official
 [documentation](https://docs.travis-ci.com/user/deployment/npm/).
 
 
-#### Semantic Versioning
+### Semantic Versioning
 
 Semantic Versioning (or short "semver") is a way to assign meaning to version
 numbers, and specifically to version number changes. The official
@@ -175,7 +175,7 @@ that it works with Node.js 4, and you release a new version that needs at least
 Node.js 6, then you should increase the **major** version.
 
 
-#### Dependency Update Services
+### Dependency Update Services
 
 Any sufficiently large open source project has at least a few dependencies that
 it is built upon, and even smaller projects typically have at least a dependency
@@ -197,7 +197,7 @@ can also automatically merge those Pull Requests once CI has finished and the
 test suite passed.
 
 
-#### Changelogs
+### Changelogs
 
 While Semantic Versioning helps your users to know if they need to expect
 breaking changes from a release, it is much better to have a human-readable
@@ -230,7 +230,7 @@ An [example changelog](https://github.com/simplabs/qunit-dom/blob/master/CHANGEL
 can be seen on our qunit-dom project. 
 
 
-#### Summary
+### Summary
 
 We hope that this blog post helped you improve your processes and speed up your
 own development. If you need help with any of these topics or if you have
