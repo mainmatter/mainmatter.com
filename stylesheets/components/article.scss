@@ -25,6 +25,16 @@
     td {
       padding: .5rem;
     }
+
+    code {
+      white-space: nowrap;
+    }
+  }
+
+  p, ol, ul, table {
+    code {
+      white-space: nowrap;
+    }
   }
 }
 
