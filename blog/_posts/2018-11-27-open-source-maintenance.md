@@ -14,12 +14,6 @@ open-source and other projects.
 
 <!--break-->
 
-<style>
-code {
-  white-space: nowrap;
-}
-</style>
-
 ### Git
 
 Version control systems have always been an important part of professional
