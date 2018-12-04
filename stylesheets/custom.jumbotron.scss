@@ -2,7 +2,6 @@
 .jumbotron-fluid {
   padding: 0 1rem;
   position: relative;
-  border: 1px solid red;
   @include media-breakpoint-up(md) {
     padding: 3rem 1rem;
   }
@@ -10,7 +9,6 @@
   .container-jumbotron,
   .jumbotron-background {
     height: 100%;
-    border: 1px solid blue;
   }
 
   .container-jumbotron {
