@@ -71,19 +71,19 @@ main {
   .container + .container-fluid,
   .container-fluid + .container-fluid,
   .container-fluid + .container {
-    margin-top: 10vw;
+    margin-top: 12vw;
 
     @include media-breakpoint-up(xxl) {
-      margin-top: 7rem;
+      margin-top: 9rem;
     }
   }
 }
 
 footer {
-  margin-top: 10vw;
+  margin-top: 12vw;
 
   @include media-breakpoint-up(xxl) {
-    margin-top: 7rem;
+    margin-top: 9rem;
   }
 }
 
