@@ -1,16 +1,16 @@
-.section-client {
+.bg-hover-animate {
   position: relative;
   overflow: hidden;
-
   &::before {
     display: block;
-    content: '';
+    content: ''; 
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0.8;
+    background-repeat: no-repeat;
     background-blend-mode: soft-light;
     background-size: cover;
     transition: transform .75s ease-in-out;
@@ -56,7 +56,6 @@
 
 .section-client-logo {
   height: 5rem;
-  position: relative;
 }
 
 .section-client-illustration {
@@ -70,22 +69,6 @@
 
 .bg-timify {
   background-color: $timify !important;
-}
-
-
-
-.bg-hover-animate {
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: background-size .75s ease-in-out;
-  -moz-transition: background-size .75s ease-in-out;
-  -ms-transition: background-size .75s ease-in-out;
-  -o-transition: background-size .75s ease-in-out;
-  -webkit-transition: background-size .75s ease-in-out;
-  &:hover {
-    background-size: 110% auto;   
-  }
 }
 
 @include media-breakpoint-up(md) {

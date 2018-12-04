@@ -1,5 +1,5 @@
-<a href="/{{ include.client }}/index.html" class="d-flex align-items-stretch" aria-label="{{ include.title }}">
-  <div class="section-client section-client--{{ include.client }} text-white">
+<div class="d-flex align-items-stretch">
+  <a  href="/{{ include.client }}/index.html" class="section-client section-client--{{ include.client }} text-white bg-hover-animate" aria-label="{{ include.title }}">
     <div class="row align-items-end">
       <div class="col-md-{% if include.image_url.size > 0 %}6{% else %}12{% endif %}">
         <div class="p-5">
@@ -21,5 +21,5 @@
         </div><!--col-->
       {% endif %}
     </div><!--row-->
-  </div><!--section-client-->
-</a>
+  </a><!--section-client-->
+</div>
