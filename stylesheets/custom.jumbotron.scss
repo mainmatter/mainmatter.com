@@ -1,6 +1,5 @@
 // Common
 .jumbotron-fluid {
-  overflow: hidden;
   padding: 0 1rem;
   position: relative;
 
@@ -10,6 +9,7 @@
 
   .container-jumbotron,
   .jumbotron-background {
+    height: 100%;
   }
 
   .container-jumbotron {
