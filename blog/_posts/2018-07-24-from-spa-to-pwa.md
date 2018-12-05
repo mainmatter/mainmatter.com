@@ -32,7 +32,7 @@ The application is [open source](https://github.com/simplabs/breethe-client)
 and we encourage everyone interested to look through the source for reference.
 To learn more about how we built Breethe with
 [Glimmer.js](http://glimmerjs.com), refer to the
-[previous post in this series](/blog/ember/2018/07/03/building-a-pwa-with-glimmer-js.html).
+[previous post in this series](/blog/2018/07/03/building-a-pwa-with-glimmer-js.html).
 None of the contents in this post are specific to Glimmer.js in any way though,
 but all generally applicable to all frontend stacks.
 
@@ -557,7 +557,7 @@ completes in
 #### Outlook
 
 This post and the
-[previous one](/blog/ember/2018/07/03/building-a-pwa-with-glimmer-js.html) have given
+[previous one](/blog/2018/07/03/building-a-pwa-with-glimmer-js.html) have given
 an overview of how to write an SPA (in this case with Glimmer.js) and then
 turning that into a [Progressive Web App](http://breethe.app). With Breethe, we
 haven't stopped there though but employed server side rendering to combine the
