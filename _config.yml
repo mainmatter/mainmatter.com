@@ -3,7 +3,7 @@ name: simplabs.com
 sass:
   sass_dir: stylesheets
 
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-feed
