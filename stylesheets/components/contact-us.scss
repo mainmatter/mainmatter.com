@@ -80,6 +80,7 @@
         transform: translate(-50%, -50%);
         transition: opacity 0.2s ease;
         width: 90%;
+        z-index: 10;
 
         @include media-breakpoint-up(lg) {
           width: 86%;
@@ -102,6 +103,7 @@
         transform: translate(-50%, -50%);
         transition: opacity 0.2s ease-in-out;
         width: 100%;
+        z-index: 9;
 
         .submission-state-icon {
           text-align: center;
