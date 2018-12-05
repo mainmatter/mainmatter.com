@@ -149,25 +149,34 @@ title:
     </div>
     <div class="row">
       <div class="col-sm-12 col-md-4">
+        {% capture news-1 %}
+          We are happy to be sponsoring EmberConf again in 2019. If you're going to be in Portland, make sure to connect with our team!
+        {% endcapture %}
         {% include news_card.html 
           title="Meet us at EmberConf"
-          content="We are happy to be sponsoring EmberConf again in 2019. If you're going to be in Portland, make sure to connect with our team!"
+          content=news-1
           url="https://emberconf.com"
           image_url="/images/news-1.jpg"
         %}
       </div><!--col-->
       <div class="col-sm-12 col-md-4">
+        {% capture news-2 %}
+          We are part of the organisational committee behind EmberFest. This year, we also sponsored the video recordings of all talks which are <a href="https://www.youtube.com/watch?v=oRzmDobMZ_Q&list=PLN4SpDLOSVkSB9034lDNdP1JoNBGssax9">now available on YouTube</a>. We hope everyone enjoys the videos and are already looking forward to another great EmberFest in 2019!
+        {% endcapture %}
         {% include news_card.html 
           title="EmberFest 2018 Videos"
-          content="We are part of the organisational committee behind EmberFest. This year, we also sponsored the video recordings of all talks which are now available on YouTube. We hope everyone enjoys the videos and are already looking forward to another great EmberFest in 2019!"
+          content=news-2
           url="https://www.youtube.com/watch?v=oRzmDobMZ_Q&list=PLN4SpDLOSVkSB9034lDNdP1JoNBGssax9"
           image_url="/images/news-2.jpg"
         %}
       </div><!--col-->
       <div class="col-sm-12 col-md-4">
+        {% capture news-3 %}
+          We are happy to launch Breethe, a Progressive Web App for accessing air quality data for locations around the world. We built Breethe with Glimmer.js so that it would be blazing fast and lightweight. It is server side rendered, works offline and even with JavaScript disabled!
+        {% endcapture %}
         {% include news_card.html 
           title="Launching Breethe"
-          content="We are happy to launch Breethe, a Progressive Web App for accessing air quality data for locations around the world. We built Breethe with Glimmer.js so that it would be blazing fast and lightweight. It is server side rendered, works offline and even with JavaScript disabled!"
+          content=news-3
           url="http://codebot.chat/"
           image_url="/images/news-3.jpg"
         %}
