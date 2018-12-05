@@ -54,7 +54,7 @@ body {
 header {
   padding-bottom: 7.5vw;
   padding-top: 12.5vw;
-  overflow: hidden;
+  overflow: visible;
   @include media-breakpoint-up(md) {
     padding-top: 0;
   }
