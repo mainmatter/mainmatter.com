@@ -5,7 +5,7 @@ title: "Ember Simple Auth 1.0 - a first look"
 author: "Marco Otte-Witte"
 github-handle: marcoow
 twitter-handle: marcoow
-category: ember
+topic: ember
 ---
 
 The **first beta of Ember Simple Auth 1.0 will be released soon** and this post provides a first look at the changes that come with it.

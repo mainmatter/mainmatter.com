@@ -5,7 +5,7 @@ title: Creating Web Components with Glimmer
 author: "Jessica Jordan"
 github-handle: jessica-jordan
 twitter-handle: jjordan_dev
-category: ember
+topic: ember
 ---
 
 At [this year's EmberConf the Ember core team officially announced](https://youtu.be/TEuY4GqwrUE?t=58m43s) the release of [Glimmer](https://glimmerjs.com/) - a light-weight JavaScript library aimed to provide a useful toolset for **creating fast and reusable UI components**. Powered by the already battle-tested Ember-CLI, developers can build their Glimmer apps in an easy and efficient manner as they already came to love building applications in Ember.js before.

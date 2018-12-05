@@ -5,7 +5,7 @@ title: "Using Ember Simple Auth with ember-cli"
 author: "Marco Otte-Witte"
 github-handle: marcoow
 twitter-handle: marcoow
-category: ember
+topic: ember
 ---
 
 With the latest release of [Ember Simple Auth](https://github.com/simplabs/ember-simple-auth), using the library with [ember-cli](https://github.com/ember-cli/ember-cli) has become much simpler. As ember-cli in general is still pretty new to many people though, **this post describes how to setup a project using Ember Simple Auth with ember-cli**.

@@ -5,7 +5,7 @@ title: "Open Source Maintenance"
 author: "Tobias Bieniek"
 github-handle: Turbo87
 twitter-handle: tobiasbieniek
-category: misc
+topic: misc
 ---
 
 People often ask us how we can handle maintaining a large number of open-source

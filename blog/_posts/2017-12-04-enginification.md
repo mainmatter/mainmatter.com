@@ -5,7 +5,7 @@ title: Enginification
 author: "Clemens Müller"
 github-handle: pangratz
 twitter-handle: pangratz
-category: ember
+topic: ember
 ---
 
 We recently improved the initial load time of an Ember.js app for mobile

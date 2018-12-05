@@ -5,7 +5,7 @@ title: "Using ember-freestyle as a component playground"
 author: "Tobias Bieniek"
 github-handle: Turbo87
 twitter-handle: tobiasbieniek
-category: ember
+topic: ember
 ---
 
 A component playground is an application that you can use to test out and

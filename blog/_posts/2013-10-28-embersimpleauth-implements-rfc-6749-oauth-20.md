@@ -5,7 +5,7 @@ title: "Ember.SimpleAuth implements RFC 6749 (OAuth 2.0)"
 author: "Marco Otte-Witte"
 github-handle: marcoow
 twitter-handle: marcoow
-category: ember
+topic: ember
 ---
 
 **Update: [Ember.SimpleAuth 0.1.0 has been released!](http://simplabs.com/blog/2014/01/20/embersimpleauth-010.html)** The information in this is (partially) outdated.

@@ -5,7 +5,7 @@ title: "Authentication in ember.js"
 author: "Marco Otte-Witte"
 github-handle: marcoow
 twitter-handle: marcoow
-category: ember
+topic: ember
 ---
 
 **Update:**_I released an Ember.js plugin that makes it very easy to implement an authentication system as described in this post: [Ember.SimpleAuth](http://simplabs.com/blog/2013/10/09/embersimpleauth.html)._

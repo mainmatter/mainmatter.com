@@ -5,7 +5,7 @@ title: "From SPA to PWA"
 author: "Marco Otte-Witte"
 github-handle: marcoow
 twitter-handle: marcoow
-category: javascript
+topic: javascript
 ---
 
 Progressive Web Apps are the next level of browser based applications. While

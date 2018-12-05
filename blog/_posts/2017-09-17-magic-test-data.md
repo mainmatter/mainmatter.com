@@ -5,7 +5,7 @@ title: Magic Data in Tests
 author: "Andy Brown"
 github-handle: geekygrappler
 twitter-handle: geekygrappler
-category: misc
+topic: misc
 ---
 
 Often when working on large codebases, my changes break some existing tests. While I would prefer my coding to be perfect, it's highly unlikely that I'll ever achieve the state of coding zen, so it's nice to know I have a test suite to catch me when I fall. Given that the codebase is large and in the majority not written by me, I tend to be introduced to code via the test files. One important principle I've started to follow when writing and refactoring tests is AAA. 

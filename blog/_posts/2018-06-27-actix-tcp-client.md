@@ -5,7 +5,7 @@ title: "actix – a basic TCP client"
 author: "Tobias Bieniek"
 github-handle: Turbo87
 twitter-handle: tobiasbieniek
-category: rust
+topic: rust
 ---
 
 In our [last post] about [actix] we introduced you to the [Rust] programming

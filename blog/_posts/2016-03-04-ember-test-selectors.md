@@ -5,7 +5,7 @@ title: Using better element selectors in Ember.js tests
 author: "Marco Otte-Witte"
 github-handle: marcoow
 twitter-handle: marcoow
-category: ember
+topic: ember
 ---
 
 We just released [ember-test-selectors](https://github.com/simplabs/ember-test-selectors), an __Ember Addon that enables better element selectors in Ember.js tests__. It removes all data attributes starting with `data-test-` from the application's templates in the `production` environment so that these attributes can be used to select elements with in acceptance and integration tests without polluting the markup that is delivered to the end user.

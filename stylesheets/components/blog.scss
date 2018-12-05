@@ -37,18 +37,18 @@
   }
 }
 
-.blog-post-category {
+.blog-post-topic {
   color: $text;
 }
 
 .blog-post-elixir {
-  .blog-post-category {
+  .blog-post-topic {
     color: $elixir;
   }
 }
 
 .blog-post-ember {
-  .blog-post-category {
+  .blog-post-topic {
     color: $ember;
   }
 }
@@ -56,7 +56,7 @@
 .blog-post-ruby {
   border-left-color: $ruby;
 
-  .blog-post-category {
+  .blog-post-topic {
     color: $ruby;
   }
 }
@@ -64,7 +64,7 @@
 .blog-post-misc {
   border-left-color: $misc;
 
-  .blog-post-category {
+  .blog-post-topic {
     color: $misc;
   }
 }
@@ -72,7 +72,7 @@
 .blog-post-javascript {
   border-left-color: $js;
 
-  .blog-post-category {
+  .blog-post-topic {
     color: $js;
   }
 }
@@ -80,7 +80,7 @@
 .blog-post-rust {
   border-left-color: $rust;
 
-  .blog-post-category {
+  .blog-post-topic {
     color: $rust;
   }
 }

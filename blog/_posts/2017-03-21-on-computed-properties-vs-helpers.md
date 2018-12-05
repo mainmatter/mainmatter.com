@@ -5,7 +5,7 @@ title: On Computed Properties vs. Helpers
 author: "Marco Otte-Witte"
 github-handle: marcoow
 twitter-handle: marcoow
-category: ember
+topic: ember
 ---
 
 Ember's computed properties are a great mechanism for encapsulating reactive

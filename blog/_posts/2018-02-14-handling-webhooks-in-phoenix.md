@@ -4,7 +4,7 @@ section: Blog
 title: Handling Webhooks in Phoenix
 author: "Niklas Long"
 github-handle: niklaslong
-category: elixir
+topic: elixir
 ---
 
 I recently had to implement a controller, which took care of receiving and processing webhooks. The thing is, the application had to handle webhooks which often contained very different information, and they were all going to one route and one controller action. This didn't really seem to fit with my goal of keeping controller actions concise and focused. So I set out to find a better solution.

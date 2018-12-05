@@ -5,7 +5,7 @@ title: "Ember.js Workshop in Munich, July 22nd-24th"
 author: "Marco Otte-Witte"
 github-handle: marcoow
 twitter-handle: marcoow
-category: ember
+topic: ember
 ---
 
 We are organizing a [three day Ember.js Workshop in Munich from July 22nd to 24th](http://ember-workshop.simplabs.com), **taking participants through building a full Ember.js application**. 

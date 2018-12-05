@@ -5,7 +5,7 @@ title: "Testing with Ember Simple Auth and Ember CLI"
 author: "Marco Otte-Witte"
 github-handle: marcoow
 twitter-handle: marcoow
-category: ember
+topic: ember
 ---
 
 [The last blog post](http://simplabs.com/blog/2014/06/30/using-ember-simple-auth-with-ember-cli.html "Using Ember Simple Auth with ember-cli") showed how to use [Ember Simple Auth](https://github.com/simplabs/ember-simple-auth) with [Ember CLI](https://github.com/ember-cli/ember-cli) to implement session handling and authentication. **This post shows how to test that code**.
