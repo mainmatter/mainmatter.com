@@ -1,0 +1,913 @@
+// Common
+.jumbotron-fluid {
+  padding: 0 1rem;
+  position: relative;
+  @include media-breakpoint-up(md) {
+    padding: 3rem 1rem;
+    min-height: 32vh;
+  }
+
+  .container-jumbotron,
+  .jumbotron-background {
+    height: 100%;
+  }
+
+  .container-jumbotron {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  .jumbotron-header-wrapper {
+    .jumbotron-header {
+      color: $headlines;
+      font-size: 3em;
+      font-weight: $font-weight-black;
+      letter-spacing: 0.0375em;
+      line-height: 1.25em;
+
+      @include media-breakpoint-up(md) {
+        font-size: 5em;
+        letter-spacing: 0.0375em;
+        line-height: 1.2em;
+      }
+    }
+  }
+
+  .jumbotron-background {
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: -1;
+
+    @include media-breakpoint-up(md) {
+      width: 90em;
+    }
+
+    .jumbotron-background-item {
+      border: none;
+      border-radius: 50%;
+      overflow: hidden;
+      position: absolute;
+
+      &:nth-child(1) {
+        height: 12em;
+        left: -18%;
+        top: 60%;
+        transform: translateY(-50%);
+        width: 12em;
+
+        @include media-breakpoint-up(sm) {
+          top: 50%;
+          left: -10%;
+        }
+      }
+
+      > .jumbotron-background-item-image {
+        position: absolute;
+      }
+    }
+  }
+}
+
+// Page specific
+.jumbotron-fluid-homepage {
+  @include media-breakpoint-up(md) {
+    height: calc(100vH - 3.625rem);
+
+    .jumbotron-header-wrapper {
+      .jumbotron-header {
+        font-size: 6rem;
+      }
+    }
+  }
+
+  .jumbotron-background {
+    .jumbotron-background-item {
+      &:nth-child(1) {
+        @include media-breakpoint-up(md) {
+          height: 32em;
+          width: 32em;
+        }
+      }
+
+      &:nth-child(2) {
+        background-color: $trainline;
+        height: 10em;
+        right: 25%;
+        top: 5%;
+        width: 10em;
+
+        > .jumbotron-background-item-image {
+          max-width: 100%;
+          top: 18%;
+        }
+      }
+
+      &:nth-child(3) {
+        background-color: $timify;
+        height: 8em;
+        right: 15%;
+        bottom: 15%;
+        width: 8em;
+
+        > .jumbotron-background-item-image {
+          left: 18%;
+          max-width: 36em;
+          top: 18%;
+        }
+      }
+
+      &:nth-child(4) {
+        background-color: $expedition;
+        height: 10em;
+        right: 10%;
+        top: 25%;
+        width: 10em;
+
+        > .jumbotron-background-item-image {
+          left: 18%;
+          max-width: 150%;
+          top: 18%;
+        }
+      }
+
+      &.jumbotron-background-item-secondary {
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.jumbotron-fluid-services {
+  .jumbotron-background {
+    .jumbotron-background-item {
+      &:nth-child(2) {
+        height: 6em;
+        left: 62%;
+        top: 80%;
+        width: 6em;
+      }
+
+      &:nth-child(3) {
+        height: 4em;
+        right: 20%;
+        top: 0;
+        width: 4em;
+      }
+
+      &:nth-child(4) {
+        height: 18em;
+        left: 75%;
+        top: 15%;
+        width: 18em;
+      }
+
+      &.jumbotron-background-item-secondary {
+        background-color: $blue;
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.jumbotron-fluid-software-engineering {
+  .jumbotron-background {
+    .jumbotron-background-item {
+      &:nth-child(2) {
+        height: 6em;
+        left: 54%;
+        top: 0;
+        width: 6em;
+      }
+
+      &:nth-child(3) {
+        height: 4em;
+        left: 72%;
+        top: 80%;
+        width: 4em;
+      }
+
+      &:nth-child(4) {
+        height: 14em;
+        left: 86%;
+        top: 4%;
+        width: 14em;
+      }
+
+      &.jumbotron-background-item-secondary {
+        background-color: $blue;
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.jumbotron-fluid-team-augmentation {
+  .jumbotron-background {
+    .jumbotron-background-item {
+      &:nth-child(2) {
+        height: 14em;
+        left: 60%;
+        top: 0;
+        width: 14em;
+      }
+
+      &:nth-child(3) {
+        height: 4em;
+        left: 72%;
+        top: 80%;
+        width: 4em;
+      }
+
+      &:nth-child(4) {
+        height: 6em;
+        left: 86%;
+        top: 20%;
+        width: 6em;
+      }
+
+      &.jumbotron-background-item-secondary {
+        background-color: $blue;
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.jumbotron-fluid-training {
+  .jumbotron-background {
+    .jumbotron-background-item {
+      &:nth-child(2) {
+        height: 4em;
+        left: 74%;
+        top: 82%;
+        width: 4em;
+      }
+
+      &:nth-child(3) {
+        height: 6em;
+        left: 78%;
+        top: 0;
+        width: 6em;
+      }
+
+      &:nth-child(4) {
+        height: 14em;
+        left: 86%;
+        top: 38%;
+        width: 14em;
+      }
+
+      &.jumbotron-background-item-secondary {
+        background-color: $blue;
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.jumbotron-fluid-work {
+  .jumbotron-background {
+    .jumbotron-background-item {
+      &:nth-child(2) {
+        height: 4em;
+        left: 54%;
+        top: 82%;
+        width: 4em;
+      }
+
+      &:nth-child(3) {
+        height: 6em;
+        left: 64%;
+        top: 0;
+        width: 6em;
+      }
+
+      &:nth-child(4) {
+        height: 18em;
+        left: 82%;
+        top: 6%;
+        width: 18em;
+      }
+
+      &.jumbotron-background-item-secondary {
+        background-color: $blue;
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.jumbotron-fluid-contact-us {
+  .jumbotron-background {
+    .jumbotron-background-item {
+      &:nth-child(2) {
+        height: 6em;
+        left: 56%;
+        top: 74%;
+        width: 6em;
+      }
+
+      &:nth-child(3) {
+        height: 4em;
+        left: 68%;
+        top: 0;
+        width: 4em;
+      }
+
+      &:nth-child(4) {
+        height: 18em;
+        left: 80%;
+        top: 24%;
+        width: 18em;
+      }
+
+      &.jumbotron-background-item-secondary {
+        background-color: $blue;
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.jumbotron-fluid-timify {
+  .jumbotron-background {
+    .jumbotron-background-item {
+      &:nth-child(2) {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 5em;
+        justify-content: center;
+        left: 80%;
+        top: 66%;
+        width: 5em;
+
+        @include media-breakpoint-up(md) {
+          height: 8em;
+          left: 58%;
+          top: 0;
+          width: 8em;
+        }
+
+        > .jumbotron-background-item-image {
+          max-width: 1.75em;
+
+          @include media-breakpoint-up(md) {
+            max-width: 3em;
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        display: none;
+        height: 4em;
+        left: 72%;
+        top: 84%;
+        width: 4em;
+      }
+
+      &:nth-child(4) {
+        height: 22em;
+        left: 78%;
+        top: 4%;
+        width: 22em;
+
+        > .jumbotron-background-item-image {
+          left: 22%;
+          max-width: 36em;
+          top: 24%;
+        }
+      }
+
+      &:nth-child(3),
+      &:nth-child(4) {
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+
+      &.jumbotron-background-item-secondary {
+        background-color: $timify;
+      }
+    }
+  }
+}
+
+.jumbotron-fluid-trainline {
+  .jumbotron-background {
+    .jumbotron-background-item {
+      &:nth-child(2) {
+        display: none;
+        height: 4em;
+        left: 50%;
+        top: 0;
+        width: 4em;
+      }
+
+      &:nth-child(3) {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 5em;
+        justify-content: center;
+        left: 72%;
+        top: -30%;
+        width: 5em;
+
+        @include media-breakpoint-up(md) {
+          height: 9em;
+          left: 66%;
+          top: 66%;
+          width: 9em;
+        }
+
+        > .jumbotron-background-item-image {
+          max-width: 4em;
+
+          @include media-breakpoint-up(md) {
+            max-width: 7.25em;
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        height: 20em;
+        left: 82%;
+        top: 4%;
+        width: 20em;
+
+        > .jumbotron-background-item-image {
+          left: 50%;
+          top: 16%;
+          transform: translateX(-50%);
+        }
+      }
+
+      &:nth-child(2),
+      &:nth-child(4) {
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+
+      &.jumbotron-background-item-secondary {
+        background-color: $trainline;
+      }
+    }
+  }
+}
+
+.jumbotron-fluid-expedition {
+  .jumbotron-background {
+    .jumbotron-background-item {
+      &:nth-child(2) {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 5em;
+        justify-content: center;
+        left: 72%;
+        top: 56%;
+        width: 5em;
+
+        @include media-breakpoint-up(md) {
+          height: 7em;
+          left: 60%;
+          top: 0;
+          width: 7em;
+        }
+
+        > .jumbotron-background-item-image {
+          max-width: 3em;
+
+          @include media-breakpoint-up(md) {
+            max-width: 4.25em;
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        display: none;
+        height: 4em;
+        left: 70%;
+        top: 72%;
+        width: 4em;
+      }
+
+      &:nth-child(4) {
+        height: 22em;
+        left: 82%;
+        top: 24%;
+        width: 22em;
+
+        > .jumbotron-background-item-image {
+          left: 18%;
+          max-width: 30em;
+          top: 18%;
+        }
+      }
+
+      &:nth-child(3),
+      &:nth-child(4) {
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+
+      &.jumbotron-background-item-secondary {
+        background-color: $expedition;
+      }
+    }
+  }
+}
+
+.jumbotron-fluid-dd-wrt {
+  .jumbotron-header-wrapper {
+    @include media-breakpoint-up(md) {
+      max-width: 60em;
+    }
+  }
+
+  .jumbotron-background {
+    .jumbotron-background-item {
+      &:nth-child(2) {
+        display: none;
+        height: 4em;
+        left: 58%;
+        top: 0;
+        width: 4em;
+      }
+
+      &:nth-child(3) {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 5em;
+        justify-content: center;
+        left: 72%;
+        top: 56%;
+        width: 5em;
+
+        @include media-breakpoint-up(md) {
+          height: 9em;
+          left: 68%;
+          top: 64%;
+          width: 9em;
+        }
+
+        > .jumbotron-background-item-image {
+          max-width: 4em;
+
+          @include media-breakpoint-up(md) {
+            max-width: 7.25em;
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        height: 22em;
+        left: 78%;
+        top: 2%;
+        width: 22em;
+
+        > .jumbotron-background-item-image {
+          left: 20%;
+          max-width: 150%;
+          top: 18%;
+        }
+      }
+
+      &:nth-child(2),
+      &:nth-child(4) {
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+
+      &.jumbotron-background-item-secondary {
+        background-color: $dd-wrt;
+      }
+    }
+  }
+}
+
+.jumbotron-fluid-ember {
+  .jumbotron-header-wrapper {
+    max-width: 52em;
+  }
+
+  .jumbotron-background {
+    .jumbotron-background-item {
+      &:nth-child(2) {
+        display: none;
+        height: 6em;
+        left: 54%;
+        top: 0;
+        width: 6em;
+      }
+
+      &:nth-child(3) {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 5em;
+        justify-content: center;
+        left: 70%;
+        top: 0;
+        width: 5em;
+
+        @include media-breakpoint-up(md) {
+          height: 20em;
+          left: 70%;
+          top: 4%;
+          width: 20em;
+        }
+
+        > .jumbotron-background-item-image {
+          max-width: 3.1875em;
+
+          @include media-breakpoint-up(md) {
+            max-width: 12.875em;
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        height: 4em;
+        left: 84%;
+        top: 82%;
+        width: 4em;
+      }
+
+      &:nth-child(2),
+      &:nth-child(4) {
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+
+      &.jumbotron-background-item-secondary {
+        background-color: $ember;
+      }
+    }
+  }
+}
+
+.jumbotron-fluid-elixir {
+  .jumbotron-background {
+    .jumbotron-background-item {
+      &:nth-child(2) {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 5em;
+        justify-content: center;
+        left: 70%;
+        top: -50%;
+        width: 5em;
+
+        @include media-breakpoint-up(md) {
+          height: 6em;
+          left: 60%;
+          top: 0;
+          width: 6em;
+        }
+
+        > .jumbotron-background-item-image {
+          max-height: 2em;
+
+          @include media-breakpoint-up(md) {
+            max-height: 1.6875em;
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 5em;
+        justify-content: center;
+        left: 80%;
+        top: 46%;
+        width: 5em;
+
+        @include media-breakpoint-up(md) {
+          height: 17em;
+          left: 70%;
+          top: 12%;
+          width: 17em;
+        }
+
+        > .jumbotron-background-item-image {
+          max-width: 2.5625em;
+
+          @include media-breakpoint-up(md) {
+            max-width: 8.75em;
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        display: none;
+      }
+
+      &.jumbotron-background-item-secondary {
+        background-color: $elixir;
+      }
+    }
+  }
+}
+
+.jumbotron-fluid-about {
+  .jumbotron-background {
+    .jumbotron-background-item {
+      &:nth-child(2) {
+        height: 6em;
+        left: 62%;
+        top: 74%;
+        width: 6em;
+      }
+
+      &:nth-child(3) {
+        height: 4em;
+        left: 72%;
+        top: 10%;
+        width: 4em;
+      }
+
+      &:nth-child(4) {
+        height: 17em;
+        left: 84%;
+        top: 8%;
+        width: 17em;
+      }
+
+      &.jumbotron-background-item-secondary {
+        background-color: $blue;
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.jumbotron-fluid-blog {
+  .jumbotron-background {
+    .jumbotron-background-item {
+      &:nth-child(2) {
+        height: 7em;
+        left: 60%;
+        top: 62%;
+        width: 7em;
+      }
+
+      &:nth-child(3) {
+        height: 4em;
+        left: 82%;
+        top: 0;
+        width: 4em;
+      }
+
+      &:nth-child(4) {
+        height: 20em;
+        left: 80%;
+        top: 26%;
+        width: 20em;
+      }
+
+      &.jumbotron-background-item-secondary {
+        background-color: $blue;
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.jumbotron-fluid-article {
+  .jumbotron-background {
+    .jumbotron-background-item {
+      &:nth-child(2) {
+        height: 4em;
+        left: 64%;
+        top: 0;
+        width: 4em;
+      }
+
+      &:nth-child(3) {
+        height: 20em;
+        left: 80%;
+        top: 4%;
+        width: 20em;
+      }
+
+      &:nth-child(4) {
+        height: 7em;
+        left: 84%;
+        top: 76%;
+        width: 7em;
+      }
+
+      &.jumbotron-background-item-secondary {
+        background-color: $blue;
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.jumbotron-fluid-imprint {
+  .jumbotron-background {
+    .jumbotron-background-item {
+      &:nth-child(2) {
+        height: 6em;
+        left: 62%;
+        top: 80%;
+        width: 6em;
+      }
+
+      &:nth-child(3) {
+        height: 4em;
+        right: 20%;
+        top: 20%;
+        width: 4em;
+      }
+
+      &:nth-child(4) {
+        display: none;
+      }
+
+      &.jumbotron-background-item-secondary {
+        background-color: $blue;
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+    }
+  }
+}

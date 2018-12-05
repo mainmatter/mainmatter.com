@@ -1,9 +1,9 @@
 name: simplabs.com
 
 sass:
-  sass_dir: css
+  sass_dir: stylesheets
 
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-feed
@@ -15,26 +15,12 @@ kramdown:
   input: GFM
 
 excerpt_separator: <!--break-->
-  
-navigation:
-  - title: Services
-    url: /services/
-  - title: Work
-    url: /work/
-  - title: Training
-    url: /training/
-  - title: About
-    url: /about/
-  - title: Clients
-    url: /clients/
-  - title: Blog
-    url: /blog/
 
 title: simplabs
 author: simplabs
 description: Solid engineering for ambitious projects
 
-url: http://simplabs.com
+url: https://simplabs.com
 logo: /images/apple-144.png
 
 twitter:
@@ -42,15 +28,16 @@ twitter:
 facebook:
   publisher: https://www.facebook.com/simplabs/
 
-exclude: [vendor]
+exclude: [vendor, Gemfile, Gemfile.lock, README.md]
 
 defaults:
   -
     scope:
       path: ""
     values:
-      image: 
+      image:
         twitter: /images/apple-144.png
         facebook: /images/apple-144.png
         height: 144
         width: 144
+

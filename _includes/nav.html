@@ -1,36 +1,37 @@
-<nav id="main-menu" class="navbar navbar-static-top" role="navigation">
+<input class="toggler" id="toggler" role="button" type="checkbox">
+
+<nav class="navbar navbar-expand-md navbar-light fixed-top">
   <div class="container">
-    <div class="row">
-      <div class="col-sm-12 col-xs-12">
-        <div class="navbar-header">
-          <span class="navbar-left">
-            <a class="navbar-brand" href="/">
-              <img src="/images/logo.png" srcset="/images/logo@2x.png 2x" alt="simplabs logo">
-            </a>
-          </span>
-          <label for="menu-toggle" class="navbar-toggle collapsed">
-            <i class="fa fa-bars"></i>
-          </label>
+      <a class="navbar-brand" href="/">
+        <img alt="Simplabs" src="/images/simplabs-logo-blue.svg" />
+      </a>
+
+      <label class="navbar-toggler" for="toggler">
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+      </label>
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item nav-item-services">
+                    <a class="nav-link" href="/services/index.html">Services</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/work/index.html">Work</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/index.html">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/blog/index.html">Blog</a>
+                </li>
+            </ul>
+
+            <a class="btn btn-work-with-us" href="/contact/index.html" role="button">Work with us</a>
         </div>
-        <input type="checkbox" id="menu-toggle" class="hidden"/>
-          <ul class="nav navbar-nav">
-            <li class="navbar-left">
-              <a class="navbar-brand" href="/">
-                <img src="/images/logo.png" srcset="/images/logo@2x.png 2x" alt="simplabs logo">
-              </a>
-            </li>
-            {% for link in site.navigation %}
-              {% assign active = false %}
-              {% if page.url contains link.url %}
-                {% assign active = 'active' %}
-              {% endif %}
-              <li class="page">
-                <a href="{{link.url}}" class="{{active}}"><span>{{link.title}}</span></a>
-              </li>
-            {% endfor %}
-            <li class="navbar-right"><a href="/contact/">Contact Us</a></li>
-          </ul>
-      </div>
     </div>
-  </div>
 </nav>

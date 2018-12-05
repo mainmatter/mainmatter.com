@@ -1,0 +1,45 @@
+.article {
+  h2,h3,h4 {
+    margin-bottom: .5em;
+  }
+
+  img {
+  	max-width: 100%;
+  }
+
+  iframe {
+  	margin: .5em 0;
+  }
+
+  pre, ol, ul, table {
+    margin-bottom: 2em;
+  }
+
+  table {
+    width: 100%;
+
+    tr:nth-child(odd) {
+      background: #f8f8f8;
+    }
+
+    td {
+      padding: .5rem;
+    }
+
+    code {
+      white-space: nowrap;
+    }
+  }
+
+  p, ol, ul, table {
+    code {
+      white-space: nowrap;
+    }
+  }
+}
+
+.article-info-link {
+  img {
+    width: 25px;
+  }
+}

@@ -3,28 +3,68 @@ layout: default
 title: Blog
 ---
 
-{% include blog_header.html %}
+<header class="page-blog">
+  <div class="jumbotron jumbotron-fluid jumbotron-fluid-blog">
+    <div class="container container-jumbotron">
+      <div class="jumbotron-header-wrapper">
+        <h1 class="jumbotron-header">
+          Blog
+        </h1>
+      </div>
+    </div>
 
-<div class="container articles" id="main-section">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1 col-sm-12">
-      {% for post in site.categories.blog %}
-        <div class="row content-section separated">
-          <div class="col-sm-12">
-            <p class="article-meta">
-              <span class="date">{{post.date | date: '%B %d, %Y'}}</span>
-              <span class="author pull-right">{{post.author | upcase}}</span>
-            </p>
-            <h3>
-              <a href="{{post.url}}">{{post.title}}</a>
-            </h3>
-            {{post.excerpt}}
-            <a href="{{post.url}}" class="custom-button">Read on</a>
-          </div>
-        </div>
-      {% endfor %}
+    <div class="jumbotron-background">
+      <div class="jumbotron-background-item jumbotron-background-item-primary">
+        <img alt="Image" class="img-fluid jumbotron-background-item-image" src="../images/jumbotron/jumbotron-background-item.png" />
+      </div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
     </div>
   </div>
-</div>
+</header>
 
-{% include contact_banner.html %}
+<main>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-8">
+          <div class="blog">
+            <div class="blog-posts">
+              {% for post in site.categories.blog %}
+              <a class="blog-post blog-post-{{post.category}} mb-5 d-block" href="{{post.url}}" aria-label="{{post.title}}">
+                <div class="blog-post-wrapper">
+                  <div class="blog-post-category mb-0 font-weight-bold">{{post.category}}</div>
+                  <div class="text-dark">
+                    <h2 class="font-weight-black mb-4">{{post.title}}</h2>
+                    <p aria-hidden="true">{{post.excerpt | strip_html}}</p>
+                  </div>
+
+                  <div class="d-flex align-items-center mt-4">
+                    <div class="img-circle mr-2">
+                      <img alt="Image" class="img-fluid" src="/images/authors/{{post.author | split: ' ' | first | downcase}}@2x.jpg" />
+                    </div>
+
+                    <div>
+                      <div class="font-weight-bold text-dark">
+                        {{post.author}}
+                      </div>
+
+                      <div class="small text-muted">
+                        {{post.date | date: '%B %d, %Y'}}
+                      </div>
+                    </div>
+                  </div><!--blog-post-info-->
+
+                </div>
+              </a>
+              {% endfor %}
+            </div><!--blog-posts-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include contact_banner.html %}
+</main>

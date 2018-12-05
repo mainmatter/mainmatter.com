@@ -5,6 +5,7 @@ title: Creating Web Components with Glimmer
 author: "Jessica Jordan"
 github-handle: jessica-jordan
 twitter-handle: jjordan_dev
+category: ember
 ---
 
 At [this year's EmberConf the Ember core team officially announced](https://youtu.be/TEuY4GqwrUE?t=58m43s) the release of [Glimmer](https://glimmerjs.com/) - a light-weight JavaScript library aimed to provide a useful toolset for **creating fast and reusable UI components**. Powered by the already battle-tested Ember-CLI, developers can build their Glimmer apps in an easy and efficient manner as they already came to love building applications in Ember.js before.
@@ -329,7 +330,7 @@ And finally, we can see our Glimmer-based street map being rendered just as seen
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
   integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
 <glimmer-map height="300"></glimmer-map>
-<script src="/js/glimmer-map.js"></script>
+<script src="/assets/posts/2017-08-30-creating-web-components-with-glimmer/glimmer-map.js"></script>
 
 
 #### And the Glimmer Component story is not over yet

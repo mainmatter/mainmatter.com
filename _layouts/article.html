@@ -1,58 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include head.html %}
-	<body>
-    {% include nav.html %}
+{% include head.html %}
 
-    <div id="main-content">
-      {% include blog_header.html %}
+<body class="page-article">
+  {% include nav.html %}
+  <header>
+    <div class="jumbotron jumbotron-fluid jumbotron-fluid-article">
+      <div class="container container-jumbotron">
+        <div class="jumbotron-header-wrapper">
+          <h1 class="jumbotron-header">
+            {{page.title}}
+          </h1>
+        </div>
+      </div>
 
-      <div class="container" id="main-section">
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1 col-sm-12">
-            <div class="row content-section separated article">
-              <div class="col-sm-12">
-                <div class="article-meta">
-                  <span class="date">{{page.date | date: '%B %d, %Y'}}</span>
-                </div>
-                <h3>{{page.title}}</h3>
+      <div class="jumbotron-background">
+        <div class="jumbotron-background-item jumbotron-background-item-primary">
+          <img alt="Image" class="img-fluid jumbotron-background-item-image" src="/images/jumbotron/jumbotron-background-item.png" />
+        </div>
+        <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+        <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+        <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-8">
+          <div class="article">
+            <div class="article-content">
+
+              <div class="article-section mb-4">
                 {{page.content}}
               </div>
-            </div>
-            <div class="row content-section">
-              <div class="col-sm-12">
-                <p class="author">
-                  <i class="{{page.author | split: ' ' | first | downcase}} img-circle author"></i>
-                  <span class="author">
-                    {{page.author | upcase}}
-                  </span>
 
-                  {% if page.github-handle %}
-                    <a href="http://github.com/{{page.github-handle}}">
-                      <i class="fa fa-github"></i>
-                    </a>
-                  {% endif %}
+              <div class="article-info d-flex align-items-center mt-4">
+                <div class="img-circle-lg mr-2">
+                  <img alt="Image" class="{{page.author | split: ' ' | first | downcase}} img-fluid" src="/images/authors/{{page.author | split: ' ' | first | downcase}}@2x.jpg" />
+                </div>
+                <div class="ml-2">
+                  <div class="font-weight-bold text-dark h4 align-middle d-flex align-items-center">
+                    <div class="mr-2">{{page.author}}</div>
+                    <div class="text-nowrap">
+                      {% if page.twitter-handle %}
+                      <a class="article-info-link" href="http://twitter.com/{{page.twitter-handle}}">
+                        <img alt="Twitter Icon" src="/images/icons/twitter.svg" />
+                      </a>
+                      {% endif %}
+                      {% if page.github-handle %}
+                      <a class="article-info-link" href="http://github.com/{{page.github-handle}}">
+                        <img alt="GitHub Icon" src="/images/icons/github.svg" />
+                      </a>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="small text-muted">
+                    {{page.date | date: '%B %d, %Y'}}
+                  </div>
+                </div>
+              </div><!--article-info-->
 
-                  {% if page.twitter-handle %}
-                    <a href="http://twitter.com/{{page.twitter-handle}}">
-                      <i class="fa fa-twitter"></i>
-                    </a>
-                  {% endif %}
-                </p>
+
+              <div class="mt-5 bg-light-blue p-5">
+                <img alt="simplabs logo" class="mb-4" src="/images/simplabs-logo-blue.svg">
+
+                <p>simplabs is a Web Engineering Consultancy based in Munich, Germany. We work for clients all over the world, offering Software Engineering, Technology Consulting as well as Individual and Group Training with modern Web Technologies. We specialize in a set of conventions-based tools like Ember.js, Elixir and, Phoenix as well as Ruby on Rails and like to move fast without breaking things.</p>
+
+                <p><span class="font-weight-bold">Interested on what we can do for your business?</span> Head to <a href="/services">www.simplabs.com/services</a> for an overview of our services.</p>
+
+                <p><span class="font-weight-bold">Curious about how we work?</span> Read more about us at <a href="/about">www.simplabs.com/about</a>.</p>
+                
               </div>
+                            
             </div>
           </div>
         </div>
       </div>
-
-    {% include contact_banner.html %}
-
-    {% include cookie_banner.html %}
     </div>
+  </main>
+</body>
 
-    {% include footer.html %}
+{% include footer.html %}
 
-    {% include analytics.html %}
+{% include analytics.html %}
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
-	</body>
 </html>

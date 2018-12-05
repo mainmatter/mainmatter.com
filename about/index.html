@@ -3,50 +3,87 @@ layout: default
 title: About
 ---
 
-<div class="primary-banner">
+<header class="page-about">
+  <div class="jumbotron jumbotron-fluid jumbotron-fluid-about">
+    <div class="container container-jumbotron">
+      <div class="jumbotron-header-wrapper">
+        <h1 class="jumbotron-header">
+          we are web and open source enthusiasts
+        </h1>
+      </div>
+    </div>
+
+    <div class="jumbotron-background">
+      <div class="jumbotron-background-item jumbotron-background-item-primary">
+        <img alt="Image" class="img-fluid jumbotron-background-item-image" src="../images/jumbotron/jumbotron-background-item.png" />
+      </div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  {% capture intro_content %}
+    
+    <p>
+      simplabs was bootstrapped in Munich, Germany in 2013 as a <strong>technology consultancy focussed on modern web engineering</strong>. Since then, we have built ambitious applications for various international clients, from startups to long-established businesses.
+    </p>
+
+    <p>We are an international team of Web and Open Source enthusiasts. We value expertise and a passion for technology higher than location and work for clients across the world.</p>
+
+    <p>
+      We have written and reviewed applications for various international clients in the past, covering technology stacks from Ruby on Rails to <a href="/ember/index.html">Ember.js</a> and <a href="/elixir/index.html">Elixir/Phoenix</a>.
+    </p>
+  {% endcapture %}
   <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
-        <h2>About</h2>
-        <p>We are an international team of <strong>Web and Open Source enthusiasts</strong>.</p>
-    	</div>
-    </div>
-  </div>
-</div>
+    {% include intro.html content=intro_content %}
+  </div><!--container-->
 
-<div class="container" id="main-section">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1 col-sm-12">
-      <div class="row content-section split-section separated">
-        <div class="col-sm-6">
-          <h3>International Engineering</h3>
-        </div>
-        <div class="col-sm-6">
-          <p>simplabs has an <strong>international team</strong> with the main office located in <strong>Munich, Germany</strong>. We work for <a href="/clients/">clients all over the world</a>, offering Software Engineering, Technology Consulting as well as Individual and Group Training with modern Web Technologies.</p>
-        </div>
-      </div>
 
-      <div class="row content-section split-section separated">
-        <div class="col-sm-6">
-          <h3>Open Source</h3>
-        </div>
-        <div class="col-sm-6">
-          <p><strong>simplabs loves Open Source</strong> and we don't only <a href="/work/">use it to implement our client's projects</a> but also <strong>actively maintain</strong> <a href="https://github.com/simplabs">a number of projects ourselves</a> and contribute to some of the most advanced projects in their respective fields. These projects include <a href="http://github.com/simplabs/ember-simple-auth">Ember Simple Auth</a>, <a href="https://github.com/emberjs/data">Ember Data</a> and <a href="https://github.com/ember-cli/ember-cli">Ember CLI</a>.</p>
-          <p>Using open source ensures our <strong>projects are based on a solid foundation</strong> and benefit from the community behind it.</p>
-        </div>
-      </div>
+  <div class="container-fluid px-0">
+    <div class="row justify-content-center">
+      <div class="col-sm-12">
+        <div class="container">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-md-6 order-1">
+              <img alt="fullstack" class="mx-auto d-block img-fluid" src="../images/photo/about-preview-2.jpg">
+            </div>
+            <div class="col-md-5 order-2">
+              <div class="py-5">
+                <h2 class="font-weight-black text-dark mb-4">Moving fast without breaking things</h2>
+                <p class="lead mb-4">We have a passion for technology and value conventions-based tools. We like to move fast without breaking things and leverage extensive testing and constant reviews to ensure we deliver high quality results.</p>
+                <p class="lead">We ❤️ Open Source and take an active role in the projects that we leverage for our clients, contributing code and supporting the communities.</p>
+              </div>
+            </div>
+          </div>
+        </div><!--container-->
+      </div><!--col-->
+    </div><!--row-->
+  </div><!--container-fluid-->
 
-      <div class="row content-section split-section separated">
-        <div class="col-sm-6">
-          <h3>Community Engagement</h3>
-        </div>
-        <div class="col-sm-6">
-          <p>Our team is regularly present at <strong>international conferences</strong>. We give talks, engage in the community and help by sponsoring conferences like <a href="http://emberconf.com">EmberConf</a>, <a href="http://www.elixirconf.eu">ElixirConf.EU</a>, <a href="https://emberfest.eu">Emberfest</a>, <a href="https://www.enterjs.de">enterjs</a> and others. We also organize local user groups and help girls and women learn Rails at <a href="http://railsgirls.com">Rails Girls</a>.</p>
-          <p>Reaching out to the community is the best way to move open source forward, which <strong>eventually benefits everyone</strong>.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <div class="container-fluid px-0">
+    <div class="row justify-content-center">
+      <div class="col-sm-12">
+        <div class="container">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-md-6 order-2">
+              <img alt="fullstack" class="mx-auto d-block img-fluid" src="../images/photo/team.jpg">
+            </div>
+            <div class="col-md-5 order-1">
+              <div class="py-5">
+                <h2 class="font-weight-black text-dark mb-4">Expertise over location</h2>
+                <p class="lead mb-4">We value expertise and a passion for technology higher than location. Our distributed team of technology experts works from various locations in Europe for clients across the world.</p>
+                <p class="lead">Being a remote company doesn't mean everyone needs to be remote at all times though. We have regular company events to connect offline and spend some time together - we even invite our clients to join us!</p>
+              </div>
+            </div>
+          </div>
+        </div><!--container-->
+      </div><!--col-->
+    </div><!--row-->
+  </div><!--container-fluid-->
 
-{% include contact_banner.html %}
+
+  {% include contact_banner.html %}
+</main>

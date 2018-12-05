@@ -5,6 +5,7 @@ title: High Level Assertions with qunit-dom
 author: "Tobias Bieniek"
 github-handle: Turbo87
 twitter-handle: tobiasbieniek
+category: javascript
 ---
 
 At [EmberFest](https://emberfest.eu/) this year we presented and released
@@ -12,6 +13,8 @@ At [EmberFest](https://emberfest.eu/) this year we presented and released
 [QUnit](https://qunitjs.com/) providing High Level DOM Assertions with the
 goal to reduce test complexity for all QUnit users. This blog post will show
 you how to write simpler tests using `async/await` and `qunit-dom`.
+
+<!--break-->
 
 As an introduction to what this means let's start with an example template
 for an Ember app that we will write a test for:
@@ -29,8 +32,6 @@ for an Ember app that we will write a test for:
 
 From the template above you can see that we have essentially two states that
 we need to test: one with and one without a `username` property being set.
-
-<!--break-->
 
 
 #### Status Quo

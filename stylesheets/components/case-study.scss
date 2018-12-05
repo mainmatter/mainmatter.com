@@ -1,0 +1,79 @@
+.bg-hover-animate {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    display: block;
+    content: ''; 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+    background-size: cover;
+    transition: transform .75s ease-in-out;
+    -moz-transition: transform .75s ease-in-out;
+    -ms-transition: transform .75s ease-in-out;
+    -o-transition: transform .75s ease-in-out;
+    -webkit-transition: transform .75s ease-in-out;
+  }
+  &:hover {
+    &::before {
+      transform: scale(1.2); 
+    }
+  }
+}
+
+.section-client--trainline {
+  &::before {
+    background-color: $trainline;
+    background-image: url("../../images/trainline/case-study-background-1.jpg");
+  }
+}
+
+.section-client--dd-wrt {
+  &::before {
+    background-color: $dd-wrt;
+    background-image: url("../../images/dd-wrt/case-study-background-1.jpg");
+  }
+}
+
+.section-client--timify {
+  &::before {
+    background-color: $timify;
+    background-image: url("../../images/timify/case-study-background-1.jpg");
+  }
+}
+
+.section-client--expedition {
+  &::before {
+    background-color: $expedition;
+    background-image: url("../../images/expedition/case-study-background-1.jpg");
+  }
+}
+
+.section-client-logo {
+  height: 5rem;
+}
+
+.section-client-illustration {
+  overflow: hidden;
+  height: 300px;
+}
+
+.bg-trainline {
+  background-color: $trainline !important;
+}
+
+.bg-timify {
+  background-color: $timify !important;
+}
+
+@include media-breakpoint-up(md) {
+  .section-client-illustration {
+    overflow: hidden;
+    height: 500px;
+  }
+}

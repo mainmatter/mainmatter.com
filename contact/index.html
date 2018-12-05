@@ -1,101 +1,223 @@
 ---
 layout: default
-title: Contact
+title: Contact Us
 ---
 
-<div class="primary-banner">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
-        <h2>Contact us</h2>
-        <p>Send us an <strong>email</strong> or contact us on <strong>Twitter</strong> to discuss what we can do for you.
+<header class="page-contact-us">
+  <div class="jumbotron jumbotron-fluid jumbotron-fluid-contact-us">
+    <div class="container container-jumbotron">
+      <div class="jumbotron-header-wrapper">
+        <h1 class="jumbotron-header">
+          let us know how we can help you
+        </h1>
+      </div>
+    </div>
+
+    <div class="jumbotron-background">
+      <div class="jumbotron-background-item jumbotron-background-item-primary">
+        <img alt="Image" class="img-fluid jumbotron-background-item-image" src="../images/jumbotron/jumbotron-background-item.png" />
+      </div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container-fluid container-fluid-contact-us">
+    <div class="container container-contact-us">
+      <div class="row row-contact-us">
+        <div class="col col-contact-us">
+          <div class="contact-us">
+            <div class="contact-us-map">
+              <img alt="Image" class="contact-us-map-image img-fluid" src="../images/map.png" />
+
+              <div class="contact-us-map-popover popover popover-map bs-popover-top">
+                <img alt="simplabs logo" class="img-fluid popover-logo" src="../images/simplabs-logo-blue.svg">
+
+                <div class="popover-body">
+                  <address class="popover-address">
+                    <span>Claude-Lorrain-Str. 7</span>
+                    <span>81543 München</span>
+                    <span>Germany</span>
+                  </address>
+
+                  <a class="popover-phone" href="tel:+49 89 462 565 03" rel="nofollow">+49 89 462 565 03</a>
+
+                  <a class="popover-email" href="mailto:info@simplabs.com">info@simplabs.com</a>
+
+                  <a class="popover-link" href="https://twitter.com/simplabs">@simplabs</a>
+                </div>
+
+                <div class="arrow"></div>
+              </div>
+            </div>
+
+            <div class="contact-us-form">
+              <form class="form">
+                <div class="form-group">
+                  <label class="label" for="name">Your name</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="label" for="email">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="label" for="howCanWeHelpYou">How can we help you?</label>
+                  <textarea class="form-control form-control-textarea" id="howCanWeHelpYou" name="message" placeholder="Tell us about your project"
+                    rows="8" data-gramm_editor="false" required></textarea>
+                </div>
+
+                <div class="btn-submit-wrapper">
+                  <button type="submit" class="btn btn-ghost-white btn-submit">Submit</button>
+                </div>
+              </form>
+
+              <div class="submission-state submission-state-in-progress">
+                <div class="submission-state-icon"></div>
+
+                <p class="submission-state-text">
+                  The message is being sent…
+                </p>
+              </div>
+
+              <div class="submission-state submission-state-successful">
+                <div class="submission-state-icon">
+                  <img alt="Icon" class="img-fluid" src="../images/icons/form-submission-successful.svg" />
+                </div>
+
+                <p class="submission-state-text">
+                  Thanks, we'll be in touch!
+                </p>
+              </div>
+
+              <div class="submission-state submission-state-failed">
+                <div class="submission-state-icon">
+                  <img alt="Icon" class="img-fluid" src="../images/icons/form-submission-failed.svg" />
+                </div>
+
+                <p class="submission-state-text">
+                  An error occurred &mdash; please try again.
+                </p>
+
+                <div class="btn-go-back-wrapper">
+                  <button class="btn btn-ghost-white btn-go-back">Go back</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</main>
 
-<div class="container" id="main-section">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1 col-sm-12">
-      <div class="row content-section split-section">
-        <div class="col-sm-12">
-          <h3>Get in touch with us</h3>
-        </div>
-        <div class="col-sm-6">
-          <form id="contact-form">
-            <input type="text" name="name" placeholder="your name" required>
-            <input type="email" name="email" placeholder="your email" required>
-            <textarea name="message" placeholder="how can we help you?" required></textarea>
-            <button class="custom-button send-button" type="submit">Send</button>
-            <span class="custom-label error">Please retry.</span>
-            <span class="custom-label success">Thanks, we'll be in touch!</span>
-          </form>
-          <script>
-            Zepto(function($) {
-              function displayLabel(label) {
-                label.css({ opacity: 1 });
-                setTimeout(function() {
-                  label.css({ opacity: 0 });
-                }, 3500);
-              }
+<script>
+  Zepto(function ($) {
+    function displayLabel(label) {
+      label.css({
+        opacity: 1
+      });
+      setTimeout(function () {
+        label.css({
+          opacity: 0
+        });
+      }, 3500);
+    }
 
-              var form = $('#contact-form');
-              form.submit(function(event) {
-                event.preventDefault();
+    const submitButton = $('.btn-submit');
+    const goBackButton = $('.btn-go-back');
+    var form = $('.form');
+    form.submit(function (event) {
+      event.preventDefault();
+      hideForm().then(() => showSubmissionState('submission-state-in-progress'))
 
-                var button = form.find('button[type="submit"]');
-                button.prop('disabled', true);
-                button.text('Sending…');
-                var data = {
-                  name: form.find('[name="name"]').val(),
-                  email: $('[name="email"]').val(),
-                  message: $('[name="message"]').val()
-                };
+      function hideForm() {
+        return new Promise((resolve) => {
+          const form = $('.form');
 
-                $.ajax({
-                  type: 'POST',
-                  url: 'https://guqdu9qkgf.execute-api.eu-central-1.amazonaws.com/production',
-                  dataType: 'json',
-                  contentType: 'application/json',
-                  data: JSON.stringify(data),
-                  success: function() {
-                    var successLabel = form.find('.success');
-                    displayLabel(successLabel);
-                    form[0].reset();
-                  },
-                  error: function() {
-                    var successLabel = form.find('.error');
-                    displayLabel(successLabel);
-                  },
-                  complete: function() {
-                    button.prop('disabled', false);
-                    button.text('Send');
-                  }
-                });
-              });
-            });
-          </script>
-        </div>
-        <div class="col-sm-6">
-          <p>
-            <span class="address">
-              <span>simplabs GmbH</span>
-              <span>Claude-Lorrain-Str. 7</span>
-              <span>81543 München</span>
-              <span>Germany</span>
-            </span>
-          </p>
-          <p>
-            <span class="contact">
-              <span><i class="fa fa-phone"></i> +49 89 462 565 03</span>
-              <span><i class="fa fa-envelope"></i> <a href="mailto:info@simplabs.com?subject=Hi!" title="Email us" class="email-link">info@simplabs.com</a></span>
-              <span><i class="fa fa-twitter"></i> <a href="https://twitter.com/simplabs" title="@simplabs on Twitter" class="twitter-link">@simplabs</a></span>
-            </span>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+          form.addClass('hidden');
+          resolve();
+        });
+      }
 
-{% include contact_banner.html %}
+      function hideSubmissionState(type) {
+        return new Promise((resolve) => {
+          const submissionState = $(`.${type}`);
+
+          submissionState.removeClass('shown');
+          submissionState.addClass('hidden');
+          resolve();
+        })
+      }
+
+      function showSubmissionState(type) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            const submissionState = $(`.${type}`);
+
+            submissionState.addClass('shown');
+            resolve();
+          }, 200);
+        })
+      }
+
+      var button = form.find('button[type="submit"]');
+      button.prop('disabled', true);
+      button.text('Sending…');
+      var data = {
+        name: form.find('[name="name"]').val(),
+        email: $('[name="email"]').val(),
+        message: $('[name="message"]').val()
+      };
+
+      $.ajax({
+        type: 'POST',
+        url: 'https://guqdu9qkgf.execute-api.eu-central-1.amazonaws.com/production',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        success: function () {
+          hideForm().then(() => hideSubmissionState('submission-state-in-progress'))
+          hideForm().then(() => showSubmissionState('submission-state-successful'))
+          var successLabel = form.find('.submission-state-successful');
+          displayLabel(successLabel);
+          form[0].reset();
+        },
+        error: function () {
+          hideForm().then(() => hideSubmissionState('submission-state-in-progress'))
+          hideForm().then(() => showSubmissionState('ssubmission-state-failed'))
+          var successLabel = form.find('.submission-state-failed');
+          displayLabel(successLabel);
+        },
+        complete: function () {
+          button.prop('disabled', false);
+          button.text('Send');
+        }
+      });
+    });
+
+    goBackButton.on('click', (event) => {
+      event.preventDefault();
+
+      hideSubmissionState('submission-state-failed')
+        .then(() => showForm());
+
+      function showForm() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            const form = $('.form');
+
+            form.removeClass('hidden');
+            resolve();
+          }, 200);
+        });
+      }
+
+    });
+  });
+</script>

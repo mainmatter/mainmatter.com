@@ -1,0 +1,78 @@
+
+.page-imprint {
+  .introduction-header {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: $font-weight-black;
+
+    @include media-breakpoint-up(md) {
+      font-size: 1.5em;
+      line-height: 1.6em;
+      width: 30em;
+    }
+  }
+
+  .introduction-sub-header {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    font-weight: $font-weight-black;
+
+    @include media-breakpoint-up(md) {
+      width: 30em;
+      margin-top: 2.4rem;
+      font-size: 1.25rem;
+    }
+  }
+
+  .introduction-sub-sub-header {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: $font-weight-black;
+
+    @include media-breakpoint-up(md) {
+      width: 30em;
+      margin-top: 2.4rem;
+      font-size: 1.125rem;
+    }
+  }
+
+  .introduction-text {
+    max-width: unset;
+
+    &.introduction-note {
+      margin-top: 6rem;
+      color: rgba($text, 0.5);
+
+      @include media-breakpoint-up(md) {
+        margin-top: 4.8rem;
+      }
+    }
+  }
+
+  .introduction-address {
+    margin-top: .5rem;
+
+    span {
+      display: block;
+    }
+  }
+
+  .introduction-list {
+    margin-top: 3em;
+
+    @include media-breakpoint-up(md) {
+      width: 30em;
+      margin-top: 2.4em;
+    }
+  }
+
+  .introduction-list + .introduction-text {
+    margin-top: 3em;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 2.4em;
+    }
+  }
+}

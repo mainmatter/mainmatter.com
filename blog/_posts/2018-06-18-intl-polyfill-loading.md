@@ -5,6 +5,7 @@ title: "ember-intl data loading patterns"
 author: "Tobias Bieniek"
 github-handle: Turbo87
 twitter-handle: tobiasbieniek
+category: ember
 ---
 
 At simplabs we ❤️ [ember-intl] and use it for all our projects where

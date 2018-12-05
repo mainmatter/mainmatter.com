@@ -1,56 +1,177 @@
 ---
 layout: default
-title: How we work
+title: Work
 ---
+<header Class="page-work">
+  <div class="jumbotron jumbotron-fluid jumbotron-fluid-work">
+    <div class="container container-jumbotron">
+      <div class="jumbotron-header-wrapper">
+        <h1 class="jumbotron-header">
+          we have a track record of successful projects for international clients
+        </h1>
+      </div>
+    </div>
 
-<div class="primary-banner">
+    <div class="jumbotron-background">
+      <div class="jumbotron-background-item jumbotron-background-item-primary">
+        <img alt="Image" class="img-fluid jumbotron-background-item-image" src="../images/jumbotron/jumbotron-background-item.png" />
+      </div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+      <div class="jumbotron-background-item jumbotron-background-item-secondary"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
   <div class="container">
+    <div class="mb-5">
+      {% capture client_banner_description--trainline %}
+        <p>Trainline is Europe’s leading independent rail and coach platform. We worked with them to deliver a high-performance mobile web app, along with an improved engineering process, enabling Trainline to achieve their business goals for years to come.</p>
+      {% endcapture %}
+      
+      {% include client_banner.html
+        client="trainline"
+        title="Leveraging Trainline's full market potential"
+        description=client_banner_description--trainline
+        logo_url="../images/trainline/trainline-logo-white.svg"
+        image_url="../images/trainline/screen-1.png"
+        image_class="w-75"
+      %} 
+    </div>
+
+    <div class="mb-5">
+      {% capture client_banner_description--timify %}
+        <p>When Timify decided it was time to re-engineer their existing product, they trusted us to bring them into the future. We added engineering capacity and technology expertise to Timify's internal team and helped to build a solid foundation that enabled them to iterate fast and launch on-schedule, without sacrificing quality.</p>
+      {% endcapture %}
+      
+      {% include client_banner.html
+        client="timify"
+        title="Laying out a solid foundation for Timify"
+        description=client_banner_description--timify 
+        logo_url="../images/timify/timify-logo-white.svg"
+        image_url="../images/timify/website-preview-1.png"
+        image_class="img-2x"
+      %}
+    </div>   
+ 
     <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
-        <h2>How we work</h2>
-        <p>We specialize in <strong>convention-based tools</strong> and like to <strong>move fast without breaking things</strong>.</p>
-    	</div>
-    </div>
-  </div>
-</div>
+      <div class="col-sm-6 d-flex align-items-stretch mb-5">
+        {% capture client_banner_description--dd-wrt %}
+          <p>DD-WRT is a Linux based firmware for wireless routers. Originally designed for the Linksys WRT54G series, it now runs on a wide variety of models and is installed on millions of devices worldwide.</p>
+        {% endcapture %}
 
-<div class="container tools" id="main-section">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1 col-sm-12">
-      <div class="row content-section">
-        <div class="col-sm-12">
-          <h3>Our Toolbox</h3>
-          <p><strong>Ember.js, Elixir and Phoenix</strong> as well as Ruby on Rails are the foundation of our toolbox. The <strong>convention-based approach</strong> that they all share make them a great fit for successful <strong>projects that stay healthy over a long time</strong> and are simple for our clients to take over once we have left.</p>
-        </div>
+        {% include client_banner.html
+          client="dd-wrt"
+          title="A modern UI for an open-source router firmware"
+          description=client_banner_description--dd-wrt
+          logo_url="../images/dd-wrt/dd-wrt-logo-white.svg"
+          image_url=""
+        %} 
       </div>
-      <div class="row content-section">
-        <div class="col-sm-12">
-          <div class="row">
-            <div class="col-sm-4 col-xs-6 tool">
-              <a href="http://emberjs.com" class="icon"><i class="emberjs-logo"></i></a>
-            </div>
-            <div class="col-sm-4 col-xs-6 tool">
-              <a href="http://www.phoenixframework.org/" class="icon"><i class="phoenix-logo"></i></a>
-            </div>
-            <div class="col-sm-4 col-xs-6 tool">
-              <a href="http://rubyonrails.org" class="icon"><i class="rails-logo"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row content-section separated">
-        <div class="col-sm-12">
-          <p>We will however choose whatever technology is best suited to get a particular job done, which in some cases might not be one of the above three. We keep our eyes open and <strong>love exploring new technical opportunities</strong>.</p>
-        </div>
-      </div>
-      <div class="row content-section">
-        <div class="col-sm-12">
-          <h3>Our Process</h3>
-          <p>We are <strong>enthusiastic about agile practices</strong> and a flexible development process. While we don't think planning is evil per se, <strong>we don't overplan and aim to keep the process lean</strong>. Projects start off with a kick-off workshop to get everybody on the same page and then iterate in one or two week long sprints. We <strong>require clients to actively participate</strong> in projects and will communicate openly and often - not only to give status updates but also to explain <strong>the how and why behind design decisions we make</strong>.</p>
-        </div>
+      <div class="col-sm-6 d-flex align-items-stretch mb-5">
+        {% capture client_banner_description--expedition %}
+          <p>Expedition is an online travel magazine for global citizens. It lets travellers experience the world's best destinations through the eyes of a local.</p>
+        {% endcapture %}
+        {% include client_banner.html
+          client="expedition"
+          title="An online travel magazine for global citizens"
+          description=client_banner_description--expedition
+          logo_url="../images/expedition/expedition-logo-white.svg"
+          image_url=""
+        %}  
       </div>
     </div>
-  </div>
-</div>
+  </div><!--container-->
 
-{% include contact_banner.html %}
+  <div class="container">
+    <div class="row justify-content-start mb-5">
+      <div class="col-sm-6">
+        <h2 class="display-4 font-weight-black text-lowercase mb-4">Our Clients</h2>
+        <p class="lead">
+          We have helped clients across the world.
+        </p>
+      </div>
+    </div>
+  </div> 
+
+
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row align-items-center text-center">
+        <a class="col-6 col-md-3 color-hover p-2" href="https://www.hopskipdrive.com/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/hop-skip-drive.svg" />
+        </a>
+
+        <a class="col-6 col-md-3 color-hover p-2" href="https://www.generali.com/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/generali.svg" />
+        </a>
+
+        <a class="col-6 col-md-3 color-hover p-2r" href="https://www.robinhood.org/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/robin-hood.svg" />
+        </a>
+
+        <a class="col-6 col-md-3 color-hover p-2" href="https://www.thetrainline.com/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/trainline.svg" />
+        </a>
+      </div>
+
+      <div class="row align-items-center text-center">
+        <a class="col-6 col-md-3 color-hover p-2" href="">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/clark.svg" />
+        </a>
+
+        <a class="col-6 col-md-3 color-hover p-2" href="http://xbav.de/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/xbav.svg" />
+        </a>
+
+        <a class="col-6 col-md-3 color-hover p-2" href="http://experteer.de/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/experteer.svg" />
+        </a>
+
+        <a class="col-6 col-md-3 color-hover p-2" href="https://www.timify.com/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/timify.svg" />
+        </a>
+      </div>
+
+      <div class="row align-items-center text-center">
+        <a class="col-6 col-md-3 color-hover p-2" href="https://www.mvb-online.de/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/mvb.svg" />
+        </a>
+
+        <a class="col-6 col-md-3 color-hover p-2" href="http://www.ringler.ch/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/ringler.svg" />
+        </a>
+
+        <a class="col-6 col-md-3 color-hover p-2" href="https://neighbourhood.ie/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/neighbourhoodie-software.svg" />
+        </a>
+
+        <a class="col-6 col-md-3 color-hover p-2" href="http://embedd.com/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/embed.svg" />
+        </a>
+      </div>
+
+      <div class="row align-items-center text-center">
+        <a class="col-6 col-md-3 color-hover p-2" href="http://loconet.info/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/loconet.svg" />
+        </a>
+
+        <a class="col-6 col-md-3 color-hover p-2" href="https://www.dim3.com/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/dim3.svg" />
+        </a>
+
+        <a class="col-6 col-md-3 color-hover p-2" href="https://cardstack.com">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/cardstack.svg" />
+        </a>
+
+        <a class="col-6 col-md-3 color-hover p-2" href="http://loconet.info/">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/erdil.svg" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {% include contact_banner.html %}
+</main>

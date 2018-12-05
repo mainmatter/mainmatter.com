@@ -5,6 +5,7 @@ title: Out-of-the-box FastBoot support in Ember Simple Auth
 author: "Marco Otte-Witte"
 github-handle: marcoow
 twitter-handle: marcoow
+category: ember
 ---
 
 Ever since <a href="https://www.youtube.com/watch?v=o12-90Dm-Qs">FastBoot was first announced at EmberConf 2015</a> it was clear to us that we wanted to have out-of-the-box support for it in Ember Simple Auth. Our goal was to make sure that Ember Simple Auth did not keep anyone from adopting FastBoot and adopting FastBoot would not result in people having to figure out their own authentication and authorization solutions. Today we're happy to announce the availability of <a href="https://github.com/simplabs/ember-simple-auth/releases/tag/1.2.0-beta.1">Ember Simple Auth 1.2.0-beta.1</a>, the <strong>first release with out-of-the-box support for FastBoot</strong>.

@@ -5,6 +5,7 @@ title: "Ember.SimpleAuth 0.1.0"
 author: "Marco Otte-Witte"
 github-handle: marcoow
 twitter-handle: marcoow
+category: ember
 ---
 
 Since [Ember.SimpleAuth](https://github.com/simplabs/ember-simple-auth) was released in October 2013, there were lots of issues reported, pull requests submitted and merged etc. **Now all this feedback together with some fundamental design improvements results in the [release of the 0.1.0 version of Ember.SimpleAuth](https://github.com/simplabs/ember-simple-auth/releases/tag/0.1.0).** This is hopefully paving the way for a soon-to-be-released version 1.0.
