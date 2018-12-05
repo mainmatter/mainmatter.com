@@ -29,31 +29,10 @@
 
 .blog-posts {
   .blog-post {
-    border-left-width: 0rem;
-    border-left-style: solid;
     display: block;
-    transition: border-left 0.25s ease-in;
-
     .blog-post-wrapper {
       transform: translateX(0);
       transition: transform 0.3s ease;
-    }
-  }
-
-  .blog-post:hover {
-    text-decoration: none;
-    border-left-width: .5rem;
-
-    .blog-post-wrapper {
-      transform: translateX(1rem);
-    }
-
-    &.blog-post-elixir {
-      border-left-color: $elixir;
-    }
-
-    &.blog-post-ember {
-      border-left-color: $ember;
     }
   }
 }

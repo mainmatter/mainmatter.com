@@ -46,22 +46,17 @@
 body {
   overflow-x: hidden;
   padding-top: 3.625rem; //58px
-
   @include media-breakpoint-up(md) {
     padding-top: 0;
   }
 }
 
 header {
-  margin-bottom: 12.5vw;
+  padding-bottom: 7.5vw;
   padding-top: 12.5vw;
-
+  overflow: hidden;
   @include media-breakpoint-up(md) {
     padding-top: 0;
-  }
-
-  @include media-breakpoint-up(xxl) {
-    margin-bottom: 10rem; // 160px
   }
 }
 
@@ -70,19 +65,19 @@ main {
   .container + .container-fluid,
   .container-fluid + .container-fluid,
   .container-fluid + .container {
-    margin-top: 15vw;
+    margin-top: 12vw;
 
     @include media-breakpoint-up(xxl) {
-      margin-top: 12rem;
+      margin-top: 9rem;
     }
   }
 }
 
 footer {
-  margin-top: 15vw;
+  margin-top: 12vw;
 
   @include media-breakpoint-up(xxl) {
-    margin-top: 12rem;
+    margin-top: 9rem;
   }
 }
 
@@ -114,7 +109,7 @@ footer {
   font-weight: $font-weight-black !important;
 }
 
-.text-dark-blue {
+.text-dark {
   color: $headlines !important;
 }
 
@@ -188,26 +183,6 @@ footer {
     height: 80px;
   }
 }
-
-.color-hover {
-  filter: grayscale(100%) brightness(20%);
-  -webkit-filter: grayscale(100%) brightness(20%);
-  -webkit-transition: .3s -webkit-filter linear;
-  -moz-transition: .3s -moz-filter linear;
-  -moz-transition: .3s filter linear;
-  -ms-transition: .3s -ms-filter linear;
-  -o-transition: .3s -o-filter linear;
-  transition: .3s filter linear, .3s -webkit-filter linear;
-  &:hover {
-    filter: grayscale(0%) brightness(100%);
-    -webkit-filter: grayscale(0%) brightness(100%);
-  }
-}
-
-.btn {
-  border-width: 2px;
-}
-
 
 
 

@@ -13,21 +13,6 @@ $nav-link-padding-y: 1rem;
     }
   }
 
-  .navbar-brand {
-    transition: transform .5s ease-in-out, opacity .5s ease-in-out;
-
-    .navbar-brand-image {
-      background-color: transparent;
-      background-image: url("../../images/simplabs-logo-ball-blue.svg");
-      background-size: cover;
-      height: 1.5rem;
-      width: 1.5rem;
-    }
-
-    &:hover {
-      transform: rotate(180deg);
-    }
-  }
 
   .navbar-toggler {
     border: none;
@@ -169,8 +154,8 @@ input.toggler[type=checkbox]:checked + .navbar {
   background-color: $blue;
 
   .navbar-brand {
-    .navbar-brand-image {
-      background-image: url("../../images/simplabs-logo-white.svg");
+    img {
+      filter: grayscale(100%) brightness(10%) invert(100%);
     }
   }
 
@@ -199,8 +184,8 @@ input.toggler[type=checkbox]:checked + .navbar {
     background-color: $blue;
 
     .navbar-brand {
-      .navbar-brand-image {
-        background-image: url("../../images/simplabs-logo-ball-white.svg");
+      img {
+        filter: grayscale(100%) brightness(10%) invert(100%);
       }
     }
 

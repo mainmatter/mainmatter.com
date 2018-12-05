@@ -14,6 +14,8 @@ At [EmberFest](https://emberfest.eu/) this year we presented and released
 goal to reduce test complexity for all QUnit users. This blog post will show
 you how to write simpler tests using `async/await` and `qunit-dom`.
 
+<!--break-->
+
 As an introduction to what this means let's start with an example template
 for an Ember app that we will write a test for:
 
@@ -30,8 +32,6 @@ for an Ember app that we will write a test for:
 
 From the template above you can see that we have essentially two states that
 we need to test: one with and one without a `username` property being set.
-
-<!--break-->
 
 
 #### Status Quo

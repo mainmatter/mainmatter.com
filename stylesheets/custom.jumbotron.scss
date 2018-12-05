@@ -1,11 +1,10 @@
-
 // Common
 .jumbotron-fluid {
   padding: 0 1rem;
   position: relative;
-
   @include media-breakpoint-up(md) {
     padding: 3rem 1rem;
+    min-height: 32vh;
   }
 
   .container-jumbotron,

@@ -1,9 +1,15 @@
 .card-expertise--ember {
-  background-color: $ember;
-  background-image: url(../../images/card/ember-background-small.png);
+	&::before {
+  	background-color: $ember;
+  	opacity: 1;
+  	background-image: url(../../images/ember/ember-icon-white.svg);
+	}
 }
 
 .card-expertise--elixir {
-  background-color: $elixir;
-  background-image: url(../../images/card/elixir-phoenix-background-small.png);
-}
+	&::before {
+  	background-color: $elixir;
+  	opacity: 1;
+  	background-image: url(../../images/elixir/elixir-phoenix-icon-white.svg);
+	}
+} 

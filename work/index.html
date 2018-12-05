@@ -26,34 +26,38 @@ title: Work
 <main>
 
   <div class="container">
-    {% capture client_banner_description--trainline %}
-      <p>Trainline is Europe’s leading independent rail and coach platform. We worked with Trainline to deliver a scalable, high-performance mobile web app, along with an improved engineer process, enabling Trainline to achieve their business goals for years to come.</p>
-    {% endcapture %}
+    <div class="mb-5">
+      {% capture client_banner_description--trainline %}
+        <p>Trainline is Europe’s leading independent rail and coach platform. We worked with Trainline to deliver a scalable, high-performance mobile web app, along with an improved engineer process, enabling Trainline to achieve their business goals for years to come.</p>
+      {% endcapture %}
+      
+      {% include client_banner.html
+        client="trainline"
+        title="Leveraging Trainline's full market potential"
+        description=client_banner_description--trainline
+        logo_url="../images/trainline/trainline-logo-white.svg"
+        image_url="../images/trainline/screen-1.png"
+        image_class="w-75"
+      %} 
+    </div>
 
-    {% include client_banner.html
-      client="trainline"
-      title="Leveraging Trainline's full market potential"
-      description=client_banner_description--trainline
-      logo_url="../images/trainline/trainline-logo-white.svg"
-      image_url="../images/trainline/screen-1.png"
-      image_class="w-75"
-    %} 
-
-    {% capture client_banner_description--timify %}
-      <p>When Timify decided it was time to re-engineer their existing product, they trusted us to bring them into the future. We added engineering capacity to Timify's team and helped to build a solid foundation that enabled them to iterate fast and launch on-schedule, without sacrificing quality.</p>
-    {% endcapture %}
-     
-    {% include client_banner.html
-      client="timify"
-      title="Laying out a solid foundation for Timify"
-      description=client_banner_description--timify 
-      logo_url="../images/timify/timify-logo-white.svg"
-      image_url="../images/timify/website-preview-1.png"
-      image_class="img-2x"
-    %}   
+    <div class="mb-5">
+      {% capture client_banner_description--timify %}
+        <p>When Timify decided it was time to re-engineer their existing product, they trusted us to bring them into the future. We added engineering capacity to Timify's team and helped to build a solid foundation that enabled them to iterate fast and launch on-schedule, without sacrificing quality.</p>
+      {% endcapture %}
+      
+      {% include client_banner.html
+        client="timify"
+        title="Laying out a solid foundation for Timify"
+        description=client_banner_description--timify 
+        logo_url="../images/timify/timify-logo-white.svg"
+        image_url="../images/timify/website-preview-1.png"
+        image_class="img-2x"
+      %}
+    </div>   
  
     <div class="row">
-      <div class="col-sm-6 d-flex align-items-stretch">
+      <div class="col-sm-6 d-flex align-items-stretch mb-5">
         {% capture client_banner_description--dd-wrt %}
           <p>DD-WRT is a Linux based firmware for wireless routers. Originally designed for the Linksys WRT54G series, it now runs on a wide variety of models and is installed on millions of devices worldwide.</p>
         {% endcapture %}
@@ -66,7 +70,7 @@ title: Work
           image_url=""
         %} 
       </div>
-      <div class="col-sm-6 d-flex align-items-stretch">
+      <div class="col-sm-6 d-flex align-items-stretch mb-5">
         {% capture client_banner_description--expedition %}
           <p>Expedition is an online travel magazine for global citizens. It lets travellers experience the world's best destinations through the eyes of a local.</p>
         {% endcapture %}
@@ -158,8 +162,8 @@ title: Work
           <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/dim3.svg" />
         </a>
 
-        <a class="col-6 col-md-3 color-hover p-2" href="https://expedition.ws/">
-          <img alt="Logo" class="img-fluid p-3" src="../images/logos/expedition.svg" />
+        <a class="col-6 col-md-3 color-hover p-2" href="https://cardstack.com">
+          <img alt="Logo" class="img-fluid p-3" src="../images/logos/colorful/cardstack.svg" />
         </a>
 
         <a class="col-6 col-md-3 color-hover p-2" href="http://loconet.info/">

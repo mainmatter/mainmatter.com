@@ -3,7 +3,9 @@ layout: default
 title:
 ---
 <header class="page-homepage">
+
   <div class="jumbotron jumbotron-fluid jumbotron-fluid-homepage">
+    
     <div class="container container-jumbotron">
       <div class="jumbotron-header-wrapper">
         <h1 class="jumbotron-header text-lowercase">Solid engineering for ambitious projects</h1>
@@ -24,6 +26,7 @@ title:
         <img alt="Image" class="img-fluid jumbotron-background-item-image" src="/images/expedition/website-preview-1.png" />
       </div>
     </div>
+
   </div>
 </header>
 
@@ -47,35 +50,35 @@ title:
       </div>
 
       <div class="row">
-        <div class="col-sm-4">
-          <a class="feature-card d-block" href="full-stack-engineering/index.html" aria-label="Learn more about Full-Stack Engineering Services">
+        <div class="col-sm-4 d-flex">
+          <a class="feature-card d-flex flex-column align-items-stretch justify-content-start" href="full-stack-engineering/index.html" aria-label="Learn more about Full-Stack Engineering Services">
             <div class="p-4">
               <img alt="Full-Stack Engineering image" class="mx-auto d-block" src="/images/icons/dark/fullstack.svg">
             </div>
             <h3 class="my-4 font-weight-black text-dark">Full-Stack Engineering</h3>
-            <p class="pr-3 mb-3 text-dark" aria-hidden="true">We take the lead and turn our clients' ideas into successful products, working closely with them in short iterations.</p>
+            <p class="pr-3 mb-3 text-dark h-50" aria-hidden="true">We take the lead and turn our clients' ideas into successful products, working closely with them in short iterations.</p>
             <div class="text-arrow" aria-hidden="true">Learn More</div>
           </a>
         </div><!--col-->
 
-        <div class="col-sm-4">
-          <a class="feature-card d-block" href="team-augmentation/index.html" aria-label="Learn more about Team Augmentation Services">
+        <div class="col-sm-4 d-flex">
+          <a class="feature-card d-flex flex-column align-items-stretch justify-content-start" href="team-augmentation/index.html" aria-label="Learn more about Team Augmentation Services">
             <div class="p-4">
               <img alt="Team Augmentation image" class="mx-auto d-block" src="/images/icons/dark/team.svg">
             </div>
             <h3 class="my-4 font-weight-black text-dark">Team Augmentation</h3>
-            <p class="pr-3 mb-3 text-dark" aria-hidden="true">Our technology experts step in and merge with our clients' in-house engineering teams, spearhead development initiatives, and establish best practices to get their projects across the finish line.</p>
+            <p class="pr-3 mb-3 text-dark h-50" aria-hidden="true">Our technology experts step in and merge with our clients' in-house engineering teams, spearhead development initiatives, and establish best practices to get their projects across the finish line.</p>
             <div class="text-arrow" aria-hidden="true">Learn More</div>
           </a>
         </div><!--col-->
 
-        <div class="col-sm-4">
-          <a class="feature-card d-block" href="training/index.html" aria-label="Learn more about Tutoring Services">
+        <div class="col-sm-4 d-flex">
+          <a class="feature-card d-flex flex-column align-items-stretch justify-content-start" href="training/index.html" aria-label="Learn more about Tutoring Services">
             <div class="p-4">
               <img alt="Tutoring image" class="mx-auto d-block" src="/images/icons/dark/tutoring.svg">
             </div>
             <h3 class="my-4 font-weight-black text-dark">Tutoring</h3>
-            <p class="pr-3 mb-3 text-dark" aria-hidden="true">We tutor teams, raising their experience and confidence levels when taking on new technologies or projects.</p>
+            <p class="pr-3 mb-3 text-dark h-50" aria-hidden="true">We tutor teams, raising their experience and confidence levels when taking on new technologies or projects.</p>
             <div class="text-arrow" aria-hidden="true">Learn More</div>
           </a>
         </div><!--col-->
@@ -113,28 +116,28 @@ title:
       </div><!--col-->
     </div><!--row-->
     <div class="d-flex flex-row justify-content-between my-4 px-2 align-items-center">
-      <a class="p-1 color-hover" href="https://www.xbav.de/">
-        <img alt="Logo" class="img-fluid" src="/images/logos/colorful/xbav.svg" />
-      </a>
+      <div class="p-1 color-bw">
+        <img alt="Logo" class="img-fluid" src="images/logos/colorful/trainline.svg" />
+      </div>
 
-      <a class="p-1 color-hover" href="https://www.clark.de/">
-        <img alt="Logo" class="img-fluid" src="/images/logos/colorful/clark.svg" />
-      </a>
+      <div class="p-1 color-bw">
+        <img alt="Logo" class="img-fluid" src="images/logos/colorful/generali.svg" />
+      </div>
 
-      <a class="p-1 color-hover" href="http://loconet.info/">
-        <img alt="Logo" class="img-fluid" src="/images/logos/colorful/loconet.svg" />
-      </a>
+      <div class="p-1 color-bw">
+        <img alt="Logo" class="img-fluid" src="images/logos/colorful/clark.svg" />
+      </div>
 
-      <a class="p-1 color-hover" href="https://www.experteer.de/">
+      <div class="p-1 color-bw">
+        <img alt="Logo" class="img-fluid" src="images/logos/colorful/cardstack.svg" />
+      </div>
+
+      <div class="p-1 color-bw">
         <img alt="Logo" class="img-fluid" src="/images/logos/colorful/experteer.svg" />
-      </a>
-
-      <a class="p-1 color-hover" href="http://embedd.com/">
-        <img alt="Logo" class="img-fluid" src="/images/logos/colorful/embed.svg" />
-      </a>
+      </div>
     </div><!--logos-->
-    <div class="text-center">
-      <a class="btn btn-outline-dark mx-auto" href="./work/index.html">Our Work</a>
+    <div class="text-center mt-5">
+      <a class="btn btn-dark mx-auto" href="./work/index.html">Our Work</a>
     </div>
   </div><!--container-->
   
@@ -146,27 +149,36 @@ title:
     </div>
     <div class="row">
       <div class="col-sm-12 col-md-4">
+        {% capture news-1 %}
+          We are happy to be sponsoring EmberConf again in 2019. If you're going to be in Portland, make sure to connect with our team!
+        {% endcapture %}
         {% include news_card.html 
-          title="JSConf.eu"
-          content="We will be at JSConf EU in Berlin, June 2nd and 3rd, 2018 and we will have @locks from the Ember.js core team join us at our booth!"
-          url="https://2018.jsconf.eu/"
-          image_url="/images/news-1.png"
+          title="Meet us at EmberConf"
+          content=news-1
+          url="https://emberconf.com"
+          image_url="/images/news-1.jpg"
         %}
       </div><!--col-->
       <div class="col-sm-12 col-md-4">
+        {% capture news-2 %}
+          We are part of the organisational committee behind EmberFest. This year, we also sponsored the video recordings of all talks which are <a href="https://www.youtube.com/watch?v=oRzmDobMZ_Q&list=PLN4SpDLOSVkSB9034lDNdP1JoNBGssax9">now available on YouTube</a>. We hope everyone enjoys the videos and are already looking forward to another great EmberFest in 2019!
+        {% endcapture %}
         {% include news_card.html 
           title="EmberFest 2018 Videos"
-          content="We are part of the organisational committee behind EmberFest. This year, we also sponsored the video recordings of all talks which are now available on YouTube. We hope everyone enjoys the videos and are already looking forward to another great EmberFest in 2019!"
+          content=news-2
           url="https://www.youtube.com/watch?v=oRzmDobMZ_Q&list=PLN4SpDLOSVkSB9034lDNdP1JoNBGssax9"
-          image_url="/images/news-1.png"
+          image_url="/images/news-2.jpg"
         %}
       </div><!--col-->
       <div class="col-sm-12 col-md-4">
+        {% capture news-3 %}
+          We are happy to launch Breethe, a Progressive Web App for accessing air quality data for locations around the world. We built Breethe with Glimmer.js so that it would be blazing fast and lightweight. It is server side rendered, works offline and even with JavaScript disabled!
+        {% endcapture %}
         {% include news_card.html 
-          title="CodeBot supports ES2017"
-          content="Our Slack Bot CodeBot, that takes any JavaScript code you send it, runs it and returns with the result and captured log output is now running Node 9 and thus supports all the latest and greatest of JavaScript."
-          url="http://codebot.chat/"
-          image_url="/images/news-1.png"
+          title="Launching Breethe"
+          content=news-3
+          url="https://breethe.app/"
+          image_url="/images/news-3.jpg"
         %}
       </div><!--col-->
     </div>
