@@ -19,7 +19,7 @@ what the drawbacks are.
 
 <!--break-->
 
-#### Computed Properties
+## Computed Properties
 
 Computed Properties allow defining properties as functions of other
 properties. Ember automatically re-evaluates computed properties (lazily) when
@@ -52,7 +52,7 @@ defined on the `user` here):
 </p>
 {% endraw %}```
 
-#### Template Helpers
+## Template Helpers
 
 The above example __could just as easily be implemented using a template
 helper__. Instead of defining the `isSenior` property with its dependents
@@ -75,7 +75,7 @@ and move the comparison into the template:
 </p>
 {% endraw %}```
 
-#### What's the difference?
+## What's the difference?
 
 Both alternatives are obviously very similar - both compare the user's `age`
 property with a comparison value and depending on the outcome of that
@@ -89,7 +89,7 @@ This might not seem like a big thing but there actually are some differences
 between the two alternatives that have consequences on certain aspects of the
 application.
 
-##### Separation vs. Unification
+### Separation vs. Unification
 
 The main difference is that with the computed property solution, the logic and
 its internals are separated from the template. The __logic lives in the
@@ -137,7 +137,7 @@ Instead of hiding this complexity behind a named interface all of it is right
 there in the template and cannot be ignored as it can be when using a computed
 property.
 
-##### Testability
+### Testability
 
 Another consequence of __moving logic into the template is that the logic
 itself becomes harder to test__. While logic that lives in the template context
@@ -159,7 +159,7 @@ again leads to a few other consequences:
   template requires the full context for that template to be set up which might
   include elements that are unrelated to the current test case.
 
-##### Helpers don't always work as expected
+### Helpers don't always work as expected
 
 One of the main reasons that we hear why people prefer template helpers over
 computed properties is the fact that computed properties need to list their
@@ -197,7 +197,7 @@ property on any of the arguments changes__. In this case changes of the user's
 `age` property would go unnoticed and the DOM would get out of sync with the
 underlying data.
 
-##### Performance
+### Performance
 
 In general, __performance should be more or less on par for computed properties
 and template helpers__ in comparable scenarios. There's one slight difference
@@ -231,7 +231,7 @@ helper. If calculating `propB` is a costly operation that is obviously not
 desirable but something that cannot actually be prevented with template
 helpers.
 
-#### Pick one
+## Pick one
 
 As shown above there are many cases in which either computed properties or
 template helpers can be used to implement the same functionality. There are
@@ -258,7 +258,7 @@ making computed properties easier accessible and more powerful recently. Check
 out
 [Kelly's talk on computed properties he gave at the recent Ember.js SF meetup](http://slides.com/kellyselden/the-world-of-ember-macros-and-how-to-create-your-own-2#/43).
 
-##### Pure Functions
+### Pure Functions
 
 One thing I hear a lot is that template helpers are better than computed
 properties because helpers are (supposed to be) pure functions. While __pure
@@ -275,7 +275,7 @@ also class based helpers whose whole purpose is to enable template helpers that
 can depend on global state and thus are not pure functions (and the same
 concept exists for computed properties with ember-classy-computed now).
 
-##### Original concerns of the template layer
+### Original concerns of the template layer
 
 The intention of this post is not to say template helpers are bad and computed
 properties should be used for everything. That would be a pretty ignorant
@@ -286,7 +286,7 @@ this kind of functionality which is usually only a small part part of any
 application though - we often only have a few helpers defined even in pretty
 big and involved applications.
 
-##### Missing a property context
+### Missing a property context
 
 There is one slightly more evolved scenario where computed properties cannot
 easily be used instead of template helpers to achieve the same functionality.
@@ -339,7 +339,7 @@ collection then:
 This pattern - __defining a wrapper context that combines two or more other
 contexts__ - should work in similar scenarios as well.
 
-#### Conclusion
+## Conclusion
 
 Computed properties and template helpers are both valuable parts of the Ember
 framework and __both have their use cases__. Being aware of which one is best

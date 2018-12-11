@@ -23,7 +23,7 @@ breaking changes. The content of this blog post is conceptually still relevant
 though and the code examples should work fine if you make sure to use the
 correct dependency versions.**
 
-#### The Goal
+## The Goal
 
 Our goal in this blog post is to build an `Actor` that connects to a certain
 TCP server, listens for new messages and forwards them to another `recipient`
@@ -31,7 +31,7 @@ actor. For simplicity we'll assume that the server is using a line break after
 each message.
 
 
-#### Project Setup
+## Project Setup
 
 In our last post we explained that the easiest solution to install Rust is
 currently <https://rustup.rs/>. Once you have followed the instructions there
@@ -64,7 +64,7 @@ afterwards running it, resulting in "Hello, world!" being printed in your
 Terminal.
 
 
-#### The Actor
+## The Actor
 
 Before we can start to implement our TCP client actor we need to tell `cargo`
 about the `actix` dependency. For that we open the `Cargo.toml` file in the
@@ -145,7 +145,7 @@ implemented nothing that would stop the actor.
 First milestone achieved! 🎉
 
 
-#### DNS resolution and TCP connection
+## DNS resolution and TCP connection
 
 Now that we have setup the basic scaffolding of our `Actor`, let's try to
 connect to a real TCP server. I'll first show you the code and then we'll
@@ -213,7 +213,7 @@ Great! We have successfully opened up a TCP connection to the
 is: keep reading! 😉
 
 
-#### Reading TCP streams
+## Reading TCP streams
 
 For the next part we'll need two more dependencies: `tokio-io` and
 `tokio-codec`. [tokio] is the low-level network IO library that `actix` is
@@ -303,7 +303,7 @@ I won't spoiler anything, but take a bit of time and see what happens now if
 you start `cargo run` again... 🚀
 
 
-#### Forward messages to other actors
+## Forward messages to other actors
 
 In case you're still reading, let's implement the final part of our goal:
 forwarding received messages to another actor.
@@ -390,11 +390,11 @@ fn main() {
 }
 ```
 
-After everything is assembled back together let's use `cargo run` again and we 
+After everything is assembled back together let's use `cargo run` again and we
 will see that everything still works! 🎥
 
 
-#### Summary
+## Summary
 
 We hope that by now you're a little more comfortable around actors and how to
 use and implement them in Rust. This blog post has shown how two actors can

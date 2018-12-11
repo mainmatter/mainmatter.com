@@ -18,13 +18,13 @@ _I’m using the latest (as of early August 2013) [ember.js](http://emberjs.com)
 
 _**Update:**I changed the section on actually using the token to use [$.ajaxPrefilter](http://api.jquery.com/jQuery.ajaxPrefilter/) instead of a custom ember-data adapter_
 
-#### The basics
+## The basics
 
 The basic approach is still the same as in our initial implementation - we have a **`/session` route in our Rails app that the client `POST`s its credentials to and if those are valid gets back an authentication token** together with an id that identifies the user’s account on the server side.
 
 This data is stored in a _"session"_ object on the client side (while technically there is no session in this stateless authentication mechanism, I still call it session in absence of an idea for a better name). The **authentication token is then sent in a header** with every request the client makes.
 
-#### The client _"session"_
+## The client _"session"_
 
 The _"session"_ object on the client side is a **plain `Ember.Object` that simply keeps the data that is received from the server** on session creation. It also stores the authentication token and the user’s account ID in cookies so the user doesn’t have to login again after a page reload (As Ed points out in a comment on the old post it’s a security issue to store the authentication token in a cookie without the user’s permission - I think using a session cookie like I do should be ok as it’s deleted when the browser window is closed. Of course you could also use sth. like localStorage like Marc points out. I’m creating this object in an initializer so I can be sure it exists (of course it might be empty) when the application starts.
 
@@ -85,7 +85,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-#### Logging in
+## Logging in
 
 As described above, the login API is a simple `/session` route on the server side that accepts the user’s login and password and **responds with either HTTP status 401 when the credentials are invalid or a session JSON when the authentication was successful**. On the client side we have routes for creating and destroying the session:
 
@@ -138,7 +138,7 @@ The template is just a simple form (actual elements, classes etc. of course depe
 </form>
 {% endraw %}```
 
-#### Logging out
+## Logging out
 
 Logging out is actually pretty simple as well. The **client just sends a `DELETE` to the same `/session` route** that makes the server reset the authentication token in the database so that the token on the client side is invalidated. The client also deletes the saved session information in `App.Session` so there’s no stale data.
 
@@ -170,7 +170,7 @@ App.SessionDestroyRoute = Ember.Route.extend({
 });
 ```
 
-#### Authenticated routes
+## Authenticated routes
 
 To easily enable authentication for any route in the application, I created an **`App.AuthenticatedRoute` that extends `Ember.Route`** and that all routes that need to enforce user authentication can extend again:
 

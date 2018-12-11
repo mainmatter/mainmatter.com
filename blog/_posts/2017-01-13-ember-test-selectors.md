@@ -22,7 +22,7 @@ features.
 
 <!--break-->
 
-#### Automatic binding of `data-test-*` properties
+## Automatic binding of `data-test-*` properties
 
 As you may know from our [previous blog post](http://simplabs.com/blog/2016/03/04/ember-test-selectors.html)
 on this topic, the goal of this addon is to let you use attributes starting
@@ -62,7 +62,7 @@ automatically appear on the `<div>` tag wrapping the component:
 </div>
 ```
 
-##### How we implemented this
+### How we implemented this
 
 Since we wanted to make this feature available on all components by default
 we had to `reopen()` the `Ember.Component` class, figure out the list of
@@ -82,12 +82,12 @@ initializer and utility function in there. Since both of those are part
 of our `addon` and `app` folders, which are included in your builds by
 default, we borrowed a ["trick"](https://github.com/ember-cli/ember-cli-chai/blob/master/index.js#L119-L123)
 from [ember-cli-chai](https://github.com/ember-cli/ember-cli-chai/) which
-only includes both folders if we are in [testing mode](#testing-in-production-mode). 
+only includes both folders if we are in [testing mode](#testing-in-production-mode).
 
 ```js
 module.exports = {
   // ...
-  
+
   treeForAddon: function() {
     // only include our "addon" folder in the build if we're testing
     if (this.app.tests) {
@@ -116,7 +116,7 @@ We have released `0.1.1` including this change and are now also warning you
 if you try to use `data-test-*` attributes on tagless components.
 
 
-#### Stripping out `data-test-*` attributes in templates
+## Stripping out `data-test-*` attributes in templates
 
 Our initial goal with this library was stripping our `data-test-*` attributes
 from HTML tags in your templates. In the previous section we implemented
@@ -126,14 +126,14 @@ these properties were not stripped from the template yet.
 To modify templates from within an addon our best bet was to use an
 <abbr title="Abstract Syntax Tree">AST</abbr> transform on the Handlebars
 AST, that we get from the template parser. This can be accomplished by
-registering a Handlebars AST plugin in the 
+registering a Handlebars AST plugin in the
 [`setupPreprocessorRegistry()`](https://ember-cli.com/api/classes/Addon.html#method_setupPreprocessorRegistry)
 hook of the addon:
 
 ```js
 module.exports = {
   // ...
-  
+
   setupPreprocessorRegistry: function(type, registry) {
     if (type === 'parent' && !this.app.tests) {
       registry.add('htmlbars-ast-plugin', {
@@ -167,7 +167,7 @@ module.exports = class {
 
     return ast;
   }
-}; 
+};
 ```
 
 You can try out what this transform does in the
@@ -190,7 +190,7 @@ transform code, you will notice that the `data-test-comment-id=comment.id` part
 of the `some-component` invocation is now gone.
 
 
-#### Stripping out `data-test-*` properties in JS files
+## Stripping out `data-test-*` properties in JS files
 
 While one way of assigning data attributes to a component is in the template,
 data attributes can also be defined as properties on the component class.
@@ -248,7 +248,7 @@ addon:
 ```js
 module.exports = {
   // ...
-  
+
   included: function(app) {
     this._super.included.apply(this, arguments);
 
@@ -266,7 +266,7 @@ module.exports = {
 ```
 
 
-#### Testing in `production` mode
+## Testing in `production` mode
 
 In our previous releases we had offered an `environments` option to let you
 choose when to strip attributes and when to keep them in the templates. The
@@ -304,7 +304,7 @@ Note that using the `environments` option still works, but is deprecated and
 will be removed by the time we release `1.0.0`.
 
 
-#### Simplified `testSelector()` import
+## Simplified `testSelector()` import
 
 The `testSelector()` helper function can be used to simplify building the
 CSS/jQuery selector strings used for `find()` or `this.$()` in your tests.

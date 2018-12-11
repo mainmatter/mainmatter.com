@@ -23,7 +23,7 @@ in isolation.
 <!--break-->
 
 
-#### Component Playgrounds
+## Component Playgrounds
 
 You might be wondering "Why would would I need something like this? I can just
 test my components in the app!" and you're right. But imagine building a
@@ -48,7 +48,7 @@ by Dominic Nguyen that explains the benefits very well.
 [ui-component-explorers]: https://blog.hichroma.com/the-crucial-tool-for-modern-frontend-engineers-fb849b06187a
 
 
-#### Installing `ember-freestyle`
+## Installing `ember-freestyle`
 
 Installing and configuring `ember-freestyle` correctly is unfortunately a
 little complicated right now so if you want to take a look at the final
@@ -67,7 +67,7 @@ website:
 - `ember install ember-freestyle`
 - Add `this.route('freestyle');` to the `app/router.js` file
 
-##### Adjusting the `application` template
+### Adjusting the `application` template
 
 If you try this in a fresh new Ember app, run the development server using
 `ember serve` and visit <http://localhost:4200/freestyle> you will notice the
@@ -95,7 +95,7 @@ condition:
 `onFreestyleRoute` is a property on the `application` controller that will be
 set to `true` once we visit the `/freestyle` route and and back to `false`
 once we leave it again. This can be implemented in the `app/routes/freestyle.js`
-file, and since that does not exist yet, we can generate it using 
+file, and since that does not exist yet, we can generate it using
 `ember generate route freestyle` (choose not to overwrite the existing
 template!) and then adjusting it like this:
 
@@ -116,7 +116,7 @@ export default Route.extend({
 If you check `/freestyle` again you should see that now the only thing that is
 displayed is the `ember-freestyle` guide. 🎉
 
-##### Removing `ember-freestyle` from the production build
+### Removing `ember-freestyle` from the production build
 
 Once you try to ship this to production you might notice another issue: your
 asset size has increased significantly, so it seems that `ember-freestyle` is
@@ -135,7 +135,7 @@ module.exports = function(defaults) {
       blacklist: pluginsToBlacklist
     }
   });
-  
+
   return app.toTree();
 };
 ```
@@ -191,7 +191,7 @@ is good enough and we can finally focus on putting content into our new
 component playground! 🎉
 
 
-#### Using `ember-freestyle`
+## Using `ember-freestyle`
 
 The good news is that **using** `ember-freestyle` is much easier than setting
 it up correctly!

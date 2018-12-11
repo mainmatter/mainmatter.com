@@ -12,7 +12,7 @@ With the latest release of [Ember Simple Auth](https://github.com/simplabs/ember
 
 <!--break-->
 
-#### Setting up the basic project
+## Setting up the basic project
 
 First of all you need to install [PhantomJS](http://phantomjs.org), [bower](http://bower.io) and of course ember-cli (Ember Simple Auth requires **at least Ember CLI 0.0.44**):
 
@@ -35,7 +35,7 @@ cd my-auth-app
 ember server
 ```
 
-#### Installing Ember Simple Auth
+## Installing Ember Simple Auth
 
 Installing Ember Simple Auth in an ember-cli project is really easy now. All you have to do is install [the ember-cli addon from npm](https://www.npmjs.com/package/ember-cli-simple-auth):
 
@@ -78,7 +78,7 @@ import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 export default Ember.Route.extend(ApplicationRouteMixin);
 ```
 
-#### Setting up authentication
+## Setting up authentication
 
 To actually give the user the option to login, we need to add an authentication package for Ember Simple Auth. Let’s assume you have an OAuth 2.0 compatible server running at `http://localhost:3000`. To use that, install the [OAuth 2.0 extension library](https://github.com/simplabs/ember-simple-auth/blob/master/addon/authenticators/oauth2-password-grant.js) which again is as easy as installing the [package from npm](https://www.npmjs.com/package/ember-cli-simple-auth-oauth2):
 
@@ -128,6 +128,6 @@ if (environment === 'development') {
 
 You also need to make sure that your server allows cross origin requests by [enabling CORS](http://enable-cors.org) (e.g. with [rack-cors](https://github.com/cyu/rack-cors) if you’re using a rack based server).
 
-#### Conclusion
+## Conclusion
 
 This is how you set up an ember-cli project with Ember Simple Auth. For further documentation and examples see the [github repository](https://github.com/simplabs/ember-simple-auth) and the [API docs for Ember Simple Auth](http://ember-simple-auth.com/api/) and the [OAuth 2.0 extension library](http://ember-simple-auth.com/api/).

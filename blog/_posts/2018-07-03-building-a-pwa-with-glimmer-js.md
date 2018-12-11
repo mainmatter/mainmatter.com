@@ -19,7 +19,7 @@ particular decisions and what the result looks like.
 
 <!--break-->
 
-#### Breethe
+## Breethe
 
 While this project was mostly meant as a technology spike to validate Glimmer's
 suitability for real projects as well as testing some techniques for running
@@ -37,7 +37,7 @@ daily lives.
 The application is open source and
 [available on GitHub](https://github.com/simplabs/breethe-client).
 
-#### Glimmer.js
+## Glimmer.js
 
 Glimmer.js is a thin component library built on top of Ember.js's rendering
 engine, the Glimmer VM. It is optimized for small application bundle sizes and
@@ -71,7 +71,7 @@ initial and update renders, watch the talk I gave at the
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vIRZDCyfOJc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="video"></iframe>
 
-#### Building Breethe with Glimmer.js
+## Building Breethe with Glimmer.js
 
 The Breethe app consists of two main screens, the Start page with the search
 form and the results page that shows the data and an air quality score for a
@@ -214,7 +214,7 @@ particularly how we load and manage data with Orbit.js. For a closer look on
 the inner workings of Breethe, check out the
 [code on github](https://github.com/simplabs/breethe-client).
 
-#### From Glimmer.js to Ember.js
+## From Glimmer.js to Ember.js
 
 Besides making the Glimmer VM available to be used outside of Ember.js and
 offering a solution for situations where bundle size and load time performance
@@ -247,7 +247,7 @@ Ember.js once they reach a certain size and complexity and the additional
 features and concepts that Ember.js provides over Glimmer.js justify a more
 heavyweight framework.
 
-#### Testing
+## Testing
 
 Glimmer.js' testing APIs are very similar to what Ember.js uses for
 [component tests](https://guides.emberjs.com/release/testing/testing-components/).
@@ -304,7 +304,7 @@ entirely ready for prime time. In order to test some more advanced component
 behaviors, we use [Puppeteer](https://pptr.dev) to run the entire application
 in a headless browser.
 
-#### Outlook
+## Outlook
 
 In future posts, we will look at some specific aspects of the application in
 more detail, including service workers and offline functionality (and testing

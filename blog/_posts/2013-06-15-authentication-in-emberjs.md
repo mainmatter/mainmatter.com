@@ -20,7 +20,7 @@ When we started our first project with [ember.js](http://emberjs.com), **the fir
 
 The only more elaborate sample project I found was the [ember-auth](https://github.com/heartsentwined/ember-auth) plugin. While that seemed to be very complete and high quality it is also very heavy weight and I didn’t want to add such a big thing to our codebase only to implement simple authentication into our app. So I rolled my own implementation.
 
-#### The basics
+## The basics
 
 The general route to go with authentication in ember.js is to use **token based authentication** where the client submits the regular username/password credentials to the server once and if those are valid receives an authentication token in response. That token is then sent along with every request the client makes to the server. Having understood this the first thing to do is to implement a regular login form with username and password fields:
 
@@ -82,7 +82,7 @@ $.cookie('auth_token', App.Auth.get('authToken'));
 $.cookie('auth_account', App.Auth.get('accountId'));
 ```
 
-#### Making authenticated requests
+## Making authenticated requests
 
 The next step is to actually send the authentication token to the server. As the only point point of interaction between client and server in an ember.js app is **when the store adapter reads or writes data, the token has to be integrated in that adapter somehow**. As there’s not (yet) any out-off-the-box support for authentication in the [DS.RESTAdapter](https://github.com/emberjs/data/blob/master/addon/adapters/rest.js), I simply added it myself:
 
@@ -108,7 +108,7 @@ DS.rejectionHandler = function(reason) {
 };
 ```
 
-#### Enforcing authentication on the client
+## Enforcing authentication on the client
 
 Now that the general authentication mechanism is in place it would be cool to have a way of enforcing authentication on the client for specific routes so the user never gets to see any pages that they aren’t allowed to. This can be done by simply **introducing a custom route class that will check for the presence of a session and if none is present redirects to the login screen**. Any other routes that require authentication can then inherit from that one instead if the regular [`Ember.Route`](http://emberjs.com/api/classes/Ember.Route.html)
 
@@ -132,7 +132,7 @@ class AuthenticatedController < ApplicationController
 end
 ```
 
-#### Cleanup
+## Cleanup
 
 As the code is now spread up into a number of files and classes, I added a `Session` model:
 

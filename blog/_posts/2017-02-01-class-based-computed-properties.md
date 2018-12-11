@@ -12,7 +12,7 @@ We think Computed Properties in Ember are awesome. We also think they [are in ma
 
 <!--break-->
 
-#### Computed Properties and Computed Property Macros
+## Computed Properties and Computed Property Macros
 
 Computed Properties are among the first things developers new to Ember learn. They are a great way of defining dependencies between data points in the application and __ensuring the UI stays consistent as these data points change__.
 
@@ -24,7 +24,7 @@ isActive: Ember.computed.equal('state', 'isActive')
 
 There are addons that provide even more macros for common use cases like [ember-cpm](https://github.com/cibernox/ember-cpm) or [ember-awesome-macros](https://github.com/kellyselden/ember-awesome-macros).
 
-#### Where Computed Property Macros fall short today
+## Where Computed Property Macros fall short today
 
 __Computed Properties are very similar to template helpers__ in the way that both are [pure functions](https://en.wikipedia.org/wiki/Pure_function) that can only depend on their inputs. While a template helpers receives its inputs as arguments, __Computed Properties define their inputs as dependent keys__.
 
@@ -48,7 +48,7 @@ and because the [`filter-by` helper is a Class based helper](https://github.com/
 
 With Computed Properties __it is not currently possible to implement something like this__ (at least not as a reusable macro).
 
-#### Enter Class based Computed Properties
+## Enter Class based Computed Properties
 
 With the Class based Computed Properties that [ember-classy-computed](https://github.com/simplabs/ember-classy-computed) introduces it is __actually possible now to implement something like the above mentioned `filterByProperty` macro__. The computed property returned by that macro can now correctly be invalidated when any of the user's `isActive`, `isBlocked` etc. properties change although it is not actually possible to know what these properties might be upfront. This __allows keeping the filtering logic in JavaScript as opposed to in the template__ when using a Class based template helper:
 
@@ -106,6 +106,6 @@ export default ClassBasedComputedProperty.property(DynamicFilterByComputed);
 
 Comparing this code to the implementation of the [`filter-by` helper](https://github.com/DockYard/ember-composable-helpers/blob/master/addon/helpers/filter-by.js) mentioned above you will recognize that both are almost identical. This illustrates very well what Class based Computed Properties are: a way to __use the same mechanisms that are already established for Class based template helpers for Computed Properties__ as well.
 
-#### Notice
+## Notice
 
 __[ember-classy-computed](https://github.com/simplabs/ember-classy-computed) is currently at a very early stage__ and we haven't thoroughly tested the implementation just yet. We have also not done any benchmarking to get a better understanding of what the performance implications are. That is to say, __while we encourage everyone to try this out, be aware you're currently doing so at your own risk__ as this is most likely not production ready (yet). We have the feeling though that this will be a valuable addition to Computed Properties in the future and can close the gap that currently exists between Computed Properties and template helpers.

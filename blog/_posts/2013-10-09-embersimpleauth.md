@@ -16,7 +16,7 @@ After I wrote 2 [blog](http://simplabs.com/blog/2013/06/15/authentication-in-emb
 
 Instead of providing a heavyweight out-of-the-box solution with predefined routes, controllers etc., Ember.SimpleAuth defines lightweight mixins that the application code implements. It also **does not dictate anything with respect to application structure, routing etc**. However, setting up Ember.SimpleAuth is **very straight forward** and it can be **completely customized**. The requirements on the server interface are minimal ([see the README for more information on the server side](https://github.com/simplabs/ember-simple-auth#the-server-side)).
 
-#### Using Ember.SimpleAuth
+## Using Ember.SimpleAuth
 
 Using Ember.SimpleAuth in an application only requires a few simple steps. First, it must be enabled which is best done in a custom initializer:
 
@@ -63,7 +63,7 @@ At this point, everything that’s necessary for users to log in and out is set 
 App.ProtectedRoute = Ember.Route.extend(Ember.SimpleAuth.AuthenticatedRouteMixin);
 ```
 
-#### More
+## More
 
 There is more documentation as well as examples in the [repository on github](https://github.com/simplabs/ember-simple-auth). Also the **code base is quite small so I suggest to read through it** to better understand what’s going on internally.
 

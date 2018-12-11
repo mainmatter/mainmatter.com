@@ -19,7 +19,7 @@ discovering new components and showing them in the playground.
 <!--break-->
 
 
-#### Status Quo
+## Status Quo
 
 You may remember that last time we closed with our `freestyle.hbs` template
 looking roughly like this:
@@ -48,7 +48,7 @@ If we now start to add subsections for all the components in our app you can
 imagine that our `freestyle.hbs` would soon grow out of proportion. As with any
 other template in Ember.js we can tackle that problem by extracting components.
 
-In this case we can create a 
+In this case we can create a
 `lib/freestyle/app/templates/components/usage/styled-button.hbs` file that
 looks like this:  
 
@@ -78,7 +78,7 @@ But there is always a way to improve the current situation so let's play around
 a little...
 
 
-#### Autodiscovery
+## Autodiscovery
 
 What if we could ask Ember what "usage components" it knows about and then
 render them automatically in the `freestyle.hbs` template...? 🤔
@@ -165,7 +165,7 @@ If we visit the `/freestyle` route now, we should see a list of all our
 them.
 
 
-#### Summary
+## Summary
 
 Just like Ember.js is able to automatically find components, models, and other
 modules when you put them in the right folder, our component playground can

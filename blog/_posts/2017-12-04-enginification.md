@@ -16,7 +16,7 @@ we ran into along the way and how we solved them. So let's dive right in!
 
 <!--break-->
 
-#### Status quo
+## Status quo
 
 The app is a mobile ticket counter for rail tickets. The basic flow through the
 app is as follows: a user enters an departure and arrival station and specifies
@@ -49,7 +49,7 @@ booking flow on application startup. All of that code can be loaded lazily once
 the user proceeds to the next step by actually initiating a search or even
 while they are filling out the login form.
 
-#### Extract common functionality used in app into an addon
+## Extract common functionality used in app into an addon
 
 One fundamental design principle of engines is that they are isolated from the
 hosting app. It is possible to pass in services from the hosting app but apart
@@ -144,7 +144,7 @@ as common style definitions moved into the addon. The next step is to finally
 create the engine, which will contain most of the application code.
 
 
-#### Move functionality into engine
+## Move functionality into engine
 
 An engine is basically an Ember.js addon. Since the engine won't be reused
 within another application, we decided to go with the in-repo solution for the
@@ -230,7 +230,7 @@ So now we have moved all the non-essential logic not needed at the beginning of
 the app into an in-repo engine. As a next optimization, let's make use of a
 nifty feature of Ember Engines…
 
-#### Make it lazy
+## Make it lazy
 
 After we extracted the `common` addon and the `booking-flow` engine, we are
 ready to load the engine lazily to actually reduce the amount of JavaScript
@@ -271,7 +271,7 @@ as well:
 | `booking-flow.css`       |                                | 45.24 KB (7.97 KB gzipped)   |
 |--------------------------|--------------------------------|------------------------------|
 
-#### Conclusion
+## Conclusion
 
 We created an in-repo addon for commonly used components, helpers and style
 definitions. After that, everything which is not needed for the initial search

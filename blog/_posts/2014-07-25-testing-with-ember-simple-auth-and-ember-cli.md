@@ -12,7 +12,7 @@ topic: ember
 
 <!--break-->
 
-#### The testing package
+## The testing package
 
 First of all **install the new [ember-cli-simple-auth-testing package](https://www.npmjs.com/package/ember-cli-simple-auth-testing)**:
 
@@ -32,7 +32,7 @@ export default function startApp(attrs) {
 …
 ```
 
-#### Configuring the `test` environment
+## Configuring the `test` environment
 
 The next step is to configure the `test` environment. As the tests should be isolated and leave no traces of any kind so that subsequent tests don’t have implicit dependencies on the ones that have run earlier, Ember Simple Auth’s default `localStorage` store cannot be used as that would leave data in the `localStorage`. **Instead configure the [ephemeral store](http://ember-simple-auth.com/api/classes/EphemeralStore.html) to be used in the `test` environment**:
 
@@ -47,7 +47,7 @@ if (environment === 'test') {
 
 The ephemeral store stores data in memory and thus will be completely fresh for every test so that tests cannot influence each other.
 
-#### Adding the Tests
+## Adding the Tests
 
 Now everything is set up and a test can be added. To e.g. test that a certain route can only be accessed when the session is authenticated, add tests like these (notice the use of the test helpers `authenticateSession` and `invalidateSession`):
 
