@@ -38,7 +38,7 @@ I'd love both Ember's core characteristics and its cutting-edge features to be u
 I believe Ember's bottleneck for adoption and community growth isn't about technical aspects, it's about visibility and outreach.
 
 
-### A Gap in Visibility
+## A Gap in Visibility
 
 As any other open-source project, the development of Ember lives and thrives through the time and amount of work that is being put into it. In contrast to some other major JavaScript frameworks, Ember is not being backed up by one single major company - neither financially nor contribution-wise.
 Instead Ember's user base is diverse in its professional backgrounds and interests. And this makes Ember more independent and free to evolve according to real developer needs instead of company requirements which is an amazing advantage.
@@ -57,7 +57,7 @@ Ember is still a somewhat hidden gem ([8](http://blog.agilityworks.co.uk/our-blo
 Of course, there are those who already have a clear vision in mind right now and who are making consistent efforts to create online tutorials, write blog posts, give talks, send pull requests to the Ember.js website repository ([10](https://github.com/emberjs/website/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Amerged)) and much more without any prompting.
 What I'd wish for Ember's 2018 Roadmap though is to find ways to **lower the entry barriers** for newcomers to get started in their attempt to advocate Ember and to be creative on how to **encourage a sense of empowerment** in the wider community regarding outreach efforts.
 
-### Closing the Visibility Gap
+## Closing the Visibility Gap
 
 I believe one of the biggest actions that could be taken to make contribution to anything that is outreach-related easier is by increasing the discoverability of discussion channels and already ongoing Github projects and related issues. On the Ember Community Slack chat, most notably the [#st-website](https://embercommunity.slack.com/messages/CAHEZTMBK/), [#wb-marketing](https://embercommunity.slack.com/messages/C36ETE3DK/) and [#topic-talks](https://embercommunity.slack.com/messages/C9RSE508J/) channels are great first points of contact for anyone who was interested in helping out with marketing efforts to find something to help out with. I believe making these channels more discoverable for new developers, e.g. from having a noticeable call-to-action on the Ember.js website ([11](https://emberjs.com/)) or a dedicated, search-engine optimized landing page already goes a long way.
 
@@ -70,7 +70,7 @@ In fact, the Women Helping Women Program ([18](https://emberwomen.com/)) has alr
 Encouraging even larger parts of the community to speak and highlight Ember allows many great talks to come: I'd love to see so many of the cool and new things that recently landed or are just on their way to land in Ember highlighted: This year's EmberConf Opening Keynote by Ember Core Team members Yehuda Katz & Tom Dale ([19](https://www.youtube.com/watch?v=NhtpXs0ZtUc)) at EmberConf is among others ([20](https://twitter.com/skillsmatter/status/984752827904950273), [21](https://www.youtube.com/watch?v=8D-O4cSteRk)) an inspiring example of this type of advocacy for Ember.
 I feel that beyond that there is a quite urgent need for "introduction" type talks which are appealing to developers of any experience level and any (JavaScript) background. Features of Ember that might have already been around for a while and which have become obvious to the regular Ember user still need to be highlighted to audiences who are not that familiar with Ember yet on a regular basis. Therefore I'm confident supporting speakers in promoting their own "Why Ember" type of presentations to events outside of the Ember ecosystem is one of the most useful measures we as a community can take to advocate Ember as a framework.
 
-### Wishing Upon a Vocal Community
+## Wishing Upon a Vocal Community
 
 These are some of the ideas that came to my mind when thinking about what I'd wish for Ember in 2018. I'd like to see Ember's community grow even further and I believe one major way to achieve this goal is by improving its visibility - the degree by which it is seen by those who are already becoming part of the community and also by those outside of it.
 
