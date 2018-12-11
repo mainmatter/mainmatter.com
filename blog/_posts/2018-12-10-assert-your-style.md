@@ -128,8 +128,8 @@ module('Integration | Component | simplabs-logo-tile', function(hooks) {
   test('it allows setting a dark background color', async function(assert) {
     await render(hbs{% raw %}`{{simplabs-logo-tile tileColor="dark"}}`{% endraw %});
 
-    let elementStyle = window.getComputedStyle(find('[data-test-simplabs-logo-tile]'), null);
-    assert.equal(computedElStyle.getPropertyValue('background-color'), 'rgb(29, 113, 182)');
+    let computedStyle = window.getComputedStyle(find('[data-test-simplabs-logo-tile]'), null);
+    assert.equal(computedStyle.getPropertyValue('background-color'), 'rgb(29, 113, 182)');
   });
 });
 ```
@@ -138,7 +138,7 @@ module('Integration | Component | simplabs-logo-tile', function(hooks) {
 
 Now we know how we can write style-related tests for our automated test process that assert that the expected styles are applied to elements on the web page.
 
-But there's an even easier way to assert the computed styles of elements in your **QUnit test suite**. With the latest [v0.8.1 release](https://twitter.com/simplabs/status/1065913669995978752) of [qunit-dom](https://simplabs.com/blog/2017/10/24/high-level-assertions-with-qunit-dom.html) you can make your tests truly ✨
+But there's an even easier way to assert the computed styles of elements in your **QUnit test suite**. Since [v0.8.1](https://twitter.com/simplabs/status/1065913669995978752) of [qunit-dom](https://simplabs.com/blog/2017/10/24/high-level-assertions-with-qunit-dom.html) you can make your tests truly ✨
 
 Check it [out](https://github.com/simplabs/qunit-dom):
 
