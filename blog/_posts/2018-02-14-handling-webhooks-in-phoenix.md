@@ -11,7 +11,7 @@ I recently had to implement a controller, which took care of receiving and proce
 
 <!--break-->
 
-#### tl;dr
+## tl;dr
 
 Use `forward` on `MyApp.Router` to forward the request (`%Conn{}`) to a custom plug (`MyApp.Plugs.WebhookShunt`) which maps `%Conn{}` to a route (and thus a controller action) defined on `MyApp.WebhookRouter`, based on the data in the request body.
 
@@ -19,7 +19,7 @@ I.e.,
 
 `%Conn{}` -> `Router` -> `WebhookShunt` -> `WebhookRouter` -> `WebhookController`
 
-#### lv;e (long version; enjoy!)
+## lv;e (long version; enjoy!)
 
 Let's restate the problem:
 
@@ -58,7 +58,7 @@ It took three refactors to get to a satisfactory solution. I will, however, expl
 2. Plug called from endpoint
 3. Plug and second router
 
-#### Multiple function clauses
+## Multiple function clauses
 
 Let's start separating the computation into smaller fragments by moving the pattern matching from the `case` statement to the function's definition. We are still using only one route and only one controller action, but we write multiple clauses of that function to match a certain value of the `event` key in the params.
 
@@ -73,7 +73,7 @@ def hook(conn, %{"event" => "division"} = params), do: divide(params)
 
 The request payload will match the clauses for the `hook/2` function and execute different functions depending on what `event` was passed in. This refactor is a step in the right direction, but it still doesn't fit well with the idea that a controller action should handle one specific request. The router serves no real purpose, as there is still only one route, and our code has the potential to get very messy.
 
-#### Shunting incoming connections
+## Shunting incoming connections
 
 What if we could interfere with the incoming webhook before it hits the router? We could then modify the path of the request depending on the params, match a route and execute the corresponding controller action.
 
@@ -160,7 +160,7 @@ This strategy isn't great, however. We are placing code in the endpoint, which w
 
 Interfering with the request to map it to a route at this point would be unidiomatic Phoenix. It would also make the app slower, and harder to maintain and debug.
 
-#### Forwarding conn to the shunt and calling another router
+## Forwarding conn to the shunt and calling another router
 
 Instead of intercepting the `%Conn{}` in the endpoint, we could forward it from the application's main router to the `WebhookShunt`, modify it and call a second router whose sole purpose would be to handle the incoming webhooks.
 

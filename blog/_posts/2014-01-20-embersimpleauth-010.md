@@ -12,7 +12,7 @@ Since [Ember.SimpleAuth](https://github.com/simplabs/ember-simple-auth) was rele
 
 <!--break-->
 
-#### What changed?
+## What changed?
 
 The most significant change is the **extraction of everything specific to specific authentication/authorization mechanisms (e.g. the default OAuth 2.0 implementation) into strategy classes** which significantly improves customizability and extensibility. Instead of having to override parts of the library, using e.g. a custom authentication method is now as simple as specifying the class in the respective controller:
 
@@ -26,7 +26,7 @@ This **makes implementations cleaner and also helps defining the public API that
 
 Other changes include the introduction of store strategies (Ember.SimpleAuth comes with a cookie store that is equivalent to the old store, a store that uses the browser’s localStorage API and which is the new default as well as an in-memory store which is mainly useful for testing) as well as error handling/token invalidation, added callback actions like `sessionInvalidationSucceeded` etc. See the [README](https://github.com/simplabs/ember-simple-auth#readme) and the [API docs](http://ember-simple-auth.com/api/) for complete documentation.
 
-#### Upgrading
+## Upgrading
 
 Upgrading will be pretty straight forward in most cases. The main change that could bite you is probably the change in `Ember.SimpleAuth.setup`’s signature. While it used to expect the `container` as well as the application instance, **the `container` argument was dropped** as it wasn’t actually needed. So in the initializer, change this:
 
@@ -84,6 +84,6 @@ to this:
 
 These are really the only changes needed if your application is using Ember.SimpleAuth’s default settings, the default OAuth 2.0 mechanism etc. For other scenarios, see the [README](https://github.com/simplabs/ember-simple-auth#readme), [API docs](http://ember-simple-auth.com/api/) and also the examples provided in the repository.
 
-#### Outlook
+## Outlook
 
 **I hope that this release can pave the way towards a stable API for Ember.SimpleAuth.** It would also be great of course if many people came up with authenticator and authorizer implementations for all kinds of backends to prove the design of Ember.SimpleAuth’s strategy approach as well as to build a library of ready-to-use strategies for the most common setups.

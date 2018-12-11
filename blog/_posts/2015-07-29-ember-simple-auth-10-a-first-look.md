@@ -12,11 +12,11 @@ The **first beta of Ember Simple Auth 1.0 will be released soon** and this post 
 
 <!--break-->
 
-#### Ember 2.0 Compatibility
+## Ember 2.0 Compatibility
 
 The biggest improvement of course is that the **library will be compatible with Ember 2.0** (which is mainly due to the fact that it now uses instance initializers for a majority of its setup work). Also when using Ember 1.13 you shouldn’t be seeing any deprecations triggered by Ember Simple Auth anymore so that the upgrade path to 2.0 is clean.
 
-#### Session as a Service
+## Session as a Service
 
 While previous versions of Ember Simple Auth injected the session into routes, controllers and components, **Ember Simple Auth 1.0 drops that and instead provides a new `Session` service** that encapsulates all access to the actual session and can simply be injected wherever necessary, e.g.:
 
@@ -62,7 +62,7 @@ export default Ember.Service.extend({
 });
 ```
 
-#### Ember CLI only
+## Ember CLI only
 
 While previous versions of Ember Simple Auth provided 3 different versions (AMD, globals and the Ember CLI addons) where the Ember CLI addon was also split up into several sub addons, **1.0 will come as one single Ember CLI addon**. This offers 3 main advantages:
 
@@ -70,7 +70,7 @@ While previous versions of Ember Simple Auth provided 3 different versions (AMD,
 *   It is now much simpler to install Ember CLI as it’s now only `ember install ember-simple-auth` command instead of install at least 2 packages or potentially more.
 *   Since all the source is now transpiled with Babel as part of the Ember CLI build process, all the source code has been updated to use thinks like template strings, function literals, deconstruction etc., making the code far more concise and readable.
 
-#### Getting to 1.0
+## Getting to 1.0
 
 1.0 is still not fully finished and ready for release. While I plan to release a first beta until next week latest, getting to the final release still requires some work:
 

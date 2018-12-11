@@ -14,7 +14,7 @@ At [this year's EmberConf the Ember core team officially announced](https://yout
 
 In addition to building standalone Glimmer applications, the library allows the creation of components **according to the Custom Elements v1 specification**, making it possible to build native web components which can be reused across all kinds of front end stacks.
 
-#### What's in the Custom Elements v1 specification
+## What's in the Custom Elements v1 specification
 
 The **Custom Elements spec** describes a technology which is - alongside of HTML templates, Shadow DOM and HTML imports - an integral part of the [current Web Component specification](https://www.w3.org/wiki/WebComponents/).
 The Custom Elements spec describes capabilities for creating custom HTML elements which can be used just like native HTML elements: `<my-customelement>`.
@@ -66,7 +66,7 @@ Third, using web components is very easy as only **knowledge of the HTML markup 
 
 Let’s now dive into how we can create our own custom elements using Glimmer.
 
-#### Glimmer Web Component Example: A Reusable Open Street Map
+## Glimmer Web Component Example: A Reusable Open Street Map
 
 A common use case for a reusable component is the interactive view of a street map which usually can be embedded into websites and apps quickly with some configuration using services like the Google Maps API or Leaflet. What if we could create our own custom element that can simply be shared and reused using HTML alone?
 
@@ -77,7 +77,7 @@ In the following we will **create a simple street map** based on [Leaflet.js](ht
 
 You can also check out the project on [Github](https://github.com/jessica-jordan/glimmer-map).
 
-##### Starting a new Glimmer Web Component Project
+### Starting a new Glimmer Web Component Project
 
 To get started with an initial, running project setup, we will be using [Ember CLI](https://ember-cli.com/) for scaffolding and configuration of our Glimmer app. From `ember-cli@2.14.0` onwards, we can get started to create a Glimmer-backed web component by using the `ember new` generator, the [respective glimmer blueprint](https://github.com/glimmerjs/glimmer-blueprint) and the `--web-component` flag:
 
@@ -142,7 +142,7 @@ The final line makes use of the `CustomElementRegistry`'s `define` method to reg
 
 So, after having that quick dive into how our component is spun up in Glimmer, let’s get started developing it:
 
-##### Developing a Web Component with Glimmer's API
+### Developing a Web Component with Glimmer's API
 
 So far the blueprint for our main component module has already been setup by Ember CLI's generator.
 The class used for generating our `glimmer-map` component is now defined in `src/ui/components/glimmer-map/component.ts`:
@@ -296,7 +296,7 @@ export default class GlimmerMap extends Component {
 With this we are already done and can get started with distributing our component.
 
 
-#### Reusing Glimmer components as custom elements
+## Reusing Glimmer components as custom elements
 
 As mentioned in the beginning of this article, the current blueprint for Glimmer web components comes with a wrapper for being able to package and reuse our Glimmer components as custom elements. To **create the assets** needed for reusage, let’s build those like we are already used to when building Ember apps:
 
@@ -333,6 +333,6 @@ And finally, we can see our Glimmer-based street map being rendered just as seen
 <script src="/assets/posts/2017-08-30-creating-web-components-with-glimmer/glimmer-map.js"></script>
 
 
-#### And the Glimmer Component story is not over yet
+## And the Glimmer Component story is not over yet
 
 Many more interesting developments are upcoming around Glimmer and the [glimmer-component](https://github.com/glimmerjs/glimmer-component) and [glimmer-web-component](https://github.com/glimmerjs/glimmer-web-component) modules specifically. For further reading, please check out another great discussion about the implementation of upcoming APIs according to the web component specification on [here](https://github.com/glimmerjs/glimmer-web-component/issues/19), check out [my talk on current state of web components and Glimmer’s place in it](https://www.youtube.com/watch?v=OzFgDBJcWuU) and stay tuned for our future blog post on testing Glimmer components.

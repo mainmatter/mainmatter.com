@@ -34,7 +34,7 @@ From the template above you can see that we have essentially two states that
 we need to test: one with and one without a `username` property being set.
 
 
-#### Status Quo
+## Status Quo
 
 An acceptance test for such a template could look roughly like this:
 
@@ -59,10 +59,10 @@ test('frontpage should be welcoming', function(assert) {
 First we will `visit` the index page `andThen` check if the welcome message
 matches our expectation. Next we will `fill` an `<input>` field with a custom
 `username` like "John Doe" `andThen` finally we will check if the welcome
-message was updated correctly. 
+message was updated correctly.
 
 
-#### Promise chains
+## Promise chains
 
 If you've used [Ember.js](https://emberjs.com/) for some time you will probably
 be used to the `andThen` blocks above. One of the reasons for them to exist is
@@ -94,7 +94,7 @@ reasons why a lot of Ember developers still prefer the `andThen` blocks over
 using `Promise` chains.
 
 
-#### async/await
+## async/await
 
 In one of the recent changes to the JavaScript language (or ECMAScript to be
 precise) two new keywords were introduced to simplify dealing with `Promises`:
@@ -134,7 +134,7 @@ hard to read, and it takes a short while to figure out what the intent of that
 assertion was.
 
 
-#### chai and chai-dom
+## chai and chai-dom
 
 If you're using [Mocha](https://mochajs.org/) and [Chai](http://chaijs.com/)
 to write your tests, you are already used to more readable assertions since
@@ -161,7 +161,7 @@ restart Ember CLI and now you can use the additional assertions that `chai-dom`
 provides.
 
 
-#### qunit-dom
+## qunit-dom
 
 While `ember-cli-chai` also works with QUnit it is essentially just a hack
 and not really supported properly by QUnit or Chai so be careful if you're
@@ -204,7 +204,7 @@ You can find examples of what assertions are available in the [README](https://g
 of the project and even more information in the [API reference](https://github.com/simplabs/qunit-dom/blob/master/API.md).
 
 
-#### qunit-dom-codemod
+## qunit-dom-codemod
 
 During the EmberFest conference we realized that while a lot of people would
 probably appreciate what we had built, nobody would go over their thousands of
@@ -231,7 +231,7 @@ jscodeshift -t https://raw.githubusercontent.com/simplabs/qunit-dom-codemod/mast
 ```
 
 
-#### Conclusion
+## Conclusion
 
 Moving the tests to `async/await` and `qunit-dom` makes them a lot more
 readable and easier to understand for new developers and is just a few

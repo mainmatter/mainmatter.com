@@ -22,7 +22,7 @@ and the associated data.
 <!--break-->
 
 
-#### Loading Translations
+## Loading Translations
 
 Let's first start with how translations are loaded in ember-intl. By default
 ember-intl will bundle all translations into your `app.js` file, which works
@@ -73,7 +73,7 @@ export default IntlService.extend({
 });
 ```
 
-Now we can simplify our code in the `application` route to this: 
+Now we can simplify our code in the `application` route to this:
 
 ```js
 async beforeModel() {
@@ -90,7 +90,7 @@ browser we should see the app making an AJAX request for the translations
 before it starts. 🎉
 
 
-#### Loading the Intl.js polyfill
+## Loading the Intl.js polyfill
 
 As mentioned in the intro [some browsers](https://caniuse.com/#feat=internationalization)
 need a polyfill for the new `Intl` APIs. ember-intl makes this easy for us as
@@ -146,7 +146,7 @@ and then use it in the `application` route before downloading any translations:
 ```js
 async beforeModel() {
   let locale = figureOutLocale(); // e.g. "de" or "fr-ch"
-  
+
   if (!window.Intl) {
     await this.get('intl').loadPolyfill();
   }
@@ -166,7 +166,7 @@ Unfortunately we're not done yet. While we have loaded the polyfill correctly,
 we also need to load the locale data for the polyfill depending on what locale
 the user chooses. For that reason we implement two more methods on the `intl`
 service:
- 
+
 - a `loadPolyfillData()` method
 - a `loadLocale()` method that combines `loadTranslations()` and `loadPolyfillData()`
 
@@ -179,17 +179,17 @@ export default IntlService.extend({
     let response = await fetch(`/translations/${locale}.json`);
     let translations = await response.json();
     this.addTranslations(locale, translations);
-  }, 
+  },
 
   async loadPolyfill(locale) {
     await loadJS('/assets/intl/intl.min.js');
-  }, 
+  },
 
-  async loadPolyfillData(locale) { 
+  async loadPolyfillData(locale) {
     await loadJS(`/assets/intl/locales/${locale}.js`);
   },
 
-  async loadLocale(locale) { 
+  async loadLocale(locale) {
     let promises = [this.loadTranslations(locale)];
 
     if (window.Intl === window.IntlPolyfill) {
@@ -210,7 +210,7 @@ information for the Intl.js polyfill on how to format dates, time and numbers
 and several other things that are handled in a locale-aware way in the Intl API.
 
 
-#### Summary
+## Summary
 
 In this blog post we have learned how to reduce our bundle size in several ways
 when using the [ember-intl] addon. We are now loading only the code and data

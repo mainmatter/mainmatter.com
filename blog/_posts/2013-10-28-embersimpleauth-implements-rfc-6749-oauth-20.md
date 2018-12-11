@@ -16,7 +16,7 @@ With the [release of Ember.SimpleAuth 0.0.4](https://github.com/simplabs/ember-s
 
 With the OAuth 2.0 support also comes **support for access token expiration and [refresh tokens](http://tools.ietf.org/html/rfc6749#section-6)**. Using expiring access tokens improves overall security as replay attacks are less likely while with refresh tokens **Ember.SimpleAuth can automatically obtain new access tokens** before they expire so that the user doesn’t recognize the token actually changes.
 
-#### Other changes
+## Other changes
 
 Other smaller additions include **support for [external OAuth/OpenID providers](https://github.com/simplabs/ember-simple-auth#external-oauthopenid-providers)** and [manipulation of the request used to obtain the access token](https://github.com/simplabs/ember-simple-auth#custom-server-protocols). Also the API was simplified and the `login` and `logout` actions were moved to the `ApplicationControllerMixin` and the `/logout` route has been removed. The new API now looks like this:
 
@@ -37,6 +37,6 @@ App.ApplicationRoute = Ember.Route.extend(Ember.SimpleAuth.ApplicationRouteMixin
 App.LoginController  = Ember.Controller.extend(Ember.SimpleAuth.LoginControllerMixin);
 ```
 
-#### Future plans
+## Future plans
 
 Currently I’m working on adding API documentation within the source together with a means of generating some nice HTML out of that. I don’t currently see that there is much else missing in the library so **I’d like to release a 1.0.0 version soon**. Of course I’d like to make sure that Ember.SimpleAuth is actually being used and working so [please submit bug reports, patches etc.](https://github.com/simplabs/ember-simple-auth) or **provide general feedback/ideas!**

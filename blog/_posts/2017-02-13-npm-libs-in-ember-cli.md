@@ -19,7 +19,7 @@ will explain how we can do that and what options are available to us.
 
 <!--break-->
 
-#### Status Quo
+## Status Quo
 
 The way to import Bower libraries into your app consists of three major steps.
 First we will have to install the library. We will use the popular
@@ -85,7 +85,7 @@ app.import('vendor/shims/moment.js');
 We are now able to use `import moment from 'moment';` in our Ember code.
 
 
-#### App vs. Addon
+## App vs. Addon
 
 The above instructions work great for apps, but what about addons? The
 `ember-cli-build.js` file for addons is only relevant for building the dummy
@@ -160,7 +160,7 @@ method returns a `Promise` we have to return it from the `afterInstall` hook
 to make sure that Ember CLI waits for the installation to finish.
 
 
-#### npm vs. Bower
+## npm vs. Bower
 
 <blockquote class="twitter-tweet" data-lang="de"><p lang="en" dir="ltr">&quot;What&#39;s bower?&quot;<br>&quot;A package manager, install it with npm.&quot;<br>&quot;What&#39;s npm?&quot;<br>&quot;A package manager, you can install it with brew&quot;<br>&quot;What&#39;s brew?&quot;<br>...</p>&mdash; Stefan Baumgartner (@ddprrt) <a href="https://twitter.com/ddprrt/status/529909875347030016">5. November 2014</a></blockquote>
 
@@ -255,7 +255,7 @@ Now that we've imported the `moment.js` file into our `vendor` tree we can
 finally `import()` it in the `included()` hook and everything works again.
 
 
-#### npm dependencies
+## npm dependencies
 
 As we are using npm now we can also take advantage of the way that npm
 resolves dependencies. That means instead of using a blueprint to install
@@ -297,7 +297,7 @@ though which makes the code a little more complicated compared to our
 simplified example here.
 
 
-#### App vs. Addon again
+## App vs. Addon again
 
 Now that we have converted our `ember-moment` addon to use npm instead of
 Bower, how could we do the same if we wanted to use Moment.js in our app
@@ -314,7 +314,7 @@ ember generate in-repo-addon ember-moment
 and use the same code as above inside the `lib/ember-moment/index.js` file.
 
 
-#### Next: CommonJS and ES6 modules 
+## Next: CommonJS and ES6 modules 
 
 Things get a little more complicated when you want to use npm packages that
 are not distributed in a prebuilt form like Moment.js. If they instead export

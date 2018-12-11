@@ -17,7 +17,7 @@ before we feel comfortable promoting the addon to v1.0.0.
 
 <!--break-->
 
-#### v0.2.0: `data-test-*` attributes without values
+## v0.2.0: `data-test-*` attributes without values
 
 In HTML it is possible to add attributes to an element that don't have a value:
 
@@ -42,7 +42,7 @@ transform which transforms all such valueless `data-test-foo` instances to
 `data-test-foo=true` by default.
 
 While that seems like a convenient thing, it has drawbacks and does not always
-work as expected, as you can see in the following template: 
+work as expected, as you can see in the following template:
 
 ```handlebars
 {% raw %}{{! works }}
@@ -68,7 +68,7 @@ We will deprecate the usage of valueless `data-test-*` attributes on components
 in an upcoming release and remove the transform completely for the v1.0.0 release.
 
 
-#### v0.3.0: Support for Babel 6
+## v0.3.0: Support for Babel 6
 
 This year (2017) the Ember ecosystem finally moved from Babel 5 to Babel 6,
 which happened mostly without issues for app developers as it was just
@@ -93,7 +93,7 @@ different Babel transforms into the build pipeline so that we can support both
 major Babel versions with the same addon.
 
 
-#### v0.3.4: Support for test-selectors in nested addons
+## v0.3.4: Support for test-selectors in nested addons
 
 In April we were notified by [Luke Melia](https://github.com/lukemelia) that
 test-selectors in templates in an addon that he extracted were stripped
@@ -107,7 +107,7 @@ now possible to also use `ember-test-selectors` as a nested addon dependency
 and rely on correct test-selector stripping depending on the build environment.
 
 
-#### v0.3.7: Deprecation of the `testSelector` helper function
+## v0.3.7: Deprecation of the `testSelector` helper function
 
 A few weeks later [Kelly Selden](https://github.com/kellyselden) triggered a
 [conversation](https://github.com/simplabs/ember-test-selectors/issues/121)
@@ -141,7 +141,7 @@ that might be able to save you a few minutes or hours by converting the code
 for you automatically.
 
 
-#### v0.3.8: Support for Ember 1.11 and 1.12 
+## v0.3.8: Support for Ember 1.11 and 1.12 
 
 Only a few weeks ago [Chris Garrett](https://github.com/pzuraq/), better known
 as @pzuraq, approached us about supporting Ember 1.11 and 1.12 in
@@ -222,7 +222,7 @@ able to adjust our range of supported Ember versions all the way down to
 Ember 1.11.
 
 
-#### Conclusion
+## Conclusion
 
 A lot of things have happened on the project this year and we will continue to
 iterate forward on this. One exciting enhancement that we are looking into is
