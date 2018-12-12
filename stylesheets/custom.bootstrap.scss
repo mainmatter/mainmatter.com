@@ -142,6 +142,8 @@ footer {
 .icon-circle {
   display: flex;
   border-radius: 50%;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .icon-circle-sm {
