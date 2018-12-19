@@ -84,3 +84,11 @@
     color: $rust;
   }
 }
+
+.blog-post-testing {
+  border-left-color: $testing;
+
+  .blog-post-testing {
+    color: $testing;
+  }
+}
