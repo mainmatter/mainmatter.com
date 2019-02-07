@@ -1,14 +1,34 @@
-# simplabs.github.io
+# simplabs.com
 
-The source code for https://simplabs.com
+This README outlines the details of collaborating on this Glimmer application.
+A short introduction of this app could easily go here.
 
-## Running locally
+## Prerequisites
 
-```bash
-bundle install
-bundle exec jekyll serve
-```
+You will need the following things properly installed on your computer.
 
-Copyright &copy; 2014-2018 simplabs GmbH (https://simplabs.com), released under
-the
-[Creative Commons Attribution-NonCommercial 4.0 International license](https://creativecommons.org/licenses/by-nc/4.0/).
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/) (with NPM)
+* [Yarn](https://yarnpkg.com/en/)
+* [Ember CLI](https://ember-cli.com/)
+
+## Installation
+
+* `git clone <repository-url>` this repository
+* `cd simplabs`
+* `yarn`
+
+## Running / Development
+
+* `ember serve`
+* Visit your app at [http://localhost:4200](http://localhost:4200).
+
+### Building
+
+* `ember build` (development)
+* `ember build --environment production` (production)
+
+## Further Reading / Useful Links
+
+* [glimmerjs](http://github.com/tildeio/glimmer/)
+* [ember-cli](https://ember-cli.com/)

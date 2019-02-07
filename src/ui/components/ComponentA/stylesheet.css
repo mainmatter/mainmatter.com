@@ -1,0 +1,8 @@
+@block screen from "../../styles/blocks/screen.block.css";
+
+:scope {
+  block-name: ComponentA;
+  extends: screen;
+
+  color: red;
+}

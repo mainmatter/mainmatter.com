@@ -1,0 +1,56 @@
+{
+  "name": "simplabs",
+  "version": "0.0.0",
+  "description": "A brand new Glimmer app.",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "ember build -prod",
+    "start": "ember server",
+    "test": "ember test",
+    "lint:ts": "tslint -c tslint.json 'src/**/*.ts' -t codeFrame"
+  },
+  "devDependencies": {
+    "@css-blocks/ember-cli": "^0.20.0-beta.7",
+    "@glimmer/application": "^0.13.0",
+    "@glimmer/application-pipeline": "^0.14.0",
+    "@glimmer/blueprint": "~0.13.0",
+    "@glimmer/component": "^0.13.0",
+    "@glimmer/inline-precompile": "^1.0.0",
+    "@glimmer/resolver": "^0.4.3",
+    "@glimmer/test-helpers": "^0.31.1",
+    "@types/qunit": "^2.0.31",
+    "broccoli-asset-rev": "^2.5.0",
+    "broccoli-clean-css": "^2.0.1",
+    "broccoli-debug": "^0.6.5",
+    "broccoli-funnel": "^2.0.1",
+    "broccoli-stew": "^2.0.1",
+    "broccoli-string-replace": "^0.1.2",
+    "colors": "^1.3.3",
+    "critical": "^1.3.4",
+    "ember-cli": "^3.7.1",
+    "ember-cli-dependency-checker": "^2.0.1",
+    "ember-cli-inject-live-reload": "^1.6.1",
+    "ember-cli-tslint": "^0.1.3",
+    "ember-cli-uglify": "^2.0.0-beta.1",
+    "express": "^4.16.4",
+    "fs-extra": "^7.0.1",
+    "glob": "^7.1.3",
+    "morgan": "^1.3.2",
+    "navigo": "^7.1.2",
+    "puppeteer": "^1.11.0",
+    "qunitjs": "^2.3.3",
+    "typescript": "~2.6.0"
+  },
+  "engines": {
+    "node": ">= 4.0"
+  },
+  "private": true,
+  "ember-addon": {
+    "paths": [
+      "lib/inject-routes"
+    ]
+  }
+}
