@@ -10,7 +10,8 @@
     "build": "ember build -prod",
     "start": "ember server",
     "test": "ember test",
-    "lint:ts": "tslint -c tslint.json 'src/**/*.ts' -t codeFrame"
+    "lint:ts": "tslint -c tslint.json 'src/**/*.ts' -t codeFrame",
+    "build": "ember build -prod && node scripts/prerender.js"
   },
   "devDependencies": {
     "@css-blocks/ember-cli": "^0.20.0-beta.7",
