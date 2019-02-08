@@ -2,7 +2,7 @@
 layout: article
 section: Blog
 title: "Ember.js: The Documentary - Amsterdam Premiere"
-author: "Mark Coleman"
+author: "mark"
 github-handle: mrmrcoleman
 twitter-handle: mrmrcoleman
 topic: emberjs
