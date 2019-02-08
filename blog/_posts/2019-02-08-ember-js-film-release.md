@@ -10,6 +10,8 @@ topic: emberjs
 
 We're very pleased to announce that simplabs are featured in the new  [HoneyPot](https://www.honeypot.io/) film **'Ember: A Mini Documentary'** that will premiere in Amsterdam this evening (2019-02-08).
 
+<!--break-->
+
 The film is a deep dive into the world of Ember.js and includes an interview with our CEO Marco Otte-Witte. After the screening there will also be a Q&A with Yehuda Katz & Special Guests!
 
 The premiere kicks off at 18:30 at [Pakhuis De Zwijger](https://dezwijger.nl/) and there are still a few spots available.
