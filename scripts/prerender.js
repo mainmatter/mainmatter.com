@@ -11,10 +11,7 @@ const DIST_PATH = path.join(__dirname, '..', 'dist');
 
 async function snapshot(browser, routePath) {
   let page = await browser.newPage();
-  await page.goto('http://localhost:3000/', { waitUntil: 'networkidle0' });
-  await page.evaluate(path => {
-    return window.__router__.navigate(path);
-  }, routePath);
+  await page.goto(`http://localhost:3000${routePath}`, { waitUntil: 'networkidle0' });
   return page.content();
 }
 
@@ -43,7 +40,15 @@ async function inlineCss(fileName) {
   await fs.writeFile(fileName, result.toString('utf8'));
 }
 
+const HTML_PATH = path.join(DIST_PATH, 'index.html');
 let server = express();
+server.get('*', function(req, res, next) {
+  if (req.headers.accept && req.headers.accept.includes('text/html')) {
+    res.sendFile(HTML_PATH);
+  } else {
+    next();
+  }
+});
 server.use(express.static(DIST_PATH));
 
 server.listen(3000, async function () {
