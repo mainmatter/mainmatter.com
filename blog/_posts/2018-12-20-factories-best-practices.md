@@ -183,7 +183,7 @@ My arguments for not using Mirage:
 
 In my opinion the main use for Mirage is as a rapid prototyping tool. It can also be used for testing, but by default, only testing in acceptance tests. Mirage provides you with a Javascript server that runs in the browser and intercepts API requests, responding to them before a network request is even made, either those requests made by your application in `dev` or those made during acceptance tests.
 
-If you want to use Mirage in testing, and you write more than acceptance tests then you will need to use a ['hack' or 'workaround'](http://www.ember-cli-mirage.com/docs/v0.4.x/manually-starting-mirage/) to manually start and stop the mirage server during integration and unit tests. And you definitely should be writing integration and unit tests.
+If you want to use Mirage in testing, and you write more than acceptance tests then you will need to use a ['hack' or 'workaround'](http://www.ember-cli-mirage.com/versions/v0.4.x/manually-starting-mirage/) to manually start and stop the mirage server during integration and unit tests. And you definitely should be writing integration and unit tests.
 
 #### 2. Test Clarity
 Using Mirage in an acceptance test look like this.
