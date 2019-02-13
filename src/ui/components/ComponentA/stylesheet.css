@@ -3,6 +3,4 @@
 :scope {
   block-name: ComponentA;
   extends: screen;
-
-  color: red;
 }
