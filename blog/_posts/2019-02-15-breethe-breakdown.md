@@ -7,7 +7,9 @@ github-handle: niklaslong
 topic: elixir
 ---
 
-## Intro
+Trust me, you'll like this one... Elixir Umbrella applications, Domain Driven Design and Open-source!
+
+<!--break-->
 
 ## Breethe
 
@@ -23,7 +25,7 @@ and we encourage everyone interested to look through the source for reference. T
 - [From SPA to PWA](/blog/2018/07/24/from-spa-to-pwa.html)
 - [Building a PWA with Glimmer.js](/blog/2018/07/03/building-a-pwa-with-glimmer-js.html)
 
-## Elixir umbrella apps and splitting concerns with DDD
+## Umbrella apps and splitting concerns with DDD
 
 When we first started building Breethe, we asked ourselves a simple question which would dictate the structure of the application and our motivation for using an umbrella app to organise our code. This question was: what if we want to change our air quality provider? It turns out this wasn't just speculation as we are now in the process of doing just that and our decision to use an umbrella app will make the process tremendously easy. 
 
@@ -33,9 +35,22 @@ Using an umbrella allowed us to split our server into two very distinct applicat
 
 We have essentially defined a clear boundary between the business logic and the webserver. This is cool because the umbrella becomes modular like LEGO and who doesn't like LEGO? Need to change air quality provider? No problem, build a new data application and drop it into the umbrella, replacing the old one. The webserver needn't be changed as long as the new data app implements the API the previous one used. The same could be done if we wanted to change the webserver or if we wanted to extend the functionality of the umbrella. 
 
-#### Internal domains within date sources (carefully defined APIs)
+However, for this approach to work well, the APIs used to communicate between the different applications in the umbrella need to be carefully defined. We want to keep the interfaces as little as possible to keep complexity contained. As an example, here are the publicly available functions on the data app in the Breethe umbrella: 
+
+```elixir
+def get_location(location_id), do: # ...
+
+def search_locations(search_term), do: # ...
+
+def search_locations(lat, lon), do: # ...
+
+def search_measurements(location_id), do: # ...
+```
+
+Equally, these are the only functions the Phoenix webserver (or any other app in the umbrella) can call on the data app. These principles are of course not only applicable at the top level of the application but also within its internal logical contexts. For example, in Breethe, we have seperated the functions explicitly making requests to third-party APIs and abstracted them away behind an interface. This, again, reduces complexity and facilitates testing as we can isolate the different components of the business logic. This is especially helpful when using Mox.
+
+## Testing domains independently using Mox
 
 ## Using tasks to asynchronously load data in background
 
-## Testing domains independently using Mox (mocking db)
 
