@@ -20,7 +20,7 @@ quality data for locations around the world. Pollution and global warming are ge
 ![Video of the Breethe PWA](/images/posts/2018-07-24-from-spa-to-pwa/breethe-video.gif)
 
 The application is [open source](https://github.com/simplabs/breethe-server)
-and we encourage everyone interested to look through the source for reference. The server for this application was implemented using an [Elixir (add link)] umbrella application which will be the focus of this post. The client for Breethe was built with
+and we encourage everyone interested to look through the source for reference. The server for this application was implemented using an [Elixir](https://elixir-lang.org) umbrella application which will be the focus of this post. The client for Breethe was built with
 [Glimmer.js](http://glimmerjs.com), which we discussed in previous posts:
 - [From SPA to PWA](/blog/2018/07/24/from-spa-to-pwa.html)
 - [Building a PWA with Glimmer.js](/blog/2018/07/03/building-a-pwa-with-glimmer-js.html)
@@ -56,42 +56,22 @@ Mox, as the name suggests, is a library that defines mocks bound to specific beh
 
 As an example, let's consider the public API for the data application when testing the webserver. We are testing the webserver and the data application in isolation to each other. As the interface between the two is only composed of the four functions shown in the previous section, mocking the data application's behavior when testing the webserver only requires mocking those four functions. Naturally, this is only reasonable if we also test the data application in full, from interface to database. Crucially, it is the singularity of the interface (four functions) which allows this degree of separation between the two applications in the umbrella.
 
-Let's take a look at a controller test:
+Let's take a look at a controller test for a location search by name. I've broken it down into its four main parts:
 
-```elixir
-describe "index route: returns locations" do
-  test "when filtering by location name" do
-    location = insert(:location, measurements: [])
-
-    Mock
-    |> expect(:search_locations, fn _search_term -> [location] end)
-
-    conn = get(build_conn(), "api/locations?filter[name]=London", [])
-
-    assert json_response(conn, 200) == %{
-              "data" => [
-                ...
-              ]
-  end
-end
-```
-
-This test does four things:
-
-1. it sets up the test data with ExMachina.
+1. It sets up the test data with ExMachina.
 ```elixir
 location = insert(:location, measurements: [])
 ```
-2. it defines a mock for the `search_locations(search_term)` function defined in the data application's API (it's #2 out of the 4 mentioned above) and sets the return value to the location we created at 1. 
+2. It defines a mock in the `Breethe.Mock` module (more on this later) for the `search_locations(search_term)` function defined in the data application's API (it's #2 out of the 4 mentioned above) and sets the return value to the location we created at 1. 
 ```elixir
-Mock
+Breethe.Mock
 |> expect(:search_locations, fn _search_term -> [location] end)
 ```
-3. it builds a connection and makes a call to the webserver's route designed to handle a location search by name.
+3. It builds a connection and makes a call to the webserver's route designed to handle a location search by name.
 ```elixir
 conn = get(build_conn(), "api/locations?filter[name]=London", [])
 ```
-4. it tests the JSON response is correct (deminished for brevity).
+4. It tests the JSON response is correct (deminished for brevity).
 ```elixir
 assert json_response(conn, 200) == %{
               "data" => [
@@ -99,6 +79,60 @@ assert json_response(conn, 200) == %{
               ]
   end
 ```
+
+The test is meant to check two things. Firstly, that the router redirects the connection to the appropriate controller action. Secondly, that the controller action processes the call and queries the data application correctly using the right function defined on the latter's API - in this case `search_locations(search_term)`. The controller action looks like this:
+
+```elixir
+def index(conn, %{"filter" => filter}) do
+  locations =
+    case process_params(filter) do
+      [lat, lon] -> @source.search_locations(lat, lon)
+      name -> @source.search_locations(name)
+    end
+
+  render(conn, "index.json-api", data: locations, opts: [])
+end
+```
+
+As you can see in the `case` statement, we're handling both a search by latitude/longitude or by location name in the controller action. However, the interesting part is in the call to the data application:
+
+```elixir
+@source.search_locations(name)
+```
+
+We're actually using the `@source` module attribute to switch between the mocks and the actual function defined on the data application; this is defined in the config files:
+
+```elixir
+# config/config.exs
+config :breethe_web, source: Breethe
+
+# config/test.exs
+config :breethe_web, source: Breethe.Mock
+```
+
+The default is the `Breethe` module - the data application's public API used in production and development. During testing it switches to the `Breethe.Mock` module, which holds the mocks. 
+
+As long as we've defined the callbacks for each function we want to mock in the `Breethe` module, we don't need to explicitly define the `Breethe.Mock` module (the name is set when configuring Mox). In step 2 above, we wrote the mock function for the test:
+
+```elixir
+Breethe.Mock
+|> expect(:search_locations, fn _search_term -> [location] end)
+```
+
+Mox then checks the behavior implemented by the mock matches the original using the callback and makes the mock available under the `Breethe.Mock` module:
+
+```elixir
+defmodule Behaviour do
+  @callback search_locations(search_term :: String.t()) :: [%Breethe.Data.Location{}]
+end
+```
+
+When the `@source` is switched during testing, the controller calls the mock function as defined in the test rather than the _original_ function. This speeds up the test considerably as the only code run for the mock is the lambda that defines it:
+
+```elixir
+fn _search_term -> [location] end
+```
+
 
 
 
