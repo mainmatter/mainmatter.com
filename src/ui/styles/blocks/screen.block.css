@@ -15,11 +15,16 @@
 	max-width: 1440px;
 	margin: 0 auto;
 	padding: 5em 0;	
+  overflow: hidden;
 }
 
 .navbar {
 	height: 180px;
-	background: #CCC;
+  margin: 0 180px;
+}
+
+.navbar-brand {
+  width: 180px;
 }
 
 .section {
@@ -27,15 +32,16 @@
 }
 
 .page-header {
-	margin: 0 360px 0 180px;
+	margin: 0 180px 180px;
 }
 
 .shape-block {
 	margin: var(--large-spacing) 0;
-	background: #FCFCFC;
-	border: 1px solid #000;
 	position: relative;
-	min-height: 720px;
+	min-height: 540px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .shape-left {
@@ -44,10 +50,8 @@
 	width: 1440px;
 	height: 720px;
 	left: -720px;
-	top: 0;
-	border: 1px solid #000;
+	top: -180px;
 	position: absolute;
-	opacity: .8;
 }
 
 .shape-left-bg {
@@ -63,14 +67,19 @@
 }
 
 .shape-content {
-	width: 360px;
-	padding-left: 0;
-	background: yellow;
+	width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.shape-content-image {
+  width: 540px;
+  margin-right: 180px;
 }
 
 .shape-center {
 	width: 360px;
-	margin-left: 720px;
+	margin-left: 900px;
 }
 
 .shape-right {
@@ -80,9 +89,7 @@
 	height: 720px;
 	right: -1260px;
 	top: -360px;
-	border: 1px solid #000;
 	position: absolute;
-	opacity: .8;
 }
 
 .shape-right-bg {
@@ -104,8 +111,26 @@
 	justify-content: space-between;
 }
 
-.main-content-block {
-	background: red;
+.main-block {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 180px;
+}
+
+.main-block-content {
+  width: 540px;
+}
+
+.main-block-sidebar {
+  width: 360px;
+}
+
+.card {
+
+}
+
+.card-image {
+
 }
 
 
@@ -135,4 +160,8 @@
 .lead {
 	color: var(--second-color);
 	font-size: 1.5em;
+}
+
+.image-fluid {
+  width: 100%;
 }
