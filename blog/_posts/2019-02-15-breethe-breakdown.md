@@ -1,13 +1,23 @@
 ---
 layout: article
 section: Blog
-title: Breethe breakdown
+title: Elixir Umbrella Applications and testing with Mox
 author: "Niklas Long"
 github-handle: niklaslong
 topic: elixir
 ---
 
-Trust me, you'll like this one... Elixir Umbrella applications, Domain Driven Design and Open-source!
+What's the big deal with Elixir umbrellas?
+
+An Elixir umbrella is a container for mix apps; a structure useful to separate the application's concerns as each app is contained within its own mix project. 
+
+Why is this cool? 
+
+Because it's like Lego and Lego is cool.
+
+Who's Mox you ask? 
+
+Mox is cool too... Let's dive in!
 
 <!--break-->
 
@@ -31,7 +41,23 @@ When we first started building Breethe, we asked ourselves a simple question whi
 
 Using an umbrella allowed us to split our server into two very distinct applications, communicating together by way of rigorously defined APIs. The first application functions as the data handling entity of the project. It communicates with the air quality provider (a third-party API) to gather the data, then processes and caches it for future use. The second application in the umbrella is the webserver, built with Phoenix. It requests the data from the first application, parses it to JSON and delivers the payload to the client under the JSON API standard.
 
-(Picture of umbrella structure)
+```
+apps
+├── breethe
+│   ├── README.md
+│   ├── config
+│   ├── lib
+│   ├── mix.exs
+│   ├── priv
+│   └── test
+└── breethe_web
+    ├── README.md
+    ├── config
+    ├── lib
+    ├── mix.exs
+    ├── priv
+    └── test
+```
 
 We have essentially defined a clear boundary between the business logic and the webserver. This is cool because the umbrella becomes modular like Lego and who doesn't like Lego? Need to change air quality provider? No problem, build a new data application and drop it into the umbrella, replacing the old one. The webserver needn't be changed as long as the new data app implements the API the previous one used. The same could be done if we wanted to change the webserver or if we wanted to extend the functionality of the umbrella. 
 
@@ -127,15 +153,13 @@ defmodule Behaviour do
 end
 ```
 
-When the `@source` is switched during testing, the controller calls the mock function as defined in the test rather than the _original_ function. This speeds up the test considerably as the only code run for the mock is the lambda that defines it:
+When the `@source` is switched during testing, the controller calls the mock function as defined in the test rather than the original function. This speeds up the test considerably as the only code run for the mock is the lambda that defines it:
 
 ```elixir
 fn _search_term -> [location] end
 ```
 
+In short, each mock is self-contained in the test defining it and the callback insures the mock replicates the original function's behavior. The result is robust, fast and modularised tests.
 
-
-
-## Using tasks to asynchronously load data in background
 
 
