@@ -16,7 +16,6 @@
 	max-width: 1440px;
 	margin: 0 auto;
 	padding: 5em 0;	
-  border: 1px solid #000;
 }
 
 .navbar {
@@ -28,12 +27,8 @@
   width: 180px;
 }
 
-.section {
-	padding: 5em 0;
-}
-
 .page-header {
-	margin: 0 180px 180px;
+	margin: 0 180px;
 }
 
 /* TYPOGRAPHY */
@@ -61,6 +56,7 @@
 .lead {
   color: var(--second-color);
   font-size: 1.5em;
+  margin-bottom: 2em;
 }
 
 /* SHAPES */
@@ -72,7 +68,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  opacity: .8;
 }
 
 .shape-left {
@@ -114,6 +109,7 @@
 .shape-content-image {
   width: 540px;
   margin-right: 180px;
+  margin-top: 180px;
 }
 
 .shape-content-text {
@@ -153,8 +149,6 @@
 	justify-content: center;
 }
 
-
-
 .shape-block-lg {
   margin: var(--large-spacing) 0;
   position: relative;
@@ -162,8 +156,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  opacity: .8;
-  background: #f2f2f2;
 }
 
 .shape-right-lg {
@@ -201,16 +193,18 @@
   overflow: hidden;
   width: 2880px;
   height: 900px;
-  left: -900px;
+  left: -720px;
   top: 0;
-  border: 1px solid #000;
   position: absolute;
 }
 
 .shape-left-lg-bg {
   color: #FFF;
-  background: #f2f2f2;
-
+  background: url("assets/images/marco.jpg") #222;
+  background-size: 1440px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   width: 100%;
   height: 100%;
   transform: scale(1.25) rotate(-30deg);
@@ -223,10 +217,10 @@
 /* LOGO */
 
 .logos-block {
-	background: #CCC;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+  margin: 0 180px;
 }
 
 /* MAIN BLOCK */
@@ -245,6 +239,11 @@
   width: 360px;
 }
 
+.block-link {
+  padding: 1em 0 2em;
+  display: block;
+}
+
 .card {
 
 }
@@ -255,4 +254,17 @@
 
 .image-fluid {
   width: 100%;
+}
+
+/* MAIN BLOCK */
+
+.cta-block {
+  margin-left: 180px;
+  width: 360px;
+}
+
+.button {
+  background: #CCC;
+  display: inline-block;
+  padding: 1em;
 }
