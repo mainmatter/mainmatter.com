@@ -1,0 +1,184 @@
+//
+// Color system
+//
+
+$transparent: transparent;
+$white:       #ffffff;
+$black:       #000000;
+$blue:        #007df7;
+$dark-grey:   #e2e2e2;
+$elixir:      #502a6b;
+$ember:       #dd4025;
+$ruby:        #cc342d;
+$misc:        #007df7;
+$js:          #f7df1e;
+$rust:        #000000;
+$expedition:  #634cc4;
+$green:       #15da78;
+$grey:        #f3f6fb;
+$light-blue:  #f3f6fb;
+$orange:      #f99829;
+$pink:        #fc1f5c;
+$timify:      #e44852;
+$trainline:   #2ec2a7;
+$headlines:   #0d182f;
+$text:        #0d182f;
+$blue-active: #006cd9;
+$blue-active-text: darken($blue-active, 2.5%);
+$red:         #f75454;
+$dd-wrt:      #48abe4;
+$testing:     #3BB23B;
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-caret: false;
+$enable-rounded: false;
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-transitions: true;
+$enable-hover-media-query: false; // Deprecated, no longer affects any compiled CSS
+$enable-grid-classes: true;
+$enable-print-styles: false;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-color:                $black;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:                $blue;
+$link-decoration:           none;
+$link-hover-color:          darken($link-color, 15%);
+$link-hover-decoration:     none;
+
+// Paragraphs
+//
+// Style p element.
+
+$paragraph-margin-bottom:     0;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1280px
+);
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-gutter-width:           32px;
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      "Nunito Sans", sans-serif;
+// stylelint-enable value-keyword-case
+
+$font-size-base:              1rem;
+$line-height-base:            1.8 !default;
+
+$font-weight-normal:          400;
+$font-weight-bold:            700;
+$font-weight-black:           900;
+
+$font-weight-base:            $font-weight-normal;
+
+$h1-font-size:                $font-size-base * 5;
+$h2-font-size:                $font-size-base * 3;
+$h3-font-size:                $font-size-base * 2;
+$h4-font-size:                $font-size-base * 1.25;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base * 1.25;
+
+$headings-margin-bottom:      0;
+$headings-font-family:        $font-family-sans-serif;
+$headings-font-weight:        $font-weight-bold;
+
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-padding-y: 0.75rem;
+$input-btn-padding-x: 1.5rem;
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$btn-font-weight: $font-weight-bold;
+
+// Navs
+
+// Navbar
+$navbar-toggler-padding-y: 0.625rem;
+$navbar-toggler-padding-x: 0.5rem;
+
+$navbar-light-color: $black;
+$navbar-light-hover-color: $blue;
+$navbar-light-active-color: #006cd9;
+$navbar-light-disabled-color: rgba($black, .3);
+$navbar-light-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
+$navbar-light-toggler-border-color: rgba($black, .1);
+
+// Jumbotron
+
+$jumbotron-padding: 0;
+$jumbotron-bg: transparent;
+
+// Cards
+
+$card-spacer-y: 0;
+$card-spacer-x: 0;
+$card-border-width: 0;
+$card-border-radius: 0;
+$card-border-color: transparent;
+$card-inner-border-radius: 0;
+$card-cap-bg: transparent;
+$card-bg: transparent;
+
+$card-img-overlay-padding: 1.25rem;
+
+$card-group-margin: ($grid-gutter-width / 2);
+$card-deck-margin: $card-group-margin;
+
+$card-columns-count: 3;
+$card-columns-gap: 1.25rem;
+$card-columns-margin: $card-spacer-y;
+
+// Carousel
+
+$carousel-control-color: $white;
+$carousel-control-width: 15%;
+$carousel-control-opacity: .5;
+
+$carousel-indicator-width: 12px;
+$carousel-indicator-height: 12px;
+$carousel-indicator-spacer: 7px;
+$carousel-indicator-bg: $dark-grey;
+$carousel-indicator-active-bg: $blue;
+
+$carousel-caption-width: 70%;
+$carousel-caption-color: $white;
+
+$carousel-control-icon-width: 20px;
+
+$carousel-control-prev-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"), "#", "%23");
+$carousel-control-next-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E"), "#", "%23");
+
+$carousel-transition: transform .6s ease; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
