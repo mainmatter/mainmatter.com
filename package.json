@@ -7,11 +7,10 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "ember build -prod",
+    "build": "ember build -prod && node scripts/prerender.js",
     "start": "ember server",
     "test": "ember test",
-    "lint:ts": "tslint -c tslint.json 'src/**/*.ts' -t codeFrame",
-    "build": "ember build -prod && node scripts/prerender.js"
+    "lint:ts": "tslint -c tslint.json 'src/**/*.ts' -t codeFrame"
   },
   "devDependencies": {
     "@css-blocks/ember-cli": "^0.20.0-beta.7",
@@ -53,5 +52,11 @@
     "paths": [
       "lib/inject-routes"
     ]
+  },
+  "dependencies": {
+    "ember": "^1.0.3",
+    "fsevents": "^1.2.7",
+    "glimmer": "^1.1.5",
+    "ts-node": "^8.0.2"
   }
 }
