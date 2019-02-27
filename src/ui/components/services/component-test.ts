@@ -3,7 +3,7 @@ import { render, setupRenderingTest } from '@glimmer/test-helpers';
 
 const { module, test } = QUnit;
 
-module('Component: ComponentB', function(hooks) {
+module('Component: services', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
@@ -26,7 +26,7 @@ module('Component: ComponentB', function(hooks) {
      * assert.dom('p').text('bar');
      * ```
      */
-    await render(hbs`<ComponentB />`);
+    await render(hbs`<services />`);
     assert.ok(this.containerElement.querySelector('div'));
   });
 });
