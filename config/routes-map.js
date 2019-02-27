@@ -3,9 +3,10 @@
 module.exports = function() {
   let routes = {
     '/': {},
-    '/a': { component: 'ComponentA' },
-    '/b': { component: 'ComponentB' },
-    '/c': { component: 'ComponentC' },
+    '/a': { component: 'homepage' },
+    '/b': { component: 'services' },
+    '/c': { component: 'service' },
+    '/d': { component: 'caseStudy' }
   };
 
   return routes;

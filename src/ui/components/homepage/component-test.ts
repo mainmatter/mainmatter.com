@@ -1,9 +1,9 @@
+import { setupRenderingTest, render } from '@glimmer/test-helpers';
 import hbs from '@glimmer/inline-precompile';
-import { render, setupRenderingTest } from '@glimmer/test-helpers';
 
 const { module, test } = QUnit;
 
-module('Component: ComponentA', function(hooks) {
+module('Component: homepage', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
@@ -26,7 +26,7 @@ module('Component: ComponentA', function(hooks) {
      * assert.dom('p').text('bar');
      * ```
      */
-    await render(hbs`<ComponentA />`);
+    await render(hbs`<homepage />`);
     assert.ok(this.containerElement.querySelector('div'));
   });
 });
