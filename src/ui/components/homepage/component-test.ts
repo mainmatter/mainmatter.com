@@ -3,7 +3,7 @@ import hbs from '@glimmer/inline-precompile';
 
 const { module, test } = QUnit;
 
-module('Component: ComponentA', function(hooks) {
+module('Component: homepage', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
@@ -26,7 +26,7 @@ module('Component: ComponentA', function(hooks) {
      * assert.dom('p').text('bar');
      * ```
      */
-    await render(hbs`<ComponentA />`);
+    await render(hbs`<homepage />`);
     assert.ok(this.containerElement.querySelector('div'));
   });
 });

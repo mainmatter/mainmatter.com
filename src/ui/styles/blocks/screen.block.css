@@ -2,9 +2,42 @@
 	--first-color: #000000;
 	--second-color: #5b5b5b;
 	--large-spacing: 5rem;
-	font-size: 18px;
+	font-size: 12px;
   line-height: 1.3em;
 }
+
+
+@media (max-width: 599px) {
+  :scope {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 600px) {
+  :scope {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 900px) {
+  :scope {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :scope {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1800px) {
+  :scope {
+    font-size: 20px;
+  }
+}
+
+
 
 .contents {
   font-family: 'Nunito Sans', sans-serif;
@@ -14,7 +47,7 @@
 
 .container {
 	max-width: 80em;
-  border: 1px solid red;
+  border: 1px solid #CCC;
 	margin: 0 auto;
 	padding: 5em 0;	
 }
@@ -63,18 +96,16 @@
 }
 
 .navbar-brand {
-  width: 180px;
+  width: 10rem;
   margin-right: 1rem;
 }
 
 .navbar-nav {
-  background: red;
   margin-left: auto;
   width: 100%;
 }
 
 .navbar-nav-item {
-  background: yellow;
 }
 
 /* SHAPES */
@@ -93,7 +124,7 @@
 	overflow: hidden;
 	width: 80em;
 	height: 40em;
-	left: -50em;
+	left: -52em;
 	top: -10em;
 	position: absolute;
 }
@@ -148,7 +179,7 @@
 
 .shape-content-image {
   width: 30em;
-  margin-right: 10em;
+  margin-right: 8em;
   margin-top: 10em;
 }
 
@@ -233,6 +264,39 @@
   justify-content: center;
 }
 
+.shape-block-md {
+  position: relative;
+  display: flex;
+  min-height: 25rem;
+  flex-direction: column;
+  margin: 0 0 0 10em;
+  justify-content: center;
+}
+
+.shape-left-md {
+  transform: rotate(30deg);
+  overflow: hidden;
+  width: 80em;
+  height: 40em;
+  left: -90em;
+  top: 0;
+  position: absolute;
+}
+
+.shape-left-md-bg {
+  color: #FFF;
+  background: #007DF6;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.25) rotate(-30deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
 /* LOGO */
 
 .logos-block {
@@ -281,8 +345,13 @@
 .card-image {
 }
 
+.card-form {
+  background: red;
+}
+
 .image-fluid {
   width: 100%;
+  vertical-align: top;
 }
 
 /* MAIN BLOCK */
@@ -295,7 +364,6 @@
 .button {
   background: red;
 }
-
 
 
 
