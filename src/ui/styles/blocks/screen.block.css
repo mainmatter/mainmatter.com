@@ -3,7 +3,7 @@
 	--second-color: #5b5b5b;
 	--large-spacing: 5rem;
 	font-size: 12px;
-  line-height: 1.3em;
+  line-height: 1.5;
 }
 
 
@@ -13,19 +13,19 @@
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   :scope {
     font-size: 10px;
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   :scope {
     font-size: 12px;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
   :scope {
     font-size: 18px;
   }
@@ -75,9 +75,10 @@
 }
 
 .sub-heading {
+  color: var(--first-color);
   font-size: 2.5em;
   font-weight: 300;
-  margin: 2rem 0;
+  margin-bottom: 2rem;
   line-height: 1em;
 }
 
@@ -85,7 +86,17 @@
   color: var(--second-color);
   font-size: 1.5em;
   line-height: 1.3em;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+}
+
+.body-text {
+  margin-bottom: 2rem;
+}
+
+.small-text {
+  font-size: 0.8em;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 /* NAVBAR */
@@ -202,6 +213,13 @@
   width: 20em;
 }
 
+.shape-sub-heading {
+  color: #FFF;
+  font-size: 2.5em;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  line-height: 1em;
+}
 
 /*FOOTER SHAPE*/
 
@@ -326,13 +344,19 @@
   margin-bottom: 5rem;
 }
 
+.main-block-content-section {
+  margin-bottom: 4rem;
+}
+
+.main-block-content-heading {
+  margin-bottom: 4rem;
+}
+
 .block-link {
-  padding: 1em 0 2em;
   display: block;
 }
 
 .card {
-  margin-top: 1rem;
 }
 
 .card-sub-heading {
@@ -340,9 +364,11 @@
   font-weight: 400;
   margin: 1rem 0;
   line-height: 1em;
+  color: var(--first-color);
 }
 
 .card-image {
+  margin-bottom: 2rem;
 }
 
 .card-form {
