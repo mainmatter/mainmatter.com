@@ -6,7 +6,8 @@ module.exports = function() {
     '/a': { component: 'homepage' },
     '/b': { component: 'services' },
     '/c': { component: 'service' },
-    '/d': { component: 'caseStudy' }
+    '/d': { component: 'caseStudy' },
+    '/e': { component: 'Expertise' }
   };
 
   return routes;
