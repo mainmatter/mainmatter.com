@@ -9,13 +9,13 @@
 
 @media (max-width: 599px) {
   :scope {
-    font-size: 14px;
+    font-size: 11px;
   }
 }
 
 @media (min-width: 768px) {
   :scope {
-    font-size: 10px;
+    font-size: 11px;
   }
 }
 
@@ -84,12 +84,13 @@
 
 .lead {
   color: var(--second-color);
-  font-size: 1.5em;
+  font-size: 1.6em;
   line-height: 1.3em;
   margin-bottom: 2rem;
 }
 
 .body-text {
+  font-size: 1.2em;
   margin-bottom: 2rem;
 }
 
@@ -388,7 +389,11 @@
 }
 
 .button {
-  background: red;
+  background: #007DF6;
+  color: #FFF;
+  border-radius: 4px;
+  padding: 1rem;
+  text-decoration: none;
 }
 
 
