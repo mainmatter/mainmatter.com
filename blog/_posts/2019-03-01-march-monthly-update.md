@@ -22,7 +22,7 @@ Also, Jessica is co-organizing Ember.js Berlin on March 5th. Full lineup with [R
 
 Then on March 28th Chris will be reviving the Ember.js Dublin meetup "in a big way!" with an Ember Octane Workshop at the [Intercom](https://twitter.com/intercom) offices. Register [here](https://www.meetup.com/emberjsdublin/events/259356879/).
 
-##Looking back
+## Looking back
 
 February was full of events and some interesting work spent on our 20% days. Here's a run down.
 
