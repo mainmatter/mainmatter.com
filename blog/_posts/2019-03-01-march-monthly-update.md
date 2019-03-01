@@ -12,7 +12,7 @@ February has been a hive of activity and March looks to be even busier so we're 
 
 <!--break-->
 
-##Upcoming Events
+## Upcoming Events
 
 [EmberConf 2019](https://emberconf.com/) in Portland is only a few weeks away and we'll be both sponsoring and attending in force, plus our own [Jessica Jordan](https://twitter.com/jjordan_dev) will be giving a talk about [Crafting Web Comics in Ember](https://emberconf.com/speakers.html#jessica-jordan). If you're attending, be sure to come and say hello!
 
