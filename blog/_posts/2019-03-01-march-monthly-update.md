@@ -34,7 +34,7 @@ The film was premiered at meetups across Europe and we'd like to thank [Honeypot
 
 ### 20% days - Sponsoring Ricardo Mendes - Ember.js Core Team
 
-At Simplabs we follow Google's 20% rule where each person gets to 1 day per week on a project of their choice.
+At simplabs we follow Google's 20% rule where each person gets to 1 day per week for open source, supporting the projects that we leverage in our client projects.
 
 In January and February we were very pleased to sponsor [Ricardo Mendes](https://twitter.com/locks) from the Ember.js Core Team. Chris Manson spent his 20% time pairing with Ricardo on [Guidemaker](https://github.com/empress/guidemaker) to add features to help the Ember Octane documentation process and released a 1.0 of Guidemaker!
 
