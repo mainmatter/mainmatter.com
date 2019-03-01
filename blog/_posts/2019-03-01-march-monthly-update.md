@@ -48,5 +48,5 @@ Jessica gave a talk at [c't webdev](https://twitter.com/ct_webdev) where she spo
 
 Marco ran the [February Ember.js meetup](https://www.meetup.com/Ember-js-Munich/events/258726028/) featuring [Toon Verwaest](https://twitter.com/tverwaes) and [Michael Klein](https://twitter.com/LevelbossMike).
 
-And last but my no means least, [Tobias Bieniek](https://twitter.com/tobiasbieniek) asked the question [_Help! How do you let others know what’s going on when you’re 8000 feet up in the air in a plane without an engine?!_](http://bangbangcon.com/west/speakers/#tobias-bieniek) at [!!con](https://twitter.com/bangbangcon)!
+And last but my no means least, [Tobias Bieniek](https://twitter.com/tobiasbieniek) asked the question [_Help! How do you let others know what’s going on when you’re 8000 feet up in the air in a plane without an engine?!_](http://bangbangcon.com/west/speakers/#tobias-bieniek) at [!!Con West](https://twitter.com/bangbangconwest)!
 
