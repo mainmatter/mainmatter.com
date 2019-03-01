@@ -1,13 +1,12 @@
 # simplabs.github.io
 
-The source code for https://simplabs.com
+The source code for [https://simplabs.com](https://simplabs.com).
 
-## Running locally
+## Installation
 
-```bash
-bundle install
-bundle exec jekyll serve
-```
+* `git clone <repository-url>` this repository
+* `cd simplabs`
+* `yarn --pure-lockfile`
 
 ## Running / Development
 

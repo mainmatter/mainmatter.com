@@ -76,11 +76,5 @@
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "all"
-  },
-  "dependencies": {
-    "ember": "^1.0.3",
-    "fsevents": "^1.2.7",
-    "glimmer": "^1.1.5",
-    "ts-node": "^8.0.2"
   }
 }
