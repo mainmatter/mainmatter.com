@@ -18,7 +18,7 @@ February has been a hive of activity and March looks to be even busier so we're 
 
 Also, Jessica is co-organizing Ember.js Berlin on March 5th. Full lineup with [Rami Al-Rihawi](https://twitter.com/rrihawi_) and [Isaac Ezer](https://twitter.com/isaacezer) [**here**](https://www.meetup.com/Ember-js-Berlin/events/258984499/).
 
-[Chris Manson](https://www.twitter.com/real_ate) has a busy month ahead over in Dublin. On March 5th he's co-organizing the DublinJS meetup at [Workday](https://twitter.com/workday). Full line up with [Gabriel Costa ](https://twitter.com/gcgoncalves) and [Luciano Mammino](https://twitter.com/loige) [**here**](https://www.meetup.com/DublinJS/events/fbllfpyzfbhb/).
+[Chris Manson](https://www.twitter.com/real_ate) has a busy month ahead over in Dublin. On March 5th he's co-organizing the DublinJS meetup at [Workday](https://twitter.com/workday). Full line up with [Gabriel Costa](https://twitter.com/gcgoncalves) and [Luciano Mammino](https://twitter.com/loige) [**here**](https://www.meetup.com/DublinJS/events/fbllfpyzfbhb/).
 
 Then on March 28th Chris will be reviving the Ember.js Dublin meetup "in a big way!" with an Ember Octane Workshop at the [Intercom](https://twitter.com/intercom) offices. Register [here](https://www.meetup.com/emberjsdublin/events/259356879/).
 
