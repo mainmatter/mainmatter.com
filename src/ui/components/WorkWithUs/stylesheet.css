@@ -1,0 +1,8 @@
+@block typography from "../../styles/blocks/typography.block.css";
+@block button from "../../styles/blocks/button.block.css";
+
+:scope {
+  block-name: work-with-us;
+  margin-left: 10em;
+  width: 20em;
+}
