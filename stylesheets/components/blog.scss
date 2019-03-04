@@ -69,6 +69,14 @@
   }
 }
 
+.blog-post-simplabs {
+  border-left-color: $simplabs;
+
+  .blog-post-topic {
+    color: $simplabs;
+  }
+}
+
 .blog-post-javascript {
   border-left-color: $js;
 
