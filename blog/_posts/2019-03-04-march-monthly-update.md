@@ -14,6 +14,8 @@ February has been a hive of activity and March looks to be even busier so we're 
 
 ## Upcoming Events
 
+![EmberConf 2019](/images/posts/2019-03-04-march-monthly-update/emberconf-logo.png)
+
 [EmberConf 2019](https://emberconf.com/) in Portland is only a few weeks away and we'll be both sponsoring and attending in force, plus our own [Jessica Jordan](https://twitter.com/jjordan_dev) will be giving a talk about [Crafting Web Comics in Ember](https://emberconf.com/speakers.html#jessica-jordan). If you're attending, be sure to come and say hello!
 
 Also, Jessica is co-organizing Ember.js Berlin on March 5th. Full lineup with [Rami Al-Rihawi](https://twitter.com/rrihawi_) and [Isaac Ezer](https://twitter.com/isaacezer) [**here**](https://www.meetup.com/Ember-js-Berlin/events/258984499/).
@@ -27,6 +29,8 @@ Then on March 28th Chris will be reviving the Ember.js Dublin meetup "in a big w
 February was full of events and some interesting work spent on our 20% days. Here's a run down.
 
 ### Ember.js film premiere!
+
+![Ember.js - The Documentary](/images/posts/2019-03-04-march-monthly-update/emberjs-documentary.png)
 
 We were very pleased that our CEO Marco Otte-Witte was featured alongside Ember.js co-creators [Yahuda Katz](https://twitter.com/wycats) and [Tom Dale](https://twitter.com/tomdale) in the HoneyPot's new film ["Ember.js - The Documentary"](https://www.youtube.com/watch?v=Cvz-9ccflKQ)!
 
