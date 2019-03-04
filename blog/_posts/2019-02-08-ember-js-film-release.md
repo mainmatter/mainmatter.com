@@ -5,7 +5,7 @@ title: "Ember.js: The Documentary - Amsterdam Premiere"
 author: "Mark Coleman"
 github-handle: mrmrcoleman
 twitter-handle: mrmrcoleman
-topic: emberjs
+topic: ember
 ---
 
 We're very pleased to announce that simplabs are featured in the new  [HoneyPot](https://www.honeypot.io/) film **'Ember: A Mini Documentary'** that will premiere in Amsterdam this evening (2019-02-08).
