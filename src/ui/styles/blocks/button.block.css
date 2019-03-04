@@ -1,7 +1,11 @@
 :scope {
   block-name: button;
-  background-color: red;
-  display: block;
-  padding: 10px;
 }
 
+.button {
+  background: #007DF6;
+  color: #FFF;
+  border-radius: 4px;
+  padding: 1rem;
+  text-decoration: none;
+}
