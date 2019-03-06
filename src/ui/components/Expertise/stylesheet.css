@@ -4,11 +4,3 @@
   block-name: Expertise;
   extends: screen;
 }
-
-:scope .shape-right-bg {
-  background: #E15D44;
-}
-
-:scope .shape-left-bg {
-  background: #E15D44;
-}
