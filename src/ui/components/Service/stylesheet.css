@@ -1,9 +1,13 @@
 @block screen from "../../styles/blocks/screen.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
+@block shape from "../../styles/blocks/shape/base.block.css";
+@block shape-left-md from "../../styles/blocks/shape/shape-left-md.block.css";
+@block shape-right-lg from "../../styles/blocks/shape/shape-right-lg.block.css";
 @block main-block from "../../styles/blocks/main-block.block.css";
 @block header-block from "../../styles/blocks/header-block.block.css";
 
 :scope {
-  block-name: ComponentC;
+  block-name: service;
   extends: screen;
 }
 
@@ -14,14 +18,17 @@
 :scope .main-block {
 }
 
-:scope .shape-right-lg-bg {
-  background: #007DF6;
+.featured-right-background {
+  background-color: resolve("shape-left-md.background");
+  background-color: #007DF6;
 }
 
-:scope .shape-left-lg-bg {
-  background-image: url('assets/images/working-photo.jpg');
+.featured-left-background{
+  background-color: resolve("shape-left-md.background");
+  background-color: #007DF6;
 }
 
-:scope .shape-center {
+.featured-center {
+  justify-content: resolve('shape.shape-center');
   justify-content: flex-start;
 }
