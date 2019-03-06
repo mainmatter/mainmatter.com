@@ -1,4 +1,5 @@
 :scope {
+  block-name: screen;
 	--first-color: #000000;
 	--second-color: #5b5b5b;
   --link-color: #007DF6;
@@ -391,6 +392,3 @@
   background: url(placeholder.jpg) no-repeat;
   background-size: cover;
 }
-
-
-
