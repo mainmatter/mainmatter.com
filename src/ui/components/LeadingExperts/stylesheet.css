@@ -1,0 +1,24 @@
+@block typography from "../../styles/blocks/typography.block.css";
+@block shape from "../../styles/blocks/shape/base.block.css";
+@block shape-left-lg from "../../styles/blocks/shape/shape-left-lg.block.css";
+@block shape-right-lg from "../../styles/blocks/shape/shape-right-lg.block.css";
+@block screen from "../../styles/blocks/screen.block.css";
+
+:scope {
+  block-name: leading-experts;
+}
+
+.marco-background {
+  background-color: resolve("shape-left-lg.background");
+  background-color: #222;
+  background-image: url("assets/images/marco.jpg");
+  background-size: 80em;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.experts-right {
+  background-color: resolve("shape-right-lg.background");
+  background-color: #E15D44;
+}
