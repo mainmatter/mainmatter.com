@@ -1,0 +1,9 @@
+@block typography from "../../styles/blocks/typography.block.css";
+@block shape from "../../styles/blocks/shape/base.block.css";
+@block shape-left from "../../styles/blocks/shape/shape-left.block.css";
+@block shape-right from "../../styles/blocks/shape/shape-right.block.css";
+@block screen from "../../styles/blocks/screen.block.css";
+
+:scope {
+  block-name: timeline-case-thumb;
+}
