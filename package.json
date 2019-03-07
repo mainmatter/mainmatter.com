@@ -11,7 +11,8 @@
     "start": "ember server",
     "test": "ember test",
     "lint:ts": "tslint -c tslint.json 'src/**/*.ts' -t codeFrame",
-    "lint:js": "eslint . --cache"
+    "lint:js": "eslint . --cache",
+    "lint:hbs": "prettier --check --parser glimmer '**/*.hbs'"
   },
   "devDependencies": {
     "@css-blocks/ember-cli": "^0.20.0-beta.7",
