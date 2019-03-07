@@ -43,7 +43,7 @@ We are very pleased that our CEO Marco Otte-Witte was featured alongside Ember.j
 
 The film was premiered at meetups across Europe and we'd like to thank [Honeypot](https://twitter.com/honeypotio) for putting it together.
 
-# Events
+## Events
 
 _We're always interested in new speakers for the various meetups we're involved in. If you'd like to give a talk, [please get in touch.](https://simplabs.com/contact/index.html)_
 
