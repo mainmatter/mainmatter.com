@@ -30,6 +30,8 @@ jobs:
       script: yarn test
     - stage: test
       script: yarn lint:ts
+    - stage: test
+      script: yarn lint:js
 
 notifications:
   email: false

@@ -5,7 +5,7 @@ module.exports = function() {
     '/': {},
     '/a': { component: 'ComponentA' },
     '/b': { component: 'ComponentB' },
-    '/c': { component: 'ComponentC' }
+    '/c': { component: 'ComponentC' },
   };
 
   return routes;
