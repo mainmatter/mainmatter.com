@@ -2,7 +2,7 @@ import { ComponentManager, setPropertyDidChange } from '@glimmer/component';
 import App from './main';
 
 const containerElement = document.getElementById('app');
-const hasSSRBody = document.querySelector('[data-has-ssr-response]');
+const hasSSRBody = !!document.querySelector('[data-has-ssr-response]');
 const app = new App({ hasSSRBody });
 
 setPropertyDidChange(() => {
