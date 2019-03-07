@@ -21,15 +21,15 @@
 
 .featured-right-background {
   background-color: resolve("shape-left-md.background");
-  background-color: #007DF6;
+  background-color: #007df6;
 }
 
-.featured-left-background{
+.featured-left-background {
   background-color: resolve("shape-left-md.background");
-  background-color: #007DF6;
+  background-color: #007df6;
 }
 
 .featured-center {
-  justify-content: resolve('shape.shape-center');
+  justify-content: resolve("shape.shape-center");
   justify-content: flex-start;
 }

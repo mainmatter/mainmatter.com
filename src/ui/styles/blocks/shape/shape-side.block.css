@@ -1,21 +1,21 @@
 :scope {
   block-name: shape-side;
   transform: rotate(30deg);
-	overflow: hidden;
-	position: absolute;
+  overflow: hidden;
+  position: absolute;
 }
 
 .background {
-  color: #FFF;
-	background-color: #48D5B5;
-	width: 100%;
-	height: 100%;
-	transform: scale(1.25) rotate(-30deg);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	overflow: hidden;
+  color: #fff;
+  background-color: #48d5b5;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.25) rotate(-30deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .content {

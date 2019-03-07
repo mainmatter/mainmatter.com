@@ -10,8 +10,8 @@
 }
 
 .process-right-background {
-  background-color: resolve('shape-right-lg.background');
-  background-color: #007DF6;
+  background-color: resolve("shape-right-lg.background");
+  background-color: #007df6;
 }
 
 .process-left-background {

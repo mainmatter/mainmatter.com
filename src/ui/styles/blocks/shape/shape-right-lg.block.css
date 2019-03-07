@@ -1,6 +1,6 @@
 @block shape-side from "./shape-side.block.css";
 
-:scope  {
+:scope {
   extends: shape-side;
   right: -40em;
   top: -10em;

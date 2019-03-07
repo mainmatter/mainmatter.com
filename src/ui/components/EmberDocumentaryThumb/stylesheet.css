@@ -10,12 +10,12 @@
 
 .documentary-left-background {
   background-color: resolve("shape-left.background");
-  background-color: #E15D44;
+  background-color: #e15d44;
 }
 
 .documentary-right-background {
   background-color: resolve("shape-right.background");
-  background-color: #E15D44;
+  background-color: #e15d44;
 }
 
 .background-video {

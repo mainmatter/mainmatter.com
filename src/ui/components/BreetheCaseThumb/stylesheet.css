@@ -10,15 +10,15 @@
 
 .breethe-left-background {
   background-color: resolve("shape-left.background");
-  background-color: #007DF6;
+  background-color: #007df6;
   background-image: url("assets/images/sky.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover;  
+  background-size: cover;
   background-blend-mode: soft-light;
 }
 
 .breethe-right-background {
   background-color: resolve("shape-right.background");
-  background-color: #007DF6;
+  background-color: #007df6;
 }

@@ -1,12 +1,11 @@
 :scope {
   block-name: screen;
-	--first-color: #000000;
-	--second-color: #5b5b5b;
-	--large-spacing: 5rem;
-	font-size: 12px;
+  --first-color: #000000;
+  --second-color: #5b5b5b;
+  --large-spacing: 5rem;
+  font-size: 12px;
   line-height: 1.5;
 }
-
 
 @media (max-width: 599px) {
   :scope {
@@ -44,22 +43,20 @@
   }
 }
 
-
-
 .contents {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   color: var(--second-color);
   overflow: hidden;
 }
 
 .container {
-	max-width: 80em;
-	margin: 0 auto;
-	padding: 5em 0;	
+  max-width: 80em;
+  margin: 0 auto;
+  padding: 5em 0;
 }
 
 .page-header {
-	margin: 0 10em;
+  margin: 0 10em;
 }
 
 /* TYPOGRAPHY */
@@ -129,9 +126,9 @@
 /* LOGO */
 
 .logos-block {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 0 10em;
 }
 
@@ -194,8 +191,8 @@
 /* MAIN BLOCK */
 
 .button {
-  background: #007DF6;
-  color: #FFF;
+  background: #007df6;
+  color: #fff;
   border-radius: 4px;
   padding: 1rem;
   text-decoration: none;
