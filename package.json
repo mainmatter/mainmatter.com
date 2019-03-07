@@ -13,6 +13,7 @@
     "lint:ts": "tslint -c tslint.json 'src/**/*.ts' -t codeFrame",
     "lint:js": "eslint . --cache",
     "lint:hbs": "prettier --check --parser glimmer '**/*.hbs'",
+    "lint": "yarn run lint:ts & yarn run lint:js & yarn run lint:hbs",
     "format": "tslint --fix -c tslint.json 'src/**/*.ts' && eslint --fix . --cache && prettier --write --parser glimmer '**/*.hbs'"
   },
   "devDependencies": {
