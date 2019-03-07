@@ -14,7 +14,7 @@ Welcome to our new monthly update. Each month we'll cover the events and activit
 
 ## News
 
-### Ricardo Mendes from the Ember.js Core Team joins simplabs
+#### Ricardo Mendes from the Ember.js Core Team joins simplabs
 
 We're very excited to announce that [Ricardo Mendes]([Ricardo Mendes](https://twitter.com/locks)) from the Ember.js core team has joined simplabs.
 
