@@ -6,8 +6,12 @@ const puppeteer = require('puppeteer');
 const colors = require('colors');
 const critical = require('critical');
 
-const ROUTES_MAP = require('../config/routes-map')();
 const DIST_PATH = path.join(__dirname, '..', 'dist');
+const HTML_PATH = path.join(__dirname, '..', 'dist', 'index.html');
+const GlimmerRenderer = require(path.join(DIST_PATH, 'ssr-app.js'));
+
+const ROUTES_MAP = require('../config/routes-map')();
+const HTML = fs.readFileSync(HTML_PATH).toString();
 
 async function snapshot(browser, routePath) {
   let page = await browser.newPage();
@@ -33,6 +37,7 @@ async function inlineCss(fileName) {
   let result = await critical.generate({
     inline: true,
     base: DIST_PATH,
+    folder: './',
     html: input,
     width: 1300,
     height: 900
@@ -40,11 +45,15 @@ async function inlineCss(fileName) {
   await fs.writeFile(fileName, result.toString('utf8'));
 }
 
-const HTML_PATH = path.join(DIST_PATH, 'index.html');
+const renderer = new GlimmerRenderer();
 let server = express();
-server.get('*', function(req, res, next) {
+server.get('*', async function(req, res, next) {
   if (req.headers.accept && req.headers.accept.includes('text/html')) {
-    res.sendFile(HTML_PATH);
+    let origin = `${req.protocol}://${req.headers.host}`;
+    let app = await renderer.render(origin, req.url);
+    let body = `<div id="app">${app}</div>`;
+    body = HTML.replace('<div id="app"></div>', body);
+    res.send(body);
   } else {
     next();
   }

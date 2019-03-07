@@ -7,11 +7,10 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "ember build -prod",
+    "build": "ember build -prod && node scripts/prerender.js",
     "start": "ember server",
     "test": "ember test",
-    "lint:ts": "tslint -c tslint.json 'src/**/*.ts' -t codeFrame",
-    "build": "ember build -prod && node scripts/prerender.js"
+    "lint:ts": "tslint -c tslint.json 'src/**/*.ts' -t codeFrame"
   },
   "devDependencies": {
     "@css-blocks/ember-cli": "^0.20.0-beta.7",
@@ -21,6 +20,7 @@
     "@glimmer/component": "^0.13.0",
     "@glimmer/inline-precompile": "^1.0.0",
     "@glimmer/resolver": "^0.4.3",
+    "@glimmer/ssr": "^0.13.0",
     "@glimmer/test-helpers": "^0.31.1",
     "@types/qunit": "^2.0.31",
     "broccoli-asset-rev": "^2.5.0",
@@ -29,6 +29,7 @@
     "broccoli-funnel": "^2.0.1",
     "broccoli-stew": "^2.0.1",
     "broccoli-string-replace": "^0.1.2",
+    "broccoli-typescript-compiler": "^4.1.0",
     "colors": "^1.3.3",
     "critical": "^1.3.4",
     "ember-cli": "^3.7.1",
@@ -43,6 +44,8 @@
     "navigo": "^7.1.2",
     "puppeteer": "^1.11.0",
     "qunitjs": "^2.3.3",
+    "rollup-plugin-commonjs": "^9.2.1",
+    "rollup-plugin-node-resolve": "^4.0.1",
     "typescript": "~2.6.0"
   },
   "engines": {
