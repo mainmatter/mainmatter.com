@@ -12,7 +12,7 @@ Welcome to our new monthly update. Each month we'll cover the events and activit
 
 <!--break-->
 
-# News
+## News
 
 ### Ricardo Mendes from the Ember.js Core Team joins simplabs
 
