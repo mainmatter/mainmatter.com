@@ -23,7 +23,7 @@ Before Ricardo joined the team we were pleased to sponsor him through the Ember.
 Our CEO Marco says _"We are very excited to welcome Ricardo Mendes to simplabs. Being a long-term member of the Ember Core Team, we have been in touch with him for years already. His deep knowledge and teaching ability will be hugely beneficial for our clients."_
 
 
-### EmberConf 2019
+#### EmberConf 2019
 
 ![EmberConf 2019](/images/posts/2019-03-04-march-monthly-update/emberconf-logo.png)
 
