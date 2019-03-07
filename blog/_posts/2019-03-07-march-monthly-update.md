@@ -47,7 +47,7 @@ The film was premiered at meetups across Europe and we'd like to thank [Honeypot
 
 _We're always interested in new speakers for the various meetups we're involved in. If you'd like to give a talk, [please get in touch.](https://simplabs.com/contact/index.html)_
 
-### Upcoming events
+#### Upcoming events
 
 simplabs are involved in two upcoming meetups this month. On March 28th [Chris Manson](https://www.twitter.com/real_ate) will be reviving the Ember.js Dublin meetup with an Ember Octane Workshop at the [Intercom](https://twitter.com/intercom) offices. Register [here](https://www.meetup.com/emberjsdublin/events/259356879/).
 
