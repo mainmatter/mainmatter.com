@@ -16,7 +16,7 @@ Welcome to our new monthly update. Each month we'll cover the events and activit
 
 #### Ricardo Mendes from the Ember.js Core Team joins simplabs
 
-We're very excited to announce that [Ricardo Mendes]([Ricardo Mendes](https://twitter.com/locks)) from the Ember.js core team has joined simplabs.
+We're very excited to announce that [Ricardo Mendes](https://twitter.com/locks) from the Ember.js core team has joined simplabs.
 
 Before Ricardo joined the team we were pleased to sponsor him through the Ember.js sponsorship program. Chris Manson spent his 20% time pairing with Ricardo on [Guidemaker](https://github.com/empress/guidemaker) to add features to help the Ember Octane documentation process and released a 1.0 of Guidemaker.
 
