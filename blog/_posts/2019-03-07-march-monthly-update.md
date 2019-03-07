@@ -54,7 +54,7 @@ simplabs are involved in two upcoming meetups this month. On March 28th [Chris M
 On the same day in Munich [Marco](https://twitter.com/marcoow) is hosting the Elixir Munich meetup with talks from [Peer Stritzinger](https://twitter.com/peerstr), [Philipp Neugebauer](https://twitter.com/ppneugebauer) and Sami Buzz. Sign up on the meetup page [here](https://www.meetup.com/Elixir-Munich/events/259526263/).
 
 
-### Past Events
+#### Past Events
 
 February was a busy month for events. Jessica gave a talk at [c't webdev](https://twitter.com/ct_webdev) where she spoke about [Crafting Web Comics in Ember](https://ctwebdev.de/programm.html#slot-21). Also, Jessica is co-organized [Ember.js Berlin](https://www.meetup.com/Ember-js-Berlin/events/258984499/) on March 5th with [Rami Al-Rihawi](https://twitter.com/rrihawi_) and [Isaac Ezer](https://twitter.com/isaacezer).
 
