@@ -15,6 +15,7 @@ const HTML = fs.readFileSync(HTML_PATH).toString();
 
 async function snapshot(browser, routePath) {
   let page = await browser.newPage();
+  await page.setJavaScriptEnabled(false);
   await page.goto(`http://localhost:3000${routePath}`, { waitUntil: 'networkidle0' });
   return page.content();
 }
