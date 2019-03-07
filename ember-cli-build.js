@@ -112,6 +112,9 @@ module.exports = function(defaults) {
     minifyCSS: {
       enabled: process.env.EMBER_ENV === 'production'
     },
+    fingerprint: {
+      exclude: ['ssr-app.js']
+    }
   });
 
   return app.toTree();
