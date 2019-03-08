@@ -28,6 +28,12 @@ jobs:
   include:
     - stage: test
       script: yarn test
+    - stage: test
+      script: yarn lint:ts
+    - stage: test
+      script: yarn lint:js
+    - state: test
+      script: yarn lint:hbs
 
 notifications:
   email: false

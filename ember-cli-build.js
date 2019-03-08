@@ -24,12 +24,14 @@ function findAllComponents() {
     return acc;
   }, []);
 
-  let staticComponents = glob.sync('*/', {
-    cwd: path.join(__dirname, 'src/ui/components')
-  }).map((component) => component.replace(/\/$/, ''));
+  let staticComponents = glob
+    .sync('*/', {
+      cwd: path.join(__dirname, 'src/ui/components'),
+    })
+    .map(component => component.replace(/\/$/, ''));
 
   let allComponents = routedComponents.concat(staticComponents);
-  return [...new Set(allComponents)]; 
+  return [...new Set(allComponents)];
 }
 
 class SimplabsApp extends GlimmerApp {
@@ -53,15 +55,15 @@ class SimplabsApp extends GlimmerApp {
   cssTree() {
     let resetCss = fs.readFileSync(path.join(this.project.root, 'vendor', 'css', 'reset.css'));
     let cssTree = Funnel(super.cssTree(...arguments), {
-      include: ['app.css']
+      include: ['app.css'],
     });
-	
-    cssTree = Map(cssTree, (content) => `${resetCss}${content}`);
-	
+
+    cssTree = Map(cssTree, content => `${resetCss}${content}`);
+
     if (this.options.minifyCSS.enabled) {
       cssTree = new BroccoliCleanCss(cssTree);
     }
-	
+
     return cssTree;
   }
 
@@ -110,7 +112,7 @@ module.exports = function(defaults) {
       output: 'src/ui/styles/app.css',
     },
     minifyCSS: {
-      enabled: process.env.EMBER_ENV === 'production'
+      enabled: process.env.EMBER_ENV === 'production',
     },
     fingerprint: {
       exclude: ['ssr-app.js']
