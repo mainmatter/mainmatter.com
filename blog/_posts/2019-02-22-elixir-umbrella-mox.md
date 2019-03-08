@@ -35,7 +35,7 @@ and we encourage everyone interested to look through the source for reference. T
 - [From SPA to PWA](/blog/2018/07/24/from-spa-to-pwa.html)
 - [Building a PWA with Glimmer.js](/blog/2018/07/03/building-a-pwa-with-glimmer-js.html)
 
-## Umbrella apps and seperating concerns 
+## Umbrella applications and separating concerns 
 
 When we first started building Breethe, we asked ourselves a simple question which would dictate the structure of the application and our motivation for using an umbrella app to organise our code. This question was: what if we want to change our air quality data provider? It turns out this wasn't just speculation as we are now in the process of doing just that and our decision to use an umbrella app will make the process tremendously easy. 
 
@@ -79,9 +79,9 @@ Equally, these are the only functions the Phoenix web app (or any other app in t
 
 ## Testing domains independently using Mox
 
-[Mox](https://github.com/plataformatec/mox), as the name suggests, is a library that defines mocks bound to specific behaviors. A behavior is a set of function signatures that must be implemented by a module. Consequently, Mox guarantees the mocks for a module be consistent with the original functions they replace during testing. This rigidity makes the tests more maintainable and requires that the behaviors for each module be meticulously defined; precisely the qualities desired when implementing the APIs within our umbrella. 
+[Mox](https://github.com/plataformatec/mox), as the name suggests, is a library that defines mocks bound to specific behaviours. A behaviour is a set of function signatures that must be implemented by a module. Consequently, Mox guarantees the mocks for a module be consistent with the original functions they replace during testing. This rigidity makes the tests more maintainable and requires that the behaviours for each module be meticulously defined; precisely the qualities desired when implementing the APIs within our umbrella. 
 
-For example, let's consider mocking the public API for the _breethe_ application when testing _breethe_web_. As the bridge between the two is only composed of the four functions shown in the previous section, mocking the _breethe_ application's public interface when testing the webserver only requires mocking those four functions. Naturally, this is only reasonable if we seperately test the _breethe_ application in full, from interface to database. Crucially, it is the singularity of the interface which allows this degree of separation between the two applications in the umbrella both in testing and in production.
+For example, let's consider mocking the public API for the _breethe_ application when testing _breethe_web_. As the bridge between the two is only composed of the four functions shown in the previous section, mocking the _breethe_ application's public interface when testing the webserver only requires mocking those four functions. Naturally, this is only reasonable if we separately test the _breethe_ application in full, from interface to database. Crucially, it is the singularity of the interface which allows this degree of separation between the two applications in the umbrella both in testing and in production.
 
 Let's take a look at the controller action for a location search by id:
 
@@ -150,7 +150,7 @@ location = insert(:location, measurements: [])
 Breethe.Mock
 |> expect(:get_location, fn _location_id -> location end)
 ```
-As long as we’ve established the callback in the behavior implemented by the Breethe module, we don’t need to explicitly define the Breethe.Mock module (Mox creates it). Here's the callback for this particular function (for reference, it isn't coded in the test).
+As long as we’ve established the callback in the behaviour implemented by the Breethe module, we don’t need to explicitly define the Breethe.Mock module (Mox creates it). Here's the callback for this particular function (for reference, it isn't coded in the test).
 ```elixir
 # apps/breethe/lib/breethe.ex
 defmodule Behaviour do
@@ -181,4 +181,4 @@ Finally, each mock is self-contained in the test defining it and the callback in
 
 ## Conclusion
 
-Elixir umbrella apps shine when structuring projects containing clear bounderies between their constituant parts. The philosophy they implement deeply resembles that of functional programming (and Lego), where small building blocks combine into a larger whole. It is however important to be precise when defining the internal APIs of the application as they act as the glue holding everything together. Lastly, Mox is a wonderful tool for testing. Not only does it make mocking APIs very simple and elegant, it also encourages best practices such as defining behaviors to keep the code consistent and robust. 
+Elixir umbrella apps shine when structuring projects containing clear boundaries between their constituent parts. The philosophy they implement deeply resembles that of functional programming (and Lego), where small building blocks combine into a larger whole. It is however important to be precise when defining the internal APIs of the application as they act as the glue holding everything together. Lastly, Mox is a wonderful tool for testing. Not only does it make mocking APIs very simple and elegant, it also encourages best practices such as defining behaviours to keep the code consistent and robust. 
