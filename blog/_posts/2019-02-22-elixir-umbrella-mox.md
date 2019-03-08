@@ -60,7 +60,7 @@ apps
     └── test
 ```
 
-We have defined a clear boundary between the business logic and the webserver. This is cool because the umbrella becomes modular like Lego and who doesn't like Lego? Need to change air quality provider? No problem, build a new data application and drop it into the umbrella, replacing the old one. The webserver needn't be changed as long as the new data app implements the API the previous one used. The same could be done if we wanted to change the webserver or if we wanted to extend the functionality of the umbrella. 
+We have defined a clear boundary between the business logic and the webserver. This is cool because the umbrella becomes modular like Lego and who doesn't like Lego? Need to change the air quality data provider? No problem, simply change the data application, leaving the webserver untouched as long as the data app continues to implement the same interface. The same would work the other way round if we wanted to change the webserver.
 
 However, for this approach to work well, the APIs used to communicate between the different applications in the umbrella need to be carefully defined. We want to keep the interfaces as little as possible to keep complexity contained. As an example, here are the publicly available functions on the _breethe_ app in the umbrella: 
 
@@ -75,13 +75,13 @@ def search_locations(lat, lon), do: # ...
 def search_measurements(location_id), do: # ...
 ```
 
-Equally, these are the only functions the Phoenix webserver (or any other app in the umbrella) can call on the _breethe_ app. These principles are of course not only applicable at the top level of the application but also within its internal logical contexts. For example, within the _breethe_ app, we have isolated the functions explicitly making requests to third-party APIs and abstracted them away behind an interface. This, again, reduces complexity and facilitates testing as we can isolate the different components of the business logic. This philosophy lends itself very well to being tested using Mox. 
+Equally, these are the only functions the Phoenix web app (or any other app in the umbrella) can call on the _breethe_ app. These principles are of course not only applicable at the top level of the application but also within its internal logical contexts. For example, within the _breethe_ app, we have isolated the functions explicitly making requests to third-party APIs and abstracted them away behind an interface. This, again, reduces complexity and facilitates testing as we can isolate the different components of the business logic. This philosophy lends itself very well to being tested using Mox. 
 
 ## Testing domains independently using Mox
 
 [Mox](https://github.com/plataformatec/mox), as the name suggests, is a library that defines mocks bound to specific behaviors. A behavior is a set of function signatures that must be implemented by a module. Consequently, Mox guarantees the mocks for a module be consistent with the original functions they replace during testing. This rigidity makes the tests more maintainable and requires that the behaviors for each module be meticulously defined; precisely the qualities desired when implementing the APIs within our umbrella. 
 
-For example, let's consider mocking the public API for the _breethe_ application when testing _breethe_web_. As the bridge between the two is only composed of the four functions shown in the previous section, mocking the _breethe_ application's public interface when testing the webserver only requires mocking those four functions. Naturally, this is only reasonable if we seperately test the _breethe_ application in full, from interface to database. Crucially, it is the singularity of the interface (four functions) which allows this degree of separation between the two applications in the umbrella both in testing and in production.
+For example, let's consider mocking the public API for the _breethe_ application when testing _breethe_web_. As the bridge between the two is only composed of the four functions shown in the previous section, mocking the _breethe_ application's public interface when testing the webserver only requires mocking those four functions. Naturally, this is only reasonable if we seperately test the _breethe_ application in full, from interface to database. Crucially, it is the singularity of the interface which allows this degree of separation between the two applications in the umbrella both in testing and in production.
 
 Let's take a look at the controller action for a location search by id:
 
@@ -105,7 +105,7 @@ The interesting part is in the call to the _breethe_ application:
 |> @source.get_location()
 ```
 
-The reason we're using the `@source` module attribute is to switch between the mock and the real function defined on the _breethe_ application; this is defined in the config files:
+The reason we're using the `@source` module attribute is to be able to switch between the mock and the real function defined on the _breethe_ application; this is defined in the config files:
 
 ```elixir
 # config/config.exs
@@ -171,7 +171,7 @@ assert json_response(conn, 200) == %{
         }
 ```
 
-Using mocks greatly simplifies the testing process. Each test can be smaller and more specific. Each test is faster as we are no longer making calls to other parts of the umbrella; we are only running the anonymous functions that define the mocks. For instance, the mock in our example above only executes:
+Using mocks greatly simplifies the testing process. Each test can be smaller and more specific. Each test is faster as we are not making calls to the database or external systems; we are only running the anonymous functions that define the mocks. For instance, the mock in our example above only executes:
 
 ```elixir
 fn _location_id -> location end
