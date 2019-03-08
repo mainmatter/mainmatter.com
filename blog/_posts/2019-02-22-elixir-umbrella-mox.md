@@ -41,6 +41,7 @@ When we first started building Breethe, we asked ourselves a simple question whi
 
 Using an umbrella allowed us to split our server into two very distinct applications, communicating together by way of rigorously defined APIs. The first application functions as the data handling entity of the project - named _breethe_ (see below). It communicates with the air quality provider (a third-party API) to gather the data, then processes and caches it for future use. The second application in the umbrella is the webserver built with Phoenix - named _breethe_web_. It requests the data from the first application, parses it to JSON and delivers the payload to the client in compliance with the [JSON:API specification](https://jsonapi.org/).
 
+Here's an overview of the umbrella structure used for Breethe:
 ```
 apps
 ├── breethe
@@ -59,11 +60,12 @@ apps
     └── test
 ```
 
-We have essentially defined a clear boundary between the business logic and the webserver. This is cool because the umbrella becomes modular like Lego and who doesn't like Lego? Need to change air quality provider? No problem, build a new data application and drop it into the umbrella, replacing the old one. The webserver needn't be changed as long as the new data app implements the API the previous one used. The same could be done if we wanted to change the webserver or if we wanted to extend the functionality of the umbrella. 
+We have defined a clear boundary between the business logic and the webserver. This is cool because the umbrella becomes modular like Lego and who doesn't like Lego? Need to change air quality provider? No problem, build a new data application and drop it into the umbrella, replacing the old one. The webserver needn't be changed as long as the new data app implements the API the previous one used. The same could be done if we wanted to change the webserver or if we wanted to extend the functionality of the umbrella. 
 
 However, for this approach to work well, the APIs used to communicate between the different applications in the umbrella need to be carefully defined. We want to keep the interfaces as little as possible to keep complexity contained. As an example, here are the publicly available functions on the _breethe_ app in the umbrella: 
 
 ```elixir
+# apps/breethe/lib/breethe.ex
 def get_location(location_id), do: # ...
 
 def search_locations(search_term), do: # ...
@@ -77,23 +79,24 @@ Equally, these are the only functions the Phoenix webserver (or any other app in
 
 ## Testing domains independently using Mox
 
-[Mox](https://github.com/plataformatec/mox), as the name suggests, is a library that defines mocks bound to specific behaviors. A behavior is a set of function signatures that must be implemented by a module. Consequently, Mox guarantees the mocks for a module be consistent with the original functions. This rigidity makes the tests more maintainable and requires that the behaviors for each module be meticulously defined; precisely the qualities desired when implementing the APIs within our umbrella. 
+[Mox](https://github.com/plataformatec/mox), as the name suggests, is a library that defines mocks bound to specific behaviors. A behavior is a set of function signatures that must be implemented by a module. Consequently, Mox guarantees the mocks for a module be consistent with the original functions they replace during testing. This rigidity makes the tests more maintainable and requires that the behaviors for each module be meticulously defined; precisely the qualities desired when implementing the APIs within our umbrella. 
 
-For example, let's consider mocking the public API for the _breethe_ application when testing _breethe_web_. As the bridge between the two is only composed of the four functions shown in the previous section, mocking the data application's public interface when testing the webserver only requires mocking those four functions. Naturally, this is only reasonable if we seperately test the data application in full, from interface to database. Crucially, it is the singularity of the interface (four functions) which allows this degree of separation between the two applications in the umbrella both in testing and in production.
+For example, let's consider mocking the public API for the _breethe_ application when testing _breethe_web_. As the bridge between the two is only composed of the four functions shown in the previous section, mocking the _breethe_ application's public interface when testing the webserver only requires mocking those four functions. Naturally, this is only reasonable if we seperately test the _breethe_ application in full, from interface to database. Crucially, it is the singularity of the interface (four functions) which allows this degree of separation between the two applications in the umbrella both in testing and in production.
 
 Let's take a look at the controller action for a location search by id:
 
 ```elixir
+# apps/breethe_web/lib/breethe_web/controllers/location_controller.ex
 @source Application.get_env(:breethe_web, :source)
 
 def show(conn, %{"id" => id}) do
-    location =
-      id
-      |> String.to_integer()
-      |> @source.get_location()
+  location =
+    id
+    |> String.to_integer()
+    |> @source.get_location()
 
-    render(conn, "show.json-api", data: location, opts: [])
-  end
+  render(conn, "show.json-api", data: location, opts: [])
+end
 ```
 
 The interesting part is in the call to the _breethe_ application:
@@ -112,11 +115,12 @@ config :breethe_web, source: Breethe
 config :breethe_web, source: Breethe.Mock
 ```
 
-By default `@source` points to the `Breethe` module - the data application's public API used in production and development. During testing it switches to the `Breethe.Mock` module, which defines the mocks. 
+By default `@source` points to the `Breethe` module - the _breethe_ application's public API used in production and development. During testing it switches to the `Breethe.Mock` module, which defines the mocks. 
 
-The test for this controller action is meant to check two things. Firstly, that the router redirects the connection to the appropriate controller action. Secondly, that the controller action processes the call and queries the data application correctly using the right function defined on the latter's API - in this case `get_location(location_id)`. 
+The test for this controller action is meant to check two things. Firstly, that the router redirects the connection to the appropriate controller action. Secondly, that the controller action processes the call and queries the _breethe_ application correctly using the right function defined on the latter's API - in this case `get_location(location_id)`. 
 
 ```elixir
+# apps/breethe_web/test/breethe_web/controllers/location_controller_test.exs
 describe "show route: returns location" do
     test "by id" do
       location = insert(:location, measurements: [])
@@ -148,6 +152,7 @@ Breethe.Mock
 ```
 As long as we’ve established the callback in the behavior implemented by the Breethe module, we don’t need to explicitly define the Breethe.Mock module (Mox creates it). Here's the callback for this particular function (for reference, it isn't coded in the test).
 ```elixir
+# apps/breethe/lib/breethe.ex
 defmodule Behaviour do
   @callback get_location(location_id :: integer) :: %Breethe.Data.Location{}
 end
@@ -157,7 +162,7 @@ end
 conn = get(build_conn(), "api/locations/#{location.id}", [])
 ```
 
-4. It tests the JSON response is correct (deminished for brevity). <br/><br/>
+4. It tests the JSON response is correct (abridged for brevity). <br/><br/>
 ```elixir
 assert json_response(conn, 200) == %{
           "data" => %{
