@@ -1,7 +1,7 @@
 ---
 layout: article
 section: Blog
-title: Elixir Umbrella Applications and testing with Mox
+title: Elixir Umbrella Applications and Testing with Mox
 author: "Niklas Long"
 github-handle: niklaslong
 topic: elixir
@@ -162,7 +162,7 @@ end
 conn = get(build_conn(), "api/locations/#{location.id}", [])
 ```
 
-4. It tests the JSON response is correct (abridged for brevity). <br/><br/>
+4. It tests the JSON response (abridged for brevity) is correct by asserting on the attributes of the location created in 1. and returned from the mock in 2. <br/><br/>
 ```elixir
 assert json_response(conn, 200) == %{
           "data" => %{
