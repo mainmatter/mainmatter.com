@@ -14,6 +14,7 @@ test/version_tmp
 tmp
 node_modules
 dist
+.eslintcache
 
 # YARD artifacts
 .yardoc

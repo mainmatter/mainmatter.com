@@ -7,11 +7,17 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "ember build -prod",
+    "build": "ember build -prod && node scripts/prerender.js",
     "start": "ember server",
     "test": "ember test",
     "lint:ts": "tslint -c tslint.json 'src/**/*.ts' -t codeFrame",
-    "build": "ember build -prod && node scripts/prerender.js"
+    "lint:js": "eslint . --cache",
+    "lint:hbs": "prettier --check --parser glimmer '**/*.hbs'",
+    "lint": "yarn run lint:ts & yarn run lint:js & yarn run lint:hbs",
+    "format:ts": "tslint --fix -c tslint.json 'src/**/*.ts'",
+    "format:js": "eslint --fix . --cache",
+    "format:hbs": "prettier --write --parser glimmer '**/*.hbs'",
+    "format": "yarn run format:ts & yarn run format:js & yarn format:hbs"
   },
   "devDependencies": {
     "@css-blocks/ember-cli": "^0.20.0-beta.7",
@@ -36,13 +42,20 @@
     "ember-cli-inject-live-reload": "^1.6.1",
     "ember-cli-tslint": "^0.1.3",
     "ember-cli-uglify": "^2.0.0-beta.1",
+    "eslint": "^5.15.1",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-config-simplabs": "^0.4.0",
+    "eslint-plugin-prettier": "^3.0.1",
     "express": "^4.16.4",
     "fs-extra": "^7.0.1",
     "glob": "^7.1.3",
     "morgan": "^1.3.2",
     "navigo": "^7.1.2",
+    "prettier": "^1.16.4",
     "puppeteer": "^1.11.0",
     "qunitjs": "^2.3.3",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
     "typescript": "~2.6.0"
   },
   "engines": {
@@ -53,5 +66,11 @@
     "paths": [
       "lib/inject-routes"
     ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all"
   }
 }

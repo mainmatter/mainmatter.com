@@ -1,9 +1,7 @@
-const util = require('util');
 const path = require('path');
-const fs = require('fs-extra')
+const fs = require('fs-extra');
 const express = require('express');
 const puppeteer = require('puppeteer');
-const colors = require('colors');
 const critical = require('critical');
 
 const ROUTES_MAP = require('../config/routes-map')();
@@ -35,7 +33,7 @@ async function inlineCss(fileName) {
     base: DIST_PATH,
     html: input,
     width: 1300,
-    height: 900
+    height: 900,
   });
   await fs.writeFile(fileName, result.toString('utf8'));
 }
@@ -51,20 +49,22 @@ server.get('*', function(req, res, next) {
 });
 server.use(express.static(DIST_PATH));
 
-server.listen(3000, async function () {
+server.listen(3000, async function() {
   let browser = await puppeteer.launch({ headless: true });
   let routes = ROUTES_MAP;
   let paths = Object.keys(routes);
 
-  await Promise.all(paths.map(async (routePath) => {
-    let html = await snapshot(browser, routePath);
-    let fileName = await persist(html, routePath);
-    await inlineCss(fileName);
+  await Promise.all(
+    paths.map(async routePath => {
+      let html = await snapshot(browser, routePath);
+      let fileName = await persist(html, routePath);
+      await inlineCss(fileName);
 
-    console.log(`${routePath} => ${fileName}.`.blue);
-  }));
+      console.log(`${routePath} => ${fileName}.`.blue);
+    }),
+  );
   console.log(`\nRendered ${paths.length} routes.`.green);
-  
+
   await browser.close();
   process.exit(0);
 });

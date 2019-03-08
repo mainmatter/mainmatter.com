@@ -12,11 +12,13 @@ The source code for [https://simplabs.com](https://simplabs.com).
 
 * `ember serve`
 * open [http://localhost:4200](http://localhost:4200).
+* `yarn format` (format source files)
 
 ### Testing
 
 * `ember test` (headless)
 * `ember test -s` (headful)
+* `yarn lint` (check formatting)
 
 ### Building
 
