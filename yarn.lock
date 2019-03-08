@@ -533,6 +533,15 @@
   resolved "https://registry.yarnpkg.com/@glimmer/low-level/-/low-level-0.34.8.tgz#ac82953d68171ed5640a8d58045afd57d35ed0ac"
   integrity sha512-lGL/YFxk9K8a4vBSidCUFN2qq+qjBK37qTgoiHJBVtxYiKHeNjlR6vhwY6u2F4xNWwQc6+O7Q/reLHQVKLHdaw==
 
+"@glimmer/node@^0.34.7":
+  version "0.34.8"
+  resolved "https://registry.yarnpkg.com/@glimmer/node/-/node-0.34.8.tgz#294c96c1e6c09a22dc2a136eb9582a0557f87d0b"
+  integrity sha512-VLES5dCdEUv0gjFdvjeNqrpSdrsSTdWpqumfdch1/iD84dr4sU6F+0kMDYOLWs8JhGXtNm6CFp4/c496KjsNqQ==
+  dependencies:
+    "@glimmer/interfaces" "^0.34.8"
+    "@glimmer/runtime" "^0.34.8"
+    simple-dom "^0.3.0"
+
 "@glimmer/object-reference@^0.31.0":
   version "0.31.0"
   resolved "https://registry.yarnpkg.com/@glimmer/object-reference/-/object-reference-0.31.0.tgz#c1152ef0d9ce86a8fb7fa21107e3f99943c66ded"
@@ -659,7 +668,7 @@
     "@glimmer/vm" "^0.31.0"
     "@glimmer/wire-format" "^0.31.0"
 
-"@glimmer/runtime@^0.34.7":
+"@glimmer/runtime@^0.34.7", "@glimmer/runtime@^0.34.8":
   version "0.34.8"
   resolved "https://registry.yarnpkg.com/@glimmer/runtime/-/runtime-0.34.8.tgz#85831f857e3a67c6de5a7531b6d570586a3f70b4"
   integrity sha512-pPD8/fnaJciqaQh0a9HuIR21EbxtQUcTC0Y1KNcBS56d38qRomJ8yVu3EdybWzoW+xeUj1bNsCavK1nIqmQQPg==
@@ -671,6 +680,15 @@
     "@glimmer/util" "^0.34.8"
     "@glimmer/vm" "^0.34.8"
     "@glimmer/wire-format" "^0.34.8"
+
+"@glimmer/ssr@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@glimmer/ssr/-/ssr-0.13.0.tgz#227b3f1f2726f5847a7a4098c49d536c6d88973a"
+  integrity sha512-16h8TMUL2EzaQTp+ErIi4lkCVwtOXDFcPAqr8UsjVi1hIMptPF9YnlDWHoE+1x2I7Th7Qw3ekGgA4IUM3pY2Ow==
+  dependencies:
+    "@glimmer/application" "^0.13.0"
+    "@glimmer/node" "^0.34.7"
+    "@glimmer/runtime" "^0.34.7"
 
 "@glimmer/syntax@^0.31.0":
   version "0.31.0"
@@ -2456,6 +2474,20 @@ broccoli-typescript-compiler@^2.2.0:
     typescript "~2.8.3"
     walk-sync "^0.3.2"
 
+broccoli-typescript-compiler@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/broccoli-typescript-compiler/-/broccoli-typescript-compiler-4.1.0.tgz#8511b73a7b019f6b6267679df64e211ca65ba036"
+  integrity sha512-pz+hQMlfwvklezPB1K4COYdf5SIQX6Dl4bdLX/R0uTNEJAwVa3Is/4YSXXm2L+LQdfMCZSXzqjbC5AGgvdbB6A==
+  dependencies:
+    broccoli-funnel "^2.0.1"
+    broccoli-merge-trees "^3.0.0"
+    broccoli-plugin "^1.3.0"
+    fs-tree-diff "^0.5.7"
+    heimdalljs "0.3.3"
+    md5-hex "^2.0.0"
+    typescript "~3.2.1"
+    walk-sync "^0.3.2"
+
 broccoli-uglify-sourcemap@^2.1.1:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/broccoli-uglify-sourcemap/-/broccoli-uglify-sourcemap-2.2.0.tgz#2ff49389bdf342a550c3596750ba2dde95a8f7d4"
@@ -2565,6 +2597,11 @@ builtin-modules@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-2.0.0.tgz#60b7ef5ae6546bd7deefa74b08b62a43a232648e"
   integrity sha512-3U5kUA5VPsRUA3nofm/BXX7GVHKfxz0hOBAPxXrIvHzlDRkQVqEn6yi8QJegxl4LzOHLdvb7XF5dVawa/VVYBg==
+
+builtin-modules@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-3.0.0.tgz#1e587d44b006620d90286cc7a9238bbc6129cab1"
+  integrity sha512-hMIeU4K2ilbXV6Uv93ZZ0Avg/M91RaKXucQ+4me2Do1txxBDyDZWCBa5bJSLqoNTRpXTLwEzIk1KmloenDDjhg==
 
 builtins@^1.0.3:
   version "1.0.3"
@@ -4254,6 +4291,11 @@ estree-walker@^0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.5.2.tgz#d3850be7529c9580d815600b53126515e146dd39"
   integrity sha512-XpCnW/AE10ws/kDAs37cngSkvgIR8aN3G0MS85m7dUpuK2EREo9VJ00uvw6Dg/hXEpfsE1I1TvJOJr+Z+TL+ig==
+
+estree-walker@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.6.0.tgz#5d865327c44a618dde5699f763891ae31f257dae"
+  integrity sha512-peq1RfVAVzr3PU/jL31RaOjUKLoZJpObQWJJ+LgfcxDUifyLZ1RjPQZTl0pzj2uJ45b7A7XpyppXvxdEqzo4rw==
 
 esutils@^2.0.2:
   version "2.0.2"
@@ -6835,6 +6877,13 @@ magic-string@^0.24.0:
   dependencies:
     sourcemap-codec "^1.4.1"
 
+magic-string@^0.25.1:
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.25.2.tgz#139c3a729515ec55e96e69e82a11fe890a293ad9"
+  integrity sha512-iLs9mPjh9IuTtRsqqhNGYcZXGei0Nh/A4xirrsqW7c+QhKVFL2vm7U09ru6cHRD22azaP/wMDgI+HCqbETMTtg==
+  dependencies:
+    sourcemap-codec "^1.4.4"
+
 make-dir@^1.0.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-1.3.0.tgz#79c1033b80515bd6d24ec9933e860ca75ee27f0c"
@@ -8609,6 +8658,13 @@ resolve@^1.1.6, resolve@^1.3.2, resolve@^1.3.3, resolve@^1.4.0, resolve@^1.5.0, 
   dependencies:
     path-parse "^1.0.6"
 
+resolve@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.10.0.tgz#3bdaaeaf45cc07f375656dfd2e54ed0810b101ba"
+  integrity sha512-3sUr9aq5OfSg2S9pNtPA9hL1FVEAjvfOC4leW0SNf/mpnaakz2a9femSd6LqAww2RaFctwyf1lCqnTHuF1rxDg==
+  dependencies:
+    path-parse "^1.0.6"
+
 responselike@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/responselike/-/responselike-1.0.2.tgz#918720ef3b631c5642be068f15ade5a46f4ba1e7"
@@ -8656,6 +8712,16 @@ rollup-plugin-babel@^3.0.3:
   dependencies:
     rollup-pluginutils "^1.5.0"
 
+rollup-plugin-commonjs@^9.2.1:
+  version "9.2.1"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-commonjs/-/rollup-plugin-commonjs-9.2.1.tgz#bb151ca8fa23600c7a03e25f9f0a45b1ee922dac"
+  integrity sha512-X0A/Cp/t+zbONFinBhiTZrfuUaVwRIp4xsbKq/2ohA2CDULa/7ONSJTelqxon+Vds2R2t2qJTqJQucKUC8GKkw==
+  dependencies:
+    estree-walker "^0.5.2"
+    magic-string "^0.25.1"
+    resolve "^1.10.0"
+    rollup-pluginutils "^2.3.3"
+
 rollup-plugin-node-resolve@^3.0.3:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.4.0.tgz#908585eda12e393caac7498715a01e08606abc89"
@@ -8664,6 +8730,15 @@ rollup-plugin-node-resolve@^3.0.3:
     builtin-modules "^2.0.0"
     is-module "^1.0.0"
     resolve "^1.1.6"
+
+rollup-plugin-node-resolve@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.0.1.tgz#f95765d174e5daeef9ea6268566141f53aa9d422"
+  integrity sha512-fSS7YDuCe0gYqKsr5OvxMloeZYUSgN43Ypi1WeRZzQcWtHgFayV5tUSPYpxuaioIIWaBXl6NrVk0T2/sKwueLg==
+  dependencies:
+    builtin-modules "^3.0.0"
+    is-module "^1.0.0"
+    resolve "^1.10.0"
 
 rollup-pluginutils@^1.5.0:
   version "1.5.2"
@@ -8680,6 +8755,14 @@ rollup-pluginutils@^2.0.1:
   dependencies:
     estree-walker "^0.5.2"
     micromatch "^2.3.11"
+
+rollup-pluginutils@^2.3.3:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-2.4.1.tgz#de43ab54965bbf47843599a7f3adceb723de38db"
+  integrity sha512-wesMQ9/172IJDIW/lYWm0vW0LiKe5Ekjws481R7z9WTRtmO59cqyM/2uUlxvf6yzm/fElFmHUobeQOYz46dZJw==
+  dependencies:
+    estree-walker "^0.6.0"
+    micromatch "^3.1.10"
 
 rollup@^0.41.4:
   version "0.41.6"
@@ -8894,6 +8977,11 @@ silent-error@^1.0.0, silent-error@^1.0.1, silent-error@^1.1.0:
   dependencies:
     debug "^2.2.0"
 
+simple-dom@^0.3.0:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/simple-dom/-/simple-dom-0.3.2.tgz#0663d10f1556f1500551d518f56e3aba0871371d"
+  integrity sha1-BmPRDxVW8VAFUdUY9W46ughxNx0=
+
 simple-html-tokenizer@^0.4.1:
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/simple-html-tokenizer/-/simple-html-tokenizer-0.4.3.tgz#9b00b766e30058b4bb377c0d4f97566a13ab1be1"
@@ -9089,7 +9177,7 @@ source-map@~0.1.x:
   dependencies:
     amdefine ">=0.0.4"
 
-sourcemap-codec@^1.4.1:
+sourcemap-codec@^1.4.1, sourcemap-codec@^1.4.4:
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/sourcemap-codec/-/sourcemap-codec-1.4.4.tgz#c63ea927c029dd6bd9a2b7fa03b3fec02ad56e9f"
   integrity sha512-CYAPYdBu34781kLHkaW3m6b/uUSyMOC2R61gcYMWooeuaGtjof86ZA/8T+qVPPt7np1085CR9hmMGrySwEc8Xg==
@@ -9745,6 +9833,11 @@ typescript@~2.8.3:
   version "2.8.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.8.4.tgz#0b1db68e6bdfb0b767fa2ab642136a35b059b199"
   integrity sha512-IIU5cN1mR5J3z9jjdESJbnxikTrEz3lzAw/D0Tf45jHpBp55nY31UkUvmVHoffCfKHTqJs3fCLPDxknQTTFegQ==
+
+typescript@~3.2.1:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.2.4.tgz#c585cb952912263d915b462726ce244ba510ef3d"
+  integrity sha512-0RNDbSdEokBeEAkgNbxJ+BLwSManFy9TeXz8uW+48j/xhEXv1ePME60olyzw2XzUqUBNAYFeJadIqAgNqIACwg==
 
 uc.micro@^1.0.1, uc.micro@^1.0.5:
   version "1.0.5"
