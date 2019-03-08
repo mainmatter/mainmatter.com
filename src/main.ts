@@ -1,4 +1,4 @@
-import Application, { RehydratingBuilder, DOMBuilder, RuntimeCompilerLoader, SyncRenderer } from '@glimmer/application';
+import Application, { DOMBuilder, RehydratingBuilder, RuntimeCompilerLoader, SyncRenderer } from '@glimmer/application';
 import Resolver, { BasicModuleRegistry } from '@glimmer/resolver';
 import moduleMap from '../config/module-map';
 import resolverConfiguration from '../config/resolver-configuration';

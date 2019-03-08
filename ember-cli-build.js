@@ -37,7 +37,7 @@ function findAllComponents() {
 class SimplabsApp extends GlimmerApp {
   ssrTree() {
     let tsTree = new Funnel('.', {
-      include: ['ssr/**/*', 'config/**/*']
+      include: ['ssr/**/*', 'config/**/*'],
     });
 
     return typescript(tsTree, {
@@ -45,10 +45,10 @@ class SimplabsApp extends GlimmerApp {
       tsconfig: {
         compilerOptions: {
           target: 'es6',
-          moduleResolution: 'node'
-        }
+          moduleResolution: 'node',
+        },
       },
-      throwOnError: false
+      throwOnError: false,
     });
   }
 
@@ -69,7 +69,7 @@ class SimplabsApp extends GlimmerApp {
 
   packageSSR() {
     let jsTree = new Funnel(this.javascriptTree(), {
-      exclude: ['src/index.js']
+      exclude: ['src/index.js'],
     });
     let ssrTree = this.ssrTree();
 
@@ -79,19 +79,17 @@ class SimplabsApp extends GlimmerApp {
         input: 'ssr/index.js',
         output: {
           file: 'ssr-app.js',
-          format: 'cjs'
+          format: 'cjs',
         },
-        onwarn: function(warning) {
+        onwarn(warning) {
           if (warning.code === 'THIS_IS_UNDEFINED') {
             return;
           }
+          // eslint-disable-next-line no-console
           console.log('Rollup warning: ', warning.message);
         },
-        plugins: [
-          resolve({ jsnext: true, module: true, main: true }),
-          commonjs(),
-        ]
-      }
+        plugins: [resolve({ jsnext: true, module: true, main: true }), commonjs()],
+      },
     });
   }
 
@@ -115,8 +113,8 @@ module.exports = function(defaults) {
       enabled: process.env.EMBER_ENV === 'production',
     },
     fingerprint: {
-      exclude: ['ssr-app.js']
-    }
+      exclude: ['ssr-app.js'],
+    },
   });
 
   return app.toTree();
