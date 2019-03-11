@@ -1,0 +1,26 @@
+:scope {
+  black-name: 'main-block';
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10em;
+}
+
+.content {
+  width: 30em;
+}
+
+.sidebar {
+  width: 20em;
+}
+
+.content-item {
+  margin-bottom: 5rem;
+}
+
+.content-section {
+  margin-bottom: 4rem;
+}
+
+.content-heading {
+  margin-bottom: 4rem;
+}

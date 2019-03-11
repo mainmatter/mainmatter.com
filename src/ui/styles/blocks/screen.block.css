@@ -331,34 +331,6 @@
   margin: 0 10em;
 }
 
-/* MAIN BLOCK */
-
-.main-block {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 10em;
-}
-
-.main-block-content {
-  width: 30em;
-}
-
-.main-block-sidebar {
-  width: 20em;
-}
-
-.main-block-content-item {
-  margin-bottom: 5rem;
-}
-
-.main-block-content-section {
-  margin-bottom: 4rem;
-}
-
-.main-block-content-heading {
-  margin-bottom: 4rem;
-}
-
 .block-link {
   display: block;
 }
