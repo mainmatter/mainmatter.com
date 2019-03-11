@@ -1,6 +1,6 @@
 @block screen from "../../styles/blocks/screen.block.css";
 
 :scope {
-  block-name: ComponentA;
+  block-name: Homepage;
   extends: screen;
 }
