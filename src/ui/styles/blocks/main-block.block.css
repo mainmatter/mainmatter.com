@@ -17,9 +17,19 @@
 }
 
 .content-section {
-  margin-bottom: 4rem;
+  margin:  0 -1rem 3rem;
+  display: flex;
+  align-items: stretch;
+}
+
+.content-section-item {
+  padding: 0 1rem;
 }
 
 .content-heading {
   margin-bottom: 4rem;
+}
+
+.content-section-image {
+  height: 100%;
 }
