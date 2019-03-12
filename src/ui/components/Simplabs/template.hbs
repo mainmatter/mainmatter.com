@@ -1,18 +1,21 @@
 <div data-has-ssr-response={{appState.isSSR}}>
-  <h1 class="heading">
-    Welcome to Glimmer!
-  </h1>
   <a href="/" data-navigo>
     home
   </a>
   <a href="/a" data-navigo>
-    a
+    home
   </a>
   <a href="/b" data-navigo>
-    b
+    services
   </a>
   <a href="/c" data-navigo>
-    c
+    service
+  </a>
+  <a href="/d" data-navigo>
+    case
+  </a>
+  <a href="/e" data-navigo>
+    expertise
   </a>
   {{#if activeComponent}}
     {{component activeComponent}}
