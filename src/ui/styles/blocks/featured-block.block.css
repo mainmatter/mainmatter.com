@@ -1,0 +1,8 @@
+:scope {
+  position: relative;
+  min-height: 30em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5rem 10em;
+}

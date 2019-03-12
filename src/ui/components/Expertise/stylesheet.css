@@ -1,5 +1,6 @@
 @block screen from "../../styles/blocks/screen.block.css";
 @block main-block from "../../styles/blocks/main-block.block.css";
+@block header-block from "../../styles/blocks/header-block.block.css";
 
 :scope {
   block-name: Expertise;
