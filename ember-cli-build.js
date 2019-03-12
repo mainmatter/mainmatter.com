@@ -7,7 +7,12 @@ const GlimmerApp = require('@glimmer/application-pipeline').GlimmerApp;
 const BroccoliCleanCss = require('broccoli-clean-css');
 const Funnel = require('broccoli-funnel');
 const Map = require('broccoli-stew').map;
+const MergeTrees = require('broccoli-merge-trees');
+const Rollup = require('broccoli-rollup');
+const typescript = require('broccoli-typescript-compiler').default;
 const glob = require('glob');
+const commonjs = require('rollup-plugin-commonjs');
+const resolve = require('rollup-plugin-node-resolve');
 
 function findAllComponents() {
   let routes = require('./config/routes-map')();
@@ -30,6 +35,23 @@ function findAllComponents() {
 }
 
 class SimplabsApp extends GlimmerApp {
+  ssrTree() {
+    let tsTree = new Funnel('.', {
+      include: ['ssr/**/*', 'config/**/*'],
+    });
+
+    return typescript(tsTree, {
+      workingPath: this.project.root,
+      tsconfig: {
+        compilerOptions: {
+          target: 'es6',
+          moduleResolution: 'node',
+        },
+      },
+      throwOnError: false,
+    });
+  }
+
   cssTree() {
     let resetCss = fs.readFileSync(path.join(this.project.root, 'vendor', 'css', 'reset.css'));
     let cssTree = Funnel(super.cssTree(...arguments), {
@@ -44,6 +66,39 @@ class SimplabsApp extends GlimmerApp {
 
     return cssTree;
   }
+
+  packageSSR() {
+    let jsTree = new Funnel(this.javascriptTree(), {
+      exclude: ['src/index.js'],
+    });
+    let ssrTree = this.ssrTree();
+
+    let appTree = new MergeTrees([jsTree, ssrTree]);
+    return new Rollup(appTree, {
+      rollup: {
+        input: 'ssr/index.js',
+        output: {
+          file: 'ssr-app.js',
+          format: 'cjs',
+        },
+        onwarn(warning) {
+          if (warning.code === 'THIS_IS_UNDEFINED') {
+            return;
+          }
+          // eslint-disable-next-line no-console
+          console.log('Rollup warning: ', warning.message);
+        },
+        plugins: [resolve({ jsnext: true, module: true, main: true }), commonjs()],
+      },
+    });
+  }
+
+  package() {
+    let appTree = super.package(...arguments);
+    let ssrTree = this.packageSSR();
+
+    return new MergeTrees([appTree, ssrTree]);
+  }
 }
 
 module.exports = function(defaults) {
@@ -56,6 +111,9 @@ module.exports = function(defaults) {
     },
     minifyCSS: {
       enabled: process.env.EMBER_ENV === 'production',
+    },
+    fingerprint: {
+      exclude: ['ssr-app.js'],
     },
   });
 
