@@ -178,20 +178,20 @@ latter's API - in this case `get_location(location_id)`.
 ```elixir
 # apps/breethe_web/test/breethe_web/controllers/location_controller_test.exs
 describe "show route: returns location" do
-    test "by id" do
-      location = insert(:location, measurements: [])
+  test "by id" do
+    location = insert(:location, measurements: [])
 
-      Breethe.Mock
-      |> expect(:get_location, fn _location_id -> location end)
+    Breethe.Mock
+    |> expect(:get_location, fn _location_id -> location end)
 
-      conn = get(build_conn(), "api/locations/#{location.id}", [])
+    conn = get(build_conn(), "api/locations/#{location.id}", [])
 
-      assert json_response(conn, 200) == %{
-               "data" => %{
-                 ...
-               }
+    assert json_response(conn, 200) == %{
+             "data" => %{
+               ...
              }
-    end
+           }
+  end
 end
 ```
 
