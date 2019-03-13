@@ -3,7 +3,7 @@
 @block header-block from "../../styles/blocks/header-block.block.css";
 
 :scope {
-  block-name: CaseStudy;
+  block-name: case-study;
   extends: screen;
 }
 
@@ -16,6 +16,6 @@
   background-image: url('assets/images/sky.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover;  
+  background-size: cover;
   background-blend-mode: soft-light;
 }

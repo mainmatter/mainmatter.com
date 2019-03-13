@@ -1,0 +1,25 @@
+:scope {
+  block-name: shape-side;
+  transform: rotate(30deg);
+	overflow: hidden;
+	position: absolute;
+}
+
+.background {
+  color: #FFF;
+	background-color: #48D5B5;
+	width: 100%;
+	height: 100%;
+	transform: scale(1.25) rotate(-30deg);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.content {
+  width: 100%;
+  transform: scale(0.8);
+  display: flex;
+}

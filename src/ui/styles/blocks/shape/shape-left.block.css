@@ -1,0 +1,13 @@
+@block shape-side from "./shape-side.block.css";
+
+:scope  {
+  extends: shape-side;
+  left: -52em;
+  top: -10em;
+  width: 80em;
+	height: 40em;
+}
+
+.content {
+  justify-content: flex-end;
+}

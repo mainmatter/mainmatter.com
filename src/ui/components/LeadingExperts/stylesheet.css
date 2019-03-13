@@ -1,27 +1,24 @@
-@block screen from "../../styles/blocks/screen.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 @block shape from "../../styles/blocks/shape/base.block.css";
 @block shape-left-lg from "../../styles/blocks/shape/shape-left-lg.block.css";
 @block shape-right-lg from "../../styles/blocks/shape/shape-right-lg.block.css";
-@block main-block from "../../styles/blocks/main-block.block.css";
-@block header-block from "../../styles/blocks/header-block.block.css";
+@block screen from "../../styles/blocks/screen.block.css";
 
 :scope {
-  block-name: Services;
-  extends: screen;
+  block-name: leading-experts;
 }
 
-.process-right-background {
-  background-color: resolve('shape-right-lg.background');
-  background-color: #007DF6;
-}
-
-.process-left-background {
+.marco-background {
   background-color: resolve("shape-left-lg.background");
   background-color: #222;
-  background-image: url("assets/images/working-photo.jpg");
+  background-image: url("assets/images/marco.jpg");
   background-size: 80em;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+}
+
+.experts-right {
+  background-color: resolve("shape-right-lg.background");
+  background-color: #E15D44;
 }

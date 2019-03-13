@@ -1,0 +1,9 @@
+@block shape-side from "./shape-side.block.css";
+
+:scope  {
+  extends: shape-side;
+  left: -40em;
+  top: 0;
+  width: 160em;
+  height: 50em;
+}

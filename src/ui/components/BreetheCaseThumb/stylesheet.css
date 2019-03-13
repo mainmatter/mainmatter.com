@@ -1,0 +1,24 @@
+@block typography from "../../styles/blocks/typography.block.css";
+@block shape from "../../styles/blocks/shape/base.block.css";
+@block shape-left from "../../styles/blocks/shape/shape-left.block.css";
+@block shape-right from "../../styles/blocks/shape/shape-right.block.css";
+@block screen from "../../styles/blocks/screen.block.css";
+
+:scope {
+  block-name: breethe-thumb;
+}
+
+.breethe-left-background {
+  background-color: resolve("shape-left.background");
+  background-color: #007DF6;
+  background-image: url("assets/images/sky.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;  
+  background-blend-mode: soft-light;
+}
+
+.breethe-right-background {
+  background-color: resolve("shape-right.background");
+  background-color: #007DF6;
+}
