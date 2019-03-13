@@ -1,0 +1,63 @@
+:scope {
+  block-name: shape;
+}
+
+.wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 30em;
+  margin: 5rem 10em;
+}
+
+.wrap-lg {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 50em;
+  margin: 5rem 0;
+}
+
+.wrap-md {
+  position: relative;
+  display: flex;
+  min-height: 25rem;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0 0 10em;
+}
+
+.content-image {
+  width: 30em;
+  margin-right: 8em;
+  margin-top: 10em;
+}
+
+.content-text {
+  width: 20em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10em;
+  margin-top: -15em;
+  color: #FFF;
+}
+
+.shape-center {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.shape-center-content {
+  width: 20em;
+}
+
+.sub-heading {
+  color: #FFF;
+  font-size: 2.5em;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  line-height: 1em;
+}
