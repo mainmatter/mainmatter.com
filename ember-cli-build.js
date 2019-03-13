@@ -95,9 +95,14 @@ class SimplabsApp extends GlimmerApp {
 
   package() {
     let appTree = super.package(...arguments);
-    let ssrTree = this.packageSSR();
 
-    return new MergeTrees([appTree, ssrTree]);
+    if (process.env.PRERENDER) {
+      let ssrTree = this.packageSSR();
+
+      return new MergeTrees([appTree, ssrTree]);
+    } else {
+      return appTree;
+    }
   }
 }
 
