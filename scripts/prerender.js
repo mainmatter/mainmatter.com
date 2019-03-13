@@ -3,6 +3,7 @@ const fs = require('fs-extra');
 const express = require('express');
 const puppeteer = require('puppeteer');
 const critical = require('critical');
+const colors = require('colors');
 
 const DIST_PATH = path.join(__dirname, '..', 'dist');
 const HTML_PATH = path.join(__dirname, '..', 'dist', 'index.html');
@@ -70,10 +71,10 @@ server.listen(3000, async function() {
       let fileName = await persist(html, routePath);
       await inlineCss(fileName);
 
-      console.log(`${routePath} => ${fileName}.`.blue);
+      console.log(colors.blue(`${routePath} => ${fileName}.`));
     }),
   );
-  console.log(`\nRendered ${paths.length} routes.`.green);
+  console.log(colors.green(`\nRendered ${paths.length} routes.`));
 
   await browser.close();
   process.exit(0);
