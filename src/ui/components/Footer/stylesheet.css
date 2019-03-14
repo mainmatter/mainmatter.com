@@ -1,0 +1,42 @@
+@block screen from "../../styles/blocks/screen.block.css";
+
+:scope {
+  block-name: footer;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0 10em;
+}
+
+.branding {
+  min-width: 200px;
+  flex-shrink: 0;
+  font-size: 1rem;
+  margin-right: 10rem;
+}
+
+.logo-wrap {
+  display: block;
+  width: 200px;
+  margin-bottom: 2rem;
+}
+
+.menu {
+  margin-right: 3rem;
+  flex-shrink: 0;
+  font-size: 1rem;
+  display: block;
+  margin-top: 0.6rem;
+}
+
+.menu-title {
+  font-weight: bold;
+  color: #000;
+}
+
+.menu-link {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  margin: 1rem 0;
+}
