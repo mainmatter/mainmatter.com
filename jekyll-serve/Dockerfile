@@ -25,4 +25,4 @@ COPY docker-entrypoint.sh /usr/local/bin/
 # on every container start we'l'
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 
-CMD [ "bundle", "exec", "jekyll", "serve", "--force_polling", "-H", "0.0.0.0", "-P", "4000" ]
+CMD [ "bundle", "exec", "jekyll", "serve", "--incremental", "--force_polling", "-H", "0.0.0.0", "-P", "4000" ]
