@@ -33,3 +33,12 @@
 .content-section-image {
   height: 100%;
 }
+
+.body-image {
+  margin: 3rem 0;
+}
+
+.body-image-caption {
+  color: #666;
+  margin-top: 0.5rem;
+}
