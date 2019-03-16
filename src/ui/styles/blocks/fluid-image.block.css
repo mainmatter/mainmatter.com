@@ -1,0 +1,8 @@
+:scope {
+  block-name: fluid-image;
+}
+
+.image {
+  width: 100%;
+  vertical-align: top;
+}

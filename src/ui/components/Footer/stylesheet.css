@@ -1,4 +1,4 @@
-@block screen from "../../styles/blocks/screen.block.css";
+@block fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
   block-name: footer;

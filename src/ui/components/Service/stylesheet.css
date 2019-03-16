@@ -5,6 +5,7 @@
 @block shape from "../../styles/blocks/shape/base.block.css";
 @block shape-left-md from "../../styles/blocks/shape/shape-left-md.block.css";
 @block shape-right-lg from "../../styles/blocks/shape/shape-right-lg.block.css";
+@block fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
   block-name: service;
