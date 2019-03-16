@@ -2,7 +2,6 @@
 @block shape from "../../styles/blocks/shape/base.block.css";
 @block shape-left from "../../styles/blocks/shape/shape-left.block.css";
 @block shape-right from "../../styles/blocks/shape/shape-right.block.css";
-@block screen from "../../styles/blocks/screen.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
