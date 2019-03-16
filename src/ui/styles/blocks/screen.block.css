@@ -166,13 +166,3 @@
   height: 4rem;
   border: 1px solid #CCC;
 }
-
-/* MAIN BLOCK */
-
-.button {
-  background: #007DF6;
-  color: #FFF;
-  border-radius: 4px;
-  padding: 1rem;
-  text-decoration: none;
-}
