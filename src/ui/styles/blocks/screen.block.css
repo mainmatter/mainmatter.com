@@ -104,15 +104,6 @@
   text-transform: uppercase;
 }
 
-/* LOGO */
-
-.logos-block {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-  margin: 0 10em;
-}
-
 .card {
   margin-bottom: 3rem;
 }
