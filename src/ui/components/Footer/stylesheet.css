@@ -3,7 +3,7 @@
 :scope {
   block-name: footer;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: space-between;
   margin: 0 10em;
 }
@@ -12,7 +12,6 @@
   min-width: 200px;
   flex-shrink: 0;
   font-size: 1rem;
-  margin-right: 10rem;
 }
 
 .logo-wrap {
@@ -22,7 +21,6 @@
 }
 
 .menu {
-  margin-right: 3rem;
   flex-shrink: 0;
   font-size: 1rem;
   display: block;
