@@ -27,8 +27,8 @@
 .work-with-us {
   color: #007DF6;
   border: 2px solid #007DF6;
-  font-size: 1.5rem;
-  padding: 5px 10px;
+  font-size: 1.2rem;
+  padding: .5rem 1rem;
   float: right;
   display: block;
   flex-shrink: 0;
