@@ -104,42 +104,6 @@
   text-transform: uppercase;
 }
 
-.card {
-  margin-bottom: 3rem;
-}
-
-.card-sub-heading {
-  font-size: 1.5em;
-  font-weight: 400;
-  margin: 1rem 0;
-  line-height: 1em;
-  color: var(--first-color);
-}
-
-.card-text {
-  margin-bottom: 1rem;
-}
-
-.card-image {
-  margin-bottom: 2rem;
-}
-
-.card-form {
-}
-
-.card-quote {
-
-}
-
-.card-quote-text {
-  font-style: italic;
-}
-
-.card-quote-author {
-  margin-top: 1rem;
-  font-size: 0.8em;
-}
-
 /* FORM */
 .form {
 

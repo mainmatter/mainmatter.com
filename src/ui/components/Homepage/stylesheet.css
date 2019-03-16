@@ -3,6 +3,7 @@
 @block header-block from "../../styles/blocks/header-block.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
+@block card from "../../styles/blocks/card.block.css";
 
 :scope {
   block-name: Homepage;
