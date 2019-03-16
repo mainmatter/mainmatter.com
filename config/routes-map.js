@@ -2,12 +2,11 @@
 
 module.exports = function() {
   let routes = {
-    '/': {},
-    '/a': { component: 'Homepage' },
-    '/b': { component: 'Services' },
-    '/c': { component: 'Service' },
-    '/d': { component: 'CaseStudy' },
-    '/e': { component: 'Expertise' },
+    '/': { component: 'Homepage' },
+    '/services': { component: 'Services' },
+    '/service': { component: 'Service' },
+    '/case-study': { component: 'CaseStudy' },
+    '/expertise': { component: 'Expertise' },
   };
 
   return routes;
