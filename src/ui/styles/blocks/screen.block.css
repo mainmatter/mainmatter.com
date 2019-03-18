@@ -113,26 +113,6 @@
   padding-right: 2.5em;
 }
 
-/* NAVBAR */
-.navbar {
-  margin: 0 10em 10em 10em;
-  display: flex;
-  align-items: center;
-}
-
-.navbar-brand {
-  width: 10rem;
-  margin-right: 1rem;
-}
-
-.navbar-nav {
-  margin-left: auto;
-  width: 100%;
-}
-
-.navbar-nav-item {
-}
-
 /* LOGO */
 
 .logos-block {

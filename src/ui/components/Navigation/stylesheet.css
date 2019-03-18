@@ -1,0 +1,36 @@
+@block screen from "../../styles/blocks/screen.block.css";
+
+:scope {
+  block-name: navigation;
+  margin: 0 10em 10em 10em;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  width: 10rem;
+  margin-right: 1rem;
+}
+
+.navbar-nav {
+  margin-left: auto;
+  width: 100%;
+}
+
+.nav-item {
+  color: #000000;
+  margin-left: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.work-with-us {
+  color: #007DF6;
+  border: 2px solid #007DF6;
+  font-size: 1.2rem;
+  padding: .5rem 1rem;
+  float: right;
+  display: block;
+  flex-shrink: 0;
+  text-decoration: none;
+}
