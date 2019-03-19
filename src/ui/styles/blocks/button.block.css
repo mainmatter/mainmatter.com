@@ -3,9 +3,12 @@
 }
 
 .button {
-  background: #007df6;
-  color: #fff;
-  border-radius: 4px;
-  padding: 1rem;
+  color: #007DF6;
+  border: 2px solid #007DF6;
+  font-size: 1em;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  flex-shrink: 0;
   text-decoration: none;
 }
+
