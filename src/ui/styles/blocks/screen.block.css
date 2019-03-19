@@ -5,7 +5,7 @@
   --link-color: #007DF6;
 	--large-spacing: 5rem;
 	font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 
@@ -127,6 +127,7 @@
 }
 
 .card {
+  margin-bottom: 3rem;
 }
 
 .card-sub-heading {
@@ -137,17 +138,60 @@
   color: var(--first-color);
 }
 
+.card-text {
+  margin-bottom: 1rem;
+}
+
 .card-image {
   margin-bottom: 2rem;
 }
 
 .card-form {
-  background: red;
+}
+
+.card-quote {
+
+}
+
+.card-quote-text {
+  font-style: italic;
+}
+
+.card-quote-author {
+  margin-top: 1rem;
+  font-size: 0.8em;
 }
 
 .image-fluid {
   width: 100%;
   vertical-align: top;
+}
+
+/* FORM */
+.form {
+
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-control-label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #CCC;
+  box-sizing: border-box;
+}
+
+.form-textarea {
+  width: 100%;
+  height: 4rem;
+  border: 1px solid #CCC;
 }
 
 /* MAIN BLOCK */

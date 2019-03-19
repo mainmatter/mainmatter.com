@@ -1,4 +1,5 @@
 @block screen from "../../styles/blocks/screen.block.css";
+@block button from "../../styles/blocks/button.block.css";
 
 :scope {
   block-name: navigation;
@@ -8,7 +9,7 @@
 }
 
 .navbar-brand {
-  width: 10rem;
+  width: 15rem;
   margin-right: 1rem;
 }
 
@@ -19,18 +20,9 @@
 
 .nav-item {
   color: #000000;
-  margin-left: 50px;
+  margin-left: 2rem;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1em;
 }
 
-.work-with-us {
-  color: #007DF6;
-  border: 2px solid #007DF6;
-  font-size: 1.2rem;
-  padding: .5rem 1rem;
-  float: right;
-  display: block;
-  flex-shrink: 0;
-  text-decoration: none;
-}
+
