@@ -8,12 +8,16 @@
   width: 30em;
 }
 
+.content-full-width {
+  width: auto;
+}
+
 .sidebar {
   width: 20em;
 }
 
 .content-item {
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
 }
 
 .content-section {
@@ -27,7 +31,7 @@
 }
 
 .content-heading {
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 }
 
 .content-section-image {
