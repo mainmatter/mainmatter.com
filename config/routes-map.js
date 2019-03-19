@@ -11,7 +11,7 @@ module.exports = function() {
     '/work': { component: 'Work' },
     '/talks': { component: 'Talks' },
     '/calendar': { component: 'Calendar' },
-    '/playbook': { component: 'Playbook' }
+    '/playbook': { component: 'Playbook' },
     '/contact': { component: 'Contact' }
   };
 
