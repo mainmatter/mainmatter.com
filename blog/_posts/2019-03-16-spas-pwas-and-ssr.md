@@ -12,14 +12,14 @@ Single Page Apps, Progressive Web Apps and classic Server side rendered
 websites are often seen as orthogonal approaches to building web apps where
 only one is best suited for a particular project and one has to decide which
 approach to go with. In this post we'll explore why that doesn't have to be the
-case but all 3 approaches can actually be combined in order to achieve the best
-result.
+case, since all 3 approaches can actually be combined in order to achieve the
+best result.
 
 <!--break-->
 
 ## Desktop-grade apps
 
-Modern websites are in many cases not really websites anymore but in fact full
+Modern websites are in many cases not really websites anymore, but in fact full
 blown apps with desktop-grade feature sets and user experiences. While the
 much-loved [Spacejam Website](https://www.spacejam.com/archive/spacejam/movie/jam.htm)
 was a pretty standard page in terms of interactivity and design only about 2
@@ -166,9 +166,9 @@ things:
 
 * The pre-rendering must run within a timeout so that if for some reason it
   takes longer than x ms or whatever a reasonable threshold for a particular
-  app might be, the server cancels the pre-renderer and instead serve the SPA
+  app might be, the server cancels the pre-renderer and instead serves the SPA
   the classic way (which is just responding with a static file).
-* Likewise should errors in the pre-renderer not be forwarded to the users and
+* Likewise, errors in the pre-renderer should not be forwarded to the users and
   thus block them from booting the app in the browser. Whenever the
   pre-renderer encounters an error, it should fall back to serving the app the
   classic SPA way just like if it runs into the timeout.
