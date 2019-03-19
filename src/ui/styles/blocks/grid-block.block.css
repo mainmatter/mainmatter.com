@@ -1,0 +1,24 @@
+:scope {
+  margin: 0 10em;
+  background-color: yellow;
+}
+
+.grid-heading {
+  margin-bottom: 6rem;
+}
+
+.grid-section {
+  background-color: blue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.grid-item {
+  background-color: green;
+  border: 1px solid yellow;
+  width: 20em;
+  height: 10em;
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+}
