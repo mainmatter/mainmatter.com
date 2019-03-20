@@ -12,7 +12,7 @@ module.exports = function() {
     '/talks': { component: 'Talks' },
     '/calendar': { component: 'Calendar' },
     '/playbook': { component: 'Playbook' },
-    '/contact': { component: 'Contact' }
+    '/contact': { component: 'Contact' },
   };
 
   return routes;
