@@ -58,3 +58,19 @@
 .spacer {
   padding-top: 3rem;
 }
+
+@media (max-width: 599px) {
+  :scope {
+    margin: 0 2em;
+    display: block;
+  }
+  .content {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  :scope {
+    margin: 0 4em;
+  }
+}

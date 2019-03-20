@@ -1,3 +1,15 @@
 :scope {
   margin: 0 10em;
 }
+
+@media (max-width: 599px) {
+  :scope {
+    margin: 0 2em;
+  }
+}
+
+@media (min-width: 768px) {
+  :scope {
+    margin: 0 4em;
+  }
+}
