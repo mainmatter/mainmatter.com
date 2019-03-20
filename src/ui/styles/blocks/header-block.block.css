@@ -1,5 +1,6 @@
 :scope {
   margin: 0 2em;
+  padding-top: 10rem;
 }
 
 @media (min-width: 768px) {
