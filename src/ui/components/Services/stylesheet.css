@@ -20,7 +20,7 @@
 .process-left-background {
   background-color: resolve("shape-left-lg.background");
   background-color: #222;
-  background-image: url("assets/images/working-photo.jpg");
+  background-image: url("/assets/images/working-photo.jpg");
   background-size: 80em;
   background-repeat: no-repeat;
   background-position: center;
