@@ -7,6 +7,7 @@
 @block shape-right-lg from "../../styles/blocks/shape/shape-right-lg.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 @block card from "../../styles/blocks/card.block.css";
+@block form from "../../styles/blocks/form.block.css";
 
 :scope {
   block-name: service;
