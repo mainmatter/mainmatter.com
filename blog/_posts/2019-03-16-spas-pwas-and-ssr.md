@@ -95,7 +95,7 @@ without the individual menu items actually being functional).
 
 Although this does not improve the app's TTFMP or TTI, at least it gives the
 user a first visual impression of what the app will look like once it has
-started up. Of course the app shall can be cached in the browser using a
+started up. Of course the app shell can be cached in the browser using a
 service worker so that for subsequent visits it can be served from that
 instantly.
 
