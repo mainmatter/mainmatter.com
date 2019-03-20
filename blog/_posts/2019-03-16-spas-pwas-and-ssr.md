@@ -38,7 +38,7 @@ though, mainly in the the form of JavaScript code. The median size of
 JavaScript used on pages across the Internet is now
 [ca. 400KB on the desktop and ca. 360KB on mobile devices](https://httparchive.org/reports/state-of-javascript),
 an increase of ca. 36% and ca. 50% respectively over the past 3 years. All of
-this JavaScript not only has to be loaded via often spotty connections though
+this JavaScript not only has to be loaded via often spotty connections
 but also parsed, compiled and executed - often on mobile devices that are far
 less powerful than the average desktop or notebook computer (have a look at
 [Addy Osmani's in-depth post on the matter](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4)
