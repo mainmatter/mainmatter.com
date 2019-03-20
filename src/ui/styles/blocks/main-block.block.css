@@ -1,7 +1,7 @@
 :scope {
   display: flex;
   justify-content: space-between;
-  margin: 0 10em;
+  margin: 0 2em;
 }
 
 .content {
@@ -61,7 +61,6 @@
 
 @media (max-width: 599px) {
   :scope {
-    margin: 0 2em;
     display: block;
   }
   .content {
@@ -72,5 +71,11 @@
 @media (min-width: 768px) {
   :scope {
     margin: 0 4em;
+  }
+}
+
+@media (min-width: 1024px) {
+  :scope {
+    margin: 0 10em;
   }
 }
