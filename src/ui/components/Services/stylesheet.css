@@ -12,17 +12,3 @@
   extends: screen;
 }
 
-.process-right-background {
-  background-color: resolve('shape-right-lg.background');
-  background-color: #007DF6;
-}
-
-.process-left-background {
-  background-color: resolve("shape-left-lg.background");
-  background-color: #222;
-  background-image: url("assets/images/working-photo.jpg");
-  background-size: 80em;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-}

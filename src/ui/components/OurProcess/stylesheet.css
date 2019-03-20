@@ -11,7 +11,7 @@
 .background {
   background-color: resolve("shape-left-lg.background");
   background-color: #222;
-  background-image: url("assets/images/marco.jpg");
+  background-image: url("assets/images/working-photo.jpg");
   background-size: 80em;
   background-repeat: no-repeat;
   background-position: center;
@@ -19,6 +19,8 @@
 }
 
 .caption {
-  background-color: resolve("shape-right-lg.background");
-  background-color: #E15D44;
+  background-color: resolve('shape-right-lg.background');
+  background-color: #007DF6;
 }
+
+
