@@ -46,3 +46,15 @@
   color: #666;
   margin-top: 0.5rem;
 }
+
+.image-medium {
+  width: 20rem;
+}
+
+.image-small {
+  width: 10rem;
+}
+
+.spacer {
+  padding-top: 3rem;
+}
