@@ -5,7 +5,7 @@ module.exports = function() {
     '/': { component: 'Homepage' },
     '/services': { component: 'Services' },
     '/service': { component: 'Service' },
-    '/case-study': { component: 'CaseStudy' },
+    '/cases/trainline': { component: 'TrainlineCaseStudy' },
     '/expertise/ember': { component: 'EmberExpertise' },
   };
 
