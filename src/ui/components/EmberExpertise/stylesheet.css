@@ -4,7 +4,7 @@
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
-  block-name: Expertise;
+  block-name: EmberExpertise;
   extends: screen;
 }
 
