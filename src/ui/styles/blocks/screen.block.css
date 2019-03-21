@@ -1,6 +1,6 @@
 :scope {
   block-name: screen;
-	--first-color: #000000;
+	--first-color: #222222;
 	--second-color: #5b5b5b;
   --link-color: #007DF6;
 	--large-spacing: 5rem;
@@ -11,7 +11,7 @@
 
 @media (max-width: 599px) {
   :scope {
-    font-size: 11px;
+
   }
 }
 

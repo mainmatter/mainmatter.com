@@ -3,14 +3,16 @@
 
 :scope {
   block-name: navigation;
-  margin: 0 10em 10em 10em;
+  margin: 0 2em;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .navbar-brand {
-  width: 15rem;
+  width: 10em;
   margin-right: 1rem;
+  flex-shrink: 0;
 }
 
 .navbar-nav {
@@ -22,7 +24,27 @@
   color: #000000;
   margin-left: 2rem;
   text-decoration: none;
-  font-size: 1em;
 }
+
+@media (max-width: 599px) {
+  .navbar-nav {
+    display: none;
+  }
+  
+}
+
+@media (min-width: 768px) {
+  :scope {
+    margin: 0 4em;
+  }
+}
+
+@media (min-width: 1024px) {
+  :scope {
+    margin: 0 10em;
+  }
+}
+
+
 
 

@@ -1,11 +1,15 @@
 :scope {
   display: flex;
   justify-content: space-between;
-  margin: 0 10em;
+  margin: 0 2em;
 }
 
 .content {
   width: 30em;
+}
+
+.content-full-width {
+  width: auto;
 }
 
 .sidebar {
@@ -13,7 +17,7 @@
 }
 
 .content-item {
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
 }
 
 .content-section {
@@ -27,7 +31,7 @@
 }
 
 .content-heading {
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 }
 
 .content-section-image {
@@ -41,4 +45,37 @@
 .body-image-caption {
   color: #666;
   margin-top: 0.5rem;
+}
+
+.image-medium {
+  width: 20rem;
+}
+
+.image-small {
+  width: 10rem;
+}
+
+.spacer {
+  padding-top: 3rem;
+}
+
+@media (max-width: 599px) {
+  :scope {
+    display: block;
+  }
+  .content {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  :scope {
+    margin: 0 4em;
+  }
+}
+
+@media (min-width: 1024px) {
+  :scope {
+    margin: 0 10em;
+  }
 }

@@ -1,7 +1,7 @@
-@block shape-side from "./shape-side.block.css";
+@block shape-caption from "./shape-caption.block.css";
 
 :scope  {
-  extends: shape-side;
+  extends: shape-caption;
   right: -40em;
   top: -10em;
   width: 80em;
