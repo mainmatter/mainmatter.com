@@ -1,0 +1,25 @@
+:scope {
+  block-name: form;
+}
+
+.group {
+  margin-bottom: 1rem;
+}
+
+.control-label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.control {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #CCC;
+  box-sizing: border-box;
+}
+
+.textarea {
+  width: 100%;
+  height: 4rem;
+  border: 1px solid #CCC;
+}
