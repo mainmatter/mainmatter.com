@@ -1,16 +1,4 @@
 :scope {
-  margin: 0 2em;
+  margin: 0 var(--horizontal-spacing);
   padding-top: 10rem;
-}
-
-@media (min-width: 768px) {
-  :scope {
-    margin: 0 4em;
-  }
-}
-
-@media (min-width: 1024px) {
-  :scope {
-    margin: 0 10em;
-  }
 }

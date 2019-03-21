@@ -1,21 +1,19 @@
 :scope {
-  margin: 0 10em;
-  background-color: yellow;
+  margin: 0 var(--horizontal-spacing);
 }
 
 .grid-heading {
-  margin-bottom: 6rem;
+  margin-bottom: var(--vertical-spacing);
 }
 
 .grid-section {
-  background-color: blue;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .grid-item {
-  background-color: green;
+  background-color: #CCC;
   border: 1px solid yellow;
   width: 20em;
   height: 10em;
