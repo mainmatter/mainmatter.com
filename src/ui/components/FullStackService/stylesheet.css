@@ -4,13 +4,13 @@
 @block shape-right-lg from "../../styles/blocks/shape/shape-right-lg.block.css";
 
 :scope {
-  block-name: leading-experts;
+  block-name: full-stack-service;
 }
 
 .background {
   background-color: resolve("shape-left-lg.background");
   background-color: #222;
-  background-image: url("/assets/images/marco.jpg");
+  background-image: url("/assets/images/team-meeting.jpg");
   background-size: 80em;
   background-repeat: no-repeat;
   background-position: center;
@@ -19,7 +19,7 @@
 
 .caption {
   background-color: resolve("shape-right-lg.background");
-  background-color: #E15D44;
+  background-color: #007DF6;
 }
 
 .link {
