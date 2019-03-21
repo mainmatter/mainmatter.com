@@ -1,8 +1,8 @@
 :scope {
   block-name: shape-caption;
   transform: rotate(30deg);
-	overflow: hidden;
 	position: absolute;
+  overflow: hidden;
 }
 
 .background {
@@ -22,4 +22,10 @@
   width: 100%;
   transform: scale(0.8);
   display: flex;
+}
+
+@media (max-width: 599px) {
+  :scope { 
+    display: none;
+  }
 }
