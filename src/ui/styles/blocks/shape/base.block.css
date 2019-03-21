@@ -68,7 +68,7 @@
   display: inline-block;
   color: #FFFFFF;
   background: red;
-  background: url('assets/images/long-arrow-white-right.svg') no-repeat center right;
+  background: url('/assets/images/long-arrow-white-right.svg') no-repeat center right;
   background-size: 2em;
   padding-right: 2.5em;
 }

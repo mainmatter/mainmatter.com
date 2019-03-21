@@ -108,7 +108,7 @@
   text-decoration: none;
   display: inline-block;
   color: var(--link-color);
-  background: url('assets/images/long-arrow-right.svg') no-repeat center right;
+  background: url('/assets/images/long-arrow-right.svg') no-repeat center right;
   background-size: 2em;
   padding-right: 2.5em;
 }

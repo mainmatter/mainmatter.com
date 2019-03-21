@@ -14,7 +14,7 @@
 
 .shape-left-bg {
   background-color: #007DF6;
-  background-image: url('assets/images/sky.jpg');
+  background-image: url('/assets/images/sky.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
