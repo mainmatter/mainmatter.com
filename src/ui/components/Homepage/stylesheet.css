@@ -2,8 +2,17 @@
 @block main-block from "../../styles/blocks/main-block.block.css";
 @block header-block from "../../styles/blocks/header-block.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
+@block card from "../../styles/blocks/card.block.css";
 
 :scope {
   block-name: Homepage;
   extends: screen;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10em;
 }

@@ -1,0 +1,20 @@
+:scope {
+  block-name: card;
+  margin-bottom: 3rem;
+}
+
+.sub-heading {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: 1rem 0;
+  line-height: 1em;
+  color: var(--first-color);
+}
+
+.text {
+  margin-bottom: 1rem;
+}
+
+.image {
+  margin-bottom: 2rem;
+}
