@@ -15,6 +15,7 @@ tmp
 node_modules
 dist
 .eslintcache
+package-lock.json
 
 # YARD artifacts
 .yardoc
