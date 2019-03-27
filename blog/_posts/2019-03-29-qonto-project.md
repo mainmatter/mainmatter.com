@@ -16,7 +16,7 @@ Often when we start with new clients we together choose [Team Augmentation](http
 
 This method of working sees our technology experts merge with our client's in-house engineering teams to share and their know-how. simplabs engineers spearhead and guide new development initiatives while establishing best practices and tranferring knowledge to in-house engineers on the job via reviews and pairing sessions.
 
-Just as with previous Team Augmentation projects like [TheTrainLine](https://simplabs.com/trainline/index.html) this approach brings "double value for the client" says simlpabs CEO Marco Otte-Witte, "short term value is added by the client immediately gaining more engineering power, but additional long term value is added through improved architecture, code quality, processes and leveled up in-house engineers."
+Just as with previous Team Augmentation projects like [trainline](https://simplabs.com/trainline/index.html) this approach brings "double value for the client" says simlpabs CEO Marco Otte-Witte, "short term value is added by the client immediately gaining more engineering power, but additional long term value is added through improved architecture, code quality, processes and leveled up in-house engineers."
 
 For the project at Qonto, simplab's Tobias Bieniek started by analyzing their code and identified that there would be significant work involved in converting over to Handlebars. To tackle this Tobias created and open sourced [emblem-migrator](https://github.com/simplabs/emblem-migrator/) which Qonto and all other Emblem.js users can use.
 
