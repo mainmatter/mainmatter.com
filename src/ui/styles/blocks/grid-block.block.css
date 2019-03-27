@@ -2,22 +2,40 @@
   margin: 0 var(--horizontal-spacing);
 }
 
-.grid-heading {
+.heading {
   margin-bottom: var(--vertical-spacing);
 }
 
-.grid-section {
+.section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: var(--vertical-spacing);
+  margin: 0 -0.5rem var(--vertical-spacing) -0.5rem;
 }
 
-.grid-item {
-  background-color: #CCC;
-  border: 1px solid yellow;
-  width: 20em;
-  height: 10em;
-  margin-bottom: 2rem;
+.item {
+  width: 19em;
+  height: 15em;
+  margin: 0 0.5rem 2rem 0.5rem;
   box-sizing: border-box;
+}
+
+.image-wrapper {
+  background: #FFF;
+  height: 10em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: none;
+  max-height: 4em;
+}
+
+.text {
+  margin-top: auto;
 }
