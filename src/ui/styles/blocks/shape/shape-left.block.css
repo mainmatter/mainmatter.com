@@ -2,10 +2,10 @@
 
 :scope  {
   extends: shape-caption;
-  left: -52em;
+  left: -55em;
   top: -10em;
   width: 80em;
-	height: 40em;
+  height: 40em;
 }
 
 .content {

@@ -29,7 +29,7 @@
 .lead {
   color: var(--second-color);
   font-size: 1.6em;
-  line-height: 1.3em;
+  line-height: 1.4em;
   margin-bottom: 2rem;
 }
 
@@ -52,7 +52,8 @@
   text-decoration: none;
   display: inline-block;
   color: var(--link-color);
-  background: url('assets/images/long-arrow-right.svg') no-repeat center right;
+  background: no-repeat center right;
+  background-image: url('assets/images/long-arrow-right.svg');
   background-size: 2em;
   padding-right: 2.5em;
 }

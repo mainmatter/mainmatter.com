@@ -14,5 +14,5 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 10em;
+  margin: 0 var(--horizontal-spacing);
 }
