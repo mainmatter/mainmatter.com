@@ -15,6 +15,7 @@ module.exports = function() {
     '/calendar': { component: 'Calendar' },
     '/playbook': { component: 'Playbook' },
     '/contact': { component: 'Contact' },
+    '/blog': { component: 'Blog' },
   };
 
   return routes;

@@ -1,0 +1,33 @@
+@block screen from "../../styles/blocks/screen.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
+@block main-block from "../../styles/blocks/main-block.block.css";
+@block header-block from "../../styles/blocks/header-block.block.css";
+@block fluid-image from "../../styles/blocks/fluid-image.block.css";
+@block card from "../../styles/blocks/card.block.css";
+
+:scope {
+  block-name: Blog;
+  extends: screen;
+}
+
+.tags {
+  line-height: 1em;
+}
+
+.tag {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+
+.featured-wrapper {
+  background: #CCC;
+}
+
+.featured-caption {
+
+}
+
+.featured-image {
+
+}
