@@ -20,13 +20,22 @@
   margin: 4rem 0;
 }
 
-.wrap-md {
-  position: relative;
+.caption {
   display: flex;
-  min-height: 25rem;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 0 0 10em;
+  justify-content: flex-end;
+}
+
+.caption-large {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.caption-content {
+  width: 20em;
+}
+
+.caption-content-large {
+  width: 30em;
 }
 
 .content-image {
@@ -44,15 +53,6 @@
   margin-left: 10em;
   margin-top: -15em;
   color: #FFF;
-}
-
-.shape-center {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.shape-center-content {
-  width: 20em;
 }
 
 .sub-heading {

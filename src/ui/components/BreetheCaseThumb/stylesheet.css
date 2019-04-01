@@ -1,7 +1,7 @@
 @block typography from "../../styles/blocks/typography.block.css";
 @block shape from "../../styles/blocks/shape/base.block.css";
 @block shape-left from "../../styles/blocks/shape/shape-left.block.css";
-@block shape-right from "../../styles/blocks/shape/shape-right.block.css";
+@block shape-decoration from "../../styles/blocks/shape/shape-decoration.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
@@ -19,6 +19,6 @@
 }
 
 .breethe-right-background {
-  background-color: resolve("shape-right.background");
+  background-color: resolve("shape-decoration.background");
   background-color: #007DF6;
 }

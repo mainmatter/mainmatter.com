@@ -10,7 +10,7 @@
   extends: screen;
 }
 
-:scope .shape-right-bg {
+:scope .shape-decoration-bg {
   background: #E15D44;
 }
 

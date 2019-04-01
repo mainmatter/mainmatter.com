@@ -1,7 +1,7 @@
 @block typography from "../../styles/blocks/typography.block.css";
 @block shape from "../../styles/blocks/shape/base.block.css";
 @block shape-left-lg from "../../styles/blocks/shape/shape-left-lg.block.css";
-@block shape-right-lg from "../../styles/blocks/shape/shape-right-lg.block.css";
+@block shape-text from "../../styles/blocks/shape/shape-text.block.css";
 
 :scope {
   block-name: full-stack-service;
@@ -18,7 +18,7 @@
 }
 
 .caption {
-  background-color: resolve("shape-right-lg.background");
+  background-color: resolve("shape-text.background");
   background-color: #007DF6;
 }
 

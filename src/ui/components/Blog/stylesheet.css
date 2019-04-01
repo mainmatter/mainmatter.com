@@ -8,6 +8,7 @@
 :scope {
   block-name: Blog;
   extends: screen;
+  --accent-color: #007DF6;
 }
 
 .tags {
@@ -20,14 +21,10 @@
 }
 
 
-.featured-wrapper {
-  background: #CCC;
-}
-
 .featured-caption {
 
 }
 
-.featured-image {
+.shape-image {
 
 }

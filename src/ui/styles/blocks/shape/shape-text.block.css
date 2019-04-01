@@ -2,12 +2,9 @@
 
 :scope  {
   extends: shape-wrapper;
-  left: -55em;
+  right: var(--shape-text-position-right);
+  left: var(--shape-text-position-left);
   top: -10em;
   width: 80em;
   height: 40em;
-}
-
-.content {
-  justify-content: flex-end;
 }

@@ -1,5 +1,5 @@
 :scope {
-  block-name: shape-caption;
+  block-name: shape-wrapper;
   transform: rotate(30deg);
   position: absolute;
   overflow: hidden;
@@ -7,7 +7,7 @@
 
 .background {
   color: #FFF;
-  background-color: #48D5B5;
+  background-color: var(--accent-color);
   width: 100%;
   height: 100%;
   transform: scale(1.25) rotate(-30deg);

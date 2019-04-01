@@ -1,9 +1,12 @@
 @block typography from "../../styles/blocks/typography.block.css";
 @block shape from "../../styles/blocks/shape/base.block.css";
-@block shape-left from "../../styles/blocks/shape/shape-left.block.css";
-@block shape-right from "../../styles/blocks/shape/shape-right.block.css";
+@block shape-image from "../../styles/blocks/shape/shape-image.block.css";
+@block shape-decoration from "../../styles/blocks/shape/shape-decoration.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
   block-name: timeline-case-thumb;
+  --accent-color: #48D5B5;
+  --shape-decoration-position-right: -85em;
+  
 }
