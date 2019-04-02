@@ -9,3 +9,11 @@
   block-name: Article;
   extends: screen;
 }
+
+.author-image {
+  background-image: url('assets/images/shape.svg');
+  background-size: cover;
+  background-position: right top;
+  background-repeat: no-repeat;
+  padding: 1rem 0;
+}
