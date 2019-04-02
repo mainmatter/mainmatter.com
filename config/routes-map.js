@@ -16,6 +16,7 @@ module.exports = function() {
     '/playbook': { component: 'Playbook' },
     '/contact': { component: 'Contact' },
     '/blog': { component: 'Blog' },
+    '/article': { component: 'Article' },
   };
 
   return routes;
