@@ -95,8 +95,8 @@ cases, that would be the visual framework of the app's main blocks and some
 barebones functionality associated to that (e.g. a working slideout menu
 without the individual menu items actually being functional).
 
-Although this does not improve the app's TTFMP or TTI, at least it gives the
-user a first visual impression of what the app will look like once it has
+Although this does not improve the app's _TTFMP_ or _TTI_, at least it gives
+the user a first visual impression of what the app will look like once it has
 started up. Of course the app shell can be cached in the browser using a
 service worker so that for subsequent visits it can be served from that
 instantly.
@@ -130,7 +130,7 @@ browser on the server side as well as follows:
 
 ![Diagram of the approach](/images/posts/2019-03-16-spas-pwas-and-ssr/diagram.png)
 
-With this setup, the TTFMP metric is dramatically improved. Although users
+With this setup, the _TTFMP_ metric is dramatically improved. Although users
 still have to wait for the app's JavaScript to load and the app to start before
 they are able to use it, instead of only being shown a meaningless UI while
 they wait for that to happen, they see the app's full UI immediately as that is
@@ -141,22 +141,22 @@ has started up.
 
 ## SPA + SSR + PWA
 
-Combining SPAs with classic SSR, we get the best of both worlds - a fast TTFMP
-plus the benefits of an SPA like immediate page transitions, vivid UX etc. On
-top of that, patterns of PWAs can be added, for example caching the initial
-pre-rendered response in a service worker so that it can be shown immediately
-on subsequent visits or showing the app shell from the service worker cache and
-then injecting the SSR response into that which is likely available before the
-app has started up.
+Combining SPAs with classic SSR, we get the best of both worlds - a fast
+_TTFMP_ plus the benefits of an SPA like immediate page transitions, vivid UX
+etc. On top of that, patterns of PWAs can be added, for example caching the
+initial pre-rendered response in a service worker so that it can be shown
+immediately on subsequent visits or showing the app shell from the service worker
+cache and then injecting the SSR response into that which is likely available
+before the app has started up.
 
 SPAs, SSR and PWAs are not orthogonal concepts that are exclusive of each other
-but are actually complementary. SSR can be leveraged for a fast TTFMP and some
-very basic functionality like links etc. Once the JavaScript referenced in the
-SSR response has been loaded, the SPA starts up in the browser, takes over the
-DOM and intercepts all subsequent route changes and handles them immediately in
-the browser. And finally concepts of PWAs like effective client-side caching
-and offline functionality via service workers can be added on top for maximal
-performance and the optimum user experience.
+but are actually complementary. SSR can be leveraged for a fast _TTFMP_ and
+some very basic functionality like links etc. Once the JavaScript referenced
+in the SSR response has been loaded, the SPA starts up in the browser, takes
+over the DOM and intercepts all subsequent route changes and handles them
+immediately in the browser. And finally concepts of PWAs like effective
+client-side caching and offline functionality via service workers can be added
+on top for maximal performance and the optimum user experience.
 
 ## Deployment
 
@@ -198,18 +198,18 @@ on an edge note in a CDN, thus connecting to it will take the user slightly
 longer than connecting to an edge node. Also, the server takes some time to run
 the app, capture what it renders and respond with that, adding further latency.
 Thus, the browser will know slightly later which scripts to load and thus start
-loading them slightly later which leads to a longer TTI.
+loading them slightly later which leads to a longer _TTI_.
 
-However, with average TTI measurements in the range of several seconds for many
-sites in particular when requested from mobile devices, an added latency of a
-few hundred milliseconds might be well worth it in many cases. Without SSR,
-TTFMP is generally equal to TTI for SPAs and PWAs - with SSR, TTFMP occurs as
-soon as the initial response is received while TTI is only slightly delayed. So
-while the user needs to wait slightly longer for the app to be fully started
-up, the app's UI (and content) is available pretty much immediately. Whether
-that is a valuable improvement is a case-by-case decision of course. In the
-example of Breethe, when looking at the result page for a particular location,
-it's a pretty obvious decision:
+However, with average _TTI_ measurements in the range of several seconds for
+many sites in particular when requested from mobile devices, an added latency
+of a few hundred milliseconds might be well worth it in many cases. Without
+SSR, _TTFMP_ is generally equal to _TTI_ for SPAs and PWAs - with SSR, _TTFMP_
+occurs as soon as the initial response is received while _TTI_ is only slightly
+delayed. So while the user needs to wait slightly longer for the app to be
+fully started up, the app's UI (and content) is available pretty much
+immediately. Whether that is a valuable improvement is a case-by-case decision
+of course. In the example of Breethe, when looking at the result page for a
+particular location, it's a pretty obvious decision:
 
 ![Breethe - results for Muncich](/images/posts/2019-03-16-spas-pwas-and-ssr/breethe-results.png)
 
@@ -220,19 +220,20 @@ is available immediately.
 
 ## Progressive Enhancement
 
-The possibilities of combining SPAs with SSR and PWA mechanics do not end with the above described patterns though but we
-can go a step further. As it turns out, leveraging SSR for an SPA enables to
-also leverage **Progressive Enhancement** patterns so that the initial response
-can be functional beyond just links and interactive elements built in CSS. Many
-things we're all doing in JavaScript in SPAs these days have equivalents in
-pure HTML. These might not be as powerful and elaborate as what can be done
-with modern JavaScript but they can serve as a fallback for when the app's
-JavaScript is slow to load or fails to load completely. That way we're coming
-back full circle to a concept from 1 or 2 decades ago where JavaScript enhances
-the HTML document rather than generating it - and all that while we're using an
-SPA that is completely written in JavaScript but that we're also running in the
-server side so that users don't necessarily have to wait until the app runs in
-their browsers.
+The possibilities of combining SPAs with SSR and PWA mechanics do not end with
+the above described patterns though but we can go a step further. As it turns
+out, leveraging SSR for an SPA enables to also leverage
+**Progressive Enhancement** patterns so that the initial response can be
+functional beyond just links and interactive elements built in CSS. Many things
+we're all doing in JavaScript in SPAs these days have equivalents in pure HTML.
+These might not be as powerful and elaborate as what can be done with modern
+JavaScript but they can serve as a fallback for when the app's JavaScript is
+slow to load or fails to load completely. That way we're coming back full
+circle to a concept from 1 or 2 decades ago where JavaScript enhances the HTML
+document rather than generating it - and all that while we're using an SPA that
+is completely written in JavaScript but that we're also running in the server
+side so that users don't necessarily have to wait until the app runs in their
+browsers.
 
 I will elaborate on how exactly the approach works in the next post of this
 series so stay tuned!
