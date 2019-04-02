@@ -5,22 +5,14 @@
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
-  block-name: breethe-thumb;
+  block-name: related-article;
+  --accent-color: #000;
   --shape-decoration-position-right: -92em;
   --shape-decoration-position-top: -20em;
 }
 
-.breethe-left-background {
-  background-color: resolve("shape-left.background");
-  background-color: #007DF6;
-  background-image: url("/assets/images/sky.jpg");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;  
-  background-blend-mode: soft-light;
+.background {
+  background: linear-gradient(to bottom right, #e05c43, #f4ba80);
 }
 
-.breethe-right-background {
-  background-color: resolve("shape-decoration.background");
-  background-color: #007DF6;
-}
+

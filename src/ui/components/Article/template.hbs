@@ -42,6 +42,12 @@
                 <p class="typography.body-text">
                   When we first started building Breethe, we asked ourselves a simple question which would dictate the structure of the application and our motivation for using an umbrella app to organise our code. This question was: what if we want to change our air quality data provider? It turns out this wasn’t just speculation as we are now in the process of doing just that and our decision to use an umbrella app will make the process tremendously easy.
                 </p>
+                <p class="typography.body-text">
+                  We have defined a clear boundary between the business logic and the webserver. This is cool because the umbrella becomes modular like Lego and who doesn’t like Lego? Need to change the air quality data provider? No problem, simply change the data application, leaving the webserver untouched as long as the data app continues to implement the same interface. The same would work the other way round if we wanted to change the webserver.
+                </p>
+                <p class="typography.body-text">
+                  However, for this approach to work well, the APIs used to communicate between the different applications in the umbrella need to be carefully defined. We want to keep the interfaces as little as possible to keep complexity contained. As an example, here are the publicly available functions on the breethe app in the umbrella:
+                </p>
               </div>
             </div>
             <!--section-->
@@ -65,9 +71,28 @@
               @niklas_long
             </a>
           </div>
+          <p class="typography.small-text">
+            About Simplabs
+          </p>
+          <div class="card">
+            <img class="logo" src="assets/images/neu.svg" />
+            <p class="card.text">
+              simplabs is a Web Engineering Consultancy based in Munich, Germany. We work for clients all over the world, offering Software Engineering, Technology Consulting as well as Individual and Group Training with modern Web Technologies. We specialize in a set of conventions-based tools like Ember.js, Elixir and, Phoenix as well as Ruby on Rails and like to move fast without breaking things.
+            </p>
+            <a class="typography.arrow-link" href="/about">
+              Learn more about Simplabs
+            </a>
+          </div>
         </div>
         <!--sidebar-->
       </div>
+    </div>
+    <div class="container">
+      <BlogRelatedArticle />
+    </div>
+    <!--container-->
+    <div class="container">
+      <WorkWithUs />
     </div>
     <div class="container">
       <Footer />

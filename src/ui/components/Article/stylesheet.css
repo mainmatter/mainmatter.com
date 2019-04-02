@@ -11,9 +11,11 @@
 }
 
 .author-image {
-  background-image: url('assets/images/shape.svg');
-  background-size: cover;
-  background-position: right top;
-  background-repeat: no-repeat;
-  padding: 1rem 0;
+
+}
+
+.logo {
+  max-width: 10rem;
+  padding: 1em 0;
+  display: block;
 }
