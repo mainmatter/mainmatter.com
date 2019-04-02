@@ -17,4 +17,9 @@
 
 .image {
   margin-bottom: 2rem;
+  overflow: hidden;
+  height: 10em;
+  object-fit: contain;
 }
+
+
