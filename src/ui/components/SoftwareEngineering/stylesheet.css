@@ -16,21 +16,3 @@
   extends: screen;
 }
 
-.display {
-  margin-bottom: 1rem;
-}
-
-.featured-right-background {
-  background-color: resolve("shape-right-lg.background");
-  background-color: #007DF6;
-}
-
-.featured-left-background{
-  background-color: resolve("shape-left-md.background");
-  background-color: #007DF6;
-}
-
-.featured-center {
-  justify-content: resolve('shape.shape-center');
-  justify-content: flex-start;
-}
