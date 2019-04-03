@@ -4,6 +4,7 @@
 @block header-block from "../../styles/blocks/header-block.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 @block card from "../../styles/blocks/card.block.css";
+@block table from "../../styles/blocks/table.block.css";
 
 :scope {
   block-name: Article;

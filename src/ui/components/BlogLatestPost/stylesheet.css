@@ -13,12 +13,5 @@
   --shape-text-position-right: -60em;
 }
 
-.article-image {
-  background-image: url(assets/images/logo-symbol.svg);
-  background-repeat: no-repeat;
-  background-blend-mode: soft-light;
-  background-size: 50%;
-  background-position: 0 -5rem;
-}
 
 
