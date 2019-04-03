@@ -17,6 +17,7 @@ module.exports = function() {
     '/services': { component: 'Services' },
     '/services/software-engineering': { component: 'SoftwareEngineering' },
     '/services/team-augmentation': { component: 'TeamAugmentation' },
+    '/services/training': { component: 'Training' },
     '/cases/trainline': { component: 'TrainlineCaseStudy' },
     '/cases/expedition': { component: 'ExpeditionCaseStudy' },
     '/about': { component: 'About' },
