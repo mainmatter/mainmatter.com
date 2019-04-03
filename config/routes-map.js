@@ -5,6 +5,7 @@ module.exports = function() {
     '/': { component: 'Homepage' },
     '/services': { component: 'Services' },
     '/services/software-engineering': { component: 'SoftwareEngineering' },
+    '/services/team-augmentation': { component: 'TeamAugmentation' },
     '/cases/trainline': { component: 'TrainlineCaseStudy' },
     '/cases/expedition': { component: 'ExpeditionCaseStudy' },
     '/about': { component: 'About' },
