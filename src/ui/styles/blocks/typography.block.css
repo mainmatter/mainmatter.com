@@ -44,10 +44,6 @@
   text-transform: uppercase;
 }
 
-.block-link {
-  display: block;
-}
-
 .arrow-link {
   text-decoration: none;
   display: inline-block;
@@ -59,6 +55,16 @@
 }
 
 .link {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+.title-link {
+  text-decoration: none;
+  color: var(--first-color);
+}
+
+.title-link:hover {
   text-decoration: none;
   color: var(--link-color);
 }

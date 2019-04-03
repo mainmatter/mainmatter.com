@@ -19,20 +19,3 @@
   text-decoration: none;
   color: var(--link-color);
 }
-
-.article-title {
-  color: var(--first-color);
-  text-decoration: none;
-}
-
-.article-title:hover {
-  color: var(--link-color);
-}
-
-.featured-caption {
-
-}
-
-.shape-image {
-
-}
