@@ -18,9 +18,13 @@ Welcome to the second installment of our monthly update. Each month we cover the
 
 We're very excited to announce that [Florian Pichler](https://twitter.com/pichfl/) has joined simplabs.
 
-<INSERT FLORIAN'S BACKGROUND INFORMATION HERE>
+Florian’s career has varied from user interfaces and print design to frontend development but what ties his entire career together is a strong focus on user experience.
 
-Our CEO Marco says _"I'm very happy to have Florian on board. His expertise in both the engineering and design fields as well as experience working with big corporate clients make him a valuable addition to the team and will allow us to bring more value to more clients in the future."_
+He has a wealth of experience doing consulting work around new technologies and both native and web-based apps. In this work he has helped to shape, design and bring to life projects for Audi, BMW, Microsoft, Zurich and many more.
+
+Florian also speaks at events about design and development and is also a maintainer for [BookPlayer](https://github.com/TortugaPower/BookPlayer), a free and open source iOS app for audiobooks.
+
+Our CEO Marco says _"I'm very happy to have Florian on board. His expertise in both the engineering and design fields as well as experience working with big corporate clients make him a valuable addition to the team and will allow us to bring more value to simplabs clients in the future."_
 
 #### simlabs welcomes new client Qonto
 
