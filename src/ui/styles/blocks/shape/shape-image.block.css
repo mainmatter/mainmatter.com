@@ -11,3 +11,9 @@
 .content {
   justify-content: flex-end;
 }
+
+.image {
+  width: 30em;
+  margin-right: 6em;
+  margin-top: 10em;
+}

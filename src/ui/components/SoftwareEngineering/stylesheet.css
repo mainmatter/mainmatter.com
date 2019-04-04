@@ -2,9 +2,6 @@
 @block typography from "../../styles/blocks/typography.block.css";
 @block main-block from "../../styles/blocks/main-block.block.css";
 @block header-block from "../../styles/blocks/header-block.block.css";
-@block shape from "../../styles/blocks/shape/base.block.css";
-@block shape-left-md from "../../styles/blocks/shape/shape-left-md.block.css";
-@block shape-right-lg from "../../styles/blocks/shape/shape-right-lg.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 @block card from "../../styles/blocks/card.block.css";
 @block form from "../../styles/blocks/form.block.css";
@@ -14,5 +11,5 @@
 :scope {
   block-name: service;
   extends: screen;
+  --shape-text-position-right: -40em;
 }
-

@@ -42,6 +42,12 @@
   margin: 3rem 0;
 }
 
+.image-centered {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
 .body-image-caption {
   color: #666;
   margin-top: 0.5rem;
@@ -57,6 +63,19 @@
 
 .spacer {
   padding-top: 3rem;
+}
+
+.code {
+  margin: 3rem 0;
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  page-break-inside: avoid;
+  font-family: monospace;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1em;
+  display: block;
+  word-wrap: break-word;
 }
 
 @media (max-width: 599px) {

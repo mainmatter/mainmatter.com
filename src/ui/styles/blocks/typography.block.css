@@ -23,7 +23,7 @@
   font-size: 2.5em;
   font-weight: 300;
   margin-bottom: 2rem;
-  line-height: 1em;
+  line-height: 1.2em;
 }
 
 .lead {
@@ -44,10 +44,6 @@
   text-transform: uppercase;
 }
 
-.block-link {
-  display: block;
-}
-
 .arrow-link {
   text-decoration: none;
   display: inline-block;
@@ -57,3 +53,19 @@
   background-size: 2em;
   padding-right: 2.5em;
 }
+
+.link {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+.title-link {
+  text-decoration: none;
+  color: var(--first-color);
+}
+
+.title-link:hover {
+  text-decoration: none;
+  color: var(--link-color);
+}
+

@@ -1,9 +1,0 @@
-@block shape-caption from "./shape-caption.block.css";
-
-:scope  {
-  extends: shape-caption;
-  right: -40em;
-  top: -10em;
-  width: 80em;
-  height: 40em;
-}

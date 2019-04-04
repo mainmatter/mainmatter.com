@@ -6,14 +6,16 @@
 @block card from "../../styles/blocks/card.block.css";
 
 :scope {
-  block-name: EmberExpertise;
+  block-name: Blog;
   extends: screen;
+  --accent-color: #007DF6;
 }
 
-:scope .shape-decoration-bg {
-  background: #E15D44;
+.tags {
+  line-height: 1em;
 }
 
-:scope .shape-left-bg {
-  background: #E15D44;
+.tag {
+  text-decoration: none;
+  color: var(--link-color);
 }

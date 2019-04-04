@@ -4,16 +4,16 @@
 @block header-block from "../../styles/blocks/header-block.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 @block card from "../../styles/blocks/card.block.css";
+@block table from "../../styles/blocks/table.block.css";
+@block list from "../../styles/blocks/list.block.css";
 
 :scope {
-  block-name: EmberExpertise;
+  block-name: Article;
   extends: screen;
 }
 
-:scope .shape-decoration-bg {
-  background: #E15D44;
-}
-
-:scope .shape-left-bg {
-  background: #E15D44;
+.logo {
+  max-width: 10rem;
+  padding: 1em 0;
+  display: block;
 }

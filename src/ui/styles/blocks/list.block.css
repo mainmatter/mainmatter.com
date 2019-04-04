@@ -1,0 +1,15 @@
+:scope {
+  block-name: list;
+  list-style-position: inside;
+  margin-bottom: 2rem;
+}
+
+.item {
+  list-style-type: disc;
+  margin-bottom: 0.5rem;
+}
+
+.item-ordered {
+  list-style-type: decimal;
+  margin-bottom: 0.5rem;
+}
