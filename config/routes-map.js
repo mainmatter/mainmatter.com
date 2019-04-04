@@ -1,7 +1,22 @@
 'use strict';
 
+const path = require('path');
+const glob = require('glob');
+
 module.exports = function() {
+  let blogPosts = glob
+    .sync('**/*.md', {
+      cwd: path.join(__dirname, '..', '_posts'),
+    })
+    .reduce((acc, file) => {
+      let urlPath = path.basename(file, '.md');
+      let componentName = `BlogPost${urlPath.replace(/-[a-zA-Z]/g, (match) => match.replace('-', '').toUpperCase()).replace(/-/g, '')}`;
+      acc[`/blog/${urlPath}`] = { component: componentName };
+      return acc;
+    } , {});
+
   let routes = {
+    //...blogPosts,
     '/': { component: 'Homepage' },
     '/services': { component: 'Services' },
     '/services/software-engineering': { component: 'SoftwareEngineering' },
