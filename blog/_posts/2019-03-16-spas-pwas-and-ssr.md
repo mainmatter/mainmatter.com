@@ -21,7 +21,7 @@ the best result.
 
 Modern websites are in many cases not really websites anymore, but in fact full
 blown apps with desktop-grade feature sets and user experiences that happen to
-run in a browser as opposed to as standalone apps. While the much-loved
+run in a browser as opposed to standalone apps. While the much-loved
 [Spacejam Website](https://www.spacejam.com/archive/spacejam/movie/jam.htm)
 was a pretty standard page in terms of interactivity and design only about 2
 decades ago
