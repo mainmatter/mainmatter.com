@@ -5,6 +5,7 @@
 
 :scope {
   block-name: full-stack-service;
+  --shape-text-position-right: -40em;
 }
 
 .background {
