@@ -67,7 +67,7 @@ server.listen(3000, async function() {
   let routes = ROUTES_MAP;
   let paths = Object.keys(routes);
 
-  for (routePath of paths) {
+  for (let routePath of paths) {
     let html = await snapshot(browser, routePath);
     let fileName = await persist(html, routePath);
     await inlineCss(fileName);
@@ -75,7 +75,7 @@ server.listen(3000, async function() {
     console.log(colors.blue(`${routePath} => ${fileName}.`));
   }
   console.log(colors.green(`\nRendered ${paths.length} routes.`));
-  
+
   await browser.close();
   process.exit(0);
 });
