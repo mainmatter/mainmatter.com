@@ -65,16 +65,6 @@
   padding-top: 3rem;
 }
 
-.list {
-  margin-bottom: 2rem;
-}
-
-.list-item {
-  list-style-type: disc;
-  list-style-position: inside;
-  margin-bottom: 0.5rem;
-}
-
 .code {
   margin: 3rem 0;
   background: #f4f4f4;

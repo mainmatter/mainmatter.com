@@ -1,0 +1,10 @@
+:scope {
+  block-name: list;
+  margin-bottom: 2rem;
+}
+
+.item {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-bottom: 0.5rem;
+}

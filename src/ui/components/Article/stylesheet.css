@@ -5,14 +5,11 @@
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 @block card from "../../styles/blocks/card.block.css";
 @block table from "../../styles/blocks/table.block.css";
+@block list from "../../styles/blocks/list.block.css";
 
 :scope {
   block-name: Article;
   extends: screen;
-}
-
-.author-image {
-
 }
 
 .logo {
