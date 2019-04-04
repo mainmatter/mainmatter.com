@@ -5,6 +5,8 @@ const puppeteer = require('puppeteer');
 const critical = require('critical');
 const colors = require('colors');
 
+process.setMaxListeners(Infinity);
+
 const DIST_PATH = path.join(__dirname, '..', 'dist');
 const HTML_PATH = path.join(__dirname, '..', 'dist', 'index.html');
 const GlimmerRenderer = require(path.join(DIST_PATH, 'ssr-app.js'));
@@ -65,15 +67,13 @@ server.listen(3000, async function() {
   let routes = ROUTES_MAP;
   let paths = Object.keys(routes);
 
-  await Promise.all(
-    paths.map(async routePath => {
-      let html = await snapshot(browser, routePath);
-      let fileName = await persist(html, routePath);
-      await inlineCss(fileName);
+  for (let routePath of paths) {
+    let html = await snapshot(browser, routePath);
+    let fileName = await persist(html, routePath);
+    await inlineCss(fileName);
 
-      console.log(colors.blue(`${routePath} => ${fileName}.`));
-    }),
-  );
+    console.log(colors.blue(`${routePath} => ${fileName}.`));
+  }
   console.log(colors.green(`\nRendered ${paths.length} routes.`));
 
   await browser.close();

@@ -34,6 +34,8 @@ jobs:
       script: yarn lint:js
     - state: test
       script: yarn lint:hbs
+    - state: test
+      script: yarn build
 
 notifications:
   email: false
