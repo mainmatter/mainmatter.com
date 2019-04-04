@@ -1,5 +1,14 @@
+@block screen from "./screen.block.css";
+
 :scope {
   block-name: blog-post;
+  extends: screen;
+}
+
+.logo {
+  max-width: 10rem;
+  padding: 1em 0;
+  display: block;
 }
 
 .tweet {
