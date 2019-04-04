@@ -5,6 +5,8 @@ const puppeteer = require('puppeteer');
 const critical = require('critical');
 const colors = require('colors');
 
+process.setMaxListeners(Infinity);
+
 const DIST_PATH = path.join(__dirname, '..', 'dist');
 const HTML_PATH = path.join(__dirname, '..', 'dist', 'index.html');
 const GlimmerRenderer = require(path.join(DIST_PATH, 'ssr-app.js'));
