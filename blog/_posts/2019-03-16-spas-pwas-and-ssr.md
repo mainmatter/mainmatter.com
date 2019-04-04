@@ -90,7 +90,7 @@ applications is called the
 The idea behind this concept is that instead of responding to the user's first
 request with an empty HTML document with only some script tags and maybe a
 loading spinner, the server would respond with the minimal set of code that is
-necessary for rendering and making interactive the app's minimal UI. In most
+necessary for rendering the app's minimal UI and making it interactive. In most
 cases, that would be the visual framework of the app's main blocks and some
 barebones functionality associated to that (e.g. a working slideout menu
 without the individual menu items actually being functional).
