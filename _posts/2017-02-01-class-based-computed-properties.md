@@ -36,11 +36,11 @@ Here what we would like to do is filter the `users` array by the value of the `f
 
 With template helpers and the [ember-composable-helpers](https://github.com/DockYard/ember-composable-helpers) addon, we're be able to write something like this in the template:
 
-```hbs {% raw  %}
+```hbs
 {{#each (filter-by filter users) as |user|}}
   …
 {{/each}}
-{% endraw %}```
+```
 
 and because the [`filter-by` helper is a Class based helper](https://github.com/DockYard/ember-composable-helpers/blob/master/addon/helpers/filter-by.js) this actually works and the DOM updates correctly whenever the value of the `filter` property or e.g. the `isActive` property of any user changes.
 
@@ -58,11 +58,11 @@ import filterByProperty from 'app/computeds/filter-by';
 filteredUsers: filterByProperty('users' 'filter')
 ```
 
-```hbs {% raw %}
+```hbs
 {{#each filteredUsers as |user|}}
   …
 {{/each}}
-{% endraw %}```
+```
 
 The implementation for the Computed Property macro looks like this:
 

@@ -30,7 +30,7 @@ with `data-test-` in your templates:
 {% raw %}<article>
   <h1 data-test-post-title>{{post.title}}</h1>
   <p>{{post.body}}</p>
-</article>{% endraw %}
+</article>
 ```
 
 ... so that you can use these as selectors in your acceptance and integration tests:
@@ -51,7 +51,7 @@ just assign `data-test-*` properties in your templates and they will
 automatically appear on the `<div>` tag wrapping the component:
 
 ```handlebars
-{% raw %}{{comments-list data-test-comments-for=post.id}}{% endraw %}
+{% raw %}{{comments-list data-test-comments-for=post.id}}
 ```
 
 ```html
@@ -197,7 +197,7 @@ So instead of assigning `data-test-comment-id` inside the loop:
 ```handlebars
 {% raw %}{{#each comments as |comment|}}
   {{comment-list-item comment=comment data-test-comment-id=comment.id}}
-{{/each}}{% endraw %}
+{{/each}}
 ```
 
 ... we could also use a computed property inside the component that mirrors

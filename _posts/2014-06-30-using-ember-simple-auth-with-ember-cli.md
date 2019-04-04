@@ -55,7 +55,7 @@ Router.map(function() {
 …
 ```
 
-```hbs {% raw  %}
+```hbs
 // app/templates/application.hbs
 …
 {{#if session.isAuthenticated}}
@@ -64,7 +64,7 @@ Router.map(function() {
   {{#link-to 'login'}}Login{{/link-to}}
 {{/if}}
 …
-{% endraw %}```
+```
 
 Also implement the `ApplicationRouteMixin` in the project’s application route:
 
@@ -89,7 +89,7 @@ Like the ember-cli-simple-auth package this will setup itself so that nothing el
 
 The OAuth 2.0 authentication mechanism needs a login form, so let’s create that:
 
-```hbs {% raw  %}
+```hbs
 // app/templates/login.hbs
 <form {{action 'authenticate' on='submit'}}>
   <label for="identification">Login</label>
@@ -98,7 +98,7 @@ The OAuth 2.0 authentication mechanism needs a login form, so let’s create tha
   {{input id='password' placeholder='Enter Password' type='password' value=password}}
   <button type="submit">Login</button>
 </form>
-{% endraw %}```
+```
 
 Then implement the `LoginControllerMixin` in the login controller and make that use the OAuth 2.0 authenticator to perform the actual authentication:
 

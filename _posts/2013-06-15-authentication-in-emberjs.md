@@ -22,7 +22,7 @@ The only more elaborate sample project I found was the [ember-auth](https://gith
 
 The general route to go with authentication in ember.js is to use **token based authentication** where the client submits the regular username/password credentials to the server once and if those are valid receives an authentication token in response. That token is then sent along with every request the client makes to the server. Having understood this the first thing to do is to implement a regular login form with username and password fields:
 
-```hbs {% raw  %}
+```hbs
 <form>
   <label for="loginOrEmail">Login or Email</label>
   {{view Ember.TextField valueBinding="loginOrEmail" placeholder="Login or Email"}}
@@ -30,7 +30,7 @@ The general route to go with authentication in ember.js is to use **token based 
   {{view Ember.TextField valueBinding="password" placeholder="Password"}}
   <button {{action 'createSession'}}>Login</button>
 </form>
-{% endraw %}```
+```
 
 That template is backed by a route that handles the submission event and posts the data to the /session route on the server - which then responds with either status 401 or 200 and a JSON containing the authentication token and the id of the authenticated user:
 

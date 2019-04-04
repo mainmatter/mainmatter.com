@@ -128,13 +128,13 @@ Notice that we do not handle the error case here. To have a better user experien
 
 The template is just a simple form (actual elements, classes etc. of course depend on your specific application):
 
-```hbs {% raw  %}
+```hbs
 <form {{action login on="submit"}}>
   {{view Ember.TextField valueBinding="loginOrEmail" placeholder="Login or Email"}}
   {{view Ember.TextField valueBinding="password" type="password" placeholder="Password"}}
   <button class="btn">Login</button>
 </form>
-{% endraw %}```
+```
 
 ## Logging out
 

@@ -234,12 +234,12 @@ export default class GlimmerMap extends Component {
 
 Also, let's add the needed markup into our component's template:
 
-```hbs {% raw %}
+```hbs
 // src/ui/components/glimmer-map/template.hbs
 <div class="glimmer-map">
   <div id="map"></div>
 </div>
-```{% endraw %}
+```
 
 With this setup, our map already renders for the map points set intially:
 
@@ -261,14 +261,14 @@ export default class GlimmerMap extends Component {
 Anytime there is a change to one of the tracked properties' values, a re-render of the component with a newly updated DOM will follow.
 And promote the changes to these properties via actions by updating our template
 
-```hbs {% raw %}
+```hbs
 <!-- src/ui/components/glimmer-map/template.hbs -->
 <div class="glimmer-map">
   <div id="map"></div>
   E: <input class="x-coord" type="number" step="0.0001" value={{lon}} oninput={{action setView}}/>
   N: <input class="y-coord" type="number" step="0.0001" value={{lat}} oninput={{action setView}} />
 </div>
-```{% endraw %}
+```
 
 
 and the respective `component.ts` file:

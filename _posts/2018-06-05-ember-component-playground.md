@@ -39,7 +39,7 @@ looking roughly like this:
 
     {{/section.subsection}}
   {{/freestyle-section}}
-{{/freestyle-guide}}{% endraw %}
+{{/freestyle-guide}}
 ```
 
 If we now start to add subsections for all the components in our app you can
@@ -57,7 +57,7 @@ looks like this:
 
 {{#freestyle-usage 'styled-button-example-2'}}
   {{#styled-button}}😀 😎 👍 💯{{/styled-button}}
-{{/freestyle-usage}}{% endraw %}
+{{/freestyle-usage}}
 ```
 
 and in the `freestyle.hbs` template we use the following snippet instead:
@@ -65,7 +65,7 @@ and in the `freestyle.hbs` template we use the following snippet instead:
 ```handlebars
 {% raw %}{{#section.subsection name='styled-button'}}
   {{usage/styled-button}}
-{{/section.subsection}}{% endraw %}
+{{/section.subsection}}
 ```
 
 Now we would still have to add a subsection and a component for every component
@@ -139,7 +139,7 @@ function findUsageComponents() {
 
 With that JavaScript code out of the way we can focus on our template. Here,
 we now have a `components` list available with the names of all our "usage
-components". As usual with lists we will use a `{% raw %}{{#each}}{% endraw %}`
+components". As usual with lists we will use a `{% raw %}{{#each}}`
 block to iterate over it:
 
 ```handlebars
@@ -155,7 +155,7 @@ block to iterate over it:
     {{/each}}
 
   {{/freestyle-section}}
-{{/freestyle-guide}}{% endraw %}
+{{/freestyle-guide}}
 ```
 
 If we visit the `/freestyle` route now, we should see a list of all our

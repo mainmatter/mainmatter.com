@@ -216,7 +216,7 @@ instead of relying on the remote server's response.
 
 Installing a service worker is as simple as running a little script:
 
-```html {% raw %}
+```html
 <script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js').catch(function() {
@@ -224,7 +224,7 @@ Installing a service worker is as simple as running a little script:
     });
   }
 </script>
-{% endraw %}```
+```
 
 This calls the navigator's `serviceWorker` API's `register` method (if the
 browser supports that API), passing the name of the JavaScript file with the

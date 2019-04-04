@@ -25,7 +25,7 @@ for an Ember app that we will write a test for:
   {{else}}
     Welcome to Ember!
   {{/if}}
-</h1>{% endraw %}
+</h1>
 ```
 
 From the template above you can see that we have essentially two states that

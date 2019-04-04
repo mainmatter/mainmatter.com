@@ -45,7 +45,7 @@ App.LogoutRoute     = Ember.Route.extend(Ember.SimpleAuth.LogoutRouteMixin);
 
 Of course the application also needs a template that renders the login form:
 
-```hbs {% raw  %}
+```hbs
 <form {{action login on='submit'}}>
   <label for="identification">Login</label>
   {{view Ember.TextField id='identification' valueBinding='identification' placeholder='Enter Login'}}
@@ -53,7 +53,7 @@ Of course the application also needs a template that renders the login form:
   {{view Ember.TextField id='password' type='password' valueBinding='password' placeholder='Enter Password'}}
   <button type="submit">Login</button>
 </form>
-{% endraw %}```
+```
 
 At this point, everything that’s necessary for users to log in and out is set up. Also, every AJAX request (unless it’s a cross domain request) that the application makes will send the authentication token that is obtained when the user logs in. **To actually protect routes so that they are only accessible for authenticated users, simply implement the respective Ember.SimpleAuth mixin** in the route classes:
 

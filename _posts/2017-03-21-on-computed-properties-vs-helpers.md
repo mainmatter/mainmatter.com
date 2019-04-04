@@ -41,14 +41,14 @@ sync with the underlying data).
 The `isSenior` property can then be used in a template (we're assuming it is
 defined on the `user` here):
 
-```hbs {% raw %}
+```hbs
 <p>
 {{user.name}}
 {{#if user.isSenior}}
   <small>(senior)</small>
 {{/if}}
 </p>
-{% endraw %}```
+```
 
 ## Template Helpers
 
@@ -64,14 +64,14 @@ export default Ember.Helper.helper(function([value, comp]) {
 
 and move the comparison into the template:
 
-```hbs {% raw %}
+```hbs
 <p>
 {{user.name}}
 {{#if (lte user.age 65)}}
   <small>(senior)</small>
 {{/if}}
 </p>
-{% endraw %}```
+```
 
 ## What's the difference?
 
@@ -117,19 +117,19 @@ userToDisplay: computed('users.@each.state', function() {
 Rendering that user's `name` then is as easy as using the `userToDisplay`
 property in the template:
 
-```hbs {% raw %}
+```hbs
 {{userToDisplay.name}}
-{% endraw %}```
+```
 
 Comparing this to a solution that moves all of the logic for selecting the user
 into the template via helpers illustrates how much harder it becomes to
 understand the template now:
 
-```hbs {% raw %}
+```hbs
 {{#each (take 1 (shuffle (filter-by users 'state' 'active'))) as |user|}}
   {{user.name}}
 {{/each}}
-{% endraw %}```
+```
 
 Instead of hiding this complexity behind a named interface all of it is right
 there in the template and cannot be ignored as it can be when using a computed
@@ -172,11 +172,11 @@ where __helpers might actually not work as expected__.
 Consider a slightly modified version of the above example that compares the
 user's `age` property with a comparison value:
 
-```hbs {% raw %}
+```hbs
 {{#if (is-senior user)}}
   <small>(senior)</small>
 {{/if}}
-{% endraw %}```
+```
 
 Here, the internals of the comparison logic have been moved into the
 `is-senior` helper:
@@ -206,11 +206,11 @@ difference compared to computed properties actually.
 
 Consider this example:
 
-```hbs {% raw %}
+```hbs
 {{#if (and propA propB)}}
   both are truthy!
 {{/if}}
-{% endraw %}```
+```
 
 Here, both `propA` and `propB` will be eagerly evaluated before being passed to
 the `and` helper. Comparing this to the same logic implemented as a computed
@@ -294,13 +294,13 @@ example for this is a component that renders a list of items and keeps track of
 which of these items is currently selected. The easiest way to do something
 like that using template helpers would look something like this:
 
-```hbs {% raw %}
+```hbs
 <ul>
   {{#each items as |item|}}
     <li class="{{if (eq selectedItem item) 'selected'}}">{{item}}</li>
   {{/each}}
 </ul>
-{% endraw %}```
+```
 
 This isn't as straight forward to replace with a computed property as the
 previous examples. While defining an `isSelected` property on the template
@@ -326,13 +326,13 @@ _listItems: computed('items.[]', 'selectedItem', function() {
 The template iterates over this wrapper collection instead of the original
 collection then:
 
-```hbs {% raw %}
+```hbs
 <ul>
   {{#each _listItems as |listItem|}}
     <li class="{{if listItem.isSelected 'selected'}}">{{listItem.item}}</li>
   {{/each}}
 </ul>
-{% endraw %}```
+```
 
 This pattern - __defining a wrapper context that combines two or more other
 contexts__ - should work in similar scenarios as well.

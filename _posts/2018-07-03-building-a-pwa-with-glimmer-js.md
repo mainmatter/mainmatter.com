@@ -50,7 +50,7 @@ TypeScript and so are applications built with it.
 
 Glimmer.js templates use Handlebars-like syntax, e.g.:
 
-```hbs {% raw %}
+```hbs
 {{#each measurementLists.first key="@index"}}
   <MeasurementRow
     @value={{measurement.value}}
@@ -58,7 +58,7 @@ Glimmer.js templates use Handlebars-like syntax, e.g.:
     @unit={{measurement.unit}}
   />
 {{/each}}
-{% endraw %}```
+```
 
 These templates then get compiled to bytecode that the Glimmer VM (yes, this is
 a full-fledged VM that runs inside the JavaScript VM inside the browser)
@@ -132,13 +132,13 @@ get isResultsMode(): boolean {
 These tracked properties are then used in the template to render the respective
 component for the current mode:
 
-```hbs {% raw %}
+```hbs
 {{#if isSearchMode}}
   <Search @searchTerm={{searchTerm}}/>
 {{else if isResultsMode}}
   <Location @locationId={{locationId}} />
 {{/if}}
-{% endraw %}```
+```
 
 You might notice the `@` prefix of the `searchTerm` and `locationId` properties
 that are set on the components. This prefix distinguishes properties that are
@@ -148,14 +148,14 @@ applied to the component's root DOM element.
 The `Search` component renders the `SearchForm` component that implements the
 text field for the search term and the button to submit the search:
 
-```hbs {% raw %}
+```hbs
 <SearchForm
   @term={{searchTerm}}
   @onSubmit={{action searchByTerm}}
 />
-{% endraw %}```
+```
 
-`{% raw %}@onSubmit={{action searchByTerm}}{% endraw %}` assigns the
+`{% raw %}@onSubmit={{action searchByTerm}}` assigns the
 `searchByTerm` method of the `Search` component as an action to the `@onSubmit`
 property of the `SearchForm` component. Whenever the search form is submitted,
 the `SearchForm` component invokes the assigned action:
@@ -188,7 +188,7 @@ The `loading` and `locations` properties are tracked properties so that
 changing them results in the component to be re-rendered. They are used in the
 template like this:
 
-```hbs {% raw %}
+```hbs
 <div class="results">
   {{#if loading}}
     <div class="loader search-loader"></div>
@@ -204,7 +204,7 @@ template like this:
     </ul>
   {{/if}}
 </div>
-{% endraw %}```
+```
 
 This is just a brief overview of how an application built with Glimmer.js
 works. We will cover some of these things in more detail in future posts,

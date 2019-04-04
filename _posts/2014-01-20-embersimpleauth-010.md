@@ -50,35 +50,35 @@ Ember.Application.initializer({
 
 Also, as the **`login` and `logout` actions in `ApplicationRouteMixin` were renamed to `authenticateSession` and `invalidateSession`**, in your templates change this:
 
-```hbs {% raw %}
+```hbs
 {{#if session.isAuthenticated}}
   <a {{ action="logout" }}>Logout</a>
 {{else}}
   <a {{ action="login" }}>Login</a>
 {{/if}}
-{% endraw %}```
+```
 
 to this:
 
-```hbs {% raw %}
+```hbs
 {{#if session.isAuthenticated}}
   <a {{ action="invalidateSession" }}>Logout</a>
 {{else}}
   <a {{ action="authenticateSession" }}>Login</a>
 {{/if}}
-{% endraw %}```
+```
 
 Also the **`LoginControllerMixin`’s `login` action was renamed to `authenticate`** so in your login template change this:
 
-```hbs {% raw %}
+```hbs
 <form {{action login on='submit'}}>
-{% endraw %}```
+```
 
 to this:
 
-```hbs {% raw %}
+```hbs
 <form {{action authenticate on='submit'}}>
-{% endraw %}```
+```
 
 These are really the only changes needed if your application is using Ember.SimpleAuth’s default settings, the default OAuth 2.0 mechanism etc. For other scenarios, see the [README](https://github.com/simplabs/ember-simple-auth#readme), [API docs](http://ember-simple-auth.com/api/) and also the examples provided in the repository.
 
