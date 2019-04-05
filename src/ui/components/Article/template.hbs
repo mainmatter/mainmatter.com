@@ -71,7 +71,44 @@
                 </p>
                 <pre class="main-block.code">
                   <code>
-                    # apps/breethe/lib/breethe.ex
+                    describe('when offline', function() {
+                      async function visit(route, callback) {
+                        let browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+                        let page = await browser.newPage();
+                        await page.goto(route);
+
+                        try {
+                          await callback(page);
+                        } finally {
+                          await browser.close();
+                        }
+                      }
+
+                      it('works offline', async function() {
+                        await visit('/', async (page) => {
+                          // go through the flow online first so we populate IndexedDB
+                          await page.type('[data-test-search-input]', 'Salzburg');
+                          await page.click('[data-test-search-submit]');
+                          await page.waitForSelector('[data-test-search-result="Salzburg"]');
+                          await page.click('[data-test-search-result="Salzburg"] a');
+                          await page.waitForSelector('[data-test-measurement="PM10"] [data-test-measurement-value="15"]');
+                          await page.click('[data-test-home-link]');
+                          await page.waitForSelector('[data-test-search]');
+
+                          await page.setOfflineMode(true); // simulate the browser being offline
+                          await page.reload();
+
+                          // click the recent location
+                          await page.waitForSelector('[data-test-search-result="Salzburg"]');
+                          await page.click('[data-test-search-result="Salzburg"] a');
+                          // check the correct data is still present
+                          let element = await page.waitForSelector('[data-test-measurement="PM10"] [data-test-measurement-value="15"]');
+                          expect(page.url()).to.match(/\/location\/2$/);
+
+                          expect(element).to.be.ok;
+                        });
+                      });
+                    });
                   </code>
                 </pre>
                 <p class="typography.body-text">
