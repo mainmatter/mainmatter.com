@@ -11,7 +11,9 @@
 @block shape-decoration from "../../styles/blocks/shape/shape-decoration.block.css";
 
 :scope {
-  block-name: {{componentName}};
+  block-name:
+{{componentName}}
+;
   extends: blog-post;
   --accent-color: #007df6;
   --shape-decoration-position-right: -92em;
@@ -20,6 +22,6 @@
 
 .background {
 {{#if relatedTeaserBackground}}
-  background: {{relatedTeaserBackground}};
+  background:{{relatedTeaserBackground}};
 {{/if}}
 }
