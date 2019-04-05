@@ -20,7 +20,7 @@ We're very excited to announce that [Florian Pichler](https://twitter.com/pichfl
 
 Florian’s career has varied from user interfaces and print design to frontend development but what ties his entire career together is a strong focus on user experience.
 
-He has a wealth of experience doing consulting work around new technologies and both native and web-based apps. In this work he has helped to shape, design and bring to life projects for Audi, BMW, Microsoft, Zurich and many more.
+He has a wealth of experience doing consulting work around new technologies and both native and web-based apps. In this work he has helped to shape, design and bring to life projects for Audi, BMW, Microsoft, Zurich Insurance Group and many more.
 
 Florian also speaks at events about design and development and is also a maintainer for [BookPlayer](https://github.com/TortugaPower/BookPlayer), a free and open source iOS app for audiobooks.
 
