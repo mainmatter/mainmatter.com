@@ -1,11 +1,10 @@
 :scope {
   display: flex;
   justify-content: space-between;
-  margin: 0 var(--horizontal-spacing);
 }
 
 .content {
-  width: 30em;
+  width: var(--col-3);
 }
 
 .content-full-width {
@@ -13,7 +12,7 @@
 }
 
 .sidebar {
-  width: 20em;
+  width: var(--col-2);
 }
 
 .content-item {

@@ -3,7 +3,6 @@
 
 :scope {
   block-name: navigation;
-  margin: 0 var(--horizontal-spacing);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,7 +10,7 @@
 
 .navbar-brand {
   width: 10em;
-  margin-right: 1rem;
+  margin-right: 2rem;
   flex-shrink: 0;
 }
 
@@ -22,7 +21,7 @@
 
 .nav-item {
   color: #000000;
-  margin-left: 2rem;
+  margin-left: 4rem;
   text-decoration: none;
 }
 
