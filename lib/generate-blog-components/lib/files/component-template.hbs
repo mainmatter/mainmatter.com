@@ -60,7 +60,37 @@
       </div>
     </div>
     <div class="container">
-      <BlogRelatedArticle />
+      {{#if related}}
+        <div class="shape.wrap">
+          <div class="shape-left">
+            <div class="shape-left.background background">
+              {{#if related.teaserImage}}
+                <div class="shape-left.content">
+                  <div class="shape.content-image">
+                    <img class="fluid-image.image" src="{{related.teaserImage}}" />
+                  </div>
+                </div>
+              {{/if}}
+            </div>
+          </div>
+          <div class="shape.caption">
+            <div class="shape.caption-content">
+              <p class="typography.small-text">
+                Keep Reading
+              </p>
+              <h3 class="typography.sub-heading">
+                {{related.title}}
+              </h3>
+              <a class="typography.arrow-link" href="{{related.link}}">
+                Read Post
+              </a>
+            </div>
+          </div>
+          <div class="shape-decoration">
+            <div class="shape-decoration.background background"></div>
+          </div>
+        </div>
+      {{/if}}
     </div>
     <!--container-->
     <div class="container">

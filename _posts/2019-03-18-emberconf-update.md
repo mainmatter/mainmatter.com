@@ -4,6 +4,8 @@ author: "Mark Coleman"
 github: mrmrcoleman
 twitter: mrmrcoleman
 topic: simplabs
+teaser-background: "linear-gradient(to bottom right, #e05c43, #f4ba80)"
+teaser-image: /assets/images/posts/2019-03-18-emberconf-update/emberconf-2019-logo.svg
 ---
 
 We mentioned this in our March monthly update but in case you missed it, here's
