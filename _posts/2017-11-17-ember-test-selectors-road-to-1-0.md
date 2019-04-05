@@ -20,14 +20,14 @@ before we feel comfortable promoting the addon to v1.0.0.
 In HTML it is possible to add attributes to an element that don't have a value:
 
 ```handlebars
-{% raw %}<h1 data-test-title>FourtyTwo</h1>
+<h1 data-test-title>FourtyTwo</h1>
 ```
 
 In Ember.js templates the same is possible for HTML elements, but for
 components everything is a little different.
 
 ```handlebars
-{% raw %}{{user-list data-test-user-list users=users}}
+{{user-list data-test-user-list users=users}}
 ```
 
 The above snippet does compile, but instead of setting a `data-test-user-list`
@@ -43,7 +43,7 @@ While that seems like a convenient thing, it has drawbacks and does not always
 work as expected, as you can see in the following template:
 
 ```handlebars
-{% raw %}{{! works }}
+{{! works }}
 {{user-list data-test-user-list users=users}}
 
 {{! fails with cryptic parser error }}
@@ -59,7 +59,7 @@ Due to these problems we believe it is best to be explicit about these
 attributes and always declare them with a value:
 
 ```handlebars
-{% raw %}{{user-list users=users data-test-user-list=true}}
+{{user-list users=users data-test-user-list=true}}
 ```
 
 We will deprecate the usage of valueless `data-test-*` attributes on components
@@ -163,7 +163,7 @@ a way that caused our transforms to crash.
 The AST for a template like:
 
 ```handlebars
-{% raw %}{{user-list data-test-user-list=true}}
+{{user-list data-test-user-list=true}}
 ```
 
 looks roughly like this:

@@ -88,7 +88,7 @@ module('Integration | Component | simplabs-logo-tile', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it allows setting a dark background color', async function(assert) {
-    await render(hbs{% raw %}`{{simplabs-logo-tile tileColor="dark"}}`);
+    await render(hbs`{{simplabs-logo-tile tileColor="dark"}}`);
 
     let elementStyle = find('[data-test-simplabs-logo-tile]').style;
     assert.equal(elementStyle.backgroundColor, 'rgb(29, 113, 182)');
@@ -124,7 +124,7 @@ module('Integration | Component | simplabs-logo-tile', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it allows setting a dark background color', async function(assert) {
-    await render(hbs{% raw %}`{{simplabs-logo-tile tileColor="dark"}}`);
+    await render(hbs`{{simplabs-logo-tile tileColor="dark"}}`);
 
     let computedStyle = window.getComputedStyle(find('[data-test-simplabs-logo-tile]'), null);
     assert.equal(computedStyle.getPropertyValue('background-color'), 'rgb(29, 113, 182)');
@@ -163,7 +163,7 @@ module('Integration | Component | simplabs-logo-tile', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it allows setting a dark background color', async function(assert) {
-    await render(hbs{% raw %}`{{simplabs-logo-tile tileColor="dark"}}`);
+    await render(hbs`{{simplabs-logo-tile tileColor="dark"}}`);
 
     assert.dom('[data-test-simplabs-logo-tile]').hasStyle({
       backgroundColor: 'rgb(29, 113, 182)',

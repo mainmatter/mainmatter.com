@@ -27,7 +27,7 @@ on this topic, the goal of this addon is to let you use attributes starting
 with `data-test-` in your templates:
 
 ```handlebars
-{% raw %}<article>
+<article>
   <h1 data-test-post-title>{{post.title}}</h1>
   <p>{{post.body}}</p>
 </article>
@@ -51,7 +51,7 @@ just assign `data-test-*` properties in your templates and they will
 automatically appear on the `<div>` tag wrapping the component:
 
 ```handlebars
-{% raw %}{{comments-list data-test-comments-for=post.id}}
+{{comments-list data-test-comments-for=post.id}}
 ```
 
 ```html
@@ -195,7 +195,7 @@ data attributes can also be defined as properties on the component class.
 So instead of assigning `data-test-comment-id` inside the loop:
 
 ```handlebars
-{% raw %}{{#each comments as |comment|}}
+{{#each comments as |comment|}}
   {{comment-list-item comment=comment data-test-comment-id=comment.id}}
 {{/each}}
 ```

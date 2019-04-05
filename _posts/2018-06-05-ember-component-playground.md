@@ -23,7 +23,7 @@ You may remember that last time we closed with our `freestyle.hbs` template
 looking roughly like this:
 
 ```handlebars
-{% raw %}{{#freestyle-guide title='My Awesome App'}}
+{{#freestyle-guide title='My Awesome App'}}
   {{! ... }}
 
   {{#freestyle-section name='Components' as |section|}}
@@ -51,7 +51,7 @@ In this case we can create a
 looks like this:  
 
 ```handlebars
-{% raw %}{{#freestyle-usage 'styled-button-example-1'}}
+{{#freestyle-usage 'styled-button-example-1'}}
   {{#styled-button}}Hello World!{{/styled-button}}
 {{/freestyle-usage}}
 
@@ -63,7 +63,7 @@ looks like this:
 and in the `freestyle.hbs` template we use the following snippet instead:
 
 ```handlebars
-{% raw %}{{#section.subsection name='styled-button'}}
+{{#section.subsection name='styled-button'}}
   {{usage/styled-button}}
 {{/section.subsection}}
 ```
@@ -139,11 +139,11 @@ function findUsageComponents() {
 
 With that JavaScript code out of the way we can focus on our template. Here,
 we now have a `components` list available with the names of all our "usage
-components". As usual with lists we will use a `{% raw %}{{#each}}`
+components". As usual with lists we will use a `{{#each}}`
 block to iterate over it:
 
 ```handlebars
-{% raw %}{{#freestyle-guide title='My Awesome App'}}
+{{#freestyle-guide title='My Awesome App'}}
   {{! ... }}
 
   {{#freestyle-section name='Components' as |section|}}

@@ -70,7 +70,7 @@ website:
 If you try this in a fresh new Ember app, run the development server using
 `ember serve` and visit <http://localhost:4200/freestyle> you will notice the
 first problem: The `ember-freestyle` components are appearing underneath the
-`{% raw %}{{welcome-page}}` component:
+`{{welcome-page}}` component:
 
 ![Screenshot](/images/posts/2017-12-07-ember-freestyle/freestyle-underneath-welcome-page.png)
 
@@ -79,7 +79,7 @@ This is obviously not what we want. To fix this we will need to adjust the
 condition:
 
 ```diff
-{% raw %}+{{#if onFreestyleRoute}}
++{{#if onFreestyleRoute}}
 +  {{outlet}}
 +{{else}}
  {{!-- The following component displays Ember's default welcome message. --}}
@@ -143,7 +143,7 @@ still not quite back to what we had before. 🤔
 
 The code above only removes all the components from the build that
 `ember-freestyle` brings with it itself. That means components like
-`{% raw %}{{freestyle-guide}}` and `{% raw %}{{freestyle-usage}}`
+`{{freestyle-guide}}` and `{{freestyle-usage}}`
 are no longer part of the production build, but the `freestyle` controller,
 route and template are still included.
 
@@ -225,7 +225,7 @@ Finally we will add the button to our component playground by editing the
 `lib/freestyle/app/templates/freestyle.hbs` template:
 
 ```handlebars
-{% raw %}{{#freestyle-guide title='Ember Freestyle' subtitle='Living Style Guide'}}
+{{#freestyle-guide title='Ember Freestyle' subtitle='Living Style Guide'}}
   {{! ... }}
 
   {{#freestyle-section name='Components' as |section|}}

@@ -155,7 +155,7 @@ text field for the search term and the button to submit the search:
 />
 ```
 
-`{% raw %}@onSubmit={{action searchByTerm}}` assigns the
+`@onSubmit={{action searchByTerm}}` assigns the
 `searchByTerm` method of the `Search` component as an action to the `@onSubmit`
 property of the `SearchForm` component. Whenever the search form is submitted,
 the `SearchForm` component invokes the assigned action:
