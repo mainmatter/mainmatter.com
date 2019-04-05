@@ -1,6 +1,6 @@
 @block shape-wrapper from "./shape-wrapper.block.css";
 
-:scope  {
+:scope {
   extends: shape-wrapper;
   right: var(--shape-text-position-right);
   left: var(--shape-text-position-left);

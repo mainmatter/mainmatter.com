@@ -1,6 +1,6 @@
 @block shape-wrapper from "./shape-wrapper.block.css";
 
-:scope  {
+:scope {
   extends: shape-wrapper;
   left: -55em;
   top: -10em;
