@@ -1,8 +1,8 @@
 ---
 title: "Ember.js Workshop in Munich, July 22nd-24th"
 author: "Marco Otte-Witte"
-github-handle: marcoow
-twitter-handle: marcoow
+github: marcoow
+twitter: marcoow
 topic: ember
 ---
 

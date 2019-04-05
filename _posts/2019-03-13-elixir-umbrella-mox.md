@@ -1,8 +1,8 @@
 ---
 title: Elixir Umbrella Applications and Testing with Mox
 author: "Niklas Long"
-github-handle: niklaslong
-twitter-handle: niklas_long
+github: niklaslong
+twitter: niklas_long
 topic: elixir
 ---
 

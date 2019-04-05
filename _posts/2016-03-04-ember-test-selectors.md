@@ -1,8 +1,8 @@
 ---
 title: Using better element selectors in Ember.js tests
 author: "Marco Otte-Witte"
-github-handle: marcoow
-twitter-handle: marcoow
+github: marcoow
+twitter: marcoow
 topic: ember
 ---
 

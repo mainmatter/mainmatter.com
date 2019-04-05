@@ -1,8 +1,8 @@
 ---
 title: "Assert Your Style - Testing CSS in Ember Apps"
 author: "Jessica Jordan"
-github-handle: jessica-jordan
-twitter-handle: jjordan_dev
+github: jessica-jordan
+twitter: jjordan_dev
 topic: javascript
 ---
 

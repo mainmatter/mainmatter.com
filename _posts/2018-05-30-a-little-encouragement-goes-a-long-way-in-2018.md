@@ -1,8 +1,8 @@
 ---
 title: A Little Encouragement Goes a Long Way in 2018
 author: "Jessica Jordan"
-github-handle: jessica-jordan
-twitter-handle: jjordan_dev
+github: jessica-jordan
+twitter: jjordan_dev
 topic: ember
 ---
 

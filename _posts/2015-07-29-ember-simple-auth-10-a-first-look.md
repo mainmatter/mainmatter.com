@@ -1,8 +1,8 @@
 ---
 title: "Ember Simple Auth 1.0 - a first look"
 author: "Marco Otte-Witte"
-github-handle: marcoow
-twitter-handle: marcoow
+github: marcoow
+twitter: marcoow
 topic: ember
 ---
 

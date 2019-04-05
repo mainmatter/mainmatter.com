@@ -1,8 +1,8 @@
 ---
 title: "Testing with Ember Simple Auth and Ember CLI"
 author: "Marco Otte-Witte"
-github-handle: marcoow
-twitter-handle: marcoow
+github: marcoow
+twitter: marcoow
 topic: ember
 ---
 

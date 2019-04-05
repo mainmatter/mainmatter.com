@@ -1,8 +1,8 @@
 ---
 title: "ember-cli-deploy-notifications"
 author: "Michael Klein"
-twitter-handle: LevelbossMike
-github-handle: LevelbossMike
+twitter: LevelbossMike
+github: LevelbossMike
 topic: ember
 ---
 

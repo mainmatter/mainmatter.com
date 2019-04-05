@@ -1,8 +1,8 @@
 ---
 title: Qonto project
 author: "Mark Coleman"
-github-handle: mrmrcoleman
-twitter-handle: mrmrcoleman
+github: mrmrcoleman
+twitter: mrmrcoleman
 topic: simplabs
 ---
 

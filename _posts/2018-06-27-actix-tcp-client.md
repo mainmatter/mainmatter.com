@@ -1,8 +1,8 @@
 ---
 title: "actix – a basic TCP client"
 author: "Tobias Bieniek"
-github-handle: Turbo87
-twitter-handle: tobiasbieniek
+github: Turbo87
+twitter: tobiasbieniek
 topic: rust
 ---
 

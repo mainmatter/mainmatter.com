@@ -1,8 +1,8 @@
 ---
 title: "Using Ember Simple Auth with ember-cli"
 author: "Marco Otte-Witte"
-github-handle: marcoow
-twitter-handle: marcoow
+github: marcoow
+twitter: marcoow
 topic: ember
 ---
 

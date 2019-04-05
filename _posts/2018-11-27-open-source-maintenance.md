@@ -1,8 +1,8 @@
 ---
 title: "Open Source Maintenance"
 author: "Tobias Bieniek"
-github-handle: Turbo87
-twitter-handle: tobiasbieniek
+github: Turbo87
+twitter: tobiasbieniek
 topic: misc
 ---
 

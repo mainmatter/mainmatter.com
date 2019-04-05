@@ -1,8 +1,8 @@
 ---
 title: "From SPA to PWA"
 author: "Marco Otte-Witte"
-github-handle: marcoow
-twitter-handle: marcoow
+github: marcoow
+twitter: marcoow
 topic: javascript
 ---
 

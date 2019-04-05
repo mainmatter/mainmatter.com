@@ -1,8 +1,8 @@
 ---
 title: High Level Assertions with qunit-dom
 author: "Tobias Bieniek"
-github-handle: Turbo87
-twitter-handle: tobiasbieniek
+github: Turbo87
+twitter: tobiasbieniek
 topic: javascript
 ---
 

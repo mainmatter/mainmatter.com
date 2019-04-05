@@ -1,8 +1,8 @@
 ---
 title: "Ember.SimpleAuth needs a logo!"
 author: "Marco Otte-Witte"
-github-handle: marcoow
-twitter-handle: marcoow
+github: marcoow
+twitter: marcoow
 topic: ember
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: "Ember.SimpleAuth"
 author: "Marco Otte-Witte"
-github-handle: marcoow
-twitter-handle: marcoow
+github: marcoow
+twitter: marcoow
 topic: ember
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: "ember-test-selectors: The road to 1.0"
 author: "Tobias Bieniek"
-github-handle: Turbo87
-twitter-handle: tobiasbieniek
+github: Turbo87
+twitter: tobiasbieniek
 topic: ember
 ---
 

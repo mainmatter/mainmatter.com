@@ -1,8 +1,8 @@
 ---
 title: Using npm libraries in Ember CLI
 author: "Tobias Bieniek"
-github-handle: Turbo87
-twitter-handle: tobiasbieniek
+github: Turbo87
+twitter: tobiasbieniek
 topic: ember
 ---
 

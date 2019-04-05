@@ -1,8 +1,8 @@
 ---
 title: "Ember.js: The Documentary - Berlin Screening"
 author: "Mark Coleman"
-github-handle: mrmrcoleman
-twitter-handle: mrmrcoleman
+github: mrmrcoleman
+twitter: mrmrcoleman
 topic: ember
 ---
 

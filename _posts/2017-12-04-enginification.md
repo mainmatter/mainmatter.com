@@ -1,8 +1,8 @@
 ---
 title: Enginification
 author: "Clemens Müller"
-github-handle: pangratz
-twitter-handle: pangratz
+github: pangratz
+twitter: pangratz
 topic: ember
 ---
 

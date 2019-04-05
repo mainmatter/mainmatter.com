@@ -1,8 +1,8 @@
 ---
 title: "Factories best practices"
 author: "Andy Brown"
-github-handle: geekygrappler
-twitter-handle: geekygrappler
+github: geekygrappler
+twitter: geekygrappler
 topic: testing
 ---
 
