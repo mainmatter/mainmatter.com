@@ -54,7 +54,7 @@ We're very pleased to be sponsoring [ElixirConfEU](http://www.elixirconf.eu/) wh
 
 ![EmberFestEU](/images/posts/2019-04-05-april-monthly-update/ember-fest-logo.png)
 
-Also, we've been busy behind the scenes getting ready for this year's [EmberFestEU](https://emberfest.eu/). Early bird tickets are going on sale soon so keep an eye on the [twitter](https://twitter.com/EmberFest) for more news.
+Also, we've been busy behind the scenes getting ready for this year's [EmberFestEU](https://emberfest.eu/). We have booked the venue and will announce the host city soon - there are some hints on the website already though so go see whether you can find them. Early bird tickets are going on sale soon so keep an eye on the [twitter](https://twitter.com/EmberFest) for more news as well.
 
 #### Meetups
 
