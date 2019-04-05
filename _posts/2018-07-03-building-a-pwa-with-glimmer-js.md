@@ -3,6 +3,7 @@ title: "Building a PWA with Glimmer.js"
 author: "Marco Otte-Witte"
 github-handle: marcoow
 twitter-handle: marcoow
+bio: "Founding Director of simplabs"
 topic: ember
 ---
 
