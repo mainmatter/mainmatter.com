@@ -6,6 +6,10 @@ twitter-handle: marcoow
 topic: misc
 ---
 
+Switching off XCode's Crash Reporter saved my day.
+
+<!--break-->
+
 ```bash
 defaults write com.apple.CrashReporter DialogType none
 ```
