@@ -26,7 +26,7 @@ Florian also speaks at events about design and development and is also a maintai
 
 Our CEO Marco says _"I'm very happy to have Florian on board. His expertise in both the engineering and design fields as well as experience working with big corporate clients make him a valuable addition to the team and will allow us to bring more value to simplabs clients in the future."_
 
-#### simlabs welcomes new client Qonto
+#### simplabs welcomes new client Qonto
 
 ![Qonto Logo](/images/posts/2019-03-29-qonto-project/qonto-logo.png)
 
