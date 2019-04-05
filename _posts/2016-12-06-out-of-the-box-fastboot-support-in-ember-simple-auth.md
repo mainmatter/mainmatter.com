@@ -3,6 +3,7 @@ title: Out-of-the-box FastBoot support in Ember Simple Auth
 author: "Marco Otte-Witte"
 github: marcoow
 twitter: marcoow
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 topic: ember
 ---
 

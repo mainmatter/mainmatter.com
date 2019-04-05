@@ -3,6 +3,7 @@ title: "ember-cli-deploy-notifications"
 author: "Michael Klein"
 twitter: LevelbossMike
 github: LevelbossMike
+bio: "Full-Stack Engineer, Ember CLI Deploy core team member"
 topic: ember
 ---
 

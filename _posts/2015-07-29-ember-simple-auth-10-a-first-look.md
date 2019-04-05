@@ -3,6 +3,7 @@ title: "Ember Simple Auth 1.0 - a first look"
 author: "Marco Otte-Witte"
 github: marcoow
 twitter: marcoow
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 topic: ember
 ---
 

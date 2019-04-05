@@ -3,6 +3,7 @@ title: "Assert Your Style - Testing CSS in Ember Apps"
 author: "Jessica Jordan"
 github: jessica-jordan
 twitter: jjordan_dev
+bio: "Senior Frontend Engineer, Ember Learning core team member"
 topic: javascript
 ---
 

@@ -3,6 +3,7 @@ title: "Testing with Ember Simple Auth and Ember CLI"
 author: "Marco Otte-Witte"
 github: marcoow
 twitter: marcoow
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 topic: ember
 ---
 

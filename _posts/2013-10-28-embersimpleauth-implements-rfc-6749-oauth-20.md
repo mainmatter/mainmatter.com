@@ -3,6 +3,7 @@ title: "Ember.SimpleAuth implements RFC 6749 (OAuth 2.0)"
 author: "Marco Otte-Witte"
 github: marcoow
 twitter: marcoow
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 topic: ember
 ---
 

@@ -3,6 +3,7 @@ title: Creating Web Components with Glimmer
 author: "Jessica Jordan"
 github: jessica-jordan
 twitter: jjordan_dev
+bio: "Senior Frontend Engineer, Ember Learning core team member"
 topic: ember
 ---
 

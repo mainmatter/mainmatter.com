@@ -3,6 +3,7 @@ title: High Level Assertions with qunit-dom
 author: "Tobias Bieniek"
 github: Turbo87
 twitter: tobiasbieniek
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 topic: javascript
 ---
 

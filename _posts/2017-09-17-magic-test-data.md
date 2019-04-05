@@ -3,6 +3,7 @@ title: Magic Data in Tests
 author: "Andy Brown"
 github: geekygrappler
 twitter: geekygrappler
+bio: "Senior Frontend Engineer"
 topic: misc
 ---
 

@@ -3,6 +3,7 @@ title: "actix – a basic TCP client"
 author: "Tobias Bieniek"
 github: Turbo87
 twitter: tobiasbieniek
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 topic: rust
 ---
 

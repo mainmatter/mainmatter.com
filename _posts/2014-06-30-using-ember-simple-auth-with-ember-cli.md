@@ -3,6 +3,7 @@ title: "Using Ember Simple Auth with ember-cli"
 author: "Marco Otte-Witte"
 github: marcoow
 twitter: marcoow
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 topic: ember
 ---
 

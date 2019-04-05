@@ -3,6 +3,7 @@ title: "ember-test-selectors: The road to 1.0"
 author: "Tobias Bieniek"
 github: Turbo87
 twitter: tobiasbieniek
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 topic: ember
 ---
 

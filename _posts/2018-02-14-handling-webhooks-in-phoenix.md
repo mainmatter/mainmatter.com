@@ -3,6 +3,7 @@ title: Handling Webhooks in Phoenix
 author: "Niklas Long"
 github: niklaslong
 twitter: niklas_long
+bio: "Backend Engineer, author of Breethe API"
 topic: elixir
 ---
 

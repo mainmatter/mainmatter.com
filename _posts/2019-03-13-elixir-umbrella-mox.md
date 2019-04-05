@@ -3,6 +3,7 @@ title: Elixir Umbrella Applications and Testing with Mox
 author: "Niklas Long"
 github: niklaslong
 twitter: niklas_long
+bio: "Backend Engineer, author of Breethe API"
 topic: elixir
 ---
 

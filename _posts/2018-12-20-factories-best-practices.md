@@ -3,6 +3,7 @@ title: "Factories best practices"
 author: "Andy Brown"
 github: geekygrappler
 twitter: geekygrappler
+bio: "Senior Frontend Engineer"
 topic: testing
 ---
 

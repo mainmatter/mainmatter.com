@@ -3,6 +3,7 @@ title: "Ember.js Workshop in Munich, July 22nd-24th"
 author: "Marco Otte-Witte"
 github: marcoow
 twitter: marcoow
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 topic: ember
 ---
 

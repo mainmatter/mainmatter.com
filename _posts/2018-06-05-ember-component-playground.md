@@ -3,6 +3,7 @@ title: "Autodiscovery for the Ember.js component playground"
 author: "Tobias Bieniek"
 github: Turbo87
 twitter: tobiasbieniek
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 topic: ember
 ---
 
