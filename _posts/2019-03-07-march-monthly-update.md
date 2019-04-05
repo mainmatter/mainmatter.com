@@ -23,7 +23,7 @@ Our CEO Marco says _"We are very excited to welcome Ricardo Mendes to simplabs. 
 
 #### EmberConf 2019
 
-![EmberConf 2019](/images/posts/2019-03-07-march-monthly-update/emberconf-logo.png)
+![EmberConf 2019](/assets/images/posts/2019-03-07-march-monthly-update/emberconf-logo.png)
 
 [EmberConf 2019](https://emberconf.com/) in Portland starts on March 18th and we're proud to be sponsoring the event. We'll also be taking some members of the team along.
 
@@ -35,7 +35,7 @@ If you're attending EmberConf 2019 and would like to speak to us about our work,
 
 #### Ember.js film premiere
 
-![Ember.js - The Documentary](/images/posts/2019-03-07-march-monthly-update/emberjs-documentary.png)
+![Ember.js - The Documentary](/assets/images/posts/2019-03-07-march-monthly-update/emberjs-documentary.png)
 
 We are very pleased that our CEO Marco Otte-Witte was featured alongside Ember.js co-creators [Yahuda Katz](https://twitter.com/wycats) and [Tom Dale](https://twitter.com/tomdale) in HoneyPot's new film ["Ember.js - The Documentary"](https://www.youtube.com/watch?v=Cvz-9ccflKQ)!
 

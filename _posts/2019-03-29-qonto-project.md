@@ -12,7 +12,7 @@ for freelancers, startups and SMEs."
 
 <!--break-->
 
-![Qonto Logo](/images/posts/2019-03-29-qonto-project/qonto-logo.png)
+![Qonto Logo](/assets/images/posts/2019-03-29-qonto-project/qonto-logo.png)
 
 Qonto reached out to simplabs looking for a combination of added engineering
 power and outside expertise to help their in-house engineers improve, we call

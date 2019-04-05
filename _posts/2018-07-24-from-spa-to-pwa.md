@@ -24,7 +24,7 @@ getting worse rather than better and having access to data that shows the depth
 of the situation is the first step for everyone to question their decisions and
 maybe change a few things in their daily lives.
 
-![Video of the Breethe PWA](/images/posts/2018-07-24-from-spa-to-pwa/breethe-video.gif)
+![Video of the Breethe PWA](/assets/images/posts/2018-07-24-from-spa-to-pwa/breethe-video.gif)
 
 The application is [open source](https://github.com/simplabs/breethe-client)
 and we encourage everyone interested to look through the source for reference.
@@ -185,12 +185,12 @@ The main keys in the manifest are `name`, `icons`, `background_color`,
 
 Breethe, when installed to the user's home screen on iOS shows up like this:
 
-![The Breethe app icon on the home screen](/images/posts/2018-07-24-from-spa-to-pwa/breethe-app-icon.png)
+![The Breethe app icon on the home screen](/assets/images/posts/2018-07-24-from-spa-to-pwa/breethe-app-icon.png)
 
 When launched from the home screen, it starts up like a native app, without any
 browser UI:
 
-![The Breethe PWA starting up standalone](/images/posts/2018-07-24-from-spa-to-pwa/breethe-startup-standalone.gif)
+![The Breethe PWA starting up standalone](/assets/images/posts/2018-07-24-from-spa-to-pwa/breethe-startup-standalone.gif)
 
 ## Connectivity Independence
 

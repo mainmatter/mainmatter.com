@@ -72,7 +72,7 @@ If you try this in a fresh new Ember app, run the development server using
 first problem: The `ember-freestyle` components are appearing underneath the
 `{{welcome-page}}` component:
 
-![Screenshot](/images/posts/2017-12-07-ember-freestyle/freestyle-underneath-welcome-page.png)
+![Screenshot](/assets/images/posts/2017-12-07-ember-freestyle/freestyle-underneath-welcome-page.png)
 
 This is obviously not what we want. To fix this we will need to adjust the
 `app/templates/application.hbs` file and wrap the existing contents in a
@@ -250,7 +250,7 @@ If we now visit <http://localhost:4200/freestyle> we will see a new
 `styled-button` usage examples including the snippets there were used to
 display them:
 
-![Screenshot](/images/posts/2017-12-07-ember-freestyle/styled-button.png)
+![Screenshot](/assets/images/posts/2017-12-07-ember-freestyle/styled-button.png)
 
 As this blog post has gotten much longer than intended already I'll leave it
 up to your imagination what other things you can put into such a component

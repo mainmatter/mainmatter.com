@@ -35,7 +35,7 @@ If you have a test that doesn't Arrange, your test may be brittle.
 
 Don't believe me? Lets go through a real life example. You are tasked with making a country/language picker for a website that looks something like this.
 
-![Country picker component](/images/posts/2017-09-25-magic-test-data/tl-country-picker.png)
+![Country picker component](/assets/images/posts/2017-09-25-magic-test-data/tl-country-picker.png)
 
 You will probably have a hardcoded list of countries that your website supports somewhere in your app.
 
@@ -87,11 +87,11 @@ test('displayCountries', function(assert) {
 
 This test will pass.
 
-![Celebration gif](/images/posts/2017-09-25-magic-test-data/celebrate.gif)
+![Celebration gif](/assets/images/posts/2017-09-25-magic-test-data/celebrate.gif)
 
 I don't think it's a good test though.
 
-![Fry suspicious gif](/images/posts/2017-09-25-magic-test-data/fry.gif)
+![Fry suspicious gif](/assets/images/posts/2017-09-25-magic-test-data/fry.gif)
 
 <strong>The test is brittle.</strong>
 
@@ -180,4 +180,4 @@ I feel much better about this test. It is no longer brittle as it's not dependen
 
 And I get to commit GoT & LOTR to the code base.
 
-![Game of Thrones gif](/images/posts/2017-09-25-magic-test-data/GoT.gif)
+![Game of Thrones gif](/assets/images/posts/2017-09-25-magic-test-data/GoT.gif)

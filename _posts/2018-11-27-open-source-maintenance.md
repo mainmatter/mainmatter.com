@@ -25,7 +25,7 @@ that using a graphical user interface to visualize the history graph can make
 it quite a bit easier for beginners to understand what is going on. One good
 example of such a tool is [Fork], which is freely available for Windows and macOS:
 
-![Screenshot of Fork](/images/posts/2018-11-27-open-source-maintenance/git-fork.png)
+![Screenshot of Fork](/assets/images/posts/2018-11-27-open-source-maintenance/git-fork.png)
 
 When working on multiple different projects, it is useful to rely on similar
 conventions, for example, when naming things. In the context of Git this is most
