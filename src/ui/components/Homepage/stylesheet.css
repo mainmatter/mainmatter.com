@@ -4,9 +4,6 @@
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 @block card from "../../styles/blocks/card.block.css";
-@block hex-leading from "../../styles/blocks/hex/hex-image-leading.block.css";
-@block hex-trailing from "../../styles/blocks/hex/hex-decoration-trailing.block.css";
-@block hex-content from "../../styles/blocks/hex/hex-content.block.css";
 
 :scope {
   block-name: Homepage;

@@ -27,7 +27,7 @@
 }
 
 .headline-3 {
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   color: var(--color-1);
   font-size: 4rem;
   line-height: 5rem;
@@ -43,10 +43,6 @@
 
 .lead + .lead {
   margin-top: 5rem;
-}
-
-.lead[state|after] {
-  margin-bottom: 12rem;
 }
 
 .body-text {

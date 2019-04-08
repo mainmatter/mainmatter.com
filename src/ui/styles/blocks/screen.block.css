@@ -14,7 +14,6 @@
   --col-3: 64.5rem;
   --col-4: 87rem;
   --col-5: 109.5rem;
-  --container-width: 132rem;
 
 }
 
@@ -39,14 +38,7 @@
 }
 
 .container {
-  max-width: var(--container-width);
+  max-width: 132rem;
   margin: 0 auto;
   padding: 8rem 3rem;
-}
-
-.container-hex {
-  position: relative;
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 0 3rem;
 }

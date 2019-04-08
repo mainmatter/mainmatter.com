@@ -3,5 +3,5 @@
 
 :scope {
   block-name: work-with-us;
-  width: var(--col-3);
+  width: var(--size-col3);
 }
