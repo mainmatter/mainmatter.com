@@ -5,6 +5,6 @@
   right: var(--shape-decoration-position-right);
   left: var(--shape-decoration-position-left);
   top: var(--shape-decoration-position-top);
-  width: 80em;
-  height: 40em;
+  width: 160rem;
+  height: 80rem;
 }

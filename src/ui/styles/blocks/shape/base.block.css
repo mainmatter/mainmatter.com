@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 30em;
+  min-height: 60rem;
   margin: 8rem 0;
 }
 
@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 50em;
+  min-height: 100rem;
   margin: 8rem 0;
 }
 
@@ -31,27 +31,27 @@
 }
 
 .caption-content {
-  width: 20em;
+  width: 40rem;
 }
 
 .caption-content-large {
-  width: 30em;
+  width: 60rem;
 }
 
 .content-image {
-  width: 30em;
-  margin-right: 6em;
-  margin-top: 10em;
+  width: 60rem;
+  margin-right: 12rem;
+  margin-top: 20rem;
 }
 
 .content-text {
-  width: 20em;
+  width: 40rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-left: 10em;
-  margin-top: -15em;
+  margin-left: 20rem;
+  margin-top: -30rem;
   color: #FFF;
 }
 

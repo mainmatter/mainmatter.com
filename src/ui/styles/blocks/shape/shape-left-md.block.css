@@ -3,8 +3,8 @@
 :scope {
   extends: shape-wrapper;
 
-  left: -90em;
+  left: -180rem;
   top: 0;
-  width: 80em;
-  height: 40em;
+  width: 160rem;
+  height: 80rem;
 }

@@ -4,7 +4,7 @@
   extends: shape-wrapper;
   right: var(--shape-text-position-right);
   left: var(--shape-text-position-left);
-  top: -10em;
-  width: 80em;
-  height: 40em;
+  top: -20rem;
+  width: 160rem;
+  height: 80rem;
 }

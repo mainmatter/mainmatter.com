@@ -2,10 +2,10 @@
 
 :scope {
   extends: shape-wrapper;
-  left: -55em;
-  top: -10em;
-  width: 80em;
-  height: 40em;
+  left: -90rem;
+  top: -23rem;
+  width: 160rem;
+  height: 80rem;
 }
 
 .content {
@@ -13,7 +13,7 @@
 }
 
 .image {
-  width: 30em;
-  margin-right: 6em;
-  margin-top: 10em;
+  width: 60rem;
+  margin-right: 12rem;
+  margin-top: 20rem;
 }
