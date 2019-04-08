@@ -1,0 +1,41 @@
+@block screen from "../screen.block.css";
+
+:scope {
+	block-name: hex;
+	
+	--shape-width: calc(200rem);
+	--shape-height: calc(var(--shape-width) / 2);
+	--shape-background: #007DF6;
+	--shape-color: #fff;
+}
+
+.shape {
+	position: relative;
+	left: 50%;
+	width: var(--shape-width);
+	height: var(--shape-height);
+	overflow: hidden;
+	transform: translate(-50%);
+}
+
+
+.background {
+	width: calc(var(--shape-width) * 0.8);
+	height: calc(var(--shape-height) * 0.8);
+	margin: 0;
+	background: var(--shape-background);
+	color: var(--shape-color);
+	transform-origin: 50% 50%;
+	transform: translate(12.5%, 12.5%) rotate(30deg);
+}
+
+.inner {
+	display: flex;
+	width: var(--shape-width);
+	height: var(--shape-height);
+	transform: translate(-10%, -10%) rotate(-30deg);
+}
+
+.content {
+	position: relative;
+}

@@ -1,0 +1,26 @@
+@block hex from "./hex.block.css";
+
+:scope {
+	block-name: hex-image-leading;
+	extends: hex;
+
+	margin-top: -10rem;
+}
+
+.shape {
+	padding-top: 10rem;
+	transform: translate(-89%);
+}
+
+.inner {
+	justify-content: flex-end;
+}
+
+.content {
+	margin-right: calc(var(--shape-width) * 0.11);
+	width: 50%;
+}
+
+.image {
+	margin-top: -10rem;
+}

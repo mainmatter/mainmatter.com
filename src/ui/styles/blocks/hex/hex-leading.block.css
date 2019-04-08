@@ -1,0 +1,19 @@
+@block hex from "./hex.block.css";
+
+:scope {
+	block-name: hex-leading;
+	extends: hex;
+}
+
+.shape {
+	transform: translate(-87.5%);
+}
+
+.inner {
+	justify-content: flex-end;
+}
+
+.content {
+	margin-right: calc(var(--shape-width) * 0.125);
+	width: 50%;
+}

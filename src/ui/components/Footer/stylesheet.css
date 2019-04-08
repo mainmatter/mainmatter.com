@@ -2,9 +2,11 @@
 
 :scope {
   block-name: footer;
+
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  margin-top: 12rem;
   font-size: 2rem;
 }
 
