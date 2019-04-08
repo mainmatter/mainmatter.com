@@ -5,7 +5,7 @@
 
 :scope {
   block-name: leading-experts;
-  --shape-text-position-right: -40em;
+  --shape-text-position-right: -90rem;
 }
 
 .background {
