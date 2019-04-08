@@ -10,13 +10,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 -0.5rem var(--vertical-spacing) -0.5rem;
+  margin: 0 -1rem var(--vertical-spacing) -1rem;
 }
 
 .item {
   width: 19em;
   height: 15em;
-  margin: 0 0.5rem 2rem 0.5rem;
+  margin: 0 1rem 2rem 1rem;
   box-sizing: border-box;
 }
 
