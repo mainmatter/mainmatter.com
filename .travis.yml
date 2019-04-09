@@ -32,9 +32,9 @@ jobs:
       script: yarn lint:ts
     - stage: test
       script: yarn lint:js
-    - state: test
+    - stage: test
       script: yarn lint:hbs
-    - state: test
+    - stage: test
       script: yarn build
 
 notifications:
