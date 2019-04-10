@@ -20,13 +20,13 @@
             </p>
             <h2 class="typography.heading">
               <a href="/article" class="typography.title-link">
-                simplabs at EmberConf 2019
+                {{latest.title}}
               </a>
             </h2>
             <p class="typography.lead">
-              We mentioned this in our March monthly update but in case you missed it, here’s how we’re involved in EmberConf 2019.
+              {{{latest.excerpt}}}
             </p>
-            <a href="#" class="typography.arrow-link">
+            <a href="{{latest.path}}" class="typography.arrow-link">
               Read Post
             </a>
           </div>
@@ -45,54 +45,31 @@
       <div class="main-block">
         <div class="main-block.content">
           <div class="main-block.content-item">
-            <div class="main-block.content-section">
-              <div class="main-block.content-section-item">
-                <div class="tags">
-                  <a class="tag" href="#">
-                    #elixir
+            {{#each rest}}
+              <div class="main-block.content-section">
+                <div class="main-block.content-section-item">
+                  <div class="tags">
+                    <a class="tag" href="#">
+                      #{{topic}}
+                    </a>
+                  </div>
+                  <h3 class="typography.sub-heading">
+                    <a class="typography.title-link" href="{{path}}">
+                      {{title}}
+                    </a>
+                  </h3>
+                  <p class="typography.body-text">
+                    {{{excerpt}}}
+                  </p>
+                  <a href="#">
+                    {{author.name}}
                   </a>
+                  <p>
+                    {{date}}
+                  </p>
                 </div>
-                <h3 class="typography.sub-heading">
-                  <a class="typography.title-link" href="/article">
-                    Elixir Umbrella Applications and Testing with Mox
-                  </a>
-                </h3>
-                <p class="typography.body-text">
-                  What’s the big deal with Elixir umbrellas? An Elixir umbrella is a container for mix apps; a structure useful to separate the application’s concerns as each app is contained within its own mix project. Why is this cool? Because it’s like Lego and Lego is cool. Who’s Mox you ask? Mox is cool too… Let’s dive in!
-                </p>
-                <a href="#">
-                  Niklas Long
-                </a>
-                <p>
-                  March,13 2019
-                </p>
               </div>
-            </div>
-            <!--section-->
-            <div class="main-block.content-section">
-              <div class="main-block.content-section-item">
-                <div class="tags">
-                  <a class="tag" href="/article">
-                    #elixir
-                  </a>
-                </div>
-                <h3 class="typography.sub-heading">
-                  <a class="typography.title-link" href="#">
-                    Elixir Umbrella Applications and Testing with Mox
-                  </a>
-                </h3>
-                <p class="typography.body-text">
-                  What’s the big deal with Elixir umbrellas? An Elixir umbrella is a container for mix apps; a structure useful to separate the application’s concerns as each app is contained within its own mix project. Why is this cool? Because it’s like Lego and Lego is cool. Who’s Mox you ask? Mox is cool too… Let’s dive in!
-                </p>
-                <a href="#">
-                  Niklas Long
-                </a>
-                <p>
-                  March,13 2019
-                </p>
-              </div>
-            </div>
-            <!--section-->
+            {{/each}}
           </div>
         </div>
         <div class="main-block.sidebar">
