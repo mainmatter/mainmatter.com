@@ -45,7 +45,7 @@
 }
 
 .content-text {
-  width: 40rem;
+  width: var(--col-2);
   display: flex;
   flex-direction: column;
   justify-content: center;
