@@ -7,7 +7,10 @@
           Playbook
         </h1>
         <p class="typography.lead">
-          We maintain a lean process that supports the team rather than stand in its way. It ensures the right things are being worked on at the right time and provides a reasonable level of short term predictability. At the same time it remains flexible enough to adapt to unexpected events. Our process does not depend on specific tools and works for projects and teams in all environments.
+          We maintain a lean process that supports the team rather than stand in its way. It ensures the right tasks are being worked on at the right time and provides a reasonable level of short term predictability. At the same time it remains flexible enough to adapt to unexpected events. Our process does not depend on specific tools and works for projects and teams in all environments.
+        </p>
+        <p class="typography.lead">
+          The main goal of our process is to make sure all project stakeholders get heard and no single party dictates what will be worked on when. Only when all involved parties work together in a collaborative fashion, can a project be successful.
         </p>
       </div>
       <!--page-header-->
@@ -15,9 +18,157 @@
     <!--container-->
     <div class="container">
       <div class="main-block">
-        <div class="main-block.content"></div>
-        <div class="main-block.sidebar"></div>
-        <!--sidebar-->
+        <div class="main-block.content-full-width">
+          <div class="main-block.content-heading">
+            <h2 class="typography.heading">
+              Iterations
+            </h2>
+            <p class="typography.lead">
+              We work in iterations that are either 1 or 2 weeks long (depending on the client and project at hand, either iteration length might be more suited; we choose one when beginning a project and will adapt later on if necessary). Iterations are a team effort and we plan and execute them collaboratively.
+            </p>
+          </div>
+          <div class="main-block.content-section">
+            <div class="main-block.content-section-item">
+              <h3 class="typography.sub-heading">
+                Roles
+              </h3>
+              <p class="typography.body-text">
+                Our project teams are generally flat teams without hierarchies. For any given iteration, one of the team members will take on the role of "Iteration Lead" who is responsible for planning the iteration and ensuring smooth execution. This is a rotating role so that every member of the team will assume it every once in a while (unless they opt out).
+              </p>
+              <p class="typography.body-text">
+                The main responsibility of the iteration lead is to consult with the product experts (and all other relevant project stakeholders like marketing etc.) and prepare the iteration. Once the iteration started, any changes to it that are requested go through the iteration lead for assessment (who might consult with other project stakeholders for priorization).
+              </p>
+            </div>
+          </div>
+          <!--section-->
+          <div class="main-block.content-section">
+            <div class="main-block.content-section-item">
+              <h3 class="typography.sub-heading">
+                Iteration Preparation
+              </h3>
+              <p class="typography.body-text">
+                The goal of the iteration preparation phase is to define the tasks that are most relevant to be worked on during the next iteration. These issues will then be presented to the team in the planning meeting that kicks the iteration off. In order to prepare these issues, the iteration lead synchronizes with the product experts and other project stakeholders to:
+              </p>
+              <ul class="list">
+                <li class="list.item">
+                  Identify the most relevant tasks from each project stakeholder's perspectives; the goal here is to find a good balance between work on features and other aspects like bugfixes, refactoring, dependency updates, addressing tech debt in general but also addressing other requirements coming in for example from the marketing department or other stakeholders
+                </li>
+                <li class="list.item">
+                  Help the respective stakeholders translate feature or other change requests into actionable tasks; this includes explaining different options for implementing a change and their potential implications and related effort
+                </li>
+                <li class="list.item">
+                  Prepare well-written issues for each of the identified tasks or spikes for tasks that require more research in order to be ready to be adressed
+                </li>
+                <li class="list.item">
+                  Make sure all of the preconditions are met in order to be able to work on each task, e.g. any necessary assets have been delivered, translations are ready or legal implications have been checked
+                </li>
+                <li class="list.item">
+                  Prioritize the issues so it is clear which ones need to be worked on first
+                </li>
+              </ul>
+              
+            </div>
+          </div>
+          <!--section-->
+          <div class="main-block.content-section">
+            <div class="main-block.content-section-item">
+              <h3 class="typography.sub-heading">
+                Issues
+              </h3>
+              <p class="typography.body-text">
+                Well-prepared issues are a key element of an effective process. They provide guidance for the project team's work, allow external parties not involved with the project directly to get an understanding of what is happening, and can serve as future reference to understand what was done in a project, and for which reasons.
+              </p>
+              <p class="typography.body-text">
+                Good issues aim to:
+              </p>
+              <ul class="list">
+                <li class="list.item">
+                  Describe what is to be done and why, potentially accompanied by screenshots, mockups/sketches or other visuals that help understand the desired outcome; it might also be beneficial to add a summary of the issue's history, introduce previous related changes or alternative changes that have been ruled out and why
+                </li>
+                <li class="list.item">
+                  Include reproduction steps if the issue describes a bug; ideally those are visualized with a screen recording or other media
+                </li>
+                <li class="list.item">
+                  Detail concrete requirements that must be met in order to complete the issue; in order to prepare this list, the iteration lead might need to synchronize with a team member more familiar with a particular part of the code base or feature
+                </li>
+                <li class="list.item">
+                  Include all necessary materials that are needed for the issue; this could be visual assets, links to online documentation for third party libraries or APIs or contact details for external parties involved in an issue etc.
+                </li>
+                <li class="list.item">
+                  Bring up any open questions that need to be answered, or risks that have been identified and might prevent this issue from being completed
+                </li>
+                <li class="list.item">
+                  Be a discrete unit of work; issues should only contain related requirements and ideally not represent more than a few days of work - larger issues can often be broken down into multiple smaller ones, possibly even allowing work occuring in parallel
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--section-->
+          <div class="main-block.content-section">
+            <div class="main-block.content-section-item">
+              <h3 class="typography.sub-heading">
+                Spikes
+              </h3>
+              <p class="typography.body-text">
+                If a particular task is associated with too many open questions or uncertainties to be converted into a well-prepared issue, it is better to plan a spike first in order to resolve these open questions. Spikes should have:
+              </p>
+              <ul class="list">
+                <li class="list.item">
+                  A description of the original requirement that will eventually be addressed in an issue, potentially accompanied by screenshots, mockups/sketches or other visuals that help understand the desired outcome;
+                </li>
+                <li class="list.item">
+                  A clear description of what the open questions are and how they are blocking an issues from being created or adding too much risk
+                </li>
+                <li class="list.item">
+                  If there is any, guidance on potential solutions that should be evaluated or references to promising approaches
+                </li>
+                <li class="list.item">
+                  A well-defined timebox, e.g. "max 2 days"
+                </li>
+              </ul>
+              <p class="typography.body-text">
+                The result of the iteration preparation phase is a prioritized list of well-prepared issues and spikes. This list of issues will then be presented to the team in the planning meeting.
+              </p>
+            </div>
+          </div>
+          <!--section-->
+          <div class="main-block.content-section">
+            <div class="main-block.content-section-item">
+              <h3 class="typography.sub-heading">
+                Iteration Planning
+              </h3>
+              <p class="typography.body-text">
+                The iteration planning meeting is a joint meeting with all of the project team, the product experts and other stakeholders that are involved in the project. During the meeting, the iteration lead presents each issue to the project team so that everyone has a good understanding of what each issue is about and gets a chance to ask questions and/or raise any points that might have been overlooked in the iteration preparation phase.
+              </p>
+              <p class="typography.body-text">
+                In the end of the planning meeting, the team collaboratively decides whether it thinks it can reasonably work on and complete all of the issues that have been presented to them in the planning meeting (plus past issues that are potentially moved over from the previous iteration). If the team considers the presented issues to be too much for the iteration, they collaboratively decide which ones are moved to a later iteration to be considered again at a later point. If any of the issues are found not to be ready to be worked on (e.g. because dependencies of the issue not being ready), the issue is moved to a later iteration as well.
+              </p>
+              <p class="typography.body-text">
+                The iteration, once planned, is not a binding agreement. It is still possible for all project stakeholders to react to changes to features or priorities and the project team cannot guarantee all planned issues to be completed by iteration end as new challenges might only be uncovered once work on an issue starts. The iteration plan is merely a snapshot of feature requests and priorities at the time it is made as well as a best-effort estimate by the project team of which issues it thinks it can complete within the iteration. Ideally though, an iteration remains unchanged once it has been planned to enable smooth execution which also leads to increasingly predictable estimates as a project progresses.
+              </p>
+            </div>
+          </div>
+          <!--section-->
+          <div class="main-block.content-section">
+            <div class="main-block.content-section-item">
+              <h3 class="typography.sub-heading">
+                Iteration Execution
+              </h3>
+              <p class="typography.body-text">
+                After the iteration has been planned, execution starts and the planned issues are being worked on based on descending priorities. For non-trivial issues, the first step is often to plan the implementation and necessary code changes by breaking the issue down into small steps. This can be done by two team members in a pairing session. As an issue is started to be worked on, the respective team member(s) will self-assign it. Issues are only assigned once work on them is actually started. Once an issue is closed via a pull requests or if it is blocked and cannot progress, the team member(s) will self-assign another issue from the iteration backlog. We recommend releasing changes to production (or at least a staging) system as they are completed.
+              </p>
+              <p class="typography.body-text">
+                If there are any changes requested to the iteration after the planning meeting (e.g. due to unforeseeable changes to features or severe bugs popping up in production), all of these potential changes go through to iteration lead for assessment. The iteration lead might consult with the product experts or other project stakeholders to determine validity and priority of the incoming request. If an issue is considered necessary to be added to the iteration after the planning meeting, it will be added but another issue might have to be removed from the iteration for it.
+              </p>
+              <p class="typography.body-text">
+                If an issue is blocked and cannot progress, the iteration lead is responsible to try and solve the impediment, potentially synchronizing with the product experts or other project stakeholders that can help resolve the situation. Likewise, if all issues in an iteration are completed early and there is no more work left to do, the iteration lead will synchronize with the project stakeholders and the iteration lead of the following iteration to discuss which issues should be added. Often that will mean moving issues from the following iteration into the current one.
+              </p>
+            </div>
+          </div>
+          <!--section-->
+        </div>
+        <!--content-->
+       
       </div>
     </div>
     <div class="container">
