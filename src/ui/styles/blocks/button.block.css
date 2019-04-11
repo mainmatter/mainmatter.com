@@ -3,12 +3,12 @@
 }
 
 .button {
+  display: inline-block;
+  padding: calc(1rem - 2px) calc(3rem - 2px);
+  flex-shrink: 0;
   color: #007DF6;
   border: 2px solid #007DF6;
-  font-size: 1em;
-  padding: 0.5rem 1rem;
-  display: inline-block;
-  flex-shrink: 0;
+  font-size: 3rem;
+  line-height: 5rem;
   text-decoration: none;
 }
-

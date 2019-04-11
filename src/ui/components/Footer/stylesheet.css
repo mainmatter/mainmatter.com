@@ -5,13 +5,12 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  margin: 0 var(--horizontal-spacing);
+  font-size: 2rem;
 }
 
 .branding {
   min-width: 200px;
   flex-shrink: 0;
-  font-size: 1rem;
 }
 
 .logo-wrap {
@@ -22,20 +21,20 @@
 
 .menu {
   flex-shrink: 0;
-  font-size: 1rem;
   display: block;
   margin-top: 0.6rem;
 }
 
 .menu-title {
+  display: block;
   font-weight: bold;
   color: #000;
+  margin: 1.5rem 0 3rem;
 }
 
 .menu-link {
   display: block;
   text-decoration: none;
   color: #000;
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
-

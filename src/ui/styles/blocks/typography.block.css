@@ -3,69 +3,90 @@
 }
 
 .display {
-  color: var(--first-color);
-  font-size: 5em;
-  font-weight: 300;
   margin-bottom: 6rem;
-  line-height: 1.1em;
+  color: var(--first-color);
+  font-size: 10rem;
+  font-weight: 300;
+  line-height: 1.2;
 }
 
-.heading {
+.headline-1 {
+  margin-bottom: 6rem;
   color: var(--first-color);
-  font-size: 4em;
+  font-size: 8rem;
   font-weight: 300;
+  line-height: 1.25;
+}
+
+.headline-2 {
   margin-bottom: 3rem;
-  line-height: 1.1em;
+  color: var(--first-color);
+  font-size: 5rem;
+  line-height: 1.2;
+  font-weight: 400;
 }
 
-.sub-heading {
+.headline-3 {
+  margin-bottom: 5rem;
   color: var(--first-color);
-  font-size: 2.5em;
-  font-weight: 300;
-  margin-bottom: 2rem;
-  line-height: 1.2em;
+  font-size: 4rem;
+  line-height: 1.25;
+  font-weight: 400;
 }
 
 .lead {
   color: var(--second-color);
-  font-size: 1.6em;
-  line-height: 1.4em;
-  margin-bottom: 2rem;
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.lead + .lead {
+  margin-top: 5rem;
+}
+
+.lead[state|offset] {
+  margin-bottom: 12rem;
 }
 
 .body-text {
-  font-size: 1.2em;
-  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  line-height: 1.6;
+}
+
+.body-text + .body-text {
+  margin-top: 5rem;
 }
 
 .small-text {
-  font-size: 0.8em;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 1.0;
   text-transform: uppercase;
 }
 
 .arrow-link {
-  text-decoration: none;
   display: inline-block;
+  padding: 1rem 7rem 1rem 0;
   color: var(--link-color);
   background: no-repeat center right;
   background-image: url('assets/images/long-arrow-right.svg');
-  background-size: 2em;
-  padding-right: 2.5em;
+  background-size: 5rem;
+  font-size: 3rem;
+  line-height: 5rem;
+  text-decoration: none;
 }
 
 .link {
-  text-decoration: none;
   color: var(--link-color);
+  text-decoration: none;
 }
 
 .title-link {
-  text-decoration: none;
   color: var(--first-color);
+  text-decoration: none;
 }
 
 .title-link:hover {
-  text-decoration: none;
   color: var(--link-color);
+  text-decoration: none;
 }
-

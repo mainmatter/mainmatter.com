@@ -1,9 +1,10 @@
 @block shape-wrapper from "./shape-wrapper.block.css";
 
-:scope  {
+:scope {
   extends: shape-wrapper;
-  left: -40em;
+
+  left: -80rem;
   top: 0;
-  width: 160em;
-  height: 50em;
+  width: 320rem;
+  height: 100rem;
 }

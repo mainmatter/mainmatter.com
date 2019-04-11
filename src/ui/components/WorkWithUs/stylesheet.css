@@ -3,18 +3,6 @@
 
 :scope {
   block-name: work-with-us;
-  margin-left: 2em;
-  width: 20em;
-}
 
-@media (min-width: 768px) {
-  :scope {
-    margin-left: 4em;
-  }
-}
-
-@media (min-width: 1024px) {
-  :scope {
-    margin-left: 10em;
-  }
+  width: var(--col-3);
 }

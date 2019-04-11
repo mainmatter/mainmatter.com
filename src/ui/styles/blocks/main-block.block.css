@@ -1,11 +1,10 @@
 :scope {
   display: flex;
   justify-content: space-between;
-  margin: 0 var(--horizontal-spacing);
 }
 
 .content {
-  width: 30em;
+  width: var(--col-3);
 }
 
 .content-full-width {
@@ -13,25 +12,25 @@
 }
 
 .sidebar {
-  width: 20em;
+  width: var(--col-2);
 }
 
 .content-item {
-  margin-bottom: 6rem;
+  margin-bottom: 12rem;
 }
 
 .content-section {
-  margin:  0 -1rem 3rem;
+  margin: 0 -2rem 6rem;
   display: flex;
   align-items: stretch;
 }
 
 .content-section-item {
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 .content-heading {
-  margin-bottom: 6rem;
+  margin-bottom: 16rem;
 }
 
 .content-section-image {
@@ -86,4 +85,3 @@
     width: 100%;
   }
 }
-

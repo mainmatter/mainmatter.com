@@ -5,14 +5,14 @@
 
 :scope {
   block-name: leading-experts;
-  --shape-text-position-right: -40em;
+  --shape-text-position-right: -90rem;
 }
 
 .background {
   background-color: resolve("shape-left-lg.background");
   background-color: #222;
   background-image: url("/assets/images/marco.jpg");
-  background-size: 80em;
+  background-size: 160rem;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;

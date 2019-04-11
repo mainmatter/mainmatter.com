@@ -1,0 +1,36 @@
+html {
+  --base-scale: calc(6 / 8);
+
+  /* Reset the base fontsize for 1rem to 50% of the 16px multiplied with the current scale */
+  font-size: calc(50% * var(--base-scale));
+  line-height: 1.5;
+}
+
+body {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  html {
+    --base-scale: calc(7 / 8);
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    --base-scale: 1; /* == 8px */
+  }
+}
+
+@media (min-width: 1800px) {
+  html {
+    --base-scale: calc(10 / 8);
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    --base-scale: calc(13 / 8);
+  }
+}
