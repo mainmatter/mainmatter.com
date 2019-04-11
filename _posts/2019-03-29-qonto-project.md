@@ -4,6 +4,7 @@ author: "Mark Coleman"
 github: mrmrcoleman
 twitter: mrmrcoleman
 topic: simplabs
+bio: "Communications and Community Outreach Specialist"
 ---
 
 We're very pleased to announce that we've started working with [Qonto](https://qonto.eu/),

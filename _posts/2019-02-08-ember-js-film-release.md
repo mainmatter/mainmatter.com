@@ -4,6 +4,7 @@ author: "Mark Coleman"
 github: mrmrcoleman
 twitter: mrmrcoleman
 topic: ember
+bio: "Communications and Community Outreach Specialist"
 ---
 
 We're very pleased to announce that simplabs are featured in the new  [HoneyPot](https://www.honeypot.io/) film **'Ember: A Mini Documentary'** that will premiere in Amsterdam this evening (2019-02-08).

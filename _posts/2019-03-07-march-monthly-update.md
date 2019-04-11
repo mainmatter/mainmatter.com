@@ -4,6 +4,7 @@ author: "Mark Coleman"
 github: mrmrcoleman
 twitter: mrmrcoleman
 topic: simplabs
+bio: "Communications and Community Outreach Specialist"
 ---
 
 Welcome to our new monthly update. Each month we'll cover the events and activities that have been happening at simplabs. Enjoy.
