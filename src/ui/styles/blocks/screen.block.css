@@ -36,5 +36,9 @@
 .container {
   max-width: 132rem;
   margin: 0 auto;
-  padding: 8rem 3rem;
+  padding: 0 3rem 0;
+}
+
+.container + .container {
+  padding: 21rem 3rem 0;
 }
