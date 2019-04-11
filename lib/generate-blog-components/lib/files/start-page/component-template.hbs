@@ -1,0 +1,99 @@
+<div>
+  <div class="contents">
+    <div class="container">
+      <Navigation />
+      <div class="header-block">
+        <h1 class="typography.display">
+          Blog
+        </h1>
+      </div>
+      <div class="shape.wrap">
+        <div class="shape-decoration">
+          <div class="shape-decoration.background"></div>
+          <!--background-->
+        </div>
+        <!--shape-image-->
+        <div class="shape.caption-large">
+          <div class="shape.caption-content-large">
+            <p class="typography.small-text">
+              Latest Post
+            </p>
+            <h2 class="typography.heading">
+              <a href="{{latest.path}}" class="typography.title-link">
+                {{latest.title}}
+              </a>
+            </h2>
+            <p class="typography.lead">
+              {{{latest.excerpt}}}
+            </p>
+            <a href="{{latest.path}}" class="typography.arrow-link">
+              Read Post
+            </a>
+          </div>
+        </div>
+        <!--caption-->
+        <div class="shape-text">
+          <div class="shape-text.background">
+            <div class="shape-text.content"></div>
+          </div>
+        </div>
+        <!--shape-text-->
+      </div>
+      <!--shape-wrap-->
+    </div>
+    <div class="container">
+      <div class="main-block">
+        <div class="main-block.content">
+          <div class="main-block.content-item">
+            {{#each rest}}
+              <div class="main-block.content-section">
+                <div class="main-block.content-section-item">
+                  <div class="tags">
+                    <a class="tag" href="#">
+                      #{{topic}}
+                    </a>
+                  </div>
+                  <h3 class="typography.sub-heading">
+                    <a class="typography.title-link" href="{{path}}">
+                      {{title}}
+                    </a>
+                  </h3>
+                  <p class="typography.body-text">
+                    {{{excerpt}}}
+                  </p>
+                  <a href="#">
+                    {{author.name}}
+                  </a>
+                  <p>
+                    {{date}}
+                  </p>
+                </div>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+        <div class="main-block.sidebar">
+          <p class="typography.small-text">
+            Other Resources
+          </p>
+          <div class="card">
+            <h3 class="card.sub-heading">
+              Talks Catalog
+            </h3>
+            <p class="card.text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <a class="typography.arrow-link" href="/calendar">
+              View Our Talks
+            </a>
+          </div>
+        </div>
+        <!--sidebar-->
+      </div>
+    </div>
+    <div class="container">
+      <Footer />
+    </div>
+  </div>
+  <!--contents-->
+</div>

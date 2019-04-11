@@ -1,0 +1,33 @@
+@block screen from "../../styles/blocks/screen.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
+@block main-block from "../../styles/blocks/main-block.block.css";
+@block header-block from "../../styles/blocks/header-block.block.css";
+@block fluid-image from "../../styles/blocks/fluid-image.block.css";
+@block card from "../../styles/blocks/card.block.css";
+@block shape from "../../styles/blocks/shape/base.block.css";
+@block shape-image from "../../styles/blocks/shape/shape-image.block.css";
+@block shape-decoration from "../../styles/blocks/shape/shape-decoration.block.css";
+@block shape-text from "../../styles/blocks/shape/shape-text.block.css";
+
+:scope {
+  block-name: Blog;
+  extends: screen;
+  --accent-color: #007DF6;
+  --shape-decoration-position-right: 0;
+  --shape-decoration-position-left: -92em;
+  --shape-decoration-position-top: 0;
+  --shape-text-position-right: -60em;
+}
+
+.tags {
+  line-height: 1em;
+}
+
+.tag {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+.tweet {
+
+}

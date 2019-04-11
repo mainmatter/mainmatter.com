@@ -1,7 +1,18 @@
 'use strict';
 
+const path = require('path');
+
+const collectPosts = require('../lib/generate-blog-components/lib/collect-posts');
+
 module.exports = function() {
+  let blogPosts = collectPosts(path.join(__dirname, '..', '_posts'));
+  let blogPostRoutes = blogPosts.reduce((acc, post) => {
+    acc[`/blog/${post.queryPath}`] = { component: post.componentName };
+    return acc;
+  }, {});
+
   let routes = {
+    ...blogPostRoutes,
     '/': { component: 'Homepage' },
     '/services': { component: 'Services' },
     '/services/software-engineering': { component: 'SoftwareEngineering' },
@@ -16,7 +27,6 @@ module.exports = function() {
     '/playbook': { component: 'Playbook' },
     '/contact': { component: 'Contact' },
     '/blog': { component: 'Blog' },
-    '/article': { component: 'Article' },
   };
 
   return routes;

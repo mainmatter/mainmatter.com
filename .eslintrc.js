@@ -16,6 +16,9 @@ module.exports = {
 
     'prettier/prettier': 'error',
   },
+  parserOptions: {
+    ecmaVersion: '2018'
+  },
   overrides: [
     {
       files: [
