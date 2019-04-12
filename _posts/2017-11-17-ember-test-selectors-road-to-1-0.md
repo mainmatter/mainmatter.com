@@ -8,7 +8,7 @@ topic: ember
 ---
 
 Back in January we wrote about the
-[latest changes](https://simplabs.com/blog/2017/01/13/ember-test-selectors.html)
+[latest changes](/blog/2017-01-13-ember-test-selectors)
 in [`ember-test-selectors`](https://github.com/simplabs/ember-test-selectors)
 and how we implemented them. Since then we adjusted a few things and this blog
 post should give you an idea what has happened so far and what else will happen
@@ -230,4 +230,4 @@ likely not be done by the time we release v1.0.0, but will be something for us
 to work on in the next year.
 
 If you have questions on how to best take advantage of test-selectors or how to
-structure your tests in general make sure to [contact us](https://simplabs.com/contact/).
+structure your tests in general make sure to [contact us](/contact/).

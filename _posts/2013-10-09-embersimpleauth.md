@@ -7,9 +7,9 @@ bio: "Founding Director of simplabs, author of Ember Simple Auth"
 topic: ember
 ---
 
-**Update: [Ember.SimpleAuth 0.1.0 has been released!](http://simplabs.com/blog/2014/01/20/embersimpleauth-010.html)** The information in this is (partially) outdated.
+**Update: [Ember.SimpleAuth 0.1.0 has been released!](/blog/2014-01-20-embersimpleauth-010)** The information in this is (partially) outdated.
 
-After I wrote 2 [blog](http://simplabs.com/blog/2013/06/15/authentication-in-emberjs.html "the initial post") [posts](http://simplabs.com/blog/2013/08/08/better-authentication-in-emberjs.html "the second post with a refined implementation") on implementing token based authentication in [Ember.js](http://emberjs.com) applications and got quite some feedback, good suggestions etc., I thought it **would be nice to pack all these ideas in an Ember.js plugin** so everybody could easily integrate that into their applications. Now **I finally managed to release version 0.0.1 of that plugin**: [Ember.SimpleAuth](https://github.com/simplabs/ember-simple-auth).
+After I wrote 2 [blog](/blog/2013-06-15-authentication-in-emberjs "the initial post") [posts](/blog/2013-08-08-better-authentication-in-emberjs "the second post with a refined implementation") on implementing token based authentication in [Ember.js](http://emberjs.com) applications and got quite some feedback, good suggestions etc., I thought it **would be nice to pack all these ideas in an Ember.js plugin** so everybody could easily integrate that into their applications. Now **I finally managed to release version 0.0.1 of that plugin**: [Ember.SimpleAuth](https://github.com/simplabs/ember-simple-auth).
 
 <!--break-->
 

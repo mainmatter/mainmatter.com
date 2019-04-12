@@ -7,7 +7,7 @@ bio: "Founding Director of simplabs, author of Ember Simple Auth"
 topic: ember
 ---
 
-**Update: [Ember.SimpleAuth 0.1.0 has been released!](http://simplabs.com/blog/2014/01/20/embersimpleauth-010.html)** The information in this is (partially) outdated.
+**Update: [Ember.SimpleAuth 0.1.0 has been released!](/blog/2014-01-20-embersimpleauth-010)** The information in this is (partially) outdated.
 
 With the [release of Ember.SimpleAuth 0.0.4](https://github.com/simplabs/ember-simple-auth/releases/tag/0.0.4) **the library is compliant with OAuth 2.0** - specifically it implements the _"Resource Owner Password Credentials Grant Type"_ as defined in [RFC 6749](http://tools.ietf.org/html/rfc6749) (thanks [adamlc](https://github.com/adamlc) for the suggestion). While this is only a minor change in terms of functionality and data flow, used headers etc. it makes everyone’s life a lot easier as instead of implementing your own server endpoints you can now utilize [one of several OAuth 2.0 middlewares that already implement the spec](https://github.com/search?q=oauth%20middleware).
 

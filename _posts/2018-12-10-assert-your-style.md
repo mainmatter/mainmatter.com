@@ -73,7 +73,7 @@ export default Component.extend({
   }),
 });
 ```
- To learn more about the rationale behind `ember-test-selectors`, be sure to also [give this introduction a read](https://simplabs.com/blog/2017/11/17/ember-test-selectors-road-to-1-0.html).
+ To learn more about the rationale behind `ember-test-selectors`, be sure to also [give this introduction a read](/blog/2017-11-17-ember-test-selectors-road-to-1-0).
 
 Using the [HTMLElement.style](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style) API, we can assert if the correct background color has been applied to our component:
 
@@ -137,7 +137,7 @@ module('Integration | Component | simplabs-logo-tile', function(hooks) {
 
 Now we know how we can write style-related tests for our automated test process that assert that the expected styles are applied to elements on the web page.
 
-But there's an even easier way to assert the computed styles of elements in your **QUnit test suite**. Since [v0.8.1](https://twitter.com/simplabs/status/1065913669995978752) of [qunit-dom](https://simplabs.com/blog/2017/10/24/high-level-assertions-with-qunit-dom.html) you can make your tests truly ✨
+But there's an even easier way to assert the computed styles of elements in your **QUnit test suite**. Since [v0.8.1](https://twitter.com/simplabs/status/1065913669995978752) of [qunit-dom](/blog/2017-10-24-high-level-assertions-with-qunit-dom) you can make your tests truly ✨
 
 Check it [out](https://github.com/simplabs/qunit-dom):
 
@@ -179,4 +179,4 @@ You can read more about the usage of the `.hasStyle` method in the [API document
 
 There are different ways to assert against inline styles and computed styles in your application and if you're using Ember & QUnit, [qunit-dom](https://github.com/simplabs/qunit-dom) is your best bet to make your style tests easy to write and read.
 
-Questions? Suggestions? [Contact us!](https://simplabs.com/contact/)
+Questions? Suggestions? [Contact us!](/contact/)

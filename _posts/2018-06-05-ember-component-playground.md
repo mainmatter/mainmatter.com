@@ -12,7 +12,7 @@ a component playground for our Ember.js application. In this post we will
 discuss how to implement "convention over configuration" for it by automatically
 discovering new components and showing them in the playground.
 
-[previous post]: https://simplabs.com/blog/2018/01/24/ember-freestyle.html
+[previous post]: /blog/2018-01-24-ember-freestyle
 [ember-freestyle]: http://ember-freestyle.com/
 
 <!--break-->
