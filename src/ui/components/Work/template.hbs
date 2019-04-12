@@ -2,97 +2,38 @@
   <div class="contents">
     <div class="container">
       <Navigation />
-      <div class="header-block">
+      <header class="header-block">
+        <p class="typography.small-text">
+          Work
+        </p>
         <h1 class="typography.display">
           We have a track record of successful projects for international clients
         </h1>
-      </div>
-      <!--page-header-->
+      </header>
     </div>
-    <!--container-->
     <div class="container">
-      <div class="main-block">
-        <div class="main-block.content-full-width">
-          <div class="main-block.content-item">
-            <div class="main-block.content-heading">
-              <h2 class="typography.headline-1">
-                Case Studies
-              </h2>
-              <p class="typography.lead">
-                We turn ideas into products and help tech teams move faster with confidence, enabling the long-term success of our clients' businesses.
-              </p>
-            </div>
-            <!--heading-->
-            <div class="main-block.content-section">
-              <div class="main-block.content-section-item">
-                <h3 class="typography.headline-2">
-                  Leveraging Trainline's full market potential
-                </h3>
-                <p class="typography.body-text">
-                  Trainline is Europe’s leading independent rail and coach platform. We worked with them to deliver a high-performance mobile web app, along with an improved engineering process, enabling Trainline to achieve their business goals for years to come.
-                </p>
-                <a href="#" class="typography.arrow-link" data-internal>
-                  Read Case Study
-                </a>
-                <div class="main-block.body-image">
-                  <img class="fluid-image.image" src="/assets/images/trainline-comp.jpg" />
-                  <p class="main-block.body-image-caption">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-                </div>
-                <!--body-image-->
-              </div>
-            </div>
-            <!--section-->
-            <div class="main-block.content-section">
-              <div class="main-block.content-section-item">
-                <h3 class="typography.headline-2">
-                  Modern online appointment scheduling
-                </h3>
-                <p class="typography.body-text">
-                  When Timify decided it was time to re-engineer their existing product, they trusted us to bring them into the future. We added engineering capacity and technology expertise to Timify's internal team and helped to build a solid foundation that enabled them to iterate fast and launch on-schedule, without sacrificing quality.
-                </p>
-                <a href="#" class="typography.arrow-link" data-internal>
-                  Read Case Study
-                </a>
-                <div class="main-block.body-image">
-                  <img class="fluid-image.image" src="/assets/images/trainline-comp.jpg" />
-                  <p class="main-block.body-image-caption">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-                </div>
-                <!--body-image-->
-              </div>
-            </div>
-            <!--section-->
-            <div class="main-block.content-section">
-              <div class="main-block.content-section-item">
-                <h3 class="typography.headline-2">
-                  A modern UI for an open-source router firmware
-                </h3>
-                <a href="#" class="typography.arrow-link" data-internal>
-                  Read Case Study
-                </a>
-              </div>
-            </div>
-            <!--section-->
-            <div class="main-block.content-section">
-              <div class="main-block.content-section-item">
-                <h3 class="typography.headline-2">
-                  An online travel magazine for global citizens
-                </h3>
-                <a href="#" class="typography.arrow-link" data-internal>
-                  Read Case Study
-                </a>
-              </div>
-            </div>
-            <!--section-->
-          </div>
-          <!--content-item-->
-        </div>
-        <!--content-->
-      </div>
-      <!--main-block-->
+      <ShapeCase
+        @color="#90E9D4"
+        @image="/assets/images/trainline-comp.jpg"
+        @logo="/assets/images/logos/trainline.svg"
+        @link="#"
+        @linkLabel="Read about Trainline"
+      >
+        <h2 class="typography.small-text">
+          Our latest Case Study
+        </h2>
+        <h3 class="typography.headline-2">
+          Leveraging Trainline's full market potential
+        </h3>
+        <p class="typography.body-text">
+          Trainline is Europe’s leading independent rail and coach platform. We worked with them to deliver a high-performance mobile web app, along with an improved engineering process, enabling Trainline to achieve their business goals for years to come.
+        </p>
+        <a href="#" data-internal>
+          Read Case Study
+        </a>
+      </ShapeCase>
+    </div>
+    <div class="container">
       <div class="grid-block">
         <div class="grid-block.heading">
           <h2 class="typography.headline-1">
@@ -108,7 +49,6 @@
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </div>
-          <!--item-->
           <div class="grid-block.item">
             <div class="grid-block.image-wrapper">
               <img class="grid-block.image" src="/assets/images/logos/timify.svg" />
@@ -117,7 +57,6 @@
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </div>
-          <!--item-->
           <div class="grid-block.item">
             <div class="grid-block.image-wrapper">
               <img class="grid-block.image" src="/assets/images/logos/cardstack.svg" />
@@ -126,9 +65,62 @@
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </div>
-          <!--item-->
         </div>
       </div>
+    </div>
+    <div class="container">
+      <ShapeCase
+        @color="#90E9D4"
+        @image="/assets/images/trainline-comp.jpg"
+        @link="#"
+        @linkLabel="Read about Trainline"
+      >
+        <h3 class="typography.headline-2">
+          Modern online appointment scheduling
+        </h3>
+        <p class="typography.body-text">
+          When Timify decided it was time to re-engineer their existing product, they trusted us to bring them into the future. We added engineering capacity and technology expertise to Timify's internal team and helped to build a solid foundation that enabled them to iterate fast and launch on-schedule, without sacrificing quality.
+        </p>
+        <a href="#" data-internal>
+          Read Case Study
+        </a>
+      </ShapeCase>
+    </div>
+    <div class="container">
+      <h2 class="typography.headline-1">
+        More Case Studies
+      </h2>
+      <div class="main-block">
+        <div class="main-block.content-full-width">
+          <div class="main-block.content-item">
+            <div class="main-block.content-section">
+              <div class="main-block.content-section-item">
+                <h3 class="typography.headline-2">
+                  A modern UI for an open-source router firmware
+                </h3>
+                <a href="#" data-internal>
+                  Read Case Study
+                </a>
+              </div>
+            </div>
+            <!--section-->
+            <div class="main-block.content-section">
+              <div class="main-block.content-section-item">
+                <h3 class="typography.headline-2">
+                  An online travel magazine for global citizens
+                </h3>
+                <a href="#" data-internal>
+                  Read Case Study
+                </a>
+              </div>
+            </div>
+            <!--section-->
+          </div>
+          <!--content-item-->
+        </div>
+        <!--content-->
+      </div>
+      <!--main-block-->
       <!--grid-block-->
     </div>
     <div class="container">
