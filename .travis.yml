@@ -35,7 +35,7 @@ jobs:
     - stage: test
       script: yarn lint:hbs
     - stage: test
-      script: yarn build
+      script: yarn build && yarn crawl
 
 notifications:
   email: false

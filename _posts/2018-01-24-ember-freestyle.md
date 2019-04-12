@@ -69,7 +69,7 @@ website:
 ### Adjusting the `application` template
 
 If you try this in a fresh new Ember app, run the development server using
-`ember serve` and visit <http://localhost:4200/freestyle> you will notice the
+`ember serve` and visit `http://localhost:4200/freestyle` you will notice the
 first problem: The `ember-freestyle` components are appearing underneath the
 `{{welcome-page}}` component:
 
@@ -245,7 +245,7 @@ Finally we will add the button to our component playground by editing the
 {{/freestyle-guide}}
 ```
 
-If we now visit <http://localhost:4200/freestyle> we will see a new
+If we now visit `http://localhost:4200/freestyle` we will see a new
 "Components" section in the sidebar on the left that includes our
 "styled-button" subsection. Once we click on that we will see our
 `styled-button` usage examples including the snippets there were used to
