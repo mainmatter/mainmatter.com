@@ -197,7 +197,7 @@ template like this:
     <ul>
       {{#each locations key="id" as |location|}}
         <li class="result">
-          <a href="/location/{{location.id}}" class="result-link" data-navigo>
+          <a href="/location/{{location.id}}" class="result-link" data-internal>
             {{location.label}}
           </a>
         </li>

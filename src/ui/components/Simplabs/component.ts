@@ -47,7 +47,7 @@ export default class Simplabs extends Component {
       document.addEventListener('click', (event: Event) => {
         const target = event.target as HTMLElement;
       
-        if (target.tagName === 'A' && target.dataset.navigo !== undefined) {
+        if (target.tagName === 'A' && target.dataset.internal !== undefined) {
           event.preventDefault();
           this.router.navigate(target.getAttribute('href'));
         }
