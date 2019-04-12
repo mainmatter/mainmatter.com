@@ -7,9 +7,9 @@ bio: "Founding Director of simplabs, author of Ember Simple Auth"
 topic: ember
 ---
 
-**Update:**_I released an Ember.js plugin that makes it very easy to implement an authentication system as described in this post: [Ember.SimpleAuth](http://simplabs.com/blog/2013/10/09/embersimpleauth.html)._
+**Update:**_I released an Ember.js plugin that makes it very easy to implement an authentication system as described in this post: [Ember.SimpleAuth](/blog/2013-10-09-embersimpleauth)._
 
-**Update:** _After I wrote this I found out that it’s actually not the best approach to implement authentication in Ember.js… There are some things missing and some other things can be done in a much simpler way. [I wrote a summary of the (better) authentication mechanism we moved to.](http://simplabs.com/blog/2013/08/08/better-authentication-in-emberjs.html "(better) authnetication with ember.js")_
+**Update:** _After I wrote this I found out that it’s actually not the best approach to implement authentication in Ember.js… There are some things missing and some other things can be done in a much simpler way. [I wrote a summary of the (better) authentication mechanism we moved to.](/blog/2013-08-08-better-authentication-in-emberjs "(better) authnetication with ember.js")_
 
 _I’m using the latest (as of mid June 2013) [ember](https://github.com/emberjs/ember.js)/[ember-data](https://github.com/emberjs/data)/[handlebars](https://github.com/wycats/handlebars.js) code directly from the respective github repositories in this example._
 
