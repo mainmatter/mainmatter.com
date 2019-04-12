@@ -13,6 +13,8 @@ const typescript = require('broccoli-typescript-compiler').default;
 const glob = require('glob');
 const commonjs = require('rollup-plugin-commonjs');
 const resolve = require('rollup-plugin-node-resolve');
+const BroccoliDebug = require('broccoli-debug');
+const replace = require('broccoli-string-replace');
 
 function findAllComponents() {
   let routes = require('./config/routes-map')();
@@ -69,7 +71,46 @@ class SimplabsApp extends GlimmerApp {
     return cssTree;
   }
 
-  packageSSR() {
+  package(jsTree) {
+    let [mainSiteTree, blogTree] = this._splitBlogTree(jsTree);
+    blogTree = new BroccoliDebug(blogTree, 'simplabs:blog');
+    let appTree = super.package(mainSiteTree);
+    let blogContentTree = this._packageBlog(blogTree);
+    let mainTree = new MergeTrees([appTree, blogContentTree]);
+
+    if (process.env.PRERENDER) {
+      let ssrTree = this._packageSSR();
+
+      return new MergeTrees([mainTree, ssrTree]);
+    } else {
+      return mainTree;
+    }
+  }
+
+  _splitBlogTree(tree) {
+    let mainSiteTree = new Funnel(tree, {
+      exclude: ['src/ui/components/Blog*'],
+    });
+    let mainSiteJsTree = new Funnel(mainSiteTree, {
+      exclude: ['src/ui/components/**/*.hbs'],
+    });
+    let mainSiteModuleMap = this.buildResolutionMap(mainSiteJsTree);
+    mainSiteTree = new MergeTrees([mainSiteTree, mainSiteModuleMap], { overwrite: true });
+
+    tree = new BroccoliDebug(tree, 'simplabs:in-tree');
+    let blogTree = new BroccoliDebug(new Funnel(tree, {
+      exclude: ['src/ui/components/!(Blog)*']
+    }), 'simplabs:blog-before');
+    let blogJsTree = new Funnel(blogTree, {
+      exclude: ['src/ui/components/**/*.hbs'],
+    });
+    let blogModuleMap = this.buildResolutionMap(blogJsTree);
+    blogTree = new MergeTrees([blogTree, blogModuleMap], { overwrite: true });
+
+    return [mainSiteTree, blogTree];
+  }
+
+  _packageSSR() {
     let jsTree = new Funnel(this.javascriptTree(), {
       exclude: ['src/index.js'],
     });
@@ -95,16 +136,24 @@ class SimplabsApp extends GlimmerApp {
     });
   }
 
-  package() {
-    let appTree = super.package(...arguments);
-
-    if (process.env.PRERENDER) {
-      let ssrTree = this.packageSSR();
-
-      return new MergeTrees([appTree, ssrTree]);
-    } else {
-      return appTree;
-    }
+  _packageBlog(blogTree) {
+    return new Rollup(blogTree, {
+      rollup: {
+        input: 'config/module-map.js',
+        output: {
+          file: 'blog.js',
+          format: 'cjs',
+        },
+        onwarn(warning) {
+          if (warning.code === 'THIS_IS_UNDEFINED') {
+            return;
+          }
+          // eslint-disable-next-line no-console
+          console.log('Rollup warning: ', warning.message);
+        },
+        plugins: [resolve({ jsnext: true, module: true, main: true }), commonjs()],
+      },
+    });
   }
 }
 
