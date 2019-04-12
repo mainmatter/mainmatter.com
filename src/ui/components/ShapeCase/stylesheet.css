@@ -1,48 +1,48 @@
 @block typography from "../../styles/blocks/typography.block.css";
 
 :scope {
-	position: relative;
+  position: relative;
 }
 
-.shape {	
-	display: block;
-	position: relative;
-	left: 50%;
-	transform: translate(-50%);
-	width: 100vw;
-	height: auto;
-	margin: -8rem 0 6rem;
+.shape {
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100vw;
+  height: auto;
+  margin: -8rem 0 6rem;
 }
 
 .logo {
-	position: absolute;
-	top: calc(50vw - 12rem);
+  position: absolute;
+  top: calc(50vw - 12rem);
 }
 
 .logo-img {
-	display: block;
-	height: 4rem;
-	width: auto;
+  display: block;
+  height: 4rem;
+  width: auto;
 }
 
 .floating {
-	position: absolute;
-	top: 13rem;
-	left: 50%;
-	transform: translate(22rem);
+  position: absolute;
+  top: 13rem;
+  left: 50%;
+  transform: translate(22rem);
 }
 
 .floating-background {
-	fill: var(--link-color);
+  fill: var(--link-color);
 }
 
 .floating-content {
-	position: absolute;
-	top: calc(50% - 21rem);
-	right: calc(-56.5rem + 100vw);
-	width: 25rem;
-	transform: translate(-50%);
-	text-align: right;
+  position: absolute;
+  top: calc(50% - 21rem);
+  right: calc(-56.5rem + 100vw);
+  width: 25rem;
+  transform: translate(-50%);
+  text-align: right;
 
-	--link-color: #fff;
+  --link-color: #fff;
 }
