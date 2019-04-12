@@ -1,0 +1,35 @@
+:scope {
+  name: Link;
+}
+
+.link,
+.link-with-arrow {
+  position: relative;
+  display: inline-block;
+  padding: 1.5rem 0 1.5rem 0;
+  color: var(--link-color);
+  font-size: 3rem;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.link-with-arrow {
+  padding: 1.5rem 7rem 1.5rem 0;
+}
+
+.link:hover,
+.link-with-arrow:hover {
+  text-decoration: underline;
+} 
+
+.svg {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  width: 5rem;
+  height: 5rem;  
+}
+
+.arrow {
+  fill: var(--link-color);
+}

@@ -1,7 +1,7 @@
 :scope {
   block-name: screen;
-	--first-color: #222222;
-	--second-color: #5b5b5b;
+  --first-color: #222222;
+  --second-color: #5b5b5b;
   --link-color: #007DF6;
   --vertical-spacing: 4em;
   --horizontal-spacing: 2em;
@@ -12,7 +12,6 @@
   --col-3: 64.5rem;
   --col-4: 87rem;
   --col-5: 109.5rem;
-
 }
 
 @media (min-width: 768px) {

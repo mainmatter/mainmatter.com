@@ -26,9 +26,9 @@
             <p class="typography.lead">
               {{{latest.excerpt}}}
             </p>
-            <a href="{{latest.path}}" class="typography.arrow-link" data-internal>
+            <Link @arrow=true @href="{{latest.path}}">
               Read Post
-            </a>
+            </Link>
           </div>
         </div>
         <!--caption-->
@@ -49,7 +49,7 @@
               <div class="main-block.content-section">
                 <div class="main-block.content-section-item">
                   <div class="tags">
-                    <a class="tag" href="#" data-internal>
+                    <a class="tag" href="#">
                       #{{topic}}
                     </a>
                   </div>
@@ -61,7 +61,7 @@
                   <p class="typography.body-text">
                     {{{excerpt}}}
                   </p>
-                  <a href="#" data-internal>
+                  <a href="#">
                     {{author.name}}
                   </a>
                   <p>
@@ -83,9 +83,9 @@
             <p class="card.text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <a class="typography.arrow-link" href="/calendar" data-internal>
+            <Link @arrow=true @href="/calendar">
               View Our Talks
-            </a>
+            </Link>
           </div>
         </div>
         <!--sidebar-->

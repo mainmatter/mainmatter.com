@@ -34,6 +34,14 @@
   font-weight: 400;
 }
 
+.small-text {
+  display: block;
+  margin: 0 0 2rem;
+  font-size: 2rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
 .lead {
   color: var(--second-color);
   font-size: 4rem;
@@ -56,24 +64,6 @@
 
 .body-text + .body-text {
   margin-top: 5rem;
-}
-
-.small-text {
-  font-size: 2rem;
-  margin-bottom: 1.0;
-  text-transform: uppercase;
-}
-
-.arrow-link {
-  display: inline-block;
-  padding: 1rem 7rem 1rem 0;
-  color: var(--link-color);
-  background: no-repeat center right;
-  background-image: url('assets/images/long-arrow-right.svg');
-  background-size: 5rem;
-  font-size: 3rem;
-  line-height: 5rem;
-  text-decoration: none;
 }
 
 .link {

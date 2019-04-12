@@ -27,9 +27,9 @@
         ></path>
       </svg>
       <div class="floating-content">
-        <a href="{{@link}}" data-internal>
+        <Link @arrow="true" @href={{@link}}>
           {{if @linkLabel @linkLabel 'Read Case Study'}}
-        </a>
+        </Link>
       </div>
     </div>
     {{#if @logo}}
