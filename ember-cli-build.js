@@ -73,7 +73,6 @@ class SimplabsApp extends GlimmerApp {
 
   package(jsTree) {
     let [mainSiteTree, blogTree] = this._splitBlogTree(jsTree);
-    blogTree = new BroccoliDebug(blogTree, 'simplabs:blog');
     let appTree = super.package(mainSiteTree);
     let blogContentTree = this._packageBlog(blogTree);
     let mainTree = new MergeTrees([appTree, blogContentTree]);
@@ -141,15 +140,10 @@ class SimplabsApp extends GlimmerApp {
       rollup: {
         input: 'config/module-map.js',
         output: {
-          file: 'blog.js',
-          format: 'cjs',
-        },
-        onwarn(warning) {
-          if (warning.code === 'THIS_IS_UNDEFINED') {
-            return;
-          }
-          // eslint-disable-next-line no-console
-          console.log('Rollup warning: ', warning.message);
+          file: 'blog-content.js',
+          name: 'blog-content',
+          format: 'umd',
+          sourcemap: this.options.sourcemaps.enabled,
         },
         plugins: [resolve({ jsnext: true, module: true, main: true }), commonjs()],
       },
