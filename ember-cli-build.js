@@ -96,10 +96,9 @@ class SimplabsApp extends GlimmerApp {
     let mainSiteModuleMap = this.buildResolutionMap(mainSiteJsTree);
     mainSiteTree = new MergeTrees([mainSiteTree, mainSiteModuleMap], { overwrite: true });
 
-    tree = new BroccoliDebug(tree, 'simplabs:in-tree');
-    let blogTree = new BroccoliDebug(new Funnel(tree, {
+    let blogTree = new Funnel(tree, {
       exclude: ['src/ui/components/!(Blog)*']
-    }), 'simplabs:blog-before');
+    });
     let blogJsTree = new Funnel(blogTree, {
       exclude: ['src/ui/components/**/*.hbs'],
     });
