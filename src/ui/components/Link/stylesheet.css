@@ -1,9 +1,6 @@
 :scope {
   name: Link;
-}
 
-.link,
-.link-with-arrow {
   position: relative;
   display: inline-block;
   padding: 1.5rem 0 1.5rem 0;
@@ -13,23 +10,22 @@
   text-decoration: none;
 }
 
-.link-with-arrow {
+:scope[state|arrow] {
   padding: 1.5rem 7rem 1.5rem 0;
 }
 
-.link:hover,
-.link-with-arrow:hover {
+:scope:hover{
   text-decoration: underline;
-} 
+}
 
-.svg {
+:scope[state|arrow] .svg {
   position: absolute;
   top: 1rem;
   right: 0;
   width: 5rem;
-  height: 5rem;  
+  height: 5rem;
 }
 
-.arrow {
+:scope[state|arrow] .arrow {
   fill: var(--link-color);
 }
