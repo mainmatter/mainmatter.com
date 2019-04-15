@@ -139,8 +139,8 @@ class SimplabsApp extends GlimmerApp {
       rollup: {
         input: 'config/module-map.js',
         output: {
-          file: 'blog-content.js',
-          name: 'blog-content',
+          file: 'blog.js',
+          name: 'blog',
           format: 'umd',
           sourcemap: this.options.sourcemaps.enabled,
         },
