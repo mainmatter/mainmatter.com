@@ -122,6 +122,9 @@ module.exports = function(defaults) {
     fingerprint: {
       exclude: ['ssr-app.js'],
     },
+    rollup: {
+      plugins: [resolve({ jsnext: true, module: true, main: true }), commonjs()],
+    },
   });
 
   return app.toTree();

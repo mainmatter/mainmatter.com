@@ -1,3 +1,5 @@
+import { classnames } from '@css-blocks/glimmer/dist/cjs/src/helpers/classnames';
+import { concat } from '@css-blocks/glimmer/dist/cjs/src/helpers/concat';
 import { ComponentManager, setPropertyDidChange } from '@glimmer/component';
 import App from './main';
 
@@ -7,6 +9,17 @@ const app = new App({ hasSSRBody });
 
 setPropertyDidChange(() => {
   app.scheduleRerender();
+});
+
+app.registerInitializer({
+  initialize(registry) {
+    registry._resolver.registry._entries[
+      `helper:/${app.rootName}/components/-css-blocks-classnames`
+    ] = classnames;
+    registry._resolver.registry._entries[
+      `helper:/${app.rootName}/components/-css-blocks-concat`
+    ] = concat;
+  }
 });
 
 app.registerInitializer({
