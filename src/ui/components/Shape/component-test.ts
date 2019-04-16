@@ -4,10 +4,10 @@ import { setupRenderingTest } from '../../../utils/test-helpers/setup-rendering-
 
 const { module, test } = QUnit;
 
-module('Component: ShapeCase', function (hooks) {
+module('Component: Shape', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function (assert) {
+  test('it renders', async function(assert) {
     /*
      * You may pass data into the component through arguments set on the
      * `testContext`
@@ -17,7 +17,7 @@ module('Component: ShapeCase', function (hooks) {
      * ```
      * this.foo = { foo: '123' };
      *
-     * await render(hbs`<ShapeCase @foo={{this.foo}} />`)
+     * await render(hbs`<Shape @foo={{this.foo}} />`)
      *
      * // or
      *
@@ -27,7 +27,7 @@ module('Component: ShapeCase', function (hooks) {
      * assert.dom('p').text('bar');
      * ```
      */
-    await render(hbs`<ShapeCase />`);
+    await render(hbs`<Shape />`);
     assert.ok(this.containerElement.querySelector('div'));
   });
 });

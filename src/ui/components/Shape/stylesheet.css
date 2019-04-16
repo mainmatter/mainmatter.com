@@ -1,0 +1,176 @@
+@block typography from "../../styles/blocks/typography.block.css";
+@block screen from "../../styles/blocks/screen.block.css";
+@block fluid-image from "../../styles/blocks/fluid-image.block.css";
+
+:scope {
+  position: relative;
+  block-name: Shape;
+  margin-bottom: 16rem;
+
+  --shape-color: var(--link-color);
+}
+
+.svg,
+.svg-top,
+.svg-bottom {
+  display: block;
+}
+
+.defs {
+  display: none;
+}
+
+.container {
+  composes: 'screen.container';
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  width: var(--col-3);
+}
+
+.title {
+  padding-bottom: 22rem;
+}
+
+.logo {
+  position: absolute;
+  top: 98rem;
+  left: 3rem;
+}
+
+.logo-img {
+  display: block;
+  height: 4rem;
+  width: auto;
+}
+
+:scope[state|type='blog'] {
+  padding: 21rem 0 36rem;
+}
+
+:scope[state|type='feature'] {
+  margin-top: 21rem;
+  padding: 28rem 0 0;
+  min-height: 58rem;
+}
+
+:scope[state|type='across'] {
+  margin-top: -1rem;
+  padding: 0;
+  min-height: 73vw;
+}
+
+:scope[state|type='center'] {
+  min-height: 112rem;
+  margin-bottom: 6rem;
+}
+
+:scope[state|type='blog'] .svg-top,
+:scope[state|type='blog'] .svg-bottom,
+:scope[state|type='feature'] .svg-top,
+:scope[state|type='feature'] .svg-bottom,
+:scope[state|type='across'] .svg-top,
+:scope[state|type='center'] .svg-top,
+:scope[state|type='center'] .svg-bottom {
+  position: absolute;
+  left: 50%;
+  width: 225rem;
+  height: auto;
+  fill: var(--shape-color);
+}
+
+:scope[state|type='blog'] .svg-top {
+  top: 8rem;
+  transform: translate(-1%);
+}
+
+:scope[state|type='blog'] .svg-bottom {
+  bottom: 0;
+  transform: translate(-120%, 27rem);
+}
+
+:scope[state|type='feature'] .svg-top {
+  transform: translate(20%, -60rem);
+}
+
+:scope[state|type='feature'] .svg-bottom {
+  top: -26rem;
+  left: 50%;
+  transform: translate(-90%);
+  width: 225rem;
+  height: auto;
+}
+
+:scope[state|type='feature'] .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+:scope[state|type='feature'] .img {
+  margin-top: -28rem;
+  max-width: var(--col-3);
+}
+
+:scope[state|type='feature'] .content {
+  width: var(--col-2);
+}
+
+:scope[state|type='across'] .svg-top {
+  top: calc(30vw - 22rem);
+  transform: translate(-20rem);
+}
+
+:scope[state|type='across'] .svg-bottom {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+:scope[state|type='across'] .container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+:scope[state|type='across'] .content {
+  width: var(--col-2);
+  padding-top: calc(30vw);
+
+  --link-color: #fff;
+}
+
+:scope[state|type='across'] .img {
+  position: absolute;
+  top: 0.5rem;
+  width: 100vw;
+  height: 103.5vw;
+  background: fixed 0% 50% no-repeat var(--shape-color);
+  background-size: 120%;
+}
+
+:scope[state|type='center'] .bg {
+  fill: var(--shape-color);
+}
+
+:scope[state|type='center'] .svg-top {
+  top: 8rem;
+  transform: translate(20rem);
+}
+:scope[state|type='center'] .svg-bottom {
+  transform: translate(-50%);
+}
+
+:scope[state|type='center'] .container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+:scope[state|type='center'] .content {
+  width: calc(var(--col-1) + 6vw);
+  min-height: 100%;
+  padding-top: 49rem;
+  text-align: right;
+
+  --link-color: #fff;
+}

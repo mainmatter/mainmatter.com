@@ -2,7 +2,7 @@
   block-name: screen;
   --first-color: #222222;
   --second-color: #5b5b5b;
-  --link-color: #007DF6;
+  --link-color: #007df6;
   --vertical-spacing: 4em;
   --horizontal-spacing: 2em;
 
@@ -33,6 +33,7 @@
 }
 
 .container {
+  position: relative;
   max-width: 132rem;
   margin: 0 auto;
   padding: 0 3rem 0;

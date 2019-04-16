@@ -1,0 +1,143 @@
+<div state:type={{@type}} style={{this.shapeStyle}}>
+  <svg class="defs" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <path
+        id={{shapeId}}
+        d="m840.577137 0 862.961153 498.230855-231.96152 401.769145h-512.153907l-862.9611537-498.230855 231.9615247-401.769145z"
+      ></path>
+    </defs>
+  </svg>
+  {{!
+    This is not exactly best practice and could be refactored to sub-components.
+    But it does the job.
+  }}
+  {{#if this.isBlog}}
+    <svg
+      class="svg-bottom"
+      width="1800"
+      height="900"
+      viewBox="0 0 1800 900"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <use fill-rule="evenodd" xlink:href="#{{shapeId}}"></use>
+    </svg>
+    <svg
+      class="svg-top"
+      width="1800"
+      height="900"
+      viewBox="0 0 1800 900"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <use fill-rule="evenodd" transform="translate(0, -160)" xlink:href="#{{shapeId}}"></use>
+    </svg>
+    <div class="container">
+      <div class="content">
+        <h1 class="typography.display title">
+          {{@title}}
+        </h1>
+        {{yield}}
+      </div>
+    </div>
+  {{else if this.isFeature}}
+    <svg
+      class="svg-bottom"
+      width="1800"
+      height="900"
+      viewBox="0 0 1800 900"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <use fill-rule="evenodd" xlink:href="#{{shapeId}}"></use>
+    </svg>
+    <svg
+      class="svg-top"
+      width="1800"
+      height="900"
+      viewBox="0 0 1800 900"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <use fill-rule="evenodd" xlink:href="#{{shapeId}}"></use>
+    </svg>
+    <figure class="container">
+      <div class="img">
+        <img class="fluid-image.image" src={{@src}} alt="" width={{@width}} height={{@height}} />
+      </div>
+      <figcaption class="content">
+        {{yield}}
+      </figcaption>
+    </figure>
+  {{else if isAcross}}
+    <div class="img" style="background-image:url({{@src}});{{this.backgroundStyle}}"></div>
+    <svg class="svg-bottom" width="1440" height="1520" viewBox="0 0 1440 1520" xmlns="http://www.w3.org/2000/svg">
+      <path
+        fill="#fff"
+        d="M1440 1514.267V1520H0V839.27L389.245 1064h270.87L1440 1514.267zM1440 839.27L.2 8l-.2.346V0h1440z"
+      ></path>
+    </svg>
+    <svg
+      class="svg-top"
+      width="1800"
+      height="900"
+      viewBox="0 0 1800 900"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <use fill-rule="evenodd" xlink:href="#{{shapeId}}"></use>
+    </svg>
+    <div class="container">
+      <div class="content">
+        {{yield}}
+      </div>
+    </div>
+  {{else if isCenter}}
+    <svg
+      class="svg-bottom"
+      width="1800"
+      height="900"
+      viewBox="0 0 1800 900"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <defs>
+        <clipPath id={{this.maskId}}>
+          <use fill-rule="evenodd" xlink:href="#{{shapeId}}"></use>
+        </clipPath>
+      </defs>
+      <g style="clip-path: url(#{{this.maskId}}); {{this.backgroundStyle}}">
+        <rect class="bg" x="0" y="0" width="100%" height="100%"></rect>
+      </g>
+      {{#if @src}}
+        <image x="0" y="0" xlink:href="{{@src}}" width="100%" height="100%"></image>
+      {{/if}}
+    </svg>
+    <svg
+      class="svg-top"
+      width="1800"
+      height="900"
+      viewBox="0 0 1800 900"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <use fill-rule="evenodd" xlink:href="#{{shapeId}}"></use>
+    </svg>
+    <div class="container">
+      {{#if @logo}}
+        <div class="logo">
+          <img class="logo-img" src="{{@logo}}" alt="" />
+        </div>
+      {{/if}}
+      <div class="content">
+        {{yield}}
+      </div>
+    </div>
+  {{else}}
+    <strong>
+      Shape
+      {{@type}}
+      is not implemented yet!
+    </strong>
+  {{/if}}
+</div>
