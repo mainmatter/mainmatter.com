@@ -9,6 +9,10 @@ interface IRoutesMap {
 
 declare const __ROUTES_MAP__: IRoutesMap;
 
+const BUNDLES = {
+  blog: '/blog.js'
+};
+
 export default class Simplabs extends Component {
   private router: Navigo;
 
@@ -44,14 +48,40 @@ export default class Simplabs extends Component {
 
   private _bindInternalLinks() {
     if (!this.appState.isSSR) {
-      document.addEventListener('click', (event: Event) => {
-        const target = event.target as HTMLElement;
+      document.addEventListener('click', async (event: Event) => {
+        let target = event.target as HTMLElement;
       
         if (target.tagName === 'A' && target.dataset.internal !== undefined) {
           event.preventDefault();
+
+          if (target.dataset.bundle !== undefined) {
+            await this._loadBundle(target.dataset.bundle);
+          }
           this.router.navigate(target.getAttribute('href'));
         }
       });
     }
+  }
+
+  private async _loadBundle(bundle) {
+    await new Promise((resolve, reject) => {
+      let source = BUNDLES[bundle];
+      if (document.querySelector(`script[src="${source}"]`)) {
+        return resolve();
+      }
+
+      let script = document.createElement('script');
+      script.onload = resolve;
+      script.onerror = function(error) {
+        if (this.parentNode) {
+          this.parentNode.removeChild(this);
+        }
+        reject(error);
+      };
+      script.src = source;
+      script.async = false;
+      
+      document.head.appendChild(script);
+    });
   }
 }
