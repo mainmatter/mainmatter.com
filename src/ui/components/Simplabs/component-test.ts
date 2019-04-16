@@ -1,5 +1,6 @@
 import hbs from '@glimmer/inline-precompile';
-import { setupRenderingTest } from '@glimmer/test-helpers';
+import { render } from '@glimmer/test-helpers';
+import { setupRenderingTest } from '../../../utils/test-helpers/setup-rendering-test';
 
 const { module, test } = QUnit;
 
@@ -7,7 +8,7 @@ module('Component: Simplabs', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await this.render(hbs`<Simplabs />`);
+    await render(hbs`<Simplabs />`);
     assert.equal(this.containerElement.textContent, 'Welcome to Glimmer!\n');
   });
 });
