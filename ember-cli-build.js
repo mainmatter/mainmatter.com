@@ -13,6 +13,7 @@ const typescript = require('broccoli-typescript-compiler').default;
 const glob = require('glob');
 const commonjs = require('rollup-plugin-commonjs');
 const resolve = require('rollup-plugin-node-resolve');
+const collectPosts = require('./lib/generate-blog-components/lib/collect-posts');
 
 function findAllComponents() {
   let routes = require('./config/routes-map')();
@@ -70,10 +71,10 @@ class SimplabsApp extends GlimmerApp {
   }
 
   package(jsTree) {
-    let [mainSiteTree, blogTree] = this._splitBlogTree(jsTree);
+    let [mainSiteTree, blogTree, ...blogPostTrees] = this._splitBlogTree(jsTree);
     let appTree = super.package(mainSiteTree);
     let blogContentTree = this._packageBlog(blogTree);
-    let mainTree = new MergeTrees([appTree, blogContentTree]);
+    let mainTree = new MergeTrees([appTree, blogContentTree, ...blogPostTrees]);
 
     if (process.env.PRERENDER) {
       let ssrTree = this._packageSSR();
@@ -103,7 +104,28 @@ class SimplabsApp extends GlimmerApp {
     let blogModuleMap = this.buildResolutionMap(blogJsTree);
     blogTree = new MergeTrees([blogTree, blogModuleMap], { overwrite: true });
 
-    return [mainSiteTree, blogTree];
+    let blogPosts = collectPosts(path.join(__dirname, '_posts'));
+    let blogPostTrees = blogPosts.map((post) => {
+      let postTree = new Funnel(tree, {
+        include: [`src/ui/components/${post.componentName}/*.js`],
+      });
+      let postModuleMap = this.buildResolutionMap(postTree);
+      postTree = new MergeTrees([postTree, postModuleMap], { overwrite: true });
+      return new Rollup(postTree, {
+        rollup: {
+          input: 'config/module-map.js',
+          output: {
+            file: `blog-${post.queryPath}.js`,
+            name: `__blog-${post.queryPath}__`,
+            format: 'umd',
+            sourcemap: this.options.sourcemaps.enabled,
+          },
+          plugins: [resolve({ jsnext: true, module: true, main: true }), commonjs()],
+        },
+      });
+    });
+
+    return [mainSiteTree, blogTree, ...blogPostTrees];
   }
 
   _packageSSR() {

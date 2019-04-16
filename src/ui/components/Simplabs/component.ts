@@ -10,10 +10,6 @@ interface IRoutesMap {
 
 declare const __ROUTES_MAP__: IRoutesMap;
 
-const BUNDLES = {
-  blog: '/blog.js'
-};
-
 export default class Simplabs extends Component {
   private router: Navigo;
 
@@ -41,11 +37,11 @@ export default class Simplabs extends Component {
     this.router = new Navigo(this.appState.origin);
 
     Object.keys(this.routesMap).forEach((path) => {
-      let { component, bundle } = this.routesMap[path];
+      let { component, bundle, parentBundle } = this.routesMap[path];
       let options = {};
       if (bundle) {
         options.before = async (done) => {
-          await this._loadBundle(bundle);
+          await this._loadBundle(bundle, parentBundle);
           this._registerContent(bundle);
           done();
         };
@@ -68,10 +64,9 @@ export default class Simplabs extends Component {
     }
   }
 
-  private async _loadBundle(bundle) {
+  private async _loadBundle(bundle, parentBundle) {
     await new Promise((resolve, reject) => {
-      let source = BUNDLES[bundle];
-      if (document.querySelector(`script[src="${source}"]`)) {
+      if (document.querySelector(`script[src="${bundle.asset}"]`) || (parentBundle && document.querySelector(`script[src="${parentBundle.asset}"]`))) {
         return resolve();
       }
 
@@ -83,7 +78,7 @@ export default class Simplabs extends Component {
         }
         reject(error);
       };
-      script.src = source;
+      script.src = bundle.asset;
       script.async = false;
       
       document.head.appendChild(script);
@@ -91,7 +86,7 @@ export default class Simplabs extends Component {
   }
 
   private _registerContent(bundle) {
-    let content = window[`__${bundle}__`] || {};
+    let content = window[bundle.module] || {};
     Object.keys(content).forEach((key) => {
       window.__lazyRegister__(key, content[key])
     });
