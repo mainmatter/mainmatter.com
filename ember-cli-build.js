@@ -13,8 +13,6 @@ const typescript = require('broccoli-typescript-compiler').default;
 const glob = require('glob');
 const commonjs = require('rollup-plugin-commonjs');
 const resolve = require('rollup-plugin-node-resolve');
-const BroccoliDebug = require('broccoli-debug');
-const replace = require('broccoli-string-replace');
 
 function findAllComponents() {
   let routes = require('./config/routes-map')();
@@ -97,7 +95,7 @@ class SimplabsApp extends GlimmerApp {
     mainSiteTree = new MergeTrees([mainSiteTree, mainSiteModuleMap], { overwrite: true });
 
     let blogTree = new Funnel(tree, {
-      exclude: ['src/ui/components/!(Blog)*']
+      exclude: ['src/ui/components/!(Blog)*'],
     });
     let blogJsTree = new Funnel(blogTree, {
       exclude: ['src/ui/components/**/*.hbs'],
