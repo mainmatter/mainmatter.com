@@ -22,7 +22,7 @@ export default class Simplabs extends Component {
   private appState: IAppState;
 
   @tracked
-  private activeComponent: string;
+  private activeComponent: string = null;
 
   constructor(options) {
     super(options);
