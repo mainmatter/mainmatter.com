@@ -1,4 +1,5 @@
 import Component, { tracked } from '@glimmer/component';
+import { getOwner } from '@glimmer/di';
 import Navigo from 'navigo';
 
 interface IRoutesMap {
@@ -54,8 +55,10 @@ export default class Simplabs extends Component {
         if (target.tagName === 'A' && target.dataset.internal !== undefined) {
           event.preventDefault();
 
-          if (target.dataset.bundle !== undefined) {
-            await this._loadBundle(target.dataset.bundle);
+          let bundle = target.dataset.bundle as String;
+          if (bundle !== undefined) {
+            await this._loadBundle(bundle);
+            this._registerContent(bundle);
           }
           this.router.navigate(target.getAttribute('href'));
         }
@@ -82,6 +85,13 @@ export default class Simplabs extends Component {
       script.async = false;
       
       document.head.appendChild(script);
+    });
+  }
+
+  private _registerContent(bundle) {
+    let content = window[`__${bundle}__`] || {};
+    Object.keys(content).forEach((key) => {
+      window.__lazyRegister__(key, content[key])
     });
   }
 }

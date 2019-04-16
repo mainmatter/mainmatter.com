@@ -140,7 +140,7 @@ class SimplabsApp extends GlimmerApp {
         input: 'config/module-map.js',
         output: {
           file: 'blog.js',
-          name: 'blog',
+          name: '__blog__',
           format: 'umd',
           sourcemap: this.options.sourcemaps.enabled,
         },

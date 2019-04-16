@@ -13,6 +13,14 @@ setPropertyDidChange(() => {
 
 app.registerInitializer({
   initialize(registry) {
+    window.__lazyRegister__ = function(key, content) {
+      registry._resolver.registry._entries[key] = content;
+    };
+  }
+});
+
+app.registerInitializer({
+  initialize(registry) {
     registry._resolver.registry._entries[
       `helper:/${app.rootName}/components/-css-blocks-classnames`
     ] = classnames;
