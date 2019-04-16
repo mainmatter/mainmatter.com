@@ -7,7 +7,7 @@ const collectPosts = require('../lib/generate-blog-components/lib/collect-posts'
 module.exports = function() {
   let blogPosts = collectPosts(path.join(__dirname, '..', '_posts'));
   let blogPostRoutes = blogPosts.reduce((acc, post) => {
-    acc[`/blog/${post.queryPath}`] = { component: post.componentName };
+    acc[`/blog/${post.queryPath}`] = { component: post.componentName, bundle: 'blog' };
     return acc;
   }, {});
 
@@ -26,7 +26,7 @@ module.exports = function() {
     '/calendar': { component: 'Calendar' },
     '/playbook': { component: 'Playbook' },
     '/contact': { component: 'Contact' },
-    '/blog': { component: 'Blog' },
+    '/blog': { component: 'Blog', bundle: 'blog' },
   };
 
   return routes;

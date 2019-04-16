@@ -41,8 +41,16 @@ export default class Simplabs extends Component {
     this.router = new Navigo(this.appState.origin);
 
     Object.keys(this.routesMap).forEach((path) => {
-      let { component } = this.routesMap[path];
-      this.router.on(path, () => this.activeComponent = component);
+      let { component, bundle } = this.routesMap[path];
+      let options = {};
+      if (bundle) {
+        options.before = async (done) => {
+          await this._loadBundle(bundle);
+          this._registerContent(bundle);
+          done();
+        };
+      }
+      this.router.on(path, () => this.activeComponent = component, options);
     });
     this.router.resolve(this.appState.route);
   }
@@ -54,12 +62,6 @@ export default class Simplabs extends Component {
       
         if (target.tagName === 'A' && target.dataset.internal !== undefined) {
           event.preventDefault();
-
-          let bundle = target.dataset.bundle as String;
-          if (bundle !== undefined) {
-            await this._loadBundle(bundle);
-            this._registerContent(bundle);
-          }
           this.router.navigate(target.getAttribute('href'));
         }
       });
