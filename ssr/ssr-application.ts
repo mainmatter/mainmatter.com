@@ -2,6 +2,8 @@ import DynamicScope from './dynamic-scope';
 import SSRComponentManager from './ssr-component-manager';
 import SSRDOMTreeConstruction from './ssr-dom-tree-construction';
 
+import { classnames } from '@css-blocks/glimmer/dist/cjs/src/helpers/classnames';
+import { concat } from '@css-blocks/glimmer/dist/cjs/src/helpers/concat';
 import { UpdatableReference } from '@glimmer/component';
 import { TemplateIterator } from '@glimmer/runtime';
 
@@ -46,6 +48,13 @@ export default class SSRApplication extends Application {
     this.element = options.element;
     this.registerInitializer({
       initialize(registry) {
+        registry._resolver.registry._entries[
+          `helper:/${rootName}/components/-css-blocks-classnames`
+        ] = classnames;
+        registry._resolver.registry._entries[
+          `helper:/${rootName}/components/-css-blocks-concat`
+        ] = concat;
+
         // inject appendOperations into environment in order to get working createElement and setAttribute.
         registry.register(
           `domTreeConstruction:/${rootName}/main/main`,
