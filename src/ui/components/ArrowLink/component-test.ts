@@ -3,10 +3,10 @@ import { render, setupRenderingTest } from '@glimmer/test-helpers';
 
 const { module, test } = QUnit;
 
-module('Component: Link', function (hooks) {
+module('Component: ArrowLink', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function (assert) {
+  test('it renders', async function(assert) {
     /*
      * You may pass data into the component through arguments set on the
      * `testContext`
@@ -26,7 +26,7 @@ module('Component: Link', function (hooks) {
      * assert.dom('p').text('bar');
      * ```
      */
-    await render(hbs`<Link />`);
+    await render(hbs`<ArrowLink />`);
     assert.ok(this.containerElement.querySelector('div'));
   });
 });

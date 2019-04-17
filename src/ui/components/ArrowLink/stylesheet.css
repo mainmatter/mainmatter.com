@@ -1,24 +1,20 @@
 :scope {
-  name: Link;
+  block-name: ArrowLink;
 
   position: relative;
   display: inline-block;
-  padding: 1.5rem 0 1.5rem 0;
+  padding: 1.5rem 7rem 1.5rem 0;
   color: var(--link-color);
   font-size: 3rem;
   line-height: 1.5;
   text-decoration: none;
 }
 
-:scope[state|arrow] {
-  padding: 1.5rem 7rem 1.5rem 0;
-}
-
-:scope:hover{
+:scope:hover {
   text-decoration: underline;
 }
 
-:scope[state|arrow] .svg {
+.svg {
   position: absolute;
   top: 1rem;
   right: 0;
@@ -26,6 +22,6 @@
   height: 5rem;
 }
 
-:scope[state|arrow] .arrow {
+.arrow {
   fill: var(--link-color);
 }
