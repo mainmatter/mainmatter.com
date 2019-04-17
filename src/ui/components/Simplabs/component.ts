@@ -50,7 +50,7 @@ export default class Simplabs extends Component {
       if (bundle && !this.appState.isSSR) {
         options.before = async (done) => {
           await this._loadBundle(bundle, parentBundle);
-          this._registerContent(bundle);
+          this._registerBundle(bundle);
           done();
         };
       }
@@ -101,11 +101,8 @@ export default class Simplabs extends Component {
     });
   }
 
-  private _registerContent(bundle) {
-    let content = window[bundle.module] || {};
-    Object.keys(content).forEach((key) => {
-      this.lazyRegistration.register(key, content[key]);
-    });
+  private _registerBundle(bundle) {
+    this.lazyRegistration.registerBundle(bundle.module);
   }
 
   private _startLoader() {
@@ -122,6 +119,8 @@ export default class Simplabs extends Component {
   private _injectBundle(bundle) {
     let script = this.document.createElement('script');
     script.setAttribute('src', bundle.asset);
+    script.setAttribute('data-shoebox', true);
+    script.setAttribute('data-shoebox-bundle', bundle.module);
     this.document.body.appendChild(script);
   }
 }

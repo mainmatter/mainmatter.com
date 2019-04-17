@@ -13,19 +13,29 @@ setPropertyDidChange(() => {
 
 app.registerInitializer({
   initialize(registry) {
+    function registerBundle(module) {
+      let content = window[module] || {};
+      Object.keys(content).forEach((key) => {
+        if (!registry._resolver.registry._entries[key]) {
+          registry._resolver.registry._entries[key] = content[key];
+        }
+      });
+    }
+
     class LazyRegistration {
       public static create() {
-        return new LazyRegistration(registry);
+        return new LazyRegistration();
       }
 
-      constructor(theRegistry) {
-        this.registry = theRegistry;
-      }
-
-      public register(key, content) {
-        this.registry._resolver.registry._entries[key] = content;
+      public registerBundle(module) {
+        registerBundle(module);
       }
     }
+
+    document.querySelectorAll('[data-shoebox]').forEach((shoebox) => {
+      let module = shoebox.dataset.shoeboxBundle;
+      registerBundle(module);
+    });
 
     registry.register(
       `utils:/${app.rootName}/lazy-registration/main`,
