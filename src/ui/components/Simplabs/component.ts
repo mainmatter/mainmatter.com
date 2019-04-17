@@ -17,6 +17,8 @@ export default class Simplabs extends Component {
 
   private appState: IAppState;
 
+  private lazyRegistration: ILazyRegistration;
+
   @tracked
   private activeComponent: string = null;
 
@@ -45,14 +47,19 @@ export default class Simplabs extends Component {
     Object.keys(this.routesMap).forEach((path) => {
       let { component, bundle, parentBundle } = this.routesMap[path];
       let options = {};
-      if (bundle) {
+      if (bundle && !this.appState.isSSR) {
         options.before = async (done) => {
           await this._loadBundle(bundle, parentBundle);
           this._registerContent(bundle);
           done();
         };
       }
-      this.router.on(path, () => this.activeComponent = component, options);
+      this.router.on(path, () => {
+        if (bundle && this.appState.isSSR) {
+          this._injectBundle(bundle);
+        }
+        this.activeComponent = component;
+      }, options);
     });
     this.router.resolve(this.appState.route);
   }
@@ -61,7 +68,7 @@ export default class Simplabs extends Component {
     if (!this.appState.isSSR) {
       document.addEventListener('click', async (event: Event) => {
         let target = event.target as HTMLElement;
-      
+
         if (target.tagName === 'A' && target.dataset.internal !== undefined) {
           event.preventDefault();
           this.router.navigate(target.getAttribute('href'));
@@ -97,7 +104,7 @@ export default class Simplabs extends Component {
   private _registerContent(bundle) {
     let content = window[bundle.module] || {};
     Object.keys(content).forEach((key) => {
-      window.__lazyRegister__(key, content[key])
+      this.lazyRegistration.register(key, content[key]);
     });
   }
 
@@ -110,5 +117,11 @@ export default class Simplabs extends Component {
     window.clearInterval(this._loadingProgressInterval);
     this.loadingProgress = 100;
     window.setTimeout(() => this.isLoading = false, 150);
+  }
+
+  private _injectBundle(bundle) {
+    let script = this.document.createElement('script');
+    script.setAttribute('src', bundle.asset);
+    this.document.body.appendChild(script);
   }
 }

@@ -5,7 +5,7 @@ import App from './main';
 
 const containerElement = document.getElementById('app');
 const hasSSRBody = !!document.querySelector('[data-has-ssr-response]');
-const app = new App({ hasSSRBody });
+const app = new App({ hasSSRBody, element: containerElement });
 
 setPropertyDidChange(() => {
   app.scheduleRerender();
@@ -13,9 +13,29 @@ setPropertyDidChange(() => {
 
 app.registerInitializer({
   initialize(registry) {
-    window.__lazyRegister__ = function(key, content) {
-      registry._resolver.registry._entries[key] = content;
-    };
+    class LazyRegistration {
+      public static create() {
+        return new LazyRegistration(registry);
+      }
+
+      constructor(theRegistry) {
+        this.registry = theRegistry;
+      }
+
+      public register(key, content) {
+        this.registry._resolver.registry._entries[key] = content;
+      }
+    }
+
+    registry.register(
+      `utils:/${app.rootName}/lazy-registration/main`,
+      LazyRegistration
+    );
+    registry.registerInjection(
+      `component:/${app.rootName}/components/Simplabs`,
+      'lazyRegistration',
+      `utils:/${app.rootName}/lazy-registration/main`,
+    );
   }
 });
 

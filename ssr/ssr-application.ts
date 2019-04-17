@@ -76,7 +76,13 @@ export default class SSRApplication extends Application {
         );
         registry.registerInjection(
           `component:/${rootName}/components/Simplabs`,
-          'appState', `app-state:/${rootName}/main/main`
+          'appState',
+          `app-state:/${rootName}/main/main`
+        );
+        registry.registerInjection(
+          `component:/${rootName}/components/Simplabs`,
+          'document',
+          `document:/${rootName}/main/main`
         );
         registry.register(
           `component-manager:/${rootName}/component-managers/main`,
@@ -121,6 +127,6 @@ export default class SSRApplication extends Application {
       throw err;
     }
 
-    return this.serializer.serializeChildren(this.element);
+    return this.serializer.serializeChildren(this.document.body);
   }
 }
