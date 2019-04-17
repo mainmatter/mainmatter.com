@@ -66,7 +66,7 @@ export default class Simplabs extends Component {
 
   private _bindInternalLinks() {
     if (!this.appState.isSSR) {
-      document.addEventListener('click', async (event: Event) => {
+      document.addEventListener('click', (event: Event) => {
         let target = event.target as HTMLElement;
 
         if (target.tagName === 'A' && target.dataset.internal !== undefined) {
