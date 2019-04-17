@@ -71,10 +71,24 @@ class SimplabsApp extends GlimmerApp {
   }
 
   package(jsTree) {
-    let [mainSiteTree, blogTree, ...blogPostTrees] = this._splitBlogTree(jsTree);
+    let [mainSiteTree, blogTree] = this._splitBundle(jsTree, {
+      componentPrefix: 'Blog',
+      file: 'blog.js',
+      moduleName: '__blog__',
+    });
+
+    let blogPosts = collectPosts(path.join(__dirname, '_posts'));
+    let blogPostTrees = blogPosts.map(post => {
+      let [_, blogPostTree] = this._splitBundle(jsTree, {
+        componentPrefix: post.componentName,
+        file: `blog-${post.queryPath}.js`,
+        moduleName: `__blog-${post.queryPath}__`,
+      });
+      return blogPostTree;
+    });
+
     let appTree = super.package(mainSiteTree);
-    let blogContentTree = this._packageBlog(blogTree);
-    let mainTree = new MergeTrees([appTree, blogContentTree, ...blogPostTrees]);
+    let mainTree = new MergeTrees([appTree, blogTree, ...blogPostTrees]);
 
     if (process.env.PRERENDER) {
       let ssrTree = this._packageSSR();
@@ -83,49 +97,6 @@ class SimplabsApp extends GlimmerApp {
     } else {
       return mainTree;
     }
-  }
-
-  _splitBlogTree(tree) {
-    let mainSiteTree = new Funnel(tree, {
-      exclude: ['src/ui/components/Blog*'],
-    });
-    let mainSiteJsTree = new Funnel(mainSiteTree, {
-      exclude: ['src/ui/components/**/*.hbs'],
-    });
-    let mainSiteModuleMap = this.buildResolutionMap(mainSiteJsTree);
-    mainSiteTree = new MergeTrees([mainSiteTree, mainSiteModuleMap], { overwrite: true });
-
-    let blogTree = new Funnel(tree, {
-      exclude: ['src/ui/components/!(Blog)*'],
-    });
-    let blogJsTree = new Funnel(blogTree, {
-      exclude: ['src/ui/components/**/*.hbs'],
-    });
-    let blogModuleMap = this.buildResolutionMap(blogJsTree);
-    blogTree = new MergeTrees([blogTree, blogModuleMap], { overwrite: true });
-
-    let blogPosts = collectPosts(path.join(__dirname, '_posts'));
-    let blogPostTrees = blogPosts.map((post) => {
-      let postTree = new Funnel(tree, {
-        include: [`src/ui/components/${post.componentName}/*.js`],
-      });
-      let postModuleMap = this.buildResolutionMap(postTree);
-      postTree = new MergeTrees([postTree, postModuleMap], { overwrite: true });
-      return new Rollup(postTree, {
-        rollup: {
-          input: 'config/module-map.js',
-          output: {
-            file: `blog-${post.queryPath}.js`,
-            name: `__blog-${post.queryPath}__`,
-            format: 'umd',
-            sourcemap: this.options.sourcemaps.enabled,
-          },
-          plugins: [resolve({ jsnext: true, module: true, main: true }), commonjs()],
-        },
-      });
-    });
-
-    return [mainSiteTree, blogTree, ...blogPostTrees];
   }
 
   _packageSSR() {
@@ -154,13 +125,36 @@ class SimplabsApp extends GlimmerApp {
     });
   }
 
-  _packageBlog(blogTree) {
-    return new Rollup(blogTree, {
+  _splitBundle(appTree, bundle) {
+    let mainBundleTree = new Funnel(appTree, {
+      exclude: [`src/ui/components/${bundle.componentPrefix}*`],
+    });
+    let mainBundleJsTree = new Funnel(mainBundleTree, {
+      include: ['**/*.js'],
+    });
+    let mainBundleModuleMap = this.buildResolutionMap(mainBundleJsTree);
+    mainBundleTree = new MergeTrees([mainBundleTree, mainBundleModuleMap], { overwrite: true });
+
+    let bundleTree = new Funnel(appTree, {
+      exclude: [`src/ui/components/!(${bundle.componentPrefix})*`],
+    });
+    let bundleJsTree = new Funnel(bundleTree, {
+      include: ['**/*.js'],
+    });
+    let bundleModuleMap = this.buildResolutionMap(bundleJsTree);
+    bundleTree = new MergeTrees([bundleTree, bundleModuleMap], { overwrite: true });
+    bundleTree = this._packageSplitBundle(bundleTree, bundle);
+
+    return [mainBundleTree, bundleTree];
+  }
+
+  _packageSplitBundle(bundleTree, bundle) {
+    return new Rollup(bundleTree, {
       rollup: {
         input: 'config/module-map.js',
         output: {
-          file: 'blog.js',
-          name: '__blog__',
+          file: bundle.file,
+          name: bundle.moduleName,
           format: 'umd',
           sourcemap: this.options.sourcemaps.enabled,
         },
