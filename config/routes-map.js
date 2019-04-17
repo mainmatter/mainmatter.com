@@ -14,8 +14,8 @@ module.exports = function() {
         module: `__blog-${post.queryPath}__`,
       },
       parentBundle: {
-        asset: '/blog.js'
-      }
+        asset: '/blog.js',
+      },
     };
     return acc;
   }, {});

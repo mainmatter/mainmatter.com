@@ -71,7 +71,7 @@ class SimplabsApp extends GlimmerApp {
   }
 
   package(jsTree) {
-    let [mainSiteTree, blogTree] = this._splitBundle(jsTree, {
+    let [blogTree, mainSiteTree] = this._splitBundle(jsTree, {
       componentPrefix: 'Blog',
       file: 'blog.js',
       moduleName: '__blog__',
@@ -79,7 +79,7 @@ class SimplabsApp extends GlimmerApp {
 
     let blogPosts = collectPosts(path.join(__dirname, '_posts'));
     let blogPostTrees = blogPosts.map(post => {
-      let [_, blogPostTree] = this._splitBundle(jsTree, {
+      let [blogPostTree] = this._splitBundle(jsTree, {
         componentPrefix: post.componentName,
         file: `blog-${post.queryPath}.js`,
         moduleName: `__blog-${post.queryPath}__`,
@@ -145,7 +145,7 @@ class SimplabsApp extends GlimmerApp {
     bundleTree = new MergeTrees([bundleTree, bundleModuleMap], { overwrite: true });
     bundleTree = this._packageSplitBundle(bundleTree, bundle);
 
-    return [mainBundleTree, bundleTree];
+    return [bundleTree, mainBundleTree];
   }
 
   _packageSplitBundle(bundleTree, bundle) {
