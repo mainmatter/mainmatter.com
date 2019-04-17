@@ -1,9 +1,12 @@
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
+@block screen from "../../styles/blocks/screen.block.css";
 
 :scope {
   block-name: footer;
+  composes: 'screen.container';
+
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-between;
   font-size: 2rem;
 }
@@ -19,22 +22,36 @@
   margin-bottom: 2rem;
 }
 
-.menu {
-  flex-shrink: 0;
-  display: block;
-  margin-top: 0.6rem;
+.nav {
+  width: var(--col-4);
+  display: grid;
+  grid-template-columns: repeat(4, fit-content(var(--col-1)));
+  grid-template-rows: 5rem 1fr;
+  justify-content: space-between;
 }
 
-.menu-title {
-  display: block;
-  font-weight: bold;
+.title {
+  grid-row: 1/2;
+  font-size: 2rem;
+  line-height: 1.5;
+  font-weight: 700;
   color: #000;
-  margin: 1.5rem 0 3rem;
+  margin: 1.5rem 0 2rem;
 }
 
-.menu-link {
+.items {
+  grid-row: 2/-1;
+  flex: 1 0;
+  margin: 0 0 6.5rem;
+}
+
+.item {
+  padding: 0.5rem 0;
+}
+
+.link {
   display: block;
   text-decoration: none;
   color: #000;
-  margin: 2rem 0;
+  padding: 0.5rem 0;
 }
