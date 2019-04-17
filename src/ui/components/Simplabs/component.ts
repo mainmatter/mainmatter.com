@@ -20,6 +20,12 @@ export default class Simplabs extends Component {
   @tracked
   private activeComponent: string = null;
 
+  @tracked
+  private isLoading: boolean = false;
+
+  @tracked
+  private loadingProgress: number = 0;
+
   constructor(options) {
     super(options);
 
@@ -71,7 +77,10 @@ export default class Simplabs extends Component {
       }
 
       let script = document.createElement('script');
-      script.onload = resolve;
+      script.onload = () => {
+        this._stopLoader();
+        resolve();
+      };
       script.onerror = function(error) {
         if (this.parentNode) {
           this.parentNode.removeChild(this);
@@ -80,8 +89,8 @@ export default class Simplabs extends Component {
       };
       script.src = bundle.asset;
       script.async = false;
-      
       document.head.appendChild(script);
+      this._startLoader();
     });
   }
 
@@ -90,5 +99,16 @@ export default class Simplabs extends Component {
     Object.keys(content).forEach((key) => {
       window.__lazyRegister__(key, content[key])
     });
+  }
+
+  private _startLoader() {
+    this.isLoading = true;
+    this._loadingProgressInterval = window.setInterval(() => this.loadingProgress = Math.min(this.loadingProgress + 10, 100), 150);
+  }
+
+  private _stopLoader() {
+    window.clearInterval(this._loadingProgressInterval);
+    this.loadingProgress = 100;
+    window.setTimeout(() => this.isLoading = false, 150);
   }
 }
