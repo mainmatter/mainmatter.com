@@ -39,6 +39,7 @@ export default class Simplabs extends Component {
 
     this._setupRouting();
     this._bindInternalLinks();
+    this._restoreActiveComponentState();
   }
 
   private _setupRouting() {
@@ -55,10 +56,13 @@ export default class Simplabs extends Component {
         };
       }
       this.router.on(path, () => {
-        if (bundle && this.appState.isSSR) {
-          this._injectBundle(bundle);
-        }
         this.activeComponent = component;
+        if (this.appState.isSSR) {
+          if (bundle) {
+            this._injectBundle(bundle);
+          }
+          this._injectActiveComponentState();
+        }
       }, options);
     });
     this.router.resolve(this.appState.route);
@@ -122,5 +126,21 @@ export default class Simplabs extends Component {
     script.setAttribute('data-shoebox', true);
     script.setAttribute('data-shoebox-bundle', bundle.module);
     this.document.body.appendChild(script);
+  }
+
+  private _injectActiveComponentState() {
+    let script = this.document.createElement('script');
+    script.setAttribute('data-shoebox', true);
+    script.setAttribute('data-shoebox-active-component', this.activeComponent);
+    this.document.body.appendChild(script);
+  }
+
+  private _restoreActiveComponentState() {
+    if (!this.appState.isSSR) {
+      let script = document.querySelector('[data-shoebox-active-component]');
+      if (script) {
+        this.activeComponent = script.dataset.shoeboxActiveComponent;
+      }
+    }
   }
 }
