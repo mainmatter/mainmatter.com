@@ -5,7 +5,9 @@
 
 :scope {
   block-name: full-stack-service;
+
   --shape-text-position-right: -40em;
+  --link-color: #fff;
 }
 
 .background {
@@ -21,11 +23,4 @@
 .caption {
   background-color: resolve("shape-text.background");
   background-color: #007DF6;
-}
-
-.link {
-  color: resolve("typography.arrow-link");
-  color: #FFF;
-  background-image: resolve("typography.arrow-link");
-  background-image: url("/assets/images/long-arrow-white-right.svg");
 }
