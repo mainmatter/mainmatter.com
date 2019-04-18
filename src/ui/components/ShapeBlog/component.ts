@@ -1,3 +1,3 @@
 import ShapeBase from '../ShapeBase/component';
 
-export default class Blog extends ShapeBase {}
+export default class ShapeBlog extends ShapeBase {}
