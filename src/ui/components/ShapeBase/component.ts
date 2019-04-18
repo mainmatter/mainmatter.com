@@ -8,7 +8,7 @@ export default class ShapeBase extends Component {
 
     this.shapeId = Math.random()
       .toString(36)
-      .substr(2, 5);
+      .substr(2);
   }
 
   get shapeStyle() {
