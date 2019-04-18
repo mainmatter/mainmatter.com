@@ -13,6 +13,7 @@ const typescript = require('broccoli-typescript-compiler').default;
 const glob = require('glob');
 const commonjs = require('rollup-plugin-commonjs');
 const resolve = require('rollup-plugin-node-resolve');
+const collectPosts = require('./lib/generate-blog-components/lib/collect-posts');
 
 function findAllComponents() {
   let routes = require('./config/routes-map')();
@@ -69,7 +70,36 @@ class SimplabsApp extends GlimmerApp {
     return cssTree;
   }
 
-  packageSSR() {
+  package(jsTree) {
+    let [blogTree, mainSiteTree] = this._splitBundle(jsTree, {
+      componentPrefix: 'Blog',
+      file: 'blog.js',
+      moduleName: '__blog__',
+    });
+
+    let blogPosts = collectPosts(path.join(__dirname, '_posts'));
+    let blogPostTrees = blogPosts.map(post => {
+      let [blogPostTree] = this._splitBundle(jsTree, {
+        componentPrefix: post.componentName,
+        file: `blog-${post.queryPath}.js`,
+        moduleName: `__blog-${post.queryPath}__`,
+      });
+      return blogPostTree;
+    });
+
+    let appTree = super.package(mainSiteTree);
+    let mainTree = new MergeTrees([appTree, blogTree, ...blogPostTrees]);
+
+    if (process.env.PRERENDER) {
+      let ssrTree = this._packageSSR();
+
+      return new MergeTrees([mainTree, ssrTree]);
+    } else {
+      return mainTree;
+    }
+  }
+
+  _packageSSR() {
     let jsTree = new Funnel(this.javascriptTree(), {
       exclude: ['src/index.js'],
     });
@@ -95,16 +125,42 @@ class SimplabsApp extends GlimmerApp {
     });
   }
 
-  package() {
-    let appTree = super.package(...arguments);
+  _splitBundle(appTree, bundle) {
+    let mainBundleTree = new Funnel(appTree, {
+      exclude: [`src/ui/components/${bundle.componentPrefix}*`],
+    });
+    let mainBundleJsTree = new Funnel(mainBundleTree, {
+      include: ['**/*.js'],
+    });
+    let mainBundleModuleMap = this.buildResolutionMap(mainBundleJsTree);
+    mainBundleTree = new MergeTrees([mainBundleTree, mainBundleModuleMap], { overwrite: true });
 
-    if (process.env.PRERENDER) {
-      let ssrTree = this.packageSSR();
+    let bundleTree = new Funnel(appTree, {
+      exclude: [`src/ui/components/!(${bundle.componentPrefix})*`],
+    });
+    let bundleJsTree = new Funnel(bundleTree, {
+      include: ['**/*.js'],
+    });
+    let bundleModuleMap = this.buildResolutionMap(bundleJsTree);
+    bundleTree = new MergeTrees([bundleTree, bundleModuleMap], { overwrite: true });
+    bundleTree = this._packageSplitBundle(bundleTree, bundle);
 
-      return new MergeTrees([appTree, ssrTree]);
-    } else {
-      return appTree;
-    }
+    return [bundleTree, mainBundleTree];
+  }
+
+  _packageSplitBundle(bundleTree, bundle) {
+    return new Rollup(bundleTree, {
+      rollup: {
+        input: 'config/module-map.js',
+        output: {
+          file: bundle.file,
+          name: bundle.moduleName,
+          format: 'umd',
+          sourcemap: this.options.sourcemaps.enabled,
+        },
+        plugins: [resolve({ jsnext: true, module: true, main: true }), commonjs()],
+      },
+    });
   }
 }
 

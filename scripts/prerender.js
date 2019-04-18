@@ -52,10 +52,9 @@ let server = express();
 server.get('*', async function(req, res, next) {
   if (req.headers.accept && req.headers.accept.includes('text/html')) {
     let origin = `${req.protocol}://${req.headers.host}`;
-    let app = await renderer.render(origin, req.url);
-    let body = `<div id="app">${app}</div>`;
-    body = HTML.replace('<div id="app"></div>', body);
-    res.send(body);
+    let body = await renderer.render(origin, req.url);
+    let html = HTML.replace('<div id="app"></div>', body);
+    res.send(html);
   } else {
     next();
   }

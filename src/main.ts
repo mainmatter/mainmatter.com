@@ -4,10 +4,9 @@ import moduleMap from '../config/module-map';
 import resolverConfiguration from '../config/resolver-configuration';
 
 export default class App extends Application {
-  constructor({ hasSSRBody = false }) {
+  constructor({ hasSSRBody = false, element }) {
     let moduleRegistry = new BasicModuleRegistry(moduleMap);
     let resolver = new Resolver(resolverConfiguration, moduleRegistry);
-    const element = document.body;
 
     const BuilderType = hasSSRBody ? RehydratingBuilder : DOMBuilder;
 

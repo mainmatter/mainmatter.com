@@ -23,6 +23,7 @@ export default class GlimmerRenderer {
 
     const mountEl = document.createElement('div');
     mountEl.setAttribute('id', 'app');
+    document.body.appendChild(mountEl);
     let renderer = new SyncRenderer();
     let builder = new SerializingBuilder({ element: document.body as any as Element, nextSibling: null });
 

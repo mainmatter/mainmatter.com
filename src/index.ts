@@ -5,10 +5,48 @@ import App from './main';
 
 const containerElement = document.getElementById('app');
 const hasSSRBody = !!document.querySelector('[data-has-ssr-response]');
-const app = new App({ hasSSRBody });
+const app = new App({ hasSSRBody, element: containerElement });
 
 setPropertyDidChange(() => {
   app.scheduleRerender();
+});
+
+app.registerInitializer({
+  initialize(registry) {
+    function registerBundle(module) {
+      let content = window[module] || {};
+      Object.keys(content).forEach((key) => {
+        if (!registry._resolver.registry._entries[key]) {
+          registry._resolver.registry._entries[key] = content[key];
+        }
+      });
+    }
+
+    class LazyRegistration {
+      public static create() {
+        return new LazyRegistration();
+      }
+
+      public registerBundle(module) {
+        registerBundle(module);
+      }
+    }
+
+    document.querySelectorAll('[data-shoebox]').forEach((shoebox) => {
+      let module = shoebox.dataset.shoeboxBundle;
+      registerBundle(module);
+    });
+
+    registry.register(
+      `utils:/${app.rootName}/lazy-registration/main`,
+      LazyRegistration
+    );
+    registry.registerInjection(
+      `component:/${app.rootName}/components/Simplabs`,
+      'lazyRegistration',
+      `utils:/${app.rootName}/lazy-registration/main`,
+    );
+  }
 });
 
 app.registerInitializer({

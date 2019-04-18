@@ -1,4 +1,5 @@
 import Component, { tracked } from '@glimmer/component';
+import { getOwner } from '@glimmer/di';
 import Navigo from 'navigo';
 
 interface IRoutesMap {
@@ -16,8 +17,16 @@ export default class Simplabs extends Component {
 
   private appState: IAppState;
 
+  private lazyRegistration: ILazyRegistration;
+
   @tracked
-  private activeComponent: string;
+  private activeComponent: string = null;
+
+  @tracked
+  private isLoading: boolean = false;
+
+  @tracked
+  private loadingProgress: number = 0;
 
   constructor(options) {
     super(options);
@@ -30,14 +39,31 @@ export default class Simplabs extends Component {
 
     this._setupRouting();
     this._bindInternalLinks();
+    this._restoreActiveComponentState();
   }
 
   private _setupRouting() {
     this.router = new Navigo(this.appState.origin);
 
     Object.keys(this.routesMap).forEach((path) => {
-      let { component } = this.routesMap[path];
-      this.router.on(path, () => this.activeComponent = component);
+      let { component, bundle, parentBundle } = this.routesMap[path];
+      let options = {};
+      if (bundle && !this.appState.isSSR) {
+        options.before = async (done) => {
+          await this._loadBundle(bundle, parentBundle);
+          this._registerBundle(bundle);
+          done();
+        };
+      }
+      this.router.on(path, () => {
+        this.activeComponent = component;
+        if (this.appState.isSSR) {
+          if (bundle) {
+            this._injectBundle(bundle);
+          }
+          this._injectActiveComponentState();
+        }
+      }, options);
     });
     this.router.resolve(this.appState.route);
   }
@@ -45,13 +71,76 @@ export default class Simplabs extends Component {
   private _bindInternalLinks() {
     if (!this.appState.isSSR) {
       document.addEventListener('click', (event: Event) => {
-        const target = event.target as HTMLElement;
-      
+        let target = event.target as HTMLElement;
+
         if (target.tagName === 'A' && target.dataset.internal !== undefined) {
           event.preventDefault();
           this.router.navigate(target.getAttribute('href'));
         }
       });
+    }
+  }
+
+  private async _loadBundle(bundle, parentBundle) {
+    await new Promise((resolve, reject) => {
+      if (document.querySelector(`script[src="${bundle.asset}"]`) || (parentBundle && document.querySelector(`script[src="${parentBundle.asset}"]`))) {
+        return resolve();
+      }
+
+      let script = document.createElement('script');
+      script.onload = () => {
+        this._stopLoader();
+        resolve();
+      };
+      script.onerror = function(error) {
+        if (this.parentNode) {
+          this.parentNode.removeChild(this);
+        }
+        reject(error);
+      };
+      script.src = bundle.asset;
+      script.async = false;
+      document.head.appendChild(script);
+      this._startLoader();
+    });
+  }
+
+  private _registerBundle(bundle) {
+    this.lazyRegistration.registerBundle(bundle.module);
+  }
+
+  private _startLoader() {
+    this.isLoading = true;
+    this._loadingProgressInterval = window.setInterval(() => this.loadingProgress = Math.min(this.loadingProgress + 10, 100), 150);
+  }
+
+  private _stopLoader() {
+    window.clearInterval(this._loadingProgressInterval);
+    this.loadingProgress = 100;
+    window.setTimeout(() => this.isLoading = false, 150);
+  }
+
+  private _injectBundle(bundle) {
+    let script = this.document.createElement('script');
+    script.setAttribute('src', bundle.asset);
+    script.setAttribute('data-shoebox', true);
+    script.setAttribute('data-shoebox-bundle', bundle.module);
+    this.document.body.appendChild(script);
+  }
+
+  private _injectActiveComponentState() {
+    let script = this.document.createElement('script');
+    script.setAttribute('data-shoebox', true);
+    script.setAttribute('data-shoebox-active-component', this.activeComponent);
+    this.document.body.appendChild(script);
+  }
+
+  private _restoreActiveComponentState() {
+    if (!this.appState.isSSR) {
+      let script = document.querySelector('[data-shoebox-active-component]');
+      if (script) {
+        this.activeComponent = script.dataset.shoeboxActiveComponent;
+      }
     }
   }
 }

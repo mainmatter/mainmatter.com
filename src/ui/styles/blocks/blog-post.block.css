@@ -3,6 +3,9 @@
 :scope {
   block-name: blog-post;
   extends: screen;
+  --accent-color: #007df6;
+  --shape-decoration-position-right: -92em;
+  --shape-decoration-position-top: -20em;
 }
 
 .logo {
