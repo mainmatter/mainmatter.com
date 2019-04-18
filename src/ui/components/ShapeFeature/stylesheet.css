@@ -1,0 +1,51 @@
+@block screen from "../../styles/blocks/screen.block.css";
+@block fluid-image from "../../styles/blocks/fluid-image.block.css";
+
+:scope {
+  position: relative;
+  margin-top: 21rem;
+  padding: 28rem 0 8rem;
+  min-height: 58rem;
+
+  --shape-color: var(--link-color);
+}
+
+.bottom,
+.top {
+  position: absolute;
+  left: 50%;
+  display: block;
+  width: 225rem;
+  height: auto;
+  fill: var(--shape-color);
+}
+
+.top {
+  transform: translate(20%, -60rem);
+}
+
+.bottom {
+  top: -26rem;
+  left: 50%;
+  transform: translate(-90%);
+  width: 225rem;
+  height: auto;
+}
+
+.container {
+  composes: 'screen.container';
+
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.img {
+  margin-top: -28rem;
+  max-width: var(--col-3);
+}
+
+.content {
+  width: var(--col-2);
+}

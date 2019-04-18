@@ -3,7 +3,7 @@
     <div class="container">
       <Navigation />
     </div>
-    <Shape @type="blog" @title="Blog">
+    <ShapeBlog @title="Blog">
       <article>
         <p>
           #{{latest.topic}}
@@ -16,11 +16,11 @@
         <p class="typography.lead">
           {{{latest.excerpt}}}
         </p>
-        <Link @arrow=true @href="{{latest.path}}">
+        <ArrowLink @href="{{latest.path}}">
           Read Post
-        </Link>
+        </ArrowLink>
       </article>
-    </Shape>
+    </ShapeBlog>
     <div class="container">
       <div class="main-block">
         <div class="main-block.content">

@@ -4,7 +4,7 @@
   position: relative;
   display: inline-block;
   padding: 1.5rem 7rem 1.5rem 0;
-  color: var(--link-color);
+  color: var(--color-link);
   font-size: 3rem;
   line-height: 1.5;
   text-decoration: none;
@@ -23,5 +23,5 @@
 }
 
 .arrow {
-  fill: var(--link-color);
+  fill: var(--color-link);
 }

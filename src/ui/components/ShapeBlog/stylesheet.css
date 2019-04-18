@@ -1,0 +1,46 @@
+@block typography from "../../styles/blocks/typography.block.css";
+@block screen from "../../styles/blocks/screen.block.css";
+
+:scope {
+  block-name: ShapeBlog;
+
+  position: relative;
+  width: 100%;
+  padding: 21rem 0 36rem;
+
+  --shape-color: var(--link-color);
+}
+
+.bottom,
+.top {
+  position: absolute;
+  left: 50%;
+  display: block;
+  width: 225rem;
+  height: auto;
+  fill: var(--shape-color);
+}
+
+.bottom {
+  bottom: 0;
+  transform: translate(-120%, 27rem);
+}
+
+.top {
+  top: 8rem;
+  transform: translate(-1%);
+}
+
+.container {
+  composes: 'screen.container';
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  width: var(--col-3);
+}
+
+.title {
+  padding-bottom: 22rem;
+}

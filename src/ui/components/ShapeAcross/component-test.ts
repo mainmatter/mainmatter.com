@@ -4,7 +4,7 @@ import { setupRenderingTest } from '../../../utils/test-helpers/setup-rendering-
 
 const { module, test } = QUnit;
 
-module('Component: Shape', function(hooks) {
+module('Component: ShapeAcross', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
@@ -17,7 +17,7 @@ module('Component: Shape', function(hooks) {
      * ```
      * this.foo = { foo: '123' };
      *
-     * await render(hbs`<Shape @foo={{this.foo}} />`)
+     * await render(hbs`<ShapeAcross @foo={{this.foo}} />`)
      *
      * // or
      *
@@ -27,7 +27,7 @@ module('Component: Shape', function(hooks) {
      * assert.dom('p').text('bar');
      * ```
      */
-    await render(hbs`<Shape />`);
+    await render(hbs`<ShapeAcross />`);
     assert.ok(this.containerElement.querySelector('div'));
   });
 });
