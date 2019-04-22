@@ -1,0 +1,60 @@
+@block screen from "../../styles/blocks/screen.block.css";
+
+:scope {
+  block-name: ShapeCenter;
+
+  position: relative;
+  min-height: 112rem;
+  margin-bottom: 6rem;
+
+  --shape-color: var(--color-accent);
+}
+
+.top,
+.bottom {
+  position: absolute;
+  left: 50%;
+  width: 225rem;
+  height: auto;
+  fill: var(--shape-color);
+}
+
+.top {
+  top: 8rem;
+  transform: translate(20rem);
+}
+.bottom {
+  transform: translate(-50%);
+}
+
+.bg {
+  fill: var(--shape-color);
+}
+
+.container {
+  composes: 'screen.container';
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.content {
+  width: calc(var(--col-1) + 6vw);
+  min-height: 100%;
+  padding-top: 49rem;
+  text-align: right;
+
+  --color-link: var(--color-link-inverted);
+}
+
+.logo {
+  position: absolute;
+  top: 98rem;
+  left: 3rem;
+}
+
+.logo-img {
+  display: block;
+  height: 4rem;
+  width: auto;
+}

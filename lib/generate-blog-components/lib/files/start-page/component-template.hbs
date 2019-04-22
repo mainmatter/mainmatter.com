@@ -2,45 +2,25 @@
   <div class="contents">
     <div class="container">
       <Navigation />
-      <div class="header-block">
-        <h1 class="typography.display">
-          Blog
-        </h1>
-      </div>
-      <div class="shape.wrap">
-        <div class="shape-decoration">
-          <div class="shape-decoration.background"></div>
-          <!--background-->
-        </div>
-        <!--shape-image-->
-        <div class="shape.caption-large">
-          <div class="shape.caption-content-large">
-            <p class="typography.small-text">
-              Latest Post
-            </p>
-            <h2 class="typography.headline-1">
-              <a href="{{latest.path}}" class="typography.title-link" data-internal>
-                {{latest.title}}
-              </a>
-            </h2>
-            <p class="typography.lead">
-              {{{latest.excerpt}}}
-            </p>
-            <ArrowLink @href="{{latest.path}}">
-              Read Post
-            </ArrowLink>
-          </div>
-        </div>
-        <!--caption-->
-        <div class="shape-text">
-          <div class="shape-text.background">
-            <div class="shape-text.content"></div>
-          </div>
-        </div>
-        <!--shape-text-->
-      </div>
-      <!--shape-wrap-->
     </div>
+    <ShapeBlog @title="Blog">
+      <article>
+        <p>
+          #{{latest.topic}}
+        </p>
+        <h2 class="typography.headline-1">
+          <a href="{{latest.path}}" class="typography.title-link" data-internal>
+            {{latest.title}}
+          </a>
+        </h2>
+        <p class="typography.lead">
+          {{{latest.excerpt}}}
+        </p>
+        <ArrowLink @href="{{latest.path}}">
+          Read Post
+        </ArrowLink>
+      </article>
+    </ShapeBlog>
     <div class="container">
       <div class="main-block">
         <div class="main-block.content">
