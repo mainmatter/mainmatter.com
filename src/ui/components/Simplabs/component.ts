@@ -2,26 +2,13 @@ import Component, { tracked } from '@glimmer/component';
 import { getOwner } from '@glimmer/di';
 import Navigo from 'navigo';
 
-interface IRoutesMap {
-  [route: string]: {
-    component: string;
-    title: string;
-    bundle: string;
-    parentBundle: string;
-  };
-}
-
 interface INavigoHooks {
   before?: (done: () => void) => void;
   after?: () => void;
 }
 
-declare const __ROUTES_MAP__: IRoutesMap;
-
 export default class Simplabs extends Component {
   private router: Navigo;
-
-  private routesMap: IRoutesMap = __ROUTES_MAP__;
 
   private appState: IAppState;
 
@@ -47,6 +34,7 @@ export default class Simplabs extends Component {
       isSSR: false,
       origin: window.location.origin,
       route: window.location.pathname,
+      routesMap: this._readRoutesMap()
     };
 
     this._setupRouting();
@@ -57,8 +45,8 @@ export default class Simplabs extends Component {
   private _setupRouting() {
     this.router = new Navigo(this.appState.origin);
 
-    Object.keys(this.routesMap).forEach(path => {
-      let { component, title = '', bundle, parentBundle } = this.routesMap[path];
+    Object.keys(this.appState.routesMap).forEach((path) => {
+      let { component, title = '', bundle, parentBundle } = this.appState.routesMap[path];
       let options: INavigoHooks = {
         after: () => this._setPageTitle(title),
       };
@@ -174,6 +162,13 @@ export default class Simplabs extends Component {
       if (script) {
         this.activeComponent = script.dataset.shoeboxActiveComponent;
       }
+    }
+  }
+
+  private _readRoutesMap() {
+    let script = document.querySelector('[data-shoebox-routes]');
+    if (script) {
+      return JSON.parse(script.innerText);
     }
   }
 }
