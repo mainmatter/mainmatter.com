@@ -49,7 +49,7 @@ class SimplabsApp extends GlimmerApp {
           moduleResolution: 'node',
         },
       },
-      throwOnError: false,
+      throwOnError: process.env.NODE_ENV === 'production',
     });
   }
 
