@@ -52,8 +52,8 @@ let server = express();
 server.get('*', async function(req, res, next) {
   if (req.headers.accept && req.headers.accept.includes('text/html')) {
     let origin = `${req.protocol}://${req.headers.host}`;
-    let body = await renderer.render(origin, req.url);
-    let html = HTML.replace('<div id="app"></div>', body);
+    let { body, title } = await renderer.render(origin, req.url);
+    let html = HTML.replace('<div id="app"></div>', body).replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`);
     res.send(html);
   } else {
     next();

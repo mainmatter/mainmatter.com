@@ -18,7 +18,7 @@ export default class GlimmerRenderer {
   // tslint:disable-next-line:no-empty
   constructor() {}
 
-  render(origin: string, route: string): Promise<string> {
+  render(origin: string, route: string): Promise<{ body: string, title: string }> {
     const document = new Document();
 
     const mountEl = document.createElement('div');

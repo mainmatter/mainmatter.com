@@ -97,7 +97,7 @@ export default class SSRApplication extends Application {
   // tslint:disable-next-line:no-empty
   scheduleRerender() {}
 
-  async renderToString(): Promise<string> {
+  async renderToString(): Promise<{ body: string, title: string }> {
     let { env } = this;
 
     let builder = this.builder.getBuilder(env);
@@ -127,6 +127,10 @@ export default class SSRApplication extends Application {
       throw err;
     }
 
-    return this.serializer.serializeChildren(this.document.body);
+    let document = this.document as any;
+    return {
+      body: this.serializer.serializeChildren(document.body) as string,
+      title: document.title as string
+    };
   }
 }
