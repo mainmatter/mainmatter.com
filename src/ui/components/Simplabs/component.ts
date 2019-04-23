@@ -76,6 +76,7 @@ export default class Simplabs extends Component {
         if (target.tagName === 'A' && target.dataset.internal !== undefined) {
           event.preventDefault();
           this.router.navigate(target.getAttribute('href'));
+          window.scrollTo(0, 0);
         }
       });
     }
