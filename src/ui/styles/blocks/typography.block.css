@@ -38,7 +38,7 @@
   color: var(--color-muted);
   display: block;
   margin: 0 0 2rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   text-transform: uppercase;
 }
@@ -61,10 +61,7 @@
 .body-text {
   font-size: 2.5rem;
   line-height: 1.6;
-}
-
-.body-text + .body-text {
-  margin-top: 5rem;
+  margin-bottom: 3rem;
 }
 
 .link {
@@ -80,4 +77,11 @@
 .title-link:hover {
   color: var(--link-color);
   text-decoration: none;
+}
+
+.tag {
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
+  color: var(--link-color);
 }

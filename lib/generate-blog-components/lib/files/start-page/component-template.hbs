@@ -5,15 +5,15 @@
     </div>
     <ShapeBlog @title="Blog">
       <article>
-        <p>
+        <a href="#" class="typography.tag">
           #{{latest.topic}}
-        </p>
+        </a>
         <h2 class="typography.headline-1">
           <a href="{{latest.path}}" class="typography.title-link" data-internal>
             {{latest.title}}
           </a>
         </h2>
-        <p class="typography.lead">
+        <p class="typography.body-text">
           {{{latest.excerpt}}}
         </p>
         <ArrowLink @href="{{latest.path}}">
@@ -28,23 +28,23 @@
             {{#each rest}}
               <div class="main-block.content-section">
                 <div class="main-block.content-section-item">
-                  <div class="tags">
-                    <a class="tag" href="#">
-                      #{{topic}}
-                    </a>
+                  <a class="typography.tag" href="#">
+                    #{{topic}}
+                  </a>
+                  <div class="post-excerpt">
+                    <h3 class="typography.headline-2">
+                      <a class="typography.title-link" href="{{path}}" data-internal>
+                        {{title}}
+                      </a>
+                    </h3>
+                    <p class="typography.body-text">
+                      {{{excerpt}}}
+                    </p>
                   </div>
-                  <h3 class="typography.headline-2">
-                    <a class="typography.title-link" href="{{path}}" data-internal>
-                      {{title}}
-                    </a>
-                  </h3>
-                  <p class="typography.body-text">
-                    {{{excerpt}}}
-                  </p>
-                  <a href="#">
+                  <a class="typography.link" href="#">
                     {{author.name}}
                   </a>
-                  <p>
+                  <p class="typography.small-text">
                     {{date}}
                   </p>
                 </div>
