@@ -5,7 +5,15 @@ import Navigo from 'navigo';
 interface IRoutesMap {
   [route: string]: {
     component: string;
+    title: string;
+    bundle: string;
+    parentBundle: string;
   };
+}
+
+interface INavigoHooks {
+  before?: (done: () => void) => void;
+  after?: () => void;
 }
 
 declare const __ROUTES_MAP__: IRoutesMap;
@@ -18,6 +26,10 @@ export default class Simplabs extends Component {
   private appState: IAppState;
 
   private lazyRegistration: ILazyRegistration;
+
+  private document: HTMLDocument;
+
+  private loadingProgressInterval: number;
 
   @tracked
   private activeComponent: string = null;
@@ -34,7 +46,7 @@ export default class Simplabs extends Component {
     this.appState = this.appState || {
       isSSR: false,
       origin: window.location.origin,
-      route: window.location.pathname
+      route: window.location.pathname,
     };
 
     this._setupRouting();
@@ -45,27 +57,31 @@ export default class Simplabs extends Component {
   private _setupRouting() {
     this.router = new Navigo(this.appState.origin);
 
-    Object.keys(this.routesMap).forEach((path) => {
+    Object.keys(this.routesMap).forEach(path => {
       let { component, title = '', bundle, parentBundle } = this.routesMap[path];
-      let options = {
-        after: () => this._setPageTitle(title)
+      let options: INavigoHooks = {
+        after: () => this._setPageTitle(title),
       };
       if (bundle && !this.appState.isSSR) {
-        options.before = async (done) => {
+        options.before = async done => {
           await this._loadBundle(bundle, parentBundle);
           this._registerBundle(bundle);
           done();
         };
       }
-      this.router.on(path, () => {
-        this.activeComponent = component;
-        if (this.appState.isSSR) {
-          if (bundle) {
-            this._injectBundle(bundle);
+      this.router.on(
+        path,
+        () => {
+          this.activeComponent = component;
+          if (this.appState.isSSR) {
+            if (bundle) {
+              this._injectBundle(bundle);
+            }
+            this._injectActiveComponentState();
           }
-          this._injectActiveComponentState();
-        }
-      }, options);
+        },
+        options,
+      );
     });
     this.router.resolve(this.appState.route);
   }
@@ -86,7 +102,10 @@ export default class Simplabs extends Component {
 
   private async _loadBundle(bundle, parentBundle) {
     await new Promise((resolve, reject) => {
-      if (document.querySelector(`script[src="${bundle.asset}"]`) || (parentBundle && document.querySelector(`script[src="${parentBundle.asset}"]`))) {
+      if (
+        document.querySelector(`script[src="${bundle.asset}"]`) ||
+        (parentBundle && document.querySelector(`script[src="${parentBundle.asset}"]`))
+      ) {
         return resolve();
       }
 
@@ -114,19 +133,22 @@ export default class Simplabs extends Component {
 
   private _startLoader() {
     this.isLoading = true;
-    this._loadingProgressInterval = window.setInterval(() => this.loadingProgress = Math.min(this.loadingProgress + 10, 100), 150);
+    this.loadingProgressInterval = window.setInterval(
+      () => (this.loadingProgress = Math.min(this.loadingProgress + 10, 100)),
+      150,
+    );
   }
 
   private _stopLoader() {
-    window.clearInterval(this._loadingProgressInterval);
+    window.clearInterval(this.loadingProgressInterval);
     this.loadingProgress = 100;
-    window.setTimeout(() => this.isLoading = false, 150);
+    window.setTimeout(() => (this.isLoading = false), 150);
   }
 
   private _injectBundle(bundle) {
     let script = this.document.createElement('script');
     script.setAttribute('src', bundle.asset);
-    script.setAttribute('data-shoebox', true);
+    script.setAttribute('data-shoebox', 'true');
     script.setAttribute('data-shoebox-bundle', bundle.module);
     this.document.body.appendChild(script);
   }
@@ -135,20 +157,20 @@ export default class Simplabs extends Component {
     if (this.appState.isSSR) {
       this.document.title = formatPageTitle(title);
     } else {
-      document.title = formatPageTitle(title)
+      document.title = formatPageTitle(title);
     }
   }
 
   private _injectActiveComponentState() {
     let script = this.document.createElement('script');
-    script.setAttribute('data-shoebox', true);
+    script.setAttribute('data-shoebox', 'true');
     script.setAttribute('data-shoebox-active-component', this.activeComponent);
     this.document.body.appendChild(script);
   }
 
   private _restoreActiveComponentState() {
     if (!this.appState.isSSR) {
-      let script = document.querySelector('[data-shoebox-active-component]');
+      let script = document.querySelector('[data-shoebox-active-component]') as HTMLElement;
       if (script) {
         this.activeComponent = script.dataset.shoeboxActiveComponent;
       }
