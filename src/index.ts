@@ -11,14 +11,19 @@ setPropertyDidChange(() => {
   app.scheduleRerender();
 });
 
+function register(registry, key: string, object: any) {
+  let registryEntries = ((registry as any)._resolver as any).registry._entries;
+  if (!registryEntries[key]) {
+    registryEntries[key] = object;
+  }
+}
+
 app.registerInitializer({
   initialize(registry) {
     function registerBundle(module) {
       let content = window[module] || {};
       Object.keys(content).forEach((key) => {
-        if (!registry._resolver.registry._entries[key]) {
-          registry._resolver.registry._entries[key] = content[key];
-        }
+        register(registry, key, content[key]);
       });
     }
 
@@ -32,7 +37,7 @@ app.registerInitializer({
       }
     }
 
-    document.querySelectorAll('[data-shoebox]').forEach((shoebox) => {
+    document.querySelectorAll('[data-shoebox]').forEach((shoebox: HTMLElement) => {
       let module = shoebox.dataset.shoeboxBundle;
       registerBundle(module);
     });
@@ -51,12 +56,8 @@ app.registerInitializer({
 
 app.registerInitializer({
   initialize(registry) {
-    registry._resolver.registry._entries[
-      `helper:/${app.rootName}/components/-css-blocks-classnames`
-    ] = classnames;
-    registry._resolver.registry._entries[
-      `helper:/${app.rootName}/components/-css-blocks-concat`
-    ] = concat;
+    register(registry, `helper:/${app.rootName}/components/-css-blocks-classnames`, classnames);
+    register(registry, `helper:/${app.rootName}/components/-css-blocks-concat`, concat);
   }
 });
 
