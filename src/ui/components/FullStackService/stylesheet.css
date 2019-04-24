@@ -1,26 +1,5 @@
 @block typography from "../../styles/blocks/typography.block.css";
-@block shape from "../../styles/blocks/shape/base.block.css";
-@block shape-left-lg from "../../styles/blocks/shape/shape-left-lg.block.css";
-@block shape-text from "../../styles/blocks/shape/shape-text.block.css";
 
 :scope {
   block-name: full-stack-service;
-
-  --shape-text-position-right: -40em;
-  --link-color: #fff;
-}
-
-.background {
-  background-color: resolve("shape-left-lg.background");
-  background-color: #222;
-  background-image: url("/assets/images/team-meeting.jpg");
-  background-size: 80em;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-.caption {
-  background-color: resolve("shape-text.background");
-  background-color: #007DF6;
 }

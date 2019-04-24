@@ -13,3 +13,7 @@
   extends: screen;
   --shape-text-position-right: -40em;
 }
+
+.offset-top {
+  margin-top: 66rem;
+}
