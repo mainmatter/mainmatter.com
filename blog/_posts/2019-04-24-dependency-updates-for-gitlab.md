@@ -63,7 +63,7 @@ have control over the actions that can be performed with that token.
 
 To create such a token, follow the instructions in the
 [GitLab docs](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html).
-In short: 
+In short:
 
 - Go to the "Settings > Access Tokens" page
 - Enter "Renovate" as the "Name"
@@ -100,7 +100,7 @@ will create is the `package.json` file:
   "description": "Configuration for the Renovate bot at ACME Corp.",
   "repository": "git@gitlab.acme.com:acme/renovate-bot.git",
   "author": "Tobias Bieniek <tobias.bieniek@simplabs.com>",
-  "scripts": { 
+  "scripts": {
     "renovate" : "renovate"
   },
   "dependencies": {
@@ -245,7 +245,7 @@ your configured repositories.
 
 If you need more help getting this set up or if you want to talk about any of
 the topics here in more detail please do [contact us](https://simplabs.com/contact/)!
-If you enjoyed this blog post you can also let us know via [Twitter]. 
+If you enjoyed this blog post you can also let us know via [Twitter].
 
 
 [Open Source Maintenance]: https://simplabs.com/blog/2018/11/27/open-source-maintenance.html
