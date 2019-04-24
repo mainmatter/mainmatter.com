@@ -24,6 +24,14 @@
   margin-bottom: 3rem;
 }
 
+.content-post {
+  width: var(--col-4);
+}
+
+.sidebar-post {
+  width: var(--col-1);
+}
+
 /*
 
 github.com style (c) Vasily Polovnyov <vast@whiteants.net>
