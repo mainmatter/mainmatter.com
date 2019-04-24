@@ -3,7 +3,7 @@
 
 :scope {
   block-name: footer;
-  composes: 'screen.container';
+  composes: 'screen.container-base';
 
   display: flex;
   flex-flow: row wrap;

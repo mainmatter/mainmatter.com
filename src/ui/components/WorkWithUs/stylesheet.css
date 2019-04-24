@@ -1,8 +1,12 @@
 @block typography from "../../styles/blocks/typography.block.css";
 @block button from "../../styles/blocks/button.block.css";
+@block screen from "../../styles/blocks/screen.block.css";
 
 :scope {
   block-name: work-with-us;
+  composes: 'screen.container';
+}
 
+.content {
   width: var(--col-3);
 }

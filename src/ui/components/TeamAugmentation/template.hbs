@@ -3,6 +3,9 @@
     <div class="container">
       <Navigation />
       <div class="header-block">
+        <p class="typography.small-text">
+          Services
+        </p>
         <h1 class="typography.display">
           Team Augmentation
         </h1>
@@ -70,10 +73,7 @@
       </div>
       <!--main-block-->
     </div>
-    <!--container-->
-    <div class="container">
-      <FullStackService />
-    </div>
+    <FullStackService />
     <div class="container">
       <div class="main-block">
         <div class="main-block.content">
@@ -122,7 +122,7 @@
           <!--item-->
         </div>
         <!--main-block-content-->
-        <div class="main-block.sidebar">
+        <div class="main-block.sidebar offset-top">
           <div class="card">
             <p class="typography.small-text">
               Playbook
@@ -187,20 +187,8 @@
       </div>
       <!--grid-block-->
     </div>
-    <ShapeAcross @color="#E15D44" @background="#222" @src="/assets/images/marco.jpg" @width="2636" @height="1938">
-      <p class="typography.small-text">
-        Expertise
-      </p>
-      <h3 class="typography.headline-2">
-        We are Europe’s Leading Ember Experts
-      </h3>
-      <ArrowLink @href="/expertise/ember">
-        Learn More
-      </ArrowLink>
-    </ShapeAcross>
-    <div class="container">
-      <WorkWithUs />
-    </div>
+    <LeadingExperts />
+    <WorkWithUs />
     <Footer />
   </div>
 </div>
