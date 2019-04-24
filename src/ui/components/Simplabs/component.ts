@@ -46,8 +46,10 @@ export default class Simplabs extends Component {
     this.router = new Navigo(this.appState.origin);
 
     Object.keys(this.routesMap).forEach((path) => {
-      let { component, bundle, parentBundle } = this.routesMap[path];
-      let options = {};
+      let { component, title = '', bundle, parentBundle } = this.routesMap[path];
+      let options = {
+        after: () => this._setPageTitle(title)
+      };
       if (bundle && !this.appState.isSSR) {
         options.before = async (done) => {
           await this._loadBundle(bundle, parentBundle);
@@ -129,6 +131,14 @@ export default class Simplabs extends Component {
     this.document.body.appendChild(script);
   }
 
+  private _setPageTitle(title) {
+    if (this.appState.isSSR) {
+      this.document.title = formatPageTitle(title);
+    } else {
+      document.title = formatPageTitle(title)
+    }
+  }
+
   private _injectActiveComponentState() {
     let script = this.document.createElement('script');
     script.setAttribute('data-shoebox', true);
@@ -144,4 +154,8 @@ export default class Simplabs extends Component {
       }
     }
   }
+}
+
+function formatPageTitle(title) {
+  return `${title ? `${title} | ` : ''}simplabs`;
 }

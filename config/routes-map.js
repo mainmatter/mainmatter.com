@@ -9,6 +9,7 @@ module.exports = function() {
   let blogPostRoutes = blogPosts.reduce((acc, post) => {
     acc[`/blog/${post.queryPath}`] = {
       component: post.componentName,
+      title: `${post.meta.title} | Blog`,
       bundle: {
         asset: `/blog-${post.queryPath}.js`,
         module: `__blog-${post.queryPath}__`,
@@ -23,20 +24,21 @@ module.exports = function() {
   let routes = {
     ...blogPostRoutes,
     '/': { component: 'Homepage' },
-    '/services': { component: 'Services' },
-    '/services/software-engineering': { component: 'SoftwareEngineering' },
-    '/services/team-augmentation': { component: 'TeamAugmentation' },
-    '/services/training': { component: 'Training' },
-    '/cases/trainline': { component: 'TrainlineCaseStudy' },
-    '/cases/expedition': { component: 'ExpeditionCaseStudy' },
-    '/about': { component: 'About' },
-    '/expertise/ember': { component: 'EmberExpertise' },
-    '/work': { component: 'Work' },
-    '/talks': { component: 'Talks' },
-    '/calendar': { component: 'Calendar' },
-    '/playbook': { component: 'Playbook' },
-    '/contact': { component: 'Contact' },
-    '/blog': { component: 'Blog', bundle: { asset: '/blog.js', module: '__blog__' } },
+    '/services': { component: 'Services', title: 'Services' },
+    '/services/software-engineering': { component: 'SoftwareEngineering', title: 'Full Stack Engineering' },
+    '/services/team-augmentation': { component: 'TeamAugmentation', title: 'Team Augmentation' },
+    '/services/training': { component: 'Training', title: 'Tutoring' },
+    '/cases/trainline': { component: 'TrainlineCaseStudy', title: 'Trainline Case Study' },
+    '/cases/expedition': { component: 'ExpeditionCaseStudy', title: 'Expedition Case Study' },
+    '/about': { component: 'About', title: 'About' },
+    // eslint-disable-next-line quotes
+    '/expertise/ember': { component: 'EmberExpertise', title: "Europe's leading Ember experts" },
+    '/work': { component: 'Work', title: 'Work' },
+    '/talks': { component: 'Talks', title: 'Talks' },
+    '/calendar': { component: 'Calendar', title: 'Calendar' },
+    '/playbook': { component: 'Playbook', title: 'Playbook' },
+    '/contact': { component: 'Contact', title: 'Contact' },
+    '/blog': { component: 'Blog', title: 'Blog', bundle: { asset: '/blog.js', module: '__blog__' } },
   };
 
   return routes;
