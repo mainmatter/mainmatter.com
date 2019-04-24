@@ -33,7 +33,7 @@
 }
 
 .container {
-  composes: 'screen.container';
+  composes: 'screen.container-base';
 
   position: relative;
   z-index: 1;

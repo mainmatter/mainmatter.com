@@ -32,7 +32,7 @@
 }
 
 .container {
-  composes: 'screen.container';
+  composes: 'screen.container-base';
 
   display: flex;
   justify-content: flex-end;
