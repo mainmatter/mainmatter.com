@@ -32,6 +32,10 @@
   width: var(--col-1);
 }
 
+.excerpt {
+  margin-bottom: 3rem;
+}
+
 /*
 
 github.com style (c) Vasily Polovnyov <vast@whiteants.net>
