@@ -68,13 +68,14 @@
   margin: 3rem 0;
   background: #f4f4f4;
   border: 1px solid #ddd;
-  page-break-inside: avoid;
   font-family: monospace;
   max-width: 100%;
   overflow: auto;
   padding: 1em;
   display: block;
+  white-space: pre-wrap;
   word-wrap: break-word;
+  text-align: justify;
 }
 
 @media (max-width: 599px) {

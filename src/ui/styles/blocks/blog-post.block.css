@@ -9,7 +9,7 @@
 }
 
 .logo {
-  max-width: 10rem;
+  max-width: 20rem;
   padding: 1em 0;
   display: block;
 }
@@ -19,7 +19,21 @@
 }
 
 .video {
-  
+  max-width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.content-post {
+  width: var(--col-4);
+}
+
+.sidebar-post {
+  width: var(--col-1);
+}
+
+.excerpt {
+  margin-bottom: 3rem;
 }
 
 /*
