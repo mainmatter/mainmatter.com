@@ -73,7 +73,7 @@
 }
 
 .link {
-  color: var(--link-color);
+  color: var(--color-link);
   text-decoration: none;
 }
 
@@ -87,7 +87,7 @@
 }
 
 .title-link:hover {
-  color: var(--link-color);
+  color: var(--color-link);
   text-decoration: none;
 }
 
@@ -95,5 +95,5 @@
   text-decoration: none;
   display: inline-block;
   font-weight: 600;
-  color: var(--link-color);
+  color: var(--color-link);
 }
