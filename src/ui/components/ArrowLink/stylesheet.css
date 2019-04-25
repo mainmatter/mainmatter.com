@@ -1,4 +1,8 @@
 :scope {
+  text-align: right;
+}
+
+.link {
   block-name: ArrowLink;
   position: relative;
   display: inline-block;
@@ -9,7 +13,7 @@
   text-decoration: none;
 }
 
-:scope:hover {
+.link:hover {
   text-decoration: underline;
 }
 

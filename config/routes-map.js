@@ -28,8 +28,8 @@ module.exports = function() {
     '/services/software-engineering': { component: 'SoftwareEngineering', title: 'Full Stack Engineering' },
     '/services/team-augmentation': { component: 'TeamAugmentation', title: 'Team Augmentation' },
     '/services/training': { component: 'Training', title: 'Tutoring' },
-    '/cases/trainline': { component: 'TrainlineCaseStudy', title: 'Trainline Case Study' },
-    '/cases/expedition': { component: 'ExpeditionCaseStudy', title: 'Expedition Case Study' },
+    '/cases/trainline': { component: 'CaseStudyTrainline', title: 'Trainline Case Study' },
+    '/cases/expedition': { component: 'CaseStudyExpedition', title: 'Expedition Case Study' },
     '/about': { component: 'About', title: 'About' },
     // eslint-disable-next-line quotes
     '/expertise/ember': { component: 'EmberExpertise', title: "Europe's leading Ember experts" },

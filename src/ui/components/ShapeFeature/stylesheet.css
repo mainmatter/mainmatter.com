@@ -2,9 +2,11 @@
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
+  block-name: ShapeFeature;
+
   position: relative;
   margin-top: 21rem;
-  padding: 28rem 0 8rem;
+  padding: 28rem 0 14rem;
   min-height: 58rem;
 
   --shape-color: var(--link-color);
@@ -29,7 +31,25 @@
   left: 50%;
   transform: translate(-90%);
   width: 225rem;
+}
+
+.bottom-svg {
+  display: block;
+  position: relative;
+  width: 230rem;
   height: auto;
+  margin: -4rem;
+}
+
+.bottom-content {
+  position: absolute;
+  background: var(--shape-color) center no-repeat;
+  background-size: 230rem auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .container {
@@ -48,4 +68,9 @@
 
 .content {
   width: var(--col-2);
+}
+
+.video {
+  width: 100%;
+  height: auto;
 }
