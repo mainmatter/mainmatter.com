@@ -11,7 +11,6 @@
 :scope {
   block-name: service;
   extends: screen;
-  --shape-text-position-right: -40em;
 }
 
 .offset-top {
