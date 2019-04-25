@@ -2,7 +2,16 @@
   <div class="bottom">
     <div class="bottom-content" style={{this.backgroundStyle}}>
       {{#if @video}}
-        <video playsinline autoplay muted loop poster={{@background}} class="video" width="x" height="y">
+        <video
+          playsinline
+          autoplay
+          muted
+          loop
+          poster={{@background}}
+          class="video"
+          width={{@width}}
+          height="{@height}}"
+        >
           <source src={{@video}} type="video/mp4" />
         </video>
       {{/if}}
