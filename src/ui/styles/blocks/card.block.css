@@ -1,20 +1,17 @@
+@block typography from "typography.block.css";
+
 :scope {
   block-name: card;
   margin-bottom: 6rem;
 }
 
 .sub-heading {
-  /* TODO: this is .heading-3 */
+  composes: 'typography.headline-3-plain';
   margin-bottom: 2rem;
-  font-size: 4rem;
-  line-height: 5rem;
-  font-weight: 400;
-  color: var(--first-color);
 }
 
 .text {
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
+  composes: 'typography.body-text';
 }
 
 .image {
