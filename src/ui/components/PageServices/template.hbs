@@ -51,23 +51,14 @@
       </div>
       <!--main-block-->
       <div class="main-block.sidebar">
-        <p class="typography.small-text">
-          Playbook
-        </p>
-        <div class="card">
-          <div class="card.image">
-            <img class="fluid-image.image" src="/assets/images/how-we-work-card.jpg" />
-          </div>
-          <h3 class="card.sub-heading">
-            How We Work
-          </h3>
-          <p class="card.text">
+        <Card @label="Playbook" @src="/assets/images/how-we-work-card.jpg" @title="How We Work">
+          <p class="typography.body-text">
             We maintain a simple and client-focussed process. Find out more about how we work to deliver ambitious software solutions for our clients.
           </p>
           <ArrowLink @href="/playbook">
             Read our Playbook
           </ArrowLink>
-        </div>
+        </Card>
       </div>
       <!--sidebar-->
     </div>
