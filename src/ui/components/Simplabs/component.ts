@@ -90,8 +90,9 @@ export default class Simplabs extends Component {
     if (!this.appState.isSSR) {
       document.addEventListener('click', (event: Event) => {
         let target = event.target as HTMLElement;
+        let link = findLinkParent(target);
 
-        if (target.tagName === 'A' && target.dataset.internal !== undefined) {
+        if (link && link.dataset.internal !== undefined) {
           event.preventDefault();
           this.router.navigate(target.getAttribute('href'));
           window.scrollTo(0, 0);
@@ -180,4 +181,15 @@ export default class Simplabs extends Component {
 
 function formatPageTitle(title) {
   return `${title ? `${title} | ` : ''}simplabs`;
+}
+
+function findLinkParent(target) {
+  let element = target;
+  while (element && element !== document) {
+    if (element.matches('a')) {
+      return element;
+    }
+    element = element.parentElement;
+  }
+  return null;
 }
