@@ -89,13 +89,15 @@ export default class Simplabs extends Component {
   private _bindInternalLinks() {
     if (!this.appState.isSSR) {
       document.addEventListener('click', (event: Event) => {
-        let target = event.target as HTMLElement;
-        let link = findLinkParent(target);
+        if (isSimpleClick(event)) {
+          let target = event.target as HTMLElement;
+          let link = findLinkParent(target);
 
-        if (link && link.dataset.internal !== undefined) {
-          event.preventDefault();
-          this.router.navigate(target.getAttribute('href'));
-          window.scrollTo(0, 0);
+          if (link && link.dataset.internal !== undefined) {
+            event.preventDefault();
+            this.router.navigate(target.getAttribute('href'));
+            window.scrollTo(0, 0);
+          }
         }
       });
     }
@@ -192,4 +194,12 @@ function findLinkParent(target) {
     element = element.parentElement;
   }
   return null;
+}
+
+// taken from https://github.com/emberjs/ember.js/blob/8b273eb04023a876dbf968a05929d8a21a8fd27b/packages/%40ember/-internals/views/lib/system/utils.js#L9-L14
+export function isSimpleClick(event) {
+  let modifier = event.shiftKey || event.metaKey || event.altKey || event.ctrlKey;
+  let secondaryClick = event.which > 1; // IE9 may return undefined
+
+  return !modifier && !secondaryClick;
 }
