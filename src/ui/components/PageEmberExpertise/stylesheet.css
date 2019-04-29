@@ -6,7 +6,7 @@
 @block card from "../../styles/blocks/card.block.css";
 
 :scope {
-  block-name: EmberExpertise;
+  block-name: PageEmberExpertise;
   extends: screen;
 }
 

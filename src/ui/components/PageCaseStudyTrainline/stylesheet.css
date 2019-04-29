@@ -6,16 +6,16 @@
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
-  block-name: case-study;
+  block-name: PageCaseStudyTrainline;
   extends: screen;
 }
 
 .shape-decoration-bg {
-  background: #6f42c1;
+  background: #007DF6;
 }
 
 .shape-left-bg {
-  background-color: #6f42c1;
+  background-color: #007DF6;
   background-image: url('/assets/images/sky.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;

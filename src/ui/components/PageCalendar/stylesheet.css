@@ -5,6 +5,6 @@
 @block card from "../../styles/blocks/card.block.css";
 
 :scope {
-  block-name: calendar;
+  block-name: PageCalendar;
   extends: screen;
 }
