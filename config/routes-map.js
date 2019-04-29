@@ -30,7 +30,7 @@ module.exports = function() {
     '/services/training': { component: 'PageTraining', title: 'Tutoring' },
     '/cases/trainline': { component: 'PageCaseStudyTrainline', title: 'Trainline Case Study' },
     '/cases/expedition': { component: 'PageCaseStudyExpedition', title: 'Expedition Case Study' },
-    '/cases/ddwrt': { component: 'ddwrtCaseStudy', title: 'DD-WRT NXT Case Study' },
+    '/cases/ddwrt': { component: 'PageCaseDdWrt', title: 'DD-WRT NXT Case Study' },
     '/about': { component: 'PageAbout', title: 'About' },
     '/expertise/ember': { component: 'PageEmberExpertise', title: 'Europe’s leading Ember experts' },
     '/work': { component: 'PageWork', title: 'Work' },

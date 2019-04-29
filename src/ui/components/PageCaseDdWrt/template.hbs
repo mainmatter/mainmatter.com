@@ -1,20 +1,13 @@
 <div>
   <div class="contents">
-    <div class="container">
-      <Navigation />
-      <div class="header-block">
-        <h1 class="typography.display">
-          a modern UI for an open-source router firmware
-        </h1>
-        <p class="typography.lead">
-          simplabs’ expertise in developing Ember.js based applications helped us significantly to define and develop
-          the new DD-WRT NXT user experience. It was impressive to see in what short time such a complex application
-          leveraging a customer backend interface could be implemented. simplabs' work did provide the new foundation
-          for our UI and our in-house development team greatly benefitted from their know how.
-        </p>
-      </div>
-      <!--page-header-->
-    </div>
+    <Header @title="a modern UI for an open-source router firmware">
+      <p class="typography.lead">
+        simplabs’ expertise in developing Ember.js based applications helped us significantly to define and develop
+        the new DD-WRT NXT user experience. It was impressive to see in what short time such a complex application
+        leveraging a customer backend interface could be implemented. simplabs' work did provide the new foundation
+        for our UI and our in-house development team greatly benefitted from their know how.
+      </p>
+    </Header>
     <!--container-->
     <div class="container">
       <div class="main-block">
@@ -55,9 +48,9 @@
                   structure for the application and establishing good Ember.js patterns. That prototype laid the
                   foundation for subsequent engineering efforts taken on by embeDD's in-house engineering team.
                 </p>
-                <a class="typography.arrow-link" href="#" data-internal>
+                <ArrowLink @href="#">
                   Learn More
-                </a>
+                </ArrowLink>
               </div>
               <!--section-item-->
             </div>
@@ -97,9 +90,9 @@
               We value conventions-based frameworks that result in maintainable and well-defined projects which are easy
               to take over by our clients once we've left.
             </p>
-            <a class="typography.arrow-link" href="#" data-internal>
+            <ArrowLink @href="#">
               Learn More
-            </a>
+            </ArrowLink>
           </div>
           <!--card-->
         </div>
@@ -107,16 +100,8 @@
       </div>
       <!--main-block-->
     </div>
-    <!--container-->
-    <div class="container">
-      <BreetheCaseThumb />
-    </div>
-    <!--container-->
-    <div class="container">
-      <WorkWithUs />
-    </div>
-    <div class="container">
-      <Footer />
-    </div>
+    <ShapeFeatureBreethe />
+    <WorkWithUs />
+    <Footer />
   </div>
 </div>

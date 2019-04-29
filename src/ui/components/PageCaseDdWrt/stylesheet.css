@@ -6,7 +6,7 @@
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
-  block-name: case-study;
+  block-name: PageCaseDdWrt;
   extends: screen;
 }
 
