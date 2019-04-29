@@ -1,0 +1,6 @@
+@block screen from "../../styles/blocks/screen.block.css";
+
+:scope {
+  block-name: Page404;
+  extends: screen;
+}
