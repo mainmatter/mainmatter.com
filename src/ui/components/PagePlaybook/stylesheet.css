@@ -2,17 +2,11 @@
 @block typography from "../../styles/blocks/typography.block.css";
 @block main-block from "../../styles/blocks/main-block.block.css";
 @block header-block from "../../styles/blocks/header-block.block.css";
+@block list from "../../styles/blocks/list.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 @block card from "../../styles/blocks/card.block.css";
-@block form from "../../styles/blocks/form.block.css";
-@block button from "../../styles/blocks/button.block.css";
-@block grid-block from "../../styles/blocks/grid-block.block.css";
 
 :scope {
-  block-name: service;
+  block-name: PagePlaybook;
   extends: screen;
-}
-
-.offset-top {
-  margin-top: 66rem;
 }

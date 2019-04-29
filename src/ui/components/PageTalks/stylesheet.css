@@ -3,6 +3,6 @@
 @block header-block from "../../styles/blocks/header-block.block.css";
 
 :scope {
-  block-name: talks;
+  block-name: PageTalks;
   extends: screen;
 }
