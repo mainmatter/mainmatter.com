@@ -1,16 +1,10 @@
 <div>
   <div class="contents">
-    <div class="container">
-      <Navigation />
-      <div class="header-block">
-        <h1 class="typography.display">
-          Solid Engineering for Ambitious Projects
-        </h1>
-        <p class="typography.lead">
-          Our team of technology experts builds ambitious web and mobile solutions for clients across the world. We like to move fast without breaking things and invite our clients to take on an active role in projects.
-        </p>
-      </div>
-    </div>
+    <Header @title="Solid Engineering for Ambitious Projects">
+      <p class="typography.lead">
+        Our team of technology experts builds ambitious web and mobile solutions for clients across the world. We like to move fast without breaking things and invite our clients to take on an active role in projects.
+      </p>
+    </Header>
     <ShapeFeature @color="#48D5B5" @src="/assets/images/trainline-comp.png" @width="1208" @height="1268">
       <h2 class="typography.small-text">
         Featured Case Study
@@ -18,7 +12,7 @@
       <h3 class="typography.headline-2">
         Leveraging Trainline's full market potential
       </h3>
-      <ArrowLink @href="#">
+      <ArrowLink @href="/cases/trainline">
         Read Case Study
       </ArrowLink>
     </ShapeFeature>

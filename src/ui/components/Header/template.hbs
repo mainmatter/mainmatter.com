@@ -1,0 +1,39 @@
+<header>
+  <div class="navbar">
+    <div class="brand">
+      <a href="/" data-internal>
+        <img class="fluid-image.image" src="/assets/images/neu.svg" alt="simplabs" />
+      </a>
+    </div>
+    <nav class="nav">
+      <a href="/services" class="nav-item" data-internal>
+        Services
+      </a>
+      <a href="/work" class="nav-item" data-internal>
+        Work
+      </a>
+      <a href="/about" class="nav-item" data-internal>
+        About
+      </a>
+      <a href="/blog" class="nav-item" data-internal data-bundle="blog">
+        Blog
+      </a>
+    </nav>
+    <a href="/contact" class="button.button" data-internal>
+      Work with us
+    </a>
+  </div>
+  <div class="content">
+    {{#if @label}}
+      <p class="typography.small-text">
+        {{@label}}
+      </p>
+    {{/if}}
+    {{#if @title}}
+      <h1 class="typography.display">
+        {{@title}}
+      </h1>
+    {{/if}}
+    {{yield}}
+  </div>
+</header>
