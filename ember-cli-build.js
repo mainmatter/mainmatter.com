@@ -87,7 +87,7 @@ class SimplabsApp extends GlimmerApp {
       return blogPostTree;
     });
 
-    let [calendarTree, mainSiteNonCalendarTree] = this._splitBundle(jsTree, {
+    let [calendarTree, mainSiteNonCalendarTree] = this._splitBundle(mainSiteTree, {
       componentPrefix: 'Calendar',
       file: 'calendar.js',
       moduleName: '__calendar__',
