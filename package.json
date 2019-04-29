@@ -80,6 +80,7 @@
   "ember-addon": {
     "paths": [
       "lib/generate-blog-components",
+      "lib/generate-calendar",
       "lib/inject-routes"
     ]
   },
