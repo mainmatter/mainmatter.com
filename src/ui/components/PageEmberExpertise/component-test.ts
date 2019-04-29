@@ -4,30 +4,12 @@ import { setupRenderingTest } from '../../../utils/test-helpers/setup-rendering-
 
 const { module, test } = QUnit;
 
-module('Component: Expertise', function(hooks) {
+module('Component: PageEmberExpertise', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    /*
-     * You may pass data into the component through arguments set on the
-     * `testContext`
-     *
-     * For example:
-     *
-     * ```
-     * this.foo = { foo: '123' };
-     *
-     * await render(hbs`<Expertise @foo={{this.foo}} />`)
-     *
-     * // or
-     *
-     * this.foo = 'bar';
-     * await render(hbs`<p>{{this.foo}}</p>`);
-     *
-     * assert.dom('p').text('bar');
-     * ```
-     */
-    await render(hbs`<Expertise />`);
+    await render(hbs`<PageEmberExpertise />`);
+
     assert.ok(this.containerElement.querySelector('div'));
   });
 });

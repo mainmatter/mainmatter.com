@@ -9,6 +9,7 @@ module('Component: Simplabs', function(hooks) {
 
   test('it renders', async function(assert) {
     await render(hbs`<Simplabs />`);
-    assert.equal(this.containerElement.textContent, 'Welcome to Glimmer!\n');
+
+    assert.ok(this.containerElement.querySelector('div'));
   });
 });

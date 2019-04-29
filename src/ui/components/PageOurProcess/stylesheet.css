@@ -5,7 +5,7 @@
 @block screen from "../../styles/blocks/screen.block.css";
 
 :scope {
-  block-name: leading-experts;
+  block-name: PageOurProcess;
   --shape-text-position-right: -40em;
 }
 

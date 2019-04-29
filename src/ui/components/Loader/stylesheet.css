@@ -1,5 +1,5 @@
 :scope {
-  block-name: loader;
+  block-name: Loader;
   --accent-color: #007DF6;
   transition: all 200ms ease 0s;
   background: var(--accent-color);

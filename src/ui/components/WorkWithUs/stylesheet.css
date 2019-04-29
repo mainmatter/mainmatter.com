@@ -3,7 +3,7 @@
 @block screen from "../../styles/blocks/screen.block.css";
 
 :scope {
-  block-name: PageWorkWithUs;
+  block-name: WorkWithUs;
   composes: 'screen.container';
 }
 

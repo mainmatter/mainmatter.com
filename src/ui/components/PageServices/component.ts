@@ -1,4 +1,4 @@
 import Component from '@glimmer/component';
 
-export default class Services extends Component {
+export default class PageServices extends Component {
 }

@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 
-export default class Link extends Component {
+export default class ArrowLink extends Component {
   get isInternal() {
     const href = this.args.href || '';
 

@@ -2,7 +2,7 @@
 @block screen from "../../styles/blocks/screen.block.css";
 
 :scope {
-  block-name: footer;
+  block-name: Footer;
   composes: 'screen.container-base';
 
   display: flex;

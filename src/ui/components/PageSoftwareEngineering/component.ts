@@ -1,4 +1,4 @@
 import Component from '@glimmer/component';
 
-export default class SoftwareEngineering extends Component {
+export default class PageSoftwareEngineering extends Component {
 }
