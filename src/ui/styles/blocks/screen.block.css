@@ -26,20 +26,17 @@
   --first-color: var(--color-primary);
   --second-color: var(--color-secondary);
   --link-color: var(--color-accent);
-
   --vertical-spacing: 4em;
+
+  font-family: 'Nunito Sans', sans-serif;
+  color: var(--color-muted);
+  overflow: hidden;
 }
 
 @media (max-width: 599px) {
   :scope {
     --horizontal-spacing: 3rem;
   }
-}
-
-.contents {
-  font-family: 'Nunito Sans', sans-serif;
-  color: var(--color-muted);
-  overflow: hidden;
 }
 
 .container-base,

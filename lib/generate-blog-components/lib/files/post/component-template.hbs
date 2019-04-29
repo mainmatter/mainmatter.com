@@ -1,87 +1,85 @@
 <div>
-  <div class="contents">
-    <Header @label="{{date}}" @title="{{title}}">
-      {{{excerpt}}}
-    </Header>
-    <div class="container">
-      <div class="main-block">
-        <div class="content-post">
-          <div class="main-block.content-item">
-            <div class="main-block.content-section">
-              <div class="main-block.content-section-item">
-                {{{body}}}
-              </div>
+  <Header @label="{{date}}" @title="{{title}}">
+    {{{excerpt}}}
+  </Header>
+  <div class="container">
+    <div class="main-block">
+      <div class="content-post">
+        <div class="main-block.content-item">
+          <div class="main-block.content-section">
+            <div class="main-block.content-section-item">
+              {{{body}}}
             </div>
-            <!--section-->
           </div>
+          <!--section-->
         </div>
-        <div class="sidebar-post">
-          <p class="typography.small-text">
-            About the Author
-          </p>
-          <div class="card">
-            <div class="card.image">
-              <img class="fluid-image.image-cover" src="/assets/images/authors/{{author.twitter}}.jpg" />
-            </div>
-            <h3 class="typography.headline-4">
-              {{author.name}}
-            </h3>
-            <p class="card.text">
-              {{author.bio}}
-            </p>
-            <a class="typography.link" href="https://twitter.com/{{author.twitter}}">
-              @
-              {{author.twitter}}
-            </a>
-          </div>
-          <p class="typography.small-text">
-            About Simplabs
-          </p>
-          <div class="card">
-            <img class="logo" src="/assets/images/neu.svg" />
-            <p class="card.text">
-              simplabs is a Web Engineering Consultancy based in Munich, Germany. We work for clients all over the world, offering Software Engineering, Technology Consulting as well as Individual and Group Training with modern Web Technologies. We specialize in a set of conventions-based tools like Ember.js, Elixir and, Phoenix as well as Ruby on Rails and like to move fast without breaking things.
-            </p>
-
-          </div>
-        </div>
-        <!--sidebar-->
       </div>
+      <div class="sidebar-post">
+        <p class="typography.small-text">
+          About the Author
+        </p>
+        <div class="card">
+          <div class="card.image">
+            <img class="fluid-image.image-cover" src="/assets/images/authors/{{author.twitter}}.jpg" />
+          </div>
+          <h3 class="typography.headline-4">
+            {{author.name}}
+          </h3>
+          <p class="card.text">
+            {{author.bio}}
+          </p>
+          <a class="typography.link" href="https://twitter.com/{{author.twitter}}">
+            @
+            {{author.twitter}}
+          </a>
+        </div>
+        <p class="typography.small-text">
+          About Simplabs
+        </p>
+        <div class="card">
+          <img class="logo" src="/assets/images/neu.svg" />
+          <p class="card.text">
+            simplabs is a Web Engineering Consultancy based in Munich, Germany. We work for clients all over the world, offering Software Engineering, Technology Consulting as well as Individual and Group Training with modern Web Technologies. We specialize in a set of conventions-based tools like Ember.js, Elixir and, Phoenix as well as Ruby on Rails and like to move fast without breaking things.
+          </p>
+
+        </div>
+      </div>
+      <!--sidebar-->
     </div>
-    <div class="container">
-      {{#if related}}
-        <div class="shape.wrap">
-          <div class="shape-left">
-            <div class="shape-left.background related-background">
-              {{#if related.teaserImage}}
-                <div class="shape-left.content">
-                  <div class="shape.content-image">
-                    <img class="fluid-image.image" src="{{related.teaserImage}}" />
-                  </div>
+  </div>
+  <div class="container">
+    {{#if related}}
+      <div class="shape.wrap">
+        <div class="shape-left">
+          <div class="shape-left.background related-background">
+            {{#if related.teaserImage}}
+              <div class="shape-left.content">
+                <div class="shape.content-image">
+                  <img class="fluid-image.image" src="{{related.teaserImage}}" />
                 </div>
-              {{/if}}
-            </div>
-          </div>
-          <div class="shape.caption">
-            <div class="shape.caption-content">
-              <p class="typography.small-text">
-                Keep Reading
-              </p>
-              <h3 class="typography.headline-2">
-                {{related.title}}
-              </h3>
-              <ArrowLink @href="{{related.link}}">
-                Read Post
-              </ArrowLink>
-            </div>
-          </div>
-          <div class="shape-decoration">
-            <div class="shape-decoration.background related-background"></div>
+              </div>
+            {{/if}}
           </div>
         </div>
-      {{/if}}
-    </div>
-    <WorkWithUs />
-    <Footer />
+        <div class="shape.caption">
+          <div class="shape.caption-content">
+            <p class="typography.small-text">
+              Keep Reading
+            </p>
+    7         <h3 class="typography.headline-2">
+              {{related.title}}
+            </h3>
+            <ArrowLink @href="{{related.link}}">
+              Read Post
+            </ArrowLink>
+          </div>
+        </div>
+        <div class="shape-decoration">
+          <div class="shape-decoration.background related-background"></div>
+        </div>
+      </div>
+    {{/if}}
   </div>
+  <WorkWithUs />
+  <Footer />
 </div>

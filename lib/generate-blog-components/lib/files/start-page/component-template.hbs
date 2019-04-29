@@ -1,73 +1,70 @@
 <div>
-  <div class="contents">
-    <Header @title="Blog"></Header>
-    <ShapeBlog>
-      <article>
-        <a href="#" class="typography.tag">
-          #{{latest.topic}}
+  <Header @title="Blog"></Header>
+  <ShapeBlog>
+    <article>
+      <a href="#" class="typography.tag">
+        #{{latest.topic}}
+      </a>
+      <h2 class="typography.headline-1">
+        <a href="{{latest.path}}" class="typography.title-link" data-internal>
+          {{latest.title}}
         </a>
-        <h2 class="typography.headline-1">
-          <a href="{{latest.path}}" class="typography.title-link" data-internal>
-            {{latest.title}}
-          </a>
-        </h2>
-        <p class="typography.body-text">
-          {{{latest.excerpt}}}
-        </p>
-        <ArrowLink @href="{{latest.path}}">
-          Read Post
-        </ArrowLink>
-      </article>
-    </ShapeBlog>
-    <div class="container">
-      <div class="main-block">
-        <div class="main-block.content">
-          <div class="main-block.content-item">
-            {{#each rest}}
-              <div class="main-block.content-section">
-                <div class="main-block.content-section-item">
-                  <a class="typography.tag" href="#">
-                    #{{topic}}
-                  </a>
-                  <div class="blog-post.excerpt">
-                    <h3 class="typography.headline-2">
-                      <a class="typography.title-link" href="{{path}}" data-internal>
-                        {{title}}
-                      </a>
-                    </h3>
-                    {{{excerpt}}}
-                  </div>
-                  <a class="typography.link" href="#">
-                    {{author.name}}
-                  </a>
-                  <p class="typography.small-text">
-                    {{date}}
-                  </p>
+      </h2>
+      <p class="typography.body-text">
+        {{{latest.excerpt}}}
+      </p>
+      <ArrowLink @href="{{latest.path}}">
+        Read Post
+      </ArrowLink>
+    </article>
+  </ShapeBlog>
+  <div class="container">
+    <div class="main-block">
+      <div class="main-block.content">
+        <div class="main-block.content-item">
+          {{#each rest}}
+            <div class="main-block.content-section">
+              <div class="main-block.content-section-item">
+                <a class="typography.tag" href="#">
+                  #{{topic}}
+                </a>
+                <div class="blog-post.excerpt">
+                  <h3 class="typography.headline-2">
+                    <a class="typography.title-link" href="{{path}}" data-internal>
+                      {{title}}
+                    </a>
+                  </h3>
+                  {{{excerpt}}}
                 </div>
+                <a class="typography.link" href="#">
+                  {{author.name}}
+                </a>
+                <p class="typography.small-text">
+                  {{date}}
+                </p>
               </div>
-            {{/each}}
-          </div>
+            </div>
+          {{/each}}
         </div>
-        <div class="main-block.sidebar">
-          <p class="typography.small-text">
-            Other Resources
-          </p>
-          <div class="card">
-            <h3 class="card.sub-heading">
-              Talks Catalog
-            </h3>
-            <p class="card.text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <ArrowLink @href="/calendar">
-              View Our Talks
-            </ArrowLink>
-          </div>
-        </div>
-        <!--sidebar-->
       </div>
+      <div class="main-block.sidebar">
+        <p class="typography.small-text">
+          Other Resources
+        </p>
+        <div class="card">
+          <h3 class="card.sub-heading">
+            Talks Catalog
+          </h3>
+          <p class="card.text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <ArrowLink @href="/calendar">
+            View Our Talks
+          </ArrowLink>
+        </div>
+      </div>
+      <!--sidebar-->
     </div>
-    <Footer />
   </div>
-  <!--contents-->
+  <Footer />
 </div>

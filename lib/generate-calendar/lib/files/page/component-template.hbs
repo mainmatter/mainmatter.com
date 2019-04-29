@@ -1,100 +1,97 @@
 <div>
-  <div class="contents">
-    <Header @title="Calendar">
-      <p class="typography.lead">
-        Explore our calendar to find out the upcoming events, conferences and meetups we will be attending or organizing.
-      </p>
-    </Header>
-    <div class="container">
-      <div class="main-block">
-        <div class="main-block.content">
-          {{#if conferences}}
-            <div class="main-block.content-heading">
-              <h2 class="typography.headline-1">
-                Conferences
-              </h2>
-            </div>
-            {{#each conferences}}
-              <div class="main-block.content-section">
-                <div class="main-block.content-section-item">
-                  <div class="main-block.content-section-image">
-                    <img class="main-block.image-small" src="{{meta.image}}" />
-                  </div>
-                </div>
-                <div class="main-block.content-section-item">
-                  <h3 class="typography.headline-2">
-                    {{meta.title}}
-                  </h3>
-                  <p class="typography.body-text">
-                    {{meta.date}}
-                    ,
-                    {{meta.location}}
-                  </p>
-                  {{#if content}}
-                    {{{content}}}
-                  {{/if}}
-                  <ArrowLink @href="{{meta.url}}">
-                    View Website
-                  </ArrowLink>
-                </div>
-              </div>
-            {{/each}}
-          {{/if}}
-          {{#if meetups}}
-            <div class="main-block.content-heading">
-              <h2 class="typography.headline-1">
-                Meetups
-              </h2>
-            </div>
-            {{#each meetups}}
-              <div class="main-block.content-section">
-                <div class="main-block.content-section-item">
-                  <div class="main-block.content-section-image">
-                    <img class="main-block.image-small" src="{{meta.image}}" />
-                  </div>
-                </div>
-                <div class="main-block.content-section-item">
-                  <h3 class="typography.headline-2">
-                    {{meta.title}}
-                  </h3>
-                  <p class="typography.body-text">
-                    {{meta.date}}
-                    ,
-                    {{meta.location}}
-                  </p>
-                  {{#if content}}
-                    {{{content}}}
-                  {{/if}}
-                  <ArrowLink @href="{{meta.url}}">
-                    View Website
-                  </ArrowLink>
-                </div>
-              </div>
-            {{/each}}
-          {{/if}}
-        </div>
-        <!--content-->
-        <div class="main-block.sidebar">
-          <div class="card">
-            <p class="typography.small-text">
-              Connect
-            </p>
-            <h3 class="card.sub-heading">
-              @simplabs on Twitter
-            </h3>
-            <p class="typography.body-text">
-              We share our latest updates and events on our Twitter page.
-            </p>
-            <ArrowLink @href="#">
-              Visit our Twitter Page
-            </ArrowLink>
+  <Header @title="Calendar">
+    <p class="typography.lead">
+      Explore our calendar to find out the upcoming events, conferences and meetups we will be attending or organizing.
+    </p>
+  </Header>
+  <div class="container">
+    <div class="main-block">
+      <div class="main-block.content">
+        {{#if conferences}}
+          <div class="main-block.content-heading">
+            <h2 class="typography.headline-1">
+              Conferences
+            </h2>
           </div>
-          <!--card-->
-        </div>
-        <!--sidebar-->
+          {{#each conferences}}
+            <div class="main-block.content-section">
+              <div class="main-block.content-section-item">
+                <div class="main-block.content-section-image">
+                  <img class="main-block.image-small" src="{{meta.image}}" />
+                </div>
+              </div>
+              <div class="main-block.content-section-item">
+                <h3 class="typography.headline-2">
+                  {{meta.title}}
+                </h3>
+                <p class="typography.body-text">
+                  {{meta.date}}
+                  ,
+                  {{meta.location}}
+                </p>
+                {{#if content}}
+                  {{{content}}}
+                {{/if}}
+                <ArrowLink @href="{{meta.url}}">
+                  View Website
+                </ArrowLink>
+              </div>
+            </div>
+          {{/each}}
+        {{/if}}
+        {{#if meetups}}
+          <div class="main-block.content-heading">
+            <h2 class="typography.headline-1">
+              Meetups
+            </h2>
+          </div>
+          {{#each meetups}}
+            <div class="main-block.content-section">
+              <div class="main-block.content-section-item">
+                <div class="main-block.content-section-image">
+                  <img class="main-block.image-small" src="{{meta.image}}" />
+                </div>
+              </div>
+              <div class="main-block.content-section-item">
+                <h3 class="typography.headline-2">
+                  {{meta.title}}
+                </h3>
+                <p class="typography.body-text">
+                  {{meta.date}}
+                  ,
+                  {{meta.location}}
+                </p>
+                {{#if content}}
+                  {{{content}}}
+                {{/if}}
+                <ArrowLink @href="{{meta.url}}">
+                  View Website
+                </ArrowLink>
+              </div>
+            </div>
+          {{/each}}
+        {{/if}}
       </div>
+      <!--content-->
+      <div class="main-block.sidebar">
+        <div class="card">
+          <p class="typography.small-text">
+            Connect
+          </p>
+          <h3 class="card.sub-heading">
+            @simplabs on Twitter
+          </h3>
+          <p class="typography.body-text">
+            We share our latest updates and events on our Twitter page.
+          </p>
+          <ArrowLink @href="#">
+            Visit our Twitter Page
+          </ArrowLink>
+        </div>
+        <!--card-->
+      </div>
+      <!--sidebar-->
     </div>
-    <Footer />
   </div>
-  <!--contents-->
+  <Footer />
 </div>
