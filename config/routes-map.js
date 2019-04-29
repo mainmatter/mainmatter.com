@@ -34,7 +34,11 @@ module.exports = function() {
     '/expertise/ember': { component: 'PageEmberExpertise', title: 'Europe’s leading Ember experts' },
     '/work': { component: 'PageWork', title: 'Work' },
     '/talks': { component: 'PageTalks', title: 'Talks' },
-    '/calendar': { component: 'Calendar', title: 'Calendar', bundle: { asset: `/calendar.js`, module: `__calendar__` } },
+    '/calendar': {
+      component: 'Calendar',
+      title: 'Calendar',
+      bundle: { asset: '/calendar.js', module: '__calendar__' },
+    },
     '/playbook': { component: 'PagePlaybook', title: 'Playbook' },
     '/contact': { component: 'PageContact', title: 'Contact' },
     '/blog': { component: 'Blog', title: 'Blog', bundle: { asset: '/blog.js', module: '__blog__' } },
