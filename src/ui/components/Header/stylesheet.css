@@ -1,22 +1,33 @@
+@block screen from "../../styles/blocks/screen.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
 @block button from "../../styles/blocks/button.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
-  block-name: navigation;
+  block-name: Header;
+  composes: 'screen.container-base';
+
+  z-index: 1;
+}
+
+.content {
+  margin: 21rem 0;
+}
+
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 8rem 0 0;
 }
 
-.navbar-brand {
+.brand {
   width: 10em;
   margin-right: 2rem;
   flex-shrink: 0;
 }
 
-.navbar-nav {
+.nav {
   margin-left: auto;
   width: 100%;
 }
@@ -28,7 +39,7 @@
 }
 
 @media (max-width: 599px) {
-  .navbar-nav {
+  .nav {
     display: none;
   }
 }

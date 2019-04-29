@@ -2,12 +2,16 @@
   block-name: typography;
 }
 
-.display {
-  margin-bottom: 6rem;
+.display,
+.display-plain {
   color: var(--color-text);
   font-size: 10rem;
   font-weight: 300;
   line-height: 1.2;
+}
+
+.display {
+  margin-bottom: 6rem;
 }
 
 .headline-1 {

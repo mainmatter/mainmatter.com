@@ -1,17 +1,8 @@
 <div>
   <div class="contents">
-    <div class="container">
-      <Navigation />
-      <div class="header-block">
-        <p class="typography.body-text">
-          {{date}}
-        </p>
-        <h1 class="typography.display">
-          {{title}}
-        </h1>
-        {{{excerpt}}}
-      </div>
-    </div>
+    <Header @label={{date}} @title={{title}}>
+      {{{excerpt}}}
+    </Header>
     <div class="container">
       <div class="main-block">
         <div class="content-post">

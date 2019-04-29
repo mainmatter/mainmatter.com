@@ -1,4 +1,3 @@
-@block typography from "../../styles/blocks/typography.block.css";
 @block screen from "../../styles/blocks/screen.block.css";
 
 :scope {
@@ -6,7 +5,7 @@
 
   position: relative;
   width: 100%;
-  padding: 21rem 0 36rem;
+  padding: 0 0 36rem;
 
   --shape-color: var(--link-color);
 }
@@ -23,11 +22,11 @@
 
 .bottom {
   bottom: 0;
-  transform: translate(-130%, 27rem);
+  transform: translate(-125%, 26rem);
 }
 
 .top {
-  top: 8rem;
+  top: -46rem;
   transform: translate(-1%);
 }
 
