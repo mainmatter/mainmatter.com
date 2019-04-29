@@ -11,10 +11,14 @@
   font-size: 3rem;
   line-height: 5rem;
   text-decoration: none;
+  background: var(--color-background) linear-gradient(30deg, var(--color-background) 50%, var(--color-accent) 50%) 0% 0%;
+  background-size: 260% 100%;
+  transition: background 0.25s ease-in-out, color 0.1s ease-in-out;
 }
 
 .button:focus,
 .button:hover {
-  background: var(--color-accent);
+  background-color: var(--color-accent);
+  background-position: 100% 0%;
   color: var(--color-text-inverted);
 }
