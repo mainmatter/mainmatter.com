@@ -9,6 +9,7 @@
 
     {{content-for "head"}}
 
+    <link rel="preload" href="{{rootURL}}recent.js" as="script">
     <link rel="preload" href="{{rootURL}}app.js" as="script">
 
     <link rel="stylesheet" href="{{rootURL}}app.css">
@@ -19,7 +20,10 @@
     {{content-for "body"}}
 
     <div id="app"></div>
+
     {{content-for "body-pre-app-bundle"}}
+
+    <script src="{{rootURL}}recent.js"></script>
     <script src="{{rootURL}}app.js"></script>
 
     {{content-for "body-footer"}}
