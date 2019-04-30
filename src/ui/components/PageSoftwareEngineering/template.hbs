@@ -122,46 +122,12 @@
     </div>
     <!--main-block-->
   </div>
-  <!--container-->
-  <div class="container">
-    <div class="grid-block">
-      <div class="grid-block.heading">
-        <h2 class="typography.headline-1">
-          We have a track record of successful projects for international clients
-        </h2>
-      </div>
-      <div class="grid-block.section">
-        <div class="grid-block.item">
-          <div class="grid-block.image-wrapper">
-            <img class="grid-block.image" src="/assets/images/logos/trainline.svg" />
-          </div>
-          <p class="grid-block.text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-        <!--item-->
-        <div class="grid-block.item">
-          <div class="grid-block.image-wrapper">
-            <img class="grid-block.image" src="/assets/images/logos/timify.svg" />
-          </div>
-          <p class="grid-block.text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-        <!--item-->
-        <div class="grid-block.item">
-          <div class="grid-block.image-wrapper">
-            <img class="grid-block.image" src="/assets/images/logos/cardstack.svg" />
-          </div>
-          <p class="grid-block.text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-        <!--item-->
-      </div>
-    </div>
-    <!--grid-block-->
-  </div>
+  <ClientsGrid
+    @title="We have a track record of successful projects for international clients"
+    @include="trainline,timify,cardstack"
+    @shuffle="true"
+   />
+
   <ShapeAcrossLeadingExperts />
   <WorkWithUs />
   <Footer />
