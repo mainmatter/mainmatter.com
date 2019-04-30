@@ -9,6 +9,8 @@ import { TemplateIterator } from '@glimmer/runtime';
 
 // tslint:disable-next-line:no-var-requires
 const SimpleDOM = require('simple-dom');
+// tslint:disable-next-line:no-var-requires
+const routesMap = require('../config/routes-map');
 
 import Application, { ApplicationOptions } from '@glimmer/application';
 
@@ -36,11 +38,13 @@ export default class SSRApplication extends Application {
       isSSR: boolean;
       route: string;
       origin: string;
+      routesMap: IRoutesMap;
 
       constructor() {
         this.isSSR = true;
         this.route = options.route;
         this.origin = options.origin;
+        this.routesMap = routesMap();
       }
     }
 
