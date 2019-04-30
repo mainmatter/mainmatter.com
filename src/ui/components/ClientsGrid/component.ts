@@ -94,41 +94,16 @@ const allClients = [
   },
 ];
 
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
-
 export default class ClientsGrid extends Component {
   get included() {
-    return this.args.include ? this.args.include.toLowerCase().split(/\W/) : [];
-  }
-
-  get excluded() {
-    return this.args.exclude ? this.args.exclude.toLowerCase().split(/\W/) : [];
+    return this.args.only ? this.args.only.toLowerCase().split(/\W/) : [];
   }
 
   get clients() {
     let clients = allClients;
     let included = this.included;
-    let excluded = this.excluded;
-
     if (included.length > 0) {
       clients = clients.filter(client => included.includes(client.id));
-    }
-
-    if (excluded.length > 0) {
-      clients = clients.filter(client => !excluded.includes(client.id));
-    }
-
-    if (this.args.shuffle) {
-      shuffle(clients);
-    }
-
-    if (this.args.limit) {
-      return clients.slice(0, parseInt(this.args.limit, 10));
     }
 
     return clients;
