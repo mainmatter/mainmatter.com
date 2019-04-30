@@ -22,3 +22,9 @@
   background-position: 0% 10%;
   color: var(--color-text-inverted);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}
