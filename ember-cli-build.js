@@ -14,6 +14,7 @@ const glob = require('glob');
 const commonjs = require('rollup-plugin-commonjs');
 const resolve = require('rollup-plugin-node-resolve');
 const collectPosts = require('./lib/generate-blog-components/lib/collect-posts');
+const _ = require('lodash');
 
 function findAllComponents() {
   let routes = require('./config/routes-map')();
@@ -25,13 +26,19 @@ function findAllComponents() {
     return acc;
   }, []);
 
+  let recentContentComponents = _.chain(collectPosts(path.join(__dirname, '_posts')).posts)
+    .map('meta.topic')
+    .uniq()
+    .map(topic => `RecentPosts${_.capitalize(topic)}`)
+    .value();
+
   let staticComponents = glob
     .sync('*/', {
       cwd: path.join(__dirname, 'src/ui/components'),
     })
     .map(component => component.replace(/\/$/, ''));
 
-  let allComponents = routedComponents.concat(staticComponents);
+  let allComponents = routedComponents.concat(staticComponents).concat(recentContentComponents);
   return [...new Set(allComponents)];
 }
 
