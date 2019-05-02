@@ -11,13 +11,13 @@ const allClients = [
     id: 'cardstack',
     src: '/assets/images/logos/cardstack.svg',
     text:
-      'Cardstack builds the experience layer for a decentralized internet. simplabs helped them completing their Card UI system and validate its abilities in various prototype projects, identifying and fixing some issues in their core framework along the way.',
+      'Cardstack builds the experience layer for a decentralized internet. simplabs helped them complete their Card UI system and validate its abilities in various prototype projects, identifying and fixing some issues in their core framework along the way.',
   },
   {
     id: 'generali',
     src: '/assets/images/logos/generali.svg',
     text:
-      'Generali approached simplabs when they were looking for support with an internal Ember.js project. We guided their team during the course of the project, taught and established best practices until the successful release.',
+      'Generali approached simplabs when they were looking for support with an internal Ember.js project. We guided their team during the course of the project by teaching and establishing best practices until the project’s successful completion.',
   },
   {
     id: 'drive',
@@ -41,19 +41,19 @@ const allClients = [
     id: 'xbav',
     src: '/assets/images/logos/xbav.svg',
     text:
-      'xbAV makes pensions accessible for employees, employers and agents. They approached simplabs when they were looking for support releasing a number of critical features. Our technology experts joined xbAV’s internal team, increasing the available workforce and sharing their expertise.',
+      'xbAV makes pensions accessible for employees, employers and agents. They approached simplabs when they were looking for support releasing a number of critical features. Our technology experts joined xbAV’s internal team, increasing the available workforce while boosting their expertise.',
   },
   {
     id: 'experteer',
     src: '/assets/images/logos/experteer.svg',
     text:
-      'Experteers is Europe’s leading executive career service.simplabs has supported them in various ways ov the years, building custom web apps, reviewing their code as well as providing architecture and process consulting.',
+      'Experteer is Europe’s leading executive career service. simplabs has supported them in various ways over the years, building custom web apps, reviewing their code as well as providing architecture and process consulting.',
   },
   {
     id: 'mvb',
     src: '/assets/images/logos/mvb.svg',
     text:
-      'mvb provides marketing solutions for the german book industry. They approached simplabs when they were looking for external expertise. simplabs performed a workshop, leveling up the team’s expertise and escorted the project until its successful completion.',
+      'mvb provides marketing solutions for the german book industry. They approached simplabs when they were looking for external expertise. simplabs performed a workshop, leveling up the team’s expertise and guided the project until its successful completion.',
   },
   {
     id: 'ringler',
@@ -77,7 +77,7 @@ const allClients = [
     id: 'dim3',
     src: '/assets/images/logos/dim3.svg',
     text:
-      'Dim3 delivers software allowing hospitals manage and optimize their patients’ nutrition plans. They approached simplabs when they faced severe performance problems in their app. We identified and fixed these issues and also some others along the way.',
+      'Dim3 delivers software allowing hospitals to manage and optimize their patients’ nutrition plans. They approached simplabs when they faced severe performance problem in their app. We identified and fixed these issues and also found and solved some potential future problems along the way.',
   },
 
   {
