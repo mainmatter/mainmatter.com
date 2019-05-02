@@ -1,0 +1,118 @@
+@block screen from "../../styles/blocks/screen.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
+
+:scope {
+  block-name: ShapeWork;
+
+  position: relative;
+  min-height: 109rem;
+  margin-bottom: 21rem;
+  padding-bottom: 90rem;
+
+  --shape-color: var(--color-accent);
+}
+
+:scope[state|reverse='true'] {
+  min-height: 90rem;
+  margin-bottom: 0;
+}
+
+.top,
+.bottom {
+  position: absolute;
+  left: 50%;
+  width: 225rem;
+  height: auto;
+  fill: var(--shape-color);
+}
+
+.top {
+  transform: translate(5.2%, 55.3%);
+}
+
+.bottom {
+  transform: translate(-71.1%);
+}
+
+:scope[state|reverse='true'] .top {
+  transform: translate(-105.3%, -55.3%);
+}
+
+:scope[state|reverse='true'] .bottom {
+  transform: translate(-29%);
+}
+
+.bg {
+  fill: var(--shape-color);
+}
+
+.container {
+  composes: 'screen.container-base';
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.header {
+  width: var(--col-3);
+  padding-bottom: 21rem;
+}
+
+.content {
+  width: var(--col-3);
+}
+
+:scope[state|reverse='true'] .content {
+  padding-bottom: 21rem;
+}
+
+.logo {
+  composes: 'screen.container-base';
+  padding-bottom: 2rem;
+}
+
+.logo-img {
+  display: block;
+  height: 8rem;
+  width: auto;
+}
+
+.tagline-container {
+  composes: 'screen.container-base';
+
+  position: relative;
+}
+
+.tagline-logo {
+  overflow: hidden;
+}
+
+.tagline-logo-image {
+  display: block;
+  height: 4rem;
+  width: auto;
+  margin-bottom: 3rem;
+  filter: saturate(0%) brightness(100);
+}
+
+.tagline {
+  position: absolute;
+  bottom: -100rem;
+  right: 0;
+  z-index: 2;
+  width: var(--col-1);
+}
+
+.tagline-text {
+  font-size: 2rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--color-text-inverted);
+}
+
+:scope[state|reverse='true'] .tagline {
+  right: auto;
+  left: 0;
+  bottom: -14em;
+  text-align-last: left;
+}
