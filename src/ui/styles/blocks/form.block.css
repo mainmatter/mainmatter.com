@@ -2,24 +2,29 @@
   block-name: form;
 }
 
+.item,
 .group {
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
+.label,
 .control-label {
   display: block;
   margin-bottom: 0.5rem;
+  font-size: 2.625rem;
+  line-height: 1.523809524;
+  color: #5b5b5b;
 }
 
 .control {
   width: 100%;
   padding: 1rem;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   box-sizing: border-box;
 }
 
 .textarea {
   width: 100%;
   height: 4rem;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
 }

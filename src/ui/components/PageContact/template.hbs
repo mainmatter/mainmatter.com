@@ -1,3 +1,100 @@
 <div>
   <Header @title="Contact Us" />
+  <div class="screen.container">
+    <div class="main-block">
+      <div class="main-block.content">
+        <p class="typography.headline-2">
+          Let us know how we can help you.
+        </p>
+        <form action="">
+          <p class="form.item">
+            <label for="name" class="form.label">
+              Name
+            </label>
+            <input class="form.control" id="name" type="text" autocomplete="name" />
+          </p>
+          <p class="form.item">
+            <label for="email" class="form.label">
+              E-Mail
+            </label>
+            <input class="form.control" type="email" autocomplete="email" />
+          </p>
+          <p class="form.item">
+            <label for="message" class="form.label">
+              Tell us about your project
+            </label>
+            <textarea class="form.control" id="message" cols="30" rows="10"></textarea>
+          </p>
+          <p>
+            <button type="submit" class="button.button">
+              Send mail
+            </button>
+          </p>
+        </form>
+      </div>
+      <div class="main-block.sidebar">
+        <dl class="contact">
+          <dt class="type typography.small-text">
+            Call us
+          </dt>
+          <dd class="value">
+            <a href="tel:+498946256503" class="value-link">
+              +49 89 462 565 03
+            </a>
+          </dd>
+          <dt class="typography.small-text">
+            Email us
+          </dt>
+          <dd class="value">
+            <a href="mailto:info@simplabs.com" class="value-link">
+              info@simplabs.com
+            </a>
+          </dd>
+          <dt class="typography.small-text">
+            Follow us
+          </dt>
+          <dd class="value">
+            <a class="value-link" href="https://twitter.com/simplabs">
+              @simplabs
+            </a>
+          </dd>
+        </dl>
+        <h2 class="typography.small-text">
+          Come by
+        </h2>
+        <p class="map">
+          <img
+            class="map-image"
+            src="/assets/images/map.png"
+            alt="Map of Munich centered on the office of Simplabs"
+            width="546"
+            height="325"
+           />
+
+          <svg class="map-pin" height="71" viewBox="0 0 57 71" width="57" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="m48.5630967 8.62661428c11.2241363 11.57921762 11.2241363 30.10596592.1496551 41.53079392l-20.2034454 20.8425918-20.20344549-20.8425918c-11.07448121-11.424828-11.07448121-29.9515763 0-41.37640435l.14965515-.15438957c11.07448124-11.42482807 28.88344424-11.57921764 40.10758064 0-.1496552-.15438956-.1496552-.15438956 0 0z"
+              fill="#fff"
+            ></path>
+            <g fill="#007df6">
+              <path d="m30 32v14c4.7693023-.448706 9.132093-2.8938288 12-6.7259456z"></path>
+              <path
+                d="m44.2016606 36.5114105c1.1784629-2.3249381 1.7944776-4.8835854 1.7983037-7.4786912.0181744-8.7893319-6.9129473-16.22876-15.8690737-17.0327193v16.1633214zm-31.4416187-14.9106406c-1.1555058 2.308111-1.7581288 4.8433874-1.7600419 7.4132526.0057393 8.765961 6.9196431 16.1745395 15.8499429 16.9859775v-16.023096z"
+                fill-rule="nonzero"
+              ></path>
+              <path d="m27 26v-14c-4.7796139.4506912-9.1468726 2.9059908-12 6.7465438z"></path>
+            </g>
+          </svg>
+        </p>
+        <p class="vcard">
+          Claude-Lorrain-Str. 7
+          <br />
+          81543 München
+          <br />
+          Germany
+        </p>
+      </div>
+    </div>
+  </div>
+  <Footer />
 </div>
