@@ -77,7 +77,7 @@ class SimplabsApp extends GlimmerApp {
       moduleName: '__blog__',
     });
 
-    let blogPosts = collectPosts(path.join(__dirname, '_posts'));
+    let blogPosts = collectPosts(path.join(__dirname, '_posts')).posts;
     let blogPostTrees = blogPosts.map(post => {
       let [blogPostTree] = this._splitBundle(jsTree, {
         componentPrefix: post.componentName,

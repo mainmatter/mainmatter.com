@@ -5,7 +5,7 @@ const path = require('path');
 const collectPosts = require('../lib/generate-blog-components/lib/collect-posts');
 
 module.exports = function() {
-  let blogPosts = collectPosts(path.join(__dirname, '..', '_posts'));
+  let blogPosts = collectPosts(path.join(__dirname, '..', '_posts')).posts;
   let blogPostRoutes = blogPosts.reduce((acc, post) => {
     acc[`/blog/${post.queryPath}`] = {
       component: post.componentName,
