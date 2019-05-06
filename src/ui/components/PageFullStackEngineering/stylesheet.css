@@ -8,7 +8,7 @@
 @block button from "../../styles/blocks/button.block.css";
 
 :scope {
-  block-name: PageSoftwareEngineering;
+  block-name: PageFullStackEngineering;
   extends: screen;
 }
 
