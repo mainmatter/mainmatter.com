@@ -1,0 +1,10 @@
+@block screen from "./screen.block.css";
+
+:scope {
+  block-name: blog-author;
+  extends: screen;
+}
+
+.tweet {
+  
+}
