@@ -25,7 +25,7 @@ module.exports = function() {
     ...blogPostRoutes,
     '/': { component: 'PageHomepage' },
     '/services': { component: 'PageServices', title: 'Services' },
-    '/services/software-engineering': { component: 'PageSoftwareEngineering', title: 'Full Stack Engineering' },
+    '/services/full-stack-engineering': { component: 'PageFullStackEngineering', title: 'Full Stack Engineering' },
     '/services/team-augmentation': { component: 'PageTeamAugmentation', title: 'Team Augmentation' },
     '/services/training': { component: 'PageTraining', title: 'Tutoring' },
     '/cases/trainline': { component: 'PageCaseStudyTrainline', title: 'Trainline Case Study' },
