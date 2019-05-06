@@ -5,8 +5,8 @@ const path = require('path');
 const collectPosts = require('../lib/generate-blog-components/lib/collect-posts');
 
 module.exports = function() {
-  let blogPosts = collectPosts(path.join(__dirname, '..', '_posts')).posts;
-  let blogPostRoutes = blogPosts.reduce((acc, post) => {
+  let { posts, authors } = collectPosts(path.join(__dirname, '..', '_posts'));
+  let blogPostRoutes = posts.reduce((acc, post) => {
     acc[`/blog/${post.queryPath}`] = {
       component: post.componentName,
       title: `${post.meta.title} | Blog`,
@@ -21,8 +21,24 @@ module.exports = function() {
     return acc;
   }, {});
 
+  let blogAuthorsRoutes = authors.reduce((acc, author) => {
+    acc[`/blog/authors/${author.twitter}`] = {
+      component: author.componentName,
+      title: `Posts by ${author.name} | Blog`,
+      bundle: {
+        asset: `/blog-author-${author.twitter}.js`,
+        module: `__blog-author-${author.twitter}__`,
+      },
+      parentBundle: {
+        asset: '/blog.js',
+      },
+    };
+    return acc;
+  }, {});
+
   let routes = {
     ...blogPostRoutes,
+    ...blogAuthorsRoutes,
     '/': { component: 'PageHomepage' },
     '/services': { component: 'PageServices', title: 'Services' },
     '/services/full-stack-engineering': { component: 'PageFullStackEngineering', title: 'Full Stack Engineering' },
