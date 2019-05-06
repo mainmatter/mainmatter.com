@@ -10,8 +10,12 @@
           {{latest.title}}
         </a>
       </h2>
-      <p class="typography.body-text">
-        {{{latest.excerpt}}}
+      {{{latest.excerpt}}}
+      <a class="typography.link" href="/blog/author/{{latest.author.twitter}}" data-internal>
+        {{latest.author.name}}
+      </a>
+      <p class="typography.small-text">
+        {{latest.date}}
       </p>
       <ArrowLink @href="{{latest.path}}">
         Read Post
@@ -36,7 +40,7 @@
                   </h3>
                   {{{excerpt}}}
                 </div>
-                <a class="typography.link" href="#">
+                <a class="typography.link" href="/blog/author/{{author.twitter}}" data-internal>
                   {{author.name}}
                 </a>
                 <p class="typography.small-text">

@@ -22,7 +22,7 @@ module.exports = function() {
   }, {});
 
   let blogAuthorsRoutes = authors.reduce((acc, author) => {
-    acc[`/blog/authors/${author.twitter}`] = {
+    acc[`/blog/author/${author.twitter}`] = {
       component: author.componentName,
       title: `Posts by ${author.name} | Blog`,
       bundle: {
