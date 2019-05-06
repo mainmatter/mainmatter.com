@@ -1,0 +1,8 @@
+@block grid from "../../styles/blocks/grid.block.css";
+@block screen from "../../styles/blocks/screen.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
+
+:scope {
+  block-name: ClientsGrid;
+  extends: grid;
+}
