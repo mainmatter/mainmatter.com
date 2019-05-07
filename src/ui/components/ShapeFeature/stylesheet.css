@@ -87,9 +87,8 @@
 
 .tagline-logo-image {
   display: block;
-  height: 10rem;
+  height: 11rem;
   width: auto;
-  margin-bottom: 1rem;
   filter: saturate(0%) brightness(100);
 }
 
