@@ -106,7 +106,7 @@
 .tagline {
   position: absolute;
   bottom: -100rem;
-  right: 0;
+  right: var(--horizontal-spacing);
   z-index: 2;
   width: var(--col-1);
 }
@@ -120,7 +120,7 @@
 
 :scope[state|reverse='true'] .tagline {
   right: auto;
-  left: 0;
+  left: var(--horizontal-spacing);
   bottom: -14em;
   text-align-last: left;
 }
