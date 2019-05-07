@@ -43,7 +43,8 @@
 .container {
   position: relative;
   max-width: 132rem;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: var(--horizontal-spacing);
   padding-right: var(--horizontal-spacing);
 }

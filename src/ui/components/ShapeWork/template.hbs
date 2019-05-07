@@ -1,0 +1,70 @@
+<div state:reverse={{@reverse}}>
+  {{#if @logo}}
+    <div class="logo">
+      <img class="logo-img" src="{{@logo}}" alt="" />
+    </div>
+  {{/if}}
+  <div class="container">
+    <header class="header">
+      <h2 class="typography.headline-1">
+        {{@title}}
+      </h2>
+    </header>
+    <div class="content">
+      {{yield}}
+    </div>
+  </div>
+  <svg
+    class="bottom"
+    width="1800"
+    height="900"
+    viewBox="0 0 1800 900"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <defs>
+      <path
+        id="{{this.shapeId}}"
+        d="m840.577137 0 862.961153 498.230855-231.96152 401.769145h-512.153907l-862.9611537-498.230855 231.9615247-401.769145z"
+      ></path>
+      <clipPath id="{{this.maskId}}">
+        <use fill-rule="evenodd" xlink:href="#{{shapeId}}"></use>
+      </clipPath>
+    </defs>
+    <g style="clip-path: url(#{{this.maskId}}); {{this.backgroundStyle}}">
+      <rect class="bg" x="0" y="0" width="100%" height="100%"></rect>
+    </g>
+    {{#if @src}}
+      {{#if @clip}}
+        <g style="clip-path: url(#{{this.maskId}});">
+          <image class="svg-image" x="0" y="0" xlink:href="{{@src}}" width="100%" height="100%"></image>
+        </g>
+      {{else}}
+        <image class="svg-image" x="0" y="0" xlink:href="{{@src}}" width="100%" height="100%"></image>
+      {{/if}}
+    {{/if}}
+  </svg>
+  <svg
+    class="top"
+    width="1800"
+    height="900"
+    viewBox="0 0 1800 900"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    style="{{this.shapeStyle}}"
+  >
+    <use fill-rule="evenodd" xlink:href="#{{this.shapeId}}"></use>
+  </svg>
+  <div class="container">
+    <div class="tagline">
+      {{#if @logo}}
+        <div class="tagline-logo">
+          <img class="tagline-logo-image" src="{{@logo}}" alt="" />
+        </div>
+      {{/if}}
+      <p class="tagline-text">
+        {{@tagline}}
+      </p>
+    </div>
+  </div>
+</div>

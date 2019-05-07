@@ -1,86 +1,64 @@
 <div>
   <Header @label="Work" @title="A proven track record of successful projects for international clients." />
-  <ShapeCenter
-    @background="#90E9D4"
+  <ShapeWork
+    @background="#21314D"
+    @color="#48D6B6"
     @src="/assets/images/trainline-comp.png"
-    @width="1208"
-    @height="1268"
     @logo="/assets/images/logos/trainline.svg"
+    @title="Leveraging Trainline's full market potential"
+    @tagline="Mobile Web App for tickets"
   >
-    <ArrowLink @href="/cases/trainline">
-      Read about Trainline
-    </ArrowLink>
-  </ShapeCenter>
-  <div class="container">
-    <h2 class="typography.small-text">
-      Our latest Case Study
-    </h2>
-    <h3 class="typography.headline-2">
-      Leveraging Trainline's full market potential
-    </h3>
-    <p class="typography.body-text">
+    <p class="typography.lead">
       Trainline is Europe’s leading independent rail and coach platform. We worked with them to deliver a high-performance mobile web app, along with an improved engineering process, enabling Trainline to achieve their business goals for years to come.
     </p>
     <ArrowLink @href="/cases/trainline">
       Read Case Study
     </ArrowLink>
-  </div>
+  </ShapeWork>
   <ClientsGrid @title="Some of our clients" />
-  <ShapeCenter
-    @src="/assets/images/trainline-comp.png"
-    @width="1208"
-    @height="1268"
-    @logo="/assets/images/logos/trainline.svg"
+  <ShapeWork
+    @color="#CB3B43"
+    @background="#43566C"
+    @src="/assets/images/work/timify.jpg"
+    @clip="true"
+    @logo="/assets/images/logos/timify.svg"
+    @title="Modern online appointment scheduling"
+    @tagline="Web app for appointments"
+    @reverse="true"
   >
-    <ArrowLink @href="#">
-      Read about Timify
-    </ArrowLink>
-  </ShapeCenter>
-  <div class="container">
-    <h3 class="typography.headline-2">
-      Modern online appointment scheduling
-    </h3>
-    <p class="typography.body-text">
+    <p class="typography.lead">
       When Timify decided it was time to re-engineer their existing product, they trusted us to bring them into the future. We added engineering capacity and technology expertise to Timify's internal team and helped to build a solid foundation that enabled them to iterate fast and launch on-schedule, without sacrificing quality.
     </p>
     <ArrowLink @href="#">
       Read Case Study
     </ArrowLink>
-  </div>
+  </ShapeWork>
   <div class="container">
-    <h2 class="typography.headline-1">
-      More Case Studies
-    </h2>
-    <div class="main-block">
-      <div class="main-block.content-full-width">
-        <div class="main-block.content-item">
-          <div class="main-block.content-section">
-            <div class="main-block.content-section-item">
-              <h3 class="typography.headline-2">
-                A modern UI for an open-source router firmware
-              </h3>
-              <ArrowLink @href="#">
-                Read Case Study
-              </ArrowLink>
-            </div>
-          </div>
-          <!--section-->
-          <div class="main-block.content-section">
-            <div class="main-block.content-section-item">
-              <h3 class="typography.headline-2">
-                An online travel magazine for global citizens
-              </h3>
-              <ArrowLink @href="#">
-                Read Case Study
-              </ArrowLink>
-            </div>
-          </div>
-          <!--section-->
-        </div>
-        <!--content-item-->
-      </div>
-      <!--content-->
+    <div class="content">
+      <h2 class="typography.headline-1">
+        More Case Studies
+      </h2>
+      <ul>
+        <li class="more">
+          <h3 class="more-headline">
+            A modern UI for an open-source router firmware
+          </h3>
+          <ArrowLink @href="#">
+            Read Case Study
+          </ArrowLink>
+        </li>
+        <li class="more">
+          <h3 class="more-headline">
+            An online travel magazine for global citizens
+          </h3>
+          <ArrowLink @href="#">
+            Read Case Study
+          </ArrowLink>
+        </li>
+      </ul>
     </div>
   </div>
+  <ShapeAcrossPlaybook />
+  <WorkWithUs />
   <Footer />
 </div>

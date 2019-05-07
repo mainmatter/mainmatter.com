@@ -29,7 +29,7 @@
 .image {
   display: block;
   flex: 0 0 auto;
-  max-height: 8rem;
+  max-height: 16rem;
   width: auto;
   margin: auto;
 }
