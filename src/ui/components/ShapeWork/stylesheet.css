@@ -73,7 +73,7 @@
 
 .logo-img {
   display: block;
-  height: 8rem;
+  height: 12rem;
   width: auto;
 }
 
@@ -89,9 +89,9 @@
 
 .tagline-logo-image {
   display: block;
-  height: 4rem;
+  height: 8rem;
   width: auto;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   filter: saturate(0%) brightness(100);
 }
 
