@@ -55,4 +55,18 @@
       {{yield}}
     </figcaption>
   </figure>
+  {{#if @tagline}}
+    <div class="container">
+      <div class="tagline">
+        {{#if @logo}}
+          <div class="tagline-logo">
+            <img class="tagline-logo-image" src="{{@logo}}" alt="" />
+          </div>
+        {{/if}}
+        <p class="tagline-text">
+          {{@tagline}}
+        </p>
+      </div>
+    </div>
+  {{/if}}
 </div>
