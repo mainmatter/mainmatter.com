@@ -74,3 +74,35 @@
   width: 100%;
   height: auto;
 }
+
+.tagline-container {
+  composes: 'screen.container-base';
+
+  position: relative;
+}
+
+.tagline-logo {
+  overflow: hidden;
+}
+
+.tagline-logo-image {
+  display: block;
+  height: 10rem;
+  width: auto;
+  margin-bottom: 1rem;
+  filter: saturate(0%) brightness(100);
+}
+
+.tagline {
+  position: relative;
+  top: -3rem;
+  z-index: 2;
+  width: var(--col-2);
+}
+
+.tagline-text {
+  font-size: 2rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--color-text-inverted);
+}
