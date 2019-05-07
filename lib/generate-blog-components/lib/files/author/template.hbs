@@ -1,0 +1,44 @@
+<div>
+  <Header @label="Blog" @title="Posts by {{name}}" />
+  <div class="container">
+    <div class="main-block">
+      <div class="main-block.content">
+        {{#each posts}}
+          <div class="main-block.content-item">
+            <a class="typography.tag" href="#">
+              #{{topic}}
+            </a>
+            <div class="blog-post.excerpt">
+              <h3 class="typography.headline-2">
+                <a class="typography.title-link" href="{{path}}" data-internal>
+                  {{title}}
+                </a>
+              </h3>
+              {{{excerpt}}}
+              <a class="typography.link" href="/blog/author/{{author.twitter}}" data-internal>
+                {{author.name}}
+              </a>
+              <p class="typography.small-text">
+                {{date}}
+              </p>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+      <div class="main-block.sidebar">
+        <Card @title="{{name}}" @src="/assets/images/authors/{{twitter}}.jpg">
+          <p class="typography.body-text">
+            {{bio}}
+          </p>
+          <p class="typography.body-text">
+            <a href="https://twitter.com/{{author.twitter}}" class="typography.link">
+              @{{twitter}}
+            </a>
+          </p>
+        </Card>
+      </div>
+    </div>
+  </div>
+  <WorkWithUs />
+  <Footer />
+</div>

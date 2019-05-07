@@ -1,0 +1,20 @@
+@block typography from "../../styles/blocks/typography.block.css";
+@block fluid-image from "../../styles/blocks/fluid-image.block.css";
+
+:scope {
+  block-name: Card;
+
+  margin-bottom: 6rem;
+}
+
+.image {
+  height: 25rem;
+}
+
+.caption {
+  margin-top: 3rem;
+}
+
+.headline {
+  margin-bottom: 3rem;
+}

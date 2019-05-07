@@ -77,14 +77,22 @@ class SimplabsApp extends GlimmerApp {
       moduleName: '__blog__',
     });
 
-    let blogPosts = collectPosts(path.join(__dirname, '_posts'));
-    let blogPostTrees = blogPosts.map(post => {
+    let { posts, authors } = collectPosts(path.join(__dirname, '_posts'));
+    let blogPostTrees = posts.map(post => {
       let [blogPostTree] = this._splitBundle(jsTree, {
         componentPrefix: post.componentName,
         file: `blog-${post.queryPath}.js`,
         moduleName: `__blog-${post.queryPath}__`,
       });
       return blogPostTree;
+    });
+    let blogAuthorTrees = authors.map(author => {
+      let [blogAuthorTree] = this._splitBundle(jsTree, {
+        componentPrefix: author.componentName,
+        file: `blog-author-${author.twitter}.js`,
+        moduleName: `__blog-author-${author.twitter}__`,
+      });
+      return blogAuthorTree;
     });
 
     let [calendarTree, mainSiteNonCalendarTree] = this._splitBundle(mainSiteTree, {
@@ -95,7 +103,7 @@ class SimplabsApp extends GlimmerApp {
     mainSiteTree = mainSiteNonCalendarTree;
 
     let appTree = super.package(mainSiteTree);
-    let mainTree = new MergeTrees([appTree, calendarTree, blogTree, ...blogPostTrees]);
+    let mainTree = new MergeTrees([appTree, calendarTree, blogTree, ...blogPostTrees, ...blogAuthorTrees]);
 
     if (process.env.PRERENDER) {
       let ssrTree = this._packageSSR();
