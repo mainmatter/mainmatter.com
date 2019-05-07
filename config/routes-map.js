@@ -58,7 +58,6 @@ module.exports = function() {
     },
     '/playbook': { component: 'PagePlaybook', title: 'Playbook' },
     '/contact': { component: 'PageContact', title: 'Contact' },
-    '/blog-by-author': { component: 'PageBlogByAuthor', title: 'Blog by author' },
     '/blog': { component: 'Blog', title: 'Blog', bundle: { asset: '/blog.js', module: '__blog__' } },
   };
 
