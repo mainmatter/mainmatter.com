@@ -10,15 +10,6 @@
   extends: screen;
 }
 
-.shape-decoration-bg {
-  background: #007DF6;
-}
-
-.shape-left-bg {
-  background-color: #007DF6;
-  background-image: url('/assets/images/sky.jpg');
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode: soft-light;
+.vertical-offset {
+  padding-top: 47rem;
 }
