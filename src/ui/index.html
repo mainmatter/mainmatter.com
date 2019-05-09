@@ -18,10 +18,7 @@
     {{content-for "body"}}
 
     <div id="app"></div>
-    <script src="https://browser.sentry-cdn.com/5.2.0/bundle.min.js" crossorigin="anonymous"></script>
-    <script>
-      Sentry.init({ dsn: 'https://5d8e23a02a1841f5837b96ef76423c8b@sentry.io/1456103' });
-    </script>
+    {{content-for "body-pre-app-bundle"}}
     <script src="{{rootURL}}app.js"></script>
 
     {{content-for "body-footer"}}
