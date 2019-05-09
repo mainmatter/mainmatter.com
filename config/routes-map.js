@@ -49,6 +49,7 @@ module.exports = function() {
     },
     '/cases/ddwrt': { component: 'PageCaseDdWrt', title: 'DD-WRT NXT Case Study' },
     '/cases/expedition': { component: 'PageCaseStudyExpedition', title: 'Expedition Case Study' },
+    '/cases/timify': { component: 'PageCaseStudyTimify', title: 'Timify Case Study' },
     '/cases/trainline': { component: 'PageCaseStudyTrainline', title: 'Trainline Case Study' },
     '/contact': { component: 'PageContact', title: 'Contact' },
     '/expertise/ember': { component: 'PageEmberExpertise', title: 'Europe’s leading Ember experts' },
