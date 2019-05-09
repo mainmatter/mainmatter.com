@@ -5,7 +5,7 @@ import App from './main';
 
 const containerElement = document.getElementById('app');
 const hasSSRBody = !!document.querySelector('[data-has-ssr-response]');
-const app = new App({ hasSSRBody, element: containerElement });
+const app = new App({ hasSSRBody: !!hasSSRBody, element: containerElement });
 
 setPropertyDidChange(() => {
   app.scheduleRerender();
