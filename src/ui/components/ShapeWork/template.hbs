@@ -5,16 +5,16 @@
     </div>
   {{/if}}
   {{#if @title}}
-  <div class="container">
-    <header class="header">
-      <h2 class="typography.headline-1">
-        {{@title}}
-      </h2>
-    </header>
-    <div class="content">
-      {{yield}}
+    <div class="container">
+      <header class="header">
+        <h2 class="typography.headline-1">
+          {{@title}}
+        </h2>
+      </header>
+      <div class="content">
+        {{yield}}
+      </div>
     </div>
-  </div>
   {{/if}}
   <svg
     class="bottom"
@@ -57,13 +57,13 @@
   >
     <use fill-rule="evenodd" xlink:href="#{{this.shapeId}}"></use>
   </svg>
-{{#if @center}}
-<div class="container">
-  <div class="content">
-    {{yield}}
-  </div>
-</div>
-{{/if}}
+  {{#if @center}}
+    <div class="container">
+      <div class="content">
+        {{yield}}
+      </div>
+    </div>
+  {{/if}}
   {{#if tagline}}
     <div class="container">
       <div class="tagline">
