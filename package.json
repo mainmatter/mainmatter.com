@@ -82,7 +82,8 @@
     "paths": [
       "lib/generate-blog-components",
       "lib/generate-calendar",
-      "lib/inject-routes"
+      "lib/inject-routes",
+      "lib/sentry"
     ]
   },
   "prettier": {
@@ -90,5 +91,6 @@
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "all"
-  }
+  },
+  "dependencies": {}
 }
