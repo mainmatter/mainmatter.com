@@ -4,11 +4,11 @@ import { setupRenderingTest } from '../../../utils/test-helpers/setup-rendering-
 
 const { module, test } = QUnit;
 
-module('Component: PageImprint', function(hooks) {
+module('Component: PageLegalPrivacy', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await render(hbs`<PageImprint />`);
+    await render(hbs`<PageLegalPrivacy />`);
 
     assert.ok(this.containerElement.querySelector('div'));
   });

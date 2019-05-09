@@ -4,7 +4,7 @@
 @block list from "../../styles/blocks/list.block.css";
 
 :scope {
-  block-name: PagePrivacy;
+  block-name: PageLegalPrivacy;
   extends: screen;
 }
 
