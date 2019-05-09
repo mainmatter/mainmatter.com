@@ -172,6 +172,8 @@ export default class Simplabs extends Component {
     let script = document.querySelector('[data-shoebox-routes]');
     if (script) {
       return JSON.parse(script.innerText);
+    } else {
+      return {};
     }
   }
 }

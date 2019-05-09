@@ -8,7 +8,7 @@ module('Component: PageCaseStudyExpedition', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await render(hbs`<CaseStudy />`);
+    await render(hbs`<PageCaseStudyExpedition />`);
 
     assert.ok(this.containerElement.querySelector('div'));
   });

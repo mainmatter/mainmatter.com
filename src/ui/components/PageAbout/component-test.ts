@@ -8,7 +8,7 @@ module('Component: PageAbout', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await render(hbs`<About />`);
+    await render(hbs`<PageAbout />`);
 
     assert.ok(this.containerElement.querySelector('div'));
   });
