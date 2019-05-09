@@ -52,6 +52,7 @@ module.exports = function() {
     '/cases/trainline': { component: 'PageCaseStudyTrainline', title: 'Trainline Case Study' },
     '/contact': { component: 'PageContact', title: 'Contact' },
     '/expertise/ember': { component: 'PageEmberExpertise', title: 'Europe’s leading Ember experts' },
+    '/imprint': { component: 'PageImprint', title: 'Imprint' },
     '/playbook': { component: 'PagePlaybook', title: 'Playbook' },
     '/services': { component: 'PageServices', title: 'Services' },
     '/services/full-stack-engineering': { component: 'PageFullStackEngineering', title: 'Full Stack Engineering' },
