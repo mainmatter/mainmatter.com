@@ -80,7 +80,7 @@ Follow [their Twitter](https://twitter.com/fullstackcon) for updates as the even
 
 ![EmberFest](/images/posts/2019-04-05-april-monthly-update/ember-fest-logo.png)
 
-The [EmberFestEU](https://emberfest.eu/) early bird tickets are now sold out!
+The [EmberFest](https://emberfest.eu/) early bird tickets are now sold out!
 
 Taking place in Copenhagen in October, EmberFestEU brings together the European Ember community for two days of talks and activities.
 
