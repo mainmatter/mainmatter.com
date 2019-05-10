@@ -1,6 +1,26 @@
 @block screen from "../../styles/blocks/screen.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
 
 :scope {
   block-name: Page404;
   extends: screen;
+}
+
+.block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headline {
+  width: var(--col-4);
+}
+
+.four-oh-four {
+  display: block;
+  width: var(--col-2);
+  height: auto;
+}
+
+.elsewhere {
+  margin-bottom: 3rem;
 }
