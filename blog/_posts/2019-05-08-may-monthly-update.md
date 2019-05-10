@@ -78,7 +78,7 @@ Follow [their Twitter](https://twitter.com/fullstackcon) for updates as the even
 
 #### EmberFest - October 17th & 18th - Earlybird tickets sold out
 
-![EmberFestEU](/images/posts/2019-04-05-april-monthly-update/ember-fest-logo.png)
+![EmberFest](/images/posts/2019-04-05-april-monthly-update/ember-fest-logo.png)
 
 The [EmberFestEU](https://emberfest.eu/) early bird tickets are now sold out!
 
