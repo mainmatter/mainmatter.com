@@ -54,7 +54,7 @@ _We're always interested in new speakers for the various meetups we're involved 
 
 On May 24th and 25th [Jessica Jordan](https://twitter.com/jjordan_dev) is leading a Javascript for beginners workshop.
 
-Day 1 is an installation party to make sure is that everybody is set up for day 2 when attendees will be guided through creating their first web application using EmberJS. The workshop is open to women and those who are non-binary, and you can sign up using the links below!
+Day 1 is an installation party to make sure that everybody is set up for day 2 when attendees will be guided through creating their first web application using EmberJS. The workshop is open to women and those who are non-binary, and you can sign up using the links below!
 
 [Day 1](https://www.meetup.com/Ember-js-Berlin/events/260668921/) & [Day 2.](https://www.meetup.com/Ember-js-Berlin/events/260668987/)
 
