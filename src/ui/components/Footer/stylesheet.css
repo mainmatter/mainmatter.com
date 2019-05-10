@@ -22,11 +22,23 @@
   margin-bottom: 2rem;
 }
 
+.legal {
+  grid-row: 2/3;
+  margin-left: -2rem;
+  padding-bottom: 3rem;
+}
+
+.legal-link {
+  color: #979797;
+  text-decoration: none;
+  margin-left: 2rem;
+}
+
 .nav {
   width: var(--col-4);
   display: grid;
   grid-template-columns: repeat(4, fit-content(var(--col-1)));
-  grid-template-rows: 5rem 1fr;
+  grid-template-rows: 7rem 1fr 6rem;
   justify-content: space-between;
 }
 
@@ -47,6 +59,7 @@
 
 .item {
   padding: 0.5rem 0;
+  white-space: nowrap;
 }
 
 .link {

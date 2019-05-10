@@ -52,7 +52,17 @@ module.exports = function() {
     '/cases/trainline': { component: 'PageCaseStudyTrainline', title: 'Trainline Case Study' },
     '/contact': { component: 'PageContact', title: 'Contact' },
     '/expertise/ember': { component: 'PageEmberExpertise', title: 'Europe’s leading Ember experts' },
+    '/imprint': {
+      component: 'PageLegalImprint',
+      title: 'Imprint',
+      bundle: { asset: '/legal.js', module: '__legal__' },
+    },
     '/playbook': { component: 'PagePlaybook', title: 'Playbook' },
+    '/privacy': {
+      component: 'PageLegalPrivacy',
+      title: 'Privacy Policy',
+      bundle: { asset: '/legal.js', module: '__legal__' },
+    },
     '/services': { component: 'PageServices', title: 'Services' },
     '/services/full-stack-engineering': { component: 'PageFullStackEngineering', title: 'Full Stack Engineering' },
     '/services/team-augmentation': { component: 'PageTeamAugmentation', title: 'Team Augmentation' },

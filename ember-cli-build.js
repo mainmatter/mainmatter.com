@@ -102,8 +102,15 @@ class SimplabsApp extends GlimmerApp {
     });
     mainSiteTree = mainSiteNonCalendarTree;
 
+    let [legalTree, mainSiteNonLegalTree] = this._splitBundle(mainSiteTree, {
+      componentPrefix: 'PageLegal',
+      file: 'legal.js',
+      moduleName: '__legal__',
+    });
+    mainSiteTree = mainSiteNonLegalTree;
+
     let appTree = super.package(mainSiteTree);
-    let mainTree = new MergeTrees([appTree, calendarTree, blogTree, ...blogPostTrees, ...blogAuthorTrees]);
+    let mainTree = new MergeTrees([appTree, legalTree, calendarTree, blogTree, ...blogPostTrees, ...blogAuthorTrees]);
 
     if (process.env.PRERENDER) {
       let ssrTree = this._packageSSR();
