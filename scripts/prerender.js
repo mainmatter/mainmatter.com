@@ -51,9 +51,11 @@ async function inlineCss(fileName) {
 function buildShoeboxBundlePreloads(html) {
   let dom = new jsdom.JSDOM(html);
   let bundleNodes = Array.from(dom.window.document.querySelectorAll('[data-shoebox-bundle]'));
-  return bundleNodes.map((node) => {
-    return `<link rel="preload" href="${node.getAttribute('src')}" as="script">`;
-  }).join('\n');
+  return bundleNodes
+    .map(node => {
+      return `<link rel="preload" href="${node.getAttribute('src')}" as="script">`;
+    })
+    .join('\n');
 }
 
 const renderer = new GlimmerRenderer();
@@ -63,8 +65,7 @@ server.get('*', async function(req, res, next) {
     let origin = `${req.protocol}://${req.headers.host}`;
     let { body, title } = await renderer.render(origin, req.url);
     let shoeboxBundlePreloads = buildShoeboxBundlePreloads(body);
-    let html = HTML
-      .replace('<div id="app"></div>', body)
+    let html = HTML.replace('<div id="app"></div>', body)
       .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
       .replace('<link', `${shoeboxBundlePreloads}\n<link`);
     res.send(html);
