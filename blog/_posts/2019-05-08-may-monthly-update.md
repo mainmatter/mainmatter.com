@@ -76,7 +76,7 @@ In London this July [Jessica Jordan](https://twitter.com/jjordan_dev) is speakin
 
 Follow [their Twitter](https://twitter.com/fullstackcon) for updates as the event approaches.
 
-#### EmberFestEU - October 17th & 18th - Earlybird tickets sold out
+#### EmberFest - October 17th & 18th - Earlybird tickets sold out
 
 ![EmberFestEU](/images/posts/2019-04-05-april-monthly-update/ember-fest-logo.png)
 
