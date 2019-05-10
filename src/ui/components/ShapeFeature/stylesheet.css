@@ -5,7 +5,6 @@
   block-name: ShapeFeature;
 
   position: relative;
-  margin-top: 21rem;
   padding: 28rem 0 14rem;
   min-height: 58rem;
 
@@ -44,10 +43,10 @@
 .bottom-content {
   position: absolute;
   background: var(--shape-color) center no-repeat;
-  background-size: 230rem auto;
+  background-size: 120rem auto;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
+  width: 50%;
   height: 100%;
   overflow: hidden;
 }

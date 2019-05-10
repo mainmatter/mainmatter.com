@@ -17,6 +17,11 @@
   margin-bottom: 0;
 }
 
+:scope[state|center='true'] {
+  min-height: 68rem;
+  padding-bottom: 0;
+}
+
 .top,
 .bottom {
   position: absolute;
@@ -50,6 +55,14 @@
   transform: translate(-7.5%);
 }
 
+:scope[state|center='true'] .bottom {
+  transform: translate(-88%, -40%);
+}
+
+:scope[state|center='true'] .top {
+  transform: translate(-11.7%, 15.3%);
+}
+
 .bg {
   fill: var(--shape-color);
 }
@@ -59,6 +72,12 @@
 
   display: flex;
   justify-content: space-between;
+}
+
+:scope[state|center='true'] .container {
+  justify-content: flex-end;
+  padding-top: 30rem;
+  margin-bottom: -10rem;
 }
 
 .header {
@@ -72,6 +91,12 @@
 
 :scope[state|reverse='true'] .content {
   padding-bottom: 21rem;
+}
+
+:scope[state|center='true'] .content {
+  width: var(--col-2);
+  --color-text: var(--color-text-inverted);
+  --color-muted: var(--color-text-inverted);
 }
 
 .logo {
@@ -105,7 +130,7 @@
 
 .tagline {
   position: absolute;
-  bottom: -100rem;
+  bottom: -110rem;
   right: var(--horizontal-spacing);
   z-index: 2;
   width: var(--col-1);

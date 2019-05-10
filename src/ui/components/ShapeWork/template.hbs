@@ -1,19 +1,21 @@
-<div state:reverse={{@reverse}}>
+<div state:reverse={{@reverse}} state:center={{@center}}>
   {{#if @logo}}
     <div class="logo">
       <img class="logo-img" src="{{@logo}}" alt="" />
     </div>
   {{/if}}
-  <div class="container">
-    <header class="header">
-      <h2 class="typography.headline-1">
-        {{@title}}
-      </h2>
-    </header>
-    <div class="content">
-      {{yield}}
+  {{#if @title}}
+    <div class="container">
+      <header class="header">
+        <h2 class="typography.headline-1">
+          {{@title}}
+        </h2>
+      </header>
+      <div class="content">
+        {{yield}}
+      </div>
     </div>
-  </div>
+  {{/if}}
   <svg
     class="bottom"
     width="1800"
@@ -55,16 +57,25 @@
   >
     <use fill-rule="evenodd" xlink:href="#{{this.shapeId}}"></use>
   </svg>
-  <div class="container">
-    <div class="tagline">
-      {{#if @logo}}
-        <div class="tagline-logo">
-          <img class="tagline-logo-image" src="{{@logo}}" alt="" />
-        </div>
-      {{/if}}
-      <p class="tagline-text">
-        {{@tagline}}
-      </p>
+  {{#if @center}}
+    <div class="container">
+      <div class="content">
+        {{yield}}
+      </div>
     </div>
-  </div>
+  {{/if}}
+  {{#if @tagline}}
+    <div class="container">
+      <div class="tagline">
+        {{#if @logo}}
+          <div class="tagline-logo">
+            <img class="tagline-logo-image" src="{{@logo}}" alt="" />
+          </div>
+        {{/if}}
+        <p class="tagline-text">
+          {{@tagline}}
+        </p>
+      </div>
+    </div>
+  {{/if}}
 </div>
