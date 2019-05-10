@@ -82,7 +82,7 @@ Follow [their Twitter](https://twitter.com/fullstackcon) for updates as the even
 
 The [EmberFestEU](https://emberfest.eu/) early bird tickets are now sold out!
 
-Taking place in Prague in October, EmberFestEU brings together the European Ember community for two days of talks and activities.
+Taking place in Copenhagen in October, EmberFestEU brings together the European Ember community for two days of talks and activities.
 
 Grab a ticket [here](https://emberfest.eu/) while you still can and keep an eye on the [twitter](https://twitter.com/EmberFest) for updates as the conference takes shape.
 
