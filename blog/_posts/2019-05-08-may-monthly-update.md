@@ -102,4 +102,4 @@ We were proud sponsors on ElixirConfEU which took place in Prague on the 8th and
 
 #### Tobias Bieniek's talk from EmberCamp Chicago 2019 released
 
-And lastly, looking way back to September 2018, [Tobi's](https://twitter.com/TobiasBieniek/) talk from [EmberCamp Chicago](https://twitter.com/embercamp), "Internationalization: It's Easy in Ember" was released and is [now available on YouTube.](https://www.youtube.com/watch?v=K4nKWp1z4cU&t=0s&list=PL4eq2DPpyBbm-vTgHMdBjUi1Qd5GiRIfW&index=5)
+And lastly, looking way back to September 2018, [Tobias Bieniek's](https://twitter.com/TobiasBieniek/) talk from [EmberCamp Chicago](https://twitter.com/embercamp), "Internationalization: It's Easy in Ember" was released and is [now available on YouTube.](https://www.youtube.com/watch?v=K4nKWp1z4cU&t=0s&list=PL4eq2DPpyBbm-vTgHMdBjUi1Qd5GiRIfW&index=5)
