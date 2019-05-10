@@ -98,7 +98,7 @@ The event was later covered in [The Ember Times](https://the-emberjs-times.ongoo
 
 #### simplabs sponsored ElixirConf EU 2019
 
-We were proud sponsors on ElixirConfEU which took place in Prague on the 8th of April and by all accounts was a fantastic event.
+We were proud sponsors on ElixirConfEU which took place in Prague on the 8th and 9th of April and by all accounts was a fantastic event.
 
 #### Tobi's talk from EmberCamp Chicago 2019 released
 
