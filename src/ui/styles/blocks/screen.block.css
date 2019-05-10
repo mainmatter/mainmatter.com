@@ -29,6 +29,7 @@
   --vertical-spacing: 4em;
 
   font-family: 'Nunito Sans', sans-serif;
+  font-display: fallback;
   color: var(--color-muted);
   overflow: hidden;
 }
