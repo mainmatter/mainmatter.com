@@ -6,31 +6,7 @@
         <p class="typography.headline-2">
           Let us know how we can help you.
         </p>
-        <form onsubmit={{action this.submit}} disabled={{this.isSubmitting}}>
-          <p class="form.item">
-            <label for="name" class="form.label">
-              Name
-            </label>
-            <input class="form.control" id="name" type="text" autocomplete="name" disabled={{this.isSubmitting}} />
-          </p>
-          <p class="form.item">
-            <label for="email" class="form.label">
-              E-Mail
-            </label>
-            <input class="form.control" id="email" name="email" autocomplete="email" disabled={{this.isSubmitting}} />
-          </p>
-          <p class="form.item">
-            <label for="message" class="form.label">
-              Tell us about your project
-            </label>
-            <textarea class="form.control" id="message" cols="30" rows="10" disabled={{this.isSubmitting}}></textarea>
-          </p>
-          <p>
-            <button type="submit" class="button.button" disabled={{this.isSubmitting}}>
-              Send mail
-            </button>
-          </p>
-        </form>
+        <FormContact />
       </div>
       <div class="main-block.sidebar">
         <dl class="contact">

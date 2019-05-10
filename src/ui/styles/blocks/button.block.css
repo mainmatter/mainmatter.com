@@ -23,6 +23,11 @@
   color: var(--color-text-inverted);
 }
 
+.button:disabled {
+  background-position: 0 90%;
+  color: var(--color-accent);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .button {
     transition: none;
