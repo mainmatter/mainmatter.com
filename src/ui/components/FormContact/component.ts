@@ -10,7 +10,7 @@ export default class FormContact extends Component {
     }
   }
 
-  async submit(e) {
+  public async submit(e) {
     e.preventDefault();
     this.isSubmitting = true;
 
@@ -23,16 +23,16 @@ export default class FormContact extends Component {
     this.isSubmitting = false;
   }
 
-  async sendMessage(name, email, message) {
+  public async sendMessage(name, email, message) {
     let response = await fetch('https://guqdu9qkgf.execute-api.eu-central-1.amazonaws.com/production', {
-      method: 'POST',
-      mode: 'cors',
+      body: JSON.stringify({ name, email, message }),
       cache: 'no-cache',
       headers: {
         'Content-Type': 'application/json',
       },
+      method: 'POST',
+      mode: 'cors',
       redirect: 'follow',
-      body: JSON.stringify({ name, email, message }),
     });
   }
 }

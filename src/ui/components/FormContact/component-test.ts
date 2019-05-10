@@ -29,9 +29,9 @@ module('Component: FormContact', function(hooks) {
       assert.equal(request.method, 'POST');
       assert.equal(request.requestHeaders['content-type'], 'application/json');
       assert.deepEqual(JSON.parse(request.requestBody), {
-        name: 'Name',
         email: 'email.address@domain.com',
         message: 'The message!',
+        name: 'Name',
       });
 
       return [200, {}, ''];
