@@ -18,7 +18,7 @@ Welcome to the third installment of our monthly update. Each month we cover the 
 
 We’re very excited to announce that [Samanta de Barros](https://twitter.com/sami_dbc) has joined simplabs.
 
-Samantha started out her career as a .Net and Java developer before shifting her attentions to Ember and Rails as she preferred the agility of web applications. Her work as a consultant helped Samantha to build experience with many different types of companies. She has shared this experience in talks at events including EmberConf and JSDay Uy.
+Samanta started out her career as a .Net and Java developer before shifting her attentions to Ember and Rails as she preferred the agility of web applications. Her work as a consultant helped Samanta to build experience with many different types of companies. She has shared this experience in talks at events including EmberConf and JSDay Uy.
 
 Our CEO Marco says _“I'm very happy to have Samanta on board. Her expertise with both Ember.js and Rails as well as experience with consulting international clients and as a public speaker make her a great fit to our team and we all look forward to working with her.”_
 
