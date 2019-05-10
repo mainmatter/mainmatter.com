@@ -16,7 +16,7 @@ Welcome to the third installment of our monthly update. Each month we cover the 
 
 #### Samantha de Barros joins simplabs
 
-We’re very excited to announce that [Samantha de Barros](https://twitter.com/sami_dbc) has joined simplabs.
+We’re very excited to announce that [Samanta de Barros](https://twitter.com/sami_dbc) has joined simplabs.
 
 Samantha started out her career as a .Net and Java developer before shifting her attentions to Ember and Rails as she preferred the agility of web applications. Her work as a consultant helped Samantha to build experience with many different types of companies. She has shared this experience in talks at events including EmberConf and JSDay Uy.
 
