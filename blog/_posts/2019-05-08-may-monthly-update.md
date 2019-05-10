@@ -40,7 +40,7 @@ Join the mailing list [here](https://erlef.org/) or [follow them on Twitter](htt
 
 #### Other news
 
-In other news [Tobi](https://twitter.com/TobiasBieniek) released [a well received blog post](https://simplabs.com/blog/2019/04/24/dependency-updates-for-gitlab.html) about automatically updating dependencies on internal Gitlab servers.
+In other news [Tobias Bieniek](https://twitter.com/TobiasBieniek) released [a well received blog post](https://simplabs.com/blog/2019/04/24/dependency-updates-for-gitlab.html) about automatically updating dependencies on internal Gitlab servers.
 
 [Chris Manson](https://twitter.com/real_ate) joined [Jen Weber](https://twitter.com/jwwweber/) for an episode of "May I ask a question", the weekly Emberjs Q&A livestream [here](https://www.youtube.com/watch?v=v1rBL5_KPqU).
 
