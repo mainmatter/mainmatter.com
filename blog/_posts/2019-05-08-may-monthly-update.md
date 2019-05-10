@@ -44,7 +44,7 @@ In other news [Tobi](https://twitter.com/TobiasBieniek) released [a well receive
 
 [Chris Manson](https://twitter.com/real_ate) joined [Jen Weber](https://twitter.com/jwwweber/) for an episode of "May I ask a question", the weekly Emberjs Q&A livestream [here](https://www.youtube.com/watch?v=v1rBL5_KPqU).
 
-And last but not least [Ricardo Mendes](https://twitter.com/locks) released a new episode of the Conversas em Código podcast, this time talking about [Twilio, WebSockets, Pheonix Presence and more](https://trello.com/c/8W25cdsV/28-episode-19-of-locks-portuguese-podcast).
+And last but not least [Ricardo Mendes](https://twitter.com/locks) released a new episode of the Conversas em Código podcast, this time talking about [Twilio, WebSockets, Phoenix Presence and more](https://trello.com/c/8W25cdsV/28-episode-19-of-locks-portuguese-podcast).
 
 ## Upcoming Events
 
