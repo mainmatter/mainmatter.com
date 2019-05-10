@@ -60,7 +60,7 @@ Day 1 is an installation party to make sure that everybody is set up for day 2 w
 
 #### Jessica Jordan at JSConfEU
 
-On the 1st of June [Jessica Jordan](https://twitter.com/jjordan_dev) is speaking at [JSConfEU](https://2019.jsconf.eu/) with her talk "Crafting Comics for Literally Everyone: How you can craft an immersive webcomic experience that accessible for blind and visually-impaired readers!"
+On the 1st of June [Jessica Jordan](https://twitter.com/jjordan_dev) is speaking at [JSConfEU](https://2019.jsconf.eu/) with her talk "Crafting Comics for Literally Everyone" she highlights how you can craft an immersive webcomic experience that is accessible for blind, visually-impaired and sighted readers alike!
 
 Full talk details [here](https://2019.jsconf.eu/jessica-jordan/crafting-comics-for-literally-everyone.html).
 
