@@ -14,11 +14,11 @@ Welcome to the third installment of our monthly update. Each month we cover the 
 
 ## News
 
-#### Samantha de Barros joins simplabs
+#### Samanta de Barros joins simplabs
 
 We’re very excited to announce that [Samanta de Barros](https://twitter.com/sami_dbc) has joined simplabs.
 
-Samanta started out her career as a .Net and Java developer before shifting her attentions to Ember and Rails as she preferred the agility of web applications. Her work as a consultant helped Samanta to build experience with many different types of companies. She has shared this experience in talks at events including EmberConf and JSDay Uy.
+Samanta started out her career as a .Net and Java developer before shifting her attentions to Ember and Rails as she preferred the agility of web applications. Her work as a consultant helped Samanta to build experience with many different types of companies. She has shared this experience in talks at events including EmberConf and JSDay Uy. Watch Samanta's EmberConf talk "Let's Test that Addon!" [here](https://www.youtube.com/watch?v=31kVznd-zys).
 
 Our CEO Marco says _“I'm very happy to have Samanta on board. Her expertise with both Ember.js and Rails as well as experience with consulting international clients and as a public speaker make her a great fit to our team and we all look forward to working with her.”_
 
@@ -59,6 +59,8 @@ Day 1 is an installation party to make sure that everybody is set up for day 2 w
 [Day 1](https://www.meetup.com/Ember-js-Berlin/events/260668921/) & [Day 2.](https://www.meetup.com/Ember-js-Berlin/events/260668987/)
 
 #### Jessica Jordan at JSConfEU
+
+![JsConfEU](/images/posts/2019-05-10-may-monthly-update/jsconfeu.png)
 
 On the 1st of June [Jessica Jordan](https://twitter.com/jjordan_dev) is speaking at [JSConfEU](https://2019.jsconf.eu/) with her talk "Crafting Comics for Literally Everyone" she highlights how you can craft an immersive webcomic experience that is accessible for blind, visually-impaired and sighted readers alike!
 
