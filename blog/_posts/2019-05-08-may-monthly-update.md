@@ -90,7 +90,7 @@ Grab a ticket [here](https://emberfest.eu/) while you still can and keep an eye 
 
 #### Open Source Contribution workshop with Qonto at EmberJSParis
 
-On April 23rd [Tobi](https://twitter.com/TobiasBieniek/) and [Ricardo](https://twitter.com/locks) led an [open source contribution workshop](https://www.meetup.com/Paris-EmberJS-Lab/events/260514153/) with the EmberJSParis meetup group at the Qonto offices.
+On April 23rd [Tobias Bieniek](https://twitter.com/TobiasBieniek/) and [Ricardo Mendes](https://twitter.com/locks) led an [open source contribution workshop](https://www.meetup.com/Paris-EmberJS-Lab/events/260514153/) with the EmberJSParis meetup group at the Qonto offices.
 
 The evening was a great success with many pull requests made to guides, addons and ember-cli... someone even wrote an RFC!
 
