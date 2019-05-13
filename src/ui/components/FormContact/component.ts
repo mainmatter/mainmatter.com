@@ -47,11 +47,10 @@ export default class FormContact extends Component {
 
     try {
       await this.sendMessage(name.value, email.value, message.value);
+      this.formState = FormState.Success;
     } catch (err) {
       this.formState = FormState.Error;
     }
-
-    this.formState = FormState.Success;
   }
 
   private async sendMessage(name, email, message) {
