@@ -41,7 +41,6 @@ module.exports = function() {
     ...blogAuthorsRoutes,
     '/': { component: 'PageHomepage' },
     '/404': { component: 'Page404', title: 'Not found' },
-    '/about': { component: 'PageAbout', title: 'About' },
     '/blog': { component: 'Blog', title: 'Blog', bundle: { asset: '/blog.js', module: '__blog__' } },
     '/calendar': {
       component: 'Calendar',
@@ -73,6 +72,7 @@ module.exports = function() {
     '/services/team-augmentation': { component: 'PageTeamAugmentation', title: 'Team Augmentation' },
     '/services/tutoring': { component: 'PageTutoring', title: 'Tutoring' },
     '/talks': { component: 'PageTalks', title: 'Talks', bundle: { asset: '/talks.js', module: '__talks__' } },
+    '/why-simplabs': { component: 'PageWhySimplabs', title: 'Why simplabs' },
     '/work': { component: 'PageWork', title: 'Work' },
   };
 
