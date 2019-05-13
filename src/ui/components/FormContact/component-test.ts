@@ -16,10 +16,14 @@ module('Component: FormContact', function(hooks) {
     });
   });
 
+  hooks.afterEach(function() {
+    this.server.shutdown();
+  });
+
   test('it renders', async function(assert) {
     await render(hbs`<FormContact />`);
 
-    assert.ok(this.containerElement.querySelector('div'));
+    assert.ok(this.containerElement.querySelector('form'));
   });
 
   test('it submits', async function(assert) {
