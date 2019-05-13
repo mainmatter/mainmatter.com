@@ -40,6 +40,7 @@ module.exports = function() {
     ...blogPostRoutes,
     ...blogAuthorsRoutes,
     '/': { component: 'PageHomepage' },
+    '/404': { component: 'Page404', title: 'Not found' },
     '/about': { component: 'PageAbout', title: 'About' },
     '/blog': { component: 'Blog', title: 'Blog', bundle: { asset: '/blog.js', module: '__blog__' } },
     '/calendar': {

@@ -71,6 +71,9 @@ export default class Simplabs extends Component {
         options,
       );
     });
+
+    this.router.notFound(() => this.activeComponent = 'Page404');
+
     this.router.resolve(this.appState.route);
   }
 
