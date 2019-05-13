@@ -29,11 +29,6 @@ export default class FormContact extends Component {
   @tracked
   private errors = {};
 
-  @tracked
-  private get totalErrors() {
-    return Object.keys(this.errors).reduce((acc, key) => acc + this.errors[key].length, 0);
-  }
-
   private validators = {
     email: [emailIsh()],
     message: [required()],
@@ -77,7 +72,8 @@ export default class FormContact extends Component {
 
     this.errors = this.validateFields([name, email, message]);
 
-    if (this.totalErrors > 0) {
+    // Stop if validation errors exist
+    if (Object.keys(this.errors).reduce((acc, key) => acc + this.errors[key].length, 0) > 0) {
       this.formState = FormState.Waiting;
 
       return;
