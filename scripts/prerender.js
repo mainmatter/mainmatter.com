@@ -4,6 +4,7 @@ const express = require('express');
 const puppeteer = require('puppeteer');
 const critical = require('critical');
 const colors = require('colors');
+const jsdom = require('jsdom');
 
 process.setMaxListeners(Infinity);
 
@@ -47,13 +48,26 @@ async function inlineCss(fileName) {
   await fs.writeFile(fileName, result.toString('utf8'));
 }
 
+function buildShoeboxBundlePreloads(html) {
+  let dom = new jsdom.JSDOM(html);
+  let bundleNodes = Array.from(dom.window.document.querySelectorAll('[data-shoebox-bundle]'));
+  return bundleNodes
+    .map(node => {
+      return `<link rel="preload" href="${node.getAttribute('src')}" as="script">`;
+    })
+    .join('\n');
+}
+
 const renderer = new GlimmerRenderer();
 let server = express();
 server.get('*', async function(req, res, next) {
   if (req.headers.accept && req.headers.accept.includes('text/html')) {
     let origin = `${req.protocol}://${req.headers.host}`;
     let { body, title } = await renderer.render(origin, req.url);
-    let html = HTML.replace('<div id="app"></div>', body).replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`);
+    let shoeboxBundlePreloads = buildShoeboxBundlePreloads(body);
+    let html = HTML.replace('<div id="app"></div>', body)
+      .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
+      .replace('<link', `${shoeboxBundlePreloads}\n<link`);
     res.send(html);
   } else {
     next();
