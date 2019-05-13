@@ -64,12 +64,12 @@ Here's an overview of the umbrella structure used for Breethe:
 ```
 apps
 ├── breethe
-│   ├── README.md
-│   ├── config
-│   ├── lib
-│   ├── mix.exs
-│   ├── priv
-│   └── test
+│   ├── README.md
+│   ├── config
+│   ├── lib
+│   ├── mix.exs
+│   ├── priv
+│   └── test
 └── breethe_web
     ├── README.md
     ├── config

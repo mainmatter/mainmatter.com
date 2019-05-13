@@ -95,14 +95,14 @@ src
 ├── index.ts
 ├── main.ts
 ├── ui
-│   ├── components
-│   │   └── glimmer-map
-│   │       ├── component-test.ts
-│   │       ├── component.ts
-│   │       └── template.hbs
-│   ├── index.html
-│   └── styles
-│       └── app.scss
+│   ├── components
+│   │   └── glimmer-map
+│   │       ├── component-test.ts
+│   │       ├── component.ts
+│   │       └── template.hbs
+│   ├── index.html
+│   └── styles
+│       └── app.scss
 └── utils
     └── test-helpers
         └── test-helper.ts
