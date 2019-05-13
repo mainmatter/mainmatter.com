@@ -127,6 +127,7 @@ export default class Simplabs extends Component {
 
   private _startLoader() {
     this.isLoading = true;
+    this.loadingProgress = 0;
     this.loadingProgressInterval = window.setInterval(
       () => (this.loadingProgress = Math.min(this.loadingProgress + 10, 100)),
       150,
