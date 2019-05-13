@@ -7,11 +7,35 @@
   extends: screen;
 }
 
-:scope[state|form='submitting'] {
+:scope[state|form='success'] {
+  color: inherit;
 }
 
 .spinner {
   display: none;
+}
+
+.error,
+.item-error {
+  color: var(--color-error);
+  font-size: 2rem;
+  line-height: 1.5;
+
+  --color-link: var(--color-error);
+}
+
+.error {
+  margin: 0 0 4rem;
+  padding: 2rem 3rem;
+  border: 2px solid var(--color-error);
+}
+
+.item-error {
+  margin-top: 0.5rem;
+}
+
+:scope[state|form='error'] .error {
+  display: block;
 }
 
 .fieldset {
@@ -40,8 +64,8 @@
 
 .control {
   width: 100%;
-  padding: calc(1.5rem - 1px) calc(1.5rem - 1px);
-  border: 1px solid #ccc;
+  padding: calc(1.5rem - 2px) calc(1.5rem - 2px);
+  border: 2px solid #ccc;
   box-sizing: border-box;
   font-size: 2rem;
   line-height: 3rem;
@@ -49,13 +73,16 @@
 
 .control:focus {
   outline: 0;
-  box-shadow: 0 0 3px 0 var(--color-accent);
+  border-color: var(--color-accent);
 }
 
-.textarea {
-  width: 100%;
-  height: 4rem;
-  border: 1px solid #ccc;
+.label[state|error] {
+  color: var(--color-error);
+}
+
+.control[state|error] {
+  border-color: var(--color-error);
+  color: var(--color-error);
 }
 
 :scope[state|form='submitting'] .item {

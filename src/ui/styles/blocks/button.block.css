@@ -21,6 +21,7 @@
 .button:hover {
   background-position: 0% 10%;
   color: var(--color-text-inverted);
+  outline: 0;
 }
 
 .button:disabled {
