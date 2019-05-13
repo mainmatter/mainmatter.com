@@ -23,69 +23,31 @@
         </g>
       </svg>
       <p class="item">
-        <label for="name" class="label" state:error={{this.errors.name}}>
+        <label for="name" class="label">
           Name
         </label>
-        <input
-          class="control"
-          state:error={{this.errors.name}}
-          id="name"
-          type="text"
-          autocomplete="name"
-          disabled={{this.isSubmitting}}
-          oninput={{action validate}}
-         />
-
-        {{#if this.errors.name.length}}
-          <p class="item-error" data-error>
-            {{#each this.errors.name key='index' as |error|}}
-              {{error}}
-            {{/each}}
-          </p>
-        {{/if}}
+        <input class="control" id="name" type="text" autocomplete="name" disabled={{this.isSubmitting}} />
       </p>
       <p class="item">
-        <label for="email" class="label" state:error={{this.errors.email}}>
+        <label for="email" class="label">
           E-Mail
         </label>
         <input
           class="control"
-          state:error={{this.errors.email}}
           id="email"
           name="email"
+          type="email"
           autocomplete="email"
           disabled={{this.isSubmitting}}
-          oninput={{action validate}}
+          required
          />
 
-        {{#if this.errors.email.length}}
-          <p class="item-error" data-error>
-            {{#each this.errors.email key='index' as |error|}}
-              {{error}}
-            {{/each}}
-          </p>
-        {{/if}}
       </p>
       <p class="item">
-        <label for="message" class="label" state:error={{this.errors.message}}>
+        <label for="message" class="label">
           Tell us about your project
         </label>
-        <textarea
-          class="control"
-          state:error={{this.errors.message}}
-          id="message"
-          cols="30"
-          rows="10"
-          disabled={{this.isSubmitting}}
-          oninput={{action validate}}
-        ></textarea>
-        {{#if this.errors.message.length}}
-          <p class="item-error" data-error>
-            {{#each this.errors.message key='index' as |error|}}
-              {{error}}
-            {{/each}}
-          </p>
-        {{/if}}
+        <textarea class="control" id="message" cols="30" rows="10" disabled={{this.isSubmitting}}></textarea>
       </p>
     </fieldset>
     {{#if this.isErrored}}

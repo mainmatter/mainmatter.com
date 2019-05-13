@@ -7,33 +7,9 @@ enum FormState {
   Waiting = '',
 }
 
-const minLength = (length, error?) => ({
-  error: () => error || `Please enter at least ${length} characters.`,
-  fn: str => str.length >= length,
-});
-
-const emailIsh = (error?) => ({
-  error: () => error || 'Please enter a valid email address.',
-  fn: str => str.match(/.*@.*\..*/),
-});
-
-const required = (error?) => ({
-  error: () => error || 'Please enter a message.',
-  fn: str => (str || '').trim() !== '',
-});
-
 export default class FormContact extends Component {
   @tracked
   private formState = FormState.Waiting;
-
-  @tracked
-  private errors = {};
-
-  private validators = {
-    email: [emailIsh()],
-    message: [required()],
-    name: [minLength(2)],
-  };
 
   @tracked
   private get isSubmitting(): boolean {
@@ -41,13 +17,13 @@ export default class FormContact extends Component {
   }
 
   @tracked
-  private get isErrored(): boolean {
-    return this.formState === FormState.Error;
+  private get isSuccess(): boolean {
+    return this.formState === FormState.Success;
   }
 
   @tracked
-  private get isSuccess(): boolean {
-    return this.formState === FormState.Success;
+  private get isErrored(): boolean {
+    return this.formState === FormState.Error;
   }
 
   public async submit(e) {
@@ -68,16 +44,6 @@ export default class FormContact extends Component {
     }
 
     this.formState = FormState.Submitting;
-    this.errors = {};
-
-    this.errors = this.validateFields([name, email, message]);
-
-    // Stop if validation errors exist
-    if (Object.keys(this.errors).reduce((acc, key) => acc + this.errors[key].length, 0) > 0) {
-      this.formState = FormState.Waiting;
-
-      return;
-    }
 
     try {
       await this.sendMessage(name.value, email.value, message.value);
@@ -86,15 +52,6 @@ export default class FormContact extends Component {
     }
 
     this.formState = FormState.Success;
-  }
-
-  public validate(event) {
-    const errors = this.validateField(event.target);
-
-    this.errors = {
-      ...this.errors,
-      [event.target.id]: errors.length > 0 ? errors : undefined,
-    };
   }
 
   private async sendMessage(name, email, message) {
@@ -108,21 +65,5 @@ export default class FormContact extends Component {
       mode: 'cors',
       redirect: 'follow',
     });
-  }
-
-  private validateField(field) {
-    return this.validators[field.id].reduce((acc, validator) => {
-      const isValid = validator.fn(field.value);
-
-      if (!isValid) {
-        acc.push(validator.error());
-      }
-
-      return acc;
-    }, []);
-  }
-
-  private validateFields(fields) {
-    return fields.reduce((errors, field) => ({ ...errors, [field.id]: this.validateField(field) }), {});
   }
 }
