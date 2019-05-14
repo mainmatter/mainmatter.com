@@ -5,20 +5,64 @@
 
 :scope {
   block-name: Header;
-  composes: 'screen.container-base';
-
   z-index: 1;
 }
 
+.logo {
+  --img: var(--color-accent);
+  --type: var(--color-primary);
+}
+
+.logo-type {
+  fill: var(--type);
+}
+
+.logo-image {
+  fill: var(--img);
+}
+
 .content {
-  margin: 21rem 0;
+  composes: 'screen.container-base';
+  margin-top: 21rem;
+  margin-bottom: 21rem;
+}
+
+.toggler {
+  --color: var(--color-accent);
+
+  position: relative;
+  display: block;
+  width: 4rem;
+  height: 3rem;
+  padding: 0;
+  cursor: pointer;
+  border: 2px solid var(--color);
+  border-width: 2px 0;
+  overflow: hidden;
+  text-indent: 999rem;
+}
+
+.toggler:after {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background: var(--color);
+  content: '';
+  transform: translate(0, -1px);
 }
 
 .navbar {
+  transition: opacity 0.2s, transform 0.3s;
+}
+
+.navbar-wrapper {
   display: flex;
+  padding-top: 8rem;
   align-items: center;
   justify-content: space-between;
-  padding: 8rem 0 0;
+  composes: 'screen.container-base';
 }
 
 .brand {
@@ -38,7 +82,19 @@
   text-decoration: none;
 }
 
-@media (max-width: 599px) {
+.work-with-us {
+  composes: 'button.button';
+}
+
+@media (max-width: 699px) {
+  .navbar-wrapper {
+    padding-top: 4rem;
+  }
+
+  .navbar {
+    transform: translate(0, -1rem);
+  }
+
   .nav {
     display: none;
   }
