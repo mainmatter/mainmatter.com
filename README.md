@@ -2,6 +2,14 @@
 
 The source code for [https://simplabs.com](https://simplabs.com).
 
+![simplabs logo](./public/assets/images/logos/simplabs.svg)
+
+We use [Glimmer.js](https://glimmerjs.com) for rendering,
+[navigo](https://github.com/krasimir/navigo) for client-side routing and
+[CSS Blocks](https://css-blocks.com) for CSS. Pages are statically pre-rendered
+using [Puppeteer](https://pptr.dev) and we inject critical CSS with
+[critical](https://github.com/addyosmani/critical).
+
 ## Installation
 
 * `git clone <repository-url>` this repository
@@ -27,8 +35,11 @@ The source code for [https://simplabs.com](https://simplabs.com).
 
 ## Further Reading / Useful Links
 
-* [glimmerjs](http://github.com/tildeio/glimmer/)
-* [ember-cli](https://ember-cli.com/)
+* [Glimmer.js](https://glimmerjs.com)
+* [navigo](https://github.com/krasimir/navigo)
+* [CSS Blocks](https://css-blocks.com)
+* [Puppeteer](https://pptr.dev)
+* [critical](https://github.com/addyosmani/critical)
 
 ## Copyright
 
