@@ -8,6 +8,7 @@
   --col-4: 87rem;
   --col-5: 109.5rem;
   --horizontal-spacing: 8rem;
+  --max-width: 132rem;
 
   /* Colors */
   --color-primary: #222;
@@ -43,7 +44,7 @@
 .container-base,
 .container {
   position: relative;
-  max-width: 132rem;
+  max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
   padding-left: var(--horizontal-spacing);
