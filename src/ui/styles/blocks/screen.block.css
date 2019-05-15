@@ -14,6 +14,7 @@
   --color-secondary: #5b5b5b;
   --color-accent: #007df6;
   --color-background: #fff;
+  --color-error: #ec2a2a;
 
   --color-text: var(--color-primary);
   --color-text-inverted: var(--color-background);

@@ -4,8 +4,6 @@
 @block header-block from "../../styles/blocks/header-block.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 @block card from "../../styles/blocks/card.block.css";
-@block form from "../../styles/blocks/form.block.css";
-@block button from "../../styles/blocks/button.block.css";
 
 :scope {
   block-name: PageFullStackEngineering;

@@ -3,34 +3,22 @@
   <div class="screen.container">
     <div class="main-block">
       <div class="main-block.content">
-        <p class="typography.headline-2">
-          Let us know how we can help you.
-        </p>
-        <form action="">
-          <p class="form.item">
-            <label for="name" class="form.label">
-              Name
-            </label>
-            <input class="form.control" id="name" type="text" autocomplete="name" />
+        <div class="main-block.content-item">
+          <p class="typography.lead">
+            Whatever you're planning, we'd be excited to hear more. We can turn your ideas into successful digital products, improve existing ones or increase your team's effectiveness.
           </p>
-          <p class="form.item">
-            <label for="email" class="form.label">
-              E-Mail
-            </label>
-            <input class="form.control" type="email" autocomplete="email" />
+        </div>
+        <div class="main-block.content-item">
+          <FormContact />
+        </div>
+        <div class="main-block.content-item">
+          <h3 class="typography.headline-2">
+            Next Steps
+          </h3>
+          <p class="typography.body-text">
+            Following your message, we will schedule a call to understand your situation and discuss the best way we can help. We will use this information to prepare a proposal, laying out our process and how it would apply to your particular project. We will also define some project milestones and give you an overview of what a timeline could look like.
           </p>
-          <p class="form.item">
-            <label for="message" class="form.label">
-              Tell us about your project
-            </label>
-            <textarea class="form.control" id="message" cols="30" rows="10"></textarea>
-          </p>
-          <p>
-            <button type="submit" class="button.button">
-              Send mail
-            </button>
-          </p>
-        </form>
+        </div>
       </div>
       <div class="main-block.sidebar">
         <dl class="contact">
@@ -96,5 +84,6 @@
       </div>
     </div>
   </div>
+  <ClientsGrid @title="We are trusted by international brands" @only="generali,qonto,timify" />
   <Footer />
 </div>
