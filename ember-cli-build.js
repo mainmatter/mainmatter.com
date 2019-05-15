@@ -57,12 +57,13 @@ class SimplabsApp extends GlimmerApp {
     let resetCss = fs.readFileSync(path.join(this.project.root, 'vendor', 'css', 'reset.css'));
     let fontsCss = fs.readFileSync(path.join(this.project.root, 'vendor', 'css', 'fonts.css'));
     let baselineCss = fs.readFileSync(path.join(this.project.root, 'src', 'ui', 'styles', 'baseline.css'));
+    let menuCss = fs.readFileSync(path.join(this.project.root, 'src', 'ui', 'styles', 'menu.css'));
 
     let cssTree = Funnel(super.cssTree(...arguments), {
       include: ['app.css'],
     });
 
-    cssTree = Map(cssTree, content => [resetCss, fontsCss, baselineCss, content].join(''));
+    cssTree = Map(cssTree, content => [resetCss, fontsCss, baselineCss, content, menuCss].join(''));
 
     if (this.options.minifyCSS.enabled) {
       cssTree = new BroccoliCleanCss(cssTree);
