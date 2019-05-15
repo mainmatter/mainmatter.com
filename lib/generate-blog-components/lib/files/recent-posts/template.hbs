@@ -1,6 +1,15 @@
 <div>
-  recent posts for {{topic}}
   {{#each posts}}
-    {{title}} by {{author.name}}
+    <h4 class="typography.headline-3-plain">{{title}}</h4>
+    <img src="/assets/images/authors/{{author.twitter}}.jpg" />
+    <p class="typography.small-text">
+      {{author.name}}
+    </p>
+    <p class="typography.small-text">
+      {{date}}
+    </p>
+    <ArrowLink @href="{{path}}">
+      Read Post
+    </ArrowLink>
   {{/each}}
 </div>
