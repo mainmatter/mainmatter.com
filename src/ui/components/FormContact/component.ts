@@ -46,15 +46,19 @@ export default class FormContact extends Component {
     this.formState = FormState.Submitting;
 
     try {
-      await this.sendMessage(name.value, email.value, message.value);
-      this.formState = FormState.Success;
+      let response = await this.sendMessage(name.value, email.value, message.value);
+      if (response.ok) {
+        this.formState = FormState.Success;
+      } else {
+        this.formState = FormState.Error;
+      }
     } catch (err) {
       this.formState = FormState.Error;
     }
   }
 
   private async sendMessage(name, email, message) {
-    let response = await fetch('https://guqdu9qkgf.execute-api.eu-central-1.amazonaws.com/production', {
+    return fetch('https://guqdu9qkgf.execute-api.eu-central-1.amazonaws.com/production', {
       body: JSON.stringify({ name, email, message }),
       cache: 'no-cache',
       headers: {
