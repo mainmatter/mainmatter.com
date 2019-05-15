@@ -40,7 +40,6 @@
 }
 
 .svg-image {
-  transform: translate(7.5%);
 }
 
 :scope[state|reverse='true'] .top {
@@ -52,7 +51,6 @@
 }
 
 :scope[state|reverse='true'] .svg-image {
-  transform: translate(-7.5%);
 }
 
 :scope[state|center='true'] .bottom {

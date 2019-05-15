@@ -42,7 +42,7 @@
 
 .bottom-content {
   position: absolute;
-  background: var(--shape-color) 90% 50% no-repeat;
+  background: var(--shape-color) 90% 100% no-repeat;
   background-size: 123rem auto;
   top: 0;
   left: 0;
