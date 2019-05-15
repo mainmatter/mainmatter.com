@@ -66,6 +66,8 @@ export default class Simplabs extends Component {
               this._injectBundle(bundle);
             }
             this._injectActiveComponentState();
+          } else {
+            trackPageView(path);
           }
         },
         options,
@@ -179,6 +181,13 @@ export default class Simplabs extends Component {
     } else {
       return {};
     }
+  }
+}
+
+function trackPageView(route) {
+  if (window.ga) {
+    window.ga('set', 'page', route);
+    window.ga('send', 'pageview');
   }
 }
 
