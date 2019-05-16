@@ -67,7 +67,7 @@ module.exports = function() {
     '/services': { component: 'PageServices', title: 'Services' },
     '/services/full-stack-engineering': { component: 'PageFullStackEngineering', title: 'Full Stack Engineering' },
     '/services/team-augmentation': { component: 'PageTeamAugmentation', title: 'Team Augmentation' },
-    '/services/training': { component: 'PageTraining', title: 'Tutoring' },
+    '/services/tutoring': { component: 'PageTutoring', title: 'Tutoring' },
     '/talks': { component: 'PageTalks', title: 'Talks' },
     '/work': { component: 'PageWork', title: 'Work' },
   };
