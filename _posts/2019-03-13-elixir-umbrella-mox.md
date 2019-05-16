@@ -64,19 +64,19 @@ Here's an overview of the umbrella structure used for Breethe:
 ```
 apps
 ├── breethe
-│   ├── README.md
-│   ├── config
-│   ├── lib
-│   ├── mix.exs
-│   ├── priv
-│   └── test
+│  ├── README.md
+│  ├── config
+│  ├── lib
+│  ├── mix.exs
+│  ├── priv
+│  └── test
 └── breethe_web
-    ├── README.md
-    ├── config
-    ├── lib
-    ├── mix.exs
-    ├── priv
-    └── test
+  ├── README.md
+  ├── config
+  ├── lib
+  ├── mix.exs
+  ├── priv
+  └── test
 ```
 
 We have defined a clear boundary between the business logic and the webserver. 

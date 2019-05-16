@@ -95,17 +95,17 @@ src
 ├── index.ts
 ├── main.ts
 ├── ui
-│   ├── components
-│   │   └── glimmer-map
-│   │       ├── component-test.ts
-│   │       ├── component.ts
-│   │       └── template.hbs
-│   ├── index.html
-│   └── styles
-│       └── app.scss
+│  ├── components
+│  │   └── glimmer-map
+│  │       ├── component-test.ts
+│  │       ├── component.ts
+│  │       └── template.hbs
+│  ├── index.html
+│  └── styles
+│    └── app.scss
 └── utils
-    └── test-helpers
-        └── test-helper.ts
+  └── test-helpers
+    └── test-helper.ts
 ```
 
 Having a closer look at the app setup in `glimmer-web-component/src/initialize-custom-elements.ts`, we can see how the Glimmer app is started up and rendered as a custom element.
