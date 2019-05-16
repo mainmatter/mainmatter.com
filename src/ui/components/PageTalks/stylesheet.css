@@ -9,3 +9,7 @@
   block-name: PageTalks;
   extends: screen;
 }
+
+.offset-vertical {
+  margin-top: 9rem;
+}
