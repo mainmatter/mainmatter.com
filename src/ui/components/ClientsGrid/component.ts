@@ -90,7 +90,7 @@ const allClients = [
     id: 'timify',
     src: '/assets/images/logos/timify.svg',
     text:
-      'When Timify decided it was time to re - engineer their existing product, they trusted us to bring them into the future.We added engineering capacity and technology expertise to Timify’s internal team and helped to build a solid foundation that enabled them to iterate fast and launch on- schedule, without sacrificing quality.',
+      'Timify is an online appointment scheduling service that connects service providers with clients. When they decided it was time to re-engineer their existing product, they trusted us to set them up for future success.',
   },
 ];
 

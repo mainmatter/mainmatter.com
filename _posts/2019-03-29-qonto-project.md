@@ -25,7 +25,7 @@ and guide new development initiatives while establishing best practices and
 transferring knowledge to in-house engineers on the job via reviews and pairing
 sessions.
 
-Just as with previous Team Augmentation projects like [trainline](/cases/trainline) this
+Just as with previous Team Augmentation projects like [Trainline](/cases/trainline) this
 approach brings "double value for the client" says simlpabs CEO Marco
 Otte-Witte, "short term value is added by the client immediately gaining more
 engineering power, but additional long term value is added through improved
