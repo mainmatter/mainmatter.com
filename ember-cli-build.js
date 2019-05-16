@@ -118,12 +118,20 @@ class SimplabsApp extends GlimmerApp {
     });
     mainSiteTree = mainSiteNonPlaybookTree;
 
+    let [talksTree, mainSiteNonTalksTree] = this._splitBundle(mainSiteTree, {
+      componentPrefix: 'PageTalks',
+      file: 'talks.js',
+      moduleName: '__talks__',
+    });
+    mainSiteTree = mainSiteNonTalksTree;
+
     let appTree = super.package(mainSiteTree);
     let mainTree = new MergeTrees([
       appTree,
       legalTree,
       calendarTree,
       playbookTree,
+      talksTree,
       blogTree,
       ...blogPostTrees,
       ...blogAuthorTrees,

@@ -72,7 +72,7 @@ module.exports = function() {
     '/services/full-stack-engineering': { component: 'PageFullStackEngineering', title: 'Full Stack Engineering' },
     '/services/team-augmentation': { component: 'PageTeamAugmentation', title: 'Team Augmentation' },
     '/services/tutoring': { component: 'PageTutoring', title: 'Tutoring' },
-    '/talks': { component: 'PageTalks', title: 'Talks' },
+    '/talks': { component: 'PageTalks', title: 'Talks', bundle: { asset: '/talks.js', module: '__talks__' } },
     '/work': { component: 'PageWork', title: 'Work' },
   };
 
