@@ -58,7 +58,11 @@ module.exports = function() {
       title: 'Imprint',
       bundle: { asset: '/legal.js', module: '__legal__' },
     },
-    '/playbook': { component: 'PagePlaybook', title: 'Playbook' },
+    '/playbook': {
+      component: 'PagePlaybook',
+      title: 'Playbook',
+      bundle: { asset: '/playbook.js', module: '__playbook__' },
+    },
     '/privacy': {
       component: 'PageLegalPrivacy',
       title: 'Privacy Policy',
