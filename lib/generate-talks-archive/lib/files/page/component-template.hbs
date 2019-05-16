@@ -1,0 +1,52 @@
+<div>
+  <Header @title="Talks">
+    <p class="typography.lead">
+      We strongly believe in the value of sharing our expertise and experience with others. Find a collection of talks that members of our team have given at various conferences all over the world in the past years.
+    </p>
+  </Header>
+  <div class="container">
+    <h2 class="typography.headline-1">
+      Latest Talks
+    </h2>
+    {{#each conferences}}
+      <div class="main-block">
+        <div class="main-block.content">
+          <h3 class="typography.headline-2">
+            {{meta.title}}
+          </h3>
+          {{#each talks}}
+            <div class="main-block.content-section">
+              <div class="main-block.content-section-item">
+                <div class="main-block.content-section-image">
+                  <img class="main-block.image-small" src="{{meta.image}}" />
+                </div>
+              </div>
+              <div class="main-block.content-section-item">
+                <h4 class="typography.headline-3">
+                  {{meta.title}}
+                </h4>
+                <p class="typography.body-text">
+                  {{description}}
+                </p>
+                <ArrowLink @href="{{meta.url}}">
+                  Watch Video
+                </ArrowLink>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+        <div class="main-block.sidebar offset-vertical">
+          <Card @src="{{meta.image}}">
+            <p class="typography.body-text">
+              {{description}}
+            </p>
+            <ArrowLink @href="{{meta.url}}">
+              Learn more
+            </ArrowLink>
+          </Card>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <Footer />
+</div>

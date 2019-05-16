@@ -1,6 +1,6 @@
 ---
 title: "Crafting web comics with Ember"
-image: "/assets/images/talks/2018-10-11-emberfest-2018/deliver-fast-apps-even-faster.png"
+image: "/assets/images/talks/2018-10-11-emberfest-2018/crafting-web-comics-with-ember.png"
 url: https://www.youtube.com/watch?v=Ezb-sovFD5o
 ---
 
