@@ -9,11 +9,3 @@
   block-name: PageEmberExpertise;
   extends: screen;
 }
-
-:scope .shape-decoration-bg {
-  background: #E15D44;
-}
-
-:scope .shape-left-bg {
-  background: #E15D44;
-}
