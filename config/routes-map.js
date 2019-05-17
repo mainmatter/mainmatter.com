@@ -53,6 +53,7 @@ module.exports = function() {
     '/cases/trainline': { component: 'PageCaseStudyTrainline', title: 'Trainline Case Study' },
     '/contact': { component: 'PageContact', title: 'Contact' },
     '/expertise/ember': { component: 'PageEmberExpertise', title: 'Europe’s leading Ember experts' },
+    '/expertise/elixir-phoenix': { component: 'PageElixirExpertise', title: 'Elixir & Phoenix' },
     '/imprint': {
       component: 'PageLegalImprint',
       title: 'Imprint',
