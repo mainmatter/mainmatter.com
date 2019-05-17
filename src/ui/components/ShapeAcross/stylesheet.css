@@ -54,7 +54,7 @@
 
 .content {
   width: var(--col-2);
-  padding-top: 27vw;
+  padding-top: 25vw;
 
   --color-text: var(--color-text-inverted);
   --color-muted: var(--color-muted-inverted);

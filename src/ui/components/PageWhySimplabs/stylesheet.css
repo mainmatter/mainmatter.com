@@ -6,6 +6,10 @@
 @block card from "../../styles/blocks/card.block.css";
 
 :scope {
-  block-name: PageAbout;
+  block-name: PageWhySimplabs;
   extends: screen;
+}
+
+.offset-vertical {
+  margin-top: 9rem;
 }
