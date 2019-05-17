@@ -1,0 +1,6 @@
+@block typography from "../../styles/blocks/typography.block.css";
+@block card from "../../styles/blocks/card.block.css";
+
+:scope {
+  block-name: CardUpcomingEvents;
+}
