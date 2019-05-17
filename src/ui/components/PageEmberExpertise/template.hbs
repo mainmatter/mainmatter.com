@@ -1,7 +1,10 @@
 <div>
   <Header @title="Europe's leading Ember experts">
     <p class="typography.lead">
-      simplabs has been an active member of the Ember Ecosystem from the early days. We are the leading Ember consultancy in Europe and are involved in Ember.js core teams like Ember CLI and Ember Learning. We also maintain a number of widely adopted addons.
+      simplabs has unique expertise and insights into Ember.js  with a good part of our engineering team being on the Ember.js core team and maintaining major addons like ember-simple-auth or ember-test-selectors.
+    </p>
+    <p class="typography.lead">
+      We help clients around the world getting the most out of Ember by building cutting edge applications for them, levelling up their in-house teams as well as reviewing their code bases and helping to identify and overcome impediments.
     </p>
   </Header>
   <div class="container">
@@ -12,7 +15,7 @@
             We love open source
           </h2>
           <p class="typography.lead">
-            We have a passion for technology and value conventions-based tools. We like to move fast without breaking things and leverage extensive testing and constant reviews to ensure we deliver high quality results.
+            Besides contributing to Ember.js via our core team engagements, we maintain a number of projects in the ecosystem that are widely adopted throughout the Ember community.
           </p>
         </div>
         <div class="main-block.content-section">
@@ -47,7 +50,7 @@
               Ember Test Selectors
             </h3>
             <p class="typography.body-text">
-              Authentication management for Ember.js applications.
+              Enabling better element selectors in Ember.js tests.
             </p>
             <ArrowLink @href="https://github.com/simplabs/ember-test-selectors">
               View GitHub Project
@@ -66,7 +69,7 @@
               Ember Cookies
             </h3>
             <p class="typography.body-text">
-              Authentication management for Ember.js applications.
+              Cookie handling for Ember.js apps - in the browser and FastBoot.
             </p>
             <ArrowLink @href="https://github.com/simplabs/ember-cookies">
               View GitHub Project
@@ -85,7 +88,7 @@
               Qunit DOM
             </h3>
             <p class="typography.body-text">
-              Authentication management for Ember.js applications.
+              High Level DOM Assertions for QUnit.
             </p>
             <ArrowLink @href="https://github.com/simplabs/qunit-dom">
               View GitHub Project
@@ -133,7 +136,7 @@
               Conference Talks
             </h3>
             <p class="typography.body-text">
-              Every new projects gives us the opportunity to learn and grow our expertise. We share what we learn with the community via talks at conferences and meetups and on our blog.
+              simplabs engineers have spoken at all major Ember.js conferences and other events in the wider JavaScript community.
             </p>
             <ArrowLink @href="/talks">
               View Talks
@@ -144,39 +147,33 @@
         <div class="main-block.content-section">
           <div class="main-block.content-section-item">
             <h3 class="typography.headline-2">
-              Our Blog
+              Community Engagement
             </h3>
             <p class="typography.body-text">
-              We share our experience with Ember.js in our blog.
+              Ember.js is a project built by an open community and we are an active member of the community. We support the
+              <a href="https://www.meetup.com/Ember-js-Munich/" class="typography.link">
+                Ember.js Munich
+              </a>
+              and
+              <a href="https://www.meetup.com/Ember-js-Berlin/" class="typography.link">
+                Ember.js Berlin
+              </a>
+              meetups are are co-organizers of
+              <a href="http://emberfest.eu" class="typography.link">
+                EmberFest
+              </a>
+              , the european Ember Community Conference.
             </p>
-            <ArrowLink @href="/blog">
-              Read Our Blog
+            <ArrowLink @href="#">
+              View Our Calendar
             </ArrowLink>
           </div>
           <!--item-->
         </div>
       </div>
-      <div class="main-block.sidebar">
-        <p class="typography.small-text">
-          Talk Archive
-        </p>
-        <div class="card">
-          <div class="card.image">
-            <img class="fluid-image.image" src="/assets/images/card/ember-community.jpg" />
-          </div>
-          <h3 class="card.sub-heading">
-            Community Engagement
-          </h3>
-          <p class="typography.body-text">
-            Ember.js is a project built by an open community and we are an active member of the community. We support the Ember.js Munich and Ember.js Berlin meetups are are co-organizers of EmberFest, the european Ember Community Conference.
-          </p>
-          <ArrowLink @href="#">
-            View Our Calendar
-          </ArrowLink>
-        </div>
-      </div>
     </div>
   </div>
+  <ClientsGrid @title="We are trusted by companies that bet on Ember" @only="trainline,qonto,cardstack" />
   <WorkWithUs />
   <Footer />
 </div>
