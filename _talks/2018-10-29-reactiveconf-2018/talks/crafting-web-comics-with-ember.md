@@ -1,7 +1,7 @@
 ---
 title: "Crafting web comics with Ember"
-image: "/assets/images/talks/2018-10-11-emberfest-2018/crafting-web-comics-with-ember.png"
-url: https://www.youtube.com/watch?v=Ezb-sovFD5o
+image: "/assets/images/talks/2018-10-29-reactiveconf-2018/crafting-web-comics-with-ember.jpg"
+url: https://www.youtube.com/watch?v=cljehgyxOSQ
 ---
 
 Jessica Jordan shares how to build comics for the web using Ember.js and the
