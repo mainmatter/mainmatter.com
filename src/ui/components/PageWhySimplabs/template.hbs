@@ -1,5 +1,5 @@
 <div>
-  <Header @label="About" @title="Cutting edge solutions – idea to release">
+  <Header @label="Why simplabs" @title="Cutting edge solutions – idea to release">
     <p class="typography.lead">
       We build cutting edge web apps for clients around the world. Our team of experts delivers everything from ideation to design and engineering, guiding our clients along the way.
     </p>
@@ -33,29 +33,6 @@
               </p>
             </div>
           </div>
-          <!--section-->
-          <div class="main-block.content-section">
-            <div class="main-block.content-section-item">
-              <h3 class="typography.headline-2">
-                Driving technology forwards
-              </h3>
-              <p class="typography.body-text">
-                We take an active role in the open source projects that we leverage for our clients, contributing code and supporting the communities. Our strong engagement with Open Source provides us with first hand knowledge and insights that our clients benefit from.
-              </p>
-              <p class="typography.body-text">
-                Learn more about our engagement with
-                <a href="/expertise/ember" class="typography.link" data-internal>
-                  Ember.js
-                </a>
-                and
-                <a href="/expertise/elixir-phoenix" class="typography.link" data-internal>
-                  Elixir/Phoenix
-                </a>
-                .
-              </p>
-            </div>
-          </div>
-          <!--section-->
         </div>
       </div>
       <div class="main-block.sidebar">
@@ -74,29 +51,63 @@
         </Card>
       </div>
     </div>
+  </div>
+  <ShapeAcross @background="#222" @src="/assets/images/photos/tutoring.jpg" @width="7895" @height="5266">
+    <h3 class="typography.headline-2">
+      Driving technology forwards
+    </h3>
+    <p class="typography.body-text">
+      We take an active role in the open source projects that we leverage for our clients. Our strong engagement with Open Source provides us with first hand knowledge and insights that our clients benefit from.
+    </p>
+  </ShapeAcross>
+  <div class="container">
     <div class="main-block">
-      <div class="main-block.content-full-width">
+      <div class="main-block.content">
         <h2 class="typography.headline-1">
           Sharing
         </h2>
         <h3 class="typography.headline-2">
           Keeping the Conversation going
         </h3>
-        <p class="typography.body-text">
-          We strongly believe in the value of sharing our expertise and experience with others and are engaged with various conferences and meetups as organizers, speakers and sponsors. Sharing what we do is not only a great learning opportunity for ourselves but allows us to stay up to date with the web community's needs and challenges as well.
-        </p>
-        <ArrowLink @href="/calendar">
-          View our calendar
-        </ArrowLink>
       </div>
     </div>
-    <div class="main-block.content">
-      <p class="typography.body-text">
-        A distributed team allows gathering top talent regardless of location but face to face time is still invaluable. We frequently come together for team events and workshops and invite our clients to those as well.
-      </p>
+    <div class="main-block">
+      <div class="main-block.content">
+        <div class="main-block.content-item">
+          <p class="typography.lead">
+            We strongly believe in the value of sharing our expertise and experience with others and are engaged with various conferences and meetups as organizers, speakers and sponsors. Sharing what we do is not only a great learning opportunity for ourselves but allows us to stay up to date with the web community's needs and challenges as well.
+          </p>
+        </div>
+      </div>
+      <div class="main-block.sidebar">
+        <p class="typography.small-text">
+          Upcoming Events
+        </p>
+        <div class="card">
+          <div class="card.image">
+            <img class="fluid-image.image" src="/assets/images/card/emberfest-2019.png" />
+          </div>
+          <h3 class="card.sub-heading">
+            Meet Us at Emberfest 2019
+          </h3>
+          <p class="card.text">
+            EmberFest is a great opportunity to get in touch with the European Ember Community.
+          </p>
+          <ArrowLink @href="/calendar">
+            View Our Calendar
+          </ArrowLink>
+        </div>
+      </div>
     </div>
   </div>
-  <ShapeAcrossLeadingExperts />
+  <ShapeAcross @background="#222" @src="/assets/images/photos/oktoberfest.jpg" @width="4000" @height="2200">
+    <h3 class="typography.headline-2">
+      Distributed together
+    </h3>
+    <p class="typography.body-text">
+      A distributed team allows gathering top talent regardless of location but face to face time is still invaluable. We frequently come together for team events and workshops and invite our clients to those as well.
+    </p>
+  </ShapeAcross>
   <WorkWithUs />
   <Footer />
 </div>
