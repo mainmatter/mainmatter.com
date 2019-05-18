@@ -74,7 +74,7 @@ class SimplabsApp extends GlimmerApp {
 
   package(jsTree) {
     let [blogTree, mainSiteTree] = this._splitBundle(jsTree, {
-      componentPrefix: 'Blog',
+      componentPrefix: 'PageBlog',
       file: 'blog.js',
       moduleName: '__blog__',
     });

@@ -41,7 +41,7 @@ module.exports = function() {
     ...blogAuthorsRoutes,
     '/': { component: 'PageHomepage' },
     '/404': { component: 'Page404', title: 'Not found' },
-    '/blog': { component: 'Blog', title: 'Blog', bundle: { asset: '/blog.js', module: '__blog__' } },
+    '/blog': { component: 'PageBlog', title: 'Blog', bundle: { asset: '/blog.js', module: '__blog__' } },
     '/calendar': {
       component: 'PageCalendar',
       title: 'Calendar',
