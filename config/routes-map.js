@@ -43,7 +43,7 @@ module.exports = function() {
     '/404': { component: 'Page404', title: 'Not found' },
     '/blog': { component: 'Blog', title: 'Blog', bundle: { asset: '/blog.js', module: '__blog__' } },
     '/calendar': {
-      component: 'Calendar',
+      component: 'PageCalendar',
       title: 'Calendar',
       bundle: { asset: '/calendar.js', module: '__calendar__' },
     },
