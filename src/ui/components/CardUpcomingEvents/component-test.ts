@@ -4,12 +4,12 @@ import { setupRenderingTest } from '../../../utils/test-helpers/setup-rendering-
 
 const { module, test } = QUnit;
 
-module('Component: ShapeFeatureBreethe', function(hooks) {
+module('Component: CardUpcomingEvents', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await render(hbs`<ShapeFeatureBreethe />`);
+    await render(hbs`<CardUpcomingEvents />`);
 
-    assert.ok(this.containerElement.querySelector('div'));
+    assert.ok(this.containerElement.querySelector('figure'));
   });
 });
