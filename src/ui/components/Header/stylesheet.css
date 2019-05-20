@@ -96,6 +96,11 @@
   text-decoration: none;
 }
 
+.nav-item:focus,
+.nav-item:hover {
+  color: var(--color-accent);
+}
+
 .work-with-us {
   composes: 'button.button';
 }
