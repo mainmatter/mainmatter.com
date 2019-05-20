@@ -1,5 +1,6 @@
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 @block screen from "../../styles/blocks/screen.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
 
 :scope {
   block-name: Footer;
@@ -67,6 +68,10 @@
   text-decoration: none;
   color: #000;
   padding: 0.5rem 0;
+}
+
+.link:hover {
+  color: var(--color-accent);
 }
 
 .note {
