@@ -56,35 +56,10 @@ const allClients = [
       'mvb provides marketing solutions for the german book industry. They approached simplabs when they were looking for external expertise. simplabs performed a workshop, leveling up the team’s expertise and guided the project until its successful completion.',
   },
   {
-    id: 'ringler',
-    src: '/assets/images/logos/ringler.svg',
-    text:
-      'simplabs helped Ringler meet the deadline for one their projects without sacrificing on quality. Our technology experts joined Ringler’s internal team, increasing the available workforce and sharing their expertise.',
-  },
-  {
-    id: 'neighbourhoodie',
-    src: '/assets/images/logos/neighbourhoodie-software.svg',
-    text:
-      'simplabs helped Neighbourhoodie successfully complete their first Ember.js project. We conducted an on-site workshop for their team, teaching Ember.js’ fundamental concepts as well as advanced patterns, enabling their team to complete their project successfully.',
-  },
-  {
-    id: 'loconet',
-    src: '/assets/images/logos/loconet.svg',
-    text:
-      'LoCoNET builds online games for the web. They reached out to simplabs to improve their team’s productivity. We identified and fixed some blocking issues, laid the architectural foundation for some advanced features and conducted workshops to level up their team’s expertise.',
-  },
-  {
     id: 'dim3',
     src: '/assets/images/logos/dim3.svg',
     text:
       'Dim3 delivers software allowing hospitals to manage and optimize their patients’ nutrition plans. They approached simplabs when they faced severe performance problem in their app. We identified and fixed these issues and also found and solved some potential future problems along the way.',
-  },
-
-  {
-    id: 'trainline',
-    src: '/assets/images/logos/trainline.svg',
-    text:
-      'Trainline is Europe’s leading independent rail and coach platform.We worked with them to deliver a high - performance mobile web app, along with an improved engineering process, enabling Trainline to achieve their business goals for years to come.',
   },
   {
     id: 'timify',
@@ -103,6 +78,30 @@ const allClients = [
     src: '/assets/images/logos/expedition.svg',
     text:
       "Expedition is an online travelling magazin for global citizens. They turned to simplabs when they were looking for guidance to get the most out of their technology stack based on Elixir, Phoenix and Ember.js.",
+  },
+  {
+    id: 'trainline',
+    src: '/assets/images/logos/trainline.svg',
+    text:
+      'Trainline is Europe’s leading independent rail and coach platform.We worked with them to deliver a high - performance mobile web app, along with an improved engineering process, enabling Trainline to achieve their business goals for years to come.',
+  },
+  {
+    id: 'ringler',
+    src: '/assets/images/logos/ringler.svg',
+    text:
+      'simplabs helped Ringler meet the deadline for one their projects without sacrificing on quality. Our technology experts joined Ringler’s internal team, increasing the available workforce and sharing their expertise.',
+  },
+  {
+    id: 'neighbourhoodie',
+    src: '/assets/images/logos/neighbourhoodie-software.svg',
+    text:
+      'simplabs helped Neighbourhoodie successfully complete their first Ember.js project. We conducted an on-site workshop for their team, teaching Ember.js’ fundamental concepts as well as advanced patterns, enabling their team to complete their project successfully.',
+  },
+  {
+    id: 'loconet',
+    src: '/assets/images/logos/loconet.svg',
+    text:
+      'LoCoNET builds online games for the web. They reached out to simplabs to improve their team’s productivity. We identified and fixed some blocking issues, laid the architectural foundation for some advanced features and conducted workshops to level up their team’s expertise.',
   },
 ];
 
