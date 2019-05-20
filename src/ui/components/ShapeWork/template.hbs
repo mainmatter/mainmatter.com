@@ -41,23 +41,23 @@
         <g style="clip-path: url(#{{this.maskId}});">
           <image
             class="svg-image"
-            x="{{if @center '790' '98'}}"
+            x="{{if @center '500' (if @reverse '98' '500')}}"
             y="0"
             xlink:href="{{@src}}"
-            width="{{if @center '910' '1200'}}"
-            height="100%"
-            preserveAspectRatio="{{if @reverse 'xMinYMid slice' 'xMaxYMid slice'}}"
+            width="1200"
+            height="900"
+            preserveAspectRatio="xMinYMid meet"
           ></image>
         </g>
       {{else}}
         <image
           class="svg-image"
-          x="{{if @center '790' '98'}}"
+          x="{{if @center '500' (if @reverse '98' '500')}}"
           y="0"
           xlink:href="{{@src}}"
-          width="{{if @center '910' '1200'}}"
-          height="100%"
-          preserveAspectRatio="{{if @reverse 'xMinYMid slice' 'xMaxYMid slice'}}"
+          width="1200"
+          height="900"
+          preserveAspectRatio="xMinYMid meet"
         ></image>
       {{/if}}
     {{/if}}
