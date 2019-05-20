@@ -42,8 +42,16 @@ async function inlineCss(fileName) {
     base: DIST_PATH,
     folder: './',
     html: input,
-    width: 1300,
-    height: 900,
+    dimensions: [
+      {
+        height: 667,
+        width: 375,
+      },
+      {
+        height: 900,
+        width: 1200,
+      },
+    ],
   });
   await fs.writeFile(fileName, result.toString('utf8'));
 }
