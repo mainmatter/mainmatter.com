@@ -23,6 +23,11 @@
   right: 0;
   width: 5rem;
   height: 5rem;
+  transition: right 0.2s ease-out;
+}
+
+:scope:hover .svg {
+  right: -0.5rem;
 }
 
 .arrow {
