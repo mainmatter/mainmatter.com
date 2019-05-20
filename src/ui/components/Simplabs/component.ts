@@ -48,7 +48,12 @@ export default class Simplabs extends Component {
     Object.keys(this.appState.routesMap).forEach((path) => {
       let { component, title = '', bundle, parentBundle } = this.appState.routesMap[path];
       let options: INavigoHooks = {
-        after: () => this._setPageTitle(title),
+        after: () => {
+          this._setPageTitle(title);
+          if (!this.appState.isSSR) {
+            window.scrollTo(0, 0);
+          }
+        }
       };
       if (bundle && !this.appState.isSSR) {
         options.before = async done => {
@@ -89,7 +94,6 @@ export default class Simplabs extends Component {
           if (link && link.dataset.internal !== undefined) {
             event.preventDefault();
             this.router.navigate(target.getAttribute('href'));
-            window.scrollTo(0, 0);
           }
         }
       });
