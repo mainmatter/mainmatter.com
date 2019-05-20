@@ -26,7 +26,13 @@
       </div>
     </div>
   </div>
-  <ShapeWork @background="#162441" @color="#5843BC" @center="true">
+  <ShapeWork
+    @background="#162441"
+    @color="#5843BC"
+    @src="/assets/images/work/expedition.jpg"
+    @center="true"
+    @clip="true"
+  >
     <blockquote class="quote-offset">
       <p class="typography.body-text">
         simplabs brought wisdom, flexibility, and sane solutions when facing complex problems. They went above and beyond to work with our unique situation - would recommend 1000x.
@@ -65,18 +71,11 @@
         </div>
       </div>
       <div class="main-block.sidebar vertical-offset">
-        <Card @title="Learn about our sprint based approach" @src="/assets/images/playbook.svg">
-          <p class="typography.body-text">
-            We maintain a simple and client-focussed process. Find out more about how we work to deliver ambitious software solutions for our clients.
-          </p>
-          <ArrowLink @href="/playbook">
-            Learn more
-          </ArrowLink>
-        </Card>
+        <CardPlaybook />
       </div>
     </div>
   </div>
-  <ShapeFeatureBreethe />
+  <ShapeFeatureTrainline />
   <WorkWithUs />
   <Footer />
 </div>
