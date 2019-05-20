@@ -39,18 +39,12 @@
   transform: translate(-71.1%);
 }
 
-.svg-image {
-}
-
 :scope[state|reverse='true'] .top {
   transform: translate(-105.3%, -55.3%);
 }
 
 :scope[state|reverse='true'] .bottom {
   transform: translate(-29%);
-}
-
-:scope[state|reverse='true'] .svg-image {
 }
 
 :scope[state|center='true'] .bottom {
