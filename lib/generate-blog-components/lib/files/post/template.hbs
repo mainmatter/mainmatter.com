@@ -23,7 +23,9 @@
             <img class="fluid-image.image-cover" src="/assets/images/authors/{{author.twitter}}.jpg" />
           </div>
           <h3 class="typography.headline-4">
-            {{author.name}}
+            <a class="typography.title-link" href="/blog/author/{{author.twitter}}" data-internal>
+              {{author.name}}
+            </a>
           </h3>
           <p class="card.text">
             {{author.bio}}
