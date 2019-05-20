@@ -70,7 +70,10 @@ module.exports = function() {
       bundle: { asset: '/legal.js', module: '__legal__' },
     },
     '/services': { component: 'PageServices', title: 'Services' },
-    '/services/full-stack-engineering': { component: 'PageFullStackEngineering', title: 'Full Stack Engineering | Services' },
+    '/services/full-stack-engineering': {
+      component: 'PageFullStackEngineering',
+      title: 'Full Stack Engineering | Services',
+    },
     '/services/team-augmentation': { component: 'PageTeamAugmentation', title: 'Team Augmentation | Services' },
     '/services/tutoring': { component: 'PageTutoring', title: 'Tutoring | Services' },
     '/talks': { component: 'PageTalks', title: 'Talks', bundle: { asset: '/talks.js', module: '__talks__' } },
