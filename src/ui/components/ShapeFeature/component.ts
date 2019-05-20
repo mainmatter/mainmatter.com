@@ -6,6 +6,16 @@ export default class ShapeFeature extends ShapeBase {
     .substr(2);
 
   get backgroundStyle() {
-    return this.args.background && `background-image: url(${this.args.background})`;
+    let style = '';
+
+    if (this.args.backgroundImage) {
+      style += `background-image: url(${this.args.backgroundImage})`;
+    }
+
+    if (this.args.background) {
+      style += `;background-color: ${this.args.background}`;
+    }
+
+    return style;
   }
 }
