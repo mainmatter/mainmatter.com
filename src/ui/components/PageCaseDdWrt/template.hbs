@@ -1,91 +1,71 @@
 <div>
-  <Header @title="A modern UI for an open-source router firmware">
-    <p class="typography.lead">
-      DD-WRT is a Linux based firmware for wireless routers. Originally designed for the Linksys WRT54G series, it now runs on a wide variety of models and is installed on millions of devices worldwide.
-    </p>
-  </Header>
-  <!--container-->
+  <Header @title="A modern UI for an open-source router firmware" />
   <div class="container">
     <div class="main-block">
       <div class="main-block.content">
         <div class="main-block.content-item">
           <div class="main-block.content-section">
             <div class="main-block.content-section-item">
-              <p class="typography.body-text">
+              <p class="typography.lead">
+                DD-WRT is a Linux based firmware for wireless routers. Originally designed for the Linksys WRT54G series, it now runs on a wide variety of models and is installed on millions of devices worldwide.
+              </p>
+              <p class="typography.lead">
                 When embeDD, the company behind DD-WRT, was looking to re-engineer the old web interface and put the project on a stable foundation that would support development efforts for the long term, they reached out to simplabs for guidance.
               </p>
-              <p class="typography.body-text">
-                We recommended Ember.js as a powerful, yet stable foundation for the project that would allow support the project for years to come. Ember's strong stability guarantees make it the perfect for a project that is built to last, potentially for decades.
-              </p>
-              <h3 class="typography.headline-2">
-                Accommodating a special environment
-              </h3>
-              <p class="typography.body-text">
-                Shipping a single page app bundled with a router firmware is substantially different from serving it
-                via the open web. The first step for our experts was to understand the characteristics of the
-                environment, like limited hardware capabilities and slow update cycles. We then developed an application architecture
-                for the project that was tailored to the particular requirements and
-                limitations of the use case and catered for infrequent updates, intermediate network outages and a UI that adapts itself based on the capabilities of the device.
-              </p>
-              <div class="main-block.body-image">
-                <img class="fluid-image.image" src="/assets/images/work/trainline-comp-2.png" />
-                <p class="main-block.body-image-caption">
-                  DD-WRT allows configuration of all aspects of wired and wireless networks.
-                </p>
-              </div>
-              <!--body-image-->
             </div>
           </div>
-          <div class="main-block.content-section">
-            <div class="main-block.content-section-item">
-              <h3 class="typography.headline-2">
-                The Solution
-              </h3>
-              <p class="typography.body-text">
-                We completed the prototype implementation of the architecture in just over 6 weeks, defining the
-                structure for the application and establishing good Ember.js patterns. That prototype laid the
-                foundation for subsequent engineering efforts taken on by embeDD's in-house engineering team.
-              </p>
-            </div>
-            <!--section-item-->
-          </div>
-          <div class="main-block.content-section">
-            <div class="main-block.content-section-item">
-              <h3 class="typography.headline-2">
-                Enabling long term success
-              </h3>
-              <p class="typography.body-text">
-                In order to enable the client to continue the project successfully and ensure it would be a long term success, we coached embeDD's engineers and reviewed their work for an extended period of time after handing over the project.
-              </p>
-            </div>
-            <!--section-item-->
-          </div>
-          <!--section-->
         </div>
       </div>
-      <!--main-block.content-->
       <div class="main-block.sidebar">
-        <div class="card">
-          <p class="typography.small-text">
-            Client
+        <Card @label="Client" @src="/assets/images/card/embedd.svg">
+          <p class="typography.body-text">
+            embeDD is the company behind DD-WRT, the Linux-based open source router firmware, used on millions of wireless routers around the world.
           </p>
-          <div class="card.image">
-            <img class="fluid-image.image" src="/assets/images/card/embedd.png" />
-          </div>
-          <h3 class="card.sub-heading">
-            embeDD
-          </h3>
-          <p class="card.text">
-            embeDD is the company behind DD-WRT, the Linux-based open source router firmware running on millions of wireless routers around the world.
-          </p>
-        </div>
+        </Card>
         <CardEmberExpertise />
       </div>
-      <!--sidebar-->
     </div>
-    <!--main-block-->
   </div>
-  <ShapeFeatureTimify />
+  <ShapeWork @background="#545B60" @color="#3FA1E0" @src="/assets/images/work/ddwrt.jpg" @clip="true" @center="true">
+    <blockquote class="pull">
+      <p class="typography.body-text">
+        simplabs’ expertise in developing Ember.js based applications helped us significantly to define and develop the new DD-WRT NXT user experience. It was impressive to see in what short time such a complex application leveraging a customer backend interface could be implemented. simplabs' work did provide the new foundation for our UI and our in-house development team greatly benefitted from their know how.
+      </p>
+      <p class="typography.small-text">
+        Peter Steinhäuser, embeDD CEO
+      </p>
+    </blockquote>
+  </ShapeWork>
+  <div class="container">
+    <div class="main-block">
+      <div class="main-block.content">
+        <div class="main-block.content-item">
+          <p class="typography.lead">
+            We recommended Ember.js as a powerful, yet stable foundation for the project that would allow support the project for years to come. Ember's strong stability guarantees make it the perfect for a project that is built to last, potentially for decades.
+          </p>
+        </div>
+        <h3 class="typography.headline-2">
+          Accommodating a special environment
+        </h3>
+        <p class="typography.body-text">
+          Shipping a single page app bundled with a router firmware is substantially different from serving it via the open web. The first step for our experts was to understand the characteristics of the environment, like limited hardware capabilities and slow update cycles. We then developed an application architecture for the project that was tailored to the particular requirements and limitations of the use case and catered for infrequent updates, intermediate network outages and a UI that adapts itself based on the capabilities of the device.
+        </p>
+        <h3 class="typography.headline-2">
+          The Solution
+        </h3>
+        <p class="typography.body-text">
+          We completed the prototype implementation of the architecture in just over six weeks, defining the structure for the application and establishing good Ember.js patterns. That prototype laid the foundation for subsequent engineering efforts taken on by embeDD's in-house engineering team.
+        </p>
+        <h3 class="typography.headline-2">
+          Enabling long term success
+        </h3>
+        <p class="typography.body-text">
+          In order to enable the client to continue the project successfully and ensure it would be a long term success, we coached embeDD's engineers and reviewed their work for an extended period of time after handing over the project.
+        </p>
+      </div>
+    </div>
+  </div>
+  <ShapeFeatureTrainline />
   <WorkWithUs />
   <Footer />
 </div>

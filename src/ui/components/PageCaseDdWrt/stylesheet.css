@@ -9,3 +9,7 @@
   block-name: PageCaseDdWrt;
   extends: screen;
 }
+
+.pull {
+  margin-top: -6rem;
+}

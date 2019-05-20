@@ -92,8 +92,8 @@
 }
 
 .tagline {
-  position: relative;
-  top: -3rem;
+  position: absolute;
+  top: 36rem;
   z-index: 2;
   width: var(--col-2);
 }
