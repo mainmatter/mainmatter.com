@@ -47,16 +47,8 @@
   >
     <use fill-rule="evenodd" xlink:href="#{{this.shapeId}}"></use>
   </svg>
-  <figure class="container">
-    <div class="img">
-      <img class="fluid-image.image" src={{@src}} alt="" width={{@width}} height={{@height}} />
-    </div>
-    <figcaption class="content">
-      {{yield}}
-    </figcaption>
-  </figure>
   {{#if @tagline}}
-    <div class="container">
+    <div class="tagline-container">
       <div class="tagline">
         {{#if @logo}}
           <div class="tagline-logo">
@@ -69,4 +61,12 @@
       </div>
     </div>
   {{/if}}
+  <figure class="container">
+    <div class="img">
+      <img class="fluid-image.image" src={{@src}} alt="" width={{@width}} height={{@height}} />
+    </div>
+    <figcaption class="content">
+      {{yield}}
+    </figcaption>
+  </figure>
 </div>
