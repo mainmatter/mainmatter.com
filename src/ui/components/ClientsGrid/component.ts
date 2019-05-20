@@ -20,13 +20,13 @@ const allClients = [
       'Generali approached simplabs when they were looking for support with an internal Ember.js project. We guided their team during the course of the project by teaching and establishing best practices until the project’s successful completion.',
   },
   {
-    id: 'drive',
+    id: 'hopskipdrive',
     src: '/assets/images/logos/hop-skip-drive.svg',
     text:
       'HopSkipDrive builds a safe and dependable transportation solution for schools and families. simplabs built their internal dashboard, allowing them to track rides in real time and react to exceptions immediately.',
   },
   {
-    id: 'hood',
+    id: 'robinhood',
     src: '/assets/images/logos/robin-hood.svg',
     text:
       'RobinHood is a charitable foundation fighting poverty in New York City. simplabs helped them establish an effective engineering process as well as build and release a web based tool for managing Civic User Testing Groups.',
@@ -62,7 +62,7 @@ const allClients = [
       'simplabs helped Ringler meet the deadline for one their projects without sacrificing on quality. Our technology experts joined Ringler’s internal team, increasing the available workforce and sharing their expertise.',
   },
   {
-    id: 'software',
+    id: 'neighbourhoodie',
     src: '/assets/images/logos/neighbourhoodie-software.svg',
     text:
       'simplabs helped Neighbourhoodie successfully complete their first Ember.js project. We conducted an on-site workshop for their team, teaching Ember.js’ fundamental concepts as well as advanced patterns, enabling their team to complete their project successfully.',
