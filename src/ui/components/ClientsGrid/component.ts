@@ -92,6 +92,12 @@ const allClients = [
     text:
       'Timify is an online appointment scheduling service that connects service providers with clients. When they decided it was time to re-engineer their existing product, they trusted us to set them up for future success.',
   },
+  {
+    id: 'embedd',
+    src: '/assets/images/logos/embedd.svg',
+    text:
+      "embeDD is the company behind the popular router firmware DD-WRT. We guided embeDD in laying the foundation for the next version of the firmware's UI component so they could rely on it for years to come.",
+  },
 ];
 
 export default class ClientsGrid extends Component {
