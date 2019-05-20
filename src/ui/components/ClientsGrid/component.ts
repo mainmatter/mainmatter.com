@@ -98,6 +98,12 @@ const allClients = [
     text:
       "embeDD is the company behind the popular router firmware DD-WRT. We guided embeDD in laying the foundation for the next version of the firmware's UI component so they could rely on it for years to come.",
   },
+  {
+    id: 'Expedition',
+    src: '/assets/images/logos/expedition.svg',
+    text:
+      "Expedition is an online travelling magazin for global citizens. They turned to simplabs when they were looking for guidance to get the most out of their technology stack based on Elixir, Phoenix and Ember.js.",
+  },
 ];
 
 export default class ClientsGrid extends Component {
