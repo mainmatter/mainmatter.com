@@ -1,0 +1,26 @@
+<ul>
+  {{#each posts}}
+    <li class="post">
+      <h4 class="typography.headline-3-plain title">
+        <a class="typography.title-link" href="{{path}}">
+          {{title}}
+        </a>
+      </h4>
+
+      <div class="media">
+        <img class="image" src="/assets/images/authors/{{author.twitter}}.jpg" />
+        <p>
+          <span class="author">
+            {{author.name}}
+          </span>
+          <span class="date">
+            {{date}}
+          </span>
+        </p>
+      </div>
+      <ArrowLink @href="{{path}}">
+        Read Post
+      </ArrowLink>
+    </li>
+  {{/each}}
+</ul>

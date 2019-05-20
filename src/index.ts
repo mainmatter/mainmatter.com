@@ -42,6 +42,8 @@ app.registerInitializer({
       registerBundle(module);
     });
 
+    registerBundle('__recent__');
+
     registry.register(
       `utils:/${app.rootName}/lazy-registration/main`,
       LazyRegistration
