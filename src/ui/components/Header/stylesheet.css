@@ -40,10 +40,7 @@
   --type: var(--color-primary);
 }
 
-.logo-link {
-  display: inline-block;
-}
-
+.logo-link,
 .logo-svg {
   display: block;
 }
