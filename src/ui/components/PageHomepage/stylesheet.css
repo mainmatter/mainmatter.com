@@ -30,7 +30,3 @@
   filter: grayscale(100%) contrast(0%);
   transition: filter 0.1s ease-out;
 }
-
-.logos-logo:hover {
-  filter: grayscale(0%) contrast(100%);
-}
