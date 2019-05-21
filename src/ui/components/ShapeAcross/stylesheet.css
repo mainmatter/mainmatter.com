@@ -4,9 +4,7 @@
   block-name: ShapeAcross;
 
   position: relative;
-  margin-top: -22rem;
-  padding: 0 0 16rem;
-  min-height: 73vw;
+  z-index: 0;
 
   --shape-color: var(--color-accent);
 }
@@ -19,44 +17,88 @@
   fill: var(--shape-color);
 }
 
-.img {
-  position: absolute;
-  top: 0.5rem;
-  width: 100vw;
-  height: calc(103vw - 1rem);
-  background: fixed 0% 50% no-repeat var(--shape-color);
-  background-size: 120%;
-}
-
-.top {
-  position: absolute;
-  left: 50%;
-  width: 225rem;
-  height: auto;
-  fill: var(--shape-color);
-  top: calc(30vw - 22rem);
-  transform: translate(-20rem);
-}
-
 .bottom {
   position: absolute;
   width: 100%;
   height: auto;
 }
 
-.container {
-  composes: 'screen.container-base';
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: flex-end;
+.img {
+  position: absolute;
+  top: 0.5rem;
+  background: fixed 0% 50% no-repeat var(--shape-color);
+  background-size: 200%;
 }
 
 .content {
-  width: var(--col-2);
-  padding-top: 25vw;
-
   --color-text: var(--color-text-inverted);
   --color-muted: var(--color-muted-inverted);
   --color-link: var(--color-link-inverted);
+}
+
+@media (max-width: 699px) {
+  :scope {
+    padding-top: 160rem;
+    margin: 0 0 16rem;
+  }
+
+  .img {
+    width: 200%;
+    height: 112.5rem;
+    top: 78rem;
+    transform: translate(-25%);
+  }
+
+  .top {
+    top: 0;
+    z-index: 2;
+    transform: translate(-40%);
+  }
+
+  .bottom {
+    top: 39rem;
+    z-index: 1;
+    height: 163rem;
+    width: auto;
+    transform: translate(-27%);
+  }
+
+  .content {
+    position: relative;
+    z-index: 3;
+    margin-top: -132rem;
+  }
+}
+
+@media (min-width: 700px) {
+  :scope {
+    margin-top: -22rem;
+    padding: 0 0 16rem;
+    min-height: 73vw;
+  }
+
+  .img {
+    width: 100vw;
+    height: calc(103vw - 1rem);
+    background-size: 120%;
+  }
+
+  .top {
+    position: absolute;
+    top: calc(30vw - 22rem);
+    transform: translate(-20rem);
+  }
+
+  .container {
+    composes: 'screen.container-base';
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .content {
+    width: var(--col-2);
+    padding-top: 25vw;
+  }
 }
