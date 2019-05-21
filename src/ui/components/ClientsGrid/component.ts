@@ -77,13 +77,13 @@ const allClients = [
     id: 'Expedition',
     src: '/assets/images/logos/expedition.svg',
     text:
-      'Expedition is an online travelling magazin for global citizens. They turned to simplabs when they were looking for guidance to get the most out of their technology stack based on Elixir, Phoenix and Ember.js.',
+      'Expedition is an online travel magazine for global citizens. They turned to simplabs when they were looking for guidance to get the most out of their technology stack based on Elixir, Phoenix and Ember.js.',
   },
   {
     id: 'trainline',
     src: '/assets/images/logos/trainline.svg',
     text:
-      'Trainline is Europe’s leading independent rail and coach platform.We worked with them to deliver a high - performance mobile web app, along with an improved engineering process, enabling Trainline to achieve their business goals for years to come.',
+      'Trainline is Europe’s leading independent rail and coach platform. We worked with them to deliver a high - performance mobile web app, along with an improved engineering process, enabling Trainline to achieve their business goals for years to come.',
   },
   {
     id: 'ringler',
