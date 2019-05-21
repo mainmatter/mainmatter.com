@@ -24,11 +24,6 @@
   --color-link: var(--color-accent);
   --color-link-inverted: var(--color-background);
 
-  /* Legacy, to be removed */
-  --first-color: var(--color-primary);
-  --second-color: var(--color-secondary);
-  --link-color: var(--color-accent);
-
   font-family: 'Nunito Sans', sans-serif;
   font-display: fallback;
   color: var(--color-muted);

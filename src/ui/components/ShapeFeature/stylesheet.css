@@ -8,7 +8,7 @@
   padding: 28rem 0 14rem;
   min-height: 58rem;
 
-  --shape-color: var(--link-color);
+  --shape-color: var(--color-accent);
 }
 
 .bottom,
