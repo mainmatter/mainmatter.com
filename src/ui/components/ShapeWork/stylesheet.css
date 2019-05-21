@@ -61,9 +61,6 @@
 
 .container {
   composes: 'screen.container-base';
-
-  display: flex;
-  justify-content: space-between;
 }
 
 :scope[state|center='true'] .container {
@@ -73,12 +70,7 @@
 }
 
 .header {
-  width: var(--col-3);
   padding-bottom: 21rem;
-}
-
-.content {
-  width: var(--col-3);
 }
 
 :scope[state|reverse='true'] .content {
@@ -86,9 +78,27 @@
 }
 
 :scope[state|center='true'] .content {
-  width: var(--col-2);
   --color-text: var(--color-text-inverted);
   --color-muted: var(--color-text-inverted);
+}
+
+@media (min-width: 700px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header {
+    width: var(--col-3);
+  }
+
+  .content {
+    width: var(--col-3);
+  }
+
+  :scope[state|center='true'] .content {
+    width: var(--col-2);
+  }
 }
 
 .logo {

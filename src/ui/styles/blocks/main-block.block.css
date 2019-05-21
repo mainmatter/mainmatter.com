@@ -91,7 +91,9 @@
   :scope {
     display: block;
   }
-  .content {
+
+  .content,
+  .sidebar {
     width: 100%;
     margin-right: 0;
   }

@@ -43,3 +43,9 @@
 .title {
   padding-bottom: 22rem;
 }
+
+@media (max-width: 699px) {
+  .content {
+    width: 100%;
+  }
+}
