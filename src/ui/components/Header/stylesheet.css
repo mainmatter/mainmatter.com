@@ -115,7 +115,7 @@
     max-width: var(--max-width);
     margin-left: auto;
     margin-right: auto;
-    padding: 3rem var(--horizontal-spacing);
+    padding: 3rem var(--offset-horizontal);
   }
 
   .toggler {
@@ -150,7 +150,7 @@
     max-width: var(--max-width);
     margin-left: auto;
     margin-right: auto;
-    padding: 8rem var(--horizontal-spacing) 0;
+    padding: 8rem var(--offset-horizontal) 0;
   }
 
   .nav {

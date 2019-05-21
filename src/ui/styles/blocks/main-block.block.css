@@ -7,6 +7,7 @@
 
 .content {
   width: var(--col-3);
+  margin-right: var(--offset-horizontal);
 }
 
 .content-full-width {
@@ -86,11 +87,12 @@
   text-align: justify;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 699px) {
   :scope {
     display: block;
   }
   .content {
     width: 100%;
+    margin-right: 0;
   }
 }
