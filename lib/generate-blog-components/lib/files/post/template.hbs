@@ -18,35 +18,27 @@
         <p class="typography.small-text">
           About the Author
         </p>
-        <div class="card">
-          <div class="card.image">
-            <img class="fluid-image.image-cover" src="/assets/images/authors/{{author.twitter}}.jpg" />
-          </div>
+        <Card @src="/assets/images/authors/{{author.twitter}}.jpg">
           <h3 class="typography.headline-4">
             <a class="typography.title-link" href="/blog/author/{{author.twitter}}" data-internal>
               {{author.name}}
             </a>
           </h3>
-          <p class="card.text">
+          <p class="typography.body-text">
             {{author.bio}}
           </p>
           <a class="typography.link" href="https://twitter.com/{{author.twitter}}" target="_blank">
             @
             {{author.twitter}}
           </a>
-        </div>
-        <p class="typography.small-text">
-          About Simplabs
-        </p>
-        <div class="card">
+        </Card>
+        <Card @label="About Simplabs">
           <img class="logo" src="/assets/images/logos/simplabs.svg" />
-          <p class="card.text">
+          <p class="typography.body-text">
             simplabs is a Web Engineering Consultancy based in Munich, Germany. We work for clients all over the world, offering Full Stack Engineering, Technology Consulting as well as Individual and Group Training with modern Web Technologies. We specialize in a set of conventions-based tools like Ember.js, Elixir and, Phoenix as well as Ruby on Rails and like to move fast without breaking things.
           </p>
-
-        </div>
+        </Card>
       </div>
-      <!--sidebar-->
     </div>
   </div>
   {{#if related}}

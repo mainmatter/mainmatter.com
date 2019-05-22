@@ -20,24 +20,14 @@
         </div>
       </div>
       <div class="main-block.sidebar">
-        <div class="card">
-          <p class="typography.small-text">
-            Community
-          </p>
-          <div class="card.image">
-            <img class="fluid-image.image" src="/assets/images/card/elixir-munich.png" />
-          </div>
-          <h3 class="card.sub-heading">
-            Elixir & Erlang Munich
-          </h3>
-          <p class="card.text">
+        <Card @label="Community" @title="Elixir & Erlang Munich" @src="/assets/images/card/elixir-munich.png">
+          <p class="typography.body-text">
             We have founded and support the Elixir & Erlang Munich meetup.
           </p>
           <ArrowLink @href="https://www.meetup.com/Elixir-Munich/">
             Learn more
           </ArrowLink>
-        </div>
-        <!--card-->
+        </Card>
       </div>
     </div>
   </div>
@@ -67,15 +57,8 @@
         </div>
       </div>
       <div class="main-block.sidebar">
-        <div class="card">
-          <p class="typography.small-text">
-            From our Blog
-          </p>
-          <div class="card.image">
-            <img class="fluid-image.image" src="/assets/images/card/elixir.svg" />
-          </div>
-          <RecentPostsElixir />
-        </div>
+        <Card @label="From our Blog" @src="/assets/images/card/elixir.svg" />
+        <RecentPostsElixir />
       </div>
     </div>
   </div>

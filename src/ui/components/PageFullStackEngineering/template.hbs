@@ -16,22 +16,17 @@
             </p>
           </div>
         </div>
-        <!--item-->
       </div>
-      <!--main-block-content-->
       <div class="main-block.sidebar">
-        <div class="card">
-          <h3 class="typography.headline-2">
-            Want to know how we can turn your idea into a successful digital product?
-          </h3>
-          <p class="typography.body-text">
-            Leave us a message and we'll get back to you to discuss your project.
-          </p>
-          <FormContact />
-        </div>
+        <h3 class="typography.headline-2">
+          Want to know how we can turn your idea into a successful digital product?
+        </h3>
+        <p class="typography.body-text">
+          Leave us a message and we'll get back to you to discuss your project.
+        </p>
+        <FormContact />
       </div>
     </div>
-    <!--main-block-->
   </div>
   <ShapeAcrossFullStackService />
   <div class="container">
@@ -70,30 +65,22 @@
             </div>
           </div>
         </div>
-        <!--item-->
       </div>
-      <!--main-block-content-->
       <div class="main-block.sidebar offset-top">
-        <div class="card">
-          <p class="typography.small-text">
-            Playbook
-          </p>
-          <div class="card.image">
-            <img class="fluid-image.image" src="/assets/images/card/instant-productivity.jpg" />
-          </div>
-          <h3 class="card.sub-heading">
-            The steps to instant productivity
-          </h3>
+        <Card
+          @label="Playbook"
+          @title="The steps to instant productivity"
+          @src="/assets/images/card/instant-productivity.jpg"
+        >
           <p class="typography.body-text">
             We maintain a lean process that supports the team rather than stand in its way. Find out more about how we work to deliver ambitious software solutions for our clients.
           </p>
           <ArrowLink @href="/playbook">
             Read our Playbook
           </ArrowLink>
-        </div>
+        </Card>
       </div>
     </div>
-    <!--main-block-->
   </div>
   <ClientsGrid
     @title="We have a track record of successful projects for international clients"
