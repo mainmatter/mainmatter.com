@@ -1,6 +1,7 @@
-import Component from '@glimmer/component';
+import Component, { tracked } from '@glimmer/component';
 
 export default class ArrowLink extends Component {
+  @tracked
   get isInternal() {
     const href = this.args.href || '';
 
