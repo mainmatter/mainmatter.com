@@ -30,4 +30,22 @@ module('Component: ArrowLink', function(hooks) {
 
     assert.ok(this.containerElement.querySelector('a').dataset.internal === undefined);
   });
+
+  test('it does not add a "target" attribute relative internal links', async function(assert) {
+    await render(hbs`<ArrowLink @href="/link" />`);
+
+    assert.notOk(this.containerElement.querySelector('a').target);
+  });
+
+  test('it does not add a "target" attribute relative internal links', async function(assert) {
+    await render(hbs`<ArrowLink @href="https://simplabs.com/link" />`);
+
+    assert.notOk(this.containerElement.querySelector('a').target);
+  });
+
+  test('it adds a "target" attribute with value "_blank" for external links', async function(assert) {
+    await render(hbs`<ArrowLink @href="https://github.com" />`);
+
+    assert.equal(this.containerElement.querySelector('a').target, '_blank');
+  });
 });
