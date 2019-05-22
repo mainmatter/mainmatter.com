@@ -25,10 +25,16 @@
   margin: 0 -2rem 12rem;
   display: flex;
   align-items: stretch;
+  justify-content: flex-start;
 }
 
 .content-section-item {
   padding: 0 2rem;
+}
+
+.content-section-item:last-child {
+  padding: 0 2rem;
+  flex-grow: 1;
 }
 
 .content-heading {
