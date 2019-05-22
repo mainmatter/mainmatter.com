@@ -6,7 +6,9 @@
     pointer-events: none;
   }
 
-  [data-menu] nav a {
+  [data-menu] nav a,
+  [data-menu] nav a:focus,
+  [data-menu] nav a:hover {
     position: relative;
     top: 3rem;
     z-index: 1;
