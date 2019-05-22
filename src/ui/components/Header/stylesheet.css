@@ -16,8 +16,10 @@
   position: relative;
 }
 
-.content[state| flex-content='true'] {
+.content[state|flex-content='true'] {
   display: flex;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
 }
 
 .navbar {
@@ -68,8 +70,8 @@
 
   position: relative;
   display: none;
-  width: 4rem;
-  height: 3rem;
+  width: 3rem;
+  height: 2rem;
   padding: 0;
   cursor: pointer;
   border: 2px solid var(--color);
@@ -145,6 +147,11 @@
 }
 
 @media (min-width: 700px) {
+  .content {
+    margin-top: 21rem;
+    margin-bottom: 21rem;
+  }
+
   .wrapper {
     display: flex;
     max-width: var(--max-width);
