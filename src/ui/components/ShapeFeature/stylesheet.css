@@ -21,6 +21,13 @@
   fill: var(--shape-color);
 }
 
+.img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
 .tagline-logo {
   overflow: hidden;
 }
@@ -53,23 +60,29 @@
 @media (max-width: 699px) {
   .top {
     left: 50%;
-    transform: translate(-50%);
+    transform-origin: top center;
+    transform: translate(-50%) scale(0.6);
   }
 
   .bottom {
     display: none;
   }
 
-  .img {
+  .img-wrapper {
     width: 130vw;
-    height: 108.5rem;
+    height: 63.5rem;
     padding-top: 4rem;
     transform: translate(-15vw);
   }
 
+  .img {
+    display: block;
+    width: auto;
+    height: 100%;
+  }
+
   .tagline {
-    top: 88rem;
-    right: var(--offset-horizontal);
+    display: none;
   }
 
   .content {
@@ -123,7 +136,7 @@
     justify-content: space-between;
   }
 
-  .img {
+  .img-wrapper {
     margin-top: -28rem;
     max-width: var(--col-3);
   }
