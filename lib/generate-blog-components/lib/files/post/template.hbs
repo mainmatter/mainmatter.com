@@ -49,39 +49,19 @@
       <!--sidebar-->
     </div>
   </div>
-  <div class="container">
-    {{#if related}}
-      <div class="shape.wrap">
-        <div class="shape-left">
-          <div class="shape-left.background related-background">
-            {{#if related.teaserImage}}
-              <div class="shape-left.content">
-                <div class="shape.content-image">
-                  <img class="fluid-image.image" src="{{related.teaserImage}}" />
-                </div>
-              </div>
-            {{/if}}
-          </div>
-        </div>
-        <div class="shape.caption">
-          <div class="shape.caption-content">
-            <p class="typography.small-text">
-              Keep Reading
-            </p>
-            <h3 class="typography.headline-2">
-              {{related.title}}
-            </h3>
-            <ArrowLink @href="{{related.link}}">
-              Read Post
-            </ArrowLink>
-          </div>
-        </div>
-        <div class="shape-decoration">
-          <div class="shape-decoration.background related-background"></div>
-        </div>
-      </div>
-    {{/if}}
-  </div>
+  {{#if related}}
+    <ShapeFeature @color="{{related.teaserBackground}}" @background="{{related.teaserBackground}}" @backgroundImage="{{related.teaserImage}}">
+      <p class="typography.small-text">
+        Continue Reading
+      </p>
+      <h3 class="typography.headline-2">
+        {{related.title}}
+      </h3>
+      <ArrowLink @href="{{related.link}}">
+        Read Post
+      </ArrowLink>
+    </ShapeFeature>
+  {{/if}}
   <WorkWithUs />
   <Footer />
 </div>
