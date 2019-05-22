@@ -29,6 +29,10 @@
   justify-content: flex-start;
 }
 
+.content-heading {
+  margin-bottom: 8rem;
+}
+
 .content-section-item {
   padding: 0 2rem;
 }
@@ -36,10 +40,6 @@
 .content-section-item:last-child {
   padding: 0 2rem;
   flex-grow: 1;
-}
-
-.content-heading {
-  margin-bottom: 16rem;
 }
 
 .content-section-image {
@@ -92,9 +92,20 @@
     display: block;
   }
 
+  .content-item,
+  .content-section {
+    margin-bottom: 8rem;
+  }
+
   .content,
   .sidebar {
     width: 100%;
     margin-right: 0;
+  }
+}
+
+@media (min-width: 700px) {
+  .content-heading {
+    margin-bottom: 16rem;
   }
 }

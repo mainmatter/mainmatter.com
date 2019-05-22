@@ -32,7 +32,7 @@
 
 @media (max-width: 699px) {
   :scope {
-    --offset-horizontal: 4rem;
+    --offset-horizontal: 2.5rem;
   }
 }
 
@@ -49,4 +49,10 @@
 .container {
   padding-top: 0;
   padding-bottom: 21rem;
+}
+
+@media (max-width: 699px) {
+  .container {
+    padding-bottom: 12rem;
+  }
 }
