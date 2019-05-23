@@ -14,11 +14,12 @@
   margin-top: 21rem;
   margin-bottom: 21rem;
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
 }
 
 .content[state| no-wrap='true'] {
-  order: 1;
+  flex-wrap: nowrap;
 }
 
 .title {
