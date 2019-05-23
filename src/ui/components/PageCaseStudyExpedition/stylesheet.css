@@ -12,6 +12,8 @@
   margin-top: 10rem;
 }
 
-.vertical-offset {
-  padding-top: 47rem;
+@media (min-width: 700px) {
+  .vertical-offset {
+    padding-top: 47rem;
+  }
 }

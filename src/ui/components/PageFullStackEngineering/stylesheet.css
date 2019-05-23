@@ -8,6 +8,8 @@
   extends: screen;
 }
 
-.offset-top {
-  margin-top: 66rem;
+@media (min-width: 700px) {
+  .offset-top {
+    margin-top: 66rem;
+  }
 }
