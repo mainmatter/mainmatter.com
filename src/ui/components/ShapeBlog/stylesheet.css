@@ -48,4 +48,13 @@
   .content {
     width: 100%;
   }
+
+  .top {
+    top: -31rem;
+    transform: translate(2%);
+  }
+
+  .bottom {
+    display: none;
+  }
 }
