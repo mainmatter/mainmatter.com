@@ -1,8 +1,27 @@
 <div>
-  <Header @label="Blog" @title="Posts by {{name}}" />
+  <Header @label="Blog" @title="Posts by {{name}}" @has-badge="true" @no-wrap="true">
+    <div class="blog-post.badge">
+      <div class="blog-post.badge-image">
+        <img class="fluid-image.image" src="/assets/images/authors/{{twitter}}.jpg">
+      </div>
+      <div class="blog-post.badge-content">
+        <a class="typography.link" href="/blog/author/{{author.twitter}}" data-internal>
+          {{name}}
+        </a>
+        <p>
+          {{bio}}
+        </p>
+        <a href="https://twitter.com/{{author.twitter}}" class="typography.link" target="_blank">
+          @{{twitter}}
+        </a>
+      </div>
+    </div>
+  </Header>
   <div class="container">
     <div class="main-block">
-      <div class="main-block.content">
+      <div class="blog-post.sidebar-post">
+      </div>
+      <div class="blog-post.content-post">
         {{#each posts}}
           <div class="main-block.content-item">
             <span class="typography.tag">
@@ -24,18 +43,6 @@
             </div>
           </div>
         {{/each}}
-      </div>
-      <div class="main-block.sidebar">
-        <Card @title="{{name}}" @src="/assets/images/authors/{{twitter}}.jpg">
-          <p class="typography.body-text">
-            {{bio}}
-          </p>
-          <p class="typography.body-text">
-            <a href="https://twitter.com/{{author.twitter}}" class="typography.link" target="_blank">
-              @{{twitter}}
-            </a>
-          </p>
-        </Card>
       </div>
     </div>
   </div>

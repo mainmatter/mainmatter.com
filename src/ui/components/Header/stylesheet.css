@@ -13,6 +13,20 @@
   composes: 'screen.container-base';
   margin-top: 21rem;
   margin-bottom: 21rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.content[state| no-wrap='true'] {
+  order: 1;
+}
+
+.title {
+  order: 0;
+}
+
+.title[state| has-badge='true'] {
+  order: 1;
 }
 
 .navbar {
