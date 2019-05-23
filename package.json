@@ -86,7 +86,8 @@
       "lib/generate-talks-archive",
       "lib/google-analytics",
       "lib/inject-routes",
-      "lib/sentry"
+      "lib/sentry",
+      "lib/service-workers"
     ]
   },
   "prettier": {
