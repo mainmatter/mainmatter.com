@@ -1,4 +1,4 @@
-<div style={{this.shapeStyle}}>
+<div style={{this.shapeStyle}} state:hasVideo={{@video}} state:hasImage={{@src}}>
   <div class="bottom">
     <div class="bottom-content" style={{this.backgroundStyle}}>
       {{#if @video}}
@@ -9,8 +9,8 @@
           loop
           poster={{@background}}
           class="video"
-          width={{@width}}
-          height="{@height}}"
+          width="{{@width}}"
+          height="{{@height}}"
         >
           <source src={{@video}} type="video/mp4" />
         </video>
@@ -62,9 +62,11 @@
     </div>
   {{/if}}
   <figure class="container">
-    <div class="img-wrapper">
-      <img class="img" src={{@src}} alt="" width={{@width}} height={{@height}} />
-    </div>
+    {{#if @src}}
+      <div class="img-wrapper">
+        <img class="img" src={{@src}} alt="" width={{@width}} height={{@height}} />
+      </div>
+    {{/if}}
     <figcaption class="content">
       {{yield}}
     </figcaption>

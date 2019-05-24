@@ -119,7 +119,7 @@
 
   :scope[state|center='true'] .top {
     bottom: 0;
-    transform: translate(-140rem, 0);
+    transform: translate(-50%, 0);
   }
 
   :scope[state|center='true'] .content {

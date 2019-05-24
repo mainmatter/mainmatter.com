@@ -11,6 +11,9 @@
   --shape-color: var(--color-accent);
 }
 
+:scope[state|hasVideo] {
+}
+
 .bottom,
 .top {
   position: absolute;
@@ -77,14 +80,30 @@
 }
 
 @media (max-width: 699px) {
+  :scope[state|hasVideo] {
+    padding-top: 70rem;
+  }
+
+  :scope[state|hasVideo] .video {
+    display: none;
+  }
+
+  .top {
+    display: none;
+  }
+
   .bottom {
     left: 50%;
     transform-origin: top center;
     transform: translate(-50%) scale(0.6);
   }
 
-  .top {
-    display: none;
+  :scope[state|hasVideo] .bottom {
+    transform: translate(-50%, -70rem) scale(0.6);
+  }
+
+  :scope[state|hasVideo] .bottom-content {
+    background-size: cover;
   }
 
   .img-wrapper {
@@ -133,6 +152,10 @@
     position: relative;
     z-index: 1;
     display: flex;
+    justify-content: flex-end;
+  }
+
+  :scope[state|hasImage] .container {
     justify-content: space-between;
   }
 
