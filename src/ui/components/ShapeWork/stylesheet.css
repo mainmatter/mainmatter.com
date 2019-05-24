@@ -157,7 +157,7 @@
   }
 
   .tagline {
-    bottom: -110rem;
+    bottom: 20rem;
     right: var(--offset-horizontal);
     z-index: 2;
     width: var(--col-1);
