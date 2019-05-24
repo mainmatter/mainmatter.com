@@ -103,6 +103,12 @@ const allClients = [
     text:
       'LoCoNET builds online games for the web. They reached out to simplabs to improve their team’s productivity. We identified and fixed some blocking issues, laid the architectural foundation for some advanced features and conducted workshops to level up their team’s expertise.',
   },
+  {
+    id: 'erdil',
+    src: '/assets/images/logos/erdil.svg',
+    text:
+      'ERDiL builds natural language processing software that helps companies analyze messages from their customers. They reached out to simplabs for guidance on writing tests for their Ember.js based dashboard app and establishing a sustainable testing culture.',
+  },
 ];
 
 export default class ClientsGrid extends Component {
