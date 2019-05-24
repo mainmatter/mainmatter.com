@@ -11,15 +11,24 @@ server.use(express.static(DIST_PATH));
 server.listen(3000, async function() {
   let successes = 0;
   let errors = 0;
+  let success = result => {
+    successes++;
+    console.log(colors.blue(`* ${result.response.url}`));
+  };
+  let error = url => {
+    errors++;
+    console.log(colors.red(`* ${url} - failed to follow link`));
+  };
+
   const crawler = await HCCrawler.launch({
     onSuccess: result => {
-      successes++;
-      console.log(colors.blue(`* ${result.response.url}`));
+      if (result.response.ok) {
+        success(result);
+      } else {
+        error(result.response.url);
+      }
     },
-    onError: error => {
-      errors++;
-      console.log(colors.red(`* failed to follow 1 link from ${error.previousUrl}`));
-    },
+    onError: error => error(error.previousUrl),
   });
 
   await crawler.queue({
@@ -35,7 +44,7 @@ server.listen(3000, async function() {
     console.log(colors.green(`\nSuccessfully crawled ${successes} pages.`));
     process.exit(0);
   } else {
-    console.log(colors.green(`\nFailed to crwal ${errors} links.`));
+    console.log(colors.red(`\nFailed to crawl ${errors} links.`));
     process.exit(1);
   }
 });

@@ -23,7 +23,7 @@ features.
 
 ## Automatic binding of `data-test-*` properties
 
-As you may know from our [previous blog post](/blog/2016-03–04-ember-test-selectors)
+As you may know from our [previous blog post](/blog/2016-03-04-ember-test-selectors)
 on this topic, the goal of this addon is to let you use attributes starting
 with `data-test-` in your templates:
 

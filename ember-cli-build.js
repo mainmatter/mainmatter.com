@@ -239,6 +239,7 @@ module.exports = function(defaults) {
     },
     fingerprint: {
       exclude: ['ssr-app.js'],
+      extensions: ['js', 'css', 'png', 'jpg', 'gif', 'map', 'svg'],
       replaceExtensions: ['html', 'css', 'js', 'json'],
     },
     rollup: {
