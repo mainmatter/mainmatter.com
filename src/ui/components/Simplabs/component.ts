@@ -53,6 +53,9 @@ export default class Simplabs extends Component {
           if (!this.appState.isSSR) {
             window.scrollTo(0, 0);
           }
+        },
+        already: () => {
+          window.scrollTo(0, 0);
         }
       };
       if (bundle && !this.appState.isSSR) {
