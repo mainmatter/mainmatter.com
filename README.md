@@ -22,6 +22,10 @@ using [Puppeteer](https://pptr.dev) and we inject critical CSS with
 * open [http://localhost:4200](http://localhost:4200).
 * `yarn format` (format source files)
 
+**This project registers a service worker which you'll likely want to disable
+for development. Check _"Bypass for network"_ in the _"Application"_ tab in the
+Chrome Inspector to do so.**
+
 ### Testing
 
 * `ember test` (headless)
