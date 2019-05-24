@@ -1,41 +1,55 @@
 <div>
-  <Header @label="Blog" @title="Posts by {{name}}" />
+  <Header @flex-content="true">
+    <div class="blog-post.badge">
+      <div class="blog-post.badge-image">
+        <img class="fluid-image.image" src="/assets/images/authors/{{twitter}}.jpg">
+      </div>
+      <div class="blog-post.badge-content">
+        <a class="typography.link" href="/blog/author/{{author.twitter}}" data-internal>
+          {{name}}
+        </a>
+        <p>
+          {{bio}}
+        </p>
+        <a href="https://twitter.com/{{author.twitter}}" class="typography.link" target="_blank">
+          @{{twitter}}
+        </a>
+      </div>
+    </div>
+    <div>
+      <p class="typography.small-text">
+        Blog
+      </p>
+      <h1 class="typography.display">
+        Posts by {{name}}
+      </h1>
+      {{{excerpt}}}
+    </div>
+  </Header>
   <div class="container">
     <div class="main-block">
-      <div class="main-block.content">
+      <div class="blog-post.content-post">
         {{#each posts}}
-          <div class="main-block.content-item">
-            <span class="typography.tag">
-              #{{topic}}
-            </span>
-            <div class="blog-post.excerpt">
-              <h3 class="typography.headline-2">
-                <a class="typography.title-link" href="{{path}}" data-internal>
-                  {{title}}
-                </a>
-              </h3>
-              {{{excerpt}}}
-              <a class="typography.link" href="/blog/author/{{author.twitter}}" data-internal>
-                {{author.name}}
+        <div class="main-block.content-item">
+          <span class="typography.tag">
+            #{{topic}}
+          </span>
+          <div class="blog-post.excerpt">
+            <h3 class="typography.headline-2">
+              <a class="typography.title-link" href="{{path}}" data-internal>
+                {{title}}
               </a>
-              <p class="typography.small-text">
-                {{date}}
-              </p>
-            </div>
-          </div>
-        {{/each}}
-      </div>
-      <div class="main-block.sidebar">
-        <Card @title="{{name}}" @src="/assets/images/authors/{{twitter}}.jpg">
-          <p class="typography.body-text">
-            {{bio}}
-          </p>
-          <p class="typography.body-text">
-            <a href="https://twitter.com/{{author.twitter}}" class="typography.link" target="_blank">
-              @{{twitter}}
+            </h3>
+            {{{excerpt}}}
+            <a class="typography.link" href="/blog/author/{{author.twitter}}" data-internal>
+              {{author.name}}
             </a>
-          </p>
-        </Card>
+            <p class="typography.small-text">
+              {{date}}
+            </p>
+          </div>
+        </div>
+        {{/each}}
       </div>
     </div>
   </div>

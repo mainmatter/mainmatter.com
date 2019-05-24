@@ -18,6 +18,26 @@
   
 }
 
+.badge {
+  width: var(--col-1);
+  flex-shrink: 0;
+}
+
+.badge-image {
+  border-radius: 50%;
+  border: 3px solid var(--color-accent);
+  overflow: hidden;
+  width: 15rem;
+  height: 15rem;
+}
+
+.badge-content {
+  font-size: 1.75rem;
+  width: 15rem;
+  margin-top: 1rem;
+  text-align: right;
+}
+
 .video {
   max-width: 100%;
   margin-top: 3rem;
@@ -25,7 +45,8 @@
 }
 
 .content-post {
-  width: var(--col-4);
+  width: var(--col-5);
+  padding-left: var(--col-1);
 }
 
 .sidebar-post {

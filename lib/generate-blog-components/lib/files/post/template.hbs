@@ -1,6 +1,30 @@
 <div>
-  <Header @label="{{date}}" @title="{{title}}">
-    {{{excerpt}}}
+  <Header @flex-content="true">
+    <div class="blog-post.badge">
+      <div class="blog-post.badge-image">
+        <img class="fluid-image.image" src="/assets/images/authors/{{author.twitter}}.jpg">
+      </div>
+      <div class="blog-post.badge-content">
+        <a class="typography.link" href="/blog/author/{{author.twitter}}" data-internal>
+          {{author.name}}
+        </a>
+        <p>
+          {{author.bio}}
+        </p>
+        <a href="https://twitter.com/{{author.twitter}}" class="typography.link" target="_blank">
+          @{{author.twitter}}
+        </a>
+      </div>
+    </div>
+    <div>
+      <p class="typography.small-text">
+        Blog
+      </p>
+      <h1 class="typography.display">
+        {{title}}
+      </h1>
+      {{{excerpt}}}
+    </div>
   </Header>
   <div class="container">
     <div class="main-block">
@@ -14,45 +38,20 @@
           <!--section-->
         </div>
       </div>
-      <div class="sidebar-post">
-        <p class="typography.small-text">
-          About the Author
-        </p>
-        <Card @src="/assets/images/authors/{{author.twitter}}.jpg">
-          <h3 class="typography.headline-4">
-            <a class="typography.title-link" href="/blog/author/{{author.twitter}}" data-internal>
-              {{author.name}}
-            </a>
-          </h3>
-          <p class="typography.body-text">
-            {{author.bio}}
-          </p>
-          <a class="typography.link" href="https://twitter.com/{{author.twitter}}" target="_blank">
-            @
-            {{author.twitter}}
-          </a>
-        </Card>
-        <Card @label="About Simplabs">
-          <img class="logo" src="/assets/images/logos/simplabs.svg" />
-          <p class="typography.body-text">
-            simplabs is a Web Engineering Consultancy based in Munich, Germany. We work for clients all over the world, offering Full Stack Engineering, Technology Consulting as well as Individual and Group Training with modern Web Technologies. We specialize in a set of conventions-based tools like Ember.js, Elixir and, Phoenix as well as Ruby on Rails and like to move fast without breaking things.
-          </p>
-        </Card>
-      </div>
     </div>
   </div>
   {{#if related}}
-    <ShapeFeature @color="{{related.teaserBackground}}" @background="{{related.teaserBackground}}" @backgroundImage="{{related.teaserImage}}">
-      <p class="typography.small-text">
-        Continue Reading
-      </p>
-      <h3 class="typography.headline-2">
-        {{related.title}}
-      </h3>
-      <ArrowLink @href="{{related.link}}">
-        Read Post
-      </ArrowLink>
-    </ShapeFeature>
+  <ShapeFeature @color="{{related.teaserBackground}}" @background="{{related.teaserBackground}}" @backgroundImage="{{related.teaserImage}}">
+    <p class="typography.small-text">
+      Continue Reading
+    </p>
+    <h3 class="typography.headline-2">
+      {{related.title}}
+    </h3>
+    <ArrowLink @href="{{related.link}}">
+      Read Post
+    </ArrowLink>
+  </ShapeFeature>
   {{/if}}
   <WorkWithUs />
   <Footer />

@@ -13,6 +13,11 @@
   composes: 'screen.container-base';
   margin-top: 21rem;
   margin-bottom: 21rem;
+  position: relative;
+}
+
+.content[state| flex-content='true'] {
+  display: flex;
 }
 
 .navbar {
