@@ -44,7 +44,7 @@ server.listen(3000, async function() {
     console.log(colors.green(`\nSuccessfully crawled ${successes} pages.`));
     process.exit(0);
   } else {
-    console.log(colors.green(`\nFailed to crwal ${errors} links.`));
+    console.log(colors.red(`\nFailed to crwal ${errors} links.`));
     process.exit(1);
   }
 });
