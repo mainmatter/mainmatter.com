@@ -89,7 +89,7 @@
   .img {
     width: 100vw;
     height: calc(103vw - 1rem);
-    background-size: 120%;
+    background-size: cover;
   }
 
   .top {

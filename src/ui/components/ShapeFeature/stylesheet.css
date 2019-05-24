@@ -79,6 +79,11 @@
   overflow: hidden;
 }
 
+:scope[state|hasVideo] .bottom-content {
+  background-position: center;
+  background-size: cover;
+}
+
 @media (max-width: 699px) {
   :scope {
     padding-top: 70rem;
@@ -104,10 +109,6 @@
 
   :scope[state|hasImage] .bottom {
     transform: translate(-50%) scale(0.6);
-  }
-
-  :scope[state|hasVideo] .bottom-content {
-    background-size: cover;
   }
 
   .bottom-content {
