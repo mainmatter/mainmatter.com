@@ -38,8 +38,8 @@ The server for this application was implemented using an
 [Elixir](https://elixir-lang.org) umbrella application which will be the focus 
 of this post. The client for Breethe was built with
 [Glimmer.js](http://glimmerjs.com), which we discussed in previous posts:
-- [From SPA to PWA](/blog/2018-07-24-from-spa-to-pwa/)
-- [Building a PWA with Glimmer.js](/blog/2018-07-03-building-a-pwa-with-glimmer-js)
+- [From SPA to PWA](/blog/2018/07/24/from-spa-to-pwa/)
+- [Building a PWA with Glimmer.js](/blog/2018/07/03/building-a-pwa-with-glimmer-js)
 
 ## Umbrella applications and separating concerns 
 

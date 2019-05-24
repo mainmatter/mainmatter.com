@@ -11,7 +11,7 @@ module.exports = function() {
       component: post.componentName,
       title: `${post.meta.title} | Blog`,
       bundle: {
-        asset: `/blog-${post.queryPath}.js`,
+        asset: `/blog/${post.queryPath}.js`,
         module: `__blog-${post.queryPath}__`,
       },
       parentBundle: {
@@ -26,7 +26,7 @@ module.exports = function() {
       component: author.componentName,
       title: `Posts by ${author.name} | Blog`,
       bundle: {
-        asset: `/blog-author-${author.twitter}.js`,
+        asset: `/blog/author-${author.twitter}.js`,
         module: `__blog-author-${author.twitter}__`,
       },
       parentBundle: {

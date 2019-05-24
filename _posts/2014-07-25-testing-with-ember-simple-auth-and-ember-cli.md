@@ -7,7 +7,7 @@ bio: "Founding Director of simplabs, author of Ember Simple Auth"
 topic: ember
 ---
 
-[The last blog post](/blog/2014-06-30-using-ember-simple-auth-with-ember-cli "Using Ember Simple Auth with ember-cli") showed how to use [Ember Simple Auth](https://github.com/simplabs/ember-simple-auth) with [Ember CLI](https://github.com/ember-cli/ember-cli) to implement session handling and authentication. **This post shows how to test that code**.
+[The last blog post](/blog/2014/06/30/using-ember-simple-auth-with-ember-cli "Using Ember Simple Auth with ember-cli") showed how to use [Ember Simple Auth](https://github.com/simplabs/ember-simple-auth) with [Ember CLI](https://github.com/ember-cli/ember-cli) to implement session handling and authentication. **This post shows how to test that code**.
 
 <!--break-->
 
