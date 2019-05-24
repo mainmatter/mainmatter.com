@@ -14,4 +14,11 @@ export default class ArrowLink extends Component {
       return '_blank';
     }
   }
+
+  @tracked
+  get rel() {
+    if (!this.isInternal) {
+      return 'noopener';
+    }
+  }
 }

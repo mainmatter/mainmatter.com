@@ -31,13 +31,13 @@ module('Component: ArrowLink', function(hooks) {
     assert.ok(this.containerElement.querySelector('a').dataset.internal === undefined);
   });
 
-  test('it does not add a "target" attribute relative internal links', async function(assert) {
+  test('it does not add a "target" attribute for relative internal links', async function(assert) {
     await render(hbs`<ArrowLink @href="/link" />`);
 
     assert.notOk(this.containerElement.querySelector('a').target);
   });
 
-  test('it does not add a "target" attribute relative internal links', async function(assert) {
+  test('it does not add a "target" attribute for relative internal links', async function(assert) {
     await render(hbs`<ArrowLink @href="https://simplabs.com/link" />`);
 
     assert.notOk(this.containerElement.querySelector('a').target);
@@ -47,5 +47,23 @@ module('Component: ArrowLink', function(hooks) {
     await render(hbs`<ArrowLink @href="https://github.com" />`);
 
     assert.equal(this.containerElement.querySelector('a').target, '_blank');
+  });
+
+  test('it does not add a "rel=noopener" attribute for relative internal links', async function(assert) {
+    await render(hbs`<ArrowLink @href="/link" />`);
+
+    assert.notOk(this.containerElement.querySelector('a').rel);
+  });
+
+  test('it does not add a "rel=noopener" attribute for absolute internal links', async function(assert) {
+    await render(hbs`<ArrowLink @href="https://simplabs.com/link" />`);
+
+    assert.notOk(this.containerElement.querySelector('a').rel);
+  });
+
+  test('it adda a "rel=noopener" attribute for external links', async function(assert) {
+    await render(hbs`<ArrowLink @href="https://github.com" />`);
+
+    assert.equal(this.containerElement.querySelector('a').rel, 'noopener');
   });
 });
