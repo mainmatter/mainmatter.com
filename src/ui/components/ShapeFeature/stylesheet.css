@@ -80,8 +80,12 @@
 }
 
 @media (max-width: 699px) {
-  :scope[state|hasVideo] {
+  :scope {
     padding-top: 70rem;
+  }
+
+  :scope[state|hasImage] {
+    padding-top: 0;
   }
 
   :scope[state|hasVideo] .video {
@@ -95,15 +99,19 @@
   .bottom {
     left: 50%;
     transform-origin: top center;
-    transform: translate(-50%) scale(0.6);
+    transform: translate(-50%, -70rem) scale(0.6);
   }
 
-  :scope[state|hasVideo] .bottom {
-    transform: translate(-50%, -70rem) scale(0.6);
+  :scope[state|hasImage] .bottom {
+    transform: translate(-50%) scale(0.6);
   }
 
   :scope[state|hasVideo] .bottom-content {
     background-size: cover;
+  }
+
+  .bottom-content {
+    background-position: center;
   }
 
   .img-wrapper {
