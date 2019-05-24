@@ -2,15 +2,7 @@
   <div class="bottom">
     <div class="bottom-content" style={{this.backgroundStyle}}>
       {{#if @video}}
-        <video
-          playsinline
-          autoplay
-          muted
-          loop
-          class="video"
-          width="{{@width}}"
-          height="{{@height}}"
-        >
+        <video playsinline autoplay muted loop class="video" width="{{@width}}" height="{{@height}}">
           <source src="{{@video}}" type="video/mp4" />
         </video>
       {{/if}}
