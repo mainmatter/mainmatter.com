@@ -25,7 +25,7 @@
   --color-link-inverted: var(--color-background);
 
   font-family: 'Nunito Sans', sans-serif;
-  font-display: fallback;
+  font-display: swap;
   color: var(--color-muted);
   overflow: hidden;
 }
