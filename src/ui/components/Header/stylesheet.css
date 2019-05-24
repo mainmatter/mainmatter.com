@@ -16,7 +16,7 @@
   position: relative;
 }
 
-.content[state| is-blog='true'] {
+.content[state| flex-content='true'] {
   display: flex;
 }
 
