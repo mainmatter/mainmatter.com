@@ -19,9 +19,7 @@
 }
 
 .badge {
-  margin-right: 3rem;
   width: var(--col-1);
-  order: 0;
   flex-shrink: 0;
 }
 
@@ -41,7 +39,6 @@
 }
 
 .header-excerpt {
-  order: 2;
 }
 
 .video {
@@ -52,6 +49,7 @@
 
 .content-post {
   width: var(--col-5);
+  padding-left: var(--col-1);
 }
 
 .sidebar-post {

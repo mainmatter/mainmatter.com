@@ -13,21 +13,11 @@
   composes: 'screen.container-base';
   margin-top: 21rem;
   margin-bottom: 21rem;
+  position: relative;
+}
+
+.content[state| is-blog='true'] {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-}
-
-.content[state| no-wrap='true'] {
-  flex-wrap: nowrap;
-}
-
-.title {
-  order: 0;
-}
-
-.title[state| has-badge='true'] {
-  order: 1;
 }
 
 .navbar {

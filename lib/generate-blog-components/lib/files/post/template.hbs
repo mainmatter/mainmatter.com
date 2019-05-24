@@ -1,6 +1,5 @@
 <div>
-  <Header @label="{{date}}" @title="{{title}}" @excerpt="{{excerpt}}" @has-badge="true" @no-wrap="true">
-    
+  <Header @is-blog="true">
     <div class="blog-post.badge">
       <div class="blog-post.badge-image">
         <img class="fluid-image.image" src="/assets/images/authors/{{author.twitter}}.jpg">
@@ -17,13 +16,18 @@
         </a>
       </div>
     </div>
-    
+    <div>
+      <p class="typography.small-text">
+        Blog
+      </p>
+      <h1 class="typography.display">
+        {{title}}
+      </h1>
+      {{{excerpt}}}
+    </div>
   </Header>
   <div class="container">
     <div class="main-block">
-      <div class="sidebar-post">
-       
-      </div>
       <div class="content-post">
         <div class="main-block.content-item">
           <div class="main-block.content-section">
@@ -34,21 +38,20 @@
           <!--section-->
         </div>
       </div>
-      
     </div>
   </div>
   {{#if related}}
-    <ShapeFeature @color="{{related.teaserBackground}}" @background="{{related.teaserBackground}}" @backgroundImage="{{related.teaserImage}}">
-      <p class="typography.small-text">
-        Continue Reading
-      </p>
-      <h3 class="typography.headline-2">
-        {{related.title}}
-      </h3>
-      <ArrowLink @href="{{related.link}}">
-        Read Post
-      </ArrowLink>
-    </ShapeFeature>
+  <ShapeFeature @color="{{related.teaserBackground}}" @background="{{related.teaserBackground}}" @backgroundImage="{{related.teaserImage}}">
+    <p class="typography.small-text">
+      Continue Reading
+    </p>
+    <h3 class="typography.headline-2">
+      {{related.title}}
+    </h3>
+    <ArrowLink @href="{{related.link}}">
+      Read Post
+    </ArrowLink>
+  </ShapeFeature>
   {{/if}}
   <WorkWithUs />
   <Footer />
