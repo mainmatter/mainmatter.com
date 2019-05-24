@@ -1,7 +1,7 @@
 <div state:reverse={{@reverse}} state:center={{@center}}>
   {{#if @logo}}
     <div class="logo">
-      <img class="logo-img" src="{{@logo}}" alt="" />
+      <img class="logo-img" src="{{@logo}}" alt="{{@logoAlt}}" />
     </div>
   {{/if}}
   {{#if @title}}
@@ -83,7 +83,7 @@
       <div class="tagline">
         {{#if @logo}}
           <div class="tagline-logo">
-            <img class="tagline-logo-image" src="{{@logo}}" alt="" />
+            <img class="tagline-logo-image" src="{{@logo}}" alt="{{@logoAlt}}" />
           </div>
         {{/if}}
         <p class="tagline-text">

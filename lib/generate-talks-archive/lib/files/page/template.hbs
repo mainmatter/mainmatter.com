@@ -18,7 +18,7 @@
             <div class="main-block.content-section">
               <div class="main-block.content-section-item">
                 <div class="main-block.content-section-image">
-                  <img class="main-block.image-small" src="{{meta.image}}" />
+                  <img class="main-block.image-small" src="{{meta.image}}" alt="photo of the talk" />
                 </div>
               </div>
               <div class="main-block.content-section-item">
@@ -36,7 +36,7 @@
           {{/each}}
         </div>
         <div class="main-block.sidebar offset-vertical">
-          <Card @src="{{meta.image}}">
+          <Card @src="{{meta.image}}" @alt="{{meta.title}} logo">
             <p class="typography.body-text">
               {{description}}
             </p>
