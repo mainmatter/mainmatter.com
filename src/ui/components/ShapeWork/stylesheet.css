@@ -77,8 +77,9 @@
 
 @media (max-width: 699px) {
   :scope {
-    min-height: 102rem;
-    padding-bottom: 149rem;
+    min-height: 1rem;
+    margin-bottom: 12rem;
+    padding-bottom: calc(150vw + 30rem);
   }
 
   .container {
@@ -86,26 +87,25 @@
   }
 
   .top {
-    transform: translate(-50%, 40rem);
+    transform: translate(-50%, 30rem);
+    width: 300vw;
   }
 
   .bottom {
     transform: translate(-50%);
     z-index: 1;
+    width: 300vw;
   }
 
   .tagline-container {
     position: absolute;
-    left: 57%;
-    bottom: 15rem;
+    left: 50%;
+    bottom: 13rem;
+    transform: translate(-10%);
   }
 
   .tagline {
     position: relative;
-  }
-
-  .tagline-logo-image {
-    height: 12rem;
   }
 
   :scope[state|center='true'] {

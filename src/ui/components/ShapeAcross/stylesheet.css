@@ -26,7 +26,7 @@
 .img {
   position: absolute;
   top: 0.5rem;
-  background: fixed 50% 50% no-repeat var(--shape-color);
+  background: 50% 50% no-repeat var(--shape-color);
   background-size: 200%;
 }
 
@@ -51,7 +51,6 @@
     width: 100%;
     height: 136vw;
     top: 64vw;
-    background-attachment: unset;
   }
 
   .top {
