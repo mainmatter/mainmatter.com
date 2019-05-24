@@ -11,9 +11,6 @@
   --shape-color: var(--color-accent);
 }
 
-:scope[state|hasVideo] {
-}
-
 .bottom,
 .top {
   position: absolute;
