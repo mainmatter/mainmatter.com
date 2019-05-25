@@ -92,9 +92,10 @@
       "lib/generate-calendar",
       "lib/generate-talks-archive",
       "lib/google-analytics",
-      "lib/inject-routes",
+      "lib/routes",
       "lib/sentry",
-      "lib/service-workers"
+      "lib/service-workers",
+      "lib/sitemap"
     ]
   },
   "prettier": {
