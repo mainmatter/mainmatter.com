@@ -57,6 +57,17 @@
   margin-bottom: 3rem;
 }
 
+@media (max-width: 699px) {
+  .badge {
+    display: none;
+  }
+
+  .content-post {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
 /*
 
 github.com style (c) Vasily Polovnyov <vast@whiteants.net>

@@ -7,6 +7,7 @@
 
 .content {
   width: var(--col-3);
+  margin-right: var(--offset-horizontal);
 }
 
 .content-full-width {
@@ -28,6 +29,10 @@
   justify-content: flex-start;
 }
 
+.content-heading {
+  margin-bottom: 8rem;
+}
+
 .content-section-item {
   padding: 0 2rem;
 }
@@ -35,10 +40,6 @@
 .content-section-item:last-child {
   padding: 0 2rem;
   flex-grow: 1;
-}
-
-.content-heading {
-  margin-bottom: 16rem;
 }
 
 .content-section-image {
@@ -86,11 +87,25 @@
   text-align: justify;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 699px) {
   :scope {
     display: block;
   }
-  .content {
+
+  .content-item,
+  .content-section {
+    margin-bottom: 8rem;
+  }
+
+  .content,
+  .sidebar {
     width: 100%;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 700px) {
+  .content-heading {
+    margin-bottom: 16rem;
   }
 }

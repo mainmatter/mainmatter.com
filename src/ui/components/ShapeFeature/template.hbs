@@ -1,18 +1,9 @@
-<div style={{this.shapeStyle}}>
+<div style={{this.shapeStyle}} state:hasVideo={{@video}} state:hasImage={{@src}}>
   <div class="bottom">
     <div class="bottom-content" style={{this.backgroundStyle}}>
       {{#if @video}}
-        <video
-          playsinline
-          autoplay
-          muted
-          loop
-          poster={{@background}}
-          class="video"
-          width={{@width}}
-          height="{@height}}"
-        >
-          <source src={{@video}} type="video/mp4" />
+        <video playsinline autoplay muted loop class="video" width="{{@width}}" height="{{@height}}">
+          <source src="{{@video}}" type="video/mp4" />
         </video>
       {{/if}}
     </div>
@@ -62,9 +53,11 @@
     </div>
   {{/if}}
   <figure class="container">
-    <div class="img">
-      <img class="fluid-image.image" src={{@src}} alt="" width={{@width}} height={{@height}} />
-    </div>
+    {{#if @src}}
+      <div class="img-wrapper">
+        <img class="img" src={{@src}} alt="" width={{@width}} height={{@height}} />
+      </div>
+    {{/if}}
     <figcaption class="content">
       {{yield}}
     </figcaption>

@@ -7,7 +7,7 @@
   --col-3: 64.5rem;
   --col-4: 87rem;
   --col-5: 109.5rem;
-  --horizontal-spacing: 8rem;
+  --offset-horizontal: 8rem;
   --max-width: 132rem;
 
   /* Colors */
@@ -24,21 +24,15 @@
   --color-link: var(--color-accent);
   --color-link-inverted: var(--color-background);
 
-  /* Legacy, to be removed */
-  --first-color: var(--color-primary);
-  --second-color: var(--color-secondary);
-  --link-color: var(--color-accent);
-  --vertical-spacing: 4em;
-
   font-family: 'Nunito Sans', sans-serif;
   font-display: fallback;
   color: var(--color-muted);
   overflow: hidden;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 699px) {
   :scope {
-    --horizontal-spacing: 3rem;
+    --offset-horizontal: 2.5rem;
   }
 }
 
@@ -48,11 +42,17 @@
   max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--horizontal-spacing);
-  padding-right: var(--horizontal-spacing);
+  padding-left: var(--offset-horizontal);
+  padding-right: var(--offset-horizontal);
 }
 
 .container {
   padding-top: 0;
   padding-bottom: 21rem;
+}
+
+@media (max-width: 699px) {
+  .container {
+    padding-bottom: 12rem;
+  }
 }

@@ -1,7 +1,6 @@
 @block screen from "../../styles/blocks/screen.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 @block main-block from "../../styles/blocks/main-block.block.css";
-@block header-block from "../../styles/blocks/header-block.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
@@ -9,6 +8,8 @@
   extends: screen;
 }
 
-.vertical-offset {
-  padding-top: 51rem;
+@media (min-width: 700px) {
+  .vertical-offset {
+    padding-top: 51rem;
+  }
 }

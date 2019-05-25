@@ -45,7 +45,7 @@ async function inlineCss(fileName) {
     dimensions: [
       {
         height: 667,
-        width: 375,
+        width: 300,
       },
       {
         height: 900,

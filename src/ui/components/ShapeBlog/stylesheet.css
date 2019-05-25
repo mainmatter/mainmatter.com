@@ -7,7 +7,7 @@
   width: 100%;
   padding: 0 0 36rem;
 
-  --shape-color: var(--link-color);
+  --shape-color: var(--color-accent);
 }
 
 .bottom,
@@ -42,4 +42,19 @@
 
 .title {
   padding-bottom: 22rem;
+}
+
+@media (max-width: 699px) {
+  .content {
+    width: 100%;
+  }
+
+  .top {
+    top: -31rem;
+    transform: translate(2%);
+  }
+
+  .bottom {
+    display: none;
+  }
 }

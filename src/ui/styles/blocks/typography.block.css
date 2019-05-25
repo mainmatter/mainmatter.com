@@ -50,6 +50,22 @@
   font-weight: 700;
 }
 
+@media (max-width: 699px) {
+  .display,
+  .display-plain {
+    font-size: 8rem;
+    font-weight: 300;
+    line-height: 1.25;
+  }
+
+  .headline-1 {
+    margin-bottom: 3rem;
+    font-size: 5rem;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+}
+
 .small-text {
   color: var(--color-muted);
   display: block;
