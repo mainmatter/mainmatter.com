@@ -2,7 +2,12 @@
   <Header @flex-content="true">
     <div class="blog-post.badge">
       <div class="blog-post.badge-image">
-        <img class="fluid-image.image" src="/assets/images/authors/{{author.twitter}}.jpg" />
+        <img
+          class="fluid-image.image"
+          src="/assets/images/authors/{{author.twitter}}.jpg"
+          alt="photo of {{author.name}}"
+         />
+
       </div>
       <div class="blog-post.badge-content">
         <a class="typography.link" href="/blog/author/{{author.twitter}}" data-internal>
@@ -11,7 +16,7 @@
         <p>
           {{author.bio}}
         </p>
-        <a href="https://twitter.com/{{author.twitter}}" class="typography.link" target="_blank">
+        <a href="https://twitter.com/{{author.twitter}}" class="typography.link" target="_blank" rel="noopener">
           @
           {{author.twitter}}
         </a>

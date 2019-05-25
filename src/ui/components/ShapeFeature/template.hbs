@@ -43,7 +43,7 @@
       <div class="tagline">
         {{#if @logo}}
           <div class="tagline-logo">
-            <img class="tagline-logo-image" src="{{@logo}}" alt="" />
+            <img class="tagline-logo-image" src="{{@logo}}" alt="{{@logoAlt}}" />
           </div>
         {{/if}}
         <p class="tagline-text">
@@ -55,7 +55,7 @@
   <figure class="container">
     {{#if @src}}
       <div class="img-wrapper">
-        <img class="img" src={{@src}} alt="" width={{@width}} height={{@height}} />
+        <img class="img" src={{@src}} alt="{{@srcAlt}}" width={{@width}} height={{@height}} />
       </div>
     {{/if}}
     <figcaption class="content">
