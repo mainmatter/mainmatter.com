@@ -240,7 +240,7 @@ module.exports = function(defaults) {
     fingerprint: {
       exclude: ['ssr-app.js'],
       extensions: ['js', 'css', 'png', 'jpg', 'gif', 'map', 'svg'],
-      replaceExtensions: ['html', 'css', 'js', 'json'],
+      replaceExtensions: ['html', 'css', 'js', 'json', 'xml'],
     },
     rollup: {
       plugins: [resolve({ jsnext: true, module: true, main: true }), commonjs()],
