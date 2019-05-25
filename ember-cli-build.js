@@ -13,7 +13,7 @@ const typescript = require('broccoli-typescript-compiler').default;
 const glob = require('glob');
 const commonjs = require('rollup-plugin-commonjs');
 const resolve = require('rollup-plugin-node-resolve');
-const collectPosts = require('./lib/generate-blog-components/lib/collect-posts');
+const collectPosts = require('./lib/generate-blog/lib/collect-posts');
 const _ = require('lodash');
 
 function findAllComponents() {
@@ -240,7 +240,7 @@ module.exports = function(defaults) {
     fingerprint: {
       exclude: ['ssr-app.js'],
       extensions: ['js', 'css', 'png', 'jpg', 'gif', 'map', 'svg'],
-      replaceExtensions: ['html', 'css', 'js', 'json'],
+      replaceExtensions: ['html', 'css', 'js', 'json', 'xml'],
     },
     rollup: {
       plugins: [resolve({ jsnext: true, module: true, main: true }), commonjs()],

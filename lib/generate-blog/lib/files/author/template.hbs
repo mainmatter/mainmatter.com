@@ -2,7 +2,7 @@
   <Header @flex-content="true">
     <div class="blog-post.badge">
       <div class="blog-post.badge-image">
-        <img class="fluid-image.image" src="/assets/images/authors/{{twitter}}.jpg">
+        <img class="fluid-image.image" src="/assets/images/authors/{{twitter}}.jpg" />
       </div>
       <div class="blog-post.badge-content">
         <a class="typography.link" href="/blog/author/{{twitter}}" data-internal>
@@ -12,7 +12,8 @@
           {{bio}}
         </p>
         <a href="https://twitter.com/{{author.twitter}}" class="typography.link" target="_blank">
-          @{{twitter}}
+          @
+          {{twitter}}
         </a>
       </div>
     </div>
@@ -21,7 +22,8 @@
         Blog
       </p>
       <h1 class="typography.display">
-        Posts by {{name}}
+        Posts by
+        {{name}}
       </h1>
       {{{excerpt}}}
     </div>
@@ -30,25 +32,26 @@
     <div class="main-block">
       <div class="blog-post.content-post">
         {{#each posts}}
-        <div class="main-block.content-item">
-          <span class="typography.tag">
-            #{{topic}}
-          </span>
-          <div class="blog-post.excerpt">
-            <h3 class="typography.headline-2">
-              <a class="typography.title-link" href="{{path}}" data-internal>
-                {{title}}
+          <div class="main-block.content-item">
+            <span class="typography.tag">
+              #
+              {{topic}}
+            </span>
+            <div class="blog-post.excerpt">
+              <h3 class="typography.headline-2">
+                <a class="typography.title-link" href="{{path}}" data-internal>
+                  {{title}}
+                </a>
+              </h3>
+              {{{excerpt}}}
+              <a class="typography.link" href="/blog/author/{{author.twitter}}" data-internal>
+                {{author.name}}
               </a>
-            </h3>
-            {{{excerpt}}}
-            <a class="typography.link" href="/blog/author/{{author.twitter}}" data-internal>
-              {{author.name}}
-            </a>
-            <p class="typography.small-text">
-              {{date}}
-            </p>
+              <p class="typography.small-text">
+                {{date}}
+              </p>
+            </div>
           </div>
-        </div>
         {{/each}}
       </div>
     </div>
