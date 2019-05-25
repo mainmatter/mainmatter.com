@@ -2,7 +2,7 @@
 
 const path = require('path');
 
-const collectPosts = require('../lib/generate-blog-components/lib/collect-posts');
+const collectPosts = require('../lib/generate-blog/lib/collect-posts');
 
 module.exports = function() {
   let { posts, authors } = collectPosts(path.join(__dirname, '..', '_posts'));

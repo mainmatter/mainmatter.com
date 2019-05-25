@@ -88,7 +88,7 @@
   "private": true,
   "ember-addon": {
     "paths": [
-      "lib/generate-blog-components",
+      "lib/generate-blog",
       "lib/generate-calendar",
       "lib/generate-talks-archive",
       "lib/google-analytics",
