@@ -62,6 +62,7 @@
     "handlebars": "^4.1.1",
     "headless-chrome-crawler": "^1.8.0",
     "highlight.js": "^9.15.6",
+    "html-entities": "^1.2.1",
     "jsdom": "^14.0.0",
     "lodash": "^4.17.11",
     "marked": "^0.6.1",
