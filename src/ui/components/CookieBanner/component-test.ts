@@ -4,18 +4,12 @@ import { setupRenderingTest } from '../../../utils/test-helpers/setup-rendering-
 
 const { module, test } = QUnit;
 
-module('Component: Simplabs', function(hooks) {
+module('Component: CookieBanner', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await render(hbs`<Simplabs />`);
+    await render(hbs`<CookieBanner />`);
 
     assert.ok(this.containerElement.querySelector('div'));
-  });
-
-  test('it does not render the cookie banner initially', async function(assert) {
-    await render(hbs`<Simplabs />`);
-
-    assert.notOk(this.containerElement.textContent.includes('This website uses cookies'));
   });
 });
