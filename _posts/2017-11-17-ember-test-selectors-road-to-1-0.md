@@ -8,7 +8,7 @@ topic: ember
 ---
 
 Back in January we wrote about the
-[latest changes](/blog/2017-01-13-ember-test-selectors)
+[latest changes](/blog/2017/01/13/ember-test-selectors)
 in [`ember-test-selectors`](https://github.com/simplabs/ember-test-selectors)
 and how we implemented them. Since then we adjusted a few things and this blog
 post should give you an idea what has happened so far and what else will happen

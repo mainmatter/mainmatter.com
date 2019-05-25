@@ -73,7 +73,7 @@ export default Component.extend({
   }),
 });
 ```
- To learn more about the rationale behind `ember-test-selectors`, be sure to also [give this introduction a read](/blog/2017-11-17-ember-test-selectors-road-to-1-0).
+ To learn more about the rationale behind `ember-test-selectors`, be sure to also [give this introduction a read](/blog/2017/11/17/ember-test-selectors-road-to-1-0).
 
 Using the [HTMLElement.style](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style) API, we can assert if the correct background color has been applied to our component:
 
@@ -137,7 +137,7 @@ module('Integration | Component | simplabs-logo-tile', function(hooks) {
 
 Now we know how we can write style-related tests for our automated test process that assert that the expected styles are applied to elements on the web page.
 
-But there's an even easier way to assert the computed styles of elements in your **QUnit test suite**. Since [v0.8.1](https://twitter.com/simplabs/status/1065913669995978752) of [qunit-dom](/blog/2017-10-24-high-level-assertions-with-qunit-dom) you can make your tests truly ✨
+But there's an even easier way to assert the computed styles of elements in your **QUnit test suite**. Since [v0.8.1](https://twitter.com/simplabs/status/1065913669995978752) of [qunit-dom](/blog/2017/10/24/high-level-assertions-with-qunit-dom) you can make your tests truly ✨
 
 Check it [out](https://github.com/simplabs/qunit-dom):
 

@@ -90,7 +90,7 @@ class SimplabsApp extends GlimmerApp {
     let blogPostTrees = posts.map(post => {
       let [blogPostTree] = this._splitBundle(jsTree, {
         componentPrefix: post.componentName,
-        file: `blog-${post.queryPath}.js`,
+        file: `blog/${post.queryPath}.js`,
         moduleName: `__blog-${post.queryPath}__`,
       });
       return blogPostTree;
@@ -98,7 +98,7 @@ class SimplabsApp extends GlimmerApp {
     let blogAuthorTrees = authors.map(author => {
       let [blogAuthorTree] = this._splitBundle(jsTree, {
         componentPrefix: author.componentName,
-        file: `blog-author-${author.twitter}.js`,
+        file: `blog/author-${author.twitter}.js`,
         moduleName: `__blog-author-${author.twitter}__`,
       });
       return blogAuthorTree;
