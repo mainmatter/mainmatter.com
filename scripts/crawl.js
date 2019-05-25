@@ -21,6 +21,7 @@ server.listen(3000, async function() {
   };
 
   const crawler = await HCCrawler.launch({
+    maxConcurrency: process.env.CI ? 1 : null,
     onSuccess: result => {
       if (result.response.ok) {
         success(result);
