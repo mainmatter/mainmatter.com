@@ -2,7 +2,7 @@
   <Header @flex-content="true">
     <div class="blog-post.badge">
       <div class="blog-post.badge-image">
-        <img class="fluid-image.image" src="/assets/images/authors/{{author.twitter}}.jpg">
+        <img class="fluid-image.image" src="/assets/images/authors/{{author.twitter}}.jpg" />
       </div>
       <div class="blog-post.badge-content">
         <a class="typography.link" href="/blog/author/{{author.twitter}}" data-internal>
@@ -12,7 +12,8 @@
           {{author.bio}}
         </p>
         <a href="https://twitter.com/{{author.twitter}}" class="typography.link" target="_blank">
-          @{{author.twitter}}
+          @
+          {{author.twitter}}
         </a>
       </div>
     </div>
@@ -41,17 +42,21 @@
     </div>
   </div>
   {{#if related}}
-  <ShapeFeature @color="{{related.teaserBackground}}" @background="{{related.teaserBackground}}" @backgroundImage="{{related.teaserImage}}">
-    <p class="typography.small-text">
-      Continue Reading
-    </p>
-    <h3 class="typography.headline-2">
-      {{related.title}}
-    </h3>
-    <ArrowLink @href="{{related.link}}">
-      Read Post
-    </ArrowLink>
-  </ShapeFeature>
+    <ShapeFeature
+      @color="{{related.teaserBackground}}"
+      @background="{{related.teaserBackground}}"
+      @backgroundImage="{{related.teaserImage}}"
+    >
+      <p class="typography.small-text">
+        Continue Reading
+      </p>
+      <h3 class="typography.headline-2">
+        {{related.title}}
+      </h3>
+      <ArrowLink @href="{{related.link}}">
+        Read Post
+      </ArrowLink>
+    </ShapeFeature>
   {{/if}}
   <WorkWithUs />
   <Footer />

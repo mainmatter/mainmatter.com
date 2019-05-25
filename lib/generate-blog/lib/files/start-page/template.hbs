@@ -1,9 +1,10 @@
 <div>
-  <Header @title="Blog"></Header>
+  <Header @title="Blog" />
   <ShapeBlog>
     <article>
       <span class="typography.tag">
-        #{{latest.topic}}
+        #
+        {{latest.topic}}
       </span>
       <h2 class="typography.headline-1">
         <a href="{{latest.path}}" class="typography.title-link" data-internal>
@@ -30,7 +31,8 @@
             <div class="main-block.content-section">
               <div class="main-block.content-section-item">
                 <span class="typography.tag">
-                  #{{topic}}
+                  #
+                  {{topic}}
                 </span>
                 <div class="blog-post.excerpt">
                   <h3 class="typography.headline-2">
