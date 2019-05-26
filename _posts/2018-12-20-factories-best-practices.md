@@ -13,7 +13,7 @@ Writing tests is like drinking beer 🍻. When you first try it, the taste is re
 
 ## AAA
 
-Before I dive into factories, firstly I want to mention AAA: Arrange, Act, Assert. I covered this paradigm over [here](https://simplabs.com/blog/2017/09/17/magic-test-data/), and I still stand by it. It's the most important thing you can do to make your tests straight forward and understandable for others.
+Before I dive into factories, firstly I want to mention AAA: Arrange, Act, Assert. I covered this paradigm over [here](/blog/2017/09/17/magic-test-data/), and I still stand by it. It's the most important thing you can do to make your tests straight forward and understandable for others.
 
 ## Factories > Fixtures
 

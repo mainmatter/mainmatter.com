@@ -32,7 +32,7 @@ Ricardo Mendes will host a [Contributors Workshop](https://emberconf.com/schedul
 
 Also, [Jessica Jordan](https://twitter.com/jjordan_dev) will be giving a talk about [Crafting Web Comics in Ember](https://emberconf.com/speakers.html#jessica-jordan) which promises to be a very fun and informative talk.
 
-If you're attending EmberConf 2019 and would like to speak to us about our work, please [please get in touch.](https://simplabs.com/contact/)
+If you're attending EmberConf 2019 and would like to speak to us about our work, please [please get in touch.](/contact/)
 
 #### Ember.js film premiere
 
@@ -44,7 +44,7 @@ The film was premiered at meetups across Europe and we'd like to thank [Honeypot
 
 ## Events
 
-_We're always interested in new speakers for the various meetups we're involved in. If you'd like to give a talk, [please get in touch.](https://simplabs.com/contact/)_
+_We're always interested in new speakers for the various meetups we're involved in. If you'd like to give a talk, [please get in touch.](/contact/)_
 
 #### Upcoming events
 

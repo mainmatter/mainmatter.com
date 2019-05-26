@@ -218,4 +218,4 @@ cost of loading the polyfill and related data, and for the browsers that do
 need it, it's available on demand.
 
 If you have any questions about these patterns or need help implementing them
-in your apps feel free to [contact us](https://simplabs.com/contact/).
+in your apps feel free to [contact us](/contact/).
