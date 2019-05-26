@@ -1,0 +1,11 @@
+<div data-has-ssr-response={{appState.isSSR}}>
+  {{#if this.isLoading}}
+    <Loader @progress={{this.loadingProgress}} />
+  {{/if}}
+  {{#if activeComponent}}
+    {{component activeComponent}}
+  {{/if}}
+  {{#if isCookieBannerVisible}}
+    <CookieBanner @onHidden={{action this.hideCookieBanner}} />
+  {{/if}}
+</div>

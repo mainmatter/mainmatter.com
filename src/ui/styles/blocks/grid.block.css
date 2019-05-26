@@ -1,0 +1,52 @@
+@block screen from "./screen.block.css";
+
+:scope {
+  block-name: grid;
+
+  composes: 'screen.container';
+}
+
+.section {
+  display: grid;
+  width: calc(100% + 4rem);
+  margin: 0 -2rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.item {
+  margin: 0 2rem 6rem;
+}
+
+.figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25rem;
+  margin: 0 0 2rem;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.image {
+  display: block;
+  flex: 0 0 auto;
+  max-height: 16rem;
+  width: auto;
+  margin: auto;
+}
+
+.text {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 700px) {
+  .section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1020px) {
+  .section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,36 @@
+:scope {
+  block-name: ArrowLink;
+  text-align: right;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  padding: 1.5rem 7rem 1.5rem 0;
+  color: var(--color-link);
+  font-size: 3rem;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.svg {
+  position: absolute;
+  top: 50%;
+  margin-top: -2.75rem;
+  right: 0;
+  width: 5rem;
+  height: 5rem;
+  transition: right 0.2s ease-out;
+}
+
+:scope:hover .svg {
+  right: -0.5rem;
+}
+
+.arrow {
+  fill: var(--color-link);
+}

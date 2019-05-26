@@ -1,0 +1,116 @@
+@block screen from "../../styles/blocks/screen.block.css";
+@block button from "../../styles/blocks/button.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
+
+:scope {
+  block-name: FormContact;
+  extends: screen;
+}
+
+:scope[state|form='success'] {
+  color: inherit;
+}
+
+.spinner {
+  display: none;
+}
+
+.error,
+.item-error {
+  color: var(--color-error);
+  font-size: 2rem;
+  line-height: 1.5;
+
+  --color-link: var(--color-error);
+}
+
+.error {
+  margin: 0 0 4rem;
+  padding: 2rem 3rem;
+  border: 2px solid var(--color-error);
+}
+
+.item-error {
+  margin-top: 0.5rem;
+}
+
+:scope[state|form='error'] .error {
+  display: block;
+}
+
+.fieldset {
+  position: relative;
+}
+
+.legend {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+}
+
+.item,
+.group {
+  margin-bottom: 3rem;
+}
+
+.label,
+.control-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 2.625rem;
+  line-height: 1.523809524;
+  color: #5b5b5b;
+}
+
+.control {
+  width: 100%;
+  padding: calc(1.5rem - 2px) calc(1.5rem - 2px);
+  border: 2px solid #ccc;
+  border-radius: 0;
+  box-sizing: border-box;
+  font-size: 2rem;
+  line-height: 3rem;
+  -webkit-appearance: none;
+}
+
+.control:focus {
+  outline: 0;
+  border-color: var(--color-accent);
+}
+
+.label[state|error] {
+  color: var(--color-error);
+}
+
+.control[state|error] {
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+:scope[state|form='submitting'] .item {
+  opacity: 0.35;
+}
+
+:scope[state|form='submitting'] .spinner {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0);
+  animation: rotate 0.6s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@media (max-width: 699px) {
+  .control {
+    font-size: 16px;
+  }
+}

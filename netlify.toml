@@ -1,0 +1,16 @@
+[build]
+  command = "yarn run build"
+  publish = "dist"
+
+[context.production.environment]
+  SENTRY_DSN = "https://5d8e23a02a1841f5837b96ef76423c8b@sentry.io/1456103"
+  SENTRY_ENV = "production"
+
+[context.deploy-preview.environment]
+  SENTRY_DSN = "https://5d8e23a02a1841f5837b96ef76423c8b@sentry.io/1456103"
+  SENTRY_ENV = "deploy-preview"
+
+[[redirects]]
+  from = "/*"
+  to = "/404/index.html"
+  status = 404

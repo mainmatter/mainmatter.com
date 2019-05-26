@@ -1,0 +1,96 @@
+@block fluid-image from "../../styles/blocks/fluid-image.block.css";
+@block screen from "../../styles/blocks/screen.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
+
+:scope {
+  block-name: Footer;
+  composes: 'screen.container-base';
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  font-size: 2rem;
+}
+
+.branding {
+  min-width: 200px;
+  flex-shrink: 0;
+}
+
+.logo-wrap {
+  display: block;
+  width: 200px;
+  margin-bottom: 2rem;
+}
+
+.legal {
+  width: 100%;
+  margin-left: -2rem;
+  padding-bottom: 3rem;
+}
+
+.legal-link {
+  color: #979797;
+  text-decoration: none;
+  margin-left: 2rem;
+}
+
+.nav {
+  width: var(--col-4);
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
+.title {
+  grid-row: 1/2;
+  font-size: 2rem;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #000;
+  margin: 1.5rem 0 2rem;
+}
+
+.items {
+  grid-row: 2/-1;
+  flex: 1 0;
+  margin: 0 0 6.5rem;
+}
+
+@media (max-width: 699px) {
+  .branding {
+    width: 100%;
+  }
+
+  .nav {
+    margin-top: 6rem;
+  }
+
+  .block {
+    width: 60%;
+  }
+
+  .block:nth-child(even) {
+    width: 40%;
+  }
+}
+
+.item {
+  padding: 0.5rem 0;
+  white-space: nowrap;
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  padding: 0.5rem 0;
+}
+
+.link:hover {
+  color: var(--color-accent);
+}
+
+.note {
+  padding: 1rem 0;
+}

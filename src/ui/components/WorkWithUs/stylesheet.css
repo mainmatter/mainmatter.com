@@ -1,0 +1,14 @@
+@block typography from "../../styles/blocks/typography.block.css";
+@block button from "../../styles/blocks/button.block.css";
+@block screen from "../../styles/blocks/screen.block.css";
+
+:scope {
+  block-name: WorkWithUs;
+  composes: 'screen.container';
+}
+
+@media (min-width: 700px) {
+  .content {
+    width: var(--col-3);
+  }
+}

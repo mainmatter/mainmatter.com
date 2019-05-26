@@ -1,0 +1,94 @@
+<div>
+  <Header @label="Services" @title="Full-Stack Engineering" />
+  <div class="container">
+    <div class="main-block">
+      <div class="main-block.content">
+        <div class="main-block.content-item">
+          <div class="main-block.content-heading">
+            <h2 class="typography.headline-1">
+              Ambitious software solutions – From Idea to Release
+            </h2>
+            <p class="typography.lead">
+              Software plays an ever more important role in all kinds of business and companies need to stand out from the competition - be it ensuring maximum effectiveness of internal tools or delivering cutting edge digital experiences to their customers.
+            </p>
+            <p class="typography.lead">
+              simplabs builds cutting edge software solutions for clients around the world. Our team of experts delivers everything from ideation to design and engineering, guiding our clients along the way.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="main-block.sidebar">
+        <h3 class="typography.headline-2">
+          Want to know how we can turn your idea into a successful digital product?
+        </h3>
+        <p class="typography.body-text">
+          Leave us a message and we'll get back to you to discuss your project.
+        </p>
+        <FormContact />
+      </div>
+    </div>
+  </div>
+  <ShapeAcrossFullStackService />
+  <div class="container">
+    <div class="main-block">
+      <div class="main-block.content">
+        <div class="main-block.content-item">
+          <div class="main-block.content-heading">
+            <h2 class="typography.headline-1">
+              Why simplabs?
+            </h2>
+            <p class="typography.lead">
+              simplabs has unique expertise and insights into all aspects of building modern edge web applications. Our engineers are highly experienced and internationally known for their work on all parts of the software development process, often sharing their knowledge at conferences and events across the globe.
+            </p>
+          </div>
+          <div class="main-block.content-section">
+            <div class="main-block.content-section-item">
+              <h3 class="typography.headline-2">
+                Instant Productivity
+              </h3>
+              <p class="typography.body-text">
+                Working with us, our clients get instant access to an experienced team of experts that has worked together for years. We are ready to be productive from day one.
+              </p>
+              <p class="typography.body-text">
+                We maintain a lean process that we guide our clients through, making sure their needs are met and correctly translated into project requirements. We leverage mechanisms like design sprints and ideation workshops to define the solution that best solves our clients' business problems. We make clients a part of the engineering process, by giving insight into the status and checking in frequently to avoid misunderstandings.
+              </p>
+            </div>
+          </div>
+          <div class="main-block.content-section">
+            <div class="main-block.content-section-item">
+              <h3 class="typography.headline-2">
+                Expert Know-How
+              </h3>
+              <p class="typography.body-text">
+                simplabs has a proven track record across the entire software development process. Whether it be designing a compelling user interface and user experience, to engineering backend systems that can stand up in the face of global attention, to making the product easily extensible to allow rapid changes in the application: we’ve done it before.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-block.sidebar offset-top">
+        <Card
+          @label="Playbook"
+          @title="The steps to instant productivity"
+          @src="/assets/images/card/instant-productivity.jpg"
+          @alt=""
+        >
+          <p class="typography.body-text">
+            We maintain a lean process that supports the team rather than stand in its way. Find out more about how we work to deliver ambitious software solutions for our clients.
+          </p>
+          <ArrowLink @href="/playbook">
+            Read our Playbook
+          </ArrowLink>
+        </Card>
+      </div>
+    </div>
+  </div>
+  <ClientsGrid
+    @title="We have a track record of successful projects for international clients"
+    @only="generali,qonto,clark"
+   />
+
+  <ShapeAcrossLeadingExperts />
+  <WorkWithUs />
+  <Footer />
+</div>

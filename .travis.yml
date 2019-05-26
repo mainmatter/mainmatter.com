@@ -1,14 +1,41 @@
-language: ruby
-rvm:
-- 2.3
+---
+language: node_js
+node_js:
+  - "8"
 
-script: ./script/cibuild
+sudo: false
+dist: trusty
+
+addons:
+  chrome: stable
+
+cache:
+  yarn: true
 
 env:
   global:
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+    # See https://git.io/vdao3 for details.
+    - JOBS=1
 
-sudo: false # route your build to the container-based infrastructure for a faster build
+before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH=$HOME/.yarn/bin:$PATH
+
+install:
+  - yarn install --non-interactive --pure-lockfile
+
+jobs:
+  include:
+    - stage: test
+      script: yarn test
+    - stage: test
+      script: yarn lint:ts
+    - stage: test
+      script: yarn lint:js
+    - stage: test
+      script: yarn lint:hbs
+    - stage: test
+      script: yarn build && yarn crawl
 
 notifications:
   email: false

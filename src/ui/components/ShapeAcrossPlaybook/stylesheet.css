@@ -1,0 +1,9 @@
+@block typography from "../../styles/blocks/typography.block.css";
+
+:scope {
+  block-name: ShapeAcrossFullStackService;
+}
+
+.offset-vertical {
+  padding-top: 7rem;
+}

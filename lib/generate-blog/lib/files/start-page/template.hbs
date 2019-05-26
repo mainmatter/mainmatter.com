@@ -1,0 +1,64 @@
+<div>
+  <Header @title="Blog" />
+  <ShapeBlog>
+    <article>
+      <span class="typography.tag">
+        #
+        {{latest.topic}}
+      </span>
+      <h2 class="typography.headline-1">
+        <a href="{{latest.path}}" class="typography.title-link" data-internal>
+          {{latest.title}}
+        </a>
+      </h2>
+      {{{latest.excerpt}}}
+      <a class="typography.link" href="/blog/author/{{latest.author.twitter}}" data-internal>
+        {{latest.author.name}}
+      </a>
+      <p class="typography.small-text">
+        {{latest.date}}
+      </p>
+      <ArrowLink @href="{{latest.path}}">
+        Read Post
+      </ArrowLink>
+    </article>
+  </ShapeBlog>
+  <div class="container">
+    <div class="main-block">
+      <div class="main-block.content">
+        <div class="main-block.content-item">
+          {{#each rest}}
+            <div class="main-block.content-section">
+              <div class="main-block.content-section-item">
+                <span class="typography.tag">
+                  #
+                  {{topic}}
+                </span>
+                <div class="blog-post.excerpt">
+                  <h3 class="typography.headline-2">
+                    <a class="typography.title-link" href="{{path}}" data-internal>
+                      {{title}}
+                    </a>
+                  </h3>
+                  {{{excerpt}}}
+                </div>
+                <a class="typography.link" href="/blog/author/{{author.twitter}}" data-internal>
+                  {{author.name}}
+                </a>
+                <p class="typography.small-text">
+                  {{date}}
+                </p>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="main-block.sidebar">
+        <CardTalks />
+        <CardUpcomingEvents />
+      </div>
+      <!--sidebar-->
+    </div>
+  </div>
+  <Footer />
+</div>

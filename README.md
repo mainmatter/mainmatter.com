@@ -1,37 +1,51 @@
 # simplabs.github.io
-  
-The source code for https://simplabs.com
 
-## Running locally
+The source code for [https://simplabs.com](https://simplabs.com).
 
-```bash
-bundle install
-bundle exec jekyll serve
-```
+![simplabs logo](./public/assets/images/logos/simplabs.svg)
 
-## Running with Docker
+We use [Glimmer.js](https://glimmerjs.com) for rendering,
+[navigo](https://github.com/krasimir/navigo) for client-side routing and
+[CSS Blocks](https://css-blocks.com) for CSS. Pages are statically pre-rendered
+using [Puppeteer](https://pptr.dev) and we inject critical CSS with
+[critical](https://github.com/addyosmani/critical).
 
-_TODO: Update the repo build to push an image to the Simplabs Docker Hub to avoid everyone having to build locally_
+## Installation
 
-_TODO: Figure out why Jekyll takes so long to rebuild the site on local changes_
+* `git clone <repository-url>` this repository
+* `cd simplabs`
+* `yarn --pure-lockfile`
 
+## Running / Development
 
-1. Build the image 
+* `ember serve`
+* open [http://localhost:4200](http://localhost:4200).
+* `yarn format` (format source files)
 
-```
-docker build -t simplabs/jekyll-serve .
-```
+**This project registers a service worker which you'll likely want to disable
+for development. Check _"Bypass for network"_ in the _"Application"_ tab in the
+Chrome Inspector to do so.**
 
-2. Run
+### Testing
 
-```
-cd the/website/directory
-docker run -p 8080:4000 -v $(pwd):/site simplabs/jekyll-serve
-```
+* `ember test` (headless)
+* `ember test -s` (headful)
+* `yarn lint` (check formatting)
 
-3. Access the site on ```locahost:8080```
+### Building
 
+* `ember build` (development)
+* `yarn build` (production, with static pre-rendering)
 
-Copyright &copy; 2014-2019 simplabs GmbH (https://simplabs.com), released under
-the
+## Further Reading / Useful Links
+
+* [Glimmer.js](https://glimmerjs.com)
+* [navigo](https://github.com/krasimir/navigo)
+* [CSS Blocks](https://css-blocks.com)
+* [Puppeteer](https://pptr.dev)
+* [critical](https://github.com/addyosmani/critical)
+
+## Copyright
+
+Copyright &copy; 2019 simplabs GmbH (https://simplabs.com), released under the
 [Creative Commons Attribution-NonCommercial 4.0 International license](https://creativecommons.org/licenses/by-nc/4.0/).

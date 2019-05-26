@@ -1,0 +1,19 @@
+<section>
+  <h2 class="typography.headline-1">
+    {{if @title @title 'Our Clients'}}
+  </h2>
+  <div class="grid.section">
+    {{#each this.clients key='id' as |c|}}
+      <figure class="grid.item">
+        <div class="grid.figure">
+          <img class="grid.image" src={{c.src}} alt="{{c.name}}" />
+        </div>
+        <figcaption>
+          <p class="grid.text">
+            {{c.text}}
+          </p>
+        </figcaption>
+      </figure>
+    {{/each}}
+  </div>
+</section>

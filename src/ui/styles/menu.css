@@ -1,0 +1,43 @@
+@media (max-width: 699px) {
+  [data-menu] nav {
+    display: block;
+    background: var(--color-accent);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  [data-menu] nav a,
+  [data-menu] nav a:focus,
+  [data-menu] nav a:hover {
+    position: relative;
+    top: 3rem;
+    z-index: 1;
+    display: block;
+    margin: 0;
+    padding: 2rem 1rem;
+    color: var(--color-text-inverted);
+    font-size: 3.33333rem;
+    line-height: 4rem;
+    text-align: center;
+    border: 0;
+    background: transparent;
+    transition: none;
+  }
+
+  #toggle:checked + [data-menu] svg {
+    --img: #fff;
+    --type: #fff;
+  }
+
+  #toggle:checked + [data-menu] nav {
+    padding-top: 6rem;
+    top: 0;
+    z-index: 2;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  #toggle:checked + [data-menu] label[for='toggle'] {
+    --color: var(--color-text-inverted);
+  }
+}

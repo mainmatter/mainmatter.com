@@ -1,0 +1,18 @@
+<figure>
+  {{#if @label}}
+    <p class="typography.small-text">
+      {{@label}}
+    </p>
+  {{/if}}
+  {{#if @src}}
+    <div class="fluid-image image">
+      <img class="fluid-image.image-cover" src={{@src}} alt="{{@alt}}" />
+    </div>
+  {{/if}}
+  <figcaption class="caption">
+    <h3 class="typography.headline-3-plain headline">
+      {{@title}}
+    </h3>
+    {{yield}}
+  </figcaption>
+</figure>
