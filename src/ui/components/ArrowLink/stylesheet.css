@@ -1,9 +1,9 @@
 :scope {
+  block-name: ArrowLink;
   text-align: right;
 }
 
 .link {
-  block-name: ArrowLink;
   position: relative;
   display: inline-block;
   padding: 1.5rem 7rem 1.5rem 0;
