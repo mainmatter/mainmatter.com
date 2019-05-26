@@ -93,6 +93,7 @@
       "lib/generate-calendar",
       "lib/generate-talks-archive",
       "lib/google-analytics",
+      "lib/head-data",
       "lib/routes",
       "lib/sentry",
       "lib/service-workers",
