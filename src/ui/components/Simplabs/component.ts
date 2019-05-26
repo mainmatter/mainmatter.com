@@ -2,6 +2,8 @@ import Component, { tracked } from '@glimmer/component';
 import { getOwner } from '@glimmer/di';
 import Navigo from 'navigo';
 
+const COOKIE_BANNER_DELAY: number = 100;
+
 interface INavigoHooks {
   before?: (done: () => void) => void;
   after?: () => void;
@@ -27,6 +29,9 @@ export default class Simplabs extends Component {
   @tracked
   private loadingProgress: number = 0;
 
+  @tracked
+  private isCookieBannerVisible: boolean = false;
+
   constructor(options) {
     super(options);
 
@@ -40,6 +45,23 @@ export default class Simplabs extends Component {
     this._setupRouting();
     this._bindInternalLinks();
     this._restoreActiveComponentState();
+    this._maybeShowCookieBannerLater();
+  }
+
+  public hideCookieBanner() {
+    document.cookie = 'cookiesAccepted=true;path=/';
+    this.updateIsCookieBannerVisible();
+  }
+
+  private updateIsCookieBannerVisible() {
+    this.isCookieBannerVisible = !document.cookie.match(/cookiesAccepted=true/);
+  }
+
+  private _maybeShowCookieBannerLater() {
+    if (!this.appState.isSSR) {
+      // do this async so it doesn't yank rehydration from the pre-rendered document
+      window.setTimeout(() => this.updateIsCookieBannerVisible(), COOKIE_BANNER_DELAY);
+    }
   }
 
   private _setupRouting() {
