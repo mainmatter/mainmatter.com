@@ -31,7 +31,7 @@ Our CEO Marco says _"I'm very happy to have Florian on board. His expertise in b
 
 Equally as exciting is our new client Qonto, a Paris based VC funded Fintech startup who are “the ideal banking alternative for freelancers, startups and SMEs.”
 
-Qonto reached out to simplabs looking for a combination of added engineering power and outside expertise to help their in-house engineers improve. We call this [Team Augmentation](/team-augmentation/) and you can read the full annoucement [here](/blog/2019/03/29/qonto-project/).
+Qonto reached out to simplabs looking for a combination of added engineering power and outside expertise to help their in-house engineers improve. We call this [Team Augmentation](/services/team-augmentation/) and you can read the full annoucement [here](/blog/2019/03/29/qonto-project/).
 
 #### Other news
 
