@@ -59,7 +59,7 @@ Day 1 is an installation party to make sure that everybody is set up for day 2 w
 
 #### Jessica Jordan at JSConfEU
 
-![JsConfEU](/images/posts/2019-05-10-may-monthly-update/jsconfeu.png)
+![JsConfEU](/assets/images/posts/2019-05-10-may-monthly-update/jsconfeu.png)
 
 On the 1st of June [Jessica Jordan](https://twitter.com/jjordan_dev) is speaking at [JSConfEU](https://2019.jsconf.eu/) with her talk "Crafting Comics for Literally Everyone" she highlights how you can craft an immersive webcomic experience that is accessible for blind, visually-impaired and sighted readers alike!
 
@@ -79,7 +79,7 @@ Follow [their Twitter](https://twitter.com/fullstackcon) for updates as the even
 
 #### EmberFest - October 17th & 18th - Earlybird tickets sold out
 
-![EmberFest](/images/posts/2019-04-05-april-monthly-update/ember-fest-logo.png)
+![EmberFest](/assets/images/posts/2019-04-05-april-monthly-update/ember-fest-logo.png)
 
 The [EmberFest](https://emberfest.eu/) early bird tickets are now sold out!
 

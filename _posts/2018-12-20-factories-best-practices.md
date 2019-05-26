@@ -238,7 +238,7 @@ Factory Guy doesn't need to have a model file because it is much simpler. It cre
 
 I've been told it is always good to finish with a strong conclusion.
 
-![Strong gif](/images/posts/2018-12-20-factories-best-practices/strong.gif)
+![Strong gif](/assets/images/posts/2018-12-20-factories-best-practices/strong.gif)
 
 I hope you enjoyed this post and will start using factories over fixtures and using named factories / traits more sparingly.
 

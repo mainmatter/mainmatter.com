@@ -25,13 +25,13 @@ run in a browser as opposed to standalone apps. While the much-loved
 was a pretty standard page in terms of interactivity and design only about 2
 decades ago
 
-![Screenshot of the Spacejam Website](/images/posts/2019-03-16-spas-pwas-and-ssr/spacejam.png)
+![Screenshot of the Spacejam Website](/assets/images/posts/2019-03-16-spas-pwas-and-ssr/spacejam.png)
 
 we can now go to [Google Maps](https://www.google.com/maps), zoom and rotate
 the earth in 3D space, measure distances between arbitrary points and have a
 look at our neighbor's backyard:
 
-![Video of Google Maps](/images/posts/2019-03-16-spas-pwas-and-ssr/maps.gif)
+![Video of Google Maps](/assets/images/posts/2019-03-16-spas-pwas-and-ssr/maps.gif)
 
 All of this functionality, interactivity and visual appeal comes at a cost
 though, mainly in the the form of JavaScript code. The median size of
@@ -48,7 +48,7 @@ What all this leads to is that for many of these highly-interactive,
 feature-rich and shiny apps that are being built today, the first impression
 that users get is often this:
 
-![Video of a loading JS app](/images/posts/2019-03-16-spas-pwas-and-ssr/loading.gif)
+![Video of a loading JS app](/assets/images/posts/2019-03-16-spas-pwas-and-ssr/loading.gif)
 
 
 ## SPAs
@@ -127,7 +127,7 @@ browser on the server side as well as follows:
   browser would load and execute these scripts and start up the app in the
   browser as usual
 
-![Diagram of the approach](/images/posts/2019-03-16-spas-pwas-and-ssr/diagram.png)
+![Diagram of the approach](/assets/images/posts/2019-03-16-spas-pwas-and-ssr/diagram.png)
 
 With this setup, the _TTFMP_ metric is dramatically improved. Although users
 still have to wait for the app's JavaScript to load and the app to start before
@@ -184,7 +184,7 @@ completely open source and
 [available on github](https://github.com/simplabs/breethe-client) and we
 encourage everyone interested in the topic to check it out for reference.
 
-![Video of Breethe](/images/posts/2019-03-16-spas-pwas-and-ssr/breethe.gif)
+![Video of Breethe](/assets/images/posts/2019-03-16-spas-pwas-and-ssr/breethe.gif)
 
 ## Drawbacks
 
@@ -210,7 +210,7 @@ immediately. Whether that is a valuable improvement is a case-by-case decision
 of course. In the example of Breethe, when looking at the result page for a
 particular location, it's a pretty obvious decision:
 
-![Breethe - results for Muncich](/images/posts/2019-03-16-spas-pwas-and-ssr/breethe-results.png)
+![Breethe - results for Muncich](/assets/images/posts/2019-03-16-spas-pwas-and-ssr/breethe-results.png)
 
 While the user might need to wait for a few seconds (e.g. on a low performance
 mobile device with a spotty network connection) for the app to have fully

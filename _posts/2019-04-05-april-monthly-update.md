@@ -27,7 +27,7 @@ Our CEO Marco says _"I'm very happy to have Florian on board. His expertise in b
 
 #### simplabs welcomes new client Qonto
 
-![Qonto Logo](/images/posts/2019-03-29-qonto-project/qonto-logo.png)
+![Qonto Logo](/assets/images/posts/2019-03-29-qonto-project/qonto-logo.png)
 
 Equally as exciting is our new client Qonto, a Paris based VC funded Fintech startup who are “the ideal banking alternative for freelancers, startups and SMEs.”
 
@@ -47,11 +47,11 @@ _We're always interested in new speakers for the various meetups we're involved 
 
 We're very pleased to be sponsoring [ElixirConfEU](http://www.elixirconf.eu/) which is starting in Prague on the 8th of April. We've sent over a load of simplabs stickers, so grab one while you can.
 
-![ElixirConfEU 2019](/images/posts/2019-04-05-april-monthly-update/elixir-conf-stickers.jpg)
+![ElixirConfEU 2019](/assets/images/posts/2019-04-05-april-monthly-update/elixir-conf-stickers.jpg)
 
 #### EmberFestEU 2019 tickets go on sale soon
 
-![EmberFestEU](/images/posts/2019-04-05-april-monthly-update/ember-fest-logo.png)
+![EmberFestEU](/assets/images/posts/2019-04-05-april-monthly-update/ember-fest-logo.png)
 
 Also, we've been busy behind the scenes getting ready for this year's [EmberFestEU](https://emberfest.eu/). We have booked the venue and will announce the host city soon - there are some hints on the website already though so go see whether you can find them. Early bird tickets are going on sale soon so keep an eye on the [twitter](https://twitter.com/EmberFest) for more news as well.
 
@@ -67,7 +67,7 @@ The next Ember.js Dublin meetup will take place on April 18th will be an Ember C
 
 simplabs sent a group of people to EmberConf2019 in Portland where Ricardo Mendes hosted a contributor workshop and [Jessica Jordan](https://twitter.com/jjordan_dev) gave a talk about Crafting Web Comics in Ember.
 
-![EmberConf2019 Team Photo](/images/posts/2019-04-05-april-monthly-update/ember-conf-team-photo.jpg)
+![EmberConf2019 Team Photo](/assets/images/posts/2019-04-05-april-monthly-update/ember-conf-team-photo.jpg)
 
 #### Meetups
 

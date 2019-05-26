@@ -30,7 +30,7 @@ quality data for locations around the world. Pollution and global warming are
 getting worse. The first step to understanding and solving these problems is to 
 raise awareness by providing everyone with easy access to accurate data. 
 
-![Video of the Breethe PWA](/images/posts/2018-07-24-from-spa-to-pwa/breethe-video.gif)
+![Video of the Breethe PWA](/assets/images/posts/2018-07-24-from-spa-to-pwa/breethe-video.gif)
 
 The application is [open source](https://github.com/simplabs/breethe-server)
 and we encourage everyone interested to look through the source for reference. 

@@ -12,7 +12,7 @@ how we're involved in EmberConf 2019.
 
 <!--break-->
 
-![EmberConf 2019](/images/posts/2019-03-07-march-monthly-update/emberconf-logo.png)
+![EmberConf 2019](/assets/images/posts/2019-03-07-march-monthly-update/emberconf-logo.png)
 
 [EmberConf 2019](https://emberconf.com/) in Portland starts on March 18th and
 we're proud to be sponsoring the event. We'll also be taking some members of
