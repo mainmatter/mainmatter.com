@@ -243,7 +243,7 @@ job, that will run our Renovate bot, and that will create merge requests on
 your configured repositories.
 
 If you need more help getting this set up or if you want to talk about any of
-the topics here in more detail please do [contact us](https://simplabs.com/contact/)!
+the topics here in more detail please do [contact us](/contact/)!
 If you enjoyed this blog post you can also let us know via [Twitter].
 
 

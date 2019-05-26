@@ -228,7 +228,7 @@ can be seen on our qunit-dom project.
 
 We hope that this blog post helped you improve your processes and speed up your
 own development. If you need help with any of these topics or if you have
-questions we encourage you to [contact us](https://simplabs.com/contact/)!
+questions we encourage you to [contact us](/contact/)!
 
 
 [git]: https://git-scm.com/

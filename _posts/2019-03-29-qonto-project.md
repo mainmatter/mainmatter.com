@@ -17,7 +17,7 @@ for freelancers, startups and SMEs."
 
 Qonto reached out to simplabs looking for a combination of added engineering
 power and outside expertise to help their in-house engineers improve, we call
-this [Team Augmentation](https://simplabs.com/team-augmentation/index.html).
+this [Team Augmentation](/services/team-augmentation/).
 
 This method of working sees our technology experts merge with our client's
 in-house engineering teams to share their know-how. simplabs engineers spearhead
@@ -25,7 +25,7 @@ and guide new development initiatives while establishing best practices and
 transferring knowledge to in-house engineers on the job via reviews and pairing
 sessions.
 
-Just as with previous Team Augmentation projects like [trainline](https://simplabs.com/trainline/index.html) this
+Just as with previous Team Augmentation projects like [trainline](/cases/trainline/) this
 approach brings "double value for the client" says simlpabs CEO Marco
 Otte-Witte, "short term value is added by the client immediately gaining more
 engineering power, but additional long term value is added through improved
