@@ -31,17 +31,17 @@ Our CEO Marco says _"I'm very happy to have Florian on board. His expertise in b
 
 Equally as exciting is our new client Qonto, a Paris based VC funded Fintech startup who are “the ideal banking alternative for freelancers, startups and SMEs.”
 
-Qonto reached out to simplabs looking for a combination of added engineering power and outside expertise to help their in-house engineers improve. We call this [Team Augmentation](/team-augmentation/) and you can read the full annoucement [here](/blog/2019/03/29/qonto-project.html).
+Qonto reached out to simplabs looking for a combination of added engineering power and outside expertise to help their in-house engineers improve. We call this [Team Augmentation](/team-augmentation/) and you can read the full annoucement [here](/blog/2019/03/29/qonto-project/).
 
 #### Other news
 
 [Chris Manson](https://twitter.com/real_ate) was on the Ember Weekend podcast talking about [Empress](https://github.com/hodgesmr/Empress). Listen to the full show here: [https://emberweekend.com/episodes/empress-the-ember-press](https://emberweekend.com/episodes/empress-the-ember-press)
 
-Also, [Niklas Long](https://twitter.com/niklas_long) put out a well received blog post about Elixir Umbrella Applications and testing with Mox [here](/blog/2019/03/13/elixir-umbrella-mox.html).
+Also, [Niklas Long](https://twitter.com/niklas_long) put out a well received blog post about Elixir Umbrella Applications and testing with Mox [here](/blog/2019/03/13/elixir-umbrella-mox/).
 
 ## Upcoming Events
 
-_We're always interested in new speakers for the various meetups we're involved in. If you'd like to give a talk, [please get in touch.](/contact/index.html)_
+_We're always interested in new speakers for the various meetups we're involved in. If you'd like to give a talk, [please get in touch.](/contact/)_
 
 #### simplabs sponsors ElixirConfEU 2019
 
