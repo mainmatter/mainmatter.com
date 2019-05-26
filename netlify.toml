@@ -10,11 +10,6 @@
   SENTRY_DSN = "https://5d8e23a02a1841f5837b96ef76423c8b@sentry.io/1456103"
   SENTRY_ENV = "deploy-preview"
 
-[[redirects]]
-  from = "/*"
-  to = "/404/index.html"
-  status = 404
-
 # redirect old blog routes
 [[redirects]]
   from="/blog/2013/06/15/authentication-in-emberjs.html"
@@ -223,3 +218,9 @@
 [[redirects]]
   from="/blog/2019/05/10/may-monthly-update.html"
   to="/blog/2019/05/10/may-monthly-update/"
+
+# handle 404 errors
+[[redirects]]
+  from = "/*"
+  to = "/404/index.html"
+  status = 404
