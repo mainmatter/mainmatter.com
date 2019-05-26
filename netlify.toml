@@ -14,3 +14,51 @@
   from = "/*"
   to = "/404/index.html"
   status = 404
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+	  cache-control = '''
+	  public,
+    max-age=14400,
+	  immutable'''
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+	  cache-control = '''
+	  public,
+    max-age=14400,
+	  immutable'''
+
+[[headers]]
+  for = "*.png"
+  [headers.values]
+	  cache-control = '''
+	  public,
+    max-age=14400,
+	  immutable'''
+
+[[headers]]
+  for = "*.jpg"
+  [headers.values]
+	  cache-control = '''
+	  public,
+    max-age=14400,
+	  immutable'''
+
+[[headers]]
+  for = "*.svg"
+  [headers.values]
+	  cache-control = '''
+	  public,
+    max-age=14400,
+	  immutable'''
+
+[[headers]]
+  for = "*.gif"
+  [headers.values]
+	  cache-control = '''
+	  public,
+    max-age=14400,
+	  immutable'''
