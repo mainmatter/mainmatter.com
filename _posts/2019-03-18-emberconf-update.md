@@ -31,6 +31,6 @@ Lastly, [Chris Manson](https://twitter.com/real_ate) will be giving a lightning
 talk about [empress-blog](https://github.com/empress/empress-blog).
 
 If you're attending EmberConf 2019 and would like to speak to us about our 
-work, please [get in touch.](https://simplabs.com/contact/index.html)
+work, please [get in touch.](https://simplabs.com/contact/)
 
 See you there!
