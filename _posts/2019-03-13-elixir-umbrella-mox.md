@@ -1,10 +1,10 @@
 ---
-layout: article
-section: Blog
 title: Elixir Umbrella Applications and Testing with Mox
 author: "Niklas Long"
-github-handle: niklaslong
+github: niklaslong
+twitter: niklas_long
 topic: elixir
+bio: "Backend Engineer, author of Breethe API"
 ---
 
 What's the big deal with Elixir umbrellas?

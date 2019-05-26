@@ -1,11 +1,10 @@
 ---
-layout: article
-section: Blog
 title: simplabs at EmberConf 2019
 author: "Mark Coleman"
-github-handle: mrmrcoleman
-twitter-handle: mrmrcoleman
+github: mrmrcoleman
+twitter: mrmrcoleman
 topic: simplabs
+bio: "Communications and Community Outreach Specialist"
 ---
 
 We mentioned this in our March monthly update but in case you missed it, here's

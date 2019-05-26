@@ -1,11 +1,10 @@
 ---
-layout: article
-section: Blog
 title: "SPAs, PWAs and SSR"
 author: "Marco Otte-Witte"
-github-handle: marcoow
-twitter-handle: marcoow
+github: marcoow
+twitter: marcoow
 topic: javascript
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 ---
 
 Single Page Apps, Progressive Web Apps and classic Server side rendered

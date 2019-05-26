@@ -1,11 +1,10 @@
 ---
-layout: article
-section: Blog
 title: "simplabs monthly update - May 2019"
 author: "Mark Coleman"
-github-handle: mrmrcoleman
-twitter-handle: mrmrcoleman
+github: mrmrcoleman
+twitter: mrmrcoleman
 topic: simplabs
+bio: "Communications and Community Outreach Specialist"
 ---
 
 Welcome to the third installment of our monthly update. Each month we cover the events and activities that have been happening at simplabs along with the things we're looking forward to. Enjoy.

@@ -1,11 +1,10 @@
 ---
-layout: article
-section: Blog
 title: Qonto project
 author: "Mark Coleman"
-github-handle: mrmrcoleman
-twitter-handle: mrmrcoleman
+github: mrmrcoleman
+twitter: mrmrcoleman
 topic: simplabs
+bio: "Communications and Community Outreach Specialist"
 ---
 
 We're very pleased to announce that we've started working with [Qonto](https://qonto.eu/),

@@ -1,11 +1,10 @@
 ---
-layout: article
-section: Blog
 title: "Automated dependency updates for your internal GitLab server️"
 author: "Tobias Bieniek"
-github-handle: Turbo87
-twitter-handle: tobiasbieniek
+github: Turbo87
+twitter: tobiasbieniek
 topic: misc
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 ---
 
 Are your dependencies hopelessly outdated? Would you need to hire another

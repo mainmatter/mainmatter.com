@@ -1,11 +1,10 @@
 ---
-layout: article
-section: Blog
 title: "Ember.js: The Documentary - Berlin Screening"
 author: "Mark Coleman"
-github-handle: mrmrcoleman
-twitter-handle: mrmrcoleman
+github: mrmrcoleman
+twitter: mrmrcoleman
 topic: ember
+bio: "Communications and Community Outreach Specialist"
 ---
 
 Following on from last week's premiere in Amsterdam the new [HoneyPot](https://www.honeypot.io/) film **'Ember: A Mini Documentary'** will be shown in Berlin this evening (2019-02-11).
