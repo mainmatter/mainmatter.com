@@ -231,11 +231,6 @@
   status = 404
 
 [[headers]]
-  for = "service-worker.js"
-  [headers.values]
-	  cache-control = "max-age=0"
-
-[[headers]]
   for = "*.js"
   [headers.values]
 	  cache-control = '''
