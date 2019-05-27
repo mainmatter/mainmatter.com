@@ -10,6 +10,11 @@
   SENTRY_DSN = "https://5d8e23a02a1841f5837b96ef76423c8b@sentry.io/1456103"
   SENTRY_ENV = "deploy-preview"
 
+# redirect old training page
+[[redirects]]
+  from="/training/"
+  to="/services/tutoring/"
+
 # redirect old blog routes
 [[redirects]]
   from="/blog/2013/06/15/authentication-in-emberjs.html"
