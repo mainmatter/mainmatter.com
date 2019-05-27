@@ -8,7 +8,7 @@
   extends: screen;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 888px) {
   .vertical-offset {
     padding-top: 51rem;
   }

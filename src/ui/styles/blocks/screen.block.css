@@ -30,7 +30,7 @@
   overflow: hidden;
 }
 
-@media (max-width: 699px) {
+@media (max-width: 887px) {
   :scope {
     --offset-horizontal: 2.5rem;
   }
@@ -51,7 +51,7 @@
   padding-bottom: 21rem;
 }
 
-@media (max-width: 699px) {
+@media (max-width: 887px) {
   .container {
     padding-bottom: 12rem;
   }

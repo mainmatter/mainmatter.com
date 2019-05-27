@@ -50,7 +50,7 @@
   font-weight: 700;
 }
 
-@media (max-width: 699px) {
+@media (max-width: 887px) {
   .display,
   .display-plain {
     font-size: 8rem;

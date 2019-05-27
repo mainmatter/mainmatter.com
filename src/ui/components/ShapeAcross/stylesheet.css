@@ -41,7 +41,7 @@
   --color-link: var(--color-link-inverted);
 }
 
-@media (max-width: 699px) {
+@media (max-width: 887px) {
   :scope {
     padding-top: 200vw;
     margin: 0 0 16rem;
@@ -79,7 +79,7 @@
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 888px) {
   :scope {
     margin-top: -22rem;
     padding: 0 0 16rem;
