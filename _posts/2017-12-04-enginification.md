@@ -28,13 +28,11 @@ downloaded.
 At the moment Ember.js v2.14 is used and the app has 39 routes, 28 services, 77
 components, 24 models which result in the following asset sizes:
 
-|-------------|--------------------------------|
-| Asset       | Size                           |
-|-------------|--------------------------------|
-| `app.js`    | 627.03 KB (117.22 KB gzipped)  |
-| `vendor.js` | 1.51 MB (342.87 KB gzipped)    |
-| `app.css`   | 104.31 KB (19.25 KB gzipped)   |
-|-------------|--------------------------------|
+| Asset       | Size                          |
+| ----------- | ----------------------------- |
+| `app.js`    | 627.03 KB (117.22 KB gzipped) |
+| `vendor.js` | 1.51 MB (342.87 KB gzipped)   |
+| `app.css`   | 104.31 KB (19.25 KB gzipped)  |
 
 Taken from the [Ember Engine RFC](https://github.com/emberjs/rfcs/blob/master/text/0010-engines.md):
 
@@ -259,16 +257,14 @@ once we navigate into a route within the engine. Since the initial assets only
 contain the essential logic needed for the search, they have shrunken in size
 as well:
 
-|--------------------------|--------------------------------|------------------------------|
-| Asset                    | Before                         | After                        |
-|--------------------------|--------------------------------|------------------------------|
-| `app.js`                 | 627.03 KB (117.22 KB gzipped)  | 375.01 KB (78.23 KB gzipped) |
-| `vendor.js`              | 1.51 MB (342.87 KB gzipped)    | 1.6 MB (364.5 KB gzipped)    |
-| `app.css`                | 104.31 KB (19.25 KB gzipped)   | 58.65 KB (12.17 KB gzipped)  |
-| `booking-flow.js`        |                                | 290.47 KB (48.48 KB gzipped) |
-| `booking-flow-vendor.js` |                                | 117 B (127 B gzipped)        |
-| `booking-flow.css`       |                                | 45.24 KB (7.97 KB gzipped)   |
-|--------------------------|--------------------------------|------------------------------|
+| Asset                    | Before                        | After                        |
+| ------------------------ | ----------------------------- | ---------------------------- |
+| `app.js`                 | 627.03 KB (117.22 KB gzipped) | 375.01 KB (78.23 KB gzipped) |
+| `vendor.js`              | 1.51 MB (342.87 KB gzipped)   | 1.6 MB (364.5 KB gzipped)    |
+| `app.css`                | 104.31 KB (19.25 KB gzipped)  | 58.65 KB (12.17 KB gzipped)  |
+| `booking-flow.js`        |                               | 290.47 KB (48.48 KB gzipped) |
+| `booking-flow-vendor.js` |                               | 117 B (127 B gzipped)        |
+| `booking-flow.css`       |                               | 45.24 KB (7.97 KB gzipped)   |
 
 ## Conclusion
 
