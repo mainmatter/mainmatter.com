@@ -15,11 +15,7 @@
 }
 
 .tweet {
-}
-
-.badge {
-  width: var(--col-1);
-  flex-shrink: 0;
+  /* used by subclasses */
 }
 
 .badge-image {
@@ -57,13 +53,31 @@
 }
 
 @media (max-width: 887px) {
-  .badge {
-    display: none;
-  }
-
   .content-post {
     width: 100%;
     padding-left: 0;
+  }
+
+  .badge {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .badge-content {
+    margin-left: var(--offset-horizontal);
+    text-align: left;
+  }
+}
+
+@media (min-width: 888px) {
+  .badge {
+    width: var(--col-1);
+    flex-shrink: 0;
+    order: 1;
+  }
+
+  .excerpt {
+    order: 2;
   }
 }
 

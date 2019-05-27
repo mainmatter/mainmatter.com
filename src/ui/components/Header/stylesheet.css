@@ -17,7 +17,6 @@
 }
 
 .content[state|flex-content='true'] {
-  display: flex;
   margin-top: 8rem;
   margin-bottom: 8rem;
 }
@@ -147,6 +146,10 @@
 }
 
 @media (min-width: 888px) {
+  .content[state|flex-content='true'] {
+    display: flex;
+  }
+
   .content {
     margin-top: 21rem;
     margin-bottom: 21rem;

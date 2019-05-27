@@ -1,5 +1,14 @@
 <div>
   <Header @flex-content="true">
+    <div class="blog-post.excerpt">
+      <p class="typography.small-text">
+        Blog
+      </p>
+      <h1 class="typography.display">
+        {{title}}
+      </h1>
+      {{{excerpt}}}
+    </div>
     <div class="blog-post.badge">
       <div class="blog-post.badge-image">
         <img
@@ -21,15 +30,6 @@
           {{author.twitter}}
         </a>
       </div>
-    </div>
-    <div>
-      <p class="typography.small-text">
-        Blog
-      </p>
-      <h1 class="typography.display">
-        {{title}}
-      </h1>
-      {{{excerpt}}}
     </div>
   </Header>
   <div class="container">
