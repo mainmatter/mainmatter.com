@@ -51,22 +51,26 @@ main project on GitHub and `origin` is my personal fork where I push feature
 branches, which will turn into PRs against the `upstream` repository. Here is an
 example for our `qunit-dom` project on my machine:
 
-| `upstream` | `git@github.com:simplabs/qunit-dom.git` |
-| `origin` | `git@github.com:Turbo87/qunit-dom.git` |
-| `lukemelia` | `git@github.com:lukemelia/qunit-dom.git` |
+| Name         | URL                                       |
+| ------------ | ----------------------------------------- |
+| `upstream`   | `git@github.com:simplabs/qunit-dom.git`   |
+| `origin`     | `git@github.com:Turbo87/qunit-dom.git`    |
+| `lukemelia`  | `git@github.com:lukemelia/qunit-dom.git`  |
 | `jackbeegan` | `git@github.com:jackbeegan/qunit-dom.git` |
 
 Why is this useful? Because it allows us to define [shell aliases](https://shapeshed.com/unix-alias/)
 for some of the most commonly used git commands for which we don't use a
 graphical user interface. Here are a few examples of things we regularly use:
 
-| `cl` | `git clone` | Clones a repository |
-| `clu` | `git clone --origin=upstream` | Clones a repository, and uses `upstream` as the default remote name |
-| `ao` | `git remote add origin` | Adds a new remote called `origin` |
-| `gfu` | `git fetch upstream` | Updates the local copies of the `upstream` remote branches |
-| `gfo` | `git fetch origin` | Updates the local copies of the `origin` remote branches |
-| `gp` | `git push` | Pushes the current branch to the corresponding remote |
-| `gph` | `git push -u origin HEAD` | Pushes the current branch as a new branch to the `origin` remote |
+| Alias       | Command                 | Description                                                                                           |
+| ----------- | ----------------------- | ----------------------------------------------------------------------------------------------------- |
+| `cl`  | `git clone`                   | Clones a repository                                                                                   |
+| `clu` | `git clone --origin=upstream` | Clones a repository, and uses `upstream` as the default remote name                                   |
+| `ao`  | `git remote add origin`       | Adds a new remote called `origin`                                                                     |
+| `gfu` | `git fetch upstream`          | Updates the local copies of the `upstream` remote branches                                            |
+| `gfo` | `git fetch origin`            | Updates the local copies of the `origin` remote branches                                              |
+| `gp`  | `git push`                    | Pushes the current branch to the corresponding remote                                                 |
+| `gph` | `git push -u origin HEAD`     | Pushes the current branch as a new branch to the `origin` remote                                      |
 | `gpf` | `git push --force-with-lease` | Pushes the current branch to the corresponding remote, overwriting the existing history of the branch |
 
 With these commands we can already speed up our workflow quite significantly.
