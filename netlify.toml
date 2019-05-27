@@ -240,7 +240,7 @@
   [headers.values]
 	  cache-control = '''
 	  public,
-    max-age=14400,
+    max-age=31536000,
 	  immutable'''
 
 [[headers]]
@@ -248,7 +248,7 @@
   [headers.values]
 	  cache-control = '''
 	  public,
-    max-age=14400,
+    max-age=31536000,
 	  immutable'''
 
 [[headers]]
@@ -256,7 +256,7 @@
   [headers.values]
 	  cache-control = '''
 	  public,
-    max-age=14400,
+    max-age=31536000,
 	  immutable'''
 
 [[headers]]
@@ -264,7 +264,7 @@
   [headers.values]
 	  cache-control = '''
 	  public,
-    max-age=14400,
+    max-age=31536000,
 	  immutable'''
 
 [[headers]]
@@ -272,7 +272,7 @@
   [headers.values]
 	  cache-control = '''
 	  public,
-    max-age=14400,
+    max-age=31536000,
 	  immutable'''
 
 [[headers]]
@@ -280,5 +280,5 @@
   [headers.values]
 	  cache-control = '''
 	  public,
-    max-age=14400,
+    max-age=31536000,
 	  immutable'''
