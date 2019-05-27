@@ -87,7 +87,7 @@
   text-align: justify;
 }
 
-@media (max-width: 699px) {
+@media (max-width: 887px) {
   :scope {
     display: block;
   }
@@ -104,7 +104,7 @@
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 888px) {
   .content-heading {
     margin-bottom: 16rem;
   }

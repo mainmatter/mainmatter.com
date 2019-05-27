@@ -7,7 +7,7 @@
   composes: 'screen.container';
 }
 
-@media (min-width: 700px) {
+@media (min-width: 888px) {
   .content {
     width: var(--col-3);
   }

@@ -112,7 +112,7 @@
   composes: 'button.button';
 }
 
-@media (max-width: 699px) {
+@media (max-width: 887px) {
   .brand {
     max-width: var(--max-width);
     margin-left: auto;
@@ -146,7 +146,7 @@
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 888px) {
   .content {
     margin-top: 21rem;
     margin-bottom: 21rem;

@@ -39,7 +39,7 @@
   line-height: 1.5;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 888px) {
   .section {
     grid-template-columns: repeat(2, 1fr);
   }

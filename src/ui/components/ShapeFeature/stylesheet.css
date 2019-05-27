@@ -81,7 +81,7 @@
   background-size: cover;
 }
 
-@media (max-width: 699px) {
+@media (max-width: 887px) {
   :scope {
     padding-top: 70rem;
   }
@@ -134,7 +134,7 @@
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 888px) {
   :scope {
     min-height: 58rem;
     margin: 0;

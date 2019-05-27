@@ -1,6 +1,6 @@
 :scope {
   block-name: Loader;
-  --accent-color: #007DF6;
+  --accent-color: #007df6;
   transition: all 200ms ease 0s;
   background: var(--accent-color);
   position: fixed;
@@ -10,13 +10,13 @@
   height: 2px;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 888px) {
   :scope {
     top: 0;
   }
 }
 
-@media (max-width: 699px) {
+@media (max-width: 887px) {
   :scope {
     bottom: 0;
   }

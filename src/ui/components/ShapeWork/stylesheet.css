@@ -75,7 +75,7 @@
   --color-muted: var(--color-text-inverted);
 }
 
-@media (max-width: 699px) {
+@media (max-width: 887px) {
   :scope {
     min-height: 1rem;
     margin-bottom: 12rem;
@@ -128,7 +128,7 @@
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 888px) {
   .container {
     display: flex;
     justify-content: space-between;
