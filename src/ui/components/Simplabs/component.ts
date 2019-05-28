@@ -81,10 +81,17 @@ export default class Simplabs extends Component {
         }
       };
       if (bundle && !this.appState.isSSR) {
-        options.before = async done => {
-          await this._loadBundle(bundle, parentBundle);
-          this._registerBundle(bundle);
-          done();
+        options.before = async (done, params) => {
+          try {
+            await this._loadBundle(bundle, parentBundle);
+            this._registerBundle(bundle);
+            done();
+          } catch(e) {
+            if (window.Sentry) {
+              window.Sentry.captureException(e);
+            }
+            window.location = path;
+          }
         };
       }
       this.router.on(
