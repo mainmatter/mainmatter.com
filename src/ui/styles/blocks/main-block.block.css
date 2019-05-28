@@ -29,17 +29,20 @@
 .content-row {
   margin: 0 -2rem 12rem;
   display: flex;
+  align-content: stretch;
   justify-content: flex-start;
 }
 
 .content-col {
   padding: 0 2rem;
+}
+
+.content-col:last-child {
   flex-grow: 1;
 }
 
 .content-col-image {
-  height: 100%;
-  max-width: var(--col-1);
+  width: 8rem;
 }
 
 .content-col-1 {
