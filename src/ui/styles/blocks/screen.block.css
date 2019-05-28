@@ -10,6 +10,11 @@
   --offset-horizontal: 8rem;
   --max-width: 132rem;
 
+  /* Spacing */
+
+  --spacing-medium: 8rem;
+  --spacing-large: 12rem;
+
   /* Colors */
   --color-primary: #222;
   --color-secondary: #5b5b5b;
