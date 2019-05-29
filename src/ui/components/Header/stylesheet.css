@@ -45,6 +45,7 @@
 .logo {
   --img: var(--color-accent);
   --type: var(--color-primary);
+  margin: 0;
 }
 
 .logo-link,
@@ -97,8 +98,10 @@
   width: 100%;
 }
 
-.nav-item {
-  color: #000000;
+.nav-item,
+.nav-item:link,
+.nav-item:visited {
+  color: var(--color-primary);
   margin-left: 4rem;
   text-decoration: none;
 }

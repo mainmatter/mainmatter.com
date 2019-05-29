@@ -39,6 +39,8 @@
   --color-text: var(--color-text-inverted);
   --color-muted: var(--color-muted-inverted);
   --color-link: var(--color-link-inverted);
+
+  color: var(--color-text);
 }
 
 @media (max-width: 887px) {

@@ -1,13 +1,45 @@
+:root {
+  /* Sizing */
+  --col-1: 19.5rem;
+  --col-2: 42rem;
+  --col-3: 64.5rem;
+  --col-4: 87rem;
+  --col-5: 109.5rem;
+  --offset-horizontal: 8rem;
+  --max-width: 132rem;
+
+  /* Spacing */
+
+  --spacing-medium: 8rem;
+  --spacing-large: 12rem;
+
+  /* Colors */
+  --color-primary: #222;
+  --color-secondary: #5b5b5b;
+  --color-accent: #007df6;
+  --color-background: #fff;
+  --color-error: #ec2a2a;
+
+  --color-text: var(--color-primary);
+  --color-text-inverted: var(--color-background);
+  --color-muted: var(--color-secondary);
+  --color-muted-inverted: var(--color-background);
+  --color-link: var(--color-accent);
+  --color-link-inverted: var(--color-background);
+}
+
+html,
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-display: swap;
+  color: var(--color-muted);
+}
+
 html {
   --base-scale: calc(6 / 8);
 
   /* Reset the base fontsize for 1rem to 50% of the 16px multiplied with the current scale */
   font-size: calc(50% * var(--base-scale));
-  line-height: 1.5;
-}
-
-body {
-  font-size: 2rem;
   line-height: 1.5;
 }
 
@@ -33,4 +65,84 @@ body {
   html {
     --base-scale: calc(13 / 8);
   }
+}
+
+body {
+  font-size: 2.5rem;
+  line-height: 1.6;
+}
+
+/* Typography */
+
+a,
+a:link,
+a:visited {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:focus,
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text);
+}
+
+h1 a h1 a:link,
+h1 a:visited,
+h2 a,
+h2 a:link,
+h2 a:visited,
+h3 a,
+h3 a:link,
+h3 a:visited,
+h4 a,
+h4 a:link,
+h4 a:visited,
+h5 a,
+h5 a:link,
+h5 a:visited,
+h5 a,
+h5 a:link,
+h5 a:visited,
+h6 a,
+h6 a:link,
+h6 a:visited {
+  color: inherit;
+}
+
+h1 {
+  margin-bottom: 6rem;
+  font-size: 8rem;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+h2 {
+  margin-bottom: 3rem;
+  font-size: 5rem;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+h3 {
+  margin-bottom: 5rem;
+  font-size: 4rem;
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+h4 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  line-height: 1.25;
+  font-weight: 700;
 }
