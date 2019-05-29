@@ -1,12 +1,10 @@
 'use strict';
 
-const fs = require('fs');
 const path = require('path');
 
 const GlimmerApp = require('@glimmer/application-pipeline').GlimmerApp;
 const BroccoliCleanCss = require('broccoli-clean-css');
 const Funnel = require('broccoli-funnel');
-const Map = require('broccoli-stew').map;
 const MergeTrees = require('broccoli-merge-trees');
 const Rollup = require('broccoli-rollup');
 const typescript = require('broccoli-typescript-compiler').default;
@@ -61,19 +59,10 @@ class SimplabsApp extends GlimmerApp {
   }
 
   cssTree() {
-    let resetCss = fs.readFileSync(path.join(this.project.root, 'vendor', 'css', 'reset.css'));
-    let fontsCss = fs.readFileSync(path.join(this.project.root, 'vendor', 'css', 'fonts.css'));
-    let baselineCss = fs.readFileSync(path.join(this.project.root, 'src', 'ui', 'styles', 'baseline.css'));
-    let menuCss = fs.readFileSync(path.join(this.project.root, 'src', 'ui', 'styles', 'menu.css'));
-
-    let cssTree = Funnel(super.cssTree(...arguments), {
-      include: ['app.css'],
-    });
-
-    cssTree = Map(cssTree, content => [resetCss, fontsCss, baselineCss, content, menuCss].join(''));
+    let cssTree = super.cssTree(...arguments);
 
     if (this.options.minifyCSS.enabled) {
-      cssTree = new BroccoliCleanCss(cssTree);
+      cssTree = new BroccoliCleanCss(cssTree, { inline: ['all'] });
     }
 
     return cssTree;
