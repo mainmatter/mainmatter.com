@@ -15,6 +15,11 @@
   from="/training/"
   to="/services/tutoring/"
 
+# redirect old ember page
+[[redirects]]
+  from="/ember/"
+  to="/expertise/ember/"
+
 # redirect old blog routes
 [[redirects]]
   from="/blog/2013/06/15/authentication-in-emberjs.html"
