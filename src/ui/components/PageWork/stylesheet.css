@@ -17,6 +17,5 @@
 }
 
 .more-headline {
-  composes: 'typography.headline-3-plain';
   margin-bottom: 3rem;
 }

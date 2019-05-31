@@ -28,8 +28,17 @@
   --color-link-inverted: var(--color-background);
 }
 
+@media (max-width: 887px) {
+  :root {
+    --offset-horizontal: 2.5rem;
+  }
+}
+
 html,
 body {
+  margin: 0;
+  padding: 0;
+  border: 0;
   font-family: 'Nunito Sans', sans-serif;
   font-display: swap;
   color: var(--color-muted);
@@ -84,7 +93,55 @@ a:visited {
 a:focus,
 a:hover,
 a:active {
+  color: var(--color-link);
   text-decoration: underline;
+}
+
+h1 a:link,
+h1 a:visited,
+h2 a:link,
+h2 a:visited,
+h3 a:link,
+h3 a:visited,
+h4 a:link,
+h4 a:visited,
+h5 a:link,
+h5 a:visited,
+h5 a:link,
+h5 a:visited,
+h6 a:link,
+h6 a:visited {
+  color: inherit;
+}
+
+h1 a:focus,
+h1 a:hover,
+h1 a:active,
+h2 a:focus,
+h2 a:hover,
+h2 a:active,
+h3 a:focus,
+h3 a:hover,
+h3 a:active,
+h4 a:focus,
+h4 a:hover,
+h4 a:active,
+h5 a:focus,
+h5 a:hover,
+h5 a:active,
+h5 a:focus,
+h5 a:hover,
+h5 a:active,
+h6 a:focus,
+h6 a:hover,
+h6 a:active {
+  color: var(--color-link);
+  text-decoration: none;
+  background-image: linear-gradient(to right, currentColor 75%, transparent 75%);
+  background-position: 0 1.1em;
+  background-repeat: repeat-x;
+  background-size: 100vw 3px;
+  text-shadow: -2px -2px white, -2px 2px white, 2px -2px white, 2px 2px white;
 }
 
 h1,
@@ -93,56 +150,71 @@ h3,
 h4,
 h5,
 h6 {
+  margin: 0;
   color: var(--color-text);
 }
 
-h1 a h1 a:link,
-h1 a:visited,
-h2 a,
-h2 a:link,
-h2 a:visited,
-h3 a,
-h3 a:link,
-h3 a:visited,
-h4 a,
-h4 a:link,
-h4 a:visited,
-h5 a,
-h5 a:link,
-h5 a:visited,
-h5 a,
-h5 a:link,
-h5 a:visited,
-h6 a,
-h6 a:link,
-h6 a:visited {
-  color: inherit;
+h1 {
+  font-size: 10rem;
+  font-weight: 300;
+  line-height: 1.2;
 }
 
-h1 {
+h2 {
   margin-bottom: 6rem;
   font-size: 8rem;
   font-weight: 300;
   line-height: 1.25;
 }
 
-h2 {
+* + h2 {
+  margin-top: 8rem;
+}
+
+h3 {
   margin-bottom: 3rem;
   font-size: 5rem;
   line-height: 1.2;
   font-weight: 400;
 }
 
-h3 {
-  margin-bottom: 5rem;
+h4 {
+  margin-bottom: 3rem;
   font-size: 4rem;
   line-height: 1.25;
   font-weight: 400;
 }
 
-h4 {
+* + h4 {
+  margin-top: 6rem;
+}
+
+h5 {
   margin-bottom: 1rem;
   font-size: 2.5rem;
   line-height: 1.25;
   font-weight: 700;
+}
+
+blockquote,
+figure,
+ul,
+ol,
+dl,
+li,
+p,
+table {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+nav ul,
+nav li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

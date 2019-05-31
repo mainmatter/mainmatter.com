@@ -4,14 +4,14 @@
       We strongly believe in the value of sharing our expertise and experience with others. Here are a collection of talks that members of our team have given at various conferences all over the world in the past years.
     </p>
   </Header>
-  <div class="container">
-    <h2 class="typography.headline-1">
+  <div class="container o.after-21">
+    <h2>
       Latest Talks
     </h2>
     {{#each conferences}}
       <div class="main-block">
         <div class="main-block.content">
-          <h3 class="typography.headline-2">
+          <h3>
             {{meta.title}}
           </h3>
           {{#each talks}}
@@ -22,10 +22,10 @@
                 </div>
               </div>
               <div class="main-block.content-col">
-                <h4 class="typography.headline-3">
+                <h4>
                   {{meta.title}}
                 </h4>
-                <p class="typography.body-text">
+                <p>
                   {{description}}
                 </p>
                 <ArrowLink @href="{{meta.url}}">
@@ -37,7 +37,7 @@
         </div>
         <div class="main-block.sidebar offset-vertical">
           <Card @src="{{meta.image}}" @alt="{{meta.title}}">
-            <p class="typography.body-text">
+            <p>
               {{description}}
             </p>
             <ArrowLink @href="{{meta.url}}">

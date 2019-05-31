@@ -30,6 +30,7 @@
   margin: 0 calc(var(--offset-horizontal) / 2);
   filter: grayscale(100%) contrast(0%);
   transition: filter 0.1s ease-out;
+  list-style: none;
 }
 
 @media (max-width: 1024px) {

@@ -32,10 +32,17 @@
   padding-bottom: 3rem;
 }
 
-.legal-link {
+.legal-link:link,
+.legal-link:visited {
   color: #979797;
   text-decoration: none;
   margin-left: 2rem;
+}
+
+.legal-link:focus,
+.legal-link:hover,
+.legal-link:active {
+  color: var(--color-link);
 }
 
 .nav {

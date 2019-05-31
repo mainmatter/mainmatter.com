@@ -1,13 +1,13 @@
 <ul>
   {{#each posts}}
     <li class="post">
-      <h4 class="typography.headline-3-plain title">
-        <a class="typography.title-link" href="{{path}}" data-internal>
+      <h4 class="title">
+        <a href="{{path}}" data-internal>
           {{title}}
         </a>
       </h4>
       <div class="media">
-        <img class="image" src="/assets/images/authors/{{author.twitter}}.jpg" alt="photo of {{author.name}}" />
+        <img class="image" src="/assets/images/authors/{{author.twitter}}.jpg" alt="" />
         <p>
           <span class="author">
             {{author.name}}

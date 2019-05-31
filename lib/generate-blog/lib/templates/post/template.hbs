@@ -10,20 +10,20 @@
 
       </div>
       <div class="blog-post.badge-content">
-        <a class="typography.link" href="/blog/author/{{author.twitter}}" data-internal>
+        <a href="/blog/author/{{author.twitter}}" data-internal>
           {{author.name}}
         </a>
         <p>
           {{author.bio}}
         </p>
-        <a href="https://twitter.com/{{author.twitter}}" class="typography.link" target="_blank" rel="noopener">
+        <a href="https://twitter.com/{{author.twitter}}" target="_blank" rel="noopener">
           @
           {{author.twitter}}
         </a>
       </div>
     </div>
     <div>
-      <p class="typography.small-text">
+      <p class="typography.small">
         Blog
       </p>
       <h1 class="typography.display">
@@ -52,10 +52,10 @@
       @background="{{related.teaserBackground}}"
       @backgroundImage="{{related.teaserImage}}"
     >
-      <p class="typography.small-text">
+      <p class="typography.small">
         Continue Reading
       </p>
-      <h3 class="typography.headline-2">
+      <h3>
         {{related.title}}
       </h3>
       <ArrowLink @href="{{related.path}}">

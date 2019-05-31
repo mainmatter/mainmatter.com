@@ -5,20 +5,20 @@
         <img class="fluid-image.image" src="/assets/images/authors/{{twitter}}.jpg" alt="photo of {{name}}" />
       </div>
       <div class="blog-post.badge-content">
-        <a class="typography.link" href="/blog/author/{{twitter}}" data-internal>
+        <a href="/blog/author/{{twitter}}" data-internal>
           {{name}}
         </a>
         <p>
           {{bio}}
         </p>
-        <a href="https://twitter.com/{{author.twitter}}" class="typography.link" target="_blank" rel="noopener">
+        <a href="https://twitter.com/{{author.twitter}}" target="_blank" rel="noopener">
           @
           {{twitter}}
         </a>
       </div>
     </div>
     <div>
-      <p class="typography.small-text">
+      <p class="typography.small">
         Blog
       </p>
       <h1 class="typography.display">
@@ -38,16 +38,16 @@
               {{topic}}
             </span>
             <div class="blog-post.excerpt">
-              <h3 class="typography.headline-2">
-                <a class="typography.title-link" href="{{path}}" data-internal>
+              <h3>
+                <a href="{{path}}" data-internal>
                   {{title}}
                 </a>
               </h3>
               {{{excerpt}}}
-              <a class="typography.link" href="/blog/author/{{author.twitter}}" data-internal>
+              <a href="/blog/author/{{author.twitter}}" data-internal>
                 {{author.name}}
               </a>
-              <p class="typography.small-text">
+              <p class="typography.small">
                 {{date}}
               </p>
             </div>
