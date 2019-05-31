@@ -38,7 +38,6 @@ export default class FormContact extends Component {
       form.reset();
 
       this.formState = FormState.Waiting;
-      this.errors = {};
 
       return;
     }
