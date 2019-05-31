@@ -1,5 +1,5 @@
-@block c from "../../styles/blocks/container.block.css";
-@block o from "../../styles/blocks/offset.block.css";
+@block containerBlock from "../../styles/blocks/container.block.css";
+@block offset from "../../styles/blocks/offset.block.css";
 
 :scope {
   block-name: ShapeAcross;
@@ -32,7 +32,7 @@
 }
 
 .container {
-  composes: 'c';
+  composes: 'containerBlock';
   position: relative;
 }
 

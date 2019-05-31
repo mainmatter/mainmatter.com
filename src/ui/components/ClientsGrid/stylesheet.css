@@ -1,6 +1,6 @@
 @block grid from "../../styles/blocks/grid.block.css";
 @block container from "../../styles/blocks/container.block.css";
-@block o from "../../styles/blocks/offset.block.css";
+@block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 
 :scope {
