@@ -1,0 +1,10 @@
+:scope {
+  block-name: Container;
+
+  position: relative;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--offset-horizontal);
+  padding-right: var(--offset-horizontal);
+}

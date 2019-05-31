@@ -1,4 +1,5 @@
-@block screen from "../../styles/blocks/screen.block.css";
+@block container from "../../styles/blocks/container.block.css";
+@block o from "../../styles/blocks/offset.block.css";
 
 :scope {
   block-name: ShapeBlog;
@@ -31,7 +32,7 @@
 }
 
 .container {
-  composes: 'screen.container-base';
+  composes: 'container';
   position: relative;
   z-index: 1;
 }

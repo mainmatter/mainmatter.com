@@ -1,10 +1,11 @@
-@block typography from "../../styles/blocks/typography.block.css";
 @block button from "../../styles/blocks/button.block.css";
-@block screen from "../../styles/blocks/screen.block.css";
+@block container from "../../styles/blocks/container.block.css";
+@block o from "../../styles/blocks/offset.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
 
 :scope {
   block-name: WorkWithUs;
-  composes: 'screen.container';
+  composes: 'container', 'o.after-21';
 }
 
 @media (min-width: 888px) {
