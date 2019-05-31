@@ -1,34 +1,6 @@
 :scope {
   block-name: screen;
 
-  /* Sizing */
-  --col-1: 19.5rem;
-  --col-2: 42rem;
-  --col-3: 64.5rem;
-  --col-4: 87rem;
-  --col-5: 109.5rem;
-  --offset-horizontal: 8rem;
-  --max-width: 132rem;
-
-  /* Spacing */
-
-  --spacing-medium: 8rem;
-  --spacing-large: 12rem;
-
-  /* Colors */
-  --color-primary: #222;
-  --color-secondary: #5b5b5b;
-  --color-accent: #007df6;
-  --color-background: #fff;
-  --color-error: #ec2a2a;
-
-  --color-text: var(--color-primary);
-  --color-text-inverted: var(--color-background);
-  --color-muted: var(--color-secondary);
-  --color-muted-inverted: var(--color-background);
-  --color-link: var(--color-accent);
-  --color-link-inverted: var(--color-background);
-
   font-family: 'Nunito Sans', sans-serif;
   font-display: swap;
   color: var(--color-muted);
