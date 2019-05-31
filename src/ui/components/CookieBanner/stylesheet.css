@@ -26,6 +26,17 @@
   background-color: white;
 }
 
+.link:link,
+.link:visited {
+  color: inherit;
+}
+
+.link:focus,
+.link:hover,
+.link:active {
+  color: var(--color-link);
+}
+
 .accept-button {
   background: none;
   border: none;
@@ -33,5 +44,5 @@
   font: inherit;
   cursor: pointer;
   outline: none;
-  color: var(--color-link);
+  color: inherit;
 }
