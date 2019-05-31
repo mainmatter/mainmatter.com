@@ -5,7 +5,7 @@ export default class ArrowLink extends Component {
   get isInternal() {
     let href = this.args.href || '';
 
-    return Boolean(href.substring(0, 1) === '/';
+    return Boolean(href.substring(0, 1) === '/');
   }
 
   @tracked
