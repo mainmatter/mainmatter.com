@@ -1,8 +1,6 @@
 :scope {
   block-name: button;
-}
 
-.button {
   display: inline-block;
   padding: calc(1rem - 2px) calc(3rem - 2px);
   flex-shrink: 0;
@@ -18,21 +16,21 @@
   transition: background-position 0.28s ease-in-out, color 0.1s 0.13s ease-in-out;
 }
 
-.button:focus,
-.button:hover {
+:scope:focus,
+:scope:hover {
   background-position: 50% 10%;
   color: var(--color-text-inverted);
   outline: 0;
   text-decoration: none;
 }
 
-.button:disabled {
+:scope:disabled {
   background-position: 0 90%;
   color: var(--color-accent);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .button {
+  :scope {
     transition: none;
   }
 }
