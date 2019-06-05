@@ -78,6 +78,7 @@ module.exports = function() {
     '/talks': { component: 'PageTalks', title: 'Talks', bundle: { asset: '/talks.js', module: '__talks__' } },
     '/why-simplabs': { component: 'PageWhySimplabs', title: 'Why simplabs' },
     '/work': { component: 'PageWork', title: 'Work' },
+    '/webinars/pwa': { component: 'PageLandingPwaWebinar', title: 'Webinar: Progressive Web Applications' },
   };
 
   return routes;
