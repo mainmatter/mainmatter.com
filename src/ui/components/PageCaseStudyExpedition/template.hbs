@@ -1,31 +1,27 @@
 <div>
   <Header @title="An online travel magazine for global citizens" />
-  <div class="container offset.after-21">
-    <div class="main-block">
-      <div class="main-block.content">
-        <p class="typography.lead">
-          Expedition approached simplabs when they needed help laying the foundation for advanced features in their Elixir and Phoenix based API as well as making sure their Ember.js based client was following best practices.
-        </p>
-        <p class="typography.lead">
-          We helped them to develop a system architecture that would set them up for future success, getting the most out of their technology stack.
-        </p>
-      </div>
-      <div class="main-block.sidebar">
-        <Card @label="Client" @src="/assets/images/card/expedition.svg" @alt="Expedition">
-          <p>
-            Expedition is an online travel magazine for global citizens that lets travellers experience the world's best destinations through the eyes of a local.
-          </p>
-        </Card>
-        <Card @label="Our Expertise" @title="Elixir & Phoenix" @src="/assets/images/card/elixir.svg" @alt="Elixir">
-          <p>
-            Elixir is the language of choice for scalable and stable applications.
-          </p>
-          <ArrowLink @href="/expertise/elixir-phoenix">
-            Learn more
-          </ArrowLink>
-        </Card>
-      </div>
-    </div>
+  <div class="layout.main offset.after-21">
+    <p class="typography.lead">
+      Expedition approached simplabs when they needed help laying the foundation for advanced features in their Elixir and Phoenix based API as well as making sure their Ember.js based client was following best practices.
+    </p>
+    <p class="typography.lead">
+      We helped them to develop a system architecture that would set them up for future success, getting the most out of their technology stack.
+    </p>
+  </div>
+  <div class="layout.side offset.after-21">
+    <Card @label="Client" @src="/assets/images/card/expedition.svg" @alt="Expedition">
+      <p>
+        Expedition is an online travel magazine for global citizens that lets travellers experience the world's best destinations through the eyes of a local.
+      </p>
+    </Card>
+    <Card @label="Our Expertise" @title="Elixir & Phoenix" @src="/assets/images/card/elixir.svg" @alt="Elixir">
+      <p>
+        Elixir is the language of choice for scalable and stable applications.
+      </p>
+      <ArrowLink @href="/expertise/elixir-phoenix">
+        Learn more
+      </ArrowLink>
+    </Card>
   </div>
   <ShapeWork
     @background="#162441"
@@ -43,35 +39,25 @@
       </p>
     </blockquote>
   </ShapeWork>
-  <div class="container offset.after-21">
-    <div class="main-block">
-      <div class="main-block.content">
-        <div class="main-block.content-item">
-          <div class="main-block.content-row">
-            <div class="main-block.content-col">
-              <h3>
-                Long-term enablement
-              </h3>
-              <p>
-                We reviewed Expedition's code base and identified a number of issues that we presented to the in-house team, together with background information and severity assessments for prioritization.
-              </p>
-              <p>
-                Our experts then continued to build prototype implementations for a number of advanced features in Expedition's system. Leveraging Elixir's and Phoenix's capabilities we were able to implement advanced mechanics with clean and concise code with significantly less effort and complexity compared with more traditional tools.
-              </p>
-              <h3>
-                A path into the future
-              </h3>
-              <p>
-                Expedition's in-house team was able to expand on our foundational work, handed over in an open and well-communicated way. The document generated during the initial review phase, along with background information and strategies for taking on each issue, helped them to address relevant issues before they would turn into impediments, keeping their productivity high.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="main-block.sidebar vertical-offset">
-        <CardPlaybook />
-      </div>
-    </div>
+  <div class="layout.main offset.after-21">
+    <h3>
+      Long-term enablement
+    </h3>
+    <p>
+      We reviewed Expedition's code base and identified a number of issues that we presented to the in-house team, together with background information and severity assessments for prioritization.
+    </p>
+    <p>
+      Our experts then continued to build prototype implementations for a number of advanced features in Expedition's system. Leveraging Elixir's and Phoenix's capabilities we were able to implement advanced mechanics with clean and concise code with significantly less effort and complexity compared with more traditional tools.
+    </p>
+    <h3>
+      A path into the future
+    </h3>
+    <p>
+      Expedition's in-house team was able to expand on our foundational work, handed over in an open and well-communicated way. The document generated during the initial review phase, along with background information and strategies for taking on each issue, helped them to address relevant issues before they would turn into impediments, keeping their productivity high.
+    </p>
+  </div>
+  <div class="layout.side vertical-offset offset.after-21">
+    <CardPlaybook />
   </div>
   <ShapeFeatureTrainline @label="Continue Reading" />
   <WorkWithUs />

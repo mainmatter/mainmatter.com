@@ -4,12 +4,14 @@
 @block typography from "../../styles/blocks/typography.block.css";
 
 :scope {
+  position: relative;
+  z-index: 0;
   block-name: WorkWithUs;
-  composes: 'container', 'offset.after-21';
+  composes: 'offset.after-21';
 }
 
 @media (min-width: 888px) {
-  .content {
-    width: var(--col-3);
+  :scope {
+    grid-column: 2/5;
   }
 }

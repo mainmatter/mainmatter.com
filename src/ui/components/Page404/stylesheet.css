@@ -1,9 +1,11 @@
 @block container from "../../styles/blocks/container.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
+@block layout from "../../styles/blocks/layout.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 
 :scope {
   block-name: Page404;
+  composes: 'layout';
 }
 
 .block {
@@ -23,4 +25,5 @@
 
 .elsewhere {
   margin-bottom: 3rem;
+  list-style: none;
 }

@@ -8,6 +8,7 @@
   position: relative;
   margin: 0 0 16rem;
   padding: 0;
+  grid-column: 1/-1;
 
   --shape-color: var(--color-accent);
 }
@@ -20,6 +21,11 @@
   width: 225rem;
   height: auto;
   fill: var(--shape-color);
+}
+
+.content {
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .img {

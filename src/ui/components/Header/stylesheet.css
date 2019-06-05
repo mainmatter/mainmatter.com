@@ -8,6 +8,7 @@
   block-name: Header;
   z-index: 10;
   position: relative;
+  grid-column: 2/-2;
 }
 
 .content {
@@ -149,6 +150,11 @@
   .nav-item:hover {
     color: var(--color-link-inverted);
   }
+
+  .content {
+    padding-left: var(--offset-horizontal);
+    padding-right: var(--offset-horizontal);
+  }
 }
 
 @media (min-width: 888px) {
@@ -162,7 +168,7 @@
     max-width: var(--max-width);
     margin-left: auto;
     margin-right: auto;
-    padding: 8rem var(--offset-horizontal) 0;
+    padding: 8rem 0 0;
   }
 
   .nav {

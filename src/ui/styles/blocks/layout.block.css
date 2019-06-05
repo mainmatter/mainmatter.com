@@ -1,0 +1,55 @@
+@block container from "./container.block.css";
+
+:scope {
+  position: relative;
+  z-index: 0;
+  block-name: Layout;
+  grid-template-columns:
+    minmax(var(--offset-horizontal), auto)
+    repeat(6, 1fr)
+    minmax(var(--offset-horizontal), auto);
+}
+
+.full,
+.main,
+.side,
+.content {
+  position: relative;
+  z-index: 0;
+}
+
+@media (max-width: 887px) {
+  .full,
+  .main,
+  .side {
+    padding-left: var(--offset-horizontal);
+    padding-right: var(--offset-horizontal);
+  }
+}
+
+@media (min-width: 888px) {
+  :scope {
+    display: grid;
+    grid-template-columns:
+      minmax(var(--offset-horizontal), auto)
+      repeat(6, var(--col-1))
+      minmax(var(--offset-horizontal), auto);
+    column-gap: var(--col-gap);
+  }
+
+  .full {
+    grid-column: 2/-2;
+  }
+
+  .main {
+    grid-column: 2/5;
+  }
+
+  .side {
+    grid-column: -4/-2;
+  }
+
+  .content {
+    grid-column: 3/-3;
+  }
+}

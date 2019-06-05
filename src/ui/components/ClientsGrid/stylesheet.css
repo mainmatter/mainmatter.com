@@ -1,9 +1,10 @@
-@block grid from "../../styles/blocks/grid.block.css";
 @block container from "../../styles/blocks/container.block.css";
+@block grid from "../../styles/blocks/grid.block.css";
+@block layout from "../../styles/blocks/layout.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 
 :scope {
   block-name: ClientsGrid;
-  extends: grid;
+  composes: 'layout.full', 'offset.after-21';
 }

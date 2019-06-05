@@ -9,6 +9,7 @@
   min-height: 109rem;
   margin-bottom: 21rem;
   padding-bottom: 90rem;
+  grid-column: 1/-1;
 
   --shape-color: var(--color-accent);
 }
@@ -179,7 +180,6 @@
   :scope[state|center='true'] .container {
     justify-content: flex-end;
     padding-top: 30rem;
-    margin-bottom: -10rem;
   }
 
   :scope[state|center='true'] .content {

@@ -1,8 +1,12 @@
+@block layout from "../../styles/blocks/layout.block.css";
+
 :scope {
   block-name: blog-post;
   --accent-color: #007df6;
   --shape-decoration-position-right: -92em;
   --shape-decoration-position-top: -20em;
+
+  composes: 'layout';
 }
 
 .logo {
