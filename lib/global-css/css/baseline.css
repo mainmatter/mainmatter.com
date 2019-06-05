@@ -1,13 +1,18 @@
 :root {
+  --base-scale: calc(6 / 8);
+
   /* Sizing */
-  --col-1: 19.5rem;
-  --col-2: 42rem;
-  --col-3: 64.5rem;
-  --col-4: 87rem;
-  --col-5: 109.5rem;
-  --offset-horizontal: 8rem;
-  --max-width: 132rem;
+  --col: calc(156 / 1440 * 100vw);
   --col-gap: 3rem;
+  --max-width: calc(var(--col) * 6 + var(--col-gap) * 5);
+
+  --col-1: var(--col);
+  --col-2: calc(var(--col) * 2 + var(--col-gap));
+  --col-3: calc(var(--col) * 3 + var(--col-gap) * 2);
+  --col-4: calc(var(--col) * 4 + var(--col-gap) * 3);
+  --col-5: calc(var(--col) * 5 + var(--col-gap) * 4);
+
+  --offset-horizontal: 8rem;
 
   /* Spacing */
 
@@ -46,33 +51,31 @@ body {
 }
 
 html {
-  --base-scale: calc(6 / 8);
-
   /* Reset the base fontsize for 1rem to 50% of the 16px multiplied with the current scale */
   font-size: calc(50% * var(--base-scale));
   line-height: 1.5;
 }
 
 @media (min-width: 1024px) {
-  html {
+  :root {
     --base-scale: calc(7 / 8);
   }
 }
 
 @media (min-width: 1440px) {
-  html {
+  :root {
     --base-scale: 1; /* == 8px */
   }
 }
 
 @media (min-width: 1800px) {
-  html {
+  :root {
     --base-scale: calc(10 / 8);
   }
 }
 
 @media (min-width: 2560px) {
-  html {
+  :root {
     --base-scale: calc(13 / 8);
   }
 }
