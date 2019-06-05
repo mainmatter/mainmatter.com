@@ -55,6 +55,11 @@
   display: block;
 }
 
+.logo-link:focus,
+.logo-link:hover {
+  background: none;
+}
+
 .logo-type {
   fill: var(--type);
 }

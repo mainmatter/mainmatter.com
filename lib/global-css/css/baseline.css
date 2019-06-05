@@ -7,6 +7,7 @@
   --col-5: 109.5rem;
   --offset-horizontal: 8rem;
   --max-width: 132rem;
+  --col-gap: 3rem;
 
   /* Spacing */
 
@@ -140,7 +141,7 @@ h6 a:active {
   background-image: linear-gradient(to right, currentColor 75%, transparent 75%);
   background-position: 0 1.1em;
   background-repeat: repeat-x;
-  background-size: 100vw 3px;
+  background-size: 200vw 2px;
   text-shadow: -2px -2px white, -2px 2px white, 2px -2px white, 2px 2px white;
 }
 
@@ -167,8 +168,8 @@ h2 {
   line-height: 1.25;
 }
 
-* + h2 {
-  margin-top: 8rem;
+*:not(h1) + h2 {
+  margin-top: 12rem;
 }
 
 h3 {
@@ -176,6 +177,10 @@ h3 {
   font-size: 5rem;
   line-height: 1.2;
   font-weight: 400;
+}
+
+*:not(h1):not(h2) + h3 {
+  margin-top: 8rem;
 }
 
 h4 {
@@ -196,6 +201,10 @@ h5 {
   font-weight: 700;
 }
 
+* + h5 {
+  margin-top: 3rem;
+}
+
 blockquote,
 figure,
 ul,
@@ -211,8 +220,13 @@ table {
   padding: 0;
 }
 
+p + p {
+  margin-top: 4rem;
+}
+
 li {
   margin-bottom: 0.5rem;
+  margin-left: 3rem;
 }
 
 nav ul,
@@ -220,4 +234,38 @@ nav li {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+* + ul,
+* + ol {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+figure {
+  display: block;
+  margin-bottom: 3rem;
+}
+
+* + figure {
+  margin-top: 3rem;
+}
+
+figcaption {
+  display: block;
+  font-size: 2rem;
+  color: var(--color-secondary);
+}
+
+* + figcaption {
+  margin-top: 1rem;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+address {
+  font-style: normal;
 }

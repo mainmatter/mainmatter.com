@@ -57,7 +57,7 @@
 .small {
   color: var(--color-muted);
   display: block;
-  margin: 0 0 2rem;
+  margin-bottom: 2rem;
   font-size: 1.75rem;
   line-height: 1.142857143;
   text-transform: uppercase;
