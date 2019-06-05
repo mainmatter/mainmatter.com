@@ -74,6 +74,8 @@
 :scope[state|center='true'] .content {
   --color-text: var(--color-text-inverted);
   --color-muted: var(--color-text-inverted);
+
+  color: var(--color-text);
 }
 
 @media (max-width: 887px) {
