@@ -12,7 +12,7 @@ export default class ArrowLink extends Component {
   get isSimplabs() {
     let href = this.args.href || '';
 
-    return this.isInternal || href.match(/^https?:\/\/simplabs.com/));
+    return this.isInternal || href.match(/^https?:\/\/simplabs.com/);
   }
 
   @tracked

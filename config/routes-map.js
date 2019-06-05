@@ -1,7 +1,6 @@
 'use strict';
 
 const path = require('path');
-
 const collectPosts = require('../lib/generate-blog/lib/collect-posts');
 
 module.exports = function() {
