@@ -11,7 +11,9 @@
           {{latest.title}}
         </a>
       </h2>
-      {{{latest.excerpt}}}
+      <div class="typography.lead offset.after-3">
+        {{{latest.excerpt}}}
+      </div>
       <a href="/blog/author/{{latest.author.twitter}}" data-internal>
         {{latest.author.name}}
       </a>
@@ -23,42 +25,33 @@
       </ArrowLink>
     </article>
   </ShapeBlog>
-  <div class="container offset.after-21">
-    <div class="main-block">
-      <div class="main-block.content">
-        <div class="main-block.content-item">
-          {{#each rest}}
-            <div class="main-block.content-row">
-              <div class="main-block.content-col">
-                <span class="typography.tag">
-                  #
-                  {{topic}}
-                </span>
-                <div class="blog-post.excerpt">
-                  <h3>
-                    <a href="{{path}}" data-internal>
-                      {{title}}
-                    </a>
-                  </h3>
-                  {{{excerpt}}}
-                </div>
-                <a href="/blog/author/{{author.twitter}}" data-internal>
-                  {{author.name}}
-                </a>
-                <p class="typography.small">
-                  {{date}}
-                </p>
-              </div>
-            </div>
-          {{/each}}
+  <section class="layout.main offset.after-21">
+    {{#each rest}}
+      <article class="offset.after-12">
+        <span class="typography.tag">
+          #
+          {{topic}}
+        </span>
+        <div class="blog-post.excerpt">
+          <h3>
+            <a href="{{path}}" data-internal>
+              {{title}}
+            </a>
+          </h3>
+          {{{excerpt}}}
         </div>
-      </div>
-      <div class="main-block.sidebar">
-        <CardTalks />
-        <CardUpcomingEvents />
-      </div>
-      <!--sidebar-->
-    </div>
-  </div>
+        <a href="/blog/author/{{author.twitter}}" data-internal>
+          {{author.name}}
+        </a>
+        <p class="typography.small">
+          {{date}}
+        </p>
+      </article>
+    {{/each}}
+  </section>
+  <aside class="layout.side offset.after-21">
+    <CardTalks />
+    <CardUpcomingEvents />
+  </aside>
   <Footer />
 </div>

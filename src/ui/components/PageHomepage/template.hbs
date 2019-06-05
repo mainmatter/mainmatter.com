@@ -1,11 +1,11 @@
 <div>
-  <Header @title="Solid Solutions for Ambitious Projects">
+  <Header @title="Solid Solutions for Ambitious Projects">
     <p class="typography.lead">
       We deliver ambitious digital products on the web and mobile for our clients to rely on. Our expert team manages projects from idea to release, covering strategy, design and engineering.
     </p>
   </Header>
   <ShapeFeatureTrainline @label="Featured Case Study" />
-  <section class="logos offset.after-21">
+  <section class="layout.full offset.after-21">
     <ul class="logos-list">
       <li class="logos-logo">
         <img src="/assets/images/logos/trainline.svg" alt="Trainline" />
@@ -29,62 +29,44 @@
       </a>
     </p>
   </section>
-  <div class="container offset.after-21">
-    <div class="main-block">
-      <div class="main-block.content">
-        <div class="main-block.content-heading">
-          <h2>
-            Services
-          </h2>
-          <p class="typography.lead">
-            We turn ideas into products and help tech teams move faster with confidence, enabling the long-term success of our clients' businesses.
-          </p>
-        </div>
-        <div class="main-block.content-row">
-          <div class="main-block.content-col">
-            <h3>
-              Full-Stack Engineering
-            </h3>
-            <p>
-              We develop successful products to address our clients' business needs, working closely with them in short iterations.
-            </p>
-            <ArrowLink @href="/services/full-stack-engineering">
-              Learn More
-            </ArrowLink>
-          </div>
-        </div>
-        <div class="main-block.content-row">
-          <div class="main-block.content-col">
-            <h3>
-              Team Augmentation
-            </h3>
-            <p>
-              Our technology experts join our clients' in-house engineering teams, increasing productivity and sharing their expertise.
-            </p>
-            <ArrowLink @href="/services/team-augmentation">
-              Learn More
-            </ArrowLink>
-          </div>
-        </div>
-        <div class="main-block.content-row">
-          <div class="main-block.content-col">
-            <h3>
-              Tutoring
-            </h3>
-            <p>
-              We tutor product teams, raising their experience and confidence levels and laying the foundation for long term success.
-            </p>
-            <ArrowLink @href="/services/tutoring">
-              Learn More
-            </ArrowLink>
-          </div>
-        </div>
-      </div>
-      <div class="main-block.sidebar">
-        <CardUpcomingEvents />
-      </div>
-    </div>
+  <div class="layout.main offset.after-21">
+    <h2>
+      Services
+    </h2>
+    <p class="typography.lead offset.after-16">
+      We turn ideas into products and help tech teams move faster with confidence, enabling the long-term success of our clients' businesses.
+    </p>
+    <h3>
+      Full-Stack Engineering
+    </h3>
+    <p>
+      We develop successful products to address our clients' business needs, working closely with them in short iterations.
+    </p>
+    <ArrowLink @href="/services/full-stack-engineering">
+      Learn More
+    </ArrowLink>
+    <h3>
+      Team Augmentation
+    </h3>
+    <p>
+      Our technology experts join our clients' in-house engineering teams, increasing productivity and sharing their expertise.
+    </p>
+    <ArrowLink @href="/services/team-augmentation">
+      Learn More
+    </ArrowLink>
+    <h3>
+      Tutoring
+    </h3>
+    <p>
+      We tutor product teams, raising their experience and confidence levels and laying the foundation for long term success.
+    </p>
+    <ArrowLink @href="/services/tutoring">
+      Learn More
+    </ArrowLink>
   </div>
+  <aside class="layout.side">
+    <CardUpcomingEvents />
+  </aside>
   <ShapeAcrossLeadingExperts />
   <WorkWithUs />
   <Footer />

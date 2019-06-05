@@ -2,19 +2,13 @@
 
 :scope {
   block-name: grid;
-
-  composes: 'screen.container';
-}
-
-.section {
   display: grid;
-  width: calc(100% + 4rem);
-  margin: 0 -2rem;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: 1fr;
+  column-gap: var(--col-gap);
 }
 
 .item {
-  margin: 0 2rem 6rem;
+  margin: 0 0 6rem;
 }
 
 .figure {
@@ -40,13 +34,13 @@
 }
 
 @media (min-width: 888px) {
-  .section {
+  :scope {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1020px) {
-  .section {
+  :scope {
     grid-template-columns: repeat(3, 1fr);
   }
 }

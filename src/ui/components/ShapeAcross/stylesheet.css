@@ -6,6 +6,7 @@
 
   position: relative;
   z-index: 0;
+  grid-column: 1/-1;
 
   --shape-color: var(--color-accent);
 }
@@ -84,7 +85,7 @@
 
 @media (min-width: 888px) {
   :scope {
-    margin-top: -22rem;
+    margin-top: -21rem;
     padding: 0 0 16rem;
     min-height: 73vw;
   }

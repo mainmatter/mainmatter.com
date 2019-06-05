@@ -7,39 +7,33 @@
       Together, Elixir and Phoenix form a modern and capable stack for building ambitious digital products of the future, based on an established foundation that has proven itself for decades.
     </p>
   </Header>
-  <div class="container offset.after-21">
-    <div class="main-block">
-      <div class="main-block.content">
-        <div class="main-block.content-heading">
-          <h2>
-            Early adoption, long-term commitment
-          </h2>
-          <p class="typography.lead">
-            simplabs was an early adopter of Elixir and Phoenix, offering trainings and leveraging the potential of the stack for our clients. We support the Elixir Munich meetup, have been actively involved with conferences like ElixirConf and ElixirConf EU and are honored to be a Founding Sponsor of the Erlang Ecosystem Foundation.
-          </p>
-        </div>
-      </div>
-      <div class="main-block.sidebar">
-        <Card
-          @label="Community"
-          @title="Elixir & Erlang Munich"
-          @src="/assets/images/card/elixir-munich.png"
-          @alt="Elixir & Erlang Munich"
-        >
-          <p>
-            We have founded and support the Elixir & Erlang Munich meetup.
-          </p>
-          <ArrowLink @href="https://www.meetup.com/Elixir-Munich/">
-            Learn more
-          </ArrowLink>
-        </Card>
-      </div>
-    </div>
+  <div class="layout.main offset.after-21">
+    <h2>
+      Early adoption, long-term commitment
+    </h2>
+    <p class="typography.lead">
+      simplabs was an early adopter of Elixir and Phoenix, offering trainings and leveraging the potential of the stack for our clients. We support the Elixir Munich meetup, have been actively involved with conferences like ElixirConf and ElixirConf EU and are honored to be a Founding Sponsor of the Erlang Ecosystem Foundation.
+    </p>
+  </div>
+  <div class="layout.side">
+    <Card
+      @label="Community"
+      @title="Elixir & Erlang Munich"
+      @src="/assets/images/card/elixir-munich.png"
+      @alt="Elixir & Erlang Munich"
+    >
+      <p>
+        We have founded and support the Elixir & Erlang Munich meetup.
+      </p>
+      <ArrowLink @href="https://www.meetup.com/Elixir-Munich/">
+        Learn more
+      </ArrowLink>
+    </Card>
   </div>
   <ShapeFeature @color="#231230" @backgroundImage="/assets/images/elixir/eef-sponsor.png" @width="1221" @height="915">
-    <p class="typography.small">
+    <h2 class="typography.small">
       News
-    </p>
+    </h2>
     <h3>
       simplabs is a Founding Sponsor of the Erlang Ecosystem Foundation.
     </h3>
@@ -47,25 +41,17 @@
       Learn more
     </ArrowLink>
   </ShapeFeature>
-  <div class="container offset.after-21">
-    <div class="main-block">
-      <div class="main-block.content">
-        <div class="main-block.content-item">
-          <div class="main-block.content-heading">
-            <h2>
-              We share our expertise
-            </h2>
-            <p class="typography.lead">
-              Every new project gives us the opportunity to learn and grow our expertise. We share what we learn with the community via talks at conferences, at meetups and on our blog.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="main-block.sidebar">
-        <Card @label="From our Blog" @src="/assets/images/card/elixir.svg" @alt="Elixir" />
-        <RecentPostsElixir />
-      </div>
-    </div>
+  <div class="layout.main offset.after-21">
+    <h2>
+      We share our expertise
+    </h2>
+    <p class="typography.lead">
+      Every new project gives us the opportunity to learn and grow our expertise. We share what we learn with the community via talks at conferences, at meetups and on our blog.
+    </p>
+  </div>
+  <div class="layout.side">
+    <Card @label="From our Blog" @src="/assets/images/card/elixir.svg" @alt="Elixir" />
+    <RecentPostsElixir />
   </div>
   <WorkWithUs />
   <Footer />

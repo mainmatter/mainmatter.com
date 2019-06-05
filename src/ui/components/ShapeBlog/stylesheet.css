@@ -7,6 +7,7 @@
   position: relative;
   width: 100%;
   padding: 0 0 36rem;
+  grid-column: 1/-1;
 
   --shape-color: var(--color-accent);
 }

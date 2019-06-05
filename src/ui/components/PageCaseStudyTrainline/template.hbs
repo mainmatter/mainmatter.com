@@ -1,21 +1,17 @@
 <div>
   <Header @title="A mobile train ticket counter" />
-  <div class="container">
-    <div class="main-block">
-      <div class="main-block.content">
-        <p class="typography.lead">
-          simplabs worked closely with Trainline’s in-house engineering team and built a mobile web app to accompany the existing desktop app. A dedicated site for mobile devices allowed Trainline to better serve customers on the go and leverage the full market potential.
-        </p>
-      </div>
-      <div class="main-block.sidebar">
-        <Card @label="Client" @src="/assets/images/card/trainline.svg" @alt="Trainline">
-          <p>
-            Trainline is Europe's leading independent rail and coach platform. They sell tickets to customers worldwide, enabling more than 125,000 journeys every single day in and across 36 countries, covering 150 different carriers.
-          </p>
-        </Card>
-        <CardEmberExpertise />
-      </div>
-    </div>
+  <div class="layout.main">
+    <p class="typography.lead">
+      simplabs worked closely with Trainline’s in-house engineering team and built a mobile web app to accompany the existing desktop app. A dedicated site for mobile devices allowed Trainline to better serve customers on the go and leverage the full market potential.
+    </p>
+  </div>
+  <div class="layout.side">
+    <Card @label="Client" @src="/assets/images/card/trainline.svg" @alt="Trainline">
+      <p>
+        Trainline is Europe's leading independent rail and coach platform. They sell tickets to customers worldwide, enabling more than 125,000 journeys every single day in and across 36 countries, covering 150 different carriers.
+      </p>
+    </Card>
+    <CardEmberExpertise />
   </div>
   <ShapeWork
     @background="#21314D"
@@ -33,44 +29,36 @@
       </p>
     </blockquote>
   </ShapeWork>
-  <div class="container offset.after-21">
-    <div class="main-block">
-      <div class="main-block.content">
-        <div class="main-block.content-item">
-          <h3>
-            Sustainable added value
-          </h3>
-          <p>
-            Working closely with Trainline's engineering and product teams, we were able to deliver the first version of the mobile web app on time and budget, continuing to extend and improve it afterwards. Our experts also leveled up the team's experience and helped them internalize modern and idiomatic practices for developing web apps via pairing sessions and code reviews.
-          </p>
-          <p>
-            In addition to supporting Trainline with engineering resources and expertise, we were able to help improve the engineering process by establishing and solidifying an iterative approach. This resulted in more efficient prioritization and a better sense of progress for both engineers and management.
-          </p>
-          <figure class="main-block.body-image">
-            <img
-              class="fluid-image.image"
-              src="/assets/images/work/trainline-comp-2.jpg"
-              alt="screenshot of the Trainline app"
-             />
+  <div class="layout.main offset.after-21">
+    <h3>
+      Sustainable added value
+    </h3>
+    <p>
+      Working closely with Trainline's engineering and product teams, we were able to deliver the first version of the mobile web app on time and budget, continuing to extend and improve it afterwards. Our experts also leveled up the team's experience and helped them internalize modern and idiomatic practices for developing web apps via pairing sessions and code reviews.
+    </p>
+    <p>
+      In addition to supporting Trainline with engineering resources and expertise, we were able to help improve the engineering process by establishing and solidifying an iterative approach. This resulted in more efficient prioritization and a better sense of progress for both engineers and management.
+    </p>
+    <figure class="figure">
+      <img
+        class="figure.content"
+        src="/assets/images/work/trainline-comp-2.jpg"
+        alt="screenshot of the Trainline app"
+       />
 
-            <figcaption class="main-block.body-image-caption">
-              trainline sells tickets for 150 different carriers across 36 countries via their mobile app.
-            </figcaption>
-          </figure>
-        </div>
-        <div class="main-block.content-item">
-          <h3>
-            A path into the future
-          </h3>
-          <p>
-            Besides working on the core application, simplabs spearheaded several engineering efforts focused around mobile performance, improved load times, server side rendering and localization. We were able to achieve substantial improvements, resulting in a much improved user experience and increased sales.
-          </p>
-        </div>
-      </div>
-      <div class="main-block.sidebar vertical-offset">
-        <CardPlaybook />
-      </div>
-    </div>
+      <figcaption>
+        trainline sells tickets for 150 different carriers across 36 countries via their mobile app.
+      </figcaption>
+    </figure>
+    <h3>
+      A path into the future
+    </h3>
+    <p>
+      Besides working on the core application, simplabs spearheaded several engineering efforts focused around mobile performance, improved load times, server side rendering and localization. We were able to achieve substantial improvements, resulting in a much improved user experience and increased sales.
+    </p>
+  </div>
+  <div class="layout.side vertical-offset offset.after-21">
+    <CardPlaybook />
   </div>
   <ShapeFeatureTimify />
   <WorkWithUs />

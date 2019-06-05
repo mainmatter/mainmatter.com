@@ -1,16 +1,15 @@
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
-@block container from "../../styles/blocks/container.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 
 :scope {
   block-name: Footer;
-  composes: 'container';
 
   display: flex;
   flex-flow: row wrap;
+  grid-column: 2/-2;
+  width: 100%;
   justify-content: space-between;
-
   font-size: 2rem;
   line-height: 1.5;
   color: var(--color-muted);
@@ -28,7 +27,7 @@
 }
 
 .legal {
-  width: 100%;
+  width: calc(100% + 2rem);
   margin-left: -2rem;
   padding-bottom: 3rem;
 }
@@ -48,6 +47,7 @@
 
 .nav {
   width: var(--col-4);
+  flex: 0 1 auto;
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;

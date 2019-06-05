@@ -13,8 +13,10 @@
 
 .caption {
   margin-top: 3rem;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .headline {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }

@@ -4,49 +4,41 @@
       We strongly believe in the value of sharing our expertise and experience with others. Here are a collection of talks that members of our team have given at various conferences all over the world in the past years.
     </p>
   </Header>
-  <div class="container offset.after-21">
-    <h2>
-      Latest Talks
-    </h2>
-    {{#each conferences}}
-      <div class="main-block">
-        <div class="main-block.content">
-          <h3>
-            {{meta.title}}
-          </h3>
-          {{#each talks}}
-            <div class="main-block.content-row">
-              <div class="main-block.content-col">
-                <div class="main-block.content-col-image">
-                  <img class="main-block.image-small" src="{{meta.image}}" alt="" />
-                </div>
-              </div>
-              <div class="main-block.content-col">
-                <h4>
-                  {{meta.title}}
-                </h4>
-                <p>
-                  {{description}}
-                </p>
-                <ArrowLink @href="{{meta.url}}">
-                  Watch Video
-                </ArrowLink>
-              </div>
-            </div>
-          {{/each}}
-        </div>
-        <div class="main-block.sidebar offset-vertical">
-          <Card @src="{{meta.image}}" @alt="{{meta.title}}">
+  <h2 class="layout.full">
+    Latest Talks
+  </h2>
+  {{#each conferences}}
+    <div class="layout.main offset.after-16">
+      <h3>
+        {{meta.title}}
+      </h3>
+      {{#each talks}}
+        <article class="media offset.after-12">
+          <img class="media.item size.w-10" src="{{meta.image}}" alt="" />
+          <div class="media.body">
+            <h4>
+              {{meta.title}}
+            </h4>
             <p>
               {{description}}
             </p>
             <ArrowLink @href="{{meta.url}}">
-              Learn more
+              Watch Video
             </ArrowLink>
-          </Card>
-        </div>
-      </div>
-    {{/each}}
-  </div>
+          </div>
+        </article>
+      {{/each}}
+    </div>
+    <div class="layout.side offset-vertical offset.after-16">
+      <Card @src="{{meta.image}}" @alt="{{meta.title}}">
+        <p>
+          {{description}}
+        </p>
+        <ArrowLink @href="{{meta.url}}">
+          Learn more
+        </ArrowLink>
+      </Card>
+    </div>
+  {{/each}}
   <Footer />
 </div>
