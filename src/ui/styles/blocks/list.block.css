@@ -1,16 +1,5 @@
 :scope {
   block-name: list;
   list-style-position: inside;
-  margin-bottom: 3rem;
-  font-size: 1.2em;
-}
-
-.item {
-  list-style-type: disc;
-  margin-bottom: 0.5rem;
-}
-
-.item-ordered {
-  list-style-type: decimal;
-  margin-bottom: 0.5rem;
+  padding-left: 3rem;
 }

@@ -1,0 +1,14 @@
+:scope {
+  block-name: Media;
+
+  display: flex;
+  align-items: flex-start;
+}
+
+.item {
+  margin-right: var(--col-gap);
+}
+
+.body {
+  flex: 1;
+}

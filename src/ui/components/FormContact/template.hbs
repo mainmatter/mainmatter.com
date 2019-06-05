@@ -1,18 +1,18 @@
 <form onsubmit={{action this.submit}} state:form={{this.formState}} disabled={{this.isSubmitting}}>
   {{#if this.isSuccess}}
-    <h3 class="typography.headline-3">
+    <h3 class="typography.h4">
       Thank you for getting in touch!
     </h3>
-    <p class="typography.body-text">
+    <p>
       One of our experts will get back to you shortly.
     </p>
-    <p class="typography.body-text">
+    <p>
       In the meantime, have a look at our
-      <a href="/playbook" class="typography.link" data-internal>
+      <a href="/playbook" data-internal>
         playbook
       </a>
       to learn more about how we build ambitious digital products or read about the
-      <a href="/work" class="typography.link" data-internal>
+      <a href="/work" data-internal>
         other companies we helped in the past.
       </a>
     </p>
@@ -63,7 +63,7 @@
     {{#if this.isErrored}}
       <div class="error">
         Unable to send message. Please try again or contact us at
-        <a class="typography.link" href="mailto:info@simplabs.com">
+        <a href="mailto:info@simplabs.com">
           info@simplabs.com
         </a>
         .

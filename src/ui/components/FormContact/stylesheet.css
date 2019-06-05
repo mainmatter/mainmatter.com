@@ -1,10 +1,10 @@
-@block screen from "../../styles/blocks/screen.block.css";
+@block container from "../../styles/blocks/container.block.css";
+@block offset from "../../styles/blocks/offset.block.css";
 @block button from "../../styles/blocks/button.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 
 :scope {
   block-name: FormContact;
-  extends: screen;
 }
 
 :scope[state|form='success'] {
@@ -40,12 +40,16 @@
 
 .fieldset {
   position: relative;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .legend {
   position: absolute;
   height: 0;
   overflow: hidden;
+  display: block;
 }
 
 .item,

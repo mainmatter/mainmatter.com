@@ -1,16 +1,16 @@
-@block screen from "../../styles/blocks/screen.block.css";
+@block container from "../../styles/blocks/container.block.css";
 @block main-block from "../../styles/blocks/main-block.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
+@block offset from "../../styles/blocks/offset.block.css";
 @block button from "../../styles/blocks/button.block.css";
 
 :scope {
   block-name: PageHomepage;
-  extends: screen;
 }
 
 .logos {
-  composes: 'screen.container';
+  composes: 'container';
 }
 
 .logos-list {
@@ -30,6 +30,7 @@
   margin: 0 calc(var(--offset-horizontal) / 2);
   filter: grayscale(100%) contrast(0%);
   transition: filter 0.1s ease-out;
+  list-style: none;
 }
 
 @media (max-width: 1024px) {

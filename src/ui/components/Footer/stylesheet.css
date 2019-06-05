@@ -1,15 +1,19 @@
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
-@block screen from "../../styles/blocks/screen.block.css";
+@block container from "../../styles/blocks/container.block.css";
+@block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 
 :scope {
   block-name: Footer;
-  composes: 'screen.container-base';
+  composes: 'container';
 
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+
   font-size: 2rem;
+  line-height: 1.5;
+  color: var(--color-muted);
 }
 
 .branding {
@@ -29,10 +33,17 @@
   padding-bottom: 3rem;
 }
 
-.legal-link {
+.legal-link:link,
+.legal-link:visited {
   color: #979797;
   text-decoration: none;
   margin-left: 2rem;
+}
+
+.legal-link:focus,
+.legal-link:hover,
+.legal-link:active {
+  color: var(--color-link);
 }
 
 .nav {
@@ -44,10 +55,10 @@
 
 .title {
   grid-row: 1/2;
-  font-size: 2rem;
+  font-size: inherit;
   line-height: 1.5;
   font-weight: 700;
-  color: #000;
+  color: inherit;
   margin: 1.5rem 0 2rem;
 }
 
@@ -55,6 +66,28 @@
   grid-row: 2/-1;
   flex: 1 0;
   margin: 0 0 6.5rem;
+}
+
+.item {
+  padding: 0.5rem 0;
+  white-space: nowrap;
+}
+
+.link,
+.link:link,
+.link:visited {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.5rem 0;
+}
+
+.link:hover {
+  color: var(--color-accent);
+}
+
+.note {
+  padding: 1rem 0;
 }
 
 @media (max-width: 887px) {
@@ -73,24 +106,4 @@
   .block:nth-child(even) {
     width: 40%;
   }
-}
-
-.item {
-  padding: 0.5rem 0;
-  white-space: nowrap;
-}
-
-.link {
-  display: block;
-  text-decoration: none;
-  color: #000;
-  padding: 0.5rem 0;
-}
-
-.link:hover {
-  color: var(--color-accent);
-}
-
-.note {
-  padding: 1rem 0;
 }

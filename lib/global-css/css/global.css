@@ -1,4 +1,4 @@
-@import 'reset.css';
-@import 'baseline.css';
-@import 'fonts.css';
-@import 'menu.css';
+@import './normalize.css';
+@import './baseline.css';
+@import './fonts.css';
+@import './menu.css';

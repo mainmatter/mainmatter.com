@@ -1,4 +1,5 @@
-@block screen from "../../styles/blocks/screen.block.css";
+@block containerBlock from "../../styles/blocks/container.block.css";
+@block offset from "../../styles/blocks/offset.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
@@ -40,7 +41,7 @@
 }
 
 .tagline-container {
-  composes: 'screen.container-base';
+  composes: 'containerBlock';
 
   position: relative;
 }
@@ -153,7 +154,7 @@
   }
 
   .container {
-    composes: 'screen.container-base';
+    composes: 'containerBlock';
 
     position: relative;
     z-index: 1;

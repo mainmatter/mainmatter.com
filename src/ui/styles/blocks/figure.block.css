@@ -1,0 +1,14 @@
+:scope {
+  block-name: Figure;
+}
+
+.content {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.content-centered {
+  display: block;
+  margin: 0 auto;
+}

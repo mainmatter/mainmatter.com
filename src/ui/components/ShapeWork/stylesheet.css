@@ -1,4 +1,5 @@
-@block screen from "../../styles/blocks/screen.block.css";
+@block containerBlock from "../../styles/blocks/container.block.css";
+@block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 
 :scope {
@@ -26,7 +27,7 @@
 }
 
 .container {
-  composes: 'screen.container-base';
+  composes: 'containerBlock';
 }
 
 .header {
@@ -73,6 +74,8 @@
 :scope[state|center='true'] .content {
   --color-text: var(--color-text-inverted);
   --color-muted: var(--color-text-inverted);
+
+  color: var(--color-text);
 }
 
 @media (max-width: 887px) {
@@ -152,7 +155,7 @@
   }
 
   .logo {
-    composes: 'screen.container-base';
+    composes: 'containerBlock';
     padding-bottom: 2rem;
   }
 

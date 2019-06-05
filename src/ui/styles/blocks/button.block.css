@@ -23,6 +23,7 @@
   background-position: 50% 10%;
   color: var(--color-text-inverted);
   outline: 0;
+  text-decoration: none;
 }
 
 .button:disabled {
