@@ -7,6 +7,24 @@ const COOKIE_BANNER_DELAY: number = 100;
 interface INavigoHooks {
   before?: (done: () => void) => void;
   after?: () => void;
+  already?: () => void;
+}
+
+declare global {
+  // tslint:disable-next-line:interface-name
+  interface Window {
+    Sentry: any;
+    ga: any;
+  }
+}
+
+interface IRoutesMap {
+  [route: string]: {
+    component: string;
+    title: string;
+    bundle: any;
+    parentBundle: any;
+  };
 }
 
 export default class Simplabs extends Component {
@@ -39,7 +57,7 @@ export default class Simplabs extends Component {
       isSSR: false,
       origin: window.location.origin,
       route: window.location.pathname,
-      routesMap: this._readRoutesMap()
+      routesMap: this._readRoutesMap(),
     };
 
     this._setupRouting();
@@ -67,8 +85,8 @@ export default class Simplabs extends Component {
   private _setupRouting() {
     this.router = new Navigo(this.appState.origin);
 
-    Object.keys(this.appState.routesMap).forEach((path) => {
-      let { component, title = '', bundle, parentBundle } = this.appState.routesMap[path];
+    Object.keys(this.appState.routesMap).forEach(path => {
+      let { component, title = '', bundle, parentBundle } = (this.appState.routesMap as IRoutesMap)[path];
       let options: INavigoHooks = {
         after: () => {
           this._setPageTitle(title);
@@ -78,19 +96,20 @@ export default class Simplabs extends Component {
         },
         already: () => {
           window.scrollTo(0, 0);
-        }
+        },
       };
       if (bundle && !this.appState.isSSR) {
-        options.before = async (done, params) => {
+        options.before = async done => {
           try {
             await this._loadBundle(bundle, parentBundle);
             this._registerBundle(bundle);
             done();
-          } catch(e) {
+          } catch (e) {
             if (window.Sentry) {
               window.Sentry.captureException(e);
             }
-            window.location = path;
+
+            window.location.href = path;
           }
         };
       }
@@ -111,7 +130,7 @@ export default class Simplabs extends Component {
       );
     });
 
-    this.router.notFound(() => this.activeComponent = 'Page404');
+    this.router.notFound(() => (this.activeComponent = 'Page404'));
 
     this.router.resolve(this.appState.route);
   }
@@ -211,7 +230,7 @@ export default class Simplabs extends Component {
   }
 
   private _readRoutesMap() {
-    let script = document.querySelector('[data-shoebox-routes]');
+    let script: HTMLElement | null = document.querySelector('[data-shoebox-routes]');
     if (script) {
       return JSON.parse(script.innerText);
     } else {
