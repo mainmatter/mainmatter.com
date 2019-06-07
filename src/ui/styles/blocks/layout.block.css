@@ -5,10 +5,7 @@
   z-index: 0;
   block-name: Layout;
   display: grid;
-  grid-template-columns:
-    minmax(var(--offset-horizontal), auto)
-    repeat(2, minmax(var(--col), var(--col-max)))
-    minmax(var(--offset-horizontal), auto);
+  grid-template-columns: var(--grid-template-columns);
   column-gap: var(--col-gap);
 }
 
@@ -28,13 +25,6 @@
 }
 
 @media (min-width: 888px) {
-  :scope {
-    grid-template-columns:
-      minmax(var(--offset-horizontal), auto)
-      repeat(6, minmax(var(--col), var(--col-max)))
-      minmax(var(--offset-horizontal), auto);
-  }
-
   .main {
     grid-column: 2/5;
   }

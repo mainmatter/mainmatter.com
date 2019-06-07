@@ -15,6 +15,9 @@
   --col-max: 19.5rem;
   --offset-horizontal: 8rem;
 
+  --grid-template-columns: minmax(var(--offset-horizontal), auto) repeat(2, minmax(var(--col), var(--col-max)))
+    minmax(var(--offset-horizontal), auto);
+
   /* Spacing */
 
   --spacing-medium: 8rem;
@@ -45,6 +48,8 @@
   :root {
     --col: calc(156 / 1440 * 100vw);
     --max-width: calc(var(--col) * 6 + var(--col-gap) * 5);
+    --grid-template-columns: minmax(var(--offset-horizontal), auto) repeat(6, minmax(var(--col), var(--col-max)))
+      minmax(var(--offset-horizontal), auto);
   }
 }
 
