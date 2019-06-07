@@ -1,7 +1,7 @@
-@block offset from "../../styles/blocks/offset.block.css";
-@block typography from "../../styles/blocks/typography.block.css";
 @block button from "../../styles/blocks/button.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
+@block offset from "../../styles/blocks/offset.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
 
 :scope {
   block-name: Header;
@@ -108,10 +108,17 @@
 }
 
 @media (max-width: 887px) {
+  :scope,
+  .navbar,
+  .wrapper {
+    display: grid;
+    grid-column: 1/-1;
+    grid-template-columns: var(--grid-template-columns);
+    column-gap: var(--col-gap);
+  }
+
   .brand {
-    max-width: var(--max-width);
-    margin-left: auto;
-    margin-right: auto;
+    grid-column: 2/-2;
     padding: 3rem var(--offset-horizontal);
   }
 
@@ -149,8 +156,7 @@
   }
 
   .content {
-    padding-left: var(--offset-horizontal);
-    padding-right: var(--offset-horizontal);
+    grid-column: 2/-2;
   }
 }
 
@@ -162,7 +168,6 @@
 
   .wrapper {
     display: flex;
-    max-width: var(--max-width);
     margin-left: auto;
     margin-right: auto;
     padding: 8rem 0 0;
