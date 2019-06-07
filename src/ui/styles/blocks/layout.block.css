@@ -20,7 +20,9 @@
 .full,
 .main,
 .side,
-.content {
+.content,
+.split-leading,
+.split-trailing {
   grid-column: 2/-2;
 }
 
@@ -35,5 +37,13 @@
 
   .content {
     grid-column: 3/-3;
+  }
+
+  .split-leading {
+    grid-column: 2/5;
+  }
+
+  .split-trailing {
+    grid-column: -5/-2;
   }
 }

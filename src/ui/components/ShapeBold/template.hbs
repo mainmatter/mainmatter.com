@@ -1,0 +1,47 @@
+<div style={{this.shapeStyle}}>
+  <div class="shape-a">
+    <svg
+      class="shape-a-svg"
+      width="1800"
+      height="900"
+      viewBox="0 0 1800 900"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <defs>
+        <path
+          id={{this.shapeId}}
+          d="m840.577137 0 862.961153 498.230855-231.96152 401.769145h-512.153907l-862.9611537-498.230855 231.9615247-401.769145z"
+        ></path>
+      </defs>
+      <use fill-rule="evenodd" xlink:href="#{{this.shapeId}}"></use>
+    </svg>
+    {{#if @src}}
+      <figure class="shape-a-figure">
+        <img class="shape-a-img" src="{{@src}}" alt="" />
+      </figure>
+    {{/if}}
+  </div>
+  <div class="shape-b">
+    <svg
+      class="shape-b-svg"
+      width="1800"
+      height="900"
+      viewBox="0 0 1800 900"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <use fill-rule="evenodd" xlink:href="#{{this.shapeId}}"></use>
+    </svg>
+    {{#if @logo}}
+    <div class="shape-b-content">
+      <img class="shape-b-logo" src="{{@logo}}" alt="{{@logoAlt}}" />
+      {{#if @logoLabel}}
+        <p>
+          {{@logoLabel}}
+        </p>
+      {{/if}}
+    </div>
+    {{/if}}
+  </div>
+</div>
