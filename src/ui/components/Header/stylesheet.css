@@ -104,7 +104,7 @@
 }
 
 .work-with-us {
-  composes: 'button.button';
+  composes: 'button';
 }
 
 @media (max-width: 887px) {
