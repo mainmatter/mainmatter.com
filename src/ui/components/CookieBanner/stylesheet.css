@@ -4,14 +4,15 @@
   block-name: CookieBanner;
 
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 1rem;
+  right: 1rem;
   z-index: 1031;
   color: #979797;
   font-size: 2rem;
   font-family: 'Nunito Sans', sans-serif;
   font-display: swap;
   overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.1), 0 0 1px 0 rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 887px) {
@@ -22,7 +23,7 @@
 
 .message {
   text-align: right;
-  padding: 3rem;
+  padding: 1.5rem 2rem;
   background-color: white;
 }
 
@@ -44,5 +45,5 @@
   font: inherit;
   cursor: pointer;
   outline: none;
-  color: inherit;
+  color: var(--color-link);
 }
