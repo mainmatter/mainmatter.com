@@ -1,0 +1,8 @@
+@block form from "../../styles/blocks/form.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
+@block button from "../../styles/blocks/button.block.css";
+
+:scope {
+  block-name: FormSignup;
+  extends: form;
+}

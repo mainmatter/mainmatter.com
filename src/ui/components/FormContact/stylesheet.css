@@ -1,10 +1,11 @@
-@block container from "../../styles/blocks/container.block.css";
-@block offset from "../../styles/blocks/offset.block.css";
 @block button from "../../styles/blocks/button.block.css";
+@block form from "../../styles/blocks/form.block.css";
+@block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 
 :scope {
   block-name: FormContact;
+  extends: form;
 }
 
 :scope[state|form='success'] {
@@ -36,50 +37,6 @@
 
 :scope[state|form='error'] .error {
   display: block;
-}
-
-.fieldset {
-  position: relative;
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-.legend {
-  position: absolute;
-  height: 0;
-  overflow: hidden;
-  display: block;
-}
-
-.item,
-.group {
-  margin-bottom: 3rem;
-}
-
-.label,
-.control-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 2.625rem;
-  line-height: 1.523809524;
-  color: #5b5b5b;
-}
-
-.control {
-  width: 100%;
-  padding: calc(1.5rem - 2px) calc(1.5rem - 2px);
-  border: 2px solid #ccc;
-  border-radius: 0;
-  box-sizing: border-box;
-  font-size: 2rem;
-  line-height: 3rem;
-  -webkit-appearance: none;
-}
-
-.control:focus {
-  outline: 0;
-  border-color: var(--color-accent);
 }
 
 .label[state|error] {
