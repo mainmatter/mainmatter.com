@@ -279,3 +279,7 @@ img {
 address {
   font-style: normal;
 }
+
+* + form {
+  margin-top: 3rem;
+}
