@@ -87,6 +87,10 @@
   overflow: hidden;
 }
 
+.video {
+  transform: rotate(-30deg);
+}
+
 :scope[state|hasVideo] .bottom-content {
   background-position: center;
   background-size: cover;
@@ -94,10 +98,14 @@
 
 @media (max-width: 887px) {
   :scope {
+    margin-top: 30rem;
+    margin-bottom: 30rem;
   }
 
   :scope[state|hasImage] {
     padding-top: 0;
+    margin-top: 20rem;
+    margin-bottom: 10rem;
   }
 
   :scope[state|hasVideo] .video {
@@ -105,17 +113,22 @@
   }
 
   .top {
+    display: none;
   }
 
   .bottom {
-    display: none;
-    left: 50%;
-    transform-origin: top center;
-    transform: translate(0%, 0rem);
+    top: 0;
+    transform: translate(-50%, -10rem);
+  }
+
+  :scope[state|hasImage] .top {
+    display: block;
   }
 
   :scope[state|hasImage] .bottom {
-    transform: translate(-50%);
+    display: block;
+    top: 0;
+    transform: translate(-50%, 10rem);
   }
 
   .bottom-content {
@@ -123,7 +136,7 @@
   }
 
   .img-wrapper {
-    height: 63.5rem;
+    height: 80rem;
     transform: translate(0);
   }
 
@@ -141,7 +154,7 @@
     margin-top: 8rem;
     background: #FFF;
     padding: 5rem;
-    box-shadow: 5rem 5rem 0 0 var(--shape-color);
+    box-shadow: 2rem 2rem 0 0 var(--shape-color);
   }
 }
 
@@ -189,7 +202,6 @@
   .video {
     width: 100%;
     height: auto;
-    transform: rotate(-30deg);
   }
 
   .tagline {
