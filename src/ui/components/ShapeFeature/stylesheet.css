@@ -9,14 +9,17 @@
   margin: 0 0 16rem;
   padding: 0;
   grid-column: 1/-1;
-
   --shape-color: var(--color-accent);
+  transform: rotate(30deg);
+}
+
+.container {
+  transform: rotate(-30deg);
 }
 
 .bottom,
 .top {
   position: absolute;
-  left: 50%;
   display: block;
   width: 225rem;
   height: auto;
@@ -48,13 +51,14 @@
 
 .tagline-container {
   composes: 'containerBlock';
-
   position: relative;
+  
 }
 
 .tagline {
   position: absolute;
   z-index: 2;
+  transform: rotate(-30deg);
 }
 
 .tagline-text {
@@ -90,7 +94,6 @@
 
 @media (max-width: 887px) {
   :scope {
-    padding-top: 70rem;
   }
 
   :scope[state|hasImage] {
@@ -102,17 +105,17 @@
   }
 
   .top {
-    display: none;
   }
 
   .bottom {
+    display: none;
     left: 50%;
     transform-origin: top center;
-    transform: translate(-50%, -70rem) scale(0.6);
+    transform: translate(0%, 0rem);
   }
 
   :scope[state|hasImage] .bottom {
-    transform: translate(-50%) scale(0.6);
+    transform: translate(-50%);
   }
 
   .bottom-content {
@@ -120,10 +123,8 @@
   }
 
   .img-wrapper {
-    width: 130vw;
     height: 63.5rem;
-    padding-top: 4rem;
-    transform: translate(-15vw);
+    transform: translate(0);
   }
 
   .img {
@@ -138,22 +139,27 @@
 
   .content {
     margin-top: 8rem;
+    background: #FFF;
+    padding: 5rem;
+    box-shadow: 5rem 5rem 0 0 var(--shape-color);
   }
 }
 
 @media (min-width: 888px) {
   :scope {
     min-height: 58rem;
-    margin: 0;
-    padding: 28rem 0 14rem;
+    margin: 30rem 0;
+    padding: 0rem 0 0rem;
   }
 
   .top {
-    transform: translate(20%, -60rem);
+    transform: translate(0, -75rem);
+    bottom: 0;
+    right: -90%;
   }
 
   .bottom {
-    top: -26rem;
+    top: 20rem;
     left: 50%;
     transform: translate(-90%);
     width: 225rem;
@@ -161,7 +167,6 @@
 
   .container {
     composes: 'containerBlock';
-
     position: relative;
     z-index: 1;
     display: flex;
@@ -173,8 +178,8 @@
   }
 
   .img-wrapper {
-    margin-top: -28rem;
-    max-width: var(--col-3);
+    max-width: var(--col-4);
+    margin-top: -10rem;
   }
 
   .content {
@@ -184,10 +189,11 @@
   .video {
     width: 100%;
     height: auto;
+    transform: rotate(-30deg);
   }
 
   .tagline {
-    top: 36rem;
+    bottom: 0;
     z-index: 2;
     width: var(--col-2);
   }
