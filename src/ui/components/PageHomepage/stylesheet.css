@@ -4,9 +4,14 @@
 @block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 
+
 :scope {
   block-name: PageHomepage;
   composes: 'layout';
+}
+
+.padding-right-1 {
+  padding-right: var(--col-1);
 }
 
 .logos-list {
