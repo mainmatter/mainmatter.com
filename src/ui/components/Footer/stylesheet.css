@@ -13,6 +13,7 @@
   font-size: 2rem;
   line-height: 1.5;
   color: var(--color-muted);
+  z-index: 100;
 }
 
 .branding {

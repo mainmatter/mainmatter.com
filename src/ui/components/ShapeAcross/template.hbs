@@ -1,19 +1,29 @@
 <div style={{this.shapeStyle}}>
-  <div class="img" style="background-image:url({{@src}});{{this.backgroundStyle}}"></div>
+  <div class="across">
+    <div class="img" style="background-image:url({{@src}});{{this.backgroundStyle}}"></div>
+  </div>
   <svg class="bottom" width="1440" height="1520" viewBox="0 0 1440 1520" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <path
         id={{this.shapeId}}
         d="m840.577137 0 862.961153 498.230855-231.96152 401.769145h-512.153907l-862.9611537-498.230855 231.9615247-401.769145z"
+        transform="rotate(-30 719.885 360.48)"
       ></path>
     </defs>
-    <path
-      fill="#fff"
-      d="M1440 1514.267V1520H0V839.27L389.245 1064h270.87L1440 1514.267zM1440 839.27L.2 8l-.2.346V0h1440z"
-    ></path>
   </svg>
   <svg
     class="top"
+    width="1800"
+    height="900"
+    viewBox="0 0 1800 900"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <use fill-rule="evenodd" xlink:href="#{{this.shapeId}}"></use>
+  </svg>
+
+  <svg
+    class="clip"
     width="1800"
     height="900"
     viewBox="0 0 1800 900"
