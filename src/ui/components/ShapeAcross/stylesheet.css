@@ -42,11 +42,11 @@
   height: 100rem;
   overflow: hidden;
   position: absolute;
-  left: -20%;
+  left: -25%;
 }
 
 .img {
-  width: 150vw;
+  width: 180vw;
   height: 200rem;
   display: block;
   background: 50% 50% no-repeat var(--shape-color);
@@ -69,22 +69,43 @@
   --color-text: var(--color-text-inverted);
   --color-muted: var(--color-muted-inverted);
   --color-link: var(--color-link-inverted);
-
   color: var(--color-text);
   width: var(--col-2);
 
 }
 
 @media (max-width: 887px) {
-  :scope {}
+  :scope {
+  }
 
   .img {}
 
-  .top {}
+  .top {
+    display: none;
+  }
+
+  .across {
+    left: -40%;
+    height: 80rem;
+  }
+
+  .img {
+    height: 100rem;
+  }
+
+  .clip {
+    right: -250%;
+    top: 100%;
+  }
 
   .bottom {}
 
-  .content {}
+  .content {
+    width: auto;
+    background: var(--shape-color);
+    padding: 5rem;
+    box-shadow: 2rem 2rem 0 0 #FFF;
+  }
 }
 
 @media (min-width: 888px) {
