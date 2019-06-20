@@ -10,8 +10,10 @@
   composes: 'layout';
 }
 
-.padding-right-1 {
-  padding-right: var(--col-1);
+.line-background {
+  display: inline;
+  background: #FFF;
+  box-shadow: 0 0 0 5px #fff;
 }
 
 .logos-list {
