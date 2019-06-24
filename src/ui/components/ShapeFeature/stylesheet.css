@@ -52,7 +52,7 @@
 .tagline-container {
   composes: 'containerBlock';
   position: relative;
-  
+
 }
 
 .tagline {

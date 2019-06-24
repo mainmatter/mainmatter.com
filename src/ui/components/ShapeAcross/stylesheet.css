@@ -11,30 +11,31 @@
   --shape-color: var(--color-accent);
   transform: rotate(30deg);
   margin-top: 30rem;
-  margin-bottom: 60rem;
+  margin-bottom: 80rem;
+}
+
+.bottom,
+.top {
+  position: absolute;
+  height: auto;
+  width: 225rem;
 }
 
 .top {
-  position: absolute;
-  right: -55%;
-  bottom: -50%;
-  width: 225rem;
-  height: auto;
   fill: var(--shape-color);
+  bottom: -50%;
 }
 
 .bottom {
-  position: absolute;
   width: 120vw;
-  height: auto;
   transform: rotate(-30deg);
 }
 
 .clip {
   position: absolute;
   fill: #FFF;
-  right: -50%;
-  top: 180%;
+  left: 60%;
+  top: 200%;
 }
 
 .across {
@@ -75,10 +76,7 @@
 }
 
 @media (max-width: 887px) {
-  :scope {
-  }
-
-  .img {}
+  :scope {}
 
   .top {
     display: none;
@@ -94,11 +92,8 @@
   }
 
   .clip {
-    right: -250%;
-    top: 100%;
+   
   }
-
-  .bottom {}
 
   .content {
     width: auto;
@@ -110,13 +105,19 @@
 }
 
 @media (min-width: 888px) {
-  :scope {}
+  :scope {
+  }
 
-  .img {}
+  .top {
+    left: calc(10% + 20vw);
+  }
+}
 
-  .top {}
+@media (min-width: 1280px) {
+  :scope {
+  }
 
-  .container {}
-
-  .content {}
+  .top {
+    left: calc(15% + 20vw);
+  }
 }
