@@ -35,7 +35,7 @@
   position: absolute;
   fill: #FFF;
   left: 60%;
-  top: 200%;
+  top: 240%;
 }
 
 .across {
@@ -64,6 +64,7 @@
   display: flex;
   justify-content: flex-end;
   transform: rotate(-30deg);
+  height: 38rem;
 }
 
 .content {
