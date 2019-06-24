@@ -4,9 +4,8 @@
 
 :scope {
   block-name: ShapeFeature;
-
   position: relative;
-  margin: 0 0 16rem;
+  margin: 20rem 0;
   padding: 0;
   grid-column: 1/-1;
   --shape-color: var(--color-accent);
@@ -38,36 +37,6 @@
   margin: auto;
 }
 
-.tagline-logo {
-  overflow: hidden;
-}
-
-.tagline-logo-image {
-  display: block;
-  height: 11rem;
-  width: auto;
-  filter: saturate(0%) brightness(100);
-}
-
-.tagline-container {
-  composes: 'containerBlock';
-  position: relative;
-
-}
-
-.tagline {
-  position: absolute;
-  z-index: 2;
-  transform: rotate(-30deg);
-}
-
-.tagline-text {
-  font-size: 2rem;
-  line-height: 1.5;
-  text-transform: uppercase;
-  color: var(--color-text-inverted);
-}
-
 .bottom-svg {
   display: block;
   position: relative;
@@ -97,10 +66,6 @@
 }
 
 @media (max-width: 887px) {
-  :scope {
-    margin-top: 30rem;
-    margin-bottom: 30rem;
-  }
 
   :scope[state|hasImage] {
     padding-top: 0;
@@ -151,7 +116,7 @@
   }
 
   .content {
-    margin-top: 8rem;
+    margin-top: 4rem;
     background: #FFF;
     padding: 5rem;
     box-shadow: 2rem 2rem 0 0 var(--shape-color);
@@ -159,16 +124,10 @@
 }
 
 @media (min-width: 888px) {
-  :scope {
-    min-height: 58rem;
-    margin: 30rem 0;
-    padding: 0rem 0 0rem;
-  }
 
   .top {
-    transform: translate(0, -85rem);
-    bottom: 0;
-    right: -80%;
+    top: calc(-200% + 20vw);
+    left: calc(40% + 20vw);
   }
 
   .bottom {
@@ -208,5 +167,11 @@
     bottom: 0;
     z-index: 2;
     width: var(--col-2);
+  }
+}
+
+@media (min-width: 1280px) {
+  .top {
+    left: calc(30% + 20vw);
   }
 }

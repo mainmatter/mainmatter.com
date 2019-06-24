@@ -91,11 +91,6 @@
   .img {
     height: 100rem;
   }
-
-  .clip {
-   
-  }
-
   .content {
     width: auto;
     background: var(--shape-color);
@@ -106,18 +101,12 @@
 }
 
 @media (min-width: 888px) {
-  :scope {
-  }
-
   .top {
     left: calc(10% + 20vw);
   }
 }
 
 @media (min-width: 1280px) {
-  :scope {
-  }
-
   .top {
     left: calc(15% + 20vw);
   }
