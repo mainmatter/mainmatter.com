@@ -5,7 +5,7 @@
 :scope {
   block-name: ShapeFeature;
   position: relative;
-  margin: 20rem 0;
+  margin: 20rem 0 0;
   padding: 0;
   grid-column: 1/-1;
   --shape-color: var(--color-accent);
