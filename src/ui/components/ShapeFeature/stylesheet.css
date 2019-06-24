@@ -177,3 +177,9 @@
     left: calc(30% + 20vw);
   }
 }
+
+@media (min-width: 1690px) {
+  :scope {
+    margin-top: 30rem;
+  }
+}
