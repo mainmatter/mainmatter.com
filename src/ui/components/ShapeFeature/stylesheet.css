@@ -67,7 +67,7 @@
 
 @media (max-width: 887px) {
   :scope {
-    margin: 0;
+    margin: 10rem 0;
   }
   :scope[state|hasImage] {
     padding-top: 0;
@@ -128,8 +128,8 @@
     min-height: 80rem;
   }
   .top {
-    top: calc(-200% + 20vw);
-    left: calc(40% + 20vw);
+    top: calc(-180% + 20vw);
+    left: calc(20% + 20vw);
   }
 
   .bottom {
@@ -180,6 +180,6 @@
 
 @media (min-width: 1690px) {
   :scope {
-    margin-top: 30rem;
+    margin-top: 40rem;
   }
 }
