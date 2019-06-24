@@ -10,12 +10,6 @@
   composes: 'layout';
 }
 
-.line-background {
-  display: inline;
-  background: #FFF;
-  box-shadow: 0 0 0 5px #fff;
-}
-
 .logos-list {
   display: flex;
   width: calc(100% + var(--offset-horizontal));
