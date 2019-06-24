@@ -11,7 +11,7 @@
   --shape-color: var(--color-accent);
   transform: rotate(30deg);
   margin-top: 30rem;
-  margin-bottom: 90rem;
+  margin-bottom: 30rem;
 }
 
 .bottom,
@@ -85,12 +85,13 @@
 
   .across {
     left: -40%;
-    height: 80rem;
+    height: 60rem;
   }
 
   .img {
     height: 100rem;
   }
+
   .content {
     width: auto;
     background: var(--shape-color);
@@ -98,9 +99,18 @@
     box-shadow: 2rem 2rem 0 0 #FFF;
     transform: translate(0, 20rem);
   }
+
+  .clip {
+    left: 20%;
+    top: 50%;
+  }
 }
 
 @media (min-width: 888px) {
+  :scope {
+    margin-bottom: 90rem;
+  }
+
   .top {
     left: calc(10% + 20vw);
   }

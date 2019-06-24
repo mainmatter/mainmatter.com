@@ -66,11 +66,11 @@
 }
 
 @media (max-width: 887px) {
-
+  :scope {
+    margin: 0;
+  }
   :scope[state|hasImage] {
     padding-top: 0;
-    margin-top: 20rem;
-    margin-bottom: 10rem;
   }
 
   :scope[state|hasVideo] .video {
