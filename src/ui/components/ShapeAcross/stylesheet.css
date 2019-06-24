@@ -112,13 +112,13 @@
   }
 
   .top {
-    left: calc(10% + 15vw);
+    left: calc(8% + 15vw);
   }
 }
 
 @media (min-width: 1280px) {
   .top {
-    left: calc(15% + 20vw);
+    left: calc(12% + 20vw);
   }
 }
 

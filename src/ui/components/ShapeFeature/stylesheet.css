@@ -125,7 +125,7 @@
 
 @media (min-width: 888px) {
   :scope {
-    min-height: 80rem;
+    min-height: 88rem;
   }
   .top {
     top: calc(-180% + 20vw);
