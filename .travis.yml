@@ -36,6 +36,8 @@ jobs:
       script: yarn lint:hbs
     - stage: test
       script: yarn build && yarn crawl
+    - stage: test
+      script: yarn build && yarn percy
 
 notifications:
   email: false

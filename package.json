@@ -18,7 +18,8 @@
     "format:ts": "tslint --fix -c tslint.json 'src/**/*.ts'",
     "format:js": "eslint --fix . --cache",
     "format:hbs": "prettier --write --parser glimmer '**/*.hbs'",
-    "format": "yarn run format:ts; yarn run format:js; yarn format:hbs"
+    "format": "yarn run format:ts; yarn run format:js; yarn format:hbs",
+    "percy": "percy snapshot dist"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -70,6 +71,7 @@
     "marked": "^0.6.1",
     "morgan": "^1.3.2",
     "navigo": "^7.1.2",
+    "percy": "^0.7.2",
     "pretender": "^3.0.1",
     "prettier": "^1.16.4",
     "puppeteer": "^1.14.0",
