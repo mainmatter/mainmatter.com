@@ -3,12 +3,21 @@
 
   display: flex;
   align-items: flex-start;
+  flex-direction: column;
 }
 
 .item {
   margin-right: var(--col-gap);
+
 }
 
 .body {
   flex: 1;
+}
+
+
+@media (min-width: 888px) {
+  :scope {
+    flex-direction: row;
+  }
 }
