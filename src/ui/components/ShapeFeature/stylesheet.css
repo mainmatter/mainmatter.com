@@ -5,7 +5,7 @@
 :scope {
   block-name: ShapeFeature;
   position: relative;
-  margin: 20rem 0 0;
+  margin: 30rem 0 10rem;
   padding: 0;
   grid-column: 1/-1;
   --shape-color: var(--color-accent);
@@ -13,7 +13,13 @@
 }
 
 .container {
+  composes: 'containerBlock';
   transform: rotate(-30deg);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .bottom,
@@ -65,9 +71,10 @@
   background-size: cover;
 }
 
+
 @media (max-width: 887px) {
   :scope {
-    margin: 10rem 0;
+    margin: 0 0 20rem;
   }
   :scope[state|hasImage] {
     padding-top: 0;
@@ -77,23 +84,24 @@
     display: none;
   }
 
+  .container {
+    flex-direction: column;
+  }
+
   .top {
     display: none;
   }
 
   .bottom {
-    top: 0;
-    transform: translate(-50%, -10rem);
+    left: -150%;
+    top: 30%;
+    transform: scale(0.7);
   }
 
   :scope[state|hasImage] .top {
-    display: block;
   }
 
   :scope[state|hasImage] .bottom {
-    display: block;
-    top: 0;
-    transform: translate(-50%, 10rem);
   }
 
   .bottom-content {
@@ -101,8 +109,9 @@
   }
 
   .img-wrapper {
-    height: 80rem;
+    height: 60rem;
     transform: translate(0);
+    order: 2;
   }
 
   .img {
@@ -116,35 +125,22 @@
   }
 
   .content {
-    margin-top: 4rem;
-    background: #FFF;
-    padding: 5rem;
-    box-shadow: 2rem 2rem 0 0 var(--shape-color);
+    order: 1;
+    width: 70%;
   }
 }
 
 @media (min-width: 888px) {
   :scope {
-    min-height: 88rem;
   }
   .top {
-    top: calc(-180% + 20vw);
-    left: calc(20% + 20vw);
+    top: -100rem;
+    left: calc(-100rem + 125vw)
   }
 
   .bottom {
-    top: 20rem;
-    left: 50%;
-    transform: translate(-90%);
-    width: 225rem;
-  }
-
-  .container {
-    composes: 'containerBlock';
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: flex-end;
+    top: calc(100% - 35vw);
+    left: calc(-170rem + 15vw);
   }
 
   :scope[state|hasImage] .container {
@@ -173,13 +169,25 @@
 }
 
 @media (min-width: 1280px) {
+  :scope {
+  }
   .top {
-    left: calc(30% + 20vw);
+    left: calc(100% - 50vw);
+  }
+  .bottom {
+    top: calc(100% - 35vw);
+    left: calc(-150rem + 15vw);
   }
 }
 
 @media (min-width: 1690px) {
+
   :scope {
-    margin-top: 40rem;
+  }
+  .top {
+    left: calc(100% - 45vw);
+  }
+  .bottom {
+    left: calc(-200rem + 40vw)
   }
 }
