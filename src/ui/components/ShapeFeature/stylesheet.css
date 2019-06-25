@@ -89,12 +89,13 @@
   }
 
   .top {
-    display: none;
+    bottom: 60rem;
+    right: -162rem;
   }
 
   .bottom {
-    left: -150%;
-    top: 30%;
+    left: -134rem;
+    top: 25rem;
     transform: scale(0.7);
   }
 
@@ -109,7 +110,7 @@
   }
 
   .img-wrapper {
-    height: 60rem;
+    height: 50rem;
     transform: translate(0);
     order: 2;
   }
@@ -134,13 +135,13 @@
   :scope {
   }
   .top {
-    top: -100rem;
-    left: calc(-100rem + 125vw)
+    bottom: 37rem;
+    right: -159rem;
   }
 
   .bottom {
-    top: calc(100% - 35vw);
-    left: calc(-170rem + 15vw);
+    top: 0rem;
+    left: -170rem;
   }
 
   :scope[state|hasImage] .container {
@@ -149,7 +150,7 @@
 
   .img-wrapper {
     max-width: var(--col-4);
-    margin-top: -10rem;
+    margin-top: -30%;
   }
 
   .content {
@@ -172,11 +173,12 @@
   :scope {
   }
   .top {
-    left: calc(100% - 50vw);
+    bottom: 63rem;
+    right: -141rem;
   }
   .bottom {
-    top: calc(100% - 35vw);
-    left: calc(-150rem + 15vw);
+    top: 10rem;
+    left: -140rem;
   }
 }
 
@@ -184,10 +186,7 @@
 
   :scope {
   }
-  .top {
-    left: calc(100% - 45vw);
-  }
   .bottom {
-    left: calc(-200rem + 40vw)
+    top: 20rem;
   }
 }
