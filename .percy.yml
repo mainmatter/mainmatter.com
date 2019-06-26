@@ -1,3 +1,0 @@
-version: 1
-static-snapshots:
-  ignore-files: 'bare-index.html'
