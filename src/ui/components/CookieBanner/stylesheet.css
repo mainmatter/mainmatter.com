@@ -21,12 +21,6 @@
   }
 }
 
-@media only percy {
-  :scope {
-    display: none;
-  }
-}
-
 .message {
   text-align: right;
   padding: 1.5rem 2rem;
