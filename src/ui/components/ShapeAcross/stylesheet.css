@@ -11,7 +11,7 @@
   --shape-color: var(--color-accent);
   transform: rotate(30deg);
   margin-top: 30rem;
-  margin-bottom: 30rem;
+  margin-bottom: 90rem;
 }
 
 .bottom,
@@ -23,7 +23,7 @@
 
 .top {
   fill: var(--shape-color);
-  bottom: -50%;
+  top: -40rem;
 }
 
 .bottom {
@@ -34,8 +34,8 @@
 .clip {
   position: absolute;
   fill: #FFF;
-  left: 60%;
-  top: 240%;
+  right: -100rem;
+  bottom: -140rem;
 }
 
 .across {
@@ -64,7 +64,6 @@
   display: flex;
   justify-content: flex-end;
   transform: rotate(-30deg);
-  height: 38rem;
 }
 
 .content {
@@ -73,15 +72,17 @@
   --color-link: var(--color-link-inverted);
   color: var(--color-text);
   width: var(--col-2);
-
+  display: flex;
+  flex-direction: column;
+  height: 40rem;
+  justify-content: center;
 }
 
 @media (max-width: 887px) {
-  :scope {}
-
-  .top {
-    display: none;
+  :scope {
   }
+
+  .top {}
 
   .across {
     left: -40%;
@@ -94,10 +95,6 @@
 
   .content {
     width: auto;
-    background: var(--shape-color);
-    padding: 5rem;
-    box-shadow: 2rem 2rem 0 0 #FFF;
-    transform: translate(0, 20rem);
   }
 
   .clip {
@@ -108,22 +105,26 @@
 
 @media (min-width: 888px) {
   :scope {
-    margin-bottom: 90rem;
   }
 
   .top {
-    left: calc(8% + 15vw);
+    right: calc(-150rem + var(--col-2));
   }
 }
 
 @media (min-width: 1280px) {
-  .top {
-    left: calc(12% + 20vw);
+  :scope {
   }
+
+  .top {}
 }
 
 @media (min-width: 1690px) {
   :scope {
-    margin-top: 40rem;
+  }
+
+  .top {
+    right: calc(-150rem + var(--col-3));
+    top: -50rem;
   }
 }
