@@ -12,6 +12,10 @@ addons:
 cache:
   yarn: true
 
+branches:
+  only: 
+    - master
+
 env:
   global:
     # See https://git.io/vdao3 for details.
