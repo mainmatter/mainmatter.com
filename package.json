@@ -101,8 +101,7 @@
       "lib/head-data",
       "lib/routes",
       "lib/sentry",
-      "lib/service-workers",
-      "lib/sitemap"
+      "lib/service-workers"
     ]
   },
   "prettier": {
