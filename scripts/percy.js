@@ -11,13 +11,14 @@ const ROUTES_MAP = require('../config/routes-map')();
 let routes = ROUTES_MAP;
 let paths = Object.keys(routes);
 
-let nonBlogPostsPaths = paths.filter(path => !path.startsWith('/blog/20'));
+let nonBlogPaths = paths.filter(path => !path.startsWith('/blog'));
 let latestBlogPostsPaths = paths
   .filter(path => path.startsWith('/blog/20'))
   .sort()
   .slice(-5);
+let sampleBlogAuthorsPaths = paths.filter(path => path.startsWith('/blog/author')).slice(-2);
 
-let snapshotPaths = [...nonBlogPostsPaths, ...latestBlogPostsPaths];
+let snapshotPaths = [...nonBlogPaths, ...latestBlogPostsPaths, ...sampleBlogAuthorsPaths, '/blog'];
 
 let server = express();
 server.use(express.static(DIST_PATH));
