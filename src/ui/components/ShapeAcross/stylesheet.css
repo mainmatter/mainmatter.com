@@ -80,12 +80,17 @@
 
 @media (max-width: 887px) {
   :scope {
+    margin-bottom: 60rem;
   }
 
-  .top {}
+  .top {
+    top: -40rem;
+    left: -80rem;
+  }
 
   .across {
-    left: -40%;
+    left: 0;
+    top: 40rem;
     height: 60rem;
   }
 
@@ -95,11 +100,6 @@
 
   .content {
     width: auto;
-  }
-
-  .clip {
-    left: 20%;
-    top: 50%;
   }
 }
 
