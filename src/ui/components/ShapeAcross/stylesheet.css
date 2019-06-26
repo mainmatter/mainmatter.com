@@ -23,7 +23,6 @@
 
 .top {
   fill: var(--shape-color);
-  top: -40rem;
 }
 
 .bottom {
@@ -80,18 +79,20 @@
 
 @media (max-width: 887px) {
   :scope {
-    margin-bottom: 60rem;
+    margin-bottom: 40rem;
   }
 
   .top {
-    top: -40rem;
+    top: 0;
     left: -80rem;
+    z-index: 0;
   }
 
   .across {
     left: 0;
-    top: 40rem;
-    height: 60rem;
+    top: 50rem;
+    height: 50rem;
+    z-index: 100;
   }
 
   .img {
@@ -100,28 +101,38 @@
 
   .content {
     width: auto;
+    max-width: var(--col-5);
+    margin: 5rem auto 0;
+  }
+
+  .container {
+    height: 80rem;
+  }
+
+  .clip {
+    right: -135rem;
+    bottom: -116rem;
+    z-index: 100;
   }
 }
 
 @media (min-width: 888px) {
-  :scope {
-  }
+  :scope {}
 
   .top {
-    right: calc(-150rem + var(--col-2));
+    right: calc(-140rem + var(--col-2));
+    top: -50rem;
   }
 }
 
 @media (min-width: 1280px) {
-  :scope {
-  }
+  :scope {}
 
   .top {}
 }
 
 @media (min-width: 1690px) {
-  :scope {
-  }
+  :scope {}
 
   .top {
     right: calc(-150rem + var(--col-3));
