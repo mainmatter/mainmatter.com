@@ -19,7 +19,7 @@
     "format:js": "eslint --fix . --cache",
     "format:hbs": "prettier --write --parser glimmer '**/*.hbs'",
     "format": "yarn run format:ts; yarn run format:js; yarn format:hbs",
-    "percy": "percy snapshot dist"
+    "percy": "percy exec -- node scripts/percy.js"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -33,6 +33,7 @@
     "@glimmer/resolver": "^0.4.3",
     "@glimmer/ssr": "^0.13.0",
     "@glimmer/test-helpers": "^0.31.1",
+    "@percy/script": "^1.0.0",
     "@types/navigo": "^7.0.1",
     "@types/qunit": "^2.0.31",
     "broccoli-asset-rev": "^2.5.0",
