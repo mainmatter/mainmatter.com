@@ -5,11 +5,17 @@
 :scope {
   block-name: ShapeFeature;
   position: relative;
-  margin: 30rem 0 10rem;
+  margin: 30rem 0;
   padding: 0;
   grid-column: 1/-1;
   --shape-color: var(--color-accent);
   transform: rotate(30deg);
+}
+
+:scope[state|hasImage] {
+}
+
+:scope[state|hasVideo] .video {
 }
 
 .container {
@@ -74,10 +80,12 @@
 
 @media (max-width: 887px) {
   :scope {
-    margin: 0 0 20rem;
+    margin: 20rem 0;
+    min-height: 85rem;
   }
+
   :scope[state|hasImage] {
-    padding-top: 0;
+
   }
 
   :scope[state|hasVideo] .video {
@@ -99,11 +107,9 @@
     transform: scale(0.7);
   }
 
-  :scope[state|hasImage] .top {
-  }
+  :scope[state|hasImage] .top {}
 
-  :scope[state|hasImage] .bottom {
-  }
+  :scope[state|hasImage] .bottom {}
 
   .bottom-content {
     background-position: center;
@@ -132,8 +138,8 @@
 }
 
 @media (min-width: 888px) {
-  :scope {
-  }
+  :scope {}
+
   .top {
     bottom: 37rem;
     right: -159rem;
@@ -141,12 +147,10 @@
 
   .bottom {
     top: 0rem;
-    left: -170rem;
+    left: -160rem;
   }
 
-  :scope[state|hasImage] .container {
-    justify-content: space-between;
-  }
+  :scope[state|hasImage] .container {}
 
   .img-wrapper {
     max-width: var(--col-4);
@@ -170,22 +174,26 @@
 }
 
 @media (min-width: 1280px) {
-  :scope {
-  }
+  :scope {}
+
+
   .top {
     bottom: 63rem;
     right: -141rem;
   }
+
   .bottom {
     top: 10rem;
-    left: -140rem;
+    left: -125rem;
   }
 }
 
 @media (min-width: 1690px) {
 
   :scope {
+    margin-top: 40rem;
   }
+
   .bottom {
     top: 20rem;
   }

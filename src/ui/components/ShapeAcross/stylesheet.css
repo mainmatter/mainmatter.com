@@ -70,7 +70,7 @@
   --color-muted: var(--color-muted-inverted);
   --color-link: var(--color-link-inverted);
   color: var(--color-text);
-  width: var(--col-2);
+  width: var(--col-3);
   display: flex;
   flex-direction: column;
   height: 40rem;
@@ -120,15 +120,21 @@
   :scope {}
 
   .top {
-    right: calc(-140rem + var(--col-2));
-    top: -50rem;
+    right: calc(-160rem + var(--col-3));
+    top: -40rem;
   }
 }
 
 @media (min-width: 1280px) {
   :scope {}
 
-  .top {}
+  .top {
+    top: -50rem;
+  }
+
+  .content {
+    width: var(--col-2);
+  }
 }
 
 @media (min-width: 1690px) {
@@ -136,6 +142,5 @@
 
   .top {
     right: calc(-150rem + var(--col-3));
-    top: -50rem;
   }
 }
