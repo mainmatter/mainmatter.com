@@ -4,143 +4,113 @@
 :scope {
   block-name: ShapeAcross;
 
+  --shape-color: var(--color-accent);
+
   position: relative;
   z-index: 0;
   grid-column: 1/-1;
+  overflow: hidden;
 
-  --shape-color: var(--color-accent);
-  transform: rotate(30deg);
-  margin-top: 30rem;
-  margin-bottom: 90rem;
-}
-
-.bottom,
-.top {
-  position: absolute;
-  height: auto;
-  width: 225rem;
-}
-
-.top {
-  fill: var(--shape-color);
+  margin-bottom: 12rem;
 }
 
 .bottom {
-  width: 120vw;
-  transform: rotate(-30deg);
-}
+  --shape-color: #222;
 
-.clip {
-  position: absolute;
-  fill: #FFF;
-  right: -100rem;
-  bottom: -140rem;
-}
-
-.across {
-  width: 180vw;
-  height: 100rem;
   overflow: hidden;
-  position: absolute;
-  left: -25%;
+  transform: translate(-25%, 0) rotate(30deg) translate(0, -1vw);
+  transform-origin: center;
+  width: 200%;
+  height: 85vw;
+  min-height: 100rem;
 }
 
-.img {
-  width: 180vw;
-  height: 200rem;
+.bottom-clip {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 98%;
+  top: 1%;
+}
+
+.bottom-image {
   display: block;
-  background: 50% 50% no-repeat var(--shape-color);
-  background-size: 100%;
-  transform: rotate(-30deg);
-  position: relative;
-  top: -50%;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  transform-origin: center;
+  height: 103%;
 }
 
-.container {
-  composes: 'containerBlock';
-  position: relative;
-  z-index: 1;
+.bottom-svg {
+  position: absolute;
+  height: 101%;
+  width: auto;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+}
+
+.top {
+  position: absolute;
+  top: 10vw;
+  left: 50%;
+  transform: translate(-50%, 0);
+  fill: var(--shape-color);
+  width: var(--max-width);
   display: flex;
   justify-content: flex-end;
-  transform: rotate(-30deg);
 }
 
-.content {
+.top-svg {
+  position: absolute;
+  right: -31%;
+  top: 0;
+  height: auto;
+  width: 120vw;
+  min-width: 160rem;
+  transform: translate(var(--col-3), -10vw);
+}
+
+.top-content {
   --color-text: var(--color-text-inverted);
   --color-muted: var(--color-muted-inverted);
   --color-link: var(--color-link-inverted);
+  position: relative;
+  width: var(--col-2);
   color: var(--color-text);
-  width: var(--col-3);
-  display: flex;
-  flex-direction: column;
-  height: 40rem;
-  justify-content: center;
 }
 
 @media (max-width: 887px) {
   :scope {
-    margin-bottom: 40rem;
+  }
+
+  .bottom {
+    margin-bottom: 40vw;
   }
 
   .top {
-    top: 0;
-    left: -80rem;
-    z-index: 0;
+    justify-content: center;
+    top: 80vw;
   }
 
-  .across {
-    left: 0;
-    top: 50rem;
-    height: 50rem;
-    z-index: 100;
+  .top-content {
+    min-width: 40rem;
+    width: var(--col-4);
   }
 
-  .img {
-    height: 100rem;
-  }
-
-  .content {
-    width: auto;
-    max-width: var(--col-5);
-    margin: 5rem auto 0;
-  }
-
-  .container {
-    height: 80rem;
-  }
-
-  .clip {
-    right: -135rem;
-    bottom: -116rem;
-    z-index: 100;
+  .top-svg {
+    right: unset;
+    transform: translate(0, -20vw);
   }
 }
 
 @media (min-width: 888px) {
-  :scope {}
-
-  .top {
-    right: calc(-160rem + var(--col-3));
-    top: -40rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  :scope {}
-
-  .top {
-    top: -50rem;
+  :scope {
   }
 
-  .content {
-    width: var(--col-2);
-  }
-}
-
-@media (min-width: 1690px) {
-  :scope {}
-
   .top {
-    right: calc(-150rem + var(--col-3));
   }
 }
