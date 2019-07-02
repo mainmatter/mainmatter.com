@@ -93,7 +93,7 @@
 
   .top {
     justify-content: center;
-    top: 80vw;
+    top: calc(50vw + 40rem);
   }
 
   .top-content {
@@ -103,14 +103,7 @@
 
   .top-svg {
     right: unset;
+    min-width: 140rem;
     transform: translate(0, -20vw);
-  }
-}
-
-@media (min-width: 888px) {
-  :scope {
-  }
-
-  .top {
   }
 }
