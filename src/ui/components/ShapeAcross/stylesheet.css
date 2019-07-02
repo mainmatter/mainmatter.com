@@ -9,101 +9,78 @@
   position: relative;
   z-index: 0;
   grid-column: 1/-1;
-  overflow: hidden;
-
   margin-bottom: 12rem;
+}
+
+.shapes {
+  transform: translate(-21.5%) rotate(30deg);
+  width: 173vw;
+  height: 100vw;
+  margin-top: -34vw;
+  margin-bottom: -17vw;
 }
 
 .bottom {
   --shape-color: #222;
-
-  overflow: hidden;
-  transform: translate(-25%, 0) rotate(30deg) translate(0, -1vw);
-  transform-origin: center;
-  width: 200%;
-  height: 85vw;
-  min-height: 100rem;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
 }
 
 .bottom-clip {
-  overflow: hidden;
-  position: relative;
   width: 100%;
-  height: 98%;
-  top: 1%;
+  height: 99%;
+  margin: 0.25% 0;
+  overflow: hidden;
 }
 
 .bottom-image {
   display: block;
   margin: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-30deg);
-  transform-origin: center;
-  height: 103%;
+  height: 100%;
+  width: auto;
+  transform: rotate(-30deg);
 }
 
 .bottom-svg {
   position: absolute;
-  height: 101%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 100%;
   width: auto;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, 0);
 }
 
-.top {
+.leading-svg,
+.trailing-svg {
   position: absolute;
-  top: 10vw;
-  left: 50%;
-  transform: translate(-50%, 0);
   fill: var(--shape-color);
-  width: var(--max-width);
-  display: flex;
-  justify-content: flex-end;
 }
 
-.top-svg {
-  position: absolute;
-  right: -38%;
-  top: 0;
-  height: auto;
-  width: 120vw;
-  min-width: 160rem;
-  transform: translate(var(--col-3), -10vw);
+.leading-svg {
+  right: calc(80vw + 65rem);
+  bottom: -50rem;
+  width: 100vw;
 }
 
-.top-content {
-  --color-text: var(--color-text-inverted);
-  --color-muted: var(--color-muted-inverted);
-  --color-link: var(--color-link-inverted);
-  position: relative;
-  width: var(--col-2);
-  color: var(--color-text);
+.trailing-svg {
+  left: calc(100vw + 30rem);
+  top: -50rem;
+  width: 100vw;
 }
 
 @media (max-width: 887px) {
   :scope {
   }
 
-  .bottom {
-    margin-bottom: 40vw;
+  .shapes {
+    margin-top: 0;
   }
 
-  .top {
-    justify-content: center;
-    top: calc(50vw + 40rem);
-  }
-
-  .top-content {
-    min-width: 40rem;
-    width: var(--col-4);
-  }
-
-  .top-svg {
-    right: unset;
-    min-width: 140rem;
-    transform: translate(0, -20vw);
+  .trailing-svg {
+    left: calc(100vw + 25rem);
   }
 }

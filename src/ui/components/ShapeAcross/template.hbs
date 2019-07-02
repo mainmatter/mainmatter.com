@@ -1,42 +1,49 @@
 <div style={{this.shapeStyle}}>
-  <div class="bottom" style="{{this.backgroundStyle}}">
-    <div class="bottom-clip">
-      <img src="{{@src}}" alt="" class="bottom-image">
-    </div>
-    <svg
-        class="bottom-svg"
-        width="3620"
-        height="1240"
-        viewBox="0 0 3620 1240"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-      >
+  <div class="shapes">
+    <div class="bottom" style="{{this.backgroundStyle}}">
+      <div class="bottom-clip">
+        <img src="{{@src}}" alt="" class="bottom-image">
+      </div>
+      <svg class="bottom-svg" width="3620" height="1240" viewBox="0 0 3620 1240" xmlns="http://www.w3.org/2000/svg">
         <defs>
+          <path
+            d="M840.577 0l862.961 498.23L1471.577 900H959.423L96.462 401.77 328.423 0h512.154z"
+            id="{{this.shapeId}}"
+          />
+          <path
+            d="M554.423 0H1800v579.904L1245.577 900H0V320.096L554.423 0z"
+            id="{{this.flatShapeId}}"
+          />
           <mask id="{{this.maskId}}">
             <rect x="0" y="0" width="100%" height="100%" fill="white" />
             <use x="310" y="330" fill-rule="evenodd" xlink:href="#{{this.flatShapeId}}" fill="black"></use>
-            <use x="2109" y="10" fill-rule="evenodd" xlink:href="#{{this.flatShapeId}}" fill="black"></use>
+            <use x="2108" y="10" fill-rule="evenodd" xlink:href="#{{this.flatShapeId}}" fill="black"></use>
           </mask>
         </defs>
         <rect x="0" y="0" width="100%" height="100%" fill="white" mask="url(#{{this.maskId}})" />
       </svg>
-  </div>
-  <div class="top">
-    <svg class="top-svg" width="1800" height="900" viewBox="0 0 1800 900" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <path
-          d="M840.577 0l862.961 498.23L1471.577 900H959.423L96.462 401.77 328.423 0h512.154z"
-          id="{{this.shapeId}}"
-        />
-        <path
-          d="M554.423 0H1800v579.904L1245.577 900H0V320.096L554.423 0z"
-          id="{{this.flatShapeId}}"
-        />
-      </defs>
-      <use fill-rule="evenodd" xlink:href="#{{this.shapeId}}"></use>
-    </svg>
-    <div class="top-content">
-      {{yield}}
     </div>
+    <svg
+      class="leading-svg"
+      width="1800"
+      height="900"
+      viewBox="0 0 1800 900"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <use fill-rule="evenodd" xlink:href="#{{this.flatShapeId}}"></use>
+    </svg>
+    <svg
+      class="trailing-svg"
+      width="1800"
+      height="900"
+      viewBox="0 0 1800 900"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <use fill-rule="evenodd" xlink:href="#{{this.flatShapeId}}"></use>
+    </svg>
   </div>
 </div>
+
+{{yield}}
