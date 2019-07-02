@@ -13,7 +13,8 @@
   min-height: 60rem;
 }
 
-:scope[state|hasImage] {}
+:scope[state|hasImage] {
+}
 
 .container {
   composes: 'containerBlock';
@@ -111,7 +112,8 @@
 }
 
 @media (max-width: 887px) {
-  :scope {}
+  :scope {
+  }
 
   .top {
     left: -155rem;
@@ -125,7 +127,8 @@
 }
 
 @media (min-width: 888px) {
-  :scope {}
+  :scope {
+  }
 
   .top {
     left: -130rem;
