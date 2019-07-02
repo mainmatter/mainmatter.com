@@ -54,15 +54,12 @@
       </defs>
       <rect fill="#fff" x="0" y="0" width="100%" height="100%" mask="url(#{{this.maskId}})"></rect>
     </svg>
+    <div class="top-overlay">
+      {{#if @src}}
+        <div class="img-wrapper">
+          <img class="img" src={{@src}} alt="{{@srcAlt}}" width={{@width}} height={{@height}} />
+        </div>
+      {{/if}}
+    </div>
   </div>
-  <figure class="container">
-    {{#if @src}}
-      <div class="img-wrapper">
-        <img class="img" src={{@src}} alt="{{@srcAlt}}" width={{@width}} height={{@height}} />
-      </div>
-    {{/if}}
-    <figcaption class="content">
-      {{yield}}
-    </figcaption>
-  </figure>
 </div>

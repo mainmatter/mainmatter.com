@@ -34,6 +34,12 @@
   fill: var(--shape-color);
 }
 
+.top-overlay {
+  position: absolute;
+  right: 0;
+  top: 20rem;
+}
+
 .content {
   font-size: inherit;
   line-height: inherit;
@@ -88,8 +94,9 @@
 }
 
 .top-image {
-  width: 46.5%;
+  width: 50%;
   height: 90%;
+  margin-left: 50%;
   transform-origin: center;
   background: var(--shape-color) 50% 50% no-repeat;
   background-size: cover;
