@@ -47,6 +47,7 @@
   width: 95%;
   height: auto;
   margin: auto;
+  transform: translate(-10%);
 }
 
 .bottom-svg {
@@ -118,6 +119,7 @@
   }
 
   :scope[state|hasImage] .bottom {
+    top: 45rem;
   }
 
   .bottom-content {
