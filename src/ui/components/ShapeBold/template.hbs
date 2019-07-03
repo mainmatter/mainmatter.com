@@ -1,4 +1,4 @@
-<div style={{this.shapeStyle}}>
+<div style={{this.shapeStyle}} state:reverse={{@reverse}}>
   <div class="shape-a">
     <svg
       class="shape-a-svg"
@@ -35,7 +35,9 @@
     </svg>
     {{#if @logo}}
       <div class="shape-b-content">
-        <img class="shape-b-logo" src="{{@logo}}" alt="{{@logoAlt}}" />
+        <div class="shape-b-logo">
+          <img class="shape-b-logo-img" src="{{@logo}}" alt="{{@logoAlt}}" />
+        </div>
         {{#if @logoLabel}}
           <p>
             {{@logoLabel}}

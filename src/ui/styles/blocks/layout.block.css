@@ -7,6 +7,7 @@
   display: grid;
   grid-template-columns: var(--grid-template-columns);
   column-gap: var(--col-gap);
+  grid-column: 1/-1;
 }
 
 .full,
