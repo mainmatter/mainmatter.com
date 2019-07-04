@@ -47,7 +47,13 @@
   width: 95%;
   height: auto;
   margin: auto;
-  transform: translate(-10%);
+  transform: translate(-12%);
+}
+
+.bottom {
+  top: 0;
+  left: calc(50% - 90rem);
+  transform: translate(-50%);
 }
 
 .bottom-svg {
@@ -58,15 +64,21 @@
   margin: -4rem;
 }
 
-.bottom-content {
+.bottom-clip {
   position: absolute;
-  background: var(--shape-color) 90% 100% no-repeat;
-  background-size: 123rem auto;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+.bottom-content {
+  background: var(--shape-color) 90% 100% no-repeat;
+  background-size: 123rem auto;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-30deg);
 }
 
 .bottom-image {
@@ -76,10 +88,6 @@
   transform: rotate(-30deg) translate(100%, 31%);
   background: var(--shape-color) 50% 50% no-repeat;
   background-size: cover;
-}
-
-.video {
-  transform: rotate(-30deg);
 }
 
 :scope[state|hasVideo] .bottom-content {
@@ -153,13 +161,8 @@
   }
 
   .top {
-    bottom: 37rem;
-    right: -159rem;
-  }
-
-  .bottom {
-    top: 0rem;
-    left: -160rem;
+    bottom: 45rem;
+    right: -162rem;
   }
 
   :scope[state|hasImage] .container {
@@ -183,30 +186,5 @@
     bottom: 0;
     z-index: 2;
     width: var(--col-2);
-  }
-}
-
-@media (min-width: 1280px) {
-  :scope {
-  }
-
-  .top {
-    bottom: 63rem;
-    right: -141rem;
-  }
-
-  .bottom {
-    top: 10rem;
-    left: -125rem;
-  }
-}
-
-@media (min-width: 1690px) {
-  :scope {
-    margin-top: 40rem;
-  }
-
-  .bottom {
-    top: 20rem;
   }
 }
