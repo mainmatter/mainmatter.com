@@ -12,12 +12,6 @@
   transform: rotate(30deg);
 }
 
-:scope[state|hasImage] {
-}
-
-:scope[state|hasVideo] .video {
-}
-
 .container {
   composes: 'containerBlock';
   transform: rotate(-30deg);
@@ -101,9 +95,6 @@
     min-height: 80rem;
   }
 
-  :scope[state|hasImage] {
-  }
-
   :scope[state|hasVideo] .video {
     display: none;
   }
@@ -121,9 +112,6 @@
     left: -134rem;
     top: 25rem;
     transform: scale(0.7);
-  }
-
-  :scope[state|hasImage] .top {
   }
 
   :scope[state|hasImage] .bottom {
@@ -163,9 +151,6 @@
   .top {
     bottom: 45rem;
     right: -162rem;
-  }
-
-  :scope[state|hasImage] .container {
   }
 
   .img-wrapper {
