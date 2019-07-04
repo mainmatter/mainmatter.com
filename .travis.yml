@@ -13,7 +13,7 @@ cache:
   yarn: true
 
 branches:
-  only: 
+  only:
     - master
 
 env:
@@ -38,6 +38,8 @@ jobs:
       script: yarn lint:js
     - stage: test
       script: yarn lint:hbs
+    - stage: test
+      script: yarn lint:css
     - stage: test
       script: yarn build && yarn crawl
     - stage: test
