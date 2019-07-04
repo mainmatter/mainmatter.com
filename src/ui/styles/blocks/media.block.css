@@ -8,13 +8,11 @@
 
 .item {
   margin-right: var(--col-gap);
-
 }
 
 .body {
   flex: 1;
 }
-
 
 @media (min-width: 888px) {
   :scope {

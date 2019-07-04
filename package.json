@@ -17,8 +17,9 @@
     "lint": "yarn run lint:ts; yarn run lint:js; yarn run lint:hbs",
     "format:ts": "tslint --fix -c tslint.json 'src/**/*.ts'",
     "format:js": "eslint --fix . --cache",
+    "format:css": "prettier '{src,lib}/**/*.css' --write",
     "format:hbs": "prettier --write --parser glimmer '**/*.hbs'",
-    "format": "yarn run format:ts; yarn run format:js; yarn format:hbs",
+    "format": "yarn run format:ts; yarn run format:js; yarn format:hbs; yarn format:css",
     "percy": "percy exec -- node scripts/percy.js"
   },
   "devDependencies": {
