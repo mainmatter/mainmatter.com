@@ -85,7 +85,7 @@
   width: 46.5%;
   height: 90%;
   transform-origin: center;
-  transform: rotate(-30deg) translate(100%, 31%);
+  transform: translate(100%, 0%);
   background: var(--shape-color) 50% 50% no-repeat;
   background-size: cover;
 }
