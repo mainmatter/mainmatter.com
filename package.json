@@ -13,12 +13,14 @@
     "test": "ember test",
     "lint:ts": "tslint -c tslint.json 'src/**/*.ts' -t codeFrame",
     "lint:js": "eslint . --cache",
+    "lint:css": "prettier --check '{src,lib}/**/*.css'",
     "lint:hbs": "prettier --check --parser glimmer '**/*.hbs'",
-    "lint": "yarn run lint:ts; yarn run lint:js; yarn run lint:hbs",
+    "lint": "yarn run lint:ts; yarn run lint:js; yarn run lint:hbs; yarn run lint:css",
     "format:ts": "tslint --fix -c tslint.json 'src/**/*.ts'",
     "format:js": "eslint --fix . --cache",
+    "format:css": "prettier '{src,lib}/**/*.css' --write",
     "format:hbs": "prettier --write --parser glimmer '**/*.hbs'",
-    "format": "yarn run format:ts; yarn run format:js; yarn format:hbs",
+    "format": "yarn run format:ts; yarn run format:js; yarn run format:hbs; yarn run format:css",
     "percy": "percy exec -- node scripts/percy.js"
   },
   "devDependencies": {
