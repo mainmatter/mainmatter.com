@@ -72,13 +72,6 @@
   filter: saturate(0%) brightness(100);
 }
 
-:scope[state|center='true'] .content {
-  --color-text: var(--color-text-inverted);
-  --color-muted: var(--color-text-inverted);
-
-  color: var(--color-text);
-}
-
 @media (max-width: 887px) {
   :scope {
     min-height: 1rem;
@@ -122,13 +115,11 @@
   }
 
   :scope[state|center='true'] .top {
-    bottom: 0;
-    transform: translate(-50%, 0);
+    display: none;
   }
 
   :scope[state|center='true'] .content {
     padding-top: 8rem;
-    padding-bottom: 24rem;
   }
 }
 
@@ -211,5 +202,12 @@
 
   :scope[state|reverse='true'] .content {
     padding-bottom: 21rem;
+  }
+
+  :scope[state|center='true'] .content {
+    --color-text: var(--color-text-inverted);
+    --color-muted: var(--color-text-inverted);
+
+    color: var(--color-text);
   }
 }
