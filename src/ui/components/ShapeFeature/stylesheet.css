@@ -91,7 +91,7 @@
 
 @media (max-width: 887px) {
   :scope {
-    margin: 10rem 0 20rem;
+    margin: 10rem 0 30rem;
     min-height: 80rem;
   }
 
@@ -109,9 +109,9 @@
   }
 
   .bottom {
-    left: -134rem;
-    top: 25rem;
-    transform: scale(0.7);
+    left: -110rem;
+    top: 35rem;
+    transform: scale(0.6);
   }
 
   :scope[state|hasImage] .bottom {
@@ -154,13 +154,14 @@
   }
 
   .top {
-    bottom: 45rem;
-    right: -162rem;
+    bottom: 63rem;
+    right: -150rem;
   }
 
   .img-wrapper {
     max-width: var(--col-4);
     margin-top: -30%;
+    tranform: translate(0, 10rem);
   }
 
   .content {
