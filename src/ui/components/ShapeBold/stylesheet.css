@@ -120,3 +120,13 @@
   width: auto;
   filter: saturate(0%) brightness(100);
 }
+
+@media (max-width: 887px) {
+  .shape-a {
+    grid-column: 3/-1;
+  }
+
+  .shape-b {
+    grid-column: -5/-1;
+  }
+}
