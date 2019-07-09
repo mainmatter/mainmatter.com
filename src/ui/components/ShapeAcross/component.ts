@@ -12,12 +12,8 @@ export default class ShapeAcross extends ShapeBase {
   }
 
   get backgroundStyle() {
-    let style = '';
-
     if (this.args.background) {
-      style += `--shape-color: ${this.args.background}`;
+      return `--shape-color: ${this.args.background}`;
     }
-
-    return style;
   }
 }
