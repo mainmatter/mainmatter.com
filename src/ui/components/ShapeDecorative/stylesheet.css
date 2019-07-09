@@ -5,7 +5,7 @@
 :scope {
   block-name: ShapeDecorative;
   position: relative;
-  margin: 0 0 20rem;
+  margin: 8rem 0 21rem;
   padding: 0;
   grid-column: 1/-1;
   --shape-color: var(--color-accent);
@@ -136,7 +136,7 @@
   }
 
   .bottom {
-    right: -190rem;
-    top: 0;
+    right: -184rem;
+    top: -4rem;
   }
 }
