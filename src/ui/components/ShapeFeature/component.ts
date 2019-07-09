@@ -18,4 +18,10 @@ export default class ShapeFeature extends ShapeBase {
 
     return style;
   }
+
+  get bottomImageStyle() {
+    if (this.args.image) {
+      return `background-image: url(${this.args.image})`;
+    }
+  }
 }

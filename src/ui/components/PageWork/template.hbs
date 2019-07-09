@@ -1,40 +1,55 @@
 <div>
   <Header @label="Work" @title="A proven track record of successful projects for international clients." />
-  <ShapeWork
-    @background="#21314D"
-    @color="#48D6B6"
-    @src="/assets/images/work/trainline-comp.png"
-    @logo="/assets/images/logos/trainline.svg"
-    @logoAlt="Trainline logo"
-    @title="Leveraging Trainline's full market potential"
-    @tagline="Mobile Web App"
-  >
+  <div class="layout.split-leading">
+    <h2>
+      <a href="/cases/trainline" data-internal>
+        Leveraging Trainline's full market potential
+      </a>
+    </h2>
+  </div>
+  <div class="layout.split-trailing">
     <p class="typography.lead">
       Trainline is Europe’s leading independent rail and coach platform. We worked with them to deliver a high-performance mobile web app, along with an improved engineering process, enabling Trainline to achieve their business goals for years to come.
     </p>
     <ArrowLink @href="/cases/trainline">
       Read Case Study
     </ArrowLink>
-  </ShapeWork>
+  </div>
+  <ShapeBold
+    @backgroundA="#21314D"
+    @backgroundB="#48D6B6"
+    @src="/assets/images/work/trainline-comp.png"
+    @logo="/assets/images/logos/trainline.svg"
+    @logoAlt="Trainline"
+    @logoLabel="Mobile Web App"
+   />
+
   <ClientsGrid @title="Meet our clients" />
-  <ShapeWork
-    @color="#CB3B43"
-    @background="#2A4058"
-    @src="/assets/images/work/timify.jpg"
-    @clip="true"
-    @logo="/assets/images/logos/timify.svg"
-    @logoAlt="Timify logo"
-    @title="Modern online appointment scheduling"
-    @tagline="Web app"
-    @reverse="true"
-  >
+  <div class="layout.split-leading">
+    <h2>
+      <a href="/cases/trainline" data-internal>
+        Modern online appointment scheduling
+      </a>
+    </h2>
+  </div>
+  <div class="layout.split-trailing offset.after-5">
     <p class="typography.lead">
       Timify is an online appointment scheduling service that connects service providers with clients. When they decided it was time to re-engineer their existing product, they trusted us to set them up for future success.
     </p>
     <ArrowLink @href="/cases/timify">
       Read Case Study
     </ArrowLink>
-  </ShapeWork>
+  </div>
+  <ShapeBold
+    @backgroundA="#2A4058"
+    @backgroundB="#CB3B43"
+    @src="/assets/images/work/timify.png"
+    @logo="/assets/images/logos/timify.svg"
+    @logoAlt="Timify"
+    @logoLabel="Web App"
+    @reverse="true"
+   />
+
   <div class="layout.main offset.after-21">
     <h2>
       More Case Studies

@@ -1,30 +1,41 @@
 <div style={{this.shapeStyle}}>
-  <div class="img" style="background-image:url({{@src}});{{this.backgroundStyle}}"></div>
-  <svg class="bottom" width="1440" height="1520" viewBox="0 0 1440 1520" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <path
-        id={{this.shapeId}}
-        d="m840.577137 0 862.961153 498.230855-231.96152 401.769145h-512.153907l-862.9611537-498.230855 231.9615247-401.769145z"
-      ></path>
-    </defs>
-    <path
-      fill="#fff"
-      d="M1440 1514.267V1520H0V839.27L389.245 1064h270.87L1440 1514.267zM1440 839.27L.2 8l-.2.346V0h1440z"
-    ></path>
-  </svg>
-  <svg
-    class="top"
-    width="1800"
-    height="900"
-    viewBox="0 0 1800 900"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-  >
-    <use fill-rule="evenodd" xlink:href="#{{this.shapeId}}"></use>
-  </svg>
-  <div class="container">
-    <div class="content">
-      {{yield}}
+  <div class="shapes">
+    <div class="bottom" style="{{this.backgroundStyle}}">
+      <div class="bottom-clip">
+        <img src="{{@src}}" alt="" class="bottom-image" />
+      </div>
+      <svg class="bottom-svg" width="3620" height="1240" viewBox="0 0 3620 1240" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <path d="M554.423 0H1800v579.904L1245.577 900H0V320.096L554.423 0z" id="{{this.shapeId}}"></path>
+          <mask id="{{this.maskId}}">
+            <rect x="0" y="0" width="100%" height="100%" fill="white"></rect>
+            <use x="310" y="330" fill-rule="evenodd" xlink:href="#{{this.shapeId}}" fill="black"></use>
+            <use x="2108" y="10" fill-rule="evenodd" xlink:href="#{{this.shapeId}}" fill="black"></use>
+          </mask>
+        </defs>
+        <rect x="0" y="0" width="100%" height="100%" fill="white" mask="url(#{{this.maskId}})"></rect>
+      </svg>
     </div>
+    <svg
+      class="leading-svg"
+      width="1800"
+      height="900"
+      viewBox="0 0 1800 900"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <use fill-rule="evenodd" xlink:href="#{{this.shapeId}}"></use>
+    </svg>
+    <svg
+      class="trailing-svg"
+      width="1800"
+      height="900"
+      viewBox="0 0 1800 900"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <use fill-rule="evenodd" xlink:href="#{{this.shapeId}}"></use>
+    </svg>
   </div>
 </div>
+{{yield}}

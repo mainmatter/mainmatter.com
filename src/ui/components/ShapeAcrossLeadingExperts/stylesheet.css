@@ -1,9 +1,10 @@
+@block layout from "../../styles/blocks/layout.block.css";
+@block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 
 :scope {
   block-name: ShapeAcrossLeadingExperts;
-}
+  composes: 'layout';
 
-.offset-vertical {
-  padding-top: 7rem;
+  grid-column: 1/-1;
 }

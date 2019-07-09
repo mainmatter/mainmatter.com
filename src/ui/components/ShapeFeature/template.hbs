@@ -1,11 +1,16 @@
 <div style={{this.shapeStyle}} state:hasVideo={{@video}} state:hasImage={{@src}}>
   <div class="bottom">
-    <div class="bottom-content" style={{this.backgroundStyle}}>
-      {{#if @video}}
-        <video playsinline autoplay muted loop class="video" width="{{@width}}" height="{{@height}}">
-          <source src="{{@video}}" type="video/mp4" />
-        </video>
-      {{/if}}
+    <div class="bottom-clip">
+      <div class="bottom-content" style="{{this.backgroundStyle}}">
+        {{#if @image}}
+          <div class="bottom-image" style="{{this.bottomImageStyle}}"></div>
+        {{/if}}
+        {{#if @video}}
+          <video playsinline autoplay muted loop class="video" width="{{@width}}" height="{{@height}}">
+            <source src="{{@video}}" type="video/mp4" />
+          </video>
+        {{/if}}
+      </div>
     </div>
     <svg
       class="bottom-svg"
@@ -19,6 +24,7 @@
         <path
           id={{this.shapeId}}
           d="m840.577137 0 862.961153 498.230855-231.96152 401.769145h-512.153907l-862.9611537-498.230855 231.9615247-401.769145z"
+          transform="rotate(-30 719.885 360.48)"
         ></path>
         <mask id={{this.maskId}}>
           <rect x="0" y="0" width="100%" height="100%" fill="white"></rect>
@@ -38,20 +44,6 @@
   >
     <use fill-rule="evenodd" xlink:href="#{{this.shapeId}}"></use>
   </svg>
-  {{#if @tagline}}
-    <div class="tagline-container">
-      <div class="tagline">
-        {{#if @logo}}
-          <div class="tagline-logo">
-            <img class="tagline-logo-image" src="{{@logo}}" alt="{{@logoAlt}}" />
-          </div>
-        {{/if}}
-        <p class="tagline-text">
-          {{@tagline}}
-        </p>
-      </div>
-    </div>
-  {{/if}}
   <figure class="container">
     {{#if @src}}
       <div class="img-wrapper">
