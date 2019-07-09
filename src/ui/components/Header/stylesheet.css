@@ -179,6 +179,10 @@
     align-items: center;
   }
 
+  .nav-item[state|active] {
+    box-shadow: 0 2px 0 0 var(--color-accent);
+  }
+
   .nav-item,
   .nav-item:link,
   .nav-item:visited {
@@ -194,5 +198,9 @@
 
   .work-with-us {
     margin-left: auto;
+  }
+
+  .work-with-us[state|active] {
+    /* tbd */
   }
 }
