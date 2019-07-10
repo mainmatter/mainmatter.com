@@ -148,11 +148,28 @@
   }
 
   .nav-item,
+  .work-with-us {
+    float: left;
+    clear: both;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .work-with-us {
+    float: none;
+  }
+
+  .nav-item,
   .nav-item:link,
   .nav-item:visited,
   .nav-item:focus,
   .nav-item:hover {
     color: var(--color-link-inverted);
+  }
+
+  .nav-item[state|active],
+  .work-with-us[state|active] {
+    box-shadow: 0 calc(2rem + 2px) 0 -2rem var(--color-link-inverted);
   }
 
   .content {
@@ -198,9 +215,5 @@
 
   .work-with-us {
     margin-left: auto;
-  }
-
-  .work-with-us[state|active] {
-    /* tbd */
   }
 }
