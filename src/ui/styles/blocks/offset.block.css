@@ -55,3 +55,9 @@
 .after-21 {
   margin-bottom: 21rem;
 }
+
+@media (max-width: 887px) {
+  .after-21 {
+    margin-bottom: 16rem;
+  }
+}
