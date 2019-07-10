@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200px" height="900px" viewBox="0 0 1200 900" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>mobile</title>
+    <desc>Created with Sketch.</desc>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Group" transform="translate(355.000000, 125.000000)" stroke="#FEF033" stroke-width="3.78">
+            <g id="Phone-Shake" transform="translate(245.500000, 325.000000) rotate(10.000000) translate(-245.500000, -325.000000) translate(49.226221, 30.232558)">
+                <g id="Smart_Phone" transform="translate(0.000000, 0.761351)">
+                    <path d="M40.5359125,39.5716437 L255.134868,1.29000072 C281.959738,-3.81421835 306.229858,14.0505484 311.339357,40.8476985 L390.53659,492.571086 C395.646089,519.368236 377.762843,543.613277 350.937974,548.717496 L136.339018,586.999139 C109.514148,592.103358 85.2440283,574.238591 80.1345293,547.441441 L0.937295665,95.7180535 C-4.17220328,70.1969582 13.711043,44.6758628 40.5359125,39.5716437 Z" id="Path"></path>
+                    <ellipse id="Oval" transform="translate(235.877167, 520.562624) rotate(-9.997359) translate(-235.877167, -520.562624) " cx="235.877167" cy="520.562624" rx="24.2689762" ry="24.2454089"></ellipse>
+                    <path d="M72.4702809,500.227415 L381.594967,446.633115" id="Path"></path>
+                </g>
+            </g>
+            <g id="Shopping-Cart" transform="translate(151.122884, 222.401650)">
+                <path d="M153.989717,122.967178 L67.195513,122.967178 C53.5464244,122.967178 41.9971956,113.191984 39.5473592,99.9256497 L22.748481,0.777255484 L0,0.777255484" id="Path"></path>
+                <path d="M27.7686375,29.7501237 L164.087404,29.7501237 L155.698556,70.1081894 C152.552739,85.4164212 139.270397,96.5496807 123.890844,97.5934238 L40.0023729,102.812139" id="Path"></path>
+                <ellipse id="Oval" cx="53.6439589" cy="148.790821" rx="11.9910026" ry="11.9670543"></ellipse>
+                <ellipse id="Oval" cx="138.212082" cy="148.790821" rx="11.9910026" ry="11.9670543"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>
