@@ -1,2 +1,3 @@
 lib/generate-blog-components/lib/files/**/*
 lib/global-css/css/vendor/normalize.css
+src/ui/components/Header/template.hbs
