@@ -76,6 +76,10 @@
     line-height: calc(7 / 6);
   }
 
+  .display {
+    margin-bottom: 3rem;
+  }
+
   .h1 {
     margin-bottom: 3rem;
     font-size: 5rem;
