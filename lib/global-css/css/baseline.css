@@ -11,6 +11,7 @@
   --col-3: calc(var(--col) * 3 + var(--col-gap) * 2);
   --col-4: calc(var(--col) * 4 + var(--col-gap) * 3);
   --col-5: calc(var(--col) * 5 + var(--col-gap) * 4);
+  --col-6: calc(var(--col) * 6 + var(--col-gap) * 5);
 
   --col-max: 19.5rem;
   --offset-horizontal: 8rem;
@@ -42,6 +43,7 @@
   :root {
     --col-gap: 2rem;
     --offset-horizontal: 0;
+    --max-width: calc(100vw - 4rem);
   }
 }
 
