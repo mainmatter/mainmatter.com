@@ -163,12 +163,34 @@ h1 {
   line-height: 1.2;
 }
 
+h1 small {
+  display: block;
+  color: var(--color-muted);
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  line-height: 1.142857143;
+  text-transform: uppercase;
+}
+
 h2 {
   margin-bottom: 6rem;
   font-size: 8rem;
   font-weight: 300;
   line-height: 1.25;
   hyphens: auto;
+}
+
+@media (max-width: 887px) {
+  h1 small {
+    font-size: 2.5rem;
+    color: var(--color-text);
+  }
+
+  h2 {
+    margin-bottom: 4rem;
+    font-size: 5rem;
+    line-height: calc(6 / 5);
+  }
 }
 
 *:not(h1) + h2 {
