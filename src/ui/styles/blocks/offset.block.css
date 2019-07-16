@@ -57,7 +57,21 @@
 }
 
 @media (max-width: 887px) {
+  .after-12 {
+    margin-bottom: 8rem;
+  }
+
+  .after-16 {
+    margin-bottom: 12rem;
+  }
+
   .after-21 {
     margin-bottom: 16rem;
+  }
+}
+
+@media (min-width: 888px) {
+  .after-12-atlarge {
+    margin-bottom: 12rem;
   }
 }

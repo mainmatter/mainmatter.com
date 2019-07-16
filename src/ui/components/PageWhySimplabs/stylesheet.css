@@ -9,6 +9,8 @@
   composes: 'layout';
 }
 
-.offset-vertical {
-  margin-top: 28rem;
+@media (min-width: 888px) {
+  .offset-vertical {
+    margin-top: 28rem;
+  }
 }
