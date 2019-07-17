@@ -9,8 +9,6 @@ bio: 'Consultant for Technology and Design at simplabs'
 
 Using components or symbols helps you to organize your designs into manageable pieces that are easily updated across your design. Processes like [Atomic Design][atomic-design] help you discern them. But what is a good way for naming and organizing your symbols?
 
-I use [Sketch][sketch], but most of this should apply to Figma, Adobe XD and others as well.
-
 ## The problem
 
 Besides having an actual name, most elements in a design will have a current condition which might change on external factors and will most likely require variations to show all possible states.
@@ -27,16 +25,7 @@ Our button has a default and pressed state. It also has a variant that looks lik
 - States: Default, Active
 - Target screen: Narrow, Wide
 
-Which gives us 8 possible combinations
-
-- Variation: Default, State: Default, Screen: Narrow
-- Variation: Default, State: Default, Screen: Wide
-- Variation: Default, State: Active, Screen: Narrow
-- Variation: Default, State: Active, Screen: Wide
-- Variation: Link, State: Default, Screen: Narrow
-- Variation: Link, State: Default, Screen: Wide
-- Variation: Link, State: Active, Screen: Narrow
-- Variation: Link, State: Active, Screen: Wide
+Which gives us 2^3 – eight – possible combinations already.
 
 It's most likely, that most of these states can be created just by combining variations of their parts and for a simple component such as a button, you probably will be fine with overriding the background and or text layer.
 
@@ -46,17 +35,17 @@ So time to name a symbol that describes the button in its default variation, wit
 
 ## Naming symbols
 
-I use Sketch, but most of the following ideas work for other design tools as well.
+I use [Sketch][sketch], but most of the following ideas work for Figma, Adobe XD and other design tools as well.
 
-### Shallow nesting
+### 1. Shallow nesting
 
 Using `/` adds structure to your symbol selection as Sketch converts names like `Foo/Bar/Button` into a nested menu of Foo → Bar → Button. I recommend trying to stay shallow, as nesting too deep becomes tedious as well. I try to use the first segment of the name to group into areas of use. For example, our button might reside in `forms/`. A third level is rarely necessary.
 
-### Lowercase
+### 2. camelCase everything
 
-Using Uppercase really isn't necessary. Using camelCase to make it easier to read long names may come in handy. Try to stay away from spaces for the names, use them for:
+Using Titlecase as in trying to start with a uppercase letter really isn't necessary. Using camelCase to make it easier to read long names comes in handy. Try to stay away from spaces for the names, use them for:
 
-### Modifiers
+### 3. Modifiers
 
 | Prefix |                                        |
 | ------ | -------------------------------------- |
