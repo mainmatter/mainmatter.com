@@ -20,6 +20,11 @@
   from="/ember/"
   to="/expertise/ember/"
 
+# redirect old blog subdomain
+[[redirects]]
+  from="https://log.simplabs.com/*"
+  to="https://simplabs.com/blog/"
+
 # redirect old blog routes
 [[redirects]]
   from="/blog/2013/06/15/authentication-in-emberjs.html"
