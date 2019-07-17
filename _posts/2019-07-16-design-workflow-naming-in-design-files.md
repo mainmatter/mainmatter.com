@@ -79,7 +79,7 @@ For larger projects, it can be useful to maintain a list of allowed and required
 
 ## Further reading
 
-Brad Frost recently posted a new entry on his blog titled [Extending atomic design][extending], which goes into the details of why we should expand concepts to our needs. It also mentions [a post by Chris Cid](ions), suggesting ions as a designation for the modifiers used here. It also includes a nice list of states, etc which makes an excellent starting point to find out what your symbols and components may need.
+Brad Frost recently posted a new entry on his blog titled [Extending atomic design][extending], which goes into the details of why we should expand concepts to our needs. It also mentions [a post by Chris Cid][ions], suggesting ions as a designation for the modifiers used here. It also includes a nice list of states, etc which makes an excellent starting point to find out what your symbols and components may need.
 
 [atomic-design]: http://bradfrost.com/blog/post/atomic-web-design/
 [sketch]: https://www.sketch.com
