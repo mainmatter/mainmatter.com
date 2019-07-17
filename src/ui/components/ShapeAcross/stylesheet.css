@@ -9,7 +9,15 @@
   position: relative;
   z-index: 0;
   grid-column: 1/-1;
-  margin-bottom: 12rem;
+
+  margin-top: -34vw;
+  margin-bottom: calc(-17vw + 12rem);
+  padding-top: 34vw;
+  padding-bottom: 17vw;
+  pointer-events: none;
+  overflow: hidden;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .shapes {
@@ -18,6 +26,7 @@
   height: 100vw;
   margin-top: -34vw;
   margin-bottom: -17vw;
+  overflow: hidden;
 }
 
 .bottom {
@@ -68,8 +77,9 @@
 
 .trailing-svg {
   left: calc(100vw + 30rem);
-  top: -50rem;
-  width: 100vw;
+  top: -10rem;
+  width: 70vw;
+  height: auto;
 }
 
 @media (max-width: 887px) {
