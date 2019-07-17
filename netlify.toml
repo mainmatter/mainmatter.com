@@ -234,6 +234,52 @@
   from="/blog/2019/05/10/may-monthly-update.html"
   to="/blog/2019/05/10/may-monthly-update/"
 
+# redirect old workshop pages
+
+[[redirects]]
+  from="https://elixir-phoenix-workshop.simplabs.com/*"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://elixir-workshops.simplabs.com/*"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://ember-basics-workshop.simplabs.com/*"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://ember-pro-workshop.simplabs.com/*"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://ember-workshop.simplabs.com/*"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://ember-workshops.simplabs.com/*"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://phoenix-workshops.simplabs.com/*"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://progressive-web-apps-workshop.simplabs.com/*"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://typescript-fundamentals-workshop.simplabs.com/*"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://web-performance-workshop.simplabs.com/*"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://phoenix-workshops.simplabs.com/*"
+  to="https://simplabs.com/services/tutoring/"
+
 # handle 404 errors
 [[redirects]]
   from = "/*"
