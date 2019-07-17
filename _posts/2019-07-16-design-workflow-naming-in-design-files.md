@@ -7,6 +7,10 @@ topic: design
 bio: 'Consultant for Technology and Design at simplabs'
 ---
 
+Naming things is hard, naming visual things even more so. This guide helps you to bring meaning to the layer and symbol names in your Sketch files with little effort.
+
+<!--break-->
+
 Using components or symbols helps you to organize your designs into manageable pieces that are easily updated across your design. Processes like [Atomic Design][atomic-design] help you discern them. But what is a good way for naming and organizing your symbols?
 
 ## The problem
