@@ -81,10 +81,13 @@
   padding: 0;
   cursor: pointer;
   border: 2px solid var(--color);
+  outline: 1rem solid var(--color-background);
+  background: var(--color-background);
   border-width: 2px 0;
   overflow: hidden;
   text-indent: 999rem;
   white-space: nowrap;
+  transition: all 0.275s;
 }
 
 .toggler:after {
@@ -96,6 +99,7 @@
   background: var(--color);
   content: '';
   transform: translate(0, -1px);
+  transition: all 0.275s;
 }
 
 .nav {
