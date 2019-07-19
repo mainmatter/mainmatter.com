@@ -40,5 +40,6 @@
 
   #toggle:checked + [data-menu] label[for='toggle'] {
     --color: var(--color-text-inverted);
+    --color-background: var(--color-accent);
   }
 }
