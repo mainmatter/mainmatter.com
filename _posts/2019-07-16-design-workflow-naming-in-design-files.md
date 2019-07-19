@@ -19,7 +19,19 @@ Besides having an actual name, most elements in a design will have a current con
 
 Using composition to build these states helps to ensure consistency in the individual parts that make up the composed element, but it can also make some changes very tedious if a new element needs to be introduced.
 
-## A button
+So you create symbols for these variations and now you have a new problem: you need a strategy for naming those.
+
+### Variations in design and components
+
+While others have identified many more, I tried to narrow it down to three categories: Variants, States, and Screen sizes. You may want to extend on this list if your project needs it.
+
+**Variants** provide a way to formalize special cases so you can reuse them across your project. There is no harm in having a variant that is used for a single thing only.
+
+**States** help you discern how your design elements should behave.
+
+**Screen sizes** describe changes to a component that only apply at a certain dimension. If your design has navigation links in its header that collapse to a menu button on narrow screens you have an opportunity to use this category.
+
+### Try a button
 
 Let's create a basic button. It's composed of a background layer and a text layer. Both layers should be components on their own, so the button is a composition of two elements.
 
@@ -27,7 +39,7 @@ Our button has a default and pressed state. It also has a variant that looks lik
 
 - Variations: Default, Link
 - States: Default, Active
-- Target screen: Narrow, Wide
+- Screen sizes: Narrow, Wide
 
 Which gives us 2^3 – eight – possible combinations already.
 
@@ -37,19 +49,19 @@ But let's think of that button as a more complex component that might actually n
 
 So time to name a symbol that describes the button in its default variation, with a pressed state and targeted at narrow screens consistently across multiple people and possibly teams.
 
-## Naming symbols
+## Better names for symbols
 
 I use [Sketch][sketch], but most of the following ideas work for Figma, Adobe XD and other design tools as well.
 
-### 1. Shallow nesting
+#### 1. Shallow nesting
 
 Using `/` adds structure to your symbol selection as Sketch converts names like `Foo/Bar/Button` into a nested menu of Foo → Bar → Button. I recommend trying to stay shallow, as nesting too deep becomes tedious as well. I try to use the first segment of the name to group into areas of use. For example, our button might reside in `forms/`. A third level is rarely necessary.
 
-### 2. camelCase everything
+#### 2. camelCase everything
 
 Using Titlecase as in trying to start with a uppercase letter really isn't necessary. Using camelCase to make it easier to read long names comes in handy. Try to stay away from spaces for the names, use them for:
 
-### 3. Modifiers
+#### 3. Modifiers
 
 | Prefix |                                        |
 | ------ | -------------------------------------- |
@@ -63,7 +75,7 @@ What about defaults? While it is possible to add modifiers like `+default` or `#
 
 Footnote: The symbols were picked for compatibility. Our original draft had `:` instead of `#` for states which would be close to the CSS pseudo-selectors, but colon is the only forbidden character in filenames in macOS and gets replaced by a forward slash, which in turn is forbidden in Windows.
 
-### Result
+#### Result
 
 To complete the naming our button, we now have `forms/button +link #active @narrow`. Which makes for a concise name and gives you all necessary information at a single glance.
 
@@ -73,7 +85,7 @@ As with many things, this isn't a silver bullet that solves all naming issues. T
 
 Shallow nesting and modifiers are intended to give structure and added visual identification so you have more room to concentrate on your project. It's easy to learn and communicate across a team.
 
-## Make this better
+### Make this better
 
 For larger projects, it can be useful to maintain a list of allowed and required states, variants, and screen sizes. It might make sense to create a Sketch add-on for this in the future that lints your document.
 
