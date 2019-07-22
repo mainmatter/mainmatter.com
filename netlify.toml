@@ -22,7 +22,11 @@
 
 # redirect old blog subdomain
 [[redirects]]
-  from="https://log.simplabs.com*"
+  from="https://log.simplabs.com"
+  to="https://simplabs.com/blog/"
+
+[[redirects]]
+  from="https://log.simplabs.com/*"
   to="https://simplabs.com/blog/"
 
 # redirect old blog routes
@@ -237,47 +241,83 @@
 # redirect old workshop pages
 
 [[redirects]]
-  from="https://elixir-phoenix-workshop.simplabs.com*"
+  from="https://elixir-phoenix-workshop.simplabs.com"
   to="https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://elixir-workshops.simplabs.com*"
+  from="https://elixir-workshops.simplabs.com/*"
   to="https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://ember-basics-workshop.simplabs.com*"
+  from="https://ember-basics-workshop.simplabs.com"
   to="https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://ember-pro-workshop.simplabs.com*"
+  from="https://ember-basics-workshop.simplabs.com/*"
   to="https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://ember-workshop.simplabs.com*"
+  from="https://ember-pro-workshop.simplabs.com"
   to="https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://ember-workshops.simplabs.com*"
+  from="https://ember-pro-workshop.simplabs.com/*"
   to="https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://phoenix-workshops.simplabs.com*"
+  from="https://ember-workshop.simplabs.com"
   to="https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://progressive-web-apps-workshop.simplabs.com*"
+  from="https://ember-workshop.simplabs.com/*"
   to="https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://typescript-fundamentals-workshop.simplabs.com*"
+  from="https://ember-workshops.simplabs.com"
   to="https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://web-performance-workshop.simplabs.com*"
+  from="https://ember-workshops.simplabs.com/*"
   to="https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://phoenix-workshops.simplabs.com*"
+  from="https://phoenix-workshops.simplabs.com"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://phoenix-workshops.simplabs.com/*"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://progressive-web-apps-workshop.simplabs.com"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://progressive-web-apps-workshop.simplabs.com/*"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://typescript-fundamentals-workshop.simplabs.com"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://typescript-fundamentals-workshop.simplabs.com/*"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://web-performance-workshop.simplabs.com"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://web-performance-workshop.simplabs.com/*"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://phoenix-workshops.simplabs.com"
+  to="https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from="https://phoenix-workshops.simplabs.com/*"
   to="https://simplabs.com/services/tutoring/"
 
 # handle 404 errors
