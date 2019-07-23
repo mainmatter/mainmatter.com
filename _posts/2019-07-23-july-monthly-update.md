@@ -25,23 +25,15 @@ _After this webinar you will understand why these changes are occurring, how tec
 
 ### New simplabs website
 
-We recently recreated our website in [Glimmer.js](https://glimmerjs.com/), the fast and light-weight UI components library, based on Ember.js' rendering engine. We will have a blog post online going into more details soon.
-
-Feel free to take a look around!
+We recently recreated our website in [Glimmer.js](https://glimmerjs.com/), the fast and light-weight UI components library, based on Ember.js' rendering engine. We will have a blog post online going into more details soon. Feel free to take a look around!
 
 ### New blog post from Tobias Bieniek
 
-[Tobias Bieniek](https://twitter.com/TobiasBieniek) recently released a new blog post entitled "Sentry error reporting for Ember.js" which was positively received.
-
-Check it out [here](https://simplabs.com/blog/2019/07/15/sentry-and-ember/)
+[Tobias Bieniek](https://twitter.com/TobiasBieniek) recently released a new blog post entitled [Sentry error reporting for Ember.js](https://simplabs.com/blog/2019/07/15/sentry-and-ember/) which was positively received. You should check it out.
 
 ### New version of ember-intl-analyzer released
 
-First announced in the [May monthly update](https://simplabs.com/blog/2019/05/10/may-monthly-update), the ember-intl-analyzer CLI tool which analyzes your app code and finds unused translations for you has received an update.
-
-ember-intl-analyzer now has support for JS decorators and will warn about missing translations.
-
-Check it out here: [https://github.com/simplabs/ember-intl-analyzer](https://github.com/simplabs/ember-intl-analyzer)
+First announced in the [May monthly update](https://simplabs.com/blog/2019/05/10/may-monthly-update), the ember-intl-analyzer CLI tool which analyzes your app code and finds unused translations for you has received an update. Supporta JS decorators now and will warn about missing translations. Check it out [on GitHub.](https://github.com/simplabs/ember-intl-analyzer)
 
 ### Other news
 
@@ -55,23 +47,17 @@ _We're always interested in new speakers for the various meetups we're involved 
 
 [EmberFest](https://emberfest.eu/) is coming together nicely.
 
-Taking place in Copenhagen in October, EmberFestEU brings together the European Ember community for two days of talks and activities.
+Taking place in Copenhagen in October, EmberFestEU brings together the European Ember community for two days of talks and activities. The CFP closes on August 1st so if you'd like to give a presentation remember to get your submission in on time [here](https://cfp.emberfest.eu/events/emberfest-2019).
 
-The CFP closes on August 1st so if you'd like to give a presentation remember to get your submission in on time [here](https://cfp.emberfest.eu/events/emberfest-2019).
-
-To attend grab a ticket [here](https://emberfest.eu/) while you still can and keep an eye on the [twitter](https://twitter.com/EmberFest) for updates as the conference takes shape.
+To attend [grab a ticket](https://emberfest.eu/) while you still can and keep an eye on the [Twitter account @EmberFest](https://twitter.com/EmberFest) for updates as the conference takes shape.
 
 ### Chris Manson at Leeds JS
 
-On July 31st [Chris Manson](https://twitter.com/real_ate/) will be speaking at Leeds JS about [Empress](https://github.com/empress), which is the technology behind [empress-blog](https://github.com/empress/empress-blog) and [Guidemaker](https://github.com/empress/guidemaker) which powers the current Ember guides.
-
-Check the full event details [here](https://leedsjs.com/events/2019-07-31/).
+On July 31st [Chris Manson](https://twitter.com/real_ate/) will be speaking at Leeds JS about [Empress](https://github.com/empress), which is the technology behind [empress-blog](https://github.com/empress/empress-blog) and [Guidemaker](https://github.com/empress/guidemaker) which powers the current Ember guides. [Check the full event details](https://leedsjs.com/events/2019-07-31/).
 
 ### Jessica Jordan speaking at EmberCamp
 
-On September 16th [Jessica Jordan](https://twitter.com/jjordan_dev) will be at [EmberCamp](http://embercamp.com/) in Chicago talking about how state management is easier than ever in Ember Octane!
-
-Check the full schedule [here](http://embercamp.com/).
+On September 16th [Jessica Jordan](https://twitter.com/jjordan_dev) will be at [EmberCamp](http://embercamp.com/) in Chicago talking about how state management is easier than ever in Ember Octane! [Check the full schedule](http://embercamp.com/).
 
 ## Past Events
 
@@ -81,7 +67,7 @@ On May 24th and 25th [Jessica Jordan](https://twitter.com/jjordan_dev), [Samanta
 
 Day 1 was an installation party to make sure that everybody was set up for day 2 when attendees were guided through creating their first web application using EmberJS! The workshop was open to women and those who are non-binary, and was a great success.
 
-We plan to run another session like this in the future, so keep an eye on the [simplabs Twitter feed](https://twitter.com/simplabs) for more news.
+We plan to run another session like this in the future, so keep an eye on the [@simplabs Twitter feed](https://twitter.com/simplabs) for more news.
 
 ### Jessica Jordan at JSConfEU
 
