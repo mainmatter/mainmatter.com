@@ -83,7 +83,7 @@ On the 1st of June [Jessica Jordan](https://twitter.com/jjordan_dev) spoke at [J
 
 You can watch the whole talk [here.](https://www.youtube.com/watch?v=BPmuR4mAQaw)
 
-#### Ricardo Mendes talking at Commit Porto
+### Ricardo Mendes talking at Commit Porto
 
 On the 22nd of June [Ricardo Mendes](https://twitter.com/locks) gave his talk "Thriving through the hype cycle: an Ember.js story" at [CommitPorto](https://commitporto.com/).
 
