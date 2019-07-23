@@ -91,4 +91,4 @@ On the 22nd of June [Ricardo Mendes](https://twitter.com/locks) gave his talk "T
 
 ### Jessica speaking at FullStackCon London
 
-And last but not least, [Jessica Jordan](https://twitter.com/jjordan_dev) spoke at [FullStackConf](https://skillsmatter.com/conferences/11213-fullstack-london-2019-the-conference-on-javascript-node-and-internet-of-things) in London with her talk "Crafting Comics or Literally Everyone".
+And last but not least, [Jessica Jordan](https://twitter.com/jjordan_dev) spoke at [FullStackConf](https://skillsmatter.com/conferences/11213-fullstack-london-2019-the-conference-on-javascript-node-and-internet-of-things) in London with her talk "Crafting Comics for Literally Everyone".
