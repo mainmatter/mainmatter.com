@@ -59,7 +59,7 @@ Taking place in Copenhagen in October, EmberFestEU brings together the European 
 
 Grab a ticket [here](https://emberfest.eu/) while you still can and keep an eye on the [twitter](https://twitter.com/EmberFest) for updates as the conference takes shape.
 
-#### Chris Manson at Leeds JS
+### Chris Manson at Leeds JS
 
 On July 31st [Chris Manson](https://twitter.com/real_ate/) will be speaking at Leeds JS about [Empress](https://github.com/empress), which is the technology behind [empress-blog](https://github.com/empress/empress-blog) and [Guidemaker](https://github.com/empress/guidemaker) which powers the current Ember guides.
 
