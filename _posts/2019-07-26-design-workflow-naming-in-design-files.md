@@ -29,25 +29,27 @@ While others have identified many more, I tried to narrow it down to three categ
 
 **States** help you discern how your design elements should behave.
 
-**Screen sizes** describe changes to a component that only apply at a certain dimension. If your design has navigation links in its header that collapse to a menu button on narrow screens you have an opportunity to use this category.
+**Screen sizes** describe changes to a component that only apply at a certain dimension. If your design has navigation links in its header that collapse to a menu button on small screens you have an opportunity to use this category.
 
 ### Try a button
 
 Let's create a basic button. It's composed of a background layer and a text layer. Both layers should be components on their own, so the button is a composition of two elements.
 
-Our button has a default and pressed state. It also has a variant that looks like a link. I also go a little overboard for this demonstration and have adjusted looks for narrow and wide screens.
+Our button has a default and pressed state. It also has a more prominent variant for primary actions. I also go a little overboard for this demonstration and adjusted the look for smaller screens.
 
-- Variations: Default, Link
+- Variations: Default, Primary
 - States: Default, Active
-- Screen sizes: Narrow, Wide
+- Screen sizes: Default, Small
 
 Which gives us 2^3 – eight – possible combinations already.
+
+![Illustration of the eight expected states of our button](/assets/images/posts/2019-07-26-design-workflow-naming-in-design-files/buttons.png)
 
 It's most likely, that most of these states can be created just by combining variations of their parts and for a simple component such as a button, you probably will be fine with overriding the background and or text layer.
 
 But let's think of that button as a more complex component that might actually need additional elements depending on its state.
 
-So time to name a symbol that describes the button in its default variation, with a pressed state and targeted at narrow screens consistently across multiple people and possibly teams.
+So time to name a symbol that describes the button in its default variation, with a pressed state and targeted at small screens consistently across multiple people and possibly teams.
 
 ## Better names for symbols
 
@@ -65,9 +67,9 @@ Using Titlecase as in trying to start with a uppercase letter really isn't neces
 
 | Prefix |                                        |
 | ------ | -------------------------------------- |
-| `+`    | Variants like `+link` `+large`         |
+| `+`    | Variants like `+primary` `+large`      |
 | `#`    | States like `#hover` `#error` `#empty` |
-| `@`    | Screen sizes like @narrow``@wide`      |
+| `@`    | Screen sizes like @small``@wide`       |
 
 The idea is of course inspired by hashtags, but adds an extra layer of semantics. By relying on different characters, you can use the built in filter function at the bottom of the layer list in Sketch to quickly gather all symbols of a certain state or variant by typing that single character.
 
@@ -77,7 +79,7 @@ Footnote: The symbols were picked for compatibility. Our original draft had `:` 
 
 #### Result
 
-To complete the naming our button, we now have `forms/button +link #active @narrow`. Which makes for a concise name and gives you all necessary information at a single glance.
+To complete the naming our button, we now have `forms/button +primary #active @small`. Which makes for a concise name and gives you all necessary information at a single glance.
 
 ## Make your workflow better
 
