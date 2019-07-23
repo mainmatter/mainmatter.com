@@ -283,6 +283,15 @@ figure {
   margin-top: 3rem;
 }
 
+figure a {
+  display: block;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+}
+
 figcaption {
   display: block;
   font-size: 2rem;
