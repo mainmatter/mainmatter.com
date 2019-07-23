@@ -144,7 +144,7 @@ export default class Simplabs extends Component {
 
           if (link && link.dataset.internal !== undefined) {
             event.preventDefault();
-            this.router.navigate(target.getAttribute('href'));
+            this.router.navigate(link.getAttribute('href'));
           }
         }
       });
