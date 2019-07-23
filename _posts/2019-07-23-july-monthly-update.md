@@ -75,7 +75,7 @@ Day 1 was an installation party to make sure that everybody was set up for day 2
 
 We plan to run another session like this in the future, so keep an eye on the [simplabs Twitter feed](https://twitter.com/simplabs) for more news.
 
-#### Jessica Jordan at JSConfEU
+### Jessica Jordan at JSConfEU
 
 ![JsConfEU](/assets/images/posts/2019-05-10-may-monthly-update/jsconfeu.png)
 
