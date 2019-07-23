@@ -57,7 +57,9 @@ _We're always interested in new speakers for the various meetups we're involved 
 
 Taking place in Copenhagen in October, EmberFestEU brings together the European Ember community for two days of talks and activities.
 
-Grab a ticket [here](https://emberfest.eu/) while you still can and keep an eye on the [twitter](https://twitter.com/EmberFest) for updates as the conference takes shape.
+The CFP closes on August 1st so if you'd like to give a presentation remember to get your submission on time [here](https://cfp.emberfest.eu/events/emberfest-2019).
+
+To attend grab a ticket [here](https://emberfest.eu/) while you still can and keep an eye on the [twitter](https://twitter.com/EmberFest) for updates as the conference takes shape.
 
 ### Chris Manson at Leeds JS
 
