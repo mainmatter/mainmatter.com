@@ -67,7 +67,7 @@ Check the full event details [here](https://leedsjs.com/events/2019-07-31/).
 
 ## Past Events
 
-#### Ember.js Berlin - Javascript for Beginners
+### Ember.js Berlin - Javascript for Beginners
 
 On May 24th and 25th [Jessica Jordan](https://twitter.com/jjordan_dev), [Samanta de Barros](https://twitter.com/sami_dbc) and [Chris Manson](https://twitter.com/real_ate/) ran a Javascript for beginners workshop in Berlin.
 
