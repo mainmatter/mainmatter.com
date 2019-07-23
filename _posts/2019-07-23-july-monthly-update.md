@@ -21,7 +21,7 @@ From the site: _"The way that web apps are built has changed dramatically in rec
 
 _After this webinar you will understand why these changes are occurring, how technology is responding to this shift and crucially, how you can use these technologies to build incredible experiences for your users."_
 
-You can sign up [here.](https://simplabs.com/webinars/modern-web/)
+You can sign up [here.](/webinars/modern-web/)
 
 ### New simplabs website
 
