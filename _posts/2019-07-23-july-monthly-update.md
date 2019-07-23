@@ -61,7 +61,7 @@ Check the full event details [here](https://leedsjs.com/events/2019-07-31/).
 
 #### Ember.js Berlin - Javascript for Beginners
 
-On May 24th and 25th [Jessica Jordan](https://twitter.com/jjordan_dev) ran a very succcessful Javascript for beginners workshop. in Berlin.
+On May 24th and 25th [Jessica Jordan](https://twitter.com/jjordan_dev) ran a very succcessful Javascript for beginners workshop in Berlin.
 
 Day 1 was an installation party to make sure that everybody was set up for day 2 when attendees were guided through creating their first web application using EmberJS! The workshop is open to women and those who are non-binary, and you can sign up using the links below!
 
