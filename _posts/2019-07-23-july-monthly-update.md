@@ -29,7 +29,7 @@ Check it out [here](https://simplabs.com/blog/2019/07/15/sentry-and-ember/)
 
 First announced in the [May monthly update](https://simplabs.com/blog/2019/05/10/may-monthly-update), the ember-intl-analyzer CLI tool which analyzes your app code and finds unused translations for you has received an update.
 
-ember-intl-analyzer now has support or JS decorators and will warn about missing translations.
+ember-intl-analyzer now has support for JS decorators and will warn about missing translations.
 
 Check it out here: [https://github.com/simplabs/ember-intl-analyzer](https://github.com/simplabs/ember-intl-analyzer)
 
