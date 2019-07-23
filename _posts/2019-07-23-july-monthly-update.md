@@ -67,6 +67,12 @@ On July 31st [Chris Manson](https://twitter.com/real_ate/) will be speaking at L
 
 Check the full event details [here](https://leedsjs.com/events/2019-07-31/).
 
+### Jessica Jordan speaking at EmberCamp
+
+On September 16th [Jessica Jordan](https://twitter.com/jjordan_dev) will be at [EmberCamp](http://embercamp.com/) in Chicago talking about how state management is easier than ever in Ember Octane!
+
+Check the full schedule [here](http://embercamp.com/).
+
 ## Past Events
 
 ### Ember.js Berlin - Javascript for Beginners
@@ -89,6 +95,6 @@ You can watch the whole talk [here.](https://www.youtube.com/watch?v=BPmuR4mAQaw
 
 On the 22nd of June [Ricardo Mendes](https://twitter.com/locks) gave his talk "Thriving through the hype cycle: an Ember.js story" at [CommitPorto](https://commitporto.com/).
 
-### Jessica speaking at FullStackCon London
+### Jessica Jordan speaking at FullStackCon London
 
-And last but not least, [Jessica Jordan](https://twitter.com/jjordan_dev) spoke at [FullStackConf](https://skillsmatter.com/conferences/11213-fullstack-london-2019-the-conference-on-javascript-node-and-internet-of-things) in London with her talk "Crafting Comics for Literally Everyone".
+[Jessica Jordan](https://twitter.com/jjordan_dev) spoke at [FullStackConf](https://skillsmatter.com/conferences/11213-fullstack-london-2019-the-conference-on-javascript-node-and-internet-of-things) in London with her talk "Crafting Comics for Literally Everyone".
