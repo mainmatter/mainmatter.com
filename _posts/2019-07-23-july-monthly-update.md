@@ -25,7 +25,7 @@ Feel free to take a look around!
 
 Check it out [here](https://simplabs.com/blog/2019/07/15/sentry-and-ember/)
 
-#### New version of ember-intl-analyzer released
+### New version of ember-intl-analyzer released
 
 First announced in the [May monthly update](https://simplabs.com/blog/2019/05/10/may-monthly-update), the ember-intl-analyzer CLI tool which analyzes your app code and finds unused translations for you has received an update.
 
