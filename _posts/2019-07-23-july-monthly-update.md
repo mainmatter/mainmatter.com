@@ -33,7 +33,7 @@ ember-intl-analyzer now has support or JS decorators and will warn about missing
 
 Check it out here: [https://github.com/simplabs/ember-intl-analyzer](https://github.com/simplabs/ember-intl-analyzer)
 
-#### Other news
+### Other news
 
 In other news [Chris Manson](https://twitter.com/real_ate/) and [Jen Weber](https://twitter.com/jwwweber/) released [another episode](https://twitter.com/real_ate/status/1126760948260204549) of 'May I Ask A Question?'.
 
