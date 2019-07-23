@@ -51,7 +51,7 @@ Check it out here: [https://github.com/simplabs/ember-intl-analyzer](https://git
 
 _We're always interested in new speakers for the various meetups we're involved in. If you'd like to give a talk, [please get in touch.](/contact/)_
 
-#### EmberFest - October 17th & 18th
+### EmberFest - October 17th & 18th
 
 [EmberFest](https://emberfest.eu/) is coming together nicely.
 
