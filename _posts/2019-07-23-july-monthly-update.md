@@ -25,7 +25,7 @@ You can sign up [here.](https://simplabs.com/webinars/modern-web/)
 
 ### New simplabs website
 
-We recently recreated our website in [Glimmer](https://glimmerjs.com/) which describes itself as "Fast and light-weight UI components for the web, with the attention to detail you've come to expect from Ember."
+We recently recreated our website in [Glimmer.js](https://glimmerjs.com/), the fast and light-weight UI components library, based on Ember.js' rendering engine. We will have a blog post online going into more details soon.
 
 Feel free to take a look around!
 
