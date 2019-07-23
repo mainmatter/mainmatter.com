@@ -19,7 +19,7 @@ We recently recreated our website in [Glimmer](https://glimmerjs.com/) which des
 
 Feel free to take a look around!
 
-#### New blog post from Tobias Bieniek
+### New blog post from Tobias Bieniek
 
 [Tobias Bieniek](https://twitter.com/TobiasBieniek) recently released a new blog post entitled "Sentry error reporting for Ember.js" which was positively received.
 
