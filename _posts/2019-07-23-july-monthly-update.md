@@ -1,10 +1,10 @@
 ---
-title: "simplabs monthly update - July 2019"
-author: "Mark Coleman"
+title: 'simplabs monthly update - July 2019'
+author: 'Mark Coleman'
 github: mrmrcoleman
 twitter: mrmrcoleman
 topic: simplabs
-bio: "Communications and Community Outreach Specialist"
+bio: 'Communications and Community Outreach Specialist'
 ---
 
 Welcome to the fourth installment of our monthly update. This one is later than expected but still packed with all the events and activities that have been happening at simplabs along with the things we're looking forward to. Enjoy.
