@@ -13,7 +13,7 @@ Welcome to the fourth installment of our monthly update. This one is later than 
 
 ## News
 
-#### New simplabs website
+### New simplabs website
 
 We recently recreated our website in [Glimmer](https://glimmerjs.com/) which describes itself as "Fast and light-weight UI components for the web, with the attention to detail you've come to expect from Ember."
 
