@@ -67,19 +67,19 @@
 .trailing-svg {
   position: absolute;
   fill: var(--shape-color);
+  height: auto;
 }
 
 .leading-svg {
   right: calc(80vw + 65rem);
-  bottom: -50rem;
+  bottom: -25rem;
   width: 100vw;
 }
 
 .trailing-svg {
-  left: calc(100vw + 30rem);
+  left: calc(96vw + 30rem);
   top: -10rem;
-  width: 70vw;
-  height: auto;
+  width: 90vw;
 }
 
 @media (max-width: 887px) {
@@ -90,7 +90,13 @@
     margin-top: 0;
   }
 
+  .leading-svg {
+    display: none;
+  }
+
   .trailing-svg {
-    left: calc(100vw + 25rem);
+    left: calc(64vw + 25rem);
+    width: 90vw;
+    top: 0rem;
   }
 }
