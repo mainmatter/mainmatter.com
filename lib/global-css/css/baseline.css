@@ -314,3 +314,17 @@ address {
 * + form {
   margin-top: 3rem;
 }
+
+code {
+  padding: 0.3rem 0.4rem;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  background: #f4f4f4;
+  border-radius: 0.15em;
+  font-size: 0.9em;
+}
+
+pre code {
+  padding: unset;
+  background: none;
+  font-size: inherit;
+}

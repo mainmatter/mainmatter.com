@@ -16,12 +16,6 @@
   position: relative;
 }
 
-.content[state|flex-content='true'] {
-  display: flex;
-  margin-top: 8rem;
-  margin-bottom: 8rem;
-}
-
 .navbar {
   font-size: 2rem;
 }

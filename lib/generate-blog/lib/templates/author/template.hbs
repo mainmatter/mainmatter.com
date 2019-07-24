@@ -17,18 +17,11 @@
         </a>
       </div>
     </div>
-    <div>
-      <p class="typography.small">
-        Blog
-      </p>
-      <h1 class="typography.display">
-        Posts by
-        {{name}}
-      </h1>
-      {{{excerpt}}}
+    <div class="blog-post.excerpt typography.lead">
+    {{{excerpt}}}
     </div>
   </Header>
-  <div class="layout.main offset.after-21">
+  <div class="blog-author.main offset.after-21">
     {{#each posts}}
       <article>
         <span class="typography.tag">

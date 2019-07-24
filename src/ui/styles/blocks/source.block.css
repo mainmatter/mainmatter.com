@@ -4,12 +4,12 @@
   margin: 3rem 0;
   background: #f4f4f4;
   border: 1px solid #ddd;
-  font-family: monospace;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
   max-width: 100%;
   overflow: auto;
-  padding: 1em;
+  padding: 1.5rem 2rem;
   display: block;
-  white-space: pre-wrap;
-  word-wrap: break-word;
+  white-space: pre;
   text-align: justify;
+  font-size: 2rem;
 }
