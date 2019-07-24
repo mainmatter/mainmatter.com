@@ -1,6 +1,7 @@
 :scope {
   block-name: ArrowLink;
   text-align: right;
+  pointer-events: none;
 }
 
 .link {
@@ -11,6 +12,7 @@
   font-size: 3rem;
   line-height: 1.5;
   text-decoration: none;
+  pointer-events: all;
 }
 
 .link:hover {
@@ -24,11 +26,13 @@
   right: 0;
   width: 5rem;
   height: 5rem;
-  transition: right 0.2s ease-out;
+  transition: transform 0.2s;
+  transform: translate(0);
+  pointer-events: none;
 }
 
 :scope:hover .svg {
-  right: -0.5rem;
+  transform: translate(0.5rem);
 }
 
 .arrow {
