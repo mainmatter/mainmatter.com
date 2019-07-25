@@ -1,47 +1,54 @@
 <div>
-  <Header @active="blog" @flex-content="true" @title="Posts by {{name}}" @documentTitle="Posts by {{name}} | Blog">
-    <div class="blog-post.badge">
-      <div class="blog-post.badge-image">
-        <img class="fluid-image.image" src="/assets/images/authors/{{twitter}}.jpg" alt="photo of {{name}}" />
+  <Header @active="blog" @title="Posts by {{name}}" @documentTitle="Posts by {{name}} | Blog">
+    <div class="blog-post.header">
+      <div class="blog-post.headline">
+        <h1 class="typography.display">
+          <small class="typography.small">
+            Blog<span class="typography.hidden">:</span>
+          </small>
+          Posts by {{name}}
+        </h1>
       </div>
-      <div class="blog-post.badge-content">
-        <a href="/blog/author/{{twitter}}" data-internal>
-          {{name}}
-        </a>
-        <p>
-          {{bio}}
-        </p>
-        <a href="https://twitter.com/{{author.twitter}}" target="_blank" rel="noopener">
-          @
-          {{twitter}}
-        </a>
+      <div class="blog-post.badge">
+        <div class="blog-post.badge-image">
+          <img class="fluid-image.image" src="/assets/images/authors/{{twitter}}.jpg" alt="" />
+        </div>
+        <div class="blog-post.badge-content">
+          <a href="/blog/author/{{twitter}}" data-internal>
+            {{name}}
+          </a>
+          <p>
+            {{bio}}
+          </p>
+          <a href="https://twitter.com/{{author.twitter}}" target="_blank" rel="noopener">
+            @{{twitter}}
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="blog-post.excerpt typography.lead">
-    {{{excerpt}}}
     </div>
   </Header>
   <div class="blog-author.main offset.after-21">
     {{#each posts}}
       <article class="offset.after-16">
         <span class="typography.tag">
-          #
-          {{topic}}
+          #{{topic}}
         </span>
-        <div>
+        <div class="blog-post.excerpt">
           <h3>
             <a href="{{path}}" data-internal>
               {{title}}
             </a>
           </h3>
           {{{excerpt}}}
+        </div>
+        <footer>
           <a href="/blog/author/{{author.twitter}}" data-internal>
             {{author.name}}
           </a>
           <p class="typography.small">
             {{date}}
           </p>
-        </div>
+        </footer>
       </article>
     {{/each}}
   </div>

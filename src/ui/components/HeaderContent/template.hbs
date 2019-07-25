@@ -1,0 +1,16 @@
+<div>
+  {{#if @headline}}
+    <h1 class="typography.display">
+      {{#if @label}}
+        <small class="typography.small">
+          {{@label}}
+          <span class="typography.hidden">
+            :
+          </span>
+        </small>
+      {{/if}}
+      {{@headline}}
+    </h1>
+  {{/if}}
+  {{yield}}
+</div>

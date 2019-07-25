@@ -1,12 +1,7 @@
 <div>
-  <Header
-    @active="services"
-    @label="Services"
-    @headline="Tutoring"
-    @title="Tutoring"
-    @documentTitle="Tutoring | Services"
-   />
-
+  <Header @active="services" @title="Tutoring">
+    <HeaderContent @label="Services" @headline="Tutoring" />
+  </Header>
   <div class="layout.main offset.after-21">
     <h2 class="typography.h2">
       Raising confidence for increased productivity and quality

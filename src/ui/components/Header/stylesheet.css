@@ -10,12 +10,6 @@
   grid-column: 2/-2;
 }
 
-.content {
-  margin-top: 6rem;
-  margin-bottom: 3rem;
-  position: relative;
-}
-
 .navbar {
   font-size: 2rem;
 }
@@ -174,18 +168,9 @@
   .work-with-us[state|active] {
     box-shadow: 0 calc(2rem + 2px) 0 -2rem var(--color-link-inverted);
   }
-
-  .content {
-    grid-column: 2/-2;
-  }
 }
 
 @media (min-width: 888px) {
-  .content {
-    margin-top: 21rem;
-    margin-bottom: 21rem;
-  }
-
   .wrapper {
     display: flex;
     margin-left: auto;

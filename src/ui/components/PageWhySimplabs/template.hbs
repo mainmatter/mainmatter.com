@@ -1,13 +1,10 @@
 <div>
-  <Header
-    @active="about"
-    @label="Why simplabs"
-    @headline="Cutting edge solutions – From Idea to Release"
-    @title="Why simplabs"
-  >
-    <p class="typography.lead">
-      We build cutting edge web apps for clients around the world. Our team of experts delivers everything from ideation to design and engineering, guiding our clients along the way.
-    </p>
+  <Header @active="about" @title="Why simplabs">
+    <HeaderContent @label="Why simplabs" @headline="Cutting edge solutions – From Idea to Release">
+      <p class="typography.lead">
+        We build cutting edge web apps for clients around the world. Our team of experts delivers everything from ideation to design and engineering, guiding our clients along the way.
+      </p>
+    </HeaderContent>
   </Header>
   <div class="layout.main offset.after-21">
     <h2>
