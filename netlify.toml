@@ -20,6 +20,11 @@
   from="/ember/"
   to="/expertise/ember/"
 
+# redirect old clients page
+[[redirects]]
+  from="/clients/"
+  to="/work/"
+
 # redirect old blog subdomain
 [[redirects]]
   from="https://log.simplabs.com"
