@@ -178,3 +178,66 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .actionscript,
 .undefined /* this seems wrong 🤔*/ {
 }
+
+.waapi-demo {
+
+}
+
+.waapi-demo-panel {
+  height: 300px;
+  border: 2px solid #999;
+  overflow: hidden;
+}
+
+.waapi-demo-sparkle {
+  transform: rotate(0deg);
+  font-size: 32px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+.waapi-demo-sparkle:nth-child(0) {
+  left: 200;
+  top: 50px;
+  font-size: 54px;
+  transform: rotate(-9deg);
+}
+
+.waapi-demo-sparkle:nth-child(1) {
+  left: 0;
+  top: 0;
+  font-size: 32px;
+  transform: rotate(5deg);
+}
+
+.waapi-demo-sparkle:nth-child(2) {
+  left: 30px;
+  top: 30px;
+  font-size: 42px;
+  transform: rotate(-10deg);
+}
+
+.waapi-demo-sparkle:nth-child(3) {
+  left: 70px;
+  top: 90px;
+  font-size: 12px;
+  transform: rotate(-5deg);
+}
+
+.waapi-demo-sparkle:nth-child(4) {
+  left: 100px;
+  top: 120px;
+  font-size: 48px;
+  transform: rotate(15deg);
+}
+
+.waapi-demo-sparkle:nth-child(5) {
+  left: 150px;
+  top: 80px;
+  font-size: 30px;
+  transform: rotate(0deg);
+}

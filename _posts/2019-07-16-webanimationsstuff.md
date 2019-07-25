@@ -14,6 +14,7 @@ some here
 - WHAT IS IT?
 - How is it different from other ways of animating?
 - What can I do with it (demos)?
+-- Basics: animate()
 - What's upcoming?
 - Sources
 
@@ -23,7 +24,7 @@ What Is the Web Animations API Exactly?
 The Web Animations API (WAAPI) is an interface of the web platform allowing for
 the synchronisation, playback and timing of presentational changes on a web page.
 The API is a description of how cross-browser animations should be implemented and gives
-developers accessto the browser's rendering and animation engine.
+developers access to the browser's rendering and animation engine.
 
 At WAAPI's core, two models - the Timing Model and the Animation Model -
 allow for the creation of minutely timed animations.
@@ -49,231 +50,163 @@ WAAPI is not limited to the animation of scalable vector graphics (SVG) elements
 but also allows for the animation of all types of document object model (DOM) elements.
 
 This makes the WAAPI much more flexible for creating complex and
-interactive animations in a way that hasn't been possible before using CSS animations 
+interactive animations in a way that hasn't been possible before using CSS animations
 and SMIL alone.
 
-The Default
+
+How to Create Animations Using WAAPI
 -------------------------------------------------------------------------------
 
-```
-TypeError: Cannot read property 'name' of undefined
-  at Object.ie [as get](/assets/vendor-394212fdd48a8a8e9508401b5be54d75.js:1347:16)
-  at ? (/assets/vendor-394212fdd48a8a8e9508401b5be54d75.js:9923:46)
-  at e(/assets/vendor-394212fdd48a8a8e9508401b5be54d75.js:9947:46)
-  at n.filter(/assets/vendor-394212fdd48a8a8e9508401b5be54d75.js:9827:26)
-  at n._performFilter(/assets/vendor-394212fdd48a8a8e9508401b5be54d75.js:9834:196)
-  at n.search(/assets/vendor-394212fdd48a8a8e9508401b5be54d75.js:9793:162)
+The WAAPI describes a set of different interfaces for creating and playing back animations.
+The probably most straightforward way for creating an animation is by using the shorthand
+method `animate`.
+
+
+### Instant Animation with Element.animate()
+
+WAAPI is a DOM-focussed approach to animation and allows the definition and the
+instantaneous playback of animations using the `Element` interface's
+[`animate()` method](https://developer.mozilla.org/en-US/docs/Web/API/Element/animate).
+You can apply it as follows:
+
+
+```html
+<main class="frame">
+  <section class="waapi-demo-panel" role="img" aria-label="A group of sparkles">
+    <div id="sparkle" class="waapi-demo-sparkle">✨</div>
+  </section>
+</main>
 ```
 
-Sourcemaps allow you to map from compiled and minified code to the original code
-you wrote in your editor. That makes it a lot easier to decipher stack traces
-like the one above because it will show you the actual file and function names.
-
-By default in Ember.js, sourcemaps are disabled for production builds. In this
-case we would like to have them though, so that Sentry has access to them and
-can decipher the cryptic stack traces for us. We can enable sourcemap generation
-for all environments in the `ember-cli-build.js` file:
 
 ```js
-let app = new EmberApp(defaults, {
-  sourcemaps: {
-    enabled: true,
-  },
-});
+document.querySelector('#tiger').animate(
+  [ /* animation keyframes */ ],
+  { /* animation options */ },
+);
 ```
 
-If you now run `ember build --prod` it should generate `.map` files next to the
-JavaScript files in the `dist/assets/` folder. Make sure to upload those files
-to your server too, so that Sentry can access them.
+The `animate` method is - once called - creating a new `Animation` and applying it
+to the `#tiger` element using the animation states and options passed to it as parameters.
+This post will talk about the `Animation` interface itself later on. For now it's interesting
+to note, that `animate()` functions as a short hand method for creating, attaching and playing
+animations to any DOM element.
 
-In case you don't want other people to be able to read your original source code
-you can also upload the sourcemaps directly to Sentry. If you use [`ember-cli-deploy`]
-to publish your apps then you can use the [`ember-cli-deploy-sentry`] addon to
-do this automatically for each deployment.
+### Defining Animation States Using Keyframes
 
+With the WAAPI, animation states are defined as so-called _keyframes_. For example,
+the `Element.animate` method accepts keyframes as its first parameter to create the animation
+that is attached to that particular element. A set of keyframes might be defined as follows:
 
-Setting up `@sentry/browser`
--------------------------------------------------------------------------------
-
-`ember-cli-sentry` uses an instance-initializer to automatically configure and
-initialize the `raven-js` library. Those initializers are great for certain
-cases, but it could happen that a bug in a different initializer is triggered
-before the Sentry client was setup to listen for errors. For this reason we will
-not use an initializer to setup `@sentry/browser`.
-
-Instead, we will adjust our `app/app.js` file to initialize `@sentry/browser`
-right before we start the app:
 
 ```js
-import { startSentry } from './sentry';
-
-startSentry();
-
-const App = Application.extend({
-  // ...
-});
+let frames = [
+  { translateX: 0 },
+  { translateX: '50px' },
+  { translateX: '120px' },
+];
 ```
 
-From the above snippet you can see that we chose to put the Sentry-specific
-logic into a separate file: `app/sentry.js`. That file looks roughly like this:
+Keyframes are provided as an array of objects and each object (keyframe) contains:
+
+- one or several property-value pairs of CSS properties in camelCase
+- an `offset` property defining the timing of the state in the context of the full animation (optional)
+- an `easing` property defining the timing function between this keyframe and the following one (optional)
+- a `composite` property allowing for adding the values of this keyframe onto the values of the previous one (optional)
+
+We'll take another look at the optional keyframe attributes and their effect on an animation later on in this post.
+
+### Defining Animation Timing Using Animation Options
+
+An animation can be configured freely in regards to its length, easing, direction among other parameters.
+The animation options object passed to, for example, the `Element.animate` method and other interfaces
+of the WAAPI is used to apply this configuration:
+
 
 ```js
-import * as Sentry from '@sentry/browser';
-import { Ember } from '@sentry/integrations/esm/ember';
-
-import config from './config/environment';
-
-export function startSentry() {
-  Sentry.init({
-    ...config.sentry,
-    integrations: [new Ember()],
-  });
-}
+let animationOptions = {
+  duration: 3000,
+  easing: 'ease-in',
+  iterations: 3,
+};
 ```
 
-First we import the `@sentry/browser` library into the file using a
-[wildcard import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#Import_an_entire_module's_contents)
-and we import their official Ember.js plugin from the `@sentry/integrations`
-package:
+Alternatively, WAAPI interfaces also accept an integer as the sole value for animating options versus an object.
+The number will then define the duration (in ms) of the animation. For a full list of animation options,
+please review the [API reference on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/animate#Parameters).
+
+### Instant Animation In Action
+
+By declaring an animation in its sequence of states and timing, we can now use `Element.animate` accordingly
+to bring the previous demo to life. Check it out:
+
+
+```html
+<main class="frame">
+  <section class="waapi-demo-panel" role="img" aria-label="A group of sparkles">
+    <div id="sparkle" class="waapi-demo-sparkle">✨</div>
+  </section>
+</main>
+```
+
 
 ```js
-import * as Sentry from '@sentry/browser';
-import { Ember } from '@sentry/integrations/esm/ember';
+let frames = [
+  { transform: 'translateX(10vw)' },
+  { transform: 'translateX(50vw)' },
+  { transform: 'translateX(90vw)' },
+];
+
+let animationOptions = {
+  duration: 7000,
+  easing: 'ease-in',
+  iterations: 'Infinity',
+  fill: 'both',
+  direction: 'alternate',
+};
+
+document.querySelector('#sparkle').animate(frames, animationOptions);
 ```
 
-We are using `@sentry/integrations/esm/ember` here instead of just
-`@sentry/integrations` because we want to make sure that we only bundle the
-Ember.js plugin, but not e.g. the Vue plugin too.
+Which results in:
 
-At this point you might be wondering: but, we never installed those libraries?!
-And you are totally right! At this point we need to install the libraries using
-your favorite JavaScript package manager. In this case we'll use `yarn`:
+<div class="waapi-demo">
+<iframe height="400" style="width: 100%;" scrolling="no" title="simplabs WAAPI Demo 1" src="//codepen.io/jessicajordan/embed/eqzoja/?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+</iframe>
+</div>
 
-```
-yarn add @sentry/browser @sentry/integrations
-```
+Creating and Playing Animations Independently
+-----------------------------------------------------------------
 
-To make those available in the app we'll also need `ember-auto-import`, which
-makes importing from `node_modules` much easier:
+By means of the `Animation` and the `KeyfameEffect` interfaces, we can also
+create animations freely and dynamically attach them onto elements,
+as well as time the playback of these animations precisely.
 
-```
-yarn add --dev ember-auto-import
-```
 
-Now we have everything we need installed and can go on with the snippet above.
-You can see that the `Sentry.init()` call uses the `sentry` object from your
-application configuration, so let's add that to the `config/environment.js`
-file:
+### Animation Creation with `Animation`
+
+A new animation can be created using the `Animation` constructor and
+the `KeyframeEffect` constructor in combination as follows:
 
 ```js
-module.exports = function(environment) {
-  let ENV = {
-    sentry: {
-      environment,
-    }
-  };
+let frames = new KeyframeEffect(/* element */, [/* keyframes */], { /* animationOptions */ });
+let animation = new Animation(frames, document.timeline);
 
-  if (environment === 'production') {
-    ENV.sentry.dsn = 'https://<key>@sentry.io/<project>';
-  }
-
-  return ENV;
-}
+animation.play();
+animation.pause();
 ```
 
-... and we're done! `@sentry/browser` is now sufficiently set up and will report
-any errors on the page to the server configured in the `dsn` property above.
+`Animation` allows the creation of animation objects which are dynamically configurable and which can be play backed
+and paused freely. Let's see this in action:
 
-
-Filtering Errors
--------------------------------------------------------------------------------
-
-Some errors we just don't care about. One example of that is the
-`TransitionAborted` error that the Ember.js router reports when a route
-transition was cancelled. We can ignore such errors by implementing the
-[`beforeSend()`](https://docs.sentry.io/error-reporting/configuration/filtering/?platform=browsernpm#before-send)
-hook of `@sentry/browser`:
 
 ```js
-Sentry.init({
-  // ...
 
-  beforeSend(event, hint) {
-    let error = hint.originalException;
-
-    // ignore aborted route transitions from the Ember.js router
-    if (error && error.name === 'TransitionAborted') {
-      return null;
-    }
-
-    return event;
-  },
-});
 ```
-
-
-Manually Reporting Errors
--------------------------------------------------------------------------------
-
-With `ember-cli-sentry` you could use the `raven` service to manually report
-messages or exceptions to Sentry. With `@sentry/browser` you can do the same:
-
-```js
-import * as Sentry from '@sentry/browser';
-
-Sentry.captureMessage('Something is broken! 😱');
-
-Sentry.captureException(new Error('with stack trace!! ✨'));
-```
-
-
-Adding Additional Context
--------------------------------------------------------------------------------
-
-Sentry, by default, records the IP of the user that has experienced the error.
-But when your app has user accounts and an authentication system, it is much more
-useful to know which specific user this has happened to. `@sentry/browser`
-allows us to add additional context to the events it sends to the server.
-
-We could do that manually in the `beforeSend()` hook, but it is much easier to
-use the [`configureScope()`](https://docs.sentry.io/enriching-error-data/scopes/?platform=browsernpm#configuring-the-scope)
-function for this:
-
-```js
-Sentry.configureScope(scope => {
-  scope.setUser({
-    id: 42,
-    email: "john.doe@example.com"
-  });
-});
-```
-
-This will automatically add the user information for all errors/events that
-follow after this call. If you only want to add such information for a single
-event you can use the [`withScope()`](https://docs.sentry.io/enriching-error-data/scopes/?platform=browsernpm#local-scopes)
-function instead.
-
-
-Testing
--------------------------------------------------------------------------------
-
-We could mock the `raven` service of `ember-cli-sentry` in tests like this:
-```js
-this.owner.register('service:raven', Service.extend({
-  captureException(error) {
-    // ...
-  },
-}));
-````
-
-But with `@sentry/browser` this becomes a little more complicated since there is
-no service anymore that could be mocked like that. We have experimented with
-this and found that pushing an additional scope on the stack and configuring a
-mock client for that scope seems to result in a useful way to assert whether
-an exception was correctly reported.
-
-The details of this require its own blog post though, since they are a little
-less straight-forward than what we described above.
+<div class="waapi-demo">
+<iframe height="400" style="width: 100%;" scrolling="no" title="simplabs WAAPI Demo 2" src="//codepen.io/jessicajordan/embed/MNeMmv/?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+</iframe>
+</div>
 
 If you have questions, want to know more or need help setting all of this up
 for your apps please [contact us](https://simplabs.com/contact/). We're happy
