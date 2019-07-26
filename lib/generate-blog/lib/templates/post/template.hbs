@@ -1,4 +1,68 @@
 <div>
+  <script type="application/ld+json">
+    {
+    "@type": "BlogPosting",
+    "headline": "
+    {{title}}
+    ",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://simplabs.com/assets/images/logos/simplabs.png"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "
+    {{author.name}}
+    ",
+      "jobTitle": "
+    {{author.bio}}
+    ",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://simplabs.com/assets/images/authors/
+    {{author.twitter}}
+    .jpg"
+      }
+    },
+    "genre": "
+    {{topic}}
+    ",
+    "publisher": {
+      "@type": "Organization",
+      "name": "simplabs",
+      "url": "https://simplabs.com",
+      "legalName": "simplabs GmbH",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://simplabs.com/assets/images/logos/simplabs.png"
+      }
+    },
+    "copyrightHolder": {
+      "@type": "Organization",
+      "name": "simplabs",
+      "url": "https://simplabs.com",
+      "legalName": "simplabs GmbH",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://simplabs.com/assets/images/logos/simplabs.png"
+      }
+    },
+    "copyrightYear":
+    {{year}}
+    ,
+    "datePublished": "
+    {{isoDate}}
+    ",
+    "dateModified": "
+    {{isoDate}}
+    ",
+    "mainEntityOfPage": "https://simplabs.com/blog/",
+    "url": "https://simplabs.com
+    {{path}}
+    ",
+    "@context": "http://schema.org"
+  }
+  </script>
   <Header @active="blog" @flex-content="true">
     <div class="blog-post.badge">
       <div class="blog-post.badge-image">
