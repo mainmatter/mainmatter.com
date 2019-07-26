@@ -1,6 +1,6 @@
 <header>
   <HeadTag @name="title" @content={{this.documentTitle}} />
-  <HeadTag @name="meta" @keys={{hash property="og:title" name="twitter:title"}} @values={{hash content=@title}} />
+  <HeadTag @name="meta" @keys={{hash property="og:title" name="twitter:title"}} @values={{hash content=@headline}} />
   <input id="toggle" type="checkbox" hidden="true" />
   <div class="navbar" data-menu>
     <div class="wrapper">
@@ -49,17 +49,19 @@
       </nav>
     </div>
   </div>
-  <div class="content">
-    {{#if @headline}}
-      <h1 class="typography.display">
-        {{#if @label}}
-          <small class="typography.small">
-            {{@label}}<span class="typography.hidden">:</span>
-          </small>
-        {{/if}}
-        {{@headline}}
-      </h1>
-    {{/if}}
-    {{yield}}
-  </div>
+  {{#unless @hasNoBlock}}{{!-- Would love to use (has-block), but it doesn't seem to work properly --}}
+    <div class="content">
+      {{#if @headline}}
+        <h1 class="typography.display">
+          {{#if @label}}
+            <small class="typography.small">
+              {{@label}}<span class="typography.hidden">:</span>
+            </small>
+          {{/if}}
+          {{@headline}}
+        </h1>
+      {{/if}}
+      {{yield}}
+    </div>
+  {{/unless}}
 </header>
