@@ -51,6 +51,9 @@ jobs:
     - stage: test
       name: "Percy"
       script: yarn build && yarn percy
+    - stage: deploy
+      name: "Trigger deployment"
+      script: "[ \"$TRAVIS_EVENT_TYPE\" = cron ] && curl -X POST -d {} $NETLIFY_WEBHOOK"
 
 notifications:
   email: false
