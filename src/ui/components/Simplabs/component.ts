@@ -90,6 +90,7 @@ export default class Simplabs extends Component {
       let options: INavigoHooks = {
         after: () => {
           this._setPageTitle(title);
+          this._setCanonicalUrl(path);
           if (!this.appState.isSSR) {
             window.scrollTo(0, 0);
           }
@@ -212,6 +213,14 @@ export default class Simplabs extends Component {
       property: 'og:title',
     }, {
       content: title,
+    });
+  }
+
+  private _setCanonicalUrl(path) {
+    this.headTags.write('meta', {
+      property: 'og:url',
+    }, {
+      content: `https://simplabs.com${path}`,
     });
   }
 
