@@ -1,0 +1,17 @@
+import Component from '@glimmer/component';
+
+export default class {{componentName}} extends Component {
+  constructor(options) {
+    super(options);
+
+    this.setMetaTags();
+  }
+
+  private setMetaTags() {
+    this.headTags.write('meta', {
+      property: 'article:published_time',
+    }, {
+      content: '{{isoDate}}',
+    });
+  }
+}
