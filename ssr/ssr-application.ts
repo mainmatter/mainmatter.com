@@ -2,6 +2,7 @@ import DynamicScope from './dynamic-scope';
 import SSRComponentManager from './ssr-component-manager';
 import SSRDOMTreeConstruction from './ssr-dom-tree-construction';
 import SSRHeadTags from './ssr-head-tags';
+import hash from '../src/utils/helpers/hash';
 
 import { classnames } from '@css-blocks/glimmer/dist/cjs/src/helpers/classnames';
 import { concat } from '@css-blocks/glimmer/dist/cjs/src/helpers/concat';
@@ -59,6 +60,10 @@ export default class SSRApplication extends Application {
         registry._resolver.registry._entries[
           `helper:/${rootName}/components/-css-blocks-concat`
         ] = concat;
+
+        registry._resolver.registry._entries[
+          `helper:/${rootName}/components/hash`
+        ] = hash;
 
         // inject appendOperations into environment in order to get working createElement and setAttribute.
         registry.register(

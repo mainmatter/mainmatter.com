@@ -7,7 +7,7 @@ export default class HeadTags {
   private document: HTMLDocument = window.document;
 
   public write(tagName, keyAttrs = {}, contentAttrs = {}, textContent = null) {
-    let element = this.getElement(tagName, keyAttrs, contentAttrs);
+    let element = this.getElement(tagName, keyAttrs);
 
     let attrs = {
       ...keyAttrs,
@@ -21,6 +21,12 @@ export default class HeadTags {
     }
 
     this.document.head.appendChild(element);
+  }
+
+  public remove(tagName, keyAttrs = {}) {
+    let element = this.getElement(tagName, keyAttrs);
+
+    this.document.head.removeChild(element);
   }
 
   private getElement(tagName, keyAttrs): Element {
