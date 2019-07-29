@@ -206,11 +206,7 @@ export default class Simplabs extends Component {
   }
 
   private _setPageTitle(title) {
-    if (this.appState.isSSR) {
-      this.document.title = formatPageTitle(title);
-    } else {
-      document.title = formatPageTitle(title);
-    }
+    this.headTags.write('title', {}, {}, formatPageTitle(title));
   }
 
   private _injectActiveComponentState() {

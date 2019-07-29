@@ -2,6 +2,7 @@ import { classnames } from '@css-blocks/glimmer/dist/cjs/src/helpers/classnames'
 import { concat } from '@css-blocks/glimmer/dist/cjs/src/helpers/concat';
 import { ComponentManager, setPropertyDidChange } from '@glimmer/component';
 import App from './main';
+import HeadTags from './utils/head-tags';
 
 const containerElement = document.getElementById('app');
 const hasSSRBody = !!document.querySelector('[data-has-ssr-response]');
@@ -52,6 +53,16 @@ app.registerInitializer({
       `component:/${app.rootName}/components/Simplabs`,
       'lazyRegistration',
       `utils:/${app.rootName}/lazy-registration/main`,
+    );
+
+    registry.register(
+      `utils:/${app.appName}/head-tags/main`,
+      HeadTags
+    );
+    registry.registerInjection(
+      `component`,
+      'headTags',
+      `utils:/${app.appName}/head-tags/main`,
     );
   }
 });
