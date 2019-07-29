@@ -13,24 +13,22 @@ export default class SSRHeadTags {
   }
 
   public write(tagName, keyAttrs = {}, contentAttrs = {}, textContent = null) {
-    let element = this.buildElement(tagName, keyAttrs, contentAttrs);
-    if (textContent) {
-      let text = this.document.createTextNode(textContent);
-      element.appendChild(text);
-    }
-    this.document.head.appendChild(element);
-  }
-
-  private buildElement(tagName, keyAttrs, contentAttrs): Element {
+    let element = this.document.createElement(tagName);
+    
     let attrs = {
       ...keyAttrs,
       ...contentAttrs
     };
-    let element = this.document.createElement(tagName);
     for (let attr in attrs) {
       element.setAttribute(attr, attrs[attr]);
     }
 
-    return element;
+    if (textContent) {
+      let text = this.document.createTextNode(textContent);
+      element.appendChild(text);
+    }
+
+    this.document.head.appendChild(element);
+  }
   }
 }

@@ -207,6 +207,12 @@ export default class Simplabs extends Component {
 
   private _setPageTitle(title) {
     this.headTags.write('title', {}, {}, formatPageTitle(title));
+    this.headTags.write('meta', {
+      name: 'twitter:title',
+      property: 'og:title',
+    }, {
+      content: title,
+    });
   }
 
   private _injectActiveComponentState() {
