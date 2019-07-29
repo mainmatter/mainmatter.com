@@ -13,7 +13,7 @@ export default class HeadTags {
       ...keyAttrs,
       ...contentAttrs
     };
-    for (let attr in attrs) {
+    for (let attr of Object.keys(attrs)) {
       element.setAttribute(attr, attrs[attr]);
     }
     if (textContent) {
