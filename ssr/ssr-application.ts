@@ -1,6 +1,7 @@
 import DynamicScope from './dynamic-scope';
 import SSRComponentManager from './ssr-component-manager';
 import SSRDOMTreeConstruction from './ssr-dom-tree-construction';
+import SSRHeadTags from './ssr-head-tags';
 
 import { classnames } from '@css-blocks/glimmer/dist/cjs/src/helpers/classnames';
 import { concat } from '@css-blocks/glimmer/dist/cjs/src/helpers/concat';
@@ -92,6 +93,20 @@ export default class SSRApplication extends Application {
           `component-manager:/${rootName}/component-managers/main`,
           SSRComponentManager
         );
+        registry.register(
+          `utils:/${rootName}/head-tags/main`,
+          SSRHeadTags
+        );
+        registry.registerInjection(
+          `utils:/${rootName}/head-tags/main`,
+          'document',
+          `document:/${rootName}/main/main`
+        );
+        registry.registerInjection(
+          `component`,
+          'headTags',
+          `utils:/${rootName}/head-tags/main`,
+        );
       },
     });
     this.initialize();
@@ -134,7 +149,7 @@ export default class SSRApplication extends Application {
     let document = this.document as any;
     return {
       body: this.serializer.serializeChildren(document.body) as string,
-      title: document.title as string
+      head: this.serializer.serializeChildren(document.head) as string
     };
   }
 }
