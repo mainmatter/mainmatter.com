@@ -20,6 +20,15 @@ function register(registry, key: string, object: any) {
   }
 }
 
+function readRoutesMap() {
+  let script: HTMLElement | null = document.querySelector('[data-shoebox-routes]');
+  if (script) {
+    return JSON.parse(script.innerText);
+  } else {
+    return {};
+  }
+}
+
 app.registerInitializer({
   initialize(registry) {
     function registerBundle(module) {
@@ -36,6 +45,25 @@ app.registerInitializer({
 
       public registerBundle(module) {
         registerBundle(module);
+      }
+
+    // tslint:disable-next-line:max-classes-per-file
+    class AppState {
+
+      public static create() {
+        return new AppState();
+      }
+
+      public isSSR: boolean;
+      public route: string;
+      public origin: string;
+      public routesMap: IRoutesMap;
+
+      constructor() {
+        this.isSSR = false;
+        this.route = window.location.pathname;
+        this.origin = window.location.origin;
+        this.routesMap = readRoutesMap();
       }
     }
 
@@ -64,6 +92,16 @@ app.registerInitializer({
       `component`,
       'headTags',
       `utils:/${app.appName}/head-tags/main`,
+    );
+
+    registry.register(
+      `app-state:/${app.appName}/main/main`,
+      AppState
+    );
+    registry.registerInjection(
+      `component`,
+      'appState',
+      `app-state:/${app.appName}/main/main`
     );
   }
 });
