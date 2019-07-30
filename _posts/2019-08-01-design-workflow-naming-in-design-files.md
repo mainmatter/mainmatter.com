@@ -1,5 +1,6 @@
 ---
-title: 'Design Workflow: Naming in design files'
+title: 'Design Workflow: Naming things in design files'
+description: 'Use predefined prefixes when naming layers to make things easier for you and your colleagues. Samples included.'
 author: 'Florian Pichler'
 github: pichfl
 twitter: pichfl
@@ -41,9 +42,9 @@ Our button has a default and pressed state. It also has a more prominent variant
 - States: Default, Active
 - Screen sizes: Default, Small
 
-Which gives us 2^3 – eight – possible combinations already.
+Which gives us 2³ – eight – possible combinations already.
 
-![Illustration of the eight expected states of our button](/assets/images/posts/2019-07-26-design-workflow-naming-in-design-files/buttons.png)
+![Illustration of the eight expected states of our button](/assets/images/posts/2019-08-01-design-workflow-naming-in-design-files/figure-1-button.png)
 
 It's most likely, that most of these states can be created just by combining variations of their parts and for a simple component such as a button, you probably will be fine with overriding the background and or text layer.
 
@@ -78,6 +79,8 @@ What about defaults? While it is possible to add modifiers like `+default` or `#
 Footnote: The symbols were picked for compatibility. Our original draft had `:` instead of `#` for states which would be close to the CSS pseudo-selectors, but colon is the only forbidden character in filenames in macOS and gets replaced by a forward slash, which in turn is forbidden in Windows.
 
 #### Result
+
+![Screenshots: Side by side compararison of layer names before and after using the naming scheme](/assets/images/posts/2019-08-01-design-workflow-naming-in-design-files/figure-2-names.png)
 
 To complete the naming our button, we now have `forms/button +primary #active @small`. Which makes for a concise name and gives you all necessary information at a single glance.
 
