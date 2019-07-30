@@ -71,10 +71,10 @@ let server = express();
 server.get('*', async function(req, res, next) {
   if (req.headers.accept && req.headers.accept.includes('text/html')) {
     let origin = `${req.protocol}://${req.headers.host}`;
-    let { body, title } = await renderer.render(origin, req.url);
+    let { body, head } = await renderer.render(origin, req.url);
     let shoeboxBundlePreloads = buildShoeboxBundlePreloads(body);
     let html = HTML.replace('<div id="app"></div>', body)
-      .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
+      .replace(/<head>/, `<head>\n${head}`)
       .replace('<link', `${shoeboxBundlePreloads}\n<link`);
     res.send(html);
   } else {

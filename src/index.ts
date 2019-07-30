@@ -2,6 +2,8 @@ import { classnames } from '@css-blocks/glimmer/dist/cjs/src/helpers/classnames'
 import { concat } from '@css-blocks/glimmer/dist/cjs/src/helpers/concat';
 import { ComponentManager, setPropertyDidChange } from '@glimmer/component';
 import App from './main';
+import HeadTags from './utils/head-tags';
+import hash from './utils/helpers/hash';
 
 const containerElement = document.getElementById('app');
 const hasSSRBody = !!document.querySelector('[data-has-ssr-response]');
@@ -53,6 +55,16 @@ app.registerInitializer({
       'lazyRegistration',
       `utils:/${app.rootName}/lazy-registration/main`,
     );
+
+    registry.register(
+      `utils:/${app.appName}/head-tags/main`,
+      HeadTags
+    );
+    registry.registerInjection(
+      `component`,
+      'headTags',
+      `utils:/${app.appName}/head-tags/main`,
+    );
   }
 });
 
@@ -60,6 +72,7 @@ app.registerInitializer({
   initialize(registry) {
     register(registry, `helper:/${app.rootName}/components/-css-blocks-classnames`, classnames);
     register(registry, `helper:/${app.rootName}/components/-css-blocks-concat`, concat);
+    register(registry, `helper:/${app.rootName}/components/hash`, hash);
   }
 });
 
