@@ -156,7 +156,7 @@ class SimplabsApp extends GlimmerApp {
     });
     let ssrTree = this.ssrTree();
 
-    let appTree = new MergeTrees([jsTree, ssrTree]);
+    let appTree = new MergeTrees([jsTree, ssrTree], { overwrite: true });
     return new Rollup(appTree, {
       rollup: {
         input: 'ssr/index.js',
