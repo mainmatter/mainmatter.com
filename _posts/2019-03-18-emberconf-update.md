@@ -5,6 +5,7 @@ github: mrmrcoleman
 twitter: mrmrcoleman
 topic: simplabs
 bio: "Communications and Community Outreach Specialist"
+description: "Mark Coleman gives an update on the simplabs team's presence at EmberConf 2019 and our involvement with many events at and around the conference."
 ---
 
 We mentioned this in our March monthly update but in case you missed it, here's

@@ -4,6 +4,7 @@ author: "Tobias Bieniek"
 github: Turbo87
 twitter: tobiasbieniek
 bio: "Senior Frontend Engineer, Ember CLI core team member"
+description: "Tobias Bieniek goes through what happened in ember-test-selectors during the past year and what the roadmap towards a 1.0 release is."
 topic: ember
 ---
 

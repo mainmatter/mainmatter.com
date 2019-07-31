@@ -4,6 +4,7 @@ author: "Marco Otte-Witte"
 github: marcoow
 twitter: marcoow
 bio: "Founding Director of simplabs, author of Ember Simple Auth"
+description: "Marco Otte-Witte discusses differences between computed properties and helpers and explains pros and cons of each alternative."
 topic: ember
 ---
 

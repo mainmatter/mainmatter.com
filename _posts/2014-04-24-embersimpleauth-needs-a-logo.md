@@ -4,6 +4,7 @@ author: "Marco Otte-Witte"
 github: marcoow
 twitter: marcoow
 bio: "Founding Director of simplabs, author of Ember Simple Auth"
+description: "Marco Otte-Witte posts a request for the community to contribute a logo to Ember.SimpleAuth."
 topic: ember
 ---
 

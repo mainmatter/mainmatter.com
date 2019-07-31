@@ -5,6 +5,7 @@ github: marcoow
 twitter: marcoow
 bio: "Founding Director of simplabs, author of Ember Simple Auth"
 topic: ember
+description: "Marco Otte-Witte describes an approach for implementing a session mechanism, authentication and authorization in Ember.js applications."
 ---
 
 **Update:**_I released an Ember.js plugin that makes it very easy to implement an authentication system as described in this post: [Ember.SimpleAuth](/blog/2013/10/09/embersimpleauth)._

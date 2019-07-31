@@ -4,6 +4,7 @@ author: "Jessica Jordan"
 github: jessica-jordan
 twitter: jjordan_dev
 bio: "Senior Frontend Engineer, Ember Learning core team member"
+description: "Jessica Jordan shares her thoughts for Ember.js in the coming year in response to the Ember 2018 Roadmap Call for Blog Posts."
 topic: ember
 ---
 

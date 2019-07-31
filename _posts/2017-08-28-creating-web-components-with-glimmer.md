@@ -4,6 +4,7 @@ author: "Jessica Jordan"
 github: jessica-jordan
 twitter: jjordan_dev
 bio: "Senior Frontend Engineer, Ember Learning core team member"
+description: "Jessica Jordan explains what web components (aka custom elements) are and shows how they can be built using Glimmer.js."
 topic: ember
 ---
 

@@ -4,6 +4,7 @@ author: "Marco Otte-Witte"
 github: marcoow
 twitter: marcoow
 bio: "Founding Director of simplabs, author of Ember Simple Auth"
+description: "Marco Otte-Witte announces simplabs' 3-day Ember.js workshop in Munich, introducing participants to all aspects of the framework."
 topic: ember
 ---
 

@@ -4,6 +4,7 @@ author: "Marco Otte-Witte"
 github: marcoow
 twitter: marcoow
 bio: "Founding Director of simplabs, author of Ember Simple Auth"
+description: "Marco Otte-Witte announces Ember.SimpleAuth 0.1.0 with an improved architecture that allows for arbitrary authentication and authorization strategies."
 topic: ember
 ---
 

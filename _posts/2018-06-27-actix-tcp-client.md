@@ -4,6 +4,7 @@ author: "Tobias Bieniek"
 github: Turbo87
 twitter: tobiasbieniek
 bio: "Senior Frontend Engineer, Ember CLI core team member"
+description: "Tobias Bieniek shows how actix, the actor framework written in Rust, can be used to build a basic TCP client."
 topic: rust
 ---
 

@@ -4,6 +4,7 @@ author: "Marco Otte-Witte"
 github: marcoow
 twitter: marcoow
 bio: "Founding Director of simplabs, author of Ember Simple Auth"
+description: "Marco Otte-Witte gives an update on the upcoming Ember Simple Auth 1.0 release and shows how to use it in Ember CLI applications."
 topic: ember
 ---
 

@@ -4,6 +4,7 @@ author: "Tobias Bieniek"
 github: Turbo87
 twitter: tobiasbieniek
 bio: "Senior Frontend Engineer, Ember CLI core team member"
+description: "Tobias Bieniek introduces best practices for simplifying and speeding up his work on open-source and other projects."
 topic: misc
 ---
 

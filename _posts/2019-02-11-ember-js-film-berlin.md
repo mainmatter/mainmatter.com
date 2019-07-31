@@ -5,6 +5,7 @@ github: mrmrcoleman
 twitter: mrmrcoleman
 topic: ember
 bio: "Communications and Community Outreach Specialist"
+description: "Mark Coleman announces the screening of \"Ember.js: The Documentary\" in Berlin, Feb. 11th 2019."
 ---
 
 Following on from last week's premiere in Amsterdam the new [HoneyPot](https://www.honeypot.io/) film **'Ember: A Mini Documentary'** will be shown in Berlin this evening (2019-02-11).

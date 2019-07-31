@@ -4,6 +4,7 @@ author: "Marco Otte-Witte"
 github: marcoow
 twitter: marcoow
 bio: "Founding Director of simplabs, author of Ember Simple Auth"
+description: "Marco Otte-Witte announces the release of ember-test-selectors, an addon that enables better element selectors in Ember.js tests."
 topic: ember
 ---
 

@@ -4,6 +4,7 @@ author: "Tobias Bieniek"
 github: Turbo87
 twitter: tobiasbieniek
 bio: "Senior Frontend Engineer, Ember CLI core team member"
+description: "Tobias Bieniek introduces qunit-dom, an extension for qunit that allows writing more expressive and less complex UI tests using high level DOM assertions."
 topic: javascript
 ---
 
