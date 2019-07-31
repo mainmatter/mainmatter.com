@@ -1,8 +1,8 @@
 import { classnames } from '@css-blocks/glimmer/dist/cjs/src/helpers/classnames';
 import { concat } from '@css-blocks/glimmer/dist/cjs/src/helpers/concat';
 import { setupRenderingTest as originalSetupRenderingTest } from '@glimmer/test-helpers';
-import hash from '../helpers/hash';
 import HeadTags from '../head-tags';
+import hash from '../helpers/hash';
 
 class TestAppState {
 
