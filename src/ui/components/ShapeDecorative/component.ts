@@ -1,9 +1,15 @@
 import ShapeBase from '../ShapeBase/component';
 
+let maskId = 0;
+
 export default class ShapeDecorative extends ShapeBase {
-  public maskId = Math.random()
-    .toString(36)
-    .substr(2);
+  public maskId = '';
+
+  constructor(options) {
+    super(options);
+
+    this.maskId = `decorative${++maskId}`;
+  }
 
   get backgroundStyle() {
     let style = '';
