@@ -68,7 +68,7 @@ Using Titlecase as in trying to start with a uppercase letter really isn't neces
 
 | Prefix |                                        |
 | ------ | -------------------------------------- |
-| `+`    | Variants like `+primary` `+large`      |
+| `+`    | Variants like `+primary`, `+large`      |
 | `#`    | States like `#hover`, `#error`, `#empty` |
 | `@`    | Screen sizes like `@small`,`@wide`       |
 
