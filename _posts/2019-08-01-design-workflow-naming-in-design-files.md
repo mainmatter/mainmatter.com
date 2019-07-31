@@ -70,7 +70,7 @@ Using Titlecase as in trying to start with a uppercase letter really isn't neces
 | ------ | -------------------------------------- |
 | `+`    | Variants like `+primary` `+large`      |
 | `#`    | States like `#hover` `#error` `#empty` |
-| `@`    | Screen sizes like @small``@wide`       |
+| `@`    | Screen sizes like `@small`,`@wide`       |
 
 The idea is of course inspired by hashtags, but adds an extra layer of semantics. By relying on different characters, you can use the built in filter function at the bottom of the layer list in Sketch to quickly gather all symbols of a certain state or variant by typing that single character.
 
