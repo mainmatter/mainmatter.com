@@ -1,4 +1,6 @@
 <header>
+  <HeadTag @name="title" @content={{this.documentTitle}} />
+  <HeadTag @name="meta" @keys={{hash property="og:title" name="twitter:title"}} @values={{hash content=@title}} />
   <input id="toggle" type="checkbox" hidden="true" />
   <div class="navbar" data-menu>
     <div class="wrapper">
@@ -48,14 +50,14 @@
     </div>
   </div>
   <div class="content" state:flex-content={{@flex-content}}>
-    {{#if @title}}
+    {{#if @headline}}
       <h1 class="typography.display">
         {{#if @label}}
           <small class="typography.small">
             {{@label}}<span class="typography.hidden">:</span>
           </small>
         {{/if}}
-        {{@title}}
+        {{@headline}}
       </h1>
     {{/if}}
     {{yield}}

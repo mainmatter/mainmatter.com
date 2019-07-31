@@ -85,7 +85,7 @@ export default class SSRApplication extends Application {
           AppState
         );
         registry.registerInjection(
-          `component:/${rootName}/components/Simplabs`,
+          `component`,
           'appState',
           `app-state:/${rootName}/main/main`
         );

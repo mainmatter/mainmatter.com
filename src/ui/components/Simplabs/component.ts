@@ -21,7 +21,6 @@ declare global {
 interface IRoutesMap {
   [route: string]: {
     component: string;
-    title: string;
     bundle: any;
     parentBundle: any;
   };
@@ -53,13 +52,6 @@ export default class Simplabs extends Component {
   constructor(options) {
     super(options);
 
-    this.appState = this.appState || {
-      isSSR: false,
-      origin: window.location.origin,
-      route: window.location.pathname,
-      routesMap: this._readRoutesMap(),
-    };
-
     this._setupRouting();
     this._bindInternalLinks();
     this._restoreActiveComponentState();
@@ -86,10 +78,9 @@ export default class Simplabs extends Component {
     this.router = new Navigo(this.appState.origin);
 
     Object.keys(this.appState.routesMap).forEach(path => {
-      let { component, title = '', bundle, parentBundle } = (this.appState.routesMap as IRoutesMap)[path];
+      let { component, bundle, parentBundle } = (this.appState.routesMap as IRoutesMap)[path];
       let options: INavigoHooks = {
         after: () => {
-          this._setPageTitle(title);
           this._setCanonicalUrl(path);
           if (!this.appState.isSSR) {
             window.scrollTo(0, 0);
@@ -206,16 +197,6 @@ export default class Simplabs extends Component {
     this.document.body.appendChild(script);
   }
 
-  private _setPageTitle(title) {
-    this.headTags.write('title', {}, {}, formatPageTitle(title));
-    this.headTags.write('meta', {
-      name: 'twitter:title',
-      property: 'og:title',
-    }, {
-      content: title,
-    });
-  }
-
   private _setCanonicalUrl(path) {
     this.headTags.write('meta', {
       property: 'og:url',
@@ -239,15 +220,6 @@ export default class Simplabs extends Component {
       }
     }
   }
-
-  private _readRoutesMap() {
-    let script: HTMLElement | null = document.querySelector('[data-shoebox-routes]');
-    if (script) {
-      return JSON.parse(script.innerText);
-    } else {
-      return {};
-    }
-  }
 }
 
 function trackPageView(route) {
@@ -255,10 +227,6 @@ function trackPageView(route) {
     window.ga('set', 'page', route);
     window.ga('send', 'pageview');
   }
-}
-
-function formatPageTitle(title) {
-  return `${title ? `${title} | ` : ''}simplabs`;
 }
 
 function findLinkParent(target) {
