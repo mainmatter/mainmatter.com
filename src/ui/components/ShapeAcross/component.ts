@@ -1,14 +1,14 @@
 import ShapeBase from '../ShapeBase/component';
 
+let maskId = 0;
+
 export default class ShapeAcross extends ShapeBase {
-  public maskId = null;
+  public maskId = '';
 
   constructor(options) {
     super(options);
 
-    this.maskId = Math.random()
-      .toString(36)
-      .substr(2);
+    this.maskId = `across${++maskId}`;
   }
 
   get backgroundStyle() {
