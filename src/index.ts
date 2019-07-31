@@ -48,7 +48,7 @@ app.registerInitializer({
       }
 
     // tslint:disable-next-line:max-classes-per-file
-    class AppState {
+    class create {
 
       public static create() {
         return new AppState();
