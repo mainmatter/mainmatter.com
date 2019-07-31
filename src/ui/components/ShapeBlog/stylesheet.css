@@ -1,8 +1,9 @@
-@block container from "../../styles/blocks/container.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
+@block layout from "../../styles/blocks/layout.block.css";
 
 :scope {
   block-name: ShapeBlog;
+  composes: 'layout';
 
   position: relative;
   width: 100%;
@@ -19,6 +20,7 @@
   width: 225rem;
   height: auto;
   fill: var(--shape-color);
+  pointer-events: none;
 }
 
 .bottom {
@@ -31,14 +33,8 @@
   transform: translate(-1%);
 }
 
-.container {
-  composes: 'container';
-  position: relative;
-  z-index: 1;
-}
-
 .content {
-  width: var(--col-3);
+  grid-column: 2/-2;
 }
 
 .title {
@@ -63,5 +59,9 @@
 @media (min-width: 888px) {
   :scope {
     padding: 0 0 36rem;
+  }
+
+  .content {
+    grid-column: 2/6;
   }
 }

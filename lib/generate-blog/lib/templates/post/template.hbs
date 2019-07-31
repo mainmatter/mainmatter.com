@@ -2,99 +2,83 @@
   <HeadTag @name='meta' @keys=\{{hash property="article:published_time"}} @values=\{{hash content="{{isoDate}}"}} />
   <script type="application/ld+json">
     {
-    "@type": "BlogPosting",
-    "headline": "
-    {{title}}
-    ",
-    "image": {
-      "@type": "ImageObject",
-      "url": "https://simplabs.com/assets/images/logos/simplabs.png"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "
-    {{author.name}}
-    ",
-      "jobTitle": "
-    {{author.bio}}
-    ",
+      "@type": "BlogPosting",
+      "headline": "{{title}}",
       "image": {
         "@type": "ImageObject",
-        "url": "https://simplabs.com/assets/images/authors/
-    {{author.twitter}}
-    .jpg"
-      }
-    },
-    "genre": "
-    {{topic}}
-    ",
-    "publisher": {
-      "@type": "Organization",
-      "name": "simplabs",
-      "url": "https://simplabs.com",
-      "legalName": "simplabs GmbH",
-      "logo": {
-        "@type": "ImageObject",
         "url": "https://simplabs.com/assets/images/logos/simplabs.png"
-      }
-    },
-    "copyrightHolder": {
-      "@type": "Organization",
-      "name": "simplabs",
-      "url": "https://simplabs.com",
-      "legalName": "simplabs GmbH",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://simplabs.com/assets/images/logos/simplabs.png"
-      }
-    },
-    "copyrightYear":
-    {{year}}
-    ,
-    "datePublished": "
-    {{isoDate}}
-    ",
-    "dateModified": "
-    {{isoDate}}
-    ",
-    "mainEntityOfPage": "https://simplabs.com/blog/",
-    "url": "https://simplabs.com
-    {{path}}
-    ",
-    "@context": "http://schema.org"
-  }
+      },
+      "author": {
+        "@type": "Person",
+        "name": "{{author.name}}",
+        "jobTitle": "{{author.bio}}",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://simplabs.com/assets/images/authors/{{author.twitter}}.jpg"
+        }
+      },
+      "genre": "{{topic}}",
+      "publisher": {
+        "@type": "Organization",
+        "name": "simplabs",
+        "url": "https://simplabs.com",
+        "legalName": "simplabs GmbH",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://simplabs.com/assets/images/logos/simplabs.png"
+        }
+      },
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "simplabs",
+        "url": "https://simplabs.com",
+        "legalName": "simplabs GmbH",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://simplabs.com/assets/images/logos/simplabs.png"
+        }
+      },
+      "copyrightYear": {{year}},
+      "datePublished": "{{isoDate}}",
+      "dateModified": "{{isoDate}}",
+      "mainEntityOfPage": "https://simplabs.com/blog/",
+      "url": "https://simplabs.com{{path}}",
+      "@context": "http://schema.org"
+    }
   </script>
-  <Header @active="blog" @flex-content="true" @title="{{title}}" @documentTitle="{{title}} | Blog">
-    <div class="blog-post.badge">
-      <div class="blog-post.badge-image">
-        <img
-          class="fluid-image.image"
-          src="/assets/images/authors/{{author.twitter}}.jpg"
-          alt="photo of {{author.name}}"
-         />
-
+  <Header @active="blog" @title="{{title}}" @documentTitle="{{title}} | Blog">
+    <div class="blog-post.header">
+      <div class="blog-post.headline">
+        <h1 class="typography.display">
+          <small class="typography.small">
+            Blog<span class="typography.hidden">:</span>
+          </small>
+          {{title}}
+        </h1>
       </div>
-      <div class="blog-post.badge-content">
-        <a href="/blog/author/{{author.twitter}}" data-internal>
-          {{author.name}}
-        </a>
-        <p>
-          {{author.bio}}
-        </p>
-        <a href="https://twitter.com/{{author.twitter}}" target="_blank" rel="noopener">
-          @
-          {{author.twitter}}
-        </a>
+      <div class="blog-post.badge">
+        <div class="blog-post.badge-image">
+          <img
+            class="fluid-image.image"
+            src="/assets/images/authors/{{author.twitter}}.jpg"
+            alt=""
+          />
+        </div>
+        <div class="blog-post.badge-content">
+          <a href="/blog/author/{{author.twitter}}" data-internal>
+            {{author.name}}
+          </a>
+          <p>
+            {{author.bio}}
+          </p>
+          <a href="https://twitter.com/{{author.twitter}}" target="_blank" rel="noopener">
+            @{{author.twitter}}
+          </a>
+        </div>
       </div>
-    </div>
-    <div>
-      <p class="typography.small">
-        Blog
-      </p>
-      <h1 class="typography.display">
-        {{title}}
-      </h1>
-      {{{excerpt}}}
+      <div class="excerpt typography.lead">
+        {{{excerpt}}}
+      </div>
     </div>
   </Header>
   <div class="layout.content offset.after-21">

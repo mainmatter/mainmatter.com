@@ -28,14 +28,16 @@
     "@context": "http://schema.org"
   }
   </script>
-  <Header @active="blog" @headline="Blog" @title="Blog" />
+  <Header @active="blog" @title="Blog">
+    <HeaderContent @headline="Blog" />
+  </Header>
   <ShapeBlog>
     <article>
       <span class="typography.tag">
         #
         {{latest.topic}}
       </span>
-      <h2>
+      <h2 class="offset.before-none">
         <a href="{{latest.path}}" data-internal>
           {{latest.title}}
         </a>

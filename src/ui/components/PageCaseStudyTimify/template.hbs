@@ -1,12 +1,7 @@
 <div>
-  <Header
-    @active="work"
-    @label="Timify Case Study"
-    @headline="Modern online appointment scheduling"
-    @title="Timify Case Study"
-    @documentTitle="Timify Case Study | Work"
-   />
-
+  <Header @active="work" @title="Timify Case Study" @documentTitle="Timify Case Study | Work">
+    <HeaderContent @label="Timify Case Study" @headline="Modern online appointment scheduling" />
+  </Header>
   <div class="layout.main">
     <p class="typography.lead">
       Timify is an online appointment scheduling service that connects service providers with clients.

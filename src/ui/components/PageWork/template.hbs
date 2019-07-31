@@ -1,11 +1,7 @@
 <div>
-  <Header
-    @active="work"
-    @label="Work"
-    @headline="A proven track record of successful projects for international clients."
-    @title="Work"
-   />
-
+  <Header @active="work" @title="Work">
+    <HeaderContent @label="Work" @headline="A proven track record of successful projects for international clients." />
+  </Header>
   <div class="layout.split-leading">
     <h2>
       <a href="/cases/trainline" data-internal>

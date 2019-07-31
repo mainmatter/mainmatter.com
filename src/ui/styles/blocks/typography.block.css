@@ -68,6 +68,11 @@
   opacity: 0;
 }
 
+.table {
+  overflow: auto;
+  margin: 3rem auto;
+}
+
 @media (max-width: 887px) {
   .display,
   .display-plain {

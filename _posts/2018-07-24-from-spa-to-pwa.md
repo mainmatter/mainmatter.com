@@ -43,7 +43,7 @@ for a long time, it never really took off until recently. In fact, Steve Jobs
 himself introduced the idea at WWDC 2007, just shortly after the unveiling of
 the orignal iPhone:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y1B2c3ZD9fk?start=4451" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="video"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y1B2c3ZD9fk?start=4451" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Unfortunately that idea was one of the few of Jobs' that never really took off.
 In fact, Apple released the first native SDK for the iPhone in 2008. That
@@ -200,7 +200,7 @@ of the network is that it **must be able to start up while there is no network
 at all** and the device is offline. For a browser-based application designed to
 load all required assets remotely, that is no easy task. One of the first
 approaches for achieving this was
-[Google Gears](https://en.wikipedia.org/wiki/Gears_(software)). Gears was
+[Google Gears](<https://en.wikipedia.org/wiki/Gears_(software)>). Gears was
 released as early as 2007 as a proprietary extension for Chrome and allowed
 offline usage of e.g. Gmail. Gears never really took off in the broader
 ecosystem and was discontinued in 2010.

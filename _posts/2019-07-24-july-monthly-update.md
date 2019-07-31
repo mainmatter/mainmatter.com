@@ -71,11 +71,7 @@ We plan to run another session like this in the future, so keep an eye on the [@
 
 ### Jessica Jordan at JSConfEU
 
-![JsConfEU](/assets/images/posts/2019-05-10-may-monthly-update/jsconfeu.png)
-
-On the 1st of June [Jessica Jordan](https://twitter.com/jjordan_dev) spoke at [JSConfEU](https://2019.jsconf.eu/) with her talk "Crafting Comics for Literally Everyone" in which she highlighted how you can craft an immersive webcomic experience that is accessible for blind, visually-impaired and sighted readers alike!
-
-You can watch the whole talk [here.](https://www.youtube.com/watch?v=BPmuR4mAQaw)
+![JsConfEU](/assets/images/posts/2019-05-10-may-monthly-update/jsconfeu.png) On the 1st of June [Jessica Jordan](https://twitter.com/jjordan_dev) spoke at [JSConfEU](https://2019.jsconf.eu/) with her talk "Crafting Comics for Literally Everyone" in which she highlighted how you can craft an immersive webcomic experience that is accessible for blind, visually-impaired and sighted readers alike! You can watch the whole talk [on YouTube.](https://www.youtube.com/watch?v=BPmuR4mAQaw)
 
 ### Ricardo Mendes talking at Commit Porto
 
