@@ -1,5 +1,6 @@
 <div>
   <HeadTag @name='meta' @keys=\{{hash property="article:published_time"}} @values=\{{hash content="{{isoDate}}"}} />
+  <HeadTag @name='meta' @keys=\{{hash property="article:section"}} @values=\{{hash content="{{topic}}"}} />
   <HeadTag @name='meta' @keys=\{{hash name="twitter:creator"}} @values=\{{hash content="{{author.twitter}}"}} />
   <script type="application/ld+json">
     {
