@@ -2,6 +2,10 @@
   <HeadTag @name="title" @content={{this.documentTitle}} />
   <HeadTag @name="meta" @keys={{hash property="og:title" name="twitter:title"}} @values={{hash content=@title}} />
   <HeadTag @name="meta" @keys={{hash property="og:type"}} @values={{hash content=this.pageType}} />
+  {{#if @description}}
+    <HeadTag @name="meta" @keys={{hash property="og:description" name="description"}} @values={{hash content=@description}} />
+    <HeadTag @name="meta" @keys={{hash name="twitter:description"}} @values={{hash content=@description}} />
+  {{/if}}
   <input id="toggle" type="checkbox" hidden="true" />
   <div class="navbar" data-menu>
     <div class="wrapper">
