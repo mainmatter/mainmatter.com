@@ -5,6 +5,7 @@ github: mrmrcoleman
 twitter: mrmrcoleman
 topic: simplabs
 bio: "Communications and Community Outreach Specialist"
+description: "Mark Coleman shares simplabs' monthly update for March 2019, covering EmberConf 2019, the release of \"Ember.js: The Documentary\" and various upcoming events."
 ---
 
 Welcome to our new monthly update. Each month we'll cover the events and activities that have been happening at simplabs. Enjoy.

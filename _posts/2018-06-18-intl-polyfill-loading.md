@@ -4,6 +4,7 @@ author: "Tobias Bieniek"
 github: Turbo87
 twitter: tobiasbieniek
 bio: "Senior Frontend Engineer, Ember CLI core team member"
+description: "Tobias Bieniek shows how to load the necessary polyfills for the Intl API in older browsers most effectively when using ember-intl."
 topic: ember
 ---
 

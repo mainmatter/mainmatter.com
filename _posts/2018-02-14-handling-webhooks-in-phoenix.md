@@ -4,6 +4,7 @@ author: "Niklas Long"
 github: niklaslong
 twitter: niklas_long
 bio: "Backend Engineer, author of Breethe API"
+description: "Niklas Long introduces an effective and simple approach for handling incoming webhook requests in Phoenix applications with advanced routing."
 topic: elixir
 ---
 

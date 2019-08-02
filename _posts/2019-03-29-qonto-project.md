@@ -5,6 +5,7 @@ github: mrmrcoleman
 twitter: mrmrcoleman
 topic: simplabs
 bio: "Communications and Community Outreach Specialist"
+description: "Mark Coleman announces our new client Qonto, a Paris based VC funded Fintech startup who are \"the ideal banking alternative for freelancers, startups and SMEs.\""
 ---
 
 We're very pleased to announce that we've started working with [Qonto](https://qonto.eu/),

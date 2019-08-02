@@ -4,6 +4,7 @@ author: "Tobias Bieniek"
 github: Turbo87
 twitter: tobiasbieniek
 bio: "Senior Frontend Engineer, Ember CLI core team member"
+description: "Tobias Bieniek introduces a mechanism for automatically discovering new components in Ember.js applications and showing them in an ember-freestyle playground."
 topic: ember
 ---
 

@@ -4,6 +4,7 @@ author: "Tobias Bieniek"
 github: Turbo87
 twitter: tobiasbieniek
 bio: "Senior Frontend Engineer, Ember CLI core team member"
+description: "Tobias Bieniek introduces a mechanism for using arbitrary npm libraries in Ember CLI applications and explains how that works under the hood."
 topic: ember
 ---
 

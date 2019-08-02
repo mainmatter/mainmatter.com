@@ -4,6 +4,7 @@ author: "Tobias Bieniek"
 github: Turbo87
 twitter: tobiasbieniek
 bio: "Senior Frontend Engineer, Ember CLI core team member"
+description: "Tobias Bieniek announces new features in ember-test-selectors such as automatic binding of data-test-* properties and how these are stripped in production."
 topic: ember
 ---
 

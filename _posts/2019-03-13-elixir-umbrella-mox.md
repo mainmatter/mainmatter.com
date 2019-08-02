@@ -5,6 +5,7 @@ github: niklaslong
 twitter: niklas_long
 topic: elixir
 bio: "Backend Engineer, author of Breethe API"
+description: "Niklas Long shows how Elixir Umbrella applications not only improve the organization of a code base but also allow for an improved testing setup."
 ---
 
 What's the big deal with Elixir umbrellas?

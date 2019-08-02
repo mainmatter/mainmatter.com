@@ -4,6 +4,7 @@ author: "Michael Klein"
 twitter: LevelbossMike
 github: LevelbossMike
 bio: "Full-Stack Engineer, Ember CLI Deploy core team member"
+description: "Michael Klein introduces ember-cli-deploy-notifications, an ember-cli-deploy plugin for invoking arbitrary webhooks during the deployment process."
 topic: ember
 ---
 

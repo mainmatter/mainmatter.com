@@ -4,6 +4,7 @@ author: "Andy Brown"
 github: geekygrappler
 twitter: geekygrappler
 bio: "Senior Frontend Engineer"
+description: "Andy Brown explains the AAA principle for writing good tests and discusses what the negative consequences of not adhering to it are."
 topic: misc
 ---
 

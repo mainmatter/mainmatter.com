@@ -4,6 +4,7 @@ author: "Jessica Jordan"
 github: jessica-jordan
 twitter: jjordan_dev
 bio: "Senior Frontend Engineer, Ember Learning core team member"
+description: "Jessica Jordan explains approaches and patterns for testing styles in Ember.js applications."
 topic: javascript
 ---
 

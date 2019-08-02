@@ -4,6 +4,7 @@ author: "Tobias Bieniek"
 github: Turbo87
 twitter: tobiasbieniek
 bio: "Senior Frontend Engineer, Ember CLI core team member"
+description: "Tobias Bieniek gives an overview of how ember-freestyle can be used in Ember.js applications for building and testing components in isolation."
 topic: ember
 ---
 

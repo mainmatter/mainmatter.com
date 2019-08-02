@@ -5,6 +5,7 @@ github: mrmrcoleman
 twitter: mrmrcoleman
 topic: ember
 bio: "Communications and Community Outreach Specialist"
+description: "Mark Coleman announces the release of \"Ember.js: The Documentary\" in which simplabs is featured among other well-known figures from the Ember.js community."
 ---
 
 We're very pleased to announce that simplabs are featured in the new  [HoneyPot](https://www.honeypot.io/) film **'Ember: A Mini Documentary'** that will premiere in Amsterdam this evening (2019-02-08).
