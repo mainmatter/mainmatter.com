@@ -327,58 +327,137 @@
 
 [[redirects]]
   from = "/training/2017-06-11-web-security.html"
+  to = "/"
   status = 410
   force = true
 
 [[redirects]]
   from = "/training/2017-06-11-web-security"
+  to = "/"
   status = 410
   force = true
 
 [[redirects]]
   from = "/training/2017-06-11-web-security/*"
+  to = "/"
   status = 410
   force = true
 
 [[redirects]]
   from = "/training/2017-02-16-sass-fundamentals.html"
+  to = "/"
   status = 410
   force = true
 
 [[redirects]]
   from = "/training/2017-02-16-sass-fundamentals"
+  to = "/"
   status = 410
   force = true
 
 [[redirects]]
   from = "/training/2017-02-16-sass-fundamentals/*"
+  to = "/"
   status = 410
   force = true
 
 [[redirects]]
   from = "/training/2017-02-17-modern-seo.html"
+  to = "/"
   status = 410
   force = true
 
 [[redirects]]
   from = "training/2017-02-17-modern-seo"
+  to = "/"
   status = 410
   force = true
 
 [[redirects]]
   from = "training/2017-02-17-modern-seo/*"
+  to = "/"
   status = 410
   force = true
 
 [[redirects]]
   from = "/jobs"
+  to = "/"
   status = 410
   force = true
 
 [[redirects]]
   from = "/jobs/*"
+  to = "/"
   status = 410
   force = true
+
+[[redirects]]
+  from = "/full-stack-engineering/index.html"
+  to = "/services/full-stack-engineering/"
+
+[[redirects]]
+  from = "/team-augmentation/index.html"
+  to = "/services/team-augmentation/"
+
+[[redirects]]
+  from = "/about/index.html"
+  to = "/why-simplabs/"
+
+[[redirects]]
+  from = "/about"
+  to = "/why-simplabs/"
+
+[[redirects]]
+  from = "/about/*"
+  to = "/why-simplabs/"
+
+[[redirects]]
+  from = "/dd-wrt/index.html"
+  to = "/cases/ddwrt/"
+
+[[redirects]]
+  from = "/cases/dd-wrt"
+  to = "/cases/ddwrt/"
+
+[[redirects]]
+  from = "/trainline/index.html"
+  to = "/cases/trainline/"
+
+[[redirects]]
+  from = "/expedition/index.html"
+  to = "/cases/expedition/"
+
+[[redirects]]
+  from = "/timify/index.html"
+  to = "/cases/timify/"
+
+[[redirects]]
+  from = "/elixir/index.html"
+  to = "/expertise/elixir-phoenix/"
+
+[[redirects]]
+  from = "/ember/index.html"
+  to = "/expertise/ember/"
+
+[[redirects]]
+  from = "/blog/2015/12/03/ember-cli-deploy-notifications.html"
+  to = "/blog/2015/12/3/ember-cli-deploy-notifications/"
+
+[[redirects]]
+  from = "/blog/ember/2018/05/30/a-little-encouragement-goes-a-long-way-in-2018.html"
+  to = "/blog/2018/05/30/a-little-encouragement-goes-a-long-way-in-2018"
+
+[[redirects]]
+  from = "/clients/"
+  to = "/work/"
+
+[[redirects]]
+  from = "/sitemap"
+  to = "/sitemap.xml"
+
+[[redirects]]
+  from = "/team-augmentation/"
+  to = "/services/team-augmentation/"
 
 # handle 404 errors
 [[redirects]]
