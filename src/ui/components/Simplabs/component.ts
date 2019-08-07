@@ -199,9 +199,11 @@ export default class Simplabs extends Component {
 
   private _setCanonicalUrl(path) {
     // Ensure trailing slash
-    if (path.slice(-1) !== '/') {
+    if (!path.endsWith('/')) {
       path = `${path}/`;
     }
+
+    path = `https://simplabs.com${path}`;
 
     this.headTags.write(
       'meta',
@@ -209,7 +211,7 @@ export default class Simplabs extends Component {
         property: 'og:url',
       },
       {
-        content: `https://simplabs.com${path}`,
+        content: path,
       },
     );
 
@@ -221,7 +223,7 @@ export default class Simplabs extends Component {
         rel: 'canonical',
       },
       {
-        href: `https://simplabs.com${path}`,
+        href: path,
       },
     );
   }
