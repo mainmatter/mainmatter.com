@@ -325,6 +325,61 @@
   from = "https://phoenix-workshops.simplabs.com/*"
   to = "https://simplabs.com/services/tutoring/"
 
+[[redirects]]
+  from = "/training/2017-06-11-web-security.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/training/2017-06-11-web-security"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/training/2017-06-11-web-security/*"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/training/2017-02-16-sass-fundamentals.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/training/2017-02-16-sass-fundamentals"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/training/2017-02-16-sass-fundamentals/*"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/training/2017-02-17-modern-seo.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "training/2017-02-17-modern-seo"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "training/2017-02-17-modern-seo/*"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/jobs"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/jobs/*"
+  status = 410
+  force = true
+
 # handle 404 errors
 [[redirects]]
   from = "/*"
