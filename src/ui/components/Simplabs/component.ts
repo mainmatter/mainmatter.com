@@ -198,11 +198,32 @@ export default class Simplabs extends Component {
   }
 
   private _setCanonicalUrl(path) {
-    this.headTags.write('meta', {
-      property: 'og:url',
-    }, {
-      content: `https://simplabs.com${path}`,
-    });
+    // Ensure trailing slash
+    if (path.slice(-1) !== '/') {
+      path = `${path}/`;
+    }
+
+    this.headTags.write(
+      'meta',
+      {
+        property: 'og:url',
+      },
+      {
+        content: `https://simplabs.com${path}`,
+      },
+    );
+
+    // Canonical urls are required by search engines to define what represents
+    // the one true URL of a page, which should exclude query params, anchors, …
+    this.headTags.write(
+      'link',
+      {
+        rel: 'canonical',
+      },
+      {
+        href: `https://simplabs.com${path}`,
+      },
+    );
   }
 
   private _injectActiveComponentState() {
