@@ -16,11 +16,11 @@ Using components or symbols helps you to organize your designs into manageable p
 
 ## The problem
 
-Besides having an actual name, most elements in a design will have a current condition which might change on external factors and will most likely require variations to show all possible states.
+Naming things is hard, even more so when describing elements in your designs that may change over time or depending on certain states and other external factors.
 
-Using composition to build these states helps to ensure consistency in the individual parts that make up the composed element, but it can also make some changes very tedious if a new element needs to be introduced.
+Sometimes composition can help. Switching out different backgrounds or text layers depending on the state is supported in most design tools today via overrides, but more often your elements require rearranging to build the states you need. This is especially true when building the molecules and organisms in the Atomic Design hierarchy.
 
-So you create symbols for these variations and now you have a new problem: you need a strategy for naming those.
+So you create symbols for these variations and now you have shifted your problem: you need a strategy for naming those as well.
 
 ### Variations in design and components
 
@@ -44,13 +44,17 @@ Our button has a default and pressed state. It also has a more prominent variant
 
 Which gives us 2³ – eight – possible combinations already.
 
-![Illustration of the eight expected states of our button](/assets/images/posts/2019-08-01-design-workflow-naming-in-design-files/figure-1-button.png)
+![Illustration of the eight expected states of our button](/assets/images/posts/2019-08-12-design-workflow-naming-in-design-files/figure-1-button.png)
 
 It's most likely, that most of these states can be created just by combining variations of their parts and for a simple component such as a button, you probably will be fine with overriding the background and or text layer.
 
 But let's think of that button as a more complex component that might actually need additional elements depending on its state.
 
 So time to name a symbol that describes the button in its default variation, with a pressed state and targeted at small screens consistently across multiple people and possibly teams.
+
+## Why do I need this?
+
+TODO: Describe why.
 
 ## Better names for symbols
 
@@ -62,15 +66,15 @@ Using `/` adds structure to your symbol selection as Sketch converts names like 
 
 #### 2. camelCase everything
 
-Using Titlecase as in trying to start with a uppercase letter really isn't necessary. Using camelCase to make it easier to read long names comes in handy. Try to stay away from spaces for the names, use them for:
+Using Titlecase as in trying to start with a uppercase letter really isn't necessary. Using camelCase to make it easier to read long names comes in handy. Try to stay away from spaces for the names, as they will be used as delimiters between the name and its modifiers.
 
 #### 3. Modifiers
 
-| Prefix |                                        |
-| ------ | -------------------------------------- |
-| `+`    | Variants like `+primary`, `+large`      |
-| `#`    | States like `#hover`, `#error`, `#empty` |
-| `@`    | Screen sizes like `@small`,`@wide`       |
+| Prefix |                                    |
+| ------ | ---------------------------------- |
+| `+`    | Variants like `+primary`, `+large` |
+| `#`    | States like `#hover`, `#error`     |
+| `@`    | Screen sizes like `@small`,`@wide` |
 
 The idea is of course inspired by hashtags, but adds an extra layer of semantics. By relying on different characters, you can use the built in filter function at the bottom of the layer list in Sketch to quickly gather all symbols of a certain state or variant by typing that single character.
 
@@ -80,7 +84,7 @@ Footnote: The symbols were picked for compatibility. Our original draft had `:` 
 
 #### Result
 
-![Screenshots: Side by side compararison of layer names before and after using the naming scheme](/assets/images/posts/2019-08-01-design-workflow-naming-in-design-files/figure-2-names.png)
+![Screenshots: Side by side compararison of layer names before and after using the naming scheme](/assets/images/posts/2019-08-12-design-workflow-naming-in-design-files/figure-2-names.png)
 
 To complete the naming our button, we now have `forms/button +primary #active @small`. Which makes for a concise name and gives you all necessary information at a single glance.
 
