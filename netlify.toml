@@ -12,318 +12,432 @@
 
 # redirect old training page
 [[redirects]]
-  from="/training/"
-  to="/services/tutoring/"
+  from = "/training/"
+  to = "/services/tutoring/"
 
 # redirect old ember page
 [[redirects]]
-  from="/ember/"
-  to="/expertise/ember/"
+  from = "/ember/"
+  to = "/expertise/ember/"
 
 # redirect old clients page
 [[redirects]]
-  from="/clients/"
-  to="/work/"
+  from = "/clients/"
+  to = "/work/"
 
 # redirect old blog subdomain
 [[redirects]]
-  from="https://log.simplabs.com"
-  to="https://simplabs.com/blog/"
+  from = "https://log.simplabs.com"
+  to = "https://simplabs.com/blog/"
 
 [[redirects]]
-  from="https://log.simplabs.com/*"
-  to="https://simplabs.com/blog/"
+  from = "https://log.simplabs.com/*"
+  to = "https://simplabs.com/blog/"
 
 # redirect old blog routes
 [[redirects]]
-  from="/blog/2013/06/15/authentication-in-emberjs.html"
-  to="/blog/2013/06/15/authentication-in-emberjs/"
+  from = "/blog/2013/06/15/authentication-in-emberjs.html"
+  to = "/blog/2013/06/15/authentication-in-emberjs/"
 
 [[redirects]]
-  from="/blog/2013/06/27/excellent-172.html"
-  to="/blog/2013/06/27/excellent-172/"
+  from = "/blog/2013/06/27/excellent-172.html"
+  to = "/blog/2013/06/27/excellent-172/"
 
 [[redirects]]
-  from="/blog/2013/06/28/excellent-200.html"
-  to="/blog/2013/06/28/excellent-200/"
+  from = "/blog/2013/06/28/excellent-200.html"
+  to = "/blog/2013/06/28/excellent-200/"
 
 [[redirects]]
-  from="/blog/2013/08/08/better-authentication-in-emberjs.html"
-  to="/blog/2013/08/08/better-authentication-in-emberjs/"
+  from = "/blog/2013/08/08/better-authentication-in-emberjs.html"
+  to = "/blog/2013/08/08/better-authentication-in-emberjs/"
 
 [[redirects]]
-  from="/blog/2013/10/09/embersimpleauth.html"
-  to="/blog/2013/10/09/embersimpleauth/"
+  from = "/blog/2013/10/09/embersimpleauth.html"
+  to = "/blog/2013/10/09/embersimpleauth/"
 
 [[redirects]]
-  from="/blog/2013/10/28/embersimpleauth-implements-rfc-6749-oauth-20.html"
-  to="/blog/2013/10/28/embersimpleauth-implements-rfc-6749-oauth-20/"
+  from = "/blog/2013/10/28/embersimpleauth-implements-rfc-6749-oauth-20.html"
+  to = "/blog/2013/10/28/embersimpleauth-implements-rfc-6749-oauth-20/"
 
 [[redirects]]
-  from="/blog/2014/01/20/embersimpleauth-010.html"
-  to="/blog/2014/01/20/embersimpleauth-010/"
+  from = "/blog/2014/01/20/embersimpleauth-010.html"
+  to = "/blog/2014/01/20/embersimpleauth-010/"
 
 [[redirects]]
-  from="/blog/2014/03/11/embersimpleauth-020.html"
-  to="/blog/2014/03/11/embersimpleauth-020/"
+  from = "/blog/2014/03/11/embersimpleauth-020.html"
+  to = "/blog/2014/03/11/embersimpleauth-020/"
 
 [[redirects]]
-  from="/blog/2014/04/06/embersimpleauth-021.html"
-  to="/blog/2014/04/06/embersimpleauth-021/"
+  from = "/blog/2014/04/06/embersimpleauth-021.html"
+  to = "/blog/2014/04/06/embersimpleauth-021/"
 
 [[redirects]]
-  from="/blog/2014/04/10/embersimpleauth-030.html"
-  to="/blog/2014/04/10/embersimpleauth-030/"
+  from = "/blog/2014/04/10/embersimpleauth-030.html"
+  to = "/blog/2014/04/10/embersimpleauth-030/"
 
 [[redirects]]
-  from="/blog/2014/04/24/embersimpleauth-needs-a-logo.html"
-  to="/blog/2014/04/24/embersimpleauth-needs-a-logo/"
+  from = "/blog/2014/04/24/embersimpleauth-needs-a-logo.html"
+  to = "/blog/2014/04/24/embersimpleauth-needs-a-logo/"
 
 [[redirects]]
-  from="/blog/2014/06/30/using-ember-simple-auth-with-ember-cli.html"
-  to="/blog/2014/06/30/using-ember-simple-auth-with-ember-cli/"
+  from = "/blog/2014/06/30/using-ember-simple-auth-with-ember-cli.html"
+  to = "/blog/2014/06/30/using-ember-simple-auth-with-ember-cli/"
 
 [[redirects]]
-  from="/blog/2014/07/25/testing-with-ember-simple-auth-and-ember-cli.html"
-  to="/blog/2014/07/25/testing-with-ember-simple-auth-and-ember-cli/"
+  from = "/blog/2014/07/25/testing-with-ember-simple-auth-and-ember-cli.html"
+  to = "/blog/2014/07/25/testing-with-ember-simple-auth-and-ember-cli/"
 
 [[redirects]]
-  from="/blog/2014/10/15/the-most-important-command-when-working-with-xcode-6.html"
-  to="/blog/2014/10/15/the-most-important-command-when-working-with-xcode-6/"
+  from = "/blog/2014/10/15/the-most-important-command-when-working-with-xcode-6.html"
+  to = "/blog/2014/10/15/the-most-important-command-when-working-with-xcode-6/"
 
 [[redirects]]
-  from="/blog/2015/06/03/emberjs-workshop-in-munich.html"
-  to="/blog/2015/06/03/emberjs-workshop-in-munich/"
+  from = "/blog/2015/06/03/emberjs-workshop-in-munich.html"
+  to = "/blog/2015/06/03/emberjs-workshop-in-munich/"
 
 [[redirects]]
-  from="/blog/2015/07/29/ember-simple-auth-10-a-first-look.html"
-  to="/blog/2015/07/29/ember-simple-auth-10-a-first-look/"
+  from = "/blog/2015/07/29/ember-simple-auth-10-a-first-look.html"
+  to = "/blog/2015/07/29/ember-simple-auth-10-a-first-look/"
 
 [[redirects]]
-  from="/blog/2015/08/07/rails-api-auth.html"
-  to="/blog/2015/08/07/rails-api-auth/"
+  from = "/blog/2015/08/07/rails-api-auth.html"
+  to = "/blog/2015/08/07/rails-api-auth/"
 
 [[redirects]]
-  from="/blog/2015/11/27/updating-to-ember-simple-auth-1.0.html"
-  to="/blog/2015/11/27/updating-to-ember-simple-auth-1.0/"
+  from = "/blog/2015/11/27/updating-to-ember-simple-auth-1.0.html"
+  to = "/blog/2015/11/27/updating-to-ember-simple-auth-1.0/"
 
 [[redirects]]
-  from="/blog/2015/12/3/ember-cli-deploy-notifications.html"
-  to="/blog/2015/12/3/ember-cli-deploy-notifications/"
+  from = "/blog/2015/12/3/ember-cli-deploy-notifications.html"
+  to = "/blog/2015/12/3/ember-cli-deploy-notifications/"
 
 [[redirects]]
-  from="/blog/2016/03/04/ember-test-selectors.html"
-  to="/blog/2016/03/04/ember-test-selectors/"
+  from = "/blog/2016/03/04/ember-test-selectors.html"
+  to = "/blog/2016/03/04/ember-test-selectors/"
 
 [[redirects]]
-  from="/blog/2016/12/06/out-of-the-box-fastboot-support-in-ember-simple-auth.html"
-  to="/blog/2016/12/06/out-of-the-box-fastboot-support-in-ember-simple-auth/"
+  from = "/blog/2016/12/06/out-of-the-box-fastboot-support-in-ember-simple-auth.html"
+  to = "/blog/2016/12/06/out-of-the-box-fastboot-support-in-ember-simple-auth/"
 
 [[redirects]]
-  from="/blog/2017/01/13/ember-test-selectors.html"
-  to="/blog/2017/01/13/ember-test-selectors/"
+  from = "/blog/2017/01/13/ember-test-selectors.html"
+  to = "/blog/2017/01/13/ember-test-selectors/"
 
 [[redirects]]
-  from="/blog/2017/02/01/class-based-computed-properties.html"
-  to="/blog/2017/02/01/class-based-computed-properties/"
+  from = "/blog/2017/02/01/class-based-computed-properties.html"
+  to = "/blog/2017/02/01/class-based-computed-properties/"
 
 [[redirects]]
-  from="/blog/2017/02/13/npm-libs-in-ember-cli.html"
-  to="/blog/2017/02/13/npm-libs-in-ember-cli/"
+  from = "/blog/2017/02/13/npm-libs-in-ember-cli.html"
+  to = "/blog/2017/02/13/npm-libs-in-ember-cli/"
 
 [[redirects]]
-  from="/blog/2017/03/21/on-computed-properties-vs-helpers.html"
-  to="/blog/2017/03/21/on-computed-properties-vs-helpers/"
+  from = "/blog/2017/03/21/on-computed-properties-vs-helpers.html"
+  to = "/blog/2017/03/21/on-computed-properties-vs-helpers/"
 
 [[redirects]]
-  from="/blog/2017/08/28/creating-web-components-with-glimmer.html"
-  to="/blog/2017/08/28/creating-web-components-with-glimmer/"
+  from = "/blog/2017/08/28/creating-web-components-with-glimmer.html"
+  to = "/blog/2017/08/28/creating-web-components-with-glimmer/"
 
 [[redirects]]
-  from="/blog/2017/09/17/magic-test-data.html"
-  to="/blog/2017/09/17/magic-test-data/"
+  from = "/blog/2017/09/17/magic-test-data.html"
+  to = "/blog/2017/09/17/magic-test-data/"
 
 [[redirects]]
-  from="/blog/2017/10/24/high-level-assertions-with-qunit-dom.html"
-  to="/blog/2017/10/24/high-level-assertions-with-qunit-dom/"
+  from = "/blog/2017/10/24/high-level-assertions-with-qunit-dom.html"
+  to = "/blog/2017/10/24/high-level-assertions-with-qunit-dom/"
 
 [[redirects]]
-  from="/blog/2017/11/17/ember-test-selectors-road-to-1-0.html"
-  to="/blog/2017/11/17/ember-test-selectors-road-to-1-0/"
+  from = "/blog/2017/11/17/ember-test-selectors-road-to-1-0.html"
+  to = "/blog/2017/11/17/ember-test-selectors-road-to-1-0/"
 
 [[redirects]]
-  from="/blog/2017/12/04/enginification.html"
-  to="/blog/2017/12/04/enginification/"
+  from = "/blog/2017/12/04/enginification.html"
+  to = "/blog/2017/12/04/enginification/"
 
 [[redirects]]
-  from="/blog/2018/01/24/ember-freestyle.html"
-  to="/blog/2018/01/24/ember-freestyle/"
+  from = "/blog/2018/01/24/ember-freestyle.html"
+  to = "/blog/2018/01/24/ember-freestyle/"
 
 [[redirects]]
-  from="/blog/2018/02/14/handling-webhooks-in-phoenix.html"
-  to="/blog/2018/02/14/handling-webhooks-in-phoenix/"
+  from = "/blog/2018/02/14/handling-webhooks-in-phoenix.html"
+  to = "/blog/2018/02/14/handling-webhooks-in-phoenix/"
 
 [[redirects]]
-  from="/blog/2018/05/30/a-little-encouragement-goes-a-long-way-in-2018.html"
-  to="/blog/2018/05/30/a-little-encouragement-goes-a-long-way-in-2018/"
+  from = "/blog/2018/05/30/a-little-encouragement-goes-a-long-way-in-2018.html"
+  to = "/blog/2018/05/30/a-little-encouragement-goes-a-long-way-in-2018/"
 
 [[redirects]]
-  from="/blog/2018/06/05/ember-component-playground.html"
-  to="/blog/2018/06/05/ember-component-playground/"
+  from = "/blog/2018/06/05/ember-component-playground.html"
+  to = "/blog/2018/06/05/ember-component-playground/"
 
 [[redirects]]
-  from="/blog/2018/06/11/actix.html"
-  to="/blog/2018/06/11/actix/"
+  from = "/blog/2018/06/11/actix.html"
+  to = "/blog/2018/06/11/actix/"
 
 [[redirects]]
-  from="/blog/2018/06/18/intl-polyfill-loading.html"
-  to="/blog/2018/06/18/intl-polyfill-loading/"
+  from = "/blog/2018/06/18/intl-polyfill-loading.html"
+  to = "/blog/2018/06/18/intl-polyfill-loading/"
 
 [[redirects]]
-  from="/blog/2018/06/27/actix-tcp-client.html"
-  to="/blog/2018/06/27/actix-tcp-client/"
+  from = "/blog/2018/06/27/actix-tcp-client.html"
+  to = "/blog/2018/06/27/actix-tcp-client/"
 
 [[redirects]]
-  from="/blog/2018/07/03/building-a-pwa-with-glimmer-js.html"
-  to="/blog/2018/07/03/building-a-pwa-with-glimmer-js/"
+  from = "/blog/2018/07/03/building-a-pwa-with-glimmer-js.html"
+  to = "/blog/2018/07/03/building-a-pwa-with-glimmer-js/"
 
 [[redirects]]
-  from="/blog/2018/07/24/from-spa-to-pwa.html"
-  to="/blog/2018/07/24/from-spa-to-pwa/"
+  from = "/blog/2018/07/24/from-spa-to-pwa.html"
+  to = "/blog/2018/07/24/from-spa-to-pwa/"
 
 [[redirects]]
-  from="/blog/2018/11/27/open-source-maintenance.html"
-  to="/blog/2018/11/27/open-source-maintenance/"
+  from = "/blog/2018/11/27/open-source-maintenance.html"
+  to = "/blog/2018/11/27/open-source-maintenance/"
 
 [[redirects]]
-  from="/blog/2018/12/10/assert-your-style.html"
-  to="/blog/2018/12/10/assert-your-style/"
+  from = "/blog/2018/12/10/assert-your-style.html"
+  to = "/blog/2018/12/10/assert-your-style/"
 
 [[redirects]]
-  from="/blog/2018/12/20/factories-best-practices.html"
-  to="/blog/2018/12/20/factories-best-practices/"
+  from = "/blog/2018/12/20/factories-best-practices.html"
+  to = "/blog/2018/12/20/factories-best-practices/"
 
 [[redirects]]
-  from="/blog/2019/02/08/ember-js-film-release.html"
-  to="/blog/2019/02/08/ember-js-film-release/"
+  from = "/blog/2019/02/08/ember-js-film-release.html"
+  to = "/blog/2019/02/08/ember-js-film-release/"
 
 [[redirects]]
-  from="/blog/2019/02/11/ember-js-film-berlin.html"
-  to="/blog/2019/02/11/ember-js-film-berlin/"
+  from = "/blog/2019/02/11/ember-js-film-berlin.html"
+  to = "/blog/2019/02/11/ember-js-film-berlin/"
 
 [[redirects]]
-  from="/blog/2019/03/07/march-monthly-update.html"
-  to="/blog/2019/03/07/march-monthly-update/"
+  from = "/blog/2019/03/07/march-monthly-update.html"
+  to = "/blog/2019/03/07/march-monthly-update/"
 
 [[redirects]]
-  from="/blog/2019/03/13/elixir-umbrella-mox.html"
-  to="/blog/2019/03/13/elixir-umbrella-mox/"
+  from = "/blog/2019/03/13/elixir-umbrella-mox.html"
+  to = "/blog/2019/03/13/elixir-umbrella-mox/"
 
 [[redirects]]
-  from="/blog/2019/03/18/emberconf-update.html"
-  to="/blog/2019/03/18/emberconf-update/"
+  from = "/blog/2019/03/18/emberconf-update.html"
+  to = "/blog/2019/03/18/emberconf-update/"
 
 [[redirects]]
-  from="/blog/2019/03/29/qonto-project.html"
-  to="/blog/2019/03/29/qonto-project/"
+  from = "/blog/2019/03/29/qonto-project.html"
+  to = "/blog/2019/03/29/qonto-project/"
 
 [[redirects]]
-  from="/blog/2019/04/05/april-monthly-update.html"
-  to="/blog/2019/04/05/april-monthly-update/"
+  from = "/blog/2019/04/05/april-monthly-update.html"
+  to = "/blog/2019/04/05/april-monthly-update/"
 
 [[redirects]]
-  from="/blog/2019/04/05/spas-pwas-and-ssr.html"
-  to="/blog/2019/04/05/spas-pwas-and-ssr/"
+  from = "/blog/2019/04/05/spas-pwas-and-ssr.html"
+  to = "/blog/2019/04/05/spas-pwas-and-ssr/"
 
 [[redirects]]
-  from="/blog/2019/04/24/dependency-updates-for-gitlab.html"
-  to="/blog/2019/04/24/dependency-updates-for-gitlab/"
+  from = "/blog/2019/04/24/dependency-updates-for-gitlab.html"
+  to = "/blog/2019/04/24/dependency-updates-for-gitlab/"
 
 [[redirects]]
-  from="/blog/2019/05/10/may-monthly-update.html"
-  to="/blog/2019/05/10/may-monthly-update/"
+  from = "/blog/2019/05/10/may-monthly-update.html"
+  to = "/blog/2019/05/10/may-monthly-update/"
+
+[[redirects]]
+  from = "/blog/2015/12/03/ember-cli-deploy-notifications.html"
+  to = "/blog/2015/12/3/ember-cli-deploy-notifications/"
+
+[[redirects]]
+  from = "/blog/ember/2018/05/30/a-little-encouragement-goes-a-long-way-in-2018.html"
+  to = "/blog/2018/05/30/a-little-encouragement-goes-a-long-way-in-2018"
 
 # redirect old workshop pages
 
 [[redirects]]
-  from="https://elixir-phoenix-workshop.simplabs.com"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://elixir-phoenix-workshop.simplabs.com"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://elixir-workshops.simplabs.com/*"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://elixir-workshops.simplabs.com/*"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://ember-basics-workshop.simplabs.com"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://ember-basics-workshop.simplabs.com"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://ember-basics-workshop.simplabs.com/*"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://ember-basics-workshop.simplabs.com/*"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://ember-pro-workshop.simplabs.com"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://ember-pro-workshop.simplabs.com"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://ember-pro-workshop.simplabs.com/*"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://ember-pro-workshop.simplabs.com/*"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://ember-workshop.simplabs.com"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://ember-workshop.simplabs.com"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://ember-workshop.simplabs.com/*"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://ember-workshop.simplabs.com/*"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://ember-workshops.simplabs.com"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://ember-workshops.simplabs.com"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://ember-workshops.simplabs.com/*"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://ember-workshops.simplabs.com/*"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://phoenix-workshops.simplabs.com"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://phoenix-workshops.simplabs.com"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://phoenix-workshops.simplabs.com/*"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://phoenix-workshops.simplabs.com/*"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://progressive-web-apps-workshop.simplabs.com"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://progressive-web-apps-workshop.simplabs.com"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://progressive-web-apps-workshop.simplabs.com/*"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://progressive-web-apps-workshop.simplabs.com/*"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://typescript-fundamentals-workshop.simplabs.com"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://typescript-fundamentals-workshop.simplabs.com"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://typescript-fundamentals-workshop.simplabs.com/*"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://typescript-fundamentals-workshop.simplabs.com/*"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://web-performance-workshop.simplabs.com"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://web-performance-workshop.simplabs.com"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://web-performance-workshop.simplabs.com/*"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://web-performance-workshop.simplabs.com/*"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://phoenix-workshops.simplabs.com"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://phoenix-workshops.simplabs.com"
+  to = "https://simplabs.com/services/tutoring/"
 
 [[redirects]]
-  from="https://phoenix-workshops.simplabs.com/*"
-  to="https://simplabs.com/services/tutoring/"
+  from = "https://phoenix-workshops.simplabs.com/*"
+  to = "https://simplabs.com/services/tutoring/"
+
+[[redirects]]
+  from = "/training/2017-06-11-web-security.html"
+  to = "/services/tutoring/"
+
+[[redirects]]
+  from = "/training/2017-06-11-web-security"
+  to = "/services/tutoring/"
+
+[[redirects]]
+  from = "/training/2017-06-11-web-security/*"
+  to = "/services/tutoring/"
+
+[[redirects]]
+  from = "/training/2017-02-16-sass-fundamentals.html"
+  to = "/services/tutoring/"
+
+[[redirects]]
+  from = "/training/2017-02-16-sass-fundamentals"
+  to = "/services/tutoring/"
+
+[[redirects]]
+  from = "/training/2017-02-16-sass-fundamentals/*"
+  to = "/services/tutoring/"
+
+[[redirects]]
+  from = "/training/2017-02-17-modern-seo.html"
+  to = "/services/tutoring/"
+
+[[redirects]]
+  from = "/training/2017-02-17-modern-seo"
+  to = "/services/tutoring/"
+
+[[redirects]]
+  from = "/training/2017-02-17-modern-seo/*"
+  to = "/services/tutoring/"
+
+[[redirects]]
+  from = "/jobs"
+  to = "/"
+  status = 410
+
+[[redirects]]
+  from = "/jobs/*"
+  to = "/"
+  status = 410
+
+[[redirects]]
+  from = "/full-stack-engineering/index.html"
+  to = "/services/full-stack-engineering/"
+
+[[redirects]]
+  from = "/team-augmentation/index.html"
+  to = "/services/team-augmentation/"
+
+[[redirects]]
+  from = "/about/index.html"
+  to = "/why-simplabs/"
+
+[[redirects]]
+  from = "/about"
+  to = "/why-simplabs/"
+
+[[redirects]]
+  from = "/about/*"
+  to = "/why-simplabs/"
+
+[[redirects]]
+  from = "/dd-wrt/index.html"
+  to = "/cases/ddwrt/"
+
+[[redirects]]
+  from = "/cases/dd-wrt"
+  to = "/cases/ddwrt/"
+
+[[redirects]]
+  from = "/trainline/index.html"
+  to = "/cases/trainline/"
+
+[[redirects]]
+  from = "/expedition/index.html"
+  to = "/cases/expedition/"
+
+[[redirects]]
+  from = "/timify/index.html"
+  to = "/cases/timify/"
+
+[[redirects]]
+  from = "/elixir/index.html"
+  to = "/expertise/elixir-phoenix/"
+
+[[redirects]]
+  from = "/ember/index.html"
+  to = "/expertise/ember/"
+
+[[redirects]]
+  from = "/clients/"
+  to = "/work/"
+
+[[redirects]]
+  from = "/sitemap"
+  to = "/sitemap.xml"
+
+[[redirects]]
+  from = "/team-augmentation/"
+  to = "/services/team-augmentation/"
 
 # handle 404 errors
 [[redirects]]
