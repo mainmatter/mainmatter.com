@@ -37,7 +37,7 @@ module.exports = function() {
     ...blogPostRoutes,
     ...blogAuthorsRoutes,
     '/': { component: 'PageHomepage' },
-    '/404': { component: 'Page404', sitemap: false },
+    '/404': { component: 'Page404' },
     '/blog': { component: 'PageBlog', bundle: { asset: '/blog.js', module: '__blog__' } },
     '/calendar': {
       component: 'PageCalendar',
@@ -53,7 +53,6 @@ module.exports = function() {
     '/imprint': {
       component: 'PageLegalImprint',
       bundle: { asset: '/legal.js', module: '__legal__' },
-      sitemap: false,
     },
     '/playbook': {
       component: 'PagePlaybook',
@@ -62,7 +61,6 @@ module.exports = function() {
     '/privacy': {
       component: 'PageLegalPrivacy',
       bundle: { asset: '/legal.js', module: '__legal__' },
-      sitemap: false,
     },
     '/services': { component: 'PageServices' },
     '/services/full-stack-engineering': {
