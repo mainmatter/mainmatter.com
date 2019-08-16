@@ -4,6 +4,10 @@
   pointer-events: none;
 }
 
+:scope + :scope {
+  margin-top: 0;
+}
+
 .link {
   position: relative;
   display: inline-block;
@@ -37,4 +41,24 @@
 
 .arrow {
   fill: var(--color-link);
+}
+
+:scope[state|reverse='true'] .link {
+  padding: 1.5rem 0 1.5rem 7rem;
+}
+
+@media (min-width: 888px) {
+  :scope[state|reverse='true'] .link {
+    margin-left: -7rem;
+  }
+}
+
+:scope[state|reverse='true'] .svg {
+  right: unset;
+  left: 0;
+  transform: translate(0) scaleX(-1);
+}
+
+:scope[state|reverse='true']:hover .svg {
+  transform: translate(-0.5rem) scaleX(-1);
 }

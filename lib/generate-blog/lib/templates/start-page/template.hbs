@@ -39,8 +39,7 @@
   <ShapeBlog>
     <article>
       <span class="typography.tag">
-        #
-        {{latest.topic}}
+        #{{latest.topic}}
       </span>
       <h2 class="offset.before-none">
         <a href="{{latest.path}}" data-internal>
@@ -84,6 +83,17 @@
         </p>
       </article>
     {{/each}}
+    <!-- if has pages -->
+    <nav aria-label="pagination" class="pagination">
+      <!-- if has next -->
+      <ArrowLink @href="#" @reverse="true">
+        Older
+      </ArrowLink>
+      <!-- if has previous -->
+      <ArrowLink @href="#">
+        Newer
+      </ArrowLink>
+    </nav>
   </section>
   <aside class="layout.side offset.after-21">
     <CardTalks />
