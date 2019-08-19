@@ -117,3 +117,9 @@
     line-height: calc(5 / 3);
   }
 }
+
+@media (min-width: 888px) {
+  .nowrap {
+    white-space: nowrap;
+  }
+}
