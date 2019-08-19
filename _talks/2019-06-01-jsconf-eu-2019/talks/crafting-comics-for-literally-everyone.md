@@ -1,6 +1,6 @@
 ---
-title: "Crafting Comics for Literally Everyone"
-image: "/assets/images/talks/2019-06-01-jsconf-eu-2019/crafting-comics-for-literally-everyone.jpg"
+title: 'Crafting Comics for Literally Everyone'
+image: '/assets/images/talks/2019-06-01-jsconf-eu-2019/crafting-comics-for-literally-everyone.jpg'
 url: https://www.youtube.com/watch?v=BPmuR4mAQaw
 ---
 
