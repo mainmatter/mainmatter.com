@@ -11,15 +11,15 @@ using [Puppeteer](https://pptr.dev).
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd simplabs`
-* `yarn --pure-lockfile`
+- `git clone <repository-url>` this repository
+- `cd simplabs`
+- `yarn --pure-lockfile`
 
 ## Running / Development
 
-* `ember serve`
-* open [http://localhost:4200](http://localhost:4200).
-* `yarn format` (format source files)
+- `ember serve`
+- open [http://localhost:4200](http://localhost:4200).
+- `yarn format` (format source files)
 
 **This project registers a service worker which you'll likely want to disable
 for development. Check _"Bypass for network"_ in the _"Application"_ tab in the
@@ -27,21 +27,21 @@ Chrome Inspector to do so.**
 
 ### Testing
 
-* `ember test` (headless)
-* `ember test -s` (headful)
-* `yarn lint` (check formatting)
+- `ember test` (headless)
+- `ember test -s` (headful)
+- `yarn lint` (check formatting)
 
 ### Building
 
-* `ember build` (development)
-* `yarn build` (production, with static pre-rendering)
+- `ember build` (development)
+- `yarn build` (production, with static pre-rendering)
 
 ## Further Reading / Useful Links
 
-* [Glimmer.js](https://glimmerjs.com)
-* [navigo](https://github.com/krasimir/navigo)
-* [CSS Blocks](https://css-blocks.com)
-* [Puppeteer](https://pptr.dev)
+- [Glimmer.js](https://glimmerjs.com)
+- [navigo](https://github.com/krasimir/navigo)
+- [CSS Blocks](https://css-blocks.com)
+- [Puppeteer](https://pptr.dev)
 
 ## Copyright
 
