@@ -1,16 +1,16 @@
 ---
-title: "Authentication in ember.js"
-author: "Marco Otte-Witte"
+title: 'Authentication in ember.js'
+author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
 topic: ember
-description: "Marco Otte-Witte describes an approach for implementing a session mechanism, authentication and authorization in Ember.js applications."
+description: 'Marco Otte-Witte describes an approach for implementing a session mechanism, authentication and authorization in Ember.js applications.'
 ---
 
 **Update:**_I released an Ember.js plugin that makes it very easy to implement an authentication system as described in this post: [Ember.SimpleAuth](/blog/2013/10/09/embersimpleauth)._
 
-**Update:** _After I wrote this I found out that it’s actually not the best approach to implement authentication in Ember.js… There are some things missing and some other things can be done in a much simpler way. [I wrote a summary of the (better) authentication mechanism we moved to.](/blog/2013/08/08/better-authentication-in-emberjs "(better) authnetication with ember.js")_
+**Update:** _After I wrote this I found out that it’s actually not the best approach to implement authentication in Ember.js… There are some things missing and some other things can be done in a much simpler way. [I wrote a summary of the (better) authentication mechanism we moved to.](/blog/2013/08/08/better-authentication-in-emberjs '(better) authnetication with ember.js')_
 
 _I’m using the latest (as of mid June 2013) [ember](https://github.com/emberjs/ember.js)/[ember-data](https://github.com/emberjs/data)/[handlebars](https://github.com/wycats/handlebars.js) code directly from the respective github repositories in this example._
 
@@ -36,7 +36,7 @@ The general route to go with authentication in ember.js is to use **token based 
 
 That template is backed by a route that handles the submission event and posts the data to the /session route on the server - which then responds with either status 401 or 200 and a JSON containing the authentication token and the id of the authenticated user:
 
-
+<!-- prettier-ignore -->
 ```js
 App.SessionsNewRoute = Ember.Route.extend({
   events: {
@@ -46,19 +46,20 @@ App.SessionsNewRoute = Ember.Route.extend({
       var password = this.controller.get('password');
       if (!Ember.isEmpty(loginOrEmail) && !Ember.isEmpty(password)) {
         $.post('/session', {
-          session: { login_or_email: loginOrEmail, password: password }
-        }, function(data) {
+          session: { login_or_email: loginOrEmail, password: password },
+        },
+        function(data) {
           var authToken = data.session.auth_token;
           App.Store.authToken = authToken;
           App.Auth = Ember.Object.create({
             authToken: data.session.auth_token,
-            accountId: data.session.account_id
+            accountId: data.session.account_id,
           });
           router.transitionTo('index');
         });
       }
-    }
-  }
+    },
+  },
 });
 ```
 
@@ -68,9 +69,9 @@ The response JSON from the server would look somehow like this in the successful
 
 ```json
 {
-  session: {
-    auth_token: '<SOME RANDOM AUTH TOKEN>',
-    account_id: '<ID OF AUTHENTICATED USER>'
+  "session": {
+    "auth_token": "<SOME RANDOM AUTH TOKEN>",
+    "account_id": "<ID OF AUTHENTICATED USER>"
   }
 }
 ```
@@ -89,11 +90,11 @@ The next step is to actually send the authentication token to the server. As the
 ```js
 App.AuthenticatedRESTAdapter = DS.RESTAdapter.extend({
   ajax: function(url, type, hash) {
-    hash         = hash || {};
+    hash = hash || {};
     hash.headers = hash.headers || {};
     hash.headers['X-AUTHENTICATION-TOKEN'] = this.authToken;
     return this._super(url, type, hash);
-  }
+  },
 });
 ```
 
@@ -118,7 +119,7 @@ App.AuthenticatedRoute = Ember.Route.extend({
     if (!Ember.isEmpty(App.Auth.get('authToken')) && !Ember.isEmpty(App.Auth.get('accountId'))) {
       this.transitionTo('sessions.new');
     }
-  }
+  },
 });
 ```
 
@@ -139,17 +140,18 @@ As the code is now spread up into a number of files and classes, I added a `Sess
 ```js
 App.Session = DS.Model.extend({
   authToken: DS.attr('string'),
-  account:   DS.belongsTo('App.Account')
+  account: DS.belongsTo('App.Account'),
 });
 ```
 
 alongside an `App.AuthManager` accompanied by a custom initializer to clean it up:
 
+<!-- prettier-ignore -->
 ```js
 App.AuthManager = Ember.Object.extend({
   init: function() {
     this._super();
-    var authToken     = $.cookie('auth_token');
+    var authToken = $.cookie('auth_token');
     var authAccountId = $.cookie('auth_account');
     if (!Ember.isEmpty(authToken) && !Ember.isEmpty(authAccountId)) {
       this.authenticate(authToken, authAccountId);
@@ -164,7 +166,7 @@ App.AuthManager = Ember.Object.extend({
     var account = App.Account.find(accountId);
     this.set('session', App.Session.createRecord({
       authToken: authToken,
-      account:   account
+      account: account,
     }));
   },
 
@@ -181,7 +183,7 @@ App.AuthManager = Ember.Object.extend({
       $.cookie('auth_token', this.get('session.authToken'));
       $.cookie('auth_account', this.get('session.account.id'));
     }
-  }.observes('session')
+  }.observes('session'),
 });
 ```
 

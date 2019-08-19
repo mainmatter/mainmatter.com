@@ -1,10 +1,10 @@
 ---
-title: "Using Ember Simple Auth with ember-cli"
-author: "Marco Otte-Witte"
+title: 'Using Ember Simple Auth with ember-cli'
+author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
-description: "Marco Otte-Witte announces the release of ember-cli-simple-auth as an Ember CLI addon."
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+description: 'Marco Otte-Witte announces the release of ember-cli-simple-auth as an Ember CLI addon.'
 topic: ember
 ---
 
@@ -110,7 +110,7 @@ import Ember from 'ember';
 import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
 
 export default Ember.Controller.extend(LoginControllerMixin, {
-  authenticator: 'simple-auth-authenticator:oauth2-password-grant'
+  authenticator: 'simple-auth-authenticator:oauth2-password-grant',
 });
 ```
 

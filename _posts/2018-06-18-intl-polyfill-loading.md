@@ -1,26 +1,25 @@
 ---
-title: "ember-intl data loading patterns"
-author: "Tobias Bieniek"
+title: 'ember-intl data loading patterns'
+author: 'Tobias Bieniek'
 github: Turbo87
 twitter: tobiasbieniek
-bio: "Senior Frontend Engineer, Ember CLI core team member"
-description: "Tobias Bieniek shows how to load the necessary polyfills for the Intl API in older browsers most effectively when using ember-intl."
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
+description: 'Tobias Bieniek shows how to load the necessary polyfills for the Intl API in older browsers most effectively when using ember-intl.'
 topic: ember
 ---
 
-At simplabs we ❤️ [ember-intl] and use it for all our projects where
+At simplabs we ❤️ [ember-intl][ember-intl] and use it for all our projects where
 translations or other localizations are needed. ember-intl is based on the
-native [Intl] APIs that were introduced in [all newer browsers] a while ago.
+native [Intl APIs][intl] that were introduced in [all newer browsers][browsers] a while ago.
 Unfortunately some users are still using browsers that don't support them and
 this blog post will show you our preferred way to load the necessary polyfill
 and the associated data.
 
 [ember-intl]: https://github.com/ember-intl/ember-intl
-[Intl]: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Intl
-[all newer browsers]: https://caniuse.com/#feat=internationalization
+[intl]: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Intl
+[browsers]: https://caniuse.com/#feat=internationalization
 
 <!--break-->
-
 
 ## Loading Translations
 
@@ -89,7 +88,6 @@ If we now open our app in the browser and look at the "Network" tab of the
 browser we should see the app making an AJAX request for the translations
 before it starts. 🎉
 
-
 ## Loading the Intl.js polyfill
 
 As mentioned in the intro [some browsers](https://caniuse.com/#feat=internationalization)
@@ -157,7 +155,7 @@ async beforeModel() {
 }
 ```
 
-If you visit the app in your regular browser now you should *not* see any
+If you visit the app in your regular browser now you should _not_ see any
 request for the `intl.min.js` file. But if you open the app in IE10 (e.g. via
 <https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/>) you should
 see the polyfill being loaded.
@@ -209,14 +207,13 @@ In case you're wondering what "locale data" actually means: it includes
 information for the Intl.js polyfill on how to format dates, time and numbers
 and several other things that are handled in a locale-aware way in the Intl API.
 
-
 ## Summary
 
 In this blog post we have learned how to reduce our bundle size in several ways
-when using the [ember-intl] addon. We are now loading only the code and data
-that we actually need for the specific browser. Most users don't pay the extra
-cost of loading the polyfill and related data, and for the browsers that do
-need it, it's available on demand.
+when using the [ember-intl][ember-intl] addon. We are now loading only the code
+and data that we actually need for the specific browser. Most users don't pay
+the extra cost of loading the polyfill and related data, and for the browsers
+that do need it, it's available on demand.
 
 If you have any questions about these patterns or need help implementing them
 in your apps feel free to [contact us](/contact/).

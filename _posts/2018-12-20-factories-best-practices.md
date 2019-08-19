@@ -1,10 +1,10 @@
 ---
-title: "Factories best practices"
-author: "Andy Brown"
+title: 'Factories best practices'
+author: 'Andy Brown'
 github: geekygrappler
 twitter: geekygrappler
 topic: testing
-bio: "Senior Frontend Engineer"
+bio: 'Senior Frontend Engineer'
 description: "Andy Brown introduces best practices for using factories in order to make your colleagues' and your own future self's lives easier."
 ---
 
@@ -27,20 +27,21 @@ In most applications there is often one gnarly model. In ecommerce applications 
 The full API response fixture is the worst kind of fixture and it is a code smell. It means that rather than creating a declarative test that will help future developers (and your future self) understand what parts of this model are important for a particular test and how the model works, you get a 1,203 line json file. If I ever see a fixture like this while fixing a broken test, I have to replace it with a factory. I don't do this because I like creating extra work for myself, believe me, I don't. I do it because I don't understand what specific parts of that model were important to the test by looking at the fixture. In order to fix the test I need to figure out how the model works. I try to build a mental picture of the model and create the data for the test using a factory (often many factories pulled together), so it's clear and concise what parts of the `order` are required for the `orders with multiple deliveries arriving on the same day, only show 1 estimated delivery date not multiple` test. In this test (which is fantastically named), I can expect to see an `order` factory which has a `delivery` factory with more than one delivery, but all planned for the same day. All the other parts of the `order` model are likely not relevant to this test, so don't include them, or leave them as the defaults. Some pseudocode as we're so far into the post without a single line of it.
 
 ```js
-  test('orders with deliveries from different carriers arriving on the same day, only show 1 estimated delivery date', function(assert) {
-    let tomorrow = Date.tomorrow();
-    let dhl = make('delivery', { estimatedDeliveryDate: tomorrow, carrier: 'dhl' });
-    let ups = make('delivery', { estimatedDeliveryDate: tomorrow, carrier: 'ups' });
-    let order = make('order', { deliveries: [dhl, ups] });
-    assert.equal(order.estimatedDeliveryDates.length, 1, 'We should only show one delivery date')
-    assert.equal(order.estimatedDeliveryDates[0], tomorrow, 'The delivery date is correct')
-  })
-```
+test('orders with deliveries from different carriers arriving on the same day, only show 1 estimated delivery date', function(assert) {
+  let tomorrow = Date.tomorrow();
+  let dhl = make('delivery', { estimatedDeliveryDate: tomorrow, carrier: 'dhl' });
+  let ups = make('delivery', { estimatedDeliveryDate: tomorrow, carrier: 'ups' });
+  let order = make('order', { deliveries: [dhl, ups] });
 
+  assert.equal(order.estimatedDeliveryDates.length, 1, 'We should only show one delivery date');
+  assert.equal(order.estimatedDeliveryDates[0], tomorrow, 'The delivery date is correct');
+});
+```
 
 ## Fun fun factories 🏭
 
 This is the part where young me thinks old me is a boring loser. Don't give your factories fun names 🙅‍♂️. Often with factory libraries you will be able to have a default model, e.g. `user` and you'll be able to have named factories e.g. `specialUser`. What is quite fun is to have themed names for your factories, for example:
+
 ```js
 //factories/user.js
 Factory.define({
@@ -50,14 +51,14 @@ Factory.define({
   rob_stark: {
     name: 'Rob Stark',
     canInherit: true,
-    wolf: belongsTo('dire-wolf')
+    wolf: belongsTo('dire-wolf'),
   },
   jon_snow: {
     name: 'Jon Snow',
     canInherit: false,
-    wolf: belongsTo('dire-wolf')
-  }
-})
+    wolf: belongsTo('dire-wolf'),
+  },
+});
 ```
 
 Now while it's fun to have Game of Thrones characters in your testing code base, it is a terrible practice. At the moment the difference between Jon and Rob is quite clear, and if I was writing a test about inheritance of Winterfell, it would be clear with a quick scan of the factory file, what the difference between Jon and Rob is, regardless of whether I've watched GoT or not. However, even though I know nothing about this ficticious GoT app, I can promise you one thing, the model will grow with time and the list of attrs will start to grow for both of our heroes. Let me give one scenario for what could happen:
@@ -78,19 +79,29 @@ test('bastards cannot inherit', function(assert) {
 test('Leaders can raise armies', function(assert) {
   /* let's introduce someone who can tell us interesting things about Jon and Rob */
   let threeEyedRaven = make('brandon_stark');
+
   assert.ok(threeEyedRaven.canRaiseArmies(rob), 'Noble of blood, strong of heart, Rob Stark can raise an army.');
   assert.ok(threeEyedRaven.canRaiseArmies(jon), 'Principles command authority, Jon Snow can raise an army.');
 });
 
 //Added by me on day 102
-test('Jon is better than Rob', function (assert) {
+test('Jon is better than Rob', function(assert) {
   let threeEyedRaven = make('brandon_stark');
-  assert.ok(threeEyedRaven.isVitalToDefeatTheWhiteWalkers(jon), 'We need Jon Snow to defeat the White Walkers (TBC) 😍');
-  assert.notOk(threeEyedRaven.isVitalToDefeatTheWhiteWalkers(rob), 'Rob Stark proved his irrelevance to defeating the White Walkers during the Red Wedding 🗡 😭');
+
+  assert.ok(
+    threeEyedRaven.isVitalToDefeatTheWhiteWalkers(jon),
+    'We need Jon Snow to defeat the White Walkers (TBC) 😍',
+  );
+
+  assert.notOk(
+    threeEyedRaven.isVitalToDefeatTheWhiteWalkers(rob),
+    'Rob Stark proved his irrelevance to defeating the White Walkers during the Red Wedding 🗡 😭',
+  );
 });
 ```
 
 And now what our simple factories have morphed into:
+
 ```js
 Factory.define({
   default: {
@@ -103,7 +114,7 @@ Factory.define({
     isBlessedByRhlor: false,
     charisma: 10,
     fighting_ability: 10,
-    alive: false
+    alive: false,
   },
   jon_snow: {
     name: 'Jon Snow',
@@ -112,9 +123,9 @@ Factory.define({
     isBlessedByRhlor: true,
     charisma: 9,
     fighting_ability: 10,
-    alive: true
-  }
-})
+    alive: true,
+  },
+});
 ```
 
 Now my example is a bit of fun, but my point is this: If you create wittily themed named factories, the attributes they contain will be unclear to everyone but you (and even to you on day 102). Often you will have a bare minimum number of attributes required for a certain model, e.g. every user must have a name and an email or the app will implode, and these things should live in the `default` factory. If you need to modify the default, and admin users are a good example of this, then keep the modification simple and make it obvious from the name what properties are changing.
@@ -124,30 +135,33 @@ Now my example is a bit of fun, but my point is this: If you create wittily them
 Factory.define({
   default: {
     name: 'A user',
-    email: 'user@example.com'
+    email: 'user@example.com',
   },
   admin_user: {
     name: 'An Admin',
     email: 'admin@example.com',
     isAdmin: true,
-  }
-})
+  },
+});
 ```
+
 But of course **you should not do this(!)**, even with sensible naming, because it will become a dumping ground for each attribute a test requires if it involves an admin user.
 
 Which leads me onto my final topic.
 
 ## Declarative factories
 
-Don't use named factories or traits, they're an antipattern*. The admin user is again a good example where you might be tempted to use one of these. If your model is such that `isAdmin` boolean is all that is needed to make someone an admin then your test should be.
+Don't use named factories or traits, they're an antipattern\*. The admin user is again a good example where you might be tempted to use one of these. If your model is such that `isAdmin` boolean is all that is needed to make someone an admin then your test should be.
 
-<small>* I think, I'm not really sure what an antipattern is, but humour me.</small>
+<small>\* I think, I'm not really sure what an antipattern is, but humour me.</small>
 
 ```js
 test('Admin users are taken to the dashboard on login', async function(assert) {
   let admin = make('user', { isAdmin: true });
+
   // Mock a request to the api and return our admin.
   this.server.get('user', () => [200, {}, admin]);
+
   await visit('/');
 
   assert.equal(window.location, '/admin-dashboard';)
@@ -163,15 +177,16 @@ test('Admin users are taken to the dashboard on login', async function(assert) {
     permissions: ['view', 'edit', 'delete'],
     sudo: true
   });
+
   this.server.get('user', () => [200, {}, admin]);
+
   await visit('/');
 
   assert.equal(window.location, '/admin-dashboard';)
 });
 ```
 
-If this list becomes quite long and it is used in a lot of places, and I mean very long and *a lot* of places, then maybe you could switch to a named factory or trait, but you would need to police it quite strictly and ensure that nothing else is added to that definition. What will happen is that developers add the attribute they need for their specific test to the definition, rather than writing it in the test, not realising that this attribute will now be created unneccessarily in all tests using this named factory or trait. This won't break those tests (usually), they'll be fine, but it leads to bloated factories and developers unaware of which attributes are strictly relevant to the test they're trying to fix.
-
+If this list becomes quite long and it is used in a lot of places, and I mean very long and _a lot_ of places, then maybe you could switch to a named factory or trait, but you would need to police it quite strictly and ensure that nothing else is added to that definition. What will happen is that developers add the attribute they need for their specific test to the definition, rather than writing it in the test, not realising that this attribute will now be created unneccessarily in all tests using this named factory or trait. This won't break those tests (usually), they'll be fine, but it leads to bloated factories and developers unaware of which attributes are strictly relevant to the test they're trying to fix.
 
 ## Don't use Mirage for tests - Ember bonus topic 🐹
 
@@ -186,6 +201,7 @@ In my opinion the main use for Mirage is as a rapid prototyping tool. It can als
 If you want to use Mirage in testing, and you write more than acceptance tests then you will need to use a ['hack' or 'workaround'](http://www.ember-cli-mirage.com/versions/v0.4.x/manually-starting-mirage/) to manually start and stop the mirage server during integration and unit tests. And you definitely should be writing integration and unit tests.
 
 #### 2. Test Clarity
+
 Using Mirage in an acceptance test look like this.
 
 ```js
@@ -200,9 +216,9 @@ test('The page shows me all the foos', async function(assert) {
 });
 ```
 
-It's not bad, we are at least following AAA, but there is a step that is unclear, between adding foos to the server and them appearing on the page. The details of that are contained in Mirage's config file. Take a look at the equivalent test with Factory Guy for the data and [Pretender](https://github.com/pretenderjs/pretender) for mocking API calls (Mirage uses this under the hood*).
+It's not bad, we are at least following AAA, but there is a step that is unclear, between adding foos to the server and them appearing on the page. The details of that are contained in Mirage's config file. Take a look at the equivalent test with Factory Guy for the data and [Pretender](https://github.com/pretenderjs/pretender) for mocking API calls (Mirage uses this under the hood\*).
 
-<small>*Factory Guy also uses pretender under the hood to mock API calls for certain helper functions that you can use with Factory Guy if you want.</small>
+<small>\*Factory Guy also uses pretender under the hood to mock API calls for certain helper functions that you can use with Factory Guy if you want.</small>
 
 ```js
 //acceptance/foo-index-test.js
@@ -220,13 +236,14 @@ test('The page shows me all the foos', async function(assert) {
 });
 ```
 
-Here we're being a little more explicit in the test. Put yourself in the shoes of a junior developer. The Mirage test shows me *more* Ember magic, even though they promised me there is a lot less magic now than there used to be in 2012. The factory test is more explicit, it tells us that visiting `/foos` url will trigger a `GET` request to `/api/foos` and we return a list of foos. It's a small difference but will help a junior to realise what
+Here we're being a little more explicit in the test. Put yourself in the shoes of a junior developer. The Mirage test shows me _more_ Ember magic, even though they promised me there is a lot less magic now than there used to be in 2012. The factory test is more explicit, it tells us that visiting `/foos` url will trigger a `GET` request to `/api/foos` and we return a list of foos. It's a small difference but will help a junior to realise what
 
 ```js
 model() {
   return this.get('store').findAll('foo');
 }
 ```
+
 is actually doing.
 
 #### 3. Duplication & Complexity
@@ -242,4 +259,3 @@ I've been told it is always good to finish with a strong conclusion.
 ![Strong gif](/assets/images/posts/2018-12-20-factories-best-practices/strong.gif)
 
 I hope you enjoyed this post and will start using factories over fixtures and using named factories / traits more sparingly.
-

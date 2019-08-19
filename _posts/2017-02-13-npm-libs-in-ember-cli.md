@@ -1,10 +1,10 @@
 ---
 title: Using npm libraries in Ember CLI
-author: "Tobias Bieniek"
+author: 'Tobias Bieniek'
 github: Turbo87
 twitter: tobiasbieniek
-bio: "Senior Frontend Engineer, Ember CLI core team member"
-description: "Tobias Bieniek introduces a mechanism for using arbitrary npm libraries in Ember CLI applications and explains how that works under the hood."
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
+description: 'Tobias Bieniek introduces a mechanism for using arbitrary npm libraries in Ember CLI applications and explains how that works under the hood.'
 topic: ember
 og:
   image: /assets/images/posts/2017-02-13-npm-libs-in-ember-cli/og-image.png
@@ -13,7 +13,7 @@ og:
 tl;dr Use npm instead of Bower whenever you can!
 
 With Ember 2.11 we are now using the [`ember-source`][ember-source] module and
-no longer the `ember` [Bower][Bower] package. In the upcoming Ember CLI 2.12
+no longer the `ember` [Bower][bower] package. In the upcoming Ember CLI 2.12
 release, Bower will also no longer be installed by default and only install
 lazily when an addon requests it. All this indicates that from now on we should
 try to use npm packages instead of Bower whenever possible. This blog post
@@ -25,7 +25,7 @@ will explain how we can do that and what options are available to us.
 
 The way to import Bower libraries into your app consists of three major steps.
 First we will have to install the library. We will use the popular
-[Moment.js][Moment.js] library as an example here:
+[Moment.js][moment.js] library as an example here:
 
 ```
 bower install --save moment
@@ -58,7 +58,7 @@ like this:
   function vendorModule() {
     'use strict';
 
-    return { 'default': self['moment'] };
+    return { default: self['moment'] };
   }
 
   define('moment', [], vendorModule);
@@ -69,7 +69,7 @@ This looks a little cryptic at first, but once you understand the individual
 parts it starts to make sense.
 
 The files that the Ember CLI build pipeline generates use the
-[Asynchronous Module Definition][AMD] (or shorter: AMD). The `define()` call in
+[Asynchronous Module Definition][amd] (or shorter: AMD). The `define()` call in
 the code above defines a new AMD module with the name `moment` and the return
 value of the `vendorModule` function describes what the module exports, or
 what we can import from that module in our own code. In this case we export
@@ -85,7 +85,6 @@ app.import('vendor/shims/moment.js');
 ```
 
 We are now able to use `import moment from 'moment';` in our Ember code.
-
 
 ## App vs. Addon
 
@@ -160,7 +159,6 @@ in the top level `bower_components` folder of the application instead of being
 available only inside of the addon. Since the `addBowerPackageToProject()`
 method returns a `Promise` we have to return it from the `afterInstall` hook
 to make sure that Ember CLI waits for the installation to finish.
-
 
 ## npm vs. Bower
 
@@ -256,7 +254,6 @@ talk: [Dissecting an Ember CLI Build](https://youtu.be/hNwgp9alwKg).
 Now that we've imported the `moment.js` file into our `vendor` tree we can
 finally `import()` it in the `included()` hook and everything works again.
 
-
 ## npm dependencies
 
 As we are using npm now we can also take advantage of the way that npm
@@ -298,7 +295,6 @@ addon and have a look at their `index.js` file. They do support fastboot too
 though which makes the code a little more complicated compared to our
 simplified example here.
 
-
 ## App vs. Addon again
 
 Now that we have converted our `ember-moment` addon to use npm instead of
@@ -315,8 +311,7 @@ ember generate in-repo-addon ember-moment
 
 and use the same code as above inside the `lib/ember-moment/index.js` file.
 
-
-## Next: CommonJS and ES6 modules 
+## Next: CommonJS and ES6 modules
 
 Things get a little more complicated when you want to use npm packages that
 are not distributed in a prebuilt form like Moment.js. If they instead export
@@ -324,11 +319,10 @@ only CommonJS modules or ES6 modules we will need to add a few more plugins
 to the build pipeline to make this work and we will explain how to do that in
 a future blog post.
 
-
 [ember-source]: https://www.npmjs.com/package/ember-source
-[Bower]: https://bower.io/
-[Moment.js]: https://momentjs.com/
-[AMD]: https://github.com/amdjs/amdjs-api/blob/master/AMD.md
+[bower]: https://bower.io/
+[moment.js]: https://momentjs.com/
+[amd]: https://github.com/amdjs/amdjs-api/blob/master/AMD.md
 [included-hook]: https://ember-cli.com/api/classes/Addon.html#method_included
 
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

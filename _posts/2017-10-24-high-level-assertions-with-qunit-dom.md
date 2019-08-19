@@ -1,10 +1,10 @@
 ---
 title: High Level Assertions with qunit-dom
-author: "Tobias Bieniek"
+author: 'Tobias Bieniek'
 github: Turbo87
 twitter: tobiasbieniek
-bio: "Senior Frontend Engineer, Ember CLI core team member"
-description: "Tobias Bieniek introduces qunit-dom, an extension for qunit that allows writing more expressive and less complex UI tests using high level DOM assertions."
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
+description: 'Tobias Bieniek introduces qunit-dom, an extension for qunit that allows writing more expressive and less complex UI tests using high level DOM assertions.'
 topic: javascript
 ---
 
@@ -33,7 +33,6 @@ for an Ember app that we will write a test for:
 From the template above you can see that we have essentially two states that
 we need to test: one with and one without a `username` property being set.
 
-
 ## Status Quo
 
 An acceptance test for such a template could look roughly like this:
@@ -61,7 +60,6 @@ matches our expectation. Next we will `fill` an `<input>` field with a custom
 `username` like "John Doe" `andThen` finally we will check if the welcome
 message was updated correctly.
 
-
 ## Promise chains
 
 If you've used [Ember.js](https://emberjs.com/) for some time you will probably
@@ -76,15 +74,17 @@ look like this:
 
 ```js
 test('frontpage should be welcoming', function(assert) {
-  return visit('/').then(function() {
-    assert.equal(find('h1.title').textContent.trim(), 'Welcome to Ember!');
-    assert.notOk(find('h1.title').classList.contains('has-username'));
+  return visit('/')
+    .then(function() {
+      assert.equal(find('h1.title').textContent.trim(), 'Welcome to Ember!');
+      assert.notOk(find('h1.title').classList.contains('has-username'));
 
-    return fillIn('input.username', 'John Doe');
-  }).then(function() {
-    assert.equal(find('h1.title').textContent.trim(), 'Welcome to Ember,\n    John Doe!');
-    assert.ok(find('h1.title').classList.contains('has-username'));
-  });
+      return fillIn('input.username', 'John Doe');
+    })
+    .then(function() {
+      assert.equal(find('h1.title').textContent.trim(), 'Welcome to Ember,\n    John Doe!');
+      assert.ok(find('h1.title').classList.contains('has-username'));
+    });
 });
 ```
 
@@ -92,7 +92,6 @@ While that code makes it more obvious that we are dealing with asynchronous
 code here, it also make the code a little harder to read. Which is one of the
 reasons why a lot of Ember developers still prefer the `andThen` blocks over
 using `Promise` chains.
-
 
 ## async/await
 
@@ -133,7 +132,6 @@ The assertions (the lines starting with `assert.`) however are still quite
 hard to read, and it takes a short while to figure out what the intent of that
 assertion was.
 
-
 ## chai and chai-dom
 
 If you're using [Mocha](https://mochajs.org/) and [Chai](http://chaijs.com/)
@@ -159,7 +157,6 @@ expect(find('h1.title')).to.have.class('has-username');
 `ember-cli-chai` today you only need to `npm install --save-dev chai-dom`,
 restart Ember CLI and now you can use the additional assertions that `chai-dom`
 provides.
-
 
 ## qunit-dom
 
@@ -189,7 +186,7 @@ Compared to what we started with this:
   `#ember-testing` element) based on the selector passed into
   the `dom()` function
 - collapses whitespace according to the HTML spec to get rid of the irrelevant
-  `\n    ` part of the expected string
+  `\n` part of the expected string
 - provides readable high level assertions for the most common checks on DOM
   elements
 
@@ -202,7 +199,6 @@ itself into the build pipeline of your projects, so all you need to do is
 
 You can find examples of what assertions are available in the [README](https://github.com/simplabs/qunit-dom#qunit-dom)
 of the project and even more information in the [API reference](https://github.com/simplabs/qunit-dom/blob/master/API.md).
-
 
 ## qunit-dom-codemod
 
@@ -229,7 +225,6 @@ and then run the codemod e.g. on your `tests` folder:
 ```
 jscodeshift -t https://raw.githubusercontent.com/simplabs/qunit-dom-codemod/master/qunit-dom-codemod.js ./tests/
 ```
-
 
 ## Conclusion
 

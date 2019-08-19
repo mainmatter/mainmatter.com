@@ -1,10 +1,10 @@
 ---
-title: "ember-cli-deploy-notifications"
-author: "Michael Klein"
+title: 'ember-cli-deploy-notifications'
+author: 'Michael Klein'
 twitter: LevelbossMike
 github: LevelbossMike
-bio: "Full-Stack Engineer, Ember CLI Deploy core team member"
-description: "Michael Klein introduces ember-cli-deploy-notifications, an ember-cli-deploy plugin for invoking arbitrary webhooks during the deployment process."
+bio: 'Full-Stack Engineer, Ember CLI Deploy core team member'
+description: 'Michael Klein introduces ember-cli-deploy-notifications, an ember-cli-deploy plugin for invoking arbitrary webhooks during the deployment process.'
 topic: ember
 ---
 
@@ -38,15 +38,15 @@ module.exports = function(deployTarget) {
       services: {
         bugsnag: {
           didActivate: {
-            apiKey: ''
-          }
-        }
-      }
-    }
+            apiKey: '',
+          },
+        },
+      },
+    },
   };
 
   return ENV;
-}
+};
 ```
 
 Every time a new revision gets activated now by `ember-cli-deploy`, `ember-cli-deploy-notifications` will sent a `POST` request to the bugsnag service to notify it of the newly activated deployment revision.
@@ -80,13 +80,13 @@ module.exports = function(deployTarget) {
 
             return {
               secret: 'supersecret',
-              deployer: deployer
-            }
+              deployer: deployer,
+            };
           },
-          didActivate: true
-        }
-      }
-    }
+          didActivate: true,
+        },
+      },
+    },
   };
 
   return ENV;
@@ -136,17 +136,17 @@ module.exports = function(deployTarget) {
         slack: {
           url: '',
           body: {
-            text: 'A new revision was deployed!'
+            text: 'A new revision was deployed!',
           },
           didActivate: true,
           didFail: {
             body: {
-              text: 'Deployment failed!'
-            }
-          }
-        }
-      }
-    }
+              text: 'Deployment failed!',
+            },
+          },
+        },
+      },
+    },
   };
 
   return ENV;
@@ -170,9 +170,9 @@ module.exports = function(deployTarget) {
         bugsnag: {
           apiKey: '',
           didActivate: true,
-        }
-      }
-    }
+        },
+      },
+    },
   };
 
   return ENV;

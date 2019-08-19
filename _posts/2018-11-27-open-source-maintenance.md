@@ -1,10 +1,10 @@
 ---
-title: "Open Source Maintenance"
-author: "Tobias Bieniek"
+title: 'Open Source Maintenance'
+author: 'Tobias Bieniek'
 github: Turbo87
 twitter: tobiasbieniek
-bio: "Senior Frontend Engineer, Ember CLI core team member"
-description: "Tobias Bieniek introduces best practices for simplifying and speeding up his work on open-source and other projects."
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
+description: 'Tobias Bieniek introduces best practices for simplifying and speeding up his work on open-source and other projects.'
 topic: misc
 ---
 
@@ -42,7 +42,7 @@ create a tag on the new commit.
 
 For branches we use the default `master` branch as our main development branch.
 Feature branches are named after the thing that they are implementing or fixing
-and ideally only contain isolated, focused changes.  Similar to the tag names we
+and ideally only contain isolated, focused changes. Similar to the tag names we
 sometimes keep version branches around to support older releases with names
 like `v1.x` or `v2.3.x`.
 
@@ -63,8 +63,8 @@ Why is this useful? Because it allows us to define [shell aliases](https://shape
 for some of the most commonly used git commands for which we don't use a
 graphical user interface. Here are a few examples of things we regularly use:
 
-| Alias       | Command                 | Description                                                                                           |
-| ----------- | ----------------------- | ----------------------------------------------------------------------------------------------------- |
+| Alias | Command                       | Description                                                                                           |
+| ----- | ----------------------------- | ----------------------------------------------------------------------------------------------------- |
 | `cl`  | `git clone`                   | Clones a repository                                                                                   |
 | `clu` | `git clone --origin=upstream` | Clones a repository, and uses `upstream` as the default remote name                                   |
 | `ao`  | `git remote add origin`       | Adds a new remote called `origin`                                                                     |
@@ -87,7 +87,6 @@ gph
 # click on the link in the console output to open a new GitHub PR for the branch
 ```
 
-
 ## Tests
 
 Having a good test suite is very important to be able to change code and be
@@ -106,7 +105,6 @@ package manager [cargo], but there are [plenty of crates](https://github.com/rus
 to make testing even more pleasant, including the very valuable [proptest]
 crate.
 
-
 ## Linting
 
 Similar to testing frameworks, a lot of ecosystems have tools to run "static
@@ -119,7 +117,6 @@ consistent way.
 
 Again, similar tools also exist in other ecosystems like Rust ([clippy] and
 [rustfmt]), Python ([pyflakes] and [black]) or Elixir (`mix format`).
-
 
 ## Continuous Integration
 
@@ -142,7 +139,6 @@ projects. On most of our projects we have configured TravisCI to automatically
 publish new releases to [npm] whenever we push a new Git tag to the server.
 You can find instruction on how to configure this in their official
 [documentation](https://docs.travis-ci.com/user/deployment/npm/).
-
 
 ## Semantic Versioning
 
@@ -173,7 +169,6 @@ your package [declares](https://docs.npmjs.com/files/package.json#engines)
 that it works with Node.js 4, and you release a new version that needs at least
 Node.js 6, then you should increase the **major** version.
 
-
 ## Dependency Update Services
 
 Any sufficiently large open source project has at least a few dependencies that
@@ -194,7 +189,6 @@ service to run the test suite against that new dependency version and tell
 you whether it is compatible with your code or not. If configured, dependabot
 can also automatically merge those Pull Requests once CI has finished and the
 test suite passed.
-
 
 ## Changelogs
 
@@ -228,38 +222,36 @@ use the same set of labels we use [github-label-sync].
 An [example changelog](https://github.com/simplabs/qunit-dom/blob/master/CHANGELOG.md)
 can be seen on our qunit-dom project.
 
-
 ## Summary
 
 We hope that this blog post helped you improve your processes and speed up your
 own development. If you need help with any of these topics or if you have
 questions we encourage you to [contact us](/contact/)!
 
-
 [git]: https://git-scm.com/
-[GitHub]: https://github.com/
-[Fork]: https://git-fork.com/
-[Ember.js]: https://emberjs.com/
-[Jest]: https://jestjs.io/
-[Mocha]: https://mochajs.org/
-[Rust]: https://www.rust-lang.org/
+[github]: https://github.com/
+[fork]: https://git-fork.com/
+[ember.js]: https://emberjs.com/
+[jest]: https://jestjs.io/
+[mocha]: https://mochajs.org/
+[rust]: https://www.rust-lang.org/
 [cargo]: https://doc.rust-lang.org/cargo/
 [proptest]: https://github.com/altsysrq/proptest/
-[ESLint]: https://eslint.org/
-[Prettier]: https://prettier.io/
+[eslint]: https://eslint.org/
+[prettier]: https://prettier.io/
 [clippy]: https://github.com/rust-lang/rust-clippy
 [rustfmt]: https://github.com/rust-lang/rustfmt
 [pyflakes]: https://github.com/PyCQA/pyflakes
 [black]: https://github.com/ambv/black
-[TravisCI]: https://travis-ci.com/
-[GitLab]: https://gitlab.com/
-[CircleCI]: https://circleci.com/
-[AppVeyor]: https://www.appveyor.com/
+[travisci]: https://travis-ci.com/
+[gitlab]: https://gitlab.com/
+[circleci]: https://circleci.com/
+[appveyor]: https://www.appveyor.com/
 [npm]: https://npmjs.com/
 [yarn]: https://yarnpkg.com/
 [hex]: https://hex.pm/
 [bundler]: https://bundler.io/
-[Greenkeeper]: https://greenkeeper.io/
+[greenkeeper]: https://greenkeeper.io/
 [dependabot]: https://dependabot.com/
 [lerna-changelog]: https://github.com/lerna/lerna-changelog/
 [github-label-sync]: https://github.com/Financial-Times/github-label-sync/

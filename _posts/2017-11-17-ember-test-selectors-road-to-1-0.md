@@ -1,10 +1,10 @@
 ---
-title: "ember-test-selectors: The road to 1.0"
-author: "Tobias Bieniek"
+title: 'ember-test-selectors: The road to 1.0'
+author: 'Tobias Bieniek'
 github: Turbo87
 twitter: tobiasbieniek
-bio: "Senior Frontend Engineer, Ember CLI core team member"
-description: "Tobias Bieniek goes through what happened in ember-test-selectors during the past year and what the roadmap towards a 1.0 release is."
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
+description: 'Tobias Bieniek goes through what happened in ember-test-selectors during the past year and what the roadmap towards a 1.0 release is.'
 topic: ember
 ---
 
@@ -67,7 +67,6 @@ attributes and always declare them with a value:
 We will deprecate the usage of valueless `data-test-*` attributes on components
 in an upcoming release and remove the transform completely for the v1.0.0 release.
 
-
 ## v0.3.0: Support for Babel 6
 
 This year (2017) the Ember ecosystem finally moved from Babel 5 to Babel 6,
@@ -92,7 +91,6 @@ which version of `ember-cli-babel` you use. Based on that information we inject
 different Babel transforms into the build pipeline so that we can support both
 major Babel versions with the same addon.
 
-
 ## v0.3.4: Support for test-selectors in nested addons
 
 In April we were notified by [Luke Melia](https://github.com/lukemelia) that
@@ -105,7 +103,6 @@ A few days later Luke provided us with a repository that reproduced his
 problem. Using his reproduction we have been able to fix the issue and it is
 now possible to also use `ember-test-selectors` as a nested addon dependency
 and rely on correct test-selector stripping depending on the build environment.
-
 
 ## v0.3.7: Deprecation of the `testSelector` helper function
 
@@ -140,8 +137,7 @@ there is a third-party [codemod](https://github.com/lorcan/test-selectors-codemo
 that might be able to save you a few minutes or hours by converting the code
 for you automatically.
 
-
-## v0.3.8: Support for Ember 1.11 and 1.12 
+## v0.3.8: Support for Ember 1.11 and 1.12
 
 Only a few weeks ago [Chris Garrett](https://github.com/pzuraq/), better known
 as @pzuraq, approached us about supporting Ember 1.11 and 1.12 in
@@ -220,7 +216,6 @@ that instead.
 Once we had that conditional in place all our tests were 🍏 again and we were
 able to adjust our range of supported Ember versions all the way down to
 Ember 1.11.
-
 
 ## Conclusion
 
