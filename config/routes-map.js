@@ -1,6 +1,9 @@
 'use strict';
 
 const path = require('path');
+
+const _ = require('lodash');
+
 const collectPosts = require('../lib/generate-blog/lib/collect-posts');
 
 module.exports = function() {
@@ -33,12 +36,34 @@ module.exports = function() {
     return acc;
   }, {});
 
+  let blogPages = _.chunk(posts, 10);
+  let blogPagesRoutes = blogPages.reduce((acc, _posts, i) => {
+    let page = i + 1;
+    let route;
+    if (page === 1) {
+      route = '/blog';
+    } else {
+      route = `/blog/page/${page}`
+    }
+    acc[route] = {
+      component: `PageBlogPage${page}`,
+      bundle: {
+        asset: `/blog/page/${page}.js`,
+        module: `__blog-page-${page}__`,
+      },
+      parentBundle: {
+        asset: '/blog.js',
+      },
+    };
+    return acc;
+  }, {});
+
   let routes = {
+    ...blogPagesRoutes,
     ...blogPostRoutes,
     ...blogAuthorsRoutes,
     '/': { component: 'PageHomepage' },
     '/404': { component: 'Page404' },
-    '/blog': { component: 'PageBlogPage1', bundle: { asset: '/blog.js', module: '__blog__' } },
     '/calendar': {
       component: 'PageCalendar',
       bundle: { asset: '/calendar.js', module: '__calendar__' },

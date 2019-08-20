@@ -84,6 +84,7 @@ class SimplabsApp extends GlimmerApp {
       });
       return blogPostTree;
     });
+
     let blogAuthorTrees = authors.map(author => {
       let [blogAuthorTree] = this._splitBundle(jsTree, {
         componentPrefix: author.componentName,
@@ -91,6 +92,17 @@ class SimplabsApp extends GlimmerApp {
         moduleName: `__blog-author-${author.twitter}__`,
       });
       return blogAuthorTree;
+    });
+
+    let blogPages = _.chunk(posts, 10);
+    let blogPageTrees = blogPages.map((_posts, i) => {
+      let page = i + 1;
+      let [blogPageTree] = this._splitBundle(jsTree, {
+        componentPrefix: `PageBlogPage${page}`,
+        file: `blog/page/${page}.js`,
+        moduleName: `__blog-page-${page}__`,
+      });
+      return blogPageTree;
     });
 
     let [calendarTree, mainSiteNonCalendarTree] = this._splitBundle(mainSiteTree, {
@@ -139,6 +151,7 @@ class SimplabsApp extends GlimmerApp {
       blogTree,
       ...blogPostTrees,
       ...blogAuthorTrees,
+      ...blogPageTrees,
     ]);
 
     if (process.env.PRERENDER) {
