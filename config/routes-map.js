@@ -38,7 +38,7 @@ module.exports = function() {
     ...blogAuthorsRoutes,
     '/': { component: 'PageHomepage' },
     '/404': { component: 'Page404' },
-    '/blog': { component: 'PageBlog', bundle: { asset: '/blog.js', module: '__blog__' } },
+    '/blog': { component: 'PageBlogPage1', bundle: { asset: '/blog.js', module: '__blog__' } },
     '/calendar': {
       component: 'PageCalendar',
       bundle: { asset: '/calendar.js', module: '__calendar__' },
