@@ -43,7 +43,7 @@ module.exports = function() {
     if (page === 1) {
       route = '/blog';
     } else {
-      route = `/blog/page/${page}`
+      route = `/blog/page/${page}`;
     }
     acc[route] = {
       component: `PageBlogPage${page}`,

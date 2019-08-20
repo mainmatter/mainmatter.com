@@ -85,16 +85,17 @@
         </p>
       </article>
     {{/each}}
-    <!-- if has pages -->
     <nav aria-label="pagination" class="pagination">
-      <!-- if has next -->
-      <ArrowLink @href="#" @reverse="true">
-        Older
-      </ArrowLink>
-      <!-- if has previous -->
-      <ArrowLink @href="#">
-        Newer
-      </ArrowLink>
+      {{#if nextPage}}
+        <ArrowLink @href="{{nextPage}}" @reverse="true">
+          Older
+        </ArrowLink>
+      {{/if}}
+      {{#if previousPage}}
+        <ArrowLink @href="{{previousPage}}">
+          Newer
+        </ArrowLink>
+      {{/if}}
     </nav>
   </section>
   <aside class="layout.side offset.after-21">
