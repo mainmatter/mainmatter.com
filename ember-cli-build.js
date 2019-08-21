@@ -191,7 +191,7 @@ class SimplabsApp extends GlimmerApp {
 
   _splitBundle(appTree, bundle) {
     let mainBundleTree = new Funnel(appTree, {
-      exclude: [`src/ui/components/${bundle.componentPrefix}*`],
+      exclude: [`src/ui/components/+(${bundle.componentPrefix})*`],
     });
     let mainBundleJsTree = new Funnel(mainBundleTree, {
       include: ['**/*.js'],
