@@ -70,7 +70,7 @@ class SimplabsApp extends GlimmerApp {
 
   package(jsTree) {
     let mainSiteTree = this._dropBundle(jsTree, {
-      componentPrefix: 'PageBlog'
+      componentPrefix: 'PageBlog',
     });
 
     let { posts, authors } = collectPosts(path.join(__dirname, '_posts'));
