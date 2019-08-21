@@ -8,20 +8,6 @@ const collectPosts = require('../lib/generate-blog/lib/collect-posts');
 
 module.exports = function() {
   let { posts, authors } = collectPosts(path.join(__dirname, '..', '_posts'));
-  let blogPostRoutes = posts.reduce((acc, post) => {
-    acc[`/blog/${post.queryPath}`] = {
-      component: post.componentName,
-      bundle: {
-        asset: `/blog/${post.queryPath}.js`,
-        module: `__blog-${post.queryPath}__`,
-      },
-      parentBundle: {
-        asset: '/blog.js',
-      },
-    };
-    return acc;
-  }, {});
-
   let blogAuthorsRoutes = authors.reduce((acc, author) => {
     acc[`/blog/author/${author.twitter}`] = {
       component: author.componentName,
@@ -37,7 +23,9 @@ module.exports = function() {
   }, {});
 
   let blogPages = _.chunk(posts, 10);
-  let blogPagesRoutes = blogPages.reduce((acc, _posts, i) => {
+  let blogPostRoutes = {};
+  let blogPagesRoutes = {};
+  blogPages.forEach((pagePosts, i) => {
     let page = i + 1;
     let route;
     if (page === 1) {
@@ -45,18 +33,27 @@ module.exports = function() {
     } else {
       route = `/blog/page/${page}`;
     }
-    acc[route] = {
+    blogPagesRoutes[route] = {
       component: `PageBlogPage${page}`,
       bundle: {
         asset: `/blog/page/${page}.js`,
         module: `__blog-page-${page}__`,
       },
-      parentBundle: {
-        asset: '/blog.js',
-      },
     };
-    return acc;
-  }, {});
+
+    for (let post of pagePosts) {
+      blogPostRoutes[`/blog/${post.queryPath}`] = {
+        component: post.componentName,
+        bundle: {
+          asset: `/blog/${post.queryPath}.js`,
+          module: `__blog-${post.queryPath}__`,
+        },
+        parentBundle: {
+          asset: `/blog/page/${page}.js`,
+        },
+      };
+    }
+  });
 
   let routes = {
     ...blogPagesRoutes,
