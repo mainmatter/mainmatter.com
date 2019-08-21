@@ -36,33 +36,34 @@
   >
     <HeaderContent @headline="Blog" />
   </Header>
-  <ShapeBlog>
-    <article>
-      <span class="typography.tag">
-        #
-        {{latest.topic}}
-      </span>
-      <h2 class="offset.before-none">
-        <a href="{{latest.path}}" data-internal>
-          {{latest.title}}
+  {{#if latest}}
+    <ShapeBlog>
+      <article>
+        <span class="typography.tag">
+          #{{latest.topic}}
+        </span>
+        <h2 class="offset.before-none">
+          <a href="{{latest.path}}" data-internal>
+            {{latest.title}}
+          </a>
+        </h2>
+        <div class="typography.lead offset.after-3">
+          {{{latest.excerpt}}}
+        </div>
+        <a href="/blog/author/{{latest.author.twitter}}/" data-internal>
+          {{latest.author.name}}
         </a>
-      </h2>
-      <div class="typography.lead offset.after-3">
-        {{{latest.excerpt}}}
-      </div>
-      <a href="/blog/author/{{latest.author.twitter}}/" data-internal>
-        {{latest.author.name}}
-      </a>
-      <p class="typography.small">
-        {{latest.date}}
-      </p>
-      <ArrowLink @href="{{latest.path}}">
-        Read Post
-      </ArrowLink>
-    </article>
-  </ShapeBlog>
+        <p class="typography.small">
+          {{latest.date}}
+        </p>
+        <ArrowLink @href="{{latest.path}}">
+          Read Post
+        </ArrowLink>
+      </article>
+    </ShapeBlog>
+  {{/if}}
   <section class="layout.main offset.after-21">
-    {{#each rest}}
+    {{#each posts}}
       <article class="offset.after-12">
         <span class="typography.tag">
           #
@@ -84,6 +85,18 @@
         </p>
       </article>
     {{/each}}
+    <nav aria-label="pagination" class="pagination">
+      {{#if nextPage}}
+        <ArrowLink @href="{{nextPage}}" @reverse="true">
+          Older
+        </ArrowLink>
+      {{/if}}
+      {{#if previousPage}}
+        <ArrowLink @href="{{previousPage}}">
+          Newer
+        </ArrowLink>
+      {{/if}}
+    </nav>
   </section>
   <aside class="layout.side offset.after-21">
     <CardTalks />
