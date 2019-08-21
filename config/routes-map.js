@@ -15,9 +15,6 @@ module.exports = function() {
         asset: `/blog/author-${author.twitter}.js`,
         module: `__blog-author-${author.twitter}__`,
       },
-      parentBundle: {
-        asset: '/blog.js',
-      },
     };
     return acc;
   }, {});

@@ -69,10 +69,8 @@ class SimplabsApp extends GlimmerApp {
   }
 
   package(jsTree) {
-    let [blogTree, mainSiteTree] = this._splitBundle(jsTree, {
-      componentPrefix: 'PageBlog',
-      file: 'blog.js',
-      moduleName: '__blog__',
+    let mainSiteTree = this._dropBundle(jsTree, {
+      componentPrefix: 'PageBlog'
     });
 
     let { posts, authors } = collectPosts(path.join(__dirname, '_posts'));
@@ -149,7 +147,6 @@ class SimplabsApp extends GlimmerApp {
       playbookTree,
       talksTree,
       recentContentTree,
-      blogTree,
       ...blogPostTrees,
       ...blogAuthorTrees,
       ...blogPageTrees,
@@ -191,14 +188,7 @@ class SimplabsApp extends GlimmerApp {
   }
 
   _splitBundle(appTree, bundle) {
-    let mainBundleTree = new Funnel(appTree, {
-      exclude: [`src/ui/components/+(${bundle.componentPrefix})*`],
-    });
-    let mainBundleJsTree = new Funnel(mainBundleTree, {
-      include: ['**/*.js'],
-    });
-    let mainBundleModuleMap = this.buildResolutionMap(mainBundleJsTree);
-    mainBundleTree = new MergeTrees([mainBundleTree, mainBundleModuleMap], { overwrite: true });
+    let mainBundleTree = this._dropBundle(appTree, bundle);
 
     let bundleTree = new Funnel(appTree, {
       exclude: [`src/ui/components/!(${bundle.componentPrefix})*`],
@@ -211,6 +201,17 @@ class SimplabsApp extends GlimmerApp {
     bundleTree = this._packageSplitBundle(bundleTree, bundle);
 
     return [bundleTree, mainBundleTree];
+  }
+
+  _dropBundle(appTree, bundle) {
+    let mainBundleTree = new Funnel(appTree, {
+      exclude: [`src/ui/components/+(${bundle.componentPrefix})*`],
+    });
+    let mainBundleJsTree = new Funnel(mainBundleTree, {
+      include: ['**/*.js'],
+    });
+    let mainBundleModuleMap = this.buildResolutionMap(mainBundleJsTree);
+    return new MergeTrees([mainBundleTree, mainBundleModuleMap], { overwrite: true });
   }
 
   _packageSplitBundle(bundleTree, bundle) {
