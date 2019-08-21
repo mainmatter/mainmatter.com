@@ -95,10 +95,11 @@ class SimplabsApp extends GlimmerApp {
     });
 
     let blogPages = _.chunk(posts, 10);
-    let blogPageTrees = blogPages.map((_posts, i) => {
+    let blogPageTrees = blogPages.map((posts, i) => {
       let page = i + 1;
+      let postPrefixes = posts.map(post => post.componentName).join('|')
       let [blogPageTree] = this._splitBundle(jsTree, {
-        componentPrefix: `PageBlogPage${page}`,
+        componentPrefix: `PageBlogPage${page}|${postPrefixes}`,
         file: `blog/page/${page}.js`,
         moduleName: `__blog-page-${page}__`,
       });
