@@ -161,7 +161,6 @@
   .img-wrapper {
     max-width: var(--col-4);
     margin-top: -30%;
-    tranform: translate(0, 10rem);
   }
 
   .content {
