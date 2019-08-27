@@ -1,14 +1,13 @@
 import ShapeBase from '../ShapeBase/component';
 
-let maskId = 0;
-
 export default class ShapeWork extends ShapeBase {
   public maskId = '';
 
   constructor(options) {
     super(options);
 
-    this.maskId = `work${++maskId}`;
+    this.key = this.args.key || 'work';
+    this.maskId = `${this.key}-mask`;
   }
 
   get backgroundStyle() {

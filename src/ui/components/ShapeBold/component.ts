@@ -1,14 +1,13 @@
 import ShapeBase from '../ShapeBase/component';
 
-let maskId = 0;
-
 export default class ShapeBold extends ShapeBase {
   public maskId = '';
 
   constructor(options) {
     super(options);
 
-    this.maskId = `bold${++maskId}`;
+    this.key = this.args.key || 'bold';
+    this.maskId = `${this.key}-mask`;
   }
 
   get shapeStyle() {

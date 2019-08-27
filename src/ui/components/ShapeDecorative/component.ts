@@ -1,14 +1,13 @@
 import ShapeBase from '../ShapeBase/component';
 
-let maskId = 0;
-
 export default class ShapeDecorative extends ShapeBase {
   public maskId = '';
 
   constructor(options) {
     super(options);
 
-    this.maskId = `decorative${++maskId}`;
+    this.key = this.args.key || 'decorative';
+    this.maskId = `${this.key}-mask`;
   }
 
   get backgroundStyle() {
