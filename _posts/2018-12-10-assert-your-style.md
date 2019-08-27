@@ -6,6 +6,8 @@ twitter: jjordan_dev
 bio: "Senior Frontend Engineer, Ember Learning core team member"
 description: "Jessica Jordan explains approaches and patterns for testing styles in Ember.js applications."
 topic: javascript
+og:
+  image: /assets/images/posts/2018-12-10-assert-your-style/og-image.png
 ---
 
 Sometimes you really want to make sure that your web application looks good; and that it keeps doing so in the future.

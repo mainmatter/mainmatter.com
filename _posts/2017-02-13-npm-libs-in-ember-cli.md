@@ -6,6 +6,8 @@ twitter: tobiasbieniek
 bio: "Senior Frontend Engineer, Ember CLI core team member"
 description: "Tobias Bieniek introduces a mechanism for using arbitrary npm libraries in Ember CLI applications and explains how that works under the hood."
 topic: ember
+og:
+  image: /assets/images/posts/2017-02-13-npm-libs-in-ember-cli/og-image.png
 ---
 
 tl;dr Use npm instead of Bower whenever you can!

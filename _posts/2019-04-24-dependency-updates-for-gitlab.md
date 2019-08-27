@@ -6,6 +6,8 @@ twitter: tobiasbieniek
 topic: misc
 bio: "Senior Frontend Engineer, Ember CLI core team member"
 description: "Tobias Bieniek shares how to set up the Renovate bot for automatic dependency updates with self-hosted internal GitLab servers."
+og:
+  image: /assets/images/posts/2019-04-24-dependency-updates-for-gitlab/og-image.png
 ---
 
 Are your dependencies hopelessly outdated? Would you need to hire another

@@ -6,6 +6,8 @@ twitter: tobiasbieniek
 topic: ember
 bio: "Senior Frontend Engineer, Ember CLI core team member"
 description: "Tobias Bieniek explains how to set up Sentry for Ember.js applications using @sentry/browser instead of the now unnecessary ember-cli-sentry."
+og:
+  image: /assets/images/posts/2019-07-15-sentry-and-ember/og-image.png
 ---
 
 Are you confident that your apps have no bugs? Do you not need a support team

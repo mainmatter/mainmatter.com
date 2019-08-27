@@ -6,6 +6,8 @@ twitter: marcoow
 bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description: "Marco Otte-Witte dives deep into the details of how simplabs built Breethe, an open source progressive web app, with Glimmer.js."
 topic: ember
+og:
+  image: /assets/images/posts/2018-07-03-building-a-pwa-with-glimmer-js/og-image.png
 ---
 
 We recently set out to build a progressive web app with

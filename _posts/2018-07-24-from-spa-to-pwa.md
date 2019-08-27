@@ -6,6 +6,8 @@ twitter: marcoow
 bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description: "Marco Otte-Witte goes over the characteristics of progressive web apps and shows how to make the next step from a SPA to a PWA."
 topic: javascript
+og:
+  image: /assets/images/posts/2018-07-24-from-spa-to-pwa/og-image.png
 ---
 
 Progressive Web Apps are the next level of browser based applications. While
