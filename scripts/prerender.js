@@ -2,7 +2,6 @@ const path = require('path');
 const fs = require('fs-extra');
 const express = require('express');
 const puppeteer = require('puppeteer');
-const critical = require('critical');
 const colors = require('colors');
 const jsdom = require('jsdom');
 
@@ -33,27 +32,6 @@ async function persist(html, routePath) {
   await fs.writeFile(fileName, html);
 
   return fileName;
-}
-
-async function inlineCss(fileName) {
-  let input = await fs.readFile(fileName, 'utf8');
-  let result = await critical.generate({
-    inline: true,
-    base: DIST_PATH,
-    folder: './',
-    html: input,
-    dimensions: [
-      {
-        height: 667,
-        width: 300,
-      },
-      {
-        height: 900,
-        width: 1200,
-      },
-    ],
-  });
-  await fs.writeFile(fileName, result.toString('utf8'));
 }
 
 function buildShoeboxBundlePreloads(html) {
@@ -91,7 +69,6 @@ server.listen(3000, async function() {
   for (let routePath of paths) {
     let html = await snapshot(browser, routePath);
     let fileName = await persist(html, routePath);
-    await inlineCss(fileName);
 
     console.log(colors.blue(`${routePath} => ${fileName}.`));
   }

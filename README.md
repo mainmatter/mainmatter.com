@@ -7,8 +7,7 @@ The source code for [https://simplabs.com](https://simplabs.com).
 We use [Glimmer.js](https://glimmerjs.com) for rendering,
 [navigo](https://github.com/krasimir/navigo) for client-side routing and
 [CSS Blocks](https://css-blocks.com) for CSS. Pages are statically pre-rendered
-using [Puppeteer](https://pptr.dev) and we inject critical CSS with
-[critical](https://github.com/addyosmani/critical).
+using [Puppeteer](https://pptr.dev).
 
 ## Installation
 
@@ -43,7 +42,6 @@ Chrome Inspector to do so.**
 * [navigo](https://github.com/krasimir/navigo)
 * [CSS Blocks](https://css-blocks.com)
 * [Puppeteer](https://pptr.dev)
-* [critical](https://github.com/addyosmani/critical)
 
 ## Copyright
 
