@@ -1,6 +1,6 @@
 ---
-title: "The Modern State of Web Components"
-image: "/assets/images/talks/2017-07-11-embercamp-2017/the-modern-state-of-web-components.png"
+title: 'The Modern State of Web Components'
+image: '/assets/images/talks/2017-07-11-embercamp-2017/the-modern-state-of-web-components.png'
 url: https://www.youtube.com/watch?v=OzFgDBJcWuU
 ---
 

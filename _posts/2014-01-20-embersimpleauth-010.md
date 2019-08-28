@@ -1,10 +1,10 @@
 ---
-title: "Ember.SimpleAuth 0.1.0"
-author: "Marco Otte-Witte"
+title: 'Ember.SimpleAuth 0.1.0'
+author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
-description: "Marco Otte-Witte announces Ember.SimpleAuth 0.1.0 with an improved architecture that allows for arbitrary authentication and authorization strategies."
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+description: 'Marco Otte-Witte announces Ember.SimpleAuth 0.1.0 with an improved architecture that allows for arbitrary authentication and authorization strategies.'
 topic: ember
 ---
 
@@ -18,7 +18,7 @@ The most significant change is the **extraction of everything specific to specif
 
 ```js
 App.LoginController = Ember.Controller.extend(Ember.SimpleAuth.LoginControllerMixin, {
-  authenticator: App.CustomAuthenticator
+  authenticator: App.CustomAuthenticator,
 });
 ```
 

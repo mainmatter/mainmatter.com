@@ -1,10 +1,10 @@
 ---
-title: "Ember.SimpleAuth 0.3.0"
-author: "Marco Otte-Witte"
+title: 'Ember.SimpleAuth 0.3.0'
+author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
-description: "Marco Otte-Witte announces Ember.SimpleAuth 0.3.0, splitting the addon into a core and extensions for specific authentication/authorization mechanisms."
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+description: 'Marco Otte-Witte announces Ember.SimpleAuth 0.3.0, splitting the addon into a core and extensions for specific authentication/authorization mechanisms.'
 topic: ember
 ---
 
@@ -14,9 +14,9 @@ Ember.SimpleAuth 0.3.0 was just released. The **main change in this release is t
 
 These extension libraries are:
 
-* **ember-simple-auth-oauth2**: includes the OAuth 2.0 authenticator and authorizer which are just one option out of many and probably not needed in many projects (e.g. when using a custom authenticator)
-* **ember-simple-auth-devise**: new authenticator/authorizer package that is compatible with the Ruby gem [devise](https://github.com/plataformatec/devise).
-* **ember-simple-auth-cookie-store**: The cookie store which is probably only used in few projects.
+- **ember-simple-auth-oauth2**: includes the OAuth 2.0 authenticator and authorizer which are just one option out of many and probably not needed in many projects (e.g. when using a custom authenticator)
+- **ember-simple-auth-devise**: new authenticator/authorizer package that is compatible with the Ruby gem [devise](https://github.com/plataformatec/devise).
+- **ember-simple-auth-cookie-store**: The cookie store which is probably only used in few projects.
 
 There are hopefully more extension libraries to come as people start to provide more authenticators, authorizers and other components and now there’s a (more or less, pre 1.0) stable API for these libraries as well as a set of tasks to build and test them
 
@@ -27,9 +27,9 @@ Ember.Application.initializer({
   name: 'authentication',
   initialize: function(container, application) {
     Ember.SimpleAuth.setup(container, application, {
-      authorizerFactory: 'authorizer:oauth2-bearer'
+      authorizerFactory: 'authorizer:oauth2-bearer',
     });
-  }
+  },
 });
 ```
 

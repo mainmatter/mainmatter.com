@@ -1,10 +1,10 @@
 ---
-title: "Building a PWA with Glimmer.js"
-author: "Marco Otte-Witte"
+title: 'Building a PWA with Glimmer.js'
+author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
-description: "Marco Otte-Witte dives deep into the details of how simplabs built Breethe, an open source progressive web app, with Glimmer.js."
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+description: 'Marco Otte-Witte dives deep into the details of how simplabs built Breethe, an open source progressive web app, with Glimmer.js.'
 topic: ember
 og:
   image: /assets/images/posts/2018-07-03-building-a-pwa-with-glimmer-js/og-image.png
@@ -93,14 +93,14 @@ _setupRouting() {
 
   this.router
     .on('/', () => this.mode = MODE_SEARCH)
- 
+
     .on('/search', () => this.mode = MODE_SEARCH)
 
     .on('/search/:searchTerm', (params) => {
       this.mode = MODE_SEARCH;
       this.searchTerm = params.searchTerm;
      })
- 
+
      .on('/location/:locationId/', (params) => {
        this.mode = MODE_RESULTS;
        this.searchTerm = params.locationId;
@@ -229,16 +229,16 @@ that will usually require a few iterations until the API becomes stable.
 Some new things that originate in experiments done in Glimmer.js have already
 found their way back into Ember.js (at least in some form):
 
-* The `@` syntax as shown above that clearly distinguishes properties that are
+- The `@` syntax as shown above that clearly distinguishes properties that are
   set on a component instance vs. attributes that are set on a component's root
   DOM element -
   [this PR](https://github.com/emberjs/ember.js/commit/4bd3d7b882484919682ab0cdb57f81584abc503a)
   enables the feature flag by default.
-* The possibility to use ES2015 classes instead of Ember.js' own object model -
+- The possibility to use ES2015 classes instead of Ember.js' own object model -
   see
   [this blog post](https://medium.com/build-addepar/es-classes-in-ember-js-63e948e9d78e)
   for more information.
-* Template-only components that do not have a wrapping `<div>` - can be enabled
+- Template-only components that do not have a wrapping `<div>` - can be enabled
   as an [optional feature](https://github.com/emberjs/ember-optional-features).
 
 Eventually it will be possible to seamlessly use Glimmer.js components in

@@ -1,10 +1,10 @@
 ---
-title: "simplabs monthly update - April 2019"
-author: "Mark Coleman"
+title: 'simplabs monthly update - April 2019'
+author: 'Mark Coleman'
 github: mrmrcoleman
 twitter: mrmrcoleman
 topic: simplabs
-bio: "Communications and Community Outreach Specialist"
+bio: 'Communications and Community Outreach Specialist'
 description: "Mark Coleman shares simplabs' monthly update for April 2019, covering new joiners, new clients and a number of upcoming events."
 ---
 
@@ -72,4 +72,4 @@ simplabs sent a group of people to EmberConf2019 in Portland where Ricardo Mende
 
 #### Meetups
 
-And last but not least, Marco hosted [Elixir Munich](https://www.meetup.com/Elixir-Munich/events/259526263/), Chris hosted  [Ember.js Dublin](https://twitter.com/emberjsdublin/status/1101080708662132736) and [DublinJS](https://www.meetup.com/DublinJS/events/fbllfpyzgbdb/) and Jessica hosted [Ember.js Berlin!](https://www.meetup.com/Ember-js-Berlin/events/258984499/)
+And last but not least, Marco hosted [Elixir Munich](https://www.meetup.com/Elixir-Munich/events/259526263/), Chris hosted [Ember.js Dublin](https://twitter.com/emberjsdublin/status/1101080708662132736) and [DublinJS](https://www.meetup.com/DublinJS/events/fbllfpyzgbdb/) and Jessica hosted [Ember.js Berlin!](https://www.meetup.com/Ember-js-Berlin/events/258984499/)

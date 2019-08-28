@@ -1,10 +1,10 @@
 ---
-title: "Assert Your Style - Testing CSS in Ember Apps"
-author: "Jessica Jordan"
+title: 'Assert Your Style - Testing CSS in Ember Apps'
+author: 'Jessica Jordan'
 github: jessica-jordan
 twitter: jjordan_dev
-bio: "Senior Frontend Engineer, Ember Learning core team member"
-description: "Jessica Jordan explains approaches and patterns for testing styles in Ember.js applications."
+bio: 'Senior Frontend Engineer, Ember Learning core team member'
+description: 'Jessica Jordan explains approaches and patterns for testing styles in Ember.js applications.'
 topic: javascript
 og:
   image: /assets/images/posts/2018-12-10-assert-your-style/og-image.png
@@ -52,6 +52,7 @@ Using `ember-test-selectors` to apply `data-` attributes to this component, you 
 ```bash
 ember install ember-test-selectors
 ```
+
 Which now allows you to tag your component for testing as follows:
 
 ```js
@@ -76,10 +77,10 @@ export default Component.extend({
   }),
 });
 ```
- To learn more about the rationale behind `ember-test-selectors`, be sure to also [give this introduction a read](/blog/2017/11/17/ember-test-selectors-road-to-1-0).
+
+To learn more about the rationale behind `ember-test-selectors`, be sure to also [give this introduction a read](/blog/2017/11/17/ember-test-selectors-road-to-1-0).
 
 Using the [HTMLElement.style](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style) API, we can assert if the correct background color has been applied to our component:
-
 
 ```js
 // tests/integration/components/simplabs-logo-tile-test.js
@@ -103,13 +104,13 @@ module('Integration | Component | simplabs-logo-tile', function(hooks) {
 `HTMLElement.style` allows to check for the value of **individual CSS properties**. The same API can also be used to assign new values for any CSS property programmatically.
 You can read more about [the style attribute in the MDN docs on HTMLElement.style here](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style).
 
-A major **benefit** of testing **CSS properties**  directly is that it allows us to derive information on how inline styles are applied to elements in our application. This is particularly useful if we want to test **dynamic styles**.
+A major **benefit** of testing **CSS properties** directly is that it allows us to derive information on how inline styles are applied to elements in our application. This is particularly useful if we want to test **dynamic styles**.
 
 **Testing inline styles** also has its **drawbacks** though: these styles don't necessarily reflect the way the element is ultimately rendered on the page. In this situation the assertion against an element's **computed style** provides much more insight.
 
 ## Testing Computed Styles of a HTML Element
 
-At times you also want to check against the actual **computed value** of your element in your tests. Some CSS definitions require the browser to resolve the  basic computation, the actual computed styles will be applied during rendering. For example, in the case of an element with a percentage-based width defined via CSS stylesheets (e.g. `width: 80%`), the computed style will resolve to `width: 800px` if the element happens to be a relatively positioned (`position: relative`) child element of another DOM node with a computed width of `1000px`. If the element's parent element turns out to have a width of `500px` though, the computed width of the "80% wide" child will resolve to a mere `400px`.
+At times you also want to check against the actual **computed value** of your element in your tests. Some CSS definitions require the browser to resolve the basic computation, the actual computed styles will be applied during rendering. For example, in the case of an element with a percentage-based width defined via CSS stylesheets (e.g. `width: 80%`), the computed style will resolve to `width: 800px` if the element happens to be a relatively positioned (`position: relative`) child element of another DOM node with a computed width of `1000px`. If the element's parent element turns out to have a width of `500px` though, the computed width of the "80% wide" child will resolve to a mere `400px`.
 
 Computed styles provide information about the styles that are **ultimately assigned** to an element. Due to [CSS specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) browsers will decide which CSS property value either defined in a CSS stylesheet or an inline style is most relevant and this value will also be reflected in the element's computed styles.
 

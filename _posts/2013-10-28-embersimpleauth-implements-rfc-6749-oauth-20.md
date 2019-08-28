@@ -1,10 +1,10 @@
 ---
-title: "Ember.SimpleAuth implements RFC 6749 (OAuth 2.0)"
-author: "Marco Otte-Witte"
+title: 'Ember.SimpleAuth implements RFC 6749 (OAuth 2.0)'
+author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
-description: "Marco Otte-Witte announces support for OAuth 2.0 in Ember.SimpleAuth, the addon for implementing a session and authentication/authorization for Ember.js."
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+description: 'Marco Otte-Witte announces support for OAuth 2.0 in Ember.SimpleAuth, the addon for implementing a session and authentication/authorization for Ember.js.'
 topic: ember
 ---
 
@@ -25,7 +25,7 @@ Ember.Application.initializer({
   name: 'authentication',
   initialize: function(container, application) {
     Ember.SimpleAuth.setup(container, application);
-  }
+  },
 });
 
 App.Router.map(function() {
@@ -34,7 +34,7 @@ App.Router.map(function() {
 });
 
 App.ApplicationRoute = Ember.Route.extend(Ember.SimpleAuth.ApplicationRouteMixin);
-App.LoginController  = Ember.Controller.extend(Ember.SimpleAuth.LoginControllerMixin);
+App.LoginController = Ember.Controller.extend(Ember.SimpleAuth.LoginControllerMixin);
 ```
 
 ## Future plans
