@@ -87,8 +87,9 @@
 }
 
 .shape-a-img {
-  width: auto;
+  max-width: unset;
   height: 85%;
+  width: auto;
   margin: auto;
 }
 
