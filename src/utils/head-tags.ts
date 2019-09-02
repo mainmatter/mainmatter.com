@@ -1,6 +1,4 @@
 export default class HeadTags {
-
-
   public static create(): HeadTags {
     return new HeadTags();
   }
@@ -11,7 +9,7 @@ export default class HeadTags {
 
     let attrs = {
       ...keyAttrs,
-      ...contentAttrs
+      ...contentAttrs,
     };
     for (let attr of Object.keys(attrs)) {
       element.setAttribute(attr, attrs[attr]);
@@ -42,7 +40,7 @@ export default class HeadTags {
 function buildSelector(tagName, attrs): string {
   let selector = `head > ${tagName}`;
   if (Object.keys(attrs).length > 0) {
-    let attrSelectors = Object.keys(attrs).map((attr) => `[${attr}="${attrs[attr]}"]`);
+    let attrSelectors = Object.keys(attrs).map(attr => `[${attr}="${attrs[attr]}"]`);
     selector = `${selector}${attrSelectors.join('')}`;
   }
   return selector;

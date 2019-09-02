@@ -4,6 +4,8 @@ import moduleMap from '../config/module-map';
 import resolverConfiguration from '../config/resolver-configuration';
 
 export default class App extends Application {
+  public appName: string;
+
   constructor(options = { hasSSRBody: false, element: null }) {
     let moduleRegistry = new BasicModuleRegistry(moduleMap);
     let resolver = new Resolver(resolverConfiguration, moduleRegistry);
@@ -15,7 +17,7 @@ export default class App extends Application {
       loader: new RuntimeCompilerLoader(resolver),
       renderer: new SyncRenderer(),
       resolver,
-      rootName: resolverConfiguration.app.rootName
+      rootName: resolverConfiguration.app.rootName,
     });
   }
 }

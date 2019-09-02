@@ -1,7 +1,7 @@
 import ShapeBase from '../ShapeBase/component';
 
 export default class ShapeAcross extends ShapeBase {
-  public maskId = '';
+  public maskId: string = '';
 
   constructor(options) {
     super(options);

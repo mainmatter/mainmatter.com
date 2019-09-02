@@ -1,6 +1,6 @@
 import Component, { tracked } from '@glimmer/component';
-import { getOwner } from '@glimmer/di';
 import Navigo from 'navigo';
+import HeadTags from '../../../utils/head-tags';
 
 const COOKIE_BANNER_DELAY: number = 100;
 
@@ -48,6 +48,8 @@ export default class Simplabs extends Component {
 
   @tracked
   private isCookieBannerVisible: boolean = false;
+
+  private headTags: HeadTags;
 
   constructor(options) {
     super(options);

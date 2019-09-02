@@ -1,7 +1,9 @@
 import Component from '@glimmer/component';
+import HeadTags from '../../../utils/head-tags';
 
 export default class HeadTag extends Component {
   private appState: IAppState;
+  private headTags: HeadTags;
 
   constructor(options) {
     super(options);
