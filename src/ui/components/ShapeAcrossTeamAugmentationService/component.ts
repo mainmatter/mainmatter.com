@@ -1,6 +1,8 @@
 import Component from '@glimmer/component';
 
 export default class ShapeAcrossTeamAugmentationService extends Component {
+  public key: string;
+
   constructor(options) {
     super(options);
 

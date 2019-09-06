@@ -1,6 +1,8 @@
 import Component from '@glimmer/component';
 
 export default class ShapeBase extends Component {
+  public key: string;
+
   get shapeId() {
     return `${this.key}-shape`;
   }
