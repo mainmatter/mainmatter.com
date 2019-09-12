@@ -1,6 +1,8 @@
 import Component from '@glimmer/component';
 
 export default class LazyPreloadTrigger extends Component {
+  private appState: IAppState;
+
   constructor(options) {
     super(options);
 
@@ -8,9 +10,11 @@ export default class LazyPreloadTrigger extends Component {
   }
 
   private preload() {
-    let { controller: serviceWorkerController } = navigator.serviceWorker;
-    if (serviceWorkerController) {
-      serviceWorkerController.postMessage({ preload: this.args.bundle });
+    if (!this.appState.isSSR) {
+      let { controller: serviceWorkerController } = navigator.serviceWorker;
+      if (serviceWorkerController) {
+        serviceWorkerController.postMessage({ preload: this.args.bundle });
+      }
     }
   }
 }
