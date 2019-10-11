@@ -1,5 +1,5 @@
 :root {
-  --base-scale: calc(6 / 8);
+  --base-scale: 1;
 
   /* Sizing */
   --col: calc(156 / 1440 * 100vw);
@@ -19,8 +19,37 @@
   --grid-template-columns: minmax(var(--offset-horizontal), 1fr) repeat(6, minmax(var(--col), var(--col-max)))
     minmax(var(--offset-horizontal), 1fr);
 
-  /* Spacing */
+  /* Font scales */
+  --fs-display-1: 8rem;
+  --fs-headline-1: 6.25rem;
+  --fs-headline-2: 4.5rem;
+  --fs-headline-3: 4rem;
+  --fs-headline-4: 3rem;
+  --fs-lead: 3rem;
+  --fs-base: 2.25rem;
+  --fs-nav: 2rem;
+  --fs-small: 2rem;
 
+  --lh-display-1: 1.25;
+  --lh-headline-1: 1.28;
+  --lh-headline-2: calc(48 / 36);
+  --lh-headline-3: 1.25;
+  --lh-headline-4: calc(32 / 24);
+  --lh-lead: calc(40 / 24);
+  --lh-base: calc(32 / 18);
+  --lh-nav: 1.5;
+  --lh-small: 1.5;
+
+  /* Offsets */
+  --o-1: 2rem;
+  --o-2: 2rem;
+  --o-3: 3rem;
+  --o-4: 6rem;
+  --o-5: 6rem;
+  --o-6: 8rem;
+  --o-7: 12rem;
+
+  /* Spacing */
   --spacing-medium: 8rem;
   --spacing-large: 12rem;
 
@@ -44,6 +73,34 @@
     --col-gap: 2rem;
     --offset-horizontal: 0;
     --max-width: calc(100vw - 4rem);
+
+    --fs-display-1: 8rem;
+    --fs-headline-1: 6.25rem;
+    --fs-headline-2: 4.5rem;
+    --fs-headline-3: 4rem;
+    --fs-headline-4: 3rem;
+    --fs-lead: 3rem;
+    --fs-base: 2.25rem;
+    --fs-nav: 2rem;
+    --fs-small: 2rem;
+
+    --lh-display-1: 1.25;
+    --lh-headline-1: 1.28;
+    --lh-headline-2: calc(48 / 36);
+    --lh-headline-3: 1.25;
+    --lh-headline-4: calc(32 / 24);
+    --lh-lead: calc(40 / 24);
+    --lh-base: calc(32 / 18);
+    --lh-nav: 1.5;
+    --lh-small: 1.5;
+
+    --o-1: 2rem;
+    --o-2: 3rem;
+    --o-3: 6rem;
+    --o-4: 8rem;
+    --o-5: 12rem;
+    --o-6: 16rem;
+    --o-7: 21rem;
   }
 }
 
@@ -63,27 +120,15 @@ html {
   line-height: 1.5;
 }
 
-@media (min-width: 960px) {
-  :root {
-    --base-scale: calc(7 / 8);
-  }
-}
-
-@media (min-width: 1440px) {
-  :root {
-    --base-scale: 1; /* == 8px */
-  }
-}
-
 @media (min-width: 1800px) {
   :root {
-    --base-scale: calc(10 / 8);
+    --base-scale: calc(9 / 8);
   }
 }
 
 body {
-  font-size: 2.5rem;
-  line-height: 1.6;
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
 }
 
 /* Typography */
@@ -160,80 +205,71 @@ h6 {
 }
 
 h1 {
-  font-size: 10rem;
+  font-size: var(--fs-display-1);
+  line-height: var(--lh-display-1);
   font-weight: 300;
-  line-height: 1.2;
 }
 
 h1 small {
   display: block;
   color: var(--color-muted);
-  margin-bottom: 2rem;
-  font-size: 1.75rem;
-  line-height: 1.142857143;
+  margin-bottom: 0;
+
   text-transform: uppercase;
 }
 
 h2 {
-  margin-bottom: 6rem;
-  font-size: 8rem;
-  font-weight: 300;
-  line-height: 1.25;
+  margin-bottom: var(--o-3);
+  font-size: var(--fs-headline-1);
+  line-height: var(--lh-headline-1);
+  font-weight: 400;
 }
 
 *:not(h1) + h2 {
-  margin-top: 12rem;
+  margin-top: var(--o-5);
 }
 
 h3 {
-  margin-bottom: 3rem;
-  font-size: 5rem;
-  line-height: 1.2;
+  margin-bottom: var(--o-2);
+  font-size: var(--fs-headline-2);
+  line-height: var(--lh-headline-2);
   font-weight: 400;
 }
 
 *:not(h1):not(h2) + h3 {
-  margin-top: 8rem;
+  margin-top: var(--o-4);
 }
 
 h4 {
-  margin-bottom: 3rem;
-  font-size: 4rem;
-  line-height: 1.25;
+  margin-bottom: var(--o-2);
+  font-size: var(--fs-headline-3);
+  line-height: var(--lh-headline-3);
   font-weight: 400;
 }
 
 * + h4 {
-  margin-top: 6rem;
+  margin-top: var(--o-3);
 }
 
 h5 {
   margin-bottom: 1rem;
-  font-size: 2.5rem;
-  line-height: 1.25;
+  font-size: var(--fs-headline-4);
+  line-height: var(--lh-headline-4);
   font-weight: 700;
 }
 
 * + h5 {
-  margin-top: 3rem;
+  margin-top: var(--o-2);
 }
 
 @media (max-width: 887px) {
   h1 small {
-    font-size: 2.5rem;
     color: var(--color-text);
   }
 
   h2 {
-    margin-bottom: 3rem;
-    font-size: 5rem;
-    line-height: calc(6 / 5);
+    margin-bottom: var(--o-2);
     hyphens: auto;
-  }
-
-  h3 {
-    font-size: 4rem;
-    line-height: calc(5 / 4);
   }
 }
 
@@ -258,7 +294,7 @@ p + p {
 
 li {
   margin-bottom: 0.5rem;
-  margin-left: 3rem;
+  margin-left: var(--o-2);
 }
 
 nav ul,
@@ -276,11 +312,11 @@ nav li {
 
 figure {
   display: block;
-  margin-bottom: 3rem;
+  margin-bottom: var(--o-2);
 }
 
 * + figure {
-  margin-top: 3rem;
+  margin-top: var(--o-2);
 }
 
 figure a {
@@ -316,7 +352,7 @@ address {
 }
 
 * + form {
-  margin-top: 3rem;
+  margin-top: var(--o-2);
 }
 
 code {

@@ -7,7 +7,7 @@
 
   position: relative;
   min-height: 109rem;
-  margin-bottom: 21rem;
+  margin-bottom: var(--o-7);
   padding-bottom: 90rem;
   grid-column: 1/-1;
 
@@ -32,7 +32,7 @@
 }
 
 .header {
-  padding-bottom: 8rem;
+  padding-bottom: var(--o-4);
 }
 
 .tagline-container {
@@ -56,7 +56,7 @@
 
 .logo-img {
   display: block;
-  height: 12rem;
+  height: var(--o-5);
   width: auto;
 }
 
@@ -66,7 +66,7 @@
 
 .tagline-logo-image {
   display: block;
-  height: 8rem;
+  height: var(--o-4);
   width: auto;
   margin-bottom: 1rem;
   filter: saturate(0%) brightness(100);
@@ -75,12 +75,12 @@
 @media (max-width: 887px) {
   :scope {
     min-height: 1rem;
-    margin-bottom: 12rem;
+    margin-bottom: var(--o-5);
     padding-bottom: calc(150vw + 30rem);
   }
 
   .container {
-    margin-bottom: 8rem;
+    margin-bottom: var(--o-4);
   }
 
   .top {
@@ -119,7 +119,7 @@
   }
 
   :scope[state|center='true'] .content {
-    padding-top: 8rem;
+    padding-top: var(--o-4);
   }
 }
 
@@ -139,7 +139,7 @@
 
   .header {
     width: var(--col-3);
-    padding-bottom: 21rem;
+    padding-bottom: var(--o-7);
   }
 
   .content {
@@ -201,7 +201,7 @@
   }
 
   :scope[state|reverse='true'] .content {
-    padding-bottom: 21rem;
+    padding-bottom: var(--o-7);
   }
 
   :scope[state|center='true'] .content {

@@ -15,7 +15,7 @@
   flex-flow: nowrap;
   align-items: center;
   justify-content: space-between;
-  margin: 0 calc(var(--offset-horizontal) / -2) 6rem;
+  margin: 0 calc(var(--offset-horizontal) / -2) var(--o-3);
 }
 
 .logos-more {

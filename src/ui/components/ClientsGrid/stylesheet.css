@@ -6,5 +6,5 @@
 
 :scope {
   block-name: ClientsGrid;
-  composes: 'layout.full', 'offset.after-21';
+  composes: 'layout.full', 'offset.after-7';
 }

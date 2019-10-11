@@ -43,8 +43,8 @@
   border: 3px solid var(--color-accent);
   overflow: hidden;
   width: 8em;
-  height: 8rem;
-  flex: 0 0 8rem;
+  height: var(--o-4);
+  flex: 0 0 var(--o-4);
 }
 
 .badge-content {
@@ -106,8 +106,8 @@
 
 @media (min-width: 888px) {
   .header {
-    margin-top: 21rem;
-    margin-bottom: 12rem;
+    margin-top: var(--o-7);
+    margin-bottom: var(--o-5);
   }
 
   .headline {
@@ -147,8 +147,8 @@
   }
 
   .embedd-iframe {
-    width: calc(100% - 6rem);
-    height: calc(100% - 6rem);
+    width: calc(100% - var(--o-3));
+    height: calc(100% - var(--o-3));
     top: 3rem;
     left: 3rem;
   }

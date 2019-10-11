@@ -7,7 +7,7 @@
   position: relative;
   z-index: 0;
   block-name: WorkWithUs;
-  composes: 'offset.after-21';
+  composes: 'offset.after-7';
   grid-column: 2/-2;
 }
 

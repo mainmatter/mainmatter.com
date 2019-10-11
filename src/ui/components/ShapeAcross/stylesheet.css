@@ -11,7 +11,7 @@
   grid-column: 1/-1;
 
   margin-top: -34vw;
-  margin-bottom: calc(-17vw + 12rem);
+  margin-bottom: calc(-17vw + var(--o-5));
   padding-top: 34vw;
   padding-bottom: 17vw;
   pointer-events: none;

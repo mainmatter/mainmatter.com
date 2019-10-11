@@ -9,7 +9,7 @@
 }
 
 .pull {
-  margin-top: -6rem;
+  margin-top: calc(var(--o-3) * -1);
 }
 
 .push {

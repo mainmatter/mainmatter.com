@@ -13,12 +13,12 @@
     Latest Talks
   </h2>
   {{#each conferences}}
-    <div class="layout.main offset.after-16">
+    <div class="layout.main offset.after-6">
       <h3>
         {{meta.title}}
       </h3>
       {{#each talks}}
-        <article class="media offset.after-12">
+        <article class="media offset.after-5">
           <img class="media.item size.w-10" src="{{meta.image}}" alt="" />
           <div class="media.body">
             <h4>
@@ -34,7 +34,7 @@
         </article>
       {{/each}}
     </div>
-    <div class="layout.side offset-vertical offset.after-16">
+    <div class="layout.side offset-vertical offset.after-6">
       <Card @src="{{meta.image}}" @alt="{{meta.title}}">
         <p>
           {{description}}

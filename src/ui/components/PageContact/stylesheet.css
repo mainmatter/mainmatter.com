@@ -9,11 +9,7 @@
 }
 
 .contact {
-  margin-bottom: 8rem;
-}
-
-.type {
-  margin-bottom: 2rem;
+  margin-bottom: var(--o-4);
 }
 
 .value {

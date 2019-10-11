@@ -9,7 +9,7 @@
 }
 
 .more {
-  margin-bottom: 8rem;
+  margin-bottom: var(--o-4);
   margin-left: 0;
   list-style: none;
 }

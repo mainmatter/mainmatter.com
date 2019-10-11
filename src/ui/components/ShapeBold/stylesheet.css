@@ -106,7 +106,7 @@
 }
 
 :scope[state|reverse='true'] .shape-b-content {
-  top: 21rem;
+  top: var(--o-7);
   left: unset;
   right: -2rem;
 }

@@ -4,7 +4,7 @@
 :scope {
   block-name: Card;
 
-  margin-bottom: 6rem;
+  margin-bottom: var(--o-3);
 }
 
 .image {

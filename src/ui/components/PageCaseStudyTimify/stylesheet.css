@@ -10,7 +10,7 @@
 }
 
 .quote-offset {
-  margin-top: 6rem;
+  margin-top: var(--o-3);
 }
 
 @media (min-width: 888px) {

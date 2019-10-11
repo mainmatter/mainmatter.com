@@ -6,8 +6,8 @@
   flex-shrink: 0;
   color: var(--color-accent);
   border: 2px solid var(--color-accent);
-  font-size: 3rem;
-  line-height: 5rem;
+  font-size: var(--fs-base);
+  line-height: 3rem;
   text-decoration: none;
   background-color: var(--color-background);
   background-size: cover;

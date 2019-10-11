@@ -25,11 +25,11 @@
 
 .container {
   padding-top: 0;
-  padding-bottom: 21rem;
+  padding-bottom: var(--o-7);
 }
 
 @media (max-width: 887px) {
   .container {
-    padding-bottom: 12rem;
+    padding-bottom: var(--o-5);
   }
 }

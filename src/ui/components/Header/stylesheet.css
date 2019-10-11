@@ -11,7 +11,8 @@
 }
 
 .navbar {
-  font-size: 2rem;
+  font-size: var(--fs-nav);
+  line-height: var(--lh-nav);
 }
 
 .navbar-wrapper {
@@ -175,7 +176,7 @@
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    padding: 8rem 0 0;
+    padding: var(--o-4) 0 0;
   }
 
   .nav {
