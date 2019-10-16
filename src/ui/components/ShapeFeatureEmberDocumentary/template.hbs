@@ -1,18 +1,31 @@
-<ShapeFeature
-  @color="#E15D44"
-  @video="/assets/images/emberdoc-simplabs.mp4"
-  @backgroundImage="/assets/images/emberdoc-simplabs.poster.jpg"
-  @width="1280"
-  @height="720"
-  @key="{{this.key}}-feature"
->
-  <p class="typography.small">
-    Documentary
-  </p>
-  <h3>
-    simplabs featured on Ember.js: The Documentary
-  </h3>
-  <ArrowLink @href="https://youtu.be/Cvz-9ccflKQ">
-    Watch Video
-  </ArrowLink>
-</ShapeFeature>
+<div class="offset.after-21">
+  <svg
+    class="top"
+    width="1800"
+    height="900"
+    viewBox="0 0 1800 900"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <path
+      d="m840.577137 0 862.961153 498.230855-231.96152 401.769145h-512.153907l-862.9611537-498.230855 231.9615247-401.769145z"
+      transform="rotate(-30 719.885 360.48)"
+    ></path>
+  </svg>
+  <div class="bottom">
+    <video playsinline autoplay muted loop class="video" width="1280" height="720">
+      <source src="/assets/images/emberdoc-simplabs.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="content">
+    <p class="typography.small down">
+      Documentary
+    </p>
+    <h3 class="offset.before-none">
+      simplabs featured on Ember.js: The Documentary
+    </h3>
+    <ArrowLink @href="https://youtu.be/Cvz-9ccflKQ">
+      Watch Video
+    </ArrowLink>
+  </div>
+</div>
