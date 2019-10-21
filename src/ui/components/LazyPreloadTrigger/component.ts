@@ -9,13 +9,13 @@ export default class LazyPreloadTrigger extends Component {
     this.preload();
   }
 
-  private preload() {
+  private async preload() {
     if (!this.appState.isSSR && 'serviceWorker' in navigator) {
-      let { controller: serviceWorkerController } = navigator.serviceWorker;
+      let { controller, ready } = navigator.serviceWorker;
 
-      if (serviceWorkerController) {
-        serviceWorkerController.postMessage({ preload: this.args.bundle });
-      }
+      await ready;
+
+      controller.postMessage({ preload: this.args.bundle });
     }
   }
 }
