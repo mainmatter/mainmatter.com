@@ -1,14 +1,9 @@
-<div style={{this.shapeStyle}} state:hasVideo={{@video}} state:hasImage={{@src}}>
+<div style={{this.shapeStyle}} state:hasImage={{@src}}>
   <div class="bottom">
     <div class="bottom-clip">
       <div class="bottom-content" style="{{this.backgroundStyle}}">
         {{#if @image}}
           <div class="bottom-image" style="{{this.bottomImageStyle}}"></div>
-        {{/if}}
-        {{#if @video}}
-          <video playsinline autoplay muted loop class="video" width="{{@width}}" height="{{@height}}">
-            <source src="{{@video}}" type="video/mp4" />
-          </video>
         {{/if}}
       </div>
     </div>
