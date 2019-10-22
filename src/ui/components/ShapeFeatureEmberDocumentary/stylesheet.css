@@ -12,7 +12,7 @@
 
 .top {
   position: absolute;
-  top: -3rem;
+  top: calc(-1 * var(--o-2));
   right: -158%;
   z-index: 1;
   transform: rotate(30deg);
@@ -24,7 +24,7 @@
 .bottom {
   position: relative;
   padding-bottom: calc(100% * 9 / 16 * 2);
-  margin-bottom: 3rem;
+  margin-bottom: var(--o-2);
 }
 
 .video {
@@ -57,7 +57,7 @@
 
   .bottom {
     grid-column: 1/6;
-    margin-top: -8rem;
+    margin-top: calc(-1 * var(--o-4));
     margin-bottom: 0;
     padding-bottom: calc(100% * 9 / 16 * 1.5);
     height: 0;
