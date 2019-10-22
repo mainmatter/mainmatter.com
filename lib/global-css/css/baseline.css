@@ -2,7 +2,7 @@
   --base-scale: 1;
 
   /* Sizing */
-  --col: calc(156 / 1440 * 100vw);
+  --col: calc(50 / 320 * 100vw);
   --col-gap: 3rem;
   --max-width: calc(var(--col) * 6 + var(--col-gap) * 5);
 
@@ -14,31 +14,31 @@
   --col-6: calc(var(--col) * 6 + var(--col-gap) * 5);
 
   --col-max: 19.5rem;
-  --offset-horizontal: 8rem;
-
-  --grid-template-columns: minmax(var(--offset-horizontal), 1fr) repeat(6, minmax(var(--col), var(--col-max)))
-    minmax(var(--offset-horizontal), 1fr);
+  --offset-horizontal: 3rem;
+  --grid-template-columns: 0 repeat(4, minmax(var(--col), 1fr)) 0;
 
   /* Font scales */
-  --fs-display-1: 8rem;
-  --fs-headline-1: 6.25rem;
-  --fs-headline-2: 4.5rem;
-  --fs-headline-3: 4rem;
-  --fs-headline-4: 3rem;
-  --fs-lead: 3rem;
-  --fs-base: 2.25rem;
-  --fs-nav: 2rem;
-  --fs-small: 2rem;
+  --fs-display-1: 4.125rem;
+  --fs-headline-1: 3.75rem;
+  --fs-headline-2: 3rem;
+  --fs-headline-3: 2.5rem;
+  --fs-headline-4: 2.25rem;
+  --fs-lead: 2.25rem;
+  --fs-base: 1.875rem;
+  --fs-nav: 2.5rem;
+  --fs-small: 1.5rem;
+  --fs-footer: 1.75rem;
 
-  --lh-display-1: 1.25;
-  --lh-headline-1: 1.28;
-  --lh-headline-2: calc(48 / 36);
-  --lh-headline-3: 1.25;
-  --lh-headline-4: calc(32 / 24);
-  --lh-lead: calc(40 / 24);
-  --lh-base: calc(32 / 18);
-  --lh-nav: 1.5;
-  --lh-small: 1.5;
+  --lh-display-1: calc(40 / 33);
+  --lh-headline-1: 1.6;
+  --lh-headline-2: calc(32 / 24);
+  --lh-headline-3: 1.2;
+  --lh-headline-4: calc(24 / 18);
+  --lh-lead: calc(32 / 18);
+  --lh-base: 1.6;
+  --lh-nav: 1.2;
+  --lh-small: 2;
+  --lh-footer: calc(16 / 14);
 
   /* Offsets */
   --o-1: 2rem;
@@ -68,11 +68,14 @@
   --color-link-inverted: var(--color-background);
 }
 
-@media (max-width: 887px) {
+@media (min-width: 888px) {
   :root {
-    --col-gap: 2rem;
+    --col: calc(140 / 1200 * 100vw);
+    --col-gap: 4rem;
     --offset-horizontal: 0;
     --max-width: calc(100vw - 4rem);
+    --grid-template-columns: minmax(var(--offset-horizontal), 1fr) repeat(6, minmax(var(--col), 1fr))
+      minmax(var(--offset-horizontal), 1fr);
 
     --fs-display-1: 8rem;
     --fs-headline-1: 6.25rem;
@@ -83,6 +86,7 @@
     --fs-base: 2.25rem;
     --fs-nav: 2rem;
     --fs-small: 2rem;
+    --fs-footer: var(--fs-nav);
 
     --lh-display-1: 1.25;
     --lh-headline-1: 1.28;
@@ -93,6 +97,7 @@
     --lh-base: calc(32 / 18);
     --lh-nav: 1.5;
     --lh-small: 1.5;
+    --lh-footer: var(--lh-nav);
 
     --o-1: 2rem;
     --o-2: 3rem;

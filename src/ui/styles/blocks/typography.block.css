@@ -36,8 +36,8 @@
   color: var(--color-muted);
   display: block;
   margin-bottom: 0;
-  font-size: 1.75rem;
-  line-height: 1.142857143;
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
   text-transform: uppercase;
 }
 
@@ -79,34 +79,26 @@
 
 @media (max-width: 887px) {
   .display {
-    margin-bottom: 3rem;
+    margin-bottom: var(--o-3);
   }
 
   .h1 {
-    margin-bottom: 3rem;
-    font-size: 5rem;
-    line-height: 1.2;
-    font-weight: 400;
+    margin-bottom: var(--o-2);
   }
 
   .h2 {
-    margin-bottom: 3rem;
-    font-size: 5rem;
-    line-height: calc(6 / 5);
+    margin-bottom: var(--o-1);
   }
 
   .h3 {
-    font-size: 4rem;
-    line-height: calc(5 / 4);
+    margin-bottom: var(--o-1);
   }
 
   .small {
-    font-size: 2.5rem;
     color: var(--color-text);
   }
 
   .lead {
-    font-size: 3rem;
     line-height: calc(5 / 3);
   }
 }
