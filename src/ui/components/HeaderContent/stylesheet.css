@@ -16,7 +16,7 @@
 
 @media (min-width: 888px) {
   :scope {
-    margin-top: var(--o-7);
-    margin-bottom: var(--o-7);
+    margin-top: var(--o-6);
+    margin-bottom: var(--o-6);
   }
 }
