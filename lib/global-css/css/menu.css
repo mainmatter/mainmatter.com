@@ -13,11 +13,11 @@
     top: 3rem;
     z-index: 1;
     display: block;
-    margin: 2rem 0;
+    margin: 1rem 0;
     padding: 1rem 2rem;
     color: var(--color-text-inverted);
-    font-size: 3.33333rem;
-    line-height: 4rem;
+    font-size: var(--fs-nav);
+    line-height: var(--lh-nav);
     text-align: center;
     border: 0;
     background: transparent;
