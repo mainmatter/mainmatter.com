@@ -25,6 +25,6 @@
 
 .elsewhere {
   margin-left: 0;
-  margin-bottom: 3rem;
+  margin-bottom: var(--o-2);
   list-style: none;
 }

@@ -31,12 +31,17 @@
 
 @media (max-width: 888px) {
   .logos-list {
+    width: calc(100% + var(--offset-horizontal));
     justify-content: center;
     flex-flow: wrap;
   }
-  .logos-logo {
-    padding: 2rem;
+
+  .logos-img {
+    display: block;
+    height: var(--o-6);
+    width: auto;
   }
+
   .padding-right-1 {
     padding-right: 0;
   }
