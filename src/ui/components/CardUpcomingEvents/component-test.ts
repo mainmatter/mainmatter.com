@@ -10,6 +10,6 @@ module('Component: CardUpcomingEvents', function(hooks) {
   test('it renders', async function(assert) {
     await render(hbs`<CardUpcomingEvents />`);
 
-    assert.ok(this.containerElement.querySelector('figure'));
+    assert.notOk(this.containerElement.querySelector('figure'));
   });
 });
