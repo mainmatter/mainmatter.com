@@ -33,11 +33,6 @@
   position: absolute;
 }
 
-.bottom-wrapper {
-  position: relative;
-  min-height: 130vw;
-}
-
 .bottom {
   position: relative;
 }
@@ -100,23 +95,14 @@
     position: absolute;
     top: 0;
     right: -125%;
-    transform: translate(0, -30%);
+    transform: translate(0, -45%);
     width: 150vw;
     height: auto;
   }
 
-  .bottom-wrapper {
-    grid-column: 2/6;
-    position: relative;
-    min-height: 60vw;
-  }
-
   .bottom {
-    position: absolute;
-    width: 120vw;
-    min-height: 60vw;
-    right: 0;
-    bottom: 0;
+    grid-column: 1/6;
+    min-height: var(--col-4);
     overflow: hidden;
   }
 
@@ -128,15 +114,17 @@
     height: auto;
   }
 
-  .img-wrapper {
+  .img {
+    position: relative;
+    z-index: 1;
     float: right;
-    width: 48%;
+    width: var(--col-4);
   }
 
   .content {
     position: relative;
     z-index: 2;
     grid-column: -4/-2;
-    padding-top: calc(37vw);
+    align-self: center;
   }
 }

@@ -10,10 +10,10 @@
   z-index: 0;
   grid-column: 1/-1;
 
-  margin-top: -34vw;
-  margin-bottom: calc(-17vw + var(--o-5));
-  padding-top: 34vw;
-  padding-bottom: 17vw;
+  margin-top: -32rem;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
   pointer-events: none;
   overflow: hidden;
   transform: translateZ(0);
@@ -24,8 +24,6 @@
   transform: translate(-21.5%) rotate(30deg);
   width: 173vw;
   height: 100vw;
-  margin-top: -34vw;
-  margin-bottom: -17vw;
   overflow: hidden;
 }
 

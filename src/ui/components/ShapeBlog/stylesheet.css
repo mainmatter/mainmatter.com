@@ -25,11 +25,12 @@
 
 .bottom {
   bottom: 0;
-  transform: translate(-125%, 26rem);
+  left: 30rem;
+  transform: translate(-100%, 26rem);
 }
 
 .top {
-  top: -46rem;
+  top: -53rem;
   transform: translate(-1%);
 }
 
@@ -58,7 +59,7 @@
 
 @media (min-width: 888px) {
   :scope {
-    padding: 0 0 36rem;
+    padding: 0 0 var(--o-5);
   }
 
   .content {
