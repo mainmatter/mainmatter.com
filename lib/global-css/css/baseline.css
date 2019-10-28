@@ -1,6 +1,4 @@
 :root {
-  --base-scale: 1;
-
   /* Sizing */
   --col: calc(50 / 320 * 100vw);
   --col-gap: 3rem;
@@ -121,13 +119,18 @@ body {
 
 html {
   /* Reset the base fontsize for 1rem to 50% of the 16px multiplied with the current scale */
-  font-size: calc(50% * var(--base-scale));
+  font-size: 50%;
   line-height: 1.5;
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 1600px) {
   :root {
-    --base-scale: calc(9 / 8);
+    --col: 23.2rem;
+    --grid-template-columns: 1fr repeat(6, var(--col)) 1fr;
+  }
+
+  html {
+    font-size: calc(50% + 0.000555556vw);
   }
 }
 
