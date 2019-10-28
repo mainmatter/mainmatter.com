@@ -9,6 +9,7 @@
 
 .image {
   height: 75%;
+  margin-top: var(--o-1);
 }
 
 .caption {
