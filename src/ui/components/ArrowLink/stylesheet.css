@@ -31,12 +31,13 @@
   width: 5rem;
   height: 5rem;
   transition: transform 0.2s;
-  transform: translate(0);
+  transform-origin: bottom left;
+  transform: translate(0, 0);
   pointer-events: none;
 }
 
 :scope:hover .svg {
-  transform: translate(0.5rem);
+  transform: translate(0.5rem, 0);
 }
 
 .arrow {
@@ -56,9 +57,10 @@
 :scope[state|reverse='true'] .svg {
   right: unset;
   left: 0;
-  transform: translate(0) scaleX(-1);
+  transform: translate(0, 0) scaleX(-1);
+  transform-origin: bottom center;
 }
 
 :scope[state|reverse='true']:hover .svg {
-  transform: translate(-0.5rem) scaleX(-1);
+  transform: translate(-0.5rem, 0) scaleX(-1);
 }
