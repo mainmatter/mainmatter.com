@@ -4,12 +4,12 @@ import { setupRenderingTest } from '../../../utils/test-helpers/setup-rendering-
 
 const { module, test } = QUnit;
 
-module('Component: CardPlaybook', function(hooks) {
+module('Component: CardEmberSponsors', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
     await render(hbs`<CardEmberSponsors />`);
 
-    assert.notOk(this.containerElement.querySelector('figure'));
+    assert.ok(this.containerElement.querySelector('figure'));
   });
 });
