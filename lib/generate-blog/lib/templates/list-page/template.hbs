@@ -1,5 +1,6 @@
 <div>
   <LazyPreloadTrigger @bundle="blog" />
+  <HeadTag @name='meta' @keys=\{{hash property="og:image"}} @values=\{{hash content="https://simplabs.com/assets/images/ogimage-blog.png"}} />
   <script type="application/ld+json">
     {
     "@type": "Blog",
