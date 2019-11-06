@@ -302,6 +302,10 @@ figcaption {
   margin-top: 1rem;
 }
 
+figcaption a {
+  display: unset;
+}
+
 img {
   vertical-align: middle;
   border-style: none;

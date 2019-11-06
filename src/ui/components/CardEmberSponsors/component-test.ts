@@ -4,11 +4,11 @@ import { setupRenderingTest } from '../../../utils/test-helpers/setup-rendering-
 
 const { module, test } = QUnit;
 
-module('Component: CardUpcomingEvents', function(hooks) {
+module('Component: CardEmberSponsors', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await render(hbs`<CardUpcomingEvents />`);
+    await render(hbs`<CardEmberSponsors />`);
 
     assert.ok(this.containerElement.querySelector('figure'));
   });
