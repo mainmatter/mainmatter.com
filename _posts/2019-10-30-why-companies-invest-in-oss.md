@@ -14,7 +14,7 @@ This blog post highlights on which levels contribution to open-source provides v
 
 <!--break-->
 
-[![invest time open source illustration](/assets/images/posts/2019-10-30-why-companies-invest-in-oss/oos-illustration.png)]()
+![invest time open source illustration](/assets/images/posts/2019-10-30-why-companies-invest-in-oss/oos-illustration.png#full)
 
 ## What Is Open-Source?
 
