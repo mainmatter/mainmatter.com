@@ -20,13 +20,10 @@
   line-height: inherit;
 }
 
-.img-wrapper {
-  position: relative;
-}
-
 .img {
   max-width: 100%;
   height: auto;
+  margin: auto;
 }
 
 .bottom-svg {
@@ -35,23 +32,18 @@
 
 .bottom {
   position: relative;
+  display: flex;
 }
 
 .bottom-svg {
   position: absolute;
-  bottom: 0;
-  background-color: var(--shape-color);
-  background-size: contain;
-  background-position: 100%;
 }
 
 .img {
+  position: relative;
+  z-index: 1;
   max-width: 100%;
   height: auto;
-}
-
-:scope[state|hasImage] .bottom-svg {
-  position: relative;
 }
 
 @media (max-width: 887px) {
@@ -64,20 +56,15 @@
   }
 
   .bottom {
-    padding-bottom: var(--o-3);
-    position: absolute;
-    bottom: var(--o-3);
-    left: 50%;
-    width: 100vw;
-    transform: translate(-50%, 0);
+    min-height: 100vw;
   }
 
   .bottom-svg {
-    display: block;
-    width: 160vw;
-    height: auto;
-    transform: translate(-17%);
-    background-position: 50% -10vw;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0) scale(0.75);
+    width: auto;
+    height: 100%;
   }
 }
 
@@ -107,16 +94,13 @@
   }
 
   .bottom-svg {
-    bottom: -1vw;
+    top: calc(-1 * var(--o-3));
     right: 0;
-    transform: translate(5.5%);
-    width: 122vw;
-    height: auto;
+    width: auto;
+    height: calc(100% + var(--o-6));
   }
 
   .img {
-    position: relative;
-    z-index: 1;
     float: right;
     width: var(--col-4);
   }
