@@ -12,9 +12,9 @@ Less productivity, missed project deadlines and wasted money: that’s what you 
 
 This blog post highlights on which levels contribution to open-source provides value to businesses and demonstrates why paying your team to spend time on OSS might be the best business decision you will make this year.
 
-[![invest time open source illustration](/assets/images/posts/2019-10-30-why-companies-invest-in-oss/oos-illustration.png)]()
-
 <!--break-->
+
+[![invest time open source illustration](/assets/images/posts/2019-10-30-why-companies-invest-in-oss/oos-illustration.png)]()
 
 ## What Is Open-Source?
 
