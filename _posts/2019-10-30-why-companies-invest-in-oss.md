@@ -12,6 +12,8 @@ Less productivity, missed project deadlines and wasted money: that’s what you 
 
 This blog post highlights on which levels contribution to open-source provides value to businesses and demonstrates why paying your team to spend time on OSS might be the best business decision you will make this year.
 
+[![invest time open source illustration](/assets/images/posts/2019-10-30-why-companies-invest-in-oss/oos-illustration.png)]()
+
 <!--break-->
 
 ## What Is Open-Source?
@@ -41,6 +43,8 @@ Developers may spend time contributing to OSS by participating in a wide range o
 Many of these tasks provide multi-level learning opportunities for employees in regards of their **technical skills**. Apart from offering a wide selection of tasks that meet contributors' needs and interests which help to expand an employee's skill set [[5](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.462.2007&rep=rep1&type=pdf)], OSS also provides the chance for mentorship. Developers who contribute to open-source can therefore deepen already existing technical skills and acquire entirely new ones. By picking up work tasks that meet their current experience level freely without the constraints that are oftentimes imposed in their day-to-day work, developers find a unique opportunity to expand their technical qualifications.
 
 As active members of open-source communities, developers may hone their **organisational skill set** by managing open-source projects, collaborating with globally distributed teams both online and offline and leading initiatives in an environment with a usually simple, clear-cut organisational structure [[6](https://digital-library.theiet.org/content/conferences/10.1049/ic_20040267)].
+
+[![team benefits open source investment](/assets/images/posts/2019-10-30-why-companies-invest-in-oss/oss-team-investment-illustration.png)]()
 
 Finally, when following an intrinsic motivation to contribute to OSS, engineering teams can benefit from open-source work in regards to well-being. Apart from an investment into their own professional capital by widening their skill set, participation in open-source communities oftentimes has altruistic motives - the ambition to give back to the community from which developers already have benefitted. A sense of belonging to a particular open-source community and wanting to be an active part of it as well as the recognition by community peers are driving factors for OSS contributions to developers [[7](https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1559&context=jais)].
 
