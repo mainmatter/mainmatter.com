@@ -10,7 +10,7 @@
   z-index: 0;
   grid-column: 1/-1;
 
-  margin-top: -32rem;
+  margin-top: 0;
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 0;
@@ -21,9 +21,6 @@
 }
 
 .shapes {
-  transform: translate(-21.5%) rotate(30deg);
-  width: 173vw;
-  height: 100vw;
   overflow: hidden;
 }
 
@@ -47,18 +44,18 @@
 .bottom-image {
   display: block;
   margin: auto;
-  height: 100%;
-  width: auto;
-  transform: rotate(-30deg);
+  width: 100%;
+  height: auto;
 }
 
 .bottom-svg {
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-  height: 100%;
+  z-index: 1;
   width: auto;
+  height: 100%;
+  fill: #fff;
+  pointer-events: none;
 }
 
 .leading-svg,
@@ -66,35 +63,34 @@
   position: absolute;
   fill: var(--shape-color);
   height: auto;
+  z-index: 2;
 }
 
 .leading-svg {
-  right: calc(80vw + 65rem);
-  bottom: -25rem;
+  right: 71vw;
+  bottom: 16vw;
   width: 100vw;
 }
 
 .trailing-svg {
-  left: calc(96vw + 30rem);
-  top: -10rem;
+  left: 68vw;
+  top: 18vw;
   width: 90vw;
 }
 
 @media (max-width: 887px) {
-  :scope {
+  .bottom-svg {
+    height: 150%;
+    top: -33%;
   }
 
   .shapes {
     margin-top: 0;
   }
+}
 
-  .leading-svg {
-    display: none;
-  }
-
-  .trailing-svg {
-    left: calc(64vw + 25rem);
-    width: 90vw;
-    top: 0rem;
+@media (min-width: 888px) {
+  :scope {
+    margin-top: -22vw;
   }
 }
