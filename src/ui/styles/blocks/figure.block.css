@@ -12,3 +12,13 @@
   display: block;
   margin: 0 auto;
 }
+
+.content-full {
+  position: relative;
+  top: 0;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, 0);
+  width: 100vw;
+  max-width: unset;
+}
