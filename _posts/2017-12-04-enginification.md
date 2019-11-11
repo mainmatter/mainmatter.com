@@ -1,9 +1,10 @@
 ---
 title: Enginification
-author: "Clemens Müller"
+author: 'Clemens Müller'
 github: pangratz
 twitter: pangratz
-bio: "Full-Stack Engineer, Ember Data core team member"
+bio: 'Full-Stack Engineer, Ember Data core team member'
+description: 'Clemens Müller gives an overview of Ember Engines and shows how they can be used to reduce the footprint of big applications for an improved startup time.'
 topic: ember
 ---
 
@@ -87,12 +88,10 @@ Since the component is now located within the `addon` folder, we need to modify
 import layout from '../templates/components/loading-indicator';
 
 export default Component.extend({
-
   // this is needed so the template within addon/templates/components is used
   layout,
 
   // previous code of the component
-
 });
 ```
 
@@ -123,7 +122,7 @@ from the common components and helpers. By this all the styles from the
 ```scss
 // lib/common/app/styles/common.scss
 
-@import "common/components/loading-indicator";
+@import 'common/components/loading-indicator';
 ```
 
 Within the app we import the style definitions for the common addon, so all the
@@ -133,13 +132,12 @@ and `mixins` defined in the common addon.
 ```scss
 // app/styles/app.scss
 
-@import "common";
+@import 'common';
 ```
 
 After all that is done, we now have all common components and helpers, as well
 as common style definitions moved into the addon. The next step is to finally
 create the engine, which will contain most of the application code.
-
 
 ## Move functionality into engine
 
@@ -170,9 +168,7 @@ can re-use the common elements within the engine. Let's take a look at
   },
 
   "ember-addon": {
-    "paths": [
-      "../common"
-    ]
+    "paths": ["../common"]
   }
 }
 ```
@@ -212,8 +208,8 @@ definitions. And since we namespaced the files in the `common` addon under the
 ```scss
 // lib/booking-flow/addon/styles/components/booking-button.scss
 
-@import "common/colors";
-@import "common/mixins/button";
+@import 'common/colors';
+@import 'common/mixins/button';
 
 .booking-button {
   @include button-rounded-mixin;

@@ -1,10 +1,13 @@
 ---
-title: "actix – a basic TCP client"
-author: "Tobias Bieniek"
+title: 'actix – a basic TCP client'
+author: 'Tobias Bieniek'
 github: Turbo87
 twitter: tobiasbieniek
-bio: "Senior Frontend Engineer, Ember CLI core team member"
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
+description: 'Tobias Bieniek shows how actix, the actor framework written in Rust, can be used to build a basic TCP client.'
 topic: rust
+og:
+  image: /assets/images/posts/2018-06-27-actix-tcp-client/og-image.png
 ---
 
 In our [last post] about [actix] we introduced you to the [Rust] programming
@@ -13,7 +16,7 @@ client with actix.
 
 [last post]: https://simplabs.com/blog/2018/06/11/actix.html
 [actix]: https://actix.rs/
-[Rust]: https://rust-lang.org/
+[rust]: https://rust-lang.org/
 
 <!--break-->
 
@@ -29,12 +32,12 @@ TCP server, listens for new messages and forwards them to another `recipient`
 actor. For simplicity we'll assume that the server is using a line break after
 each message.
 
-
 ## Project Setup
 
 In our last post we explained that the easiest solution to install Rust is
-currently <https://rustup.rs/>. Once you have followed the instructions there
-you should have access to the `cargo` build tool on your command line.
+currently [rustup.rs](https://rustup.rs/). Once you have followed the
+instructions there you should have access to the `cargo` build tool on your
+command line.
 
 Creating a new project for Rust is easy with `cargo`:
 
@@ -49,8 +52,11 @@ binary projects have a `main()` function and get compiled to executables, while
 library projects are used to share code and functionality at
 [crates.io](https://crates.io).
 
-Fun fact: did you know that [crates.io](https://github.com/rust-lang/crates.io)
-is an open-source project itself and built with Rust and [Ember.js](https://emberjs.com/)?
+Fun fact: did you know that [crates.io][crates] is an open-source project
+itself and built with Rust and [Ember.js][ember]?
+
+[crates]: https://github.com/rust-lang/crates.io
+[ember]: https://emberjs.com/
 
 Now that we have created the project let's see if it runs:
 
@@ -62,12 +68,11 @@ If everything went well you should see `cargo` compiling the project and
 afterwards running it, resulting in "Hello, world!" being printed in your
 Terminal.
 
-
 ## The Actor
 
 Before we can start to implement our TCP client actor we need to tell `cargo`
 about the `actix` dependency. For that we open the `Cargo.toml` file in the
-project and add the following line *after* the `[dependencies]` declaration:
+project and add the following line _after_ the `[dependencies]` declaration:
 
 ```toml
 actix = "0.5"
@@ -143,7 +148,6 @@ implemented nothing that would stop the actor.
 
 First milestone achieved! 🎉
 
-
 ## DNS resolution and TCP connection
 
 Now that we have setup the basic scaffolding of our `Actor`, let's try to
@@ -211,12 +215,11 @@ Great! We have successfully opened up a TCP connection to the
 `towel.blinkenlights.nl` server and if you're curious what kind of server that
 is: keep reading! 😉
 
-
 ## Reading TCP streams
 
 For the next part we'll need two more dependencies: `tokio-io` and
-`tokio-codec`. [tokio] is the low-level network IO library that `actix` is
-using underneath.
+`tokio-codec`. [tokio][tokio] is the low-level network IO library that `actix`
+is using underneath.
 
 [tokio]: https://tokio.rs/
 
@@ -262,13 +265,13 @@ Ok(stream) => {
 ```
 
 Now we have a read part (`r`) that we can call `read()` on and a write part
-(`w`) that we could call `write()` on. Unfortunately the [Read] and [Write]
-traits only operate on `u8` arrays though, so for our purpose of reading
-strings separated by line breaks this isn't quite a user friendly as we would
-like.
+(`w`) that we could call `write()` on. Unfortunately the [Read][read] and
+[Write][write] traits only operate on `u8` arrays though, so for our purpose of
+reading strings separated by line breaks this isn't quite a user friendly as we
+would like.
 
-[Read]: https://doc.rust-lang.org/std/io/trait.Read.html 
-[Write]: https://doc.rust-lang.org/std/io/trait.Write.html 
+[read]: https://doc.rust-lang.org/std/io/trait.Read.html
+[write]: https://doc.rust-lang.org/std/io/trait.Write.html
 
 Fortunately, `tokio` has a solution for that:
 
@@ -301,7 +304,6 @@ right below the line that constructs the `FramedRead` instance.
 I won't spoiler anything, but take a bit of time and see what happens now if
 you start `cargo run` again... 🚀
 
-
 ## Forward messages to other actors
 
 In case you're still reading, let's implement the final part of our goal:
@@ -316,7 +318,7 @@ implementing the `Message` trait, or deriving it automatically in most cases:
 pub struct ReceivedLine {
     pub line: String,
 }
-``` 
+```
 
 Now that we know how the message looks like we should implement a second actor
 that can receive such messages and print them to the terminal:
@@ -355,7 +357,7 @@ The more generic solution is to use the `Recipient` struct of `actix`:
 struct TcpClientActor {
     recipient: Recipient<Syn, ReceivedLine>,
 }
-``` 
+```
 
 Afterwards we change the `StreamHandler` implementation to this:
 
@@ -391,7 +393,6 @@ fn main() {
 
 After everything is assembled back together let's use `cargo run` again and we
 will see that everything still works! 🎥
-
 
 ## Summary
 

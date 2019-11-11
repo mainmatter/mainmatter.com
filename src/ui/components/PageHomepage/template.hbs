@@ -1,11 +1,25 @@
 <div>
-  <Header @title="Solid Solutions for Ambitious Projects">
-    <p class="typography.lead">
-      We deliver ambitious digital products on the web and mobile for our clients to rely on. Our expert team manages projects from idea to release, covering strategy, design and engineering.
-    </p>
+  <Header
+    @title="simplabs – Solid Solutions for Ambitious Projects"
+    @description="We deliver ambitious digital products on the web and mobile devices for our clients to rely on. Our team of experts manages projects from idea to release."
+  >
+    <HeaderContent>
+      <h1 class="typography.display">
+        Solid Solutions for
+        <span class="typography.nowrap">
+          Ambitious Projects
+        </span>
+      </h1>
+      <p class="typography.lead">
+        We deliver ambitious digital products on the web and mobile for our clients to rely on. Our expert team manages projects from idea to release, covering strategy, design and engineering.
+      </p>
+    </HeaderContent>
   </Header>
   <ShapeFeatureTrainline @label="Featured Case Study" />
   <section class="layout.full offset.after-21">
+    <h2 class="typography.hidden">
+      Selected clients
+    </h2>
     <ul class="logos-list">
       <li class="logos-logo">
         <img src="/assets/images/logos/trainline.svg" alt="Trainline" />
@@ -24,7 +38,7 @@
       </li>
     </ul>
     <p class="logos-more">
-      <a href="/work" class="button" data-internal>
+      <a href="/work/" class="button" data-internal>
         Our Work
       </a>
     </p>
@@ -42,7 +56,7 @@
     <p>
       We develop successful products to address our clients' business needs, working closely with them in short iterations.
     </p>
-    <ArrowLink @href="/services/full-stack-engineering">
+    <ArrowLink @href="/services/full-stack-engineering/">
       Learn More
     </ArrowLink>
     <h3>
@@ -51,7 +65,7 @@
     <p>
       Our technology experts join our clients' in-house engineering teams, increasing productivity and sharing their expertise.
     </p>
-    <ArrowLink @href="/services/team-augmentation">
+    <ArrowLink @href="/services/team-augmentation/">
       Learn More
     </ArrowLink>
     <h3>
@@ -60,12 +74,12 @@
     <p>
       We tutor product teams, raising their experience and confidence levels and laying the foundation for long term success.
     </p>
-    <ArrowLink @href="/services/tutoring">
+    <ArrowLink @href="/services/tutoring/">
       Learn More
     </ArrowLink>
   </div>
   <aside class="layout.side">
-    <CardUpcomingEvents />
+    <CardEmberSponsors />
   </aside>
   <ShapeAcrossLeadingExperts />
   <WorkWithUs />

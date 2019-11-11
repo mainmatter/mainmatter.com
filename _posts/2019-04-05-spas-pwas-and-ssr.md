@@ -1,10 +1,13 @@
 ---
-title: "SPAs, PWAs and SSR"
-author: "Marco Otte-Witte"
+title: 'SPAs, PWAs and SSR'
+author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
 topic: javascript
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+description: 'Marco Otte-Witte dives deep into different approaches for building web apps like SPAs, PWAs, SSR and how they all can be combined for the best result.'
+og:
+  image: /assets/images/posts/2019-04-05-spas-pwas-and-ssr/og-image.png
 ---
 
 Single Page Apps, Progressive Web Apps and classic Server side rendered
@@ -49,7 +52,6 @@ feature-rich and shiny apps that are being built today, the first impression
 that users get is often this:
 
 ![Video of a loading JS app](/assets/images/posts/2019-03-16-spas-pwas-and-ssr/loading.gif)
-
 
 ## SPAs
 
@@ -114,16 +116,16 @@ that would be almost impossible to build with server side rendering, etc.) A
 better approach is to run the same single page app that is shipped to the
 browser on the server side as well as follows:
 
-* the server responds to `GET` requests for all routes the single page app
+- the server responds to `GET` requests for all routes the single page app
   supports
-* once a request comes in, the server constructs an application state from the
+- once a request comes in, the server constructs an application state from the
   request path and potentially additional data like a session cookie and
   injects that into the app
-* it then executes the app and renders the app's UI into a string, leveraging
+- it then executes the app and renders the app's UI into a string, leveraging
   libraries like [SimpleDOM](https://github.com/ember-fastboot/simple-dom) or
   [jsdom](https://github.com/jsdom/jsdom)
-* that string is then served as the response to the browser's initial request
-* the pre-rendered response still contains all `<script>` tags so that the
+- that string is then served as the response to the browser's initial request
+- the pre-rendered response still contains all `<script>` tags so that the
   browser would load and execute these scripts and start up the app in the
   browser as usual
 
@@ -166,11 +168,11 @@ requirement to use the app. Neither should it slow down delivery of the app. To
 make sure these requirements are met, it is important to make sure of two
 things:
 
-* The pre-rendering must run within a timeout so that if for some reason it
+- The pre-rendering must run within a timeout so that if for some reason it
   takes longer than x ms or whatever a reasonable threshold for a particular
   app might be, the server cancels the pre-renderer and instead serves the SPA
   the classic way (which is responding with the static, empty HTML file).
-* Likewise, errors in the pre-renderer should not be forwarded to the users and
+- Likewise, errors in the pre-renderer should not be forwarded to the users and
   thus block them from booting the app in the browser. Whenever the
   pre-renderer encounters an error, it should fall back to serving the app the
   classic SPA way just like if it runs into the timeout.

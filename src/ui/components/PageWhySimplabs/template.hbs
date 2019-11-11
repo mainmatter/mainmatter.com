@@ -1,8 +1,15 @@
 <div>
-  <Header @active="about" @label="Why simplabs" @title="Cutting edge solutions – From Idea to Release">
-    <p class="typography.lead">
-      We build cutting edge web apps for clients around the world. Our team of experts delivers everything from ideation to design and engineering, guiding our clients along the way.
-    </p>
+  <Header
+    @active="about"
+    @title="Why simplabs"
+    @documentTitle="Guiding our clients from idea to release | Why us"
+    @description="We gather the best experts in their fields wherever they are, delivering cutting edge web apps for our clients around the world, enabling their success."
+  >
+    <HeaderContent @label="Why simplabs" @headline="Cutting edge solutions – From Idea to Release">
+      <p class="typography.lead">
+        We build cutting edge web apps for clients around the world. Our team of experts delivers everything from ideation to design and engineering, guiding our clients along the way.
+      </p>
+    </HeaderContent>
   </Header>
   <div class="layout.main offset.after-21">
     <h2>
@@ -40,7 +47,7 @@
       We take an active role in the open source projects that we leverage for our clients. Our strong engagement with Open Source provides us with first hand knowledge and insights that our clients benefit from.
     </p>
   </div>
-  <ShapeAcross @background="#222" @src="/assets/images/photos/tutoring.jpg" />
+  <ShapeAcross @background="#222" @src="/assets/images/photos/tutoring.jpg" @key="acrossTutoring" />
   <div class="layout.main offset.after-21">
     <h2>
       Sharing
@@ -53,9 +60,13 @@
     </p>
   </div>
   <div class="layout.side offset-vertical offset.after-21">
-    <CardUpcomingEvents />
+    <Card @label="Conferences" @alt="EmberFest" @src="/assets/images/card/emberfest.svg">
+      <p>
+        We co-organize EmberFest, the European Community Ember Conference.
+      </p>
+    </Card>
   </div>
-  <div class="layout.side offset.after-16">
+  <div class="layout.side offset.after-21">
     <h3>
       Distributed together
     </h3>
@@ -63,7 +74,7 @@
       A distributed team allows gathering top talent regardless of location but face to face time is still invaluable. We frequently come together for team events and workshops and invite our clients to those as well.
     </p>
   </div>
-  <ShapeAcross @background="#222" @src="/assets/images/photos/oktoberfest.jpg" />
+  <ShapeAcross @background="#222" @src="/assets/images/photos/oktoberfest.jpg" @key="acrossOktoberfest" />
   <WorkWithUs />
   <Footer />
 </div>

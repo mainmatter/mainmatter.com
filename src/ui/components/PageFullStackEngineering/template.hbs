@@ -1,5 +1,12 @@
 <div>
-  <Header @active="services" @label="Services" @title="Full-Stack Engineering" />
+  <Header
+    @active="services"
+    @title="Full-Stack Engineering"
+    @documentTitle="Full-Stack Engineering | Services"
+    @description="Our expert team guides clients through the complete project from idea to release, managing everything from concept and design to engineering and operations."
+  >
+    <HeaderContent @label="Services" @headline="Full-Stack Engineering" />
+  </Header>
   <div class="layout.main offset.after-21">
     <h2>
       Ambitious software solutions – From Idea to Release
@@ -54,7 +61,7 @@
       <p>
         We maintain a lean process that supports the team rather than stand in its way. Find out more about how we work to deliver ambitious software solutions for our clients.
       </p>
-      <ArrowLink @href="/playbook">
+      <ArrowLink @href="/playbook/">
         Read our Playbook
       </ArrowLink>
     </Card>
@@ -64,7 +71,32 @@
     @only="generali,qonto,clark"
    />
 
-  <ShapeAcrossLeadingExperts />
+  <div class="layout.split-leading">
+    <h2>
+      <a href="/cases/timify/" data-internal>
+        Modern online appointment scheduling
+      </a>
+    </h2>
+  </div>
+  <div class="layout.split-trailing offset.after-5">
+    <p class="typography.lead">
+      Timify is an online appointment scheduling service that connects service providers with clients. When they decided it was time to re-engineer their existing product, they trusted us to set them up for future success.
+    </p>
+    <ArrowLink @href="/cases/timify/">
+      Read Case Study
+    </ArrowLink>
+  </div>
+  <ShapeBold
+    @backgroundA="#2A4058"
+    @backgroundB="#CB3B43"
+    @src="/assets/images/work/timify.png"
+    @logo="/assets/images/logos/timify.svg"
+    @logoAlt="Timify"
+    @logoLabel="Web App"
+    @reverse="true"
+    @key="boldTimify"
+   />
+
   <WorkWithUs />
   <Footer />
 </div>

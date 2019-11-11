@@ -1,6 +1,6 @@
 import Component, { tracked } from '@glimmer/component';
-import { getOwner } from '@glimmer/di';
 import Navigo from 'navigo';
+import HeadTags from '../../../utils/head-tags';
 
 const COOKIE_BANNER_DELAY: number = 100;
 
@@ -21,7 +21,6 @@ declare global {
 interface IRoutesMap {
   [route: string]: {
     component: string;
-    title: string;
     bundle: any;
     parentBundle: any;
   };
@@ -50,15 +49,10 @@ export default class Simplabs extends Component {
   @tracked
   private isCookieBannerVisible: boolean = false;
 
+  private headTags: HeadTags;
+
   constructor(options) {
     super(options);
-
-    this.appState = this.appState || {
-      isSSR: false,
-      origin: window.location.origin,
-      route: window.location.pathname,
-      routesMap: this._readRoutesMap(),
-    };
 
     this._setupRouting();
     this._bindInternalLinks();
@@ -86,10 +80,10 @@ export default class Simplabs extends Component {
     this.router = new Navigo(this.appState.origin);
 
     Object.keys(this.appState.routesMap).forEach(path => {
-      let { component, title = '', bundle, parentBundle } = (this.appState.routesMap as IRoutesMap)[path];
+      let { component, bundle, parentBundle } = (this.appState.routesMap as IRoutesMap)[path];
       let options: INavigoHooks = {
         after: () => {
-          this._setPageTitle(title);
+          this._setCanonicalUrl(path);
           if (!this.appState.isSSR) {
             window.scrollTo(0, 0);
           }
@@ -144,7 +138,7 @@ export default class Simplabs extends Component {
 
           if (link && link.dataset.internal !== undefined) {
             event.preventDefault();
-            this.router.navigate(target.getAttribute('href'));
+            this.router.navigate(link.getAttribute('href'));
           }
         }
       });
@@ -205,12 +199,35 @@ export default class Simplabs extends Component {
     this.document.body.appendChild(script);
   }
 
-  private _setPageTitle(title) {
-    if (this.appState.isSSR) {
-      this.document.title = formatPageTitle(title);
-    } else {
-      document.title = formatPageTitle(title);
+  private _setCanonicalUrl(path) {
+    // Ensure trailing slash
+    if (!path.endsWith('/')) {
+      path = `${path}/`;
     }
+
+    path = `https://simplabs.com${path}`;
+
+    this.headTags.write(
+      'meta',
+      {
+        property: 'og:url',
+      },
+      {
+        content: path,
+      },
+    );
+
+    // Canonical urls are required by search engines to define what represents
+    // the one true URL of a page, which should exclude query params, anchors, …
+    this.headTags.write(
+      'link',
+      {
+        rel: 'canonical',
+      },
+      {
+        href: path,
+      },
+    );
   }
 
   private _injectActiveComponentState() {
@@ -228,15 +245,6 @@ export default class Simplabs extends Component {
       }
     }
   }
-
-  private _readRoutesMap() {
-    let script: HTMLElement | null = document.querySelector('[data-shoebox-routes]');
-    if (script) {
-      return JSON.parse(script.innerText);
-    } else {
-      return {};
-    }
-  }
 }
 
 function trackPageView(route) {
@@ -244,10 +252,6 @@ function trackPageView(route) {
     window.ga('set', 'page', route);
     window.ga('send', 'pageview');
   }
-}
-
-function formatPageTitle(title) {
-  return `${title ? `${title} | ` : ''}simplabs`;
 }
 
 function findLinkParent(target) {

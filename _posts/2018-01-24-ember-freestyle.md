@@ -1,26 +1,26 @@
 ---
-title: "Using ember-freestyle as a component playground"
-author: "Tobias Bieniek"
+title: 'Using ember-freestyle as a component playground'
+author: 'Tobias Bieniek'
 github: Turbo87
 twitter: tobiasbieniek
-bio: "Senior Frontend Engineer, Ember CLI core team member"
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
+description: 'Tobias Bieniek gives an overview of how ember-freestyle can be used in Ember.js applications for building and testing components in isolation.'
 topic: ember
 ---
 
 A component playground is an application that you can use to test out and
 play around with your custom components in isolation from the rest of your
-project. In the React and Vue ecosystem [Storybook] is a quite popular project
+project. In the React and Vue ecosystem [Storybook][storybook] is a quite popular project
 that implements such a component playground as part of your app. In the Ember
 ecosystem we have the [`ember-freestyle`][ember-freestyle] addon that can be
 used for this purpose. This blog post will show you how to install
 `ember-freestyle` in your app and how to use it to build and test components
 in isolation.
 
-[Storybook]: https://storybook.js.org/
+[storybook]: https://storybook.js.org/
 [ember-freestyle]: http://ember-freestyle.com/
 
 <!--break-->
-
 
 ## Component Playgrounds
 
@@ -45,7 +45,6 @@ I recommend reading this great blog post ["UI component explorers — your n
 by Dominic Nguyen that explains the benefits very well.
 
 [ui-component-explorers]: https://blog.hichroma.com/the-crucial-tool-for-modern-frontend-engineers-fb849b06187a
-
 
 ## Installing `ember-freestyle`
 
@@ -131,8 +130,8 @@ module.exports = function(defaults) {
 
   let app = new EmberApp(defaults, {
     addons: {
-      blacklist: pluginsToBlacklist
-    }
+      blacklist: pluginsToBlacklist,
+    },
   });
 
   return app.toTree();
@@ -189,7 +188,6 @@ production. While we could put in some effort to remove those too the situation
 is good enough and we can finally focus on putting content into our new
 component playground! 🎉
 
-
 ## Using `ember-freestyle`
 
 The good news is that **using** `ember-freestyle` is much easier than setting
@@ -215,7 +213,7 @@ In addition to that we'll add some styles for this button to our
 .styled-button {
   border: 1px solid #eee;
   border-radius: 3px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   cursor: pointer;
   font-size: 15px;
   padding: 3px 10px;
@@ -259,7 +257,7 @@ playground. In a follow-up post we will soon discuss how to extract subsections
 into components and how to automatically discover and inject them into the main
 template.
 
-Finally I would like to thank [Chris LoPresto] and the other contributors for
+Finally I would like to thank [Chris LoPresto][chris-lopresto] and the other contributors for
 working on `ember-freestyle` and would encourage you to give it a try!
 
-[Chris LoPresto]: https://github.com/chrislopresto
+[chris-lopresto]: https://github.com/chrislopresto

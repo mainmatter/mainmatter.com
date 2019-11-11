@@ -1,5 +1,12 @@
 <div>
-  <Header @active="services" @label="Services" @title="Tutoring" />
+  <Header
+    @active="services"
+    @title="Tutoring"
+    @documentTitle="Leveling up teams' confidence with Tutoring | Services"
+    @description="We tutor teams that approach new technologies, overcome long standing issues or struggle with delivering large scale projects on time and budget."
+  >
+    <HeaderContent @label="Services" @headline="Tutoring" />
+  </Header>
   <div class="layout.main offset.after-21">
     <h2 class="typography.h2">
       Raising confidence for increased productivity and quality
@@ -51,7 +58,7 @@
         <p>
           Elixir is the language of choice for scalable and stable applications.
         </p>
-        <ArrowLink @href="/expertise/elixir-phoenix">
+        <ArrowLink @href="/expertise/elixir-phoenix/">
           Learn more
         </ArrowLink>
       </h3>

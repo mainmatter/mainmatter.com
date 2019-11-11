@@ -1,9 +1,10 @@
 ---
-title: "(better) Authentication in ember.js"
-author: "Marco Otte-Witte"
+title: '(better) Authentication in ember.js'
+author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+description: 'Marco Otte-Witte introduces an update to the mechanism for implementing a session, authentication and authorization in Ember.js applications.'
 topic: ember
 ---
 
@@ -15,7 +16,7 @@ When we started our first [ember.js](http://emberjs.com) project in June 2013, o
 
 _I’m using the latest (as of early August 2013) [ember.js](http://emberjs.com) and [handlebars](http://handlebarsjs.com) releases in this example._
 
-_**Update:**I changed the section on actually using the token to use [$.ajaxPrefilter](http://api.jquery.com/jQuery.ajaxPrefilter/) instead of a custom ember-data adapter_
+_**Update:**I changed the section on actually using the token to use [\$.ajaxPrefilter](http://api.jquery.com/jQuery.ajaxPrefilter/) instead of a custom ember-data adapter_
 
 ## The basics
 
@@ -27,6 +28,7 @@ This data is stored in a _"session"_ object on the client side (while technicall
 
 The _"session"_ object on the client side is a **plain `Ember.Object` that simply keeps the data that is received from the server** on session creation. It also stores the authentication token and the user’s account ID in cookies so the user doesn’t have to login again after a page reload (As Ed points out in a comment on the old post it’s a security issue to store the authentication token in a cookie without the user’s permission - I think using a session cookie like I do should be ok as it’s deleted when the browser window is closed. Of course you could also use sth. like localStorage like Marc points out. I’m creating this object in an initializer so I can be sure it exists (of course it might be empty) when the application starts.
 
+<!-- prettier-ignore -->
 ```js
 Ember.Application.initializer({
   name: 'session',
@@ -88,6 +90,7 @@ end
 
 As described above, the login API is a simple `/session` route on the server side that accepts the user’s login and password and **responds with either HTTP status 401 when the credentials are invalid or a session JSON when the authentication was successful**. On the client side we have routes for creating and destroying the session:
 
+<!-- prettier-ignore -->
 ```js
 App.Router.map(function() {
   this.resource('session', function() {
@@ -99,6 +102,7 @@ App.Router.map(function() {
 
 The `SessionNewController` only needs one action `login` that sends the entered credentials and acts according to the server’s response - if the server responds successfully **it reads the session data from the response and updates the `App.Session` object accordingly**. It also checks whether there is an attempted transition that was intercepted due to missing authentication and retries that if it exists (This is the case where the user tries to access a certain page without having authenticated, is redirected to the login form, logs in and is redirected again to the initially requested page).
 
+<!-- prettier-ignore -->
 ```js
 App.SessionNewController = Ember.Controller.extend({
   login: function() {
@@ -107,9 +111,9 @@ App.SessionNewController = Ember.Controller.extend({
     if (!Ember.isEmpty(data.loginOrEmail) && !Ember.isEmpty(data.password)) {
       var postData = { session: { login_or_email: data.loginOrEmail, password: data.password } };
       $.post('/session', postData).done(function(response) {
-        var sessionData = (response.session || {})
+        var sessionData = response.session || {};
         App.Session.setProperties({
-          authToken:     sessionData.auth_token,
+          authToken: sessionData.auth_token,
           authAccountId: sessionData.account_id
         });
         var attemptedTransition = App.Session.get('attemptedTransition');
@@ -141,16 +145,17 @@ The template is just a simple form (actual elements, classes etc. of course depe
 
 Logging out is actually pretty simple as well. The **client just sends a `DELETE` to the same `/session` route** that makes the server reset the authentication token in the database so that the token on the client side is invalidated. The client also deletes the saved session information in `App.Session` so there’s no stale data.
 
+<!-- prettier-ignore -->
 ```js
 App.SessionDestroyController = Ember.Controller.extend({
   logout: function() {
     var self = this;
     $.ajax({
-      url:  '/session',
+      url: '/session',
       type: 'DELETE'
     }).always(function(response) {
       App.Session.setProperties({
-        authToken:     '',
+        authToken: '',
         authAccountId: ''
       });
       self.transitionToRoute('session.new');
@@ -161,6 +166,7 @@ App.SessionDestroyController = Ember.Controller.extend({
 
 As this action should be triggered as soon as the user enters the `/#/session/destroy` route, we have a simple route implementation that **triggers the action upon route activation**:
 
+<!-- prettier-ignore -->
 ```js
 App.SessionDestroyRoute = Ember.Route.extend({
   renderTemplate: function(controller, model) {
@@ -173,6 +179,7 @@ App.SessionDestroyRoute = Ember.Route.extend({
 
 To easily enable authentication for any route in the application, I created an **`App.AuthenticatedRoute` that extends `Ember.Route`** and that all routes that need to enforce user authentication can extend again:
 
+<!-- prettier-ignore -->
 ```js
 App.AuthenticatedRoute = Ember.Route.extend({
   redirectToLogin: function(transition) {

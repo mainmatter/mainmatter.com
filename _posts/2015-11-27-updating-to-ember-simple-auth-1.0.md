@@ -1,9 +1,10 @@
 ---
-title: "Updating to Ember Simple Auth 1.0"
-author: "Marco Otte-Witte"
+title: 'Updating to Ember Simple Auth 1.0'
+author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+description: 'Marco Otte-Witte gives an update on the upcoming Ember Simple Auth 1.0 release and shows how to use it in Ember CLI applications.'
 topic: ember
 ---
 
@@ -49,7 +50,7 @@ With Ember Simple Auth 1.0.0 the **session is no longer automatically injected i
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  session: Ember.inject.service()
+  session: Ember.inject.service(),
 });
 ```
 
@@ -62,7 +63,7 @@ Ember Simple Auth 1.0.0 does not automatically merge all the predefined authenti
 import OAuth2PasswordGrant from 'ember-simple-auth/authenticators/oauth2-password-grant';
 
 export default OAuth2PasswordGrant.extend({
-  serverTokenRevocationEndpoint: '/revoke'
+  serverTokenRevocationEndpoint: '/revoke',
 });
 ```
 
@@ -100,7 +101,7 @@ import DS from 'ember-data';
 import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
 export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
-  authorizer: 'authorizer:application'
+  authorizer: 'authorizer:application',
 });
 ```
 
@@ -125,10 +126,10 @@ export default SessionService.extend({
     const accountId = this.get('data.authenticated.account_id');
     if (!Ember.isEmpty(accountId)) {
       return DS.PromiseObject.create({
-        promise: this.get('store').find('account', accountId)
+        promise: this.get('store').find('account', accountId),
       });
     }
-  })
+  }),
 });
 ```
 
@@ -148,10 +149,10 @@ export default Ember.Service.extend({
     const accountId = this.get('session.data.authenticated.account_id');
     if (!Ember.isEmpty(accountId)) {
       return DS.PromiseObject.create({
-        promise: this.get('store').find('account', accountId)
+        promise: this.get('store').find('account', accountId),
       });
     }
-  })
+  }),
 });
 ```
 
@@ -168,7 +169,7 @@ Previous versions of Ember Simple Auth allowed the session store to be configure
 import CookieStore from 'ember-simple-auth/session-stores/cookie';
 
 export default CookieStore.extend({
-  cookieName: 'my_custom_cookie_name'
+  cookieName: 'my_custom_cookie_name',
 });
 ```
 

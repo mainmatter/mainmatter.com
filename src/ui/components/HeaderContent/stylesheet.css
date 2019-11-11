@@ -1,0 +1,22 @@
+@block typography from "../../styles/blocks/typography.block.css";
+
+:scope {
+  block-name: HeaderContent;
+
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+@media (max-width: 887px) {
+  :scope {
+    grid-column: 2/-2;
+  }
+}
+
+@media (min-width: 888px) {
+  :scope {
+    margin-top: 21rem;
+    margin-bottom: 21rem;
+  }
+}

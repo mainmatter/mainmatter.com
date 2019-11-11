@@ -1,39 +1,42 @@
 <div>
-  <Header @active="blog" @flex-content="true">
-    <div class="blog-post.badge">
-      <div class="blog-post.badge-image">
-        <img class="fluid-image.image" src="/assets/images/authors/{{twitter}}.jpg" alt="photo of {{name}}" />
+  <LazyPreloadTrigger @bundle="blog" />
+  <Header
+    @active="blog"
+    @title="Posts by {{name}}" @documentTitle="Posts by {{name}} | Blog"
+    @description="Our teams shares what they learn in our blog, covering topics around tech, design/UX and the engineering process. Find all posts by {{name}} here."
+  >
+    <div class="blog-post.header">
+      <div class="blog-post.headline">
+        <h1 class="typography.display">
+          <small class="typography.small">
+            Blog<span class="typography.hidden">:</span>
+          </small>
+          Posts by {{name}}
+        </h1>
       </div>
-      <div class="blog-post.badge-content">
-        <a href="/blog/author/{{twitter}}" data-internal>
-          {{name}}
-        </a>
-        <p>
-          {{bio}}
-        </p>
-        <a href="https://twitter.com/{{author.twitter}}" target="_blank" rel="noopener">
-          @
-          {{twitter}}
-        </a>
+      <div class="blog-post.badge">
+        <div class="blog-post.badge-image">
+          <img class="fluid-image.image" src="/assets/images/authors/{{twitter}}.jpg" alt="" />
+        </div>
+        <div class="blog-post.badge-content">
+          <a href="/blog/author/{{twitter}}" data-internal>
+            {{name}}
+          </a>
+          <p>
+            {{bio}}
+          </p>
+          <a href="https://twitter.com/{{author.twitter}}" target="_blank" rel="noopener">
+            @{{twitter}}
+          </a>
+        </div>
       </div>
-    </div>
-    <div>
-      <p class="typography.small">
-        Blog
-      </p>
-      <h1 class="typography.display">
-        Posts by
-        {{name}}
-      </h1>
-      {{{excerpt}}}
     </div>
   </Header>
-  <div class="layout.main offset.after-21">
+  <div class="blog-author.main offset.after-21">
     {{#each posts}}
-      <article>
+      <article class="offset.after-16">
         <span class="typography.tag">
-          #
-          {{topic}}
+          #{{topic}}
         </span>
         <div class="blog-post.excerpt">
           <h3>
@@ -42,13 +45,15 @@
             </a>
           </h3>
           {{{excerpt}}}
+        </div>
+        <footer>
           <a href="/blog/author/{{author.twitter}}" data-internal>
             {{author.name}}
           </a>
           <p class="typography.small">
             {{date}}
           </p>
-        </div>
+        </footer>
       </article>
     {{/each}}
   </div>

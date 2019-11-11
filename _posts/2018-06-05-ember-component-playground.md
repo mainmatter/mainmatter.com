@@ -1,9 +1,10 @@
 ---
-title: "Autodiscovery for the Ember.js component playground"
-author: "Tobias Bieniek"
+title: 'Autodiscovery for the Ember.js component playground'
+author: 'Tobias Bieniek'
 github: Turbo87
 twitter: tobiasbieniek
-bio: "Senior Frontend Engineer, Ember CLI core team member"
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
+description: 'Tobias Bieniek introduces a mechanism for automatically discovering new components in Ember.js applications and showing them in an ember-freestyle playground.'
 topic: ember
 ---
 
@@ -16,7 +17,6 @@ discovering new components and showing them in the playground.
 [ember-freestyle]: http://ember-freestyle.com/
 
 <!--break-->
-
 
 ## Status Quo
 
@@ -49,7 +49,7 @@ other template in Ember.js we can tackle that problem by extracting components.
 
 In this case we can create a
 `lib/freestyle/app/templates/components/usage/styled-button.hbs` file that
-looks like this:  
+looks like this:
 
 ```handlebars
 {{#freestyle-usage 'styled-button-example-1'}}
@@ -76,7 +76,6 @@ the situation has gotten a lot more manageable.
 But there is always a way to improve the current situation so let's play around
 a little...
 
-
 ## Autodiscovery
 
 What if we could ask Ember what "usage components" it knows about and then
@@ -94,9 +93,10 @@ components". We can do so by using the `.filter()` method and checking for the
 right prefix:
 
 ```js
-let usageComponents = Object.keys(require.entries)
-  .filter(path => path.indexOf('myapp/templates/components/usage/') === 0);
-```  
+let usageComponents = Object.keys(require.entries).filter(
+  path => path.indexOf('myapp/templates/components/usage/') === 0,
+);
+```
 
 This should produce a list that looks roughly like this:
 
@@ -105,7 +105,7 @@ This should produce a list that looks roughly like this:
   'myapp/templates/components/usage/styled-button',
   'myapp/templates/components/usage/country-flag',
   'myapp/templates/components/usage/form-input',
-]
+];
 ```
 
 To be able to use those as component names in our template we will have to do a
@@ -162,7 +162,6 @@ block to iterate over it:
 If we visit the `/freestyle` route now, we should see a list of all our
 "usage components" that Ember.js knows about and usage examples for all of
 them.
-
 
 ## Summary
 

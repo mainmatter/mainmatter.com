@@ -1,10 +1,11 @@
 ---
-title: "simplabs monthly update - March 2019"
-author: "Mark Coleman"
+title: 'simplabs monthly update - March 2019'
+author: 'Mark Coleman'
 github: mrmrcoleman
 twitter: mrmrcoleman
 topic: simplabs
-bio: "Communications and Community Outreach Specialist"
+bio: 'Communications and Community Outreach Specialist'
+description: 'Mark Coleman shares simplabs'' monthly update for March 2019, covering EmberConf 2019, the release of "Ember.js: The Documentary" and various upcoming events.'
 ---
 
 Welcome to our new monthly update. Each month we'll cover the events and activities that have been happening at simplabs. Enjoy.
@@ -20,7 +21,6 @@ We're very excited to announce that [Ricardo Mendes](https://twitter.com/locks) 
 Before Ricardo joined the team we were pleased to sponsor him through the Ember.js sponsorship program. Chris Manson spent his 20% time pairing with Ricardo on [Guidemaker](https://github.com/empress/guidemaker) to add features to help the Ember Octane documentation process and released a 1.0 of Guidemaker.
 
 Our CEO Marco says _"We are very excited to welcome Ricardo Mendes to simplabs. Being a long-term member of the Ember Core Team, we have been in touch with him for years already. His deep knowledge and teaching ability will be hugely beneficial for our clients."_
-
 
 #### EmberConf 2019
 
@@ -51,7 +51,6 @@ _We're always interested in new speakers for the various meetups we're involved 
 simplabs are involved in two upcoming meetups this month. On March 28th [Chris Manson](https://www.twitter.com/real_ate) will be reviving the Ember.js Dublin meetup with an Ember Octane Workshop at the [Intercom](https://twitter.com/intercom) offices. Register [here](https://www.meetup.com/emberjsdublin/events/259356879/).
 
 On the same day in Munich [Marco](https://twitter.com/marcoow) is hosting the Elixir Munich meetup with talks from [Peer Stritzinger](https://twitter.com/peerstr), [Philipp Neugebauer](https://twitter.com/ppneugebauer) and Sami Buzz. Sign up on the meetup page [here](https://www.meetup.com/Elixir-Munich/events/259526263/).
-
 
 #### Past Events
 

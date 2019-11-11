@@ -1,19 +1,20 @@
 ---
 title: Using better element selectors in Ember.js tests
-author: "Marco Otte-Witte"
+author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+description: 'Marco Otte-Witte announces the release of ember-test-selectors, an addon that enables better element selectors in Ember.js tests.'
 topic: ember
 ---
 
-We just released [ember-test-selectors](https://github.com/simplabs/ember-test-selectors), an __Ember Addon that enables better element selectors in Ember.js tests__. It removes all data attributes starting with `data-test-` from the application's templates in the `production` environment so that these attributes can be used to select elements with in acceptance and integration tests without polluting the markup that is delivered to the end user.
+We just released [ember-test-selectors](https://github.com/simplabs/ember-test-selectors), an **Ember Addon that enables better element selectors in Ember.js tests**. It removes all data attributes starting with `data-test-` from the application's templates in the `production` environment so that these attributes can be used to select elements with in acceptance and integration tests without polluting the markup that is delivered to the end user.
 
 <!--break-->
 
 ## Why even use `data` attributes as test selectors?
 
-Integration and acceptance tests usually __interact with and assert on the presence of certain elements__ in the markup that an application renders. These elements are identified using CSS selectors. Most projects use one of three approaches for CSS selectors in tests:
+Integration and acceptance tests usually **interact with and assert on the presence of certain elements** in the markup that an application renders. These elements are identified using CSS selectors. Most projects use one of three approaches for CSS selectors in tests:
 
 ### Selectors based on HTML structure
 
@@ -54,7 +55,7 @@ This approach uses HTML 5 `data` attributes to select elements. For the followin
 </article>
 ```
 
-one would select the post's title with the selector `*[data-test-selector="post-title"]` (which selects any element with a `data-test-selector` attribute that has the value `"post-title"`). While the selector is arguably a bit longer this approach __clearly separates the test selectors from the rest of the markup and is resilient to change__ as the attribute can be applied to any element rendering the post's title, regardless of the HTML structure, CSS classes etc. Also it easily allows encoding more data in the markup like e.g. the post's id:
+one would select the post's title with the selector `*[data-test-selector="post-title"]` (which selects any element with a `data-test-selector` attribute that has the value `"post-title"`). While the selector is arguably a bit longer this approach **clearly separates the test selectors from the rest of the markup and is resilient to change** as the attribute can be applied to any element rendering the post's title, regardless of the HTML structure, CSS classes etc. Also it easily allows encoding more data in the markup like e.g. the post's id:
 
 ```hbs
 <article>
@@ -63,7 +64,7 @@ one would select the post's title with the selector `*[data-test-selector="post-
 </article>
 ```
 
-`ember-test-selectors` makes sure to remove all these `data` attributes in the `production` environment so that __users will have perfectly clean HTML delivered__:
+`ember-test-selectors` makes sure to remove all these `data` attributes in the `production` environment so that **users will have perfectly clean HTML delivered**:
 
 ```html
 <article>
@@ -76,5 +77,5 @@ one would select the post's title with the selector `*[data-test-selector="post-
 
 We have some future plans for ember-test-selectors to make working with data attributes as test selectors even more convenient:
 
-* custom test helpers that find elements by data attributes so that you don't have to write the quite long selectors yourselves; probably sth. like `findViaTestSelector('selector', 'post-title')`, [https://github.com/simplabs/ember-test-selectors/issues/8](https://github.com/simplabs/ember-test-selectors/issues/8)
-* template helpers that generate data attributes for elements, e.g. `<h1 {{test-selector="post-title"}}>{{post.title}}</h1>` which would result in `<h1 data-test-selector="post-title">{{post.title}}</h1>` or `<div {{test-selector post}}>…</div>` which would result in `<div data-test-selector="post-1">…</div>`, [https://github.com/simplabs/ember-test-selectors/issues/9](https://github.com/simplabs/ember-test-selectors/issues/9)
+- custom test helpers that find elements by data attributes so that you don't have to write the quite long selectors yourselves; probably sth. like `findViaTestSelector('selector', 'post-title')`, [https://github.com/simplabs/ember-test-selectors/issues/8](https://github.com/simplabs/ember-test-selectors/issues/8)
+- template helpers that generate data attributes for elements, e.g. `<h1 {{test-selector="post-title"}}>{{post.title}}</h1>` which would result in `<h1 data-test-selector="post-title">{{post.title}}</h1>` or `<div {{test-selector post}}>…</div>` which would result in `<div data-test-selector="post-1">…</div>`, [https://github.com/simplabs/ember-test-selectors/issues/9](https://github.com/simplabs/ember-test-selectors/issues/9)

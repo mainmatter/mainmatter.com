@@ -1,9 +1,10 @@
 ---
 title: Out-of-the-box FastBoot support in Ember Simple Auth
-author: "Marco Otte-Witte"
+author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+description: 'Marco Otte-Witte announces out-of-the-box support for FastBoot in Ember Simple Auth and explains how it works using ember-cookies.'
 topic: ember
 ---
 
@@ -23,6 +24,7 @@ The main challenge with enabling the cookie session store to run both in the bro
 
 ember-cookies exposes a cookies service with <a href="https://github.com/simplabs/ember-cookies#api">`read`, `write` and `clear` methods</a>:
 
+<!-- prettier-ignore -->
 ```js
 // app/controllers/application.js
 import Ember from 'ember';
@@ -36,7 +38,7 @@ export default Ember.Controller.extend({
   beforeModel() {
     let locale = this.get('cookies').read('locale');
     this.get('intl').set('locale', locale);
-  }
+  },
 });
 ```
 
@@ -57,14 +59,14 @@ If you're interested in learning more about the underlying concepts check out th
 
 Out-of-the-box support for FastBoot is likely the most prominent addition in this release but there are <strong>quite some other changes</strong> as well, including:
 
-* The default cookie names that the cookie session store uses are now compliant with RFC 2616, see <a href="https://github.com/simplabs/ember-simple-auth/pull/978">#978</a>
-* Server responses are now validated in authenticators, preventing successful logins when required data is actually missing, see <a href="https://github.com/simplabs/ember-simple-auth/pull/957">#957</a>
-* The OAuth 2.0 Password Grant authenticator can now send custom headers along with authentication requests, see <a href="https://github.com/simplabs/ember-simple-auth/pull/1018">#1018</a>
+- The default cookie names that the cookie session store uses are now compliant with RFC 2616, see <a href="https://github.com/simplabs/ember-simple-auth/pull/978">#978</a>
+- Server responses are now validated in authenticators, preventing successful logins when required data is actually missing, see <a href="https://github.com/simplabs/ember-simple-auth/pull/957">#957</a>
+- The OAuth 2.0 Password Grant authenticator can now send custom headers along with authentication requests, see <a href="https://github.com/simplabs/ember-simple-auth/pull/1018">#1018</a>
 
 In addition to these changes, fixed issues include:
 
-* Routes like the login route can now be configured inline in routes using the respective mixins as opposed to `config/environment.js`, see <a href="https://github.com/simplabs/ember-simple-auth/pull/1041">#1041</a>
-* The cookie session store will now rewrite its cookies when any of its configurable properties (like cookie name) change, see <a href="https://github.com/simplabs/ember-simple-auth/pull/1056">#1056</a>
+- Routes like the login route can now be configured inline in routes using the respective mixins as opposed to `config/environment.js`, see <a href="https://github.com/simplabs/ember-simple-auth/pull/1041">#1041</a>
+- The cookie session store will now rewrite its cookies when any of its configurable properties (like cookie name) change, see <a href="https://github.com/simplabs/ember-simple-auth/pull/1056">#1056</a>
 
 ## A Community Effort
 

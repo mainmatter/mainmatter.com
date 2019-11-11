@@ -1,6 +1,6 @@
 ---
-title: "The Next Generation of Testing"
-image: "/assets/images/talks/2018-03-13-emberconf-2018/the-next-generation-of-testing.png"
+title: 'The Next Generation of Testing'
+image: '/assets/images/talks/2018-03-13-emberconf-2018/the-next-generation-of-testing.png'
 url: https://www.youtube.com/watch?v=8D-O4cSteRk
 ---
 

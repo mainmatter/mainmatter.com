@@ -1,0 +1,108 @@
+<div>
+  <LazyPreloadTrigger @bundle="blog" />
+  <HeadTag @name='meta' @keys=\{{hash property="og:image"}} @values=\{{hash content="https://simplabs.com/assets/images/ogimage-blog.png"}} />
+  <script type="application/ld+json">
+    {
+    "@type": "Blog",
+    "name": "simplabs Blog",
+    "url": "https://simplabs.com/blog/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "simplabs",
+      "url": "https://simplabs.com",
+      "legalName": "simplabs GmbH",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://simplabs.com/assets/images/logos/simplabs.png"
+      }
+    },
+    "copyrightHolder": {
+      "@type": "Organization",
+      "name": "simplabs",
+      "url": "https://simplabs.com",
+      "legalName": "simplabs GmbH",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://simplabs.com/assets/images/logos/simplabs.png"
+      }
+    },
+    "copyrightYear": 2013,
+    "@context": "http://schema.org"
+  }
+  </script>
+  <Header
+    @active="blog"
+    @title="Blog"
+    @documentTitle="Regular tech insights and updates from our team | Blog"
+    @description="Stay on top of what's happening with our Blog. We mostly write about topics like Ember.js, Elixir, Phoenix and Progressive Web Apps as well as design and UX."
+  >
+    <HeaderContent @headline="Blog" />
+  </Header>
+  {{#if latest}}
+    <ShapeBlog>
+      <article>
+        <span class="typography.tag">
+          #{{latest.topic}}
+        </span>
+        <h2 class="offset.before-none">
+          <a href="{{latest.path}}" data-internal>
+            {{latest.title}}
+          </a>
+        </h2>
+        <div class="typography.lead offset.after-3">
+          {{{latest.excerpt}}}
+        </div>
+        <a href="/blog/author/{{latest.author.twitter}}/" data-internal>
+          {{latest.author.name}}
+        </a>
+        <p class="typography.small">
+          {{latest.date}}
+        </p>
+        <ArrowLink @href="{{latest.path}}">
+          Read Post
+        </ArrowLink>
+      </article>
+    </ShapeBlog>
+  {{/if}}
+  <section class="layout.main offset.after-21">
+    {{#each posts}}
+      <article class="offset.after-12">
+        <span class="typography.tag">
+          #
+          {{topic}}
+        </span>
+        <div class="blog-post.excerpt">
+          <h3>
+            <a href="{{path}}" data-internal>
+              {{title}}
+            </a>
+          </h3>
+          {{{excerpt}}}
+        </div>
+        <a href="/blog/author/{{author.twitter}}" data-internal>
+          {{author.name}}
+        </a>
+        <p class="typography.small">
+          {{date}}
+        </p>
+      </article>
+    {{/each}}
+    <nav aria-label="pagination" class="pagination">
+      {{#if nextPage}}
+        <ArrowLink @href="{{nextPage}}" @reverse="true">
+          Older
+        </ArrowLink>
+      {{/if}}
+      {{#if previousPage}}
+        <ArrowLink @href="{{previousPage}}">
+          Newer
+        </ArrowLink>
+      {{/if}}
+    </nav>
+  </section>
+  <aside class="layout.side offset.after-21">
+    <CardTalks />
+    <CardEmberSponsors />
+  </aside>
+  <Footer />
+</div>

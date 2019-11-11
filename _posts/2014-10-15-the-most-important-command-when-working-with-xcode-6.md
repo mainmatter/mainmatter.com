@@ -1,9 +1,10 @@
 ---
-title: "The most important command when working with XCode 6"
-author: "Marco Otte-Witte"
+title: 'The most important command when working with XCode 6'
+author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+description: "Marco Otte-Witte shows how to disable XCode 6's crash reporter dialog for a less annoying development experience."
 topic: misc
 ---
 

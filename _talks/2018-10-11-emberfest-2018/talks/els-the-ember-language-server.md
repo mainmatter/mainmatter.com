@@ -1,6 +1,6 @@
 ---
-title: "ELS - the Ember Language Server"
-image: "/assets/images/talks/2018-10-11-emberfest-2018/els-the-ember-language-server.png"
+title: 'ELS - the Ember Language Server'
+image: '/assets/images/talks/2018-10-11-emberfest-2018/els-the-ember-language-server.png'
 url: https://www.youtube.com/watch?v=t6ZQtP5rW2o
 ---
 

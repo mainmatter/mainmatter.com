@@ -1,9 +1,10 @@
 ---
 title: Handling Webhooks in Phoenix
-author: "Niklas Long"
+author: 'Niklas Long'
 github: niklaslong
 twitter: niklas_long
-bio: "Backend Engineer, author of Breethe API"
+bio: 'Backend Engineer, author of Breethe API'
+description: 'Niklas Long introduces an effective and simple approach for handling incoming webhook requests in Phoenix applications with advanced routing.'
 topic: elixir
 ---
 
@@ -23,9 +24,9 @@ I.e.,
 
 Let's restate the problem:
 
-* all requests are being sent to the same webhook callback url
-* there are many different possible request payloads
-* application requires different computation depending on payload
+- all requests are being sent to the same webhook callback url
+- there are many different possible request payloads
+- application requires different computation depending on payload
 
 Let's say we're receiving webhooks which contain an `event` key in the request body. It describes the event which triggered the webhook and we can use it to determine what code we are going to run.
 
@@ -127,8 +128,8 @@ The core components of a Phoenix application are plugs. This includes endpoints,
 
 Let's examine the code above, you'll notice there are two functions already defined:
 
-* `init/1` which initializes any arguments or options to be passed to `call/2` (executed at compile time)
-* `call/2` which transforms the connection (it's actually a simple function plug and is executed at run time)
+- `init/1` which initializes any arguments or options to be passed to `call/2` (executed at compile time)
+- `call/2` which transforms the connection (it's actually a simple function plug and is executed at run time)
 
 Both of these need to be implemented in a module plug. Let's modify `call/2` to match the `addition` event in the request payload and change the request path to the route we defined for addition:
 
@@ -154,9 +155,9 @@ end
 
 This strategy isn't great, however. We are placing code in the endpoint, which will be executed no matter what the request path is. Furthermore, the endpoint is only supposed to (from the [docs](https://hexdocs.pm/phoenix/Phoenix.Endpoint.html#content)):
 
-* provide a wrapper for starting and stopping the endpoint as part of a supervision tree
-* define an initial plug pipeline for requests to pass through
-* host web specific configuration for your application
+- provide a wrapper for starting and stopping the endpoint as part of a supervision tree
+- define an initial plug pipeline for requests to pass through
+- host web specific configuration for your application
 
 Interfering with the request to map it to a route at this point would be unidiomatic Phoenix. It would also make the app slower, and harder to maintain and debug.
 

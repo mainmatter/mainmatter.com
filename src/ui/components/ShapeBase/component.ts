@@ -1,14 +1,10 @@
 import Component from '@glimmer/component';
 
 export default class ShapeBase extends Component {
-  public shapeId = null;
+  public key: string;
 
-  constructor(options) {
-    super(options);
-
-    this.shapeId = Math.random()
-      .toString(36)
-      .substr(2);
+  get shapeId() {
+    return `${this.key}-shape`;
   }
 
   get shapeStyle() {

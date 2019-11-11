@@ -1,9 +1,14 @@
 import ShapeBase from '../ShapeBase/component';
 
 export default class ShapeFeature extends ShapeBase {
-  public maskId = Math.random()
-    .toString(36)
-    .substr(2);
+  public maskId = '';
+
+  constructor(options) {
+    super(options);
+
+    this.key = this.args.key || 'feature';
+    this.maskId = `${this.key}-mask`;
+  }
 
   get backgroundStyle() {
     let style = '';

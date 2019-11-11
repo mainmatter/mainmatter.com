@@ -1,13 +1,15 @@
 <div>
   <Header
     @active="work"
-    @label="Work"
-    @title="A proven track record of successful projects for international clients."
-   />
-
+    @title="Work"
+    @documentTitle="Successful projects for international clients | Work"
+    @description="simplabs has a proven track record of successful projects for international clients. We have worked with companies from small startups to big enterprises."
+  >
+    <HeaderContent @label="Work" @headline="A proven track record of successful projects for international clients." />
+  </Header>
   <div class="layout.split-leading">
     <h2>
-      <a href="/cases/trainline" data-internal>
+      <a href="/cases/trainline/" data-internal>
         Leveraging Trainline's full market potential
       </a>
     </h2>
@@ -16,7 +18,7 @@
     <p class="typography.lead">
       Trainline is Europe’s leading independent rail and coach platform. We worked with them to deliver a high-performance mobile web app, along with an improved engineering process, enabling Trainline to achieve their business goals for years to come.
     </p>
-    <ArrowLink @href="/cases/trainline">
+    <ArrowLink @href="/cases/trainline/">
       Read Case Study
     </ArrowLink>
   </div>
@@ -27,12 +29,13 @@
     @logo="/assets/images/logos/trainline.svg"
     @logoAlt="Trainline"
     @logoLabel="Mobile Web App"
+    @key="boldTrainline"
    />
 
   <ClientsGrid @title="Meet our clients" />
   <div class="layout.split-leading">
     <h2>
-      <a href="/cases/trainline" data-internal>
+      <a href="/cases/timify/" data-internal>
         Modern online appointment scheduling
       </a>
     </h2>
@@ -41,7 +44,7 @@
     <p class="typography.lead">
       Timify is an online appointment scheduling service that connects service providers with clients. When they decided it was time to re-engineer their existing product, they trusted us to set them up for future success.
     </p>
-    <ArrowLink @href="/cases/timify">
+    <ArrowLink @href="/cases/timify/">
       Read Case Study
     </ArrowLink>
   </div>
@@ -53,6 +56,7 @@
     @logoAlt="Timify"
     @logoLabel="Web App"
     @reverse="true"
+    @key="boldTimify"
    />
 
   <div class="layout.main offset.after-21">
@@ -64,7 +68,7 @@
         <h3 class="typography.h4">
           A modern UI for an open-source router firmware
         </h3>
-        <ArrowLink @href="/cases/ddwrt">
+        <ArrowLink @href="/cases/ddwrt/">
           Read Case Study
         </ArrowLink>
       </li>
@@ -72,7 +76,7 @@
         <h3 class="typography.h4 more-headline">
           An online travel magazine for global citizens
         </h3>
-        <ArrowLink @href="/cases/expedition">
+        <ArrowLink @href="/cases/expedition/">
           Read Case Study
         </ArrowLink>
       </li>

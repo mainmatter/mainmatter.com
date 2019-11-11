@@ -1,6 +1,6 @@
 ---
-title: "A Glimmer of Hope: Creating modern Web Components with Glimmer"
-image: "/assets/images/talks/2017-10-23-international-javascript-conference-2017/a-glimmer-of-hope-creating-modern-web-components-with-glimmer.png"
+title: 'A Glimmer of Hope: Creating modern Web Components with Glimmer'
+image: '/assets/images/talks/2017-10-23-international-javascript-conference-2017/a-glimmer-of-hope-creating-modern-web-components-with-glimmer.png'
 url: https://www.youtube.com/watch?v=E1EUG2UPZrY
 ---
 

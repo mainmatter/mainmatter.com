@@ -283,6 +283,15 @@ figure {
   margin-top: 3rem;
 }
 
+figure a {
+  display: block;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+}
+
 figcaption {
   display: block;
   font-size: 2rem;
@@ -291,6 +300,10 @@ figcaption {
 
 * + figcaption {
   margin-top: 1rem;
+}
+
+figcaption a {
+  display: unset;
 }
 
 img {
@@ -304,4 +317,35 @@ address {
 
 * + form {
   margin-top: 3rem;
+}
+
+code {
+  padding: 0.3rem 0.4rem;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  background: #f4f4f4;
+  border-radius: 0.15em;
+  font-size: 0.9em;
+}
+
+pre code {
+  padding: unset;
+  background: none;
+  font-size: inherit;
+}
+
+table {
+  min-width: 100%;
+  table-layout: fixed;
+  border: 1px solid #dddddd;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 1.8rem 2rem;
+  text-align: left;
+  font-size: inherit;
+  font-weight: 400;
+  border: 1px solid #dddddd;
 }

@@ -1,6 +1,6 @@
 ---
-title: "Authentication and Session Management in FastBoot"
-image: "/assets/images/talks/2016-07-12-embercamp-2016/authentication-and-session-management-in-fastboot.png"
+title: 'Authentication and Session Management in FastBoot'
+image: '/assets/images/talks/2016-07-12-embercamp-2016/authentication-and-session-management-in-fastboot.png'
 url: https://www.youtube.com/watch?v=jcAgi7fpTw8
 ---
 

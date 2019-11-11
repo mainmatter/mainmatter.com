@@ -1,15 +1,16 @@
 ---
-title: "Ember.SimpleAuth"
-author: "Marco Otte-Witte"
+title: 'Ember.SimpleAuth'
+author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+description: 'Marco Otte-Witte announces Ember.SimpleAuth, an addon for implementing a session mechanism, authentication and authorization for Ember.js applications.'
 topic: ember
 ---
 
 **Update: [Ember.SimpleAuth 0.1.0 has been released!](/blog/2014/01/20/embersimpleauth-010)** The information in this is (partially) outdated.
 
-After I wrote 2 [blog](/blog/2013/06/15/authentication-in-emberjs "the initial post") [posts](/blog/2013/08/08/better-authentication-in-emberjs "the second post with a refined implementation") on implementing token based authentication in [Ember.js](http://emberjs.com) applications and got quite some feedback, good suggestions etc., I thought it **would be nice to pack all these ideas in an Ember.js plugin** so everybody could easily integrate that into their applications. Now **I finally managed to release version 0.0.1 of that plugin**: [Ember.SimpleAuth](https://github.com/simplabs/ember-simple-auth).
+After I wrote 2 [blog](/blog/2013/06/15/authentication-in-emberjs 'the initial post') [posts](/blog/2013/08/08/better-authentication-in-emberjs 'the second post with a refined implementation') on implementing token based authentication in [Ember.js](http://emberjs.com) applications and got quite some feedback, good suggestions etc., I thought it **would be nice to pack all these ideas in an Ember.js plugin** so everybody could easily integrate that into their applications. Now **I finally managed to release version 0.0.1 of that plugin**: [Ember.SimpleAuth](https://github.com/simplabs/ember-simple-auth).
 
 <!--break-->
 
@@ -24,7 +25,7 @@ Ember.Application.initializer({
   name: 'authentication',
   initialize: function(container, application) {
     Ember.SimpleAuth.setup(application);
-  }
+  },
 });
 ```
 
@@ -41,7 +42,7 @@ Then, the generated **controller and route must implement the mixins provided by
 
 ```js
 App.LoginController = Ember.Controller.extend(Ember.SimpleAuth.LoginControllerMixin);
-App.LogoutRoute     = Ember.Route.extend(Ember.SimpleAuth.LogoutRouteMixin);
+App.LogoutRoute = Ember.Route.extend(Ember.SimpleAuth.LogoutRouteMixin);
 ```
 
 Of course the application also needs a template that renders the login form:

@@ -1,13 +1,14 @@
 ---
-title: "Testing with Ember Simple Auth and Ember CLI"
-author: "Marco Otte-Witte"
+title: 'Testing with Ember Simple Auth and Ember CLI'
+author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+description: 'Marco Otte-Witte explains how to test Ember CLI applications using ember-cli-simple-auth with the testing package ember-cli-simple-auth-testing.'
 topic: ember
 ---
 
-[The last blog post](/blog/2014/06/30/using-ember-simple-auth-with-ember-cli "Using Ember Simple Auth with ember-cli") showed how to use [Ember Simple Auth](https://github.com/simplabs/ember-simple-auth) with [Ember CLI](https://github.com/ember-cli/ember-cli) to implement session handling and authentication. **This post shows how to test that code**.
+[The last blog post](/blog/2014/06/30/using-ember-simple-auth-with-ember-cli 'Using Ember Simple Auth with ember-cli') showed how to use [Ember Simple Auth](https://github.com/simplabs/ember-simple-auth) with [Ember CLI](https://github.com/ember-cli/ember-cli) to implement session handling and authentication. **This post shows how to test that code**.
 
 <!--break-->
 
@@ -39,8 +40,8 @@ The next step is to configure the `test` environment. As the tests should be iso
 // config/environment.js
 if (environment === 'test') {
   ENV['simple-auth'] = {
-    store: 'simple-auth-session-store:ephemeral'
-  }
+    store: 'simple-auth-session-store:ephemeral',
+  };
 }
 ```
 

@@ -1,9 +1,10 @@
 ---
 title: Creating Web Components with Glimmer
-author: "Jessica Jordan"
+author: 'Jessica Jordan'
 github: jessica-jordan
 twitter: jjordan_dev
-bio: "Senior Frontend Engineer, Ember Learning core team member"
+bio: 'Senior Frontend Engineer, Ember Learning core team member'
+description: 'Jessica Jordan explains what web components (aka custom elements) are and shows how they can be built using Glimmer.js.'
 topic: ember
 ---
 
@@ -18,7 +19,7 @@ In addition to building standalone Glimmer applications, the library allows the 
 The **Custom Elements spec** describes a technology which is - alongside of HTML templates, Shadow DOM and HTML imports - an integral part of the [current Web Component specification](https://www.w3.org/wiki/WebComponents/).
 The Custom Elements spec describes capabilities for creating custom HTML elements which can be used just like native HTML elements: `<my-customelement>`.
 
-The [current version of this specification](https://www.w3.org/TR/custom-elements/) defines  a `CustomElementRegistry` interface global which is available as the `customElements` global in the browser. Custom elements are based on extensions of the native `HTMLElement` base class:
+The [current version of this specification](https://www.w3.org/TR/custom-elements/) defines a `CustomElementRegistry` interface global which is available as the `customElements` global in the browser. Custom elements are based on extensions of the native `HTMLElement` base class:
 
 ```js
 class CustomElementClass extends HTMLElement {
@@ -62,7 +63,6 @@ will bring in all the dependencies needed for its core functionality and will be
 
 Third, using web components is very easy as only **knowledge of the HTML markup language is required** to do so. Using the basic and likely most well-known language of the web alone, it **empowers an even larger community of developers** to build their websites and web apps with and upon web components.
 
-
 Let’s now dive into how we can create our own custom elements using Glimmer.
 
 ## Glimmer Web Component Example: A Reusable Open Street Map
@@ -73,7 +73,6 @@ In the following we will **create a simple street map** based on [Leaflet.js](ht
 
 ![Screenshot of Final Glimmer Map Component Example - Open Street Map View Centered on Munich](/assets/images/posts/2017-08-30-creating-web-components-with-glimmer/glimmer-map-screenshot-final.jpg)
 
-
 You can also check out the project on [Github](https://github.com/jessica-jordan/glimmer-map).
 
 ### Starting a new Glimmer Web Component Project
@@ -83,14 +82,14 @@ To get started with an initial, running project setup, we will be using [Ember C
 ```bash
 ember new glimmer-map -b @glimmer/blueprint --web-component
 ```
+
 generating the needed scaffolding for our first Glimmer app. As soon as the Glimmer app is booted up via a simple `ember serve` and we navigate to the typical `http://localhost:4200`, we will find that our first component project is already rendered with a "Welcome to Glimmer!" headline:
 
 ![Screenshot of First Page of a New Glimmer App - Headline: Hello Glimmer!](/assets/images/posts/2017-08-30-creating-web-components-with-glimmer/glimmer-map-startup.png)
 
 Let's have a look at our project's file structure as well; following the new folder structure planned out in the [module unification RFC](https://github.com/emberjs/rfcs/pull/143) we can already find our `component.ts` and `template.hbs` files for creating our component co-located in the same directory below the `src` directory:
 
-
-```html
+```
 src
 ├── index.ts
 ├── main.ts
@@ -129,8 +128,8 @@ function initializeCustomElement(app: Application, name: string): void {
           // ...
           assignAttributes(customElement, glimmerElement);
         });
-      }
-    }
+      },
+    },
   });
 
   window.customElements.define(name, GlimmerElement);
@@ -150,10 +149,9 @@ The class used for generating our `glimmer-map` component is now defined in `src
 // src/ui/components/glimmer-map/component.ts
 import Component from '@glimmer/component';
 
-export default class GlimmerMap extends Component {
-
-}
+export default class GlimmerMap extends Component {}
 ```
+
 As we would like to create a map based on `Leaflet.js`, let's also get that dependency installed in our project:
 
 ```bash
@@ -180,11 +178,8 @@ const commonjs = require('rollup-plugin-commonjs');
 module.exports = function(defaults) {
   let app = new GlimmerApp(defaults, {
     rollup: {
-      plugins: [
-        resolve({ jsnext: true, module: true, main: true }),
-        commonjs()
-      ]
-    }
+      plugins: [resolve({ jsnext: true, module: true, main: true }), commonjs()],
+    },
   });
 
   return app.toTree();
@@ -198,9 +193,7 @@ This finally allows us to import our `leaflet` dependency like so:
 import Component from '@glimmer/component';
 import L from 'leaflet';
 
-export default class GlimmerMap extends Component {
-
-}
+export default class GlimmerMap extends Component {}
 ```
 
 Now for creating and rendering the map, let's use the component's `didInsertElement` lifecycle hook to ensure that the Glimmer component has been inserted into the DOM already before the map instance is created and rendered:
@@ -246,19 +239,20 @@ With this setup, our map already renders for the map points set intially:
 
 ![Screenshot of Open Street Map View of First Pass on the Glimmer Map Component](/assets/images/posts/2017-08-30-creating-web-components-with-glimmer/glimmer-map-screenshot.jpg)
 
-We also aim to make our map respond to user input. Specifically, we would like to be able to set the marker to different locations on the map using a property for the longitude (`lon`) and the latitude (`lat`) easily.  To allow any property changes to be reflected in the component's DOM, we can make use of the `@tracked` decorator:
+We also aim to make our map respond to user input. Specifically, we would like to be able to set the marker to different locations on the map using a property for the longitude (`lon`) and the latitude (`lat`) easily. To allow any property changes to be reflected in the component's DOM, we can make use of the `@tracked` decorator:
 
 ```ts
 // src/ui/components/glimmer-map/component.ts
-export default class GlimmerMap extends Component {  
+export default class GlimmerMap extends Component {
   @tracked
-  lon: number = 11.6020;
+  lon: number = 11.602;
 
   @tracked
   lat: number = 48.1351;
- // ...
+  // ...
 }
 ```
+
 Anytime there is a change to one of the tracked properties' values, a re-render of the component with a newly updated DOM will follow.
 And promote the changes to these properties via actions by updating our template
 
@@ -271,14 +265,13 @@ And promote the changes to these properties via actions by updating our template
 </div>
 ```
 
-
 and the respective `component.ts` file:
 
 ```ts
 // src/ui/components/glimmer-map/component.ts
 export default class GlimmerMap extends Component {
   @tracked
-  lon: number = 11.6020;
+  lon: number = 11.602;
 
   @tracked
   lat: number = 48.1351;
@@ -293,7 +286,6 @@ export default class GlimmerMap extends Component {
 ```
 
 With this we are already done and can get started with distributing our component.
-
 
 ## Reusing Glimmer components as custom elements
 
@@ -311,9 +303,12 @@ This will store all the assets needed for reusing our custom element in the `/di
 <html>
   <head>
     <!-- ... -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
       integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
-      crossorigin=""/>
+      crossorigin=""
+    />
     <script src="/assets/webcomponentsjs/webcomponents-lite.js"></script>
   </head>
   <body>
@@ -330,7 +325,6 @@ And finally, we can see our Glimmer-based street map being rendered just as seen
   integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
 <glimmer-map height="300"></glimmer-map>
 <script src="/assets/posts/2017-08-30-creating-web-components-with-glimmer/glimmer-map.js"></script>
-
 
 ## And the Glimmer Component story is not over yet
 

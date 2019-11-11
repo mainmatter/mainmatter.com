@@ -1,10 +1,13 @@
 ---
-title: "Automated dependency updates for your internal GitLab server️"
-author: "Tobias Bieniek"
+title: 'Automated dependency updates for your internal GitLab server️'
+author: 'Tobias Bieniek'
 github: Turbo87
 twitter: tobiasbieniek
 topic: misc
-bio: "Senior Frontend Engineer, Ember CLI core team member"
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
+description: 'Tobias Bieniek shares how to set up the Renovate bot for automatic dependency updates with self-hosted internal GitLab servers.'
+og:
+  image: /assets/images/posts/2019-04-24-dependency-updates-for-gitlab/og-image.png
 ---
 
 Are your dependencies hopelessly outdated? Would you need to hire another
@@ -15,30 +18,32 @@ to use tools.
 
 <!--break-->
 
-In our previous blog post on [Open Source Maintenance] we revealed that we are
-big fans of dependency update services like [Greenkeeper] or [dependabot].
+In our previous blog post on [Open Source Maintenance][open-source-maintenance]
+we revealed that we are big fans of dependency update services like
+[Greenkeeper][greenkeeper] or [dependabot][dependabot].
+
 These services help you reduce the burden of maintaining a project by creating
 pull requests for you whenever there is a dependency that can be updated. That
 could be because of new features in those dependencies or more importantly
 because of bugs or security issues. dependabot will even label the PR with
 `security` in those cases!
 
-
 ## Renovate
 
-Another similar service is called [Renovate]. The main difference: Renovate is
-an open source project that you can run yourself, if you want to. The hosted
-service works fine if your project is on [GitHub] or [GitLab], but if you're
-using a self-hosted internal GitLab server you will have to run the service
-yourself. Fear not, this sounds a lot more complicated than it actually is, and
-the rest of this blog post will show you how to do it.
+Another similar service is called [Renovate][renovate]. The main difference:
+Renovate is an open source project that you can run yourself, if you want to.
+The hosted service works fine if your project is on [GitHub][gh] or
+[GitLab][gl], but if you're using a self-hosted internal GitLab server you
+will have to run the service yourself. Fear not, this sounds a lot more
+complicated than it actually is, and the rest of this blog post will show you
+how to do it.
 
 Before we start, let's make sure we are all in the same boat. The most common
 setup we have found when working with our clients is running GitLab on a
 self-hosted server within the corporate firewall and VPN. Most of the time
-that includes using [GitLab CI] to run the test suite for new commits or merge
-requests. This blog post is assuming the above setup and having GitLab CI set
-up to use the "[Docker executor]".
+that includes using [GitLab CI][gl-ci] to run the test suite for new commits or
+merge requests. This blog post is assuming the above setup and having GitLab CI
+set up to use the "[Docker executor][docker-executor]".
 
 To give you a rough idea of how we will set this up: Renovate will use a
 dedicated user account on your GitLab instance to open merge requests. It will
@@ -46,7 +51,6 @@ also have a dedicated repository for the main configuration and GitLab CI on
 that repository will take care of regularly running the Renovate bot.
 
 Now, let's get started setting this up!
-
 
 ## GitLab User Account
 
@@ -74,7 +78,6 @@ Finally, make sure that our new GitLab account has access to the projects that
 you want it to run on. It will need to have at least "Developer" permissions
 so that the bot is able to create branches and push updates to those branches.
 
-
 ## Renovate Repository
 
 As mentioned before, we will put the main configuration file into a dedicated
@@ -91,6 +94,7 @@ a lot of other languages too. Because it is based on JavaScript we will use
 `npm` (or `yarn` if you prefer) to install it and for that the first file we
 will create is the `package.json` file:
 
+<!-- prettier-ignore -->
 ```json
 {
   "name": "renovate-bot",
@@ -100,7 +104,7 @@ will create is the `package.json` file:
   "repository": "git@gitlab.acme.com:acme/renovate-bot.git",
   "author": "Tobias Bieniek <tobias.bieniek@simplabs.com>",
   "scripts": {
-    "renovate" : "renovate"
+    "renovate": "renovate"
   },
   "dependencies": {
     "renovate": "^15.0.0"
@@ -120,7 +124,6 @@ now on.
 
 Great, we're almost there!
 
-
 ## Renovate Configuration
 
 The last step before we can try things out is adding that main configuration
@@ -129,6 +132,7 @@ file, that we've been talking about before. Renovate expects this to be called
 configure how Renovate will behave by default. Note that most of this can be
 overridden on a per-repository basis.
 
+<!-- prettier-ignore -->
 ```js
 module.exports = {
   platform: 'gitlab',
@@ -188,7 +192,6 @@ Before we commit this configuration file to the project make sure to change the
 `token` line back to use the `RENOVATE_TOKEN` and then commit the file and push
 it to the repository.
 
-
 ## Using GitLab CI
 
 We now have a way to run our Renovate bot manually, but that is not what we
@@ -246,13 +249,12 @@ If you need more help getting this set up or if you want to talk about any of
 the topics here in more detail please do [contact us](/contact/)!
 If you enjoyed this blog post you can also let us know via [Twitter].
 
-
-[Open Source Maintenance]: https://simplabs.com/blog/2018/11/27/open-source-maintenance.html
-[Greenkeeper]: https://greenkeeper.io/
+[open-source-maintenance]: https://simplabs.com/blog/2018/11/27/open-source-maintenance.html
+[greenkeeper]: https://greenkeeper.io/
 [dependabot]: https://dependabot.com/
-[Renovate]: https://github.com/renovatebot/renovate/
-[GitHub]: https://github.com/
-[GitLab]: https://about.gitlab.com/
-[GitLab CI]: https://about.gitlab.com/product/continuous-integration/
-[Docker executor]: https://docs.gitlab.com/runner/executors/docker.html
-[Twitter]: http://twitter.com/simplabs/
+[renovate]: https://github.com/renovatebot/renovate/
+[gh]: https://github.com/
+[gl]: https://about.gitlab.com/
+[gl-ci]: https://about.gitlab.com/product/continuous-integration/
+[docker-executor]: https://docs.gitlab.com/runner/executors/docker.html
+[twitter]: http://twitter.com/simplabs/

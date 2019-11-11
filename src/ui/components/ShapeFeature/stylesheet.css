@@ -84,19 +84,10 @@
   background-size: cover;
 }
 
-:scope[state|hasVideo] .bottom-content {
-  background-position: center;
-  background-size: cover;
-}
-
 @media (max-width: 887px) {
   :scope {
     margin: 10rem 0 30rem;
     min-height: 80rem;
-  }
-
-  :scope[state|hasVideo] .video {
-    display: none;
   }
 
   .container {
@@ -161,16 +152,10 @@
   .img-wrapper {
     max-width: var(--col-4);
     margin-top: -30%;
-    tranform: translate(0, 10rem);
   }
 
   .content {
     width: var(--col-2);
-  }
-
-  .video {
-    width: 100%;
-    height: auto;
   }
 
   .tagline {

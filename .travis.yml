@@ -31,18 +31,28 @@ install:
 jobs:
   include:
     - stage: test
+      name: Tests
       script: yarn test
     - stage: test
+      name: "Lint - TypeScript"
       script: yarn lint:ts
     - stage: test
+      name: "Lint - JavaScript"
       script: yarn lint:js
     - stage: test
+      name: "Lint - Handlebars"
       script: yarn lint:hbs
     - stage: test
+      name: "Lint - CSS"
       script: yarn lint:css
     - stage: test
+      name: "Lint - Markdown"
+      script: yarn lint:md
+    - stage: test
+      name: "Crawler"
       script: yarn build && yarn crawl
     - stage: test
+      name: "Percy"
       script: yarn build && yarn percy
 
 notifications:

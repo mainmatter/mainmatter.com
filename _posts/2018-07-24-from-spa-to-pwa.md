@@ -1,10 +1,13 @@
 ---
-title: "From SPA to PWA"
-author: "Marco Otte-Witte"
+title: 'From SPA to PWA'
+author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+description: 'Marco Otte-Witte goes over the characteristics of progressive web apps and shows how to make the next step from a SPA to a PWA.'
 topic: javascript
+og:
+  image: /assets/images/posts/2018-07-24-from-spa-to-pwa/og-image.png
 ---
 
 Progressive Web Apps are the next level of browser based applications. While
@@ -43,7 +46,7 @@ for a long time, it never really took off until recently. In fact, Steve Jobs
 himself introduced the idea at WWDC 2007, just shortly after the unveiling of
 the orignal iPhone:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y1B2c3ZD9fk?start=4451" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="video"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y1B2c3ZD9fk?start=4451" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Unfortunately that idea was one of the few of Jobs' that never really took off.
 In fact, Apple released the first native SDK for the iPhone in 2008. That
@@ -61,13 +64,13 @@ for users for several reasons (ultimately leading to the question of how many
 potential users are lost before they even install the app where they then
 **could** have been successfully converted):
 
-* users that are on the mobile website already, when asked to install the app,
+- users that are on the mobile website already, when asked to install the app,
   need to leave that website, go to the app store, download the app and
   continue through the installation process
-* once the app is installed, all input that potentially was made on the website
+- once the app is installed, all input that potentially was made on the website
   before is lost and needs to be restored besides users potentially needing to
   login in the app again
-* native apps are
+- native apps are
   [relatively large on average](https://sweetpricing.com/blog/2017/02/average-app-file-size/),
   leading to long download times which are particularly painful on less
   reliable mobile connections
@@ -109,15 +112,15 @@ over the next coming years**.
 
 Progressive Web Apps have some distinct characteristics, the main ones being:
 
-* **Progressiveness**: they work for every user, regardless of their device or
+- **Progressiveness**: they work for every user, regardless of their device or
   browser of choice; depending on the capabilities of that environment, they
   will enable more or less of their functionality
-* **Responsiveness**: they fit any form factor and screen sizes
-* **Connectivity Independence**: they work on low quality networks or without
+- **Responsiveness**: they fit any form factor and screen sizes
+- **Connectivity Independence**: they work on low quality networks or without
   any network at all (and thus fully offline)
-* **App-likeliness**: they offer the rich user experience that users know and
+- **App-likeliness**: they offer the rich user experience that users know and
   love from native apps
-* **Installability**: they can be installed on the user's home screen without
+- **Installability**: they can be installed on the user's home screen without
   having to go through an app store
 
 We will be focussing on two of these characteristics in this article -
@@ -141,7 +144,7 @@ looks like this:
 {
   "name": "Breethe",
   "short_name": "Breethe",
-  "description":"Air Quality Data for Locations around the World",
+  "description": "Air Quality Data for Locations around the World",
   "theme_color": "#002eb8",
   "background_color": "#002eb8",
   "display": "standalone",
@@ -166,22 +169,22 @@ looks like this:
 The manifest is presented to the browser via a `meta` tag:
 
 ```html
-<link rel="manifest" href="/manifest.webmanifest">
+<link rel="manifest" href="/manifest.webmanifest" />
 ```
 
 The main keys in the manifest are `name`, `icons`, `background_color`,
 `start_url`, `display` and `orientation`:
 
-* `name`: the name of the app that will be shown on the user's home screen once
+- `name`: the name of the app that will be shown on the user's home screen once
   the app is installed
-* `icons`: icons in various sizes to use for the app on the home screen, the
+- `icons`: icons in various sizes to use for the app on the home screen, the
   task switcher and elsewhere
-* `background_color`: sets the color for the splash screen that is shown when
+- `background_color`: sets the color for the splash screen that is shown when
   the app is started from the home screen
-* `start_url`: the URL to load when the app is started from the home screen
-* `display`: tells the browser how to display the app when started from the
+- `start_url`: the URL to load when the app is started from the home screen
+- `display`: tells the browser how to display the app when started from the
   home screen; this should usually be `"standalone"`
-* `orientation`: the orientation to launch the app with if only one orientation
+- `orientation`: the orientation to launch the app with if only one orientation
   is supported
 
 Breethe, when installed to the user's home screen on iOS shows up like this:
@@ -200,7 +203,7 @@ of the network is that it **must be able to start up while there is no network
 at all** and the device is offline. For a browser-based application designed to
 load all required assets remotely, that is no easy task. One of the first
 approaches for achieving this was
-[Google Gears](https://en.wikipedia.org/wiki/Gears_(software)). Gears was
+[Google Gears](<https://en.wikipedia.org/wiki/Gears_(software)>). Gears was
 released as early as 2007 as a proprietary extension for Chrome and allowed
 offline usage of e.g. Gmail. Gears never really took off in the broader
 ecosystem and was discontinued in 2010.
@@ -240,11 +243,12 @@ used to pre-cache resources and thus make them available for later offline use.
 In the Breethe PWA, we use that event to preload all of the app's essential
 resources:
 
+<!-- prettier-ignore -->
 ```js
 const CACHE_NAME = 'breethe-cache-v1';
 const PRE_CACHED_ASSETS = [
-  '/app.js',
-  '/app.css',
+  '/app.js', 
+  '/app.css', 
   '/index.html'
 ];
 
@@ -260,7 +264,7 @@ self.addEventListener('install', function(event) {
       });
 
       return Promise.all(cachePromises);
-    })
+    }),
   );
 });
 ```
@@ -284,9 +288,9 @@ self.addEventListener('activate', function(event) {
           if (cacheName !== CACHE_NAME) {
             return caches.delete(cacheName);
           }
-        })
+        }),
       );
-    })
+    }),
   );
 });
 ```
@@ -305,7 +309,7 @@ self.addEventListener('fetch', function(event) {
     event.respondWith(
       fetch(event.request).catch(error => {
         return caches.match('index.html');
-      })
+      }),
     );
   }
 });
@@ -353,7 +357,7 @@ openRequest.onsuccess = function(event) {
   var objectStore = transaction.objectStore('locations');
   var request = objectStore.get('1');
   request.onsuccess = function() {
-    let location = request.result
+    let location = request.result;
     alert(`Loaded location ${location.name}`);
   };
 };
@@ -379,11 +383,11 @@ import { ModelDefinition } from '@orbit/data';
 export const location: ModelDefinition = {
   attributes: {
     label: { type: 'string' },
-    coordinates: { type: 'string' }
+    coordinates: { type: 'string' },
   },
   relationships: {
-    measurements: { type: 'hasMany', model: 'measurement', inverse: 'location' }
-  }
+    measurements: { type: 'hasMany', model: 'measurement', inverse: 'location' },
+  },
 };
 
 export const measurement: ModelDefinition = {
@@ -392,18 +396,18 @@ export const measurement: ModelDefinition = {
     measuredAt: { type: 'string' },
     unit: { type: 'string' },
     value: { type: 'string' },
-    qualityIndex: { type: 'string' }
+    qualityIndex: { type: 'string' },
   },
   relationships: {
-    location: { type: 'hasOne', model: 'location', inverse: 'measurements' }
-  }
+    location: { type: 'hasOne', model: 'location', inverse: 'measurements' },
+  },
 };
 
 export const schema: SchemaSettings = {
   models: {
     location,
-    measurement
-  }
+    measurement,
+  },
 };
 ```
 
@@ -429,7 +433,7 @@ import JSONAPISource from '@orbit/jsonapi';
 const remote = new JSONAPISource({
   schema,
   name: 'remote',
-  host: 'https://api.breethe.app'
+  host: 'https://api.breethe.app',
 });
 ```
 
@@ -442,11 +446,11 @@ import IndexedDBSource from '@orbit/indexeddb';
 
 const backup = new IndexedDBSource({
   schema,
-  name: 'backup'
+  name: 'backup',
 });
 
 // when the store changes, sync the changes into the backup source
-store.on('transform', (transform) => {
+store.on('transform', transform => {
   backup.sync(transform);
 });
 ```
@@ -509,7 +513,7 @@ describe('when offline', function() {
   }
 
   it('works offline', async function() {
-    await visit('/', async (page) => {
+    await visit('/', async page => {
       // go through the flow online first so we populate IndexedDB
       await page.type('[data-test-search-input]', 'Salzburg');
       await page.click('[data-test-search-submit]');

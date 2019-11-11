@@ -1,6 +1,8 @@
 import DynamicScope from './dynamic-scope';
 import SSRComponentManager from './ssr-component-manager';
 import SSRDOMTreeConstruction from './ssr-dom-tree-construction';
+import SSRHeadTags from './ssr-head-tags';
+import hash from '../src/utils/helpers/hash';
 
 import { classnames } from '@css-blocks/glimmer/dist/cjs/src/helpers/classnames';
 import { concat } from '@css-blocks/glimmer/dist/cjs/src/helpers/concat';
@@ -59,6 +61,10 @@ export default class SSRApplication extends Application {
           `helper:/${rootName}/components/-css-blocks-concat`
         ] = concat;
 
+        registry._resolver.registry._entries[
+          `helper:/${rootName}/components/hash`
+        ] = hash;
+
         // inject appendOperations into environment in order to get working createElement and setAttribute.
         registry.register(
           `domTreeConstruction:/${rootName}/main/main`,
@@ -79,7 +85,7 @@ export default class SSRApplication extends Application {
           AppState
         );
         registry.registerInjection(
-          `component:/${rootName}/components/Simplabs`,
+          `component`,
           'appState',
           `app-state:/${rootName}/main/main`
         );
@@ -91,6 +97,20 @@ export default class SSRApplication extends Application {
         registry.register(
           `component-manager:/${rootName}/component-managers/main`,
           SSRComponentManager
+        );
+        registry.register(
+          `utils:/${rootName}/head-tags/main`,
+          SSRHeadTags
+        );
+        registry.registerInjection(
+          `utils:/${rootName}/head-tags/main`,
+          'document',
+          `document:/${rootName}/main/main`
+        );
+        registry.registerInjection(
+          `component`,
+          'headTags',
+          `utils:/${rootName}/head-tags/main`,
         );
       },
     });
@@ -134,7 +154,7 @@ export default class SSRApplication extends Application {
     let document = this.document as any;
     return {
       body: this.serializer.serializeChildren(document.body) as string,
-      title: document.title as string
+      head: this.serializer.serializeChildren(document.head) as string
     };
   }
 }

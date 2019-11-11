@@ -1,9 +1,10 @@
 ---
 title: New features for ember-test-selectors
-author: "Tobias Bieniek"
+author: 'Tobias Bieniek'
 github: Turbo87
 twitter: tobiasbieniek
-bio: "Senior Frontend Engineer, Ember CLI core team member"
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
+description: 'Tobias Bieniek announces new features in ember-test-selectors such as automatic binding of data-test-* properties and how these are stripped in production.'
 topic: ember
 ---
 
@@ -16,7 +17,7 @@ gained a lot of new functionality and should be considered our release candidate
 for `1.0.0`.
 
 This blog post will highlight the major changes in this release, and will
-give you a short introduction into *how* we have implemented these new
+give you a short introduction into _how_ we have implemented these new
 features.
 
 <!--break-->
@@ -103,7 +104,7 @@ module.exports = {
 };
 ```
 
-__UPDATE:__ After releasing `0.1.0` we were notified that this feature was
+**UPDATE:** After releasing `0.1.0` we were notified that this feature was
 not working for component integration tests, which was actually a pretty
 obvious problem as initializers are not running for these kinds of
 tests. After thinking about the issue for a few hours we came up with a
@@ -113,7 +114,6 @@ solution that seems to work even better now. Instead of calling
 
 We have released `0.1.1` including this change and are now also warning you
 if you try to use `data-test-*` attributes on tagless components.
-
 
 ## Stripping out `data-test-*` attributes in templates
 
@@ -129,6 +129,7 @@ registering a Handlebars AST plugin in the
 [`setupPreprocessorRegistry()`](https://ember-cli.com/api/classes/Addon.html#method_setupPreprocessorRegistry)
 hook of the addon:
 
+<!-- prettier-ignore -->
 ```js
 module.exports = {
   // ...
@@ -187,7 +188,6 @@ If you try the same example template in the
 [AST explorer](https://astexplorer.net/#/8wkrolD3V0), but with the modified
 transform code, you will notice that the `data-test-comment-id=comment.id` part
 of the `some-component` invocation is now gone.
-
 
 ## Stripping out `data-test-*` properties in JS files
 
@@ -264,7 +264,6 @@ module.exports = {
 };
 ```
 
-
 ## Testing in `production` mode
 
 In our previous releases we had offered an `environments` option to let you
@@ -294,14 +293,13 @@ described above:
 ```js
 var app = new EmberApp({
   'ember-test-selectors': {
-    strip: false
-  }
+    strip: false,
+  },
 });
 ```
 
 Note that using the `environments` option still works, but is deprecated and
 will be removed by the time we release `1.0.0`.
-
 
 ## Simplified `testSelector()` import
 

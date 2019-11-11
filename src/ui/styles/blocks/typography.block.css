@@ -65,7 +65,16 @@
 }
 
 .hidden {
+  position: absolute;
+  display: inline-block;
   opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.table {
+  overflow: auto;
+  margin: 3rem auto;
 }
 
 @media (max-width: 887px) {
@@ -106,5 +115,11 @@
   .lead {
     font-size: 3rem;
     line-height: calc(5 / 3);
+  }
+}
+
+@media (min-width: 888px) {
+  .nowrap {
+    white-space: nowrap;
   }
 }
