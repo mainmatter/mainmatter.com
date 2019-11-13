@@ -7,7 +7,7 @@ topic: simplabs
 bio: 'Senior Frontend Engineer, Ember Learning Core team member'
 description: 'Jessica Jordan details how simplabs makes contributions to open-source software work as a regular practice and how companies can benefit from an investment into OSS.'
 og:
-  image: /assets/images/posts/2019-11-11-why-companies-invest-in-oss/og-image.png
+  image: /assets/images/posts/2019-10-30-why-companies-invest-in-oss/oos-illustration-9c6ddc274018c1157eca980a3abe34c5.png
 ---
 
 Less productivity, missed project deadlines and wasted money: that’s what you get for letting your developers work on open-source projects. Or do you really?
