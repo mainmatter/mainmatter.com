@@ -9,10 +9,6 @@
   composes: 'layout';
 }
 
-.quote-offset {
-  margin-top: var(--o-3);
-}
-
 @media (min-width: 888px) {
   .vertical-offset {
     padding-top: 41rem;

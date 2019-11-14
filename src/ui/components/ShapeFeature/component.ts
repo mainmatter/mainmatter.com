@@ -11,22 +11,10 @@ export default class ShapeFeature extends ShapeBase {
   }
 
   get backgroundStyle() {
-    let style = '';
-
-    if (this.args.backgroundImage) {
-      style += `background-image: url(${this.args.backgroundImage})`;
-    }
-
     if (this.args.background) {
-      style += `;background-color: ${this.args.background}`;
+      return `;fill: ${this.args.background}`;
     }
 
-    return style;
-  }
-
-  get bottomImageStyle() {
-    if (this.args.image) {
-      return `background-image: url(${this.args.image})`;
-    }
+    return '';
   }
 }

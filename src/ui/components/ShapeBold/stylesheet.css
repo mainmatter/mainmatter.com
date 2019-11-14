@@ -70,8 +70,9 @@
 
 :scope[state|reverse='true'] .shape-b-svg {
   position: relative;
-  left: 100%;
-  transform: translate(-120rem, -4rem);
+  left: unset;
+  float: right;
+  transform: translate(40%, 0);
 }
 
 .shape-a-figure {
@@ -122,10 +123,19 @@
 
 @media (max-width: 887px) {
   .shape-a {
-    grid-column: 3/-1;
+    grid-column: 1/-1;
   }
 
   .shape-b {
-    grid-column: -5/-1;
+    grid-column: -4/-1;
+  }
+
+  .shape-b-content {
+    right: unset;
+    left: 0;
+  }
+
+  .shape-b-logo {
+    height: 8rem;
   }
 }

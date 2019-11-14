@@ -2,6 +2,7 @@
 @block layout from "../../styles/blocks/layout.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
+@block figure from "../../styles/blocks/figure.block.css";
 
 :scope {
   block-name: PageCaseDdWrt;
