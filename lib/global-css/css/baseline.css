@@ -54,6 +54,7 @@
   /* Colors */
   --color-primary: #222;
   --color-secondary: #5b5b5b;
+  --color-tertiary: #979797;
   --color-accent: #007df6;
   --color-background: #fff;
   --color-error: #ec2a2a;
@@ -64,6 +65,26 @@
   --color-muted-inverted: var(--color-background);
   --color-link: var(--color-accent);
   --color-link-inverted: var(--color-background);
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #fff;
+    --color-secondary: #a5a5a5;
+    --color-tertiary: #979797;
+    --color-accent: #007df6;
+    --color-background: #222;
+    --color-error: #ec2a2a;
+
+    --color-text: var(--color-primary);
+    --color-text-inverted: var(--color-primary);
+    --color-muted: var(--color-secondary);
+    --color-muted-inverted: var(--color-background);
+    --color-link: var(--color-accent);
+    --color-link-inverted: var(--color-primary);
+  }
 }
 
 @media (min-width: 888px) {
@@ -114,6 +135,7 @@ body {
   border: 0;
   font-family: 'Nunito Sans', sans-serif;
   font-display: swap;
+  background: var(--color-background);
   color: var(--color-muted);
 }
 
@@ -199,7 +221,8 @@ h6 a:active {
   background-position: 0 1.1em;
   background-repeat: repeat-x;
   background-size: 200vw 2px;
-  text-shadow: -2px -2px white, -2px 2px white, 2px -2px white, 2px 2px white;
+  text-shadow: -2px -2px var(--color-background), -2px 2px var(--color-background), 2px -2px var(--color-background),
+    2px 2px var(--color-background);
 }
 
 h1,

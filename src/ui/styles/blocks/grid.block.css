@@ -44,3 +44,9 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .figure {
+    background: rgba(255, 255, 255, 0.9);
+  }
+}

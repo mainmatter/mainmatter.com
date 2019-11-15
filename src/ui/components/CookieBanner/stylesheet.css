@@ -7,7 +7,7 @@
   bottom: 1rem;
   right: 1rem;
   z-index: 1031;
-  color: #979797;
+  color: var(--color-tertiary);
   font-size: 2rem;
   font-family: 'Nunito Sans', sans-serif;
   font-display: swap;
@@ -24,7 +24,13 @@
 .message {
   text-align: right;
   padding: 1.5rem 2rem;
-  background-color: white;
+  background-color: var(--color-background);
+}
+
+@media (prefers-color-scheme: dark) {
+  .message {
+    background-color: #414141;
+  }
 }
 
 .link:link,

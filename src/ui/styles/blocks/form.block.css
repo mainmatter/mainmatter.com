@@ -36,12 +36,14 @@
 .control {
   width: 100%;
   padding: calc(1.5rem - 2px) calc(1.5rem - 2px);
-  border: 2px solid #ccc;
+  border: 2px solid var(--color-secondary);
   border-radius: 0;
   box-sizing: border-box;
   font-size: 2rem;
   line-height: 3rem;
   -webkit-appearance: none;
+  background: var(--color-background);
+  color: var(--color-primary);
 }
 
 .control:focus {

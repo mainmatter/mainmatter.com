@@ -54,7 +54,7 @@
   z-index: 1;
   width: auto;
   height: 100%;
-  fill: #fff;
+  fill: var(--color-background);
   pointer-events: none;
 }
 

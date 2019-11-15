@@ -28,6 +28,12 @@
   margin-bottom: 2rem;
 }
 
+@media (prefers-color-scheme: dark) {
+  .logo-wrap {
+    filter: grayscale(100%) contrast(0%) brightness(200%);
+  }
+}
+
 .legal {
   width: calc(100% + 2rem);
   margin-left: -2rem;
