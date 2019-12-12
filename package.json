@@ -37,7 +37,7 @@
     "@glimmer/resolver": "^0.4.3",
     "@glimmer/ssr": "^0.13.0",
     "@glimmer/test-helpers": "^0.31.1",
-    "@percy/script": "^1.0.0",
+    "@percy/script": "^1.0.2",
     "@types/navigo": "^7.0.1",
     "@types/qunit": "^2.0.31",
     "broccoli-asset-rev": "^2.5.0",
