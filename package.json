@@ -39,7 +39,7 @@
     "@glimmer/test-helpers": "^0.31.1",
     "@percy/script": "^1.0.0",
     "@types/navigo": "^7.0.1",
-    "@types/qunit": "^2.0.31",
+    "@types/qunit": "^2.9.0",
     "broccoli-asset-rev": "^2.5.0",
     "broccoli-caching-writer": "^3.0.3",
     "broccoli-clean-css": "^2.0.1",
