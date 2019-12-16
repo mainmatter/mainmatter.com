@@ -5438,10 +5438,10 @@ eyes@0.1.x:
   resolved "https://registry.yarnpkg.com/eyes/-/eyes-0.1.8.tgz#62cf120234c683785d902348a800ef3e0cc20bc0"
   integrity sha1-Ys8SAjTGg3hdkCNIqADvPgzCC8A=
 
-fake-xml-http-request@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/fake-xml-http-request/-/fake-xml-http-request-2.0.0.tgz#41a92f0ca539477700cb1dafd2df251d55dac8ff"
-  integrity sha512-UjNnynb6eLAB0lyh2PlTEkjRJORnNsVF1hbzU+PQv89/cyBV9GDRCy7JAcLQgeCLYT+3kaumWWZKEJvbaK74eQ==
+fake-xml-http-request@~2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/fake-xml-http-request/-/fake-xml-http-request-2.0.1.tgz#e4a7f256af055d8059deb23c9d7ae721d28cf078"
+  integrity sha512-KzT+G4aLM1Btg25QRGxB6yGLGOVZXXzrH8I4OG3KHwsdoqFclyW3alieqh5NaYGcmbQvNOn/ldGO1rGKf7CNdA==
 
 fast-deep-equal@^1.0.0:
   version "1.1.0"
@@ -8698,12 +8698,12 @@ preserve@^0.2.0:
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
   integrity sha1-gV7R9uvGWSb4ZbMQwHE7yzMVzks=
 
-pretender@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/pretender/-/pretender-3.0.1.tgz#817ac43faa3330aa17646968a115f232de10b2ca"
-  integrity sha512-NO5qK7vJls4uz1NxVKuAY6/aHLOVvchGAvrPWCRHRKpCLquBWQjk3CVx195Hs5yUdcQ4e3OlpUijmOzFzzOmWQ==
+pretender@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/pretender/-/pretender-3.0.5.tgz#922903ba857ad1648ad9241840496a0dfb234e2e"
+  integrity sha512-3CB9yC+ys3yv2StNI2gvmwAFLsO0WlOWWwwcot1p143mHwBYejJJnGJYq3k6cQQJZhWH9NQBiSVrQQ0Wzh1NfQ==
   dependencies:
-    fake-xml-http-request "^2.0.0"
+    fake-xml-http-request "~2.0.0"
     route-recognizer "^0.3.3"
     whatwg-fetch "^3.0.0"
 
