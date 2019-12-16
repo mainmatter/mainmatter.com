@@ -1087,10 +1087,10 @@
     silent-error "^1.1.0"
     walk-sync "^0.3.1"
 
-"@glimmer/application-pipeline@^0.14.0":
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/@glimmer/application-pipeline/-/application-pipeline-0.14.0.tgz#146d152d1403162156d326fcfa14de93155dafe7"
-  integrity sha512-r6+xvI/ewaJreBCDWY40GAqih1U/Tr6tmQUoVldiUzZPs4HXnMaoOn+JcCyYu1A+5R6Ic1U78A5g1q8+iT+wHw==
+"@glimmer/application-pipeline@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@glimmer/application-pipeline/-/application-pipeline-0.15.0.tgz#d3a834c6586ce463d836735781cd0caf590d27f0"
+  integrity sha512-a4xBq/ioCbOBDiK/aKKt7Vek8EUf72iFfSpv2VTKCedJpmrhN/oUwJZ2g3vS6HSoSmIICE/nFcUlMunvP/PEfQ==
   dependencies:
     "@glimmer/app-compiler" "^0.9.0"
     "@glimmer/resolution-map-builder" "^0.5.1"
@@ -1111,7 +1111,7 @@
     broccoli-rollup "^2.0.0"
     broccoli-source "^1.1.0"
     broccoli-string-replace "^0.1.1"
-    broccoli-typescript-compiler "^2.2.0"
+    broccoli-typescript-compiler "^4.1.0"
     common-tags "^1.4.0"
     ember-build-utilities "^0.4.0"
     ember-cli-inject-live-reload "^1.4.1"
@@ -3045,23 +3045,7 @@ broccoli-babel-transpiler@^6.0.0:
     rsvp "^4.8.2"
     workerpool "^2.3.0"
 
-broccoli-babel-transpiler@^7.1.1:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/broccoli-babel-transpiler/-/broccoli-babel-transpiler-7.1.1.tgz#4202cd0653845083ee744fb4eaa4a2b50292f03f"
-  integrity sha512-iZE6yxDcEe4XSMEyqyyS+wtkNAsPUGJNleJoVu26Vt2Al8/GqRI5+wc7qquPb71I1W7AtqbkaqsgDFDqBoIYKw==
-  dependencies:
-    "@babel/core" "^7.0.0"
-    broccoli-funnel "^2.0.1"
-    broccoli-merge-trees "^3.0.0"
-    broccoli-persistent-filter "^1.4.3"
-    clone "^2.1.2"
-    hash-for-dep "^1.2.3"
-    heimdalljs-logger "^0.1.9"
-    json-stable-stringify "^1.0.1"
-    rsvp "^4.8.3"
-    workerpool "^2.3.1"
-
-broccoli-babel-transpiler@^7.1.2:
+broccoli-babel-transpiler@^7.1.1, broccoli-babel-transpiler@^7.1.2:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/broccoli-babel-transpiler/-/broccoli-babel-transpiler-7.2.0.tgz#5c0d694c4055106abb385e2d3d88936d35b7cb18"
   integrity sha512-lkP9dNFfK810CRHHWsNl9rjyYqcXH3qg0kArnA6tV9Owx3nlZm3Eyr0cGo6sMUQCNLH+2oKrRjOdUGSc6Um6Cw==
@@ -3334,26 +3318,7 @@ broccoli-persistent-filter@^1.1.5, broccoli-persistent-filter@^1.1.6, broccoli-p
     symlink-or-copy "^1.0.1"
     walk-sync "^0.3.1"
 
-broccoli-persistent-filter@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/broccoli-persistent-filter/-/broccoli-persistent-filter-2.1.1.tgz#7bb2b1015baedf5cf58b5b2608495f3d78f81b12"
-  integrity sha512-2VCbLJqMg/AWJ6WTmv83X13a6DD3BS7Gngc932jrg1snVqsB8LJDyJh+Hd9v1tQ/vMA+4vbWgwk4tDmI/tAZWg==
-  dependencies:
-    async-disk-cache "^1.2.1"
-    async-promise-queue "^1.0.3"
-    broccoli-plugin "^1.0.0"
-    fs-tree-diff "^0.5.2"
-    hash-for-dep "^1.0.2"
-    heimdalljs "^0.2.1"
-    heimdalljs-logger "^0.1.7"
-    mkdirp "^0.5.1"
-    promise-map-series "^0.2.1"
-    rimraf "^2.6.1"
-    rsvp "^4.7.0"
-    symlink-or-copy "^1.0.1"
-    walk-sync "^0.3.1"
-
-broccoli-persistent-filter@^2.2.1:
+broccoli-persistent-filter@^2.1.1, broccoli-persistent-filter@^2.2.1:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/broccoli-persistent-filter/-/broccoli-persistent-filter-2.2.2.tgz#e0180e75ede5dd05d4c702f24f6c049e93fba915"
   integrity sha512-PW12RD1yY+x5SASUADuUMJce+dVSmjBO3pV1rLNHmT1C31rp1P++TvX7AgUObFmGhL7qlwviSdhMbBkY1v3G2w==
@@ -3498,7 +3463,7 @@ broccoli-typescript-compiler@^2.2.0:
     typescript "~2.8.3"
     walk-sync "^0.3.2"
 
-broccoli-typescript-compiler@^4.2.0:
+broccoli-typescript-compiler@^4.1.0, broccoli-typescript-compiler@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/broccoli-typescript-compiler/-/broccoli-typescript-compiler-4.2.0.tgz#b0c75898c75b897f40d3f627d548a64e0bb3d9f2"
   integrity sha512-Fk17EapT3Yye5pUNC3lzxq78KdFTWGC7m8Zi8BnIfwD6ZPzVT+uEYMEcYXsfCtMD//jHSIXDQi9YlWZcHVjiDw==
@@ -10945,7 +10910,7 @@ wordwrap@~1.0.0:
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
   integrity sha1-J1hIEIkUVqQXHI0CJkQa3pDLyus=
 
-workerpool@^2.3.0, workerpool@^2.3.1:
+workerpool@^2.3.0:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/workerpool/-/workerpool-2.3.3.tgz#49a70089bd55e890d68cc836a19419451d7c81d7"
   integrity sha512-L1ovlYHp6UObYqElXXpbd214GgbEKDED0d3sj7pRdFXjNkb2+un/AUcCkceHizO0IVI6SOGGncrcjozruCkRgA==
