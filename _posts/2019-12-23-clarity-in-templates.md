@@ -121,7 +121,7 @@ We can see that when calling the component, we are passing in `post` and `onRepo
 {{/if}}
 ```
 
-We have improved our template a further step. Now we can tell properties, named arguments, and local variables or helpers/components apart.
+We have improved our template a further step, now we can tell properties and named arguments apart. Next we will dive into component invocation.
 
 If you wish to use named arguments in your application, you can use [`ember-named-arguments-polyfill`](https://github.com/rwjblue/ember-named-arguments-polyfill) for Ember.js versions older than 3.1.
 
