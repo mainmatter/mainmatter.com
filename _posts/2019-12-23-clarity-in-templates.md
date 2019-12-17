@@ -162,7 +162,7 @@ With just a couple of tweaks, we now have much more clarity when reading a templ
 - `{{this.commentsExpanded}}` is also a property;
 - `if` and `each` are templating constructs
 - `commentObject` is a block argument that is available inside the `each` block scope
-- `Comment` is a component invocation
+- `<Comment />` is a component invocation
 
 ## Handling DOM events
 https://emberjs.github.io/rfcs/0471-on-modifier.html
