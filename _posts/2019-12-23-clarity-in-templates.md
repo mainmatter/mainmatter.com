@@ -97,7 +97,9 @@ The great thing about this feature is that all versions of Ember support it, so 
 
 ### Disambiguating named arguments
 
-Next we will turn our attention to dynamic values that were passed into the component when it was invoked. These are called named arguments. This time we will look at an invocation of our `blog/post` component:
+Next we will turn our attention to named arguments. We give this name to values that we pass into components when we use them. Since components do not have access to the context where they are called in, this is the primary way to pass information into them.
+
+To see what we are passing into our `blog/post` component, we need to see how it is used in our application. To do this, we will check a route template, namely the template for the `blog` route, where the component is used:
 
 ```hbs
 {{! app/templates/blog.hbs }}
@@ -124,6 +126,8 @@ We can see that when calling the component, we are passing in `post` and `onRepo
 We have improved our template a further step, now we can tell properties and named arguments apart. Next we will dive into component invocation.
 
 If you wish to use named arguments in your application, you can use [`ember-named-arguments-polyfill`](https://github.com/rwjblue/ember-named-arguments-polyfill) for Ember.js versions older than 3.1.
+
+Named arguments mostly apply to components, since they are the piece of Ember that is explicitly invoked by developers unlike route templates which the framework renders for you. 
 
 Note that `@model` was introduced by [RFC #523 "Model Argument for Route Templates"](https://emberjs.github.io/rfcs/0523-model-argument-for-route-templates.html) so that you can refer directly to the model that was passed to a route template.
 
