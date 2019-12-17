@@ -20,11 +20,11 @@ In this blog post we will be discussing how recent Ember.js modernization effort
 
 ## Ember Octane and editions
 
-As a framework that values stability and providing its users solid upgrade paths, Ember has accrued its fair share of idiosyncrasies. One of the more demonstrable consequences of this is the so called pit of incoherence, alluded to in the opening keynote of EmberConf 2019 [[1](https://www.youtube.com/watch?v=zYwdBcmz6VI): APIs are introduced that move the framework to a new mental model, but that mental model isn't complete yet. This leaves users unsure of which APIs to use when, and how the interop might work.
+As a framework that values stability and providing its users solid upgrade paths, Ember has accrued its fair share of idiosyncrasies. One of the more demonstrable consequences of this is the so called pit of incoherence, alluded to in the [opening keynote of EmberConf 2019](https://www.youtube.com/watch?v=zYwdBcmz6VI): APIs are introduced that move the framework to a new mental model, but that mental model isn't complete yet. This leaves users unsure of which APIs to use when, and how the interop might work.
 
 This is where editions come into play. The main goal of editions is to document and present a new and coherent mental model that developers can adhere to, while keeping compatibility with existing APIs. This is done in one of two ways, either a new API that can coexist with existing ones is introduced, or an optional feature that users can opt into is introduced. This allows for new applications to have the optional features and default blueprints of the newer editions, while existing applications can update their codebase at their own pace.
 
-In this blog post we will address some changes to templates that were introduced with Ember Octane in mind, the first planned edition for the Ember.js framework. You can read more about Octane in the official edition page [[2](https://emberjs.com/editions/octane)].
+In this blog post we will address some changes to templates that were introduced with Ember Octane in mind, the first planned edition for the Ember.js framework. You can read more about Octane in the [official edition page](https://emberjs.com/editions/octane)].
 
 ## Ambiguity
 
@@ -92,7 +92,7 @@ We see that `title` is a computed property, and `commentsExpanded` is a boolean 
 {{/if}}
 ```
 
-The great thing about this feature is that all versions of Ember support it, so you can start annotating properties in your templates today. You can also enforce that no new implicit `this` are added to templates by configuring the appropriate ember-template-lint [[3](https://github.com/ember-template-lint/ember-template-lint)] rule.
+The great thing about this feature is that all versions of Ember support it, so you can start annotating properties in your templates today. You can also enforce that no new implicit `this` are added to templates by configuring the appropriate [`ember-template-lint`](https://github.com/ember-template-lint/ember-template-lint) rule.
 
 
 ### Disambiguating named arguments
@@ -123,13 +123,13 @@ We can see that when calling the component, we are passing in `post` and `onRepo
 
 We have improved our template a further step. Now we can tell properties, named arguments, and local variables or helpers/components apart.
 
-If you wish to use named arguments in your application, you can use ember-named-arguments-polyfill [[x](https://github.com/rwjblue/ember-named-arguments-polyfill)] for Ember.js versions older than 3.1.
+If you wish to use named arguments in your application, you can use [`ember-named-arguments-polyfill`](https://github.com/rwjblue/ember-named-arguments-polyfill) for Ember.js versions older than 3.1.
 
-Note that `@model` was introduced by RFC #523 [[x](https://emberjs.github.io/rfcs/0523-model-argument-for-route-templates.html)] so that you can refer directly to the model that was passed to a route template.
+Note that `@model` was introduced by [RFC #523 "Model Argument for Route Templates"](https://emberjs.github.io/rfcs/0523-model-argument-for-route-templates.html) so that you can refer directly to the model that was passed to a route template.
 
 ### Disambiguating components
 
-After the last change, it would be nice to have a way to disambiguate component invocations from other kinds of dynamic interpolations. Fortunately, a new syntax was introduced called angle bracket invocation syntax [[x](https://emberjs.github.io/rfcs/0311-angle-bracket-invocation.html)] that allows us to do just that. It also allows us to distinguish between named arguments and HTML attributes when invoking components, but that will be covered in a future post.
+After the last change, it would be nice to have a way to disambiguate component invocations from other kinds of dynamic interpolations. Fortunately, a new syntax was introduced by [RFC #311 "Angle Bracket Invocation"](https://emberjs.github.io/rfcs/0311-angle-bracket-invocation.html), that allows us to do just that. Using angle bracket invocation also enables us to distinguish between named arguments passed to the component, and HTML attributes passed to the component. HTML attributes and `...attributes` will be covered in a future post.
 
 To update, we replace curly braces with an HTML-like `<>` syntax–hence angle bracket invocation,–using capital case for the name of the component, `::` instead of `/` for nested components, and prefixing named arguments with `@`. Here is how the above `blog` and `blog/post` templates look like once updated:
 
@@ -153,7 +153,7 @@ To update, we replace curly braces with an HTML-like `<>` syntax–hence angle b
 {{/if}}
 ```
 
-To use this feature in older versions of Ember and its dependencies, you can use `ember-angle-bracket-invocation-polyfilll` [[x](https://github.com/rwjblue/ember-angle-bracket-invocation-polyfill)].
+To use this feature in older versions of Ember and its dependencies, you can use [`ember-angle-bracket-invocation-polyfilll`](https://github.com/rwjblue/ember-angle-bracket-invocation-polyfill).
 
 With just a couple of tweaks, we now have much more clarity when reading a template, and the need to consult additional files is lessened:
 - `{{this.title}}` is a property that comes from the JavaScript file of the component;
@@ -164,12 +164,8 @@ With just a couple of tweaks, we now have much more clarity when reading a templ
 - `commentObject` is a block argument that is available inside the `each` block scope
 - `<Comment />` is a component invocation
 
-## Handling DOM events
-https://emberjs.github.io/rfcs/0471-on-modifier.html
-https://emberjs.github.io/rfcs/0470-fn-helper.html
+These were not the only improvements made to Ember's templating engine, or even to components. Also introduced to the framework were the ability to pass HTML attributes to components and apply them with `...attributes`, a simplification of DOM event handling with the [`on`](https://emberjs.github.io/rfcs/0471-on-modifier.html) and [`fn`](https://emberjs.github.io/rfcs/0470-fn-helper.html) modifiers replacing `action`, the ability for users to create [custom element modifiers](https://github.com/ember-modifier/ember-modifier) like the built-in `action`, `on`, and `fn`, [rendering lifecycle element modifiers](https://github.com/emberjs/ember-render-modifiers), and [Glimmer components](https://emberjs.github.io/rfcs/0416-glimmer-components.html).
 
-```hbs
-<button {{action 'lol'}}>Action</button>
-<button onclick={{action 'lol'}}>Action</button>
-<Comment @onReport={{action this.someProp}} />
-```
+These new features will be covered in upcoming posts, so be sure to keep an eye out for them!
+
+If you are looking for help to update your codebase to these new idioms, or you want to level up your engineering team, make sure to [contact us](https://simplabs.com/contact/) so we can work together towards achieving your goals.
