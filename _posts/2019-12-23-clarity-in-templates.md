@@ -40,7 +40,7 @@ In Ember templates, interpolation of dynamic values is done through curly braces
 
 {{#if commentsExpanded}}
   {{#each post.comments as |commentObject|}}
-    {{comment comment=commentObject onReport=onReportComments}}
+    {{comment comment=commentObject onReport=onReportComment}}
   {{/each}}
 {{/if}}
 ```
@@ -87,7 +87,7 @@ We see that `title` is a computed property, and `commentsExpanded` is a boolean 
 
 {{#if this.commentsExpanded}}
   {{#each post.comments as |commentObject|}}
-    {{comment comment=commentObject onReport=onReportComments}}
+    {{comment comment=commentObject onReport=onReportComment}}
   {{/each}}
 {{/if}}
 ```
@@ -118,7 +118,7 @@ We can see that when calling the component, we are passing in `post` and `onRepo
 
 {{#if this.commentsExpanded}}
   {{#each post.comments as |commentObject|}}
-    {{comment comment=commentObject onReport=@onReportComments}}
+    {{comment comment=commentObject onReport=@onReportComment}}
   {{/each}}
 {{/if}}
 ```
@@ -152,7 +152,7 @@ To update, we replace curly braces with an HTML-like `<>` syntax–hence angle b
 
 {{#if this.commentsExpanded}}
   {{#each post.comments as |commentObject|}}
-    <Comment @comment={{commentObject}} onReport={{@onReportComments}} />
+    <Comment @comment={{commentObject}} onReport={{@onReportComment}} />
   {{/each}}
 {{/if}}
 ```
