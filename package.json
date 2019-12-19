@@ -47,7 +47,7 @@
     "broccoli-file-creator": "^2.1.1",
     "broccoli-funnel": "^2.0.1",
     "broccoli-merge-trees": "^3.0.2",
-    "broccoli-stew": "^2.0.1",
+    "broccoli-stew": "^3.0.0",
     "broccoli-string-replace": "^0.1.2",
     "broccoli-typescript-compiler": "^4.2.0",
     "clean-css": "^4.2.1",
