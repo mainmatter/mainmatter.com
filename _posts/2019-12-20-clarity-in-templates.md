@@ -50,18 +50,17 @@ Looking only at the template, can we be certain where `title` comes from? Whethe
 
 We will work step by step to remove ambiguity where we can.
 
-
 ### Disambiguating properties
 
 We will start by marking which dynamic values come from the component's JavaScript. These are called properties. To do that we are going to consult the JavaScript file to see which properties it might define:
 
 ```js
-import Component from "@ember/component";
-import { computed } from "@ember/object";
-import titleCase from "my-app/utils/title-case.js";
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import titleCase from 'my-app/utils/title-case.js';
 
 export default Component.extend({
-  title: computed("post.title", function() {
+  title: computed('post.title', function() {
     return titleCase(this.post.title);
   }),
 
@@ -69,14 +68,13 @@ export default Component.extend({
 
   actions: {
     toggleComments() {
-      this.toggleProperty("commentsExpanded");
-    }
-  }
-})
+      this.toggleProperty('commentsExpanded');
+    },
+  },
+});
 ```
 
 We see that `title` is a computed property, and `commentsExpanded` is a boolean defined in the class definition, so we will update the template accordingly:
-
 
 ```hbs
 {{! app/templates/components/blog/post.hbs }}
@@ -95,7 +93,6 @@ We see that `title` is a computed property, and `commentsExpanded` is a boolean 
 ```
 
 The great thing about this feature is that all versions of Ember support it, so you can start annotating properties in your templates today. You can also enforce that no new implicit `this` are added to templates by configuring the appropriate [`ember-template-lint`](https://github.com/ember-template-lint/ember-template-lint) rule.
-
 
 ### Disambiguating named arguments
 
@@ -130,7 +127,7 @@ We have improved our template a further step, now we can tell properties and nam
 
 If you wish to use named arguments in your application, you can use [`ember-named-arguments-polyfill`](https://github.com/rwjblue/ember-named-arguments-polyfill) for Ember.js versions older than 3.1.
 
-Named arguments mostly apply to components, since they are the piece of Ember that is explicitly invoked by developers unlike route templates which the framework renders for you. 
+Named arguments mostly apply to components, since they are the piece of Ember that is explicitly invoked by developers unlike route templates which the framework renders for you.
 
 Note that `@model` was introduced by [RFC #523 "Model Argument for Route Templates"](https://emberjs.github.io/rfcs/0523-model-argument-for-route-templates.html) so that you can refer directly to the model that was passed to a route template.
 
@@ -164,6 +161,7 @@ To update, we replace curly braces with an HTML-like `<>` syntax–hence angle b
 To use this feature in older versions of Ember and its dependencies, you can use [`ember-angle-bracket-invocation-polyfilll`](https://github.com/rwjblue/ember-angle-bracket-invocation-polyfill).
 
 With just a couple of tweaks, we now have much more clarity when reading a template, and the need to consult additional files is lessened:
+
 - `{{this.title}}` is a property that comes from the JavaScript file of the component;
 - `<PostBody />` is a component invocation;
 - `{{@post}}` is a named argument that is passed to the component when invoked;
