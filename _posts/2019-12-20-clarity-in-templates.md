@@ -7,7 +7,7 @@ topic: ember
 bio: 'Senior Frontend Engineer, Ember Framework and Learning Core teams member'
 description: 'Ricardo Mendes explains how Ember templates have evolved in the path to Ember Octane to bring more clarity for developers.'
 og:
-  image: /assets/images/posts/2019-11-11-why-companies-invest-in-oss/og-image.png
+  image: /assets/images/posts/2019-12-20-clarity-in-templates/og-image.png
 ---
 
 When reading Ember templates, have you ever wondered where a certain dynamic value comes from? Is that dynamic value a property of the component, a named argument that was passed in, or even a helper?
@@ -16,7 +16,7 @@ In this blog post we will be discussing how recent Ember.js modernization effort
 
 <!--break-->
 
-![invest time open source illustration](/assets/images/posts/2019-11-11-why-companies-invest-in-oss/oos-illustration.png#full)
+![Bringing clarity to your Ember templates](/assets/images/posts/2019-12-20-clarity-in-templates/illustration.jpg#full)
 
 ## Ember Octane and editions
 
@@ -40,7 +40,8 @@ In Ember templates, interpolation of dynamic values is done through curly braces
 
 {{#if commentsExpanded}}
   {{#each post.comments as |commentObject|}}
-    {{comment comment=commentObject onReport=onReportComment}}
+    {{comment comment=commentObject onReport=onReportComment
+    }}
   {{/each}}
 {{/if}}
 ```
@@ -87,7 +88,8 @@ We see that `title` is a computed property, and `commentsExpanded` is a boolean 
 
 {{#if this.commentsExpanded}}
   {{#each post.comments as |commentObject|}}
-    {{comment comment=commentObject onReport=onReportComment}}
+    {{comment comment=commentObject onReport=onReportComment
+    }}
   {{/each}}
 {{/if}}
 ```
@@ -118,7 +120,8 @@ We can see that when calling the component, we are passing in `post` and `onRepo
 
 {{#if this.commentsExpanded}}
   {{#each post.comments as |commentObject|}}
-    {{comment comment=commentObject onReport=@onReportComment}}
+    {{comment comment=commentObject onReport=@onReportComment
+    }}
   {{/each}}
 {{/if}}
 ```
@@ -152,7 +155,8 @@ To update, we replace curly braces with an HTML-like `<>` syntax–hence angle b
 
 {{#if this.commentsExpanded}}
   {{#each post.comments as |commentObject|}}
-    <Comment @comment={{commentObject}} onReport={{@onReportComment}} />
+    <Comment @comment={{commentObject}} onReport={{@onReportComment
+    }} />
   {{/each}}
 {{/if}}
 ```
