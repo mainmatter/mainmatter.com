@@ -139,7 +139,7 @@ To update, we replace curly braces with an HTML-like `<>` syntax–hence angle b
 
 ```hbs
 {{! app/templates/blog.hbs }}
-<Blog::Post @post={{post} @onReportComment={{action 'onReportComment'}} />
+<Blog::Post @post={{post}} @onReportComment={{action 'onReportComment'}} />
 ```
 
 ```hbs
