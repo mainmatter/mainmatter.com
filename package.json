@@ -40,7 +40,7 @@
     "@percy/script": "^1.0.2",
     "@types/navigo": "^7.0.1",
     "@types/qunit": "^2.9.0",
-    "broccoli-asset-rev": "^2.5.0",
+    "broccoli-asset-rev": "^3.0.0",
     "broccoli-caching-writer": "^3.0.3",
     "broccoli-clean-css": "^2.0.1",
     "broccoli-debug": "^0.6.5",
