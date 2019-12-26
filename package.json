@@ -85,7 +85,7 @@
     "rollup-plugin-commonjs": "^9.2.1",
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^4.0.1",
-    "rollup-plugin-uglify": "^6.0.2",
+    "rollup-plugin-uglify": "^6.0.4",
     "rollup-plugin-virtual": "^1.0.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
