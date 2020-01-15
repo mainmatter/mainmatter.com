@@ -1,0 +1,53 @@
+<div>
+  <Header
+    @title="Talks"
+    @description="We share our expertise and experience with others. Here are a collection of appearances that our team made at international events in the past years."
+  >
+    <HeaderContent @headline="Talks">
+      <p class="typography.lead">
+        We strongly believe in the value of sharing our expertise and experience with others. Here are a collection of event talks and other appearances that members of our team made at various events all over the world in the past years.
+      </p>
+    </HeaderContent>
+  </Header>
+  <h2 class="layout.full">
+    Latest Talks
+  </h2>
+  {{#each channels}}
+    <div class="layout.main offset.after-16">
+      <h3>
+        {{meta.title}}
+      </h3>
+      {{#each appearances}}
+        <article class="media offset.after-12">
+          <img class="media.item size.w-10" src="{{meta.image}}" alt="" />
+          <div class="media.body">
+            <h4>
+              {{meta.title}}
+            </h4>
+            <p>
+              {{description}}
+            </p>
+            <ArrowLink @href="{{meta.url}}">
+              {{#if isVideo}}
+                Watch Video
+              {{else if isPodcast}}
+                Listen to Episode
+              {{/if}}
+            </ArrowLink>
+          </div>
+        </article>
+      {{/each}}
+    </div>
+    <div class="layout.side offset-vertical offset.after-16">
+      <Card @src="{{meta.image}}" @alt="{{meta.title}}">
+        <p>
+          {{description}}
+        </p>
+        <ArrowLink @href="{{meta.url}}">
+          Learn more
+        </ArrowLink>
+      </Card>
+    </div>
+  {{/each}}
+  <Footer />
+</div>
