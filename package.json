@@ -99,7 +99,7 @@
     "paths": [
       "lib/generate-blog",
       "lib/generate-calendar",
-      "lib/generate-talks-archive",
+      "lib/generate-appearances-archive",
       "lib/global-css",
       "lib/google-analytics",
       "lib/head-data",
