@@ -12,5 +12,10 @@
       View Our Work
     </ArrowLink>
   </div>
-  <ShapeAcross @background="#222" @src="/assets/images/photos/tutoring.jpg" @key="{{this.key}}-across" />
+  <ShapeAcross
+    @background="#222"
+    @srcset="/assets/images/photos/tutoring@900.jpg 900w, /assets/images/photos/tutoring@1800.jpg 1800w"
+    @sizes="(max-width: 887px) 900px, 1800px"
+    @key="{{this.key}}-across"
+  />
 </div>
