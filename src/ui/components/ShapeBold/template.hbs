@@ -16,9 +16,9 @@
       </defs>
       <use fill-rule="evenodd" xlink:href="#{{this.shapeId}}"></use>
     </svg>
-    {{#if @src}}
+    {{#if @srcset}}
       <figure class="shape-a-figure">
-        <img class="shape-a-img" src="{{@src}}" alt="" />
+        <img class="shape-a-img" srcset={{@srcset}} sizes={{@sizes}} alt="" />
       </figure>
     {{/if}}
   </div>
