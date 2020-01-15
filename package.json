@@ -97,12 +97,13 @@
   "private": true,
   "ember-addon": {
     "paths": [
+      "lib/generate-appearances-archive",
       "lib/generate-blog",
       "lib/generate-calendar",
-      "lib/generate-appearances-archive",
       "lib/global-css",
       "lib/google-analytics",
       "lib/head-data",
+      "lib/pwa",
       "lib/routes",
       "lib/sentry",
       "lib/service-workers"
