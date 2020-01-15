@@ -40,9 +40,9 @@
     <use fill-rule="evenodd" xlink:href="#{{this.shapeId}}"></use>
   </svg>
   <figure class="container">
-    {{#if @src}}
+    {{#if @srcset}}
       <div class="img-wrapper">
-        <img class="img" src={{@src}} alt="{{@srcAlt}}" width={{@width}} height={{@height}} />
+        <img class="img" srcset={{@srcset}} sizes={{@sizes}} alt="{{@srcAlt}}" width={{@width}} height={{@height}} />
       </div>
     {{/if}}
     <figcaption class="content">
