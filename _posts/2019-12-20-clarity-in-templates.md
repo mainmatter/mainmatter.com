@@ -16,7 +16,7 @@ In this blog post we will be discussing how recent Ember.js modernization effort
 
 <!--break-->
 
-![Bringing clarity to your Ember templates](/assets/images/posts/2019-12-20-clarity-in-templates/illustration.jpg#full)
+![Bringing clarity to your Ember templates](/assets/images/posts/2019-12-20-clarity-in-templates/illustration.jpg#full@720-1440)
 
 ## Ember Octane and editions
 

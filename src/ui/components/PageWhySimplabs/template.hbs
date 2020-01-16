@@ -47,7 +47,13 @@
       We take an active role in the open source projects that we leverage for our clients. Our strong engagement with Open Source provides us with first hand knowledge and insights that our clients benefit from.
     </p>
   </div>
-  <ShapeAcross @background="#222" @src="/assets/images/photos/tutoring.jpg" @key="acrossTutoring" />
+  <ShapeAcross
+    @background="#222"
+    @srcset="/assets/images/photos/tutoring@900.jpg 900w, /assets/images/photos/tutoring@1800.jpg 1800w"
+    @sizes="(max-width: 887px) 900px, 1800px"
+    @key="acrossTutoring"
+   />
+
   <div class="layout.main offset.after-21">
     <h2>
       Sharing
@@ -74,7 +80,13 @@
       A distributed team allows gathering top talent regardless of location but face to face time is still invaluable. We frequently come together for team events and workshops and invite our clients to those as well.
     </p>
   </div>
-  <ShapeAcross @background="#222" @src="/assets/images/photos/oktoberfest.jpg" @key="acrossOktoberfest" />
+  <ShapeAcross
+    @background="#222"
+    @srcset="/assets/images/photos/oktoberfest@900.jpg 900w, /assets/images/photos/oktoberfest@1800.jpg 1800w"
+    @sizes="(max-width: 887px) 900px, 1800px"
+    @key="acrossOktoberfest"
+   />
+
   <WorkWithUs />
   <Footer />
 </div>

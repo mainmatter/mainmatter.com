@@ -16,7 +16,7 @@ This blog post highlights on which levels contribution to open-source provides v
 
 <!--break-->
 
-![invest time open source illustration](/assets/images/posts/2019-11-11-why-companies-invest-in-oss/oos-illustration.png#full)
+![invest time open source illustration](/assets/images/posts/2019-11-11-why-companies-invest-in-oss/oos-illustration.png#full@1440-2880)
 
 ## What Is Open-Source?
 
@@ -46,7 +46,7 @@ Many of these tasks provide multi-level learning opportunities for employees in 
 
 As active members of open-source communities, developers may hone their **organisational skill set** by managing open-source projects, collaborating with globally distributed teams both online and offline and leading initiatives in an environment with a usually simple, clear-cut organisational structure [[6](https://digital-library.theiet.org/content/conferences/10.1049/ic_20040267)].
 
-![team benefits open source investment](/assets/images/posts/2019-11-11-why-companies-invest-in-oss/oss-team-investment-illustration.png#plain)
+![team benefits open source investment](/assets/images/posts/2019-11-11-why-companies-invest-in-oss/oss-team-investment-illustration.png#plain@600-1200)
 
 Finally, when following an intrinsic motivation to contribute to OSS, engineering teams can benefit from open-source work in regards to well-being. Apart from an investment into their own professional capital by widening their skill set, participation in open-source communities oftentimes has altruistic motives - the ambition to give back to the community from which developers already have benefitted. A sense of belonging to a particular open-source community and wanting to be an active part of it as well as the recognition by community peers are driving factors for OSS contributions to developers [[7](https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1559&context=jais)].
 

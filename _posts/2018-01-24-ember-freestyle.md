@@ -249,7 +249,7 @@ If we now visit `http://localhost:4200/freestyle` we will see a new
 `styled-button` usage examples including the snippets there were used to
 display them:
 
-![Screenshot](/assets/images/posts/2017-12-07-ember-freestyle/styled-button.png)
+![Screenshot](/assets/images/posts/2017-12-07-ember-freestyle/styled-button.png#@900-1800)
 
 As this blog post has gotten much longer than intended already I'll leave it
 up to your imagination what other things you can put into such a component

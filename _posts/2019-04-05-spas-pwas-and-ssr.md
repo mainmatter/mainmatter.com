@@ -28,7 +28,7 @@ run in a browser as opposed to standalone apps. While the much-loved
 was a pretty standard page in terms of interactivity and design only about 2
 decades ago
 
-![Screenshot of the Spacejam Website](/assets/images/posts/2019-03-16-spas-pwas-and-ssr/spacejam.png)
+![Screenshot of the Spacejam Website](/assets/images/posts/2019-03-16-spas-pwas-and-ssr/spacejam.png#@600-1200)
 
 we can now go to [Google Maps](https://www.google.com/maps), zoom and rotate
 the earth in 3D space, measure distances between arbitrary points and have a
@@ -129,7 +129,7 @@ browser on the server side as well as follows:
   browser would load and execute these scripts and start up the app in the
   browser as usual
 
-![Diagram of the approach](/assets/images/posts/2019-03-16-spas-pwas-and-ssr/diagram.png)
+![Diagram of the approach](/assets/images/posts/2019-03-16-spas-pwas-and-ssr/diagram.png#@600-1200)
 
 With this setup, the _TTFMP_ metric is dramatically improved. Although users
 still have to wait for the app's JavaScript to load and the app to start before

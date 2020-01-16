@@ -71,7 +71,7 @@ A common use case for a reusable component is the interactive view of a street m
 
 In the following we will **create a simple street map** based on [Leaflet.js](http://leafletjs.com/) which can be re-used as such a custom element in any other application or static website:
 
-![Screenshot of Final Glimmer Map Component Example - Open Street Map View Centered on Munich](/assets/images/posts/2017-08-30-creating-web-components-with-glimmer/glimmer-map-screenshot-final.jpg)
+![Screenshot of Final Glimmer Map Component Example - Open Street Map View Centered on Munich](/assets/images/posts/2017-08-30-creating-web-components-with-glimmer/glimmer-map-screenshot-final.jpg#@1200-2400)
 
 You can also check out the project on [Github](https://github.com/jessica-jordan/glimmer-map).
 
@@ -85,7 +85,7 @@ ember new glimmer-map -b @glimmer/blueprint --web-component
 
 generating the needed scaffolding for our first Glimmer app. As soon as the Glimmer app is booted up via a simple `ember serve` and we navigate to the typical `http://localhost:4200`, we will find that our first component project is already rendered with a "Welcome to Glimmer!" headline:
 
-![Screenshot of First Page of a New Glimmer App - Headline: Hello Glimmer!](/assets/images/posts/2017-08-30-creating-web-components-with-glimmer/glimmer-map-startup.png)
+![Screenshot of First Page of a New Glimmer App - Headline: Hello Glimmer!](/assets/images/posts/2017-08-30-creating-web-components-with-glimmer/glimmer-map-startup.png#@1200-2400)
 
 Let's have a look at our project's file structure as well; following the new folder structure planned out in the [module unification RFC](https://github.com/emberjs/rfcs/pull/143) we can already find our `component.ts` and `template.hbs` files for creating our component co-located in the same directory below the `src` directory:
 
@@ -237,7 +237,7 @@ Also, let's add the needed markup into our component's template:
 
 With this setup, our map already renders for the map points set intially:
 
-![Screenshot of Open Street Map View of First Pass on the Glimmer Map Component](/assets/images/posts/2017-08-30-creating-web-components-with-glimmer/glimmer-map-screenshot.jpg)
+![Screenshot of Open Street Map View of First Pass on the Glimmer Map Component](/assets/images/posts/2017-08-30-creating-web-components-with-glimmer/glimmer-map-screenshot.jpg#@1200-2400)
 
 We also aim to make our map respond to user input. Specifically, we would like to be able to set the marker to different locations on the map using a property for the longitude (`lon`) and the latitude (`lat`) easily. To allow any property changes to be reflected in the component's DOM, we can make use of the `@tracked` decorator:
 

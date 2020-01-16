@@ -80,7 +80,7 @@ form and the results page that shows the data and an air quality score for a
 particular location. These two screens are implemented via two components so
 that depending on the current state of the app, the correct one is rendered.
 
-![The two main screens of the Breethe PWA](/assets/images/posts/2018-07-03-building-a-pwa-with-glimmer-js/breethe-screens.png)
+![The two main screens of the Breethe PWA](/assets/images/posts/2018-07-03-building-a-pwa-with-glimmer-js/breethe-screens.png#@600-1200)
 
 As Glimmer.js is _"only"_ a UI component library and does not include any
 routing functionality, we used the [Navigo](https://github.com/krasimir/navigo)
