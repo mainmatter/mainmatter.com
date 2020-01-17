@@ -71,7 +71,6 @@
   -webkit-clip-path: polygon(100% 0, 100% 1px, 57% 100%, 0 1px, 0 0);
 }
 
-
 .middle {
   background: var(--shape-color);
   padding-bottom: 4rem;
@@ -104,11 +103,9 @@
   }
 
   .top {
-
   }
 
   .bottom {
-
   }
 
   .img-wrapper {
