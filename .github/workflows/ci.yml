@@ -106,4 +106,6 @@ jobs:
         run: yarn build
 
       - name: validation
+        env:
+          PERCY_TARGET_BRANCH: ${{ github.base_ref }}
         run: yarn ${{ matrix.validation-suite }}
