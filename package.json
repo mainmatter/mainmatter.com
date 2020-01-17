@@ -113,7 +113,15 @@
     "printWidth": 120,
     "singleQuote": true,
     "tabWidth": 2,
-    "trailingComma": "all"
+    "trailingComma": "all",
+    "overrides": [
+      {
+        "files": "*.hbs",
+        "options": {
+          "singleQuote": false
+        }
+      }
+    ]
   },
   "dependencies": {}
 }

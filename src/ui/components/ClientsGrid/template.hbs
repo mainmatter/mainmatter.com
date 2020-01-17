@@ -1,9 +1,9 @@
 <section>
   <h2>
-    {{if @title @title 'Our Clients'}}
+    {{if @title @title "Our Clients"}}
   </h2>
   <div class="grid">
-    {{#each this.clients key='id' as |c|}}
+    {{#each this.clients key="id" as |c|}}
       <figure class="grid.item">
         <div class="grid.figure">
           <img class="grid.image" src={{c.src}} alt="{{c.name}}" />
