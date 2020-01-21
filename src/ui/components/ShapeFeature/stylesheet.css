@@ -1,166 +1,121 @@
 @block containerBlock from "../../styles/blocks/container.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
+@block layout from "../../styles/blocks/layout.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
-  block-name: ShapeFeature;
-  position: relative;
-  margin: 30rem 0;
   padding: 0;
-  grid-column: 1/-1;
+  margin: 5rem 0;
+  --color-muted: var(--color-text-inverted);
+  --color-text: var(--color-text-inverted);
+  --color-link: var(--color-text-inverted);
   --shape-color: var(--color-accent);
-  transform: rotate(30deg);
+  block-name: ShapeFeature;
+  grid-column: 1/-1;
 }
 
 .container {
-  composes: 'containerBlock';
-  transform: rotate(-30deg);
-  position: relative;
-  z-index: 1;
+  margin-bottom: 0;
+
+  composes: 'layout';
+}
+
+.content {
   display: flex;
+  flex-direction: column;
+
+  font-size: inherit;
+  line-height: inherit;
+
+  color: var(--color-text-inverted);
+
+  grid-column: 2/-2;
   justify-content: flex-end;
-  align-items: center;
+}
+
+.img-wrapper {
+  display: block;
+  margin-top: -20rem;
+  margin-bottom: 5rem;
+  margin-left: -4rem;
+
+  clip-path: polygon(31% 0, 100% 30%, 100% 80%, 60% 100%, 0 86%, 0 10%);
+  -webkit-clip-path: polygon(31% 0, 100% 30%, 100% 80%, 60% 100%, 0 86%, 0 10%);
+  grid-column: 1/-1;
 }
 
 .bottom,
 .top {
-  position: absolute;
   display: block;
-  width: 225rem;
-  height: auto;
+
   fill: var(--shape-color);
 }
 
-.content {
-  font-size: inherit;
-  line-height: inherit;
-}
+.top {
+  width: 100%;
+  padding-top: 15%;
+  margin-bottom: -1px;
+  background: var(--shape-color);
 
-.img {
-  display: block;
-  width: 95%;
-  height: auto;
-  margin: auto;
-  transform: translate(-12%);
+  clip-path: polygon(40% 0%, 100% calc(100% - 1px), 100% 100%, 0 100%, 0 calc(50% - 1px));
+  -webkit-clip-path: polygon(40% 0%, 100% calc(100% - 1px), 100% 100%, 0 100%, 0 calc(50% - 1px));
 }
 
 .bottom {
-  top: 0;
-  left: calc(50% - 90rem);
-  transform: translate(-50%);
+  width: 100%;
+  padding-bottom: 8%;
+  margin-top: -1px;
+  background: var(--shape-color);
+
+  clip-path: polygon(100% 0, 100% 1px, 57% 100%, 0 1px, 0 0);
+  -webkit-clip-path: polygon(100% 0, 100% 1px, 57% 100%, 0 1px, 0 0);
 }
 
-.bottom-svg {
-  display: block;
-  position: relative;
-  width: 230rem;
-  height: auto;
-  margin: -4rem;
+.middle {
+  background: var(--shape-color);
+  padding-bottom: 4rem;
 }
 
-.bottom-clip {
-  position: absolute;
-  top: 0;
-  left: 0;
+.img {
   width: 100%;
   height: 100%;
-  overflow: hidden;
-}
 
-.bottom-content {
-  background: var(--shape-color) 90% 100% no-repeat;
-  background-size: 123rem auto;
-  width: 100%;
-  height: 100%;
-  transform: rotate(-30deg);
-}
-
-.bottom-image {
-  width: 46.5%;
-  height: 90%;
-  transform-origin: center;
-  transform: translate(100%, 0%);
-  background: var(--shape-color) 50% 50% no-repeat;
-  background-size: cover;
+  object-fit: cover;
 }
 
 @media (max-width: 887px) {
   :scope {
-    margin: 10rem 0 30rem;
-    min-height: 80rem;
-  }
-
-  .container {
-    flex-direction: column;
-  }
-
-  .top {
-    bottom: 60rem;
-    right: -168rem;
-  }
-
-  .bottom {
-    left: -110rem;
-    top: 35rem;
-    transform: scale(0.6);
+    margin: 16rem 0;
   }
 
   :scope[state|hasImage] .bottom {
-    top: 45rem;
-  }
-
-  .bottom-svg {
-    transform: translate(8vw, 0);
-  }
-
-  .bottom-content {
-    background-position: center;
-  }
-
-  .img-wrapper {
-    height: 50rem;
-    transform: translate(0);
-    order: 2;
-  }
-
-  .img {
-    display: block;
-    width: auto;
-    height: 100%;
-    transform: scale(0.9);
-  }
-
-  .tagline {
-    display: none;
-  }
-
-  .content {
-    order: 1;
-    width: 70%;
   }
 }
 
 @media (min-width: 888px) {
   :scope {
+    margin: 4rem calc(-1 * var(--offset-horizontal));
+    grid-column: 2/-2;
+  }
+
+  .container {
+    margin: 0;
   }
 
   .top {
-    bottom: 63rem;
-    right: -150rem;
+  }
+
+  .bottom {
   }
 
   .img-wrapper {
-    max-width: var(--col-4);
-    margin-top: -30%;
+    grid-column: 1/5;
   }
 
   .content {
-    width: var(--col-2);
+    grid-column: -3/5;
   }
 
   .tagline {
-    bottom: 0;
-    z-index: 2;
-    width: var(--col-2);
   }
 }
