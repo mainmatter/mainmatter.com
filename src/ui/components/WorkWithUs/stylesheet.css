@@ -18,19 +18,30 @@
   background: #f8f8fa;
   padding-top: 15%;
   width: 100%;
-  -webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
-  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+  -webkit-clip-path: polygon(55% 100%, 100% 40%, 100% 100%, 0 100%, 0 40%);
+  clip-path: polygon(55% 100%, 100% 40%, 100% 100%, 0 100%, 0 40%);
 }
 
 .container {
-  margin-bottom: 0;
-  padding-bottom: 20rem;
+  margin-bottom: 20rem;
+  padding: 0;
   composes: 'layout';
   background: #f8f8fa;
 }
 
 .content {
   grid-column: 2/5;
+  padding-top: 20rem;
+}
+
+.img-wrapper {
+  grid-column: 5/-2;
+  overflow: hidden;
+  margin-top: -10rem;
+}
+
+.img {
+  width: 100%;
 }
 
 @media (min-width: 888px) {
