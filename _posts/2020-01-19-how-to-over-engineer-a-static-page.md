@@ -10,210 +10,197 @@ og:
   image: /assets/images/posts/2020-01-19-how-to-over-engineer-a-static-page/og-image.png
 ---
 
-When we set out to rebuild our own website simplabs.com in 2019, we wanted to
-leverage all of the latest and greatest the web platform had to offer to build
-the most advanced site we could. That ended up in a pretty big project in the
-course of which we spent an unreasonable amount of effort on little details only
-to get a tiny bit of better performance. While we cannot recommend anyone doing
-everything we describe in this post only to build a static page, we learned a
-lot on the way and feel that's worth sharing.
+When we set out to rebuild our own website [simplabs.com](https://simplabs.com)
+in 2019, we wanted to use that project as an opportunity to ignore all economic
+considerations (and reason you could say) and dive deep into what was
+technically possible to build something that was super customized for our
+specific needs and highly optimized for performance. We ended up spending a lot
+of time and effort but are quite pleased with the result. While we cannot
+recommend anyone following our example as your time is most likely spent better
+elsewhere, this post explains the approach we took.
 
 <!--break-->
 
 Our goals for the new website were manifold:
 
-- we wanted to update the rather antiquated design and create a modern design
-  language that represented our identity well and would be the foundation for a
-  design system that we could build on in the future
+- we wanted to update the rather
+  [antiquated design of the old site](https://web.archive.org/web/20181021095200/https://simplabs.com/)
+  and create a modern design language that represented our identity well and was
+  build on a design system that we could build on in the future (the details of
+  which are to be covered in a separate, future post)
 - we wanted to keep creating and maintaining content for the site as simple as
   it was with the previous site that was built on Jekyll and published via
-  GitHub Pages with e.g. blog posts being managed in markdown files etc.
-- although we're huge fans of Elixir and Phoenix we did not want to create an
+  GitHub Pages; for example adding new blog posts should remain as easy as
+  [adding a new Markdown file with some front matter](https://github.com/simplabs/simplabs.github.io/pull/826)
+- although we are huge fans of Elixir and Phoenix we did not want to create an
   API server for the site that would serve content etc. as that would have added
   quite some unnecessary complexity and should generally not be necessary for a
-  static site
+  static site like ours anyway where all content is known upfront and nothing
+  ever needs to be calculated dynamically on the server
 - we wanted to have best in class performance so that the site would load as
-  fast as possible even in slow network situations but also work offline and
-  even without JavaScript
-
-While we could have used something like Gatsby, Empress or VuePress to get most
-of all of these boxes ticked, being a web engineering consultancy, we saw this
-project as an opportunity to build something ourselves and making new
-experiences along the way.
+  fast as possible even in slow network situations and even without JavaScript
+  as well as offline of course
 
 ## Static Prerendering + Rehydration and CSR
 
-We knew pretty soon that the general approach we wanted to take was to use
-client side technology to author the page and to get client side rendering (CSR)
-and thus full client-side route changes without additional navigation requests
-once the app was running in the browser. We also wanted to statically pre-render
-all routes to HTML files at build time so that we could publish the HTML for all
-routes from a CDN for a super fast TTFB and FCP.
+Since the site is entirely static content, it was clear we wanted to serve
+pre-rendered HTML files for all pages – there was no point delaying the first
+paint until some JavaScript bundle was loaded. Those static HTML documents would
+be served via a CDN for an optimal
+[TTFB](https://en.wikipedia.org/wiki/Time_to_first_byte). As the pages were
+pre-rendered and did not depend on any client-side JavaScript, that would also
+result in a fast
+[FCP](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint).
+Since there is no interactivity on any of the pages really, once the pages are
+rendered by the browser, they are also immediately interactive, meaning that
+[TTI](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive)
+is essentially the same as FCP in our case.
 
-Since the pages are all static, do not load any data from an API or otherwise
-depend on client-side JavaScript to be functional, that meant that TTI would be
-the same as FCP. As the HTML response for the browser's original navigation
-request that loads the page contains everything that there is on the page, that
-would be immediately functional in the sense that all links work right away,
-regardless of whether the JS has been loaded/parsed/compiled or not. Once the
-application has started up and rehydrated and attached to the pre-rendered DOM,
-it would take over handling navigation requestss and handle them fully on the
-client side. In that sense, the JavaScript is only progressively enhancing the
-static page - if it is running, it handles navigation client-side, if it is not
-(yet) running, clicking on any link simply results in a regular navigation
-request that will be responded to with a complete HTML document (served via a
-CDN) for the respective page.
+However, one of the advantages of client side rendering is that all subsequent
+page transitions after the initial render can be handled purely on the client
+side without the need for making (and waiting for the response to) any
+additional requests. In order to combine that benefit with those of serving
+pre-rendered HTML documents, we wrote the site as a single page app so that the
+client-side app would rehydrate on top of the pre-rendered DOM once the
+JavaScript was loaded and the app started. If that happens before a user clicks
+any of the links on any of the pages, the page transition would be handled
+purely on the client side and thus be instant. If a link is clicked **before**
+the app is running in the client, that click would simply result in a regular
+navigation request that would be responded to with another pre-rendered HTML
+document from the CDN. In that sense, the client side app
+[progressively enhances](https://en.wikipedia.org/wiki/Progressive_enhancement)
+the static HTML document - if it is running, page transitions will be purely
+client side and instant, if it is not (yet) running, clicks on links will simply
+be regular navigation requests.
 
-Since we're huge fans of Ember.js and directly involved in its core team and
-with its community, we wanted to stay in the ecosystem to build our own site as
-well. While Ember.js is a great fit for ambitious apps that need many things to
-be handled though, for a static page like ours where all we wanted was
-client-side rendering of some static content on route changes, it would have
-been massive overkill. However, Ember.js' very lightweight sister project
-Glimmer.js was a pretty good fit for our needs actually. All that Glimmer.js is
-is a library for defining, rendering and nesting components that would get
-re-rendered when some internal state changes. Bundling that up with a client
-side routing library like Navigo we were able to get everything we needed in
-only around 30KB of JavaScript. Given that we didn't even require the JS to be
-loaded in order for the page to be rendered or ready to use at all, that seemed
-pretty good.
+### Glimmer.js
+
+Since we are huge fans of Ember.js and are heavily connected with the community
+supporting it and even directly involved in its core team, we wanted to stay in
+the ecosystem to build our own site as well. While Ember.js is a great fit for
+ambitious apps like [travel booking systems](/cases/trainline/) or
+[appointment scheduling systems](/cases/timify/) though that implement
+significant client side logic though, for a static page like ours it would
+admittedly not have been an ideal fit – we would simply not have needed or used
+much of what it comes with. Ember.js' lightweight sister project
+[Glimmer.js](https://glimmerjs.com) provides exactly what we need though which
+is a system for defining and rendering components and trees of components that
+would get re-rendered upon changes to the application state.
+
+The only client side state that our application maintains is the currently
+active route that maps to a particular component that renders the page for that
+route. Leveraging [Navigo](https://github.com/krasimir/navigo) for the routing
+and combining that with Glimmer.js for the rendering we started out with a
+custom micro-framework with a size of only around 30KB of JavaScript. Given that
+we didn't even require the JS to be loaded in order for the page to be rendered
+or ready to use at all, that seemed pretty good. Our main JavaScript bundle that
+contains Glimmer.js, Navigo and **all** of the main site's content only weighs
+in at around 70KB (as of the writing of this post) and once that is loaded
+**all** of the main site is running in the browser, meaning no additional
+network requests are necessary when browsing the site.
 
 ### Statically Prerendering
 
-Statically pre-rendering a page at build time is relatively straight forward.
-What you do is you build the app, run an Express Server, that serves the app,
-visit every route with a headless instance of Chrome using Puppeteer, take a
-snapshot of the page's DOM and save that to a respectively named file in the
-directory you're then uploading to the CDN so that the HTML files will be used
-by that to respond to the respective requests.
-
-In our case, it was a tiny bit more complex than that though. First, when
-pre-rendering an app, you might want to do things a bit different than when
-running the app in the browser. For example we split our JS into independent
-bundles that each contain the content for particular parts of the site (see
-below). When running the app in the browser and navigating to a route for which
-the respective bundle has not yet been loaded, we simply lazy-load the
-respective bundle before actually making the transition into the target route.
-When generating the HTML file for that route though, we need to make sure that
-that file already contains a script tag for the respective bundle so that the
-app can successfully rehydrate in the browser. Another thing is we need to
-disable the contact form (which is the only actually interactive thing on our
-page that requires the app to run in the browser to work) in the SSR response.
-
-Also, when rehydrating the app in the browser on top of an already existing DOM,
-you'll want to make sure that the app attaches to that DOM rather than replacing
-it. Otherwise users might see a flash of an empty page which obviously is not a
-great experience. In order to achieve that with Glimmer.js, you'd be using 2
-different DOM builders, specifically the `DOMBuilder` when running the app for
-SSR and the `RehydratingBuilder` when running the app in the browser and
-attaching to the pre-rendered DOM. The `DOMBuilder` will put marks into the DOM
-that it generates that the `RehydratingBuilder` uses to know how and where to
-attach its internals to the existing DOM.
-
-In order to get both of these things, we're not only running an Express server
-that serves a pre-built version of the app but we run the app in the Express
-server (so in Node) and render its outputs to a String that the Node server then
-responds with.
-
-Serving these pre-rendered HTML responses from a CDN for the browser's initial
-navigation requests, results in the best FCP and TTI we can possibly get. Once
-the application rehydrates and takes over handling route changes in the client,
-there will be no additional navigation requests. If the JS has not loaded (yet)
-and the app is not running in the browser, we simply fall back to making regular
-navigation requests that are again served from a CDN when the user clicks any
-links. With our main JS bundle that includes all of the main content of the site
-only being around 70KB, this approach seems to combine the best of both worlds
-and will have at least comparable performance characteristics to using something
-like prefetching which also demands a better network connection as every
-subsequent page transition requires another network request while one is
-sufficient if **all** of the site's content is already included in the initial
-bundle and all subsequent page transitions can be handlded purely on the client
-side without loading any more data over the network.
+Statically pre-rendering a client side app at build time is relatively straight
+forward. As part of our Netlify deployment, we build the app and start a small
+Express Server that serves it. We then
+[visit each of the routes](https://github.com/simplabs/simplabs.github.io/blob/651b2e805c55fed5d152d82a3fee7b06874429b1/scripts/prerender.js#L69)
+with a headless instance of Chrome using Puppeteer,
+[take a snapshot of the page's DOM](https://github.com/simplabs/simplabs.github.io/blob/651b2e805c55fed5d152d82a3fee7b06874429b1/scripts/prerender.js#L70)
+and
+[save that to a respectively named file](https://github.com/simplabs/simplabs.github.io/blob/651b2e805c55fed5d152d82a3fee7b06874429b1/scripts/prerender.js#L71).
+All of these HTML files, along with the app itself and all other assets, then
+get uploaded to the CDN to be served from there.
 
 ## Maintaining content
 
 Although we were switching to a significantly more advanced setup than what we
 had with the previous Jekyll based site, we did not want to give up the easy
-maintenance of content, specifically for blog posts that we kept in Markdown
-files. Writing a new post should remain as easy as adding a new markdown file
-with some front matter and Markdown-formatted content. At the same time, we did
-not want to rely on an API for loading the content of particular pages
-dynamically as that would have added significant additional complexity and none
-of our data actually needed to be computed on demand on the server as all of it
-is indeed static and known up front. Leveraging Glimmer.js Broccoli based build
-pipeline, we set up a process that reads in all files in a directory and
-converts the Markdown files in that into Glimmer.js components at build time.
+maintenance of content, specifically for blog posts and similar content that we
+wanted to keep in Markdown files as we used to. Writing a new post should remain
+as easy as adding a new markdown file with some front matter and
+Markdown-formatted content. At the same time, we did not want to rely on an API
+for loading the content of particular pages dynamically as that would have added
+significant additional complexity and none of our data actually needed to be
+computed on demand on the server as all of it is indeed static and known up
+front. Leveraging Glimmer.js' Broccoli based build pipeline, we set up a process
+that reads in all files in a directory and
+[converts the Markdown files into Glimmer.js components at build time](https://github.com/simplabs/simplabs.github.io/blob/master/lib/generate-blog/lib/components-builder.js).
 
-That means we are generating one component for each post but also the components
-that render the list pages that list the blog posts and also the pages that list
-posts from a particular author or topic or components that list the newest posts
-for a particular topic that get embedded into other pages. Of course we could
-not add all these components to the main bundle and grow that to a significant
-size as more posts were added (and also invalidating our users' caches for that
-main bundle with every new post - more on that below). Instead, we split the
-posts into separate bundles that only get loaded on demand as the user navigates
-to the respective pages. That way, we do not load a bunch of content for all of
-our users that only few will ever look at (in particular blog posts from years
-ago are unlikely to be accessed by someone who navigates to the home page).
+That way we are generating dedicated components for all posts that are all
+[mapped to their own routes](https://github.com/simplabs/simplabs.github.io/blob/master/config/routes-map.js#L42).
+We also generate the components for the [blog listing page(s)](/blog/) and the
+ones that [list all posts by a particular author](/blog/author/marcoow). This
+approach basically moves what would typically be done by an API server at
+runtime (retrieving content from a repository that grows and changes over time)
+to build time, much like what the [Jamstack](https://jamstack.org) propagates
+(and tools like [Empress](https://github.com/empress),
+[VuePress](https://vuepress.vuejs.org) or [Gatsby](https://www.gatsbyjs.org)
+would have done out of the box 😀). The same approach is used for other parts of
+the website that grow and change over time and that we want to be able to
+maintain content for with little effort like the [calendar](/calendar/) or
+[talks catalog](/talks/).
 
 ## Bundling and Caching
 
-When all of a site's content is encoded in JS, that means that JS bundle will
-significantly grow over time. In order to avoid that **all** of our users had to
-load **all** of the site's content on each visit, we split the bundle into
-chunks so that only content that is actually relevant for a particular user gets
-loaded. One approach for achieving that is to split individual bundles for all
-of the pages in a site but that means that any page transitions that happen
-after the app has rehydrated from the initial pre-rendered response will result
-in additional requests for loading the bundle that encodes the content for the
-particular target page. We knew we did not want that but handle as many page
-transitions purely on the client side as we could.
+When all of a site's content is encoded in components that are written in
+JavaScript, that means that JavaScript bundle will significantly grow over time.
+In order to avoid that **all** of our users had to load **all** of the site's
+content on each visit, we wanted to split the JavaScript into separate bundles
+so that everyone only needs to load what is (likely to be) relevant for them.
+Anything that was not loaded already would be loaded lazily once the user
+navigated to the respective part of the site (and ideally be served from the
+service worker cache - more on that below). One approach for achieving such a
+split is to split individual bundles for all of the pages in a site but that
+means that any page transitions will result in an additional request to load the
+bundle that contains the content for the particular target page. We knew we did
+not want that but handle as many page transitions purely on the client side
+without the need for additional network requests as we could.
 
-The approach that we actually went with was to define bundle boundaries on usage
-patterns and split them along these. Our site now has a multitude of bundles:
+The approach that we went with was to define bundle boundaries on usage patterns
+and split along those so that only few network requests would be necessary to
+load the JavaScript bundles that were actually relevant for a particular user.
+Our site now has a multitude of bundles:
 
-- the main bundle that contains Glimmer.js itself as well as all of the main
-  site's content; that is about 70KB
-- the blog bundle or actually individual bundles for all of the blog's pages
-  that only get loaded on demand when the user navigates to the respective
-  pages; when the user starts the app on a particular blog page, there even is
-  an additional bundle for each individual post that only contains that post so
-  that we can reduce the amount of code that is needed to load for a post to a
-  minimum
-- bundles for rarely accessed pages like Imprint and Privacy Policy that have a
-  significant size but only contain content that is only rarely accessed
-- additional bundles for more frequently changing content like the Calendar or
-  Talks pages; the components for those pages are generated on demand from a set
-  of Markdown files at build time, similar to the blog
-- a bundle that contains only the _"recent posts for this topic"_ component that
-  gets displayed on pages for the particular topic
+- the main bundle that contains Glimmer.js itself as well as **all** of the main
+  site's content; that is about 70KB as of the writing of this post
+- the bundles for each of the blog's listing pages as well as individual bundles
+  for each post; these are relatively small but change frequently of course
+- bundles for rarely accessed pages like [imprint](/imprint/) and
+  [privacy policy](/privacy/) that have a significant size (around 11KB as of
+  the writing of this post) but contain content that is accessed only by very
+  few users
+- additional bundles for more frequently changing content like the
+  [calendar](/calendar/) or [talks catalog](/talks/)
+- a bundle that contains a component that lists the most recent blog posts for a
+  particular topic that; that component gets included on
+  [pages within the main site](/expertise/ember/)
 
 ### Bundles and Caching
 
 Another factor to take into account when defining bundle boundaries is the
-stability of bundles, basically how often they are going to change over time.
-Our main bundle that contains Glimmer.js and the site's main content is
-relatively stable and will typically be cacheable for long. If we had included
-e.g. all of the blog posts in our main bundle we would not only have
-significantly grown the main bundle but also invalidated our users's caches for
-that bundle every time we released a new blog post. The same is true for the
-mini bundle that contains a component that renders a list of recent posts for a
-particualr topic. As that component is always needed along with components that
-live in the main bundle as it is rendered on the respective pages, we could have
-included it right with the main bundle, but that would likewise have meant
-invalidating the main bundle with every blog post which is wasteful.
-
-By defining bundle boundaries along usage patterns and keeping each bundle's
-conttent's stability in mind, we are able to significantly improve the
-likelihood for someone that has been cached in our user's browsers (or
-elsewhere) to be reusable the next time they need it.
+stability of each bundle in the sense of how often it is going to change over
+time. Our main bundle that contains Glimmer.js and the site's main content is
+relatively stable and will typically not change for longer periods of time
+(potentially weeks or months). That means once it is cached in a user's browser,
+there is a good chance they will be able to reuse it from cache upon their next
+visit. If we had included all of the components for all of the blog posts in
+that main bundle though, we would not only have steadily grown that bundle over
+time but also invalidated the users's cache for it every time we released a new
+post. The same is true for the component that renders a list of recent posts for
+a particular topic. As that component is always needed along with components
+that are part of the main bundle as it is rendered on the respective pages, we
+could have included it right with the main bundle, but that would likewise have
+meant invalidating the main bundle with every blog post which would have
+resulted in a poor utilisation of our user's caches.
 
 ### Caching Strategies
 
-As described in the previous paragraph, we optimized our bundles for
-cachability. Since we also use fingerprinted asset names (or acutally get these
-for free out of the box since Glimmer.js uses Ember CLI), we can let our user's
-browsers every resource they ever load indefinitely using immutable caching:
+As described, we optimized our bundles for cache-ability. Since we also use
+fingerprinted asset names (or actually
+[get them for free out of the box since Glimmer.js uses Ember CLI](https://ember-cli.com/user-guide/#fingerprinting-and-cdn-urls)),
+we can let our user's browsers cache all resources indefinitely using immutable
+caching:
 
 ```
 cache-control: public,max-age=31536000,immutable
@@ -225,50 +212,37 @@ necessary as a fallback for browsers that
 [do not support immutable caching](https://caniuse.com/#feat=mdn-http_headers_cache-control_immutable).
 An immutable resource that the browser has cached will be available instantly on
 the next visit to the respective page and should generally have the same
-performance characteristics as a resource cached in the service worker's cache.
+performance characteristics as a resource cached in a service worker's cache.
 
 ### Service Worker
 
-Of course we also have a service worker that caches all of the page's resources
-to further improve the caching and make the full page available even when the
-user is offline. When the application starts up in our user's browsers and the
-service worker is not yet active, we load and cache all of the page's resources
-in the service worker cache. That means that even some of the pages' content is
-split into separate bundles, when the user navigates to such a page, the
-respective bundle is likely to have been loaded by the service worker already
-and will be served from its cache, avoiding an actual network request and making
-the respective page transition instant.
+Of course we also install a
+[service worker](https://github.com/simplabs/simplabs.github.io/blob/master/lib/service-workers/workers/service-worker.js)
+that caches all of the page's resources to further improve caching and make the
+page work offline. The service worker loads of the JavaScript bundles described
+above into its cache eagerly. So even some of the pages' content is split into
+separate bundles that are loaded lazily, when that lazy load is triggered the
+respective bundle is likely to be in the service worker's cache already and be
+served from there so that the page transition can still be instant without a
+network request.
 
-If we actually loaded **all** of the page's content on startup though that would
-mean we'd be loading **a lot** of content including quite a bit of content that
-none or only very few of our users would ever need, for example blog posts from
-a few years ago. In order to avoid that, we only load the blog bundles when a
-user navigates to the respective page of the blog. Any blog pages the user has
-not yet navigated to will not be loaded and thus not mess with the user's hard
-disk space (and making it more likely our entire service worker cache would get
-pruned actually).
+#### Static Prerendering and service workers
 
 When using service workers on a site with statically pre-rendered HTML, there is
-a caveat when it comes to handling the HTML request for a particular path in the
-servie worker when the user's device is offline. Since every route on the page
-has its own HTML page that contains precisely the content for that page, not all
-HTML requests can be served with the same response from the service worker.
-Since the JS bundle will be served from the service worker as well when the page
-starts offline, serving a pre-rendered HTML document is not necessary though.
-Instead, we can simply serve an empty HTML document (like in the classic way of
-serving SPAs where all you send to the browser is an empty HTML page with some
-script tags) which we keep separately from the pre-rendered documents. That page
-only has a
+one caveat to be aware of when it comes to serving HTML from the service worker
+when the device is offline. Since every route on the page has its own HTML page
+that contains precisely the content for that page, not all HTML requests can be
+served with the same response from the service worker. Since the JavaScript
+bundle will be served from the service worker as well when the page starts
+offline, serving a pre-rendered HTML document is not necessary anyway though as
+there is no significant delay for loading the JavaScript. Instead, we can simply
+serve an empty HTML document in this scenario. That document only contains a
 
 ```html
 <div id="app"></div>
 ```
 
-that the application will render into. Since we're using Glimmer.js'
-`RehydratingBuilder` when rehydrating the application from a pre-rendered
-response which we cannot use in this case, we add a `data-has-ssr-response`
-attribute when pre-rendering so that we can know whether we are rehydrating or
-rendering fresh in the client.
+in its `<body>` that the application will render into once it starts up.
 
 ## More
 
@@ -276,35 +250,37 @@ All of the above has lead to a result we are pretty happy with. While the design
 of our new page is for everyone to judge based on their own taste maybe, the
 performance numbers speak a clear language.
 
-TODO: numbers, lighthouse, webpagetest.org
+![Screenshot](/assets/images/posts/2020-01-19-how-to-over-engineer-a-static-page/lighthouse.png#@900-1800)
 
 We were able to get there without giving up on the ease of maintenance of the
-content where writing a blog post simply means adding a Markdown files and
-opening a pull request on github (TODO: link to the PR for this).
+content so that writing a new blog post is as easy as adding a Markdown file and
+[opening a pull request](https://github.com/simplabs/simplabs.github.io/pull/826).
 
-Of course we spent an unreasonable amount of time during the course of the
-project which we cannot recommend anyone does but since we're a web consultancy,
-what could be a better opportunity to do that than our own website? There are
-many more things that we did (and some of them we didn't even do yet) and that
-are key for building a cutting-edge website:
+And even though we spent an unreasonable amount of time and effort during the
+course of the project, there are many more things that we did not do or that I
+couldn't cove in this article but that should be considered best practices when
+optimizing for performance:
 
-- CSS: CSS can grow to a significant size easily and it is render blocking which
-  is a good reason to pay attention to it and make sure it is as optimized as
-  possible; we used css-blocks which is great but worth a blog post of its own
-- images and their formats are a huge topic as well and there are many low
-  hanging fruits where simple changes can have a significant positive impact on
-  your site's performance; things like inlining SVGs, using progressive JPGs or
-  base64-encoded background images that get swapped out with the real image
-  after page load area as relevant as using progressive images to avoid huge
-  payloads on small viewports
+- CSS and optimizing it has huge potential to have significant positive impact
+  on a site's performance (and sink lots of time 🎉); we used css-blocks which
+  is great but worth a blog post of its own so I won't go into any details here
+- images and their formats are a huge topic as well when it comes to performance
+  and there are many low hanging fruits where simple changes can have a
+  significant positive impact on a site's performance; things like inlining SVGs
+  (or not if they are big or change often), using progressive JPGs or
+  base64-encoded background images that get swapped out with the actual image
+  after page load are to be named as well as using progressive images to avoid
+  huge payloads on small viewports
 - third-parties can have a significant negative impact on a site's performance
-  and should generally be avoided
-- having the right tooling in place is key to keep track of where you are, what
-  impacts your changes have and things you might be doing wrong; you could have
-  Lighthouse integrated into your Github Pipeline (ideally for every route of
-  the app), jobs that tell you how much weight a change adds to which bundles
-  and which bundles it invalidates etc.
-- knowing is better than not knowing and if you really care about your site's
-  performance you need to measure using RUM methods
+  and should generally be avoided (for example, you'll want to
+  [serve fonts from your own domain](https://github.com/simplabs/simplabs.github.io/pull/833))
+- optimizing for performance is an ongoing project and not a one-off effort;
+  there needs to be tooling in place to be aware of degrations and accidental
+  mistakes, e.g. you could have Lighthouse integrated into your Github Pipeline
+  (ideally for every route of the app), jobs that tell you how much weight a
+  change adds to which bundles and which bundles it invalidates etc.
+- knowing is better than guessing and if you really care about your site's
+  performance you need to measure using
+  [RUM](https://en.wikipedia.org/wiki/Real_user_monitoring)
 
-TODO: last words
+TODO: closing notes
