@@ -283,4 +283,10 @@ optimizing for performance:
   performance you need to measure using
   [RUM](https://en.wikipedia.org/wiki/Real_user_monitoring)
 
-TODO: closing notes
+By spending a significant (and maybe unreasonable) amount of time and energy we
+ended up with the highly optimized site you're looking at. Would we do it again?
+Maybe not – but it was definitely an interesting experiment and we hope you took
+some inspiration out of the patterns and mechanisms we describe in this post. If
+you are struggling with performance in your Ember.js or Glimmer.js or other
+apps, feel free to [reach out and talk to our experts](/contact/) to see how we
+can help.
