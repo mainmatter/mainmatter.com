@@ -6,8 +6,9 @@ twitter: marcoow
 topic: javascript
 bio: 'Founding Director of simplabs, author of Ember Simple Auth'
 description:
-  'Marco Otte-Witte explains how we spent an unreasonable amount of time and
-  energy into rebuilding simplabs.com and optimizing it for maximum performance.'
+  'Marco Otte-Witte on how we rebuilt simplabs.com and optimized it for maximum
+  performance leveraging static pre-rendering and client-side rehydration,
+  advanced bundling and caching and service workers.'
 og:
   image: /assets/images/posts/2020-01-19-how-to-over-engineer-a-static-page/og-image.png
 ---
