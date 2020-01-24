@@ -264,8 +264,9 @@ couldn't cover in this article but that should be considered best practices when
 optimizing for performance:
 
 - CSS and optimizing it has huge potential to have significant positive impact
-  on a site's performance (and sink lots of time 🎉); we used css-blocks which
-  is great but worth a blog post of its own so I won't go into any details here
+  on a site's performance (and sink lots of time 🎉); we used
+  [CSS Blocks](https://css-blocks.com) which is great but worth a blog post of
+  its own so I won't go into any details here
 - images and their formats are a huge topic as well when it comes to performance
   and there are many low hanging fruits where simple changes can have a
   significant positive impact on a site's performance; things like inlining SVGs
