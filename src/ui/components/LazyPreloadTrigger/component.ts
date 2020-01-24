@@ -15,7 +15,9 @@ export default class LazyPreloadTrigger extends Component {
 
       await ready;
 
-      controller.postMessage({ preload: this.args.bundle });
+      if (controller) {
+        controller.postMessage({ preload: this.args.bundle });
+      }
     }
   }
 }
