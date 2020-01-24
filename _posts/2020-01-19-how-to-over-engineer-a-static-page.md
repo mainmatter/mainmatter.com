@@ -5,7 +5,7 @@ github: marcoow
 twitter: marcoow
 topic: javascript
 bio: 'Founding Director of simplabs, author of Ember Simple Auth'
-description: 'TODO'
+description: 'Marco Otte-Witte explains how we spent an unreasonable amount of time and energy into rebuilding simplabs.com and optimizing it for maximum performance.'
 og:
   image: /assets/images/posts/2020-01-19-how-to-over-engineer-a-static-page/og-image.png
 ---
