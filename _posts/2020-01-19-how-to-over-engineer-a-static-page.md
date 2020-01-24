@@ -5,7 +5,9 @@ github: marcoow
 twitter: marcoow
 topic: javascript
 bio: 'Founding Director of simplabs, author of Ember Simple Auth'
-description: 'Marco Otte-Witte explains how we spent an unreasonable amount of time and energy into rebuilding simplabs.com and optimizing it for maximum performance.'
+description:
+  'Marco Otte-Witte explains how we spent an unreasonable amount of time and
+  energy into rebuilding simplabs.com and optimizing it for maximum performance.'
 og:
   image: /assets/images/posts/2020-01-19-how-to-over-engineer-a-static-page/og-image.png
 ---
@@ -284,9 +286,12 @@ optimizing for performance:
   [RUM](https://en.wikipedia.org/wiki/Real_user_monitoring)
 
 By spending a significant (and maybe unreasonable) amount of time and energy we
-ended up with the highly optimized site you're looking at. Would we do it again?
-Maybe not – but it was definitely an interesting experiment and we hope you took
-some inspiration out of the patterns and mechanisms we describe in this post. If
-you are struggling with performance in your Ember.js or Glimmer.js or other
-apps, feel free to [reach out and talk to our experts](/contact/) to see how we
-can help.
+ended up with the highly optimized site you're looking at. The downside is we
+ended up with our own custom static site generator essentially that we now need
+to maintain ourselves (one of the reasons why we recommend using a fully
+integrated framework like [Ember.js](/expertise/ember/) instead of compiling
+your own custom framework out of a bunch of micro libraries). However, it was
+definitely an interesting experiment and we hope you take some inspiration out
+of the patterns and mechanisms we describe in this post. If you are struggling
+with performance in your Ember.js or Glimmer.js or other apps, feel free to
+[reach out and talk to our experts](/contact/) to see how we can help.
