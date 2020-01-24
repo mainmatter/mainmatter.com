@@ -258,7 +258,7 @@ content so that writing a new blog post is as easy as adding a Markdown file and
 
 And even though we spent an unreasonable amount of time and effort during the
 course of the project, there are many more things that we did not do or that I
-couldn't cove in this article but that should be considered best practices when
+couldn't cover in this article but that should be considered best practices when
 optimizing for performance:
 
 - CSS and optimizing it has huge potential to have significant positive impact
