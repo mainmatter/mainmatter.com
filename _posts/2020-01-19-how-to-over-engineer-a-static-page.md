@@ -20,7 +20,9 @@ technically possible to build something that was super customized for our
 specific needs and highly optimized for performance. We ended up spending a lot
 of time and effort but are quite pleased with the result. While we cannot
 recommend anyone following our example as your time is most likely spent better
-elsewhere, this post explains the approach we took.
+elsewhere, this post explains the approach we took. We will be covering topics
+like static pre-rendering and client-side rehydration, advanced bundling and
+caching strategies as well as service workers.
 
 <!--break-->
 
