@@ -64,16 +64,16 @@ is essentially the same as FCP in our case.
 
 However, one of the advantages of client-side rendering is that all subsequent
 page transitions after the initial render can be handled purely on the client
-side without the need to make (and wait for the response to) any
-additional requests. In order to combine that benefit with those of serving
-pre-rendered HTML documents, we wrote the site as a single-page app so that the
-client-side app would rehydrate on top of the pre-rendered DOM once the
-JavaScript was loaded and the app started. If that happens before a user clicks
-any of the links on any of the pages, the page transition would be handled
-purely on the client side and thus be instant. If a link is clicked **before**
-the app is running in the client, that click would simply result in a regular
-navigation request that would be responded to with another pre-rendered HTML
-document from the CDN. In that sense, the client-side app
+side without the need to make (and wait for the response to) any additional
+requests. In order to combine that benefit with those of serving pre-rendered
+HTML documents, we wrote the site as a single-page app so that the client-side
+app would rehydrate on top of the pre-rendered DOM once the JavaScript was
+loaded and the app started. If that happens before a user clicks any of the
+links on any of the pages, the page transition would be handled purely on the
+client side and thus be instant. If a link is clicked **before** the app is
+running in the client, that click would simply result in a regular navigation
+request that would be responded to with another pre-rendered HTML document from
+the CDN. In that sense, the client-side app
 [progressively enhances](https://en.wikipedia.org/wiki/Progressive_enhancement)
 the static HTML document - if it is running, page transitions will be purely
 client-side and instant, if it is not (yet) running, clicks on links will simply
@@ -128,9 +128,9 @@ as easy as adding a new markdown file with some front matter and
 Markdown-formatted content. At the same time, we did not want to rely on an API
 for loading the content of particular pages dynamically as that would have added
 significant additional complexity and none of our data actually needed to be
-computed on demand on the server as all of it is indeed static and known upfront.
-Leveraging Glimmer.js' Broccoli-based build pipeline, we set up a process
-that reads in all files in a directory and
+computed on demand on the server as all of it is indeed static and known
+upfront. Leveraging Glimmer.js' Broccoli-based build pipeline, we set up a
+process that reads in all files in a directory and
 [converts the Markdown files into Glimmer.js components at build time](https://github.com/simplabs/simplabs.github.io/blob/master/lib/generate-blog/lib/components-builder.js).
 
 That way we are generating dedicated components for all posts that are all
