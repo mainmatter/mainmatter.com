@@ -139,7 +139,7 @@ We also generate the components for the [blog listing page(s)](/blog/) and the
 ones that [list all posts by a particular author](/blog/author/marcoow). This
 approach basically moves what would typically be done by an API server at
 runtime (retrieving content from a repository that grows and changes over time)
-to build time, much like what the [Jamstack](https://jamstack.org) propagates
+to build time, much like what the [Jamstack](https://jamstack.org) advocates for
 (and tools like [Empress](https://github.com/empress),
 [VuePress](https://vuepress.vuejs.org) or [Gatsby](https://www.gatsbyjs.org)
 would have done out of the box 😀). The same approach is used for other parts of
