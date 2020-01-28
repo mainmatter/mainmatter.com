@@ -5,7 +5,8 @@ github: marcoow
 twitter: marcoow
 topic: javascript
 bio: 'Founding Director of simplabs, author of Ember Simple Auth'
-description: 'Marco Otte-Witte on how we rebuilt simplabs.com and optimized it for maximum
+description:
+  'Marco Otte-Witte on how we rebuilt simplabs.com and optimized it for maximum
   performance leveraging static pre-rendering and client-side rehydration,
   advanced bundling and caching and service workers.'
 og:
@@ -15,13 +16,13 @@ og:
 When we set out to rebuild our own website [simplabs.com](https://simplabs.com)
 in 2019, we wanted to use that project as an opportunity to ignore all economic
 considerations (and reason you could say) and dive deep into what was
-technically possible to build something that was super customized for our
-specific needs and highly optimized for performance. We ended up spending a lot
-of time and effort but are quite pleased with the result. While we cannot
-recommend anyone following our example as your time is most likely better spent
-elsewhere, this post explains the approach we took. We will be covering topics
-like static pre-rendering and client-side rehydration, advanced bundling and
-caching strategies as well as service workers.
+technically possible. Doing so would allow us to build something that was super
+customized for our specific needs and highly optimized for performance. We ended
+up spending a lot of time and effort but are quite pleased with the result.
+While we cannot recommend anyone following our example as your time is most
+likely better spent elsewhere, this post explains the approach we took. We will
+be covering topics like static pre-rendering and client-side rehydration,
+advanced bundling and caching strategies as well as service workers.
 
 <!--break-->
 
