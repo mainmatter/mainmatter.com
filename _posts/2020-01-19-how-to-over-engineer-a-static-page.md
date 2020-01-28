@@ -18,7 +18,7 @@ considerations (and reason you could say) and dive deep into what was
 technically possible to build something that was super customized for our
 specific needs and highly optimized for performance. We ended up spending a lot
 of time and effort but are quite pleased with the result. While we cannot
-recommend anyone following our example as your time is most likely spent better
+recommend anyone following our example as your time is most likely better spent
 elsewhere, this post explains the approach we took. We will be covering topics
 like static pre-rendering and client-side rehydration, advanced bundling and
 caching strategies as well as service workers.
@@ -27,23 +27,23 @@ caching strategies as well as service workers.
 
 Our goals for the new website were manifold:
 
-- we wanted to update the rather
+- We wanted to update the rather
   [antiquated design of the old site](https://web.archive.org/web/20181021095200/https://simplabs.com/)
   and create a modern design language that represented our identity well and was
   build on a design system that we could build on in the future (the details of
-  which are to be covered in a separate, future post)
-- we wanted to keep creating and maintaining content for the site as simple as
+  which are to be covered in a separate, future post).
+- We wanted to keep creating and maintaining content for the site as simple as
   it was with the previous site that was built on Jekyll and published via
   GitHub Pages; for example adding new blog posts should remain as easy as
-  [adding a new Markdown file with some front matter](https://github.com/simplabs/simplabs.github.io/pull/826)
-- although we are huge fans of Elixir and Phoenix we did not want to create an
+  [adding a new Markdown file with some front matter](https://github.com/simplabs/simplabs.github.io/pull/826).
+- Although we are huge fans of Elixir and Phoenix we did not want to create an
   API server for the site that would serve content etc. as that would have added
   quite some unnecessary complexity and should generally not be necessary for a
   static site like ours anyway where all content is known upfront and nothing
-  ever needs to be calculated dynamically on the server
-- we wanted to have best in class performance so that the site would load as
+  ever needs to be calculated dynamically on the server.
+- We wanted to have best in class performance so that the site would load as
   fast as possible even in slow network situations and even without JavaScript
-  as well as offline of course
+  as well as offline of course.
 
 ## Static Prerendering + Rehydration and CSR
 
@@ -60,26 +60,26 @@ rendered by the browser, they are also immediately interactive, meaning that
 [TTI](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive)
 is essentially the same as FCP in our case.
 
-However, one of the advantages of client side rendering is that all subsequent
+However, one of the advantages of client-side rendering is that all subsequent
 page transitions after the initial render can be handled purely on the client
-side without the need for making (and waiting for the response to) any
+side without the need to make (and wait for the response to) any
 additional requests. In order to combine that benefit with those of serving
-pre-rendered HTML documents, we wrote the site as a single page app so that the
+pre-rendered HTML documents, we wrote the site as a single-page app so that the
 client-side app would rehydrate on top of the pre-rendered DOM once the
 JavaScript was loaded and the app started. If that happens before a user clicks
 any of the links on any of the pages, the page transition would be handled
 purely on the client side and thus be instant. If a link is clicked **before**
 the app is running in the client, that click would simply result in a regular
 navigation request that would be responded to with another pre-rendered HTML
-document from the CDN. In that sense, the client side app
+document from the CDN. In that sense, the client-side app
 [progressively enhances](https://en.wikipedia.org/wiki/Progressive_enhancement)
 the static HTML document - if it is running, page transitions will be purely
-client side and instant, if it is not (yet) running, clicks on links will simply
+client-side and instant, if it is not (yet) running, clicks on links will simply
 be regular navigation requests.
 
 ### Glimmer.js
 
-Since we are huge fans of Ember.js and are heavily connected with the community
+Since we are huge fans of Ember.js and are heavily connected with the community,
 supporting it and even directly involved in its core team, we wanted to stay in
 the ecosystem to build our own site as well. While Ember.js is a great fit for
 ambitious apps like [travel booking systems](/cases/trainline/) or
@@ -87,11 +87,11 @@ ambitious apps like [travel booking systems](/cases/trainline/) or
 significant client side logic though, for a static page like ours it would
 admittedly not have been an ideal fit – we would simply not have needed or used
 much of what it comes with. Ember.js' lightweight sister project
-[Glimmer.js](https://glimmerjs.com) provides exactly what we need though which
+[Glimmer.js](https://glimmerjs.com) provides exactly what we need though, which
 is a system for defining and rendering components and trees of components that
 would get re-rendered upon changes to the application state.
 
-The only client side state that our application maintains is the currently
+The only client-side state that our application maintains is the currently
 active route that maps to a particular component that renders the page for that
 route. Leveraging [Navigo](https://github.com/krasimir/navigo) for the routing
 and combining that with Glimmer.js for the rendering we started out with a
@@ -105,7 +105,7 @@ network requests are necessary when browsing the site.
 
 ### Statically Prerendering
 
-Statically pre-rendering a client side app at build time is relatively straight
+Statically pre-rendering a client-side app at build time is relatively straight
 forward. As part of our Netlify deployment, we build the app and start a small
 Express Server that serves it. We then
 [visit each of the routes](https://github.com/simplabs/simplabs.github.io/blob/651b2e805c55fed5d152d82a3fee7b06874429b1/scripts/prerender.js#L69)
@@ -119,15 +119,15 @@ get uploaded to the CDN to be served from there.
 ## Maintaining content
 
 Although we were switching to a significantly more advanced setup than what we
-had with the previous Jekyll based site, we did not want to give up the easy
+had with the previous Jekyll-based site, we did not want to give up the easy
 maintenance of content, specifically for blog posts and similar content that we
 wanted to keep in Markdown files as we used to. Writing a new post should remain
 as easy as adding a new markdown file with some front matter and
 Markdown-formatted content. At the same time, we did not want to rely on an API
 for loading the content of particular pages dynamically as that would have added
 significant additional complexity and none of our data actually needed to be
-computed on demand on the server as all of it is indeed static and known up
-front. Leveraging Glimmer.js' Broccoli based build pipeline, we set up a process
+computed on demand on the server as all of it is indeed static and known upfront.
+Leveraging Glimmer.js' Broccoli-based build pipeline, we set up a process
 that reads in all files in a directory and
 [converts the Markdown files into Glimmer.js components at build time](https://github.com/simplabs/simplabs.github.io/blob/master/lib/generate-blog/lib/components-builder.js).
 
@@ -268,25 +268,25 @@ optimizing for performance:
 - CSS and optimizing it has huge potential to have significant positive impact
   on a site's performance (and sink lots of time 🎉); we used
   [CSS Blocks](https://css-blocks.com) which is great but worth a blog post of
-  its own so I won't go into any details here
-- images and their formats are a huge topic as well when it comes to performance
+  its own so I won't go into any details here.
+- Images and their formats are a huge topic as well when it comes to performance
   and there are many low hanging fruits where simple changes can have a
   significant positive impact on a site's performance; things like inlining SVGs
   (or not if they are big or change often), using progressive JPGs or
   base64-encoded background images that get swapped out with the actual image
   after page load are to be named as well as using progressive images to avoid
-  huge payloads on small viewports
-- third-parties can have a significant negative impact on a site's performance
+  huge payloads on small viewports.
+- Third-parties can have a significant negative impact on a site's performance
   and should generally be avoided (for example, you'll want to
-  [serve fonts from your own domain](https://github.com/simplabs/simplabs.github.io/pull/833))
-- optimizing for performance is an ongoing project and not a one-off effort;
+  [serve fonts from your own domain](https://github.com/simplabs/simplabs.github.io/pull/833)).
+- Optimizing for performance is an ongoing project and not a one-off effort;
   there needs to be tooling in place to be aware of degrations and accidental
   mistakes, e.g. you could have Lighthouse integrated into your Github Pipeline
   (ideally for every route of the app), jobs that tell you how much weight a
   change adds to which bundles and which bundles it invalidates etc.
-- knowing is better than guessing and if you really care about your site's
+- Knowing is better than guessing and if you really care about your site's
   performance you need to measure using
-  [RUM](https://en.wikipedia.org/wiki/Real_user_monitoring)
+  [RUM](https://en.wikipedia.org/wiki/Real_user_monitoring).
 
 By spending a significant (and maybe unreasonable) amount of time and energy we
 ended up with the highly optimized site you're looking at. The downside is we
