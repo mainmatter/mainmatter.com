@@ -51,14 +51,15 @@ Our goals for the new website were manifold:
 Since the site is entirely static content, it was clear we wanted to serve
 pre-rendered HTML files for all pages – there was no point delaying the first
 paint until some JavaScript bundle was loaded. Those static HTML documents would
-be served via a CDN for an optimal
-[TTFB](https://en.wikipedia.org/wiki/Time_to_first_byte). As the pages were
+be served via a CDN for an optimal Time to First Byte
+([TTFB](https://en.wikipedia.org/wiki/Time_to_first_byte)). As the pages were
 pre-rendered and did not depend on any client-side JavaScript, that would also
-result in a fast
-[FCP](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint).
+result in a fast First Contentful Paint
+([FCP](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint)).
 Since there is no interactivity on any of the pages really, once the pages are
 rendered by the browser, they are also immediately interactive, meaning that
-[TTI](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive)
+Time to Interactive
+([TTI](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive))
 is essentially the same as FCP in our case.
 
 However, one of the advantages of client-side rendering is that all subsequent
