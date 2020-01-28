@@ -85,10 +85,10 @@ Since we are huge fans of Ember.js and are heavily connected with the community,
 supporting it and even directly involved in its core team, we wanted to stay in
 the ecosystem to build our own site as well. While Ember.js is a great fit for
 ambitious apps like [travel booking systems](/cases/trainline/) or
-[appointment scheduling systems](/cases/timify/) though that implement
-significant client side logic though, for a static page like ours it would
-admittedly not have been an ideal fit – we would simply not have needed or used
-much of what it comes with. Ember.js' lightweight sister project
+[appointment scheduling systems](/cases/timify/) that implement significant
+client side logic though, for a static page like ours it would admittedly not
+have been an ideal fit – we would simply not have needed or used much of what it
+comes with. Ember.js' lightweight sister project
 [Glimmer.js](https://glimmerjs.com) provides exactly what we need though, which
 is a system for defining and rendering components and trees of components that
 would get re-rendered upon changes to the application state.
