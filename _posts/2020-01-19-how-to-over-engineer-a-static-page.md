@@ -27,6 +27,8 @@ advanced bundling and caching strategies as well as service workers.
 
 ![Bringing clarity to your Ember templates](/assets/images/posts/2020-01-19-how-to-over-engineer-a-static-page/illustration.png#full@1200-2400)
 
+## The Challenge
+
 Our goals for the new website were manifold:
 
 - We wanted to update the rather
