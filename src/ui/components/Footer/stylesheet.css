@@ -6,16 +6,12 @@
 
 :scope {
   block-name: Footer;
-  grid-column: 1/-1;
   font-size: 2rem;
   line-height: 1.5;
   color: var(--color-muted);
   z-index: 100;
-}
-
-.container {
-  margin-bottom: 0;
   composes: 'layout';
+  margin-bottom: 0;
 }
 
 .content {
