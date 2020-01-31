@@ -40,11 +40,12 @@ Our goals for the new website were manifold:
   it was with the previous site that was built on Jekyll and published via
   GitHub Pages; for example adding new blog posts should remain as easy as
   [adding a new Markdown file with some front matter](https://github.com/simplabs/simplabs.github.io/pull/826).
-- Although we are huge fans of Elixir and Phoenix we did not want to create an
-  API server for the site that would serve content etc. as that would have added
-  quite some unnecessary complexity and should generally not be necessary for a
-  static site like ours anyway where all content is known upfront and nothing
-  ever needs to be calculated dynamically on the server.
+- Although we are [huge fans of Elixir and Phoenix](/expertise/elixir-phoenix/)
+  we did not want to create an API server for the site that would serve content
+  etc. as that would have added quite some unnecessary complexity and should
+  generally not be necessary for a static site like ours anyway where all
+  content is known upfront and nothing ever needs to be calculated dynamically
+  on the server.
 - We wanted to have best in class performance so that the site would load as
   fast as possible even in slow network situations and even without JavaScript
   as well as offline of course.
