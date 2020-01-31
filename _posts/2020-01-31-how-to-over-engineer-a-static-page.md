@@ -9,7 +9,7 @@ description: 'Marco Otte-Witte on how we rebuilt simplabs.com and optimized it f
   performance leveraging static pre-rendering and client-side rehydration,
   advanced bundling and caching and service workers.'
 og:
-  image: /assets/images/posts/2020-01-19-how-to-over-engineer-a-static-page/og-image.png
+  image: /assets/images/posts/2020-01-31-how-to-over-engineer-a-static-page/og-image.png
 ---
 
 When we set out to rebuild our own website [simplabs.com](https://simplabs.com)
@@ -25,7 +25,7 @@ advanced bundling and caching strategies as well as service workers.
 
 <!--break-->
 
-![Bringing clarity to your Ember templates](/assets/images/posts/2020-01-19-how-to-over-engineer-a-static-page/illustration.png#full@1200-2400)
+![Bringing clarity to your Ember templates](/assets/images/posts/2020-01-31-how-to-over-engineer-a-static-page/illustration.png#full@1200-2400)
 
 ## The Challenge
 
@@ -259,7 +259,7 @@ All of the above has lead to a result we are pretty happy with. While the design
 of our new page is for everyone to judge based on their own taste maybe, the
 performance numbers speak a clear language.
 
-![Screenshot](/assets/images/posts/2020-01-19-how-to-over-engineer-a-static-page/lighthouse.png#@900-1800)
+![Screenshot](/assets/images/posts/2020-01-31-how-to-over-engineer-a-static-page/lighthouse.png#@900-1800)
 
 We were able to get there without giving up on the ease of maintenance of the
 content so that writing a new blog post is as easy as adding a Markdown file and
