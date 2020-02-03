@@ -13,7 +13,7 @@
       </a>
     </div>
     <div class="img-wrapper">
-      <img class="img" srcset="/assets/images/photos/{{@teamMember}}@604.png 604w, /assets/images/photos/{{@teamMember}}@1208.png 1208w" sizes="(max-width: 887px) 604px, 1208px" alt="{{@teamMember}}" width={{@width}} height={{@height}} />
+      <img class="img" srcset="{{this.teamMemberPhoto}}" sizes="(max-width: 887px) 604px, 1208px" alt="{{this.teamMemberName}}" width={{@width}} height={{@height}} data-test-team-member={{this.teamMemberName}} />
     </div>
   </div>
   <div class="bottom"></div>
