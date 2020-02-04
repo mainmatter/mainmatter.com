@@ -24,4 +24,11 @@ module('Component: WorkWithUs', function(hooks) {
 
     assert.ok(this.containerElement.querySelector('[data-test-team-member=chris]'));
   });
+
+  test('it capitalizes team member name for alt attribute', async function(assert) {
+    await render(hbs`<WorkWithUs @teamMember="chris" />`);
+
+    let element = this.containerElement.querySelector('[data-test-team-member=chris]');
+    assert.equal(element.alt, 'Chris');
+  });
 });
