@@ -9,11 +9,17 @@ const photos = {
 export default class WorkWithUs extends Component {
   @tracked
   get teamMemberName() {
-    if (!photos.hasOwnProperty(this.args.teamMember) || !this.args.teamMember) {
+    if (!this.args.teamMember || !photos.hasOwnProperty(this.args.teamMember)) {
       return 'marco';
     }
 
     return this.args.teamMember;
+  }
+
+  @tracked
+  get capitalizedTeamMemberName() {
+    let [firstLetter, ...rest] = this.teamMemberName;
+    return [firstLetter.toUpperCase(), ...rest].join('');
   }
 
   @tracked
