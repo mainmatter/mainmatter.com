@@ -1,9 +1,9 @@
 import Component, { tracked } from '@glimmer/component';
 
 const photos = {
-  'chris': '/assets/images/photos/chris@604.png 604w',
-  'ghislaine': '/assets/images/photos/ghislaine@604.png 604w',
-  'marco': '/assets/images/photos/marco@604.png 604w',
+  'chris': '/assets/images/photos/chris@604.png',
+  'ghislaine': '/assets/images/photos/ghislaine@604.png',
+  'marco': '/assets/images/photos/marco@604.png',
 };
 
 export default class WorkWithUs extends Component {
