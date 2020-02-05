@@ -1,36 +1,36 @@
 <form action="{{@action}}" method="post" target="_blank">
-  <p class="typography.small">
-    <span class="required">
+  <p typography:class="small">
+    <span block:class="required">
       *
     </span>
     indicates required
   </p>
-  <div class="group">
+  <div block:class="group">
     <label for="mce-EMAIL">
       Email Address
-      <span class="required">
+      <span block:class="required">
         *
       </span>
     </label>
-    <input class="control" type="email" value="" name="EMAIL" id="mce-EMAIL" autocomplete="email" required />
+    <input block:class="control" type="email" value="" name="EMAIL" id="mce-EMAIL" autocomplete="email" required />
   </div>
-  <div class="group">
+  <div block:class="group">
     <label for="mce-FNAME">
       First Name
     </label>
-    <input class="control" type="text" value="" name="FNAME" class="" id="mce-FNAME" autocomplete="given-name" />
+    <input block:class="control" type="text" value="" name="FNAME" id="mce-FNAME" autocomplete="given-name" />
   </div>
-  <div class="group">
+  <div block:class="group">
     <label for="mce-LNAME">
       Last Name
     </label>
-    <input class="control" type="text" value="" name="LNAME" class="" id="mce-LNAME" autocomplete="family-name" />
+    <input block:class="control" type="text" value="" name="LNAME" id="mce-LNAME" autocomplete="family-name" />
   </div>
   <div style="position: absolute; left: -5000px;" aria-hidden="true">
     <input type="text" name="b_50bd3378ab1da4988aa174d0b_0258a06c6d" tabindex="-1" value="" />
   </div>
   <div>
-    <button class="button" type="submit">
+    <button button:scope type="submit">
       {{if @submit @submit "Subscribe"}}
     </button>
   </div>

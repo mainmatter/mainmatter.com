@@ -5,20 +5,20 @@
     @title="Posts by {{name}}" @documentTitle="Posts by {{name}} | Blog"
     @description="Our teams shares what they learn in our blog, covering topics around tech, design/UX and the engineering process. Find all posts by {{name}} here."
   >
-    <div class="blog-post.header">
-      <div class="blog-post.headline">
-        <h1 class="typography.display">
-          <small class="typography.small">
-            Blog<span class="typography.hidden">:</span>
+    <div blog-post:class="header">
+      <div blog-post:class="headline">
+        <h1 typography:class="display">
+          <small typography:class="small">
+            Blog<span typography:class="hidden">:</span>
           </small>
           Posts by {{name}}
         </h1>
       </div>
-      <div class="blog-post.badge">
-        <div class="blog-post.badge-image">
-          <img class="fluid-image.image" src="/assets/images/authors/{{twitter}}.jpg" alt="" />
+      <div blog-post:class="badge">
+        <div blog-post:class="badge-image">
+          <img fluid-image:class="image" src="/assets/images/authors/{{twitter}}.jpg" alt="" />
         </div>
-        <div class="blog-post.badge-content">
+        <div blog-post:class="badge-content">
           <a href="/blog/author/{{twitter}}" data-internal>
             {{name}}
           </a>
@@ -32,13 +32,13 @@
       </div>
     </div>
   </Header>
-  <div class="blog-author.main offset.after-21">
+  <div blog-author:class="main" offset:class="after-21">
     {{#each posts}}
-      <article class="offset.after-16">
-        <span class="typography.tag">
+      <article offset:class="after-16">
+        <span typography:class="tag">
           #{{topic}}
         </span>
-        <div class="blog-post.excerpt">
+        <div blog-post:class="excerpt">
           <h3>
             <a href="{{path}}" data-internal>
               {{title}}
@@ -50,7 +50,7 @@
           <a href="/blog/author/{{author.twitter}}" data-internal>
             {{author.name}}
           </a>
-          <p class="typography.small">
+          <p typography:class="small">
             {{date}}
           </p>
         </footer>

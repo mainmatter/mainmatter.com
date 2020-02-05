@@ -6,3 +6,6 @@
   block-name: FormSignup;
   extends: form;
 }
+
+@export typography;
+@export button;

@@ -1,5 +1,3 @@
-@block container from "./container.block.css";
-
 :scope {
   position: relative;
   z-index: 0;

@@ -2,14 +2,14 @@
   <h2>
     {{if @title @title "Our Clients"}}
   </h2>
-  <div class="grid">
+  <div grid:scope>
     {{#each this.clients key="id" as |c|}}
-      <figure class="grid.item">
-        <div class="grid.figure">
-          <img class="grid.image" src={{c.src}} alt="{{c.name}}" />
+      <figure grid:class="item">
+        <div grid:class="figure">
+          <img grid:class="image" src={{c.src}} alt="{{c.name}}" />
         </div>
         <figcaption>
-          <p class="grid.text">
+          <p grid:class="text">
             {{c.text}}
           </p>
         </figcaption>

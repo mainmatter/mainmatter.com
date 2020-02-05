@@ -1,5 +1,4 @@
 @block button from "../../styles/blocks/button.block.css";
-@block container from "../../styles/blocks/container.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 
@@ -16,3 +15,7 @@
     grid-column: 2/5;
   }
 }
+
+@export typography;
+@export offset;
+@export button;

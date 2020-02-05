@@ -1,6 +1,4 @@
 @block containerBlock from "../../styles/blocks/container.block.css";
-@block offset from "../../styles/blocks/offset.block.css";
-@block fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
   block-name: ShapeFeature;
@@ -105,7 +103,7 @@
     transform: scale(0.6);
   }
 
-  :scope[state|hasImage] .bottom {
+  :scope[hasImage] .bottom {
     top: 45rem;
   }
 

@@ -1,5 +1,3 @@
-@block container from "../../styles/blocks/container.block.css";
-@block fluid-image from "../../styles/blocks/fluid-image.block.css";
 @block layout from "../../styles/blocks/layout.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
@@ -14,3 +12,7 @@
     margin-top: 66rem;
   }
 }
+
+@export typography;
+@export layout;
+@export offset;

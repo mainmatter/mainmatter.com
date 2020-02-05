@@ -1,4 +1,3 @@
-@block container from "../../styles/blocks/container.block.css";
 @block layout from "../../styles/blocks/layout.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
@@ -17,3 +16,7 @@
 .more-headline {
   margin-bottom: 3rem;
 }
+
+@export typography;
+@export layout;
+@export offset;

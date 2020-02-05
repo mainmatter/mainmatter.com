@@ -7,18 +7,18 @@
   >
     <HeaderContent @label="Services" @headline="Full-Stack Engineering" />
   </Header>
-  <div class="layout.main offset.after-21">
+  <div layout:class="main" offset:class="after-21">
     <h2>
       Ambitious software solutions – From Idea to Release
     </h2>
-    <p class="typography.lead">
+    <p typography:class="lead">
       Software plays an ever more important role in all kinds of business and companies need to stand out from the competition - be it ensuring maximum effectiveness of internal tools or delivering cutting edge digital experiences to their customers.
     </p>
-    <p class="typography.lead">
+    <p typography:class="lead">
       simplabs builds cutting edge software solutions for clients around the world. Our team of experts delivers everything from ideation to design and engineering, guiding our clients along the way.
     </p>
   </div>
-  <div class="layout.side offset.after-21">
+  <div layout:class="side" offset:class="after-21">
     <h3>
       Want to know how we can turn your idea into a successful digital product?
     </h3>
@@ -28,11 +28,11 @@
     <FormContact />
   </div>
   <ShapeAcrossFullStackService />
-  <div class="layout.main offset.after-21">
+  <div layout:class="main" offset:class="after-21">
     <h2>
       Why simplabs?
     </h2>
-    <p class="typography.lead">
+    <p typography:class="lead">
       simplabs has unique expertise and insights into all aspects of building modern edge web applications. Our engineers are highly experienced and internationally known for their work on all parts of the software development process, often sharing their knowledge at conferences and events across the globe.
     </p>
     <h3>
@@ -51,7 +51,7 @@
       simplabs has a proven track record across the entire software development process. Whether it be designing a compelling user interface and user experience, to engineering backend systems that can stand up in the face of global attention, to making the product easily extensible to allow rapid changes in the application: we’ve done it before.
     </p>
   </div>
-  <div class="layout.side offset-top">
+  <div layout:class="side" block:class="offset-top">
     <Card
       @label="Playbook"
       @title="The steps to instant productivity"
@@ -71,15 +71,15 @@
     @only="generali,qonto,clark"
   />
 
-  <div class="layout.split-leading">
+  <div layout:class="split-leading">
     <h2>
       <a href="/cases/timify/" data-internal>
         Modern online appointment scheduling
       </a>
     </h2>
   </div>
-  <div class="layout.split-trailing offset.after-5">
-    <p class="typography.lead">
+  <div layout:class="split-trailing" offset:class="after-5">
+    <p typography:class="lead">
       Timify is an online appointment scheduling service that connects service providers with clients. When they decided it was time to re-engineer their existing product, they trusted us to set them up for future success.
     </p>
     <ArrowLink @href="/cases/timify/">
