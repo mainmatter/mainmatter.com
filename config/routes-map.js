@@ -85,6 +85,9 @@ module.exports = function() {
     '/services/full-stack-engineering': {
       component: 'PageFullStackEngineering',
     },
+    '/services/digital-products': {
+      component: 'PageDigitalProducts',
+    },
     '/services/team-augmentation': { component: 'PageTeamAugmentation' },
     '/services/tutoring': { component: 'PageTutoring' },
     '/talks': { component: 'PageTalks', bundle: { asset: '/talks.js', module: '__talks__' } },
