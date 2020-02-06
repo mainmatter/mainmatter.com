@@ -89,6 +89,7 @@ module.exports = function() {
       component: 'PageDigitalProducts',
     },
     '/services/team-augmentation': { component: 'PageTeamAugmentation' },
+    '/services/product-development': { component: 'PageProductDevelopment' },
     '/services/product-design': { component: 'PageProductDesign' },
     '/services/tutoring': { component: 'PageTutoring' },
     '/talks': { component: 'PageTalks', bundle: { asset: '/talks.js', module: '__talks__' } },
