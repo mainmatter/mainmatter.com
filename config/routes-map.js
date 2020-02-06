@@ -85,6 +85,9 @@ module.exports = function() {
     '/services/full-stack-engineering': {
       component: 'PageFullStackEngineering',
     },
+    '/services/digital-products': {
+      component: 'PageDigitalProducts',
+    },
     '/services/team-augmentation': { component: 'PageTeamAugmentation' },
     '/services/product-design': { component: 'PageProductDesign' },
     '/services/tutoring': { component: 'PageTutoring' },
