@@ -1,9 +1,9 @@
 @block container from "../../styles/blocks/container.block.css";
 @block layout from "../../styles/blocks/layout.block.css";
-@block typography from "../../styles/blocks/typography.block.css";
 
 @export layout from "../../styles/blocks/layout.block.css";
 @export offset from "../../styles/blocks/offset.block.css";
+@export typography from "../../styles/blocks/typography.block.css";
 
 :scope {
   block-name: PageCaseDdWrt;
