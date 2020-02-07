@@ -41,21 +41,21 @@
   {{#if latest}}
     <ShapeBlog>
       <article>
-        <span class="typography.tag">
+        <span typography:class="tag">
           #{{latest.topic}}
         </span>
-        <h2 class="offset.before-none">
+        <h2 offset:class="before-none">
           <a href="{{latest.path}}" data-internal>
             {{latest.title}}
           </a>
         </h2>
-        <div class="typography.lead offset.after-3">
+        <div typography:class="lead" offset:class="after-3">
           {{{latest.excerpt}}}
         </div>
         <a href="/blog/author/{{latest.author.twitter}}/" data-internal>
           {{latest.author.name}}
         </a>
-        <p class="typography.small">
+        <p typography:class="small">
           {{latest.date}}
         </p>
         <ArrowLink @href="{{latest.path}}">
@@ -64,14 +64,14 @@
       </article>
     </ShapeBlog>
   {{/if}}
-  <section class="layout.main offset.after-21">
+  <section layout:class="main" offset:class="after-21">
     {{#each posts}}
-      <article class="offset.after-12">
-        <span class="typography.tag">
+      <article offset:class="after-12">
+        <span typography:class="tag">
           #
           {{topic}}
         </span>
-        <div class="blog-post.excerpt">
+        <div blog-post:class="excerpt">
           <h3>
             <a href="{{path}}" data-internal>
               {{title}}
@@ -82,12 +82,12 @@
         <a href="/blog/author/{{author.twitter}}" data-internal>
           {{author.name}}
         </a>
-        <p class="typography.small">
+        <p typography:class="small">
           {{date}}
         </p>
       </article>
     {{/each}}
-    <nav aria-label="pagination" class="pagination">
+    <nav aria-label="pagination" block:class="pagination">
       {{#if nextPage}}
         <ArrowLink @href="{{nextPage}}" @reverse="true">
           Older
@@ -100,7 +100,7 @@
       {{/if}}
     </nav>
   </section>
-  <aside class="layout.side offset.after-21">
+  <aside layout:class="side" offset="after-21">
     <CardTalks />
     <CardEmberSponsors />
   </aside>

@@ -1,4 +1,5 @@
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
+@export fluid-image from "../../styles/blocks/fluid-image.block.css";
 @export typography from "../../styles/blocks/typography.block.css";
 
 :scope {
@@ -8,7 +9,7 @@
 }
 
 .image {
-  /* height: resolve("fluid-image.image"); */
+  height: resolve('fluid-image.image');
   height: 75%;
 }
 

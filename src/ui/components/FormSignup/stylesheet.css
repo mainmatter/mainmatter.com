@@ -6,3 +6,7 @@
   block-name: FormSignup;
   extends: form;
 }
+
+.button {
+  composes: 'button';
+}

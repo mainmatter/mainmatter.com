@@ -3,9 +3,15 @@
 @block media from "../../styles/blocks/media.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
 @block size from "../../styles/blocks/size.block.css";
-@block typography from "../../styles/blocks/typography.block.css";
+
+@export layout from "../../styles/blocks/layout.block.css";
+@export typography from "../../styles/blocks/typography.block.css";
 
 :scope {
   block-name: PageEmberExpertise;
   composes: 'layout';
+}
+
+.media {
+  composes: 'media';
 }

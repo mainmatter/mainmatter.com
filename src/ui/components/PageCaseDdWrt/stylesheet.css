@@ -3,6 +3,8 @@
 @block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 
+@export layout from "../../styles/blocks/layout.block.css";
+
 :scope {
   block-name: PageCaseDdWrt;
   composes: 'layout';

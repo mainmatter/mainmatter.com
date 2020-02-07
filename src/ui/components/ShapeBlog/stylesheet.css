@@ -1,5 +1,6 @@
-@block offset from "../../styles/blocks/offset.block.css";
 @block layout from "../../styles/blocks/layout.block.css";
+
+@export offset from "../../styles/blocks/offset.block.css";
 
 :scope {
   block-name: ShapeBlog;

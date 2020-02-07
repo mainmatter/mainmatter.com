@@ -1,14 +1,17 @@
 @block button from "../../styles/blocks/button.block.css";
-@block container from "../../styles/blocks/container.block.css";
-@block offset from "../../styles/blocks/offset.block.css";
+
+@export offset from "../../styles/blocks/offset.block.css";
 @export typography from "../../styles/blocks/typography.block.css";
 
 :scope {
+  block-name: WorkWithUs;
   position: relative;
   z-index: 0;
-  block-name: WorkWithUs;
-  composes: 'offset.after-21';
   grid-column: 2/-2;
+}
+
+.button {
+  composes: 'button';
 }
 
 @media (min-width: 888px) {

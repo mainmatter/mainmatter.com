@@ -5,6 +5,8 @@
 @block size from "../../styles/blocks/size.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 
+@export typography from "../../styles/blocks/typography.block.css";
+
 :scope {
   block-name: PageElixirExpertise;
   composes: 'layout';

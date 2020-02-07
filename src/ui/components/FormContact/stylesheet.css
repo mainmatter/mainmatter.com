@@ -11,6 +11,10 @@
   color: inherit;
 }
 
+.button {
+  composes: 'button';
+}
+
 .spinner {
   display: none;
 }

@@ -4,6 +4,8 @@
 @block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 
+@export typography from "../../styles/blocks/typography.block.css";
+
 :scope {
   block-name: PageHomepage;
   composes: 'layout';
