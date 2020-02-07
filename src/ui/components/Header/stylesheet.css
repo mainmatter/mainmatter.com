@@ -164,8 +164,8 @@
     color: var(--color-link-inverted);
   }
 
-  .nav-item[state|active],
-  .work-with-us[state|active] {
+  .nav-item[active],
+  .work-with-us[active] {
     box-shadow: 0 calc(2rem + 2px) 0 -2rem var(--color-link-inverted);
   }
 }
@@ -184,7 +184,7 @@
     align-items: center;
   }
 
-  .nav-item[state|active] {
+  .nav-item[active] {
     box-shadow: 0 2px 0 0 var(--color-accent);
   }
 

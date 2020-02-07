@@ -105,20 +105,20 @@
     position: relative;
   }
 
-  :scope[state|center='true'] {
+  :scope[center='true'] {
     min-height: unset;
     padding-bottom: unset;
   }
 
-  :scope[state|center='true'] .bottom {
+  :scope[center='true'] .bottom {
     position: relative;
   }
 
-  :scope[state|center='true'] .top {
+  :scope[center='true'] .top {
     display: none;
   }
 
-  :scope[state|center='true'] .content {
+  :scope[center='true'] .content {
     padding-top: 8rem;
   }
 }
@@ -158,53 +158,53 @@
     width: var(--col-1);
   }
 
-  :scope[state|reverse='true'] {
+  :scope[reverse='true'] {
     min-height: 90rem;
     margin-bottom: 0;
   }
 
-  :scope[state|center='true'] {
+  :scope[center='true'] {
     min-height: 68rem;
     padding-bottom: 0;
   }
 
-  :scope[state|center='true'] .container {
+  :scope[center='true'] .container {
     justify-content: flex-end;
     padding-top: 30rem;
   }
 
-  :scope[state|center='true'] .content {
+  :scope[center='true'] .content {
     width: var(--col-2);
   }
 
-  :scope[state|reverse='true'] .top {
+  :scope[reverse='true'] .top {
     transform: translate(-105.3%, -55.3%);
   }
 
-  :scope[state|reverse='true'] .bottom {
+  :scope[reverse='true'] .bottom {
     transform: translate(-29%);
   }
 
-  :scope[state|center='true'] .bottom {
+  :scope[center='true'] .bottom {
     transform: translate(-88%, -40%);
   }
 
-  :scope[state|center='true'] .top {
+  :scope[center='true'] .top {
     transform: translate(-11.7%, 15.3%);
   }
 
-  :scope[state|reverse='true'] .tagline {
+  :scope[reverse='true'] .tagline {
     right: auto;
     left: var(--offset-horizontal);
     bottom: -14em;
     text-align-last: left;
   }
 
-  :scope[state|reverse='true'] .content {
+  :scope[reverse='true'] .content {
     padding-bottom: 21rem;
   }
 
-  :scope[state|center='true'] .content {
+  :scope[center='true'] .content {
     --color-text: var(--color-text-inverted);
     --color-muted: var(--color-text-inverted);
 

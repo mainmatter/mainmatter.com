@@ -105,7 +105,7 @@
     transform: scale(0.6);
   }
 
-  :scope[state|hasImage] .bottom {
+  :scope[hasImage] .bottom {
     top: 45rem;
   }
 

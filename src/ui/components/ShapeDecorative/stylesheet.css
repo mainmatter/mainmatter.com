@@ -13,7 +13,7 @@
   min-height: 60rem;
 }
 
-:scope[state|hasImage] {
+:scope[hasImage] {
 }
 
 .container {

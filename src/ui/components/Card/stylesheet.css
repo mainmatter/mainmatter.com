@@ -1,5 +1,5 @@
-@block typography from "../../styles/blocks/typography.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
+@export typography from "../../styles/blocks/typography.block.css";
 
 :scope {
   block-name: Card;
@@ -8,6 +8,7 @@
 }
 
 .image {
+  /* height: resolve("fluid-image.image"); */
   height: 75%;
 }
 

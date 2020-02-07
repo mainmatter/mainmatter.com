@@ -1,4 +1,4 @@
-@block typography from "../../styles/blocks/typography.block.css";
+@export typography from "../../styles/blocks/typography.block.css";
 
 :scope {
   block-name: ShapeFeatureTimify;

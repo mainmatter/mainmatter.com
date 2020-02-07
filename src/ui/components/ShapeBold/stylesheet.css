@@ -23,7 +23,7 @@
   grid-row: 1;
 }
 
-:scope[state|reverse='true'] .shape-a {
+:scope[reverse='true'] .shape-a {
   grid-column: -1/3;
   align-self: end;
 }
@@ -36,7 +36,7 @@
   z-index: 1;
 }
 
-:scope[state|reverse='true'] .shape-b {
+:scope[reverse='true'] .shape-b {
   padding-top: 0;
   grid-column: 3/1;
   align-self: start;
@@ -56,7 +56,7 @@
   transform: translate(-80%);
 }
 
-:scope[state|reverse='true'] .shape-a-svg {
+:scope[reverse='true'] .shape-a-svg {
   left: 50%;
   transform: translate(-45%, 0);
 }
@@ -67,7 +67,7 @@
   fill: var(--shape-color-b);
 }
 
-:scope[state|reverse='true'] .shape-b-svg {
+:scope[reverse='true'] .shape-b-svg {
   position: relative;
   left: 100%;
   transform: translate(-120rem, -4rem);
@@ -82,7 +82,7 @@
   margin: 0;
 }
 
-:scope[state|reverse='true'] .shape-a-figure {
+:scope[reverse='true'] .shape-a-figure {
   right: -15%;
 }
 
@@ -105,7 +105,7 @@
   color: var(--color-text-inverted);
 }
 
-:scope[state|reverse='true'] .shape-b-content {
+:scope[reverse='true'] .shape-b-content {
   top: 21rem;
   left: unset;
   right: -2rem;
