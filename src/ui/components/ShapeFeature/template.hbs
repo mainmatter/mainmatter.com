@@ -42,7 +42,14 @@
   <figure block:class="container">
     {{#if @srcset}}
       <div block:class="img-wrapper">
-        <img block:class="img" srcset={{@srcset}} sizes={{@sizes}} alt="{{@srcAlt}}" width={{@width}} height={{@height}} />
+        <img
+          block:class="img"
+          srcset={{@srcset}}
+          sizes={{@sizes}}
+          alt="{{@srcAlt}}"
+          width={{@width}}
+          height={{@height}}
+        />
       </div>
     {{/if}}
     <figcaption block:class="content">
