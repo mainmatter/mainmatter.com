@@ -14,15 +14,13 @@ Welcome to the fourth installment of our monthly update. This one is later than 
 
 ## News
 
-[![Upcoming webinar - The ultimate marketers guide to modern web apps and why users are demanding more](/assets/images/posts/2019-07-24-july-monthly-update/simplabs-webinar-modern-web-apps-for-marketers.png#@600-1200)](/webinars/modern-web/)
+![Upcoming webinar - The ultimate marketers guide to modern web apps and why users are demanding more](/assets/images/posts/2019-07-24-july-monthly-update/simplabs-webinar-modern-web-apps-for-marketers.png#@600-1200)]
 
 On August 12th at 6pm UTC+2 we're running a webinar to help forward-looking marketers understand recent changes in web technology and how they can be used to create incredible experiences for their users.
 
 From the site: _"The way that web apps are built has changed dramatically in recent years. Changes in devices, browsers and usage patterns have created a wave of innovation which is waiting to be used by forward looking marketing departments._
 
 _After this webinar you will understand why these changes are occurring, how technology is responding to this shift and crucially, how you can use these technologies to build incredible experiences for your users."_
-
-[Sign up here.](/webinars/modern-web/)
 
 ### New simplabs website
 
