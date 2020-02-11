@@ -90,7 +90,6 @@ module.exports = function() {
     '/talks': { component: 'PageTalks', bundle: { asset: '/talks.js', module: '__talks__' } },
     '/why-simplabs': { component: 'PageWhySimplabs' },
     '/work': { component: 'PageWork' },
-    '/webinars/modern-web': { component: 'PageLandingPwaWebinar' },
   };
 
   return routes;
