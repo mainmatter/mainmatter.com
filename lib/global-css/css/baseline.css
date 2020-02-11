@@ -28,9 +28,9 @@
   --color-primary: #222;
   --color-secondary: #5b5b5b;
   --color-accent: #007df6;
-  --color-background: #f9fafd;
+  --color-background: #fff;
   --color-error: #ec2a2a;
-  --color-light: #f8f8fa;
+  --color-light: #f9fafd;
 
   --color-text: var(--color-primary);
   --color-text-inverted: var(--color-background);

@@ -1,16 +1,29 @@
 <div>
-  {{#if @headline}}
-    <h1 typography:class="display">
-      {{#if @label}}
-        <small typography:class="small">
-          {{@label}}
-          <span typography:class="hidden">
-            :
-          </span>
-        </small>
+  <div block:class="container">
+    <div block:class="content">
+      {{#if @headline}}
+        <h1 typography:class="display">
+          {{#if @label}}
+            <small typography:class="small">
+              {{@label}}
+              <span typography:class="hidden">
+                :
+              </span>
+            </small>
+          {{/if}}
+          {{@headline}}
+        </h1>
       {{/if}}
-      {{@headline}}
-    </h1>
-  {{/if}}
-  {{yield}}
+      {{yield}}
+    </div>
+    {{#if @image}}
+      <div block:class="sidebar">
+        <div block:class="image-wrapper">
+          {{@image}}
+        </div>
+        <div block:class="background">
+        </div>
+      </div>
+    {{/if}}
+  </div>
 </div>

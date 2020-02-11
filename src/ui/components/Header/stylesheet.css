@@ -5,19 +5,8 @@
   block-name: Header;
   position: relative;
   grid-column: 1/-1;
-  background: #ffffff;
   composes: 'layout';
-  margin-bottom: 20rem;
-}
-
-.bottom {
-  background: var(--color-background);
-  display: block;
-  padding-bottom: 15%;
-  width: 100%;
-  grid-column: 1/-1;
-  -webkit-clip-path: polygon(60% 100%, 100% 0%, 100% 100%, 0 100%, 0% 50%);
-  clip-path: polygon(60% 100%, 100% 0%, 100% 100%, 0 100%, 0% 50%);
+  margin-bottom: 10rem;
 }
 
 .navbar {
