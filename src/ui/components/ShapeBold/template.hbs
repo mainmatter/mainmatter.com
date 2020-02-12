@@ -1,7 +1,7 @@
-<div style={{this.shapeStyle}} state:reverse={{@reverse}}>
-  <div class="shape-a">
+<div style={{this.shapeStyle}} block:reverse={{@reverse}}>
+  <div block:class="shape-a">
     <svg
-      class="shape-a-svg"
+      block:class="shape-a-svg"
       width="1800"
       height="900"
       viewBox="0 0 1800 900"
@@ -17,14 +17,14 @@
       <use fill-rule="evenodd" xlink:href="#{{this.shapeId}}"></use>
     </svg>
     {{#if @srcset}}
-      <figure class="shape-a-figure">
-        <img class="shape-a-img" srcset={{@srcset}} sizes={{@sizes}} alt="" />
+      <figure block:class="shape-a-figure">
+        <img block:class="shape-a-img" srcset={{@srcset}} sizes={{@sizes}} alt="" />
       </figure>
     {{/if}}
   </div>
-  <div class="shape-b">
+  <div block:class="shape-b">
     <svg
-      class="shape-b-svg"
+      block:class="shape-b-svg"
       width="1800"
       height="900"
       viewBox="0 0 1800 900"
@@ -34,9 +34,9 @@
       <use fill-rule="evenodd" xlink:href="#{{this.shapeId}}"></use>
     </svg>
     {{#if @logo}}
-      <div class="shape-b-content">
-        <div class="shape-b-logo">
-          <img class="shape-b-logo-img" src="{{@logo}}" alt="{{@logoAlt}}" />
+      <div block:class="shape-b-content">
+        <div block:class="shape-b-logo">
+          <img block:class="shape-b-logo-img" src="{{@logo}}" alt="{{@logoAlt}}" />
         </div>
         {{#if @logoLabel}}
           <p>

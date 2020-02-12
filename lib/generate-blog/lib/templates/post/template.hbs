@@ -51,24 +51,24 @@
     }
   </script>
   <Header @active="blog" @title="{{title}}" @documentTitle="{{title}} | Blog" @pageType="article" @description="{{description}}">
-    <div class="blog-post.header">
-      <div class="blog-post.headline">
-        <h1 class="typography.display">
-          <small class="typography.small">
-            Blog<span class="typography.hidden">:</span>
+    <div blog-post:class="header">
+      <div blog-post:class="headline">
+        <h1 typography:class="display">
+          <small typography:class="small">
+            Blog<span typography:class="hidden">:</span>
           </small>
           {{title}}
         </h1>
       </div>
-      <div class="blog-post.badge">
-        <div class="blog-post.badge-image">
+      <div blog-post:class="badge">
+        <div blog-post:class="badge-image">
           <img
-            class="fluid-image.image"
+            fluid-image:class="image"
             src="/assets/images/authors/{{author.twitter}}.jpg"
             alt=""
           />
         </div>
-        <div class="blog-post.badge-content">
+        <div blog-post:class="badge-content">
           <a href="/blog/author/{{author.twitter}}" data-internal>
             {{author.name}}
           </a>
@@ -80,12 +80,12 @@
           </a>
         </div>
       </div>
-      <div class="excerpt typography.lead">
+      <div block:class="excerpt" typography:class="lead">
         {{{excerpt}}}
       </div>
     </div>
   </Header>
-  <div class="layout.content offset.after-21">
+  <div layout:class="content" offset:class="after-21">
     {{{body}}}
   </div>
   {{#if related}}
@@ -94,7 +94,7 @@
       @background="{{related.teaserBackground}}"
       @backgroundImage="{{related.teaserImage}}"
     >
-      <p class="typography.small">
+      <p typography:class="small">
         Continue Reading
       </p>
       <h3>

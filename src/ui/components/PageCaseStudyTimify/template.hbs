@@ -7,15 +7,15 @@
   >
     <HeaderContent @label="Timify Case Study" @headline="Modern online appointment scheduling" />
   </Header>
-  <div class="layout.main">
-    <p class="typography.lead">
+  <div layout:class="main">
+    <p typography:class="lead">
       Timify is an online appointment scheduling service that connects service providers with clients.
     </p>
-    <p class="typography.lead">
+    <p typography:class="lead">
       They have helped over 50.000 businesses worldwide make their online appointment scheduling easier and more accessible, allowing them to improve their customer service and spur revenue.
     </p>
   </div>
-  <div class="layout.side">
+  <div layout:class="side">
     <Card @label="Client" @src="/assets/images/card/timify.svg" @alt="Timify">
       <p>
         Timify is a cloud-based appointment scheduling and shift planning system for all kinds of businesses including: healthcare providers, hair and beauty salons, tutors, mechanics, general contractors, sports and fitness trainers, and more.
@@ -30,25 +30,25 @@
     @src="/assets/images/work/timify-right@1800.jpg"
     @clip="true"
   >
-    <blockquote class="quote-offset">
+    <blockquote block:class="quote-offset">
       <p>
         simplabs' experienced engineers delivered a solid and well architected foundation for our web app. They also helped us establish best practices and a lean process internally. Working with them was a pleasure.
       </p>
-      <p class="typography.small">
+      <p typography:class="small">
         Andreas Knürr, Timify CEO
       </p>
     </blockquote>
   </ShapeWork>
-  <div class="layout.main offset.after-21">
+  <div layout:class="main" offset:class="after-21">
     <h3>
       Laying the foundation for future success
     </h3>
     <p>
       Timify had validated their business model with a prototype they had built in-house. As the business was growing though, it became clear the prototype wouldn't be a solid foundation for the future. They needed to re-engineer the entire system, making sure it allowed them to continue iterating fast without sacrificing quality.
     </p>
-    <figure class="figure">
+    <figure figure:scope>
       <img
-        class="figure.content"
+        figure:class="content"
         src="/assets/images/work/timify-comp.jpg"
         alt="screenshot of the Timify app, showing the schedule"
       />
@@ -76,7 +76,7 @@
       Ember.js proved to be the right technology choice for an ambitious application like Timify that was built to last for years. The baked in conventions enable larger teams and applications to move fast without breaking things. Leveraging modern web technologies like SVG, we were able to achieve excellent runtime performance even for large data sets. The json:api based server API allowed us to implement the client and server side of a feature concurrently.
     </p>
   </div>
-  <div class="layout.side vertical-offset offset.after-21">
+  <div layout:class="side" block:class="vertical-offset" offset:class="after-21">
     <CardPlaybook />
   </div>
   <ShapeFeatureTrainline @label="Continue Reading" />

@@ -1,18 +1,18 @@
 <ul>
   {{#each posts}}
-    <li class="post">
-      <h4 class="title">
+    <li block:class="post">
+      <h4 block:class="title">
         <a href="{{path}}" data-internal>
           {{title}}
         </a>
       </h4>
-      <div class="media">
-        <img class="image" src="/assets/images/authors/{{author.twitter}}.jpg" alt="" />
+      <div block:class="media">
+        <img block:class="image" src="/assets/images/authors/{{author.twitter}}.jpg" alt="" />
         <p>
-          <span class="author">
+          <span block:class="author">
             {{author.name}}
           </span>
-          <span class="date">
+          <span block:class="date">
             {{date}}
           </span>
         </p>

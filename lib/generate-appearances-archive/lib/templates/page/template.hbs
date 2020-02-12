@@ -4,23 +4,23 @@
     @description="We share our expertise and experience with others. Here are a collection of appearances that our team made at international events in the past years."
   >
     <HeaderContent @headline="Talks">
-      <p class="typography.lead">
+      <p typography:class="lead">
         We strongly believe in the value of sharing our expertise and experience with others. Here are a collection of conference talks and other appearances that members of our team made at various events all over the world in the past years.
       </p>
     </HeaderContent>
   </Header>
-  <h2 class="layout.full">
+  <h2 layout:class="full">
     Latest Talks
   </h2>
   {{#each channels}}
-    <div class="layout.main offset.after-16">
+    <div layout:class="main" offset:class="after-16">
       <h3>
         {{meta.title}}
       </h3>
       {{#each appearances}}
-        <article class="media offset.after-12">
-          <img class="media.item size.w-10" src="{{meta.image}}" alt="" />
-          <div class="media.body">
+        <article media:scope offset:class="after-12">
+          <img media:class="item" size:class="w-10" src="{{meta.image}}" alt="" />
+          <div media:class="body">
             <h4>
               {{meta.title}}
             </h4>
@@ -38,7 +38,7 @@
         </article>
       {{/each}}
     </div>
-    <div class="layout.side offset-vertical offset.after-16">
+    <div layout:class="side" block:class="offset-vertical" offset:class="after-16">
       <Card @src="{{meta.image}}" @alt="{{meta.title}}">
         <p>
           {{description}}

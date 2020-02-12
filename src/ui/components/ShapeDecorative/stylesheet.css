@@ -1,7 +1,3 @@
-@block containerBlock from "../../styles/blocks/container.block.css";
-@block offset from "../../styles/blocks/offset.block.css";
-@block fluid-image from "../../styles/blocks/fluid-image.block.css";
-
 :scope {
   block-name: ShapeDecorative;
   position: relative;
@@ -13,17 +9,7 @@
   min-height: 60rem;
 }
 
-:scope[state|hasImage] {
-}
-
-.container {
-  composes: 'containerBlock';
-  transform: rotate(-30deg);
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+:scope[hasImage] {
 }
 
 .bottom,

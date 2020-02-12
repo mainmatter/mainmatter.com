@@ -4,24 +4,24 @@
     @description="simplabs are Europe's leading Ember experts with unique expertise and insights with a good part of our engineering team being on the Ember.js core team."
   >
     <HeaderContent @headline="Europe's leading Ember experts" @label="Ember.js">
-      <p class="typography.lead">
+      <p typography:class="lead">
         simplabs has unique expertise and insights into Ember.js with a good part of our engineering team being on the Ember.js core team and maintaining widely adopted add-ons.
       </p>
-      <p class="typography.lead">
+      <p typography:class="lead">
         We help clients around the world getting the most out of Ember by building cutting edge applications for them, levelling up their in-house teams as well as reviewing their code bases and helping to identify and overcome impediments.
       </p>
     </HeaderContent>
   </Header>
-  <div class="layout.main offset.after-21">
+  <div layout:class="main" offset:class="after-21">
     <h2>
       We love open source
     </h2>
-    <p class="typography.lead offset.after-16">
+    <p typography:class="lead" offset:class="after-16">
       Besides contributing to Ember.js via our core team engagements, we maintain a number of projects in the ecosystem that are widely adopted throughout the Ember community.
     </p>
-    <div class="media offset.after-12">
-      <img class="media.item" src="/assets/images/icons/ember-simple-auth.svg" alt="" />
-      <div class="media.body">
+    <div media:scope offset:class="after-12">
+      <img media:class="item" src="/assets/images/icons/ember-simple-auth.svg" alt="" />
+      <div media:class="body">
         <h3>
           Ember Simple Auth
         </h3>
@@ -33,9 +33,9 @@
         </ArrowLink>
       </div>
     </div>
-    <div class="media offset.after-12">
-      <img class="media.item" src="/assets/images/icons/ember-test-selectors.svg" alt="" />
-      <div class="media.body">
+    <div media:scope offset:class="after-12">
+      <img media:class="item" src="/assets/images/icons/ember-test-selectors.svg" alt="" />
+      <div media:class="body">
         <h3>
           Ember Test Selectors
         </h3>
@@ -47,9 +47,9 @@
         </ArrowLink>
       </div>
     </div>
-    <div class="media offset.after-12">
-      <img class="media.item" src="/assets/images/icons/ember-cookies.svg" alt="" />
-      <div class="media.body">
+    <div media:scope offset:class="after-12">
+      <img media:class="item" src="/assets/images/icons/ember-cookies.svg" alt="" />
+      <div media:class="body">
         <h3>
           Ember Cookies
         </h3>
@@ -61,9 +61,9 @@
         </ArrowLink>
       </div>
     </div>
-    <div class="media offset.after-12">
-      <img class="media.item" src="/assets/images/icons/qunit-dom.svg" alt="" />
-      <div class="media.body">
+    <div media:scope offset:class="after-12">
+      <img media:class="item" src="/assets/images/icons/qunit-dom.svg" alt="" />
+      <div media:class="body">
         <h3>
           Qunit DOM
         </h3>
@@ -76,15 +76,15 @@
       </div>
     </div>
   </div>
-  <div class="layout.side offset.after-21">
+  <div layout:class="side" offset:class="after-21">
     <CardEmberSponsors />
   </div>
   <ShapeFeatureEmberDocumentary />
-  <div class="layout.main offset.after-21">
+  <div layout:class="main" offset:class="after-21">
     <h2>
       We share our expertise
     </h2>
-    <p class="typography.lead">
+    <p typography:class="lead">
       Every new project gives us the opportunity to learn and grow our expertise. We share what we learn with the community via talks at conferences, at meetups and on our blog.
     </p>
     <h3>
@@ -118,24 +118,25 @@
       View Our Calendar
     </ArrowLink>
   </div>
-  <div class="layout.side offset.after-21">
+  <div layout:class="side" offset:class="after-21">
     <Card @label="From our Blog" @src="/assets/images/card/ember.svg" @alt="Ember.js" />
     <RecentPostsEmber />
   </div>
   <ClientsGrid @title="We are trusted by companies that bet on Ember" @only="trainline,qonto,cardstack" />
-  <div class="layout.full offset.after-21">
+  <div layout:class="full" offset:class="after-21">
     <h2>
       We help teams ship and become more effective
     </h2>
-    <div class="media offset.after-12">
+    <div media:scope offset:class="after-12">
       <img
-        class="media.item size.col-2 offset.after-3"
-        class="fluid-image.image"
+        media:class="item"
+        size:class="col-2"
+        offset:class="after-3"
         src="/assets/images/photos/laptop-detail.jpg"
         alt=""
       />
 
-      <div class="media.body">
+      <div media:class="body">
         <h3>
           Team Augmentation
         </h3>
@@ -147,9 +148,15 @@
         </ArrowLink>
       </div>
     </div>
-    <div class="media">
-      <img class="media.item size.col-2 offset.after-3" src="/assets/images/photos/tutoring-small.jpg" alt="" />
-      <div class="media.body">
+    <div media:scope>
+      <img
+        media:class="item"
+        size:class="col-2"
+        offset:class="after-3"
+        src="/assets/images/photos/tutoring-small.jpg"
+        alt=""
+      />
+      <div media:class="body">
         <h3>
           Tutoring
         </h3>

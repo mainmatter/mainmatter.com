@@ -1,14 +1,14 @@
-<div style={{this.shapeStyle}} state:hasImage={{@src}}>
-  <div class="bottom">
-    <div class="bottom-clip">
-      <div class="bottom-content" style="{{this.backgroundStyle}}">
+<div style={{this.shapeStyle}} block:hasImage={{@src}}>
+  <div block:class="bottom">
+    <div block:class="bottom-clip">
+      <div block:class="bottom-content" style="{{this.backgroundStyle}}">
         {{#if @image}}
-          <div class="bottom-image" style="{{this.bottomImageStyle}}"></div>
+          <div block:class="bottom-image" style="{{this.bottomImageStyle}}"></div>
         {{/if}}
       </div>
     </div>
     <svg
-      class="bottom-svg"
+      block:class="bottom-svg"
       width="1880"
       height="980"
       viewBox="0 0 1820 920"
@@ -30,7 +30,7 @@
     </svg>
   </div>
   <svg
-    class="top"
+    block:class="top"
     width="1800"
     height="900"
     viewBox="0 0 1800 900"
@@ -39,13 +39,20 @@
   >
     <use fill-rule="evenodd" xlink:href="#{{this.shapeId}}"></use>
   </svg>
-  <figure class="container">
+  <figure block:class="container">
     {{#if @srcset}}
-      <div class="img-wrapper">
-        <img class="img" srcset={{@srcset}} sizes={{@sizes}} alt="{{@srcAlt}}" width={{@width}} height={{@height}} />
+      <div block:class="img-wrapper">
+        <img
+          block:class="img"
+          srcset={{@srcset}}
+          sizes={{@sizes}}
+          alt="{{@srcAlt}}"
+          width={{@width}}
+          height={{@height}}
+        />
       </div>
     {{/if}}
-    <figcaption class="content">
+    <figcaption block:class="content">
       {{yield}}
     </figcaption>
   </figure>

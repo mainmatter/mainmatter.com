@@ -1,5 +1,4 @@
 @block button from "../../styles/blocks/button.block.css";
-@block container from "../../styles/blocks/container.block.css";
 @block layout from "../../styles/blocks/layout.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
@@ -41,3 +40,8 @@
     padding-right: 0;
   }
 }
+
+@export typography;
+@export layout;
+@export offset;
+@export button;
