@@ -10,6 +10,16 @@
   composes: 'layout';
 }
 
+.list {
+  list-style: none;
+}
+
+.list-item ~ .list-item {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid rgb(201, 202, 208);
+}
+
 @export layout;
 @export offset;
 @export typography;
