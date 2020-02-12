@@ -16,6 +16,10 @@
 }
 
 .content {
+  grid-column: 2/-2;
+}
+
+.content[with-image] {
   grid-column: 2/-5;
 }
 
