@@ -2,8 +2,7 @@
 @block typography from "../../styles/blocks/typography.block.css";
 @block containerBlock from "../../styles/blocks/container.block.css";
 @block layout from "../../styles/blocks/layout.block.css";
-
-@export fluid-image from "../../styles/blocks/fluid-image.block.css";
+@block fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
   block-name: Footer;

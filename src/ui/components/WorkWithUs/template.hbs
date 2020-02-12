@@ -1,20 +1,20 @@
 <div>
   <div block:class="top"></div>
   <div block:class="container" layout:scope>
-    <div class="content">
+    <div block:class="content">
       <h3 typography:class="h2">
         Work with us
       </h3>
       <p typography:class="lead" offset:class="after-12">
         Talk to one of our experts to find out how we can help you.
       </p>
-      <a class="button" href="/contact/" data-internal>
+      <a button:scope href="/contact/" data-internal>
         Let's discuss your project
       </a>
     </div>
-    <div class="img-wrapper">
+    <div block:class="img-wrapper">
       <img
-        class="img"
+        block:class="img"
         src="{{this.teamMemberPhoto}}"
         alt="{{this.capitalizedTeamMemberName}}"
         width={{@width}}
@@ -23,5 +23,5 @@
       />
     </div>
   </div>
-  <div class="bottom"></div>
+  <div block:class="bottom"></div>
 </div>

@@ -8,6 +8,7 @@
   composes: 'layout';
 }
 
+@export button;
 @export typography;
 @export layout;
 @export offset;

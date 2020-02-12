@@ -8,3 +8,7 @@
   block-name: PageDigitalProducts;
   composes: 'layout';
 }
+
+@export layout;
+@export offset;
+@export typography;

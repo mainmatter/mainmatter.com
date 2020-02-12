@@ -9,3 +9,7 @@
   block-name: PageProductDevelopment;
   composes: 'layout';
 }
+
+@export layout;
+@export offset;
+@export typography;

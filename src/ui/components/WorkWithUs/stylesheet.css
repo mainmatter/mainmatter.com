@@ -70,6 +70,7 @@
   }
 }
 
+@export layout;
 @export typography;
 @export offset;
 @export button;

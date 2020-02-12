@@ -1,4 +1,4 @@
-@export layout from "../../styles/blocks/layout.block.css";
+@block layout from "../../styles/blocks/layout.block.css";
 
 :scope {
   padding: 0;
@@ -116,3 +116,5 @@
   .tagline {
   }
 }
+
+@export layout;
