@@ -1,16 +1,16 @@
-<div state:hasImage={{@src}}>
-  <div class="top"></div>
-  <div class="middle">
-    <figure class="container layout">
+<div block:hasImage={{@src}}>
+  <div block:class="top"></div>
+  <div block:class="middle">
+    <figure block:class="container" layout:scope>
       {{#if @srcset}}
-        <div class="img-wrapper">
-          <img class="img" srcset={{@srcset}} sizes={{@sizes}} alt="{{@srcAlt}}" width={{@width}} height={{@height}} />
+        <div block:class="img-wrapper">
+          <img block:class="img" srcset={{@srcset}} sizes={{@sizes}} alt="{{@srcAlt}}" width={{@width}} height={{@height}} />
         </div>
       {{/if}}
-      <figcaption class="content">
+      <figcaption block:class="content">
         {{yield}}
       </figcaption>
     </figure>
   </div>
-  <div class="bottom"></div>
+  <div block:class="bottom"></div>
 </div>

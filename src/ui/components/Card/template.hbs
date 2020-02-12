@@ -1,16 +1,16 @@
 <figure>
   {{#if @label}}
-    <p class="typography.small">
+    <p typography:class="small">
       {{@label}}
     </p>
   {{/if}}
   {{#if @src}}
-    <div class="fluid-image image">
-      <img class="fluid-image.image-cover" src={{@src}} alt="{{@alt}}" />
+    <div fluid-image:scope block:class="image">
+      <img fluid-image:class="image-cover" src={{@src}} alt="{{@alt}}" />
     </div>
   {{/if}}
-  <figcaption class="caption">
-    <h3 class="typography.h4 headline">
+  <figcaption block:class="caption">
+    <h3 typography:class="h4" block:class="headline">
       {{@title}}
     </h3>
     {{yield}}

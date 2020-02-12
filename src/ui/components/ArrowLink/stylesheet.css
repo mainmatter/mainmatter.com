@@ -43,26 +43,26 @@
   fill: var(--color-link);
 }
 
-:scope[state|leftAlign='true'] {
+:scope[leftAlign='true'] {
   text-align: left;
 }
 
-:scope[state|reverse='true'] .link {
+:scope[reverse='true'] .link {
   padding: 1.5rem 0 1.5rem 7rem;
 }
 
 @media (min-width: 888px) {
-  :scope[state|reverse='true'] .link {
+  :scope[reverse='true'] .link {
     margin-left: -7rem;
   }
 }
 
-:scope[state|reverse='true'] .svg {
+:scope[reverse='true'] .svg {
   right: unset;
   left: 0;
   transform: translate(0) scaleX(-1);
 }
 
-:scope[state|reverse='true']:hover .svg {
+:scope[reverse='true']:hover .svg {
   transform: translate(-0.5rem) scaleX(-1);
 }

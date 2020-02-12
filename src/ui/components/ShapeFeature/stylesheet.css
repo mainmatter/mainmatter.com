@@ -1,7 +1,4 @@
-@block containerBlock from "../../styles/blocks/container.block.css";
-@block offset from "../../styles/blocks/offset.block.css";
-@block layout from "../../styles/blocks/layout.block.css";
-@block fluid-image from "../../styles/blocks/fluid-image.block.css";
+@export layout from "../../styles/blocks/layout.block.css";
 
 :scope {
   padding: 0;
@@ -88,7 +85,7 @@
     margin: 16rem 0;
   }
 
-  :scope[state|hasImage] .bottom {
+  :scope[hasImage] .bottom {
   }
 }
 

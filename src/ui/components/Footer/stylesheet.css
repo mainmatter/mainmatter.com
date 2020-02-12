@@ -1,8 +1,9 @@
-@block fluid-image from "../../styles/blocks/fluid-image.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 @block containerBlock from "../../styles/blocks/container.block.css";
 @block layout from "../../styles/blocks/layout.block.css";
+
+@export fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
   block-name: Footer;
@@ -133,3 +134,5 @@
     width: 40%;
   }
 }
+
+@export fluid-image;

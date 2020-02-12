@@ -1,6 +1,5 @@
 @block button from "../../styles/blocks/button.block.css";
 @block form from "../../styles/blocks/form.block.css";
-@block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 
 :scope {
@@ -8,7 +7,7 @@
   extends: form;
 }
 
-:scope[state|form='success'] {
+:scope[form='success'] {
   color: inherit;
 }
 
@@ -35,24 +34,24 @@
   margin-top: 0.5rem;
 }
 
-:scope[state|form='error'] .error {
+:scope[form='error'] .error {
   display: block;
 }
 
-.label[state|error] {
+.label[error] {
   color: var(--color-error);
 }
 
-.control[state|error] {
+.control[error] {
   border-color: var(--color-error);
   color: var(--color-error);
 }
 
-:scope[state|form='submitting'] .item {
+:scope[form='submitting'] .item {
   opacity: 0.35;
 }
 
-:scope[state|form='submitting'] .spinner {
+:scope[form='submitting'] .spinner {
   display: block;
   position: absolute;
   top: 50%;
@@ -75,3 +74,6 @@
     font-size: 16px;
   }
 }
+
+@export typography;
+@export button;

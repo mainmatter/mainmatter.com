@@ -7,15 +7,15 @@
   >
     <HeaderContent @label="Work" @headline="A proven track record of successful projects for international clients." />
   </Header>
-  <div class="layout.split-leading">
+  <div layout:class="split-leading">
     <h2>
       <a href="/cases/trainline/" data-internal>
         Leveraging Trainline's full market potential
       </a>
     </h2>
   </div>
-  <div class="layout.split-trailing">
-    <p class="typography.lead">
+  <div layout:class="split-trailing">
+    <p typography:class="lead">
       Trainline is Europe’s leading independent rail and coach platform. We worked with them to deliver a high-performance mobile web app, along with an improved engineering process, enabling Trainline to achieve their business goals for years to come.
     </p>
     <ArrowLink @href="/cases/trainline/">
@@ -34,15 +34,15 @@
   />
 
   <ClientsGrid @title="Meet our clients" />
-  <div class="layout.split-leading">
+  <div layout:class="split-leading">
     <h2>
       <a href="/cases/timify/" data-internal>
         Modern online appointment scheduling
       </a>
     </h2>
   </div>
-  <div class="layout.split-trailing offset.after-5">
-    <p class="typography.lead">
+  <div layout:class="split-trailing" offset:class="after-5">
+    <p typography:class="lead">
       Timify is an online appointment scheduling service that connects service providers with clients. When they decided it was time to re-engineer their existing product, they trusted us to set them up for future success.
     </p>
     <ArrowLink @href="/cases/timify/">
@@ -61,21 +61,21 @@
     @key="boldTimify"
   />
 
-  <div class="layout.main offset.after-21">
+  <div layout:class="main" offset:class="after-21">
     <h2>
       More Case Studies
     </h2>
     <ul>
-      <li class="more">
-        <h3 class="typography.h4">
+      <li block:class="more">
+        <h3 typography:class="h4">
           A modern UI for an open-source router firmware
         </h3>
         <ArrowLink @href="/cases/ddwrt/">
           Read Case Study
         </ArrowLink>
       </li>
-      <li class="more">
-        <h3 class="typography.h4 more-headline">
+      <li block:class="more">
+        <h3 typography:class="h4" block:class="more-headline">
           An online travel magazine for global citizens
         </h3>
         <ArrowLink @href="/cases/expedition/">

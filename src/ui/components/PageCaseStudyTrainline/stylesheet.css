@@ -1,4 +1,3 @@
-@block container from "../../styles/blocks/container.block.css";
 @block figure from "../../styles/blocks/figure.block.css";
 @block layout from "../../styles/blocks/layout.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
@@ -14,3 +13,8 @@
     padding-top: 51rem;
   }
 }
+
+@export typography;
+@export offset;
+@export layout;
+@export figure;

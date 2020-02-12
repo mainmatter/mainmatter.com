@@ -20,3 +20,6 @@
 .headline {
   margin-bottom: 2rem;
 }
+
+@export typography;
+@export fluid-image;

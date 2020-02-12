@@ -1,5 +1,3 @@
-@block container from "../../styles/blocks/container.block.css";
-@block fluid-image from "../../styles/blocks/fluid-image.block.css";
 @block layout from "../../styles/blocks/layout.block.css";
 @block list from "../../styles/blocks/list.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
@@ -9,3 +7,8 @@
   block-name: PagePlaybook;
   composes: 'layout';
 }
+
+@export typography;
+@export layout;
+@export offset;
+@export list;
