@@ -3,6 +3,7 @@
 @block layout from "../../styles/blocks/layout.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
+@block list from "../../styles/blocks/list.block.css";
 
 :scope {
   block-name: PageDigitalProducts;
@@ -10,5 +11,6 @@
 }
 
 @export layout;
+@export list;
 @export offset;
 @export typography;
