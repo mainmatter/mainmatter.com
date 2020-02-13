@@ -4,6 +4,7 @@
 @block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 @block button from "../../styles/blocks/button.block.css";
+@block list from "../../styles/blocks/list.block.css";
 
 :scope {
   block-name: PageProductDesign;
@@ -11,5 +12,6 @@
 }
 
 @export layout;
+@export list;
 @export offset;
 @export typography;
