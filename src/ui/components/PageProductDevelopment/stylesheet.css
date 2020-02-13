@@ -4,22 +4,14 @@
 @block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 @block button from "../../styles/blocks/button.block.css";
+@block list from "../../styles/blocks/list.block.css";
 
 :scope {
   block-name: PageProductDevelopment;
   composes: 'layout';
 }
 
-.list {
-  list-style: none;
-}
-
-.list-item ~ .list-item {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-top: 1px solid rgb(201, 202, 208);
-}
-
 @export layout;
+@export list;
 @export offset;
 @export typography;
