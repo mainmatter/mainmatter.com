@@ -84,9 +84,6 @@
   :scope {
     margin: 16rem 0;
   }
-
-  :scope[hasImage] .bottom {
-  }
 }
 
 @media (min-width: 888px) {
