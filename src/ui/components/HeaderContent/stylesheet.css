@@ -30,12 +30,35 @@
   position: relative;
 }
 
-.background {
-  background: var(--shape-color);
+.top {
   width: 100%;
-  padding-bottom: 120%;
-  -webkit-clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 75%);
-  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 75%);
+  padding-top: 15%;
+  margin-bottom: -1px;
+  background: var(--shape-color);
+
+  clip-path: polygon(0 100%, 100% 100%, 100% 0);
+  -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 0);
+}
+
+.bottom {
+  width: 100%;
+  padding-bottom: 10%;
+  margin-top: -1px;
+  background: var(--shape-color);
+
+  clip-path: polygon(0 0, 100% 0, 100% 100%);;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%);;
+}
+
+.middle {
+  background: var(--shape-color);
+  padding-bottom: 4rem;
+  height: 75%;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
   position: relative;
 }
 
