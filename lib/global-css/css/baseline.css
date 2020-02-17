@@ -2,8 +2,8 @@
   --base-scale: calc(6 / 8);
 
   /* Sizing */
-  --col: calc(128 / 1440 * 100vw);
-  --col-gap: 8rem;
+  --col: calc(156 / 1440 * 100vw);
+  --col-gap: 3rem;
   --max-width: calc(var(--col) * 6 + var(--col-gap) * 5);
 
   --col-1: var(--col);
@@ -13,7 +13,7 @@
   --col-5: calc(var(--col) * 5 + var(--col-gap) * 4);
   --col-6: calc(var(--col) * 6 + var(--col-gap) * 5);
 
-  --col-max: 16rem;
+  --col-max: 19.5rem;
   --offset-horizontal: 8rem;
 
   --grid-template-columns: minmax(var(--offset-horizontal), 1fr) repeat(6, minmax(var(--col), var(--col-max)))
@@ -30,7 +30,6 @@
   --color-accent: #007df6;
   --color-background: #fff;
   --color-error: #ec2a2a;
-  --color-light: #f8f8fa;
 
   --color-text: var(--color-primary);
   --color-text-inverted: var(--color-background);
