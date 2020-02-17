@@ -1,8 +1,8 @@
-<div block:hasImage={{@src}}>
+<div>
   <div block:class="top"></div>
   <div block:class="middle">
-    <figure block:class="container" layout:scope>
-      {{#if @srcset}}
+    {{#if @srcset}}
+      <figure block:class="container" layout:scope>
         <div block:class="img-wrapper">
           <img
             block:class="img"
@@ -13,11 +13,17 @@
             height={{@height}}
           />
         </div>
-      {{/if}}
-      <figcaption block:class="content">
-        {{yield}}
-      </figcaption>
-    </figure>
+        <figcaption block:class="content">
+          {{yield}}
+        </figcaption>
+      </figure>
+    {{else}}
+      <div block:class="container" layout:scope>
+        <p block:class="content">
+          {{yield}}
+        </p>
+      </div>
+    {{/if}}
   </div>
   <div block:class="bottom"></div>
 </div>
