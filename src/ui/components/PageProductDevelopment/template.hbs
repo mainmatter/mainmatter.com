@@ -1,0 +1,97 @@
+<div>
+  <Header
+    @active="services"
+    @title="Product Development"
+    @documentTitle="Product Development | Services"
+    @description="From start to finish you work with the same team of product experts, engineers and designers to bring your product to live."
+  >
+    <HeaderContent @label="Product Development" @headline="Engineering excellence means building things to last">
+      <p typography:class="lead">
+        simplabs has its origins in engineering and development. We obsess over crafting the absolute best products we can, built on architectures that are easy to extend, update and maintain. Our process depends on close collaboration between designers and developers to release well-tested products in dynamic, fast-paced iterations.
+      </p>
+      <p typography:class="lead">
+        As a leading development house in Europe, we love to take on projects that pose interesting and complex engineering challenges.
+      </p>
+    </HeaderContent>
+  </Header>
+  <div layout:class="full" offset:class="after-12">
+    <h2>
+      Our guiding principles
+    </h2>
+    <p typography:class="lead">
+      Today, the influence of software and technology on our everyday lives is bigger that ever. We love to create digital products that contribute to that trend in a meaningful way.
+    </p>
+  </div>
+  <div layout:class="main" offset:class="after-12">
+    <h4>
+      Code excellence. Always.
+    </h4>
+    <p>
+      No excuses for sloppy code and quick-fix solutions. Well-written code is less prone to errors or bugs, more secure, and faster.
+    </p>
+    <ArrowLink @href="/blog/">
+      Read more on the blog
+    </ArrowLink>
+    <h4>
+      Collaboration is essential
+    </h4>
+    <p>
+      Designers support the project end-to-end. Close collaboration allows space for early user feedback, reducing risks, and improved outcomes.
+    </p>
+    <ArrowLink @href="/playbook/">
+      Explore our process in the simplabs playbook
+    </ArrowLink>
+    <h4>
+      Build software that you can maintain
+    </h4>
+    <p>
+      In a fast-changing world, it’s essential to build on a foundation that is sustainable yet able to change and adapt. Build for change.
+    </p>
+    <ArrowLink @href="/contact/">
+      Talk to an engineer
+    </ArrowLink>
+  </div>
+  <div layout:class="full" offset:class="after-12">
+    <h2>
+      Excellence in engineering, from first commit to finished product
+    </h2>
+    <p typography:class="lead">
+      Our standards for code quality and engineering are second to none. Our digital product development support includes:
+    </p>
+  </div>
+  <div layout:class="split-trailing" offset:class="after-21">
+    <ul list:class="vertical" offset:class="after-5">
+      <li list:class="vertical-item">
+        Full-stack development
+      </li>
+      <li list:class="vertical-item">
+        Effective process, run by seasoned product teams
+      </li>
+      <li list:class="vertical-item">
+        Continuous Delivery of Product Increments
+      </li>
+      <li list:class="vertical-item">
+        Intensive automated testing and QA
+      </li>
+      <li list:class="vertical-item">
+        Engineering Team of Technology Leaders
+      </li>
+      <li list:class="vertical-item">
+        Deployment and Operation
+      </li>
+    </ul>
+    <ArrowLink @href="/playbook/">
+      Learn how we work
+    </ArrowLink>
+  </div>
+  <div layout:class="full" offset:class="after-12">
+    <h2>
+      We love open source &mdash; we’re the leading Ember.js team in Europe
+    </h2>
+    <p typography:class="lead">
+      We co-host EmberFest (the biggest Ember.js conference in Europe) and we actively contribute to the open source projects we're leveraging for our projects.
+    </p>
+  </div>
+  <WorkWithUs @teamMember="chris" />
+  <Footer />
+</div>

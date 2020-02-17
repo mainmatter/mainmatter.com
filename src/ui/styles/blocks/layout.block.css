@@ -1,6 +1,5 @@
 :scope {
   position: relative;
-  z-index: 0;
   block-name: Layout;
   display: grid;
   grid-template-columns: var(--grid-template-columns);

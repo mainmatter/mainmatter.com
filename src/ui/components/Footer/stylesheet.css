@@ -1,17 +1,25 @@
+@block offset from "../../styles/blocks/offset.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
+@block containerBlock from "../../styles/blocks/container.block.css";
+@block layout from "../../styles/blocks/layout.block.css";
 @block fluid-image from "../../styles/blocks/fluid-image.block.css";
 
 :scope {
   block-name: Footer;
-
-  display: flex;
-  flex-flow: row wrap;
-  grid-column: 2/-2;
-  width: 100%;
-  justify-content: space-between;
   font-size: 2rem;
   line-height: 1.5;
   color: var(--color-muted);
   z-index: 100;
+  composes: 'layout';
+  margin-bottom: 0;
+}
+
+.content {
+  display: flex;
+  grid-column: 2/-2;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .branding {

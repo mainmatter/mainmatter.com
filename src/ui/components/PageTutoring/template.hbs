@@ -5,71 +5,52 @@
     @documentTitle="Leveling up teams' confidence with Tutoring | Services"
     @description="We tutor teams that approach new technologies, overcome long standing issues or struggle with delivering large scale projects on time and budget."
   >
-    <HeaderContent @label="Services" @headline="Tutoring" />
+    <HeaderContent @label="Training & Tutoring" @headline="Raise confidence and increase productivity" />
+    <p typography:class="lead">
+      Approaching new technologies or solving long-standing impediments can be overwhelming at times. We train and tutor engineering teams to set them up for long term success.
+    </p>
+    <p typography:class="lead" offset:class="after-21">
+      We share our expertise in a wide range of topics, from languages and frameworks to architecture and process best practices—all aimed at making your teams execute more confidently.
+    </p>
   </Header>
   <div layout:class="main" offset:class="after-21">
-    <h2 typography:class="h2">
-      Raising confidence for increased productivity and quality
+    <h2 typography:class="h3">
+      Tailor-made trainings and support for engineers
     </h2>
-    <p typography:class="lead">
-      Approaching new technologies, overcoming long standing issues that negatively affect productivity or delivering large scale projects on time and budget can be overwhelming at times. We tutor engineering teams to help them overcome these challenges and set them up for long term success.
+    <p>
+      Whether it’s the completion of a complex project or simply to get up-to-speed on the latest engineering practices, teams value the know-how and experience of our senior engineers.
     </p>
-    <p typography:class="lead">
-      We are experts in a wide range of topics, from languages and frameworks to architecture and process best practices. We share our expertise so others can grow from it.
+    <h2 typography:class="h3">
+      Code reviews & audits
+    </h2>
+    <p>
+      Designers support the project end-to-end. Close collaboration allows space for early user feedback, reducing risks, and improved outcomes.
+    </p>
+    <h2 typography:class="h3">
+      Tailor-made solutions
+    </h2>
+    <p>
+      The needs of every team are unique, and so are our tutoring and training solutions. We cover covering technology stacks from Ruby on Rails to Ember.js and Elixir/Phoenix.
     </p>
   </div>
   <div layout:class="side" offset:class="after-21">
     <h3>
-      Want to know how simplabs can level up your team's effectiveness?
+      Want to know how we can turn your ideas into a successful project?
     </h3>
     <p>
-      Leave us a message and we'll get back to you to explain how we can help.
+      Leave us a message and we'll get back to you, establishing a plan together.
     </p>
     <FormContact />
   </div>
-  <ShapeAcrossTutoringService />
-  <div layout:class="main" offset:class="after-21">
+  <div layout:class="full" offset:class="after-21">
     <h2>
-      Why Simplabs?
+      What makes Simplabs trainings unique?
     </h2>
     <p typography:class="lead">
-      simplabs has unique expertise and insights into modern web engineering technologies like Ember.js. We are strongly engaged in open source with several team member on the Ember.js core team and a number of libraries that we maintain ourselves. Our experts are internationally known for their work on all parts of the software development process, often sharing their knowledge at conferences and events across the globe.
-    </p>
-    <h3>
-      Reviews
-    </h3>
-    <p>
-      We can review our clients' code bases thoroughly and will prepare an extensive document, listing all of the problems we’ve identified. For each problem we provide an explanation and background information, a path forward and a severity assessment that can help with later prioritization. We end the review with a meeting in which we present the findings, discuss questions and together with the client, lay out a plan of action.
-    </p>
-    <p>
-      We have reviewed applications for various international clients in the past, covering technology stacks from Ruby on Rails to Ember.js and Elixir/Phoenix.
-    </p>
-    <h3>
-      Workshops
-    </h3>
-    <p>
-      We conduct individual or group workshops for our clients to bring their teams up to speed with particular technologies quickly and enable them to complete ambitious projects with confidence. From introductory workshops on frameworks like Ember.js or Phoenix to advanced classes on distributed systems design, authentication, deployment or scalability, we set up customized training sessions that suit the needs of our clients and their teams.
+      We are strongly engaged in open source with several team member on the Ember.js core team and a number of libraries that we maintain ourselves. Our experts are internationally known for their work on all parts of the software development process, often sharing their knowledge at conferences and events across the globe.
     </p>
   </div>
-  <div layout:class="side" block:class="offset-top" offset:class="after-21">
-    <CardEmberExpertise />
-    <Card @src="/assets/images/card/elixir.svg" @alt="Elixir">
-      <h3 typography:class="h4">
-        <p>
-          Elixir is the language of choice for scalable and stable applications.
-        </p>
-        <ArrowLink @href="/expertise/elixir-phoenix/">
-          Learn more
-        </ArrowLink>
-      </h3>
-    </Card>
-  </div>
-  <ClientsGrid
-    @title="We have a track record of successful projects for international clients"
-    @only="generali,clark,neighbourhoodie"
-  />
-
   <ShapeAcrossLeadingExperts />
-  <WorkWithUs />
+  <WorkWithUs @teamMember="chris" />
   <Footer />
 </div>
