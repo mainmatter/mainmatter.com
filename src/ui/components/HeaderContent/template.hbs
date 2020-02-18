@@ -16,16 +16,23 @@
       {{/if}}
       {{yield}}
     </div>
-    {{#if @image}}
+    {{#if @attachment}}
       <div block:class="sidebar">
-        <div block:class="image-wrapper">
-          {{@image}}
-        </div>
-        <div block:class="background">
-          <div block:class="top"></div>
-          <div block:class="middle"></div>
-          <div block:class="bottom"></div>
-        </div>
+        {{#if (eq @attachment "blue-ribbon")}}
+          <div block:class="image-wrapper" block:attachment={{@attachment}}>
+            {{@image}}
+          </div>
+          <div block:class="background">
+            <div block:class="top"></div>
+            <div block:class="middle"></div>
+            <div block:class="bottom"></div>
+          </div>
+        {{/if}}
+        {{#if (eq @attachment "image")}}
+          <div block:class="image-wrapper" block:attachment={{@attachment}}>
+            {{@image}}
+          </div>
+        {{/if}}
       </div>
     {{/if}}
   </div>
