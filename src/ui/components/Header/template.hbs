@@ -1,4 +1,4 @@
-<header>
+<header block:backgroundVariation={{@backgroundVariation}}>
   <HeadTag @name="title" @content={{this.documentTitle}} />
   <HeadTag @name="meta" @keys={{hash property="og:title" name="twitter:title"}} @values={{hash content=@title}} />
   <HeadTag @name="meta" @keys={{hash property="og:type"}} @values={{hash content=this.pageType}} />
@@ -58,4 +58,5 @@
     </div>
   </div>
   {{yield}}
+  <div block:class="bottom" block:backgroundVariation={{@backgroundVariation}}></div>
 </header>
