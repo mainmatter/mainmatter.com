@@ -101,7 +101,7 @@
 
 .bottom {
   width: 100%;
-  padding-bottom: 10%;
+  padding-bottom: 12.5%;
   margin-top: -1px;
   grid-column: 1/-1;
 }
@@ -121,8 +121,8 @@
 }
 
 .bottom[backgroundVariation='pointed'] {
-  -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 0, 80% 100%, 0 0);
-  clip-path: polygon(0 100%, 100% 100%, 100% 0, 80% 100%, 0 0);
+  -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 15%, 77.5% 100%, 0 15%);
+  clip-path: polygon(0 100%, 100% 100%, 100% 15%, 77.5% 100%, 0 15%);
 }
 
 @media (max-width: 887px) {

@@ -42,7 +42,7 @@
 
 .bottom {
   width: 100%;
-  padding-bottom: 10%;
+  padding-bottom: 12.5%;
   margin-top: -1px;
   background: var(--shape-color);
 
@@ -63,8 +63,8 @@
 }
 
 .image-wrapper[attachment='blue-ribbon'] {
-  clip-path: polygon(40% 0, 100% 20%, 100% 80%, 60% 100%, 0 80%, 0 10%);
-  -webkit-clip-path: polygon(40% 0, 100% 20%, 100% 80%, 60% 100%, 0 80%, 0 10%);
+  clip-path: polygon(40% 0, 100% 20%, 100% 90%, 60% 98.5%, 0 90%, 0 10%);
+  -webkit-clip-path: polygon(40% 0, 100% 20%, 100% 90%, 60% 98.5%, 0 90%, 0 10%);
   background: #666;
   padding-bottom: 80%;
   margin-right: 16rem;
@@ -75,8 +75,8 @@
 }
 
 .image-wrapper[attachment='image'] {
-  clip-path: polygon(0 10%, 0 90%, 100% 100%, 100% 0);
-  -webkit-clip-path: polygon(0 10%, 0 90%, 100% 100%, 100% 0);
+  clip-path: polygon(0 10%, 0 90%, 100% 99%, 100% 1%);
+  -webkit-clip-path: polygon(0 10%, 0 90%, 100% 99%, 100% 1%);
   background: #666;
   padding-bottom: 150%;
   width: 100%;
