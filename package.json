@@ -50,7 +50,7 @@
     "broccoli-merge-trees": "^4.1.0",
     "broccoli-stew": "^3.0.0",
     "broccoli-string-replace": "^0.1.2",
-    "broccoli-typescript-compiler": "^4.2.0",
+    "broccoli-typescript-compiler": "^5.0.0",
     "clean-css": "^4.2.3",
     "colors": "^1.4.0",
     "dateformat": "^3.0.3",
