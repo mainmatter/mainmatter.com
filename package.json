@@ -90,7 +90,7 @@
     "rollup-plugin-virtual": "^1.0.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.1.0",
-    "typescript": "~3.7.5"
+    "typescript": "~3.8.2"
   },
   "engines": {
     "node": ">= 4.0"
