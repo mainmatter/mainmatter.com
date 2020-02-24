@@ -76,7 +76,7 @@
     "marked": "^0.8.0",
     "morgan": "^1.3.2",
     "navigo": "^7.1.2",
-    "percy": "^0.21.0",
+    "percy": "^0.22.0",
     "pretender": "^3.3.1",
     "prettier": "^1.19.1",
     "puppeteer": "^2.1.1",
