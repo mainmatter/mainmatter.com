@@ -1,5 +1,6 @@
 @block typography from "../../styles/blocks/typography.block.css";
 @block layout from "../../styles/blocks/layout.block.css";
+@block offset from "../../styles/blocks/offset.block.css";
 
 :scope {
   block-name: HeaderContent;
@@ -54,7 +55,7 @@
   position: absolute;
   right: 0;
   top: 0;
-  bottom: 0;
+  bottom: -12rem;
 }
 
 .image-wrapper {
@@ -89,6 +90,7 @@
 
   .background {
     width: calc(100% - 8rem);
+    bottom: -5rem;
   }
 }
 
@@ -103,3 +105,4 @@
 }
 
 @export typography;
+@export offset;

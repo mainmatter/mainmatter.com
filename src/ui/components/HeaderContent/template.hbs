@@ -17,7 +17,7 @@
       {{yield}}
     </div>
     {{#if @attachment}}
-      <div block:class="sidebar">
+      <div block:class="sidebar" offset:class="after-12">
         {{#if (eq @attachment "blue-ribbon")}}
           <div block:class="image-wrapper" block:attachment={{@attachment}}>
             {{@image}}
