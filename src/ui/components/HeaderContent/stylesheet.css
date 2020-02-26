@@ -80,17 +80,22 @@
 
 @media (max-width: 887px) {
   .sidebar {
-    grid-column: 2/-1;
+    grid-column: 1/-1;
     position: relative;
+    display: grid;
+    grid-template-columns: var(--grid-template-columns);
+    column-gap: var(--col-gap);
   }
 
-  .image-wrapper {
-    width: calc(100% - var(--col-gap));
+  .image-wrapper[attachment='blue-ribbon'] {
+    grid-column: 2/-2;
   }
 
   .background {
-    width: calc(100% - 8rem);
+    width: auto;
+    left: calc(var(--col-gap) + 2 * var(--col));
     bottom: -5rem;
+    right: 0;
   }
 }
 
