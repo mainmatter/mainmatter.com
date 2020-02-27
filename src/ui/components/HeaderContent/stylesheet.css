@@ -1,6 +1,5 @@
 @block typography from "../../styles/blocks/typography.block.css";
 @block layout from "../../styles/blocks/layout.block.css";
-@block offset from "../../styles/blocks/offset.block.css";
 
 :scope {
   block-name: HeaderContent;
@@ -22,6 +21,7 @@
 
 .sidebar {
   grid-column: 5/-2;
+  margin-bottom: 12rem;
 }
 
 .top {
@@ -83,6 +83,10 @@
 }
 
 @media (max-width: 887px) {
+  .sidebar {
+    margin-bottom: 0;
+  }
+
   :scope[attachment='blue-ribbon'] .sidebar {
     grid-column: 1/-1;
     position: relative;
@@ -128,4 +132,3 @@
 }
 
 @export typography;
-@export offset;
