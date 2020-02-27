@@ -1,4 +1,4 @@
-<div>
+<div block:attachment={{@attachment}}>
   <div block:class="container">
     <div block:class="content" block:with-attachment={{@attachment}}>
       {{#if @headline}}
@@ -19,7 +19,7 @@
     {{#if @attachment}}
       <div block:class="sidebar" offset:class="after-12">
         {{#if (eq @attachment "blue-ribbon")}}
-          <div block:class="image-wrapper" block:attachment={{@attachment}}>
+          <div block:class="image-wrapper">
             {{@image}}
           </div>
           <div block:class="background">
@@ -29,7 +29,7 @@
           </div>
         {{/if}}
         {{#if (eq @attachment "image")}}
-          <div block:class="image-wrapper" block:attachment={{@attachment}}>
+          <div block:class="image-wrapper">
             {{@image}}
           </div>
         {{/if}}
