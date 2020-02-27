@@ -194,6 +194,16 @@
   .work-with-us[active] {
     box-shadow: 0 calc(2rem + 2px) 0 -2rem var(--color-link-inverted);
   }
+
+  :scope[backgroundVariation='pointed'] {
+    margin-bottom: 16rem;
+  }
+
+  :scope[backgroundVariation='pointed'] .bottom {
+    margin-top: -50%;
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 55%, 0 0);
+    clip-path: polygon(0 100%, 100% 100%, 100% 55%, 0 0);
+  }
 }
 
 @media (min-width: 888px) {
