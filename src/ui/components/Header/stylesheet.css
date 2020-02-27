@@ -106,21 +106,21 @@
   grid-column: 1/-1;
 }
 
-:scope[backgroundVariation] {
+:scope[backgroundVariation='inclined'], :scope[backgroundVariation='pointed'] {
   background-color: var(--color-light);
 }
 
-:scope[backgroundVariation] .bottom {
+:scope[backgroundVariation='inclined'] .bottom, :scope[backgroundVariation='pointed'] .bottom {
   margin-top: 6rem;
   background-color: var(--color-background);
 }
 
-.bottom[backgroundVariation='inclined'] {
+:scope[backgroundVariation='inclined'] .bottom {
   -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%);
   clip-path: polygon(0 0, 0 100%, 100% 100%);
 }
 
-.bottom[backgroundVariation='pointed'] {
+:scope[backgroundVariation='pointed'] .bottom {
   -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 15%, 77.5% 100%, 0 15%);
   clip-path: polygon(0 100%, 100% 100%, 100% 15%, 77.5% 100%, 0 15%);
 }
