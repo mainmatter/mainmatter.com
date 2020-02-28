@@ -83,7 +83,7 @@
 :scope[attachment='image'] .image-wrapper {
   clip-path: polygon(0 10%, 0 90%, 100% 99%, 100% 1%);
   -webkit-clip-path: polygon(0 10%, 0 90%, 100% 99%, 100% 1%);
-  padding-bottom: 150%;
+  padding-bottom: 200%;
 }
 
 @media (max-width: 887px) {
