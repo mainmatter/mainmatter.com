@@ -57,6 +57,10 @@
   line-height: 1.6;
 }
 
+.quote {
+  font-style: italic;
+}
+
 .tag {
   text-decoration: none;
   display: inline-block;
