@@ -2,6 +2,7 @@
   block-name: ArrowLink;
   text-align: right;
   pointer-events: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 :scope + :scope {
