@@ -106,11 +106,13 @@
   grid-column: 1/-1;
 }
 
-:scope[backgroundVariation='inclined'], :scope[backgroundVariation='pointed'] {
+:scope[backgroundVariation='inclined'],
+:scope[backgroundVariation='pointed'] {
   background-color: var(--color-light);
 }
 
-:scope[backgroundVariation='inclined'] .bottom, :scope[backgroundVariation='pointed'] .bottom {
+:scope[backgroundVariation='inclined'] .bottom,
+:scope[backgroundVariation='pointed'] .bottom {
   margin-top: 6rem;
   background-color: var(--color-background);
 }

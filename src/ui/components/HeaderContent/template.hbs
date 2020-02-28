@@ -19,7 +19,7 @@
     {{#if @attachment}}
       <div block:class="sidebar">
         <div block:class="image-wrapper">
-          {{@image}}
+          <img srcset="{{@srcset}}" sizes="{{@sizes}}" block:class="image" />
         </div>
         {{#if (eq @attachment "blue-ribbon")}}
           <div block:class="background">
