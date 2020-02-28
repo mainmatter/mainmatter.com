@@ -31,7 +31,7 @@ final website.
 
 ![Side by side comparison of the original website mockup from the RFC and the final mockup created by me](/assets/images/posts/2020-02-29-emberjs-website-rfc-to-launch/before-after.jpg#full@1200-2761)
 
-<small>You can also download a [full sized comparision, side by side](/assets/images/posts/2020-02-29-emberjs-website-rfc-to-launch/before-after-full.jpg). Be warned, it is nearly 5 MB.</small>
+<small>You can also download a [full sized comparision, side by side](https://user-images.githubusercontent.com/194641/75565735-c9559700-5a4e-11ea-8dd2-5bae88a694e0.jpg). Be warned, it is huge.</small>
 
 ## Large changes
 
@@ -74,11 +74,11 @@ layout organization to any element on a page.
 The RFC mockup introduces a new slate color to mark a new era for Ember. The
 Ember red represents the community. The new slate stands for the
 professionalism and strong foundation in quality. In short, they are meant to
-symbolize that Ember's strength is represented by an amazing community and is
-there for business.
+symbolize that Ember's strength lies in its an amazing community and reliability
+for businesses.
 
 As you might have noticed, we are still lacking secondary colors, which are not
-settled yet and will become part of the second run of changes to the Ember.js
+settled yet and will become part of the second pass of changes to the Ember.js
 website ecosystem.
 
 ## Style guide
