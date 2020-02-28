@@ -1,3 +1,7 @@
+@block link from "../../styles/blocks/link.block.css";
+
 :scope {
   block-name: CardEmberSponsors;
 }
+
+@export link

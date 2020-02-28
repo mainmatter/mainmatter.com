@@ -19,13 +19,13 @@
           <img fluid-image:class="image" src="/assets/images/authors/{{twitter}}.jpg" alt="" />
         </div>
         <div blog-post:class="badge-content">
-          <a href="/blog/author/{{twitter}}" data-internal>
+          <a href="/blog/author/{{twitter}}" link:scope data-internal>
             {{name}}
           </a>
           <p>
             {{bio}}
           </p>
-          <a href="https://twitter.com/{{author.twitter}}" target="_blank" rel="noopener">
+          <a href="https://twitter.com/{{author.twitter}}" link:scope target="_blank" rel="noopener">
             @{{twitter}}
           </a>
         </div>
@@ -40,14 +40,14 @@
         </span>
         <div blog-post:class="excerpt">
           <h3>
-            <a href="{{path}}" data-internal>
+            <a href="{{path}}" link:scope data-internal>
               {{title}}
             </a>
           </h3>
           {{{excerpt}}}
         </div>
         <footer>
-          <a href="/blog/author/{{author.twitter}}" data-internal>
+          <a href="/blog/author/{{author.twitter}}" link:scope data-internal>
             {{author.name}}
           </a>
           <p typography:class="small">

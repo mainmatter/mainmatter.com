@@ -1,4 +1,5 @@
 @block layout from "../../styles/blocks/layout.block.css";
+@block link from "../../styles/blocks/link.block.css";
 @block media from "../../styles/blocks/media.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
 @block size from "../../styles/blocks/size.block.css";
@@ -9,6 +10,7 @@
   composes: 'layout';
 }
 
+@export link;
 @export typography;
 @export layout;
 @export media;

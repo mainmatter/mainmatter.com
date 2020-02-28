@@ -45,14 +45,14 @@
           #{{latest.topic}}
         </span>
         <h2 offset:class="before-none">
-          <a href="{{latest.path}}" data-internal>
+          <a href="{{latest.path}}" link:scope data-internal>
             {{latest.title}}
           </a>
         </h2>
         <div typography:class="lead" offset:class="after-3">
           {{{latest.excerpt}}}
         </div>
-        <a href="/blog/author/{{latest.author.twitter}}/" data-internal>
+        <a href="/blog/author/{{latest.author.twitter}}/" link:scope data-internal>
           {{latest.author.name}}
         </a>
         <p typography:class="small">
@@ -79,7 +79,7 @@
           </h3>
           {{{excerpt}}}
         </div>
-        <a href="/blog/author/{{author.twitter}}" data-internal>
+        <a href="/blog/author/{{author.twitter}}" link:scope data-internal>
           {{author.name}}
         </a>
         <p typography:class="small">

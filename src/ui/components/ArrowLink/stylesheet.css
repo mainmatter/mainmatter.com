@@ -1,3 +1,5 @@
+@block link from "../../styles/blocks/link.block.css";
+
 :scope {
   block-name: ArrowLink;
   text-align: right;
@@ -63,3 +65,5 @@
 :scope[reverse='true']:hover .svg {
   transform: translate(-0.5rem) scaleX(-1);
 }
+
+@export link;
