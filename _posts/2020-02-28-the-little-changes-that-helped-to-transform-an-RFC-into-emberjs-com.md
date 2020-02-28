@@ -7,7 +7,7 @@ topic: design
 bio: 'Consultant for Design & Technology'
 description: 'Florian Pichler highlights details of the just released overhaul of the landing page for Ember.js, looking specifically at how a distributed team of volunteers can achieve consistent design.'
 og:
-  image: /assets/images/posts/2020-02-29-emberjs-website-rfc-to-launch/og-image.png
+  image: /assets/images/posts/2020-02-28-the-little-changes-that-helped-to-transform-an-RFC-into-emberjs-com/og-image.png
 ---
 
 The new landing page for Ember.js is a big project.
@@ -29,7 +29,7 @@ final website.
 
 ## Side by side
 
-![Side by side comparison of the original website mockup from the RFC and the final mockup created by me](/assets/images/posts/2020-02-29-emberjs-website-rfc-to-launch/before-after.jpg#full@1200-2761)
+![Side by side comparison of the original website mockup from the RFC and the final mockup created by me](/assets/images/posts/2020-02-28-the-little-changes-that-helped-to-transform-an-RFC-into-emberjs-com/before-after.jpg#full@1200-2761)
 
 <small>You can also download a [full sized comparision, side by side](https://user-images.githubusercontent.com/194641/75565735-c9559700-5a4e-11ea-8dd2-5bae88a694e0.jpg). Be warned, it is huge.</small>
 
@@ -52,7 +52,7 @@ Metric fonts by Klimt, but it was necessary to find a solution that is open
 source and does not involve licensing costs. After testing eight or more other
 alternatives, we settled on an excellent open source font:
 
-![Font sample for Inter font](/assets/images/posts/2020-02-29-emberjs-website-rfc-to-launch/inter.png#@860-1720)
+![Font sample for Inter font](/assets/images/posts/2020-02-28-the-little-changes-that-helped-to-transform-an-RFC-into-emberjs-com/inter.png#@860-1720)
 
 Meet [**Inter**](https://rsms.me/inter/), the new font representing Ember.js
 typographically in written word. It is not only well suited and tailor-made for
@@ -69,7 +69,7 @@ layout organization to any element on a page.
 
 ### Half a gradient of colors
 
-![Slate gradient, Ember brand color with gradiated variations](/assets/images/posts/2020-02-29-emberjs-website-rfc-to-launch/gradient.png#@860-1720)
+![Slate gradient, Ember brand color with gradiated variations](/assets/images/posts/2020-02-28-the-little-changes-that-helped-to-transform-an-RFC-into-emberjs-com/gradient.png#@860-1720)
 
 The RFC mockup introduces a new slate color to mark a new era for Ember. The
 Ember red represents the community. The new slate stands for the
@@ -98,7 +98,7 @@ The style guide provides both actual Ember components that can be applied to any
 Ember project and a full set of CSS custom properties and helpers which make it
 easy to create good looking pages from scratch.
 
-![Examples for components created for the Ember Style Guide project](/assets/images/posts/2020-02-29-emberjs-website-rfc-to-launch/bcomponents.png#full@860-1720)
+![Examples for components created for the Ember Style Guide project](/assets/images/posts/2020-02-28-the-little-changes-that-helped-to-transform-an-RFC-into-emberjs-com/components.png#full@860-1720)
 
 Beyond the purely visual aspects of the design, I also introduced some
 lightweight CSS helpers for things like spacing, font sizes, grid and layout.
