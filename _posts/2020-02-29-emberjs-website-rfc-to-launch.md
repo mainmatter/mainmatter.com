@@ -1,5 +1,5 @@
 ---
-title: 'The little changes that helped to transform a RFC into emberjs.com'
+title: 'The little changes that helped to transform an RFC into emberjs.com'
 author: 'Florian Pichler'
 github: pichfl
 twitter: pichfl
@@ -12,26 +12,30 @@ og:
 
 The new landing page for Ember.js is a big project.
 
-Besides development, there is the task of converting the initial design mockup
-that was made for [the RFC](https://github.com/emberjs/rfcs/pull/425) back in
-2018 into a full-featured design system with elements and components that can
-be reused across the big universe for which the landing page is only the
-doorway.
+In 2018 there was [an RFC](https://github.com/emberjs/rfcs/pull/425) for
+updating the website. Which was a great thing, but there was just a mockup for
+the desktop website and a few of the interactive states. No version for small
+screens, no layout grid or repeatable measures.
 
-This post highlights some of the changes I proposed and made it to the final
-website.
+So besides development, there was the task of converting this initial design
+mockup into a full-featured design system with elements and components that can
+be reused across the large Ember.js universe for which the landing page is only
+the doorway.
+
+This post highlights some of the changes I proposed and which made it to the
+final website.
 
 <!--break-->
 
 ## Side by side
 
-![Side by side comparison of the original website mockup from the rfc and the final mockup created by me](/assets/images/posts/2020-02-29-emberjs-website-rfc-to-launch/before-after.jpg#full@1200-2761)
+![Side by side comparison of the original website mockup from the RFC and the final mockup created by me](/assets/images/posts/2020-02-29-emberjs-website-rfc-to-launch/before-after.jpg#full@1200-2761)
 
 <small>You can also download a [full sized comparision, side by side](/assets/images/posts/2020-02-29-emberjs-website-rfc-to-launch/before-after-full.jpg). Be warned, it is nearly 5 MB.</small>
 
 ## Large changes
 
-After discussion with the Learning team, the "Try out" section was removed.
+After a discussion with the Ember Learning Core team, the "Try out" section was removed.
 There wasn't enough time left to create the section in a meaningful way and
 it didn't communicate the real strengths of Ember.js.
 
@@ -44,9 +48,9 @@ illustrations and lighten up the otherwise quite technical content.
 ### A new font for Ember.js
 
 The font choice for the original RFC was lovely, and we are big fans of the
-Metric fonts by Klimt, but it was necessary to find a solution that is Open
-Source and does not involve licensing costs. After testing eight or more other
-alternatives, we settled on an excellent Open Source font:
+Metric fonts by Klimt, but it was necessary to find a solution that is open
+source and does not involve licensing costs. After testing eight or more other
+alternatives, we settled on an excellent open source font:
 
 ![Font sample for Inter font](/assets/images/posts/2020-02-29-emberjs-website-rfc-to-launch/inter.png#@860-1720)
 
@@ -92,18 +96,19 @@ surprise, is an Ember application itself, thanks to the magic of
 
 ### CSS
 
-Beyond the purely visual aspecs of the design, I also introduced some
+Beyond the purely visual aspects of the design, I also introduced some
 lightweight CSS helpers for things like spacing, font sizes, grid and layout.
-Some of them were inspired by [Tailwind](), while others are explicitly narrow
-in their options to ensure overall consistency and to make them easier for
-contributors of the website to work with. Take a look at the
+Some of them were inspired by [Tailwind][tailwind], while others are explicitly
+narrow in their options to ensure overall consistency and to make them easier
+for contributors of the website to work with. Take a look at the
 [styleguide preview][styleguide-preview] to learn more about this.
 
+[tailwind]: https://tailwindcss.com
 [styleguide-preview]: https://deploy-preview-145--ember-styleguide.netlify.com/
 
 ## Thanks
 
-My allocated time donated by simplabs allowed me and others to bring the
+Allocated time donated by simplabs allowed me and others to bring the
 styleguide and overall design of the website to what you can see online now. I
 was very honored by being invited to this project and my design changes were
 just an ever so small piece of the huge effort that went into the website from
