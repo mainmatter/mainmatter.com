@@ -69,7 +69,7 @@ layout organization to any element on a page.
 
 ### Half a gradient of colors
 
-![Slate gradient, Ember brand color with gradiated variations](/assets/images/posts/2020-02-29-emberjs-website-rfc-to-launch/colors.png#@860-1720)
+![Slate gradient, Ember brand color with gradiated variations](/assets/images/posts/2020-02-29-emberjs-website-rfc-to-launch/gradient.png#@860-1720)
 
 The RFC mockup introduces a new slate color to mark a new era for Ember. The
 Ember red represents the community. The new slate stands for the
@@ -94,7 +94,11 @@ surprise, is an Ember application itself, thanks to the magic of
 [empress]: https://github.com/empress/field-guide
 [ember-styleguide]: https://github.com/ember-learn/ember-styleguide/pull/145
 
-### CSS
+The style guide provides both actual Ember components that can be applied to any
+Ember project and a full set of CSS custom properties and helpers which make it
+easy to create good looking pages from scratch.
+
+![Examples for components created for the Ember Style Guide project](/assets/images/posts/2020-02-29-emberjs-website-rfc-to-launch/bcomponents.png#full@860-1720)
 
 Beyond the purely visual aspects of the design, I also introduced some
 lightweight CSS helpers for things like spacing, font sizes, grid and layout.
