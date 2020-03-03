@@ -1,9 +1,9 @@
 @media (max-width: 887px) {
   [data-menu] nav {
     display: block;
-    background: var(--color-accent);
     z-index: -1;
     pointer-events: none;
+    margin-top: -8rem;
   }
 
   [data-menu] nav a,
@@ -31,7 +31,7 @@
   }
 
   #toggle:checked + [data-menu] nav {
-    padding-top: 8rem;
+    margin-top: 0;
     top: 0;
     z-index: 2;
     opacity: 1;
