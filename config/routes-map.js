@@ -82,9 +82,6 @@ module.exports = function() {
       bundle: { asset: '/legal.js', module: '__legal__' },
     },
     '/services': { component: 'PageServices' },
-    '/services/full-stack-engineering': {
-      component: 'PageFullStackEngineering',
-    },
     '/services/digital-products': {
       component: 'PageDigitalProducts',
     },
