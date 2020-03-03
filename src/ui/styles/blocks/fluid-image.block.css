@@ -13,3 +13,21 @@
   height: 100%;
   object-fit: cover;
 }
+
+.clipped-right {
+  background-color: #ccc;
+  width: 100%;
+  margin-top: -20%;
+  padding-bottom: 100%;
+  -webkit-clip-path: polygon(80% 0, 100% 5%, 100% 100%, 0 80%, 0 20%);
+  clip-path: polygon(80% 0, 100% 5%, 100% 100%, 0 80%, 0 20%);
+}
+
+.clipped-left {
+  background-color: #ccc;
+  width: 100%;
+  margin-top: -20%;
+  padding-bottom: 100%;
+  -webkit-clip-path: polygon(100% 20%, 100% 80%, 30% 100%, 0 95%, 0 0);
+  clip-path: polygon(100% 20%, 100% 80%, 30% 100%, 0 95%, 0 0);
+}
