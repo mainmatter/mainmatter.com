@@ -178,10 +178,10 @@
   .bottom {
     background: var(--color-accent);
     width: 100%;
-    padding-bottom: 50%;
+    padding-bottom: 25%;
     margin-top: -1px;
-    clip-path: polygon(0 12.5%, 77.5% 100%, 100% 22.5%, 100% 0, 0 0);
-    -webkit-clip-path: polygon(0 12.5%, 77.5% 100%, 100% 22.5%, 100% 0, 0 0);
+    -webkit-clip-path: polygon(0 50%, 100% 100%, 100% 0, 0 0);
+    clip-path: polygon(0 50%, 100% 100%, 100% 0, 0 0);
   }
 
   .nav-item,
