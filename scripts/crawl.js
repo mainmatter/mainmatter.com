@@ -1,51 +1,47 @@
 const path = require('path');
 const express = require('express');
 const colors = require('colors');
-const HCCrawler = require('headless-chrome-crawler');
+const { SiteChecker } = require('broken-link-checker');
 
 const DIST_PATH = path.join(__dirname, '..', 'dist');
+const SERVER_URL = 'http://localhost:3000';
 
 let server = express();
 server.use(express.static(DIST_PATH));
 
-server.listen(3000, async function() {
+server.listen(3000, function() {
   let successes = 0;
   let errors = 0;
-  let success = result => {
-    successes++;
-    console.log(colors.blue(`* ${result.response.url}`));
-  };
-  let error = url => {
-    errors++;
-    console.log(colors.red(`* ${url} - failed to follow link`));
-  };
 
-  const crawler = await HCCrawler.launch({
-    maxConcurrency: process.env.CI ? 1 : null,
-    onSuccess: result => {
-      if (result.response.ok) {
-        success(result);
-      } else {
-        error(result.response.url);
-      }
+  const siteChecker = new SiteChecker(
+    {
+      excludeExternalLinks: true,
     },
-    onError: error => error(error.previousUrl),
-  });
+    {
+      link(result) {
+        if (result.broken) {
+          errors++;
+          console.log(formatBrokenLink(result));
+        } else {
+          successes++;
+        }
+      },
+      end() {
+        if (errors === 0) {
+          console.log(colors.green(`\n✅ Successfully followed ${successes} links.`));
+          process.exit(0);
+        } else {
+          console.log(colors.red(`\n❌ Failed to follow ${errors} links.`));
+          process.exit(1);
+        }
+      },
+    },
+  );
 
-  await crawler.queue({
-    url: 'http://localhost:3000/',
-    maxDepth: Infinity,
-    allowedDomains: ['localhost'],
-    skipRequestedRedirect: true,
-  });
-  await crawler.onIdle();
-  await crawler.close();
-
-  if (errors === 0) {
-    console.log(colors.green(`\nSuccessfully crawled ${successes} pages.`));
-    process.exit(0);
-  } else {
-    console.log(colors.red(`\nFailed to crawl ${errors} links.`));
-    process.exit(1);
-  }
+  siteChecker.enqueue(SERVER_URL);
 });
+
+function formatBrokenLink(link) {
+  let relativeBase = link.base.original.replace(SERVER_URL, '');
+  return `❌ ${relativeBase} -> ${link.url.original}`;
+}
