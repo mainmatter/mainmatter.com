@@ -35,21 +35,25 @@
         </label>
       </div>
       <nav block:class="nav">
-        <a href="/services/" block:class="nav-item" block:active={{if (eq @active 'services') 'active'}} data-internal>
-          Services
-        </a>
-        <a href="/work/" block:class="nav-item" block:active={{if (eq @active 'work') 'active'}} data-internal>
-          Work
-        </a>
-        <a href="/why-simplabs/" block:class="nav-item" block:active={{if (eq @active 'about') 'active'}} data-internal>
-          Why simplabs
-        </a>
-        <a href="/blog/" block:class="nav-item" block:active={{if (eq @active 'blog') 'active'}} data-internal>
-          Blog
-        </a>
-        <a href="/contact/" block:class="work-with-us" block:active={{if (eq @active 'contact') 'active'}} data-internal>
-          Work with us
-        </a>
+        <div block:class="links">
+          <a href="/services/" block:class="nav-item" block:active={{if (eq @active 'services') 'active'}} data-internal>
+            Services
+          </a>
+          <a href="/work/" block:class="nav-item" block:active={{if (eq @active 'work') 'active'}} data-internal>
+            Work
+          </a>
+          <a href="/why-simplabs/" block:class="nav-item" block:active={{if (eq @active 'about') 'active'}} data-internal>
+            Why simplabs
+          </a>
+          <a href="/blog/" block:class="nav-item" block:active={{if (eq @active 'blog') 'active'}} data-internal>
+            Blog
+          </a>
+          <a href="/contact/" block:class="work-with-us" block:active={{if (eq @active 'contact') 'active'}} data-internal>
+            Work with us
+          </a>
+        </div>
+        <div block:class="bottom">
+        </div>
       </nav>
     </div>
   </div>
