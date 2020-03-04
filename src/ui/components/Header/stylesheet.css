@@ -99,7 +99,7 @@
   composes: 'button';
 }
 
-.bottom {
+.background-bottom {
   width: 100%;
   padding-bottom: 12.5%;
   margin-top: -1px;
@@ -111,18 +111,18 @@
   background-color: var(--color-light);
 }
 
-:scope[backgroundVariation='inclined'] .bottom,
-:scope[backgroundVariation='pointed'] .bottom {
+:scope[backgroundVariation='inclined'] .background-bottom,
+:scope[backgroundVariation='pointed'] .background-bottom {
   margin-top: 6rem;
   background-color: var(--color-background);
 }
 
-:scope[backgroundVariation='inclined'] .bottom {
+:scope[backgroundVariation='inclined'] .background-bottom {
   -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%);
   clip-path: polygon(0 0, 0 100%, 100% 100%);
 }
 
-:scope[backgroundVariation='pointed'] .bottom {
+:scope[backgroundVariation='pointed'] .background-bottom {
   -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 15%, 77.5% 100%, 0 15%);
   clip-path: polygon(0 100%, 100% 100%, 100% 15%, 77.5% 100%, 0 15%);
 }
@@ -201,7 +201,7 @@
     margin-bottom: 16rem;
   }
 
-  :scope[backgroundVariation='pointed'] .bottom {
+  :scope[backgroundVariation='pointed'] .background-bottom {
     margin-top: -50%;
     -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 55%, 0 0);
     clip-path: polygon(0 100%, 100% 100%, 100% 55%, 0 0);
