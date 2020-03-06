@@ -11,9 +11,9 @@
 .logos-list {
   display: flex;
   width: calc(100% + var(--offset-horizontal));
-  flex-flow: nowrap;
+  justify-content: center;
+  flex-flow: wrap;
   align-items: center;
-  justify-content: space-between;
   margin: 0 calc(var(--offset-horizontal) / -2) 6rem;
 }
 
@@ -29,13 +29,10 @@
 }
 
 @media (max-width: 888px) {
-  .logos-list {
-    justify-content: center;
-    flex-flow: wrap;
-  }
   .logos-logo {
     padding: 2rem;
   }
+
   .padding-right-1 {
     padding-right: 0;
   }
