@@ -88,7 +88,7 @@
 
 @media (min-width: 888px) {
   :scope {
-    margin: 4rem calc(-1 * var(--offset-horizontal));
+    margin: 4rem 0;
     grid-column: 2/-2;
   }
 
