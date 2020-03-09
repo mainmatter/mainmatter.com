@@ -1,7 +1,6 @@
 @media (max-width: 887px) {
   [data-menu] nav {
     display: block;
-    z-index: -1;
     pointer-events: none;
     margin-top: -8rem;
   }

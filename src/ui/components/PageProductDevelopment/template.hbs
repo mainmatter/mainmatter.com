@@ -4,12 +4,19 @@
     @title="Product Development"
     @documentTitle="Product Development | Services"
     @description="From start to finish you work with the same team of product experts, engineers and designers to bring your product to live."
+    @backgroundVariation="inclined"
   >
-    <HeaderContent @label="Product Development" @headline="Engineering excellence means building things to last">
+    <HeaderContent
+      @label="Product Development"
+      @headline="Engineering excellence means building things to last"
+      @attachment="blue-ribbon"
+      @srcset="/assets/images/photos/tutoring@900.jpg 900w, /assets/images/photos/tutoring@1800.jpg 1800w"
+      @sizes="(max-width: 887px) 900px, 1800px"
+    >
       <p typography:class="lead">
         simplabs has its origins in engineering and development. We obsess over crafting the absolute best products we can, built on architectures that are easy to extend, update and maintain. Our process depends on close collaboration between designers and developers to release well-tested products in dynamic, fast-paced iterations.
       </p>
-      <p typography:class="lead">
+      <p typography:class="lead" offset:class="after-5">
         As a leading development house in Europe, we love to take on projects that pose interesting and complex engineering challenges.
       </p>
     </HeaderContent>

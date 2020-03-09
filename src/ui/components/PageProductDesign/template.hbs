@@ -4,12 +4,19 @@
     @title="Product Design"
     @documentTitle="Product Design | Services"
     @description="From start to finish you work with the same team of product experts, engineers and designers to bring your product to live."
+    @backgroundVariation="inclined"
   >
-    <HeaderContent @label="Product Design" @headline="Design digital products that users love">
+    <HeaderContent
+      @label="Product Design"
+      @headline="Design digital products that users love"
+      @attachment="blue-ribbon"
+      @srcset="/assets/images/photos/ember-design-system@600.jpg 600w, /assets/images/photos/ember-design-system@1200.jpg 1200w"
+      @sizes="(max-width: 887px) 600px, 1200px"
+    >
       <p typography:class="lead">
         The greatest product designs are almost invisible—the experience is so simple and fluid, you can barely imagine how you'd do things without the product. The process to create such experiences is one of fast iterations, rapid prototyping and experimenting our way forward. It's the safest path to practical, elegant and profoundly useful digital products.
       </p>
-      <p typography:class="lead">
+      <p typography:class="lead" offset:class="after-5">
         We cover all aspects of the design process. Our designers and product experts help you at every stage to develop your vision into unique experiences.
       </p>
     </HeaderContent>

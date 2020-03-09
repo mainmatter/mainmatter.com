@@ -4,12 +4,19 @@
     @title="Services"
     @documentTitle="Digital Products"
     @description="Our team of experts delivers everything from ideation to design and engineering. We can turn any idea sketched on the back of a napkin into a final, shipped product."
+    @backgroundVariation="inclined"
   >
-    <HeaderContent @label="Digital Products" @headline="Turning your visionary ideas into a shipped products">
+    <HeaderContent
+      @label="Digital Products"
+      @headline="Turning your visionary ideas into a shipped products"
+      @attachment="blue-ribbon"
+      @srcset="/assets/images/photos/trainline-comp@604.jpg 604w, /assets/images/photos/trainline-comp@1208.jpg 1208w"
+      @sizes="(max-width: 887px) 604px, 1208px"
+    >
       <p typography:class="lead">
         Today, the influence of software and technology on our everyday lives is bigger that ever. Whether it’s a corporate venture or an ambitious founder, modern companies need true excellence in developing state-of-the-art digital experiences, to deliver on their ambitions.
       </p>
-      <p typography:class="lead">
+      <p typography:class="lead" offset:class="after-5">
         simplabs is a reliable partner to transform ideas from a rough outline into a final, shipped product.
       </p>
     </HeaderContent>
