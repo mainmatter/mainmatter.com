@@ -6,6 +6,7 @@
   margin-top: 6rem;
   margin-bottom: 3rem;
   position: relative;
+  grid-column: 2/-2;
 }
 
 @media (max-width: 887px) {
@@ -16,8 +17,7 @@
 
 @media (min-width: 888px) {
   :scope {
-    margin-top: 8rem;
-    margin-bottom: 8rem;
+    margin: 20rem 0 0;
   }
 }
 

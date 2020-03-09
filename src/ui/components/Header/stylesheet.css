@@ -1,14 +1,28 @@
 @block button from "../../styles/blocks/button.block.css";
+@block layout from "../../styles/blocks/layout.block.css";
 
 :scope {
   block-name: Header;
-  z-index: 10;
   position: relative;
-  grid-column: 2/-2;
+  grid-column: 1/-1;
+  background: #ffffff;
+  composes: 'layout';
+  margin-bottom: 20rem;
+}
+
+.bottom {
+  background: var(--color-background);
+  display: block;
+  padding-bottom: 15%;
+  width: 100%;
+  grid-column: 1/-1;
+  -webkit-clip-path: polygon(60% 100%, 100% 0%, 100% 100%, 0 100%, 0% 50%);
+  clip-path: polygon(60% 100%, 100% 0%, 100% 100%, 0 100%, 0% 50%);
 }
 
 .navbar {
   font-size: 2rem;
+  grid-column: 2/-2;
 }
 
 .navbar-wrapper {
