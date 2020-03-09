@@ -99,13 +99,6 @@
   composes: 'button';
 }
 
-.background-bottom {
-  width: 100%;
-  padding-bottom: 12.5%;
-  margin-top: -1px;
-  grid-column: 1/-1;
-}
-
 :scope[backgroundVariation='inclined'],
 :scope[backgroundVariation='pointed'] {
   background-color: var(--color-light);
@@ -114,6 +107,10 @@
 :scope[backgroundVariation='inclined'] .background-bottom,
 :scope[backgroundVariation='pointed'] .background-bottom {
   margin-top: 6rem;
+  width: 100%;
+  padding-bottom: 12.5%;
+  margin-top: -1px;
+  grid-column: 1/-1;
   background-color: var(--color-background);
 }
 
