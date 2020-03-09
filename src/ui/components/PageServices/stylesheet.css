@@ -8,6 +8,12 @@
   composes: 'layout';
 }
 
+@media (max-width: 887px) {
+  .principles-first-row {
+    margin-bottom: 8rem;
+  }
+}
+
 @export button;
 @export typography;
 @export layout;
