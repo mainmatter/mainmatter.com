@@ -134,7 +134,7 @@
     grid-column: 2/-5;
   }
 
-  :scope[attachment='blue-ribbon'] .image-wrapper {
+  .image-wrapper {
     margin-left: 5rem;
   }
 }
