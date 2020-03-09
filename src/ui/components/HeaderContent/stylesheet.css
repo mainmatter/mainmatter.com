@@ -51,7 +51,7 @@
 }
 
 .background {
-  width: calc(2 * var(--col-gap) + 4 * var(--col) - var(--offset-horizontal));
+  width: calc(2 * var(--col-gap) + 3 * var(--col) - var(--offset-horizontal));
   position: absolute;
   right: 0;
   top: 0;
@@ -132,6 +132,10 @@
 
   :scope[attachment='blue-ribbon'] .content {
     grid-column: 2/-5;
+  }
+
+  :scope[attachment='blue-ribbon'] .image-wrapper {
+    margin-left: 5rem;
   }
 }
 
