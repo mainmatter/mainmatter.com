@@ -77,13 +77,13 @@
 }
 
 :scope[attachment='image'] .sidebar {
-  grid-column: 6/-1;
+  grid-column: 5/-1;
 }
 
 :scope[attachment='image'] .image-wrapper {
-  clip-path: polygon(0 10%, 0 90%, 100% 99%, 100% 1%);
-  -webkit-clip-path: polygon(0 10%, 0 90%, 100% 99%, 100% 1%);
-  padding-bottom: 200%;
+  clip-path: polygon(0 10%, 0 90%, 100% 100%, 100% 0);
+  -webkit-clip-path: polygon(0 10%, 0 90%, 100% 100%, 100% 0);
+  padding-bottom: 120%;
 }
 
 @media (max-width: 887px) {
@@ -127,7 +127,7 @@
   }
 
   :scope[attachment='image'] .content {
-    grid-column: 2/-4;
+    grid-column: 2/-5;
   }
 
   :scope[attachment='blue-ribbon'] .content {
