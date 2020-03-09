@@ -83,6 +83,11 @@
   :scope {
     margin: 16rem 0;
   }
+
+  .img-wrapper {
+    grid-column: 2/-2;
+    margin-left: 0;
+  }
 }
 
 @media (min-width: 888px) {

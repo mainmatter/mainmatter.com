@@ -2,7 +2,7 @@
   <div block:class="top"></div>
   <div block:class="middle">
     {{#if @srcset}}
-      <figure block:class="container" layout:scope>
+      <figure block:class="container">
         <div block:class="img-wrapper">
           <img
             block:class="img"
@@ -18,7 +18,7 @@
         </figcaption>
       </figure>
     {{else}}
-      <div block:class="container" layout:scope>
+      <div block:class="container">
         <p block:class="content">
           {{yield}}
         </p>
