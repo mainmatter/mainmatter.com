@@ -34,11 +34,10 @@
   display: block;
   margin-top: -20rem;
   margin-bottom: 5rem;
-  margin-left: -4rem;
 
   clip-path: polygon(31% 0, 100% 30%, 100% 80%, 60% 100%, 0 86%, 0 10%);
   -webkit-clip-path: polygon(31% 0, 100% 30%, 100% 80%, 60% 100%, 0 86%, 0 10%);
-  grid-column: 1/-1;
+  grid-column: 2/-2;
 }
 
 .bottom,
@@ -103,6 +102,7 @@
   }
 
   .img-wrapper {
+    margin-left: -4rem;
     grid-column: 1/5;
   }
 
