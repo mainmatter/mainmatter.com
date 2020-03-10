@@ -32,6 +32,11 @@
   margin-top: 12rem;
 }
 
+.vertical-16 {
+  margin-top: 16rem;
+  margin-bottom: 16rem;
+}
+
 .after-none {
   margin-bottom: 0;
 }

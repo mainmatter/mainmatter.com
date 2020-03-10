@@ -11,6 +11,7 @@
   composes: 'layout';
 }
 
+@export fluid-image;
 @export layout;
 @export list;
 @export offset;
