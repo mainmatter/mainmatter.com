@@ -36,8 +36,8 @@
   margin-top: -20rem;
   margin-bottom: 5rem;
 
-  clip-path: polygon(31% 0, 100% 30%, 100% 80%, 60% 100%, 0 86%, 0 10%);
-  -webkit-clip-path: polygon(31% 0, 100% 30%, 100% 80%, 60% 100%, 0 86%, 0 10%);
+  clip-path: polygon(31% 0, 100% 20%, 100% 92%, 60% 100%, 0 90%, 0 7%);
+  -webkit-clip-path: polygon(31% 0, 100% 20%, 100% 92%, 60% 100%, 0 90%, 0 7%);
   grid-column: 2/-2;
 }
 
@@ -84,6 +84,8 @@
   .img-wrapper {
     grid-column: 2/-2;
     margin-left: 0;
+    clip-path: polygon(31% 0, 100% 30%, 100% 88%, 60% 100%, 0 87%, 0 10%);
+    -webkit-clip-path: polygon(31% 0, 100% 30%, 100% 88%, 60% 100%, 0 87%, 0 10%);
   }
 
   .container {
