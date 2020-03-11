@@ -9,7 +9,6 @@
   --shape-color: var(--color-accent);
   block-name: ShapeFeature;
   grid-column: 1/-1;
-  z-index: 100;
 }
 
 .container {
