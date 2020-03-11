@@ -80,6 +80,10 @@
 }
 
 @media (max-width: 887px) {
+  :scope {
+    margin: 11rem 0 0 0;
+  }
+
   .img-wrapper {
     grid-column: 2/-2;
     margin-left: 0;
