@@ -88,7 +88,7 @@ module.exports = function() {
     '/services/team-augmentation': { component: 'PageTeamAugmentation' },
     '/services/product-development': { component: 'PageProductDevelopment' },
     '/services/product-design': { component: 'PageProductDesign' },
-    '/services/tutoring': { component: 'PageTutoring' },
+    '/services/training': { component: 'PageTutoring' },
     '/talks': { component: 'PageTalks', bundle: { asset: '/talks.js', module: '__talks__' } },
     '/why-simplabs': { component: 'PageWhySimplabs' },
     '/work': { component: 'PageWork' },
