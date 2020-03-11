@@ -2,7 +2,7 @@
 
 :scope {
   padding: 0;
-  margin: 0;
+  margin: 2rem 0 0 0;
   --color-muted: var(--color-text-inverted);
   --color-text: var(--color-text-inverted);
   --color-link: var(--color-text-inverted);
@@ -94,7 +94,6 @@
 
 @media (min-width: 888px) {
   :scope {
-    margin: 4rem 0;
     grid-column: 2/-2;
   }
 
