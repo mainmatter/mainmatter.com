@@ -17,7 +17,7 @@
   grid-template-columns: repeat(6, 1fr);
   grid-column-gap: var(--col-gap);
   grid-auto-flow: dense;
-  margin-bottom: 3rem;
+  margin-bottom: -4rem;
 }
 
 /* Duplicating Header.content here as CSS Blocks is not capable
@@ -107,7 +107,6 @@
 @media (min-width: 888px) {
   .header {
     margin-top: 21rem;
-    margin-bottom: 12rem;
   }
 
   .headline {
@@ -155,6 +154,10 @@
 }
 
 @media (max-width: 887px) {
+  .header {
+    margin-bottom: 0;
+  }
+
   .badge {
     display: flex;
   }
