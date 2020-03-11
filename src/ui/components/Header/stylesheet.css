@@ -6,7 +6,7 @@
   position: relative;
   grid-column: 1/-1;
   composes: 'layout';
-  margin-bottom: 10rem;
+  margin-bottom: 16rem;
 }
 
 .navbar {
@@ -125,6 +125,10 @@
 }
 
 @media (max-width: 887px) {
+  :scope {
+    margin-bottom: 12rem;
+  }
+
   :scope,
   .navbar,
   .wrapper {
@@ -192,10 +196,6 @@
   .nav-item[active],
   .work-with-us[active] {
     box-shadow: 0 calc(2rem + 2px) 0 -2rem var(--color-link-inverted);
-  }
-
-  :scope[backgroundVariation='pointed'] {
-    margin-bottom: 16rem;
   }
 
   :scope[backgroundVariation='pointed'] .background-bottom {
