@@ -7,17 +7,17 @@
   background-color: #ccc;
   width: 100%;
   height: auto;
-  padding-bottom: 100%;
+  padding-bottom: 120%;
 }
 
 :scope[align='left'] {
-  -webkit-clip-path: polygon(100% 20%, 100% 80%, 30% 100%, 0 95%, 0 0);
-  clip-path: polygon(100% 20%, 100% 80%, 30% 100%, 0 95%, 0 0);
+  -webkit-clip-path: polygon(100% 20%, 100% 91%, 30% 100%, 0 97%, 0 0);
+  clip-path: polygon(100% 20%, 100% 91%, 30% 100%, 0 97%, 0 0);
 }
 
 :scope[align='right'] {
-  -webkit-clip-path: polygon(80% 0, 100% 5%, 100% 100%, 0 80%, 0 20%);
-  clip-path: polygon(80% 0, 100% 5%, 100% 100%, 0 80%, 0 20%);
+  -webkit-clip-path: polygon(80% 0, 100% 5%, 100% 100%, 0 90%, 0 14%);
+  clip-path: polygon(80% 0, 100% 5%, 100% 100%, 0 90%, 0 14%);
 }
 
 @export fluid-image;
