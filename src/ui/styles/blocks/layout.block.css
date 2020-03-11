@@ -58,6 +58,12 @@
     grid-column: 1/-6;
   }
 
+  .bleed-left,
+  .bleed-right {
+    display: flex;
+    align-items: center;
+  }
+
   .content {
     grid-column: 3/-3;
   }
