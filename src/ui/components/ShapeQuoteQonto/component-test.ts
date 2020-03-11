@@ -4,11 +4,11 @@ import { setupRenderingTest } from '../../../utils/test-helpers/setup-rendering-
 
 const { module, test } = QUnit;
 
-module('Component: ShapeQuoteTrainline', function(hooks) {
+module('Component: ShapeQuoteQonto', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await render(hbs`<ShapeQuoteTrainline />`);
+    await render(hbs`<ShapeQuoteQonto />`);
 
     assert.ok(this.containerElement.querySelector('q'));
   });
