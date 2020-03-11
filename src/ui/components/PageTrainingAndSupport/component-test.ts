@@ -4,11 +4,11 @@ import { setupRenderingTest } from '../../../utils/test-helpers/setup-rendering-
 
 const { module, test } = QUnit;
 
-module('Component: PageTutoring', function(hooks) {
+module('Component: PageTrainingAndSupport', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await render(hbs`<PageTutoring />`);
+    await render(hbs`<PageTrainingAndSupport />`);
 
     assert.ok(this.containerElement.querySelector('div'));
   });
