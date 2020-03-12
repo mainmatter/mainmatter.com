@@ -13,7 +13,7 @@
 # redirect old training page
 [[redirects]]
   from = "/training/"
-  to = "/services/tutoring/"
+  to = "/services/training/"
 
 # redirect old ember page
 [[redirects]]
@@ -255,119 +255,119 @@
 
 [[redirects]]
   from = "https://elixir-phoenix-workshop.simplabs.com"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://elixir-workshops.simplabs.com/*"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://ember-basics-workshop.simplabs.com"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://ember-basics-workshop.simplabs.com/*"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://ember-pro-workshop.simplabs.com"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://ember-pro-workshop.simplabs.com/*"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://ember-workshop.simplabs.com"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://ember-workshop.simplabs.com/*"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://ember-workshops.simplabs.com"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://ember-workshops.simplabs.com/*"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://phoenix-workshops.simplabs.com"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://phoenix-workshops.simplabs.com/*"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://progressive-web-apps-workshop.simplabs.com"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://progressive-web-apps-workshop.simplabs.com/*"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://typescript-fundamentals-workshop.simplabs.com"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://typescript-fundamentals-workshop.simplabs.com/*"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://web-performance-workshop.simplabs.com"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://web-performance-workshop.simplabs.com/*"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://phoenix-workshops.simplabs.com"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "https://phoenix-workshops.simplabs.com/*"
-  to = "https://simplabs.com/services/tutoring/"
+  to = "https://simplabs.com/services/training/"
 
 [[redirects]]
   from = "/training/2017-06-11-web-security.html"
-  to = "/services/tutoring/"
+  to = "/services/training/"
 
 [[redirects]]
   from = "/training/2017-06-11-web-security"
-  to = "/services/tutoring/"
+  to = "/services/training/"
 
 [[redirects]]
   from = "/training/2017-06-11-web-security/*"
-  to = "/services/tutoring/"
+  to = "/services/training/"
 
 [[redirects]]
   from = "/training/2017-02-16-sass-fundamentals.html"
-  to = "/services/tutoring/"
+  to = "/services/training/"
 
 [[redirects]]
   from = "/training/2017-02-16-sass-fundamentals"
-  to = "/services/tutoring/"
+  to = "/services/training/"
 
 [[redirects]]
   from = "/training/2017-02-16-sass-fundamentals/*"
-  to = "/services/tutoring/"
+  to = "/services/training/"
 
 [[redirects]]
   from = "/training/2017-02-17-modern-seo.html"
-  to = "/services/tutoring/"
+  to = "/services/training/"
 
 [[redirects]]
   from = "/training/2017-02-17-modern-seo"
-  to = "/services/tutoring/"
+  to = "/services/training/"
 
 [[redirects]]
   from = "/training/2017-02-17-modern-seo/*"
-  to = "/services/tutoring/"
+  to = "/services/training/"
 
 [[redirects]]
   from = "/jobs"
@@ -381,7 +381,15 @@
 
 [[redirects]]
   from = "/full-stack-engineering/index.html"
-  to = "/services/full-stack-engineering/"
+  to = "/services/digital-products/"
+
+[[redirects]]
+  from = "/services/full-stack-engineering/"
+  to = "/services/digital-products/"
+
+[[redirects]]
+  from = "/services/tutoring/"
+  to = "/services/training/"
 
 [[redirects]]
   from = "/team-augmentation/index.html"

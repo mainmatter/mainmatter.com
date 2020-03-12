@@ -16,7 +16,8 @@
   --col-max: 19.5rem;
   --offset-horizontal: 8rem;
 
-  --grid-template-columns: minmax(var(--offset-horizontal), 1fr) repeat(6, minmax(var(--col), var(--col-max)))
+  --grid-content-columns: repeat(6, minmax(var(--col), var(--col-max)));
+  --grid-template-columns: minmax(var(--offset-horizontal), 1fr) var(--grid-content-columns)
     minmax(var(--offset-horizontal), 1fr);
 
   /* Spacing */
@@ -30,6 +31,7 @@
   --color-accent: #007df6;
   --color-background: #fff;
   --color-error: #ec2a2a;
+  --color-light: #f9fafd;
 
   --color-text: var(--color-primary);
   --color-text-inverted: var(--color-background);

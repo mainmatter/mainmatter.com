@@ -93,7 +93,7 @@ OSS development and engagement is hence already a well-adopted approach by busin
 
 In this post we took a look at the impact of dedicating time on contributing to open-source. If you want to benefit from the education and training opportunities that OSS offers or if you are in need to improve your business's talent strategy, it becomes clear that implementing a process that allows your engineers to work on OSS will set your business up for success.
 
-If you have any questions on how to get started with contributing to open-source at your company, [send us a message](https://simplabs.com/contact/). You can also book [a workshop for your engineering team](https://simplabs.com/services/tutoring/) to jump start the process of contributing.
+If you have any questions on how to get started with contributing to open-source at your company, [send us a message](https://simplabs.com/contact/). You can also book [a workshop for your engineering team](https://simplabs.com/services/training/) to jump start the process of contributing.
 
 ## Sources
 

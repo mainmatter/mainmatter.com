@@ -1,6 +1,5 @@
 :scope {
   position: relative;
-  z-index: 0;
   block-name: Layout;
   display: grid;
   grid-template-columns: var(--grid-template-columns);
@@ -21,8 +20,17 @@
 .side,
 .content,
 .split-leading,
-.split-trailing {
+.split-trailing,
+.content-right {
   grid-column: 2/-2;
+}
+
+.bleed-right {
+  grid-column: 2/-1;
+}
+
+.bleed-left {
+  grid-column: 1/-2;
 }
 
 @media (min-width: 888px) {
@@ -32,6 +40,28 @@
 
   .side {
     grid-column: -4/-2;
+  }
+
+  .content-right {
+    grid-column: -6/-2;
+  }
+
+  .content-left {
+    grid-column: 2/-4;
+  }
+
+  .bleed-right {
+    grid-column: -4/-1;
+  }
+
+  .bleed-left {
+    grid-column: 1/-6;
+  }
+
+  .bleed-left,
+  .bleed-right {
+    display: flex;
+    align-items: center;
   }
 
   .content {

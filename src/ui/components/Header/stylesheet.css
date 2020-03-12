@@ -1,14 +1,17 @@
 @block button from "../../styles/blocks/button.block.css";
+@block layout from "../../styles/blocks/layout.block.css";
 
 :scope {
   block-name: Header;
-  z-index: 10;
   position: relative;
-  grid-column: 2/-2;
+  grid-column: 1/-1;
+  composes: 'layout';
+  margin-bottom: 16rem;
 }
 
 .navbar {
   font-size: 2rem;
+  grid-column: 2/-2;
 }
 
 .navbar-wrapper {
@@ -96,7 +99,36 @@
   composes: 'button';
 }
 
+:scope[backgroundVariation='inclined'],
+:scope[backgroundVariation='pointed'] {
+  background-color: var(--color-light);
+}
+
+:scope[backgroundVariation='inclined'] .background-bottom,
+:scope[backgroundVariation='pointed'] .background-bottom {
+  margin-top: 6rem;
+  width: 100%;
+  padding-bottom: 12.5%;
+  margin-top: -1px;
+  grid-column: 1/-1;
+  background-color: var(--color-background);
+}
+
+:scope[backgroundVariation='inclined'] .background-bottom {
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%);
+  clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+
+:scope[backgroundVariation='pointed'] .background-bottom {
+  -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 15%, 77.5% 100%, 0 15%);
+  clip-path: polygon(0 100%, 100% 100%, 100% 15%, 77.5% 100%, 0 15%);
+}
+
 @media (max-width: 887px) {
+  :scope {
+    margin-bottom: 12rem;
+  }
+
   :scope,
   .navbar,
   .wrapper {
@@ -147,10 +179,10 @@
   .bottom {
     background: var(--color-accent);
     width: 100%;
-    padding-bottom: 50%;
+    padding-bottom: 25%;
     margin-top: -1px;
-    clip-path: polygon(0 12.5%, 77.5% 100%, 100% 22.5%, 100% 0, 0 0);
-    -webkit-clip-path: polygon(0 12.5%, 77.5% 100%, 100% 22.5%, 100% 0, 0 0);
+    -webkit-clip-path: polygon(0 50%, 100% 100%, 100% 0, 0 0);
+    clip-path: polygon(0 50%, 100% 100%, 100% 0, 0 0);
   }
 
   .nav-item,
@@ -164,6 +196,12 @@
   .nav-item[active],
   .work-with-us[active] {
     box-shadow: 0 calc(2rem + 2px) 0 -2rem var(--color-link-inverted);
+  }
+
+  :scope[backgroundVariation='pointed'] .background-bottom {
+    margin-top: -50%;
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 55%, 0 0);
+    clip-path: polygon(0 100%, 100% 100%, 100% 55%, 0 0);
   }
 }
 

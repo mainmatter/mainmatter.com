@@ -82,11 +82,13 @@ module.exports = function() {
       bundle: { asset: '/legal.js', module: '__legal__' },
     },
     '/services': { component: 'PageServices' },
-    '/services/full-stack-engineering': {
-      component: 'PageFullStackEngineering',
+    '/services/digital-products': {
+      component: 'PageDigitalProducts',
     },
     '/services/team-augmentation': { component: 'PageTeamAugmentation' },
-    '/services/tutoring': { component: 'PageTutoring' },
+    '/services/product-development': { component: 'PageProductDevelopment' },
+    '/services/product-design': { component: 'PageProductDesign' },
+    '/services/training': { component: 'PageTrainingAndSupport' },
     '/talks': { component: 'PageTalks', bundle: { asset: '/talks.js', module: '__talks__' } },
     '/why-simplabs': { component: 'PageWhySimplabs' },
     '/work': { component: 'PageWork' },

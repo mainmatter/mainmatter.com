@@ -43,6 +43,10 @@
   fill: var(--color-link);
 }
 
+:scope[leftAlign='true'] {
+  text-align: left;
+}
+
 :scope[reverse='true'] .link {
   padding: 1.5rem 0 1.5rem 7rem;
 }

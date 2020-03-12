@@ -3,3 +3,24 @@
   list-style-position: inside;
   padding-left: 3rem;
 }
+
+.vertical {
+  list-style: none;
+}
+
+.vertical-item {
+  padding-bottom: 1rem;
+}
+
+.vertical-item:last-child {
+  padding-bottom: initial;
+}
+
+.vertical-item ~ .vertical-item {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgb(201, 202, 208);
+}
+
+.vertical-item {
+  margin-left: 0;
+}

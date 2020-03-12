@@ -89,11 +89,7 @@
     {{{body}}}
   </div>
   {{#if related}}
-    <ShapeFeature
-      @color="{{related.teaserBackground}}"
-      @background="{{related.teaserBackground}}"
-      @backgroundImage="{{related.teaserImage}}"
-    >
+    <ShapeFeature>
       <p typography:class="small">
         Continue Reading
       </p>
@@ -105,6 +101,6 @@
       </ArrowLink>
     </ShapeFeature>
   {{/if}}
-  <WorkWithUs />
+  <WorkWithUs @teamMember="jessica" />
   <Footer />
 </div>

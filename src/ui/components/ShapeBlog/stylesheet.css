@@ -8,6 +8,7 @@
   position: relative;
   width: 100%;
   grid-column: 1/-1;
+  margin-top: 12rem;
 
   --shape-color: var(--color-accent);
 }
@@ -42,6 +43,10 @@
 }
 
 @media (max-width: 887px) {
+  :scope {
+    margin-top: 0;
+  }
+
   .content {
     width: 100%;
   }
