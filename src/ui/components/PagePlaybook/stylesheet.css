@@ -1,3 +1,4 @@
+@block button from "../../styles/blocks/button.block.css";
 @block layout from "../../styles/blocks/layout.block.css";
 @block list from "../../styles/blocks/list.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
@@ -8,6 +9,12 @@
   composes: 'layout';
 }
 
+.accent {
+  font-size: 64px;
+  color: var(--color-accent);
+}
+
+@export button;
 @export typography;
 @export layout;
 @export offset;

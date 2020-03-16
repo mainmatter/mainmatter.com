@@ -1,0 +1,138 @@
+@block button from "../../styles/blocks/button.block.css";
+@block offset from "../../styles/blocks/offset.block.css";
+@block layout from "../../styles/blocks/layout.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
+
+:scope {
+  padding: 0;
+  margin: 2rem 0 0 0;
+  --color-muted: var(--color-text);
+  --color-link: var(--color-text);
+  --shape-color: var(--color-light-accent);
+  block-name: ShapePlaybook;
+  grid-column: 1/-1;
+}
+
+.container {
+  display: grid;
+  column-gap: var(--col-gap);
+  grid-column: 1/-1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  font-size: inherit;
+  line-height: inherit;
+
+  color: var(--color-text);
+
+  grid-column: 2/-2;
+}
+
+.img-wrapper {
+  display: block;
+  margin-top: -20rem;
+  margin-bottom: 5rem;
+
+  clip-path: polygon(31% 0, 100% 20%, 100% 92%, 60% 100%, 0 90%, 0 7%);
+  -webkit-clip-path: polygon(31% 0, 100% 20%, 100% 92%, 60% 100%, 0 90%, 0 7%);
+  grid-column: 2/-2;
+}
+
+.bottom,
+.top {
+  display: block;
+
+  fill: var(--shape-color);
+}
+
+.top {
+  width: 100%;
+  padding-top: 15%;
+  margin-bottom: -1px;
+  background: var(--shape-color);
+
+  clip-path: polygon(40% 0%, 100% calc(100% - 1px), 100% 100%, 0 100%, 0 calc(50% - 1px));
+  -webkit-clip-path: polygon(40% 0%, 100% calc(100% - 1px), 100% 100%, 0 100%, 0 calc(50% - 1px));
+}
+
+.bottom {
+  width: 100%;
+  padding-bottom: 8%;
+  margin-top: -1px;
+  background: var(--shape-color);
+
+  clip-path: polygon(100% 0, 100% 1px, 57% 100%, 0 1px, 0 0);
+  -webkit-clip-path: polygon(100% 0, 100% 1px, 57% 100%, 0 1px, 0 0);
+}
+
+.middle {
+  background: var(--shape-color);
+  padding-bottom: 4rem;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.work-with-us {
+  --color-link: var(--color-accent);
+
+  background-color: var(--color-light-accent);
+  text-align: center;
+}
+
+@media (max-width: 887px) {
+  :scope {
+    margin: 11rem 0 0 0;
+  }
+
+  .img-wrapper {
+    grid-column: 2/-2;
+    margin-left: 0;
+    clip-path: polygon(31% 0, 100% 30%, 100% 88%, 60% 100%, 0 87%, 0 10%);
+    -webkit-clip-path: polygon(31% 0, 100% 30%, 100% 88%, 60% 100%, 0 87%, 0 10%);
+  }
+
+  .container {
+    grid-template-columns: var(--grid-template-columns);
+  }
+}
+
+@media (min-width: 888px) {
+  :scope {
+    grid-column: 2/-2;
+  }
+
+  .container {
+    grid-template-columns: var(--grid-content-columns);
+  }
+
+  .top {
+  }
+
+  .bottom {
+  }
+
+  .img-wrapper {
+    grid-column: 4/-1;
+  }
+
+  .content {
+    grid-column: 1/-4;
+    padding: 5rem 5rem 0 5rem;
+  }
+
+  .tagline {
+  }
+}
+
+@export button;
+@export offset;
+@export layout;
+@export typography;

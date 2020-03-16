@@ -24,3 +24,25 @@
 .vertical-item {
   margin-left: 0;
 }
+
+.logos {
+  display: flex;
+  width: calc(100% + var(--offset-horizontal));
+  justify-content: center;
+  flex-flow: wrap;
+  align-items: center;
+  margin: 0 calc(var(--offset-horizontal) / -2) 6rem;
+}
+
+.logo {
+  margin: 0 calc(var(--offset-horizontal) / 2);
+  filter: grayscale(100%) contrast(0%);
+  transition: filter 0.1s ease-out;
+  list-style: none;
+}
+
+@media (max-width: 888px) {
+  .logo {
+    padding: 2rem;
+  }
+}
