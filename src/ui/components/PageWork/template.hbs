@@ -60,30 +60,29 @@
     @reverse="true"
     @key="boldTimify"
   />
-
-  <div layout:class="main" offset:class="after-21">
+  <div layout:class="main" offset:class="after-12">
     <h2>
       More Case Studies
     </h2>
-    <ul>
-      <li block:class="more">
-        <h3 typography:class="h4">
-          A modern UI for an open-source router firmware
-        </h3>
-        <ArrowLink @href="/cases/ddwrt/">
-          Read Case Study
-        </ArrowLink>
-      </li>
-      <li block:class="more">
-        <h3 typography:class="h4" block:class="more-headline">
-          An online travel magazine for global citizens
-        </h3>
-        <ArrowLink @href="/cases/expedition/">
-          Read Case Study
-        </ArrowLink>
-      </li>
-    </ul>
   </div>
+  <ul layout:scope>
+    <li layout:class="split-leading" block:class="more">
+      <h3 typography:class="h4">
+        A modern UI for an open-source router firmware
+      </h3>
+      <ArrowLink @href="/cases/ddwrt/">
+        Read Case Study
+      </ArrowLink>
+    </li>
+    <li layout:class="split-trailing" block:class="more">
+      <h3 typography:class="h4" block:class="more-headline">
+        An online travel magazine for global citizens
+      </h3>
+      <ArrowLink @href="/cases/expedition/">
+        Read Case Study
+      </ArrowLink>
+    </li>
+  </ul>
   <ShapeAcrossPlaybook />
   <WorkWithUs @teamMember="ghislaine" />
   <Footer />
