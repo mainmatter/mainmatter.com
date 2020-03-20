@@ -8,7 +8,7 @@ module('Component: ShapeFeature', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await render(hbs`<ShapeFeature />`);
+    await render(hbs`<ShapePlaybook />`);
 
     assert.ok(this.containerElement.querySelector('div'));
   });
