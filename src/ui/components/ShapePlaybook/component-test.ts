@@ -4,7 +4,7 @@ import { setupRenderingTest } from '../../../utils/test-helpers/setup-rendering-
 
 const { module, test } = QUnit;
 
-module('Component: ShapeFeature', function(hooks) {
+module('Component: ShapePlaybook', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
