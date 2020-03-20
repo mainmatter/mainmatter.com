@@ -22,6 +22,7 @@
 .content {
   display: flex;
   flex-direction: column;
+  align-self: center;
 
   font-size: inherit;
   line-height: inherit;
@@ -33,16 +34,17 @@
 
 .img-wrapper {
   display: block;
-  margin-top: -20rem;
-  margin-bottom: 5rem;
+  margin-top: -13rem;
+  margin-bottom: -7em;
 
-  clip-path: polygon(31% 0, 100% 20%, 100% 92%, 60% 100%, 0 90%, 0 7%);
-  -webkit-clip-path: polygon(31% 0, 100% 20%, 100% 92%, 60% 100%, 0 90%, 0 7%);
   grid-column: 2/-2;
 }
 
 .bottom,
 .top {
+  position: relative;
+  z-index: -1;
+
   display: block;
 
   fill: var(--shape-color);
