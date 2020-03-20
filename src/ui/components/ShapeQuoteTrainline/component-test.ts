@@ -8,7 +8,7 @@ module('Component: ShapeQuoteCardstack', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await render(hbs`<ShapeQuoteCardstack />`);
+    await render(hbs`<ShapeQuoteTrainline />`);
 
     assert.ok(this.containerElement.querySelector('q'));
   });
