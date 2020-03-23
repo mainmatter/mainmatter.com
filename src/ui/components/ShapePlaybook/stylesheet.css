@@ -91,7 +91,7 @@
 
 @media (max-width: 887px) {
   :scope {
-    margin: calc(71rem - 15%) 0 0 0;
+    margin: calc(60rem - 15%) 0 0 0;
   }
 
   .content {
