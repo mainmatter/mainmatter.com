@@ -22,14 +22,14 @@
 .content {
   display: flex;
   flex-direction: column;
-  align-self: center;
 
   font-size: inherit;
   line-height: inherit;
 
-  color: var(--color-text);
+  color: var(--color-text-text);
 
   grid-column: 2/-2;
+  justify-content: center;
 }
 
 .img-wrapper {
@@ -82,7 +82,7 @@
   object-fit: cover;
 }
 
-.work-with-us {
+.download {
   --color-link: var(--color-accent);
 
   background-color: var(--color-light-accent);
@@ -91,14 +91,17 @@
 
 @media (max-width: 887px) {
   :scope {
-    margin: 11rem 0 0 0;
+    margin: calc(71rem - 15%) 0 0 0;
+  }
+
+  .content {
+    order: 2;
   }
 
   .img-wrapper {
     grid-column: 2/-2;
-    margin-left: 0;
-    clip-path: polygon(31% 0, 100% 30%, 100% 88%, 60% 100%, 0 87%, 0 10%);
-    -webkit-clip-path: polygon(31% 0, 100% 30%, 100% 88%, 60% 100%, 0 87%, 0 10%);
+    order: 1;
+    margin: -60rem 0 5rem 0;
   }
 
   .container {
@@ -113,12 +116,6 @@
 
   .container {
     grid-template-columns: var(--grid-content-columns);
-  }
-
-  .top {
-  }
-
-  .bottom {
   }
 
   .img-wrapper {
