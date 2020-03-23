@@ -73,7 +73,7 @@
     "html-entities": "^1.2.1",
     "jsdom": "^16.2.1",
     "lodash": "^4.17.13",
-    "marked": "^0.8.1",
+    "marked": "^0.8.2",
     "morgan": "^1.10.0",
     "navigo": "^7.1.2",
     "percy": "^0.26.0",
