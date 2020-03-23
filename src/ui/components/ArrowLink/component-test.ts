@@ -19,6 +19,12 @@ module('Component: ArrowLink', function(hooks) {
     assert.ok(this.containerElement.querySelector('a').dataset.internal !== undefined);
   });
 
+  test('it does not add a "data-internal" attribute for intra-document links', async function(assert) {
+    await render(hbs`<ArrowLink @href="#some-anchor" />`);
+
+    assert.ok(this.containerElement.querySelector('a').dataset.internal === undefined);
+  });
+
   test('it does not add a "data-internal" attribute for absolute internal links', async function(assert) {
     await render(hbs`<ArrowLink @href="https://simplabs.com/link" />`);
 
@@ -37,6 +43,12 @@ module('Component: ArrowLink', function(hooks) {
     assert.notOk(this.containerElement.querySelector('a').target);
   });
 
+  test('it does not add a "target" attribute for intra-document links', async function(assert) {
+    await render(hbs`<ArrowLink @href="#" />`);
+
+    assert.notOk(this.containerElement.querySelector('a').target);
+  });
+
   test('it does not add a "target" attribute for absolute internal links', async function(assert) {
     await render(hbs`<ArrowLink @href="https://simplabs.com/link" />`);
 
@@ -51,6 +63,12 @@ module('Component: ArrowLink', function(hooks) {
 
   test('it does not add a "rel=noopener" attribute for relative internal links', async function(assert) {
     await render(hbs`<ArrowLink @href="/link" />`);
+
+    assert.notOk(this.containerElement.querySelector('a').rel);
+  });
+
+  test('it does not add a "rel=noopener" attribute for intra-document links', async function(assert) {
+    await render(hbs`<ArrowLink @href="#" />`);
 
     assert.notOk(this.containerElement.querySelector('a').rel);
   });
