@@ -93,6 +93,7 @@
 @media (max-width: 887px) {
   .sidebar {
     margin-bottom: 0;
+    margin-top: 5rem;
   }
 
   :scope[attachment='blue-ribbon'] .sidebar {
