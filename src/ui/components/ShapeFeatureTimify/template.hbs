@@ -1,20 +1,20 @@
-<ShapeFeature
-  @color="#CB3B43"
-  @background="#304158"
-  @srcset="/assets/images/photos/timify-desktop@600.jpg 600w, /assets/images/photos/timify-desktop@1200.jpg 1200w"
-  @sizes="(max-width: 887px) 600px, 1200px"
-  @key="{{this.key}}-feature"
->
-  <p typography:class="small">
-    Continue Reading
-  </p>
-  <h3>
-    Modern online appointment scheduling
-  </h3>
-  <p>
-    Enabling long-term success for Timifiy’s engineering team
-  </p>
-  <ArrowLink @href="/cases/timify/">
-    Read Case Study
-  </ArrowLink>
+<ShapeFeature>
+  <ShapeFeatureContent
+    @srcset="/assets/images/photos/timify-desktop@600.jpg 600w, /assets/images/photos/timify-desktop@1200.jpg 1200w"
+    @sizes="(max-width: 887px) 600px, 1200px"
+    @key="{{this.key}}-feature"
+  >
+    <p typography:class="small">
+      Continue Reading
+    </p>
+    <h3>
+      Modern online appointment scheduling
+    </h3>
+    <p>
+      Enabling long-term success for Timifiy’s engineering team
+    </p>
+    <ArrowLink @href="/cases/timify/">
+      Read Case Study
+    </ArrowLink>
+  </ShapeFeatureContent>
 </ShapeFeature>
