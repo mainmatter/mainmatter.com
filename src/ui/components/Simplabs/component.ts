@@ -84,12 +84,10 @@ export default class Simplabs extends Component {
       let options: INavigoHooks = {
         after: () => {
           this._setCanonicalUrl(path);
-          if (!this.appState.isSSR) {
-            window.scrollTo(0, 0);
-          }
+          this._scrollToSuitableOffset();
         },
         already: () => {
-          window.scrollTo(0, 0);
+          this._scrollToSuitableOffset();
         },
       };
       if (bundle && !this.appState.isSSR) {
@@ -242,6 +240,21 @@ export default class Simplabs extends Component {
       let script = document.querySelector('[data-shoebox-active-component]') as HTMLElement;
       if (script) {
         this.activeComponent = script.dataset.shoeboxActiveComponent;
+      }
+    }
+  }
+
+  private _scrollToSuitableOffset() {
+    if (!this.appState.isSSR) {
+      let { hash } = window.location;
+      let element;
+      if (hash) {
+        element = document.querySelector(hash);
+      }
+      if (element) {
+        element.scrollIntoView();
+      } else {
+        window.scrollTo(0, 0);
       }
     }
   }
