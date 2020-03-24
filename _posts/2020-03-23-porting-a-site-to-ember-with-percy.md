@@ -1,11 +1,13 @@
 ---
-layout: article
-section: Blog
-title: "Porting a site to Ember using Percy"
-author: "Chris Manson"
-github-handle: mansona
-twitter-handle: real_ate
-topic: ember-guides
+title: 'Porting a site to Ember using Percy'
+author: 'Chris Manson'
+github: mansona
+twitter: real_ate
+topic: ember
+bio: 'Senior Ember Devleoper'
+description: 'something something'
+og:
+  image: /assets/images/posts/2020-03-23-porting-a-site-to-ember-with-percy/og-image.png
 ---
 
 This article will detail a technique where we used the visual testing service
@@ -13,22 +15,21 @@ This article will detail a technique where we used the visual testing service
 Guides](https://guides.emberjs.com/release/) to use an entirely different
 technology without anybody noticing.
 
-![Screenshot from a talk Tom Dale gave saying "in some sense it's like trying to change an engine on a 747 mid-flight"](/assets/images/posts/2020-03-23-porting-a-site-to-ember-with-percy/changing-the-engine.png)
-
 <!--break-->
 
-This article is part one of the series of posts where we describe how I ported the Ember
-Guides from an old (and hard to maintain) ruby middleman app, to a modern Static
-Single Page Application that is a dream to contribute to! To see the rest of the
-posts and a description of the project you can take a look here (TODO - get a series going on the simplabs blog?).
+This article details one of the first steps in the long road to Emberify and
+redesign the Ember website by first converting the architecture away from an old
+(and hard to maintain) rube middleman app, to a modern Static Single Page
+Application that is a dream to contribute to! This details a technique that was
+first used to convert the [Ember Guides](https://guides.emberjs.com) to an Ember
+app and was later used to convert the main [Ember Website](https://emberjs.com).
 
 ## Strict Requirements
 
 The point of this project was to change the technology that powered the Ember
-Guides without altering the look or feel of the site when people were using it.
-There were many factors that we needed to consider, but this post is focusing on
-**just** the design, if you would like to see some of the other topics relating
-to the guides upgrade you can get out the series (TODO add link to series).
+Guides without altering the look or feel of the site for end users. There were
+many factors that we needed to consider, but this post is focusing on **just**
+the design.
 
 We decided very early on that we would not accept any functionality changes or
 small improvements to the design as part of this project, mainly as an effort to
@@ -39,13 +40,13 @@ It's important to note that we weren't opposed to improving the end-user
 experience for this application. The whole reason for this project was that we
 wanted to make it **easier** to contribute improvements to the Ember Guides
 application, but we would release the technology re-write first without changing
-a single thing! This allowed us to have a straightforward requirement: **if it
-looks the same we can ship it.**
+a single noticeable thing! This allowed us to have a straightforward
+requirement: **if it looks the same we can ship it.**
 
 ## Enter Percy, stage right
 
-I had heard a lot about Percy over the years being a part of the Ember
-community! It's a great product and something that is well aligned
+I had heard a lot about [Percy](https://percy.io/) over the years being a part
+of the Ember community! It's a great product and something that is well aligned
 philosophically with Ember. If you have ever had the pleasure to use Percy you
 will know that it has had a lot of thought put into it and it Just Works™️ when
 you start working with it.
@@ -64,31 +65,22 @@ test". After a bit of experimentation that is what we decided to do.
 
 ## Setting up the baseline
 
-The first time that you run Percy it takes a snapshot of your entire site and
-uses this as the "baseline" for which any subsequent change needs to be compared
-against.
+The first time that you run Percy it takes a snapshot of all pages on your site
+and uses these as the "baseline" for which any subsequent change needs to be
+compared against.
 
-> It's not entirely true that Percy takes a snapshot of your entire site when
-you use it, you have complete power to integrate Percy the way that you want if
-you are using one of their SDKs. We are using the "static site" command line
-interface to upload to Percy in this example so that does upload your entire
-site.
+> Percy doesn't always take a snapshot of your entire site, it depends on how
+> you integrate their SDKs with your application. For the purpose of this article
+> (and during the guides migration) we are using the "static site" command line
+> interface to upload to Percy, which loops through all of your html files and
+> effectively uploads snapshots for all pages of your site.
 
 Once you have this baseline loaded for your "master" branch, you can setup Percy
 in your Continuous Integration (CI) service so that every Pull Request (PR) you
 make will be **compared against the baseline** and you will see a visual diff of
 what the site used to look like against the current changes.
 
-![An example of the Percy interface](/assets/images/posts/2020-03-23-porting-a-site-to-ember-with-percy/percy-example.png)
-
-Although this article is part of the series to port the Ember Guides, we will
-use the project to convert the Ember Website to an Ember app for most of our
-examples. This is because, at the time of writing, we are going through much of
-the same process for the new Ember Website as we did when we originally
-converted the Ember Guides. The last step in the Ember Website conversion is to
-make sure it is 100% visually similar to the current website before we launch,
-so I'm currently setting up the Percy "migration regression test" while I write
-this blog and documenting the process!
+![An example of the Percy interface](/assets/images/posts/2020-03-23-porting-a-site-to-ember-with-percy/percy-example.png#@920-1920)
 
 ### Getting a copy of the existing site
 
@@ -100,17 +92,11 @@ should build your static site locally and then point the CLI client to the
 output folder.
 
 As I briefly mentioned earlier, part of the issue with the old infrastructure
-for the Ember Guides (and similarly for this Ember Website) is that it was
-almost impossible to get working locally, and therefore very hard to contribute
-to. There was some effort put in to make it work with a Docker environment but
-even if that did work locally for us (not a guarantee), it would be slightly
-harder to get at the compiled output of the site.
-
-If we can get away without having to get the Ruby middleman setup running
-locally that would be a better approach. Another way to get a static copy of
-the website would be to pretend that we're Google for a few minutes and just
-crawl the site to download it locally, and that is exactly what we're going to
-do.
+for the Ember Guides is that it was so hard to contribute to that it was almost
+impossible to get working locally. If we can get away without having to get the
+Ruby middleman setup running locally that would be a better approach, so another
+way to get a static copy of the website would be to pretend that we're Google
+for a few minutes and just crawl the site to download it locally.
 
 If you are on a Linux machine you probably have `wget` installed, it is a
 particularly useful tool to download single files quickly and easily. If you are
@@ -132,24 +118,33 @@ wget --recursive \
      --html-extension \
      --convert-links \
      --domains emberjs.com \
-     --reject-regex '/api/*|/deprecations/*|/blog/*' \
-              emberjs.com
+     emberjs.com
 ```
 
-> I'm running these commands on macOS with `wget` version _1.19.5_ so you might need to confirm these arguments for your platform and `wget` version
+> I'm running these commands on macOS with `wget` version _1.19.5_ so you might
+> need to confirm these arguments for your platform and `wget` version
 
 If you google "crawl website with wget" or "download entire site with wget" you
 will undoubtedly get quite a few variations of the above set of arguments to the
 `wget` command. Most of these arguments are self-explanatory (and it could be an
-exercise for you to check the wget man page to see exactly what they do) but the
-most important one here is the `--reject-regex` for our use case. I mentioned
-already that the examples I'm giving for this article are for the
-"Emberificaion" of the Ember Website project, and currently for the website
-there are three sub-directories that are either currently or will soon be
-separate applications and are not something we need to concern ourselves within
-this project. This `--reject-regex` essentially excludes them from the download
-process, which is a good thing because the blog has 220+ pages that would all be
-automatically downloaded as part of this crawl without it 😬
+exercise for you to check the wget man page to see exactly what they do) but if
+you are planning to run this on your own site I would recommend using the
+`--domains` option, and you might want to also look into `--reject-regex`.
+
+When crawling sites with something like `wget` things can very quickly get out
+of hand. If your site has any external links to other domains and you don't
+limit the domains you want to download with `--domains` you can very quickly end
+up downloading the whole internet.
+
+`--reject-regex` is also a useful tool if you have some subfolders that have
+dynamically generated content. When we first ran this command on the Ember
+website the blog was available at https://emberjs.com/blog and had 220+ pages
+that would be downloaded in our crawl 😬 adding the following line to our `wget`
+command would have excluded that whole directory
+
+```
+--reject-regex '/blog/*'
+```
 
 ### Verifying all the pages are there
 
@@ -200,14 +195,6 @@ because we just have a folder instead of a git repository it won't autodetect
 our branch. We want it to be our `master` branch because this is going to serve
 as our baseline that all of the rest of the application will be built around.
 
-If you would like to see the result of this command you can follow [this link to
-the Percy build](https://percy.io/Ember/Ember-Website/builds/1509479). _Note
-this build will only be available for 90 days after this article goes live_.
-
-You may notice that there were some visual differences because we had already
-setup Percy on the new project that was well under way. We need to accept these
-changes so they will form the new baseline
-
 ## Setting up visual regression testing for the Ember Application
 
 The [official documentation for the Percy Ember
@@ -220,34 +207,34 @@ manually, here is what that mapping looks like in the ember-website testing
 code:
 
 ```javascript
-    // This is used to map the current **new** routes to what they used to be in the
-    // old ruby app. This is to allow us to compare what the new app looks like
-    // vs the old app.
-    const pages = [
-      { title: '/builds/index.html', route: '/releases' },
-      { title: '/builds/beta/index.html', route: '/releases/beta' },
-      { title: '/builds/canary/index.html', route: '/releases/canary' },
-      { title: '/builds/release/index.html', route: '/releases/release' },
-      { title: '/community/index.html', route: '/community/' },
-      { title: '/community/meetups-getting-started.html', route: '/community/meetups-getting-started/' },
-      { title: '/community/meetups.html', route: '/community/meetups/' },
-      { title: '/ember-community-survey-2019.html', route: '/ember-community-survey-2019/' },
-      { title: '/ember-users.html', route: '/ember-users/' },
-      { title: '/guidelines.html', route: '/guidelines/' },
-      { title: '/index.html', route: '/' },
-      { title: '/learn.html', route: '/learn/' },
-      { title: '/legal.html', route: '/about/legal/' },
-      { title: '/logos.html', route: '/logos/' },
-      { title: '/mascots.html', route: '/mascots/' },
-      { title: '/meetup-assets.html', route: '/community/meetups/assets/' },
-      { title: '/security.html', route: '/security/' },
-      { title: '/sponsors.html', route: '/sponsors/' },
-      { title: '/statusboard.html', route: '/statusboard' },
-      { title: '/team.html', route: '/team/' },
-      { title: '/tomster.html', route: '/mascots/' },
-      { title: '/tomster/commission/index.html', route: '/mascots/commission/' },
-      { title: '/tomster/faq.html', route: '/mascots/faq/' },
-    ];
+// This is used to map the current **new** routes to what they used to be in the
+// old ruby app. This is to allow us to compare what the new app looks like
+// vs the old app.
+const pages = [
+  { title: '/builds/index.html', route: '/releases' },
+  { title: '/builds/beta/index.html', route: '/releases/beta' },
+  { title: '/builds/canary/index.html', route: '/releases/canary' },
+  { title: '/builds/release/index.html', route: '/releases/release' },
+  { title: '/community/index.html', route: '/community/' },
+  { title: '/community/meetups-getting-started.html', route: '/community/meetups-getting-started/' },
+  { title: '/community/meetups.html', route: '/community/meetups/' },
+  { title: '/ember-community-survey-2019.html', route: '/ember-community-survey-2019/' },
+  { title: '/ember-users.html', route: '/ember-users/' },
+  { title: '/guidelines.html', route: '/guidelines/' },
+  { title: '/index.html', route: '/' },
+  { title: '/learn.html', route: '/learn/' },
+  { title: '/legal.html', route: '/about/legal/' },
+  { title: '/logos.html', route: '/logos/' },
+  { title: '/mascots.html', route: '/mascots/' },
+  { title: '/meetup-assets.html', route: '/community/meetups/assets/' },
+  { title: '/security.html', route: '/security/' },
+  { title: '/sponsors.html', route: '/sponsors/' },
+  { title: '/statusboard.html', route: '/statusboard' },
+  { title: '/team.html', route: '/team/' },
+  { title: '/tomster.html', route: '/mascots/' },
+  { title: '/tomster/commission/index.html', route: '/mascots/commission/' },
+  { title: '/tomster/faq.html', route: '/mascots/faq/' },
+];
 ```
 
 With this defined all we need to do is to loop through this array in an Ember
@@ -258,24 +245,17 @@ the title into the snapshot so that we can match against the legacy application.
 Here is what that code looks like in the ember-website:
 
 ```javascript
-await pages.reduce(async (prev, config) => {
-  await prev;
-
+for (let config of pages) {
   await visit(config.route);
-
   await percySnapshot(config.title);
-}, Promise.resolve());
+}
 ```
-
-This happens to be using a trick to only take one snapshot at a time, but you
-could just as easily use `Array.map()` and await on `Promise.all()` of the
-responses.
 
 Even though I've copied most of the implementation into this post you can [see
 it all in action directly in the source code of the ember-website
 project](https://github.com/ember-learn/ember-website/blob/401a638dbb65191d1273de8336525bf9df6b53bc/tests/acceptance/visual-regression-test.js#L1)
 
-## Open a PR,  Iterate on the design, Ship when green
+## Open a PR, Iterate on the design, Ship when green
 
 At this point, it's time to open a PR to test your Percy integration. This will
 create a Percy build that will be a comparison to the baseline that we set up
@@ -288,10 +268,10 @@ diff.
 The examples that I have been showing in this post have been leading up to [an
 actual PR on the ember-website
 project](https://github.com/ember-learn/ember-website/pull/185) and you will see
-in the CI checks for that PR that the [initial Percy build is
-failing](https://percy.io/Ember/Ember-Website/builds/1509496). If you look at
-the visual diff you will see that there is quite some work that needs to be done
-before this is ready to go live, but I never said that this would do all the work for you! 😂
+in the CI checks for that PR that the initial Percy build is failing. If you saw
+the visual diff you would have seen that there was quite some work that needed
+to be done before this was ready to go live, but I never said that this would do
+all the work for you! 😂
 
 What Percy is really giving you here is the confidence to know when the project
 is ready to be shipped. If you can keep the requirements constrained to simply
