@@ -1,0 +1,25 @@
+<div>
+  {{#if @srcset}}
+    <figure block:class="container">
+      <div block:class="img-wrapper">
+        <img
+          block:class="img"
+          srcset={{@srcset}}
+          sizes={{@sizes}}
+          alt="{{@srcAlt}}"
+          width={{@width}}
+          height={{@height}}
+        />
+      </div>
+      <figcaption block:class="content">
+        {{yield}}
+      </figcaption>
+    </figure>
+  {{else}}
+    <div>
+      <div block:class="content">
+        {{yield}}
+      </div>
+    </div>
+  {{/if}}
+</div>
