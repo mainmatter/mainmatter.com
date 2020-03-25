@@ -10,43 +10,41 @@ og:
   image: /assets/images/posts/2020-03-23-porting-a-site-to-ember-with-percy/og-image.png
 ---
 
-This article will detail a technique where we used the visual testing service
-[Percy](https://percy.io/) to port the old [Ember
-Guides](https://guides.emberjs.com/release/) to use an entirely different
-technology without anybody noticing.
+This article details a technique where the visual testing software
+[Percy](https://percy.io/) was used to port the old [Ember
+Guides](https://guides.emberjs.com/release/) to an entirely different
+technology, without anybody noticing
 
 <!--break-->
 
-This article details one of the first steps in the long road to Emberify and
+This article details one of the first steps in the long road to _Emberify_ and
 redesign the Ember website by first converting the architecture away from an old
-(and hard to maintain) rube middleman app, to a modern Static Single Page
-Application that is a dream to contribute to! This details a technique that was
-first used to convert the [Ember Guides](https://guides.emberjs.com) to an Ember
-app and was later used to convert the main [Ember Website](https://emberjs.com).
+(and hard to maintain) Ruby middleman app, to a modern Static Single Page
+Application that is a dream to contribute to! This technique was first used to
+convert the [Ember Guides](https://guides.emberjs.com) to an Ember app and was
+then later used to convert the main [Ember Website](https://emberjs.com).
 
 ## Strict Requirements
 
 The point of this project was to change the technology that powered the Ember
 Guides without altering the look or feel of the site for end users. There were
-many factors that we needed to consider, but this post is focusing on **just**
-the design.
+many factors that we needed to consider, but this post only looking at the
+design.
 
-We decided very early on that we would not accept any functionality changes or
-small improvements to the design as part of this project, mainly as an effort to
-keep the initial project scope as small as possible and to improve the
-likelihood that we would ship the end product in a reasonable timeframe.
-
-It's important to note that we weren't opposed to improving the end-user
-experience for this application. The whole reason for this project was that we
-wanted to make it **easier** to contribute improvements to the Ember Guides
-application, but we would release the technology re-write first without changing
-a single noticeable thing! This allowed us to have a straightforward
+We decided early on that we would not accept any functionality changes or minor
+design improvements as part of this project, in an effort to keep the initial
+project scope as small as possible and to improve the likelihood that we would
+ship the end product in a reasonable timeframe. While we weren't opposed to
+improving the end-user experience for this application, our objective was to
+make it **easier** to contribute improvements to the Ember Guides application.
+With this in mind we decided to release the technology re-write first, without
+noticeably changing anything! This allowed us to have a straightforward
 requirement: **if it looks the same we can ship it.**
 
 ## Enter Percy, stage right
 
-I had heard a lot about [Percy](https://percy.io/) over the years being a part
-of the Ember community! It's a great product and something that is well aligned
+I had heard a lot about [Percy](https://percy.io/) over the years, being a part
+of the Ember community! It's a great product and something that is well-aligned
 philosophically with Ember. If you have ever had the pleasure to use Percy you
 will know that it has had a lot of thought put into it and it Just Works™️ when
 you start working with it.
@@ -56,20 +54,20 @@ themselves as "Your all-in-one visual review platform". Just like Code Reviews
 and Pull requests, Percy allows you to view any **visual changes** as a result
 of the work that you are doing on an application. I have also heard it referred
 to as a "visual regression test system", but in practice it is much more than
-just that. 😂
+that. 😂
 
-This got me thinking; if you can use Percy for visual regression tests
-then why can't you use it to do an overarching regression test for porting the
-technology that was powering your website, sort of like a "migration regression
-test". After a bit of experimentation that is what we decided to do.
+This got me thinking; if you can use Percy for visual regression tests, then why
+can't you use it to do an overarching regression test for porting the technology
+powering your website, sort of like a "migration regression test". After a bit
+of experimentation that is what we decided to do.
 
 ## Setting up the baseline
 
-The first time that you run Percy it takes a snapshot of all pages on your site
-and uses these as the "baseline" for which any subsequent change needs to be
+The first time you run Percy it takes a snapshot of all pages on your site and
+uses these as the "baseline" for which any subsequent change needs to be
 compared against.
 
-> Percy doesn't always take a snapshot of your entire site, it depends on how
+> Percy doesn't always take a snapshot of your entire site; it depends on how
 > you integrate their SDKs with your application. For the purpose of this article
 > (and during the guides migration) we are using the "static site" command line
 > interface to upload to Percy, which loops through all of your html files and
@@ -84,17 +82,16 @@ what the site used to look like against the current changes.
 
 ### Getting a copy of the existing site
 
-The first thing that we need to do in this process is we need a local copy of
-the existing site that we are planning to port. If you look at the
-[documentation for using the Percy command line
-client](https://docs.percy.io/docs/command-line-client) it tells you that you
-should build your static site locally and then point the CLI client to the
-output folder.
+The first thing that we need in this process is a local copy of the existing
+site we are planning to port. If you look at the [documentation for using the
+Percy command line client](https://docs.percy.io/docs/command-line-client) it
+tells you that you should build your static site locally and then point the CLI
+client to the output folder.
 
 As I briefly mentioned earlier, part of the issue with the old infrastructure
 for the Ember Guides is that it was so hard to contribute to that it was almost
-impossible to get working locally. If we can get away without having to get the
-Ruby middleman setup running locally that would be a better approach, so another
+impossible to get working locally. If we can avoid having to run the
+Ruby middleman setup locally, that would be a better approach, so another
 way to get a static copy of the website would be to pretend that we're Google
 for a few minutes and just crawl the site to download it locally.
 
@@ -107,8 +104,8 @@ install it:
 brew install wget
 ```
 
-Before I was working on this project I didn't actually realise that, not only
-can you use it to download single files but you can also use it to crawl and
+Before working on this project I didn't actually realise that, not only
+can you use `wget` to download single files but you can also use it to crawl and
 download entire websites! Here is the command that I'm using to download the
 entire [Ember Website](https://emberjs.com):
 
@@ -124,7 +121,7 @@ wget --recursive \
 > I'm running these commands on macOS with `wget` version _1.19.5_ so you might
 > need to confirm these arguments for your platform and `wget` version
 
-If you google "crawl website with wget" or "download entire site with wget" you
+If you Google "crawl website with wget" or "download entire site with wget" you
 will undoubtedly get quite a few variations of the above set of arguments to the
 `wget` command. Most of these arguments are self-explanatory (and it could be an
 exercise for you to check the wget man page to see exactly what they do) but if
@@ -132,14 +129,14 @@ you are planning to run this on your own site I would recommend using the
 `--domains` option, and you might want to also look into `--reject-regex`.
 
 When crawling sites with something like `wget` things can very quickly get out
-of hand. If your site has any external links to other domains and you don't
+of hand. If your site has external links to other domains and you don't
 limit the domains you want to download with `--domains` you can very quickly end
-up downloading the whole internet.
+up downloading the whole internet!
 
 `--reject-regex` is also a useful tool if you have some subfolders that have
 dynamically generated content. When we first ran this command on the Ember
 website the blog was available at https://emberjs.com/blog and had 220+ pages
-that would be downloaded in our crawl 😬 adding the following line to our `wget`
+that would be downloaded in our crawl. 😬 Adding the following line to our `wget`
 command would have excluded that whole directory
 
 ```
@@ -148,12 +145,12 @@ command would have excluded that whole directory
 
 ### Verifying all the pages are there
 
-After running the above command we now have a folder `emberjs.com` that contains
+After running the above command we have a folder `emberjs.com` that contains
 a static copy of the Ember Website. We now need to list all of the pages and
-make sure that we're happy that we've captured all of the pages we needed to.
+make sure that we're happy that we've captured all of the necessary pages.
 
 Thankfully we used `--html-extension` which will make sure that all html files
-end with `.html` so we can run a simple find command in that folder to list the
+end with `.html` so we can run a simple `find` command in that folder to list the
 pages:
 
 ```bash
@@ -191,9 +188,9 @@ PERCY_TOKEN=not_our_real_token PERCY_BRANCH=master percy snapshot emberjs.com
 In this example emberjs.com is the name of the folder that was created with the
 `wget` command. We need to provide the `PERCY_BRANCH` in our case because Percy
 is supposed to be run in conjunction with your Version Control System (VCS) and
-because we just have a folder instead of a git repository it won't autodetect
-our branch. We want it to be our `master` branch because this is going to serve
-as our baseline that all of the rest of the application will be built around.
+since we just have a folder instead of a git repository it won't autodetect our
+branch. We want it to be our `master` branch because this is going to serve as
+the baseline around which all of the rest of the application will be built.
 
 ## Setting up visual regression testing for the Ember Application
 
@@ -265,7 +262,7 @@ pushed to your master branch. Once you open the PR, if you have followed the
 Percy installation instructions correctly, Percy will start to build your visual
 diff.
 
-The examples that I have been showing in this post have been leading up to [an
+The examples shown in this post have been leading up to [an
 actual PR on the ember-website
 project](https://github.com/ember-learn/ember-website/pull/185) and you will see
 in the CI checks for that PR that the initial Percy build is failing. If you saw
@@ -274,18 +271,17 @@ to be done before this was ready to go live, but I never said that this would do
 all the work for you! 😂
 
 What Percy is really giving you here is the confidence to know when the project
-is ready to be shipped. If you can keep the requirements constrained to simply
-"make it look like it did before" and you can prevent feature creep for the
-project then you will know with confidence that it is ready to deploy when you
-have a passing CI and your Percy build shows no changes. If Percy is happy then
-you can deploy with confidence.
+is ready to be shipped. If you can constrain the requirements to "make it look
+like it did before", and you can avoid "feature creep", then you will know with
+confidence that it is ready to deploy when you have a passing CI and your Percy
+build shows no changes. If Percy is happy then you can deploy with confidence.
 
 ## Summary
 
 This is a useful technique that we have now used successfully twice to port
 large projects from Ruby middleman to Ember in the Ember Learning Team, and
-while it is not exactly using Percy like it was designed it is a very useful
-technique to have in your tool belt when you need it.
+while it is not exactly using Percy as it was designed, it is a very useful
+technique to have in your tool belt.
 
 If you have a project that you are thinking of porting to EmberJS and would like
 to discuss it with us, or if you have any general questions about this topic we
