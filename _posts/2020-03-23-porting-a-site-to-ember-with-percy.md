@@ -4,8 +4,8 @@ author: 'Chris Manson'
 github: mansona
 twitter: real_ate
 topic: ember
-bio: 'Senior Ember Devleoper'
-description: 'something something'
+bio: 'Senior Software Engineer, Ember Learning Core Team member'
+description: 'Chris Manson explains how to use Percy to port a site from one technology to another, while ensuring there are no visual changes.'
 og:
   image: /assets/images/posts/2020-03-23-porting-a-site-to-ember-with-percy/og-image.png
 ---
@@ -13,16 +13,21 @@ og:
 This article details a technique where the visual testing software
 [Percy](https://percy.io/) was used to port the old [Ember
 Guides](https://guides.emberjs.com/release/) to an entirely different
-technology, without anybody noticing
+technology, without anybody noticing.
 
 <!--break-->
 
-This article details one of the first steps in the long road to _Emberify_ and
+This was one of the first steps in the long road to _Emberify_ and
 redesign the Ember website by first converting the architecture away from an old
 (and hard to maintain) Ruby middleman app, to a modern Static Single Page
 Application that is a dream to contribute to! This technique was first used to
 convert the [Ember Guides](https://guides.emberjs.com) to an Ember app and was
 then later used to convert the main [Ember Website](https://emberjs.com).
+
+The technique described below is a slightly novel way of using Percy, instead of
+tracking changes over the course of an active project we are using Percy to
+bootstrap our migration effort and make sure our ported app looks the same when
+it is done.
 
 ## Strict Requirements
 
@@ -67,11 +72,11 @@ The first time you run Percy it takes a snapshot of all pages on your site and
 uses these as the "baseline" for which any subsequent change needs to be
 compared against.
 
-> Percy doesn't always take a snapshot of your entire site; it depends on how
-> you integrate their SDKs with your application. For the purpose of this article
-> (and during the guides migration) we are using the "static site" command line
-> interface to upload to Percy, which loops through all of your html files and
-> effectively uploads snapshots for all pages of your site.
+Note: Percy doesn't always take a snapshot of your entire site; it depends on
+how you integrate their SDKs with your application. For the purpose of this
+article (and during the guides migration) we are using the "static site" command
+line interface to upload to Percy, which loops through all of your html files
+and effectively uploads snapshots for all pages of your site.
 
 Once you have this baseline loaded for your "master" branch, you can setup Percy
 in your Continuous Integration (CI) service so that every Pull Request (PR) you
@@ -89,7 +94,7 @@ tells you that you should build your static site locally and then point the CLI
 client to the output folder.
 
 As I briefly mentioned earlier, part of the issue with the old infrastructure
-for the Ember Guides is that it was so hard to contribute to that it was almost
+for the Ember Guides was that it was so hard to contribute to that it was almost
 impossible to get working locally. If we can avoid having to run the
 Ruby middleman setup locally, that would be a better approach, so another
 way to get a static copy of the website would be to pretend that we're Google
@@ -118,8 +123,8 @@ wget --recursive \
      emberjs.com
 ```
 
-> I'm running these commands on macOS with `wget` version _1.19.5_ so you might
-> need to confirm these arguments for your platform and `wget` version
+Note: I'm running these commands on macOS with `wget` version _1.19.5_ so you
+might need to confirm these arguments for your platform and `wget` version.
 
 If you Google "crawl website with wget" or "download entire site with wget" you
 will undoubtedly get quite a few variations of the above set of arguments to the
@@ -192,7 +197,7 @@ since we just have a folder instead of a git repository it won't autodetect our
 branch. We want it to be our `master` branch because this is going to serve as
 the baseline around which all of the rest of the application will be built.
 
-## Setting up visual regression testing for the Ember Application
+## Setting up Percy for the Ember Application
 
 The [official documentation for the Percy Ember
 integration](https://docs.percy.io/docs/ember) is fantastic and I would
