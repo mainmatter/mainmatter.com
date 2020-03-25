@@ -5,7 +5,7 @@ github: mansona
 twitter: real_ate
 topic: ember
 bio: 'Senior Software Engineer, Ember Learning Core Team member'
-description: 'Chris Manson explains how to use Percy to port a site from one technology to another, while ensuring there are no visual changes.'
+description: 'Chris Manson details a novel way to use Percy for tracking approximation of a visual baseline when porting a site from one technology to another.'
 og:
   image: /assets/images/posts/2020-03-23-porting-a-site-to-ember-with-percy/og-image.png
 ---
