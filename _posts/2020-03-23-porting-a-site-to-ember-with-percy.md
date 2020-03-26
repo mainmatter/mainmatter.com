@@ -17,6 +17,10 @@ technology, without anybody noticing.
 
 <!--break-->
 
+![Bringing clarity to your Ember templates](/assets/images/posts/2020-03-23-porting-a-site-to-ember-with-percy/illustration.jpg#full@1440-2880)
+
+## Motivation
+
 This was one of the first steps in the long road to _Emberify_ and
 redesign the Ember website by first converting the architecture away from an old
 (and hard to maintain) Ruby middleman app, to a modern Static Single Page
