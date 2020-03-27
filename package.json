@@ -9,8 +9,8 @@
   "scripts": {
     "build": "PRERENDER=1 ember build -prod && node scripts/prerender.js",
     "crawl": "node scripts/crawl.js",
-    "start": "ember server",
-    "start-dev": "LIMIT_CONTENT_ARCHIVE=true ember server",
+    "start": "LIMIT_CONTENT_ARCHIVE=true ember server",
+    "start:production": "ember server",
     "test": "ember test",
     "lint:ts": "tslint -c tslint.json 'src/**/*.ts' -t codeFrame",
     "lint:js": "eslint . --cache",
