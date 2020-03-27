@@ -7,7 +7,7 @@ topic: ember
 bio: 'Senior Software Engineer, Ember Learning Core Team member'
 description: 'Chris Manson details a novel way to use Percy for tracking approximation of a visual baseline when porting a site from one technology to another.'
 og:
-  image: /assets/images/posts/2020-03-23-porting-a-site-to-ember-with-percy/og-image.png
+  image: /assets/images/posts/2020-03-27-porting-a-site-to-ember-with-percy/og-image.png
 ---
 
 This article details a technique where the visual testing software
@@ -17,7 +17,7 @@ technology, without anybody noticing.
 
 <!--break-->
 
-![Bringing clarity to your Ember templates](/assets/images/posts/2020-03-23-porting-a-site-to-ember-with-percy/illustration.jpg#full@1440-2880)
+![Bringing clarity to your Ember templates](/assets/images/posts/2020-03-27-porting-a-site-to-ember-with-percy/illustration.jpg#full@1440-2880)
 
 ## Motivation
 
@@ -87,7 +87,7 @@ in your Continuous Integration (CI) service so that every Pull Request (PR) you
 make will be **compared against the baseline** and you will see a visual diff of
 what the site used to look like against the current changes.
 
-![An example of the Percy interface](/assets/images/posts/2020-03-23-porting-a-site-to-ember-with-percy/percy-example.png#@920-1920)
+![An example of the Percy interface](/assets/images/posts/2020-03-27-porting-a-site-to-ember-with-percy/percy-example.png#@920-1920)
 
 ### Getting a copy of the existing site
 
