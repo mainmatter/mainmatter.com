@@ -71,7 +71,7 @@
     "handlebars": "^4.7.3",
     "highlight.js": "^9.18.1",
     "html-entities": "^1.2.1",
-    "jsdom": "^16.2.1",
+    "jsdom": "^16.2.2",
     "lodash": "^4.17.13",
     "marked": "^0.8.2",
     "morgan": "^1.10.0",
