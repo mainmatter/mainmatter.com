@@ -7,14 +7,22 @@
   >
     <HeaderContent @label="Work" @headline="A proven track record of successful projects for international clients." />
   </Header>
-  <div layout:class="split-leading">
-    <h2>
-      <a href="/cases/trainline/" data-internal>
-        Leveraging Trainline's full market potential
-      </a>
-    </h2>
+  <div layout:class="bleed-left">
+    <ShapeImage
+      @srcset="/assets/images/work/trainline.svg"
+      @align="left"
+    />
   </div>
   <div layout:class="split-trailing">
+    <h2>
+      <p typography:class="small">
+        Featured Case Study
+        <span typography:class="hidden">
+          :
+        </span>
+      </p>
+      Leveraging Trainline's full market potential
+    </h2>
     <p typography:class="lead">
       Trainline is Europe’s leading independent rail and coach platform. We worked with them to deliver a high-performance mobile web app, along with an improved engineering process, enabling Trainline to achieve their business goals for years to come.
     </p>
@@ -22,16 +30,6 @@
       Read Case Study
     </ArrowLink>
   </div>
-  <ShapeBold
-    @backgroundA="#21314D"
-    @backgroundB="#48D6B6"
-    @srcset="/assets/images/work/trainline-comp@604.png 604w, /assets/images/work/trainline-comp@1208.png 1208w"
-    @sizes="(max-width: 887px) 604px, 1208px"
-    @logo="/assets/images/logos/trainline.svg"
-    @logoAlt="Trainline"
-    @logoLabel="Mobile Web App"
-    @key="boldTrainline"
-  />
 
   <ClientsGrid @title="Meet our clients" />
   <div layout:class="split-leading">
