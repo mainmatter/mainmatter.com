@@ -7,13 +7,13 @@
   >
     <HeaderContent @label="Work" @headline="A proven track record of successful projects for international clients." />
   </Header>
-  <div layout:class="bleed-left">
+  <div layout:class="bleed-left" offset:class="after-5">
     <ShapeImage
       @srcset="/assets/images/work/trainline.svg"
       @align="left"
     />
   </div>
-  <div layout:class="split-trailing">
+  <div layout:class="split-trailing" offset:class="after-5">
     <h2>
       <p typography:class="small">
         Featured Case Study
@@ -29,6 +29,10 @@
     <ArrowLink @href="/cases/trainline/">
       Read Case Study
     </ArrowLink>
+  </div>
+  <div layout:class="full" offset:class="after-21">
+    <div block:class="trainline-shape">
+    </div>
   </div>
 
   <ClientsGrid @title="Meet our clients" />

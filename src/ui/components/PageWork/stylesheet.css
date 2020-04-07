@@ -7,6 +7,26 @@
   composes: 'layout';
 }
 
+.trainline-shape {
+  background-image: url(/assets/images/photos/trainline-comp@1208.jpg);
+  padding-bottom: 50%;
+  background-size: cover;
+  clip-path: polygon(0 81%, 57% 100%, 100% 79%, 100% 29%, 40% 0, 0 19.5%);
+  -webkit-clip-path: polygon(0 81%, 57% 100%, 100% 79%, 100% 29%, 40% 0, 0 19.5%);
+}
+
+@media (max-width: 887px) {
+  .trainline-shape {
+    background-image: url(/assets/images/photos/trainline-comp@604.jpg);
+  }
+}
+
+@media (min-width: 888px) {
+  .trainline-shape {
+    margin-top: -10rem;
+  }
+}
+
 @export typography;
 @export layout;
 @export offset;
