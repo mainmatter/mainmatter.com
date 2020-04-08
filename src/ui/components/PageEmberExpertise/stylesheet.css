@@ -9,6 +9,21 @@
   composes: 'layout';
 }
 
+.sponsorship-announcement-text {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 888px) {
+  .sponsorship-announcement-image {
+    order: 1;
+  }
+
+  .sponsorship-announcement-text {
+    order: 2;
+  }
+}
+
 @export typography;
 @export layout;
 @export media;

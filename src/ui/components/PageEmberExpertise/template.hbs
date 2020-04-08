@@ -20,6 +20,30 @@
       </p>
     </HeaderContent>
   </Header>
+
+  <div layout:scope>
+    <div layout:class="split-trailing" offset:class="after-5" block:class="sponsorship-announcement-text">
+      <div>
+        <p typography:class="small">
+          Project Sponsorship
+        </p>
+        <p typography:class="lead">
+          We recently have been recognized as an official sponsor of the Ember.js project along with international brands like LinkedIn and Yahoo.
+        </p>
+        <ArrowLink @href="https://emberjs.com/sponsors">
+          See all Ember.js sponsors
+        </ArrowLink>
+      </div>
+    </div>
+    <div layout:class="bleed-left" offset:class="after-21" block:class="sponsorship-announcement-image">
+      <ShapeImage
+        @srcset="/assets/images/photos/laptop-detail@600.jpg 600w, /assets/images/photos/laptop-detail@1200.jpg 1200w"
+        @sizes="(max-width: 887px) 600px, 1200px)"
+        @align="left"
+      />
+    </div>
+  </div>
+
   <div layout:class="main" offset:class="after-21">
     <h2>
       We love open source
