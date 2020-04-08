@@ -225,7 +225,7 @@ Installing a service worker is as simple as running a little script:
 ```html
 <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js').catch(function() {
+    navigator.serviceWorker.register('/service-worker.js').catch(function () {
       // handle errors
     });
   }
@@ -281,12 +281,12 @@ the service worker is activated, simply delete all caches that are not that
 current one:
 
 ```js
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', function (event) {
   event.waitUntil(
-    caches.keys().then(function(cacheNames) {
+    caches.keys().then(function (cacheNames) {
       return Promise.all(
         // delete old caches
-        cacheNames.map(function(cacheName) {
+        cacheNames.map(function (cacheName) {
           if (cacheName !== CACHE_NAME) {
             return caches.delete(cacheName);
           }
@@ -306,10 +306,10 @@ as always serving that from the service worker's cache when the original request
 fails:
 
 ```js
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', function (event) {
   if (event.request.headers.get('accept').startsWith('text/html')) {
     event.respondWith(
-      fetch(event.request).catch(error => {
+      fetch(event.request).catch((error) => {
         return caches.match('index.html');
       }),
     );
@@ -353,12 +353,12 @@ datasets though, the storage API of choice is generally
 
 ```js
 let openRequest = window.indexedDB.open('MyTestDatabase');
-openRequest.onsuccess = function(event) {
+openRequest.onsuccess = function (event) {
   let db = event.target.result;
   var transaction = db.transaction(['locations']);
   var objectStore = transaction.objectStore('locations');
   var request = objectStore.get('1');
-  request.onsuccess = function() {
+  request.onsuccess = function () {
     let location = request.result;
     alert(`Loaded location ${location.name}`);
   };
@@ -456,7 +456,7 @@ const backup = new IndexedDBSource({
 });
 
 // when the store changes, sync the changes into the backup source
-store.on('transform', transform => {
+store.on('transform', (transform) => {
   backup.sync(transform);
 });
 ```
@@ -503,7 +503,7 @@ Combining puppeteer with mocha allows for writing high level test cases that
 test a PWA in its entirety:
 
 ```js
-describe('when offline', function() {
+describe('when offline', function () {
   async function visit(route, callback) {
     let browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     let page = await browser.newPage();
@@ -516,8 +516,8 @@ describe('when offline', function() {
     }
   }
 
-  it('works offline', async function() {
-    await visit('/', async page => {
+  it('works offline', async function () {
+    await visit('/', async (page) => {
       // go through the flow online first so we populate IndexedDB
       await page.type('[data-test-search-input]', 'Salzburg');
       await page.click('[data-test-search-submit]');

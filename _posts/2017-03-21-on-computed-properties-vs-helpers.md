@@ -33,7 +33,7 @@ Here's a simple example of a computed property that is `true` when the `age`
 property is at least `65`:
 
 ```js
-isSenior: computed('age', function() {
+isSenior: computed('age', function () {
   return this.get('age') >= 65;
 });
 ```
@@ -63,7 +63,7 @@ helper**. Instead of defining the `isSenior` property with its dependents
 upfront, one could define an `lte` helper like this:
 
 ```js
-export default Ember.Helper.helper(function([value, comp]) {
+export default Ember.Helper.helper(function ([value, comp]) {
   return value >= comp;
 });
 ```
@@ -113,7 +113,7 @@ select a random one with a `status` of `'active'`. A computed property returning
 such a user could look like this:
 
 ```js
-userToDisplay: computed('users.@each.state', function() {
+userToDisplay: computed('users.@each.state', function () {
   let activeUsers = this.get('users').filterBy('state', 'active');
   return shuffle(activeUsers)[0];
 });
@@ -187,7 +187,7 @@ Here, the internals of the comparison logic have been moved into the `is-senior`
 helper:
 
 ```js
-export default Ember.Helper.helper(function([user]) {
+export default Ember.Helper.helper(function ([user]) {
   return user.get('age') >= 65;
 });
 ```
@@ -222,7 +222,7 @@ the `and` helper. Comparing this to the same logic implemented as a computed
 property makes the difference clear:
 
 ```js
-areBothTruthy: computed('propA', 'propB', function() {
+areBothTruthy: computed('propA', 'propB', function () {
   return this.get('propA') && this.get('propB');
 });
 ```

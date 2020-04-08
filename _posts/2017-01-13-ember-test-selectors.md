@@ -96,14 +96,14 @@ includes both folders if we are in [testing mode](#testing-in-production-mode).
 module.exports = {
   // ...
 
-  treeForAddon: function() {
+  treeForAddon: function () {
     // only include our "addon" folder in the build if we're testing
     if (this.app.tests) {
       return this._super.treeForAddon.apply(this, arguments);
     }
   },
 
-  treeForApp: function() {
+  treeForApp: function () {
     // only include our "app" folder in the build if we're testing
     if (this.app.tests) {
       return this._super.treeForApp.apply(this, arguments);
@@ -165,9 +165,9 @@ module.exports = class {
   transform(ast) {
     var walker = new this.syntax.Walker();
 
-    walker.visit(ast, function(node) {
+    walker.visit(ast, function (node) {
       if (node.type === 'ElementNode') {
-        node.attributes = node.attributes.filter(function(attribute) {
+        node.attributes = node.attributes.filter(function (attribute) {
           return !TEST_SELECTOR_PREFIX.test(attribute.name);
         });
       }
@@ -186,7 +186,7 @@ is very similar:
 
 ```js
 if (node.type === 'MustacheStatement' || node.type === 'BlockStatement') {
-  node.hash.pairs = node.hash.pairs.filter(function(pair) {
+  node.hash.pairs = node.hash.pairs.filter(function (pair) {
     return !TEST_SELECTOR_PREFIX.test(pair.key);
   });
 }
@@ -233,10 +233,10 @@ supports prototyping Babel plugins and so we came up with a simple
 ```js
 var TEST_SELECTOR_PREFIX = /data-test-.*/;
 
-module.exports = function(babel) {
+module.exports = function (babel) {
   return new babel.Plugin('ember-test-selectors', {
     visitor: {
-      Property: function(node) {
+      Property: function (node) {
         if (TEST_SELECTOR_PREFIX.test(node.key.value)) {
           this.dangerouslyRemove();
         }
@@ -256,7 +256,7 @@ addon:
 module.exports = {
   // ...
 
-  included: function(app) {
+  included: function (app) {
     this._super.included.apply(this, arguments);
 
     // add the StripDataTestPropertiesPlugin to the list of plugins used by

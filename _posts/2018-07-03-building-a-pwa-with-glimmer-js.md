@@ -263,10 +263,10 @@ import { module, test } from 'qunit';
 import hbs from '@glimmer/inline-precompile';
 import { setupRenderingTest } from '@glimmer/test-helpers';
 
-module('Component: MeasurementRow', function(hooks) {
+module('Component: MeasurementRow', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('PPM Case', async function(assert) {
+  test('PPM Case', async function (assert) {
     await this.render(hbs`
       <MeasurementRow
         @value="12"

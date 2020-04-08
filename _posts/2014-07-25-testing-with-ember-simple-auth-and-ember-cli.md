@@ -72,22 +72,22 @@ these (notice the use of the test helpers `authenticateSession` and
 `invalidateSession`):
 
 ```js
-test('a protected route is accessible when the session is authenticated', function() {
+test('a protected route is accessible when the session is authenticated', function () {
   expect(1);
   authenticateSession();
   visit('/protected');
 
-  andThen(function() {
+  andThen(function () {
     equal(currentRouteName(), 'protected');
   });
 });
 
-test('a protected route is not accessible when the session is not authenticated', function() {
+test('a protected route is not accessible when the session is not authenticated', function () {
   expect(1);
   invalidateSession();
   visit('/protected');
 
-  andThen(function() {
+  andThen(function () {
     notEqual(currentRouteName(), 'protected');
   });
 });

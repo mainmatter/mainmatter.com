@@ -91,7 +91,7 @@ import { computed } from '@ember/object';
 import titleCase from 'my-app/utils/title-case.js';
 
 export default Component.extend({
-  title: computed('post.title', function() {
+  title: computed('post.title', function () {
     return titleCase(this.post.title);
   }),
 

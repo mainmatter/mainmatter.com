@@ -44,7 +44,7 @@ behave as before:
 ```js
 Ember.Application.initializer({
   name: 'authentication',
-  initialize: function(container, application) {
+  initialize: function (container, application) {
     Ember.SimpleAuth.setup(container, application, {
       authorizerFactory: 'authorizer:oauth2-bearer',
     });

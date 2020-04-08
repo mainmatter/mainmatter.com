@@ -128,7 +128,7 @@ I simply added it myself:
 
 ```js
 App.AuthenticatedRESTAdapter = DS.RESTAdapter.extend({
-  ajax: function(url, type, hash) {
+  ajax: function (url, type, hash) {
     hash = hash || {};
     hash.headers = hash.headers || {};
     hash.headers['X-AUTHENTICATION-TOKEN'] = this.authToken;
@@ -145,7 +145,7 @@ which would mean that for some reason the authentication token became invalid,
 the session data on the client is deleted** and we require a fresh login:
 
 ```js
-DS.rejectionHandler = function(reason) {
+DS.rejectionHandler = function (reason) {
   if (reason.status === 401) {
     App.Auth.destroy();
   }
@@ -165,7 +165,7 @@ regular [`Ember.Route`](http://emberjs.com/api/classes/Ember.Route.html)
 
 ```js
 App.AuthenticatedRoute = Ember.Route.extend({
-  enter: function() {
+  enter: function () {
     if (
       !Ember.isEmpty(App.Auth.get('authToken')) &&
       !Ember.isEmpty(App.Auth.get('accountId'))

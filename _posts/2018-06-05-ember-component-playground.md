@@ -97,7 +97,7 @@ right prefix:
 
 ```js
 let usageComponents = Object.keys(require.entries).filter(
-  path => path.indexOf('myapp/templates/components/usage/') === 0,
+  (path) => path.indexOf('myapp/templates/components/usage/') === 0,
 );
 ```
 
@@ -135,8 +135,8 @@ function findUsageComponents() {
   let pathPrefix = 'myapp/templates/components/usage/';
 
   return Object.keys(require.entries)
-    .filter(path => path.indexOf(pathPrefix) === 0)
-    .map(path => path.slice(pathPrefix.length))
+    .filter((path) => path.indexOf(pathPrefix) === 0)
+    .map((path) => path.slice(pathPrefix.length))
     .sort();
 }
 ```

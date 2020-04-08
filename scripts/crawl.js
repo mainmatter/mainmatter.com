@@ -9,7 +9,7 @@ const SERVER_URL = 'http://localhost:3000';
 let server = express();
 server.use(express.static(DIST_PATH));
 
-server.listen(3000, function() {
+server.listen(3000, function () {
   let successes = 0;
   let errors = 0;
 

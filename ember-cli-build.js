@@ -16,7 +16,7 @@ const _ = require('lodash');
 
 function findAllComponents() {
   let routes = require('./config/routes-map')();
-  let routedComponents = Object.keys(routes).reduce(function(acc, key) {
+  let routedComponents = Object.keys(routes).reduce(function (acc, key) {
     let component = routes[key].component;
     if (component) {
       acc.push(component);
@@ -27,14 +27,14 @@ function findAllComponents() {
   let recentContentComponents = _.chain(collectPosts(path.join(__dirname, '_posts')).posts)
     .map('meta.topic')
     .uniq()
-    .map(topic => `RecentPosts${_.capitalize(topic)}`)
+    .map((topic) => `RecentPosts${_.capitalize(topic)}`)
     .value();
 
   let staticComponents = glob
     .sync('*/', {
       cwd: path.join(__dirname, 'src/ui/components'),
     })
-    .map(component => component.replace(/\/$/, ''));
+    .map((component) => component.replace(/\/$/, ''));
 
   let allComponents = routedComponents.concat(staticComponents).concat(recentContentComponents);
   return [...new Set(allComponents)];
@@ -74,7 +74,7 @@ class SimplabsApp extends GlimmerApp {
     });
 
     let { posts, authors } = collectPosts(path.join(__dirname, '_posts'));
-    let blogPostTrees = posts.map(post => {
+    let blogPostTrees = posts.map((post) => {
       let [blogPostTree] = this._splitBundle(jsTree, {
         componentPrefix: post.componentName,
         file: `blog/${post.queryPath}.js`,
@@ -83,7 +83,7 @@ class SimplabsApp extends GlimmerApp {
       return blogPostTree;
     });
 
-    let blogAuthorTrees = authors.map(author => {
+    let blogAuthorTrees = authors.map((author) => {
       let [blogAuthorTree] = this._splitBundle(jsTree, {
         componentPrefix: author.componentName,
         file: `blog/author-${author.twitter}.js`,
@@ -95,7 +95,7 @@ class SimplabsApp extends GlimmerApp {
     let blogPages = _.chunk(posts, 10);
     let blogPageTrees = blogPages.map((posts, i) => {
       let page = i + 1;
-      let postPrefixes = posts.map(post => post.componentName).join('|');
+      let postPrefixes = posts.map((post) => post.componentName).join('|');
       let [blogPageTree] = this._splitBundle(jsTree, {
         componentPrefix: `PageBlogPage${page}|${postPrefixes}`,
         file: `blog/page/${page}.js`,
@@ -230,7 +230,7 @@ class SimplabsApp extends GlimmerApp {
   }
 }
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   let allComponents = findAllComponents();
 
   let app = new SimplabsApp(defaults, {

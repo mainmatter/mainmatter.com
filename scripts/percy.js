@@ -11,19 +11,19 @@ const ROUTES_MAP = require('../config/routes-map')();
 let routes = ROUTES_MAP;
 let paths = Object.keys(routes);
 
-let nonBlogPaths = paths.filter(path => !path.startsWith('/blog'));
+let nonBlogPaths = paths.filter((path) => !path.startsWith('/blog'));
 let latestBlogPostsPaths = paths
-  .filter(path => path.startsWith('/blog/20'))
+  .filter((path) => path.startsWith('/blog/20'))
   .sort()
   .slice(-5);
-let sampleBlogAuthorsPaths = paths.filter(path => path.startsWith('/blog/author')).slice(-2);
+let sampleBlogAuthorsPaths = paths.filter((path) => path.startsWith('/blog/author')).slice(-2);
 
 let snapshotPaths = [...nonBlogPaths, ...latestBlogPostsPaths, ...sampleBlogAuthorsPaths, '/blog'];
 
 let server = express();
 server.use(express.static(DIST_PATH));
 
-server.listen(3000, async function() {
+server.listen(3000, async function () {
   await PercyScript.run(async (page, percySnapshot) => {
     for (let path of snapshotPaths) {
       await page.goto(`http://localhost:3000${path}`);

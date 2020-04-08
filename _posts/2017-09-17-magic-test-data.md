@@ -30,7 +30,7 @@ Act Assert and it's Amazing. The TL;DR is:
 The simple example is:
 
 ```js
-test('toLowerCase makes string all lower case', function(assert) {
+test('toLowerCase makes string all lower case', function (assert) {
   /* Arrange */
   const string = 'ABC';
 
@@ -169,7 +169,7 @@ export default Component.extend({
 ```
 
 ```js
-test('displayCountries will add a flag key to a country object', function(assert) {
+test('displayCountries will add a flag key to a country object', function (assert) {
   /* Arrange */
   const component = this.subject({
     countries: [

@@ -102,7 +102,7 @@ To actually use the `authToken` when making server requests, **we register an
 authentication token in a header as long as the request is sent to our domain**:
 
 ```js
-Ember.$.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+Ember.$.ajaxPrefilter(function (options, originalOptions, jqXHR) {
   if (!jqXHR.crossDomain) {
     jqXHR.setRequestHeader(
       'X-AUTHENTICATION-TOKEN',

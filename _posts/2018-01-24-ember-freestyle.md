@@ -127,7 +127,7 @@ According to the `ember-freestyle` documentation we are supposed to "blacklist"
 the addon in the `ember-cli-build.js` file of our app:
 
 ```js
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   let environment = process.env.EMBER_ENV;
   let pluginsToBlacklist =
     environment === 'production' ? ['ember-freestyle'] : [];

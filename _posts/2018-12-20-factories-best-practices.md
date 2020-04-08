@@ -75,7 +75,7 @@ defaults. Some pseudocode as we're so far into the post without a single line of
 it.
 
 ```js
-test('orders with deliveries from different carriers arriving on the same day, only show 1 estimated delivery date', function(assert) {
+test('orders with deliveries from different carriers arriving on the same day, only show 1 estimated delivery date', function (assert) {
   let tomorrow = Date.tomorrow();
   let dhl = make('delivery', {
     estimatedDeliveryDate: tomorrow,
@@ -143,7 +143,7 @@ beforeEach(() => {
 });
 
 // Added by me on day 1
-test('bastards cannot inherit', function(assert) {
+test('bastards cannot inherit', function (assert) {
   assert.ok(
     rob.canInherit,
     'The King in the North, Rob Stark shall inherit Winterfell',
@@ -155,7 +155,7 @@ test('bastards cannot inherit', function(assert) {
 });
 
 // Added by you on day 10
-test('Leaders can raise armies', function(assert) {
+test('Leaders can raise armies', function (assert) {
   /* let's introduce someone who can tell us interesting things about Jon and Rob */
   let threeEyedRaven = make('brandon_stark');
 
@@ -170,7 +170,7 @@ test('Leaders can raise armies', function(assert) {
 });
 
 //Added by me on day 102
-test('Jon is better than Rob', function(assert) {
+test('Jon is better than Rob', function (assert) {
   let threeEyedRaven = make('brandon_stark');
 
   assert.ok(
@@ -337,7 +337,7 @@ Using Mirage in an acceptance test look like this.
 ```js
 //acceptance/foo-index-test.js
 
-test('The page shows me all the foos', async function(assert) {
+test('The page shows me all the foos', async function (assert) {
   server.createList('foo', 5);
 
   await visit('/foos');
@@ -363,9 +363,9 @@ certain helper functions that you can use with Factory Guy if you want.</small>
 ```js
 //acceptance/foo-index-test.js
 
-test('The page shows me all the foos', async function(assert) {
+test('The page shows me all the foos', async function (assert) {
   // This is pretender
-  server.get('/api/foos', function() {
+  server.get('/api/foos', function () {
     // buildList is ember-data-factory-guy
     return [200, {}, buildList('foo', 5)];
   });
