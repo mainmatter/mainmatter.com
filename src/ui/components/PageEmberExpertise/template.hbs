@@ -117,7 +117,36 @@
     </div>
   </div>
 
-  <ShapeFeatureEmberDocumentary />
+  <div layout:scope offset:class="after-21">
+    <div layout:class="split-leading" offset:class="after-5">
+      <div>
+        <p typography:class="small">
+          Ember.js: The Documentary
+        </p>
+        <p typography:class="lead">
+          Several of your team members appear in the Ember.js documentary. We were pleased to welcome the film crew at our office in Munich and again at EmberFest in Amsterdam for shooting scenes.
+        </p>
+        <ArrowLink @href="https://youtu.be/Cvz-9ccflKQ">
+          Watch the Video
+        </ArrowLink>
+      </div>
+    </div>
+    <div layout:class="bleed-right" block:class="shape-video-container">
+      <div block:class="shape-video">
+        <video
+          playsinline
+          autoplay
+          muted
+          loop
+          preload
+          block:class="video"
+          poster="/assets/images/emberdoc-simplabs.poster.jpg"
+        >
+          <source src="/assets/images/emberdoc-simplabs.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </div>
 
   <div layout:class="main" offset:class="after-21">
     <h2>
