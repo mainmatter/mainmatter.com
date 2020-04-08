@@ -5,12 +5,15 @@ github: mrmrcoleman
 twitter: mrmrcoleman
 topic: simplabs
 bio: 'Communications and Community Outreach Specialist'
-description: 'Mark Coleman announces our new client Qonto, a Paris based VC funded Fintech startup who are "the ideal banking alternative for freelancers, startups and SMEs."'
+description:
+  'Mark Coleman announces our new client Qonto, a Paris based VC funded Fintech
+  startup who are "the ideal banking alternative for freelancers, startups and
+  SMEs."'
 ---
 
-We're very pleased to announce that we've started working with [Qonto](https://qonto.eu/),
-a Paris based VC funded Fintech startup who are "the ideal banking alternative
-for freelancers, startups and SMEs."
+We're very pleased to announce that we've started working with
+[Qonto](https://qonto.eu/), a Paris based VC funded Fintech startup who are "the
+ideal banking alternative for freelancers, startups and SMEs."
 
 <!--break-->
 
@@ -26,17 +29,19 @@ and guide new development initiatives while establishing best practices and
 transferring knowledge to in-house engineers on the job via reviews and pairing
 sessions.
 
-Just as with previous Team Augmentation projects like [trainline](/cases/trainline/) this
-approach brings "double value for the client" says simlpabs CEO Marco
-Otte-Witte, "short term value is added by the client immediately gaining more
-engineering power, but additional long term value is added through improved
-architecture, code quality, processes and leveled up in-house engineers."
+Just as with previous Team Augmentation projects like
+[trainline](/cases/trainline/) this approach brings "double value for the
+client" says simlpabs CEO Marco Otte-Witte, "short term value is added by the
+client immediately gaining more engineering power, but additional long term
+value is added through improved architecture, code quality, processes and
+leveled up in-house engineers."
 
 simplabs engineers Tobias Bieniek and Ricardo Mendes who are both Ember.js core
 members are working on the Qonto project. They started by analyzing Qonto's code
 and found the templates were using the rather antiquated Emblem.js which nobody
 was really happy with but was difficult to migrate away from. To tackle this
-Tobias created and open sourced [emblem-migrator](https://github.com/simplabs/emblem-migrator/) which Qonto and
+Tobias created and open sourced
+[emblem-migrator](https://github.com/simplabs/emblem-migrator/) which Qonto and
 all other Emblem.js users can now use.
 
 Next simplabs engineers identified that Qonto's test suite speed was impeding

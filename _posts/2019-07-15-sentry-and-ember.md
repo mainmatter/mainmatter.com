@@ -5,14 +5,16 @@ github: Turbo87
 twitter: tobiasbieniek
 topic: ember
 bio: 'Senior Frontend Engineer, Ember CLI core team member'
-description: 'Tobias Bieniek explains how to set up Sentry for Ember.js applications using @sentry/browser instead of the now unnecessary ember-cli-sentry.'
+description:
+  'Tobias Bieniek explains how to set up Sentry for Ember.js applications using
+  @sentry/browser instead of the now unnecessary ember-cli-sentry.'
 og:
   image: /assets/images/posts/2019-07-15-sentry-and-ember/og-image.png
 ---
 
 Are you confident that your apps have no bugs? Do you not need a support team
-because no user ever complains about something not working? Then this post
-is not for you!
+because no user ever complains about something not working? Then this post is
+not for you!
 
 We use a lot of tools at simplabs to ensure reasonably high quality code, but
 occasionally something slips through. The important thing then is to notice and
@@ -26,13 +28,13 @@ fix it quickly. This post will focus on the "notice" part by using
 
 ## ember-cli-sentry
 
-The [`ember-cli-sentry`][ember-cli-sentry] addon has been around since 2015
-and nicely integrates the [`raven-js`][raven-js] library with Ember.js.
-What is `raven-js`? It is the official browser JavaScript client for Sentry.
+The [`ember-cli-sentry`][ember-cli-sentry] addon has been around since 2015 and
+nicely integrates the [`raven-js`][raven-js] library with Ember.js. What is
+`raven-js`? It is the official browser JavaScript client for Sentry.
 
-Well... it **was** the official browser JavaScript client for Sentry. In 2018
-it has been replaced by [`@sentry/browser`][sentry-browser] with an entirely
-new API.
+Well... it **was** the official browser JavaScript client for Sentry. In 2018 it
+has been replaced by [`@sentry/browser`][sentry-browser] with an entirely new
+API.
 
 What does that mean for `ember-cli-sentry`? We don't know! We have been
 experimenting with `@sentry/browser` though and we are starting to think that a
@@ -77,8 +79,8 @@ to your server too, so that Sentry can access them.
 
 In case you don't want other people to be able to read your original source code
 you can also upload the sourcemaps directly to Sentry. If you use
-[`ember-cli-deploy`][ember-cli-deploy] to publish your apps then you can use
-the [`ember-cli-deploy-sentry`][ember-cli-deploy-sentry] addon to do this
+[`ember-cli-deploy`][ember-cli-deploy] to publish your apps then you can use the
+[`ember-cli-deploy-sentry`][ember-cli-deploy-sentry] addon to do this
 automatically for each deployment.
 
 ## Setting up `@sentry/browser`
@@ -221,12 +223,13 @@ Sentry.captureException(new Error('with stack trace!! ✨'));
 ## Adding Additional Context
 
 Sentry, by default, records the IP of the user that has experienced the error.
-But when your app has user accounts and an authentication system, it is much more
-useful to know which specific user this has happened to. `@sentry/browser`
+But when your app has user accounts and an authentication system, it is much
+more useful to know which specific user this has happened to. `@sentry/browser`
 allows us to add additional context to the events it sends to the server.
 
 We could do that manually in the `beforeSend()` hook, but it is much easier to
-use the [`configureScope()`](https://docs.sentry.io/enriching-error-data/scopes/?platform=browsernpm#configuring-the-scope)
+use the
+[`configureScope()`](https://docs.sentry.io/enriching-error-data/scopes/?platform=browsernpm#configuring-the-scope)
 function for this:
 
 <!-- prettier-ignore -->
@@ -241,7 +244,8 @@ Sentry.configureScope(scope => {
 
 This will automatically add the user information for all errors/events that
 follow after this call. If you only want to add such information for a single
-event you can use the [`withScope()`](https://docs.sentry.io/enriching-error-data/scopes/?platform=browsernpm#local-scopes)
+event you can use the
+[`withScope()`](https://docs.sentry.io/enriching-error-data/scopes/?platform=browsernpm#local-scopes)
 function instead.
 
 ## Testing
@@ -260,18 +264,20 @@ this.owner.register('service:raven', Service.extend({
 But with `@sentry/browser` this becomes a little more complicated since there is
 no service anymore that could be mocked like that. We have experimented with
 this and found that pushing an additional scope on the stack and configuring a
-mock client for that scope seems to result in a useful way to assert whether
-an exception was correctly reported.
+mock client for that scope seems to result in a useful way to assert whether an
+exception was correctly reported.
 
 The details of this require its own blog post though, since they are a little
 less straight-forward than what we described above.
 
-If you have questions, want to know more or need help setting all of this up
-for your apps please [contact us][contact]. We're happy to help!
+If you have questions, want to know more or need help setting all of this up for
+your apps please [contact us][contact]. We're happy to help!
 
 [ember-cli-sentry]: https://github.com/ember-cli-sentry/ember-cli-sentry
-[raven-js]: https://github.com/getsentry/sentry-javascript/tree/master/packages/raven-js
-[sentry-browser]: https://github.com/getsentry/sentry-javascript/tree/master/packages/browser
+[raven-js]:
+  https://github.com/getsentry/sentry-javascript/tree/master/packages/raven-js
+[sentry-browser]:
+  https://github.com/getsentry/sentry-javascript/tree/master/packages/browser
 [ember-cli-deploy]: https://github.com/ember-cli-deploy/ember-cli-deploy
 [ember-cli-deploy-sentry]: https://github.com/dschmidt/ember-cli-deploy-sentry
 [ember-simple-auth]: https://github.com/simplabs/ember-simple-auth

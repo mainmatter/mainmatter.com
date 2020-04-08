@@ -4,7 +4,9 @@ author: 'Tobias Bieniek'
 github: Turbo87
 twitter: tobiasbieniek
 bio: 'Senior Frontend Engineer, Ember CLI core team member'
-description: 'Tobias Bieniek introduces best practices for simplifying and speeding up his work on open-source and other projects.'
+description:
+  'Tobias Bieniek introduces best practices for simplifying and speeding up his
+  work on open-source and other projects.'
 topic: misc
 ---
 
@@ -23,32 +25,34 @@ subsequent development of [GitHub] has made version control mainstream for open
 source projects.
 
 While many tutorials focus on using Git from the command line, we have found
-that using a graphical user interface to visualize the history graph can make
-it quite a bit easier for beginners to understand what is going on. One good
-example of such a tool is [Fork], which is freely available for Windows and macOS:
+that using a graphical user interface to visualize the history graph can make it
+quite a bit easier for beginners to understand what is going on. One good
+example of such a tool is [Fork], which is freely available for Windows and
+macOS:
 
 ![Screenshot of Fork](/assets/images/posts/2018-11-27-open-source-maintenance/git-fork.png#@1173-2346)
 
 When working on multiple different projects, it is useful to rely on similar
 conventions, for example, when naming things. In the context of Git this is most
-relevant when naming [remotes](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes),
-tags and branches.
+relevant when naming
+[remotes](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes), tags
+and branches.
 
 When we publish new releases we "tag" the release commits with a tag name like
 `v1.2.3`, corresponding to the new version. When working in the JavaScript
-ecosystem we use `yarn version` (or `npm version`) to automatically adjust
-the `version` field in the `package.json` file, commit the change and finally
-create a tag on the new commit.
+ecosystem we use `yarn version` (or `npm version`) to automatically adjust the
+`version` field in the `package.json` file, commit the change and finally create
+a tag on the new commit.
 
 For branches we use the default `master` branch as our main development branch.
 Feature branches are named after the thing that they are implementing or fixing
 and ideally only contain isolated, focused changes. Similar to the tag names we
-sometimes keep version branches around to support older releases with names
-like `v1.x` or `v2.3.x`.
+sometimes keep version branches around to support older releases with names like
+`v1.x` or `v2.3.x`.
 
-For remotes we use `upstream`, `origin` and for all other remotes the GitHub
-(or GitLab, BitBucket, etc.) username of the remote owner. `upstream` means the
-main project on GitHub and `origin` is my personal fork where I push feature
+For remotes we use `upstream`, `origin` and for all other remotes the GitHub (or
+GitLab, BitBucket, etc.) username of the remote owner. `upstream` means the main
+project on GitHub and `origin` is my personal fork where I push feature
 branches, which will turn into PRs against the `upstream` repository. Here is an
 example for our `qunit-dom` project on my machine:
 
@@ -59,9 +63,10 @@ example for our `qunit-dom` project on my machine:
 | `lukemelia`  | `git@github.com:lukemelia/qunit-dom.git`  |
 | `jackbeegan` | `git@github.com:jackbeegan/qunit-dom.git` |
 
-Why is this useful? Because it allows us to define [shell aliases](https://shapeshed.com/unix-alias/)
-for some of the most commonly used git commands for which we don't use a
-graphical user interface. Here are a few examples of things we regularly use:
+Why is this useful? Because it allows us to define
+[shell aliases](https://shapeshed.com/unix-alias/) for some of the most commonly
+used git commands for which we don't use a graphical user interface. Here are a
+few examples of things we regularly use:
 
 | Alias | Command                       | Description                                                                                           |
 | ----- | ----------------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -92,18 +97,18 @@ gph
 Having a good test suite is very important to be able to change code and be
 confident that the change is not breaking anything. This is one of the major
 reasons why we love [Ember.js], because it comes with a great testing system
-out-of-the-box and allows us to write tests for all of the critical parts of
-the apps that we develop.
+out-of-the-box and allows us to write tests for all of the critical parts of the
+apps that we develop.
 
 You can find more information on testing in Ember.js on the official
 [guides](https://guides.emberjs.com/release/testing/).
 
 But this topic not limited to just Ember.js, other ecosystems have similar
-tools. For Node.js the most popular testing solutions these days are [Jest]
-and [Mocha]. In the [Rust] ecosystem testing is already built into their
-package manager [cargo], but there are [plenty of crates](https://github.com/rust-unofficial/awesome-rust#testing)
-to make testing even more pleasant, including the very valuable [proptest]
-crate.
+tools. For Node.js the most popular testing solutions these days are [Jest] and
+[Mocha]. In the [Rust] ecosystem testing is already built into their package
+manager [cargo], but there are
+[plenty of crates](https://github.com/rust-unofficial/awesome-rust#testing) to
+make testing even more pleasant, including the very valuable [proptest] crate.
 
 ## Linting
 
@@ -136,8 +141,8 @@ this is relevant.
 One important thing to mention here is that CI can not only run your test suite
 but can often also do other things like publishing new versions of your
 projects. On most of our projects we have configured TravisCI to automatically
-publish new releases to [npm] whenever we push a new Git tag to the server.
-You can find instruction on how to configure this in their official
+publish new releases to [npm] whenever we push a new Git tag to the server. You
+can find instruction on how to configure this in their official
 [documentation](https://docs.travis-ci.com/user/deployment/npm/).
 
 ## Semantic Versioning
@@ -159,15 +164,16 @@ important rules:
    considered "unstable"
 
 Since the majority of package managers including [yarn], [cargo], [hex] and
-[bundler] follow these semantics when resolving dependencies, it is very important
-to comply with these rules. But they are also useful in order for your users
-to get a sense of what they can expect from a new release.
+[bundler] follow these semantics when resolving dependencies, it is very
+important to comply with these rules. But they are also useful in order for your
+users to get a sense of what they can expect from a new release.
 
 While this can be controversial, we consider dropping support for older Node.js,
-Elixir, Ruby, Rust, or other language releases a breaking change. This means that if
-your package [declares](https://docs.npmjs.com/files/package.json#engines)
-that it works with Node.js 4, and you release a new version that needs at least
-Node.js 6, then you should increase the **major** version.
+Elixir, Ruby, Rust, or other language releases a breaking change. This means
+that if your package
+[declares](https://docs.npmjs.com/files/package.json#engines) that it works with
+Node.js 4, and you release a new version that needs at least Node.js 6, then you
+should increase the **major** version.
 
 ## Dependency Update Services
 
@@ -177,33 +183,34 @@ on a test framework. While keeping the dependencies of a single project
 up-to-date is a manageable task, it is becoming a full-time job once you
 maintain a larger number of separate projects.
 
-Fortunately for us this is a task that can be automated quite well, at least
-if you have a good test suite and continuous integration set up. While we
-first used [Greenkeeper] for this task, we have lately transitioned to using
+Fortunately for us this is a task that can be automated quite well, at least if
+you have a good test suite and continuous integration set up. While we first
+used [Greenkeeper] for this task, we have lately transitioned to using
 [dependabot], which supports not only npm, but all sorts of different package
 managers, language ecosystems, and even monorepos.
 
 Dependabot will automatically open Pull Requests on your projects whenever one
 of your dependencies has published a new version. This will cause your CI
-service to run the test suite against that new dependency version and tell
-you whether it is compatible with your code or not. If configured, dependabot
-can also automatically merge those Pull Requests once CI has finished and the
-test suite passed.
+service to run the test suite against that new dependency version and tell you
+whether it is compatible with your code or not. If configured, dependabot can
+also automatically merge those Pull Requests once CI has finished and the test
+suite passed.
 
 ## Changelogs
 
 While Semantic Versioning helps your users to know if they need to expect
-breaking changes from a release, it is much better to have a human-readable
-list of changes that went into a release. This is what a "Changelog" is for.
-Typically this is a `CHANGELOG.md` file in the root folder of your project
-that lists all your released versions including the changes that went into
-each release.
+breaking changes from a release, it is much better to have a human-readable list
+of changes that went into a release. This is what a "Changelog" is for.
+Typically this is a `CHANGELOG.md` file in the root folder of your project that
+lists all your released versions including the changes that went into each
+release.
 
-It can be quite tedious to write these things by hand, but fortunately there
-are generators that can do most of the work for us. These generators can be
-divided into two groups:
+It can be quite tedious to write these things by hand, but fortunately there are
+generators that can do most of the work for us. These generators can be divided
+into two groups:
 
-1. the first group is based on [semantic commit messages](https://seesparkbox.com/foundry/semantic_commit_messages)
+1. the first group is based on
+   [semantic commit messages](https://seesparkbox.com/foundry/semantic_commit_messages)
    and lists all of the commits that are part of a certain release
 2. the second group is based upon GitHub Pull Requests (or similar) and uses
    issue/PR labels to categorize changes
@@ -215,11 +222,12 @@ list of very fine-grained changes that are not directly helpful to the user.
 Instead we use [lerna-changelog] to generate our changelogs from all of the
 merged pull requests that went into each of the releases. To make this work
 properly it is important to focus each pull request on only one single, logical
-change, and label it properly as either `enhancement`, `bug`, `breaking`, or
-any of the other supported/configured labels. To ensure that all of our projects
-use the same set of labels we use [github-label-sync].
+change, and label it properly as either `enhancement`, `bug`, `breaking`, or any
+of the other supported/configured labels. To ensure that all of our projects use
+the same set of labels we use [github-label-sync].
 
-An [example changelog](https://github.com/simplabs/qunit-dom/blob/master/CHANGELOG.md)
+An
+[example changelog](https://github.com/simplabs/qunit-dom/blob/master/CHANGELOG.md)
 can be seen on our qunit-dom project.
 
 ## Summary

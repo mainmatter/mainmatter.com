@@ -5,4 +5,5 @@ url: https://www.youtube.com/watch?v=BPmuR4mAQaw
 media: video
 ---
 
-Jessica Jordan demonstrates how to create an immersive web comic experience that is not only engaging for sighted users but accessible for everyone.
+Jessica Jordan demonstrates how to create an immersive web comic experience that
+is not only engaging for sighted users but accessible for everyone.

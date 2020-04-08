@@ -4,7 +4,10 @@ author: 'Tobias Bieniek'
 github: Turbo87
 twitter: tobiasbieniek
 bio: 'Senior Frontend Engineer, Ember CLI core team member'
-description: 'Tobias Bieniek introduces a mechanism for automatically discovering new components in Ember.js applications and showing them in an ember-freestyle playground.'
+description:
+  'Tobias Bieniek introduces a mechanism for automatically discovering new
+  components in Ember.js applications and showing them in an ember-freestyle
+  playground.'
 topic: ember
 ---
 
@@ -48,8 +51,8 @@ imagine that our `freestyle.hbs` would soon grow out of proportion. As with any
 other template in Ember.js we can tackle that problem by extracting components.
 
 In this case we can create a
-`lib/freestyle/app/templates/components/usage/styled-button.hbs` file that
-looks like this:
+`lib/freestyle/app/templates/components/usage/styled-button.hbs` file that looks
+like this:
 
 ```handlebars
 {{#freestyle-usage 'styled-button-example-1'}}
@@ -70,8 +73,8 @@ and in the `freestyle.hbs` template we use the following snippet instead:
 ```
 
 Now we would still have to add a subsection and a component for every component
-in our app that we want to include in the component playground, but overall
-the situation has gotten a lot more manageable.
+in our app that we want to include in the component playground, but overall the
+situation has gotten a lot more manageable.
 
 But there is always a way to improve the current situation so let's play around
 a little...
@@ -81,12 +84,12 @@ a little...
 What if we could ask Ember what "usage components" it knows about and then
 render them automatically in the `freestyle.hbs` template...? 🤔
 
-It turns out the `loader.js` dependency that every Ember.js project has
-provides us with an API to do exactly that. If we
-`import require from 'require';` and then look at `require.entries` we will
-see a map of all the known module names in your app and their corresponding
-module functions. We only care about the module names though so we can use
-`Object.keys(require.entries)` to get a list of all those module names.
+It turns out the `loader.js` dependency that every Ember.js project has provides
+us with an API to do exactly that. If we `import require from 'require';` and
+then look at `require.entries` we will see a map of all the known module names
+in your app and their corresponding module functions. We only care about the
+module names though so we can use `Object.keys(require.entries)` to get a list
+of all those module names.
 
 Next, we need to filter the list so that it only includes our "usage
 components". We can do so by using the `.filter()` method and checking for the
@@ -138,10 +141,10 @@ function findUsageComponents() {
 }
 ```
 
-With that JavaScript code out of the way we can focus on our template. Here,
-we now have a `components` list available with the names of all our "usage
-components". As usual with lists we will use a `{{#each}}`
-block to iterate over it:
+With that JavaScript code out of the way we can focus on our template. Here, we
+now have a `components` list available with the names of all our "usage
+components". As usual with lists we will use a `{{#each}}` block to iterate over
+it:
 
 ```handlebars
 {{#freestyle-guide title='My Awesome App'}}
@@ -159,14 +162,13 @@ block to iterate over it:
 {{/freestyle-guide}}
 ```
 
-If we visit the `/freestyle` route now, we should see a list of all our
-"usage components" that Ember.js knows about and usage examples for all of
-them.
+If we visit the `/freestyle` route now, we should see a list of all our "usage
+components" that Ember.js knows about and usage examples for all of them.
 
 ## Summary
 
 Just like Ember.js is able to automatically find components, models, and other
-modules when you put them in the right folder, our component playground can
-now do the same thing. "Convention over Configuration" saves us from the extra
-work of having to manually maintain the `freestyle.hbs` template by discovering
-the content automatically.
+modules when you put them in the right folder, our component playground can now
+do the same thing. "Convention over Configuration" saves us from the extra work
+of having to manually maintain the `freestyle.hbs` template by discovering the
+content automatically.

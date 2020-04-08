@@ -4,7 +4,9 @@ author: 'Tobias Bieniek'
 github: Turbo87
 twitter: tobiasbieniek
 bio: 'Senior Frontend Engineer, Ember CLI core team member'
-description: 'Tobias Bieniek shows how actix, the actor framework written in Rust, can be used to build a basic TCP client.'
+description:
+  'Tobias Bieniek shows how actix, the actor framework written in Rust, can be
+  used to build a basic TCP client.'
 topic: rust
 og:
   image: /assets/images/posts/2018-06-27-actix-tcp-client/og-image.png
@@ -27,10 +29,10 @@ correct dependency versions.**
 
 ## The Goal
 
-Our goal in this blog post is to build an `Actor` that connects to a certain
-TCP server, listens for new messages and forwards them to another `recipient`
-actor. For simplicity we'll assume that the server is using a line break after
-each message.
+Our goal in this blog post is to build an `Actor` that connects to a certain TCP
+server, listens for new messages and forwards them to another `recipient` actor.
+For simplicity we'll assume that the server is using a line break after each
+message.
 
 ## Project Setup
 
@@ -52,8 +54,8 @@ binary projects have a `main()` function and get compiled to executables, while
 library projects are used to share code and functionality at
 [crates.io](https://crates.io).
 
-Fun fact: did you know that [crates.io][crates] is an open-source project
-itself and built with Rust and [Ember.js][ember]?
+Fun fact: did you know that [crates.io][crates] is an open-source project itself
+and built with Rust and [Ember.js][ember]?
 
 [crates]: https://github.com/rust-lang/crates.io
 [ember]: https://emberjs.com/
@@ -78,15 +80,15 @@ project and add the following line _after_ the `[dependencies]` declaration:
 actix = "0.5"
 ```
 
-Now, whenever we build the project again, `cargo` will make sure to download
-the necessary dependencies from crates.io and build them before building the
-actual project. `cargo` is using a build cache though, so don't worry if it
-takes a long time if you first try to build it. The following builds should be
-much faster.
+Now, whenever we build the project again, `cargo` will make sure to download the
+necessary dependencies from crates.io and build them before building the actual
+project. `cargo` is using a build cache though, so don't worry if it takes a
+long time if you first try to build it. The following builds should be much
+faster.
 
 It's time to implement a basic `Actor` as the base for our experiment. We don't
-want to worry too much about project organization for now, so let's implement
-it right in the `src/main.rs` file:
+want to worry too much about project organization for now, so let's implement it
+right in the `src/main.rs` file:
 
 ```rust
 extern crate actix;
@@ -142,9 +144,9 @@ impl Actor for TcpClientActor {
 }
 ```
 
-If we use `cargo run` again, the "TcpClientActor started!" message should
-appear on the screen, and the app should keep running because we have
-implemented nothing that would stop the actor.
+If we use `cargo run` again, the "TcpClientActor started!" message should appear
+on the screen, and the app should keep running because we have implemented
+nothing that would stop the actor.
 
 First milestone achieved! 🎉
 
@@ -188,22 +190,22 @@ The `Connector` actor can be used to perform DNS lookups, or connect to remote
 servers via TCP, which is exactly what we want!
 
 The `Connector::from_registry()` function returns an `Addr` instance for the
-`Connector` and we can use the `send()` method on it to send a `Connect`
-message and wait for the answer (using a `Future`).
+`Connector` and we can use the `send()` method on it to send a `Connect` message
+and wait for the answer (using a `Future`).
 
 Next we use the `into_actor()` modifier to transform the `Future` into another
 kind of `Future`, where we get passed not only the result, but also the actor
-instance and the context in any callbacks that we implement. This is helpful
-to work around the Rust compiler complaining about lifetime issues.
+instance and the context in any callbacks that we implement. This is helpful to
+work around the Rust compiler complaining about lifetime issues.
 
 Now we're ready to use the result and we do so by implementing a callback for
-the `map()` method. We'll keep it simple for now and just print a message to
-the terminal whether the connection was successful or not.
+the `map()` method. We'll keep it simple for now and just print a message to the
+terminal whether the connection was successful or not.
 
 Since we have to handle two different kinds of errors here (`ConnectorError` and
-`MailboxError`) we have to implement two different error handlers too. They
-have the same code but since the error classes are different, they can't easily
-share the same implementation unfortunately.
+`MailboxError`) we have to implement two different error handlers too. They have
+the same code but since the error classes are different, they can't easily share
+the same implementation unfortunately.
 
 Finally, we block the current thread using the `wait()` method until the
 `Future` is resolved.
@@ -223,9 +225,9 @@ is using underneath.
 
 [tokio]: https://tokio.rs/
 
-The version of `actix` that we are currently using (v0.5.8) has dependencies
-on v0.1 of the `tokio` libraries, so to avoid unnecessary conflicts we will use
-the same versions. Let's add the new dependencies to the `Cargo.toml` file:
+The version of `actix` that we are currently using (v0.5.8) has dependencies on
+v0.1 of the `tokio` libraries, so to avoid unnecessary conflicts we will use the
+same versions. Let's add the new dependencies to the `Cargo.toml` file:
 
 ```toml
 tokio-codec = "0.1"
@@ -252,9 +254,9 @@ complaining about the `stream` variable not being used. Let's fix that by
 reading something from the TCP stream.
 
 A `TcpStream` in the context of `tokio` is the wording for the TCP connection
-between a client and a server, and includes both the read and write parts of
-the connection. Since we only care about the read part for now we should split
-the stream into the two parts and focus on the read part for now:
+between a client and a server, and includes both the read and write parts of the
+connection. Since we only care about the read part for now we should split the
+stream into the two parts and focus on the read part for now:
 
 ```rust
 Ok(stream) => {
@@ -282,8 +284,8 @@ let line_reader = FramedRead::new(r, LinesCodec::new());
 This combination of `LinesCodec` and `FramedRead` from the `tokio-codecs` crate
 can be used to work with the `Read` trait in a more comfortable way. The
 `FramedRead` instance acts as an asynchronous stream of values that we could
-call `poll()` on, or we'll attach it to the actor in a more convenient way
-by implementing the `StreamHandler` trait from `actix`:
+call `poll()` on, or we'll attach it to the actor in a more convenient way by
+implementing the `StreamHandler` trait from `actix`:
 
 ```rust
 impl StreamHandler<String, std::io::Error> for TcpClientActor {
@@ -301,8 +303,8 @@ ctx.add_stream(line_reader);
 
 right below the line that constructs the `FramedRead` instance.
 
-I won't spoiler anything, but take a bit of time and see what happens now if
-you start `cargo run` again... 🚀
+I won't spoiler anything, but take a bit of time and see what happens now if you
+start `cargo run` again... 🚀
 
 ## Forward messages to other actors
 
@@ -347,9 +349,9 @@ for `ReceivedLine` messages, and print them to the terminal once received.
 Next, we will need to adjust our `TcpClientActor` implementation to no longer
 print messages by itself, but instead forward them to the second actor. For that
 the `TcpClientActor` needs to know where to send them. We could save the
-`Addr<_, ConsoleLogger>` instance in the `TcpClientActor` struct, but that
-would create a tight coupling between those actors, and we want the
-`TcpClientActor` implementation to be as generic as possible.
+`Addr<_, ConsoleLogger>` instance in the `TcpClientActor` struct, but that would
+create a tight coupling between those actors, and we want the `TcpClientActor`
+implementation to be as generic as possible.
 
 The more generic solution is to use the `Recipient` struct of `actix`:
 
@@ -397,11 +399,11 @@ will see that everything still works! 🎥
 ## Summary
 
 We hope that by now you're a little more comfortable around actors and how to
-use and implement them in Rust. This blog post has shown how two actors can
-work together without any tight coupling other than the messages they exchange.
-We have also demonstrated how to use an actor as a TCP client, which can be
-used as a gateway for other actors that want to share the same connection to the
-server. In the next blog post of this series we will explore how to send
-messages and keep connections and actors alive using the `Supervisor`.
+use and implement them in Rust. This blog post has shown how two actors can work
+together without any tight coupling other than the messages they exchange. We
+have also demonstrated how to use an actor as a TCP client, which can be used as
+a gateway for other actors that want to share the same connection to the server.
+In the next blog post of this series we will explore how to send messages and
+keep connections and actors alive using the `Supervisor`.
 
 👋

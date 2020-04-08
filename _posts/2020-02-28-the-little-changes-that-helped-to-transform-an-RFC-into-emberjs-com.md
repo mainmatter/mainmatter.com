@@ -5,7 +5,10 @@ github: pichfl
 twitter: pichfl
 topic: design
 bio: 'Consultant for Design & Technology'
-description: 'Florian Pichler highlights details of the just released overhaul of the landing page for Ember.js, looking specifically at how a distributed team of volunteers can achieve consistent design.'
+description:
+  'Florian Pichler highlights details of the just released overhaul of the
+  landing page for Ember.js, looking specifically at how a distributed team of
+  volunteers can achieve consistent design.'
 og:
   image: /assets/images/posts/2020-02-28-the-little-changes-that-helped-to-transform-an-RFC-into-emberjs-com/og-image.png
 ---
@@ -31,17 +34,19 @@ final website.
 
 ![Side by side comparison of the original website mockup from the RFC and the final mockup created by me](/assets/images/posts/2020-02-28-the-little-changes-that-helped-to-transform-an-RFC-into-emberjs-com/before-after.jpg#full@1200-2761)
 
-<small>You can also download a [full sized comparision, side by side](https://user-images.githubusercontent.com/194641/75565735-c9559700-5a4e-11ea-8dd2-5bae88a694e0.jpg). Be warned, it is huge.</small>
+<small>You can also download a
+[full sized comparision, side by side](https://user-images.githubusercontent.com/194641/75565735-c9559700-5a4e-11ea-8dd2-5bae88a694e0.jpg).
+Be warned, it is huge.</small>
 
 ## Large changes
 
-After a discussion with the Ember Learning Core team, the "Try out" section was removed.
-There wasn't enough time left to create the section in a meaningful way and
-it didn't communicate the real strengths of Ember.js.
+After a discussion with the Ember Learning Core team, the "Try out" section was
+removed. There wasn't enough time left to create the section in a meaningful way
+and it didn't communicate the real strengths of Ember.js.
 
 We unfolded the tabs in the Batteries included section, so the core benefits of
-Ember are visible right away. This gave us a chance to add playful
-illustrations and lighten up the otherwise quite technical content.
+Ember are visible right away. This gave us a chance to add playful illustrations
+and lighten up the otherwise quite technical content.
 
 ## Little changes, big effort
 
@@ -72,10 +77,10 @@ layout organization to any element on a page.
 ![Slate gradient, Ember brand color with gradiated variations](/assets/images/posts/2020-02-28-the-little-changes-that-helped-to-transform-an-RFC-into-emberjs-com/gradient.png#@860-1720)
 
 The RFC mockup introduces a new slate color to mark a new era for Ember. The
-Ember red represents the community. The new slate stands for the
-professionalism and strong foundation in quality. In short, they are meant to
-symbolize that Ember's strength lies in its an amazing community and reliability
-for businesses.
+Ember red represents the community. The new slate stands for the professionalism
+and strong foundation in quality. In short, they are meant to symbolize that
+Ember's strength lies in its an amazing community and reliability for
+businesses.
 
 As you might have noticed, we are still lacking secondary colors, which are not
 settled yet and will become part of the second pass of changes to the Ember.js
@@ -104,19 +109,19 @@ Beyond the purely visual aspects of the design, I also introduced some
 lightweight CSS helpers for things like spacing, font sizes, grid and layout.
 Some of them were inspired by [Tailwind][tailwind], while others are explicitly
 narrow in their options to ensure overall consistency and to make them easier
-for contributors of the website to work with. Take a look at the
-[styleguide preview][styleguide-preview] to learn more about this.
+for contributors of the website to work with. Take a look at the [styleguide
+preview][styleguide-preview] to learn more about this.
 
 [tailwind]: https://tailwindcss.com
 [styleguide-preview]: https://deploy-preview-145--ember-styleguide.netlify.com/
 
 ## Thanks
 
-Allocated time donated by simplabs allowed me and others to bring the
-styleguide and overall design of the website to what you can see online now. I
-was very honored by being invited to this project and my design changes were
-just an ever so small piece of the huge effort that went into the website from
-every single human on this team.
+Allocated time donated by simplabs allowed me and others to bring the styleguide
+and overall design of the website to what you can see online now. I was very
+honored by being invited to this project and my design changes were just an ever
+so small piece of the huge effort that went into the website from every single
+human on this team.
 
 I'm glad we made it, and I'm looking forward to contributing more and updating
 all the other aspecs of the Ember.js website landscape soon.

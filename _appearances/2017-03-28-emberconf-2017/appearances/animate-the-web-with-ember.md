@@ -5,5 +5,5 @@ url: https://www.youtube.com/watch?v=wFJPIjRTIVU
 media: video
 ---
 
-Jessica Jordan shows how to do animations on the web leveraging HTML5 canvas
-and the Web Animation API.
+Jessica Jordan shows how to do animations on the web leveraging HTML5 canvas and
+the Web Animation API.

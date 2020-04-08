@@ -5,5 +5,5 @@ url: https://www.youtube.com/watch?v=h3YtViXranw
 media: video
 ---
 
-Jessica Jordan shares some insights to what defines the Ember Community and
-what drives it forward.
+Jessica Jordan shares some insights to what defines the Ember Community and what
+drives it forward.

@@ -4,7 +4,9 @@ author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
 bio: 'Founding Director of simplabs, author of Ember Simple Auth'
-description: 'Marco Otte-Witte dives deep into the details of how simplabs built Breethe, an open source progressive web app, with Glimmer.js.'
+description:
+  'Marco Otte-Witte dives deep into the details of how simplabs built Breethe,
+  an open source progressive web app, with Glimmer.js.'
 topic: ember
 og:
   image: /assets/images/posts/2018-07-03-building-a-pwa-with-glimmer-js/og-image.png
@@ -13,24 +15,24 @@ og:
 We recently set out to build a progressive web app with
 [Glimmer.js](http://glimmerjs.com). Instead of building it with
 [Ember.js](http://emberjs.com), which is our standard framework of choice, we
-wanted to see how suitable for prime-time Glimmer.js is and what we'd be able
-to accomplish with it. To put it short, we are really happy with how building
-the app went and the result that we were able to achieve. In this series of
-posts, we will give some insights into how we built the app, why we made
-particular decisions and what the result looks like.
+wanted to see how suitable for prime-time Glimmer.js is and what we'd be able to
+accomplish with it. To put it short, we are really happy with how building the
+app went and the result that we were able to achieve. In this series of posts,
+we will give some insights into how we built the app, why we made particular
+decisions and what the result looks like.
 
 <!--break-->
 
 ## Breethe
 
 While this project was mostly meant as a technology spike to validate Glimmer's
-suitability for real projects as well as testing some techniques for running
-and serving web apps that we had in our minds for some time, we wanted to build
+suitability for real projects as well as testing some techniques for running and
+serving web apps that we had in our minds for some time, we wanted to build
 something useful and meaningful. What we came up with is
-[Breethe](https://breethe.app), a progressive web app that gives users quick
-and easy access to air quality data for locations around the world. Pollution
-and global warming are getting worse rather than better and having easy access
-to data that shows how bad the situation actually is, is the first step for
+[Breethe](https://breethe.app), a progressive web app that gives users quick and
+easy access to air quality data for locations around the world. Pollution and
+global warming are getting worse rather than better and having easy access to
+data that shows how bad the situation actually is, is the first step for
 everyone to question their decisions and maybe change a few things in their
 daily lives.
 
@@ -113,10 +115,10 @@ _setupRouting() {
 First of all, we create a new router instance. We then map URLs to the
 corresponding states of the app. The routes `/`, `/search` and
 `/search/:searchTerm` all map to the `MODE_SEARCH` mode that renders the search
-form and search results if there are any. The `/location/:locationId` route
-maps to the `MODE_RESULTS` mode that renders a particular location's data and
-quality score. We use the `mode` property in two tracked properties
-`isSearchMode` and `isResultsMode`.
+form and search results if there are any. The `/location/:locationId` route maps
+to the `MODE_RESULTS` mode that renders a particular location's data and quality
+score. We use the `mode` property in two tracked properties `isSearchMode` and
+`isResultsMode`.
 [Tracked properties](https://glimmerjs.com/guides/tracked-properties) are
 Glimmer's equivalent to Ember's computed properties and will result in the
 component being re-rendered when their value changes.
@@ -145,8 +147,8 @@ component for the current mode:
 ```
 
 You might notice the `@` prefix of the `searchTerm` and `locationId` properties
-that are set on the components. This prefix distinguishes properties that are
-to be passed to the component instance as opposed to attributes that will be
+that are set on the components. This prefix distinguishes properties that are to
+be passed to the component instance as opposed to attributes that will be
 applied to the component's root DOM element.
 
 The `Search` component renders the `SearchForm` component that implements the
@@ -159,10 +161,10 @@ text field for the search term and the button to submit the search:
 />
 ```
 
-`@onSubmit={{action searchByTerm}}` assigns the
-`searchByTerm` method of the `Search` component as an action to the `@onSubmit`
-property of the `SearchForm` component. Whenever the search form is submitted,
-the `SearchForm` component invokes the assigned action:
+`@onSubmit={{action searchByTerm}}` assigns the `searchByTerm` method of the
+`Search` component as an action to the `@onSubmit` property of the `SearchForm`
+component. Whenever the search form is submitted, the `SearchForm` component
+invokes the assigned action:
 
 ```ts
 submitSearch(event) {
@@ -188,9 +190,9 @@ async searchByTerm(searchTerm) {
 }
 ```
 
-The `loading` and `locations` properties are tracked properties so that
-changing them results in the component to be re-rendered. They are used in the
-template like this:
+The `loading` and `locations` properties are tracked properties so that changing
+them results in the component to be re-rendered. They are used in the template
+like this:
 
 ```hbs
 <div class="results">
@@ -210,10 +212,10 @@ template like this:
 </div>
 ```
 
-This is just a brief overview of how an application built with Glimmer.js
-works. We will cover some of these things in more detail in future posts,
-particularly how we load and manage data with Orbit.js. For a closer look on
-the inner workings of Breethe, check out the
+This is just a brief overview of how an application built with Glimmer.js works.
+We will cover some of these things in more detail in future posts, particularly
+how we load and manage data with Orbit.js. For a closer look on the inner
+workings of Breethe, check out the
 [code on github](https://github.com/simplabs/breethe-client).
 
 ## From Glimmer.js to Ember.js
@@ -272,9 +274,15 @@ module('Component: MeasurementRow', function(hooks) {
         @unit="ppm"
       />
     `);
-    let label = this.containerElement.querySelector('[data-test-measurement-label]').textContent.trim();
-    let value = this.containerElement.querySelector('[data-test-measurement-value]').textContent.trim();
-    let unit = this.containerElement.querySelector('[data-test-measurement-unit]').textContent.trim();
+    let label = this.containerElement
+      .querySelector('[data-test-measurement-label]')
+      .textContent.trim();
+    let value = this.containerElement
+      .querySelector('[data-test-measurement-value]')
+      .textContent.trim();
+    let unit = this.containerElement
+      .querySelector('[data-test-measurement-unit]')
+      .textContent.trim();
 
     assert.equal(label, 'PM25', 'Parameter is rendered');
     assert.equal(value, '12', 'Value is rendered');
@@ -303,8 +311,8 @@ available for Ember.js applications, check out
 Glimmer.js' testing APIs still have some shortcomings (see
 [this issue](https://github.com/glimmerjs/glimmer.js/issues/14)) and are not
 entirely ready for prime time. In order to test some more advanced component
-behaviors, we use [Puppeteer](https://pptr.dev) to run the entire application
-in a headless browser.
+behaviors, we use [Puppeteer](https://pptr.dev) to run the entire application in
+a headless browser.
 
 ## Outlook
 

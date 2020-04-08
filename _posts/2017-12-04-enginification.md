@@ -4,15 +4,17 @@ author: 'Clemens Müller'
 github: pangratz
 twitter: pangratz
 bio: 'Full-Stack Engineer, Ember Data core team member'
-description: 'Clemens Müller gives an overview of Ember Engines and shows how they can be used to reduce the footprint of big applications for an improved startup time.'
+description:
+  'Clemens Müller gives an overview of Ember Engines and shows how they can be
+  used to reduce the footprint of big applications for an improved startup time.'
 topic: ember
 ---
 
 We recently improved the initial load time of an Ember.js app for mobile
-clients, by using [Ember Engines](http://ember-engines.com/) and leveraging
-that to lazily loaded parts of the app's code. In this blog post we're going to
-show how we extracted the engine out of the app and discuss some smaller issues
-we ran into along the way and how we solved them. So let's dive right in!
+clients, by using [Ember Engines](http://ember-engines.com/) and leveraging that
+to lazily loaded parts of the app's code. In this blog post we're going to show
+how we extracted the engine out of the app and discuss some smaller issues we
+ran into along the way and how we solved them. So let's dive right in!
 
 <!--break-->
 
@@ -20,9 +22,9 @@ we ran into along the way and how we solved them. So let's dive right in!
 
 The app is a mobile ticket counter for rail tickets. The basic flow through the
 app is as follows: a user enters an departure and arrival station and specifies
-the dates and passengers of the journey. After a search is initiated the
-results are shown, a specific trip is chosen, details like seating preference
-and passenger details are entered, the payment is processed and at the end, the
+the dates and passengers of the journey. After a search is initiated the results
+are shown, a specific trip is chosen, details like seating preference and
+passenger details are entered, the payment is processed and at the end, the
 details of the booked trip are shown and the purchased tickets can be
 downloaded.
 
@@ -35,7 +37,8 @@ components, 24 models which result in the following asset sizes:
 | `vendor.js` | 1.51 MB (342.87 KB gzipped)   |
 | `app.css`   | 104.31 KB (19.25 KB gzipped)  |
 
-Taken from the [Ember Engine RFC](https://github.com/emberjs/rfcs/blob/master/text/0010-engines.md):
+Taken from the
+[Ember Engine RFC](https://github.com/emberjs/rfcs/blob/master/text/0010-engines.md):
 
 > Engines allow multiple logical applications to be composed together into a
 > single application from the user's perspective.
@@ -44,18 +47,17 @@ As users need to fill in the search form - specify what kind of ticket they are
 looking for and for which connection - before they can even proceed to the next
 step, there is no reason to load all of the code that supports the subsequent
 booking flow on application startup. All of that code can be loaded lazily once
-the user proceeds to the next step by actually initiating a search or even
-while they are filling out the login form.
+the user proceeds to the next step by actually initiating a search or even while
+they are filling out the login form.
 
 ## Extract common functionality used in app into an addon
 
 One fundamental design principle of engines is that they are isolated from the
 hosting app. It is possible to pass in services from the hosting app but apart
 from that, engines don't have access to anything of the app which mounts the
-engine.
-In order for components, helpers and styles to be accessible from both the host
-app and the engine, those common elements need to be put into an addon, which
-then the app and the engine depend on.
+engine. In order for components, helpers and styles to be accessible from both
+the host app and the engine, those common elements need to be put into an addon,
+which then the app and the engine depend on.
 
 We're using an in repo addon for that:
 
@@ -82,7 +84,8 @@ git add lib/common/app/components/loading-indicator.js
 ```
 
 Since the component is now located within the `addon` folder, we need to modify
-`lib/common/addon/components/loading-indicator.js` so the correct layout is used:
+`lib/common/addon/components/loading-indicator.js` so the correct layout is
+used:
 
 ```js
 import layout from '../templates/components/loading-indicator';
@@ -116,8 +119,8 @@ git mv app/styles/components/loading-indicator.scss \
 ```
 
 Apart from this, we also need to create a file which includes all the styles
-from the common components and helpers. By this all the styles from the
-`common` addon are included in the hosting app:
+from the common components and helpers. By this all the styles from the `common`
+addon are included in the hosting app:
 
 ```scss
 // lib/common/app/styles/common.scss
@@ -149,8 +152,9 @@ engine as well:
 ember generate in-repo-addon booking-flow
 ```
 
-After that, setting up the in-repo engine according to [the guides](http://ember-engines.com/guide/creating-an-engine)
-is pretty straight forward. At the end of that we have an engine, located at
+After that, setting up the in-repo engine according to
+[the guides](http://ember-engines.com/guide/creating-an-engine) is pretty
+straight forward. At the end of that we have an engine, located at
 `lib/booking-flow`, so now it's time to move relevant routes, components,
 templates, ... out of `app/` into it.
 
@@ -175,14 +179,14 @@ can re-use the common elements within the engine. Let's take a look at
 
 After that we can start to move all the routes, components, services which are
 only used within the booking-flow engine into the corresponding folders within
-`lib/booking-flow/addon/`. The nice thing about Ember Engines is that they
-don't introduce any new concepts in terms of location of the files. So a simple
+`lib/booking-flow/addon/`. The nice thing about Ember Engines is that they don't
+introduce any new concepts in terms of location of the files. So a simple
 `git mv` does the trick.
 
-The booking-flow addon should use the same style definitions as the hosting
-app, so we'd like to import the common style definitions within the
-booking-flow engines styles. For the imports to work properly, we need to
-add the path to the `common` addon to the `sassOptions` of the engine:
+The booking-flow addon should use the same style definitions as the hosting app,
+so we'd like to import the common style definitions within the booking-flow
+engines styles. For the imports to work properly, we need to add the path to the
+`common` addon to the `sassOptions` of the engine:
 
 ```js
 // lib/booking-flow/index.js
@@ -226,9 +230,9 @@ nifty feature of Ember Engines…
 ## Make it lazy
 
 After we extracted the `common` addon and the `booking-flow` engine, we are
-ready to load the engine lazily to actually reduce the amount of JavaScript
-that needs to be loaded, parsed and compiled to boot up the application. This
-is as hard work as switching a boolean:
+ready to load the engine lazily to actually reduce the amount of JavaScript that
+needs to be loaded, parsed and compiled to boot up the application. This is as
+hard work as switching a boolean:
 
 ```js
 // lib/booking-flow/index.js
@@ -250,8 +254,8 @@ module.exports = EngineAddon.extend({
 
 And et voilà: we now have 3 new, separate assets, which are loaded on demand
 once we navigate into a route within the engine. Since the initial assets only
-contain the essential logic needed for the search, they have shrunken in size
-as well:
+contain the essential logic needed for the search, they have shrunken in size as
+well:
 
 | Asset                    | Before                        | After                        |
 | ------------------------ | ----------------------------- | ---------------------------- |
