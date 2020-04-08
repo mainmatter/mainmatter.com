@@ -5,7 +5,9 @@ github: Turbo87
 twitter: tobiasbieniek
 topic: misc
 bio: 'Senior Frontend Engineer, Ember CLI core team member'
-description: 'Tobias Bieniek shares how to set up the Renovate bot for automatic dependency updates with self-hosted internal GitLab servers.'
+description:
+  'Tobias Bieniek shares how to set up the Renovate bot for automatic dependency
+  updates with self-hosted internal GitLab servers.'
 og:
   image: /assets/images/posts/2019-04-24-dependency-updates-for-gitlab/og-image.png
 ---
@@ -33,17 +35,16 @@ because of bugs or security issues. dependabot will even label the PR with
 Another similar service is called [Renovate][renovate]. The main difference:
 Renovate is an open source project that you can run yourself, if you want to.
 The hosted service works fine if your project is on [GitHub][gh] or
-[GitLab][gl], but if you're using a self-hosted internal GitLab server you
-will have to run the service yourself. Fear not, this sounds a lot more
-complicated than it actually is, and the rest of this blog post will show you
-how to do it.
+[GitLab][gl], but if you're using a self-hosted internal GitLab server you will
+have to run the service yourself. Fear not, this sounds a lot more complicated
+than it actually is, and the rest of this blog post will show you how to do it.
 
 Before we start, let's make sure we are all in the same boat. The most common
 setup we have found when working with our clients is running GitLab on a
-self-hosted server within the corporate firewall and VPN. Most of the time
-that includes using [GitLab CI][gl-ci] to run the test suite for new commits or
-merge requests. This blog post is assuming the above setup and having GitLab CI
-set up to use the "[Docker executor][docker-executor]".
+self-hosted server within the corporate firewall and VPN. Most of the time that
+includes using [GitLab CI][gl-ci] to run the test suite for new commits or merge
+requests. This blog post is assuming the above setup and having GitLab CI set up
+to use the "[Docker executor][docker-executor]".
 
 To give you a rough idea of how we will set this up: Renovate will use a
 dedicated user account on your GitLab instance to open merge requests. It will
@@ -75,8 +76,8 @@ In short:
 - Save the generated token somewhere until we need it later
 
 Finally, make sure that our new GitLab account has access to the projects that
-you want it to run on. It will need to have at least "Developer" permissions
-so that the bot is able to create branches and push updates to those branches.
+you want it to run on. It will need to have at least "Developer" permissions so
+that the bot is able to create branches and push updates to those branches.
 
 ## Renovate Repository
 
@@ -85,9 +86,9 @@ repository. You can create the repository either under your personal account,
 the new Renovate account or, ideally, in the same GitLab group where you keep
 all your other projects.
 
-Let's start off with a blank repository and then we will add the necessary
-files as we go. Once the repository is created, `git clone` it to your local
-machine so that we can create some content.
+Let's start off with a blank repository and then we will add the necessary files
+as we go. Once the repository is created, `git clone` it to your local machine
+so that we can create some content.
 
 Renovate is a JavaScript-based project, but it supports updating dependencies of
 a lot of other languages too. Because it is based on JavaScript we will use
@@ -195,8 +196,8 @@ it to the repository.
 ## Using GitLab CI
 
 We now have a way to run our Renovate bot manually, but that is not what we
-want. We want to automate all the things! ... and GitLab CI is a great way to
-do just that.
+want. We want to automate all the things! ... and GitLab CI is a great way to do
+just that.
 
 The first thing we need to do is teach GitLab CI about our `RENOVATE_TOKEN`
 environment variable. We can do so on the "Settings > CI / CD" page of our
@@ -238,18 +239,19 @@ pipeline" form should now show up in your browser and we will fill it like this:
 - Target Branch: `master`
 - Active: Yes, please!
 
-Now, click the "Save pipeline schedule" button and GitLab will take you back
-to the "Schedules" page showing our newly created schedule.
+Now, click the "Save pipeline schedule" button and GitLab will take you back to
+the "Schedules" page showing our newly created schedule.
 
 Aaaand that's it! Some time in the next hour GitLab CI should trigger the `run`
-job, that will run our Renovate bot, and that will create merge requests on
-your configured repositories.
+job, that will run our Renovate bot, and that will create merge requests on your
+configured repositories.
 
 If you need more help getting this set up or if you want to talk about any of
-the topics here in more detail please do [contact us](/contact/)!
-If you enjoyed this blog post you can also let us know via [Twitter].
+the topics here in more detail please do [contact us](/contact/)! If you enjoyed
+this blog post you can also let us know via [Twitter].
 
-[open-source-maintenance]: https://simplabs.com/blog/2018/11/27/open-source-maintenance.html
+[open-source-maintenance]:
+  https://simplabs.com/blog/2018/11/27/open-source-maintenance.html
 [greenkeeper]: https://greenkeeper.io/
 [dependabot]: https://dependabot.com/
 [renovate]: https://github.com/renovatebot/renovate/

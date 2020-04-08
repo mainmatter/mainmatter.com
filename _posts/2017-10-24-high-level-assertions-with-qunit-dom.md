@@ -4,20 +4,23 @@ author: 'Tobias Bieniek'
 github: Turbo87
 twitter: tobiasbieniek
 bio: 'Senior Frontend Engineer, Ember CLI core team member'
-description: 'Tobias Bieniek introduces qunit-dom, an extension for qunit that allows writing more expressive and less complex UI tests using high level DOM assertions.'
+description:
+  'Tobias Bieniek introduces qunit-dom, an extension for qunit that allows
+  writing more expressive and less complex UI tests using high level DOM
+  assertions.'
 topic: javascript
 ---
 
 At [EmberFest](https://emberfest.eu/) this year we presented and released
 [`qunit-dom`](https://github.com/simplabs/qunit-dom). A plugin for
-[QUnit](https://qunitjs.com/) providing High Level DOM Assertions with the
-goal to reduce test complexity for all QUnit users. This blog post will show
-you how to write simpler tests using `async/await` and `qunit-dom`.
+[QUnit](https://qunitjs.com/) providing High Level DOM Assertions with the goal
+to reduce test complexity for all QUnit users. This blog post will show you how
+to write simpler tests using `async/await` and `qunit-dom`.
 
 <!--break-->
 
-As an introduction to what this means let's start with an example template
-for an Ember app that we will write a test for:
+As an introduction to what this means let's start with an example template for
+an Ember app that we will write a test for:
 
 ```handlebars
 <h1 class="title {{if username "has-username"}}">
@@ -30,8 +33,8 @@ for an Ember app that we will write a test for:
 </h1>
 ```
 
-From the template above you can see that we have essentially two states that
-we need to test: one with and one without a `username` property being set.
+From the template above you can see that we have essentially two states that we
+need to test: one with and one without a `username` property being set.
 
 ## Status Quo
 
@@ -49,7 +52,10 @@ test('frontpage should be welcoming', function(assert) {
   fillIn('input.username', 'John Doe');
 
   andThen(function() {
-    assert.equal(find('h1.title').textContent.trim(), 'Welcome to Ember,\n    John Doe!');
+    assert.equal(
+      find('h1.title').textContent.trim(),
+      'Welcome to Ember,\n    John Doe!',
+    );
     assert.ok(find('h1.title').classList.contains('has-username'));
   });
 });
@@ -82,16 +88,19 @@ test('frontpage should be welcoming', function(assert) {
       return fillIn('input.username', 'John Doe');
     })
     .then(function() {
-      assert.equal(find('h1.title').textContent.trim(), 'Welcome to Ember,\n    John Doe!');
+      assert.equal(
+        find('h1.title').textContent.trim(),
+        'Welcome to Ember,\n    John Doe!',
+      );
       assert.ok(find('h1.title').classList.contains('has-username'));
     });
 });
 ```
 
-While that code makes it more obvious that we are dealing with asynchronous
-code here, it also make the code a little harder to read. Which is one of the
-reasons why a lot of Ember developers still prefer the `andThen` blocks over
-using `Promise` chains.
+While that code makes it more obvious that we are dealing with asynchronous code
+here, it also make the code a little harder to read. Which is one of the reasons
+why a lot of Ember developers still prefer the `andThen` blocks over using
+`Promise` chains.
 
 ## async/await
 
@@ -120,28 +129,31 @@ test('frontpage should be welcoming', async function(assert) {
 
   await fillIn('input.username', 'John Doe');
 
-  assert.equal(find('h1.title').textContent.trim(), 'Welcome to Ember,\n    John Doe!');
+  assert.equal(
+    find('h1.title').textContent.trim(),
+    'Welcome to Ember,\n    John Doe!',
+  );
   assert.ok(find('h1.title').classList.contains('has-username'));
 });
 ```
 
-As you can see this looks a lot more readable than what we had before and
-almost like the synchronous code we usually write.
+As you can see this looks a lot more readable than what we had before and almost
+like the synchronous code we usually write.
 
-The assertions (the lines starting with `assert.`) however are still quite
-hard to read, and it takes a short while to figure out what the intent of that
+The assertions (the lines starting with `assert.`) however are still quite hard
+to read, and it takes a short while to figure out what the intent of that
 assertion was.
 
 ## chai and chai-dom
 
-If you're using [Mocha](https://mochajs.org/) and [Chai](http://chaijs.com/)
-to write your tests, you are already used to more readable assertions since
-Chai emphasizes an "expressive language and readable style" for their
-assertions.
+If you're using [Mocha](https://mochajs.org/) and [Chai](http://chaijs.com/) to
+write your tests, you are already used to more readable assertions since Chai
+emphasizes an "expressive language and readable style" for their assertions.
 
-Fortunately for Chai there is a plugin called [`chai-dom`](https://github.com/nathanboktae/chai-dom)
-which provides even better assertions so that we could rewrite our assertions
-above to something like:
+Fortunately for Chai there is a plugin called
+[`chai-dom`](https://github.com/nathanboktae/chai-dom) which provides even
+better assertions so that we could rewrite our assertions above to something
+like:
 
 ```js
 expect(find('h1.title')).to.have.text('Welcome to Ember!');
@@ -160,12 +172,11 @@ provides.
 
 ## qunit-dom
 
-While `ember-cli-chai` also works with QUnit it is essentially just a hack
-and not really supported properly by QUnit or Chai so be careful if you're
-using it.
+While `ember-cli-chai` also works with QUnit it is essentially just a hack and
+not really supported properly by QUnit or Chai so be careful if you're using it.
 
-As we were getting more and more annoyed by the hard-to-read assertions
-when using QUnit we were starting to wonder if it would be possible to build
+As we were getting more and more annoyed by the hard-to-read assertions when
+using QUnit we were starting to wonder if it would be possible to build
 something like `chai-dom` but for QUnit instead and how that would look like.
 After a bit of brainstorming we figured we would want our assertions to look
 roughly like this:
@@ -182,9 +193,8 @@ assert.dom('h1.title').hasClass('has-username');
 
 Compared to what we started with this:
 
-- automatically finds the correct element on the `document` (or
-  `#ember-testing` element) based on the selector passed into
-  the `dom()` function
+- automatically finds the correct element on the `document` (or `#ember-testing`
+  element) based on the selector passed into the `dom()` function
 - collapses whitespace according to the HTML spec to get rid of the irrelevant
   `\n` part of the expected string
 - provides readable high level assertions for the most common checks on DOM
@@ -197,16 +207,19 @@ One additional advantage for Ember.js users is that it automatically hooks
 itself into the build pipeline of your projects, so all you need to do is
 `ember install qunit-dom`, and then you can immediately start using it!
 
-You can find examples of what assertions are available in the [README](https://github.com/simplabs/qunit-dom#qunit-dom)
-of the project and even more information in the [API reference](https://github.com/simplabs/qunit-dom/blob/master/API.md).
+You can find examples of what assertions are available in the
+[README](https://github.com/simplabs/qunit-dom#qunit-dom) of the project and
+even more information in the
+[API reference](https://github.com/simplabs/qunit-dom/blob/master/API.md).
 
 ## qunit-dom-codemod
 
 During the EmberFest conference we realized that while a lot of people would
 probably appreciate what we had built, nobody would go over their thousands of
-existing assertions and rewrite them all to use `qunit-dom`. Since a lot
-of the existing assertions in our client projects followed similar patterns
-we figured it might be possible to build a [codemod](https://medium.com/airbnb-engineering/turbocharged-javascript-refactoring-with-codemods-b0cae8b326b9)
+existing assertions and rewrite them all to use `qunit-dom`. Since a lot of the
+existing assertions in our client projects followed similar patterns we figured
+it might be possible to build a
+[codemod](https://medium.com/airbnb-engineering/turbocharged-javascript-refactoring-with-codemods-b0cae8b326b9)
 that did most of the rewriting automatically for us.
 
 After that initial thought we started working and after only a few minutes we
@@ -228,8 +241,8 @@ jscodeshift -t https://raw.githubusercontent.com/simplabs/qunit-dom-codemod/mast
 
 ## Conclusion
 
-Moving the tests to `async/await` and `qunit-dom` makes them a lot more
-readable and easier to understand for new developers and is just a few
-keystrokes away if you're already using Ember.js for your frontend projects.
-If you need help refactoring your tests or even your production code to be
-more structured and understandable feel free to [contact us](/contact/).
+Moving the tests to `async/await` and `qunit-dom` makes them a lot more readable
+and easier to understand for new developers and is just a few keystrokes away if
+you're already using Ember.js for your frontend projects. If you need help
+refactoring your tests or even your production code to be more structured and
+understandable feel free to [contact us](/contact/).

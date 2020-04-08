@@ -5,5 +5,5 @@ url: https://www.youtube.com/watch?v=ECkbVa0iC4k
 media: video
 ---
 
-Ricardo Mendes goes through the history of Ember.js as a project and
-how it braves the fads of front-end development.
+Ricardo Mendes goes through the history of Ember.js as a project and how it
+braves the fads of front-end development.

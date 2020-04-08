@@ -5,5 +5,5 @@ url: https://www.youtube.com/watch?v=5NrsB2FYBlQ
 media: video
 ---
 
-Marco Otte-Witte talks about optimizing JavaScript bundles and loading
-behaviour of Ember.js apps.
+Marco Otte-Witte talks about optimizing JavaScript bundles and loading behaviour
+of Ember.js apps.

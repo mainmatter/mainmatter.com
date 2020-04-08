@@ -5,7 +5,9 @@ github: niklaslong
 twitter: niklas_long
 topic: elixir
 bio: 'Backend Engineer, author of Breethe API'
-description: 'Niklas Long shows how Elixir Umbrella applications not only improve the organization of a code base but also allow for an improved testing setup.'
+description:
+  'Niklas Long shows how Elixir Umbrella applications not only improve the
+  organization of a code base but also allow for an improved testing setup.'
 ---
 
 What's the big deal with Elixir umbrellas?
@@ -33,9 +35,9 @@ raise awareness by providing everyone with easy access to accurate data.
 
 ![Video of the Breethe PWA](/assets/images/posts/2018-07-24-from-spa-to-pwa/breethe-video.gif)
 
-The application is [open source](https://github.com/simplabs/breethe-server)
-and we encourage everyone interested to look through the source for reference.
-The server for this application was implemented using an
+The application is [open source](https://github.com/simplabs/breethe-server) and
+we encourage everyone interested to look through the source for reference. The
+server for this application was implemented using an
 [Elixir](https://elixir-lang.org) umbrella application which will be the focus
 of this post. The client for Breethe was built with
 [Glimmer.js](http://glimmerjs.com), which we discussed in previous posts:
@@ -55,8 +57,8 @@ use an umbrella app will make the process tremendously easy.
 Using an umbrella allowed us to split our server into two very distinct
 applications, communicating together by way of rigorously defined APIs. The
 first application functions as the data handling entity of the project - named
-_breethe_ (see below). It communicates with the air quality data provider
-(a third-party API) to gather the data, then processes and caches it for future
+_breethe_ (see below). It communicates with the air quality data provider (a
+third-party API) to gather the data, then processes and caches it for future
 use. The second application in the umbrella is the web interface built with
 Phoenix - named _breethe_web_. It requests the data from the first application,
 serializes it to JSON and delivers the payload to the client in compliance with
@@ -90,10 +92,10 @@ continues to implement the same interface. The same would work the other way
 round if we wanted to change the webserver.
 
 However, for this approach to work well, the APIs used to communicate between
-the different applications in the umbrella need to be carefully defined. We
-want to keep the interfaces as little as possible to keep complexity contained.
-As an example, here are the publicly available functions on the _breethe_ app
-in the umbrella:
+the different applications in the umbrella need to be carefully defined. We want
+to keep the interfaces as little as possible to keep complexity contained. As an
+example, here are the publicly available functions on the _breethe_ app in the
+umbrella:
 
 ```elixir
 # apps/breethe/lib/breethe.ex
@@ -108,20 +110,20 @@ def search_measurements(location_id), do: # ...
 
 Equally, these are the only functions the Phoenix web app (or any other app in
 the umbrella) can call on the _breethe_ app. These principles are of course not
-only applicable at the top level of the application but also within its
-internal logical contexts. For example, within the _breethe_ app, we have
-isolated the functions explicitly making requests to third-party APIs and
-abstracted them away behind an interface. This, again, reduces complexity and
-facilitates testing as we can isolate the different components of the business
-logic. This philosophy lends itself very well to being tested using Mox.
+only applicable at the top level of the application but also within its internal
+logical contexts. For example, within the _breethe_ app, we have isolated the
+functions explicitly making requests to third-party APIs and abstracted them
+away behind an interface. This, again, reduces complexity and facilitates
+testing as we can isolate the different components of the business logic. This
+philosophy lends itself very well to being tested using Mox.
 
 ## Testing domains independently using Mox
 
 [Mox](https://github.com/plataformatec/mox), as the name suggests, is a library
 that defines mocks bound to specific behaviours. A behaviour is a set of
-function signatures that must be implemented by a module. Consequently,
-Mox guarantees the mocks for a module be consistent with the original functions
-they replace during testing. This rigidity makes the tests more maintainable and
+function signatures that must be implemented by a module. Consequently, Mox
+guarantees the mocks for a module be consistent with the original functions they
+replace during testing. This rigidity makes the tests more maintainable and
 requires that the behaviours for each module be meticulously defined; precisely
 the qualities desired when implementing the APIs within our umbrella.
 
@@ -175,8 +177,8 @@ switches to the `Breethe.Mock` module, which defines the mocks.
 The test for this controller action is meant to check two things. Firstly, that
 the router redirects the connection to the appropriate controller action.
 Secondly, that the controller action processes the call and queries the
-_breethe_ application correctly using the right function defined on the
-latter's API - in this case `get_location(location_id)`.
+_breethe_ application correctly using the right function defined on the latter's
+API - in this case `get_location(location_id)`.
 
 ```elixir
 # apps/breethe_web/test/breethe_web/controllers/location_controller_test.exs
@@ -200,17 +202,18 @@ end
 
 I've broken it down into its four main parts:
 
-1. It sets up the test data with [ExMachina](https://github.com/thoughtbot/ex_machina). <br/><br/>
+1. It sets up the test data with
+   [ExMachina](https://github.com/thoughtbot/ex_machina). <br/><br/>
 
 ```elixir
 location = insert(:location, measurements: [])
 ```
 
 2. It defines a mock in the `Breethe.Mock` module for the
-   `get_location(location_id)` function defined in the _breethe_ application's API
-   and sets the return value to the location we created at 1. The mock is passed
-   as an argument to the `expect` clause which verifies the mock is executed
-   during the test (instead of the real function). <br/><br/>
+   `get_location(location_id)` function defined in the _breethe_ application's
+   API and sets the return value to the location we created at 1. The mock is
+   passed as an argument to the `expect` clause which verifies the mock is
+   executed during the test (instead of the real function). <br/><br/>
 
 ```elixir
 Breethe.Mock
@@ -218,9 +221,9 @@ Breethe.Mock
 ```
 
 As long as we’ve established the callback in the behaviour implemented by the
-Breethe module, we don’t need to explicitly define the Breethe.Mock module
-(Mox creates it). Here's the callback for this particular function
-(for reference, it isn't coded in the test).
+Breethe module, we don’t need to explicitly define the Breethe.Mock module (Mox
+creates it). Here's the callback for this particular function (for reference, it
+isn't coded in the test).
 
 ```elixir
 # apps/breethe/lib/breethe.ex
@@ -237,7 +240,8 @@ conn = get(build_conn(), "api/locations/#{location.id}", [])
 ```
 
 4. It tests the JSON response (abridged for brevity) is correct by asserting on
-   the attributes of the location created in 1. and returned from the mock in 2. <br/><br/>
+   the attributes of the location created in 1. and returned from the mock in 2.
+   <br/><br/>
 
 ```elixir
 assert json_response(conn, 200) == %{
@@ -247,10 +251,10 @@ assert json_response(conn, 200) == %{
         }
 ```
 
-Using mocks greatly simplifies the testing process. Each test can be smaller
-and more specific. Each test is faster as we are not making calls to the
-database or external systems; we are only running the anonymous functions that
-define the mocks. For instance, the mock in our example above only executes:
+Using mocks greatly simplifies the testing process. Each test can be smaller and
+more specific. Each test is faster as we are not making calls to the database or
+external systems; we are only running the anonymous functions that define the
+mocks. For instance, the mock in our example above only executes:
 
 ```elixir
 fn _location_id -> location end
@@ -262,12 +266,11 @@ fast and modularised tests.
 
 ## Conclusion
 
-Elixir umbrella apps shine when structuring projects containing clear
-boundaries between their constituent parts. The philosophy they implement
-deeply resembles that of functional programming (and Lego), where small
-building blocks combine into a larger whole. It is however important to be
-precise when defining the internal APIs of the application as they act as the
-glue holding everything together. Lastly, Mox is a wonderful tool for testing.
-Not only does it make mocking APIs very simple and elegant, it also encourages
-best practices such as defining behaviours to keep the code consistent and
-robust.
+Elixir umbrella apps shine when structuring projects containing clear boundaries
+between their constituent parts. The philosophy they implement deeply resembles
+that of functional programming (and Lego), where small building blocks combine
+into a larger whole. It is however important to be precise when defining the
+internal APIs of the application as they act as the glue holding everything
+together. Lastly, Mox is a wonderful tool for testing. Not only does it make
+mocking APIs very simple and elegant, it also encourages best practices such as
+defining behaviours to keep the code consistent and robust.

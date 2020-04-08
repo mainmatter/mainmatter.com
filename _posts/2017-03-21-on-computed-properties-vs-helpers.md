@@ -4,7 +4,9 @@ author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
 bio: 'Founding Director of simplabs, author of Ember Simple Auth'
-description: 'Marco Otte-Witte discusses differences between computed properties and helpers and explains pros and cons of each alternative.'
+description:
+  'Marco Otte-Witte discusses differences between computed properties and
+  helpers and explains pros and cons of each alternative.'
 topic: ember
 og:
   image: /assets/images/posts/2017-03-21-on-computed-properties-vs-helpers/og-image.png
@@ -13,8 +15,8 @@ og:
 Ember's computed properties are a great mechanism for encapsulating reactive
 logic and implementing consistent, auto-updating UIs. Since the past year or so
 though, there seems to be an increasing tendency in the community to use
-template helpers as the main tool for expressing this kind of logic right in
-the templates. Following up on a
+template helpers as the main tool for expressing this kind of logic right in the
+templates. Following up on a
 [talk I gave at last year's EmberFest](https://speakerdeck.com/marcoow/templates-and-logic-in-ember),
 I'll elaborate in this post why I think that is often not the best choice and
 what the drawbacks are.
@@ -23,9 +25,9 @@ what the drawbacks are.
 
 ## Computed Properties
 
-Computed Properties allow defining properties as functions of other
-properties. Ember automatically re-evaluates computed properties (lazily) when
-any of its dependents change so that they don't get out of sync.
+Computed Properties allow defining properties as functions of other properties.
+Ember automatically re-evaluates computed properties (lazily) when any of its
+dependents change so that they don't get out of sync.
 
 Here's a simple example of a computed property that is `true` when the `age`
 property is at least `65`:
@@ -80,12 +82,11 @@ and move the comparison into the template:
 ## What's the difference?
 
 Both alternatives are obviously very similar - both compare the user's `age`
-property with a comparison value and depending on the outcome of that
-comparison render some nodes to the DOM (or don't render them). The main
-difference is that **with the computed property that comparison lives in the
-template context** and is only invoked from the template (via the `isSenior`
-identifier) while **when using a helper the comparison is defined inline right
-in the template** itself.
+property with a comparison value and depending on the outcome of that comparison
+render some nodes to the DOM (or don't render them). The main difference is that
+**with the computed property that comparison lives in the template context** and
+is only invoked from the template (via the `isSenior` identifier) while **when
+using a helper the comparison is defined inline right in the template** itself.
 
 This might not seem like a big thing but there actually are some differences
 between the two alternatives that have consequences on certain aspects of the
@@ -94,22 +95,22 @@ application.
 ### Separation vs. Unification
 
 The main difference is that with the computed property solution, the logic and
-its internals are separated from the template. The **logic lives in the
-template context and appears as a black box to the template** which merely uses
-some named properties - this is actually quite **similar to a class exposing
-named methods** where the caller of these methods does not have to worry about
-their internals as long as it's clear what they are supposed to be used for.
+its internals are separated from the template. The **logic lives in the template
+context and appears as a black box to the template** which merely uses some
+named properties - this is actually quite **similar to a class exposing named
+methods** where the caller of these methods does not have to worry about their
+internals as long as it's clear what they are supposed to be used for.
 
 With the **template helpers solution though both the rendering as well as the
 logic are merged in the template**. That means that understanding and
 maintaining the template includes understanding all of the logic encoded in the
 helper invocations.
 
-While the complexity that's added to the template in the above example is
-fairly limited of course, this point gets more obvious when looking at a
-slightly more involved example. Assume there is a collection of users from
-which we want to select a random one with a `status` of `'active'`. A computed
-property returning such a user could look like this:
+While the complexity that's added to the template in the above example is fairly
+limited of course, this point gets more obvious when looking at a slightly more
+involved example. Assume there is a collection of users from which we want to
+select a random one with a `status` of `'active'`. A computed property returning
+such a user could look like this:
 
 ```js
 userToDisplay: computed('users.@each.state', function() {
@@ -141,11 +142,11 @@ property.
 
 ### Testability
 
-Another consequence of **moving logic into the template is that the logic
-itself becomes harder to test**. While logic that lives in the template context
-in the form of computed properties is easily unit-testable, **logic that lives
-in the template can only be tested by actually rendering the template** which
-again leads to a few other consequences:
+Another consequence of **moving logic into the template is that the logic itself
+becomes harder to test**. While logic that lives in the template context in the
+form of computed properties is easily unit-testable, **logic that lives in the
+template can only be tested by actually rendering the template** which again
+leads to a few other consequences:
 
 - Tests become slower to execute as it's obviously slower to render than not to
   render.
@@ -153,13 +154,13 @@ again leads to a few other consequences:
   of the computed property (e.g. `asser.equal(user.get('isSenior') true)`),
   (integration) tests for logic inside of templates have to assert on the
   presence or absence of DOM nodes (e.g.
-  `assert.ok(find(testSelector('senior-flag')))`) which obviously is a much
-  more indirect way of testing the same thing.
+  `assert.ok(find(testSelector('senior-flag')))`) which obviously is a much more
+  indirect way of testing the same thing.
 - Test cases (potentially) require more and unrelated context to be set up.
-  While unit tests for computed properties only require the dependent
-  properties of the computed property under test to be set up, rendering a
-  template requires the full context for that template to be set up which might
-  include elements that are unrelated to the current test case.
+  While unit tests for computed properties only require the dependent properties
+  of the computed property under test to be set up, rendering a template
+  requires the full context for that template to be set up which might include
+  elements that are unrelated to the current test case.
 
 ### Helpers don't always work as expected
 
@@ -167,11 +168,11 @@ One of the main reasons that we hear why people prefer template helpers over
 computed properties is the fact that computed properties need to list their
 dependent keys. **Especially newcomers to Ember.js are afraid of forgetting a
 key or making a mistake** (especially when it comes to collections) which can
-lead to hard to track down errors (see below for a potential fix for the need
-to specify dependent keys at all). **Template helpers instead don't need to
-list dependencies and are automatically re-executed** when any of their
-arguments change. While that is true in most cases there are some edge cases
-where **helpers might actually not work as expected**.
+lead to hard to track down errors (see below for a potential fix for the need to
+specify dependent keys at all). **Template helpers instead don't need to list
+dependencies and are automatically re-executed** when any of their arguments
+change. While that is true in most cases there are some edge cases where
+**helpers might actually not work as expected**.
 
 Consider a slightly modified version of the above example that compares the
 user's `age` property with a comparison value:
@@ -182,8 +183,8 @@ user's `age` property with a comparison value:
 {{/if}}
 ```
 
-Here, the internals of the comparison logic have been moved into the
-`is-senior` helper:
+Here, the internals of the comparison logic have been moved into the `is-senior`
+helper:
 
 ```js
 export default Ember.Helper.helper(function([user]) {
@@ -193,8 +194,8 @@ export default Ember.Helper.helper(function([user]) {
 
 The problem with this solution is that the DOM does not get updated when the
 user's `age` property changes. While arguments that are passed to helpers are
-observed by Ember automatically and the **helper will be re-executed when any
-of these arguments change to a different value, the same is not true when any
+observed by Ember automatically and the **helper will be re-executed when any of
+these arguments change to a different value, the same is not true when any
 property on any of the arguments changes**. In this case changes of the user's
 `age` property would go unnoticed and the DOM would get out of sync with the
 underlying data.
@@ -230,8 +231,7 @@ As the `&&` operator will actually short-circuit execution when
 `this.get('propA')` is false, `this.get('propB')` will never be evaluated in
 these cases while both properties will always be eagerly evaluated when using a
 helper. If calculating `propB` is a costly operation that is obviously not
-desirable but something that cannot actually be prevented with template
-helpers.
+desirable but something that cannot actually be prevented with template helpers.
 
 ## Pick one
 
@@ -274,8 +274,8 @@ pure function also has no side effects. While this is true for helpers it is
 obviously true for computed properties with the only distinction that **a
 computed property's inputs are called its dependent keys**. Of course there's
 also class based helpers whose whole purpose is to enable template helpers that
-can depend on global state and thus are not pure functions (and the same
-concept exists for computed properties with ember-classy-computed now).
+can depend on global state and thus are not pure functions (and the same concept
+exists for computed properties with ember-classy-computed now).
 
 ### Original concerns of the template layer
 
@@ -285,8 +285,8 @@ statement to make. **There are original concerns of the template layer that are
 best implemented in helpers** - typical examples being translating strings,
 formatting numbers or dates etc. We use template helpers almost exclusively for
 this kind of functionality which is usually only a small part part of any
-application though - we often only have a few helpers defined even in pretty
-big and involved applications.
+application though - we often only have a few helpers defined even in pretty big
+and involved applications.
 
 ### Missing a property context
 
@@ -295,8 +295,8 @@ easily be used instead of template helpers to achieve the same functionality.
 That is when there is **no context the computed property could be defined on or
 the context it would be needed on is unrelated to the template context**. One
 example for this is a component that renders a list of items and keeps track of
-which of these items is currently selected. The easiest way to do something
-like that using template helpers would look something like this:
+which of these items is currently selected. The easiest way to do something like
+that using template helpers would look something like this:
 
 ```hbs
 <ul>
@@ -309,8 +309,8 @@ like that using template helpers would look something like this:
 This isn't as straight forward to replace with a computed property as the
 previous examples. While defining an `isSelected` property on the template
 context isn't possible as the property is needed per item in the list, the
-property can also not be defined on the items as the items have no notion of
-the list component or how that keeps track of the selected element at all.
+property can also not be defined on the items as the items have no notion of the
+list component or how that keeps track of the selected element at all.
 
 The solution to this problem is to construct a new context that has access to
 both the item as well as the component:
@@ -349,8 +349,8 @@ suited for which use case and what the consequences and drawbacks are when
 picking either one is crucial for **preventing long term maintainability
 issues**.
 
-Computed properties are powerful already and will continue to improve with
-tools like [ember-cpm](https://github.com/cibernox/ember-cpm),
+Computed properties are powerful already and will continue to improve with tools
+like [ember-cpm](https://github.com/cibernox/ember-cpm),
 [ember-awesome-macros](https://github.com/kellyselden/ember-awesome-macros),
 [ember-macro-helpers](https://github.com/kellyselden/ember-macro-helpers) and
 eventually perhaps computed properties that automatically track their

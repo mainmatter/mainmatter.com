@@ -5,14 +5,16 @@ github: mansona
 twitter: real_ate
 topic: ember
 bio: 'Senior Software Engineer, Ember Learning Core Team member'
-description: 'Chris Manson details a novel way to use Percy for tracking approximation of a visual baseline when porting a site from one technology to another.'
+description:
+  'Chris Manson details a novel way to use Percy for tracking approximation of a
+  visual baseline when porting a site from one technology to another.'
 og:
   image: /assets/images/posts/2020-03-27-porting-a-site-to-ember-with-percy/og-image.png
 ---
 
 This article details a technique where the visual testing software
-[Percy](https://percy.io/) was used to port the old [Ember
-Guides](https://guides.emberjs.com/release/) to an entirely different
+[Percy](https://percy.io/) was used to port the old
+[Ember Guides](https://guides.emberjs.com/release/) to an entirely different
 technology, without anybody noticing.
 
 <!--break-->
@@ -21,12 +23,12 @@ technology, without anybody noticing.
 
 ## Motivation
 
-This was one of the first steps in the long road to _Emberify_ and
-redesign the Ember website by first converting the architecture away from an old
-(and hard to maintain) Ruby middleman app, to a modern Static Single Page
-Application that is a dream to contribute to! This technique was first used to
-convert the [Ember Guides](https://guides.emberjs.com) to an Ember app and was
-then later used to convert the main [Ember Website](https://emberjs.com).
+This was one of the first steps in the long road to _Emberify_ and redesign the
+Ember website by first converting the architecture away from an old (and hard to
+maintain) Ruby middleman app, to a modern Static Single Page Application that is
+a dream to contribute to! This technique was first used to convert the
+[Ember Guides](https://guides.emberjs.com) to an Ember app and was then later
+used to convert the main [Ember Website](https://emberjs.com).
 
 The technique described below is a slightly novel way of using Percy, instead of
 tracking changes over the course of an active project we are using Percy to
@@ -92,17 +94,17 @@ what the site used to look like against the current changes.
 ### Getting a copy of the existing site
 
 The first thing that we need in this process is a local copy of the existing
-site we are planning to port. If you look at the [documentation for using the
-Percy command line client](https://docs.percy.io/docs/command-line-client) it
-tells you that you should build your static site locally and then point the CLI
-client to the output folder.
+site we are planning to port. If you look at the
+[documentation for using the Percy command line client](https://docs.percy.io/docs/command-line-client)
+it tells you that you should build your static site locally and then point the
+CLI client to the output folder.
 
 As I briefly mentioned earlier, part of the issue with the old infrastructure
 for the Ember Guides was that it was so hard to contribute to that it was almost
-impossible to get working locally. If we can avoid having to run the
-Ruby middleman setup locally, that would be a better approach, so another
-way to get a static copy of the website would be to pretend that we're Google
-for a few minutes and just crawl the site to download it locally.
+impossible to get working locally. If we can avoid having to run the Ruby
+middleman setup locally, that would be a better approach, so another way to get
+a static copy of the website would be to pretend that we're Google for a few
+minutes and just crawl the site to download it locally.
 
 If you are on a Linux machine you probably have `wget` installed, it is a
 particularly useful tool to download single files quickly and easily. If you are
@@ -113,8 +115,8 @@ install it:
 brew install wget
 ```
 
-Before working on this project I didn't actually realise that, not only
-can you use `wget` to download single files but you can also use it to crawl and
+Before working on this project I didn't actually realise that, not only can you
+use `wget` to download single files but you can also use it to crawl and
 download entire websites! Here is the command that I'm using to download the
 entire [Ember Website](https://emberjs.com):
 
@@ -138,15 +140,15 @@ you are planning to run this on your own site I would recommend using the
 `--domains` option, and you might want to also look into `--reject-regex`.
 
 When crawling sites with something like `wget` things can very quickly get out
-of hand. If your site has external links to other domains and you don't
-limit the domains you want to download with `--domains` you can very quickly end
-up downloading the whole internet!
+of hand. If your site has external links to other domains and you don't limit
+the domains you want to download with `--domains` you can very quickly end up
+downloading the whole internet!
 
 `--reject-regex` is also a useful tool if you have some subfolders that have
 dynamically generated content. When we first ran this command on the Ember
 website the blog was available at https://emberjs.com/blog and had 220+ pages
-that would be downloaded in our crawl. 😬 Adding the following line to our `wget`
-command would have excluded that whole directory
+that would be downloaded in our crawl. 😬 Adding the following line to our
+`wget` command would have excluded that whole directory
 
 ```
 --reject-regex '/blog/*'
@@ -154,13 +156,13 @@ command would have excluded that whole directory
 
 ### Verifying all the pages are there
 
-After running the above command we have a folder `emberjs.com` that contains
-a static copy of the Ember Website. We now need to list all of the pages and
-make sure that we're happy that we've captured all of the necessary pages.
+After running the above command we have a folder `emberjs.com` that contains a
+static copy of the Ember Website. We now need to list all of the pages and make
+sure that we're happy that we've captured all of the necessary pages.
 
 Thankfully we used `--html-extension` which will make sure that all html files
-end with `.html` so we can run a simple `find` command in that folder to list the
-pages:
+end with `.html` so we can run a simple `find` command in that folder to list
+the pages:
 
 ```bash
 find . -iname '*.html'
@@ -203,14 +205,14 @@ the baseline around which all of the rest of the application will be built.
 
 ## Setting up Percy for the Ember Application
 
-The [official documentation for the Percy Ember
-integration](https://docs.percy.io/docs/ember) is fantastic and I would
-**highly** recommend that you check it out. We need to set up a very slightly
-custom implementation for our needs because we would like the snapshots that
-were generated from the Percy CLI to match the snapshots from the ember
-application. The simplest way to do this is for us to define the mapping
-manually, here is what that mapping looks like in the ember-website testing
-code:
+The
+[official documentation for the Percy Ember integration](https://docs.percy.io/docs/ember)
+is fantastic and I would **highly** recommend that you check it out. We need to
+set up a very slightly custom implementation for our needs because we would like
+the snapshots that were generated from the Percy CLI to match the snapshots from
+the ember application. The simplest way to do this is for us to define the
+mapping manually, here is what that mapping looks like in the ember-website
+testing code:
 
 ```javascript
 // This is used to map the current **new** routes to what they used to be in the
@@ -222,9 +224,15 @@ const pages = [
   { title: '/builds/canary/index.html', route: '/releases/canary' },
   { title: '/builds/release/index.html', route: '/releases/release' },
   { title: '/community/index.html', route: '/community/' },
-  { title: '/community/meetups-getting-started.html', route: '/community/meetups-getting-started/' },
+  {
+    title: '/community/meetups-getting-started.html',
+    route: '/community/meetups-getting-started/',
+  },
   { title: '/community/meetups.html', route: '/community/meetups/' },
-  { title: '/ember-community-survey-2019.html', route: '/ember-community-survey-2019/' },
+  {
+    title: '/ember-community-survey-2019.html',
+    route: '/ember-community-survey-2019/',
+  },
   { title: '/ember-users.html', route: '/ember-users/' },
   { title: '/guidelines.html', route: '/guidelines/' },
   { title: '/index.html', route: '/' },
@@ -257,9 +265,8 @@ for (let config of pages) {
 }
 ```
 
-Even though I've copied most of the implementation into this post you can [see
-it all in action directly in the source code of the ember-website
-project](https://github.com/ember-learn/ember-website/blob/401a638dbb65191d1273de8336525bf9df6b53bc/tests/acceptance/visual-regression-test.js#L1)
+Even though I've copied most of the implementation into this post you can
+[see it all in action directly in the source code of the ember-website project](https://github.com/ember-learn/ember-website/blob/401a638dbb65191d1273de8336525bf9df6b53bc/tests/acceptance/visual-regression-test.js#L1)
 
 ## Open a PR, Iterate on the design, Ship when green
 
@@ -271,13 +278,12 @@ pushed to your master branch. Once you open the PR, if you have followed the
 Percy installation instructions correctly, Percy will start to build your visual
 diff.
 
-The examples shown in this post have been leading up to [an
-actual PR on the ember-website
-project](https://github.com/ember-learn/ember-website/pull/185) and you will see
-in the CI checks for that PR that the initial Percy build is failing. If you saw
-the visual diff you would have seen that there was quite some work that needed
-to be done before this was ready to go live, but I never said that this would do
-all the work for you! 😂
+The examples shown in this post have been leading up to
+[an actual PR on the ember-website project](https://github.com/ember-learn/ember-website/pull/185)
+and you will see in the CI checks for that PR that the initial Percy build is
+failing. If you saw the visual diff you would have seen that there was quite
+some work that needed to be done before this was ready to go live, but I never
+said that this would do all the work for you! 😂
 
 What Percy is really giving you here is the confidence to know when the project
 is ready to be shipped. If you can constrain the requirements to "make it look

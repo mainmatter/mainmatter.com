@@ -5,5 +5,5 @@ url: https://www.youtube.com/watch?v=cljehgyxOSQ
 media: video
 ---
 
-Jessica Jordan shares how to build comics for the web using Ember.js and the
-Web Animation API.
+Jessica Jordan shares how to build comics for the web using Ember.js and the Web
+Animation API.

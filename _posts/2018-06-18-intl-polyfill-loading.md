@@ -4,19 +4,22 @@ author: 'Tobias Bieniek'
 github: Turbo87
 twitter: tobiasbieniek
 bio: 'Senior Frontend Engineer, Ember CLI core team member'
-description: 'Tobias Bieniek shows how to load the necessary polyfills for the Intl API in older browsers most effectively when using ember-intl.'
+description:
+  'Tobias Bieniek shows how to load the necessary polyfills for the Intl API in
+  older browsers most effectively when using ember-intl.'
 topic: ember
 ---
 
 At simplabs we ❤️ [ember-intl][ember-intl] and use it for all our projects where
 translations or other localizations are needed. ember-intl is based on the
-native [Intl APIs][intl] that were introduced in [all newer browsers][browsers] a while ago.
-Unfortunately some users are still using browsers that don't support them and
-this blog post will show you our preferred way to load the necessary polyfill
-and the associated data.
+native [Intl APIs][intl] that were introduced in [all newer browsers][browsers]
+a while ago. Unfortunately some users are still using browsers that don't
+support them and this blog post will show you our preferred way to load the
+necessary polyfill and the associated data.
 
 [ember-intl]: https://github.com/ember-intl/ember-intl
-[intl]: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Intl
+[intl]:
+  https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Intl
 [browsers]: https://caniuse.com/#feat=internationalization
 
 <!--break-->
@@ -47,12 +50,12 @@ async beforeModel() {
 }
 ```
 
-To make this work we need to tell ember-intl that it should no longer bundle
-the translations in the `app.js` file, and instead it should write them out
-as JSON files into our `dist` folder. We can do so by opening the
-`config/ember-intl.js` file, and adjusting the `publicOnly` property to `true`.
-If we now call `ember build` and look at the `dist` folder we will see a
-`translations` subfolder including JSON files for all existing translations.
+To make this work we need to tell ember-intl that it should no longer bundle the
+translations in the `app.js` file, and instead it should write them out as JSON
+files into our `dist` folder. We can do so by opening the `config/ember-intl.js`
+file, and adjusting the `publicOnly` property to `true`. If we now call
+`ember build` and look at the `dist` folder we will see a `translations`
+subfolder including JSON files for all existing translations.
 
 We would like to make our translation loading code look a little simpler from
 the outside, so what we could do is add a `loadTranslations()` method to the
@@ -85,15 +88,16 @@ async beforeModel() {
 ```
 
 If we now open our app in the browser and look at the "Network" tab of the
-browser we should see the app making an AJAX request for the translations
-before it starts. 🎉
+browser we should see the app making an AJAX request for the translations before
+it starts. 🎉
 
 ## Loading the Intl.js polyfill
 
-As mentioned in the intro [some browsers](https://caniuse.com/#feat=internationalization)
-need a polyfill for the new `Intl` APIs. ember-intl makes this easy for us as
-it supports an `autoPolyfill` option in its config file. Setting this option to
-`true` will automatically add script tags like this to your `index.html` file:
+As mentioned in the intro
+[some browsers](https://caniuse.com/#feat=internationalization) need a polyfill
+for the new `Intl` APIs. ember-intl makes this easy for us as it supports an
+`autoPolyfill` option in its config file. Setting this option to `true` will
+automatically add script tags like this to your `index.html` file:
 
 ```html
 <script src="/assets/intl/intl.min.js"></script>
@@ -102,19 +106,19 @@ it supports an `autoPolyfill` option in its config file. Setting this option to
 <script src="/assets/intl/locales/fr.js"></script>
 ```
 
-That is a nice first step, but should not be used for any real user-facing
-apps. The reason for this is that it adds a significant number of additional
-HTTP requests to the startup time of your app, and those requests aren't even
-that small. `intl.min.js` downloads roughly 40 kB and each locale script
-another 25 kB of uncompressed JavaScript code. It would be much better if we
-would only load them if the browser actually needed the polyfill...
+That is a nice first step, but should not be used for any real user-facing apps.
+The reason for this is that it adds a significant number of additional HTTP
+requests to the startup time of your app, and those requests aren't even that
+small. `intl.min.js` downloads roughly 40 kB and each locale script another 25
+kB of uncompressed JavaScript code. It would be much better if we would only
+load them if the browser actually needed the polyfill...
 
 Let's turn off the `autoPolyfill` option and implement lazy loading of the
 polyfill files instead.
 
 The first thing we need for this is a function that downloads JS code and then
-runs it. We could hack something together with `fetch()` and `eval()`, but
-there is a better solution:
+runs it. We could hack something together with `fetch()` and `eval()`, but there
+is a better solution:
 
 ```js
 function loadJS(url) {
@@ -127,11 +131,11 @@ function loadJS(url) {
 }
 ```
 
-The above function creates a `<script>` tag, sets the passed in `url` on it,
-and returns a `Promise` that resolves once the script has loaded.
+The above function creates a `<script>` tag, sets the passed in `url` on it, and
+returns a `Promise` that resolves once the script has loaded.
 
-With the `loadJS` helper function in place we can add a `loadPolyfill()`
-method to our `intl` service:
+With the `loadJS` helper function in place we can add a `loadPolyfill()` method
+to our `intl` service:
 
 ```js
 async loadPolyfill() {
@@ -166,7 +170,8 @@ the user chooses. For that reason we implement two more methods on the `intl`
 service:
 
 - a `loadPolyfillData()` method
-- a `loadLocale()` method that combines `loadTranslations()` and `loadPolyfillData()`
+- a `loadLocale()` method that combines `loadTranslations()` and
+  `loadPolyfillData()`
 
 ```js
 import IntlService from 'ember-intl/services/intl';
@@ -215,5 +220,5 @@ and data that we actually need for the specific browser. Most users don't pay
 the extra cost of loading the polyfill and related data, and for the browsers
 that do need it, it's available on demand.
 
-If you have any questions about these patterns or need help implementing them
-in your apps feel free to [contact us](/contact/).
+If you have any questions about these patterns or need help implementing them in
+your apps feel free to [contact us](/contact/).
