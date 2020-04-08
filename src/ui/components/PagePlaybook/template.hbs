@@ -4,20 +4,30 @@
     @documentTitle="Our Playbook"
     @description="Our playbook describes methodologies for building sustainable digital products and provides guidance for teams of all sizes, on-site or remote."
   >
-    <HeaderContent
-      @label="Playbook"
-      @headline="Build lasting products, systematically"
-      @attachment="blue-ribbon"
-      @srcset="/assets/images/photos/coding@900.jpg 900w, /assets/images/photos/coding@1800.jpg 1800w"
-      @sizes="(max-width: 887px) 900px, 1800px"
-    >
-      <p typography:class="lead">
-        Our playbook describes methodologies for building sustainable digital products and running an effective, collaborative product development process. It is based on experience we made working on projects with international clients in various industries for many years.
-      </p>
-      <ArrowLink @href="#download">
-        Download our guide to generating sustainable business value through effective collaboration
-      </ArrowLink>
-    </HeaderContent>
+    <div header-content:scope header-content:attachment="image">
+      <div header-content:class="container">
+        <div header-content:class="content">
+          <h1 typography:class="display">
+            <small typography:class="small">
+              Playbook
+              <span typography:class="hidden">
+                :
+              </span>
+            </small>
+            Build lasting products, systematically
+          </h1>
+          <p typography:class="lead">
+            Our playbook describes methodologies for building sustainable digital products and running an effective, collaborative product development process. It is based on experience we made working on projects with international clients in various industries for many years.
+          </p>
+          <ArrowLink @href="#download">
+            Download our guide to generating sustainable business value through effective collaboration
+          </ArrowLink>
+        </div>
+        <div header-content:class="sidebar">
+          <img srcset="/assets/images/illustrations/playbook-header.png" sizes="{{@sizes}}" header-content:class="image" block:class="header-image" alt="" />
+        </div>
+      </div>
+    </div>
   </Header>
   <div layout:class="full" offset:class="after-12" block:class="first-headline">
     <h3>

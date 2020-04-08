@@ -3,6 +3,7 @@
 @block list from "../../styles/blocks/list.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
+@block header-content from "../HeaderContent/stylesheet.css";
 
 :scope {
   block-name: PagePlaybook;
@@ -18,9 +19,26 @@
   margin-top: 2rem;
 }
 
+.header-image {
+  height: resolve('header-content.image');
+  right: 0;
+  height: auto;
+  max-width: 40%;
+}
+
 @media (max-width: 887px) {
   .first-headline {
     margin-top: 7rem;
+  }
+
+  .header-image {
+    width: resolve('header-content.image');
+    position: resolve('header-content.image');
+    height: resolve('header-content.image');
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    height: auto;
   }
 }
 
@@ -29,3 +47,4 @@
 @export layout;
 @export offset;
 @export list;
+@export header-content;
