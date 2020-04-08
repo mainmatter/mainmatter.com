@@ -7,16 +7,6 @@
   composes: 'layout';
 }
 
-.more {
-  margin-bottom: 8rem;
-  margin-left: 0;
-  list-style: none;
-}
-
-.more-headline {
-  margin-bottom: 3rem;
-}
-
 @export typography;
 @export layout;
 @export offset;
