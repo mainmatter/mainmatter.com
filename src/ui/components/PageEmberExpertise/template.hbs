@@ -44,74 +44,81 @@
     </div>
   </div>
 
-  <div layout:class="main" offset:class="after-21">
+  <div layout:class="full" offset:class="after-21">
     <h2>
       We love open source
     </h2>
-    <p typography:class="lead" offset:class="after-16">
+    <p typography:class="lead">
       Besides contributing to Ember.js via our core team engagements, we maintain a number of projects in the ecosystem that are widely adopted throughout the Ember community.
     </p>
-    <div media:scope offset:class="after-12">
-      <img media:class="item" src="/assets/images/icons/ember-simple-auth.svg" alt="" />
-      <div media:class="body">
-        <h3>
-          Ember Simple Auth
-        </h3>
-        <p>
-          Authentication management for Ember.js applications.
-        </p>
-        <ArrowLink @href="https://github.com/simplabs/ember-simple-auth">
-          View GitHub Project
-        </ArrowLink>
+  </div>
+
+  <div layout:scope offset:class="after-21">
+    <div layout:class="split-leading">
+      <div media:scope offset:class="after-12">
+        <img media:class="item" src="/assets/images/icons/ember-simple-auth.svg" alt="" />
+        <div media:class="body">
+          <h3>
+            Ember Simple Auth
+          </h3>
+          <p>
+            Authentication management for Ember.js applications.
+          </p>
+          <ArrowLink @href="https://github.com/simplabs/ember-simple-auth">
+            View GitHub Project
+          </ArrowLink>
+        </div>
+      </div>
+      <div media:scope offset:class="after-12">
+        <img media:class="item" src="/assets/images/icons/ember-cookies.svg" alt="" />
+        <div media:class="body">
+          <h3>
+            Ember Cookies
+          </h3>
+          <p>
+            Cookie handling for Ember.js apps - in the browser and FastBoot.
+          </p>
+          <ArrowLink @href="https://github.com/simplabs/ember-cookies">
+            View GitHub Project
+          </ArrowLink>
+        </div>
       </div>
     </div>
-    <div media:scope offset:class="after-12">
-      <img media:class="item" src="/assets/images/icons/ember-test-selectors.svg" alt="" />
-      <div media:class="body">
-        <h3>
-          Ember Test Selectors
-        </h3>
-        <p>
-          Enabling better element selectors in Ember.js tests.
-        </p>
-        <ArrowLink @href="https://github.com/simplabs/ember-test-selectors">
-          View GitHub Project
-        </ArrowLink>
+    <div layout:class="split-trailing">
+      <div media:scope offset:class="after-12">
+        <img media:class="item" src="/assets/images/icons/ember-test-selectors.svg" alt="" />
+        <div media:class="body">
+          <h3>
+            Ember Test Selectors
+          </h3>
+          <p>
+            Enabling better element selectors in Ember.js tests.
+          </p>
+          <ArrowLink @href="https://github.com/simplabs/ember-test-selectors">
+            View GitHub Project
+          </ArrowLink>
+        </div>
       </div>
-    </div>
-    <div media:scope offset:class="after-12">
-      <img media:class="item" src="/assets/images/icons/ember-cookies.svg" alt="" />
-      <div media:class="body">
-        <h3>
-          Ember Cookies
-        </h3>
-        <p>
-          Cookie handling for Ember.js apps - in the browser and FastBoot.
-        </p>
-        <ArrowLink @href="https://github.com/simplabs/ember-cookies">
-          View GitHub Project
-        </ArrowLink>
-      </div>
-    </div>
-    <div media:scope offset:class="after-12">
-      <img media:class="item" src="/assets/images/icons/qunit-dom.svg" alt="" />
-      <div media:class="body">
-        <h3>
-          Qunit DOM
-        </h3>
-        <p>
-          High Level DOM Assertions for QUnit.
-        </p>
-        <ArrowLink @href="https://github.com/simplabs/qunit-dom">
-          View GitHub Project
-        </ArrowLink>
+    
+      <div media:scope offset:class="after-12">
+        <img media:class="item" src="/assets/images/icons/qunit-dom.svg" alt="" />
+        <div media:class="body">
+          <h3>
+            Qunit DOM
+          </h3>
+          <p>
+            High Level DOM Assertions for QUnit with an expressive API.
+          </p>
+          <ArrowLink @href="https://github.com/simplabs/qunit-dom">
+            View GitHub Project
+          </ArrowLink>
+        </div>
       </div>
     </div>
   </div>
-  <div layout:class="side" offset:class="after-21">
-    <CardEmberSponsors />
-  </div>
+
   <ShapeFeatureEmberDocumentary />
+
   <div layout:class="main" offset:class="after-21">
     <h2>
       We share our expertise
