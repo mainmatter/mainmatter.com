@@ -38,7 +38,7 @@ function buildShoeboxBundlePreloads(html) {
   let dom = new jsdom.JSDOM(html);
   let bundleNodes = Array.from(dom.window.document.querySelectorAll('[data-shoebox-bundle]'));
   return bundleNodes
-    .map(node => {
+    .map((node) => {
       return `<link rel="preload" href="${node.getAttribute('src')}" as="script">`;
     })
     .join('\n');
@@ -46,7 +46,7 @@ function buildShoeboxBundlePreloads(html) {
 
 const renderer = new GlimmerRenderer();
 let server = express();
-server.get('*', async function(req, res, next) {
+server.get('*', async function (req, res, next) {
   if (req.headers.accept && req.headers.accept.includes('text/html')) {
     let origin = `${req.protocol}://${req.headers.host}`;
     let { body, head } = await renderer.render(origin, req.url);
@@ -61,7 +61,7 @@ server.get('*', async function(req, res, next) {
 });
 server.use(express.static(DIST_PATH));
 
-server.listen(3000, async function() {
+server.listen(3000, async function () {
   let browser = await puppeteer.launch({ headless: true });
   let routes = ROUTES_MAP;
   let paths = Object.keys(routes);

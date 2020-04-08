@@ -52,7 +52,7 @@ const tileColors = {
 export default Component.extend({
   tileColor: 'mid',
   attributeBindings: ['style'],
-  style: computed('tileColor', function() {
+  style: computed('tileColor', function () {
     let colorShade = this.get('tileColor');
     let bgColor = tileColors[colorShade];
     return htmlSafe(`background-color: ${bgColor}`);
@@ -84,7 +84,7 @@ export default Component.extend({
   tileColor: 'mid',
   'data-test-simplabs-logo-tile': true,
   attributeBindings: ['style'],
-  style: computed('tileColor', function() {
+  style: computed('tileColor', function () {
     let colorShade = this.get('tileColor');
     let bgColor = tileColors[colorShade];
     return htmlSafe(`background-color: ${bgColor}`);
@@ -107,10 +107,10 @@ import { setupRenderingTest } from 'ember-qunit';
 import { find, render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | simplabs-logo-tile', function(hooks) {
+module('Integration | Component | simplabs-logo-tile', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it allows setting a dark background color', async function(assert) {
+  test('it allows setting a dark background color', async function (assert) {
     await render(hbs`{{simplabs-logo-tile tileColor="dark"}}`);
 
     let elementStyle = find('[data-test-simplabs-logo-tile]').style;
@@ -169,10 +169,10 @@ import { setupRenderingTest } from 'ember-qunit';
 import { find, render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | simplabs-logo-tile', function(hooks) {
+module('Integration | Component | simplabs-logo-tile', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it allows setting a dark background color', async function(assert) {
+  test('it allows setting a dark background color', async function (assert) {
     await render(hbs`{{simplabs-logo-tile tileColor="dark"}}`);
 
     let computedStyle = window.getComputedStyle(
@@ -220,10 +220,10 @@ import { setupRenderingTest } from 'ember-qunit';
 import { find, render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | simplabs-logo-tile', function(hooks) {
+module('Integration | Component | simplabs-logo-tile', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it allows setting a dark background color', async function(assert) {
+  test('it allows setting a dark background color', async function (assert) {
     await render(hbs`{{simplabs-logo-tile tileColor="dark"}}`);
 
     assert.dom('[data-test-simplabs-logo-tile]').hasStyle({

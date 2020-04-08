@@ -42,7 +42,7 @@ First, it must be enabled which is best done in a custom initializer:
 ```js
 Ember.Application.initializer({
   name: 'authentication',
-  initialize: function(container, application) {
+  initialize: function (container, application) {
     Ember.SimpleAuth.setup(application);
   },
 });
@@ -51,7 +51,7 @@ Ember.Application.initializer({
 The second step is to setup the routes for logging in and out:
 
 ```js
-App.Router.map(function() {
+App.Router.map(function () {
   this.route('login');
   this.route('logout');
 });

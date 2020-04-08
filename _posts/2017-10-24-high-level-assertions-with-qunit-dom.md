@@ -41,17 +41,17 @@ need to test: one with and one without a `username` property being set.
 An acceptance test for such a template could look roughly like this:
 
 ```js
-test('frontpage should be welcoming', function(assert) {
+test('frontpage should be welcoming', function (assert) {
   visit('/');
 
-  andThen(function() {
+  andThen(function () {
     assert.equal(find('h1.title').textContent.trim(), 'Welcome to Ember!');
     assert.notOk(find('h1.title').classList.contains('has-username'));
   });
 
   fillIn('input.username', 'John Doe');
 
-  andThen(function() {
+  andThen(function () {
     assert.equal(
       find('h1.title').textContent.trim(),
       'Welcome to Ember,\n    John Doe!',
@@ -79,15 +79,15 @@ you can also use a `Promise` chain instead of the `andThen` blocks which would
 look like this:
 
 ```js
-test('frontpage should be welcoming', function(assert) {
+test('frontpage should be welcoming', function (assert) {
   return visit('/')
-    .then(function() {
+    .then(function () {
       assert.equal(find('h1.title').textContent.trim(), 'Welcome to Ember!');
       assert.notOk(find('h1.title').classList.contains('has-username'));
 
       return fillIn('input.username', 'John Doe');
     })
-    .then(function() {
+    .then(function () {
       assert.equal(
         find('h1.title').textContent.trim(),
         'Welcome to Ember,\n    John Doe!',
@@ -121,7 +121,7 @@ That description was pretty abstract so let's look at an example using the
 `Promise` chain above:
 
 ```js
-test('frontpage should be welcoming', async function(assert) {
+test('frontpage should be welcoming', async function (assert) {
   await visit('/');
 
   assert.equal(find('h1.title').textContent.trim(), 'Welcome to Ember!');

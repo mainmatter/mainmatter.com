@@ -46,7 +46,7 @@ executing the deployment pipeline.
 
 ```js
 // config/deploy.js
-module.exports = function(deployTarget) {
+module.exports = function (deployTarget) {
   var ENV = {
     // ...
 
@@ -92,7 +92,7 @@ pipeline (as we wouldn’t know when to notify a service otherwise):
 
 ```js
 // config/deploy.js
-module.exports = function(deployTarget) {
+module.exports = function (deployTarget) {
   var ENV = {
     // ...
 
@@ -102,7 +102,7 @@ module.exports = function(deployTarget) {
           url: 'https://notify.simplabs.com/deploy',
           headers: {},
           method: 'POST',
-          body: function(context) {
+          body: function (context) {
             var deployer = context.deployer;
 
             return {
@@ -162,7 +162,7 @@ can also be used to override configuration defaults on a per hook basis:
 
 ```js
 // config/deploy.js
-module.exports = function(deployTarget) {
+module.exports = function (deployTarget) {
   var ENV = {
     // ...
 
@@ -202,7 +202,7 @@ ember-cli-deploy-notifications:
 
 ```js
 // config/deploy.js
-module.exports = function(deployTarget) {
+module.exports = function (deployTarget) {
   var ENV = {
     // ...
 

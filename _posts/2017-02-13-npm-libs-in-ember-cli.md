@@ -55,7 +55,7 @@ Running this command will generate a `vendor/shims/moment.js` file that looks
 like this:
 
 ```js
-(function() {
+(function () {
   function vendorModule() {
     'use strict';
 

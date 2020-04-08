@@ -48,12 +48,12 @@ new API now looks like this:
 ```js
 Ember.Application.initializer({
   name: 'authentication',
-  initialize: function(container, application) {
+  initialize: function (container, application) {
     Ember.SimpleAuth.setup(container, application);
   },
 });
 
-App.Router.map(function() {
+App.Router.map(function () {
   this.route('login');
   this.route('protected');
 });

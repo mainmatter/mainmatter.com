@@ -6,7 +6,7 @@ const _ = require('lodash');
 
 const collectPosts = require('../lib/generate-blog/lib/collect-posts');
 
-module.exports = function() {
+module.exports = function () {
   let { posts, authors } = collectPosts(path.join(__dirname, '..', '_posts'));
   let blogAuthorsRoutes = authors.reduce((acc, author) => {
     acc[`/blog/author/${author.twitter}`] = {
