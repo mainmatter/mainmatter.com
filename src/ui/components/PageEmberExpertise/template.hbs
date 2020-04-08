@@ -1,9 +1,17 @@
 <div>
   <Header
-    @title="Europe's leading Ember experts | Ember consulting"
+    @title="Europe's leading Ember experts"
+    @documentTitle="Europe's leading Ember experts | Ember consulting"
     @description="simplabs are Europe's leading Ember experts with unique expertise and insights with a good part of our engineering team being on the Ember.js core team."
+    @backgroundVariation="pointed"
   >
-    <HeaderContent @headline="Europe's leading Ember experts" @label="Ember.js">
+    <HeaderContent
+      @headline="Europe's leading Ember experts"
+      @label="Ember.js"
+      @attachment="image"
+      @srcset="/assets/images/photos/marco@600.jpg 600w, /assets/images/photos/marco@1200.jpg 1200w"
+      @sizes="(max-width: 887px) 600px, 1200px"
+    >
       <p typography:class="lead">
         simplabs has unique expertise and insights into Ember.js with a good part of our engineering team being on the Ember.js core team and maintaining widely adopted add-ons.
       </p>
