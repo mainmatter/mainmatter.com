@@ -11,6 +11,7 @@
   display: grid;
   column-gap: var(--col-gap);
   grid-column: 1/-1;
+  margin-bottom: 0;
 }
 
 .content {
@@ -31,8 +32,8 @@
   margin-top: -20rem;
   margin-bottom: 5rem;
 
-  clip-path: polygon(31% 0, 100% 20%, 100% 92%, 60% 100%, 0 90%, 0 7%);
-  -webkit-clip-path: polygon(31% 0, 100% 20%, 100% 92%, 60% 100%, 0 90%, 0 7%);
+  clip-path: polygon(40% 0, 100% 20%, 100% 86.5%, 60% 100%, 0 86.5%, 0 13%);
+  -webkit-clip-path: polygon(40% 0, 100% 20%, 100% 86.5%, 60% 100%, 0 86.5%, 0 13%);
   grid-column: 2/-2;
 }
 
@@ -77,7 +78,7 @@
 
   .content {
     grid-column: 4/-1;
-    padding: 5rem 5rem 0 5rem;
+    padding: 0 5rem;
   }
 
   .tagline {
