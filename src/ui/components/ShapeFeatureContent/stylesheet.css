@@ -60,8 +60,9 @@
   .img-wrapper {
     grid-column: 2/-2;
     margin-left: 0;
-    clip-path: polygon(31% 0, 100% 30%, 100% 88%, 60% 100%, 0 87%, 0 10%);
-    -webkit-clip-path: polygon(31% 0, 100% 30%, 100% 88%, 60% 100%, 0 87%, 0 10%);
+    padding-top: 60%;
+    clip-path: polygon(40% 0, 100% 25%, 100% 84.5%, 60% 100%, 0 84.5%, 0 16%);
+    -webkit-clip-path: polygon(40% 0, 100% 25%, 100% 84.5%, 60% 100%, 0 84.5%, 0 16%);
   }
 }
 
