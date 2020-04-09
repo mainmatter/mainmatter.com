@@ -4,7 +4,6 @@
 :scope {
   block-name: HeaderContent;
   margin-top: 6rem;
-  margin-bottom: 3rem;
   position: relative;
   grid-column: 1/-1;
   --shape-color: var(--color-accent);
@@ -70,9 +69,14 @@
   width: auto;
 }
 
+:scope[attachment='blue-ribbon'],
+:scope[attachment='image'] {
+  margin-bottom: 5rem;
+}
+
 :scope[attachment='blue-ribbon'] .image-wrapper {
-  clip-path: polygon(40% 0, 100% 20%, 100% 90%, 60% 98.5%, 0 90%, 0 10%);
-  -webkit-clip-path: polygon(40% 0, 100% 20%, 100% 90%, 60% 98.5%, 0 90%, 0 10%);
+  clip-path: polygon(40% 0, 100% 19%, 100% 87.5%, 60% 100%, 0 87.5%, 0 12.5%);
+  -webkit-clip-path: polygon(40% 0, 100% 19%, 100% 87.5%, 60% 100%, 0 87.5%, 0 12.5%);
   padding-bottom: 80%;
 }
 

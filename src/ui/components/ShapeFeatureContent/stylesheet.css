@@ -34,8 +34,8 @@
   padding-top: 80%;
   position: relative;
 
-  clip-path: polygon(40% 0, 100% 19%, 100% 87.5%, 60% 100%, 0 86.5%, 0 12.5%);
-  -webkit-clip-path: polygon(40% 0, 100% 19%, 100% 87.5%, 60% 100%, 0 86.5%, 0 12.5%);
+  clip-path: polygon(40% 0, 100% 19%, 100% 87.5%, 60% 100%, 0 87.5%, 0 12.5%);
+  -webkit-clip-path: polygon(40% 0, 100% 19%, 100% 87.5%, 60% 100%, 0 87.5%, 0 12.5%);
   grid-column: 2/-2;
 }
 
