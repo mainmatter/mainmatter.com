@@ -26,17 +26,17 @@
 
 .top {
   width: 100%;
-  padding-top: 15%;
+  padding-top: 21%;
   margin-bottom: -1px;
   background: var(--shape-color);
 
-  clip-path: polygon(100% 100%, 100% 20%, 90% 0px, 0 100%);
-  -webkit-clip-path: polygon(100% 100%, 100% 20%, 90% 0px, 0 100%);
+  clip-path: polygon(100% 100%, 100% 12%, 90% 0px, 0 100%);
+  -webkit-clip-path: polygon(100% 100%, 100% 12%, 90% 0px, 0 100%);
 }
 
 .bottom {
   width: 100%;
-  padding-bottom: 13%;
+  padding-bottom: 16.5%;
   margin-top: -1px;
   background: var(--shape-color);
 
