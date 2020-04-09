@@ -1,23 +1,20 @@
-<ShapeFeature
-  @color="#007DF6"
-  @srcset="/assets/images/photos/trainline-comp@604.jpg 604w, /assets/images/photos/trainline-comp@1208.jpg 1208w"
-  @sizes="(max-width: 887px) 604px, 1208px"
-  @srcAlt="montage of 3 screenshots of the trailine app on phones"
-  @logo="/assets/images/logos/trainline.svg"
-  @logoAlt="Trainline"
-  @tagline="Mobile Web App"
-  @key="{{this.key}}-trainline"
->
-  <h2 typography:class="small">
-    {{@label}}
-  </h2>
-  <h3>
-    A mobile train ticket counter
-  </h3>
-  <p>
-    Leveraging Trainline's full market potential
-  </p>
-  <ArrowLink @href="/cases/trainline/">
-    Read Case Study
-  </ArrowLink>
+<ShapeFeature>
+  <ShapeFeatureContent
+    @srcset="/assets/images/photos/trainline-comp@604.jpg 604w, /assets/images/photos/trainline-comp@1208.jpg 1208w"
+    @sizes="(max-width: 887px) 604px, 1208px"
+    @srcAlt="montage of 3 screenshots of the trailine app on phones"
+  >
+    <h2 typography:class="small">
+      {{@label}}
+    </h2>
+    <h3>
+      A mobile train ticket counter
+    </h3>
+    <p>
+      Leveraging Trainline's full market potential
+    </p>
+    <ArrowLink @href="/cases/trainline/">
+      Read Case Study
+    </ArrowLink>
+  </ShapeFeatureContent>
 </ShapeFeature>

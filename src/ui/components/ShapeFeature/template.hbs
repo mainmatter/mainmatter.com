@@ -1,29 +1,7 @@
 <div>
   <div block:class="top"></div>
   <div block:class="middle">
-    {{#if @srcset}}
-      <figure block:class="container">
-        <div block:class="img-wrapper">
-          <img
-            block:class="img"
-            srcset={{@srcset}}
-            sizes={{@sizes}}
-            alt="{{@srcAlt}}"
-            width={{@width}}
-            height={{@height}}
-          />
-        </div>
-        <figcaption block:class="content">
-          {{yield}}
-        </figcaption>
-      </figure>
-    {{else}}
-      <div block:class="container">
-        <div block:class="content">
-          {{yield}}
-        </div>
-      </div>
-    {{/if}}
+    {{yield}}
   </div>
   <div block:class="bottom"></div>
 </div>

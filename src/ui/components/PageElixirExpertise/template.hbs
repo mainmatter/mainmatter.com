@@ -36,21 +36,22 @@
     </Card>
   </aside>
   <div layout:class="full" offset:class="after-21">
-    <ShapeFeature
-      @color="#231230"
-      @srcset="/assets/images/elixir/eef-sponsor@604.png 604w, /assets/images/elixir/eef-sponsor@1208.png 1208w"
-      @sizes="(max-width: 887px) 604px, 1208px"
-      @srcAlt="erlang ecosystem foundation logo"
-    >
-      <h2 typography:class="small">
-        News
-      </h2>
-      <h3>
-        simplabs is a Founding Sponsor of the Erlang Ecosystem Foundation.
-      </h3>
-      <ArrowLink @href="https://erlef.org">
-        Learn more
-      </ArrowLink>
+    <ShapeFeature>
+      <ShapeFeatureContent
+        @srcset="/assets/images/elixir/eef-sponsor@604.png 604w, /assets/images/elixir/eef-sponsor@1208.png 1208w"
+        @sizes="(max-width: 887px) 604px, 1208px"
+        @srcAlt="erlang ecosystem foundation logo"
+      >
+        <h2 typography:class="small">
+          News
+        </h2>
+        <h3>
+          simplabs is a Founding Sponsor of the Erlang Ecosystem Foundation.
+        </h3>
+        <ArrowLink @href="https://erlef.org">
+          Learn more
+        </ArrowLink>
+      </ShapeFeatureContent>
     </ShapeFeature>
   </div>
   <div layout:class="main" offset:class="after-21">

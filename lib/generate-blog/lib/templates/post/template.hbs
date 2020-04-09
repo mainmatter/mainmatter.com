@@ -90,15 +90,17 @@
   </div>
   {{#if related}}
     <ShapeFeature>
-      <p typography:class="small">
-        Continue Reading
-      </p>
-      <h3>
-        {{related.title}}
-      </h3>
-      <ArrowLink @href="{{related.path}}">
-        Read Post
-      </ArrowLink>
+      <ShapeFeatureContent>
+        <p typography:class="small">
+          Continue Reading
+        </p>
+        <h3>
+          {{related.title}}
+        </h3>
+        <ArrowLink @href="{{related.path}}">
+          Read Post
+        </ArrowLink>
+      </ShapeFeatureContent>
     </ShapeFeature>
   {{/if}}
   <WorkWithUs @teamMember="jessica" />
