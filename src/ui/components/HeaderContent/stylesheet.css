@@ -85,8 +85,8 @@
 }
 
 :scope[attachment='image'] .image-wrapper {
-  clip-path: polygon(0 10%, 0 90%, 100% 100%, 100% 0);
-  -webkit-clip-path: polygon(0 10%, 0 90%, 100% 100%, 100% 0);
+  clip-path: polygon(0 19.25%, 0 86%, 100% 100%, 100% 0);
+  -webkit-clip-path: polygon(0 19.25%, 0 86%, 100% 100%, 100% 0);
   padding-bottom: 120%;
 }
 
@@ -109,12 +109,6 @@
 
   :scope[attachment='blue-ribbon'] .image-wrapper {
     grid-column: 2/-2;
-  }
-
-  :scope[attachment='image'] .image-wrapper {
-    clip-path: polygon(0 14%, 0 86%, 100% 99%, 100% 1%);
-    -webkit-clip-path: polygon(0 14%, 0 86%, 100% 99%, 100% 1%);
-    padding-bottom: 100%;
   }
 
   .background {
