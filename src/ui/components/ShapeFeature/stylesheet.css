@@ -46,6 +46,10 @@
   :scope {
     margin: 11rem 0 0 0;
   }
+
+  .middle {
+    padding-bottom: 4rem;
+  }
 }
 
 @media (min-width: 888px) {
