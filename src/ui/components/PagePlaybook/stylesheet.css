@@ -3,7 +3,9 @@
 @block list from "../../styles/blocks/list.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
+@block fluid-image from "../../styles/blocks/fluid-image.block.css";
 @block header-content from "../HeaderContent/stylesheet.css";
+@block shape-image from "../ShapeImage/stylesheet.css";
 
 :scope {
   block-name: PagePlaybook;
@@ -24,6 +26,11 @@
   right: 0;
   height: auto;
   max-width: 40%;
+}
+
+.illustration {
+  width: resolve('fluid-image.image-clipped');
+  width: auto;
 }
 
 @media (max-width: 887px) {
@@ -47,4 +54,6 @@
 @export layout;
 @export offset;
 @export list;
+@export fluid-image;
 @export header-content;
+@export shape-image;
