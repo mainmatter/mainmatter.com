@@ -118,13 +118,6 @@ class SimplabsApp extends GlimmerApp {
     });
     mainSiteTree = mainSiteNonLegalTree;
 
-    let [playbookTree, mainSiteNonPlaybookTree] = this._splitBundle(mainSiteTree, {
-      componentPrefix: 'PagePlaybook',
-      file: 'playbook.js',
-      moduleName: '__playbook__',
-    });
-    mainSiteTree = mainSiteNonPlaybookTree;
-
     let [talksTree, mainSiteNonTalksTree] = this._splitBundle(mainSiteTree, {
       componentPrefix: 'PageTalks',
       file: 'talks.js',
@@ -144,7 +137,6 @@ class SimplabsApp extends GlimmerApp {
       appTree,
       legalTree,
       calendarTree,
-      playbookTree,
       talksTree,
       recentContentTree,
       ...blogPostTrees,
