@@ -28,6 +28,20 @@
   max-width: 40%;
 }
 
+.left-bleeded-illustration {
+  -webkit-clip-path: resolve("shape-image:scope[align='left']");
+  clip-path: resolve("shape-image:scope[align='left']");
+  -webkit-clip-path: none;
+  clip-path: none;
+}
+
+.right-bleeded-illustration {
+  -webkit-clip-path: resolve("shape-image:scope[align='right']");
+  clip-path: resolve("shape-image:scope[align='right']");
+  -webkit-clip-path: none;
+  clip-path: none;
+}
+
 .illustration {
   width: resolve('fluid-image.image-clipped');
   width: auto;
