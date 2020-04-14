@@ -7,14 +7,19 @@
   >
     <HeaderContent @label="Work" @headline="A proven track record of successful projects for international clients." />
   </Header>
-  <div layout:class="split-leading">
-    <h2>
-      <a href="/cases/trainline/" data-internal>
-        Leveraging Trainline's full market potential
-      </a>
-    </h2>
+  <div layout:class="bleed-left" offset:class="after-5">
+    <ShapeImage @srcset="/assets/images/work/trainline.svg" @align="left" />
   </div>
-  <div layout:class="split-trailing">
+  <div layout:class="split-trailing" offset:class="after-5">
+    <h2>
+      <p typography:class="small">
+        Featured Case Study
+        <span typography:class="hidden">
+          :
+        </span>
+      </p>
+      Leveraging Trainline's full market potential
+    </h2>
     <p typography:class="lead">
       Trainline is Europe’s leading independent rail and coach platform. We worked with them to deliver a high-performance mobile web app, along with an improved engineering process, enabling Trainline to achieve their business goals for years to come.
     </p>
@@ -22,44 +27,53 @@
       Read Case Study
     </ArrowLink>
   </div>
-  <ShapeBold
-    @backgroundA="#21314D"
-    @backgroundB="#48D6B6"
-    @srcset="/assets/images/work/trainline-comp@604.png 604w, /assets/images/work/trainline-comp@1208.png 1208w"
-    @sizes="(max-width: 887px) 604px, 1208px"
-    @logo="/assets/images/logos/trainline.svg"
-    @logoAlt="Trainline"
-    @logoLabel="Mobile Web App"
-    @key="boldTrainline"
-  />
+  <div layout:class="full" offset:class="after-21" block:class="trainline-screenshot-desktop">
+    <div block:class="trainline-shape-desktop">
+    </div>
+  </div>
+  <div layout:class="bleed-right" offset:class="after-21" block:class="trainline-screenshot-mobile">
+    <ShapeImage
+      @srcset="/assets/images/photos/trainline-comp@604.jpg 604w, /assets/images/photos/trainline-comp@1208.jpg 1208w"
+      @sizes="(max-width: 887px) 604px, 1208px"
+      @align="right"
+    />
+  </div>
 
   <ClientsGrid @title="Meet our clients" />
-  <div layout:class="split-leading">
-    <h2>
-      <a href="/cases/timify/" data-internal>
+
+  <div layout:scope>
+    <div layout:class="bleed-right" offset:class="after-5" block:class="timify-logo">
+      <ShapeImage @srcset="/assets/images/work/timify.svg" @align="right" />
+    </div>
+    <div layout:class="split-leading" offset:class="after-5" block:class="timify-text">
+      <h2>
+        <p typography:class="small">
+          Featured Case Study
+          <span typography:class="hidden">
+            :
+          </span>
+        </p>
         Modern online appointment scheduling
-      </a>
-    </h2>
+      </h2>
+      <p typography:class="lead">
+        Timify is an online appointment scheduling service that connects service providers with clients. When they decided it was time to re-engineer their existing product, they trusted us to set them up for future success.
+      </p>
+      <ArrowLink @href="/cases/timify/">
+        Read Case Study
+      </ArrowLink>
+    </div>
+    <div layout:class="full" offset:class="after-21" block:class="timify-screenshot-desktop">
+      <div block:class="timify-shape-desktop">
+      </div>
+    </div>
+    <div layout:class="bleed-left" offset:class="after-21" block:class="timify-screenshot-mobile">
+      <ShapeImage
+        @srcset="/assets/images/photos/timify-desktop@600.jpg 600w, /assets/images/photos/timify-desktop@1200.jpg 1200w"
+        @sizes="(max-width: 887px) 600px, 1200px"
+        @align="left"
+      />
+    </div>
   </div>
-  <div layout:class="split-trailing" offset:class="after-5">
-    <p typography:class="lead">
-      Timify is an online appointment scheduling service that connects service providers with clients. When they decided it was time to re-engineer their existing product, they trusted us to set them up for future success.
-    </p>
-    <ArrowLink @href="/cases/timify/">
-      Read Case Study
-    </ArrowLink>
-  </div>
-  <ShapeBold
-    @backgroundA="#2A4058"
-    @backgroundB="#CB3B43"
-    @srcset="/assets/images/work/timify@600.png 600w, /assets/images/work/timify@1200.png 1200w"
-    @sizes="(max-width: 887px) 600px, 1200px"
-    @logo="/assets/images/logos/timify.svg"
-    @logoAlt="Timify"
-    @logoLabel="Web App"
-    @reverse="true"
-    @key="boldTimify"
-  />
 
   <div layout:class="full">
     <h2>
