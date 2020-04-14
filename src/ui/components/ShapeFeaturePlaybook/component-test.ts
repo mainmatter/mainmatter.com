@@ -4,11 +4,11 @@ import { setupRenderingTest } from '../../../utils/test-helpers/setup-rendering-
 
 const { module, test } = QUnit;
 
-module('Component: ShapeAcrossPlaybook', function(hooks) {
+module('Component: ShapeFeaturePlaybook', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await render(hbs`<ShapeAcrossPlaybook />`);
+    await render(hbs`<ShapeFeaturePlaybook />`);
 
     assert.ok(this.containerElement.querySelector('div'));
   });
