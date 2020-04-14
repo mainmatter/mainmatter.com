@@ -1,278 +1,190 @@
 <div>
-  <Header @title="Playbook">
-    <HeaderContent @headline="Playbook" @label="Process">
-      <p typography:class="lead">
-        We maintain a lean process that supports the team rather than stand in its way. It ensures the right tasks are being worked on at the right time and provides a reasonable level of short term predictability. At the same time it remains flexible enough to adapt to unexpected events. Our process does not depend on specific tools and works for projects and teams in all environments.
-      </p>
-      <p typography:class="lead">
-        The main goal of our process is to make sure all project stakeholders get heard and no single party dictates what will be worked on when. Only when all involved parties work together in a collaborative fashion, can a project be successful.
-      </p>
-    </HeaderContent>
+  <Header
+    @title="Playbook"
+    @documentTitle="Our Playbook"
+    @description="Our playbook describes methodologies for building sustainable digital products and provides guidance for teams of all sizes, on-site or remote."
+  >
+    <div header-content:scope header-content:attachment="image">
+      <div header-content:class="container">
+        <div header-content:class="content">
+          <h1 typography:class="display">
+            <small typography:class="small">
+              Playbook
+              <span typography:class="hidden">
+                :
+              </span>
+            </small>
+            Build lasting products, systematically
+          </h1>
+          <p typography:class="lead">
+            Our playbook describes methodologies for building sustainable digital products and running an effective, collaborative product development process. It is based on experience we made working on projects with international clients in various industries for many years.
+          </p>
+          <ArrowLink @href="#download">
+            Download our guide to generating sustainable business value through effective collaboration
+          </ArrowLink>
+        </div>
+        <div header-content:class="sidebar">
+          <img
+            srcset="/assets/images/playbook/header@600.png 600w, /assets/images/playbook/header@1200.png 1200w"
+            sizes="(max-width: 887px) 600px, 1200px"
+            header-content:class="image"
+            block:class="header-image"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
   </Header>
-  <div layout:class="full" offset:class="after-21">
-    <h2>
-      Iterations
-    </h2>
+  <div layout:class="full" offset:class="after-12" block:class="first-headline">
+    <h3>
+      For big and small teams – on-site or remote
+    </h3>
     <p typography:class="lead">
-      We work in iterations that are either 1 or 2 weeks long (depending on the client and project at hand, either iteration length might be more suited; we choose one when beginning a project and will adapt later on if necessary). Iterations are a team effort and we plan and execute them collaboratively.
-    </p>
-    <h3>
-      Roles
-    </h3>
-    <p>
-      Our project teams are generally flat teams without hierarchies. For any given iteration, one of the team members will take on the role of "Iteration Lead" who is responsible for planning the iteration and ensuring smooth execution. This is a rotating role so that every member of the team will assume it every once in a while (unless they opt out).
-    </p>
-    <p>
-      The main responsibility of the iteration lead is to consult with the product experts (and all other relevant project stakeholders like marketing etc.) and prepare the iteration. Once the iteration started, any changes to it that are requested go through the iteration lead for assessment (who might consult with other project stakeholders for priorization).
-    </p>
-    <h3>
-      Iteration Preparation
-    </h3>
-    <p>
-      The goal of the iteration preparation phase is to define the tasks that are most relevant to be worked on during the next iteration. These issues will then be presented to the team in the planning meeting that kicks the iteration off. In order to prepare these issues, the iteration lead synchronizes with the product experts and other project stakeholders to:
-    </p>
-    <ul list:scope>
-      <li>
-        Identify the most relevant tasks from each project stakeholder's perspectives; the goal here is to find a good balance between work on features and other aspects like bugfixes, refactoring, dependency updates, addressing tech debt in general but also addressing other requirements coming in for example from the marketing department or other stakeholders
-      </li>
-      <li>
-        Help the respective stakeholders translate feature or other change requests into actionable tasks; this includes explaining different options for implementing a change and their potential implications and related effort
-      </li>
-      <li>
-        Prepare well-written issues for each of the identified tasks or spikes for tasks that require more research in order to be ready to be adressed
-      </li>
-      <li>
-        Make sure all of the preconditions are met in order to be able to work on each task, e.g. any necessary assets have been delivered, translations are ready or legal implications have been checked
-      </li>
-      <li>
-        Prioritize the issues so it is clear which ones need to be worked on first
-      </li>
-    </ul>
-    <h4>
-      Issues
-    </h4>
-    <p>
-      Well-prepared issues are a key element of an effective process. They provide guidance for the project team's work, allow external parties not involved with the project directly to get an understanding of what is happening, and can serve as future reference to understand what was done in a project, and for which reasons.
-    </p>
-    <p>
-      Good issues aim to:
-    </p>
-    <ul list:scope>
-      <li>
-        Describe what is to be done and why, potentially accompanied by screenshots, mockups/sketches or other visuals that help understand the desired outcome; it might also be beneficial to add a summary of the issue's history, introduce previous related changes or alternative changes that have been ruled out and why
-      </li>
-      <li>
-        Include reproduction steps if the issue describes a bug; ideally those are visualized with a screen recording or other media
-      </li>
-      <li>
-        Detail concrete requirements that must be met in order to complete the issue; in order to prepare this list, the iteration lead might need to synchronize with a team member more familiar with a particular part of the code base or feature
-      </li>
-      <li>
-        Include all necessary materials that are needed for the issue; this could be visual assets, links to online documentation for third party libraries or APIs or contact details for external parties involved in an issue etc.
-      </li>
-      <li>
-        Bring up any open questions that need to be answered, or risks that have been identified and might prevent this issue from being completed
-      </li>
-      <li>
-        Be a discrete unit of work; issues should only contain related requirements and ideally not represent more than a few days of work - larger issues can often be broken down into multiple smaller ones, possibly even allowing work occuring in parallel
-      </li>
-    </ul>
-    <h4>
-      Spikes
-    </h4>
-    <p>
-      If a particular task is associated with too many open questions or uncertainties to be converted into a well-prepared issue, it is better to plan a spike first in order to resolve these open questions. Spikes should have:
-    </p>
-    <ul list:scope>
-      <li>
-        A description of the original requirement that will eventually be addressed in an issue, potentially accompanied by screenshots, mockups/sketches or other visuals that help understand the desired outcome;
-      </li>
-      <li>
-        A clear description of what the open questions are and how they are blocking an issues from being created or adding too much risk
-      </li>
-      <li>
-        If there is any, guidance on potential solutions that should be evaluated or references to promising approaches
-      </li>
-      <li>
-        A well-defined timebox, e.g. "max 2 days"
-      </li>
-    </ul>
-    <p>
-      The result of the iteration preparation phase is a prioritized list of well-prepared issues and spikes. This list of issues will then be presented to the team in the planning meeting.
-    </p>
-    <h3>
-      Iteration Planning
-    </h3>
-    <p>
-      The iteration planning meeting is a joint meeting with all of the project team, the product experts and other stakeholders that are involved in the project. During the meeting, the iteration lead presents each issue to the project team so that everyone has a good understanding of what each issue is about and gets a chance to ask questions and/or raise any points that might have been overlooked in the iteration preparation phase.
-    </p>
-    <p>
-      In the end of the planning meeting, the team collaboratively decides whether it thinks it can reasonably work on and complete all of the issues that have been presented to them in the planning meeting (plus past issues that are potentially moved over from the previous iteration). If the team considers the presented issues to be too much for the iteration, they collaboratively decide which ones are moved to a later iteration to be considered again at a later point. If any of the issues are found not to be ready to be worked on (e.g. because dependencies of the issue not being ready), the issue is moved to a later iteration as well.
-    </p>
-    <p>
-      The iteration, once planned, is not a binding agreement. It is still possible for all project stakeholders to react to changes to features or priorities and the project team cannot guarantee all planned issues to be completed by iteration end as new challenges might only be uncovered once work on an issue starts. The iteration plan is merely a snapshot of feature requests and priorities at the time it is made as well as a best-effort estimate by the project team of which issues it thinks it can complete within the iteration. Ideally though, an iteration remains unchanged once it has been planned to enable smooth execution which also leads to increasingly predictable estimates as a project progresses.
-    </p>
-    <h3>
-      Iteration Execution
-    </h3>
-    <p>
-      After the iteration has been planned, execution starts and the planned issues are being worked on based on descending priorities. For non-trivial issues, the first step is often to plan the implementation and necessary code changes by breaking the issue down into small steps. This can be done by two team members in a pairing session. As an issue is started to be worked on, the respective team member(s) will self-assign it. Issues are only assigned once work on them is actually started. Once an issue is closed via a pull requests or if it is blocked and cannot progress, the team member(s) will self-assign another issue from the iteration backlog. We recommend releasing changes to production (or at least a staging) system as they are completed.
-    </p>
-    <p>
-      If there are any changes requested to the iteration after the planning meeting (e.g. due to unforeseeable changes to features or severe bugs popping up in production), all of these potential changes go through to iteration lead for assessment. The iteration lead might consult with the product experts or other project stakeholders to determine validity and priority of the incoming request. If an issue is considered necessary to be added to the iteration after the planning meeting, it will be added but another issue might have to be removed from the iteration for it.
-    </p>
-    <p>
-      If an issue is blocked and cannot progress, the iteration lead is responsible to try and solve the impediment, potentially synchronizing with the product experts or other project stakeholders that can help resolve the situation. Likewise, if all issues in an iteration are completed early and there is no more work left to do, the iteration lead will synchronize with the project stakeholders and the iteration lead of the following iteration to discuss which issues should be added. Often that will mean moving issues from the following iteration into the current one.
-    </p>
-    <h2>
-      Engineering Workflow
-    </h2>
-    <p typography:class="lead">
-      Our engineering workflow is lean and based on established practices from the open source community. It supports distributed project teams and asynchronous communication and does not rely on any particular tools.
-    </p>
-    <h3>
-      Issues
-    </h3>
-    <p>
-      We work in 1 or 2 week long iterations and break all change requests down into issues. A list of well-prepared and well-understood issues constitutes each iteration.
-    </p>
-    <p>
-      As an issue is started to be worked on, the respective engineer(s) will self-assign it (not all issue trackers allow assigning issues to more than one person at once so if multiple engineers collaborate on an issue, they might have to choose one to assign it to). Issues are only assigned once work on them is actually starts - we do no pre-assign issues during planning or after that to avoid situations where already assigned but not yet started issues are blocked for everyone else to work on.
-    </p>
-    <p>
-      Once an issue is resolved via a pull request or if it is blocked, the engineer(s) will self-assign another issue from the iteration backlog. If an issue is blocked and cannot progress, the engineers working on it contact the iteration lead who - in collaboration with whomever necessary - tries to resolve the impediment.
-    </p>
-    <p>
-      All discussions around an issue should happen on the particular issue's page. Of course at times it is convenient to have discussions in person or over online chat but even in those cases, a brief summary of the discussed points and the outcome should be posted on the issue. This is a necessity for distributed teams and allows everyone access to all of the context of a particular issue at any time. Even teams that are not distributed benefit from this practice as all information that is relevant to a particular issue is and remains available for everyone interested.
-    </p>
-    <h3>
-      Feature Branches/Pull Requests
-    </h3>
-    <p>
-      All changes to a project are done in branches. Nothing should generally be committed to the master branch (or whatever the project's main branch is) directly. There should generally be at least one branch per issue - for larger issues it often makes sense to split separate steps into separate branches and merge them one after another.
-    </p>
-    <p>
-      All changes in a branch should also be related to the same "topic" - e.g one branch should not address more than one issue or change entirely unrelated aspects of the application.
-    </p>
-    <p>
-      If the testing setup, hosting environment and potentially other requirements present for the delivered product allow it, we recommend setting up continuous deployment so changes get deployed to production as the respective pull request gets merged. If that is not possible, we recommend setting up continuous deployment for a staging system at least so all project stakeholders can follow the project's progress.
-    </p>
-    <h4>
-      Commits
-    </h4>
-    <p>
-      Just as all changes in a branch should be related to the same "topic", all changes within a single commit should be related to the same step in implementing that topic. Each commit should only do one "thing", ideally not touching on too many different parts of the code base. All commits should also have good commit messages that make clear what the particular commit does.
-    </p>
-    <h4>
-      Pull Requests
-    </h4>
-    <p>
-      Branches are not merged back to the master branch directly but via pull requests (or whatever mechanism the tool used in the particular project provides). The pull request should have a meaningful description with a rough overview of the changes included in it and the issue it refers to. If the pull request closes an issue, the pull request's description should contain a comment like "closes #" - most tools will then automatically close the referenced issue once the pull request is merged.
-    </p>
-    <p>
-      As with issues, all discussions around a particular pull request should happen on the pull request's page. If discussions happen in person or over online chat, a summary should be posted to the pull request so all information and context is accessible to everyone interested at any time.
-    </p>
-    <p>
-      It is perfectly fine to create pull requests early on while implementation is still ongoing and they are not yet ready to be reviewed or merged. Doing so is a good way to get early feedback and share the status of something with the rest of the team. Such pull requests should be marked as "Work in progress" though, usually be prefixing their title with WIP:. Some tools will even block "Work in progress" pull requests from being merged.
-    </p>
-    <h4>
-      Reviews
-    </h4>
-    <p>
-      Pull requests are reviewed before they get merged back into the project's main branch; pull requests that have not been reviewed should usually not get merged. In order for a pull request to be ready for review, though, it has to meet some pre-requisites:
-    </p>
-    <ul list:scope>
-      <li>
-        the branch has no conflicts with the project's main branch
-      </li>
-      <li>
-        the changes in the branch are covered by proper tests and CI is passing
-      </li>
-      <li>
-        the branch is not marked as "work in progress"
-      </li>
-      <li>
-        the commit history of the pull request has been cleaned up, e.g. WIP commits have been squashed, debug commits have been removed etc.
-      </li>
-    </ul>
-    <p>
-      When a pull request is ready for review, its author should actively ask for another team member to review - ideally via the tools used in the particular project if those support it or over online chat etc. if not. Everyone asked for review should reply in a timely manner - even if it's to ask for someone else to be chosen if they do not have the time to do a proper review.
-    </p>
-    <p>
-      Once the reviewer approved the changes and CI passes, the pull request can be merged by any team member including the pull request's author. If the original reviewer would like a second review by another team member, potentially one more familiar with the aspects of the application that are changed by the particular pull request, they will ask for it. In case anything comes up in the review that cannot be resolved between the reviewer and the author of the pull request, a third person should be brought in to resolve the deadlock.
-    </p>
-    <h5>
-      Review Guidelines
-    </h5>
-    <p>
-      Reviewing and potentially criticizing other people's work is a sensitive issue which is why we follow a set of rules when doing so:
-    </p>
-    <ul list:scope>
-      <li>
-        be polite: you are reviewing another person's work that they put time and energy in - don't be dismissive and keep a friendly tone
-      </li>
-      <li>
-        be clear: don't be ambiguous but clearly address issues or aspects that are good about a particular change
-      </li>
-      <li>
-        be positive: while the review's main purpose is to identify mistakes or bad patterns that are not caught by CI, reviews are also a good opportunity to give feedback on changes that are particularly good
-      </li>
-      <li>
-        be helpful: if a pull request contains a particular change you don't think should be merged, give the author some guidance by introducing an alternative to the change that does not come with the same drawbacks
-      </li>
-    </ul>
-    <h3>
-      Testing
-    </h3>
-    <p>
-      Testing is an integral part of our work and a necessity for delivering high quality results that also do not deteriorate over time. We generally do not merge untested changes and would usually not even review them as we cannot know whether the code under review actually works for all relevant scenarios.
-    </p>
-    <p>
-      While different languages and frameworks provide different testing mechanisms, a good approach generally is
-    </p>
-    <ul list:scope>
-      <li>
-        leveraging small and isolated test cases (e.g. unit tests) for the majority of the test cases including edge cases
-      </li>
-      <li>
-        leveraging higher level test cases (e.g. integration or acceptance tests) for ensuring the main features and flows of an application work as expected
-      </li>
-    </ul>
-    <p>
-      We require continuous integration to be set up in all projects we work on. While it should always be possible to run tests locally, they also need to run automatically for every pull requests and after each merge to the project's main branch.
-    </p>
-    <h3>
-      Refactoring
-    </h3>
-    <p>
-      Refactoring is an essential part of any software project. As requirements change and frameworks and languages progress, code written in the past will eventually not be ideal anymore in the present and future. Constant refactoring ensures the code base does not become stale and improves productivity overall by keeping technical debt at a minimum and avoiding big, painful and risky rewrites that otherwise often become necessary down the line.
-    </p>
-    <p>
-      When working on the code base, we will keep an eye open for parts that need to be refactored and either do so immediately in case of simple changes, or bring them up as individual issues for one of the next iterations.
-    </p>
-    <h3>
-      Communication
-    </h3>
-    <p>
-      Communication is key for a successful project team - be it distributed or not. In order for communication to be beneficial for both the team culture as well as productivity, rather than a liability or cause of constant stress, all team members needs to keep some basic rules in mind:
-    </p>
-    <ul list:scope>
-      <li>
-        be responsive: don't leave anyone hanging with unanswered questions or requests. It goes a long way in keeping working relations positive, and communication effective. Respond to online chat messages within reasonable time, ensure you have notifications set up properly so you see when somebody comments on a pull request you submitted etc.
-      </li>
-      <li>
-        take your focus time: while some people can respond to any notification that reaches them immediately and still stay focussed on the task they're working on, this is not everyone's most effective way of working. Feel free to take your focus time and switch off or ignore all notifications in order to focus on a particular task. Just make sure to check whether anything urgent came up a few times a day. On the flip side, when reaching out to a team member, be asynchronous as much as possible. Give people time to finish what they're focused on, and to respond properly. Very rarely is anything so urgent to warrant full interruption.
-      </li>
-      <li>
-        take advantage of rich media: screenshots, screen recordings, screenshares or even hand-drawn sketches can contribute to better understanding of what you're trying to show or describe. A screen recording of a delivered feature is always a hit. During calls, switch on your camera so people can see you - talking face to face rather than with audio only makes a big difference in communication style.
-      </li>
-    </ul>
-    <h3>
-      Pairing
-    </h3>
-    <p>
-      Pairing is a great way of spreading knowledge throughout the team, on-boarding new team members or resolving blockers. We encourage everyone to pair and will also pair with our clients' internal engineers to help them level up their experience.
+      The patterns and practices from our playbook work for teams and companies of all sizes with all kinds of projects – whether it is an established company aiming for a modern, remote-friendly process, a founder setting up their own product team or an individual product manager, designer or developer looking to make their team more effective.
     </p>
   </div>
+  <div layout:class="bleed-left" offset:class="after-21">
+    <div shape-image:scope shape-image:align="left" block:class="left-bleeded-illustration">
+      <img
+        srcset="/assets/images/playbook/map@600.png 600w, /assets/images/playbook/map@1200.png 1200w"
+        sizes="(max-width: 887px) 600px, 1200px"
+        fluid-image:class="image-clipped"
+        block:class="illustration"
+      />
+    </div>
+  </div>
+  <div layout:class="split-trailing" offset:class="after-21">
+    <h3>
+      Our Core Values
+    </h3>
+    <ul list:class="vertical">
+      <li list:class="vertical-item">
+        Collaborating closely among all stakeholders
+      </li>
+      <li list:class="vertical-item">
+        Iterating in small, functional increments
+      </li>
+      <li list:class="vertical-item">
+        Validating assumptions early and often
+      </li>
+      <li list:class="vertical-item">
+        Supporting remote teams through transparency
+      </li>
+      <li list:class="vertical-item">
+        Delivering products with sustainable foundations
+      </li>
+    </ul>
+    <ArrowLink @href="#download">
+      Download the book
+    </ArrowLink>
+  </div>
+  <div layout:class="full" offset:class="after-5">
+    <h3>
+      Organization of this book
+    </h3>
+  </div>
+  <div layout:scope offset:class="after-16">
+    <div layout:class="split-leading" offset:class="after-5">
+      <h4>
+        <div block:class="accent">
+          01
+        </div>
+        Digital Product Projects
+      </h4>
+      <p typography:class="p">
+        Iterating in small increments and validating assumptions at every step of the process allows addressing business needs with digital products effectively.
+      </p>
+    </div>
+    <div layout:class="split-trailing" offset:class="after-5">
+      <h4>
+        <div block:class="accent">
+          02
+        </div>
+        Development Process
+      </h4>
+      <p typography:class="p">
+        Organizing and preparing work based on the input of all project shareholders maximizes a team's effectiveness and output quality.
+      </p>
+    </div>
+  </div>
+  <div layout:scope offset:class="after-21">
+    <ShapeQuoteTrainline />
+  </div>
+  <div layout:class="split-leading" offset:class="after-21">
+    <h2>
+      From the book
+    </h2>
+    <h3>
+      Decomposition
+    </h3>
+    <p typography:class="p">
+      Large tasks become better planable and less risky when decomposed into smaller units. This applies to full products that should be broken down into an MVP and subsequent increments but also for finer grained development or design tasks.
+    </p>
+    <ArrowLink @href="#download">
+      Read more
+    </ArrowLink>
+
+    <h3>
+      Transparent Communication
+    </h3>
+    <p typography:class="p">
+      Transparent communication and decision making processes are key for successful projects. Channeling communication through tools makes it transparent to all stakeholders and keeps a persistent record of discussions and decisions which is critical in particular for remote teams.
+    </p>
+    <ArrowLink @href="#download">
+      Read more
+    </ArrowLink>
+
+    <h3>
+      Self–Organisation
+    </h3>
+    <p typography:class="p">
+      We believe the classic project manager role in an organisational anti-pattern and advocate for self-organised project teams. Close and direct collaboration between all stakeholders fosters alignment towards a common goal and is essential to a project's success.
+    </p>
+    <ArrowLink @href="#download">
+      Read more
+    </ArrowLink>
+  </div>
+  <div layout:class="bleed-right" offset:class="after-21">
+    <div shape-image:scope shape-image:align="right" block:class="right-bleeded-illustration">
+      <img
+        srcset="/assets/images/playbook/team@600.png 600w, /assets/images/playbook/team@1200.png 1200w"
+        sizes="(max-width: 887px) 600px, 1200px"
+        fluid-image:class="image-clipped"
+        block:class="illustration"
+      />
+    </div>
+  </div>
+  <div layout:scope offset:class="after-21" id="download">
+    <ShapePlaybook />
+  </div>
+  <div layout:class="full">
+    <h2>
+      About simplabs
+    </h2>
+    <p typography:class="p">
+      simplabs is a digital product agency that crafts products for clients around the globe. We have our roots in the open source community (we’re the foremost Ember.js team in Europe) and create digital products for clients that value code quality, robustness, dependability and honesty.
+    </p>
+    <p typography:class="p" offset:class="after-12">
+      We build digital products that are stable, and ready to scale.
+    </p>
+    <ul list:class="logos">
+      <li list:class="logo">
+        <img src="/assets/images/logos/trainline.svg" alt="Trainline" />
+      </li>
+      <li list:class="logo">
+        <img src="/assets/images/logos/cardstack.svg" alt="Cardstack" />
+      </li>
+      <li list:class="logo">
+        <img src="/assets/images/logos/generali.svg" alt="Generali" />
+      </li>
+      <li list:class="logo">
+        <img src="/assets/images/logos/experteer.svg" alt="Experteer" />
+      </li>
+      <li list:class="logo">
+        <img src="/assets/images/logos/qonto.svg" alt="Qonto" />
+      </li>
+    </ul>
+  </div>
+  <WorkWithUs @teamMember="marco" />
   <Footer />
 </div>

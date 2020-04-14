@@ -2,10 +2,21 @@ import Component, { tracked } from '@glimmer/component';
 
 export default class ArrowLink extends Component {
   @tracked
-  get isInternal() {
+  get firstHrefCharacter() {
     let href = this.args.href || '';
+    let [firstChar] = href
 
-    return Boolean(href.substring(0, 1) === '/');
+    return firstChar;
+  }
+
+  @tracked
+  get isInternal() {
+    return Boolean(this.firstHrefCharacter === '/');
+  }
+
+  @tracked
+  get isIntraDocument() {
+    return Boolean(this.firstHrefCharacter === '#');
   }
 
   @tracked
@@ -17,14 +28,14 @@ export default class ArrowLink extends Component {
 
   @tracked
   get target() {
-    if (!this.isSimplabs) {
+    if (!this.isSimplabs && !this.isIntraDocument) {
       return '_blank';
     }
   }
 
   @tracked
   get rel() {
-    if (!this.isSimplabs) {
+    if (!this.isSimplabs && !this.isIntraDocument) {
       return 'noopener';
     }
   }

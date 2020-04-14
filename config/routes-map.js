@@ -75,7 +75,6 @@ module.exports = function () {
     },
     '/playbook': {
       component: 'PagePlaybook',
-      bundle: { asset: '/playbook.js', module: '__playbook__' },
     },
     '/privacy': {
       component: 'PageLegalPrivacy',
