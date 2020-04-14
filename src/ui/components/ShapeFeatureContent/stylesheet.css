@@ -11,6 +11,7 @@
   display: grid;
   column-gap: var(--col-gap);
   grid-column: 1/-1;
+  margin-bottom: 0;
 }
 
 .content {
@@ -30,15 +31,19 @@
   display: block;
   margin-top: -20rem;
   margin-bottom: 5rem;
+  padding-top: 80%;
+  position: relative;
 
-  clip-path: polygon(31% 0, 100% 20%, 100% 92%, 60% 100%, 0 90%, 0 7%);
-  -webkit-clip-path: polygon(31% 0, 100% 20%, 100% 92%, 60% 100%, 0 90%, 0 7%);
+  clip-path: polygon(40% 0, 100% 19%, 100% 87.5%, 60% 100%, 0 87.5%, 0 12.5%);
+  -webkit-clip-path: polygon(40% 0, 100% 19%, 100% 87.5%, 60% 100%, 0 87.5%, 0 12.5%);
   grid-column: 2/-2;
 }
 
 .img {
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
 
   object-fit: cover;
 }
@@ -55,8 +60,9 @@
   .img-wrapper {
     grid-column: 2/-2;
     margin-left: 0;
-    clip-path: polygon(31% 0, 100% 30%, 100% 88%, 60% 100%, 0 87%, 0 10%);
-    -webkit-clip-path: polygon(31% 0, 100% 30%, 100% 88%, 60% 100%, 0 87%, 0 10%);
+    padding-top: 60%;
+    clip-path: polygon(40% 0, 100% 25%, 100% 84.5%, 60% 100%, 0 84.5%, 0 16%);
+    -webkit-clip-path: polygon(40% 0, 100% 25%, 100% 84.5%, 60% 100%, 0 84.5%, 0 16%);
   }
 }
 
@@ -77,7 +83,7 @@
 
   .content {
     grid-column: 4/-1;
-    padding: 5rem 5rem 0 5rem;
+    padding: 0 5rem;
   }
 
   .tagline {

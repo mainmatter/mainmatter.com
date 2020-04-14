@@ -104,29 +104,38 @@
   background-color: var(--color-light);
 }
 
+:scope[backgroundVariation='inclined'] {
+  margin-bottom: 5rem;
+}
+
 :scope[backgroundVariation='inclined'] .background-bottom,
 :scope[backgroundVariation='pointed'] .background-bottom {
   margin-top: 6rem;
   width: 100%;
-  padding-bottom: 12.5%;
   margin-top: -1px;
   grid-column: 1/-1;
   background-color: var(--color-background);
 }
 
 :scope[backgroundVariation='inclined'] .background-bottom {
-  -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%);
-  clip-path: polygon(0 0, 0 100%, 100% 100%);
+  padding-bottom: 16.5%;
+  -webkit-clip-path: polygon(0 0, 0 calc(100% + 1px), 100% calc(100% + 1px));
+  clip-path: polygon(0 0, 0 calc(100% + 1px), 100% calc(100% + 1px));
 }
 
 :scope[backgroundVariation='pointed'] .background-bottom {
-  -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 15%, 77.5% 100%, 0 15%);
-  clip-path: polygon(0 100%, 100% 100%, 100% 15%, 77.5% 100%, 0 15%);
+  padding-top: 15%;
+  -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 36%, 60% 100%, 0 33%);
+  clip-path: polygon(0 100%, 100% 100%, 100% 36%, 60% 100%, 0 33%);
 }
 
 @media (max-width: 887px) {
   :scope {
     margin-bottom: 12rem;
+  }
+
+  :scope[backgroundVariation='inclined'] {
+    margin-bottom: 5rem;
   }
 
   :scope,
@@ -181,8 +190,8 @@
     width: 100%;
     padding-bottom: 25%;
     margin-top: -1px;
-    -webkit-clip-path: polygon(0 50%, 100% 100%, 100% 0, 0 0);
-    clip-path: polygon(0 50%, 100% 100%, 100% 0, 0 0);
+    -webkit-clip-path: polygon(0 35%, 100% 100%, 100% 0, 0 0);
+    clip-path: polygon(0 35%, 100% 100%, 100% 0, 0 0);
   }
 
   .nav-item,
@@ -200,8 +209,8 @@
 
   :scope[backgroundVariation='pointed'] .background-bottom {
     margin-top: -50%;
-    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 55%, 0 0);
-    clip-path: polygon(0 100%, 100% 100%, 100% 55%, 0 0);
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 35%, 0 0);
+    clip-path: polygon(0 100%, 100% 100%, 100% 35%, 0 0);
   }
 }
 

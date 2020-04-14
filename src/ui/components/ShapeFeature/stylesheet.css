@@ -20,32 +20,35 @@
 
 .top {
   width: 100%;
-  padding-top: 15%;
+  padding-top: 14.5%;
   margin-bottom: -1px;
   background: var(--shape-color);
 
-  clip-path: polygon(40% 0%, 100% calc(100% - 1px), 100% 100%, 0 100%, 0 calc(50% - 1px));
-  -webkit-clip-path: polygon(40% 0%, 100% calc(100% - 1px), 100% 100%, 0 100%, 0 calc(50% - 1px));
+  clip-path: polygon(40% 0%, 100% calc(100% - 1px), 100% 100%, 0 100%, 0 calc(65% - 1px));
+  -webkit-clip-path: polygon(40% 0%, 100% calc(100% - 1px), 100% 100%, 0 100%, 0 calc(65% - 1px));
 }
 
 .bottom {
   width: 100%;
-  padding-bottom: 8%;
+  padding-bottom: 10%;
   margin-top: -1px;
   background: var(--shape-color);
 
-  clip-path: polygon(100% 0, 100% 1px, 57% 100%, 0 1px, 0 0);
-  -webkit-clip-path: polygon(100% 0, 100% 1px, 57% 100%, 0 1px, 0 0);
+  clip-path: polygon(100% 0, 100% 4%, 60% 100%, 0 1px, 0 0);
+  -webkit-clip-path: polygon(100% 0, 100% 4%, 60% 100%, 0 1px, 0 0);
 }
 
 .middle {
   background: var(--shape-color);
-  padding-bottom: 4rem;
 }
 
 @media (max-width: 887px) {
   :scope {
     margin: 11rem 0 0 0;
+  }
+
+  .middle {
+    padding-bottom: 4rem;
   }
 }
 
