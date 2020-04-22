@@ -79,7 +79,7 @@
     "percy": "^0.26.2",
     "pretender": "^3.4.1",
     "prettier": "^2.0.5",
-    "puppeteer": "^2.1.1",
+    "puppeteer": "^3.0.0",
     "qunitjs": "^2.3.3",
     "rollup": "^2.7.1",
     "rollup-plugin-babel": "^4.4.0",
