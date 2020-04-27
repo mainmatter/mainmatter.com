@@ -10,7 +10,7 @@ description:
 og:
   image:
 ---
-The first hours into a new project could determine most outcomes of a project. It might sound crazy, but a project's point of departure might hold the key to a more streamlined and efficient collaboration.
+The first hours into a new project could determine most outcomes of a project. It might sound crazy, but a project's point of departure could hold the key to a more streamlined and efficient collaboration.
 <!--break-->
 At simplabs, we believe in working alongside clients throughout projects. Kick-off meetings are one of the first things we tackle as part of our process to deliver high-quality results.
 
