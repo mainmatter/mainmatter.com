@@ -92,12 +92,14 @@ During the negotiation, the client has to hold back details, but now the cards
 are on the table. How can we learn more about the client's position and
 intentions during this stage?
 
-One model form the domain of Neuroscience can help us shift gears to a more
-collaborative win-win scenario. The SCARF model provides a framework to capture
+SCARF is a model from the domain of neuroscience that can help us shift gears to a more
+collaborative win-win scenario. The model provides a framework to capture
 the common factors that can activate a reward or threat response in the work
 settings.
 
-**Avoid offering feedback during the client's introduction**, this generates a
+If we want to facilitate the client's process of handing over project control to the team, we might try a different approach to avoid status conflicts.
+
+For example, we should **avoid offering feedback during the client's introduction**, this generates a
 status threat and blocks behavioral change. Instead have the client offer
 feedback on his own introduction and then ask clarifying questions. People feel
 a status increase when they are learning and improving and when attention is
