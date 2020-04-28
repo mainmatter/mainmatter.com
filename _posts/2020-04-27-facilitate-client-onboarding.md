@@ -10,10 +10,7 @@ og:
   image:
 ---
 
-The first hours into a new project could determine most outcomes of a project.
-It might sound crazy, but a project's point of departure could hold the key to a
-more streamlined and efficient collaboration.
-
+Could some adjustments to kick-off meetings lead to a more streamlined and efficient collaboration?
 <!--break-->
 
 At simplabs, we believe in working alongside clients throughout projects.
