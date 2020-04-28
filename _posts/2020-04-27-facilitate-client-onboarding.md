@@ -13,14 +13,11 @@ og:
 Could some adjustments to kick-off meetings lead to a more streamlined and efficient collaboration?
 <!--break-->
 
-At simplabs, we believe in working alongside clients throughout projects.
-Kick-off meetings are one of the first things we tackle as part of our process
-to deliver high-quality results.
+At simplabs, we believe in working alongside clients throughout projects as a way to get better outcomes, but because we aim to build relationships rather than just projects.
 
-I want to present an approach to kick-off meetings that can spark collaboration
-and create common ground between all project stakeholders. This approach focuses
-on creating a mindset that is distinctly different from the typical frame with
-which most software projects are conducted.
+Kick-off meetings are one of the first things we tackle as part of our process to deliver digital products. We use them to launch the project and bring the client on board.
+
+I want to present an approach to kick-off meetings that can spark collaboration early in the project and create common ground between all project stakeholders. This approach focuses on creating a mindset that is distinctly different from the typical frame with which most software projects are conducted.
 
 That typical frame looks something like this:
 
@@ -31,12 +28,12 @@ That typical frame looks something like this:
 5. Approach
 6. Roles and Responsibilities
 
-### Not just a checklist
+### Kick-off meetings are more than just checklists
 
 To be clear, I think those are good points to cover, however, treating this as a
-checklist won't produce any value. An intentional facilitated approach is
+checklist won't produce any lasting impact on participants. An intentional facilitated approach is
 required to make these points come to life and spark real and honest discussion,
-as well as conflict.
+as well as to work through conflict.
 
 ## What's the point of team introductions?
 
