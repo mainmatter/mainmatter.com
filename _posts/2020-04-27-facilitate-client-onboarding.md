@@ -48,7 +48,7 @@ anxiety. Good introductions can help teams develop stronger bonds much faster.
 
 Most teams undergo a gradual process before they can reach peak performance. In the initial forming stage there is a mix of emotions, ranging from excitement to anxiety. The same principle applies to team and client interactions, and in this case, introductions can serve as culture carriers. 
 
-A strong notion of the shared culture of a team will influence interactions with the client and stakeholders. What is left unsaid, risks being filled with assumptions, unwritten rules, and pre-existing attitudes towards certain things. So, how can those invisible parts become visible during an introduction? Next time you introduce yourself, make a conscious decision to share your expectations, what you like, and dislike, dare to be more personal.
+A strong notion of the shared culture of a team will influence interactions with the client and stakeholders. What is left unsaid, risks being filled with assumptions, unwritten rules, and pre-existing attitudes towards certain things. So, how can those invisible parts become visible during an introduction? Next time you introduce yourself, make a conscious decision to share your expectations, what you like, and dislike, and dare to be more personal.
 
 #### Example:
 
@@ -68,7 +68,7 @@ them, and what we bring to the table beside our work.
 
 The kick-off meeting marks the moment where a client hands-off their idea to the team that will build and implement it. It is a pivotal time in a project, and it's crucial to hear the client's project journey with as much detail as possible.
 
-If we consider that the client has been exposed to their idea for much longer than the team, then it's likely that the recency effect has them detach from the historical details of their journey and give more weight to recent events instead. However, there are things we can do to overcome this and turn the project introduction into a learning opportunity.
+If we consider that the client has been exposed to their idea for much longer than the team, then it's likely that the recency effect has them detach from the historical details of their journey and give more weight to recent events instead, they might not remember or be able to justify every decision made. However, there are things we can do to overcome these problems and turn the project introduction into a learning opportunity for all.
 
 ### Actively Listen and Delay Judgement
 
@@ -76,7 +76,7 @@ If we consider that the client has been exposed to their idea for much longer th
 
 It is not hard to find incongruencies or faults when someone is presenting an idea, even more so if it's the first time we are exposed to it. We can help the client connect and provide all the details if we take an active listener position and delay offering suggestions or advice. It is even better if we can ask questions that lead them to be more critical of their assumptions.
 
-The SCARF model from the domain of neuroscience provides a framework to understand the common factors leading to threat responses and how we can change directions to more collaborative win-win scenarios. It helps to explain why active listening is so effective. We all thrive when we are learning and improving, and when attention is being paid to our efforts. This activity can produce a state of willingness to do difficult things, to take risks, and try new solutions.
+The reason why this works is best explained through the SCARF model from the domain of neuroscience. This model provides a framework to understand the common factors leading to threat responses and how we can change directions to more collaborative win-win scenarios. It helps to explain why active listening is so effective by providing evidence on how we thrive when learning and improving, and when attention is being paid to our efforts. This activity can produce a state of willingness to do difficult things, to take risks, and try new solutions.
 
 ## How do we discuss project goals?
 
