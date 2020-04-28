@@ -66,9 +66,9 @@ them, and what we bring to the table beside our work.
 
 ## Helping the Client Describe Their Journey Through Active Listening
 
-The kick-off meeting marks the moment where a client hands-off their idea to the team that will build and implement it. It is a pivotal time in a project, and it's crucial to hear the client's project journey with as much detail as possible.
+The role of clients in projects is significant not only for the obvious reason that they are the ones whom the project is built for but also because they can influence the course of action.
 
-The client has been exposed to their idea for much longer than the team, so they likely feel that some details of their journey or motivations aren't relevant to the team, they might not remember or be able to justify every decision made. However, there are things we can do to overcome these problems and turn the project introduction into a learning opportunity for all.
+A study by the PMI (Project Management Institute) concluded that one of the biggest reasons for project failure is due to clients realizing new needs during the design and production phases. Because the client has been overexposed to their own idea, they mistakenly assume that some details of their journey or motivations aren't relevant to share. The problem is that when clients cannot clearly describe their needs at the start, their needs may change throughout the project.
 
 ### Listen Actively and Delay Judgement
 
