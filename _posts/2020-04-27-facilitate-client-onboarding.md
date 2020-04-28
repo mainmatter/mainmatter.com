@@ -64,39 +64,19 @@ By being intentional about the introduction, we can communicate additional
 layers of behaviors we like, how people can address us, what we expect from
 them, and what we bring to the table beside our work.
 
-## How should the client introduce the project?
+## Helping the Client Describe Their Journey Through Active Listening
 
-When a client introduces their project, they have already spent a fair amount of
-time repeating the same pitch to others. If we consider that the average RfP
-process takes anywhere from a month and a half to three months, we can assume
-they have already memorized their introduction and won't be in an active sharing
-mode.
+The kick-off meeting marks the moment where a client hands-off their idea to the team that will build and implement it. It is a pivotal time in a project, and it's crucial to hear the client's project journey with as much detail as possible.
 
-### Moving past negotiation mode
+If we consider that the client has been exposed to their idea for much longer than the team, then it's likely that the recency effect has them detach from the historical details of their journey and give more weight to recent events instead. However, there are things we can do to overcome this and turn the project introduction into a learning opportunity.
+
+### Actively Listen and Delay Judgement
 
 ![SCARF MODEL](/assets/images/posts/2020-04-27-facilitate-client-onboarding/scarf.png)
 
-At this point, the client has committed to a team, and their project
-introduction needs to foster trust and openness instead of selling an idea.
-During the negotiation, the client has to hold back details, but now the cards
-are on the table. How can we learn more about the client's position and
-intentions during this stage?
+It is not hard to find incongruencies or faults when someone is presenting an idea, even more so if it's the first time we are exposed to it. We can help the client connect and provide all the details if we take an active listener position and delay offering suggestions or advice. It is even better if we can ask questions that lead them to be more critical of their assumptions.
 
-SCARF is a model from the domain of neuroscience that can help us shift gears to a more
-collaborative win-win scenario. The model provides a framework to capture
-the common factors that can activate a reward or threat response in the work
-settings.
-
-If we want to facilitate the client's process of handing over project control to the team, we might try a different approach to avoid status conflicts.
-
-For example, we should **avoid offering feedback during the client's introduction**, this generates a
-status threat and blocks behavioral change. Instead have the client offer
-feedback on his own introduction and then ask clarifying questions. People feel
-a status increase when they are learning and improving and when attention is
-being paid to their efforts.
-
-This exercise can produce a state of willingness to do difficult things, to take
-risks, to think deeply about the problems, and try new solutions.
+The SCARF model from the domain of neuroscience provides a framework to understand the common factors leading to threat responses and how we can change directions to more collaborative win-win scenarios. It helps to explain why active listening is so effective. We all thrive when we are learning and improving, and when attention is being paid to our efforts. This activity can produce a state of willingness to do difficult things, to take risks, and try new solutions.
 
 ## How do we discuss project goals?
 
