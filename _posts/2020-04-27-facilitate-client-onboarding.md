@@ -1,5 +1,5 @@
 ---
-title: 'Facilitate Client Onboarding'
+title: 'How to Improve Kick-off Meetings to Spark Collaboration'
 author: 'Ghislaine Guerin'
 github: ghislaineguerin
 twitter: ghislaineguerin
