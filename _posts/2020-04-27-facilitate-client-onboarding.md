@@ -13,6 +13,7 @@ og:
 Could some adjustments to kick-off meetings lead to a more streamlined and efficient collaboration?
 <!--break-->
 
+## Kick-off Meetings
 At simplabs, we believe in working alongside clients throughout projects as a way to get better outcomes, but because we aim to build relationships rather than just projects.
 
 Kick-off meetings are one of the first things we tackle as part of our process to deliver digital products. We use them to launch the project and bring the client on board.
@@ -28,14 +29,14 @@ That typical frame looks something like this:
 5. Approach
 6. Roles and Responsibilities
 
-### Kick-off meetings are more than just checklists
+### Kick-Off Meetings Are More Than Just Checklists
 
 To be clear, I think those are good points to cover, however, treating this as a
 checklist won't produce any lasting impact on participants. An intentional facilitated approach is
 required to make these points come to life and spark real and honest discussion,
 as well as to work through conflict.
 
-## What's the point of team introductions?
+## Team Introductions Can Serve as a Way to Communicate Organizational and Team Culture 
 
 ![Team Stages](/assets/images/posts/2020-04-27-facilitate-client-onboarding/team-stages.png)
 
@@ -45,14 +46,9 @@ anxiety. Good introductions can help teams develop stronger bonds much faster.
 
 ### Introductions are more about culture than individual people
 
-Introductions are ideal ways to introduce organizational culture, built up by
-values, behaviors, and expectations. A strong notion of the shared culture of a
-team will influence interactions with the client and stakeholders. What is left
-unsaid, risks being filled with assumptions, unwritten rules, and pre-existing
-attitudes towards certain things. So, how can those invisible parts be grasped
-during an introduction? Next time you introduce yourself, make a conscious
-decision to share your expectations, what you like, and dislike, dare to be more
-personal.
+Most teams undergo a gradual process before they can reach peak performance. In the initial forming stage there is a mix of emotions, ranging from excitement to anxiety. The same principle applies to team and client interactions, and in this case, introductions can serve as culture carriers. 
+
+A strong notion of the shared culture of a team will influence interactions with the client and stakeholders. What is left unsaid, risks being filled with assumptions, unwritten rules, and pre-existing attitudes towards certain things. So, how can those invisible parts become visible during an introduction? Next time you introduce yourself, make a conscious decision to share your expectations, what you like, and dislike, dare to be more personal.
 
 #### Example:
 
