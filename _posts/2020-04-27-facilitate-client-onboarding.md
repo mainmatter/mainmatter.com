@@ -40,15 +40,9 @@ as well as to work through conflict.
 
 ![Team Stages](/assets/images/posts/2020-04-27-facilitate-client-onboarding/team-stages.png)
 
-Most teams undergo a gradual process before they can reach peak performance. In
-the initial forming stage there is a mix of emotions, ranging from excitement to
-anxiety. Good introductions can help teams develop stronger bonds much faster.
+Most teams undergo a gradual process before they can reach peak performance. In the initial forming stage there is a mix of emotions, ranging from excitement to anxiety that can affect performance. The same is true for team and client interactions at the start of a project. Shared culture can have a big influence on how fast we can advance as a team.
 
-### Introductions are more about culture than individual people
-
-Most teams undergo a gradual process before they can reach peak performance. In the initial forming stage there is a mix of emotions, ranging from excitement to anxiety. The same principle applies to team and client interactions, and in this case, introductions can serve as culture carriers. 
-
-A strong notion of the shared culture of a team will influence interactions with the client and stakeholders. What is left unsaid, risks being filled with assumptions, unwritten rules, and pre-existing attitudes towards certain things. So, how can those invisible parts become visible during an introduction? Next time you introduce yourself, make a conscious decision to share your expectations, what you like, and dislike, and dare to be more personal.
+A strong notion of the shared culture of a team will influence interactions with the client and stakeholders. What is left unsaid, risks being filled with assumptions, unwritten rules, and pre-existing attitudes towards certain things. So, how can those invisible parts be made visible during an introduction? Next time you introduce yourself, make a conscious decision to share your expectations, what you like, and dislike, and dare to be more personal.
 
 #### Example:
 
