@@ -63,7 +63,7 @@ expectations, what you like, and dislike, and dare to be more personal.
 
 #### Example:
 
-"Hello, my name is [Name], and I will be **working with you** on the design
+"Hello, my name is Ghislaine, and I will be **working with you** on the design
 aspects of this project. I've read your brief, and I find **challenges like
 yours fascinating** from a design perspective, especially when it comes to users
 creating value for others. I hope to **learn more from your vision** throughout
