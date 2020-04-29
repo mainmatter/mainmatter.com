@@ -13,14 +13,15 @@ og:
 Could some adjustments to kick-off meetings lead to a more streamlined and efficient collaboration?
 <!--break-->
 
-## Kick-off Meetings
-At simplabs, we believe in working alongside clients throughout projects as a way to get better outcomes, but because we aim to build relationships rather than just projects.
+![kick-off-arches](/assets/images/posts/2020-04-27-facilitate-client-onboarding/kick-off-arches.png)
+
+At simplabs, we believe in working alongside clients throughout projects not only as a way to get better outcomes, but because we aim to build relationships rather than just projects.
 
 Kick-off meetings are one of the first things we tackle as part of our process to deliver digital products. We use them to launch the project and bring the client on board.
 
 I want to present an approach to kick-off meetings that can spark collaboration early in the project and create common ground between all project stakeholders. This approach focuses on creating a mindset that is distinctly different from the typical frame with which most software projects are conducted.
 
-That typical frame looks something like this:
+**That typical frame looks something like this:**
 
 1. Introductions
 2. Client Background
@@ -29,16 +30,14 @@ That typical frame looks something like this:
 5. Approach
 6. Roles and Responsibilities
 
-### Kick-Off Meetings Are More Than Just Checklists
+#### Kick-Off Meetings Are More Than Just Checklists
 
 To be clear, I think those are good points to cover, however, treating this as a
 checklist won't produce any lasting impact on participants. An intentional facilitated approach is
 required to make these points come to life and spark real and honest discussion,
 as well as to work through conflict.
 
-## Team Introductions Can Serve as a Way to Communicate Organizational and Team Culture 
-
-![Team Stages](/assets/images/posts/2020-04-27-facilitate-client-onboarding/team-stages.png)
+### Team Introductions Can Serve as a Way to Communicate Organizational and Team Culture 
 
 Most teams undergo a gradual process before they can reach peak performance. In the initial forming stage there is a mix of emotions, ranging from excitement to anxiety that can affect performance. The same is true for team and client interactions at the start of a project. Shared culture can have a big influence on how fast we can advance as a team.
 
@@ -58,13 +57,13 @@ By being intentional about the introduction, we can communicate additional
 layers of behaviors we like, how people can address us, what we expect from
 them, and what we bring to the table beside our work.
 
-## Helping the Client Describe Their Journey Through Active Listening
+### Helping the Client Describe Their Journey Through Active Listening
 
 The role of clients in projects is significant not only for the obvious reason that they are the ones whom the project is built for but also because they can influence the course of action.
 
 A study by the PMI (Project Management Institute) concluded that one of the biggest reasons for project failure is due to clients realizing new needs during the design and production phases. Because the client has been overexposed to their own idea, they mistakenly assume that some details of their journey or motivations aren't relevant to share. The problem is that when clients cannot clearly describe their needs at the start, their needs may change throughout the project.
 
-### Listen Actively and Delay Judgement
+#### Listen Actively and Delay Judgement
 
 ![SCARF MODEL](/assets/images/posts/2020-04-27-facilitate-client-onboarding/scarf.png)
 
@@ -72,11 +71,11 @@ It is not hard to find incongruencies or faults when someone is presenting an id
 
 The reason why this approach works is best explained using the SCARF model from the domain of neuroscience. This model provides a framework to understand the common factors leading to threat responses and how we can change directions to more collaborative win-win scenarios. It helps to explain why active listening is so effective by providing evidence on how we thrive when learning and improving, and when attention is being paid to our efforts. Enabling this state can produce a willingness to do difficult things, take risks, and try new solutions.
 
-## How do we discuss project goals?
+### How do we discuss project goals?
 
 Project goals might be the most critical aspect of this process; after all, there'd be no need to meet or create something if we had no expectations for a project's outcome. However, if those expectations aren't clear for everyone, we might find conflict down the road, and while that's a natural part of projects, confronting them early is the best way to ensure a smooth process.
 
-### Recognizing and Avoiding Groupthink
+#### Recognizing and Avoiding Groupthink
 
 ![Circle of Influence](/assets/images/posts/2020-04-27-facilitate-client-onboarding/circle.png)
 
