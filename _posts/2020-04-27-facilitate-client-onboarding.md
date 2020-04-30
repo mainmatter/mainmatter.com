@@ -22,12 +22,11 @@ only as a way to get better outcomes but also because we aim to build
 relationships rather than just projects.
 
 Kick-off meetings are one of the first things we tackle as part of our process
-to deliver digital products. We use them to set the beginning of a new project
-and bring the client on board.
+to deliver digital products, whether it is creating an app from scratch or a website. We use them to set the beginning of a new project and bring the client on board.
 
 I want to present an approach to kick-off meetings that can spark collaboration
 early in the project and create common ground between the client and the team.
-To imagine the type of meeting that would undoubtedly be worth the time of
+To envision the type of meeting that would undoubtedly be worth the time of
 everyone attending and produce a mindset that is distinctly different from the
 typical frame with which most software projects are conducted.
 
@@ -74,7 +73,7 @@ this project and know that I am always open to discuss things briefly, even if
 unrelated to the project, feel free to **send an email if you have any
 questions**."
 
-By being intentional about the introduction, we can communicate additional
+By being more intentional about what we say during team introductions, we can communicate additional
 layers of behaviors we like, how people can address us, what we expect from
 them, and what we bring to the table beside our work.
 
