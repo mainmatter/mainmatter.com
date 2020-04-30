@@ -7,7 +7,7 @@ topic: design
 bio: 'Process Designer and Facilitator'
 description: ''
 og:
-  image:
+  image: /assets/images/posts/2020-04-27-facilitate-client-onboarding/og-image.png
 ---
 
 Could some adjustments to kick-off meetings lead to a more streamlined and
