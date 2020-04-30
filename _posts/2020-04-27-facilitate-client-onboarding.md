@@ -89,9 +89,9 @@ A study by the PMI (Project Management Institute) concluded that one of the
 biggest reasons for project failure is due to clients realizing new needs during
 the design and production phases. Because the client has been overexposed to
 their idea, they mistakenly assume that some details of their journey or
-motivations aren't relevant to share. The problem is that when clients cannot
+motivations aren't relevant to share. The issue is that when clients cannot
 clearly describe the problem they are trying to solve at the start, their needs
-may be self-contradictory throughout the project.
+may turn self-contradicting throughout the project.
 
 #### Listen Actively and Delay Judgement
 
