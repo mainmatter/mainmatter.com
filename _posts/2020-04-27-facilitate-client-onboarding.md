@@ -12,7 +12,9 @@ og:
 
 Could some adjustments to kick-off meetings lead to a more streamlined and
 efficient collaboration?
+
 <!--break-->
+
 ![kick-off-arches](/assets/images/posts/2020-04-27-facilitate-client-onboarding/kick-off-arches.png)
 
 At simplabs, we believe in working alongside clients throughout projects not
@@ -148,10 +150,10 @@ guarantee an advantage, but accepting that might open up unforeseen
 possibilities.
 
 I like to use the story of Notion, considered now one of the best apps in its
-category with over 1 million users, as an example of this. It shows how the team managed to rise back
-up from failure and perform exponentially better only after they run out of
-cash. A constraint mindset can be the optimal way of creating unparalleled
-solutions.
+category with over 1 million users, as an example of this. It shows how the team
+managed to rise back up from failure and perform exponentially better only after
+they run out of cash. A constraint mindset can be the optimal way of creating
+unparalleled solutions.
 
 ## Next Steps
 
