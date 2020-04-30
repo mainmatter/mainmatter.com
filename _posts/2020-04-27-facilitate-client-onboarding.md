@@ -22,7 +22,9 @@ only as a way to get better outcomes but also because we aim to build
 relationships rather than just projects.
 
 Kick-off meetings are one of the first things we tackle as part of our process
-to deliver digital products, whether it is creating an app from scratch or a website. We use them to set the beginning of a new project and bring the client on board.
+to deliver digital products, whether it is creating an app from scratch or a
+website. We use them to set the beginning of a new project and bring the client
+on board.
 
 I want to present an approach to kick-off meetings that can spark collaboration
 early in the project and create common ground between the client and the team.
@@ -43,9 +45,9 @@ typical frame with which most software projects are conducted.
 
 To be clear, I think those are good points to cover; however, treating this as a
 checklist won't produce any lasting impact on participants. We've all been to
-many meetings where we want to get back to work. For that reason, an intentional
-facilitated approach is required to make these points come to life and spark
-real and honest discussion, as well as to work through conflict.
+many meetings where we just want to get back to work. For that reason, an
+intentional facilitated approach is required to make these points come to life
+and spark real and honest discussion.
 
 ### Team Introductions Can Serve as a Way to Communicate Organizational and Team Culture
 
@@ -56,8 +58,8 @@ interactions at the start of a project. Shared culture can have a significant
 influence on how fast we can advance as a team.
 
 Starting with a strong notion of the shared culture of a team will influence
-interactions with the client. If things are left unsaid, we
-risk filling that space with assumptions and unwritten rules.
+interactions with the client. If things are left unsaid, we risk filling that
+space with assumptions and unwritten rules.
 
 So, how can those invisible parts be made visible during an introduction? Next
 time you introduce yourself, make a conscious decision to share your
@@ -73,9 +75,9 @@ this project and know that I am always open to discuss things briefly, even if
 unrelated to the project, feel free to **send an email if you have any
 questions**."
 
-By being more intentional about what we say during team introductions, we can communicate additional
-layers of behaviors we like, how people can address us, what we expect from
-them, and what we bring to the table beside our work.
+By being more intentional about what we say during team introductions, we can
+communicate additional layers of behaviors we like, how people can address us,
+what we expect from them, and what we bring to the table beside our work.
 
 ### Helping the Client Describe Their Journey Through Active Listening
 
@@ -122,8 +124,8 @@ confronting them early is the best way to ensure a smooth process.
 
 Talking about problems at the very beginning can be quite hard. And I know
 because I've been there too. That is until I started my path as a facilitator
-and experienced the value behind exposing those problems and facing
-uncertainty from the very beginning.
+and experienced the value behind exposing those problems and facing uncertainty
+from the very beginning.
 
 #### Recognizing and Avoiding Groupthink
 
@@ -149,9 +151,9 @@ guarantee an advantage, but accepting that might open up unforeseen
 possibilities.
 
 I like to use the example of Notion, considered now one of the best apps in its
-category with over 1 million users. It tells the story of how their team
-managed to rise back up from failure and perform exponentially better only after
-they run out of cash. A constraint mindset can be the optimal way of creating
+category with over 1 million users. It tells the story of how their team managed
+to rise back up from failure and perform exponentially better only after they
+run out of cash. A constraint mindset can be the optimal way of creating
 unparalleled solutions.
 
 ## Next Steps
