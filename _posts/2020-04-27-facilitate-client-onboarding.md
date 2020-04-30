@@ -144,10 +144,10 @@ into each sphere of the diagram and explain the reasons why we think we have or
 lack control over any desired outcome and things we can do to influence them
 positively or reduce the impact of negative factors.
 
-It works because, when we can accept our lack of control over something, we ignite the
-team's creative engine and figure out ways to influence a more successful
-outcome. We might not be able to implement a fully-fledged feature that would
-guarantee an advantage, but accepting that might open up unforeseen
+It works because, when we can accept our lack of control over something, we
+ignite the team's creative engine and figure out ways to influence a more
+successful outcome. We might not be able to implement a fully-fledged feature
+that would guarantee an advantage, but accepting that might open up unforeseen
 possibilities.
 
 I like to use the example of Notion, considered now one of the best apps in its
