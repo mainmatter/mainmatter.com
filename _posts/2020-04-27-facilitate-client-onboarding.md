@@ -121,8 +121,8 @@ might find conflict down the road, and while that's a natural part of projects,
 confronting them early is the best way to ensure a smooth process.
 
 Talking about problems at the very beginning can be quite hard. And I know
-because I've been there, too. That is until I started my path as a facilitator
-and experienced the value behind exposing those problems and facing the
+because I've been there too. That is until I started my path as a facilitator
+and experienced the value behind exposing those problems and facing
 uncertainty from the very beginning.
 
 #### Recognizing and Avoiding Groupthink
@@ -148,8 +148,8 @@ outcome. We might not be able to implement a fully-fledged feature that would
 guarantee an advantage, but accepting that might open up unforeseen
 possibilities.
 
-I like to use the story of Notion, considered now one of the best apps in its
-category with over 1 million users, as an example of this. It shows how the team
+I like to use the example of Notion, considered now one of the best apps in its
+category with over 1 million users. It tells the story of how their team
 managed to rise back up from failure and perform exponentially better only after
 they run out of cash. A constraint mindset can be the optimal way of creating
 unparalleled solutions.
