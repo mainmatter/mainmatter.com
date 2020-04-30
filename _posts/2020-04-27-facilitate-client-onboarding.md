@@ -26,7 +26,7 @@ to deliver digital products. We use them to set the beginning of a new project
 and bring the client on board.
 
 I want to present an approach to kick-off meetings that can spark collaboration
-early in the project and create common ground between all project stakeholders.
+early in the project and create common ground between the client and the team.
 To imagine the type of meeting that would undoubtedly be worth the time of
 everyone attending and produce a mindset that is distinctly different from the
 typical frame with which most software projects are conducted.
@@ -57,7 +57,7 @@ interactions at the start of a project. Shared culture can have a significant
 influence on how fast we can advance as a team.
 
 Starting with a strong notion of the shared culture of a team will influence
-interactions with the client and stakeholders. If things are left unsaid, we
+interactions with the client. If things are left unsaid, we
 risk filling that space with assumptions and unwritten rules.
 
 So, how can those invisible parts be made visible during an introduction? Next
