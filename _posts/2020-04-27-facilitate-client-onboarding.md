@@ -15,7 +15,7 @@ efficient collaboration?
 
 <!--break-->
 
-![kick-off-arches](/assets/images/posts/2020-04-27-facilitate-client-onboarding/kick-off-arches.png)
+![kick-off-arches](/assets/images/posts/2020-04-27-facilitate-client-onboarding/kick-off-arches.png#@720-1440)
 
 At simplabs, we believe in working alongside clients throughout projects not
 only as a way to get better outcomes but also because we aim to build
@@ -95,7 +95,7 @@ may turn self-contradicting throughout the project.
 
 #### Listen Actively and Delay Judgement
 
-![SCARF MODEL](/assets/images/posts/2020-04-27-facilitate-client-onboarding/scarf.png)
+![SCARF MODEL](/assets/images/posts/2020-04-27-facilitate-client-onboarding/scarf.png#@512-1024)
 
 It is not hard to find incongruencies or faults when someone is presenting an
 idea, even more so if it's the first time we are exposed to it. We can help the
@@ -129,10 +129,10 @@ from the very beginning.
 
 #### Recognizing and Avoiding Groupthink
 
-![Circle of Influence](/assets/images/posts/2020-04-27-facilitate-client-onboarding/circle.png)
+![Circle of Influence](/assets/images/posts/2020-04-27-facilitate-client-onboarding/circle.png#@512-1024)
 
-Groupthink - the preference of harmony instead and avoidance of conflict within
-groups - can cause teams to make sub-optimal decisions when they prioritize
+Groupthink — the preference of harmony instead and avoidance of conflict within
+groups — can cause teams to make sub-optimal decisions when they prioritize
 conformity over critical reasoning or evaluation. Although it is unintentional,
 recognizing it and creating spaces for debate can lead to teams that tolerate
 ambiguity together.
