@@ -29,7 +29,7 @@ module('Component: FormContact', function(hooks) {
   test('it submits', async function(assert) {
     await render(hbs`<PageContact />`);
 
-    this.server.post('https://guqdu9qkgf.execute-api.eu-central-1.amazonaws.com/production', request => {
+    this.server.post('https://simplabs-com-contact-emails.now.sh/api/send', request => {
       assert.equal(request.method, 'POST');
       assert.equal(request.requestHeaders['content-type'], 'application/json');
       assert.deepEqual(JSON.parse(request.requestBody), {

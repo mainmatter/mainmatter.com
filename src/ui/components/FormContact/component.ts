@@ -57,7 +57,7 @@ export default class FormContact extends Component {
   }
 
   private async sendMessage(name, email, message) {
-    return fetch('https://guqdu9qkgf.execute-api.eu-central-1.amazonaws.com/production', {
+    return fetch('https://simplabs-com-contact-emails.now.sh/api/send', {
       body: JSON.stringify({ name, email, message }),
       cache: 'no-cache',
       headers: {
