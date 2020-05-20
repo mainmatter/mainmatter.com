@@ -77,7 +77,7 @@
     "morgan": "^1.10.0",
     "navigo": "^7.1.2",
     "percy": "^0.26.6",
-    "pretender": "^3.4.1",
+    "pretender": "^3.4.3",
     "prettier": "^2.0.5",
     "puppeteer": "^3.1.0",
     "qunitjs": "^2.3.3",
