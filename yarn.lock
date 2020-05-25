@@ -886,10 +886,10 @@
     symlink-or-copy "^1.2.0"
     walk-sync "^2.0.0"
 
-"@css-blocks/config@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@css-blocks/config/-/config-1.0.0.tgz#3b3738078f3d0a732af2c7fdccb47ffa7a263604"
-  integrity sha512-XJ5JPUaqvZAL4zq/9pFvbd9UMjEiCoXpp0OHkEFI4Km8N+7pwOpTGuo3MYEoDlZR0Z1bHPXG+Mkh0e1z8ObaHw==
+"@css-blocks/config@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@css-blocks/config/-/config-1.1.0.tgz#410300241ed31cee723370eacc27c299943adc01"
+  integrity sha512-kTjOaMlJi1USAly5cEph8FoxdFlNl2pLiO1/AhV15ilDdgoQ1nGWiviz8WnryEhATx7zXg26gZTjBy0WRku/xw==
   dependencies:
     "@css-blocks/core" "^1.0.0"
     cosmiconfig "^6.0.0"
@@ -915,13 +915,13 @@
     source-map "^0.7.3"
     watch "^1.0.2"
 
-"@css-blocks/ember-cli@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@css-blocks/ember-cli/-/ember-cli-1.0.0.tgz#c4651374c41e27dff4805f0519c321eba17cf18d"
-  integrity sha512-d/OBjgtWC57f2ioMYIrKPbU7MSZ2K+2zPJ22S17heGJVWC7mF2kcQJFb9DOOR1A62OE306lrN3TZZTCVvql7+g==
+"@css-blocks/ember-cli@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@css-blocks/ember-cli/-/ember-cli-1.1.0.tgz#767e5c02f93d66e311678df26d0b75375ef0619e"
+  integrity sha512-ZLNDOQAshcZtn8i5E0E1kSV7/GBbVRqL0XKgKo6SMv2VrplRmq+vP82/Vut+bSatPeMH7txe4ZX/BHGrCuzXFg==
   dependencies:
     "@css-blocks/broccoli" "^1.0.0"
-    "@css-blocks/config" "^1.0.0"
+    "@css-blocks/config" "^1.1.0"
     "@css-blocks/glimmer" "^1.0.0"
     "@glimmer/application-pipeline" "^0.15.0"
     broccoli-concat "^3.7.3"
