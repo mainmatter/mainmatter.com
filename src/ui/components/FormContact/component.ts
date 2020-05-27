@@ -57,7 +57,7 @@ export default class FormContact extends Component {
   }
 
   private async sendMessage(name, email, message) {
-    return fetch('https://simplabs-com-contact-emails.now.sh/api/send', {
+    return fetch('https://simplabs-com-contact-form.herokuapp.com/api/send', {
       body: JSON.stringify({ name, email, message }),
       cache: 'no-cache',
       headers: {
