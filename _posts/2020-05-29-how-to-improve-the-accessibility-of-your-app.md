@@ -106,7 +106,7 @@ rule exists and how to fix it. For instance,
 [here's the information](https://dequeuniversity.com/rules/axe/3.5/autocomplete-valid?application=axeAPI)
 for one of the validation errors we're getting.
 
-![example of errors thrown by a11y in an acceptance test](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/acceptance-test-error.png)
+![example of errors thrown by a11y in an acceptance test](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/acceptance-test-error.png#@1024-2048)
 
 One issue we ran into, was that these tests brought up a lot of accessibility
 violations, some of which we couldn't just fix on our own. For instance, several
@@ -261,11 +261,11 @@ that using `fieldset` was a good option. When you have a `fieldset` with a
 legend, the screen reader will include this information when giving you the
 information of an input it contains. See below:
 
-![image of screen reader info for an input in a group with fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-with-fieldset-legend.png)
+![image of screen reader info for an input in a group with fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-with-fieldset-legend.png#@1024-2048)
 
 _with fielset legend_
 
-![image of screen reader info for an input in a group without a fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-without-fieldset-legend.png)
+![image of screen reader info for an input in a group without a fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-without-fieldset-legend.png#@1024-2048)
 
 _without fielset legend_
 
@@ -273,7 +273,7 @@ Another case where you should consider using a `fielset` is whenever you have
 big forms that may have a logical grouping of fields, for instance a group of
 inputs relating to an address inside a bigger form.
 
-![address form example](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/address-form.png)
+![address form example](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/address-form.png#@900-1800)
 
 In a case like this, is better to opt out for a `fielset` with a `legend` saying
 "Postal address" vs having a heading element and just a `div` groupping these
@@ -306,12 +306,12 @@ idea where exactly you're focused until you try to enter some content.
 One scenario where this might happen, is when the `outline` of elements is set
 to none. This is usually to avoid the browser's default outline.
 
-![select-with-default-outline](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/select-with-default-outline.png)
+![select-with-default-outline](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/select-with-default-outline.png#@700-1400)
 
 In this scenario, don't forget to set a style for the `:focus` state. For
 instance, the following can be achieved by the CSS below.
 
-![select-with-custom-outline](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/select-with-custom-outline.png)
+![select-with-custom-outline](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/select-with-custom-outline.png#@700-1400)
 
 ```css
 select:focus {
