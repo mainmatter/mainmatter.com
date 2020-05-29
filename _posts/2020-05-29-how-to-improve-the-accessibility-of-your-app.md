@@ -195,7 +195,7 @@ mind.
 This may seem obvious, but your inputs should have labels that indicate what
 information is required. The maybe not so obvious part is that labels should be
 linked to those inputs. As an example, the failing test above: the labels exist
-and are visually on top of the inputs, but in the HTML is not clear the label
+and are visually on top of the inputs, but in the HTML it is not clear the label
 belongs to that input.
 
 ```html
