@@ -259,11 +259,13 @@ and listen 'DD' as the whole explanation for the field. Even having labels such
 as 'Day', 'Month', 'Year' may not be sufficient context. For this case, we found
 that using `fieldset` was a good option. When you have a `fieldset` with a
 legend, the screen reader will include this information when giving you the
-information of an input it contains. See below:
+information of an input it contains. This is how it what the screen reader says
+when the legend is present:
 
-| with fielset legend                                                                                                                                                                                 | without fielset legend                                                                                                                                                                                      |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![image of screen reader info for an input in a group with fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-with-fieldset-legend.png#@1024-2048) | ![image of screen reader info for an input in a group without a fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-without-fieldset-legend.png#@1024-2048) |
+![image of screen reader info for an input in a group with fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-with-fieldset-legend.png#@1024-2048)
+
+Versus when it's not:
+![image of screen reader info for an input in a group without a fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-without-fieldset-legend.png#@1024-2048)
 
 Another case where you should consider using a `fielset` is whenever you have
 big forms that may have a logical grouping of fields, for instance a group of
