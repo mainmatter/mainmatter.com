@@ -39,7 +39,7 @@ rather than add those checks on the already existing tests. The reason for this
 was that we were dealing with a testing suite that wasn't complete, and where
 tests didn't all follow the same patterns, some would test flows, other would
 test just parts of a page, so it was hard to define where to add the
-accessibility checks so they would bring the more value.
+accessibility checks so they would bring the most value.
 
 To add accessibility checks, simply install the add-on.
 
