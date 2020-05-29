@@ -36,8 +36,8 @@ tests when you have an app with an already big testing suite?
 At the time, the best answer for us was to create dedicated acceptance tests for
 accessibility, that would go through a couple of important flows within the app
 rather than add those checks on the already existing tests. The reason for this
-was that we were dealing with a testing suite that wasn't complete, and where
-tests didn't all follow the same patterns, some would test flows, other would
+was that we were dealing with an incomplete testing suite where
+tests didn't follow the same patterns, some would test flows, other would
 test just parts of a page, so it was hard to define where to add the
 accessibility checks so they would bring the most value.
 
@@ -99,7 +99,7 @@ module('Component | login-form', function (hooks) {
 ```
 
 The `a11yAudit` helper will inspect the rendered page or component and it will
-raise an error if it finds any accessibility violations. The great think about
+raise an error if it finds any accessibility violations. The great thing about
 it, is that it will list all violations with it's severity and will even include
 a link to documentation for that rule, which includes an explanation of why the
 rule exists and how to fix it. For instance,
@@ -109,8 +109,8 @@ for one of the validation errors we're getting.
 ![example of errors thrown by a11y in an acceptance test](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/acceptance-test-error.png#@1024-2048)
 
 One issue we ran into, was that these tests brought up a lot of accessibility
-violations, some of which we couldn't just fix on our own. For instance, several
-of the errors where due to color contrast issues, in a lot of cases, deciding on
+violations, some of which we couldn't just fix on our own. For example, several
+of the errors were due to color contrast issues, in a lot of cases, deciding on
 (and changing) color schemes may not be entirely in your power, and it can
 involve discussions with designers, product owners, and may even be influenced
 by branding, but you can and should use this information to spark those
@@ -184,7 +184,7 @@ fixing these issues as an effort in itself (independent from feature
 development) would take a lot of time and was going to be a tough sell. So we
 decided to start acting on these improvements gradually, and taking a more
 mindfull approach when developing, trying not to introduce new issues and make
-improvements where possible. One of these opportunities came when making
+improvements where possible. One of these opportunities presented itself when making
 improvements to a relatively simple page with a form.
 
 Here are some of the things we had to improve, and why you should keep them in
@@ -234,7 +234,7 @@ Ideally this should match the visual label, to avoid any possible confusion.
 
 Missing labels are one of the possible violations that
 [ember-a11y-testing](https://github.com/ember-a11y/ember-a11y-testing) will
-detect for you, but having labels that make sense, alone and in the context of
+detect for you, but having labels that make sense, on their own and in the context of
 the form and page, is something that only you can do, no automatic tools will do
 it for you (as far as I know). To understand why and also to have a better idea
 of how accessible your app is, I highly suggest using a screen reader to
@@ -275,17 +275,15 @@ inputs relating to an address inside a bigger form.
 
 ![address form example](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/address-form.png#@900-1800)
 
-In a case like this, is better to opt out for a `fielset` with a `legend` saying
-"Postal address" vs having a heading element and just a `div` groupping these
-fields.
+In such cases it is better to use a `fieldset` with a `legend`, `<legend>Postal address</legend>`, instead of a heading element and a `div` grouping the fields.
 
 ### Tab index
 
-If you have a well structured page, and you're not rearranging input orders by
+If you have a well structured page and you're not rearranging input orders by
 CSS or JS, your best bet is to just rely on the browser and not set a tab index
 value on your inputs. This will ensure that when navigating with the keyboard
 you will move through the form as you would expect, in the order the elements
-are shown in the screen.
+are shown on the screen.
 
 This is not always possible, and in some cases you will have to resort to
 setting `tabindex` to make sure the keyboard navigation is consistent. Always
@@ -377,14 +375,14 @@ input[type='checkbox'].custom-checkbox:focus + *::before {
 
 ### Enter should submit your form
 
-One more thing you should always check, is that you can submit the form just
-using your keyboard. Specially when doing an Ember app, you may implement forms
+Another thing to keep an eye out for, is that you can submit the form just
+using your keyboard. Especially when developing an Ember app, you may implement forms
 that don't include an actual `form` element. Wether that's the case or not, at
 least the submit button should respond to `Enter`, and why not... even the other
 fields.
 
 This is by no means a comprehensive list, there are other accessibility
-considerations to have in mind when working with forms, like making sure errors
+considerations to have in mind when working with forms, such as making sure errors
 are detected by the screen reader, that custom components behave well when using
 just the keyboard, etc. The important thing to remember is you're not alone in
 this, there are [tools](https://github.com/ember-a11y/ember-a11y) and
