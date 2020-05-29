@@ -20,8 +20,8 @@ Knowing where to start can be tough, as well as taking those first steps.
 
 For some time now, there's been an ongoing effort in the Ember community to make
 accessibility an important consideration of the framework and to help developers
-have an easier time building accessible apps. From talks, to tools. One
-interesting tool, is
+have an easier time building accessible apps – from talks, to tools. One
+interesting tool is
 [ember-a11y-testing](https://github.com/ember-a11y/ember-a11y-testing), which
 can help you detect accessibility violations both during testing and
 development.
@@ -181,7 +181,7 @@ Back to our legacy app case, we realized that using the test information and
 fixing these issues as an effort in itself (independent from feature
 development) would take a lot of time and was going to be a tough sell. So we
 decided to start acting on these improvements gradually, and taking a more
-mindfull approach when developing, trying no to introduce new issues and make
+mindfull approach when developing, trying not to introduce new issues and make
 improvements where possible. One of these opportunities came when making
 improvements to a relatively simple page with a form.
 
@@ -306,7 +306,7 @@ to none. This is usually to avoid the browser's default outline.
 
 ![select-with-default-outline](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/select-with-default-outline.png)
 
-In these scenario, don't forget to set a style for the `:focus` state. For
+In this scenario, don't forget to set a style for the `:focus` state. For
 instance, the following can be achieved by the CSS below.
 
 ![select-with-custom-outline](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/select-with-custom-outline.png)
