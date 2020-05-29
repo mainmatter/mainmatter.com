@@ -5,7 +5,9 @@ github: sdebarros
 twitter: sami_dbc
 topic: ember
 bio: 'Senior Frontend Engineer'
-description: ''
+description:
+  'Samanta de Barros on how to test the accessibility of your Ember app and what
+  accessibility considerations you should have when creating forms in Ember.'
 og:
   image:
 ---
