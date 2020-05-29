@@ -9,8 +9,10 @@ description:
   'Samanta de Barros on how to test the accessibility of your Ember app and what
   accessibility considerations you should have when creating forms in Ember.'
 og:
-  image:
+  image: /assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/og-image.png
 ---
+
+![improve the accessibility of your app illustration](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/accessibility-illustration.png#full@720-1440)
 
 Making sure your web app is accessible can be a daunting task. Just as having a
 good testing suite or an app that's responsive and works well across devices, it
