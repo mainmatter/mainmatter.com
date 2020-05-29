@@ -1,5 +1,5 @@
 ---
-title: 'How to improve the accessibility of your legacy Ember app'
+title: 'How to improve the accessibility of your existing Ember app'
 author: 'Samanta de Barros'
 github: sdebarros
 twitter: sami_dbc
@@ -13,7 +13,7 @@ og:
 Making sure your web app is accessible can be an effort similar to making sure
 your app is well tested, or that it's responsive and works well accross devices:
 it's great when you've thought of it from the start, but it can be daunting and
-seem like an unclimbable hill when you want to introduce it into a legacy app.
+seem like an unclimbable hill when you want to introduce it into a existing app.
 Knowing where to start can be tough, as well as taking those first steps.
 
 <!--break-->
@@ -29,7 +29,7 @@ development.
 While working on a client project, we decided to make an effort to improve the
 accessibility of that app, and this tool seemed like it would be a good start.
 The first question we came across was, what's the best way to introduce these
-tests when you have a legacy app, with an already big testing suite?
+tests when you have an app with an already big testing suite?
 
 At the time, the best answer for us was to do dedicated acceptance tests for
 accessibility, that would go through a couple of important flows within the app
@@ -177,7 +177,7 @@ detect these issues visually while you work,
 
 ## A few considerations when implementing forms
 
-Back to our legacy app case, we realized that using the test information and
+Back to our existing app case, we realized that using the test information and
 fixing these issues as an effort in itself (independent from feature
 development) would take a lot of time and was going to be a tough sell. So we
 decided to start acting on these improvements gradually, and taking a more
