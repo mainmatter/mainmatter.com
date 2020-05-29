@@ -15,8 +15,8 @@ og:
 Making sure your web app is accessible can be an effort similar to making sure
 your app is well tested, or that it's responsive and works well accross devices:
 it's great when you've thought of it from the start, but it can be daunting and
-seem like an unclimbable hill when you want to introduce it into a existing app.
-Knowing where to start can be tough, as well as taking those first steps.
+seem like an unattainable goal when you want to introduce it into a existing
+app. Knowing where to start can be tough, as well as taking those first steps.
 
 <!--break-->
 
@@ -251,12 +251,12 @@ development process.
 
 ### Groups of fields
 
-Another interesting case we came across was group of inputs we had for entering
-a date. There where three inputs, for day, month and year and they had the
-placeholders "DD", "MM", "YYYY". This may seem clear enough when looking at the
-whole page, but can be strange when you're using your keyboard to navigate and
-listen 'DD' as the whole explanation for the field. Even having labels such as
-'Day', 'Month', 'Year' may not be sufficient context. For this case, we found
+Another interesting case we came across was a group of inputs we had for
+entering a date. There where three inputs, for day, month and year and they had
+the placeholders "DD", "MM", "YYYY". This may seem clear enough when looking at
+the whole page, but can be strange when you're using your keyboard to navigate
+and listen 'DD' as the whole explanation for the field. Even having labels such
+as 'Day', 'Month', 'Year' may not be sufficient context. For this case, we found
 that using `fieldset` was a good option. When you have a `fieldset` with a
 legend, the screen reader will include this information when giving you the
 information of an input it contains. See below:
