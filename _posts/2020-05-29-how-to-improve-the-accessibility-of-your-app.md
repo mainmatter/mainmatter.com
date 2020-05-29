@@ -33,7 +33,7 @@ accessibility of that app, and this tool seemed like it would be a good start.
 The first question we came across was, what's the best way to introduce these
 tests when you have an app with an already big testing suite?
 
-At the time, the best answer for us was to do dedicated acceptance tests for
+At the time, the best answer for us was to create dedicated acceptance tests for
 accessibility, that would go through a couple of important flows within the app
 rather than add those checks on the already existing tests. The reason for this
 was that we were dealing with a testing suite that wasn't complete, and where
