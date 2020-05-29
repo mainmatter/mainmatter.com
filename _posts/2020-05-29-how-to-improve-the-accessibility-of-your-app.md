@@ -28,10 +28,10 @@ accessible apps. One interesting tool, in particular, is
 [ember-a11y-testing](https://github.com/ember-a11y/ember-a11y-testing), which
 helps detect accessibility violations during both testing and development.
 
-While working on a client project, we decided to make an effort to improve the
-accessibility of that app, and this tool seemed like it would be a good start.
-The first question we came across was, what's the best way to introduce these
-tests when you have an app with an already big testing suite?
+While working on a client project, we decided to improve the accessibility of
+that app, and using this tool in our tests seemed like it would be a good start.
+The first question we came across was, **what's the best way to introduce these
+tests when you have an app with an already big testing suite?**
 
 At the time, the best answer for us was to create dedicated acceptance tests for
 accessibility, that would go through a couple of important flows within the app
@@ -41,13 +41,8 @@ follow the same patterns, some would test flows, other would test just parts of
 a page, so it was hard to define where to add the accessibility checks so they
 would bring the most value.
 
-To add accessibility checks, simply install the add-on.
-
-```bash
-ember install ember-a11y-testing
-```
-
-And add it to your tests, here's an example of an acceptance test:
+To add accessibility checks, simply install the add-on and use it in your tests,
+here's an example of an acceptance test:
 
 ```js
 import { visit } from '@ember/test-helpers';
@@ -71,12 +66,12 @@ module('Acceptance | accessibility check', function (hooks) {
 });
 ```
 
-You can also add these validations to integration tests. When creating your
-component and adding the integration tests, it would be a good idea to add a
-test for accessibility checks. If you have well tested components, it could be
-interesting to adopt the accessibility checks as part of the development process
-of said components, making sure that both new components or changes to existing
-component don't introduce any violations of accessibility rules.
+You can also add these validations to integration tests. While you are creating
+integration tests for components, you could easily add a few extra tests that
+check for accessibility issues. If you already have well-tested components, it
+could be interesting to adopt the accessibility checks as part of the
+development process, making sure that both new components and improvements to
+existing components don't introduce any violations of accessibility rules
 
 ```js
 import { render } from '@ember/test-helpers';
@@ -100,9 +95,9 @@ module('Component | login-form', function (hooks) {
 
 The `a11yAudit` helper will inspect the rendered page or component and it will
 raise an error if it finds any accessibility violations. The great thing about
-it, is that it will list all violations with it's severity and will even include
-a link to documentation for that rule, which includes an explanation of why the
-rule exists and how to fix it. For instance,
+this is that it will list all violations with the respective severities and will
+even include a link to documentation for that rule, which includes an
+explanation of why the rule exists and how to fix it. For instance,
 [here's the information](https://dequeuniversity.com/rules/axe/3.5/autocomplete-valid?application=axeAPI)
 for one of the validation errors we're getting.
 
@@ -118,8 +113,8 @@ discussions and promote change.
 
 If you're in the same situation, and fixing those errors is not something that
 can be done all at once, you can opt for muting validations and taking an
-incremental approach to making this improvements (similar to the upgrade path in
-Ember were you can mute deprecations and work on them step by step).
+incremental approach to making these improvements (similar to the upgrade path
+in Ember where you can mute deprecations and work on them step by step).
 
 ```js
 test('sign in page has no accessibility issues', async function (assert) {
@@ -170,17 +165,17 @@ test('sign in page has no accessibility issues', async function (assert) {
 });
 ```
 
-You can then remove the rules one by one as you fix the violations.
+You can then re-enable the rules one by one as you fix the violations.
 
 The [ember-a11y-testing](https://github.com/ember-a11y/ember-a11y-testing)
-add-on provides other helpers and options, and can even be used in developmen to
+add-on provides other helpers, options and can even be used in development to
 detect these issues visually while you work,
 [so don't forget to read the docs!](https://github.com/ember-a11y/ember-a11y-testing)
 
-## A few considerations when implementing forms
+## A few accessibility considerations when implementing forms
 
 Back to our existing app case, we realized that using the test information and
-fixing these issues as an effort in itself (independent from feature
+fixing identified issues as an effort in itself (independent from feature
 development) would take a lot of time and was going to be a tough sell. So we
 decided to start acting on these improvements gradually, and taking a more
 mindfull approach when developing, trying not to introduce new issues and make
@@ -259,12 +254,13 @@ and listen 'DD' as the whole explanation for the field. Even having labels such
 as 'Day', 'Month', 'Year' may not be sufficient context. For this case, we found
 that using `fieldset` was a good option. When you have a `fieldset` with a
 legend, the screen reader will include this information when giving you the
-information of an input it contains. This is how it what the screen reader says
-when the legend is present:
+information of an input it contains. This is what the screen reader says when
+the legend is present:
 
 ![image of screen reader info for an input in a group with fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-with-fieldset-legend.png#@1024-2048)
 
 Versus when it's not:
+
 ![image of screen reader info for an input in a group without a fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-without-fieldset-legend.png#@1024-2048)
 
 Another case where you should consider using a `fielset` is whenever you have
@@ -375,11 +371,11 @@ input[type='checkbox'].custom-checkbox:focus + *::before {
 
 ### Enter should submit your form
 
-Another thing to keep an eye out for, is that you can submit the form just using
-your keyboard. Especially when developing an Ember app, you may implement forms
-that don't include an actual `form` element. Wether that's the case or not, at
-least the submit button should respond to `Enter`, and why not... even the other
-fields.
+Another thing you should always check is being able to submit the form using
+just the keyboard. Especially when developing an Ember app, you may implement
+forms that don't include an actual `form` element. Whether that's the case or
+not, at least the submit button should respond to `Enter`, and why not... even
+the other fields.
 
 This is by no means a comprehensive list, there are other accessibility
 considerations to have in mind when working with forms, such as making sure
