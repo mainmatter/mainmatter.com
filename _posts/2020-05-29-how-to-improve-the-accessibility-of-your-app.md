@@ -3,7 +3,7 @@ title: 'How to improve the accessibility of your legacy Ember app'
 author: 'Samanta de Barros'
 github: sdebarros
 twitter: sami_dbc
-topic: ember, accessibility
+topic: ember
 bio: 'Senior Frontend Engineer'
 description: ''
 og:
