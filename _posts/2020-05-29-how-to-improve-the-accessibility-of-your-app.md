@@ -36,10 +36,10 @@ tests when you have an app with an already big testing suite?
 At the time, the best answer for us was to create dedicated acceptance tests for
 accessibility, that would go through a couple of important flows within the app
 rather than add those checks on the already existing tests. The reason for this
-was that we were dealing with an incomplete testing suite where
-tests didn't follow the same patterns, some would test flows, other would
-test just parts of a page, so it was hard to define where to add the
-accessibility checks so they would bring the most value.
+was that we were dealing with an incomplete testing suite where tests didn't
+follow the same patterns, some would test flows, other would test just parts of
+a page, so it was hard to define where to add the accessibility checks so they
+would bring the most value.
 
 To add accessibility checks, simply install the add-on.
 
@@ -184,8 +184,8 @@ fixing these issues as an effort in itself (independent from feature
 development) would take a lot of time and was going to be a tough sell. So we
 decided to start acting on these improvements gradually, and taking a more
 mindfull approach when developing, trying not to introduce new issues and make
-improvements where possible. One of these opportunities presented itself when making
-improvements to a relatively simple page with a form.
+improvements where possible. One of these opportunities presented itself when
+making improvements to a relatively simple page with a form.
 
 Here are some of the things we had to improve, and why you should keep them in
 mind.
@@ -234,13 +234,13 @@ Ideally this should match the visual label, to avoid any possible confusion.
 
 Missing labels are one of the possible violations that
 [ember-a11y-testing](https://github.com/ember-a11y/ember-a11y-testing) will
-detect for you, but having labels that make sense, on their own and in the context of
-the form and page, is something that only you can do, no automatic tools will do
-it for you (as far as I know). To understand why and also to have a better idea
-of how accessible your app is, I highly suggest using a screen reader to
-navigate your page and try to perform the action you want your users to perform
-(in this case, filling out a form and submitting it). I can assure you if you've
-never done it before, it will be mind opening.
+detect for you, but having labels that make sense, on their own and in the
+context of the form and page, is something that only you can do, no automatic
+tools will do it for you (as far as I know). To understand why and also to have
+a better idea of how accessible your app is, I highly suggest using a screen
+reader to navigate your page and try to perform the action you want your users
+to perform (in this case, filling out a form and submitting it). I can assure
+you if you've never done it before, it will be mind opening.
 
 Now, I know using a screen reader is not something everyone is acquainted with
 (I wasn't), you can find resources on how to start
@@ -261,13 +261,9 @@ that using `fieldset` was a good option. When you have a `fieldset` with a
 legend, the screen reader will include this information when giving you the
 information of an input it contains. See below:
 
-![image of screen reader info for an input in a group with fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-with-fieldset-legend.png#@1024-2048)
-
-_with fielset legend_
-
-![image of screen reader info for an input in a group without a fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-without-fieldset-legend.png#@1024-2048)
-
-_without fielset legend_
+| with fielset legend                                                                                                                                                                                 | without fielset legend                                                                                                                                                                                      |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![image of screen reader info for an input in a group with fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-with-fieldset-legend.png#@1024-2048) | ![image of screen reader info for an input in a group without a fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-without-fieldset-legend.png#@1024-2048) |
 
 Another case where you should consider using a `fielset` is whenever you have
 big forms that may have a logical grouping of fields, for instance a group of
@@ -275,7 +271,9 @@ inputs relating to an address inside a bigger form.
 
 ![address form example](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/address-form.png#@900-1800)
 
-In such cases it is better to use a `fieldset` with a `legend`, `<legend>Postal address</legend>`, instead of a heading element and a `div` grouping the fields.
+In such cases it is better to use a `fieldset` with a `legend`,
+`<legend>Postal address</legend>`, instead of a heading element and a `div`
+grouping the fields.
 
 ### Tab index
 
@@ -375,16 +373,16 @@ input[type='checkbox'].custom-checkbox:focus + *::before {
 
 ### Enter should submit your form
 
-Another thing to keep an eye out for, is that you can submit the form just
-using your keyboard. Especially when developing an Ember app, you may implement forms
+Another thing to keep an eye out for, is that you can submit the form just using
+your keyboard. Especially when developing an Ember app, you may implement forms
 that don't include an actual `form` element. Wether that's the case or not, at
 least the submit button should respond to `Enter`, and why not... even the other
 fields.
 
 This is by no means a comprehensive list, there are other accessibility
-considerations to have in mind when working with forms, such as making sure errors
-are detected by the screen reader, that custom components behave well when using
-just the keyboard, etc. The important thing to remember is you're not alone in
-this, there are [tools](https://github.com/ember-a11y/ember-a11y) and
+considerations to have in mind when working with forms, such as making sure
+errors are detected by the screen reader, that custom components behave well
+when using just the keyboard, etc. The important thing to remember is you're not
+alone in this, there are [tools](https://github.com/ember-a11y/ember-a11y) and
 [resources](https://guides.emberjs.com/release/accessibility/components/) to
 help, and if you don't know where to start, start with the tests.
