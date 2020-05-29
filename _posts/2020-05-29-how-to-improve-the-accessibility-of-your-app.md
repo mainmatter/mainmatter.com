@@ -12,21 +12,21 @@ og:
   image:
 ---
 
-Making sure your web app is accessible can be an effort similar to making sure
-your app is well tested, or that it's responsive and works well accross devices:
-it's great when you've thought of it from the start, but it can be daunting and
-seem like an unattainable goal when you want to introduce it into a existing
-app. Knowing where to start can be tough, as well as taking those first steps.
+Making sure your web app is accessible can be a daunting task. Just as having a
+good testing suite or an app that's responsive and works well across devices, it
+seems easier to achieve when you're starting a new project than when working
+with an existing app. Knowing where to start can be tough, therefore we've
+outlined how to implement accessibility tests in Ember alongside a very common
+case: forms.
 
 <!--break-->
 
 For some time now, there's been an ongoing effort in the Ember community to make
-accessibility an important consideration of the framework and to help developers
-have an easier time building accessible apps – from talks, to tools. One
-interesting tool is
+accessibility an integral part of the framework. A handful of tools and
+resources have been created to give developers an easier time building
+accessible apps. One interesting tool, in particular, is
 [ember-a11y-testing](https://github.com/ember-a11y/ember-a11y-testing), which
-can help you detect accessibility violations both during testing and
-development.
+helps detect accessibility violations during both testing and development.
 
 While working on a client project, we decided to make an effort to improve the
 accessibility of that app, and this tool seemed like it would be a good start.
