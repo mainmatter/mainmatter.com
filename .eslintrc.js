@@ -23,6 +23,7 @@ module.exports = {
     {
       files: [
         '.eslintrc.js',
+        'testem.js',
         'ember-cli-build.js',
         'config/**/*.js',
         'lib/*/index.js',
