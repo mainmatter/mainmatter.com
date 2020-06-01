@@ -22,7 +22,7 @@ module.exports = {
   overrides: [
     {
       files: [
-        'testem.json',
+        '.eslintrc.js',
         'ember-cli-build.js',
         'config/**/*.js',
         'lib/*/index.js',
