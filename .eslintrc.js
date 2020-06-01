@@ -3,26 +3,22 @@ module.exports = {
     server: true,
   },
   root: true,
-  plugins: [
-    'prettier',
-  ],
-  extends: [
-    'simplabs',
-    'prettier',
-  ],
+  plugins: ['prettier'],
+  extends: ['simplabs', 'prettier'],
   rules: {
     'comma-dangle': ['error', 'always-multiline'],
-    'quotes': ['error', 'single'],
+    quotes: ['error', 'single'],
 
     'prettier/prettier': 'error',
   },
   parserOptions: {
-    ecmaVersion: '2018'
+    ecmaVersion: '2018',
   },
   overrides: [
     {
       files: [
-        'testem.json',
+        '.eslintrc.js',
+        'testem.js',
         'ember-cli-build.js',
         'config/**/*.js',
         'lib/*/index.js',
