@@ -39,7 +39,7 @@ At the time, the best answer for us was to create dedicated acceptance tests for
 accessibility, that would go through a couple of important flows within the app
 rather than add those checks on the already existing tests. The reason for this
 was that we were dealing with an incomplete testing suite where tests didn't
-follow the same patterns, some would test flows, other would test just parts of
+follow the same patterns, some would test flows, others would test just parts of
 a page, so it was hard to define where to add the accessibility checks so they
 would bring the most value.
 
@@ -113,7 +113,7 @@ involve discussions with designers, product owners, and may even be influenced
 by branding, but you can and should use this information to spark those
 discussions and promote change.
 
-If you're in the same situation, and fixing those errors is not something that
+If you're in the same situation and fixing those errors is not something that
 can be done all at once, you can opt for muting validations and taking an
 incremental approach to making these improvements (similar to the upgrade path
 in Ember where you can mute deprecations and work on them step by step).
@@ -180,7 +180,7 @@ Back to our existing app case, we realized that using the test information and
 fixing identified issues as an effort in itself (independent from feature
 development) would take a lot of time and was going to be a tough sell. So we
 decided to start acting on these improvements gradually, and taking a more
-mindfull approach when developing, trying not to introduce new issues and make
+mindful approach when developing, trying not to introduce new issues and make
 improvements where possible. One of these opportunities presented itself when
 making improvements to a relatively simple page with a form.
 
@@ -225,7 +225,7 @@ input as shown below:
 />
 ```
 
-Ideally this should match the visual label, to avoid any possible confusion.
+Ideally, this should match the visual label to avoid any possible confusion.
 
 ### Labels and placeholders that make sense
 
@@ -237,7 +237,7 @@ tools will do it for you (as far as I know). To understand why and also to have
 a better idea of how accessible your app is, I highly suggest using a screen
 reader to navigate your page and try to perform the action you want your users
 to perform (in this case, filling out a form and submitting it). I can assure
-you if you've never done it before, it will be mind opening.
+you if you've never done it before, it will be mind-opening.
 
 Now, I know using a screen reader is not something everyone is acquainted with
 (I wasn't), you can find resources on how to start
@@ -249,15 +249,15 @@ development process.
 ### Groups of fields
 
 Another interesting case we came across was a group of inputs we had for
-entering a date. There where three inputs, for day, month and year and they had
-the placeholders "DD", "MM", "YYYY". This may seem clear enough when looking at
-the whole page, but can be strange when you're using your keyboard to navigate
-and listen 'DD' as the whole explanation for the field. Even having labels such
-as 'Day', 'Month', 'Year' may not be sufficient context. For this case, we found
-that using `fieldset` was a good option. When you have a `fieldset` with a
-legend, the screen reader will include this information when giving you the
-information of an input it contains. This is what the screen reader says when
-the legend is present:
+entering a date. There were three inputs, for the day, month and year and they
+had the placeholders "DD", "MM", "YYYY". This may seem clear enough when looking
+at the whole page, but can be strange when you're using your keyboard to
+navigate and listen 'DD' as the whole explanation for the field. Even having
+labels such as 'Day', 'Month', 'Year' may not be sufficient context. In this
+case, we found that using `fieldset` was a good option. When you have a
+`fieldset` with a legend, the screen reader will include this information when
+giving you the information of an input it contains. This is what the screen
+reader says when the legend is present:
 
 ![image of screen reader info for an input in a group with fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-with-fieldset-legend.png#@1024-2048)
 
@@ -265,27 +265,27 @@ Versus when it's not:
 
 ![image of screen reader info for an input in a group without a fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-without-fieldset-legend.png#@1024-2048)
 
-Another case where you should consider using a `fielset` is whenever you have
-big forms that may have a logical grouping of fields, for instance a group of
+Another case where you should consider using a `fieldset` is whenever you have
+big forms that may have a logical grouping of fields, for instance, a group of
 inputs relating to an address inside a bigger form.
 
 ![address form example](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/address-form.png#@900-1800)
 
-In such cases it is better to use a `fieldset` with a `legend`,
+In such cases, it is better to use a `fieldset` with a `legend`,
 `<legend>Postal address</legend>`, instead of a heading element and a `div`
 grouping the fields.
 
 ### Tab index
 
-If you have a well structured page and you're not rearranging input orders by
+If you have a well-structured page and you're not rearranging input orders by
 CSS or JS, your best bet is to just rely on the browser and not set a tab index
 value on your inputs. This will ensure that when navigating with the keyboard
 you will move through the form as you would expect, in the order the elements
 are shown on the screen.
 
-This is not always possible, and in some cases you will have to resort to
+This is not always possible, and in some cases, you will have to resort to
 setting `tabindex` to make sure the keyboard navigation is consistent. Always
-make sure to test these cases manually, there's nothing more frustrating then
+make sure to test these cases manually, there's nothing more frustrating than
 having the inputs being skipped or having a jumping order when using only the
 keyboard to fill out forms.
 
@@ -296,11 +296,11 @@ determine visually when an input is focused is also important. When using native
 inputs with their default styles, the browser will take care of this for you.
 But we often rely on custom implementations of inputs to make them more visually
 appealing and forget to set specific styles for the focused state. This can
-create a scenario where you tab through the fields of your form, and have no
-idea where exactly you're focused until you try to enter some content.
+create a scenario where you tab through the fields of your form and have no idea
+where exactly you're focused until you try to enter some content.
 
-One scenario where this might happen, is when the `outline` of elements is set
-to none. This is usually to avoid the browser's default outline.
+One scenario where this might happen is when the `outline` of elements is set to
+none. This is usually to avoid the browser's default outline.
 
 ![select-with-default-outline](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/select-with-default-outline.png#@700-1400)
 
@@ -318,7 +318,7 @@ select:focus {
 Another scenario is when creating custom checkboxes, which usually involve not
 showing an actual checkbox. This may be a more complicated case, but if your
 custom implementation includes a hidden checkbox, you can use that to set the
-focus styled. If not, you should really reconsider your implementation.
+focused style. If not, you should reconsider your implementation.
 
 For example, the following checkbox can be implemented with the code below,
 where the actual checkbox is hidden but is still used for the states.
