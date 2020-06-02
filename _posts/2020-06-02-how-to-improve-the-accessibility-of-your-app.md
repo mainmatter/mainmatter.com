@@ -9,10 +9,8 @@ description:
   'Samanta de Barros on how to test the accessibility of your Ember app and what
   accessibility considerations you should have when creating forms in Ember.'
 og:
-  image: /assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/og-image.png
+  image: /assets/images/posts/2020-06-02-how-to-improve-the-accessibility-of-your-app/og-image.png
 ---
-
-![improve the accessibility of your app illustration](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/accessibility-illustration.png#full@720-1440)
 
 Making sure your web app is accessible can be a daunting task. Just as having a
 good testing suite or an app that's responsive and works well across devices, it
@@ -22,6 +20,8 @@ outlined how to implement accessibility tests in Ember alongside a very common
 case: forms.
 
 <!--break-->
+
+![improve the accessibility of your app illustration](/assets/images/posts/2020-06-02-how-to-improve-the-accessibility-of-your-app/illustration.png#full@720-1440)
 
 For some time now, there's been an ongoing effort in the Ember community to make
 accessibility an integral part of the framework. A handful of tools and
@@ -103,7 +103,7 @@ explanation of why the rule exists and how to fix it. For instance,
 [here's the information](https://dequeuniversity.com/rules/axe/3.5/autocomplete-valid?application=axeAPI)
 for one of the validation errors we're getting.
 
-![example of errors thrown by a11y in an acceptance test](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/acceptance-test-error.png#@1024-2048)
+![example of errors thrown by a11y in an acceptance test](/assets/images/posts/2020-06-02-how-to-improve-the-accessibility-of-your-app/acceptance-test-error.png#@1024-2048)
 
 One issue we ran into, was that these tests brought up a lot of accessibility
 violations, some of which we couldn't just fix on our own. For example, several
@@ -259,17 +259,17 @@ case, we found that using `fieldset` was a good option. When you have a
 giving you the information of an input it contains. This is what the screen
 reader says when the legend is present:
 
-![image of screen reader info for an input in a group with fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-with-fieldset-legend.png#@1024-2048)
+![image of screen reader info for an input in a group with fieldset legend](/assets/images/posts/2020-06-02-how-to-improve-the-accessibility-of-your-app/group-with-fieldset-legend.png#@1024-2048)
 
 Versus when it's not:
 
-![image of screen reader info for an input in a group without a fieldset legend](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/group-without-fieldset-legend.png#@1024-2048)
+![image of screen reader info for an input in a group without a fieldset legend](/assets/images/posts/2020-06-02-how-to-improve-the-accessibility-of-your-app/group-without-fieldset-legend.png#@1024-2048)
 
 Another case where you should consider using a `fieldset` is whenever you have
 big forms that may have a logical grouping of fields, for instance, a group of
 inputs relating to an address inside a bigger form.
 
-![address form example](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/address-form.png#@900-1800)
+![address form example](/assets/images/posts/2020-06-02-how-to-improve-the-accessibility-of-your-app/address-form.png#@900-1800)
 
 In such cases, it is better to use a `fieldset` with a `legend`,
 `<legend>Postal address</legend>`, instead of a heading element and a `div`
@@ -302,12 +302,12 @@ where exactly you're focused until you try to enter some content.
 One scenario where this might happen is when the `outline` of elements is set to
 none. This is usually to avoid the browser's default outline.
 
-![select-with-default-outline](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/select-with-default-outline.png#@700-1400)
+![select-with-default-outline](/assets/images/posts/2020-06-02-how-to-improve-the-accessibility-of-your-app/select-with-default-outline.png#@700-1400)
 
 In this scenario, don't forget to set a style for the `:focus` state. For
 instance, the following can be achieved by the CSS below.
 
-![select-with-custom-outline](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/select-with-custom-outline.png#@700-1400)
+![select-with-custom-outline](/assets/images/posts/2020-06-02-how-to-improve-the-accessibility-of-your-app/select-with-custom-outline.png#@700-1400)
 
 ```css
 select:focus {
@@ -325,7 +325,7 @@ where the actual checkbox is hidden but is still used for the states.
 
 | unfocused                                                                                                                                | checked                                                                                                                                | focused                                                                                                                              |
 | ---------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| ![custom-checkbox-unfocused](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/custom-checkbox-unfocused.png) | ![custom-checkbox-unfocused](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/custom-checkbox-checked.png) | ![custom-checkbox-focused](/assets/images/posts/2020-05-29-how-to-improve-the-accessibility-of-your-app/custom-checkbox-focused.png) |
+| ![custom-checkbox-unfocused](/assets/images/posts/2020-06-02-how-to-improve-the-accessibility-of-your-app/custom-checkbox-unfocused.png) | ![custom-checkbox-unfocused](/assets/images/posts/2020-06-02-how-to-improve-the-accessibility-of-your-app/custom-checkbox-checked.png) | ![custom-checkbox-focused](/assets/images/posts/2020-06-02-how-to-improve-the-accessibility-of-your-app/custom-checkbox-focused.png) |
 
 ```html
 <label for="my-checkbox">
