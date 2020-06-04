@@ -4,9 +4,7 @@ author: 'Arthur Poot'
 github: arthup1
 twitter: arthurpoot
 topic: pwas
-bio:
-  "I'm a digital marketing expert, part-time designer, and always fighting with
-  CSS. I'm a big fan of automation and PWAs."
+bio: Digital Marketing Analyst and Business Developer
 description:
 og:
   image: /assets/images/posts/2020-06-05-pwa-features-2020-comparison/og-image.png
