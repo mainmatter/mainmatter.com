@@ -23,9 +23,9 @@ take this in mind. That's why we made this overview.
 
 <!--break-->
 
-## The overview on the state of PWAs in 2020 per OS.
+## The state of PWAs in 2020 per OS
 
-![PWA support per operating system (iOS vs Android vs macOS, windows)](/assets/images/posts/2020-06-05-pwa-features-2020-comparison/infographic.png#@860-1720)
+![PWA support per operating system (iOS vs Android vs macOS, windows)](/assets/images/posts/2020-06-05-pwa-features-2020-comparison/infographic.png#@900-1800)
 
 ### Which devices support PWAs?
 
