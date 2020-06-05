@@ -65,16 +65,18 @@ other hand, Apple has been very protective of PWAs accessing hardware or app
 context. See the table above for the full list.
 
 On the desktop, native hardware features are mostly limited to the harddrive,
-camera, and microphone as well as geolocation. Like any browser or app, it neatly
-prompts the user to give or block access to the hardware. There just aren't that
-many native sensors in a desktop device, except hardware that plugs directly
-into the OS environment (e.g. bluetooth headphones, hard drives, or USB devices).
+camera, and microphone as well as geolocation. Like any browser or app, it
+neatly prompts the user to give or block access to the hardware. There just
+aren't that many native sensors in a desktop device, except hardware that plugs
+directly into the OS environment (e.g. bluetooth headphones, hard drives, or USB
+devices).
 
 ### What native software features are accessible by PWAs?
 
 For a PWA to be fully indistinguishable from a native app, it needs to blend in
-with the native user interactions offered by the operating software. For example, native push
-notifications, keyboard shortcuts, and gestures give that native feeling.
+with the native user interactions offered by the operating software. For
+example, native push notifications, keyboard shortcuts, and gestures give that
+native feeling.
 
 On mobile devices most basic software features are now supported, such as the
 swipe back and switch-app gestures. Both Android and iOS also allow auto-filling
@@ -93,10 +95,10 @@ start comparing it is good to answer the following questions:
 
 Each OS has different users. Designers, developers and the youth use macOS,
 while employees of many corporates spend most of their time on Windows PCs. iOS
-is not as big as Android. Only in the United States, more than 20% of the online population
-is on an iPhone or iPad. So it really depends on what audience you try to serve.
-The best way to find out on which device your users are is to look in Google
-Analytics under the Audience tab and then click Technology.
+is not as big as Android. Only in the United States, more than 20% of the online
+population is on an iPhone or iPad. So it really depends on what audience you
+try to serve. The best way to find out on which device your users are is to look
+in Google Analytics under the Audience tab and then click Technology.
 
 ### Do I really need this feature? If so, is there a workaround?
 
