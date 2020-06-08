@@ -5,81 +5,72 @@
     @documentTitle="Rebuilding an MVP for long term success for Timify | Work"
     @description="We rebuilt Timify's MVP into a well-architected system that would be the foundation for future evolution, setting them up for sustainable long-term success."
   >
-    <HeaderContent @label="Timify Case Study" @headline="Modern online appointment scheduling" />
+    <HeaderContent
+      @label="Timify Case Study"
+      @headline="Modern online appointment scheduling"
+      @attachment="image"
+      @srcset="/assets/images/photos/marco@600.jpg 600w, /assets/images/photos/marco@1200.jpg 1200w"
+      @sizes="(max-width: 887px) 600px, 1200px"
+    >
+      <p typography:class="lead">
+        Timify is an online appointment scheduling service that connects small businesses with their customers. They have helped over 45.000 businesses in 26 countries make their online appointment booking easier and more accessible, allowing them to reach more customers and increase revenue.
+      </p>
+    </HeaderContent>
   </Header>
-  <div layout:class="main">
-    <p typography:class="lead">
-      Timify is an online appointment scheduling service that connects service providers with clients.
-    </p>
-    <p typography:class="lead">
-      They have helped over 50.000 businesses worldwide make their online appointment scheduling easier and more accessible, allowing them to improve their customer service and spur revenue.
-    </p>
-  </div>
-  <div layout:class="side">
-    <Card @label="Client" @src="/assets/images/card/timify.svg" @alt="Timify">
-      <p>
-        Timify is a cloud-based appointment scheduling and shift planning system for all kinds of businesses including: healthcare providers, hair and beauty salons, tutors, mechanics, general contractors, sports and fitness trainers, and more.
-      </p>
-    </Card>
-    <CardEmberExpertise />
-  </div>
-  <ShapeWork
-    @background="#304158"
-    @color="#CB3B43"
-    @center="true"
-    @src="/assets/images/work/timify-right@1800.jpg"
-    @clip="true"
-  >
-    <blockquote block:class="quote-offset">
-      <p>
-        simplabs' experienced engineers delivered a solid and well architected foundation for our web app. They also helped us establish best practices and a lean process internally. Working with them was a pleasure.
-      </p>
-      <p typography:class="small">
-        Andreas Knürr, Timify CEO
-      </p>
-    </blockquote>
-  </ShapeWork>
-  <div layout:class="main" offset:class="after-21">
-    <h3>
-      Laying the foundation for future success
-    </h3>
-    <p>
-      Timify had validated their business model with a prototype they had built in-house. As the business was growing though, it became clear the prototype wouldn't be a solid foundation for the future. They needed to re-engineer the entire system, making sure it allowed them to continue iterating fast without sacrificing quality.
-    </p>
-    <figure figure:scope>
-      <img
-        figure:class="content"
-        src="/assets/images/work/timify-comp.jpg"
-        alt="screenshot of the Timify app, showing the schedule"
-      />
 
-      <figcaption>
-        Timify allows businesses in 29 countries to manage appointments and plan shifts more effectively
-      </figcaption>
-    </figure>
-    <h3>
-      Delivering high quality in time
-    </h3>
+  <div layout:class="bleed-left" offset:class="after-21">
+    <ShapeImage
+      @srcset="/assets/images/photos/laptop-detail@600.jpg 600w, /assets/images/photos/laptop-detail@1200.jpg 1200w"
+      @sizes="(max-width: 887px) 600px, 1200px)"
+      @align="left"
+    />
+  </div>
+  <div layout:class="split-trailing" offset:class="after-12">
+    <h2>
+      The Challenge
+    </h2>
+
     <p>
-      We built the first release version of the new application for Timify in just over 4 months, allowing them to meet their internal deadlines. After the initial release, we joined forces with the client's in-house engineering team, teaching best practices and ensuring modern and idiomatic Ember.js patterns were followed. This way, we were able to ensure long-term success for Timify's in-house team, based on the foundation we had laid.
-    </p>
-    <h3>
-      A path into the future
-    </h3>
-    <p>
-      Our technology experts spearheaded several engineering efforts focused around premium subscriptions along with payment system integration, localization of the application in 15 languages and support for time zones. Timify's in-house team was able to take over these initiatives, iterate on the foundations we had laid and maintain the features over time.
-    </p>
-    <h3>
-      Building on a modern stack
-    </h3>
-    <p>
-      Ember.js proved to be the right technology choice for an ambitious application like Timify that was built to last for years. The baked in conventions enable larger teams and applications to move fast without breaking things. Leveraging modern web technologies like SVG, we were able to achieve excellent runtime performance even for large data sets. The json:api based server API allowed us to implement the client and server side of a feature concurrently.
+      Timify was still an early stage startup when they reached out to us. Their in-house engineering team had built a prototype of their core product  and closed a funding round that enabled them to take their business to the next level. However, they knew the prototype would not be able to serve as a foundation for sustainable product development and would have to be replaced with a more sophisticated solution. Lacking the expertise for laying that foundation, they contacted us for help.
     </p>
   </div>
-  <div layout:class="side" block:class="vertical-offset" offset:class="after-21">
-    <CardPlaybook />
+
+  {{! playbook shape: self-organization }}
+
+  <div layout:class="main" offset:class="after-21">
+    <h2>
+      The Solution
+    </h2>
+    <p>
+      We recommended building on a modern tech stack allowing for an intuitive user interface and sustainability in the future. The complex UI requirements together with the long-term aspiration made Ember.js an ideal choice for the project. Not only is Ember.js a full-featured framework that provides out-of-the-box solutions for all aspects of ambitious projects – it’s strong focus on backwards compatibility and stable evolution of the framework itself, along with the strong community make it uniquely well-suited for foundational projects like this. Combining Ember.js with json:api for the client/server communication established a strong foundation for long-term success – both technically as well as organizationally.
+    </p>
+    <p>
+      Our consultants developed Timify’s entire prototype in just over four months as an Ember.js application. While releasing the new version of their core product, we also laid the foundation for future evolution by establishing effective and future-proof Ember.js patterns in the codebase. Additionally, we put in place the development infrastructure and processes that would allow their in-house development team to move fast with confidence in the future as well, covering all aspects from testing and continuous integration to deployment and error tracking.
+    </p>
+    <h2>
+      Handover
+    </h2>
+    <p>
+      Having released the initial version of the product, we supported Timify in scaling up their internal development team. Building on the technical foundation and infrastructure we established, they were able to quickly participate effectively in the development of incremental improvements of the application. By working closely with our experts via pair programming and other collaborative techniques, they were eventually able to take over maintenance and evolution completely.
+    </p>
   </div>
-  <ShapeFeatureTrainline @label="Continue Reading" />
+
+  <div layout:class="side" offset:class="after-12">
+    <p>
+      <q>
+        simplabs' experienced engineers delivered a solid and well architected foundation for our web app. They also helped us establish best practices and a lean process internally. Working with them was a pleasure.
+      </q>
+    </p>
+  </div>
+
+  <div layout:class="bleed-right" offset:class="after-21">
+    <ShapeImage
+      @srcset="/assets/images/photos/kanban@600.jpg 600w, /assets/images/photos/kanban@1200.jpg 1200w"
+      @sizes="(max-width: 887px) 600px, 1200px)"
+      @align="right"
+    />
+  </div>
+
   <WorkWithUs @teamMember="florian" />
 
   <Footer />
