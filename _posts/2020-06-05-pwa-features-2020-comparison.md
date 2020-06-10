@@ -1,5 +1,5 @@
 ---
-title: 'PWA support on mobile and desktop in 2020'
+title: 'The state of PWA support on mobile and desktop in 2020'
 author: 'Arthur Poot'
 github: arthup1
 twitter: arthurpoot
