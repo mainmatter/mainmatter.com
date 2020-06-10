@@ -9,7 +9,7 @@ description:
   'Arthur Poot presents an overview of the possibilities that PWAs offer and the
   level of support different browsers and OSs offer in 2020.'
 og:
-  image: /assets/images/posts/2020-06-05-pwa-features-2020-comparison/og-image.png
+  image: /assets/images/posts/2020-06-10-the-state-of-pwa-support-on-mobile-and-desktop-in-2020/og-image.png
 ---
 
 Progressive Web Apps have evolved rapidly over the past few years and are now
@@ -27,7 +27,7 @@ That's why we made this overview.
 
 ## The state of PWAs in 2020 per OS
 
-![PWA support per operating system (iOS vs Android vs macOS vs Windows)](/assets/images/posts/2020-06-05-pwa-features-2020-comparison/infographic.png#@900-1800)
+![PWA support per operating system (iOS vs Android vs macOS vs Windows)](/assets/images/posts/2020-06-10-the-state-of-pwa-support-on-mobile-and-desktop-in-2020/infographic.png#@900-1800)
 
 ### Which devices support PWAs?
 
