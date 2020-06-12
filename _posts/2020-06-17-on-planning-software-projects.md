@@ -11,7 +11,7 @@ description:
   'Marco Otte-Witte gives detailed advice on planning software projects and
   scoping as well as preparing work in an iterative process.'
 og:
-  image: /assets/images/posts/2020-06-10-the-state-of-pwa-support-on-mobile-and-desktop-in-2020/og-image.png
+  image: /assets/images/posts/2020-06-17-on-planning-software-projects/og-image.png
 ---
 
 Planning digital product projects is hard and many teams struggle very hard with
@@ -33,6 +33,8 @@ overcome those struggles and reduce uncertainty, risk and frustration in product
 teams.
 
 <!--break-->
+
+![Strong Collaboration](/assets/images/posts/2020-06-17-on-planning-software-projects/illustration.png#full@1000-2000)
 
 ## The Macro Level
 
@@ -86,6 +88,8 @@ down again into iterations (often referred to as
 ["sprint"](<https://en.wikipedia.org/wiki/Scrum_(software_development)#Sprint>)
 – which I think is a horrible term but that's a blog post of its own right) so
 that the scope is reduced further into something much more manageable.
+
+![MVP and subsequent improvements](/assets/images/posts/2020-06-17-on-planning-software-projects/mvp.png#@900-1800)
 
 However, in reality simply adopting an iterative process (whether that's
 [Scrum](<https://en.wikipedia.org/wiki/Scrum_(software_development)>), a team's
@@ -225,6 +229,8 @@ an iteration. Of course, the iteration lead cannot have all of the detailed
 knowledge that each stakeholder has about their field and they are not supposed
 to – they will reach out to the respective experts, bring people together and
 make sure communication happens.
+
+![Rotating iteration lead role](/assets/images/posts/2020-06-17-on-planning-software-projects/rotating-iteration-lead.png#@900-1800)
 
 The iteration lead is not fixed to a particular member of the product team but
 set up as a rotating role among the **entire** team – every product or marketing
