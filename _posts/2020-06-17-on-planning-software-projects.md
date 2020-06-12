@@ -88,7 +88,7 @@ down again into iterations (often referred to as
 that the scope is reduced further into something much more manageable.
 
 However, in reality simply adopting an iterative process (whether that's
-[Scrum]()https://en.wikipedia.org/wiki/Scrum_(software_development), a team's
+[Scrum](<https://en.wikipedia.org/wiki/Scrum_(software_development)>), a team's
 own interpretation of it or something completely different) will in reality not
 magically solve all of the above problems. Teams will still face budget
 overruns, an inability to give reliable estimates even given the short time
