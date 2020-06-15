@@ -149,7 +149,7 @@ uncover hidden complexity, dependencies and implications – not only from an
 engineering perspective but also from the perspectives of other stakeholders
 like design, product, marketing etc.
 
-Doing so will help understanding the scope of a particular task, identifying
+Doing so will help in understanding the scope of a particular task, identifying
 dependent work that needs to be done before or in consequence or weighing
 alternative implementation options against each other as well as against other
 priorities. All that reduces the uncertainty that is associated with the task
@@ -178,8 +178,8 @@ happening not being visible to all stakeholders with all of the negative
 consequences that comes with.
 
 So let's assume **all** work that is happening in a project is equally
-represented as tasks. Still, in many cases each stakeholder would only define
-their own tasks without receiving much input from other. Each stakeholder then
+represented as tasks. Still, in many cases stakeholders would only define
+their own tasks without receiving much input from each other. Each stakeholder then
 pushes for their tasks to be planned for in a particular iteration. That is not
 an effective way of collaborating though and generally not in the best interest
 of the success of the project. A successful project needs to take all of the
@@ -249,7 +249,7 @@ their core.
 
 As described above, many teams will prepare and maintain an extensive backlog
 filled with all tasks that anyone ever brought up or that are expected to
-eventually being required for a particular project. What seems like a good idea
+eventually be required for a particular project. What seems like a good idea
 in order to have a more complete understanding of the entirety of a project, in
 an iterative process the only work that ever matters is what the team is
 currently doing and what is being prepared and planned for the next iteration.
@@ -279,8 +279,8 @@ completing each task will go.
 
 First, all of a task's preconditions must be met before it can be worked on at
 all. That can include designs being ready or user tests having been conducted
-and analysed. It might also mean contracts with external providers having been
-signed or marketing campaigns having been booked. Just as important as the
+and analysed. It might also mean contracts with external providers have been
+signed or marketing campaigns have been booked. Just as important as the
 preconditions are a task's consequences which can be technical ones but also
 related to features or design – a technical change might require a change to the
 deployment and monitoring systems; changing feature A might also require
