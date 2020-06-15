@@ -178,8 +178,8 @@ happening not being visible to all stakeholders with all of the negative
 consequences that comes with.
 
 So let's assume **all** work that is happening in a project is equally
-represented as tasks. Still, in many cases stakeholders would only define
-their own tasks without receiving much input from each other. Each stakeholder then
+represented as tasks. Still, in many cases stakeholders would only define their
+own tasks without receiving much input from each other. Each stakeholder then
 pushes for their tasks to be planned for in a particular iteration. That is not
 an effective way of collaborating though and generally not in the best interest
 of the success of the project. A successful project needs to take all of the
@@ -249,16 +249,16 @@ their core.
 
 As described above, many teams will prepare and maintain an extensive backlog
 filled with all tasks that anyone ever brought up or that are expected to
-eventually be required for a particular project. What seems like a good idea
-in order to have a more complete understanding of the entirety of a project, in
-an iterative process the only work that ever matters is what the team is
-currently doing and what is being prepared and planned for the next iteration.
-Everything else can safely be ignored as it is completely unknown in which way a
-particular task will be addressed in the future or whether it will be at all.
-Everyone has seen projects with huge backlogs that seem to imply lots and lots
-of work that still needs to be done while everyone knows that 90% of the tasks
-will likely never be taken on and 75% of them are already outdated anyway (these
-are made-up numbers only backed by my personal experience 👍).
+eventually be required for a particular project. What seems like a good idea in
+order to have a more complete understanding of the entirety of a project, in an
+iterative process the only work that ever matters is what the team is currently
+doing and what is being prepared and planned for the next iteration. Everything
+else can safely be ignored as it is completely unknown in which way a particular
+task will be addressed in the future or whether it will be at all. Everyone has
+seen projects with huge backlogs that seem to imply lots and lots of work that
+still needs to be done while everyone knows that 90% of the tasks will likely
+never be taken on and 75% of them are already outdated anyway (these are made-up
+numbers only backed by my personal experience 👍).
 
 Actively keeping a backlog is most often simply a waste of time. That is not
 only the case for feature tasks but also for bug reports – a bug that has not
