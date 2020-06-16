@@ -22,7 +22,7 @@ know when it will be ready. Product and business experts usually cannot know
 what the final shape of a product will be unless they have something they can
 show to users, get feedback on and adapt their vision accordingly. Lastly,
 engineering teams struggle to give reliable estimates as they simply cannot
-oversee all of an initiative's hidden complexities, dependencies and
+foresee all of an initiative's hidden complexities, dependencies and
 consequences upfront.
 
 In this post, I want to analyse a number of typical problems many face. I will
@@ -65,7 +65,7 @@ budgets overrun –
 
 ### Under-planning
 
-The opposite of that approach is doing no or only very little up-front planning
+The opposite of that approach is doing only very little or no up-front planning at all
 and just running off. While that removes a lot of pressure from development
 teams (designers and engineers in particular), other stakeholders that have
 legitimate needs with regards to predictability and simply insight into a
@@ -80,7 +80,7 @@ of functionality ready for use at any time at all.
 As stated above, no teams (that I have seen at least 🤞) in reality strictly
 follow any of these two extremes. The classic waterfall model fortunately is a
 thing of the past now and the shortcomings of having a team just run off with no
-plan are too obvious for anyone being brave (or stupid) enough to try it. In
+plan are too obvious for anyone to be brave (or naive) enough to try it. In
 fact, developing products iteratively starting with an MVP and incrementally
 improving that is a widely accepted technique now. That way, the scope and thus
 complexity and risk is significantly reduced and each increment is broken down
@@ -92,7 +92,7 @@ manageable.
 
 ![MVP and subsequent improvements](/assets/images/posts/2020-06-17-on-planning-software-projects/mvp.png#@900-1800)
 
-However, in reality simply adopting an iterative process (whether that's
+In reality, adopting an iterative process (whether that's
 [Scrum](<https://en.wikipedia.org/wiki/Scrum_(software_development)>), a team's
 own interpretation of it or something completely different) will not magically
 solve all of the above problems. Teams will still face budget overruns, an
@@ -130,15 +130,15 @@ successful project management SaaS with the same name:
 
 Basecamp explain the idea in more detail in their bestselling book
 [_"Rework"_](https://basecamp.com/books/rework). The quote is both great and
-widely mis-understood. What it means is that anything beyond a pretty small
-scope is inherently not planable and any plan anyone makes up for it, is
+widely misunderstood. What it means is that anything beyond a pretty small
+scope is inherently not plannable and any plan anyone makes up for it, is
 essentially nothing more than a guess. As explained above that is very much true
 at the macro level where scope and complexity are way too big for anyone to be
 able to fully grasp. What the quote does not mean however, is that you can never
-preparation and pre–assessment of work when the scope is limited – which is the
+prepare and pre–assess any work when the scope is limited – which is the
 fact on the micro level of an iteration.
 
-Yet, many project teams use _"planning is guessing"_ as an excuse to refuse to
+Yet, many project teams use _"planning is guessing"_ as an excuse to refuse
 doing any thorough up-front analysis or preparation of tasks at all. Even if
 teams spend time on preparing work before starting it, that preparation is often
 superficial and does not go deep enough, leaving a lot of uncertainty and risk
@@ -168,7 +168,7 @@ successfully for years.
 ### 1. The source of tasks
 
 First, let's look at where the work that a product team conducts typically
-originates. In most cases, there are more or less only two sources – feature
+originates from. In most cases, there are more or less only two sources – feature
 stories that are defined by the product team and technical changes like
 refactorings driven by the engineering team. Ideally both kinds of work are
 equally represented as tasks although in many cases that is not the case for
@@ -184,7 +184,7 @@ pushes for their tasks to be planned for in a particular iteration. That is not
 an effective way of collaborating though and generally not in the best interest
 of the success of the project. A successful project needs to take all of the
 stakeholder's individual perspectives and priorities into account. After all,
-neither focussing on features only and giving up technical aspects like
+neither focusing on features only and giving up technical aspects like
 long-term maintainability and extensibility of the product, nor refactoring the
 code to perfection but only shipping too little too late, will result in a
 success for the business.
@@ -199,7 +199,7 @@ design but also marketing, finance and potentially others. That collaboration
 starts with agreeing what work should be done in which order and to what level
 of depth. Having a collaborative process for this in place makes the entire
 development process more effective by eliminating unnecessary complexity or
-preventing longer term declines of a team's velocity.
+preventing longer-term decline of a team's velocity.
 
 In many cases for example, there will be different ways to implement a
 particular feature that the product experts want to add with drastically
@@ -209,7 +209,7 @@ finding that out early can save the designers and engineers a substantial amount
 of time and effort. In other cases, the engineering team might see the necessity
 for particular refactorings but there might be conflicting commitments that the
 marketing team has to fulfill which justify delaying the refactoring to a later
-iteration. In other cases again, a refactoring might have substantial positive
+iteration. In other cases yet, a refactoring might have substantial positive
 consequences for the product also from a user's perspective which would lead to
 wide support of the undertaking from all stakeholders. Uncovering all these
 situations is only possible by communicating and collaborating, not only when
