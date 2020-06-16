@@ -45,19 +45,15 @@ reviewing them in a bit more detail.
 ### Over-planning
 
 Historically, in a [waterfall](https://en.wikipedia.org/wiki/Waterfall_model)
-based world, this technique was widely used. The idea is to plan the entirety of
-the project up-front in excessive detail, projecting that plan on to a timeline
-and then executing it. Teams following that approach would write long and
-detailed specifications that describe all aspects of the project. They would
-then break that specification down into a backlog of smaller tasks and assign
-effort estimates to those (using e.g.
-[story points](https://en.wikipedia.org/wiki/Planning_poker)). Based on
-previously acquired knowledge about how much work a team can get done in a
-defined time (the team's
-["velocity"](<https://en.wikipedia.org/wiki/Velocity_(software_development)>)),
-the next step is to extrapolate how long the project will take – _"We can build
-the social network for elephants as described in the 587 page long specification
-in 67 weeks and it will cost a total of 1.34 Mio. €"_.
+based world, over-planning was widely used. The idea behind this approach is to
+plan out the entirety of the project up-front in excessive detail, project that
+plan on to a timeline and then execute it. Teams practicing over-planning would
+write long and detailed specifications that describe all aspects of the project.
+They would then break that specification down into a backlog of smaller tasks,
+estimate that backlog somehow and extrapolate how long the project will take;
+eventually leading to statements like _"We can build the social network for
+elephants as described in the 587 page long specification in 67 weeks and it
+will cost a total of 1.34 Mio. €"_.
 
 As we all know now this almost never works as planned, deadlines are missed and
 budgets overrun –
@@ -72,34 +68,36 @@ that have legitimate needs with regards to predictability and insight into a
 project's progress are left in the cold. The marketing team will not know when
 to book the billboards in the local zoo and the product experts can't set up the
 user testing session with a group of sample elephants as they don't know what
-features they will be able to test when and whether there will be a coherent set
-of functionality ready for use at any time at all.
+features they will be able to test when or whether there will be a coherent set
+of functionality that even makes sense as a unit at any time at all.
 
 ### An incremental approach doesn't magically fix things
 
-As stated above, no teams (that I have seen at least 🤞) in reality strictly
-follow any of these two extremes. The classic waterfall model fortunately is a
-thing of the past now and the shortcomings of having a team just run off with no
-plan are too obvious for anyone to be brave (or naive) enough to try it. In
-fact, developing products iteratively following an _"agile"_ process (whatever
-precisely that term might mean for any particular team) is a widely accepted
-technique now. That way, the scope and thus complexity and risk is significantly
-reduced per iteration (often referred to as
+No teams (that I have seen at least 🤞) in reality strictly practice either of
+these two extremes. The classic waterfall model fortunately is a thing of the
+past now and the shortcomings of having a team just run off with no plan are too
+obvious for anyone to be brave (or naive) enough to try it. In fact, developing
+products iteratively following an _"agile"_ process (whatever precisely that
+term might mean for any particular team) is a widely accepted technique now.
+That way, the scope and thus complexity and risk is significantly reduced per
+iteration (often referred to as
 ["sprints"](<https://en.wikipedia.org/wiki/Scrum_(software_development)#Sprint>)
 – which I think is a horrible term but that's a blog post of its own right) into
-something much more manageable.
+something much more manageable. All planning is then based on estimates of
+relatively small tasks (using e.g.
+[story points](https://en.wikipedia.org/wiki/Planning_poker)) and productivity
+measures based on those estimates (the team's
+["velocity"](<https://en.wikipedia.org/wiki/Velocity_(software_development)>)).
 
 In reality however, adopting an agile, iterative process (whether that's
 [Scrum](<https://en.wikipedia.org/wiki/Scrum_(software_development)>), a team's
 own interpretation of it or something completely different) will not magically
-solve all of the above problems. Teams will still face budget overruns, an
-inability to give reliable estimates even given the short time horizon of a two
+solve all of the above problems. Teams will still face budget overruns and not
+be able to give reliable estimates even given the short time horizon of a two
 week iteration. Unforeseen and unplanned-for complexities and challenges will
-still only be uncovered only after a task was started, many tasks will span
-multiple sprints unexpectedly and already completed features will regularly have
-to be revisited and changed even before launching an MVP. Also, projecting a
-team's velocity over the entire backlog to calculate a timeline for the entire
-project will usually result in completely unreliable numbers.
+still be uncovered only after a task was started, many tasks will span multiple
+sprints unexpectedly and already completed features will regularly have to be
+revisited and changed even before launching an MVP.
 
 Having moved planning from the macro level where it did reside with the classic
 waterfall approach to the micro level of an iteration, that level is also were
