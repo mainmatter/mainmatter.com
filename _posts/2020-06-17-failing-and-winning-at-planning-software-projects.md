@@ -1,5 +1,5 @@
 ---
-title: 'How not to build a social network for elephants'
+title: 'Failing (and winning) at planning software projects'
 author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
@@ -9,7 +9,7 @@ description:
   'Marco Otte-Witte gives detailed advice on planning software projects and
   scoping as well as preparing work in an iterative process.'
 og:
-  image: /assets/images/posts/2020-06-17-on-planning-software-projects/og-image.png
+  image: /assets/images/posts/2020-06-17-failing-and-winning-at-planning-software-projects/og-image.png
 ---
 
 Scoping and planning software projects of any kind is a hard task that many
@@ -32,7 +32,7 @@ product teams.
 
 <!--break-->
 
-![Strong Collaboration](/assets/images/posts/2020-06-17-on-planning-software-projects/illustration.png#full@1000-2000)
+![Strong Collaboration](/assets/images/posts/2020-06-17-failing-and-winning-at-planning-software-projects/illustration.png#full@1000-2000)
 
 ## The Macro Level
 
@@ -226,7 +226,7 @@ knowledge that each stakeholder has about their field and they are not supposed
 to – they will reach out to the respective experts, bring people together and
 make sure communication happens.
 
-![Rotating iteration lead role](/assets/images/posts/2020-06-17-on-planning-software-projects/rotating-iteration-lead.png#@900-1800)
+![The Iteration Lead role](/assets/images/posts/2020-06-17-failing-and-winning-at-planning-software-projects/iteration-lead.png#@1000-2000)
 
 The iteration lead role is not fixed to a particular member of the product team
 but set up as a rotating role among the **entire** team instead – every other
@@ -340,6 +340,8 @@ characteristics that are independent of any particular tool:
   requirements and ideally not represent more than a few days of work - larger
   tasks can often be broken down into multiple smaller ones, possibly even
   allowing for work to happen simultaneously.
+
+![A well prepared task](/assets/images/posts/2020-06-17-failing-and-winning-at-planning-software-projects/issue.png#@1000-2000)
 
 A well prepared task would enable any member of the product team that is an
 expert in the respective field to take on and complete the task. However, tasks
