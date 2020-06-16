@@ -65,10 +65,10 @@ budgets overrun –
 
 ### Under-planning
 
-The opposite of that approach is doing only very little or no up-front planning at all
-and just running off. While that removes a lot of pressure from development
-teams (designers and engineers in particular), other stakeholders that have
-legitimate needs with regards to predictability and insight into a
+The opposite of that approach is doing only very little or no up-front planning
+at all and just running off. While that removes a lot of pressure from
+development teams (designers and engineers in particular), other stakeholders
+that have legitimate needs with regards to predictability and insight into a
 project's progress are left in the cold. The marketing team will not know when
 to book the billboards in the local zoo and the product experts can't set up the
 user testing session with a group of sample elephants as they don't know what
@@ -130,13 +130,13 @@ successful project management SaaS with the same name:
 
 Basecamp explain the idea in more detail in their bestselling book
 [_"Rework"_](https://basecamp.com/books/rework). The quote is both great and
-widely misunderstood. What it means is that anything beyond a pretty small
-scope is inherently not plannable and any plan anyone makes up for it, is
-essentially nothing more than a guess. As explained above that is very much true
-at the macro level where scope and complexity are way too big for anyone to be
-able to fully grasp. What the quote does not mean however, is that you can never
-prepare and pre–assess any work when the scope is limited – which is the
-fact on the micro level of an iteration.
+widely misunderstood. What it means is that anything beyond a pretty small scope
+is inherently not plannable and any plan anyone makes up for it, is essentially
+nothing more than a guess. As explained above that is very much true at the
+macro level where scope and complexity are way too big for anyone to be able to
+fully grasp. What the quote does not mean however, is that you can never prepare
+and pre–assess any work when the scope is limited – which is the fact on the
+micro level of an iteration.
 
 Yet, many project teams use _"planning is guessing"_ as an excuse to refuse
 doing any thorough up-front analysis or preparation of tasks at all. Even if
@@ -168,8 +168,8 @@ successfully for years.
 ### 1. The source of tasks
 
 First, let's look at where the work that a product team conducts typically
-originates from. In most cases, there are more or less only two sources – feature
-stories that are defined by the product team and technical changes like
+originates from. In most cases, there are more or less only two sources –
+feature stories that are defined by the product team and technical changes like
 refactorings driven by the engineering team. Ideally both kinds of work are
 equally represented as tasks although in many cases that is not the case for
 purely technical work. Since that work happens anyway though, not representing
@@ -184,10 +184,10 @@ pushes for their tasks to be planned for in a particular iteration. That is not
 an effective way of collaborating though and generally not in the best interest
 of the success of the project. A successful project needs to take all of the
 stakeholder's individual perspectives and priorities into account. After all,
-neither focusing on features only and giving up technical aspects like
-long-term maintainability and extensibility of the product, nor refactoring the
-code to perfection but only shipping too little too late, will result in a
-success for the business.
+neither focusing on features only and giving up technical aspects like long-term
+maintainability and extensibility of the product, nor refactoring the code to
+perfection but only shipping too little too late, will result in a success for
+the business.
 
 #### Communication 💬 and Collaboration 🤝
 
@@ -367,10 +367,11 @@ values:
   iteration is planned and executed
 - being **detailed** (potentially overly detailed) when describing tasks
 
-Doing all this thoroughly requires a bit of extra time (the iteration lead
-would easily be occupied a few days per week with that in addition to the time
-the respective experts for each topic invest to give their input). However, thanks to much improved effectiveness as well as the benefits of improved certainty and planability, that time
-pays off manyfold.
+Doing all this thoroughly requires a bit of extra time (the iteration lead would
+easily be occupied a few days per week with that in addition to the time the
+respective experts for each topic invest to give their input). However, thanks
+to much improved effectiveness as well as the benefits of improved certainty and
+planability, that time pays off manyfold.
 
 We have written all of the values and techniques introduced in this post in much
 more detail in our [playbook](/playbook) and welcome everyone to adapt these
