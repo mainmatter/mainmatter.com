@@ -81,18 +81,15 @@ As stated above, no teams (that I have seen at least 🤞) in reality strictly
 follow any of these two extremes. The classic waterfall model fortunately is a
 thing of the past now and the shortcomings of having a team just run off with no
 plan are too obvious for anyone to be brave (or naive) enough to try it. In
-fact, developing products iteratively starting with an MVP and incrementally
-improving that is a widely accepted technique now. That way, the scope and thus
-complexity and risk is significantly reduced and each increment is broken down
-again into iterations (often referred to as
+fact, developing products iteratively following an _"agile"_ process (whatever
+precisely that term might mean for any particular team) is a widely accepted
+technique now. That way, the scope and thus complexity and risk is significantly
+reduced per iteration (often referred to as
 ["sprints"](<https://en.wikipedia.org/wiki/Scrum_(software_development)#Sprint>)
-– which I think is a horrible term but that's a blog post of its own right) so
-that the scope is reduced further per iteration into something much more
-manageable.
+– which I think is a horrible term but that's a blog post of its own right) into
+something much more manageable.
 
-![MVP and subsequent improvements](/assets/images/posts/2020-06-17-on-planning-software-projects/mvp.png#@900-1800)
-
-In reality, adopting an iterative process (whether that's
+In reality however, adopting an agile, iterative process (whether that's
 [Scrum](<https://en.wikipedia.org/wiki/Scrum_(software_development)>), a team's
 own interpretation of it or something completely different) will not magically
 solve all of the above problems. Teams will still face budget overruns, an
@@ -100,7 +97,7 @@ inability to give reliable estimates even given the short time horizon of a two
 week iteration. Unforeseen and unplanned-for complexities and challenges will
 still only be uncovered only after a task was started, many tasks will span
 multiple sprints unexpectedly and already completed features will regularly have
-to be revisited and changed even before launching the MVP. Also, projecting a
+to be revisited and changed even before launching an MVP. Also, projecting a
 team's velocity over the entire backlog to calculate a timeline for the entire
 project will usually result in completely unreliable numbers.
 
