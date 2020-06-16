@@ -68,7 +68,7 @@ budgets overrun –
 The opposite of that approach is doing only very little or no up-front planning at all
 and just running off. While that removes a lot of pressure from development
 teams (designers and engineers in particular), other stakeholders that have
-legitimate needs with regards to predictability and simply insight into a
+legitimate needs with regards to predictability and insight into a
 project's progress are left in the cold. The marketing team will not know when
 to book the billboards in the local zoo and the product experts can't set up the
 user testing session with a group of sample elephants as they don't know what
@@ -367,11 +367,10 @@ values:
   iteration is planned and executed
 - being **detailed** (potentially overly detailed) when describing tasks
 
-While doing all this thoroughly requires a bit of extra time (the iteration lead
+Doing all this thoroughly requires a bit of extra time (the iteration lead
 would easily be occupied a few days per week with that in addition to the time
-the respective experts for every topic invest to give their input), that time
-pays off manyfold via much improved effectiveness and the benefits of improved
-certainty and planability.
+the respective experts for each topic invest to give their input). However, thanks to much improved effectiveness as well as the benefits of improved certainty and planability, that time
+pays off manyfold.
 
 We have written all of the values and techniques introduced in this post in much
 more detail in our [playbook](/playbook) and welcome everyone to adapt these
