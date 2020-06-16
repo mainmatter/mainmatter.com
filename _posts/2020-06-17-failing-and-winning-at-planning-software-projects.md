@@ -38,7 +38,7 @@ product teams.
 
 When it comes to planning software projects on the macro level, there's two
 extremes – trying to plan everything up-front or accepting the impossibility of
-getting that right and not bothering planning anything at all. While most teams
+getting that right and not bothering to plan anything at all. While most teams
 will find themselves somewhere in the middle between those two, it's still worth
 reviewing them in a bit more detail.
 
