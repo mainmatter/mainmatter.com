@@ -12,23 +12,13 @@ og:
   image: /assets/images/posts/2020-06-17-failing-and-winning-at-planning-software-projects/og-image.png
 ---
 
-Scoping and planning software projects of any kind is a hard task that many
-teams struggle with. There are various stakeholders involved, each one with
-different requirements and interests that often seem to contradict each other.
-Management is interested in projections of how long an initiative will take and
-what the final budget will be. Marketing teams might have to schedule campaigns
-and book media outlets in order to eventually sell the software and thus have to
-know when it will be ready. Product and business experts usually cannot know
-what the final shape of a product will be unless they have something they can
-show to users, get feedback on and adapt their vision accordingly. Lastly,
-engineering teams struggle to give reliable estimates as they simply cannot
-foresee all of an initiative's hidden complexities, dependencies and
-consequences upfront.
-
-In this post, I want to analyse a number of typical problems many face. I will
-also present techniques that we at simplabs have developed to address and
-overcome those problems and reduce uncertainty, risk and frustration in digital
-product teams.
+Scoping and planning software projects of any kind is a challenging task that
+many teams struggle with. The negative consequences of mis-planning are manyfold
+– teams are unable to give reliable estimates, synchronize dependent activities
+(e.g. marketing) with the project's progress or maintain a high level of quality
+that will allow maintaining and evolving an application over the long term. In
+this post, I will analyse these typical problems and present techniques to
+address and overcome those problems, reducing uncertainty, risk and frustration.
 
 <!--break-->
 
