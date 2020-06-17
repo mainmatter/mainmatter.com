@@ -136,22 +136,23 @@ micro level of an iteration.
 Yet, many project teams use _"planning is guessing"_ as an excuse to refuse
 doing any thorough up-front analysis or preparation of tasks at all. Even if
 teams spend time on preparing work before starting it, that preparation is often
-superficial and does not go deep enough, leaving a lot of uncertainty and risk
-to be uncovered only after work on a task has started. While it is true that
-understanding any task fully and in its entirety would require actively working
-on and in fact completing the task, it is very well possible to analyze it to
-uncover hidden complexity, dependencies and implications – not only from an
-engineering perspective but also from the perspectives of other stakeholders
-like design, product, marketing etc.
+superficial only, leaving a lot of uncertainty and risk to be uncovered only
+after work on a task has started. Understanding any task fully and in its
+entirety does of course require actively working on and in fact completing the
+task. It is however very well possible to analyze tasks to uncover hidden
+complexity, dependencies and implications – not only from an engineering
+perspective but also from the perspectives of other stakeholders like design,
+product, marketing etc.
 
-Doing so will help in understanding the scope of a particular task, identifying
-dependent work that needs to be done before or in consequence or weighing
-alternative implementation options against each other as well as against other
-priorities. All that reduces the uncertainty that is associated with the task
-and even while you won't be able to fully eliminate all uncertainty, eliminating
-a big part or maybe most of it significantly improves the reliability of
-estimates and minimizes unplanned work that is usually necessary when running
-into unforeseen complications only after work has started.
+Thorough analysis and preparation of tasks will help in understanding the scope
+of the tasks, identifying dependent work that needs to be done before or in
+consequence or weighing alternative implementation options against each other as
+well as against other priorities. All that reduces the uncertainty that is
+associated with a task and even while you won't be able to fully eliminate all
+uncertainty, eliminating a big part or maybe most of it significantly improves
+the reliability of estimates and minimizes unplanned work that is usually
+necessary when running into unforeseen complications only after work has
+started.
 
 ## ~Planning~ Preparation
 
