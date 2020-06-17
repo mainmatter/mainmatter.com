@@ -145,7 +145,7 @@ the reliability of estimates and minimizes unplanned work that is usually
 necessary when running into unforeseen complications only after work has
 started.
 
-## Winning at Micro Planning through Preparation
+## Winning at Planning through Preparation
 
 In order to improve planning on the micro level, it is essential to conduct
 thorough preparation. I will present four key techniques that are essential for
