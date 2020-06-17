@@ -17,8 +17,9 @@ many teams struggle with. The negative consequences of mis-planning are manyfold
 – teams are unable to give reliable estimates, synchronize dependent activities
 (e.g. marketing) with the project's progress or maintain a high level of quality
 that will allow maintaining and evolving an application over the long term. In
-this post, I will analyse these typical problems and present techniques to
-address and overcome those problems, reducing uncertainty, risk and frustration.
+this post, I will analyse these typical problems in some detail and present
+techniques to address and overcome them, reducing uncertainty, risk and
+frustration.
 
 <!--break-->
 
