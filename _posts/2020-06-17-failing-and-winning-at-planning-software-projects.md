@@ -24,7 +24,7 @@ address and overcome those problems, reducing uncertainty, risk and frustration.
 
 ![Strong Collaboration](/assets/images/posts/2020-06-17-failing-and-winning-at-planning-software-projects/illustration.png#full@1000-2000)
 
-## The Macro Level
+## Planning on the Macro Level
 
 When it comes to planning software projects on the macro level, there's two
 extremes – trying to plan everything up-front or accepting the impossibility of
@@ -61,7 +61,7 @@ user testing session with a group of sample elephants as they don't know what
 features they will be able to test when or whether there will be a coherent set
 of functionality that even makes sense as a unit at any time at all.
 
-### An incremental approach doesn't magically fix things
+### Failing agilely
 
 No teams (that I have seen at least 🤞) in reality strictly practice either of
 these two extremes. The classic waterfall model fortunately is a thing of the
@@ -93,7 +93,7 @@ Having moved planning from the macro level where it did reside with the classic
 waterfall approach to the micro level of an iteration, that level is also where
 the problems were moved to.
 
-## The Micro Level
+## Planning on the Micro Level
 
 Planning on the micro level of an iteration means scoping, bundling and
 estimating concrete, actionable units of work. There are countless names for
@@ -144,7 +144,7 @@ the reliability of estimates and minimizes unplanned work that is usually
 necessary when running into unforeseen complications only after work has
 started.
 
-## ~Planning~ Preparation
+## Winning at Micro Planning through Preparation
 
 In order to improve planning on the micro level, it is essential to conduct
 thorough preparation. I will present four key techniques that are essential for
