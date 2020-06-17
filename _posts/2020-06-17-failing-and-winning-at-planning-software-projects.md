@@ -100,7 +100,7 @@ sprints unexpectedly and already completed features will regularly have to be
 revisited and changed even before launching an MVP.
 
 Having moved planning from the macro level where it did reside with the classic
-waterfall approach to the micro level of an iteration, that level is also were
+waterfall approach to the micro level of an iteration, that level is also where
 the problems were moved to.
 
 ## The Micro Level
@@ -171,7 +171,7 @@ equally represented as tasks although in many cases that is not the case for
 purely technical work. Since that work happens anyway though, not representing
 it as individual tasks is a big mistake and leads to part of the work that is
 happening not being visible to all stakeholders with all of the negative
-consequences that comes with.
+consequences that come with that.
 
 So let's assume **all** work that is happening in a project is equally
 represented as tasks. Still, in many cases stakeholders would only define their
@@ -187,7 +187,7 @@ the business.
 
 #### Communication 💬 and Collaboration 🤝
 
-Successful teams communicate open and directly and collaborate closely. While
+Successful teams communicate openly and directly and collaborate closely. While
 this might read like an obvious statement, in reality there is often lots of
 room for improvement. Many teams build walls between stakeholders when they
 really would all have to collaborate – from product experts to engineering and
@@ -254,7 +254,7 @@ task will be addressed in the future or whether it will be at all. Everyone has
 seen projects with huge backlogs that seem to imply lots and lots of work that
 still needs to be done while everyone knows that 90% of the tasks will likely
 never be taken on and 75% of them are already outdated anyway (these are made-up
-numbers only backed by my personal experience 👍).
+numbers only backed by my personal experience ✌️).
 
 Actively keeping a backlog is most often simply a waste of time. That is not
 only the case for feature tasks but also for bug reports – a bug that has not
@@ -267,7 +267,7 @@ a consequence of a change to the underlying functionality maybe).
 
 Once work has been sourced from the project stakeholders, it needs to be well
 understood and scoped. This is a critical step in order to fully understand the
-tasks in their entirety and preventing the team from running into unforeseen
+tasks in their entirety and prevent the team from running into unforeseen
 problems once the work has started. Of course, it is not possible to always
 prevent all problems that might occur at a later point altogether but the more
 that is uncovered and addressed earlier rather than later, the smoother
