@@ -110,3 +110,33 @@ jobs:
           PERCY_TARGET_BRANCH: ${{ github.base_ref }}
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
         run: yarn ${{ matrix.validation-suite }}
+
+  metrics:
+    name: Lighthouse
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: get yarn cache dir
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v1
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ runner.os }}-yarn-lint-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: install dependencies
+        run: yarn install
+
+      - name: build
+        run: yarn build
+
+      - run: yarn run lhci autorun --collect.staticDistDir=./dist --collect.url=http://localhost/ --collect.url=http://localhost/blog/ --collect.url=http://localhost/services/ --collect.url=http://localhost/blog/ --collect.url=http://localhost/expertise/ember/ --collect.url=http://localhost/playbook/ --collect.url=http://localhost/contact/ --upload.target=temporary-public-storage
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
