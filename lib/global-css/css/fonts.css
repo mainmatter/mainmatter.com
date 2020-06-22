@@ -1,6 +1,7 @@
 /* latin-ext */
 @font-face {
   font-family: 'Nunito Sans';
+  font-display: swap;
   font-style: normal;
   font-weight: 300;
   src: local('Nunito Sans Light'), local('NunitoSans-Light'),
@@ -10,6 +11,7 @@
 /* latin */
 @font-face {
   font-family: 'Nunito Sans';
+  font-display: swap;
   font-style: normal;
   font-weight: 300;
   src: local('Nunito Sans Light'), local('NunitoSans-Light'),
@@ -20,6 +22,7 @@
 /* latin-ext */
 @font-face {
   font-family: 'Nunito Sans';
+  font-display: swap;
   font-style: normal;
   font-weight: 400;
   src: local('Nunito Sans Regular'), local('NunitoSans-Regular'),
@@ -29,6 +32,7 @@
 /* latin */
 @font-face {
   font-family: 'Nunito Sans';
+  font-display: swap;
   font-style: normal;
   font-weight: 400;
   src: local('Nunito Sans Regular'), local('NunitoSans-Regular'),
@@ -39,6 +43,7 @@
 /* latin-ext */
 @font-face {
   font-family: 'Nunito Sans';
+  font-display: swap;
   font-style: normal;
   font-weight: 700;
   src: local('Nunito Sans Bold'), local('NunitoSans-Bold'),
@@ -48,6 +53,7 @@
 /* latin */
 @font-face {
   font-family: 'Nunito Sans';
+  font-display: swap;
   font-style: normal;
   font-weight: 700;
   src: local('Nunito Sans Bold'), local('NunitoSans-Bold'),

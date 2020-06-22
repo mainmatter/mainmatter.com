@@ -2,7 +2,6 @@
   block-name: screen;
 
   font-family: 'Nunito Sans', sans-serif;
-  font-display: swap;
   color: var(--color-muted);
   overflow: hidden;
 }
