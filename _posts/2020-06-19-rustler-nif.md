@@ -10,20 +10,21 @@ description:
   implementing NIFs.'
 ---
 
-A Native Implemented Function is implemented in Rust (or C) and can be called
-from Elixir or Erlang just like any other function. It's the simplest and
-fastest way to run Rust code from Erlang but it does come with a caveat: a crash
-in a NIF can bring down the whole BEAM. This makes Rust a safer option than C
-for implementing NIFs as its type system and ownership model guarantee memory
-and thread-safety.
+A Native Implemented Function is implemented in C (or Rust when using
+[Rustler](https://github.com/rusterlium/rustler)) and can be called from Elixir
+or Erlang just like any other function. It's the simplest and fastest way to run
+native code from Erlang but it does come with a caveat: a crash in a NIF can
+bring down the whole BEAM. This makes Rust a safer option than C for
+implementing NIFs as its type system and ownership model guarantee memory and
+thread-safety.
 
 <!--break-->
 
-[Rustler](https://github.com/rusterlium/rustler) is a fantastic project built to
-make writing Rust NIFs a simple process; and the upcoming v0.22 release will
-provide a much cleaner syntax for declaring them. The library handles encoding
-and decoding Rust values into Erlang terms, catches Rust panics before they
-unwind to C and _should_ make it impossible to crash the BEAM from a Rust NIF.
+Rustler is a fantastic project built to make writing Rust NIFs a simple process;
+and the upcoming v0.22 release will provide a much cleaner syntax to do so. The
+library handles encoding and decoding Rust values into Erlang terms, catches
+Rust panics before they unwind to C and _should_ make it impossible to crash the
+BEAM from a Rust NIF.
 
 ## Getting started with Rustler
 
@@ -40,11 +41,11 @@ The library consists of two functions: `encode/2` and `decode/2` and it's using
 lifting in the NIFs. Let's walk through how this all works.
 
 To get started, we need a new mix project with rustler installed as a
-dependency. I'm using the v0.22-rc by tracking the `master` branch.
+dependency.
 
 ```bash
 mix new base64
-# add rustler to mix.exs deps
+# add {:rustler, "~> 0.22-rc"} to mix.exs deps
 mix deps.get
 mix rustler.new
 # follow rustler instructions
@@ -79,9 +80,9 @@ necessary. These are usually minimal stubs defining the name and arity of the
 NIFs and serve as fallback implementations if the NIFs aren't loaded. Let's
 start with the Elixir stubs.
 
-`lib/base64.ex`
-
 ```elixir
+# lib/base64.ex
+
 defmodule Base64 do
   use Rustler, otp_app: :base64, crate: "base64_nif"
 
@@ -106,9 +107,9 @@ an `atom` for configuration as different character sets that can be used
 (url-safe, without padding, etc...). The default is fittingly set to
 `:standard`. The Rust NIFs are implemented as follows.
 
-`native/base64_nif/src/lib.rs`
-
 ```rust
+// native/base64_nif/src/lib.rs
+
 use base64;
 use rustler::Atom;
 
@@ -181,8 +182,9 @@ Elixir 1.10.2
 Erlang 22.3.2
 ```
 
-I used _hello world_ as the short string and Sarah Kay’s poem _B (If I Should
-Have a Daughter)_ as the longer string.
+I used _hello world_ as the short string and Sarah Kay’s poem
+_[B (If I Should Have a Daughter)](https://www.youtube.com/watch?v=0snNB1yS3IE)_
+as the longer string.
 
 Decoding:
 
