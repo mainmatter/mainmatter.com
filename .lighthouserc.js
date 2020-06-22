@@ -4,7 +4,7 @@ module.exports = {
   ci: {
     collect: {
       settings: {
-        skipAudits: ['is-on-https', 'redirects-http', 'uses-http2', 'uses-webp-images'],
+        skipAudits: ['is-on-https', 'redirects-http', 'uses-http2', 'uses-webp-images', 'canonical'],
       },
     },
     assert: {
@@ -13,6 +13,7 @@ module.exports = {
         'redirects-http': 'off',
         'uses-http2': 'off',
         'uses-webp-images': 'off',
+        'canonical': 'off'
       },
     },
   },
