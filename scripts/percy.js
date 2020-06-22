@@ -27,7 +27,6 @@ server.listen(3000, async function () {
   await PercyScript.run(async (page, percySnapshot) => {
     for (let path of snapshotPaths) {
       await page.goto(`http://localhost:3000${path}`);
-      await page.waitFor('[data-cookie-banner]');
       await percySnapshot(path);
     }
   });

@@ -103,7 +103,6 @@
       "lib/generate-blog",
       "lib/generate-calendar",
       "lib/global-css",
-      "lib/google-analytics",
       "lib/head-data",
       "lib/pwa",
       "lib/routes",
