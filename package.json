@@ -105,7 +105,6 @@
       "lib/global-css",
       "lib/google-analytics",
       "lib/head-data",
-      "lib/leadfeeder",
       "lib/pwa",
       "lib/routes",
       "lib/sentry",
