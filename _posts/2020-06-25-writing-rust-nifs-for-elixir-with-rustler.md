@@ -1,5 +1,5 @@
 ---
-title: Writing Rust NIFs for Elixir with Rustler
+title: Writing Rust NIFs for Elixir With Rustler
 author: 'Niklas Long'
 github: niklaslong
 twitter: niklas_long
