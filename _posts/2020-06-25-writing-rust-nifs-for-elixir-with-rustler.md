@@ -30,8 +30,8 @@ BEAM from a Rust NIF.
 
 ## Getting started with Rustler
 
-One of my first forays into Rust implemented NIFs was while building a
-micro-library providing base 64 encoding and decoding, creatively named
+One of my first forays into Rust-implemented NIFs was while building a
+micro-library providing Base64 encoding and decoding, creatively named
 [base64](https://github.com/niklaslong/base64). It's utterly pointless as that
 functionality comes built-in to Elixir but I wanted to start with something
 simple. On the plus side, this meant I could easily compare the performance of
