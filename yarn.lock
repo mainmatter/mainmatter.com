@@ -923,12 +923,12 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@css-blocks/broccoli@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@css-blocks/broccoli/-/broccoli-1.0.0.tgz#43cf281afd6dbf8821ba9d4aa224181ef0783ffa"
-  integrity sha512-+W5hEPePPbRz1dT8gL+NC3rkpknWOmQW+FvBKKerGGqiNbnuN1wOxBt6QKFtn/dYWtvy5JXrP3Du/nKjvU7t3A==
+"@css-blocks/broccoli@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@css-blocks/broccoli/-/broccoli-1.1.1.tgz#ca3467880a1f95a89735edd43959524fad417961"
+  integrity sha512-Lifnb9ldvagbQPICtqoGixQFg80RwtEGP/7OX0N4MD1lh5jzDpxwk3e5opeaVfPaP9LkbE2bEDPLlbItZktbBg==
   dependencies:
-    "@css-blocks/core" "^1.0.0"
+    "@css-blocks/core" "^1.1.1"
     "@glimmer/compiler" "^0.43.0"
     "@glimmer/syntax" "^0.43.0"
     "@opticss/template-api" "^0.6.3"
@@ -944,20 +944,20 @@
     symlink-or-copy "^1.2.0"
     walk-sync "^2.0.0"
 
-"@css-blocks/config@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@css-blocks/config/-/config-1.1.0.tgz#410300241ed31cee723370eacc27c299943adc01"
-  integrity sha512-kTjOaMlJi1USAly5cEph8FoxdFlNl2pLiO1/AhV15ilDdgoQ1nGWiviz8WnryEhATx7zXg26gZTjBy0WRku/xw==
+"@css-blocks/config@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@css-blocks/config/-/config-1.1.1.tgz#e9e84d233634b6fec5adffcccda6dfc03597ba82"
+  integrity sha512-Q3Pfv5Q9AUIHuxaIct3HeTOMER44iLQKHU8enEU7ULzfMoriiuu3VFYZ8MgU6lIW9sQsUMI3HM2tfvkrqwfNkQ==
   dependencies:
-    "@css-blocks/core" "^1.0.0"
+    "@css-blocks/core" "^1.1.1"
     cosmiconfig "^6.0.0"
     debug "^4.1.1"
     lodash.merge "^4.6.2"
 
-"@css-blocks/core@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@css-blocks/core/-/core-1.0.0.tgz#d0d3479be4433df7dbd2954bdaddc5d7c384a50a"
-  integrity sha512-XfkDTOpCdARrQkE8r39iCbyqm2ybaTwEL4SiEfflPYdPNkw907hXUUMZXHt+1oBN38xqD+2/vAZw7QZmUu1iOQ==
+"@css-blocks/core@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@css-blocks/core/-/core-1.1.1.tgz#249421e97186875ea22a4c7442dd284270cb61ad"
+  integrity sha512-xkbxZfPaJLperWE5l7rK0ETreyGfBH7tMehF15ibNDIghkfexQ2BcgNyocch0LuaJ3tfzTj3YRsCtOTCVJReGw==
   dependencies:
     "@opticss/element-analysis" "^0.6.2"
     "@opticss/template-api" "^0.6.3"
@@ -973,14 +973,14 @@
     source-map "^0.7.3"
     watch "^1.0.2"
 
-"@css-blocks/ember-cli@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@css-blocks/ember-cli/-/ember-cli-1.1.0.tgz#767e5c02f93d66e311678df26d0b75375ef0619e"
-  integrity sha512-ZLNDOQAshcZtn8i5E0E1kSV7/GBbVRqL0XKgKo6SMv2VrplRmq+vP82/Vut+bSatPeMH7txe4ZX/BHGrCuzXFg==
+"@css-blocks/ember-cli@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@css-blocks/ember-cli/-/ember-cli-1.1.1.tgz#101f387e77bf1682e5bbaa2f8e6619986b3aacae"
+  integrity sha512-o3hI9lZuCcXsWv6OJCj2JR5VMCrC/veu6+BZ5sW80ggVEqWgtsDHIR24LE+GzyS5Y0sC9AIU/7lpK6iK8EtHFw==
   dependencies:
-    "@css-blocks/broccoli" "^1.0.0"
-    "@css-blocks/config" "^1.1.0"
-    "@css-blocks/glimmer" "^1.0.0"
+    "@css-blocks/broccoli" "^1.1.1"
+    "@css-blocks/config" "^1.1.1"
+    "@css-blocks/glimmer" "^1.1.1"
     "@glimmer/application-pipeline" "^0.15.0"
     broccoli-concat "^3.7.3"
     broccoli-funnel "^2.0.1"
@@ -991,13 +991,13 @@
     lodash.merge "^4.6.2"
     symlink-or-copy "^1.2.0"
 
-"@css-blocks/glimmer@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@css-blocks/glimmer/-/glimmer-1.0.0.tgz#2ab9d031ec2af4b2e37307b9d15a071d14ee682d"
-  integrity sha512-Y1OeC5jgeuXH1Ki4NkvWfzpvfyofkp5EeLbxcqrkQ4XF1bhJXle12/VPi3TNmBLoKyOcFKsG8G7ALwQv/j/IXA==
+"@css-blocks/glimmer@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@css-blocks/glimmer/-/glimmer-1.1.1.tgz#55ebe686cceb8544dca5f054f96840661a543bbd"
+  integrity sha512-3g+kLY/pEF3PPB7jFgEodEllqeFDTlu51seIoFxPm6kdVM4NoOgdbBX03LuOEtSMxw+27wEiCpYDVsSROefh2w==
   dependencies:
     "@amiller-gh/glimmer-analyzer" "^0.4.0"
-    "@css-blocks/core" "^1.0.0"
+    "@css-blocks/core" "^1.1.1"
     "@glimmer/compiler" "^0.42.0"
     "@glimmer/resolution-map-builder" "0.5.1"
     "@glimmer/resolver" "^0.4.3"
