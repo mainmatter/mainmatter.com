@@ -7,6 +7,8 @@ topic: ember
 bio: 'Senior Frontend Engineer'
 description:
   'Tobias Bieniek explains how to write tests for your Mirage.js mock API setup.'
+og:
+  image: /assets/images/posts/2020-06-23-testing-mirage/og-image.png
 ---
 
 
