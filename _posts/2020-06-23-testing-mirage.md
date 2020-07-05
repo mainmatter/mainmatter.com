@@ -1,5 +1,5 @@
 ---
-title: 'Testing the Mirage.js setup'
+title: 'Testing your Mirage.js setup'
 author: 'Tobias Bieniek'
 github: Turbo87
 twitter: tobiasbieniek
@@ -21,7 +21,7 @@ though. This is where end-to-end tests are useful, but since those kinds of
 tests are quite slow and complex it would be quite costly to use them for all
 the kinds of tests in a modern web application.
 
-The solution: test the mock API. In this blog post we will show you how we
+One solution to some of the challenges of using a mock API is to test it and make sure it matches what you would expect from your real API. In this blog post we will show you how we
 started writing tests for our Mirage.js setup and why it might be useful for you
 too.
 
@@ -33,7 +33,7 @@ too.
 ## Where do we put those tests?
 
 Before we start writing tests we need to figure out where to put all those new
-tests. In a regular Ember.js app there is a top-level `tests` folder, where
+tests. In the case of an Ember.js app there is a top-level `tests` folder, where
 these new tests would probably feel right at home. But inside of the folder
 there are only `acceptance`, `helpers`, `integration`, and `unit` subfolders.
 None of that really matches what we're building here so we decided to put all
