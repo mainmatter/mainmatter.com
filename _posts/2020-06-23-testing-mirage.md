@@ -11,24 +11,23 @@ og:
   image: /assets/images/posts/2020-06-23-testing-mirage/og-image.png
 ---
 
-
 [Mirage.js] is a universal library to mock out HTTP-based APIs. It has proven
-quite useful to us in several client projects, where it helped us write
-a lot of acceptance tests in a concise, but flexible manner.
+quite useful to us in several client projects, where it helped us write a lot of
+acceptance tests in a concise, but flexible manner.
 
 The issue with tools like this is that you are not testing "the real API"
 though. This is where end-to-end tests are useful, but since those kinds of
 tests are quite slow and complex it would be quite costly to use them for all
 the kinds of tests in a modern web application.
 
-One solution to some of the challenges of using a mock API is to test it and make sure it matches what you would expect from your real API. In this blog post we will show you how we
-started writing tests for our Mirage.js setup and why it might be useful for you
-too.
+One solution to some of the challenges of using a mock API is to test it and
+make sure it matches what you would expect from your real API. In this blog post
+we will show you how we started writing tests for our Mirage.js setup and why it
+might be useful for you too.
 
-[Mirage.js]: https://miragejs.com/
+[mirage.js]: https://miragejs.com/
 
 <!--break-->
-
 
 ## Where do we put those tests?
 
@@ -36,11 +35,10 @@ Before we start writing tests we need to figure out where to put all those new
 tests. In the case of an Ember.js app there is a top-level `tests` folder, where
 these new tests would probably feel right at home. But inside of the folder
 there are only `acceptance`, `helpers`, `integration`, and `unit` subfolders.
-None of that really matches what we're building here so we decided to put all
-of our Mirage-related tests into a `tests/mirage/` folder. Note that
+None of that really matches what we're building here so we decided to put all of
+our Mirage-related tests into a `tests/mirage/` folder. Note that
 "Mirage-related" means the tests that are testing our Mirage.js setup, not the
 other tests that are just **using** the setup.
-
 
 ## Testing `GET` Requests
 
@@ -105,7 +103,7 @@ nested values in the JSON payload much easier to write.
 
 [match-json]: https://github.com/ozkxr/match-json
 
-Inside the `tests/test-helper.js` file we added the following snippet: 
+Inside the `tests/test-helper.js` file we added the following snippet:
 
 ```js
 /* globals QUnit */
@@ -118,8 +116,8 @@ QUnit.assert.matchJson = function (actual, expected, message) {
 };
 ```
 
-This imports the `match-json` library, and introduces a new type of assertion
-on the `assert` object that is available in QUnit tests. We can now write
+This imports the `match-json` library, and introduces a new type of assertion on
+the `assert` object that is available in QUnit tests. We can now write
 assertions like:
 
 ```js
@@ -167,7 +165,7 @@ module('GET /users/:id', function () {
       method: 'PUT',
       body: JSON.stringify({
         user: {
-          first_name: 'Joe'
+          first_name: 'Joe',
         },
       }),
     });
@@ -190,8 +188,8 @@ You can see that the test looks fairly similar to the `GET` request test, except
 that pass an options object to the `fetch()` function, where we specify that
 this is a `PUT` request, and what the request payload will be.
 
-Similar strategies can also be applied for `DELETE` and `POST` requests, but
-we will leave that as an exercise for our readers... 😉
+Similar strategies can also be applied for `DELETE` and `POST` requests, but we
+will leave that as an exercise for our readers... 😉
 
 Finally, if you want more information on how we make sure that our mock APIs
 always match the production API or you need more help implementing these things
