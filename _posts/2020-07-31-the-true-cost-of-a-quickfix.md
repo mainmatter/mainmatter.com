@@ -69,7 +69,7 @@ the (un)expected happens, a part that seemed unrelated starts breaking.
 A common approach, that has long term implications, is to run a quick analysis,
 attempt to pinpoint the issue and patch it in time to meet the deadline. While
 this may address our short-term needs, if not followed up with a code audit and
-analysis, will come back to haunt us.
+analysis, it will come back to haunt us.
 
 While working with a client on a mission-critical feature, a quick fix
 implemented six months ago set us back a total of two weeks. Further
