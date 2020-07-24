@@ -2,7 +2,7 @@
 title: The True Cost Of A Quickfix
 author: 'Patsy Issa'
 github: patsy-issa
-twitter: patsy-issa
+twitter: patsy_issa_p
 topic: process
 bio: 'Senior Frontend Engineer'
 description:
@@ -17,6 +17,8 @@ reports that one rather odd bug, you begin to investigate and lo and behold you
 find the following comment:
 
 ![](/assets/images/posts/2020-07-31-the-true-cost-of-a-quickfix/no-one-knows.jpg)
+
+<!--break-->
 
 While avoiding code that resulted in such comments was harder to enforce in the
 pre-framework era, opinionated frameworks such as
