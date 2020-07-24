@@ -2,6 +2,7 @@
 title: The True Cost Of A Quickfix
 author: 'Patsy Issa'
 github: patsy-issa
+twitter: patsy-issa
 topic: process
 bio: 'Senior Frontend Engineer'
 description:
@@ -11,49 +12,94 @@ og:
   image: /assets/images/posts/2020-06-25-writing-rust-nifs-for-elixir-with-rustler/og-image.png
 ---
 
-Picture this, a sprint is underway, development is running smoothly, QA reports
-that one rather odd bug is happening, you begin to investigate and lo and behold
-you find the following comment:
+Picture this, a sprint is underway, development is running smoothly, then QA
+reports that one rather odd bug, you begin to investigate and lo and behold you
+find the following comment:
 
-```
-// ember-parachute sometimes seems to call `queryParamsDidChange()` even
-// though the query parameters did not change their values. we work around
-// this issue here by saving the "previous" value so that we can compare
-// it later in `queryParamsDidChange()`.
-```
+![](/assets/images/posts/2020-07-31-the-true-cost-of-a-quickfix/no-one-knows.jpg)
 
-Further investigation of the issue revelead the culprit, multiple query param
-implementations, among them a **three** year old custom implementation that
-called the function `queryParamsDidChange()` regardless of if they had changed
-or not.
+While avoiding code that resulted in such comments was harder to enforce in the
+pre-framework era, opinionated frameworks such as
+[ember.js](https://emberjs.com/) offer us concrete ways to ship code with
+confidence. This is known as the ember happy path, code smells can be identified
+when an implementation strays away from the path.
 
-Unfortunately, the custom implementation was being used in key points of the
-application, the size of the task was dawning on us. As we had a deadline to
-meet planning our next steps carefully was crucial or we ran the risk of setting
-back the effort of multiple teams.
+In an ideal world, such problems can be caught early enough in the planning
+cycle by collaborating closely among all stakeholders, making sure that design,
+development and product work together towards finding functional solutions that
+are worthy of our users' trust.
 
-At this stage, having leveraged re-usable components, we were a few days ahead
-of schedule which allowed us to split our team's focus. One engineer focused on
-understanding the quick fix and attempted to patch it to work for our current
-scenario, while the two others were tasked with scoping, presenting and
-executing a plan to refactor the implementations using the framework's
-([ember.js](https://emberjs.com/)) happy path.
+Delivering products with sustainable foundations is a core value that we hold
+dear at Simplabs such foundations, while relatively easy to set up on a
+greenfield project is an entirely different story in any long-lived project that
+did not start with a solid foundation.
 
-The efforts to patch the quick fix seemed successful and took a week, the
-urgency of the refactor was reduced and work began on the next feature against
-our recommendation. If you have worked on an application long enough chances are
-the following will not surprise you. A day later we receive a bug report that a
-completely unrelated part of the application was broken. Alarms rang and the
-green light was given to begin refactoring.
+> So how do I tackle refactoring legacy code that has made its way into multiple
+> core systems?
 
-It took us two days to scope the issue and another week of development to
-implement it along with a full QA, justifying such a time and effort allocation
-on an internal refactor can often be a tough case to sell. If we only look at
-the direct costs, a new bug in production and a week of delay for three
-engineers, if we take into account the cost of building features on top of
-legacy code, a previous quick fix of one of the symptoms and two delayed
-features things start to add up.
+### Stop development, fix it now!
 
-Sustainable development habits such as regular code audits can help mitigate
-costs and reduce the dreaded risk of undertaking a complete re-write. The enemy
-of velocity is not quality but the absence of it.
+While all too tempting this approach has quite a heavy list of pre-requisites in
+order to be successful:
+
+- Tasks have already been scoped out and achievable goals are set
+- The refactoring effort does not block mission-critical features
+- No deadlines at the door
+- The total cost and lead time impact must be justifiable to stakeholders
+- And last but not least a robust and comprehensive test suite
+
+Often teams with deadlines will dedicate maintenance periods where engineers are
+allocated time to "fix" the codebase. Time and time again I have seen this
+pattern repeated with similar outcomes, overrun budgets and half-finished
+long-lived branches.
+
+As we tally up the costs (dev/design/product/... time, loss of competitiveness,
+etc...), it is important to keep in mind that this is a one-time investment we
+pay for a more standardized codebase with a reduced chance of future feature
+work delay.
+
+### Stop! Quickfix time!
+
+A scenario we are all too familiar with, everything is going according to plan
+development is running smoothly, marketing is preparing their release post. Then
+the (un)expected happens, a part that seemed unrelated starts breaking.
+
+A common approach, that has long term implications, is to run a quick analysis,
+attempt to pinpoint the issue and patch it in time to meet the deadline. While
+this may address our short-term needs, if not followed up with a code audit and
+analysis, will come back to haunt us.
+
+While working with a client on a mission-critical feature, a quick fix
+implemented six months ago set us back a total of two weeks. Further
+investigation revealed that the code causing this was committed, by someone that
+was no longer on the team, a little over **three years** ago.
+
+Any long-lived codebase that does not have regular code audits, will at one
+point or another have parts that are not understood by the current team.
+
+Unlike the previous method; the cost for this approach depends, among other
+things, on the time it spends as tech debt and the future features it impacts.
+
+> An atomic habit is a regular practice or routine that is not only small and
+> easy to do but is also the source of incredible power; a component of the
+> system of compound growth. Bad habits repeat themselves again and again not
+> because you don't want to change, but because you have the wrong system for
+> change. - Atomic Habits by James Clear
+
+### Prevention
+
+Once the issue is resolved, the system in place must be revisited and improved
+to reduce the probability of running into similar problems in the future.
+
+Sustainable development habits must be put in place:
+
+- Training and leveling-up existing staff resulting in higher code quality
+- Reducing the
+  [bus factor](https://en.wikipedia.org/wiki/Bus_factor#:~:text=The%20bus%20factor%20is%20a,truck%20number%2C%20or%20lorry%20factor.)
+  with usable documentation
+- Code audits when a team member leaves, walkthroughs when a new one joins
+
+To name a few, we go into greater detail in our
+[PlayBook](https://simplabs.com/playbook/)!
+
+The enemy of velocity is not quality but the absence of it.
