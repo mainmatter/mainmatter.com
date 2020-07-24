@@ -22,7 +22,7 @@ find the following comment:
 
 While avoiding code that resulted in such comments was harder to enforce in the
 pre-framework era, opinionated frameworks such as
-[ember.js](https://emberjs.com/) offer us concrete ways to ship code with
+[Ember.js](https://emberjs.com/) offer us concrete ways to ship code with
 confidence. This is known as the ember happy path, code smells can be identified
 when an implementation strays away from the path.
 
