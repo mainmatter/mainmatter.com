@@ -50,7 +50,7 @@ order to be successful:
 - The total cost and lead time impact must be justifiable to stakeholders
 - And last but not least a robust and comprehensive test suite
 
-Often teams with deadlines will dedicate maintenance periods where engineers are
+Often, teams with deadlines will have maintenance periods where engineers are
 allocated time to "fix" the codebase. Time and time again I have seen this
 pattern repeated with similar outcomes, overrun budgets and half-finished
 long-lived branches.
