@@ -32,7 +32,7 @@ development and product work together towards finding functional solutions that
 are worthy of our users' trust.
 
 Delivering products with sustainable foundations is a core value that we hold
-dear at Simplabs such foundations, while relatively easy to set up on a
+dear at simplabs. Such foundations, while relatively easy to set up on a
 greenfield project is an entirely different story in any long-lived project that
 did not start with a solid foundation.
 
