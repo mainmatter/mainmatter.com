@@ -33,7 +33,7 @@ are worthy of our users' trust.
 
 Delivering products with sustainable foundations is a core value that we hold
 dear at simplabs. Such foundations, while relatively easy to set up on a
-greenfield project is an entirely different story in any long-lived project that
+greenfield project are an entirely different story in any long-lived project that
 did not start with a solid foundation.
 
 > So how do I tackle refactoring legacy code that has made its way into multiple
