@@ -62,7 +62,7 @@ work delay.
 
 ### Stop! Quickfix time!
 
-A scenario we are all too familiar with, everything is going according to plan
+A scenario we are all too familiar with, everything is going according to plan,
 development is running smoothly, marketing is preparing their release post. Then
 the (un)expected happens, a part that seemed unrelated starts breaking.
 
