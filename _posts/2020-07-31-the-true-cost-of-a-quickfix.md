@@ -102,6 +102,6 @@ Sustainable development habits must be put in place:
 - Code audits when a team member leaves, walkthroughs when a new one joins
 
 To name a few, we go into greater detail in our
-[PlayBook](https://simplabs.com/playbook/)!
+[Playbook](https://simplabs.com/playbook/)!
 
 The enemy of velocity is not quality but the absence of it.
