@@ -13,8 +13,8 @@ og:
 ---
 
 Picture this, a sprint is underway, development is running smoothly, then QA
-reports a rather odd bug, you begin to investigate and lo and behold you
-find the following comment:
+reports a rather odd bug, you begin to investigate and lo and behold you find
+the following comment:
 
 ```javascript
 // Dear programmer:
@@ -54,7 +54,7 @@ order to be successful:
 - The refactoring effort does not block mission-critical features
 - No deadlines at the door
 - The total cost and lead time impact must be justifiable to stakeholders
-- And last but not least a robust and comprehensive test suite
+- A robust and comprehensive test suite
 
 Often, teams with deadlines will have maintenance periods where engineers are
 allocated time to "fix" the codebase. Time and time again I have seen this
@@ -66,7 +66,7 @@ etc...), it is important to keep in mind that this is a one-time investment we
 pay for a more standardized codebase with a reduced chance of future feature
 work delay.
 
-### Stop! Quickfix time!
+### Stop! Quick-fix time!
 
 A scenario we are all too familiar with, everything is going according to plan,
 development is running smoothly, marketing is preparing their release post. Then
@@ -77,16 +77,17 @@ attempt to pinpoint the issue and patch it in time to meet the deadline. While
 this may address our short-term needs, if not followed up with a code audit and
 analysis, it will come back to haunt us.
 
-While working with a client on a mission-critical feature, a quick fix
-implemented six months ago set us back a total of two weeks. Further
-investigation revealed that the code causing this was committed, by someone that
-was no longer on the team, a little over **three years** ago.
+Just recently I experience a situation where a quick fix implemented six months
+ago set us back a total of two weeks. Further investigation revealed that the
+code causing this was committed, by someone that was no longer on the team, a
+little over **three years** ago.
 
 Any long-lived codebase that does not have regular code audits, will at one
 point or another have parts that are not understood by the current team.
 
 Unlike the previous method; the cost for this approach depends, among other
-things, on the time it spends as tech debt and the future features it impacts.
+things, on the time the quick-fix spends as tech debt and the future features it
+impacts.
 
 > An atomic habit is a regular practice or routine that is not only small and
 > easy to do but is also the source of incredible power; a component of the
@@ -104,7 +105,7 @@ Sustainable development habits must be put in place:
 - Training and leveling-up existing staff resulting in higher code quality
 - Reducing the
   [bus factor](https://en.wikipedia.org/wiki/Bus_factor#:~:text=The%20bus%20factor%20is%20a,truck%20number%2C%20or%20lorry%20factor.)
-  with usable documentation
+  by pairing and knowledge sharing through collaboration
 - Code audits when a team member leaves, walkthroughs when a new one joins
 
 To name a few, we go into greater detail in our
