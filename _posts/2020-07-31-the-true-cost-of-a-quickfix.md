@@ -9,7 +9,7 @@ description:
   'Patsy Issa makes the case for refactoring legacy code sooner rather than
   later'
 og:
-  image: /assets/images/posts/2020-06-25-writing-rust-nifs-for-elixir-with-rustler/og-image.png
+  image: /assets/images/posts/2020-07-31-the-true-cost-of-a-quickfix/og-image.png
 ---
 
 Picture this, a sprint is underway, development is running smoothly, then QA
