@@ -26,6 +26,8 @@ the following comment:
 
 ![the true cost of a quickfix illustration](/assets/images/posts/2020-07-31-the-true-cost-of-a-quickfix/illustration.png#full@1440-2880)
 
+<br><br>
+
 While avoiding code that resulted in such comments was harder to enforce in the
 pre-framework era, opinionated frameworks such as
 [Ember.js](https://emberjs.com/) offer us concrete ways to ship code with
@@ -42,8 +44,8 @@ dear at simplabs. Such foundations, while relatively easy to set up on a
 greenfield project are an entirely different story in any long-lived project
 that might not have started with a solid foundation.
 
-> So how do I tackle refactoring legacy code that has made its way into multiple
-> core systems?
+<blockquote class="quote">So how do I tackle refactoring legacy code that has made
+its way into multiple core systems?</blockquote>
 
 ### Stop development, fix it now!
 
@@ -89,11 +91,11 @@ Unlike the previous method; the cost for this approach depends, among other
 things, on the time the quick-fix spends as tech debt and the future features it
 impacts.
 
-> An atomic habit is a regular practice or routine that is not only small and
-> easy to do but is also the source of incredible power; a component of the
-> system of compound growth. Bad habits repeat themselves again and again not
-> because you don't want to change, but because you have the wrong system for
-> change. - Atomic Habits by James Clear
+<blockquote class="quote">An atomic habit is a regular practice or routine that is not only small and
+easy to do but is also the source of incredible power; a component of the
+system of compound growth. Bad habits repeat themselves again and again not
+because you don't want to change, but because you have the wrong system for
+change <br><small>- ATOMIC HABITS BY JAMES CLEAR</small></blockquote>
 
 ### Prevention
 
