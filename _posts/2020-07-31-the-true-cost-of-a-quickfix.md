@@ -16,7 +16,11 @@ Picture this, a sprint is underway, development is running smoothly, then QA
 reports a rather odd bug, you begin to investigate and lo and behold you
 find the following comment:
 
-![](/assets/images/posts/2020-07-31-the-true-cost-of-a-quickfix/no-one-knows.jpg)
+```javascript
+// Dear programmer:
+// When I wrote this code, only god and I knew how it worked
+// Now, only god knows
+```
 
 <!--break-->
 
