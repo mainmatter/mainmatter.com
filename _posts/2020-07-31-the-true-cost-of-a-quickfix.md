@@ -24,6 +24,8 @@ find the following comment:
 
 <!--break-->
 
+![the true cost of a quickfix illustration](/assets/images/posts/2020-07-31-the-true-cost-of-a-quickfix/illustration.png#full@1440-2880)
+
 While avoiding code that resulted in such comments was harder to enforce in the
 pre-framework era, opinionated frameworks such as
 [Ember.js](https://emberjs.com/) offer us concrete ways to ship code with
