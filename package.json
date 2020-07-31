@@ -27,7 +27,7 @@
     "percy": "percy exec -- node scripts/percy.js"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.5",
+    "@babel/core": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
     "@css-blocks/ember-cli": "^1.1.2",
     "@glimmer/application": "^0.13.0",
