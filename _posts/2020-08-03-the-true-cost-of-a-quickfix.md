@@ -9,7 +9,7 @@ description:
   'Patsy Issa makes the case for refactoring legacy code sooner rather than
   later'
 og:
-  image: /assets/images/posts/2020-07-31-the-true-cost-of-a-quickfix/og-image.png
+  image: /assets/images/posts/2020-08-03-the-true-cost-of-a-quickfix/og-image.png
 ---
 
 Picture this, a sprint is underway, development is running smoothly, then QA
@@ -24,7 +24,7 @@ the following comment:
 
 <!--break-->
 
-![the true cost of a quickfix illustration](/assets/images/posts/2020-07-31-the-true-cost-of-a-quickfix/illustration.png#full@1440-2880)
+![the true cost of a quickfix illustration](/assets/images/posts/2020-08-03-the-true-cost-of-a-quickfix/illustration.png#full@1440-2880)
 
 <br><br>
 
