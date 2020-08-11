@@ -12,6 +12,10 @@
   .vertical-offset {
     padding-top: 51rem;
   }
+
+  .padding-bottom-for-shape {
+    padding-bottom: 51rem;
+  }
 }
 
 @export typography;
