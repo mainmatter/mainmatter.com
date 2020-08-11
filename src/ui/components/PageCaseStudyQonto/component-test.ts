@@ -4,11 +4,11 @@ import { setupRenderingTest } from '../../../utils/test-helpers/setup-rendering-
 
 const { module, test } = QUnit;
 
-module('Component: PageCaseDdWrt', function(hooks) {
+module('Component: PageCaseStudyQonto', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
-    await render(hbs`<PageCaseDdWrt />`);
+  test('it renders', async function (assert) {
+    await render(hbs`<PageCaseStudyQonto />`);
 
     assert.ok(this.containerElement.querySelector('div'));
   });

@@ -4,7 +4,7 @@
 @block typography from "../../styles/blocks/typography.block.css";
 
 :scope {
-  block-name: PageCaseStudyTrainline;
+  block-name: PageCaseStudyQonto;
   composes: 'layout';
 }
 
