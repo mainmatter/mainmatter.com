@@ -36,6 +36,10 @@
   margin-top: 12rem;
 }
 
+.before-16 {
+  margin-top: 16rem;
+}
+
 .after-none {
   margin-bottom: 0;
 }
@@ -50,10 +54,6 @@
 
 .after-12 {
   margin-bottom: 12rem;
-}
-
-.after-16 {
-  margin-bottom: 16rem;
 }
 
 .after-21 {
@@ -79,6 +79,10 @@
 }
 
 @media (min-width: 888px) {
+  .before-16-atlarge {
+    margin-top: 16rem;
+  }
+
   .after-12-atlarge {
     margin-bottom: 12rem;
   }
