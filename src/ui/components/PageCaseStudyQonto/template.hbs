@@ -40,9 +40,11 @@
         freelancers and SMEs in Europe.
       </p>
     </Card>
+
     <CardEmberExpertise />
   </div>
-  <ShapeWork @background="#21314D" @color="#6b5aed" @src="/assets/images/work/qonto@1200.jpg" @clip="true"
+
+  <ShapeWork @background="#21314D" @color="#6b5aed" @src="/assets/images/work/qonto-alternative@1200.png" @clip="true"
     @center="true">
     <blockquote>
       <p>
@@ -54,6 +56,7 @@
       </p>
     </blockquote>
   </ShapeWork>
+
   <div layout:class="main" offset:class="after-21">
     <h3>
       Clearing the roadblocks
@@ -100,9 +103,33 @@
       well as pair-programmed with their engineers and shared know-how via reviews.
     </p>
   </div>
+
   <div layout:class="side" block:class="vertical-offset" offset:class="after-21">
     <CardPlaybook />
   </div>
+
+  <div layout:class="main" offset:class="after-21">
+    <blockquote offset:class="before-16">
+      <p typography:class="lead">
+        “Working with simplabs’ experts has always been a good experience.
+        We can really feel that they have mastery on many topics, and knowledge about complex technical problems.
+        I’ve learned so much, especially during our pairing sessions, and it allows me to improve my technical skills
+        and growth as an engineer.”
+      </p>
+
+      <p typography:class="small">
+        Alexandre Monjol, Frontend Engineer at Qonto
+      </p>
+    </blockquote>
+  </div>
+  <div layout:class="bleed-right" offset:class="after-21">
+    <ShapeImage
+      @srcset="/assets/images/photos/qonto-alexander@600.jpg 600w, /assets/images/photos/qonto-alexander@1200.jpg 1200w"
+      @sizes="(max-width: 887px) 600px, 1200px)"
+      @align="right"
+    />
+  </div>
+
   <ShapeFeatureTimify />
   <WorkWithUs @teamMember="marco" />
 
