@@ -211,4 +211,20 @@
   }
 }
 
+@media (max-width: 888px) {
+  :scope {
+    background: var(--shape-color);
+    color: var(--color-text-inverted);
+  }
+
+  :scope .content {
+    background: var(--shape-color);
+    color: var(--color-text-inverted);
+  }
+
+  :scope .small {
+    color: var(--color-text-inverted);
+  }
+}
+
 @export typography;
