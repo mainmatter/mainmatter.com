@@ -61,6 +61,10 @@
 }
 
 @media (max-width: 887px) {
+  .before-5-atmobile {
+    margin-top: 5rem;
+  }
+
   .after-12 {
     margin-bottom: 8rem;
   }
