@@ -25,9 +25,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: volta-cli/action@v1
-        with:
-          node-version: 10.22.0
-          yarn-version: 1.22.4
 
       - name: get yarn cache dir
         id: yarn-cache
@@ -53,9 +50,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: volta-cli/action@v1
-        with:
-          node-version: 10.22.0
-          yarn-version: 1.22.4
 
       - name: get yarn cache dir
         id: yarn-cache
@@ -87,9 +81,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: volta-cli/action@v1
-        with:
-          node-version: 10.22.0
-          yarn-version: 1.22.4
 
       - name: get yarn cache dir
         id: yarn-cache
@@ -121,9 +112,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: volta-cli/action@v1
-        with:
-          node-version: 10.22.0
-          yarn-version: 1.22.4
 
       - name: get yarn cache dir
         id: yarn-cache
