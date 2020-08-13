@@ -24,9 +24,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
+      - uses: volta-cli/action@v1
 
       - name: get yarn cache dir
         id: yarn-cache
@@ -51,9 +49,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
+      - uses: volta-cli/action@v1
 
       - name: get yarn cache dir
         id: yarn-cache
@@ -84,9 +80,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
+      - uses: volta-cli/action@v1
 
       - name: get yarn cache dir
         id: yarn-cache
@@ -117,9 +111,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
+      - uses: volta-cli/action@v1
+
       - name: get yarn cache dir
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
