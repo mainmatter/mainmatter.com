@@ -79,6 +79,10 @@
 }
 
 @media (min-width: 888px) {
+  .before-5-atlarge {
+    margin-top: 5rem;
+  }
+
   .after-12-atlarge {
     margin-bottom: 12rem;
   }

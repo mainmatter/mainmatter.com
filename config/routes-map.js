@@ -66,6 +66,7 @@ module.exports = function () {
     '/cases/expedition': { component: 'PageCaseStudyExpedition' },
     '/cases/timify': { component: 'PageCaseStudyTimify' },
     '/cases/trainline': { component: 'PageCaseStudyTrainline' },
+    '/cases/qonto': { component: 'PageCaseStudyQonto' },
     '/contact': { component: 'PageContact' },
     '/expertise/ember': { component: 'PageEmberExpertise' },
     '/expertise/elixir-phoenix': { component: 'PageElixirExpertise' },
