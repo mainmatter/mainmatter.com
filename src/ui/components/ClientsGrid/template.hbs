@@ -1,7 +1,9 @@
 <section>
-  <h2>
-    {{if @title @title "Our Clients"}}
-  </h2>
+  {{#if @title}}
+    <h2>
+      {{@title}}
+    </h2>
+  {{/if}}
   <div grid:scope>
     {{#each this.clients key="id" as |c|}}
       <figure grid:class="item">
