@@ -7,6 +7,13 @@
   >
     <HeaderContent @label="Work" @headline="A proven track record of successful projects for international clients." />
   </Header>
+
+
+  <ClientsGrid
+    @title="Meet our clients"
+    @only="qonto,cardstack,generali,hopskipdrive,robinhood,clark,xbav,experteer,mvb"
+  />
+
   <div layout:class="bleed-left" offset:class="after-5">
     <ShapeImage @srcset="/assets/images/work/trainline.svg" @align="left" />
   </div>
@@ -38,11 +45,6 @@
       @align="right"
     />
   </div>
-
-  <ClientsGrid
-    @title="Meet our clients"
-    @only="qonto,cardstack,generali,hopskipdrive,robinhood,clark,xbav,experteer,mvb"
-  />
 
   <ClientsGrid @only="dim3,timify,embedd,expedition,trainline,ringler,neighbourhoodie,loconet,erdil" />
 
