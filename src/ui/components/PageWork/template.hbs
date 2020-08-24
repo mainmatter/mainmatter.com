@@ -8,6 +8,38 @@
     <HeaderContent @label="Work" @headline="A proven track record of successful projects for international clients." />
   </Header>
 
+  <div layout:class="bleed-left" offset:class="after-5">
+    <ShapeImage @srcset="/assets/images/work/qonto.svg" @align="left" />
+  </div>
+  <div layout:class="split-trailing" offset:class="after-5">
+    <h2>
+      <p typography:class="small">
+        Featured Case Study
+        <span typography:class="hidden">
+          :
+        </span>
+      </p>
+      Co-Engineering the Future of Banking for SMEs
+    </h2>
+    <p typography:class="lead">
+      Qonto is a B2B Neobank that offers bank accounts as well as credit cards to more than 75000 freelancers and SMEs in Europe. We worked closely
+      with their in-house engineers, enabling them to sustainably move at a faster pace, delivering higher quality at the same time.
+    </p>
+    <ArrowLink @href="/cases/qonto/">
+      Read Case Study
+    </ArrowLink>
+  </div>
+  <div layout:class="full" offset:class="after-21" block:class="qonto-screenshot-desktop">
+    <div block:class="qonto-shape-desktop">
+    </div>
+  </div>
+  <div layout:class="bleed-right" offset:class="after-21" block:class="qonto-screenshot-mobile">
+    <ShapeImage
+      @srcset="/assets/images/work/qonto-alternative@800.jpg 800w, /assets/images/work/qonto-alternative@1600.jpg 1600w"
+      @sizes="(max-width: 887px) 800px, 1600px"
+      @align="right"
+    />
+  </div>
 
   <ClientsGrid
     @title="Meet our clients"
