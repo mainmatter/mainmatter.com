@@ -16,12 +16,12 @@
 
 @media (min-width: 888px) {
   .trainline-screenshot-mobile {
-    display: resolve('layout.bleed-right');
+    display: resolve('layout.bleed-left');
     display: none;
   }
 
   .timify-screenshot-mobile {
-    display: resolve('layout.bleed-left');
+    display: resolve('layout.bleed-right');
     display: none;
   }
 }
@@ -62,15 +62,15 @@
 }
 
 @media (min-width: 888px) {
-  .timify-text {
+  .trainline-text {
     order: 1;
   }
 
-  .timify-logo {
+  .trainline-logo {
     order: 2;
   }
 
-  .timify-screenshot-desktop {
+  .trainline-screenshot-desktop {
     order: 3;
   }
 }
