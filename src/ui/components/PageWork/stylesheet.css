@@ -13,6 +13,10 @@
   .qonto-screenshot-desktop {
     display: none;
   }
+
+  .logo-shape {
+    padding-bottom: 50%;
+  }
 }
 
 @media (min-width: 888px) {
