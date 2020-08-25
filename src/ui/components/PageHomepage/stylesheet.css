@@ -9,6 +9,10 @@
   composes: 'layout';
 }
 
+.logo {
+  max-width: 15rem;
+}
+
 @media (max-width: 888px) {
   .padding-right-1 {
     padding-right: 0;
