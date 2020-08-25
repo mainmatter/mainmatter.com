@@ -9,26 +9,32 @@
 
 @media (max-width: 887px) {
   .trainline-screenshot-desktop,
-  .timify-screenshot-desktop {
+  .timify-screenshot-desktop,
+  .qonto-screenshot-desktop {
     display: none;
   }
 }
 
 @media (min-width: 888px) {
   .trainline-screenshot-mobile {
-    display: resolve('layout.bleed-right');
+    display: resolve('layout.bleed-left');
     display: none;
   }
 
   .timify-screenshot-mobile {
-    display: resolve('layout.bleed-left');
+    display: resolve('layout.bleed-right');
+    display: none;
+  }
+
+  .qonto-screenshot-mobile {
+    display: resolve('layout.bleed-right');
     display: none;
   }
 }
 
 .trainline-shape-desktop,
-.timify-shape-desktop {
-  background-image: url(/assets/images/photos/trainline-comp@1208.jpg);
+.timify-shape-desktop,
+.qonto-shape-desktop {
   padding-bottom: 50%;
   background-size: cover;
   clip-path: polygon(0 81%, 57% 100%, 100% 79%, 100% 29%, 40% 0, 0 19.5%);
@@ -55,22 +61,30 @@
   background-image: url(/assets/images/photos/timify-desktop@1200.jpg);
 }
 
+.qonto-shape-desktop {
+  background-image: url(/assets/images/work/qonto-alternative@1600.jpg);
+}
+
 @media (max-width: 887px) {
   .timify-shape-desktop {
     background-image: url(/assets/images/photos/timify-desktop@600.jpg);
   }
+
+  .qonto-shape-desktop {
+    background-image: url(/assets/images/work/qonto-alternative@1600.jpg);
+  }
 }
 
 @media (min-width: 888px) {
-  .timify-text {
+  .trainline-text {
     order: 1;
   }
 
-  .timify-logo {
+  .trainline-logo {
     order: 2;
   }
 
-  .timify-screenshot-desktop {
+  .trainline-screenshot-desktop {
     order: 3;
   }
 }
