@@ -29,6 +29,8 @@ might be useful for you too.
 
 <!--break-->
 
+![illustration of a camel in front of pyramids](/assets/images/posts/2020-08-28-testing-the-miragejs-setup/illustration.svg#full)
+
 ## Where do we put those tests?
 
 Before we start writing tests we need to figure out where to put all those new
