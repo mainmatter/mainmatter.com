@@ -8,7 +8,7 @@ bio: 'Senior Frontend Engineer'
 description:
   'Tobias Bieniek explains how to write tests for your Mirage.js mock API setup.'
 og:
-  image: /assets/images/posts/2020-06-23-testing-mirage/og-image.png
+  image: /assets/images/posts/2020-08-28-testing-the-miragejs-setup/og-image.png
 ---
 
 [Mirage.js] is a universal library to mock out HTTP-based APIs. It has proven
