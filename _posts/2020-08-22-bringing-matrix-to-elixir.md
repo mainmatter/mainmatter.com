@@ -30,11 +30,10 @@ In May of this year, I began work on a
 [Matrix SDK for Elixir](https://github.com/niklaslong/matrix-elixir-sdk) with
 the aim of simplifying the process of Matrix-enabling Elixir applications. It's
 early days for the project but if you are interested in contributing (all skill
-levels welcome) or using the SDK as a foundation for another project, please
-[let me know](https://twitter.com/niklas_long)! Included at the end of this
-post, is a section describing the project's status.
+levels welcome) or using the SDK as a foundation for another project,
+[please let me know](mailto:niklaslong@protonmail.ch)!
 
-## Down the rabbit-hole and into the Matrix
+## Down the rabbit-hole...
 
 Matrix is structured around the **federation** of **homeservers**, that is to
 say the continuous synchronisation of **event** history between the homeservers
@@ -48,12 +47,22 @@ events associated with its members. The history is copied in full on each
 member's homeserver and all copies are synchronised in real-time. Fundamentally,
 a room is a decentralised data store with no single point of control or failure.
 
-All changes in a room's state are described by events. They can represent any
-data, from users joining a room or sending messages, to image uploads and VoIP
-call setup.
+A note on Matrix interoperability: it was designed to exchange data with other
+platforms such as WhatsApp, Slack, iMessage, Email, Discord, IRC and many more.
+This is known as bridging and makes Matrix an attractive one-stop solution to
+interface with these services.
 
-Let's dip our toes into Matrix by creating a guest account on `matrix.org` and
-reading events from the `#matrix:matrix.org` room using the SDK.
+## ...and into the Matrix
+
+The Elixir SDK currently wraps part of the **Client-Server API**; v0.1 was
+released to allow interested parties to begin experimenting. The `Client`
+module, used to make requests to homeservers, is currently the highest level of
+abstraction in the SDK.
+
+As mentioned above, all changes in a room's state are described by events. They
+can represent any data, from users joining a room or sending messages, to image
+uploads and VoIP call setup. Let's dip our toes into Matrix by creating a guest
+account on `matrix.org` and reading events from the `#matrix:matrix.org` room.
 
 ```elixir
 iex(1)> {:ok, response} = Client.register_guest("https://matrix.org")
@@ -121,7 +130,7 @@ iex(4)> Client.join_room("https://matrix.org", token, "#matrix:matrix.org")
 
 The call returns a `200` and the `room_id`. You may have noticed this isn't the
 same as `#matrix:matrix.org` used to make the request. The latter is an
-**alias**. They allows users to refer to rooms more conveniently instead of
+**alias**. They allows users to refer to **rooms** more conveniently instead of
 using long IDs such as `!OGEhHVWSdvArJzumhm:matrix.org`. Both are valid,
 however, and can be used interchangeably with most endpoints.
 
@@ -158,25 +167,28 @@ Fundamentally, the response is a linear event history for a user. Pagination is
 handled by way of pagination tokens like `prev_batch` and can be leveraged in
 subsequent `sync` calls.
 
-## Project status
+This is where I'll end this short introduction, however, please check the
+[documentation](https://hexdocs.pm/matrix_sdk/) for more information on the
+currently implemented endpoints.
 
-The SDK currently wraps part of the **Client-Server API**. There is work to be
-done in adding the missing endpoints; v0.1 was released to allow interested
-parties to begin experimenting with Matrix in Elixir. In parallel, I'm working
-on the [Elixir/Erlang bindings](https://github.com/niklaslong/olm-ex) to the
+## What's next?
+
+Work continues on the SDK, there are a number of endpoints waiting to be
+implemented and decisions to be made in how to handle state. Soon, I'm hoping to
+release the first version of the
+[Elixir/Erlang bindings](https://github.com/niklaslong/olm-ex) to the
 [Olm](https://gitlab.matrix.org/matrix-org/olm) cryptography library maintained
-by the Matrix core team, by leveraging C NIFs. Lastly, there's an
-[experimental Elixir client](https://github.com/niklaslong/matrix-client) in the
-works, providing usage feedback for the SDK. In future, I expect to include
-tools to manage state, both for encryption and user sessions in the SDK.
+by the Matrix core team. Olm is an implementation of the
+[Double Ratchet Algorithm](https://signal.org/docs/specifications/doubleratchet)
+written in C/C++ and exposed as a C API. The bindings are a first step towards
+implementing end-to-end encryption in the SDK.
 
-The long-term objective is to provide all the tools necessary to build
-Matrix-enabled applications in Elixir, from clients to homeservers. Matrix is
-experimenting with P2P by bundling clients and homeservers together on the
-user's device. This could lead to interesting implementations in Elixir,
-potentially targeting WebAssembly thanks to
-[Lumen](https://github.com/lumen/lumen).
+The long-term goal is to provide all the tools necessary to build Matrix-enabled
+applications in Elixir, from clients to homeservers. Matrix is experimenting
+with P2P by bundling clients and homeservers together on the user's device. This
+could lead to interesting implementations in Elixir, potentially targeting
+WebAssembly thanks to [Lumen](https://github.com/lumen/lumen).
 
 It is my belief Elixir can be a powerful tool in decentralising the web.
-Projects like Matrix are vitally important, I hope the SDK helps a little in
-encouraging creators to start projects in this problem space.
+Projects like Matrix are vitally important, I hope the SDK will encourage
+creators to start projects in this problem space.
