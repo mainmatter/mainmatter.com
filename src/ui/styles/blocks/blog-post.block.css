@@ -1,5 +1,6 @@
 @block layout from "layout.block.css";
 @block figure from "figure.block.css";
+@block typography from "typography.block.css";
 
 :scope {
   block-name: blog-post;
@@ -282,4 +283,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-selector-attr,
 .xml,
 .javascript {
+}
+
+.quote {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 20px;
+  border-left: 4px solid #5b5b5b;
+}
+
+.quote-author {
+  composes: 'typography.small';
+  margin-top: 10px;
 }
