@@ -176,7 +176,7 @@ currently implemented endpoints.
 Work continues on the SDK, there are a number of endpoints waiting to be
 implemented and decisions to be made in how to handle state. Soon, I'm hoping to
 release the first version of the
-[Elixir/Erlang bindings](https://github.com/niklaslong/olm-ex) to the
+[Elixir/Erlang bindings](https://github.com/niklaslong/olm-elixir) to the
 [Olm](https://gitlab.matrix.org/matrix-org/olm) cryptography library maintained
 by the Matrix core team. Olm is an implementation of the
 [Double Ratchet Algorithm](https://signal.org/docs/specifications/doubleratchet)
