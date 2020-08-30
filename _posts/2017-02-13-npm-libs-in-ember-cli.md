@@ -161,7 +161,12 @@ make sure that Ember CLI waits for the installation to finish.
 
 ## npm vs. Bower
 
-<blockquote class="tweet" data-lang="de"><p lang="en" dir="ltr">&quot;What&#39;s bower?&quot;<br>&quot;A package manager, install it with npm.&quot;<br>&quot;What&#39;s npm?&quot;<br>&quot;A package manager, you can install it with brew&quot;<br>&quot;What&#39;s brew?&quot;<br>...</p>&mdash; Stefan Baumgartner (@ddprrt) <a href="https://twitter.com/ddprrt/status/529909875347030016">5. November 2014</a></blockquote>
+> &quot;What&#39;s bower?&quot;  
+> &quot;A package manager, install it with npm.&quot;  
+> &quot;What&#39;s npm?&quot;  
+> &quot;A package manager, you can install it with brew&quot;  
+> &quot;What&#39;s brew?&quot; ...  
+> <author>&mdash; Stefan Baumgartner (@ddprrt) <a href="https://twitter.com/ddprrt/status/529909875347030016">5. November 2014</a></author>
 
 In an effort to simplify the situation the Ember team decided to focus on npm in
 the future. Bower support will still be available to support older addons for
