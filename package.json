@@ -56,7 +56,7 @@
     "clean-css": "^4.2.3",
     "colors": "^1.4.0",
     "dateformat": "^3.0.3",
-    "ember-cli": "^3.20.0",
+    "ember-cli": "^3.21.0",
     "ember-cli-dependency-checker": "^3.2.0",
     "ember-cli-inject-live-reload": "^2.0.2",
     "ember-cli-tslint": "^0.1.3",
