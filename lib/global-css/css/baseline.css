@@ -272,6 +272,10 @@ p + p {
   margin-top: 4rem;
 }
 
+blockquote p {
+  flex: 1;
+}
+
 li {
   margin-bottom: 0.5rem;
   margin-left: 3rem;

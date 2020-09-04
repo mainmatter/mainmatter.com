@@ -89,11 +89,11 @@ Unlike the previous method; the cost for this approach depends, among other
 things, on the time the quick-fix spends as tech debt and the future features it
 impacts.
 
-> "An atomic habit is a regular practice or routine that is not only small and
-> easy to do but is also the source of incredible power; a component of the system
-> of compound growth. Bad habits repeat themselves again and again not because you
-> don't want to change, but because you have the wrong system for change" <author>&mdash;  Atomic
-> Habits by James Clear</author>
+> An atomic habit is a regular practice or routine that is not only small and
+> easy to do but is also the source of incredible power; a component of the
+> system of compound growth. Bad habits repeat themselves again and again not
+> because you don't want to change, but because you have the wrong system for
+> change <author>Atomic Habits by James Clear</author>
 
 ### Prevention
 
