@@ -3840,10 +3840,10 @@ broccoli-typescript-compiler@^4.1.0:
     typescript "~3.5.3"
     walk-sync "^0.3.2"
 
-broccoli-typescript-compiler@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/broccoli-typescript-compiler/-/broccoli-typescript-compiler-6.0.0.tgz#dad0652e122a28b13aa0ea87c9d08325b8de3ebc"
-  integrity sha512-o4YUbffyvTkx4RTPjaV2bxwfYQ7j+rh7otiTWzr9WEIrnMZYfZyJBRyxaSu7LVTeTBxIyqqzFNv76winD6BRBg==
+broccoli-typescript-compiler@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/broccoli-typescript-compiler/-/broccoli-typescript-compiler-6.0.1.tgz#114b6d082c4612c0ab539a6e977008de8c22a2ca"
+  integrity sha512-bRyJ3VxZb/Z+3w8KOkv4JmeO7bxyS8uc5+/J1x1IJwFWiTS5OGfcqxsCm0HZoaY4srcntKwbL2nGTlzc0BinNg==
   dependencies:
     broccoli-funnel "^3.0.3"
     broccoli-merge-trees "^4.2.0"
