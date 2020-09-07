@@ -142,7 +142,7 @@ call to `Client.sync/2`.
 
 ```elixir
 iex(5)> {:ok, sync_response} = Client.sync("https://matrix.org", token)
-# Huuuuuuuuuge response
+# huuuuuuuuuge response
 ```
 
 Syncing is complex and I won't be going into any great detail here. At a high
@@ -159,7 +159,7 @@ iex(6)> sync_response.body["rooms"]["join"]["!OGEhHVWSdvArJzumhm:matrix.org"]
     "events" => [...] # messages, ...
   },
   "timeline" => %{
-    "events" => [...], # everything together in a timeline.
+    "events" => [...], # everything together in a timeline
     "limited" => true,
     "prev_batch" => "t74742-1449340357_757284957"
   }
