@@ -60,7 +60,8 @@ migration path from walled garden networks.
 The Elixir SDK currently wraps part of the Client-Server API; v0.1 was released
 to allow interested parties to begin experimenting. The `Client` module, used to
 make requests to homeservers, is currently the highest level of abstraction in
-the SDK.
+the SDK. It is designed to be modular; this, for example, makes it easy to
+switch out the HTTP layer, should you choose to do so.
 
 As mentioned above, all changes in a room's state are described by events. They
 can represent any data, from users joining a room or sending messages, to image
