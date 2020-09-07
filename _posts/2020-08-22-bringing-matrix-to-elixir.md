@@ -1,5 +1,5 @@
 ---
-title: Bringing Matrix to Elixir
+title: Bringing the Matrix Open Standard to Elixir
 author: 'Niklas Long'
 github: niklaslong
 twitter: niklas_long
