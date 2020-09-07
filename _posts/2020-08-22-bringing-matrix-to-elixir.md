@@ -30,8 +30,8 @@ In May of this year, I began work on a
 [Matrix SDK for Elixir](https://github.com/niklaslong/matrix-elixir-sdk) with
 the aim of simplifying the process of Matrix-enabling Elixir applications. It's
 early days for the project but if you are interested in contributing (all skill
-levels welcome) or using the SDK as a foundation for another project,
-[please let me know](mailto:niklaslong@protonmail.ch)!
+levels welcome) or using the SDK as a foundation for another project, please let
+me know!
 
 ## Down the rabbit-hole...
 
@@ -50,7 +50,10 @@ a room is a decentralised data store with no single point of control or failure.
 A note on Matrix interoperability: it was designed to exchange data with other
 platforms such as WhatsApp, Slack, iMessage, Email, Discord, IRC and many more.
 This is known as bridging and makes Matrix an attractive one-stop solution to
-interface with these services.
+interface with these services. As an example, Alice who's on Matrix, could
+seemlessly communicate with Bob who's on Freenode and Chris who's on Slack.
+Crucially, bridges connect seperate communities and as such represent a workable
+migration path from walled garden networks.
 
 ## ...and into the Matrix
 
@@ -103,7 +106,7 @@ iex(3)> Client.join_room("https://matrix.org", token, "#matrix:matrix.org")
 {:ok,
  %Tesla.Env{
    body: %{
-     "consent_uri" => "https://matrix-client.matrix.org/_matrix/consent?",
+     "consent_uri" => "https://matrix-client.matrix.org/_matrix/consent?u=56440018645&h=c319be84a25b",
      "errcode" => "M_CONSENT_NOT_GIVEN",
      "error" => # please accept terms and conditions
    },
@@ -163,7 +166,7 @@ iex(6)> sync_response.body["rooms"]["join"]["!OGEhHVWSdvArJzumhm:matrix.org"]
 }
 ```
 
-Fundamentally, the response is a linear event history for a user. Pagination is
+In essence, the response is a linear event history for a user. Pagination is
 handled by way of pagination tokens like `prev_batch` and can be leveraged in
 subsequent `sync` calls.
 
