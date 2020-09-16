@@ -972,12 +972,12 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@css-blocks/broccoli@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@css-blocks/broccoli/-/broccoli-1.4.0.tgz#1293bc1642b7397bdf587f99c62500223489c6e3"
-  integrity sha512-LmXf4gySo2uRnmRzzF1gSRgcaTjWQSuT+AHRQ+YyItBI1T/+jqAWO5PUIofMWCljkmxIMy/UJgKrWJbpnBsahQ==
+"@css-blocks/broccoli@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@css-blocks/broccoli/-/broccoli-1.5.0.tgz#c1e9459ddc46f50a73c40e9f152526025ec720d4"
+  integrity sha512-EYU1CMXX86rk4LnvKAAersdqQckJlDQBlC7WKVU1QccdA5WOA0omcPE30seftzHEzwZahCdPKxWo9kNfE2gKgA==
   dependencies:
-    "@css-blocks/core" "^1.4.0"
+    "@css-blocks/core" "^1.5.0"
     "@glimmer/compiler" "^0.51.1"
     "@glimmer/syntax" "^0.51.1"
     "@opticss/template-api" "^0.7.0"
@@ -989,24 +989,24 @@
     fs-extra "^8.0.0"
     fs-tree-diff "^2.0.0"
     glob "^7.1.2"
-    opticss "^0.8.0"
+    opticss "^0.9.0"
     symlink-or-copy "^1.2.0"
     walk-sync "^2.0.0"
 
-"@css-blocks/config@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@css-blocks/config/-/config-1.4.0.tgz#8d4d9103372c7ecd4f7d259b201f9dc364da9a33"
-  integrity sha512-yF5cepXYr6fyYCz6KWfCCOhu55GeW1HU4L1IVvRTs1qLnQHly3A5bsdB5ksMrlXOb5e29sezdkYsTZX2QYuLzQ==
+"@css-blocks/config@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@css-blocks/config/-/config-1.5.0.tgz#67c3613ea77506b7a9f1aa04682706aa5673028a"
+  integrity sha512-YCgseoUbvE7kEeQK0sg4F3YDtyvEP2Z+QLYTmeV1RwTYursiaNRfzm48fiJ0bpbRKLDVM57PKwww3X6/vdZpiA==
   dependencies:
-    "@css-blocks/core" "^1.4.0"
+    "@css-blocks/core" "^1.5.0"
     cosmiconfig "^6.0.0"
     debug "^4.1.1"
     lodash.merge "^4.6.2"
 
-"@css-blocks/core@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@css-blocks/core/-/core-1.4.0.tgz#5a15a160ba80dd308fb0447faf03eda3a28d8ae4"
-  integrity sha512-siBDcYjnbeVNZ4XA9Si95RYT1ucEh44AYDU3j7Ujs0N+un6OMv28hPqRw5PEWqDNsBe/SDP03+p3J9K9FcovXw==
+"@css-blocks/core@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@css-blocks/core/-/core-1.5.0.tgz#53647752e5b98534eb46f07da722906a236511e7"
+  integrity sha512-7kjpIQ/rs2pEOUXXUA3yfZa49RRDKBUY/dkTLWRCpnhXJspESZ+1JpJDzZbyuLM97XFc3qAQZtcWy/gfP1M5iA==
   dependencies:
     "@opticss/element-analysis" "^0.6.2"
     "@opticss/template-api" "^0.7.0"
@@ -1017,19 +1017,19 @@
     inline-source-map-comment "^1.0.5"
     json-parse-better-errors "^1.0.1"
     object.values "^1.0.4"
-    opticss "^0.8.0"
+    opticss "^0.9.0"
     regexpu-core "^4.0.11"
     source-map "^0.7.3"
     watch "^1.0.2"
 
-"@css-blocks/ember-cli@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@css-blocks/ember-cli/-/ember-cli-1.4.0.tgz#1c4fa40efea40233bafe02fa15892f97d14f4544"
-  integrity sha512-lr63w2uJjqXvhoNw69kPw5IK+tK0W0sfgv0Ngh/2v2w7JAIwwMLC6LpVe5ZplNaD2IPQ4kCoGbJm95a6nk1bbg==
+"@css-blocks/ember-cli@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@css-blocks/ember-cli/-/ember-cli-1.5.0.tgz#de666d57005e6c6f982ce351f13b0d93f7e973d5"
+  integrity sha512-USgP7MQghZM+UYwMo4MoomkQErxq5LzdPZJ3c6NW2mvDno7PTnqw+P3vwKljgpab0SCUxHbEjMhM69VNInj2Jg==
   dependencies:
-    "@css-blocks/broccoli" "^1.4.0"
-    "@css-blocks/config" "^1.4.0"
-    "@css-blocks/glimmer" "^1.4.0"
+    "@css-blocks/broccoli" "^1.5.0"
+    "@css-blocks/config" "^1.5.0"
+    "@css-blocks/glimmer" "^1.5.0"
     "@glimmer/application-pipeline" "^0.15.0"
     broccoli-concat "^3.7.3"
     broccoli-funnel "^2.0.1"
@@ -1040,13 +1040,13 @@
     lodash.merge "^4.6.2"
     symlink-or-copy "^1.2.0"
 
-"@css-blocks/glimmer@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@css-blocks/glimmer/-/glimmer-1.4.0.tgz#400072c95430b9e32766ad75a2ddaab4e9df7ecb"
-  integrity sha512-6rGxRKpCf8z553e5+fYbm75xlea6FfIVhsGGBaHywJzU1/sS6le5qj0PDEHAkOualhu7JjLQWNYvfVY6/ispfQ==
+"@css-blocks/glimmer@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@css-blocks/glimmer/-/glimmer-1.5.0.tgz#055ebe0be2d2f1b18f84890cefd5fff88bedbf33"
+  integrity sha512-ATVa93RDak6SJNf2AvcS42WlQYD91qnWwEKGqXqmGQyxu3uh3941u/fKGC9gQNG5/vAKfhSC+z9C6xpKPAc59A==
   dependencies:
     "@amiller-gh/glimmer-analyzer" "^0.4.0"
-    "@css-blocks/core" "^1.4.0"
+    "@css-blocks/core" "^1.5.0"
     "@glimmer/compiler" "^0.51.1"
     "@glimmer/resolution-map-builder" "0.5.1"
     "@glimmer/resolver" "^0.4.3"
@@ -9923,10 +9923,10 @@ open@^7.1.0:
     is-docker "^2.0.0"
     is-wsl "^2.1.1"
 
-opticss@^0.8.0:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/opticss/-/opticss-0.8.1.tgz#4ed3e25e312533e9438a96a3d277a2a0317fc1f7"
-  integrity sha512-HMH9mnIekbS1pHiA71vVslrdAeaSUjWcLiinkwVlOk342CS2uDwlVmz6GuGEUPXtXpugnuXCt7kMdFpwn5qzrQ==
+opticss@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/opticss/-/opticss-0.9.0.tgz#61d2000bb3021950a910ee80bc2f0615dc0f16f5"
+  integrity sha512-IP194+Bos+myCjADDn14ZfpG05ud8HPz/epJgcbZGcZ/uzLtNZIQt5nMOY1VS2HYyOe4G8i5n1r9wTROW4T7Cw==
   dependencies:
     "@opticss/element-analysis" "^0.6.2"
     "@opticss/template-api" "^0.7.0"
