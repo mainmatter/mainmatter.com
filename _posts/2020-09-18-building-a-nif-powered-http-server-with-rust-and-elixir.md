@@ -77,7 +77,7 @@ I'll be using `NifStruct` in this case:
 // native/tinybeam/src/server.rs
 
 #[derive(NifStruct)]
-#[module = "Tinybeam.Server.Request"]
+// #[module = "Tinybeam.Server.Request"]
 pub struct Req {
     req_ref: ResourceArc<ReqRef>,
     method: Atom,
