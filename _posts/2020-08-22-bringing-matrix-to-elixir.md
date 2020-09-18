@@ -39,7 +39,7 @@ Matrix is structured around the federation of homeservers, that is to say the
 continuous synchronisation of event history between the homeservers via the
 Server-Server API.
 
-![The Matrix Architecture](/assets/images/posts/2020-08-22-bringing-matrix-to-elixir.md/matrix_architecture.png)
+![The Matrix Architecture](/assets/images/posts/2020-08-22-bringing-matrix-to-elixir/matrix_architecture.png)
 
 Each user is registered on a single homeserver, ideally hosted by themselves,
 and can join rooms to communicate with others. A room is a shared history of
