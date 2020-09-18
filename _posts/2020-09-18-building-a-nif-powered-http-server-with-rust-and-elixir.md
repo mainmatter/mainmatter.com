@@ -20,14 +20,14 @@ Rust HTTP server written with
 isn't fully-featured yet but it does implement routing and can currently handle
 `GET` and `POST` requests.
 
-<!--break-->
-
 In this post, I will explore calling Elixir (& Erlang) functions from Rust with
 the help of a GenServer; leveraging structs to encapsulate data shared by Elixir
 and the NIFs; and routing with Elixir macros. If you're new to Elixir-Rust
 interoperability, consider perusing my
 [last post](https://simplabs.com/blog/2020/06/25/writing-rust-nifs-for-elixir-with-rustler)
 about writing NIFs with Rustler before reading on.
+
+<!--break-->
 
 ## Architecture
 
