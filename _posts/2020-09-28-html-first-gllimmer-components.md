@@ -1,0 +1,341 @@
+---
+title: 'The HTML-first approach of Glimmer components'
+author: 'Ricardo Mendes'
+github: locks
+twitter: locks
+topic: ember
+bio: 'Senior Frontend Engineer, Ember Framework and Learning Core teams member'
+description:
+  'Ricardo Mendes explains how Glimmer components simplify Ember with an
+  HTML-first approach'
+og:
+  image: /assets/images/posts/2020-08-28-testing-the-miragejs-setup/og-image.png
+---
+
+Following up on
+[Bringing clarity to templates through Ember Octane](../../../../2020/09/28/clarity-in-templates/),
+we will be discussing how the Glimmer components introduced by the
+[Ember Octane edition](https://blog.emberjs.com/2019/12/20/octane-is-here.html)
+aim to modernize and simplify Ember applications by using native JavaScript
+syntax and an HTML-first approach.
+
+<!--break-->
+
+![Bringing clarity to your Ember templates](/assets/images/posts/2019-12-20-clarity-in-templates/illustration.jpg#full@720-1440)
+
+## Introducing Glimmer components
+
+The release of the
+[Ember Octane edition](https://blog.emberjs.com/2019/12/20/octane-is-here.html)
+back in December was one of Ember's biggest releases, bringing with it modern
+and streamlined APIs. At the core of the release are tracked properties and
+Glimmer components, which go hand in hand for reasons you will see later. While
+Octane, and subsequently Glimmer components, has been out for quite some time,
+you are likely using Ember (or classic) components in your application. To give
+some context as to the impact of Glimmer components in the Ember mental model,
+I'll be introducing Glimmer components as they relate to classic components.
+
+The key points we will be addressing in this post are:
+
+- Glimmer components do not extend from EmberObject, and use the native `class`
+  syntax.
+- Separation of internal state (properties) and external state (arguments).
+- HTML-first approach makes for much simpler API surface.
+
+## Native `class`
+
+The first thing that jumps to the eye is that Glimmer components have a
+different base class with a radically different API (see
+[Ember Component](https://api.emberjs.com/ember/3.21/classes/Component) vs
+[Glimmer component](https://api.emberjs.com/ember/3.21/modules/@glimmer%2Fcomponent)).
+
+With the new Glimmer component implementation you are expected to use the native
+`class` syntax, but it also changes something more important: a Glimmer
+component no longer inherits from EmberObject. Now you should use native getters
+and setters, as well as tracked properties.
+
+How you define component actions also suffers an adjustment. First, a bit of
+historical context. One of the first proposals for Ember components had actions
+defined as a member function of the component, like so:
+
+```javascript
+export default Component.extend({
+  myActionHandler() {
+    console.log('myActionHandler triggered');
+  },
+});
+```
+
+Unfortunately, due to the API surface of components and the fact that one of the
+component lifecycle hooks was named `destroy`, that meant that users would
+unknowingly override component hooks and introduce strange bugs to their
+application. To address this, a system was conceived where you define component
+actions in the actions hash:
+
+```javascript
+export default Component.extend({
+  actions: {
+    myActionHandler() {
+      console.log('myActionHandler triggered');
+    },
+  },
+});
+```
+
+But now that Glimmer components have a quite a small API (roughly `willDestroy`,
+`isDestroying` and `isDestroyed`), we can go back to defining them as methods in
+the component, and then refer to them directly in the template.
+
+So putting these things together, let's look at a component that receives a type
+of pasta and a type of sauce and displays it with a button to order. The
+component is invoked like so:
+
+```handlebars
+<OrderPasta @pasta="Spaghetti" @sauce="Carbonara" />
+```
+
+Now let us look at how both implementations differ. First, the Ember component:
+
+```javascript
+/// app/components/order-pasta.js
+import Component from '@ember/component';
+
+export default Component.extend({
+  dishName: computed('pasta', 'sauce', function () {
+    return `${this.pasta} ${this.sauce}`;
+  }),
+
+  actions: {
+    handleReservation() {
+      console.log(`Ordered a plate of ${this.dishName}`);
+    },
+  },
+});
+```
+
+```handlebars
+<div>{{this.dishName}} <button {{action 'handleReservation'}}>Reserve</button></div>
+```
+
+And now the Glimmer component:
+
+```javascript
+// app/components/order-pasta.js
+import Component from '@ember/component';
+import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
+
+export default class OrderPasta extends Component {
+  get dishName() {
+    return `${this.args.pasta} ${this.args.sauce}`;
+  }
+
+  @action
+  handleReservation() {
+    console.log(`Ordered a plate of ${this.dishName}`);
+  }
+}
+```
+
+```handlebars
+<div>{{this.dishName}} <button {{on 'click' this.handleReservation}}>Reserve</button></div>
+```
+
+I won't go into default on the `action` to `on` modifier changes, but notice how
+in the Glimmer component we reference the callback directly, we used a native
+getter, and we defined the action handler as a decorated method. You might also
+have noticed that in the Glimmer component code I have referred to the passed in
+values as `this.args`, which brings us to our next point.
+
+## Separation of properties and arguments
+
+One behavior of classic components that can sneak up on even more experienced
+developers is the fact that classic components reflect passed-in state
+(arguments) onto internal state (properties). This has a big implication. Since
+properties and arguments are directly linked in classic components, you can
+effectively override any property from the outside by calling the component with
+an argument with the same name. You cannot refer to the argument's original
+value from within the component.
+
+Glimmer components do away with this behavior by separating arguments into the
+`args` property of the component, and by making named argument bindings
+read-only, which gives developers a better guarantee that the data flow in a
+component tree isn't accidentally two-way bound.
+
+Now developers have to be more explicit about certain patterns, for example
+default values for component properties.
+
+Let's take the previous `OrderPasta` component and make the pasta type optional.
+I will only include the code necessary for this change to keep the code samples
+focused.
+
+For the Ember component, we can see that adding a property with the proper name
+is enough. If the component is invoked with a different `pasta` argument, this
+will be overwritten.
+
+```javascript
+/// app/components/order-pasta.js
+import Component from '@ember/component';
+
+export default Component.extend({
+  pasta: 'Spaghetti',
+});
+```
+
+For the Glimmer component we have to do a bit more legwork. We'll assume that
+`pasta` can change over time, so we will add a native getter so it gets
+automatically updated. We will also need to change our `dishName` getter to
+refer to the property instead.
+
+```javascript
+// app/components/order-pasta.js
+export default class OrderPasta extends Component {
+  get pasta() {
+    return this.args.pasta || 'Spaghetti';
+  }
+
+  get dishName() {
+    return `${this.pasta} ${this.args.sauce}`;
+  }
+}
+```
+
+As you can see, we can now reason about the code locally, instead of having to
+rely on the framework knowledge that `pasta` would be overwritten. We can use
+the same name, `pasta`, because there's a separation of properties and
+arguments, but there's no ambiguity as it's explicit in the class what is a
+property (`this.something`) and what is an argument (`this.args.something`),
+like `{{this.something}}` and `{{@something}}` in the template.
+
+If you checked the API documentation linked at the beginning of the blog post,
+you might still be wondering how Glimmer components managed to reduce the API
+surface so much. We will not be covering lifecycle hooks in this post (which
+account for the removal of `didInsertElement`, `didReceiveAttrs`, `didRender`,
+`didUpdate`, `didUpdateAttrs`, `willRender`, `willUpdate`), instead we will be
+focusing on the APIs that allows one to customize the wrapper element of Ember
+Components.
+
+## HTML-first APIs
+
+Ember components have been around since before the 1.0 release, where they were
+introduced as isolated
+[views](https://api.emberjs.com/ember/1.0/classes/Ember.View). Views are long
+gone from everyday applications, but their legacy still lives on in Ember
+component. Ember components have a very distinct characteristic, the component's
+template is wrapped by a hidden element, `<div>` by default. To customize this
+element, you have to use certain APIs in the component's class, like `tagName`,
+`classNameBindings` and `attributeBindings`.
+
+Let us go with a practical example to make it clearer. We are going to make a
+button component that receive a `primary` CSS class, and can receive a
+`disabled` HTML attribute. The component template itself will be the content for
+the button.
+
+```javascript
+// app/components/my-button.js
+import Component from '@ember/component';
+
+export default Component.extend({
+  tagName: 'button',
+
+  attributeBindings: ['isDisabled:disabled'],
+  isDisabled: false,
+
+  classNameBindings: ['buttonType'],
+  buttonType: 'primary',
+});
+```
+
+```handlebars
+// app/components/my-button.hbs
+{{yield}}
+```
+
+Now you can call `MyButton` and dynamically change the class and the attribute:
+
+```handlebars
+<MyButton>Click me</MyButton>                                                   {{!-- renders --}} <button class="primary">Click me</button>
+<MyButton @isDisabled={{true}}>Click me</MyButton>                              {{!-- renders --}} <button class="primary" disabled>Click me</button>
+<MyButton @buttonType={{'secondary'}}>Click me</MyButton>                       {{!-- renders --}} <button class="secondary">Click me</button>
+<MyButton @isDisabled={{true}} @buttonType={{'secondary'}}>Click me</MyButton>  {{!-- renders --}} <button class="secondary" disabled>Click me</button>
+```
+
+You might look at this example and think, why are we using JavaScript to specify
+how we want the HTML to look when we have templates and I would agree with you.
+More than that, the Ember team agrees with you, that's why Glimmer components no
+longer have an implicit wrapper element so now you can configure this in the
+component's template itself. This, coupled with being able to specify HTML
+attributes and the new `...attributes` make template-only components much more
+feasible.
+
+Let's implement `MyButton` in Glimmer. As mentioned, we are moving the code from
+the component class to the template, so we don't need the JavaScript file.
+
+```handlebars
+// app/components/my-button.hbs
+<button
+  class={{if @buttonType @buttonType 'primary'}}
+  ...attributes
+>
+  {{yield}}
+</button>
+```
+
+Much more straightforward! In `{{if @buttonType @buttonType 'primary'}}` we are
+saying that the value should be `primary` if `@buttonType` is not defined, and
+in `...attribute` we are telling Ember where to put any HTML attributes that are
+passed in when calling the component.
+
+In this case we do not want to pass `class` as an HTML attribute when calling
+the component because `class` is special in that it merged together the existing
+classes in the component with whatever you pass to the component:
+
+```handlebars
+// app/components/multiple-classes.hbs
+<div class="one" ...attributes></div>
+```
+
+```handlebars
+<MultipleClasses class="two" />
+```
+
+Renders:
+
+```html
+<div class="one two"></div>
+```
+
+For the sake of exemplifying `attributeBindings` I glossed over the fact that
+Ember will apply any HTML attributes you pass to an Ember component to the
+implicit wrapper element. Now that we are explicitly using `...attributes` in
+our Glimmer component, we need to update how we're calling the component:
+
+```handlebars
+<MyButton>Click me</MyButton>                                               {{!-- renders --}} <button class="primary">Click me</button>
+<MyButton disabled={{true}}>Click me</MyButton>                             {{!-- renders --}} <button class="primary" disabled>Click me</button>
+<MyButton @buttonType={{'secondary'}}>Click me</MyButton>                   {{!-- renders --}} <button class="secondary">Click me</button>
+<MyButton @buttonType={{'secondary'}} disabled={{true}}>Click me</MyButton> {{!-- renders --}} <button class="secondary" disabled>Click me</button>
+```
+
+A common point of dissatisfaction with frameworks, including Ember, is the so
+called "magic". This is when something the framework does something for you that
+you have no insight into, so you may not understand that it is happening or why.
+For example, Ember components having an implicit wrapper element, and Ember
+automatically applying `...attributes` to it.
+
+With the introduction of Glimmer components in the Octane edition plus the
+template improvements already mentioned in a previous post, Ember has made it
+much easier to reason locally about your component. By keeping layout logic in
+the layout, instead of the component class you only have to look in one place to
+know what the component will render. By moving towards native JavaScript syntax
+and functionality, Ember has diminished the uncertain of whether a certain
+functionality is provided by Ember or by JavaScript.
+
+I hope this exploration of Glimmer components and Ember components was useful
+for you, and at the very least gave you a renewed appreciation for the Octane
+edition design effort.
+
+If you are looking for help migrating your codebase to these new idioms, or you
+want to level up your engineering team,
+[contact us](https://simplabs.com/contact/) so we can work together towards
+achieving your goals.
