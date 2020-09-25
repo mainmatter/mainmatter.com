@@ -47,7 +47,7 @@ pace.
 In this blog post we will address some changes to templates that were introduced
 with Ember Octane in mind, the first planned edition for the Ember.js framework.
 You can read more about Octane in the
-[official edition page](https://emberjs.com/editions/octane)].
+[official edition page](https://emberjs.com/editions/octane).
 
 ## Ambiguity
 
