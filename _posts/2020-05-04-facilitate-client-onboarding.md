@@ -5,7 +5,9 @@ github: ghislaineguerin
 twitter: ghislaineguerin
 topic: design
 bio: 'Process Designer and Facilitator'
-description: ''
+description:
+  'Ghislaine Guerin presents techniques for getting the most out of kick-off
+  meetings.'
 og:
   image: /assets/images/posts/2020-05-04-facilitate-client-onboarding/og-image.png
 ---
