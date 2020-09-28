@@ -44,7 +44,7 @@ The key points we will be addressing in this post are:
 
 ## Native `class`
 
-The first thing that jumps to the eye is that Glimmer components have a
+The first thing that catches the eye is that Glimmer components have a
 different base class with a radically different API (see
 [Ember Component](https://api.emberjs.com/ember/3.21/classes/Component) vs
 [Glimmer component](https://api.emberjs.com/ember/3.21/modules/@glimmer%2Fcomponent)).
