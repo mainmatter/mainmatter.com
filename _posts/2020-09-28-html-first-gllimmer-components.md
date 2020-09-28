@@ -328,7 +328,7 @@ template improvements already mentioned in a previous post, Ember has made it
 much easier to reason locally about your component. By keeping layout logic in
 the layout, instead of the component class you only have to look in one place to
 know what the component will render. By moving towards native JavaScript syntax
-and functionality, Ember has diminished the uncertain of whether a certain
+and functionality, Ember has diminished the uncertainty of whether a certain
 functionality is provided by Ember or by JavaScript.
 
 I hope this exploration of Glimmer components and Ember components was useful
