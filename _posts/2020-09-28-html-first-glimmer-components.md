@@ -1,5 +1,5 @@
 ---
-title: ''
+title: 'Simpler and more powerful components in Ember Octane with Glimmer Components'
 author: 'Ricardo Mendes'
 github: locks
 twitter: locks
