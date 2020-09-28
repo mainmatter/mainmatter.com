@@ -37,7 +37,7 @@ I'll be introducing Glimmer components as they relate to classic components.
 
 The key points we will be addressing in this post are:
 
-- Glimmer components do not extend from EmberObject, and use the native `class`
+- Glimmer components do not extend from `EmberObject`, and use the native `class`
   syntax.
 - Separation of internal state (properties) and external state (arguments).
 - HTML-first approach makes for much simpler API surface.
