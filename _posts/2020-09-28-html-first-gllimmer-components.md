@@ -82,7 +82,7 @@ export default Component.extend({
 });
 ```
 
-But now that Glimmer components have a quite a small API (roughly `willDestroy`,
+But now that Glimmer components have quite a small API surface (roughly `willDestroy`,
 `isDestroying` and `isDestroyed`), we can go back to defining them as methods in
 the component, and then refer to them directly in the template.
 
