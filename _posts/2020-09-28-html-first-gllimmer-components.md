@@ -227,7 +227,7 @@ element, you have to use certain APIs in the component's class, like `tagName`,
 `classNameBindings` and `attributeBindings`.
 
 Let us go with a practical example to make it clearer. We are going to make a
-button component that receive a `primary` CSS class, and can receive a
+button component that receives a `primary` CSS class, and can receive a
 `disabled` HTML attribute. The component template itself will be the content for
 the button.
 
