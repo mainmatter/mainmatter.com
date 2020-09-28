@@ -28,7 +28,7 @@ syntax and an HTML-first approach.
 The release of the
 [Ember Octane edition](https://blog.emberjs.com/2019/12/20/octane-is-here.html)
 back in December was one of Ember's biggest releases, bringing with it modern
-and streamlined APIs. At the core of the release are tracked properties and
+and streamlined APIs. At the core of the release are [tracked properties](https://guides.emberjs.com/release/in-depth-topics/autotracking-in-depth/) and
 Glimmer components. While Octane has been out for quite some time, and
 subsequently Glimmer components, you are likely using Ember (or classic)
 components in your application. To give some context as to the impact of Glimmer
