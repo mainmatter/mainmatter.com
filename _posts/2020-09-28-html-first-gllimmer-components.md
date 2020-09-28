@@ -221,7 +221,7 @@ Ember components have been around since before the 1.0 release, where they were
 introduced as isolated
 [views](https://api.emberjs.com/ember/1.0/classes/Ember.View). Views are long
 gone from everyday applications, but their legacy still lives on in Ember
-component. Ember components have a very distinct characteristic, the component's
+components. Ember components have a very distinct characteristic, the component's
 template is wrapped by a hidden element, `<div>` by default. To customize this
 element, you have to use certain APIs in the component's class, like `tagName`,
 `classNameBindings` and `attributeBindings`.
