@@ -28,11 +28,13 @@ syntax and an HTML-first approach.
 The release of the
 [Ember Octane edition](https://blog.emberjs.com/2019/12/20/octane-is-here.html)
 back in December was one of Ember's biggest releases, bringing with it modern
-and streamlined APIs. At the core of the release are [tracked properties](https://guides.emberjs.com/release/in-depth-topics/autotracking-in-depth/) and
-Glimmer components. While Octane has been out for quite some time, and
+and streamlined APIs. At the core of the release are
+[tracked properties](https://guides.emberjs.com/release/in-depth-topics/autotracking-in-depth/)
+and Glimmer components. While Octane has been out for quite some time, and
 subsequently Glimmer components, you are likely using Ember (or "classic")
 components in your application. To give some context as to the impact of Glimmer
-components in the Ember mental model, I'll be introducing Glimmer components from the viewpoint of classic Components.
+components in the Ember mental model, I'll be introducing Glimmer components
+from the viewpoint of classic Components.
 
 The key points we will be addressing in this post are:
 
@@ -200,12 +202,13 @@ export default class OrderPasta extends Component {
 }
 ```
 
-As you can see, we can now reason about the code locally, instead of having to
+As you can see, we can now reason about the code locally instead of having to
 rely on the framework knowledge that `pasta` would be overwritten. We can use
-the same name, `pasta`, because there's a separation of properties and
-arguments, but there's no ambiguity as it's explicit in the class what is a
-property (`this.something`) and what is an argument (`this.args.something`),
-like `{{this.something}}` and `{{@something}}` in the template.
+the name `pasta` for both the property and the argument because the syntax makes
+it clear which is which. If you need access to the argument you do
+`this.args.pasta` in the class or `{{@pasta}}` in the template. If you need to
+access the property, you do `this.pasta` in the class and `{{this.pasta}}` in
+the template.
 
 If you checked the API documentation linked at the beginning of the blog post,
 you might still be wondering how Glimmer components managed to reduce the API
