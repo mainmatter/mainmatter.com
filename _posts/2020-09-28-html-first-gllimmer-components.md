@@ -29,8 +29,8 @@ The release of the
 [Ember Octane edition](https://blog.emberjs.com/2019/12/20/octane-is-here.html)
 back in December was one of Ember's biggest releases, bringing with it modern
 and streamlined APIs. At the core of the release are tracked properties and
-Glimmer components, which go hand in hand for reasons you will see later. While
-Octane, and subsequently Glimmer components, has been out for quite some time,
+Glimmer components. While
+Octane has been out for quite some time, and subsequently Glimmer components, 
 you are likely using Ember (or classic) components in your application. To give
 some context as to the impact of Glimmer components in the Ember mental model,
 I'll be introducing Glimmer components as they relate to classic components.
@@ -54,7 +54,7 @@ With the new Glimmer component implementation you are expected to use the native
 component no longer inherits from EmberObject. Now you should use native getters
 and setters, as well as tracked properties.
 
-How you define component actions also suffers an adjustment. First, a bit of
+How you define component actions also requires an adjustment. First, a bit of
 historical context. One of the first proposals for Ember components had actions
 defined as a member function of the component, like so:
 
