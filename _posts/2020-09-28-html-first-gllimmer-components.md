@@ -51,7 +51,7 @@ different base class with a radically different API (see
 
 With the new Glimmer component implementation you are expected to use the native
 `class` syntax, but it also changes something more important: a Glimmer
-component no longer inherits from EmberObject. Now you should use native getters
+component no longer inherits from `EmberObject`. Now you should use native getters
 and setters, as well as tracked properties.
 
 How you define component actions also requires an adjustment. First, a bit of
