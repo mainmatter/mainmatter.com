@@ -254,10 +254,17 @@ export default Component.extend({
 Now you can call `MyButton` and dynamically change the class and the attribute:
 
 ```handlebars
-<MyButton>Click me</MyButton>                                                   {{!-- renders --}} <button class="primary">Click me</button>
-<MyButton @isDisabled={{true}}>Click me</MyButton>                              {{!-- renders --}} <button class="primary" disabled>Click me</button>
-<MyButton @buttonType={{'secondary'}}>Click me</MyButton>                       {{!-- renders --}} <button class="secondary">Click me</button>
-<MyButton @isDisabled={{true}} @buttonType={{'secondary'}}>Click me</MyButton>  {{!-- renders --}} <button class="secondary" disabled>Click me</button>
+<MyButton>Click me</MyButton>                                                   
+{{!-- renders --}}  <button class="primary">Click me</button>
+
+<MyButton @isDisabled={{true}}>Click me</MyButton>                             
+{{!-- renders --}} <button class="primary" disabled>Click me</button>
+
+<MyButton @buttonType={{'secondary'}}>Click me</MyButton>                      
+{{!-- renders --}} <button class="secondary">Click me</button>
+
+<MyButton @isDisabled={{true}} @buttonType={{'secondary'}}>Click me</MyButton> 
+{{!-- renders --}} <button class="secondary" disabled>Click me</button>
 ```
 
 You might look at this example and think, why are we using JavaScript to specify
@@ -311,10 +318,17 @@ implicit wrapper element. Now that we are explicitly using `...attributes` in
 our Glimmer component, we need to update how we're calling the component:
 
 ```handlebars
-<MyButton>Click me</MyButton>                                               {{!-- renders --}} <button class="primary">Click me</button>
-<MyButton disabled={{true}}>Click me</MyButton>                             {{!-- renders --}} <button class="primary" disabled>Click me</button>
-<MyButton @buttonType={{'secondary'}}>Click me</MyButton>                   {{!-- renders --}} <button class="secondary">Click me</button>
-<MyButton @buttonType={{'secondary'}} disabled={{true}}>Click me</MyButton> {{!-- renders --}} <button class="secondary" disabled>Click me</button>
+<MyButton>Click me</MyButton>                                               
+{{!-- renders --}} <button class="primary">Click me</button>
+
+<MyButton disabled={{true}}>Click me</MyButton>                             
+{{!-- renders --}} <button class="primary" disabled>Click me</button>
+
+<MyButton @buttonType={{'secondary'}}>Click me</MyButton>                   
+{{!-- renders --}} <button class="secondary">Click me</button>
+
+<MyButton @buttonType={{'secondary'}} disabled={{true}}>Click me</MyButton> 
+{{!-- renders --}} <button class="secondary" disabled>Click me</button>
 ```
 
 A common point of dissatisfaction with frameworks, including Ember, is the so
