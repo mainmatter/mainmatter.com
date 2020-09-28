@@ -1,5 +1,5 @@
 ---
-title: 'The HTML-first approach of Glimmer components'
+title: ''
 author: 'Ricardo Mendes'
 github: locks
 twitter: locks
@@ -30,10 +30,9 @@ The release of the
 back in December was one of Ember's biggest releases, bringing with it modern
 and streamlined APIs. At the core of the release are [tracked properties](https://guides.emberjs.com/release/in-depth-topics/autotracking-in-depth/) and
 Glimmer components. While Octane has been out for quite some time, and
-subsequently Glimmer components, you are likely using Ember (or classic)
+subsequently Glimmer components, you are likely using Ember (or "classic")
 components in your application. To give some context as to the impact of Glimmer
-components in the Ember mental model, I'll be introducing Glimmer components as
-they relate to classic components.
+components in the Ember mental model, I'll be introducing Glimmer components from the viewpoint of classic Components.
 
 The key points we will be addressing in this post are:
 
