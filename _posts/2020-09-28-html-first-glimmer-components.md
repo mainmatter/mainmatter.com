@@ -206,7 +206,7 @@ export default class OrderPasta extends Component {
 As you can see, we can now reason about the code locally instead of having to
 rely on the framework knowledge that `pasta` would be overwritten. We can use
 the name `pasta` for both the property and the argument because the syntax makes
-it clear which is which. If you need access to the argument you do
+it clear which is which. If you need access to the argument you use
 `this.args.pasta` in the class or `{{@pasta}}` in the template. If you need to
 access the property, you use `this.pasta` in the class and `{{this.pasta}}` in
 the template.
