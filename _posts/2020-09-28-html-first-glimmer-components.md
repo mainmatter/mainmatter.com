@@ -329,7 +329,7 @@ our Glimmer component, we need to update how we're calling the component:
 <MyButton>Click me</MyButton>
 {{!-- renders --}} <button class="primary">Click me</button>
 
-<MyButton disabled={{true}}>Click me</MyButton>
+<MyButton disabled>Click me</MyButton>
 {{!-- renders --}} <button class="primary" disabled>Click me</button>
 
 <MyButton @buttonType={{'secondary'}}>Click me</MyButton>
