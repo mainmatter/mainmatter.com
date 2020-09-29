@@ -14,7 +14,7 @@ og:
 ---
 
 Following up on
-[Bringing clarity to templates through Ember Octane](/blog/2020/09/28/clarity-in-templates/),
+[Bringing clarity to templates through Ember Octane](/blog/2019/12/20/clarity-in-templates/),
 we will be discussing how the Glimmer components introduced by the
 [Ember Octane edition](https://blog.emberjs.com/2019/12/20/octane-is-here.html)
 aim to modernize and simplify Ember applications by using native JavaScript
