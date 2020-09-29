@@ -317,7 +317,7 @@ classes in the component with whatever you pass to the component:
 Renders:
 
 ```html
-<button class="one two">Multiple classes</button>
+<button class="primary two">Multiple classes</button>
 ```
 
 For the sake of exemplifying `attributeBindings` I glossed over the fact that
