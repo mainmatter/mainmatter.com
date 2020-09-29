@@ -355,7 +355,7 @@ functionality is provided by Ember or by JavaScript.
 
 I hope this exploration of Glimmer components and Ember components was useful
 for you and at the very least gave you a renewed appreciation for the Octane
-edition design effort.
+Edition design effort.
 
 If you are looking for help migrating your codebase to these new idioms, or you
 want to level up your engineering team,
