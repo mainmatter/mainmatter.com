@@ -144,7 +144,7 @@ export default class OrderPasta extends Component {
 <div>{{this.dishName}} <button {{on 'click' this.handleReservation}}>Reserve</button></div>
 ```
 
-I won't go into default on the `action` to `on` modifier changes, but notice how
+I won't go into details on the `action` to `on` modifier changes, but notice how
 in the Glimmer component we reference the callback directly, we used a native
 getter, and we defined the action handler as a decorated method. You might also
 have noticed that in the Glimmer component code I have referred to the passed in
