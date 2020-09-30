@@ -10,7 +10,7 @@ description:
   'Ricardo Mendes explains how Glimmer components provide a simpler and clearer,
   yet more powerful, component layer for Ember Octane applications.'
 og:
-  image: /assets/images/posts/2020-08-28-testing-the-miragejs-setup/og-image.png
+  image: /assets/images/posts/2020-09-28-html-first-glimmer-components/og-image.png
 ---
 
 Following up on
@@ -22,7 +22,7 @@ syntax and an HTML-first approach.
 
 <!--break-->
 
-![Bringing clarity to your Ember templates](/assets/images/posts/2019-12-20-clarity-in-templates/illustration.jpg#full@720-1440)
+![Bringing clarity to your Ember templates](/assets/images/posts/2020-09-28-html-first-glimmer-components/illustration.svg#full)
 
 ## Introducing Glimmer components
 
