@@ -39,10 +39,10 @@ from the viewpoint of classic Components.
 
 The key points we will be addressing in this post are:
 
-- Glimmer components do not extend from `EmberObject`, and use the native
-  `class` syntax.
+- Glimmer components use native `class` syntax and do not extend from
+  `EmberObject`.
 - Separation of internal state (properties) and external state (arguments).
-- HTML-first approach makes for much simpler API surface.
+- HTML-first approach makes for a much simpler API surface.
 
 ## Native `class`
 
@@ -56,7 +56,7 @@ With the new Glimmer component implementation you are expected to use the native
 component no longer inherits from `EmberObject`. Now you should use native
 getters and setters, as well as tracked properties.
 
-How you define component actions also requires an adjustment. First, a bit of
+How you define thecomponent actions also requires an adjustment. First, a bit of
 historical context. One of the first proposals for Ember components had actions
 defined as a member function of the component, like so:
 
@@ -147,7 +147,7 @@ export default class OrderPasta extends Component {
 I won't go into details on the `action` to `on` modifier changes, but notice how
 in the Glimmer component we reference the callback directly, we used a native
 getter, and we defined the action handler as a decorated method. You might also
-have noticed that in the Glimmer component code I have referred to the passed in
+have noticed that in the Glimmer component code I have referred to the passed-in
 values as `this.args`, which brings us to our next point.
 
 ## Separation of properties and arguments
@@ -231,9 +231,8 @@ customize this element, you have to use certain APIs in the component's class,
 like `tagName`, `classNameBindings` and `attributeBindings`.
 
 Let us go with a practical example to make it clearer. We are going to make a
-button component that receives a `primary` CSS class, and can receive a
-`disabled` HTML attribute. The component template itself will be the content for
-the button.
+button component that receives a `primary` CSS class and a `disabled` HTML
+attribute. The component template itself will be the content for the button.
 
 ```javascript
 // app/components/my-button.js
