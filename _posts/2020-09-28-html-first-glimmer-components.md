@@ -7,8 +7,8 @@ twitter: locks
 topic: ember
 bio: 'Senior Frontend Engineer, Ember Framework and Learning Core teams member'
 description:
-  'Ricardo Mendes explains how Glimmer components simplify Ember with an
-  HTML-first approach'
+  'Ricardo Mendes explains how Glimmer components provide a simpler and clearer,
+  yet more powerful, component layer for Ember Octane applications.'
 og:
   image: /assets/images/posts/2020-08-28-testing-the-miragejs-setup/og-image.png
 ---
