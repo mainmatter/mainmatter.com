@@ -56,9 +56,9 @@ With the new Glimmer component implementation you are expected to use the native
 component no longer inherits from `EmberObject`. Now you should use native
 getters and setters, as well as tracked properties.
 
-How you define thecomponent actions also requires an adjustment. First, a bit of
-historical context. One of the first proposals for Ember components had actions
-defined as a member function of the component, like so:
+How you define the component actions also requires an adjustment. First, a bit
+of historical context. One of the first proposals for Ember components had
+actions defined as a member function of the component, like so:
 
 ```javascript
 export default Component.extend({
