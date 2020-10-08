@@ -106,6 +106,43 @@
   left: 0;
 }
 
+
+.quote {
+  display: flex;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  padding-left: 16px;
+  border-left: 4px solid #5b5b5b;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.quote:before {
+  content: '';
+  height: 19px;
+  width: 23px;
+  margin-right: 16px;
+  background-image: url(/assets/images/blog/icon_quotes.svg);
+  background-size: 100%;
+}
+
+.quote-paragraph {
+  flex: 1;
+}
+
+.quote-author {
+  margin-top: 16px;
+  font-size: 15px;
+}
+
+.quote-author:before {
+  content: '-';
+  margin-right: 2px;
+  height: 16px;
+  font-family: NunitoSans-Regular;
+  text-transform: uppercase;
+}
+
 @media (min-width: 888px) {
   .header {
     margin-top: 21rem;
@@ -152,6 +189,15 @@
     height: calc(100% - 6rem);
     top: 3rem;
     left: 3rem;
+  }
+
+  .quote {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .quote-author {
+    font-size: 14px;
   }
 }
 
@@ -283,36 +329,4 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-selector-attr,
 .xml,
 .javascript {
-}
-
-.quote {
-  display: flex;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding-left: 16px;
-  border-left: 4px solid #5b5b5b;
-  font-size: 32px;
-  line-height: 48px;
-}
-
-.quote:before {
-  content: '';
-  height: 33px;
-  width: 41px;
-  margin-right: 16px;
-  background-image: url(/assets/images/blog/icon_quotes.svg);
-  background-size: contain;
-}
-
-.quote-author {
-  composes: 'typography.small';
-  margin-top: 10px;
-}
-
-.quote-author:before {
-  content: '-';
-  margin-right: 2px;
-  height: 16px;
-  font-family: NunitoSans-Regular;
-  text-transform: uppercase;
 }
