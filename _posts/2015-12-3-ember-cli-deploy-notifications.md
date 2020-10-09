@@ -19,8 +19,6 @@ A few weeks ago a new version of the _"official"_ ember deployment solution
 > Melia (@lukemelia)
 > <a href="https://twitter.com/lukemelia/status/659787938625134592">29. Oktober
 > 2015</a></author>
->
-> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <!--break-->
 

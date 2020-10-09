@@ -132,7 +132,10 @@
 
 .quote-author {
   margin-top: 16px;
+  margin-bottom: 0px;
   font-size: 15px;
+  display: block;
+  line-height: 15px;
 }
 
 .quote-author:before {
