@@ -17,7 +17,7 @@ and AR/VR.
 
 <!--break-->
 
-![Bringing the Matrix Open Standard to Elixir](/assets/images/posts/2020-08-22-bringing-matrix-to-elixir/illustration.svg)
+![Bringing the Matrix Open Standard to Elixir](/assets/images/posts/2020-08-22-bringing-matrix-to-elixir/illustration.svg#full)
 
 Introduced in 2014, Matrix is backed by [Element](https://element.io/about)
 (formerly New Vector), the company behind the
