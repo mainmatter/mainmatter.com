@@ -6,6 +6,8 @@ twitter: niklas_long
 topic: elixir
 bio: 'Backend Engineer, author of the Matrix Elixir SDK'
 description: 'Niklas Long introduces the Matrix Elixir SDK.'
+og:
+  image: /assets/images/posts/2020-08-22-bringing-matrix-to-elixir/og-image.png
 ---
 
 [Matrix](https://matrix.org) is an open-source, end-to-end encrypted, real-time,
@@ -14,6 +16,8 @@ technology has applications not only in messaging and VoIP but similarly in IoT
 and AR/VR.
 
 <!--break-->
+
+![Bringing the Matrix Open Standard to Elixir](/assets/images/posts/2020-08-22-bringing-matrix-to-elixir/illustration.svg)
 
 Introduced in 2014, Matrix is backed by [Element](https://element.io/about)
 (formerly New Vector), the company behind the
