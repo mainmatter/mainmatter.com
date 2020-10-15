@@ -65,7 +65,8 @@ The Elixir SDK currently wraps part of the Client-Server API; v0.1 was released
 to allow interested parties to begin experimenting. The `Client` module, used to
 make requests to homeservers, is currently the highest level of abstraction in
 the SDK. It is designed to be modular; this, for example, makes it easy to
-switch out the HTTP layer, should you choose to do so.
+switch out the HTTP layer, should you choose to do so. Note: the API is
+currently unstable and will likely be modified in future.
 
 As mentioned above, all changes in a room's state are described by events. They
 can represent any data, from users joining a room or sending messages, to image
@@ -182,8 +183,9 @@ currently implemented endpoints.
 ## What's next?
 
 Work continues on the SDK, there are a number of endpoints waiting to be
-implemented and decisions to be made in how to handle state. Soon, I'm hoping to
-release the first version of the
+implemented and decisions to be made in how to handle state. There's also a
+discussion underway about introducing a parse response stack and structural
+changes to the library. Soon, I'm hoping to release the first version of the
 [Elixir/Erlang bindings](https://github.com/niklaslong/olm-elixir) to the
 [Olm](https://gitlab.matrix.org/matrix-org/olm) cryptography library maintained
 by the Matrix core team. Olm is an implementation of the
