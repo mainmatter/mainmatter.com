@@ -18,9 +18,11 @@ While many companies and teams have been remote for quite some time, for many
 this way of working is entirely new. And even if it comes with many challenges,
 the benefits are manifold. Employees get to choose where to live independently
 of where they find work and save a lot of time on sometimes long commutes (which
-is also great for the environment and climate). Companies benefit as well as
-they can attract talent from anywhere and are not limited in terms of who they
-can hire by their location.
+is also great for the environment and climate). In fact, 90% or remote workers
+say they plan to remain remote for the rest of their career and 94% would even
+encourage others to work remotely as well. Companies benefit as well as they can
+attract talent from anywhere and are not limited in terms of who they can hire
+by their location.
 
 <!--break-->
 
@@ -143,10 +145,21 @@ from a company-assigned location. If working from the office actually means they
 would be observed and controlled closely by their management team, working
 remotely would likely even result in an improvement of productivity since the
 oversight is not something people would have to worry about anymore
-(nevertheless their management should reconsider their practices). If people do
-in fact not deliver what's expected from them that will show in their work
-output, just as it would if they worked from an office – that is not something
-that is connected to the fact they are remote though.
+(nevertheless their management should reconsider their practices). In fact,
+increased productivity and better focus was among the top reasons that people
+choose to work remotely according to a recent study
+(https://www.owllabs.com/hubfs/website/sorw/2020/owl-labs_sorw-2020_report-download_FINAL_07oct2020.pdf?).
+
+What I see many managers, confronted with a suddenly remote team doing, is being
+on everyone's back even more than they might be in the office. The occasional
+
+> Hey 👋 How's it going? Project Manager is typing… Just wanted to check where
+> we are with feature x? Everything still on schedule
+
+is just as annoying on Slack as it is in real life and, which is much worse,
+hugely interrupting. As said above, remote teams need to leverage cloud based
+tools like issue trackers etc. and those are the tools where status and progress
+is communicated.
 
 Finally, when it comes to remote work, one concern is how teams can keep up
 their team spirit and feeling of connection. After all, when everyone works from
