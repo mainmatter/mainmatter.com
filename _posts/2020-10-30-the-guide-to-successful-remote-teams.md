@@ -26,6 +26,8 @@ by their location.
 
 <!--break-->
 
+## Shift to remote
+
 In the digital product development industry, remote work has been a widely
 discussed topic for at least one or two decades. And while in the early 2000s,
 it was relatively uncommon for teams to be entirely remote with processes and
@@ -62,6 +64,8 @@ to properly do their job. While that is negative for their productivity as they
 will end up being blocked or moving in the wrong direction, it is also horrible
 for their morale as they will feel alienated and no longer be an active and
 appreciated member of the team.
+
+## Tooling
 
 So in order to successfully adopt a new remote work model, all of the practices
 and tooling a team uses have to be changed. The key point is to move all of the
@@ -139,6 +143,8 @@ using any tools:
   understand that this is not merely about their personal convenience but opting
   out of using the tools a team has agreed on means opting out of collaborating
   altogether and is harmful to the entire team!
+
+## Culture
 
 Problems adapting their minds to remote work is not only something that team
 members struggle with sometimes. It's also relatively widespread among
