@@ -161,6 +161,21 @@ hugely interrupting. As said above, remote teams need to leverage cloud based
 tools like issue trackers etc. and those are the tools where status and progress
 is communicated.
 
+With the freedom of remote work comes an increased demand for each team member's
+ability to self-organize. While remote communication tools are great, taking
+people by the hand remotely is harder than it might be in an office. People will
+have to have a more proactive attitude, actively reach out for help or
+information they need. The second important skill for anyone working remotely is
+communication skills. While that seems counter-intuitive as it might seem remote
+teams communicate **less** than teams with everyone in the same office, they
+communicate differently and often even more. Instead of the random water cooler
+chat, remote teams communicate a lot in written form using the tools discussed
+above. Written communication is very different from direct verbal communication
+though and it's harder to transport subtle meaning and detail and at the same
+time it is easy to be misunderstood or (accidentally) offensive. A key ability
+for anyone who wants to work remotely successfully, is the ability to express
+themselves in writing.
+
 Finally, when it comes to remote work, one concern is how teams can keep up
 their team spirit and feeling of connection. After all, when everyone works from
 a different location, you cannot go for lunch together, have an after-work beer
@@ -171,5 +186,11 @@ is they cannot be a replacement for real-life, face-to-face interaction. A few
 occasions every year where everyone comes together physically for a day or two
 totally make up for the lack of physical connection for the rest of the year
 though (when coming together, remember to take the train over flying though).
-Until we all are able to have these kinds of events again though, there are
-plenty of alternatives like remote board game sessions and even remote retreats!
+
+Besides that, there are plenty of other things you can and should do. Having a
+weekly call with the entire team (or sub-team depending on the number of people)
+where everyone gets to see each other (cameras on!) and talk for 30min or an
+hour is invaluable for making sure people don't forget the faces and people
+behind the screen names they interact with during work. Until we all are able to
+have these kinds of events again though, there are plenty of alternatives like
+remote board game sessions and even remote retreats!
