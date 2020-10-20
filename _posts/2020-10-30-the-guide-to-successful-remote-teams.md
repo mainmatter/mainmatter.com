@@ -38,6 +38,11 @@ result in a lot of friction and frustration and likely not to a successful
 transition. Besides following a number of guidelines, it is also essential to
 conduct a cultural shift in how work is done.
 
+simplabs has been full remote since it was founded. We have team members in six
+countries across Europe now with people working from co-working offices in
+Berlin, living rooms in Augsburg, sheds in Dublin or even a sailboat in
+Portugal.
+
 Going remote does not necessarily require shifting entire companies and teams to
 the new working model at once. Also, different people will be able to adapt to
 remote work to different extents. Out of personal experience, I can say forcing
@@ -154,7 +159,7 @@ What I see many managers, confronted with a suddenly remote team doing, is being
 on everyone's back even more than they might be in the office. The occasional
 
 > Hey 👋 How's it going? Project Manager is typing… Just wanted to check where
-> we are with feature x? Everything still on schedule
+> we are with feature x? Everything still on schedule?
 
 is just as annoying on Slack as it is in real life and, which is much worse,
 hugely interrupting. As said above, remote teams need to leverage cloud based
