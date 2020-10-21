@@ -12,21 +12,43 @@ og:
   image: /assets/images/posts/2020-06-17-failing-and-winning-at-planning-software-projects/og-image.png
 ---
 
-The ongoing and now, with the beginning of fall likely worsening, global
-pandemic has forced companies worldwide to go fully or at least mostly remote.
-While many companies and teams have been remote for quite some time, for many
-this way of working is entirely new. And even if it comes with many challenges,
-the benefits are manifold. Employees get to choose where to live independently
-of where they find work and save a lot of time on sometimes long commutes (which
-is also great for the environment and climate). In fact, 90% or remote workers
-say they plan to remain remote for the rest of their career and 94% would even
-encourage others to work remotely as well. Companies benefit as well as they can
-attract talent from anywhere and are not limited in terms of who they can hire
-by their location.
+Remote work has been a hot topic in the tech community for decades. While in the
+late 90s and early 2000s, relatively few people were actually doing it and there
+were quite some limitations to overcome to make it work at all. Today in 2020,
+remote work is well possible in many industries and even the norm for many
+companies already – and of course the global pandemic that forced everyone to
+work from home gave remote work an extra push. There are many more positive
+reasons to adopt a remote working model than a potentially deadly virus though.
+Employees get to choose where to live independently of where they work and save
+a lot of time and money on sometimes long commutes (which is also great for the
+climate – with all the focus currently being on Covid 19 we must all not forget
+about the real existential crisis humanity is facing after all). Companies also
+benefit as they can attract talent from anywhere and are not limited in terms of
+who they can hire by their location.
 
 <!--break-->
 
-## Shift to remote
+Yet, even as employees and companies alike are eager to adopt remote work and in
+theory all the tools and infrastructure that is needed for it is available, it
+is still not easy to get right. Many teams and companies are struggling
+switching to a fully or partly remote working model and yearn for the return of
+the days of the office. The reality is those days are not going to come back in
+many industries though and making remote work a success is going to be one of
+the key challenges many companies will be facing in the next years.
+
+In this post, I want to share some insights we have gained by running simplabs
+as a remote company since the beginning. In the early days, we've faced many of
+the same challenges other teams are struggling with now. Over time, we overcame
+each one though and learned a lot along the way. Today, we have team members in
+six countries across Europe with people working from co-working offices in
+Berlin, kitchens in Augsburg, sheds in Dublin or even from a sailboat in
+Portugal. And we couldn't be happier with the fully remote company we have.
+
+## A remote culture
+
+- no mimicking the office
+- even if people work from the same location, write things down so others have
+  access
 
 In the digital product development industry, remote work has been a widely
 discussed topic for at least one or two decades. And while in the early 2000s,
@@ -65,7 +87,16 @@ will end up being blocked or moving in the wrong direction, it is also horrible
 for their morale as they will feel alienated and no longer be an active and
 appreciated member of the team.
 
-## Tooling
+## Infrastructure and tooling
+
+- not too many tools
+- Camera on, mute when you don’t speak, use Headset
+- It’s ok to block notifications
+- When texting someone think about urgency, slack implies urgent, email not so
+  much
+- Remote is not slack and constant video calls, in fact that’s the worst form of
+  remote
+- Work wherever you want but make sure you have internet and can take calls
 
 So in order to successfully adopt a new remote work model, all of the practices
 and tooling a team uses have to be changed. The key point is to move all of the
@@ -144,7 +175,13 @@ using any tools:
   out of using the tools a team has agreed on means opting out of collaborating
   altogether and is harmful to the entire team!
 
-## Culture
+## Distributed together
+
+- 20% say they feel lonely https://lp.buffer.com/state-of-remote-work-2020
+  (during corona though)
+- not for everyone and doesn't have to be for everyone, you can still have an
+  office or coworking locations
+- Separate work and private lives
 
 Problems adapting their minds to remote work is not only something that team
 members struggle with sometimes. It's also relatively widespread among
