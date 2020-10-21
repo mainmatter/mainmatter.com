@@ -134,6 +134,12 @@ managers to learn over the next years.
 
 ## Infrastructure and tooling
 
+Successfully working remotely requires adapting a number of infrastructure and tooling. Fortunately these tools have matured in the past few decades and many companies are even using some of them already. Which exact tools a team uses is not even so relevant and there are plenty of options available – mostly those fall into three categories:
+
+* tools for ad-hoc, realtime communication
+* tools for knowledge management and sharing
+* tools for organizing work and communicating status
+
 - not too many tools
 - Camera on, mute when you don’t speak, use Headset
 - It’s ok to block notifications
