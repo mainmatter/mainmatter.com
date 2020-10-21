@@ -42,16 +42,20 @@ the same challenges other teams are struggling with now. Over time, we overcame
 each one though and learned a lot along the way. Today, we have team members in
 six countries across Europe with people working from co-working offices in
 Berlin, kitchens in Augsburg, sheds in Dublin or even from a sailboat in
-Portugal. And we couldn't be happier with the fully remote company we have.
+Portugal. And we're not the only ones enjoying the many advantages of working
+remotely – 90% of remote workers say they plan to remain remote for the rest of
+their career and 94% would even encourage others to work remotely as well
+according to [a study](https://buffer.com/resources/state-remote-work-2018/)
+that was conducted in 2018, so even before the pandemic.
 
 ## A remote culture
 
-One of the key insights is understanding that remote work is fundamentally
-different from working in an office. Going remote cannot mean mimicking the
-office and continuing to do the same things, just now remotely. It requires
-sometimes substantially different practices when it comes to collaboration and
-management and a lot of attention to aspects that are less relevant when every
-team member works from the same room.
+One of the key insights we gained is understanding that remote work is
+fundamentally different from working in an office. Going remote cannot mean
+mimicking the office and continuing to do the same things, just now remotely. It
+requires sometimes substantially different practices when it comes to
+collaboration and management and a lot of attention to aspects that are less
+relevant when every team member works from the same room.
 
 Possibly the single most important of these aspects is transparency and the flow
 and sharing of information. People being out of the loop and not having access
@@ -72,52 +76,61 @@ team member work remotely must adopt a remote culture to make that a success.
 When most of the team is still working from the same office, it is easy to
 forget about the remote team members, still continue with the same practices as
 before and only keep the remote people in the loop by sending them updates every
-now and then or bringing them in to occasional update meetings. However, doing
-that necessarily alienates the remote team members – they lack transparency and
+now and then or bringing them in to meetings occasionally. However, doing that
+necessarily alienates the remote team members – they lack transparency and
 cannot participate in decision making processes – or even if they are given the
 opportunity to give their input and express opinions, they won't be able to do
 so simply because they lack the necessary insight.
 
-- no mimicking the office
-- even if people work from the same location, write things down so others have
-  access
+And while that does not mean all of a team always has to go fully remote at the
+same time, adopting remote working practices is an all–or–nothing kind of change
+starting with the first team member(s) that no longer work from the office.
+While direct communication in the office is not something anyone should
+prohibit, all the information and decisions that are made in these conversations
+must be made transparent for the entire team. While writing summaries and
+protocols or communicating via a chat tool although sitting at the desk next to
+the person one is having a conversation with feels strange in the beginning, it
+is a prerequisite for making remote work work at all. In that sense, the
+pandemic that forced teams to go fully remote all at once at the same time might
+even have made it easier rather than harder because everyone was feeling the
+same pain and sharing the same perspective.
 
-In the digital product development industry, remote work has been a widely
-discussed topic for at least one or two decades. And while in the early 2000s,
-it was relatively uncommon for teams to be entirely remote with processes and
-tools not being quite there yet, in 2020 all of what's necessary to be fully
-remote is there. Collaboration tools as well as audio and video conferencing
-infrastructure have improved significantly and finally reached a level of
-maturity that lives up to the expectations. Going remote is not merely a matter
-of continuing to do the same things, just now remotely. That approach will
-result in a lot of friction and frustration and likely not to a successful
-transition. Besides following a number of guidelines, it is also essential to
-conduct a cultural shift in how work is done.
+In the longer term, working remotely is not going to be for everyone though and
+should not be something that is forced on people. Different people will be able
+to adapt to remote work to different extents and not everyone will enjoy not
+being surrounded by other people during the day. Out of personal experience, I
+can say forcing parents with little kids and no dedicate office room to work
+from home means a huge challenge for their entire families (as I'm sure many
+people have experienced first hand during the international lockdowns). The
+cultural change needs to be complete but that does not mean all of a team have
+to work remote all of the time.
 
-simplabs has been full remote since it was founded. We have team members in six
-countries across Europe now with people working from co-working offices in
-Berlin, living rooms in Augsburg, sheds in Dublin or even a sailboat in
-Portugal.
+### Trust
 
-Going remote does not necessarily require shifting entire companies and teams to
-the new working model at once. Also, different people will be able to adapt to
-remote work to different extents. Out of personal experience, I can say forcing
-parents with little kids and no dedicate office room to work from home means a
-huge challenge for them (as I'm sure many people have experienced first hand
-during the international lockdowns). However, despite not all of a company would
-necessary have to go remote at the same time, what's important to understand is
-that even only one team member going remote makes the entire organization a
-remote organization.
+Another important cultural aspect of switching to a fully or partly remote
+working model is trust. Many managers' first reaction when faced with their
+teams working remotely is asking
 
-Having parts of a team work remotely while continuing with the same work style
-with everyone else immediately alienates the remote people and makes it harder
-for them to do their job. All information that flows in the office in
-desk-to-desk conversations etc. is invisible to the remote people. They will be
-out of the loop on relevant decisions and won't have the information they need
-to properly do their job. While that is negative for their productivity as they
-will end up being blocked or moving in the wrong direction, it is also horrible
-for their morale as they will feel alienated and no longer be an active and
-appreciated member of the team.
+_"How can I know my team actually works when everyone is sitting at home?"_
+
+Just because managers cannot **see** the work happening does not mean it does
+not happen though. Managers' desire for micro-managing teams is an equally bad
+habit regardless of whether the team is remote or not – yet, remote teams seem
+to increase that desire, often resulting in managers being on everyone's back
+constantly and consistently. However, the occasional Slack message
+
+TODO: convert this to image
+
+> Hey 👋 How's it going? Project Manager is typing… Just wanted to check where
+> we are with feature x? Everything still on schedule?
+
+is just as annoying on Slack as it is in real life. The reality is that remote
+workers are likely more productive rather than less as they will find it easier
+to focus and be less stressed according to a
+[study from 2019](https://www.owllabs.com/hubfs/Owl%20Labs%202019%20State%20of%20Remote%20Work%20Report%20PDF.pdf).
+Building up that trust and giving people uninterrupted time to focus while
+giving up on micro-management practices is a going to be a task for many
+managers to learn over the next years.
 
 ## Infrastructure and tooling
 
