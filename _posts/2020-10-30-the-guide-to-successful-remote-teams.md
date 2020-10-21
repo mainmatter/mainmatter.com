@@ -46,6 +46,38 @@ Portugal. And we couldn't be happier with the fully remote company we have.
 
 ## A remote culture
 
+One of the key insights is understanding that remote work is fundamentally
+different from working in an office. Going remote cannot mean mimicking the
+office and continuing to do the same things, just now remotely. It requires
+sometimes substantially different practices when it comes to collaboration and
+management and a lot of attention to aspects that are less relevant when every
+team member works from the same room.
+
+Possibly the single most important of these aspects is transparency and the flow
+and sharing of information. People being out of the loop and not having access
+to information that is relevant for their work, is probably the worst threat
+remote teams face. While with everyone in the same office, diagrams, concepts or
+calendars pinned to the wall (or the sticky-notes sprint board that has turned
+into a status symbol for teams that "do agile" in the past years) are reasonable
+and probably good tools for sharing information among people that all work from
+the same location, for remote team members all of that information is completely
+invisible. At the same time, the information is probably relevant for them and
+not having access to it means they cannot do their job properly.
+
+TODO: image – burn down your sticky notes walls
+
+The need for transparency and equal access to information for all team members
+is also the reason why even companies that only have a few or even only a single
+team member work remotely must adopt a remote culture to make that a success.
+When most of the team is still working from the same office, it is easy to
+forget about the remote team members, still continue with the same practices as
+before and only keep the remote people in the loop by sending them updates every
+now and then or bringing them in to occasional update meetings. However, doing
+that necessarily alienates the remote team members – they lack transparency and
+cannot participate in decision making processes – or even if they are given the
+opportunity to give their input and express opinions, they won't be able to do
+so simply because they lack the necessary insight.
+
 - no mimicking the office
 - even if people work from the same location, write things down so others have
   access
