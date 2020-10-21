@@ -6,8 +6,8 @@ twitter: marcoow
 topic: process
 bio: 'Founder and Managing Director of simplabs'
 description:
-  'Marco Otte-Witte shares insights on successfully operating a remote company
-  gathered in five years of full remote at simplabs.'
+  'Marco Otte-Witte shares insights gained in many years of successfully
+  operating simplabs as a fully remote company.'
 og:
   image: /assets/images/posts/2020-06-17-failing-and-winning-at-planning-software-projects/og-image.png
 ---
