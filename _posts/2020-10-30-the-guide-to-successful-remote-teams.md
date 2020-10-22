@@ -1,5 +1,5 @@
 ---
-title: 'The guide to successful remote teams'
+title: 'The guide to making remote work work'
 author: 'Marco Otte-Witte'
 github: marcoow
 twitter: marcoow
@@ -134,97 +134,150 @@ managers to learn over the next years.
 
 ## Infrastructure and tooling
 
-Successfully working remotely requires adapting a number of infrastructure and tooling. Fortunately these tools have matured in the past few decades and many companies are even using some of them already. Which exact tools a team uses is not even so relevant and there are plenty of options available – mostly those fall into three categories:
+Successfully working remotely requires adapting a number of infrastructure and
+tooling. There is a plethora of great tools available and many companies are
+even using some of them already. Which exact tools a team uses is not even so
+relevant and there are plenty of options available – mostly those fall into
+three categories:
 
-* tools for ad-hoc, realtime communication
-* tools for knowledge management and sharing
-* tools for organizing work and communicating status
+- tools for ad-hoc, realtime communication
+- tools for knowledge management and sharing
+- tools for organizing work and communicating status
 
-- not too many tools
-- Camera on, mute when you don’t speak, use Headset
-- It’s ok to block notifications
-- When texting someone think about urgency, slack implies urgent, email not so
-  much
-- Remote is not slack and constant video calls, in fact that’s the worst form of
-  remote
-- Work wherever you want but make sure you have internet and can take calls
+While it is important to have tools for all of these use cases, it is equally
+important to keep the total numbers in use to a minimum to prevent chaos. There
+is always going to be the new hip tool that everyone wants to try and doing so
+often silently makes that new tool part of the de-facto toolset a team uses,
+growing that little by little over time. Eventually teams end up with landscapes
+that consist of dozens of often similar tools where nobody knows what kind of
+information of status goes where and although each tool is perfectly good in
+isolation, in combination they cause more confusion than they support the team.
 
-So in order to successfully adopt a new remote work model, all of the practices
-and tooling a team uses have to be changed. The key point is to move all of the
-information and communication which are the essence of successful team work to
-be moved into the cloud so it is accessible independently of location. That
-starts with moving information that teams used to have on whiteboards and sticky
-note walls in the office into appropriate cloud based tools. It continues with
-ensuring communication happens in ways that allows remote team members to join
-in as well using tools like Slack. And while direct, face-to-face communication
-is valuable and nothing anyone should ever try to deliberately block, make sure
-outcomes of such communication are made available to the people that need access
-to it, e.g. by posting a summary of it in the appropriate tool. Finally,
-meetings must be held in ways that allow remote people to not only participate
-but actively contribute to the conversation. Most often that means getting the
-basics right so that decent audio and video quality is ensured. A meeting with 4
-people in the same (large enough, and well aired) room with one of them joining
-a video call from their notebook to allow a remote person to join is never going
-to end up in a proper experience for them since they will usually barely be able
-to follow the conversation, much less contribute to it. Appropriate conference
-microphones and cameras go a long way and are negligible investments in
-comparison to the loss of collaboration that is unpreventable if they are
-lacking.
+### Tools for ad-hoc, realtime communication
 
-Besides hardware, software tooling obviously plays a key factor for a thriving
-remote setup. There are mainly three different kinds of tooling remote digital
-product development organizations need:
+Team chat tools like Slack (or Microsoft Teams for the more classic companies)
+have seen widespread adoption over the past years and there are few companies
+that don't use one of the options. While in an office environment, sending
+someone or a group of people a chat message saves you having to walk over to a
+separate room or building, in a remote environment it is the **only** way to
+reach out to someone directly (unless you call the person but who does phone
+calls anymore?). What's easy to forget though is how interruptive these tools
+can be. Sending someone a chat message always implies urgency. Even if we all
+know the majority of chat messages we get are in fact not urgent, it's hard to
+ignore someone who just starts talking (writing) to you.
 
-- Immediate Communication: tools like team chat and message boards enable ad-hoc
-  communication and act as a replacement for the classic water cooler chat.
-  While these tools are relevant and necessary though, it's critical to be aware
-  they are essentially ephemeral in nature – of course most of these tools do
-  actually archive all communication so in theory it would be accessible later
-  on, good luck finding a discussion on a particular topic that's scattered
-  around different threads that happened on Slack a few days ago or a particular
-  piece of information in an email thread from yesterday.
-- Knowledge Management: these tools allow collaboratively creating, sharing and
-  keeping relevant information. They are the remote equivalent of whiteboards
-  and the place where feature descriptions or strategy documents would live.
-  They must allow everyone to contribute to the information, have version
-  tracking so people can understand who made what change and have a commenting
-  functionality so teams can have conversations about the content.
-- Work item tracking: tools that track individual work items are the main means
-  of organizing work among remote teams and clearly communicate the status of
-  each item to everyone. They are not mainly for tracking individual team
-  members' progress and performance but help others to synchronize their
-  potentially dependent work and identify blockers.
+TODO: add image showing lots of notifications, messages like "👋 Hey" etc.
 
-For all of the above categories, there are plenty of options available. While
-all have their own pros and cons, picking a set of tools for any particular team
-is mostly a matter of personal preference and there is no right or wrong choice.
-What matters instead are a number of higher level points when introducing and
-using any tools:
+While most remote workers experience it being easier to focus, liberal
+communication style on team chat can demolish a lot of that increased focus
+again. For effective communication, it is important to be respectful of other
+people's time and need to focus on their work. Not everything is urgent all of
+the time and justifies notifying a coworker or even group of people. In many
+cases, sending an email that is going to be less intrusive and more respectful
+of the recipient's time can be the better option than sending the person a
+message on team chat asking for something that could totally wait until tomorrow
+as well.
 
-- Accessibility: tools being accessible to everyone who needs them might sound
-  trivial but in reality is often a bigger issue than one might think. People
-  are struggling with remembering URLs for tools, VPNs that many companies
-  require are often unstable or hard to set up and keep working. Anyone who is
-  not able to access a particular tool though is blocked from contributing their
-  work.
-- Availability: any set of tools a team might choose must also be available. The
-  tools a team uses constitute the team's backbone and if they are not available
-  for some reason, the team will be blocked from working. That means tools must
-  be stable and not be offline but also fast and usable. While many companies
+At the same time, it is important to keep people in the loop and ensure
+transparency of communication when using any kind of communication tool.
+Communication that happens via direct messages between two people is invisible
+to everyone else, although it might actually be relevant to others as well. As a
+rule of thumb we recommend keeping everything in public channels until the topic
+is strictly confidential or private in nature.
+
+Although information in public channels will be accessible to everyone, it is
+important to understand any realtime communication tool is essentially ephemeral
+in nature. While that is not technically correct and most tools do in fact store
+all communication indefinitely, it is practically close to impossible to find a
+piece of information your are looking for that was discussed in some Slack
+channel (you likely don't even remember which one) the day before.
+
+#### Video Conferencing
+
+Besides text based communication systems, of course video conferences play a
+major role in remote work as well. That way of communication has seen a huge
+boost in adoption during the pandemic with everyone isolating at home and many
+people using video calls for the first time even (I'm sure everyone had their
+_"Dad, the camera is pointing on the floor"_ moments). While late adopters
+expectedly struggled with the technology and everyone is ok with that, many
+remote teams experience similar problems during their daily work lives. Poor
+audio or video quality, dogs barking in the background, calls starting 10min
+late until everyone has figured out their setup etc. are common problems for
+many teams and have a severe negative effect on meeting efficiency.
+
+All these problems are easy to get right though when following a number of
+simple practices:
+
+- There needs to be proper audio and video hardware in place. For groups joining
+  a call together that means a proper conference speaker that ensures people on
+  the other end will be able to hear everyone in the room even if more than one
+  person speaks at the same time and ideally a wall-mounted webcam that shows
+  the entire room. For people joining individually, it means they must use
+  headsets that ensure good audio quality and do not also capture all of their
+  surrounding.
+- Turning cameras on so people can see each other makes a big difference in
+  communication style – seeing someone's facial expression when they say
+  something can often prevent misinterpreting what they are saying. And people
+  can still be as sluggish as they like – dressing the upper body is totally
+  enough for a video call.
+- Muting yourself when you're not speaking is good practice but don't forget to
+  unmute yourself when you want to say something – luckily most platforms have
+  notifications now that warn people if they are speaking while being muted.
+- Choosing an appropriate place for joining calls is a matter of respect for the
+  other participants. While joining from a nice Café or the beach might seem
+  like nice idea, it is likely distracting for everyone else who will be exposed
+  to the background noises, people walking around in the background, waiters
+  interrupting etc.
+
+### Tools for knowledge management and sharing
+
+Knowledge and information management is critical for every team and as discussed
+previously access to all relevant information and transparency across the team
+is essential for making a remote working model work at all. Tools for that allow
+collaboratively creating, sharing and keeping relevant information. They are the
+remote equivalent of whiteboards and the place where feature descriptions or
+strategy documents would live. They must allow everyone to contribute to the
+information, have versioning so people can understand who made what change when
+and have a commenting functionality so that people can have discussions about
+the content.
+
+### Tools for organizing work and communicating status
+
+Tools that track individual work items are the main means of organizing work
+among remote teams and clearly communicate the status of each item to everyone.
+They are not mainly for tracking individual team members' progress and
+performance but help others to synchronize their potentially dependent work and
+identify blockers.
+
+### The three A's
+
+Whenever switching from a working model that is focussed on an office to a
+remote one that will be entirely based on cloud–based tools, it is important to
+keep what I'd call the three A's in mind:
+
+- **Accessibility**: tools being accessible to everyone who needs them might
+  sound trivial but in reality is often a bigger issue than one might think. In
+  reality, people are struggling with remembering URLs or accounts for tools or
+  the VPN might be unstable. Anyone who is not able to access a particular tool
+  though is effectively blocked from working altogether though and all effort
+  invested into improving accessibility will pay off manifold.
+- **Availability**: any set of tools a team might choose must also be available.
+  The tools a team uses constitute its backbone and if they are not available
+  for some reason, the entire team will be blocked from doing any work. That
+  means tools must not be offline but also fast and usable. While many companies
   desire to self-host everything in an effort to be on top of their
   infrastructure, in my experience that's often the worse choice and leads to
   friction and people being blocked – unless you're a company that specializes
-  in hosting these tools, you'll likely do a much worse job doing so than any
-  third party provider you'd be to host things for you!
-- Acceptance: in particular teams and companies that adopt remote work and the
-  respective tools relatively new often struggle with a lack of acceptance of
-  these tools among the team. People would still send each other emails or
-  direct messages on Slack instead of publicly commenting relevant information
-  on the respective tools so that the information would be available for the
-  rest of the team as well. It is critical for everyone in remote teams to
-  understand that this is not merely about their personal convenience but opting
-  out of using the tools a team has agreed on means opting out of collaborating
-  altogether and is harmful to the entire team!
+  in hosting these kinds of tools, you'll likely do a much worse job doing so
+  than any third party provider you'd be paying to host things for you!
+- **Acceptance**: in particular teams and companies that adopt remote work and
+  the respective tools relatively new often struggle with a lack of acceptance
+  of these tools among the team. People would sometimes stick to their old
+  habits, bypassing the tools and by that add lots of friction for everyone
+  else. It is critical for everyone in partially or fully remote teams though to
+  understand that opting out of using the remote tools that are put in place can
+  not be an option and in fact would mean opting out of collaboration
+  altogether.
 
 ## Distributed together
 
