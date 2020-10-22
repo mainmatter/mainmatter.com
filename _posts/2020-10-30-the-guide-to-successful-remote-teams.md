@@ -281,68 +281,46 @@ keep what I'd call the three A's in mind:
 
 ## Distributed together
 
-- 20% say they feel lonely https://lp.buffer.com/state-of-remote-work-2020
-  (during corona though)
-- not for everyone and doesn't have to be for everyone, you can still have an
-  office or coworking locations
-- Separate work and private lives
+A challenge that many people adopting remote work face is loneliness. 20% of
+remote workers say they feel lonely occasionally according to a
+[study](https://lp.buffer.com/state-of-remote-work-2020). Also working from
+their homes is not for everyone and some people need a clear separation between
+their work and private environments or want to be among others during the day.
+However, a remote working model does not necessarily require everyone to work
+alone. Teams can still have an office but make that optional or people could
+work from coworking locations where they are surrounded by others although those
+people might not be their immediate teammates. After all, remote work is all
+about options not about forcing a particular working environment on anyone. At
+simplabs, we give everyone the freedom to choose the work location that is best
+for them and the only things we ask for are to ensure a proper internet
+connection and for everyone to be in similar timezones – other companies with a
+less collaborative working style might not even require that and would sometimes
+allow people to work from anywhere on earth really.
 
-Problems adapting their minds to remote work is not only something that team
-members struggle with sometimes. It's also relatively widespread among
-management. A common fear when adopting remote work is _"How can I know my team
-actually works when everyone is sitting at home?"_ However, in my experience
-that kind of thinking generally only reveals a lack of management competence and
-trust. People are not likely to work less or worse only because they do not work
-from a company-assigned location. If working from the office actually means they
-would be observed and controlled closely by their management team, working
-remotely would likely even result in an improvement of productivity since the
-oversight is not something people would have to worry about anymore
-(nevertheless their management should reconsider their practices). In fact,
-increased productivity and better focus was among the top reasons that people
-choose to work remotely according to a recent study
-(https://www.owllabs.com/hubfs/website/sorw/2020/owl-labs_sorw-2020_report-download_FINAL_07oct2020.pdf?).
+Besides everyone feeling comfortable about their individual work environments,
+it is also important to keep up a feeling of belonging together and, in fact,
+being part of one team although everyone is physically distributed. As everyone
+experienced firsthand throughout the pandemic, social interaction via video
+calls is not the same as direct, face-to-face interaction though. In our
+experience, it is essential for everyone to meet each other in the same location
+at least a few times per year. We organize company events where we all come
+together for a day or two and do something nice together. These events are not
+about work since all of that can be done remotely as well – we use them purely
+to enable direct social interaction and keep up our notion of belonging
+together. Other companies do similar things, sometimes flying in hundreds of
+people from all across the globe. While that imposes substantial cost of course,
+that cost is paid back manifold through a boosted team spirit that makes people
+enjoy work more, relate to their teammates and their individual situations and
+finally making collaboration smoother and more efficient.
 
-What I see many managers, confronted with a suddenly remote team doing, is being
-on everyone's back even more than they might be in the office. The occasional
-
-> Hey 👋 How's it going? Project Manager is typing… Just wanted to check where
-> we are with feature x? Everything still on schedule?
-
-is just as annoying on Slack as it is in real life and, which is much worse,
-hugely interrupting. As said above, remote teams need to leverage cloud based
-tools like issue trackers etc. and those are the tools where status and progress
-is communicated.
-
-With the freedom of remote work comes an increased demand for each team member's
-ability to self-organize. While remote communication tools are great, taking
-people by the hand remotely is harder than it might be in an office. People will
-have to have a more proactive attitude, actively reach out for help or
-information they need. The second important skill for anyone working remotely is
-communication skills. While that seems counter-intuitive as it might seem remote
-teams communicate **less** than teams with everyone in the same office, they
-communicate differently and often even more. Instead of the random water cooler
-chat, remote teams communicate a lot in written form using the tools discussed
-above. Written communication is very different from direct verbal communication
-though and it's harder to transport subtle meaning and detail and at the same
-time it is easy to be misunderstood or (accidentally) offensive. A key ability
-for anyone who wants to work remotely successfully, is the ability to express
-themselves in writing.
-
-Finally, when it comes to remote work, one concern is how teams can keep up
-their team spirit and feeling of connection. After all, when everyone works from
-a different location, you cannot go for lunch together, have an after-work beer
-or the occasional round of Mario Kart in between work. Many people have
-experienced that in their personal lives in the recent months and will continue
-to do so in winter most likely. Virtual drinks are nice and all but the reality
-is they cannot be a replacement for real-life, face-to-face interaction. A few
-occasions every year where everyone comes together physically for a day or two
-totally make up for the lack of physical connection for the rest of the year
-though (when coming together, remember to take the train over flying though).
-
-Besides that, there are plenty of other things you can and should do. Having a
-weekly call with the entire team (or sub-team depending on the number of people)
-where everyone gets to see each other (cameras on!) and talk for 30min or an
-hour is invaluable for making sure people don't forget the faces and people
-behind the screen names they interact with during work. Until we all are able to
-have these kinds of events again though, there are plenty of alternatives like
-remote board game sessions and even remote retreats!
+Of course these kinds of events are not possible during the pandemic. And while
+there is no substitue for these events we need not despair. There are plenty of
+alternatives that help us all to get through these times with our personal
+environment and similar things can be done in a professional environment as
+well. It starts with regular calls with the entire team so that everyone sees
+each other every now and then, even if it's just on camera. It doesn't need to
+stop there though – you can do virtual drink-ups, game sessions, hackathons and
+plenty other activities. These are invaluable for making sure people don't
+forget the faces and people behind the screen names they interact with during
+work. And when we can, we'll all meet our friends but also our teammates in real
+life again and celebrate together.
