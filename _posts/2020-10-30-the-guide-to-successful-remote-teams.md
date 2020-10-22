@@ -320,7 +320,7 @@ paid back manifold through a boosted team spirit that makes people enjoy work
 more, relate to their teammates and their individual situations and finally
 making collaboration smoother and more efficient.
 
-TODO: add image of team call
+TODO: add image from Oktoberfest or so
 
 Of course these kinds of events are not possible during the pandemic. And while
 there is no substitue for these events we need not despair. There are plenty of
