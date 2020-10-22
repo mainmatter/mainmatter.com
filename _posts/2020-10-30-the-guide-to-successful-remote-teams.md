@@ -313,6 +313,8 @@ that cost is paid back manifold through a boosted team spirit that makes people
 enjoy work more, relate to their teammates and their individual situations and
 finally making collaboration smoother and more efficient.
 
+TODO: add image of team call
+
 Of course these kinds of events are not possible during the pandemic. And while
 there is no substitue for these events we need not despair. There are plenty of
 alternatives that help us all to get through these times with our personal
