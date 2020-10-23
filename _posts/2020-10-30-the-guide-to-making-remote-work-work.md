@@ -41,9 +41,9 @@ industries though and making remote work a success is going to be one of the key
 challenges many companies will be facing in the coming years.
 
 We have run simplabs as a remote company since the beginning. In the early days,
-we've faced many of the same challenges other teams are struggling with now.
-Over time, we overcame each one though, and learned a lot along the way. Today,
-we have team members in six countries across Europe with people working from
+we faced many of the same challenges other teams are struggling with now. Over
+time, we overcame each one though, and learned a lot along the way. Today, we
+have team members in six countries across Europe with people working from
 co-working offices in Berlin, kitchens in Augsburg, sheds in Dublin, or even
 from a sailboat in Portugal. And we're not the only ones enjoying the many
 advantages of working remotely – 90% of remote workers say they plan to remain
