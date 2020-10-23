@@ -54,36 +54,26 @@ conducted in 2018, so even before the pandemic.
 
 ## A remote culture
 
-One of the key insights we gained is understanding that remote work is
-fundamentally different from working in an office. Going remote cannot mean
-mimicking the office and continuing to do the same things, just now remotely. It
-requires sometimes substantially different practices when it comes to
-collaboration and management and a lot of attention to aspects that are less
-relevant when every team member works from the same location.
+Adopting a remote working model does not necessarily have to mean for everyone
+to go fully remote. It is a completely reasonable approach to simply make remote
+work an option and still keep the office for everyone who likes to continue
+working from it. However, it is an all–or–nothing kind of change in terms of
+working culture regardless of how many team members will actually be working
+remotely. Remote work requires fundamentally different practices when it comes
+to collaboration and management and a lot of attention to aspects that are less
+relevant when the entire team works from the same location.
 
 Possibly the single most important of these aspects is transparency and the flow
-and sharing of information. People being out of the loop and not having access
-to information that is relevant for their work, is probably the worst threat
-remote teams face. While diagrams, concepts, or calendars pinned to the wall (or
-the sticky-notes sprint board that has turned into a status symbol for teams
-that "do agile" in the past years) are reasonable and probably good tools for
-sharing information among people that all work from the same location, in a
-remote environment, these practices obviously don't work.
+and sharing of information. While diagrams, concepts, or calendars pinned to the
+wall (or the sticky-notes sprint board that has turned into a status symbol for
+teams that "do agile" in the past years) are reasonable and probably good tools
+for sharing information among people that all work from the same location, in a
+remote environment, these practices don't work. All information shared in such
+ways will be completely invisible for everyone who is not in the office,
+excluding remote team members from participating in decision-making processes
+and preventing them from effectively contributing to the common goal.
 
 ![Burn down your sticky notes walls](/assets/images/posts/2020-10-30-the-guide-to-making-remote-work-work/burn-down-your-sticky-notes-walls.jpg#@1000-2000)
-
-Adopting a remote working model does not necessarily have to mean for everyone
-to go fully remote. It is completely fine to simply make remote work an option
-and keep the office for everyone who likes to continue working from it. However,
-it is an all–or–nothing kind of change in terms of working culture. When most of
-the team is still working from the same office, it is easy to forget about the
-remote team members, still continue with the same practices as before, and only
-keep the remote people in the loop by sending them occasional updates or
-bringing them in remotely to otherwise in-office meetings. However, doing that
-necessarily alienates the remote team members – they lack transparency and
-cannot participate in decision-making processes – or even if they are given the
-opportunity to give their input and express opinions, they won't be able to do
-so simply because they lack the necessary insights.
 
 While direct communication in the office is not something anyone should
 prohibit, all the information and decisions that are made in any conversations
