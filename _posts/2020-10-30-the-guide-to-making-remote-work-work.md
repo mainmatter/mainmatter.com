@@ -251,11 +251,11 @@ remote one that will be entirely based on cloud-based tools, it is important to
 keep what I'd call the three A's in mind:
 
 - **Accessibility**: tools being accessible to everyone who needs them might
-  sound trivial but in reality is often a bigger issue than one might think. In
-  reality, people are struggling with remembering URLs or accounts for tools or
-  VPNs might be unstable. And of course accessibility for people with special
-  needs is critical as well to not exclude entire groups of people potentially.
-  Anyone who is not able to access a particular tool is effectively blocked from
+  sound trivial but in reality is often a bigger issue than one might think.
+  People are struggling with remembering URLs or accounts for tools or VPNs
+  might be unstable. And of course accessibility for people with special needs
+  is critical as well to not exclude entire groups of people potentially. Anyone
+  who is not able to access a particular tool is effectively blocked from
   working altogether.
 - **Availability**: any set of tools a team might choose must also be available.
   The tools a team uses constitute its backbone and if they are not available
