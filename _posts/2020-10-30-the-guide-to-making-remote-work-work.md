@@ -270,9 +270,10 @@ keep what I'd call the three A's in mind:
   the respective tools relatively new often struggle with a lack of acceptance
   of these tools among the team. People would sometimes stick to their old
   habits, bypassing the tools, and by that add lots of friction for everyone
-  else. It is critical for every member of a partially or fully remote team
-  though to understand that opting out of using the tools that are put in place
-  means opting out of collaboration altogether.
+  else. It is critical for every member of a remote team to understand that
+  opting out of using the tools that are put in place means opting out of
+  collaboration altogether and not only imposes an annoyance for coworkers but
+  also directly hurts the entire team's productivity.
 
 ## Distributed together
 
