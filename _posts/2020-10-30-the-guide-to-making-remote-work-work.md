@@ -55,13 +55,14 @@ conducted in 2018, so even before the pandemic.
 ## A remote culture
 
 Adopting a remote working model does not necessarily have to mean for everyone
-to go remote immediately. It can be adopted fully and for everyone or partially
-as an option only while still keeping the office for everyone who likes to
-continue working from it. However, it is an all–or–nothing kind of change in
-terms of working culture regardless of how many team members will actually be
-working remotely. Remote work requires fundamentally different practices when it
-comes to collaboration and management and a lot of attention to aspects that are
-less relevant when the entire team works from the same location.
+to go remote immediately. It can be of course be adopted fully and for everyone
+but also partially or incrementally as an option only while still keeping the
+office for everyone who likes to continue working from it. However, it is an
+all–or–nothing kind of change in terms of working culture regardless of how many
+team members will actually be working remotely. Remote work requires
+fundamentally different practices when it comes to collaboration and management
+and a lot of attention to aspects that are less relevant when the entire team
+works from the same location.
 
 Possibly the single most important of these aspects is transparency and the flow
 and sharing of information. While diagrams, concepts, or calendars pinned to the
@@ -77,18 +78,18 @@ and preventing them from effectively contributing to the common goal.
 
 While direct communication in the office is not something anyone should
 prohibit, all the information and decisions that are made in any conversations
-must be made transparent for the entire team. Writing summaries and protocols of
+must be made transparent to the entire team. Writing summaries and protocols of
 conversations or communicating via a chat tool although sitting at the desk next
 to the person one is having a conversation with feels strange in the beginning.
-It is a necessary prerequisite for making remote work work at all though. In
-that way, the pandemic that forced teams to go fully remote all at once at the
-same time might even have made the transition easier rather than harder for them
-because everyone suddenly was in the same position and shared the same
-perspective.
+It is a necessary prerequisite for making remote work work at all though and
+failing to do it properly will alienate remote teammates. In that way, the
+pandemic that forced teams to go fully remote all at once at the same time might
+even have made the transition easier rather than harder for them because
+everyone was in the same position and shared the same perspective.
 
 ### Trust
 
-A very important cultural aspect of switching to a fully or partly remote
+Another very important cultural aspect of switching to a fully or partly remote
 working model is trust. Many managers' first reaction, when faced with their
 teams working remotely, is asking
 
@@ -99,15 +100,15 @@ not happen though. Managers' desire for micro-managing teams is an equally bad
 habit regardless of whether the team is remote or not – yet, remote teams seem
 to increase that desire, often resulting in managers being on everyone's back
 constantly and consistently even more than with all of the team working from the
-office. However, the occasional Slack message
+office. However, the occasional check-in for a status update is just as
+interruptive remotely as it is in the office.
 
 ![Direct messages are interruptive and keep people from working](/assets/images/posts/2020-10-30-the-guide-to-making-remote-work-work/slack.png#@1000-2000)
 
-is just as annoying on Slack as it is in real life. The reality is that remote
-workers are likely more productive rather than less as they will find it easier
-to focus and be less stressed according to a
+The reality is that remote workers are likely more productive rather than less
+as they will find it easier to focus and be less stressed according to a
 [study from 2019](https://www.owllabs.com/hubfs/Owl%20Labs%202019%20State%20of%20Remote%20Work%20Report%20PDF.pdf).
-Building up that trust and giving people uninterrupted time to focus while
+Building up that trust and allowing people uninterrupted time to focus while
 giving up on micro-management practices is going to be a task for many managers
 to learn over the next years.
 
@@ -150,10 +151,10 @@ communication style on team chat can demolish a lot of that increased focus
 again. For effective communication, it is important to be respectful of other
 people's time and need to focus on their work. Not everything is urgent all of
 the time and justifies notifying a coworker or even a group of people. In many
-cases, sending an email that is going to be less intrusive and more respectful
-of the recipient's time can be the better option than sending the person a
-message on team chat asking for something that could totally wait until tomorrow
-as well.
+cases, sending a good old email that is going to be less intrusive and more
+respectful of the recipient's time is the better option than sending the person
+a message on team chat asking for something that could totally wait until
+tomorrow as well.
 
 At the same time, it is important to keep people in the loop and ensure
 transparency of communication when using any kind of communication tool.
@@ -166,10 +167,10 @@ Although the information in public channels will be accessible to everyone, it
 is important to understand any real-time communication tool is essentially
 ephemeral in nature. While that is not technically correct and most tools do in
 fact store all communication indefinitely, even with built-in search
-functionality it is practically close to impossible to find a piece of
-information you are looking for that was discussed in some Slack channel (you
-likely don't even remember which one) the day before. So while team chat is a
-good mechanism to communicate among the team in a low effort, informal way – any
+functionality it is practically impossible to find a piece of information you
+are looking for that was discussed for example in some Slack channel (you likely
+don't even remember which one) the day before. So while team chat is a good
+mechanism to communicate among the team in a low effort, informal way, any
 information or decisions that are made via it need to eventually make their way
 into other, more permanent, and organized systems.
 
@@ -207,18 +208,18 @@ simple practices:
 - Choosing an appropriate place for joining calls is a matter of respect for the
   other participants. While joining from a nice Café or the beach might seem
   like a good idea, it is likely distracting for everyone else who will be
-  exposed to the background noises, people walking around in the background,
+  exposed to the background noises, people walking around in the periphery,
   waiters interrupting, etc.
 
 ### Tools for knowledge management and sharing
 
-Knowledge and information management is critical for every team and as discussed
+Knowledge and information management is critical for every team and as mentioned
 previously access to all relevant information and transparency across the team
 is essential for making a remote working model work at all. Tools for that like
 Notion, Confluence or Basecamp allow collaboratively creating, sharing, and
-keeping relevant information. They are the remote equivalent of whiteboards and
-the place where feature descriptions or strategy documents would live. They must
-allow everyone to contribute to the information, have versioning so people can
+keeping relevant information. They are the remote equivalents of whiteboards and
+the place where feature descriptions or strategy documents live. They must allow
+everyone to contribute to the information, have versioning so people can
 understand who made what change when, and have commenting functionality so that
 people can have discussions about the content.
 
@@ -226,17 +227,17 @@ people can have discussions about the content.
 
 Tools that track individual work items are the main means of organizing work
 among remote teams and clearly communicate the status of each item to everyone.
-Options for such tools include Trello, Jira or GitHub or GitLab. They are not
-for tracking individual team members' progress and performance but help others
-to synchronize their potentially dependent work and identify blockers. Properly
-describing the work each item represents, keeping its status up to date, linking
-relevant information and decisions to the respective item are essential
-practices to allow teams to understand what others are working on and how that
-might influence what every team member does.
+Options for such tools include Trello, Jira as well as even GitHub or GitLab.
+They are not for tracking individual team members' progress and performance but
+help teams synchronize. Properly describing the work each item represents,
+keeping its status up to date as well as linking relevant information and
+decisions to the respective item are essential practices to allow teams to
+understand what others are working on and how that might influence what every
+team member does.
 
 ### The three A's
 
-Whenever switching from a working model that is focussed on an office to a
+Whenever switching from a working model that is focussed around an office to a
 remote one that will be entirely based on cloud-based tools, it is important to
 keep what I'd call the three A's in mind:
 
@@ -244,9 +245,9 @@ keep what I'd call the three A's in mind:
   sound trivial but in reality is often a bigger issue than one might think.
   People are struggling with remembering URLs or accounts for tools or VPNs
   might be unstable. And of course accessibility for people with special needs
-  is critical as well to not exclude entire groups of people potentially. Anyone
+  is critical as well to not exclude entire groups of people entirely. Anyone
   who is not able to access a particular tool is effectively blocked from
-  working altogether.
+  contributing their work altogether.
 - **Availability**: any set of tools a team might choose must also be available.
   The tools a team uses constitute its backbone and if they are not available
   for some reason, the entire team will be blocked from doing any work. While
@@ -261,7 +262,7 @@ keep what I'd call the three A's in mind:
   habits, bypassing the tools, and by that add lots of friction for everyone
   else. It is critical for every member of a remote team to understand that
   opting out of using the tools that are put in place means opting out of
-  collaboration altogether and not only imposes an annoyance for coworkers but
+  collaboration altogether and not only poses an annoyance for coworkers but
   also directly hurts the entire team's productivity.
 
 ## Distributed together
@@ -272,31 +273,32 @@ remote workers say they feel lonely occasionally according to a
 working from their homes is not for everyone and some people need a clear
 separation between their work and private environments or want to be among
 others during the day. However, a remote working model does not necessarily
-require everyone to work alone. Teams can still have an office but make that
-optional or people could work from coworking locations where they are surrounded
-by others although those people might not be their immediate teammates. After
-all, remote work is all about options, not about forcing a particular working
-environment on anyone. At simplabs, we give everyone the freedom to choose the
-work location that is best for them and the only things we ask for are to ensure
-a proper internet connection and for everyone to be in similar timezones – other
-companies with a less collaborative working style might not even require that
-and would sometimes allow people to work from anywhere on earth really.
+require everyone to work alone or from their homes. Teams can still have an
+office but make that optional or people could work from coworking locations
+where they are surrounded by others although those people might not be their
+immediate teammates. After all, remote work is all about options, not about
+forcing a particular working environment on anyone. At simplabs, we give
+everyone the freedom to choose the work location that is best for them and the
+only things we ask for are to ensure a proper internet connection and for
+everyone to be in similar timezones – other companies with a less collaborative
+working style might not even require that and would sometimes allow people to
+work from anywhere on earth really.
 
 Besides everyone feeling comfortable about their individual work environments,
 it is also important to keep up a feeling of belonging together and, in fact,
 being part of one team although everyone is physically distributed. As everyone
-experienced firsthand throughout the pandemic, social interaction via video
-calls is not the same as direct, face-to-face interaction though. In our
-experience, it is essential for everyone to meet each other in the same location
-at least twice per year. We organize company events where we all come together
-for a day or two and do something nice together. These events are not about work
-since all of that can be done remotely as well – we use them purely to enable
-direct social interaction and keep up our notion of belonging together. Other
-companies do similar things, sometimes flying in hundreds of people from all
-across the globe. While that imposes a substantial cost, that cost is paid back
-manifold through a boosted team spirit that makes people enjoy work more, relate
-to their teammates and their individual situations, and finally making
-collaboration smoother and more efficient.
+experienced firsthand throughout the pandemic, video calls are not the same as
+direct, face-to-face interaction though. In our experience, it is essential for
+everyone to meet each other in the same location at least twice per year. We
+organize company events where we all come together for a day or two and do
+something nice together. These events are not about work since all of that can
+be done remotely as well – we use them purely to enable direct social
+interaction and keep up our notion of belonging together. Other companies do
+similar things, sometimes flying in hundreds of people from all across the
+globe. While that implies substantial cost, that cost is paid back manifold
+through a boosted team spirit that makes people enjoy work more, relate to their
+teammates and their individual situations, and finally making collaboration
+smoother and more efficient.
 
 ![Spending time together physically is extra important when everyone is distributed](/assets/images/posts/2020-10-30-the-guide-to-making-remote-work-work/oktoberfest.jpg#@1000-2000)
 
@@ -310,4 +312,4 @@ It doesn't need to stop there though – you can do virtual drink-ups, game
 sessions, hackathons, and plenty of other activities. These are invaluable for
 making sure teams don't forget the faces and people behind the screen names they
 interact with during work. And when we can, we'll all meet our friends but also
-our coworkers in real life again and celebrate together.
+our coworkers again and celebrate together 🎉.
