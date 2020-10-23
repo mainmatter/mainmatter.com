@@ -55,13 +55,13 @@ conducted in 2018, so even before the pandemic.
 ## A remote culture
 
 Adopting a remote working model does not necessarily have to mean for everyone
-to go fully remote. It is a completely reasonable approach to simply make remote
-work an option and still keep the office for everyone who likes to continue
-working from it. However, it is an all–or–nothing kind of change in terms of
-working culture regardless of how many team members will actually be working
-remotely. Remote work requires fundamentally different practices when it comes
-to collaboration and management and a lot of attention to aspects that are less
-relevant when the entire team works from the same location.
+to go remote immediately. It can be adopted fully and for everyone or partially
+as an option only while still keeping the office for everyone who likes to
+continue working from it. However, it is an all–or–nothing kind of change in
+terms of working culture regardless of how many team members will actually be
+working remotely. Remote work requires fundamentally different practices when it
+comes to collaboration and management and a lot of attention to aspects that are
+less relevant when the entire team works from the same location.
 
 Possibly the single most important of these aspects is transparency and the flow
 and sharing of information. While diagrams, concepts, or calendars pinned to the
