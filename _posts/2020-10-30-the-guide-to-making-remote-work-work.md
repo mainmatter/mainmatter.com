@@ -24,13 +24,13 @@ struck.
 
 <!--break-->
 
-There are many more positive reasons to adopt a remote working model than a
-potentially deadly virus. Employees get to choose where to live independently of
-where they work and save a lot of time and money on sometimes long commutes
-(which is also great for the climate – with all the focus currently being on
-Covid 19 we must all not forget about the real existential crisis humanity is
-facing after all). Companies also benefit as they can attract talent from
-anywhere and are not limited in terms of who they can hire by their location.
+There are plenty of reasons to adopt a remote working model. Employees get to
+choose where to live independently of where they work and save a lot of time and
+money on sometimes long commutes (which is also great for the climate – with all
+the focus currently being on Covid 19 we must not forget about the real
+existential crisis humanity is facing after all). Companies also benefit as they
+can attract talent from anywhere and are not limited in terms of who they can
+hire by their location.
 
 Yet, even as employees and companies alike are eager to adopt remote work and in
 theory all the tools and infrastructure that are needed for it is available, it
