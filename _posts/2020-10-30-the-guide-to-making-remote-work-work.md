@@ -218,8 +218,8 @@ simple practices:
 - Turning cameras on so people can see each other makes a big difference in
   communication style – seeing someone's facial expression when they say
   something can often prevent misinterpreting what they are saying. And people
-  can still be as sluggish as they like – dressing the upper body is totally
-  enough for a video call.
+  can still be as slovenly as they like – dressing the upper body is totally
+  enough for a video call after all.
 - Muting yourself when you're not speaking is good practice but don't forget to
   unmute yourself when you want to say something – luckily most platforms have
   notifications now that warn people if they are speaking while being muted.
