@@ -72,7 +72,7 @@ remote team members all of that information is completely invisible. At the same
 time, the information is probably relevant for them, and not having access to it
 means they cannot do their job properly.
 
-TODO: image – burn down your sticky notes walls
+![Burn down your sticky notes walls](/assets/images/posts/2020-10-30-the-guide-to-making-remote-work-work/burn-down-your-sticky-notes-walls.jpg#@1000-2000)
 
 The need for transparency and equal access to information for all team members
 is also the reason why even companies that only have a few or even only a single
@@ -167,8 +167,6 @@ phone calls anymore?). What's easy to forget though is how interruptive these
 tools can be. Sending someone a chat message always implies urgency. Even if we
 all know the majority of chat messages we get are in fact not urgent, it's hard
 to ignore someone who just starts talking (writing) to you.
-
-TODO: add image showing lots of notifications, messages like "👋 Hey" etc.
 
 While most remote workers experience it is easier to focus, a liberal
 communication style on team chat can demolish a lot of that increased focus
@@ -320,7 +318,7 @@ manifold through a boosted team spirit that makes people enjoy work more, relate
 to their teammates and their individual situations, and finally making
 collaboration smoother and more efficient.
 
-TODO: add image from Oktoberfest or so
+![Spending time together physically is extra important when everyone is distributed](/assets/images/posts/2020-10-30-the-guide-to-making-remote-work-work/oktoberfest.jpg#@1000-2000)
 
 These kinds of events are not possible during the pandemic unfortunately. And
 while there is no substitute for these events we need not despair. There are
