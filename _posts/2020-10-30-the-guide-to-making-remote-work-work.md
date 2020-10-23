@@ -170,7 +170,7 @@ At the same time, it is important to keep people in the loop and ensure
 transparency of communication when using any kind of communication tool.
 Communication that happens via direct messages between two people is invisible
 to everyone else, although it might actually be relevant to others as well. As a
-rule of thumb, we recommend keeping everything in public channels until the
+rule of thumb, we recommend keeping everything in public channels unless the
 topic is strictly confidential or private in nature.
 
 Although the information in public channels will be accessible to everyone, it
