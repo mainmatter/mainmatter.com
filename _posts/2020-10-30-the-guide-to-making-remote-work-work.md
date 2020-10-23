@@ -176,12 +176,13 @@ topic is strictly confidential or private in nature.
 Although the information in public channels will be accessible to everyone, it
 is important to understand any real-time communication tool is essentially
 ephemeral in nature. While that is not technically correct and most tools do in
-fact store all communication indefinitely, it is practically close to impossible
-to find a piece of information you are looking for that was discussed in some
-Slack channel (you likely don't even remember which one) the day before. So
-while team chat is a good mechanism to communicate among the team in a low
-effort, informal way – any information or decisions that are made via it need to
-eventually make their way into other, more permanent, and organized systems.
+fact store all communication indefinitely, even with built-in search
+functionality it is practically close to impossible to find a piece of
+information you are looking for that was discussed in some Slack channel (you
+likely don't even remember which one) the day before. So while team chat is a
+good mechanism to communicate among the team in a low effort, informal way – any
+information or decisions that are made via it need to eventually make their way
+into other, more permanent, and organized systems.
 
 #### Video Conferencing
 
