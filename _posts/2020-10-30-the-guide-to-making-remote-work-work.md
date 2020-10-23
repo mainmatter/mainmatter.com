@@ -225,24 +225,25 @@ simple practices:
 
 Knowledge and information management is critical for every team and as discussed
 previously access to all relevant information and transparency across the team
-is essential for making a remote working model work at all. Tools for that allow
-collaboratively creating, sharing, and keeping relevant information. They are
-the remote equivalent of whiteboards and the place where feature descriptions or
-strategy documents would live. They must allow everyone to contribute to the
-information, have versioning so people can understand who made what change when,
-and have commenting functionality so that people can have discussions about the
-content.
+is essential for making a remote working model work at all. Tools for that like
+Notion, Confluence or Basecamp allow collaboratively creating, sharing, and
+keeping relevant information. They are the remote equivalent of whiteboards and
+the place where feature descriptions or strategy documents would live. They must
+allow everyone to contribute to the information, have versioning so people can
+understand who made what change when, and have commenting functionality so that
+people can have discussions about the content.
 
 ### Tools for organizing work and communicating status
 
 Tools that track individual work items are the main means of organizing work
 among remote teams and clearly communicate the status of each item to everyone.
-They are not for tracking individual team members' progress and performance but
-help others to synchronize their potentially dependent work and identify
-blockers. Properly describing the work each item represents, keeping its status
-up to date, linking relevant information and decisions to the respective item
-are essential practices to allow teams to understand what others are working on
-and how that might influence what every team member does.
+Options for such tools include Trello, Jira or GitHub or GitLab. They are not
+for tracking individual team members' progress and performance but help others
+to synchronize their potentially dependent work and identify blockers. Properly
+describing the work each item represents, keeping its status up to date, linking
+relevant information and decisions to the respective item are essential
+practices to allow teams to understand what others are working on and how that
+might influence what every team member does.
 
 ### The three A's
 
