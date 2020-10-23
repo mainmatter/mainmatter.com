@@ -35,10 +35,10 @@ anywhere and are not limited in terms of who they can hire by their location.
 Yet, even as employees and companies alike are eager to adopt remote work and in
 theory all the tools and infrastructure that are needed for it is available, it
 is still not easy to get right. Many teams and companies are struggling to
-switch to a fully or partly remote working model and yearn for the return of the
-days of the office. The reality is those days are not going to come back in many
-industries though and making remote work a success is going to be one of the key
-challenges many companies will be facing in the coming years.
+switch to a remote working model and yearn for the return of the days of the
+office. The reality is those days are not going to come back in many industries
+though and making remote work a success is going to be one of the key challenges
+many companies will be facing in the coming years.
 
 We have run simplabs as a remote company since the beginning. In the early days,
 we faced many of the same challenges other teams are struggling with now. Over
@@ -67,10 +67,8 @@ to information that is relevant for their work, is probably the worst threat
 remote teams face. While diagrams, concepts, or calendars pinned to the wall (or
 the sticky-notes sprint board that has turned into a status symbol for teams
 that "do agile" in the past years) are reasonable and probably good tools for
-sharing information among people that all work from the same location, for
-remote team members all of that information is completely invisible. At the same
-time, the information is probably relevant for them, and not having access to it
-means they cannot do their job properly.
+sharing information among people that all work from the same location, in a
+remote environment, these practices obviously don't work.
 
 ![Burn down your sticky notes walls](/assets/images/posts/2020-10-30-the-guide-to-making-remote-work-work/burn-down-your-sticky-notes-walls.jpg#@1000-2000)
 
@@ -200,13 +198,13 @@ negative effect on meeting efficiency.
 All these problems are easy to get right though when following a number of
 simple practices:
 
-- There needs to be proper audio and video hardware in place. For groups joining
-  a call together that means a proper conference speaker that ensures people on
-  the other end will be able to hear everyone in the room even if more than one
-  person speaks at the same time and ideally a wall-mounted webcam that shows
-  the entire room. For people joining individually, it means they must use
-  headsets that ensure good audio quality and do not also capture all of their
-  surroundings.
+- There needs to be proper audio and video hardware in place. For two or more
+  people joining a call together that means a proper conference speaker that
+  ensures people on the other end will be able to hear everyone in the room even
+  if more than one person speaks at the same time and ideally a wall-mounted
+  webcam that shows the entire room. For people joining individually, it means
+  they must use headsets that ensure good audio quality and do not also capture
+  all of their surroundings.
 - Turning cameras on so people can see each other makes a big difference in
   communication style – seeing someone's facial expression when they say
   something can often prevent misinterpreting what they are saying. And people
