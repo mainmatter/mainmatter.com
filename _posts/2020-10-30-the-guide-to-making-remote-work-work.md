@@ -72,37 +72,29 @@ remote environment, these practices obviously don't work.
 
 ![Burn down your sticky notes walls](/assets/images/posts/2020-10-30-the-guide-to-making-remote-work-work/burn-down-your-sticky-notes-walls.jpg#@1000-2000)
 
-The need for transparency and equal access to information for all team members
-is also the reason why even companies that only have a few or even only a single
-team member work remotely must adopt a remote culture to make that a success.
-When most of the team is still working from the same office, it is easy to
-forget about the remote team members, still continue with the same practices as
-before, and only keep the remote people in the loop by sending them occasional
-updates or bringing them in remotely to otherwise in-office meetings. However,
-doing that necessarily alienates the remote team members – they lack
-transparency and cannot participate in decision-making processes – or even if
-they are given the opportunity to give their input and express opinions, they
-won't be able to do so simply because they lack the necessary insights.
+Adopting a remote working model does not necessarily have to mean for everyone
+to go fully remote. It is completely fine to simply make remote work an option
+and keep the office for everyone who likes to continue working from it. However,
+it is an all–or–nothing kind of change in terms of working culture. When most of
+the team is still working from the same office, it is easy to forget about the
+remote team members, still continue with the same practices as before, and only
+keep the remote people in the loop by sending them occasional updates or
+bringing them in remotely to otherwise in-office meetings. However, doing that
+necessarily alienates the remote team members – they lack transparency and
+cannot participate in decision-making processes – or even if they are given the
+opportunity to give their input and express opinions, they won't be able to do
+so simply because they lack the necessary insights.
 
-Adopting a remote working model really is an all–or–nothing kind of change.
 While direct communication in the office is not something anyone should
 prohibit, all the information and decisions that are made in any conversations
-must be made transparent for the entire team. While writing summaries and
-protocols or communicating via a chat tool although sitting at the desk next to
-the person one is having a conversation with feels strange in the beginning, it
-is a prerequisite for making remote work work at all. In that sense, the
-pandemic that forced teams to go fully remote all at once at the same time might
-even have made that easier rather than harder because everyone suddenly was in
-the same position and shared the same perspective.
-
-In the longer term, working remotely is not going to be for everyone though, and
-should not be something that is forced on people. Different people will be able
-to adapt to remote work to different extents. Out of personal experience, I can
-say forcing parents with little kids and no dedicated office room to work from
-home means a huge challenge for their entire families (as I'm sure many people
-have experienced firsthand during the international lockdowns). The cultural
-change needs to be complete but that does not mean all of a team have to work
-remotely all of the time.
+must be made transparent for the entire team. Writing summaries and protocols of
+conversations or communicating via a chat tool although sitting at the desk next
+to the person one is having a conversation with feels strange in the beginning.
+It is a necessary prerequisite for making remote work work at all though. In
+that way, the pandemic that forced teams to go fully remote all at once at the
+same time might even have made the transition easier rather than harder for them
+because everyone suddenly was in the same position and shared the same
+perspective.
 
 ### Trust
 
