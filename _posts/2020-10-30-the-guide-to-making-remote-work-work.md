@@ -97,15 +97,6 @@ pandemic that forced teams to go fully remote all at once at the same time might
 even have made that easier rather than harder because everyone suddenly was in
 the same position and shared the same perspective.
 
-In the longer term, working remotely is not going to be for everyone though, and
-should not be something that is forced on people. Different people will be able
-to adapt to remote work to different extents. Out of personal experience, I can
-say forcing parents with little kids and no dedicated office room to work from
-home means a huge challenge for their entire families (as I'm sure many people
-have experienced firsthand during the international lockdowns). The cultural
-change needs to be complete but that does not mean all of a team have to work
-remotely all of the time.
-
 ### Trust
 
 A very important cultural aspect of switching to a fully or partly remote
