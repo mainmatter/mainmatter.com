@@ -121,10 +121,7 @@ to increase that desire, often resulting in managers being on everyone's back
 constantly and consistently even more than with all of the team working from the
 office. However, the occasional Slack message
 
-TODO: convert this to image
-
-> Hey 👋 How's it going? Project Manager is typing… Just wanted to check where
-> we are with feature x? Everything still on schedule?
+![Direct messages are interruptive and keep people from working](/assets/images/posts/2020-10-30-the-guide-to-making-remote-work-work/slack.png#@1000-2000)
 
 is just as annoying on Slack as it is in real life. The reality is that remote
 workers are likely more productive rather than less as they will find it easier
