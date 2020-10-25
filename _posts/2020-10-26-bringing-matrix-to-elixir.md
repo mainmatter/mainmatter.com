@@ -237,7 +237,8 @@ currently implemented endpoints.
 
 Olm is an implementation of the
 [Double Ratchet Algorithm](https://signal.org/docs/specifications/doubleratchet)
-written in C/C++ and exposed as a C API. The
+written in C/C++ and exposed as a C API. It is used by Matrix to implement
+encryption, both for individual and group messaging. The
 [Elixir/Erlang bindings](https://github.com/niklaslong/olm-elixir) are a first
 step towards implementing end-to-end encryption in the SDK.
 
