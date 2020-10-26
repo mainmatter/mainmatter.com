@@ -55,11 +55,11 @@ conducted in 2018, so even before the pandemic.
 ## A remote culture
 
 Adopting a remote working model does not necessarily have to mean for everyone
-to go remote immediately. It can be of course be adopted fully and for everyone
-but also partially or incrementally as an option only while still keeping the
-office for everyone who likes to continue working from it. However, it is an
-all–or–nothing kind of change in terms of working culture regardless of how many
-team members will actually be working remotely. Remote work requires
+to go remote immediately. It can of course be adopted completely and for
+everyone but also partially or incrementally as an option only while still
+keeping the office for everyone who likes to continue working from it. However,
+it is an all–or–nothing kind of change in terms of working culture regardless of
+how many team members will actually be working remotely. Remote work requires
 fundamentally different practices when it comes to collaboration and management
 and a lot of attention to aspects that are less relevant when the entire team
 works from the same location.
@@ -150,11 +150,12 @@ While most remote workers experience it is easier to focus, a liberal
 communication style on team chat can demolish a lot of that increased focus
 again. For effective communication, it is important to be respectful of other
 people's time and need to focus on their work. Not everything is urgent all of
-the time and justifies notifying a coworker or even a group of people. In many
-cases, sending a good old email that is going to be less intrusive and more
-respectful of the recipient's time is the better option than sending the person
-a message on team chat asking for something that could totally wait until
-tomorrow as well.
+the time and justifies notifying a coworker or even a group of people. The fact
+that you feel like you need something now doesn't necessarily mean someone else
+should stop what they are currently doing to you. In many cases, sending a good
+old email that is going to be less intrusive and more respectful of the
+recipient's time is the better option than sending the person a message on team
+chat asking for something that could totally wait until tomorrow as well.
 
 At the same time, it is important to keep people in the loop and ensure
 transparency of communication when using any kind of communication tool.
