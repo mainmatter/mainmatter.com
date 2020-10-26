@@ -9,7 +9,7 @@ description:
   'Marco Otte-Witte shares insights gained in many years of successfully
   operating simplabs as a fully remote company.'
 og:
-  image: /assets/images/posts/2020-06-17-failing-and-winning-at-planning-software-projects/og-image.png
+  image: /assets/images/posts/2020-10-30-the-guide-to-making-remote-work-work/og-image.png
 ---
 
 Remote work has been a hot topic in the tech community for decades. While in the
