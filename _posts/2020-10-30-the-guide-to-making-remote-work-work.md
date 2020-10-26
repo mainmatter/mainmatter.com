@@ -24,6 +24,8 @@ struck.
 
 <!--break-->
 
+![The guide to making remote work work](/assets/images/posts/2020-10-30-the-guide-to-making-remote-work-work/illustration.svg#full)
+
 There are plenty of reasons to adopt a remote working model. Employees get to
 choose where to live independently of where they work and save a lot of time and
 money on sometimes long commutes (which is also great for the climate – with all
