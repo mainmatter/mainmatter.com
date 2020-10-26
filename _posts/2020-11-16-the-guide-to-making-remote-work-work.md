@@ -9,7 +9,7 @@ description:
   'Marco Otte-Witte shares insights gained in many years of successfully
   operating simplabs as a fully remote company.'
 og:
-  image: /assets/images/posts/2020-10-30-the-guide-to-making-remote-work-work/og-image.png
+  image: /assets/images/posts/2020-11-16-the-guide-to-making-remote-work-work/og-image.png
 ---
 
 Remote work has been a hot topic in the tech community for decades. While in the
@@ -24,7 +24,7 @@ struck.
 
 <!--break-->
 
-![The guide to making remote work work](/assets/images/posts/2020-10-30-the-guide-to-making-remote-work-work/illustration.svg#full)
+![The guide to making remote work work](/assets/images/posts/2020-11-16-the-guide-to-making-remote-work-work/illustration.svg#full)
 
 ## Remotely happy
 
@@ -78,7 +78,7 @@ ways will be completely invisible for everyone who is not in the office,
 excluding remote team members from participating in decision-making processes
 and preventing them from effectively contributing to the common goal.
 
-![Burn down your sticky notes walls](/assets/images/posts/2020-10-30-the-guide-to-making-remote-work-work/burn-down-your-sticky-notes-walls.jpg#@1000-2000)
+![Burn down your sticky notes walls](/assets/images/posts/2020-11-16-the-guide-to-making-remote-work-work/burn-down-your-sticky-notes-walls.jpg#@1000-2000)
 
 While direct communication in the office is not something anyone should
 prohibit, all the information and decisions that are made in any conversations
@@ -107,7 +107,7 @@ constantly and consistently even more than with all of the team working from the
 office. However, the occasional check-in for a status update is just as
 interruptive remotely as it is in the office.
 
-![Direct messages are interruptive and keep people from working](/assets/images/posts/2020-10-30-the-guide-to-making-remote-work-work/slack.png#@1000-2000)
+![Direct messages are interruptive and keep people from working](/assets/images/posts/2020-11-16-the-guide-to-making-remote-work-work/slack.png#@1000-2000)
 
 The reality is that remote workers are likely more productive rather than less
 as they will find it easier to focus and be less stressed according to a
@@ -305,7 +305,7 @@ through a boosted team spirit that makes people enjoy work more, relate to their
 teammates and their individual situations, and finally making collaboration
 smoother and more efficient.
 
-![Spending time together physically is extra important when everyone is distributed](/assets/images/posts/2020-10-30-the-guide-to-making-remote-work-work/oktoberfest.jpg#@1000-2000)
+![Spending time together physically is extra important when everyone is distributed](/assets/images/posts/2020-11-16-the-guide-to-making-remote-work-work/oktoberfest.jpg#@1000-2000)
 
 These kinds of events are not possible during the pandemic unfortunately. And
 while there is no substitute for these events we need not despair. There are
