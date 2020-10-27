@@ -7,7 +7,7 @@ topic: elixir
 bio: 'Backend Engineer, author of the Matrix Elixir SDK'
 description: 'Niklas Long introduces the Matrix Elixir SDK.'
 og:
-  image: /assets/images/posts/2020-10-26-bringing-matrix-to-elixir/og-image.png
+  image: /assets/images/posts/2020-11-02-bringing-matrix-to-elixir/og-image.png
 ---
 
 [Matrix](https://matrix.org) is an open-source, end-to-end encrypted, real-time,
@@ -18,7 +18,7 @@ Reality (VR).
 
 <!--break-->
 
-![Bringing the Matrix Protocol to Elixir](/assets/images/posts/2020-10-26-bringing-matrix-to-elixir/illustration.svg#full)
+![Bringing the Matrix Protocol to Elixir](/assets/images/posts/2020-11-02-bringing-matrix-to-elixir/illustration.svg#full)
 
 Introduced in 2014, Matrix is backed by [Element](https://element.io/about)
 (formerly New Vector), the company behind the
@@ -44,7 +44,7 @@ Matrix is structured around the federation of homeservers, that is to say the
 continuous synchronisation of event history between homeservers via the
 Server-Server API.
 
-![The Matrix Architecture](/assets/images/posts/2020-10-26-bringing-matrix-to-elixir/matrix_architecture.png)
+![The Matrix Architecture](/assets/images/posts/2020-11-02-bringing-matrix-to-elixir/matrix_architecture.png)
 
 Each user is registered on a single homeserver, ideally hosted by themselves,
 and can join rooms to communicate with others. A room is a shared history of
