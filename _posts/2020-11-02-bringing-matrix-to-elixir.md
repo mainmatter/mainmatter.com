@@ -262,7 +262,7 @@ written in C/C++ and exposed as a C API. It is used by Matrix to implement
 encryption, both for individual and group messaging. The
 [Elixir/Erlang bindings](https://github.com/niklaslong/olm-elixir) are a first
 step towards implementing end-to-end encryption in the SDK. I started it as a
-seperate project as it could conceivably be used in non-Matrix based
+separate project as it could conceivably be used in non-Matrix based
 applications. The library is implemented using C NIFs and currently lacks
 support for group sessions (coming soon). The first release candidate has been
 published to hex.
