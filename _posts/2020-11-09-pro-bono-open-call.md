@@ -50,7 +50,7 @@ We will offer one of the following services:
 - In need of product design support
 - Comfortable having our project featured on our website and social media
   channels
-- Willing to sharing our project on their social media
+- Willing to share the project on their social media
 - Nice to have: in the sustainability, mobility, or education space
 
 ## Apply now
