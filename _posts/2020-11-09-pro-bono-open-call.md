@@ -1,0 +1,66 @@
+---
+title:
+  'Calling all tech founders: we are seeking startups for pro-bono product
+  design!'
+author: 'Mar High'
+github: marhigh
+twitter: msmarhigh
+topic: design
+bio: 'Director of Product Design'
+description: 'We are seeking applicants for pro-bono digital product design.'
+og:
+  image: /assets/images/posts/2020-11-09-pro-bono-open-call/og-image.png
+---
+
+We want to give back to our community by sharing our knowledge and expertise
+with a founder so they can successfully grow and evolve their digital product.
+
+<!--break-->
+
+![We are seeking applicants for pro-bono digital product design](/assets/images/posts/2020-11-09-pro-bono-open-call/illustration.svg#full)
+
+simplabs is a digital product consultancy with an emphasis on sustainable
+success. We have a proven track record of successful projects for international
+clients, ranging from startups to Fortune Global 500 enterprises. To learn more
+about our approach, take a look at our [services](/services/digital-products/)
+and [Playbook](/playbook).
+
+We are seeking applicants for pro-bono digital product design. In an effort to
+support the creation of an equal playing field, it is our preference to partner
+with founders from under-represented groups in tech.
+
+We will offer one of the following services:
+
+- **Product strategy (moderation of a 2-week design sprint):** we will work with
+  you and your team to validate an idea in a 1-week design sprint, and then
+  iterate and improve on that idea on the following week. At the end of the 2
+  weeks, you will have a tested prototype of an idea for your product, which you
+  can show to potential users or investors as well as an understanding of how to
+  move the idea forward. This service is ideal for teams that have a product and
+  design team, and who along with the decision-making team are able to work with
+  us remotely for the entirety of two weeks. It is also a great kickoff for an
+  MVP project.
+- **Design system strategy and kickoff:** we will have a workshop consultation
+  for the transition of your digital product into a design systems methodology.
+  The consultation will include technical implementation suggestions and the
+  inventory of your existing interface. After that, our product designer will
+  mentor your team for 3 weeks, collaborating to create the initial design
+  structure and an organizational workflow to optimize collaboration between
+  your team. At the end of this period, your team will be knowledgeable on how
+  to successfully work with a design system.
+
+## Criteria
+
+- In a European time zone
+- In need of product design support
+- Comfortable having our project featured on our website and social media
+  channels
+- Willing to share the project on their social media
+- Nice to have: in the sustainability, mobility, or education space
+
+## Apply now
+
+In order to apply, simply
+[fill out this form](https://forms.gle/4DLs5ETzXWtfP38u8). We are excited to get
+to know you and collaborate with you. We will be reviewing submissions and
+selecting our finalist by **November 27, 2020**.
