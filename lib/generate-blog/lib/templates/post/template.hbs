@@ -3,7 +3,7 @@
   <HeadTag @name='meta' @keys=\{{hash property="article:published_time"}} @values=\{{hash content="{{isoDate}}"}} />
   <HeadTag @name='meta' @keys=\{{hash property="article:section"}} @values=\{{hash content="{{topic}}"}} />
   <HeadTag @name='meta' @keys=\{{hash name="twitter:creator"}} @values=\{{hash content="{{author.twitter}}"}} />
-  <HeadTag @name='meta' @keys=\{{hash property="og:image"}} @values=\{{hash content="https://simplabs.com{{og.image}}"}} />
+  <HeadTag @name='meta' @keys=\{{hash property="og:image"}} @values=\{{hash content="{{siteUrl}}{{og.image}}"}} />
   <script type="application/ld+json">
     {
       "@type": "BlogPosting",
