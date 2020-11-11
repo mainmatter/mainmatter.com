@@ -300,4 +300,4 @@ technique to have in your tool belt.
 
 If you have a project that you are thinking of porting to EmberJS and would like
 to discuss it with us, or if you have any general questions about this topic we
-encourage you to [contact us](https://simplabs.com/contact/)!
+encourage you to [contact us](/contact/)!

@@ -108,7 +108,6 @@ Sustainable development habits must be put in place:
   by pairing and knowledge sharing through collaboration
 - Code audits when a team member leaves, walkthroughs when a new one joins
 
-To name a few, we go into greater detail in our
-[Playbook](https://simplabs.com/playbook/)!
+To name a few, we go into greater detail in our [Playbook](/playbook/)!
 
 The enemy of velocity is not quality but the absence of it.

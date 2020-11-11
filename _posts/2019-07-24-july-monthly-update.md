@@ -44,14 +44,14 @@ to take a look around!
 
 [Tobias Bieniek](https://twitter.com/TobiasBieniek) recently released a new blog
 post entitled
-[Sentry error reporting for Ember.js](https://simplabs.com/blog/2019/07/15/sentry-and-ember/)
-which was positively received. You should check it out.
+[Sentry error reporting for Ember.js](/blog/2019/07/15/sentry-and-ember/) which
+was positively received. You should check it out.
 
 ### New version of ember-intl-analyzer released
 
 First announced in the
-[May monthly update](https://simplabs.com/blog/2019/05/10/may-monthly-update),
-the ember-intl-analyzer CLI tool which analyzes your app code and finds unused
+[May monthly update](/blog/2019/05/10/may-monthly-update), the
+ember-intl-analyzer CLI tool which analyzes your app code and finds unused
 translations for you has received an update. Supporta JS decorators now and will
 warn about missing translations. Check it out
 [on GitHub.](https://github.com/simplabs/ember-intl-analyzer)

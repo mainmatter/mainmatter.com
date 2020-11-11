@@ -252,6 +252,5 @@ These new features will be covered in upcoming posts, so be sure to keep an eye
 out for them!
 
 If you are looking for help to update your codebase to these new idioms, or you
-want to level up your engineering team, make sure to
-[contact us](https://simplabs.com/contact/) so we can work together towards
-achieving your goals.
+want to level up your engineering team, make sure to [contact us](/contact/) so
+we can work together towards achieving your goals.

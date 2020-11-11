@@ -357,6 +357,5 @@ for you and at the very least gave you a renewed appreciation for the Octane
 Edition design effort.
 
 If you are looking for help migrating your codebase to these new idioms, or you
-want to level up your engineering team,
-[contact us](https://simplabs.com/contact/) so we can work together towards
-achieving your goals.
+want to level up your engineering team, [contact us](/contact/) so we can work
+together towards achieving your goals.

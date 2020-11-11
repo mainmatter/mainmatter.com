@@ -169,9 +169,9 @@ constraints. Still, open-source is at the heart of our company's work and
 besides contributing to EmberJS via our core team engagements, we maintain over
 a dozen of tools and libraries written in JavaScript and other programming
 languages and which are well-adopted in the open-source community
-[[13](https://simplabs.com/expertise/ember/)]. Being aware that providing value
-for OSS is important, but takes time, we dedicate regular time for engineers and
-designers to work on open-source projects using the **20% time method**.
+[[13](/expertise/ember/)]. Being aware that providing value for OSS is
+important, but takes time, we dedicate regular time for engineers and designers
+to work on open-source projects using the **20% time method**.
 
 ### How Does the 20% Time Method Work?
 
@@ -225,10 +225,9 @@ talent strategy, it becomes clear that implementing a process that allows your
 engineers to work on OSS will set your business up for success.
 
 If you have any questions on how to get started with contributing to open-source
-at your company, [send us a message](https://simplabs.com/contact/). You can
-also book
-[a workshop for your engineering team](https://simplabs.com/services/training/)
-to jump start the process of contributing.
+at your company, [send us a message](/contact/). You can also book
+[a workshop for your engineering team](/services/training/) to jump start the
+process of contributing.
 
 ## Sources
 
@@ -244,7 +243,7 @@ to jump start the process of contributing.
 - [10: "Open Source in 2019". Open Source Initiative. 2019](https://opensource.org/node/1006)
 - [11: "Open Source Benefits to Innovation and Organizational Agility". Shaaron A Alvares. 2019.](https://www.infoq.com/news/2019/03/open-source-benefits/)
 - - [12: "Open Source Software from Commercial Firms – Tools, Complements, and Collective Invention ". Joachim Henkel. 2003](https://www.researchgate.net/profile/Joachim_Henkel/publication/251228522_Open_Source_Software_from_Commercial_Firms_-_Tools_Complements_and_Collective_Invention/links/54c3bb140cf219bbe4ec1cf5/Open-Source-Software-from-Commercial-Firms-Tools-Complements-and-Collective-Invention.pdf)
-- [13: "Europe's leading Ember experts". simplabs. 2019.](https://simplabs.com/expertise/ember/)
+- [13: "Europe's leading Ember experts". simplabs. 2019.](/expertise/ember/)
 - [14: "2016 - Future of Open Source Survey Results". Black Duck by Synopsys. 2016](https://www.slideshare.net/blackducksoftware/2016-future-of-open-source-survey-results)
 
 This post is based on the talk

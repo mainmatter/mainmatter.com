@@ -250,8 +250,7 @@ If you need more help getting this set up or if you want to talk about any of
 the topics here in more detail please do [contact us](/contact/)! If you enjoyed
 this blog post you can also let us know via [Twitter].
 
-[open-source-maintenance]:
-  https://simplabs.com/blog/2018/11/27/open-source-maintenance.html
+[open-source-maintenance]: /blog/2018/11/27/open-source-maintenance/
 [greenkeeper]: https://greenkeeper.io/
 [dependabot]: https://dependabot.com/
 [renovate]: https://github.com/renovatebot/renovate/

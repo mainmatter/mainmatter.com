@@ -16,7 +16,7 @@ In our [last post] about [actix] we introduced you to the [Rust] programming
 language and the actix actor framework. This week we will build a basic TCP
 client with actix.
 
-[last post]: https://simplabs.com/blog/2018/06/11/actix.html
+[last post]: /blog/2018/06/11/actix/
 [actix]: https://actix.rs/
 [rust]: https://rust-lang.org/
 
