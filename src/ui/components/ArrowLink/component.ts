@@ -1,6 +1,8 @@
 import Component, { tracked } from '@glimmer/component';
 
 export default class ArrowLink extends Component {
+  private appState: IAppState;
+
   @tracked
   get firstHrefCharacter() {
     let href = this.args.href || '';
@@ -23,7 +25,7 @@ export default class ArrowLink extends Component {
   get isSimplabs() {
     let href = this.args.href || '';
 
-    return this.isInternal || href.match(/^https?:\/\/simplabs.com/);
+    return this.isInternal || href.startsWith(this.appState.origin);
   }
 
   @tracked

@@ -17,8 +17,8 @@ class TestAppState {
 
   constructor() {
     this.isSSR = false;
-    this.route = window.location.pathname;
-    this.origin = window.location.origin;
+    this.route = '/'; // fake static path and origin so we can assert against those
+    this.origin = 'https://simplabs.com';
     this.routesMap = {};
   }
 }
