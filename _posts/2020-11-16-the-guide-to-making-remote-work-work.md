@@ -91,7 +91,7 @@ that way, the pandemic that forced teams to go fully remote all at once at the
 same time might even have made the transition easier rather than harder for them
 because everyone was in the same position and shared the same perspective.
 
-### Trust
+### Cultivating Trust
 
 Another very important cultural aspect to consider when a team goes fully or
 partly remote is trust. Many managers' first reaction, when faced with their
