@@ -1,29 +1,29 @@
 <div>
   <LazyPreloadTrigger @bundle="blog" />
-  <HeadTag @name='meta' @keys=\{{hash property="og:image"}} @values=\{{hash content="https://simplabs.com/assets/images/blog/ogimage.png"}} />
+  <HeadTag @name='meta' @keys=\{{hash property="og:image"}} @values=\{{hash content="{{siteUrl}}/assets/images/blog/ogimage.png"}} />
   <script type="application/ld+json">
     {
     "@type": "Blog",
     "name": "simplabs Blog",
-    "url": "https://simplabs.com/blog/",
+    "url": "{{siteUrl}}/blog/",
     "publisher": {
       "@type": "Organization",
       "name": "simplabs",
-      "url": "https://simplabs.com",
+      "url": "{{siteUrl}}",
       "legalName": "simplabs GmbH",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://simplabs.com/assets/images/logos/simplabs.png"
+        "url": "{{siteUrl}}/assets/images/logos/simplabs.png"
       }
     },
     "copyrightHolder": {
       "@type": "Organization",
       "name": "simplabs",
-      "url": "https://simplabs.com",
+      "url": "{{siteUrl}}",
       "legalName": "simplabs GmbH",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://simplabs.com/assets/images/logos/simplabs.png"
+        "url": "{{siteUrl}}/assets/images/logos/simplabs.png"
       }
     },
     "copyrightYear": 2013,

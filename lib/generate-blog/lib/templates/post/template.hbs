@@ -10,7 +10,7 @@
       "headline": "{{title}}",
       "image": {
         "@type": "ImageObject",
-        "url": "https://simplabs.com/assets/images/logos/simplabs.png"
+        "url": "{{siteUrl}}/assets/images/logos/simplabs.png"
       },
       "author": {
         "@type": "Person",
@@ -18,35 +18,35 @@
         "jobTitle": "{{author.bio}}",
         "image": {
           "@type": "ImageObject",
-          "url": "https://simplabs.com/assets/images/authors/{{author.twitter}}.jpg"
+          "url": "{{siteUrl}}/assets/images/authors/{{author.twitter}}.jpg"
         }
       },
       "genre": "{{topic}}",
       "publisher": {
         "@type": "Organization",
         "name": "simplabs",
-        "url": "https://simplabs.com",
+        "url": "{{siteUrl}}",
         "legalName": "simplabs GmbH",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://simplabs.com/assets/images/logos/simplabs.png"
+          "url": "{{siteUrl}}/assets/images/logos/simplabs.png"
         }
       },
       "copyrightHolder": {
         "@type": "Organization",
         "name": "simplabs",
-        "url": "https://simplabs.com",
+        "url": "{{siteUrl}}",
         "legalName": "simplabs GmbH",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://simplabs.com/assets/images/logos/simplabs.png"
+          "url": "{{siteUrl}}/assets/images/logos/simplabs.png"
         }
       },
       "copyrightYear": {{year}},
       "datePublished": "{{isoDate}}",
       "dateModified": "{{isoDate}}",
-      "mainEntityOfPage": "https://simplabs.com/blog/",
-      "url": "https://simplabs.com{{path}}",
+      "mainEntityOfPage": "{{siteUrl}}/blog/",
+      "url": "{{siteUrl}}{{path}}",
       "@context": "http://schema.org"
     }
   </script>
