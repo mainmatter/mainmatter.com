@@ -61,6 +61,14 @@
   font-style: italic;
 }
 
+.quote::before {
+  margin-right: -0.5rem;
+}
+
+.quote::after {
+  margin-left: -0.5rem;
+}
+
 .tag {
   text-decoration: none;
   display: inline-block;
