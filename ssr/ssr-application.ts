@@ -13,6 +13,8 @@ import { TemplateIterator } from '@glimmer/runtime';
 const SimpleDOM = require('simple-dom');
 // tslint:disable-next-line:no-var-requires
 const routesMap = require('./routes.json');
+// tslint:disable-next-line:no-var-requires
+const origin = require('../lib/utils/get-build-domain')();
 
 import Application, { ApplicationOptions } from '@glimmer/application';
 
@@ -45,7 +47,7 @@ export default class SSRApplication extends Application {
       constructor() {
         this.isSSR = true;
         this.route = options.route;
-        this.origin = options.origin;
+        this.origin = origin;
         this.routesMap = routesMap;
       }
     }

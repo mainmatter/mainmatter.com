@@ -165,6 +165,6 @@ project. However, a good start will help everyone handle uncertainty and
 conflict a lot better, especially during the most challenging parts, but also to
 celebrate our shared achievements.
 
-To learn more, check out our [playbook](https://simplabs.com/playbook/). It
-contains a general overview of our process and how we work together to deliver
-ambitious projects for our clients.
+To learn more, check out our [playbook](/playbook/). It contains a general
+overview of our process and how we work together to deliver ambitious projects
+for our clients.

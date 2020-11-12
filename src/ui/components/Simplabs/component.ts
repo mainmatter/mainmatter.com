@@ -181,7 +181,7 @@ export default class Simplabs extends Component {
       path = `${path}/`;
     }
 
-    path = `https://simplabs.com${path}`;
+    path = `${this.appState.origin}${path}`;
 
     this.headTags.write(
       'meta',

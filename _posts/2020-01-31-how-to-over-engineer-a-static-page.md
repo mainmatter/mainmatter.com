@@ -13,12 +13,12 @@ og:
   image: /assets/images/posts/2020-01-31-how-to-over-engineer-a-static-page/og-image.png
 ---
 
-When we set out to rebuild our own website [simplabs.com](https://simplabs.com)
-in 2019, we wanted to use that project as an opportunity to ignore all economic
-considerations (and reason you could say) and dive deep into what was
-technically possible. Doing so would allow us to build something that was super
-customized for our specific needs and highly optimized for performance. We ended
-up spending a lot of time and effort but are quite pleased with the result.
+When we set out to rebuild our own website [simplabs.com](/) in 2019, we wanted
+to use that project as an opportunity to ignore all economic considerations (and
+reason you could say) and dive deep into what was technically possible. Doing so
+would allow us to build something that was super customized for our specific
+needs and highly optimized for performance. We ended up spending a lot of time
+and effort but are quite pleased with the result.
 
 While we cannot recommend anyone following our example as your time is most
 likely better spent elsewhere, this post explains the approach we took. I will

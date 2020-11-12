@@ -3,14 +3,14 @@
   <HeadTag @name='meta' @keys=\{{hash property="article:published_time"}} @values=\{{hash content="{{isoDate}}"}} />
   <HeadTag @name='meta' @keys=\{{hash property="article:section"}} @values=\{{hash content="{{topic}}"}} />
   <HeadTag @name='meta' @keys=\{{hash name="twitter:creator"}} @values=\{{hash content="{{author.twitter}}"}} />
-  <HeadTag @name='meta' @keys=\{{hash property="og:image"}} @values=\{{hash content="https://simplabs.com{{og.image}}"}} />
+  <HeadTag @name='meta' @keys=\{{hash property="og:image"}} @values=\{{hash content="{{siteUrl}}{{og.image}}"}} />
   <script type="application/ld+json">
     {
       "@type": "BlogPosting",
       "headline": "{{title}}",
       "image": {
         "@type": "ImageObject",
-        "url": "https://simplabs.com/assets/images/logos/simplabs.png"
+        "url": "{{siteUrl}}/assets/images/logos/simplabs.png"
       },
       "author": {
         "@type": "Person",
@@ -18,35 +18,35 @@
         "jobTitle": "{{author.bio}}",
         "image": {
           "@type": "ImageObject",
-          "url": "https://simplabs.com/assets/images/authors/{{author.twitter}}.jpg"
+          "url": "{{siteUrl}}/assets/images/authors/{{author.twitter}}.jpg"
         }
       },
       "genre": "{{topic}}",
       "publisher": {
         "@type": "Organization",
         "name": "simplabs",
-        "url": "https://simplabs.com",
+        "url": "{{siteUrl}}",
         "legalName": "simplabs GmbH",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://simplabs.com/assets/images/logos/simplabs.png"
+          "url": "{{siteUrl}}/assets/images/logos/simplabs.png"
         }
       },
       "copyrightHolder": {
         "@type": "Organization",
         "name": "simplabs",
-        "url": "https://simplabs.com",
+        "url": "{{siteUrl}}",
         "legalName": "simplabs GmbH",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://simplabs.com/assets/images/logos/simplabs.png"
+          "url": "{{siteUrl}}/assets/images/logos/simplabs.png"
         }
       },
       "copyrightYear": {{year}},
       "datePublished": "{{isoDate}}",
       "dateModified": "{{isoDate}}",
-      "mainEntityOfPage": "https://simplabs.com/blog/",
-      "url": "https://simplabs.com{{path}}",
+      "mainEntityOfPage": "{{siteUrl}}/blog/",
+      "url": "{{siteUrl}}{{path}}",
       "@context": "http://schema.org"
     }
   </script>
