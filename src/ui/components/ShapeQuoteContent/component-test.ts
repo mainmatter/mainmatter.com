@@ -8,7 +8,7 @@ module('Component: ShapeQuoteContent', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await render(hbs`<ShapeQuoteContent @source="Person, Title, Company">simplabs is so awesome!</ShapeQuoteContent>`);
+    await render(hbs`<ShapeQuoteContent @source="Person, Title, Company" @text="simplabs is so awesome!" />`);
 
     assert.ok(this.containerElement.querySelector('q'));
   });
