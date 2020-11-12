@@ -4,13 +4,9 @@
     @sizes="(max-width: 887px) 600px, 1200px"
     @srcAlt="Cardstack"
   >
-    <p>
-      <q typography:class="quote" lang="en">
-        I've had the opportunity to work alongside the simplabs team on both their client-facing work for Cardstack and their open source contributions. They are experts in Ember and they are a team that takes good software-development practice seriously.
-      </q>
-    </p>
-    <p typography:class="small">
-      Ed Faulkner, Cardstack Lead Developer and member of the Ember.js Steering Committee
-    </p>
+    <ShapeQuoteContent
+      @text="I've had the opportunity to work alongside the simplabs team on both their client-facing work for Cardstack and their open source contributions. They are experts in Ember and they are a team that takes good software-development practice seriously."
+      @source="Ed Faulkner, Cardstack Lead Developer and member of the Ember.js Steering Committee"
+    />
   </ShapeFeatureContent>
 </ShapeFeature>
