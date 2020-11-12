@@ -1,0 +1,7 @@
+@block typography from "../../styles/blocks/typography.block.css";
+
+:scope {
+  block-name: ShapeQuoteContent;
+}
+
+@export typography;
