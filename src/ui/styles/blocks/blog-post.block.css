@@ -113,8 +113,8 @@
   margin-top: 30px;
   padding-left: 16px;
   border-left: 4px solid #5b5b5b;
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 2.5rem;
+  line-height: 1.6;
 }
 
 .quote::before {
@@ -132,9 +132,9 @@
 .quote-author {
   margin-top: 16px;
   margin-bottom: 0px;
-  font-size: 15px;
+  font-size: 1.75rem;
+  line-height: 1.142857143;
   display: block;
-  line-height: 15px;
 }
 
 .quote-author::before {
@@ -191,15 +191,6 @@
     height: calc(100% - 6rem);
     top: 3rem;
     left: 3rem;
-  }
-
-  .quote {
-    font-size: 32px;
-    line-height: 48px;
-  }
-
-  .quote-author {
-    font-size: 14px;
   }
 }
 
