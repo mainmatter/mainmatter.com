@@ -197,9 +197,7 @@ belongs to that input.
 
 ```html
 <div id="ember8" class="x-label ember-view">
-  <label class="x-label__label">
-    Email address
-  </label>
+  <label class="x-label__label">Email address</label>
 </div>
 <div id="ember9" class="x-input-beta ember-view">
   <input
