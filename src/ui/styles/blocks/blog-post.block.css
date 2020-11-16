@@ -117,13 +117,12 @@
   line-height: 30px;
 }
 
-.quote:before {
-  content: '';
-  height: 19px;
-  width: 23px;
-  margin-right: 16px;
-  background-image: url(/assets/images/blog/icon_quotes.svg);
-  background-size: 100%;
+.quote::before {
+  content: '“';
+  font-size: 12rem;
+  line-height: 4rem;
+  margin-right: 2rem;
+  margin-top: 4rem;
 }
 
 .quote-paragraph {
@@ -138,7 +137,7 @@
   line-height: 15px;
 }
 
-.quote-author:before {
+.quote-author::before {
   content: '-';
   margin-right: 2px;
   height: 16px;
