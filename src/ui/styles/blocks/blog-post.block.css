@@ -109,18 +109,14 @@
 
 .quote {
   display: flex;
-  margin-bottom: 30px;
-  margin-top: 30px;
   padding-left: 16px;
   border-left: 4px solid #5b5b5b;
-  font-size: 2.5rem;
-  line-height: 1.6;
 }
 
 .quote::before {
   content: '“';
   font-size: 12rem;
-  line-height: 4rem;
+  line-height: 1rem;
   margin-right: 2rem;
   margin-top: 4rem;
 }
@@ -130,19 +126,15 @@
 }
 
 .quote-author {
-  margin-top: 16px;
-  margin-bottom: 0px;
-  font-size: 1.75rem;
-  line-height: 1.142857143;
+  margin-top: 2rem;
+  margin-bottom: resolve('typography.small');
+  margin-bottom: 0;
   display: block;
 }
 
 .quote-author::before {
   content: '-';
   margin-right: 2px;
-  height: 16px;
-  font-family: NunitoSans-Regular;
-  text-transform: uppercase;
 }
 
 @media (min-width: 888px) {
