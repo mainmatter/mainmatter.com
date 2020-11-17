@@ -99,6 +99,7 @@
   "private": true,
   "ember-addon": {
     "paths": [
+      "lib/analytics",
       "lib/generate-appearances-archive",
       "lib/generate-blog",
       "lib/generate-calendar",
