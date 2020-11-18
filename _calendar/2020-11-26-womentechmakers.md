@@ -1,5 +1,7 @@
 ---
-title: '[Women Techmakers Berlin] Version control in design: best practices for collaboration'
+title:
+  '[Women Techmakers Berlin] Version control in design: best practices for
+  collaboration'
 image: '/assets/images/calendar/2020-11-26-womentechmakers/logo.svg'
 location: Remote
 url: https://www.meetup.com/Women-Techmakers-Berlin/events/274409725/
