@@ -83,7 +83,8 @@
 }
 
 @media (max-width: 887px) {
-  .display, .h1 {
+  .display,
+  .h1 {
     margin-bottom: 3rem;
   }
 
