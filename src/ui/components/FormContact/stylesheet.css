@@ -18,8 +18,8 @@
 .error,
 .item-error {
   color: var(--color-error);
-  font-size: 2rem;
-  line-height: 1.5;
+  font-size: var(--p);
+  line-height: var(--p-lh);
 
   --color-link: var(--color-error);
 }
@@ -71,7 +71,8 @@
 
 @media (max-width: 887px) {
   .control {
-    font-size: 16px;
+    font-size: var(--label);
+    line-height: var(--label-lh);
   }
 }
 

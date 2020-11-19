@@ -13,7 +13,8 @@
 }
 
 .accent {
-  font-size: 9rem;
+  font-size: var(--h1);
+  line-height: var(--h1-lh);
   color: var(--color-accent);
 }
 

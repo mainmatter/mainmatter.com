@@ -95,8 +95,8 @@ html {
 }
 
 body {
-  font-size: 2.5rem;
-  line-height: 1.6;
+  font-size: var(--p);
+  line-height: var(--p-lh);
 }
 
 /* Typography */
@@ -312,7 +312,8 @@ figure img {
 
 figcaption {
   display: block;
-  font-size: 2rem;
+  font-size: var(--label);
+  line-height: var(--label--lh);
   color: var(--color-secondary);
 }
 

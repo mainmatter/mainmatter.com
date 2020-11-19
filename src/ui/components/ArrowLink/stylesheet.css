@@ -2,6 +2,9 @@
   block-name: ArrowLink;
   text-align: right;
   pointer-events: none;
+
+  --link-text: 2.625rem;
+  --link-text-lh: 1.476;
 }
 
 :scope + :scope {
@@ -13,8 +16,8 @@
   display: inline-block;
   padding: 1.5rem 7rem 1.5rem 0;
   color: var(--color-link);
-  font-size: 3rem;
-  line-height: 1.5;
+  font-size: var(--link-text);
+  line-height: var(--link-text-lh);
   text-decoration: none;
   pointer-events: all;
 }
@@ -49,6 +52,13 @@
 
 :scope[reverse='true'] .link {
   padding: 1.5rem 0 1.5rem 7rem;
+}
+
+@media (max-width: 887px) {
+  :scope[reverse='true'] .link {
+    --link-text: 2.25rem;
+    --link-text-lh: 1.5;
+  }
 }
 
 @media (min-width: 888px) {
