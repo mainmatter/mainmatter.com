@@ -13,11 +13,14 @@ og:
 ---
 
 We want to give back to our community by sharing our knowledge and expertise
-with a founder so they can successfully grow and evolve their digital product.
+with a founder from an **underrepresented diversity group in tech**, so they can
+successfully grow and evolve their digital product.
 
 <!--break-->
 
 ![We are seeking applicants for pro-bono digital product design](/assets/images/posts/2020-11-09-pro-bono-open-call/illustration.svg#full)
+
+## Seeking applicants for pro-bono product design
 
 simplabs is a digital product consultancy with an emphasis on sustainable
 success. We have a proven track record of successful projects for international
@@ -25,9 +28,13 @@ clients, ranging from startups to Fortune Global 500 enterprises. To learn more
 about our approach, take a look at our [services](/services/digital-products/)
 and [Playbook](/playbook).
 
-We are seeking applicants for pro-bono digital product design. In an effort to
-support the creation of an equal playing field, it is our preference to partner
-with founders from under-represented groups in tech.
+### Anyone from an underrepresented group in tech is welcome to apply
+
+In an effort to support the creation of an equal playing field, we invite
+applicants from **underrepresented groups in tech** to apply for pro-bono
+product design. We especially invite and welcome women, Black, Indigenous &
+People of Color, QTIBIPOC/LGBTQIA+ people, people with disabilities, and people
+facing economic or social hardships.
 
 We will offer one of the following services:
 
@@ -51,6 +58,9 @@ We will offer one of the following services:
 
 ## Criteria
 
+- From an underrepresented diversity group in tech (underrepresented groups
+  include: women, Black, Indigenous & People of Color, QTIBIPOC/LGBTQIA+ people,
+  people with disabilities, and people facing economic or social hardships)
 - In a European time zone
 - In need of product design support
 - Comfortable having our project featured on our website and social media
