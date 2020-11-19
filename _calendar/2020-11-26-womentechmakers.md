@@ -1,12 +1,14 @@
 ---
-title: 'Version control in design: best practices for collaboration'
+title:
+  '[Women Techmakers Berlin] Version control in design: best practices for
+  collaboration'
 image: '/assets/images/calendar/2020-11-26-womentechmakers/logo.svg'
 location: Remote
 url: https://www.meetup.com/Women-Techmakers-Berlin/events/274409725/
 kind: meetup
 ---
 
-At Women Techmakers Berlin has been encouraging diversity in tech in Berlin
+Women Techmakers Berlin has been encouraging diversity in tech in Berlin
 since 2015. They strive for visibility, networking and resources to make the
 tech community of Berlin inclusive. They are one of the most active chapters of
 the global Women Techmakers program run by Google.
