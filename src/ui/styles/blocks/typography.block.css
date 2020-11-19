@@ -54,8 +54,8 @@
 }
 
 .p {
-  font-size: 2.5rem;
-  line-height: 1.6;
+  font-size: var(--p);
+  line-height: var(--p-lh);
 }
 
 .quote {
