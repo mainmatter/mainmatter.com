@@ -6,7 +6,7 @@
 
 :scope {
   block-name: Footer;
-  font-size: 2rem;
+  font-size: 1.75rem;
   line-height: 1.5;
   color: var(--color-muted);
   z-index: 100;
@@ -113,6 +113,10 @@
 }
 
 @media (max-width: 887px) {
+  :scope {
+    font-size: 1.5rem;
+  }
+
   .branding {
     width: 100%;
   }

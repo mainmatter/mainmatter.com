@@ -41,15 +41,15 @@
   --color-link: var(--color-accent);
   --color-link-inverted: var(--color-background);
 
-  --h1: 8rem;
-  --h1-lh: 1.1;
-  --label: 1.75rem;
-  --label-lh: 2.5rem;
-  --lead: 4rem;
+  --h1: 8.75rem;
+  --h1-lh: 1.2;
+  --label: 1.53125rem;
+  --label-lh: 1.1429;
+  --lead: 3.5rem;
   --lead-lh: 1.5;
-  --h2: 6.5rem;
+  --h2: 7rem;
   --h2-lh: 1.25;
-  --h3: 5rem;
+  --h3: 4.375rem;
   --h3-lh: 1.2;
   --h4: 4rem;
   --h4-lh: 1.25;
@@ -234,12 +234,12 @@ h5 {
     --label: 2.5rem;
     --lead: 3rem;
     --lead-lh: calc(5 / 3);
-    --h1: 6rem;
-    --h1-lh: calc(7 / 6);
-    --h2: 5rem;
-    --h2-lh: calc(6 / 5);
-    --h3: 4rem;
-    --h3-lh: calc(5 / 4);
+    --h1: 4rem;
+    --h1-lh: 1.167;
+    --h2: 3.75rem;
+    --h2-lh: 1.2;
+    --h3: 3rem;
+    --h3-lh: 1.25;
   }
 
   h1 small {
