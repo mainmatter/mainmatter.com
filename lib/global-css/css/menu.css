@@ -15,8 +15,8 @@
     margin: 2rem 0;
     padding: 1rem 2rem;
     color: var(--color-text-inverted);
-    font-size: 3.33333rem;
-    line-height: 4rem;
+    font-size: var(--lead);
+    line-height: var(--lead-lh);
     text-align: center;
     border: 0;
     background: transparent;

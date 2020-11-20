@@ -6,7 +6,7 @@
 
 :scope {
   block-name: Footer;
-  font-size: 2rem;
+  font-size: 1.75rem;
   line-height: 1.5;
   color: var(--color-muted);
   z-index: 100;

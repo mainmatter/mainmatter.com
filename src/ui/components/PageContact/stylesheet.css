@@ -17,8 +17,8 @@
 
 .value {
   margin-bottom: 3rem;
-  font-size: 4rem;
-  line-height: 1.25;
+  font-size: var(--h4);
+  line-height: var(--h4-lh);
   color: var(--color-accent);
 }
 
@@ -50,8 +50,8 @@
 }
 
 .vcard {
-  font-size: 3rem;
-  line-height: 1.66667;
+  font-size: var(--lead);
+  line-height: var(--lead-lh);
   color: var(--color-secondary);
 }
 

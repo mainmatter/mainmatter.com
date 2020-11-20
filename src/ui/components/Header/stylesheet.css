@@ -10,7 +10,7 @@
 }
 
 .navbar {
-  font-size: 2rem;
+  font-size: var(--p);
   grid-column: 2/-2;
 }
 

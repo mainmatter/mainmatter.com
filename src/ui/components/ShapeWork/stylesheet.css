@@ -47,8 +47,8 @@
 }
 
 .tagline-text {
-  font-size: 2rem;
-  line-height: 1.5;
+  font-size: var(--p);
+  line-height: var(--p-lh);
   text-transform: uppercase;
   color: var(--color-text-inverted);
 }

@@ -28,8 +28,8 @@
 .control-label {
   display: block;
   margin-bottom: 0.5rem;
-  font-size: 2.625rem;
-  line-height: 1.523809524;
+  font-size: var(--p);
+  line-height: var(--p-lh);
   color: #5b5b5b;
 }
 
@@ -39,8 +39,8 @@
   border: 2px solid #ccc;
   border-radius: 0;
   box-sizing: border-box;
-  font-size: 2rem;
-  line-height: 3rem;
+  font-size: var(--lead);
+  line-height: var(--lead-lh);
   -webkit-appearance: none;
 }
 

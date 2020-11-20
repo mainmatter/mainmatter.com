@@ -11,5 +11,6 @@
   display: block;
   white-space: pre;
   text-align: justify;
-  font-size: 2rem;
+  font-size: var(--p);
+  line-height: var(--p-lh);
 }

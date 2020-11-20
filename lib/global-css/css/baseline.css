@@ -40,6 +40,23 @@
   --color-muted-inverted: var(--color-background);
   --color-link: var(--color-accent);
   --color-link-inverted: var(--color-background);
+
+  --h1: 10rem;
+  --h1-lh: 1.2;
+  --label: 1.75rem;
+  --label-lh: 1.142857143;
+  --lead: 4rem;
+  --lead-lh: 1.5;
+  --h2: 8rem;
+  --h2-lh: 1.25;
+  --h3: 5rem;
+  --h3-lh: 1.2;
+  --h4: 4rem;
+  --h4-lh: 1.25;
+  --h5: 2.5rem;
+  --h5-lh: 1.25;
+  --p: 2.5rem;
+  --p-lh: 1.6;
 }
 
 @media (max-width: 887px) {
@@ -47,6 +64,17 @@
     --col-gap: 2rem;
     --offset-horizontal: 0;
     --max-width: calc(100vw - 4rem);
+
+    --h1: 6rem;
+    --h1-lh: 1.2;
+    --label: 2.5rem;
+    --lead: 3rem;
+    --lead-lh: 1.6;
+    --h2: 5rem;
+    --h2-lh: 1.2;
+    --h3: 4rem;
+    --h3-lh: 1.25;
+    --h4: 3rem;
   }
 }
 
@@ -77,15 +105,9 @@ html {
   }
 }
 
-@media (min-width: 1800px) {
-  :root {
-    --base-scale: calc(10 / 8);
-  }
-}
-
 body {
-  font-size: 2.5rem;
-  line-height: 1.6;
+  font-size: var(--p);
+  line-height: var(--p-lh);
 }
 
 /* Typography */
@@ -162,25 +184,25 @@ h6 {
 }
 
 h1 {
-  font-size: 10rem;
+  font-size: var(--h1);
   font-weight: 300;
-  line-height: 1.2;
+  line-height: var(--h1-lh);
 }
 
 h1 small {
   display: block;
   color: var(--color-muted);
   margin-bottom: 2rem;
-  font-size: 1.75rem;
-  line-height: 1.142857143;
+  font-size: var(--label);
+  line-height: var(--label-lh);
   text-transform: uppercase;
 }
 
 h2 {
   margin-bottom: 6rem;
-  font-size: 8rem;
+  font-size: var(--h2);
   font-weight: 300;
-  line-height: 1.25;
+  line-height: var(--h2-lh);
 }
 
 *:not(h1) + h2 {
@@ -189,8 +211,8 @@ h2 {
 
 h3 {
   margin-bottom: 3rem;
-  font-size: 5rem;
-  line-height: 1.2;
+  font-size: var(--h3);
+  line-height: var(--h3-lh);
   font-weight: 400;
 }
 
@@ -200,8 +222,8 @@ h3 {
 
 h4 {
   margin-bottom: 3rem;
-  font-size: 4rem;
-  line-height: 1.25;
+  font-size: var(--h4);
+  line-height: var(--h4-lh);
   font-weight: 400;
 }
 
@@ -211,8 +233,8 @@ h4 {
 
 h5 {
   margin-bottom: 1rem;
-  font-size: 2.5rem;
-  line-height: 1.25;
+  font-size: var(--h5);
+  line-height: var(--h5-lh);
   font-weight: 700;
 }
 
@@ -222,20 +244,12 @@ h5 {
 
 @media (max-width: 887px) {
   h1 small {
-    font-size: 2.5rem;
     color: var(--color-text);
   }
 
   h2 {
     margin-bottom: 3rem;
-    font-size: 5rem;
-    line-height: calc(6 / 5);
     hyphens: auto;
-  }
-
-  h3 {
-    font-size: 4rem;
-    line-height: calc(5 / 4);
   }
 }
 
@@ -296,7 +310,8 @@ figure img {
 
 figcaption {
   display: block;
-  font-size: 2rem;
+  font-size: var(--label);
+  line-height: var(--label--lh);
   color: var(--color-secondary);
 }
 

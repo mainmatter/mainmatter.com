@@ -48,7 +48,8 @@
 }
 
 .badge-content {
-  font-size: 1.75rem;
+  font-size: var(--label);
+  line-height: var(--label-lh);
   margin-top: 1rem;
 }
 

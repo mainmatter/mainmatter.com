@@ -3,11 +3,12 @@
 }
 
 .display,
-.display-plain {
+.display-plain,
+.h1 {
   color: var(--color-text);
-  font-size: 10rem;
+  font-size: var(--h1);
   font-weight: 300;
-  line-height: 1.2;
+  line-height: var(--h1-lh);
 }
 
 .display {
@@ -15,20 +16,20 @@
 }
 
 .h2 {
-  font-size: 8rem;
+  font-size: var(--h2);
   font-weight: 300;
-  line-height: 1.25;
+  line-height: var(--h2-lh);
 }
 
 .h3 {
-  font-size: 5rem;
-  line-height: 1.2;
+  font-size: var(--h3);
+  line-height: var(--h3-lh);
   font-weight: 400;
 }
 
 .h4 {
-  font-size: 4rem;
-  line-height: 1.25;
+  font-size: var(--h4);
+  line-height: var(--h4-lh);
   font-weight: 400;
 }
 
@@ -36,16 +37,16 @@
   color: var(--color-muted);
   display: block;
   margin-bottom: 2rem;
-  font-size: 1.75rem;
-  line-height: 1.142857143;
+  font-size: var(--label);
+  line-height: var(--label-lh);
   text-transform: uppercase;
 }
 
 .lead {
   color: var(--color-muted);
-  font-size: 4rem;
+  font-size: var(--lead);
   font-weight: 300;
-  line-height: 1.5;
+  line-height: var(--lead-lh);
 }
 
 .lead + .lead {
@@ -53,8 +54,8 @@
 }
 
 .p {
-  font-size: 2.5rem;
-  line-height: 1.6;
+  font-size: var(--p);
+  line-height: var(--p-lh);
 }
 
 .quote {
@@ -83,42 +84,16 @@
 
 @media (max-width: 887px) {
   .display,
-  .display-plain {
-    font-size: 6rem;
-    font-weight: 300;
-    line-height: calc(7 / 6);
-  }
-
-  .display {
-    margin-bottom: 3rem;
-  }
-
   .h1 {
     margin-bottom: 3rem;
-    font-size: 5rem;
-    line-height: 1.2;
-    font-weight: 400;
   }
 
   .h2 {
     margin-bottom: 3rem;
-    font-size: 5rem;
-    line-height: calc(6 / 5);
-  }
-
-  .h3 {
-    font-size: 4rem;
-    line-height: calc(5 / 4);
   }
 
   .small {
-    font-size: 2.5rem;
     color: var(--color-text);
-  }
-
-  .lead {
-    font-size: 3rem;
-    line-height: calc(5 / 3);
   }
 }
 
