@@ -50,8 +50,8 @@
 }
 
 .vcard {
-  font-size: var(--h4);
-  line-height: var(--h4-lh);
+  font-size: var(--lead);
+  line-height: var(--lead-lh);
   color: var(--color-secondary);
 }
 
