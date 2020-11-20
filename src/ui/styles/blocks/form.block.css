@@ -39,8 +39,8 @@
   border: 2px solid #ccc;
   border-radius: 0;
   box-sizing: border-box;
-  font-size: var(--p);
-  line-height: calc(var(--p-lh) * 2);
+  font-size: var(--lead);
+  line-height: var(--lead-lh);
   -webkit-appearance: none;
 }
 
