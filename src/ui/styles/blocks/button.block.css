@@ -37,9 +37,3 @@
     transition: none;
   }
 }
-
-@media (max-width: 887px) {
-  :scope {
-    --text: 2.25rem;
-  }
-}
