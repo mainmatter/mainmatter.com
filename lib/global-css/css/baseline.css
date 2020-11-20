@@ -232,19 +232,6 @@ h5 {
 }
 
 @media (max-width: 887px) {
-  :root {
-    --label: 2.5rem;
-    --lead: 3rem;
-    --lead-lh: calc(5 / 3);
-    --h1: 4rem;
-    --h1-lh: 1.167;
-    --h2: 3.75rem;
-    --h2-lh: 1.2;
-    --h3: 3rem;
-    --h3-lh: 1.25;
-    --p: 1.875rem;
-  }
-
   h1 small {
     color: var(--color-text);
   }
