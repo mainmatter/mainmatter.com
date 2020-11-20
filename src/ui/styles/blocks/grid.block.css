@@ -29,8 +29,8 @@
 }
 
 .text {
-  font-size: var(--label);
-  line-height: var(--label-lh);
+  font-size: var(--p);
+  line-height: var(--p-lh);
 }
 
 @media (min-width: 888px) {
