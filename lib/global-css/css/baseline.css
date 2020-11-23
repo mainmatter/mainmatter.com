@@ -13,10 +13,9 @@
   --col-5: calc(var(--col) * 5 + var(--col-gap) * 4);
   --col-6: calc(var(--col) * 6 + var(--col-gap) * 5);
 
-  --col-max: 19.5rem;
   --offset-horizontal: 4rem;
 
-  --grid-content-columns: repeat(6, min(var(--col), var(--col-max)));
+  --grid-content-columns: repeat(6, var(--col));
   --grid-template-columns: minmax(var(--offset-horizontal), 1fr) var(--grid-content-columns)
     minmax(var(--offset-horizontal), 1fr);
 
@@ -102,6 +101,7 @@ html {
 @media (min-width: 1440px) {
   :root {
     --base-scale: 1; /* == 8px */
+    --col: 19.5rem;
   }
 }
 
