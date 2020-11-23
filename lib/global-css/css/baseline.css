@@ -101,7 +101,7 @@ html {
 @media (min-width: 1440px) {
   :root {
     --base-scale: 1; /* == 8px */
-    --col: 19.5rem;
+    --col: 22rem;
   }
 }
 
