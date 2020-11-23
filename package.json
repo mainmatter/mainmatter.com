@@ -61,7 +61,7 @@
     "ember-cli-inject-live-reload": "^2.0.2",
     "ember-cli-tslint": "^0.1.3",
     "ember-cli-uglify": "^3.0.0",
-    "eslint": "^7.13.0",
+    "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-config-simplabs": "^0.4.0",
     "eslint-plugin-prettier": "^3.1.4",
