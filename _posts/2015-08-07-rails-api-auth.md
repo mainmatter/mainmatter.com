@@ -11,12 +11,12 @@ topic: ruby
 ---
 
 We are happy to announce the first public release of the
-[rails_api_auth gem](https://github.com/simplabs/rails_api_auth). rails*api_auth
-is a \*\*lightweight Rails Engine that implements the *"Resource Owner Password
-Credentials Grant"\_ OAuth 2.0 flow** as well as Facebook authentication and is
-**built for usage in API projects\*\*. If you’re building a client side
-application with e.g. a browser MVC like [Ember.js](http://emberjs.com) (where
-you might be using
+[`rails_api_auth` gem](https://github.com/simplabs/rails_api_auth).
+`rails_api_auth` is a **lightweight Rails Engine that implements the _"Resource
+Owner Password Credentials Grant"_ OAuth 2.0 flow** as well as Facebook
+authentication and is **built for usage in API projects**. If you’re building a
+client side application with e.g. a browser MVC like
+[Ember.js](http://emberjs.com) (where you might be using
 [Ember Simple Auth](https://github.com/simplabs/ember-simple-auth) which works
 great with rails_api_auth of course), a mobile app or anything else that’s
 backed by a Rails-based API, rails_api_auth is for you.
