@@ -74,7 +74,7 @@ Details of this process can be read up in the tutorial, we'll use the included
 `dummy` application to play with the things we build and start generating our
 first component straight away.
 
-### Find an preload images
+### Finding and preloading images
 
 To ensure that a demo runs successfully and a potential user doesn't end up with
 blank spaces or slow loading or missing images, it is necessary to find and
