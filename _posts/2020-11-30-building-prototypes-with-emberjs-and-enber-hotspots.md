@@ -207,7 +207,39 @@ generates a wrapping `<div>` with a custom `style` attribute which contains the
 `height` of the container. Using CSS custom properties allows easy access to the
 width when styling child elements of this component.
 
-TODO: Add Gist
+```hbs
+<div ...attributes class="eh-background" style={{this.style}}>
+  {{yield}}
+</div>
+```
+
+```js
+export default class EHBackgroundComponent extends Component {
+  // ...
+
+  get style() {
+    const { width, height } = this.backgroundImageInfo;
+    const styles = [
+      `background-image:url(${this.args.src})`,
+      `--eh-background-width:${width}px`,
+      `--eh-background-height:${height}px`,
+    ];
+
+    return htmlSafe(styles.join(';'));
+  }
+}
+```
+
+```css
+.eh-background {
+  position: relative;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  overflow-x: hidden;
+  height: var(--eh-background-height, 100%);
+}
+```
 
 `<EhHotspot />` is a little more complex, mostly because I wanted to cover some
 common use cases out of the box. One neat aspect is the positioning, which is
@@ -283,6 +315,14 @@ export default class EHHotspotComponent extends Component {
 
     return htmlSafe(styles.join(';'));
   }
+}
+```
+
+```css
+.eh-hotspot {
+  position: absolute;
+  background-size: auto 100%;
+  margin-left: calc(50% - 0.5 * var(--eh-background-width));
 }
 ```
 
