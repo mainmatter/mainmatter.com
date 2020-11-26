@@ -17,13 +17,13 @@ that thing that is made from static images and enriched with hotspots, page
 transitions and states?
 
 Reaching for Invision or Marvel or the built-in features in Figma, Sketch or
-Adobe XD is your obvious choice. About 90% into the project you realize that
-your project owner needs something in this demo, which can't be done in the tool
-you chose. You hit the same wall I did a while ago.
+Adobe XD is your obvious choice. About 90% into the project you realize you need
+something in the demo which can't be done in the tool you chose. You hit the
+same wall I did a while ago.
 
 I was looking for alternative solutions and while Framer does provide many
 possibilities, I wished there was a different tool which would sit closer to the
-apps I write for my clients. Dummies are a helpful tool to explore new ideas
+apps we write for our clients. Dummies are a helpful tool to explore new ideas
 inside an existing product after all.
 
 Given our client apps are written in Ember.js this was bound to be a new addon
@@ -51,11 +51,11 @@ Ember.js addon.
 ### Steps involved
 
 1. Creating a new ember-cli addon
-2. Find and preload all images necessary for your prototype
-3. Create a component for backgrounds providing a canvas for your prototype
-4. Create a component for hotspots which can be used to trigger actions or
+2. Finding and preloading all images necessary for your prototype
+3. Creating a component for backgrounds providing a canvas for your prototype
+4. Creating a component for hotspots which can be used to trigger actions or
    navigate to other pages
-5. Combine everything into a demo application
+5. Combining everything into a demo application
 
 ### Creating a new ember-cli addon
 
@@ -77,19 +77,19 @@ first component straight away.
 ### Finding and preloading images
 
 To ensure that a demo runs successfully and a potential user doesn't end up with
-blank spaces or slow loading or missing images, it is necessary to find and
-preload all necessary images. It also helps to know the image dimensions
-beforehand so the browser can reserve screen space for them. The latter also
-allows creating hotspots or overlays that are sized by their image content.
+blank spaces or slow loading or missing images, it is necessary to preload all
+necessary images. It also helps to know the image dimensions beforehand so the
+browser can reserve screen space for them. The latter also allows creating
+hotspots or overlays that are sized by their image content.
 
-My initial approach to this is creating a JSON file which contains paths and
-sizes of all images relevant to the hotspots. This allows me to load the images
-as needed, gives me metadata ahead of their load and allows me to verify that
-the image files referenced in the hotspots do exist in case I need to detect
-spelling errors or wrongly named files.
+My initial approach to this is creating a JSON file at build time which contains
+paths and sizes of all images relevant to the hotspots. This allows me to load
+the images as needed, gives me metadata ahead of their load and allows me to
+verify that the image files referenced in the hotspots do exist in case I need
+to detect spelling errors or wrongly named files.
 
 Even though using Ember.js on a daily basis, I rarely dig into the deeper
-plumbing behind the scenes of ember-cli and it's Broccoli asset pipeline. This
+plumbing behind the scenes of ember-cli and it's Broccoli build pipeline. This
 project allowed me to get a first introduction into the finer details.
 
 While it did look complex at first, Broccoli turned out to be approachable, as
@@ -141,7 +141,7 @@ module.exports = class SizeUpImages extends Plugin {
 
 Going down this path made me realize that the addons `index.js` is just a small
 module that is executed by Node.js, meaning you can reach for anything that
-works other node modules as well.
+works in other node modules as well.
 
 The `contentFor()` hook inside an Ember addon runs on initial startup only, the
 experience is about the same as with ember-cli-build.js changes that require a
@@ -217,7 +217,7 @@ JavaScript.
 
 Hotspots accept multiple arguments. You can pass a route name (as a string) to
 make them transition to a new route. You can pass an `@action` to make them
-trigger that function. You can also adjust the trigger event (which defaults to
+trigger that action. You can also adjust the trigger event (which defaults to
 `click`) and even use a custom `hover` trigger to create hover effects in your
 mockup.
 
