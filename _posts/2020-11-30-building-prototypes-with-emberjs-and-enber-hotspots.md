@@ -377,8 +377,7 @@ multiple existing and battle tested addons which provide building blocks for all
 steps necessary. There is
 [ember-cli-ifa](https://github.com/adopted-ember-addons/ember-cli-ifa) which
 gives your app a fingerprinted list of all your assets, including any images.
-[ember-cli-workbox](https://github.com/BBVAEngineering/ember-cli-workbox)
-provides service workers for automatic loading and preloading of assets. The
-options for improvements without requiring any user of this addon to change
-their workflow or even adjust their own code is one of the more powerful aspects
-of the Ember.js ecosystem.
+[ember-cli-workbox](https://github.com/BBVAEngineering/ember-cli-workbox) allows
+preloading assets via service workers. The options for improvements without
+requiring any user of this addon to change their workflow or even adjust their
+own code is one of the more powerful aspects of the Ember.js ecosystem.
