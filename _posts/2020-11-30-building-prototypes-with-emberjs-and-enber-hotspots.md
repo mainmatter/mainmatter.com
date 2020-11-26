@@ -12,30 +12,47 @@ description:
 #  image: /assets/images/posts/.../og-image.png
 ---
 
-You are in charge of creating click dummies, interactive demos or that thing
-that is made from static images and enriched with hotspots, page transitions and
-states.
+Have you ever been in charge of creating click dummies, interactive demos or
+that thing that is made from static images and enriched with hotspots, page
+transitions and states?
 
-You reach for Invision or Marvel or the built-in features in Figma, Sketch or
-Adobe XD. About 90% into the project you realize that your project owner needs
-something in this demo, which can't be done in the tool you chose.
+Reaching for Invision or Marvel or the built-in features in Figma, Sketch or
+Adobe XD is your obvious choice. About 90% into the project you realize that
+your project owner needs something in this demo, which can't be done in the tool
+you chose. You hit the same wall I did a while ago.
 
-In this post I explain how I created
-[ember-hotspots](https://github.com/simplabs/ember-hotspots), an addon for
-Ember.js which allows you to create prototypes from scratch while using little
-code, but with the full power of the Ember.js ecosystem whenever you need it.
-The addon can be used in existing Ember.js projects, making it easy to explore
-new ideas.
+I was looking for alternative solutions and while Framer does provide many
+possibilities, I wished there was a different tool which would sit closer to the
+apps I write for my clients. Dummies are a helpful tool to explore new ideas
+inside an existing product after all.
+
+Given our client apps are written in Ember.js this was bound to be a new addon
+for the Ember community. Allowing you to create prototypes, while using little
+code, but with the full power of the Ember.js ecosystem whenever you need it,
+thus making it easier to explore new ideas no matter if you start from scratch
+or want to improve on an existing prject.
 
 <!--break-->
+
+### What makes a click dummy
+
+In short, we are talking about adding interaction to static images.
+
+You lay out a background layer image which provides the overall look for the
+idea you want to present and add as many interactive elements on top of that. As
+most designs are centered in the browser, it would be nice to start out with a
+centered background. It would also be great to be able to show and hide elements
+on the fly. Also it is important that all images are loaded before you start
+navigating the demo so it doesn't look broken.
+
+Thankfully, all of the above should be and in fact is achievable in a new
+Ember.js addon.
 
 ### Steps involved
 
 1. Creating a new ember-cli addon
-2. Find a way to inform the app about images sizes before they are loaded. This
-   way hotspots and backgrounds can be sized with less manual work and we get
-   real-time feedback if something is wrong with file names or paths
-3. Create a component for backgrounds to built up the overall page
+2. Find and preload all images necessary for your prototype
+3. Create a component for backgrounds providing a canvas for your prototype
 4. Create a component for hotspots which can be used to trigger actions or
    navigate to other pages
 5. Combine everything into a demo application
@@ -57,9 +74,21 @@ Details of this process can be read up in the tutorial, we'll use the included
 `dummy` application to play with the things we build and start generating our
 first component straight away.
 
-### Automatically finding images sizes
+### Find an preload images
 
-Even though I'm using Ember.js on a daily basis, I rarely dig into the deeper
+To ensure that a demo runs successfully and a potential user doesn't end up with
+blank spaces or slow loading or missing images, it is necessary to find and
+preload all necessary images. It also helps to know the image dimensions
+beforehand so the browser can reserve screen space for them. The latter also
+allows creating hotspots or overlays that are sized by their image content.
+
+My initial approach to this is creating a JSON file which contains paths and
+sizes of all images relevant to the hotspots. This allows me to load the images
+as needed, gives me metadata ahead of their load and allows me to verify that
+the image files referenced in the hotspots do exist in case I need to detect
+spelling errors or wrongly named files.
+
+Even though using Ember.js on a daily basis, I rarely dig into the deeper
 plumbing behind the scenes of ember-cli and it's Broccoli asset pipeline. This
 project allowed me to get a first introduction into the finer details.
 
@@ -159,9 +188,16 @@ module.exports = {
 
 ### Building the components
 
-I wanted two main components: One for inert backgrounds which can act as a
-container and show a large image horizontally centered. Another for interactive
-hotspots that can be layout out and moved about relative to a background.
+The addon will provide two main building blocks which can be used to diplay an
+image and add interactive areas to it.
+
+One for inert backgrounds which can act as a container and show a large image
+that is commonly horizontally centered, allowing designers to provide mockups
+with extended background design on each side so the mockup doesn't look cut off
+when resizing the browser.
+
+Another for interactive hotspots that can be layed out and moved about relative
+to a background.
 
 `<EhBackground />` provides the background images. Reading from the image map we
 generated above it also checks if you are referencing an existing image and
@@ -280,8 +316,8 @@ export default class EHHotspotComponent extends Component {
 ```
 
 This is the resulting code for small simple click dummy. It uses
-[ember-truth-helpers](), which allows us to apply some logic directly in the
-templates.
+[ember-truth-helpers](https://github.com/jmurphyau/ember-truth-helpers), which
+allows us to apply some logic directly in the templates.
 
 It opens a menu that only appears when clicking on the menu button (which is
 part of the background image). It also has two hotspots that show an image when
@@ -292,5 +328,17 @@ they not only have an hover effect, but also navigate to a new page with a
 different `<EhBackground />` and more functionality.
 
 For further inspiration look at [the dummy application]() that is part of the
-[ember-hotspots](https://github.com/simplabs/ember-hotspots) addon, which is
-available now.
+[ember-hotspots](https://github.com/simplabs/ember-hotspots).
+
+### To be continued…
+
+Is a custom Broccoli plugin the right way to build this tool? Maybe. There are
+multiple existing and battle tested addons which provide building blocks for all
+steps necessary. There is
+[ember-cli-ifa](https://github.com/adopted-ember-addons/ember-cli-ifa) which
+gives your app a fingerprinted list of all your assets, including any images.
+[ember-cli-workbox](https://github.com/BBVAEngineering/ember-cli-workbox)
+provides service workers for automatic loading and preloading of assets. The
+options for improvements without requiring any user of this addon to change
+their workflow or even adjust their own code is one of the more powerful aspects
+of the Ember.js ecosystem.
