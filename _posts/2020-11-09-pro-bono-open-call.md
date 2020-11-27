@@ -72,5 +72,5 @@ We will offer one of the following services:
 
 In order to apply, simply
 [fill out this form](https://forms.gle/4DLs5ETzXWtfP38u8). We are excited to get
-to know you and collaborate with you. We will be reviewing submissions and
-selecting our finalist by **November 27, 2020**.
+to know you and collaborate with you. **We have extended our application
+deadline to November 29, 2020**.
