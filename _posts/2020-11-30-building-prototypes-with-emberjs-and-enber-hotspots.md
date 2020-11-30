@@ -9,7 +9,7 @@ description:
   'Create click dummies and prototypes that can grow over your initial ideas
   with ease and the full force of the Ember.js ecosystem.'
 og:
- image: /assets/images/posts/2020-11-30-building-prototypes-with-emberjs-and-enber-hotspots/og-image.png
+  image: /assets/images/posts/2020-11-30-building-prototypes-with-emberjs-and-enber-hotspots/og-image.png
 ---
 
 Have you ever been in charge of creating click dummies, interactive demos or
@@ -260,7 +260,7 @@ you click and hold anywhere on the page. This is used with a CSS animation to
 visualize all hotspots on a page by highlighting them blue after a short
 interval.
 
-You can use the `(array)` helper to pass in coordinates to an hotspot like so:
+You can use the `(array)` helper to pass in coordinates to a hotspot like so:
 `@rect=(array 0 0)`. Just like the background, the component will also validate
 passed in image `@src` against the generated asset list. While hotspots do not
 necessarily require an image to work, adding an image makes them more versatile.
@@ -359,7 +359,7 @@ export default class EHHotspotComponent extends Component {
 </EhBackground>
 ```
 
-This is the resulting code for small simple click dummy. It uses
+This is the resulting code for a small and simple click dummy. It uses
 [ember-truth-helpers](https://github.com/jmurphyau/ember-truth-helpers), which
 allows us to apply some logic directly in the templates.
 
@@ -368,11 +368,17 @@ part of the background image). It also has two hotspots that show an image when
 hovering over them.
 
 Next step for this mockup would be to add `@route` arguments to the buttons so
-they not only have an hover effect, but also navigate to a new page with a
+they not only have a hover effect, but also navigate to a new page with a
 different `<EhBackground />` and more functionality.
 
 For further inspiration look at [the dummy application]() that is part of the
 [ember-hotspots](https://github.com/simplabs/ember-hotspots).
+
+The resulting Ember.js addon shows how little code is necessary to bring ideas
+to live thanks to the tools that make up the Ember.js ecosystem. There is a lot
+of potential in this concept beyond just small small click dummies. I want to
+explore the options of including this into existing applications and maybe even
+add support for animations in the future.
 
 ### To be continued…
 
