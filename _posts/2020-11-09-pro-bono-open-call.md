@@ -68,9 +68,6 @@ We will offer one of the following services:
 - Willing to share the project on their social media
 - Nice to have: in the sustainability, mobility, or education space
 
-## Apply now
+## Thank you for applying
 
-In order to apply, simply
-[fill out this form](https://forms.gle/4DLs5ETzXWtfP38u8). We are excited to get
-to know you and collaborate with you. **We have extended our application
-deadline to November 29, 2020**.
+**Pro-bono applications have closed on November 29, 2020.**
