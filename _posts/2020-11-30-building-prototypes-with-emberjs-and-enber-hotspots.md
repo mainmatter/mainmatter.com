@@ -8,8 +8,8 @@ bio: 'Consultant for Design & Technology'
 description:
   'Create click dummies and prototypes that can grow over your initial ideas
   with ease and the full force of the Ember.js ecosystem.'
-#og:
-#  image: /assets/images/posts/.../og-image.png
+og:
+ image: /assets/images/posts/2020-11-30-building-prototypes-with-emberjs-and-enber-hotspots/og-image.png
 ---
 
 Have you ever been in charge of creating click dummies, interactive demos or
@@ -33,6 +33,8 @@ thus making it easier to explore new ideas no matter if you start from scratch
 or want to improve on an existing prject.
 
 <!--break-->
+
+![Better click dummies and prototypes with Ember.js](/assets/images/posts/2020-11-30-building-prototypes-with-emberjs-and-enber-hotspots/illustration.svg#full)
 
 ### What makes a click dummy
 
@@ -327,6 +329,8 @@ export default class EHHotspotComponent extends Component {
 ```
 
 ### Combining everything
+
+![Better click dummies and prototypes with Ember.js](/assets/images/posts/2020-11-30-building-prototypes-with-emberjs-and-enber-hotspots/ember-hotspots-animation.gif)
 
 ```hbs
 <EhBackground @src="Home@2x.png">
