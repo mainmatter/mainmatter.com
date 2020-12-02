@@ -371,8 +371,9 @@ Next step for this mockup would be to add `@route` arguments to the buttons so
 they not only have a hover effect, but also navigate to a new page with a
 different `<EhBackground />` and more functionality.
 
-For further inspiration look at [the dummy application]() that is part of the
-[ember-hotspots](https://github.com/simplabs/ember-hotspots).
+For further inspiration look at
+[the dummy application](https://simplabs.github.io/ember-hotspots/) that is part
+of the [ember-hotspots](https://github.com/simplabs/ember-hotspots).
 
 The resulting Ember.js addon shows how little code is necessary to bring ideas
 to live thanks to the tools that make up the Ember.js ecosystem. There is a lot
