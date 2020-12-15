@@ -1,6 +1,43 @@
 @block layout from "../../styles/blocks/layout.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
+@block header-content from "../HeaderContent/stylesheet.css";
 
 :scope {
   block-name: PageBuiltToLast;
   composes: 'layout';
 }
+
+.video {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header-content {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  width: 100%;
+}
+
+.h1,
+.h2 {
+  text-align: center;
+  color: #fff;
+}
+
+.h1 {
+  line-height: var(--h1-lh);
+  font-size: 8.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.h2 {
+  margin-bottom: 0;
+  font-size: 4.5rem;
+}
+
+@export header-content;
+@export typography;
