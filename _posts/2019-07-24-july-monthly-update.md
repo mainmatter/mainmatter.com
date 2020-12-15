@@ -18,7 +18,7 @@ happening at simplabs along with the things we're looking forward to. Enjoy.
 
 ## News
 
-![Upcoming webinar - The ultimate marketers guide to modern web apps and why users are demanding more](/assets/images/posts/2019-07-24-july-monthly-update/simplabs-webinar-modern-web-apps-for-marketers.png#@600-1200)]
+![Upcoming webinar - The ultimate marketers guide to modern web apps and why users are demanding more](/assets/images/posts/2019-07-24-july-monthly-update/simplabs-webinar-modern-web-apps-for-marketers.png#@600-1200)
 
 On August 12th at 6pm UTC+2 we're running a webinar to help forward-looking
 marketers understand recent changes in web technology and how they can be used
