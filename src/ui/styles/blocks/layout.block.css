@@ -33,14 +33,24 @@
   grid-column: 1/-2;
 }
 
-.col-2of3 {
+.thirds-left-double {
   display: flex;
-  grid-column: -8/-4;
+  grid-column: 2/6;
 }
 
-.col-1of3 {
+.thirds-left {
   display: flex;
-  grid-column: -4/-2;
+  grid-column: 2/4;
+}
+
+.thirds-mid {
+  display: flex;
+  grid-column: 4/6;
+}
+
+.thirds-right {
+  display: flex;
+  grid-column: 6/8;
 }
 
 @media (min-width: 888px) {
