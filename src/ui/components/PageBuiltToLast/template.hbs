@@ -1,7 +1,7 @@
 <div>
   <Header @title="Built to Last">
     <div header-content:scope>
-      <video
+        <video
         playsinline
         autoplay
         muted
@@ -13,14 +13,10 @@
         <source src="/assets/images/built-to-last/header-video.mp4" type="video/mp4" />
       </video>
       <div block:class="header-content">
-        <h1 block:class="h1">
-          Built to last
-        </h1>
-        <h2 block:class="h2">
-          A resource hub for innovators and entrepreneurs
-        </h2>
+        <h1 block:class="h1">Built to last</h1>
+        <h2 block:class="h2">A resource hub for innovators and entrepreneurs</h2>
       </div>
-    </div>
+      </div>
   </Header>
 
   <div layout:class="full" offset:class="after-21">
@@ -31,6 +27,7 @@
       Learn real-world process improvements to help your team tap into it's full potential, and set up the infrastructure and practices that are the foundation for sustainable development.
     </p>
   </div>
+
   <div layout:scope offset:class="after-21">
     <div layout:class="col-2of3">
       <MediaCard />
@@ -39,4 +36,6 @@
       <MediaCard />
     </div>
   </div>
+
+  <Footer />
 </div>
