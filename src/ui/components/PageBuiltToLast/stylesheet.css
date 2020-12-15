@@ -1,5 +1,6 @@
 @block layout from "../../styles/blocks/layout.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
+@block offset from "../../styles/blocks/offset.block.css";
 @block header-content from "../HeaderContent/stylesheet.css";
 
 :scope {
@@ -41,3 +42,5 @@
 
 @export header-content;
 @export typography;
+@export layout;
+@export offset;
