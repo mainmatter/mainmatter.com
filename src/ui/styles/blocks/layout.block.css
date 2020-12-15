@@ -33,6 +33,16 @@
   grid-column: 1/-2;
 }
 
+.col-2of3 {
+  display: flex;
+  grid-column: -8/-4;
+}
+
+.col-1of3 {
+  display: flex;
+  grid-column: -4/-2;
+}
+
 @media (min-width: 888px) {
   .main {
     grid-column: 2/5;

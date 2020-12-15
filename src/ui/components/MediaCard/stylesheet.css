@@ -1,0 +1,19 @@
+@block typography from "../../styles/blocks/typography.block.css";
+
+:scope {
+  block-name: MediaCard;
+}
+
+.image {
+  width: 100%;
+  max-height: 42rem;
+  object-fit: cover;
+  margin-bottom: 5rem;
+  border-bottom: 1rem solid var(--color-accent);
+}
+
+.h3 {
+  margin-top: 3rem;
+}
+
+@export typography;
