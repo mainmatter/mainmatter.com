@@ -137,7 +137,7 @@ class SimplabsApp extends GlimmerApp {
       file: 'built-to-last.js',
       moduleName: '__builtToLast__',
     });
-    mainSiteTree = mainSiteNonTalksTree;
+    mainSiteTree = mainSiteNonBuiltToLastTree;
 
     let appTree = super.package(mainSiteTree);
     let mainTree = new MergeTrees([

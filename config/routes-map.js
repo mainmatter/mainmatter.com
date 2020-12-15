@@ -92,7 +92,10 @@ module.exports = function () {
     '/talks': { component: 'PageTalks', bundle: { asset: '/talks.js', module: '__talks__' } },
     '/why-simplabs': { component: 'PageWhySimplabs' },
     '/work': { component: 'PageWork' },
-    '/built-to-last': { component: 'PageBuiltToLast', bundle: { asset: '/built-to-last.js', module: '__builtToLast__' } },
+    '/built-to-last': {
+      component: 'PageBuiltToLast',
+      bundle: { asset: '/built-to-last.js', module: '__builtToLast__' },
+    },
   };
 
   return routes;
