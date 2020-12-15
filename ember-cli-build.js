@@ -132,6 +132,13 @@ class SimplabsApp extends GlimmerApp {
     });
     mainSiteTree = mainSiteNonRecentTree;
 
+    let [builtToLastTree, mainSiteNonBuiltToLastTree] = this._splitBundle(mainSiteTree, {
+      componentPrefix: 'PageBuiltToLast',
+      file: 'built-to-last.js',
+      moduleName: '__builtToLast__',
+    });
+    mainSiteTree = mainSiteNonTalksTree;
+
     let appTree = super.package(mainSiteTree);
     let mainTree = new MergeTrees([
       appTree,
@@ -139,6 +146,7 @@ class SimplabsApp extends GlimmerApp {
       calendarTree,
       talksTree,
       recentContentTree,
+      builtToLastTree,
       ...blogPostTrees,
       ...blogAuthorTrees,
       ...blogPageTrees,

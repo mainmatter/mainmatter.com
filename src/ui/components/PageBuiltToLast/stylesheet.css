@@ -1,0 +1,6 @@
+@block layout from "../../styles/blocks/layout.block.css";
+
+:scope {
+  block-name: PageBuiltToLast;
+  composes: 'layout';
+}
