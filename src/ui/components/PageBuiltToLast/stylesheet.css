@@ -41,6 +41,27 @@
   font-size: 4.5rem;
 }
 
+.media-card-double {
+  display: flex;
+  grid-column: 2/6;
+}
+
+.media-card {
+  display: flex;
+}
+
+.media-card:first-child {
+  grid-column: 2/4;
+}
+
+.media-card:nth-child(2) {
+  grid-column: 4/6;
+}
+
+.media-card:last-child {
+  grid-column: 6/8;
+}
+
 .cta {
   text-align: center;
 }

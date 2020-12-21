@@ -33,26 +33,6 @@
   grid-column: 1/-2;
 }
 
-.thirds-left-double {
-  display: flex;
-  grid-column: 2/6;
-}
-
-.thirds-left {
-  display: flex;
-  grid-column: 2/4;
-}
-
-.thirds-mid {
-  display: flex;
-  grid-column: 4/6;
-}
-
-.thirds-right {
-  display: flex;
-  grid-column: 6/8;
-}
-
 @media (min-width: 888px) {
   .main {
     grid-column: 2/5;
