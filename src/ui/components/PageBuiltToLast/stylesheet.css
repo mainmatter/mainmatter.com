@@ -46,7 +46,8 @@
   grid-column: 2/6;
 }
 
-.media-card {
+.media-card,
+.workshop-card {
   display: flex;
 }
 
@@ -87,6 +88,14 @@
 
 .cta-lead {
   margin-bottom: 5rem;
+}
+
+.workshop-col:first-child {
+  margin-top: 11.25rem;
+}
+
+.workshop-card {
+  margin-bottom: 12rem;
 }
 
 @export header-content;

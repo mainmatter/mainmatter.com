@@ -13,7 +13,7 @@ export default class ArrowLink extends Component {
 
   @tracked
   get isLead() {
-    return Object.hasOwnProperty.call(this.args, "lead") ? this.args.lead : true;
+    return Object.hasOwnProperty.call(this.args, 'lead') ? this.args.lead : true;
   }
 
   @tracked
