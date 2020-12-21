@@ -1,0 +1,49 @@
+@block typography from "../../styles/blocks/typography.block.css";
+
+:scope {
+  block-name: WorkshopCard;
+  display: grid;
+  grid-template-columns: 22.5rem repeat(2, 1fr);
+  column-gap: var(--col-gap);
+  background: linear-gradient(to left, var(--color-light), var(--color-light)) no-repeat 11.25rem 11.25rem;
+  padding: 0 var(--col-gap) var(--col-gap) 0;
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  padding-right: var(--col-gap);
+}
+
+.tag {
+  background: var(--color-accent);
+  width: 8rem;
+  display: block;
+  height: 8rem;
+  line-height: 8rem;
+  text-align: center;
+  color: white;
+  font-size: 5rem;
+  margin-top: 7.25rem;
+}
+
+.tutors {
+  grid-column: 1;
+}
+
+.image {
+  width: 100%;
+  margin-bottom: var(--col-gap);
+  object-fit: cover;
+  height: auto;
+}
+
+.content {
+  grid-column: 2/4;
+}
+
+.title {
+  margin-top: 3rem;
+}
+
+@export typography;

@@ -1,0 +1,24 @@
+<div>
+  <div block:class="tutors">
+    {{#each this.authors key="id" as |author|}}
+      <img src="/assets/images/authors/{{author.name}}.jpg" block:class="image" />
+    {{/each}}
+  </div>
+  <div block:class="content">
+    <p typography:class="small" block:class="label">
+      {{@label}}
+    </p>
+    <span block:class="tag">
+      {{@tag}}
+    </span>
+    <h3 typography:class="h3" block:class="title">
+      {{@title}}
+    </h3>
+    <p typography:class="p">
+      {{@description}}
+    </p>
+    <ArrowLink @href="#" @lead={{false}} @leftAlign={{true}}>
+      Book Workshop
+    </ArrowLink>
+  </div>
+</div>
