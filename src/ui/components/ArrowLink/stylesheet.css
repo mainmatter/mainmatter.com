@@ -13,8 +13,8 @@
   display: inline-block;
   padding: 1.5rem 7rem 1.5rem 0;
   color: var(--color-link);
-  font-size: var(--lead);
   line-height: var(--lead-lh);
+  font-size: var(--lead);
   text-decoration: none;
   pointer-events: all;
 }
@@ -45,6 +45,10 @@
 
 :scope[leftAlign='true'] {
   text-align: left;
+}
+
+:scope[lead='false'] .link {
+  font-size: var(--p);
 }
 
 :scope[reverse='true'] .link {

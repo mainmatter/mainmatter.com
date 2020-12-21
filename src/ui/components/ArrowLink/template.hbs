@@ -1,4 +1,4 @@
-<p block:reverse="{{@reverse}}" block:leftAlign="{{@leftAlign}}">
+<p block:reverse="{{@reverse}}" block:leftAlign="{{@leftAlign}}" block:lead="{{this.isLead}}">
   <a block:class="link" href={{@href}} target={{this.target}} data-internal={{this.isInternal}} rel={{this.rel}}>
     {{yield}}
     <svg height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg" block:class="svg">
