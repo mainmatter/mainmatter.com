@@ -1,6 +1,7 @@
 @block layout from "../../styles/blocks/layout.block.css";
 @block typography from "../../styles/blocks/typography.block.css";
 @block offset from "../../styles/blocks/offset.block.css";
+@block button from "../../styles/blocks/button.block.css";
 @block header-content from "../HeaderContent/stylesheet.css";
 
 :scope {
@@ -40,7 +41,35 @@
   font-size: 4.5rem;
 }
 
+.cta {
+  text-align: center;
+}
+
+.cta-small {
+  color: var(--color-accent);
+}
+
+.cta-small::before {
+  content: ' ';
+  height: 12rem;
+  width: 2px;
+  background: var(--color-accent);
+  display: block;
+  margin: 0 auto 2rem auto;
+}
+
+.cta-h2 {
+  margin-bottom: resolve('typography.h2');
+  margin-bottom: 5rem;
+  margin-top: 8rem;
+}
+
+.cta-lead {
+  margin-bottom: 5rem;
+}
+
 @export header-content;
 @export typography;
 @export layout;
 @export offset;
+@export button;
