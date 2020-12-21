@@ -62,7 +62,7 @@
     "ember-cli-tslint": "^0.1.3",
     "ember-cli-uglify": "^3.0.0",
     "eslint": "^7.15.0",
-    "eslint-config-prettier": "^7.0.0",
+    "eslint-config-prettier": "^7.1.0",
     "eslint-config-simplabs": "^0.4.0",
     "eslint-plugin-prettier": "^3.3.0",
     "express": "^4.17.1",
