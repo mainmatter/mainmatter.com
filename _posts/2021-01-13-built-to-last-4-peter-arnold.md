@@ -6,7 +6,9 @@ twitter: marcoow
 topic: process
 bio: 'Founder and Managing Director of simplabs'
 description:
-  "simplabs' founder Marco Otte-Witte speaks with Peter Arnold, the CEO and co-founder of EnterAnGo, an all-in-one travel management tool for business travelers."
+  "simplabs' founder Marco Otte-Witte speaks with Peter Arnold, the CEO and
+  co-founder of EnterAnGo, an all-in-one travel management tool for business
+  travelers."
 og:
   image: /assets/images/posts/2020-12-29-built-to-last-3-joel-kelly/og-image.png
 ---
