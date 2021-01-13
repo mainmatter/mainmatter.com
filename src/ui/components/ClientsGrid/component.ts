@@ -134,6 +134,13 @@ const allClients = [
     text:
       'Medify offers high-quality medical admissions help and was used by 2 in 3 of 2020\'s UCAT applicants in the UK. simplabs supported their team with identifying issues in their Ember.js apps, architectural advice as well as releasing a business-critical project on schedule.',
   },
+  {
+    id: 'poellath',
+    name: 'POELLATH',
+    src: '/assets/images/logos/poellath.png',
+    text:
+      'POELLATH is a german law firm specializing in advice on transactions and asset management. When they were looking to build custom software tools to improve workflows, we conducted a product strategy workshop with them to develop a clear understanding of these tools and enable next steps.',
+  },
 ];
 
 export default class ClientsGrid extends Component {
