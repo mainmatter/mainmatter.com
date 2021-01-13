@@ -63,6 +63,21 @@
   grid-column: 6/8;
 }
 
+@media (max-width: 887px) {
+  .media-card,
+  .media-card:first-child,
+  .media-card:last-child,
+  .media-card:nth-child(2),
+  .media-card-double {
+    grid-column: 2/-2;
+    margin-bottom: 5rem;
+  }
+
+  .media-card:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .cta {
   text-align: center;
 }
