@@ -141,6 +141,13 @@ const allClients = [
     text:
       'POELLATH is a German law firm specializing in advice on transactions and asset management. When they were looking to build custom software tools to improve workflows, we conducted a product strategy workshop with them to develop a clear understanding of these tools and enable the next steps.',
   },
+  {
+    id: 'camilyo',
+    name: 'Camilyo',
+    src: '/assets/images/logos/camilyo.svg',
+    text:
+      'Camilyo is an integrated marketing platform for online service providers. simplabs supported their team with identifying and fixing issues in their Ember.js applications, improving their testing practices, adopting modern Ember.js patterns and leveling up their team along the way.',
+  },
 ];
 
 export default class ClientsGrid extends Component {
