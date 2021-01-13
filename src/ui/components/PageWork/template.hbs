@@ -41,10 +41,7 @@
     />
   </div>
 
-  <ClientsGrid
-    @title="Meet our clients"
-    @only="qonto,cardstack,generali,hopskipdrive,robinhood,clark,xbav,experteer,mvb"
-  />
+  <ClientsGrid @title="Meet our clients" @only="qonto,cardstack,generali,poellath,robinhood,clark,xbav,experteer,mvb" />
 
   <div layout:scope>
     <div layout:class="bleed-right" offset:class="after-5" block:class="trainline-logo">
@@ -80,7 +77,9 @@
     </div>
   </div>
 
-  <ClientsGrid @only="dim3,timify,embedd,medify,expedition,trainline,ringler,neighbourhoodie,loconet,erdil" />
+  <ClientsGrid
+    @only="hopskipdrive,dim3,timify,embedd,medify,expedition,trainline,ringler,neighbourhoodie,loconet,erdil"
+  />
 
   <div layout:class="bleed-left" offset:class="after-5">
     <ShapeImage @srcset="/assets/images/work/timify.svg" @align="left" @variant="mobile-flat" />
