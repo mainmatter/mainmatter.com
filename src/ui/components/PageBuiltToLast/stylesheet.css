@@ -111,6 +111,20 @@
 
 .playbook-sidebar {
   position: relative;
+  grid-column: 1/-1;
+}
+
+.playbook-image-wrapper {
+  clip-path: resolve('header-content.image-wrapper');
+  -webkit-clip-path: resolve('header-content.image-wrapper');
+  clip-path: none;
+  -webkit-clip-path: none;
+}
+
+@media (min-width: 888px) {
+  .playbook-sidebar {
+    grid-column: 5/-1;
+  }
 }
 
 .playbook-image {
