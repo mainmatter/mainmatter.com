@@ -8,26 +8,15 @@ module('Component: ClientsGrid', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    /*
-     * You may pass data into the component through arguments set on the
-     * `testContext`
-     *
-     * For example:
-     *
-     * ```
-     * this.foo = { foo: '123' };
-     *
-     * await render(hbs`<ClientsGrid @foo={{this.foo}} />`)
-     *
-     * // or
-     *
-     * this.foo = 'bar';
-     * await render(hbs`<p>{{this.foo}}</p>`);
-     *
-     * assert.dom('p').text('bar');
-     * ```
-     */
     await render(hbs`<ClientsGrid />`);
+
     assert.ok(this.containerElement.querySelector('div'));
+  });
+
+  test('it preserves the order of the specified clients', async function(assert) {
+    await render(hbs`<ClientsGrid @only="erdil,loconet" />`);
+
+    assert.ok(this.containerElement.querySelectorAll('figcaption')[0].textContent.includes('ERDiL'));
+    assert.ok(this.containerElement.querySelectorAll('figcaption')[1].textContent.includes('LoCoNET'));
   });
 });
