@@ -1,13 +1,13 @@
 <div>
-  <div block:class="tutors">
+  <div block:class="info">
     {{#each this.authors key="id" as |author|}}
       <img src="/assets/images/authors/{{author.name}}.jpg" block:class="image" />
     {{/each}}
-  </div>
-  <div block:class="content">
     <p typography:class="small" block:class="label">
       {{@label}}
     </p>
+  </div>
+  <div block:class="content">
     <span block:class="tag">
       {{@tag}}
     </span>

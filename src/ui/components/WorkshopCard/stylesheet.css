@@ -12,7 +12,8 @@
 
 .label {
   position: absolute;
-  padding-right: var(--col-gap);
+  top: 0;
+  left: calc(22.5rem + var(--col-gap));
 }
 
 .tag {
@@ -27,7 +28,7 @@
   margin-top: 7.25rem;
 }
 
-.tutors {
+.info {
   grid-column: 1;
 }
 
@@ -44,6 +45,43 @@
 
 .title {
   margin-top: 3rem;
+}
+
+@media (max-width: 887px) {
+  :scope {
+    grid-template-columns: var(--offset-horizontal) repeat(3, 1fr) var(--offset-horizontal);
+    background: linear-gradient(to left, var(--color-light), var(--color-light)) no-repeat 0 11.25rem;
+    padding: 0;
+  }
+
+  .info {
+    grid-column: 2/-2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .label {
+    position: relative;
+    top: unset;
+    left: unset;
+    min-width: 66%;
+    flex-basis: 66%;
+    flex-grow: 1;
+  }
+
+  .image {
+    width: 12.5rem;
+    margin-right: var(--col-gap);
+  }
+
+  .tag {
+    display: none;
+  }
+
+  .content {
+    grid-column: 2/-2;
+  }
 }
 
 @export typography;

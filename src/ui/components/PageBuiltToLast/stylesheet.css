@@ -145,12 +145,31 @@
   clip-path: polygon(0 0, 0 calc(100% + 1px), 100% calc(100% + 1px));
 }
 
-.workshop-col:first-child {
+.workshop-col-lead {
+  grid-column: 2/5;
+}
+
+.workshop-col-trail {
+  grid-column: -5/-2;
+}
+
+.workshop-col-lead:first-child {
   margin-top: 11.25rem;
 }
 
 .workshop-card {
   margin-bottom: 12rem;
+}
+
+@media (max-width: 887px) {
+  .workshop-col-lead,
+  .workshop-col-trail {
+    grid-column: 1/-1;
+  }
+
+  .workshop-col-lead:first-child {
+    margin-top: 0;
+  }
 }
 
 @export header-content;
