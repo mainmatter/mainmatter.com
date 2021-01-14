@@ -127,6 +127,13 @@ const allClients = [
     text:
       'ERDiL builds natural language processing software that helps companies analyze messages from their customers. They reached out to simplabs for guidance on writing tests for their Ember.js based dashboard app and establishing a sustainable testing culture.',
   },
+  {
+    id: 'medify',
+    name: 'Medify',
+    src: '/assets/images/logos/medify.svg',
+    text:
+      'Medify offers high-quality medical admissions help and was used by 2 in 3 of 2020\'s UCAT applicants in the UK. simplabs supported their team with identifying issues in their Ember.js apps, architectural advice as well as releasing a business-critical project on schedule.',
+  },
 ];
 
 export default class ClientsGrid extends Component {
