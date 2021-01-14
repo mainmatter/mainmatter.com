@@ -130,6 +130,6 @@ jobs:
       - name: build
         run: yarn build
 
-      - run: yarn run lhci autorun --collect.staticDistDir=./dist --collect.url=http://localhost/ --collect.url=http://localhost/blog/ --collect.url=http://localhost/services/ --collect.url=http://localhost/ember-consulting/ --collect.url=http://localhost/playbook/ --collect.url=http://localhost/contact/ --upload.target=temporary-public-storage
+      - run: yarn run lhci autorun --collect.staticDistDir=./dist --collect.url=http://localhost/ --collect.url=http://localhost/blog/ --collect.url=http://localhost/services/ --collect.url=http://localhost/ember-consulting/ --collect.url=http://localhost/playbook/ --collect.url=http://localhost/contact/ --collect.url=http://localhost/built-to-last/ --upload.target=temporary-public-storage
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
