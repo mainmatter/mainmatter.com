@@ -145,7 +145,7 @@ export default class ClientsGrid extends Component {
     let clients = allClients;
     let included = this.included;
     if (included.length > 0) {
-      clients = clients.filter(client => included.includes(client.id));
+      clients = included.map(i => clients.find(client => client.id === i));
     }
 
     return clients;
