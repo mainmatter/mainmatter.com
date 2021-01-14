@@ -10,7 +10,7 @@ description:
   platform providing event industry professionals with a modern approach to
   event management and insurance.'
 og:
-  image: /assets/images/posts/2020-12-29-built-to-last-2-joel-kelly/og-image.png
+  image: /assets/images/posts/2020-12-29-built-to-last-3-joel-kelly/og-image.png
 ---
 
 Marco Otte-Witte talks with Joel Kelly, founder & CEO of Eve, an online platform
