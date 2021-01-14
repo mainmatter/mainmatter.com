@@ -85,8 +85,8 @@ animations. Animation libraries like
 
 With a JavaScript based animation loop there is full control over timing and
 state. This makes it possible to take other elements into account. For example,
-you could take measurements of one element and animate another element from or
-to the position of the other.
+you could take measurements of an element A and animate an element B from the
+position and size of element A to element B's natural position.
 
 A basic animation loop takes a source and target state and based on a timing
 function calculate what the state for the current frame should be.
@@ -96,7 +96,8 @@ let sourceOpacity = 0;
 let targetOpacity = 1;
 let duration = 500;
 let time = 0;
-let FPS = 1000 / 60;
+// target 60 frames per second
+let frameDuration = 1000 / 60;
 
 let timer = setInterval(function () {
   // stop animation if time exceeds duration
@@ -115,8 +116,8 @@ let timer = setInterval(function () {
   element.style.opacity = opacity;
 
   // move to the next frame
-  time += FPS;
-}, FPS);
+  time += frameDuration;
+}, frameDuration);
 ```
 
 In the past animation loops with JavaScript had to be done through `setInterval`
@@ -388,6 +389,32 @@ animation finishes.
 
 ```javascript
 currentAnimation.finished.then(() => console.log('animation finished!'));
+```
+
+These functions behave a bit differently when an animation is cancelled. The
+`onfinish` hook is never called. Fortunately an `oncancel` hook also exists.
+
+```javascript
+// handling cancellation with hooks
+currentAnimation.onfinish = () => console.log('animation finished!');
+currentAnimation.oncancel = () => console.error('animation cancelled.');
+```
+
+The `finished` promise will throw an error which we will need to handle. We can
+of course also utilize async/await.
+
+```javascript
+// handling cancellation with promises
+currentAnimation.finished
+  .then(() => console.log('animation finished!'))
+  .catch((error) => console.error('animation cancelled.', error));
+
+// handling cancellation with async await
+try {
+  await currentAnimation.finished;
+} catch (error) {
+  console.error('animation cancelled.', error);
+}
 ```
 
 ## Conclusion
