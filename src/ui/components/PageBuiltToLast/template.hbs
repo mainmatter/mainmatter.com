@@ -1,6 +1,6 @@
 <div>
   <Header @title="Built to Last">
-    <div header-content:scope>
+    <div header-content:scope block:class="video-header">
       <video
         playsinline
         autoplay
@@ -9,6 +9,8 @@
         width="1280"
         height="498"
         poster="/assets/images/built-to-last/header-video.poster.jpg"
+        block:class="video"
+        data-header-background
       >
         <source src="/assets/images/built-to-last/header-video.mp4" type="video/mp4" />
       </video>

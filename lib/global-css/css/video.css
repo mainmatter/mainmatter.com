@@ -1,5 +1,5 @@
 /* we need to set this here since !important is not allowed in css-blocks */
-video {
+video:not([data-header-background]) {
   width: 100% !important;
   height: 100% !important;
 }
