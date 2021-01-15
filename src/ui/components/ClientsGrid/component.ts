@@ -139,7 +139,7 @@ const allClients = [
     name: 'POELLATH',
     src: '/assets/images/logos/poellath.png',
     text:
-      'POELLATH is a german law firm specializing in advice on transactions and asset management. When they were looking to build custom software tools to improve workflows, we conducted a product strategy workshop with them to develop a clear understanding of these tools and enable next steps.',
+      'POELLATH is a German law firm specializing in advice on transactions and asset management. When they were looking to build custom software tools to improve workflows, we conducted a product strategy workshop with them to develop a clear understanding of these tools and enable next steps.',
   },
 ];
 
