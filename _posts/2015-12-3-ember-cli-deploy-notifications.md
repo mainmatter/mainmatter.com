@@ -13,7 +13,12 @@ topic: ember
 A few weeks ago a new version of the _"official"_ ember deployment solution
 [ember-cli-deploy](http://ember-cli-deploy.com/) was released:
 
-<blockquote class="tweet" lang="de"><p lang="en" dir="ltr">ember-cli-deploy 0.5 is now released and ready for use with a great docs site and already-rich plugin ecosystem: <a href="https://t.co/6yhjmjQrYD">https://t.co/6yhjmjQrYD</a></p>&mdash; Luke Melia (@lukemelia) <a href="https://twitter.com/lukemelia/status/659787938625134592">29. Oktober 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+> ember-cli-deploy 0.5 is now released and ready for use with a great docs site
+> and already-rich plugin ecosystem:
+> <a href="https://t.co/6yhjmjQrYD">https://t.co/6yhjmjQrYD</a> <author>Luke
+> Melia (@lukemelia)
+> <a href="https://twitter.com/lukemelia/status/659787938625134592">29. Oktober
+> 2015</a></author>
 
 <!--break-->
 

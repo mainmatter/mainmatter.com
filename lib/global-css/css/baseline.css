@@ -268,8 +268,14 @@ table {
   padding: 0;
 }
 
-p + p {
+p + p,
+p + blockquote,
+blockquote + p {
   margin-top: 4rem;
+}
+
+blockquote p {
+  flex: 1;
 }
 
 li {

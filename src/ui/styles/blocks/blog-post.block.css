@@ -1,5 +1,6 @@
 @block layout from "layout.block.css";
 @block figure from "figure.block.css";
+@block typography from "typography.block.css";
 
 :scope {
   block-name: blog-post;
@@ -103,6 +104,36 @@
   height: 100%;
   top: 0;
   left: 0;
+}
+
+.quote {
+  display: flex;
+  padding-left: 16px;
+  border-left: 4px solid #5b5b5b;
+}
+
+.quote::before {
+  content: '“';
+  font-size: 12rem;
+  line-height: 1rem;
+  margin-right: 2rem;
+  margin-top: 4rem;
+}
+
+.quote-paragraph {
+  flex: 1;
+}
+
+.quote-author {
+  margin-top: 2rem;
+  margin-bottom: resolve('typography.small');
+  margin-bottom: 0;
+  display: block;
+}
+
+.quote-author::before {
+  content: '-';
+  margin-right: 2px;
 }
 
 @media (min-width: 888px) {
