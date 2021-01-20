@@ -188,6 +188,11 @@
   }
 }
 
+.blog-posts-title {
+  margin-bottom: resolve("typography.h2");
+  margin-bottom: 0;
+}
+
 @export header-content;
 @export typography;
 @export layout;
