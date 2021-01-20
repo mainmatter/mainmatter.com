@@ -8,12 +8,12 @@ module('Component: WorkshopCard', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await render(hbs`<WorkshopCard @label="Label" @title="Titel" @description="Description" @authors="author1,author2" />`);
+    await render(hbs`<WorkshopCard @label="Label" @title="Titel" @description="Description" @authors="marcoow,msmarhigh" />`);
 
     assert.ok(this.containerElement.textContent.includes('Label'));
     assert.ok(this.containerElement.textContent.includes('Titel'));
     assert.ok(this.containerElement.textContent.includes('Description'));
-    assert.ok(this.containerElement.querySelector('img[src="/assets/images/authors/author1.jpg"]'));
-    assert.ok(this.containerElement.querySelector('img[src="/assets/images/authors/author2.jpg"]'));
+    assert.ok(this.containerElement.querySelector('img[src="/assets/images/authors/marcoow.jpg"]'));
+    assert.ok(this.containerElement.querySelector('img[src="/assets/images/authors/msmarhigh.jpg"]'));
   });
 });

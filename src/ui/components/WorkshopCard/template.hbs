@@ -1,7 +1,7 @@
 <div>
   <div block:class="info">
     {{#each this.authors key="id" as |author|}}
-      <img src="/assets/images/authors/{{author.name}}.jpg" block:class="image" />
+      <img src="{{author.image}}" block:class="image" />
     {{/each}}
     <p typography:class="small" block:class="label">
       {{@label}}
