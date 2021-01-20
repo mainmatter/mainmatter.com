@@ -28,4 +28,12 @@
   margin-top: 3rem;
 }
 
+:scope[shallow='shallow'] .image {
+  height: 21rem;
+}
+
+:scope[shallow='shallow'] .duration {
+  top: 15rem;
+}
+
 @export typography;

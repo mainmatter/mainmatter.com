@@ -189,7 +189,7 @@
 }
 
 .blog-posts-title {
-  margin-bottom: resolve("typography.h2");
+  margin-bottom: resolve('typography.h2');
   margin-bottom: 0;
 }
 

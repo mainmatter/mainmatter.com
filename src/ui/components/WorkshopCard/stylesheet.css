@@ -14,7 +14,7 @@
   position: absolute;
   top: 0;
   left: calc(22.5rem + var(--col-gap));
-  line-height: resolve("typography.small");
+  line-height: resolve('typography.small');
   line-height: 1.25;
 }
 
