@@ -170,10 +170,14 @@
 }
 
 .workshop-card {
-  margin-bottom: 12rem;
+  margin-bottom: 21rem;
 }
 
 @media (max-width: 887px) {
+  .workshop-card {
+    margin-bottom: 12rem;
+  }
+
   .workshop-col-lead,
   .workshop-col-trail {
     grid-column: 1/-1;
