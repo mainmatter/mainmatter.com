@@ -15,4 +15,10 @@ module('Component: MediaCard', function(hooks) {
     assert.ok(this.containerElement.textContent.includes('Content'));
     assert.equal(this.containerElement.querySelector('img').src, 'https://domain.com/source.png');
   });
+
+  test('it renders duration if specified', async function(assert) {
+    await render(hbs`<MediaCard @duration="04:54">Content</MediaCard>`);
+
+    assert.ok(this.containerElement.textContent.includes('04:54'));
+  });
 });

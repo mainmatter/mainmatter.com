@@ -2,6 +2,7 @@
 
 :scope {
   block-name: MediaCard;
+  position: relative;
 }
 
 .image {
@@ -10,6 +11,17 @@
   object-fit: cover;
   margin-bottom: 3rem;
   border-bottom: 1rem solid var(--color-accent);
+}
+
+.duration {
+  position: absolute;
+  color: resolve('typography.small');
+  color: #d8d8d8;
+  background-color: #5b5b5b;
+  right: 2rem;
+  top: 36rem;
+  padding: 0.75rem 1rem;
+  border-radius: calc(var(--label) * var(--label-lh));
 }
 
 .h3 {

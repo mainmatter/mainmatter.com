@@ -1,5 +1,10 @@
 <div>
   <img src={{@image}} block:class="image" />
+  {{#if @duration}}
+    <span block:class="duration" typography:class="small">
+      {{@duration}}
+    </span>
+  {{/if}}
   <p typography:class="small">
     {{@label}}
   </p>
