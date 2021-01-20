@@ -176,6 +176,7 @@
 @media (max-width: 887px) {
   .workshop-card {
     margin-bottom: 12rem;
+    display: block;
   }
 
   .workshop-col-lead,
