@@ -5,7 +5,7 @@
 @block header-content from "../HeaderContent/stylesheet.css";
 
 :scope {
-  block-name: PageBuiltToLast;
+  block-name: PageResources;
   composes: 'layout';
 }
 
