@@ -133,7 +133,7 @@ class SimplabsApp extends GlimmerApp {
     mainSiteTree = mainSiteNonRecentTree;
 
     let [resourcesTree, mainSiteNonResourcesTree] = this._splitBundle(mainSiteTree, {
-      componentPrefix: 'PageResources',
+      componentPrefix: 'PageResources|PageWorkshop',
       file: 'resources.js',
       moduleName: '__resources__',
     });

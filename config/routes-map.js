@@ -96,6 +96,11 @@ module.exports = function () {
       component: 'PageResources',
       bundle: { asset: '/resources.js', module: '__resources__' },
     },
+    // TODO: these will be generate automatically eventually – replace later!
+    '/workshop': {
+      component: 'PageWorkshop',
+      bundle: { asset: '/resources.js', module: '__resources__' },
+    },
   };
 
   return routes;

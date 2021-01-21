@@ -1,0 +1,14 @@
+@block layout from "../../styles/blocks/layout.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
+@block offset from "../../styles/blocks/offset.block.css";
+@block button from "../../styles/blocks/button.block.css";
+@block header-content from "../HeaderContent/stylesheet.css";
+
+:scope {
+  block-name: PageWorkshop;
+  composes: 'layout';
+}
+
+@export typography;
+@export layout;
+@export offset;
