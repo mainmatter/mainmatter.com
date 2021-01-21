@@ -30,6 +30,40 @@
   margin-left: 1.5rem;
 }
 
+.list-topics {
+  list-style: none;
+}
+
+.list-topics-item {
+  margin: 0;
+  position: relative;
+}
+
+.list-topics-item + .list-topics-item {
+  margin-top: 4rem;
+}
+
+.topic-title {
+  margin: 0;
+  line-height: var(--p-lh);
+}
+
+.topic-icon {
+  position: absolute;
+  top: 0;
+  left: calc(-8rem - var(--col-gap));
+  width: 8rem;
+  height: 8rem;
+}
+
+@media (max-width: 887px) {
+  .topic-icon {
+    position: initial;
+    display: block;
+    margin: 0 auto 1.25rem auto;
+  }
+}
+
 @export typography;
 @export layout;
 @export offset;
