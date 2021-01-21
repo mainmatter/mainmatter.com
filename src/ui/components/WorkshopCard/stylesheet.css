@@ -49,6 +49,10 @@
   margin-top: 3rem;
 }
 
+.p {
+  color: #000;
+}
+
 @media (max-width: 887px) {
   :scope {
     grid-template-columns: var(--grid-template-columns);
