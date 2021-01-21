@@ -9,7 +9,7 @@ og:
   image: /assets/images/posts/2021-01-29-web-animations-intro/og-image.png
 ---
 
-Animations can be a useful tool to enhance user experience on the web. Aside
+Animations can be a useful tool to enhance the user experience on the web. Aside
 from providing a pleasant visual experience, animations can aid in the user's
 understanding of elements appearing, moving and disappearing from a page. This
 blog post will provide a short overview of the status quo of animating the web
@@ -25,7 +25,7 @@ API].
 
 ## The status quo of animating the web
 
-Currently, there are two types of animation that are commonly use on the web.
+Currently, there are two types of animation that are commonly used on the web:
 CSS transitions/animations and animating through JavaScript by modifying inline
 styles.
 
@@ -122,7 +122,7 @@ let timer = setInterval(function () {
 }, frameDuration);
 ```
 
-In the past animation loops with JavaScript had to be done through `setInterval`
+In the past, animation loops with JavaScript had to be done through `setInterval`
 to get an approximate 60 frames per second animation similar to the example
 above. Nowadays the `requestAnimationFrame` API exists which results in smoother
 animation as the browser will call it right before the next repaint. Browsers
