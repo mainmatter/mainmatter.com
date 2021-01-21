@@ -6,7 +6,7 @@ twitter: nickschot
 topic: javascript
 bio: 'Senior Software Engineer'
 og:
-  image: /assets/images/posts/2020-12-31-xml-and-rust/og-image.png
+  image: /assets/images/posts/2021-01-29-web-animations-intro/og-image.png
 ---
 
 Animations can be a useful tool to enhance user experience on the web. Aside
@@ -20,6 +20,8 @@ API].
   https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API
 
 <!--break-->
+
+![An intro to animating with the Web Animations API](/assets/images/posts/2021-01-29-web-animations-intro/illustration.svg#full)
 
 ## The status quo of animating the web
 
@@ -49,9 +51,9 @@ given timing function, delay and duration.
 
 [CSS animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
 offer more control over timing and easing. They can run for a given duration,
-have a delay and an iteration count. The animation itself is specified through
-keyframes which allows you to create more complicated animation effects which
-are not possible with CSS transitions. CSS animations are usually triggered by
+have a delay and an iteration count. The animation itself is specified with
+keyframes allowing the creation of more complicated animation effects that are
+not possible with CSS transitions. CSS animations are usually triggered by
 adding or removing a CSS class to an element with JavaScript.
 
 ```css
@@ -164,7 +166,7 @@ CSS animations.
 
 <script type="text/javascript">
   let element = document.getElementById('circle');
-  element.animate([{ opacity: 0 }, { opacity: 1 }], {
+  let animation = element.animate([{ opacity: 0 }, { opacity: 1 }], {
     duration: 300,
     easing: 'linear',
   });
@@ -214,14 +216,16 @@ element.animate(
 
 This will transform the element 100 pixels to the right from its original
 position in 1 second with a linear timing function. When the animation is done,
-it's effects on the element are automatically removed.
+its effects on the element are automatically removed.
 
-TODO: insert example gif
+![Basic move animation](/assets/images/posts/2021-01-29-web-animations-intro/video1.mp4#video)
 
 Like with CSS animations we need to specify a fill option to specify in what way
 we want the animation's effects to be retained. We can specify `fill: forwards`
 so our final state is retained. Note that you will not see the animated styles
-appear in the DOM as you might be used to with JavaScript based animation.
+appear in the DOM as you might be used to with JavaScript based animation. You
+can see the effect they have in the computed styles and animation sections of
+the browser's developer tools.
 
 ```javascript
 element.animate(
@@ -234,10 +238,14 @@ element.animate(
 );
 ```
 
-TODO: insert example gif
+![Basic move animation that retains final state](/assets/images/posts/2021-01-29-web-animations-intro/video2.mp4#video)
 
 Our animation now behaves as we would expect and retains the styles specified in
 the final keyframe.
+
+Alternatively the `animation.commitStyles()` feature can be used to put the
+current animation state in the DOM as inline styles. The animation itself can
+then safely be cancelled so the browser can free up the resources it consumes.
 
 ### Cancelling and resuming an animation
 
@@ -296,7 +304,7 @@ animation! This happens because we explicitly specify a starting keyframe which
 is obviously an incorrect starting point if we interrupt the animation in the
 middle.
 
-TODO: insert example gif of the incorrect cancellation animation
+![Basic move animation](/assets/images/posts/2021-01-29-web-animations-intro/video3.mp4#video)
 
 We can fix this by first pausing the animation. Next we can utilise the global
 `getComputedStyle(element)` function to retrieve the current styles for our
@@ -327,7 +335,7 @@ function animateLeft() {
 Pressing the left or right button while an animation is running will now
 correctly cancel the running animation.
 
-TODO: insert example gif of the correct cancellation animation
+![Cancellable move animation](/assets/images/posts/2021-01-29-web-animations-intro/video4.mp4#video)
 
 There is still a problem though! We have set a fixed duration for our animation.
 This means that if we cancel the animation after for example 0.5 seconds it will
@@ -371,7 +379,7 @@ function move(transformEnd) {
 After this change our animations will always run with a constant velocity, no
 matter when the running animation is cancelled.
 
-TODO: insert example gif of the fully correct cancellation animation
+![Cancellable move animation with constant velocity](/assets/images/posts/2021-01-29-web-animations-intro/video5.mp4#video)
 
 ### When an animation finishes
 
