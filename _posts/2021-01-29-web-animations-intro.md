@@ -122,12 +122,12 @@ let timer = setInterval(function () {
 }, frameDuration);
 ```
 
-In the past, animation loops with JavaScript had to be done through `setInterval`
-to get an approximate 60 frames per second animation similar to the example
-above. Nowadays the `requestAnimationFrame` API exists which results in smoother
-animation as the browser will call it right before the next repaint. Browsers
-can also pause `requestAnimationFrame` when a tab is out of focus to prevent
-inactive tabs from running expensive animations at high framerates.
+In the past, animation loops with JavaScript had to be done through
+`setInterval` to get an approximate 60 frames per second animation similar to
+the example above. Nowadays the `requestAnimationFrame` API exists which results
+in smoother animation as the browser will call it right before the next repaint.
+Browsers can also pause `requestAnimationFrame` when a tab is out of focus to
+prevent inactive tabs from running expensive animations at high framerates.
 
 In addition, this animation technique requires the need for manual interpolation
 of the values we might want to animate. This can be difficult for complex values
@@ -181,6 +181,9 @@ In addition to that there's some useful timing related functionality on the
 animation instance we can use.
 
 ```javascript
+// our animation instance
+let animation = element.animate(...);
+
 // pause the animation
 animation.pause();
 
@@ -238,10 +241,10 @@ element.animate(
 );
 ```
 
-![Basic move animation that retains final state](/assets/images/posts/2021-01-29-web-animations-intro/video2.mp4#video)
-
 Our animation now behaves as we would expect and retains the styles specified in
 the final keyframe.
+
+![Basic move animation that retains final state](/assets/images/posts/2021-01-29-web-animations-intro/video2.mp4#video)
 
 Alternatively the `animation.commitStyles()` feature can be used to put the
 current animation state in the DOM as inline styles. The animation itself can
