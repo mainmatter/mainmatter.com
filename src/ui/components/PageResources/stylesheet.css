@@ -25,7 +25,6 @@
   .video {
     width: auto;
     height: auto;
-    transform: translateX(-50%);
   }
 
   .video-header {
