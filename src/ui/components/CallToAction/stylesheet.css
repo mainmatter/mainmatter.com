@@ -1,0 +1,32 @@
+@block typography from "../../styles/blocks/typography.block.css";
+
+:scope {
+  block-name: CallToAction;
+
+  text-align: center;
+}
+
+.small {
+  color: var(--color-accent);
+}
+
+.small::before {
+  content: ' ';
+  height: 12rem;
+  width: 2px;
+  background: var(--color-accent);
+  display: block;
+  margin: 0 auto 2rem auto;
+}
+
+.h2 {
+  margin-bottom: resolve('typography.h2');
+  margin-bottom: 5rem;
+  margin-top: 8rem;
+}
+
+.lead {
+  margin-bottom: 5rem;
+}
+
+@export typography;

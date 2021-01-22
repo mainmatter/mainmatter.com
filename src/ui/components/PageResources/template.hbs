@@ -125,19 +125,16 @@
     </div>
   </div>
 
-  <div layout:class="full" offset:class="after-21" block:class="cta">
-    <p typography:class="small" block:class="cta-small">
-      Join the built to last interview series
-    </p>
-    <h2 typography:class="h2" block:class="cta-h2">
-      Are you a startup founder? Get in touch!
-    </h2>
-    <p typography:class="lead" block:class="cta-lead">
-      Would you like to share product development insights with our community? We would love to hear from you.
-    </p>
-    <a href="#" button:scope>
-      Become a guest
-    </a>
+  <div layout:class="full" offset:class="after-21">
+    <CallToAction
+      @title="Are you a startup founder? Get in touch!"
+      @text="Would you like to share product development insights with our community? We would love to hear from you."
+      @label="Join the built to last interview series"
+    >
+      <a href="#" button:scope>
+        Become a guest
+      </a>
+    </CallToAction>
   </div>
 
   <ShapeFeaturePlaybookMax />
