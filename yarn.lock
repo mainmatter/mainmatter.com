@@ -7378,10 +7378,10 @@ html-encoding-sniffer@^2.0.1:
   dependencies:
     whatwg-encoding "^1.0.5"
 
-html-entities@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.3.3.tgz#3dca638a43ee7de316fc23067398491152ad4736"
-  integrity sha512-/VulV3SYni1taM7a4RMdceqzJWR39gpZHjBwUnsCFKWV/GJkD14CJ5F7eWcZozmHJK0/f/H5U3b3SiPkuvxMgg==
+html-entities@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-2.0.3.tgz#f6ab5fae8900b2348be9fb2166ed3cc6045205d9"
+  integrity sha512-gmHgMT443G7C1ygLCPYBHX9tYeb2RqshhGlKS6b5LC9CnDaPzd1UdvK+Sj5lgoBfJSaBUQE3aIFLSgq4+NB2uw==
 
 http-cache-semantics@^4.0.0:
   version "4.1.0"
