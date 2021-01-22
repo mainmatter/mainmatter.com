@@ -1,5 +1,11 @@
-<div block:shallow={{@shallow}}>
-  <a href="{{@link}}" target={{this.target}} data-internal={{this.isInternalLink}} rel={{this.rel}}>
+<div block:shallow={{@shallow}} block:isVideoLink={{@isVideoLink}}>
+  <a
+    href="{{@link}}"
+    target={{this.target}}
+    data-internal={{this.isInternalLink}}
+    rel={{this.rel}}
+    block:class="image-link"
+  >
     <img src={{@image}} block:class="image" />
   </a>
   {{#if @duration}}

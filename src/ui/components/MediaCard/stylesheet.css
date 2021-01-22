@@ -36,4 +36,18 @@
   top: 15rem;
 }
 
+:scope[isVideoLink='true'] .image-link:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 42rem;
+  background: url(/assets/images/resources/play.svg) center no-repeat;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+:scope[isVideoLink='true'] .image-link:hover:before {
+  opacity: 1;
+}
+
 @export typography;
