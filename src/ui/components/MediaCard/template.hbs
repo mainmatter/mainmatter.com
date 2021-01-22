@@ -1,5 +1,7 @@
 <div block:shallow={{@shallow}}>
-  <img src={{@image}} block:class="image" />
+  <a href="{{@link}}" target={{this.target}} data-internal={{this.isInternalLink}} rel={{this.rel}}>
+    <img src={{@image}} block:class="image" />
+  </a>
   {{#if @duration}}
     <span block:class="duration" typography:class="small">
       {{@duration}}
