@@ -9,7 +9,9 @@
     {{@label}}
   </p>
   <h3 typography:class="h4" block:class="h4">
-    {{@title}}
+    <a href="{{@link}}" target={{this.target}} data-internal={{this.isInternalLink}} rel={{this.rel}}>
+      {{@title}}
+    </a>
   </h3>
   <p typography:class="p">
     {{yield}}
