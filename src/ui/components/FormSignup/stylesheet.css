@@ -5,6 +5,40 @@
 :scope {
   block-name: FormSignup;
   extends: form;
+
+  --text: 2.625rem;
+  --text-lh: 1.667;
+
+  display: flex;
+  justify-content: center;
+}
+
+.control {
+  font-size: var(--text);
+  line-height: var(--text-lh);
+  padding: calc(1rem - 2px);
+}
+
+@media (min-width: 888px) {
+  .control {
+    width: 33%;
+    border-right: 0;
+  }
+}
+
+@media (max-width: 887px) {
+  :scope {
+    flex-wrap: wrap;
+  }
+
+  .control,
+  .button {
+    width: 100%;
+  }
+
+  .control {
+    margin-bottom: var(--col-gap);
+  }
 }
 
 @export typography;
