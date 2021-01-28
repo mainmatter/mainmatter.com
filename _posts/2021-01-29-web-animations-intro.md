@@ -363,23 +363,31 @@ earlier, there is a way to get timing information from an animation. We can use
 that information to correctly calculate the duration for our animation to
 achieve a constant velocity.
 
-Let's modify our move function again. We can get the progress of the animation
-by calling `currentAnimation.effect.getComputedTiming().progress`, which will
-give us a value between 0 and 1. We'll also set a fallback progress of 1, so
-that our animation will take the full duration when there is no pre-existing
-animation. We can now get the new duration by multiplying the progress with our
-target duration.
+Let's modify our move function again. We'll need to get the `activeDuration` and
+`progress` of the running animation. We can call
+`currentAnimation.effect.getComputedTiming()` which will provide us with the
+values we need. We can calculate the target duration with the following formula
+`duration = duration - (activeDuration - progress * activeDuration)` where
+duration is our default duration of 1 second;
 
 ```javascript
 function move(transformEnd) {
   currentAnimation?.pause();
   let transformStart = getComputedStyle(element).transform;
 
-  let progress = 1;
+  let duration = 1000;
   if (currentAnimation) {
-    progress = currentAnimation.effect.getComputedTiming().progress;
+    const timing = currentAnimation.effect.getComputedTiming();
+
+    // duration of the running animation
+    const activeDuration = timing.activeDuration;
+
+    // progress between 0 and 1 of the running animation
+    const activeProgress = timing.progress;
+
+    // calculate duration so that velocity is constant
+    duration -= activeDuration - activeProgress * activeDuration;
   }
-  let duration = 1000 * progress;
 
   currentAnimation?.cancel();
 
@@ -395,7 +403,8 @@ function move(transformEnd) {
 ```
 
 After this change our animations will always run with a constant velocity, no
-matter when the running animation is cancelled.
+matter when the running animation is cancelled. The final result can be seen
+in this [CodePen](https://codepen.io/nickschot/pen/LYbPBmW).
 
 ![Cancellable move animation with constant velocity](/assets/images/posts/2021-01-29-web-animations-intro/video5.mp4#video)
 
