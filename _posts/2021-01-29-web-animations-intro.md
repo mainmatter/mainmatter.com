@@ -228,10 +228,7 @@ its effects on the element are automatically removed.
 
 Like with CSS animations we need to specify a fill option to specify in what way
 we want the animation's effects to be retained. We can specify `fill: forwards`
-so our final state is retained. Note that you will not see the animated styles
-appear in the DOM as you might be used to with JavaScript based animation. You
-can see the effect they have in the computed styles and animation sections of
-the browser's developer tools.
+so our final state is retained.
 
 ```javascript
 element.animate(
@@ -306,11 +303,26 @@ animations by clicking those buttons.
 ```
 
 Rapidly clicking the buttons interchangeably now shows a pretty jarring
-animation! This happens because we explicitly specify a starting keyframe which
-is obviously an incorrect starting point if we interrupt the animation in the
-middle.
+animation!
 
 ![Basic move animation](/assets/images/posts/2021-01-29-web-animations-intro/video3.mp4#video)
+
+This is a good time to take a look at the developer tools to find out what's
+going on. Note that you will not see the animated styles appear in the DOM as
+you might be used to with JavaScript based animation. You can see the effect
+they have in the computed styles and animation sections of the browser's
+developer tools.
+
+From the "Animations" pane we can slow down the animation to 25% of the original
+speed to make it easier to see what is going on. We can also replay previous
+animations. When we click the "Left" button while the animation is happening
+we'll see that the animation is not starting at the correct point.
+
+![Debugging an animation using developer tools](/assets/images/posts/2021-01-29-web-animations-intro/devtools.mp4#video)
+
+This happens because we explicitly specify a starting keyframe which is
+obviously an incorrect starting point if we interrupt the animation in the
+middle.
 
 We can fix this by first pausing the animation. Next we can utilise the global
 `getComputedStyle(element)` function to retrieve the current styles for our
