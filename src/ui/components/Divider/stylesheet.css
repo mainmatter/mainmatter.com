@@ -1,0 +1,30 @@
+@block offset from "../../styles/blocks/offset.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
+@block layout from "../../styles/blocks/layout.block.css";
+
+:scope {
+  block-name: Divider;
+  color: var(--color-accent);
+  display: resolve('typography.small');
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+:scope::before,
+:scope::after {
+  content: '';
+  flex: 1;
+  border-bottom: 2px solid var(--color-accent);
+}
+
+:scope::before {
+  margin-right: 1.5rem;
+}
+:scope::after {
+  margin-left: 1.5rem;
+}
+
+@export layout;
+@export offset;
+@export typography;

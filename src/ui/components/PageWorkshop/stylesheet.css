@@ -9,28 +9,6 @@
   composes: 'layout';
 }
 
-.divider {
-  color: var(--color-accent);
-  display: resolve('typography.small');
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
-.divider::before,
-.divider::after {
-  content: '';
-  flex: 1;
-  border-bottom: 2px solid var(--color-accent);
-}
-
-.divider::before {
-  margin-right: 1.5rem;
-}
-.divider::after {
-  margin-left: 1.5rem;
-}
-
 .list-topics {
   list-style: none;
 }
