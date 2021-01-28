@@ -10,7 +10,7 @@ og:
 ---
 
 Animations can be a useful tool to enhance the user experience on the web. Aside
-from providing a pleasant visual experience, animations can aid in the user's
+from providing an appealing visual experience, animations can aid in the user's
 understanding of elements appearing, moving and disappearing from a page. This
 blog post will provide a short overview of the status quo of animating the web
 and take an initial look at the current capabilities of the [Web Animations
@@ -25,7 +25,7 @@ API].
 
 ## The status quo of animating the web
 
-Currently, there are two types of animation that are commonly used on the web:
+Currently, there are two animation techniques that are commonly used on the web:
 CSS transitions/animations and animating through JavaScript by modifying inline
 styles.
 
@@ -97,37 +97,40 @@ function calculate what the state for the current frame should be.
 let sourceOpacity = 0;
 let targetOpacity = 1;
 let duration = 500;
-let time = 0;
-// target 60 frames per second
-let frameDuration = 1000 / 60;
 
-let timer = setInterval(function () {
-  // stop animation if time exceeds duration
-  if (time > duration) {
-    clearInterval(timer);
-    return;
+let startTime;
+function step(time) {
+  if (!startTime) {
+    startTime = time;
   }
 
+  let progress = time - startTime;
+
   // calculate where we are in the animation as a factor between 0 and 1
-  let factor = time / duration;
+  let factor = Math.max(progress / duration, 1);
 
   // multiply the source/target diff with the calculated factor
-  let opacity = sourceOpacity + (targetOpacity - sourceOpacity) * factor;
+  let currentOpacity = sourceOpacity + (targetOpacity - sourceOpacity) * factor;
 
   // apply calculated opacity
-  element.style.opacity = opacity;
+  element.style.opacity = currentOpacity;
 
-  // move to the next frame
-  time += frameDuration;
-}, frameDuration);
+  // move to the next frame if we haven't reached the target duration yet
+  if (progress < duration) {
+    window.requestAnimationFrame(step);
+  }
+}
+
+// start the animation
+window.requestAnimationFrame(step);
 ```
 
 In the past, animation loops with JavaScript had to be done through
-`setInterval` to get an approximate 60 frames per second animation similar to
-the example above. Nowadays the `requestAnimationFrame` API exists which results
-in smoother animation as the browser will call it right before the next repaint.
-Browsers can also pause `requestAnimationFrame` when a tab is out of focus to
-prevent inactive tabs from running expensive animations at high framerates.
+`setInterval` to get an approximate 60 frames per second animation. Nowadays the
+`requestAnimationFrame` API exists which results in smoother animation as the
+browser will call it right before the next repaint. Browsers can also pause
+`requestAnimationFrame` when a tab is out of focus to prevent inactive tabs from
+running expensive animations at high framerates.
 
 In addition, this animation technique requires the need for manual interpolation
 of the values we might want to animate. This can be difficult for complex values
@@ -144,8 +147,8 @@ only knows about the current frame.
 
 ## Web Animations API
 
-The Web Animations API is a relatively new addition to the browser and is still
-very much in development. It promises to combine the benefits of CSS
+The [Web Animations API] is a relatively new addition to the browser and is
+still very much in development. It promises to combine the benefits of CSS
 Transitions/Animations and JavaScript based animations.
 
 All popular browsers have now implemented the minimum features necessary to do
@@ -266,10 +269,10 @@ steps. Before trying to calculate our starting keyframe we'll need to pause the
 currently running animation (if any). Then we'll need to get the current
 transform present on our element. Finally, we can start the new animation.
 
-Let's abstract our animation into a `move` function which takes a target
-`transform` string. We'll also add `animateRight` and `animateLeft` functions
-which are hooked up to two buttons so we can run the animations by clicking
-those buttons.
+Let's abstract our animation into a `move` function which takes `transformStart`
+and `transformEnd` string arguments. We'll also add `animateRight` and
+`animateLeft` functions which are hooked up to two buttons, so we can run the
+animations by clicking those buttons.
 
 ```html
 <button onclick="animateLeft()">Left</button>
