@@ -1,0 +1,75 @@
+<div>
+  <Header @title="Resources" @active="resources">
+    <HeaderContent @headline="Founder insights">
+      <p typography:class="lead">
+        Marco Otto-Witte, the founder of simplabs, in conversation with Karol Domagalski, the founder & CEO of Upfit.
+      </p>
+    </HeaderContent>
+  </Header>
+
+  <div layout:class="content" offset:class="after-12">
+    <div block:class="video">
+      <iframe
+        src="https://www.youtube.com/embed/pI8p2_MyIyg"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        title="Built to Last #2: Karol Domagalski, founder & CEO of Upfit"
+        block:class="video-frame"
+      ></iframe>
+    </div>
+  </div>
+
+  <div layout:class="full" offset:class="after-12">
+    <Divider @text="More Founder Insights" />
+  </div>
+
+  <div layout:scope offset:class="after-21">
+    <div media-card:class="single">
+      <MediaCard
+        @label="Masterclass with Marco Otte-Witte"
+        @title="Transitioning your team to a remote setup"
+        @image="/assets/images/resources/marco.jpg"
+        @link="/workshop/"
+      >
+        Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+      </MediaCard>
+    </div>
+    <div media-card:class="single">
+      <MediaCard
+        @label="Masterclass with Marco Otte-Witte"
+        @title="Transitioning your team to a remote setup"
+        @image="/assets/images/resources/marco.jpg"
+        @link="/workshop/"
+      >
+        Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+      </MediaCard>
+    </div>
+    <div media-card:class="single">
+      <MediaCard
+        @label="Masterclass with Marco Otte-Witte"
+        @title="Transitioning your team to a remote setup"
+        @image="/assets/images/resources/marco.jpg"
+        @link="/workshop/"
+      >
+        Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+      </MediaCard>
+    </div>
+  </div>
+
+  <div layout:class="full" offset:class="after-21">
+    <CallToAction
+      @title="Are you a startup founder? Get in touch!"
+      @text="Would you like to share product development insights with our community? We would love to hear from you."
+      @label="Join the built to last interview series"
+    >
+      <a href="#" button:scope>
+        Become a guest
+      </a>
+    </CallToAction>
+  </div>
+
+  <ShapeFeaturePlaybookMax />
+
+  <Footer />
+</div>
