@@ -3,6 +3,7 @@
 @block offset from "../../styles/blocks/offset.block.css";
 @block button from "../../styles/blocks/button.block.css";
 @block header-content from "../HeaderContent/stylesheet.css";
+@block media-card from "../../styles/blocks/media-card.block.css";
 
 :scope {
   block-name: PageResources;
@@ -52,41 +53,8 @@
   font-size: 4.5rem;
 }
 
-.media-card-double {
-  display: flex;
-  grid-column: 2/6;
-}
-
-.media-card,
 .workshop-card {
   display: flex;
-}
-
-.media-card:first-child {
-  grid-column: 2/4;
-}
-
-.media-card:nth-child(2) {
-  grid-column: 4/6;
-}
-
-.media-card:last-child {
-  grid-column: 6/8;
-}
-
-@media (max-width: 887px) {
-  .media-card,
-  .media-card:first-child,
-  .media-card:last-child,
-  .media-card:nth-child(2),
-  .media-card-double {
-    grid-column: 2/-2;
-    margin-bottom: 5rem;
-  }
-
-  .media-card:last-child {
-    margin-bottom: 0;
-  }
 }
 
 .workshop-col-lead {
@@ -135,3 +103,4 @@
 @export layout;
 @export offset;
 @export button;
+@export media-card;
