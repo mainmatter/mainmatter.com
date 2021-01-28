@@ -75,15 +75,20 @@ adding or removing a CSS class to an element with JavaScript.
 ```
 
 Both of these offer JavaScript events like `animationend` which allow you to
-react to an animation that finished. They are a powerful, declarative and
-performant way to do animations on individual elements.
+react to an animation that finished, though it can still be hard to synchronize
+animations with application state due to the way animations have to be started.
+They are a powerful, declarative and performant way to do animations on
+individual elements.
 
 ### Animating with JavaScript
 
 JavaScript based animation loops are the status quo for doing complex
 animations. Animation libraries like
 [ember-animated](https://ember-animation.github.io/ember-animated/) and
-[framer-motion](https://www.framer.com/motion/) are built around this technique.
+[framer-motion](https://www.framer.com/motion/) or older libraries like
+[Velocity.js](http://velocityjs.org/) and
+[script.aculo.us](https://github.com/madrobby/scriptaculous) are built around
+this technique.
 
 With a JavaScript based animation loop there is full control over timing and
 state. This makes it possible to take other elements into account. For example,
@@ -143,7 +148,8 @@ calculations being made every frame for the duration of the animation. This
 might result in stutter or delay especially if something else is happening on
 the page. Examples are a router transition to another page or some data fetching
 and parsing. The browser also has limited ways to optimise such animations as it
-only knows about the current frame.
+only knows about the current frame and cannot completely offload the animation
+to the GPU.
 
 ## Web Animations API
 
@@ -403,8 +409,8 @@ function move(transformEnd) {
 ```
 
 After this change our animations will always run with a constant velocity, no
-matter when the running animation is cancelled. The final result can be seen
-in this [CodePen](https://codepen.io/nickschot/pen/LYbPBmW).
+matter when the running animation is cancelled. The final result can be seen in
+this [CodePen](https://codepen.io/nickschot/pen/LYbPBmW).
 
 ![Cancellable move animation with constant velocity](/assets/images/posts/2021-01-29-web-animations-intro/video5.mp4#video)
 
