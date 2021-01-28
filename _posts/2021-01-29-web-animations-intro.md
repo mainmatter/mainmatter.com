@@ -35,8 +35,8 @@ styles.
 are a basic but powerful way to define a transition between two CSS states of a
 DOM element. They provide limited control, but due to their simplicity it's
 often the preferred way to implement basic animations like hover effects on a
-button. Transitions happen automatically between specified CSS variables with a
-given timing function, delay and duration.
+button. Transitions happen automatically between values of a CSS attribute with
+a given timing function, delay and duration.
 
 ```css
 .my-button {
@@ -112,7 +112,7 @@ function step(time) {
   let progress = time - startTime;
 
   // calculate where we are in the animation as a factor between 0 and 1
-  let factor = Math.max(progress / duration, 1);
+  let factor = Math.min(progress / duration, 1);
 
   // multiply the source/target diff with the calculated factor
   let currentOpacity = sourceOpacity + (targetOpacity - sourceOpacity) * factor;
@@ -139,7 +139,7 @@ running expensive animations at high framerates.
 
 In addition, this animation technique requires the need for manual interpolation
 of the values we might want to animate. This can be difficult for complex values
-like color or clipPath, yet also gives opportunity to do different kinds of
+like `color` or `clipPath`, yet also gives opportunity to do different kinds of
 interpolation than what the browser does by default, which can be especially
 relevant for non-trivial values like a color space.
 
