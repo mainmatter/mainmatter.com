@@ -260,7 +260,10 @@ then safely be cancelled so the browser can free up the resources it consumes.
 
 Cancellation is an important part of real-world animations. Animations take time
 to complete and in that time the user might have interacted with the page in a
-way where the running animation does not make sense anymore.
+way where the running animation does not make sense anymore. In most cases when
+an animation is interrupted, another animation will be started. This could be
+the same animation in reverse or an entirely different one. In any case we will
+want to start the animation from the element's current state.
 
 In theory, you only need to specify a "to" keyframe which would make it trivial
 to cancel an animation as the browser will calculate the "from" position based
