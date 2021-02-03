@@ -15,10 +15,13 @@
   from = "/training/"
   to = "/services/training/"
 
-# redirect old ember page
+# redirect old ember pages
 [[redirects]]
   from = "/ember/"
-  to = "/expertise/ember/"
+  to = "/ember-consulting/"
+[[redirects]]
+  from = "/expertise/ember/"
+  to = "/ember-consulting/"
 
 # redirect old clients page
 [[redirects]]
