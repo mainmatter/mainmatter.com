@@ -186,7 +186,7 @@ Our site now has a multitude of bundles:
   [calendar](/calendar/) or [talks catalog](/talks/)
 - a bundle that contains a component that lists the most recent blog posts for a
   particular topic that; that component gets included on
-  [pages within the main site](/expertise/ember/)
+  [pages within the main site](/ember-consulting/)
 
 ### Bundles and Caching
 
@@ -300,7 +300,7 @@ By spending a significant (and maybe unreasonable) amount of time and energy we
 ended up with the highly optimized site you're looking at. The downside is we
 ended up with our own custom static site generator essentially that we now need
 to maintain ourselves (one of the reasons why we recommend using a fully
-integrated framework like [Ember.js](/expertise/ember/) instead of compiling
+integrated framework like [Ember.js](/ember-consulting/) instead of compiling
 your own custom framework out of a bunch of micro libraries). However, it was
 definitely an interesting experiment and we hope you take some inspiration out
 of the patterns and mechanisms we describe in this post. If you are struggling
