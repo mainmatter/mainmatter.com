@@ -32,6 +32,11 @@
     margin-top: resolve('header-content');
     margin-top: 0;
   }
+
+  .mobile-after-0 {
+    margin-bottom: resolve('offset.after-12');
+    margin-bottom: 0;
+  }
 }
 
 .h1,
