@@ -13,7 +13,7 @@
   justify-content: center;
 }
 
-.control {
+.input {
   font-size: var(--text);
   line-height: var(--text-lh);
   padding: calc(1rem - 2px);
@@ -24,7 +24,7 @@
 }
 
 @media (min-width: 888px) {
-  .control {
+  .input {
     width: 33%;
     border-right: 0;
   }
@@ -35,12 +35,12 @@
     flex-wrap: wrap;
   }
 
-  .control,
+  .input,
   .button {
     width: 100%;
   }
 
-  .control {
+  .input {
     margin-bottom: var(--col-gap);
   }
 }
