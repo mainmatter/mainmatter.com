@@ -45,12 +45,12 @@
 }
 
 .workshop-lead-card-name {
-  margin-top: 0;
+  margin: 0;
 }
 
 .workshop-lead-card-title {
   display: block;
-  margin-top: 4rem;
+  margin-top: 2rem;
   color: #000;
 }
 
