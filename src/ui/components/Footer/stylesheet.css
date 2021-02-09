@@ -82,15 +82,25 @@
 
 .link,
 .link:link,
-.link:visited {
+.link:visited,
+.title-link,
+.title-link:link,
+.title-link:visited {
   display: block;
   text-decoration: none;
   color: inherit;
-  padding: 0.5rem 0;
 }
 
-.link:hover {
+.link:hover,
+.title-link:hover {
   color: var(--color-accent);
+  background: none;
+}
+
+.link,
+.link:link,
+.link:visited {
+  padding: 0.5rem 0;
 }
 
 .note {
