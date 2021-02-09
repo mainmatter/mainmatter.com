@@ -16,7 +16,13 @@
 .input {
   font-size: var(--text);
   line-height: var(--text-lh);
-  padding: calc(1rem - 2px);
+  padding: calc(1rem - 2px) 1.5rem;
+  border: 2px solid #b8b8b8;
+}
+
+.input,
+.input::placeholder {
+  color: #757575;
 }
 
 .button {
