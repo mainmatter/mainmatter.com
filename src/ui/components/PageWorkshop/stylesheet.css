@@ -24,7 +24,7 @@
 
 .topic-title {
   margin: 0;
-  line-height: var(--p-lh);
+  line-height: var(--h5-lh);
 }
 
 .topic-icon {
@@ -33,6 +33,7 @@
   left: calc(-8rem - var(--col-gap));
   width: 8rem;
   height: 8rem;
+  margin-top: 0.5rem;
 }
 
 @media (max-width: 887px) {
