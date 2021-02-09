@@ -19,10 +19,19 @@
 }
 
 :scope::before {
-  margin-right: 1.5rem;
+  margin-right: 5rem;
 }
 :scope::after {
-  margin-left: 1.5rem;
+  margin-left: 5rem;
+}
+
+@media (max-width: 887px) {
+  :scope::before {
+    margin-right: 2.5rem;
+  }
+  :scope::after {
+    margin-left: 2.5rem;
+  }
 }
 
 @export layout;
