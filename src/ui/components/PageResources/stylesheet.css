@@ -25,7 +25,8 @@
 @media (max-width: 887px) {
   .video {
     width: auto;
-    height: auto;
+    height: 64rem;
+    transform: translateX(calc(-60% + 50vw));
   }
 
   .video-header {
