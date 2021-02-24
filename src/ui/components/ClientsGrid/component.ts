@@ -148,6 +148,13 @@ const allClients = [
     text:
       'Camilyo is an integrated marketing platform for online service providers. simplabs supported their team with identifying and fixing issues in their Ember.js applications, improving their testing practices, adopting modern Ember.js patterns and leveling up their team along the way.',
   },
+  {
+    id: 'sutori',
+    name: 'Sutori',
+    src: '/assets/images/logos/sutori.svg',
+    text:
+      'Sutori is an online, collaborative learning platform that helps teachers present information in the remote classroom. When they wanted to internationalize their service, simplabs set up the architecture in their application as well as the infrastructure that supports their development team.',
+  },
 ];
 
 export default class ClientsGrid extends Component {
