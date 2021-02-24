@@ -155,6 +155,13 @@ const allClients = [
     text:
       'Sutori is an online, collaborative learning platform that helps teachers present information in the remote classroom. When they wanted to internationalize their service, simplabs set up the architecture in their application as well as the infrastructure that supports their development team.',
   },
+  {
+    id: 'asilimia',
+    name: 'Asilimia',
+    src: '/assets/images/logos/asilimia.svg',
+    text:
+      'Asilimia is a Kenyan digital payment application tailored for micro and small businesses in Sub-Saharan Africa. simplabs facilitated two remote product design sprints to ideate, prototype, validate and test product-market fit of its new bookkeeping features.',
+  },
 ];
 
 export default class ClientsGrid extends Component {
