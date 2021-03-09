@@ -7,6 +7,9 @@ image: /assets/images/resources/marco.jpg
 teaser:
   Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta
   augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+description: A test description
+og:
+  image: /assets/images/resources/videos/2020-12-29-built-to-last-3-joel-kelly/og-image.png
 ---
 
 Marco Otte-Witte talks with Joel Kelly, founder & CEO of Eve, an online platform

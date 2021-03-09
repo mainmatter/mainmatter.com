@@ -1,3 +1,4 @@
 lib/generate-blog/lib/templates/**/*
+lib/generate-resources/lib/templates/**/*
 lib/global-css/css/vendor/normalize.css
 src/ui/components/Header/template.hbs

@@ -1,5 +1,7 @@
 <div>
-  <Header @title="Resources" @active="resources">
+  <HeadTag @name='meta' @keys=\{{hash property="og:image"}} @values=\{{hash content="{{siteUrl}}{{og.image}}"}} />
+
+  <Header @title="Resources" @active="resources" @documentTitle="{{title}} | Resources" @description="{{description}}">
     <HeaderContent @headline="Founder insights">
       <div typography:class="lead">
         {{{body}}}

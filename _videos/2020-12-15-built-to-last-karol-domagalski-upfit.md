@@ -7,6 +7,9 @@ image: /assets/images/resources/marco.jpg
 teaser:
   Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta
   augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+description: A test description
+og:
+  image: /assets/images/resources/videos/2020-12-15-built-to-last-2-karol-domagalski/og-image.png
 ---
 
 Marco Otto-Witte, the founder of simplabs, in conversation with Karol

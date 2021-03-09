@@ -7,6 +7,9 @@ image: /assets/images/resources/marco.jpg
 teaser:
   Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta
   augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+description: A test description
+og:
+  image: /assets/images/resources/videos/2021-02-23-built-to-last-5-aymeric-augustin/og-image.png
 ---
 
 simplabs' founder Marco Otte-Witte talks with Aymeric Augustin, CTO of Qonto, a
