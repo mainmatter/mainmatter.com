@@ -24,36 +24,13 @@
   </div>
 
   <div layout:class="full" offset:class="after-21" media-card:class="list">
-    <div media-card:class="single">
-      <MediaCard
-        @label="Masterclass with Marco Otte-Witte"
-        @title="Transitioning your team to a remote setup"
-        @image="/assets/images/resources/marco.jpg"
-        @link="/workshop/"
-      >
-        Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
-      </MediaCard>
-    </div>
-    <div media-card:class="single">
-      <MediaCard
-        @label="Masterclass with Marco Otte-Witte"
-        @title="Transitioning your team to a remote setup"
-        @image="/assets/images/resources/marco.jpg"
-        @link="/workshop/"
-      >
-        Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
-      </MediaCard>
-    </div>
-    <div media-card:class="single">
-      <MediaCard
-        @label="Masterclass with Marco Otte-Witte"
-        @title="Transitioning your team to a remote setup"
-        @image="/assets/images/resources/marco.jpg"
-        @link="/workshop/"
-      >
-        Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
-      </MediaCard>
-    </div>
+    {{#each more}}
+      <div media-card:class="single">
+        <MediaCard @label="{{label}}" @title="{{title}}" @image="{{image}}" @link="{{path}}">
+          {{teaser}}
+        </MediaCard>
+      </div>
+    {{/each}}
   </div>
 
   <div layout:class="full" offset:class="after-21">

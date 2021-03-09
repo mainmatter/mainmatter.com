@@ -1,6 +1,12 @@
 ---
 videoUrl: https://www.youtube.com/embed/esRwdhlwIw8
 kind: built-to-last
+label: 'Built to Last: Founder insight'
+title: Christina Roizheim, co-founder of not less but better
+image: /assets/images/resources/marco.jpg
+teaser:
+  Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta
+  augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
 ---
 
 Mar High, our director of product design, kicks off the series by interviewing
