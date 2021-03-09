@@ -21,31 +21,33 @@
     </div>
   </div>
 
-  <div layout:class="full" offset:class="after-12">
-    <Divider @text="More Founder Insights" />
-  </div>
+  {{#if isFounderInterview}}
+    <div layout:class="full" offset:class="after-12">
+      <Divider @text="More Founder Insights" />
+    </div>
 
-  <div layout:class="full" offset:class="after-21" media-card:class="list">
-    {{#each more}}
-      <div media-card:class="single">
-        <MediaCard @label="{{label}}" @title="{{title}}" @image="{{image}}" @link="{{path}}">
-          {{teaser}}
-        </MediaCard>
-      </div>
-    {{/each}}
-  </div>
+    <div layout:class="full" offset:class="after-21" media-card:class="list">
+      {{#each more}}
+        <div media-card:class="single">
+          <MediaCard @label="{{label}}" @title="{{title}}" @image="{{image}}" @link="{{path}}">
+            {{teaser}}
+          </MediaCard>
+        </div>
+      {{/each}}
+    </div>
 
-  <div layout:class="full" offset:class="after-21">
-    <CallToAction
-      @title="Are you a startup founder? Get in touch!"
-      @text="Would you like to share product development insights with our community? We would love to hear from you."
-      @label="Join the built to last interview series"
-    >
-      <a href="#" button:scope>
-        Become a guest
-      </a>
-    </CallToAction>
-  </div>
+    <div layout:class="full" offset:class="after-21">
+      <CallToAction
+        @title="Are you a startup founder? Get in touch!"
+        @text="Would you like to share product development insights with our community? We would love to hear from you."
+        @label="Join the built to last interview series"
+      >
+        <a href="#" button:scope>
+          Become a guest
+        </a>
+      </CallToAction>
+    </div>
+  {{/if}}
 
   <ShapeFeaturePlaybookMax />
 
