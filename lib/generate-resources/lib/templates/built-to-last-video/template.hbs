@@ -1,0 +1,74 @@
+<div>
+  <Header @title="Resources" @active="resources">
+    <HeaderContent @headline="Founder insights">
+      <div typography:class="lead">
+        {{{body}}}
+      </div>
+    </HeaderContent>
+  </Header>
+
+  <div layout:class="content" offset:class="after-12">
+    <div block:class="video">
+      <iframe
+        src="{{videoUrl}}"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        block:class="video-frame"
+      ></iframe>
+    </div>
+  </div>
+
+  <div layout:class="full" offset:class="after-12">
+    <Divider @text="More Founder Insights" />
+  </div>
+
+  <div layout:class="full" offset:class="after-21" media-card:class="list">
+    <div media-card:class="single">
+      <MediaCard
+        @label="Masterclass with Marco Otte-Witte"
+        @title="Transitioning your team to a remote setup"
+        @image="/assets/images/resources/marco.jpg"
+        @link="/workshop/"
+      >
+        Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+      </MediaCard>
+    </div>
+    <div media-card:class="single">
+      <MediaCard
+        @label="Masterclass with Marco Otte-Witte"
+        @title="Transitioning your team to a remote setup"
+        @image="/assets/images/resources/marco.jpg"
+        @link="/workshop/"
+      >
+        Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+      </MediaCard>
+    </div>
+    <div media-card:class="single">
+      <MediaCard
+        @label="Masterclass with Marco Otte-Witte"
+        @title="Transitioning your team to a remote setup"
+        @image="/assets/images/resources/marco.jpg"
+        @link="/workshop/"
+      >
+        Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+      </MediaCard>
+    </div>
+  </div>
+
+  <div layout:class="full" offset:class="after-21">
+    <CallToAction
+      @title="Are you a startup founder? Get in touch!"
+      @text="Would you like to share product development insights with our community? We would love to hear from you."
+      @label="Join the built to last interview series"
+    >
+      <a href="#" button:scope>
+        Become a guest
+      </a>
+    </CallToAction>
+  </div>
+
+  <ShapeFeaturePlaybookMax />
+
+  <Footer />
+</div>

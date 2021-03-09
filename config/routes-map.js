@@ -5,6 +5,7 @@ const path = require('path');
 const _ = require('lodash');
 
 const collectPosts = require('../lib/generate-blog/lib/collect-posts');
+const collectVideos = require('../lib/generate-resources/lib/collect-videos');
 
 module.exports = function () {
   let { posts, authors } = collectPosts(path.join(__dirname, '..', '_posts'));
@@ -52,10 +53,20 @@ module.exports = function () {
     }
   });
 
+  let videos = collectVideos(path.join(__dirname, '..', '_videos'));
+  let videoRoutes = videos.reduce((acc, video) => {
+    acc[`/resources/video/${video.queryPath}`] = {
+      component: video.componentName,
+      bundle: { asset: '/resources.js', module: '__resources__' },
+    };
+    return acc;
+  }, {});
+
   let routes = {
     ...blogPagesRoutes,
     ...blogPostRoutes,
     ...blogAuthorsRoutes,
+    ...videoRoutes,
     '/': { component: 'PageHomepage' },
     '/404': { component: 'Page404' },
     '/calendar': {

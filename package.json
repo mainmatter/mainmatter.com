@@ -103,6 +103,7 @@
       "lib/generate-appearances-archive",
       "lib/generate-blog",
       "lib/generate-calendar",
+      "lib/generate-resources",
       "lib/global-css",
       "lib/head-data",
       "lib/pwa",
