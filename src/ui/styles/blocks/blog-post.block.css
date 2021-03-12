@@ -109,8 +109,8 @@
 }
 
 .quote {
-  display: flex;
-  padding-left: 16px;
+  position: relative;
+  padding-left: 8rem;
   border-left: 4px solid #5b5b5b;
 }
 
@@ -118,8 +118,9 @@
   content: '“';
   font-size: 12rem;
   line-height: 1rem;
-  margin-right: 2rem;
-  margin-top: 4rem;
+  position: absolute;
+  top: 4rem;
+  left: 2rem;
 }
 
 .quote-paragraph {
