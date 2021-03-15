@@ -7,7 +7,7 @@ topic: github
 bio: 'Senior Frontend Engineer'
 description: 'Samanta de Barros on how to try locally your GitHub Actions'
 og:
-  image: /assets/images/posts/2021-03-08-trying-github-actions-locally/og-image.png
+  image: /assets/images/posts/2021-03-15-trying-github-actions-locally/og-image.png
 ---
 
 If, like me, configuring [GitHub Actions](https://docs.github.com/en/actions) is
@@ -17,7 +17,7 @@ step by step of how to run your GitHub Actions on your own computer.
 
 <!--break-->
 
-![Trying your GitHub Actions locally illustration](/assets/images/posts/2021-03-08-trying-github-actions-locally/illustration.svg#full)
+![Trying your GitHub Actions locally illustration](/assets/images/posts/2021-03-15-trying-github-actions-locally/illustration.svg#full)
 
 Github Actions is a service from Github that allows you to automate certain
 tasks of your development cycle, right from your repository. It allows you to
@@ -32,7 +32,7 @@ case, I wanted to test an action that is in charge of releasing
 [ember-simple-auth](https://github.com/simplabs/ember-simple-auth), to see if
 the change I had made worked as I intended. I wanted to avoid having to make a
 release for this and see it fail. After some digging, I couldn't find a way to
-do a dry run of the action from GitHub, but I found
+do a dry run of the action from Github, but I found
 [act](https://github.com/nektos/act), a library that lets you run your GitHub
 Actions locally.
 
@@ -81,15 +81,15 @@ jobs:
 
 On every push of a tag, we release whatever is in that tag to npm.
 
-To try it out, we can either do `act push` or `act -j release` which uses the
-job name. When doing so, you will see an output that's roughly like this
+To try it out, we can run `act -j release` which uses the job name. When doing
+so, you will see an output that's roughly like this:
 
-![Example output of running act](/assets/images/posts/2021-03-08-trying-github-actions-locally/act-run.mp4#video)
+![Example output of running act](/assets/images/posts/2021-03-15-trying-github-actions-locally/act-run.mp4#video)
 
 In my case, I wanted to make sure the `npm` tarball included the `README` file,
 which is shown in the publish output here:
 
-![Partial view of npm publish output where README file can be seen](/assets/images/posts/2021-03-08-trying-github-actions-locally/readme-output.png#@800-1600)
+![Partial view of npm publish output where README file can be seen](/assets/images/posts/2021-03-15-trying-github-actions-locally/readme-output.png)
 
 After that, I committed my changes with confidence.
 
