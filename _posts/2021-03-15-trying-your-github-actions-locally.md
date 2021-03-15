@@ -19,7 +19,7 @@ step by step of how to run your GitHub Actions on your own computer.
 
 ![Trying your GitHub Actions locally illustration](/assets/images/posts/2021-03-15-trying-github-actions-locally/illustration.svg#full)
 
-Github Actions is a service from Github that allows you to automate certain
+GitHub Actions is a service from GitHub that allows you to automate certain
 tasks of your development cycle, right from your repository. It allows you to
 define a series of commands to be run on specified events, and takes care of
 executing those commands and providing you feedback. You can for instance, run
@@ -32,7 +32,7 @@ case, I wanted to test an action that is in charge of releasing
 [ember-simple-auth](https://github.com/simplabs/ember-simple-auth), to see if
 the change I had made worked as I intended. I wanted to avoid having to make a
 release for this and see it fail. After some digging, I couldn't find a way to
-do a dry run of the action from Github, but I found
+do a dry run of the action from GitHub, but I found
 [act](https://github.com/nektos/act), a library that lets you run your GitHub
 Actions locally.
 
