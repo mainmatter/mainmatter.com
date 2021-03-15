@@ -89,7 +89,7 @@ job name. When doing so, you will see an output that's roughly like this
 In my case, I wanted to make sure the `npm` tarball included the `README` file,
 which is shown in the publish output here:
 
-![Partial view of npm publish output where README file can be seen](/assets/images/posts/2021-03-08-trying-github-actions-locally/readme-output.png)
+![Partial view of npm publish output where README file can be seen](/assets/images/posts/2021-03-08-trying-github-actions-locally/readme-output.png#@800-1600)
 
 After that, I committed my changes with confidence.
 
