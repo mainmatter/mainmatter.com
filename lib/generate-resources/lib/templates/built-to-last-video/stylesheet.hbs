@@ -3,6 +3,7 @@
 @block offset from "../../styles/blocks/offset.block.css";
 @block media-card from "../../styles/blocks/media-card.block.css";
 @block button from "../../styles/blocks/button.block.css";
+@block video from "../../styles/blocks/video.block.css";
 
 :scope {
   block-name: {{componentName
@@ -10,20 +11,9 @@
   composes: 'layout';
 }
 
-.video {
-  height: 0px;
-  padding-bottom: 56.2%;
-  position: relative;
-}
-
-.video-frame {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
 @export typography;
 @export layout;
 @export offset;
 @export media-card;
 @export button;
+@export video;

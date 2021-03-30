@@ -10,13 +10,13 @@
   </Header>
 
   <div layout:class="content" offset:class="after-12">
-    <div block:class="video">
+    <div video:scope>
       <iframe
         src="{{videoUrl}}"
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
-        block:class="video-frame"
+        video:class="frame"
       ></iframe>
     </div>
   </div>
