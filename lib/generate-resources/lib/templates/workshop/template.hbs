@@ -1,0 +1,68 @@
+<div>
+  <HeadTag @name='meta' @keys=\{{hash property="og:image"}} @values=\{{hash content="{{siteUrl}}{{og.image}}"}} />
+
+  <Header @title="Workshop" @active="resources" @documentTitle="{{title}} | Resources" @description="{{description}}">
+    <HeaderContent @headline="{{title}}">
+      <div typography:class="lead">
+        {{{intro}}}
+      </div>
+    </HeaderContent>
+  </Header>
+
+  <div layout:class="content" offset:class="after-12">
+    {{{preBody}}}
+  </div>
+
+  <div layout:class="full" offset:class="after-12">
+    <Divider @text="Workshop overview" />
+  </div>
+
+  <div layout:class="content" offset:class="after-12">
+    <ul block:class="list-topics" offset:class="after-5">
+      {{#each topics}}
+        <li block:class="list-topics-item">
+          <img src="{{meta.image}}" block:class="topic-icon" />
+          <h3 typography:class="h5" block:class="topic-title">
+            {{meta.title}}
+          </h3>
+          {{{content}}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div layout:class="content" offset:class="after-12">
+    {{{postBody}}}
+  </div>
+
+  <div layout:class="content" offset:class="after-5">
+    <h3 typography:class="h3">
+      Workshop leads
+    </h3>
+  </div>
+
+  {{#each leads}}
+    <div layout:scope block:class="workshop-lead" offset:class="after-5">
+      <div block:class="workshop-lead-card">
+        <img src="{{meta.image}}" alt="" block:class="workshop-lead-card-image" />
+        <h4 typography:class="h4" block:class="workshop-lead-card-name">
+          {{meta.name}}
+        </h4>
+        <p typography:class="h5" block:class="workshop-lead-card-title">
+          {{meta.title}}
+        </p>
+        <div block:class="workshop-lead-card-bio">
+          {{{bio}}}
+        </div>
+      </div>
+    </div>
+  {{/each}}
+
+  {{#if cta}}
+    {{{cta}}}
+  {{/if}}
+
+  <ShapeFeaturePlaybookMax />
+
+  <Footer />
+</div>

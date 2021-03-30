@@ -6,6 +6,7 @@ const _ = require('lodash');
 
 const collectPosts = require('../lib/generate-blog/lib/collect-posts');
 const collectVideos = require('../lib/generate-resources/lib/collect-videos');
+const collectWorkshops = require('../lib/generate-resources/lib/collect-workshops');
 
 module.exports = function () {
   let { posts, authors } = collectPosts(path.join(__dirname, '..', '_posts'));
@@ -62,11 +63,21 @@ module.exports = function () {
     return acc;
   }, {});
 
+  let workshops = collectWorkshops(path.join(__dirname, '..', '_workshops'));
+  let workshopRoutes = workshops.reduce((acc, workshop) => {
+    acc[`/resources/workshop/${workshop.queryPath}`] = {
+      component: workshop.componentName,
+      bundle: { asset: '/resources.js', module: '__resources__' },
+    };
+    return acc;
+  }, {});
+
   let routes = {
     ...blogPagesRoutes,
     ...blogPostRoutes,
     ...blogAuthorsRoutes,
     ...videoRoutes,
+    ...workshopRoutes,
     '/': { component: 'PageHomepage' },
     '/404': { component: 'Page404' },
     '/calendar': {
