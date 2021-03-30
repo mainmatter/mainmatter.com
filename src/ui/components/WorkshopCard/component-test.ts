@@ -8,7 +8,7 @@ module('Component: WorkshopCard', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await render(hbs`<WorkshopCard @label="Label" @title="Titel" @description="Description" @authors="marcoow,msmarhigh" />`);
+    await render(hbs`<WorkshopCard @label="Label" @title="Titel" @description="Description" @leads="/assets/images/authors/marcoow.jpg,/assets/images/authors/msmarhigh.jpg" />`);
 
     assert.ok(this.containerElement.textContent.includes('Label'));
     assert.ok(this.containerElement.textContent.includes('Titel'));

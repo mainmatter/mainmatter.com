@@ -6,7 +6,7 @@
 @block media-card from "../../styles/blocks/media-card.block.css";
 
 :scope {
-  block-name: PageResources;
+  block-name: {{componentName}};
   composes: 'layout';
 }
 
@@ -32,11 +32,6 @@
   .video-header {
     margin-top: resolve('header-content');
     margin-top: 0;
-  }
-
-  .mobile-after-0 {
-    margin-bottom: resolve('offset.after-12');
-    margin-bottom: 0;
   }
 }
 

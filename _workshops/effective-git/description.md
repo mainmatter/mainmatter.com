@@ -1,6 +1,10 @@
 ---
 title: Effective Git
-description: This is an Ember workshop
+label: Remote workshop with Chris Manson and Marco Otte-Witte
+description:
+  Git is at the centre of modern pull request-based development workflows.
+  Mastering it makes teams more productive and developers' jobs more enjoyable.
+tag: '@'
 og:
   image: /assets/images/resources/videos/2020-12-2-built-to-last-1-christina-roizheim/og-image.png
 ---

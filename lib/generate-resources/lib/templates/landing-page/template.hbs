@@ -1,0 +1,184 @@
+<div>
+  <Header @title="Resources" @active="resources">
+    <div header-content:scope block:class="video-header">
+      <video
+        playsinline
+        autoplay
+        muted
+        preload
+        loop
+        poster="/assets/images/resources/header-video.poster.jpg"
+        block:class="video"
+        data-header-background
+      >
+        <source src="/assets/images/resources/header-video.mp4" type="video/mp4" />
+      </video>
+      <div block:class="header-content">
+        <h1 block:class="h1">
+          Built to last
+        </h1>
+        <h2 block:class="h2">
+          A resource hub for innovators and entrepreneurs
+        </h2>
+      </div>
+    </div>
+  </Header>
+
+  <div layout:class="full" offset:class="after-12">
+    <h2 typography:class="h2">
+      Process tips from simplabs
+    </h2>
+    <p typography:class="lead">
+      Learn real-world process improvements to help your team tap into it's full potential, and set up the infrastructure and practices that are the foundation for sustainable development.
+    </p>
+  </div>
+
+  <div layout:class="full" offset:class="after-16" media-card:class="list">
+    <div media-card:class="double">
+      <MediaCard
+        @label="Masterclass with Marco Otte-Witte"
+        @title="Transitioning your team to a remote setup"
+        @image="/assets/images/resources/marco.jpg"
+        @duration="05:37"
+        @isVideoLink="true"
+        @link="/workshop/"
+      >
+        Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+      </MediaCard>
+    </div>
+    <div media-card:class="double-single">
+      <MediaCard
+        @label="Masterclass with Marco Otte-Witte"
+        @title="Transitioning your team to a remote setup"
+        @image="/assets/images/resources/marco.jpg"
+        @link="/workshop/"
+      >
+        Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+      </MediaCard>
+    </div>
+  </div>
+
+  <div layout:class="full" offset:class="after-12">
+    <h2 typography:class="h2">
+      Founder insights
+    </h2>
+    <p typography:class="lead">
+      Our interview series goes behind-the-scenes into what a successful process looks like from a founder’s perspective.
+    </p>
+  </div>
+
+  <div layout:class="full" offset:class="after-12" media-card:class="list">
+    {{#each founderVideos}}
+      <div media-card:class="single">
+        <MediaCard
+          @label="{{label}}"
+          @title="{{title}}"
+          @image="{{image}}"
+          @isVideoLink="true"
+          @link="{{path}}"
+        >
+          {{teaser}}
+        </MediaCard>
+      </div>
+    {{/each}}
+  </div>
+
+  <div layout:class="full" offset:class="after-21">
+    <CallToAction
+      @title="Are you a startup founder? Get in touch!"
+      @text="Would you like to share product development insights with our community? We would love to hear from you."
+      @label="Join the built to last interview series"
+    >
+      <a href="#" button:scope>
+        Become a guest
+      </a>
+    </CallToAction>
+  </div>
+
+  <ShapeFeaturePlaybookMax />
+
+  <div layout:class="full" offset:class="after-12">
+    <h2 typography:class="h2">
+      Workshops
+    </h2>
+    <p typography:class="lead">
+      Designed to help teams build sustainable products that work well and keep working well.
+    </p>
+  </div>
+
+  <div layout:scope block:class="workshops">
+    <div block:class="workshop-col-lead">
+      {{#each workshopsLead}}
+        <div block:class="workshop-card">
+          <WorkshopCard
+            @leads="{{leads}}"
+            @label="{{label}}"
+            @title="{{title}}"
+            @description="{{description}}"
+            @tag="{{tag}}"
+            @path="{{path}}"
+          />
+        </div>
+      {{/each}}
+    </div>
+    <div block:class="workshop-col-trail">
+      {{#each workshopsTrail}}
+        <div block:class="workshop-card">
+          <WorkshopCard
+            @leads="{{leads}}"
+            @label="{{label}}"
+            @title="{{title}}"
+            @description="{{description}}"
+            @tag="{{tag}}"
+            @path="{{path}}"
+          />
+        </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <div layout:class="full" offset:class="after-12">
+    <h2 typography:class="h2" block:class="blog-posts-title">
+      Top Picks from our blog
+    </h2>
+  </div>
+
+  <div layout:class="full" offset:class="after-21" media-card:class="list">
+    <div media-card:class="single">
+      <MediaCard
+        @label="Label or Tag"
+        @title="Title aliquam erat volutpat in feugiat, purus ac"
+        @image="/assets/images/resources/marco.jpg"
+        @shallow="shallow"
+        @link="/workshop/"
+      >
+        Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+      </MediaCard>
+    </div>
+    <div media-card:class="single">
+      <MediaCard
+        @label="Label or Tag"
+        @title="Title aliquam erat volutpat in feugiat, purus ac"
+        @image="/assets/images/resources/marco.jpg"
+        @shallow="shallow"
+        @link="/workshop/"
+      >
+        Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+      </MediaCard>
+    </div>
+    <div media-card:class="single">
+      <MediaCard
+        @label="Label or Tag"
+        @title="Title aliquam erat volutpat in feugiat, purus ac"
+        @image="/assets/images/resources/marco.jpg"
+        @shallow="shallow"
+        @duration="34:34"
+        @link="/workshop/"
+      >
+        Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+      </MediaCard>
+    </div>
+  </div>
+
+  <Footer />
+</div>

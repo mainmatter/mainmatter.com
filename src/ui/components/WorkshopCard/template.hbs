@@ -1,7 +1,7 @@
 <div>
   <div block:class="info">
-    {{#each this.authors key="id" as |author|}}
-      <img src="{{author.image}}" block:class="image" />
+    {{#each this.leads key="id" as |leadImage|}}
+      <img src="{{leadImage}}" block:class="image" />
     {{/each}}
     <p typography:class="small" block:class="label">
       {{@label}}
@@ -17,7 +17,7 @@
     <p typography:class="p" block:class="p">
       {{@description}}
     </p>
-    <ArrowLink @href="#" @lead={{false}} @leftAlign={{true}}>
+    <ArrowLink @href={{@path}} @lead={{false}} @leftAlign={{true}}>
       Book Workshop
     </ArrowLink>
   </div>
