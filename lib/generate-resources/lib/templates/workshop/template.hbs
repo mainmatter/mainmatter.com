@@ -18,11 +18,11 @@
   </div>
 
   <div layout:class="content" offset:class="after-12">
-    <ul block:class="list-topics" offset:class="after-5">
+    <ul workshop:class="list-topics" offset:class="after-5">
       {{#each topics}}
-        <li block:class="list-topics-item">
-          <img src="{{meta.image}}" block:class="topic-icon" />
-          <h3 typography:class="h5" block:class="topic-title">
+        <li workshop:class="list-topics-item">
+          <img src="{{meta.image}}" workshop:class="topic-icon" />
+          <h3 typography:class="h5" workshop:class="topic-title">
             {{meta.title}}
           </h3>
           {{{content}}}
@@ -42,16 +42,16 @@
   </div>
 
   {{#each leads}}
-    <div layout:scope block:class="workshop-lead" offset:class="after-5">
-      <div block:class="workshop-lead-card">
-        <img src="{{meta.image}}" alt="" block:class="workshop-lead-card-image" />
-        <h4 typography:class="h4" block:class="workshop-lead-card-name">
+    <div layout:scope workshop:class="lead" offset:class="after-5">
+      <div workshop:class="lead-card">
+        <img src="{{meta.image}}" alt="" workshop:class="lead-card-image" />
+        <h4 typography:class="h4" workshop:class="lead-card-name">
           {{meta.name}}
         </h4>
-        <p typography:class="h5" block:class="workshop-lead-card-title">
+        <p typography:class="h5" workshop:class="lead-card-title">
           {{meta.title}}
         </p>
-        <div block:class="workshop-lead-card-bio">
+        <div workshop:class="lead-card-bio">
           {{{bio}}}
         </div>
       </div>

@@ -1,0 +1,119 @@
+:scope {
+  block-name: workshop;
+}
+
+.list-topics {
+  list-style: none;
+}
+
+.list-topics-item {
+  margin: 0;
+  position: relative;
+}
+
+.list-topics-item + .list-topics-item {
+  margin-top: 8rem;
+}
+
+.topic-title {
+  margin: 0;
+  line-height: var(--h5-lh);
+}
+
+.topic-icon {
+  position: absolute;
+  top: 0;
+  left: calc(-8rem - var(--col-gap));
+  width: 8rem;
+  height: 8rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 887px) {
+  .topic-icon {
+    position: initial;
+    display: block;
+    margin: 0 auto 1.25rem auto;
+  }
+}
+
+.lead-card-name {
+  margin: 0;
+  color: var(--color-primary);
+}
+
+.lead-card-title {
+  display: block;
+  margin-top: 2rem;
+  color: var(--color-primary);
+}
+
+.lead-card + .lead-card {
+  margin-top: 4rem;
+}
+
+.lead-card-bio {
+  color: var(--color-primary);
+  margin-top: 4rem;
+}
+
+@media (min-width: 888px) {
+  .lead-card {
+    grid-column: 3/-3;
+    background-color: var(--color-light);
+    padding: 4rem var(--col-gap) 4rem calc(var(--col-gap) + 11.25rem);
+    position: relative;
+  }
+
+  .lead-card:before {
+    content: '';
+    background: url(/assets/images/workshops/grid.svg) no-repeat;
+    background-size: contain;
+    width: 22.5rem;
+    height: 22.5rem;
+    display: block;
+    position: absolute;
+    top: 8rem;
+    left: -15.25rem;
+    z-index: 1;
+  }
+
+  .lead-card-image {
+    width: 22.5rem;
+    height: 22.5rem;
+    position: absolute;
+    top: 4rem;
+    left: -11.25rem;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 887px) {
+  .lead {
+    background: linear-gradient(to left, var(--color-light), var(--color-light)) no-repeat 0 10rem;
+  }
+
+  .lead-card {
+    grid-column: 2/-2;
+    padding-bottom: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .lead-card-image {
+    width: 12.5rem;
+    height: 12.5rem;
+    margin-right: var(--col-gap);
+  }
+
+  .lead-card-name {
+    grid-column: 4/-2;
+    flex-basis: calc(100% - 12.5rem - var(--col-gap));
+  }
+
+  .lead-card-title,
+  .lead-card-bio {
+    grid-column: 2/-2;
+  }
+}
