@@ -7,10 +7,15 @@ image: /assets/images/resources/marco.jpg
 teaser:
   Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta
   augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
-description: A test description
+description:
+  Marco Otte-Witte and Karol Domagalksi, Founder and CEO of Upfit, talk about
+  development processes and the importance of supporting people's growth by
+  sparring and mentoring.
 og:
   image: /assets/images/resources/videos/2020-12-15-built-to-last-2-karol-domagalski/og-image.png
 ---
 
-Marco Otto-Witte, the founder of simplabs, in conversation with Karol
-Domagalski, the founder & CEO of Upfit.
+Marco Otte-Witte interviews Karol Domagalski of Upfit, a mobile app that helps
+people live a healthier lifestyle. Upfit adapts to people's eating habits,
+working life, budget and time and creates customized nutrition plans, shopping
+lists and so on.

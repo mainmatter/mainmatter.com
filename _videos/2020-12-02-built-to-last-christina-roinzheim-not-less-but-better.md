@@ -7,7 +7,10 @@ image: /assets/images/resources/marco.jpg
 teaser:
   Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta
   augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
-description: A test description
+description:
+  Mar High, director of product design at simplabs, talks to Christina
+  Roitzheim, co-founder of not less but better, about how her team goes from
+  idea to release.
 og:
   image: /assets/images/resources/videos/2020-12-2-built-to-last-1-christina-roizheim/og-image.png
 ---
