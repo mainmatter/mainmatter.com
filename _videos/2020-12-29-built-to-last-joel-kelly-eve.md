@@ -4,6 +4,7 @@ kind: built-to-last
 label: 'Built to Last: Founder insight'
 title: Joel Kelly, founder & CEO of Eve
 image: /assets/images/resources/marco.jpg
+duration: '12:30'
 teaser:
   Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta
   augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.

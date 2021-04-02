@@ -4,6 +4,7 @@ kind: built-to-last
 label: 'Built to Last: Founder insight'
 title: Khalid Maliki, co-founder of Tykn
 image: /assets/images/resources/marco.jpg
+duration: '23:24'
 teaser:
   Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta
   augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.

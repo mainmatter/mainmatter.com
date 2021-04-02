@@ -4,6 +4,7 @@ kind: talk
 label: Talk with Marco Otte-Witte
 title: The three pillars of successful digital product development
 image: /assets/images/resources/marco.jpg
+duration: '28:36'
 teaser:
   Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta
   augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
