@@ -1,6 +1,6 @@
 ---
 title: Testing
-image: /assets/images/workshops/topic.svg
+image: /assets/images/workshops/hands-on-ember/check-circle.svg
 ---
 
 In this stage, we'll dive deep into Ember's testing story, exploring the

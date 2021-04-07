@@ -1,6 +1,6 @@
 ---
 title: Delivery Pipelines
-image: /assets/images/workshops/topic.svg
+image: /assets/images/workshops/effective-git/chevrons.svg
 ---
 
 Highly integrated and automated infrastructure and workflows are the foundation

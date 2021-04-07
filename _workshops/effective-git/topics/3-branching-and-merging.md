@@ -1,6 +1,6 @@
 ---
 title: Branching and Merging
-image: /assets/images/workshops/topic.svg
+image: /assets/images/workshops/effective-git/git-branch.svg
 ---
 
 Git makes branching easy and cheap and working with Git means constantly

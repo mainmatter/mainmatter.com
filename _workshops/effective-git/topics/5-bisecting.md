@@ -1,6 +1,6 @@
 ---
 title: Bisecting
-image: /assets/images/workshops/topic.svg
+image: /assets/images/workshops/effective-git/crosshair.svg
 ---
 
 Sometimes it's hard to find the change that introduced a particular defect and

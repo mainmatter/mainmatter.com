@@ -1,6 +1,6 @@
 ---
 title: Rewriting History
-image: /assets/images/workshops/topic.svg
+image: /assets/images/workshops/effective-git/list.svg
 ---
 
 Keeping a clean history and organizing commits in meaningful ways is essential

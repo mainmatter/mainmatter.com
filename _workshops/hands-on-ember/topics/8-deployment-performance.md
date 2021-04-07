@@ -1,6 +1,6 @@
 ---
 title: Deployment, Performance, SSR and SSG (optional)
-image: /assets/images/workshops/topic.svg
+image: /assets/images/workshops/hands-on-ember/upload.svg
 ---
 
 In this stage, we'll look into serving Ember applications in the most performant

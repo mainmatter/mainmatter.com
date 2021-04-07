@@ -22,11 +22,13 @@
 
 .topic-icon {
   position: absolute;
+  background: var(--color-accent);
   top: 0;
   left: calc(-8rem - var(--col-gap));
-  width: 8rem;
-  height: 8rem;
+  width: 4rem;
+  height: 4rem;
   margin-top: 0.5rem;
+  padding: 2rem;
 }
 
 @media (max-width: 887px) {

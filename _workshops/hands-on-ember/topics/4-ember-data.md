@@ -1,6 +1,6 @@
 ---
 title: Ember Data
-image: /assets/images/workshops/topic.svg
+image: /assets/images/workshops/hands-on-ember/database.svg
 ---
 
 This stage covers all aspects of Ember Data, from the basics like working with
