@@ -1,5 +1,5 @@
 ---
-title: "Day 1: Unpack"
+title: 'Day 1: Unpack'
 image: /assets/images/workshops/product-design-sprint/box.svg
 ---
 

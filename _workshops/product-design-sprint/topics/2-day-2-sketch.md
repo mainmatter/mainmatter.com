@@ -1,5 +1,5 @@
 ---
-title: "Day 2: Sketch"
+title: 'Day 2: Sketch'
 image: /assets/images/workshops/product-design-sprint/edit.svg
 ---
 

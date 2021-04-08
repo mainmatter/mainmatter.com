@@ -1,5 +1,5 @@
 ---
-title: "Day 4: Prototype"
+title: 'Day 4: Prototype'
 image: /assets/images/workshops/product-design-sprint/smartphone.svg
 ---
 
