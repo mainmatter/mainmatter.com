@@ -13,7 +13,7 @@ description:
   typical challenges their team faced around long-term planning and
   predictability.
 og:
-  image: /assets/images/resources/videos/2020-12-29-built-to-last-3-joel-kelly/og-image.png
+  image: /assets/images/resources/videos/2021-01-13-built-to-last-4-peter-arnold/og-image.png
 ---
 
 simplabs' founder Marco Otte-Witte speaks with Peter Arnold, the CEO and
