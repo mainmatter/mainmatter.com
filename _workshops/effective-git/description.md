@@ -6,7 +6,7 @@ description:
   Mastering it makes teams more productive and developers' jobs more enjoyable.
 tag: '@'
 og:
-  image: /assets/images/resources/videos/2020-12-2-built-to-last-1-christina-roizheim/og-image.png
+  image: /assets/images/workshops/effective-git/og-image.png
 ---
 
 Although Git is everyone's version control system of choice, it can sometimes

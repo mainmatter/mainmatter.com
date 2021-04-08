@@ -6,7 +6,7 @@ description:
   the framework from the CLI to routing and components, ember-data and testing.
 tag: '@'
 og:
-  image: /assets/images/resources/videos/2020-12-2-built-to-last-1-christina-roizheim/og-image.png
+  image: /assets/images/workshops/hands-on-ember/og-image.png
 ---
 
 Ember.js is the frontend framework for ambitious teams that never stop shipping
