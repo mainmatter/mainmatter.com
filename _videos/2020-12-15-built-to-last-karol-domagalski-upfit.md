@@ -6,8 +6,9 @@ title: Karol Domagalski, founder & CEO of Upfit
 image: /assets/images/resources/marco.jpg
 duration: '23:02'
 teaser:
-  Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta
-  augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+  '"Invest in your own company, in your own people, and help them grow. Sparring
+  and mentorship inside the company is super important." shares Karol, founder
+  of a 100% bootstrapped company.'
 description:
   Marco Otte-Witte and Karol Domagalksi, Founder and CEO of Upfit, talk about
   development processes and the importance of supporting people's growth by

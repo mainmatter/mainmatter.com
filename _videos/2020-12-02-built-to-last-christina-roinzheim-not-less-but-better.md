@@ -6,8 +6,7 @@ title: Christina Roizheim, co-founder of not less but better
 image: /assets/images/resources/marco.jpg
 duration: '23:39'
 teaser:
-  Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta
-  augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+  '"Pressure doesn''t solve problems" – a powerful takeaway from the co-founder of not less but better, an app that helps you overcome bad habits through techniques from behavioral psychology.'
 description:
   Mar High, director of product design at simplabs, talks to Christina
   Roitzheim, co-founder of not less but better, about how her team goes from
