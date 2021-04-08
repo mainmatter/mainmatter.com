@@ -13,7 +13,7 @@ description:
   development are in three areas: planning and preparation, process and
   collaboration, and infrastructure and practices.'
 og:
-  image: /assets/images/resources/videos/2020-12-2-built-to-last-1-christina-roizheim/og-image.png
+  image: /assets/images/resources/videos/2020-12-10-the-three-pillars-of-successful-digital-product-development/og-image.png
 ---
 
 Marco Otte-Witte shares best practices for digital product development in the
