@@ -1,6 +1,6 @@
 ---
 title: Ember's object model (optional)
-image: /assets/images/workshops/hands-on-ember/layers.svg
+image: /assets/images/resources/workshops/hands-on-ember/layers.svg
 ---
 
 Ember applications building on versions older than the Octane edition are still

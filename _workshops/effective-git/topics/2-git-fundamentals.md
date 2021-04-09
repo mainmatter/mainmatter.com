@@ -1,6 +1,6 @@
 ---
 title: Git Fundamentals
-image: /assets/images/workshops/effective-git/box.svg
+image: /assets/images/resources/workshops/effective-git/box.svg
 ---
 
 Once we understand how Git fits in to the bigger picture, we'll look into how it

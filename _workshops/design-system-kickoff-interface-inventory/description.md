@@ -4,9 +4,9 @@ label: Remote workshop with Mar High
 description:
   Create an interface inventory of your digital product, and align with your
   team on how to prioritize refactoring using a design systems methodology.
-tag: /assets/images/workshops/design-system-kickoff-interface-inventory/scissors.svg
+tag: /assets/images/resources/workshops/design-system-kickoff-interface-inventory/scissors.svg
 og:
-  image: /assets/images/workshops/design-system-kickoff-interface-inventory/og-image.png
+  image: /assets/images/resources/workshops/design-system-kickoff-interface-inventory/og-image.png
 ---
 
 Create an interface inventory of your digital product, and align with your team

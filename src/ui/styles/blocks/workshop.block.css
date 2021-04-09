@@ -69,7 +69,7 @@
 
   .lead-card:before {
     content: '';
-    background: url(/assets/images/workshops/grid.svg) no-repeat;
+    background: url(/assets/images/resources/workshops/grid.svg) no-repeat;
     background-size: contain;
     width: 22.5rem;
     height: 22.5rem;

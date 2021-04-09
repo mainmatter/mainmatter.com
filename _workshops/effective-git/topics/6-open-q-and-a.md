@@ -1,6 +1,6 @@
 ---
 title: Open Q&A
-image: /assets/images/workshops/effective-git/help.svg
+image: /assets/images/resources/workshops/effective-git/help.svg
 ---
 
 We reserve some time in the end to discuss your team's specific questions

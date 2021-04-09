@@ -1,6 +1,6 @@
 ---
 title: Templates and Components
-image: /assets/images/workshops/hands-on-ember/code.svg
+image: /assets/images/resources/workshops/hands-on-ember/code.svg
 ---
 
 Rendering DOM elements is the most essential task of every Ember app. We'll dive

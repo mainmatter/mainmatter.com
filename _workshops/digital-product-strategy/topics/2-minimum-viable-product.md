@@ -1,6 +1,6 @@
 ---
 title: Minimum Viable Product (MVP)
-image: /assets/images/workshops/digital-product-strategy/crosshair.svg
+image: /assets/images/resources/workshops/digital-product-strategy/crosshair.svg
 ---
 
 Collaboratively strip down features and develop an understanding of the

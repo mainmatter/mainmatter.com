@@ -1,6 +1,6 @@
 ---
 title: Low-fidelity wireframes
-image: /assets/images/workshops/digital-product-strategy/compass.svg
+image: /assets/images/resources/workshops/digital-product-strategy/compass.svg
 ---
 
 A two-dimensional skeletal outline of key moments of the user flow diagram. Also

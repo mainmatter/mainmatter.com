@@ -4,9 +4,9 @@ label: 1-2 week remote workshop with Mar High
 description:
   "Using Google's framework, we will answer your most pressing business
   questions through design, prototyping, and testing with real users."
-tag: /assets/images/workshops/product-design-sprint/fast-forward.svg
+tag: /assets/images/resources/workshops/product-design-sprint/fast-forward.svg
 og:
-  image: /assets/images/workshops/product-design-sprint/og-image.png
+  image: /assets/images/resources/workshops/product-design-sprint/og-image.png
 ---
 
 Product design sprints are a step-by-step process for product design. They were

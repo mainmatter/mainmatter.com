@@ -1,6 +1,6 @@
 ---
 title: 'Day 5: Test'
-image: /assets/images/workshops/product-design-sprint/mic.svg
+image: /assets/images/resources/workshops/product-design-sprint/mic.svg
 ---
 
 Receive feedback on the prototype from real customers and learn what’s working

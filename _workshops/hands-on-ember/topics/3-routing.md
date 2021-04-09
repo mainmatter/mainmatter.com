@@ -1,6 +1,6 @@
 ---
 title: Routing
-image: /assets/images/workshops/hands-on-ember/map.svg
+image: /assets/images/resources/workshops/hands-on-ember/map.svg
 ---
 
 Ember pioneered the idea of driving the application state through the URL. In

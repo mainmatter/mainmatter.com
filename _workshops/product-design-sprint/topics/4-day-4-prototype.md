@@ -1,6 +1,6 @@
 ---
 title: 'Day 4: Prototype'
-image: /assets/images/workshops/product-design-sprint/smartphone.svg
+image: /assets/images/resources/workshops/product-design-sprint/smartphone.svg
 ---
 
 Create a realistic working prototype in just one day! At the same time, we

@@ -1,6 +1,6 @@
 ---
 title: Ember.js Basic
-image: /assets/images/workshops/hands-on-ember/box.svg
+image: /assets/images/resources/workshops/hands-on-ember/box.svg
 ---
 
 We'll look at what the basic building blocks of an Ember application are and how

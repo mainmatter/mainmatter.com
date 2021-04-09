@@ -1,6 +1,6 @@
 ---
 title: Understanding the product
-image: /assets/images/workshops/digital-product-strategy/search.svg
+image: /assets/images/resources/workshops/digital-product-strategy/search.svg
 ---
 
 Go over your goals, desired features, mission statement, and possible key

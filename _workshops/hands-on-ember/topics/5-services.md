@@ -1,6 +1,6 @@
 ---
 title: Services
-image: /assets/images/workshops/hands-on-ember/hexagon.svg
+image: /assets/images/resources/workshops/hands-on-ember/hexagon.svg
 ---
 
 Ember's services are a simple yet powerful mechanism for sharing state
