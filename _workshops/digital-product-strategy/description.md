@@ -6,7 +6,7 @@ description:
   your time and investment. In this workshop we will collaborate to formulate a
   clear product vision, establishing a blueprint for your digital product's
   development process. This workshop is a great kickoff for an MVP project.
-tag: '@'
+tag: /assets/images/workshops/digital-product-strategy/flag.svg
 og:
   image: /assets/images/workshops/digital-product-strategy/og-image.png
 ---

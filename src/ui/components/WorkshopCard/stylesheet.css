@@ -20,13 +20,10 @@
 
 .tag {
   background: var(--color-accent);
-  width: 8rem;
   display: block;
-  height: 8rem;
-  line-height: 8rem;
-  text-align: center;
-  color: white;
-  font-size: 5rem;
+  width: 4rem;
+  height: 4rem;
+  padding: 2rem;
   margin-top: 7.25rem;
 }
 

@@ -4,7 +4,7 @@ label: 1-2 week remote workshop with Mar High
 description:
   "Using Google's framework, we will answer your most pressing business
   questions through design, prototyping, and testing with real users."
-tag: '@'
+tag: /assets/images/workshops/product-design-sprint/fast-forward.svg
 og:
   image: /assets/images/workshops/product-design-sprint/og-image.png
 ---
