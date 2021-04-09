@@ -109,32 +109,23 @@
 
   <div layout:scope block:class="workshops">
     <div block:class="workshop-col-lead">
-      {{#each workshopsLead}}
-        <div block:class="workshop-card">
-          <WorkshopCard
-            @leads="{{leads}}"
-            @label="{{label}}"
-            @title="{{title}}"
-            @description="{{description}}"
-            @tag="{{tag}}"
-            @path="{{path}}"
-          />
-        </div>
-      {{/each}}
+      <div block:class="workshop-card">
+        <WorkshopCardDigitalProductStrategy />
+      </div>
+      <div block:class="workshop-card">
+        <WorkshopCardDesignSystemKickoffInterfaceInventory />
+      </div>
     </div>
     <div block:class="workshop-col-trail">
-      {{#each workshopsTrail}}
-        <div block:class="workshop-card">
-          <WorkshopCard
-            @leads="{{leads}}"
-            @label="{{label}}"
-            @title="{{title}}"
-            @description="{{description}}"
-            @tag="{{tag}}"
-            @path="{{path}}"
-          />
-        </div>
-      {{/each}}
+      <div block:class="workshop-card">
+        <WorkshopCardProductDesignSprint />
+      </div>
+      <div block:class="workshop-card">
+        <WorkshopCardEffectiveGit />
+      </div>
+      <div block:class="workshop-card">
+        <WorkshopCardHandsOnEmber />
+      </div>
     </div>
   </div>
 
