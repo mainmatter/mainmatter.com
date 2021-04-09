@@ -1,7 +1,7 @@
 ---
 videoUrl: https://www.youtube.com/embed/eT7G_V6l4qw
 kind: built-to-last
-label: 'Built to Last: Founder insight'
+label: 'Built to Last: Expert insight'
 title: Khalid Maliki, co-founder of Tykn
 image: /assets/images/resources/marco.jpg
 duration: '23:24'

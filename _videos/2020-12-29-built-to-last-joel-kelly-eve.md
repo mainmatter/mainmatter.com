@@ -1,7 +1,7 @@
 ---
 videoUrl: https://www.youtube.com/embed/o5Jv3kZ-Tks
 kind: built-to-last
-label: 'Built to Last: Founder insight'
+label: 'Built to Last: Expert insight'
 title: Joel Kelly, founder & CEO of Eve
 image: /assets/images/resources/marco.jpg
 duration: '12:30'
