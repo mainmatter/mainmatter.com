@@ -46,6 +46,9 @@ possible.
 > I would send any new developer in our company to this workshop!
 > <author>Previous Participant</author>
 
+All examples and practical assignments from the workshop are
+[available publicly on GitHub](https://github.com/simplabs/ember-workshop).
+
 <!--break-->
 
 <div layout:class="full" offset:class="after-21">
