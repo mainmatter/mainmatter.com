@@ -6,8 +6,8 @@ title: Aymeric Augustin, CTO of Qonto
 image: /assets/images/resources/marco.jpg
 duration: '24:58'
 teaser:
-  Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta
-  augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+  Aymeric talks about how he views Qonto as a pipeline that takes an input, runs
+  a value-adding process, and puts the output in the hand of their customers.
 description:
   Marco Otte-Witte talks to Aymeric Augustin, CTO of Qonto, about the
   disappointment that Agile is in reality and what effective and sustainable

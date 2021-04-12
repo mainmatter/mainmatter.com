@@ -6,8 +6,8 @@ title: Peter Arnold, CEO and co-founder of EnterAnGo
 image: /assets/images/resources/marco.jpg
 duration: '28:04'
 teaser:
-  Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta
-  augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+  A conversation with the co-founder of a business travel management tool on the
+  challenges around planning and feature time estimation.
 description:
   Marco Otte-Witte talks to Peter Arnold, CEO and co-founder of EnterAnGo, about
   typical challenges their team faced around long-term planning and

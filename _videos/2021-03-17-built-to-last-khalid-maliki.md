@@ -6,8 +6,9 @@ title: Khalid Maliki, co-founder of Tykn
 image: /assets/images/resources/marco.jpg
 duration: '23:24'
 teaser:
-  Maecenas quis accumsan eros, vitae fringilla tellus. Donec tempor est porta
-  augue blandit fringilla. Sed eu feugiat nisl, at euismod velit.
+  Khalid shares how he empowers his team to feel ownership over their work. This
+  includes encouraging everyone to set their own goals and celebrating both
+  achievements and failures.
 description:
   Marco Otte-Witte and Khalid Maliki, co-founder of Tykn, talk about how shared
   ownership and self-organization of development teams are critical for a strong
