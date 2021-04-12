@@ -3,7 +3,7 @@ videoUrl: https://www.youtube.com/embed/pI8p2_MyIyg
 kind: built-to-last
 label: 'Built to Last: Expert insight'
 title: Karol Domagalski, founder & CEO of Upfit
-image: /assets/images/resources/marco.jpg
+image: /assets/images/resources/videos/2020-12-15-built-to-last-2-karol-domagalski/karol.jpg
 duration: '23:02'
 teaser:
   '"Invest in your own company, in your own people, and help them grow. Sparring
