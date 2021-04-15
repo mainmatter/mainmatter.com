@@ -2,8 +2,8 @@
 title: Hands-on Ember.js
 label: Remote workshop with Ricardo Mendes and Marco Otte-Witte
 description:
-  Two or three day hands-on Ember.js workshop. We cover all relevant aspects of
-  the framework from the CLI to routing and components, ember-data and testing.
+  Two or three-day hands-on Ember.js workshop. We cover all relevant aspects of
+  the framework from the CLI to routing and components, ember-data, and testing.
 tag: /assets/images/resources/workshops/hands-on-ember/ember.svg
 og:
   image: /assets/images/resources/workshops/hands-on-ember/og-image.png

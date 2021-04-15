@@ -1,7 +1,7 @@
 ---
 videoUrl: https://www.youtube.com/embed/SKRIYNjhbgg
 kind: built-to-last
-label: 'Built to Last: Expert insight'
+label: 'Built to Last #4: Expert insights'
 title: Peter Arnold, CEO and co-founder of EnterAnGo
 image: /assets/images/resources/videos/2021-01-13-built-to-last-4-peter-arnold/peter.jpg
 duration: '28:04'
