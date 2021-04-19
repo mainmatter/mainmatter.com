@@ -37,7 +37,7 @@ MVP, the product architecture diagram, and our [40-page Playbook](/playbook/).
 <div layout:class="full" offset:class="after-21">
 <CallToAction
   @title="Interested in digital product strategy?"
-  @text="Request a call to learn more about our workshop"
+  @text="Request a call to learn more about our workshop."
   @label="Get in touch with us"
 >
   <a href="/contact/" button:scope>

@@ -40,7 +40,7 @@ project managers, business owners, QA – are all welcome.
 <div layout:class="full" offset:class="after-21">
 <CallToAction
   @title="Interested in a design system kickoff?"
-  @text="Request a call to learn more about our workshop"
+  @text="Request a call to learn more about our workshop."
   @label="Get in touch with us"
 >
   <a href="/contact/" button:scope>
