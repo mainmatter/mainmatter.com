@@ -1,6 +1,6 @@
 ---
 title: Product design sprint
-label: 1-2 week remote workshop with Mar High
+label: 1-2 week remote workshop <!--break-->with Mar High
 description:
   "Using Google's framework, we will answer your most pressing business
   questions through design, prototyping, and testing with real users."

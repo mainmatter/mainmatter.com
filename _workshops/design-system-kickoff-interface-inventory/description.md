@@ -1,6 +1,6 @@
 ---
 title: Design system kickoff (interface inventory)
-label: Remote workshop with Mar High
+label: Remote workshop <!--break-->with Mar High
 description:
   Create an interface inventory of your digital product, and align with your
   team on how to prioritize refactoring using a design systems methodology.

@@ -50,6 +50,12 @@
   color: #000;
 }
 
+@media (min-width: 888px) {
+  .label-line {
+    display: block;
+  }
+}
+
 @media (max-width: 887px) {
   :scope {
     grid-template-columns: var(--grid-template-columns);

@@ -1,6 +1,6 @@
 ---
 title: Digital product strategy workshop
-label: 2–3 day remote workshop with Mar High & Marco Otte-Witte
+label: 2–3 day remote workshop <!--break-->with Mar High & Marco Otte-Witte
 description:
   A clear product strategy is essential to get as much value as possible for
   your time and investment. In this workshop we will collaborate to formulate a
