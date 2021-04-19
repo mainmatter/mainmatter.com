@@ -2,7 +2,7 @@
   <HeadTag @name='meta' @keys=\{{hash property="og:image"}} @values=\{{hash content="{{siteUrl}}{{og.image}}"}} />
 
   <Header @title="Resources" @active="resources" @documentTitle="{{title}} | Resources" @description="{{description}}">
-    <HeaderContent @headline="Expert insights">
+    <HeaderContent @headline="{{pageTitle}}">
       <div typography:class="lead">
         {{{body}}}
       </div>
@@ -23,7 +23,7 @@
 
   {{#if isFounderInterview}}
     <div layout:class="full" offset:class="after-12">
-      <Divider @text="More Expert Insights" />
+      <Divider @text="{{moreText}}" />
     </div>
 
     <div layout:class="full" offset:class="after-21" media-card:class="list">
