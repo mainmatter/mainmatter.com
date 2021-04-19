@@ -73,7 +73,8 @@
   .lead-card {
     grid-column: 3/-3;
     background-color: var(--color-light);
-    padding: 4rem var(--col-gap) 4rem calc(var(--col-gap) + 11.25rem);
+    padding: calc(var(--col-gap) * 2.5) calc(var(--col-gap) * 2.5) calc(var(--col-gap) * 2.5)
+      calc(var(--col-gap) + 11.25rem);
     position: relative;
   }
 
@@ -85,7 +86,7 @@
     height: 22.5rem;
     display: block;
     position: absolute;
-    top: 8rem;
+    top: calc(calc(var(--col-gap) * 2.5) + 4rem);
     left: -14.5rem;
     z-index: 1;
   }
@@ -94,7 +95,7 @@
     width: 22.5rem;
     height: 22.5rem;
     position: absolute;
-    top: 4rem;
+    top: calc(var(--col-gap) * 2.5);
     left: -11.25rem;
     z-index: 2;
   }
