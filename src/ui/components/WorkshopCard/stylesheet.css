@@ -60,7 +60,7 @@
   :scope {
     grid-template-columns: var(--grid-template-columns);
     background: linear-gradient(to left, var(--color-light), var(--color-light)) no-repeat 0 11.25rem;
-    padding: 0;
+    padding: 0 0 var(--col-gap) 0;
   }
 
   .info {
