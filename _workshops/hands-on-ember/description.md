@@ -51,7 +51,7 @@ All examples and practical assignments from the workshop are
 
 <!--break-->
 
-<div layout:class="full" offset:class="after-21">
+<div layout:class="full" workshop:class="cta">
 <CallToAction
   @title="Bring your Ember skills to the next level!"
   @text="Request a call to learn more about our Ember workshop and how we can tailor it to meet your team's needs."

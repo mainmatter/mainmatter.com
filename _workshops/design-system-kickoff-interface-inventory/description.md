@@ -37,7 +37,7 @@ project managers, business owners, QA – are all welcome.
 
 <!--break-->
 
-<div layout:class="full" offset:class="after-21">
+<div layout:class="full" workshop:class="cta">
 <CallToAction
   @title="Interested in a design system kickoff?"
   @text="Request a call to learn more about our workshop."

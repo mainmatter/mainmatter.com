@@ -44,7 +44,7 @@ All content and examples of the workshop are
 
 <!--break-->
 
-<div layout:class="full" offset:class="after-21">
+<div layout:class="full" workshop:class="cta">
 <CallToAction
   @title="Interested in getting the most out of Git? "
   @text="Request a call to learn more about our Git workshop."

@@ -44,7 +44,7 @@ workshop so your team is only present for a fraction of the time.
 
 <!--break-->
 
-<div layout:class="full" offset:class="after-21">
+<div layout:class="full" workshop:class="cta">
 <CallToAction
   @title="Are you ready to validate your digital product with real users?"
   @text="Request a consultation!"
