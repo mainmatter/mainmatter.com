@@ -24,3 +24,17 @@ scale when their product becomes a success.
 
 In this talk, Marco Otte-Witte explains what sustainable digital product
 development practices are in three main areas: scoping, planning and execution.
+
+<!--break-->
+
+<div layout:class="full" offset:class="after-21">
+<CallToAction
+  @title="Struggling with digital product development?"
+  @text="Request a call to learn more about how we can help optimizing organizations, processes and infrastructure."
+  @label="Get in touch with us"
+>
+  <a href="/contact/" button:scope>
+    Contact us
+  </a>
+</CallToAction>
+</div>
