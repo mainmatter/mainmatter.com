@@ -21,7 +21,7 @@
     <ul workshop:class="list-topics" offset:class="after-5">
       {{#each topics}}
         <li workshop:class="list-topics-item">
-          <img src="{{meta.image}}" workshop:class="topic-icon" />
+          <img src="{{meta.image}}" workshop:class="topic-icon" alt="" />
           <h3 typography:class="h5" workshop:class="topic-title">
             {{meta.title}}
           </h3>
@@ -44,7 +44,7 @@
   {{#each leads}}
     <div layout:scope workshop:class="lead" offset:class="after-5">
       <div workshop:class="lead-card">
-        <img src="{{meta.image}}" alt="" workshop:class="lead-card-image" />
+        <img src="{{meta.image}}" alt="" workshop:class="lead-card-image" alt="" />
         <h4 typography:class="h4" workshop:class="lead-card-name">
           {{meta.name}}
         </h4>
