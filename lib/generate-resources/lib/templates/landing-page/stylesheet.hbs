@@ -10,9 +10,25 @@
   composes: 'layout';
 }
 
+.video-header {
+  height: 62rem;
+}
+
+.video-header:before {
+  content: "";
+  position: absolute;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAFElEQVR4AWMAgv/uBT4MIAwmsHIAs4kJGBH7n20AAAAASUVORK5CYII=');
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
 .video {
   width: 100%;
-  height: auto;
+  height: 62rem;
+  object-fit: cover;
 }
 
 .header-content {
@@ -20,9 +36,14 @@
   transform: translateY(-50%);
   position: absolute;
   width: 100%;
+  z-index: 2;
 }
 
 @media (max-width: 887px) {
+  .video-header {
+    height: 70rem;
+  }
+
   .video {
     width: auto;
     height: 70rem;
