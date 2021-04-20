@@ -232,7 +232,7 @@ export default class Simplabs extends Component {
       if (element) {
         element.scrollIntoView();
       } else {
-        window.scrollTo(0, 0);
+        window.setTimeout(() => window.scrollTo(0, 0));
       }
     }
   }
