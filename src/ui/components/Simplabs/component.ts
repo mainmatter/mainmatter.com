@@ -33,6 +33,8 @@ export default class Simplabs extends Component {
 
   private document: HTMLDocument;
 
+  private currentLink: HTMLAnchorElement = null;
+
   private loadingProgressInterval: number;
 
   @tracked
@@ -63,6 +65,7 @@ export default class Simplabs extends Component {
         after: () => {
           this._setCanonicalUrl(path);
           this._scrollToSuitableOffset();
+          this.currentLink = null;
         },
         already: () => {
           this._scrollToSuitableOffset();
@@ -114,6 +117,7 @@ export default class Simplabs extends Component {
 
           if (link && link.dataset.internal !== undefined) {
             event.preventDefault();
+            this.currentLink = link;
             this.router.navigate(link.getAttribute('href'));
           }
         }
@@ -223,7 +227,7 @@ export default class Simplabs extends Component {
   }
 
   private _scrollToSuitableOffset() {
-    if (!this.appState.isSSR) {
+    if (!this.appState.isSSR && this.currentLink) {
       let { hash } = window.location;
       let element;
       if (hash) {
