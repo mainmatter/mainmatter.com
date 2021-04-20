@@ -1,7 +1,7 @@
 <div>
   <div block:class="info">
     {{#each this.leads key="id" as |leadImage|}}
-      <img src="{{leadImage}}" block:class="image" width="100" height="100" />
+      <img src="{{leadImage}}" block:class="image" width="100" height="100" alt="link to {{@title}}" />
     {{/each}}
     <p typography:class="small" block:class="label">
       {{#each this.labelLines key="id" as |line|}}
@@ -12,7 +12,7 @@
     </p>
   </div>
   <div block:class="content">
-    <img src="{{@tag}}" block:class="tag" width="100" height="100" />
+    <img src="{{@tag}}" block:class="tag" width="100" height="100" alt="" />
     <h3 typography:class="h4" block:class="title">
       {{@title}}
     </h3>

@@ -6,7 +6,7 @@
     rel={{this.rel}}
     block:class="image-link"
   >
-    <img src={{@image}} block:class="image" />
+    <img src={{@image}} block:class="image" alt="link to {{@title}}" />
   </a>
   {{#if @duration}}
     <span block:class="duration" typography:class="small">
