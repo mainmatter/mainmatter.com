@@ -11,7 +11,9 @@
 }
 
 .video-header {
-  height: 62rem;
+  height: 80vh;
+  max-height: 70rem;
+  min-height: 90rem;
 }
 
 .video-header:before {
@@ -27,7 +29,9 @@
 
 .video {
   width: 100%;
-  height: 62rem;
+  height: 80vh;
+  max-height: 70rem;
+  min-height: 90rem;
   object-fit: cover;
 }
 
@@ -39,7 +43,7 @@
   z-index: 2;
 }
 
-@media (max-width: 887px) {
+@media (max-width: 960px) {
   .video-header {
     height: 70rem;
   }
@@ -47,6 +51,11 @@
   .video {
     width: auto;
     height: 70rem;
+  }
+}
+
+@media (max-width: 887px) {
+  .video {
     transform: translateX(calc(-60% + 50vw));
   }
 
