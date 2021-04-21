@@ -5,9 +5,17 @@
   display: grid;
   grid-template-columns: 22.5rem repeat(2, 1fr);
   column-gap: var(--col-gap);
-  background: linear-gradient(to left, var(--color-light), var(--color-light)) no-repeat 11.25rem 11.25rem;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEX5+v6pOaOpAAAADUlEQVR42gECAP3/AAAAAgABUyucMAAAAABJRU5ErkJggg==');
+  background-position: 11.25rem 11.25rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background-image 0.25s ease;
   padding: 0 var(--col-gap) var(--col-gap) 0;
   position: relative;
+}
+
+:scope:hover {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEXz9/2ICQmIAAAADUlEQVR42gECAP3/AAAAAgABUyucMAAAAABJRU5ErkJggg==');
 }
 
 .label {
@@ -59,7 +67,7 @@
 @media (max-width: 887px) {
   :scope {
     grid-template-columns: var(--grid-template-columns);
-    background: linear-gradient(to left, var(--color-light), var(--color-light)) no-repeat 0 11.25rem;
+    background-position: 0 11.25rem;
     padding: 0 0 var(--col-gap) 0;
   }
 
