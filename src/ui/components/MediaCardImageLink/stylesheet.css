@@ -1,0 +1,40 @@
+:scope {
+  block-name: MediaCardImageLink;
+  display: block;
+  margin-bottom: 3rem;
+  border-bottom: 1rem solid var(--color-accent);
+  overflow: hidden;
+  height: 42rem;
+}
+
+.image {
+  width: 100%;
+  height: 42rem;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+  z-index: 1;
+}
+
+:scope:hover .image {
+  transform: scale(1.03);
+}
+
+:scope[shallow='shallow'],
+:scope[shallow='shallow'] .image {
+  height: 21rem;
+}
+
+:scope[isVideoLink='true']:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 42rem;
+  background: url(/assets/images/resources/play.svg) center no-repeat;
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 2;
+}
+
+:scope[isVideoLink='true']:hover:before {
+  opacity: 1;
+}

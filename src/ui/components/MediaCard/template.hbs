@@ -1,13 +1,5 @@
-<div block:shallow={{@shallow}} block:isVideoLink={{@isVideoLink}}>
-  <a
-    href="{{@link}}"
-    target={{this.target}}
-    data-internal={{this.isInternalLink}}
-    rel={{this.rel}}
-    block:class="image-link"
-  >
-    <img src={{@image}} block:class="image" alt="link to {{@title}}" />
-  </a>
+<div>
+  <MediaCardImageLink @image={{@image}} @link={{@link}} @shallow={{@shallow}} @isVideoLink={{@isVideoLink}} />
   {{#if @duration}}
     <span block:class="duration" typography:class="small">
       {{@duration}}
