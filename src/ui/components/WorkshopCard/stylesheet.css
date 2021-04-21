@@ -2,20 +2,32 @@
 
 :scope {
   block-name: WorkshopCard;
-  display: grid;
-  grid-template-columns: 22.5rem repeat(2, 1fr);
-  column-gap: var(--col-gap);
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEX5+v6pOaOpAAAADUlEQVR42gECAP3/AAAAAgABUyucMAAAAABJRU5ErkJggg==');
   background-position: 11.25rem 11.25rem;
   background-repeat: no-repeat;
   background-size: cover;
   transition: background-image 0.25s ease;
-  padding: 0 var(--col-gap) var(--col-gap) 0;
   position: relative;
 }
 
 :scope:hover {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAA1BMVEXz9/2ICQmIAAAADUlEQVR42gECAP3/AAAAAgABUyucMAAAAABJRU5ErkJggg==');
+  text-decoration: none;
+}
+
+.main-link {
+  display: grid;
+  grid-template-columns: 22.5rem repeat(2, 1fr);
+  column-gap: var(--col-gap);
+  padding: 0 var(--col-gap) var(--col-gap) 0;
+}
+
+.main-link:hover {
+  text-decoration: none;
+}
+
+.bottom-link {
+  padding-left: calc(22.5rem + var(--col-gap));
 }
 
 .label {
@@ -66,9 +78,26 @@
 
 @media (max-width: 887px) {
   :scope {
-    grid-template-columns: var(--grid-template-columns);
     background-position: 0 11.25rem;
+  }
+
+  .main-link {
+    pointer-events: none;
+  }
+
+  .main-link,
+  .bottom-link {
+    grid-template-columns: var(--grid-template-columns);
     padding: 0 0 var(--col-gap) 0;
+  }
+
+  .bottom-link {
+    display: grid;
+    column-gap: var(--col-gap);
+  }
+
+  .bottom-link-content {
+    grid-column: 2/-2;
   }
 
   .info {
