@@ -29,4 +29,8 @@
   margin-bottom: 5rem;
 }
 
+.text-line {
+  display: block;
+}
+
 @export typography;

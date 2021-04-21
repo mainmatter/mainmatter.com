@@ -6,7 +6,11 @@
     {{@title}}
   </h2>
   <p typography:class="lead" block:class="lead">
-    {{@text}}
+    {{#each this.textLines key="id" as |text|}}
+      <span block:class="text-line">
+        {{text}}
+      </span>
+    {{/each}}
   </p>
   {{yield}}
 </div>
