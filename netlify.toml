@@ -402,15 +402,12 @@
   from = "/training/2017-02-17-modern-seo/*"
   to = "/services/training/"
 
+# redirect old jobs page
 [[redirects]]
-  from = "/jobs"
+  from = "/jobs/"
   to = "/"
   status = 410
-
-[[redirects]]
-  from = "/jobs/*"
-  to = "/"
-  status = 410
+  force = true
 
 [[redirects]]
   from = "/full-stack-engineering/index.html"
