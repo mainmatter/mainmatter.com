@@ -371,10 +371,6 @@
   to = "/services/training/"
 
 [[redirects]]
-  from = "/training/2017-06-11-web-security"
-  to = "/services/training/"
-
-[[redirects]]
   from = "/training/2017-06-11-web-security/*"
   to = "/services/training/"
 
@@ -383,19 +379,11 @@
   to = "/services/training/"
 
 [[redirects]]
-  from = "/training/2017-02-16-sass-fundamentals"
-  to = "/services/training/"
-
-[[redirects]]
   from = "/training/2017-02-16-sass-fundamentals/*"
   to = "/services/training/"
 
 [[redirects]]
   from = "/training/2017-02-17-modern-seo.html"
-  to = "/services/training/"
-
-[[redirects]]
-  from = "/training/2017-02-17-modern-seo"
   to = "/services/training/"
 
 [[redirects]]
