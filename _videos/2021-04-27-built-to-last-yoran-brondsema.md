@@ -7,13 +7,20 @@ pageTitle: Expert insights
 moreText: more Expert insights
 image: /assets/images/resources/videos/2021-04-27-built-to-last-7-yoran-brondsema/yoran_portrait.jpeg
 duration: '31:18'
-teaser: When building large web apps, minimize accidental complexity. Yoran shares how Ember.js became an obvious choice for Sutori from both a business and productivity lens.
+teaser:
+  When building large web apps, minimize accidental complexity. Yoran shares how
+  Ember.js became an obvious choice for Sutori from both a business and
+  productivity lens.
 
 description:
-  Simplabs' founder Marco Otte-Witte talks with Yoran Brondsema, co-founder and CTO of Sutori, a collaborative instruction and presentation tool for the classroom that transforms lessons into collaborative learning experiences.
+  Simplabs' founder Marco Otte-Witte talks with Yoran Brondsema, co-founder and
+  CTO of Sutori, a collaborative instruction and presentation tool for the
+  classroom that transforms lessons into collaborative learning experiences.
 
 og:
   image: /assets/images/resources/videos/2021-04-27-built-to-last-7-yoran-brondsema/og-image.png
 ---
 
-They talk about the importance of being able to change priorities in the development process and synchronizing the team as early as possible in order to resolve unknowns and ensure realistic plans.
+They talk about the importance of being able to change priorities in the
+development process and synchronizing the team as early as possible in order to
+resolve unknowns and ensure realistic plans.
