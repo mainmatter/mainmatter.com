@@ -452,13 +452,10 @@
   from = "/timify/index.html"
   to = "/cases/timify/"
 
+# redirect old Elixir page
 [[redirects]]
-  from = "/elixir/index.html"
+  from = "/elixir/"
   to = "/expertise/elixir-phoenix/"
-
-[[redirects]]
-  from = "/ember/index.html"
-  to = "/expertise/ember/"
 
 [[redirects]]
   from = "/clients/"
