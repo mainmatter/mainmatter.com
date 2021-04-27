@@ -431,6 +431,7 @@
   to = "/why-simplabs/"
   force = true
 
+# redirect old case studies
 [[redirects]]
   from = "/dd-wrt/index.html"
   to = "/cases/ddwrt/"
