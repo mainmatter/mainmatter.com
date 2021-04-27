@@ -50,7 +50,7 @@ All content and examples of the workshop are
   @text="Request a call to learn more about our Git workshop."
   @label="Book this workshop"
 >
-  <a href="/contact/" button:scope>
+  <a href="/contact/" data-internal button:scope>
     Contact us
   </a>
 </CallToAction>

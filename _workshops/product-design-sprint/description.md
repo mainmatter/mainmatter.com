@@ -50,7 +50,7 @@ workshop so your team is only present for a fraction of the time.
   @text="Request a consultation!"
   @label="Work with us"
 >
-  <a href="/contact/" button:scope>
+  <a href="/contact/" data-internal button:scope>
     Contact us
   </a>
 </CallToAction>

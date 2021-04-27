@@ -33,7 +33,7 @@ development practices are in three main areas: scoping, planning and execution.
   @text="Request a call to learn more about how we can help optimizing organizations, processes and infrastructure."
   @label="Get in touch with us"
 >
-  <a href="/contact/" button:scope>
+  <a href="/contact/" data-internal button:scope>
     Contact us
   </a>
 </CallToAction>

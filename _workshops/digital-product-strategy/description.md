@@ -40,7 +40,7 @@ MVP, the product architecture diagram, and our [40-page Playbook](/playbook/).
   @text="Request a call to learn more about our workshop."
   @label="Get in touch with us"
 >
-  <a href="/contact/" button:scope>
+  <a href="/contact/" data-internal button:scope>
     Contact us
   </a>
 </CallToAction>

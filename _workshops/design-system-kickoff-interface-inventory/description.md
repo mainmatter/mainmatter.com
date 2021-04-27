@@ -43,7 +43,7 @@ project managers, business owners, QA – are all welcome.
   @text="Request a call to learn more about our workshop."
   @label="Get in touch with us"
 >
-  <a href="/contact/" button:scope>
+  <a href="/contact/" data-internal button:scope>
     Contact us
   </a>
 </CallToAction>

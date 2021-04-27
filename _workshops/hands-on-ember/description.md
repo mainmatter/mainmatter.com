@@ -57,7 +57,7 @@ All examples and practical assignments from the workshop are
   @text="Request a call to learn more about our Ember workshop and how we can tailor it to meet your team's needs."
   @label="Book this workshop"
 >
-  <a href="/contact/" button:scope>
+  <a href="/contact/" data-internal button:scope>
     Contact us
   </a>
 </CallToAction>
