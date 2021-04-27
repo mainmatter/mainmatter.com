@@ -287,84 +287,59 @@
 
 # redirect old workshop pages
 [[redirects]]
-  from = "https://elixir-phoenix-workshop.simplabs.com"
+  from = "https://elixir-phoenix-workshop.simplabs.com/*"
   to = "https://simplabs.com/services/training/"
+  force = true
 
 [[redirects]]
   from = "https://elixir-workshops.simplabs.com/*"
   to = "https://simplabs.com/services/training/"
-
-[[redirects]]
-  from = "https://ember-basics-workshop.simplabs.com"
-  to = "https://simplabs.com/resources/workshop/hands-on-ember"
+  force = true
 
 [[redirects]]
   from = "https://ember-basics-workshop.simplabs.com/*"
   to = "https://simplabs.com/resources/workshop/hands-on-ember"
-
-[[redirects]]
-  from = "https://ember-pro-workshop.simplabs.com"
-  to = "https://simplabs.com/resources/workshop/hands-on-ember"
+  force = true
 
 [[redirects]]
   from = "https://ember-pro-workshop.simplabs.com/*"
   to = "https://simplabs.com/resources/workshop/hands-on-ember"
-
-[[redirects]]
-  from = "https://ember-workshop.simplabs.com"
-  to = "https://simplabs.com/resources/workshop/hands-on-ember"
+  force = true
 
 [[redirects]]
   from = "https://ember-workshop.simplabs.com/*"
   to = "https://simplabs.com/resources/workshop/hands-on-ember"
-
-[[redirects]]
-  from = "https://ember-workshops.simplabs.com"
-  to = "https://simplabs.com/resources/workshop/hands-on-ember"
+  force = true
 
 [[redirects]]
   from = "https://ember-workshops.simplabs.com/*"
   to = "https://simplabs.com/resources/workshop/hands-on-ember"
-
-[[redirects]]
-  from = "https://phoenix-workshops.simplabs.com"
-  to = "https://simplabs.com/services/training/"
+  force = true
 
 [[redirects]]
   from = "https://phoenix-workshops.simplabs.com/*"
   to = "https://simplabs.com/services/training/"
-
-[[redirects]]
-  from = "https://progressive-web-apps-workshop.simplabs.com"
-  to = "https://simplabs.com/services/training/"
+  force = true
 
 [[redirects]]
   from = "https://progressive-web-apps-workshop.simplabs.com/*"
   to = "https://simplabs.com/services/training/"
-
-[[redirects]]
-  from = "https://typescript-fundamentals-workshop.simplabs.com"
-  to = "https://simplabs.com/services/training/"
+  force = true
 
 [[redirects]]
   from = "https://typescript-fundamentals-workshop.simplabs.com/*"
   to = "https://simplabs.com/services/training/"
-
-[[redirects]]
-  from = "https://web-performance-workshop.simplabs.com"
-  to = "https://simplabs.com/services/training/"
+  force = true
 
 [[redirects]]
   from = "https://web-performance-workshop.simplabs.com/*"
   to = "https://simplabs.com/services/training/"
-
-[[redirects]]
-  from = "https://phoenix-workshops.simplabs.com"
-  to = "https://simplabs.com/services/training/"
+  force = true
 
 [[redirects]]
   from = "https://phoenix-workshops.simplabs.com/*"
   to = "https://simplabs.com/services/training/"
+  force = true
 
 [[redirects]]
   from = "/training/2017-06-11-web-security.html"
