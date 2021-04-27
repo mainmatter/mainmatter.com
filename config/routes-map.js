@@ -5,6 +5,8 @@ const path = require('path');
 const _ = require('lodash');
 
 const collectPosts = require('../lib/generate-blog/lib/collect-posts');
+const collectVideos = require('../lib/generate-resources/lib/collect-videos');
+const collectWorkshops = require('../lib/generate-resources/lib/collect-workshops');
 
 module.exports = function () {
   let { posts, authors } = collectPosts(path.join(__dirname, '..', '_posts'));
@@ -52,10 +54,30 @@ module.exports = function () {
     }
   });
 
+  let videos = collectVideos(path.join(__dirname, '..', '_videos'));
+  let videoRoutes = videos.reduce((acc, video) => {
+    acc[`/resources/video/${video.queryPath}`] = {
+      component: video.componentName,
+      bundle: { asset: '/resources.js', module: '__resources__' },
+    };
+    return acc;
+  }, {});
+
+  let workshops = collectWorkshops(path.join(__dirname, '..', '_workshops'));
+  let workshopRoutes = workshops.reduce((acc, workshop) => {
+    acc[`/resources/workshop/${workshop.queryPath}`] = {
+      component: workshop.componentName,
+      bundle: { asset: '/resources.js', module: '__resources__' },
+    };
+    return acc;
+  }, {});
+
   let routes = {
     ...blogPagesRoutes,
     ...blogPostRoutes,
     ...blogAuthorsRoutes,
+    ...videoRoutes,
+    ...workshopRoutes,
     '/': { component: 'PageHomepage' },
     '/404': { component: 'Page404' },
     '/calendar': {
@@ -92,6 +114,10 @@ module.exports = function () {
     '/talks': { component: 'PageTalks', bundle: { asset: '/talks.js', module: '__talks__' } },
     '/why-simplabs': { component: 'PageWhySimplabs' },
     '/work': { component: 'PageWork' },
+    '/resources': {
+      component: 'PageResources',
+      bundle: { asset: '/resources.js', module: '__resources__' },
+    },
   };
 
   return routes;

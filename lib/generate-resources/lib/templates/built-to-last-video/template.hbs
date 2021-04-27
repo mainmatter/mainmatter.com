@@ -1,0 +1,62 @@
+<div>
+  <HeadTag @name='meta' @keys=\{{hash property="og:image"}} @values=\{{hash content="{{siteUrl}}{{og.image}}"}} />
+
+  <Header @title="Resources" @active="resources" @documentTitle="{{title}} | Resources" @description="{{description}}">
+    <HeaderContent @headline="{{pageTitle}}">
+      <div typography:class="lead">
+        {{{body}}}
+      </div>
+    </HeaderContent>
+  </Header>
+
+  <div layout:class="content" offset:class="after-12">
+    <div video:scope>
+      <iframe
+        src="{{videoUrl}}"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        video:class="frame"
+        title="{{title}}"
+        width="560"
+        height="340"
+      ></iframe>
+    </div>
+  </div>
+
+  {{#if isFounderInterview}}
+    <div layout:class="full" offset:class="after-12">
+      <Divider @text="{{moreText}}" />
+    </div>
+
+    <div layout:class="full" offset:class="after-21" media-card:class="list">
+      {{#each more}}
+        <div media-card:class="single">
+          <MediaCard @label="{{label}}" @title="{{title}}" @image="{{image}}" @link="{{path}}">
+            {{teaser}}
+          </MediaCard>
+        </div>
+      {{/each}}
+    </div>
+
+    <div layout:class="full" offset:class="after-21">
+      <CallToAction
+        @title="Are you a startup founder? Get in touch!"
+        @text="Would you like to share product development insights with our community? We would love to hear from you."
+        @label="Join the built to last interview series"
+      >
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeqUUG0-9BrLTUKomEbTbLef3H00iq8oUWmwR_dqeaqV7Ny6Q/viewform" target="_blank" button:scope>
+          Become a guest
+        </a>
+      </CallToAction>
+    </div>
+  {{/if}}
+
+  {{#if cta}}
+    {{{cta}}}
+  {{/if}}
+
+  <ShapeFeaturePlaybookMax />
+
+  <Footer />
+</div>

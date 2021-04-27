@@ -1,0 +1,20 @@
+@block layout from "../../styles/blocks/layout.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
+@block offset from "../../styles/blocks/offset.block.css";
+@block button from "../../styles/blocks/button.block.css";
+@block blog-post from "../../styles/blocks/blog-post.block.css";
+@block workshop from "../../styles/blocks/workshop.block.css";
+@block header-content from "../HeaderContent/stylesheet.css";
+
+:scope {
+  block-name: {{componentName
+}};
+  composes: 'layout';
+}
+
+@export typography;
+@export layout;
+@export offset;
+@export blog-post;
+@export button;
+@export workshop;

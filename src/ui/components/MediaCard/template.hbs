@@ -1,0 +1,19 @@
+<div>
+  <MediaCardImageLink @image={{@image}} @link={{@link}} @shallow={{@shallow}} @isVideoLink={{@isVideoLink}} />
+  {{#if @duration}}
+    <span block:class="duration" typography:class="small">
+      {{@duration}}
+    </span>
+  {{/if}}
+  <p typography:class="small">
+    {{@label}}
+  </p>
+  <h3 typography:class="h4" block:class="h4">
+    <a href="{{@link}}" target={{this.target}} data-internal={{this.isInternalLink}} rel={{this.rel}}>
+      {{@title}}
+    </a>
+  </h3>
+  <p typography:class="p">
+    {{yield}}
+  </p>
+</div>

@@ -33,6 +33,12 @@
   font-weight: 400;
 }
 
+.h5 {
+  font-size: var(--h5);
+  line-height: var(--h5-lh);
+  font-weight: 700;
+}
+
 .small {
   color: var(--color-muted);
   display: block;

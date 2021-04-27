@@ -254,6 +254,32 @@
   from = "/blog/ember/2018/05/30/a-little-encouragement-goes-a-long-way-in-2018.html"
   to = "/blog/2018/05/30/a-little-encouragement-goes-a-long-way-in-2018"
 
+# redirect old built-to-last blog posts
+
+[[redirects]]
+  from = "/blog/2021/03/17/built-to-last-6-khalid-maliki/"
+  to = "/resources/video/2021/03/17/built-to-last-khalid-maliki/"
+
+[[redirects]]
+  from = "/blog/2021/02/18/built-to-last-5-aymeric-augustin/"
+  to = "/resources/video/2021/02/18/built-to-last-aymeric-augustin-qonto"
+
+[[redirects]]
+  from = "/blog/2021/01/13/built-to-last-4-peter-arnold/"
+  to = "/resources/video/2021/01/13/built-to-last-peter-arnold-enterango/"
+
+[[redirects]]
+  from = "/blog/2020/12/29/built-to-last-3-joel-kelly/"
+  to = "/resources/video/2020/12/29/built-to-last-joel-kelly-eve/"
+
+[[redirects]]
+  from = "/blog/2020/12/15/built-to-last-2-karol-domagalski/"
+  to = "/resources/video/2020/12/15/built-to-last-karol-domagalski-upfit/"
+
+[[redirects]]
+  from = "/blog/2020/12/2/built-to-last-1-christina-roizheim/"
+  to = "/resources/video/2020/12/02/built-to-last-christina-roinzheim-not-less-but-better/"
+
 # redirect old workshop pages
 
 [[redirects]]
@@ -266,35 +292,35 @@
 
 [[redirects]]
   from = "https://ember-basics-workshop.simplabs.com"
-  to = "https://simplabs.com/services/training/"
+  to = "https://simplabs.com/resources/workshop/hands-on-ember"
 
 [[redirects]]
   from = "https://ember-basics-workshop.simplabs.com/*"
-  to = "https://simplabs.com/services/training/"
+  to = "https://simplabs.com/resources/workshop/hands-on-ember"
 
 [[redirects]]
   from = "https://ember-pro-workshop.simplabs.com"
-  to = "https://simplabs.com/services/training/"
+  to = "https://simplabs.com/resources/workshop/hands-on-ember"
 
 [[redirects]]
   from = "https://ember-pro-workshop.simplabs.com/*"
-  to = "https://simplabs.com/services/training/"
+  to = "https://simplabs.com/resources/workshop/hands-on-ember"
 
 [[redirects]]
   from = "https://ember-workshop.simplabs.com"
-  to = "https://simplabs.com/services/training/"
+  to = "https://simplabs.com/resources/workshop/hands-on-ember"
 
 [[redirects]]
   from = "https://ember-workshop.simplabs.com/*"
-  to = "https://simplabs.com/services/training/"
+  to = "https://simplabs.com/resources/workshop/hands-on-ember"
 
 [[redirects]]
   from = "https://ember-workshops.simplabs.com"
-  to = "https://simplabs.com/services/training/"
+  to = "https://simplabs.com/resources/workshop/hands-on-ember"
 
 [[redirects]]
   from = "https://ember-workshops.simplabs.com/*"
-  to = "https://simplabs.com/services/training/"
+  to = "https://simplabs.com/resources/workshop/hands-on-ember"
 
 [[redirects]]
   from = "https://phoenix-workshops.simplabs.com"

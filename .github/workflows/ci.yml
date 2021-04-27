@@ -130,6 +130,6 @@ jobs:
       - name: build
         run: yarn build
 
-      - run: yarn run lhci autorun --collect.staticDistDir=./dist --collect.url=http://localhost/ --collect.url=http://localhost/blog/ --collect.url=http://localhost/services/ --collect.url=http://localhost/ember-consulting/ --collect.url=http://localhost/playbook/ --collect.url=http://localhost/contact/ --upload.target=temporary-public-storage
+      - run: yarn run lhci autorun --collect.staticDistDir=./dist --collect.url=http://localhost/ --collect.url=http://localhost/blog/ --collect.url=http://localhost/services/ --collect.url=http://localhost/ember-consulting/ --collect.url=http://localhost/playbook/ --collect.url=http://localhost/contact/ --collect.url=http://localhost/resources/ --collect.url=http://localhost/resources/workshop/hands-on-ember/ --collect.url=http://localhost/resources/video/2020/12/02/built-to-last-christina-roinzheim-not-less-but-better/ --upload.target=temporary-public-storage
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

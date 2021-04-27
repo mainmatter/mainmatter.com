@@ -1,0 +1,52 @@
+@block layout from "../../styles/blocks/layout.block.css";
+@block typography from "../../styles/blocks/typography.block.css";
+@block offset from "../../styles/blocks/offset.block.css";
+@block button from "../../styles/blocks/button.block.css";
+@block header-content from "../HeaderContent/stylesheet.css";
+
+:scope {
+  block-name: ShapeFeaturePlaybookMax;
+  composes: 'layout';
+  background-color: var(--color-light);
+}
+
+.sidebar {
+  position: relative;
+  grid-column: 1/-1;
+}
+
+.image-wrapper {
+  clip-path: resolve('header-content.image-wrapper');
+  -webkit-clip-path: resolve('header-content.image-wrapper');
+  clip-path: none;
+  -webkit-clip-path: none;
+}
+
+@media (min-width: 888px) {
+  .sidebar {
+    grid-column: 5/-1;
+  }
+}
+
+.image {
+  height: resolve('header-content.image');
+  left: 0;
+  height: auto;
+  max-width: 80%;
+  z-index: 2;
+}
+
+.background-bottom {
+  width: 100%;
+  margin-top: -1px;
+  grid-column: 1/-1;
+  background-color: var(--color-background);
+  padding-bottom: 16.5%;
+  -webkit-clip-path: polygon(0 0, 0 calc(100% + 1px), 100% calc(100% + 1px));
+  clip-path: polygon(0 0, 0 calc(100% + 1px), 100% calc(100% + 1px));
+}
+
+@export typography;
+@export header-content;
+@export offset;
+@export button;

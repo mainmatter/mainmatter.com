@@ -132,6 +132,13 @@ class SimplabsApp extends GlimmerApp {
     });
     mainSiteTree = mainSiteNonRecentTree;
 
+    let [resourcesTree, mainSiteNonResourcesTree] = this._splitBundle(mainSiteTree, {
+      componentPrefix: 'PageResources|PageWorkshop',
+      file: 'resources.js',
+      moduleName: '__resources__',
+    });
+    mainSiteTree = mainSiteNonResourcesTree;
+
     let appTree = super.package(mainSiteTree);
     let mainTree = new MergeTrees([
       appTree,
@@ -139,6 +146,7 @@ class SimplabsApp extends GlimmerApp {
       calendarTree,
       talksTree,
       recentContentTree,
+      resourcesTree,
       ...blogPostTrees,
       ...blogAuthorTrees,
       ...blogPageTrees,
