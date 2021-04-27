@@ -425,17 +425,11 @@
   from = "/team-augmentation/index.html"
   to = "/services/team-augmentation/"
 
+# redirect old about page
 [[redirects]]
-  from = "/about/index.html"
+  from = "/about/"
   to = "/why-simplabs/"
-
-[[redirects]]
-  from = "/about"
-  to = "/why-simplabs/"
-
-[[redirects]]
-  from = "/about/*"
-  to = "/why-simplabs/"
+  force = true
 
 [[redirects]]
   from = "/dd-wrt/index.html"
