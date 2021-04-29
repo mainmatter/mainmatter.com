@@ -21,6 +21,11 @@ og:
   image: /assets/images/resources/videos/2021-04-27-built-to-last-7-yoran-brondsema/og-image.png
 ---
 
+For Built to Last #7 simplabs' founder Marco Otte-Witte talks with Yoran
+Brondsema, co-founder and CTO of Sutori, a collaborative instruction and
+presentation tool for the classroom that transforms lessons into collaborative
+learning experiences.
+
 They talk about the importance of being able to change priorities in the
 development process and synchronizing the team as early as possible in order to
 resolve unknowns and ensure realistic plans.
