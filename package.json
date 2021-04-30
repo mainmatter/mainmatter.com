@@ -76,7 +76,7 @@
     "lodash": "^4.17.21",
     "marked": "^2.0.3",
     "morgan": "^1.10.0",
-    "navigo": "^7.1.2",
+    "navigo": "^8.11.1",
     "percy": "^0.28.6",
     "pretender": "^3.4.3",
     "prettier": "^2.2.1",
