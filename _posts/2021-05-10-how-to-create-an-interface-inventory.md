@@ -32,11 +32,11 @@ There are many benefits for creating one:
 1. They help us gain clarity regarding which design components make up a digital
    product.
 2. Help us discover and analyze unintentional inconsistencies between them.
-3. It is an aid to communicate and gain buy-in from stakeholders to establish a
-   design system.
-4. Is a conversation starter for our team on how to refactor design with a
+3. Is a conversation starter for our team on how to refactor design with a
    pattern-based approach.
-5. And last but not least, it serves as a blueprint for a pattern library.
+4. It serves as a blueprint for a pattern library.
+5. And last but not least, it is an aid to communicate and gain buy-in from
+   stakeholders to establish a design system.
 
 ![An interface inventory displaying the button category](/assets/images/posts/2021-05-10-interface-inventory/interface_inventory.jpg#@800-1600)
 
