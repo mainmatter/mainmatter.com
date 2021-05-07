@@ -213,5 +213,5 @@ help us align and bring in momentum. And know this: even if you do the inventory
 and audit on your own, you are never alone. Consider joining the
 [design systems community on Slack](https://design.systems/slack/) (it's a great
 place to ask questions or get feedback regarding this process), or
-[hire a facilitator](https://simplabs.com/resources/workshop/design-system-kickoff-interface-inventory)
+[hire a facilitator](/resources/workshop/design-system-kickoff-interface-inventory)
 to help make this project a success.
