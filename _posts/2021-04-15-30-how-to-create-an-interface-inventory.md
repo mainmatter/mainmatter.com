@@ -63,7 +63,7 @@ These ensure we are thinking of people, process, and tools:
   with a manageable yet impactful subset.
 - Prioritize core features, the happy path (the optimal user journey), or the
   top-level navigation.
-- Divide and conquer﻿\*\*\*\* with collaborators. Give a concrete example of the
+- Divide and conquer﻿ with collaborators. Give a concrete example of the
   process of capturing design for the inventory.
 
 ### 3. Tools
