@@ -49,10 +49,11 @@ These ensure we are thinking of people, process, and tools:
 
 ### 1. People
 
-- Establish ownership: Both for process and artifacts.
+- Establish ownership: Ensure there is a person responsible for both the process
+  of creating an inventory and the artifacts that are created as a result.
 - Involve others early on: Inform stakeholders, designers, developers, and
   product managers–anyone working on building the digital product. Agree on the
-  inventory criteria.
+  inventory criteria (e.g. color, spacing, typography, borders, sizes).
 - Provide meaningful updates: Others are more likely to trust and care about
   what you do with the interface if you keep them meaningfully informed. Don't
   overwhelm with detail, and end with a funny gif (always end with a gif!).
@@ -63,8 +64,8 @@ These ensure we are thinking of people, process, and tools:
   with a manageable yet impactful subset.
 - Prioritize core features, the happy path (the optimal user journey), or the
   top-level navigation.
-- Divide and conquer﻿ with collaborators. Give a concrete example of the
-  process of capturing design for the inventory.
+- Divide and conquer﻿ with collaborators. Give a concrete example of the process
+  of capturing design for the inventory.
 
 ### 3. Tools
 
@@ -152,17 +153,17 @@ You can use existing pattern libraries as a reference, take a look at this
 Keep in mind the different kinds of design patterns and use them as a guide for
 organizing your interface:
 
-- **Functional:** reusable parts of an interface. E.g. header, form elements,
+- **Functional:** Reusable parts of an interface. E.g. header, form elements,
   menu
-- **Perceptual:** describing the brand or aesthetics. E.g. iconography and
+- **Perceptual:** Describing the brand or aesthetics. E.g. iconography and
   imagery styles, colors, typography, spacing and layout, shapes, design motifs,
   interactions, animations, sounds.
-- **Platform-specific:** web vs iOS vs Android. Mobile (swipes & gestures) vs
-  web.
+- **Platform-specific:** Desktop vs mobile (web), and web iOS vs Android (native
+  apps).
 - **Domain-specific:** E-commerce (product displays, shopping cart, checkout),
   data analysis (grids, charts, visualizations), online learning (progress
   indicators, discussion threads)
-- **Persuasive:** cognition, game mechanics (unlock features), perception and
+- **Persuasive:** Cognition, game mechanics (unlock features), perception and
   memory (chunking), feedback, social (liking, social proof)
 
 ### Step 5: Audit your inventory
