@@ -89,7 +89,7 @@ These ensure we are thinking of people, process, and tools:
 
 Start off by identifying which part of your digital product you will be creating
 an inventory of first. You can decide on starting an inventory of the happy
-path, your core features, or our website's top-level navigation.
+path, your core features, or your website's top-level navigation.
 
 ### Step 2: Identify which characteristics you want to inventory
 
@@ -165,7 +165,7 @@ organizing your interface:
 - **Perceptual:** Describing the brand or aesthetics. E.g. iconography and
   imagery styles, colors, typography, spacing and layout, shapes, design motifs,
   interactions, animations, sounds.
-- **Platform-specific:** Desktop vs mobile (web), and web iOS vs Android (native
+- **Platform-specific:** Desktop vs mobile (web), and iOS vs Android (native
   apps).
 - **Domain-specific:** E-commerce (product displays, shopping cart, checkout),
   data analysis (grids, charts, visualizations), online learning (progress
