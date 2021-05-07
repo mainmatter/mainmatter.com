@@ -19,10 +19,15 @@ towards a homogenous, pattern-based digital design strategy.
 
 <!--break-->
 
+![Trying your GitHub Actions locally illustration](/assets/images/posts/2021-05-10-interface-inventory/illustration.svg#full)
+
 ## Interface inventories 101
 
 An interface inventory is a categorized collection of every piece of design that
-makes up our digital product. There are many benefits for creating one:
+makes up our digital product. They help us capture the status quo of every style
+(e.g. colors, typography, spacing, borders) and component of a user interface.
+
+There are many benefits for creating one:
 
 1. They help us gain clarity regarding which design components make up a digital
    product.
@@ -32,6 +37,8 @@ makes up our digital product. There are many benefits for creating one:
 4. Is a conversation starter for our team on how to refactor design with a
    pattern-based approach.
 5. And last but not least, it serves as a blueprint for a pattern library.
+
+![An interface inventory displaying the button category](/assets/images/posts/2021-05-10-interface-inventory/interface_inventory.jpg#@800-1600)
 
 ## When should you start?
 
@@ -125,7 +132,7 @@ visualize stylesheets. You can gain insights on existing layout and structure
 background color, border color, box-shadow), typography (font family, size,
 weight, alignment, line height, etc.. ), and border styles.
 
-[==== Insert image here ====]
+![An interface inventory displaying the icon category](/assets/images/posts/2021-05-10-interface-inventory/css-stats.jpg#@800-1600)
 
 ### Step 4: Manually capture styles in your selected inventory scope
 
@@ -154,7 +161,7 @@ Keep in mind the different kinds of design patterns and use them as a guide for
 organizing your interface:
 
 - **Functional:** Reusable parts of an interface. E.g. header, form elements,
-  menu
+  menu.
 - **Perceptual:** Describing the brand or aesthetics. E.g. iconography and
   imagery styles, colors, typography, spacing and layout, shapes, design motifs,
   interactions, animations, sounds.
@@ -162,9 +169,9 @@ organizing your interface:
   apps).
 - **Domain-specific:** E-commerce (product displays, shopping cart, checkout),
   data analysis (grids, charts, visualizations), online learning (progress
-  indicators, discussion threads)
+  indicators, discussion threads).
 - **Persuasive:** Cognition, game mechanics (unlock features), perception and
-  memory (chunking), feedback, social (liking, social proof)
+  memory (chunking), feedback, social (liking, social proof).
 
 ### Step 5: Audit your inventory
 
@@ -178,22 +185,36 @@ The goal of an audit is to uncover:
 - Whether our design is meeting or failing guidelines (accessibility, examples,
   patterns, principles, usage, tone of voice)
 
-This is an example of a typography inventory: [==== Insert image here ====]
+&nbsp;
 
-In this case, the characteristics that were relevant are font size and line
-height at our two breakpoints, and color (when the color is not on a white
-background, that is noted).
+This is an example of a typography inventory. In this case, the inventory
+criteria that were relevant are:
 
-The first step in my audit was to determine whether the color contrast passes or
-fails the WCAG AA accessibility guidelines. I used WebAIM's
+- Font size
+- Line height
+- Color of text (when the color is not on a white background, that is noted)
+
+![An interface inventory displaying the typography category](/assets/images/posts/2021-05-10-interface-inventory/typography_inventory.jpg#@800-1600)
+
+Notice that font family and weight were not inventoried, as they were irrelevant
+for my goal at the time: to understand what font sizes existed in the live
+website so that I could start working with them when I designed new patterns. I
+gathered this information for both of our breakpoints (mobile and desktop). The
+first step in my audit was to determine whether the color contrast passes or
+fails the
+[WCAG AA accessibility guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/).
+I used WebAIM's
 [Color Contrast Checker](https://webaim.org/resources/contrastchecker/). From
 here I am able to make informed decisions regarding which font styles should be
 deprecated, and which ones should be used in any new component I create.
 
-As another example, an icon inventory: [==== Insert image here ====]
+As another example, an icon inventory. We can see the plethora of styles and
+colors used. In this case, breaking them down further into detailed criteria was
+not necessary as it was clear that we would use an icon library to replace most
+of them. The inventory helped us make an assessment of what should stay or go
+and create guidelines for the future.
 
-We can see the plethora of styles and colors used. From here we can make an
-assessment of what should stay or go and create guidelines for refactoring.
+![An interface inventory displaying the icon category](/assets/images/posts/2021-05-10-interface-inventory/icon_inventory.jpg#@800-1600)
 
 ### Step 6: Create a game plan with your team
 
