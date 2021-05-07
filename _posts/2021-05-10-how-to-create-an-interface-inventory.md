@@ -165,7 +165,7 @@ organizing your interface:
 - **Perceptual:** Describing the brand or aesthetics. E.g. iconography and
   imagery styles, colors, typography, spacing and layout, shapes, design motifs,
   interactions, animations, sounds.
-- **Platform-specific:** Desktop vs mobile (web), and web iOS vs Android (native
+- **Platform-specific:** Desktop vs mobile (web), and iOS vs Android (native
   apps).
 - **Domain-specific:** E-commerce (product displays, shopping cart, checkout),
   data analysis (grids, charts, visualizations), online learning (progress
