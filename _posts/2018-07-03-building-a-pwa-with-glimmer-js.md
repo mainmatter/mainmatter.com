@@ -73,7 +73,7 @@ that works and why it results in very small bundle sizes as well as super fast
 initial and update renders, watch the talk I gave at the
 [Ember.js Munich](https://www.meetup.com/Ember-js-Munich/) meetup last year:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vIRZDCyfOJc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vIRZDCyfOJc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Building Breethe with Glimmer.js
 

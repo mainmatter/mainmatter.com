@@ -48,7 +48,7 @@ for a long time, it never really took off until recently. In fact, Steve Jobs
 himself introduced the idea at WWDC 2007, just shortly after the unveiling of
 the orignal iPhone:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y1B2c3ZD9fk?start=4451" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/y1B2c3ZD9fk?start=4451" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Unfortunately that idea was one of the few of Jobs' that never really took off.
 In fact, Apple released the first native SDK for the iPhone in 2008. That change
