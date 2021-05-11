@@ -1,5 +1,5 @@
 ---
-videoUrl: https://www.youtube.com/embed/0OgDmmthe48
+videoUrl: https://www.youtube-nocookie.com/embed/0OgDmmthe48
 kind: built-to-last
 label: 'Built to Last #7: Expert insights'
 title: Yoran Brondsema, co-founder and CTO of Sutori

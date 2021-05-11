@@ -1,5 +1,5 @@
 ---
-videoUrl: https://www.youtube.com/embed/esRwdhlwIw8
+videoUrl: https://www.youtube-nocookie.com/embed/esRwdhlwIw8
 kind: built-to-last
 label: 'Built to Last #1: Expert insights'
 title: Christina Roizheim, co-founder of not less but better

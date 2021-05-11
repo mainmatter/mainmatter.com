@@ -1,5 +1,5 @@
 ---
-videoUrl: https://www.youtube.com/embed/EAeD0pkUoLk
+videoUrl: https://www.youtube-nocookie.com/embed/EAeD0pkUoLk
 kind: built-to-last
 label: 'Built to Last #5: Expert insights'
 title: Aymeric Augustin, CTO of Qonto

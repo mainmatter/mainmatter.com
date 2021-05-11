@@ -1,5 +1,5 @@
 ---
-videoUrl: https://www.youtube.com/embed/3K9jQfpkGWU
+videoUrl: https://www.youtube-nocookie.com/embed/3K9jQfpkGWU
 kind: talk
 label: Talk with Marco Otte-Witte
 title: The three pillars of successful digital product development
