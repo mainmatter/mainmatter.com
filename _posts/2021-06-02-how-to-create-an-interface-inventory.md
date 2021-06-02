@@ -7,7 +7,7 @@ topic: process
 bio: 'Director of Product Design'
 description: 'Mar High on how to create an interface inventory'
 og:
-  image: /assets/images/posts/2021-05-10-interface-inventory/og-image.png
+  image: /assets/images/posts/2021-06-02-interface-inventory/og-image.png
 ---
 
 Are you struggling with a messy interface? Is your digital product full of
@@ -19,7 +19,7 @@ towards a homogenous, pattern-based digital design strategy.
 
 <!--break-->
 
-![Trying your GitHub Actions locally illustration](/assets/images/posts/2021-05-10-interface-inventory/illustration.svg#full)
+![Trying your GitHub Actions locally illustration](/assets/images/posts/2021-06-02-interface-inventory/illustration.svg#full)
 
 ## Interface inventories 101
 
@@ -38,7 +38,7 @@ There are many benefits for creating one:
 5. And last but not least, it is an aid to communicate and gain buy-in from
    stakeholders to establish a design system.
 
-![An interface inventory displaying the button category](/assets/images/posts/2021-05-10-interface-inventory/interface_inventory.jpg#@800-1600)
+![An interface inventory displaying the button category](/assets/images/posts/2021-06-02-interface-inventory/interface_inventory.jpg#@800-1600)
 
 ## When should you start?
 
@@ -132,7 +132,7 @@ visualize stylesheets. You can gain insights on existing layout and structure
 background color, border color, box-shadow), typography (font family, size,
 weight, alignment, line height, etc.. ), and border styles.
 
-![An interface inventory displaying the icon category](/assets/images/posts/2021-05-10-interface-inventory/css-stats.png#@800-1600)
+![An interface inventory displaying the icon category](/assets/images/posts/2021-06-02-interface-inventory/css-stats.png#@800-1600)
 
 ### Step 4: Manually capture styles in your selected inventory scope
 
@@ -194,7 +194,7 @@ criteria that were relevant are:
 - Line height
 - Color of text (when the color is not on a white background, that is noted)
 
-![An interface inventory displaying the typography category](/assets/images/posts/2021-05-10-interface-inventory/typography_inventory.png#@800-1600)
+![An interface inventory displaying the typography category](/assets/images/posts/2021-06-02-interface-inventory/typography_inventory.png#@800-1600)
 
 Notice that font family and weight were not inventoried, as they were irrelevant
 for my goal at the time: to understand what font sizes existed in the live
@@ -214,7 +214,7 @@ not necessary as it was clear that we would use an icon library to replace most
 of them. The inventory helped us make an assessment of what should stay or go
 and create guidelines for the future.
 
-![An interface inventory displaying the icon category](/assets/images/posts/2021-05-10-interface-inventory/icon_inventory.png#@800-1600)
+![An interface inventory displaying the icon category](/assets/images/posts/2021-06-02-interface-inventory/icon_inventory.png#@800-1600)
 
 ### Step 6: Create a game plan with your team
 
