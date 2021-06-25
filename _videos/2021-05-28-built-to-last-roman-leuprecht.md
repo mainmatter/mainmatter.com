@@ -12,7 +12,7 @@ teaser:
   importance of getting feedback early on in the development process.
 
 description:
-  Simplabs' founder Marco Otte-Witte talks with Roman Leuprecht, co-founder of
+  simplabs' founder Marco Otte-Witte talks with Roman Leuprecht, co-founder of
   Uniki. The IT solution develops a cloud-based app platform that makes it
   possible to get secure global access to numerous cloud applications.
 
