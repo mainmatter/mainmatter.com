@@ -186,13 +186,16 @@ operate correctly in combination with all other subsystems.
 
 The key technique for testing a multitude of subsystems together of course is
 end-to-end testing (sometimes also referred to as _"integration"_ or
-_"acceptance"_ testing). For a proper end-to-end test, a pull request that
-changes the code of one subsystem is tested together with the respective
-deployed revisions of all other subsystems. That allows catching situations
-where changes to the one subsystem, while completely consistent and correct
-within that subsystem, cause problems when interfacing with other subsystems.
-Typical examples for such situations would be backward-incompatible API changes
-that would cause errors for any client of the API that hasn't been updated yet.
+_"acceptance"_ testing – the terminology is a bit unclear in practice, asking
+four different people would typically result in five different opinions on the
+exact meaning of each of these terms). For a proper end-to-end test, a pull
+request that changes the code of one subsystem is tested together with the
+respective deployed revisions of all other subsystems. That allows catching
+situations where changes to the one subsystem, while completely consistent and
+correct within that subsystem, cause problems when interfacing with other
+subsystems. Typical examples for such situations would be backward-incompatible
+API changes that would cause errors for any client of the API that hasn't been
+updated yet.
 
 Running such tests requires the ability to spin up a complete system including
 all of the subsystems on demand. Typically that is achieved by containerizing
