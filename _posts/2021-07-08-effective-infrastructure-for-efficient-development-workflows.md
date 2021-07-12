@@ -112,9 +112,8 @@ obviously. Furthermore, deploying all changes that are merged back into the
 - Changes can be released to production fast without the need to wait for a
   release date to arrive or enough other changes to have accumulated to
   _"justify"_ a release.
-- There's never any uncertainty about what branch to branch a feature branch off
-  of, where to merge something into, what branch to rebase on what other branch
-  etc.
+- There's never any uncertainty about what base branch to branch off from, where
+  to merge something into, what branch to rebase on what base etc.
 
 ![Single `main` branch workflow](/assets/images/posts/2021-07-08-effective-infrastructure-for-efficient-development-workflows/workflow.png#@800-1600)
 
