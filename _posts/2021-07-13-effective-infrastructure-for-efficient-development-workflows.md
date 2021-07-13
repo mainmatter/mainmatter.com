@@ -9,7 +9,7 @@ description:
   'Marco Otte-Witte on how highly automated and integrated development
   infrastructure enables simpler and more effective workflows.'
 og:
-  image: /assets/images/posts/2021-06-02-interface-inventory/og-image.png
+  image: /assets/images/posts/2021-07-13-effective-infrastructure-for-efficient-development-workflows/og-image.png
 ---
 
 Building software products of any kind is hard enough. Doing so without the
@@ -20,6 +20,10 @@ effort going into synchronizing the work of different engineers, tracking down
 bugs, and getting back to tasks later that were already thought to be complete.
 
 <!--break-->
+
+![Effective infrastructure for efficient development workflows illustration](/assets/images/posts/2021-07-13-effective-infrastructure-for-efficient-development-workflows/illustration.svg#full)
+
+## The machine that builds the machine
 
 Elon Musk famously talks about the real challenge that Tesla faced/s isn't
 building cars but building and running the factories for building cars at scale.
@@ -115,7 +119,7 @@ obviously. Furthermore, deploying all changes that are merged back into the
 - There's never any uncertainty about what base branch to branch off from, where
   to merge something into, what branch to rebase on what base etc.
 
-![Single `main` branch workflow](/assets/images/posts/2021-07-08-effective-infrastructure-for-efficient-development-workflows/workflow.png#@800-1600)
+![Single `main` branch workflow](/assets/images/posts/2021-07-13-effective-infrastructure-for-efficient-development-workflows/workflow.png#@800-1600)
 
 Of course, the challenge is to do all the testing (and QA in the wider sense)
 that happens based on some sort of schedule or process in multi-branch models,
