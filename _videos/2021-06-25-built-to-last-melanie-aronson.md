@@ -2,7 +2,7 @@
 videoUrl: https://www.youtube-nocookie.com/embed/_AQfTj3uP0o
 kind: built-to-last
 label: 'Built to Last #9: Expert insights'
-title: Melanie Aronson, founder of Panion
+title: Melanie Aronson, Founder of Panion
 pageTitle: Expert insights
 moreText: more Expert insights
 image: /assets/images/resources/videos/2021-06-25-built-to-last-9-melanie-aronson/melanie.jpg
