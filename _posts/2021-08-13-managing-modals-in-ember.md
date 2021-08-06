@@ -1,0 +1,71 @@
+---
+title: 'Managing modal dialogs in Ember.js with Promises'
+author: 'Florian Pichler'
+github: pichfl
+twitter: pichfl
+topic: ember
+bio: 'Consultant for Technology and Design at simplabs'
+description:
+  'Exploring better and easier handling of modal dialogs in Ember.js applications'
+og:
+  image: /assets/images/posts/2021-07-13-effective-infrastructure-for-efficient-development-workflows/og-image.png
+---
+
+Modal dialogs are about as widespread as they are missunderstood. No matter if you call them modal windows, popups, popovers, overlays, dialogs: A thing that asks a question or presents a subordinate task; a general annoyance to developers and accessibility experts alike.
+
+Even if you use them rarely, most applications will need modal dialogs at some point to ask existential questions. The app asks your user and waits to resolve its uncertainty by their answer. 
+
+<!--break-->
+
+That sounds promising, excuse the joke. JavaScript gives us Promises to handle cases like this and a rough concept could look like this:
+
+1. Call a method which creates a promise
+2. Render a modal into the DOM, pass in a callback to resolve the promise
+3. Resolve the promise to unrender the modal and pass back a result
+
+[Tobias](https://github.com/Turbo87) made Ember Promise Modals so we don't have to implement this on our own. With this addon, can launch any component as a modal, wait for a result, and continue with our apps workflow.
+
+```js
+let result = await this.modals.open('name-of-your-component', { /* passed to the component */ });
+```
+
+This will trigger a modal dialog, which automatically gains focus for its first focussable element and keyboard accessibility including support for closing the dialog with <kbd>ESC</kbd> as required by [WAI ARIA best practices](https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal) thanks to the included [focus-trap](https://github.com/davidtheclark/focus-trap) integration. It will dim the underlying content for you with a customizable backdrop also. 
+
+The passed component recieve optional data as `@data` and a `@close` action, which will resolve the modal. Anything passed to the action will become the resolved result of the promise, making it easy to communicate data in the preferred Data-Down-Actions-Up pattern of Ember.js. 
+
+### CSS based animations
+
+For the first official release, [Nick](https://github.com/nickschot) and [myself](https://github.com/pichfl) added native CSS animations using `CSS @keyframes`, which allow for full control over how dialogs and the dimming backdrop appear and disappear on the screen without hogging render performance. A nice and swift default animation is provided out of the box.
+
+If you don't like the default, how about something a little more menacing?
+
+```css
+@keyframes spiral-in {
+  0% {
+    opacity: 0;
+    transform: rotate(540deg) scale(0.01)
+  }
+  90% {
+    opacity: 1;
+    transform: rotate(-20deg) scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+:root {
+  --epm-animation-modal-in:
+    var(--epm-animation-modal-in-duration)
+    ease-out
+    var(--epm-animation-modal-in-delay)
+    forwards
+    spiral-in;
+  --epm-animation-modal-in-duration: 0.7s;
+}
+```
+
+![Animation of a modal spiraling in after clicking a button below a picture of a cartoon character asking for pictures of Spider Man. The modal shows an image with Spider Man hiding behind a tree and a bold caption saying "I'm Batman"](/assets/images/posts/2021-08-13-managing-modals-in-ember/spiral.gif)
+
+Now it's your turn. Try out [Ember Promise Modals](https://simplabs.github.io/ember-promise-modals/) today!
