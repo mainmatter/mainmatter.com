@@ -13,8 +13,8 @@ og:
 ---
 
 Modal dialogs are about as widespread as they are missunderstood. No matter if
-you call them modal windows, popups, popovers, overlays, dialogs: A thing that
-asks a question or presents a subordinate task; a general annoyance to
+you call them modal windows, popups, popovers, overlays, or dialogs: A thing
+that asks a question or presents a subordinate task; a general annoyance to
 developers and accessibility experts alike.
 
 Even if you use them rarely, most applications will need modal dialogs at some
@@ -30,15 +30,16 @@ managing modals. A rough concept could work like this:
 2. Render a modal into the DOM, pass in a callback to resolve the promise
 3. Resolve the promise to unrender the modal and pass back a result
 
-[Tobias](https://github.com/Turbo87) made Ember Promise Modals so we don't have
-to implement this on our own. With this addon, can launch any component as a
-modal, wait for a result, and continue with our apps workflow.
+[Tobias](https://github.com/Turbo87) made
+[Ember Promise Modals](https://simplabs.github.io/ember-promise-modals/) so we
+don't have to implement this on our own. With this addon, can launch any
+component as a modal, wait for a result, and continue with our apps workflow.
 
 ![Video showing a basic Ember Promise Modals dialog in action](/assets/images/posts/2021-08-13-managing-modals-in-ember/epm.mp4#video)
 
 ```js
 let result = await this.modals.open('name-of-your-component', {
-  /* passed to the component */
+  /* data passed to the component */
 });
 ```
 
@@ -51,13 +52,13 @@ integration. It will dim the underlying content for you with a customizable
 backdrop also.
 
 The passed component recieve optional data as `@data` and a `@close` action,
-which will resolve the modal. Anything passed to the action will become the
-resolved result of the promise, making it easy to communicate data in the
-preferred Data-Down-Actions-Up pattern of Ember.js.
+which will close the modal and resolve the promise. Anything passed to the
+action will become the value the promise resolves with, making it easy to
+communicate data in the preferred Data-Down-Actions-Up pattern of Ember.js.
 
 ### CSS based animations
 
-For the first official release, [Nick](https://github.com/nickschot) and
+For the first stable release, [Nick](https://github.com/nickschot) and
 [myself](https://github.com/pichfl) added native CSS animations using
 `CSS @keyframes`, which allow for full control over how dialogs and the dimming
 backdrop appear and disappear on the screen without hogging render performance.
@@ -90,7 +91,6 @@ If you don't like the default, how about something a little more menacing?
 }
 ```
 
-![Animation of a modal spiraling in after clicking a button below a picture of a cartoon character asking for pictures of Spider Man. The modal shows an image with Spider Man hiding behind a tree and a bold caption saying "I'm Batman"](/assets/images/posts/2021-08-13-managing-modals-in-ember/spiral.gif)
+![Animation of a modal spiraling in after clicking a button below a picture of a cartoon character asking for pictures of Spider Man. The modal shows an image with Spider Man hiding behind a tree and a bold caption saying "I'm Batman"](/assets/images/posts/2021-08-13-managing-modals-in-ember/spiderman.mp4#video)
 
-Now it's your turn. Try out
-[Ember Promise Modals](https://simplabs.github.io/ember-promise-modals/) today!
+Modals can be fun. Promised.
