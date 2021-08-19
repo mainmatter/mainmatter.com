@@ -1,10 +1,10 @@
 ---
 title: 'Inside simplabs #1: Chris Manson, Senior Software-Engineer'
-author: 'Emma Dell''Acqua'
+author: "Emma Dell'Acqua"
 github: emma_dellacqua
 twitter: emma_dellacqua
 topic: insidesimplabs
-bio: "Marketing Assistant"
+bio: 'Marketing Assistant'
 description:
   'Interview with Chris Manson, Senior Software-Engineer at simplabs.'
 og:
