@@ -79,7 +79,7 @@
     "navigo": "^7.1.2",
     "percy": "^0.28.6",
     "pretender": "^3.4.3",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.2",
     "puppeteer": "^10.2.0",
     "qunitjs": "^2.3.3",
     "rollup": "^2.56.2",
