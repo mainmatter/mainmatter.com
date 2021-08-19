@@ -31,7 +31,7 @@ module('Component: FormContact', function(hooks) {
 
     this.server.post('https://simplabs-com-contact-form.herokuapp.com/api/send', request => {
       assert.equal(request.method, 'POST');
-      assert.equal(request.requestHeaders['content-type'], 'application/json');
+      assert.equal(request.requestHeaders['Content-Type'], 'application/json');
       assert.deepEqual(JSON.parse(request.requestBody), {
         email: 'email.address@domain.com',
         message: 'The message!',
