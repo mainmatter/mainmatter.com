@@ -190,10 +190,19 @@ The template is just a simple form (actual elements, classes etc. of course
 depend on your specific application):
 
 ```hbs
-<form {{action login on="submit"}}>
-  {{view Ember.TextField valueBinding="loginOrEmail" placeholder="Login or Email"}}
-  {{view Ember.TextField valueBinding="password" type="password" placeholder="Password"}}
-  <button class="btn">Login</button>
+<form {{action login on='submit'}}>
+  {{view
+    Ember.TextField
+    valueBinding='loginOrEmail'
+    placeholder='Login or Email'
+  }}
+  {{view
+    Ember.TextField
+    valueBinding='password'
+    type='password'
+    placeholder='Password'
+  }}
+  <button class='btn'>Login</button>
 </form>
 ```
 

@@ -49,7 +49,7 @@ This approach selects elements by CSS classes. For the following template:
 
 ```hbs
 <article>
-  <h1 class="post-title">{{post.title}}</h1>
+  <h1 class='post-title'>{{post.title}}</h1>
   <p>{{post.body}}</p>
 </article>
 ```
@@ -70,7 +70,7 @@ following template:
 
 ```hbs
 <article>
-  <h1 data-test-selector="post-title">{{post.title}}</h1>
+  <h1 data-test-selector='post-title'>{{post.title}}</h1>
   <p>{{post.body}}</p>
 </article>
 ```
@@ -86,7 +86,10 @@ in the markup like e.g. the post's id:
 
 ```hbs
 <article>
-  <h1 data-test-selector="post-title" data-test-resource-id="{{post.id}}">{{post.title}}</h1>
+  <h1
+    data-test-selector='post-title'
+    data-test-resource-id='{{post.id}}'
+  >{{post.title}}</h1>
   <p>{{post.body}}</p>
 </article>
 ```

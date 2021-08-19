@@ -57,7 +57,7 @@ TypeScript and so are applications built with it.
 Glimmer.js templates use Handlebars-like syntax, e.g.:
 
 ```hbs
-{{#each measurementLists.first key="@index"}}
+{{#each measurementLists.first key='@index'}}
   <MeasurementRow
     @value={{measurement.value}}
     @parameter={{measurement.parameter}}
@@ -140,7 +140,7 @@ component for the current mode:
 
 ```hbs
 {{#if isSearchMode}}
-  <Search @searchTerm={{searchTerm}}/>
+  <Search @searchTerm={{searchTerm}} />
 {{else if isResultsMode}}
   <Location @locationId={{locationId}} />
 {{/if}}
@@ -155,10 +155,7 @@ The `Search` component renders the `SearchForm` component that implements the
 text field for the search term and the button to submit the search:
 
 ```hbs
-<SearchForm
-  @term={{searchTerm}}
-  @onSubmit={{action searchByTerm}}
-/>
+<SearchForm @term={{searchTerm}} @onSubmit={{action searchByTerm}} />
 ```
 
 `@onSubmit={{action searchByTerm}}` assigns the `searchByTerm` method of the
@@ -195,14 +192,14 @@ them results in the component to be re-rendered. They are used in the template
 like this:
 
 ```hbs
-<div class="results">
+<div class='results'>
   {{#if loading}}
-    <div class="loader search-loader"></div>
+    <div class='loader search-loader'></div>
   {{else}}
     <ul>
-      {{#each locations key="id" as |location|}}
-        <li class="result">
-          <a href="/location/{{location.id}}" class="result-link" data-internal>
+      {{#each locations key='id' as |location|}}
+        <li class='result'>
+          <a href='/location/{{location.id}}' class='result-link' data-internal>
             {{location.label}}
           </a>
         </li>
