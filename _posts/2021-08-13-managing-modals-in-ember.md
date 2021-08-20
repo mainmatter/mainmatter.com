@@ -40,6 +40,7 @@ component as a modal, wait for a result, and continue with our apps workflow.
 ```js
 let result = await this.modals.open('name-of-your-component', {
   /* data passed to the component */
+  question: 'Life, the universe and everything?',
 });
 ```
 
@@ -55,6 +56,16 @@ The passed component recieve optional data as `@data` and a `@close` action,
 which will close the modal and resolve the promise. Anything passed to the
 action will become the value the promise resolves with, making it easy to
 communicate data in the preferred Data-Down-Actions-Up pattern of Ember.js.
+
+```hbs
+{{! example modal component using passed data and close action}}
+<div>
+  <header>
+    <button type="button" {{on "click" @close}}>Close</button>
+  </header>
+  <p>{{@data.question}}</p>
+</div>
+```
 
 ### CSS based animations
 
