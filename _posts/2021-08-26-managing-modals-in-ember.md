@@ -9,7 +9,7 @@ description:
   'Exploring better and easier handling of modal dialogs in Ember.js
   applications'
 og:
-  image: /assets/images/posts/2021-07-13-effective-infrastructure-for-efficient-development-workflows/og-image.png
+  image: /assets/images/posts/2021-08-26-managing-modals-in-ember/og-image.png
 ---
 
 Modal dialogs are about as widespread as they are missunderstood. No matter if
@@ -35,7 +35,7 @@ managing modals. A rough concept could work like this:
 don't have to implement this on our own. With this addon, can launch any
 component as a modal, wait for a result, and continue with our apps workflow.
 
-![Video showing a basic Ember Promise Modals dialog in action](/assets/images/posts/2021-08-13-managing-modals-in-ember/epm.mp4#video)
+![Video showing a basic Ember Promise Modals dialog in action](/assets/images/posts/2021-08-26-managing-modals-in-ember/epm.mp4#video)
 
 ```js
 let result = await this.modals.open('name-of-your-component', {
@@ -102,6 +102,6 @@ If you don't like the default, how about something a little more menacing?
 }
 ```
 
-![Animation of a modal spiraling in after clicking a button below a picture of a cartoon character asking for pictures of Spider Man. The modal shows an image with Spider Man hiding behind a tree and a bold caption saying "I'm Batman"](/assets/images/posts/2021-08-13-managing-modals-in-ember/spiderman.mp4#video)
+![Animation of a modal spiraling in after clicking a button below a picture of a cartoon character asking for pictures of Spider Man. The modal shows an image with Spider Man hiding behind a tree and a bold caption saying "I'm Batman"](/assets/images/posts/2021-08-26-managing-modals-in-ember/spiderman.mp4#video)
 
 Modals can be fun. Promised.
