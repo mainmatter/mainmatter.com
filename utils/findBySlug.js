@@ -1,3 +1,5 @@
+// Snippet from Rob Dodson @ https://gist.github.com/robdodson/c2d3c4a6bf6bf9962893760c5585a3eb
+
 let memo;
 
 /**
@@ -50,4 +52,4 @@ const findBySlug = (slug) => {
   return found;
 };
 
-module.exports = {memoize, findBySlug};
+module.exports = { memoize, findBySlug };

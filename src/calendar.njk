@@ -1,0 +1,22 @@
+---
+layout: 'base'
+title: Calendar
+---
+{%- set kinds = ["Conference", "Meetup"] -%}
+
+{%- for kind in kinds -%}
+  {%- set eventCount = 0 -%}
+  {%- for event in collections.calendar -%}
+    {%- if event.data.kind == kind.toLowerCase() %}
+      {%- set eventCount = eventCount + 1 -%}
+      {%- if eventCount == 1 -%}
+        <h2>{{ kind }}</h2>
+        <ul>
+      {%- endif -%}
+      <li>{{ event.data.title }}</li>
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if eventCount > 0 %}
+    </ul>
+  {%- endif -%}
+{%- endfor -%}

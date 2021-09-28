@@ -36,6 +36,7 @@ module.exports = function (eleventyConfig) {
     "channelsAppearances",
     require("./collections/channelsAppearances")
   );
+  eleventyConfig.addCollection("calendar", require("./collections/calendar"));
 
   /**
    * Add filters
