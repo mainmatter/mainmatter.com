@@ -1,0 +1,6 @@
+{
+  "src": "src",
+  "blogdir": "posts",
+  "includes": "components",
+  "output": "dist"
+}

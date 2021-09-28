@@ -1,0 +1,43 @@
+{
+  "name": "mainmatter-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cross-env ELEVENTY_ENV=production run-s build:sass build:js build:html",
+    "build:html": "eleventy",
+    "build:js": "rollup --config ./rollup.config.js",
+    "build:sass": "sass src/assets/css/app.scss ./assets/css/app.css --style=compressed",
+    "debug": "DEBUG=Eleventy* eleventy",
+    "js": "rollup --config ./rollup.config.js --watch",
+    "watch": "cross-env ELEVENTY_ENV=development && run-p sass js serve",
+    "sass": "sass src/assets/css/app.scss ./assets/css/app.css --style=compressed --watch",
+    "serve": "eleventy --serve --port=8080 --quiet",
+    "dev": "npm run watch"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-plugin-rss": "1.0.9",
+    "@11ty/eleventy-plugin-syntaxhighlight": "3.0.1",
+    "@tbranyen/jsdom": "13.0.0",
+    "html-minifier": "4.0.0",
+    "markdown-it": "11.0.1",
+    "sass": "^1.32.8",
+    "slugify": "1.4.5"
+  },
+  "devDependencies": {
+    "cross-env": "7.0.2",
+    "dayjs": "^1.10.4",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.1.2",
+    "rollup": "^2.40.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "browserslist": [
+    "last 1 Chrome versions",
+    "last 1 Firefox versions",
+    "last 1 Safari versions",
+    "last 1 Edge versions"
+  ]
+}

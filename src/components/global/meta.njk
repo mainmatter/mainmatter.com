@@ -1,0 +1,46 @@
+{%- set pageTitle = config.name -%}
+{%- set pageDesc = config.description -%}
+{%- set siteTitle = config.name -%}
+{%- set currentUrl = config.url + page.url -%}
+
+{%- if renderData.title -%}
+  {%- set pageTitle = renderData.title + ' - ' + config.name -%}
+{%- elif title -%}
+  {%- set pageTitle = title + ' - ' + config.name -%}
+{%- endif -%}
+
+{%- if description -%}
+  {%- set pageDesc = description -%}
+{%- endif -%}
+
+<title>{{ pageTitle }}</title>
+{%- if canonical -%}
+<link rel="canonical" href="{{ canonical }}" />
+{%- else -%}
+<link rel="canonical" href="{{ currentUrl }}" />
+{%- endif -%}
+<meta property="og:site_name" content="{{ siteTitle }}" />
+<meta property="og:title" content="{{ pageTitle }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ currentUrl }}" />
+
+{%- if config.authorHandle -%}
+  <meta name="twitter:creator" content="@{{ config.authorHandle | replace('@', '') }}" />
+{%- endif -%}
+
+{%- if pageDesc -%}
+  <meta name="description" content="{{ pageDesc }}" />
+  <meta name="twitter:description" content="{{ pageDesc }}" />
+  <meta property="og:description" content="{{ pageDesc }}" />
+{%- endif -%}
+
+{%- if featured_image -%}
+  <meta property="og:image" content="https://res.cloudinary.com/{{ config.cloudinaryName }}/image/upload/f_auto,q_auto,c_limit,w_1200,h_630/{{ featured_image | filename }}" />
+  <meta name="twitter:image" content="https://res.cloudinary.com/{{ config.cloudinaryName }}/image/upload/f_auto,q_auto,c_limit,w_1200,h_630/{{ featured_image | filename }}" />
+  <meta property="og:image:alt" content="{{ featured_image_caption  }}" />
+  <meta name="twitter:image:alt" content="{{ featured_image_caption }}" />
+{%- endif -%}
+
+{%- if config.paymentPointer -%}
+  <meta name="monetization" content="{{ config.paymentPointer }}" />
+{%- endif -%}

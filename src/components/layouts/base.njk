@@ -1,0 +1,32 @@
+<html lang="{{ config.lang }}" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    {%- set pageTitle = config.name -%}
+    {%- if renderData.title -%}
+      {%- set pageTitle = renderData.title + ' - ' + config.name -%}
+    {%- elif title -%}
+      {%- set pageTitle = title + ' - ' + config.name -%}
+    {%- endif -%}
+
+    <title>{{ pageTitle }}</title>
+    <meta property="og:title" content="{{ pageTitle }}" />
+
+    <link rel="stylesheet" href="/assets/css/app.css" />
+    <script src="/assets/js/app.js" defer></script>
+    {% block head %}{{ head | safe }}{% endblock %}
+
+    {% include "global/meta.njk" %}
+    {# <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#ffd82f"> #}
+  </head>
+  <body data-js-enabled="false">
+    <main id="main">
+      {% block content %}{{ content | safe }}{% endblock content %}
+    </main>
+    <script>
+      document.querySelector('body').setAttribute('data-js-enabled', 'true');
+    </script>
+  </body>
+</html>
