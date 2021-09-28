@@ -25,6 +25,19 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/admin");
 
   /**
+   * Create custom data collections
+   */
+  eleventyConfig.addCollection(
+    "appearances",
+    require("./collections/appearances")
+  );
+  eleventyConfig.addCollection("channels", require("./collections/channels"));
+  eleventyConfig.addCollection(
+    "channelsAppearances",
+    require("./collections/channelsAppearances")
+  );
+
+  /**
    * Add filters
    *
    * @link https://www.11ty.io/docs/filters/

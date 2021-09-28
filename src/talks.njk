@@ -1,0 +1,14 @@
+---
+layout: 'base'
+title: Talks, Workshops &amp; Podcasts
+---
+<ul>
+{%- for channel in collections.channelsAppearances -%}
+  <li>{{ channel.data.title }}</li>
+  <ul>
+  {% for appearance in channel.appearances %}
+    <li>{{ appearance.title }}</li>
+  {% endfor %}
+  </ul>
+{%- endfor -%}
+</ul>

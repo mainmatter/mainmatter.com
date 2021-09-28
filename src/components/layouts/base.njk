@@ -4,9 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     {%- set pageTitle = config.name -%}
     {%- if renderData.title -%}
-      {%- set pageTitle = renderData.title + ' - ' + config.name -%}
+      {%- set pageTitle = renderData.title + ' | ' + config.name -%}
     {%- elif title -%}
-      {%- set pageTitle = title + ' - ' + config.name -%}
+      {%- set pageTitle = title + ' | ' + config.name -%}
     {%- endif -%}
 
     <title>{{ pageTitle }}</title>
