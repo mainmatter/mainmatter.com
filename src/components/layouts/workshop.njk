@@ -1,0 +1,24 @@
+---
+layout: 'base'
+---
+<h1>{{ title }}</h1>
+<h2>Workshop Overview</h2>
+<ol>
+  {%- for topic in topics -%}
+    <li>
+      <p>{{ topic.title }}</p>
+      <p>{{ topic.text }}</p>
+    </li>
+  {%- endfor -%}
+</ol>
+<h2>Leads</h2>
+<ol>
+  {%- for lead in leads -%}
+    <li>
+      <p>{{ lead.name }}</p>
+      <p>{{ lead.title }}</p>
+      <p>{{ lead.bio }}</p>
+    </li>
+  {%- endfor -%}
+</ol>
+{% block content %}{{ content | safe }}{% endblock content %}

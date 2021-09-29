@@ -38,6 +38,7 @@ module.exports = function (eleventyConfig) {
   );
   eleventyConfig.addCollection("calendar", require("./collections/calendar"));
   eleventyConfig.addCollection("videos", require("./collections/videos"));
+  eleventyConfig.addCollection("workshops", require("./collections/workshops"));
 
   /**
    * Add filters

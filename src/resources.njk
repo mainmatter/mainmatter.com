@@ -19,3 +19,10 @@ title: Talks, Workshops &amp; Podcasts
   {%- endif -%}
 {%- endfor -%}
 </ul>
+
+<h2>Workshops</h2>
+<ul>
+{%- for workshop in collections.workshops-%}
+  <li><a href="{{ workshop.data.permalink }}">{{ workshop.data.title }}</a></li>
+{%- endfor -%}
+</ul>
