@@ -12,9 +12,9 @@ teaser:
   ensure the business keeps scaling.
 
 description:
-  simplabs' founder Marco Otte-Witte sat down for a conversation with
-  interviewed Daniel Beutler, an executive coach and advisor and former
-  President of Trainline International.
+  simplabs' founder Marco Otte-Witte sat down for a conversation with Daniel
+  Beutler, an executive coach and advisor and former President of Trainline
+  International.
 
 og:
   image: /assets/images/resources/videos/2021-08-09-built-to-last-10-daniel-beutler/og-image.png
