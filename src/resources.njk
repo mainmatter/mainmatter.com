@@ -1,0 +1,21 @@
+---
+layout: 'base'
+title: Talks, Workshops &amp; Podcasts
+---
+<h2>Talks</h2>
+<ul>
+{%- for video in collections.videos-%}
+  {%- if video.data.kind == 'talk' -%}
+    <li><a href="{{ video.data.permalink }}">{{ video.data.title }}</a></li>
+  {%- endif -%}
+{%- endfor -%}
+</ul>
+
+<h2>Expert Insights</h2>
+<ul>
+{%- for video in collections.videos-%}
+  {%- if video.data.kind == 'built-to-last' -%}
+    <li><a href="{{ video.data.permalink }}">{{ video.data.title }}</a></li>
+  {%- endif -%}
+{%- endfor -%}
+</ul>

@@ -13,7 +13,7 @@ title: Calendar
         <h2>{{ kind }}</h2>
         <ul>
       {%- endif -%}
-      <li>{{ event.data.title }}</li>
+      <li>{{ event.data.title }}<p>{{ event.date.toUTCString() }}</li>
     {%- endif -%}
   {%- endfor -%}
   {%- if eventCount > 0 %}
