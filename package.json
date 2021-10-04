@@ -55,7 +55,7 @@
     "broken-link-checker": "^0.7.8",
     "clean-css": "^5.2.1",
     "colors": "^1.4.0",
-    "dateformat": "^4.5.1",
+    "dateformat": "^5.0.1",
     "ember-cli": "^3.28.0",
     "ember-cli-dependency-checker": "^3.2.0",
     "ember-cli-inject-live-reload": "^2.1.0",
