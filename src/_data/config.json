@@ -6,5 +6,6 @@
   "twitter": "",
   "authorHandle": "",
   "authorName": "",
-  "description": " "
+  "description": " ",
+  "maxPostsPerPage": 10
 }

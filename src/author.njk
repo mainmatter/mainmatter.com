@@ -1,0 +1,23 @@
+---
+layout: base
+renderData:
+  title: '{{ paged.author.data.name }}'
+pagination:
+  data: collections.authorsPostsPaged
+  size: 1
+  alias: paged
+permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/page/{{ paged.number }}/{% endif %}"
+---
+{% if paged.posts.length > 0 %}
+  <h2 class="post-list__title h1">All posts by {{ paged.author.data.name }}</h2>
+  <ol class="post-list">
+    {%- for post in paged.posts -%}
+      <li class="post-list__item">
+        {{ post.data.title }}
+      </li>
+    {%- endfor -%}
+  </ol>
+  {% if (paged.first != true) or (paged.last != true) %}
+    Pagination
+  {% endif %}
+{% endif %}
