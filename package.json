@@ -68,7 +68,7 @@
     "express": "^4.17.1",
     "front-matter": "^4.0.2",
     "fs-extra": "^10.0.0",
-    "glob": "^7.1.7",
+    "glob": "^7.2.0",
     "handlebars": "^4.7.7",
     "highlight.js": "^10.7.2",
     "html-entities": "^2.3.2",
