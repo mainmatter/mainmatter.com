@@ -3,6 +3,7 @@ layout: base
 ---
 {%- block content -%}
   <h1>{{ title }}</h1>
-
-  {{ content | safe }}
+  <article>
+    {{ content | safe }}
+  </article>
 {%- endblock -%}

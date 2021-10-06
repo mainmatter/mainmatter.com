@@ -1,15 +1,12 @@
 const jsdom = require("@tbranyen/jsdom");
 const { JSDOM } = jsdom;
 const slugify = require("slugify");
-
-function setClass(element, list) {
-  if (list) {
-    list.map((item) => element.classList.add(item));
-  }
-}
+const path = require("path");
+const config = require("../../src/_data/config.json");
+const Image = require("@11ty/eleventy-img");
 
 module.exports = function (value, outputPath) {
-  if (outputPath && outputPath.endsWith(".html")) {
+  if (outputPath) {
     /**
      * Create the document model
      */
@@ -58,7 +55,119 @@ module.exports = function (value, outputPath) {
       });
     }
 
+    /**
+     * Wrap all external links with
+     * noopener and nofollow
+     */
+    const links = [...document.querySelectorAll("a")];
+    if (links.length) {
+      links.forEach((link) => {
+        const href = link.getAttribute("href");
+        if (href.charAt(0) !== "/" && href.indexOf(config.url) < 0) {
+          link.setAttribute("target", "_blank");
+          link.setAttribute("rel", "nofollow noopener");
+          link.setAttribute("aria-describedby", "external-new-window-message");
+        }
+      });
+    }
+
+    const images = [...document.querySelectorAll("article img")];
+    if (images.length) {
+      images.forEach((image) => {
+        const rawSrc = image.getAttribute("src");
+        const alt = image.getAttribute("alt");
+        const imageData = parseImageDirectives(rawSrc);
+        let sizes = imageData.sizes;
+        let img,
+          imgClass = "";
+
+        if (!sizes) {
+          // Todo: Adjust these default sizes based on the designs
+          sizes = [720, 1024, 1440];
+        }
+
+        if (imageData.kind === "full") {
+          imgClass = "image--full";
+        } else if (imageData.kind === "video") {
+          img = JSDOM.fragment(
+            `<video src="${imageData.src}" playsinline autoplay muted loop role="presentation">${alt}</video>`
+          );
+          return image.replaceWith(img);
+        }
+
+        if (imageData.fileType === "svg") {
+          if (imgClass) {
+            setClass(image, [imgClass]);
+          }
+          return;
+        }
+
+        let url = "./static" + imageData.src;
+        let stats = Image.statsSync(url, {
+          widths: sizes,
+          formats: [
+            "webp",
+            ...(imageData.fileType !== "gif" ? [imageData.fileType] : []),
+          ],
+          urlPath: imageData.directory,
+          outputDir: "./dist/" + imageData.directory,
+          filenameFormat: function (id, src, width, format, options) {
+            const extension = path.extname(imageData.src);
+            const name = path.basename(imageData.src, extension);
+            return `${name}@${width}.${format}`;
+          },
+        });
+
+        let imageAttributes = {
+          alt,
+          // Todo: flesh out sizes when designs come in
+          sizes: "100vw",
+          loading: "lazy",
+          decoding: "async",
+        };
+
+        const newImage = JSDOM.fragment(
+          Image.generateHTML(stats, imageAttributes)
+        );
+        return image.replaceWith(newImage);
+      });
+    }
+
     return "<!DOCTYPE html>\r\n" + document.documentElement.outerHTML;
   }
   return value;
 };
+
+function setClass(element, list) {
+  if (list) {
+    list.map((item) => element.classList.add(item));
+  }
+}
+
+function parseImageDirectives(src) {
+  let match = src.match(/#(full|plain|video)?(@(\d+)-(\d+))?$/);
+  let bareSrc = src.replace(/#[^#]*$/, "");
+  const fileTypeArray = bareSrc.match(/\.(\w+)/g);
+  let directives = {
+    src: bareSrc,
+    fileType: fileTypeArray[fileTypeArray.length - 1].replace(".", ""),
+  };
+
+  directives.directory = path.dirname(directives.src);
+
+  if (!match) {
+    return directives;
+  }
+
+  let [, kind, , smallSize, largeSize] = match;
+
+  if (kind) {
+    directives.kind = kind;
+  }
+
+  if (smallSize && largeSize) {
+    directives.sizes = [smallSize, largeSize];
+  }
+
+  return directives;
+}
