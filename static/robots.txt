@@ -1,0 +1,8 @@
+# http://www.robotstxt.org
+User-agent: *
+Disallow:
+Disallow: /imprint
+Disallow: /privacy
+Disallow: /imprint/
+Disallow: /privacy/
+Sitemap: https://simplabs.com/sitemap.xml
