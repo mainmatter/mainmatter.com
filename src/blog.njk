@@ -1,0 +1,27 @@
+---
+layout: base
+title: Product & Engineering Blog
+pagination:
+  data: collections.posts
+  size: 10
+  alias: posts
+permalink: "/blog/{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1 }}/{% endif %}"
+---
+<h1>Posts</h1>
+<ol class="post-list">
+  {%- for post in posts -%}
+    {% set author =  post.data.authorHandle | findBySlug %}
+    <li class="post-list__item">
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+      <p>{{ post.data.description }}</p>
+      {% if author %}
+        <a href="/blog/author/{{ author.data.page.fileSlug }}/">
+          {{ author.data.name }}
+        </a>
+      {% endif %}
+    </li>
+  {%- endfor -%}
+</ol>
+{% if (paged.first != true) or (paged.last != true) %}
+  Pagination
+{% endif %}

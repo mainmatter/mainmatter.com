@@ -18,11 +18,13 @@ const memoize = (collection) => {
 
   memo = {};
   collection.forEach((item) => {
-    if (memo[item.fileSlug]) {
-      throw new Error(`Found duplicate post slug: '${item.fileSlug}'`);
+    if (memo[item.template.parsed.name]) {
+      throw new Error(
+        `Found duplicate post slug: '${item.template.parsed.name}'`
+      );
     }
 
-    memo[item.fileSlug] = item;
+    memo[item.template.parsed.name] = item;
   });
 
   // Just return the collection back to eleventy.

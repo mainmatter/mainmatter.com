@@ -45,6 +45,7 @@ module.exports = function (eleventyConfig) {
     "authorsPostsPaged",
     require("./collections/authorsPostsPaged")
   );
+  eleventyConfig.addCollection("memoized", require("./collections/memoized"));
 
   /**
    * Add filters
