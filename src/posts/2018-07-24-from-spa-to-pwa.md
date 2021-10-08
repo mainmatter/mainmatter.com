@@ -1,11 +1,11 @@
 ---
-title: 'From SPA to PWA'
+title: "From SPA to PWA"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte goes over the characteristics of progressive web apps and
-  shows how to make the next step from a SPA to a PWA.'
-topic: javascript
+  "Marco Otte-Witte goes over the characteristics of progressive web apps and
+  shows how to make the next step from a SPA to a PWA."
+tags: javascript
 og:
   image: /assets/images/posts/2018-07-24-from-spa-to-pwa/og-image.png
 ---
@@ -222,8 +222,8 @@ Installing a service worker is as simple as running a little script:
 
 ```html
 <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js').catch(function () {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js").catch(function () {
       // handle errors
     });
   }
@@ -247,8 +247,8 @@ resources:
 ```js
 const CACHE_NAME = 'breethe-cache-v1';
 const PRE_CACHED_ASSETS = [
-  '/app.js', 
-  '/app.css', 
+  '/app.js',
+  '/app.css',
   '/index.html'
 ];
 
@@ -279,7 +279,7 @@ the service worker is activated, simply delete all caches that are not that
 current one:
 
 ```js
-self.addEventListener('activate', function (event) {
+self.addEventListener("activate", function (event) {
   event.waitUntil(
     caches.keys().then(function (cacheNames) {
       return Promise.all(
@@ -288,9 +288,9 @@ self.addEventListener('activate', function (event) {
           if (cacheName !== CACHE_NAME) {
             return caches.delete(cacheName);
           }
-        }),
+        })
       );
-    }),
+    })
   );
 });
 ```
@@ -304,12 +304,12 @@ as always serving that from the service worker's cache when the original request
 fails:
 
 ```js
-self.addEventListener('fetch', function (event) {
-  if (event.request.headers.get('accept').startsWith('text/html')) {
+self.addEventListener("fetch", function (event) {
+  if (event.request.headers.get("accept").startsWith("text/html")) {
     event.respondWith(
       fetch(event.request).catch((error) => {
-        return caches.match('index.html');
-      }),
+        return caches.match("index.html");
+      })
     );
   }
 });
@@ -350,12 +350,12 @@ datasets though, the storage API of choice is generally
 `IndexedDB` is a transactional database system, similar to SQL-based RDBMS:
 
 ```js
-let openRequest = window.indexedDB.open('MyTestDatabase');
+let openRequest = window.indexedDB.open("MyTestDatabase");
 openRequest.onsuccess = function (event) {
   let db = event.target.result;
-  var transaction = db.transaction(['locations']);
-  var objectStore = transaction.objectStore('locations');
-  var request = objectStore.get('1');
+  var transaction = db.transaction(["locations"]);
+  var objectStore = transaction.objectStore("locations");
+  var request = objectStore.get("1");
   request.onsuccess = function () {
     let location = request.result;
     alert(`Loaded location ${location.name}`);
@@ -377,33 +377,33 @@ measurement locations and data points,
 looks like this:
 
 ```typescript
-import { SchemaSettings } from '@orbit/data';
-import { ModelDefinition } from '@orbit/data';
+import { SchemaSettings } from "@orbit/data";
+import { ModelDefinition } from "@orbit/data";
 
 export const location: ModelDefinition = {
   attributes: {
-    label: { type: 'string' },
-    coordinates: { type: 'string' },
+    label: { type: "string" },
+    coordinates: { type: "string" },
   },
   relationships: {
     measurements: {
-      type: 'hasMany',
-      model: 'measurement',
-      inverse: 'location',
+      type: "hasMany",
+      model: "measurement",
+      inverse: "location",
     },
   },
 };
 
 export const measurement: ModelDefinition = {
   attributes: {
-    parameter: { type: 'string' },
-    measuredAt: { type: 'string' },
-    unit: { type: 'string' },
-    value: { type: 'string' },
-    qualityIndex: { type: 'string' },
+    parameter: { type: "string" },
+    measuredAt: { type: "string" },
+    unit: { type: "string" },
+    value: { type: "string" },
+    qualityIndex: { type: "string" },
   },
   relationships: {
-    location: { type: 'hasOne', model: 'location', inverse: 'measurements' },
+    location: { type: "hasOne", model: "location", inverse: "measurements" },
   },
 };
 
@@ -421,8 +421,8 @@ individual data points for particular parameters, e.g. 42.38 µg/m³ for Ozone
 (O₃). With that schema, a store can be instantiated:
 
 ```typescript
-import Store from '@orbit/store';
-import schema from './schema';
+import Store from "@orbit/store";
+import schema from "./schema";
 
 const store = new Store({ schema });
 ```
@@ -432,12 +432,12 @@ Stores in Orbit.js are backed by sources. In the case of Breethe, we use a
 [server API](https://github.com/simplabs/breethe-server):
 
 ```typescript
-import JSONAPISource from '@orbit/jsonapi';
+import JSONAPISource from "@orbit/jsonapi";
 
 const remote = new JSONAPISource({
   schema,
-  name: 'remote',
-  host: 'https://api.breethe.app',
+  name: "remote",
+  host: "https://api.breethe.app",
 });
 ```
 
@@ -446,15 +446,15 @@ offline, Breethe defines a second source that is backed by `IndexedDB` and that
 all data that enters the store via the remote source is synced into:
 
 ```typescript
-import IndexedDBSource from '@orbit/indexeddb';
+import IndexedDBSource from "@orbit/indexeddb";
 
 const backup = new IndexedDBSource({
   schema,
-  name: 'backup',
+  name: "backup",
 });
 
 // when the store changes, sync the changes into the backup source
-store.on('transform', (transform) => {
+store.on("transform", (transform) => {
   backup.sync(transform);
 });
 ```
@@ -501,9 +501,9 @@ Combining puppeteer with mocha allows for writing high level test cases that
 test a PWA in its entirety:
 
 ```js
-describe('when offline', function () {
+describe("when offline", function () {
   async function visit(route, callback) {
-    let browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+    let browser = await puppeteer.launch({ args: ["--no-sandbox"] });
     let page = await browser.newPage();
     await page.goto(route);
 
@@ -514,18 +514,18 @@ describe('when offline', function () {
     }
   }
 
-  it('works offline', async function () {
-    await visit('/', async (page) => {
+  it("works offline", async function () {
+    await visit("/", async (page) => {
       // go through the flow online first so we populate IndexedDB
-      await page.type('[data-test-search-input]', 'Salzburg');
-      await page.click('[data-test-search-submit]');
+      await page.type("[data-test-search-input]", "Salzburg");
+      await page.click("[data-test-search-submit]");
       await page.waitForSelector('[data-test-search-result="Salzburg"]');
       await page.click('[data-test-search-result="Salzburg"] a');
       await page.waitForSelector(
-        '[data-test-measurement="PM10"] [data-test-measurement-value="15"]',
+        '[data-test-measurement="PM10"] [data-test-measurement-value="15"]'
       );
-      await page.click('[data-test-home-link]');
-      await page.waitForSelector('[data-test-search]');
+      await page.click("[data-test-home-link]");
+      await page.waitForSelector("[data-test-search]");
 
       await page.setOfflineMode(true); // simulate the browser being offline
       await page.reload();
@@ -535,7 +535,7 @@ describe('when offline', function () {
       await page.click('[data-test-search-result="Salzburg"] a');
       // check the correct data is still present
       let element = await page.waitForSelector(
-        '[data-test-measurement="PM10"] [data-test-measurement-value="15"]',
+        '[data-test-measurement="PM10"] [data-test-measurement-value="15"]'
       );
       expect(page.url()).to.match(/\/location\/2$/);
 

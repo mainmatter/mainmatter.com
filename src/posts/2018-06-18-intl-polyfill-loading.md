@@ -1,11 +1,11 @@
 ---
-title: 'ember-intl data loading patterns'
+title: "ember-intl data loading patterns"
 authorHandle: tobiasbieniek
-bio: 'Senior Frontend Engineer, Ember CLI core team member'
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 description:
-  'Tobias Bieniek shows how to load the necessary polyfills for the Intl API in
-  older browsers most effectively when using ember-intl.'
-topic: ember
+  "Tobias Bieniek shows how to load the necessary polyfills for the Intl API in
+  older browsers most effectively when using ember-intl."
+tags: ember
 ---
 
 At simplabs we ❤️ [ember-intl][ember-intl] and use it for all our projects where
@@ -16,8 +16,7 @@ support them and this blog post will show you our preferred way to load the
 necessary polyfill and the associated data.
 
 [ember-intl]: https://github.com/ember-intl/ember-intl
-[intl]:
-  https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Intl
+[intl]: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Intl
 [browsers]: https://caniuse.com/#feat=internationalization
 
 <!--break-->
@@ -61,8 +60,8 @@ the outside, so what we could do is add a `loadTranslations()` method to the
 like this:
 
 ```js
-import IntlService from 'ember-intl/services/intl';
-import fetch from 'fetch';
+import IntlService from "ember-intl/services/intl";
+import fetch from "fetch";
 
 export default IntlService.extend({
   async loadTranslations(locale) {
@@ -121,7 +120,7 @@ is a better solution:
 ```js
 function loadJS(url) {
   return new Promise((resolve) => {
-    let el = document.createElement('script');
+    let el = document.createElement("script");
     el.src = url;
     el.onload = resolve;
     document.body.appendChild(el);
@@ -172,8 +171,8 @@ service:
   `loadPolyfillData()`
 
 ```js
-import IntlService from 'ember-intl/services/intl';
-import fetch from 'fetch';
+import IntlService from "ember-intl/services/intl";
+import fetch from "fetch";
 
 export default IntlService.extend({
   async loadTranslations(locale) {
@@ -183,7 +182,7 @@ export default IntlService.extend({
   },
 
   async loadPolyfill(locale) {
-    await loadJS('/assets/intl/intl.min.js');
+    await loadJS("/assets/intl/intl.min.js");
   },
 
   async loadPolyfillData(locale) {

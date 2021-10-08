@@ -1,12 +1,12 @@
 ---
 title: New features for ember-test-selectors
 authorHandle: tobiasbieniek
-bio: 'Senior Frontend Engineer, Ember CLI core team member'
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 description:
-  'Tobias Bieniek announces new features in ember-test-selectors such as
+  "Tobias Bieniek announces new features in ember-test-selectors such as
   automatic binding of data-test-* properties and how these are stripped in
-  production.'
-topic: ember
+  production."
+tags: ember
 ---
 
 In March 2016 we have released the first version of
@@ -42,7 +42,7 @@ your templates:
 tests:
 
 ```js
-assert.equal(find(testSelector('post-title')).text(), 'my first blog post');
+assert.equal(find(testSelector("post-title")).text(), "my first blog post");
 //           find( '[data-test-post-title]' )
 ```
 
@@ -168,7 +168,7 @@ module.exports = class {
     var walker = new this.syntax.Walker();
 
     walker.visit(ast, function (node) {
-      if (node.type === 'ElementNode') {
+      if (node.type === "ElementNode") {
         node.attributes = node.attributes.filter(function (attribute) {
           return !TEST_SELECTOR_PREFIX.test(attribute.name);
         });
@@ -187,7 +187,7 @@ Fortunately for us the code to make this AST transform work for curly components
 is very similar:
 
 ```js
-if (node.type === 'MustacheStatement' || node.type === 'BlockStatement') {
+if (node.type === "MustacheStatement" || node.type === "BlockStatement") {
   node.hash.pairs = node.hash.pairs.filter(function (pair) {
     return !TEST_SELECTOR_PREFIX.test(pair.key);
   });
@@ -219,7 +219,7 @@ instead of assigning `data-test-comment-id` inside the loop:
 ```js
 export default Ember.Component({
   comment: null,
-  'data-test-comment-id': Ember.computed.readOnly('comment.id'),
+  "data-test-comment-id": Ember.computed.readOnly("comment.id"),
 });
 ```
 
@@ -238,7 +238,7 @@ supports prototyping Babel plugins and so we came up with a simple
 var TEST_SELECTOR_PREFIX = /data-test-.*/;
 
 module.exports = function (babel) {
-  return new babel.Plugin('ember-test-selectors', {
+  return new babel.Plugin("ember-test-selectors", {
     visitor: {
       Property: function (node) {
         if (TEST_SELECTOR_PREFIX.test(node.key.value)) {
@@ -271,7 +271,7 @@ module.exports = {
       app.options.babel.plugins = app.options.babel.plugins || [];
 
       app.options.babel.plugins.push(
-        require('./strip-data-test-properties-plugin'),
+        require("./strip-data-test-properties-plugin")
       );
     }
   },
@@ -306,7 +306,7 @@ above:
 
 ```js
 var app = new EmberApp({
-  'ember-test-selectors': {
+  "ember-test-selectors": {
     strip: false,
   },
 });
@@ -325,7 +325,7 @@ now removed from the build in production we were able to simplify that import to
 just this:
 
 ```js
-import testSelector from 'ember-test-selectors';
+import testSelector from "ember-test-selectors";
 ```
 
 We hope you enjoyed reading about our progress on this project and we would love

@@ -1,11 +1,11 @@
 ---
-title: 'Authentication in ember.js'
+title: "Authentication in ember.js"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
-topic: ember
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
+tags: ember
 description:
-  'Marco Otte-Witte describes an approach for implementing a session mechanism,
-  authentication and authorization in Ember.js applications.'
+  "Marco Otte-Witte describes an approach for implementing a session mechanism,
+  authentication and authorization in Ember.js applications."
 ---
 
 **Update:**_I released an Ember.js plugin that makes it very easy to implement
@@ -15,7 +15,7 @@ an authentication system as described in this post:
 **Update:** _After I wrote this I found out that it’s actually not the best
 approach to implement authentication in Ember.js… There are some things missing
 and some other things can be done in a much simpler way.
-[I wrote a summary of the (better) authentication mechanism we moved to.](/blog/2013/08/08/better-authentication-in-emberjs '(better) authnetication with ember.js')_
+[I wrote a summary of the (better) authentication mechanism we moved to.](/blog/2013/08/08/better-authentication-in-emberjs "(better) authnetication with ember.js")_
 
 _I’m using the latest (as of mid June 2013)
 [ember](https://github.com/emberjs/ember.js)/[ember-data](https://github.com/emberjs/data)/[handlebars](https://github.com/wycats/handlebars.js)
@@ -112,8 +112,8 @@ every time the user reloads the page we can simply **store that data in a cookie
 (of course you could use local storage etc.)**:
 
 ```js
-$.cookie('auth_token', App.Auth.get('authToken'));
-$.cookie('auth_account', App.Auth.get('accountId'));
+$.cookie("auth_token", App.Auth.get("authToken"));
+$.cookie("auth_account", App.Auth.get("accountId"));
 ```
 
 ## Making authenticated requests
@@ -131,7 +131,7 @@ App.AuthenticatedRESTAdapter = DS.RESTAdapter.extend({
   ajax: function (url, type, hash) {
     hash = hash || {};
     hash.headers = hash.headers || {};
-    hash.headers['X-AUTHENTICATION-TOKEN'] = this.authToken;
+    hash.headers["X-AUTHENTICATION-TOKEN"] = this.authToken;
     return this._super(url, type, hash);
   },
 });
@@ -167,10 +167,10 @@ regular [`Ember.Route`](http://emberjs.com/api/classes/Ember.Route.html)
 App.AuthenticatedRoute = Ember.Route.extend({
   enter: function () {
     if (
-      !Ember.isEmpty(App.Auth.get('authToken')) &&
-      !Ember.isEmpty(App.Auth.get('accountId'))
+      !Ember.isEmpty(App.Auth.get("authToken")) &&
+      !Ember.isEmpty(App.Auth.get("accountId"))
     ) {
-      this.transitionTo('sessions.new');
+      this.transitionTo("sessions.new");
     }
   },
 });
@@ -196,8 +196,8 @@ As the code is now spread up into a number of files and classes, I added a
 
 ```js
 App.Session = DS.Model.extend({
-  authToken: DS.attr('string'),
-  account: DS.belongsTo('App.Account'),
+  authToken: DS.attr("string"),
+  account: DS.belongsTo("App.Account"),
 });
 ```
 

@@ -1,11 +1,11 @@
 ---
-title: 'Automated dependency updates for your internal GitLab server️'
+title: "Automated dependency updates for your internal GitLab server️"
 authorHandle: tobiasbieniek
-topic: misc
-bio: 'Senior Frontend Engineer, Ember CLI core team member'
+tags: misc
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 description:
-  'Tobias Bieniek shares how to set up the Renovate bot for automatic dependency
-  updates with self-hosted internal GitLab servers.'
+  "Tobias Bieniek shares how to set up the Renovate bot for automatic dependency
+  updates with self-hosted internal GitLab servers."
 og:
   image: /assets/images/posts/2019-04-24-dependency-updates-for-gitlab/og-image.png
 ---

@@ -1,11 +1,11 @@
 ---
-title: 'Ember.js Workshop in Munich, July 22nd-24th'
+title: "Ember.js Workshop in Munich, July 22nd-24th"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
   "Marco Otte-Witte announces simplabs' 3-day Ember.js workshop in Munich,
   introducing participants to all aspects of the framework."
-topic: ember
+tags: ember
 ---
 
 We are organizing a
@@ -33,5 +33,5 @@ The topics we will cover are:
 
 **There will also be a Welcome Party** at the first evening and luch served at
 the Workshop Venue!
-[Register now](http://ember-workshop.simplabs.com 'Ember.js Workshop in Munich, July 22nd-24th')
+[Register now](http://ember-workshop.simplabs.com "Ember.js Workshop in Munich, July 22nd-24th")
 as we only have limited capacities.

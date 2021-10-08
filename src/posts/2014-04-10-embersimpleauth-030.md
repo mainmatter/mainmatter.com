@@ -1,11 +1,11 @@
 ---
-title: 'Ember.SimpleAuth 0.3.0'
+title: "Ember.SimpleAuth 0.3.0"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte announces Ember.SimpleAuth 0.3.0, splitting the addon into a
-  core and extensions for specific authentication/authorization mechanisms.'
-topic: ember
+  "Marco Otte-Witte announces Ember.SimpleAuth 0.3.0, splitting the addon into a
+  core and extensions for specific authentication/authorization mechanisms."
+tags: ember
 ---
 
 Ember.SimpleAuth 0.3.0 was just released. The **main change in this release is
@@ -41,10 +41,10 @@ behave as before:
 
 ```js
 Ember.Application.initializer({
-  name: 'authentication',
+  name: "authentication",
   initialize: function (container, application) {
     Ember.SimpleAuth.setup(container, application, {
-      authorizerFactory: 'authorizer:oauth2-bearer',
+      authorizerFactory: "authorizer:oauth2-bearer",
     });
   },
 });

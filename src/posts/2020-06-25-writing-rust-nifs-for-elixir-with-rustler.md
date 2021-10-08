@@ -1,11 +1,11 @@
 ---
 title: Writing Rust NIFs for Elixir With Rustler
 authorHandle: niklas_long
-topic: elixir
-bio: 'Backend Engineer, author of Breethe API'
+tags: elixir
+bio: "Backend Engineer, author of Breethe API"
 description:
-  'Niklas Long describes the upcoming changes to Rustler and how it simplifies
-  implementing NIFs.'
+  "Niklas Long describes the upcoming changes to Rustler and how it simplifies
+  implementing NIFs."
 og:
   image: /assets/images/posts/2020-06-25-writing-rust-nifs-for-elixir-with-rustler/og-image.png
 ---

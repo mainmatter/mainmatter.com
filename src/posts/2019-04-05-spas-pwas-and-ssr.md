@@ -1,11 +1,11 @@
 ---
-title: 'SPAs, PWAs and SSR'
+title: "SPAs, PWAs and SSR"
 authorHandle: marcoow
-topic: javascript
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+tags: javascript
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte dives deep into different approaches for building web apps
-  like SPAs, PWAs, SSR and how they all can be combined for the best result.'
+  "Marco Otte-Witte dives deep into different approaches for building web apps
+  like SPAs, PWAs, SSR and how they all can be combined for the best result."
 og:
   image: /assets/images/posts/2019-04-05-spas-pwas-and-ssr/og-image.png
 ---

@@ -5,7 +5,7 @@ bio: "Full-Stack Engineer, Ember Data core team member"
 description:
   "Clemens Müller gives an overview of Ember Engines and shows how they can be
   used to reduce the footprint of big applications for an improved startup time."
-topic: ember
+tags: ember
 ---
 
 We recently improved the initial load time of an Ember.js app for mobile

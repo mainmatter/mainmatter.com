@@ -1,8 +1,8 @@
 ---
-title: 'Ember.js: The Documentary - Amsterdam Premiere'
+title: "Ember.js: The Documentary - Amsterdam Premiere"
 authorHandle: mrmrcoleman
-topic: ember
-bio: 'Communications and Community Outreach Specialist'
+tags: ember
+bio: "Communications and Community Outreach Specialist"
 description:
   'Mark Coleman announces the release of "Ember.js: The Documentary" in which
   simplabs is featured among other well-known figures from the Ember.js

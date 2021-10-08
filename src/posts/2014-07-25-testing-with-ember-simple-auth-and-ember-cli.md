@@ -1,14 +1,13 @@
 ---
-title: 'Testing with Ember Simple Auth and Ember CLI'
+title: "Testing with Ember Simple Auth and Ember CLI"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
-description:
-  'Marco Otte-Witte explains how to test Ember CLI applications using
-  ember-cli-simple-auth with the testing package ember-cli-simple-auth-testing.'
-topic: ember
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
+description: "Marco Otte-Witte explains how to test Ember CLI applications using
+  ember-cli-simple-auth with the testing package ember-cli-simple-auth-testing."
+tags: ember
 ---
 
-[The last blog post](/blog/2014/06/30/using-ember-simple-auth-with-ember-cli 'Using Ember Simple Auth with ember-cli')
+[The last blog post](/blog/2014/06/30/using-ember-simple-auth-with-ember-cli "Using Ember Simple Auth with ember-cli")
 showed how to use
 [Ember Simple Auth](https://github.com/simplabs/ember-simple-auth) with
 [Ember CLI](https://github.com/ember-cli/ember-cli) to implement session
@@ -52,9 +51,9 @@ to be used in the `test` environment**:
 
 ```js
 // config/environment.js
-if (environment === 'test') {
-  ENV['simple-auth'] = {
-    store: 'simple-auth-session-store:ephemeral',
+if (environment === "test") {
+  ENV["simple-auth"] = {
+    store: "simple-auth-session-store:ephemeral",
   };
 }
 ```
@@ -70,23 +69,23 @@ these (notice the use of the test helpers `authenticateSession` and
 `invalidateSession`):
 
 ```js
-test('a protected route is accessible when the session is authenticated', function () {
+test("a protected route is accessible when the session is authenticated", function () {
   expect(1);
   authenticateSession();
-  visit('/protected');
+  visit("/protected");
 
   andThen(function () {
-    equal(currentRouteName(), 'protected');
+    equal(currentRouteName(), "protected");
   });
 });
 
-test('a protected route is not accessible when the session is not authenticated', function () {
+test("a protected route is not accessible when the session is not authenticated", function () {
   expect(1);
   invalidateSession();
-  visit('/protected');
+  visit("/protected");
 
   andThen(function () {
-    notEqual(currentRouteName(), 'protected');
+    notEqual(currentRouteName(), "protected");
   });
 });
 ```

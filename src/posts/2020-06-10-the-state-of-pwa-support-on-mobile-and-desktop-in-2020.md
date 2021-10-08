@@ -1,11 +1,11 @@
 ---
-title: 'The state of PWA support on mobile and desktop in 2020'
+title: "The state of PWA support on mobile and desktop in 2020"
 authorHandle: arthurpoot
-topic: pwas
+tags: pwas
 bio: Digital Marketing Analyst and Business Developer
 description:
-  'Arthur Poot presents an overview of the possibilities that PWAs offer and the
-  level of support different browsers and OSs offer in 2020.'
+  "Arthur Poot presents an overview of the possibilities that PWAs offer and the
+  level of support different browsers and OSs offer in 2020."
 og:
   image: /assets/images/posts/2020-06-10-the-state-of-pwa-support-on-mobile-and-desktop-in-2020/og-image.png
 ---

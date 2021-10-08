@@ -1,7 +1,7 @@
 ---
 title: "Trying your GitHub Actions locally"
 authorHandle: sami_dbc
-topic: github
+tags: github
 bio: "Senior Frontend Engineer"
 description: "Samanta de Barros on how to try locally your GitHub Actions"
 og:

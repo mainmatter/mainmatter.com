@@ -1,8 +1,8 @@
 ---
-title: 'simplabs monthly update - April 2019'
+title: "simplabs monthly update - April 2019"
 authorHandle: mrmrcoleman
-topic: simplabs
-bio: 'Communications and Community Outreach Specialist'
+tags: simplabs
+bio: "Communications and Community Outreach Specialist"
 description:
   "Mark Coleman shares simplabs' monthly update for April 2019, covering new
   joiners, new clients and a number of upcoming events."

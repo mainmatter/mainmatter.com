@@ -1,11 +1,11 @@
 ---
 title: Using npm libraries in Ember CLI
 authorHandle: tobiasbieniek
-bio: 'Senior Frontend Engineer, Ember CLI core team member'
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 description:
-  'Tobias Bieniek introduces a mechanism for using arbitrary npm libraries in
-  Ember CLI applications and explains how that works under the hood.'
-topic: ember
+  "Tobias Bieniek introduces a mechanism for using arbitrary npm libraries in
+  Ember CLI applications and explains how that works under the hood."
+tags: ember
 og:
   image: /assets/images/posts/2017-02-13-npm-libs-in-ember-cli/og-image.png
 ---
@@ -35,7 +35,7 @@ Secondly we will import it into the Ember CLI build pipeline by adding the
 following line to our `ember-cli-build.js` file:
 
 ```js
-app.import('bower_components/moment/moment.js');
+app.import("bower_components/moment/moment.js");
 ```
 
 This `import()` call tells Ember CLI to add the `moment.js` file to the
@@ -55,12 +55,12 @@ like this:
 ```js
 (function () {
   function vendorModule() {
-    'use strict';
+    "use strict";
 
-    return { default: self['moment'] };
+    return { default: self["moment"] };
   }
 
-  define('moment', [], vendorModule);
+  define("moment", [], vendorModule);
 })();
 ```
 
@@ -80,7 +80,7 @@ To use this vendor shim we will have to `app.import()` it like we did with the
 library itself:
 
 ```js
-app.import('vendor/shims/moment.js');
+app.import("vendor/shims/moment.js");
 ```
 
 We are now able to use `import moment from 'moment';` in our Ember code.
@@ -137,7 +137,7 @@ module.exports = {
   normalizeEntityName() {},
 
   afterInstall() {
-    return this.addBowerPackageToProject('moment');
+    return this.addBowerPackageToProject("moment");
   },
 };
 ```
@@ -159,11 +159,7 @@ make sure that Ember CLI waits for the installation to finish.
 
 ## npm vs. Bower
 
-> &quot;What&#39;s bower?&quot;  
-> &quot;A package manager, install it with npm.&quot;  
-> &quot;What&#39;s npm?&quot;  
-> &quot;A package manager, you can install it with brew&quot;  
-> &quot;What&#39;s brew?&quot; ...  
+> &quot;What&#39;s bower?&quot; > &quot;A package manager, install it with npm.&quot; > &quot;What&#39;s npm?&quot; > &quot;A package manager, you can install it with brew&quot; > &quot;What&#39;s brew?&quot; ...
 > <author>Stefan Baumgartner (@ddprrt)
 > <a href="https://twitter.com/ddprrt/status/529909875347030016">5. November
 > 2014</a></author>
@@ -218,25 +214,25 @@ adjust the `moment.js` import in the `included()` hook to point to
 `vendor/moment.js` instead:
 
 ```js
-var path = require('path');
-var Funnel = require('broccoli-funnel');
-var MergeTrees = require('broccoli-merge-trees');
+var path = require("path");
+var Funnel = require("broccoli-funnel");
+var MergeTrees = require("broccoli-merge-trees");
 
 module.exports = {
-  name: 'ember-moment',
+  name: "ember-moment",
 
   included() {
     this._super.included.apply(this, arguments);
-    this.import('vendor/moment.js');
-    this.import('vendor/shims/moment.js');
+    this.import("vendor/moment.js");
+    this.import("vendor/shims/moment.js");
   },
 
   treeForVendor(vendorTree) {
     var momentTree = new Funnel(
-      path.join(this.project.root, 'node_modules', 'moment'),
+      path.join(this.project.root, "node_modules", "moment"),
       {
-        files: ['moment.js'],
-      },
+        files: ["moment.js"],
+      }
     );
 
     return new MergeTrees([vendorTree, momentTree]);
@@ -283,8 +279,8 @@ has that algorithm built-in and we can just use it through the
 code like this:
 
 ```js
-var momentTree = new Funnel(path.dirname(require.resolve('moment/moment.js')), {
-  files: ['moment.js'],
+var momentTree = new Funnel(path.dirname(require.resolve("moment/moment.js")), {
+  files: ["moment.js"],
 });
 ```
 

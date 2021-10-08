@@ -1,10 +1,9 @@
 ---
-title: 'Inside simplabs #1: Chris Manson, Senior Software-Engineer'
+title: "Inside simplabs #1: Chris Manson, Senior Software-Engineer"
 authorHandle: emma_dellacqua
-topic: insidesimplabs
-bio: 'Marketing Assistant'
-description:
-  'Interview with Chris Manson, Senior Software-Engineer at simplabs.'
+tags: insidesimplabs
+bio: "Marketing Assistant"
+description: "Interview with Chris Manson, Senior Software-Engineer at simplabs."
 og:
   image: /assets/images/posts/2021-08-23-inside-simplabs-chris-manson/og-image.png
 ---

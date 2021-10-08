@@ -1,11 +1,11 @@
 ---
 title: Class based Computed Properties
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte introduces a mechanism for class based computed properties
-  in Ember.js and how those can be used instead of helpers.'
-topic: ember
+  "Marco Otte-Witte introduces a mechanism for class based computed properties
+  in Ember.js and how those can be used instead of helpers."
+tags: ember
 ---
 
 We think Computed Properties in Ember are awesome. We also think they
@@ -30,7 +30,7 @@ Ember comes with a set of macros that implement property logic that most
 applications need and allow for short and expressive definitions like
 
 ```js
-isActive: Ember.computed.equal('state', 'isActive');
+isActive: Ember.computed.equal("state", "isActive");
 ```
 
 There are addons that provide even more macros for common use cases like

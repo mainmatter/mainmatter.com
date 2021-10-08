@@ -1,9 +1,9 @@
 ---
 title: Bringing the Matrix Protocol to Elixir
 authorHandle: niklas_long
-topic: elixir
-bio: 'Backend Engineer, author of the Matrix Elixir SDK'
-description: 'Niklas Long introduces the Matrix Elixir SDK.'
+tags: elixir
+bio: "Backend Engineer, author of the Matrix Elixir SDK"
+description: "Niklas Long introduces the Matrix Elixir SDK."
 og:
   image: /assets/images/posts/2020-11-02-bringing-matrix-to-elixir/og-image.png
 ---

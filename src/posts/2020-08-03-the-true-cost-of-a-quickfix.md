@@ -1,11 +1,11 @@
 ---
 title: The True Cost Of A Quickfix
 authorHandle: patsy_issa_p
-topic: process
-bio: 'Senior Frontend Engineer'
+tags: process
+bio: "Senior Frontend Engineer"
 description:
-  'Patsy Issa makes the case for refactoring legacy code sooner rather than
-  later'
+  "Patsy Issa makes the case for refactoring legacy code sooner rather than
+  later"
 og:
   image: /assets/images/posts/2020-08-03-the-true-cost-of-a-quickfix/og-image.png
 ---

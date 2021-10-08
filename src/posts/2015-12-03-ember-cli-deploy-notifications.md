@@ -1,11 +1,11 @@
 ---
-title: 'ember-cli-deploy-notifications'
+title: "ember-cli-deploy-notifications"
 authorHandle: LevelbossMike
-bio: 'Full-Stack Engineer, Ember CLI Deploy core team member'
+bio: "Full-Stack Engineer, Ember CLI Deploy core team member"
 description:
-  'Michael Klein introduces ember-cli-deploy-notifications, an ember-cli-deploy
-  plugin for invoking arbitrary webhooks during the deployment process.'
-topic: ember
+  "Michael Klein introduces ember-cli-deploy-notifications, an ember-cli-deploy
+  plugin for invoking arbitrary webhooks during the deployment process."
+tags: ember
 ---
 
 A few weeks ago a new version of the _"official"_ ember deployment solution
@@ -57,7 +57,7 @@ module.exports = function (deployTarget) {
       services: {
         bugsnag: {
           didActivate: {
-            apiKey: '',
+            apiKey: "",
           },
         },
       },
@@ -102,14 +102,14 @@ module.exports = function (deployTarget) {
     notifications: {
       services: {
         simplabs: {
-          url: 'https://notify.simplabs.com/deploy',
+          url: "https://notify.simplabs.com/deploy",
           headers: {},
-          method: 'POST',
+          method: "POST",
           body: function (context) {
             var deployer = context.deployer;
 
             return {
-              secret: 'supersecret',
+              secret: "supersecret",
               deployer: deployer,
             };
           },
@@ -172,14 +172,14 @@ module.exports = function (deployTarget) {
     notifications: {
       services: {
         slack: {
-          url: '',
+          url: "",
           body: {
-            text: 'A new revision was deployed!',
+            text: "A new revision was deployed!",
           },
           didActivate: true,
           didFail: {
             body: {
-              text: 'Deployment failed!',
+              text: "Deployment failed!",
             },
           },
         },
@@ -212,7 +212,7 @@ module.exports = function (deployTarget) {
     notifications: {
       services: {
         bugsnag: {
-          apiKey: '',
+          apiKey: "",
           didActivate: true,
         },
       },

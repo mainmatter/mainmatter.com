@@ -1,7 +1,7 @@
 ---
 title: "Bringing clarity to templates through Ember Octane"
 authorHandle: locks
-topic: ember
+tags: ember
 bio: "Senior Frontend Engineer, Ember Framework and Learning Core teams member"
 description:
   "Ricardo Mendes explains how Ember templates have evolved in the path to Ember

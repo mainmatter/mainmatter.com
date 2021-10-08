@@ -1,11 +1,11 @@
 ---
-title: 'ember-test-selectors: The road to 1.0'
+title: "ember-test-selectors: The road to 1.0"
 authorHandle: tobiasbieniek
-bio: 'Senior Frontend Engineer, Ember CLI core team member'
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 description:
-  'Tobias Bieniek goes through what happened in ember-test-selectors during the
-  past year and what the roadmap towards a 1.0 release is.'
-topic: ember
+  "Tobias Bieniek goes through what happened in ember-test-selectors during the
+  past year and what the roadmap towards a 1.0 release is."
+tags: ember
 ---
 
 Back in January we wrote about the
@@ -121,14 +121,14 @@ about the `testSelector` helper function in `ember-test-selectors`.
 The purpose of the `testSelector` function is turning:
 
 ```js
-let foo = testSelector('foo');
-let bar = testSelector('bar', 'baz');
+let foo = testSelector("foo");
+let bar = testSelector("bar", "baz");
 ```
 
 into:
 
 ```js
-let foo = '[data-test-foo]';
+let foo = "[data-test-foo]";
 let bar = '[data-test-bar="baz"]';
 ```
 

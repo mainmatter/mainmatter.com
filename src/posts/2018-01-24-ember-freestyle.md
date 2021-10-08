@@ -5,7 +5,7 @@ bio: "Senior Frontend Engineer, Ember CLI core team member"
 description:
   "Tobias Bieniek gives an overview of how ember-freestyle can be used in
   Ember.js applications for building and testing components in isolation."
-topic: ember
+tags: ember
 ---
 
 A component playground is an application that you can use to test out and play

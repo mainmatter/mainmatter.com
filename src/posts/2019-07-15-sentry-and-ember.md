@@ -1,11 +1,11 @@
 ---
-title: 'Sentry error reporting for Ember.js'
+title: "Sentry error reporting for Ember.js"
 authorHandle: tobiasbieniek
-topic: ember
-bio: 'Senior Frontend Engineer, Ember CLI core team member'
+tags: ember
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 description:
-  'Tobias Bieniek explains how to set up Sentry for Ember.js applications using
-  @sentry/browser instead of the now unnecessary ember-cli-sentry.'
+  "Tobias Bieniek explains how to set up Sentry for Ember.js applications using
+  @sentry/browser instead of the now unnecessary ember-cli-sentry."
 og:
   image: /assets/images/posts/2019-07-15-sentry-and-ember/og-image.png
 ---
@@ -272,10 +272,8 @@ If you have questions, want to know more or need help setting all of this up for
 your apps please [contact us][contact]. We're happy to help!
 
 [ember-cli-sentry]: https://github.com/ember-cli-sentry/ember-cli-sentry
-[raven-js]:
-  https://github.com/getsentry/sentry-javascript/tree/master/packages/raven-js
-[sentry-browser]:
-  https://github.com/getsentry/sentry-javascript/tree/master/packages/browser
+[raven-js]: https://github.com/getsentry/sentry-javascript/tree/master/packages/raven-js
+[sentry-browser]: https://github.com/getsentry/sentry-javascript/tree/master/packages/browser
 [ember-cli-deploy]: https://github.com/ember-cli-deploy/ember-cli-deploy
 [ember-cli-deploy-sentry]: https://github.com/dschmidt/ember-cli-deploy-sentry
 [ember-simple-auth]: https://github.com/simplabs/ember-simple-auth

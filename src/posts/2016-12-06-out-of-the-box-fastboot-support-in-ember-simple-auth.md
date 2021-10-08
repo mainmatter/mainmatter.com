@@ -1,11 +1,11 @@
 ---
 title: Out-of-the-box FastBoot support in Ember Simple Auth
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte announces out-of-the-box support for FastBoot in Ember
-  Simple Auth and explains how it works using ember-cookies.'
-topic: ember
+  "Marco Otte-Witte announces out-of-the-box support for FastBoot in Ember
+  Simple Auth and explains how it works using ember-cookies."
+tags: ember
 ---
 
 Ever since <a href="https://www.youtube.com/watch?v=o12-90Dm-Qs">FastBoot was
@@ -90,7 +90,7 @@ application session store</strong> as:
 
 ```js
 // app/session-stores/application.js
-import Cookie from 'ember-simple-auth/session-stores/cookie';
+import Cookie from "ember-simple-auth/session-stores/cookie";
 
 export default Cookie.extend();
 ```

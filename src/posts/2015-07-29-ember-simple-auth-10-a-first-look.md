@@ -1,12 +1,12 @@
 ---
-title: 'Ember Simple Auth 1.0 - a first look'
+title: "Ember Simple Auth 1.0 - a first look"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte gives an outlook on Ember Simple Auth 1.0 with Ember.js 2.0
+  "Marco Otte-Witte gives an outlook on Ember Simple Auth 1.0 with Ember.js 2.0
   support, a session service and discontinued support for non-Ember CLI
-  projects.'
-topic: ember
+  projects."
+tags: ember
 ---
 
 The **first beta of Ember Simple Auth 1.0 will be released soon** and this post

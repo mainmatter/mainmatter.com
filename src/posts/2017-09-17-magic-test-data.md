@@ -1,11 +1,11 @@
 ---
 title: Magic Data in Tests
 authorHandle: geekygrappler
-bio: 'Senior Frontend Engineer'
+bio: "Senior Frontend Engineer"
 description:
-  'Andy Brown explains the AAA principle for writing good tests and discusses
-  what the negative consequences of not adhering to it are.'
-topic: misc
+  "Andy Brown explains the AAA principle for writing good tests and discusses
+  what the negative consequences of not adhering to it are."
+tags: misc
 ---
 
 Often when working on large codebases, my changes break some existing tests.
@@ -28,15 +28,15 @@ Act Assert and it's Amazing. The TL;DR is:
 The simple example is:
 
 ```js
-test('toLowerCase makes string all lower case', function (assert) {
+test("toLowerCase makes string all lower case", function (assert) {
   /* Arrange */
-  const string = 'ABC';
+  const string = "ABC";
 
   /* Act */
   const result = string.toLowerCase();
 
   /* Assert */
-  assert.equal(result, 'abc');
+  assert.equal(result, "abc");
 });
 ```
 
@@ -54,16 +54,16 @@ somewhere in your app.
 // config/countries.js
 export default [
   {
-    country: 'DE',
-    locale: 'de',
-    region: 'europe',
-    name: 'Germany',
+    country: "DE",
+    locale: "de",
+    region: "europe",
+    name: "Germany",
   },
   {
-    country: 'GB',
-    locale: 'en',
-    region: 'europe',
-    name: 'United Kingdom',
+    country: "GB",
+    locale: "en",
+    region: "europe",
+    name: "United Kingdom",
   },
 ];
 ```
@@ -116,22 +116,22 @@ we need to add it to the the list of countries and locales.
 // config/countries.js
 export default [
   {
-    country: 'BG',
-    locale: 'bg',
-    region: 'europe',
-    name: 'Bulgaria',
+    country: "BG",
+    locale: "bg",
+    region: "europe",
+    name: "Bulgaria",
   },
   {
-    country: 'DE',
-    locale: 'de',
-    region: 'europe',
-    name: 'Germany',
+    country: "DE",
+    locale: "de",
+    region: "europe",
+    name: "Germany",
   },
   {
-    country: 'GB',
-    locale: 'en',
-    region: 'europe',
-    name: 'United Kingdom',
+    country: "GB",
+    locale: "en",
+    region: "europe",
+    name: "United Kingdom",
   },
 ];
 ```
@@ -167,30 +167,30 @@ export default Component.extend({
 ```
 
 ```js
-test('displayCountries will add a flag key to a country object', function (assert) {
+test("displayCountries will add a flag key to a country object", function (assert) {
   /* Arrange */
   const component = this.subject({
     countries: [
       {
-        country: 'SK',
-        locale: 'we',
-        region: 'westeros',
-        name: 'Seven Kingdoms',
+        country: "SK",
+        locale: "we",
+        region: "westeros",
+        name: "Seven Kingdoms",
       },
     ],
   });
 
   /* Act */
-  const result = component.get('displayCountries');
+  const result = component.get("displayCountries");
 
   /* (Write out my expectation for aesthetics) */
   const expectedResult = [
     {
-      country: 'SK',
-      locale: 'we',
-      region: 'westeros',
-      name: 'Seven Kingdoms',
-      flag: '/assets/images/flags/SK.png',
+      country: "SK",
+      locale: "we",
+      region: "westeros",
+      name: "Seven Kingdoms",
+      flag: "/assets/images/flags/SK.png",
     },
   ];
 

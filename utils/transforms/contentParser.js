@@ -103,7 +103,7 @@ module.exports = function (value, outputPath) {
         }
 
         let url = "./static" + imageData.src;
-        let stats = Image.statsSync(url, {
+        const options = {
           widths: sizes,
           formats: [
             "webp",
@@ -116,7 +116,9 @@ module.exports = function (value, outputPath) {
             const name = path.basename(imageData.src, extension);
             return `${name}@${width}.${format}`;
           },
-        });
+        };
+        let stats = Image.statsSync(url, options);
+        Image(url, options);
 
         let imageAttributes = {
           alt,

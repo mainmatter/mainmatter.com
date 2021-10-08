@@ -1,11 +1,11 @@
 ---
-title: 'Ember.SimpleAuth'
+title: "Ember.SimpleAuth"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte announces Ember.SimpleAuth, an addon for implementing a
-  session mechanism, authentication and authorization for Ember.js applications.'
-topic: ember
+  "Marco Otte-Witte announces Ember.SimpleAuth, an addon for implementing a
+  session mechanism, authentication and authorization for Ember.js applications."
+tags: ember
 ---
 
 **Update:
@@ -13,8 +13,8 @@ topic: ember
 The information in this is (partially) outdated.
 
 After I wrote 2
-[blog](/blog/2013/06/15/authentication-in-emberjs 'the initial post')
-[posts](/blog/2013/08/08/better-authentication-in-emberjs 'the second post with a refined implementation')
+[blog](/blog/2013/06/15/authentication-in-emberjs "the initial post")
+[posts](/blog/2013/08/08/better-authentication-in-emberjs "the second post with a refined implementation")
 on implementing token based authentication in [Ember.js](http://emberjs.com)
 applications and got quite some feedback, good suggestions etc., I thought it
 **would be nice to pack all these ideas in an Ember.js plugin** so everybody
@@ -39,7 +39,7 @@ First, it must be enabled which is best done in a custom initializer:
 
 ```js
 Ember.Application.initializer({
-  name: 'authentication',
+  name: "authentication",
   initialize: function (container, application) {
     Ember.SimpleAuth.setup(application);
   },
@@ -50,8 +50,8 @@ The second step is to setup the routes for logging in and out:
 
 ```js
 App.Router.map(function () {
-  this.route('login');
-  this.route('logout');
+  this.route("login");
+  this.route("logout");
 });
 ```
 
@@ -60,7 +60,7 @@ Ember.SimpleAuth**:
 
 ```js
 App.LoginController = Ember.Controller.extend(
-  Ember.SimpleAuth.LoginControllerMixin,
+  Ember.SimpleAuth.LoginControllerMixin
 );
 App.LogoutRoute = Ember.Route.extend(Ember.SimpleAuth.LogoutRouteMixin);
 ```
@@ -88,7 +88,7 @@ the route classes:
 
 ```js
 App.ProtectedRoute = Ember.Route.extend(
-  Ember.SimpleAuth.AuthenticatedRouteMixin,
+  Ember.SimpleAuth.AuthenticatedRouteMixin
 );
 ```
 

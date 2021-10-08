@@ -1,11 +1,11 @@
 ---
-title: '(better) Authentication in ember.js'
+title: "(better) Authentication in ember.js"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte introduces an update to the mechanism for implementing a
-  session, authentication and authorization in Ember.js applications.'
-topic: ember
+  "Marco Otte-Witte introduces an update to the mechanism for implementing a
+  session, authentication and authorization in Ember.js applications."
+tags: ember
 ---
 
 **Update:**_I released an Ember.js plugin that makes it very easy to implement
@@ -103,8 +103,8 @@ authentication token in a header as long as the request is sent to our domain**:
 Ember.$.ajaxPrefilter(function (options, originalOptions, jqXHR) {
   if (!jqXHR.crossDomain) {
     jqXHR.setRequestHeader(
-      'X-AUTHENTICATION-TOKEN',
-      App.Session.get('authToken'),
+      "X-AUTHENTICATION-TOKEN",
+      App.Session.get("authToken")
     );
   }
 });

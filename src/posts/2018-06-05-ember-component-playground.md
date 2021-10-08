@@ -6,7 +6,7 @@ description:
   "Tobias Bieniek introduces a mechanism for automatically discovering new
   components in Ember.js applications and showing them in an ember-freestyle
   playground."
-topic: ember
+tags: ember
 ---
 
 In our [previous post] about [`ember-freestyle`][ember-freestyle] we have setup

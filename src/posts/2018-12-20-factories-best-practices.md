@@ -1,8 +1,8 @@
 ---
-title: 'Factories best practices'
+title: "Factories best practices"
 authorHandle: geekygrappler
-topic: testing
-bio: 'Senior Frontend Engineer'
+tags: testing
+bio: "Senior Frontend Engineer"
 description:
   "Andy Brown introduces best practices for using factories in order to make
   your colleagues' and your own future self's lives easier."
@@ -73,27 +73,27 @@ defaults. Some pseudocode as we're so far into the post without a single line of
 it.
 
 ```js
-test('orders with deliveries from different carriers arriving on the same day, only show 1 estimated delivery date', function (assert) {
+test("orders with deliveries from different carriers arriving on the same day, only show 1 estimated delivery date", function (assert) {
   let tomorrow = Date.tomorrow();
-  let dhl = make('delivery', {
+  let dhl = make("delivery", {
     estimatedDeliveryDate: tomorrow,
-    carrier: 'dhl',
+    carrier: "dhl",
   });
-  let ups = make('delivery', {
+  let ups = make("delivery", {
     estimatedDeliveryDate: tomorrow,
-    carrier: 'ups',
+    carrier: "ups",
   });
-  let order = make('order', { deliveries: [dhl, ups] });
+  let order = make("order", { deliveries: [dhl, ups] });
 
   assert.equal(
     order.estimatedDeliveryDates.length,
     1,
-    'We should only show one delivery date',
+    "We should only show one delivery date"
   );
   assert.equal(
     order.estimatedDeliveryDates[0],
     tomorrow,
-    'The delivery date is correct',
+    "The delivery date is correct"
   );
 });
 ```
@@ -110,17 +110,17 @@ example:
 //factories/user.js
 Factory.define({
   default: {
-    name: 'Ned Stark',
+    name: "Ned Stark",
   },
   rob_stark: {
-    name: 'Rob Stark',
+    name: "Rob Stark",
     canInherit: true,
-    wolf: belongsTo('dire-wolf'),
+    wolf: belongsTo("dire-wolf"),
   },
   jon_snow: {
-    name: 'Jon Snow',
+    name: "Jon Snow",
     canInherit: false,
-    wolf: belongsTo('dire-wolf'),
+    wolf: belongsTo("dire-wolf"),
   },
 });
 ```
@@ -136,49 +136,49 @@ for both of our heroes. Let me give one scenario for what could happen:
 
 ```js
 beforeEach(() => {
-  let rob = make('rob_stark');
-  let jon = make('jon_snow');
+  let rob = make("rob_stark");
+  let jon = make("jon_snow");
 });
 
 // Added by me on day 1
-test('bastards cannot inherit', function (assert) {
+test("bastards cannot inherit", function (assert) {
   assert.ok(
     rob.canInherit,
-    'The King in the North, Rob Stark shall inherit Winterfell',
+    "The King in the North, Rob Stark shall inherit Winterfell"
   );
   assert.notOk(
     jon.canInherit,
-    'Get ye to The Wall, Winterfell will never belong to Jon Snow.',
+    "Get ye to The Wall, Winterfell will never belong to Jon Snow."
   );
 });
 
 // Added by you on day 10
-test('Leaders can raise armies', function (assert) {
+test("Leaders can raise armies", function (assert) {
   /* let's introduce someone who can tell us interesting things about Jon and Rob */
-  let threeEyedRaven = make('brandon_stark');
+  let threeEyedRaven = make("brandon_stark");
 
   assert.ok(
     threeEyedRaven.canRaiseArmies(rob),
-    'Noble of blood, strong of heart, Rob Stark can raise an army.',
+    "Noble of blood, strong of heart, Rob Stark can raise an army."
   );
   assert.ok(
     threeEyedRaven.canRaiseArmies(jon),
-    'Principles command authority, Jon Snow can raise an army.',
+    "Principles command authority, Jon Snow can raise an army."
   );
 });
 
 //Added by me on day 102
-test('Jon is better than Rob', function (assert) {
-  let threeEyedRaven = make('brandon_stark');
+test("Jon is better than Rob", function (assert) {
+  let threeEyedRaven = make("brandon_stark");
 
   assert.ok(
     threeEyedRaven.isVitalToDefeatTheWhiteWalkers(jon),
-    'We need Jon Snow to defeat the White Walkers (TBC) 😍',
+    "We need Jon Snow to defeat the White Walkers (TBC) 😍"
   );
 
   assert.notOk(
     threeEyedRaven.isVitalToDefeatTheWhiteWalkers(rob),
-    'Rob Stark proved his irrelevance to defeating the White Walkers during the Red Wedding 🗡 😭',
+    "Rob Stark proved his irrelevance to defeating the White Walkers during the Red Wedding 🗡 😭"
   );
 });
 ```
@@ -188,21 +188,21 @@ And now what our simple factories have morphed into:
 ```js
 Factory.define({
   default: {
-    name: 'Ned Stark',
+    name: "Ned Stark",
   },
   rob_stark: {
-    name: 'Rob Stark',
+    name: "Rob Stark",
     canInherit: true,
-    wolf: belongsTo('dire-wolf'),
+    wolf: belongsTo("dire-wolf"),
     isBlessedByRhlor: false,
     charisma: 10,
     fighting_ability: 10,
     alive: false,
   },
   jon_snow: {
-    name: 'Jon Snow',
+    name: "Jon Snow",
     canInherit: false,
-    wolf: belongsTo('dire-wolf'),
+    wolf: belongsTo("dire-wolf"),
     isBlessedByRhlor: true,
     charisma: 9,
     fighting_ability: 10,
@@ -224,12 +224,12 @@ what properties are changing.
 //user.js
 Factory.define({
   default: {
-    name: 'A user',
-    email: 'user@example.com',
+    name: "A user",
+    email: "user@example.com",
   },
   admin_user: {
-    name: 'An Admin',
-    email: 'admin@example.com',
+    name: "An Admin",
+    email: "admin@example.com",
     isAdmin: true,
   },
 });
@@ -335,15 +335,15 @@ Using Mirage in an acceptance test look like this.
 ```js
 //acceptance/foo-index-test.js
 
-test('The page shows me all the foos', async function (assert) {
-  server.createList('foo', 5);
+test("The page shows me all the foos", async function (assert) {
+  server.createList("foo", 5);
 
-  await visit('/foos');
+  await visit("/foos");
 
   assert.equal(
-    find('[data-test-foo]').length,
+    find("[data-test-foo]").length,
     5,
-    'Five foos are shown on the page',
+    "Five foos are shown on the page"
   );
 });
 ```
@@ -361,19 +361,19 @@ certain helper functions that you can use with Factory Guy if you want.</small>
 ```js
 //acceptance/foo-index-test.js
 
-test('The page shows me all the foos', async function (assert) {
+test("The page shows me all the foos", async function (assert) {
   // This is pretender
-  server.get('/api/foos', function () {
+  server.get("/api/foos", function () {
     // buildList is ember-data-factory-guy
-    return [200, {}, buildList('foo', 5)];
+    return [200, {}, buildList("foo", 5)];
   });
 
-  await visit('/foos');
+  await visit("/foos");
 
   assert.equal(
-    find('[data-test-foo]').length,
+    find("[data-test-foo]").length,
     5,
-    'Five foos are shown on the page',
+    "Five foos are shown on the page"
   );
 });
 ```

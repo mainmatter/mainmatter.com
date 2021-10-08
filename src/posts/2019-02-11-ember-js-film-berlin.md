@@ -1,8 +1,8 @@
 ---
-title: 'Ember.js: The Documentary - Berlin Screening'
+title: "Ember.js: The Documentary - Berlin Screening"
 authorHandle: mrmrcoleman
-topic: ember
-bio: 'Communications and Community Outreach Specialist'
+tags: ember
+bio: "Communications and Community Outreach Specialist"
 description:
   'Mark Coleman announces the screening of "Ember.js: The Documentary" in
   Berlin, Feb. 11th 2019.'

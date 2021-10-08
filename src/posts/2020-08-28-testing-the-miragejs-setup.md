@@ -1,10 +1,9 @@
 ---
-title: 'Testing your Mirage.js setup'
+title: "Testing your Mirage.js setup"
 authorHandle: tobiasbieniek
-topic: ember
-bio: 'Senior Frontend Engineer'
-description:
-  'Tobias Bieniek explains how to write tests for your Mirage.js mock API setup.'
+tags: ember
+bio: "Senior Frontend Engineer"
+description: "Tobias Bieniek explains how to write tests for your Mirage.js mock API setup."
 og:
   image: /assets/images/posts/2020-08-28-testing-the-miragejs-setup/og-image.png
 ---
@@ -48,22 +47,22 @@ want to check if the serialization layer in Mirage.js works as expected. For
 that we will create a new test file `tests/mirage/user/get-test.js`:
 
 ```js
-import { setupTest } from 'ember-qunit';
-import { module, test } from 'qunit';
+import { setupTest } from "ember-qunit";
+import { module, test } from "qunit";
 
-import setupMirage from 'ember-cli-mirage/test-support/setup-mirage';
-import fetch from 'fetch';
+import setupMirage from "ember-cli-mirage/test-support/setup-mirage";
+import fetch from "fetch";
 
-module('Mirage | User', function (hooks) {
+module("Mirage | User", function (hooks) {
   setupTest(hooks);
   setupMirage(hooks);
 
-  module('GET /users/:id', function () {
-    test('returns the requested user', async function (assert) {
-      let user = this.server.create('user', {
-        email: 'johnny@dee.io',
-        firstName: 'John',
-        lastName: 'Doe',
+  module("GET /users/:id", function () {
+    test("returns the requested user", async function (assert) {
+      let user = this.server.create("user", {
+        email: "johnny@dee.io",
+        firstName: "John",
+        lastName: "Doe",
       });
 
       let response = await fetch(`/users/${user.id}`);
@@ -73,9 +72,9 @@ module('Mirage | User', function (hooks) {
       assert.deepEqual(responsePayload, {
         user: {
           id: 1,
-          email: 'johnny@dee.io',
-          first_name: 'John',
-          last_name: 'Doe',
+          email: "johnny@dee.io",
+          first_name: "John",
+          last_name: "Doe",
         },
       });
     });
@@ -108,7 +107,7 @@ Inside the `tests/test-helper.js` file we added the following snippet:
 ```js
 /* globals QUnit */
 
-import match from 'match-json';
+import match from "match-json";
 
 QUnit.assert.matchJson = function (actual, expected, message) {
   let result = match(actual, expected);
@@ -125,8 +124,8 @@ assert.matchJson(responsePayload, {
   user: {
     id: Number,
     email: (value) => isEmail(value),
-    first_name: 'John',
-    last_name: 'Doe',
+    first_name: "John",
+    last_name: "Doe",
   },
 });
 ```
@@ -141,8 +140,8 @@ test, perform the `fetch()` request, and then check for the expected
 `response.status` value:
 
 ```js
-test('returns HTTP 404 if the requested user does not exist', async function (assert) {
-  let response = await fetch('/users/42');
+test("returns HTTP 404 if the requested user does not exist", async function (assert) {
+  let response = await fetch("/users/42");
   assert.equal(response.status, 404);
 });
 ```
@@ -153,19 +152,19 @@ Similar to read-only `GET` requests, we can also test e.g. `PUT` requests, that
 mutate the existing resource:
 
 ```js
-module('GET /users/:id', function () {
-  test('returns the requested user', async function (assert) {
-    let user = this.server.create('user', {
-      email: 'johnny@dee.io',
-      firstName: 'John',
-      lastName: 'Doe',
+module("GET /users/:id", function () {
+  test("returns the requested user", async function (assert) {
+    let user = this.server.create("user", {
+      email: "johnny@dee.io",
+      firstName: "John",
+      lastName: "Doe",
     });
 
     let response = await fetch(`/users/${user.id}`, {
-      method: 'PUT',
+      method: "PUT",
       body: JSON.stringify({
         user: {
-          first_name: 'Joe',
+          first_name: "Joe",
         },
       }),
     });
@@ -175,9 +174,9 @@ module('GET /users/:id', function () {
     assert.deepEqual(responsePayload, {
       user: {
         id: 1,
-        email: 'johnny@dee.io',
-        first_name: 'Joe',
-        last_name: 'Doe',
+        email: "johnny@dee.io",
+        first_name: "Joe",
+        last_name: "Doe",
       },
     });
   });

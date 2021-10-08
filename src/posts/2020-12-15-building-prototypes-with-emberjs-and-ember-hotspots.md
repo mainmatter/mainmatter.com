@@ -1,7 +1,7 @@
 ---
 title: "Building prototypes with Ember.js"
 authorHandle: pichfl
-topic: emberjs
+tags: ember
 bio: "Consultant for Design & Technology"
 description:
   "Create click dummies and prototypes that can grow over your initial ideas

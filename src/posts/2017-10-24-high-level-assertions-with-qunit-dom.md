@@ -1,12 +1,12 @@
 ---
 title: High Level Assertions with qunit-dom
 authorHandle: tobiasbieniek
-bio: 'Senior Frontend Engineer, Ember CLI core team member'
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 description:
-  'Tobias Bieniek introduces qunit-dom, an extension for qunit that allows
+  "Tobias Bieniek introduces qunit-dom, an extension for qunit that allows
   writing more expressive and less complex UI tests using high level DOM
-  assertions.'
-topic: javascript
+  assertions."
+tags: javascript
 ---
 
 At [EmberFest](https://emberfest.eu/) this year we presented and released
@@ -41,22 +41,22 @@ need to test: one with and one without a `username` property being set.
 An acceptance test for such a template could look roughly like this:
 
 ```js
-test('frontpage should be welcoming', function (assert) {
-  visit('/');
+test("frontpage should be welcoming", function (assert) {
+  visit("/");
 
   andThen(function () {
-    assert.equal(find('h1.title').textContent.trim(), 'Welcome to Ember!');
-    assert.notOk(find('h1.title').classList.contains('has-username'));
+    assert.equal(find("h1.title").textContent.trim(), "Welcome to Ember!");
+    assert.notOk(find("h1.title").classList.contains("has-username"));
   });
 
-  fillIn('input.username', 'John Doe');
+  fillIn("input.username", "John Doe");
 
   andThen(function () {
     assert.equal(
-      find('h1.title').textContent.trim(),
-      'Welcome to Ember,\n    John Doe!',
+      find("h1.title").textContent.trim(),
+      "Welcome to Ember,\n    John Doe!"
     );
-    assert.ok(find('h1.title').classList.contains('has-username'));
+    assert.ok(find("h1.title").classList.contains("has-username"));
   });
 });
 ```
@@ -79,20 +79,20 @@ you can also use a `Promise` chain instead of the `andThen` blocks which would
 look like this:
 
 ```js
-test('frontpage should be welcoming', function (assert) {
-  return visit('/')
+test("frontpage should be welcoming", function (assert) {
+  return visit("/")
     .then(function () {
-      assert.equal(find('h1.title').textContent.trim(), 'Welcome to Ember!');
-      assert.notOk(find('h1.title').classList.contains('has-username'));
+      assert.equal(find("h1.title").textContent.trim(), "Welcome to Ember!");
+      assert.notOk(find("h1.title").classList.contains("has-username"));
 
-      return fillIn('input.username', 'John Doe');
+      return fillIn("input.username", "John Doe");
     })
     .then(function () {
       assert.equal(
-        find('h1.title').textContent.trim(),
-        'Welcome to Ember,\n    John Doe!',
+        find("h1.title").textContent.trim(),
+        "Welcome to Ember,\n    John Doe!"
       );
-      assert.ok(find('h1.title').classList.contains('has-username'));
+      assert.ok(find("h1.title").classList.contains("has-username"));
     });
 });
 ```
@@ -121,19 +121,19 @@ That description was pretty abstract so let's look at an example using the
 `Promise` chain above:
 
 ```js
-test('frontpage should be welcoming', async function (assert) {
-  await visit('/');
+test("frontpage should be welcoming", async function (assert) {
+  await visit("/");
 
-  assert.equal(find('h1.title').textContent.trim(), 'Welcome to Ember!');
-  assert.notOk(find('h1.title').classList.contains('has-username'));
+  assert.equal(find("h1.title").textContent.trim(), "Welcome to Ember!");
+  assert.notOk(find("h1.title").classList.contains("has-username"));
 
-  await fillIn('input.username', 'John Doe');
+  await fillIn("input.username", "John Doe");
 
   assert.equal(
-    find('h1.title').textContent.trim(),
-    'Welcome to Ember,\n    John Doe!',
+    find("h1.title").textContent.trim(),
+    "Welcome to Ember,\n    John Doe!"
   );
-  assert.ok(find('h1.title').classList.contains('has-username'));
+  assert.ok(find("h1.title").classList.contains("has-username"));
 });
 ```
 
@@ -156,13 +156,13 @@ better assertions so that we could rewrite our assertions above to something
 like:
 
 ```js
-expect(find('h1.title')).to.have.text('Welcome to Ember!');
-expect(find('h1.title')).to.have.class('has-username');
+expect(find("h1.title")).to.have.text("Welcome to Ember!");
+expect(find("h1.title")).to.have.class("has-username");
 
 // ...
 
-expect(find('h1.title')).to.have.text('Welcome to Ember,\n    John Doe!');
-expect(find('h1.title')).to.have.class('has-username');
+expect(find("h1.title")).to.have.text("Welcome to Ember,\n    John Doe!");
+expect(find("h1.title")).to.have.class("has-username");
 ```
 
 `chai-dom` is also supported by default in `ember-cli-chai`, so if you used
@@ -182,13 +182,13 @@ After a bit of brainstorming we figured we would want our assertions to look
 roughly like this:
 
 ```js
-assert.dom('h1.title').hasText('Welcome to Ember!');
-assert.dom('h1.title').doesNotHaveClass('has-username');
+assert.dom("h1.title").hasText("Welcome to Ember!");
+assert.dom("h1.title").doesNotHaveClass("has-username");
 
 // ...
 
-assert.dom('h1.title').hasText('Welcome to Ember, John Doe!');
-assert.dom('h1.title').hasClass('has-username');
+assert.dom("h1.title").hasText("Welcome to Ember, John Doe!");
+assert.dom("h1.title").hasClass("has-username");
 ```
 
 Compared to what we started with this:

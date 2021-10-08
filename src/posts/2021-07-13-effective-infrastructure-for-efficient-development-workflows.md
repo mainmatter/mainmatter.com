@@ -1,11 +1,11 @@
 ---
-title: 'Effective infrastructure for efficient development workflows'
+title: "Effective infrastructure for efficient development workflows"
 authorHandle: marcoow
-topic: process
-bio: 'Founder and Managing Director of simplabs'
+tags: process
+bio: "Founder and Managing Director of simplabs"
 description:
-  'Marco Otte-Witte on how highly automated and integrated development
-  infrastructure enables simpler and more effective workflows.'
+  "Marco Otte-Witte on how highly automated and integrated development
+  infrastructure enables simpler and more effective workflows."
 og:
   image: /assets/images/posts/2021-07-13-effective-infrastructure-for-efficient-development-workflows/og-image.png
 ---

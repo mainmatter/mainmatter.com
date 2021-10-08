@@ -1,15 +1,15 @@
 ---
-layout: base
 renderData:
-  title: '{{ paged.author.data.name }}'
+  title: Tagged with “{{ paged.tag }}”
+layout: base
 pagination:
-  data: collections.authorsPostsPaged
+  data: collections.tagsPostsPaged
   size: 1
   alias: paged
-permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/page/{{ paged.number }}/{% endif %}"
+permalink: "/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 1 %}{{ paged.number }}/{% endif %}"
 ---
-{% if paged.posts.length > 0 %}
-  <h2 class="post-list__title h1">All posts by {{ paged.author.data.name }}</h2>
+<div class="tag-page page container container--lg">
+  <h1 class="tag-page__title">{{ paged.tag }}</h1>
   <ol class="post-list">
     {%- for post in paged.posts -%}
       <li class="post-list__item">
@@ -20,6 +20,6 @@ permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/p
     {%- endfor -%}
   </ol>
   {% if (paged.first != true) or (paged.last != true) %}
-    Pagination
+    {% include "pagination.njk" %}
   {% endif %}
-{% endif %}
+</div>

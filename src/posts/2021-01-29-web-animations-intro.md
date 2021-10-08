@@ -1,8 +1,8 @@
 ---
-title: 'An intro to animating with the Web Animations API'
+title: "An intro to animating with the Web Animations API"
 authorHandle: nickschot
-topic: javascript
-bio: 'Senior Software Engineer'
+tags: javascript
+bio: "Senior Software Engineer"
 og:
   image: /assets/images/posts/2021-01-29-web-animations-intro/og-image.png
 ---
@@ -14,8 +14,7 @@ blog post will provide a short overview of the status quo of animating the web
 and take an initial look at the current capabilities of the [Web Animations
 API].
 
-[web animations api]:
-  https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API
+[web animations api]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API
 
 <!--break-->
 
@@ -172,10 +171,10 @@ CSS animations.
 <div id="circle"></div>
 
 <script type="text/javascript">
-  let element = document.getElementById('circle');
+  let element = document.getElementById("circle");
   let animation = element.animate([{ opacity: 0 }, { opacity: 1 }], {
     duration: 300,
-    easing: 'linear',
+    easing: "linear",
   });
 </script>
 ```
@@ -216,11 +215,11 @@ one position to another.
 
 ```javascript
 element.animate(
-  [{ transform: 'translateX(0)' }, { transform: 'translateX(100px)' }],
+  [{ transform: "translateX(0)" }, { transform: "translateX(100px)" }],
   {
     duration: 1000,
-    easing: 'linear',
-  },
+    easing: "linear",
+  }
 );
 ```
 
@@ -236,12 +235,12 @@ so our final state is retained.
 
 ```javascript
 element.animate(
-  [{ transform: 'translateX(0)' }, { transform: 'translateX(100px)' }],
+  [{ transform: "translateX(0)" }, { transform: "translateX(100px)" }],
   {
     duration: 1000,
-    easing: 'linear',
-    fill: 'forwards',
-  },
+    easing: "linear",
+    fill: "forwards",
+  }
 );
 ```
 
@@ -284,7 +283,7 @@ animations by clicking those buttons.
 <div id="circle"></div>
 
 <script>
-  const element = document.getElementById('circle');
+  const element = document.getElementById("circle");
 
   let currentAnimation;
 
@@ -293,18 +292,18 @@ animations by clicking those buttons.
       [{ transform: transformStart }, { transform: transformEnd }],
       {
         duration: 1000,
-        easing: 'linear',
-        fill: 'forwards',
-      },
+        easing: "linear",
+        fill: "forwards",
+      }
     );
   }
 
   function animateRight() {
-    move('translateX(0)', 'translateX(100px)');
+    move("translateX(0)", "translateX(100px)");
   }
 
   function animateLeft() {
-    move('translateX(100px)', 'translateX(0)');
+    move("translateX(100px)", "translateX(0)");
   }
 </script>
 ```
@@ -402,9 +401,9 @@ function move(transformEnd) {
     [{ transform: transformStart }, { transform: transformEnd }],
     {
       duration: duration,
-      easing: 'linear',
-      fill: 'forwards',
-    },
+      easing: "linear",
+      fill: "forwards",
+    }
   );
 }
 ```
@@ -423,14 +422,14 @@ Animations API provides a couple of options to do this. Firstly there is the
 completes.
 
 ```javascript
-currentAnimation.onfinish = () => console.log('animation finished!');
+currentAnimation.onfinish = () => console.log("animation finished!");
 ```
 
 Secondly there is also the `Animation.finished` promise, which resolves when the
 animation finishes.
 
 ```javascript
-currentAnimation.finished.then(() => console.log('animation finished!'));
+currentAnimation.finished.then(() => console.log("animation finished!"));
 ```
 
 These functions behave a bit differently when an animation is cancelled. The
@@ -438,8 +437,8 @@ These functions behave a bit differently when an animation is cancelled. The
 
 ```javascript
 // handling cancellation with hooks
-currentAnimation.onfinish = () => console.log('animation finished!');
-currentAnimation.oncancel = () => console.error('animation cancelled.');
+currentAnimation.onfinish = () => console.log("animation finished!");
+currentAnimation.oncancel = () => console.error("animation cancelled.");
 ```
 
 The `finished` promise will throw an error which we will need to handle. We can
@@ -448,14 +447,14 @@ of course also utilize async/await.
 ```javascript
 // handling cancellation with promises
 currentAnimation.finished
-  .then(() => console.log('animation finished!'))
-  .catch((error) => console.error('animation cancelled.', error));
+  .then(() => console.log("animation finished!"))
+  .catch((error) => console.error("animation cancelled.", error));
 
 // handling cancellation with async await
 try {
   await currentAnimation.finished;
 } catch (error) {
-  console.error('animation cancelled.', error);
+  console.error("animation cancelled.", error);
 }
 ```
 

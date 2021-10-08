@@ -1,11 +1,11 @@
 ---
-title: 'Rails API Auth'
+title: "Rails API Auth"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
   'Marco Otte-Witte announces rails_api_auth, a Rails engine that implements the
   "Resource Owner Password Credentials Grant" OAuth 2.0 flow.'
-topic: ruby
+tags: ruby
 ---
 
 We are happy to announce the first public release of the

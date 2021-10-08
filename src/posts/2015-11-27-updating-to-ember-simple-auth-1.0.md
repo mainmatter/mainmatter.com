@@ -1,11 +1,11 @@
 ---
-title: 'Updating to Ember Simple Auth 1.0'
+title: "Updating to Ember Simple Auth 1.0"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte gives an update on the upcoming Ember Simple Auth 1.0
-  release and shows how to use it in Ember CLI applications.'
-topic: ember
+  "Marco Otte-Witte gives an update on the upcoming Ember Simple Auth 1.0
+  release and shows how to use it in Ember CLI applications."
+tags: ember
 ---
 
 With Ember Simple Auth 1.0.0 having been
@@ -51,13 +51,13 @@ the `import` statements that import code from Ember Simple Auth need to be
 updated accordingly, e.g.
 
 ```js
-import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
+import ApplicationRouteMixin from "simple-auth/mixins/application-route-mixin";
 ```
 
 becomes
 
 ```js
-import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
+import ApplicationRouteMixin from "ember-simple-auth/mixins/application-route-mixin";
 ```
 
 Also the modules for the OAuth 2.0 authenticator and authorizer have been
@@ -76,7 +76,7 @@ all routes, controllers and components that use the session (or back a template
 that uses it), that session service needs to be injected, e.g.:
 
 ```js
-import Ember from 'ember';
+import Ember from "ember";
 
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
@@ -94,10 +94,10 @@ authenticator in `app/authenticators`:
 
 ```js
 // app/authenticators/oauth2.js
-import OAuth2PasswordGrant from 'ember-simple-auth/authenticators/oauth2-password-grant';
+import OAuth2PasswordGrant from "ember-simple-auth/authenticators/oauth2-password-grant";
 
 export default OAuth2PasswordGrant.extend({
-  serverTokenRevocationEndpoint: '/revoke',
+  serverTokenRevocationEndpoint: "/revoke",
 });
 ```
 
@@ -106,21 +106,21 @@ has changed as well so that it now expects dedicated arguments for the user’s
 identification and password instead of one object containing both values, so
 
 ```js
-const credentials = this.getProperties('identification', 'password');
-this.get('session').authenticate('authenticator:oauth2', credentials);
+const credentials = this.getProperties("identification", "password");
+this.get("session").authenticate("authenticator:oauth2", credentials);
 ```
 
 becomes
 
 ```js
 const { identification, password } = this.getProperties(
-  'identification',
-  'password',
+  "identification",
+  "password"
 );
-this.get('session').authenticate(
-  'authenticator:oauth2',
+this.get("session").authenticate(
+  "authenticator:oauth2",
   identification,
-  password,
+  password
 );
 ```
 
@@ -140,11 +140,11 @@ of code use the
 e.g.:
 
 ```js
-this.get('session').authorize(
-  'authorizer:oauth2-bearer',
+this.get("session").authorize(
+  "authorizer:oauth2-bearer",
   (headerName, headerValue) => {
     xhr.setRequestHeader(headerName, headerValue);
-  },
+  }
 );
 ```
 
@@ -155,11 +155,11 @@ e.g.:
 
 ```js
 // app/adapters/application.js
-import DS from 'ember-data';
-import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
+import DS from "ember-data";
+import DataAdapterMixin from "ember-simple-auth/mixins/data-adapter-mixin";
 
 export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
-  authorizer: 'authorizer:application',
+  authorizer: "authorizer:application",
 });
 ```
 
@@ -178,18 +178,18 @@ in the subclass, e.g.:
 
 ```js
 // app/services/session.js
-import Ember from 'ember';
-import DS from 'ember-data';
-import SessionService from 'ember-simple-auth/services/session';
+import Ember from "ember";
+import DS from "ember-data";
+import SessionService from "ember-simple-auth/services/session";
 
 export default SessionService.extend({
   store: Ember.inject.service(),
 
-  account: Ember.computed('data.authenticated.account_id', function () {
-    const accountId = this.get('data.authenticated.account_id');
+  account: Ember.computed("data.authenticated.account_id", function () {
+    const accountId = this.get("data.authenticated.account_id");
     if (!Ember.isEmpty(accountId)) {
       return DS.PromiseObject.create({
-        promise: this.get('store').find('account', accountId),
+        promise: this.get("store").find("account", accountId),
       });
     }
   }),
@@ -202,18 +202,18 @@ You can also create dedicated services that use the session service internally,
 e.g.:
 
 ```js
-import Ember from 'ember';
-import DS from 'ember-data';
+import Ember from "ember";
+import DS from "ember-data";
 
 export default Ember.Service.extend({
-  session: Ember.inject.service('session'),
+  session: Ember.inject.service("session"),
   store: Ember.inject.service(),
 
-  account: Ember.computed('session.data.authenticated.account_id', function () {
-    const accountId = this.get('session.data.authenticated.account_id');
+  account: Ember.computed("session.data.authenticated.account_id", function () {
+    const accountId = this.get("session.data.authenticated.account_id");
     if (!Ember.isEmpty(accountId)) {
       return DS.PromiseObject.create({
-        promise: this.get('store').find('account', accountId),
+        promise: this.get("store").find("account", accountId),
       });
     }
   }),
@@ -246,10 +246,10 @@ above) or implement a fully custom store, e.g.:
 
 ```js
 // app/session-store/application.js
-import CookieStore from 'ember-simple-auth/session-stores/cookie';
+import CookieStore from "ember-simple-auth/session-stores/cookie";
 
 export default CookieStore.extend({
-  cookieName: 'my_custom_cookie_name',
+  cookieName: "my_custom_cookie_name",
 });
 ```
 
@@ -269,7 +269,7 @@ import {
   invalidateSession,
   authenticateSession,
   currentSession,
-} from '../helpers/ember-simple-auth';
+} from "../helpers/ember-simple-auth";
 ```
 
 Also they now take the application instance as a first argument so instead of

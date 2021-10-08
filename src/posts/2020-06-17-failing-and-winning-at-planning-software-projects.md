@@ -1,11 +1,11 @@
 ---
-title: 'Failing (and winning) at planning software projects'
+title: "Failing (and winning) at planning software projects"
 authorHandle: marcoow
-topic: process
-bio: 'Founder and Managing Director of simplabs'
+tags: process
+bio: "Founder and Managing Director of simplabs"
 description:
-  'Marco Otte-Witte gives detailed advice on planning software projects and
-  scoping as well as preparing work in an iterative process.'
+  "Marco Otte-Witte gives detailed advice on planning software projects and
+  scoping as well as preparing work in an iterative process."
 og:
   image: /assets/images/posts/2020-06-17-failing-and-winning-at-planning-software-projects/og-image.png
 ---

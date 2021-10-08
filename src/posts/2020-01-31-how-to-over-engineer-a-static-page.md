@@ -1,12 +1,12 @@
 ---
-title: 'How to over-engineer a static page'
+title: "How to over-engineer a static page"
 authorHandle: marcoow
-topic: javascript
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+tags: javascript
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte on how we rebuilt simplabs.com and optimized it for maximum
+  "Marco Otte-Witte on how we rebuilt simplabs.com and optimized it for maximum
   performance leveraging static pre-rendering and client-side rehydration,
-  advanced bundling and caching and service workers.'
+  advanced bundling and caching and service workers."
 og:
   image: /assets/images/posts/2020-01-31-how-to-over-engineer-a-static-page/og-image.png
 ---

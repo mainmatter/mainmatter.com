@@ -1,7 +1,7 @@
 ---
 title: "Simpler and more powerful components in Ember Octane with Glimmer Components"
 authorHandle: locks
-topic: ember
+tags: ember
 bio: "Senior Frontend Engineer, Ember Framework and Learning Core teams member"
 description:
   "Ricardo Mendes explains how Glimmer components provide a simpler and clearer,

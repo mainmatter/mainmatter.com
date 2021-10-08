@@ -1,12 +1,11 @@
 ---
-title: 'Ember.SimpleAuth 0.1.0'
+title: "Ember.SimpleAuth 0.1.0"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
-description:
-  'Marco Otte-Witte announces Ember.SimpleAuth 0.1.0 with an improved
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
+description: "Marco Otte-Witte announces Ember.SimpleAuth 0.1.0 with an improved
   architecture that allows for arbitrary authentication and authorization
-  strategies.'
-topic: ember
+  strategies."
+tags: ember
 ---
 
 Since [Ember.SimpleAuth](https://github.com/simplabs/ember-simple-auth) was
@@ -32,7 +31,7 @@ App.LoginController = Ember.Controller.extend(
   Ember.SimpleAuth.LoginControllerMixin,
   {
     authenticator: App.CustomAuthenticator,
-  },
+  }
 );
 ```
 

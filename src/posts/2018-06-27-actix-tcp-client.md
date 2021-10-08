@@ -1,11 +1,11 @@
 ---
-title: 'actix – a basic TCP client'
+title: "actix – a basic TCP client"
 authorHandle: tobiasbieniek
-bio: 'Senior Frontend Engineer, Ember CLI core team member'
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 description:
-  'Tobias Bieniek shows how actix, the actor framework written in Rust, can be
-  used to build a basic TCP client.'
-topic: rust
+  "Tobias Bieniek shows how actix, the actor framework written in Rust, can be
+  used to build a basic TCP client."
+tags: rust
 og:
   image: /assets/images/posts/2018-06-27-actix-tcp-client/og-image.png
 ---

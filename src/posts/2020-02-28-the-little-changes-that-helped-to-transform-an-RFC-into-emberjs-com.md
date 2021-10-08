@@ -1,12 +1,12 @@
 ---
-title: 'The little changes that helped to transform an RFC into emberjs.com'
+title: "The little changes that helped to transform an RFC into emberjs.com"
 authorHandle: pichfl
-topic: design
-bio: 'Consultant for Design & Technology'
+tags: design
+bio: "Consultant for Design & Technology"
 description:
-  'Florian Pichler highlights details of the just released overhaul of the
+  "Florian Pichler highlights details of the just released overhaul of the
   landing page for Ember.js, looking specifically at how a distributed team of
-  volunteers can achieve consistent design.'
+  volunteers can achieve consistent design."
 og:
   image: /assets/images/posts/2020-02-28-the-little-changes-that-helped-to-transform-an-RFC-into-emberjs-com/og-image.png
 ---

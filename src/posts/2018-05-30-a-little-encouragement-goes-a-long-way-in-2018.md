@@ -1,11 +1,11 @@
 ---
 title: A Little Encouragement Goes a Long Way in 2018
 authorHandle: jjordan_dev
-bio: 'Senior Frontend Engineer, Ember Learning core team member'
+bio: "Senior Frontend Engineer, Ember Learning core team member"
 description:
-  'Jessica Jordan shares her thoughts for Ember.js in the coming year in
-  response to the Ember 2018 Roadmap Call for Blog Posts.'
-topic: ember
+  "Jessica Jordan shares her thoughts for Ember.js in the coming year in
+  response to the Ember 2018 Roadmap Call for Blog Posts."
+tags: ember
 ---
 
 In May 2018, Ember Core team member Katie Gengler published

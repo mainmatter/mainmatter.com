@@ -1,11 +1,11 @@
 ---
 title: Creating Web Components with Glimmer
 authorHandle: jjordan_dev
-bio: 'Senior Frontend Engineer, Ember Learning core team member'
+bio: "Senior Frontend Engineer, Ember Learning core team member"
 description:
-  'Jessica Jordan explains what web components (aka custom elements) are and
-  shows how they can be built using Glimmer.js.'
-topic: ember
+  "Jessica Jordan explains what web components (aka custom elements) are and
+  shows how they can be built using Glimmer.js."
+tags: ember
 ---
 
 At
@@ -52,7 +52,7 @@ class CustomElementClass extends HTMLElement {
   // ...
 }
 
-customElements.define('my-customelement', CustomElementClass);
+customElements.define("my-customelement", CustomElementClass);
 ```
 
 Finally, a custom element that has been registered via the
@@ -217,7 +217,7 @@ is now defined in `src/ui/components/glimmer-map/component.ts`:
 
 ```ts
 // src/ui/components/glimmer-map/component.ts
-import Component from '@glimmer/component';
+import Component from "@glimmer/component";
 
 export default class GlimmerMap extends Component {}
 ```
@@ -246,11 +246,11 @@ yarn add --dev rollup-plugin-commonjs
 ```js
 // ember-cli-build.js
 
-'use strict';
+"use strict";
 
-const GlimmerApp = require('@glimmer/application-pipeline').GlimmerApp;
-const resolve = require('rollup-plugin-node-resolve');
-const commonjs = require('rollup-plugin-commonjs');
+const GlimmerApp = require("@glimmer/application-pipeline").GlimmerApp;
+const resolve = require("rollup-plugin-node-resolve");
+const commonjs = require("rollup-plugin-commonjs");
 
 module.exports = function (defaults) {
   let app = new GlimmerApp(defaults, {
@@ -270,8 +270,8 @@ This finally allows us to import our `leaflet` dependency like so:
 
 ```ts
 // src/ui/components/glimmer-map/component.ts
-import Component from '@glimmer/component';
-import L from 'leaflet';
+import Component from "@glimmer/component";
+import L from "leaflet";
 
 export default class GlimmerMap extends Component {}
 ```
@@ -369,8 +369,8 @@ export default class GlimmerMap extends Component {
 
   //...
   setView() {
-    this.lon = this.element.getElementsByClassName('x-coord')[0].value;
-    this.lat = this.element.getElementsByClassName('y-coord')[0].value;
+    this.lon = this.element.getElementsByClassName("x-coord")[0].value;
+    this.lat = this.element.getElementsByClassName("y-coord")[0].value;
     this.map.setView([this.lat, this.lon], 12);
   }
 }

@@ -1,11 +1,10 @@
 ---
-title: 'Managing modal dialogs in Ember.js with Promises'
+title: "Managing modal dialogs in Ember.js with Promises"
 authorHandle: pichfl
-topic: ember
-bio: 'Consultant for Technology and Design at simplabs'
-description:
-  'Exploring better and easier handling of modal dialogs in Ember.js
-  applications'
+tags: ember
+bio: "Consultant for Technology and Design at simplabs"
+description: "Exploring better and easier handling of modal dialogs in Ember.js
+  applications"
 og:
   image: /assets/images/posts/2021-08-26-managing-modals-in-ember/og-image.png
 ---
@@ -36,9 +35,9 @@ component as a modal, wait for a result, and continue with our apps workflow.
 ![Video showing a basic Ember Promise Modals dialog in action](/assets/images/posts/2021-08-26-managing-modals-in-ember/epm.mp4#video)
 
 ```js
-let result = await this.modals.open('name-of-your-component', {
+let result = await this.modals.open("name-of-your-component", {
   /* data passed to the component */
-  question: 'Life, the universe and everything?',
+  question: "Life, the universe and everything?",
 });
 ```
 

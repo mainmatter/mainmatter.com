@@ -1,8 +1,8 @@
 ---
-title: 'simplabs monthly update - May 2019'
+title: "simplabs monthly update - May 2019"
 authorHandle: mrmrcoleman
-topic: simplabs
-bio: 'Communications and Community Outreach Specialist'
+tags: simplabs
+bio: "Communications and Community Outreach Specialist"
 description:
   "Mark Coleman shares simplabs' monthly update for May 2019, covering new
   joiners, new OSS projects and our involvement with the Erlang Ecosystem

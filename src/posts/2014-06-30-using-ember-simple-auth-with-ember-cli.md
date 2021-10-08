@@ -1,11 +1,11 @@
 ---
-title: 'Using Ember Simple Auth with ember-cli'
+title: "Using Ember Simple Auth with ember-cli"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte announces the release of ember-cli-simple-auth as an Ember
-  CLI addon.'
-topic: ember
+  "Marco Otte-Witte announces the release of ember-cli-simple-auth as an Ember
+  CLI addon."
+tags: ember
 ---
 
 With the latest release of
@@ -87,8 +87,8 @@ Also implement the `ApplicationRouteMixin` in the project’s application route:
 
 ```js
 // app/routes/application.js
-import Ember from 'ember';
-import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
+import Ember from "ember";
+import ApplicationRouteMixin from "simple-auth/mixins/application-route-mixin";
 
 export default Ember.Route.extend(ApplicationRouteMixin);
 ```
@@ -130,11 +130,11 @@ use the OAuth 2.0 authenticator to perform the actual authentication:
 
 ```js
 // app/controllers/login.js
-import Ember from 'ember';
-import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
+import Ember from "ember";
+import LoginControllerMixin from "simple-auth/mixins/login-controller-mixin";
 
 export default Ember.Controller.extend(LoginControllerMixin, {
-  authenticator: 'simple-auth-authenticator:oauth2-password-grant',
+  authenticator: "simple-auth-authenticator:oauth2-password-grant",
 });
 ```
 

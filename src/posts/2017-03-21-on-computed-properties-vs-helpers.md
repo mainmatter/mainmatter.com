@@ -1,11 +1,11 @@
 ---
 title: On Computed Properties vs. Helpers
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte discusses differences between computed properties and
-  helpers and explains pros and cons of each alternative.'
-topic: ember
+  "Marco Otte-Witte discusses differences between computed properties and
+  helpers and explains pros and cons of each alternative."
+tags: ember
 og:
   image: /assets/images/posts/2017-03-21-on-computed-properties-vs-helpers/og-image.png
 ---
@@ -31,8 +31,8 @@ Here's a simple example of a computed property that is `true` when the `age`
 property is at least `65`:
 
 ```js
-isSenior: computed('age', function () {
-  return this.get('age') >= 65;
+isSenior: computed("age", function () {
+  return this.get("age") >= 65;
 });
 ```
 
@@ -115,8 +115,8 @@ select a random one with a `status` of `'active'`. A computed property returning
 such a user could look like this:
 
 ```js
-userToDisplay: computed('users.@each.state', function () {
-  let activeUsers = this.get('users').filterBy('state', 'active');
+userToDisplay: computed("users.@each.state", function () {
+  let activeUsers = this.get("users").filterBy("state", "active");
   return shuffle(activeUsers)[0];
 });
 ```
@@ -196,7 +196,7 @@ helper:
 
 ```js
 export default Ember.Helper.helper(function ([user]) {
-  return user.get('age') >= 65;
+  return user.get("age") >= 65;
 });
 ```
 
@@ -232,8 +232,8 @@ the `and` helper. Comparing this to the same logic implemented as a computed
 property makes the difference clear:
 
 ```js
-areBothTruthy: computed('propA', 'propB', function () {
-  return this.get('propA') && this.get('propB');
+areBothTruthy: computed("propA", "propB", function () {
+  return this.get("propA") && this.get("propB");
 });
 ```
 

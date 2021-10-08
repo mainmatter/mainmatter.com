@@ -1,11 +1,11 @@
 ---
-title: 'Open Source Maintenance'
+title: "Open Source Maintenance"
 authorHandle: tobiasbieniek
-bio: 'Senior Frontend Engineer, Ember CLI core team member'
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 description:
-  'Tobias Bieniek introduces best practices for simplifying and speeding up his
-  work on open-source and other projects.'
-topic: misc
+  "Tobias Bieniek introduces best practices for simplifying and speeding up his
+  work on open-source and other projects."
+tags: misc
 ---
 
 People often ask us how we can handle maintaining a large number of open-source
