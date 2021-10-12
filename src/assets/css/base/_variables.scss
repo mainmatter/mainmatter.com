@@ -1,0 +1,15 @@
+:root {
+  --color-black: #000;
+  --color-purple: #6200ee;
+  --color-yellow: #ffc400;
+  --color-aqua: #02ceba;
+  --color-blue: #307fee;
+  --color-light-gray: #d8d8d8;
+  --color-offwhite: #eeeeee;
+  --color-white: #fff;
+
+  // Globals
+  --color-bg: var(--color-white);
+  --color-body-text: var(--color-black);
+  --color-link-primary: var(--color-purple);
+}

@@ -1,0 +1,23 @@
+.screenreader {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.skip-link {
+  position: absolute;
+  padding: 0.5rem;
+  background-color: var(--color-purple);
+  color: var(--color-white);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+
+  &:focus {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

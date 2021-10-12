@@ -6,6 +6,9 @@ pagination:
   size: 10
   alias: posts
 permalink: "/blog/{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1 }}/{% endif %}"
+eleventyNavigation:
+  key: Blog
+  order: 50
 ---
 <h1>Posts</h1>
 <ol class="post-list">

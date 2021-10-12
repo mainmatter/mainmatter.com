@@ -1,0 +1,43 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__aside {
+  margin-left: 1rem;
+}
+
+.nav__list {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__item {
+  display: inline-block;
+}
+
+.nav__link {
+  display: inline-block;
+  padding: 1.25rem 0.5rem;
+  line-height: 1;
+}
+
+.nav__cta {
+  display: none;
+}
+
+@media (min-width: 48em) {
+  .nav__list {
+    display: block;
+  }
+
+  .nav__cta {
+    display: block;
+    padding: 1.25rem 2rem;
+    line-height: 1;
+    background-color: var(--color-purple);
+    color: var(--color-white);
+  }
+}

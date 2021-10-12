@@ -5,6 +5,7 @@ const contentParser = require("./utils/transforms/contentParser.js");
 const dayjs = require("dayjs");
 const customParseFormat = require("dayjs/plugin/customParseFormat");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const fs = require("fs");
 const util = require("util");
 const { findBySlug } = require("./utils/findBySlug");
@@ -110,6 +111,7 @@ module.exports = function (eleventyConfig) {
    */
   eleventyConfig.addPlugin(rssPlugin);
   eleventyConfig.addPlugin(syntaxHighlightPlugin);
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   /**
    * Override BrowserSync Server options
