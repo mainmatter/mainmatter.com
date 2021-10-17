@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-env": "^7.15.8",
     "@css-blocks/ember-cli": "^1.5.0",
     "@glimmer/application": "^0.13.0",
     "@glimmer/application-pipeline": "^0.15.0",
