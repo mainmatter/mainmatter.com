@@ -1,15 +1,18 @@
-const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
-const Image = require("@11ty/eleventy-img");
-const htmlMinTransform = require("./utils/transforms/htmlmin.js");
-const markdownIt = require("markdown-it");
-const path = require("path");
-const contentParser = require("./utils/transforms/contentParser.js");
-const dayjs = require("dayjs");
-const customParseFormat = require("dayjs/plugin/customParseFormat");
-const rssPlugin = require("@11ty/eleventy-plugin-rss");
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const fs = require("fs");
 const util = require("util");
+const { optimize } = require("svgo");
+const path = require("path");
+const markdownIt = require("markdown-it");
+const dayjs = require("dayjs");
+const customParseFormat = require("dayjs/plugin/customParseFormat");
+
+const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
+const Image = require("@11ty/eleventy-img");
+const rssPlugin = require("@11ty/eleventy-plugin-rss");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+
+const contentParser = require("./utils/transforms/contentParser.js");
+const htmlMinTransform = require("./utils/transforms/htmlmin.js");
 const { findBySlug } = require("./utils/findBySlug");
 
 /**
@@ -92,7 +95,8 @@ module.exports = function (eleventyConfig) {
     }
     return "";
   });
-  /**
+
+  /*
    * Add Transforms
    *
    * @link https://www.11ty.io/docs/config/#transforms
@@ -134,14 +138,9 @@ module.exports = function (eleventyConfig) {
       sizesArray = [720, 1024, 1440];
     }
 
-    if (fileType === "svg") {
-      sizesArray = [null];
-    }
-
     const options = {
       widths: sizesArray,
       formats,
-      svgShortCircuit: true,
       urlPath: directory,
       outputDir: "./dist/" + directory,
       filenameFormat: function (id, src, width, format, options) {
@@ -162,6 +161,15 @@ module.exports = function (eleventyConfig) {
     };
 
     return Image.generateHTML(stats, imageAttributes);
+  });
+
+  eleventyConfig.addShortcode("svg", (path) => {
+    const svgData = fs.readFileSync("./static/assets/images" + path, "utf8");
+    const response = optimize(svgData, {});
+    return response.data.replace(
+      "<svg",
+      `<svg focusable="false" role="presentation"`
+    );
   });
 
   /**
