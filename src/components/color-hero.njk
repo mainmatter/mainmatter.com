@@ -1,0 +1,39 @@
+{#
+Configuration Options:
+image: Path to image in the file directory
+alt: Image alt text
+textPosition: One of 'top' 'center' or 'bottom'
+color: One of the core brand colors
+loading: Valid loading attribute for HTML img
+title: String or markup for heading
+text: String or markup for body text
+linkUrl: Optional link destination
+linkText: Optional link text
+
+Example usage:
+{% set title = "Guiding projects and teams to sustainable success" %}
+{% set text = "Mainmatter is a digital product consultancy that designs and develops web applications. We realize projects with clients across the globe and teach them how along the way." %}
+{{ colorHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'middle', 'purple', 'eager', title, text, '/services', 'Our Services') }}
+#}
+{% from "cta-link.njk" import ctaLink %}
+
+{%- macro colorHero(image, alt, textPosition, color, loading, title, text, linkUrl, linkText) -%}
+  <section class="color-hero color-hero--{{ color }}">
+    <div class="color-hero__image-wrapper fit-image">
+      {% image image, alt, '100vw', loading, 'color-hero__image', [760, 1440, 1920] %}
+    </div>
+    <div class="color-hero__container container color-hero__container--{{ textPosition }}">
+      <div class="color-hero__main">
+      {% if title %}
+        <h2 class="color-hero__title h1">{{ title | safe }}</h2>
+      {% endif %}
+      {% if text %}
+        <p class="color-hero__text">{{ text | safe }}</p>
+      {% endif %}
+      {% if linkUrl %}
+        {{ ctaLink(linkUrl, linkText, 'color-hero__link') }}
+      {% endif %}
+      </div>
+    </div>
+  </section>
+{%- endmacro -%}

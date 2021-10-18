@@ -4,6 +4,7 @@ title: null
 ---
 {% from "split-hero.njk" import splitHero %}
 {% from "logo-list.njk" import logoList %}
+{% from "color-hero.njk" import colorHero %}
 
 {% set title = "Guiding projects and teams to <em>sustainable</em> success" %}
 {% set text = "Mainmatter is a digital product consultancy that designs and develops web applications. We realize projects with clients across the globe and teach them how along the way." %}
@@ -11,3 +12,7 @@ title: null
 
 {% set logoCompanies = ['Qonto', 'Trainline', 'Timify', 'Cardstack', 'Generali', 'Experteer'] %}
 {{ logoList(logoCompanies) }}
+
+{% set title = "Crafting digital products that are built to lasts" %}
+{% set text = "Product excellence through digital experiences that are clean, dependable, and architected for scalability and extensibility." %}
+{{ colorHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'center', 'blue', 'eager', title, text) }}
