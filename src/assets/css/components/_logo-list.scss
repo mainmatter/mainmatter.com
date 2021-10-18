@@ -1,0 +1,39 @@
+.logo-list {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-black);
+}
+
+.logo-list__list {
+  display: flex;
+  padding: 1rem 5%;
+  margin: 0 0 0 -1rem;
+  list-style: none;
+  overflow-x: auto;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-right: 0.02px;
+  }
+}
+
+.logo-list__item {
+  flex: 0 0 auto;
+  padding: 0 1rem;
+}
+
+.logo-list__image {
+  display: block;
+}
+
+@media (min-width: 62em) {
+  .logo-list__list {
+    margin: 0;
+    padding: rem-calc(54) 5%;
+  }
+
+  .logo-list__item {
+    padding: 0 1.75rem;
+  }
+}

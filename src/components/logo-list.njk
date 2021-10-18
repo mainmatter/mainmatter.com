@@ -1,0 +1,11 @@
+{%- macro logoList(logos) -%}
+  <section class="logo-list">
+    <ul class="logo-list__list">
+      {% for logo in logos %}
+        <li class="logo-list__item">
+          <img class="logo-list__image" src="/assets/images/logos/{{ logo | slug }}.svg" alt="{{ logo }}" />
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{%- endmacro -%}
