@@ -1,0 +1,28 @@
+{#
+Example usage:
+{% set title = "Guiding projects and teams to <em>sustainable</em> success" %}
+{% set text = "Mainmatter is a digital product consultancy that designs and develops web applications. We realize projects with clients across the globe and teach them how along the way." %}
+{{ splitHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'left', 'purple', 'eager', title, text, '/services', 'Our Services') }}
+#}
+{% from "cta-link.njk" import ctaLink %}
+
+{%- macro splitHero(image, alt, desktopTextPosition, color, loading, title, text, linkUrl, linkText) -%}
+  <section class="split-hero split-hero--{{ color }}">
+    <div class="split-hero__main split-hero__main--{{ desktopTextPosition }}">
+      <div class="split-hero__container container">
+        {% if title %}
+          <h2 class="split-hero__title h1">{{ title | safe }}</h2>
+        {% endif %}
+        {% if text %}
+          <p class="split-hero__text">{{ text | safe }}</p>
+        {% endif %}
+        {% if linkUrl %}
+          {{ ctaLink(linkUrl, linkText, 'split-hero__link') }}
+        {% endif %}
+      </div>
+    </div>
+    <div class="split-hero__image-wrapper">
+      {% image image, alt, '(min-width: 48em) 50vw, 100vw', loading, 'split-hero__image' %}
+    </div>
+  </section>
+{%- endmacro -%}

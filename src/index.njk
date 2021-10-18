@@ -2,3 +2,7 @@
 layout: 'base'
 title: null
 ---
+{% from "split-hero.njk" import splitHero %}
+{% set title = "Guiding projects and teams to <em>sustainable</em> success" %}
+{% set text = "Mainmatter is a digital product consultancy that designs and develops web applications. We realize projects with clients across the globe and teach them how along the way." %}
+{{ splitHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'left', 'purple', 'eager', title, text) }}

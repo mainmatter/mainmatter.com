@@ -13,3 +13,21 @@ body {
   color: var(--color-body-text);
   background-color: var(--color-bg);
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  margin: 0;
+  font-size: rem-calc(15);
+
+  & + & {
+    margin-top: 1rem;
+  }
+}
+
+a {
+  color: currentColor;
+}

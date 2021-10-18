@@ -149,10 +149,9 @@ function setClass(element, list) {
 function parseImageDirectives(src) {
   let match = src.match(/#(full|plain|video)?(@(\d+)-(\d+))?$/);
   let bareSrc = src.replace(/#[^#]*$/, "");
-  const fileTypeArray = bareSrc.match(/\.(\w+)/g);
   let directives = {
     src: bareSrc,
-    fileType: fileTypeArray[fileTypeArray.length - 1].replace(".", ""),
+    fileType: path.extname(bareSrc).replace(".", ""),
   };
 
   directives.directory = path.dirname(directives.src);

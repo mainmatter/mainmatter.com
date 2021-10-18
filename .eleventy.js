@@ -1,6 +1,8 @@
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
+const Image = require("@11ty/eleventy-img");
 const htmlMinTransform = require("./utils/transforms/htmlmin.js");
 const markdownIt = require("markdown-it");
+const path = require("path");
 const contentParser = require("./utils/transforms/contentParser.js");
 const dayjs = require("dayjs");
 const customParseFormat = require("dayjs/plugin/customParseFormat");
@@ -23,7 +25,6 @@ module.exports = function (eleventyConfig) {
    */
   eleventyConfig.addPassthroughCopy({ assets: "assets" });
   eleventyConfig.addPassthroughCopy({ static: "/" });
-  eleventyConfig.addPassthroughCopy("src/admin");
 
   /**
    * Create custom data collections
@@ -112,6 +113,51 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(rssPlugin);
   eleventyConfig.addPlugin(syntaxHighlightPlugin);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
+  /**
+   * Add Shortcodes
+   */
+  eleventyConfig.addShortcode("image", function (
+    imgPath,
+    alt,
+    sizes,
+    loading,
+    className,
+    sizesArray
+  ) {
+    if (!sizesArray) {
+      sizesArray = [720, 1024, 1440];
+    }
+
+    const fileType = path.extname(imgPath).replace(".", "");
+    const directory = path.dirname(imgPath);
+
+    let url = "./static" + imgPath;
+    const options = {
+      widths: sizesArray,
+      formats: ["webp", ...(fileType !== "gif" ? [fileType] : [])],
+      urlPath: directory,
+      outputDir: "./dist/" + directory,
+      filenameFormat: function (id, src, width, format, options) {
+        const extension = path.extname(imgPath);
+        const name = path.basename(imgPath, extension);
+        return `${name}@${width}.${format}`;
+      },
+    };
+
+    let stats = Image.statsSync(url, options);
+    Image(url, options);
+
+    let imageAttributes = {
+      class: className,
+      alt,
+      sizes: sizes ? sizes : "100vw",
+      loading: loading,
+      decoding: "async",
+    };
+
+    return Image.generateHTML(stats, imageAttributes);
+  });
 
   /**
    * Override BrowserSync Server options

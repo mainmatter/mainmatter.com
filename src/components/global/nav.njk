@@ -8,7 +8,7 @@
         {% if entry.children.size > 0 %}
 
         {% else %}
-          <a class="nav__link" {% if entry.url == page.url %}aria-current="page"{% endif %} href="{{ entry.url | url }}">
+          <a class="nav__link text--accent text--xs" {% if entry.url == page.url %}aria-current="page"{% endif %} href="{{ entry.url | url }}">
             {{ entry.title }}
           </a>
         {% endif %}
@@ -17,7 +17,7 @@
     </ul>
     </div>
   <div class="nav__aside">
-    <a class="nav__cta" href="/">
+    <a class="nav__cta text--accent text--xs" href="/">
       Contact
     </a>
   </div>

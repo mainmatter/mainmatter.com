@@ -1,0 +1,26 @@
+h1,
+.h1 {
+  margin: 0;
+  font-family: var(--font-base);
+  font-weight: 700;
+  font-size: rem-calc(36);
+  line-height: 1.1;
+}
+
+@media (min-width: 48em) {
+  h1,
+  .h1 {
+    font-size: rem-calc(56);
+  }
+}
+
+.text--accent {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: rem-calc(2);
+}
+
+.text--xs {
+  font-size: 0.75rem;
+}
