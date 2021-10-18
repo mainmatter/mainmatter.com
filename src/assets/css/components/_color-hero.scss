@@ -34,6 +34,13 @@
   opacity: 0.6;
 }
 
+.color-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .color-hero__container {
   display: flex;
   position: relative;
@@ -58,9 +65,15 @@
   max-width: rem-calc(376);
 }
 
+.color-hero__link {
+  margin-top: 1.5rem;
+}
+
 @media (min-width: 48em) {
   .color-hero {
     aspect-ratio: 5 / 3;
+    max-height: 100vh;
+    min-width: 100%;
   }
 
   .color-hero__container {

@@ -15,4 +15,10 @@ title: null
 
 {% set title = "Crafting digital products that are built to lasts" %}
 {% set text = "Product excellence through digital experiences that are clean, dependable, and architected for scalability and extensibility." %}
-{{ colorHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'center', 'blue', 'eager', title, text) }}
+{{ colorHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'center', 'blue', 'lazy', title, text, '/services/', 'Find out more') }}
+
+{% set title = "Co-Engineering the Future of Banking for SMEs" %}
+{% set text = "Empowering Qonto's ambitious engineers to achieve their goals" %}
+{{ splitHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'left', 'aqua', 'lazy', title, text, '/cases/qonto/', 'Find out more') }}
+
+{% include 'work-with-us.njk' %}

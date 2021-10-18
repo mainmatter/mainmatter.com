@@ -19,7 +19,7 @@ Example usage:
 
 {%- macro colorHero(image, alt, textPosition, color, loading, title, text, linkUrl, linkText) -%}
   <section class="color-hero color-hero--{{ color }}">
-    <div class="color-hero__image-wrapper fit-image">
+    <div class="color-hero__image-wrapper">
       {% image image, alt, '100vw', loading, 'color-hero__image', [760, 1440, 1920] %}
     </div>
     <div class="color-hero__container container color-hero__container--{{ textPosition }}">
