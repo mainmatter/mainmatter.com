@@ -3,7 +3,8 @@
     <ul class="logo-list__list">
       {% for logo in logos %}
         <li class="logo-list__item">
-          <img class="logo-list__image" src="/assets/images/logos/{{ logo | slug }}.svg" alt="{{ logo }}" />
+          {% set imagePath %}/assets/images/logos/{{ logo | slug }}.svg{% endset %}
+          {% image imagePath, logo, '', 'lazy', 'logo-list__image' %}
         </li>
       {% endfor %}
     </ul>

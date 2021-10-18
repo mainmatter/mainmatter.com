@@ -125,17 +125,23 @@ module.exports = function (eleventyConfig) {
     className,
     sizesArray
   ) {
+    let url = "./static" + imgPath;
+    const fileType = path.extname(imgPath).replace(".", "");
+    const directory = path.dirname(imgPath);
+    let formats = ["webp", ...(fileType !== "gif" ? [fileType] : [])];
+
     if (!sizesArray) {
       sizesArray = [720, 1024, 1440];
     }
 
-    const fileType = path.extname(imgPath).replace(".", "");
-    const directory = path.dirname(imgPath);
+    if (fileType === "svg") {
+      sizesArray = [null];
+    }
 
-    let url = "./static" + imgPath;
     const options = {
       widths: sizesArray,
-      formats: ["webp", ...(fileType !== "gif" ? [fileType] : [])],
+      formats,
+      svgShortCircuit: true,
       urlPath: directory,
       outputDir: "./dist/" + directory,
       filenameFormat: function (id, src, width, format, options) {
@@ -153,7 +159,6 @@ module.exports = function (eleventyConfig) {
       alt,
       sizes: sizes ? sizes : "100vw",
       loading: loading,
-      decoding: "async",
     };
 
     return Image.generateHTML(stats, imageAttributes);

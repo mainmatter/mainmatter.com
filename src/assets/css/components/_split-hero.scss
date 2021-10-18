@@ -17,7 +17,7 @@
     color: var(--color-black);
   }
 
-  &--aqua {
+  &--yellow {
     background-color: var(--color-yellow);
     color: var(--color-black);
   }
@@ -25,12 +25,7 @@
 
 .split-hero__image-wrapper {
   order: -1;
-}
-
-.split-hero__image {
-  display: block;
-  object-fit: cover;
-  aspect-ratio: 100 / 85;
+  aspect-ratio: 4/3;
 }
 
 .split-hero__container {
@@ -45,6 +40,10 @@
   margin-bottom: 1.5rem;
 }
 
+.split-hero__text {
+  max-width: rem-calc(376);
+}
+
 .split-hero__link {
   align-self: flex-start;
   margin-top: 1.5rem;
@@ -57,10 +56,6 @@
 
   .split-hero__image-wrapper {
     flex: 0 0 50%;
-  }
-
-  .split-hero__image {
-    height: 100%;
   }
 
   .split-hero__main {

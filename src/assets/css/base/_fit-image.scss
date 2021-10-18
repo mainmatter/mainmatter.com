@@ -1,0 +1,20 @@
+// Positions an image in a box of a given aspect ratio
+// This snippet shouldn't need to exist as we should be able to fit any image within the box around it using object-fit cover,
+// but there is a rendering issue in chrome where if the image is loaded from cache and object-fit cover is applied, the image may load stretched output
+// See below for more info
+// https://stackoverflow.com/questions/64187659/react-js-image-size-flickers-on-reload-with-object-fit-cover-css-property
+
+.fit-image {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    display: block;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
