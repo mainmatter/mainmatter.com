@@ -39,7 +39,10 @@ are as follows:
   the code for the Ember Data library, which is Ember's default data management
   solution. You can read more in the
   [Ember Data guides](https://guides.emberjs.com/release/models/).
-- The CLI team updates the `ember-source` and `ember-data` dependencies in the [application](https://github.com/ember-cli/ember-cli/tree/master/blueprints/app) and [addon](https://github.com/ember-cli/ember-cli/tree/master/blueprints/addon)
+- The CLI team updates the `ember-source` and `ember-data` dependencies in the
+  [application](https://github.com/ember-cli/ember-cli/tree/master/blueprints/app)
+  and
+  [addon](https://github.com/ember-cli/ember-cli/tree/master/blueprints/addon)
   blueprints, tests that everything works as expected and releases a new version
   of [ember-cli](https://www.npmjs.com/package/ember-cli). `ember-cli` is a
   command-line application that makes it easy to create, build, test and serve
@@ -53,9 +56,10 @@ are as follows:
   [Deprecations](https://deprecations.emberjs.com/), and finally coordinates and
   releases the [release blog post](https://blog.emberjs.com/tag/releases).
 
-The [release blog post](https://blog.emberjs.com/tag/releases) marks the official release of a new project version, since
-it means that all of the sub-projects and relevant documentation is ready and
-tested for developers to use and consult.
+The [release blog post](https://blog.emberjs.com/tag/releases) marks the
+official release of a new project version, since it means that all of the
+sub-projects and relevant documentation is ready and tested for developers to
+use and consult.
 
 ### The Learning team process
 
@@ -120,8 +124,10 @@ The first things I needed were a library to handle `git` operations, and a
 library to generate temporary folders that I could clone the repositories into.
 The decision to clone the relevant repositories into temporary folders was
 twofold: ensure the tool is working with the most recent commits of the
-repository, and clean up the repositories after the tool was done running.
-I decided to go with [`git2-rs`](https://docs.rs/git2/0.13.22/git2/) and [`tempfile`](https://docs.rs/tempfile/3.2.0/tempfile/), which looks something like this:
+repository, and clean up the repositories after the tool was done running. I
+decided to go with [`git2-rs`](https://docs.rs/git2/0.13.22/git2/) and
+[`tempfile`](https://docs.rs/tempfile/3.2.0/tempfile/), which looks something
+like this:
 
 ```rust
 use tempfile::tempdir;
@@ -132,12 +138,16 @@ folder.push("guides-source");
 let repo = Repository::clone("https://github.com/ember-learn/guides-source.git", &folder)?;
 ```
 
-In the actual tool a temporary folder is created at the top that is then fed to the different steps so they can manage the cloning they need to do.
+In the actual tool a temporary folder is created at the top that is then fed to
+the different steps so they can manage the cloning they need to do.
 
 #### Shelling out
 
-Determined to have a viable release tool as quickly as possible as possible and afterwards
-iterate for improvements, I decided to call the `Bash` scripts already present in the [`guides-source` repository](https://github.com/ember-learn/guides-source/tree/5ec89c42179aa41cbb00a25ef9244e14977a0e72/scripts) using
+Determined to have a viable release tool as quickly as possible as possible and
+afterwards iterate for improvements, I decided to call the `Bash` scripts
+already present in the
+[`guides-source` repository](https://github.com/ember-learn/guides-source/tree/5ec89c42179aa41cbb00a25ef9244e14977a0e72/scripts)
+using
 [`std::process::Command`](https://doc.rust-lang.org/std/process/struct.Command.html)
 from Rust's standard library:
 
@@ -154,9 +164,8 @@ Command::new("npm")
     .expect("Failed to release guides.");
 ```
 
- While shelling out did not improve on the
-portability problem, making the tool do something useful was a motivator to keep
-developing it.
+While shelling out did not improve on the portability problem, making the tool
+do something useful was a motivator to keep developing it.
 
 #### Providing command-line arguments
 
@@ -183,7 +192,8 @@ struct Opts {
 }
 ```
 
-I want to note that this also gives us documentation via the `--help` flag out of the box:
+I want to note that this also gives us documentation via the `--help` flag out
+of the box:
 
 ```bash
 $ tool-new-release --help
@@ -213,8 +223,9 @@ then make a release.
 After some research I was able to put together a GitHub Action workflow. You can
 see it currently look like in the repository's
 [`workflows` directory](https://github.com/ember-learn/tool-new-release/tree/main/.github/workflows)
-and if you have any suggestions, please [let me know](https://twitter.com/locks)! The project is still a work
-in progress so you might find things that are not done optimally.
+and if you have any suggestions, please
+[let me know](https://twitter.com/locks)! The project is still a work in
+progress so you might find things that are not done optimally.
 
 Two things I'd like to point out in the workflow is that I ended up using
 [`musl`](https://musl.libc.org/) through `rustup` in order to build the Linux
@@ -223,4 +234,6 @@ not show up on the homepage of the repository.
 
 ## Next steps
 
-Now that the Core Learning team had a working tool, it was time to codify the rest of the steps and apply some improvements to make the tool easier to use and to maintain. I will cover that and more in future posts, so keep an eye out!
+Now that the Core Learning team had a working tool, it was time to codify the
+rest of the steps and apply some improvements to make the tool easier to use and
+to maintain. I will cover that and more in future posts, so keep an eye out!
