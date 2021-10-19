@@ -213,7 +213,7 @@ then make a release.
 After some research I was able to put together a GitHub Action workflow. You can
 see it currently look like in the repository's
 [`workflows` directory](https://github.com/ember-learn/tool-new-release/tree/main/.github/workflows)
-and if you have any suggestions, please let me know! The project is still a work
+and if you have any suggestions, please [let me know](https://twitter.com/locks)! The project is still a work
 in progress so you might find things that are not done optimally.
 
 Two things I'd like to point out in the workflow is that I ended up using
