@@ -227,9 +227,9 @@ and if you have any suggestions, please
 [let me know](https://twitter.com/locks)! The project is still a work in
 progress so you might find things that are not done optimally.
 
-Two things I'd like to point out in the workflow is that I ended up using
+There's two things I'd like to point out in the workflow. One is that I ended up using
 [`musl`](https://musl.libc.org/) through `rustup` in order to build the Linux
-binary, and that I'm currently publishing the binary as a _draft_, so it will
+binary. The other is that I'm currently publishing the binary as a _draft_, so it will
 not show up on the homepage of the repository.
 
 ## Next steps
