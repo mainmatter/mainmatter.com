@@ -39,7 +39,7 @@ are as follows:
   the code for the Ember Data library, which is Ember's default data management
   solution. You can read more in the
   [Ember Data guides](https://guides.emberjs.com/release/models/).
-- The CLI team updates the `ember-source` and `ember-data` dependencies in the
+- The CLI team updates the `ember-source` and `ember-data` dependencies in the [application](https://github.com/ember-cli/ember-cli/tree/master/blueprints/app) and [addon](https://github.com/ember-cli/ember-cli/tree/master/blueprints/addon)
   blueprints, tests that everything works as expected and releases a new version
   of [ember-cli](https://www.npmjs.com/package/ember-cli). `ember-cli` is a
   command-line application that makes it easy to create, build, test and serve
@@ -53,9 +53,9 @@ are as follows:
   [Deprecations](https://deprecations.emberjs.com/), and finally coordinates and
   releases the [release blog post](https://blog.emberjs.com/tag/releases).
 
-The release blog post marks the official release of a new project version, since
+The [release blog post](https://blog.emberjs.com/tag/releases) marks the official release of a new project version, since
 it means that all of the sub-projects and relevant documentation is ready and
-tests for developers to use and consult.
+tested for developers to use and consult.
 
 ### The Learning team process
 
