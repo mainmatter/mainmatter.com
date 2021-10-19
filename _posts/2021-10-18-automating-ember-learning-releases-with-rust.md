@@ -183,7 +183,7 @@ struct Opts {
 }
 ```
 
-I want to note that this also gives us documentation:
+I want to note that this also gives us documentation via the `--help` flag out of the box:
 
 ```bash
 $ tool-new-release --help
