@@ -15,7 +15,7 @@ og:
 It's not trivial to release a new version of Ember. This process involves
 several different core teams, Framework, Data, CLI and Learning, who are
 responsible for several packages and resources between them. In this post
-Ricardo will show you how they're building a tool in Rust to automate the
+we will go through the process of building a tool in Rust to automate the
 process for the Core Learning Team.
 
 <!--break-->
