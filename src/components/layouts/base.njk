@@ -29,6 +29,7 @@
     <main id="main">
       {% block content %}{{ content | safe }}{% endblock content %}
     </main>
+    {% include "global/footer.njk" %}
     <div hidden>
       <p id="external-new-window-message">Opens external website in a new window.</p>
     </div>

@@ -7,10 +7,24 @@ h1,
   line-height: 1.1;
 }
 
+h2,
+.h2 {
+  margin: 0;
+  font-family: var(--font-base);
+  font-weight: 700;
+  font-size: rem-calc(28);
+  line-height: 1.1;
+}
+
 @media (min-width: 48em) {
   h1,
   .h1 {
     font-size: rem-calc(56);
+  }
+
+  h2,
+  .h2 {
+    font-size: rem-calc(48);
   }
 }
 

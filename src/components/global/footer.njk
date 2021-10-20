@@ -1,0 +1,34 @@
+<footer class="footer">
+  <div class="footer__container container container--xl">
+    <div class="footer__logo">
+      {# Logo #}
+      <p class="footer__copyright">© 2014 - {% copyrightYear %} simplabs GmbH</p>
+    </div>
+    <nav class="footer__nav" aria-label="Footer">
+      {% for menu in footerNavigation.menus %}
+        <div class="footer__menu footer-menu">
+          <h2 class="footer-menu__heading text--accent">{{ menu.heading }}</h2>
+          <ul class="footer-menu__list">
+            {% for item in menu.links %}
+              <li class="footer-menu__item">
+                <a class="footer-menu__link" href="{{ item.link }}">
+                  {{ item.text }}
+                  <span class="footer-menu__arrow">&rarr;</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    </nav>
+    <ul class="footer__socials social" aria-label="Footer">
+      {% for social in socials.socials %}
+        <li class="social__item">
+          <a class="social__link" href="{{ social.link }}">
+            <span class="">{{ social.text }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</footer>

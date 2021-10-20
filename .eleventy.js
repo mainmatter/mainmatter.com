@@ -121,6 +121,12 @@ module.exports = function (eleventyConfig) {
   /**
    * Add Shortcodes
    */
+
+  const now = new Date();
+  eleventyConfig.addShortcode("copyrightYear", function () {
+    return `${now.getFullYear()}`;
+  });
+
   eleventyConfig.addShortcode("image", function (
     imgPath,
     alt,

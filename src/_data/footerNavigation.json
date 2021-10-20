@@ -1,0 +1,84 @@
+{
+  "menus": [
+    {
+      "heading": "Services",
+      "links": [
+        {
+          "text": "Digital Products",
+          "link": "/services/digital-products/"
+        },
+        {
+          "text": "Team Augmentation",
+          "link": "/services/team-augmentation/"
+        },
+        {
+          "text": "Training & Support",
+          "link": "/services/training/"
+        }
+      ]
+    },
+    {
+      "heading": "Expertise",
+      "links": [
+        {
+          "text": "Ember.js",
+          "link": "/ember-consulting/"
+        },
+        {
+          "text": "Elixir & Phoenix",
+          "link": "/expertise/elixir-phoenix/"
+        },
+        {
+          "text": "Our Playbook",
+          "link": "/playbook/"
+        },
+        {
+          "text": "Resources",
+          "link": "/resources/"
+        }
+      ]
+    },
+    {
+      "heading": "Work",
+      "links": [
+        {
+          "text": "Qonto",
+          "link": "/cases/qonto/"
+        },
+        {
+          "text": "Trainline",
+          "link": "/cases/trainline/"
+        },
+        {
+          "text": "Expedition",
+          "link": "/cases/expedition/"
+        },
+        {
+          "text": "DD-WRT NXT",
+          "link": "/cases/ddwrt/"
+        },
+        {
+          "text": "Timify",
+          "link": "/cases/ddwrt/"
+        }
+      ]
+    },
+    {
+      "heading": "Connect",
+      "links": [
+        {
+          "text": "Contact",
+          "link": "/contact/"
+        },
+        {
+          "text": "Calendar",
+          "link": "/calendar/"
+        },
+        {
+          "text": "Talks",
+          "link": "/talks/"
+        }
+      ]
+    }
+  ]
+}

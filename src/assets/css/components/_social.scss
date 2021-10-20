@@ -1,0 +1,17 @@
+.social {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social__item {
+  display: inline-block;
+
+  & + & {
+    margin-left: 1rem;
+  }
+}
+
+.social__link {
+  color: var(--color-yellow);
+}

@@ -1,0 +1,41 @@
+.footer-menu {
+  display: flex;
+}
+
+.footer-menu__heading {
+  flex: 0 1 8rem;
+  margin-right: 1rem;
+}
+
+.footer-menu__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-menu__item {
+  line-height: 1;
+
+  & + & {
+    margin-top: 0.75rem;
+  }
+}
+
+.footer-menu__link {
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+
+.footer-menu__arrow {
+  color: var(--color-yellow);
+}
+
+@media (min-width: 48em) {
+  .footer-menu {
+    display: block;
+  }
+
+  .footer-menu__item {
+    margin-top: 0.75rem;
+  }
+}
