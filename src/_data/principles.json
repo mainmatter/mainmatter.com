@@ -1,0 +1,24 @@
+{
+  "list": [
+    {
+      "heading": "Built To Last",
+      "text": "Our most fundamental belief is to build products that work well and keep working well—to strive for products that will stand the test of time, quietly delight users, and scale and expand easily. Timeless quality is the ultimate goal."
+    },
+    {
+      "heading": "Excellence In Engineering",
+      "text": "Excellence means not cutting any corners. To consider the edge cases, write clean and maintainable code, and test thoroughly. Product perfectionism breeds best-in-class performance."
+    },
+    {
+      "heading": "Clean, Functional Design",
+      "text": "Users demand clean, focused interfaces that result in outstanding user experience. As complexity grows, so does the need for design. Sleek, intuitive interfaces win the “hearts and minds” of busy users."
+    },
+    {
+      "heading": "Deeply Understand The Problem",
+      "text": "The better we understand the roots of the problems we're creating products for, the more impactful the solutions can be. Solving starts with understanding."
+    },
+    {
+      "heading": "Move Fast Without Breaking Things",
+      "text": "Finding the most elegant solutions is achieved through a cadence of fast iterations and incremental feature releases. We seek speed and flexibility without sacrificing quality or breaking things."
+    }
+  ]
+}

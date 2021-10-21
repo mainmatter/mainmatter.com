@@ -13,7 +13,6 @@
   {%- set pageDesc = description -%}
 {%- endif -%}
 
-<title>{{ pageTitle }}</title>
 {%- if canonical -%}
 <link rel="canonical" href="{{ canonical }}" />
 {%- else -%}
@@ -34,9 +33,9 @@
   <meta property="og:description" content="{{ pageDesc }}" />
 {%- endif -%}
 
-{%- if featured_image -%}
-  <meta property="og:image" content="https://res.cloudinary.com/{{ config.cloudinaryName }}/image/upload/f_auto,q_auto,c_limit,w_1200,h_630/{{ featured_image | filename }}" />
-  <meta name="twitter:image" content="https://res.cloudinary.com/{{ config.cloudinaryName }}/image/upload/f_auto,q_auto,c_limit,w_1200,h_630/{{ featured_image | filename }}" />
+{%- if og.image -%}
+  <meta property="og:image" content="{{ config.url }}{{ og.image }}" />
+  <meta name="twitter:image" content="{{ config.url }}{{ og.image }}" />
   <meta property="og:image:alt" content="{{ featured_image_caption  }}" />
   <meta name="twitter:image:alt" content="{{ featured_image_caption }}" />
 {%- endif -%}

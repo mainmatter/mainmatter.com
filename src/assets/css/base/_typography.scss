@@ -5,6 +5,8 @@ h1,
   font-weight: 700;
   font-size: rem-calc(36);
   line-height: 1.1;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 h2,
@@ -13,7 +15,20 @@ h2,
   font-family: var(--font-base);
   font-weight: 700;
   font-size: rem-calc(28);
+  line-height: 1.25;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+h3,
+.h3 {
+  margin: 0;
+  font-family: var(--font-base);
+  font-weight: 700;
+  font-size: rem-calc(16);
   line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 @media (min-width: 48em) {
@@ -25,6 +40,11 @@ h2,
   h2,
   .h2 {
     font-size: rem-calc(48);
+  }
+
+  h3,
+  .h3 {
+    font-size: 1.125rem;
   }
 }
 

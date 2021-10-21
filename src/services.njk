@@ -1,0 +1,23 @@
+---
+layout: 'base'
+title: Our Services - Build Better Products
+permalink: /services/
+eleventyNavigation:
+  key: Services
+  order: 10
+---
+{% from "split-hero.njk" import splitHero %}
+{% from "column-list.njk" import columnList %}
+{% from "color-hero.njk" import colorHero %}
+
+{% set title = "Developing web <em>applications</em> that are built to last" %}
+{% set text = "Product excellence through digital experiences that are clean, dependable, and architected for scale.." %}
+{{ splitHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'left', 'aqua', 'eager', title, text) }}
+
+{{ columnList(principles.list, 'Our principles') }}
+
+{% set title = "Transform bold ideas into shipped products" %}
+{% set text = "Our team of experts delivers everything from ideation to design and engineering. We can turn any idea sketched on the back of a napkin into a final, shipped mobile or web application." %}
+{{ colorHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'center', 'blue', 'lazy', title, text, '/services/', 'Find out more') }}
+
+{% include 'work-with-us.njk' %}

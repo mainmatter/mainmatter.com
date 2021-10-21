@@ -1,0 +1,15 @@
+{%- macro columnList(list, heading) -%}
+  <section class="column-list">
+    <div class="container container--lg">
+      {% if heading %}<h2 class="column-list__heading">{{ heading }}</h2>{% endif %}
+      <ol class="column-list__list">
+        {% for item in list %}
+          <li class="column-list__item">
+            <h3 class="column-list__item-heading">{{ item.heading }}</h3>
+            <p class="column-list__text">{{ item.text }}</p>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+{%- endmacro -%}
