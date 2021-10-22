@@ -110,7 +110,7 @@ the programming model suited for these sorts of scripting tasks, and I had bad
 experiences previously, particularly around packages that require native
 extensions.
 
-At the time I was dabbling in Rust and had already make a couple of tools for
+At the time I was dabbling in Rust and had already made a couple of tools for
 myself using that language, so I decided to give Rust a go. Picking Rust also
 had the benefit of giving me a single binary that a maintainer can download and
 run, not having to deal with runtime and dependencies versions. And so, work
