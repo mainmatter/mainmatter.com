@@ -1,3 +1,15 @@
+{#
+List of logo items.
+
+Configuration Options:
+link: An array where each item is a string of the company name.
+An SVG image should be saved in the logos directory where the file name is equivalent to the slugified company name.
+
+Example usage:
+{% set logoCompanies = ['Qonto', 'Trainline', 'Timify', 'Cardstack', 'Generali', 'Experteer'] %}
+{{ logoList(logoCompanies) }}
+#}
+
 {%- macro logoList(logos) -%}
   <section class="logo-list">
     <ul class="logo-list__list">

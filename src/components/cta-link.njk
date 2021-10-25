@@ -1,3 +1,15 @@
+{#
+A link with an arrow
+
+Configuration Options:
+link: URL
+text: Link text
+class: Optional class attribute for applying spacing
+
+Example usage:
+{{ columnList(principles.list, 'Our principles') }}
+#}
+
 {%- macro ctaLink(link, text, class) -%}
   <a class="cta-link text--accent {{ class }}" href="{{ link }}">
     <span class="cta-link__text">{{ text }}</span>
