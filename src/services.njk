@@ -9,6 +9,7 @@ eleventyNavigation:
 {% from "split-hero.njk" import splitHero %}
 {% from "column-list.njk" import columnList %}
 {% from "color-hero.njk" import colorHero %}
+{% from "quote.njk" import quote %}
 
 {% set title = "Developing web <em>applications</em> that are built to last" %}
 {% set text = "Product excellence through digital experiences that are clean, dependable, and architected for scale.." %}
@@ -21,3 +22,11 @@ eleventyNavigation:
 {{ colorHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'center', 'blue', 'lazy', title, text, '/services/', 'Find out more') }}
 
 {% include 'work-with-us.njk' %}
+
+{% set text = "simplabs' experienced engineers delivered a solid and well architected foundation for our web app. They also helped us establish best practices and a lean process internally. Working with them was a pleasure." %}
+{% set source = "Andreas Knürr, Timify CEO" %}
+{{ quote('aqua', text, source, true) }}
+
+{% set text = "simplabs are well known as the Ember.js experts and they absolutely live up to the expectations. They had an immediate as well as significant positive impact on both our velocity and quality of output." %}
+{% set source = "Marc-Antoine Lacroix, Qonto CEO" %}
+{{ quote('purple', text, source, true) }}

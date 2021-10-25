@@ -1,0 +1,24 @@
+{#
+Styled blockquote
+
+Configuration Options:
+color: One of the core brand colors
+text: Block quote text
+source: Quote source, a person or organization
+container: Boolean for whether or not to wrap the quote in a containing element
+
+Example usage:
+{% set text = "simplabs' experienced engineers delivered a solid and well architected foundation for our web app. They also helped us establish best practices and a lean process internally. Working with them was a pleasure." %}
+{% set source = "Andreas Knürr, Timify CEO" %}
+{{ quote('aqua', text, source, true) }}
+#}
+
+{%- macro quote(color, text, source, container) -%}
+  <figure class="quote quote--{{ color }} {% if container %}container container--lg{% endif %}">
+    <span class="quote__icon">Quote</span>
+    <blockquote class="quote__text">
+      {{ text }}
+    </blockquote>
+    <figcaption class="quote__source h3">{{ source }}</figcaption>
+  </figure>
+{%- endmacro -%}
