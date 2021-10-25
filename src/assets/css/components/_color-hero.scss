@@ -63,6 +63,10 @@
 
 .color-hero__text {
   max-width: rem-calc(376);
+
+  &--wide {
+    max-width: rem-calc(450);
+  }
 }
 
 .color-hero__link {

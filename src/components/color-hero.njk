@@ -30,7 +30,7 @@ Example usage:
         <h2 class="color-hero__title h1">{{ title | safe }}</h2>
       {% endif %}
       {% if text %}
-        <p class="color-hero__text">{{ text | safe }}</p>
+        <div class="color-hero__text {% if text.length > 400 %}color-hero__text--wide{% endif %}">{{ text | safe }}</div>
       {% endif %}
       {% if linkUrl %}
         {{ ctaLink(linkUrl, linkText, 'color-hero__link') }}
