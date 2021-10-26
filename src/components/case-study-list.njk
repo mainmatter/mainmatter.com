@@ -1,0 +1,30 @@
+{#
+List of case studies as cards
+
+Configuration Options:
+list: An array where each item is the slug for the case study.
+#}
+
+{%- macro caseStudyList(caseStudies, color, heading) -%}
+  <section class="case-study-list case-study-list--{{ color }}">
+    <div class="container container--lg">
+      {% if heading %}
+        <h2 class="case-study-list__heading">{{ heading }}</h2>
+      {% endif %}
+      <ul class="case-study-list__list">
+        {% for i in range(0, 6) -%}
+          <li class="case-study-list__item">
+            <a class="case-study-list__link" href="#"><span class="screenreader">Title</span></a>
+            <div class="case-study-list__image">
+              {# {% set imagePath %}/logos/{{ logo | slug }}.svg{% endset %} #}
+              {% svg '/logos/cardstack.svg', 'img' %}
+            </div>
+            <div class="case-study-list__text">
+              Cardstack builds the experience layer for a decentralized internet. simplabs helped them complete their Card UI system and validate its abilities in various prototype projects, identifying and fixing some issues in their core framework along the way.
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+{%- endmacro -%}

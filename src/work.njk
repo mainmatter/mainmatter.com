@@ -1,0 +1,27 @@
+---
+layout: 'base'
+title: Our Work
+eleventyNavigation:
+  key: Work
+  order: 20
+---
+{% from "split-hero.njk" import splitHero %}
+{% from "case-study-list.njk" import caseStudyList %}
+
+{% set title = "A proven track record of <em>successful</em> projects for international clients." %}
+{{ splitHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'left', 'blue', 'eager', title) }}
+
+{% set title = "Co-Engineering the Future of Banking for SMEs" %}
+{% set text = "Empowering Qonto's ambitious engineers to achieve their goals" %}
+{{ splitHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'right', 'white', 'lazy', title, text, '/', 'Find Out More') }}
+
+{% set caseStudies = ['qonto', 'trainline', 'timify', 'cardstack', 'generali', 'experteer'] %}
+{{ caseStudyList(caseStudies, 'aqua', 'Meet our clients') }}
+
+{% set title = "Leveraging Trainline's full market potential" %}
+{% set text = "Trainline is Europe’s leading independent rail and coach platform. We worked with them to deliver a high-performance mobile web app, along with an improved engineering process, enabling Trainline to achieve their business goals for years to come." %}
+{{ splitHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'left', 'white', 'lazy', title, text, '/', 'Find Out More') }}
+
+{{ caseStudyList(caseStudies, 'aqua') }}
+
+{% include 'work-with-us.njk' %}

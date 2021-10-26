@@ -5,6 +5,10 @@
   &--purple {
     background-color: var(--color-purple);
     color: var(--color-white);
+
+    .split-hero__link {
+      color: var(--color-white);
+    }
   }
 
   &--blue {
@@ -15,10 +19,6 @@
   &--aqua {
     background-color: var(--color-aqua);
     color: var(--color-black);
-
-    .split-hero__link {
-      color: var(--color-purple);
-    }
   }
 
   &--yellow {
@@ -59,6 +59,7 @@
 .split-hero__link {
   align-self: flex-start;
   margin-top: 1.5rem;
+  color: var(--color-purple);
 }
 
 @media (min-width: 48em) {

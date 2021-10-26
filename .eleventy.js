@@ -171,7 +171,18 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addShortcode("svg", (path) => {
     const svgData = fs.readFileSync("./static/assets/images" + path, "utf8");
-    const response = optimize(svgData, {});
+    const response = optimize(svgData, {
+      plugins: [
+        {
+          name: "preset-default",
+          params: {
+            overrides: {
+              removeViewBox: false,
+            },
+          },
+        },
+      ],
+    });
     return response.data.replace(
       "<svg",
       `<svg focusable="false" role="presentation"`
