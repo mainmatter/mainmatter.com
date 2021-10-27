@@ -1,0 +1,19 @@
+{
+  "contactMethods": [
+    {
+      "heading": "Call Us",
+      "text": "+49 89 452 139 03",
+      "link": "tel:+498945213903"
+    },
+    {
+      "heading": "Email Us",
+      "text": "info@simplabs.com",
+      "link": "mailto:info@simplabs.com"
+    },
+    {
+      "heading": "Visit Us",
+      "text": "Hans-Sachs-Str. 12 <br> 80469 München <br> Germany",
+      "link": "https://www.google.com/maps/place/simplabs+GmbH/@48.1297026,11.5674143,17z/data=!3m1!4b1!4m5!3m4!1s0x479ddf690db2928d:0x2960b8d9fbac8f41!8m2!3d48.1296843!4d11.5697106"
+    }
+  ]
+}

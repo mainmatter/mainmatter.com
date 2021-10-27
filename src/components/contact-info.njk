@@ -1,0 +1,32 @@
+<section class="contact-info">
+  <div class="contact-info__container container container--lg">
+    <h1 class="contact-info__heading">Contact Us</h1>
+    <p class="contact-info__text">
+      Whatever you're planning, we'd be excited to hear more. We can turn your ideas into successful digital products, improve existing ones or increase your team's effectiveness.
+    </p>
+    <div class="contact-info__methods contact-methods">
+      {% for method in contact.contactMethods %}
+        <h2 class="contact-methods__heading h4">
+          {{ method.heading }}
+        </h2>
+        {% if method.link %}
+          <a href="{{ method.link }}" class="contact-methods__text">{{ method.text | safe }}</a>
+        {% else %}
+          <p class="contact-methods__text">{{ method.text | safe  }}</p>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="contact-info__social-wrapper">
+      <h2 class="contact-info__social-heading h4">Follow Us</h2>
+      <ul class="contact-info__socials social" aria-label="Footer">
+        {% for social in socials.socials %}
+          <li class="social__item">
+            <a class="social__link" href="{{ social.link }}">
+              <span class="">{{ social.text }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
