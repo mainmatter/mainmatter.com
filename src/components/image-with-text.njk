@@ -1,9 +1,8 @@
 {#
-A hero image with a color overlay on top
+Single image with text to the side. For multiple, use the component in image-with-text-stacked.njk instead
 
 Configuration Options:
-textPosition: One of 'top' 'center' or 'bottom'
-color: One of the core brand colors
+textPosition: 'left' or 'right'
 content: A content block with the following options:
   title: String or markup for heading. Text wrapped in <em> will have the text animation applied.
   text: String or markup for body text
@@ -23,29 +22,39 @@ Example usage:
   "alt": "Alt text",
   "loading": "eager"
 } %}
-{{ colorHero('center', 'blue', content) }}
+{{ colorHero('right', content) }}
 #}
 {% from "cta-link.njk" import ctaLink %}
 
-{%- macro colorHero(textPosition, color, content) -%}
-  <section class="color-hero color-hero--{{ color }}">
-    <div class="color-hero__image-wrapper">
-      {% if content.image %}
-        {% image content.image, content.alt, '100vw', content.loading, 'color-hero__image', [760, 1440, 1920] %}
-      {% endif %}
-    </div>
-    <div class="color-hero__container container color-hero__container--{{ textPosition }}">
-      <div class="color-hero__main">
-        {% if content.title %}
-          <h2 class="color-hero__title h1">{{ content.title | safe }}</h2>
-        {% endif %}
-        {% if content.text %}
-          <div class="color-hero__text {% if content.text.length > 400 %}color-hero__text--wide{% endif %}">{{ content.text | safe }}</div>
-        {% endif %}
-        {% if content.linkUrl %}
-          {{ ctaLink(content.linkUrl, content.linkText, 'color-hero__link') }}
+{%- macro imageWithText(textPosition, content) -%}
+  {% set imageMarkup %}
+    <div class="image-text__image-wrapper">
+      <div data-image-animation>
+        {% if content.image %}
+          {% image content.image, content.alt, '(min-width:48em) 30rem, 90vw', content.loading, 'image-text__image', [480, 720, 960] %}
         {% endif %}
       </div>
+    </div>
+  {% endset %}
+  <section class="image-text">
+    <div class="image-text__container container container--lg">
+      {% if textPosition == 'right' %}
+        {{ imageMarkup | safe }}
+      {% endif %}
+      <div class="image-text__main image-text__main--{{ textPosition }}">
+        {% if content.title %}
+          <h2 class="image-text__title">{{ content.title | safe }}</h2>
+        {% endif %}
+        {% if content.text %}
+          <div class="image-text__text">{{ content.text | safe }}</div>
+        {% endif %}
+        {% if content.linkUrl %}
+          {{ ctaLink(content.linkUrl, content.linkText, 'image-text__link') }}
+        {% endif %}
+      </div>
+      {% if textPosition == 'left' %}
+        {{ imageMarkup | safe }}
+      {% endif %}
     </div>
   </section>
 {%- endmacro -%}

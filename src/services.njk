@@ -7,6 +7,7 @@ eleventyNavigation:
   order: 10
 ---
 {% from "split-hero.njk" import splitHero %}
+{% from "image-with-text.njk" import imageWithText %}
 {% from "column-list.njk" import columnList %}
 {% from "color-hero.njk" import colorHero %}
 {% from "quote.njk" import quote %}
@@ -19,6 +20,15 @@ eleventyNavigation:
   "loading": "eager"
 } %}
 {{ splitHero('left', 'aqua', content) }}
+
+{% set 'content' = {
+  "title": "What we do",
+  "text": "simplabs is a digital product consultancy that designs and develops mobile and web applications for clients around the globe. We have our roots in the open source community (we’re the foremost Ember.js team in Europe) and create digital products for clients that value code quality, robustness, dependability and honesty.",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "eager"
+} %}
+{{ imageWithText('right', content) }}
 
 {{ columnList(principles.list, 'Our principles') }}
 

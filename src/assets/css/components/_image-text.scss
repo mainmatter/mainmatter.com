@@ -1,0 +1,44 @@
+.image-text {
+  margin: rem-calc(72) 0;
+
+  img {
+    display: block;
+  }
+}
+
+.image-text__main {
+  & > * + * {
+    margin-top: 1.5rem;
+  }
+
+  &--left {
+    margin-bottom: 1.5rem;
+  }
+
+  &--right {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .image-text__container {
+    display: flex;
+    align-items: center;
+  }
+
+  .image-text__image-wrapper {
+    flex: 0 0 50%;
+  }
+
+  .image-text__main {
+    margin: 0;
+
+    &--left {
+      margin-right: 1.5rem;
+    }
+
+    &--right {
+      margin-left: 1.5rem;
+    }
+  }
+}

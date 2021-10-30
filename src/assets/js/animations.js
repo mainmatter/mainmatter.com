@@ -6,21 +6,35 @@ export class animations {
       lax.init();
       lax.addDriver("scrollY", () => window.scrollY);
       this.textAnimations();
+      this.imageWithTextAnimations();
     }
   }
 
-  textAnimations() {
+  imageWithTextAnimations() {
     lax.addElements(
-      ".text-animation__cover", // Element selector rule
+      "[data-image-animation]", // Element selector rule
       {
-        // Animation data
         scrollY: {
-          scaleX: [
-            [0, 200],
-            [1, 0],
+          translateY: [
+            [0, 1000],
+            {
+              768: [0, 0],
+              1366: [100, -100],
+            },
           ],
         },
       }
     );
+  }
+
+  textAnimations() {
+    lax.addElements(".text-animation__cover", {
+      scrollY: {
+        scaleX: [
+          [0, 200],
+          [1, 0],
+        ],
+      },
+    });
   }
 }
