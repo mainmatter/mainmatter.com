@@ -1,0 +1,78 @@
+{#
+Single image with text to the side. For multiple, use the component in image-with-text-stacked.njk instead
+
+Configuration Options:
+textPosition: 'left' or 'right'. Text position on desktop for first block, the others will alternate.
+contentBlocks: An array of content blocks. Each content block with the following options:
+  title: String or markup for heading. Text wrapped in <em> will have the text animation applied.
+  text: String or markup for body text
+  linkUrl: Optional link destination
+  linkText: Optional link text
+  image: Path to image in the file directory
+  alt: Image alt text
+  loading: Valid loading attribute for HTML img
+  small: Boolean, if true, the image will not occupy the full space
+
+Example usage:
+{% set 'contentBlocks' = [{
+  "title": "Guiding projects and teams to <em>sustainable</em> success",
+  "text": "Mainmatter is a digital product consultancy that designs and develops web applications. We realize projects with clients across the globe and teach them how along the way.",
+  "linkUrl": "/services",
+  "linkText": "Our Services",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+},{
+  "title": "Guiding projects and teams to <em>sustainable</em> success",
+  "text": "Mainmatter is a digital product consultancy that designs and develops web applications. We realize projects with clients across the globe and teach them how along the way.",
+  "linkUrl": "/services",
+  "linkText": "Our Services",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy",
+  "small": true
+}] %}
+{{ imageWithTextStacked('right', contentBlocks) }}
+#}
+{% from "cta-link.njk" import ctaLink %}
+
+{%- macro imageWithTextStacked(textPosition, contentBlocks) -%}
+  <section class="image-text-stacked image-text-stacked--{{ textPosition }}">
+    {% for content in contentBlocks %}
+      {% set animationSpeed = 'md' %}
+      {% set imageSize = '(min-width:48em) 30rem, 80vw' %}
+      {% if content.small %}
+        {% set animationSpeed = 'sm' %}
+        {% set imageSize = '(min-width:48em) 24rem, 80vw' %}
+      {% endif %}
+      {% set imageMarkup %}
+        <div class="image-text-stacked__image-wrapper {% if content.small %}image-text-stacked__image-wrapper--small{% endif %}">
+          {%- if content.image -%}
+            <div data-image-animation="{{ animationSpeed }}">
+              {%- image content.image, content.alt, imageSize, content.loading, 'image-text-stacked__image', [480, 720, 960] -%}
+            </div>
+          {%- endif -%}
+        </div>
+      {% endset %}
+      <div class="image-text-stacked__container container container--lg">
+        {% if loop.index % 2 == 0 %}
+          {{ imageMarkup | safe }}
+        {% endif %}
+        <div class="image-text-stacked__main">
+          {% if content.title %}
+            <h2 class="image-text-stacked__title">{{ content.title | safe }}</h2>
+          {% endif %}
+          {% if content.text %}
+            <div class="image-text-stacked__text">{{ content.text | safe }}</div>
+          {% endif %}
+          {% if content.linkUrl %}
+            {{ ctaLink(content.linkUrl, content.linkText, 'image-text-stacked__link') }}
+          {% endif %}
+        </div>
+        {% if loop.index % 2 != 0 %}
+          {{ imageMarkup | safe }}
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+{%- endmacro -%}

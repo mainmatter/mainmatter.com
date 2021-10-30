@@ -1,9 +1,5 @@
 .image-text {
   margin: rem-calc(72) 0;
-
-  img {
-    display: block;
-  }
 }
 
 .image-text__main {
@@ -20,10 +16,15 @@
   }
 }
 
+.image-text__image {
+  display: block;
+}
+
 @media (min-width: 48em) {
   .image-text__container {
     display: flex;
     align-items: center;
+    gap: 1.5rem;
   }
 
   .image-text__image-wrapper {
@@ -32,13 +33,5 @@
 
   .image-text__main {
     margin: 0;
-
-    &--left {
-      margin-right: 1.5rem;
-    }
-
-    &--right {
-      margin-left: 1.5rem;
-    }
   }
 }

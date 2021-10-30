@@ -70,6 +70,7 @@
 
   .split-hero__image-wrapper {
     flex: 0 0 50%;
+    aspect-ratio: 1/1;
   }
 
   .split-hero__main {
@@ -84,5 +85,11 @@
   .split-hero__container {
     width: 80%;
     max-width: rem-calc(500);
+  }
+}
+
+@media (min-width: 90em) {
+  .split-hero__image-wrapper {
+    aspect-ratio: 4/3;
   }
 }

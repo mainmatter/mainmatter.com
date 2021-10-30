@@ -5,6 +5,7 @@ title: null
 {% from "split-hero.njk" import splitHero %}
 {% from "logo-list.njk" import logoList %}
 {% from "color-hero.njk" import colorHero %}
+{% from "image-with-text-stacked.njk" import imageWithTextStacked %}
 
 {% set 'content' = {
   "title": "Guiding projects and teams to <em>sustainable</em> success",
@@ -29,6 +30,26 @@ title: null
 } %}
 {{ colorHero('center', 'blue', content) }}
 
+{% set 'contentBlocks' = [{
+  "title": "Digital products",
+  "text": "Our team of experts delivers everything from ideation to design and engineering. We can turn any idea sketched on the back of a napkin into a final, shipped product.",
+  "linkUrl": "/services",
+  "linkText": "Find out more",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+},{
+  "title": "Official Ember.js Sponsor",
+  "text": "We recently have been recognized as an official sponsor of the Ember.js project along with international brands like LinkedIn and Yahoo.",
+  "linkUrl": "/services",
+  "linkText": "Find out more",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy",
+  "small": true
+}] %}
+{{ imageWithTextStacked('right', contentBlocks) }}
+
 {% set 'content' = {
   "title": "Co-Engineering the Future of Banking for SME",
   "text": "Empowering Qonto's ambitious engineers to achieve their goals",
@@ -39,5 +60,25 @@ title: null
   "loading": "lazy"
 } %}
 {{ splitHero('left', 'aqua', content) }}
+
+{% set 'contentBlocks' = [{
+  "title": "Team Augmentation",
+  "text": "Our experts temporarily join your in-house engineering teams to increase code quality and throughput, and help sustainable lift team productivity.",
+  "linkUrl": "/services",
+  "linkText": "Find out more",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy",
+  "small": true
+},{
+  "title": "Training & Support",
+  "text": "We train and tutor engineering teams to set them up for long term success. Support ranges from tailor-made workshops to code reviews and technical audits.",
+  "linkUrl": "/services",
+  "linkText": "Find out more",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+}] %}
+{{ imageWithTextStacked('right', contentBlocks) }}
 
 {% include 'work-with-us.njk' %}

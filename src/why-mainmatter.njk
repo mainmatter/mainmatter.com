@@ -7,6 +7,8 @@ eleventyNavigation:
 ---
 {% from "split-hero.njk" import splitHero %}
 {% from "color-hero.njk" import colorHero %}
+{% from "image-with-text.njk" import imageWithText %}
+{% from "image-with-text-stacked.njk" import imageWithTextStacked %}
 
 {% set 'content' = {
   "title": "Cutting edge <em>solutions</em> – From Idea to Release",
@@ -27,6 +29,18 @@ eleventyNavigation:
 } %}
 {{ colorHero('bottom', 'purple', content) }}
 
+{% set 'contentBlocks' = [{
+  "title": "Moving fast without breaking things",
+  "text": "<p>We have a passion for technology and value a stable process and tools. We like to move fast without breaking things and leverage extensive testing and constant reviews to ensure we deliver high quality results.</p><p>Our clients are encouraged to take on an active role in projects and we guide them along the way, making sure their expectations are met and business requirements are addressed in the most effective way for maximum value.</p>",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+},{
+  "title": "Driving technology forward",
+  "text": "We take an active role in the open source projects that we leverage for our clients. Our strong engagement with Open Source provides us with first hand knowledge and insights that our clients benefit from."
+}] %}
+{{ imageWithTextStacked('left', contentBlocks) }}
+
 {% set 'content' = {
   "title": "Our Talks",
   "text": "We share our expertise and experience with others at conferences around the world",
@@ -39,6 +53,15 @@ eleventyNavigation:
 {{ splitHero('left', 'blue', content) }}
 
 {% set 'content' = {
+  "title": "Keeping the Conversation going",
+  "text": "We strongly believe in the value of sharing our expertise and experience with others and are engaged with various conferences and meetups as organizers, speakers and sponsors. Sharing what we do is not only a great learning opportunity for ourselves but allows us to stay up to date with the web community's needs and challenges as well.",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "eager"
+} %}
+{{ imageWithText('right', content) }}
+
+{% set 'content' = {
   "title": "Conferences",
   "text": "We co-organize EmberFest, the European Community Ember Conference.",
   "linkUrl": "/talks/",
@@ -48,5 +71,14 @@ eleventyNavigation:
   "loading": "lazy"
 } %}
 {{ splitHero('right', 'aqua', content) }}
+
+{% set 'content' = {
+  "title": "Distributed together",
+  "text": "A distributed team allows gathering top talent regardless of location but face to face time is still invaluable. We frequently come together for team events and workshops and invite our clients to those as well.",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "eager"
+} %}
+{{ imageWithText('left', content) }}
 
 {% include 'work-with-us.njk' %}

@@ -22,14 +22,14 @@ Example usage:
   "alt": "Alt text",
   "loading": "eager"
 } %}
-{{ colorHero('right', content) }}
+{{ imageWithText('right', content) }}
 #}
 {% from "cta-link.njk" import ctaLink %}
 
 {%- macro imageWithText(textPosition, content) -%}
   {% set imageMarkup %}
     <div class="image-text__image-wrapper">
-      <div data-image-animation>
+      <div data-image-animation="md">
         {% if content.image %}
           {% image content.image, content.alt, '(min-width:48em) 30rem, 90vw', content.loading, 'image-text__image', [480, 720, 960] %}
         {% endif %}

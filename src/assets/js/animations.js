@@ -12,14 +12,29 @@ export class animations {
 
   imageWithTextAnimations() {
     lax.addElements(
-      "[data-image-animation]", // Element selector rule
+      "[data-image-animation='md']", // Element selector rule
       {
         scrollY: {
           translateY: [
-            [0, 1000],
+            ["elInY", "elOutY"],
             {
               768: [0, 0],
-              1366: [100, -100],
+              1366: [50, -200],
+              2000: [100, -250],
+            },
+          ],
+        },
+      }
+    );
+    lax.addElements(
+      "[data-image-animation='sm']", // Element selector rule
+      {
+        scrollY: {
+          translateY: [
+            ["elInY", "elOutY"],
+            {
+              768: [0, 0],
+              1366: [0, -100],
             },
           ],
         },
@@ -31,8 +46,15 @@ export class animations {
     lax.addElements(".text-animation__cover", {
       scrollY: {
         scaleX: [
-          [0, 200],
+          // Todo: Come back and refine this, sizing may change things
+          {
+            768: ["elCenterY", "elOutY-200"],
+            1366: ["elOutY-225", "elOutY-100"],
+            1900: ["elOutY-325", "elOutY-150"],
+          },
           [1, 0],
+          // ["elOutY-225", "elOutY-100"],
+          // [1, 0],
         ],
       },
     });
