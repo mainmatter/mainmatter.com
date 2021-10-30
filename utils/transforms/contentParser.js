@@ -14,6 +14,17 @@ module.exports = function (value, outputPath) {
     const document = DOM.window.document;
 
     /**
+     * Add a span for text-animation
+     */
+    const textAnimations = [...document.querySelectorAll(".text-animation em")];
+    if (textAnimations.length) {
+      const span = document.createElement("span");
+      span.classList.add("text-animation__cover");
+      textAnimations.forEach((textAnimation) => {
+        return textAnimation.appendChild(span);
+      });
+    }
+    /**
      * Get all the headings inside the post
      */
     const articleHeadings = [...document.querySelectorAll("article h2")];

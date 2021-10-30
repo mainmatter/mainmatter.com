@@ -3,6 +3,7 @@
   flex-direction: column;
 
   &--purple {
+    --animation-color: var(--color-aqua);
     background-color: var(--color-purple);
     color: var(--color-white);
 
@@ -12,16 +13,19 @@
   }
 
   &--blue {
+    --animation-color: var(--color-yellow);
     background-color: var(--color-blue);
     color: var(--color-white);
   }
 
   &--aqua {
+    --animation-color: var(--color-blue);
     background-color: var(--color-aqua);
     color: var(--color-black);
   }
 
   &--yellow {
+    --animation-color: var(--color-aqua);
     background-color: var(--color-yellow);
     color: var(--color-black);
   }
