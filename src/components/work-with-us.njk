@@ -1,5 +1,12 @@
 {% from "color-hero.njk" import colorHero %}
 
-{% set title = "Work with us" %}
-{% set text = "Talk to one of our experts to find out how we can help you." %}
-{{ colorHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'center', 'yellow', 'lazy', title, text, '/contact/', 'Find out more') }}
+{% set 'content' = {
+  "title": "Work with us",
+  "text": "Talk to one of our experts to find out how we can help you.",
+  "linkUrl": "/contact/",
+  "linkText": "Find out more",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+} %}
+{{ colorHero('center', 'yellow', content) }}

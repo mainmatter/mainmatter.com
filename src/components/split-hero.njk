@@ -2,40 +2,50 @@
 Section where one half is an image and the other half is a colored text block.
 
 Configuration Options:
-image: Path to image in the file directory
-alt: Image alt text
 desktopTextPosition: 'left' or 'right',
 color: One of the core brand colors
-loading: Valid loading attribute for HTML img
-title: String or markup for heading
-text: String or markup for body text
-linkUrl: Optional link destination
-linkText: Optional link text
+content: A content block with the following options:
+  title: String or markup for heading. Text wrapped in <em> will have the text animation applied.
+  text: String or markup for body text
+  linkUrl: Optional link destination
+  linkText: Optional link text
+  image: Path to image in the file directory
+  alt: Image alt text
+  loading: Valid loading attribute for HTML img
 
 Example usage:
-{% set title = "Guiding projects and teams to <em>sustainable</em> success" %}
-{% set text = "Mainmatter is a digital product consultancy that designs and develops web applications. We realize projects with clients across the globe and teach them how along the way." %}
-{{ splitHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'left', 'purple', 'eager', title, text, '/services', 'Our Services') }}
+{% set 'content' = {
+  "title": "Guiding projects and teams to <em>sustainable</em> success",
+  "text": "Mainmatter is a digital product consultancy that designs and develops web applications. We realize projects with clients across the globe and teach them how along the way.",
+  "linkUrl": "/services",
+  "linkText": "Our Services",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "eager"
+} %}
+{{ splitHero('left', 'purple', content) }}
 #}
 {% from "cta-link.njk" import ctaLink %}
 
-{%- macro splitHero(image, alt, desktopTextPosition, color, loading, title, text, linkUrl, linkText) -%}
+{%- macro splitHero(desktopTextPosition, color, content) -%}
   <section class="split-hero split-hero--{{ color }}">
     <div class="split-hero__main split-hero__main--{{ desktopTextPosition }}">
       <div class="split-hero__container container">
-        {% if title %}
-          <h2 class="split-hero__title h1 text-animation">{{ title | safe }}</h2>
+        {% if content.title %}
+          <h2 class="split-hero__title h1 text-animation">{{ content.title | safe }}</h2>
         {% endif %}
-        {% if text %}
-          <p class="split-hero__text">{{ text | safe }}</p>
+        {% if content.text %}
+          <p class="split-hero__text">{{ content.text | safe }}</p>
         {% endif %}
-        {% if linkUrl %}
-          {{ ctaLink(linkUrl, linkText, 'split-hero__link') }}
+        {% if content.linkUrl %}
+          {{ ctaLink(content.linkUrl, content.linkText, 'split-hero__link') }}
         {% endif %}
       </div>
     </div>
     <div class="split-hero__image-wrapper">
-      {% image image, alt, '(min-width: 48em) 50vw, 100vw', loading, 'split-hero__image' %}
+      {% if content.image %}
+        {% image content.image, content.alt, '(min-width: 48em) 50vw, 100vw', content.loading, 'split-hero__image' %}
+      {% endif %}
     </div>
   </section>
 {%- endmacro -%}

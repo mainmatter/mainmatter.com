@@ -11,15 +11,27 @@ eleventyNavigation:
 {% from "color-hero.njk" import colorHero %}
 {% from "quote.njk" import quote %}
 
-{% set title = "Developing web <em>applications</em> that are built to last" %}
-{% set text = "Product excellence through digital experiences that are clean, dependable, and architected for scale.." %}
-{{ splitHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'left', 'aqua', 'eager', title, text) }}
+{% set 'content' = {
+  "title": "Developing web <em>applications</em> that are built to last",
+  "text": "Product excellence through digital experiences that are clean, dependable, and architected for scale.",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "eager"
+} %}
+{{ splitHero('left', 'aqua', content) }}
 
 {{ columnList(principles.list, 'Our principles') }}
 
-{% set title = "Transform bold ideas into shipped products" %}
-{% set text = "Our team of experts delivers everything from ideation to design and engineering. We can turn any idea sketched on the back of a napkin into a final, shipped mobile or web application." %}
-{{ colorHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'center', 'blue', 'lazy', title, text, '/services/', 'Find out more') }}
+{% set 'content' = {
+  "title": "Transform bold ideas into shipped products",
+  "text": "Our team of experts delivers everything from ideation to design and engineering. We can turn any idea sketched on the back of a napkin into a final, shipped mobile or web application.",
+  "linkUrl": "/services",
+  "linkText": "Find out more",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+} %}
+{{ colorHero('center', 'blue', content) }}
 
 {% include 'work-with-us.njk' %}
 

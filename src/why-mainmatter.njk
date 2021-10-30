@@ -8,21 +8,45 @@ eleventyNavigation:
 {% from "split-hero.njk" import splitHero %}
 {% from "color-hero.njk" import colorHero %}
 
-{% set title = "Cutting edge <em>solutions</em> – From Idea to Release" %}
-{% set text = "We build cutting edge web apps for clients around the world. Our team of experts delivers everything from ideation to design and engineering, guiding our clients along the way." %}
-{{ splitHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'left', 'yellow', 'eager', title, text) }}
+{% set 'content' = {
+  "title": "Cutting edge <em>solutions</em> – From Idea to Release",
+  "text": "We build cutting edge web apps for clients around the world. Our team of experts delivers everything from ideation to design and engineering, guiding our clients along the way.",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "eager"
+} %}
+{{ splitHero('left', 'yellow', content) }}
 
-{% set title = "Top level expertise" %}
-{% set text = "<p>We deliver all aspects of our clients' projects from strategy to design and engineering. Our cohesive team consists of experts in their respective fields that have worked together for years and delivered solutions for clients from startups to long-established businesses.</p>
-<p>Valuing experience and expertise over location allows us to gather international top talent that will deliver the best possible results for our clients. Our distributed team works from locations across Europe for clients around the world.</p>" %}
-{{ colorHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'bottom', 'purple', 'lazy', title, text) }}
+{% set 'content' = {
+  "title": "Top level expertise",
+  "text": "<p>We deliver all aspects of our clients' projects from strategy to design and engineering. Our cohesive team consists of experts in their respective fields that have worked together for years and delivered solutions for clients from startups to long-established businesses.</p>
+<p>Valuing experience and expertise over location allows us to gather international top talent that will deliver the best possible results for our clients. Our distributed team works from locations across Europe for clients around the world.</p>",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+} %}
+{{ colorHero('bottom', 'purple', content) }}
 
-{% set title = "Our Talks" %}
-{% set text = "We share our expertise and experience with others at conferences around the world." %}
-{{ splitHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'left', 'blue', 'lazy', title, text, '/talks/', 'See Our Talks') }}
+{% set 'content' = {
+  "title": "Our Talks",
+  "text": "We share our expertise and experience with others at conferences around the world",
+  "linkUrl": "/talks/",
+  "linkText": "See Our Talks",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+} %}
+{{ splitHero('left', 'blue', content) }}
 
-{% set title = "Conferences" %}
-{% set text = "We co-organize EmberFest, the European Community Ember Conference." %}
-{{ splitHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'right', 'aqua', 'lazy', title, text, '/talks/', 'See Conferences') }}
+{% set 'content' = {
+  "title": "Conferences",
+  "text": "We co-organize EmberFest, the European Community Ember Conference.",
+  "linkUrl": "/talks/",
+  "linkText": "See Conferences",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+} %}
+{{ splitHero('right', 'aqua', content) }}
 
 {% include 'work-with-us.njk' %}

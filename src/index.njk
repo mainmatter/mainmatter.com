@@ -6,19 +6,38 @@ title: null
 {% from "logo-list.njk" import logoList %}
 {% from "color-hero.njk" import colorHero %}
 
-{% set title = "Guiding projects and teams to <em>sustainable</em> success" %}
-{% set text = "Mainmatter is a digital product consultancy that designs and develops web applications. We realize projects with clients across the globe and teach them how along the way." %}
-{{ splitHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'left', 'purple', 'eager', title, text) }}
+{% set 'content' = {
+  "title": "Guiding projects and teams to <em>sustainable</em> success",
+  "text": "Mainmatter is a digital product consultancy that designs and develops web applications. We realize projects with clients across the globe and teach them how along the way.",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "eager"
+} %}
+{{ splitHero('left', 'purple', content) }}
 
 {% set logoCompanies = ['Qonto', 'Trainline', 'Timify', 'Cardstack', 'Generali', 'Experteer'] %}
 {{ logoList(logoCompanies) }}
 
-{% set title = "Crafting digital products that are built to lasts" %}
-{% set text = "Product excellence through digital experiences that are clean, dependable, and architected for scalability and extensibility." %}
-{{ colorHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'center', 'blue', 'lazy', title, text, '/services/', 'Find out more') }}
+{% set 'content' = {
+  "title": "Crafting digital products that are built to last",
+  "text": "Product excellence through digital experiences that are clean, dependable, and architected for scalability and extensibility",
+  "linkUrl": "/services",
+  "linkText": "Find out more",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+} %}
+{{ colorHero('center', 'blue', content) }}
 
-{% set title = "Co-Engineering the Future of Banking for SMEs" %}
-{% set text = "Empowering Qonto's ambitious engineers to achieve their goals" %}
-{{ splitHero('/assets/images/photos/collaboration@1200.jpg', 'alt', 'left', 'aqua', 'lazy', title, text, '/cases/qonto/', 'Find out more') }}
+{% set 'content' = {
+  "title": "Co-Engineering the Future of Banking for SME",
+  "text": "Empowering Qonto's ambitious engineers to achieve their goals",
+  "linkUrl": "/cases/qonto/",
+  "linkText": "Find out more",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+} %}
+{{ splitHero('left', 'aqua', content) }}
 
 {% include 'work-with-us.njk' %}
