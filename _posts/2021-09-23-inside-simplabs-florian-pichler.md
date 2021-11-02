@@ -16,7 +16,7 @@ interviews Florian Pichler, one of our Software-Engineers.
 
 <!--break-->
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed//1v8Yezip2S4" title="Embedded video of Inside simplabs episode 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed//1v8Yezip2S4" title="Embedded video of Inside simplabs episode 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 After over two years at simplabs, Florian has proven to be an excellent
 developer and a landmark for many on the team. His love for design brought him
