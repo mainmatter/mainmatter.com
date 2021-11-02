@@ -7,7 +7,7 @@ topic: insidesimplabs
 bio: 'Marketing Assistant'
 description: 'Interview with Nick Schot, Senior Software-Engineer at simplabs.'
 og:
-  image: assets/images/posts/2021-11-02-inside-simplabs-nick-schot/og-image.png
+  image: /assets/images/posts/2021-11-02-inside-simplabs-nick-schot/og-image.png
 ---
 
 In the third episode of Inside simplabs, Emma Dell'Acqua, Marketing Assistant,
