@@ -1,22 +1,21 @@
 ---
-title: 'Automating Ember Core Learning Team releases with Rust'
+title: 'Automating Ember releases with Rust'
 author: 'Ricardo Mendes'
 github: locks
 twitter: locks
 topic: ember
 bio: 'Senior Frontend Engineer, Ember Framework and Learning Core teams member'
 description:
-  'Ricardo Mendes discusses a command like tool built in Rust that automates the
+  'Ricardo Mendes discusses a command-line tool built in Rust that automates the
   releases process for the Ember Core Learning Team'
 og:
   image: /assets/images/posts/2021-07-13-effective-infrastructure-for-efficient-development-workflows/og-image.png
 ---
 
 It's not trivial to release a new version of Ember. This process involves
-several different core teams – Framework, Data, CLI and Learning – who are
-responsible for several packages and resources between them. In this post
-we will go through the process of building a tool in Rust to automate the
-process for the Core Learning Team.
+several different core teams, who are responsible for several packages and
+resources between them. In this post we will go through how I used Rust to build
+the tool that is used to automate part of the Ember release.
 
 <!--break-->
 
@@ -24,7 +23,7 @@ process for the Core Learning Team.
 
 ## Release process for the Ember project
 
-An Ember project release involves 4 different Core teams, Framework, Data, CLI
+An Ember project release involves 4 different Core teams: Framework, Data, CLI
 and Learning. The release is usually done over the period of a week, because
 some steps of the release depend on previous steps being completed. The steps
 are as follows:
@@ -82,11 +81,12 @@ At the time of writing, they are:
 The steps are a mix of easily automated tasks and tasks that necessitate manual
 intervention.
 
-We started automating this process by creating bash scripts for the Guides
-project. Essentially they codify the manual steps with minimal interface and
-error handling around them. The scripts assume that you have the project cloned
-and does some housekeeping to make sure you don't accidentally lose any work you
-were doing when you trigger the release script. This will be relevant later on.
+I started automating this process by creating bash scripts for the Guides
+project. The bash scripts turn the manual steps into a guided process with
+minimal interface and error handling around them. The scripts assume that you
+have the project cloned and does some housekeeping to make sure you don't
+accidentally lose any work you were doing when you trigger the release script.
+This will be relevant later on.
 
 Codifying the steps in bash was a big improvement, but we ran into some minor
 issues. The first of which is that bash is not a language the developer in the
@@ -104,11 +104,9 @@ follow the release handbook line by line to make sure you get the order correct.
 ## Creating tool-new-release
 
 There was still a lot of automation left on the table, so I got to work figuring
-out how to improve the situation. When picking a technology I had already
-excluded Bash for the reasons covered. I also discarded Node.js as I don't find
-the programming model suited for these sorts of scripting tasks, and I had bad
-experiences previously, particularly around packages that require native
-extensions.
+out how to improve the situation. When picking what technology I would use for
+the tool I had two main concerns: portability, and ease of packaging as a
+binary.
 
 At the time I was dabbling in Rust and had already made a couple of tools for
 myself using that language, so I decided to give Rust a go. Picking Rust also
@@ -227,10 +225,10 @@ and if you have any suggestions, please
 [let me know](https://twitter.com/locks)! The project is still a work in
 progress so you might find things that are not done optimally.
 
-There's two things I'd like to point out in the workflow. One is that I ended up using
-[`musl`](https://musl.libc.org/) through `rustup` in order to build the Linux
-binary. The other is that I'm currently publishing the binary as a _draft_, so it will
-not show up on the homepage of the repository.
+There's two things I'd like to point out in the workflow. One is that I ended up
+using [`musl`](https://musl.libc.org/) through `rustup` in order to build the
+Linux binary. The other is that I'm currently publishing the binary as a
+_draft_, so it will not show up on the homepage of the repository.
 
 ## Next steps
 
