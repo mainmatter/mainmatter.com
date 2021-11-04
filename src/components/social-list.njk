@@ -1,0 +1,13 @@
+{%- macro socialList(list, class) -%}
+  <ul class="{{ class }} social" aria-label="Social Media">
+    {% for social in list %}
+      {% set icon %}svg/social-{{ social.text | lower }}.njk{% endset %}
+      <li class="social__item">
+        <a class="social__link" href="{{ social.link }}">
+          <span class="social__icon">{% include icon %}</span>
+          <span class="screenreader">{{ social.text }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{%- endmacro -%}

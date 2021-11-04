@@ -7,6 +7,17 @@
   margin-left: 1rem;
 }
 
+.nav__main {
+  display: flex;
+  align-items: center;
+}
+
+.nav__brand {
+  margin-right: 2rem;
+  margin-left: 1rem;
+  font-size: 0;
+}
+
 .nav__list {
   display: none;
   margin: 0;
@@ -28,7 +39,19 @@
   display: none;
 }
 
-@media (min-width: 48em) {
+.nav__menu-toggle {
+  padding: rem-calc(15 12);
+  border: none;
+  border-radius: 0;
+  background-color: var(--color-purple);
+  color: var(--color-white);
+
+  svg {
+    display: block;
+  }
+}
+
+@media (min-width: 62em) {
   .nav__list {
     display: block;
   }
@@ -39,5 +62,9 @@
     line-height: 1;
     background-color: var(--color-purple);
     color: var(--color-white);
+  }
+
+  .nav__menu-toggle {
+    display: none;
   }
 }

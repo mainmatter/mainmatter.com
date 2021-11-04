@@ -1,7 +1,14 @@
 {% set navPages = collections.all | eleventyNavigation %}
 <nav class="nav">
   <div class="nav__main">
-    {# Logo #}
+    {% set tag = 'a' %}
+    {% if page.url == '/' %}
+      {% set tag = 'h1' %}
+    {% endif %}
+    <{{ tag }} class="nav__brand" {% if tag == 'a' %}href="/"{% endif %}>
+      {% include 'svg/logo.njk' %}
+      <span class="screenreader">Mainmatter</span>
+    </{{ tag }}>
     <ul class="nav__list">
     {%- for entry in navPages %}
       <li class="nav__item">
@@ -20,5 +27,9 @@
     <a class="nav__cta text--accent text--xs" href="/contact/">
       Contact
     </a>
+    <button class="nav__menu-toggle">
+      {% include 'svg/menu.njk' %}
+      <span class="screenreader">Menu</span>
+    </button>
   </div>
 </nav>

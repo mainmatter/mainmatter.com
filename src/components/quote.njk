@@ -15,7 +15,7 @@ Example usage:
 
 {%- macro quote(color, text, source, container) -%}
   <figure class="quote quote--{{ color }} {% if container %}container container--lg{% endif %}">
-    <span class="quote__icon">Quote</span>
+    <span class="quote__icon">{% include 'svg/quote.njk' %}</span>
     <blockquote class="quote__text">
       {{ text }}
     </blockquote>

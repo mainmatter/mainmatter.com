@@ -1,7 +1,12 @@
+{% from "social-list.njk" import socialList %}
+
 <footer class="footer">
   <div class="footer__container container container--xl">
     <div class="footer__logo">
-      {# Logo #}
+      <a class="footer__brand" href="/">
+        {% include 'svg/logo.njk' %}
+        <span class="screenreader">Mainmatter</span>
+      </a>
       <p class="footer__copyright">© 2014 - {% copyrightYear %} simplabs GmbH</p>
     </div>
     <nav class="footer__nav" aria-label="Footer">
@@ -13,7 +18,7 @@
               <li class="footer-menu__item">
                 <a class="footer-menu__link" href="{{ item.link }}">
                   {{ item.text }}
-                  <span class="footer-menu__arrow">&rarr;</span>
+                  <span class="footer-menu__arrow">{% include 'svg/arrow.njk' %}</span>
                 </a>
               </li>
             {% endfor %}
@@ -21,14 +26,6 @@
         </div>
       {% endfor %}
     </nav>
-    <ul class="footer__socials social" aria-label="Footer">
-      {% for social in socials.socials %}
-        <li class="social__item">
-          <a class="social__link" href="{{ social.link }}">
-            <span class="">{{ social.text }}</span>
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
+    {{ socialList(socials.socials, 'footer__socials')}}
   </div>
 </footer>

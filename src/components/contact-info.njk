@@ -1,3 +1,5 @@
+{% from "social-list.njk" import socialList %}
+
 <section class="contact-info">
   <div class="contact-info__container container container--lg">
     <h1 class="contact-info__heading">Contact Us</h1>
@@ -18,15 +20,7 @@
     </div>
     <div class="contact-info__social-wrapper">
       <h2 class="contact-info__social-heading h4">Follow Us</h2>
-      <ul class="contact-info__socials social" aria-label="Footer">
-        {% for social in socials.socials %}
-          <li class="social__item">
-            <a class="social__link" href="{{ social.link }}">
-              <span class="">{{ social.text }}</span>
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
+      {{ socialList(socials.socials, 'contact-info__socials')}}
     </div>
   </div>
 </section>

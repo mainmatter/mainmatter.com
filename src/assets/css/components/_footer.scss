@@ -18,7 +18,11 @@
 
 .footer__socials {
   margin-top: rem-calc(56);
-  color: var(--color-yellow);
+  color: var(--color-purple);
+
+  .social__link:hover {
+    color: var(--color-yellow);
+  }
 }
 
 @media (min-width: 48em) {

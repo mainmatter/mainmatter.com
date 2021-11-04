@@ -14,4 +14,11 @@
 
 .social__link {
   color: currentColor;
+  transition: color 0.3s ease;
+}
+
+.social__icon {
+  svg {
+    display: block;
+  }
 }

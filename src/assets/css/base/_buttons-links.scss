@@ -1,4 +1,9 @@
 .cta-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   color: var(--color-link-primary);
+}
+
+.cta-link__arrow {
+  margin-left: 1.125rem;
 }

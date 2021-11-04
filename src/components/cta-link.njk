@@ -13,7 +13,6 @@ Example usage:
 {%- macro ctaLink(link, text, class) -%}
   <a class="cta-link text--accent {{ class }}" href="{{ link }}">
     <span class="cta-link__text">{{ text }}</span>
-    {# Todo: Replace with icon #}
-    &rarr;
+    <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
   </a>
 {%- endmacro -%}
