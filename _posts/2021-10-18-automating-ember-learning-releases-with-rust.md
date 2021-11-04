@@ -141,9 +141,9 @@ the different steps so they can manage the cloning they need to do.
 
 #### Shelling out
 
-Determined to have a viable release tool as quickly as possible and
-afterwards iterate for improvements, I decided to call the `Bash` scripts
-already present in the
+Determined to have a viable release tool as quickly as possible and afterwards
+iterate for improvements, I decided to call the `Bash` scripts already present
+in the
 [`guides-source` repository](https://github.com/ember-learn/guides-source/tree/5ec89c42179aa41cbb00a25ef9244e14977a0e72/scripts)
 using
 [`std::process::Command`](https://doc.rust-lang.org/std/process/struct.Command.html)
