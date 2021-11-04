@@ -314,8 +314,8 @@ Also, let's add the needed markup into our component's template:
 
 ```hbs
 // src/ui/components/glimmer-map/template.hbs
-<div class="glimmer-map">
-  <div id="map"></div>
+<div class='glimmer-map'>
+  <div id='map'></div>
 </div>
 ```
 
@@ -347,10 +347,24 @@ to these properties via actions by updating our template
 
 ```hbs
 <!-- src/ui/components/glimmer-map/template.hbs -->
-<div class="glimmer-map">
-  <div id="map"></div>
-  E: <input class="x-coord" type="number" step="0.0001" value={{lon}} oninput={{action setView}}/>
-  N: <input class="y-coord" type="number" step="0.0001" value={{lat}} oninput={{action setView}} />
+<div class='glimmer-map'>
+  <div id='map'></div>
+  E:
+  <input
+    class='x-coord'
+    type='number'
+    step='0.0001'
+    value={{lon}}
+    oninput={{action setView}}
+  />
+  N:
+  <input
+    class='y-coord'
+    type='number'
+    step='0.0001'
+    value={{lat}}
+    oninput={{action setView}}
+  />
 </div>
 ```
 

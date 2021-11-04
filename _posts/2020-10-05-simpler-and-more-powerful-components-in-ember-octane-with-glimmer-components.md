@@ -94,7 +94,7 @@ of pasta and a type of sauce and displays it with a button to order. The
 component is invoked like so:
 
 ```handlebars
-<OrderPasta @pasta="Spaghetti" @sauce="Carbonara" />
+<OrderPasta @pasta='Spaghetti' @sauce='Carbonara' />
 ```
 
 Now let us look at how both implementations differ. First, the Ember component:
@@ -117,7 +117,8 @@ export default Component.extend({
 ```
 
 ```handlebars
-<div>{{this.dishName}} <button {{action 'handleReservation'}}>Reserve</button></div>
+<div>{{this.dishName}}
+  <button {{action 'handleReservation'}}>Reserve</button></div>
 ```
 
 And now the Glimmer component:
@@ -141,7 +142,8 @@ export default class OrderPasta extends Component {
 ```
 
 ```handlebars
-<div>{{this.dishName}} <button {{on 'click' this.handleReservation}}>Reserve</button></div>
+<div>{{this.dishName}}
+  <button {{on 'click' this.handleReservation}}>Reserve</button></div>
 ```
 
 I won't go into details on the `action` to `on` modifier changes, but notice how
@@ -258,16 +260,20 @@ Now you can call `MyButton` and dynamically change the class and the attribute:
 
 ```handlebars
 <MyButton>Click me</MyButton>
-{{!-- renders --}} <button class="primary">Click me</button>
+{{! renders }}
+<button class='primary'>Click me</button>
 
 <MyButton @isDisabled={{true}}>Click me</MyButton>
-{{!-- renders --}} <button class="primary" disabled>Click me</button>
+{{! renders }}
+<button class='primary' disabled>Click me</button>
 
 <MyButton @buttonType={{'secondary'}}>Click me</MyButton>
-{{!-- renders --}} <button class="secondary">Click me</button>
+{{! renders }}
+<button class='secondary'>Click me</button>
 
 <MyButton @isDisabled={{true}} @buttonType={{'secondary'}}>Click me</MyButton>
-{{!-- renders --}} <button class="secondary" disabled>Click me</button>
+{{! renders }}
+<button class='secondary' disabled>Click me</button>
 ```
 
 You might look at this example and think, why are we using JavaScript to specify
@@ -283,10 +289,7 @@ the component class to the template, so we don't need the JavaScript file.
 
 ```handlebars
 // app/components/my-button.hbs
-<button
-  class={{if @buttonType @buttonType 'primary'}}
-  ...attributes
->
+<button class={{if @buttonType @buttonType 'primary'}} ...attributes>
   {{yield}}
 </button>
 ```
@@ -302,15 +305,10 @@ classes in the component with whatever you pass to the component:
 
 ````handlebars
 // app/components/my-button.hbs
-<button
-  class='primary'
-  ...attributes
->
+<button class='primary' ...attributes>
   {{yield}}
-</button>```
-
-```handlebars
-<MyButton class="two">Multiple classes</MyButton>
+</button>``` ```handlebars
+<MyButton class='two'>Multiple classes</MyButton>
 ````
 
 Renders:
@@ -326,16 +324,20 @@ our Glimmer component, we need to update how we're calling the component:
 
 ```handlebars
 <MyButton>Click me</MyButton>
-{{!-- renders --}} <button class="primary">Click me</button>
+{{! renders }}
+<button class='primary'>Click me</button>
 
 <MyButton disabled>Click me</MyButton>
-{{!-- renders --}} <button class="primary" disabled>Click me</button>
+{{! renders }}
+<button class='primary' disabled>Click me</button>
 
 <MyButton @buttonType={{'secondary'}}>Click me</MyButton>
-{{!-- renders --}} <button class="secondary">Click me</button>
+{{! renders }}
+<button class='secondary'>Click me</button>
 
 <MyButton @buttonType={{'secondary'}} disabled={{true}}>Click me</MyButton>
-{{!-- renders --}} <button class="secondary" disabled>Click me</button>
+{{! renders }}
+<button class='secondary' disabled>Click me</button>
 ```
 
 A common point of dissatisfaction with frameworks, including Ember, is the so
