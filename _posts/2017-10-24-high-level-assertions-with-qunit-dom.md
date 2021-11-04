@@ -23,7 +23,7 @@ As an introduction to what this means let's start with an example template for
 an Ember app that we will write a test for:
 
 ```handlebars
-<h1 class="title {{if username "has-username"}}">
+<h1 class='title {{if username 'has-username'}}'>
   {{#if username}}
     Welcome to Ember,
     <strong>{{username}}</strong>!

@@ -48,10 +48,14 @@ implement a regular login form with username and password fields:
 
 ```hbs
 <form>
-  <label for="loginOrEmail">Login or Email</label>
-  {{view Ember.TextField valueBinding="loginOrEmail" placeholder="Login or Email"}}
-  <label for="password">Password</label>
-  {{view Ember.TextField valueBinding="password" placeholder="Password"}}
+  <label for='loginOrEmail'>Login or Email</label>
+  {{view
+    Ember.TextField
+    valueBinding='loginOrEmail'
+    placeholder='Login or Email'
+  }}
+  <label for='password'>Password</label>
+  {{view Ember.TextField valueBinding='password' placeholder='Password'}}
   <button {{action 'createSession'}}>Login</button>
 </form>
 ```

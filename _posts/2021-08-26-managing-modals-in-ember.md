@@ -61,7 +61,7 @@ communicate data in the preferred Data-Down-Actions-Up pattern of Ember.js.
 {{! example modal component using passed data and close action}}
 <div>
   <header>
-    <button type="button" {{on "click" @close}}>Close</button>
+    <button type='button' {{on 'click' @close}}>Close</button>
   </header>
   <p>{{@data.question}}</p>
 </div>

@@ -210,7 +210,7 @@ generates a wrapping `<div>` with a custom `style` attribute which contains the
 width when styling child elements of this component.
 
 ```hbs
-<div ...attributes class="eh-background" style={{this.style}}>
+<div ...attributes class='eh-background' style={{this.style}}>
   {{yield}}
 </div>
 ```
@@ -272,9 +272,9 @@ detected and `false` on the corresponding `mouseup`.
 ```hbs
 <div
   ...attributes
-  class="eh-hotspot {{if this.ehHotspots.showHotspots "eh-hotspot--highlight"}}"
+  class='eh-hotspot {{if this.ehHotspots.showHotspots 'eh-hotspot--highlight'}}'
   style={{this.style}}
-  role={{if this.isInteractive (if @route "link" "button")}}
+  role={{if this.isInteractive (if @route 'link' 'button')}}
   {{on this.triggerEvent this.onTrigger}}
 >
   {{yield}}
@@ -301,10 +301,8 @@ export default class EHHotspotComponent extends Component {
     const styles = [`top:${y}px`, `left:${x}px`];
 
     if (this.args.src) {
-      const {
-        width: imageWidth,
-        height: imageHeight,
-      } = this.backgroundImageInfo;
+      const { width: imageWidth, height: imageHeight } =
+        this.backgroundImageInfo;
 
       styles.push(
         `width:${imageWidth}px`,
@@ -333,9 +331,9 @@ export default class EHHotspotComponent extends Component {
 ![Better click dummies and prototypes with Ember.js](/assets/images/posts/2020-12-15-building-prototypes-with-emberjs-and-ember-hotspots/ember-hotspots-animation.gif)
 
 ```hbs
-<EhBackground @src="Home@2x.png">
+<EhBackground @src='Home@2x.png'>
   {{#if this.showMenu}}
-    <EhHotspot @rect={{array 40 40}} @src="Menu@2x.png" />
+    <EhHotspot @rect={{array 40 40}} @src='Menu@2x.png' />
   {{/if}}
 
   <EhHotspot
@@ -345,16 +343,16 @@ export default class EHHotspotComponent extends Component {
 
   <EhHotspot
     @rect={{array 341 671 304 90}}
-    @src={{if this.btnCargoHover "button-install-cargo@2x.png"}}
+    @src={{if this.btnCargoHover 'button-install-cargo@2x.png'}}
     @action={{fn (mut this.btnCargoHover) (not this.btnCargoHover)}}
-    @trigger="hover"
+    @trigger='hover'
   />
 
   <EhHotspot
     @rect={{array 655 671 290 90}}
-    @src={{if this.btnGetStartedHover "button-get-started@2x.png"}}
+    @src={{if this.btnGetStartedHover 'button-get-started@2x.png'}}
     @action={{fn (mut this.btnGetStartedHover) (not this.btnGetStartedHover)}}
-    @trigger="hover"
+    @trigger='hover'
   />
 </EhBackground>
 ```
