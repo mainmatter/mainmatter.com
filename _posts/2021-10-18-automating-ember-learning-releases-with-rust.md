@@ -9,7 +9,7 @@ description:
   'Ricardo Mendes discusses a command-line tool built in Rust that automates the
   releases process for the Ember Core Learning Team'
 og:
-  image: /assets/images/posts/2021-07-13-effective-infrastructure-for-efficient-development-workflows/og-image.png
+  image: /assets/images/posts/2021-10-18-automating-ember-learning-releases-with-rust/og-image.png
 ---
 
 It's not trivial to release a new version of Ember. This process involves
@@ -19,7 +19,7 @@ the tool that is used to automate part of the Ember release.
 
 <!--break-->
 
-![Effective infrastructure for efficient development workflows illustration](/assets/images/posts/2021-07-13-effective-infrastructure-for-efficient-development-workflows/illustration.svg#full)
+![Effective infrastructure for efficient development workflows illustration](/assets/images/posts/2021-10-18-automating-ember-learning-releases-with-rust/illustration.png#full)
 
 ## Release process for the Ember project
 
