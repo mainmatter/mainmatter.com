@@ -12,10 +12,10 @@ og:
   image: /assets/images/posts/2021-10-18-automating-ember-learning-releases-with-rust/og-image.png
 ---
 
-It's not trivial to release a new version of Ember. This process involves
+Releasing a new version of Ember is no uncomplicated task. This process involves
 several different core teams, who are responsible for several packages and
-resources between them. In this post we will go through how I used Rust to build
-the tool that is used to automate part of the Ember release.
+resources between them. In this post, I will explain how I used Rust to build a
+tool that automates part of the Ember release process.
 
 <!--break-->
 
