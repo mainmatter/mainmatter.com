@@ -10,7 +10,7 @@
     {%- endif -%}
 
     <title>{{ pageTitle }}</title>
-
+    {% include "global/fonts.njk" %}
     <link rel="stylesheet" href="/assets/css/app.css" />
     <script src="/assets/js/app.js" defer></script>
     {% block head %}{{ head | safe }}{% endblock %}
