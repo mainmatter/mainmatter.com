@@ -15,11 +15,38 @@
     margin: 3rem auto;
   }
 
+  .image--full {
+    position: relative;
+    max-width: none;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  iframe,
+  video {
+    margin: 2rem auto;
+    width: 100%;
+  }
+
   figure {
     margin: 3rem auto;
 
     img {
       margin: 0 0 0.5rem;
+    }
+  }
+
+  &--wide-images {
+    @media (min-width: 62em) {
+      img {
+        max-width: none;
+        width: calc(100% + 20vw);
+        margin-left: -10vw;
+        margin-right: -10vw;
+      }
     }
   }
 }

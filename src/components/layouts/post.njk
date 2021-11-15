@@ -2,8 +2,10 @@
 layout: base
 ---
 {%- block content -%}
-  <h1>{{ title }}</h1>
-  <article>
-    {{ content | safe }}
-  </article>
+  <div class="post">
+    <h1 class="post__title">{{ title }}</h1>
+    <article class="post__body rte rte--wide-images">
+      {{ content | safe }}
+    </article>
+  </div>
 {%- endblock -%}

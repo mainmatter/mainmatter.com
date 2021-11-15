@@ -12,6 +12,8 @@
 
 .column-list__item {
   margin-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: rem-calc(2) solid currentColor;
 
   &::before {
     counter-increment: column-list;
@@ -21,7 +23,7 @@
     height: rem-calc(40);
     margin-bottom: 1rem;
     line-height: 2.375rem;
-    color: var(--color-white);
+    color: var(--color-purple);
     border: rem-calc(2) solid currentColor;
     border-radius: 50%;
     text-align: center;

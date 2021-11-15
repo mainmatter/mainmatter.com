@@ -9,8 +9,8 @@ Example usage:
 {{ columnList(principles.list, 'Our principles') }}
 #}
 
-{%- macro columnList(list, heading) -%}
-  <section class="column-list">
+{%- macro columnList(list, heading, class) -%}
+  <section class="column-list {{ class }}">
     <div class="container container--lg">
       {% if heading %}<h2 class="column-list__heading">{{ heading }}</h2>{% endif %}
       <ol class="column-list__list">
