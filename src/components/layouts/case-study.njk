@@ -1,0 +1,12 @@
+---
+layout: base
+---
+{%- block content -%}
+  <div class="post">
+    <h1 class="post__title">{{ display_title }}</h1>
+    <article class="post__body rte">
+      {{ content | safe }}
+    </article>
+  </div>
+  {% include 'work-with-us.njk' %}
+{%- endblock -%}
