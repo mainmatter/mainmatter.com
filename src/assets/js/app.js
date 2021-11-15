@@ -1,3 +1,10 @@
-import { animations } from "./animations";
+import "wicg-inert";
+import { Animations } from "./animations";
+import bindAccordions from "./accordions";
+import { Nav } from "./nav";
 
-new animations();
+const navElement = document.getElementById("nav");
+new Nav(navElement);
+
+new Animations();
+bindAccordions();

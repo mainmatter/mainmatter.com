@@ -1,6 +1,6 @@
 import lax from "lax.js";
 
-export class animations {
+export class Animations {
   constructor() {
     if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
       lax.init();
@@ -19,8 +19,7 @@ export class animations {
             ["elInY", "elOutY"],
             {
               768: [0, 0],
-              1366: [50, -200],
-              2000: [100, -250],
+              1366: [50, -100],
             },
           ],
         },
@@ -35,6 +34,9 @@ export class animations {
             {
               768: [0, 0],
               1366: [0, -100],
+            },
+            {
+              cssUnit: "vw",
             },
           ],
         },

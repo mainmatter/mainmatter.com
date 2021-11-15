@@ -1,0 +1,29 @@
+<div class="nav__mobile-menu mobile-menu">
+  <ul class="mobile-menu__list">
+    {%- for entry in navPages %}
+      <li class="mobile-menu__item">
+        {% if entry.children.length > 0 %}
+          <a class="mobile-menu__link mobile-menu__link--dropdown h2" {% if entry.url == page.url %}aria-current="page"{% endif %} href="{{ entry.url | url }}">
+            {{ entry.title }}
+          </a>
+          <button class="mobile-menu__toggle" aria-expanded="false" data-accordion-toggle="accordion-{{ entry.title | slug }}">
+            {% include 'svg/arrow.njk' %}
+          </button>
+          <ul class="mobile-menu__dropdown" id="accordion-{{ entry.title | slug }}" data-accordion>
+            {% for childEntry in entry.children %}
+              <li class="mobile-menu__dropdown-item">
+                <a class="mobile-menu__dropdown-link text--accent text--xs" {% if childEntry.url == page.url %}aria-current="page"{% endif %} href="{{ childEntry.url | url }}">
+                  {{ childEntry.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <a class="mobile-menu__link h2" {% if entry.url == page.url %}aria-current="page"{% endif %} href="{{ entry.url | url }}">
+            {{ entry.title }}
+          </a>
+        {% endif %}
+      </li>
+    {%- endfor %}
+  </ul>
+</div>
