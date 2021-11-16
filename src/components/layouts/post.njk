@@ -4,8 +4,32 @@ layout: base
 {%- block content -%}
   <div class="post">
     <h1 class="post__title">{{ title }}</h1>
-    <article class="post__body rte rte--wide-images">
+    <article class="post__body rte rte--wide-images rte--taglines">
       {{ content | safe }}
     </article>
+    <nav aria-label="Post Pagination" class="prev-next container container--lg">
+      {% set previous = collections.posts | getPreviousCollectionItem(page) %}
+      {% set next = collections.posts | getNextCollectionItem(page) %}
+      {% if previous %}
+        <a class="prev-next__link prev-next__link--prev" href="{{ previous.url }}">
+          <p class="prev-next__label text--accent">
+            <span class="prev-next__arrow">{% include 'svg/arrow.njk' %}</span>
+            Previous
+            <span class="prev-next__label-optional">Post</span>
+          </p>
+          <p class="prev-next__title">{{ previous.data.title }}</p>
+        </a>
+      {% endif %}
+      {% if next %}
+        <a class="prev-next__link prev-next__link--next" href="{{ next.url }}">
+          <p class="prev-next__label text--accent">
+            Next
+            <span class="prev-next__label-optional">Post</span>
+            <span class="prev-next__arrow">{% include 'svg/arrow.njk' %}</span>
+          </p>
+          <p class="prev-next__title">{{ next.data.title }}</p>
+        </a>
+      {% endif %}
+    </nav>
   </div>
 {%- endblock -%}

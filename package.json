@@ -11,7 +11,7 @@
     "js": "rollup --config ./rollup.config.js --watch",
     "watch": "cross-env ELEVENTY_ENV=development && run-p sass js serve",
     "sass": "sass src/assets/css/app.scss ./assets/css/app.css --style=compressed --watch",
-    "serve": "eleventy  --incremental --quiet --serve --port=8080",
+    "serve": "eleventy  --quiet --serve --port=8080",
     "dev": "npm run watch"
   },
   "devDependencies": {
