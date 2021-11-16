@@ -7,6 +7,30 @@ layout: base
     <article class="post__body rte">
       {{ content | safe }}
     </article>
+    <nav aria-label="Case Study Pagination" class="prev-next container container--lg">
+      {% set previous = collections.caseStudies | getPreviousCollectionItem(page) %}
+      {% set next = collections.caseStudies | getNextCollectionItem(page) %}
+      {% if previous %}
+        <a class="prev-next__link prev-next__link--prev" href="{{ previous.url }}">
+          <p class="prev-next__label text--accent">
+            <span class="prev-next__arrow">{% include 'svg/arrow.njk' %}</span>
+            Previous
+            <span class="prev-next__label-optional">Post</span>
+          </p>
+          <p class="prev-next__title">{{ previous.data.display_title }}</p>
+        </a>
+      {% endif %}
+      {% if next %}
+        <a class="prev-next__link prev-next__link--next" href="{{ next.url }}">
+          <p class="prev-next__label text--accent">
+            Next
+            <span class="prev-next__label-optional">Post</span>
+            <span class="prev-next__arrow">{% include 'svg/arrow.njk' %}</span>
+          </p>
+          <p class="prev-next__title">{{ next.data.display_title }}</p>
+        </a>
+      {% endif %}
+    </nav>
   </div>
   {% include 'work-with-us.njk' %}
 {%- endblock -%}

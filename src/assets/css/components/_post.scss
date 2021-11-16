@@ -41,3 +41,10 @@
     pointer-events: auto;
   }
 }
+
+@media (min-width: 48em) {
+  .post__tagline {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}

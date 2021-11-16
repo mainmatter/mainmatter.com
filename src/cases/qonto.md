@@ -7,11 +7,15 @@ description: Qonto is a european B2B Neobank for freelancers and SMEs. We helped
 
 {% from "quote.njk" import quote %}
 
+<p class="post__tagline">
 Qonto is a european B2B Neobank for freelancers and SMEs. They offer bank accounts, virtual and physical credit
 cards, and tools for accounting and expenses management. They are serving over 75000 customers and have processed
 €10 Billion worth of transactions in 2019.
+</p>
+<p class="post__tagline">
 The FinTech company was rated among the five hottest startups in Europe by The Next Web and has raised more than
 €130 Million within three years since market entry in 2017.
+</p>
 
 ## The Challenge
 

@@ -5,21 +5,23 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .text-animation {
-    em {
-      display: inline-block;
-      position: relative;
+  body[data-js-enabled="true"] {
+    .text-animation {
+      em {
+        display: inline-block;
+        position: relative;
+      }
     }
-  }
 
-  .text-animation__cover {
-    display: block;
-    position: absolute;
-    top: -0.0625rem;
-    left: -0.0625rem;
-    right: -0.0625rem;
-    bottom: -0.0625rem;
-    background-color: var(--animation-color);
-    transform-origin: center left;
+    .text-animation__cover {
+      display: block;
+      position: absolute;
+      top: -0.0625rem;
+      left: -0.0625rem;
+      right: -0.0625rem;
+      bottom: -0.0625rem;
+      background-color: var(--animation-color);
+      transform-origin: center left;
+    }
   }
 }
