@@ -1,0 +1,22 @@
+{
+  "product-design": [
+    {
+      "heading": "Easy is delightful",
+      "text": "More than “making it pretty”, design is about providing users functional, effective tools to get the job done with confidence, speed and ease.",
+      "linkText": "Read more on the blog",
+      "linkUrl": "/blog/"
+    },
+    {
+      "heading": "Every interaction matters",
+      "text": "To craft products that users love means hearing every stakeholder, considering all edge cases, and paying attention to every corner of the design.",
+      "linkText": "We like doing things “the right way”",
+      "linkUrl": "/playbook/"
+    },
+    {
+      "heading": "Clean, Functional Design",
+      "text": "Modern interfaces should be aesthetic, clean and focused, so that even complicated functionalities can become places of joy and delight.",
+      "linkText": "Book a call with a designer",
+      "linkUrl": "/contact/"
+    }
+  ]
+}

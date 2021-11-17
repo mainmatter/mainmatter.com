@@ -3,11 +3,13 @@
   aspect-ratio: 3 / 4;
 
   &--purple {
+    --color-link-background: var(--color-blue);
     background-color: var(--color-purple);
     color: var(--color-white);
   }
 
   &--blue {
+    --color-link-background: var(--color-purple);
     background-color: var(--color-blue);
     color: var(--color-white);
   }
@@ -18,6 +20,7 @@
   }
 
   &--yellow {
+    --color-link-background: var(--color-aqua);
     background-color: var(--color-yellow);
     color: var(--color-black);
   }

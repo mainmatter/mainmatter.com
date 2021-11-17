@@ -8,6 +8,7 @@ heading: Optional string heading
 Example usage:
 {{ columnList(principles.list, 'Our principles') }}
 #}
+{% from "cta-link.njk" import ctaLink %}
 
 {%- macro columnList(list, heading, class) -%}
   <section class="column-list {{ class }}">
@@ -18,6 +19,9 @@ Example usage:
           <li class="column-list__item">
             <h3 class="column-list__item-heading">{{ item.heading }}</h3>
             <p class="column-list__text">{{ item.text }}</p>
+            {% if item.linkText %}
+              {{ ctaLink(item.linkUrl, item.linkText, 'column-list__link') }}
+            {% endif %}
           </li>
         {% endfor %}
       </ol>

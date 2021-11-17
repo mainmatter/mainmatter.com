@@ -1,0 +1,46 @@
+{#
+List section where list is split into two columns on desktop
+
+Configuration Options:
+color: One of the core brand colors
+content: A content block with the following options:
+  title: String or markup for heading. Text wrapped in <em> will have the text animation applied.
+  text: String or markup for body text
+  linkUrl: Optional link destination
+  linkText: Optional link textPosition
+  list: Array of list items
+
+Example usage:
+{% set 'content' = {
+  "title": "Guiding projects and teams to <em>sustainable</em> success",
+  "text": "Mainmatter is a digital product consultancy that designs and develops web applications. We realize projects with clients across the globe and teach them how along the way.",
+  "linkUrl": "/services/",
+  "linkText": "Our Services",
+  "list": list
+} %}
+{{ splitList('purple', content) }}
+#}
+{% from "cta-link.njk" import ctaLink %}
+
+{%- macro splitList(color, content) -%}
+  <section class="split-list split-list--{{ color }}">
+    <div class="split-list__container container container--lg">
+      <div class="split-list__main">
+        {% if content.title %}
+          <h2 class="split-list__title h2 text-animation">{{ content.title | safe }}</h2>
+        {% endif %}
+        {% if content.text %}
+          <p class="split-list__text">{{ content.text | safe }}</p>
+        {% endif %}
+        {% if content.linkUrl %}
+          {{ ctaLink(content.linkUrl, content.linkText, 'split-list__link') }}
+        {% endif %}
+      </div>
+      <ul class="split-list__list">
+        {% for item in content.list %}
+          <li class="split-list__list-item">{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+{%- endmacro -%}

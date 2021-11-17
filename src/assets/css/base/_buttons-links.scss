@@ -1,9 +1,39 @@
 .cta-link {
+  position: relative;
   display: inline-flex;
   align-items: center;
   color: var(--color-link-primary);
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -0.5em;
+    right: -0.5em;
+    top: -0.375em;
+    bottom: -0.375em;
+    background-color: var(--color-link-background);
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: 0.3s all ease;
+    z-index: 0;
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.cta-link__text {
+  position: relative;
+  z-index: 1;
 }
 
 .cta-link__arrow {
+  position: relative;
   margin-left: 1.125rem;
+  z-index: 1;
 }
