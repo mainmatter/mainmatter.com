@@ -144,8 +144,8 @@ instance as well as create `schema` off of `shape`.
 
 - `validate` is an asynchronous method that calls `validate` on our `schema`,
   awaits the result, resets errors if validations pass, otherwise catches an
-  error and sets it on the class instance. It's important that
-  the `abortEarly: false` option is passed to `schema.validate()` as otherwise if
+  error and sets it on the class instance. It's important that the
+  `abortEarly: false` option is passed to `schema.validate()` as otherwise if
   any field would throw an error, it would stop validating the rest of the data,
   which is not desired. Furthermore `validate` receives data returned from
   `#validationProperties`, the reason for that being Ember Proxies. In order to
@@ -199,10 +199,10 @@ export default class UserFormComponent extends Component {
 }
 ```
 
-Further on, there's an `ErrorMessage` component that receives a **list** of error
-messages and handles them in some way. Normally we'd show internationalized
-messages with the help of `ember-intl`, but in our case we'll just show their
-keys directly like so:
+Further on, there's an `ErrorMessage` component that receives a **list** of
+error messages and handles them in some way. Normally we'd show
+internationalized messages with the help of `ember-intl`, but in our case we'll
+just show their keys directly like so:
 
 ```hbs
 {{! error-message.hbs }}
@@ -281,8 +281,8 @@ At the end of the day the produced messages will look like this:
 }
 ```
 
-Let's see what messages are returned after the `User` model is validated when the
-form is submitted:
+Let's see what messages are returned after the `User` model is validated when
+the form is submitted:
 
 ![Internationalized user fields demo](/assets/images/posts/2021-11-23-validations-in-ember-apps/form-user-1.gif)
 
@@ -390,7 +390,7 @@ export default class UserModel extends Model {
 }
 ```
 
-![Internationalized user and pet fields demo](/assets/posts/2021-11-23-validations-in-ember-apps/form-user-with-pets-2.gif)
+![Internationalized user and pet fields demo](/assets/images/posts/2021-11-23-validations-in-ember-apps/form-user-with-pets-2.gif)
 
 ### Conditional validations
 
@@ -451,7 +451,7 @@ method of the `string` schema. The `when` method accepts a list of names of
 dependent properties, then we pass an object which specifies that the `name`
 attribute is not required when `isUserAllergic` is `true`.
 
-![Internationalized user and pet fields demo](/assets/posts/2021-11-23-validations-in-ember-apps/conditional-form-user-3.gif)
+![Internationalized user and pet fields demo](/assets/images/posts/2021-11-23-validations-in-ember-apps/conditional-form-user-3.gif)
 
 ### Summary
 
