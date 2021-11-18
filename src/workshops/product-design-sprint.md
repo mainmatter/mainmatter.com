@@ -1,6 +1,7 @@
 ---
 title: Product design sprint
-label: 1-2 week remote workshop <!--break-->with Mar High
+duration: 1–2 weeks
+format: Remote
 description:
   "Using Google's framework, we will answer your most pressing business
   questions through design, prototyping, and testing with real users."
@@ -8,27 +9,27 @@ tag: /assets/images/resources/workshops/product-design-sprint/fast-forward.svg
 og:
   image: /assets/images/resources/workshops/product-design-sprint/og-image.png
 topics:
-  - title: 'Day 1: Unpack'
+  - title: "Day 1: Unpack"
     image: /assets/images/resources/workshops/product-design-sprint/box.svg
     text: >
       Create a common understanding of the problem and set measurable goals to focus
       on solving throughout the sprint.
-  - title: 'Day 2: Sketch'
+  - title: "Day 2: Sketch"
     image: /assets/images/resources/workshops/product-design-sprint/edit.svg
     text: >
       Derive inspiration from existing solutions understanding why they work.
       Following that, we will sketch various strategies of our own.
-  - title: 'Day 3: Decide'
+  - title: "Day 3: Decide"
     image: /assets/images/resources/workshops/product-design-sprint/check.svg
     text: >
       Go through possible solutions and decide which are is most likely to solve our
       long-term goal.
-  - title: 'Day 4: Prototype'
+  - title: "Day 4: Prototype"
     image: /assets/images/resources/workshops/product-design-sprint/smartphone.svg
     text: >
       Create a realistic working prototype in just one day! At the same time, we
       prepare for user testing the next day.
-  - title: 'Day 5: Test'
+  - title: "Day 5: Test"
     image: /assets/images/resources/workshops/product-design-sprint/mic.svg
     text: >
       Receive feedback on the prototype from real customers and learn what’s working

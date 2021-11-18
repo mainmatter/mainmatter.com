@@ -1,18 +1,17 @@
 ---
 videoUrl: https://www.youtube-nocookie.com/embed/Y2_RAxUyW4o
 kind: built-to-last
-label: 'Built to Last #10: Expert insights'
+label: "Built to Last #10"
 title: Daniel Beutler, Executive Coach and Advisor
 pageTitle: Expert insights
 moreText: more Expert insights
 image: /assets/images/resources/videos/2021-08-09-built-to-last-10-daniel-beutler/daniel.jpg
-duration: '25:40'
+duration: "25:40"
 teaser:
   Daniel talks about accepting the necessity for change in a growing company to
   ensure the business keeps scaling.
 
-description:
-  simplabs' founder Marco Otte-Witte sat down for a conversation with
+description: simplabs' founder Marco Otte-Witte sat down for a conversation with
   interviewed Daniel Beutler, an executive coach and advisor and former
   President of Trainline International.
 

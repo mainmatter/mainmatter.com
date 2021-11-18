@@ -1,19 +1,21 @@
 ---
 videoUrl: https://www.youtube-nocookie.com/embed/3K9jQfpkGWU
 kind: talk
+tags: masterclass
 label: Talk with Marco Otte-Witte
 title: The three pillars of successful digital product development
 pageTitle: Real-world tips from simplabs
 image: /assets/images/resources/videos/2020-12-10-the-three-pillars-of-successful-digital-product-development/marco.jpg
-duration: '28:36'
+imageAlt: Marco Otte-Witte
+duration: "28:36"
 teaser:
-  'Marco Otte-Witte shares best practices for digital product development in the
+  "Marco Otte-Witte shares best practices for digital product development in the
   areas of planning and preparation, process and collaboration, as well as
-  infrastructure and practices.'
+  infrastructure and practices."
 description:
-  'Marco Otte-Witte talks about what pillars of efficient digital product
+  "Marco Otte-Witte talks about what pillars of efficient digital product
   development are in three areas: planning and preparation, process and
-  collaboration, and infrastructure and practices.'
+  collaboration, and infrastructure and practices."
 og:
   image: /assets/images/resources/videos/2020-12-10-the-three-pillars-of-successful-digital-product-development/og-image.png
 ---

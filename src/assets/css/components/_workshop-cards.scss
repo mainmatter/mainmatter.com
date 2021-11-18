@@ -1,0 +1,86 @@
+.workshop-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: rem-calc(26);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workshop-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.3s ease;
+
+  &:focus-within {
+    box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.25),
+      0 0 0 0.125rem var(--color-aqua);
+  }
+}
+
+.workshop-card__link {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+
+  &:hover {
+    & ~ .workshop-card__cta:before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.workshop-card__lead-image-wrapper {
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0;
+}
+
+.workshop-card__lead-image {
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-size: 0;
+  width: 5.438rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.workshop-card__title {
+  margin-top: 0.5rem;
+}
+
+.workshop-card__lead-text {
+  margin-top: 0.5rem;
+  font-size: rem-calc(13);
+}
+
+.workshop-card__meta {
+  display: flex;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+  gap: 2rem;
+  border-top: 0.125rem solid currentColor;
+  border-bottom: 0.125rem solid currentColor;
+  font-weight: 600;
+  font-size: rem-calc(13);
+}
+
+.workshop-card__description {
+  margin: 0.5rem 0;
+  font-size: rem-calc(13);
+}
+
+.workshop-card__cta {
+  align-self: flex-start;
+  margin-top: auto;
+}

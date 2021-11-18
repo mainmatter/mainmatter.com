@@ -1,12 +1,12 @@
 ---
 videoUrl: https://www.youtube-nocookie.com/embed/Ca5JHpl4c90
 kind: built-to-last
-label: 'Built to Last #8: Expert insights'
+label: "Built to Last #8"
 title: Roman Leuprecht, co-founder of Uniki
 pageTitle: Expert insights
 moreText: more Expert insights
 image: /assets/images/resources/videos/2021-05-28-built-to-last-8-roman-leuprecht/roman.jpg
-duration: '21:11'
+duration: "21:11"
 teaser:
   Roman shares his thoughts on the right approach to feature planning and the
   importance of getting feedback early on in the development process.

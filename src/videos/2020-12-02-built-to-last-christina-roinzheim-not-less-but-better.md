@@ -1,12 +1,12 @@
 ---
 videoUrl: https://www.youtube-nocookie.com/embed/esRwdhlwIw8
 kind: built-to-last
-label: 'Built to Last #1: Expert insights'
+label: "Built to Last #1"
 title: Christina Roizheim, co-founder of not less but better
 pageTitle: Expert insights
 moreText: more Expert insights
 image: /assets/images/resources/videos/2020-12-2-built-to-last-1-christina-roizheim/christina.jpg
-duration: '23:39'
+duration: "23:39"
 teaser:
   '"Pressure doesn''t solve problems" – a powerful takeaway from the co-founder
   of not less but better, an app that helps you overcome bad habits through

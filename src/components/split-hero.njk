@@ -9,6 +9,7 @@ content: A content block with the following options:
   text: String or markup for body text
   linkUrl: Optional link destination
   linkText: Optional link text
+  tags: Optional tag displayed above the header (not linked)
   image: Path to image in the file directory
   alt: Image alt text
   loading: Valid loading attribute for HTML img
@@ -17,6 +18,7 @@ Example usage:
 {% set 'content' = {
   "title": "Guiding projects and teams to <em>sustainable</em> success",
   "text": "Mainmatter is a digital product consultancy that designs and develops web applications. We realize projects with clients across the globe and teach them how along the way.",
+  "tags": ['Ember.js', 'Design']
   "linkUrl": "/services",
   "linkText": "Our Services",
   "image": "/assets/images/photos/collaboration@1200.jpg",
@@ -31,6 +33,15 @@ Example usage:
   <section class="split-hero split-hero--{{ color }}">
     <div class="split-hero__main split-hero__main--{{ desktopTextPosition }}">
       <div class="split-hero__container container">
+        {% if content.tags %}
+          <div class="split-hero__tags">
+            <ul class="tags">
+              {% for tag in content.tags %}
+                <li class="tag">{{ tag }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
         {% if content.title %}
           <h2 class="split-hero__title h1 text-animation">{{ content.title | safe }}</h2>
         {% endif %}

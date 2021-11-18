@@ -100,6 +100,14 @@ module.exports = function (eleventyConfig) {
     return "";
   });
 
+  eleventyConfig.addFilter("filterByAttribute", (array, attribute, value) => {
+    return array.filter((element) => element.data[attribute] === value);
+  });
+
+  eleventyConfig.addFilter("limit", (array, limit) => {
+    return array.slice(0, limit);
+  });
+
   /*
    * Add Transforms
    *
@@ -173,8 +181,8 @@ module.exports = function (eleventyConfig) {
     return Image.generateHTML(stats, imageAttributes);
   });
 
-  eleventyConfig.addShortcode("svg", (path) => {
-    const svgData = fs.readFileSync("./static/assets/images" + path, "utf8");
+  eleventyConfig.addShortcode("svg", (svgPath) => {
+    const svgData = fs.readFileSync("./static/assets/images" + svgPath, "utf8");
     const response = optimize(svgData, {
       plugins: [
         {

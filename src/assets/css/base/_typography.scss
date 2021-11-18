@@ -25,10 +25,10 @@ h3,
   margin: 0;
   font-family: var(--font-base);
   font-weight: 700;
-  font-size: rem-calc(16);
-  line-height: 1.2;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  font-size: rem-calc(24);
+  line-height: 1.25;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 h4,
@@ -36,10 +36,21 @@ h4,
   margin: 0;
   font-family: var(--font-base);
   font-weight: 700;
+  font-size: rem-calc(16);
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+}
+
+h5,
+.h5 {
+  margin: 0;
+  font-family: var(--font-base);
+  font-weight: 700;
   font-size: rem-calc(12);
   line-height: 1.1;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.125rem;
 }
 
 @media (min-width: 48em) {
@@ -53,8 +64,8 @@ h4,
     font-size: rem-calc(48);
   }
 
-  h3,
-  .h3 {
+  h4,
+  .h4 {
     font-size: 1.125rem;
   }
 }

@@ -1,0 +1,21 @@
+.tags {
+  margin-top: 0;
+  padding: 0;
+  margin-left: -0.25rem;
+  margin-bottom: -0.25rem;
+}
+
+.tag {
+  display: inline-block;
+  align-self: flex-start;
+  margin-left: 0.25rem;
+  margin-bottom: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: rem-calc(1);
+  text-transform: uppercase;
+  border-radius: 2rem;
+  border: rem-calc(1) solid currentColor;
+  color: var(--color-tag);
+}

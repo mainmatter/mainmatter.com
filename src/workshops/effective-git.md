@@ -1,6 +1,6 @@
 ---
 title: Effective Git
-label: Remote workshop with Chris <!--break-->Manson and Marco Otte-Witte
+format: Remote
 description:
   Git is at the center of modern pull request-based development workflows.
   Mastering it makes teams more productive and developers' jobs more enjoyable.
