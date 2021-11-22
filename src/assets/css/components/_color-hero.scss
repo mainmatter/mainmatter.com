@@ -1,27 +1,28 @@
 .color-hero {
   position: relative;
   aspect-ratio: 3 / 4;
+  overflow: hidden;
 
   &--purple {
     --color-link-background: var(--color-blue);
-    background-color: var(--color-purple);
+    --color-overlay: var(--color-purple);
     color: var(--color-white);
   }
 
   &--blue {
     --color-link-background: var(--color-purple);
-    background-color: var(--color-blue);
+    --color-overlay: var(--color-blue);
     color: var(--color-white);
   }
 
   &--aqua {
-    background-color: var(--color-aqua);
+    --color-overlay: var(--color-aqua);
     color: var(--color-black);
   }
 
   &--yellow {
     --color-link-background: var(--color-aqua);
-    background-color: var(--color-yellow);
+    --color-overlay: var(--color-yellow);
     color: var(--color-black);
   }
 }
@@ -32,9 +33,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  filter: contrast(1.5) grayscale(1);
+}
+
+.color-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-overlay);
+  backdrop-filter: contrast(1.5) grayscale(1) opacity(0.6);
   mix-blend-mode: multiply;
-  opacity: 0.6;
 }
 
 .color-hero__image {
@@ -49,6 +58,7 @@
   position: relative;
   min-height: 100%;
   padding: 3rem 0;
+  transform: translate3d(0, 0, 0);
 
   &--center {
     align-items: center;

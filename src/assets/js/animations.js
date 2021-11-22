@@ -7,41 +7,44 @@ export class Animations {
       lax.addDriver("scrollY", () => window.scrollY);
       this.textAnimations();
       this.imageWithTextAnimations();
+      this.colorHeroAnimations();
     }
   }
 
+  colorHeroAnimations() {
+    lax.addElements("[data-color-hero]", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY"],
+          ["elHeight", 0],
+        ],
+      },
+    });
+  }
+
   imageWithTextAnimations() {
-    lax.addElements(
-      "[data-image-animation='md']", // Element selector rule
-      {
-        scrollY: {
-          translateY: [
-            ["elInY", "elOutY"],
-            {
-              768: [0, 0],
-              1366: [50, -100],
-            },
-          ],
-        },
-      }
-    );
-    lax.addElements(
-      "[data-image-animation='sm']", // Element selector rule
-      {
-        scrollY: {
-          translateY: [
-            ["elInY", "elOutY"],
-            {
-              768: [0, 0],
-              1366: [0, -100],
-            },
-            {
-              cssUnit: "vw",
-            },
-          ],
-        },
-      }
-    );
+    lax.addElements("[data-image-animation='md']", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elOutY"],
+          {
+            768: [0, 0],
+            1366: ["elHeight / 3", "elHeight / 3 * -1"],
+          },
+        ],
+      },
+    });
+    lax.addElements("[data-image-animation='sm']", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elOutY"],
+          {
+            768: [0, 0],
+            1366: [0, "elHeight / 4 * -1"],
+          },
+        ],
+      },
+    });
   }
 
   textAnimations() {
