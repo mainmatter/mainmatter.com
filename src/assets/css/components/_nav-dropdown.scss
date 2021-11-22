@@ -17,6 +17,7 @@
     }
 
     & + .nav-dropdown__dropdown {
+      max-height: 10rem;
       visibility: visible;
       pointer-events: auto;
       opacity: 1;
@@ -34,9 +35,11 @@
   pointer-events: none;
   border-top: rem-calc(1) solid var(--color-white);
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
-  z-index: 5;
+  max-height: 0;
+  z-index: 6;
   visibility: hidden;
-  transition: 0.3s opacity ease, 0.3s visibility ease;
+  transition: 0.3s opacity ease, 0.3s max-height ease-in-out,
+    0.3s visibility ease;
 }
 
 .nav-dropdown__list {
