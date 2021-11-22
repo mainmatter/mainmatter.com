@@ -8,7 +8,7 @@ video: A video object
 #}
 {% from "cta-link.njk" import ctaLink %}
 {%- macro videoCard(video) -%}
-  <li class="video-card">
+  <div class="video-card">
     <a href="{{ video.url}}" class="video-card__link">
       <h3 class="screenreader">{{ video.data.title }}</h3>
     </a>
@@ -29,5 +29,5 @@ video: A video object
       <span class="cta-link__text">Find out more</span>
       <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
     </span>
-  </li>
+  </div>
 {%- endmacro -%}

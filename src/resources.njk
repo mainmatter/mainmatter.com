@@ -18,16 +18,20 @@ eleventyNavigation:
 } %}
 {{ splitHero('left', 'yellow', content) }}
 
-<section class="section container container--lg">
-  <div class="section__introduction container--xs">
-    <h2 class="section__title">Expert Insights</h2>
-    <p>Our interview series goes behind-the-scenes into what successful product development practices look like from tech and startup insiders’ perspectives.</p>
+<section class="section">
+  <div class="container container--lg">
+    <div class="section__introduction container--xs">
+      <h2 class="section__title">Expert Insights</h2>
+      <p>Our interview series goes behind-the-scenes into what successful product development practices look like from tech and startup insiders’ perspectives.</p>
+    </div>
   </div>
-  <ul class="video-cards">
-    {% set videos = collections.videos | filterByAttribute('kind', 'built-to-last') | limit(3) %}
+  <ul class="video-cards video-cards--overflow">
+    {% set videos = collections.videos | filterByAttribute('kind', 'built-to-last') %}
     {%- for video in videos -%}
       {%- if video.data.kind == 'built-to-last' -%}
-        {{ videoCard(video) }}
+        <li class="video-card__flow-item">
+          {{ videoCard(video) }}
+        </li>
       {%- endif -%}
     {%- endfor -%}
   </ul>
@@ -52,7 +56,7 @@ eleventyNavigation:
     <p>Designed to help teams build sustainable products that work well and keep working well.</p>
   </div>
   <ul class="workshop-cards">
-    {% set workshops = collections.workshops  | limit(3) %}
+    {% set workshops = collections.workshops %}
     {%- for workshop in workshops -%}
       {{ workshopCard(workshop) }}
     {%- endfor -%}
