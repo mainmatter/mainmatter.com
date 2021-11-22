@@ -1,19 +1,14 @@
 ---
-title: "Trying your GitHub Actions locally"
+title: 'Trying your GitHub Actions locally'
 authorHandle: sami_dbc
 tags: github
-bio: "Senior Frontend Engineer"
-description: "Samanta de Barros on how to try locally your GitHub Actions"
+bio: 'Senior Frontend Engineer'
+description: 'Samanta de Barros on how to try locally your GitHub Actions'
 og:
   image: /assets/images/posts/2021-03-15-trying-github-actions-locally/og-image.png
+tagline: |
+  <p>If, like me, configuring <a href="https://docs.github.com/en/actions">GitHub Actions</a> is not your thing and you find yourself wanting to try something before actually pushing it to GitHub (and having to see the effects on real-life), follow this step by step of how to run your GitHub Actions on your own computer.</p>
 ---
-
-If, like me, configuring [GitHub Actions](https://docs.github.com/en/actions) is
-not your thing and you find yourself wanting to try something before actually
-pushing it to GitHub (and having to see the effects on real-life), follow this
-step by step of how to run your GitHub Actions on your own computer.
-
-<!--break-->
 
 ![Trying your GitHub Actions locally illustration](/assets/images/posts/2021-03-15-trying-github-actions-locally/illustration.svg#full)
 
@@ -52,6 +47,7 @@ event.
 As an example, our release workflow looks something like this:
 
 ```jsx
+{% raw %}
 on:
   push:
     tags:
@@ -75,6 +71,7 @@ jobs:
         run: cd packages/ember-simple-auth && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+{% endraw %}
 ```
 
 On every push of a tag, we release whatever is in that tag to npm.

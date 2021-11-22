@@ -1,22 +1,16 @@
 ---
-title: "SPAs, PWAs and SSR"
+title: 'SPAs, PWAs and SSR'
 authorHandle: marcoow
 tags: javascript
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
 description:
-  "Marco Otte-Witte dives deep into different approaches for building web apps
-  like SPAs, PWAs, SSR and how they all can be combined for the best result."
+  'Marco Otte-Witte dives deep into different approaches for building web apps
+  like SPAs, PWAs, SSR and how they all can be combined for the best result.'
 og:
   image: /assets/images/posts/2019-04-05-spas-pwas-and-ssr/og-image.png
+tagline: |
+  <p>Single Page Apps, Progressive Web Apps and classic Server side rendered websites are often seen as orthogonal approaches to building web apps where only one is best suited for a particular project and one has to make a choice to go with one of them. In this post we'll explore why that doesn't have to be the case, since all 3 approaches can actually be combined in order to achieve the best result.</p>
 ---
-
-Single Page Apps, Progressive Web Apps and classic Server side rendered websites
-are often seen as orthogonal approaches to building web apps where only one is
-best suited for a particular project and one has to make a choice to go with one
-of them. In this post we'll explore why that doesn't have to be the case, since
-all 3 approaches can actually be combined in order to achieve the best result.
-
-<!--break-->
 
 ## Desktop-grade apps
 

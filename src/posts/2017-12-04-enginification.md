@@ -1,20 +1,14 @@
 ---
 title: Enginification
 authorHandle: pangratz
-bio: "Full-Stack Engineer, Ember Data core team member"
+bio: 'Full-Stack Engineer, Ember Data core team member'
 description:
-  "Clemens Müller gives an overview of Ember Engines and shows how they can be
-  used to reduce the footprint of big applications for an improved startup time."
+  'Clemens Müller gives an overview of Ember Engines and shows how they can be
+  used to reduce the footprint of big applications for an improved startup time.'
 tags: ember
+tagline: |
+  <p>We recently improved the initial load time of an Ember.js app for mobile clients, by using <a href="http://ember-engines.com/">Ember Engines</a> and leveraging that to lazily loaded parts of the app's code. In this blog post we're going to show how we extracted the engine out of the app and discuss some smaller issues we ran into along the way and how we solved them. So let's dive right in!</p>
 ---
-
-We recently improved the initial load time of an Ember.js app for mobile
-clients, by using [Ember Engines](http://ember-engines.com/) and leveraging that
-to lazily loaded parts of the app's code. In this blog post we're going to show
-how we extracted the engine out of the app and discuss some smaller issues we
-ran into along the way and how we solved them. So let's dive right in!
-
-<!--break-->
 
 ## Status quo
 
@@ -86,7 +80,8 @@ Since the component is now located within the `addon` folder, we need to modify
 used:
 
 ```js
-import layout from "../templates/components/loading-indicator";
+{% raw %}
+import layout from '../templates/components/loading-indicator';
 
 export default Component.extend({
   // this is needed so the template within addon/templates/components is used
@@ -94,6 +89,7 @@ export default Component.extend({
 
   // previous code of the component
 });
+{% endraw %}
 ```
 
 The application uses
@@ -123,7 +119,7 @@ addon are included in the hosting app:
 ```scss
 // lib/common/app/styles/common.scss
 
-@import "common/components/loading-indicator";
+@import 'common/components/loading-indicator';
 ```
 
 Within the app we import the style definitions for the common addon, so all the
@@ -133,7 +129,7 @@ and `mixins` defined in the common addon.
 ```scss
 // app/styles/app.scss
 
-@import "common";
+@import 'common';
 ```
 
 After all that is done, we now have all common components and helpers, as well
@@ -160,7 +156,8 @@ The first thing we want to do is to depend on the `common` in-repo addon, so we
 can re-use the common elements within the engine. Let's take a look at
 `lib/booking-flow/package.json`:
 
-```json
+```js
+{% raw %}on
 {
   "name": "booking-flow",
 
@@ -173,6 +170,7 @@ can re-use the common elements within the engine. Let's take a look at
     "paths": ["../common"]
   }
 }
+{% endraw %}
 ```
 
 After that we can start to move all the routes, components, services which are
@@ -187,6 +185,7 @@ engines styles. For the imports to work properly, we need to add the path to the
 `common` addon to the `sassOptions` of the engine:
 
 ```js
+{% raw %}
 // lib/booking-flow/index.js
 const EngineAddon = require('ember-engines/lib/engine-addon');
 
@@ -201,6 +200,7 @@ module.exports = EngineAddon.extend({
     includePaths: ['lib/common/app/styles']
   }
 }
+{% endraw %}
 ```
 
 By this we can import the variables, colors and mixins in the engines' style
@@ -210,8 +210,8 @@ definitions. And since we namespaced the files in the `common` addon under the
 ```scss
 // lib/booking-flow/addon/styles/components/booking-button.scss
 
-@import "common/colors";
-@import "common/mixins/button";
+@import 'common/colors';
+@import 'common/mixins/button';
 
 .booking-button {
   @include button-rounded-mixin;
@@ -233,6 +233,7 @@ needs to be loaded, parsed and compiled to boot up the application. This is as
 hard work as switching a boolean:
 
 ```js
+{% raw %}
 // lib/booking-flow/index.js
 const EngineAddon = require('ember-engines/lib/engine-addon');
 
@@ -248,6 +249,7 @@ module.exports = EngineAddon.extend({
     includePaths: ['lib/common/app/styles']
   }
 }
+{% endraw %}
 ```
 
 And et voilà: we now have 3 new, separate assets, which are loaded on demand

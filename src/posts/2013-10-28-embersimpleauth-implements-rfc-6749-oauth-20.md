@@ -1,30 +1,15 @@
 ---
-title: "Ember.SimpleAuth implements RFC 6749 (OAuth 2.0)"
+title: 'Ember.SimpleAuth implements RFC 6749 (OAuth 2.0)'
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
 description:
-  "Marco Otte-Witte announces support for OAuth 2.0 in Ember.SimpleAuth, the
+  'Marco Otte-Witte announces support for OAuth 2.0 in Ember.SimpleAuth, the
   addon for implementing a session and authentication/authorization for
-  Ember.js."
+  Ember.js.'
 tags: ember
+tagline: |
+  <p><strong>Update: <a href="/blog/2014/01/20/embersimpleauth-010">Ember.SimpleAuth 0.1.0 has been released!</a></strong> The information in this is (partially) outdated.</p> <p>With the <a href="https://github.com/simplabs/ember-simple-auth/releases/tag/0.0.4">release of Ember.SimpleAuth 0.0.4</a> <strong>the library is compliant with OAuth 2.0</strong> - specifically it implements the <em>&quot;Resource Owner Password Credentials Grant Type&quot;</em> as defined in <a href="http://tools.ietf.org/html/rfc6749">RFC 6749</a> (thanks <a href="https://github.com/adamlc">adamlc</a> for the suggestion). While this is only a minor change in terms of functionality and data flow, used headers etc. it makes everyone’s life a lot easier as instead of implementing your own server endpoints you can now utilize <a href="https://github.com/search?q=oauth%20middleware">one of several OAuth 2.0 middlewares that already implement the spec</a>.</p>
 ---
-
-**Update:
-[Ember.SimpleAuth 0.1.0 has been released!](/blog/2014/01/20/embersimpleauth-010)**
-The information in this is (partially) outdated.
-
-With the
-[release of Ember.SimpleAuth 0.0.4](https://github.com/simplabs/ember-simple-auth/releases/tag/0.0.4)
-**the library is compliant with OAuth 2.0** - specifically it implements the
-_"Resource Owner Password Credentials Grant Type"_ as defined in
-[RFC 6749](http://tools.ietf.org/html/rfc6749) (thanks
-[adamlc](https://github.com/adamlc) for the suggestion). While this is only a
-minor change in terms of functionality and data flow, used headers etc. it makes
-everyone’s life a lot easier as instead of implementing your own server
-endpoints you can now utilize
-[one of several OAuth 2.0 middlewares that already implement the spec](https://github.com/search?q=oauth%20middleware).
-
-<!--break-->
 
 With the OAuth 2.0 support also comes **support for access token expiration and
 [refresh tokens](http://tools.ietf.org/html/rfc6749#section-6)**. Using expiring
@@ -44,24 +29,26 @@ the `ApplicationControllerMixin` and the `/logout` route has been removed. The
 new API now looks like this:
 
 ```js
+{% raw %}
 Ember.Application.initializer({
-  name: "authentication",
+  name: 'authentication',
   initialize: function (container, application) {
     Ember.SimpleAuth.setup(container, application);
   },
 });
 
 App.Router.map(function () {
-  this.route("login");
-  this.route("protected");
+  this.route('login');
+  this.route('protected');
 });
 
 App.ApplicationRoute = Ember.Route.extend(
-  Ember.SimpleAuth.ApplicationRouteMixin
+  Ember.SimpleAuth.ApplicationRouteMixin,
 );
 App.LoginController = Ember.Controller.extend(
-  Ember.SimpleAuth.LoginControllerMixin
+  Ember.SimpleAuth.LoginControllerMixin,
 );
+{% endraw %}
 ```
 
 ## Future plans

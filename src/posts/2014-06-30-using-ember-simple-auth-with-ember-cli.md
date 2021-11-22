@@ -1,21 +1,14 @@
 ---
-title: "Using Ember Simple Auth with ember-cli"
+title: 'Using Ember Simple Auth with ember-cli'
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
 description:
-  "Marco Otte-Witte announces the release of ember-cli-simple-auth as an Ember
-  CLI addon."
+  'Marco Otte-Witte announces the release of ember-cli-simple-auth as an Ember
+  CLI addon.'
 tags: ember
+tagline: |
+  <p>With the latest release of <a href="https://github.com/simplabs/ember-simple-auth">Ember Simple Auth</a>, using the library with <a href="https://github.com/ember-cli/ember-cli">ember-cli</a> has become much simpler. As ember-cli in general is still pretty new to many people though, <strong>this post describes how to setup a project using Ember Simple Auth with ember-cli</strong>.</p>
 ---
-
-With the latest release of
-[Ember Simple Auth](https://github.com/simplabs/ember-simple-auth), using the
-library with [ember-cli](https://github.com/ember-cli/ember-cli) has become much
-simpler. As ember-cli in general is still pretty new to many people though,
-**this post describes how to setup a project using Ember Simple Auth with
-ember-cli**.
-
-<!--break-->
 
 ## Setting up the basic project
 
@@ -62,20 +55,21 @@ You can add a login route and login/logout links to verify it all actually
 works:
 
 ```js
+{% raw %}
 // app/router.js
 …
 Router.map(function() {
   this.route('login');
 });
 …
+{% endraw %}
 ```
 
 ```hbs
 {% raw %}
-// app/templates/application.hbs
-…
+// app/templates/application.hbs …
 {{#if session.isAuthenticated}}
-  <a {{ action 'invalidateSession' }}>Logout</a>
+  <a {{action 'invalidateSession'}}>Logout</a>
 {{else}}
   {{#link-to 'login'}}Login{{/link-to}}
 {{/if}}
@@ -86,11 +80,13 @@ Router.map(function() {
 Also implement the `ApplicationRouteMixin` in the project’s application route:
 
 ```js
+{% raw %}
 // app/routes/application.js
-import Ember from "ember";
-import ApplicationRouteMixin from "simple-auth/mixins/application-route-mixin";
+import Ember from 'ember';
+import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 
 export default Ember.Route.extend(ApplicationRouteMixin);
+{% endraw %}
 ```
 
 ## Setting up authentication
@@ -116,11 +112,16 @@ The OAuth 2.0 authentication mechanism needs a login form, so let’s create tha
 {% raw %}
 // app/templates/login.hbs
 <form {{action 'authenticate' on='submit'}}>
-  <label for="identification">Login</label>
+  <label for='identification'>Login</label>
   {{input id='identification' placeholder='Enter Login' value=identification}}
-  <label for="password">Password</label>
-  {{input id='password' placeholder='Enter Password' type='password' value=password}}
-  <button type="submit">Login</button>
+  <label for='password'>Password</label>
+  {{input
+    id='password'
+    placeholder='Enter Password'
+    type='password'
+    value=password
+  }}
+  <button type='submit'>Login</button>
 </form>
 {% endraw %}
 ```
@@ -129,13 +130,15 @@ Then implement the `LoginControllerMixin` in the login controller and make that
 use the OAuth 2.0 authenticator to perform the actual authentication:
 
 ```js
+{% raw %}
 // app/controllers/login.js
-import Ember from "ember";
-import LoginControllerMixin from "simple-auth/mixins/login-controller-mixin";
+import Ember from 'ember';
+import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
 
 export default Ember.Controller.extend(LoginControllerMixin, {
-  authenticator: "simple-auth-authenticator:oauth2-password-grant",
+  authenticator: 'simple-auth-authenticator:oauth2-password-grant',
 });
+{% endraw %}
 ```
 
 As the OAuth 2.0 authenticator would by default use the same domain and port to
@@ -143,6 +146,7 @@ send the authentication requests to that the Ember.js is loaded from you need to
 configure it to use `http://localhost:3000` instead:
 
 ```js
+{% raw %}
 // config/environment.js
 if (environment === 'development') {
   …
@@ -150,6 +154,7 @@ if (environment === 'development') {
     serverTokenEndpoint: 'http://localhost:3000/token'
   }
   …
+{% endraw %}
 ```
 
 You also need to make sure that your server allows cross origin requests by

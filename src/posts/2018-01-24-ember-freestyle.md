@@ -1,26 +1,14 @@
 ---
-title: "Using ember-freestyle as a component playground"
+title: 'Using ember-freestyle as a component playground'
 authorHandle: tobiasbieniek
-bio: "Senior Frontend Engineer, Ember CLI core team member"
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
 description:
-  "Tobias Bieniek gives an overview of how ember-freestyle can be used in
-  Ember.js applications for building and testing components in isolation."
+  'Tobias Bieniek gives an overview of how ember-freestyle can be used in
+  Ember.js applications for building and testing components in isolation.'
 tags: ember
+tagline: |
+  <p>A component playground is an application that you can use to test out and play around with your custom components in isolation from the rest of your project. In the React and Vue ecosystem <a href="https://storybook.js.org/">Storybook</a> is a quite popular project that implements such a component playground as part of your app. In the Ember ecosystem we have the <a href="http://ember-freestyle.com/"><code>ember-freestyle</code></a> addon that can be used for this purpose. This blog post will show you how to install <code>ember-freestyle</code> in your app and how to use it to build and test components in isolation.</p>
 ---
-
-A component playground is an application that you can use to test out and play
-around with your custom components in isolation from the rest of your project.
-In the React and Vue ecosystem [Storybook][storybook] is a quite popular project
-that implements such a component playground as part of your app. In the Ember
-ecosystem we have the [`ember-freestyle`][ember-freestyle] addon that can be
-used for this purpose. This blog post will show you how to install
-`ember-freestyle` in your app and how to use it to build and test components in
-isolation.
-
-[storybook]: https://storybook.js.org/
-[ember-freestyle]: http://ember-freestyle.com/
-
-<!--break-->
 
 ## Component Playgrounds
 
@@ -44,7 +32,8 @@ recommend reading this great blog post ["UI component explorers — your new
 favorite tool"][ui-component-explorers] by Dominic Nguyen that explains the
 benefits very well.
 
-[ui-component-explorers]: https://blog.hichroma.com/the-crucial-tool-for-modern-frontend-engineers-fb849b06187a
+[ui-component-explorers]:
+  https://blog.hichroma.com/the-crucial-tool-for-modern-frontend-engineers-fb849b06187a
 
 ## Installing `ember-freestyle`
 
@@ -67,12 +56,10 @@ website:
 
 ### Adjusting the `application` template
 
-{% raw %}
 If you try this in a fresh new Ember app, run the development server using
 `ember serve` and visit `http://localhost:4200/freestyle` you will notice the
 first problem: The `ember-freestyle` components are appearing underneath the
 `{{welcome-page}}` component:
-{% endraw %}
 
 ![Screenshot](/assets/images/posts/2017-12-07-ember-freestyle/freestyle-underneath-welcome-page.png)
 
@@ -102,17 +89,19 @@ file, and since that does not exist yet, we can generate it using
 template!) and then adjusting it like this:
 
 ```js
+{% raw %}
 export default Route.extend({
   activate() {
     this._super(...arguments);
-    this.controllerFor("application").set("onFreestyleRoute", true);
+    this.controllerFor('application').set('onFreestyleRoute', true);
   },
 
   deactivate() {
     this._super(...arguments);
-    this.controllerFor("application").set("onFreestyleRoute", false);
+    this.controllerFor('application').set('onFreestyleRoute', false);
   },
 });
+{% endraw %}
 ```
 
 If you check `/freestyle` again you should see that now the only thing that is
@@ -128,10 +117,11 @@ According to the `ember-freestyle` documentation we are supposed to "blacklist"
 the addon in the `ember-cli-build.js` file of our app:
 
 ```js
+{% raw %}
 module.exports = function (defaults) {
   let environment = process.env.EMBER_ENV;
   let pluginsToBlacklist =
-    environment === "production" ? ["ember-freestyle"] : [];
+    environment === 'production' ? ['ember-freestyle'] : [];
 
   let app = new EmberApp(defaults, {
     addons: {
@@ -141,6 +131,7 @@ module.exports = function (defaults) {
 
   return app.toTree();
 };
+{% endraw %}
 ```
 
 Great! Now our asset size is back to normal. Wait... it is smaller now, but
@@ -163,8 +154,10 @@ Next we will add our new `freestyle` in-repo-addon to the `pluginsToBlacklist`
 list above:
 
 ```js
+{% raw %}
 let pluginsToBlacklist =
-  environment === "production" ? ["ember-freestyle", "freestyle"] : [];
+  environment === 'production' ? ['ember-freestyle', 'freestyle'] : [];
+{% endraw %}
 ```
 
 Finally we need to adjust the paths that `ember-freestyle` uses to search for
@@ -173,12 +166,14 @@ that we will add a `snippetSearchPaths` property in the `ember-cli-build.js`
 file:
 
 ```js
+{% raw %}
 let app = new EmberApp(defaults, {
   // ...
   freestyle: {
-    snippetSearchPaths: ["lib/freestyle/app"],
+    snippetSearchPaths: ['lib/freestyle/app'],
   },
 });
+{% endraw %}
 ```
 
 If you now restart the development server and check the `/freestyle` route you
@@ -205,12 +200,14 @@ new file at `app/components/styled-button.js` and put the following content in
 it:
 
 ```js
-import Component from "@ember/component";
+{% raw %}
+import Component from '@ember/component';
 
 export default Component.extend({
-  tagName: "button",
-  classNames: ["styled-button"],
+  tagName: 'button',
+  classNames: ['styled-button'],
 });
+{% endraw %}
 ```
 
 In addition to that we'll add some styles for this button to our

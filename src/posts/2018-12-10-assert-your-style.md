@@ -1,27 +1,16 @@
 ---
-title: "Assert Your Style - Testing CSS in Ember Apps"
+title: 'Assert Your Style - Testing CSS in Ember Apps'
 authorHandle: jjordan_dev
-bio: "Senior Frontend Engineer, Ember Learning core team member"
+bio: 'Senior Frontend Engineer, Ember Learning core team member'
 description:
-  "Jessica Jordan explains approaches and patterns for testing styles in
-  Ember.js applications."
+  'Jessica Jordan explains approaches and patterns for testing styles in
+  Ember.js applications.'
 tags: javascript
 og:
   image: /assets/images/posts/2018-12-10-assert-your-style/og-image.png
+tagline: |
+  <p>Sometimes you really want to make sure that your web application looks good; and that it keeps doing so in the future. <strong>Automated tests</strong> are an important foundation for making your application's appearance future-proof and this may involve the integration of a screenshot-based testing tool like <a href="https://percy.io/">Percy.io</a> or <a href="https://github.com/HuddleEng/PhantomCSS">PhantomCSS</a>.</p> <p>But writing your own <strong>visual regression tests</strong> for critical styles in your application can be really useful, too - and it can be easily done on top of that!</p>
 ---
-
-Sometimes you really want to make sure that your web application looks good; and
-that it keeps doing so in the future. **Automated tests** are an important
-foundation for making your application's appearance future-proof and this may
-involve the integration of a screenshot-based testing tool like
-[Percy.io](https://percy.io/) or
-[PhantomCSS](https://github.com/HuddleEng/PhantomCSS).
-
-But writing your own **visual regression tests** for critical styles in your
-application can be really useful, too - and it can be easily done on top of
-that!
-
-<!--break-->
 
 These are a few approaches you can choose from to assert against the styling of
 your web page as part of your automated integration and acceptance test suite:
@@ -37,25 +26,27 @@ Imagine you created a component with an inline style attached to it assigning a
 variable blue background color to it:
 
 ```js
+{% raw %}
 // app/components/simplabs-logo-tile.js
-import Component from "@ember/component";
-import { computed } from "@ember/object";
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 
 const tileColors = {
-  dark: "rgb(29, 113, 182)",
-  mid: "rgb(0, 127, 189)",
-  light: "rgb(108, 189, 242)",
+  dark: 'rgb(29, 113, 182)',
+  mid: 'rgb(0, 127, 189)',
+  light: 'rgb(108, 189, 242)',
 };
 
 export default Component.extend({
-  tileColor: "mid",
-  attributeBindings: ["style"],
-  style: computed("tileColor", function () {
-    let colorShade = this.get("tileColor");
+  tileColor: 'mid',
+  attributeBindings: ['style'],
+  style: computed('tileColor', function () {
+    let colorShade = this.get('tileColor');
     let bgColor = tileColors[colorShade];
     return htmlSafe(`background-color: ${bgColor}`);
   }),
 });
+{% endraw %}
 ```
 
 Using `ember-test-selectors` to apply `data-` attributes to this component, you
@@ -68,26 +59,28 @@ ember install ember-test-selectors
 Which now allows you to tag your component for testing as follows:
 
 ```js
+{% raw %}
 // app/components/simplabs-logo-tile.js
-import Component from "@ember/component";
-import { computed } from "@ember/object";
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 
 const tileColors = {
-  dark: "rgb(29, 113, 182)",
-  mid: "rgb(0, 127, 189)",
-  light: "rgb(108, 189, 242)",
+  dark: 'rgb(29, 113, 182)',
+  mid: 'rgb(0, 127, 189)',
+  light: 'rgb(108, 189, 242)',
 };
 
 export default Component.extend({
-  tileColor: "mid",
-  "data-test-simplabs-logo-tile": true,
-  attributeBindings: ["style"],
-  style: computed("tileColor", function () {
-    let colorShade = this.get("tileColor");
+  tileColor: 'mid',
+  'data-test-simplabs-logo-tile': true,
+  attributeBindings: ['style'],
+  style: computed('tileColor', function () {
+    let colorShade = this.get('tileColor');
     let bgColor = tileColors[colorShade];
     return htmlSafe(`background-color: ${bgColor}`);
   }),
 });
+{% endraw %}
 ```
 
 To learn more about the rationale behind `ember-test-selectors`, be sure to also
@@ -164,25 +157,25 @@ styles of an element in rendering tests:
 
 ```js
 {% raw %}
-// tests,/integration/components/simplabs-logo-tile-test.js
-import { module, test } from "qunit";
-import { setupRenderingTest } from "ember-qunit";
-import { find, render } from "@ember/test-helpers";
-import hbs from "htmlbars-inline-precompile";
+// tests/integration/components/simplabs-logo-tile-test.js
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { find, render } from '@ember/test-helpers';
+import hbs from 'htmlbars-inline-precompile';
 
-module("Integration | Component | simplabs-logo-tile", function (hooks) {
+module('Integration | Component | simplabs-logo-tile', function (hooks) {
   setupRenderingTest(hooks);
 
-  test("it allows setting a dark background color", async function (assert) {
+  test('it allows setting a dark background color', async function (assert) {
     await render(hbs`{{simplabs-logo-tile tileColor="dark"}}`);
 
     let computedStyle = window.getComputedStyle(
-      find("[data-test-simplabs-logo-tile]"),
-      null
+      find('[data-test-simplabs-logo-tile]'),
+      null,
     );
     assert.equal(
-      computedStyle.getPropertyValue("background-color"),
-      "rgb(29, 113, 182)"
+      computedStyle.getPropertyValue('background-color'),
+      'rgb(29, 113, 182)',
     );
   });
 });
@@ -218,19 +211,19 @@ the `hasStyle` method:
 ```js
 {% raw %}
 // tests/integration/components/simplabs-logo-tile-test.js
-import { module, test } from "qunit";
-import { setupRenderingTest } from "ember-qunit";
-import { find, render } from "@ember/test-helpers";
-import hbs from "htmlbars-inline-precompile";
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { find, render } from '@ember/test-helpers';
+import hbs from 'htmlbars-inline-precompile';
 
-module("Integration | Component | simplabs-logo-tile", function (hooks) {
+module('Integration | Component | simplabs-logo-tile', function (hooks) {
   setupRenderingTest(hooks);
 
-  test("it allows setting a dark background color", async function (assert) {
+  test('it allows setting a dark background color', async function (assert) {
     await render(hbs`{{simplabs-logo-tile tileColor="dark"}}`);
 
-    assert.dom("[data-test-simplabs-logo-tile]").hasStyle({
-      backgroundColor: "rgb(29, 113, 182)",
+    assert.dom('[data-test-simplabs-logo-tile]').hasStyle({
+      backgroundColor: 'rgb(29, 113, 182)',
     });
   });
 });

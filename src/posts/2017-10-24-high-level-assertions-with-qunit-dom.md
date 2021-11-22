@@ -1,28 +1,22 @@
 ---
 title: High Level Assertions with qunit-dom
 authorHandle: tobiasbieniek
-bio: "Senior Frontend Engineer, Ember CLI core team member"
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
 description:
-  "Tobias Bieniek introduces qunit-dom, an extension for qunit that allows
+  'Tobias Bieniek introduces qunit-dom, an extension for qunit that allows
   writing more expressive and less complex UI tests using high level DOM
-  assertions."
+  assertions.'
 tags: javascript
+tagline: |
+  <p>At <a href="https://emberfest.eu/">EmberFest</a> this year we presented and released <a href="https://github.com/simplabs/qunit-dom"><code>qunit-dom</code></a>. A plugin for <a href="https://qunitjs.com/">QUnit</a> providing High Level DOM Assertions with the goal to reduce test complexity for all QUnit users. This blog post will show you how to write simpler tests using <code>async/await</code> and <code>qunit-dom</code>.</p>
 ---
-
-At [EmberFest](https://emberfest.eu/) this year we presented and released
-[`qunit-dom`](https://github.com/simplabs/qunit-dom). A plugin for
-[QUnit](https://qunitjs.com/) providing High Level DOM Assertions with the goal
-to reduce test complexity for all QUnit users. This blog post will show you how
-to write simpler tests using `async/await` and `qunit-dom`.
-
-<!--break-->
 
 As an introduction to what this means let's start with an example template for
 an Ember app that we will write a test for:
 
 ```handlebars
 {% raw %}
-<h1 class="title {{if username "has-username"}}">
+<h1 class='title {{if username 'has-username'}}'>
   {{#if username}}
     Welcome to Ember,
     <strong>{{username}}</strong>!
@@ -41,24 +35,26 @@ need to test: one with and one without a `username` property being set.
 An acceptance test for such a template could look roughly like this:
 
 ```js
-test("frontpage should be welcoming", function (assert) {
-  visit("/");
+{% raw %}
+test('frontpage should be welcoming', function (assert) {
+  visit('/');
 
   andThen(function () {
-    assert.equal(find("h1.title").textContent.trim(), "Welcome to Ember!");
-    assert.notOk(find("h1.title").classList.contains("has-username"));
+    assert.equal(find('h1.title').textContent.trim(), 'Welcome to Ember!');
+    assert.notOk(find('h1.title').classList.contains('has-username'));
   });
 
-  fillIn("input.username", "John Doe");
+  fillIn('input.username', 'John Doe');
 
   andThen(function () {
     assert.equal(
-      find("h1.title").textContent.trim(),
-      "Welcome to Ember,\n    John Doe!"
+      find('h1.title').textContent.trim(),
+      'Welcome to Ember,\n    John Doe!',
     );
-    assert.ok(find("h1.title").classList.contains("has-username"));
+    assert.ok(find('h1.title').classList.contains('has-username'));
   });
 });
+{% endraw %}
 ```
 
 First we will `visit` the index page `andThen` check if the welcome message
@@ -79,22 +75,24 @@ you can also use a `Promise` chain instead of the `andThen` blocks which would
 look like this:
 
 ```js
-test("frontpage should be welcoming", function (assert) {
-  return visit("/")
+{% raw %}
+test('frontpage should be welcoming', function (assert) {
+  return visit('/')
     .then(function () {
-      assert.equal(find("h1.title").textContent.trim(), "Welcome to Ember!");
-      assert.notOk(find("h1.title").classList.contains("has-username"));
+      assert.equal(find('h1.title').textContent.trim(), 'Welcome to Ember!');
+      assert.notOk(find('h1.title').classList.contains('has-username'));
 
-      return fillIn("input.username", "John Doe");
+      return fillIn('input.username', 'John Doe');
     })
     .then(function () {
       assert.equal(
-        find("h1.title").textContent.trim(),
-        "Welcome to Ember,\n    John Doe!"
+        find('h1.title').textContent.trim(),
+        'Welcome to Ember,\n    John Doe!',
       );
-      assert.ok(find("h1.title").classList.contains("has-username"));
+      assert.ok(find('h1.title').classList.contains('has-username'));
     });
 });
+{% endraw %}
 ```
 
 While that code makes it more obvious that we are dealing with asynchronous code
@@ -121,20 +119,22 @@ That description was pretty abstract so let's look at an example using the
 `Promise` chain above:
 
 ```js
-test("frontpage should be welcoming", async function (assert) {
-  await visit("/");
+{% raw %}
+test('frontpage should be welcoming', async function (assert) {
+  await visit('/');
 
-  assert.equal(find("h1.title").textContent.trim(), "Welcome to Ember!");
-  assert.notOk(find("h1.title").classList.contains("has-username"));
+  assert.equal(find('h1.title').textContent.trim(), 'Welcome to Ember!');
+  assert.notOk(find('h1.title').classList.contains('has-username'));
 
-  await fillIn("input.username", "John Doe");
+  await fillIn('input.username', 'John Doe');
 
   assert.equal(
-    find("h1.title").textContent.trim(),
-    "Welcome to Ember,\n    John Doe!"
+    find('h1.title').textContent.trim(),
+    'Welcome to Ember,\n    John Doe!',
   );
-  assert.ok(find("h1.title").classList.contains("has-username"));
+  assert.ok(find('h1.title').classList.contains('has-username'));
 });
+{% endraw %}
 ```
 
 As you can see this looks a lot more readable than what we had before and almost
@@ -156,13 +156,15 @@ better assertions so that we could rewrite our assertions above to something
 like:
 
 ```js
-expect(find("h1.title")).to.have.text("Welcome to Ember!");
-expect(find("h1.title")).to.have.class("has-username");
+{% raw %}
+expect(find('h1.title')).to.have.text('Welcome to Ember!');
+expect(find('h1.title')).to.have.class('has-username');
 
 // ...
 
-expect(find("h1.title")).to.have.text("Welcome to Ember,\n    John Doe!");
-expect(find("h1.title")).to.have.class("has-username");
+expect(find('h1.title')).to.have.text('Welcome to Ember,\n    John Doe!');
+expect(find('h1.title')).to.have.class('has-username');
+{% endraw %}
 ```
 
 `chai-dom` is also supported by default in `ember-cli-chai`, so if you used
@@ -182,13 +184,15 @@ After a bit of brainstorming we figured we would want our assertions to look
 roughly like this:
 
 ```js
-assert.dom("h1.title").hasText("Welcome to Ember!");
-assert.dom("h1.title").doesNotHaveClass("has-username");
+{% raw %}
+assert.dom('h1.title').hasText('Welcome to Ember!');
+assert.dom('h1.title').doesNotHaveClass('has-username');
 
 // ...
 
-assert.dom("h1.title").hasText("Welcome to Ember, John Doe!");
-assert.dom("h1.title").hasClass("has-username");
+assert.dom('h1.title').hasText('Welcome to Ember, John Doe!');
+assert.dom('h1.title').hasClass('has-username');
+{% endraw %}
 ```
 
 Compared to what we started with this:

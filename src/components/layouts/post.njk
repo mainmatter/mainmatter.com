@@ -4,7 +4,10 @@ layout: base
 {%- block content -%}
   <div class="post">
     <h1 class="post__title">{{ title }}</h1>
-    <article class="post__body rte rte--wide-images rte--taglines">
+    <article class="post__body rte rte--wide-images">
+      <div class="post__tagline">
+        {{ tagline | safe }}
+      </div>
       {{ content | safe }}
     </article>
     <nav aria-label="Post Pagination" class="prev-next container container--lg">

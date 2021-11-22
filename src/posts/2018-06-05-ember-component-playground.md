@@ -1,23 +1,15 @@
 ---
-title: "Autodiscovery for the Ember.js component playground"
+title: 'Autodiscovery for the Ember.js component playground'
 authorHandle: tobiasbieniek
-bio: "Senior Frontend Engineer, Ember CLI core team member"
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
 description:
-  "Tobias Bieniek introduces a mechanism for automatically discovering new
+  'Tobias Bieniek introduces a mechanism for automatically discovering new
   components in Ember.js applications and showing them in an ember-freestyle
-  playground."
+  playground.'
 tags: ember
+tagline: |
+  <p>In our <a href="/blog/2018/01/24/ember-freestyle">previous post</a> about <a href="http://ember-freestyle.com/"><code>ember-freestyle</code></a> we have setup a component playground for our Ember.js application. In this post we will discuss how to implement &quot;convention over configuration&quot; for it by automatically discovering new components and showing them in the playground.</p>
 ---
-
-In our [previous post] about [`ember-freestyle`][ember-freestyle] we have setup
-a component playground for our Ember.js application. In this post we will
-discuss how to implement "convention over configuration" for it by automatically
-discovering new components and showing them in the playground.
-
-[previous post]: /blog/2018/01/24/ember-freestyle
-[ember-freestyle]: http://ember-freestyle.com/
-
-<!--break-->
 
 ## Status Quo
 
@@ -100,19 +92,23 @@ components". We can do so by using the `.filter()` method and checking for the
 right prefix:
 
 ```js
+{% raw %}
 let usageComponents = Object.keys(require.entries).filter(
-  (path) => path.indexOf("myapp/templates/components/usage/") === 0
+  (path) => path.indexOf('myapp/templates/components/usage/') === 0,
 );
+{% endraw %}
 ```
 
 This should produce a list that looks roughly like this:
 
 ```js
+{% raw %}
 [
-  "myapp/templates/components/usage/styled-button",
-  "myapp/templates/components/usage/country-flag",
-  "myapp/templates/components/usage/form-input",
+  'myapp/templates/components/usage/styled-button',
+  'myapp/templates/components/usage/country-flag',
+  'myapp/templates/components/usage/form-input',
 ];
+{% endraw %}
 ```
 
 To be able to use those as component names in our template we will have to do a
@@ -125,26 +121,27 @@ In the end our `lib/freestyle/controllers/freestyle.js` will look roughly like
 this:
 
 ```js
-import require from "require";
-import FreestyleController from "ember-freestyle/controllers/freestyle";
+{% raw %}
+import require from 'require';
+import FreestyleController from 'ember-freestyle/controllers/freestyle';
 
 export default FreestyleController.extend({
   init() {
     this._super(...arguments);
-    this.set("components", findUsageComponents());
+    this.set('components', findUsageComponents());
   },
 });
 
 function findUsageComponents() {
-  let pathPrefix = "myapp/templates/components/usage/";
+  let pathPrefix = 'myapp/templates/components/usage/';
 
   return Object.keys(require.entries)
     .filter((path) => path.indexOf(pathPrefix) === 0)
     .map((path) => path.slice(pathPrefix.length))
     .sort();
 }
+{% endraw %}
 ```
-
 {% raw %}
 With that JavaScript code out of the way we can focus on our template. Here, we
 now have a `components` list available with the names of all our "usage
@@ -161,7 +158,7 @@ it:
 
     {{#each components as |componentName|}}
       {{#section.subsection name=componentName}}
-        {{component (concat "usage/" componentName)}}
+        {{component (concat 'usage/' componentName)}}
       {{/section.subsection}}
     {{/each}}
 

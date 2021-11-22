@@ -1,26 +1,15 @@
 ---
 title: New features for ember-test-selectors
 authorHandle: tobiasbieniek
-bio: "Senior Frontend Engineer, Ember CLI core team member"
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
 description:
-  "Tobias Bieniek announces new features in ember-test-selectors such as
+  'Tobias Bieniek announces new features in ember-test-selectors such as
   automatic binding of data-test-* properties and how these are stripped in
-  production."
+  production.'
 tags: ember
+tagline: |
+  <p>In March 2016 we have released the first version of <a href="https://github.com/simplabs/ember-test-selectors">ember-test-selectors</a> and today we are proud to present you our next milestone: <code>0.1.0</code>.</p> <p>While <code>0.1.0</code> does not sound like much has changed, the addon has actually gained a lot of new functionality and should be considered our release candidate for <code>1.0.0</code>.</p> <p>This blog post will highlight the major changes in this release, and will give you a short introduction into <em>how</em> we have implemented these new features.</p>
 ---
-
-In March 2016 we have released the first version of
-[ember-test-selectors](https://github.com/simplabs/ember-test-selectors) and
-today we are proud to present you our next milestone: `0.1.0`.
-
-While `0.1.0` does not sound like much has changed, the addon has actually
-gained a lot of new functionality and should be considered our release candidate
-for `1.0.0`.
-
-This blog post will highlight the major changes in this release, and will give
-you a short introduction into _how_ we have implemented these new features.
-
-<!--break-->
 
 ## Automatic binding of `data-test-*` properties
 
@@ -42,8 +31,10 @@ your templates:
 tests:
 
 ```js
-assert.equal(find(testSelector("post-title")).text(), "my first blog post");
+{% raw %}
+assert.equal(find(testSelector('post-title')).text(), 'my first blog post');
 //           find( '[data-test-post-title]' )
+{% endraw %}
 ```
 
 While this worked well on HTML tags, using the same pattern on components was a
@@ -95,6 +86,7 @@ from [ember-cli-chai](https://github.com/ember-cli/ember-cli-chai/) which only
 includes both folders if we are in [testing mode](#testing-in-production-mode).
 
 ```js
+{% raw %}
 module.exports = {
   // ...
 
@@ -112,6 +104,7 @@ module.exports = {
     }
   },
 };
+{% endraw %}
 ```
 
 **UPDATE:** After releasing `0.1.0` we were notified that this feature was not
@@ -141,6 +134,7 @@ hook of the addon:
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 module.exports = {
   // ...
 
@@ -154,6 +148,7 @@ module.exports = {
     }
   },
 };
+{% endraw %}
 ```
 
 While this AST transform already existed in the previous releases, it was only
@@ -161,6 +156,7 @@ able to handle `data-test-*` attributes on HTML tags (called `ElementNode`), but
 not on curly components yet:
 
 ```js
+{% raw %}
 var TEST_SELECTOR_PREFIX = /data-test-.*/;
 
 module.exports = class {
@@ -168,7 +164,7 @@ module.exports = class {
     var walker = new this.syntax.Walker();
 
     walker.visit(ast, function (node) {
-      if (node.type === "ElementNode") {
+      if (node.type === 'ElementNode') {
         node.attributes = node.attributes.filter(function (attribute) {
           return !TEST_SELECTOR_PREFIX.test(attribute.name);
         });
@@ -178,6 +174,7 @@ module.exports = class {
     return ast;
   }
 };
+{% endraw %}
 ```
 
 You can try out what this transform does in the
@@ -187,11 +184,13 @@ Fortunately for us the code to make this AST transform work for curly components
 is very similar:
 
 ```js
-if (node.type === "MustacheStatement" || node.type === "BlockStatement") {
+{% raw %}
+if (node.type === 'MustacheStatement' || node.type === 'BlockStatement') {
   node.hash.pairs = node.hash.pairs.filter(function (pair) {
     return !TEST_SELECTOR_PREFIX.test(pair.key);
   });
 }
+{% endraw %}
 ```
 
 If you try the same example template in the
@@ -217,10 +216,12 @@ instead of assigning `data-test-comment-id` inside the loop:
 `comment.id`:
 
 ```js
+{% raw %}
 export default Ember.Component({
   comment: null,
-  "data-test-comment-id": Ember.computed.readOnly("comment.id"),
+  'data-test-comment-id': Ember.computed.readOnly('comment.id'),
 });
+{% endraw %}
 ```
 
 Unfortunately we have now have a property that is not stripped by the AST
@@ -235,10 +236,11 @@ supports prototyping Babel plugins and so we came up with a simple
 `data-test-*` properties from all the objects in your code:
 
 ```js
+{% raw %}
 var TEST_SELECTOR_PREFIX = /data-test-.*/;
 
 module.exports = function (babel) {
-  return new babel.Plugin("ember-test-selectors", {
+  return new babel.Plugin('ember-test-selectors', {
     visitor: {
       Property: function (node) {
         if (TEST_SELECTOR_PREFIX.test(node.key.value)) {
@@ -248,6 +250,7 @@ module.exports = function (babel) {
     },
   });
 };
+{% endraw %}
 ```
 
 With the Babel plugin done, all we had left to do was making sure that your app
@@ -257,6 +260,7 @@ may change in the future we have found a way to accomplish that in the official
 addon:
 
 ```js
+{% raw %}
 module.exports = {
   // ...
 
@@ -271,11 +275,12 @@ module.exports = {
       app.options.babel.plugins = app.options.babel.plugins || [];
 
       app.options.babel.plugins.push(
-        require("./strip-data-test-properties-plugin")
+        require('./strip-data-test-properties-plugin'),
       );
     }
   },
 };
+{% endraw %}
 ```
 
 ## Testing in `production` mode
@@ -305,11 +310,13 @@ can be set to `true` or `false`, but defaults to the `tests` property described
 above:
 
 ```js
+{% raw %}
 var app = new EmberApp({
-  "ember-test-selectors": {
+  'ember-test-selectors': {
     strip: false,
   },
 });
+{% endraw %}
 ```
 
 Note that using the `environments` option still works, but is deprecated and
@@ -325,7 +332,9 @@ now removed from the build in production we were able to simplify that import to
 just this:
 
 ```js
-import testSelector from "ember-test-selectors";
+{% raw %}
+import testSelector from 'ember-test-selectors';
+{% endraw %}
 ```
 
 We hope you enjoyed reading about our progress on this project and we would love

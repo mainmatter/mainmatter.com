@@ -1,25 +1,14 @@
 ---
 title: Out-of-the-box FastBoot support in Ember Simple Auth
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
 description:
-  "Marco Otte-Witte announces out-of-the-box support for FastBoot in Ember
-  Simple Auth and explains how it works using ember-cookies."
+  'Marco Otte-Witte announces out-of-the-box support for FastBoot in Ember
+  Simple Auth and explains how it works using ember-cookies.'
 tags: ember
+tagline: |
+  <p>Ever since &lt;a href=&quot;https://www.youtube.com/watch?v=o12-90Dm-Qs&quot;&gt;FastBoot was first announced at EmberConf 2015&lt;/a&gt; it was clear to us that we wanted to have out-of-the-box support for it in Ember Simple Auth. Our goal was to make sure that Ember Simple Auth did not keep anyone from adopting FastBoot and adopting FastBoot would not result in people having to figure out their own authentication and authorization solutions. Today we're happy to announce the availability of &lt;a href=&quot;https://github.com/simplabs/ember-simple-auth/releases/tag/1.2.0-beta.1&quot;&gt;Ember Simple Auth 1.2.0-beta.1&lt;/a&gt;, the &lt;strong&gt;first release with out-of-the-box support for FastBoot&lt;/strong&gt;.</p>
 ---
-
-Ever since <a href="https://www.youtube.com/watch?v=o12-90Dm-Qs">FastBoot was
-first announced at EmberConf 2015</a> it was clear to us that we wanted to have
-out-of-the-box support for it in Ember Simple Auth. Our goal was to make sure
-that Ember Simple Auth did not keep anyone from adopting FastBoot and adopting
-FastBoot would not result in people having to figure out their own
-authentication and authorization solutions. Today we're happy to announce the
-availability of
-<a href="https://github.com/simplabs/ember-simple-auth/releases/tag/1.2.0-beta.1">Ember
-Simple Auth 1.2.0-beta.1</a>, the <strong>first release with out-of-the-box
-support for FastBoot</strong>.
-
-<!--break-->
 
 ## Seamless Session Synchronization
 
@@ -66,6 +55,7 @@ ember-cookies exposes a cookies service with
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 // app/controllers/application.js
 import Ember from 'ember';
 
@@ -80,6 +70,7 @@ export default Ember.Controller.extend({
     this.get('intl').set('locale', locale);
   },
 });
+{% endraw %}
 ```
 
 ## Using Ember Simple Auth with FastBoot
@@ -89,10 +80,12 @@ session store, <strong>enabling FastBoot support is as easy as defining the
 application session store</strong> as:
 
 ```js
+{% raw %}
 // app/session-stores/application.js
-import Cookie from "ember-simple-auth/session-stores/cookie";
+import Cookie from 'ember-simple-auth/session-stores/cookie';
 
 export default Cookie.extend();
+{% endraw %}
 ```
 
 If you're interested in learning more about the underlying concepts check out

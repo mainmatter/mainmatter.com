@@ -1,24 +1,16 @@
 ---
-title: "Managing modal dialogs in Ember.js with Promises"
+title: 'Managing modal dialogs in Ember.js with Promises'
 authorHandle: pichfl
 tags: ember
-bio: "Consultant for Technology and Design at simplabs"
-description: "Exploring better and easier handling of modal dialogs in Ember.js
-  applications"
+bio: 'Consultant for Technology and Design at simplabs'
+description:
+  'Exploring better and easier handling of modal dialogs in Ember.js
+  applications'
 og:
   image: /assets/images/posts/2021-08-26-managing-modals-in-ember/og-image.png
+tagline: |
+  <p>Modal dialogs are about as widespread as they are missunderstood. No matter if you call them modal windows, popups, popovers, overlays, or dialogs: A thing that asks a question or presents a subordinate task; a general annoyance to developers and accessibility experts alike.</p> <p>Even if you use them rarely, most applications will need modal dialogs at some point to ask existential questions. The app asks your user and waits to resolve its uncertainty by their answer.</p>
 ---
-
-Modal dialogs are about as widespread as they are missunderstood. No matter if
-you call them modal windows, popups, popovers, overlays, or dialogs: A thing
-that asks a question or presents a subordinate task; a general annoyance to
-developers and accessibility experts alike.
-
-Even if you use them rarely, most applications will need modal dialogs at some
-point to ask existential questions. The app asks your user and waits to resolve
-its uncertainty by their answer.
-
-<!--break-->
 
 Waiting, resolving. JavaScript promises provide an excellent pattern for
 managing modals. A rough concept could work like this:
@@ -35,10 +27,12 @@ component as a modal, wait for a result, and continue with our apps workflow.
 ![Video showing a basic Ember Promise Modals dialog in action](/assets/images/posts/2021-08-26-managing-modals-in-ember/epm.mp4#video)
 
 ```js
-let result = await this.modals.open("name-of-your-component", {
+{% raw %}
+let result = await this.modals.open('name-of-your-component', {
   /* data passed to the component */
-  question: "Life, the universe and everything?",
+  question: 'Life, the universe and everything?',
 });
+{% endraw %}
 ```
 
 This will trigger a modal dialog, which automatically gains focus for its first
@@ -59,7 +53,7 @@ communicate data in the preferred Data-Down-Actions-Up pattern of Ember.js.
 {{! example modal component using passed data and close action}}
 <div>
   <header>
-    <button type="button" {{on "click" @close}}>Close</button>
+    <button type='button' {{on 'click' @close}}>Close</button>
   </header>
   <p>{{@data.question}}</p>
 </div>

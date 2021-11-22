@@ -1,23 +1,16 @@
 ---
-title: "Effective infrastructure for efficient development workflows"
+title: 'Effective infrastructure for efficient development workflows'
 authorHandle: marcoow
 tags: process
-bio: "Founder and Managing Director of simplabs"
+bio: 'Founder and Managing Director of simplabs'
 description:
-  "Marco Otte-Witte on how highly automated and integrated development
-  infrastructure enables simpler and more effective workflows."
+  'Marco Otte-Witte on how highly automated and integrated development
+  infrastructure enables simpler and more effective workflows.'
 og:
   image: /assets/images/posts/2021-07-13-effective-infrastructure-for-efficient-development-workflows/og-image.png
+tagline: |
+  <p>Building software products of any kind is hard enough. Doing so without the support of powerful infrastructure that enables efficient workflows is even harder. Yet, many teams are suffering from the absence of such infrastructure, forcing them into very much inefficient workflows with substantial time and effort going into synchronizing the work of different engineers, tracking down bugs, and getting back to tasks later that were already thought to be complete.</p>
 ---
-
-Building software products of any kind is hard enough. Doing so without the
-support of powerful infrastructure that enables efficient workflows is even
-harder. Yet, many teams are suffering from the absence of such infrastructure,
-forcing them into very much inefficient workflows with substantial time and
-effort going into synchronizing the work of different engineers, tracking down
-bugs, and getting back to tasks later that were already thought to be complete.
-
-<!--break-->
 
 ![Effective infrastructure for efficient development workflows illustration](/assets/images/posts/2021-07-13-effective-infrastructure-for-efficient-development-workflows/illustration.svg#full)
 

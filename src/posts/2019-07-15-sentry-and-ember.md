@@ -1,28 +1,16 @@
 ---
-title: "Sentry error reporting for Ember.js"
+title: 'Sentry error reporting for Ember.js'
 authorHandle: tobiasbieniek
 tags: ember
-bio: "Senior Frontend Engineer, Ember CLI core team member"
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
 description:
-  "Tobias Bieniek explains how to set up Sentry for Ember.js applications using
-  @sentry/browser instead of the now unnecessary ember-cli-sentry."
+  'Tobias Bieniek explains how to set up Sentry for Ember.js applications using
+  @sentry/browser instead of the now unnecessary ember-cli-sentry.'
 og:
   image: /assets/images/posts/2019-07-15-sentry-and-ember/og-image.png
+tagline: |
+  <p>Are you confident that your apps have no bugs? Do you not need a support team because no user ever complains about something not working? Then this post is not for you!</p> <p>We use a lot of tools at simplabs to ensure reasonably high quality code, but occasionally something slips through. The important thing then is to notice and fix it quickly. This post will focus on the &quot;notice&quot; part by using <a href="https://sentry.io/">Sentry</a> error reporting in <a href="https://emberjs.com/">Ember.js</a> apps.</p>
 ---
-
-Are you confident that your apps have no bugs? Do you not need a support team
-because no user ever complains about something not working? Then this post is
-not for you!
-
-We use a lot of tools at simplabs to ensure reasonably high quality code, but
-occasionally something slips through. The important thing then is to notice and
-fix it quickly. This post will focus on the "notice" part by using
-[Sentry][sentry] error reporting in [Ember.js][ember] apps.
-
-[sentry]: https://sentry.io/
-[ember]: https://emberjs.com/
-
-<!--break-->
 
 ## ember-cli-sentry
 
@@ -64,11 +52,13 @@ for all environments in the `ember-cli-build.js` file:
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 let app = new EmberApp(defaults, {
   sourcemaps: {
     enabled: true,
   },
 });
+{% endraw %}
 ```
 
 If you now run `ember build --prod` it should generate `.map` files next to the
@@ -94,6 +84,7 @@ right before we start the app:
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 import { startSentry } from './sentry';
 
 startSentry();
@@ -101,6 +92,7 @@ startSentry();
 const App = Application.extend({
   // ...
 });
+{% endraw %}
 ```
 
 From the above snippet you can see that we chose to put the Sentry-specific
@@ -108,6 +100,7 @@ logic into a separate file: `app/sentry.js`. That file looks roughly like this:
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 import * as Sentry from '@sentry/browser';
 import { Ember } from '@sentry/integrations/esm/ember';
 
@@ -119,6 +112,7 @@ export function startSentry() {
     integrations: [new Ember()],
   });
 }
+{% endraw %}
 ```
 
 First we import the `@sentry/browser` library into the file using a
@@ -128,8 +122,10 @@ package:
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 import * as Sentry from '@sentry/browser';
 import { Ember } from '@sentry/integrations/esm/ember';
+{% endraw %}
 ```
 
 We are using `@sentry/integrations/esm/ember` here instead of just
@@ -160,6 +156,7 @@ file:
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 module.exports = function(environment) {
   let ENV = {
     sentry: {
@@ -173,6 +170,7 @@ module.exports = function(environment) {
 
   return ENV;
 }
+{% endraw %}
 ```
 
 ... and we're done! `@sentry/browser` is now sufficiently set up and will report
@@ -188,6 +186,7 @@ hook of `@sentry/browser`:
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 Sentry.init({
   // ...
 
@@ -202,6 +201,7 @@ Sentry.init({
     return event;
   },
 });
+{% endraw %}
 ```
 
 ## Manually Reporting Errors
@@ -211,11 +211,13 @@ messages or exceptions to Sentry. With `@sentry/browser` you can do the same:
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 import * as Sentry from '@sentry/browser';
 
 Sentry.captureMessage('Something is broken! 😱');
 
 Sentry.captureException(new Error('with stack trace!! ✨'));
+{% endraw %}
 ```
 
 ## Adding Additional Context
@@ -232,12 +234,14 @@ function for this:
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 Sentry.configureScope(scope => {
   scope.setUser({
     id: 42,
     email: "john.doe@example.com"
   });
 });
+{% endraw %}
 ```
 
 This will automatically add the user information for all errors/events that
@@ -252,11 +256,13 @@ We could mock the `raven` service of `ember-cli-sentry` in tests like this:
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 this.owner.register('service:raven', Service.extend({
   captureException(error) {
     // ...
   }
 }));
+{% endraw %}
 ```
 
 But with `@sentry/browser` this becomes a little more complicated since there is
@@ -272,8 +278,10 @@ If you have questions, want to know more or need help setting all of this up for
 your apps please [contact us][contact]. We're happy to help!
 
 [ember-cli-sentry]: https://github.com/ember-cli-sentry/ember-cli-sentry
-[raven-js]: https://github.com/getsentry/sentry-javascript/tree/master/packages/raven-js
-[sentry-browser]: https://github.com/getsentry/sentry-javascript/tree/master/packages/browser
+[raven-js]:
+  https://github.com/getsentry/sentry-javascript/tree/master/packages/raven-js
+[sentry-browser]:
+  https://github.com/getsentry/sentry-javascript/tree/master/packages/browser
 [ember-cli-deploy]: https://github.com/ember-cli-deploy/ember-cli-deploy
 [ember-cli-deploy-sentry]: https://github.com/dschmidt/ember-cli-deploy-sentry
 [ember-simple-auth]: https://github.com/simplabs/ember-simple-auth

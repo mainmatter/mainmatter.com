@@ -2,25 +2,15 @@
 title: The True Cost Of A Quickfix
 authorHandle: patsy_issa_p
 tags: process
-bio: "Senior Frontend Engineer"
+bio: 'Senior Frontend Engineer'
 description:
-  "Patsy Issa makes the case for refactoring legacy code sooner rather than
-  later"
+  'Patsy Issa makes the case for refactoring legacy code sooner rather than
+  later'
 og:
   image: /assets/images/posts/2020-08-03-the-true-cost-of-a-quickfix/og-image.png
+tagline: |
+  <p>Picture this, a sprint is underway, development is running smoothly, then QA reports a rather odd bug, you begin to investigate and lo and behold you find the following comment:</p> <pre><code class="language-javascript">// Dear programmer: // When I wrote this code, only god and I knew how it worked // Now, only god knows </code></pre>
 ---
-
-Picture this, a sprint is underway, development is running smoothly, then QA
-reports a rather odd bug, you begin to investigate and lo and behold you find
-the following comment:
-
-```javascript
-// Dear programmer:
-// When I wrote this code, only god and I knew how it worked
-// Now, only god knows
-```
-
-<!--break-->
 
 ![the true cost of a quickfix illustration](/assets/images/posts/2020-08-03-the-true-cost-of-a-quickfix/illustration.png#full@1440-2880)
 

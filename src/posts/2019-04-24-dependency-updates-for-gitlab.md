@@ -1,22 +1,16 @@
 ---
-title: "Automated dependency updates for your internal GitLab server️"
+title: 'Automated dependency updates for your internal GitLab server️'
 authorHandle: tobiasbieniek
 tags: misc
-bio: "Senior Frontend Engineer, Ember CLI core team member"
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
 description:
-  "Tobias Bieniek shares how to set up the Renovate bot for automatic dependency
-  updates with self-hosted internal GitLab servers."
+  'Tobias Bieniek shares how to set up the Renovate bot for automatic dependency
+  updates with self-hosted internal GitLab servers.'
 og:
   image: /assets/images/posts/2019-04-24-dependency-updates-for-gitlab/og-image.png
+tagline: |
+  <p>Are your dependencies hopelessly outdated? Would you need to hire another developer just to keep up with the maintenance work of keeping them up-to-date? If those questions match your project then this blog post is for you. Keep reading and we will show you how to solve a lot of these issues with some easy to use tools.</p>
 ---
-
-Are your dependencies hopelessly outdated? Would you need to hire another
-developer just to keep up with the maintenance work of keeping them up-to-date?
-If those questions match your project then this blog post is for you. Keep
-reading and we will show you how to solve a lot of these issues with some easy
-to use tools.
-
-<!--break-->
 
 In our previous blog post on [Open Source Maintenance][open-source-maintenance]
 we revealed that we are big fans of dependency update services like
@@ -94,7 +88,8 @@ a lot of other languages too. Because it is based on JavaScript we will use
 will create is the `package.json` file:
 
 <!-- prettier-ignore -->
-```json
+```js
+{% raw %}on
 {
   "name": "renovate-bot",
   "version": "0.0.0",
@@ -109,6 +104,7 @@ will create is the `package.json` file:
     "renovate": "^15.0.0"
   }
 }
+{% endraw %}
 ```
 
 Afterwards, run `npm install` in the repository to install the `renovate`
@@ -133,6 +129,7 @@ overridden on a per-repository basis.
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 module.exports = {
   platform: 'gitlab',
   endpoint: 'https://gitlab.acme.com/api/v4/',
@@ -155,6 +152,7 @@ module.exports = {
     'npm',
   ],
 };
+{% endraw %}
 ```
 
 The first section of the file above tells our Renovate bot how to talk to our

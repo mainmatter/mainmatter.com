@@ -1,25 +1,14 @@
 ---
-title: "Rails API Auth"
+title: 'Rails API Auth'
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
 description:
   'Marco Otte-Witte announces rails_api_auth, a Rails engine that implements the
   "Resource Owner Password Credentials Grant" OAuth 2.0 flow.'
 tags: ruby
+tagline: |
+  <p>We are happy to announce the first public release of the <a href="https://github.com/simplabs/rails_api_auth"><code>rails_api_auth</code> gem</a>. <code>rails_api_auth</code> is a <strong>lightweight Rails Engine that implements the <em>&quot;Resource Owner Password Credentials Grant&quot;</em> OAuth 2.0 flow</strong> as well as Facebook authentication and is <strong>built for usage in API projects</strong>. If you’re building a client side application with e.g. a browser MVC like <a href="http://emberjs.com">Ember.js</a> (where you might be using <a href="https://github.com/simplabs/ember-simple-auth">Ember Simple Auth</a> which works great with rails_api_auth of course), a mobile app or anything else that’s backed by a Rails-based API, rails_api_auth is for you.</p>
 ---
-
-We are happy to announce the first public release of the
-[`rails_api_auth` gem](https://github.com/simplabs/rails_api_auth).
-`rails_api_auth` is a **lightweight Rails Engine that implements the _"Resource
-Owner Password Credentials Grant"_ OAuth 2.0 flow** as well as Facebook
-authentication and is **built for usage in API projects**. If you’re building a
-client side application with e.g. a browser MVC like
-[Ember.js](http://emberjs.com) (where you might be using
-[Ember Simple Auth](https://github.com/simplabs/ember-simple-auth) which works
-great with rails_api_auth of course), a mobile app or anything else that’s
-backed by a Rails-based API, rails_api_auth is for you.
-
-<!--break-->
 
 ## Why another Authentication Engine?
 

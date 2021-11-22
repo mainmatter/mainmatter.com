@@ -1,22 +1,14 @@
 ---
 title: Magic Data in Tests
 authorHandle: geekygrappler
-bio: "Senior Frontend Engineer"
+bio: 'Senior Frontend Engineer'
 description:
-  "Andy Brown explains the AAA principle for writing good tests and discusses
-  what the negative consequences of not adhering to it are."
+  'Andy Brown explains the AAA principle for writing good tests and discusses
+  what the negative consequences of not adhering to it are.'
 tags: misc
+tagline: |
+  <p>Often when working on large codebases, my changes break some existing tests. While I would prefer my coding to be perfect, it's highly unlikely that I'll ever achieve the state of coding zen, so it's nice to know I have a test suite to catch me when I fall. Given that the codebase is large and in the majority not written by me, I tend to be introduced to code via the test files. One important principle I've started to follow when writing and refactoring tests is AAA.</p>
 ---
-
-Often when working on large codebases, my changes break some existing tests.
-While I would prefer my coding to be perfect, it's highly unlikely that I'll
-ever achieve the state of coding zen, so it's nice to know I have a test suite
-to catch me when I fall. Given that the codebase is large and in the majority
-not written by me, I tend to be introduced to code via the test files. One
-important principle I've started to follow when writing and refactoring tests is
-AAA.
-
-<!--break-->
 
 The [AAA principle](http://wiki.c2.com/?ArrangeActAssert) for testing is Arrange
 Act Assert and it's Amazing. The TL;DR is:
@@ -28,16 +20,18 @@ Act Assert and it's Amazing. The TL;DR is:
 The simple example is:
 
 ```js
-test("toLowerCase makes string all lower case", function (assert) {
+{% raw %}
+test('toLowerCase makes string all lower case', function (assert) {
   /* Arrange */
-  const string = "ABC";
+  const string = 'ABC';
 
   /* Act */
   const result = string.toLowerCase();
 
   /* Assert */
-  assert.equal(result, "abc");
+  assert.equal(result, 'abc');
 });
+{% endraw %}
 ```
 
 If you have a test that doesn't Arrange, your test may be brittle.
@@ -51,21 +45,23 @@ You will probably have a hardcoded list of countries that your website supports
 somewhere in your app.
 
 ```js
+{% raw %}
 // config/countries.js
 export default [
   {
-    country: "DE",
-    locale: "de",
-    region: "europe",
-    name: "Germany",
+    country: 'DE',
+    locale: 'de',
+    region: 'europe',
+    name: 'Germany',
   },
   {
-    country: "GB",
-    locale: "en",
-    region: "europe",
-    name: "United Kingdom",
+    country: 'GB',
+    locale: 'en',
+    region: 'europe',
+    name: 'United Kingdom',
   },
 ];
+{% endraw %}
 ```
 
 We need to write a function that adds a url pointing to an image of the country
@@ -75,6 +71,7 @@ So we write a component, here we're using Ember, but the principle is similar
 for any JS framework or vanilla JS.
 
 ```js
+{% raw %}
 import Component from '@ember/component';
 
 /* the countries!! */
@@ -85,11 +82,13 @@ export default Component.extend({
     return COUNTRIES.map(country => Object.assign({}, country, { flag: `/assets/images/flags/${country.country}.png` }));
   })
 });
+{% endraw %}
 ```
 
 Now you can have a test that does no arranging.
 
 ```js
+{% raw %}
 test('displayCountries', function(assert) {
   /* This is an act */
   let displayCountries = this.subject().get('supportedCountries');
@@ -97,6 +96,7 @@ test('displayCountries', function(assert) {
   /* This is assert */
   assert.deepEqual(displayCountries[0], { name: 'Deutschland' locale: 'de', country: 'DE', region: 'europe', flag: '/assets/images/flags/DE.png' });
 });
+{% endraw %}
 ```
 
 This test will pass.
@@ -113,27 +113,29 @@ Let's say our business development team have made inroads into Bulgaria and now
 we need to add it to the the list of countries and locales.
 
 ```js
+{% raw %}
 // config/countries.js
 export default [
   {
-    country: "BG",
-    locale: "bg",
-    region: "europe",
-    name: "Bulgaria",
+    country: 'BG',
+    locale: 'bg',
+    region: 'europe',
+    name: 'Bulgaria',
   },
   {
-    country: "DE",
-    locale: "de",
-    region: "europe",
-    name: "Germany",
+    country: 'DE',
+    locale: 'de',
+    region: 'europe',
+    name: 'Germany',
   },
   {
-    country: "GB",
-    locale: "en",
-    region: "europe",
-    name: "United Kingdom",
+    country: 'GB',
+    locale: 'en',
+    region: 'europe',
+    name: 'United Kingdom',
   },
 ];
+{% endraw %}
 ```
 
 The test will now fail without us having changed the code. No code change, no
@@ -151,6 +153,7 @@ First we need to stop using a constant directly in our component. This way we
 can override the `countries` property in the test and _arrange_ the data.
 
 ```js
+{% raw %}
 import Component from '@ember/component';
 
 /* the countries!! */
@@ -164,39 +167,42 @@ export default Component.extend({
     return countries.map(country => Object.assign({}, country, { flag: `/assets/images/flags/${country.country}.png` }));
   })
 });
+{% endraw %}
 ```
 
 ```js
-test("displayCountries will add a flag key to a country object", function (assert) {
+{% raw %}
+test('displayCountries will add a flag key to a country object', function (assert) {
   /* Arrange */
   const component = this.subject({
     countries: [
       {
-        country: "SK",
-        locale: "we",
-        region: "westeros",
-        name: "Seven Kingdoms",
+        country: 'SK',
+        locale: 'we',
+        region: 'westeros',
+        name: 'Seven Kingdoms',
       },
     ],
   });
 
   /* Act */
-  const result = component.get("displayCountries");
+  const result = component.get('displayCountries');
 
   /* (Write out my expectation for aesthetics) */
   const expectedResult = [
     {
-      country: "SK",
-      locale: "we",
-      region: "westeros",
-      name: "Seven Kingdoms",
-      flag: "/assets/images/flags/SK.png",
+      country: 'SK',
+      locale: 'we',
+      region: 'westeros',
+      name: 'Seven Kingdoms',
+      flag: '/assets/images/flags/SK.png',
     },
   ];
 
   /* Assert */
   assert.deepEqual(result, expectedResult);
 });
+{% endraw %}
 ```
 
 I feel much better about this test. It is no longer brittle as it's not

@@ -1,23 +1,14 @@
 ---
-title: "Updating to Ember Simple Auth 1.0"
+title: 'Updating to Ember Simple Auth 1.0'
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
 description:
-  "Marco Otte-Witte gives an update on the upcoming Ember Simple Auth 1.0
-  release and shows how to use it in Ember CLI applications."
+  'Marco Otte-Witte gives an update on the upcoming Ember Simple Auth 1.0
+  release and shows how to use it in Ember CLI applications.'
 tags: ember
+tagline: |
+  <p>With Ember Simple Auth 1.0.0 having been <a href="https://github.com/simplabs/ember-simple-auth/releases/tag/1.0.0">released a few days ago</a>, a lot of people will want to upgrade their applications to it so they can finally make the switch to Ember.js 2.0. While quite a big part of the <a href="http://ember-simple-auth.com/api/">public API</a> has been changed in 1.0.0, <strong>updating an application from Ember Simple Auth 0.8.0 or earlier versions is actually not as hard as it might appear</strong> at first glance. This post explains the steps that are necessary to bring an application to 1.0.0.</p>
 ---
-
-With Ember Simple Auth 1.0.0 having been
-[released a few days ago](https://github.com/simplabs/ember-simple-auth/releases/tag/1.0.0),
-a lot of people will want to upgrade their applications to it so they can
-finally make the switch to Ember.js 2.0\. While quite a big part of the
-[public API](http://ember-simple-auth.com/api/) has been changed in 1.0.0,
-**updating an application from Ember Simple Auth 0.8.0 or earlier versions is
-actually not as hard as it might appear** at first glance. This post explains
-the steps that are necessary to bring an application to 1.0.0.
-
-<!--break-->
 
 As 1.0.0 marks the first stable release of Ember Simple Auth, upcoming versions
 will adhere to the [Semantic Versioning](http://semver.org) rule of not
@@ -51,13 +42,17 @@ the `import` statements that import code from Ember Simple Auth need to be
 updated accordingly, e.g.
 
 ```js
-import ApplicationRouteMixin from "simple-auth/mixins/application-route-mixin";
+{% raw %}
+import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
+{% endraw %}
 ```
 
 becomes
 
 ```js
-import ApplicationRouteMixin from "ember-simple-auth/mixins/application-route-mixin";
+{% raw %}
+import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
+{% endraw %}
 ```
 
 Also the modules for the OAuth 2.0 authenticator and authorizer have been
@@ -76,11 +71,13 @@ all routes, controllers and components that use the session (or back a template
 that uses it), that session service needs to be injected, e.g.:
 
 ```js
-import Ember from "ember";
+{% raw %}
+import Ember from 'ember';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
 });
+{% endraw %}
 ```
 
 ## Define Authenticators and Authorizers
@@ -93,12 +90,14 @@ authenticator simply define an authenticator that extends the OAuth 2.0
 authenticator in `app/authenticators`:
 
 ```js
+{% raw %}
 // app/authenticators/oauth2.js
-import OAuth2PasswordGrant from "ember-simple-auth/authenticators/oauth2-password-grant";
+import OAuth2PasswordGrant from 'ember-simple-auth/authenticators/oauth2-password-grant';
 
 export default OAuth2PasswordGrant.extend({
-  serverTokenRevocationEndpoint: "/revoke",
+  serverTokenRevocationEndpoint: '/revoke',
 });
+{% endraw %}
 ```
 
 In addition to the renamed module, the signature of the OAuth 2.0 authenticator
@@ -106,22 +105,26 @@ has changed as well so that it now expects dedicated arguments for the user’s
 identification and password instead of one object containing both values, so
 
 ```js
-const credentials = this.getProperties("identification", "password");
-this.get("session").authenticate("authenticator:oauth2", credentials);
+{% raw %}
+const credentials = this.getProperties('identification', 'password');
+this.get('session').authenticate('authenticator:oauth2', credentials);
+{% endraw %}
 ```
 
 becomes
 
 ```js
+{% raw %}
 const { identification, password } = this.getProperties(
-  "identification",
-  "password"
+  'identification',
+  'password',
 );
-this.get("session").authenticate(
-  "authenticator:oauth2",
+this.get('session').authenticate(
+  'authenticator:oauth2',
   identification,
-  password
+  password,
 );
+{% endraw %}
 ```
 
 Also authenticators and authorizers are not configured via
@@ -140,12 +143,14 @@ of code use the
 e.g.:
 
 ```js
-this.get("session").authorize(
-  "authorizer:oauth2-bearer",
+{% raw %}
+this.get('session').authorize(
+  'authorizer:oauth2-bearer',
   (headerName, headerValue) => {
     xhr.setRequestHeader(headerName, headerValue);
-  }
+  },
 );
+{% endraw %}
 ```
 
 If the application uses Ember Data, you can authorize all of the requests it
@@ -154,13 +159,15 @@ sends to the API by using the new
 e.g.:
 
 ```js
+{% raw %}
 // app/adapters/application.js
-import DS from "ember-data";
-import DataAdapterMixin from "ember-simple-auth/mixins/data-adapter-mixin";
+import DS from 'ember-data';
+import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
 export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
-  authorizer: "authorizer:application",
+  authorizer: 'authorizer:application',
 });
+{% endraw %}
 ```
 
 ## Migrating custom sessions
@@ -177,23 +184,25 @@ You can simply extend the session service and add custom properties and methods
 in the subclass, e.g.:
 
 ```js
+{% raw %}
 // app/services/session.js
-import Ember from "ember";
-import DS from "ember-data";
-import SessionService from "ember-simple-auth/services/session";
+import Ember from 'ember';
+import DS from 'ember-data';
+import SessionService from 'ember-simple-auth/services/session';
 
 export default SessionService.extend({
   store: Ember.inject.service(),
 
-  account: Ember.computed("data.authenticated.account_id", function () {
-    const accountId = this.get("data.authenticated.account_id");
+  account: Ember.computed('data.authenticated.account_id', function () {
+    const accountId = this.get('data.authenticated.account_id');
     if (!Ember.isEmpty(accountId)) {
       return DS.PromiseObject.create({
-        promise: this.get("store").find("account", accountId),
+        promise: this.get('store').find('account', accountId),
       });
     }
   }),
 });
+{% endraw %}
 ```
 
 ### Create dedicated services
@@ -202,22 +211,24 @@ You can also create dedicated services that use the session service internally,
 e.g.:
 
 ```js
-import Ember from "ember";
-import DS from "ember-data";
+{% raw %}
+import Ember from 'ember';
+import DS from 'ember-data';
 
 export default Ember.Service.extend({
-  session: Ember.inject.service("session"),
+  session: Ember.inject.service('session'),
   store: Ember.inject.service(),
 
-  account: Ember.computed("session.data.authenticated.account_id", function () {
-    const accountId = this.get("session.data.authenticated.account_id");
+  account: Ember.computed('session.data.authenticated.account_id', function () {
+    const accountId = this.get('session.data.authenticated.account_id');
     if (!Ember.isEmpty(accountId)) {
       return DS.PromiseObject.create({
-        promise: this.get("store").find("account", accountId),
+        promise: this.get('store').find('account', accountId),
       });
     }
   }),
 });
+{% endraw %}
 ```
 
 In this case the session service remains unchanged and whenever you need the
@@ -245,12 +256,14 @@ customize properties (as done for authenticators and authorizers as described
 above) or implement a fully custom store, e.g.:
 
 ```js
+{% raw %}
 // app/session-store/application.js
-import CookieStore from "ember-simple-auth/session-stores/cookie";
+import CookieStore from 'ember-simple-auth/session-stores/cookie';
 
 export default CookieStore.extend({
-  cookieName: "my_custom_cookie_name",
+  cookieName: 'my_custom_cookie_name',
 });
+{% endraw %}
 ```
 
 **Ember Simple Auth 1.0.0 will also automatically use the
@@ -265,23 +278,29 @@ helpers, version 1.0.0 requires them to be imported in the respective acceptance
 tests, e.g.:
 
 ```js
+{% raw %}
 import {
   invalidateSession,
   authenticateSession,
   currentSession,
-} from "../helpers/ember-simple-auth";
+} from '../helpers/ember-simple-auth';
+{% endraw %}
 ```
 
 Also they now take the application instance as a first argument so instead of
 
 ```js
+{% raw %}
 authenticateSession();
+{% endraw %}
 ```
 
 one would now write
 
 ```js
+{% raw %}
 authenticateSession(App);
+{% endraw %}
 ```
 
 ## Update the application route if necessary

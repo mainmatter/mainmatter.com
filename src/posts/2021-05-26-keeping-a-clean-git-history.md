@@ -1,21 +1,17 @@
 ---
-title: "Git Good - The magic of keeping a clean Git history"
+title: 'Git Good - The magic of keeping a clean Git history'
 authorHandle: real_ate
 tags: misc
-bio: "Senior Software Engineer, Ember Learning Core Team member"
+bio: 'Senior Software Engineer, Ember Learning Core Team member'
 description: |
   Chris Manson goes into detail about the benefits of a clean git history and
   describes some tips and tricks that really help you clean up your branches and
   Pull Requests
 og:
   image: /assets/images/posts/2021-05-26-keeping-a-clean-git-history/og-image.png
+tagline: |
+  <p>This post is designed to help you form a solid mental model while working with Git both professionally and in an open source project, and how to ensure you are following best practices to make the process easier for everyone.</p>
 ---
-
-This post is designed to help you form a solid mental model while working with
-Git both professionally and in an open source project, and how to ensure you are
-following best practices to make the process easier for everyone.
-
-<!--break-->
 
 ![Trying your GitHub Actions locally illustration](/assets/images/posts/2021-05-26-keeping-a-clean-git-history/illustration.svg#full)
 

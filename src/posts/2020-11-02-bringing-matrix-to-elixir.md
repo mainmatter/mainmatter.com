@@ -2,19 +2,13 @@
 title: Bringing the Matrix Protocol to Elixir
 authorHandle: niklas_long
 tags: elixir
-bio: "Backend Engineer, author of the Matrix Elixir SDK"
-description: "Niklas Long introduces the Matrix Elixir SDK."
+bio: 'Backend Engineer, author of the Matrix Elixir SDK'
+description: 'Niklas Long introduces the Matrix Elixir SDK.'
 og:
   image: /assets/images/posts/2020-11-02-bringing-matrix-to-elixir/og-image.png
+tagline: |
+  <p><a href="https://matrix.org">Matrix</a> is an open-source, end-to-end encrypted, real-time, open standard communication protocol designed to protect people's privacy. The technology has applications not only in messaging and Voice over IP (VoIP) but similarly in Internet of Things (IoT), Augmented Reality (AR) and Virtual Reality (VR).</p>
 ---
-
-[Matrix](https://matrix.org) is an open-source, end-to-end encrypted, real-time,
-open standard communication protocol designed to protect people's privacy. The
-technology has applications not only in messaging and Voice over IP (VoIP) but
-similarly in Internet of Things (IoT), Augmented Reality (AR) and Virtual
-Reality (VR).
-
-<!--break-->
 
 ![Bringing the Matrix Protocol to Elixir](/assets/images/posts/2020-11-02-bringing-matrix-to-elixir/illustration.svg#full)
 

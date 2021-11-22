@@ -2,16 +2,13 @@
 title: simplabs at EmberConf 2019
 authorHandle: mrmrcoleman
 tags: simplabs
-bio: "Communications and Community Outreach Specialist"
+bio: 'Communications and Community Outreach Specialist'
 description:
   "Mark Coleman gives an update on the simplabs team's presence at EmberConf
   2019 and our involvement with many events at and around the conference."
+tagline: |
+  <p>We mentioned this in our March monthly update but in case you missed it, here's how we're involved in EmberConf 2019.</p>
 ---
-
-We mentioned this in our March monthly update but in case you missed it, here's
-how we're involved in EmberConf 2019.
-
-<!--break-->
 
 ![EmberConf 2019](/assets/images/posts/2019-03-07-march-monthly-update/emberconf-logo.png)
 

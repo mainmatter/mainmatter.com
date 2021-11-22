@@ -1,16 +1,14 @@
 ---
-title: "Ember.SimpleAuth needs a logo!"
+title: 'Ember.SimpleAuth needs a logo!'
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
 description:
-  "Marco Otte-Witte posts a request for the community to contribute a logo to
-  Ember.SimpleAuth."
+  'Marco Otte-Witte posts a request for the community to contribute a logo to
+  Ember.SimpleAuth.'
 tags: ember
+tagline: |
+  <p>The project needs a logo.</p>
 ---
-
-The project needs a logo.
-
-<!--break-->
 
 Every good open source project needs a nice and shiny logo these days. It would
 be great if Ember.SimpleAuth had one as well. As I’m not really an expert in

@@ -1,22 +1,14 @@
 ---
 title: Using better element selectors in Ember.js tests
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
 description:
-  "Marco Otte-Witte announces the release of ember-test-selectors, an addon that
-  enables better element selectors in Ember.js tests."
+  'Marco Otte-Witte announces the release of ember-test-selectors, an addon that
+  enables better element selectors in Ember.js tests.'
 tags: ember
+tagline: |
+  <p>We just released <a href="https://github.com/simplabs/ember-test-selectors">ember-test-selectors</a>, an <strong>Ember Addon that enables better element selectors in Ember.js tests</strong>. It removes all data attributes starting with <code>data-test-</code> from the application's templates in the <code>production</code> environment so that these attributes can be used to select elements with in acceptance and integration tests without polluting the markup that is delivered to the end user.</p>
 ---
-
-We just released
-[ember-test-selectors](https://github.com/simplabs/ember-test-selectors), an
-**Ember Addon that enables better element selectors in Ember.js tests**. It
-removes all data attributes starting with `data-test-` from the application's
-templates in the `production` environment so that these attributes can be used
-to select elements with in acceptance and integration tests without polluting
-the markup that is delivered to the end user.
-
-<!--break-->
 
 ## Why even use `data` attributes as test selectors?
 
@@ -48,7 +40,7 @@ This approach selects elements by CSS classes. For the following template:
 ```hbs
 {% raw %}
 <article>
-  <h1 class="post-title">{{post.title}}</h1>
+  <h1 class='post-title'>{{post.title}}</h1>
   <p>{{post.body}}</p>
 </article>
 {% endraw %}
@@ -71,7 +63,7 @@ following template:
 ```hbs
 {% raw %}
 <article>
-  <h1 data-test-selector="post-title">{{post.title}}</h1>
+  <h1 data-test-selector='post-title'>{{post.title}}</h1>
   <p>{{post.body}}</p>
 </article>
 {% endraw %}
@@ -89,7 +81,10 @@ in the markup like e.g. the post's id:
 ```hbs
 {% raw %}
 <article>
-  <h1 data-test-selector="post-title" data-test-resource-id="{{post.id}}">{{post.title}}</h1>
+  <h1
+    data-test-selector='post-title'
+    data-test-resource-id='{{post.id}}'
+  >{{post.title}}</h1>
   <p>{{post.body}}</p>
 </article>
 {% endraw %}
@@ -122,4 +117,4 @@ attributes as test selectors even more convenient:
   `<div {{test-selector post}}>…</div>` which would result in
   `<div data-test-selector="post-1">…</div>`,
   [https://github.com/simplabs/ember-test-selectors/issues/9](https://github.com/simplabs/ember-test-selectors/issues/9)
-  {% endraw %}
+{% endraw %}

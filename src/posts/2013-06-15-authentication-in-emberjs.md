@@ -1,27 +1,14 @@
 ---
-title: "Authentication in ember.js"
+title: 'Authentication in ember.js'
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
 tags: ember
 description:
-  "Marco Otte-Witte describes an approach for implementing a session mechanism,
-  authentication and authorization in Ember.js applications."
+  'Marco Otte-Witte describes an approach for implementing a session mechanism,
+  authentication and authorization in Ember.js applications.'
+tagline: |
+  <p><strong>Update:</strong><em>I released an Ember.js plugin that makes it very easy to implement an authentication system as described in this post: <a href="/blog/2013/10/09/embersimpleauth">Ember.SimpleAuth</a>.</em></p> <p><strong>Update:</strong> <em>After I wrote this I found out that it’s actually not the best approach to implement authentication in Ember.js… There are some things missing and some other things can be done in a much simpler way. <a href="/blog/2013/08/08/better-authentication-in-emberjs" title="(better) authnetication with ember.js">I wrote a summary of the (better) authentication mechanism we moved to.</a></em></p> <p><em>I’m using the latest (as of mid June 2013) <a href="https://github.com/emberjs/ember.js">ember</a>/<a href="https://github.com/emberjs/data">ember-data</a>/<a href="https://github.com/wycats/handlebars.js">handlebars</a> code directly from the respective github repositories in this example.</em></p>
 ---
-
-**Update:**_I released an Ember.js plugin that makes it very easy to implement
-an authentication system as described in this post:
-[Ember.SimpleAuth](/blog/2013/10/09/embersimpleauth)._
-
-**Update:** _After I wrote this I found out that it’s actually not the best
-approach to implement authentication in Ember.js… There are some things missing
-and some other things can be done in a much simpler way.
-[I wrote a summary of the (better) authentication mechanism we moved to.](/blog/2013/08/08/better-authentication-in-emberjs "(better) authnetication with ember.js")_
-
-_I’m using the latest (as of mid June 2013)
-[ember](https://github.com/emberjs/ember.js)/[ember-data](https://github.com/emberjs/data)/[handlebars](https://github.com/wycats/handlebars.js)
-code directly from the respective github repositories in this example._
-
-<!--break-->
 
 When we started our first project with [ember.js](http://emberjs.com), **the
 first thing we came across was how to implement authentication**. While all of
@@ -47,10 +34,14 @@ implement a regular login form with username and password fields:
 ```hbs
 {% raw %}
 <form>
-  <label for="loginOrEmail">Login or Email</label>
-  {{view Ember.TextField valueBinding="loginOrEmail" placeholder="Login or Email"}}
-  <label for="password">Password</label>
-  {{view Ember.TextField valueBinding="password" placeholder="Password"}}
+  <label for='loginOrEmail'>Login or Email</label>
+  {{view
+    Ember.TextField
+    valueBinding='loginOrEmail'
+    placeholder='Login or Email'
+  }}
+  <label for='password'>Password</label>
+  {{view Ember.TextField valueBinding='password' placeholder='Password'}}
   <button {{action 'createSession'}}>Login</button>
 </form>
 {% endraw %}
@@ -63,6 +54,7 @@ the authenticated user:
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 App.SessionsNewRoute = Ember.Route.extend({
   events: {
     createSession: function() {
@@ -86,6 +78,7 @@ App.SessionsNewRoute = Ember.Route.extend({
     },
   },
 });
+{% endraw %}
 ```
 
 I’m using a route instead of a controller here as redirecting should only be
@@ -96,13 +89,15 @@ for more info.
 The response JSON from the server would look somehow like this in the successful
 login case:
 
-```json
+```js
+{% raw %}on
 {
   "session": {
     "auth_token": "<SOME RANDOM AUTH TOKEN>",
     "account_id": "<ID OF AUTHENTICATED USER>"
   }
 }
+{% endraw %}
 ```
 
 At this point the client has the authentication data necessary to authenticate
@@ -112,8 +107,10 @@ every time the user reloads the page we can simply **store that data in a cookie
 (of course you could use local storage etc.)**:
 
 ```js
-$.cookie("auth_token", App.Auth.get("authToken"));
-$.cookie("auth_account", App.Auth.get("accountId"));
+{% raw %}
+$.cookie('auth_token', App.Auth.get('authToken'));
+$.cookie('auth_account', App.Auth.get('accountId'));
+{% endraw %}
 ```
 
 ## Making authenticated requests
@@ -127,14 +124,16 @@ authentication in the
 I simply added it myself:
 
 ```js
+{% raw %}
 App.AuthenticatedRESTAdapter = DS.RESTAdapter.extend({
   ajax: function (url, type, hash) {
     hash = hash || {};
     hash.headers = hash.headers || {};
-    hash.headers["X-AUTHENTICATION-TOKEN"] = this.authToken;
+    hash.headers['X-AUTHENTICATION-TOKEN'] = this.authToken;
     return this._super(url, type, hash);
   },
 });
+{% endraw %}
 ```
 
 Now the adapter will pass along the authentication token with every request to
@@ -145,12 +144,14 @@ which would mean that for some reason the authentication token became invalid,
 the session data on the client is deleted** and we require a fresh login:
 
 ```js
+{% raw %}
 DS.rejectionHandler = function (reason) {
   if (reason.status === 401) {
     App.Auth.destroy();
   }
   throw reason;
 };
+{% endraw %}
 ```
 
 ## Enforcing authentication on the client
@@ -164,16 +165,18 @@ routes that require authentication can then inherit from that one instead if the
 regular [`Ember.Route`](http://emberjs.com/api/classes/Ember.Route.html)
 
 ```js
+{% raw %}
 App.AuthenticatedRoute = Ember.Route.extend({
   enter: function () {
     if (
-      !Ember.isEmpty(App.Auth.get("authToken")) &&
-      !Ember.isEmpty(App.Auth.get("accountId"))
+      !Ember.isEmpty(App.Auth.get('authToken')) &&
+      !Ember.isEmpty(App.Auth.get('accountId'))
     ) {
-      this.transitionTo("sessions.new");
+      this.transitionTo('sessions.new');
     }
   },
 });
+{% endraw %}
 ```
 
 This is actually very similar to the concept of an `AuthController` in Rails
@@ -195,10 +198,12 @@ As the code is now spread up into a number of files and classes, I added a
 `Session` model:
 
 ```js
+{% raw %}
 App.Session = DS.Model.extend({
-  authToken: DS.attr("string"),
-  account: DS.belongsTo("App.Account"),
+  authToken: DS.attr('string'),
+  account: DS.belongsTo('App.Account'),
 });
+{% endraw %}
 ```
 
 alongside an `App.AuthManager` accompanied by a custom initializer to clean it
@@ -206,6 +211,7 @@ up:
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 App.AuthManager = Ember.Object.extend({
   init: function() {
     this._super();
@@ -243,6 +249,7 @@ App.AuthManager = Ember.Object.extend({
     }
   }.observes('session'),
 });
+{% endraw %}
 ```
 
 This is simple authentication with ember.js!

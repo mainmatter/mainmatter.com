@@ -1,27 +1,14 @@
 ---
-title: "Factories best practices"
+title: 'Factories best practices'
 authorHandle: geekygrappler
 tags: testing
-bio: "Senior Frontend Engineer"
+bio: 'Senior Frontend Engineer'
 description:
   "Andy Brown introduces best practices for using factories in order to make
   your colleagues' and your own future self's lives easier."
+tagline: |
+  <p>Writing tests is like drinking beer 🍻. When you first try it, the taste is really quite unpalatable, but everyone else around you is doing it and they seem to be enjoying it. You've heard about all the benefits of it, people won't stop telling you how great it is, how it changed their lives for the better. Also there is a lot of peer pressure and judgement involved, don't be that dev... so you conceal your grimace and keep trying it, on a daily basis here at simplabs. And just like beer, in no time at all, on a long hot day, when you feel yourself tiring of writing all those features and tweaking all that CSS, you realise that what you need to relax is to write a good, concise, logical, cool and refreshing test. At least that's been my experience and I want to share a few tips for factories so that your tests are easy for your <s>friends</s>, <s>colleagues</s>, the next developer to read.</p>
 ---
-
-Writing tests is like drinking beer 🍻. When you first try it, the taste is
-really quite unpalatable, but everyone else around you is doing it and they seem
-to be enjoying it. You've heard about all the benefits of it, people won't stop
-telling you how great it is, how it changed their lives for the better. Also
-there is a lot of peer pressure and judgement involved, don't be that dev... so
-you conceal your grimace and keep trying it, on a daily basis here at simplabs.
-And just like beer, in no time at all, on a long hot day, when you feel yourself
-tiring of writing all those features and tweaking all that CSS, you realise that
-what you need to relax is to write a good, concise, logical, cool and refreshing
-test. At least that's been my experience and I want to share a few tips for
-factories so that your tests are easy for your ~~friends~~, ~~colleagues~~, the
-next developer to read.
-
-<!--break-->
 
 ## AAA
 
@@ -73,29 +60,31 @@ defaults. Some pseudocode as we're so far into the post without a single line of
 it.
 
 ```js
-test("orders with deliveries from different carriers arriving on the same day, only show 1 estimated delivery date", function (assert) {
+{% raw %}
+test('orders with deliveries from different carriers arriving on the same day, only show 1 estimated delivery date', function (assert) {
   let tomorrow = Date.tomorrow();
-  let dhl = make("delivery", {
+  let dhl = make('delivery', {
     estimatedDeliveryDate: tomorrow,
-    carrier: "dhl",
+    carrier: 'dhl',
   });
-  let ups = make("delivery", {
+  let ups = make('delivery', {
     estimatedDeliveryDate: tomorrow,
-    carrier: "ups",
+    carrier: 'ups',
   });
-  let order = make("order", { deliveries: [dhl, ups] });
+  let order = make('order', { deliveries: [dhl, ups] });
 
   assert.equal(
     order.estimatedDeliveryDates.length,
     1,
-    "We should only show one delivery date"
+    'We should only show one delivery date',
   );
   assert.equal(
     order.estimatedDeliveryDates[0],
     tomorrow,
-    "The delivery date is correct"
+    'The delivery date is correct',
   );
 });
+{% endraw %}
 ```
 
 ## Fun fun factories 🏭
@@ -107,22 +96,24 @@ default model, e.g. `user` and you'll be able to have named factories e.g.
 example:
 
 ```js
+{% raw %}
 //factories/user.js
 Factory.define({
   default: {
-    name: "Ned Stark",
+    name: 'Ned Stark',
   },
   rob_stark: {
-    name: "Rob Stark",
+    name: 'Rob Stark',
     canInherit: true,
-    wolf: belongsTo("dire-wolf"),
+    wolf: belongsTo('dire-wolf'),
   },
   jon_snow: {
-    name: "Jon Snow",
+    name: 'Jon Snow',
     canInherit: false,
-    wolf: belongsTo("dire-wolf"),
+    wolf: belongsTo('dire-wolf'),
   },
 });
+{% endraw %}
 ```
 
 Now while it's fun to have Game of Thrones characters in your testing code base,
@@ -135,80 +126,84 @@ thing, the model will grow with time and the list of attrs will start to grow
 for both of our heroes. Let me give one scenario for what could happen:
 
 ```js
+{% raw %}
 beforeEach(() => {
-  let rob = make("rob_stark");
-  let jon = make("jon_snow");
+  let rob = make('rob_stark');
+  let jon = make('jon_snow');
 });
 
 // Added by me on day 1
-test("bastards cannot inherit", function (assert) {
+test('bastards cannot inherit', function (assert) {
   assert.ok(
     rob.canInherit,
-    "The King in the North, Rob Stark shall inherit Winterfell"
+    'The King in the North, Rob Stark shall inherit Winterfell',
   );
   assert.notOk(
     jon.canInherit,
-    "Get ye to The Wall, Winterfell will never belong to Jon Snow."
+    'Get ye to The Wall, Winterfell will never belong to Jon Snow.',
   );
 });
 
 // Added by you on day 10
-test("Leaders can raise armies", function (assert) {
+test('Leaders can raise armies', function (assert) {
   /* let's introduce someone who can tell us interesting things about Jon and Rob */
-  let threeEyedRaven = make("brandon_stark");
+  let threeEyedRaven = make('brandon_stark');
 
   assert.ok(
     threeEyedRaven.canRaiseArmies(rob),
-    "Noble of blood, strong of heart, Rob Stark can raise an army."
+    'Noble of blood, strong of heart, Rob Stark can raise an army.',
   );
   assert.ok(
     threeEyedRaven.canRaiseArmies(jon),
-    "Principles command authority, Jon Snow can raise an army."
+    'Principles command authority, Jon Snow can raise an army.',
   );
 });
 
 //Added by me on day 102
-test("Jon is better than Rob", function (assert) {
-  let threeEyedRaven = make("brandon_stark");
+test('Jon is better than Rob', function (assert) {
+  let threeEyedRaven = make('brandon_stark');
 
   assert.ok(
     threeEyedRaven.isVitalToDefeatTheWhiteWalkers(jon),
-    "We need Jon Snow to defeat the White Walkers (TBC) 😍"
+    'We need Jon Snow to defeat the White Walkers (TBC) 😍',
   );
 
   assert.notOk(
     threeEyedRaven.isVitalToDefeatTheWhiteWalkers(rob),
-    "Rob Stark proved his irrelevance to defeating the White Walkers during the Red Wedding 🗡 😭"
+    'Rob Stark proved his irrelevance to defeating the White Walkers during the Red Wedding 🗡 😭',
   );
 });
+{% endraw %}
 ```
 
 And now what our simple factories have morphed into:
 
 ```js
+{% raw %}
 Factory.define({
   default: {
-    name: "Ned Stark",
+    name: 'Ned Stark',
   },
   rob_stark: {
-    name: "Rob Stark",
+    name: 'Rob Stark',
     canInherit: true,
-    wolf: belongsTo("dire-wolf"),
+    wolf: belongsTo('dire-wolf'),
     isBlessedByRhlor: false,
     charisma: 10,
     fighting_ability: 10,
     alive: false,
   },
   jon_snow: {
-    name: "Jon Snow",
+    name: 'Jon Snow',
     canInherit: false,
-    wolf: belongsTo("dire-wolf"),
+    wolf: belongsTo('dire-wolf'),
     isBlessedByRhlor: true,
     charisma: 9,
     fighting_ability: 10,
     alive: true,
   },
 });
+{% endraw %}
 ```
 
 Now my example is a bit of fun, but my point is this: If you create wittily
@@ -221,18 +216,20 @@ of this, then keep the modification simple and make it obvious from the name
 what properties are changing.
 
 ```js
+{% raw %}
 //user.js
 Factory.define({
   default: {
-    name: "A user",
-    email: "user@example.com",
+    name: 'A user',
+    email: 'user@example.com',
   },
   admin_user: {
-    name: "An Admin",
-    email: "admin@example.com",
+    name: 'An Admin',
+    email: 'admin@example.com',
     isAdmin: true,
   },
 });
+{% endraw %}
 ```
 
 But of course **you should not do this(!)**, even with sensible naming, because
@@ -252,6 +249,7 @@ admin then your test should be.
 me.</small>
 
 ```js
+{% raw %}
 test('Admin users are taken to the dashboard on login', async function(assert) {
   let admin = make('user', { isAdmin: true });
 
@@ -262,6 +260,7 @@ test('Admin users are taken to the dashboard on login', async function(assert) {
 
   assert.equal(window.location, '/admin-dashboard';)
 });
+{% endraw %}
 ```
 
 This declarative factory use is slightly longer than `make('admin_user')` (👈
@@ -275,6 +274,7 @@ listing those attributes in the test, again informing any reader what attributes
 are related to becoming an admin.
 
 ```js
+{% raw %}
 test('Admin users are taken to the dashboard on login', async function(assert) {
   let admin = make('user', {
     isAdmin: true,
@@ -288,6 +288,7 @@ test('Admin users are taken to the dashboard on login', async function(assert) {
 
   assert.equal(window.location, '/admin-dashboard';)
 });
+{% endraw %}
 ```
 
 If this list becomes quite long and it is used in a lot of places, and I mean
@@ -333,19 +334,21 @@ And you definitely should be writing integration and unit tests.
 Using Mirage in an acceptance test look like this.
 
 ```js
+{% raw %}
 //acceptance/foo-index-test.js
 
-test("The page shows me all the foos", async function (assert) {
-  server.createList("foo", 5);
+test('The page shows me all the foos', async function (assert) {
+  server.createList('foo', 5);
 
-  await visit("/foos");
+  await visit('/foos');
 
   assert.equal(
-    find("[data-test-foo]").length,
+    find('[data-test-foo]').length,
     5,
-    "Five foos are shown on the page"
+    'Five foos are shown on the page',
   );
 });
+{% endraw %}
 ```
 
 It's not bad, we are at least following AAA, but there is a step that is
@@ -359,23 +362,25 @@ equivalent test with Factory Guy for the data and
 certain helper functions that you can use with Factory Guy if you want.</small>
 
 ```js
+{% raw %}
 //acceptance/foo-index-test.js
 
-test("The page shows me all the foos", async function (assert) {
+test('The page shows me all the foos', async function (assert) {
   // This is pretender
-  server.get("/api/foos", function () {
+  server.get('/api/foos', function () {
     // buildList is ember-data-factory-guy
-    return [200, {}, buildList("foo", 5)];
+    return [200, {}, buildList('foo', 5)];
   });
 
-  await visit("/foos");
+  await visit('/foos');
 
   assert.equal(
-    find("[data-test-foo]").length,
+    find('[data-test-foo]').length,
     5,
-    "Five foos are shown on the page"
+    'Five foos are shown on the page',
   );
 });
+{% endraw %}
 ```
 
 Here we're being a little more explicit in the test. Put yourself in the shoes
@@ -386,9 +391,11 @@ trigger a `GET` request to `/api/foos` and we return a list of foos. It's a
 small difference but will help a junior to realise what
 
 ```js
+{% raw %}
 model() {
   return this.get('store').findAll('foo');
 }
+{% endraw %}
 ```
 
 is actually doing.

@@ -1,23 +1,15 @@
 ---
-title: "Ember.js: The Documentary - Amsterdam Premiere"
+title: 'Ember.js: The Documentary - Amsterdam Premiere'
 authorHandle: mrmrcoleman
 tags: ember
-bio: "Communications and Community Outreach Specialist"
+bio: 'Communications and Community Outreach Specialist'
 description:
   'Mark Coleman announces the release of "Ember.js: The Documentary" in which
   simplabs is featured among other well-known figures from the Ember.js
   community.'
+tagline: |
+  <p>We're very pleased to announce that simplabs are featured in the new <a href="https://www.honeypot.io/">HoneyPot</a> film <strong>'Ember: A Mini Documentary'</strong> that will premiere in Amsterdam this evening (2019-02-08).</p> <p>The film is a deep dive into the world of Ember.js and includes an interview with our CEO Marco Otte-Witte. After the screening there will also be a Q&amp;A with Yehuda Katz &amp; Special Guests!</p>
 ---
-
-We're very pleased to announce that simplabs are featured in the new
-[HoneyPot](https://www.honeypot.io/) film **'Ember: A Mini Documentary'** that
-will premiere in Amsterdam this evening (2019-02-08).
-
-The film is a deep dive into the world of Ember.js and includes an interview
-with our CEO Marco Otte-Witte. After the screening there will also be a Q&A with
-Yehuda Katz & Special Guests!
-
-<!--break-->
 
 The premiere kicks off at 18:30 at [Pakhuis De Zwijger](https://dezwijger.nl/)
 and there are still a few spots available.

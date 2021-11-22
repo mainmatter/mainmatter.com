@@ -1,19 +1,16 @@
 ---
-title: "How to Improve Kick-off Meetings to Spark Collaboration"
+title: 'How to Improve Kick-off Meetings to Spark Collaboration'
 authorHandle: ghislaineguerin
 tags: design
-bio: "Process Designer and Facilitator"
+bio: 'Process Designer and Facilitator'
 description:
-  "Ghislaine Guerin presents techniques for getting the most out of kick-off
-  meetings."
+  'Ghislaine Guerin presents techniques for getting the most out of kick-off
+  meetings.'
 og:
   image: /assets/images/posts/2020-05-04-facilitate-client-onboarding/og-image.png
+tagline: |
+  <p>Could some adjustments to kick-off meetings lead to a more streamlined and efficient collaboration?</p>
 ---
-
-Could some adjustments to kick-off meetings lead to a more streamlined and
-efficient collaboration?
-
-<!--break-->
 
 ![kick-off-arches](/assets/images/posts/2020-05-04-facilitate-client-onboarding/kick-off-arches.png#@1440-2880)
 

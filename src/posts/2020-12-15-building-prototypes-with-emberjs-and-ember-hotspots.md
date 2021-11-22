@@ -1,36 +1,16 @@
 ---
-title: "Building prototypes with Ember.js"
+title: 'Building prototypes with Ember.js'
 authorHandle: pichfl
-tags: ember
-bio: "Consultant for Design & Technology"
+tags: emberjs
+bio: 'Consultant for Design & Technology'
 description:
-  "Create click dummies and prototypes that can grow over your initial ideas
-  with ease and the full force of the Ember.js ecosystem."
+  'Create click dummies and prototypes that can grow over your initial ideas
+  with ease and the full force of the Ember.js ecosystem.'
 og:
   image: /assets/images/posts/2020-12-15-building-prototypes-with-emberjs-and-ember-hotspots/og-image.png
+tagline: |
+  <p>Have you ever been in charge of creating click dummies, interactive demos or that thing that is made from static images and enriched with hotspots, page transitions and states?</p> <p>Reaching for Invision or Marvel or the built-in features in Figma, Sketch or Adobe XD is your obvious choice. About 90% into the project you realize you need something in the demo which can't be done in the tool you chose. You hit the same wall I did a while ago.</p> <p>I was looking for alternative solutions and while Framer does provide many possibilities, I wished there was a different tool which would sit closer to the apps we write for our clients. Dummies are a helpful tool to explore new ideas inside an existing product after all.</p> <p>Given our client apps are written in Ember.js this was bound to be a new addon for the Ember community. Allowing you to create prototypes, while using little code, but with the full power of the Ember.js ecosystem whenever you need it, thus making it easier to explore new ideas no matter if you start from scratch or want to improve on an existing prject.</p>
 ---
-
-Have you ever been in charge of creating click dummies, interactive demos or
-that thing that is made from static images and enriched with hotspots, page
-transitions and states?
-
-Reaching for Invision or Marvel or the built-in features in Figma, Sketch or
-Adobe XD is your obvious choice. About 90% into the project you realize you need
-something in the demo which can't be done in the tool you chose. You hit the
-same wall I did a while ago.
-
-I was looking for alternative solutions and while Framer does provide many
-possibilities, I wished there was a different tool which would sit closer to the
-apps we write for our clients. Dummies are a helpful tool to explore new ideas
-inside an existing product after all.
-
-Given our client apps are written in Ember.js this was bound to be a new addon
-for the Ember community. Allowing you to create prototypes, while using little
-code, but with the full power of the Ember.js ecosystem whenever you need it,
-thus making it easier to explore new ideas no matter if you start from scratch
-or want to improve on an existing prject.
-
-<!--break-->
 
 ![Better click dummies and prototypes with Ember.js](/assets/images/posts/2020-12-15-building-prototypes-with-emberjs-and-ember-hotspots/illustration.svg#full)
 
@@ -116,6 +96,7 @@ and can be fetched by a service that manages global state for the individual
 hotspots and backgrounds.
 
 ```js
+{% raw %}
 // https://github.com/simplabs/ember-hotspots/blob/main/lib/SizeUpImages.js#L9-L41
 
 module.exports = class SizeUpImages extends Plugin {
@@ -131,10 +112,11 @@ module.exports = class SizeUpImages extends Plugin {
 
     fs.writeFileSync(
       path.join(output, this.options.outputFile),
-      JSON.stringify(content)
+      JSON.stringify(content),
     );
   }
 };
+{% endraw %}
 ```
 
 #### Notes on the process
@@ -148,6 +130,7 @@ experience is about the same as with ember-cli-build.js changes that require a
 restart. This hook is helpful if you want to push things to your index.html.
 
 ```js
+{% raw %}
 // https://github.com/simplabs/ember-hotspots/blob/main/index.js
 
 module.exports = {
@@ -184,6 +167,7 @@ module.exports = {
 
     return '';
   },
+{% endraw %}
 ```
 
 ### Building the components
@@ -209,13 +193,14 @@ width when styling child elements of this component.
 
 ```hbs
 {% raw %}
-<div ...attributes class="eh-background" style={{this.style}}>
+<div ...attributes class='eh-background' style={{this.style}}>
   {{yield}}
 </div>
 {% endraw %}
 ```
 
 ```js
+{% raw %}
 export default class EHBackgroundComponent extends Component {
   // ...
 
@@ -227,9 +212,10 @@ export default class EHBackgroundComponent extends Component {
       `--eh-background-height:${height}px`,
     ];
 
-    return htmlSafe(styles.join(";"));
+    return htmlSafe(styles.join(';'));
   }
 }
+{% endraw %}
 ```
 
 ```css
@@ -273,9 +259,9 @@ detected and `false` on the corresponding `mouseup`.
 {% raw %}
 <div
   ...attributes
-  class="eh-hotspot {{if this.ehHotspots.showHotspots "eh-hotspot--highlight"}}"
+  class='eh-hotspot {{if this.ehHotspots.showHotspots 'eh-hotspot--highlight'}}'
   style={{this.style}}
-  role={{if this.isInteractive (if @route "link" "button")}}
+  role={{if this.isInteractive (if @route 'link' 'button')}}
   {{on this.triggerEvent this.onTrigger}}
 >
   {{yield}}
@@ -284,6 +270,7 @@ detected and `false` on the corresponding `mouseup`.
 ```
 
 ```js
+{% raw %}
 export default class EHHotspotComponent extends Component {
   @service ehHotspots;
 
@@ -303,23 +290,22 @@ export default class EHHotspotComponent extends Component {
     const styles = [`top:${y}px`, `left:${x}px`];
 
     if (this.args.src) {
-      const {
-        width: imageWidth,
-        height: imageHeight,
-      } = this.backgroundImageInfo;
+      const { width: imageWidth, height: imageHeight } =
+        this.backgroundImageInfo;
 
       styles.push(
         `width:${imageWidth}px`,
         `height:${imageHeight}px`,
-        `background-image:url(${this.args.src})`
+        `background-image:url(${this.args.src})`,
       );
     } else {
       styles.push(`width:${width}px`, `height:${height}px`);
     }
 
-    return htmlSafe(styles.join(";"));
+    return htmlSafe(styles.join(';'));
   }
 }
+{% endraw %}
 ```
 
 ```css
@@ -336,9 +322,9 @@ export default class EHHotspotComponent extends Component {
 
 ```hbs
 {% raw %}
-<EhBackground @src="Home@2x.png">
+<EhBackground @src='Home@2x.png'>
   {{#if this.showMenu}}
-    <EhHotspot @rect={{array 40 40}} @src="Menu@2x.png" />
+    <EhHotspot @rect={{array 40 40}} @src='Menu@2x.png' />
   {{/if}}
 
   <EhHotspot
@@ -348,16 +334,16 @@ export default class EHHotspotComponent extends Component {
 
   <EhHotspot
     @rect={{array 341 671 304 90}}
-    @src={{if this.btnCargoHover "button-install-cargo@2x.png"}}
+    @src={{if this.btnCargoHover 'button-install-cargo@2x.png'}}
     @action={{fn (mut this.btnCargoHover) (not this.btnCargoHover)}}
-    @trigger="hover"
+    @trigger='hover'
   />
 
   <EhHotspot
     @rect={{array 655 671 290 90}}
-    @src={{if this.btnGetStartedHover "button-get-started@2x.png"}}
+    @src={{if this.btnGetStartedHover 'button-get-started@2x.png'}}
     @action={{fn (mut this.btnGetStartedHover) (not this.btnGetStartedHover)}}
-    @trigger="hover"
+    @trigger='hover'
   />
 </EhBackground>
 {% endraw %}

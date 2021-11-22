@@ -1,19 +1,14 @@
 ---
-title: "Open Source Maintenance"
+title: 'Open Source Maintenance'
 authorHandle: tobiasbieniek
-bio: "Senior Frontend Engineer, Ember CLI core team member"
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
 description:
-  "Tobias Bieniek introduces best practices for simplifying and speeding up his
-  work on open-source and other projects."
+  'Tobias Bieniek introduces best practices for simplifying and speeding up his
+  work on open-source and other projects.'
 tags: misc
+tagline: |
+  <p>People often ask us how we can handle maintaining a large number of open-source projects. In this blog post we will introduce you to some of out internal best practices we have developed or discovered to simplify and speed up working on open-source and other projects.</p>
 ---
-
-People often ask us how we can handle maintaining a large number of open-source
-projects. In this blog post we will introduce you to some of out internal best
-practices we have developed or discovered to simplify and speed up working on
-open-source and other projects.
-
-<!--break-->
 
 ## Git
 

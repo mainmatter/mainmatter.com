@@ -1,27 +1,16 @@
 ---
-title: "The state of PWA support on mobile and desktop in 2020"
+title: 'The state of PWA support on mobile and desktop in 2020'
 authorHandle: arthurpoot
 tags: pwas
 bio: Digital Marketing Analyst and Business Developer
 description:
-  "Arthur Poot presents an overview of the possibilities that PWAs offer and the
-  level of support different browsers and OSs offer in 2020."
+  'Arthur Poot presents an overview of the possibilities that PWAs offer and the
+  level of support different browsers and OSs offer in 2020.'
 og:
   image: /assets/images/posts/2020-06-10-the-state-of-pwa-support-on-mobile-and-desktop-in-2020/og-image.png
+tagline: |
+  <p>Progressive Web Apps have evolved rapidly over the past few years and are now supported better than ever. In the past 2 years, Microsoft and Samsung have joined Google in the quest to actively support and promote PWAs. Since early 2020, Apple seems to have realized that not all apps belong in the App Store. With the release of iOS 13, most basic PWA features are now finally fully supported on iPads and iPhones.</p> <p>There are still limitations for some operating systems (OS) and browsers, so when you are considering building a PWA it is important to take this in mind. That's why we made this overview.</p>
 ---
-
-Progressive Web Apps have evolved rapidly over the past few years and are now
-supported better than ever. In the past 2 years, Microsoft and Samsung have
-joined Google in the quest to actively support and promote PWAs. Since early
-2020, Apple seems to have realized that not all apps belong in the App Store.
-With the release of iOS 13, most basic PWA features are now finally fully
-supported on iPads and iPhones.
-
-There are still limitations for some operating systems (OS) and browsers, so
-when you are considering building a PWA it is important to take this in mind.
-That's why we made this overview.
-
-<!--break-->
 
 ## The state of PWAs in 2020 per OS
 

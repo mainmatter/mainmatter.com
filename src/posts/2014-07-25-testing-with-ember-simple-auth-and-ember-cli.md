@@ -1,19 +1,14 @@
 ---
-title: "Testing with Ember Simple Auth and Ember CLI"
+title: 'Testing with Ember Simple Auth and Ember CLI'
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
-description: "Marco Otte-Witte explains how to test Ember CLI applications using
-  ember-cli-simple-auth with the testing package ember-cli-simple-auth-testing."
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+description:
+  'Marco Otte-Witte explains how to test Ember CLI applications using
+  ember-cli-simple-auth with the testing package ember-cli-simple-auth-testing.'
 tags: ember
+tagline: |
+  <p><a href="/blog/2014/06/30/using-ember-simple-auth-with-ember-cli" title="Using Ember Simple Auth with ember-cli">The last blog post</a> showed how to use <a href="https://github.com/simplabs/ember-simple-auth">Ember Simple Auth</a> with <a href="https://github.com/ember-cli/ember-cli">Ember CLI</a> to implement session handling and authentication. <strong>This post shows how to test that code</strong>.</p>
 ---
-
-[The last blog post](/blog/2014/06/30/using-ember-simple-auth-with-ember-cli "Using Ember Simple Auth with ember-cli")
-showed how to use
-[Ember Simple Auth](https://github.com/simplabs/ember-simple-auth) with
-[Ember CLI](https://github.com/ember-cli/ember-cli) to implement session
-handling and authentication. **This post shows how to test that code**.
-
-<!--break-->
 
 ## The testing package
 
@@ -31,12 +26,14 @@ the session in tests without having to stub server responses etc. To make these
 helpers available to all tests, import them in `tests/helpers/start-app.js`:
 
 ```js
+{% raw %}
 tests/helpers/start-app.js:
 …
 import 'simple-auth-testing/test-helpers';
 
 export default function startApp(attrs) {
 …
+{% endraw %}
 ```
 
 ## Configuring the `test` environment
@@ -50,12 +47,14 @@ default `localStorage` store cannot be used as that would leave data in the
 to be used in the `test` environment**:
 
 ```js
+{% raw %}
 // config/environment.js
-if (environment === "test") {
-  ENV["simple-auth"] = {
-    store: "simple-auth-session-store:ephemeral",
+if (environment === 'test') {
+  ENV['simple-auth'] = {
+    store: 'simple-auth-session-store:ephemeral',
   };
 }
+{% endraw %}
 ```
 
 The ephemeral store stores data in memory and thus will be completely fresh for
@@ -69,25 +68,27 @@ these (notice the use of the test helpers `authenticateSession` and
 `invalidateSession`):
 
 ```js
-test("a protected route is accessible when the session is authenticated", function () {
+{% raw %}
+test('a protected route is accessible when the session is authenticated', function () {
   expect(1);
   authenticateSession();
-  visit("/protected");
+  visit('/protected');
 
   andThen(function () {
-    equal(currentRouteName(), "protected");
+    equal(currentRouteName(), 'protected');
   });
 });
 
-test("a protected route is not accessible when the session is not authenticated", function () {
+test('a protected route is not accessible when the session is not authenticated', function () {
   expect(1);
   invalidateSession();
-  visit("/protected");
+  visit('/protected');
 
   andThen(function () {
-    notEqual(currentRouteName(), "protected");
+    notEqual(currentRouteName(), 'protected');
   });
 });
+{% endraw %}
 ```
 
 This is how easy it is to test session handling and authentication with Ember

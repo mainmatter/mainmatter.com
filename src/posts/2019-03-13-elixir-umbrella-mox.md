@@ -2,26 +2,13 @@
 title: Elixir Umbrella Applications and Testing with Mox
 authorHandle: niklas_long
 tags: elixir
-bio: "Backend Engineer, author of Breethe API"
+bio: 'Backend Engineer, author of Breethe API'
 description:
-  "Niklas Long shows how Elixir Umbrella applications not only improve the
-  organization of a code base but also allow for an improved testing setup."
+  'Niklas Long shows how Elixir Umbrella applications not only improve the
+  organization of a code base but also allow for an improved testing setup.'
+tagline: |
+  <p>What's the big deal with Elixir umbrellas?</p> <p>An Elixir umbrella is a container for mix apps; a structure useful to separate the application's concerns as each app is contained within its own mix project.</p> <p>Why is this cool?</p> <p>Because it's like Lego and Lego is cool.</p> <p>Who's Mox you ask?</p> <p>Mox is cool too... Let's dive in!</p>
 ---
-
-What's the big deal with Elixir umbrellas?
-
-An Elixir umbrella is a container for mix apps; a structure useful to separate
-the application's concerns as each app is contained within its own mix project.
-
-Why is this cool?
-
-Because it's like Lego and Lego is cool.
-
-Who's Mox you ask?
-
-Mox is cool too... Let's dive in!
-
-<!--break-->
 
 ## Breethe
 

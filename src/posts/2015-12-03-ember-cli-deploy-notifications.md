@@ -1,24 +1,14 @@
 ---
-title: "ember-cli-deploy-notifications"
+title: 'ember-cli-deploy-notifications'
 authorHandle: LevelbossMike
-bio: "Full-Stack Engineer, Ember CLI Deploy core team member"
+bio: 'Full-Stack Engineer, Ember CLI Deploy core team member'
 description:
-  "Michael Klein introduces ember-cli-deploy-notifications, an ember-cli-deploy
-  plugin for invoking arbitrary webhooks during the deployment process."
+  'Michael Klein introduces ember-cli-deploy-notifications, an ember-cli-deploy
+  plugin for invoking arbitrary webhooks during the deployment process.'
 tags: ember
+tagline: |
+  <p>A few weeks ago a new version of the <em>&quot;official&quot;</em> ember deployment solution <a href="http://ember-cli-deploy.com/">ember-cli-deploy</a> was released:</p> <blockquote> <p>ember-cli-deploy 0.5 is now released and ready for use with a great docs site and already-rich plugin ecosystem: &lt;a href=&quot;https://t.co/6yhjmjQrYD&quot;&gt;https://t.co/6yhjmjQrYD&lt;/a&gt; &lt;author&gt;Luke Melia (@lukemelia) &lt;a href=&quot;https://twitter.com/lukemelia/status/659787938625134592&quot;&gt;29. Oktober 2015&lt;/a&gt;&lt;/author&gt;</p> </blockquote>
 ---
-
-A few weeks ago a new version of the _"official"_ ember deployment solution
-[ember-cli-deploy](http://ember-cli-deploy.com/) was released:
-
-> ember-cli-deploy 0.5 is now released and ready for use with a great docs site
-> and already-rich plugin ecosystem:
-> <a href="https://t.co/6yhjmjQrYD">https://t.co/6yhjmjQrYD</a> <author>Luke
-> Melia (@lukemelia)
-> <a href="https://twitter.com/lukemelia/status/659787938625134592">29. Oktober
-> 2015</a></author>
-
-<!--break-->
 
 Aaron Chambers and me gave detailed walkthroughs of the basic ideas behind the
 pipeline at the [Ember-London](https://vimeo.com/139125310) and
@@ -48,6 +38,7 @@ The second step is to configure the services that you want to notify while
 executing the deployment pipeline.
 
 ```js
+{% raw %}
 // config/deploy.js
 module.exports = function (deployTarget) {
   var ENV = {
@@ -57,7 +48,7 @@ module.exports = function (deployTarget) {
       services: {
         bugsnag: {
           didActivate: {
-            apiKey: "",
+            apiKey: '',
           },
         },
       },
@@ -66,6 +57,7 @@ module.exports = function (deployTarget) {
 
   return ENV;
 };
+{% endraw %}
 ```
 
 Every time a new revision gets activated now by `ember-cli-deploy`,
@@ -94,6 +86,7 @@ you want the service to be notified on** when running through the deploy
 pipeline (as we wouldn’t know when to notify a service otherwise):
 
 ```js
+{% raw %}
 // config/deploy.js
 module.exports = function (deployTarget) {
   var ENV = {
@@ -102,14 +95,14 @@ module.exports = function (deployTarget) {
     notifications: {
       services: {
         simplabs: {
-          url: "https://notify.simplabs.com/deploy",
+          url: 'https://notify.simplabs.com/deploy',
           headers: {},
-          method: "POST",
+          method: 'POST',
           body: function (context) {
             var deployer = context.deployer;
 
             return {
-              secret: "supersecret",
+              secret: 'supersecret',
               deployer: deployer,
             };
           },
@@ -121,6 +114,7 @@ module.exports = function (deployTarget) {
 
   return ENV;
 };
+{% endraw %}
 ```
 
 `url`, `headers`, `method` and `body` are the basic ideas behind the service
@@ -135,6 +129,7 @@ or generated dynamically based on the
 functions which enables you to do things like this:
 
 ```js
+{% raw %}
 // config/deploy.js
 module.exports = function(deployTarget) {
   var ENV = {
@@ -158,12 +153,14 @@ module.exports = function(deployTarget) {
 
   return ENV;
 };
+{% endraw %}
 ```
 
 The configuration properties named the same as ember-cli-deploy’s pipeline-hooks
 can also be used to override configuration defaults on a per hook basis:
 
 ```js
+{% raw %}
 // config/deploy.js
 module.exports = function (deployTarget) {
   var ENV = {
@@ -172,14 +169,14 @@ module.exports = function (deployTarget) {
     notifications: {
       services: {
         slack: {
-          url: "",
+          url: '',
           body: {
-            text: "A new revision was deployed!",
+            text: 'A new revision was deployed!',
           },
           didActivate: true,
           didFail: {
             body: {
-              text: "Deployment failed!",
+              text: 'Deployment failed!',
             },
           },
         },
@@ -189,6 +186,7 @@ module.exports = function (deployTarget) {
 
   return ENV;
 };
+{% endraw %}
 ```
 
 ### Preconfigured services
@@ -204,6 +202,7 @@ already preconfigured which makes it easy to use out of the box** with
 ember-cli-deploy-notifications:
 
 ```js
+{% raw %}
 // config/deploy.js
 module.exports = function (deployTarget) {
   var ENV = {
@@ -212,7 +211,7 @@ module.exports = function (deployTarget) {
     notifications: {
       services: {
         bugsnag: {
-          apiKey: "",
+          apiKey: '',
           didActivate: true,
         },
       },
@@ -221,6 +220,7 @@ module.exports = function (deployTarget) {
 
   return ENV;
 };
+{% endraw %}
 ```
 
 There is also a preconfigured service for slack.

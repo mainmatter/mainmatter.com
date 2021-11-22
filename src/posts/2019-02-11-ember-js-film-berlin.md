@@ -1,23 +1,14 @@
 ---
-title: "Ember.js: The Documentary - Berlin Screening"
+title: 'Ember.js: The Documentary - Berlin Screening'
 authorHandle: mrmrcoleman
 tags: ember
-bio: "Communications and Community Outreach Specialist"
+bio: 'Communications and Community Outreach Specialist'
 description:
   'Mark Coleman announces the screening of "Ember.js: The Documentary" in
   Berlin, Feb. 11th 2019.'
+tagline: |
+  <p>Following on from last week's premiere in Amsterdam the new <a href="https://www.honeypot.io/">HoneyPot</a> film <strong>'Ember: A Mini Documentary'</strong> will be shown in Berlin this evening (2019-02-11).</p> <p>The film is a deep dive into the world of Ember.js and includes an interview with our CEO Marco Otte-Witte. After the screening Jessica Jordan from simplabs will present '<strong>Everything They Didn't Tell You About the Ember Community'</strong> which will be followed by a Q&amp;A.</p>
 ---
-
-Following on from last week's premiere in Amsterdam the new
-[HoneyPot](https://www.honeypot.io/) film **'Ember: A Mini Documentary'** will
-be shown in Berlin this evening (2019-02-11).
-
-The film is a deep dive into the world of Ember.js and includes an interview
-with our CEO Marco Otte-Witte. After the screening Jessica Jordan from simplabs
-will present '**Everything They Didn't Tell You About the Ember Community'**
-which will be followed by a Q&A.
-
-<!--break-->
 
 The event kicks off at 18:30 and there are still a few spots available.
 

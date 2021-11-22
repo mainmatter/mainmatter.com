@@ -1,24 +1,17 @@
 ---
-title: "Why Companies Invest In Open-Source and Why Yours Should, Too"
+title: 'Why Companies Invest In Open-Source and Why Yours Should, Too'
 authorHandle: jjordan_dev
 tags: simplabs
-bio: "Senior Frontend Engineer, Ember Learning Core team member"
+bio: 'Senior Frontend Engineer, Ember Learning Core team member'
 description:
-  "Jessica Jordan details how simplabs makes contributions to open-source
+  'Jessica Jordan details how simplabs makes contributions to open-source
   software work as a regular practice and how companies can benefit from an
-  investment into OSS."
+  investment into OSS.'
 og:
   image: /assets/images/posts/2019-11-11-why-companies-invest-in-oss/og-image.png
+tagline: |
+  <p>Less productivity, missed project deadlines and wasted money: that’s what you get for letting your developers work on open-source projects. Or do you really?</p> <p>This blog post highlights on which levels contribution to open-source provides value to businesses and demonstrates why paying your team to spend time on OSS might be the best business decision you will make this year.</p>
 ---
-
-Less productivity, missed project deadlines and wasted money: that’s what you
-get for letting your developers work on open-source projects. Or do you really?
-
-This blog post highlights on which levels contribution to open-source provides
-value to businesses and demonstrates why paying your team to spend time on OSS
-might be the best business decision you will make this year.
-
-<!--break-->
 
 ![invest time open source illustration](/assets/images/posts/2019-11-11-why-companies-invest-in-oss/oos-illustration.png#full@1440-2880)
 

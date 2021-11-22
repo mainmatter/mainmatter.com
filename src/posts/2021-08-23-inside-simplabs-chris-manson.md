@@ -1,18 +1,15 @@
 ---
-title: "Inside simplabs #1: Chris Manson, Senior Software-Engineer"
+title: 'Inside simplabs #1: Chris Manson, Senior Software-Engineer'
 authorHandle: emma_dellacqua
 tags: insidesimplabs
-bio: "Marketing Assistant"
-description: "Interview with Chris Manson, Senior Software-Engineer at simplabs."
+bio: 'Marketing Assistant'
+description:
+  'Interview with Chris Manson, Senior Software-Engineer at simplabs.'
 og:
   image: /assets/images/posts/2021-08-23-inside-simplabs-chris-manson/og-image.png
+tagline: |
+  <p>In the first episode of the new series &quot;Inside simplabs&quot;, Emma Dell'Acqua, Marketing Assistant, has a chat with Chris Manson, one of our Senior Software-Engineers.</p>
 ---
-
-In the first episode of the new series "Inside simplabs", Emma Dell'Acqua,
-Marketing Assistant, has a chat with Chris Manson, one of our Senior
-Software-Engineers.
-
-<!--break-->
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cGgru71QPpU" title="Embedded video of Inside simplabs episode 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

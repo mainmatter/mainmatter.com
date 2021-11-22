@@ -1,18 +1,15 @@
 ---
-title: "simplabs monthly update - March 2019"
+title: 'simplabs monthly update - March 2019'
 authorHandle: mrmrcoleman
 tags: simplabs
-bio: "Communications and Community Outreach Specialist"
+bio: 'Communications and Community Outreach Specialist'
 description:
   'Mark Coleman shares simplabs'' monthly update for March 2019, covering
   EmberConf 2019, the release of "Ember.js: The Documentary" and various
   upcoming events.'
+tagline: |
+  <p>Welcome to our new monthly update. Each month we'll cover the events and activities that have been happening at simplabs. Enjoy.</p>
 ---
-
-Welcome to our new monthly update. Each month we'll cover the events and
-activities that have been happening at simplabs. Enjoy.
-
-<!--break-->
 
 ## News
 

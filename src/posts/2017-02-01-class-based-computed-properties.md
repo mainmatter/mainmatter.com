@@ -1,23 +1,14 @@
 ---
 title: Class based Computed Properties
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
 description:
-  "Marco Otte-Witte introduces a mechanism for class based computed properties
-  in Ember.js and how those can be used instead of helpers."
+  'Marco Otte-Witte introduces a mechanism for class based computed properties
+  in Ember.js and how those can be used instead of helpers.'
 tags: ember
+tagline: |
+  <p>We think Computed Properties in Ember are awesome. We also think they <a href="https://speakerdeck.com/marcoow/templates-and-logic-in-ember">are in many cases the better alternative to template helpers</a> as they allow for cleaner separation of where a computation is triggered and the implementation of that computation. In some cases though it is currently very hard to do things in Computed Properties (and Computed Property macros in particular) that are possible with Class based helpers. With the <strong>introduction of Class based Computed Properties</strong> we're aiming at making these scenarios solvable easily.</p>
 ---
-
-We think Computed Properties in Ember are awesome. We also think they
-[are in many cases the better alternative to template helpers](https://speakerdeck.com/marcoow/templates-and-logic-in-ember)
-as they allow for cleaner separation of where a computation is triggered and the
-implementation of that computation. In some cases though it is currently very
-hard to do things in Computed Properties (and Computed Property macros in
-particular) that are possible with Class based helpers. With the **introduction
-of Class based Computed Properties** we're aiming at making these scenarios
-solvable easily.
-
-<!--break-->
 
 ## Computed Properties and Computed Property Macros
 
@@ -30,7 +21,9 @@ Ember comes with a set of macros that implement property logic that most
 applications need and allow for short and expressive definitions like
 
 ```js
-isActive: Ember.computed.equal("state", "isActive");
+{% raw %}
+isActive: Ember.computed.equal('state', 'isActive');
+{% endraw %}
 ```
 
 There are addons that provide even more macros for common use cases like
@@ -51,7 +44,9 @@ case for example for computations on collections when it is unknown upfront on
 which property of each element in the collection the computation depends, e.g.
 
 ```js
+{% raw %}
 filteredUsers: filterByProperty('users' 'filter')
+{% endraw %}
 ```
 
 Here what we would like to do is filter the `users` array by the value of the
@@ -92,11 +87,13 @@ logic in JavaScript as opposed to in the template** when using a Class based
 template helper:
 
 ```js
+{% raw %}
 import filterByProperty from 'app/computeds/filter-by';
 
 …
 
 filteredUsers: filterByProperty('users' 'filter')
+{% endraw %}
 ```
 
 ```hbs
@@ -111,6 +108,7 @@ The implementation for the Computed Property macro looks like this:
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 // app/computeds/filter-by.js
 import Ember from 'ember';
 import ClassBasedComputedProperty from 'ember-classy-computed';
@@ -144,6 +142,7 @@ const DynamicFilterByComputed = ClassBasedComputedProperty.extend({
 });
 
 export default ClassBasedComputedProperty.property(DynamicFilterByComputed);
+{% endraw %}
 ```
 
 Comparing this code to the implementation of the

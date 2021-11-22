@@ -1,18 +1,14 @@
 ---
-title: "simplabs monthly update - July 2019"
+title: 'simplabs monthly update - July 2019'
 authorHandle: mrmrcoleman
 tags: simplabs
-bio: "Communications and Community Outreach Specialist"
+bio: 'Communications and Community Outreach Specialist'
 description:
   "Mark Coleman shares simplabs' update for July 2019, covering the release of
   our new website, new OSS releases and a number of upcoming events."
+tagline: |
+  <p>Welcome to the fourth installment of our monthly update. This one is later than expected but still packed with all the events and activities that have been happening at simplabs along with the things we're looking forward to. Enjoy.</p>
 ---
-
-Welcome to the fourth installment of our monthly update. This one is later than
-expected but still packed with all the events and activities that have been
-happening at simplabs along with the things we're looking forward to. Enjoy.
-
-<!--break-->
 
 ## News
 

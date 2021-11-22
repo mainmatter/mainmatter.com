@@ -1,20 +1,14 @@
 ---
-title: "Ember.SimpleAuth 0.3.0"
+title: 'Ember.SimpleAuth 0.3.0'
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
 description:
-  "Marco Otte-Witte announces Ember.SimpleAuth 0.3.0, splitting the addon into a
-  core and extensions for specific authentication/authorization mechanisms."
+  'Marco Otte-Witte announces Ember.SimpleAuth 0.3.0, splitting the addon into a
+  core and extensions for specific authentication/authorization mechanisms.'
 tags: ember
+tagline: |
+  <p>Ember.SimpleAuth 0.3.0 was just released. The <strong>main change in this release is the split of Ember.SimpleAuth into one core library and a set of extension libraries</strong>. These extension libraries include everything that’s not mandatorily required for Ember.SimpleAuth like authenticators, stores etc. so that every application would only have to load whatever it needs.</p>
 ---
-
-Ember.SimpleAuth 0.3.0 was just released. The **main change in this release is
-the split of Ember.SimpleAuth into one core library and a set of extension
-libraries**. These extension libraries include everything that’s not mandatorily
-required for Ember.SimpleAuth like authenticators, stores etc. so that every
-application would only have to load whatever it needs.
-
-<!--break-->
 
 These extension libraries are:
 
@@ -40,14 +34,16 @@ can simply configure one in Ember.SimpleAuth’s setup method and everything wil
 behave as before:
 
 ```js
+{% raw %}
 Ember.Application.initializer({
-  name: "authentication",
+  name: 'authentication',
   initialize: function (container, application) {
     Ember.SimpleAuth.setup(container, application, {
-      authorizerFactory: "authorizer:oauth2-bearer",
+      authorizerFactory: 'authorizer:oauth2-bearer',
     });
   },
 });
+{% endraw %}
 ```
 
 For more information about this release see the release notes at:

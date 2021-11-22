@@ -1,26 +1,16 @@
 ---
-title: "The guide to making remote work work"
+title: 'The guide to making remote work work'
 authorHandle: marcoow
 tags: process
-bio: "Founder and Managing Director of simplabs"
+bio: 'Founder and Managing Director of simplabs'
 description:
-  "Marco Otte-Witte shares insights gained in many years of successfully
-  operating simplabs as a fully remote company."
+  'Marco Otte-Witte shares insights gained in many years of successfully
+  operating simplabs as a fully remote company.'
 og:
   image: /assets/images/posts/2020-11-16-the-guide-to-making-remote-work-work/og-image.png
+tagline: |
+  <p>Remote work has been a hot topic in the tech community for decades. While in the late 90s and early 2000s, relatively few people were actually doing it and there were quite some limitations to overcome to make it work at all, today in 2020, remote work is well possible in many industries and even the norm for many companies already. And of course, the global pandemic that forced everyone to work from home gave remote work an extra push. In this guide, we will share some techniques to make a remote working model actually work well for everyone and not just something we all have to cope with because an international crisis struck.</p>
 ---
-
-Remote work has been a hot topic in the tech community for decades. While in the
-late 90s and early 2000s, relatively few people were actually doing it and there
-were quite some limitations to overcome to make it work at all, today in 2020,
-remote work is well possible in many industries and even the norm for many
-companies already. And of course, the global pandemic that forced everyone to
-work from home gave remote work an extra push. In this guide, we will share some
-techniques to make a remote working model actually work well for everyone and
-not just something we all have to cope with because an international crisis
-struck.
-
-<!--break-->
 
 ![The guide to making remote work work](/assets/images/posts/2020-11-16-the-guide-to-making-remote-work-work/illustration.svg#full)
 

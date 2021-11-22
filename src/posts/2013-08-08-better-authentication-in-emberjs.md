@@ -1,24 +1,14 @@
 ---
-title: "(better) Authentication in ember.js"
+title: '(better) Authentication in ember.js'
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
 description:
-  "Marco Otte-Witte introduces an update to the mechanism for implementing a
-  session, authentication and authorization in Ember.js applications."
+  'Marco Otte-Witte introduces an update to the mechanism for implementing a
+  session, authentication and authorization in Ember.js applications.'
 tags: ember
+tagline: |
+  <p><strong>Update:</strong><em>I released an Ember.js plugin that makes it very easy to implement an authentication system as described in this post: <a href="/blog/2013/06/15/authentication-in-emberjs">Ember.SimpleAuth</a>.</em></p> <p>When we started our first <a href="http://emberjs.com">ember.js</a> project in June 2013, one of the first things we implemented was authentication. Now, almost 2 months later, <strong>it has become clear that our initial approach was not really the best and had some shortcomings. So I implemented a better authentication</strong> (mostly based on the embercasts on authentication).</p>
 ---
-
-**Update:**_I released an Ember.js plugin that makes it very easy to implement
-an authentication system as described in this post:
-[Ember.SimpleAuth](/blog/2013/06/15/authentication-in-emberjs)._
-
-When we started our first [ember.js](http://emberjs.com) project in June 2013,
-one of the first things we implemented was authentication. Now, almost 2 months
-later, **it has become clear that our initial approach was not really the best
-and had some shortcomings. So I implemented a better authentication** (mostly
-based on the embercasts on authentication).
-
-<!--break-->
 
 _I’m using the latest (as of early August 2013) [ember.js](http://emberjs.com)
 and [handlebars](http://handlebarsjs.com) releases in this example._
@@ -55,6 +45,7 @@ empty) when the application starts.
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 Ember.Application.initializer({
   name: 'session',
 
@@ -80,6 +71,7 @@ Ember.Application.initializer({
     }).create();
   }
 });
+{% endraw %}
 ```
 
 When this has run I can always access the current _"session"_ information as
@@ -100,14 +92,16 @@ To actually use the `authToken` when making server requests, **we register an
 authentication token in a header as long as the request is sent to our domain**:
 
 ```js
+{% raw %}
 Ember.$.ajaxPrefilter(function (options, originalOptions, jqXHR) {
   if (!jqXHR.crossDomain) {
     jqXHR.setRequestHeader(
-      "X-AUTHENTICATION-TOKEN",
-      App.Session.get("authToken")
+      'X-AUTHENTICATION-TOKEN',
+      App.Session.get('authToken'),
     );
   }
 });
+{% endraw %}
 ```
 
 The Rails server can then find the authenticated user by the token in the
@@ -136,12 +130,14 @@ and destroying the session:
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 App.Router.map(function() {
   this.resource('session', function() {
     this.route('new');
     this.route('destroy');
   });
 });
+{% endraw %}
 ```
 
 The `SessionNewController` only needs one action `login` that sends the entered
@@ -155,6 +151,7 @@ redirected again to the initially requested page).
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 App.SessionNewController = Ember.Controller.extend({
   login: function() {
     var self = this;
@@ -178,6 +175,7 @@ App.SessionNewController = Ember.Controller.extend({
     }
   }
 });
+{% endraw %}
 ```
 
 Notice that we do not handle the error case here. To have a better user
@@ -189,10 +187,19 @@ depend on your specific application):
 
 ```hbs
 {% raw %}
-<form {{action login on="submit"}}>
-  {{view Ember.TextField valueBinding="loginOrEmail" placeholder="Login or Email"}}
-  {{view Ember.TextField valueBinding="password" type="password" placeholder="Password"}}
-  <button class="btn">Login</button>
+<form {{action login on='submit'}}>
+  {{view
+    Ember.TextField
+    valueBinding='loginOrEmail'
+    placeholder='Login or Email'
+  }}
+  {{view
+    Ember.TextField
+    valueBinding='password'
+    type='password'
+    placeholder='Password'
+  }}
+  <button class='btn'>Login</button>
 </form>
 {% endraw %}
 ```
@@ -207,6 +214,7 @@ invalidated. The client also deletes the saved session information in
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 App.SessionDestroyController = Ember.Controller.extend({
   logout: function() {
     var self = this;
@@ -222,6 +230,7 @@ App.SessionDestroyController = Ember.Controller.extend({
     });
   }
 });
+{% endraw %}
 ```
 
 As this action should be triggered as soon as the user enters the
@@ -230,11 +239,13 @@ As this action should be triggered as soon as the user enters the
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 App.SessionDestroyRoute = Ember.Route.extend({
   renderTemplate: function(controller, model) {
     controller.logout();
   }
 });
+{% endraw %}
 ```
 
 ## Authenticated routes
@@ -245,6 +256,7 @@ need to enforce user authentication can extend again:
 
 <!-- prettier-ignore -->
 ```js
+{% raw %}
 App.AuthenticatedRoute = Ember.Route.extend({
   redirectToLogin: function(transition) {
     App.Session.set('attemptedTransition', transition);
@@ -257,6 +269,7 @@ App.AuthenticatedRoute = Ember.Route.extend({
     }
   }
 });
+{% endraw %}
 ```
 
 Notice that `redirectToLogin` sets the `attemptedTransition` of `App.Session` so

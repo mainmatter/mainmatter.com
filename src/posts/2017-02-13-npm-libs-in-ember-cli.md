@@ -1,25 +1,16 @@
 ---
 title: Using npm libraries in Ember CLI
 authorHandle: tobiasbieniek
-bio: "Senior Frontend Engineer, Ember CLI core team member"
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
 description:
-  "Tobias Bieniek introduces a mechanism for using arbitrary npm libraries in
-  Ember CLI applications and explains how that works under the hood."
+  'Tobias Bieniek introduces a mechanism for using arbitrary npm libraries in
+  Ember CLI applications and explains how that works under the hood.'
 tags: ember
 og:
   image: /assets/images/posts/2017-02-13-npm-libs-in-ember-cli/og-image.png
+tagline: |
+  <p>tl;dr Use npm instead of Bower whenever you can!</p> <p>With Ember 2.11 we are now using the [<code>ember-source</code>][ember-source] module and no longer the <code>ember</code> [Bower][bower] package. In the upcoming Ember CLI 2.12 release, Bower will also no longer be installed by default and only install lazily when an addon requests it. All this indicates that from now on we should try to use npm packages instead of Bower whenever possible. This blog post will explain how we can do that and what options are available to us.</p>
 ---
-
-tl;dr Use npm instead of Bower whenever you can!
-
-With Ember 2.11 we are now using the [`ember-source`][ember-source] module and
-no longer the `ember` [Bower][bower] package. In the upcoming Ember CLI 2.12
-release, Bower will also no longer be installed by default and only install
-lazily when an addon requests it. All this indicates that from now on we should
-try to use npm packages instead of Bower whenever possible. This blog post will
-explain how we can do that and what options are available to us.
-
-<!--break-->
 
 ## Status Quo
 
@@ -35,7 +26,9 @@ Secondly we will import it into the Ember CLI build pipeline by adding the
 following line to our `ember-cli-build.js` file:
 
 ```js
-app.import("bower_components/moment/moment.js");
+{% raw %}
+app.import('bower_components/moment/moment.js');
+{% endraw %}
 ```
 
 This `import()` call tells Ember CLI to add the `moment.js` file to the
@@ -53,15 +46,17 @@ Running this command will generate a `vendor/shims/moment.js` file that looks
 like this:
 
 ```js
+{% raw %}
 (function () {
   function vendorModule() {
-    "use strict";
+    'use strict';
 
-    return { default: self["moment"] };
+    return { default: self['moment'] };
   }
 
-  define("moment", [], vendorModule);
+  define('moment', [], vendorModule);
 })();
+{% endraw %}
 ```
 
 This looks a little cryptic at first, but once you understand the individual
@@ -80,7 +75,9 @@ To use this vendor shim we will have to `app.import()` it like we did with the
 library itself:
 
 ```js
-app.import("vendor/shims/moment.js");
+{% raw %}
+app.import('vendor/shims/moment.js');
+{% endraw %}
 ```
 
 We are now able to use `import moment from 'moment';` in our Ember code.
@@ -96,11 +93,13 @@ The solution to that is using the [`included()`][included-hook] in the
 `index.js` file of the addon:
 
 ```js
+{% raw %}
 included() {
   this._super.included.apply(this, arguments);
   this.import('bower_components/moment/moment.js');
   this.import('vendor/shims/moment.js');
 }
+{% endraw %}
 ```
 
 Note that the `this.import()` method is only available starting with Ember CLI
@@ -133,13 +132,15 @@ This will generate a `blueprints/ember-moment/index.js` file in which we will
 have to implement two hooks:
 
 ```js
+{% raw %}
 module.exports = {
   normalizeEntityName() {},
 
   afterInstall() {
-    return this.addBowerPackageToProject("moment");
+    return this.addBowerPackageToProject('moment');
   },
 };
+{% endraw %}
 ```
 
 The `normalizeEntityName` hook is usually used to e.g. read the name of the
@@ -159,7 +160,11 @@ make sure that Ember CLI waits for the installation to finish.
 
 ## npm vs. Bower
 
-> &quot;What&#39;s bower?&quot; > &quot;A package manager, install it with npm.&quot; > &quot;What&#39;s npm?&quot; > &quot;A package manager, you can install it with brew&quot; > &quot;What&#39;s brew?&quot; ...
+> &quot;What&#39;s bower?&quot;
+> &quot;A package manager, install it with npm.&quot;
+> &quot;What&#39;s npm?&quot;
+> &quot;A package manager, you can install it with brew&quot;
+> &quot;What&#39;s brew?&quot; ...
 > <author>Stefan Baumgartner (@ddprrt)
 > <a href="https://twitter.com/ddprrt/status/529909875347030016">5. November
 > 2014</a></author>
@@ -180,9 +185,11 @@ of using `addBowerPackageToProject()` to install Moment.js we can use the
 method instead:
 
 ```js
+{% raw %}
 afterInstall() {
   return this.addPackageToProject('moment');
 }
+{% endraw %}
 ```
 
 That was easy! So where is the problem now?
@@ -214,30 +221,32 @@ adjust the `moment.js` import in the `included()` hook to point to
 `vendor/moment.js` instead:
 
 ```js
-var path = require("path");
-var Funnel = require("broccoli-funnel");
-var MergeTrees = require("broccoli-merge-trees");
+{% raw %}
+var path = require('path');
+var Funnel = require('broccoli-funnel');
+var MergeTrees = require('broccoli-merge-trees');
 
 module.exports = {
-  name: "ember-moment",
+  name: 'ember-moment',
 
   included() {
     this._super.included.apply(this, arguments);
-    this.import("vendor/moment.js");
-    this.import("vendor/shims/moment.js");
+    this.import('vendor/moment.js');
+    this.import('vendor/shims/moment.js');
   },
 
   treeForVendor(vendorTree) {
     var momentTree = new Funnel(
-      path.join(this.project.root, "node_modules", "moment"),
+      path.join(this.project.root, 'node_modules', 'moment'),
       {
-        files: ["moment.js"],
-      }
+        files: ['moment.js'],
+      },
     );
 
     return new MergeTrees([vendorTree, momentTree]);
   },
 };
+{% endraw %}
 ```
 
 Let me explain what we did here. The `vendorTree` argument holds the actual
@@ -263,12 +272,14 @@ dependencies. That means instead of using a blueprint to install the npm package
 into the host app we declare `moment` as a dependency of the addon instead in
 our `package.json` file:
 
-```json
+```js
+{% raw %}on
 {
   "dependencies": {
     "moment": "^2.17.1"
   }
 }
+{% endraw %}
 ```
 
 Since npm deduplicates packages during installation we can not be certain about
@@ -279,9 +290,11 @@ has that algorithm built-in and we can just use it through the
 code like this:
 
 ```js
-var momentTree = new Funnel(path.dirname(require.resolve("moment/moment.js")), {
-  files: ["moment.js"],
+{% raw %}
+var momentTree = new Funnel(path.dirname(require.resolve('moment/moment.js')), {
+  files: ['moment.js'],
 });
+{% endraw %}
 ```
 
 Note that we are passing the path to the `moment` **folder**, not to the

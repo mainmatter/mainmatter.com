@@ -2,18 +2,14 @@
 title: Qonto project
 authorHandle: mrmrcoleman
 tags: simplabs
-bio: "Communications and Community Outreach Specialist"
+bio: 'Communications and Community Outreach Specialist'
 description:
   'Mark Coleman announces our new client Qonto, a Paris based VC funded Fintech
   startup who are "the ideal banking alternative for freelancers, startups and
   SMEs."'
+tagline: |
+  <p>We're very pleased to announce that we've started working with <a href="https://qonto.eu/">Qonto</a>, a Paris based VC funded Fintech startup who are &quot;the ideal banking alternative for freelancers, startups and SMEs.&quot;</p>
 ---
-
-We're very pleased to announce that we've started working with
-[Qonto](https://qonto.eu/), a Paris based VC funded Fintech startup who are "the
-ideal banking alternative for freelancers, startups and SMEs."
-
-<!--break-->
 
 ![Qonto Logo](/assets/images/posts/2019-03-29-qonto-project/qonto-logo.png)
 

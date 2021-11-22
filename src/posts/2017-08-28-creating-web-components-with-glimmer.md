@@ -1,22 +1,14 @@
 ---
 title: Creating Web Components with Glimmer
 authorHandle: jjordan_dev
-bio: "Senior Frontend Engineer, Ember Learning core team member"
+bio: 'Senior Frontend Engineer, Ember Learning core team member'
 description:
-  "Jessica Jordan explains what web components (aka custom elements) are and
-  shows how they can be built using Glimmer.js."
+  'Jessica Jordan explains what web components (aka custom elements) are and
+  shows how they can be built using Glimmer.js.'
 tags: ember
+tagline: |
+  <p>At <a href="https://youtu.be/TEuY4GqwrUE?t=58m43s">this year's EmberConf the Ember core team officially announced</a> the release of <a href="https://glimmerjs.com/">Glimmer</a> - a light-weight JavaScript library aimed to provide a useful toolset for <strong>creating fast and reusable UI components</strong>. Powered by the already battle-tested Ember-CLI, developers can build their Glimmer apps in an easy and efficient manner as they already came to love building applications in Ember.js before.</p>
 ---
-
-At
-[this year's EmberConf the Ember core team officially announced](https://youtu.be/TEuY4GqwrUE?t=58m43s)
-the release of [Glimmer](https://glimmerjs.com/) - a light-weight JavaScript
-library aimed to provide a useful toolset for **creating fast and reusable UI
-components**. Powered by the already battle-tested Ember-CLI, developers can
-build their Glimmer apps in an easy and efficient manner as they already came to
-love building applications in Ember.js before.
-
-<!--break-->
 
 In addition to building standalone Glimmer applications, the library allows the
 creation of components **according to the Custom Elements v1 specification**,
@@ -38,9 +30,11 @@ defines a `CustomElementRegistry` interface global which is available as the
 of the native `HTMLElement` base class:
 
 ```js
+{% raw %}
 class CustomElementClass extends HTMLElement {
   // ...
 }
+{% endraw %}
 ```
 
 The `CustomElementRegistry`'s `define` method can subsequently be used to
@@ -48,11 +42,13 @@ register custom elements, e.g. a custom element named `my-customelement`, would
 be registered as follows:
 
 ```js
+{% raw %}
 class CustomElementClass extends HTMLElement {
   // ...
 }
 
-customElements.define("my-customelement", CustomElementClass);
+customElements.define('my-customelement', CustomElementClass);
+{% endraw %}
 ```
 
 Finally, a custom element that has been registered via the
@@ -217,7 +213,7 @@ is now defined in `src/ui/components/glimmer-map/component.ts`:
 
 ```ts
 // src/ui/components/glimmer-map/component.ts
-import Component from "@glimmer/component";
+import Component from '@glimmer/component';
 
 export default class GlimmerMap extends Component {}
 ```
@@ -244,13 +240,14 @@ yarn add --dev rollup-plugin-commonjs
 ```
 
 ```js
+{% raw %}
 // ember-cli-build.js
 
-"use strict";
+'use strict';
 
-const GlimmerApp = require("@glimmer/application-pipeline").GlimmerApp;
-const resolve = require("rollup-plugin-node-resolve");
-const commonjs = require("rollup-plugin-commonjs");
+const GlimmerApp = require('@glimmer/application-pipeline').GlimmerApp;
+const resolve = require('rollup-plugin-node-resolve');
+const commonjs = require('rollup-plugin-commonjs');
 
 module.exports = function (defaults) {
   let app = new GlimmerApp(defaults, {
@@ -264,14 +261,15 @@ module.exports = function (defaults) {
 
   return app.toTree();
 };
+{% endraw %}
 ```
 
 This finally allows us to import our `leaflet` dependency like so:
 
 ```ts
 // src/ui/components/glimmer-map/component.ts
-import Component from "@glimmer/component";
-import L from "leaflet";
+import Component from '@glimmer/component';
+import L from 'leaflet';
 
 export default class GlimmerMap extends Component {}
 ```
@@ -313,8 +311,8 @@ Also, let's add the needed markup into our component's template:
 ```hbs
 {% raw %}
 // src/ui/components/glimmer-map/template.hbs
-<div class="glimmer-map">
-  <div id="map"></div>
+<div class='glimmer-map'>
+  <div id='map'></div>
 </div>
 {% endraw %}
 ```
@@ -348,10 +346,24 @@ to these properties via actions by updating our template
 ```hbs
 {% raw %}
 <!-- src/ui/components/glimmer-map/template.hbs -->
-<div class="glimmer-map">
-  <div id="map"></div>
-  E: <input class="x-coord" type="number" step="0.0001" value={{lon}} oninput={{action setView}}/>
-  N: <input class="y-coord" type="number" step="0.0001" value={{lat}} oninput={{action setView}} />
+<div class='glimmer-map'>
+  <div id='map'></div>
+  E:
+  <input
+    class='x-coord'
+    type='number'
+    step='0.0001'
+    value={{lon}}
+    oninput={{action setView}}
+  />
+  N:
+  <input
+    class='y-coord'
+    type='number'
+    step='0.0001'
+    value={{lat}}
+    oninput={{action setView}}
+  />
 </div>
 {% endraw %}
 ```
@@ -369,8 +381,8 @@ export default class GlimmerMap extends Component {
 
   //...
   setView() {
-    this.lon = this.element.getElementsByClassName("x-coord")[0].value;
-    this.lat = this.element.getElementsByClassName("y-coord")[0].value;
+    this.lon = this.element.getElementsByClassName('x-coord')[0].value;
+    this.lat = this.element.getElementsByClassName('y-coord')[0].value;
     this.map.setView([this.lat, this.lon], 12);
   }
 }

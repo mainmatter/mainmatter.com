@@ -83,19 +83,6 @@ module.exports = function (value, outputPath) {
     }
 
     /**
-     * Extract all blog post taglines
-     */
-    const articles = [...document.querySelectorAll(".rte--taglines")];
-    if (articles.length) {
-      articles.forEach((article) => {
-        const splitArticle = article.innerHTML.split("<!--break-->");
-        if (splitArticle.length > 1) {
-          article.innerHTML = `<div class="post__tagline">${splitArticle[0]}</div>${splitArticle[1]}`;
-        }
-      });
-    }
-
-    /**
      * Process our images
      */
     const images = [...document.querySelectorAll("article img")];

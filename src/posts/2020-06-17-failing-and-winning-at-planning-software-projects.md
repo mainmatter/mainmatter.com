@@ -1,25 +1,16 @@
 ---
-title: "Failing (and winning) at planning software projects"
+title: 'Failing (and winning) at planning software projects'
 authorHandle: marcoow
 tags: process
-bio: "Founder and Managing Director of simplabs"
+bio: 'Founder and Managing Director of simplabs'
 description:
-  "Marco Otte-Witte gives detailed advice on planning software projects and
-  scoping as well as preparing work in an iterative process."
+  'Marco Otte-Witte gives detailed advice on planning software projects and
+  scoping as well as preparing work in an iterative process.'
 og:
   image: /assets/images/posts/2020-06-17-failing-and-winning-at-planning-software-projects/og-image.png
+tagline: |
+  <p>Scoping and planning software projects of any kind is a challenging task that many teams struggle with. The negative consequences of mis-planning are manyfold – teams are unable to give reliable estimates, synchronize dependent activities (e.g. marketing) with the project's progress or maintain a high level of quality that will allow maintaining and evolving an application over the long term. In this post, I will analyse these typical problems in some detail and present techniques to address and overcome them, reducing uncertainty, risk and frustration.</p>
 ---
-
-Scoping and planning software projects of any kind is a challenging task that
-many teams struggle with. The negative consequences of mis-planning are manyfold
-– teams are unable to give reliable estimates, synchronize dependent activities
-(e.g. marketing) with the project's progress or maintain a high level of quality
-that will allow maintaining and evolving an application over the long term. In
-this post, I will analyse these typical problems in some detail and present
-techniques to address and overcome them, reducing uncertainty, risk and
-frustration.
-
-<!--break-->
 
 ![Strong Collaboration](/assets/images/posts/2020-06-17-failing-and-winning-at-planning-software-projects/illustration.png#full@1000-2000)
 

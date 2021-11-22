@@ -1,24 +1,16 @@
 ---
-title: "Bringing clarity to templates through Ember Octane"
+title: 'Bringing clarity to templates through Ember Octane'
 authorHandle: locks
 tags: ember
-bio: "Senior Frontend Engineer, Ember Framework and Learning Core teams member"
+bio: 'Senior Frontend Engineer, Ember Framework and Learning Core teams member'
 description:
-  "Ricardo Mendes explains how Ember templates have evolved in the path to Ember
-  Octane to bring more clarity for developers."
+  'Ricardo Mendes explains how Ember templates have evolved in the path to Ember
+  Octane to bring more clarity for developers.'
 og:
   image: /assets/images/posts/2019-12-20-clarity-in-templates/og-image.png
+tagline: |
+  <p>When reading Ember templates, have you ever wondered where a certain dynamic value comes from? Is that dynamic value a property of the component, a named argument that was passed in, or even a helper?</p> <p>In this blog post we will be discussing how recent Ember.js modernization efforts on the path to Ember Octane have brought features that help with this exact problem.</p>
 ---
-
-When reading Ember templates, have you ever wondered where a certain dynamic
-value comes from? Is that dynamic value a property of the component, a named
-argument that was passed in, or even a helper?
-
-In this blog post we will be discussing how recent Ember.js modernization
-efforts on the path to Ember Octane have brought features that help with this
-exact problem.
-
-<!--break-->
 
 ![Bringing clarity to your Ember templates](/assets/images/posts/2019-12-20-clarity-in-templates/illustration.jpg#full@720-1440)
 
@@ -54,7 +46,6 @@ In Ember templates, interpolation of dynamic values is done through curly
 braces, `{{}}`. Given this is the only syntax for dynamic values, there is an
 ambiguity problem at times. Let us look at a template:
 {% endraw %}
-
 ```hbs
 {% raw %}
 {{! app/templates/components/blog/post.hbs }}
@@ -88,12 +79,13 @@ JavaScript. These are called properties. To do that we are going to consult the
 JavaScript file to see which properties it might define:
 
 ```js
-import Component from "@ember/component";
-import { computed } from "@ember/object";
-import titleCase from "my-app/utils/title-case.js";
+{% raw %}
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import titleCase from 'my-app/utils/title-case.js';
 
 export default Component.extend({
-  title: computed("post.title", function () {
+  title: computed('post.title', function () {
     return titleCase(this.post.title);
   }),
 
@@ -101,10 +93,11 @@ export default Component.extend({
 
   actions: {
     toggleComments() {
-      this.toggleProperty("commentsExpanded");
+      this.toggleProperty('commentsExpanded');
     },
   },
 });
+{% endraw %}
 ```
 
 We see that `title` is a computed property, and `commentsExpanded` is a boolean

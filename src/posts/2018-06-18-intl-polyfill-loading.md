@@ -1,25 +1,14 @@
 ---
-title: "ember-intl data loading patterns"
+title: 'ember-intl data loading patterns'
 authorHandle: tobiasbieniek
-bio: "Senior Frontend Engineer, Ember CLI core team member"
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
 description:
-  "Tobias Bieniek shows how to load the necessary polyfills for the Intl API in
-  older browsers most effectively when using ember-intl."
+  'Tobias Bieniek shows how to load the necessary polyfills for the Intl API in
+  older browsers most effectively when using ember-intl.'
 tags: ember
+tagline: |
+  <p>At simplabs we ❤️ <a href="https://github.com/ember-intl/ember-intl">ember-intl</a> and use it for all our projects where translations or other localizations are needed. ember-intl is based on the native <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Intl">Intl APIs</a> that were introduced in <a href="https://caniuse.com/#feat=internationalization">all newer browsers</a> a while ago. Unfortunately some users are still using browsers that don't support them and this blog post will show you our preferred way to load the necessary polyfill and the associated data.</p>
 ---
-
-At simplabs we ❤️ [ember-intl][ember-intl] and use it for all our projects where
-translations or other localizations are needed. ember-intl is based on the
-native [Intl APIs][intl] that were introduced in [all newer browsers][browsers]
-a while ago. Unfortunately some users are still using browsers that don't
-support them and this blog post will show you our preferred way to load the
-necessary polyfill and the associated data.
-
-[ember-intl]: https://github.com/ember-intl/ember-intl
-[intl]: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Intl
-[browsers]: https://caniuse.com/#feat=internationalization
-
-<!--break-->
 
 ## Loading Translations
 
@@ -35,6 +24,7 @@ AJAX request and after that has finished you call `setLocale()` to activate the
 new translations. It looks roughly like this:
 
 ```js
+{% raw %}
 // app/routes/application.js
 
 async beforeModel() {
@@ -45,6 +35,7 @@ async beforeModel() {
 
   this.get('intl').setLocale(locale);
 }
+{% endraw %}
 ```
 
 To make this work we need to tell ember-intl that it should no longer bundle the
@@ -60,8 +51,9 @@ the outside, so what we could do is add a `loadTranslations()` method to the
 like this:
 
 ```js
-import IntlService from "ember-intl/services/intl";
-import fetch from "fetch";
+{% raw %}
+import IntlService from 'ember-intl/services/intl';
+import fetch from 'fetch';
 
 export default IntlService.extend({
   async loadTranslations(locale) {
@@ -70,11 +62,13 @@ export default IntlService.extend({
     this.addTranslations(locale, translations);
   },
 });
+{% endraw %}
 ```
 
 Now we can simplify our code in the `application` route to this:
 
 ```js
+{% raw %}
 async beforeModel() {
   let locale = figureOutLocale(); // e.g. "de" or "fr-ch"
 
@@ -82,6 +76,7 @@ async beforeModel() {
 
   this.get('intl').setLocale(locale);
 }
+{% endraw %}
 ```
 
 If we now open our app in the browser and look at the "Network" tab of the
@@ -118,14 +113,16 @@ runs it. We could hack something together with `fetch()` and `eval()`, but there
 is a better solution:
 
 ```js
+{% raw %}
 function loadJS(url) {
   return new Promise((resolve) => {
-    let el = document.createElement("script");
+    let el = document.createElement('script');
     el.src = url;
     el.onload = resolve;
     document.body.appendChild(el);
   });
 }
+{% endraw %}
 ```
 
 The above function creates a `<script>` tag, sets the passed in `url` on it, and
@@ -135,14 +132,17 @@ With the `loadJS` helper function in place we can add a `loadPolyfill()` method
 to our `intl` service:
 
 ```js
+{% raw %}
 async loadPolyfill() {
   await loadJS('/assets/intl/intl.min.js');
 },
+{% endraw %}
 ```
 
 and then use it in the `application` route before downloading any translations:
 
 ```js
+{% raw %}
 async beforeModel() {
   let locale = figureOutLocale(); // e.g. "de" or "fr-ch"
 
@@ -154,6 +154,7 @@ async beforeModel() {
 
   this.get('intl').setLocale(locale);
 }
+{% endraw %}
 ```
 
 If you visit the app in your regular browser now you should _not_ see any
@@ -171,8 +172,9 @@ service:
   `loadPolyfillData()`
 
 ```js
-import IntlService from "ember-intl/services/intl";
-import fetch from "fetch";
+{% raw %}
+import IntlService from 'ember-intl/services/intl';
+import fetch from 'fetch';
 
 export default IntlService.extend({
   async loadTranslations(locale) {
@@ -182,7 +184,7 @@ export default IntlService.extend({
   },
 
   async loadPolyfill(locale) {
-    await loadJS("/assets/intl/intl.min.js");
+    await loadJS('/assets/intl/intl.min.js');
   },
 
   async loadPolyfillData(locale) {
@@ -199,6 +201,7 @@ export default IntlService.extend({
     await Promise.all(promises);
   },
 });
+{% endraw %}
 ```
 
 If we now switch our `application` route implementation from

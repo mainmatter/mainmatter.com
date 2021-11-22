@@ -1,25 +1,16 @@
 ---
 title: On Computed Properties vs. Helpers
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
 description:
-  "Marco Otte-Witte discusses differences between computed properties and
-  helpers and explains pros and cons of each alternative."
+  'Marco Otte-Witte discusses differences between computed properties and
+  helpers and explains pros and cons of each alternative.'
 tags: ember
 og:
   image: /assets/images/posts/2017-03-21-on-computed-properties-vs-helpers/og-image.png
+tagline: |
+  <p>Ember's computed properties are a great mechanism for encapsulating reactive logic and implementing consistent, auto-updating UIs. Since the past year or so though, there seems to be an increasing tendency in the community to use template helpers as the main tool for expressing this kind of logic right in the templates. Following up on a <a href="https://speakerdeck.com/marcoow/templates-and-logic-in-ember">talk I gave at last year's EmberFest</a>, I'll elaborate in this post why I think that is often not the best choice and what the drawbacks are.</p>
 ---
-
-Ember's computed properties are a great mechanism for encapsulating reactive
-logic and implementing consistent, auto-updating UIs. Since the past year or so
-though, there seems to be an increasing tendency in the community to use
-template helpers as the main tool for expressing this kind of logic right in the
-templates. Following up on a
-[talk I gave at last year's EmberFest](https://speakerdeck.com/marcoow/templates-and-logic-in-ember),
-I'll elaborate in this post why I think that is often not the best choice and
-what the drawbacks are.
-
-<!--break-->
 
 ## Computed Properties
 
@@ -31,9 +22,11 @@ Here's a simple example of a computed property that is `true` when the `age`
 property is at least `65`:
 
 ```js
-isSenior: computed("age", function () {
-  return this.get("age") >= 65;
+{% raw %}
+isSenior: computed('age', function () {
+  return this.get('age') >= 65;
 });
+{% endraw %}
 ```
 
 The `age` property is listed as a dependency of the `isSenior` property, thus
@@ -48,10 +41,10 @@ defined on the `user` here):
 ```hbs
 {% raw %}
 <p>
-{{user.name}}
-{{#if user.isSenior}}
-  <small>(senior)</small>
-{{/if}}
+  {{user.name}}
+  {{#if user.isSenior}}
+    <small>(senior)</small>
+  {{/if}}
 </p>
 {% endraw %}
 ```
@@ -63,9 +56,11 @@ helper**. Instead of defining the `isSenior` property with its dependents
 upfront, one could define an `lte` helper like this:
 
 ```js
+{% raw %}
 export default Ember.Helper.helper(function ([value, comp]) {
   return value >= comp;
 });
+{% endraw %}
 ```
 
 and move the comparison into the template:
@@ -73,10 +68,10 @@ and move the comparison into the template:
 ```hbs
 {% raw %}
 <p>
-{{user.name}}
-{{#if (lte user.age 65)}}
-  <small>(senior)</small>
-{{/if}}
+  {{user.name}}
+  {{#if (lte user.age 65)}}
+    <small>(senior)</small>
+  {{/if}}
 </p>
 {% endraw %}
 ```
@@ -115,10 +110,12 @@ select a random one with a `status` of `'active'`. A computed property returning
 such a user could look like this:
 
 ```js
-userToDisplay: computed("users.@each.state", function () {
-  let activeUsers = this.get("users").filterBy("state", "active");
+{% raw %}
+userToDisplay: computed('users.@each.state', function () {
+  let activeUsers = this.get('users').filterBy('state', 'active');
   return shuffle(activeUsers)[0];
 });
+{% endraw %}
 ```
 
 Rendering that user's `name` then is as easy as using the `userToDisplay`
@@ -195,9 +192,11 @@ Here, the internals of the comparison logic have been moved into the `is-senior`
 helper:
 
 ```js
+{% raw %}
 export default Ember.Helper.helper(function ([user]) {
-  return user.get("age") >= 65;
+  return user.get('age') >= 65;
 });
+{% endraw %}
 ```
 
 The problem with this solution is that the DOM does not get updated when the
@@ -232,9 +231,11 @@ the `and` helper. Comparing this to the same logic implemented as a computed
 property makes the difference clear:
 
 ```js
-areBothTruthy: computed("propA", "propB", function () {
-  return this.get("propA") && this.get("propB");
+{% raw %}
+areBothTruthy: computed('propA', 'propB', function () {
+  return this.get('propA') && this.get('propB');
 });
+{% endraw %}
 ```
 
 As the `&&` operator will actually short-circuit execution when
@@ -312,7 +313,7 @@ that using template helpers would look something like this:
 {% raw %}
 <ul>
   {{#each items as |item|}}
-    <li class="{{if (eq selectedItem item) 'selected'}}">{{item}}</li>
+    <li class='{{if (eq selectedItem item) 'selected'}}'>{{item}}</li>
   {{/each}}
 </ul>
 {% endraw %}
@@ -328,6 +329,7 @@ The solution to this problem is to construct a new context that has access to
 both the item as well as the component:
 
 ```js
+{% raw %}
 _listItems: computed('items.[]', 'selectedItem', function() {
   let selectedItem = this.get('selectedItem);
   return this.get('items').map((item) => {
@@ -337,6 +339,7 @@ _listItems: computed('items.[]', 'selectedItem', function() {
     };
   });
 })
+{% endraw %}
 ```
 
 The template iterates over this wrapper collection instead of the original
@@ -346,7 +349,7 @@ collection then:
 {% raw %}
 <ul>
   {{#each _listItems as |listItem|}}
-    <li class="{{if listItem.isSelected 'selected'}}">{{listItem.item}}</li>
+    <li class='{{if listItem.isSelected 'selected'}}'>{{listItem.item}}</li>
   {{/each}}
 </ul>
 {% endraw %}

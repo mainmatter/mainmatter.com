@@ -1,25 +1,16 @@
 ---
-title: "Building a PWA with Glimmer.js"
+title: 'Building a PWA with Glimmer.js'
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
 description:
-  "Marco Otte-Witte dives deep into the details of how simplabs built Breethe,
-  an open source progressive web app, with Glimmer.js."
+  'Marco Otte-Witte dives deep into the details of how simplabs built Breethe,
+  an open source progressive web app, with Glimmer.js.'
 tags: ember
 og:
   image: /assets/images/posts/2018-07-03-building-a-pwa-with-glimmer-js/og-image.png
+tagline: |
+  <p>We recently set out to build a progressive web app with <a href="http://glimmerjs.com">Glimmer.js</a>. Instead of building it with <a href="http://emberjs.com">Ember.js</a>, which is our standard framework of choice, we wanted to see how suitable for prime-time Glimmer.js is and what we'd be able to accomplish with it. To put it short, we are really happy with how building the app went and the result that we were able to achieve. In this series of posts, we will give some insights into how we built the app, why we made particular decisions and what the result looks like.</p>
 ---
-
-We recently set out to build a progressive web app with
-[Glimmer.js](http://glimmerjs.com). Instead of building it with
-[Ember.js](http://emberjs.com), which is our standard framework of choice, we
-wanted to see how suitable for prime-time Glimmer.js is and what we'd be able to
-accomplish with it. To put it short, we are really happy with how building the
-app went and the result that we were able to achieve. In this series of posts,
-we will give some insights into how we built the app, why we made particular
-decisions and what the result looks like.
-
-<!--break-->
 
 ## Breethe
 
@@ -56,7 +47,7 @@ Glimmer.js templates use Handlebars-like syntax, e.g.:
 
 ```hbs
 {% raw %}
-{{#each measurementLists.first key="@index"}}
+{{#each measurementLists.first key='@index'}}
   <MeasurementRow
     @value={{measurement.value}}
     @parameter={{measurement.parameter}}
@@ -141,7 +132,7 @@ component for the current mode:
 ```hbs
 {% raw %}
 {{#if isSearchMode}}
-  <Search @searchTerm={{searchTerm}}/>
+  <Search @searchTerm={{searchTerm}} />
 {{else if isResultsMode}}
   <Location @locationId={{locationId}} />
 {{/if}}
@@ -158,10 +149,7 @@ text field for the search term and the button to submit the search:
 
 ```hbs
 {% raw %}
-<SearchForm
-  @term={{searchTerm}}
-  @onSubmit={{action searchByTerm}}
-/>
+<SearchForm @term={{searchTerm}} @onSubmit={{action searchByTerm}} />
 {% endraw %}
 ```
 
@@ -171,7 +159,6 @@ text field for the search term and the button to submit the search:
 component. Whenever the search form is submitted, the `SearchForm` component
 invokes the assigned action:
 {% endraw %}
-
 ```ts
 submitSearch(event) {
   event.preventDefault();
@@ -202,14 +189,14 @@ like this:
 
 ```hbs
 {% raw %}
-<div class="results">
+<div class='results'>
   {{#if loading}}
-    <div class="loader search-loader"></div>
+    <div class='loader search-loader'></div>
   {{else}}
     <ul>
-      {{#each locations key="id" as |location|}}
-        <li class="result">
-          <a href="/location/{{location.id}}" class="result-link" data-internal>
+      {{#each locations key='id' as |location|}}
+        <li class='result'>
+          <a href='/location/{{location.id}}' class='result-link' data-internal>
             {{location.label}}
           </a>
         </li>
@@ -267,14 +254,15 @@ The idea is to render a particular component with a given set of properties and
 attributes and assert on the generated DOM:
 
 ```js
-import { module, test } from "qunit";
-import hbs from "@glimmer/inline-precompile";
-import { setupRenderingTest } from "@glimmer/test-helpers";
+{% raw %}
+import { module, test } from 'qunit';
+import hbs from '@glimmer/inline-precompile';
+import { setupRenderingTest } from '@glimmer/test-helpers';
 
-module("Component: MeasurementRow", function (hooks) {
+module('Component: MeasurementRow', function (hooks) {
   setupRenderingTest(hooks);
 
-  test("PPM Case", async function (assert) {
+  test('PPM Case', async function (assert) {
     await this.render(hbs`
       <MeasurementRow
         @value="12"
@@ -283,20 +271,21 @@ module("Component: MeasurementRow", function (hooks) {
       />
     `);
     let label = this.containerElement
-      .querySelector("[data-test-measurement-label]")
+      .querySelector('[data-test-measurement-label]')
       .textContent.trim();
     let value = this.containerElement
-      .querySelector("[data-test-measurement-value]")
+      .querySelector('[data-test-measurement-value]')
       .textContent.trim();
     let unit = this.containerElement
-      .querySelector("[data-test-measurement-unit]")
+      .querySelector('[data-test-measurement-unit]')
       .textContent.trim();
 
-    assert.equal(label, "PM25", "Parameter is rendered");
-    assert.equal(value, "12", "Value is rendered");
-    assert.equal(unit, "ppm", "Unit is rendered");
+    assert.equal(label, 'PM25', 'Parameter is rendered');
+    assert.equal(value, '12', 'Value is rendered');
+    assert.equal(unit, 'ppm', 'Unit is rendered');
   });
 });
+{% endraw %}
 ```
 
 This test case tests the `MeasurementRow` component by passing a set of

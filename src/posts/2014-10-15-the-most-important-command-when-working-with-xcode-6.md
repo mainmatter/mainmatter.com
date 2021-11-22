@@ -1,16 +1,14 @@
 ---
-title: "The most important command when working with XCode 6"
+title: 'The most important command when working with XCode 6'
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: 'Founding Director of simplabs, author of Ember Simple Auth'
 description:
   "Marco Otte-Witte shows how to disable XCode 6's crash reporter dialog for a
   less annoying development experience."
 tags: misc
+tagline: |
+  <p>Switching off XCode's Crash Reporter saved my day.</p>
 ---
-
-Switching off XCode's Crash Reporter saved my day.
-
-<!--break-->
 
 ```bash
 defaults write com.apple.CrashReporter DialogType none

@@ -1,24 +1,16 @@
 ---
-title: "actix – a basic TCP client"
+title: 'actix – a basic TCP client'
 authorHandle: tobiasbieniek
-bio: "Senior Frontend Engineer, Ember CLI core team member"
+bio: 'Senior Frontend Engineer, Ember CLI core team member'
 description:
-  "Tobias Bieniek shows how actix, the actor framework written in Rust, can be
-  used to build a basic TCP client."
+  'Tobias Bieniek shows how actix, the actor framework written in Rust, can be
+  used to build a basic TCP client.'
 tags: rust
 og:
   image: /assets/images/posts/2018-06-27-actix-tcp-client/og-image.png
+tagline: |
+  <p>In our <a href="/blog/2018/06/11/actix/">last post</a> about <a href="https://actix.rs/">actix</a> we introduced you to the <a href="https://rust-lang.org/">Rust</a> programming language and the actix actor framework. This week we will build a basic TCP client with actix.</p>
 ---
-
-In our [last post] about [actix] we introduced you to the [Rust] programming
-language and the actix actor framework. This week we will build a basic TCP
-client with actix.
-
-[last post]: /blog/2018/06/11/actix/
-[actix]: https://actix.rs/
-[rust]: https://rust-lang.org/
-
-<!--break-->
 
 **Since we have written this blog post actix 0.6 was released with several
 breaking changes. The content of this blog post is conceptually still relevant

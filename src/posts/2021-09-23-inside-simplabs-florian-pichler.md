@@ -1,19 +1,17 @@
 ---
-title: "Inside simplabs #2: Florian Pichler, Senior Software-Engineer"
+title: 'Inside simplabs #2: Florian Pichler, Senior Software-Engineer'
 authorHandle: emma_dellacqua
 tags: insidesimplabs
-bio: "Marketing Assistant"
-description: "Interview with Florian Pichler, Senior Software-Engineer at simplabs."
+bio: 'Marketing Assistant'
+description:
+  'Interview with Florian Pichler, Senior Software-Engineer at simplabs.'
 og:
   image: /assets/images/posts/2021-09-23-inside-simplabs-florian-pichler/og-image.png
+tagline: |
+  <p>In the second episode of Inside simplabs, Emma Dell'Acqua, Marketing Assistant, interviews Florian Pichler, one of our Software-Engineers.</p>
 ---
 
-In the second episode of Inside simplabs, Emma Dell'Acqua, Marketing Assistant,
-interviews Florian Pichler, one of our Software-Engineers.
-
-<!--break-->
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed//1v8Yezip2S4" title="Embedded video of Inside simplabs episode 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed//1v8Yezip2S4" title="Embedded video of Inside simplabs episode 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 After over two years at simplabs, Florian has proven to be an excellent
 developer and a landmark for many on the team. His love for design brought him

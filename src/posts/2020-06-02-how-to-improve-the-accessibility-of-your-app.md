@@ -1,23 +1,16 @@
 ---
-title: "How to improve the accessibility of your existing Ember app"
+title: 'How to improve the accessibility of your existing Ember app'
 authorHandle: sami_dbc
 tags: ember
-bio: "Senior Frontend Engineer"
+bio: 'Senior Frontend Engineer'
 description:
-  "Samanta de Barros on how to test the accessibility of your Ember app and what
-  accessibility considerations you should have when creating forms in Ember."
+  'Samanta de Barros on how to test the accessibility of your Ember app and what
+  accessibility considerations you should have when creating forms in Ember.'
 og:
   image: /assets/images/posts/2020-06-02-how-to-improve-the-accessibility-of-your-app/og-image.png
+tagline: |
+  <p>Making sure your web app is accessible can be a daunting task. Just as having a good testing suite or an app that's responsive and works well across devices, it seems easier to achieve when you're starting a new project than when working with an existing app. Knowing where to start can be tough, therefore we've outlined how to implement accessibility tests in Ember alongside a very common case: forms.</p>
 ---
-
-Making sure your web app is accessible can be a daunting task. Just as having a
-good testing suite or an app that's responsive and works well across devices, it
-seems easier to achieve when you're starting a new project than when working
-with an existing app. Knowing where to start can be tough, therefore we've
-outlined how to implement accessibility tests in Ember alongside a very common
-case: forms.
-
-<!--break-->
 
 ![improve the accessibility of your app illustration](/assets/images/posts/2020-06-02-how-to-improve-the-accessibility-of-your-app/illustration.png#full@720-1440)
 
@@ -45,25 +38,27 @@ To add accessibility checks, simply install the add-on and use it in your tests,
 here's an example of an acceptance test:
 
 ```js
-import { visit } from "@ember/test-helpers";
-import { setupApplicationTest } from "ember-qunit";
-import { module, test } from "qunit";
+{% raw %}
+import { visit } from '@ember/test-helpers';
+import { setupApplicationTest } from 'ember-qunit';
+import { module, test } from 'qunit';
 
-import a11yAudit from "ember-a11y-testing/test-support/audit";
+import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
-module("Acceptance | accessibility check", function (hooks) {
+module('Acceptance | accessibility check', function (hooks) {
   setupApplicationTest(hooks);
 
-  test("sign in page has no accessibility issues", async function (assert) {
-    await visit("/signin");
+  test('sign in page has no accessibility issues', async function (assert) {
+    await visit('/signin');
 
     await a11yAudit();
 
     // you need at least one assert, so if all a11y checks pass
     // so does your test
-    assert.ok(true, "no a11y errors found!");
+    assert.ok(true, 'no a11y errors found!');
   });
 });
+{% endraw %}
 ```
 
 You can also add these validations to integration tests. While you are creating
@@ -74,23 +69,25 @@ development process, making sure that both new components and improvements to
 existing components don't introduce any violations of accessibility rules
 
 ```js
-import { render } from "@ember/test-helpers";
-import { setupRenderingTest } from "ember-qunit";
-import hbs from "htmlbars-inline-precompile";
-import { module, test } from "qunit";
+{% raw %}
+import { render } from '@ember/test-helpers';
+import { setupRenderingTest } from 'ember-qunit';
+import hbs from 'htmlbars-inline-precompile';
+import { module, test } from 'qunit';
 
-import a11yAudit from "ember-a11y-testing/test-support/audit";
+import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
-module("Component | login-form", function (hooks) {
+module('Component | login-form', function (hooks) {
   setupRenderingTest(hooks);
 
-  test("login form has no accessibility issues", async function (assert) {
+  test('login form has no accessibility issues', async function (assert) {
     await render(hbs`<LoginForm/>`);
 
     await a11yAudit();
-    assert.ok(true, "no a11y errors found!");
+    assert.ok(true, 'no a11y errors found!');
   });
 });
+{% endraw %}
 ```
 
 The `a11yAudit` helper will inspect the rendered page or component and it will
@@ -117,34 +114,37 @@ incremental approach to making these improvements (similar to the upgrade path
 in Ember where you can mute deprecations and work on them step by step).
 
 ```js
-test("sign in page has no accessibility issues", async function (assert) {
+{% raw %}
+test('sign in page has no accessibility issues', async function (assert) {
   let axeOptions = {
     rules: {
-      "autocomplete-valid": {
+      'autocomplete-valid': {
         enabled: false,
       },
-      "duplicate-id": {
+      'duplicate-id': {
         enabled: false,
       },
       label: {
         enabled: false,
       },
-      "link-name": {
+      'link-name': {
         enabled: false,
       },
     },
   };
-  await visit("/signin");
+  await visit('/signin');
 
   await a11yAudit(axeOptions);
-  assert.ok(true, "no a11y errors found!");
+  assert.ok(true, 'no a11y errors found!');
 });
+{% endraw %}
 ```
 
 If you happen to have a very long list of rules to mutate, you may want to do
 something like:
 
 ```js
+{% raw %}
 function axeOptions(disabledRules) {
   let rules = {};
 
@@ -155,14 +155,15 @@ function axeOptions(disabledRules) {
   return { rules };
 }
 
-test("sign in page has no accessibility issues", async function (assert) {
-  await visit("/signin");
+test('sign in page has no accessibility issues', async function (assert) {
+  await visit('/signin');
 
   await a11yAudit(
-    axeOptions(["autocomplete-valid", "duplicate-id", "label", "link-name"])
+    axeOptions(['autocomplete-valid', 'duplicate-id', 'label', 'link-name']),
   );
-  assert.ok(true, "no a11y errors found!");
+  assert.ok(true, 'no a11y errors found!');
 });
+{% endraw %}
 ```
 
 You can then re-enable the rules one by one as you fix the violations.
@@ -331,7 +332,7 @@ where the actual checkbox is hidden but is still used for the states.
 ```
 
 ```css
-input[type="checkbox"].custom-checkbox {
+input[type='checkbox'].custom-checkbox {
   width: 0;
   height: 0;
   border: none;
@@ -339,12 +340,12 @@ input[type="checkbox"].custom-checkbox {
   margin: 0;
 }
 
-input[type="checkbox"].custom-checkbox + span {
+input[type='checkbox'].custom-checkbox + span {
   position: relative;
 }
 
-input[type="checkbox"].custom-checkbox + *::before {
-  content: " ";
+input[type='checkbox'].custom-checkbox + *::before {
+  content: ' ';
   display: block;
   position: absolute;
   left: 0;
@@ -355,14 +356,14 @@ input[type="checkbox"].custom-checkbox + *::before {
   background: #fff;
 }
 
-input[type="checkbox"].custom-checkbox:checked + *::before {
+input[type='checkbox'].custom-checkbox:checked + *::before {
   background: #01c3a7 url(images/checkmark_success_white.svg) center no-repeat;
   border-color: #01c3a7;
   background-size: 60%;
 }
 
 /* our focus style */
-input[type="checkbox"].custom-checkbox:focus + *::before {
+input[type='checkbox'].custom-checkbox:focus + *::before {
   border-color: #01c3a7;
 }
 ```

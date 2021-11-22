@@ -1,18 +1,14 @@
 ---
-title: "simplabs monthly update - April 2019"
+title: 'simplabs monthly update - April 2019'
 authorHandle: mrmrcoleman
 tags: simplabs
-bio: "Communications and Community Outreach Specialist"
+bio: 'Communications and Community Outreach Specialist'
 description:
   "Mark Coleman shares simplabs' monthly update for April 2019, covering new
   joiners, new clients and a number of upcoming events."
+tagline: |
+  <p>Welcome to the second installment of our monthly update. Each month we cover the events and activities that have been happening at simplabs along with the things we're looking forward to. Enjoy.</p>
 ---
-
-Welcome to the second installment of our monthly update. Each month we cover the
-events and activities that have been happening at simplabs along with the things
-we're looking forward to. Enjoy.
-
-<!--break-->
 
 ## News
 
