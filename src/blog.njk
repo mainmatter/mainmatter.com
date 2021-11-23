@@ -3,28 +3,68 @@ layout: base
 title: Product & Engineering Blog
 pagination:
   data: collections.posts
-  size: 10
+  size: 12
   alias: posts
 permalink: "/blog/{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1 }}/{% endif %}"
 eleventyNavigation:
   key: Blog
   order: 50
 ---
-<h1>Posts</h1>
-<ol class="post-list">
+{% from "featured-post.njk" import featuredPost %}
+{% from "post-card.njk" import postCard %}
+
+{% if pagination.pageNumber === 0 %}
   {%- for post in posts -%}
-    {% set author =  post.data.authorHandle | findBySlug %}
-    <li class="post-list__item">
-      <a href="{{ post.url }}">{{ post.data.title }}</a>
-      <p>{{ post.data.description }}</p>
-      {% if author %}
-        <a href="/blog/author/{{ author.data.page.fileSlug }}/">
-          {{ author.data.name }}
-        </a>
-      {% endif %}
-    </li>
+    {% if loop.index === 1 %}
+      {{ featuredPost('left', 'blue', post) }}
+    {% elif loop.index === 6 %}
+      {{ featuredPost('right', 'aqua', post) }}
+    {% elif loop.index === 2 or loop.index === 7 %}
+      <ol class="post-cards section container container--lg">
+        <li class="post-cards__item">
+          {{ postCard(post) }}
+        </li>
+    {% elif loop.index === 5 or loop.index === 12 %}
+        <li class="post-cards__item">
+          {{ postCard(post) }}
+        </li>
+      </ol>
+    {% else %}
+      <li class="post-cards__item">
+        {{ postCard(post) }}
+      </li>
+    {% endif %}
   {%- endfor -%}
-</ol>
-{% if (paged.first != true) or (paged.last != true) %}
-  {% include "pagination.njk" %}
+{% else %}
+  <ol class="post-cards section container container--lg">
+    {%- for post in posts -%}
+      <li class="post-cards__item">
+        {{ postCard(post) }}
+      </li>
+    {%- endfor -%}
+  </ol>
 {% endif %}
+
+<nav class="container container--lg" aria-label="Pagination">
+  <ol class="pagination">
+    {%- for pageUrl in pagination.hrefs %}
+      {%- set isCurrentPage = pagination.pageNumber == loop.index0 -%}
+      {%- if isCurrentPage
+      or loop.first
+      or loop.last
+      or pagination.pageNumber in [loop.index0-1, loop.index0+1] -%}
+        {%- if loop.last and pagination.pageNumber < (loop.length - 3) -%}
+          <li class="pagination__item" role="presentation">...</li>
+        {%- endif -%}
+        <li class="pagination__item">
+          <a class="pagination__link" href="{{ pageUrl }}" {% if isCurrentPage %}aria-current="page"{% endif %}>
+            <span class="screenreader">Page </span> {{ loop.index }}
+          </a>
+        </li>
+        {%- if loop.first and pagination.pageNumber > 2 -%}
+          <li class="pagination__item" role="presentation">...</li>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor %}
+  </ol>
+</nav>

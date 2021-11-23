@@ -1,4 +1,5 @@
 .split-hero {
+  --spacing: 1.5rem;
   display: flex;
   flex-direction: column;
 
@@ -31,6 +32,10 @@
     background-color: var(--color-yellow);
     color: var(--color-black);
   }
+
+  &--post {
+    --spacing: 1rem;
+  }
 }
 
 .split-hero__image-wrapper {
@@ -55,20 +60,24 @@
 }
 
 .split-hero__tags {
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing);
 }
 
 .split-hero__title {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing);
 }
 
 .split-hero__text {
   max-width: rem-calc(376);
 }
 
+.split-hero__byline {
+  color: var(--color-tag);
+}
+
 .split-hero__link {
   align-self: flex-start;
-  margin-top: 1.5rem;
+  margin-top: var(--spacing);
 }
 
 @media (min-width: 48em) {

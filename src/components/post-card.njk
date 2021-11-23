@@ -1,0 +1,47 @@
+{#
+An individual card for post
+
+Configuration Options:
+post: A post object
+
+{{ postCard(post) }}
+#}
+{% from "cta-link.njk" import ctaLink %}
+{%- macro postCard(post) -%}
+  <div class="post-card">
+    <a href="{{ post.url}}" class="post-card__link">
+      <h3 class="screenreader">{{ post.data.title }}</h3>
+    </a>
+    {% if post.data.tags %}
+      <div class="post-card__tags">
+        <ul class="tags">
+          {% for tag in post.data.tags %}
+            <li class="tags__tag-item">
+              <a class="post-card__internal-link tags__tag tags__tag--link" href="/blog/tag/{{ tag | slug }}">{{ tag }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+    <p class="post-card__title h3" aria-hidden="true">
+      {{ post.data.title }}
+    </p>
+    <div class="byline">
+      {% if post.data.authorHandle %}
+        {% set author =  post.data.authorHandle | findBySlug %}
+        by&nbsp;<a class="post-card__internal-link byline__author" href="/blog/author/{{ author.data.page.fileSlug }}/">
+          {{ author.data.name }}
+        </a>
+      </a>
+      <div class="byline__date">{{ post.date | monthDayYear }}</div>
+      {% endif %}
+    </div>
+    <p class="post-card__description">
+      {{ post.data.tagline | formatTagline }}
+    </p>
+    <span class="post-card__cta cta-link text--accent" aria-hidden="true">
+      <span class="cta-link__text">Find out more</span>
+      <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+    </span>
+  </div>
+{%- endmacro -%}

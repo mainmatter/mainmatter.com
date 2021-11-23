@@ -1,0 +1,20 @@
+.pagination {
+  margin: 0 auto 5rem;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.pagination__item {
+  display: inline-block;
+}
+
+.pagination__link {
+  padding: 0.75rem 1rem;
+
+  &[aria-current="page"] {
+    font-weight: 600;
+    color: var(--color-purple);
+    text-decoration: none;
+  }
+}

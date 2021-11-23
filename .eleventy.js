@@ -69,10 +69,6 @@ module.exports = function (eleventyConfig) {
   dayjs.extend(customParseFormat);
 
   eleventyConfig.addFilter("monthDayYear", function (date) {
-    return dayjs(date).format("MMM. DD, YYYY");
-  });
-
-  eleventyConfig.addFilter("fullMonthDayYear", function (date) {
     return dayjs(date).format("MMMM D, YYYY");
   });
   // robot friendly date format for crawlers
@@ -88,8 +84,8 @@ module.exports = function (eleventyConfig) {
     return findBySlug(slug);
   });
 
-  eleventyConfig.addFilter("filename", function (path) {
-    return path.split("/").pop();
+  eleventyConfig.addFilter("formatTagline", function (tagline) {
+    return tagline.split("</p>")[0].replace(/<\/?[^>]+(>|$)/g, "");
   });
 
   const mdRender = new markdownIt({});
