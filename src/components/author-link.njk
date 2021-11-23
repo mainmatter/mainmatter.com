@@ -1,0 +1,27 @@
+{%- macro authorLink(authorHandle, bio, className) -%}
+  {% set author = authorHandle | findBySlug %}
+  {% if author %}
+    <div class="author">
+      <div class="author__image-wrapper">
+        {% set imageUrl = '/assets/images/authors/' + author.data.page.fileSlug + '.jpg' %}
+        {% image imageUrl, '', '3.5rem', 'eager', 'author__image', [112] %}
+      </div>
+      <div class="author__text-wrapper">
+        <div class="author__byline">
+          by
+          <a class="author__name" href="/blog/author/{{ author.data.page.fileSlug }}">
+            {{ author.data.name }}
+          </a>
+        </div>
+        <p class="author__bio">
+          {% if bio %}{{ bio }}{% else %}{{ author.data.bio }}{% endif %}
+        </p>
+        {% if author.data.twitter %}
+          <a class="author__twitter" href="https://twitter.com/{{ author.data.twitter }}/">
+            @{{ author.data.twitter }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+{%- endmacro -%}

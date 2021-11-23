@@ -16,6 +16,7 @@ module.exports = (collection) => {
 
       pagedPosts.push({
         tag: tagName,
+        total: numberOfPages,
         number: pageNum,
         posts: sortedPosts.slice(sliceFrom, sliceTo),
         first: pageNum === 1,

@@ -1,13 +1,56 @@
 ---
 layout: base
 renderData:
-  title: '{{ paged.author.data.name }}'
+  title: All posts by {{ paged.author.data.name }}
 pagination:
   data: collections.authorsPostsPaged
   size: 1
   alias: paged
 permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/page/{{ paged.number }}/{% endif %}"
 ---
+{% from "author-link.njk" import authorLink %}
+{% from "post-card.njk" import postCard %}
+
+<div class="section container container--lg">
+  <h1 class="section__title ">All posts by {{ paged.author.data.name }}</h1>
+
+  {{ authorLink(paged.author.fileSlug) }}
+
+  <ol class="post-cards">
+    {%- for post in paged.posts -%}
+      <li class="post-cards__item">
+        {{ postCard(post) }}
+      </li>
+    {%- endfor -%}
+  </ol>
+
+  <nav class="" aria-label="Pagination">
+    <ol class="pagination pagination--margin ">
+      {%- for i in range(1, paged.total) %}
+        {%- set isCurrentPage = i === paged.number -%}
+        {%- set pageNumber = paged.number - 1 -%}
+        {%- if isCurrentPage
+        or loop.first
+        or loop.last
+        or pageNumber in [loop.index0-1, loop.index0+1] -%}
+          {%- if loop.last and pageNumber < (loop.length - 3) -%}
+            <li class="pagination__item" role="presentation">...</li>
+          {%- endif -%}
+          <li class="pagination__item">
+            <a class="pagination__link" href="/blog/author/{{ paged.author.fileSlug }}/{% if i > 1 %}/page/{{ i }}/{% endif %}" {% if isCurrentPage %}aria-current="page"{% endif %}>
+              <span class="screenreader">Page </span> {{ i }}
+            </a>
+          </li>
+          {%- if loop.first and pageNumber > 2 -%}
+            <li class="pagination__item" role="presentation">...</li>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor %}
+    </ol>
+  </nav>
+</div>
+
+{#
 {% if paged.posts.length > 0 %}
   <h2 class="post-list__title h1">All posts by {{ paged.author.data.name }}</h2>
   <ol class="post-list">
@@ -22,4 +65,4 @@ permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/p
   {% if (paged.first != true) or (paged.last != true) %}
     Pagination
   {% endif %}
-{% endif %}
+{% endif %} #}

@@ -3,6 +3,10 @@
   padding: 0;
   list-style: none;
   text-align: center;
+
+  &--margin {
+    margin-top: 3rem;
+  }
 }
 
 .pagination__item {

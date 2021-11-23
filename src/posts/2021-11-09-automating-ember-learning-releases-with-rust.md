@@ -1,11 +1,11 @@
 ---
-title: 'Automating Ember releases with Rust'
+title: "Automating Ember releases with Rust"
 authorHandle: locks
-tags: ['ember', 'test']
-bio: 'Senior Frontend Engineer, Ember Framework and Learning Core teams member'
+tags: "ember"
+bio: "Senior Frontend Engineer, Ember Framework and Learning Core teams member"
 description:
-  'Ricardo Mendes discusses a command-line tool built in Rust that automates the
-  releases process for the Ember Core Learning Team'
+  "Ricardo Mendes discusses a command-line tool built in Rust that automates the
+  releases process for the Ember Core Learning Team"
 og:
   image: /assets/images/posts/2021-11-09-automating-ember-learning-releases-with-rust/og-image.png
 tagline: |

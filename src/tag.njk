@@ -6,20 +6,42 @@ pagination:
   data: collections.tagsPostsPaged
   size: 1
   alias: paged
-permalink: "/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 1 %}{{ paged.number }}/{% endif %}"
+permalink: "/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 1 %}/page/{{ paged.number }}/{% endif %}"
 ---
-<div class="tag-page page container container--lg">
-  <h1 class="tag-page__title">{{ paged.tag }}</h1>
-  <ol class="post-list">
+{% from "post-card.njk" import postCard %}
+
+<div class="section container container--lg">
+  <h1 class="section__title ">Tagged with “{{ paged.tag }}”</h1>
+  <ol class="post-cards">
     {%- for post in paged.posts -%}
-      <li class="post-list__item">
-        <a href="{{ post.url }}">
-          {{ post.data.title }}
-        </a>
+      <li class="post-cards__item">
+        {{ postCard(post) }}
       </li>
     {%- endfor -%}
   </ol>
-  {% if (paged.first != true) or (paged.last != true) %}
-    {% include "pagination.njk" %}
-  {% endif %}
+
+  <nav class="" aria-label="Pagination">
+    <ol class="pagination pagination--margin ">
+      {%- for i in range(1, paged.total) %}
+        {%- set isCurrentPage = i === paged.number -%}
+        {%- set pageNumber = paged.number - 1 -%}
+        {%- if isCurrentPage
+        or loop.first
+        or loop.last
+        or pageNumber in [loop.index0-1, loop.index0+1] -%}
+          {%- if loop.last and pageNumber < (loop.length - 3) -%}
+            <li class="pagination__item" role="presentation">...</li>
+          {%- endif -%}
+          <li class="pagination__item">
+            <a class="pagination__link" href="/blog/tag/{{ paged.tag | slug }}/{% if i > 1 %}/page/{{ i }}/{% endif %}" {% if isCurrentPage %}aria-current="page"{% endif %}>
+              <span class="screenreader">Page </span> {{ i }}
+            </a>
+          </li>
+          {%- if loop.first and pageNumber > 2 -%}
+            <li class="pagination__item" role="presentation">...</li>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor %}
+    </ol>
+  </nav>
 </div>

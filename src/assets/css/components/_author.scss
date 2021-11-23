@@ -1,0 +1,30 @@
+.author {
+  display: flex;
+  margin: 2rem auto;
+  padding: 0.5rem 0;
+  border-top: rem-calc(1) solid currentColor;
+  border-bottom: rem-calc(1) solid currentColor;
+  font-size: rem-calc(13);
+}
+
+.author__image-wrapper {
+  flex: 0 0 3.5rem;
+  margin-right: 1.5rem;
+}
+
+.author__image {
+  display: block;
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.author__name {
+  color: var(--color-blue);
+}
+
+.author__twitter {
+  color: var(--color-blue);
+  text-decoration: none;
+}
