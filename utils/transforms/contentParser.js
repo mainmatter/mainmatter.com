@@ -96,8 +96,7 @@ module.exports = function (value, outputPath) {
           imgClass = "";
 
         if (!sizes) {
-          // Todo: Adjust these default sizes based on the designs
-          sizes = [720, 1024, 1440];
+          sizes = [775, 1200, 1600];
         }
 
         if (imageData.kind === "full") {
@@ -109,20 +108,16 @@ module.exports = function (value, outputPath) {
           return image.replaceWith(img);
         }
 
-        if (imageData.fileType === "svg") {
-          if (imgClass) {
-            setClass(image, [imgClass]);
-          }
-          return;
+        let formats = ["webp", imageData.fileType];
+        if (imageData.fileType === "gif") {
+          formats = ["webp"];
         }
 
         let url = "./static" + imageData.src;
         const options = {
+          svgShortCircuit: true,
           widths: sizes,
-          formats: [
-            "webp",
-            ...(imageData.fileType !== "gif" ? [imageData.fileType] : []),
-          ],
+          formats,
           urlPath: imageData.directory,
           outputDir: "./dist/" + imageData.directory,
           filenameFormat: function (id, src, width, format, options) {
@@ -136,8 +131,8 @@ module.exports = function (value, outputPath) {
 
         let imageAttributes = {
           alt,
-          // Todo: flesh out sizes when designs come in
-          sizes: "100vw",
+          class: imgClass,
+          sizes: "@media (min-width: 62em) 48.438rem, 90vw",
           loading: "lazy",
           decoding: "async",
         };
