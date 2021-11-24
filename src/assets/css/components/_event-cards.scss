@@ -1,0 +1,52 @@
+.event-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14.25rem, 1fr));
+  gap: rem-calc(26);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.event-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.3s ease;
+}
+
+.event-card__image-wrapper {
+  margin-bottom: 1.5rem;
+  order: -1;
+}
+
+.event-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 263 / 140;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.event-card__meta {
+  display: flex;
+  margin-top: 1.5rem;
+  padding: 0.5rem 0;
+  gap: 2rem;
+  border-top: 0.125rem solid currentColor;
+  border-bottom: 0.125rem solid currentColor;
+  font-weight: 600;
+  font-size: rem-calc(13);
+}
+
+.event-card__description {
+  margin: 1.5rem 0;
+  font-size: rem-calc(13);
+}
+
+.event-card__cta {
+  align-self: flex-start;
+  margin-top: auto;
+}

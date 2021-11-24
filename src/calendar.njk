@@ -2,21 +2,28 @@
 layout: 'base'
 title: Calendar
 ---
+{% from "event-card.njk" import eventCard %}
 {%- set kinds = ["Conference", "Meetup"] -%}
 
-{%- for kind in kinds -%}
-  {%- set eventCount = 0 -%}
-  {%- for event in collections.calendar -%}
-    {%- if event.data.kind == kind.toLowerCase() %}
-      {%- set eventCount = eventCount + 1 -%}
-      {%- if eventCount == 1 -%}
-        <h2>{{ kind }}</h2>
-        <ul>
+<section class="section container container--lg">
+  <div class="section__introduction container--xs">
+    <h1 class="section__title">Calendar</h1>
+    <p>Find out about upcoming events, conferences and meetups we will be attending or organizing.</p>
+  </div>
+  {%- for kind in kinds -%}
+    {%- set eventCount = 0 -%}
+    {%- for event in collections.calendar -%}
+      {%- if event.data.kind == kind.toLowerCase() %}
+        {%- set eventCount = eventCount + 1 -%}
+        {%- if eventCount == 1 -%}
+          <h2 class="section__subtitle">{{ kind }}</h2>
+          <ul class="event-cards">
+        {%- endif -%}
+        {{ eventCard(event) }}
       {%- endif -%}
-      <li>{{ event.data.title }}<p>{{ event.date.toUTCString() }}</li>
+    {%- endfor -%}
+    {%- if eventCount > 0 %}
+      </ul>
     {%- endif -%}
   {%- endfor -%}
-  {%- if eventCount > 0 %}
-    </ul>
-  {%- endif -%}
-{%- endfor -%}
+</section>

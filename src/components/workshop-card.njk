@@ -6,7 +6,6 @@ workshop: A workshop object
 
 {{ workshopCard(workshop) }}
 #}
-{% from "cta-link.njk" import ctaLink %}
 {%- macro workshopCard(workshop) -%}
   <li class="workshop-card">
     <a href="{{ workshop.url }}" class="workshop-card__link">

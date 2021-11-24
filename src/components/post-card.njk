@@ -6,7 +6,6 @@ post: A post object
 
 {{ postCard(post) }}
 #}
-{% from "cta-link.njk" import ctaLink %}
 {%- macro postCard(post) -%}
   <div class="post-card">
     <a href="{{ post.url}}" class="post-card__link">
