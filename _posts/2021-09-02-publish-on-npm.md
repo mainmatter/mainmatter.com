@@ -5,6 +5,11 @@ github: Turbo87
 twitter: tobiasbieniek
 topic: javascript
 bio: 'Senior Software Engineer'
+description:
+  'Tobias Bieniek explains mechanisms for automating npm releases for recuded
+  work effort and increased reliability.'
+og:
+  image: /assets/images/posts/2021-25-11-publish-on-npm/og-image.png
 ---
 
 Publishing JavaScript projects on [npm](https://www.npmjs.com) can become quite
