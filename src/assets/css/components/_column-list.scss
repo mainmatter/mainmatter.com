@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
-  border-bottom: rem-calc(2) solid currentColor;
+  border-bottom: rem-calc(1) solid currentColor;
 
   &::before {
     counter-increment: column-list;

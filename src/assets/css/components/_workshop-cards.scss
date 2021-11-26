@@ -12,14 +12,7 @@
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.25);
-  transition: box-shadow 0.3s ease;
-
-  &:focus-within {
-    box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.25),
-      0 0 0 0.125rem var(--color-aqua);
-  }
+  border: rem-calc(1) solid var(--color-light-gray);
 }
 
 .workshop-card__link {
@@ -30,6 +23,7 @@
   right: 0;
   bottom: 0;
   z-index: 2;
+  outline-offset: 0.25rem;
 
   &:hover {
     & ~ .workshop-card__cta:before {

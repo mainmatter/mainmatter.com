@@ -25,10 +25,15 @@
     margin-right: -50vw;
   }
 
-  iframe,
-  video {
+  iframe[src*="youtube"] {
+    aspect-ratio: 16/9;
+  }
+
+  video,
+  iframe {
     margin: 2rem auto;
     width: 100%;
+    height: auto;
   }
 
   figure {
@@ -44,7 +49,9 @@
   }
 
   @media (min-width: 62em) {
-    img {
+    img:not(.image--small):not(.image--full),
+    video:not(.image--small),
+    .iframe-wrapper {
       max-width: none;
       width: calc(100% + 10.188rem);
       margin-left: -5.094rem;

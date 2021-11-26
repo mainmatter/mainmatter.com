@@ -59,10 +59,13 @@ module.exports = function (value, outputPath) {
     const articleEmbeds = [...document.querySelectorAll("main article iframe")];
     if (articleEmbeds.length) {
       articleEmbeds.forEach((embed) => {
+        const container = document.createElement("div");
         const wrapper = document.createElement("div");
+        container.classList.add("iframe-container");
+        wrapper.classList.add("iframe-wrapper");
         embed.setAttribute("loading", "lazy");
-        wrapper.appendChild(embed.cloneNode(true));
-        embed.replaceWith(wrapper);
+        container.appendChild(wrapper).appendChild(embed.cloneNode(true));
+        embed.replaceWith(container);
       });
     }
 
@@ -101,6 +104,8 @@ module.exports = function (value, outputPath) {
 
         if (imageData.kind === "full") {
           imgClass = "image--full";
+        } else if (imageData.kind === "small") {
+          imgClass = "image--small";
         } else if (imageData.kind === "video") {
           img = JSDOM.fragment(
             `<video src="${imageData.src}" playsinline autoplay muted loop role="presentation">${alt}</video>`
@@ -156,7 +161,7 @@ function setClass(element, list) {
 }
 
 function parseImageDirectives(src) {
-  let match = src.match(/#(full|plain|video)?(@(\d+)-(\d+))?$/);
+  let match = src.match(/#(full|plain|video|small)?(@(\d+)-(\d+))?$/);
   let bareSrc = src.replace(/#[^#]*$/, "");
   let directives = {
     src: bareSrc,
