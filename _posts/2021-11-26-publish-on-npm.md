@@ -9,7 +9,7 @@ description:
   'Tobias Bieniek explains mechanisms for automating npm releases for reduced
   effort and improved reliability with lerna-changelog and release-it.'
 og:
-  image: /assets/images/posts/2021-11-25-publish-on-npm/og-image.png
+  image: /assets/images/posts/2021-11-26-publish-on-npm/og-image.png
 ---
 
 Publishing JavaScript projects on [npm](https://www.npmjs.com) can become quite
