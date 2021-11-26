@@ -6,6 +6,7 @@ eleventyNavigation:
   order: 20
 ---
 {% from "split-hero.njk" import splitHero %}
+{% from "client-list.njk" import clientList %}
 {% from "case-study-list.njk" import caseStudyList %}
 
 {% set 'content' = {
@@ -28,8 +29,8 @@ eleventyNavigation:
 } %}
 {{ splitHero('right', 'white', content) }}
 
-{% set caseStudies = ['qonto', 'trainline', 'timify', 'cardstack', 'generali', 'experteer'] %}
-{{ caseStudyList(caseStudies, 'aqua', 'Meet our clients') }}
+{% set clients = ['qonto', 'cardstack', 'generali', 'poellath', 'robin-hood', 'clark', 'xbav', 'experteer', 'mvb'] %}
+{{ clientList(clients, 'aqua', 'Meet our clients') }}
 
 {% set 'content' = {
   "title": "Leveraging Trainline's full market potentials",
@@ -42,6 +43,10 @@ eleventyNavigation:
 } %}
 {{ splitHero('left', 'white', content) }}
 
-{{ caseStudyList(caseStudies, 'aqua') }}
+{% set clients = ['camilyo', 'hop-skip-drive', 'dim3', 'timify', 'embedd', 'medify', 'expedition', 'trainline', 'ringler', 'neighbourhoodie', 'loconet', 'erdil', 'sutori', 'asilimia'] %}
+{{ clientList(clients, 'aqua') }}
+
+{% set caseStudies = ['ddwrt', 'expedition'] %}
+{{ caseStudyList(caseStudies, 'blue', 'More case studies') }}
 
 {% include 'content/hero-work-with-us.njk' %}

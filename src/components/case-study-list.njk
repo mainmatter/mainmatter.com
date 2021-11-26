@@ -6,23 +6,27 @@ list: An array where each item is the slug for the case study.
 #}
 
 {%- macro caseStudyList(caseStudies, color, heading) -%}
-  <section class="case-study-list case-study-list--{{ color }}">
+  <section class="case-studies case-studies--{{ color }}">
     <div class="container container--lg">
       {% if heading %}
-        <h2 class="case-study-list__heading">{{ heading }}</h2>
+        <h2 class="case-studies__heading">{{ heading }}</h2>
       {% endif %}
-      <ul class="case-study-list__list">
-        {% for i in range(0, 6) -%}
-          <li class="case-study-list__item">
-            <a class="case-study-list__link" href="#"><span class="screenreader">Title</span></a>
-            <div class="case-study-list__image">
-              {# {% set imagePath %}/logos/{{ logo | slug }}.svg{% endset %} #}
-              {% svg '/logos/cardstack.svg', 'img' %}
-            </div>
-            <div class="case-study-list__text">
-              Cardstack builds the experience layer for a decentralized internet. simplabs helped them complete their Card UI system and validate its abilities in various prototype projects, identifying and fixing some issues in their core framework along the way.
-            </div>
-          </li>
+      <ul class="case-studies__list">
+        {% for caseStudyHandle in caseStudies -%}
+          {% set caseStudy = caseStudyHandle | findBySlug %}
+          {% if caseStudy %}
+            <li class="case-study__item">
+              <a href="{{ caseStudy.url }}"><span class="screenreader">{{ caseStudy.data.display_title }}</span></a>
+              <p class="case-study__title h3">{{ caseStudy.data.display_title }}</p>
+              <div class="case-study__text">
+                {{ caseStudy.data.description }}
+              </div>
+              <span class="case-study__cta cta-link text--accent" aria-hidden="true">
+                <span class="cta-link__text">Read Case Study</span>
+                <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+              </span>
+            </li>
+          {% endif %}
         {% endfor %}
       </ul>
     </div>

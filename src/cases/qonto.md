@@ -1,5 +1,6 @@
 ---
 layout: case-study
+company: Qonto
 title: Co-Engineering the Future of Banking for SMEs with Qonto | Work
 display_title: "Qonto: Co-Engineering the Future of Banking for SMEs"
 description: Qonto is a european B2B Neobank for freelancers and SMEs. We helped their team deliver mission critical features and scale sustainably.

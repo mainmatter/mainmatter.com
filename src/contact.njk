@@ -2,10 +2,10 @@
 layout: base
 title: Contact us to discuss how we can help you
 ---
-{% from "case-study-list.njk" import caseStudyList %}
+{% from "client-list.njk" import clientList %}
 
 {% include 'contact-info.njk' %}
 {% include 'contact-form.njk' %}
 
-{% set caseStudies = ['qonto', 'trainline', 'timify'] %}
-{{ caseStudyList(caseStudies, 'blue', 'We are trusted by international brands') }}
+{% set clients = ['qonto', 'trainline', 'timify'] %}
+{{ clientList(clients, 'blue', 'We are trusted by international brands') }}

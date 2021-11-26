@@ -1,5 +1,6 @@
 ---
 layout: case-study
+company: Trainline
 title: Mobile train tickets with Ember.js for Trainline | Work
 display_title: "A mobile train ticket counter for Trainline"
 description: Trainline is Europe’s leading rail and coach platform. We helped them deliver a high-performance mobile web app, along with an improved engineering process.
