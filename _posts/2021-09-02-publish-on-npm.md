@@ -6,8 +6,8 @@ twitter: tobiasbieniek
 topic: javascript
 bio: 'Senior Software Engineer'
 description:
-  'Tobias Bieniek explains mechanisms for automating npm releases for recuded
-  work effort and increased reliability.'
+  'Tobias Bieniek explains mechanisms for automating npm releases for reduced
+  effort and improved reliability with lerna-changelog and release-it.'
 og:
   image: /assets/images/posts/2021-25-11-publish-on-npm/og-image.png
 ---
@@ -36,11 +36,11 @@ I've set up a
 [global `.gitignore` file](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files#configuring-ignored-files-for-all-repositories-on-your-computer),
 but unfortunately no such thing exists for `.npmignore` files. 😢
 
-There are obviously other ways to avoid this, but we've found that one of the
-easiest ways is to just not publish from your local machine, and instead have
-our CI workflow publish the package whenever we push a tag to the repository. As
-an added benefit: you'll never forget to push the tag to the repository, because
-it's now required to actually publish the package! 🥳
+There are obviously other ways to avoid this issue, but we've found that one of
+the easiest ways is to just not publish from your local machine, and instead
+have your CI workflow publish the package whenever you push a tag to the
+repository. As an added benefit: you'll never forget to push the tag to the
+repository because it's now required to actually publish the package! 🥳
 
 How to set this up largely depends on what CI system you are using. For our
 open-source projects we use GitHub Actions these days, and a typical `release`
@@ -83,11 +83,11 @@ wildcard means that we don't care about what the exact tag name is.
 `jobs` is a bit misleading, because in this workflow we only have a single job:
 `release`. In this job we will first copy the code onto the CI machine
 (`checkout`), and then setup Node.js. It is important here to explicitly specify
-the `registry-url`, because otherwise the following `npm publish` command won't
+the `registry-url` because otherwise the following `npm publish` command won't
 work. Here, we just use the official npm registry, but it is equally possible to
 publish packages to a company-internal private registry, if needed.
 
-Lastly, we call `npm publish`… but for that to succeed we need to be logged in…
+Lastly, we call `npm publish`. For this to succeed we need to be logged in…
 which we are not 🙈
 
 An alternative to using `npm login` on CI is providing an "access token" through
@@ -120,8 +120,8 @@ downsides of this approach that you should be aware of:
   access a subset of your projects.
 
 For us, the convenience of only having to push a tag currently outweighs the
-disadvantages mentioned above, but it is still useful to know what the tradeoffs
-are.
+disadvantages mentioned above, but it is still valuable to know what the
+tradeoffs are.
 
 ## Keep a change log
 
@@ -132,23 +132,23 @@ You can look at the diff of the two versions, but that usually requires somewhat
 deep knowledge of how the dependency works internally. In an ideal world every
 project would have a `CHANGELOG.md` file, that describes what has changed
 between the individual versions. Unfortunately, not all projects keep such a
-file though, and it is often because maintaining such a file is perceived as a
-significant workload.
+file because maintaining such a file is often perceived as a significant
+workload.
 
-To reduce the work that is needed to keep such a file we can use changelog
-generators. These tools usually look at the git commits between the current
-version and the last release and output an overview of what the relevant changes
-were.
+To reduce the work that is needed to maintain a changelog file we can use
+changelog generators. These tools usually look at the git commits between the
+current version and the last release and output an overview of what the relevant
+changes were.
 
 The changelog generator that we like to use at simplabs is: [lerna-changelog].
 
 [lerna-changelog]: https://github.com/lerna/lerna-changelog
 
-We don't want to go into too much detail here, but essentially how it works is
-this: lerna-changelog looks at the commits and searches for commit messages that
-look like pull-request merge commits. It then requests more information about
-the corresponding pull-requests from the GitHub API, including the labels of
-that pull-request. Next, it groups the PRs by their labels and outputs them
+We don't want to go into too much detail here, but this is essentially how it
+works: lerna-changelog looks at the commits and searches for commit messages
+that look like pull-request merge commits. It then requests more information
+about the corresponding pull-requests from the GitHub API, including the labels
+of that pull-request. Next, it groups the PRs by their labels and outputs them
 based on that grouping.
 
 Here is an example of the lerna-changelog changelog itself:
@@ -192,7 +192,7 @@ cause the PR to not show up in the listing. This behavior is an ongoing
 discussion and might change in the future, but this is currently how it works.
 
 The way to use lerna-changelog is: when you bump the `version` in your
-`package.json` file, commit that change, and tag the commit, you also should
+`package.json` file, commit that change, and tag the commit, but you should also
 update the `CHANGELOG.md` with the latest changes for that particular version:
 
 ```bash
@@ -268,10 +268,10 @@ changelog preview.
 
 Once you have chosen the version number, it will update the `version` field in
 the `package.json` file and update the `CHANGELOG.md`. Afterwards it will ask
-you to confirm that the files should be committed like this, and, if you
-confirm, it will ask you whether the new commit should now be tagged. The cool
-part is that you can abort at any time and `release-it` will automatically clean
-up and revert you to the same state as before.
+you to confirm that the files should be committed like this, and if you confirm,
+it will ask you whether the new commit should now be tagged. The cool part is
+that you can abort at any time and `release-it` will automatically clean up and
+revert you to the same state as before.
 
 The final two confirmations are for pushing the commit and tag to GitHub and
 then creating the Release on GitHub. Once all of this is confirmed you can sit
@@ -279,13 +279,13 @@ back and watch the CI machines take over.
 
 To summarize, releasing a new version is now only a matter of running
 `release-it`, choosing a version number and then confirming a few actions, which
-usually shouldn't take more than a few seconds. And as a bonus this will even
-automatically maintain the `CHANGELOG.md` file for you!
+usually shouldn't take more than a few seconds. As a bonus, this updated release
+process will automatically maintain the `CHANGELOG.md` file for you!
 
-The instructions in this blog post were aimed mostly at JavaScript projects that
-are hosted on GitHub, but we've also set up similar things for projects on
-private GitLab instances, Rust projects, and also with different changelog
-generators. If you need any help setting this up, don't hesitate to [contact]
-us.
+The instructions in this blog post were primarily aimed at JavaScript projects
+that are hosted on GitHub, but we've also set up similar processes, tools and
+automations for projects on private GitLab instances, Rust projects, and also
+with different changelog generators. If you need any help setting this up, don't
+hesitate to [contact] us.
 
 [contact]: https://simplabs.com/contact/

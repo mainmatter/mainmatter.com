@@ -154,7 +154,7 @@ it:
 
     {{#each components as |componentName|}}
       {{#section.subsection name=componentName}}
-        {{component (concat "usage/" componentName)}}
+        {{component (concat 'usage/' componentName)}}
       {{/section.subsection}}
     {{/each}}
 

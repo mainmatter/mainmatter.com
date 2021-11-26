@@ -73,10 +73,9 @@ Router.map(function() {
 ```
 
 ```hbs
-// app/templates/application.hbs
-…
+// app/templates/application.hbs …
 {{#if session.isAuthenticated}}
-  <a {{ action 'invalidateSession' }}>Logout</a>
+  <a {{action 'invalidateSession'}}>Logout</a>
 {{else}}
   {{#link-to 'login'}}Login{{/link-to}}
 {{/if}}
@@ -115,11 +114,16 @@ The OAuth 2.0 authentication mechanism needs a login form, so let’s create tha
 ```hbs
 // app/templates/login.hbs
 <form {{action 'authenticate' on='submit'}}>
-  <label for="identification">Login</label>
+  <label for='identification'>Login</label>
   {{input id='identification' placeholder='Enter Login' value=identification}}
-  <label for="password">Password</label>
-  {{input id='password' placeholder='Enter Password' type='password' value=password}}
-  <button type="submit">Login</button>
+  <label for='password'>Password</label>
+  {{input
+    id='password'
+    placeholder='Enter Password'
+    type='password'
+    value=password
+  }}
+  <button type='submit'>Login</button>
 </form>
 ```
 

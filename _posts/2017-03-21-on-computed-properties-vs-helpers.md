@@ -49,10 +49,10 @@ defined on the `user` here):
 
 ```hbs
 <p>
-{{user.name}}
-{{#if user.isSenior}}
-  <small>(senior)</small>
-{{/if}}
+  {{user.name}}
+  {{#if user.isSenior}}
+    <small>(senior)</small>
+  {{/if}}
 </p>
 ```
 
@@ -72,10 +72,10 @@ and move the comparison into the template:
 
 ```hbs
 <p>
-{{user.name}}
-{{#if (lte user.age 65)}}
-  <small>(senior)</small>
-{{/if}}
+  {{user.name}}
+  {{#if (lte user.age 65)}}
+    <small>(senior)</small>
+  {{/if}}
 </p>
 ```
 
@@ -301,7 +301,7 @@ that using template helpers would look something like this:
 ```hbs
 <ul>
   {{#each items as |item|}}
-    <li class="{{if (eq selectedItem item) 'selected'}}">{{item}}</li>
+    <li class='{{if (eq selectedItem item) 'selected'}}'>{{item}}</li>
   {{/each}}
 </ul>
 ```
@@ -333,7 +333,7 @@ collection then:
 ```hbs
 <ul>
   {{#each _listItems as |listItem|}}
-    <li class="{{if listItem.isSelected 'selected'}}">{{listItem.item}}</li>
+    <li class='{{if listItem.isSelected 'selected'}}'>{{listItem.item}}</li>
   {{/each}}
 </ul>
 ```
