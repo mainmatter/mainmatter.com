@@ -7,7 +7,6 @@
         {% include 'svg/logo.njk' %}
         <span class="screenreader">Mainmatter</span>
       </a>
-      <p class="footer__copyright">© 2014 - {% copyrightYear %} simplabs GmbH</p>
     </div>
     <nav class="footer__nav" aria-label="Footer">
       {% for menu in footerNavigation.menus %}
@@ -26,6 +25,11 @@
         </div>
       {% endfor %}
     </nav>
+    <div class="footer__secondary">
+      <span class="footer__copyright">© 2014 - {% copyrightYear %} simplabs GmbH</span>
+      <a class="footer__inline-link" href="/imprint/">Imprint</a>
+      <a class="footer__inline-link" href="/privacy/">Privacy Policy</a>
+    </div>
     {{ socialList(socials.socials, 'footer__socials')}}
   </div>
 </footer>

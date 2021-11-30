@@ -9,7 +9,7 @@ post: A post object
 {%- macro postCard(post) -%}
   <div class="post-card">
     <a href="{{ post.url}}" class="post-card__link">
-      <h3 class="screenreader">{{ post.data.title }}</h3>
+      <h2 class="screenreader">{{ post.data.title }}</h2>
     </a>
     {% if post.data.tags %}
       <div class="post-card__tags">

@@ -14,13 +14,10 @@
 
 .tags__tag {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
   font-weight: 500;
   font-size: 0.75rem;
   letter-spacing: rem-calc(1);
   text-transform: uppercase;
-  border-radius: 2rem;
-  border: rem-calc(1) solid currentColor;
   color: var(--color-tag);
   text-decoration: none;
 }
