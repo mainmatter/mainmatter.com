@@ -1,16 +1,41 @@
 ---
 layout: base
 ---
+{% from "author-link.njk" import authorLink %}
+
 {%- block content -%}
-  <div class="post">
-    <h1 class="post__title">{{ title }}</h1>
-    <article class="post__body rte rte--wide-images">
+  <div class="container container--lg post">
+    <a href="/blog" class="post__back text--accent">
+      <span class="post__back-arrow">{% include 'svg/arrow.njk' %}</span>
+      <span class="post__back-text">Back</span>
+    </a>
+    <article class="post__content rte">
+      <div class="post__meta">
+        {% if tags %}
+          <div class="post__tags">
+            <ul class="tags">
+              {% for tag in tags %}
+                <li class="tags__tag-item">
+                  <a class="tags__tag tags__tag--link" href="/blog/tag/{{ tag | slug }}">{{ tag }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+        <div class="post__date">
+          {{ date | monthDayYear }}
+        </div>
+      </div>
+      <h1 class="post__title">{{ title }}</h1>
+      <div class="post__author-wrapper">
+        {{ authorLink(authorHandle, bio, 'author--post') }}
+      </div>
       <div class="post__tagline">
         {{ tagline | safe }}
       </div>
       {{ content | safe }}
     </article>
-    <nav aria-label="Post Pagination" class="prev-next container container--lg">
+    <nav aria-label="Post Pagination" class="prev-next">
       {% set previous = collections.posts | getPreviousCollectionItem(page) %}
       {% set next = collections.posts | getNextCollectionItem(page) %}
       {% if previous %}

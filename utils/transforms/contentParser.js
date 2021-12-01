@@ -91,6 +91,9 @@ module.exports = function (value, outputPath) {
     const images = [...document.querySelectorAll("article img")];
     if (images.length) {
       images.forEach((image) => {
+        if (image.classList.length > 0) {
+          return;
+        }
         const rawSrc = image.getAttribute("src");
         const alt = image.getAttribute("alt");
         const imageData = parseImageDirectives(rawSrc);
@@ -136,18 +139,34 @@ module.exports = function (value, outputPath) {
 
         let imageAttributes = {
           alt,
-          class: imgClass,
           sizes: "@media (min-width: 62em) 48.438rem, 90vw",
           loading: "lazy",
           decoding: "async",
         };
 
-        const newImage = JSDOM.fragment(
+        let newImage = JSDOM.fragment(
           Image.generateHTML(stats, imageAttributes)
         );
+
+        if (imgClass) {
+          newImage.firstElementChild.classList.add(imgClass);
+        }
+
         return image.replaceWith(newImage);
       });
     }
+
+    // Unwrap our images
+    const allPTags = [...document.querySelectorAll(".rte p")];
+    const elementList = ["IMG", "PICTURE", "VIDEO"];
+    allPTags.forEach((element) => {
+      if (
+        element.childNodes.length === 1 &&
+        elementList.indexOf(element.childNodes[0].tagName) > -1
+      ) {
+        return element.replaceWith(element.childNodes[0]);
+      }
+    });
 
     return "<!DOCTYPE html>\r\n" + document.documentElement.outerHTML;
   }

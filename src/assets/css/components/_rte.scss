@@ -10,9 +10,24 @@
     margin: 1.5rem 0 1rem;
   }
 
-  img {
+  img,
+  picture {
+    & + h2,
+    & + h3 {
+      margin-top: 0;
+    }
+  }
+
+  img,
+  picture {
     display: block;
-    margin: 3rem auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  picture img {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .image--full {
@@ -40,27 +55,12 @@
     margin: 3rem auto;
 
     img {
-      margin: 0 0 0.5rem;
-    }
-
-    figcaption {
-      color: var(--color-purple);
-    }
-  }
-
-  @media (min-width: 62em) {
-    img:not(.image--small):not(.image--full),
-    video:not(.image--small),
-    .iframe-wrapper {
-      max-width: none;
-      width: calc(100% + 10.188rem);
-      margin-left: -5.094rem;
-      margin-right: -5.094rem;
-    }
-
-    figure img {
       max-width: 100%;
       margin: 0 0 0.5rem;
+    }
+
+    figcaption:not([class]) {
+      color: var(--color-purple);
     }
   }
 }

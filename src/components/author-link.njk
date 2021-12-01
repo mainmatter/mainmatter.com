@@ -1,7 +1,7 @@
 {%- macro authorLink(authorHandle, bio, className) -%}
   {% set author = authorHandle | findBySlug %}
   {% if author %}
-    <div class="author">
+    <div class="author {{ className }}">
       <div class="author__image-wrapper">
         {% set imageUrl = '/assets/images/authors/' + author.data.page.fileSlug + '.jpg' %}
         {% image imageUrl, '', '3.5rem', 'eager', 'author__image', [112] %}

@@ -5,6 +5,14 @@
   border-top: rem-calc(1) solid currentColor;
   border-bottom: rem-calc(1) solid currentColor;
   font-size: rem-calc(13);
+
+  &--post {
+    margin-top: 0;
+
+    picture {
+      margin: 0;
+    }
+  }
 }
 
 .author__image-wrapper {
@@ -27,4 +35,16 @@
 .author__twitter {
   color: var(--color-blue);
   text-decoration: none;
+}
+
+@media (min-width: 62em) {
+  .author--post {
+    flex-wrap: wrap;
+
+    .author__image-wrapper {
+      flex: 1 0 100%;
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
 }

@@ -1,0 +1,32 @@
+pre,
+code {
+  background-color: var(--color-offwhite);
+  color: var(--color-black);
+}
+
+pre {
+  width: 100%;
+  overflow: auto;
+}
+
+code {
+  padding: 0.25rem;
+}
+
+pre code {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+code {
+  .string,
+  .property {
+    color: var(--color-blue);
+  }
+
+  .class-name,
+  .function,
+  .variable {
+    color: var(--color-purple);
+  }
+}

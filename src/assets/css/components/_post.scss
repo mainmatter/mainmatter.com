@@ -1,20 +1,72 @@
 .post {
-  margin: 2.5rem 0 5rem;
+  margin: 2.5rem auto 5rem;
+}
+
+.post__back {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  color: var(--color-link-primary);
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -0.5em;
+    right: -0.5em;
+    top: -0.375em;
+    bottom: -0.375em;
+    background-color: var(--color-link-background);
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: 0.3s all ease;
+    z-index: 0;
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.post__back-arrow {
+  position: relative;
+  margin-right: 1.125rem;
+  z-index: 1;
+  transform: scaleX(-1);
+}
+
+.post__back-text {
+  position: relative;
+  z-index: 1;
+}
+
+.post__content {
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+.post__tags {
+  --color-tag: var(--color-blue);
+  margin-bottom: 0.5rem;
+}
+
+.post__date {
+  margin-bottom: 0.5rem;
+}
+
+.post__author {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
 }
 
 .post__title {
-  margin: 2.5rem auto 1.5rem;
-  width: 90%;
-  max-width: rem-calc(775);
-}
-
-.post__body {
-  & > *:not(.container) {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    max-width: rem-calc(612);
-  }
+  width: 100%;
+  margin: 0 auto 1.5rem;
 }
 
 .post__heading--anchor {
@@ -48,8 +100,50 @@
   margin-bottom: 1rem;
 }
 
+@media (min-width: 25em) {
+  .post__meta {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .post__tags,
+  .post__date {
+    margin-bottom: 1.5rem;
+  }
+}
+
 @media (min-width: 48em) {
+  .post {
+    margin-top: 5rem;
+  }
+
   .post__tagline {
     font-size: 1.25rem;
+  }
+
+  .post__content {
+    grid-template-columns: 1fr rem-calc(612) 1fr;
+
+    & > * {
+      grid-column: 2;
+    }
+  }
+}
+
+@media (min-width: 62em) {
+  .post__author-wrapper {
+    grid-row: 1 / span 3;
+    grid-column: 1;
+    padding-right: 1.5rem;
+  }
+
+  .post {
+    img:not(.image--small):not(.image--full):not(.author__image),
+    picture:not(.image--small):not(.image--full),
+    video:not(.image--small),
+    .iframe-container,
+    .quote {
+      grid-column: 1 / span 3;
+    }
   }
 }
