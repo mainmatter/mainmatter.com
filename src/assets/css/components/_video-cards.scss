@@ -66,6 +66,8 @@
 
 .video-card__image {
   display: block;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 .video-card__duration {

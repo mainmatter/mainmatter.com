@@ -13,7 +13,7 @@ event: A event object
       {{ event.data.title }}
     </h3>
     <div class="event-card__image-wrapper">
-        {% image event.data.image, "", '16.438rem', 'lazy', 'event-card__image', [263, 400, 526] %}
+      {% image event.data.image, "", '16.438rem', 'lazy', 'event-card__image', [263, 400, 526] %}
     </div>
     <div class="event-card__meta">
       <span class="event-card__meta-text">{{ event.date | monthDayYear }}</span>

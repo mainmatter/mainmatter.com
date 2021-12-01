@@ -1,0 +1,39 @@
+.talk-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: rem-calc(1) solid var(--color-light-gray);
+}
+
+.talk-card__link {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  outline-offset: 0.25rem;
+
+  &:hover {
+    & ~ .talk-card__cta:before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.talk-card__image-wrapper {
+  max-width: rem-calc(70);
+  margin-bottom: 0.5rem;
+}
+
+.talk-card__description {
+  margin: 0.5rem 0;
+  font-size: rem-calc(13);
+}
+
+.talk-card__cta {
+  margin-top: auto;
+  align-self: flex-start;
+}

@@ -2,6 +2,9 @@
 layout: base
 title: Expert Insights
 permalink: /resources/expert-insights/
+eleventyNavigation:
+  key: Expert Insights
+  parent: Resources
 ---
 {% from "video-card.njk" import videoCard %}
 <section class="section container container--lg">
@@ -20,3 +23,5 @@ permalink: /resources/expert-insights/
     {%- endfor -%}
   </ul>
 </section>
+
+{% include 'content/hero-playbook.njk' %}

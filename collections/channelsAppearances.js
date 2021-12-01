@@ -12,7 +12,7 @@ module.exports = (collection) => {
     if (!channel.appearances) {
       channel.appearances = [];
     }
-    channel.appearances.push(appearance.data);
+    channel.appearances.push(appearance);
   });
 
   return channelsAppearances;

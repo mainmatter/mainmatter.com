@@ -1,0 +1,26 @@
+{%- macro talkCard(talk) -%}
+  <div class="talk-card">
+    <a href="{{ talk.data.url }}" class="talk-card__link">
+      <h3 class="screenreader">{{ talk.data.title }}</h3>
+    </a>
+    <div class="talk-card__image-wrapper">
+      {% image talk.data.image, "", '4.375rem', 'lazy', 'talk-card__image', [70, 140] %}
+    </div>
+    <p class="talk-card__title h3" aria-hidden="true">
+      {{ talk.data.title }}
+    </p>
+    <div class="talk-card__description">
+      {{ talk.templateContent | safe }}
+    </div>
+    <span class="talk-card__cta cta-link text--accent">
+      <span class="cta-link__text">
+        {% if talk.data.media === 'video' %}
+          Watch Video
+        {% elif talk.data.media === 'podcast' %}
+          Listen to Episode
+        {% endif %}
+      </span>
+      <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+    </span>
+  </div>
+{% endmacro %}

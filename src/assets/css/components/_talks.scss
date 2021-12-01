@@ -1,0 +1,18 @@
+.talks {
+  margin: 2.5rem auto 5rem;
+}
+
+.talks__channel-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.talks__channel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14.25rem, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  padding: 2rem 0;
+  border-top: rem-calc(1) solid currentColor;
+}

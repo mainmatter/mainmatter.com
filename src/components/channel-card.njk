@@ -1,0 +1,20 @@
+{%- macro channelCard(channel) -%}
+  <div class="channel-card">
+    <a href="{{ channel.data.url }}" class="channel-card__link">
+      <h3 class="screenreader">{{ channel.data.title }}</h3>
+    </a>
+    <div class="channel-card__image-wrapper">
+      {% image channel.data.image, "", '18.75rem', 'lazy', 'channel-card__image', [300, 600] %}
+    </div>
+    <p class="channel-card__title h3" aria-hidden="true">
+      {{ channel.data.title }}
+    </p>
+    <p class="channel-card__description">
+      {{ channel.templateContent | safe }}
+    </p>
+    <span class="channel-card__cta cta-link text--accent" aria-hidden="true">
+      <span class="cta-link__text">Find out more</span>
+      <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+    </span>
+  </div>
+{% endmacro %}

@@ -1,0 +1,30 @@
+.channel-card {
+  position: relative;
+  color: var(--color-purple);
+}
+
+.channel-card__link {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  outline-offset: 0.25rem;
+
+  &:hover {
+    & ~ .channel-card__cta:before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.channel-card__image-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.channel-card__description {
+  margin: 0.5rem 0;
+  font-size: rem-calc(13);
+}
