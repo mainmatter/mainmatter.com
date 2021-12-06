@@ -111,7 +111,7 @@ design work on [crates.io], the [Rust] package registry. The website now has a
 [@turbo87]: https://github.com/Turbo87/
 [contact]: https://simplabs.com/contact/
 
-## Ember-simple-auth
+## ember-simple-auth
 
 Bartłomiej Dudzik has been busy doing some
 refactoring on ember-simple-auth.
