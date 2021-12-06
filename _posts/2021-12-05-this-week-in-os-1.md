@@ -113,7 +113,7 @@ design work on [crates.io], the [Rust] package registry. The website now has a
 
 ## Ember-simple-auth
 
-Senior software engineer [Bartłomiej Dudzik] has been busy doing some
+Bartłomiej Dudzik has been busy doing some
 refactoring on ember-simple-auth.
 
 In ESA 4.0, he refactored the services to use Ember’s DI, which makes things
