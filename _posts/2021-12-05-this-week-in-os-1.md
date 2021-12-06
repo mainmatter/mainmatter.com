@@ -116,7 +116,7 @@ design work on [crates.io], the [Rust] package registry. The website now has a
 Bartłomiej Dudzik has been busy doing some
 refactoring on ember-simple-auth.
 
-In ESA 4.0, he refactored the services to use Ember’s DI, which makes things
+For ESA 4.0, he refactored the internals of the addon to use Ember’s dependency injection, which makes things
 simpler and easier to test, successfully removed a lot of code, and simplified
 tests setup.
 
