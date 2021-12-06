@@ -125,7 +125,7 @@ tests setup.
 
 In ESA 4.1, he implemented a session #setup method: a first step to migrate away
 from custom initializers and to allow removing mixins. The method excludes the
-ApplicationRoute that ESA adds automatically and that is causing build issues
+application route that ESA adds automatically and that is causing build issues
 for embroider and typescript users.
 
 - [https://github.com/simplabs/ember-simple-auth/issues/2314](https://github.com/simplabs/ember-simple-auth/issues/2314)
