@@ -13,9 +13,8 @@ og:
 ---
 
 Our software engineers are all active members of the open-source community and
-enjoy collaborating on various projects, bringing their knowledge where it's
-most needed. In this blog post, we have collected some of the work they have
-done these past weeks!
+enjoy collaborating on various projects. In this blog post, we have collected
+some of the work they have done these past weeks!
 
 <!--break-->
 
@@ -113,12 +112,11 @@ design work on [crates.io], the [Rust] package registry. The website now has a
 
 ## ember-simple-auth
 
-Bartłomiej Dudzik has been busy doing some
-refactoring on ember-simple-auth.
+Bartłomiej Dudzik has been busy doing some refactoring on ember-simple-auth.
 
-For ESA 4.0, he refactored the internals of the addon to use Ember’s dependency injection, which makes things
-simpler and easier to test, successfully removed a lot of code, and simplified
-tests setup.
+For ESA 4.0, he refactored the internals of the addon to use Ember’s dependency
+injection, which makes things simpler and easier to test, successfully removed a
+lot of code, and simplified tests setup.
 
 - [https://github.com/simplabs/ember-simple-auth/pull/2315](https://github.com/simplabs/ember-simple-auth/pull/2315)
 - [https://github.com/simplabs/ember-simple-auth/pull/2312](https://github.com/simplabs/ember-simple-auth/pull/2312)
