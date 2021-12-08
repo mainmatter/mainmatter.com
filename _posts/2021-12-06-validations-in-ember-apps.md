@@ -8,9 +8,11 @@ bio: 'Software Developer'
 description:
   'Bartlomiej Dudzik shows how you can easily create validations wrapper based
   on a library of your liking.'
+og:
+  image: /assets/images/posts/2021-12-06-validations-in-ember-apps/og-image.png
 ---
 
-Since Ember's Octane edition it's much easier to integrate with third-party
+Since Ember's Octane edition it's much easiesr to integrate with third-party
 libraries. Because of that I've been searching for alternatives to
 `ember-changeset` and `ember-cp-validations`. I will show you how to create your
 own validations around the Yup validations library.
@@ -284,7 +286,7 @@ At the end of the day the produced messages will look like this:
 Let's see what messages are returned after the `User` model is validated when
 the form is submitted:
 
-![Internationalized user fields demo](/assets/images/posts/2021-11-23-validations-in-ember-apps/form-user-1.gif)
+![Internationalized user fields demo](/assets/images/posts/2021-12-06-validations-in-ember-apps/form-user-1.gif)
 
 ### Validating related schemas
 
@@ -390,7 +392,7 @@ export default class UserModel extends Model {
 }
 ```
 
-![Internationalized user and pet fields demo](/assets/images/posts/2021-11-23-validations-in-ember-apps/form-user-with-pets-2.gif)
+![Internationalized user and pet fields demo](/assets/images/posts/2021-12-06-validations-in-ember-apps/form-user-with-pets-2.gif)
 
 ### Conditional validations
 
@@ -451,7 +453,7 @@ method of the `string` schema. The `when` method accepts a list of names of
 dependent properties, then we pass an object which specifies that the `name`
 attribute is not required when `isUserAllergic` is `true`.
 
-![Internationalized user and pet fields demo](/assets/images/posts/2021-11-23-validations-in-ember-apps/conditional-form-user-3.gif)
+![Internationalized user and pet fields demo](/assets/images/posts/2021-12-06-validations-in-ember-apps/conditional-form-user-3.gif)
 
 ### Summary
 
