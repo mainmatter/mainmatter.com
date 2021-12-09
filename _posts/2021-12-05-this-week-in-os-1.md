@@ -128,7 +128,7 @@ lot of code, and simplified tests setup.
   [2308] Refactor Adaptive store to use DI ([@BobrImperator])
 
 In ESA 4.1, he implemented a session #setup method: a first step to migrate away
-from custom initializers and to allow removing mixins. The method excludes the
+from custom initializers. The method excludes the
 application route that ESA adds automatically and that is causing build issues
 for embroider and typescript users.
 
