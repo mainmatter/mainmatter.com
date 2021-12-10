@@ -12,7 +12,7 @@ og:
   image: /assets/images/posts/2021-12-08-validations-in-ember-apps/og-image.png
 ---
 
-Since Ember's Octane edition it's much easiesr to integrate with third-party
+Since Ember's Octane edition it's much easier to integrate with third-party
 libraries. Because of that I've been searching for alternatives to
 `ember-changeset` and `ember-cp-validations`. I will show you how to create your
 own validations around the Yup validations library.
