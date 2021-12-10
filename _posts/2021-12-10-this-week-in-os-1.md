@@ -1,6 +1,6 @@
 ---
 title: 'This week in Open Source at simplabs #1'
-author: 'Simplabs'
+author: 'simplabs'
 github: simplabs
 twitter: simplabs
 topic: open-source
