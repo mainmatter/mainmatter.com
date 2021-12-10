@@ -31,10 +31,12 @@ design work on [crates.io], the [Rust] package registry. The website now has a
 
 ## Rust
 
-- [hyperium/http] [#513](https://github.com/hyperium/http/pull/513) Cargo: Add
-  `rust-version` field ([@Turbo87])
-- [hyperium/http] [#512](https://github.com/hyperium/http/pull/512) README:
-  Remove obsolete extern crate http instructions ([@Turbo87])
+### [hyperium/http](https://github.com/hyperium/http)
+
+- Cargo: Add `rust-version` field
+  [#513](https://github.com/hyperium/http/pull/513) ([@Turbo87])
+- README: Remove obsolete extern crate http instructions
+  [#512](https://github.com/hyperium/http/pull/512) ([@Turbo87])
 
 ## crates.io
 
