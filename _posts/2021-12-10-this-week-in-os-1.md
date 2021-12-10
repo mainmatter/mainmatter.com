@@ -1,10 +1,10 @@
 ---
 title: 'This week in Open Source at simplabs #1'
-author: "Emma Dell'Acqua"
-github: emma_dellacqua
-twitter: emma_dellacqua
-topic: insidesimplabs
-bio: 'Marketing Assistant'
+author: 'Simplabs'
+github: simplabs
+twitter: simplabs
+topic: open-source
+bio: 'The simplabs team'
 description:
   'A collection of work that our engineers have been carrying out in open-source
   in the past few weeks.'
