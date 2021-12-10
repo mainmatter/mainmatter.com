@@ -115,11 +115,11 @@ making things simpler and easier to test. Successfully removed a lot of code,
 and simplified tests setup.
 
 - [simplabs/ember-simple-auth]
-  [#2315](https://github.com/simplabs/ember-simple-auth/pull/2315) [2302] put
+  [#2315](https://github.com/simplabs/ember-simple-auth/pull/2315) put
   internal-session into DI system ([@BobrImperator])
 - [simplabs/ember-simple-auth]
-  [#2312](https://github.com/simplabs/ember-simple-auth/pull/2312) [2308]
-  Refactor Adaptive store to use DI ([@BobrImperator])
+  [#2312](https://github.com/simplabs/ember-simple-auth/pull/2312) Refactor
+  Adaptive store to use DI ([@BobrImperator])
 
 ESA 4.1: implemented a session #setup method. The methos represents a first step
 to migrating from custom initializers, it excludes the application route that
@@ -154,8 +154,8 @@ typescript users.
 
 Added more detailed information regarding issue preparation.
 
-- [simplabs/playbook] [171] Add more information about issue preparation
-  (https://github.com/simplabs/playbook/pull/171) ([@marcoow])
+- [simplabs/playbook] [#171](https://github.com/simplabs/playbook/pull/171) Add
+  more information about issue preparation ([@marcoow])
 
 [hyperium/http]: https://github.com/hyperium/http/
 [rust-lang/crates.io]: https://github.com/rust-lang/crates.io/
