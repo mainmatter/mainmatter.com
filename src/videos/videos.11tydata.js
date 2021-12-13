@@ -1,4 +1,5 @@
 module.exports = {
+  layout: 'video',
   eleventyComputed: {
     permalink: function (data) {
       return (

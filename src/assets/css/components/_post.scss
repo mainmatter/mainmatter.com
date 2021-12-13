@@ -1,4 +1,5 @@
 .post {
+  --color-tag: var(--color-blue);
   margin: 2.5rem auto 5rem;
 }
 
@@ -50,7 +51,6 @@
 }
 
 .post__tags {
-  --color-tag: var(--color-blue);
   margin-bottom: 0.5rem;
 }
 
@@ -126,6 +126,18 @@
 
     & > * {
       grid-column: 2;
+    }
+
+    &--video {
+      .post__back {
+        grid-column: 1;
+        align-self: start;
+        justify-self: start;
+      }
+
+      .post__meta {
+        margin-bottom: 1.5rem;
+      }
     }
   }
 }

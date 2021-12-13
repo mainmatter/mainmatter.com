@@ -1,0 +1,50 @@
+---
+layout: 'base'
+---
+{%- block content -%}
+  <div class="container container--lg post">
+    <article class="post__content post__content--video rte">
+      <a href="/resources/expert-insights/" class="post__back post__back--video text--accent">
+        <span class="post__back-arrow">{% include 'svg/arrow.njk' %}</span>
+        <span class="post__back-text">Back</span>
+      </a>
+
+      <div class="post__meta">
+        <div class="tags__tag">{{ label }}</a>
+        </div>
+      </div>
+      <h1 class="post__title">{{ title }}</h1>
+      <div class="post__tagline">
+        {{ content | safe }}
+      </div>
+      <iframe width="560" height="315" src="{{ videoUrl }}" title="Embedded video for {{ label }} {{ title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy"></iframe>
+    </article>
+    {% if kind === 'built-to-last' %}
+      <nav aria-label="Video Pagination" class="prev-next">
+        {% set videos = collections.videos | filterByAttribute('kind', 'built-to-last') %}
+        {% set previous = videos | getPreviousCollectionItem(page) %}
+        {% set next = videos | getNextCollectionItem(page) %}
+        {% if previous %}
+          <a class="prev-next__link prev-next__link--prev" href="{{ previous.url }}">
+            <p class="prev-next__label text--accent">
+              <span class="prev-next__arrow">{% include 'svg/arrow.njk' %}</span>
+              Previous
+              <span class="prev-next__label-optional">Video</span>
+            </p>
+            <p class="prev-next__title">{{ previous.data.label }}<br />{{ previous.data.title }}</p>
+          </a>
+        {% endif %}
+        {% if next %}
+          <a class="prev-next__link prev-next__link--next" href="{{ next.url }}">
+            <p class="prev-next__label text--accent">
+              Next
+              <span class="prev-next__label-optional">Video</span>
+              <span class="prev-next__arrow">{% include 'svg/arrow.njk' %}</span>
+            </p>
+            <p class="prev-next__title">{{ next.data.label }}<br />{{ next.data.title }}</p>
+          </a>
+        {% endif %}
+      </nav>
+    {% endif %}
+  </div>
+{%- endblock -%}
