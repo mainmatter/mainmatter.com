@@ -7,6 +7,7 @@
   position: relative;
   display: inline-flex;
   align-items: center;
+  width: fit-content;
   margin-bottom: 1.5rem;
   color: var(--color-link-primary);
 
@@ -127,18 +128,6 @@
     & > * {
       grid-column: 2;
     }
-
-    &--video {
-      .post__back {
-        grid-column: 1;
-        align-self: start;
-        justify-self: start;
-      }
-
-      .post__meta {
-        margin-bottom: 1.5rem;
-      }
-    }
   }
 }
 
@@ -156,6 +145,22 @@
     .iframe-container,
     .quote {
       grid-column: 1 / span 3;
+    }
+  }
+}
+
+@media (min-width: 72em) {
+  .post__content {
+    &--video, &--workshop {
+      .post__back {
+        grid-column: 1;
+        align-self: start;
+        justify-self: start;
+      }
+
+      .post__meta {
+        margin-bottom: 1.5rem;
+      }
     }
   }
 }

@@ -13,6 +13,25 @@
       margin: 0;
     }
   }
+
+  &--workshop {
+    padding: 1rem 0;
+    font-size: 1rem;
+    margin: 0;
+
+    &:not(:first-child) {
+      margin-top: rem-calc(-1);
+    }
+
+    .author__image-wrapper picture {
+      margin: 0;
+    }
+
+    .author__name {
+      margin: 0;
+      color: currentColor;
+    }
+  }
 }
 
 .author__image-wrapper {
@@ -28,8 +47,17 @@
   border-radius: 50%;
 }
 
+.author__lead-image {
+  border-radius: 50%;
+}
+
 .author__name {
   color: var(--color-blue);
+}
+
+.author__title {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .author__twitter {

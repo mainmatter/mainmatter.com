@@ -1,0 +1,24 @@
+---
+layout: base
+title: Workshops
+permalink: /resources/workshops/
+eleventyNavigation:
+  key: Workshops
+  parent: Resources
+---
+{% from "workshop-card.njk" import workshopCard %}
+
+<section class="section container container--lg">
+  <div class="section__introduction container--xs">
+    <h2 class="section__title">Workshops</h2>
+    <p>Designed to help teams build sustainable products that work well and keep working well.</p>
+  </div>
+  <ul class="workshop-cards">
+    {% set workshops = collections.workshops %}
+    {%- for workshop in workshops -%}
+      {{ workshopCard(workshop) }}
+    {%- endfor -%}
+  </ul>
+</section>
+
+{% include 'content/hero-playbook.njk' %}

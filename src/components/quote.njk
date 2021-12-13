@@ -17,7 +17,7 @@ Example usage:
   <figure class="quote quote--{{ color }} {% if container === true %}container container--lg{% endif %}">
     <span class="quote__icon">{% include 'svg/quote.njk' %}</span>
     <blockquote class="quote__text">
-      {{ text }}
+      {{ text | safe }}
     </blockquote>
     <figcaption class="quote__source h4">{{ source }}</figcaption>
   </figure>

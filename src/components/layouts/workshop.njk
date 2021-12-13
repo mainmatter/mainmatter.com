@@ -1,24 +1,54 @@
 ---
 layout: 'base'
 ---
-<h1>{{ title }}</h1>
-<h2>Workshop Overview</h2>
-<ol>
-  {%- for topic in topics -%}
-    <li>
-      <p>{{ topic.title }}</p>
-      <p>{{ topic.text }}</p>
-    </li>
-  {%- endfor -%}
-</ol>
-<h2>Leads</h2>
-<ol>
-  {%- for lead in leads -%}
-    <li>
-      <p>{{ lead.name }}</p>
-      <p>{{ lead.title }}</p>
-      <p>{{ lead.bio }}</p>
-    </li>
-  {%- endfor -%}
-</ol>
-{% block content %}{{ content | safe }}{% endblock content %}
+{%- block content -%}
+  <div class="container container--lg post">
+    <article class="post__content post__content--workshop rte">
+      <a href="/resources/workshops/" class="post__back post__back--video text--accent">
+        <span class="post__back-arrow">{% include 'svg/arrow.njk' %}</span>
+        <span class="post__back-text">Back</span>
+      </a>
+      <h1 class="post__title">{{ title }}</h1>
+      <div class="post__tagline">
+        {% if tagline %}
+          {{ tagline | safe }}
+        {% else %}
+          <p>{{ description }}</p>
+        {% endif %}
+      </div>
+      {% set list %}
+        <h2 class="workshop-topics__heading">Workshop Overview</h2>
+        <ol class="workshop-topics__list">
+          {% for item in topics %}
+            <li class="workshop-topics__item">
+              <div class="workshop-topics__icon-wrapper">
+                <img class="workshop-topics__icon"  src="{{ item.image }}" alt="">
+              </div>
+              <div class="workshop-topics__text-wrapper">
+                <h3 class="workshop-topics__item-heading h4">{{ item.heading }}</h3>
+                <p class="workshop-topics__text">{{ item.text }}</p>
+              </div>
+            </li>
+          {% endfor %}
+        </ol>
+      {% endset %}
+      {{ content | replace('<!--break-->', list) | safe }}
+      <h2>Leads</h2>
+        {%- for lead in leads -%}
+          <div class="author author--workshop">
+            <div class="author__image-wrapper">
+              {% image lead.image, lead.name, '5.438rem', 'lazy', 'author__lead-image', [87, 131, 174] %}
+            </div>
+            <div class="author__text-wrapper">
+              <h3 class="author__name">{{ lead.name }}</h3>
+              <div class="author__title">{{ lead.title }}</div>
+              <div class="author__bio">
+                {{ lead.bio }}
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+    </article>
+  </div>
+  {% include 'content/hero-playbook.njk' %}
+{%- endblock -%}
