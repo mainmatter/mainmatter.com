@@ -1,0 +1,44 @@
+{#
+Section where one half is an image and the other half is a colored quote
+
+Configuration Options:
+desktopTextPosition: 'left' or 'right',
+color: One of the core brand colors
+content: A content block with the following options:
+  text: Block quote text
+  source: Quote source, a person or organization
+  image: Path to image in the file directory
+  alt: Image alt text
+  loading: Valid loading attribute for HTML img
+
+Example usage:
+{% set 'content' = {
+  "text": "Mainmatter is a digital product consultancy that designs and develops web applications. We realize projects with clients across the globe and teach them how along the way.",
+  "source": "CEO"
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "eager"
+} %}
+{{ splitQuote('left', 'purple', content) }}
+#}
+
+{%- macro splitQuote(desktopTextPosition, color, content) -%}
+  <section class="split-quote split-quote--quote split-quote--{{ color }}">
+    <div class="split-quote__main split-quote__main--{{ desktopTextPosition }}">
+      <div class="split-quote__container container">
+        <figure class="split-quote__quote">
+          <span class="split-quote__icon">{%- include 'svg/quote.njk' -%}</span>
+          <blockquote class="split-quote__text">
+            {{- content.text | safe -}}
+          </blockquote>
+          <figcaption class="split-quote__source h4">{{- content.source -}}</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="split-quote__image-wrapper">
+      {%- if content.image -%}
+        {%- image content.image, content.alt, '(min-width: 48em) 50vw, 100vw', content.loading, 'split-quote__image' -%}
+      {%- endif -%}
+    </div>
+  </section>
+{%- endmacro -%}

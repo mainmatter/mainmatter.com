@@ -1,36 +1,59 @@
 ---
 layout: base
 ---
+{% from "split-hero.njk" import splitHero %}
+
 {%- block content -%}
-  <div class="post">
-    <h1 class="post__title">{{ display_title }}</h1>
-    <article class="post__body rte">
+  <div class="">
+    <div class="split-hero split-hero--case-study split-hero--{{ hero.color }}">
+      <div class="split-hero__main split-hero__main--{{ hero.desktopTextPosition }}">
+        <div class="split-hero__container container">
+          <div class="split-hero__title-wrapper">
+            <h2 class="split-hero__title h1 text-animation">{{ displayTitle | safe }}</h2>
+          </div>
+          {% if companyDescription %}
+            <div class="split-hero__client">
+              <div class="split-hero__client-label">The Client</div>
+              <div class="split-hero__client-wrapper">
+                <div class="split-hero__client-logo">
+                  {% set imagePath %}/assets/images/logos/background/{{ company | slug }}.svg{% endset %}
+                  <img src="{{ imagePath }}" alt="{{ company }}">
+                </div>
+                <div class="split-hero__client-text">
+                  {{ companyDescription | safe }}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="split-hero__image-wrapper">
+        {% if hero.image %}
+          {% image hero.image, hero.imageAlt, '(min-width: 48em) 50vw, 100vw', 'eager', 'split-hero__image' %}
+        {% endif %}
+      </div>
+    </div>
+    <article>
       {{ content | safe }}
     </article>
-    <nav aria-label="Case Study Pagination" class="prev-next container container--lg">
-      {% set previous = collections.caseStudies | getPreviousCollectionItem(page) %}
-      {% set next = collections.caseStudies | getNextCollectionItem(page) %}
-      {% if previous %}
-        <a class="prev-next__link prev-next__link--prev" href="{{ previous.url }}">
-          <p class="prev-next__label text--accent">
-            <span class="prev-next__arrow">{% include 'svg/arrow.njk' %}</span>
-            Previous
-            <span class="prev-next__label-optional">Post</span>
-          </p>
-          <p class="prev-next__title">{{ previous.data.display_title }}</p>
-        </a>
-      {% endif %}
-      {% if next %}
-        <a class="prev-next__link prev-next__link--next" href="{{ next.url }}">
-          <p class="prev-next__label text--accent">
-            Next
-            <span class="prev-next__label-optional">Post</span>
-            <span class="prev-next__arrow">{% include 'svg/arrow.njk' %}</span>
-          </p>
-          <p class="prev-next__title">{{ next.data.display_title }}</p>
-        </a>
-      {% endif %}
-    </nav>
+    {% set next = collections.caseStudiesFeatured | getNextCollectionItem(page) %}
+    {% if next %}{% else %}
+      {% set next = collections.caseStudiesFeatured | getPreviousCollectionItem(page) %}
+    {% endif %}
+
+    {% if next %}
+      {% set 'content' = {
+        "tags": ['Next Case Study'],
+        "title": next.data.displayTitle,
+        "text": next.data.description,
+        "image": next.data.hero.image,
+        "linkUrl": next.url,
+        "linkText": "Find out more",
+        "alt": next.data.heroAlt,
+        "loading": "lazy"
+      } %}
+      {{ splitHero('left', hero.color, content) }}
+    {% endif %}
   </div>
   {% include 'content/hero-work-with-us.njk' %}
 {%- endblock -%}

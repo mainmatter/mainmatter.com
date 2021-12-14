@@ -6,10 +6,12 @@ title: null
 {% from "logo-list.njk" import logoList %}
 {% from "color-hero.njk" import colorHero %}
 {% from "image-with-text-stacked.njk" import imageWithTextStacked %}
+{% from "image-with-text.njk" import imageWithText %}
+{% from "secondary-feature.njk" import secondaryFeature %}
 
 {% set 'content' = {
-  "title": "Guiding projects and teams to <em>sustainable</em> success",
-  "text": "Mainmatter is a digital product consultancy that designs and develops web applications. We realize projects with clients across the globe and teach them how along the way.",
+  "title": "Your <em>sustainable</em> success is our expertise",
+  "text": "You want to work with a digital consultancy that can help you bridge the gap between vision and execution. Let Mainmatter guide you through the process of building products that can grow and scale over the long term.",
   "image": "/assets/images/photos/collaboration@1200.jpg",
   "alt": "Alt text",
   "loading": "eager"
@@ -20,35 +22,37 @@ title: null
 {{ logoList(logoCompanies) }}
 
 {% set 'content' = {
-  "title": "Crafting digital products that are built to last",
-  "text": "Product excellence through digital experiences that are clean, dependable, and architected for scalability and extensibility",
-  "linkUrl": "/services",
-  "linkText": "Find out more",
+  "title": "We’re in it for the long haul",
+  "text": "Your users need intuitive solutions, and your team needs elegant architecture that can be maintained for years to come. We’re here to accelerate your trajectory.",
+  "linkUrl": "/contact/",
+  "linkText": "Partner With Us",
   "image": "/assets/images/photos/collaboration@1200.jpg",
   "alt": "Alt text",
   "loading": "lazy"
 } %}
 {{ colorHero('center', 'blue', content) }}
 
-{% set 'contentBlocks' = [{
+{% set 'content' = {
   "title": "Digital products",
-  "text": "Our team of experts delivers everything from ideation to design and engineering. We can turn any idea sketched on the back of a napkin into a final, shipped product.",
-  "linkUrl": "/services",
-  "linkText": "Find out more",
+  "text": "Mainmatter will join forces with you to build your new house on a sturdy foundation and show you how we do it along the way.",
+  "linkUrl": "/services/",
+  "linkText": "Let’s make magic",
   "image": "/assets/images/photos/collaboration@1200.jpg",
   "alt": "Alt text",
   "loading": "lazy"
-},{
+} %}
+{{ imageWithText('right', content) }}
+
+{% set 'content' = {
   "title": "Official Ember.js Sponsor",
   "text": "We recently have been recognized as an official sponsor of the Ember.js project along with international brands like LinkedIn and Yahoo.",
   "linkUrl": "/services",
   "linkText": "Find out more",
   "image": "/assets/images/photos/collaboration@1200.jpg",
   "alt": "Alt text",
-  "loading": "lazy",
-  "small": true
-}] %}
-{{ imageWithTextStacked('right', contentBlocks) }}
+  "loading": "lazy"
+} %}
+{{ secondaryFeature('left', content, true) }}
 
 {% set 'content' = {
   "title": "Co-Engineering the Future of Banking for SME",
@@ -63,18 +67,18 @@ title: null
 
 {% set 'contentBlocks' = [{
   "title": "Team Augmentation",
-  "text": "Our experts temporarily join your in-house engineering teams to increase code quality and throughput, and help sustainable lift team productivity.",
-  "linkUrl": "/services",
-  "linkText": "Find out more",
+  "text": "Let us cross-pollinate with your engineering team to ship high-quality code at an accelerated pace.",
+  "linkUrl": "/services/team-augmentation/",
+  "linkText": "Collaborate with us",
   "image": "/assets/images/photos/collaboration@1200.jpg",
   "alt": "Alt text",
   "loading": "lazy",
   "small": true
 },{
   "title": "Training & Support",
-  "text": "We train and tutor engineering teams to set them up for long term success. Support ranges from tailor-made workshops to code reviews and technical audits.",
-  "linkUrl": "/services",
-  "linkText": "Find out more",
+  "text": "We offer a range of support services from custom-tailored workshops, to code reviews, technical audits, and more.",
+  "linkUrl": "/services/training/",
+  "linkText": "Level up your team",
   "image": "/assets/images/photos/collaboration@1200.jpg",
   "alt": "Alt text",
   "loading": "lazy"

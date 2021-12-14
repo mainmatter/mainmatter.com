@@ -16,8 +16,8 @@ list: An array where each item is the slug for the case study.
           {% set caseStudy = caseStudyHandle | findBySlug %}
           {% if caseStudy %}
             <li class="case-study__item">
-              <a href="{{ caseStudy.url }}"><span class="screenreader">{{ caseStudy.data.display_title }}</span></a>
-              <p class="case-study__title h3">{{ caseStudy.data.display_title }}</p>
+              <a class="case-study__link" href="{{ caseStudy.url }}"><span class="screenreader">{{ caseStudy.data.displayTitle }}</span></a>
+              <p class="case-study__title h3">{{ caseStudy.data.displayTitle }}</p>
               <div class="case-study__text">
                 {{ caseStudy.data.description }}
               </div>

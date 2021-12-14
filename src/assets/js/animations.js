@@ -56,11 +56,9 @@ export class Animations {
             768: ["elCenterY", "elOutY-200"],
             1024: ["elOutY-175", "elOutY-100"],
             1366: ["elOutY-225", "elOutY-100"],
-            1900: ["elOutY-325", "elOutY-150"],
+            1900: ["elOutY-300", "elOutY-120"],
           },
           [1, 0],
-          // ["elOutY-225", "elOutY-100"],
-          // [1, 0],
         ],
       },
     });
