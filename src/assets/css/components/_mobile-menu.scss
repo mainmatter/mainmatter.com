@@ -60,6 +60,7 @@
 
     & + .mobile-menu__dropdown {
       max-height: 20rem;
+      visibility: visible;
       opacity: 1;
     }
   }
@@ -71,6 +72,7 @@
   list-style: none;
   max-height: 0;
   opacity: 0;
+  visibility: hidden;
   transition: 0.3s opacity ease, 0.3s max-height ease-out;
 }
 

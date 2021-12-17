@@ -4,23 +4,49 @@
     <p class="contact-form__text">
       Following your message, we will schedule a call to understand your situation and discuss the best way we can help. We will use this information to prepare a proposal, laying out our process and how it would apply to your particular project. We will also define some project milestones and give you an overview of what a timeline could look like.
     </p>
-    <form class="contact-form__form">
-      <label class="contact-form__label h4" for="contact-name">
-        Your Name*
-      </label>
-      <input class="contact-form__input" id="contact-name" type="text" required>
-      <label class="contact-form__label h4" for="contact-email">
-        Your Email*
-      </label>
-      <input class="contact-form__input" id="contact-email" type="text" required>
-      <label class="contact-form__label h4" for="contact-message">
-        Tell us about your project
-      </label>
-      <textarea class="contact-form__input" id="contact-message" type="text" rows="4"></textarea>
-      <button class="contact-form__button cta-link text--accent">
-        <span class="cta-link__text">Send</span>
-        <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
-      </button>
-    </div>
-  </form>
+    <form class="contact-form__form" id="contact-form" data-status="initial">
+      <div data-form-content tabindex="-1">
+        <label class="contact-form__label h4" for="contact-name">
+          Your Name*
+        </label>
+        <input class="contact-form__input" id="contact-name" type="text" name="name" required>
+        <label class="contact-form__label h4" for="contact-email">
+          Your Email*
+        </label>
+        <input class="contact-form__input" id="contact-email" type="email" name="email" required>
+        <label class="contact-form__label h4" for="contact-message">
+          Tell us about your project
+        </label>
+        <textarea class="contact-form__input" id="contact-message" name="message" type="text" rows="8"></textarea>
+        <button class="contact-form__button cta-link text--accent">
+          <span class="cta-link__text">Send</span>
+          <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+        </button>
+      </div>
+      <div class="contact-form__status">
+        <div class="contact-form__loading h4" data-form-loading>Sending...</div>
+        <div class="contact-form__error" tabindex="-1" data-form-error>
+          Unable to send message. Please try again later or contact us at
+          <a href="mailto:info@simplabs.com">
+            info@simplabs.com
+          </a>
+        </div>
+        <div class="contact-form__success" tabindex="-1" data-form-success>
+          <div class="contact-form__status-wrapper">
+            <h2 class="contact-form__success-heading h4">Thank you!</h2>
+            <p>We will be in touch soon.</p>
+            <p>
+              In the meantime, have a look at our <a href="/playbook/">playbook</a>
+              to learn more about how we build ambitious digital products or read about the
+              <a href="/work/">other companies we helped in the past.</a>
+            </p>
+            <button type="button" class="cta-link text--accent contact-form__reset" data-reset-form>
+              <span class="cta-link__text">Send another message</span>
+              <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </section>

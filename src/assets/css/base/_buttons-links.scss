@@ -3,6 +3,10 @@
   display: inline-flex;
   align-items: center;
   color: var(--color-link-primary);
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
 
   &::before {
     content: "";
