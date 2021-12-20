@@ -1,5 +1,5 @@
 ---
-title: 'This week in Open Source at simplabs #1'
+title: 'This week in Open Source at simplabs #2'
 author: 'simplabs'
 github: simplabs
 twitter: simplabs
@@ -14,7 +14,7 @@ og:
 
 Our software engineers are all active members of the open-source community and
 enjoy collaborating on various projects. In this blog post, we have collected
-some of the work they have done these past weeks!
+some of the work they have done the past week!
 
 <!--break-->
 
@@ -100,20 +100,7 @@ some of the work they have done these past weeks!
 
 - [simplabs/playbook] [#173](https://github.com/simplabs/playbook/pull/173) add metric systems to the list of engineering tools ([@oscard0m])
 
-## Ember.js
-
 ## unknown
-
-- [oscard0m/oscard0m-card] [#13](https://github.com/oscard0m/oscard0m-card/pull/13) feat(build): add storybook to Open Source field ([@oscard0m])
-- [oscard0m/oscard0m-card] [#10](https://github.com/oscard0m/oscard0m-card/pull/10) ci(release): do not use Github's package registry ([@oscard0m])
-- [oscard0m/oscard0m-card] [#9](https://github.com/oscard0m/oscard0m-card/pull/9) ci(release): add missing configuration for semantic-release ([@oscard0m])
-- [oscard0m/oscard0m-card] [#8](https://github.com/oscard0m/oscard0m-card/pull/8) ci(build): fix name Build job ([@oscard0m])
-- [oscard0m/oscard0m-card] [#7](https://github.com/oscard0m/oscard0m-card/pull/7) ci(release): add release workflow to publish releases automatically to npm ([@oscard0m])
-- [oscard0m/oscard0m-card] [#6](https://github.com/oscard0m/oscard0m-card/pull/6) ci(build): add Build Github Action for PR's and main branch pushes ([@oscard0m])
-- [oscard0m/oscard0m-card] [#5](https://github.com/oscard0m/oscard0m-card/pull/5) ci(lint): add GitHub Action to lint project in PR and main branch push ([@oscard0m])
-- [oscard0m/oscard0m-card] [#4](https://github.com/oscard0m/oscard0m-card/pull/4) ci(lint): use 'prettier' instead of 'standard' lib for linting project ([@oscard0m])
-- [bnb/bitandbang] [#27](https://github.com/bnb/bitandbang/pull/27) Lint with prettier ([@oscard0m])
-- [oscard0m/oscard0m-card] [#3](https://github.com/oscard0m/oscard0m-card/pull/3) feat(pacakge.json): update package.json fields to my personal package ([@oscard0m])
 
 - [mansona/chris.manson.ie] [#9](https://github.com/mansona/chris.manson.ie/pull/9) make sure body-class works with new fastboot ([@mansona])
 - [mansona/chris.manson.ie] [#8](https://github.com/mansona/chris.manson.ie/pull/8) start own your own brand ([@mansona])
@@ -131,8 +118,14 @@ some of the work they have done these past weeks!
 [empress/broccoli-static-site-json]: https://github.com/empress/broccoli-static-site-json/
 [empress/empress-blog]: https://github.com/empress/empress-blog/
 [empress/empress-blog-casper-template]: https://github.com/empress/empress-blog-casper-template/
-[empress/empress-blog-casper-template]: https://github.com/
-[tobias bieniek]: https://github.com/Turbo87/
+[empress/ember-cli-showdown]: https://github.com/empress/ember-cli-showdown
+[mansona/ember-cli-notifications]: https://github.com/mansona/ember-cli-notifications
+[simplabs/ember-intl-analyzer]: https://github.com/simplabs/ember-intl-analyzer
+[nickschot/ember-mobile-menu]: https://github.com/nickschot/ember-mobile-menu
+[simplabs/ember-promise-modals]: https://github.com/simplabs/ember-promise-modals
+[oscard0m/npm-snapshot]: https://github.com/oscard0m/npm-snapshot
+[commitizen/cz-conventional-changelog]: https://github.com/commitizen/cz-conventional-changelog
+[mansona/chris.manson.ie]: https://github.com/mansona/chris.manson.ie
 [@turbo87]: https://github.com/Turbo87/
 [@pichfl]: https://github.com/pichfl/
 [@mansona]: https://github.com/mansona/
