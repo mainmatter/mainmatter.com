@@ -8,7 +8,7 @@ bio: 'Marketing Assistant'
 description:
   'Interview with Michael Kerr, Senior Front-end Engineer at simplabs.'
 og:
-  image: /assets/images/posts/2021-12-22-inside-simplabs-michael-kerr/og-image.png
+  image: /assets/images/posts/2021-12-23-inside-simplabs-michael-kerr/og-image.png
 ---
 
 In the fourth episode of Inside simplabs, Emma Dell'Acqua, Marketing Assistant,
