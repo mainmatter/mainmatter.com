@@ -301,7 +301,7 @@ that using template helpers would look something like this:
 ```hbs
 <ul>
   {{#each items as |item|}}
-    <li class='{{if (eq selectedItem item) 'selected'}}'>{{item}}</li>
+    <li class='{{if (eq selectedItem item) "selected"}}'>{{item}}</li>
   {{/each}}
 </ul>
 ```
@@ -333,7 +333,7 @@ collection then:
 ```hbs
 <ul>
   {{#each _listItems as |listItem|}}
-    <li class='{{if listItem.isSelected 'selected'}}'>{{listItem.item}}</li>
+    <li class='{{if listItem.isSelected "selected"}}'>{{listItem.item}}</li>
   {{/each}}
 </ul>
 ```

@@ -272,7 +272,7 @@ detected and `false` on the corresponding `mouseup`.
 ```hbs
 <div
   ...attributes
-  class='eh-hotspot {{if this.ehHotspots.showHotspots 'eh-hotspot--highlight'}}'
+  class='eh-hotspot {{if this.ehHotspots.showHotspots "eh-hotspot--highlight"}}'
   style={{this.style}}
   role={{if this.isInteractive (if @route 'link' 'button')}}
   {{on this.triggerEvent this.onTrigger}}
