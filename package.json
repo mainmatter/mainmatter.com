@@ -81,7 +81,7 @@
     "prettier": "^2.4.1",
     "puppeteer": "^11.0.0",
     "qunitjs": "^2.3.3",
-    "rollup": "^2.61.1",
+    "rollup": "^2.62.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^9.2.1",
     "rollup-plugin-json": "^4.0.0",
