@@ -40,7 +40,7 @@
       {{#if @clip}}
         <g style="clip-path: url(#{{this.maskId}});">
           <image
-            x="{{if @center "505" (if @reverse "98" "500")}}"
+            x="{{if @center '505' (if @reverse '98' '500')}}"
             y="0"
             xlink:href="{{@src}}"
             width="1200"
@@ -50,7 +50,7 @@
         </g>
       {{else}}
         <image
-          x="{{if @center "505" (if @reverse "98" "500")}}"
+          x="{{if @center '505' (if @reverse '98' '500')}}"
           y="0"
           xlink:href="{{@src}}"
           width="1200"
