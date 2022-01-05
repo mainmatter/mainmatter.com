@@ -100,11 +100,6 @@ some of the work they have done the past week!
 
 - [simplabs/playbook] [#173](https://github.com/simplabs/playbook/pull/173) add metric systems to the list of engineering tools ([@oscard0m])
 
-## unknown
-
-- [mansona/chris.manson.ie] [#9](https://github.com/mansona/chris.manson.ie/pull/9) make sure body-class works with new fastboot ([@mansona])
-- [mansona/chris.manson.ie] [#8](https://github.com/mansona/chris.manson.ie/pull/8) start own your own brand ([@mansona])
-
 
 [rust-lang/crates.io]: https://github.com/rust-lang/crates.io/
 [ember-cli/ember-cli]: https://github.com/ember-cli/ember-cli/
