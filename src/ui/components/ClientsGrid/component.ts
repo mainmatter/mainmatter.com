@@ -162,6 +162,34 @@ const allClients = [
     text:
       'Asilimia is a Kenyan digital payment application tailored for micro and small businesses in Sub-Saharan Africa. simplabs facilitated two remote product design sprints to ideate, prototype, validate and test product-market fit of its new bookkeeping features.',
   },
+  {
+    id: 'ais',
+    name: 'AIS',
+    src: '/assets/images/logos/ais.svg',
+    text:
+      'AIS provides continuous monitoring of companies\' external assets, allowing to proactively secure their attack surfaces. Having built the core of their product in-house, they approached simplabs for support with building a web frontend for it. We conceptualized, designed and developed the application in 6 weeks, guiding AIS\' team along the way.',
+  },
+  {
+    id: 'auditboard',
+    name: 'Auditboard',
+    src: '/assets/images/logos/auditboard.svg',
+    text:
+      'Auditboard enables companies to elevate their audit, risk, and compliance teams with their online risk management platform. Their application was only available in english when they approached us for support with localization. We set up an architecture and migrated their code automatically, saving their team months of effort.',
+  },
+  {
+    id: 'sage',
+    name: 'Sage Intacct',
+    src: '/assets/images/logos/sage.svg',
+    text:
+      'Sage Intacct is the leading provider of online Accounting and Finance Management software. simplabs helped their engineering team to identify and overcome issues that had a negative impact on their velocity as well as migrate the codebase to more modern patterns and a more sustainable architecture.',
+  },
+  {
+    id: 'phorest',
+    name: 'Phorest',
+    src: '/assets/images/logos/phorest.svg',
+    text:
+      'Phorest provides software that enables 150.000+ salon and spa professionals worldwide to manage and market their businesses. When they aimed to migrate their existing Java based product to the web, they reached out to simplabs for support with architecting and accelerating that transition.',
+  },
 ];
 
 export default class ClientsGrid extends Component {
