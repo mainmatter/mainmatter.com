@@ -23,7 +23,7 @@
 .image {
   display: block;
   flex: 0 0 auto;
-  max-height: 16rem;
+  max-height: 12rem;
   max-width: 50%;
   width: auto;
   margin: auto;
