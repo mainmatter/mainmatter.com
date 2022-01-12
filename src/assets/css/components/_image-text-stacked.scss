@@ -20,6 +20,10 @@
       }
     }
   }
+
+  &:nth-child(2n+1) {
+    margin-top: 2.5rem;
+  }
 }
 
 .image-text-stacked__main {
