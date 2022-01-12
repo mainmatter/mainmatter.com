@@ -44,11 +44,11 @@ const allClients = [
       'simplabs was approached by CLARK when they were looking for guidance on how to solidify the codebase of their insurance management app. We conducted a thorough review, presented the workshop to the team and layed out a plan for addressing the identified issues.',
   },
   {
-    id: 'xbav',
-    name: 'xbAV',
-    src: '/assets/images/logos/xbav.svg',
+    id: 'xempus',
+    name: 'Xempus',
+    src: '/assets/images/logos/xempus.svg',
     text:
-      'xbAV makes pensions accessible for employees, employers and agents. They approached simplabs when they were looking for support releasing a number of critical features. Our technology experts joined xbAV’s internal team, increasing the available workforce while boosting their expertise.',
+      'Xempus makes pensions accessible for employees, employers and agents. They approached simplabs when they were looking for support releasing a number of critical features. Our technology experts joined Xempus’ internal team, increasing the available workforce while boosting their expertise.',
   },
   {
     id: 'experteer',
