@@ -32,7 +32,7 @@
 .split-quote__image-wrapper {
   position: relative;
   order: -1;
-  aspect-ratio: 4/3;
+  aspect-ratio: 1;
 }
 
 .split-quote__image {
@@ -106,11 +106,5 @@
 
   .split-quote__source {
     grid-column: 2;
-  }
-}
-
-@media (min-width: 110em) {
-  .split-quote__image-wrapper {
-    aspect-ratio: 4/3;
   }
 }

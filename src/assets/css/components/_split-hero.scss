@@ -99,17 +99,23 @@
   font-size: 0.75rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: rem-calc(1);;
+  letter-spacing: rem-calc(1);
 }
 
 .split-hero__client-wrapper {
   display: flex;
+  align-items: center;
 }
 
 .split-hero__client-logo {
   flex: 0 0 rem-calc(76);
   margin-right: 1rem;
   border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    display: block;
+  }
 }
 
 @media (min-width: 48em) {

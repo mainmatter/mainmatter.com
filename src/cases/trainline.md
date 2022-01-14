@@ -8,11 +8,10 @@ description: Trainline is Europe’s leading rail and coach platform. We helped 
 hero:
   color: blue
   desktopTextPosition: "right"
-  image: ""
-  imageAlt: ""
+  image: "/assets/images/work/trainline-app.jpg"
+  imageAlt: "User looking at the Trainline app"
 ---
 
-{% from "secondary-feature.njk" import secondaryFeature %}
 {% from "split-quote.njk" import splitQuote %}
 
 <div class="case-study__body">
@@ -25,17 +24,7 @@ hero:
 </p>
 </div>
 
-{% set 'content' = {
-  "eyebrow": "Our expertise",
-  "title": "We are Europe’s Leading Ember Experts.",
-  "text": "",
-  "linkUrl": "/ember-consulting/",
-  "linkText": "Find out more",
-  "image": "/assets/images/photos/collaboration@1200.jpg",
-  "alt": "Alt text",
-  "loading": "lazy"
-} %}
-{{- secondaryFeature('right', content, true) -}}
+{% include 'content/secondary-feature-ember.njk' %}
 
 {% set 'content' = {
   "text": "It has been an absolute pleasure to work with [Mainmatter]. Their team of experienced JavaScript engineers quickly slotted in to our in-house development teams. Their expertise with modern, agile software development best practices and tools meant they were able to work with our processes to deliver fantastic customer experiences.",

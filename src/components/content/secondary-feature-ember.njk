@@ -1,0 +1,13 @@
+{% from "secondary-feature.njk" import secondaryFeature %}
+
+{% set 'content' = {
+  "eyebrow": "Our expertise",
+  "title": "We are Europe’s Leading Ember Experts.",
+  "text": "",
+  "linkUrl": "/ember-consulting/",
+  "linkText": "Find out more",
+  "image": "/assets/images/logos/background/ember.svg",
+  "alt": "Ember.js logo",
+  "loading": "lazy"
+} %}
+{{- secondaryFeature('right', content, true) -}}

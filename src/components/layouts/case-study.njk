@@ -9,7 +9,7 @@ layout: base
       <div class="split-hero__main split-hero__main--{{ hero.desktopTextPosition }}">
         <div class="split-hero__container container">
           <div class="split-hero__title-wrapper">
-            <h2 class="split-hero__title h1 text-animation">{{ displayTitle | safe }}</h2>
+            <h1 class="split-hero__title h1 text-animation">{{ displayTitle | safe }}</h1>
           </div>
           {% if companyDescription %}
             <div class="split-hero__client">
@@ -49,7 +49,7 @@ layout: base
         "image": next.data.hero.image,
         "linkUrl": next.url,
         "linkText": "Find out more",
-        "alt": next.data.heroAlt,
+        "alt": next.data.hero.imageAlt,
         "loading": "lazy"
       } %}
       {{ splitHero('left', hero.color, content) }}

@@ -7,11 +7,10 @@ description: Timify is an online appointment scheduling service that connects se
 hero:
   color: aqua
   desktopTextPosition: "right"
-  image: ""
-  imageAlt: ""
+  image: "/assets/images/work/timify-right.jpg"
+  imageAlt: "Macbook showing a Timify schedule"
 ---
 
-{% from "secondary-feature.njk" import secondaryFeature %}
 {% from "split-quote.njk" import splitQuote %}
 
 <div class="case-study__body">
@@ -24,17 +23,7 @@ hero:
 </p>
 </div>
 
-{% set 'content' = {
-  "eyebrow": "Our expertise",
-  "title": "We are Europe’s Leading Ember Experts.",
-  "text": "",
-  "linkUrl": "/ember-consulting/",
-  "linkText": "Find out more",
-  "image": "/assets/images/photos/collaboration@1200.jpg",
-  "alt": "Alt text",
-  "loading": "lazy"
-} %}
-{{- secondaryFeature('right', content, true) -}}
+{% include 'content/secondary-feature-ember.njk' %}
 
 {% set 'content' = {
   "text": "[Mainmatter's] experienced engineers delivered a solid and well architected foundation for our web app. They also helped us establish best practices and a lean process internally. Working with them was a pleasure.",

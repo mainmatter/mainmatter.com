@@ -1,0 +1,13 @@
+{% from "secondary-feature.njk" import secondaryFeature %}
+
+{% set 'content' = {
+  "eyebrow": "Our expertise",
+  "title": "Elixir & Phoenix",
+  "text": "We recently have been recognized as an official sponsor of the Ember.js project along with international brands like LinkedIn and Yahoo.",
+  "linkUrl": "/expertise/elixir-phoenix/",
+  "linkText": "Find out more",
+  "image": "/assets/images/logos/background/elixir.svg",
+  "alt": "Elixir logo",
+  "loading": "lazy"
+} %}
+{{- secondaryFeature('right', content, true) -}}

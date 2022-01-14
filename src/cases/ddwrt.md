@@ -8,8 +8,8 @@ description: "DD-WRT is a firmware for wireless routers running on millions of d
 hero:
   color: blue
   desktopTextPosition: "right"
-  image: ""
-  imageAlt: ""
+  image: "/assets/images/work/ddwrt.png"
+  imageAlt: "Macbook showing the DDWRT Status Overview page"
 ---
 
 {% from "secondary-feature.njk" import secondaryFeature %}
@@ -25,17 +25,7 @@ hero:
 </p>
 </div>
 
-{% set 'content' = {
-  "eyebrow": "Our expertise",
-  "title": "We are Europe’s Leading Ember Experts.",
-  "text": "",
-  "linkUrl": "/ember-consulting/",
-  "linkText": "Find out more",
-  "image": "/assets/images/photos/collaboration@1200.jpg",
-  "alt": "Alt text",
-  "loading": "lazy"
-} %}
-{{- secondaryFeature('right', content, true) -}}
+{% include 'content/secondary-feature-ember.njk' %}
 
 <div class="case-study__body">
 

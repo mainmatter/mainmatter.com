@@ -8,11 +8,10 @@ description: Expedition is an online travel magazine for global citizens. They t
 hero:
   color: purple
   desktopTextPosition: "right"
-  image: ""
-  imageAlt: ""
+  image: "/assets/images/work/expedition.jpg"
+  imageAlt: "Expedition homepage viewed on an iPad"
 ---
 
-{% from "secondary-feature.njk" import secondaryFeature %}
 {% from "split-quote.njk" import splitQuote %}
 
 <div class="case-study__body">
@@ -25,17 +24,7 @@ hero:
 </p>
 </div>
 
-{% set 'content' = {
-  "eyebrow": "Our expertise",
-  "title": "Elixir & Phoenix",
-  "text": "We recently have been recognized as an official sponsor of the Ember.js project along with international brands like LinkedIn and Yahoo.",
-  "linkUrl": "/expertise/elixir-phoenix/",
-  "linkText": "Find out more",
-  "image": "/assets/images/photos/collaboration@1200.jpg",
-  "alt": "Alt text",
-  "loading": "lazy"
-} %}
-{{- secondaryFeature('right', content, true) -}}
+{% include 'content/secondary-feature-elixir.njk' %}
 
 {% set 'content' = {
   "text": "[Mainmatter] brought wisdom, flexibility, and sane solutions when facing complex problems. They went above and beyond to work with our unique situation - would recommend 1000x.",

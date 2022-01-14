@@ -8,13 +8,12 @@ description: Qonto is the leading neobank for SMEs and freelancers in Europe. Ma
 hero:
   color: aqua
   desktopTextPosition: "right"
-  image: ""
-  imageAlt: ""
+  image: "/assets/images/work/qonto.jpg"
+  imageAlt: "Woman holds a credit card while using the Qonto web application"
 ---
 
 {% from "quote.njk" import quote %}
 {% from "split-quote.njk" import splitQuote %}
-{% from "secondary-feature.njk" import secondaryFeature %}
 {% from "image-stacked.njk" import imageStacked %}
 {% from "color-image.njk" import colorImage %}
 
@@ -33,17 +32,7 @@ Qonto’s frontend engineering team needed to rapidly scale their operations aft
 
 </div>
 
-{% set 'content' = {
-  "eyebrow": "Our expertise",
-  "title": "We are Europe’s Leading Ember Experts.",
-  "text": "",
-  "linkUrl": "/ember-consulting/",
-  "linkText": "Find out more",
-  "image": "/assets/images/photos/collaboration@1200.jpg",
-  "alt": "Alt text",
-  "loading": "lazy"
-} %}
-{{- secondaryFeature('right', content, true) -}}
+{% include 'content/secondary-feature-ember.njk' %}
 
 {% set 'contentBlocks' = [{
   "image": "/assets/images/photos/collaboration@1200.jpg",
@@ -59,20 +48,15 @@ Qonto’s frontend engineering team needed to rapidly scale their operations aft
 
 <div class="case-study__body">
 
-### Getting to the heart of the matter
+## Getting to the heart of the matter
 
 We met with Qonto's team in their office in Paris to kick off the collaboration. We sat down with the relevant stakeholders to develop an understanding of their business, their technology, infrastructure, tools and processes. We reviewed the existing Ember.js codebase and interviewed the frontend team to understand their main challenges. At the end of this process, we had a clear understanding of the status quo as well as the main obstacles the team was facing.
 
 </div>
 
-{% set 'content' = {
-  "text": "simplabs are well known as the Ember.js experts and they absolutely live up to the expectations. They had an immediate as well as significant positive impact on both our velocity and quality of output.",
-  "source": "Marc-Antoine Lacroix, Qonto CEO",
-  "image": "/assets/images/photos/collaboration@1200.jpg",
-  "alt": "Alt text",
-  "loading": "lazy"
-} %}
-{{- splitQuote('left', 'blue', content) -}}
+{% set text = "simplabs are well known as the Ember.js experts and they absolutely live up to the expectations. They had an immediate as well as significant positive impact on both our velocity and quality of output." %}
+{% set source = "Marc-Antoine Lacroix, Qonto CEO" %}
+{{ quote('aqua', text, source, true) }}
 
 <div class="case-study__body">
 
@@ -101,8 +85,8 @@ Lastly, we invested time and effort in setting up an advanced linting system to 
 </div>
 
 {% set 'content' = {
-  "image": "/assets/images/photos/collaboration@1200.jpg",
-  "alt": "Alt text",
+  "image": "/assets/images/work/qonto-alternative.jpg",
+  "alt": "Man holds a credit card while looking at the Qonto web application",
   "loading": "lazy"
 } %}
 {{ colorImage('blue', 'lg', content) }}
@@ -115,9 +99,11 @@ Our work with Qonto was highly collaborative. Beyond the product design and deve
 
 </div>
 
-{% set text = "Working with simplabs’ experts has always been a good experience.
-        We can really feel that they have mastery on many topics, and knowledge about complex technical problems.
-        I’ve learned so much, especially during our pairing sessions, and it allows me to improve my technical skills
-        and growth as an engineer." %}
-{% set source = "Alexandre Monjol, Frontend Engineer at Qonto" %}
-{{ quote('aqua', text, source, true) }}
+{% set 'content' = {
+  "text": "Working with simplabs’ experts has always been a good experience. We can really feel that they have mastery on many topics, and knowledge about complex technical problems. I’ve learned so much, especially during our pairing sessions, and it allows me to improve my technical skillsand growth as an engineer..",
+  "source": "Alexandre Monjol, Frontend Engineer at Qonto",
+  "image": "/assets/images/photos/qonto-alexander.jpg",
+  "alt": "Alexandre Monjol, smiling at the camera wearing a Qonto t-shirt",
+  "loading": "lazy"
+} %}
+{{- splitQuote('right', 'purple', content) -}}
