@@ -19,32 +19,56 @@ eleventyNavigation:
 } %}
 {{ splitHero('left', 'aqua', content) }}
 
-{% set 'content' = {
-  "title": "What we believe about design",
-  "text": "A strong design process allows experimentation and rapid iterations to uncover the true essence of a product. We hold a design philosophy that’s about creating digital experiences that are clean, functional and focused.",
-  "image": "/assets/images/photos/collaboration@1200.jpg",
-  "alt": "Alt text",
-  "loading": "lazy"
-} %}
-{{ imageWithText('left', content) }}
-
-{{ columnList(services['product-design'], '', 'column-list--services') }}
-
 {% set list = [
-  "Multi-stakeholder design research",
-  "Ideation across the entire user journey",
-  "Rapid prototyping & concept development",
-  "Wireframing & mocks",
-  "User delight & striking details",
-  "Adaptive, iterative design process"
+  "Market validation",
+  "Idea extraction & strategy",
+  "Validate essential assumptions",
+  "Groom the product roadmap",
+  "Define product principles",
+  "Separate MVP and follow-on improvements"
 ] %}
 {% set 'content' = {
-  "title": "Your design partner, from “start” to “shipped”",
-  "text": "simplabs provides product design expertise throughout the entire product creation process—from rough concept sketches to tested, final implementation.",
+  "title": "Rapid exploration, research and validation",
+  "text": "How can you be sure that you understand the needs of your users? We stress-test all assumptions to gather evidence en route to validated product concepts. Strategic clarity enables us to rapidly iterate on ideas that work.",
   "linkUrl": "/playbook/",
   "linkText": "Learn how we work",
   "list": list
 } %}
 {{ splitList('blue', content) }}
 
-{% include 'content/hero-work-with-us.njk' %}
+{% set list = [
+  "Wireframing & prototyping",
+  "Delight users with great UX",
+  "Clean aesthetics",
+  "Overcome complex design problems",
+  "Develop a consistent design system",
+  "Attention to detail"
+] %}
+{% set 'content' = {
+  "title": "Experiences that users love",
+  "text": "When a complex digital product delights you with its ease of use—that's by design. Your users have a problem, and it’s up to us to solve it through smart design coupled with outspoken visual appeal. Your product should be remarkable from every angle.",
+  "linkUrl": "/services/product-design/",
+  "linkText": "Explore our design process",
+  "list": list
+} %}
+{{ splitList('purple', content) }}
+
+
+{% set list = [
+  "Full-stack development",
+  "World-class engineering quality",
+  "Robust, reliable, secure code",
+  "Architected for the future",
+  "Modern process best practices",
+  "Our promise of excellence"
+] %}
+{% set 'content' = {
+  "title": "Impeccable engineering",
+  "text": "We don't need to tell you that we're passionate about this. The products we deliver make that abundantly clear. Set your team up for long-term success by partnering with our senior engineers to quickly establish your product's core functionalities.",
+  "linkUrl": "/services/product-development/",
+  "linkText": "Learn about bespoke development",
+  "list": list
+} %}
+{{ splitList('aqua', content) }}
+
+{% include 'content/hero-grow-with-us.njk' %}

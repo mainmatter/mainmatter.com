@@ -1,10 +1,10 @@
 ---
 layout: case-study
 company: Qonto
-companyDescription: Qonto is a B2B Neobank that offers bank accounts as well as virtual and physical credit cards to more than 75000 freelancers and SMEs in Europe.
+companyDescription: Qonto is a B2B Neobank that provides banking services and credit cards to more than 75,000 freelancers and SMEs in Europe.
 title: Co-Engineering the Future of Banking for SMEs with Qonto | Work
-displayTitle: "Co-Engineering the Future of <em>Banking</em> for SMEs"
-description: Qonto is a european B2B Neobank for freelancers and SMEs. We helped their team deliver mission critical features and scale sustainably.
+displayTitle: "A helping hand for a <em>visionary</em> fintech startup"
+description: Qonto is the leading neobank for SMEs and freelancers in Europe. Mainmatter worked with their web frontend team to boost their productivity, establish Ember.js best practices, and ensure long-term success.
 hero:
   color: aqua
   desktopTextPosition: "right"
@@ -21,30 +21,23 @@ hero:
 <div class="case-study__body">
 
 <p class="post__tagline">
-Qonto is a european B2B Neobank for freelancers and SMEs. They offer bank accounts, virtual and physical credit
-cards, and tools for accounting and expenses management. They are serving over 75000 customers and have processed
-€10 Billion worth of transactions in 2019.
+Qonto is a European B2B Neobank for freelancers and SMEs. They provide over 75,000 clients with banking services, virtual and physical credit cards, and tools for accounting and expense management. In 2019 alone, they processed €10 billion in transactions.
 </p>
 <p class="post__tagline">
-The FinTech company was rated among the five hottest startups in Europe by The Next Web and has raised more than
-€130 Million within three years since market entry in 2017.
+The fintech company was rated among the five hottest startups in Europe by The Next Web. They’ve raised more than €150 million since they entered the market in 2017.
 </p>
 
-## The Challenge
+## Sustainable growth with an ambitious timeline
 
-After successfully raising a series B round, Qonto’s frontend engineering team realized they needed more people
-and knowledge to keep up with the ambitious goals that came with that. They needed to bring in senior experts to
-be able to release new features in the Ember.js based banking UI following an ambitious timeline. With the very
-fast growth of the company, the team also faced a number of impediments that impacted velocity and output quality.
-Qonto decided to reach out to simplabs to help them get back on track to sustainable growth.
+Qonto’s frontend engineering team needed to rapidly scale their operations after the company raised its series B funding. Faced with a number of impediments that were slowing down their workflow, Qonto opted to bring in Mainmatter’s senior experts to help them release new features quickly while laying the foundations for sustainable growth at an accelerated pace.
 
 </div>
 
 {% set 'content' = {
   "eyebrow": "Our expertise",
-  "title": "Elixir & Phoenix",
-  "text": "We recently have been recognized as an official sponsor of the Ember.js project along with international brands like LinkedIn and Yahoo.",
-  "linkUrl": "/services/",
+  "title": "We are Europe’s Leading Ember Experts.",
+  "text": "",
+  "linkUrl": "/ember-consulting/",
   "linkText": "Find out more",
   "image": "/assets/images/photos/collaboration@1200.jpg",
   "alt": "Alt text",
@@ -66,13 +59,9 @@ Qonto decided to reach out to simplabs to help them get back on track to sustain
 
 <div class="case-study__body">
 
-## simplabs’ Approach
+### Getting to the heart of the matter
 
-Our engineering consultants met with Qonto's team on-site in their office in Paris to kick off the collaboration.
-We sat down with the relevant stakeholders to develop an understanding of their business, their technology,
-infrastructure, tools and processes. Next, we reviewed the Ember.js codebase and interviewed the frontend team to
-understand what the main challenges were. At the end of this process, we had a clear understanding of the status
-quo as well as the main obstacles the team was facing and the problem areas they were struggling with.
+We met with Qonto's team in their office in Paris to kick off the collaboration. We sat down with the relevant stakeholders to develop an understanding of their business, their technology, infrastructure, tools and processes. We reviewed the existing Ember.js codebase and interviewed the frontend team to understand their main challenges. At the end of this process, we had a clear understanding of the status quo as well as the main obstacles the team was facing.
 
 </div>
 
@@ -89,16 +78,11 @@ quo as well as the main obstacles the team was facing and the problem areas they
 
 ## Clearing the roadblocks
 
-Having identified the top impediments we were able to take immediate action. In the first few weeks of the
-project, we migrated the application away from a legacy template language and moved it back on to standard
-Ember.js patterns. We also substantially accelerated the Continuous Integration build times (cutting them roughly
-in half) as well as fixed some instabilities which had previously led to flaky test results. Both of these changes
-led to an immediate acceleration of the team's velocity.
+In the first few weeks of the project, we migrated the application away from a legacy template language and moved it back on to standard Ember.js patterns. We cut CI build times in half, and fixed instabilities that were causing flaky test results. These changes immediately improved the team’s productivity.
 
-We then helped the team ship some mission critical features following ambitious timelines. Our experts spearheaded
-these initiatives, working closely with Qonto's in-house engineers. We ensured Qonto's team had a clear
-understanding of our implementations and would take ownership over these parts of the app once sufficiently
-advanced.
+We then helped the team ship critical features on ambitious timelines. Our experts spearheaded these initiatives, working closely with Qonto's in-house engineers to ensure that they would be able to take ownership with confidence after our collaboration was complete.
+
+We evolved the application’s architecture and engineering infrastructure to accelerate development while maintaining a high level of quality. We set up automated visual regression testing to prevent unintended changes to the product UI being released to production.
 
 <figure>
   <img
@@ -110,13 +94,9 @@ advanced.
   </figcaption>
 </figure>
 
-Besides helping the team ship, we also focussed on evolving the application's architecture as well as engineering
-infrastructure to sustainably accelerate development while improving and maintaining quality. We set up automated
-visual regression testing to prevent unintended changes to the product UI being released to production. We also
-put a system in place for tracking the application's bundle size to prevent size and performance regressions.
-Having that system in place led to a 25% reduction of the application's main bundle over 2 months. Lastly, we
-invested time and effort in setting up an advanced linting system that would identify bad patterns, unused
-translation strings and other pitfalls to minimize their negative impact.
+We put a system in place for tracking the application's bundle size to prevent size and performance regressions. This led to a 25% reduction of the application's main bundle over two months.
+
+Lastly, we invested time and effort in setting up an advanced linting system to identify bad patterns, unused translation strings, and other common pitfalls.
 
 </div>
 
@@ -131,10 +111,7 @@ translation strings and other pitfalls to minimize their negative impact.
 
 ## Empowering the Team
 
-All of the work we did for Qonto was done in close collaboration with their in-house team. An important part of
-our work is always sharing our expertise and helping others develop deeper understandings of the tools they are
-using so they can be more effective with higher confidence. At Qonto, we conducted workshop on various topics as
-well as pair-programmed with their engineers and shared know-how via reviews.
+Our work with Qonto was highly collaborative. Beyond the product design and development work itself, we also conducted workshops and pair-programming sessions with their engineers to help them develop a deeper understanding of their tools. We set them up for success by sharing our expertise so they could carry on with confidence.
 
 </div>
 

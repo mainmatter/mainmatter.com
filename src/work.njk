@@ -19,10 +19,10 @@ eleventyNavigation:
 
 
 {% set 'content' = {
-  "title": "Co-Engineering the Future of Banking for SMEs",
-  "text": "Empowering Qonto's ambitious engineers to achieve their goals",
+  "title": "A helping hand for a visionary fintech startup",
+  "text": "Qonto is a B2B Neobank that provides banking services and credit cards to more than 75,000 freelancers and SMEs in Europe. Our senior experts helped them to lay the foundations for sustainable growth at an accelerated pace.",
   "linkUrl": "/cases/qonto/",
-  "linkText": "Find out more",
+  "linkText": "Read case study",
   "image": "/assets/images/photos/collaboration@1200.jpg",
   "alt": "Alt text",
   "loading": "lazy"
@@ -33,10 +33,10 @@ eleventyNavigation:
 {{ clientList(clients, 'aqua', 'Meet our clients') }}
 
 {% set 'content' = {
-  "title": "Leveraging Trainline's full market potentials",
-  "text": "Trainline is Europe’s leading independent rail and coach platform. We worked with them to deliver a high-performance mobile web app, along with an improved engineering process, enabling Trainline to achieve their business goals for years to come",
+  "title": "The full market potential for a leading travel platform",
+  "text": "Trainline is Europe’s leading independent rail and coach platform. We enabled them to tap into their full market potential by launching a mobile app to serve customers on the go.",
   "linkUrl": "/cases/trainline/",
-  "linkText": "Find out more",
+  "linkText": "Read case study",
   "image": "/assets/images/photos/collaboration@1200.jpg",
   "alt": "Alt text",
   "loading": "lazy"
@@ -46,7 +46,30 @@ eleventyNavigation:
 {% set clients = ['camilyo', 'hop-skip-drive', 'dim3', 'timify', 'embedd', 'medify', 'expedition', 'trainline', 'ringler', 'neighbourhoodie', 'loconet', 'erdil', 'sutori', 'asilimia'] %}
 {{ clientList(clients, 'aqua') }}
 
+{% set 'content' = {
+  "title": "An engineering overhaul for a validated booking system",
+  "text": "Timify is a cloud-based appointment booking system that serves over 50,000 clients worldwide. When their entire system needed to be re-engineered from the ground up, they trusted us to step in and set them up for long-term success.",
+  "linkUrl": "/cases/timify/",
+  "linkText": "Read case study",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+} %}
+{{ splitHero('right', 'white', content) }}
+
+
 {% set caseStudies = ['ddwrt', 'expedition'] %}
 {{ caseStudyList(caseStudies, 'blue', 'More case studies') }}
 
-{% include 'content/hero-work-with-us.njk' %}
+{% set 'content' = {
+  "title": "We maintain a lean process that supports the team rather than standing in its way.",
+  "text": "Find out more about how we work to deliver ambitious software solutions for our clients.",
+  "linkUrl": "/playbook/",
+  "linkText": "Read our playbook",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+} %}
+{{ splitHero('left', 'purple', content) }}
+
+{% include 'content/hero-grow-with-us.njk' %}

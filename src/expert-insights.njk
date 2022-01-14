@@ -7,10 +7,12 @@ eleventyNavigation:
   parent: Resources
 ---
 {% from "video-card.njk" import videoCard %}
+{% from "split-hero.njk" import splitHero %}
+
 <section class="section container container--lg">
   <div class="section__introduction container--xs">
     <h2 class="section__title">Expert Insights</h2>
-    <p>Our interview series goes behind-the-scenes into what successful product development practices look like from tech and startup insiders’ perspectives.</p>
+    <p>Our interview series goes behind the scenes to uncover the path to successful product development from an insider's perspective.</p>
   </div>
   <ul class="video-cards">
     {% set videos = collections.videos | filterByAttribute('kind', 'built-to-last') %}
@@ -23,5 +25,16 @@ eleventyNavigation:
     {%- endfor -%}
   </ul>
 </section>
+
+{% set 'content' = {
+  "title": "Are you a startup founder? Get in touch!",
+  "text": "We are always looking for startup founders to learn from. Let's talk.",
+  "linkUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeqUUG0-9BrLTUKomEbTbLef3H00iq8oUWmwR_dqeaqV7Ny6Q/viewform",
+  "linkText": "Become a guest",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+} %}
+{{ splitHero('left', 'purple', content) }}
 
 {% include 'content/hero-playbook.njk' %}

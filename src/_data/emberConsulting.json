@@ -1,0 +1,28 @@
+{
+  "list": [
+    {
+      "heading": "Ember Simple Auth",
+      "text": "Authentication management for Ember.js applications.",
+      "linkText": "View Github Project",
+      "linkUrl": "https://github.com/simplabs/ember-simple-auth"
+    },
+    {
+      "heading": "Ember Test Selectors",
+      "text": "Enabling better element selectors in Ember.js tests.",
+      "linkText": "View Github Project",
+      "linkUrl": "https://github.com/simplabs/ember-test-selectors"
+    },
+    {
+      "heading": "Ember Cookies",
+      "text": "Cookie handling for Ember.js apps - in the browser and FastBoot.",
+      "linkText": "View Github Project",
+      "linkUrl": "https://github.com/simplabs/ember-cookies"
+    },
+    {
+      "heading": "Qunit DOM",
+      "text": "High Level DOM Assertions for QUnit with an expressive API.",
+      "linkText": "View Github Project",
+      "linkUrl": "https://github.com/simplabs/qunit-dom"
+    }
+  ]
+}

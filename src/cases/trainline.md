@@ -1,26 +1,58 @@
 ---
 layout: case-study
 company: Trainline
+companyDescription: Trainline is Europe's leading independent rail and coach platform. They serve more than 125,000 rides every single day in and across 36 countries.
 title: Mobile train tickets with Ember.js for Trainline | Work
-displayTitle: "A mobile train ticket counter for Trainline"
+displayTitle: "The full market potential for a <em>leading</em> travel platform"
 description: Trainline is Europe’s leading rail and coach platform. We helped them deliver a high-performance mobile web app, along with an improved engineering process.
+hero:
+  color: blue
+  desktopTextPosition: "right"
+  image: ""
+  imageAlt: ""
 ---
 
-{% from "quote.njk" import quote %}
+{% from "secondary-feature.njk" import secondaryFeature %}
+{% from "split-quote.njk" import splitQuote %}
 
+<div class="case-study__body">
 <p class="post__tagline">
-  simplabs worked closely with Trainline’s in-house engineering team and built a mobile web app to accompany the existing desktop app. A dedicated site for mobile devices allowed Trainline to better serve customers on the go and leverage the full market potential.
+  Trainline is Europe's leading independent rail and coach platform. They sell tickets to customers worldwide, enabling more than 125,000 journeys every single day in and across 36 countries, covering 150 different carriers.
 </p>
 
-{% set text = "It has been an absolute pleasure to work with simplabs. Their team of experienced JavaScript engineers quickly slotted in to our in-house development teams. Their expertise with modern, agile software development best practices and tools meant they were able to work with our processes to deliver fantastic customer experiences." %}
-{% set source = "Mark Holt, Trainline CTO" %}
-{{ quote('aqua', text, source, true) }}
+<p class="post__tagline">
+  We worked closely with Trainline’s engineering team to build a mobile web app to complement their existing desktop web app. This enabled Trainline to better serve customers on the go and leverage the full market potential.
+</p>
+</div>
 
-## Sustainable added value
+{% set 'content' = {
+  "eyebrow": "Our expertise",
+  "title": "We are Europe’s Leading Ember Experts.",
+  "text": "",
+  "linkUrl": "/ember-consulting/",
+  "linkText": "Find out more",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+} %}
+{{- secondaryFeature('right', content, true) -}}
 
-Working closely with Trainline's engineering and product teams, we were able to deliver the first version of the mobile web app on time and budget, continuing to extend and improve it afterwards. Our experts also leveled up the team's experience and helped them internalize modern and idiomatic practices for developing web apps via pairing sessions and code reviews.
+{% set 'content' = {
+  "text": "It has been an absolute pleasure to work with [Mainmatter]. Their team of experienced JavaScript engineers quickly slotted in to our in-house development teams. Their expertise with modern, agile software development best practices and tools meant they were able to work with our processes to deliver fantastic customer experiences.",
+  "source": "Mark Holt, Trainline CTO",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+} %}
+{{- splitQuote('left', 'aqua', content) -}}
 
-In addition to supporting Trainline with engineering resources and expertise, we were able to help improve the engineering process by establishing and solidifying an iterative approach. This resulted in more efficient prioritization and a better sense of progress for both engineers and management.
+<div class="case-study__body">
+
+### Solidifying sustainable strategies
+
+Working closely with Trainline's engineering and product teams, we were able to deliver the first version of the mobile web app on time and on budget. We helped develop the team’s expertise through pair-programming sessions and code reviews.
+
+In addition to our engineering work, we also helped Trainline establish an iterative approach to their engineering process. This enabled both their engineers and management to better prioritize tasks and measure project progress.
 
 <figure figure:scope>
   <img
@@ -34,6 +66,8 @@ In addition to supporting Trainline with engineering resources and expertise, we
   </figcaption>
 </figure>
 
-## A path into the future
+### More sales from happier customers
 
-Besides working on the core application, simplabs spearheaded several engineering efforts focused around mobile performance, improved load times, server side rendering and localization. We were able to achieve substantial improvements, resulting in a much improved user experience and increased sales.
+Beyond the core application, we spearheaded impovements in mobile performance, load times, server side rendering, and localization. Taken together, these changes resulted in a vastly improved user experience and, in turn, increased sales.
+
+</div>

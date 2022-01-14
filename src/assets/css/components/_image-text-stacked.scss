@@ -21,7 +21,7 @@
     }
   }
 
-  &:nth-child(2n+1) {
+  &:nth-child(2n + 1) {
     margin-top: 2.5rem;
   }
 }
@@ -29,6 +29,10 @@
 .image-text-stacked__main {
   & > * + * {
     margin-top: 1.5rem;
+  }
+
+  &--large {
+    padding: 2.5rem 0;
   }
 }
 
@@ -53,6 +57,10 @@
 
   .image-text-stacked__main {
     flex: 0 1 40%;
+
+    &--large {
+      flex: 0 0 60%;
+    }
   }
 
   .image-text-stacked__image-wrapper {

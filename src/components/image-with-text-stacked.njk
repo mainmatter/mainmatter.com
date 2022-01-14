@@ -58,7 +58,7 @@ Example usage:
         {% if loop.index % 2 == 0 %}
           {{ imageMarkup | safe }}
         {% endif %}
-        <div class="image-text-stacked__main">
+        <div class="image-text-stacked__main {% if content.image == null %}image-text-stacked__main--large{% endif %}">
           {% if content.title %}
             <h2 class="image-text-stacked__title">{{ content.title | safe }}</h2>
           {% endif %}

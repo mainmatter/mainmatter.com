@@ -1,0 +1,94 @@
+---
+layout: base
+title: Europe's leading Ember experts | Ember consulting
+permalink: /ember-consulting/
+---
+{% from "client-list.njk" import clientList %}
+{% from "color-hero.njk" import colorHero %}
+{% from "column-list.njk" import columnList %}
+{% from "image-with-text.njk" import imageWithText %}
+{% from "image-with-text-stacked.njk" import imageWithTextStacked %}
+{% from "split-hero.njk" import splitHero %}
+{% from "split-list.njk" import splitList %}
+
+{% set 'content' = {
+  "title": "Ember is Our Expertise",
+  "text": "<p>Mainmatter has unique expertise and insights into Ember.js—in fact, a good part of our engineering team is on the Ember.js core team and maintains widely adopted add-ons. </p><p>By offering Ember consulting and training, we help clients around the world to get the most out of Ember and build cutting-edge applications. We help scale teams and support clients by reviewing codebases as well as identifying and overcoming impediments.</p>",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "eager"
+} %}
+{{ splitHero('left', 'blue', content) }}
+
+{% set 'content' = {
+  "title": "We love open source",
+  "text": "Besides contributing to Ember.js via our core team engagements, we maintain a number of projects in the ecosystem that are widely adopted throughout the Ember community.",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+} %}
+{{ imageWithText('left', content) }}
+
+{{ columnList(emberConsulting.list, '', 'column-list--services') }}
+
+{% set 'content' = {
+  "title": "Ember.js: The Documentary",
+  "text": "Several of your team members appear in the Ember.js documentary. We were pleased to welcome the film crew at our office in Munich and again at EmberFest in Amsterdam.",
+  "linkText": "Watch the Video",
+  "linkUrl": "https://www.youtube.com/watch?v=Cvz-9ccflKQ",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+} %}
+{{ colorHero('center', 'yellow', content) }}
+
+{% set 'content' = {
+  "title": "We share our expertise",
+  "text": "Every new project gives us the opportunity to learn and grow our expertise. We share what we learn with the community via talks at conferences, meetups, and on our blog.",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+} %}
+{{ splitHero('right', 'purple', content) }}
+
+{% set 'contentBlocks' = [{
+  "title": "Conference Talks",
+  "text": "Mainmatter engineers have spoken at all major Ember.js conferences and other events in the wider JavaScript community.",
+  "linkText": "View Talks",
+  "linkUrl": "/talks/",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+}, {
+  "title": "Community Engagement",
+  "text": "Ember.js is a project built by an open community and we are an active member of the community. We support the <a href='https://www.meetup.com/Ember-js-Munich/'>Ember.js Munich</a> and <a href='https://www.meetup.com/Ember-js-Berlin/'>Ember.js Berlin</a> meetups and are co-organizers of <a href='http://emberfest.eu'>EmberFest</a>, the european Ember Community Conference.",
+  "linkText": "View Our Calendar",
+  "linkUrl": "/calendar/"
+}] %}
+{{ imageWithTextStacked('right', contentBlocks) }}
+
+{% set clients = ['generali', 'qonto', 'cardstack'] %}
+{{ clientList(clients, 'blue', "We're trusted by companies that bet on Ember") }}
+
+{% set 'contentBlocks' = [{
+  "title": "Ember Consulting",
+  "text": "Not all teams will always be able to deliver large-scale projects on time and budget. Our experts step in and merge with our clients' in-house engineering teams, sustainably increasing productivity.",
+  "linkText": "Learn More about Ember Consulting",
+  "linkUrl": "/services/team-augmentation/",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy",
+  "small": true
+}, {
+  "title": "Ember Training and Mentoring",
+  "text": "We also tutor engineering teams and set them up for long-term success by reviewing their code, guiding them through adopting new technologies, setting up a project, or conducting workshops on various topics.",
+  "linkText": "Learn More about Ember Training",
+  "linkUrl": "/services/training/",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+}] %}
+
+{{ imageWithTextStacked('left', contentBlocks) }}
+
+{% include 'content/hero-work-with-us.njk' %}

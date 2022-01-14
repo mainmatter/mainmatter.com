@@ -92,6 +92,10 @@ module.exports = function (eleventyConfig) {
     return tagline.split("</p>")[0].replace(/<\/?[^>]+(>|$)/g, "");
   });
 
+  eleventyConfig.addFilter("stripHTML", (value) => {
+    return value.replace(/(<([^>]+)>)/gi, "");
+  });
+
   const mdRender = new markdownIt({});
   eleventyConfig.addFilter("markdown", function (value) {
     if (value) {

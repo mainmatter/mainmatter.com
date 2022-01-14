@@ -17,7 +17,7 @@ list: An array where each item is the slug for the case study.
           {% if caseStudy %}
             <li class="case-study__item">
               <a class="case-study__link" href="{{ caseStudy.url }}"><span class="screenreader">{{ caseStudy.data.displayTitle }}</span></a>
-              <p class="case-study__title h3">{{ caseStudy.data.displayTitle }}</p>
+              <p class="case-study__title h3">{{ caseStudy.data.displayTitle | stripHTML }}</p>
               <div class="case-study__text">
                 {{ caseStudy.data.description }}
               </div>

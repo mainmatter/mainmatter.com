@@ -5,3 +5,29 @@ eleventyNavigation:
   key: Training
   parent: Services
 ---
+{% from "split-hero.njk" import splitHero %}
+{% from "image-with-text.njk" import imageWithText %}
+{% from "column-list.njk" import columnList %}
+
+{% set 'content' = {
+  "title": "Prepare your team for <em>long-term</em> success",
+  "text": "<p>Don't waste time with needless trial and error. Give your team a headstart by bringing in Mainmatter’s experts to lead the way with foundational concepts and best practices that you can build on for years to come.</p>",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "eager"
+} %}
+{{ splitHero('left', 'aqua', content) }}
+
+{% set 'content' = {
+  "title": "Tailor-made training for engineers",
+  "text": "One size does not fit all. Let's get to the root of your engineering team's needs with a custom curriculum. We host workshops on Ember.js, Phoenix, and Rust, as well as distributed systems design, authentication, deployment, and scalability.",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "lazy"
+} %}
+{{ imageWithText('left', content) }}
+
+{{ columnList(services['training'], '', 'column-list--services') }}
+
+
+{% include 'content/hero-grow-with-us.njk' %}
