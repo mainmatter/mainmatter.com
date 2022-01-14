@@ -29,9 +29,9 @@ Example usage:
 {%- macro secondaryFeature(textPosition, content, showWrapper) -%}
   <div class="secondary-feature {% if showWrapper %}container container--md {% endif %}">
     <div class="secondary-feature__image-wrapper">
-      {%- if content.image -%}
+      {% if content.image -%}
         {%- image content.image, content.alt, '(min-width:62em) 15rem, 90vw', content.loading, 'secondary-feature__image', [250, 375, 500, 750] -%}
-      {%- endif %}
+      {%- endif -%}
     </div>
     <div class="secondary-feature__main secondary-feature__main--{{ textPosition }}">
       {%- if content.title -%}

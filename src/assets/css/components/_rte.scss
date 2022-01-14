@@ -25,7 +25,8 @@
     margin-bottom: 3rem;
   }
 
-  figure picture, picture img {
+  figure picture,
+  picture img {
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -62,5 +63,27 @@
     figcaption:not([class]) {
       color: var(--color-purple);
     }
+  }
+}
+
+.rte--small {
+  h2,
+  .h2 {
+    font-family: var(--font-base);
+    font-weight: 700;
+    font-size: rem-calc(24);
+    line-height: 1.25;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  h3,
+  .h3 {
+    font-family: var(--font-base);
+    font-weight: 700;
+    font-size: rem-calc(16);
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
   }
 }

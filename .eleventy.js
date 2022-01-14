@@ -161,6 +161,7 @@ module.exports = function (eleventyConfig) {
     }
 
     const options = {
+      svgShortCircuit: true,
       widths: sizesArray,
       formats,
       urlPath: directory,

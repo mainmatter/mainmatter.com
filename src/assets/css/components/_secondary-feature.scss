@@ -1,4 +1,4 @@
-.secondary-feature  {
+.secondary-feature {
   color: var(--color-purple);
   border: rem-calc(1) solid currentColor;
   padding: 1rem;
@@ -16,7 +16,7 @@
   display: block;
 }
 
-.secondary-feature__main  {
+.secondary-feature__main {
   & > * + * {
     margin-top: 1.5rem;
   }
@@ -34,7 +34,7 @@
   }
 
   .secondary-feature__image-wrapper {
-    flex: 0 0 rem-calc(250);
+    flex: 0 0 rem-calc(200);
     margin-bottom: 0;
   }
 

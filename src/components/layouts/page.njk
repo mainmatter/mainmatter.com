@@ -1,0 +1,11 @@
+---
+layout: base
+---
+{% from "split-hero.njk" import splitHero %}
+
+{%- block content -%}
+  <article class="section container container--md rte rte--small">
+    <h1 class="section__title">{{ title }}</h1>
+    {{ content | safe }}
+  </article>
+{%- endblock -%}
