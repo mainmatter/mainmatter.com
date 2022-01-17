@@ -8,7 +8,7 @@ description: Trainline is Europe’s leading rail and coach platform. We helped 
 hero:
   color: blue
   desktopTextPosition: "right"
-  image: "/assets/images/work/trainline-app.jpg"
+  image: "/assets/images/photos/trainline-comp.jpg"
   imageAlt: "User looking at the Trainline app"
 ---
 

@@ -8,7 +8,12 @@ title: Calendar
 <section class="section container container--lg">
   <div class="section__introduction container--xs">
     <h1 class="section__title">Calendar</h1>
-    <p>Find out about upcoming events, conferences and meetups we will be attending or organizing.</p>
+    {%- set totalCount -%}{{ collections.calendar | length }}{% endset %}
+    {% if totalCount == 0 %}
+      <p>We currently don't have any upcoming events. <a href="/playbook/">Download our playbook</a> for more insights from the Mainmatter team.</p>
+    {% else %}
+      <p>Find out about upcoming events, conferences and meetups we will be attending or organizing.</p>
+    {% endif %}
   </div>
   {%- for kind in kinds -%}
     {%- set eventCount = 0 -%}

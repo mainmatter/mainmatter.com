@@ -12,21 +12,15 @@
   "from": [
     {
       "heading": "Decomposition",
-      "text": "Large tasks become more manageable when decomposed into smaller units. This applies to full products that should be broken down into an MVP and subsequent increments, but also for finer grained development or design tasks.",
-      "linkText": "Read more",
-      "linkUrl": "#download"
+      "text": "Large tasks become more manageable when decomposed into smaller units. This applies to full products that should be broken down into an MVP and subsequent increments, but also for finer grained development or design tasks."
     },
     {
       "heading": "Transparent Communication",
-      "text": "Transparent communication and decision making processes are crucial for successful projects. Channeling communication through tools makes it transparent to all stakeholders and allows for a persistent record of discussions and decisions, which is critical for remote teams in particular.",
-      "linkText": "Read more",
-      "linkUrl": "#download"
+      "text": "Transparent communication and decision making processes are crucial for successful projects. Channeling communication through tools makes it transparent to all stakeholders and allows for a persistent record of discussions and decisions, which is critical for remote teams in particular."
     },
     {
       "heading": "Self-Organisation",
-      "text": "We believe the classic project manager role is an organisational anti-pattern, and instead advocate for self-organised project teams. Close and direct collaboration between all stakeholders fosters alignment towards a common goal and is essential to a project's success.",
-      "linkText": "Read more",
-      "linkUrl": "#download"
+      "text": "We believe the classic project manager role is an organisational anti-pattern, and instead advocate for self-organised project teams. Close and direct collaboration between all stakeholders fosters alignment towards a common goal and is essential to a project's success."
     }
   ]
 }

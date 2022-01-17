@@ -54,9 +54,9 @@ export class Animations {
           // Todo: Come back and refine this, sizing may change things
           {
             768: ["elCenterY", "elOutY-200"],
-            1024: ["elOutY-155", "elOutY-100"],
+            1024: ["elOutY-100", "elOutY-80"],
             1366: ["elOutY-200", "elOutY-100"],
-            1900: ["elOutY-300", "elOutY-120"],
+            1900: ["elOutY-250", "elOutY-120"],
           },
           [1, 0],
         ],

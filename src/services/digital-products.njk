@@ -9,12 +9,13 @@ eleventyNavigation:
 {% from "image-with-text.njk" import imageWithText %}
 {% from "column-list.njk" import columnList %}
 {% from "split-list.njk" import splitList %}
+{% from "quote.njk" import quote %}
 
 {% set 'content' = {
   "title": "Bridging the gap between vision and <em>sustainable</em> execution",
   "text": "You have ambitions. We have structures and solutions you can trust. Whether corporate venture or bootstrapped founder, you need a reliable partner who can guide you through the process of transforming rough sketches into fully realized digital products.",
-  "image": "/assets/images/photos/collaboration@1200.jpg",
-  "alt": "Alt text",
+  "image": "/assets/images/photos/0010.jpg",
+  "alt": "Woman writing on a whiteboard",
   "loading": "eager"
 } %}
 {{ splitHero('left', 'aqua', content) }}
@@ -36,6 +37,10 @@ eleventyNavigation:
 } %}
 {{ splitList('blue', content) }}
 
+{% set text = "[Mainmatter's] expertise in developing Ember.js based applications helped us to define and develop the new DD-WRT NXT user experience. It was impressive to see in what short time such a complex application leveraging a customer backend interface could be implemented. simplabs' work provided the new foundation for our UI and our in-house development team greatly benefitted from their knowhow." %}
+{% set source = "Peter Steinhäuser, embeDD CEO" %}
+{{ quote('yellow', text, source, true) }}
+
 {% set list = [
   "Wireframing & prototyping",
   "Delight users with great UX",
@@ -53,6 +58,16 @@ eleventyNavigation:
 } %}
 {{ splitList('purple', content) }}
 
+{% set 'content' = {
+  "title": "Co-Engineering the Future of Banking for SME",
+  "text": "Empowering Qonto's ambitious engineers to achieve their goals",
+  "linkUrl": "/cases/qonto/",
+  "linkText": "Find out more",
+  "image": "/assets/images/work/qonto.jpg",
+  "alt": "Woman holds a credit card while using the Qonto web application",
+  "loading": "lazy"
+} %}
+{{ splitHero('right', 'blue', content) }}
 
 {% set list = [
   "Full-stack development",
