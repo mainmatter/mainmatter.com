@@ -76,7 +76,7 @@ export class Nav {
     this.menuToggle.setAttribute("aria-expanded", "false");
     siblings.forEach((sibling) => sibling.removeAttribute("inert"));
     this.menuToggle.focus();
-    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
   }
 
   getAllSiblings(element) {
@@ -88,6 +88,6 @@ export class Nav {
     const siblings = this.getAllSiblings(this.container);
     this.menuToggle.setAttribute("aria-expanded", "true");
     siblings.forEach((sibling) => sibling.setAttribute("inert", true));
-    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
   }
 }
