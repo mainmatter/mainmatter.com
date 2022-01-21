@@ -136,7 +136,7 @@ some of the work they have done the past week!
   [#4311](https://github.com/rust-lang/crates.io/pull/4311) Adjust /me
   redirection to /settings/tokens ([@turbo87])
 
-## Ember
+## Ember.js
 
 - [simplabs/ember-error-route]
   [#66](https://github.com/simplabs/ember-error-route/pull/66) Add GitHub
