@@ -9,7 +9,7 @@ description:
   'A collection of work that our engineers have been carrying out in open-source
   in the past few weeks.'
 og:
-  image: /assets/images/posts/2022-01-21-this-week-in-os-3/og-image.png
+  image: /assets/images/posts/2022-01-24-this-week-in-os-3/og-image.png
 ---
 
 Our software engineers are all active members of the open-source community and
@@ -136,6 +136,12 @@ some of the work they have done the past week!
   [#4311](https://github.com/rust-lang/crates.io/pull/4311) Adjust /me
   redirection to /settings/tokens ([@turbo87])
 
+## Ruby
+
+- [rubyforgood/Flaredown]
+  [#571](https://github.com/rubyforgood/Flaredown/pull/571) fix race condition
+  on android with google recapcha ([@mansona])
+
 ## Ember.js
 
 - [simplabs/ember-error-route]
@@ -231,12 +237,6 @@ some of the work they have done the past week!
 - [ember-cli/ember-cli]
   [#9760](https://github.com/ember-cli/ember-cli/pull/9760) Add timeout-minutes
   to github CI jobs ([@mansona])
-
-## Ruby
-
-- [rubyforgood/Flaredown]
-  [#571](https://github.com/rubyforgood/Flaredown/pull/571) fix race condition
-  on android with google recapcha ([@mansona])
 
 ## JavaScript
 
