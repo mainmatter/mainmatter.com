@@ -20,24 +20,33 @@ some of the work they have done the past week!
 
 ## Rust
 
-- [aprs-parser-rs] [#21](https://github.com/Turbo87/aprs-parser-rs/pull/21) CI:
-  Enable colored cargo output ([@turbo87])
-- [aprs-parser-rs] [#20](https://github.com/Turbo87/aprs-parser-rs/pull/20)
-  lonlat: Extract Latitude and Longitude structs ([@turbo87])
-- [aprs-parser-rs] [#15](https://github.com/Turbo87/aprs-parser-rs/pull/15) Add
-  Cargo.lock file ([@turbo87])
-- [aprs-parser-rs] [#14](https://github.com/Turbo87/aprs-parser-rs/pull/14)
-  Decrease MSRV to v1.38.0 ([@turbo87])
-- [aprs-parser-rs] [#13](https://github.com/Turbo87/aprs-parser-rs/pull/13)
-  Replace failure with thiserror ([@turbo87])
-- [aprs-parser-rs] [#12](https://github.com/Turbo87/aprs-parser-rs/pull/12)
-  cargo clippy ([@turbo87])
-- [aprs-parser-rs] [#11](https://github.com/Turbo87/aprs-parser-rs/pull/11)
-  cargo fmt ([@turbo87])
-- [aprs-parser-rs] [#10](https://github.com/Turbo87/aprs-parser-rs/pull/10)
-  Improve CI config ([@turbo87])
-- [aprs-parser-rs] [#9](https://github.com/Turbo87/aprs-parser-rs/pull/9)
-  Migrate from TravisCI to GitHub Actions ([@turbo87])
+- [turbo87/aprs-parser-rs]
+  [#21](https://github.com/Turbo87/aprs-parser-rs/pull/21) CI: Enable colored
+  cargo output ([@turbo87])
+- [turbo87/aprs-parser-rs]
+  [#20](https://github.com/Turbo87/aprs-parser-rs/pull/20) lonlat: Extract
+  Latitude and Longitude structs ([@turbo87])
+- [turbo87/aprs-parser-rs]
+  [#15](https://github.com/Turbo87/aprs-parser-rs/pull/15) Add Cargo.lock file
+  ([@turbo87])
+- [turbo87/aprs-parser-rs]
+  [#14](https://github.com/Turbo87/aprs-parser-rs/pull/14) Decrease MSRV to
+  v1.38.0 ([@turbo87])
+- [turbo87/aprs-parser-rs]
+  [#13](https://github.com/Turbo87/aprs-parser-rs/pull/13) Replace failure with
+  thiserror ([@turbo87])
+- [turbo87/aprs-parser-rs]
+  [#12](https://github.com/Turbo87/aprs-parser-rs/pull/12) cargo clippy
+  ([@turbo87])
+- [turbo87/aprs-parser-rs]
+  [#11](https://github.com/Turbo87/aprs-parser-rs/pull/11) cargo fmt
+  ([@turbo87])
+- [turbo87/aprs-parser-rs]
+  [#10](https://github.com/Turbo87/aprs-parser-rs/pull/10) Improve CI config
+  ([@turbo87])
+- [turbo87/aprs-parser-rs]
+  [#9](https://github.com/Turbo87/aprs-parser-rs/pull/9) Migrate from TravisCI
+  to GitHub Actions ([@turbo87])
 
 - [rust-lang/cargo] [#10239](https://github.com/rust-lang/cargo/pull/10239)
   timings: Fix tick mark alignment ([@turbo87])
@@ -270,10 +279,11 @@ some of the work they have done the past week!
 [emberjs/ember.js]: https://github.com/emberjs/ember.js/
 [authmaker/authmaker-ember-simple-auth]:
   https://github.com/Authmaker/authmaker-ember-simple-auth/
-[aprs-parser-rs]: https://github.com/aprs-parser-rs/
+[turbo87/aprs-parser-rs]: https://github.com/Turbo87/aprs-parser-rs/
 [simplabs/ember-simple-auth]: https://github.com/simplabs/ember-simple-auth/
 [simplabs/playbook]: https://github.com/simplabs/playbook/
 [ember-cli/ember-exam]: https://github.com/ember-cli/ember-exam/
+[ember-cli/ember-cli]: https://github.com/ember-cli/ember-cli/
 [simplabs/ember-error-route]: https://github.com/simplabs/ember-error-route/
 [emberjs/ember-string]: https://github.com/emberjs/ember-string/
 [ember-learn/guides-source]: https://github.com/ember-learn/guides-source/
