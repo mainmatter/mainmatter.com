@@ -101,6 +101,10 @@ module.exports = function (value, outputPath) {
         let img,
           imgClass = "";
 
+        if (rawSrc.includes("https://") || rawSrc.includes("http://")) {
+          return;
+        }
+
         if (!sizes) {
           sizes = [775, 1200, 1600];
         }
