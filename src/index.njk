@@ -12,8 +12,8 @@ title: null
 {% set 'content' = {
   "title": "Your <em>sustainable</em> success is our expertise",
   "text": "You want to work with a digital consultancy that can help you bridge the gap between vision and execution. Let Mainmatter guide you through the process of building products that can grow and scale over the long term.",
-  "image": "/assets/images/photos/collaboration@1200.jpg",
-  "alt": "Alt text",
+  "image": "/assets/images/photos/DSC04108.jpg",
+  "alt": "Two people having a conversation while looking at a computer screen",
   "loading": "eager"
 } %}
 {{ splitHero('left', 'purple', content) }}
@@ -70,8 +70,8 @@ title: null
   "text": "Let us cross-pollinate with your engineering team to ship high-quality code at an accelerated pace.",
   "linkUrl": "/services/team-augmentation/",
   "linkText": "Collaborate with us",
-  "image": "/assets/images/photos/0020-1.jpg",
-  "alt": "Four team members having a meeting around a laptop",
+  "image": "/assets/images/photos/0018.jpg",
+  "alt": "Three team members looking attentively to the side",
   "loading": "lazy",
   "small": true
 },{
@@ -85,4 +85,13 @@ title: null
 }] %}
 {{ imageWithTextStacked('right', contentBlocks) }}
 
-{% include 'content/hero-grow-with-us.njk' %}
+{% set 'content' = {
+  "title": "Grow with us",
+  "text": "<p>Let's talk about the challenges that you're facing.</p><p>Our experts are ready to guide you through your next big move.</p>",
+  "linkUrl": "/contact/",
+  "linkText": "Partner with us",
+  "image": "/assets/images/photos/317.jpg",
+  "alt": "Team member smiling at a laptop",
+  "loading": "lazy"
+} %}
+{{ colorHero('center', 'yellow', content) }}

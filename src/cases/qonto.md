@@ -35,11 +35,11 @@ Qonto’s frontend engineering team needed to rapidly scale their operations aft
 {% include 'content/secondary-feature-ember.njk' %}
 
 {% set 'contentBlocks' = [{
-  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "image": "/assets/images/photos/collaboration.jpg",
   "alt": "Alt text",
   "loading": "lazy"
 },{
-  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "image": "/assets/images/photos/collaboration.jpg",
   "alt": "Alt text",
   "loading": "lazy",
   "small": true

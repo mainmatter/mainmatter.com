@@ -16,8 +16,8 @@ eleventyNavigation:
 {% set 'content' = {
   "title": "Your <em>expert</em> guides for the journey ahead",
   "text": "Our team of digital product experts has been down this road before. We can help you reach the future you envision.",
-  "image": "/assets/images/photos/0010.jpg",
-  "alt": "Woman writing on a whiteboard",
+  "image": "/assets/images/photos/0007.jpg",
+  "alt": "Two team members smiling at a laptop screen in front of a whiteboard",
   "loading": "eager"
 } %}
 {{ splitHero('left', 'aqua', content) }}
@@ -25,8 +25,8 @@ eleventyNavigation:
 {% set 'content' = {
   "title": "What we do",
   "text": "Mainmatter is a digital product consultancy that works with clients around the globe to develop products and practices they can build on. We strive for pragmatic solutions to complex problems. We believe that the path to long-term success requires a stable foundation, direct communication, and an iterative approach.",
-  "image": "/assets/images/photos/sketching-table.jpg",
-  "alt": "Notepad on a desk with a hand drawn wireframe, a hand holding a pen is in frame",
+  "image": "/assets/images/photos/0003.jpg",
+  "alt": "Man smiling at his laptop",
   "loading": "eager"
 } %}
 {{ imageWithText('right', content) }}
@@ -47,8 +47,8 @@ eleventyNavigation:
 {% set 'contentBlocks' = [{
   "title": "Team augmentation",
   "text": "Our experts temporarily join your in-house engineering teams to increase code quality and throughput, and help to sustainably lift team productivity.",
-  "image": "/assets/images/photos/0022.jpg",
-  "alt": "Five team members laughing around a laptop",
+  "image": "/assets/images/photos/0002.jpg",
+  "alt": "Two team members looking at a laptop",
   "loading": "lazy"
 }, {
   "title": "Tailor-made training",
@@ -60,4 +60,13 @@ eleventyNavigation:
 }] %}
 {{ imageWithTextStacked('right', contentBlocks) }}
 
-{% include 'content/hero-work-with-us.njk' %}
+{% set 'content' = {
+  "title": "Work with us",
+  "text": "<p>Let's talk about the challenges that you're facing.</p><p>Our experts are ready to guide you through your next big move.</p>",
+  "linkUrl": "/contact/",
+  "linkText": "Get in touch",
+  "image": "/assets/images/photos/0017.jpg",
+  "alt": "Three people having a meeting around a desks",
+  "loading": "lazy"
+} %}
+{{ colorHero('center', 'yellow', content) }}

@@ -29,7 +29,7 @@ hero:
 {% set 'content' = {
   "text": "It has been an absolute pleasure to work with [Mainmatter]. Their team of experienced JavaScript engineers quickly slotted in to our in-house development teams. Their expertise with modern, agile software development best practices and tools meant they were able to work with our processes to deliver fantastic customer experiences.",
   "source": "Mark Holt, Trainline CTO",
-  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "image": "/assets/images/photos/collaboration.jpg",
   "alt": "Alt text",
   "loading": "lazy"
 } %}

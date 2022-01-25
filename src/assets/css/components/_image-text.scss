@@ -16,6 +16,11 @@
   }
 }
 
+.image-text__image-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
 .image-text__image {
   display: block;
 }

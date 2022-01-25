@@ -40,7 +40,7 @@ The first step for our experts was to understand the characteristics of the envi
 {% set 'content' = {
   "text": "[Mainmatter's] expertise in developing Ember.js based applications helped us to define and develop the new DD-WRT NXT user experience. It was impressive to see in what short time such a complex application leveraging a customer backend interface could be implemented. simplabs' work provided the new foundation for our UI and our in-house development team greatly benefitted from their knowhow.",
   "source": "Peter Steinhäuser, embeDD CEO",
-  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "image": "/assets/images/photos/collaboration.jpg",
   "alt": "Alt text",
   "loading": "lazy"
 } %}

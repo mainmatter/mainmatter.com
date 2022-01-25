@@ -9,6 +9,7 @@ eleventyNavigation:
 {% from "split-hero.njk" import splitHero %}
 {% from "video-card.njk" import videoCard %}
 {% from "workshop-card.njk" import workshopCard %}
+{% from "color-hero.njk" import colorHero %}
 
 {% set 'content' = {
   "title": "Tap into <em>practical</em> insight from industry experts",
@@ -64,4 +65,13 @@ eleventyNavigation:
   </ul>
 </section>
 
-{% include 'content/hero-playbook.njk' %}
+{% set 'content' = {
+  "title": "The sustainable approach for your team",
+  "text": "Sustainable growth is achievable, but teams rarely get there by accident. Our Playbook shares practical, actionable insights to help you build digital products while running a collaborative product development process.",
+  "linkUrl": "/playbook/",
+  "linkText": "Read the playbook",
+  "image": "/assets/images/photos/0035.jpg",
+  "alt": "Hands gesturing in front of a smart phone",
+  "loading": "lazy"
+} %}
+{{ colorHero('center', 'aqua', content) }}

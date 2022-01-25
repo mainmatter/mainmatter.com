@@ -23,7 +23,7 @@ eleventyNavigation:
 {% set 'content' = {
   "title": "Let’s get to the heart of the matter",
   "text": "<p>We don’t care for trends or theory if the results are impractical, so we strive for effective and pragmatic solutions for complex problems. </p><p>Through guidance and knowledge transfer, we take a long-term view, rather than chasing a short-term high, enabling our clients to shape the future of their digital products.</p>",
-  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "image": "/assets/images/photos/collaboration.jpg",
   "alt": "Alt text",
   "loading": "lazy"
 } %}
@@ -55,8 +55,8 @@ eleventyNavigation:
 {% set 'content' = {
   "title": "Keeping the Conversation going",
   "text": "We strongly believe in the value of sharing our expertise with others. Catch us at a conference near you and we may just be there as organizers, speakers, or sponsors. This is how we keep our fingers on the pulse of the web community, and give back to the people who’ve given so much to us along the way.",
-  "image": "/assets/images/photos/0028-1.jpg",
-  "alt": "Two sets of people having a conversation",
+  "image": "/assets/images/photos/0008.jpg",
+  "alt": "Three people having a meeting around a whiteboard",
   "loading": "lazy"
 } %}
 {{ imageWithText('right', content) }}
@@ -81,4 +81,13 @@ eleventyNavigation:
 } %}
 {{ imageWithText('left', content) }}
 
-{% include 'content/hero-grow-with-us.njk' %}
+{% set 'content' = {
+  "title": "Grow with us",
+  "text": "<p>Let's talk about the challenges that you're facing.</p><p>Our experts are ready to guide you through your next big move.</p>",
+  "linkUrl": "/contact/",
+  "linkText": "Partner with us",
+  "image": "/assets/images/photos/0031.jpg",
+  "alt": "Six members of the Mainmatter team sitting around a table, smiling at the camera",
+  "loading": "lazy"
+} %}
+{{ colorHero('center', 'yellow', content) }}

@@ -28,7 +28,7 @@ hero:
 {% set 'content' = {
   "text": "[Mainmatter's] experienced engineers delivered a solid and well architected foundation for our web app. They also helped us establish best practices and a lean process internally. Working with them was a pleasure.",
   "source": "Andreas Knürr, Timify CEO",
-  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "image": "/assets/images/photos/collaboration.jpg",
   "alt": "Alt text",
   "loading": "lazy"
 } %}

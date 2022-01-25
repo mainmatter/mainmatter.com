@@ -7,6 +7,7 @@ eleventyNavigation:
   order: 20
 ---
 {% from "split-hero.njk" import splitHero %}
+{% from "color-hero.njk" import colorHero %}
 {% from "client-list.njk" import clientList %}
 {% from "case-study-list.njk" import caseStudyList %}
 
@@ -73,4 +74,13 @@ eleventyNavigation:
 } %}
 {{ splitHero('left', 'purple', content) }}
 
-{% include 'content/hero-grow-with-us.njk' %}
+{% set 'content' = {
+  "title": "Grow with us",
+  "text": "<p>Let's talk about the challenges that you're facing.</p><p>Our experts are ready to guide you through your next big move.</p>",
+  "linkUrl": "/contact/",
+  "linkText": "Partner with us",
+  "image": "/assets/images/photos/0001.jpg",
+  "alt": "Person looking at a laptop, looking contemplatives",
+  "loading": "lazy"
+} %}
+{{ colorHero('center', 'yellow', content) }}
