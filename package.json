@@ -24,7 +24,8 @@
     "format:hbs": "prettier --write --parser glimmer '**/*.hbs'",
     "format:md": "prettier --write '**/*md'",
     "format": "yarn run format:ts; yarn run format:js; yarn run format:hbs; yarn run format:css; yarn run format:md",
-    "percy": "percy exec -- node scripts/percy.js"
+    "percy": "percy exec -- node scripts/percy.js",
+    "this-week": "./bin/this-week-in-open-source --config-path=config/this-week-in-open-source.config.json"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
