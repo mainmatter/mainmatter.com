@@ -1,0 +1,97 @@
+{
+    "users": [
+        "marcoow",
+        "locks",
+        "zeppelin",
+        "Turbo87",
+        "pichfl",
+        "nickschot",
+        "mansona",
+        "oscard0m",
+        "Mikek2252",
+        "inesilva",
+        "BobrImperator",
+        "candunaj"
+    ],
+    "labels": [
+        {
+            "name": "Rust",
+            "repos": [
+                "Turbo87/aprs-parser-rs",
+                "hyperium/http",
+                "rust-lang/cargo"
+            ]
+        },
+        {
+            "name": "crates.io",
+            "repos": [
+                "conduit-rust/conduit-hyper",
+                "rust-lang/crates.io"
+            ]
+        },
+        {
+            "name": "Ember.js",
+            "repos": [
+                "Authmaker/authmaker-ember-simple-auth",
+                "buschtoens/ember-link",
+                "ember-cli/ember-cli",
+                "ember-cli/ember-cli",
+                "ember-cli/ember-exam",
+                "ember-learn/ember-api-docs",
+                "ember-learn/ember-blog",
+                "ember-learn/ember-styleguide",
+                "ember-learn/ember-website",
+                "ember-learn/empress-blog-ember-template",
+                "ember-learn/guides-source",
+                "emberjs/core-notes",
+                "emberjs/data",
+                "emberjs/ember-ordered-set",
+                "emberjs/ember-string",
+                "emberjs/ember.js",
+                "empress/broccoli-static-site-json",
+                "empress/ember-cli-notifications",
+                "empress/ember-cli-showdown",
+                "empress/ember-showdown-prism",
+                "empress/empress-blog",
+                "empress/empress-blog-casper-template",
+                "empress/field-guide",
+                "mansona/ember-body-class",
+                "mansona/ember-cli-notifications",
+                "nickschot/ember-mobile-menu",
+                "simplabs/ember-cookies",
+                "simplabs/ember-error-route",
+                "simplabs/ember-intl-analyzer",
+                "simplabs/ember-promise-modals",
+                "simplabs/ember-simple-auth",
+                "simplabs/qunit-dom",
+                "zeppelin/ember-click-outside"
+            ]
+        },
+        {
+            "name": "JavaScript",
+            "repos": [
+                "TelemetryDeck/JavaScriptSDK",
+                "commitizen/cz-conventional-changelog",
+                "mansona/lint-to-the-future",
+                "mansona/lint-to-the-future-eslint",
+                "oscard0m/npm-snapshot",
+                "remy/nodemon",
+                "storybookjs/eslint-plugin-storybook",
+                "storybookjs/storybook",
+                "strapi/strapi"
+            ]
+        },
+        {
+            "name": "simplabs's playbook",
+            "repos": [
+                "simplabs/playbook"
+            ]
+        },
+        {
+            "name": "Ruby",
+            "repos": [
+                "rubyforgood/Flaredown"
+            ]
+        }
+    ]
+}
