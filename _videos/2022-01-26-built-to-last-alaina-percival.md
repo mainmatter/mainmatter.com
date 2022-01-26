@@ -1,11 +1,11 @@
 ---
-videoUrl: https://www.youtube-nocookie.com/embed/21YpEGmR03s
+videoUrl: https://www.youtube-nocookie.com/embed/xglvd4evMfI
 kind: built-to-last
 label: 'Built to Last #13: Expert insights'
 title: Alaina Percival, CEO and Co-Founder of Women Who Code
 pageTitle: Expert insights
 moreText: more Expert insights
-image: /assets/images/resources/videos/2022-01-25-built-to-last-13-alaina-percival/alaina.jpg
+image: /assets/images/resources/videos/2022-01-26-built-to-last-13-alaina-percival/alaina.jpg
 duration: '19:37'
 teaser:
   Alaina talks about the importance of diversity in the workplace and women's
@@ -17,7 +17,7 @@ description:
   technical women in the world.
 
 og:
-  image: /assets/images/resources/videos/2022-01-25-built-to-last-13-alaina-percival/og-image.png
+  image: /assets/images/resources/videos/2022-01-26-built-to-last-13-alaina-percival/og-image.png
 ---
 
 simplabs' founder Marco Otte-Witte interviewed Alaina Percival, CEO and
