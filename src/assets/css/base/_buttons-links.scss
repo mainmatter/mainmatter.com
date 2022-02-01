@@ -20,6 +20,7 @@
     transform-origin: left center;
     transform: scaleX(0);
     transition: 0.3s all ease;
+    will-change: transform;
     z-index: 0;
   }
 
