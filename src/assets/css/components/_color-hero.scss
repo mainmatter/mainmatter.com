@@ -109,3 +109,14 @@
     -webkit-backdrop-filter: contrast(1.5) grayscale(1) opacity(0.4);
   }
 }
+
+@supports (-webkit-backdrop-filter: contrast(1)) {
+  .color-hero__image {
+    opacity: 1;
+  }
+
+  .color-hero__overlay {
+    backdrop-filter: contrast(1.5) grayscale(1) opacity(0.4);
+    -webkit-backdrop-filter: contrast(1.5) grayscale(1) opacity(0.4);
+  }
+}
