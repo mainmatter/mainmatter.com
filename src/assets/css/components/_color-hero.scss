@@ -115,5 +115,6 @@
 
   .color-hero__filter {
     backdrop-filter: contrast(0.4) brightness(1.7) grayscale(1);
+    -webkit-backdrop-filter: contrast(0.4) brightness(1.7) grayscale(1);
   }
 }
