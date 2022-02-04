@@ -1,5 +1,5 @@
 ---
-title: 'Making your dynamic Ember components work with Embroider today'
+title: 'Making your dynamic Ember components work with Embroider'
 author: 'Nick Schot'
 github: nickschot
 twitter: nickschot
@@ -153,13 +153,14 @@ documentation.
 
 In ember-promise-modals dynamic modal components are internally invoked with the
 component helper as follows:
-`{{component @modal._name data=@modal._data close=(action "close")}}`. The
-relevant bit for us here is the first argument `@modal._name` which is the name
-of the modal component, say `example-modal`.
 
-### `{{ensure-safe-component}}`
+```handlebars
+{{component @modal._name data=@modal._data close=(action 'close')}}
+```
 
-We can wrap this with the `ensure-safe-component` helper like this:
+The relevant bit for us here is the first argument `@modal._name` which is the
+name of the modal component, say `example-modal`. We can wrap this with the
+`ensure-safe-component` helper that Embroider provides like this:
 
 ```handlebars
 {{component
@@ -193,8 +194,10 @@ confirm() {
 If we were to start our app now (with `staticComponents: false`) we will get the
 following deprecation message.
 
-```shell
-DEPRECATION: You're trying to invoke the component "example-modal" by passing its name as a string. This won't work under Embroider. [deprecation id: ensure-safe-component.string] See https://github.com/embroider-build/embroider/blob/master/ADDON-AUTHOR-GUIDE.md#when-youre-passing-a-component-to-someone-else for more details.
+```
+DEPRECATION: You're trying to invoke the component "example-modal"
+ by passing its name as a string. This won't work under Embroider.
+[deprecation id: ensure-safe-component.string] See https://github.com/embroider-build/embroider/blob/master/ADDON-AUTHOR-GUIDE.md#when-youre-passing-a-component-to-someone-else for more details.
 ```
 
 We can update our app code to actually import the component class so that
