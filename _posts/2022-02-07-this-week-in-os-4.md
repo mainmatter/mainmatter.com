@@ -1,0 +1,202 @@
+---
+title: 'This week in Open Source at simplabs #4'
+author: 'simplabs'
+github: simplabs
+twitter: simplabs
+topic: open-source
+bio: 'The simplabs team'
+description:
+  'A collection of work that our engineers have been carrying out in open-source
+  in the past few weeks.'
+og:
+  image: /assets/images/posts/2022-02-07-this-week-in-os-4/og-image.png
+---
+
+Our software engineers are all active members of the open-source community and
+enjoy collaborating on various projects. In this blog post, we have collected
+some of the work they have done the past week!
+
+<!--break-->
+
+## Atom
+
+- [atom/atom] [#23540](https://github.com/atom/atom) Bump Electron Version
+  ([@mansona])
+- [atom/keyboard-layout] [#63](https://github.com/atom/keyboard-layout) Update
+  nan ([@mansona])
+- [mansona/fuzzy-native] [#1](https://github.com/mansona/fuzzy-native) move from
+  travis to github ci ([@mansona])
+- [mansona/keyboard-layout] [#1](https://github.com/mansona/keyboard-layout) Gyp
+  test ([@mansona])
+- [mansona/node-pathwatcher] [#1](https://github.com/mansona/node-pathwatcher)
+  Configure node-pre-gyp ([@mansona])
+
+## Ember.js
+
+- [Authmaker/authmaker-ember-simple-auth]
+  [#35](https://github.com/Authmaker/authmaker-ember-simple-auth) Fix
+  deprecations and support Ember 4.0 ([@mansona])
+- [Authmaker/authmaker-ember-simple-auth]
+  [#34](https://github.com/Authmaker/authmaker-ember-simple-auth) Breaking: drop
+  support for Ember < 3.16 and update with ember-cli-update ([@mansona])
+- [ember-cli/ember-cli] [#9778](https://github.com/ember-cli/ember-cli) Prune
+  lodash dependencies ([@locks])
+- [ember-cli/ember-cli] [#9769](https://github.com/ember-cli/ember-cli) Update
+  markdown-it to v12.3.2 to address vulnerabiliity ([@locks])
+- [ember-engines/ember-engines]
+  [#798](https://github.com/ember-engines/ember-engines) Ember 4 compatibility
+  ([@BobrImperator])
+- [ember-engines/ember-engines]
+  [#797](https://github.com/ember-engines/ember-engines) Update to ember qunit 5
+  ([@BobrImperator])
+- [ember-learn/deprecation-app]
+  [#1074](https://github.com/ember-learn/deprecation-app) Fix broken markdown
+  links due to formatting ([@locks])
+- [ember-learn/deprecation-app]
+  [#1069](https://github.com/ember-learn/deprecation-app) Improving doc for
+  deprecation "deprecated-run-loop-and-computed-dot-a… ([@locks])
+- [ember-learn/ember-api-docs]
+  [#791](https://github.com/ember-learn/ember-api-docs) Fix search ([@mansona])
+- [ember-learn/ember-blog] [#1096](https://github.com/ember-learn/ember-blog)
+  Update the-ember-times-issue-195.md ([@locks])
+- [ember-learn/ember-cli-addon-docs]
+  [#1108](https://github.com/ember-learn/ember-cli-addon-docs) Fix no implicit
+  this deprecation in docs-demo component ([@nickschot])
+- [ember-learn/ember-website]
+  [#891](https://github.com/ember-learn/ember-website) Fix team name ([@locks])
+- [ember-learn/handbook] [#60](https://github.com/ember-learn/handbook) Update
+  team leadership as agreed during meeting ([@locks])
+- [emberjs/core-notes] [#438](https://github.com/emberjs/core-notes) [learning]
+  February 3rd, 2022 ([@locks])
+- [emberjs/data] [#7855](https://github.com/emberjs/data) wip RFC 332 -
+  implement Record Links & Meta ([@mansona])
+- [nickschot/ember-mobile-menu]
+  [#239](https://github.com/nickschot/ember-mobile-menu) Upgrade to ember-cli
+  4.1 ([@nickschot])
+- [nickschot/ember-mobile-menu]
+  [#238](https://github.com/nickschot/ember-mobile-menu) Revert "Prevent
+  open/close from being triggered a huge amount of times when unnecessary"
+  ([@nickschot])
+- [simplabs/ember-hbs-minifier]
+  [#419](https://github.com/simplabs/ember-hbs-minifier) ember-try: Disable
+  Ember.js 4.x scenarios ([@Turbo87])
+- [simplabs/ember-hbs-minifier]
+  [#418](https://github.com/simplabs/ember-hbs-minifier) CI: Remove schedule
+  trigger ([@Turbo87])
+- [simplabs/ember-promise-modals]
+  [#526](https://github.com/simplabs/ember-promise-modals) Expose
+  `focusTrapOptions` ([@zeppelin])
+- [simplabs/ember-promise-modals]
+  [#533](https://github.com/simplabs/ember-promise-modals) Legacy: Downgrade
+  native class to Ember.Object ([@pichfl])
+- [simplabs/ember-promise-modals]
+  [#531](https://github.com/simplabs/ember-promise-modals) Update dependencies
+  ([@pichfl])
+- [simplabs/ember-promise-modals]
+  [#530](https://github.com/simplabs/ember-promise-modals) Internal: Extend and
+  apply prettier configuration ([@pichfl])
+- [simplabs/qunit-dom] [#1434](https://github.com/simplabs/qunit-dom) Revert
+  "Update embroider monorepo to v0.50.2 (minor)" ([@Turbo87])
+- [sir-dunxalot/ember-tooltips]
+  [#439](https://github.com/sir-dunxalot/ember-tooltips) Remove `assign()` usage
+  ([@Turbo87])
+
+## JavaScript
+
+- [mansona/lint-to-the-future]
+  [#18](https://github.com/mansona/lint-to-the-future) Update README.md
+  ([@locks])
+- [mansona/lint-to-the-future]
+  [#19](https://github.com/mansona/lint-to-the-future) Add tests & fix bug with
+  view files route ([@mansona])
+
+## Ruby
+
+- [HaughtCodeworks/cfp-app] [#238](https://github.com/HaughtCodeworks/cfp-app)
+  Update dependencies ([@locks])
+- [Project-NISEI/cobra] [#47](https://github.com/Project-NISEI/cobra) Improve CI
+  ([@locks])
+- [Project-NISEI/cobra] [#46](https://github.com/Project-NISEI/cobra) Remove
+  support for importing from TOME ([@locks])
+- [Project-NISEI/cobra] [#43](https://github.com/Project-NISEI/cobra) [WIP] Set
+  up CI workflow ([@locks])
+- [Project-NISEI/cobra] [#38](https://github.com/Project-NISEI/cobra) Upgrade
+  ruby 3 rails 7 ([@locks])
+- [tildeio/cfp-app] [#83](https://github.com/tildeio/cfp-app) Set up rack-attack
+  ([@locks])
+- [tildeio/cfp-app] [#82](https://github.com/tildeio/cfp-app) adjusted bundle
+  frozen configuration per deprecation warning ([@locks])
+- [tildeio/cfp-app] [#71](https://github.com/tildeio/cfp-app) Update
+  omniauth-github ([@locks])
+- [tildeio/cfp-app] [#68](https://github.com/tildeio/cfp-app)
+  Update-dependencies ([@locks])
+
+## Rust
+
+- [exercism/rust] [#1443](https://github.com/exercism/rust) chore(rust): use
+  capital letters for 'API' exercise ([@oscard0m])
+
+## crates.io
+
+- [rust-lang/crates.io] [#4514](https://github.com/rust-lang/crates.io) Ember:
+  Use `history` location API ([@Turbo87])
+- [rust-lang/crates.io] [#4507](https://github.com/rust-lang/crates.io) Fix
+  `keyword` route links ([@Turbo87])
+- [rust-lang/crates.io] [#4496](https://github.com/rust-lang/crates.io)
+  EncodableCrate: Simplify `from_minimal()` method ([@Turbo87])
+- [rust-lang/crates.io] [#4481](https://github.com/rust-lang/crates.io) keyword:
+  Show error page if data loading fails ([@Turbo87])
+- [rust-lang/crates.io] [#4480](https://github.com/rust-lang/crates.io)
+  category: Show error page if data loading fails ([@Turbo87])
+- [rust-lang/crates.io] [#4479](https://github.com/rust-lang/crates.io)
+  crate.version-dependencies: Show error page if data loading fails ([@Turbo87])
+- [rust-lang/crates.io] [#4477](https://github.com/rust-lang/crates.io) Adjust
+  error page titles ([@Turbo87])
+- [rust-lang/crates.io] [#4476](https://github.com/rust-lang/crates.io)
+  crate.range: Show error page if data fails to load ([@Turbo87])
+- [rust-lang/crates.io] [#4475](https://github.com/rust-lang/crates.io) Disable
+  `crypto` import warning in `axe-core` ([@Turbo87])
+- [rust-lang/crates.io] [#4474](https://github.com/rust-lang/crates.io) Remove
+  obsolete `ember-keyboard` options ([@Turbo87])
+
+[@bobrimperator]: https://github.com/BobrImperator
+[@turbo87]: https://github.com/Turbo87
+[@locks]: https://github.com/locks
+[@mansona]: https://github.com/mansona
+[@nickschot]: https://github.com/nickschot
+[@oscard0m]: https://github.com/oscard0m
+[@pichfl]: https://github.com/pichfl
+[@zeppelin]: https://github.com/zeppelin
+[authmaker/authmaker-ember-simple-auth]:
+  https://github.com/Authmaker/authmaker-ember-simple-auth
+[haughtcodeworks/cfp-app]: https://github.com/HaughtCodeworks/cfp-app
+[project-nisei/cobra]: https://github.com/Project-NISEI/cobra
+[atom/atom]: https://github.com/atom/atom
+[atom/keyboard-layout]: https://github.com/atom/keyboard-layout
+[ember-cli/ember-cli]: https://github.com/ember-cli/ember-cli
+[ember-engines/ember-engines]: https://github.com/ember-engines/ember-engines
+[ember-learn/deprecation-app]: https://github.com/ember-learn/deprecation-app
+[ember-learn/ember-api-docs]: https://github.com/ember-learn/ember-api-docs
+[ember-learn/ember-blog]: https://github.com/ember-learn/ember-blog
+[ember-learn/ember-cli-addon-docs]:
+  https://github.com/ember-learn/ember-cli-addon-docs
+[ember-learn/ember-website]: https://github.com/ember-learn/ember-website
+[ember-learn/handbook]: https://github.com/ember-learn/handbook
+[emberjs/core-notes]: https://github.com/emberjs/core-notes
+[emberjs/data]: https://github.com/emberjs/data
+[exercism/rust]: https://github.com/exercism/rust
+[mansona/fuzzy-native]: https://github.com/mansona/fuzzy-native
+[mansona/keyboard-layout]: https://github.com/mansona/keyboard-layout
+[mansona/lint-to-the-future]: https://github.com/mansona/lint-to-the-future
+[mansona/node-pathwatcher]: https://github.com/mansona/node-pathwatcher
+[nickschot/ember-mobile-menu]: https://github.com/nickschot/ember-mobile-menu
+[oscard0m/web]: https://github.com/oscard0m/web
+[rust-lang/crates.io]: https://github.com/rust-lang/crates.io
+[simplabs/ember-hbs-minifier]: https://github.com/simplabs/ember-hbs-minifier
+[simplabs/ember-promise-modals]:
+  https://github.com/simplabs/ember-promise-modals
+[simplabs/qunit-dom]: https://github.com/simplabs/qunit-dom
+[simplabs/simplabs.github.io]: https://github.com/simplabs/simplabs.github.io
+[sir-dunxalot/ember-tooltips]: https://github.com/sir-dunxalot/ember-tooltips
+[tildeio/cfp-app]: https://github.com/tildeio/cfp-app
+[contact]: https://simplabs.com/contact/
