@@ -7,7 +7,7 @@ topic: insidesimplabs
 bio: 'Marketing Assistant'
 description: 'Interview with Inês Silva, Junior Software-Engineer at simplabs.'
 og:
-  image: /assets/images/posts/2022-02-09-inside-simplabs-ines-silva/og-image.png
+  image: /assets/images/posts/2022-02-14-inside-simplabs-ines-silva/og-image.png
 ---
 
 In the fifth episode of Inside simplabs, Emma Dell'Acqua, Marketing Assistant,
