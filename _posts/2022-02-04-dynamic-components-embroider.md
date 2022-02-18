@@ -12,8 +12,9 @@ og:
 [Embroider] is the future for building Ember apps. It unlocks features like
 splitting code per route by statically analyzing your codebase and dependencies.
 But what if you are using an addon that relies on dynamic components? This blog
-post will outline how we converted ember-promise-modals to be compatible with
-Embroider's route-splitting feature.
+post will outline how we converted [ember-promise-modals] to be compatible with
+Embroider's route-splitting feature. [ember-promise-modals] is an Ember addon
+that allows you to dynamically render modals from your javascript code.
 
 [embroider]: https://github.com/embroider-build/embroider
 [ember-promise-modals]: https://github.com/simplabs/ember-promise-modals
