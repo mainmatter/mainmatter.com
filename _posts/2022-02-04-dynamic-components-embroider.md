@@ -13,7 +13,7 @@ og:
 splitting code per route by statically analyzing your codebase and dependencies.
 But what if you are using an addon that relies on dynamic components? This blog
 post will outline how we converted ember-promise-modals to be compatible with
-Embroider's routes-plitting feature.
+Embroider's route-splitting feature.
 
 [embroider]: https://github.com/embroider-build/embroider
 [ember-promise-modals]: https://github.com/simplabs/ember-promise-modals
@@ -28,8 +28,8 @@ Dynamic components are components resolved at run-time rather than hardcoding
 the component to use. Ember provides a component helper which takes an argument
 that is the dasherized string representation of the component path:
 `{{component "my-component"}}` or `{{component "folder/another-component"}}`.
-This is great for addons like ember-promise-modals as it allows us to, in this
-case, open a modal from javascript.
+This is great for addons like ember-promise-modals as in this case it allows us
+to open a modal from javascript.
 
 ```javascript
 @service modals;
@@ -50,7 +50,7 @@ provide the route-splitting feature, which is not guaranteed with the component
 helper syntax. Hypothetically one could receive the component name from an API
 call, meaning there is no way to know this at build time.
 
-Fortunately Embroider provides a few tools for us to make this work.
+Fortunately, Embroider provides a few tools for us to make this work.
 
 ## Making old addons work in your Embroider Optimized app using `packageRules`
 
@@ -64,7 +64,7 @@ Now let's see if we can make ember-promise-modals <= 2 work with Embroider
 through `packageRules`.
 
 If you have created an Embroider enabled app (for example through
-`ember new my-app --embroider) your `ember-cli-build.js` file will contain a
+`ember new my-app --embroider`) your `ember-cli-build.js` file will contain a
 section that looks like this:
 
 ```javascript
@@ -79,9 +79,8 @@ return require('@embroider/compat').compatBuild(app, Webpack, {
 ```
 
 In order to be able to use route-splitting, we'll first have to enable all of
-Embroider's flags to ensure it will work. Normally you would do this one by one,
-but in this case the only problem we're going to run into is with the
-`staticComponents` flag.
+Embroider's flags. Normally you would do this one by one, but in this case the
+only problem we're going to run into is with the `staticComponents` flag.
 
 ```javascript
 const { Webpack } = require('@embroider/webpack');
@@ -136,20 +135,19 @@ modal will work. An unfortunate side-effect of this setup is that it will not
 result in the `<ExampleModal/>` component being split from the main bundle if
 you enable route splitting. In order to get that working we'll have to dig a
 little deeper, but the `packageRules` approach is a good way to unblock a
-project from using a fully enabled Embroider with addons that do not yet have
-full Embroider support.
+project from using a fully enabled Embroider with addons that do not have full
+Embroider support.
 
 ## Updating your addon or dynamically invoked components to be Embroider Optimized
 
-In order to let Embroider know how to handle our dynamic modal component we need
-to use the `ensure-safe-component` helper that Embroider provides. This helper
-will turn a component class into a component definition that can be invoked in
-the template. If just the name of a component is passed it will use the old
-curly component resolver to get the component definition but also throw a
-deprecation warning that you'll need to pass the component class when using
-Embroider. For comprehensive documentation see the
+In order to let Embroider know how to handle our dynamic modal component, we
+need to use the `ensure-safe-component` helper that Embroider provides. This
+helper will turn a component class into a component definition that can be
+invoked in the template. If just the name of a component is passed, it will use
+the old curly component resolver to get the component definition, but also throw
+a deprecation warning that you'll need to pass the component class when using
+Embroider. For comprehensive documentation see:
 [Replacing the Component Helper](https://github.com/embroider-build/embroider/blob/5fd49b50dd82bf7ceb6adeefa12efc2b85f92cd2/REPLACING-COMPONENT-HELPER.md)
-documentation.
 
 In ember-promise-modals dynamic modal components are internally invoked with the
 component helper as follows:
@@ -191,8 +189,8 @@ confirm() {
 }
 ```
 
-If we were to start our app now (with `staticComponents: false`) we will get the
-following deprecation message.
+If we were to start our app now (with `staticComponents: false`), we would get
+the following deprecation message:
 
 ```
 DEPRECATION: You're trying to invoke the component "example-modal"
@@ -202,7 +200,7 @@ DEPRECATION: You're trying to invoke the component "example-modal"
 
 We can update our app code to actually import the component class so that
 Embroider can statically resolve this component. This will also make the
-deprecation message go away. Note that this will _only_ work for co-located
+deprecation message disappear. Note that this will _only_ work for co-located
 components or classic components that explicitly have their template definition
 set on the component class using `layout`.
 
@@ -221,7 +219,7 @@ confirm() {
 
 After re-enabling `staticComponents: true`, the last thing we need to do is
 enable route splitting in our app. This can be done by modifying the `router.js`
-file to use `@embroider/router`.
+file to use `@embroider/router`...
 
 ```javascript
 // app/router.js
@@ -237,9 +235,9 @@ export default class Router extends EmberRouter {
 Router.map(function () {});
 ```
 
-And by configuring the `splitAtRoutes` feature in `ember-cli-build.js`. We can
-do this by adding the route names you want to split or by providing a regex. Our
-full configuration will now look like:
+...and by configuring the `splitAtRoutes` feature in `ember-cli-build.js`. We
+can do this by adding the route names we want to split or by providing a regex.
+Our full configuration will now look like this:
 
 ```javascript
 const { Webpack } = require('@embroider/webpack');
@@ -257,9 +255,9 @@ return require('@embroider/compat').compatBuild(app, Webpack, {
 });
 ```
 
-If we now start our Embroider enabled app we will see that our `<ExampleModal/>`
-component is in a separate javascript chunk which is dynamically loaded when the
-route where it is invoked is opened by the user.
+If we now start our Embroider enabled app, we will see that our
+`<ExampleModal/>` component is in a separate javascript chunk which is
+dynamically loaded when the route where it is invoked is opened by the user.
 
 ## Conclusion
 
