@@ -65,6 +65,34 @@
       {{/each}}
     </section>
   {{/if}}
+  {{#if workshops}}
+    <section layout:class="main" offset:class="after-21">
+      <h2>
+        Workshops
+      </h2>
+      {{#each workshops}}
+        <div media:scope offset:class="after-12">
+          <img media:class="item" size:class="w-10" src="{{meta.image}}" alt="" />
+          <div media:class="body">
+            <h3>
+              {{meta.title}}
+            </h3>
+            <p>
+              {{meta.date}}
+              ,
+              {{meta.location}}
+            </p>
+            {{#if content}}
+              {{{content}}}
+            {{/if}}
+            <ArrowLink @href="{{meta.url}}">
+              View Website
+            </ArrowLink>
+          </div>
+        </div>
+      {{/each}}
+    </section>
+  {{/if}}
   <aside layout:class="side">
     <Card @label="Connect" @title="@simplabs on Twitter">
       <p>
