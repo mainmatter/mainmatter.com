@@ -1,6 +1,6 @@
 ---
 title: 'Rust Workshop for beginners'
-image: '/assets/images/calendar/2022-05-10-rust-workshop/visual-rust-1.png'
+image: '/assets/images/calendar/2022-05-10-rust-workshop/logo.png'
 location: Remote
 url: https://ti.to/simplabs/rust-workshop-for-beginners-may-2022/with/rust-workshop-for-beginners
 kind: workshop
