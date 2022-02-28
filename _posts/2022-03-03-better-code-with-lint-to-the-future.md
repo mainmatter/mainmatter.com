@@ -32,4 +32,4 @@ In this video, I'll demonstrate how to make use of lint-to-the-future’s
 command-line tool to help you enable a new lint rule while overcoming the
 problem of "lint rule explosion".
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=bsDFXjDKjPc" title="Embedded video of the introduction to lint-to-the-future" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/watch?v=bsDFXjDKjPc" title="Embedded video of the introduction to lint-to-the-future" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
