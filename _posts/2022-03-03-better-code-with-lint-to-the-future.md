@@ -14,9 +14,9 @@ og:
 ---
 
 Have you ever wanted to add a new lint rule to your project but didn’t have time
-to fix a thousand files at once just to get your ci passing again? In this blog
-post, I’m going to show you a nifty new project called lint-to-the-future, that
-is going to make that process a breeze.
+to fix a thousand files at once just to get your ci passing again? In this post,
+I’m going to show you a nifty new project called lint-to-the-future, that is
+going to make that process a breeze.
 
 <!--break-->
 
