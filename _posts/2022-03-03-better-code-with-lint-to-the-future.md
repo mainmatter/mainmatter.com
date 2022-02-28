@@ -28,7 +28,7 @@ tool to replace eslint or any of your linting tools, but rather a handy helper
 that integrates with your existing workflow to help you progressively update
 large codebases.
 
-In this video, I'll demonstrate how to make use of lint-to-the-future’s
+In the following video, I'll demonstrate how to make use of lint-to-the-future’s
 command-line tool to help you enable a new lint rule while overcoming the
 problem of "lint rule explosion".
 
