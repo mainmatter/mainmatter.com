@@ -9,6 +9,6 @@ kind: meetup
 We're kicking off our new Ember Europe meetup series at Phorest in Dublin and
 remotely via Zoom on March 31st!
 
-The Europe Ember.js meetup brings together the Ember community from all of
-Europe once a quarter. The meetup is organized as a hybrid event, hosted from a
-different city each time with the option for people to join remotely as well.
+The Europe Ember.js meetup brings together the European Ember community once a
+quarter. The meetup is organized as a hybrid event, hosted from a different city
+each time with the option for people to join remotely as well.
