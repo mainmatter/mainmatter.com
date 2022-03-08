@@ -74,16 +74,6 @@ some of the work they have done the past week!
 - [jelhan/ember-cli-browser-navigation-button-test-helpers]
   [#33](https://github.com/jelhan/ember-cli-browser-navigation-button-test-helpers/pull/33)
   Remove ember-router-service-polyfill ([@zeppelin])
-- [mansona/ember-paper] [#3](https://github.com/mansona/ember-paper/pull/3) Lttf
-  dashboard ([@mansona])
-- [mansona/ember-paper] [#2](https://github.com/mansona/ember-paper/pull/2) Add
-  lint-to-the-future and run lint-to-the-future ignore ([@mansona])
-- [mansona/ember-paper] [#1](https://github.com/mansona/ember-paper/pull/1) move
-  from travis to github actions ([@mansona])
-- [mansona/rfcs] [#3](https://github.com/mansona/rfcs/pull/3) set mansona helper
-  as ready for release ([@mansona])
-- [mansona/rfcs] [#1](https://github.com/mansona/rfcs/pull/1) Propose mansona
-  helper ([@mansona])
 - [miguelcobain/ember-paper]
   [#1217](https://github.com/miguelcobain/ember-paper/pull/1217) remove Ember
   3.28 from ember-try scenarios ([@mansona])
