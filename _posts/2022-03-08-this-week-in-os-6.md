@@ -115,8 +115,6 @@ some of the work they have done the past week!
 [empress/rfc-process]: https://github.com/empress/rfc-process
 [jelhan/ember-cli-browser-navigation-button-test-helpers]:
   https://github.com/jelhan/ember-cli-browser-navigation-button-test-helpers
-[mansona/ember-paper]: https://github.com/mansona/ember-paper
-[mansona/rfcs]: https://github.com/mansona/rfcs
 [miguelcobain/ember-paper]: https://github.com/miguelcobain/ember-paper
 [octokit/core.js]: https://github.com/octokit/core.js
 [octokit/octokit.js]: https://github.com/octokit/octokit.js
