@@ -94,16 +94,6 @@ some of the work they have done the past week!
   [#1212](https://github.com/miguelcobain/ember-paper/pull/1212) Move from
   travis to github actions ([@mansona])
 
-## JavaScript
-
-- [octokit/plugin-throttling.js]
-  [#459](https://github.com/octokit/plugin-throttling.js/pull/459) feat(log):
-  use 'octokit.log.warn' instead of 'console.warn' ([@oscard0m])
-- [octokit/plugin-throttling.js]
-  [#458](https://github.com/octokit/plugin-throttling.js/pull/458)
-  feat(secondary-limit): replace 'abuse-limit' logic with 'secondary-limit'
-  ([@oscard0m])
-
 ## Octokit
 
 - [octokit/core.js] [#450](https://github.com/octokit/core.js/pull/450)
@@ -115,6 +105,13 @@ some of the work they have done the past week!
   docs(contributing): refer to all octokit projects ([@oscard0m])
 - [octokit/webhooks.js] [#673](https://github.com/octokit/webhooks.js/pull/673)
   docs(README): update PR ([@oscard0m])
+- [octokit/plugin-throttling.js]
+  [#459](https://github.com/octokit/plugin-throttling.js/pull/459) feat(log):
+  use 'octokit.log.warn' instead of 'console.warn' ([@oscard0m])
+- [octokit/plugin-throttling.js]
+  [#458](https://github.com/octokit/plugin-throttling.js/pull/458)
+  feat(secondary-limit): replace 'abuse-limit' logic with 'secondary-limit'
+  ([@oscard0m])
 
 [@locks]: https://github.com/locks
 [@mansona]: https://github.com/mansona
