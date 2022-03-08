@@ -39,7 +39,7 @@
     "@glimmer/resolver": "^0.4.3",
     "@glimmer/ssr": "^0.13.0",
     "@glimmer/test-helpers": "^0.31.1",
-    "@lhci/cli": "^0.8.2",
+    "@lhci/cli": "^0.9.0",
     "@percy/script": "^1.1.0",
     "@types/navigo": "^7.0.1",
     "@types/qunit": "^2.11.3",
