@@ -46,10 +46,12 @@ modals.
 
 ## Then what is the problem?
 
-Embroider needs to be able to statically resolve components at build time to
-provide the route-splitting feature, which is not guaranteed with the component
-helper syntax. Hypothetically one could receive the component name from an API
-call, meaning there is no way to know this at build time.
+In order to make Embroider's route-splitting feature, which enables per-route
+optimized bundles with ideally only the components required for that route,
+Embroider needs to be able to statically resolve components at build time. This
+is not guaranteed with the component helper syntax. Hypothetically one could
+receive the component name from an API call, meaning there is no way to know
+this at build time.
 
 Fortunately, Embroider provides a few tools for us to make this work.
 
@@ -105,11 +107,12 @@ compilation error.
 Unsafe dynamic component: @modal._name in node_modules/ember-promise-modals/templates/components/modal.hbs
 ```
 
-Let's add a `packageRules` section for the `EpmModal` component. This component
-takes a `@modal` argument which is an object that also contains the `_name`
-property as shown in the error that Embroider threw. We can tell Embroider that
-this argument represents a component name. The layout of the component also
-needs to be explicitly passed.
+This means Embroider detected a call to the component helper with a variable
+`@modal._name`. To try and resolve this, let's add a `packageRules` section for
+the `EpmModal` component. This component takes a `@modal` argument which is an
+object that also contains the `_name` property as shown in the error that
+Embroider threw. We can tell Embroider that this argument represents a component
+name. The layout of the component also needs to be explicitly passed.
 
 ```javascript
 const { Webpack } = require('@embroider/webpack');
@@ -134,7 +137,7 @@ return require('@embroider/compat').compatBuild(app, Webpack, {
 If we now run the app Embroider will no longer throw build-time errors and our
 modal will work. An unfortunate side-effect of this setup is that it will not
 result in the `<ExampleModal/>` component being split from the main bundle if
-you enable route splitting. In order to get that working we'll have to dig a
+you enable route-splitting. In order to get that working we'll have to dig a
 little deeper, but the `packageRules` approach is a good way to unblock a
 project from using a fully enabled Embroider with addons that do not have full
 Embroider support.
@@ -219,7 +222,7 @@ confirm() {
 ```
 
 After re-enabling `staticComponents: true`, the last thing we need to do is
-enable route splitting in our app. This can be done by modifying the `router.js`
+enable route-splitting in our app. This can be done by modifying the `router.js`
 file to use `@embroider/router`...
 
 ```javascript
@@ -266,6 +269,6 @@ Even if you're still using addons that are not fully Embroider compatible, you
 might still be able to make them work by utilizing the `packageRules`
 configuration option. For properly updating an addon that requires dynamic
 components we can use `ensureSafeComponent` to make them compatible with
-Embroider and unlock the route splitting feature.
+Embroider and unlock the route-splitting feature.
 
 [contact]: https://simplabs.com/contact/
