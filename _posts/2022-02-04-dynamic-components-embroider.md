@@ -6,7 +6,7 @@ twitter: nickschot
 topic: javascript
 bio: 'Senior Software Engineer'
 og:
-  image: /assets/images/posts/2021-01-29-web-animations-intro/og-image.png
+  image: /assets/images/posts/2022-02-04-dynamic-components-embroider/og-image.png
 ---
 
 [Embroider] is the future for building Ember apps. It unlocks features like
@@ -21,7 +21,7 @@ that allows you to dynamically render modals from your javascript code.
 
 <!--break-->
 
-![Making your dynamic Ember components work with Embroider today](/assets/images/posts/2021-01-29-web-animations-intro/illustration.svg#full)
+![Making your dynamic Ember components work with Embroider today](/assets/images/posts/2022-02-04-dynamic-components-embroider/illustration.svg#full)
 
 ## What are dynamic components?
 
