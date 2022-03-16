@@ -2,7 +2,7 @@
 title: "Understanding the designers' interview process"
 image: '/assets/images/calendar/2022-03-22-design-hiring-workshop/logo.png'
 location: Berlin
-url:
+url: https://www.linkedin.com/posts/lindaguerrisi_designhiring-designhiringmanagers-recruiters-activity-6909440830478921729-kW1e
 kind: workshop
 ---
 
