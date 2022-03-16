@@ -2,7 +2,6 @@
 title: "Understanding the designers' interview process"
 image: '/assets/images/calendar/2022-03-22-design-hiring-workshop/logo.png'
 location: Berlin
-url:
 kind: workshop
 ---
 
