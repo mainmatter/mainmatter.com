@@ -3,10 +3,11 @@ title: 'Making your dynamic Ember components work with Embroider'
 author: 'Nick Schot'
 github: nickschot
 twitter: nickschot
-topic: javascript
+topic: ember
 bio: 'Senior Software Engineer'
 og:
   image: /assets/images/posts/2022-02-04-dynamic-components-embroider/og-image.png
+description: Nick Schot explains how to make dynamic component invocation work with Embroider's static analysis.
 ---
 
 [Embroider] is the future for building Ember apps. It unlocks features like
