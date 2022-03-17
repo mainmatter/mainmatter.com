@@ -6,7 +6,7 @@ twitter: nickschot
 topic: ember
 bio: 'Senior Software Engineer'
 og:
-  image: /assets/images/posts/2022-02-04-dynamic-components-embroider/og-image.png
+  image: /assets/images/posts/2022-03-17-dynamic-components-embroider/og-image.png
 description:
   Nick Schot explains how to make dynamic component invocation work with
   Embroider's static analysis.
@@ -24,7 +24,7 @@ that allows you to dynamically render modals from your javascript code.
 
 <!--break-->
 
-![Making your dynamic Ember components work with Embroider today](/assets/images/posts/2022-02-04-dynamic-components-embroider/illustration.svg#full)
+![Making your dynamic Ember components work with Embroider today](/assets/images/posts/2022-03-17-dynamic-components-embroider/illustration.svg#full)
 
 ## What are dynamic components?
 
