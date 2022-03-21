@@ -32,6 +32,7 @@ some of the work they have done the past weeks!
 - [octokit/core.js] [#454](https://github.com/octokit/core.js/pull/454) build(npm): replace 'pika' command with 'pika-pack' ([@oscard0m])
 - [octokit/plugin-retry.js] [#303](https://github.com/octokit/plugin-retry.js/pull/303) build(package.json): add @octokit/core as peerDependency ([@oscard0m])
 
+
 ## TypeScript
 
 - [mswjs/msw] [#1170](https://github.com/mswjs/msw/pull/1170) ci(workflows): upgrade actions/checkout and actions/setup-node to v3 ([@oscard0m])
