@@ -1,5 +1,5 @@
 ---
-title: 'This week in Open Source at simplabs #6'
+title: 'This week in Open Source at simplabs #7'
 author: 'simplabs'
 github: simplabs
 twitter: simplabs
