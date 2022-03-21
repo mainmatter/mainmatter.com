@@ -34,7 +34,8 @@
             "repos": [
                 "Turbo87/aprs-parser-rs",
                 "hyperium/http",
-                "rust-lang/cargo"
+                "rust-lang/cargo",
+                "rust-lang/rust-by-example"
             ]
         },
         {
@@ -111,7 +112,14 @@
                 "octokit/plugin-throttling.js",
                 "octokit/core.js",
                 "octokit/octokit.js",
-                "octokit/webhooks.js"
+                "octokit/webhooks.js",
+                "octokit/plugin-retry.js"
+            ]
+        },
+        {
+            "name": "TypeScript",
+            "repos": [
+                "mswjs/msw"
             ]
         },
         {
