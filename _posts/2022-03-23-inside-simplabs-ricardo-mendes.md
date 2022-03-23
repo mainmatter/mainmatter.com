@@ -11,7 +11,7 @@ og:
   image: /assets/images/posts/2022-03-23-inside-simplabs-ricardo-mendes/og-image.png
 ---
 
-In the fifth episode of Inside simplabs, Emma Dell'Acqua, Marketing Assistant,
+In the sixth episode of Inside simplabs, Emma Dell'Acqua, Marketing Assistant,
 interviews Ricardo Mendes, Senior Frontend Developer at simplabs.
 
 <!--break-->
