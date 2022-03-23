@@ -20,7 +20,7 @@ interviews Ricardo Mendes, Senior Frontend Developer at simplabs.
 
 Ricardo talks about the challenges and perks of joining a fully remote company.
 They share how curiosity helped them become successful in their work field, and
-also list a few people from different opensource communities that have been
+also list a few people from different open source communities that have been
 inspiring them through the years.
 
 Ricardo is very active in open source, but when they are not busy working on
