@@ -8,6 +8,8 @@ bio: 'Senior Software Engineer'
 description:
   'Michael Kerr gives a quick introduction into code mods in JavaScript and how
   to create your own.'
+og:
+  image: /assets/images/posts/2022-02-05-getting-started-with-code-mods/og-image.png
 ---
 
 With the ever-changing landscape in web development, code is forever needing to
