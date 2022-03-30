@@ -8,4 +8,4 @@ media: video
 Ember Octane’s tracking system makes it easier to integrate libraries from the
 wider JavaScript ecosystem in Ember apps. Bartłomiej Dudzik explained how to
 leverage other packages for validating data than ember-cp-validations or
-ember-changeset at EmberFest 2021.
+ember-changeset.
