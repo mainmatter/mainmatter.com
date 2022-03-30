@@ -9,7 +9,7 @@ description:
   'Michael Kerr gives a quick introduction into code mods in JavaScript and how
   to create your own.'
 og:
-  image: /assets/images/posts/2022-02-05-getting-started-with-code-mods/og-image.png
+  image: /assets/images/posts/2022-03-30-getting-started-with-code-mods/og-image.png
 ---
 
 With the ever-changing landscape in web development, code is forever needing to
@@ -22,6 +22,8 @@ and compiler) in order to identify a pattern and then update the code to a new
 one.
 
 <!--break-->
+
+![Code mods in JavaScript and how to get started creating your own](/assets/images/posts/2022-03-30-getting-started-with-code-mods/illustration.svg#full)
 
 For example updating the following code sample from concatenating with the `+`
 operator to using a template literal.
