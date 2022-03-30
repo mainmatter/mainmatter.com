@@ -139,7 +139,7 @@ Our first step is to add the correct identifier parameter for the find function.
 The easiest way to do this is to use [astexplorer.net](https://astexplorer.net/)
 which can show you code broken down into an abstract syntax tree or AST.
 
-![AST Explorer](/assets/images/posts/2022-02-05-getting-started-with-code-mods/astExplorer.png)
+![AST Explorer](/assets/images/posts/2022-03-30-getting-started-with-code-mods/astExplorer.png)
 
 With the autofocus check box enabled, it will highlight the tree and the code to
 help show you what node is what. Using this we can see that `'Hello, ' + name;`
@@ -168,7 +168,7 @@ return a `TemplateLiteral` node from the `replaceWith` function. As we are using
 the babel parser, we can use https://babeljs.io/docs/en/babel-types to help us
 work out what we need to create a `TemplateLiteral`.
 
-![TemplateLiteral Documentation](/assets/images/posts/2022-02-05-getting-started-with-code-mods/templateLiteral.png)
+![TemplateLiteral Documentation](/assets/images/posts/2022-03-30-getting-started-with-code-mods/templateLiteral.png)
 
 `TemplateLiteral`s require an array of `TemplateElement`s, which will be the
 strings and an array of expressions being the variables. So for now we can
@@ -245,7 +245,7 @@ module.exports.type = 'js';
 
 Now let's run our test case to see if it passes.
 
-![Test success screenshot](/assets/images/posts/2022-02-05-getting-started-with-code-mods/test-success-screenshot.png)
+![Test success screenshot](/assets/images/posts/2022-03-30-getting-started-with-code-mods/test-success-screenshot.png)
 
 _Note: `is idempotent` is a test added by codemod-cli to check that rerunning
 the code mod will always give the same result_
