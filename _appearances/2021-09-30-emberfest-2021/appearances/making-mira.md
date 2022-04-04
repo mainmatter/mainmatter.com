@@ -6,6 +6,5 @@ media: video
 ---
 
 Mira is a robot created by Pixar artist Alonso Martinez, capable of recreating a
-great number of emotions and interactions. In his talk,
-Nick Schot brings Mira to the web while explaining different animation
-techniques.
+great number of emotions and interactions. In his talk, Nick Schot brings Mira
+to the web while explaining different animation techniques.
