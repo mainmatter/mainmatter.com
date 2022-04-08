@@ -87,7 +87,8 @@
                 "empress/rfc-process-mdbook-template",
                 "empress/rfc-process",
                 "jelhan/ember-cli-browser-navigation-button-test-helpers",
-                "miguelcobain/ember-paper"
+                "miguelcobain/ember-paper",
+                "GavinJoyce/ember-headlessui"
             ]
         },
         {
@@ -103,7 +104,8 @@
                 "storybookjs/storybook",
                 "strapi/strapi",
                 "mansona/express-autoroute-json",
-                "mansona/express-autoroute-json"
+                "mansona/express-autoroute-json",
+                "yaacov/node-modbus-serial"
             ]
         },
         {
@@ -113,7 +115,8 @@
                 "octokit/core.js",
                 "octokit/octokit.js",
                 "octokit/webhooks.js",
-                "octokit/plugin-retry.js"
+                "octokit/plugin-retry.js",
+                "octokit/plugin-rest-endpoint-methods.js"
             ]
         },
         {
