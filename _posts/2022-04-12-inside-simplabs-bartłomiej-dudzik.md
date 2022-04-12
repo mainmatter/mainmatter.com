@@ -5,8 +5,7 @@ github: emma_dellacqua
 twitter: emma_dellacqua
 topic: insidesimplabs
 bio: 'Marketing Assistant'
-description:
-  'Interview with Bartłomiej Dudzik, Software Developer at simplabs.'
+description: 'Interview with Bartłomiej Dudzik, Software Developer at simplabs.'
 og:
   image: /assets/images/posts/2022-04-12-inside-simplabs-bartłomiej-dudzik/og-image.png
 ---
