@@ -15,7 +15,7 @@ interviews Bartłomiej Dudzik, Software Developer at simplabs.
 
 <!--break-->
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ds-JJvQ36Rc" title="Embedded video of Inside simplabs episode 7" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QXhu5MlyfUQ" title="Embedded video of Inside simplabs episode 7" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Bart shares his perspective on being a developer, explaining how perseverance
 and curiosity helped him improve his code-writing skills.
