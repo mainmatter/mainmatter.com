@@ -88,7 +88,10 @@
                 "empress/rfc-process",
                 "jelhan/ember-cli-browser-navigation-button-test-helpers",
                 "miguelcobain/ember-paper",
-                "GavinJoyce/ember-headlessui"
+                "GavinJoyce/ember-headlessui",
+                "qonto/ember-cp-validations",
+                "mansona/ember-get-config",
+                "simplabs/ember-workshop"
             ]
         },
         {
@@ -116,7 +119,8 @@
                 "octokit/octokit.js",
                 "octokit/webhooks.js",
                 "octokit/plugin-retry.js",
-                "octokit/plugin-rest-endpoint-methods.js"
+                "octokit/plugin-rest-endpoint-methods.js",
+                "octokit/auth-token.js"
             ]
         },
         {
