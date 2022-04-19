@@ -108,7 +108,8 @@
                 "strapi/strapi",
                 "mansona/express-autoroute-json",
                 "mansona/express-autoroute-json",
-                "yaacov/node-modbus-serial"
+                "yaacov/node-modbus-serial",
+                "actions/setup-python"
             ]
         },
         {
