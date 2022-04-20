@@ -141,6 +141,12 @@
             "repos": [
                 "rubyforgood/Flaredown"
             ]
+        },
+        {
+            "name": "Miscellaneous",
+            "repos": [
+                "netlify/build-image"
+            ]
         }
     ]
 }

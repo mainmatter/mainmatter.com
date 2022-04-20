@@ -111,7 +111,7 @@ some of the work they have done the past weeks!
   [#217](https://github.com/octokit/auth-token.js/pull/217) ci(codeql): ignore
   on push events for dependabot branches ([@oscard0m])
 
-## Unknown
+## Miscellaneous
 
 - [netlify/build-image] [#778](https://github.com/netlify/build-image/pull/778)
   add webm to the default fetchinclude ([@mansona])
