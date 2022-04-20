@@ -88,7 +88,10 @@
                 "empress/rfc-process",
                 "jelhan/ember-cli-browser-navigation-button-test-helpers",
                 "miguelcobain/ember-paper",
-                "GavinJoyce/ember-headlessui"
+                "GavinJoyce/ember-headlessui",
+                "qonto/ember-cp-validations",
+                "mansona/ember-get-config",
+                "simplabs/ember-workshop"
             ]
         },
         {
@@ -105,7 +108,8 @@
                 "strapi/strapi",
                 "mansona/express-autoroute-json",
                 "mansona/express-autoroute-json",
-                "yaacov/node-modbus-serial"
+                "yaacov/node-modbus-serial",
+                "actions/setup-python"
             ]
         },
         {
@@ -116,7 +120,8 @@
                 "octokit/octokit.js",
                 "octokit/webhooks.js",
                 "octokit/plugin-retry.js",
-                "octokit/plugin-rest-endpoint-methods.js"
+                "octokit/plugin-rest-endpoint-methods.js",
+                "octokit/auth-token.js"
             ]
         },
         {
@@ -135,6 +140,12 @@
             "name": "Ruby",
             "repos": [
                 "rubyforgood/Flaredown"
+            ]
+        },
+        {
+            "name": "Miscellaneous",
+            "repos": [
+                "netlify/build-image"
             ]
         }
     ]
