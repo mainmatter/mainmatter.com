@@ -17,7 +17,7 @@ using [Puppeteer](https://pptr.dev).
 
 ## Running / Development
 
-- `yarn start`
+- `yarn start-dev`
 - open [http://localhost:4200](http://localhost:4200).
 - `yarn format` (format source files)
 
