@@ -43,6 +43,16 @@ Chrome Inspector to do so.**
 - [CSS Blocks](https://css-blocks.com)
 - [Puppeteer](https://pptr.dev)
 
+## Troubleshooting
+
+ <details>
+  <summary><code>yarn start-dev</code> fails in my local machine due to too many open files to watch</summary>
+  
+  You need to increase the max open files limit in your Operating System: https://wilsonmar.github.io/maximum-limits/
+  
+  <a href="https://wilsonmar.github.io/maximum-limits/">More details here</a>
+</details>
+
 ## Copyright
 
 Copyright &copy; 2019 simplabs GmbH (https://simplabs.com), released under the
