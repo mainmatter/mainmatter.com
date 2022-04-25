@@ -1,6 +1,6 @@
 ---
 title: 'Lint your code into the future'
-image: 'assets/images/talks/2022-04-19-emberconf-2022/lint-your-code-into-the-future.jpeg'
+image: '/assets/images/talks/2022-04-19-emberconf-2022/lint-your-code-into-the-future.jpeg'
 url: https://www.youtube.com/watch?v=Nl8gHDdkI0Y
 media: video
 ---
