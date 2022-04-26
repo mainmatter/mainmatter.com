@@ -13,9 +13,19 @@ description:
   listened to and their opinions are taken into consideration.
 ---
 
-Are you participating in the development of a Product? How do you feel about it?
-**Are you enjoying the development process**? Do you have room to **share your
-ideas and opinions** on a feature or the roadmap? **Do you feel listened to**?
+According to a [global research] conducted by [The Workforce Institute] at
+[UKG], in 2021, an 86% of surveyed employees reported they feel people at their
+organisation **are not heard fairly or equally** — and nearly half (47%) say
+that underrepresented voices remain undervalued by employers.
+
+Many engineers feel they don't have room to share their ideas and opinions.
+**Are you one of them**? **How often do you feel your perspective is taken into
+account**? **Is this as often as you’d like**?
+
+[global research]:
+  https://www.forbes.com/sites/carolinecenizalevine/2021/06/23/new-survey-shows-the-business-benefit-of-feeling-heard--5-ways-to-build-inclusive-teams/?sh=1ccf117d5f0c
+[the workforce institute]: https://www.workforceinstitute.org/
+[ukg]: https://www.ukg.com/
 
 <!--break-->
 
