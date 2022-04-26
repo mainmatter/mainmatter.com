@@ -1,5 +1,6 @@
 ---
-title: 'What to do if you do not feel heard in your organisation'
+title: >
+  What to do if you don't feel heard at work
 author: 'Oscar Dominguez'
 github: oscard0m
 twitter: oscard0m_
