@@ -201,7 +201,7 @@ Check these tips:
 ## Conclusion
 
 Not feeling heard at your company
-[is a global problem lots of employees suffer worldwide](https://www.notion.so/2798979a3cfc4a3385bc9f438ea361e3).
+[is a global problem lots of employees suffer worldwide](https://www.forbes.com/sites/carolinecenizalevine/2021/06/23/new-survey-shows-the-business-benefit-of-feeling-heard--5-ways-to-build-inclusive-teams/?sh=1ccf117d5f0c).
 You are not alone.
 
 The first exercise you need to do is to assure you are aligned with your company
@@ -219,10 +219,14 @@ This article tries to recollect some ideas and positive actions you can take to
 try to make you feel heard at work through the art of being a good listener.
 Take the initiative to dominate this art while being empathetic with the others:
 
-- [Identify the problem](https://www.notion.so/2798979a3cfc4a3385bc9f438ea361e3)
-- [Choose your battles](https://www.notion.so/2798979a3cfc4a3385bc9f438ea361e3)
-- [Propose solutions with empathy](https://www.notion.so/2798979a3cfc4a3385bc9f438ea361e3)
-- [Lead by example](https://www.notion.so/2798979a3cfc4a3385bc9f438ea361e3)
+- [The art of listening](#the-art-of-listening)
+- [Take initiative with empathy](#take-initiative-with-empathy)
+  - [Identify the problem/s](#identify-the-problems)
+  - [Choose your battles](#choose-your-battles)
+  - [Propose solutions with empathy](#propose-solutions-with-empathy)
+  - [Lead by example](#lead-by-example)
+- [Conclusion](#conclusion)
+- [Resources](#resources)
 
 We would love to hear your personal experience on this topic. Any tip or story
 you would like to share with us and the rest of the readers? Feel free to
