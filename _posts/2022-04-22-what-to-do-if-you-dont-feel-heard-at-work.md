@@ -14,14 +14,20 @@ description:
   listened to and their opinions are taken into consideration.
 ---
 
-According to a [global research] conducted by [The Workforce Institute] at
-[UKG], in 2021, an 86% of surveyed employees reported they feel people at their
-organisation **are not heard fairly or equally** — and nearly half (47%) say
-that underrepresented voices remain undervalued by employers.
+86%
+
+That is the number of people who don't feel heard **fairly or equally** at their
+organisation.
+
+And nearly half (47%) claim that underrepresented voices remain undervalued by
+their employers, according to [global research] conducted by [The Workforce
+Institute] at [UKG] in 2021.
 
 Many engineers feel they don't have room to share their ideas and opinions.
-**Are you one of them**? **How often do you feel your perspective is taken into
-account**? **Is this as often as you’d like**?
+**Are you one of them**?
+
+**How often do you feel your perspective is taken into account**? **And is this
+as often as you’d like**?
 
 [global research]:
   https://www.forbes.com/sites/carolinecenizalevine/2021/06/23/new-survey-shows-the-business-benefit-of-feeling-heard--5-ways-to-build-inclusive-teams/?sh=1ccf117d5f0c
