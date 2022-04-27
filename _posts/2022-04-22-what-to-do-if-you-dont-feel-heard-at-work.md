@@ -219,14 +219,10 @@ This article tries to recollect some ideas and positive actions you can take to
 try to make you feel heard at work through the art of being a good listener.
 Take the initiative to dominate this art while being empathetic with the others:
 
-- [The art of listening](#the-art-of-listening)
-- [Take initiative with empathy](#take-initiative-with-empathy)
-  - [Identify the problem/s](#identify-the-problems)
-  - [Choose your battles](#choose-your-battles)
-  - [Propose solutions with empathy](#propose-solutions-with-empathy)
-  - [Lead by example](#lead-by-example)
-- [Conclusion](#conclusion)
-- [Resources](#resources)
+- Identify the problem/s
+- Choose your battles
+- Propose solutions with empathy
+- Lead by example
 
 We would love to hear your personal experience on this topic. Any tip or story
 you would like to share with us and the rest of the readers? Feel free to
