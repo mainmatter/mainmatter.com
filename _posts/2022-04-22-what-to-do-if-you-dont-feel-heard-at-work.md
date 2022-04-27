@@ -131,13 +131,13 @@ feature, a process, a team ceremony... but nothing happened. No feedback, or
 automatically rejected.
 
 I know, it’s very frustrating and you got tired of it. Maybe you stopped trying
-it. The key question here is: Do you know why? Why you did not get feedback or
+it. The key question here is: Do you know why? Why did you not get feedback or
 why did it get rejected?
 
 ### Identify the problem/s
 
 Let’s assume the best of the intentions from your teammates, the stakeholders,
-the company or whoever should be the one listening to you. Why he or she would
+the company or whoever should be the one listening to you. Why would he or she
 ignore you? Or automatically reject you?
 
 The list of possibilities is long:
