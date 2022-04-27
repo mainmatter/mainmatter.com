@@ -219,10 +219,10 @@ This article tries to recollect some ideas and positive actions you can take to
 try to make you feel heard at work through the art of being a good listener.
 Take the initiative to dominate this art while being empathetic with the others:
 
-- Identify the problem/s
-- Choose your battles
-- Propose solutions with empathy
-- Lead by example
+- [Identify the problem/s](/blog/2022/04/22/what-to-do-if-you-dont-feel-heard-at-work/#identify-the-problems)
+- [Choose your battles](/blog/2022/04/22/what-to-do-if-you-dont-feel-heard-at-work/#choose-your-battles)
+- [Propose solutions with empathy](/blog/2022/04/22/what-to-do-if-you-dont-feel-heard-at-work/#propose-solutions-with-empathy)
+- [Lead by example](/blog/2022/04/22/what-to-do-if-you-dont-feel-heard-at-work/#lead-by-example)
 
 We would love to hear your personal experience on this topic. Any tip or story
 you would like to share with us and the rest of the readers? Feel free to
