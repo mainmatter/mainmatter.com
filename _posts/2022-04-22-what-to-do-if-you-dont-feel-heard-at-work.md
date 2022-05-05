@@ -149,7 +149,7 @@ The list of possibilities is long:
   them it’s late.
 - etc.
 
-The list is long, I know. And also, it varies depending on the week, a moment of
+The list is long and it varies depending on the week, a moment of
 the day or a topic.
 
 The very first step is to **identify the problem/s that are making your message
