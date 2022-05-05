@@ -137,7 +137,7 @@ why did it get rejected?
 ### Identify the problem/s
 
 Let’s assume the best of the intentions from your teammates, the stakeholders,
-the company or whoever should be the one listening to you. Why would he or she
+the company or whoever should be the one listening to you. Why would they
 ignore you? Or automatically reject you?
 
 The list of possibilities is long:
