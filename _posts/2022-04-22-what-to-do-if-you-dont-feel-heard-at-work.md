@@ -224,7 +224,7 @@ Take the initiative to dominate this art while being empathetic with the others:
 - [Propose solutions with empathy](/blog/2022/04/22/what-to-do-if-you-dont-feel-heard-at-work/#propose-solutions-with-empathy)
 - [Lead by example](/blog/2022/04/22/what-to-do-if-you-dont-feel-heard-at-work/#lead-by-example)
 
-We would love to hear your personal experience on this topic. Any tip or story
+We would love to hear your personal experience on this topic. Do you have any tip or story
 you would like to share with us and the rest of the readers? Feel free to
 comment on our [Twitter](https://twitter.com/simplabs) or
 [LinkedIn](https://www.linkedin.com/company/simplabs-gmbh/).
