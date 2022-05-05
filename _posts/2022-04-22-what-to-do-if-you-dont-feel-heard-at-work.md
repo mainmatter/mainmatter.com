@@ -67,7 +67,7 @@ It happened to me in the past and, worry not, there is a solution for it! 😀 
 ## The art of listening
 
 As professionals, we **want to feel we are being heard.** When that does not
-happen, a feeling of **disconnection** starts growing in our inside.
+happen, a feeling of **disconnection** arises.
 
 This happened to me in the past and the following questions came to my mind by
 then:
