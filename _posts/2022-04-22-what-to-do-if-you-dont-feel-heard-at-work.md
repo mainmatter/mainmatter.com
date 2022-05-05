@@ -181,7 +181,7 @@ in the conversation, it means they won’t get traction.
 
 Is the process in place being empathetic with all parts? No? Let’s change it!
 Maybe it needs to change the channel, to use a meeting instead of being
-asynchronous to make it happen. Or the other way around, to make asynchronous
+asynchronous to make it happen. Or the other way around, to be asynchronous
 because there is no time for meetings. Think about the proposal you want to talk
 about, think about the receptors and what could work for them.
 
