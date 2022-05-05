@@ -62,7 +62,7 @@ carried out across 11 countries by
 their organisation are not heard fairly or equally — and nearly half (47%) say
 that underrepresented voices remain undervalued by employers.
 
-It happened to me in the past and, lucky you, there is a solution for it 😀 🥳
+It happened to me in the past and, worry not, there is a solution for it! 😀 🥳
 
 ## The art of listening
 
