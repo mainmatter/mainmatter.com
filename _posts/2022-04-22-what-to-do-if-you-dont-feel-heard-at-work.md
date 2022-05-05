@@ -116,7 +116,7 @@ about it.
 
 If the answer is no, this probably means you need a change.
 
-> Is there something I can do on my end? It’s the problem of others not
+> Is there something I can do on my end? The problem is others not
 > listening to me, there’s nothing I can control.
 
 Yes, you can. You can’t control what others do unless you have very good
