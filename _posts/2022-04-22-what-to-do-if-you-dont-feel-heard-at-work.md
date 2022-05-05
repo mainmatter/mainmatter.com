@@ -48,7 +48,7 @@ If your answer is
 > discarded so I got tired of bringing suggestions.”_
 
 > 😩 “Oh my God, it’s Monday again. I hate this project. I don’t like the
-> direction this is getting.”
+> direction in which this is going.”
 
 > 🙁 “Hmm, _I don’t know... It is what it is..."_
 
