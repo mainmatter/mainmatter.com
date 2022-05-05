@@ -91,7 +91,7 @@ As professionals we want:
 - to help others
 - to grow
 
-The moment this does not happen, it turns into frustration and, this frustration
+When this does not happen we feel frustrated and this frustration
 **ends up impacting the relationship** with our **team**, our **project** we are
 participating or even our relationship with our **company**.
 
