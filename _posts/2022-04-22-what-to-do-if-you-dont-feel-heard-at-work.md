@@ -9,7 +9,7 @@ bio: 'Software Engineer'
 og:
   image: /assets/images/posts/2022-03-17-dynamic-components-embroider/og-image.png
 description:
-  Oscar Dominguez writes to himself of the past. He tries to open his eyes and
+  Oscar Dominguez writes to himself of the past and tries to make him realize
   that a better world is possible. There are companies where employees are
   listened to and their opinions are taken into consideration.
 ---
