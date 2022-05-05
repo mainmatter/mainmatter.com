@@ -39,8 +39,8 @@ as often as you’d like**?
 How **connected** do you feel to:
 
 - **The Product** and its mission?
-- **The Team**
-- **The Company Values**
+- **The Team?**
+- **The Company Values?**
 
 If your answer is
 
