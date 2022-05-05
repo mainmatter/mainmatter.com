@@ -153,7 +153,7 @@ The list is long, I know. And also, it varies depending on the week, a moment of
 the day or a topic.
 
 The very first step is to **identify the problem/s that are making your message
-not be heard by the rest.**
+go unheard by the rest.**
 
 Once that is clear, we can come up with solutions.
 
