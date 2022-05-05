@@ -91,8 +91,8 @@ As professionals we want:
 - to help others
 - to grow
 
-When this does not happen we feel frustrated and this frustration
-**ends up impacting the relationship** with our **team**, the **project** in which we are
+When this does not happen we feel frustrated and this frustration **ends up
+impacting the relationship** with our **team**, the **project** in which we are
 participating, or even our relationship with our **company**.
 
 > Am I being selfish? I should be focusing on the company’s mission instead,
@@ -102,8 +102,8 @@ No, you are not being selfish. Your company needs you to be happy and enjoy your
 job.
 
 When this happens, you show all your potential as a professional. Your team, the
-product and your company benefit from it. Your company is paying you for
-that, for your maximum potential. It’s a win-win!
+product and your company benefit from it. Your company is paying you for that,
+for your maximum potential. It’s a win-win!
 
 If this is not happening, there is something wrong that needs to be fixed:
 
@@ -116,8 +116,8 @@ about it.
 
 If the answer is no, this probably means you need a change.
 
-> Is there something I can do on my end? The problem is others not
-> listening to me, there’s nothing I can control.
+> Is there something I can do on my end? The problem is others not listening to
+> me, there’s nothing I can control.
 
 Yes, you can. You can’t control what others do unless you have very good
 hypnosis skills but you can decide to perceive this as a problem or not. What if
@@ -131,14 +131,14 @@ feature, a process, a team ceremony... but nothing happened. No feedback, or
 automatically rejected.
 
 I know, it’s very frustrating and you got tired of it. Maybe you stopped trying.
-The key question here is: Do you know why? Why did you not get feedback or
-why did it get rejected?
+The key question here is: Do you know why? Why did you not get feedback or why
+did it get rejected?
 
 ### Identify the problem/s
 
 Let’s assume the best of the intentions from your teammates, the stakeholders,
-the company or whoever should be the one listening to you. Why would they
-ignore you? Or automatically reject you?
+the company or whoever should be the one listening to you. Why would they ignore
+you? Or automatically reject you?
 
 The list of possibilities is long:
 
@@ -149,8 +149,8 @@ The list of possibilities is long:
   them it’s late.
 - etc.
 
-The list is long and it varies depending on the week, a moment of
-the day or a topic.
+The list is long and it varies depending on the week, a moment of the day or a
+topic.
 
 The very first step is to **identify the problem/s that are making your message
 go unheard by the rest.**
@@ -224,9 +224,9 @@ Take the initiative to dominate this art while being empathetic with the others:
 - [Propose solutions with empathy](/blog/2022/04/22/what-to-do-if-you-dont-feel-heard-at-work/#propose-solutions-with-empathy)
 - [Lead by example](/blog/2022/04/22/what-to-do-if-you-dont-feel-heard-at-work/#lead-by-example)
 
-We would love to hear your personal experience on this topic. Do you have any tip or story
-you would like to share with us and the rest of the readers? Feel free to
-comment on our [Twitter](https://twitter.com/simplabs) or
+We would love to hear your personal experience on this topic. Do you have any
+tip or story you would like to share with us and the rest of the readers? Feel
+free to comment on our [Twitter](https://twitter.com/simplabs) or
 [LinkedIn](https://www.linkedin.com/company/simplabs-gmbh/).
 
 ---
