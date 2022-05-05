@@ -58,7 +58,7 @@ According to
 [a global research](https://www.forbes.com/sites/carolinecenizalevine/2021/06/23/new-survey-shows-the-business-benefit-of-feeling-heard--5-ways-to-build-inclusive-teams/?sh=1ccf117d5f0c)
 carried out across 11 countries by
 [The Workforce Institute](https://www.workforceinstitute.org/) at
-[UKG](https://www.ukg.com/), The vast majority (86%) of employees feel people at
+[UKG](https://www.ukg.com/), the vast majority (86%) of employees feel people at
 their organisation are not heard fairly or equally — and nearly half (47%) say
 that underrepresented voices remain undervalued by employers.
 
