@@ -130,7 +130,7 @@ I’m pretty sure you have already tried to give your opinion to improve a
 feature, a process, a team ceremony... but nothing happened. No feedback, or
 automatically rejected.
 
-I know, it’s very frustrating and you got tired of it. Maybe you stopped trying
+I know, it’s very frustrating and you got tired of it. Maybe you stopped trying.
 The key question here is: Do you know why? Why did you not get feedback or
 why did it get rejected?
 
