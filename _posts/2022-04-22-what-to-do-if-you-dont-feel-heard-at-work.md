@@ -102,7 +102,7 @@ No, you are not being selfish. Your company needs you to be happy and enjoy your
 job.
 
 When this happens, you show all your potential as a professional. Your team, the
-product and your company get benefit from it. Your company is paying you for
+product and your company benefit from it. Your company is paying you for
 that, for your maximum potential. It’s a win-win!
 
 If this is not happening, there is something wrong that needs to be fixed:
