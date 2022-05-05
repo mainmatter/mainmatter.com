@@ -131,7 +131,7 @@ feature, a process, a team ceremony... but nothing happened. No feedback, or
 automatically rejected.
 
 I know, it’s very frustrating and you got tired of it. Maybe you stopped trying
-it. The key question here is: Do you know why? Why did you not get feedback or
+The key question here is: Do you know why? Why did you not get feedback or
 why did it get rejected?
 
 ### Identify the problem/s
