@@ -10,7 +10,7 @@ og:
   image: /assets/images/posts/2022-03-17-dynamic-components-embroider/og-image.png
 description:
   Oscar Dominguez writes to himself of the past. He tries to open his eyes and
-  show him a better world is possible. There are companies where employees are
+  that a better world is possible. There are companies where employees are
   listened to and their opinions are taken into consideration.
 ---
 
