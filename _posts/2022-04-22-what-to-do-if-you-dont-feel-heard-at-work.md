@@ -45,7 +45,7 @@ How **connected** do you feel to:
 If your answer is
 
 > 😔 "_I feel_ _disconnected. I tried to share my ideas but all of them got
-> discarded so I got tired of doing more suggestions.”_
+> discarded so I got tired of bringing suggestions.”_
 
 > 😩 “Oh my God, it’s Monday again. I hate this project. I don’t like the
 > direction this is getting.”
