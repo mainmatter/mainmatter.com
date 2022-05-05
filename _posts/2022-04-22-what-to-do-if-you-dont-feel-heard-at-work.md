@@ -92,7 +92,7 @@ As professionals we want:
 - to grow
 
 When this does not happen we feel frustrated and this frustration
-**ends up impacting the relationship** with our **team**, our **project** we are
+**ends up impacting the relationship** with our **team**, the **project** in which we are
 participating or even our relationship with our **company**.
 
 > Am I being selfish? I should be focusing on the company’s mission instead,
