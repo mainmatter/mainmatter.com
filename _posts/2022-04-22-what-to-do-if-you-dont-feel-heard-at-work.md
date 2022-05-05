@@ -93,7 +93,7 @@ As professionals we want:
 
 When this does not happen we feel frustrated and this frustration
 **ends up impacting the relationship** with our **team**, the **project** in which we are
-participating or even our relationship with our **company**.
+participating, or even our relationship with our **company**.
 
 > Am I being selfish? I should be focusing on the company’s mission instead,
 > right? They are paying me for that.
