@@ -227,54 +227,6 @@ and work around the regular request per second limitation.
 
 ## Unknown
 
-- [oscard0m/test-renovate-repo]
-  [#20](https://github.com/oscard0m/test-renovate-repo/pull/20) fix(deps):
-  update dependency lodash to v4 ([@oscard0m])
-- [oscard0m/test-renovate-repo]
-  [#19](https://github.com/oscard0m/test-renovate-repo/pull/19) chore(deps):
-  update node.js to v16 ([@oscard0m])
-- [oscard0m/test-renovate-repo]
-  [#18](https://github.com/oscard0m/test-renovate-repo/pull/18) fix(deps):
-  update dependency lodash to v3.10.1 ([@oscard0m])
-- [oscard0m/test-renovate-repo]
-  [#17](https://github.com/oscard0m/test-renovate-repo/pull/17) chore(deps):
-  update node.js to v8.17.0 ([@oscard0m])
-- [oscard0m/test-renovate-repo]
-  [#16](https://github.com/oscard0m/test-renovate-repo/pull/16) fix(deps):
-  update dependency lodash to v4 ([@oscard0m])
-- [oscard0m/test-renovate-repo]
-  [#15](https://github.com/oscard0m/test-renovate-repo/pull/15) chore(deps):
-  update node.js to v16 ([@oscard0m])
-- [oscard0m/test-renovate-repo]
-  [#14](https://github.com/oscard0m/test-renovate-repo/pull/14) fix(deps):
-  update dependency lodash to v3.10.1 ([@oscard0m])
-- [oscard0m/test-renovate-repo]
-  [#13](https://github.com/oscard0m/test-renovate-repo/pull/13) chore(deps):
-  update node.js to v8.17.0 ([@oscard0m])
-- [oscard0m/test-renovate-repo]
-  [#12](https://github.com/oscard0m/test-renovate-repo/pull/12) fix(deps):
-  update dependency lodash to v4 ([@oscard0m])
-- [oscard0m/test-renovate-repo]
-  [#11](https://github.com/oscard0m/test-renovate-repo/pull/11) chore(deps):
-  update node.js to v16 ([@oscard0m])
-- [oscard0m/test-renovate-repo]
-  [#10](https://github.com/oscard0m/test-renovate-repo/pull/10) fix(deps):
-  update dependency lodash to v3.10.1 ([@oscard0m])
-- [oscard0m/test-renovate-repo]
-  [#9](https://github.com/oscard0m/test-renovate-repo/pull/9) chore(deps):
-  update node.js to v8.17.0 ([@oscard0m])
-- [oscard0m/test-renovate-repo]
-  [#7](https://github.com/oscard0m/test-renovate-repo/pull/7) fix(deps): update
-  dependency lodash to v4 ([@oscard0m])
-- [oscard0m/test-renovate-repo]
-  [#6](https://github.com/oscard0m/test-renovate-repo/pull/6) chore(deps):
-  update node.js to v16 ([@oscard0m])
-- [oscard0m/test-renovate-repo]
-  [#5](https://github.com/oscard0m/test-renovate-repo/pull/5) fix(deps): update
-  dependency lodash to v3.10.1 ([@oscard0m])
-- [oscard0m/test-renovate-repo]
-  [#4](https://github.com/oscard0m/test-renovate-repo/pull/4) chore(deps):
-  update node.js to v8.17.0 ([@oscard0m])
 - [percy/percy-storybook]
   [#558](https://github.com/percy/percy-storybook/pull/558) docs(README):
   improve documentation for Puppeteer options ([@oscard0m])

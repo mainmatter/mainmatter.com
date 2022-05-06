@@ -28,7 +28,8 @@
         "mansona/ember-paper",
         "mansona/rfcs",
         "fzerocentral/fzerocentral-web",
-        "hugopeixoto/pokemon-collection-tracker-frontend"
+        "hugopeixoto/pokemon-collection-tracker-frontend",
+        "test-renovate-repo"
     ],
     "labels": [
         {
