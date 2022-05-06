@@ -27,7 +27,8 @@ dependency updates.
 His PR [15214](https://github.com/renovatebot/renovate/pull/15214) added
 changelogs to Rust crate update PRs by downloading #crate metadata
 from [crates.io](http://crates.io/). It also uses a fast path on
-the [crates.io](http://crates.io/) server to avoid unnecessary database requests.
+the [crates.io](http://crates.io/) server to avoid unnecessary database
+requests.
 
 ## Ember.js
 
