@@ -223,7 +223,6 @@ the [crates.io](http://crates.io/) server to avoid unnecessary database request
 [@pichfl]: https://github.com/pichfl
 [@zeppelin]: https://github.com/zeppelin
 [turbo87/intellij-emberjs]: https://github.com/Turbo87/intellij-emberjs
-[turbo87/renovate-crates-test]: https://github.com/Turbo87/renovate-crates-test
 [turbo87/united-flarmnet]: https://github.com/Turbo87/united-flarmnet
 [ember-learn/ember-styleguide]: https://github.com/ember-learn/ember-styleguide
 [ember-learn/guides-source]: https://github.com/ember-learn/guides-source
@@ -237,7 +236,6 @@ the [crates.io](http://crates.io/) server to avoid unnecessary database request
 [mansona/ember-get-config]: https://github.com/mansona/ember-get-config
 [offirgolan/ember-cp-validations]:
   https://github.com/offirgolan/ember-cp-validations
-[oscard0m/test-renovate-repo]: https://github.com/oscard0m/test-renovate-repo
 [percy/percy-storybook]: https://github.com/percy/percy-storybook
 [qonto/ember-cp-validations]: https://github.com/qonto/ember-cp-validations
 [renovatebot/renovate]: https://github.com/renovatebot/renovate
