@@ -202,21 +202,6 @@ the [crates.io](http://crates.io/) server to avoid unnecessary database request
 
 ## crates.io
 
-- [Turbo87/renovate-crates-test]
-  [#6](https://github.com/Turbo87/renovate-crates-test/pull/6) Update Rust crate
-  teloxide to v0.8.0 ([@Turbo87])
-- [Turbo87/renovate-crates-test]
-  [#5](https://github.com/Turbo87/renovate-crates-test/pull/5) Update Rust crate
-  sentry to v0.25.0 ([@Turbo87])
-- [Turbo87/renovate-crates-test]
-  [#3](https://github.com/Turbo87/renovate-crates-test/pull/3) Update Rust crate
-  serde to v1.0.136 ([@Turbo87])
-- [Turbo87/renovate-crates-test]
-  [#2](https://github.com/Turbo87/renovate-crates-test/pull/2) Update Rust crate
-  rss to v2.0.1 ([@Turbo87])
-- [Turbo87/renovate-crates-test]
-  [#1](https://github.com/Turbo87/renovate-crates-test/pull/1) Configure
-  Renovate ([@Turbo87])
 - [rust-lang/crates.io]
   [#4788](https://github.com/rust-lang/crates.io/pull/4788) Sentry: Set
   transaction name instead of custom `routeName` tag ([@Turbo87])
