@@ -26,7 +26,9 @@
         "BobrImperator/tilex",
         "emberfest/emberfest.github.io",
         "mansona/ember-paper",
-        "mansona/rfcs"
+        "mansona/rfcs",
+        "fzerocentral/fzerocentral-web",
+        "hugopeixoto/pokemon-collection-tracker-frontend"
     ],
     "labels": [
         {
@@ -35,14 +37,17 @@
                 "Turbo87/aprs-parser-rs",
                 "hyperium/http",
                 "rust-lang/cargo",
-                "rust-lang/rust-by-example"
+                "rust-lang/rust-by-example",
+                "Turbo87/united-flarmnet",
+                "ferrous-systems/teaching-material"
             ]
         },
         {
             "name": "crates.io",
             "repos": [
                 "conduit-rust/conduit-hyper",
-                "rust-lang/crates.io"
+                "rust-lang/crates.io",
+                "Turbo87/renovate-crates-test"
             ]
         },
         {
@@ -91,7 +96,10 @@
                 "GavinJoyce/ember-headlessui",
                 "qonto/ember-cp-validations",
                 "mansona/ember-get-config",
-                "simplabs/ember-workshop"
+                "simplabs/ember-workshop",
+                "Turbo87/intellij-emberjs",
+                "offirgolan/ember-cp-validations",
+                "simplabs/ember-hotspots"
             ]
         },
         {
@@ -109,7 +117,8 @@
                 "mansona/express-autoroute-json",
                 "mansona/express-autoroute-json",
                 "yaacov/node-modbus-serial",
-                "actions/setup-python"
+                "actions/setup-python",
+                "showdownjs/showdown"
             ]
         },
         {
@@ -127,13 +136,20 @@
         {
             "name": "TypeScript",
             "repos": [
-                "mswjs/msw"
+                "mswjs/msw",
+                "renovatebot/renovate"
             ]
         },
         {
             "name": "simplabs's playbook",
             "repos": [
                 "simplabs/playbook"
+            ]
+        },
+        {
+            "name": "Internal",
+            "repos": [
+                "simplabs/renovate-config"
             ]
         },
         {
