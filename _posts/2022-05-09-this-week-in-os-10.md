@@ -9,7 +9,7 @@ description:
   'A collection of work that our engineers have been carrying out in open-source
   in the past few weeks.'
 og:
-  image: /assets/images/posts/2022-05-06-this-week-in-os-10/og-image.png
+  image: /assets/images/posts/2022-05-09-this-week-in-os-10/og-image.png
 ---
 
 Our software engineers are all active members of the open-source community and
@@ -210,12 +210,6 @@ requests.
   [#4781](https://github.com/rust-lang/crates.io/pull/4781) Disable in-browser
   translation ([@Turbo87])
 
-## Unknown
-
-- [percy/percy-storybook]
-  [#558](https://github.com/percy/percy-storybook/pull/558) docs(README):
-  improve documentation for Puppeteer options ([@oscard0m])
-
 [@turbo87]: https://github.com/Turbo87
 [@locks]: https://github.com/locks
 [@mansona]: https://github.com/mansona
@@ -237,7 +231,6 @@ requests.
 [mansona/ember-get-config]: https://github.com/mansona/ember-get-config
 [offirgolan/ember-cp-validations]:
   https://github.com/offirgolan/ember-cp-validations
-[percy/percy-storybook]: https://github.com/percy/percy-storybook
 [qonto/ember-cp-validations]: https://github.com/qonto/ember-cp-validations
 [renovatebot/renovate]: https://github.com/renovatebot/renovate
 [rust-lang/crates.io]: https://github.com/rust-lang/crates.io
