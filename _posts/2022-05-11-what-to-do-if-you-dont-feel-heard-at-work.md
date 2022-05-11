@@ -7,7 +7,7 @@ twitter: oscard0m_
 topic: company-culture
 bio: 'Software Engineer'
 og:
-  image: /assets/images/posts/2022-04-22-what-to-do-if-you-dont-feel-heard-at-work/og-image.png
+  image: /assets/images/posts/2022-05-11-what-to-do-if-you-dont-feel-heard-at-work/og-image.png
 description:
   Oscar Dominguez writes to himself of the past and tries to make him realize
   that a better world is possible. There are companies where employees are
@@ -36,7 +36,7 @@ as often as you’d like**?
 
 <!--break-->
 
-![What to do if you don't feel heard at work illustration](/assets/images/posts/2022-04-22-what-to-do-if-you-dont-feel-heard-at-work/illustration.svg#full)
+![What to do if you don't feel heard at work illustration](/assets/images/posts/2022-05-11-what-to-do-if-you-dont-feel-heard-at-work/illustration.svg#full)
 
 How **connected** do you feel to:
 
