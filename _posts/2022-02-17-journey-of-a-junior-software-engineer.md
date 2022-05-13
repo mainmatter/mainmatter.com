@@ -47,7 +47,7 @@ As I showed above, I keep a journal where I note down:
 I believe the junior phase can be the most overwhelming one: your learning curve is in skyrocket mode 🚀! With all this new info coming all the time, I find it helpful to write everything down as a way to organize the new content in my head.
 Also, since a lot of errors I was seeing would show up again, I could find what I did & re-apply it.
 
-Nowadays, I do it less and less, also the pace slowed it down from week logs to month logs 😆 as you can see by my notion pages:
+Nowadays, I need to take notes less and less and even the pace slowed down from week logs to month logs 😆 as you can see by my notion pages:
 
 ![My pages organization in notion](/assets/images/posts/2022-02-17-journey-of-a-junior-software-engineer/my-notion-pages.png)
 
@@ -96,14 +96,14 @@ The way this goes depends on the environment within your company. Unfortunately,
 
 If you land in a new job where nobody is showing availability to help you out - you are in the wrong place. 
 During my first 3 months at simplabs, I was probably pair programming at least once a week, sometimes more. 
-Right now I'm doing it less which is natural - as you progress the more independent you become.
+Right now I'm doing it less often, which is natural - the more you progress the more independent you become.
 
-However, I want to go back to more regular pair programming sessions - not only is it a great way of learning, but it also makes you know better your colleagues thinking flow which makes it easier for reviewing each other's code.
+However, I do want to go back to more regular pair programming sessions - not only is it a great way of learning, but it also makes you understand your colleagues' thinking flow better, which makes reviewing each other's code easier.
 
 So, how is my week as a junior dev looking now?
 
--   I keep doing react, it has some tricky concepts that I’m still trying to fully understand, like dealing with the state of components.
--   We have 1 day per week to work in open source/learning. I’m using mine to create a personal website in ember which has been a great way of learning while doing a project that I like.
+-   I keep working with React: it has some tricky concepts that I’m still trying to fully understand, like dealing with the state of components.
+-   We have 1 day per week to work on open source/learning. I’m using mine to create a personal website in Ember which has been a great way of learning while doing a project that I like.
 -   I’m part of the culture team - we discuss topics that aim for a continuous good team environment. I’m organizing the Lunch & Learn event once a month which was born from these meetings.
 -   I’m having 🇫🇷 lessons, I’m very happy that Simplabs gives me the opportunity to grow in other fields too.
 
