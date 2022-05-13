@@ -10,16 +10,16 @@ og:
 ---
 ### A junior software engineer journey
 
-My journey in _Simplabs_ started in July of 2021, soon it will be 8 months that I’m here. This post has in mind all the future junior software-engineers. I will write how it has been like, how it is now and try to give some tips on the way based on the challenges I faced 💪
+My journey at _Simplabs_ started in July of 2021: soon it will be 8 months that I’m here. This post has in mind all the future junior software engineers. I will describe what it has been like and how it is now, and try to give some tips on the way based on the challenges I faced 💪
 
-Before landing here, I did 4 months internship as a ruby backend engineer 💎 
-I started looking for fullstack job positions - I wanted to get better at both things and discover the frontend world (that I had so little insight before).
+Before landing here, I did a 4 months internship as a Ruby backend engineer 💎 
+I wanted to continue to improve my backend knowledge and discover the frontend world (that I had so little insight into before)
 
-I can stop here for the **#1 tip** - **if you don’t know,** **start as fullstack.** So you can get better on both things and eventually find what fits you better, or just stay in both worlds.
+I can stop here for the **#1 tip** - **if you don’t know,** **start as full-stack.** This way, you can get a better picture of both frontend and backend parts of a project and then find what fits you better or just stay in both worlds.
 
 After the internship, I landed at _Simplabs_ for my 1st job 🙌
 
-Here, I started working in a website for an IT security company. The stack was - Next.js & Typescript.
+Here, I immediately started working on a website for an IT security company. The stack was Next.js & Typescript.
 
 As I said before I had very little experience with the frontend world, and apparently with git 😅
 
