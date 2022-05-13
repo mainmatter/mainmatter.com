@@ -48,9 +48,13 @@ Chrome Inspector to do so.**
  <details>
   <summary><code>yarn start-dev</code> fails in my local machine due to too many open files to watch</summary>
   
-  You need to increase the max open files limit in your Operating System: https://wilsonmar.github.io/maximum-limits/
+  You need to increase the max open files limit in your Operating System.
   
-  <a href="https://wilsonmar.github.io/maximum-limits/">More details here</a>
+  The easiest way is by installing `watchman` in your system
+  
+  > brew install watchman
+  
+  <a href="https://wilsonmar.github.io/maximum-limits/">Alternatively, you can modify the limit of files to be watched in your Operating System.</a>
 </details>
 
 ## Copyright
