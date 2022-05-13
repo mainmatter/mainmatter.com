@@ -21,7 +21,7 @@ After the internship, I landed at _Simplabs_ for my 1st job 🙌
 
 Here, I immediately started working on a website for an IT security company. The stack was Next.js & Typescript.
 
-As I said before I had very little experience with the frontend world, and apparently with git 😅
+As I said before I had very little experience with the frontend world, and apparently with git. 😅
 
 My first struggles were git-related problems - I feel this is the thing that developers tend to be overconfident about their expertise on it.
 
