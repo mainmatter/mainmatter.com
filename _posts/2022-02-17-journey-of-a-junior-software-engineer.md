@@ -23,13 +23,13 @@ Here, I immediately started working on a website for an IT security company. The
 
 As I said before I had very little experience with the frontend world, and apparently with git. 😅
 
-My first struggles were git-related problems - I feel this is the thing that developers tend to be overconfident about their expertise on it.
+My first struggles were git-related problems - I feel this is the thing that developers tend to be overconfident about.
 
-In university, everytime, we started a project using git we would drop it at some point and we would go to the archaic system of copy-pasting code between us 🥲
+In university, every time we started a project using git we would drop it at some point and we would go to the archaic system of copy-pasting code between us. 🥲
 
 Time to jump to my **#2 tip - get git rolling**
 
-You will never be alone in a project, so force yourself to learn tools that will make you more efficient to work as a team. Most of my colleagues always use the terminal so I found it easier to get along with it, plus it gives you that hacker look 😎 but there is an interface option [Github Desktop](https://desktop.github.com/). I was documenting all of my git struggles, I will give a glimpse of how my notion notes were looking like in my 2nd week here 😂:
+You will never be alone in a project, so force yourself to learn tools that will make you more efficient at working as a team. Most of my colleagues always use the terminal so I found it easier to go along with this method (plus it gives you that hacker look) 😎 but there is an interface option [Github Desktop](https://desktop.github.com/). Since I was documenting all of my git struggles, I will give you a glimpse at what my notion notes were looking like in my second week here 😂:
 
 ![My note taking with notion](/assets/images/posts/2022-02-17-journey-of-a-junior-software-engineer/my-notion-notes-eg1.png)
 
