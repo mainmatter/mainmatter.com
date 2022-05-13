@@ -13,7 +13,7 @@ og:
 
 ### A junior software engineer journey
 
-My journey at _simplabs_ started in July of 2021: soon it will be 8 months that
+My journey at _simplabs_ started in July of 2021: soon it will be 11 months that
 I’m here. This post has in mind all the future junior software engineers. I will
 describe what it has been like and how it is now, and try to give some tips on
 the way based on the challenges I faced 💪
@@ -52,9 +52,9 @@ you that hacker look) 😎 but there is an interface option
 git struggles, I will give you a glimpse at what my notion notes were looking
 like in my second week here 😂:
 
-![My note taking with notion](/assets/images/posts/2022-02-17-journey-of-a-junior-software-engineer/my-notion-notes-eg1.png)
+![My note taking with notion](/assets/images/posts/2022-05-12-journey-of-a-junior-software-engineer/my-notion-notes-eg1.png)
 
-![](/assets/images/posts/2022-02-17-journey-of-a-junior-software-engineer/my-notion-notes-eg2.png)
+![](/assets/images/posts/2022-05-12-journey-of-a-junior-software-engineer/my-notion-notes-eg2.png)
 
 Git merge vs Git rebase was a frequent debate, and according to my notes, I
 found this enlightening video on the
@@ -79,7 +79,7 @@ what I did & re-apply it.
 Nowadays, I need to take notes less and less and even the pace slowed down from
 week logs to month logs 😆 as you can see by my notion pages:
 
-![My pages organization in notion](/assets/images/posts/2022-02-17-journey-of-a-junior-software-engineer/my-notion-pages.png)
+![My pages organization in notion](/assets/images/posts/2022-05-12-journey-of-a-junior-software-engineer/my-notion-pages.png)
 
 Let’s finish this section with the **#3 tip - keep a journal.**
 
@@ -171,5 +171,5 @@ So, how is my week as a junior dev looking now?
 
 Et voilá! I hope the Inês from the future will look back at this and see how
 much she progressed! As for my fellow, junior software engineers, I hope this
-helped you in some way. Feel free to share your challenges and progress with me
-☺️ Keep learning & stay curious!
+helped you in some way. Feel free to share your challenges and progress with me.
+🙂 Keep learning & stay curious!
