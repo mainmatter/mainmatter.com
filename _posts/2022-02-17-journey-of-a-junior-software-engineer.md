@@ -35,8 +35,8 @@ You will never be alone in a project, so force yourself to learn tools that will
 
 ![](/assets/images/posts/2022-02-17-journey-of-a-junior-software-engineer/my-notion-notes-eg2.png)
 
-Git merge vs Git rebase were a frequent debate, and according to my notes I found this video enlightening on the [topic](https://www.youtube.com/watch?v=CRlGDDprdOQ&ab_channel=Academind).
-Then, when I was finally becoming more confortable with which commands should I use, they tell me - tidy your git history 🧹 - [this post](https://simplabs.com/blog/2021/05/26/keeping-a-clean-git-history/) done by Chris came handy.
+Git merge vs Git rebase was a frequent debate, and according to my notes, I found this enlightening video on the [topic](https://www.youtube.com/watch?v=CRlGDDprdOQ&ab_channel=Academind).
+Then, when I was finally becoming more comfortable with which commands I should use, they told me to tidy my git history 🧹 - [this post](https://simplabs.com/blog/2021/05/26/keeping-a-clean-git-history/) done by Chris came in handy.
 
 As I showed above, I keep a journal where I note down:
 
@@ -44,8 +44,8 @@ As I showed above, I keep a journal where I note down:
 -   key ideas on topics I researched
 -   things I should search more about
 
-I believe the junior phase can be the most overwhelming one - your learning curve is on sky rocket mode 🚀 - with all this new info coming all the time, I find out helpful to write it down as a way to organize the new content in my head.
-Also, a lot of errors I was seeing, they would show up again, I could find what I did & apply it again.
+I believe the junior phase can be the most overwhelming one: your learning curve is in skyrocket mode 🚀! With all this new info coming all the time, I find it helpful to write everything down as a way to organize the new content in my head.
+Also, since a lot of errors I was seeing would show up again, I could find what I did & re-apply it.
 
 Nowadays, I do it less and less, also the pace slowed it down from week logs to month logs 😆 as you can see by my notion pages:
 
