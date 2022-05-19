@@ -5,12 +5,13 @@ github: inesilva
 twitter: inesoaresilva
 topic: process
 bio: 'Junior Software-Engineer'
+og:
+  image: /assets/images/posts/2022-05-19-journey-of-a-junior-software-engineer/og-image.png
 description:
   'Inês Silva is currently the only junior software-engineer at simplabs. She
   shares how it is to onboard into your 1st software engineer job, and how her
   week at simplabs looks like. Also, she gives 5 main tips for other junior
   software engineers.'
-og:
 ---
 
 When do we look for our **first job as software engineers** some questions might
@@ -26,6 +27,8 @@ I will describe **what** it has been like and **how** it is now, and try to give
 some **tips** on the way based on the challenges I faced 💪
 
 <!--break-->
+
+![Journey of a Junior Software-Engineer](/assets/images/posts/2022-05-19-journey-of-a-junior-software-engineer/illustration.svg#full)
 
 My journey at _simplabs_ started in July of 2021: soon it will be 11 months that
 I’m here.
@@ -69,9 +72,9 @@ Time to jump to **#3 tip - Keep a learning journal.**
 Since I was documenting all of my git struggles, I will give you a glimpse at
 what my notion notes were looking like in my second week here 😂:
 
-![My note taking with notion](/assets/images/posts/2022-05-12-journey-of-a-junior-software-engineer/my-notion-notes-eg1.png)
+![My note taking with notion](/assets/images/posts/2022-05-19-journey-of-a-junior-software-engineer/my-notion-notes-eg1.png)
 
-![](/assets/images/posts/2022-05-12-journey-of-a-junior-software-engineer/my-notion-notes-eg2.png)
+![](/assets/images/posts/2022-05-19-journey-of-a-junior-software-engineer/my-notion-notes-eg2.png)
 
 Git merge vs Git rebase was a frequent debate, and according to my notes, I
 found this enlightening video on the
@@ -96,7 +99,7 @@ what I did & re-apply it.
 Nowadays, I need to take notes less and less and even the pace slowed down from
 week logs to month logs 😆 as you can see by my notion pages:
 
-![My pages organization in notion](/assets/images/posts/2022-05-12-journey-of-a-junior-software-engineer/my-notion-pages.png)
+![My pages organization in notion](/assets/images/posts/2022-05-19-journey-of-a-junior-software-engineer/my-notion-pages.png)
 
 After git problems, the second position on the podium of challenges goes to
 testing 🏆
