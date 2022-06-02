@@ -17,7 +17,7 @@ using [Puppeteer](https://pptr.dev).
 
 ## Running / Development
 
-- `yarn start`
+- `yarn start-dev`
 - open [http://localhost:4200](http://localhost:4200).
 - `yarn format` (format source files)
 
@@ -42,6 +42,20 @@ Chrome Inspector to do so.**
 - [navigo](https://github.com/krasimir/navigo)
 - [CSS Blocks](https://css-blocks.com)
 - [Puppeteer](https://pptr.dev)
+
+## Troubleshooting
+
+ <details>
+  <summary><code>yarn start-dev</code> fails in my local machine due to too many open files to watch</summary>
+  
+  You need to increase the max open files limit in your Operating System.
+  
+  The easiest way is by installing `watchman` in your system
+  
+  > brew install watchman
+  
+  <a href="https://wilsonmar.github.io/maximum-limits/">Alternatively, you can modify the limit of files to be watched in your Operating System.</a>
+</details>
 
 ## Copyright
 

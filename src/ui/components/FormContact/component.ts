@@ -51,6 +51,10 @@ export default class FormContact extends Component {
       } else {
         this.formState = FormState.Error;
       }
+      const { plausible } = window as any;
+      if (plausible) {
+        plausible('Contact');
+      }
     } catch (err) {
       this.formState = FormState.Error;
     }

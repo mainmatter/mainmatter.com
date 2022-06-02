@@ -1,0 +1,168 @@
+{
+    "users": [
+        "marcoow",
+        "locks",
+        "zeppelin",
+        "Turbo87",
+        "pichfl",
+        "nickschot",
+        "mansona",
+        "oscard0m",
+        "Mikek2252",
+        "inesilva",
+        "BobrImperator",
+        "candunaj"
+    ],
+    "exclude": [
+        "cardstack/animations-experiment",
+        "konfettiev/konfetti-muenchen.de",
+        "qonto/ember-amount-input",
+        "qonto/ember-autofocus-modifier",
+        "qonto/ember-phone-input",
+        "simplabs/simplabs.github.io",
+        "simplabs/this-week-in-open-source",
+        "mansona/test-copy-file-dest",
+        "oscard0m/web",
+        "BobrImperator/tilex",
+        "emberfest/emberfest.github.io",
+        "mansona/ember-paper",
+        "mansona/rfcs",
+        "fzerocentral/fzerocentral-web",
+        "hugopeixoto/pokemon-collection-tracker-frontend"
+    ],
+    "labels": [
+        {
+            "name": "Rust",
+            "repos": [
+                "Turbo87/aprs-parser-rs",
+                "hyperium/http",
+                "rust-lang/cargo",
+                "rust-lang/rust-by-example",
+                "Turbo87/united-flarmnet",
+                "ferrous-systems/teaching-material"
+            ]
+        },
+        {
+            "name": "crates.io",
+            "repos": [
+                "conduit-rust/conduit-hyper",
+                "rust-lang/crates.io",
+                "Turbo87/renovate-crates-test"
+            ]
+        },
+        {
+            "name": "Ember.js",
+            "repos": [
+                "Authmaker/authmaker-ember-simple-auth",
+                "buschtoens/ember-link",
+                "ember-cli/ember-cli",
+                "ember-cli/ember-cli",
+                "ember-cli/ember-exam",
+                "ember-learn/ember-api-docs",
+                "ember-learn/ember-blog",
+                "ember-learn/ember-styleguide",
+                "ember-learn/ember-website",
+                "ember-learn/empress-blog-ember-template",
+                "ember-learn/guides-source",
+                "emberjs/core-notes",
+                "emberjs/data",
+                "emberjs/ember-ordered-set",
+                "emberjs/ember-string",
+                "emberjs/ember.js",
+                "empress/broccoli-static-site-json",
+                "empress/ember-cli-notifications",
+                "empress/ember-cli-showdown",
+                "empress/ember-showdown-prism",
+                "empress/empress-blog",
+                "empress/empress-blog-casper-template",
+                "empress/field-guide",
+                "mansona/ember-body-class",
+                "mansona/ember-cli-notifications",
+                "nickschot/ember-mobile-menu",
+                "simplabs/ember-cookies",
+                "simplabs/ember-error-route",
+                "simplabs/ember-intl-analyzer",
+                "simplabs/ember-promise-modals",
+                "simplabs/ember-simple-auth",
+                "simplabs/qunit-dom",
+                "zeppelin/ember-click-outside",
+                "simplabs/ember-hbs-minifier",
+                "simplabs/ember-test-selectors",
+                "ember-learn/deprecation-app",
+                "empress/rfc-process-mdbook-template",
+                "empress/rfc-process",
+                "jelhan/ember-cli-browser-navigation-button-test-helpers",
+                "miguelcobain/ember-paper",
+                "GavinJoyce/ember-headlessui",
+                "qonto/ember-cp-validations",
+                "mansona/ember-get-config",
+                "simplabs/ember-workshop",
+                "Turbo87/intellij-emberjs",
+                "offirgolan/ember-cp-validations",
+                "simplabs/ember-hotspots"
+            ]
+        },
+        {
+            "name": "JavaScript",
+            "repos": [
+                "TelemetryDeck/JavaScriptSDK",
+                "commitizen/cz-conventional-changelog",
+                "mansona/lint-to-the-future",
+                "mansona/lint-to-the-future-eslint",
+                "oscard0m/npm-snapshot",
+                "remy/nodemon",
+                "storybookjs/eslint-plugin-storybook",
+                "storybookjs/storybook",
+                "strapi/strapi",
+                "mansona/express-autoroute-json",
+                "mansona/express-autoroute-json",
+                "yaacov/node-modbus-serial",
+                "actions/setup-python",
+                "showdownjs/showdown"
+            ]
+        },
+        {
+            "name": "Octokit",
+            "repos": [
+                "octokit/plugin-throttling.js",
+                "octokit/core.js",
+                "octokit/octokit.js",
+                "octokit/webhooks.js",
+                "octokit/plugin-retry.js",
+                "octokit/plugin-rest-endpoint-methods.js",
+                "octokit/auth-token.js"
+            ]
+        },
+        {
+            "name": "TypeScript",
+            "repos": [
+                "mswjs/msw",
+                "renovatebot/renovate"
+            ]
+        },
+        {
+            "name": "simplabs's playbook",
+            "repos": [
+                "simplabs/playbook"
+            ]
+        },
+        {
+            "name": "Internal",
+            "repos": [
+                "simplabs/renovate-config"
+            ]
+        },
+        {
+            "name": "Ruby",
+            "repos": [
+                "rubyforgood/Flaredown"
+            ]
+        },
+        {
+            "name": "Miscellaneous",
+            "repos": [
+                "netlify/build-image"
+            ]
+        }
+    ]
+}

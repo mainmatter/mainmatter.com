@@ -37,6 +37,16 @@
   from = "https://log.simplabs.com/*"
   to = "https://simplabs.com/blog/"
 
+# redirect mainmatter.com
+[[redirects]]
+  from = "https://mainmatter.com"
+  to = "https://simplabs.com"
+
+# redirect german domain
+  [[redirects]]
+    from = "https://simplabs.de"
+    to = "https://simplabs.com"
+
 # redirect old blog routes
 [[redirects]]
   from = "/blog/2013/06/15/authentication-in-emberjs.html"
