@@ -28,7 +28,9 @@
         "mansona/ember-paper",
         "mansona/rfcs",
         "fzerocentral/fzerocentral-web",
-        "hugopeixoto/pokemon-collection-tracker-frontend"
+        "hugopeixoto/pokemon-collection-tracker-frontend",
+        "cgiffard/Downsize",
+        "machty/ember-concurrency"
     ],
     "labels": [
         {
@@ -39,7 +41,8 @@
                 "rust-lang/cargo",
                 "rust-lang/rust-by-example",
                 "Turbo87/united-flarmnet",
-                "ferrous-systems/teaching-material"
+                "ferrous-systems/teaching-material",
+                "svartalf/rust-claim"
             ]
         },
         {
@@ -99,7 +102,20 @@
                 "simplabs/ember-workshop",
                 "Turbo87/intellij-emberjs",
                 "offirgolan/ember-cp-validations",
-                "simplabs/ember-hotspots"
+                "simplabs/ember-hotspots",
+                "ember-cli/ember-try",
+                "ember-learn/handbook",
+                "emberjs/rfcs",
+                "mansona/ember-html-excerpt",
+                "soxhub/ember-formatjs"
+            ]
+        },
+        {
+            "name": "Lint to the future",
+            "repos": [
+                "mansona/lint-to-the-future",
+                "mansona/lint-to-the-future-eslint",
+                "mansona/lint-to-the-future-ember-template"
             ]
         },
         {
@@ -107,8 +123,6 @@
             "repos": [
                 "TelemetryDeck/JavaScriptSDK",
                 "commitizen/cz-conventional-changelog",
-                "mansona/lint-to-the-future",
-                "mansona/lint-to-the-future-eslint",
                 "oscard0m/npm-snapshot",
                 "remy/nodemon",
                 "storybookjs/eslint-plugin-storybook",
@@ -118,7 +132,10 @@
                 "mansona/express-autoroute-json",
                 "yaacov/node-modbus-serial",
                 "actions/setup-python",
-                "showdownjs/showdown"
+                "showdownjs/showdown",
+                "Turbo87/lva-camo-status",
+                "mansona/Downsize",
+                "platinumazure/eslint-plugin-qunit"
             ]
         },
         {
@@ -130,7 +147,9 @@
                 "octokit/webhooks.js",
                 "octokit/plugin-retry.js",
                 "octokit/plugin-rest-endpoint-methods.js",
-                "octokit/auth-token.js"
+                "octokit/auth-token.js",
+                "octokit/plugin-paginate-rest.js",
+                "octokit/types.ts"
             ]
         },
         {
