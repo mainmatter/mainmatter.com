@@ -159,11 +159,6 @@ some of the work they have done the past weeks!
   CI: Update Node.js versions ([@Turbo87])
 - [simplabs/qunit-dom] [#1572](https://github.com/simplabs/qunit-dom/pull/1572)
   Remove `engines` declaration from `package.json` ([@Turbo87])
-- [soxhub/ember-formatjs] [#8](https://github.com/soxhub/ember-formatjs/pull/8)
-  [SOX-15397] create custom linter to disallow concatenating messages
-  ([@BobrImperator])
-- [soxhub/ember-formatjs] [#7](https://github.com/soxhub/ember-formatjs/pull/7)
-  [SOX-15214] Fix TemplateLiteral value ([@BobrImperator])
 
 ## JavaScript
 
