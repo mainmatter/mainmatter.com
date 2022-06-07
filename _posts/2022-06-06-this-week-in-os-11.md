@@ -258,13 +258,6 @@ some of the work they have done the past weeks!
   [#4794](https://github.com/rust-lang/crates.io/pull/4794) renovate:
   Automatically merge linting and testing dependency updates ([@Turbo87])
 
-## Unknown
-
-- [soxhub/intl-template-transform]
-  [#70](https://github.com/soxhub/intl-template-transform/pull/70) SOX-15723
-  disable transform for formatMessage arguments if they are objects
-  ([@BobrImperator]) soxhub/ember-formatjs
-
 [@bobrimperator]: https://github.com/BobrImperator
 [@turbo87]: https://github.com/Turbo87
 [@locks]: https://github.com/locks
@@ -289,15 +282,12 @@ some of the work they have done the past weeks!
 [empress/rfc-process]: https://github.com/empress/rfc-process
 [ferrous-systems/teaching-material]:
   https://github.com/ferrous-systems/teaching-material
-[frontity/step-by-step-tutorial]:
-  https://github.com/frontity/step-by-step-tutorial
 [mansona/downsize]: https://github.com/mansona/Downsize
 [mansona/ember-get-config]: https://github.com/mansona/ember-get-config
 [mansona/ember-html-excerpt]: https://github.com/mansona/ember-html-excerpt
 [mansona/lint-to-the-future-ember-template]:
   https://github.com/mansona/lint-to-the-future-ember-template
 [mansona/lint-to-the-future]: https://github.com/mansona/lint-to-the-future
-[marcoow/chat-client]: https://github.com/marcoow/chat-client
 [miguelcobain/ember-paper]: https://github.com/miguelcobain/ember-paper
 [octokit/plugin-paginate-rest.js]:
   https://github.com/octokit/plugin-paginate-rest.js
@@ -309,7 +299,4 @@ some of the work they have done the past weeks!
   https://github.com/simplabs/ember-promise-modals
 [simplabs/ember-simple-auth]: https://github.com/simplabs/ember-simple-auth
 [simplabs/qunit-dom]: https://github.com/simplabs/qunit-dom
-[soxhub/ember-formatjs]: https://github.com/soxhub/ember-formatjs
-[soxhub/intl-template-transform]:
-  https://github.com/soxhub/intl-template-transform
 [svartalf/rust-claim]: https://github.com/svartalf/rust-claim

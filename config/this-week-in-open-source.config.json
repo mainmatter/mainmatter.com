@@ -32,7 +32,9 @@
         "cgiffard/Downsize",
         "machty/ember-concurrency",
         "frontity/step-by-step-tutorial",
-        "marcoow/chat-client"
+        "marcoow/chat-client",
+        "soxhub/ember-formatjs",
+        "soxhub/intl-template-transform"
     ],
     "labels": [
         {
