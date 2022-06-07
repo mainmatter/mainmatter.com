@@ -30,7 +30,9 @@
         "fzerocentral/fzerocentral-web",
         "hugopeixoto/pokemon-collection-tracker-frontend",
         "cgiffard/Downsize",
-        "machty/ember-concurrency"
+        "machty/ember-concurrency",
+        "frontity/step-by-step-tutorial",
+        "marcoow/chat-client"
     ],
     "labels": [
         {
