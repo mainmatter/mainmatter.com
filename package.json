@@ -28,7 +28,7 @@
     "this-week": "./bin/this-week-in-open-source --config-path=config/this-week-in-open-source.config.json"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.7",
+    "@babel/core": "^7.18.5",
     "@babel/preset-env": "^7.17.10",
     "@css-blocks/ember-cli": "^1.5.0",
     "@glimmer/application": "^0.13.0",
@@ -65,7 +65,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-simplabs": "^0.4.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "express": "^4.17.3",
+    "express": "^4.18.1",
     "front-matter": "^4.0.2",
     "fs-extra": "^10.1.0",
     "glob": "^8.0.1",
