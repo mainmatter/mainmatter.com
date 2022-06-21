@@ -15,7 +15,7 @@ interviews Óscar Domínguez Celada, Software Engineer at simplabs.
 
 <!--break-->
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QXhu5MlyfUQ" title="Embedded video of Inside simplabs episode 7" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QXhu5MlyfUQ" title="Embedded video of Inside simplabs episode 9" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Óscar explains how connecting technical knowledge with non-technical
 competencies is an essential requirement for a good software engineer. He also
