@@ -1,5 +1,5 @@
 ---
-title: 'Inside simplabs #9: Óscar Domínguez Celada, Software Engineer'
+title: 'Inside simplabs #9: Óscar Domínguez, Software Engineer'
 author: "Emma Dell'Acqua"
 github: emma_dellacqua
 twitter: emma_dellacqua
