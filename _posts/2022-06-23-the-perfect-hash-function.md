@@ -9,6 +9,8 @@ description:
   'Tobias Bieniek made MIME type handling in the crates.io server infinitely
   faster by using perfect hash functions with the rust-phf crate and moving work
   from runtime to compile time.'
+og:
+  image: /assets/images/posts/2022-06-23-the-perfect-hash-function/og-image.png
 ---
 
 This is the story of how we made the [conduit-mime-types] Rust crate almost
