@@ -37,7 +37,7 @@
     "@glimmer/component": "^0.13.0",
     "@glimmer/inline-precompile": "^1.0.0",
     "@glimmer/resolver": "^0.4.3",
-    "@glimmer/ssr": "^0.13.0",
+    "@glimmer/ssr": "^1.1.2",
     "@glimmer/test-helpers": "^0.31.1",
     "@lhci/cli": "^0.8.2",
     "@percy/script": "^1.1.0",
