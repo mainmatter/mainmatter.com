@@ -4,23 +4,27 @@
   overflow: hidden;
 
   &--purple {
+    --color-animation: var(--color-aqua);
     --color-link-background: var(--color-blue);
     --color-overlay: var(--color-purple);
     color: var(--color-white);
   }
 
   &--blue {
+    --color-animation: var(--color-yellow);
     --color-link-background: var(--color-purple);
     --color-overlay: var(--color-blue);
     color: var(--color-white);
   }
 
   &--aqua {
+    --color-animation: var(--color-blue);
     --color-overlay: var(--color-aqua);
     color: var(--color-black);
   }
 
   &--yellow {
+    --color-animation: var(--color-aqua);
     --color-link-background: var(--color-aqua);
     --color-overlay: var(--color-yellow);
     color: var(--color-black);
@@ -77,17 +81,12 @@
   }
 }
 
-.color-hero__title {
+.color-hero__main {
   max-width: rem-calc(620);
-  margin-bottom: 1.5rem;
 }
 
-.color-hero__text {
-  max-width: rem-calc(376);
-
-  &--wide {
-    max-width: rem-calc(450);
-  }
+.color-hero__title {
+  margin-bottom: 1.5rem;
 }
 
 .color-hero__link {
@@ -114,7 +113,7 @@
   }
 
   .color-hero__filter {
-    backdrop-filter: contrast(0.4) brightness(1.7) grayscale(1);
+    backdrop-filter: contrast(0.8) brightness(1.1) grayscale(0);
     -webkit-backdrop-filter: contrast(0.4) brightness(1.7) grayscale(1);
   }
 }

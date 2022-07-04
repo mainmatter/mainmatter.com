@@ -2,13 +2,24 @@
 layout: 'base'
 title: null
 ---
+
 {% from "split-hero.njk" import splitHero %}
 {% from "logo-list.njk" import logoList %}
 {% from "color-hero.njk" import colorHero %}
 {% from "image-with-text-stacked.njk" import imageWithTextStacked %}
 {% from "image-with-text.njk" import imageWithText %}
 {% from "secondary-feature.njk" import secondaryFeature %}
-
+{% set 'content' = {
+  "isPageTitle": true,
+  "title": "Your <em>expert</em> guides for the journey ahead",
+  "titleTag": "h1",
+  "text": "It takes brains to develop a no-brainer. At mainmatter we teach, cross-pollinate and collaborate with our clients to develop digital products and practices they can build on.",
+  "image": "/assets/images/photos/mainmatter-team-whiteboard.jpg",
+  "alt": "Person looking at a laptop screen with code",
+  "loading": "lazy",
+  "scrollAnimation": false
+} %}
+{{ colorHero('center', 'purple', content) }}
 {% set 'content' = {
   "title": "Your <em>sustainable</em> success is our expertise",
   "text": "You want to work with a digital consultancy that can help you bridge the gap between vision and execution. Let Mainmatter guide you through the process of building products that can grow and scale over the long term.",
@@ -17,10 +28,8 @@ title: null
   "loading": "eager"
 } %}
 {{ splitHero('left', 'purple', content) }}
-
 {% set logoCompanies = ['Qonto', 'Trainline', 'Timify', 'Cardstack', 'Generali', 'Experteer'] %}
 {{ logoList(logoCompanies) }}
-
 {% set 'content' = {
   "title": "We’re in it for the long haul",
   "text": "Your users need intuitive solutions, and your team needs elegant architecture that can be maintained for years to come. We’re here to accelerate your trajectory.",
@@ -31,7 +40,6 @@ title: null
   "loading": "lazy"
 } %}
 {{ colorHero('center', 'blue', content) }}
-
 {% set 'content' = {
   "title": "Digital products",
   "text": "Mainmatter will join forces with you to build your new house on a sturdy foundation and show you how we do it along the way.",
@@ -42,7 +50,6 @@ title: null
   "loading": "lazy"
 } %}
 {{ imageWithText('right', content) }}
-
 {% set 'content' = {
   "title": "Official Ember.js Sponsor",
   "text": "We recently have been recognized as an official sponsor of the Ember.js project along with international brands like LinkedIn and Yahoo.",
@@ -53,7 +60,6 @@ title: null
   "loading": "lazy"
 } %}
 {{ secondaryFeature('left', content, true) }}
-
 {% set 'content' = {
   "title": "Co-Engineering the Future of Banking for SME",
   "text": "Empowering Qonto's ambitious engineers to achieve their goals",
@@ -64,7 +70,6 @@ title: null
   "loading": "lazy"
 } %}
 {{ splitHero('left', 'aqua', content) }}
-
 {% set 'contentBlocks' = [{
   "title": "Team Augmentation",
   "text": "Let us cross-pollinate with your engineering team to ship high-quality code at an accelerated pace.",
@@ -84,7 +89,6 @@ title: null
   "loading": "lazy"
 }] %}
 {{ imageWithTextStacked('right', contentBlocks) }}
-
 {% set 'content' = {
   "title": "Grow with us",
   "text": "<p>Let's talk about the challenges that you're facing.</p><p>Our experts are ready to guide you through your next big move.</p>",
