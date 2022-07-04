@@ -1,20 +1,20 @@
 {
   "socials": [
     {
-      "text": "Github",
-      "link": "https://github.com/simplabs/"
-    },
-    {
-      "text": "Twitter",
-      "link": "https://twitter.com/simplabs/"
+      "text": "Youtube",
+      "link": "https://www.youtube.com/channel/UCVl-sKkK7VNcsKD4i2UbgAQ"
     },
     {
       "text": "LinkedIn",
       "link": "https://www.linkedin.com/company/simplabs-gmbh"
     },
     {
-      "text": "Youtube",
-      "link": "https://www.youtube.com/channel/UCVl-sKkK7VNcsKD4i2UbgAQ"
+      "text": "Twitter",
+      "link": "https://twitter.com/simplabs/"
+    },
+    {
+      "text": "Github",
+      "link": "https://github.com/simplabs/"
     }
   ]
 }

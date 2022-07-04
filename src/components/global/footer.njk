@@ -11,13 +11,12 @@
     <nav class="footer__nav" aria-label="Footer">
       {% for menu in footerNavigation.menus %}
         <div class="footer__menu footer-menu">
-          <h2 class="footer-menu__heading text--accent">{{ menu.heading }}</h2>
+          <h2 class="footer-menu__heading">{{ menu.heading }}</h2>
           <ul class="footer-menu__list">
             {% for item in menu.links %}
               <li class="footer-menu__item">
                 <a class="footer-menu__link" href="{{ item.link }}">
                   {{ item.text }}
-                  <span class="footer-menu__arrow">{% include 'svg/arrow.njk' %}</span>
                 </a>
               </li>
             {% endfor %}
