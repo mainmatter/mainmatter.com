@@ -9,9 +9,8 @@ class: Optional class attribute for applying spacing
 Example usage:
 {{ ctaLink('/', 'Find Out More', 'color-hero__link') }}
 #}
-
 {%- macro ctaLink(link, text, class) -%}
-  <a class="cta-link text--accent {{ class }}" href="{{ link }}">
+  <a class="cta-link {{ class }}" href="{{ link }}">
     <span class="cta-link__text">{{ text | safe }}</span>
     <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
   </a>

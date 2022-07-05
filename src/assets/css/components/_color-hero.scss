@@ -1,6 +1,6 @@
 .color-hero {
   position: relative;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: auto;
   overflow: hidden;
 
   &--purple {
@@ -18,9 +18,9 @@
   }
 
   &--aqua {
-    --color-animation: var(--color-blue);
+    --color-animation: var(--color-purple);
     --color-overlay: var(--color-aqua);
-    color: var(--color-black);
+    color: var(--color-white);
   }
 
   &--yellow {
@@ -62,14 +62,13 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: 0.5;
 }
 
 .color-hero__container {
   display: flex;
   position: relative;
   min-height: 100%;
-  padding: 3rem 0;
+  padding: 3.25rem 0;
   transform: translate3d(0, 0, 0);
 
   &--center {
@@ -85,13 +84,23 @@
   max-width: rem-calc(620);
 }
 
+.color-hero__text {
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
 .color-hero__title {
   margin-bottom: 1.5rem;
 }
 
 .color-hero__link {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   color: currentColor;
+
+  &:hover,
+  &:focus {
+    color: var(--color-animation);
+  }
 }
 
 @media (min-width: 48em) {
@@ -104,16 +113,20 @@
   .color-hero__container {
     padding: 4.5rem 0;
   }
-}
 
-@supports (backdrop-filter: contrast(1)) or
-  (-webkit-backdrop-filter: contrast(1)) {
-  .color-hero__image {
-    opacity: 1;
+  .color-hero__text {
+    &--small {
+      font-size: 1.125rem;
+      line-height: 1.8;
+    }
+
+    &--large {
+      font-size: 1.5rem;
+      line-height: 1.6;
+    }
   }
 
-  .color-hero__filter {
-    backdrop-filter: contrast(0.8) brightness(1.1) grayscale(0);
-    -webkit-backdrop-filter: contrast(0.4) brightness(1.7) grayscale(1);
+  .color-hero__link {
+    margin-top: 3.75rem;
   }
 }

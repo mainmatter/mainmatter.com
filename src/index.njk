@@ -10,16 +10,25 @@ title: null
 {% from "image-with-text.njk" import imageWithText %}
 {% from "secondary-feature.njk" import secondaryFeature %}
 {% set 'content' = {
-  "isPageTitle": true,
   "title": "Your <em>expert</em> guides for the journey ahead",
-  "titleTag": "h1",
+  "titleTag": "h2",
   "text": "It takes brains to develop a no-brainer. At mainmatter we teach, cross-pollinate and collaborate with our clients to develop digital products and practices they can build on.",
   "image": "/assets/images/photos/mainmatter-team-whiteboard.jpg",
-  "alt": "Person looking at a laptop screen with code",
-  "loading": "lazy",
-  "scrollAnimation": false
+  "alt": "Three team members meeting in front of a whiteboard filled with colored Post-it notes",
+  "loading": "lazy"
 } %}
-{{ colorHero('center', 'purple', content) }}
+{{ colorHero('center', 'large', 'purple', false, content) }}
+{% set 'content' = {
+  "title": "Build <em>lasting</em> products, systematically",
+  "titleTag": "h2",
+  "text": "Our playbook describes methodologies for building sustainable digital products and running an effective, collaborative product development process. It is based on our experiences working on projects with international clients in various industries for many years.",
+  "linkUrl": "/playbook",
+  "linkText": "Download our playbook",
+  "image": "/assets/images/photos/ui-sketching@1200.jpg",
+  "alt": "TODO: REPLACE PHOTO / ASSET CANNOT BE EXPORTED",
+  "loading": "lazy"
+} %}
+{{ colorHero('center', 'small', 'purple', true, content) }}
 {% set 'content' = {
   "title": "Your <em>sustainable</em> success is our expertise",
   "text": "You want to work with a digital consultancy that can help you bridge the gap between vision and execution. Let Mainmatter guide you through the process of building products that can grow and scale over the long term.",
@@ -90,12 +99,13 @@ title: null
 }] %}
 {{ imageWithTextStacked('right', contentBlocks) }}
 {% set 'content' = {
-  "title": "Grow with us",
-  "text": "<p>Let's talk about the challenges that you're facing.</p><p>Our experts are ready to guide you through your next big move.</p>",
+  "title": "Grow <em>something</em> with us",
+  "titleTag": "h2",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
   "linkUrl": "/contact/",
-  "linkText": "Partner with us",
+  "linkText": "Get in touch",
   "image": "/assets/images/photos/317.jpg",
   "alt": "Team member smiling at a laptop",
   "loading": "lazy"
 } %}
-{{ colorHero('center', 'yellow', content) }}
+{{ colorHero('center', 'small', 'aqua', true, content) }}
