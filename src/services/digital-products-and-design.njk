@@ -1,15 +1,15 @@
 ---
 layout: 'base'
-title: Product Design | Our Services
+title: Digital Products & Design | Our Services
 eleventyNavigation:
-  key: Product Design
+  key: Digital Products & Design
   parent: Services
 ---
+
 {% from "split-hero.njk" import splitHero %}
 {% from "image-with-text.njk" import imageWithText %}
 {% from "column-list.njk" import columnList %}
 {% from "split-list.njk" import splitList %}
-
 {% set 'content' = {
   "title": "Good design makes <em>complex</em> things easy",
   "text": "<p>Simplicity doesn’t come easily. The greatest product designs are nearly invisible—but the process of developing a fluid, delightful experience requires a clear conceptual foundation coupled with iteration and validation. Mainmatter’s experts can guide you through every step of the design process.</p>",
@@ -18,7 +18,6 @@ eleventyNavigation:
   "loading": "eager"
 } %}
 {{ splitHero('left', 'aqua', content) }}
-
 {% set 'content' = {
   "title": "Our design philosophy",
   "text": "Clean, functional, and focused—that’s our philosophy, and it’s how we design successful products.",
@@ -27,9 +26,7 @@ eleventyNavigation:
   "loading": "lazy"
 } %}
 {{ imageWithText('left', content) }}
-
 {{ columnList(services['product-design'], '', 'column-list--services') }}
-
 {% set list = [
   "Multi-stakeholder design research",
   "Ideation across the entire user journey",
@@ -46,5 +43,4 @@ eleventyNavigation:
   "list": list
 } %}
 {{ splitList('blue', content) }}
-
-{% include 'content/hero-work-with-us.njk' %}
+{% include 'content/hero-grow-with-us.njk' %}

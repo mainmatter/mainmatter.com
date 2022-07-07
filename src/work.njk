@@ -6,11 +6,19 @@ eleventyNavigation:
   key: Work
   order: 20
 ---
-{% from "split-hero.njk" import splitHero %}
+
 {% from "color-hero.njk" import colorHero %}
+{% from "split-hero.njk" import splitHero %}
 {% from "client-list.njk" import clientList %}
 {% from "case-study-list.njk" import caseStudyList %}
-
+{% set 'content' = {
+  "title": "A proven track record of <em>successful</em> projects for international clients",
+  "image": "/assets/images/photos/mainmatter-work-hero.jpg",
+  "alt": "Man standing at whiteboard presenting to three team members sitting to either side of him",
+  "loading": "eager",
+  "titleTag": "h1"
+} %}
+{{ colorHero('center', 'large', 'aqua', false, content) }}
 {% set 'content' = {
   "title": "A proven track record of <em>successful</em> projects for international clients.",
   "image": "/assets/images/photos/0044.jpg",
@@ -18,8 +26,6 @@ eleventyNavigation:
   "loading": "Three team members in a meeting looking to the right"
 } %}
 {{ splitHero('left', 'blue', content) }}
-
-
 {% set 'content' = {
   "title": "A helping hand for a visionary fintech startup",
   "text": "Qonto is a B2B Neobank that provides banking services and credit cards to more than 75,000 freelancers and SMEs in Europe. Our senior experts helped them to lay the foundations for sustainable growth at an accelerated pace.",
@@ -30,10 +36,8 @@ eleventyNavigation:
   "loading": "lazy"
 } %}
 {{ splitHero('right', 'white', content) }}
-
 {% set clients = ['qonto', 'cardstack', 'generali', 'poellath', 'robin-hood', 'clark', 'xbav', 'experteer', 'mvb'] %}
 {{ clientList(clients, 'aqua', 'Meet our clients') }}
-
 {% set 'content' = {
   "title": "The full market potential for a leading travel platform",
   "text": "Trainline is Europe’s leading independent rail and coach platform. We enabled them to tap into their full market potential by launching a mobile app to serve customers on the go.",
@@ -44,10 +48,8 @@ eleventyNavigation:
   "loading": "lazy"
 } %}
 {{ splitHero('left', 'white', content) }}
-
 {% set clients = ['camilyo', 'hop-skip-drive', 'dim3', 'timify', 'embedd', 'medify', 'expedition', 'trainline', 'ringler', 'neighbourhoodie', 'loconet', 'erdil', 'sutori', 'asilimia'] %}
 {{ clientList(clients, 'aqua') }}
-
 {% set 'content' = {
   "title": "An engineering overhaul for a validated booking system",
   "text": "Timify is a cloud-based appointment booking system that serves over 50,000 clients worldwide. When their entire system needed to be re-engineered from the ground up, they trusted us to step in and set them up for long-term success.",
@@ -58,11 +60,8 @@ eleventyNavigation:
   "loading": "lazy"
 } %}
 {{ splitHero('right', 'white', content) }}
-
-
 {% set caseStudies = ['ddwrt', 'expedition'] %}
 {{ caseStudyList(caseStudies, 'blue', 'More case studies') }}
-
 {% set 'content' = {
   "title": "We maintain a lean process that supports the team rather than standing in its way.",
   "text": "Find out more about how we work to deliver ambitious software solutions for our clients.",
@@ -73,7 +72,6 @@ eleventyNavigation:
   "loading": "lazy"
 } %}
 {{ splitHero('left', 'purple', content) }}
-
 {% set 'content' = {
   "title": "Grow with us",
   "text": "<p>Let's talk about the challenges that you're facing.</p><p>Our experts are ready to guide you through your next big move.</p>",

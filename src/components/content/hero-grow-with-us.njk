@@ -1,12 +1,11 @@
 {% from "color-hero.njk" import colorHero %}
-
 {% set 'content' = {
-  "title": "Grow with us",
-  "text": "<p>Let's talk about the challenges that you're facing.</p><p>Our experts are ready to guide you through your next big move.</p>",
+  "title": "Grow <em>your business</em> with us",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
   "linkUrl": "/contact/",
-  "linkText": "Partner with us",
-  "image": "/assets/images/photos/0041.jpg",
-  "alt": "Close up of hands typing on a laptop",
+  "linkText": "Get in touch",
+  "image": "/assets/images/photos/mainmatter-team-collaboration.jpg",
+  "alt": "Three smiling team members looking at a laptop",
   "loading": "lazy"
 } %}
-{{ colorHero('center', 'yellow', content) }}
+{{ colorHero('center', 'small', 'purple', true, content) }}

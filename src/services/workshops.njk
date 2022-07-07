@@ -1,0 +1,18 @@
+---
+layout: 'base'
+title: Workshops | Our Services
+eleventyNavigation:
+  key: Workshops
+  parent: Services
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% set 'content' = {
+  "title": "We teach teams like yours how to build sustainable products that work well today and keep working well tomorrow",
+  "image": "/assets/images/photos/mainmatter-team-meeting.jpg",
+  "alt": "Man standing at whiteboard presenting to three team members sitting to either side of him",
+  "loading": "eager",
+  "titleTag": "h1"
+} %}
+{{ colorHero('center', 'large', 'aqua', false, content) }}
+{% include 'content/hero-grow-with-us.njk' %}

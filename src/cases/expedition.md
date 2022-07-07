@@ -7,9 +7,10 @@ displayTitle: "A sturdy foundation for <em>advanced</em> system architecture"
 description: Expedition is an online travel magazine for global citizens. They turned to Mainmatter when they were looking for guidance to get the most out of their technology stack based on Elixir, Phoenix and Ember.js.
 hero:
   color: purple
-  desktopTextPosition: "right"
+  textPosition: "center"
   image: "/assets/images/work/expedition.jpg"
   imageAlt: "Expedition homepage viewed on an iPad"
+  tags: "development / architecture / mentoring"
 ---
 
 {% from "split-quote.njk" import splitQuote %}

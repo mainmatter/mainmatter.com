@@ -1,46 +1,37 @@
 ---
 layout: base
 ---
-{% from "split-hero.njk" import splitHero %}
 
+{% from "split-hero.njk" import splitHero %}
+{% from "color-hero.njk" import colorHero %}
 {%- block content -%}
-  <div class="">
-    <div class="split-hero split-hero--case-study split-hero--{{ hero.color }}">
-      <div class="split-hero__main split-hero__main--{{ hero.desktopTextPosition }}">
-        <div class="split-hero__container container">
-          <div class="split-hero__title-wrapper">
-            <h1 class="split-hero__title h1 text-animation">{{ displayTitle | safe }}</h1>
-          </div>
-          {% if companyDescription %}
-            <div class="split-hero__client">
-              <div class="split-hero__client-label">The Client</div>
-              <div class="split-hero__client-wrapper">
-                <div class="split-hero__client-logo">
-                  {% set imagePath %}/assets/images/logos/background/{{ company | slug }}.svg{% endset %}
-                  <img src="{{ imagePath }}" alt="{{ company }}">
-                </div>
-                <div class="split-hero__client-text">
-                  {{ companyDescription | safe }}
-                </div>
-              </div>
-            </div>
-          {% endif %}
+<div class="">
+  <div class="color-hero color-hero--{{ hero.color }}">
+    <div class="color-hero__image-wrapper">
+      {% if hero.image %}
+        {% image hero.image, hero.imageAlt, '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
+      {% endif %}
+    </div>
+    <div class="color-hero__filter"></div>
+    <div class="color-hero__overlay"></div>
+    <div class="color-hero__container container container--xl color-hero__container--{{ hero.textPosition }}">
+      <div class="color-hero__main">
+        <div class="color-hero__client-logo">
+          {% set imagePath %}/assets/images/logos/{{ company | slug }}.svg{% endset %}
+          <img src="{{ imagePath }}" alt="{{ company }}"></div>
+          <h1 class="color-hero__title color-hero__title--full text-animation">{{ displayTitle | safe }}</h1>
+          <p class="color-hero__client-tags">{{ hero.tags }}</p>
         </div>
-      </div>
-      <div class="split-hero__image-wrapper">
-        {% if hero.image %}
-          {% image hero.image, hero.imageAlt, '(min-width: 48em) 50vw, 100vw', 'eager', 'split-hero__image' %}
-        {% endif %}
       </div>
     </div>
     <article>
       {{ content | safe }}
     </article>
     {% set next = collections.caseStudiesFeatured | getNextCollectionItem(page) %}
-    {% if next %}{% else %}
-      {% set next = collections.caseStudiesFeatured[0] %}
+    {% if next %}
+      {% else %}
+        {% set next = collections.caseStudiesFeatured[0] %}
     {% endif %}
-
     {% if next %}
       {% set 'content' = {
         "tags": ['Next Case Study'],

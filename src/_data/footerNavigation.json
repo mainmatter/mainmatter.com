@@ -4,41 +4,16 @@
       "heading": "Services",
       "links": [
         {
-          "text": "Digital Products",
-          "link": "/services/digital-products/"
+          "text": "Team Augmentation & Training",
+          "link": "/services/team-augmentation-and-training/"
         },
         {
-          "text": "Team Augmentation",
-          "link": "/services/team-augmentation/"
+          "text": "Digital Products & Design",
+          "link": "/services/digital-products-and-design/"
         },
         {
-          "text": "Training & Support",
-          "link": "/services/training/"
-        },
-        {
-          "text": "Product Design",
-          "link": "/services/product-design/"
-        }
-      ]
-    },
-    {
-      "heading": "Expertise",
-      "links": [
-        {
-          "text": "Ember.js",
-          "link": "/ember-consulting/"
-        },
-        {
-          "text": "Elixir & Phoenix",
-          "link": "/expertise/elixir-phoenix/"
-        },
-        {
-          "text": "Our Playbook",
-          "link": "/playbook/"
-        },
-        {
-          "text": "Resources",
-          "link": "/resources/"
+          "text": "Workshops",
+          "link": "/services/workshops/"
         }
       ]
     },
@@ -68,19 +43,32 @@
       ]
     },
     {
+      "heading": "Expertise",
+      "links": [
+        {
+          "text": "Ember.js",
+          "link": "/ember-consulting/"
+        },
+        {
+          "text": "Elixir & Phoenix",
+          "link": "/expertise/elixir-phoenix/"
+        },
+        {
+          "text": "Our Playbook",
+          "link": "/playbook/"
+        },
+        {
+          "text": "Resources",
+          "link": "/resources/"
+        }
+      ]
+    },
+    {
       "heading": "Connect",
       "links": [
         {
-          "text": "Contact",
+          "text": "Contact us",
           "link": "/contact/"
-        },
-        {
-          "text": "Calendar",
-          "link": "/calendar/"
-        },
-        {
-          "text": "Talks",
-          "link": "/talks/"
         }
       ]
     }
