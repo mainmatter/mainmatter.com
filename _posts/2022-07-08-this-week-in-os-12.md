@@ -57,15 +57,6 @@
 
 ## Unknown
 
-- [BobrImperator/todo-app] [#9](https://github.com/BobrImperator/todo-app/pull/9) Lesson 8 ([@BobrImperator])
-- [BobrImperator/todo-app] [#8](https://github.com/BobrImperator/todo-app/pull/8) Lesson 7 ([@BobrImperator])
-- [BobrImperator/todo-app] [#7](https://github.com/BobrImperator/todo-app/pull/7) --wip-- [skip ci] ([@BobrImperator])
-- [BobrImperator/todo-app] [#6](https://github.com/BobrImperator/todo-app/pull/6) Lesson 6 ([@BobrImperator])
-- [BobrImperator/todo-app] [#5](https://github.com/BobrImperator/todo-app/pull/5) Get used to syntax ([@BobrImperator])
-- [BobrImperator/todo-app] [#4](https://github.com/BobrImperator/todo-app/pull/4) Lesson 5 ([@BobrImperator])
-- [BobrImperator/todo-app] [#3](https://github.com/BobrImperator/todo-app/pull/3) Lesson 4 ([@BobrImperator])
-- [BobrImperator/todo-app] [#2](https://github.com/BobrImperator/todo-app/pull/2) Lesson 3 ([@BobrImperator])
-- [BobrImperator/todo-app] [#1](https://github.com/BobrImperator/todo-app/pull/1) Lesson 2 ([@BobrImperator])
 - [Turbo87/sentry-conduit] [#80](https://github.com/Turbo87/sentry-conduit/pull/80) Update minimum Rust version to v1.57.0 ([@Turbo87])
 - [Turbo87/sentry-conduit] [#79](https://github.com/Turbo87/sentry-conduit/pull/79) Improve HTTP status code mapping ([@Turbo87])
 - [Turbo87/sentry-conduit] [#76](https://github.com/Turbo87/sentry-conduit/pull/76) Implement performance tracing support ([@Turbo87])
@@ -142,7 +133,6 @@
 - [squash-commit-app/squash-commit-app] [#19](https://github.com/squash-commit-app/squash-commit-app/pull/19) fix(release): use node-version 14 ([@oscard0m])
 - [squash-commit-app/squash-commit-app] [#18](https://github.com/squash-commit-app/squash-commit-app/pull/18) docs(README): add context and news about this GitHub App ([@oscard0m])
 
-[@BobrImperator]: https://github.com/BobrImperator
 [@Mikek2252]: https://github.com/Mikek2252
 [@Turbo87]: https://github.com/Turbo87
 [@locks]: https://github.com/locks
@@ -151,7 +141,6 @@
 [@oscard0m]: https://github.com/oscard0m
 [@pichfl]: https://github.com/pichfl
 [@zeppelin]: https://github.com/zeppelin
-[BobrImperator/todo-app]: https://github.com/BobrImperator/todo-app
 [Turbo87/sentry-conduit]: https://github.com/Turbo87/sentry-conduit
 [babel/ember-cli-babel]: https://github.com/babel/ember-cli-babel
 [cookpete/auto-changelog]: https://github.com/cookpete/auto-changelog
