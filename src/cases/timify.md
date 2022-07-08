@@ -5,10 +5,11 @@ companyDescription: Timify is a cloud-based appointment scheduling system that s
 displayTitle: "An engineering overhaul for a <em>validated</em> booking system"
 description: Timify is an online appointment scheduling service that connects service providers with clients. When they decided it was time to re-engineer their existing product, they trusted us to set them up for future success.
 hero:
-  color: aqua
-  desktopTextPosition: "right"
-  image: "/assets/images/work/timify-right.jpg"
-  imageAlt: "Macbook showing a Timify schedule"
+  color: purple
+  textPosition: "center"
+  image: "/assets/images/work/timify.jpg"
+  imageAlt: "Smiling blonde woman behind a counter serving another woman"
+  tags: "development / architecture / mentoring"
 ---
 
 {% from "split-quote.njk" import splitQuote %}

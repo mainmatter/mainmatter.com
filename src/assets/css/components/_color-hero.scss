@@ -55,6 +55,7 @@
   height: 100%;
   background-color: var(--color-overlay);
   mix-blend-mode: multiply;
+  opacity: 0.9;
 }
 
 .color-hero__image {
@@ -106,7 +107,25 @@
 }
 
 .color-hero__client-logo {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.color-hero__client-tags {
+  margin-top: 2rem;
+}
+
+@media (min-width: 72em) {
+  .color-hero__text {
+    &--small {
+      font-size: 1.125rem;
+      line-height: 1.8;
+    }
+
+    &--large {
+      font-size: 1.5rem;
+      line-height: 1.6;
+    }
+  }
 }
 
 @media (min-width: 48em) {
@@ -118,18 +137,6 @@
 
   .color-hero__container {
     padding: 4.5rem 0;
-  }
-
-  .color-hero__text {
-    &--small {
-      font-size: 1.125rem;
-      line-height: 1.8;
-    }
-
-    &--large {
-      font-size: 1.5rem;
-      line-height: 1.6;
-    }
   }
 
   .color-hero__link {

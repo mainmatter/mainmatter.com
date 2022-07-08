@@ -6,10 +6,11 @@ title: Mobile train tickets with Ember.js for Trainline | Work
 displayTitle: "The full market potential for a <em>leading</em> travel platform"
 description: Trainline is Europe’s leading rail and coach platform. We helped them deliver a high-performance mobile web app, along with an improved engineering process.
 hero:
-  color: blue
-  desktopTextPosition: "right"
-  image: "/assets/images/photos/trainline-comp.jpg"
-  imageAlt: "User looking at the Trainline app"
+  color: purple
+  textPosition: "center"
+  image: "/assets/images/work/trainline.jpg"
+  imageAlt: "Back view of a man standing in front of departure boards"
+  tags: "development / process / mentoring"
 ---
 
 {% from "split-quote.njk" import splitQuote %}

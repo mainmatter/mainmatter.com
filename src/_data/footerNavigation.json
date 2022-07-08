@@ -29,16 +29,16 @@
           "link": "/cases/trainline/"
         },
         {
+          "text": "Timify",
+          "link": "/cases/timify/"
+        },
+        {
+          "text": "DDWRT",
+          "link": "/cases/ddwrt/"
+        },
+        {
           "text": "Expedition",
           "link": "/cases/expedition/"
-        },
-        {
-          "text": "DD-WRT NXT",
-          "link": "/cases/ddwrt/"
-        },
-        {
-          "text": "Timify",
-          "link": "/cases/ddwrt/"
         }
       ]
     },

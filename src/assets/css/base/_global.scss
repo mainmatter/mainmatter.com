@@ -8,8 +8,9 @@ html,
 body {
   height: 100%;
   min-height: 100%;
-  line-height: 1.5;
+  line-height: 2;
   font-family: var(--font-base);
+  font-size: 1rem;
   color: var(--color-body-text);
   background-color: var(--color-bg);
 }
@@ -39,4 +40,12 @@ a {
 
 button {
   border-radius: 0;
+}
+
+@media (min-width: 72em) {
+  html,
+  body {
+    line-height: 1.7;
+    font-size: 1.125rem;
+  }
 }

@@ -1,15 +1,16 @@
 ---
 layout: case-study
-company: DD-WRT
+company: DDWRT
 companyDescription: DD-WRT is a Linux-based firmware for wireless routers. Originally designed for the Linksys WRT54G series, it now runs on a wide variety of models and is installed on millions of devices worldwide.
 title: A modern UI for DD-WRT NXT based on Ember.js | Work
 displayTitle: "A modern user interface for <em>perennial</em> router firmware"
 description: "DD-WRT is a firmware for wireless routers running on millions of devices worldwide. Mainmatter developed an Ember.js based foundation for a new configuration UI."
 hero:
-  color: blue
-  desktopTextPosition: "right"
-  image: "/assets/images/work/ddwrt.png"
-  imageAlt: "Macbook showing the DDWRT Status Overview page"
+  color: purple
+  textPosition: "center"
+  image: "/assets/images/work/ddwrt.jpg"
+  imageAlt: "Router on a white background"
+  tags: "development / architecture"
 ---
 
 {% from "secondary-feature.njk" import secondaryFeature %}
