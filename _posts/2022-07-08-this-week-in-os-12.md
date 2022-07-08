@@ -38,6 +38,7 @@ some of the work they have done the past weeks!
 - [mswjs/gh-issue-forms] [#3](https://github.com/mswjs/gh-issue-forms/pull/3) chore(push.sh): remove 'push.sh' file ([@oscard0m])
 - [mswjs/interceptors] [#271](https://github.com/mswjs/interceptors/pull/271) ci(release): use node-version 16 ([@oscard0m])
 - [mswjs/msw-storybook-addon] [#86](https://github.com/mswjs/msw-storybook-addon/pull/86) ci(release): use node-version 16 ([@oscard0m])
+- [mswjs/msw] [#1303](https://github.com/mswjs/msw/pull/1303) ci(smoke): use node-version 16 ([@oscard0m])
 
 ## Octoherd
 
@@ -140,10 +141,6 @@ some of the work they have done the past weeks!
 - [octokit/rest.js] [#152](https://github.com/octokit/rest.js/pull/152) build(npm): replace 'pika' command with 'pika-pack' ([@oscard0m])
 - [octokit/webhooks-methods.js] [#55](https://github.com/octokit/webhooks-methods.js/pull/55) build(npm): replace 'pika' command with 'pika-pack' ([@oscard0m])
 - [octokit/webhooks.js] [#692](https://github.com/octokit/webhooks.js/pull/692) build(npm): replace 'pika' command with 'pika-pack' ([@oscard0m])
-
-## TypeScript
-
-- [mswjs/msw] [#1303](https://github.com/mswjs/msw/pull/1303) ci(smoke): use node-version 16 ([@oscard0m])
 
 ## Internal
 

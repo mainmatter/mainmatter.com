@@ -72,7 +72,8 @@
                 "mswjs/cookies",
                 "mswjs/gh-issue-forms",
                 "mswjs/interceptors",
-                "mswjs/msw-storybook-addon"
+                "mswjs/msw-storybook-addon",
+                "mswjs/msw"
             ]
         },
         {
@@ -215,7 +216,6 @@
         {
             "name": "TypeScript",
             "repos": [
-                "mswjs/msw",
                 "renovatebot/renovate"
             ]
         },
