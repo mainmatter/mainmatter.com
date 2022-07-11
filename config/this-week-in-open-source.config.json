@@ -140,7 +140,8 @@
                 "ef4/ember-auto-import",
                 "ember-learn/ember-help-wanted-server",
                 "ember-learn/rfcs-app",
-                "mansona/ember-cli-babel"
+                "mansona/ember-cli-babel",
+                "empress/field-guide-addon-docs-template"
             ]
         },
         {
