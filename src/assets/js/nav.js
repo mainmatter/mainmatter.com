@@ -20,7 +20,7 @@ export class Nav {
 
     this.menuCloseButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        const toggle = button.closest("[data-submenu")?.querySelector("[data-menu-toggle]");
+        const toggle = button.closest("[data-has-submenu")?.querySelector("[data-menu-toggle]");
         if (toggle.getAttribute("aria-expanded") === "true") {
           this.closeMenu(toggle);
         } else {
