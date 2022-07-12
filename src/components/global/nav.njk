@@ -1,3 +1,4 @@
+{% from "social-list.njk" import socialList %}
 {% set navPages = collections.all | eleventyNavigation %}
 <nav class="nav" id="nav">
   <div class="nav__wrapper container container--xl">
@@ -13,28 +14,47 @@
     </div>
     <ul class="nav__list">
       {%- for entry in navPages %}
-        <li class="nav__item nav-dropdown" data-dropdown-wrapper>
+        <li class="nav__item nav-submenu" data-submenu>
           {% if entry.children.length > 0 %}
             <button
-              class="nav-dropdown__toggle nav__link{% if entry.url == page.url %} {% endif %}"
+              class="nav-submenu__toggle nav__link{% if entry.url == page.url %} {% endif %}"
               aria-expanded="false"
-              data-dropdown-toggle="dropdown-{{ entry.title | slug }}">
-              {{ entry.title }}
+              data-menu-toggle>
+              <span class="nav__link-text">{{ entry.title }}</span>
               {% include 'svg/arrow.njk' %}
             </button>
-            <div class="nav-dropdown__dropdown" id="dropdown-{{ entry.title | slug }}" data-dropdown>
-              <ul class="nav-dropdown__list {% if entry.children.length > 3 %}nav-dropdown__list--columns{% endif %}">
-                {% for childEntry in entry.children %}
-                  <li class="nav-dropdown__item">
-                    <a class="nav-dropdown__link" {% if childEntry.url == page.url %} aria-current="page" {% endif %} href="{{ childEntry.url | url }}">
-                      {{ childEntry.title }}
-                    </a>
-                  </li>
-                {% endfor %}
-              </ul>
+            <div class="nav-submenu__menu">
+              <button class="nav-submenu__menu-close" data-menu-close>
+                {% include 'svg/close.njk' %}
+                <span class="screenreader">Close Menu</span>
+              </button>
+              <div class="submenu__list-wrapper">
+                <ul class="nav-submenu__list">
+                  {% for childEntry in entry.children %}
+                    <li class="nav-submenu__item">
+                      <a class="nav-submenu__link" {% if childEntry.url == page.url %} aria-current="page" {% endif %} href="{{ childEntry.url | url }}">
+                        {% include 'svg/arrow.njk' %}
+                        <span class="nav-submenu__link-text">{{ childEntry.title }}</span>
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <aside class="nav-submenu__aside">
+                <div class="nav-submenu__brand">
+                  {% include 'svg/logo.njk' %}
+                  <p class="nav-submenu__text caption">
+                    Let's talk about the challenges you're facing. Our experts are ready to guide you through your next big move.
+                  </p>
+                  <a class="submenu__cta text--sm" href="/contact/">
+                    Get in touch
+                  </a>
+                </div>
+                {{ socialList(socials.socials, 'nav-submenu__socials') }}
+              </aside>
             </div>
           {% else %}
-            <a class="nav__link" {% if entry.url == page.url %} aria-current="page" {% endif %} href="{{ entry.url | url }}">
+            <a class="nav__link nav__link-text" {% if entry.url == page.url %} aria-current="page" {% endif %} href="{{ entry.url | url }}">
               {{ entry.title }}
             </a>
           {% endif %}

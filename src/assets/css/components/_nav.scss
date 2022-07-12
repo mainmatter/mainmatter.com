@@ -1,5 +1,6 @@
 .nav {
-  position: relative;
+  position: absolute;
+  width: 100%;
   z-index: 1;
   color: var(--color-white);
 }
@@ -8,9 +9,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
-  left: 0;
-  right: 0;
   width: 100%;
   padding: 0;
   text-decoration: none;
@@ -48,8 +46,8 @@
   &:hover {
     color: var(--color-aqua);
 
-    .nav__link {
-      text-decoration: underline;
+    .nav__link-text {
+      text-decoration: underline 1px rgba(2, 206, 186, 1);
     }
   }
 }
@@ -63,6 +61,11 @@
   vertical-align: middle;
   text-decoration: none;
   cursor: pointer;
+}
+
+.nav__link-text {
+  text-decoration-color: rgba(2, 206, 186, 0);
+  transition: text-decoration-color 0.3s ease;
 }
 
 .nav__cta {

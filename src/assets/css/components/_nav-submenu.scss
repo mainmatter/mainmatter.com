@@ -1,0 +1,123 @@
+.nav-submenu__toggle {
+  border: 0;
+  padding: 0.5rem 0.5rem 0.5rem 0.25rem;
+  border-radius: 0;
+  background-color: transparent;
+  vertical-align: middle;
+  color: currentColor;
+
+  svg {
+    transform: rotate(-90deg);
+  }
+
+  &[aria-expanded="true"] {
+    & + .nav-submenu__menu {
+      visibility: visible;
+      pointer-events: auto;
+      opacity: 1;
+    }
+  }
+}
+
+.nav-submenu__menu {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding: 2rem 2.5rem;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-end;
+  justify-content: flex-end;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  pointer-events: none;
+  z-index: 6;
+  visibility: hidden;
+  transition: 0.3s opacity ease, 0.3s max-height ease-in-out,
+    0.3s visibility ease;
+}
+
+.nav-submenu__menu-close {
+  background-color: transparent;
+  border: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.submenu__list-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-submenu__list {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  max-width: 42rem;
+}
+
+.nav-submenu__link {
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  outline-offset: -0.125rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--color-aqua);
+
+    .nav-submenu__link-text {
+      text-decoration: underline 1px rgba(2, 206, 186, 1);
+    }
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    transform: rotate(-90deg);
+    margin-right: 2rem;
+  }
+}
+
+.nav-submenu__link-text {
+  text-decoration-color: rgba(2, 206, 186, 0);
+  transition: text-decoration-color 0.3s ease;
+}
+
+.nav-submenu__aside {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.nav-submenu__brand {
+  max-width: rem-calc(320);
+}
+
+.nav-submenu__brand svg {
+  color: var(--color-purple);
+}
+
+.nav-submenu__text {
+  margin: 1rem 0 2rem;
+}
+
+.submenu__cta {
+  padding: 0.75rem 0.8rem;
+  line-height: 1;
+  background-color: var(--color-aqua);
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 700;
+}
