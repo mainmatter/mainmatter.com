@@ -1,29 +1,32 @@
 {% set navPages = collections.all | eleventyNavigation %}
 <nav class="nav" id="nav">
-  <div class="nav__main">
-    {% set tag = 'a' %}
-    {% if page.url == '/' %}
-      {% set tag = 'h1' %}
-    {% endif %}
-    <{{ tag }} class="nav__brand" {% if tag == 'a' %}href="/"{% endif %}>
-      {% include 'svg/logo.njk' %}
-      <span class="screenreader">Mainmatter</span>
-    </{{ tag }}>
+  <div class="nav__wrapper container container--xl">
+    <div class="nav__logo">
+      {% set tag = 'a' %}
+      {% if page.url == '/' %}
+        {% set tag = 'h1' %}
+      {% endif %}
+      <{{ tag }} class="nav__brand" {% if tag == 'a' %} href="/" {% endif %}>
+        {% include 'svg/logo.njk' %}
+        <span class="screenreader">Mainmatter</span>
+      </{{ tag }}>
+    </div>
     <ul class="nav__list">
       {%- for entry in navPages %}
         <li class="nav__item nav-dropdown" data-dropdown-wrapper>
           {% if entry.children.length > 0 %}
-            <a class="nav__link text--accent text--xs" {% if entry.url == page.url %}aria-current="page"{% endif %} href="{{ entry.url | url }}">
+            <button
+              class="nav-dropdown__toggle nav__link{% if entry.url == page.url %} {% endif %}"
+              aria-expanded="false"
+              data-dropdown-toggle="dropdown-{{ entry.title | slug }}">
               {{ entry.title }}
-            </a>
-            <button class="nav-dropdown__toggle" aria-expanded="false" data-dropdown-toggle="dropdown-{{ entry.title | slug }}">
               {% include 'svg/arrow.njk' %}
             </button>
             <div class="nav-dropdown__dropdown" id="dropdown-{{ entry.title | slug }}" data-dropdown>
               <ul class="nav-dropdown__list {% if entry.children.length > 3 %}nav-dropdown__list--columns{% endif %}">
                 {% for childEntry in entry.children %}
                   <li class="nav-dropdown__item">
-                    <a class="nav-dropdown__link text--accent text--xs" {% if childEntry.url == page.url %}aria-current="page"{% endif %} href="{{ childEntry.url | url }}">
+                    <a class="nav-dropdown__link" {% if childEntry.url == page.url %} aria-current="page" {% endif %} href="{{ childEntry.url | url }}">
                       {{ childEntry.title }}
                     </a>
                   </li>
@@ -31,24 +34,23 @@
               </ul>
             </div>
           {% else %}
-            <a class="nav__link text--accent text--xs" {% if entry.url == page.url %}aria-current="page"{% endif %} href="{{ entry.url | url }}">
+            <a class="nav__link" {% if entry.url == page.url %} aria-current="page" {% endif %} href="{{ entry.url | url }}">
               {{ entry.title }}
             </a>
           {% endif %}
         </li>
       {%- endfor %}
     </ul>
+    <div class="nav__aside">
+      <a class="nav__cta text--sm" href="/contact/">
+        Contact us
+      </a>
+      <button class="nav__menu-toggle" data-menu-toggle aria-expanded="false">
+        {% include 'svg/menu.njk' %}
+        {% include 'svg/close.njk' %}
+        <span class="screenreader">Toggle Menu</span>
+      </button>
+      {% include 'global/mobile-menu.njk' %}
     </div>
-  <div class="nav__aside">
-    <a class="nav__cta text--accent text--xs" href="/contact/">
-      Contact
-      <span class="nav__cta-arrow">{% include 'svg/arrow.njk' %}</span>
-    </a>
-    <button class="nav__menu-toggle" data-menu-toggle aria-expanded="false">
-      {% include 'svg/menu.njk' %}
-      {% include 'svg/close.njk' %}
-      <span class="screenreader">Toggle Menu</span>
-    </button>
-    {% include 'global/mobile-menu.njk' %}
   </div>
 </nav>

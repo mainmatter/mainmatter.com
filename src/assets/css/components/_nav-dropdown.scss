@@ -1,5 +1,5 @@
 .nav-dropdown__toggle {
-  margin-left: -0.5rem;
+  margin-left: -1.5rem;
   border: 0;
   padding: 0.5rem 0.5rem 0.5rem 0.25rem;
   border-radius: 0;
@@ -8,14 +8,10 @@
   color: currentColor;
 
   svg {
-    transition: transform 0.3s ease;
+    transform: rotate(-90deg);
   }
 
   &[aria-expanded="true"] {
-    svg {
-      transform: rotate(180deg);
-    }
-
     & + .nav-dropdown__dropdown {
       max-height: 10rem;
       visibility: visible;

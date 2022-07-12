@@ -1,8 +1,19 @@
 .nav {
+  position: relative;
+  z-index: 1;
+  color: var(--color-white);
+}
+
+.nav__wrapper {
   display: flex;
   justify-content: space-between;
-  background-color: var(--color-bg);
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 0;
+  text-decoration: none;
 }
 
 .nav__aside {
@@ -16,8 +27,11 @@
 
 .nav__brand {
   margin-right: 2rem;
-  margin-left: 1rem;
   font-size: 0;
+}
+
+.nav__logo {
+  margin-left: 5%;
 }
 
 .nav__list {
@@ -32,15 +46,23 @@
   transition: color 0.3s ease;
 
   &:hover {
-    color: var(--color-purple);
+    color: var(--color-aqua);
+
+    .nav__link {
+      text-decoration: underline;
+    }
   }
 }
 
 .nav__link {
   display: inline-block;
-  padding: 1.25rem 0.5rem;
+  padding: 1.25rem;
   line-height: 1;
+  font-size: 1rem;
+  font-weight: 700;
   vertical-align: middle;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .nav__cta {
@@ -57,7 +79,7 @@
   padding: 0.75rem;
   border: none;
   border-radius: 0;
-  background-color: var(--color-purple);
+  background-color: var(--color-aqua);
   color: var(--color-white);
 
   svg {
@@ -101,16 +123,27 @@
 }
 
 @media (min-width: 62em) {
+  .nav__wrapper {
+    width: 90%;
+    padding: 1.75rem 0;
+  }
+
+  .nav__logo {
+    margin-left: 0;
+  }
+
   .nav__list {
     display: block;
   }
 
   .nav__cta {
     display: block;
-    padding: 1.25rem 2rem;
+    padding: 0.75rem 0.8rem;
     line-height: 1;
-    background-color: var(--color-purple);
+    background-color: var(--color-aqua);
     color: var(--color-white);
+    text-decoration: none;
+    font-weight: 700;
   }
 
   .nav__menu-toggle {

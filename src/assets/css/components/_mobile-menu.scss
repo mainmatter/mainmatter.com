@@ -7,9 +7,8 @@
   width: 100%;
   left: 0;
   height: calc(100vh - 3rem);
-  background-color: var(--color-purple);
-  border-top: rem-calc(1) solid currentColor;
-  color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-black);
   overflow-y: auto;
   z-index: 5;
 }
@@ -30,12 +29,6 @@
 
 .mobile-menu__link {
   text-decoration: none;
-
-  &--dropdown {
-    display: block;
-    padding-bottom: 0.75rem;
-    border-bottom: rem-calc(1) solid currentColor;
-  }
 }
 
 .mobile-menu__toggle {
