@@ -14,7 +14,7 @@
     </div>
     <ul class="nav__list">
       {%- for entry in navPages %}
-        <li class="nav__item nav-submenu" {% if entry.children.length > 0 %} data-has-submenu {% endif %}>
+        <li class="nav__item nav-submenu" {% if entry.children.length > 0 %} data-has-modal {% endif %}>
           {% if entry.children.length > 0 %}
             <button
               class="nav-submenu__toggle nav__link{% if entry.url == page.url %} {% endif %}"
@@ -23,7 +23,7 @@
               <span class="nav__link-text">{{ entry.title }}</span>
               {% include 'svg/arrow.njk' %}
             </button>
-            <div class="nav-submenu__menu" aria-modal="true">
+            <div class="nav-submenu__menu" aria-modal="true" data-modal>
               <div class="nav-submenu__menu-inner">
                 <button class="nav-submenu__menu-close" data-menu-close>
                   {% include 'svg/close.njk' %}

@@ -22,7 +22,7 @@ export class Nav {
 
     this.menuCloseButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        const toggle = button.closest("[data-has-submenu")?.querySelector("[data-menu-toggle]");
+        const toggle = button.closest("[data-has-modal")?.querySelector("[data-menu-toggle]");
         if (toggle.getAttribute("aria-expanded") === "true") {
           this.closeMenu(toggle);
         } else {
@@ -63,10 +63,10 @@ export class Nav {
     document.body.classList.add("menu-open");
 
     // Set trap focus
-    const container = menuToggle.closest("[data-has-submenu")?.querySelector("[aria-modal]");
-    if (container) {
+    const modal = menuToggle.closest("[data-has-modal")?.querySelector("[data-modal]");
+    if (modal) {
       setTimeout(function () {
-        trapFocus(container);
+        trapFocus(modal);
       }, 100);
     }
   }
