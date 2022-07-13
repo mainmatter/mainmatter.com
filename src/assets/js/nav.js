@@ -1,8 +1,10 @@
+import { trapFocus } from './utils/trap-focus';
+
 export class Nav {
   constructor(element) {
     this.container = element;
     this.menuToggles = this.container.querySelectorAll("[data-menu-toggle]");
-    this.menuCloseButtons = this.container.querySelectorAll("[data-menu-close");
+    this.menuCloseButtons = this.container.querySelectorAll("[data-menu-close]");
 
     this.bindEvents();
   }
@@ -59,5 +61,13 @@ export class Nav {
     siblings.forEach((sibling) => sibling.setAttribute("inert", true));
     document.documentElement.style.overflow = "hidden";
     document.body.classList.add("menu-open");
+
+    // Set trap focus
+    const container = menuToggle.closest("[data-has-submenu")?.querySelector("[aria-modal]");
+    if (container) {
+      setTimeout(function () {
+        trapFocus(container);
+      }, 100);
+    }
   }
 }
