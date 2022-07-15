@@ -12,6 +12,7 @@
   width: 100%;
   padding: 0;
   text-decoration: none;
+  background-color: transparent;
 }
 
 .nav__aside {
@@ -65,6 +66,7 @@
 
 .nav__link-text {
   text-decoration-color: rgba(2, 206, 186, 0);
+  text-underline-offset: 0.125rem;
   transition: text-decoration-color 0.3s ease;
 }
 
@@ -93,25 +95,7 @@
     display: block;
   }
 
-  .icon-close {
-    position: absolute;
-    display: block;
-    top: 0.75rem;
-    left: 0.75rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    opacity: 0;
-  }
-
   &[aria-expanded="true"] {
-    .icon-close {
-      opacity: 1;
-    }
-
-    .icon-menu {
-      opacity: 0;
-    }
-
     & + .nav__mobile-menu {
       opacity: 1;
       visibility: visible;

@@ -1,76 +1,73 @@
-.mobile-menu {
-  --navbar-height: 3rem;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  width: 100%;
-  left: 0;
-  height: calc(100vh - 3rem);
+.mobile-menu,
+.mobile-menu__submenu {
   background-color: var(--color-white);
   color: var(--color-black);
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.mobile-menu {
+  position: absolute;
+  overflow-x: hidden;
   overflow-y: auto;
   z-index: 5;
+  height: 100vh;
+  padding: 1rem 1rem 3.75rem;
+}
+
+.mobile-menu__inner {
+  position: relative;
+}
+
+.mobile-menu__submenu {
+  transform: translate(100%);
+  z-index: 6;
+  visibility: hidden;
+  transition: transform 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-menu__toggle {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background-color: transparent;
+  vertical-align: middle;
+  color: currentColor;
+
+  &[aria-expanded="true"] {
+    &+.mobile-menu__submenu {
+      visibility: visible;
+      transform: translate(0);
+    }
+  }
 }
 
 .mobile-menu__list {
-  margin: auto 0;
-  padding: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 4rem 0 6rem;
   list-style: none;
 }
 
 .mobile-menu__item {
-  position: relative;
-
   & + & {
-    margin-top: rem-calc(28);
+    margin-top: rem-calc(48);
   }
 }
 
 .mobile-menu__link {
+  display: flex;
+  align-items: center;
   text-decoration: none;
-}
-
-.mobile-menu__toggle {
-  position: absolute;
-  top: 0;
-  right: -0.5rem;
-  border: 0;
-  padding: 0.5rem;
-  border-radius: 0;
-  background-color: transparent;
-  color: currentColor;
+  transition: color 0.3s ease;
 
   svg {
-    width: 1rem;
-    transition: 0.3s transform ease;
-  }
-
-  &[aria-expanded="true"] {
-    svg {
-      transform: rotate(180deg);
-    }
-
-    & + .mobile-menu__dropdown {
-      max-height: 20rem;
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-}
-
-.mobile-menu__dropdown {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  max-height: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s opacity ease, 0.3s max-height ease-out;
-}
-
-.mobile-menu__dropdown-item {
-  &:first-child {
-    padding-top: 0.75rem;
+    width: 2rem;
+    height: 2rem;
+    transform: rotate(-90deg);
+    margin-right: 2rem;
   }
 }

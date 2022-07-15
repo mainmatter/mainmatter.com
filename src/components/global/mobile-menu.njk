@@ -1,29 +1,39 @@
-<div class="nav__mobile-menu mobile-menu">
-  <ul class="mobile-menu__list">
-    {%- for entry in navPages %}
-      <li class="mobile-menu__item">
-        {% if entry.children.length > 0 %}
-          <a class="mobile-menu__link mobile-menu__link--dropdown h2" {% if entry.url == page.url %}aria-current="page"{% endif %} href="{{ entry.url | url }}">
-            {{ entry.title }}
-          </a>
-          <button class="mobile-menu__toggle" aria-expanded="false" data-accordion-toggle="accordion-{{ entry.title | slug }}">
-            {% include 'svg/arrow.njk' %}
-          </button>
-          <ul class="mobile-menu__dropdown" id="accordion-{{ entry.title | slug }}" data-accordion>
-            {% for childEntry in entry.children %}
-              <li class="mobile-menu__dropdown-item">
-                <a class="mobile-menu__dropdown-link text--accent text--xs" {% if childEntry.url == page.url %}aria-current="page"{% endif %} href="{{ childEntry.url | url }}">
-                  {{ childEntry.title }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% else %}
-          <a class="mobile-menu__link h2" {% if entry.url == page.url %}aria-current="page"{% endif %} href="{{ entry.url | url }}">
-            {{ entry.title }}
-          </a>
-        {% endif %}
-      </li>
-    {%- endfor %}
-  </ul>
-</div>
+<div class="nav__mobile-menu mobile-menu" data-modal>
+  <button class="mobile-menu__button-close mobile-menu__toggle" data-menu-close>
+    {% include 'svg/close.njk' %}
+    <span class="screenreader">Close Menu</span>
+  </button>
+  <div class="mobile-menu__inner">
+    <ul class="mobile-menu__list">
+      {%- for entry in navPages %}
+        <li class="mobile-menu__item" {% if entry.children.length > 0 %} data-submenu {% endif %}>
+          {% if entry.children.length > 0 %}
+            <button class="mobile-menu__link mobile-menu__toggle h4" aria-expanded="false" data-submenu-open>
+              {% include 'svg/arrow.njk' %}
+              {{ entry.title }}
+            </button>
+            <div class="mobile-menu__submenu">
+              <ul class="mobile-menu__list">
+                {% for childEntry in entry.children %}
+                  <li class="mobile-menu__item">
+                    <a class="mobile-menu__link h4" {% if childEntry.url == page.url %} aria-current="page" {% endif %} href="{{ childEntry.url | url }}">
+                      {% include 'svg/arrow.njk' %}
+                      {{ childEntry.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+              {% include 'global/nav-aside.njk' %}
+            </div>
+          {% else %}
+            <a class="mobile-menu__link h4" {% if entry.url == page.url %} aria-current="page" {% endif %} href="{{ entry.url | url }}">
+              {% include 'svg/arrow.njk' %}
+              {{ entry.title }}
+            </a>
+          {% endif %}
+        </li>
+      {%- endfor %}
+    </ul>
+    {% include 'global/nav-aside.njk' %}
+  </div>
+</div></div>

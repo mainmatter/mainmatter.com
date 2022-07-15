@@ -25,7 +25,7 @@
   height: 100vh;
   top: 0;
   left: 0;
-  padding: 2rem 2.5rem;
+  padding: 2rem 2.5rem 0;
   opacity: 0;
   background-color: var(--color-white);
   color: var(--color-black);
@@ -105,37 +105,6 @@
 
 .nav-submenu__link-text {
   text-decoration-color: rgba(2, 206, 186, 0);
+  text-underline-offset: 0.25rem;
   transition: text-decoration-color 0.3s ease;
-}
-
-.nav-submenu__aside {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.nav-submenu__brand {
-  max-width: rem-calc(320);
-}
-
-.nav-submenu__brand svg {
-  color: var(--color-purple);
-}
-
-.nav-submenu__text {
-  margin: 1rem 0 2rem;
-}
-
-.submenu__cta {
-  padding: 0.75rem 0.8rem;
-  line-height: 1;
-  background-color: var(--color-aqua);
-  color: var(--color-white);
-  text-decoration: none;
-  font-weight: 700;
-  transition: background-color ease 0.3s;
-
-  &:hover {
-    background-color: var(--color-purple);
-  }
 }

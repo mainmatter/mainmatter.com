@@ -41,18 +41,7 @@
                     {% endfor %}
                   </ul>
                 </div>
-                <aside class="nav-submenu__aside">
-                  <div class="nav-submenu__brand">
-                    {% include 'svg/logo.njk' %}
-                    <p class="nav-submenu__text caption">
-                      Let's talk about the challenges you're facing. Our experts are ready to guide you through your next big move.
-                    </p>
-                    <a class="submenu__cta text--sm" href="/contact/">
-                      Get in touch
-                    </a>
-                  </div>
-                  {{ socialList(socials.socials, 'nav-submenu__socials') }}
-                </aside>
+                {% include 'global/nav-aside.njk' %}
               </div>
             </div>
           {% else %}
@@ -67,12 +56,13 @@
       <a class="nav__cta text--sm" href="/contact/">
         Contact us
       </a>
-      <button class="nav__menu-toggle" data-menu-toggle aria-expanded="false">
-        {% include 'svg/menu.njk' %}
-        {% include 'svg/close.njk' %}
-        <span class="screenreader">Toggle Menu</span>
-      </button>
-      {% include 'global/mobile-menu.njk' %}
+      <div class="nav__mobile-menu-wrapper" data-has-modal>
+        <button class="nav__menu-toggle" data-menu-toggle aria-expanded="false">
+          {% include 'svg/menu.njk' %}
+          <span class="screenreader">Toggle Menu</span>
+        </button>
+        {% include 'global/mobile-menu.njk' %}
+      </div>
     </div>
   </div>
 </nav>
