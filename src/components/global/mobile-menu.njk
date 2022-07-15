@@ -1,9 +1,11 @@
 <div class="nav__mobile-menu mobile-menu" data-modal>
-  <button class="mobile-menu__button-close mobile-menu__toggle" data-menu-close>
-    {% include 'svg/close.njk' %}
-    <span class="screenreader">Close Menu</span>
-  </button>
   <div class="mobile-menu__inner">
+    <div class="mobile-menu__actions">
+      <button class="mobile-menu__button-close mobile-menu__toggle" data-menu-close>
+        {% include 'svg/close.njk' %}
+        <span class="screenreader">Close Menu</span>
+      </button>
+    </div>
     <ul class="mobile-menu__list">
       {%- for entry in navPages %}
         <li class="mobile-menu__item" {% if entry.children.length > 0 %} data-submenu {% endif %}>
@@ -13,6 +15,15 @@
               {{ entry.title }}
             </button>
             <div class="mobile-menu__submenu">
+              <div class="mobile-menu__actions">
+                <button class="mobile-menu__button-back mobile-menu__toggle" data-submenu-close>
+                  {% include 'svg/arrow.njk' %} Back
+                </button>
+                <button class="mobile-menu__button-close mobile-menu__toggle" data-menu-close>
+                  {% include 'svg/close.njk' %}
+                  <span class="screenreader">Close Menu</span>
+                </button>
+              </div>
               <ul class="mobile-menu__list">
                 {% for childEntry in entry.children %}
                   <li class="mobile-menu__item">
@@ -36,4 +47,4 @@
     </ul>
     {% include 'global/nav-aside.njk' %}
   </div>
-</div></div>
+</div>

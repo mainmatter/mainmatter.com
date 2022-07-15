@@ -6,6 +6,7 @@ export class Nav {
     this.menuToggles = this.container.querySelectorAll("[data-menu-toggle]");
     this.menuCloseButtons = this.container.querySelectorAll("[data-menu-close]");
     this.submenuOpen = this.container.querySelectorAll("[data-submenu-open]");
+    this.submenuClose = this.container.querySelectorAll("[data-submenu-close]");
 
     this.bindEvents();
   }
@@ -35,6 +36,13 @@ export class Nav {
     this.submenuOpen.forEach((button) => {
       button.addEventListener("click", () => {
         button.setAttribute("aria-expanded", "true");
+      });
+    });
+
+    this.submenuClose.forEach((button) => {
+      button.addEventListener("click", () => {
+        const toggle = button.closest("[data-submenu]").querySelector("[data-submenu-open]");
+        toggle.setAttribute("aria-expanded", "false");
       });
     });
 

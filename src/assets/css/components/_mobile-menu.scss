@@ -3,50 +3,41 @@
   background-color: var(--color-white);
   color: var(--color-black);
   position: absolute;
-  width: 100%;
   top: 0;
   left: 0;
+  width: 100%;
 }
 
 .mobile-menu {
-  position: absolute;
-  overflow-x: hidden;
-  overflow-y: auto;
-  z-index: 5;
-  height: 100vh;
-  padding: 1rem 1rem 3.75rem;
+  z-index: 1;
+}
+
+.mobile-menu__inner,
+.mobile-menu__submenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .mobile-menu__inner {
-  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
+  padding: 1rem;
 }
 
 .mobile-menu__submenu {
-  transform: translate(100%);
-  z-index: 6;
+  height: 100%;
+  z-index: 2;
+  overflow-y: auto;
+  padding: 1rem;
+  transform: translate(-100%);
   visibility: hidden;
-  transition: transform 0.3s ease, visibility 0.3s ease;
-}
-
-.mobile-menu__toggle {
-  border: 0;
-  border-radius: 0;
-  padding: 0;
-  background-color: transparent;
-  vertical-align: middle;
-  color: currentColor;
-
-  &[aria-expanded="true"] {
-    &+.mobile-menu__submenu {
-      visibility: visible;
-      transform: translate(0);
-    }
-  }
+  transition: transform 0.3s ease,
+  visibility 0.3s ease;
 }
 
 .mobile-menu__list {
   flex-shrink: 0;
-  overflow: hidden;
   margin: 0;
   padding: 4rem 0 6rem;
   list-style: none;
@@ -54,7 +45,7 @@
 
 .mobile-menu__item {
   & + & {
-    margin-top: rem-calc(48);
+    margin-top: rem-calc(40);
   }
 }
 
@@ -69,5 +60,42 @@
     height: 2rem;
     transform: rotate(-90deg);
     margin-right: 2rem;
+  }
+}
+
+.mobile-menu__actions {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
+
+.mobile-menu__button-close {
+  grid-column-start: 2;
+  text-align: right;
+}
+
+.mobile-menu__button-back {
+  text-align: left;
+  display: inline-flex;
+  align-items: center;
+
+  svg {
+    transform: rotate(90deg);
+    margin-right: 0.5rem;
+  }
+}
+
+.mobile-menu__toggle {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background-color: transparent;
+  vertical-align: middle;
+  color: currentColor;
+
+  &[aria-expanded="true"] {
+    &+.mobile-menu__submenu {
+      transform: translate(0);
+      visibility: visible;
+    }
   }
 }
