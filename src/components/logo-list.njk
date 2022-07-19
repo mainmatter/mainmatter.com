@@ -9,18 +9,32 @@ Example usage:
 {% set logoCompanies = ['Qonto', 'Trainline', 'Timify', 'Cardstack', 'Generali', 'Experteer'] %}
 {{ logoList(logoCompanies) }}
 #}
-
 {%- macro logoList(logos) -%}
-  <section class="logo-list">
-    <ul class="logo-list__list">
-      {% for logo in logos %}
-        <li class="logo-list__item">
-          <div class="logo-list__image" aria-label="{{ logo }}">
-            {% set imagePath %}/logos/monochrome/{{ logo | slug }}.svg{% endset %}
-            {% svg imagePath, 'img' %}
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
+  <section class="logo-list" id="logo-list">
+    <div class="logo-list__wrapper">
+      <div class="logo-list__inner" data-marquee>
+        <ul class="logo-list__list">
+          {% for logo in logos %}
+            <li class="logo-list__item">
+              <div class="logo-list__image" aria-label="{{ logo }}">
+                {% set imagePath %}/logos/monochrome/{{ logo | slug }}.svg{% endset %}
+                {% svg imagePath, 'img' %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+        <ul class="logo-list__list logo-list__list--duplicate" aria-hidden="true">
+          {% for logo in logos %}
+            <li class="logo-list__item">
+              <div class="logo-list__image" aria-label="{{ logo }}">
+                {% set imagePath %}/logos/monochrome/{{ logo | slug }}.svg{% endset %}
+                {% svg imagePath, 'img' %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <button class="logo-list__button" data-marquee-controls>Pause animation</button>
   </section>
 {%- endmacro -%}

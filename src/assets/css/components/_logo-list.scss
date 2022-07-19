@@ -1,39 +1,112 @@
 .logo-list {
-  display: flex;
-  justify-content: center;
-  background-color: var(--color-black);
+  padding: 5rem 0;
+  position: relative;
+  text-align: center;
 }
 
-.logo-list__list {
-  display: flex;
-  padding: 1rem 5%;
-  margin: 0 0 0 -1rem;
-  list-style: none;
-  overflow-x: auto;
+.logo-list__wrapper {
+  overflow-x: hidden;
+}
 
-  &::after {
-    content: "";
-    display: block;
-    padding-right: 0.02px;
+.logo-list__inner {
+  width: 600%;
+  display: flex;
+  animation: infinite-scroll 36s linear infinite;
+  animation-play-state: running;
+
+  &:hover,
+  &--paused {
+    animation-play-state: paused;
   }
 }
 
+.logo-list__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+}
+
 .logo-list__item {
-  flex: 0 0 auto;
-  padding: 0 1rem;
+  flex-shrink: 0;
+  flex-grow: 1;
 }
 
 .logo-list__image {
   display: block;
+  text-align: center;
+}
+
+.logo-list__button {
+  position: absolute;
+  bottom: 1.25rem;
+  padding: 0.75rem 0.8rem;
+  line-height: 1;
+  background-color: var(--color-aqua);
+  color: var(--color-white);
+  font-weight: 700;
+  transform: translateX(-50%);
+  left: 50%;
+  pointer-events: none;
+  opacity: 0;
+
+  &:focus {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@media (min-width: 30em) {
+  .logo-list__inner {
+    width: 500%;
+  }
+}
+
+@media (min-width: 48em) {
+  .logo-list__inner {
+    width: 400%;
+  }
 }
 
 @media (min-width: 62em) {
-  .logo-list__list {
-    margin: 0;
-    padding: rem-calc(54) 5%;
+  .logo-list__inner {
+    width: 300%;
+  }
+}
+
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
   }
 
-  .logo-list__item {
-    padding: 0 1.75rem;
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-list__inner {
+    width: 200%;
+  }
+
+  .logo-list__wrapper {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .logo-list__inner {
+    animation: none;
+  }
+
+  .logo-list__list--duplicate {
+    display: none;
+    visibility: hidden;
+  }
+
+  @media (min-width: 62em) {
+    .logo-list__inner {
+      width: 100%;
+    }
   }
 }
