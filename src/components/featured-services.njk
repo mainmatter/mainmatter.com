@@ -1,0 +1,19 @@
+{%- macro featuredServices(services, content) -%}
+  <section class="featured-services container container--lg">
+    <h2 class="featured-services__title h5">{{ content.title }}</h2>
+    <div class="featured-services__list-wrapper">
+      <h3 class="h2">{{ content.subtitle }}</h3>
+      <ul class="featured-services__list">
+        {%- for service in services %}
+          <li class="featured-services__list-item">
+            <a href="{{ service.linkUrl }}" class="featured-services__link h4">
+              {% include 'svg/arrow.njk' %}
+              <span class="featured-services__link-text">{{ service.heading }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <p class="featured-services__text">{{ content.text }}</p>
+  </section>
+{% endmacro %}

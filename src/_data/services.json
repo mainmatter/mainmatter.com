@@ -1,16 +1,16 @@
 {
-  "services": [
+  "services-list": [
     {
-      "heading": "Product strategy",
-      "text": "We transform assumptions into knowledge through the careful implementation of structured methods. Both new and existing products stand to benefit from the clarification of concepts and goals."
+      "heading": "Team Augmentation & Training",
+      "linkUrl": "/services/team-augmentation-and-training/"
     },
     {
-      "heading": "Product design",
-      "text": "Great product design is what converts casual users into enthusiastic fans. Complex functionality can still be approachable and delightful. We turn your vision into remarkable experiences through research, testing, and prototyping."
+      "heading": "Digital Product Design & Development",
+      "linkUrl": "/services/digital-products-and-design/"
     },
     {
-      "heading": "Product development",
-      "text": "Fruitful collaboration requires trust. You will work with a dedicated team of experienced engineers and designers from start to finish."
+      "heading": "Tailored Workshops",
+      "linkUrl": "/services/workshops/"
     }
   ],
   "product-design": [
