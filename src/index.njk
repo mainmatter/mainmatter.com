@@ -5,8 +5,9 @@ title: null
 
 {% from "color-hero.njk" import colorHero %}
 {% from "featured-services.njk" import featuredServices %}
-{% from "split-hero.njk" import splitHero %}
 {% from "logo-list.njk" import logoList %}
+{% from "case-study-list.njk" import caseStudyList %}
+{% from "split-hero.njk" import splitHero %}
 {% from "image-with-text-stacked.njk" import imageWithTextStacked %}
 {% from "image-with-text.njk" import imageWithText %}
 {% from "secondary-feature.njk" import secondaryFeature %}
@@ -27,6 +28,8 @@ title: null
 {{ featuredServices(services['services-list'], content) }}
 {% set logoCompanies = ['Qonto', 'Trainline', 'Cardstack', 'Timify', 'Experteer', 'Robin Hood', 'Dim 3' ] %}
 {{ logoList(logoCompanies) }}
+{% set caseStudies = ['qonto', 'trainline', 'timify', 'ddwrt'] %}
+{{ caseStudyList(caseStudies, 'Browse our  work') }}
 {% set 'content' = {
   "title": "Build <em>lasting</em> products, systematically",
   "text": "Our playbook describes methodologies for building sustainable digital products and running an effective, collaborative product development process. It is based on our experiences working on projects with international clients in various industries for many years.",

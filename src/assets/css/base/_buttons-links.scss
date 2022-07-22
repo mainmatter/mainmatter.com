@@ -7,23 +7,35 @@
   padding: 0;
   border-radius: 0;
   background-color: transparent;
-  font-weight: 600;
   font-size: 1.125rem;
+  font-weight: 700;
   transition: 0.3s color ease;
 
   &:hover,
   &:focus {
     color: var(--color-link-primary-hover);
+
+    .cta-link__text {
+      text-decoration-color: var(--color-link-primary-hover);
+    }
   }
 }
 
 .cta-link__text {
   position: relative;
   z-index: 1;
+  text-decoration: underline 1px var(--color-link-primary);
+  text-underline-offset: 0.125rem;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
 }
 
 .cta-link__arrow {
   position: relative;
   margin-left: 0.5rem;
   z-index: 1;
+
+  svg {
+    transform: rotate(-90deg);
+    transition: color 0.3s ease;
+  }
 }

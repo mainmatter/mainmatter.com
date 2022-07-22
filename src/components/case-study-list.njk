@@ -4,29 +4,63 @@ List of case studies as cards
 Configuration Options:
 list: An array where each item is the slug for the case study.
 #}
-
-{%- macro caseStudyList(caseStudies, color, heading) -%}
-  <section class="case-studies case-studies--{{ color }}">
+{%- macro caseStudyList(caseStudies, heading) -%}
+  <section class="case-studies">
     <div class="container container--lg">
-      {% if heading %}
-        <h2 class="case-studies__heading">{{ heading }}</h2>
-      {% endif %}
+      <h2 class="case-studies__heading h5">{{ heading }}</h2>
       <ul class="case-studies__list">
         {% for caseStudyHandle in caseStudies -%}
           {% set caseStudy = caseStudyHandle | findBySlug %}
-          {% if caseStudy %}
-            <li class="case-study__item">
-              <a class="case-study__link" href="{{ caseStudy.url }}"><span class="screenreader">{{ caseStudy.data.displayTitle }}</span></a>
-              <p class="case-study__title h3">{{ caseStudy.data.displayTitle | stripHTML }}</p>
-              <div class="case-study__text">
-                {{ caseStudy.data.description }}
+          {% if loop.index === 1 %}
+            <li class="case-study__item case-study__item--desktop">
+              <a class="case-study__link" href="{{ caseStudy.url }}">
+                <span class="screenreader">{{ caseStudy.data.displayTitle }}</span>
+              </a>
+              <div class="image-with-text-overlay image-with-text-overlay--full-width">
+                {% if caseStudy.data.hero.image %}
+                  <div class="image-with-text-overlay__image-wrapper">
+                    {% image caseStudy.data.hero.image, caseStudy.data.hero.imageAlt, '(min-width: 48em) 60rem, 90vw', "lazy", 'image-with-text-overlay__image', [760, 1440, 1920] %}
+                  </div>
+                  <div class="image-with-text-overlay__overlay image-with-text-overlay__overlay--purple"></div>
+                {% endif %}
+                <div class="image-with-text-overlay__content-wrapper">
+                  {% set imagePath %}/assets/images/logos/{{ caseStudyHandle }}.svg{% endset %} <img class="case-study__logo" src="{{ imagePath }}" alt="{{ company }}"/>
+                  <div class="image-with-text-overlay__content">
+                    <p class="h5">{{ caseStudy.data.company }}</p>
+                    <h3 class="case-study__title">{{ caseStudy.data.displayTitle | stripHTML }}</h3>
+                    <p class="caption">{{ caseStudy.data.hero.tags }}</p>
+                    <span class="image-with-text-overlay__cta cta-link" aria-hidden="true">
+                      <span class="cta-link__text">Read the case study</span>
+                      <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+                    </span>
+                  </div>
+                </div>
               </div>
-              <span class="case-study__cta cta-link text--accent" aria-hidden="true">
-                <span class="cta-link__text">Read Case Study</span>
-                <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
-              </span>
             </li>
           {% endif %}
+          <li class="case-study__item{% if loop.index === 1 %} case-study__item--mobile{% endif %}">
+            <a class="case-study__link" href="{{ caseStudy.url }}">
+              <span class="screenreader">{{ caseStudy.data.displayTitle }}</span>
+            </a>
+            <div class="image-with-text-overlay">
+              {% if caseStudy.data.hero.image %}
+                <div class="image-with-text-overlay__image-wrapper">
+                  {% image caseStudy.data.hero.image, caseStudy.data.hero.imageAlt, '(min-width: 62em) 17rem, 90vw', "lazy", 'image-with-text-overlay__image', [760, 1440, 1920] %}
+                </div>
+                <div class="image-with-text-overlay__overlay{% if loop.index === 1 %} image-with-text-overlay__overlay--purple{% endif %}"></div>
+              {% endif %}
+              <div class="image-with-text-overlay__content-wrapper">
+                {% set imagePath %}/assets/images/logos/{{ caseStudyHandle }}.svg{% endset %} <img class="case-study__logo" src="{{ imagePath }}" alt="{{ company }}"/>
+                <p class="caption">{{ caseStudy.data.hero.tags }}</p>
+                <span class="image-with-text-overlay__cta case-study__cta--mobile cta-link" aria-hidden="true">
+                  <span class="cta-link__text">Read the case study</span>
+                  <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+                </span>
+              </div>
+            </div>
+            <p class="case-study__cta cta-link">{{ caseStudy.data.company }}</p>
+            <h3 class="case-study__title h4">{{ caseStudy.data.displayTitle | stripHTML }}</h3>
+          </li>
         {% endfor %}
       </ul>
     </div>

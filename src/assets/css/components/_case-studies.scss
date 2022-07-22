@@ -1,24 +1,13 @@
 .case-studies {
   padding: 3rem 0;
-
-  &--aqua {
-    background-color: var(--color-aqua);
-  }
-
-  &--blue {
-    background-color: var(--color-blue);
-  }
 }
 
 .case-studies__heading {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .case-studies__list {
-  display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-  gap: 1.5rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -30,9 +19,37 @@
   flex-direction: column;
   align-self: flex-start;
   height: 100%;
-  padding: 2rem 1rem;
   background-color: var(--color-bg);
   color: var(--color-body-text);
+
+  &+& {
+    margin-bottom: rem-calc(80);
+  }
+
+  &--desktop {
+    display: none;
+    visibility: hidden;
+  }
+
+  &--mobile {
+    display: block;
+    visibility: visible;
+  }
+}
+
+.case-study__logo {
+  align-self: flex-end;
+  max-width: 8.5rem;
+  max-height: 3.25rem;
+  margin-bottom: 1rem;
+}
+
+.case-study__title {
+  margin: 0.75rem 0 0;
+
+  .case-study__item--desktop & {
+    margin: 1rem 0 1.25rem;
+  }
 }
 
 .case-study__link {
@@ -42,31 +59,71 @@
   width: 100%;
   height: 100%;
   z-index: 2;
-
-  &:hover {
-    & ~ .case-study__cta:before {
-      transform: scaleX(1);
-    }
-  }
-}
-
-.case-study__text {
-  margin: 1.5rem 0;
-  font-size: 0.875rem;
 }
 
 .case-study__cta {
-  align-self: flex-start;
-  margin-top: auto;
+  text-decoration: underline 1px var(--color-purple);
+  text-underline-offset: 0.125rem;
+  margin-top: 1rem;
+  transition: text-decoration-color 0.3s ease, color 0.3s ease;
+
+  &--mobile {
+    margin: auto;
+  }
 }
 
-.case-study__body {
-  margin: 3rem auto;
-  @extend .container, .container--md, .rte;
-}
-
-@media (min-width: 62em) {
+@media (min-width: 48em) {
   .case-studies {
     padding: 5rem 0;
+  }
+
+  .case-studies__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1.5rem;
+  }
+
+  .case-study__item {
+    grid-column: span 1 / span 2;
+
+    &+& {
+      margin-top: 0;
+    }
+
+    &--desktop {
+      display: block;
+      visibility: visible;
+      grid-column: span 3 / span 3;
+    }
+
+    &--mobile {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  .case-study__link {
+    &:hover {
+      &~.image-with-text-overlay .cta-link__text,
+      &~.image-with-text-overlay .cta-link__arrow svg,
+      &~.cta-link {
+        color: var(--color-aqua);
+        text-decoration-color: var(--color-aqua);
+      }
+    }
+  }
+
+  .case-study__logo {
+    margin-bottom: 0;
+  }
+
+  .case-study__client {
+    margin-top: 1.25rem;
+  }
+
+  .case-study__cta--mobile {
+    display: none;
+    visibility: hidden;
   }
 }
