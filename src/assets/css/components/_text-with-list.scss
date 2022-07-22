@@ -1,0 +1,44 @@
+.text-with-list {
+  padding: 7.25rem 0;
+}
+
+.text-with-list__subheading {
+  max-width: 48.75rem;
+  margin: 3.25rem 0;
+}
+
+.text-with-list__text {
+  max-width: 23.75rem;
+}
+
+.text-with-list__list {
+  margin: 3.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: item;
+}
+
+.text-with-list__item {
+  display: flex;
+  counter-increment: item;
+
+  &+& {
+    margin-top: 2rem;
+  }
+
+  &::before {
+    content: counter(item) ".";
+    color: var(--color-purple);
+    margin-right: 2.25rem;
+  }
+}
+
+.text-with-list__cta {
+  margin-top: 3.5rem;
+}
+
+@media (min-width: 48em) {
+  .text-with-list {
+    padding: 7.75rem 0;
+  }
+}

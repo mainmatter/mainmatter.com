@@ -7,10 +7,7 @@ eleventyNavigation:
 ---
 
 {% from "color-hero.njk" import colorHero %}
-{% from "image-with-text.njk" import imageWithText %}
-{% from "column-list.njk" import columnList %}
-{% from "split-list.njk" import splitList %}
-{% from "quote.njk" import quote %}
+{% from "text-with-list.njk" import textWithList %}
 {% set 'content' = {
   "title": "Accelerate your growth with <em>dedicated</em> specialists",
   "image": "/assets/images/photos/mainmatter-team-brainstorm.jpg",
@@ -19,16 +16,10 @@ eleventyNavigation:
   "titleTag": "h1"
 } %}
 {{ colorHero('center', 'large', 'aqua', false, content) }}
-{% set 'content' = {
-  "title": "Augment your in-house teams",
-  "text": "We’re ready to hit the ground running with you. Our senior engineers will guide you though any problems you’re facing, whether you’ve got a complex project with a tight deadline, or a team that needs to get up to speed quickly on the latest technologies. We can help you overcome blockers caused by a lack of in-house expertise—let us put our expertise to work.",
-  "image": "/assets/images/photos/0022.jpg",
-  "alt": "Five team members laughing around a laptop",
-  "loading": "lazy"
+{% set content = {
+  "title": "Team augmentation",
+  "subtitle": "We can help you overcome blockers caused by a lack of in-house expertise",
+  "text": "Let our technology experts merge with your in-house product teams to ensure the timely delivery of large-scale projects. We’re more than hired hands—we mentor your team throughout the process to help lift productivity long after our collaboration ends."
 } %}
-{{ imageWithText('left', content) }}
-{{ columnList(services['team-augmentation'], '', 'column-list--services') }}
-{% set text = "I've had the opportunity to work alongside the [Mainmatter] team on both their client-facing work for Cardstack and their open source contributions. They are experts in Ember and they are a team that takes good software-development practice seriously." %}
-{% set source = "Ed Faulkner, Cardstack lead developer and member of the Ember.js steering committee" %}
-{{ quote('blue', text, source, true) }}
+{{ textWithList(content) }}
 {% include 'content/hero-grow-with-us.njk' %}
