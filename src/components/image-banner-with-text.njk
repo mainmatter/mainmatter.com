@@ -1,0 +1,22 @@
+{% from "cta-link.njk" import ctaLink %}
+{%- macro imageBannerWithText(content) -%}
+  <section class="image-banner-with-text">
+    <div class="container container--lg">
+      <h2 class="image-banner-with-text__heading h5">{{ content.title }}</h2>
+    </div>
+    {% image content.image, content.alt, '100vw', content.loading, 'image-banner-with-text__image', [760, 1440, 1920] %}
+    <div class="container container--lg">
+      <div class="image-banner-with-text__content">
+        {% if content.subtitle %}
+          <h3 class="image-banner-with-text__subheading h4">{{ content.subtitle }}</h3>
+        {% endif %}
+        {% if content.text %}
+          <p class="image-banner-with-text__text">{{ content.text }}</p>
+        {% endif %}
+        {% if content.linkUrl and content.linkText %}
+          {{ ctaLink(content.linkUrl, content.linkText, 'image-banner-with-text__link') }}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{%- endmacro -%}

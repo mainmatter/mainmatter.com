@@ -7,6 +7,7 @@ title: null
 {% from "featured-services.njk" import featuredServices %}
 {% from "logo-list.njk" import logoList %}
 {% from "case-study-list.njk" import caseStudyList %}
+{% from "image-banner-with-text.njk" import imageBannerWithText %}
 {% from "split-hero.njk" import splitHero %}
 {% from "image-with-text-stacked.njk" import imageWithTextStacked %}
 {% from "image-with-text.njk" import imageWithText %}
@@ -31,6 +32,17 @@ title: null
 {% set caseStudies = ['qonto', 'trainline', 'timify', 'ddwrt'] %}
 {{ caseStudyList(caseStudies, 'Browse our  work') }}
 {% set 'content' = {
+  "title": "Why mainmatter",
+  "subtitle": "We are a team of developers, inventors, designers, strategists, artists and storytellers. We work remotely form 9 countries in Europe and we believe in recruiting top talents from any location.",
+  "text": "That said, we still value face time. We frequently come together for team events and workshops, and invite our clients to join us as well.",
+  "linkUrl": "/playbook",
+  "linkText": "Learn about our technologies expertise",
+  "image": "/assets/images/photos/mainmatter-team.jpg",
+  "alt": "Group photo of mainmatter team",
+  "loading": "lazy"
+} %}
+{{ imageBannerWithText(content) }}
+{% set 'content' = {
   "title": "Build <em>lasting</em> products, systematically",
   "text": "Our playbook describes methodologies for building sustainable digital products and running an effective, collaborative product development process. It is based on our experiences working on projects with international clients in various industries for many years.",
   "linkUrl": "/playbook",
@@ -40,73 +52,6 @@ title: null
   "loading": "lazy"
 } %}
 {{ colorHero('center', 'small', 'purple', true, content) }}
-{% set 'content' = {
-  "title": "Your <em>sustainable</em> success is our expertise",
-  "text": "You want to work with a digital consultancy that can help you bridge the gap between vision and execution. Let Mainmatter guide you through the process of building products that can grow and scale over the long term.",
-  "image": "/assets/images/photos/DSC04108.jpg",
-  "alt": "Two people having a conversation while looking at a computer screen",
-  "loading": "eager"
-} %}
-{{ splitHero('left', 'purple', content) }}
-{% set 'content' = {
-  "title": "We’re in it for the long haul",
-  "text": "Your users need intuitive solutions, and your team needs elegant architecture that can be maintained for years to come. We’re here to accelerate your trajectory.",
-  "linkUrl": "/contact/",
-  "linkText": "Partner With Us",
-  "image": "/assets/images/photos/0004.jpg",
-  "alt": "Person looking at a laptop screen with code",
-  "loading": "lazy"
-} %}
-{{ colorHero('center', 'blue', content) }}
-{% set 'content' = {
-  "title": "Digital products",
-  "text": "Mainmatter will join forces with you to build your new house on a sturdy foundation and show you how we do it along the way.",
-  "linkUrl": "/services/",
-  "linkText": "Let’s make magic",
-  "image": "/assets/images/photos/0027.jpg",
-  "alt": "People gathered around a laptop, only their hands are visible",
-  "loading": "lazy"
-} %}
-{{ imageWithText('right', content) }}
-{% set 'content' = {
-  "title": "Official Ember.js Sponsor",
-  "text": "We recently have been recognized as an official sponsor of the Ember.js project along with international brands like LinkedIn and Yahoo.",
-  "linkUrl": "/services",
-  "linkText": "Find out more",
-  "image": "/assets/images/logos/background/ember.svg",
-  "alt": "Ember.js logo",
-  "loading": "lazy"
-} %}
-{{ secondaryFeature('left', content, true) }}
-{% set 'content' = {
-  "title": "Co-Engineering the Future of Banking for SME",
-  "text": "Empowering Qonto's ambitious engineers to achieve their goals",
-  "linkUrl": "/cases/qonto/",
-  "linkText": "Find out more",
-  "image": "/assets/images/work/qonto.jpg",
-  "alt": "Woman holds a credit card while using the Qonto web application",
-  "loading": "lazy"
-} %}
-{{ splitHero('left', 'aqua', content) }}
-{% set 'contentBlocks' = [{
-  "title": "Team Augmentation",
-  "text": "Let us cross-pollinate with your engineering team to ship high-quality code at an accelerated pace.",
-  "linkUrl": "/services/team-augmentation/",
-  "linkText": "Collaborate with us",
-  "image": "/assets/images/photos/0018.jpg",
-  "alt": "Three team members looking attentively to the side",
-  "loading": "lazy",
-  "small": true
-},{
-  "title": "Training & Support",
-  "text": "We offer a range of support services from custom-tailored workshops, to code reviews, technical audits, and more.",
-  "linkUrl": "/services/training/",
-  "linkText": "Level up your team",
-  "image": "/assets/images/photos/0015.jpg",
-  "alt": "Three team members meeting in front of a whiteboard filled with colored Post-it notes.",
-  "loading": "lazy"
-}] %}
-{{ imageWithTextStacked('right', contentBlocks) }}
 {% set 'content' = {
   "title": "Grow <em>your business</em> with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",

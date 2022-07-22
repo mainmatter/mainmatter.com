@@ -23,6 +23,14 @@
   align-items: center;
   text-decoration: none;
 
+  &:hover,
+  &:focus {
+    .featured-services__link-text {
+      color: var(--color-purple);
+      text-decoration-color: var(--color-purple);
+    }
+  }
+
   svg {
     transform: rotate(-90deg);
     height: 1.5rem;
@@ -36,6 +44,7 @@
   display: inline-flex;
   text-decoration: underline 1px var(--color-black);
   text-underline-offset: 0.125rem;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
 }
 
 @media (min-width: 48em) {
