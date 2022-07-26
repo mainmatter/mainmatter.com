@@ -1,6 +1,6 @@
 ---
 title: 'EmberFest'
-image: '/assets/images/calendar/2022-09-22-emberfest'
+image: '/assets/images/calendar/2022-09-22-emberfest/logo.png'
 location: Paris
 url: https://emberfest.eu/
 kind: conference
