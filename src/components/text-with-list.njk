@@ -1,6 +1,6 @@
 {% from "cta-link.njk" import ctaLink %}
-{% macro textWithList(content) %}
-  <section class="text-with-list">
+{% macro textWithList(content, color) %}
+  <section class="text-with-list{% if color %} text-with-list--{{ color }}{% endif %}">
     <div class="container container--lg">
       {% if content.title %}
         <h2 class="text-with-list__heading h5">{{ content.title }}</h2>
@@ -12,11 +12,15 @@
         <p class="text-with-list__text">{{ content.text }}</p>
       {% endif %}
       {% if content.list %}
-        <ol class="text-with-list__list">
+        {% set tag = "ol" %}
+        {% if content.listType == "unordered" %}
+          {% set tag = "ul" %}
+        {% endif %}
+        <{{ tag }} class="text-with-list__list{% if content.listType %} text-with-list__list--{{ content.listType }}{% endif %}">
           {% for entry in content.list %}
             <li class="text-with-list__item h4">{{ entry }}</li>
           {% endfor %}
-        </ol>
+        </{{ tag }}>
       {% endif %}
       {% if content.linkUrl and content.linkText %}
         {{ ctaLink(content.linkUrl, content.linkText, 'text-with-list__cta') }}

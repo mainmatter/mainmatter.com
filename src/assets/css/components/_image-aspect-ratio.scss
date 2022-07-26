@@ -1,0 +1,20 @@
+.image-aspect-ratio__wrapper {
+  aspect-ratio: var(--aspect-ratio-mobile);
+  position: relative;
+}
+
+.image-aspect-ratio__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (min-width: 48em) {
+  .image-aspect-ratio__wrapper {
+    aspect-ratio: var(--aspect-ratio-desktop);
+  }
+}

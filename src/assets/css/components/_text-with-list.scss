@@ -1,5 +1,25 @@
 .text-with-list {
+  --color-text: var(--color-black);
+  --color-accent: var(--color-purple);
+  --icon-url: url("/assets/images/icons/arrow-black.svg");
   padding: 7.25rem 0;
+  color: var(--color-text);
+
+  &--purple,
+  &--black {
+    --color-text: var(--color-white);
+    --color-accent: var(--color-white);
+    --icon-url: url("/assets/images/icons/arrow-white.svg");
+    color: var(--color-accent);
+  }
+
+  &--purple {
+    background-color: var(--color-purple);
+  }
+
+  &--black {
+    background-color: var(--color-black);
+  }
 }
 
 .text-with-list__subheading {
@@ -16,10 +36,17 @@
   padding: 0;
   list-style: none;
   counter-reset: item;
+
+  &--unordered {
+    .text-with-list__item::before {
+      content: var(--icon-url);
+    }
+  }
 }
 
 .text-with-list__item {
   display: flex;
+  align-items: center;
   counter-increment: item;
 
   &+& {
@@ -27,13 +54,16 @@
   }
 
   &::before {
+    height: 2rem;
+    width: 2rem;
     content: counter(item) ".";
-    color: var(--color-purple);
+    color: var(--color-accent);
     margin-right: 2.25rem;
   }
 }
 
 .text-with-list__cta {
+  color: var(--color-accent);
   margin-top: 3.5rem;
 }
 

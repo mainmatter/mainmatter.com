@@ -8,6 +8,7 @@ eleventyNavigation:
 
 {% from "color-hero.njk" import colorHero %}
 {% from "text-with-list.njk" import textWithList %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% set 'content' = {
   "title": "Bridging the gap between vision and <em>sustainable</em> execution",
   "image": "/assets/images/photos/0010.jpg",
@@ -25,4 +26,36 @@ eleventyNavigation:
   "linkText": "Download our playbook"
 } %}
 {{ textWithList(content) }}
+{% set image = {
+  "imgPath": "/assets/images/photos/glassboard.jpg",
+  "alt": "Man writing on a glassboard with another man watching behind",
+  "sizes": "100vw",
+  "loading": "lazy",
+  "sizesArray": [640, 960, 1440, 1920]
+} %}
+{{ imageAspectRatio(image, "32/13", "35/19") }}
+{% set content = {
+  "title": "Product design",
+  "subtitle": "Experiences that users love",
+  "text": "When a compley digital product delights you with its ease of use, that’s by design. Your users have a problem, and it’s up to us to solve it through smart design coupled with outspoken visual appeal. Your product should be remarkable from every angle.",
+  "listType": "unordered",
+  "list": ["Multi-stakeholder design research", "Wireframing & Rapid prototyping", "Develop a consistent design system", "Ideation across the entire user journey"]
+} %}
+{{ textWithList(content, "purple") }}
+{% set image = {
+  "imgPath": "/assets/images/photos/tablet-stylus.jpg",
+  "alt": "Team member using a tablet with a stylus",
+  "sizes": "100vw",
+  "loading": "lazy",
+  "sizesArray": [640, 960, 1440, 1920]
+} %}
+{{ imageAspectRatio(image, "32/13", "35/19") }}
+{% set content = {
+  "title": "Product development",
+  "subtitle": "Let us set you up for sustainable growth",
+  "text": "We pride ourselves on being a cut above the rest, and we welcome unique and complex engineering challenges. Our process depends on close collaboration between designers and developers to release well-tested products in flexible iterations.",
+  "listType": "unordered",
+  "list": ["Full-stack development", "Continuous delivery of product increments", "Intensive automated testing", "No quick fixes", "Build for long term sustainability"]
+} %}
+{{ textWithList(content, "black") }}
 {% include 'content/hero-grow-with-us.njk' %}

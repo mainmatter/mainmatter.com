@@ -1,0 +1,7 @@
+{% macro imageAspectRatio(image, aspectRatioDesktop, aspectRatioMobile) %}
+  <div
+    class="image-aspect-ratio__wrapper"
+    style="--aspect-ratio-desktop: {{ aspectRatioDesktop }}; --aspect-ratio-mobile: {{ aspectRatioMobile }};">
+    {%- image image.imgPath, image.alt, image.sizes, image.loading, "image-aspect-ratio__image", image.sizesArray -%}
+  </div>
+{% endmacro %}
