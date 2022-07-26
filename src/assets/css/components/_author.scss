@@ -1,10 +1,9 @@
 .author {
-  display: flex;
   margin: 2rem auto;
-  padding: 0.5rem 0;
-  border-top: rem-calc(1) solid currentColor;
-  border-bottom: rem-calc(1) solid currentColor;
-  font-size: rem-calc(13);
+}
+
+.author__headline {
+  display: flex;
 
   &--post {
     margin-top: 0;
@@ -13,36 +12,17 @@
       margin: 0;
     }
   }
-
-  &--workshop {
-    padding: 1rem 0;
-    font-size: 1rem;
-    margin: 0;
-
-    &:not(:first-child) {
-      margin-top: rem-calc(-1);
-    }
-
-    .author__image-wrapper picture {
-      margin: 0;
-    }
-
-    .author__name {
-      margin: 0;
-      color: currentColor;
-    }
-  }
 }
 
 .author__image-wrapper {
-  flex: 0 0 3.5rem;
+  flex: 0 0 3.75rem;
   margin-right: 1.5rem;
 }
 
 .author__image {
   display: block;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3.75rem;
+  height: 3.75rem;
   object-fit: cover;
   border-radius: 50%;
 }

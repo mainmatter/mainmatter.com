@@ -1,13 +1,55 @@
 ---
 layout: 'base'
 ---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "author-link.njk" import authorLink %}
 {%- block content -%}
-  <div class="container container--lg post">
-    <article class="post__content post__content--workshop rte">
-      <a href="/resources/workshops/" class="post__back post__back--video text--accent">
-        <span class="post__back-arrow">{% include 'svg/arrow.njk' %}</span>
-        <span class="post__back-text">Back</span>
-      </a>
+<article>
+  <div class="color-hero color-hero--black">
+    <div class="color-hero__image-wrapper">
+      {% if hero.image %}
+        {% image hero.image, hero.imageAlt, '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
+      {% endif %}
+    </div>
+    <div class="color-hero__overlay"></div>
+    <div class="color-hero__container container container--xl color-hero__container--center">
+      <div class="color-hero__main">
+        <p>{{ format }}</p>
+        <h1 class="color-hero__title color-hero__title--full">{{ title | safe }}</h1>
+      </div>
+    </div>
+  </div>
+  <div class="workshop-authors">
+    <div class="container container--xl">
+      {%- for lead in leads -%}
+        <div class="author">
+          <div class="author__headline">
+            <div class="author__image-wrapper">
+              {% image lead.image, lead.name, '5.438rem', 'lazy', 'author__lead-image', [87, 131, 174] %}
+            </div>
+            <div class="author__text-wrapper">
+              <div class="author__name">
+                <span>With
+                </span>
+                {% if lead.authorHandle %}
+                  <a href="/blog/author/{{ lead.authorHandle }}">{{ lead.name }}</a>
+                {% else %}
+                  <p>{{ lead.name }}</p>
+                {% endif %}
+              </div>
+              <div class="author__title">{{ lead.title }}</div>
+            </div>
+          </div>
+          <div class="author__details">
+            {{ lead.bio }}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+  <div class="container container--xl post">
+    <div class="post__content post__content--workshop rte">
       <h1 class="post__title">{{ title }}</h1>
       <div class="post__tagline">
         {% if tagline %}
@@ -17,13 +59,12 @@ layout: 'base'
         {% endif %}
       </div>
       {% set list %}
-        <h2 class="workshop-topics__heading">Workshop Overview</h2>
-        <ol class="workshop-topics__list">
-          {% for item in topics %}
-            <li class="workshop-topics__item">
-              <div class="workshop-topics__icon-wrapper">
-                <img class="workshop-topics__icon"  src="{{ item.image }}" alt="">
-              </div>
+      <h2 class="workshop-topics__heading">Workshop Overview</h2>
+      <ol class="workshop-topics__list">
+        {% for item in topics %}
+          <li class="workshop-topics__item">
+            <div class="workshop-topics__icon-wrapper">
+              <img class="workshop-topics__icon" src="{{ item.image }}" alt=""></div>
               <div class="workshop-topics__text-wrapper">
                 <h3 class="workshop-topics__item-heading h4">{{ item.heading }}</h3>
                 <p class="workshop-topics__text">{{ item.text }}</p>
@@ -31,24 +72,10 @@ layout: 'base'
             </li>
           {% endfor %}
         </ol>
-      {% endset %}
-      {{ content | replace('<!--break-->', list) | safe }}
-      <h2>Leads</h2>
-        {%- for lead in leads -%}
-          <div class="author author--workshop">
-            <div class="author__image-wrapper">
-              {% image lead.image, lead.name, '5.438rem', 'lazy', 'author__lead-image', [87, 131, 174] %}
-            </div>
-            <div class="author__text-wrapper">
-              <h3 class="author__name">{{ lead.name }}</h3>
-              <div class="author__title">{{ lead.title }}</div>
-              <div class="author__bio">
-                {{ lead.bio }}
-              </div>
-            </div>
-          </div>
-        {%- endfor -%}
-    </article>
-  </div>
+        {% endset %}
+        {{ content | replace('<!--break-->', list) | safe }}
+      </div>
+    </div>
+  </article>
   {% include 'content/hero-playbook.njk' %}
 {%- endblock -%}

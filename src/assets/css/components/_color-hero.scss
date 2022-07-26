@@ -2,6 +2,7 @@
   position: relative;
   aspect-ratio: 1;
   overflow: hidden;
+  --overlay-opacity: 0.9;
 
   &--purple {
     --color-animation: var(--color-aqua);
@@ -29,6 +30,14 @@
     --color-overlay: var(--color-yellow);
     color: var(--color-black);
   }
+
+  &--black {
+    --color-animation: var(--color-aqua);
+    --color-link-background: var(--color-aqua);
+    --color-overlay: var(--color-black);
+    color: var(--color-white);
+    --overlay-opacity: 0.4;
+  }
 }
 
 .color-hero__image-wrapper {
@@ -55,7 +64,7 @@
   height: 100%;
   background-color: var(--color-overlay);
   mix-blend-mode: multiply;
-  opacity: 0.9;
+  opacity: var(--overlay-opacity);
 }
 
 .color-hero__image {

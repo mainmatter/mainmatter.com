@@ -6,44 +6,44 @@ description:
   the framework from the CLI to routing and components, ember-data, and testing.
 tagline: |
   Ember.js is the frontend framework for ambitious teams who want to ship continuously without getting lost in low-level rabbit holes. This workshop covers all relevant aspects of the framework. It targets beginners that are just starting with Ember, as well as teams that are using the framework already and are looking to deepen their knowledge.
-tag: /assets/images/resources/workshops/hands-on-ember/ember.svg
+tag: /assets/images/workshops/hands-on-ember/ember.svg
 og:
-  image: /assets/images/resources/workshops/hands-on-ember/og-image.png
+  image: /assets/images/workshops/hands-on-ember/og-image.png
 topics:
   - heading: Ember.js Basics
-    image: /assets/images/resources/workshops/hands-on-ember/box.svg
+    image: /assets/images/workshops/hands-on-ember/box.svg
     text: >
       We look at the basic building blocks of an Ember application and how they play together. We also take a look at the CLI and development tooling like the Ember Inspector.
   - heading: Templates and Components
-    image: /assets/images/resources/workshops/hands-on-ember/code.svg
+    image: /assets/images/workshops/hands-on-ember/code.svg
     text: >
       Rendering DOM elements is the most essential task of every Ember app. We dive deep into Handlebars, Ember's component model, tracked properties as well as actions and modifiers and more advanced topics like complex component architectures, component reusability concerns, and architectural approaches.
   - heading: Routing
-    image: /assets/images/resources/workshops/hands-on-ember/map.svg
+    image: /assets/images/workshops/hands-on-ember/map.svg
     text: >
       Ember pioneered the idea of driving the application state through the URL. In this stage, we explore Ember's routing, the template hierarchy, and advanced concepts like loading and error states.
   - heading: Ember Data
-    image: /assets/images/resources/workshops/hands-on-ember/database.svg
+    image: /assets/images/workshops/hands-on-ember/database.svg
     text: >
       This stage covers all aspects of Ember Data, from the basics like working with models and the store, to advanced topics like adapters and serializers, the json:api spec, and data loading patterns.
   - heading: Services
-    image: /assets/images/resources/workshops/hands-on-ember/hexagon.svg
+    image: /assets/images/workshops/hands-on-ember/hexagon.svg
     text: >
       Ember's services are a simple yet powerful mechanism for sharing state throughout the application as well as encapsulating specific functionality. We cover how services work and look at typical use cases and patterns.
   - heading: Testing
-    image: /assets/images/resources/workshops/hands-on-ember/check-circle.svg
+    image: /assets/images/workshops/hands-on-ember/check-circle.svg
     text: >
       We cover fundamental authentication and authorization concepts, discussing different mechanisms and related security aspects.
   - heading: Auth (optional)
-    image: /assets/images/resources/workshops/hands-on-ember/unlock.svg
+    image: /assets/images/workshops/hands-on-ember/unlock.svg
     text: >
       We cover fundamental authentication and authorization concepts, discussing different mechanisms and related security aspects.
   - heading: Deployment, Performance, SSR and SSG (optional)
-    image: /assets/images/resources/workshops/hands-on-ember/upload.svg
+    image: /assets/images/workshops/hands-on-ember/upload.svg
     text: >
       In this stage, we look into serving Ember applications in the most performant way. We cover topics like CDNs, caching and service workers, as well as server-side rendering and pre-rendering with FastBoot.
   - heading: Ember's object model (optional)
-    image: /assets/images/resources/workshops/hands-on-ember/layers.svg
+    image: /assets/images/workshops/hands-on-ember/layers.svg
     text: >
       Ember applications building on versions older than the Octane edition are still using Ember's legacy object model with patterns like computed properties and mixins. In this stage, we cover those concepts in-depth as well as explore approaches for migrating to native classes.
 leads:

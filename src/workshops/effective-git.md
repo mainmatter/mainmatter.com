@@ -6,32 +6,32 @@ description:
   Mastering it makes teams more productive and developers' jobs more enjoyable.
 tagline: |
   Although Git is everyone's version control system of choice, it can sometimes seem overwhelming. In this one-day workshop, we explore fundamental Git concepts via hands-on exercises focused around typical day-to-day tasks to show how to avoid the most common headaches associated with Git.
-tag: /assets/images/resources/workshops/effective-git/git.svg
+tag: /assets/images/workshops/effective-git/git.svg
 og:
-  image: /assets/images/resources/workshops/effective-git/og-image.png
+  image: /assets/images/workshops/effective-git/og-image.png
 topics:
   - heading: Delivery Pipelines
-    image: /assets/images/resources/workshops/effective-git/chevrons.svg
+    image: /assets/images/workshops/effective-git/chevrons.svg
     text: >
       Highly integrated and automated infrastructure and workflows are the foundation that successful engineering teams excel on and Git is what drives them at their core. We look at branching models, Pull Request based workflows, and reviewing.
   - heading: Git Fundamentals
-    image: /assets/images/resources/workshops/effective-git/box.svg
+    image: /assets/images/workshops/effective-git/box.svg
     text: >
       Once we understand how Git fits in to the bigger picture, we'll look into how it works at its core and the building blocks it consists of. We cover what blobs, trees and snapshots are to better understand how they represent a repo's history over time.
   - heading: Branching and Merging
-    image: /assets/images/resources/workshops/effective-git/git-branch.svg
+    image: /assets/images/workshops/effective-git/git-branch.svg
     text: >
       Git makes branching easy and cheap, and working with Git means constantly switching between branches and merging them back together. We look at common branching and merging scenarios to understand what fast-forward merges and 3-way merges are.
   - heading: Rewriting History
-    image: /assets/images/resources/workshops/effective-git/list.svg
+    image: /assets/images/workshops/effective-git/list.svg
     text: >
       Keeping a clean history and organizing commits in meaningful ways is essential for efficient collaboration on code bases. We cover (interactive) rebasing and rewriting history including squashing, editing and dropping commits.
   - heading: Bisecting
-    image: /assets/images/resources/workshops/effective-git/crosshair.svg
+    image: /assets/images/workshops/effective-git/crosshair.svg
     text: >
       Sometimes it's hard to find the change that introduced a particular defect. Git Bisect can be of great help in identifying the respective commit. We look at how bisecting works and how it can be used to save a lot of time in common scenarios.
   - heading: Open Q&A
-    image: /assets/images/resources/workshops/effective-git/help.svg
+    image: /assets/images/workshops/effective-git/help.svg
     text: >
       We reserve some time in the end to discuss your team's specific questions relating to Git or infrastructure, tooling and automation around it.
 leads:
