@@ -42,7 +42,8 @@
         "oscard0m/octoherd-script-hello-world",
         "oscard0m/octoherd-script-migrate-pika",
         "oscard0m/octoherd-script-replace-all-repository-topics",
-        "oscard0m/octoherd-script-watch-unwatch-or-ignore"
+        "oscard0m/octoherd-script-watch-unwatch-or-ignore",
+        "marcoow/chat-server"
     ],
     "labels": [
         {
