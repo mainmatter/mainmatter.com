@@ -1,0 +1,23 @@
+{%- macro authorSocials(authorHandle, className) -%}
+  {% set author = authorHandle | findBySlug %}
+  {% if author %}
+    <ul class="author-socials{% if className %} {{ className }}{% endif %}">
+      {% if author.data.twitter %}
+        <li>
+          <a class="author-socials__icon" href="https://twitter.com/{{ author.data.twitter }}/">
+            {% include 'svg/social-twitter.njk' %}
+            <span class="screenreader">@{{ author.data.twitter }} on Twitter</span>
+          </a>
+        </li>
+      {% endif %}
+      {% if author.data.linkedin %}
+        <li>
+          <a class="author-socials__icon" href="https://linkedin.com/in/{{ author.data.linkedin }}/">
+            {% include 'svg/social-linkedin.njk' %}
+            <span class="screenreader">@{{ author.data.linkedin }} on LinkedIn</span>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  {% endif %}
+{%- endmacro -%}

@@ -3,7 +3,7 @@ layout: 'base'
 ---
 
 {% from "color-hero.njk" import colorHero %}
-{% from "author-link.njk" import authorLink %}
+{% from "author-socials.njk" import authorSocials %}
 {%- block content -%}
 <article>
   <div class="color-hero color-hero--black">
@@ -13,7 +13,7 @@ layout: 'base'
       {% endif %}
     </div>
     <div class="color-hero__overlay"></div>
-    <div class="color-hero__container container container--xl color-hero__container--center">
+    <div class="color-hero__container container container--lg color-hero__container--center">
       <div class="color-hero__main">
         <p>{{ format }}</p>
         <h1 class="color-hero__title color-hero__title--full">{{ title | safe }}</h1>
@@ -21,36 +21,40 @@ layout: 'base'
     </div>
   </div>
   <div class="workshop-authors">
-    <div class="container container--xl">
+    <div class="container container--lg">
       {%- for lead in leads -%}
-        <div class="author">
+        <div class="author text--xs">
           <div class="author__headline">
             <div class="author__image-wrapper">
-              {% image lead.image, lead.name, '5.438rem', 'lazy', 'author__lead-image', [87, 131, 174] %}
+              {% image lead.image, lead.name, '5.625rem', 'lazy', 'author__lead-image', [87, 131, 174] %}
             </div>
             <div class="author__text-wrapper">
-              <div class="author__name">
-                <span>With
-                </span>
-                {% if lead.authorHandle %}
-                  <a href="/blog/author/{{ lead.authorHandle }}">{{ lead.name }}</a>
+              <div class="author__name-wrapper">
+                <span>with</span>
+                {% if lead.handle %}
+                  <a href="/blog/author/{{ lead.handle }}" class="author__name">{{ lead.name }}</a>
                 {% else %}
-                  <p>{{ lead.name }}</p>
+                  <p class="author__name">{{ lead.name }}</p>
                 {% endif %}
               </div>
+              {% if lead.handle %}
+                {{ authorSocials(lead.handle, "author-socials--desktop-only") }}
+              {% endif %}
               <div class="author__title">{{ lead.title }}</div>
+              {% if lead.handle %}
+                {{ authorSocials(lead.handle, "author-socials--mobile-only") }}
+              {% endif %}
             </div>
           </div>
-          <div class="author__details">
+          <p class="author__details">
             {{ lead.bio }}
-          </div>
+          </p>
         </div>
       {%- endfor -%}
     </div>
   </div>
-  <div class="container container--xl post">
+  <div class="container container--lg post">
     <div class="post__content post__content--workshop rte">
-      <h1 class="post__title">{{ title }}</h1>
       <div class="post__tagline">
         {% if tagline %}
           {{ tagline | safe }}
@@ -59,23 +63,20 @@ layout: 'base'
         {% endif %}
       </div>
       {% set list %}
-      <h2 class="workshop-topics__heading">Workshop Overview</h2>
+      <h2 class="workshop-topics__heading h5">Workshop Overview</h2>
       <ol class="workshop-topics__list">
         {% for item in topics %}
           <li class="workshop-topics__item">
-            <div class="workshop-topics__icon-wrapper">
-              <img class="workshop-topics__icon" src="{{ item.image }}" alt=""></div>
-              <div class="workshop-topics__text-wrapper">
-                <h3 class="workshop-topics__item-heading h4">{{ item.heading }}</h3>
-                <p class="workshop-topics__text">{{ item.text }}</p>
-              </div>
-            </li>
-          {% endfor %}
-        </ol>
-        {% endset %}
-        {{ content | replace('<!--break-->', list) | safe }}
-      </div>
+            <div class="workshop-topics__text-wrapper">
+              <h3 class="workshop-topics__item-heading h4">{{ item.heading }}</h3>
+              <p class="text--sm">{{ item.text }}</p>
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
+      {% endset %}
+      {{ content | replace('<!--break-->', list) | replace('<ul>', '<ul class="post__list post__list--workshop">') | safe }}
     </div>
-  </article>
-  {% include 'content/hero-playbook.njk' %}
-{%- endblock -%}
+  </div>
+</article>
+{% include 'content/hero-grow-with-us.njk' %}{%- endblock -%}

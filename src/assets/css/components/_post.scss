@@ -1,6 +1,6 @@
 .post {
   --color-tag: var(--color-blue);
-  margin: 2.5rem auto 5rem;
+  padding: 3.25rem 0 6.25rem;
 }
 
 .post__back {
@@ -44,11 +44,6 @@
 .post__back-text {
   position: relative;
   z-index: 1;
-}
-
-.post__content {
-  display: grid;
-  grid-template-columns: 100%;
 }
 
 .post__tags {
@@ -96,9 +91,18 @@
 }
 
 .post__tagline {
-  font-weight: 600;
-  font-size: 1.125rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.post__list {
+  &--workshop {
+    font-weight: 700;
+    margin-top: 1.5rem;
+  }
+
+  li {
+    padding: 0.25rem;
+  }
 }
 
 @media (min-width: 25em) {
@@ -115,19 +119,7 @@
 
 @media (min-width: 48em) {
   .post {
-    margin-top: 5rem;
-  }
-
-  .post__tagline {
-    font-size: 1.25rem;
-  }
-
-  .post__content {
-    grid-template-columns: 1fr rem-calc(612) 1fr;
-
-    & > * {
-      grid-column: 2;
-    }
+    padding: 6.25rem 0 8rem;
   }
 }
 
@@ -145,22 +137,6 @@
     .iframe-container,
     .quote {
       grid-column: 1 / span 3;
-    }
-  }
-}
-
-@media (min-width: 72em) {
-  .post__content {
-    &--video, &--workshop {
-      .post__back {
-        grid-column: 1;
-        align-self: start;
-        justify-self: start;
-      }
-
-      .post__meta {
-        margin-bottom: 1.5rem;
-      }
     }
   }
 }

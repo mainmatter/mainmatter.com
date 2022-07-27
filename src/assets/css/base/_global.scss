@@ -19,6 +19,11 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  font-size: 1rem;
+  line-height: 2;
+}
+
 picture,
 img,
 svg {
@@ -43,9 +48,8 @@ button {
 }
 
 @media (min-width: 72em) {
-  html,
   body {
-    line-height: 1.7;
+    line-height: 2;
     font-size: 1.125rem;
   }
 }

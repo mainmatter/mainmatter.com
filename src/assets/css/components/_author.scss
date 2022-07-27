@@ -1,9 +1,11 @@
 .author {
-  margin: 2rem auto;
+  padding: 1.5rem 0 2rem;
+  margin: auto;
 }
 
 .author__headline {
   display: flex;
+  align-items: center;
 
   &--post {
     margin-top: 0;
@@ -17,6 +19,12 @@
 .author__image-wrapper {
   flex: 0 0 3.75rem;
   margin-right: 1.5rem;
+  line-height: 0;
+}
+
+.author__text-wrapper {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .author__image {
@@ -31,18 +39,22 @@
   border-radius: 50%;
 }
 
-.author__name {
-  color: var(--color-blue);
-}
-
 .author__title {
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+  flex-basis: 100%;
 }
 
-.author__twitter {
-  color: var(--color-blue);
-  text-decoration: none;
+.author__details {
+  margin-top: 1rem;
+  max-width: rem-calc(528);
+}
+
+.author__name-wrapper {
+  display: flex;
+}
+
+.author__name {
+  margin-left: 0.5rem;
+  color: var(--color-aqua);
 }
 
 @media (min-width: 62em) {

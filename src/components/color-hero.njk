@@ -45,7 +45,7 @@ Example usage:
     </div>
     <div class="color-hero__filter" {% if isAnimated %} data-color-hero {% endif %}></div>
     <div class="color-hero__overlay" {% if isAnimated %} data-color-hero {% endif %}></div>
-    <div class="color-hero__container container container--xl color-hero__container--{{ textPosition }}">
+    <div class="color-hero__container container container--lg color-hero__container--{{ textPosition }}">
       <div class="color-hero__main">
         {% if content.title %}
           <{{ titleTag }} class="color-hero__title{% if titleTag == 'h1' %} color-hero__title--full{% endif %} text-animation">{{ content.title | safe }}</{{ titleTag }}>

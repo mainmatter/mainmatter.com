@@ -60,8 +60,7 @@
 
 .image-with-text-overlay__content {
   justify-content: center;
-  max-width: 48.75rem;
-  margin: 0 auto;
+  margin-left: 2rem;
 }
 
 .image-with-text-overlay__cta {
@@ -78,7 +77,6 @@
 
   .image-with-text-overlay__content {
     max-width: initial;
-    margin: 0;
   }
 
   .image-with-text-overlay__cta {
@@ -93,6 +91,6 @@
 
   .image-with-text-overlay__content {
     max-width: 48.75rem;
-    margin: 0 auto;
+    margin-left: 5rem;
   }
 }

@@ -1,6 +1,7 @@
 ---
-name: 'Mar High'
+name: "Mar High"
 github: marhigh
 twitter: msmarhigh
-bio: 'Director of Product Design'
+linkedin: msmarhigh
+bio: "Director of Product Design"
 ---
