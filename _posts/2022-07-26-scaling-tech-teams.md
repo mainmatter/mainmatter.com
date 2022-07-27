@@ -104,15 +104,20 @@ an
 ### Invest in Developer Enablement
 
 Once past a certain size, it often even makes sense to task a smaller number of
-engineers exclusively with making everyone else more productive. Since this kind
-of work has increasing leverage with a growing number of total people on the
-team, the cost-benefit analysis is often obvious and makes a decision for such a
-team trivial. A developer support team can e.g. build abstractions to make
-working with particular aspects of the codebase easier, automate checks for
-particular patterns to avoid rework or shorten compile or testing times. While
-all of these things might only result in relatively small productivity
-improvements per individual engineer, as these changes affect every single
-engineer on the team, they have a big impact overall.
+engineers exclusively with making everyone else more productive. That team would
+focus on building, maintaining, and optimizing the internal developer platform
+that all of the other engineers base their work on (a team like that would often
+be referred to as a
+[Platform Engineering](https://platformengineering.org/blog/what-is-platform-engineering)
+or Platform Development team). Since this kind of work has increasing leverage
+with a growing number of total people on the team, the cost-benefit analysis is
+often obvious and makes a decision for such a team trivial. A Platform
+Engineering team can e.g. build abstractions to make working with particular
+aspects of the codebase easier, automate checks for particular patterns to avoid
+rework, optimize tooling to shorten compile or testing times. While all of these
+things might only result in relatively small productivity improvements per
+individual engineer, as these changes affect every single engineer on the team,
+they have a big impact overall.
 
 ## The Limits of Scope
 
