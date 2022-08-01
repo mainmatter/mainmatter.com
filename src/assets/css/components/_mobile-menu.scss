@@ -20,13 +20,12 @@
 .mobile-menu__inner {
   height: 100vh;
   overflow-x: hidden;
-  padding: 1rem;
 }
 
 .mobile-menu__list {
   flex-shrink: 0;
   margin: 0;
-  padding: 4rem 0 6rem;
+  padding: 4rem 1rem 6rem;
   list-style: none;
 
   &--submenu {
@@ -47,6 +46,7 @@
   transition: color 0.3s ease;
 
   svg {
+    flex-shrink: 0;
     width: 2rem;
     height: 2rem;
     transform: rotate(-90deg);
@@ -62,7 +62,7 @@
 .mobile-menu__toggle {
   border: 0;
   border-radius: 0;
-  padding: 0;
+  padding: 0.75rem;
   background-color: transparent;
   vertical-align: middle;
   color: currentColor;

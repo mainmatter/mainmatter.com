@@ -46,7 +46,6 @@ export class Nav {
     menuToggle.setAttribute("aria-expanded", "false");
     siblings.forEach((sibling) => sibling.removeAttribute("inert"));
     menuToggle.focus();
-    document.documentElement.style.overflow = "";
     document.body.classList.remove("menu-open");
   }
 
@@ -59,7 +58,6 @@ export class Nav {
     const siblings = this.getAllSiblings(this.container);
     menuToggle.setAttribute("aria-expanded", "true");
     siblings.forEach((sibling) => sibling.setAttribute("inert", true));
-    document.documentElement.style.overflow = "hidden";
     document.body.classList.add("menu-open");
 
     // Set trap focus
