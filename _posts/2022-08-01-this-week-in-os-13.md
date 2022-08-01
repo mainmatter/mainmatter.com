@@ -18,6 +18,12 @@ some of the work they have done the past weeks!
 
 <!--break-->
 
+## Rust
+
+- [Turbo87/segelflug-classifieds]
+  [#314](https://github.com/Turbo87/segelflug-classifieds/pull/314) clippy:
+  Adjust CLI arguments ([@Turbo87])
+
 ## crates.io
 
 - [rust-lang/crates.io]
@@ -242,14 +248,6 @@ some of the work they have done the past weeks!
 - [oscard0m/octokit-request-action]
   [#1](https://github.com/oscard0m/octokit-request-action/pull/1) Update
   test.yml ([@oscard0m])
-
-## Unknown
-
-- [Turbo87/segelflug-classifieds]
-  [#314](https://github.com/Turbo87/segelflug-classifieds/pull/314) clippy:
-  Adjust CLI arguments ([@Turbo87])
-- [codesandbox/docs] [#54](https://github.com/codesandbox/docs/pull/54)
-  docs(faq): make the Node version suggested in FAQ consistent ([@oscard0m])
 
 [@bobrimperator]: https://github.com/BobrImperator
 [@mikek2252]: https://github.com/Mikek2252
