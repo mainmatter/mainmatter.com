@@ -262,7 +262,6 @@ some of the work they have done the past weeks!
   https://github.com/Turbo87/segelflug-classifieds
 [axmccx/proxynexus]: https://github.com/axmccx/proxynexus
 [cibernox/ember-power-select]: https://github.com/cibernox/ember-power-select
-[codesandbox/docs]: https://github.com/codesandbox/docs
 [ef4/ember-auto-import]: https://github.com/ef4/ember-auto-import
 [ember-codemods/ember-codemods-telemetry-helpers]:
   https://github.com/ember-codemods/ember-codemods-telemetry-helpers
@@ -282,7 +281,6 @@ some of the work they have done the past weeks!
 [gamberrys/octokit-request-action]:
   https://github.com/gamberrys/octokit-request-action
 [mansona/lint-to-the-future]: https://github.com/mansona/lint-to-the-future
-[marcoow/chat-server]: https://github.com/marcoow/chat-server
 [miguelcobain/ember-paper]: https://github.com/miguelcobain/ember-paper
 [mswjs/cookies]: https://github.com/mswjs/cookies
 [nickschot/ember-mobile-menu]: https://github.com/nickschot/ember-mobile-menu
