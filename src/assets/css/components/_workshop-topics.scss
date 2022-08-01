@@ -17,13 +17,16 @@
 
   &::before {
     height: 2rem;
-    width: 2rem;
+    min-width: 2.5rem;
     content: counter(item) ".";
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--color-purple);
-    margin-right: 2.25rem;
     line-height: 1.5;
+  }
+
+  &--optional::before {
+    content: "*";
   }
 }
 
@@ -54,3 +57,11 @@
   margin-bottom: 1rem;
 }
 
+
+@media (min-width: 62em) {
+.workshop-topics__item {
+    &+& {
+      margin-top: 2.75rem;
+    }
+  }
+}

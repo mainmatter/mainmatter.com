@@ -1,6 +1,7 @@
 ---
-name: 'Ricardo Mendes'
+name: "Ricardo Mendes"
 github: locks
 twitter: locks
-bio: 'Senior Frontend Engineer, Ember Framework and Learning Core teams member'
+linkedin: rmendes
+bio: "Senior Frontend Engineer, Ember Framework and Learning Core teams member"
 ---

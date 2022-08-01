@@ -25,7 +25,7 @@
 .author-socials__icon {
   color: var(--color-aqua);
   text-decoration: none;
-  padding: 0.25rem;
+  padding: 0 1.25rem 0 0;
 }
 
 
@@ -47,5 +47,9 @@
       width: 1.25rem;
       height: 1.25rem;
     }
+  }
+
+  .author-socials__icon {
+    padding: 0.25rem;
   }
 }

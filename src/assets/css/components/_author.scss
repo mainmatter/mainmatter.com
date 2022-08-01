@@ -1,11 +1,15 @@
 .author {
-  padding: 1.5rem 0 2rem;
+  padding: 1.5rem 0 2.25rem;
   margin: auto;
+
+  &+& {
+    padding-top: 0.25rem;
+  }
 }
 
 .author__headline {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 
   &--post {
     margin-top: 0;
@@ -46,6 +50,10 @@
 .author__details {
   margin-top: 1rem;
   max-width: rem-calc(528);
+
+  &--full-width {
+    max-width: none;
+  }
 }
 
 .author__name-wrapper {
@@ -58,6 +66,10 @@
 }
 
 @media (min-width: 62em) {
+  .author__headline {
+    align-items: center;
+  }
+
   .author--post {
     flex-wrap: wrap;
 

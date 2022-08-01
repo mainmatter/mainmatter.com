@@ -4,7 +4,7 @@ format: 2–3 days remote
 description: In this workshop we will collaborate to formulate a clear product vision, establishing a blueprint for your digital product's development process. This workshop is a great kickoff for an MVP project. Before starting out, we will gain an overview of your business. Understanding the fundamentals such as your business model, competitor analysis, and users is an essential first step for this strategy workshop.
 tag: /assets/images/workshops/digital-product-strategy/flag.svg
 hero:
-  image: "/assets/images/workshops/digital-product-strategy/digital-product-strategy-workshop.jpg"
+  image: "/assets/images/workshops/digital-product-strategy/digital-product-strategy-workshop-hero.jpg"
   imageAlt: "Hand-drawn wireframes and colorful Post-it notes on a desk"
 og:
   image: /assets/images/workshops/digital-product-strategy/og-image.png
@@ -35,11 +35,9 @@ leads:
     handle: msmarhigh
     image: /assets/images/authors/msmarhigh.jpg
     bio: >
-      Mar helps companies solve their user's problems in creative and scalable ways.
-      Among other things, she's experienced in strategy workshop facilitation,
-      wireframing, and user experience design.
+      Linda helps companies solve their user's problems in creative and scalable ways. She's experienced in strategy workshop facilitation and user experience design.
   - name: Marco Otte-Witte
-    title: Founder and Managing Director of simplabs
+    title: Founder and Managing Director at Mainmatter
     image: /assets/images/authors/marcoow.jpg
     bio: >
       Marco has been working in tech with startups and enterprises for 2 decades. He's

@@ -1,6 +1,7 @@
 ---
-name: 'Marco Otte-Witte'
+name: "Marco Otte-Witte"
 github: marcoow
 twitter: marcoow
-bio: 'Founder and Managing Director of simplabs'
+linkedin: marco-otte-witte
+bio: "Founder and Managing Director of simplabs"
 ---

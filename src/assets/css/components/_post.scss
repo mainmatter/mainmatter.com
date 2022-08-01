@@ -105,6 +105,16 @@
   }
 }
 
+.post__content {
+  &--workshop {
+    h2 {
+      font-size: rem-calc(18);
+      font-weight: 500;
+      margin: 6.25rem 0 3.25rem;
+    }
+  }
+}
+
 @media (min-width: 25em) {
   .post__meta {
     display: flex;
