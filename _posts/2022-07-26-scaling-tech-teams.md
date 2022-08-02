@@ -10,8 +10,8 @@ description:
   typical mistakes.'
 ---
 
-Scaling their tech team is a challenge that every successful company will face
-sooner or later. There will be more to build and maintain than the small
+Every successful company will face the challenge of having to scale their tech
+team sooner or later. There will be more to build and maintain than the small
 founding team is able to handle. However, increasing throughput by increasing
 the number of people isn't as easy as it might seem and many teams have learned
 that the hard way with average productivity (and overall team happiness) going
