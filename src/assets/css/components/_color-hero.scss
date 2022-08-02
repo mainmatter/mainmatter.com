@@ -1,8 +1,14 @@
 .color-hero {
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: auto;
   overflow: hidden;
   --overlay-opacity: 0.9;
+
+  &:first-of-type {
+    .color-hero__container {
+      padding: 6rem 0 3.25rem;
+    }
+  }
 
   &--purple {
     --color-animation: var(--color-aqua);
@@ -11,24 +17,10 @@
     color: var(--color-white);
   }
 
-  &--blue {
-    --color-animation: var(--color-yellow);
-    --color-link-background: var(--color-purple);
-    --color-overlay: var(--color-blue);
-    color: var(--color-white);
-  }
-
   &--aqua {
     --color-animation: var(--color-purple);
     --color-overlay: var(--color-aqua);
     color: var(--color-white);
-  }
-
-  &--yellow {
-    --color-animation: var(--color-aqua);
-    --color-link-background: var(--color-aqua);
-    --color-overlay: var(--color-yellow);
-    color: var(--color-black);
   }
 
   &--black {
@@ -124,6 +116,14 @@
 }
 
 @media (min-width: 72em) {
+  .color-hero {
+    &:first-of-type {
+      .color-hero__container {
+        padding: 3.25rem 0;
+      }
+    }
+  }
+
   .color-hero__text {
     &--small {
       font-size: 1.125rem;

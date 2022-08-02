@@ -19,8 +19,9 @@
   margin: 1.25rem 0 1rem;
   font-weight: 700;
   color: var(--color-purple);
-  text-decoration: underline 1px var(--color-purple);
   text-underline-offset: 0.125rem;
+  text-decoration-line: underline;
+  text-decoration-color: var(--color-purple);
   transition: color 0.3s ease, text-decoration-color 0.3s ease;
 }
 

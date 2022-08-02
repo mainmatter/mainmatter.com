@@ -9,6 +9,7 @@
   background-color: transparent;
   font-size: 1.125rem;
   font-weight: 700;
+  line-height: 1.5;
   text-decoration: none;
   transition: 0.3s color ease;
 
@@ -28,7 +29,8 @@
 .cta-link__text {
   position: relative;
   z-index: 1;
-  text-decoration: underline 1px currentColor;
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
   text-underline-offset: 0.125rem;
   transition: color 0.3s ease, text-decoration-color 0.3s ease;
 }
