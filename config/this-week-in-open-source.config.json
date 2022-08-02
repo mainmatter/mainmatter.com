@@ -42,7 +42,8 @@
         "oscard0m/octoherd-script-hello-world",
         "oscard0m/octoherd-script-migrate-pika",
         "oscard0m/octoherd-script-replace-all-repository-topics",
-        "oscard0m/octoherd-script-watch-unwatch-or-ignore"
+        "oscard0m/octoherd-script-watch-unwatch-or-ignore",
+        "marcoow/chat-server"
     ],
     "labels": [
         {
@@ -141,7 +142,13 @@
                 "ember-learn/ember-help-wanted-server",
                 "ember-learn/rfcs-app",
                 "mansona/ember-cli-babel",
-                "empress/field-guide-addon-docs-template"
+                "empress/field-guide-addon-docs-template",
+                "cibernox/ember-power-select",
+                "ember-codemods/ember-codemods-telemetry-helpers",
+                "ember-codemods/ember-native-class-codemod",
+                "ember-learn/guidemaker-ember-template",
+                "empress/guidemaker",
+                "empress/guidemaker-default-template"
             ]
         },
         {
@@ -173,7 +180,8 @@
                 "platinumazure/eslint-plugin-qunit",
                 "sinonjs/fake-timers",
                 "squash-commit-app/squash-commit-app",
-                "cookpete/auto-changelog"
+                "cookpete/auto-changelog",
+                "axmccx/proxynexus"
             ]
         },
         {
@@ -211,7 +219,16 @@
                 "octokit/request-error.js",
                 "octokit/request.js",
                 "octokit/rest.js",
-                "octokit/webhooks-methods.js"
+                "octokit/webhooks-methods.js",
+                "gamberrys/octokit-request-action",
+                "gamberrys/octokit-request-action-copy",
+                "octokit/app-permissions",
+                "octokit/create-octokit-project.js",
+                "octokit/graphql-action",
+                "octokit/openapi",
+                "octokit/request-action",
+                "octokit/webhooks",
+                "oscard0m/octokit-request-action"
             ]
         },
         {
