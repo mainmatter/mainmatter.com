@@ -208,13 +208,13 @@ While I have written about making
 before, there are two points to consider in particular when starting to
 internationalize the team. As obvious as it might be, the first point is still
 something teams forget and pay a high price for later: everything you do you
-need to do in english. Hiring internationally means people will not speak the
-local language and everyone will end up doing everything in english. If that
+need to do in English. Hiring internationally means people will not speak the
+local language and everyone will end up doing everything in English. If that
 fact hasn't been taken into account from the get-go and there's essential
 material (documentation, users stories, issues, etc.) that are only available in
 german or french or whatever, all of these materials are inaccessible to people
 that don't understand those languages and will have to be translated or
-recreated eventually. **Keeping everything in english from the beginning is easy
+recreated eventually. **Keeping everything in English from the beginning is easy
 to forget but absolutely essential to be able to internationalize a team later
 on**.
 
