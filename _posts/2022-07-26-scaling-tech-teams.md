@@ -32,43 +32,44 @@ same extent that more senior people would. They need additional guidance and
 mentoring and will get frustrated and burned out without it. At the same time,
 given support, they will more often than not excel and become senior engineers
 themselves. That said, a common mistake we see many teams make is to just add
-juniors to their teams without putting any real thought into what kind of
+beginners to their teams without putting any real thought into what kind of
 guidance they will need, only to be surprised a few months later when the people
-leave again. That's not only a bad experience for the junior engineer who
-probably was eager to learn and motivated when they started but also a missed
-opportunity for the company that could have added a valuable member to their
-team.
+leave again. That's not only a bad experience for the less experienced engineer
+who probably was eager to learn and motivated when they started but also a
+missed opportunity for the company that could have added a valuable member to
+their team.
 
 Supporting less experienced engineers in making impactful contributions to
 codebase can (and should) happen in many ways. First, remove any accidental
 complexity from the process and infrastructure that would impose an extra wall
-to climb over for any junior engineer. For example, while experienced engineers
-might be able to set up a bunch of dependant services and run a variety of
-micro-services directly on their machine, that might be a blocker for a junior –
-containerizing the complete development environment before introducing junior
-engineers to the team can likely prevent a lot of frustration and wasted time
-and is beneficial to the rest of the team as well.
+to climb over for any engineer at the beginning of their career. For example,
+while experienced engineers might be able to set up a bunch of dependant
+services and run a variety of micro-services directly on their machine, that
+might be a blocker for a beginner – containerizing the complete development
+environment before introducing beginners to the team can likely prevent a lot of
+frustration and wasted time and is beneficial to the rest of the team as well.
 
-Preparing work thoroughly can go a long way in supporting junior engineers as
-well. Instead of assigning underspecified tasks where lots is still left to be
-figured out, analyze the status quo and plan what steps need to be taken to get
-to the desired goal before starting to write code. That way, juniors have a
-trail to follow and blockers or uncertainties can be uncovered and resolved
-before they hit a wall mid-way through their work. For more guidance on
-efficient preparation of work, check our [playbook](/playbook) as well.
+Preparing work thoroughly can go a long way in supporting less experienced
+engineers as well. Instead of assigning underspecified tasks where lots is still
+left to be figured out, analyze the status quo and plan what steps need to be
+taken to get to the desired goal before starting to write code. That way,
+beginners have a trail to follow and blockers or uncertainties can be uncovered
+and resolved before they hit a wall mid-way through their work. For more
+guidance on efficient preparation of work, check our [playbook](/playbook) as
+well.
 
-![A well prepared issue provides juniors with a
+![A well prepared issue provides beginners with a
 trail to follow](/assets/images/posts/2022-07-26-scaling-tech-teams/issue.svg#plain)
 
-Analyzing and preparing work is also a nice exercise for a junior and a senior
-engineer to do together. Generally, closely collaborating with and observing
-more experienced people is a great way to learn – whether it's pair programming
-or working on other tasks like figuring out what needs to be done for a
-particular issue. Additionally, there are other ways of teaching of course like
-giving deep explanations for why a particular change might be brought up during
-a code review or running workshops on particular topics that people are
+Analyzing and preparing work is also a nice exercise for a beginner and an
+experienced engineer to do together. Generally, closely collaborating with and
+observing more experienced people is a great way to learn – whether it's pair
+programming or working on other tasks like figuring out what needs to be done
+for a particular issue. Additionally, there are other ways of teaching of course
+like giving deep explanations for why a particular change might be brought up
+during a code review or running workshops on particular topics that people are
 struggling with. We have worked with a number of fast-growing teams over the
-years and seen many juniors excel and turn into experienced senior engineers
+years and seen many beginners excel and turn into experienced senior engineers
 given the right support over the years – find out about our
 [team augmentation](/services/team-augmentation/) offering to learn more.
 
@@ -78,13 +79,13 @@ The negative impacts of low code health and technical debt are widely understood
 in our industry by now. When it comes to scaling teams though, the topic becomes
 even more relevant – whether bad code affects the productivity of a team of 5 or
 a team of 50 just makes a huge difference. The bigger a team gets, the higher
-the price tag is on unaddressed tech debt, in particular with more junior
-engineers on a team that might not be as comfortable working around it.
-Accepting tech debt as an impediment not only to the productivity but to the
-scalability of a team as such is crucial (one of our client calls this Scaling
-work instead of tech debt). **Plan time for working on code health and
-prioritize it together with feature work – it will have equal relevance for the
-sustainability of your product**!
+the price tag is on unaddressed tech debt, in particular with more beginners on
+a team that might not be as comfortable working around it. Accepting tech debt
+as an impediment not only to the productivity but to the scalability of a team
+as such is crucial (one of our client calls this Scaling work instead of tech
+debt). **Plan time for working on code health and prioritize it together with
+feature work – it will have equal relevance for the sustainability of your
+product**!
 
 ## Developer Infrastructure
 
