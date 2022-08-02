@@ -39,6 +39,14 @@ who probably was eager to learn and motivated when they started but also a
 missed opportunity for the company that could have added a valuable member to
 their team.
 
+Ines from the simplabs team wrote about
+[her journey as a beginner engineer](/blog/2022/05/19/journey-of-a-junior-software-engineer/)
+– it's a great post I recommend beginners as well as experienced engineers read.
+One of Inês' main points is:
+
+> If you land in a new job where nobody is showing availability to help you
+> out - you are in the wrong place.
+
 Supporting less experienced engineers in making impactful contributions to
 codebase can (and should) happen in many ways. First, remove any accidental
 complexity from the process and infrastructure that would impose an extra wall
