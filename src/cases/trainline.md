@@ -4,7 +4,7 @@ company: Trainline
 companyDescription: Trainline is Europe's leading independent rail and coach platform. They serve more than 125,000 rides every single day in and across 36 countries.
 title: Mobile train tickets with Ember.js for Trainline | Work
 displayTitle: "The full market potential for a <em>leading</em> travel platform"
-description: Trainline is Europe’s leading rail and coach platform. We helped them deliver a high-performance mobile web app, along with an improved engineering process.
+description: <p>Trainline is Europe’s leading rail and coach platform.</p><p>We helped them deliver a high-performance mobile web app, along with an improved engineering process.</p>
 hero:
   color: purple
   textPosition: "center"

@@ -4,7 +4,7 @@ company: Qonto
 companyDescription: Qonto is a B2B Neobank that provides banking services and credit cards to more than 75,000 freelancers and SMEs in Europe.
 title: Co-Engineering the Future of Banking for SMEs with Qonto | Work
 displayTitle: "A helping hand for a <em>visionary</em> fintech startup"
-description: Qonto is the leading neobank for SMEs and freelancers in Europe. Mainmatter worked with their web frontend team to boost their productivity, establish Ember.js best practices, and ensure long-term success.
+description: <p>Qonto is the leading neobank for SMEs and freelancers in Europe.</p><p>Mainmatter worked with their web frontend team to boost their productivity, establish Ember.js best practices, and ensure long-term success.</p>
 hero:
   color: purple
   textPosition: "center"

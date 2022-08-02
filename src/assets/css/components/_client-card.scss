@@ -1,0 +1,24 @@
+.client-card {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 0;
+}
+
+.client-card__image {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  margin-bottom: 0.75rem;
+
+  img {
+    max-height: 100%;
+    width: auto;
+    max-width: 10rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .client-card {
+    margin: 0;
+  }
+}

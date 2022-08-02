@@ -4,14 +4,13 @@ title: Level-up your team with Elixir &amp; Phoenix experts
 description: Augment your in-house team with Elixir & Phoenix technology experts. Speed up projects and remove long-standing issues – from refactoring to shipping new features.
 permalink: /expertise/elixir-phoenix/
 ---
+
 {% from "split-hero.njk" import splitHero %}
 {% from "color-hero.njk" import colorHero %}
 {% from "image-with-text.njk" import imageWithText %}
 {% from "column-list.njk" import columnList %}
 {% from "split-list.njk" import splitList %}
-{% from "client-list.njk" import clientList %}
 {% from "image-with-text-stacked.njk" import imageWithTextStacked %}
-
 {% set 'content' = {
   "title": "Elixir & Phoenix: the best of all worlds",
   "text": "Elixir combines the expressiveness and simplicity of Ruby with the performance and stability of the Erlang VM. Phoenix builds on the concepts first introduced by Ruby on Rails, combining them with a number of architectural improvements to take the architecture into the future. Together, Elixir and Phoenix form a modern and capable stack for building ambitious digital products of the future, based on an established foundation that has proven itself for decades.",
@@ -20,7 +19,6 @@ permalink: /expertise/elixir-phoenix/
   "loading": "eager"
 } %}
 {{ splitHero('left', 'blue', content) }}
-
 {% set 'contentBlocks' = [{
   "title": "Early adoption, long-term commitment",
   "text": "Mainmatter was an early adopter of Elixir and Phoenix, offering trainings and leveraging the potential of the stack for our clients. We support the Elixir Munich meetup, have been actively involved with conferences like ElixirConf and ElixirConf EU, and are honored to be a Founding Sponsor of the Erlang Ecosystem Foundation."
@@ -32,7 +30,6 @@ permalink: /expertise/elixir-phoenix/
   "loading": "lazy"
 }] %}
 {{ imageWithTextStacked('left', contentBlocks) }}
-
 {% set 'content' = {
   "title": "Work with us",
   "text": "<p>Ready to build your next digital product with Elixir & Phoenix? Our experts are ready to guide you through your next big move. Let us know how we can help.</p>",

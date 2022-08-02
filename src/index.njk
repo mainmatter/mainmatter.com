@@ -6,7 +6,7 @@ title: null
 {% from "color-hero.njk" import colorHero %}
 {% from "featured-services.njk" import featuredServices %}
 {% from "logo-list.njk" import logoList %}
-{% from "case-study-list.njk" import caseStudyList %}
+{% from "featured-case-studies.njk" import featuredCaseStudies %}
 {% from "image-banner-with-text.njk" import imageBannerWithText %}
 {% from "split-hero.njk" import splitHero %}
 {% from "image-with-text-stacked.njk" import imageWithTextStacked %}
@@ -27,10 +27,10 @@ title: null
   "text": "Our team of experts delivers everything from ideation to design and engineering. We can turn any idea sketched on the back of a napkin into a production-ready application."
 } %}
 {{ featuredServices(services['services-list'], content) }}
-{% set logoCompanies = ['Qonto', 'Trainline', 'Cardstack', 'Timify', 'Experteer', 'Robin Hood', 'Dim 3' ] %}
+{% set logoCompanies = ['Qonto', 'Trainline', 'Cardstack', 'Timify', 'Experteer', 'Robin Hood', 'Dim3' ] %}
 {{ logoList(logoCompanies) }}
-{% set caseStudies = ['qonto', 'trainline', 'timify', 'ddwrt'] %}
-{{ caseStudyList(caseStudies, 'Browse our  work') }}
+{% set clients = ['qonto', 'trainline', 'timify', 'ddwrt'] %}
+{{ featuredCaseStudies(clients, 'Browse our  work') }}
 {% set 'content' = {
   "title": "Why mainmatter",
   "subtitle": "We are a team of developers, inventors, designers, strategists, artists and storytellers. We work remotely form 9 countries in Europe and we believe in recruiting top talents from any location.",

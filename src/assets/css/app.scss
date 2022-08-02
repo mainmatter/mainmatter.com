@@ -21,7 +21,7 @@
 @import "components/footer-menu";
 @import "components/column-list";
 @import "components/quote";
-@import "components/client-list";
+@import "components/client-card";
 @import "components/contact-info";
 @import "components/contact-methods";
 @import "components/contact-form";
@@ -40,7 +40,9 @@
 @import "components/pagination";
 @import "components/author";
 @import "components/event-cards";
-@import "components/case-studies";
+@import "components/featured-case-studies";
+@import "components/case-study";
+@import "components/case-study-card";
 @import "components/talks";
 @import "components/channel-card";
 @import "components/talk-card";
@@ -52,11 +54,11 @@
 @import "components/split-quote";
 @import "components/color-image";
 @import "components/featured-services";
-@import "components/image-with-text-overlay";
 @import "components/image-banner-with-text";
 @import "components/text-with-list";
 @import "components/image-aspect-ratio";
 @import "components/author-socials";
+@import "components/work";
 
 @import "animations/text-animation";
 

@@ -3,7 +3,7 @@ layout: case-study
 company: Timify
 companyDescription: Timify is a cloud-based appointment scheduling system that serves over 50,000 businesses across a wide range of industries.
 displayTitle: "An engineering overhaul for a <em>validated</em> booking system"
-description: Timify is an online appointment scheduling service that connects service providers with clients. When they decided it was time to re-engineer their existing product, they trusted us to set them up for future success.
+description: <p>Timify is an online appointment scheduling service that connects service providers with clients.</p><p>When they decided it was time to re-engineer their existing product, they trusted us to set them up for future success.</p>
 hero:
   color: purple
   textPosition: "center"

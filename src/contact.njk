@@ -3,10 +3,6 @@ layout: base
 title: Contact us to discuss how we can help you
 description: Whatever you're planning, we'd love to hear more. Send us a message and we will schedule a call to understand your situation and discuss how we can help best.
 ---
-{% from "client-list.njk" import clientList %}
 
 {% include 'contact-info.njk' %}
 {% include 'contact-form.njk' %}
-
-{% set clients = ['qonto', 'trainline', 'timify'] %}
-{{ clientList(clients, 'blue', 'We are trusted by international brands') }}

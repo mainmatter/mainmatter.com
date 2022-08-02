@@ -8,9 +8,8 @@ eleventyNavigation:
 ---
 
 {% from "color-hero.njk" import colorHero %}
-{% from "split-hero.njk" import splitHero %}
-{% from "client-list.njk" import clientList %}
-{% from "case-study-list.njk" import caseStudyList %}
+{% from 'case-study.njk' import caseStudy %}
+{% from "client-cards.njk" import clientCards %}
 {% set 'content' = {
   "title": "A proven track record of <em>successful</em> projects for international clients",
   "image": "/assets/images/photos/mainmatter-work-hero.jpg",
@@ -19,66 +18,19 @@ eleventyNavigation:
   "titleTag": "h1"
 } %}
 {{ colorHero('center', 'large', 'aqua', false, content) }}
-{% set 'content' = {
-  "title": "A proven track record of <em>successful</em> projects for international clients.",
-  "image": "/assets/images/photos/0044.jpg",
-  "alt": "Alt text",
-  "loading": "Three team members in a meeting looking to the right"
-} %}
-{{ splitHero('left', 'blue', content) }}
-{% set 'content' = {
-  "title": "A helping hand for a visionary fintech startup",
-  "text": "Qonto is a B2B Neobank that provides banking services and credit cards to more than 75,000 freelancers and SMEs in Europe. Our senior experts helped them to lay the foundations for sustainable growth at an accelerated pace.",
-  "linkUrl": "/cases/qonto/",
-  "linkText": "Read case study",
-  "image": "/assets/images/work/qonto.jpg",
-  "alt": "Woman holds a credit card while using the Qonto web application",
-  "loading": "lazy"
-} %}
-{{ splitHero('right', 'white', content) }}
-{% set clients = ['qonto', 'cardstack', 'generali', 'poellath', 'robin-hood', 'clark', 'xbav', 'experteer', 'mvb'] %}
-{{ clientList(clients, 'aqua', 'Meet our clients') }}
-{% set 'content' = {
-  "title": "The full market potential for a leading travel platform",
-  "text": "Trainline is Europe’s leading independent rail and coach platform. We enabled them to tap into their full market potential by launching a mobile app to serve customers on the go.",
-  "linkUrl": "/cases/trainline/",
-  "linkText": "Read case study",
-  "image": "/assets/images/photos/trainline-comp.jpg",
-  "alt": "User looking at the Trainline app",
-  "loading": "lazy"
-} %}
-{{ splitHero('left', 'white', content) }}
-{% set clients = ['camilyo', 'hop-skip-drive', 'dim3', 'timify', 'embedd', 'medify', 'expedition', 'trainline', 'ringler', 'neighbourhoodie', 'loconet', 'erdil', 'sutori', 'asilimia'] %}
-{{ clientList(clients, 'aqua') }}
-{% set 'content' = {
-  "title": "An engineering overhaul for a validated booking system",
-  "text": "Timify is a cloud-based appointment booking system that serves over 50,000 clients worldwide. When their entire system needed to be re-engineered from the ground up, they trusted us to step in and set them up for long-term success.",
-  "linkUrl": "/cases/timify/",
-  "linkText": "Read case study",
-  "image": "/assets/images/work/timify-right.jpg",
-  "alt": "Macbook showing a Timify schedule",
-  "loading": "lazy"
-} %}
-{{ splitHero('right', 'white', content) }}
-{% set caseStudies = ['ddwrt', 'expedition'] %}
-{{ caseStudyList(caseStudies, 'blue', 'More case studies') }}
-{% set 'content' = {
-  "title": "We maintain a lean process that supports the team rather than standing in its way.",
-  "text": "Find out more about how we work to deliver ambitious software solutions for our clients.",
-  "linkUrl": "/playbook/",
-  "linkText": "Read our playbook",
-  "image": "/assets/images/photos/0020-1.jpg",
-  "alt": "Four team members having a meeting around a laptop",
-  "loading": "lazy"
-} %}
-{{ splitHero('left', 'purple', content) }}
-{% set 'content' = {
-  "title": "Grow with us",
-  "text": "<p>Let's talk about the challenges that you're facing.</p><p>Our experts are ready to guide you through your next big move.</p>",
-  "linkUrl": "/contact/",
-  "linkText": "Partner with us",
-  "image": "/assets/images/photos/0001.jpg",
-  "alt": "Person looking at a laptop, looking contemplatives",
-  "loading": "lazy"
-} %}
-{{ colorHero('center', 'yellow', content) }}
+<div class="work container container--xl">
+  <h2 class="work__title h5">Meet our clients</h2>
+  <ul class="work__list">
+    {{ caseStudy('qonto', 'purple', 'work__case-study') }}
+    {{ clientCards(['qonto', 'cardstack', 'generali']) }}
+    {{ caseStudy('trainline', 'black', 'work__case-study') }}
+    {{ clientCards(['mvb', 'camilyo', 'hop-skip-drive']) }}
+    {{ caseStudy('timify', 'purple', 'work__case-study') }}
+    {{ clientCards(['trainline', 'ringler', 'neighbourhoodie', 'poellath', 'dim3', 'loconet']) }}
+    {{ caseStudy('ddwrt', 'black', 'work__case-study') }}
+    {{ clientCards(['robin-hood', 'timify', 'erdil', 'clark', 'embedd', 'sutori']) }}
+    {{ caseStudy('expedition', 'purple', 'work__case-study') }}
+    {{ clientCards(['xbav', 'medify', 'asimilia', 'experteer', 'expedition']) }}
+  </ul>
+</div>
+{% include 'content/hero-work-with-us.njk' %}

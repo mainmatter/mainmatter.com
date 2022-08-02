@@ -4,7 +4,7 @@ company: Expedition
 companyDescription: Expedition is an online travel magazine for global citizens who want to experience world’s best destinations through the eyes of a local.
 title: An architecture based on Elixir and Ember.js for Expedition | Work
 displayTitle: "A sturdy foundation for <em>advanced</em> system architecture"
-description: Expedition is an online travel magazine for global citizens. They turned to Mainmatter when they were looking for guidance to get the most out of their technology stack based on Elixir, Phoenix and Ember.js.
+description: <p>Expedition is an online travel magazine for global citizens.</p><p>They turned to Mainmatter when they were looking for guidance to get the most out of their technology stack based on Elixir, Phoenix and Ember.js.</p>
 hero:
   color: purple
   textPosition: "center"

@@ -1,0 +1,24 @@
+{#
+List of case studies as cards
+
+Configuration Options:
+list: An array where each item is the slug for the case study.
+#}
+{% from 'case-study.njk' import caseStudy %}
+{% from 'case-study-card.njk' import caseStudyCard %}
+{%- macro featuredCaseStudies(caseStudies, heading) -%}
+  <section class="featured-case-studies">
+    <div class="container container--xl">
+      <h2 class="featured-case-studies__heading h5">{{ heading }}</h2>
+      <ul class="featured-case-studies__list">
+        {% for caseStudyHandle in caseStudies -%}
+          {% if loop.index === 1 %}
+            {{ caseStudy(caseStudyHandle, 'purple') }}
+          {% else %}
+            {{ caseStudyCard(caseStudyHandle) }}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+{%- endmacro -%}

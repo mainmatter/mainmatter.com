@@ -1,0 +1,34 @@
+.work__title {
+  margin: 5rem 0 3.25rem;
+}
+
+.work__list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 7.5rem;
+}
+
+.work__case-study {
+  margin: 6rem 0 3rem;
+
+  &:first-of-type {
+    margin: 0 0 3rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .work__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4.25rem 1.5rem;
+  }
+
+  .work__case-study {
+    margin: 0;
+
+    &:first-of-type {
+      margin: 0;
+    }
+  }
+}
+

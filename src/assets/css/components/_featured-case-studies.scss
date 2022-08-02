@@ -1,0 +1,27 @@
+.featured-case-studies {
+  padding: 3rem 0 8rem;
+}
+
+.featured-case-studies__heading {
+  margin-bottom: 3rem;
+}
+
+.featured-case-studies__list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 48em) {
+  .featured-case-studies {
+    padding: 5rem 0 11rem;
+  }
+
+  .featured-case-studies__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1.5rem;
+  }
+}

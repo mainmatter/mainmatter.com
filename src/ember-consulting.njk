@@ -5,7 +5,6 @@ description: Temporarily extend your team with Europe's leading Ember experts. S
 permalink: /ember-consulting/
 ---
 
-{% from "client-list.njk" import clientList %}
 {% from "color-hero.njk" import colorHero %}
 {% from "column-list.njk" import columnList %}
 {% from "image-with-text.njk" import imageWithText %}
@@ -62,8 +61,6 @@ permalink: /ember-consulting/
   "linkUrl": "/calendar/"
 }] %}
 {{ imageWithTextStacked('right', contentBlocks) }}
-{% set clients = ['generali', 'qonto', 'cardstack'] %}
-{{ clientList(clients, 'blue', "We're trusted by companies that bet on Ember") }}
 {% set 'contentBlocks' = [{
   "title": "Ember Consulting",
   "text": "Not all teams will always be able to deliver large-scale projects on time and budget. Our experts step in and merge with our clients' in-house engineering teams, sustainably increasing productivity.",
