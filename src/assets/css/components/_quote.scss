@@ -1,56 +1,18 @@
 .quote {
-  display: grid;
-  gap: 1.5rem;
-  margin: rem-calc(74) auto;
-  padding: 1.5rem;
+  margin: 8.25rem auto 8.75rem;
+}
 
-  &--aqua {
-    --color-quote-icon: var(--color-purple);
-    background-color: var(--color-aqua);
-    color: var(--color-black);
-  }
-
-  &--blue {
-    --color-quote-icon: var(--color-yellow);
-    background-color: var(--color-blue);
-    color: var(--color-white);
-  }
-
-  &--yellow {
-    --color-quote-icon: var(--color-purple);
-    background-color: var(--color-yellow);
-    color: var(--color-black);
-  }
-
-  &--purple {
-    --color-quote-icon: var(--color-blue);
-    background-color: var(--color-purple);
-    color: var(--color-white);
-  }
+.quote__content {
+  max-width: 42.75rem;
+  margin: -2rem auto 0;
 }
 
 .quote__text {
-  margin: 0;
-  font-size: 1.5rem;
-  line-height: 1.3;
-}
-
-.quote__icon {
-  color: var(--color-quote-icon);
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 48em) {
-  .quote {
-    padding: 3rem rem-calc(90) 3rem rem-calc(60);
-    grid-template-columns: 3rem auto;
-  }
-
-  .quote__text {
-    margin: 0;
-    font-size: 2rem;
-  }
-
   .quote__source {
-    grid-column: 2;
+    text-align: right;
   }
 }

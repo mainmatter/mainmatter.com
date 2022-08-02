@@ -1,20 +1,20 @@
 {% macro caseStudyCard(clientHandle) %}
   {% set caseStudy = clientHandle | findBySlug %}
   <li class="case-study-card">
-    <a class="case-study-card__link case-study__link" href="{{ caseStudy.url }}">
+    <a class="case-study-card__link featured-case-study__link" href="{{ caseStudy.url }}">
       <span class="screenreader">{{ caseStudy.data.displayTitle }}</span>
     </a>
     <div class="case-study-card__image-overlay">
       {% if caseStudy.data.hero.image %}
-        <div class="case-study__image-wrapper">
-          {% image caseStudy.data.hero.image, caseStudy.data.hero.imageAlt, '(min-width: 48em) 60rem, 90vw', "lazy", 'case-study__image', [760, 1440, 1920] %}
+        <div class="featured-case-study__image-wrapper">
+          {% image caseStudy.data.hero.image, caseStudy.data.hero.imageAlt, '(min-width: 48em) 60rem, 90vw', "lazy", 'featured-case-study__image', [760, 1440, 1920] %}
         </div>
-        <div class="case-study__overlay case-study__overlay--black"></div>
+        <div class="featured-case-study__overlay featured-case-study__overlay--black"></div>
       {% endif %}
-      <div class="case-study-card__content-wrapper case-study__content-wrapper">
-        {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %} <img class="case-study__logo" src="{{ imagePath }}" alt="{{ company }}"/>
+      <div class="case-study-card__content-wrapper featured-case-study__content-wrapper">
+        {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %} <img class="featured-case-study__logo" src="{{ imagePath }}" alt="{{ company }}"/>
         <p class="case-study-card__tags caption">{{ caseStudy.data.hero.tags }}</p>
-        <span class="case-study-card__cta case-study__cta cta-link" aria-hidden="true">
+        <span class="case-study-card__cta featured-case-study__cta cta-link" aria-hidden="true">
           <span class="cta-link__text">Read the case study</span>
           <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
         </span>

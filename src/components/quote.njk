@@ -12,13 +12,14 @@ Example usage:
 {% set source = "Andreas Knürr, Timify CEO" %}
 {{ quote('aqua', text, source, true) }}
 #}
-
-{%- macro quote(color, text, source, container) -%}
-  <figure class="quote quote--{{ color }} {% if container === true %}container container--lg{% endif %}">
+{%- macro quote(content) -%}
+  <figure class="quote">
     <span class="quote__icon">{% include 'svg/quote.njk' %}</span>
-    <blockquote class="quote__text">
-      {{ text | safe }}
-    </blockquote>
-    <figcaption class="quote__source h4">{{ source }}</figcaption>
+    <div class="quote__content">
+      <blockquote class="quote__text h4">
+        {{ content.text | safe }}
+      </blockquote>
+      <figcaption class="quote__source h4">{{ content.source }}</figcaption>
+    </div>
   </figure>
 {%- endmacro -%}

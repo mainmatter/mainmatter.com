@@ -45,7 +45,7 @@ The first step for our experts was to understand the characteristics of the envi
   "alt": "Alt text",
   "loading": "lazy"
 } %}
-{{- splitQuote('left', 'yellow', content) -}}
+{{ splitQuote('left', 'yellow', content) }}
 
 <div class="case-study__body">
 

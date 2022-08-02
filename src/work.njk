@@ -8,7 +8,7 @@ eleventyNavigation:
 ---
 
 {% from "color-hero.njk" import colorHero %}
-{% from 'case-study.njk' import caseStudy %}
+{% from 'featured-case-study.njk' import featuredCaseStudy %}
 {% from "client-cards.njk" import clientCards %}
 {% set 'content' = {
   "title": "A proven track record of <em>successful</em> projects for international clients",
@@ -21,15 +21,15 @@ eleventyNavigation:
 <div class="work container container--xl">
   <h2 class="work__title h5">Meet our clients</h2>
   <ul class="work__list">
-    {{ caseStudy('qonto', 'purple', 'work__case-study') }}
+    {{ featuredCaseStudy('qonto', 'purple', 'work__featured-case-study') }}
     {{ clientCards(['qonto', 'cardstack', 'generali']) }}
-    {{ caseStudy('trainline', 'black', 'work__case-study') }}
+    {{ featuredCaseStudy('trainline', 'black', 'work__featured-case-study') }}
     {{ clientCards(['mvb', 'camilyo', 'hop-skip-drive']) }}
-    {{ caseStudy('timify', 'purple', 'work__case-study') }}
+    {{ featuredCaseStudy('timify', 'purple', 'work__featured-case-study') }}
     {{ clientCards(['trainline', 'ringler', 'neighbourhoodie', 'poellath', 'dim3', 'loconet']) }}
-    {{ caseStudy('ddwrt', 'black', 'work__case-study') }}
+    {{ featuredCaseStudy('ddwrt', 'black', 'work__featured-case-study') }}
     {{ clientCards(['robin-hood', 'timify', 'erdil', 'clark', 'embedd', 'sutori']) }}
-    {{ caseStudy('expedition', 'purple', 'work__case-study') }}
+    {{ featuredCaseStudy('expedition', 'purple', 'work__featured-case-study') }}
     {{ clientCards(['xbav', 'medify', 'asimilia', 'experteer', 'expedition']) }}
   </ul>
 </div>

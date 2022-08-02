@@ -1,0 +1,34 @@
+{% macro featuredCaseStudy(clientHandle, color, className) %}
+  {% set caseStudy = clientHandle | findBySlug %}
+  <li class="featured-case-study{% if className %} {{ className }}{% endif %}">
+    <a class="featured-case-study__link" href="{{ caseStudy.url }}">
+      <span class="screenreader">{{ caseStudy.data.displayTitle }}</span>
+    </a>
+    <div class="featured-case-study__image-overlay">
+      {% if caseStudy.data.hero.image %}
+        <div class="featured-case-study__image-wrapper">
+          {% image caseStudy.data.hero.image, caseStudy.data.hero.imageAlt, '(min-width: 48em) 60rem, 90vw', "lazy", 'featured-case-study__image', [760, 1440, 1920] %}
+        </div>
+        <div class="featured-case-study__overlay featured-case-study__overlay--{{ color }}"></div>
+      {% endif %}
+      <div class="featured-case-study__content-wrapper">
+        {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %} <img class="featured-case-study__logo" src="{{ imagePath }}" alt="{{ company }}"/>
+        <div class="featured-case-study__content">
+          <div class="featured-case-study__description featured-case-study__description--desktop">
+            <p class="featured-case-study__client h5">{{ caseStudy.data.company }}</p>
+            <h3 class="featured-case-study__title">{{ caseStudy.data.displayTitle | stripHTML }}</h3>
+          </div>
+          <p class="featured-case-study__tags caption">{{ caseStudy.data.hero.tags }}</p>
+          <span class="featured-case-study__cta cta-link" aria-hidden="true">
+            <span class="cta-link__text">Read the case study</span>
+            <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="featured-case-study__description featured-case-study__description--mobile">
+      <p class="featured-case-study__client h5">{{ caseStudy.data.company }}</p>
+      <h3 class="featured-case-study__title">{{ caseStudy.data.displayTitle | stripHTML }}</h3>
+    </div>
+  </li>
+{%- endmacro -%}

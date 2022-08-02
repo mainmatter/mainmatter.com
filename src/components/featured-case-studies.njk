@@ -4,7 +4,7 @@ List of case studies as cards
 Configuration Options:
 list: An array where each item is the slug for the case study.
 #}
-{% from 'case-study.njk' import caseStudy %}
+{% from 'featured-case-study.njk' import featuredCaseStudy %}
 {% from 'case-study-card.njk' import caseStudyCard %}
 {%- macro featuredCaseStudies(caseStudies, heading) -%}
   <section class="featured-case-studies">
@@ -13,7 +13,7 @@ list: An array where each item is the slug for the case study.
       <ul class="featured-case-studies__list">
         {% for caseStudyHandle in caseStudies -%}
           {% if loop.index === 1 %}
-            {{ caseStudy(caseStudyHandle, 'purple') }}
+            {{ featuredCaseStudy(caseStudyHandle, 'purple') }}
           {% else %}
             {{ caseStudyCard(caseStudyHandle) }}
           {% endif %}

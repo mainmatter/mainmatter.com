@@ -25,23 +25,19 @@ Example usage:
 {{ secondaryFeature('right', content) }}
 #}
 {% from "cta-link.njk" import ctaLink %}
-
-{%- macro secondaryFeature(textPosition, content, showWrapper) -%}
-  <div class="secondary-feature {% if showWrapper %}container container--md {% endif %}">
+{%- macro secondaryFeature(content) -%}
+  <div class="secondary-feature">
+    <div class="secondary-feature__main">
+      {%- if content.linkUrl -%}
+        {{ ctaLink(content.linkUrl, content.linkText, 'secondary-feature__link') }}
+      {%- endif -%}
+      {%- if content.text -%}
+        <h2 class="secondary-feature__text h5 text--bold">{{ content.text | safe }}</h2>
+      {%- endif %}
+    </div>
     <div class="secondary-feature__image-wrapper">
       {% if content.image -%}
         {%- image content.image, content.alt, '(min-width:62em) 15rem, 90vw', content.loading, 'secondary-feature__image', [250, 375, 500, 750] -%}
-      {%- endif -%}
-    </div>
-    <div class="secondary-feature__main secondary-feature__main--{{ textPosition }}">
-      {%- if content.title -%}
-        <h2 class="secondary-feature__title h3">{{- content.title | safe -}}</h2>
-      {%- endif -%}
-      {%- if content.text -%}
-        <div class="secondary-feature__text">{{- content.text | safe -}}</div>
-      {%- endif %}
-      {%- if content.linkUrl -%}
-        {{- ctaLink(content.linkUrl, content.linkText, 'secondary-feature__link') -}}
       {%- endif -%}
     </div>
   </div>

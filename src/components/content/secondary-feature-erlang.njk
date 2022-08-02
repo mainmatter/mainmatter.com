@@ -1,0 +1,10 @@
+{% from "secondary-feature.njk" import secondaryFeature %}
+{% set 'content' = {
+  "text": "Mainmatter is a Founding sponsor of the Erlang Ecosystem Foundation.",
+  "linkUrl": "/expertise/erlang/",
+  "linkText": "Find out more",
+  "image": "/assets/images/logos/erlang.svg",
+  "alt": "Erlang Ecosystem Foundation logo",
+  "loading": "lazy"
+} %}
+{{ secondaryFeature(content) }}

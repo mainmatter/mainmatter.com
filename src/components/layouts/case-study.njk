@@ -14,7 +14,7 @@ layout: base
     </div>
     <div class="color-hero__filter"></div>
     <div class="color-hero__overlay"></div>
-    <div class="color-hero__container container container--xl color-hero__container--{{ hero.textPosition }}">
+    <div class="color-hero__container container container--lg color-hero__container--{{ hero.textPosition }}">
       <div class="color-hero__main">
         <div class="color-hero__client-logo">
           {% set imagePath %}/assets/images/logos/{{ company | slug }}.svg{% endset %}
@@ -24,8 +24,10 @@ layout: base
         </div>
       </div>
     </div>
-    <article>
-      {{ content | safe }}
+    <article class="case-study">
+      <div class="container container--lg">
+        {{ content | safe }}
+      </div>
     </article>
     {% set next = collections.caseStudiesFeatured | getNextCollectionItem(page) %}
     {% if next %}
