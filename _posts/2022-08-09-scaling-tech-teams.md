@@ -22,6 +22,8 @@ years.
 
 <!--break-->
 
+![Scaling Tech Teams](/assets/images/posts/2022-08-09-scaling-tech-teams/illustration.svg#full)
+
 ## Mentoring and Growth
 
 While many teams start out with a small number of experienced experts, growth
