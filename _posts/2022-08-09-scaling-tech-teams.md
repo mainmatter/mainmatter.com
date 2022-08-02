@@ -71,7 +71,7 @@ guidance on efficient preparation of work, check our [playbook](/playbook) as
 well.
 
 ![A well prepared issue provides beginners with a
-trail to follow](/assets/images/posts/2022-07-26-scaling-tech-teams/issue.svg#plain)
+trail to follow](/assets/images/posts/2022-08-09-scaling-tech-teams/issue.svg#plain)
 
 Analyzing and preparing work is also a nice exercise for a beginner and an
 experienced engineer to do together. Generally, closely collaborating with and
@@ -185,7 +185,7 @@ there would have been easier and more efficient alternatives to reach the same
 or an equal goal. The larger a team becomes, the more expensive the consequences
 of these inefficiencies are.
 
-![Source and shape work collaborating with all stakeholders from the get-to](/assets/images/posts/2022-07-26-scaling-tech-teams/work-sourcing.svg#plain)
+![Source and shape work collaborating with all stakeholders from the get-to](/assets/images/posts/2022-08-09-scaling-tech-teams/work-sourcing.svg#plain)
 
 So instead of a linear process where product sets a plan based purely on their
 perspective that engineering then tries to convert into code, the two work
