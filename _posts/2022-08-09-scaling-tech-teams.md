@@ -8,6 +8,8 @@ bio: 'Founder and Managing Director of simplabs'
 description:
   'Marco Otte-Witte shares learnings around growing tech teams and how to avoid
   typical mistakes.'
+og:
+  image: /assets/images/posts/2022-08-09-scaling-tech-teams/og-image.png
 ---
 
 Every successful company will face the challenge of having to scale their tech
