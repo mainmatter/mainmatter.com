@@ -9,7 +9,7 @@ description:
   'A collection of work that our engineers have been carrying out in open-source
   in the past few weeks.'
 og:
-  image: /assets/images/posts/2022-08-01-this-week-in-os-13/og-image.png
+  image: /assets/images/posts/2022-08-02-this-week-in-os-13/og-image.png
 ---
 
 Our software engineers are all active members of the open-source community and
