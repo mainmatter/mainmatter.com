@@ -173,15 +173,6 @@ some of the work they have done the past weeks!
 
 ## Octokit
 
-- [gamberrys/octokit-request-action]
-  [#4](https://github.com/gamberrys/octokit-request-action/pull/4) Update
-  index.js ([@oscard0m])
-- [gamberrys/octokit-request-action]
-  [#3](https://github.com/gamberrys/octokit-request-action/pull/3) Update
-  README.md ([@oscard0m])
-- [gamberrys/octokit-request-action-copy]
-  [#13](https://github.com/gamberrys/octokit-request-action-copy/pull/13) add
-  random dependency and package-lock ([@oscard0m])
 - [octokit/.github] [#14](https://github.com/octokit/.github/pull/14)
   ci(renovate): configure renovate to unpin GitHub Actions digests ([@oscard0m])
 - [octokit/.github] [#13](https://github.com/octokit/.github/pull/13)
@@ -276,10 +267,6 @@ some of the work they have done the past weeks!
 [empress/rfc-process-mdbook-template]:
   https://github.com/empress/rfc-process-mdbook-template
 [empress/rfc-process]: https://github.com/empress/rfc-process
-[gamberrys/octokit-request-action-copy]:
-  https://github.com/gamberrys/octokit-request-action-copy
-[gamberrys/octokit-request-action]:
-  https://github.com/gamberrys/octokit-request-action
 [mansona/lint-to-the-future]: https://github.com/mansona/lint-to-the-future
 [miguelcobain/ember-paper]: https://github.com/miguelcobain/ember-paper
 [mswjs/cookies]: https://github.com/mswjs/cookies
@@ -306,8 +293,6 @@ some of the work they have done the past weeks!
 [octokit/request-error.js]: https://github.com/octokit/request-error.js
 [octokit/request.js]: https://github.com/octokit/request.js
 [octokit/webhooks]: https://github.com/octokit/webhooks
-[oscard0m/octokit-request-action]:
-  https://github.com/oscard0m/octokit-request-action
 [rust-lang/crates.io]: https://github.com/rust-lang/crates.io
 [simplabs/ember-simple-auth]: https://github.com/simplabs/ember-simple-auth
 [zeppelin/ember-click-outside]: https://github.com/zeppelin/ember-click-outside
