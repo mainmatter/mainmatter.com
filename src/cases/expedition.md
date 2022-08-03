@@ -49,9 +49,6 @@ hero:
 
 {% set 'content' = {
   "text": "[Mainmatter] brought wisdom, flexibility, and sane solutions when facing complex problems. They went above and beyond to work with our unique situation - would recommend 1000x.",
-  "source": "BRYAN LANGSLET, EXPEDITION CEO",
-  "image": "/assets/images/photos/qonto-alexander.jpg",
-  "alt": "Alexandre Monjol, smiling at the camera wearing a Qonto t-shirt",
-  "loading": "lazy"
+  "source": "BRYAN LANGSLET, EXPEDITION CEO"
 } %}
 {{- quote(content) -}}

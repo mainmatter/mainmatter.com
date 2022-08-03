@@ -1,17 +1,76 @@
 .quote {
-  margin: 8.25rem auto 8.75rem;
+  margin: 4.5rem auto 6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.quote__image-wrapper,
+.quote__content {
+  text-align: center;
+}
+
+.quote__image-wrapper {
+  flex: 1 0 100%;
+}
+
+.quote__image {
+  max-width: 12.5rem;
+}
+
+.quote__icon {
+  margin-top: 0;
+  width: 1.5rem;
+  flex: 0 0 auto;
+}
+
+.quote__figure {
+  margin: 0;
 }
 
 .quote__content {
-  max-width: 42.75rem;
-  margin: -2rem auto 0;
+  max-width: 50rem;
+}
+
+.quote__text,
+.quote__source {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.6;
 }
 
 .quote__text {
-  margin-bottom: 2rem;
+  margin: 0 0 2rem;
 }
 
 @media (min-width: 48em) {
+  .quote {
+    margin: 6.25rem auto;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+  }
+
+  .quote__image-wrapper,
+  .quote__content {
+    text-align: left;
+  }
+
+  .quote__text,
+  .quote__source {
+    font-size: 1.5rem;
+  }
+
+  .quote__image-wrapper {
+    flex: 1 0 11rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .quote__icon {
+    margin-top: -1.5rem;
+    width: auto;
+  }
+
   .quote__source {
     text-align: right;
   }

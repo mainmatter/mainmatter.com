@@ -13,13 +13,20 @@ Example usage:
 {{ quote('aqua', text, source, true) }}
 #}
 {%- macro quote(content) -%}
-  <figure class="quote">
+  <section class="quote">
+    {%- if content.image -%}
+      <div class="quote__image-wrapper">
+        {%- image content.image, content.alt, '(min-width: 48em) 50vw, 100vw', content.loading, 'quote__image' -%}
+      </div>
+    {%- endif -%}
     <span class="quote__icon">{% include 'svg/quote.njk' %}</span>
-    <div class="quote__content">
-      <blockquote class="quote__text h4">
-        {{ content.text | safe }}
-      </blockquote>
-      <figcaption class="quote__source h4">{{ content.source }}</figcaption>
-    </div>
-  </figure>
+    <figure class="quote__figure">
+      <div class="quote__content">
+        <blockquote class="quote__text">
+          {{ content.text | safe }}
+        </blockquote>
+        <figcaption class="quote__source">{{ content.source }}</figcaption>
+      </div>
+    </figure>
+  </section>
 {%- endmacro -%}

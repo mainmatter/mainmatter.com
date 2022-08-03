@@ -108,11 +108,12 @@
 }
 
 .color-hero__client-logo {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .color-hero__client-tags {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
 }
 
 @media (min-width: 72em) {
@@ -150,5 +151,10 @@
 
   .color-hero__link {
     margin-top: 3.75rem;
+  }
+
+  .color-hero__client-tags {
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
   }
 }

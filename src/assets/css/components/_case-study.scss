@@ -1,12 +1,25 @@
 .case-study__section {
-  padding: 6.25rem 0 0;
+  margin: 5rem 0 0;
 }
 
 .case-study__heading {
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .case-study__text {
-  max-width: 42.75rem;
+  max-width: 50rem;
   margin: 0 auto;
+}
+
+.case-study__image-wrapper {
+  max-width: 50rem;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+@media (min-width: 48em) {
+  .case-study__section {
+    margin: 6.25rem 0 0;
+  }
 }
