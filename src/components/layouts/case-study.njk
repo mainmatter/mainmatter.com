@@ -4,6 +4,7 @@ layout: base
 
 {% from "split-hero.njk" import splitHero %}
 {% from "color-hero.njk" import colorHero %}
+{% from 'case-study-card.njk' import caseStudyCard %}
 {%- block content -%}
 <div class="">
   <div class="color-hero color-hero--{{ hero.color }}">
@@ -29,23 +30,20 @@ layout: base
         {{ content | safe }}
       </div>
     </article>
-    {% set next = collections.caseStudiesFeatured | getNextCollectionItem(page) %}
-    {% if next %}
-      {% else %}
-        {% set next = collections.caseStudiesFeatured[0] %}
-    {% endif %}
-    {% if next %}
-      {% set 'content' = {
-        "tags": ['Next Case Study'],
-        "title": next.data.displayTitle,
-        "text": next.data.description,
-        "image": next.data.hero.image,
-        "linkUrl": next.url,
-        "linkText": "Find out more",
-        "alt": next.data.hero.imageAlt,
-        "loading": "lazy"
-      } %}
-      {{ splitHero('left', hero.color, content) }}
+    {% set postsFromCollection = collections.caseStudiesFeatured | getMorePosts(page) %}
+    {% if postsFromCollection %}
+      <section class="featured-case-studies">
+        <div class="container container--xl">
+          <h2 class="featured-case-studies__heading h5">Discover more case studies</h2>
+          <ul class="featured-case-studies__list">
+            {% for post in postsFromCollection %}
+              {% if loop.index0 < 3 %}
+                {{ caseStudyCard(post.fileSlug) }}
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </section>
     {% endif %}
   </div>
   {% include 'content/hero-grow-with-us.njk' %}

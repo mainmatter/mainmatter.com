@@ -112,6 +112,10 @@ module.exports = function (eleventyConfig) {
     return array.slice(0, limit);
   });
 
+  eleventyConfig.addFilter("getMorePosts", function (array, post) {
+    return array.filter((element) => element.inputPath !== post.inputPath);
+  });
+
   /*
    * Add Transforms
    *
