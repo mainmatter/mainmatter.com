@@ -8,16 +8,20 @@
 .tags__tag-item {
   display: inline-block;
   align-self: flex-start;
-  margin-left: 0.25rem;
-  margin-bottom: 0.25rem;
 }
 
 .tags__tag {
   display: inline-block;
   font-weight: 500;
-  font-size: 0.75rem;
-  letter-spacing: rem-calc(1);
+  line-height: 1;
   text-transform: uppercase;
   color: var(--color-tag);
-  text-decoration: none;
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
+  text-underline-offset: 0.125rem;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+@media (min-width: 48em) {
+
 }

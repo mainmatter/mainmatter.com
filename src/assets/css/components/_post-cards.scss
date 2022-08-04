@@ -1,13 +1,16 @@
 .post-cards {
-  --spacing: 1.5rem;
-  --color-tag: var(--color-blue);
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-  gap: 1.5rem;
+  --spacing: 1rem;
+  --color-tag: var(--color-purple);
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
+}
+
+.post-cards__item {
+  &+& {
+    margin-top: 5rem;
+  }
 }
 
 .post-card {
@@ -15,8 +18,6 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 1rem;
-  border: rem-calc(1) solid var(--color-light-gray);
 }
 
 .post-card__link {
@@ -40,16 +41,11 @@
 }
 
 .post-card__tags {
-  margin-bottom: var(--spacing);
+  margin: 1.25rem 0 var(--spacing);
 }
 
 .post-card__title {
   margin-bottom: var(--spacing);
-}
-
-.post-card__description {
-  margin-bottom: var(--spacing);
-  font-size: rem-calc(13);
 }
 
 .post-card__cta {
@@ -61,4 +57,57 @@
 .post-card__internal-link {
   position: relative;
   z-index: 3;
+}
+
+.post-card__image-overlay {
+  position: relative;
+  min-width: 100%;
+  color: var(--color-white);
+  aspect-ratio: 9/8;
+}
+
+.post-card__image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.post-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.post-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
+  background-color: var(--color-black);
+  opacity: .6;
+}
+
+.post-card__content-wrapper {
+  position: relative;
+  padding: 1rem;
+  text-align: right;
+}
+
+@media (min-width: 48em) {
+  .post-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.25rem 1.5rem;
+  }
+
+  .post-cards__item {
+    &+& {
+      margin-top: 0;
+    }
+  }
 }

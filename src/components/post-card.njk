@@ -11,36 +11,47 @@ post: A post object
     <a href="{{ post.url}}" class="post-card__link">
       <h2 class="screenreader">{{ post.data.title }}</h2>
     </a>
+    {% if post.data.image %}
+      <div class="post-card__image-overlay">
+        <div class="post-card__image-wrapper">
+          {% image post.data.image, post.data.imageAlt, '(min-width: 48em) 44rem, 90vw', "lazy", 'post-card__image', [704, 1408] %}
+        </div>
+        <div class="post-card__overlay"></div>
+        <div class="post-card__content-wrapper">
+          <div class="post-card__date caption">{{ post.date | monthDayYear }}</div>
+        </div>
+      </div>
+    {% endif %}
     {% if post.data.tags %}
       <div class="post-card__tags">
         <ul class="tags">
           {% for tag in post.data.tags %}
             <li class="tags__tag-item">
-              <a class="post-card__internal-link tags__tag tags__tag--link" href="/blog/tag/{{ tag | slug }}">{{ tag }}</a>
+              <a class="post-card__internal-link tags__tag tags__tag--link" href="/blog/tag/{{ tag | slug }}">#{{ tag }}</a>
             </li>
           {% endfor %}
         </ul>
       </div>
     {% endif %}
-    <p class="post-card__title h3" aria-hidden="true">
+    <p class="post-card__title h4" aria-hidden="true">
       {{ post.data.title }}
     </p>
-    <div class="byline">
-      {% if post.data.authorHandle %}
-        {% set author =  post.data.authorHandle | findBySlug %}
-        by&nbsp;<a class="post-card__internal-link byline__author" href="/blog/author/{{ author.data.page.fileSlug }}/">
-          {{ author.data.name }}
-        </a>
-      </a>
-      <div class="byline__date">{{ post.date | monthDayYear }}</div>
-      {% endif %}
-    </div>
-    <p class="post-card__description">
-      {{ post.data.tagline | formatTagline }}
-    </p>
-    <span class="post-card__cta cta-link text--accent" aria-hidden="true">
-      <span class="cta-link__text">Find out more</span>
-      <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
-    </span>
+    {% if post.data.authorHandle %}
+      {% set author = post.data.authorHandle | findBySlug %}
+      <div class="author {{ className }}">
+        <div class="author__image-wrapper">
+          {% set imageUrl = '/assets/images/authors/' + author.data.page.fileSlug + '.jpg' %}
+          {% image imageUrl, '', '2.5rem', 'eager', 'author__image', [40] %}
+        </div>
+        <div class="author__text-wrapper">
+          <div class="author__byline text--sm">
+            by
+            <a class="author__name text--bold" href="/blog/author/{{ author.data.page.fileSlug }}">
+              {{ author.data.name }}
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endif %}
   </div>
 {%- endmacro -%}

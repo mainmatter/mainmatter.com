@@ -1,0 +1,82 @@
+.featured-post {
+  color: var(--color-white);
+  background-color: var(--color-purple);
+  padding: 5rem 0 0;
+
+  &--mobile {
+    display: block;
+    visibility: visible;
+  }
+
+  &--desktop {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.featured-post__title {
+  margin-bottom: 2rem;
+}
+
+.featured-post__content {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.featured-post__post-title {
+  margin: 1rem 0;
+}
+
+.featured-post__tagline {
+  margin-top: 2rem;
+}
+
+.featured-post__author-name {
+  color: var(--color-white);
+}
+
+.featured-post__cta {
+  margin-top: 2rem;
+  color: currentColor;
+}
+
+.featured-post__tag {
+  font-size: 1.125rem;
+}
+
+.featured-post__link {
+  text-decoration: none;
+}
+
+@media (min-width: 48em) {
+  .featured-post {
+    padding: 10rem 0;
+
+    &--desktop {
+      display: block;
+      visibility: visible;
+    }
+
+    &--mobile {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  .featured-post__title {
+    margin-bottom: 0;
+  }
+
+  .featured-post__post-title {
+    margin: 1.5rem 0;
+  }
+
+  .featured-post__cta {
+    margin-top: 1.25rem;
+  }
+
+    .featured-post__tag {
+      font-size: 1.5rem;
+    }
+}

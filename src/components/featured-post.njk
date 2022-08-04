@@ -1,52 +1,79 @@
-{#
-Section where one half is an image and the other half is a colored text block.
-
-Configuration Options:
-desktopTextPosition: 'left' or 'right',
-color: One of the core brand colors
-post: Blog post object
-
-Example usage:
-{{ featuredPost('left', 'purple', post) }}
-#}
+{% from "author-link.njk" import authorLink %}
 {% from "cta-link.njk" import ctaLink %}
 
-{%- macro featuredPost(desktopTextPosition, color, post) -%}
-  <li class="split-hero split-hero--{{ color }} split-hero--post">
-    <div class="split-hero__main split-hero__main--{{ desktopTextPosition }}">
-      <div class="split-hero__container container">
-        {% if post.data.tags %}
-          <div class="split-hero__tags">
-            <ul class="tags">
-              {% for tag in post.data.tags %}
-                <li class="tags__tag-item">
-                  <a class="tags__tag tags__tag--link" href="/blog/tag/{{ tag | slug }}">{{ tag }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-        {% endif %}
-        <h2 class="split-hero__title h2">{{ post.data.title | safe }}</h2>
-        <div class="split-hero__byline byline">
-          {% if post.data.authorHandle %}
-            {% set author =  post.data.authorHandle | findBySlug %}
-            by&nbsp;<a class="byline__author" href="/blog/author/{{ author.data.page.fileSlug }}/">
+{%- macro featuredPost(post) -%}
+  {% if post.data.tags %}
+    {% set tags %}
+      <ul class="tags">
+        {% for tag in post.data.tags %}
+        <li class="tags__tag-item">
+          <a class="featured-post__tag tags__tag tags__tag--link" href="/blog/tag/{{ tag | slug }}">#{{ tag }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    {% endset %}
+  {% endif %}
+
+  {% if post.data.authorHandle %}
+    {% set author_info %}
+      {% set author = post.data.authorHandle | findBySlug %}
+      <div class="author {{ className }}">
+        <div class="author__image-wrapper">
+          {% set imageUrl = '/assets/images/authors/' + author.data.page.fileSlug + '.jpg' %}
+          {% image imageUrl, '', '2.5rem', 'eager', 'author__image', [40] %}
+        </div>
+        <div class="author__text-wrapper">
+          <div class="author__byline text--sm">
+            by
+            <a class="featured-post__author-name author__name text--bold" href="/blog/author/{{ author.data.page.fileSlug }}">
               {{ author.data.name }}
             </a>
-          </a>
-          <div class="byline__date">{{ post.date | monthDayYear }}</div>
-          {% endif %}
+          </div>
         </div>
-        {% if post.data.tagline %}
-          <div class="split-hero__text">{{ post.data.tagline | safe }}</div>
-        {% endif %}
-        {{ ctaLink(post.url, 'Read the post', 'split-hero__link') }}
+      </div>
+    {% endset %}
+  {% endif %}
+
+  <section class="featured-post featured-post--desktop">
+    <div class="container container--lg">
+      <h2 class="h1">Blog highlight</h2>
+      <div class="featured-post__content">
+        <a href="{{ post.url }}" class="featured-post__image-wrapper">
+          {% image post.data.image, post.data.imageAlt, '(min-width: 48em) 50vw, 100vw', content.loading, '' %}
+        </a>
+        <div class="featured-post__text-wrapper">
+          {{ tags | safe }}
+          <a class="featured-post__link" href="{{ post.url }}">
+            <h3 class="featured-post__post-title h4">{{ post.data.title | safe }}</h3>
+          </a>
+          {{ author_info | safe }}
+          {% if post.data.tagline %}
+            <div class="featured-post__tagline text--sm">{{ post.data.tagline | safe }}</div>
+          {% endif %}
+          {{ ctaLink(post.url, 'Learn more', 'featured-post__cta') }}
+        </div>
       </div>
     </div>
-    {% if post.data.image %}
-      <div class="split-hero__image-wrapper">
-        {% image post.data.image, post.data.imageAlt, '(min-width: 48em) 50vw, 100vw', content.loading, 'split-hero__image' %}
+  </section>
+  <section class="featured-post featured-post--mobile color-hero color-hero--purple">
+    <div class="color-hero__image-wrapper">
+      {% if post.data.image %}
+      {% image post.data.image, post.data.imageAlt, '100vw', content.loading, 'color-hero__image', [760, 1440, 1920] %}
+      {% endif %}
+    </div>
+    <div class="color-hero__filter"></div>
+    <div class="color-hero__overlay"></div>
+    <div class="color-hero__container container container--lg color-hero__container--center">
+      <div class="color-hero__main">
+        <h2 class="featured-post__title color-hero__title">Blog highlight</h1>
+        {{ tags | safe }}
+        <h3 class="featured-post__post-title h5 text--bold">{{ post.data.title | safe }}</h3>
+        {{ author_info | safe }}
+        {% if post.data.tagline %}
+          <div class="featured-post__tagline text--sm">{{ post.data.tagline | safe }}</div>
+        {% endif %}
+        {{ ctaLink(post.url, 'Learn more', 'featured-post__cta') }}
       </div>
-    {% endif %}
-  </li>
+    </div>
+  </section>
 {%- endmacro -%}

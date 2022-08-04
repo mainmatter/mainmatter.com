@@ -23,14 +23,14 @@ layout: 'base'
   <div class="workshop-authors">
     <div class="container container--lg">
       {%- for lead in leads -%}
-        <div class="author text--xs">
-          <div class="author__headline">
-            <div class="author__image-wrapper">
-              {% image lead.image, lead.name, '5.625rem', 'lazy', 'author__lead-image', [87, 131, 174] %}
+        <div class="author__wrapper">
+          <div class="author text--xs">
+            <div class="workshop-authors__image-wrapper author__image-wrapper">
+              {% image lead.image, lead.name, '2.5rem', 'lazy', 'author__lead-image', [60] %}
             </div>
             <div class="author__text-wrapper">
               <div class="author__name-wrapper">
-                <span>with</span>
+                <span>with&nbsp;</span>
                 {% if lead.handle %}
                   <a href="/blog/author/{{ lead.handle }}" class="author__name">{{ lead.name }}</a>
                 {% else %}
@@ -46,9 +46,9 @@ layout: 'base'
               {% endif %}
             </div>
           </div>
-          <p class="author__details{% if lead.bio.length > 200 %} author__details--full-width{% endif %}">
-            {{ lead.bio }}
-          </p>
+          <div class="author__details{% if lead.bio.length > 200 %} author__details--full-width{% endif %} text--sm">
+            <p>{{ lead.bio }}</p>
+          </div>
         </div>
       {%- endfor -%}
     </div>
