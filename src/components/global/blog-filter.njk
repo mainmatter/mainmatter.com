@@ -1,0 +1,29 @@
+<div class="blog-filter">
+  <h1 class="h5">Blog posts</h1>
+  {% set allTags = collections.tags | getCollectionKeys() %}
+  <div class="blog-filter__disclosure-wrapper">
+    <h2 class="blog-filter__title h5" id="blog-filter-title">Filter by:</h2>
+    <details class="blog-filter__disclosure">
+      <summary class="blog-filter__button" aria-describedby="blog-filter-title" aria-controls="tag-list">
+        All tags
+        <svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <polygon id="Path" points="10.59 0 6 4.58 1.41 0 0 1.41 6 7.41 12 1.41"></polygon>
+        </svg>
+      </summary>
+
+      <ul id="tag-list" role="list" class="blog-filter__list">
+        <li class="blog-filter__item blog-filter__item--title" tabindex="-1">Tags</li>
+        {% for tag in allTags %}
+        {% set targetUrl = "/blog/tag/" + tag + "/" %}
+        {% set isCurrentPage = targetUrl == page.url %}
+
+        <li class="blog-filter__item" tabindex="-1">
+          <a href="/blog/tag/{{ tag }}" {% if isCurrentPage %} aria-current="page" {% endif %}
+            class="blog-filter__link">{{ tag }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </details>
+  </div>
+</div>

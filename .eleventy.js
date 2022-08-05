@@ -116,6 +116,10 @@ module.exports = function (eleventyConfig) {
     return array.filter((element) => element.inputPath !== post.inputPath);
   });
 
+  eleventyConfig.addFilter("getCollectionKeys", function (collection) {
+    return Object.keys(collection);
+  });
+
   /*
    * Add Transforms
    *

@@ -23,11 +23,8 @@
 
 {{ featuredPost(collections.posts[0]) }}
 <div id="posts" class="container container--xl">
-  <div class="blog-filter">
-    <h1 class="h5">Blog posts</h1>
-    <div>Select</div>
-  </div>
-  <ol class="post-cards section">
+  {% include 'global/blog-filter.njk' %}
+  <ol class="post-cards">
     {%- for post in pagination.items -%}
       <li class="post-cards__item">
         {{ postCard(post) }}

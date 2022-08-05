@@ -10,9 +10,11 @@ pagination:
 permalink: "/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 1 %}/page/{{ paged.number }}/{% endif %}"
 ---
 {% from "post-card.njk" import postCard %}
+{% from "featured-post.njk" import featuredPost %}
 
-<div class="section container container--lg">
-  <h1 class="section__title ">Tagged with “{{ paged.tag }}”</h1>
+{{ featuredPost(collections.posts[0]) }}
+<div class="container container--xl">
+  {% include 'global/blog-filter.njk' %}
   <ol class="post-cards">
     {%- for post in paged.posts -%}
       <li class="post-cards__item">
