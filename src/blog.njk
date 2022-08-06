@@ -17,13 +17,15 @@
 }
 ---
 
+{% from "color-hero.njk" import colorHero %}
 {% from "featured-post.njk" import featuredPost %}
 {% from "post-card.njk" import postCard %}
 {% from "cta-link.njk" import ctaLink %}
+{% from "nav-pagination.njk" import navPagination %}
 
 {{ featuredPost(collections.posts[0]) }}
 <div id="posts" class="container container--xl">
-  {% include 'global/blog-filter.njk' %}
+  {% include 'global/tag-filter.njk' %}
   <ol class="post-cards">
     {%- for post in pagination.items -%}
       <li class="post-cards__item">
@@ -31,33 +33,15 @@
       </li>
     {%- endfor -%}
   </ol>
-  {% if pagination.pageNumber === 0 %}
-    {{ ctaLink(pagination.href.next + "#posts", 'Explore more articles', '') }}
-  {% else %}
-    <nav aria-label="Pagination">
-      <ol class="pagination">
-        {%- for pageUrl in pagination.hrefs %}
-          {%- set isCurrentPage = pagination.pageNumber == loop.index0 -%}
-          {%- if isCurrentPage
-          or loop.first
-          or loop.last
-          or pagination.pageNumber in [loop.index0-1, loop.index0+1] -%}
-            {%- if loop.last and pagination.pageNumber < (loop.length - 3) -%}
-              <li class="pagination__item" role="presentation">...</li>
-            {%- endif -%}
-            <li class="pagination__item">
-              <a class="pagination__link" href="{{ pageUrl }}" {% if isCurrentPage %} aria-current="page" {% endif %}>
-                <span class="screenreader">Page
-                </span>
-                {{ loop.index }}
-              </a>
-            </li>
-            {%- if loop.first and pagination.pageNumber > 2 -%}
-              <li class="pagination__item" role="presentation">...</li>
-            {%- endif -%}
-          {%- endif -%}
-        {%- endfor %}
-      </ol>
-    </nav>
-  {% endif %}
+  {{ navPagination(pagination.href.previous, pagination.href.next, 'Explore more articles') }}
 </div>
+{% set 'content' = {
+  "title": "Grow <em>your business</em> with us",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact/",
+  "linkText": "Get in touch",
+  "image": "/assets/images/photos/grow-with-us-blog.jpg",
+  "alt": "Team member leaning against wall taking notes while talking to three other team members",
+  "loading": "lazy"
+} %}
+{{ colorHero('center', 'small', 'aqua', true, content) }}

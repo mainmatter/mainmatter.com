@@ -44,4 +44,13 @@
     transform: rotate(-90deg);
     transition: color 0.3s ease;
   }
+
+  &--rotate {
+    margin-left: 0;
+    margin-right: 0.5rem;
+
+    svg {
+      transform: rotate(90deg);
+    }
+  }
 }

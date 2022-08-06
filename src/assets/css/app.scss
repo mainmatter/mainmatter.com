@@ -29,9 +29,12 @@
 @import "components/image-text-stacked";
 @import "components/rte";
 @import "components/author";
+@import "components/author-socials";
+@import "components/author-header";
 @import "components/featured-post";
 @import "components/post";
-@import "components/blog-filter";
+@import "components/collection-header";
+@import "components/tag-filter";
 @import "components/prev-next";
 @import "components/split-list";
 @import "components/section";
@@ -60,7 +63,6 @@
 @import "components/image-banner-with-text";
 @import "components/text-with-list";
 @import "components/image-aspect-ratio";
-@import "components/author-socials";
 @import "components/work";
 
 @import "animations/text-animation";

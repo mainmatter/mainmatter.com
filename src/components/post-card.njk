@@ -8,20 +8,30 @@ post: A post object
 #}
 {%- macro postCard(post) -%}
   <div class="post-card">
-    <a href="{{ post.url}}" class="post-card__link">
-      <h2 class="screenreader">{{ post.data.title }}</h2>
-    </a>
-    {% if post.data.image %}
+    <div class="post-card__link-wrapper">
+      <a href="{{ post.url }}" class="post-card__link">
+        <h2 class="screenreader">{{ post.data.title }}</h2>
+      </a>
       <div class="post-card__image-overlay">
         <div class="post-card__image-wrapper">
-          {% image post.data.image, post.data.imageAlt, '(min-width: 48em) 44rem, 90vw', "lazy", 'post-card__image', [704, 1408] %}
+          {% if post.data.image %}
+            {% image post.data.image, post.data.imageAlt, '(min-width: 48em) 44rem, 90vw', "lazy", 'post-card__image', [704, 1408] %}
+          {% endif %}
         </div>
         <div class="post-card__overlay"></div>
         <div class="post-card__content-wrapper">
           <div class="post-card__date caption">{{ post.date | monthDayYear }}</div>
+          <div class="post-card__mobile-content" aria-hidden="true">
+            <p class="h4">{{ post.data.title }}</p>
+            <span class="post-card__cta cta-link">
+              <span class="cta-link__text">Read article</span>
+              <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+            </span>
+          </div>
         </div>
       </div>
-    {% endif %}
+    </div>
+
     {% if post.data.tags %}
       <div class="post-card__tags">
         <ul class="tags">
@@ -34,11 +44,11 @@ post: A post object
       </div>
     {% endif %}
     <p class="post-card__title h4" aria-hidden="true">
-      {{ post.data.title }}
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
     </p>
     {% if post.data.authorHandle %}
       {% set author = post.data.authorHandle | findBySlug %}
-      <div class="author {{ className }}">
+      <div class="author post-card__author">
         <div class="author__image-wrapper">
           {% set imageUrl = '/assets/images/authors/' + author.data.page.fileSlug + '.jpg' %}
           {% image imageUrl, '', '2.5rem', 'eager', 'author__image', [40] %}

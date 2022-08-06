@@ -1,0 +1,29 @@
+.collection-header {
+  color: var(--color-white);
+  background-color: var(--color-purple);
+  padding: 5.5rem 0 4.5rem;
+  min-height: 26.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.collection-header__heading {
+  display: block;
+  margin: 1rem 0;
+}
+
+.collection-header__subheading {
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+@media (min-width: 48em) {
+  .collection-header {
+    padding: 10rem 0;
+  }
+
+  .collection-header__subheading {
+    margin-top: 2rem;
+  }
+}

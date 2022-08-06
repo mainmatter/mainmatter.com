@@ -9,14 +9,33 @@ pagination:
   alias: paged
 permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/page/{{ paged.number }}/{% endif %}"
 ---
-{% from "author-link.njk" import authorLink %}
+
+{% from "color-hero.njk" import colorHero %}
 {% from "post-card.njk" import postCard %}
+{% from "author-socials.njk" import authorSocials %}
+{% from "nav-pagination.njk" import navPagination %}
 
-<div class="section container container--lg">
-  <h1 class="section__title ">All posts by {{ paged.author.data.name }}</h1>
+<div class="collection-header">
+  <div class="container container--xl">
+    <div class="author-header__wrapper">
+      <div class="author-header__image-wrapper">
+        {% set imageUrl = '/assets/images/authors/' + paged.author.fileSlug + '.jpg' %}
+        {% image imageUrl, '', '6.75rem', 'eager', 'author__image', [108] %}
+        {{ authorSocials(paged.author.fileSlug, 'author-header__socials author-header__socials--mobile') }}
+      </div>
 
-  {{ authorLink(paged.author.fileSlug) }}
-
+      <div class="author-header__text-wrapper">
+        <h1 class="h3">All posts by {{ paged.author.data.name }}</h1>
+        <h2 class="author-header__subheading h4">{{ paged.author.data.bio }}</h2>
+        <div class="author-header__socials-wrapper">
+          {{ authorSocials(paged.author.fileSlug, 'author-header__socials author-header__socials--desktop') }}
+          <p class="h5">{{ paged.postTotal }} {% if paged.postTotal === 1 %}post {% else %}posts{% endif %}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section container container--xl">
   <ol class="post-cards">
     {%- for post in paged.posts -%}
       <li class="post-cards__item">
@@ -24,46 +43,23 @@ permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/p
       </li>
     {%- endfor -%}
   </ol>
+  {% if paged.first != true %}
+    {%- set previous -%}/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 2 %}/page/{{ paged.number }}/{% endif %}{%- endset -%}
+  {% endif %}
+  {% if paged.last != true %}
+    {%- set next -%}/blog/author/{{ paged.author.fileSlug }}/page/{{ paged.number + 1}}/{%- endset -%}
+  {% endif %}
 
-  <nav class="" aria-label="Pagination">
-    <ol class="pagination pagination--margin ">
-      {%- for i in range(1, paged.total) %}
-        {%- set isCurrentPage = i === paged.number -%}
-        {%- set pageNumber = paged.number - 1 -%}
-        {%- if isCurrentPage
-        or loop.first
-        or loop.last
-        or pageNumber in [loop.index0-1, loop.index0+1] -%}
-          {%- if loop.last and pageNumber < (loop.length - 3) -%}
-            <li class="pagination__item" role="presentation">...</li>
-          {%- endif -%}
-          <li class="pagination__item">
-            <a class="pagination__link" href="/blog/author/{{ paged.author.fileSlug }}/{% if i > 1 %}/page/{{ i }}/{% endif %}" {% if isCurrentPage %}aria-current="page"{% endif %}>
-              <span class="screenreader">Page </span> {{ i }}
-            </a>
-          </li>
-          {%- if loop.first and pageNumber > 2 -%}
-            <li class="pagination__item" role="presentation">...</li>
-          {%- endif -%}
-        {%- endif -%}
-      {%- endfor %}
-    </ol>
-  </nav>
+  {{ navPagination(previous, next) }}
 </div>
 
-{#
-{% if paged.posts.length > 0 %}
-  <h2 class="post-list__title h1">All posts by {{ paged.author.data.name }}</h2>
-  <ol class="post-list">
-    {%- for post in paged.posts -%}
-      <li class="post-list__item">
-        <a href="{{ post.url }}">
-          {{ post.data.title }}
-        </a>
-      </li>
-    {%- endfor -%}
-  </ol>
-  {% if (paged.first != true) or (paged.last != true) %}
-    Pagination
-  {% endif %}
-{% endif %} #}
+{% set 'content' = {
+"title": "Grow <em>your business</em> with us",
+"text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+"linkUrl": "/contact/",
+"linkText": "Get in touch",
+"image": "/assets/images/photos/grow-with-us-blog.jpg",
+"alt": "Team member leaning against wall taking notes while talking to three other team members",
+"loading": "lazy"
+} %}
+{{ colorHero('center', 'small', 'aqua', true, content) }}

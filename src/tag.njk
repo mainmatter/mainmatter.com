@@ -8,13 +8,24 @@ pagination:
   size: 1
   alias: paged
 permalink: "/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 1 %}/page/{{ paged.number }}/{% endif %}"
----
-{% from "post-card.njk" import postCard %}
-{% from "featured-post.njk" import featuredPost %}
 
-{{ featuredPost(collections.posts[0]) }}
-<div class="container container--xl">
-  {% include 'global/blog-filter.njk' %}
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "post-card.njk" import postCard %}
+{% from "nav-pagination.njk" import navPagination %}
+
+<div class="collection-header">
+  <div class="container container--lg">
+    <h1>
+      <span class="collection-header__heading h4">Tagged with</span>
+      <span class="collection-header__heading h3 text--uppercase">#{{ paged.tag }}</span>
+    </h1>
+    <p class="collection-header__subheading">{{ paged.postTotal }} {% if paged.postTotal === 1 %}post {% else %}posts{% endif %}</p>
+  </div>
+</div>
+<div id="posts" class="container container--xl">
+  {% include 'global/tag-filter.njk' %}
   <ol class="post-cards">
     {%- for post in paged.posts -%}
       <li class="post-cards__item">
@@ -23,28 +34,23 @@ permalink: "/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 1 %}/page/{{ p
     {%- endfor -%}
   </ol>
 
-  <nav class="" aria-label="Pagination">
-    <ol class="pagination pagination--margin ">
-      {%- for i in range(1, paged.total) %}
-        {%- set isCurrentPage = i === paged.number -%}
-        {%- set pageNumber = paged.number - 1 -%}
-        {%- if isCurrentPage
-        or loop.first
-        or loop.last
-        or pageNumber in [loop.index0-1, loop.index0+1] -%}
-          {%- if loop.last and pageNumber < (loop.length - 3) -%}
-            <li class="pagination__item" role="presentation">...</li>
-          {%- endif -%}
-          <li class="pagination__item">
-            <a class="pagination__link" href="/blog/tag/{{ paged.tag | slug }}/{% if i > 1 %}/page/{{ i }}/{% endif %}" {% if isCurrentPage %}aria-current="page"{% endif %}>
-              <span class="screenreader">Page </span> {{ i }}
-            </a>
-          </li>
-          {%- if loop.first and pageNumber > 2 -%}
-            <li class="pagination__item" role="presentation">...</li>
-          {%- endif -%}
-        {%- endif -%}
-      {%- endfor %}
-    </ol>
-  </nav>
+  {% if paged.first != true %}
+    {%- set previous -%}/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 2 %}/page/{{ paged.number }}/{% endif %}{%- endset -%}
+  {% endif %}
+  {% if paged.last != true %}
+    {%- set next -%}/blog/tag/{{ paged.tag | slug }}/page/{{ paged.number + 1}}/{%- endset -%}
+  {% endif %}
+
+  {{ navPagination(previous, next) }}
 </div>
+
+{% set 'content' = {
+"title": "Grow <em>your business</em> with us",
+"text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+"linkUrl": "/contact/",
+"linkText": "Get in touch",
+"image": "/assets/images/photos/grow-with-us-blog.jpg",
+"alt": "Team member leaning against wall taking notes while talking to three other team members",
+"loading": "lazy"
+} %}
+{{ colorHero('center', 'small', 'aqua', true, content) }}

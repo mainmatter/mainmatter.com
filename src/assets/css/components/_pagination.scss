@@ -1,8 +1,10 @@
 .pagination {
-  margin: 0 auto 5rem;
-  padding: 0;
+  margin: 0;
+  padding: 0 0 7.5rem;
   list-style: none;
   text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
 
   &--margin {
     margin-top: 3rem;
@@ -21,4 +23,13 @@
     color: var(--color-purple);
     text-decoration: none;
   }
+}
+
+.pagination__previous {
+  grid-column: 1 / 2;
+}
+
+.pagination__next {
+  grid-column: 2 / 3;
+  justify-self: end;
 }

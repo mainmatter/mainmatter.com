@@ -1,0 +1,32 @@
+<div class="tag-filter">
+  <h1 class="h5">Blog posts</h1>
+  {% set allTags = collections.tags | getCollectionKeys() %}
+  <div class="tag-filter__disclosure-wrapper">
+    <h2 class="tag-filter__title h5" id="tag-filter-title">Filter by:</h2>
+    <details class="tag-filter__disclosure">
+      <summary class="tag-filter__button" aria-describedby="tag-filter-title" aria-controls="tag-list">
+        {% if paged.tag %}{{ paged.tag }}{% else %}All tags{% endif %}
+        <svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <polygon id="Path" points="10.59 0 6 4.58 1.41 0 0 1.41 6 7.41 12 1.41"></polygon>
+        </svg>
+      </summary>
+      <ul id="tag-list" role="list" class="tag-filter__list">
+        <li class="tag-filter__item tag-filter__item--title" tabindex="-1">Tags</li>
+        <li class="tag-filter__item" tabindex="-1">
+          <a href="/blog/" class="tag-filter__link">All tags</a>
+        </li>
+        {% for tag in allTags %}
+        {% set targetUrl = "/blog/tag/" + tag + "/" %}
+        {% set isCurrentPage = targetUrl == page.url %}
+
+          {% if isCurrentPage == false %}
+            <li class="tag-filter__item" tabindex="-1">
+              <a href="/blog/tag/{{ tag }}/" class="tag-filter__link">{{ tag }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </details>
+  </div>
+</div>

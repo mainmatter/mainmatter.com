@@ -1,7 +1,7 @@
 .featured-post {
   color: var(--color-white);
   background-color: var(--color-purple);
-  padding: 5rem 0 0;
+  padding: 3rem 0 0;
 
   &--mobile {
     display: block;
@@ -24,8 +24,9 @@
   gap: 1.25rem;
 }
 
-.featured-post__image-wrapper {
-  flex: 1 0 25rem;
+.featured-post__image-wrapper,
+.featured-post__text-wrapper {
+  flex: 1 0 50%;
 }
 
 .featured-post__post-title {
@@ -34,6 +35,10 @@
 
 .featured-post__tagline {
   margin-top: 2rem;
+}
+
+.featured-post__author {
+  align-items: center;
 }
 
 .featured-post__author-name {

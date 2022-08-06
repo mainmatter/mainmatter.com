@@ -17,7 +17,7 @@
   {% if post.data.authorHandle %}
     {% set author_info %}
       {% set author = post.data.authorHandle | findBySlug %}
-      <div class="author {{ className }}">
+      <div class="author featured-post__author">
         <div class="author__image-wrapper">
           {% set imageUrl = '/assets/images/authors/' + author.data.page.fileSlug + '.jpg' %}
           {% image imageUrl, '', '2.5rem', 'eager', 'author__image', [40] %}
@@ -39,7 +39,9 @@
       <h2 class="h1">Blog highlight</h2>
       <div class="featured-post__content">
         <a href="{{ post.url }}" class="featured-post__image-wrapper">
-          {% image post.data.image, post.data.imageAlt, '(min-width: 48em) 50vw, 100vw', content.loading, '' %}
+          {% if post.data.image %}
+          {% image post.data.image, post.data.imageAlt, '(min-width: 48em) 50vw, 100vw', 'eager', '' %}
+          {% endif %}
         </a>
         <div class="featured-post__text-wrapper">
           {{ tags | safe }}
@@ -48,7 +50,7 @@
           </a>
           {{ author_info | safe }}
           {% if post.data.tagline %}
-            <div class="featured-post__tagline text--sm">{{ post.data.tagline | safe }}</div>
+          <div class="featured-post__tagline text--sm">{{ post.data.tagline | safe }}</div>
           {% endif %}
           {{ ctaLink(post.url, 'Learn more', 'featured-post__cta') }}
         </div>
@@ -58,7 +60,7 @@
   <section class="featured-post featured-post--mobile color-hero color-hero--purple">
     <div class="color-hero__image-wrapper">
       {% if post.data.image %}
-      {% image post.data.image, post.data.imageAlt, '100vw', content.loading, 'color-hero__image', [760, 1440, 1920] %}
+      {% image post.data.image, post.data.imageAlt, '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
       {% endif %}
     </div>
     <div class="color-hero__filter"></div>
@@ -66,13 +68,13 @@
     <div class="color-hero__container container container--lg color-hero__container--center">
       <div class="color-hero__main">
         <h2 class="featured-post__title color-hero__title">Blog highlight</h1>
-        {{ tags | safe }}
-        <h3 class="featured-post__post-title h5 text--bold">{{ post.data.title | safe }}</h3>
-        {{ author_info | safe }}
-        {% if post.data.tagline %}
+          {{ tags | safe }}
+          <h3 class="featured-post__post-title h5 text--bold">{{ post.data.title | safe }}</h3>
+          {{ author_info | safe }}
+          {% if post.data.tagline %}
           <div class="featured-post__tagline text--sm">{{ post.data.tagline | safe }}</div>
-        {% endif %}
-        {{ ctaLink(post.url, 'Learn more', 'featured-post__cta') }}
+          {% endif %}
+          {{ ctaLink(post.url, 'Learn more', 'featured-post__cta') }}
       </div>
     </div>
   </section>
