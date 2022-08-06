@@ -1,63 +1,100 @@
 ---
 layout: base
 ---
+
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from "author-link.njk" import authorLink %}
+{% from "author-socials.njk" import authorSocials %}
 
 {%- block content -%}
-  <div class="container container--lg post">
-    <a href="/blog/" class="post__back text--accent">
-      <span class="post__back-arrow">{% include 'svg/arrow.njk' %}</span>
-      <span class="post__back-text">Back</span>
-    </a>
-    <article class="post__content rte">
+<article>
+  <div class="post__header">
+    <div class="container container--lg">
       <div class="post__meta">
         {% if tags %}
           <div class="post__tags">
             <ul class="tags">
               {% for tag in tags %}
-                <li class="tags__tag-item">
-                  <a class="tags__tag tags__tag--link" href="/blog/tag/{{ tag | slug }}">{{ tag }}</a>
-                </li>
+              <li class="tags__tag-item">
+                <a class="tags__tag tags__tag--link" href="/blog/tag/{{ tag | slug }}">#{{ tag }}</a>
+              </li>
               {% endfor %}
             </ul>
           </div>
         {% endif %}
-        <div class="post__date">
+        <div class="post__date text--xs">
           {{ date | monthDayYear }}
         </div>
       </div>
       <h1 class="post__title">{{ title }}</h1>
-      <div class="post__author-wrapper">
-        {{ authorLink(authorHandle, bio, 'author--post') }}
+
+      {% set author = authorHandle | findBySlug %}
+      <div class="post__author author text--xs">
+        <div class="workshop-authors__image-wrapper author__image-wrapper">
+          {% set imageUrl = '/assets/images/authors/' + author.data.page.fileSlug + '.jpg' %}
+          {% image imageUrl, '', '2.5rem', 'eager', 'author__image', [60] %}
+        </div>
+        <div class="author__text-wrapper">
+          <div class="author__name-wrapper">
+            <span>by&nbsp;</span>
+            {% if authorHandle %}
+              <a href="/blog/author/{{ authorHandle }}" class="author__name post__author-name">{{ author.data.name }}</a>
+            {% else %}
+              <p class="author__name">{{ author.data.name }}</p>
+            {% endif %}
+          </div>
+          {% if authorHandle %}
+            {{ authorSocials(authorHandle, "post__author-socials author-socials--desktop-only") }}
+          {% endif %}
+          <div class="author__title">{{ bio }}</div>
+          {% if authorHandle %}
+            {{ authorSocials(authorHandle, "post__author-socials author-socials--mobile-only") }}
+          {% endif %}
+        </div>
       </div>
-      <div class="post__tagline">
+
+      <div class="post__tagline text--sm">
         {{ tagline | safe }}
       </div>
+    </div>
+  </div>
+  {% if image %}
+    {% set imageData = {
+      "imgPath": image,
+      "alt": imageAlt,
+      "sizes": "100vw",
+      "loading": "eager",
+      "sizesArray": [640, 960, 1440, 1920]
+    } %}
+    {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+  {% endif %}
+  <div class="container container--lg post">
+    <div class="post__content rte">
       {{ content | safe }}
-    </article>
-    <nav aria-label="Post Pagination" class="prev-next">
+    </div>
+    <nav aria-label="Post Pagination" class="prev-next pagination">
       {% set previous = collections.posts | getPreviousCollectionItem(page) %}
       {% set next = collections.posts | getNextCollectionItem(page) %}
       {% if previous %}
-        <a class="prev-next__link prev-next__link--prev" href="{{ previous.url }}">
-          <p class="prev-next__label text--accent">
-            <span class="prev-next__arrow">{% include 'svg/arrow.njk' %}</span>
-            Previous
-            <span class="prev-next__label-optional">Post</span>
+        <a class="pagination__previous" href="{{ previous.url }}">
+          <p class="cta-link">
+            <span class="cta-link__arrow cta-link__arrow--rotate">{% include 'svg/arrow.njk' %}</span>
+            <span class="cta-link__text">Previous post</span>
           </p>
           <p class="prev-next__title">{{ previous.data.title }}</p>
         </a>
+
       {% endif %}
       {% if next %}
-        <a class="prev-next__link prev-next__link--next" href="{{ next.url }}">
-          <p class="prev-next__label text--accent">
-            Next
-            <span class="prev-next__label-optional">Post</span>
-            <span class="prev-next__arrow">{% include 'svg/arrow.njk' %}</span>
+        <a class="pagination__next" href="{{ next.url }}">
+          <p class="cta-link">
+            <span class="cta-link__text">Next post</span>
+            <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
           </p>
           <p class="prev-next__title">{{ next.data.title }}</p>
         </a>
       {% endif %}
     </nav>
   </div>
+</article>
 {%- endblock -%}

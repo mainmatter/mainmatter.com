@@ -1,13 +1,32 @@
 .rte {
   h2 {
-    margin: 3rem 0 1rem;
+    margin: 3rem 0 1.5rem;
+
+    &:first-of-type {
+      margin: 0 0 1.5rem;
+    }
   }
 
-  h3,
+  h3 {
+    margin: 2rem 0 1rem;
+  }
+
   h4,
   h5,
   h6 {
     margin: 1.5rem 0 0.5rem;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: rem-calc(36);
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-weight: 700;
+    font-size: rem-calc(24);
+    line-height: 1.5;
   }
 
   img,
@@ -85,5 +104,17 @@
     line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: 0.125rem;
+  }
+}
+
+@media (min-width: 72em) {
+  .rte {
+    h2 {
+      font-size: rem-calc(44);
+    }
+
+    h3 {
+      margin: 2.5rem 0 1rem;
+    }
   }
 }

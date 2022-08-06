@@ -60,16 +60,18 @@
   <section class="featured-post featured-post--mobile color-hero color-hero--purple">
     <div class="color-hero__image-wrapper">
       {% if post.data.image %}
-      {% image post.data.image, post.data.imageAlt, '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
+        {% image post.data.image, post.data.imageAlt, '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
       {% endif %}
     </div>
     <div class="color-hero__filter"></div>
     <div class="color-hero__overlay"></div>
     <div class="color-hero__container container container--lg color-hero__container--center">
       <div class="color-hero__main">
-        <h2 class="featured-post__title color-hero__title">Blog highlight</h1>
+        <h1 class="featured-post__title color-hero__title">Blog highlight</h1>
           {{ tags | safe }}
-          <h3 class="featured-post__post-title h5 text--bold">{{ post.data.title | safe }}</h3>
+          <a class="featured-post__link" href="{{ post.url }}">
+            <h2 class="featured-post__post-title h5 text--bold">{{ post.data.title | safe }}</h2>
+          </a>
           {{ author_info | safe }}
           {% if post.data.tagline %}
           <div class="featured-post__tagline text--sm">{{ post.data.tagline | safe }}</div>

@@ -25,11 +25,18 @@
   }
 }
 
+.pagination__previous,
+.pagination__next {
+  text-decoration: none;
+}
+
 .pagination__previous {
   grid-column: 1 / 2;
+  text-align: left;
 }
 
 .pagination__next {
   grid-column: 2 / 3;
   justify-self: end;
+  text-align: right;
 }

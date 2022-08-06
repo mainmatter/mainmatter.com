@@ -1,6 +1,25 @@
 .post {
   --color-tag: var(--color-blue);
-  padding: 3.25rem 0 6.25rem;
+  padding: 4rem 0 6.25rem;
+}
+
+.post__header {
+  background-color: var(--color-purple);
+  color: var(--color-white);
+  padding: 10rem 0 4.5rem;
+}
+
+.post__author {
+  margin-bottom: 3.25rem;
+}
+
+.post__author-name,
+.post__author-socials a {
+  color: var(--color-white);
+}
+
+.post__author-name {
+  font-weight: 500;
 }
 
 .post__back {
@@ -52,12 +71,6 @@
 
 .post__date {
   margin-bottom: 0.5rem;
-}
-
-.post__author {
-  width: 100%;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
 }
 
 .post__title {
@@ -134,12 +147,6 @@
 }
 
 @media (min-width: 62em) {
-  .post__author-wrapper {
-    grid-row: 1 / span 3;
-    grid-column: 1;
-    padding-right: 1.5rem;
-  }
-
   .post {
     img:not(.image--small):not(.image--full):not(.author__image),
     picture:not(.image--small):not(.image--full),
