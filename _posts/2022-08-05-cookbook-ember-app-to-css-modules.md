@@ -4,8 +4,11 @@ author: 'Marine Dunstetter'
 github: BlueCutOfficial
 twitter: academierenards
 topic: open-source
-bio: ''
-description: ''
+bio: 'Senior software engineer'
+description:
+  'Tutorial to start with ember-css-modules in an existing Ember app. It aims at
+  discovering ember-css-module from a practical perspective to get a different
+  view on the doc.'
 og:
   image: /assets/images/posts/2022-08-05-cookbook-ember-app-to-css-modules/og-image.png
 ---
