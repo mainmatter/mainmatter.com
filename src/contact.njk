@@ -4,5 +4,22 @@ title: Contact us to discuss how we can help you
 description: Whatever you're planning, we'd love to hear more. Send us a message and we will schedule a call to understand your situation and discuss how we can help best.
 ---
 
-{% include 'contact-info.njk' %}
+{% from "logo-list.njk" import logoList %}
+{% from "color-hero.njk" import colorHero %}
+
 {% include 'contact-form.njk' %}
+{% include 'contact-info.njk' %}
+
+{% set logoCompanies = ['Qonto', 'Trainline', 'Cardstack', 'Timify', 'Experteer', 'Robin Hood', 'Dim3' ] %}
+{{ logoList(logoCompanies) }}
+
+{% set 'content' = {
+"title": "Grow <em>your business</em> with us",
+"text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+"linkUrl": "/contact/",
+"linkText": "Get in touch",
+"image": "/assets/images/photos/grow-with-us-blog.jpg",
+"alt": "Team member leaning against wall taking notes while talking to three other team members",
+"loading": "lazy"
+} %}
+{{ colorHero('center', 'small', 'aqua', true, content) }}

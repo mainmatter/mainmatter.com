@@ -1,52 +1,81 @@
-<section class="contact-form">
-  <div class="contact-form__container container container--lg">
-    <h2 class="contact-form__heading">Send us a message</h2>
-    <p class="contact-form__text">
-      Following your message, we will schedule a call to understand your situation and discuss how we can help. We will use this information to prepare a proposal, laying out our process and how it would apply to your particular project. We will also define some project milestones and give you an overview of what a timeline could look like.
-    </p>
-    <form class="contact-form__form" id="contact-form" data-status="initial">
-      <div data-form-content tabindex="-1">
-        <label class="contact-form__label h4" for="contact-name">
-          Your Name*
-        </label>
-        <input class="contact-form__input" id="contact-name" type="text" name="name" required>
-        <label class="contact-form__label h4" for="contact-email">
-          Your Email*
-        </label>
-        <input class="contact-form__input" id="contact-email" type="email" name="email" required>
-        <label class="contact-form__label h4" for="contact-message">
-          Tell us about your project
-        </label>
-        <textarea class="contact-form__input" id="contact-message" name="message" type="text" rows="8"></textarea>
-        <button class="contact-form__button cta-link text--accent">
-          <span class="cta-link__text">Send</span>
-          <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
-        </button>
-      </div>
-      <div class="contact-form__status">
-        <div class="contact-form__loading h4" data-form-loading>Sending...</div>
-        <div class="contact-form__error" tabindex="-1" data-form-error>
-          Unable to send message. Please try again later or contact us at
-          <a href="mailto:info@simplabs.com">
-            info@simplabs.com
-          </a>
+<section class="contact-form color-hero color-hero--purple">
+  <div class="color-hero__image-wrapper">
+    {% image '/assets/images/contact/contact-us.jpg', 'Mail icon leaning against brick wall', '100vw',
+    'eager',
+    'color-hero__image', [760, 1440, 1920] %}
+  </div>
+  <div class="color-hero__filter"></div>
+  <div class="color-hero__overlay"></div>
+  <div class="contact-form__container color-hero__container color-hero__container--center">
+    <div class="contact-form__main container container--lg">
+      <h1 class="color-hero__title color-hero__title--full ">Send us a message</h1>
+      <form class="contact-form__form" id="contact-form" data-status="initial">
+        <div data-form-content tabindex="-1">
+          <div class="contact-form__field">
+            <input class="contact-form__input" id="contact-name" type="text" name="name" placeholder="Your name" required>
+            <label class="contact-form__label h4" for="contact-name">
+              Your name
+              <span class="screenreader">(Required)</span>
+            </label>
+            <span class="contact-form__label-required" aria-hidden="true">Required</span>
+          </div>
+          <div class="contact-form__field">
+            <input class="contact-form__input" id="contact-email" type="email" name="email" placeholder="Your e-mail" required>
+            <label class="contact-form__label h4" for="contact-email">
+              Your e-mail
+              <span class="screenreader">(Required)</span>
+            </label>
+            <span class="contact-form__label-required" aria-hidden="true">Required</span>
+          </div>
+          <div class="contact-form__field">
+            <textarea class="contact-form__input" id="contact-message" name="message" type="text" placeholder="Tell us about your project" rows="8"></textarea>
+            <label class="contact-form__label h4" for="contact-message">
+              Tell us about your project
+            </label>
+          </div>
+          <button class="contact-form__button cta-link">
+            <span class="cta-link__text">Send message</span>
+            <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+          </button>
+          <p class="contact-form__text caption">
+            Following your message, we will schedule a call to understand your situation and discuss how we can help. We will use
+            this information to prepare a proposal, laying out our process and how it would apply to your particular project.
+          </p>
         </div>
-        <div class="contact-form__success" tabindex="-1" data-form-success>
-          <div class="contact-form__status-wrapper">
-            <h2 class="contact-form__success-heading h4">Thank you!</h2>
-            <p>We will be in touch soon.</p>
-            <p>
-              In the meantime, have a look at our <a href="/playbook/">playbook</a>
-              to learn more about how we build ambitious digital products or read about the
-              <a href="/work/">other companies we helped in the past.</a>
-            </p>
-            <button type="button" class="cta-link text--accent contact-form__reset" data-reset-form>
-              <span class="cta-link__text">Send another message</span>
-              <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
-            </button>
+        <div class="contact-form__status">
+          <button class="contact-form__close" data-reset-form>
+            {% include 'svg/close.njk' %}
+            <span class="screenreader">Close Menu</span>
+          </button>
+          <div class="contact-form__loading h4" data-form-loading>
+            Your message is being sent…
+            <div class="loader" aria-hidden="true"></div>
+          </div>
+          <div class="contact-form__error" tabindex="-1" data-form-error>
+            <div class="contact-form__status-wrapper">
+              <h2 class="contact-form__success-subheading h3">Unable to send message.</h2>
+              <p>Please try again later or contact us at
+              <a href="mailto:info@simplabs.com">
+                info@simplabs.com
+              </a></p>
+            </div>
+          </div>
+          <div class="contact-form__success" tabindex="-1" data-form-success>
+            <div class="contact-form__status-wrapper">
+              <h2 class="contact-form__success-heading h3">Thank you!</h2>
+              <p class="contact-form__success-subheading h3">We will be in touch soon.</p>
+              <p>
+                One of our experts will get back to you shortly.
+              </p>
+              <p>
+                In the meantime, have a look at our <a href="/playbook/">playbook</a>
+                to learn more about how we build ambitious digital products or read about the
+                <a href="/work/">other companies we helped in the past.</a>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </section>

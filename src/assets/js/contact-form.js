@@ -16,7 +16,7 @@ export class ContactForm {
   bindEvents() {
     this.form.addEventListener("submit", (event) => {
       event.preventDefault();
-      this.updateFormState("loading", "Sending...");
+      this.updateFormState("loading", "Your message is being sent...");
 
       const formData = new FormData(this.form);
       this.sendMessage(Object.fromEntries(formData.entries()));
