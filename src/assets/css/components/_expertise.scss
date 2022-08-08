@@ -1,5 +1,6 @@
 .expertise__logo {
-  max-width: 20rem;
+  max-width: 8rem;
+  margin-bottom: 1.5rem;
 }
 
 .expertise__image-row {
@@ -15,4 +16,10 @@
 
 .expertise__image-ember-2 {
   width: 19rem;
+}
+
+@media (min-width: 72em) {
+  .expertise__logo {
+      max-width: 18rem;
+    }
 }

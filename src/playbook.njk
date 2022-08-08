@@ -4,75 +4,40 @@ title: Our Playbook
 description: Our playbook describes methodologies for building sustainable digital products and provides guidance for teams of all sizes, on-site or remote.
 permalink: /playbook/
 ---
+
 {% from "color-hero.njk" import colorHero %}
-{% from "column-list.njk" import columnList %}
-{% from "logo-list.njk" import logoList %}
-{% from "split-hero.njk" import splitHero %}
-{% from "split-list.njk" import splitList %}
-{% from "split-quote.njk" import splitQuote %}
+{% from "text-with-list.njk" import textWithList %}
 
 {% set 'content' = {
-  "title": "Build <em>lasting</em> products, systematically",
-  "text": "Our playbook describes methodologies for building sustainable digital products and running an effective, collaborative product development process. It is based on our experiences working on projects with international clients in various industries for many years.",
-  "linkText": "Download our playbook",
-  "linkUrl": "#download",
-  "image": "/assets/images/photos/kanban.jpg",
-  "alt": "Alt text",
-  "loading": "eager"
+"title": "Build <em>lasting</em> products systematically",
+"titleTag": "h1",
+"image": "/assets/images/playbook/playbook.jpg",
+"alt": "Close-up of multicolor constructor blocks",
+"loading": "eager"
 } %}
-{{ splitHero('left', 'aqua', content) }}
+{{ colorHero('center', 'large', 'black', false, content) }}
 
-{% set list = [
-  "Collaborating closely among all stakeholders",
-  "Iterating in small, functional increments",
-  "Validating assumptions early and often",
-  "Supporting remote teams through transparency",
-  "Delivering products with sustainable foundations"
-] %}
-{% set 'content' = {
-  "title": "For big and small teams – on-site or remote",
-  "text": "The patterns and practices in our playbook work for teams and companies of all sizes with all kinds of projects – whether it is an established company aiming for a modern, remote-friendly process, a founder setting up their own product team or an individual product manager, designer or developer looking to make their team more effective.",
-  "linkUrl": "#download",
-  "linkText": "Download the book",
-  "list": list
+{% set content = {
+"title": "Our playbook",
+"subtitle": "For big and small teams — on-site or remote",
+"text": "The patterns and practices in our playbook work for teams and companies of all sizes and all kinds of projects: whether
+it’s an established company aiming for a remote-friendly process, a founder setting up their own product team or
+individuals looking to make their team more effective.",
+"listType": "unordered",
+"list": ["Collaborating closely among all stakeholders", "Iterating in small, functional increments", "Validating assumptions early and often",
+"Supporting remote teams through transparency", "Delivering products with sustainable foundations"],
+"linkUrl": "https://github.com/simplabs/playbook/releases/download/1.1/simplabs-Playbook.pdf",
+"linkText": "Download our playbook"
 } %}
-{{ splitList('blue', content) }}
-
-<h2 class="section container container--lg">Organization of this book</h2>
-{{ columnList(playbook.organization, '', 'column-list--services') }}
+{{ textWithList(content) }}
 
 {% set 'content' = {
-  "text": "We started working with simplabs to build a state-of-the-art mobile web app from the ground up and it was an absolute success! Not only are they web specialists, but their expertise in development practices and agile processes made our collaboration an absolute delight.",
-  "source": "Carl Andersson, General Manager of Trainline international",
-  "image": "/assets/images/photos/collaboration.jpg",
-  "alt": "Alt text",
-  "loading": "lazy"
+"title": "Grow <em>your business</em> with us",
+"text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+"linkUrl": "/contact/",
+"linkText": "Get in touch",
+"image": "/assets/images/photos/grow-with-us-playbook.jpg",
+"alt": "Hands gesturing in front of laptop",
+"loading": "lazy"
 } %}
-{{- splitQuote('right', 'purple', content) -}}
-
-<h2 class="section container container--lg">From the book</h2>
-{{ columnList(playbook.from, '', 'column-list--services column-list--hide-numbers') }}
-
-{% set 'content' = {
-  "title": "Increase focus and stability in your products now",
-  "linkText": "Download our Playbook",
-  "linkUrl": "https://github.com/simplabs/playbook/releases/download/1.1/simplabs-Playbook.pdf",
-  "image": "/assets/images/work/playbook-2.png",
-  "alt": "The playbook cover, featuring a vector illustration of hands stacking shapes",
-  "loading": "lazy"
-} %}
-{{ splitHero('left', 'blue', content) }}
-
-{% set 'content' = {
-  "title": "About Mainmatter",
-  "text": "It takes brains to develop a no-brainer. At mainmatter, we teach, cross-pollinate, and collaborate with our clients to develop digital products and practices they can build on. We don’t care for trends or theory if the results are impractical, so we strive for effective and pragmatic solutions for complex problems. Through guidance and knowledge transfer, we take a long-term view, rather than chasing a short-term high, enabling our clients to shape the future of their digital products.",
-  "image": "/assets/images/photos/0040.jpg",
-  "alt": "Alt text",
-  "loading": "lazy"
-} %}
-{{ splitHero('right', 'aqua', content) }}
-
-{% set logoCompanies = ['Qonto', 'Trainline', 'Timify', 'Cardstack', 'Generali', 'Experteer'] %}
-{{ logoList(logoCompanies) }}
-
-{% include 'content/hero-grow-with-us.njk' %}
+{{ colorHero('center', 'small', 'purple', true, content) }}

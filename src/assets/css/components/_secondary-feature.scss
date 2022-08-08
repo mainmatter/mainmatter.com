@@ -5,6 +5,10 @@
   background-color: var(--color-purple);
   padding: 1.75rem 1.25rem;
   box-shadow: 0px 2px 5px 0px rgba(135, 135, 135, 0.5);
+
+  .split-content__feature & {
+    margin: 0;
+  }
 }
 
 .secondary-feature__link {

@@ -10,6 +10,7 @@
 
 .recent-posts__cta {
   margin-top: 5rem;
+  text-align: center;
 
   &--desktop {
     display: none;
@@ -40,6 +41,7 @@
 @media (min-width: 62em) {
   .recent-posts__cta {
     margin-top: 0;
+    text-align: left;
 
     &--desktop {
       display: block;

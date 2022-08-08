@@ -1,7 +1,7 @@
 .text-with-list {
   --color-text: var(--color-black);
   --color-accent: var(--color-purple);
-  --icon-url: url("/assets/images/icons/arrow-black.svg");
+  --icon-url: url("/assets/images/icons/arrow-purple.svg");
   padding: 7.25rem 0;
   color: var(--color-text);
 
@@ -54,10 +54,10 @@
   }
 
   &::before {
+    color: var(--color-accent);
     height: 2rem;
     width: 2rem;
     content: counter(item) ".";
-    color: var(--color-purple);
     margin-right: 2.25rem;
   }
 }

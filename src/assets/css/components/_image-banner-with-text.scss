@@ -10,6 +10,10 @@
   margin: 1.5rem 0 3.5rem;
 }
 
+.image-banner-with-text__link {
+  text-align: center;
+}
+
 @media (min-width: 48em) {
   .image-banner-with-text__heading {
     margin-bottom: 3.25rem;
@@ -17,5 +21,9 @@
 
   .image-banner-with-text__content {
     margin: 4rem 0 10rem;
+  }
+
+  .image-banner-with-text__link {
+    text-align: left;
   }
 }

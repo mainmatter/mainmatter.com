@@ -9,6 +9,7 @@ eleventyNavigation:
 {% from "color-hero.njk" import colorHero %}
 {% from "text-with-list.njk" import textWithList %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
+
 {% set 'content' = {
   "title": "Bridging the gap between vision and <em>sustainable</em> execution",
   "image": "/assets/images/photos/0010.jpg",
@@ -17,6 +18,7 @@ eleventyNavigation:
   "titleTag": "h1"
 } %}
 {{ colorHero('center', 'large', 'aqua', false, content) }}
+
 {% set content = {
   "title": "Our process",
   "subtitle": "Rapid exploration, research and validation",
@@ -26,6 +28,7 @@ eleventyNavigation:
   "linkText": "Download our playbook"
 } %}
 {{ textWithList(content) }}
+
 {% set image = {
   "imgPath": "/assets/images/photos/glassboard.jpg",
   "alt": "Man writing on a glassboard with another man watching behind",
@@ -34,6 +37,7 @@ eleventyNavigation:
   "sizesArray": [640, 960, 1440, 1920]
 } %}
 {{ imageAspectRatio(image, "32/13", "35/19") }}
+
 {% set content = {
   "title": "Product design",
   "subtitle": "Experiences that users love",
@@ -42,6 +46,7 @@ eleventyNavigation:
   "list": ["Multi-stakeholder design research", "Wireframing & Rapid prototyping", "Develop a consistent design system", "Ideation across the entire user journey"]
 } %}
 {{ textWithList(content, "purple") }}
+
 {% set image = {
   "imgPath": "/assets/images/photos/tablet-stylus.jpg",
   "alt": "Team member using a tablet with a stylus",
@@ -50,6 +55,7 @@ eleventyNavigation:
   "sizesArray": [640, 960, 1440, 1920]
 } %}
 {{ imageAspectRatio(image, "32/13", "35/19") }}
+
 {% set content = {
   "title": "Product development",
   "subtitle": "Let us set you up for sustainable growth",
@@ -58,4 +64,14 @@ eleventyNavigation:
   "list": ["Full-stack development", "Continuous delivery of product increments", "Intensive automated testing", "No quick fixes", "Build for long term sustainability"]
 } %}
 {{ textWithList(content, "black") }}
-{% include 'content/hero-grow-with-us.njk' %}
+
+{% set 'content' = {
+"title": "Grow <em>your business</em> with us",
+"text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+"linkUrl": "/contact/",
+"linkText": "Get in touch",
+"image": "/assets/images/photos/grow-with-us-playbook.jpg",
+"alt": "Hands gesturing in front of laptop",
+"loading": "lazy"
+} %}
+{{ colorHero('center', 'small', 'purple', true, content) }}

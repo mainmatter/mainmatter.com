@@ -95,7 +95,7 @@
 }
 
 .color-hero__title {
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   max-width: rem-calc(620);
 
   &--full {
@@ -141,6 +141,10 @@
       font-size: 1.5rem;
       line-height: 1.6;
     }
+  }
+
+  .color-hero__title {
+    margin-bottom: 2rem;
   }
 }
 

@@ -46,5 +46,16 @@ layout: base
       </section>
     {% endif %}
   </div>
-  {% include 'content/hero-grow-with-us.njk' %}
+
+  {% set 'content' = {
+  "title": "Grow <em>your business</em> with us",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact/",
+  "linkText": "Get in touch",
+  "image": "/assets/images/photos/grow-with-us-case-studies.jpg",
+  "alt": "Three team members gathered around their laptops and tablets",
+  "loading": "lazy"
+  } %}
+  {{ colorHero('center', 'small', 'aqua', true, content) }}
+
 {%- endblock -%}

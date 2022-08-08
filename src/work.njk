@@ -33,4 +33,14 @@ eleventyNavigation:
     {{ clientCards(['xbav', 'medify', 'asimilia', 'experteer', 'expedition']) }}
   </ul>
 </div>
-{% include 'content/hero-work-with-us.njk' %}
+
+{% set 'content' = {
+"title": "Grow <em>your business</em> with us",
+"text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+"linkUrl": "/contact/",
+"linkText": "Get in touch",
+"image": "/assets/images/photos/grow-with-us-playbook.jpg",
+"alt": "Hands gesturing in front of laptop",
+"loading": "lazy"
+} %}
+{{ colorHero('center', 'small', 'purple', true, content) }}

@@ -11,7 +11,7 @@
           <h3 class="image-banner-with-text__subheading h4">{{ content.subtitle }}</h3>
         {% endif %}
         {% if content.text %}
-          <p class="image-banner-with-text__text">{{ content.text }}</p>
+          <div class="image-banner-with-text__text">{{ content.text | safe }}</div>
         {% endif %}
         {% if content.linkUrl and content.linkText %}
           {{ ctaLink(content.linkUrl, content.linkText, 'image-banner-with-text__link') }}

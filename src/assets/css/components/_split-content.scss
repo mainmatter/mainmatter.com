@@ -1,0 +1,32 @@
+.split-content {
+  margin: 5rem 0 10rem;
+}
+
+.split-content__subheading {
+  margin: 2rem 0 2.5rem;
+}
+
+.split-content__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.25rem;
+}
+
+.split-content__feature {
+  flex: 1 0 auto;
+}
+
+@media (min-width: 72em) {
+  .split-content {
+    margin: 6.25rem 0;
+  }
+
+  .split-content__subheading {
+    margin: 3.25rem 0;
+  }
+
+  .split-content__content {
+    flex-wrap: nowrap;
+    gap: 6.25rem;
+  }
+}
