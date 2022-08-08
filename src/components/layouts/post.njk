@@ -30,9 +30,9 @@ layout: base
 
       {% set author = authorHandle | findBySlug %}
       <div class="post__author author text--xs">
-        <div class="workshop-authors__image-wrapper author__image-wrapper">
+        <div class="author__image-wrapper">
           {% set imageUrl = '/assets/images/authors/' + author.data.page.fileSlug + '.jpg' %}
-          {% image imageUrl, '', '2.5rem', 'eager', 'author__image', [60] %}
+          {% image imageUrl, '', '2.5rem', 'eager', 'author__image', [80] %}
         </div>
         <div class="author__text-wrapper">
           <div class="author__name-wrapper">

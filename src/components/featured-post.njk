@@ -15,12 +15,12 @@
   {% endif %}
 
   {% if post.data.authorHandle %}
-    {% set author_info %}
+    {% set authorInfo %}
       {% set author = post.data.authorHandle | findBySlug %}
       <div class="author featured-post__author">
         <div class="author__image-wrapper">
           {% set imageUrl = '/assets/images/authors/' + author.data.page.fileSlug + '.jpg' %}
-          {% image imageUrl, '', '2.5rem', 'eager', 'author__image', [40] %}
+          {% image imageUrl, '', '2.5rem', 'eager', 'author__image', [60, 120] %}
         </div>
         <div class="author__text-wrapper">
           <div class="author__byline text--sm">
@@ -48,7 +48,7 @@
           <a class="featured-post__link" href="{{ post.url }}">
             <h3 class="featured-post__post-title h4">{{ post.data.title | safe }}</h3>
           </a>
-          {{ author_info | safe }}
+          {{ authorInfo | safe }}
           {% if post.data.tagline %}
           <div class="featured-post__tagline text--sm">{{ post.data.tagline | safe }}</div>
           {% endif %}
@@ -72,7 +72,7 @@
           <a class="featured-post__link" href="{{ post.url }}">
             <h2 class="featured-post__post-title h5 text--bold">{{ post.data.title | safe }}</h2>
           </a>
-          {{ author_info | safe }}
+          {{ authorInfo | safe }}
           {% if post.data.tagline %}
           <div class="featured-post__tagline text--sm">{{ post.data.tagline | safe }}</div>
           {% endif %}

@@ -60,7 +60,7 @@ hero:
 </div>
 
 <div class="case-study__image-wrapper">
-  {% image "/assets/images/work/qonto-ui.jpg", "Screenshot of the Qonto app", '50rem', "lazy", 'case-study__image', [800, 1200] %}
+  {% image "/assets/images/work/qonto-ui.jpg", "Screenshot of the Qonto app", '50rem', "lazy", 'case-study__image', [1600] %}
 </div>
 
 <div class="case-study__section">

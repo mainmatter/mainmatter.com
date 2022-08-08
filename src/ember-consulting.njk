@@ -6,78 +6,84 @@ permalink: /ember-consulting/
 ---
 
 {% from "color-hero.njk" import colorHero %}
-{% from "column-list.njk" import columnList %}
-{% from "image-with-text.njk" import imageWithText %}
-{% from "image-with-text-stacked.njk" import imageWithTextStacked %}
-{% from "split-hero.njk" import splitHero %}
-{% from "split-list.njk" import splitList %}
-{% set 'content' = {
-  "title": "Ember is Our Expertise",
-  "text": "<p>Mainmatter has unique expertise and insights into Ember.js—in fact, a good part of our engineering team is on the Ember.js core team and maintains widely adopted add-ons. </p><p>By offering Ember consulting and training, we help clients around the world to get the most out of Ember and build cutting-edge applications. We help scale teams and support clients by reviewing codebases as well as identifying and overcoming impediments.</p>",
-  "image": "/assets/images/photos/marco.jpg",
-  "alt": "Marco speaking at Emberfest",
-  "loading": "eager"
+{% from "text-with-list.njk" import textWithList %}
+{% from "logo-list.njk" import logoList %}
+{% from "recent-posts.njk" import recentPosts %}
+{% from "cta-link.njk" import ctaLink %}
+
+<section class="color-hero color-hero--red">
+  <div class="color-hero__image-wrapper">
+    {% image '/assets/images/photos/ember.jpg', 'Audience facing a presentation at a conference', '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
+  </div>
+  <div class="color-hero__filter"></div>
+  <div class="color-hero__overlay"></div>
+  <div class="color-hero__container container container--lg color-hero__container--center">
+    <div class="color-hero__main">
+      {% set imagePath %}/assets/images/logos/ember-white.svg{% endset %}
+      <img class="expertise__logo" src="{{ imagePath }}" alt="Ember logo" />
+      <h1 class="color-hero__title color-hero__title--full ">is our expertise</h1>
+      <div class="color-hero__text color-hero__text--large">We have been recognized as an official sponsor of the Ember.js project along with international brands like LinkedIn and
+      Yahoo.</div>
+    </div>
+  </div>
+</section>
+
+{% set content = {
+"title": "We love open source",
+"subtitle": "We maintain a number of projects in the ecosystem that are widely adopted in the Ember community."
 } %}
-{{ splitHero('left', 'blue', content) }}
-{% set 'content' = {
-  "title": "We love open source",
-  "text": "Besides contributing to Ember.js via our core team engagements, we maintain a number of projects in the ecosystem that are widely adopted throughout the Ember community.",
-  "image": "/assets/images/photos/ember-simple-auth.jpg",
-  "alt": "Laptop displaying some Ember Simple Auth source code",
-  "loading": "lazy"
-} %}
-{{ imageWithText('left', content) }}
-{{ columnList(emberConsulting.list, '', 'column-list--services') }}
+{{ textWithList(content, "white") }}
+
 {% set 'content' = {
   "title": "Ember.js: The Documentary",
-  "text": "Several of your team members appear in the Ember.js documentary. We were pleased to welcome the film crew at our office in Munich and again at EmberFest in Amsterdam.",
-  "linkText": "Watch the Video",
+  "text": "Several of our team members appear in the Ember.js documentary. We were pleased to welcome the film crew at our office in Munich and again at EmberFest in Amsterdam.",
+  "linkText": "Watch Video",
   "linkUrl": "https://www.youtube.com/watch?v=Cvz-9ccflKQ",
-  "image": "/assets/images/photos/collaboration.jpg",
-  "alt": "Alt text",
+  "image": "/assets/images/photos/ember-js-documentary.jpg",
+  "alt": "Still of Ember.js documentary showing two people looking at a laptop",
   "loading": "lazy"
 } %}
-{{ colorHero('center', 'yellow', content) }}
+{{ colorHero('center', 'small', 'aqua', false, content) }}
+
+{{ recentPosts("Latest from our blog on the topic", collections["ember"]) }}
+
 {% set 'content' = {
-  "title": "We share our expertise",
-  "text": "Every new project gives us the opportunity to learn and grow our expertise. We share what we learn with the community via talks at conferences, meetups, and on our blog.",
-  "image": "/assets/images/photos/103-P1001472.jpg",
-  "alt": "Two engineers speaking in front of a projector in front of a large audience",
-  "loading": "lazy"
+"title": "Conferences and talks",
+"subtitle": "Mainmatter engineers have spoken at all major Ember.js conferences and other events in the wider JavaScript community.",
+"text": "Ember.js is a project built by an open community, and we are an active member of that community. We run the Ember.js Europe Meetup with our partner Intercom and co-organize EmberFest , the European Ember Community Conference.",
+"linkUrl": "/events/",
+"linkText": "View our talks and check out our calendar for the next events",
+"image": "/assets/images/photos/ember-banner.jpg",
+"alt": "Collage of team members speaking at conferences",
+"loading": "lazy"
 } %}
-{{ splitHero('right', 'purple', content) }}
-{% set 'contentBlocks' = [{
-  "title": "Conference Talks",
-  "text": "Mainmatter engineers have spoken at all major Ember.js conferences and other events in the wider JavaScript community.",
-  "linkText": "View Talks",
-  "linkUrl": "/talks/",
-  "image": "/assets/images/photos/30-P1001378.jpg",
-  "alt": "Team member speaking in front of a large audience at Emberfest 2021",
-  "loading": "lazy"
-}, {
-  "title": "Community Engagement",
-  "text": "Ember.js is a project built by an open community and we are an active member of the community. We support the <a href='https://www.meetup.com/Ember-js-Munich/'>Ember.js Munich</a> and <a href='https://www.meetup.com/Ember-js-Berlin/'>Ember.js Berlin</a> meetups and are co-organizers of <a href='http://emberfest.eu'>EmberFest</a>, the european Ember Community Conference.",
-  "linkText": "View Our Calendar",
-  "linkUrl": "/calendar/"
-}] %}
-{{ imageWithTextStacked('right', contentBlocks) }}
-{% set 'contentBlocks' = [{
-  "title": "Ember Consulting",
-  "text": "Not all teams will always be able to deliver large-scale projects on time and budget. Our experts step in and merge with our clients' in-house engineering teams, sustainably increasing productivity.",
-  "linkText": "Learn More about Ember Consulting",
-  "linkUrl": "/services/team-augmentation/",
-  "image": "/assets/images/photos/team-coding.jpg",
-  "alt": "Three team members coding at their laptops",
-  "loading": "lazy",
-  "small": true
-}, {
-  "title": "Ember Training and Mentoring",
-  "text": "We also tutor engineering teams and set them up for long-term success by reviewing their code, guiding them through adopting new technologies, setting up a project, or conducting workshops on various topics.",
-  "linkText": "Learn More about Ember Training",
-  "linkUrl": "/services/training/",
-  "image": "/assets/images/photos/tutoring.jpg",
-  "alt": "Two team members looking at a laptop",
-  "loading": "lazy"
-}] %}
-{{ imageWithTextStacked('left', contentBlocks) }}
+
+<section class="image-banner-with-text">
+  <div class="container container--lg">
+    <h2 class="image-banner-with-text__heading h5">{{ content.title }}</h2>
+  </div>
+  {% image content.image, content.alt, '100vw', content.loading, 'image-banner-with-text__image', [760, 1440, 1920] %}
+  <div class="container container--lg">
+    <div class="image-banner-with-text__content">
+      {% if content.subtitle %}
+      <h3 class="image-banner-with-text__subheading h4">{{ content.subtitle }}</h3>
+      {% endif %}
+      {% if content.text %}
+        <p class="image-banner-with-text__text">{{ content.text }}</p>
+      {% endif %}
+      <div class="expertise__image-row">
+        {% image '/assets/images/ember/ember-europe-mascot.jpg', 'Ember.js mascot with EU flags', '8.25rem', 'lazy', 'expertise__image-ember-1', [264] %}
+        {% image '/assets/images/ember/emberfest-logo.jpg', 'Emberfest logo', '19rem', 'lazy', 'expertise__image-ember-2', [608] %}
+      </div>
+      {% if content.linkUrl and content.linkText %}
+        {{ ctaLink(content.linkUrl, content.linkText, 'image-banner-with-text__link') }}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% set logoCompanies = ['Qonto', 'Trainline', 'Cardstack', 'Timify', 'Experteer', 'Robin Hood', 'Dim3' ] %}
+{% set title = 'We are trusted by international companies that bet on Ember.js' %}
+{{ logoList(logoCompanies, title) }}
+
 {% include 'content/hero-grow-with-us.njk' %}

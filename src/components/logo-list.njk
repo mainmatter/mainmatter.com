@@ -9,8 +9,13 @@ Example usage:
 {% set logoCompanies = ['Qonto', 'Trainline', 'Timify', 'Cardstack', 'Generali', 'Experteer'] %}
 {{ logoList(logoCompanies) }}
 #}
-{%- macro logoList(logos) -%}
+{%- macro logoList(logos, title) -%}
   <section class="logo-list" id="logo-list">
+    {% if title %}
+      <div class="logo-list__title">
+        <h2 class="h3">We are trusted by international companies that bet on Ember.js</h2>
+      </div>
+    {% endif %}
     <div class="logo-list__wrapper">
       <div class="logo-list__inner" data-marquee>
         <ul class="logo-list__list">

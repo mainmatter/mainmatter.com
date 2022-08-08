@@ -1,0 +1,66 @@
+{%- macro postBanner(post) -%}
+  {% if post.data.authorHandle %}
+    {% set authorInfo %}
+      {% set author = post.data.authorHandle | findBySlug %}
+      <div class="author post-card__author">
+        <div class="author__image-wrapper">
+          {% set imageUrl = '/assets/images/authors/' + author.data.page.fileSlug + '.jpg' %}
+          {% image imageUrl, '', '2.5rem', 'eager', 'author__image', [80] %}
+        </div>
+        <div class="author__text-wrapper">
+          <div class="author__byline text--sm">
+            by
+            <a class="author__name text--bold" href="/blog/author/{{ author.data.page.fileSlug }}">
+              {{ author.data.name }}
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endset %}
+  {% endif %}
+
+  {% if post.data.tags %}
+    {% set tags %}
+      <ul class="post-banner__tags tags">
+        {% for tag in post.data.tags %}
+        <li class="tags__tag-item">
+          <a class="post-banner__internal-link tags__tag tags__tag--link" href="/blog/tag/{{ tag | slug }}">#{{ tag }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    {% endset %}
+  {% endif %}
+
+  <div class="post-banner">
+    <a class="post-banner__link" href="{{ post.url }}">
+      <span class="screenreader">{{ post.data.title }}</span>
+    </a>
+    <div class="post-banner__image-overlay">
+      <div class="post-banner__image-wrapper">
+        {% if post.image %}
+          {% image post.image, post.imageAlt, '(min-width: 48em) 60rem, 90vw', "lazy", 'post-banner__image', [760,
+        1440, 1920] %}
+        {% endif %}
+      </div>
+      <div class="post-banner__overlay post-banner__overlay--purple"></div>
+      <div class="post-banner__content-wrapper">
+        <div class="post-banner__date caption">{{ post.date | monthDayYear }}</div>
+        <div class="post-banner__content">
+          <div class="post-banner__text post-banner__text--desktop">
+            {{ tags | safe }}
+          </div>
+          <h2 class="post-banner__title">{{ post.data.title }}</h2>
+          <div class="post-banner__text post-banner__text--desktop">{{ authorInfo | safe }}</div>
+          <span class="post-banner__cta cta-link post-banner__text post-banner__text--mobile">
+            <span class="cta-link__text">Read article</span>
+            <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="post-banner__text post-banner__text--mobile">
+      {{ tags | safe }}
+      {{ authorInfo | safe }}
+    </div>
+  </div>
+{%- endmacro -%}

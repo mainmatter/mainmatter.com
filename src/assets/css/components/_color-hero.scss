@@ -5,7 +5,6 @@
   --overlay-opacity: 0.9;
 
   &:first-of-type {
-    background-color: yellow;
     .color-hero__container {
       padding: 6rem 0 3.25rem;
     }
@@ -30,6 +29,12 @@
     --color-overlay: var(--color-black);
     color: var(--color-white);
     --overlay-opacity: 0;
+  }
+
+  &--red {
+    --color-overlay: var(--color-red);
+    color: var(--color-white);
+    --overlay-opacity: 0.8;
   }
 }
 
@@ -90,7 +95,7 @@
 }
 
 .color-hero__title {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   max-width: rem-calc(620);
 
   &--full {
