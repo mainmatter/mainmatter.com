@@ -26,6 +26,8 @@ some of the work they have done the past weeks!
 - [Turbo87/aprs-parser-rs]
   [#42](https://github.com/Turbo87/aprs-parser-rs/pull/42) Raise minimum Rust
   version to v1.52.0 ([@Turbo87])
+- [kivikakk/comrak] [#238](https://github.com/kivikakk/comrak/pull/238) Replace
+  `lazy_static` dependency with `once_cell` ([@Turbo87])
 
 ## crates.io
 
@@ -128,8 +130,6 @@ some of the work they have done the past weeks!
   [#126](https://github.com/calibreapp/image-actions/pull/126) fix(entrypoint):
   exit(0) when pull_request.<event> is not 'synchronize' or 'opened'
   ([@oscard0m])
-- [kivikakk/comrak] [#238](https://github.com/kivikakk/comrak/pull/238) Replace
-  `lazy_static` dependency with `once_cell` ([@Turbo87])
 - [locks/netrunner] [#2](https://github.com/locks/netrunner/pull/2) Create
   ci.yml ([@locks])
 - [mansona/lint-to-the-future-dashboard-action]

@@ -56,7 +56,8 @@
                 "Turbo87/united-flarmnet",
                 "ferrous-systems/teaching-material",
                 "svartalf/rust-claim",
-                "Turbo87/sentry-conduit"
+                "Turbo87/sentry-conduit",
+                "kivikakk/comrak"
             ]
         },
         {
