@@ -148,7 +148,12 @@
                 "ember-codemods/ember-native-class-codemod",
                 "ember-learn/guidemaker-ember-template",
                 "empress/guidemaker",
-                "empress/guidemaker-default-template"
+                "empress/guidemaker-default-template",
+                "ember-cli/watch-detector",
+                "ember-engines/ember-engines",
+                "ember-learn/tool-new-release",
+                "ember-template-lint/ember-template-lint",
+                "emberjs/rfcs-tooling"
             ]
         },
         {
