@@ -14,7 +14,7 @@ og:
 ---
 
 This short tutorial is intended to help Ember developers to migrate an Ember app
-using only one global CSS to CSS modules with
+using global CSS to CSS modules with
 [`ember-css-modules`](https://github.com/salsify/ember-css-modules).
 
 <!--break-->
@@ -36,14 +36,14 @@ This article might get your interest if:
 
 - You don't know a thing about CSS modules.
 - After we've solved the previous point, you want to discover how CSS modules
-  can be used in the Ember context.
+  can be used in an Ember context.
 
 ### A word about CSS modules
 
 To style an application with CSS, the minimum you need is one CSS file included
-on the page. Even when split into different files, having one classic cascading
-CSS that applies globally on the whole page has some downsides in big and
-complex applications. For instance, managing reusable components style is
+on the page. Even when split into different files, having one CSS scope that
+applies globally on the whole page has some downsides in big and complex
+applications. For instance, managing the styles of reusable components is
 sometimes challenging. Also, the life of an application is made of turnover,
 it's never easy for newcomers to identify dead code, resulting in overly heavy
 and hard-to-clean CSS rules.
@@ -61,8 +61,8 @@ their Ember apps and addon.
 
 Installing `ember-css-modules` in an existing Ember app triggers some breaking
 changes in the way the developer should handle the app style. If the developer
-is not familiar with CSS modules in the first place, they might spend a hard
-time figuring out how to set up and start the migration at their own pace. The
+is not familiar with CSS modules in the first place, they might have a hard time
+figuring out how to set up and start the migration at their own pace. The
 present tutorial is intended to be used as a quick start cookbook to achieve
 this.
 
@@ -75,22 +75,22 @@ though they are
 
 ## Migration tutorial
 
-Let's start working. We'll take
+Let's start working. We'll take the
 [SuperRentals app](https://guides.emberjs.com/release/tutorial/part-1/) as an
 example. SuperRentals is the great tutorial part of the Ember guides to
-introduce the main Ember features. As the purpose of SuperRentals app is to
-learn Ember and writing CSS is irrelevant to the matter, the CSS to style the
+introduce the main Ember features. As the purpose of the SuperRentals app is to
+teach Ember and writing CSS is irrelevant to the matter, the CSS to style the
 app is provided as a single `app.css` free to download (linked somewhere in the
 first pages of Part 1), so newcomers don't have to write it themselves as they
 walk through the tutorial.
 
-So let's make SuperRentals app ready for migration to CSS modules.
+So let's make the SuperRentals app ready for migration to CSS modules.
 
 ### Install `ember-css-modules` (and break your app)
 
-Let's suppose we have finished implementing SuperRentals app. The following
+Let's suppose we have finished implementing the SuperRentals app. The following
 screenshot shows the page as it should be in your browser, with the nice styling
-provided in SuperRentals tutorial:
+provided in the tutorial:
 
 ![SuperRental with global CSS](/assets/images/posts/2022-08-05-cookbook-ember-app-to-css-modules/screen-1.png)
 
@@ -108,8 +108,8 @@ Let's run the local server again and see how our app is doing:
 
 ![SuperRental style is broken](/assets/images/posts/2022-08-05-cookbook-ember-app-to-css-modules/screen-2.png)
 
-Ouch, all the style is broken. What we see now in the browser is very similar to
-a page with no CSS at all. To understand what is going on let's use the
+Ouch, all the styles are broken. What we see now in the browser is very similar
+to a page with no CSS at all. To understand what is going on let's use the
 inspector tab of the browser's debugger.
 
 ### Understanding CSS classes isolation
@@ -210,9 +210,9 @@ At the bottom of the file, we read:
 And here is the explanation about our missing Tomster. With `ember-css-modules`
 installed, all the class selectors present in `app.css` end with a custom id.
 But this custom id is not present in our component's template, we still have
-`class="right tomster"`. As result, no CSS style is found for `.right` and
+`class="right tomster"`. As a result, no CSS class is found for `.right` and
 `.tomster` and no style applies. On the contrary, the rules defined for main
-elements like `div` don't have any custom id added and keep applying.
+elements like `div` match by the element itself and thus keep applying.
 
 `ember-css-modules` relies on class selectors to isolate the CSS and prevent it
 from applying globally. The isolation system applies to every CSS file,
@@ -222,7 +222,7 @@ component.
 ### Fix the setup with `:global`
 
 Before starting to actively use CSS modules across the app, we would prefer to
-fix the style first and allow `app.css` to apply globally as it did before. To
+fix the styles first and allow `app.css` to apply globally as it did before. To
 do so, we can use the `:global` pseudoselector:
 
 ```css
@@ -251,16 +251,16 @@ And let's see what happens in the browser:
 Tomster is back! If we take a new look at the generated CSS file in the
 browser's inspector, we can see this time the classes `.right` and `.tomster`
 don't have custom ids. The `:global` pseudoselector indicates these classes are
-global classes that should apply to the whole page. So we are back to a classic
+global classes that should apply to the whole page. So we are back to classic
 CSS, with rules defined in `app.css` which apply to the page elements through
-`class` attributes. By using `:global` pseudoselector on the whole existing CSS,
-we can style the whole app exactly as it was before installing
+`class` attributes. By using the `:global` pseudoselector on the whole existing
+CSS, we can style the whole app exactly as it was before installing
 `ember-css-modules`, and from there we can serenely start to use some CSS
 modules.
 
 ### Start using CSS modules
 
-In SuperRentals app, the Tomster `<div>` element is written in the `<Jumbo>`
+In the SuperRentals app, the Tomster `<div>` element is written in the `<Jumbo>`
 component's template (this component is instantiated at the top of each page).
 So let's create the CSS file alongside the template. In the present example, the
 file is `app/components/jumbo.css` as the app has a classic structure with
@@ -307,7 +307,7 @@ If we look one more time at the CSS classes in the inspector, we'll see that
 class `.right` is still applied globally, but `.tomster` selector now owns a
 custom id used to isolate the CSS. The syntax
 `<div class="right" local-class="tomster"></div>` we used in the template
-resulted to `<div class="right _tomster_1myv6d"></div>` in the browser so the
+resulted in `<div class="right _tomster_1myv6d"></div>` in the browser so the
 class attributes and the generated CSS rules match.
 
 ### One last note about `class` and `local-class`
