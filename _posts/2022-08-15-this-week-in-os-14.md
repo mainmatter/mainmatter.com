@@ -114,6 +114,24 @@ some of the work they have done the past weeks!
 - [mansona/lint-to-the-future]
   [#26](https://github.com/mansona/lint-to-the-future/pull/26) Update README.md
   ([@Mikek2252])
+- [mansona/lint-to-the-future-dashboard-action]
+  [#1](https://github.com/mansona/lint-to-the-future-dashboard-action/pull/1)
+  Update README.md ([@Mikek2252])
+
+## JavaScript
+
+- [mansona/showdown-section-groups]
+  [#4](https://github.com/mansona/showdown-section-groups/pull/4) drop babel and
+  just use modules ([@mansona])
+- [mansona/showdown-section-groups]
+  [#3](https://github.com/mansona/showdown-section-groups/pull/3) Fix the repo
+  metadata and add a more useful readme ([@mansona])
+- [mansona/showdown-section-groups]
+  [#2](https://github.com/mansona/showdown-section-groups/pull/2) breaking: drop
+  support for Node < 14 (EOL) ([@mansona])
+- [mansona/showdown-section-groups]
+  [#1](https://github.com/mansona/showdown-section-groups/pull/1) move to GitHub
+  actions ([@mansona])
 
 ## Octokit
 
@@ -132,21 +150,6 @@ some of the work they have done the past weeks!
   ([@oscard0m])
 - [locks/netrunner] [#2](https://github.com/locks/netrunner/pull/2) Create
   ci.yml ([@locks])
-- [mansona/lint-to-the-future-dashboard-action]
-  [#1](https://github.com/mansona/lint-to-the-future-dashboard-action/pull/1)
-  Update README.md ([@Mikek2252])
-- [mansona/showdown-section-groups]
-  [#4](https://github.com/mansona/showdown-section-groups/pull/4) drop babel and
-  just use modules ([@mansona])
-- [mansona/showdown-section-groups]
-  [#3](https://github.com/mansona/showdown-section-groups/pull/3) Fix the repo
-  metadata and add a more useful readme ([@mansona])
-- [mansona/showdown-section-groups]
-  [#2](https://github.com/mansona/showdown-section-groups/pull/2) breaking: drop
-  support for Node < 14 (EOL) ([@mansona])
-- [mansona/showdown-section-groups]
-  [#1](https://github.com/mansona/showdown-section-groups/pull/1) move to GitHub
-  actions ([@mansona])
 - [mtgred/netrunner] [#6505](https://github.com/mtgred/netrunner/pull/6505) Fix
   deckbuilder's "Import deck" ([@locks])
 - [mtgred/netrunner] [#6504](https://github.com/mtgred/netrunner/pull/6504)

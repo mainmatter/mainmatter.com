@@ -163,7 +163,8 @@
                 "mansona/lint-to-the-future",
                 "mansona/lint-to-the-future-eslint",
                 "mansona/lint-to-the-future-ember-template",
-                "mansona/lint-to-the-future-stylelint"
+                "mansona/lint-to-the-future-stylelint",
+                "mansona/lint-to-the-future-dashboard-action"
             ]
         },
         {
@@ -187,7 +188,8 @@
                 "sinonjs/fake-timers",
                 "squash-commit-app/squash-commit-app",
                 "cookpete/auto-changelog",
-                "axmccx/proxynexus"
+                "axmccx/proxynexus",
+                "mansona/showdown-section-groups"
             ]
         },
         {
