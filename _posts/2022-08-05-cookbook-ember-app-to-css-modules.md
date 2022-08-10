@@ -310,45 +310,6 @@ custom id used to isolate the CSS. The syntax
 resulted in `<div class="right _tomster_1myv6d"></div>` in the browser so the
 class attributes and the generated CSS rules match.
 
-### One last note about `class` and `local-class`
-
-As we experienced above, `class` and `local-class` can be used together to apply
-global and local styles, everything in `local-class` ending with a different
-selector. If it makes sense, to ease the migration of your app to CSS modules,
-note that the following works:
-
-```html
-<div class="right tomster" local-class="tomster"></div>
-```
-
-```css
-/* app/styles/app.css */
-
-:global(.right) {
-  float: right;
-}
-
-:global(.tomster) {
-  width: 60px;
-  height: 60px; /* micro tomster */
-}
-```
-
-```css
-/* app/components/jumbo.css */
-
-.tomster {
-  background: url(../assets/images/teaching-tomster.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-
-  position: relative;
-  top: -25px;
-}
-```
-
-![Small 60px Tomster shows](/assets/images/posts/2022-08-05-cookbook-ember-app-to-css-modules/screen-6.png)
-
 ## Conclusion
 
 We have drawn the big picture about how `ember-css-modules` isolates CSS. The
