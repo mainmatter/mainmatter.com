@@ -78,8 +78,10 @@ layout: base
       {% if previous %}
         <a class="pagination__previous" href="{{ previous.url }}">
           <p class="cta-link">
-            <span class="cta-link__arrow cta-link__arrow--rotate">{% include 'svg/arrow.njk' %}</span>
-            <span class="cta-link__text">Previous post</span>
+            <span class="cta-link__text-wrapper">
+              <span class="cta-link__arrow cta-link__arrow--rotate">{% include 'svg/arrow.njk' %}</span>
+              <span class="cta-link__text">Previous post</span>
+            </span>
           </p>
           <p class="prev-next__title">{{ previous.data.title }}</p>
         </a>
@@ -88,8 +90,10 @@ layout: base
       {% if next %}
         <a class="pagination__next" href="{{ next.url }}">
           <p class="cta-link">
-            <span class="cta-link__text">Next post</span>
-            <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+            <span class="cta-link__text-wrapper">
+              <span class="cta-link__text">Next post</span>
+              <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+            </span>
           </p>
           <p class="prev-next__title">{{ next.data.title }}</p>
         </a>

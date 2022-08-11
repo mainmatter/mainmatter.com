@@ -39,8 +39,10 @@ workshop: A workshop object
       {{ workshop.data.description }}
     </p>
     <span class="workshop-card__cta cta-link text--accent" aria-hidden="true">
-      <span class="cta-link__text">Find out more</span>
-      <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+      <span class="cta-link__text-wrapper">
+        <span class="cta-link__text">Find out more</span>
+        <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+      </span>
     </span>
   </li>
 {%- endmacro -%}

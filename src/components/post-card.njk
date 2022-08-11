@@ -24,8 +24,10 @@ post: A post object
           <div class="post-card__mobile-content" aria-hidden="true">
             <p class="h4">{{ post.data.title }}</p>
             <span class="post-card__cta cta-link">
-              <span class="cta-link__text">Read article</span>
-              <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+              <span class="cta-link__text-wrapper">
+                <span class="cta-link__text">Read article</span>
+                <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+              </span>
             </span>
           </div>
         </div>

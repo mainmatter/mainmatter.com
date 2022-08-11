@@ -28,8 +28,10 @@
             {{ talk.templateContent | safe }}
           </div>
           <span class="talk-banner__cta cta-link" aria-hidden="true">
+            <span class="cta-link__text-wrapper">
             <span class="cta-link__text">Watch {{ talk.data.media }}</span>
             <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+            </span>
           </span>
         </div>
         <div class="talk-card__content talk-card__content--desktop">

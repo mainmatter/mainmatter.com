@@ -13,8 +13,10 @@
       {{ channel.templateContent | safe }}
     </p>
     <span class="channel-card__cta cta-link text--accent" aria-hidden="true">
-      <span class="cta-link__text">Find out more</span>
-      <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+      <span class="cta-link__text-wrapper">
+        <span class="cta-link__text">Find out more</span>
+        <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+      </span>
     </span>
   </div>
 {% endmacro %}

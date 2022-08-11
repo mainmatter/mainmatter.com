@@ -15,8 +15,10 @@
         {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %} <img class="featured-case-study__logo" src="{{ imagePath }}" alt="{{ company }}"/>
         <p class="case-study-card__tags caption">{{ caseStudy.data.hero.tags }}</p>
         <span class="case-study-card__cta featured-case-study__cta cta-link" aria-hidden="true">
-          <span class="cta-link__text">Read the case study</span>
-          <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+          <span class="cta-link__text-wrapper">
+            <span class="cta-link__text">Read the case study</span>
+            <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+          </span>
         </span>
       </div>
     </div>

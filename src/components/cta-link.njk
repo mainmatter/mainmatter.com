@@ -11,10 +11,9 @@ Example usage:
 #}
 {%- macro ctaLink(link, text, class) -%}
   <a class="cta-link {{ class }}" href="{{ link }}">
-    <span class="cta-link__text">
-      {{- text | safe -}}
+    <span class="cta-link__text-wrapper">
+      <span class="cta-link__text">{{- text | safe -}}</span>
       <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
     </span>
-
   </a>
 {%- endmacro -%}

@@ -52,8 +52,10 @@
           <h2 class="post-banner__title">{{ post.data.title }}</h2>
           <div class="post-banner__text post-banner__text--desktop">{{ authorInfo | safe }}</div>
           <span class="post-banner__cta cta-link post-banner__text post-banner__text--mobile">
-            <span class="cta-link__text">Read article</span>
-            <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+            <span class="cta-link__text-wrapper">
+              <span class="cta-link__text">Read article</span>
+              <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+            </span>
           </span>
         </div>
       </div>
