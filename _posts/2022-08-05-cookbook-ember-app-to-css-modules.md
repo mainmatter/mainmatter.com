@@ -53,7 +53,7 @@ classes locally, for instance to a single component. To read more about the
 general concept, have a look at the
 [documentation on Github](https://github.com/css-modules/css-modules).
 
-### A word `ember-css-modules`
+### A word about `ember-css-modules`
 
 [`ember-css-modules`](https://github.com/salsify/ember-css-modules) is a nice
 addon that lets developers easily integrate CSS modules to the implementation of
@@ -66,7 +66,7 @@ figuring out how to set up and start the migration at their own pace. The
 present tutorial is intended to be used as a quick start cookbook to achieve
 this.
 
-### A word about less and sass
+### A word about `less` and `sass`
 
 The usage of [less](https://lesscss.org/) and
 [sass](https://sass-lang.com/guide) will not be mentioned in this tutorial,
