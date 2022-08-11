@@ -1,16 +1,16 @@
 .post {
   --color-tag: var(--color-blue);
-  padding: 4rem 0 6.25rem;
+  padding: 0.5rem 0 6.25rem;
 }
 
 .post__header {
   background-color: var(--color-purple);
   color: var(--color-white);
-  padding: 10rem 0 4.5rem;
+  padding: 5rem 0 2rem;
 }
 
 .post__author {
-  margin-bottom: 3.25rem;
+  margin-bottom: 2.5rem;
 }
 
 .post__author-name,
@@ -66,16 +66,17 @@
 }
 
 .post__tags {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .post__date {
+  display: none;
   margin-bottom: 0.5rem;
 }
 
 .post__title {
   width: 100%;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.75rem;
 }
 
 .post__heading--anchor {
@@ -134,15 +135,23 @@
     justify-content: space-between;
   }
 
-  .post__tags,
   .post__date {
+    display: block;
     margin-bottom: 1.5rem;
+  }
+
+  .post__author {
+    margin-bottom: 3.25rem;
   }
 }
 
 @media (min-width: 48em) {
   .post {
-    padding: 6.25rem 0 8rem;
+    padding: 2rem 0 8rem;
+  }
+
+  .post__header {
+    padding: 10rem 0 4.5rem;
   }
 }
 

@@ -1,0 +1,46 @@
+.policy {
+  background-color: var(--color-purple);
+  color: var(--color-white);
+  padding: 8rem 0;
+
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  h2,
+  h3,
+  h4 {
+    font-size: rem-calc(18);
+    margin: 2.5rem 0 1.5rem;
+    line-height: 1.7;
+  }
+
+  h3 {
+    text-transform: uppercase;
+  }
+
+  h5,
+  h6 {
+    font-size: rem-calc(16);
+  }
+}
+
+.policy__subtitle {
+  margin-bottom: 1.5rem;
+}
+
+.policy__address {
+  font-style: normal;
+}
+
+@media (min-width: 72em) {
+  .policy {
+    padding: 10rem 0;
+
+    h2,
+    h3,
+    h4 {
+      font-size: rem-calc(24);
+    }
+  }
+}

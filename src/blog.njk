@@ -32,7 +32,8 @@
       </li>
     {%- endfor -%}
   </ol>
-  {{ navPagination(pagination.href.previous, pagination.href.next, 'Explore more articles') }}
+  {% if pagination.pageNumber === 0 %}{% set nextLabel = 'Explore more articles' %}{% else %}{% set nextLabel = 'Explore more articles' %}{% endif %}
+  {{ navPagination(pagination.href.previous, pagination.href.next, nextLabel) }}
 </div>
 {% set 'content' = {
   "title": "Grow <em>your business</em> with us",
