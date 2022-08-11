@@ -1,0 +1,158 @@
+.talk-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  height: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-body-text);
+}
+
+.talk-banner__image-overlay {
+  position: relative;
+  min-width: 100%;
+  color: var(--color-white);
+  aspect-ratio: initial;
+}
+
+.talk-banner__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
+
+  &--purple {
+    background-color: var(--color-purple);
+    opacity: 0.9;
+  }
+
+  &--black {
+    background-color: var(--color-black);
+    opacity: 0.8;
+  }
+}
+
+.talk-banner__image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.talk-banner__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.talk-banner__content-wrapper,
+.talk-banner__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.talk-banner__content-wrapper {
+  position: relative;
+  padding: 2.5rem 1rem 3rem;
+}
+
+.talk-banner__content {
+  width: 100%;
+  justify-content: center;
+}
+
+.talk-banner__cta {
+  margin: 2rem 0 0;
+  color: var(--color-white);
+  cursor: pointer;
+  text-decoration: underline 1px var(--color-purple);
+  text-underline-offset: 0.125rem;
+  transition: text-decoration-color 0.3s ease, color 0.3s ease;
+}
+
+.talk-banner__title {
+  margin: 1rem 0 0;
+}
+
+.talk-banner__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.talk-banner__description {
+  font-weight: 400;
+  margin: 2rem 0 0.5rem;
+}
+
+.talk-banner__logo {
+  align-self: flex-end;
+  max-width: 5rem;
+  max-height: 3.25rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 64em) {
+  .talk-banner__image-overlay {
+    position: relative;
+    min-width: 100%;
+    color: var(--color-white);
+    aspect-ratio: 21/9;
+  }
+
+  .talk-banner__content-wrapper {
+    padding: 1.5rem;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .talk-banner__content {
+    max-width: initial;
+    margin-left: 2rem;
+  }
+
+  .talk-banner__cta {
+    margin: 1.25rem 0 0;
+  }
+
+  .talk-banner__link {
+    &:hover {
+
+      &~.talk-banner__image-overlay .cta-link__text,
+      &~.talk-banner__image-overlay .cta-link__arrow svg,
+      &~.cta-link {
+        color: var(--color-aqua);
+        text-decoration-color: var(--color-aqua);
+      }
+    }
+  }
+
+  .talk-banner__cta {
+    align-self: flex-start;
+  }
+
+  .talk-banner__logo {
+    margin-bottom: 0;
+    max-width: 8.5rem;
+    max-height: 5rem;
+  }
+}
+
+@media (min-width: 72em) {
+  .talk-banner__content-wrapper {
+    padding: 1rem 1rem 4rem;
+  }
+
+  .talk-banner__content {
+    max-width: 48.75rem;
+    margin-left: 5rem;
+  }
+}

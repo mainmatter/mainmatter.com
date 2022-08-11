@@ -43,8 +43,16 @@
       ]
     },
     {
-      "heading": "Expertise",
+      "heading": "Resources",
       "links": [
+        {
+          "text": "Blog",
+          "link": "/blog/"
+        },
+        {
+          "text": "Playbook",
+          "link": "/playbook/"
+        },
         {
           "text": "Ember.js",
           "link": "/ember-consulting/"
@@ -52,14 +60,6 @@
         {
           "text": "Elixir & Phoenix",
           "link": "/expertise/elixir-phoenix/"
-        },
-        {
-          "text": "Playbook",
-          "link": "/playbook/"
-        },
-        {
-          "text": "Resources",
-          "link": "/resources/"
         }
       ]
     },
@@ -69,6 +69,10 @@
         {
           "text": "Contact us",
           "link": "/contact/"
+        },
+        {
+          "text": "Events",
+          "link": "/events/"
         }
       ]
     }

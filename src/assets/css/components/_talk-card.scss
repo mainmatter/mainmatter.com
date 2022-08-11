@@ -1,39 +1,56 @@
-.talk-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  border: rem-calc(1) solid var(--color-light-gray);
+.talk-card__image-overlay {
+  aspect-ratio: 21/9;
 }
 
-.talk-card__link {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  outline-offset: 0.25rem;
+.talk-card__content {
+  &--mobile {
+    display: block;
+  }
 
-  &:hover {
-    & ~ .talk-card__cta:before {
-      transform: scaleX(1);
-    }
+  &--desktop {
+    display: none;
   }
 }
 
-.talk-card__image-wrapper {
-  max-width: rem-calc(70);
-  margin-bottom: 0.5rem;
+.talk-card__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.talk-card__logo {
+  max-width: 5rem;
+  max-height: 3.25rem;
 }
 
 .talk-card__description {
-  margin: 0.5rem 0;
-  font-size: rem-calc(13);
+  margin: 2rem 0 0.5rem;
 }
 
-.talk-card__cta {
-  margin-top: auto;
-  align-self: flex-start;
+@media (min-width: 64em) {
+  .talk-card__image-overlay {
+    aspect-ratio: 9/8;
+  }
+
+  .talk-card__content {
+    &--mobile {
+      display: none;
+    }
+
+    &--desktop {
+      display: flex;
+    }
+  }
+
+  .talk-card__description {
+    margin: 0.5rem 0 0;
+    font-size: 0.875rem;
+    line-height: 1.8;
+  }
+
+  .talk-card__logo {
+    max-width: 6rem;
+    max-height: 3.25rem;
+  }
 }

@@ -6,25 +6,39 @@ eleventyNavigation:
   key: Talks
   parent: Resources
 ---
-{% from "channel-card.njk" import channelCard %}
-{% from "talk-card.njk" import talkCard %}
-<div class="container container--lg talks">
-  <div class="section__introduction">
-    <h1 class="section__title">Guidance from our team of trusted industry experts</h1>
-    <p class="container--sm">Mainmatter's guiding principles of collaboration and knowledge transfer extend well beyond our client work. Here is a collection of conference talks and other presentations that members of our team have given at various events all over the world over the years.</p>
-  </div>
-  <h2 class="section__subtitle">Latest Talks</h2>
 
-  <ol class="talks__channel-list">
-    {%- for channel in collections.channelsAppearances -%}
-      <li class="talks__channel-grid">
-        {{ channelCard(channel) }}
-        {% for appearance in channel.appearances %}
-          {{ talkCard(appearance) }}
-        {% endfor %}
-      </li>
-    {%- endfor -%}
-  </ol>
+{% from "color-hero.njk" import colorHero %}
+{% from "talk-banner.njk" import talkBanner %}
+{% from "talk-card.njk" import talkCard %}
+
+{% set 'content' = {
+"title": "Guidance from our team of <em>trusted</em> industry experts",
+"image": "/assets/images/photos/events.jpg",
+"alt": "Mainmatter team member seen from the back presenting to an audience",
+"loading": "eager",
+"titleTag": "h1"
+} %}
+{{ colorHero('center', 'large', 'black', false, content) }}
+
+<div class="talks section">
+  <div class="section__introduction container container--xl">
+    <h2 class="section__title h5">Browse our past talks</h2>
+  </div>
+  <div class="talks__container">
+    <ol class="talks__list">
+      {% for appearance in collections.appearances %}
+        {% if loop.index === 1 %}
+          <li class="talks__item talks__item--full-width">
+            {{ talkBanner(appearance, "black") }}
+          </li>
+        {% else %}
+          <li class="talks__item"{% if loop.index === 11 %} id="more-talks"{% endif %}>
+            {{ talkCard(appearance, "black") }}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+  </div>
 </div>
 
-{% include 'content/hero-playbook.njk' %}
+{% include 'content/hero-grow-with-us.njk' %}

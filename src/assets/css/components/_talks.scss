@@ -2,17 +2,53 @@
   margin: 2.5rem auto 5rem;
 }
 
-.talks__channel-list {
+.talks__container {
+  padding-bottom: 5rem;
+}
+
+.talks__list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.talks__channel-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14.25rem, 1fr));
-  gap: 1.5rem;
-  width: 100%;
-  padding: 2rem 0;
-  border-top: rem-calc(1) solid currentColor;
+.talks__item {
+  &--full-width {
+    grid-column: span 3 / span 3;
+  }
+
+  &+& {
+    margin-top: 3rem;
+  }
+}
+
+.talks__cta-wrapper {
+  text-align: right;
+  margin: 5rem 0 0;
+}
+
+@media (min-width: 64em) {
+  .talks__container {
+    width: 90%;
+    max-width: 86rem;
+    margin: 0 auto;
+  }
+
+  .talks__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .talks__item {
+    &+& {
+      margin-top: 5rem;
+    }
+
+    &:nth-of-type(2),
+    &:nth-of-type(3),
+    &:nth-of-type(4) {
+      margin-top: 0;
+    }
+  }
 }

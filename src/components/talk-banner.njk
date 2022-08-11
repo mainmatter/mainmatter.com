@@ -1,0 +1,39 @@
+{% macro talkBanner(talk, color) %}
+  <div class="talk-banner">
+    <a class="talk-banner__link" href="{{ talk.data.url }}">
+      <h3 class="screenreader">{{ talk.data.title }}</h3>
+    </a>
+    <div class="talk-banner__image-overlay">
+
+      {% if talk.data.channel %}
+        {% set channel = talk.data.channel | findBySlug %}
+      {% endif %}
+
+      {% if talk.data.image %}
+        <div class="talk-banner__image-wrapper">
+          {% image talk.data.image, "", '(min-width: 48em) 60rem, 90vw', "eager",
+          'talk-banner__image', [760, 1440, 1920] %}
+        </div>
+        <div class="talk-banner__overlay talk-banner__overlay--{{ color }}"></div>
+      {% endif %}
+      <div class="talk-banner__content-wrapper">
+        {% if channel.data.image %}
+          <img class="talk-banner__logo" src="{{ channel.data.image }}" alt="{{ channel.data.title }} logo" />
+        {% endif %}
+        <div class="talk-banner__content">
+          {% if channel.data.title %}
+            <p class="h5">{{ channel.data.title }}</p>
+          {% endif %}
+          <p class="talk-banner__title h3">{{ talk.data.title }}</p>
+          <div class="talk-banner__description caption">
+            {{ talk.templateContent | safe }}
+          </div>
+          <span class="talk-banner__cta cta-link" aria-hidden="true">
+            <span class="cta-link__text">Watch {{ talk.data.media }}</span>
+            <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}

@@ -1,50 +1,88 @@
 .event-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14.25rem, 1fr));
-  gap: rem-calc(26);
   margin: 0;
   padding: 0;
   list-style: none;
+  margin-bottom: 5rem;
 }
+
+
 
 .event-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  border: rem-calc(1) solid var(--color-light-gray);
+
+  &--purple {
+    background-color: var(--color-purple);
+    color: var(--color-white);
+    --color-link-primary: var(--color-white);
+    --color-link-primary-hover: var(--color-aqua);
+  }
+
+  &--aqua {
+    background-color: var(--color-aqua);
+    color: var(--color-white);
+    --color-link-primary: var(--color-white);
+    --color-link-primary-hover: var(--color-purple);
+  }
+
+  &+& {
+    margin-top: 2.5rem;
+  }
 }
 
-.event-card__image-wrapper {
-  margin-bottom: 1.5rem;
-  order: -1;
+.event-card__description {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.event-card__content-wrapper {
+  padding: 2rem 1rem 2.5rem;
 }
 
 .event-card__image {
   display: block;
   width: 100%;
-  aspect-ratio: 263 / 140;
-  object-fit: contain;
-  object-position: left center;
+  aspect-ratio: 23 / 4;
+  object-fit: cover;
+  object-position: center;
 }
 
-.event-card__meta {
-  display: flex;
-  margin-top: 1.5rem;
-  padding: 0.5rem 0;
-  gap: 2rem;
-  border-top: 0.125rem solid currentColor;
-  border-bottom: 0.125rem solid currentColor;
-  font-weight: 600;
-  font-size: rem-calc(13);
-}
-
-.event-card__description {
-  margin: 1.5rem 0;
-  font-size: rem-calc(13);
+.event-card__title {
+  margin: 0.75rem 0 1.5rem;
 }
 
 .event-card__cta {
-  align-self: flex-start;
-  margin-top: auto;
+  margin-top: 2rem;
+}
+
+@media (min-width: 64em) {
+  .event-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3.25rem;
+  }
+
+  .event-card {
+    &+& {
+      margin-top: 0;
+    }
+  }
+
+  .event-cards__wrapper {
+    width: 90%;
+    max-width: 86rem;
+    margin: 0 auto;
+  }
+
+  .event-card__content-wrapper {
+    padding: 2rem 12% 2.5rem;
+  }
+
+  .event-card__description {
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
 }

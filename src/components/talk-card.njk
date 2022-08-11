@@ -1,26 +1,56 @@
 {%- macro talkCard(talk) -%}
-  <div class="talk-card">
-    <a href="{{ talk.data.url }}" class="talk-card__link">
+  <div class="talk-card talk-banner">
+    <a class="talk-banner__link" href="{{ talk.data.url }}">
       <h3 class="screenreader">{{ talk.data.title }}</h3>
     </a>
-    <div class="talk-card__image-wrapper">
-      {% image talk.data.image, "", '4.375rem', 'lazy', 'talk-card__image', [70, 140] %}
-    </div>
-    <p class="talk-card__title h3" aria-hidden="true">
-      {{ talk.data.title }}
-    </p>
-    <div class="talk-card__description">
-      {{ talk.templateContent | safe }}
-    </div>
-    <span class="talk-card__cta cta-link text--accent">
-      <span class="cta-link__text">
-        {% if talk.data.media === 'video' %}
-          Watch Video
-        {% elif talk.data.media === 'podcast' %}
-          Listen to Episode
+    <div class="talk-card__image-overlay talk-banner__image-overlay">
+      {% if talk.data.channel %}
+      {% set channel = talk.data.channel | findBySlug %}
+      {% endif %}
+
+      {% if talk.data.image %}
+      <div class="talk-banner__image-wrapper">
+        {% image talk.data.image, "", '(min-width: 48em) 60rem, 90vw', "eager",
+        'talk-banner__image', [760, 1440, 1920] %}
+      </div>
+      <div class="talk-banner__overlay talk-banner__overlay--black"></div>
+      {% endif %}
+      <div class="talk-banner__content-wrapper">
+        {% if channel.data.image %}
+          <img class="talk-card__logo talk-banner__logo" src="{{ channel.data.image }}" alt="{{ channel.data.title }} logo" />
         {% endif %}
-      </span>
-      <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
-    </span>
+        <div class="talk-card__content talk-card__content--mobile">
+          {% if channel.data.title %}
+          <p class="h5">{{ channel.data.title }}</p>
+          {% endif %}
+          <p class="talk-banner__title h3">{{ talk.data.title }}</p>
+          <div class="talk-banner__description caption">
+            {{ talk.templateContent | safe }}
+          </div>
+          <span class="talk-banner__cta cta-link" aria-hidden="true">
+            <span class="cta-link__text">Watch {{ talk.data.media }}</span>
+            <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+          </span>
+        </div>
+        <div class="talk-card__content talk-card__content--desktop">
+          <svg class="talk-card__icon" aria-hidden="true" focusable="false" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.59761"
+              d="M29 58C45.0163 58 58 45.0163 58 29C58 12.9837 45.0163 0 29 0C12.9837 0 0 12.9837 0 29C0 45.0163 12.9837 58 29 58Z"
+              fill="white" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M41.2578 29.2989L17.3403 41.2576L17.3403 17.3401L41.2578 29.2989Z"
+              fill="white" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="talk-card__content--desktop">
+      <div class="talk-card__content-inner">
+        <p class="talk-banner__title h4">{{ talk.data.title }}</p>
+        <div class="talk-card__description">
+          {{ talk.templateContent | safe }}
+        </div>
+      </div>
+    </div>
   </div>
 {% endmacro %}
+

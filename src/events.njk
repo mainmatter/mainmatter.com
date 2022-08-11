@@ -1,0 +1,70 @@
+---
+layout: 'base'
+title: Events
+description: Find out about upcoming events, conferences and meetups we will be attending or organizing.
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "event-card.njk" import eventCard %}
+{% from "talk-banner.njk" import talkBanner %}
+{% from "talk-card.njk" import talkCard %}
+{% from "cta-link.njk" import ctaLink %}
+
+{% set 'content' = {
+"title": "Guidance from our team of <em>trusted</em> industry experts",
+"image": "/assets/images/photos/events.jpg",
+"alt": "Mainmatter team member seen from the back presenting to an audience",
+"loading": "eager",
+"titleTag": "h1"
+} %}
+{{ colorHero('center', 'large', 'black', false, content) }}
+
+<div class="section container container--lg">
+  <div class="section__introduction">
+    <h2 class="section__title h4">Mainmatter's guiding principles of collaboration and knowledge transfer extend well beyond our client
+      work.</h2>
+    <p>Find out about upcoming events, conferences and meetups we will be attending or organizing.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container container--xl">
+    <h2 class="section__introduction h5">Upcoming events</h2>
+  </div>
+  <div class="event-cards__wrapper">
+    <ul class="event-cards">
+      {% for event in collections.calendar %}
+      {{ eventCard(event) }}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--xl">
+    <h2 class="section__introduction h5">Browse our past talks</h2>
+  </div>
+  <div class="talks__container">
+    <ol class="talks__list">
+      {% for appearance in collections.appearances %}
+        {% if loop.index === 1 %}
+          <li class="talks__item talks__item--full-width">
+            {{ talkBanner(appearance, "black") }}
+          </li>
+        {% elif loop.index < 11 %}
+          <li class="talks__item">
+            {{ talkCard(appearance, "black") }}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+    {% if collections.appearances.length > 10 %}
+      <div class="talks__cta-wrapper">
+        {{ ctaLink('/talks/#more-talks', 'Load more videos', '') }}
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% include 'content/hero-grow-with-us.njk' %}
