@@ -60,7 +60,7 @@ addon that lets developers easily integrate CSS modules to the implementation of
 their Ember apps and addon.
 
 Installing `ember-css-modules` in an existing Ember app triggers some breaking
-changes in the way the developer should handle the app style. If the developer
+changes in the way the developer should handle the app styles. If the developer
 is not familiar with CSS modules in the first place, they might have a hard time
 figuring out how to set up and start the migration at their own pace. The
 present tutorial is intended to be used as a quick start cookbook to achieve
@@ -92,7 +92,7 @@ Let's suppose we have finished implementing the SuperRentals app. The following
 screenshot shows the page as it should be in your browser, with the nice styling
 provided in the tutorial:
 
-![SuperRental with global CSS](/assets/images/posts/2022-08-05-cookbook-ember-app-to-css-modules/screen-1.png)
+![SuperRentals with global CSS](/assets/images/posts/2022-08-05-cookbook-ember-app-to-css-modules/screen-1.png)
 
 To use CSS modules, let's install
 [`ember-css-modules`](https://github.com/salsify/ember-css-modules):
@@ -106,7 +106,7 @@ the dependency to `package.json` and modifies the lock file.
 
 Let's run the local server again and see how our app is doing:
 
-![SuperRental style is broken](/assets/images/posts/2022-08-05-cookbook-ember-app-to-css-modules/screen-2.png)
+![SuperRentals styles are broken](/assets/images/posts/2022-08-05-cookbook-ember-app-to-css-modules/screen-2.png)
 
 Ouch, all the styles are broken. What we see now in the browser is very similar
 to a page with no CSS at all. To understand what is going on let's use the
