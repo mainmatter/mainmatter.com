@@ -57,7 +57,7 @@
   }
 
   &:hover svg {
-    color: var(--color-aqua);
+    color: var(--color-accent);
   }
 }
 
@@ -88,11 +88,11 @@
   transition: color 0.3s ease;
 
   &:hover {
-    color: var(--color-aqua);
+    color: var(--color-accent);
 
     .nav-submenu__link-text {
       text-decoration-line: underline;
-      text-decoration-color: rgba(2, 206, 186, 1);
+      text-decoration-color: rgba(var(--color-accent), 1);
     }
   }
 
@@ -105,7 +105,7 @@
 }
 
 .nav-submenu__link-text {
-  text-decoration-color: rgba(2, 206, 186, 0);
+  text-decoration-color: rgba(var(--color-accent), 0);
   text-underline-offset: 0.25rem;
   transition: text-decoration-color 0.3s ease;
 }

@@ -1,6 +1,15 @@
 {% from "social-list.njk" import socialList %}
 {% set navPages = collections.all | eleventyNavigation %}
-<nav class="nav" id="nav">
+
+{% if page.url == '/services/workshops/' or page.url == '/services/digital-products-and-design/' or page.url ==
+'/services/team-augmentation-and-training/' or page.url == '/work/' or page.url == '/playbook/' or page.url ==
+'/events/' %}
+  {% set ctaColor = 'purple' %}
+{% else %}
+  {% set ctaColor = 'aqua' %}
+{% endif %}
+
+<nav class="nav nav--accent-{{ ctaColor }}" id="nav">
   <div class="nav__wrapper container container--xl">
     <div class="nav__logo">
       {% set tag = 'a' %}
@@ -53,7 +62,7 @@
       {%- endfor %}
     </ul>
     <div class="nav__aside">
-      <a class="nav__cta text--sm" href="/contact/">
+      <a class="nav__cta nav__cta--{{ ctaColor }} text--sm" href="/contact/">
         Contact us
       </a>
       <div class="nav__mobile-menu-wrapper" data-has-modal>

@@ -22,7 +22,7 @@
 .nav-aside__cta {
   padding: 0.75rem 0.8rem;
   line-height: 1;
-  background-color: var(--color-aqua);
+  background-color: var(--color-accent);
   color: var(--color-white);
   text-decoration: none;
   font-weight: 700;
@@ -53,7 +53,7 @@
     transition: background-color ease 0.3s;
 
     &:hover {
-      background-color: var(--color-purple);
+      background-color: var(--color-accent-hover);
     }
   }
 }
