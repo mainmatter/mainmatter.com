@@ -189,7 +189,8 @@
                 "squash-commit-app/squash-commit-app",
                 "cookpete/auto-changelog",
                 "axmccx/proxynexus",
-                "mansona/showdown-section-groups"
+                "mansona/showdown-section-groups",
+                "calibreapp/image-actions"
             ]
         },
         {

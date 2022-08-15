@@ -132,6 +132,10 @@ some of the work they have done the past weeks!
 - [mansona/showdown-section-groups]
   [#1](https://github.com/mansona/showdown-section-groups/pull/1) move to GitHub
   actions ([@mansona])
+- [calibreapp/image-actions]
+  [#126](https://github.com/calibreapp/image-actions/pull/126) fix(entrypoint):
+  exit(0) when pull_request.<event> is not 'synchronize' or 'opened'
+  ([@oscard0m])
 
 ## Octokit
 
@@ -141,23 +145,6 @@ some of the work they have done the past weeks!
 - [octokit/webhooks-methods.js]
   [#66](https://github.com/octokit/webhooks-methods.js/pull/66) ci(test): re-use
   Octokit's test.yml action ([@oscard0m])
-
-## Unknown
-
-- [calibreapp/image-actions]
-  [#126](https://github.com/calibreapp/image-actions/pull/126) fix(entrypoint):
-  exit(0) when pull_request.<event> is not 'synchronize' or 'opened'
-  ([@oscard0m])
-- [locks/netrunner] [#2](https://github.com/locks/netrunner/pull/2) Create
-  ci.yml ([@locks])
-- [mtgred/netrunner] [#6505](https://github.com/mtgred/netrunner/pull/6505) Fix
-  deckbuilder's "Import deck" ([@locks])
-- [mtgred/netrunner] [#6504](https://github.com/mtgred/netrunner/pull/6504)
-  Implement CI as a GitHub Action ([@locks])
-- [mtgred/netrunner] [#6503](https://github.com/mtgred/netrunner/pull/6503) Fix
-  "Swap sides" chat messages in pending lobby ([@locks])
-- [mtgred/netrunner] [#6491](https://github.com/mtgred/netrunner/pull/6491)
-  "Into The Depths" install from the stack, not R&D ([@locks])
 
 [@bobrimperator]: https://github.com/BobrImperator
 [@mikek2252]: https://github.com/Mikek2252
@@ -184,13 +171,11 @@ some of the work they have done the past weeks!
   https://github.com/empress/guidemaker-default-template
 [empress/guidemaker]: https://github.com/empress/guidemaker
 [kivikakk/comrak]: https://github.com/kivikakk/comrak
-[locks/netrunner]: https://github.com/locks/netrunner
 [mansona/lint-to-the-future-dashboard-action]:
   https://github.com/mansona/lint-to-the-future-dashboard-action
 [mansona/lint-to-the-future]: https://github.com/mansona/lint-to-the-future
 [mansona/showdown-section-groups]:
   https://github.com/mansona/showdown-section-groups
-[mtgred/netrunner]: https://github.com/mtgred/netrunner
 [octokit/auth-oauth-user.js]: https://github.com/octokit/auth-oauth-user.js
 [octokit/webhooks-methods.js]: https://github.com/octokit/webhooks-methods.js
 [rust-lang/crates.io]: https://github.com/rust-lang/crates.io
