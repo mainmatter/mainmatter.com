@@ -15,7 +15,6 @@ permalink: /ember-consulting/
   <div class="color-hero__image-wrapper">
     {% image '/assets/images/ember/ember.jpg', 'Audience facing a presentation at a conference', '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
   </div>
-  <div class="color-hero__filter"></div>
   <div class="color-hero__overlay"></div>
   <div class="color-hero__container container container--lg color-hero__container--center">
     <div class="color-hero__main">
@@ -115,7 +114,7 @@ permalink: /ember-consulting/
   "alt": "Still of Ember.js documentary showing two people looking at a laptop",
   "loading": "lazy"
 } %}
-{{ colorHero('center', 'small', 'aqua', false, content) }}
+{{ colorHero('center', 'small', 'aqua', content) }}
 
 {{ recentPosts("Latest from our blog on the topic", collections["ember"]) }}
 

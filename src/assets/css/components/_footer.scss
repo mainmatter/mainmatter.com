@@ -20,9 +20,10 @@
 .footer__socials {
   margin-top: 3.5rem;
   color: var(--color-white);
+  justify-content: flex-end;
 
   .social__link:hover {
-    color: var(--color-yellow);
+    color: var(--color-aqua);
   }
 }
 
@@ -34,12 +35,12 @@
 
 .footer__copyright {
   display: inline;
-  margin-right: 1.5rem;
+  margin-right: 0.5rem;
 }
 
 .footer__inline-link {
-  margin-right: 1.5rem;
-  font-size: 0.875rem;
+  margin-right: 0.5rem;
+  font-size: 0.75rem;
   text-transform: lowercase;
 }
 
@@ -60,6 +61,15 @@
 
   .footer__menu {
     margin-top: 0;
+  }
+
+  .footer__copyright {
+    margin-right: 1.5rem;
+  }
+
+  .footer__inline-link {
+    font-size: 0.875rem;
+    margin-right: 1.5rem;
   }
 }
 

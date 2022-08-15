@@ -32,7 +32,7 @@
       </li>
     {%- endfor -%}
   </ol>
-  {% if pagination.pageNumber === 0 %}{% set nextLabel = 'Explore more articles' %}{% else %}{% set nextLabel = 'Explore more articles' %}{% endif %}
+  {% if pagination.pageNumber === 0 %}{% set nextLabel = 'Explore more articles' %}{% else %}{% set nextLabel = 'Next' %}{% endif %}
   {{ navPagination(pagination.href.previous, pagination.href.next, nextLabel) }}
 </div>
 {% set 'content' = {
@@ -44,4 +44,4 @@
   "alt": "Team member leaning against wall taking notes while talking to three other team members",
   "loading": "lazy"
 } %}
-{{ colorHero('center', 'small', 'aqua', true, content) }}
+{{ colorHero('center', 'small', 'aqua', content) }}

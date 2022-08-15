@@ -15,7 +15,7 @@ export class Animations {
     lax.addElements("[data-color-hero]", {
       scrollY: {
         translateY: [
-          ["elInY", "elCenterY"],
+          ["elInY-700", "elCenterY-300"],
           ["elHeight", 0],
         ],
       },
@@ -53,10 +53,8 @@ export class Animations {
         scaleX: [
           // Todo: Come back and refine this, sizing may change things
           {
-            768: ["elCenterY", "elOutY-200"],
-            1024: ["elOutY-100", "elOutY-80"],
-            1366: ["elOutY-200", "elOutY-100"],
-            1900: ["elOutY-250", "elOutY-120"],
+            768: ["elCenterY-200", "elOutY-200"],
+            1024: ["elCenterY-200", "elOutY-400"],
           },
           [1, 0],
         ],

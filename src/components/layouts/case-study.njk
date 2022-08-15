@@ -13,7 +13,6 @@ layout: base
         {% image hero.image, hero.imageAlt, '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
       {% endif %}
     </div>
-    <div class="color-hero__filter"></div>
     <div class="color-hero__overlay"></div>
     <div class="color-hero__container container container--lg color-hero__container--{{ hero.textPosition }}">
       <div class="color-hero__main">
@@ -56,6 +55,6 @@ layout: base
   "alt": "Three team members gathered around their laptops and tablets",
   "loading": "lazy"
   } %}
-  {{ colorHero('center', 'small', 'aqua', true, content) }}
+  {{ colorHero('center', 'small', 'aqua', content) }}
 
 {%- endblock -%}

@@ -4,7 +4,6 @@ A hero image with a color overlay on top
 Configuration Options:
 textPosition: One of 'top' 'center' or 'bottom'
 textSize: One of 'small' or 'large'
-isAnimated: Boolean
 color: One of the core brand colors
 
 content: A content block with the following options:
@@ -31,7 +30,7 @@ Example usage:
 {{ colorHero('center', 'large', 'blue', false, content) }}
 #}
 {% from "cta-link.njk" import ctaLink %}
-{%- macro colorHero(textPosition, textSize, color, isAnimated, content) -%}
+{%- macro colorHero(textPosition, textSize, color, content) -%}
   <section class="color-hero color-hero--{{ color }}">
     {%- if content.titleTag -%}
       {%- set titleTag = content.titleTag -%}
@@ -43,8 +42,7 @@ Example usage:
         {% image content.image, content.alt, '100vw', content.loading, 'color-hero__image', [760, 1440, 1920] %}
       {% endif %}
     </div>
-    <div class="color-hero__filter" {% if isAnimated %} data-color-hero {% endif %}></div>
-    <div class="color-hero__overlay" {% if isAnimated %} data-color-hero {% endif %}></div>
+    <div class="color-hero__overlay" data-color-hero></div>
     <div class="color-hero__container container container--lg color-hero__container--{{ textPosition }}">
       <div class="color-hero__main">
         {% if content.title %}
