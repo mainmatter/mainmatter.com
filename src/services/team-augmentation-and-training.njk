@@ -8,7 +8,9 @@ eleventyNavigation:
 
 {% from "color-hero.njk" import colorHero %}
 {% from "text-with-list.njk" import textWithList %}
+{% from "scroll-slides.njk" import scrollSlides %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
+
 {% set 'content' = {
   "title": "Accelerate your growth with <em>dedicated</em> specialists",
   "image": "/assets/images/photos/mainmatter-team-brainstorm.jpg",
@@ -23,6 +25,31 @@ eleventyNavigation:
   "text": "Let our technology experts merge with your in-house product teams to ensure the timely delivery of large-scale projects. We’re more than hired hands—we mentor your team throughout the process to help lift productivity long after our collaboration ends."
 } %}
 {{ textWithList(content) }}
+
+{% set 'slide_1' = {
+  "color": "white",
+  "title": "Deliver on time and budget",
+  "text": "We will help you gain a deeper understanding of the potential risk factors in your codebase that you may be unaware of,
+  and point out opportunities for you to move faster and accomplish your goals with less friction."
+} %}
+
+{% set 'slide_2' = {
+  "color": "purple",
+  "title": "Gain a fresh perspective",
+  "text": "Our team will help you gain a deeper understanding of the potential risk factors in your codebase that you may be
+  unaware of, and point out opportunities for you to move faster and accomplish your goals with less friction."
+} %}
+
+{% set 'slide_3' = {
+  "color": "black",
+  "title": "Boost productivity",
+  "text": "Mentorship is central to our augmentation projects. We ensure that your team will become more efficient and impactful
+  over the long term — well beyond our joint ventures."
+} %}
+
+{% set slides = [slide_1, slide_2, slide_3] %}
+{{ scrollSlides(slides, page.url) }}
+
 {% set image = {
   "imgPath": "/assets/images/photos/team-meeting.jpg",
   "alt": "Three team members looking at a computer screen",

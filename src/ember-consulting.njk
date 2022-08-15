@@ -34,6 +34,78 @@ permalink: /ember-consulting/
 } %}
 {{ textWithList(content, "white") }}
 
+{% set 'slide_1' = {
+"color": "white",
+"title": "Ember simple auth",
+"text": "Authentication management for Ember.js applications.",
+"icon": "/assets/images/ember/ember-simple-auth.svg",
+"linkUrl": "https://github.com/simplabs/ember-simple-auth",
+"linkText": "View on github"
+} %}
+
+{% set 'slide_2' = {
+"color": "purple",
+"title": "Ember test selectors",
+"text": "Enabling better element selectors in Ember.js tests.",
+"icon": "/assets/images/ember/ember-test-selectors.svg",
+"linkUrl": "https://github.com/simplabs/ember-test-selectors",
+"linkText": "View on github"
+} %}
+
+{% set 'slide_3' = {
+"color": "black",
+"title": "Ember cookies",
+"text": "Cookie handling for Ember.js apps - in the browser and FastBoot.",
+"icon": "/assets/images/ember/ember-cookies.svg",
+"linkUrl": "https://github.com/simplabs/ember-cookies",
+"linkText": "View on github"
+} %}
+
+{% set 'slide_4' = {
+"color": "white",
+"title": "Qunit DOM",
+"text": "High Level DOM Assertions for QUnit with an expressive API.",
+"icon": "/assets/images/ember/qunit-dom.svg",
+"linkUrl": "https://github.com/simplabs/qunit-dom",
+"linkText": "View on github"
+} %}
+
+{% set slides = [slide_1, slide_2, slide_3, slide_4] %}
+
+<section class="scroll-slides" id="scroll-slides">
+  {% for slide in slides %}
+    {% set slideIndex = loop.index %}
+    <div id="slide-{{ loop.index }}" class="scroll-slides__slide scroll-slides__slide--{{ slide.color }}"
+      data-scroll-slide>
+      <div class="scroll-slides__container container container--xl">
+        <ol class="scroll-slides__pagination" aria-label="Slide pagination">
+          {% for slide in slides %}
+          <li class="scroll-slides__pagination-item">
+            <button class="scroll-slides__pagination-button" data-pagination="{{ loop.index0 }}">
+              <span class="screenreader">Slide {{ loop.index }}{% if slideIndex == loop.index %} (Current slide){% endif
+                %}</span>
+              <span
+                class="scroll-slides__pagination-span{% if slideIndex == loop.index %} scroll-slides__pagination-span--active{% endif %}"
+                aria-hidden></span>
+              </button>
+          </li>
+          {% endfor %}
+        </ol>
+        <div class="scroll-slides__icon" aria-hidden="true">
+          <img class="" src="{{ slide.icon }}" alt="" />
+        </div>
+        <div class="scroll-slides__content">
+          <h2 class="scroll-slides__title">{{ slide.title }}</h2>
+          <p class="scroll-slides__text">{{ slide.text }}</p>
+          {% if slide.linkUrl and slide.linkText %}
+          {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
 {% set 'content' = {
   "title": "Ember.js: The Documentary",
   "text": "Several of our team members appear in the Ember.js documentary. We were pleased to welcome the film crew at our office in Munich and again at EmberFest in Amsterdam.",

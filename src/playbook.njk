@@ -7,6 +7,7 @@ permalink: /playbook/
 
 {% from "color-hero.njk" import colorHero %}
 {% from "text-with-list.njk" import textWithList %}
+{% from "cta-link.njk" import ctaLink %}
 
 {% set 'content' = {
 "title": "Build <em>lasting</em> products systematically",
@@ -30,6 +31,63 @@ individuals looking to make their team more effective.",
 "linkText": "Download our playbook"
 } %}
 {{ textWithList(content) }}
+
+{% set 'slide_1' = {
+"color": "purple",
+"tagline": "Organization of this book",
+"title": "1. Digital product projects",
+"text": "Iterating in small increments and validating assumptions at every step of the process allows addressing business needs
+with digital products effectively.",
+"linkUrl": "https://github.com/simplabs/playbook/releases/download/1.1/simplabs-Playbook.pdf",
+"linkText": "Download the playbook"
+} %}
+
+{% set 'slide_2' = {
+"color": "black",
+"tagline": "Organization of this book",
+"title": "2. Development Process",
+"text": "Organizing and preparing work based on the input of all project shareholders maximizes a team's effectiveness and output
+quality.",
+"linkUrl": "https://github.com/simplabs/playbook/releases/download/1.1/simplabs-Playbook.pdf",
+"linkText": "Download the playbook"
+} %}
+
+{% set slides = [slide_1, slide_2] %}
+
+<section class="scroll-slides" id="scroll-slides">
+  {% for slide in slides %}
+  {% set slideIndex = loop.index %}
+  <div id="slide-{{ loop.index }}" class="scroll-slides__slide scroll-slides__slide--{{ slide.color }}"
+    data-scroll-slide>
+    <div class="scroll-slides__container container container--xl">
+      <ol class="scroll-slides__pagination" aria-label="Slide pagination">
+        {% for slide in slides %}
+        <li class="scroll-slides__pagination-item">
+          <button class="scroll-slides__pagination-button" data-pagination="{{ loop.index0 }}">
+            <span class="screenreader">Slide {{ loop.index }}{% if slideIndex == loop.index %} (Current slide){% endif
+              %}</span>
+            <span
+              class="scroll-slides__pagination-span{% if slideIndex == loop.index %} scroll-slides__pagination-span--active{% endif %}"
+              aria-hidden></span>
+          </button>
+        </li>
+        {% endfor %}
+      </ol>
+      <div class="scroll-slides__content">
+        <p class="scroll-slides__tagline h5">{{ slide.tagline }}</p>
+        <h2 class="scroll-slides__title">{{ slide.title }}</h2>
+        <p class="scroll-slides__text">{{ slide.text }}</p>
+        {% if slide.linkUrl and slide.linkText %}
+        {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
+        {% endif %}
+      </div>
+      <div class="scroll-slides__image-wrapper">
+        {% image '/assets/images/playbook/playbook-cover.jpg', 'Mainmatter Playbook cover', '20rem', 'lazy', 'scroll-slides__image', [640] %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</section>
 
 {% set 'content' = {
 "title": "Grow <em>your business</em> with us",
