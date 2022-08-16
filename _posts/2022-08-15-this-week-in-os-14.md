@@ -134,7 +134,7 @@ some of the work they have done the past weeks!
   actions ([@mansona])
 - [calibreapp/image-actions]
   [#126](https://github.com/calibreapp/image-actions/pull/126) fix(entrypoint):
-  exit(0) when pull_request.<event> is not 'synchronize' or 'opened'
+  exit(0) when pull_request.&lt;event&gt; is not 'synchronize' or 'opened'
   ([@oscard0m])
 
 ## Octokit
