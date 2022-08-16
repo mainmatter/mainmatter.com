@@ -3,8 +3,8 @@ layout: base
 ---
 
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
-{% from "author-link.njk" import authorLink %}
 {% from "author-socials.njk" import authorSocials %}
+{% from "color-hero.njk" import colorHero %}
 
 {%- block content -%}
 <article>
@@ -102,3 +102,14 @@ layout: base
   </div>
 </article>
 {%- endblock -%}
+
+{% set 'content' = {
+"title": "Grow <em>your business</em> with us",
+"text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+"linkUrl": "/contact/",
+"linkText": "Get in touch",
+"image": "/assets/images/photos/grow-with-us-blog.jpg",
+"alt": "Team member leaning against wall taking notes while talking to three other team members",
+"loading": "lazy"
+} %}
+{{ colorHero('center', 'small', 'aqua', content) }}

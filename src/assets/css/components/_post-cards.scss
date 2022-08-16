@@ -52,7 +52,7 @@
 
 .post-card__title {
   display: none;
-  margin-bottom: var(--spacing);
+  margin-bottom: 1.25rem;
 
   a {
     text-decoration: none;
@@ -62,6 +62,7 @@
 .post-card__internal-link {
   position: relative;
   z-index: 3;
+  padding-right: 0.125rem;
 }
 
 .post-card__image-overlay {

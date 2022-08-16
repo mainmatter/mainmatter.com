@@ -30,7 +30,7 @@
 
   &--black {
     background-color: var(--color-black);
-    opacity: 0.8;
+    opacity: 0.6;
   }
 }
 
@@ -58,7 +58,7 @@
 
 .talk-banner__content-wrapper {
   position: relative;
-  padding: 2.5rem 1rem 3rem;
+  padding: 1rem 1rem 2.5rem;
 }
 
 .talk-banner__content {
@@ -67,16 +67,17 @@
 }
 
 .talk-banner__cta {
-  margin: 2rem 0 0;
+  margin: 1.25rem 0 0;
   color: var(--color-white);
   cursor: pointer;
   text-decoration: underline 1px var(--color-purple);
   text-underline-offset: 0.125rem;
+  text-decoration-thickness: 0.0625rem;
   transition: text-decoration-color 0.3s ease, color 0.3s ease;
 }
 
 .talk-banner__title {
-  margin: 1rem 0 0;
+  margin: 0.5rem 0 0;
 }
 
 .talk-banner__link {
@@ -90,7 +91,7 @@
 
 .talk-banner__description {
   font-weight: 400;
-  margin: 2rem 0 0.5rem;
+  margin: 1.5rem 0 0;
 }
 
 .talk-banner__logo {
@@ -149,6 +150,10 @@
 @media (min-width: 72em) {
   .talk-banner__content-wrapper {
     padding: 1rem 1rem 4rem;
+  }
+
+  .talk-banner__description {
+    font-weight: 700;
   }
 
   .talk-banner__content {

@@ -26,7 +26,7 @@ permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/p
 
       <div class="author-header__text-wrapper">
         <h1 class="h3">All posts by {{ paged.author.data.name }}</h1>
-        <h2 class="author-header__subheading h4">{{ paged.author.data.bio }}</h2>
+        <h2 class="author-header__subheading">{{ paged.author.data.bio }}</h2>
         <div class="author-header__socials-wrapper">
           {{ authorSocials(paged.author.fileSlug, 'author-header__socials author-header__socials--desktop') }}
           <p class="h5">{{ paged.postTotal }} {% if paged.postTotal === 1 %}post {% else %}posts{% endif %}</p>

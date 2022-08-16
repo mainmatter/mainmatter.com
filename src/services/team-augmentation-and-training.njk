@@ -1,9 +1,6 @@
 ---
 layout: 'base'
 title: Boosting teams' effectiveness with Team Augmentation | Our Services
-eleventyNavigation:
-  key: Team Augmentation & Training
-  parent: Services
 ---
 
 {% from "color-hero.njk" import colorHero %}
@@ -58,6 +55,7 @@ eleventyNavigation:
   "sizesArray": [640, 960, 1440, 1920]
 } %}
 {{ imageAspectRatio(image, "32/13", "35/19") }}
+
 {% set content = {
   "title": "Training",
   "subtitle": "Let's get to the root of your engineering team's needs with a custom curriculum",
@@ -66,6 +64,30 @@ eleventyNavigation:
   "linkText": "Discover our workshops"
 } %}
 {{ textWithList(content) }}
+
+{% set 'slide_1' = {
+"color": "white",
+"title": "Workshops and in-house masterclasses",
+"text": "Bring your team up to speed with the necessary technologies so they can complete ambitious projects with confidence.",
+"linkUrl": "/workshops/",
+"linkText": "Discover our workshops"
+} %}
+
+{% set 'slide_2' = {
+"color": "purple",
+"title": "Custom training solutions",
+"text": "Your team has unique needs—which is why we offer customized training. We can help with Rust, Ember.js, Elixir/Phoenix,
+Ruby on Rails, and related technology stacks."
+} %}
+
+{% set 'slide_3' = {
+"color": "black",
+"title": "Code review & audits",
+"text": "Our code reviews identify and explain technical problems, and offer pragmatic solutions for moving forward."
+} %}
+
+{% set slides = [slide_1, slide_2, slide_3] %}
+{{ scrollSlides(slides, page.url) }}
 
 {% set 'content' = {
 "title": "Grow <em>your business</em> with us",

@@ -1,5 +1,5 @@
 .featured-services {
-  padding: 7rem 0;
+  padding: 7rem 0 5rem;
 }
 
 .featured-services__list-wrapper {
@@ -42,13 +42,18 @@
 
 .featured-services__link-text {
   display: inline-flex;
-  text-underline-offset: 0.125rem;
+  text-underline-offset: 0.25rem;
   text-decoration-line: underline;
+  text-decoration-thickness: 0.0625rem;
   text-decoration-color: var(--color-black);
   transition: color 0.3s ease, text-decoration-color 0.3s ease;
 }
 
 @media (min-width: 48em) {
+  .featured-services {
+    padding: 7rem 0;
+  }
+
   .featured-services__list-wrapper {
     display: flex;
     align-items: center;

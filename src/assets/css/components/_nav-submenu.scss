@@ -107,5 +107,6 @@
 .nav-submenu__link-text {
   text-decoration-color: rgba(var(--color-accent), 0);
   text-underline-offset: 0.25rem;
+  text-decoration-thickness: 0.0625rem;
   transition: text-decoration-color 0.3s ease;
 }

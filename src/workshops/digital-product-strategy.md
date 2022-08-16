@@ -28,7 +28,7 @@ topics:
       Create a diagram to overview the web application's architecture.
   - heading: Next steps
     text: >
-      To wrap up, we hold a presentation going over our results from the workshop. We include a report with a digital version of the user flow diagram, wireframes for MVP, the product architecture diagram, and our [40-page Playbook](/playbook/)
+      To wrap up, we hold a presentation going over our results from the workshop. We include a report with a digital version of the user flow diagram, wireframes for MVP, the product architecture diagram, and our <a href="/playbook/">40-page Playbook</a>
 leads:
   - name: Mar High
     title: Director of Product Design

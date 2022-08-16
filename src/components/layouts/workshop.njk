@@ -68,7 +68,7 @@ layout: 'base'
           <li class="workshop-topics__item">
             <div class="workshop-topics__text-wrapper">
               <h3 class="workshop-topics__item-heading h4">{{ item.heading }}</h3>
-              <p class="text--sm">{{ item.text }}</p>
+              <p class="text--sm">{{ item.text | safe }}</p>
             </div>
           </li>
         {% endfor %}
@@ -80,7 +80,7 @@ layout: 'base'
             <li class="workshop-topics__item workshop-topics__item--optional">
               <div class="workshop-topics__text-wrapper">
                 <h3 class="workshop-topics__item-heading h4">{{ item.heading }}</h3>
-                <p class="text--sm">{{ item.text }}</p>
+                <p class="text--sm">{{ item.text | safe }}</p>
               </div>
             </li>
           {% endfor %}

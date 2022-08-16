@@ -1,4 +1,3 @@
-{% from "author-link.njk" import authorLink %}
 {% from "cta-link.njk" import ctaLink %}
 
 {%- macro featuredPost(post) -%}
@@ -34,7 +33,7 @@
     {% endset %}
   {% endif %}
 
-  <section class="featured-post featured-post--desktop">
+  <section class="featured-post featured-post--desktop" data-background-color="purple">
     <div class="container container--lg">
       <h2 class="h1">Blog highlight</h2>
       <div class="featured-post__content">

@@ -32,12 +32,13 @@
   text-decoration-line: underline;
   text-decoration-color: currentColor;
   text-underline-offset: 0.125rem;
+  text-decoration-thickness: 0.0625rem;
   transition: color 0.3s ease, text-decoration-color 0.3s ease;
 }
 
 .cta-link__arrow {
   position: relative;
-  margin-left: 0.5rem;
+  margin-left: 0.25rem;
   z-index: 1;
 
   svg {

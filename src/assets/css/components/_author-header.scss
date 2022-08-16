@@ -4,7 +4,8 @@
 }
 
 .author-header__subheading {
-  margin: 1rem 0;
+  margin: 0.75rem 0;
+  font-size: 1.125rem;
 }
 
 .author-header__image-wrapper {
@@ -39,6 +40,11 @@
 @media (min-width: 48em) {
   .author-header__wrapper {
     display: flex;
+  }
+
+  .author-header__subheading {
+    margin: 0.75rem 0 1rem;
+    font-size: 1.5rem;
   }
 
   .author-header__image-wrapper {

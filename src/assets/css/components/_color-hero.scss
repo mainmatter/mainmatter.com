@@ -24,7 +24,7 @@
   }
 
   &--black {
-    --color-animation: var(--color-aqua);
+    --color-animation: var(--color-purple);
     --color-link-background: var(--color-aqua);
     --color-overlay: var(--color-black);
     color: var(--color-white);
@@ -138,7 +138,6 @@
 @media (min-width: 48em) {
   .color-hero {
     aspect-ratio: 5 / 3;
-    max-height: 100vh;
     min-width: 100%;
   }
 
@@ -147,7 +146,7 @@
   }
 
   .color-hero__link {
-    margin-top: 3.75rem;
+    margin-top: 2.25rem;
   }
 
   .color-hero__client-tags {

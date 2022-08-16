@@ -10,7 +10,11 @@
 }
 
 .footer__logo {
-  margin: 0 0 1rem;
+  margin: 0 0 0.5rem;
+}
+
+.footer__logo svg {
+  width: 13.5rem;
 }
 
 .footer__menu {
@@ -20,7 +24,7 @@
 .footer__socials {
   margin-top: 3.5rem;
   color: var(--color-white);
-  justify-content: flex-end;
+  justify-content: flex-start;
 
   .social__link:hover {
     color: var(--color-aqua);
@@ -96,6 +100,7 @@
     flex: 1 1 50%;
     margin-top: rem-calc(105);
     text-align: right;
+    justify-content: flex-end;
   }
 
   .footer__secondary {

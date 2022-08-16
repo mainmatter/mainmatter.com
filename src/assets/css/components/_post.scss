@@ -1,16 +1,16 @@
 .post {
   --color-tag: var(--color-blue);
-  padding: 0.5rem 0 6.25rem;
+  padding: 3.25rem 0 6.25rem;
 }
 
 .post__header {
   background-color: var(--color-purple);
   color: var(--color-white);
-  padding: 5rem 0 2rem;
+  padding: 6rem 0 3.5rem;
 }
 
 .post__author {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .post__author-name,
@@ -75,8 +75,8 @@
 }
 
 .post__title {
-  width: 100%;
-  margin: 0 auto 1.75rem;
+  max-width: 42rem;
+  margin-bottom: 2rem;
 }
 
 .post__heading--anchor {
@@ -105,13 +105,17 @@
 }
 
 .post__tagline {
-  margin-bottom: 1.5rem;
+  max-width: 42rem;
 }
 
 .post__list {
   &--workshop {
     font-weight: 700;
-    margin-top: 1.5rem;
+    margin-top: 3.25rem;
+
+    li+li {
+      margin-top: 1.5rem;
+    }
   }
 
   li {
@@ -141,17 +145,17 @@
   }
 
   .post__author {
-    margin-bottom: 3.25rem;
+    margin-bottom: 2rem;
   }
 }
 
 @media (min-width: 48em) {
   .post {
-    padding: 2rem 0 8rem;
+    padding: 6.25rem 0 8rem;
   }
 
   .post__header {
-    padding: 10rem 0 4.5rem;
+    padding: 10rem 0 5rem;
   }
 }
 

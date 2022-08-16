@@ -15,8 +15,12 @@ if (contactForm) new ContactForm(contactForm);
 const logoList = document.getElementById("logo-list");
 if (logoList) new LogoList(logoList);
 
-const scrollSlides = document.getElementById("scroll-slides");
-if (scrollSlides) new ScrollSlides(scrollSlides);
+const scrollSlides = document.querySelectorAll("#scroll-slides");
+if (scrollSlides) {
+  scrollSlides.forEach((el) => {
+    new ScrollSlides(el);
+  });
+}
 
 new Animations();
 bindAccordions();

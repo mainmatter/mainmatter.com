@@ -29,44 +29,53 @@
       </{{ tag }}>
     </div>
     <ul class="nav__list">
+      <li class="nav__item nav-submenu" data-has-modal>
+        <button class="nav-submenu__toggle nav__link" aria-expanded="false" data-menu-toggle>
+          <span class="nav__link-text{% if page.url and '/services/' in page.url %} nav__link-text--active{% endif %}">Services</span>
+          {% include 'svg/arrow.njk' %}
+        </button>
+        <div class="nav-submenu__menu" aria-modal="true" data-modal aria-label="Services submenu">
+          <div class="nav-submenu__menu-inner">
+            <button class="nav-submenu__menu-close" data-menu-close>
+              {% include 'svg/close.njk' %}
+              <span class="screenreader">Close Services submenu</span>
+            </button>
+            <div class="submenu__list-wrapper">
+              <ul class="nav-submenu__list">
+                <li class="nav-submenu__item">
+                  <a class="nav-submenu__link" href="/services/workshops/" {% if '/services/workshops/'== page.url %} aria-current="page" {% endif %}>
+                    {% include 'svg/arrow.njk' %}
+                    <span class="nav-submenu__link-text">Workshops</span>
+                  </a>
+                </li>
+                <li class="nav-submenu__item">
+                  <a class="nav-submenu__link" href="/services/digital-products-and-design/" {% if '/services/digital-products-and-design/'== page.url %} aria-current="page" {% endif %}>
+                    {% include 'svg/arrow.njk' %}
+                    <span class="nav-submenu__link-text">Digital Products & Design</span>
+                  </a>
+                </li>
+                <li class="nav-submenu__item">
+                  <a class="nav-submenu__link" href="/services/team-augmentation-and-training/" {% if '/services/team-augmentation-and-training/'== page.url %} aria-current="page" {% endif %}>
+                    {% include 'svg/arrow.njk' %}
+                    <span class="nav-submenu__link-text">Team Augmentation & Training</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            {% include 'global/nav-aside.njk' %}
+          </div>
+        </div>
+      </li>
+
       {%- for entry in navPages %}
         <li class="nav__item nav-submenu" {% if entry.children.length > 0 %} data-has-modal {% endif %}>
-          {% if entry.children.length > 0 %}
-            <button
-              class="nav-submenu__toggle nav__link{% if entry.url == page.url %} {% endif %}"
-              aria-expanded="false"
-              data-menu-toggle>
-              <span class="nav__link-text">{{ entry.title }}</span>
-              {% include 'svg/arrow.njk' %}
-            </button>
-            <div class="nav-submenu__menu" aria-modal="true" data-modal>
-              <div class="nav-submenu__menu-inner">
-                <button class="nav-submenu__menu-close" data-menu-close>
-                  {% include 'svg/close.njk' %}
-                  <span class="screenreader">Close Menu</span>
-                </button>
-                <div class="submenu__list-wrapper">
-                  <ul class="nav-submenu__list">
-                    {% for childEntry in entry.children %}
-                      <li class="nav-submenu__item">
-                        <a class="nav-submenu__link" {% if childEntry.url == page.url %} aria-current="page" {% endif %} href="{{ childEntry.url | url }}">
-                          {% include 'svg/arrow.njk' %}
-                          <span class="nav-submenu__link-text">{{ childEntry.title }}</span>
-                        </a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </div>
-                {% include 'global/nav-aside.njk' %}
-              </div>
-            </div>
-          {% else %}
-            <a class="nav__link nav__link-text" {% if entry.url == page.url %} aria-current="page" {% endif %} href="{{ entry.url | url }}">
-              {{ entry.title }}
-            </a>
-          {% endif %}
+          {% if entry.url == '/work/' %}{% set parentChildCompare = '/cases/' %}{% else %}{% set parentChildCompare = entry.url %}{% endif %}
+          <a class="nav__link nav__link-text{% if entry.url == page.url or (page.url and parentChildCompare in page.url) %} nav__link-text--active{% endif %}" {% if entry.url == page.url %} aria-current="page" {% endif %} href="{{ entry.url | url }}">
+            {{ entry.title }}
+          </a>
         </li>
       {%- endfor %}
+
     </ul>
     <div class="nav__aside">
       <a class="nav__cta nav__cta--{{ ctaColor }} text--sm" href="/contact/">

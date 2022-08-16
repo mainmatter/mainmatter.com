@@ -179,7 +179,7 @@ $states: "loading", "success", "error";
 
 @media (min-width: 62em) {
   .contact-form__main {
-    padding: 9rem 0 4.25rem;
+    padding: 9rem 0 5rem;
   }
 
   .contact-form__close {
@@ -189,9 +189,5 @@ $states: "loading", "success", "error";
 
   .contact-form__success-subheading {
     margin-top: 0;
-  }
-
-  .contact-form__text {
-    margin-top: 2.5rem;
   }
 }

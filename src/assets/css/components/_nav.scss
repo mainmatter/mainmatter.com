@@ -79,7 +79,15 @@
 .nav__link-text {
   text-decoration-color: rgba(var(--color-accent), 0);
   text-underline-offset: 0.125rem;
+  text-decoration-thickness: 0.0625rem;
   transition: text-decoration-color 0.3s ease;
+
+  &--active {
+    text-decoration: underline;
+    text-decoration-color: rgba(var(--color-accent), 1);
+    text-decoration-thickness: 0.0625rem;
+    text-underline-offset: 0.125rem;
+  }
 }
 
 .nav__cta {
@@ -143,6 +151,7 @@
     color: var(--color-white);
     text-decoration: none;
     font-weight: 700;
+    border-radius: 0.125rem;
     transition: background-color ease 0.3s;
 
     &:hover {

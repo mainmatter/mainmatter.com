@@ -3,12 +3,12 @@
   justify-content: space-between;
   align-items: flex-end;
   flex-wrap: wrap;
-  padding: 1rem;
+  padding: 1rem 1rem 3.75rem;
 }
 
 .nav-aside__brand {
   max-width: rem-calc(320);
-  margin-bottom: 3.5rem;
+  margin-bottom: 3.75rem;
 }
 
 .nav-aside__brand svg {
@@ -26,6 +26,7 @@
   color: var(--color-white);
   text-decoration: none;
   font-weight: 700;
+  border-radius: 0.125rem;
 }
 
 .nav-aside__socials {
@@ -33,17 +34,27 @@
   flex-basis: 100%;
 }
 
+
 @media (min-width: 62em) {
   .nav-aside {
     padding-bottom: 2rem;
   }
 
   .nav-aside__brand {
-    margin-bottom: 0;
+    margin-bottom: 0.25rem;
   }
 
   .nav-aside__socials {
     flex-basis: auto;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .social__item+.social__item {
+      margin-left: 0.75rem;
+    }
   }
 }
 

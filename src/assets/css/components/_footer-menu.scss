@@ -4,7 +4,8 @@
 
 .footer-menu__heading {
   flex: 0 1 7.5rem;
-  margin: 0 1rem 1rem 0;
+  flex-shrink: 0;
+  margin: 0 1rem 0.75rem 0;
   font-size: 1rem;
   text-transform: uppercase;
   text-align: right;
@@ -26,7 +27,16 @@
 
 .footer-menu__link {
   font-size: 0.875rem;
-  text-decoration: none;
+  line-height: 1.4;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.125rem;
+  text-decoration-thickness: 0.0625rem;
+  transition: text-decoration-color 0.3s ease;
+
+  &:hover,
+  &:focus {
+    text-decoration-color: rgba(var(--color-white), 1);
+  }
 }
 
 .footer-menu__arrow {
@@ -41,7 +51,7 @@
 
   .footer-menu__item {
     & + & {
-      margin-top: 0.875rem;
+      margin-top: 0.75rem;
     }
   }
 

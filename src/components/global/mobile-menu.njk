@@ -5,6 +5,35 @@
       <span class="screenreader">Close Menu</span>
     </button>
     <ul class="mobile-menu__list">
+
+      <li class="mobile-menu__item">
+        <span class="mobile-menu__link h4">
+          {% include 'svg/arrow.njk' %}
+          Services
+        </span>
+        <ul class="mobile-menu__list mobile-menu__list--submenu">
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link h4" {% if '/services/workshops/' == page.url %} aria-current="page" {% endif %}
+              href="/services/workshops/">
+              {% include 'svg/arrow.njk' %}
+              Workshops
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link h4" {% if '/services/digital-products-and-design/'== page.url %} aria-current="page" {% endif %} href="/services/digital-products-and-design/">
+              {% include 'svg/arrow.njk' %}
+              Digital Products & Design
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link h4" {% if '/services/team-augmentation-and-training/'== page.url %} aria-current="page" {% endif %} href="/services/team-augmentation-and-training/">
+              {% include 'svg/arrow.njk' %}
+              Team Augmentation & Training
+            </a>
+          </li>
+        </ul>
+      </li>
+
       {%- for entry in navPages %}
         <li class="mobile-menu__item">
           <a class="mobile-menu__link h4" {% if entry.url == page.url %} aria-current="page" {% endif %} href="{{ entry.url | url }}">

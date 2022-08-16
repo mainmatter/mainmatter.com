@@ -23,7 +23,7 @@
 }
 
 .talks__cta-wrapper {
-  text-align: right;
+  text-align: center;
   margin: 5rem 0 0;
 }
 
@@ -50,5 +50,9 @@
     &:nth-of-type(4) {
       margin-top: 0;
     }
+  }
+
+  .talks__cta-wrapper {
+    text-align: right;
   }
 }

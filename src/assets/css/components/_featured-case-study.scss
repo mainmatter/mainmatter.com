@@ -62,7 +62,7 @@
 
 .featured-case-study__content-wrapper {
   position: relative;
-  padding: 1.25rem;
+  padding: 1.5rem;
   text-align: right;
   align-items: flex-end;
 }
@@ -79,13 +79,14 @@
   cursor: pointer;
   text-decoration: underline 1px var(--color-purple);
   text-underline-offset: 0.125rem;
+  text-decoration-thickness: 0.0625rem;
   transition: text-decoration-color 0.3s ease, color 0.3s ease;
 }
 
 
 .featured-case-study__logo {
   align-self: flex-end;
-  max-width: 8.5rem;
+  max-width: 6rem;
   max-height: 3.25rem;
   margin-bottom: 1rem;
 }
@@ -96,11 +97,11 @@
 
 .featured-case-study__client {
   margin-top: 1.25rem;
-  font-weight: 700;
   color: var(--color-purple);
   text-decoration-line: underline;
   text-decoration-color: var(--color-purple);
   text-underline-offset: 0.125rem;
+  text-decoration-thickness: 0.0625rem;
 }
 
 .featured-case-study__link {
@@ -146,7 +147,6 @@
   }
 
   .featured-case-study__content-wrapper {
-    padding: 1.5rem;
     justify-content: space-between;
     align-items: flex-start;
     text-align: left;
@@ -180,11 +180,13 @@
 
   .featured-case-study__logo {
     margin-bottom: 0;
+    max-width: 8.5rem;
+    max-height: 3.25rem;
   }
 
   .featured-case-study__tags {
     align-self: stretch;
-    margin-top: 1.5rem;
+    margin-top: 1.25rem;
   }
 
   .featured-case-study__client {
@@ -210,7 +212,7 @@
 
 @media (min-width: 72em) {
   .featured-case-study__content-wrapper {
-    padding: 1rem;
+    padding: 1.25rem;
   }
 
   .featured-case-study__content {
