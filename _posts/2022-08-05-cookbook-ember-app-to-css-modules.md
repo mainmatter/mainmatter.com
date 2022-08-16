@@ -23,11 +23,11 @@ using global CSS to CSS modules with
 
 ### Prerequisites
 
-This article is a perfect fit for you if:
+This article is exactly what you are looking for if:
 
 - You are already comfortable with Ember.
-- You know a bit of theory about what CSS modules are but you might have never
-  worked with them before.
+- You know a bit of theory about what CSS modules are but you have never worked
+  with them before.
 - It is the first time you set up
   [`ember-css-modules`](https://github.com/salsify/ember-css-modules) in an
   existing Ember app that already contains a global CSS setup.
@@ -48,16 +48,16 @@ sometimes challenging. Also, the life of an application is made of turnover,
 it's never easy for newcomers to identify dead code, resulting in overly heavy
 and hard-to-clean CSS rules.
 
-CSS modules aim at answering these challenges as a technique to scope CSS
-classes locally, for instance to a single component. To read more about the
-general concept, have a look at the
+CSS modules aim to overcome these challenges as a technique to scope CSS classes
+locally, for instance to individual components. To read more about the general
+concept, have a look at the
 [documentation on Github](https://github.com/css-modules/css-modules).
 
 ### A word about `ember-css-modules`
 
 [`ember-css-modules`](https://github.com/salsify/ember-css-modules) is a nice
-addon that lets developers easily integrate CSS modules to the implementation of
-their Ember apps and addon.
+addon that lets developers easily integrate the CSS modules approach to the
+implementation of their Ember apps and addons.
 
 Installing `ember-css-modules` in an existing Ember app triggers some breaking
 changes in the way the developer should handle the app styles. If the developer
@@ -116,7 +116,7 @@ inspector tab of the browser's debugger.
 
 If we compare the previously styled app and the version we have now, we notice
 that Tomster (the Ember hamster mascot) is missing at the top right of the
-screen. Let's find in the DOM the element that should display Tomster. The image
+screen. Let's find the element that should display Tomster in the DOM. The image
 shows using the following approach:
 
 ```html
@@ -209,9 +209,9 @@ At the bottom of the file, we read:
 
 And here is the explanation about our missing Tomster. With `ember-css-modules`
 installed, all the class selectors present in `app.css` end with a custom id.
-But this custom id is not present in our component's template, we still have
-`class="right tomster"`. As a result, no CSS class is found for `.right` and
-`.tomster` and no style applies. On the contrary, the rules defined for main
+However, this custom id is not present in our component's template: we still
+have `class="right tomster"`. As a result, no CSS class is found for `.right`
+and `.tomster` and no style applies. On the contrary, the rules defined for main
 elements like `div` match by the element itself and thus keep applying.
 
 `ember-css-modules` relies on class selectors to isolate the CSS and prevent it
@@ -221,9 +221,9 @@ component.
 
 ### Fix the setup with `:global`
 
-Before starting to actively use CSS modules across the app, we would prefer to
-fix the styles first and allow `app.css` to apply globally as it did before. To
-do so, we can use the `:global` pseudoselector:
+Before starting to actively use CSS modules across the app, we should fix the
+styles and allow `app.css` to apply globally as it did before. To do so, we can
+use the `:global` pseudoselector:
 
 ```css
 /* app/styles/app.css */
@@ -315,8 +315,8 @@ class attributes and the generated CSS rules match.
 We have drawn the big picture about how `ember-css-modules` isolates CSS. The
 way custom ids are assigned to selectors in a given CSS file is key to
 understanding and starting to work with `ember-css-modules`. With this in mind,
-up to you to continue digging and deduce the best way to organize CSS in your
-specific project.
+it is up to you to continue digging and deduce the best way to organize CSS in
+your specific project.
 
 As a next step, why don't you have a look at the
 [composition feature](https://github.com/salsify/ember-css-modules#styling-reuse)?
