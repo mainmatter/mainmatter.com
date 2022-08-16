@@ -9,6 +9,13 @@
   {% set ctaColor = 'aqua' %}
 {% endif %}
 
+{# Prevent flash of submenu on page load #}
+<style>
+  .nav-submenu__menu {
+    opacity: 0;
+  }
+</style>
+
 <nav class="nav nav--accent-{{ ctaColor }}" id="nav">
   <div class="nav__wrapper container container--xl">
     <div class="nav__logo">

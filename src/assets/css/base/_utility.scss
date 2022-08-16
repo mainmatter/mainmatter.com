@@ -25,3 +25,7 @@
 body[data-js-enabled="false"] * {
   transition-duration: 0s !important;
 }
+
+body[data-js-enabled="false"] .no-js-hidden {
+  display: none;
+}

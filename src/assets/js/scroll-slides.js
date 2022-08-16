@@ -59,6 +59,9 @@ export class ScrollSlides {
       const index = parseInt(target, 10);
       const slideTop = this.startArr[index];
       scrollTo(0, slideTop);
+
+      const buttonToFocus = this.slides[index].querySelectorAll("[data-pagination]")[index];
+      buttonToFocus.focus({ preventScroll: true });
     }
   }
 }

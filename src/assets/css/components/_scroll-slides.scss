@@ -127,7 +127,7 @@
   }
 }
 
-@media (min-width: 48em) {
+@media (min-width: 48em) and (min-height: 32rem) {
   .scroll-slides__icon {
     padding-top: 0.5rem;
   }
@@ -155,7 +155,7 @@
   }
 }
 
-@media (min-width: 64em) {
+@media (min-width: 64em) and (min-height: 32rem) {
   .scroll-slides__title {
     font-size: 4rem;
     line-height: 1.2;

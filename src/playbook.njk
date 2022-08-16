@@ -63,13 +63,21 @@ quality.",
       <ol class="scroll-slides__pagination" aria-label="Slide pagination">
         {% for slide in slides %}
         <li class="scroll-slides__pagination-item">
-          <button class="scroll-slides__pagination-button" data-pagination="{{ loop.index0 }}">
-            <span class="screenreader">Slide {{ loop.index }}{% if slideIndex == loop.index %} (Current slide){% endif
-              %}</span>
+          <button class="no-js-hidden scroll-slides__pagination-button" data-pagination="{{ loop.index0 }}">
+            <span class="screenreader">Slide {{ loop.index }}{% if slideIndex == loop.index %} (Current slide){% endif %}</span>
             <span
               class="scroll-slides__pagination-span{% if slideIndex == loop.index %} scroll-slides__pagination-span--active{% endif %}"
               aria-hidden></span>
           </button>
+          <noscript>
+            <a href="#slide-{{ loop.index }}" class="scroll-slides__pagination-button">
+              <span class="screenreader">Slide {{ loop.index }}{% if slideIndex == loop.index %} (Current slide){% endif
+                %}</span>
+              <span
+                class="scroll-slides__pagination-span{% if slideIndex == loop.index %} scroll-slides__pagination-span--active{% endif %}"
+                aria-hidden></span>
+            </a>
+          </noscript>
         </li>
         {% endfor %}
       </ol>
