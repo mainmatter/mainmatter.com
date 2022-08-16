@@ -56,7 +56,8 @@
                 "Turbo87/united-flarmnet",
                 "ferrous-systems/teaching-material",
                 "svartalf/rust-claim",
-                "Turbo87/sentry-conduit"
+                "Turbo87/sentry-conduit",
+                "kivikakk/comrak"
             ]
         },
         {
@@ -148,7 +149,12 @@
                 "ember-codemods/ember-native-class-codemod",
                 "ember-learn/guidemaker-ember-template",
                 "empress/guidemaker",
-                "empress/guidemaker-default-template"
+                "empress/guidemaker-default-template",
+                "ember-cli/watch-detector",
+                "ember-engines/ember-engines",
+                "ember-learn/tool-new-release",
+                "ember-template-lint/ember-template-lint",
+                "emberjs/rfcs-tooling"
             ]
         },
         {
@@ -157,7 +163,8 @@
                 "mansona/lint-to-the-future",
                 "mansona/lint-to-the-future-eslint",
                 "mansona/lint-to-the-future-ember-template",
-                "mansona/lint-to-the-future-stylelint"
+                "mansona/lint-to-the-future-stylelint",
+                "mansona/lint-to-the-future-dashboard-action"
             ]
         },
         {
@@ -181,7 +188,9 @@
                 "sinonjs/fake-timers",
                 "squash-commit-app/squash-commit-app",
                 "cookpete/auto-changelog",
-                "axmccx/proxynexus"
+                "axmccx/proxynexus",
+                "mansona/showdown-section-groups",
+                "calibreapp/image-actions"
             ]
         },
         {
