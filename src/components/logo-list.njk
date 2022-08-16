@@ -13,7 +13,7 @@ Example usage:
   <section class="logo-list" id="logo-list">
     {% if title %}
       <div class="logo-list__title">
-        <h2 class="h3">We are trusted by international companies that bet on Ember.js</h2>
+        <h2 class="h3">{{ title }}</h2>
       </div>
     {% endif %}
     <div class="logo-list__wrapper">
@@ -21,7 +21,7 @@ Example usage:
         <ul class="logo-list__list">
           {% for logo in logos %}
             <li class="logo-list__item">
-              <div class="logo-list__image" aria-label="{{ logo }}">
+              <div class="logo-list__image" aria-label="{{ logo }} logo">
                 {% set imagePath %}/logos/monochrome/{{ logo | slug }}.svg{% endset %}
                 {% svg imagePath, 'img' %}
               </div>
