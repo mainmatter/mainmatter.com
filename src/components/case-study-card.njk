@@ -1,6 +1,6 @@
 {% macro caseStudyCard(clientHandle) %}
   {% set caseStudy = clientHandle | findBySlug %}
-  <li class="case-study-card">
+  <li class="case-study-card" data-background-color="black">
     <a class="case-study-card__link featured-case-study__link" href="{{ caseStudy.url }}">
       <span class="screenreader">{{ caseStudy.data.displayTitle }}</span>
     </a>

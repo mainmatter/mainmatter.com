@@ -26,7 +26,7 @@ Example usage:
 #}
 {% from "cta-link.njk" import ctaLink %}
 {%- macro secondaryFeature(content) -%}
-  <div class="secondary-feature">
+  <div class="secondary-feature" data-background-color="purple">
     <div class="secondary-feature__main">
       {%- if content.linkUrl -%}
         {{ ctaLink(content.linkUrl, content.linkText, 'secondary-feature__link') }}

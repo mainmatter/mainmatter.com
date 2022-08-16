@@ -23,7 +23,7 @@ Example usage:
 #}
 
 {%- macro splitQuote(desktopTextPosition, color, content) -%}
-  <section class="split-quote split-quote--quote split-quote--{{ color }}">
+  <section class="split-quote split-quote--quote split-quote--{{ color }}" data-background-color="{{ color }}">
     <div class="split-quote__main split-quote__main--{{ desktopTextPosition }}">
       <div class="split-quote__container container">
         <figure class="split-quote__quote">

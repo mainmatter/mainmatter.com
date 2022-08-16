@@ -1,6 +1,6 @@
 {% macro featuredCaseStudy(clientHandle, color, className) %}
   {% set caseStudy = clientHandle | findBySlug %}
-  <li class="featured-case-study{% if className %} {{ className }}{% endif %}">
+  <li class="featured-case-study{% if className %} {{ className }}{% endif %}" data-background-color="{{ color }}">
     <a class="featured-case-study__link" href="{{ caseStudy.url }}">
       <span class="screenreader">{{ caseStudy.data.displayTitle }}</span>
     </a>

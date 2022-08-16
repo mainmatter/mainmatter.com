@@ -19,7 +19,7 @@ Example usage:
 #}
 
 {%- macro colorImage(color, size, content) -%}
-  <div class="color-image color-image--{{ color }} container container--{{ size }}">
+  <div class="color-image color-image--{{ color }} container container--{{ size }}" data-background-color="{{ color }}">
     {%- if size === 'lg' -%}
       {%- set imageSize = '(min-width: 62em) 60rem, 90vw' -%}
     {%- else -%}

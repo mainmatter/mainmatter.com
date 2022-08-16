@@ -1,5 +1,5 @@
 {% macro talkBanner(talk, color) %}
-  <div class="talk-banner">
+  <div class="talk-banner" data-background-color="{{ color }}">
     <a class="talk-banner__link" href="{{ talk.data.url }}">
       <h3 class="screenreader">{{ talk.data.title }}</h3>
     </a>

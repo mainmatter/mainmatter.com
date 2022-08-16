@@ -7,7 +7,7 @@ layout: base
 {% from 'case-study-card.njk' import caseStudyCard %}
 {%- block content -%}
 <div class="">
-  <div class="color-hero color-hero--{{ hero.color }}">
+  <div class="color-hero color-hero--{{ hero.color }}" data-background-color="{{ hero.color }}">
     <div class="color-hero__image-wrapper">
       {% if hero.image %}
         {% image hero.image, hero.imageAlt, '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}

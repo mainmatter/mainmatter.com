@@ -11,7 +11,7 @@ permalink: /ember-consulting/
 {% from "recent-posts.njk" import recentPosts %}
 {% from "cta-link.njk" import ctaLink %}
 
-<section class="color-hero color-hero--red">
+<section class="color-hero color-hero--red" data-background-color="red">
   <div class="color-hero__image-wrapper">
     {% image '/assets/images/ember/ember.jpg', 'Audience facing a presentation at a conference', '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
   </div>
@@ -75,7 +75,7 @@ permalink: /ember-consulting/
   {% for slide in slides %}
     {% set slideIndex = loop.index %}
     <div id="slide-{{ loop.index }}" class="scroll-slides__slide scroll-slides__slide--{{ slide.color }}"
-      data-scroll-slide>
+      data-scroll-slide  data-background-color="{{ slide.color }}">
       <div class="scroll-slides__container container container--xl">
         <ol class="scroll-slides__pagination" aria-label="Slide pagination">
           {% for slide in slides %}

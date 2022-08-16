@@ -8,7 +8,7 @@ event: A event object
 #}
 {% from "cta-link.njk" import ctaLink %}
 {%- macro eventCard(event) -%}
-  <li class="event-card event-card--{{ event.data.color }}">
+  <li class="event-card event-card--{{ event.data.color }}" data-background-color="{{ event.data.color }}">
     <div class="event-card__image-wrapper">
       {% image event.data.image, "", '16.438rem', 'lazy', 'event-card__image', [263, 400, 526] %}
     </div>

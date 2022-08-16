@@ -31,7 +31,7 @@ Example usage:
 #}
 {% from "cta-link.njk" import ctaLink %}
 {%- macro colorHero(textPosition, textSize, color, content) -%}
-  <section class="color-hero color-hero--{{ color }}">
+  <section class="color-hero color-hero--{{ color }}" data-background-color="{{ color }}">
     {%- if content.titleTag -%}
       {%- set titleTag = content.titleTag -%}
     {%- else -%}

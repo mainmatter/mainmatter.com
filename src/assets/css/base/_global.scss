@@ -54,6 +54,16 @@ button {
   border-radius: 0;
 }
 
+::selection {
+  background-color: var(--color-purple);
+  color: var(--color-white);
+
+  [data-background-color="purple"] & {
+    background-color: var(--color-aqua);
+  }
+}
+
+
 @media (min-width: 72em) {
   body {
     line-height: 2;

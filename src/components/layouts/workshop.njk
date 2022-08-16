@@ -5,7 +5,7 @@ layout: 'base'
 {% from "author-socials.njk" import authorSocials %}
 {%- block content -%}
 <article>
-  <div class="workshop-hero color-hero color-hero--black">
+  <div class="workshop-hero color-hero color-hero--black" data-background-color="black">
     <div class="color-hero__image-wrapper">
       {% if hero.image %}
         {% image hero.image, hero.imageAlt, '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}

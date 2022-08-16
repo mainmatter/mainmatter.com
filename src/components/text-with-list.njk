@@ -1,6 +1,6 @@
 {% from "cta-link.njk" import ctaLink %}
 {% macro textWithList(content, color) %}
-  <section class="text-with-list{% if color %} text-with-list--{{ color }}{% endif %}">
+  <section class="text-with-list{% if color %} text-with-list--{{ color }}{% endif %}" data-background-color="{{ color }}">
     <div class="container container--lg">
       {% if content.title %}
         <h2 class="text-with-list__heading h5">{{ content.title }}</h2>
