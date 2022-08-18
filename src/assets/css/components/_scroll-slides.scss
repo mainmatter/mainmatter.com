@@ -3,7 +3,8 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  will-change: transform;
+  position: sticky;
+  top: 0;
 
   &--white {
     background-color: var(--color-white);
@@ -87,17 +88,6 @@
     height: 100%;
     background-color: #b3b3b3;
     position: absolute;
-  }
-
-  &:hover,
-  &:focus {
-    .scroll-slides__pagination-span {
-      transform: scale(1.3);
-    }
-
-    .scroll-slides__pagination-span--active {
-      transform: none;
-    }
   }
 }
 
