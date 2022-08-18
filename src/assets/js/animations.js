@@ -52,10 +52,10 @@ export class Animations {
       scrollY: {
         scaleX: [
           {
-            768: ["elOutY-150", "elOutY-50"],
+            768: ["elOutY-100", "elOutY-50"],
             1024: ["elOutY-200", "elOutY-100"],
-            1366: ["elOutY-300", "elOutY-150"],
-            1900: ["elOutY-400", "elOutY-200"],
+            1366: ["elOutY-200", "elOutY-150"],
+            1900: ["elOutY-300", "elOutY-200"],
           },
           [1, 0],
         ],
