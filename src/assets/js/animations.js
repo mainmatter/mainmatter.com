@@ -53,8 +53,10 @@ export class Animations {
         scaleX: [
           // Todo: Come back and refine this, sizing may change things
           {
-            768: ["elCenterY-200", "elOutY-200"],
-            1024: ["elCenterY-200", "elOutY-400"],
+            768: ["elOutY-120", "elOutY-100"],
+            1024: ["elOutY-100", "elOutY-80"],
+            1366: ["elOutY-200", "elOutY-100"],
+            1900: ["elOutY-250", "elOutY-120"],
           },
           [1, 0],
         ],
