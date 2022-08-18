@@ -24,6 +24,15 @@ module.exports = function (value, outputPath) {
         return textAnimation.appendChild(span);
       });
     }
+
+    const textAnimationsOffset = [...document.querySelectorAll(".text-animation-offset em")];
+    if (textAnimationsOffset.length) {
+      textAnimationsOffset.forEach((textAnimationOffset) => {
+        const span = document.createElement("span");
+        span.classList.add("text-animation__cover-offset");
+        return textAnimationOffset.appendChild(span);
+      });
+    }
     /**
      * Get all the headings inside the post
      */

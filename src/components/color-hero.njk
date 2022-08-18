@@ -30,7 +30,8 @@ Example usage:
 {{ colorHero('center', 'large', 'blue', false, content) }}
 #}
 {% from "cta-link.njk" import ctaLink %}
-{%- macro colorHero(textPosition, textSize, color, content) -%}
+{%- macro colorHero(textPosition, textSize, color, content, textAnimationOffset) -%}
+  {% if textAnimationOffset %}{% set textAnimationClasses = 'text-animation-offset' %}{% else %}{% set textAnimationClasses = 'text-animation' %}{% endif %}
   <section class="color-hero color-hero--{{ color }}" data-background-color="{{ color }}">
     {%- if content.titleTag -%}
       {%- set titleTag = content.titleTag -%}
@@ -46,7 +47,7 @@ Example usage:
     <div class="color-hero__container container container--lg color-hero__container--{{ textPosition }}">
       <div class="color-hero__main">
         {% if content.title %}
-          <{{ titleTag }} class="color-hero__title{% if titleTag == 'h1' %} color-hero__title--full{% endif %} text-animation">{{ content.title | safe }}</{{ titleTag }}>
+          <{{ titleTag }} class="color-hero__title{% if titleTag == 'h1' %} color-hero__title--full{% endif %} {{ textAnimationClasses }}">{{ content.title | safe }}</{{ titleTag }}>
         {% endif %}
         {% if content.text %}
           <div class="color-hero__text color-hero__text--{{ textSize }}">{{ content.text | safe }}</div>
