@@ -28,14 +28,10 @@
 .footer-menu__link {
   font-size: 0.875rem;
   line-height: 1.4;
-  text-decoration-color: transparent;
-  text-underline-offset: 0.125rem;
-  text-decoration-thickness: 0.0625rem;
-  transition: text-decoration-color 0.3s ease;
+  text-decoration: none;
 
-  &:hover,
-  &:focus {
-    text-decoration-color: rgba(var(--color-white), 1);
+  &:hover {
+    text-decoration: underline;
   }
 }
 
