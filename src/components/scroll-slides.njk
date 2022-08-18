@@ -1,10 +1,10 @@
 {% from "cta-link.njk" import ctaLink %}
 
-{% macro scrollSlides(slides, pageUrl) %}
+{% macro scrollSlides(id, slides, pageUrl) %}
   <section class="scroll-slides" id="scroll-slides">
     {% for slide in slides %}
       {% set slideIndex = loop.index %}
-      <div id="slide-{{ loop.index }}" class="scroll-slides__slide scroll-slides__slide--{{ slide.color }}" data-scroll-slide data-background-color="{{ slide.color }}">
+      <div id="{{ id }}-slide-{{ loop.index }}" class="scroll-slides__slide scroll-slides__slide--{{ slide.color }}" data-scroll-slide data-background-color="{{ slide.color }}">
         <div class="scroll-slides__container container container--xl">
           <ol class="scroll-slides__pagination" aria-label="Slide pagination">
             {% for slide in slides %}
