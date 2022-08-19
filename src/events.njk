@@ -46,7 +46,7 @@ description: Find out about upcoming events, conferences and meetups we will be 
   </div>
   <div class="talks__container">
     <ol class="talks__list">
-      {% for appearance in collections.appearances %}
+      {% for appearance in collections.appearances | reverse %}
         {% if loop.index === 1 %}
           <li class="talks__item talks__item--full-width">
             {{ talkBanner(appearance, "black") }}

@@ -90,31 +90,41 @@ permalink: /ember-consulting/
           </span>
           {% endfor %}
         </div>
-        <div class="scroll-slides__icon" aria-hidden="true">
-          <img class="" src="{{ slide.icon }}" alt="" />
-        </div>
         <div class="scroll-slides__content">
-          <h2 class="scroll-slides__title">{{ slide.title }}</h2>
-          <p class="scroll-slides__text">{{ slide.text }}</p>
-          {% if slide.linkUrl and slide.linkText %}
-          {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
-          {% endif %}
+          <div class="scroll-slides__title-wrapper">
+            <div class="scroll-slides__icon" aria-hidden="true">
+              <img class="" src="{{ slide.icon }}" alt="" />
+            </div>
+            <h2 class="scroll-slides__title">{{ slide.title }}</h2>
+          </div>
+          <div class="scroll-slides__text-wrapper">
+            <p class="scroll-slides__text">{{ slide.text }}</p>
+            {% if slide.linkUrl and slide.linkText %}
+            {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
+            {% endif %}
+          </div>
         </div>
       </div>
     </div>
   {% endfor %}
 </section>
 
-{% set 'content' = {
-  "title": "Ember.js: The Documentary",
-  "text": "Several of our team members appear in the Ember.js documentary. We were pleased to welcome the film crew at our office in Munich and again at EmberFest in Amsterdam.",
-  "linkText": "Watch Video",
-  "linkUrl": "https://www.youtube.com/watch?v=Cvz-9ccflKQ",
-  "image": "/assets/images/ember/ember-js-documentary.jpg",
-  "alt": "Still of Ember.js documentary showing two people looking at a laptop",
-  "loading": "lazy"
-} %}
-{{ colorHero('center', 'small', 'aqua', content) }}
+<section class="color-hero color-hero--aqua" data-background-color="aqua">
+  <div class="color-hero__image-wrapper">
+    <video class="color-hero__image" playsinline="" autoplay="" muted="" preload="" loop="" poster="/assets/images/ember/emberdoc-simplabs.poster.jpg"
+      width="1280" height="496">
+      <source src="/assets/images/ember/emberdoc-simplabs.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="color-hero__overlay"></div>
+  <div class="color-hero__container container container--lg color-hero__container--center">
+    <div class="color-hero__main">
+      <h1 class="color-hero__title color-hero__title--full ">Ember.js: The Documentary</h1>
+      <div class="color-hero__text">Several of our team members appear in the Ember.js documentary. We were pleased to welcome the film crew at our office in Munich and again at EmberFest in Amsterdam.</div>
+      {{ ctaLink("https://www.youtube.com/watch?v=Cvz-9ccflKQ", "Watch Video", 'color-hero__link') }}
+    </div>
+  </div>
+</section>
 
 {{ recentPosts("Latest from our blog on the topic", collections["ember"]) }}
 
@@ -143,8 +153,12 @@ permalink: /ember-consulting/
         <p class="image-banner-with-text__text">{{ content.text }}</p>
       {% endif %}
       <div class="expertise__image-row">
-        {% image '/assets/images/ember/ember-europe-mascot.jpg', 'Ember.js mascot with EU flags', '8.25rem', 'lazy', 'expertise__image-ember-1', [264] %}
-        {% image '/assets/images/ember/emberfest-logo.jpg', 'Emberfest logo', '19rem', 'lazy', 'expertise__image-ember-2', [608] %}
+        <a href="http://embereurope.org/">
+          {% image '/assets/images/ember/ember-europe-mascot.jpg', 'Ember Europe logo', '8.25rem', 'lazy', 'expertise__image-ember-1', [264] %}
+        </a>
+        <a href="http://emberfest.eu/">
+          {% image '/assets/images/ember/emberfest-logo.jpg', 'Emberfest logo', '19rem', 'lazy', 'expertise__image-ember-2', [608] %}
+        </a>
       </div>
       {% if content.linkUrl and content.linkText %}
         {{ ctaLink(content.linkUrl, content.linkText, 'image-banner-with-text__link') }}
