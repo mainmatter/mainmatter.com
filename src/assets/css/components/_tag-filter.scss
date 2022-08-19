@@ -3,15 +3,8 @@
   padding: rem-calc(40 0 28);
 }
 
-.tag-filter__disclosure-wrapper {
-  display: flex;
-  align-items: center;
+.tag-filter__select-wrapper {
   margin-top: 2rem;
-  width: 100%;
-}
-
-.tag-filter__disclosure {
-  position: relative;
   width: 100%;
 }
 
@@ -21,55 +14,24 @@
   visibility: hidden;
 }
 
-.tag-filter__button {
-  list-style: none;
+.tag-filter__label {
+  display: none;
+  margin-right: 1.25rem;
+}
+
+.tag-filter__select {
   min-width: 100%;
-  padding: 0.5rem 0.75rem;
+  border: 0;
+  padding: 0.75rem 0.75rem;
   border-radius: 0.125rem;
   box-shadow: 0px 1px 6px 0px rgba(179, 179, 179, 0.61);
   font-size: 0.875rem;
   font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.tag-filter__list {
-  list-style: none;
-  margin: 0;
-  padding: 0.5rem 0 0.75rem;
-  background-color: var(--color-white);
-  box-shadow: 0px 1px 6px 0px rgba(179, 179, 179, 0.61);
-  z-index: 3;
-  max-height: 12rem;
-  overflow-y: auto;
-  min-width: max-content;
-  position: absolute;
-  left: 0;
-  right: 0;
-  transform: translateY(0.25rem);
-}
-
-.tag-filter__item {
-  font-size: 0.875rem;
-  font-weight: 500;
-
-  &--title {
-    color: var(--color-mid-gray);
-    padding: 0 0.75rem;
-  }
-}
-
-.tag-filter__link {
-  display: block;
-  text-decoration: none;
-  padding: 0 1.25rem;
-  transition: background-color 0.3s ease;
-
-  &:hover,
-  &:focus {
-    background-color: rgba(2, 206, 186, 0.4);
-  }
+  appearance: none;
+  background-image: url("/assets/images/icons/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: 98%;
+  background-size: 0.75rem;
 }
 
 @media (min-width: 48em) {
@@ -80,13 +42,13 @@
     align-items: center;
   }
 
-  .tag-filter__disclosure-wrapper {
+  .tag-filter__select-wrapper {
     margin-top: 0;
     width: auto;
   }
 
-  .tag-filter__disclosure {
-    width: auto;
+  .tag-filter__label {
+    display: inline-flex;
   }
 
   .tag-filter__title {
@@ -94,7 +56,8 @@
     visibility: visible;
   }
 
-  .tag-filter__button {
+  .tag-filter__select {
     min-width: 13.75rem;
+    background-position: 95%;
   }
 }
