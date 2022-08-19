@@ -32,6 +32,7 @@
 .nav-aside__socials {
   height: 100%;
   flex-basis: 100%;
+  gap: 1rem;
 }
 
 
@@ -46,6 +47,7 @@
 
   .nav-aside__socials {
     flex-basis: auto;
+    gap: 0.75rem;
 
     svg {
       width: 1.5rem;
