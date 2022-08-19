@@ -1,16 +1,18 @@
 pre,
 code {
   background-color: var(--color-offwhite);
-  color: var(--color-black);
+  color: #5b5b5b;
 }
 
 pre {
   width: 100%;
   overflow: auto;
   margin: 2rem 0 3rem;
+  border: 1px solid #ddd;
 }
 
 code {
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
   padding: 0.25rem;
 }
 
@@ -20,14 +22,33 @@ pre code {
 }
 
 code {
-  .string,
-  .property {
-    color: var(--color-blue);
+  .keyword {
+    color: #333;
+    font-weight: 700;
   }
 
-  .class-name,
-  .function,
-  .variable {
-    color: var(--color-purple);
+  .string,
+  .property {
+    color: #d14;
+  }
+
+  .class-name {
+    color: #900;
+    font-weight: 700;
+  }
+
+  .comment {
+    color: #998;
+    font-style: italic;
+  }
+
+  .attribute {
+    color: #999;
+    font-weight: 700;
+  }
+
+  .builtin {
+    color: #0086b3;
+    font-weight: 400;
   }
 }
