@@ -1,10 +1,23 @@
 {% from "cta-link.njk" import ctaLink %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+
 {%- macro imageBannerWithText(content) -%}
   <section class="image-banner-with-text">
     <div class="container container--lg">
       <h2 class="image-banner-with-text__heading h5">{{ content.title }}</h2>
     </div>
-    {% image content.image, content.alt, '100vw', content.loading, 'image-banner-with-text__image', [760, 1440, 1920] %}
+
+    {% if content.image %}
+      {% set imageData = {
+        "imgPath": content.image,
+        "alt": content.alt,
+        "sizes": "100vw",
+        "loading": "lazy",
+        "sizesArray": [760, 1440, 1920]
+      } %}
+      {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+    {% endif %}
+
     <div class="container container--lg">
       <div class="image-banner-with-text__content">
         {% if content.subtitle %}

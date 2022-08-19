@@ -13,10 +13,10 @@
         </span>
         <ul class="mobile-menu__list mobile-menu__list--submenu">
           <li class="mobile-menu__item">
-            <a class="mobile-menu__link h4" {% if '/services/workshops/' == page.url %} aria-current="page" {% endif %}
-              href="/services/workshops/">
+            <a class="mobile-menu__link h4" {% if '/services/team-augmentation-and-training/'==page.url %} aria-current="page" {%
+              endif %} href="/services/team-augmentation-and-training/">
               {% include 'svg/arrow.njk' %}
-              Workshops
+              Team Augmentation & Training
             </a>
           </li>
           <li class="mobile-menu__item">
@@ -26,9 +26,10 @@
             </a>
           </li>
           <li class="mobile-menu__item">
-            <a class="mobile-menu__link h4" {% if '/services/team-augmentation-and-training/'== page.url %} aria-current="page" {% endif %} href="/services/team-augmentation-and-training/">
+            <a class="mobile-menu__link h4" {% if '/services/workshops/'==page.url %} aria-current="page" {% endif %}
+              href="/services/workshops/">
               {% include 'svg/arrow.njk' %}
-              Team Augmentation & Training
+              Workshops
             </a>
           </li>
         </ul>

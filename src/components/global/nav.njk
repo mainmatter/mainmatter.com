@@ -43,9 +43,10 @@
             <div class="submenu__list-wrapper">
               <ul class="nav-submenu__list">
                 <li class="nav-submenu__item">
-                  <a class="nav-submenu__link" href="/services/workshops/" {% if '/services/workshops/'== page.url %} aria-current="page" {% endif %}>
+                  <a class="nav-submenu__link" href="/services/team-augmentation-and-training/" {%
+                    if '/services/team-augmentation-and-training/'==page.url %} aria-current="page" {% endif %}>
                     {% include 'svg/arrow.njk' %}
-                    <span class="nav-submenu__link-text">Workshops</span>
+                    <span class="nav-submenu__link-text">Team Augmentation & Training</span>
                   </a>
                 </li>
                 <li class="nav-submenu__item">
@@ -55,9 +56,10 @@
                   </a>
                 </li>
                 <li class="nav-submenu__item">
-                  <a class="nav-submenu__link" href="/services/team-augmentation-and-training/" {% if '/services/team-augmentation-and-training/'== page.url %} aria-current="page" {% endif %}>
+                  <a class="nav-submenu__link" href="/services/workshops/" {% if '/services/workshops/'==page.url %} aria-current="page"
+                    {% endif %}>
                     {% include 'svg/arrow.njk' %}
-                    <span class="nav-submenu__link-text">Team Augmentation & Training</span>
+                    <span class="nav-submenu__link-text">Workshops</span>
                   </a>
                 </li>
               </ul>

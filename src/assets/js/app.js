@@ -1,6 +1,5 @@
 import "wicg-inert";
 import { Animations } from "./animations";
-import bindAccordions from "./accordions";
 import { Nav } from "./nav";
 import { ContactForm } from "./contact-form";
 import { LogoList } from "./logo-list";
@@ -15,4 +14,3 @@ const logoList = document.getElementById("logo-list");
 if (logoList) new LogoList(logoList);
 
 new Animations();
-bindAccordions();
