@@ -39,7 +39,9 @@
       <div class="featured-post__content">
         <a href="{{ post.url }}" class="featured-post__image-wrapper">
           {% if post.data.image %}
-          {% image post.data.image, post.data.imageAlt, '(min-width: 48em) 50vw, 100vw', 'eager', '' %}
+            {% image post.data.image, post.data.imageAlt, '(min-width: 48em) 50vw, 100vw', 'eager', '' %}
+          {% else %}
+            {% image '/assets/images/photos/0027.jpg', 'Hands gesturing around a laptop', '(min-width: 48em) 50vw, 100vw', 'eager', '' %}
           {% endif %}
         </a>
         <div class="featured-post__text-wrapper">

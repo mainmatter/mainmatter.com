@@ -16,6 +16,9 @@ post: A post object
         <div class="post-card__image-wrapper">
           {% if post.data.image %}
             {% image post.data.image, post.data.imageAlt, '(min-width: 48em) 44rem, 90vw', "lazy", 'post-card__image', [704, 1408] %}
+          {% else %}
+            {% image '/assets/images/photos/0027.jpg', 'Hands gesturing around a laptop', '(min-width: 48em) 44rem, 90vw', "lazy", 'post-card__image', [704, 1408]
+            %}
           {% endif %}
         </div>
         <div class="post-card__overlay"></div>
