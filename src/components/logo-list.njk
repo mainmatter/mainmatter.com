@@ -17,7 +17,7 @@ Example usage:
       </div>
     {% endif %}
     <div class="logo-list__wrapper">
-      <div class="logo-list__inner" data-marquee>
+      <div class="logo-list__inner" data-marquee style="--marquee-logo-count: {{ logos | length }};">
         <ul class="logo-list__list">
           {% for logo in logos %}
             <li class="logo-list__item">

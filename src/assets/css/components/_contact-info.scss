@@ -21,6 +21,10 @@
   color: var(--color-aqua);
 }
 
+.contact-info__socials {
+  gap: 1rem;
+}
+
 @media (min-width: 48em) {
   .contact-info {
     padding: 6.25rem 0 1rem;

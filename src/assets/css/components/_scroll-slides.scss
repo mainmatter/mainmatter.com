@@ -28,8 +28,9 @@
 }
 
 .scroll-slides__container {
+  position: relative;
   display: flex;
-  gap: 0.5rem;
+  gap: 1.5rem;
 }
 
 .scroll-slides__image-wrapper {
@@ -38,6 +39,10 @@
 
 .scroll-slides__content {
   flex-grow: 1;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .scroll-slides__tagline {
@@ -89,7 +94,7 @@
 .scroll-slides__pagination-button {
   border: 0;
   background-color: transparent;
-  padding: 0.75rem;
+  padding: 0.75rem 0;
   position: relative;
 
   > * {
@@ -132,12 +137,10 @@
 }
 
 @media (min-width: 48em) and (min-height: 32rem) {
-  .scroll-slides__pagination {
-    margin: 0;
-  }
+
 
   .scroll-slides__container {
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .scroll-slides__text-wrapper {
@@ -171,5 +174,12 @@
   .scroll-slides__title {
     font-size: 4rem;
     line-height: 1.2;
+  }
+}
+
+@media (min-width: 78em) and (min-height: 32rem) {
+  .scroll-slides__pagination {
+    position: absolute;
+    left: -3.5rem;
   }
 }

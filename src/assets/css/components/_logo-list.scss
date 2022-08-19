@@ -15,7 +15,7 @@
 }
 
 .logo-list__inner {
-  width: 600%;
+  width: calc(var(--marquee-logo-count) * 100%);
   display: flex;
   animation: infinite-scroll 36s linear infinite;
   animation-play-state: running;
@@ -36,6 +36,7 @@
 }
 
 .logo-list__item {
+  padding: 1rem;
   flex-shrink: 0;
   flex-grow: 1;
 }
@@ -66,11 +67,15 @@
 
 @media (min-width: 30em) {
   .logo-list__inner {
-    width: 500%;
+    width: calc(var(--marquee-logo-count) * 70%);
   }
 }
 
 @media (min-width: 48em) {
+  .logo-list__inner {
+    width: calc(var(--marquee-logo-count) * 60%);
+  }
+
   .logo-list {
     padding: 5rem 0;
   }
@@ -80,9 +85,15 @@
   }
 }
 
-@media (min-width: 62em) {
+@media (min-width: 48em) {
   .logo-list__inner {
-    width: 300%;
+    width: calc(var(--marquee-logo-count) * 50%);
+  }
+}
+
+@media (min-width: 72em) {
+  .logo-list__inner {
+    width: calc(var(--marquee-logo-count) * 35%);
   }
 }
 
@@ -98,7 +109,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .logo-list__inner {
-    width: 200%;
+    width: 150%;
   }
 
   .logo-list__wrapper {
@@ -115,7 +126,7 @@
     visibility: hidden;
   }
 
-  @media (min-width: 62em) {
+  @media (min-width: 80em) {
     .logo-list__inner {
       width: 100%;
     }
