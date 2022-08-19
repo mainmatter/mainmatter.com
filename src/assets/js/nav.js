@@ -45,7 +45,7 @@ export class Nav {
     const siblings = this.getAllSiblings(this.container);
     menuToggle.setAttribute("aria-expanded", "false");
     siblings.forEach((sibling) => sibling.removeAttribute("inert"));
-    menuToggle.focus();
+    menuToggle.focus({focusVisible: false});
     document.body.classList.remove("menu-open");
   }
 

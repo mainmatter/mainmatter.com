@@ -34,7 +34,7 @@
           <span class="nav__link-text{% if page.url and '/services/' in page.url %} nav__link-text--active{% endif %}">Services</span>
           {% include 'svg/arrow.njk' %}
         </button>
-        <div class="nav-submenu__menu" aria-modal="true" data-modal aria-label="Services submenu">
+        <div class="nav-submenu__menu" aria-modal="true" data-modal aria-label="Services submenu" tabindex="-1">
           <div class="nav-submenu__menu-inner">
             <button class="nav-submenu__menu-close" data-menu-close>
               {% include 'svg/close.njk' %}
