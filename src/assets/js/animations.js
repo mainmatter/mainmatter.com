@@ -65,7 +65,11 @@ export class Animations {
     lax.addElements(".text-animation__cover-offset", {
       scrollY: {
         scaleX: [
-          ["elCenterY-100", "elOutY-600"],
+          {
+            480: ["elOutY-200", "elOutY-100"],
+            1024: ["elCenterY-100", "elOutY-600"]
+          },
+
           [1, 0],
         ],
       },
