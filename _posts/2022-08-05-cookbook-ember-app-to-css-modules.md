@@ -19,6 +19,8 @@ using global CSS to CSS modules with
 
 <!--break-->
 
+![Migrate an existing Ember app to CSS modules illustration](/assets/images/posts/2022-08-05-cookbook-ember-app-to-css-modules/illustration.svg#full)
+
 ## Introduction
 
 ### Prerequisites
