@@ -13,10 +13,10 @@
 }
 
 .split-content__feature {
-  flex: 1 0 auto;
+  flex: 1 0 100%;
 }
 
-@media (min-width: 72em) {
+@media (min-width: 48em) {
   .split-content {
     margin: 6.25rem 0;
   }
@@ -28,5 +28,9 @@
   .split-content__content {
     flex-wrap: nowrap;
     gap: 6.25rem;
+  }
+
+  .split-content__feature {
+    flex: 1 0 auto;
   }
 }

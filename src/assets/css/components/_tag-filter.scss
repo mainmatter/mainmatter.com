@@ -27,7 +27,9 @@
   box-shadow: 0px 1px 6px 0px rgba(179, 179, 179, 0.61);
   font-size: 0.875rem;
   font-weight: 500;
+  color: currentColor;
   appearance: none;
+  background-color: transparent;
   background-image: url("/assets/images/icons/arrow-down.svg");
   background-repeat: no-repeat;
   background-position: 98%;
