@@ -4,30 +4,32 @@ export class Nav {
   constructor(element) {
     this.container = element;
     this.menuToggles = this.container.querySelectorAll("[data-menu-toggle]");
-    this.menuCloseButtons = this.container.querySelectorAll("[data-menu-close]");
+    this.menuClose = this.container.querySelectorAll("[data-menu-close]");
+    this.modals = this.container.querySelectorAll("[data-modal]");
+
+    this.modals.forEach((modal) => {
+      modal.setAttribute("aria-modal", true);
+    });
 
     this.bindEvents();
   }
 
   bindEvents() {
-    this.menuToggles.forEach((menuToggle) => {
-      menuToggle.addEventListener("click", () => {
-        if (menuToggle.getAttribute("aria-expanded") === "true") {
-          this.closeMenu(menuToggle);
+    this.menuToggles.forEach((toggle) => {
+      toggle.addEventListener("click", () => {
+        const menu = toggle.closest("[data-has-submenu]");
+        if (menu.hasAttribute("open")) {
+          this.closeMenu(menu);
         } else {
-          this.openMenu(menuToggle);
+          this.openMenu(menu);
         }
       });
     });
 
-    this.menuCloseButtons.forEach((button) => {
+    this.menuClose.forEach((button) => {
       button.addEventListener("click", () => {
-        const toggle = button.closest("[data-has-modal")?.querySelector("[data-menu-toggle]");
-        if (toggle.getAttribute("aria-expanded") === "true") {
-          this.closeMenu(toggle);
-        } else {
-          this.openMenu(toggle);
-        }
+        const toggle = button.closest("[data-has-submenu]").querySelector("[data-menu-toggle]");
+        if (toggle) toggle.click();
       });
     });
 
@@ -35,18 +37,14 @@ export class Nav {
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         this.menuToggles.forEach((menuToggle) => {
-          this.closeMenu(menuToggle);
+          const menu = menuToggle.closest("[data-has-submenu]");
+          if (menu && menu.hasAttribute("open")) {
+            const toggle = menu.querySelector("[data-menu-toggle]");
+            if (toggle) toggle.click();
+          }
         });
       }
     });
-  }
-
-  closeMenu(menuToggle) {
-    const siblings = this.getAllSiblings(this.container);
-    menuToggle.setAttribute("aria-expanded", "false");
-    siblings.forEach((sibling) => sibling.removeAttribute("inert"));
-    menuToggle.focus({focusVisible: false});
-    document.body.classList.remove("menu-open");
   }
 
   getAllSiblings(element) {
@@ -54,17 +52,22 @@ export class Nav {
     return children.filter((child) => child !== element);
   }
 
-  openMenu(menuToggle) {
+  closeMenu(menu) {
     const siblings = this.getAllSiblings(this.container);
-    menuToggle.setAttribute("aria-expanded", "true");
+    siblings.forEach((sibling) => sibling.removeAttribute("inert"));
+    document.body.classList.remove("menu-open");
+    const menuToggle = menu.querySelector("[data-menu-toggle]");
+    menuToggle.focus({focusVisible: false});
+  }
+
+  openMenu(menu) {
+    const siblings = this.getAllSiblings(this.container);
     siblings.forEach((sibling) => sibling.setAttribute("inert", true));
     document.body.classList.add("menu-open");
 
-    // Set trap focus
-    const modal = menuToggle.closest("[data-has-modal")?.querySelector("[data-modal]");
-    if (modal) {
+    if (menu) {
       setTimeout(function () {
-        trapFocus(modal);
+        trapFocus(menu);
       }, 100);
     }
   }

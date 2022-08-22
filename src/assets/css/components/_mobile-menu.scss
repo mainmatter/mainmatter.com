@@ -18,14 +18,14 @@
 }
 
 .mobile-menu__inner {
-  height: 100vh;
+  height: 100%;
   overflow-x: hidden;
 }
 
 .mobile-menu__list {
   flex-shrink: 0;
   margin: 0;
-  padding: 4rem 1rem 6rem;
+  padding: 6rem 1rem;
   list-style: none;
 
   &--submenu {
@@ -53,6 +53,7 @@
     margin-right: 2rem;
   }
 }
+
 .mobile-menu__button-close {
   height: 3rem;
   width: 3rem;
@@ -66,4 +67,11 @@
   background-color: transparent;
   vertical-align: middle;
   color: currentColor;
+}
+
+body[data-js-enabled="true"] {
+  .mobile-menu__inner {
+    height: 100vh;
+    overflow-x: hidden;
+  }
 }
