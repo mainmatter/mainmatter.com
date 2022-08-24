@@ -10,7 +10,7 @@ description:
   discovering ember-css-module from a practical perspective to get a different
   view on the doc.'
 og:
-  image: /assets/images/posts/2022-08-05-cookbook-ember-app-to-css-modules/og-image.png
+  image: /assets/images/posts/2022-08-24-cookbook-ember-app-to-css-modules/og-image.png
 ---
 
 This short tutorial is intended to help Ember developers to migrate an Ember app
@@ -19,7 +19,7 @@ using global CSS to CSS modules with
 
 <!--break-->
 
-![Migrate an existing Ember app to CSS modules illustration](/assets/images/posts/2022-08-05-cookbook-ember-app-to-css-modules/illustration.svg#full)
+![Migrate an existing Ember app to CSS modules illustration](/assets/images/posts/2022-08-24-cookbook-ember-app-to-css-modules/illustration.svg#full)
 
 ## Introduction
 
@@ -94,7 +94,7 @@ Let's suppose we have finished implementing the SuperRentals app. The following
 screenshot shows the page as it should be in your browser, with the nice styling
 provided in the tutorial:
 
-![SuperRentals with global CSS](/assets/images/posts/2022-08-05-cookbook-ember-app-to-css-modules/screen-1.png)
+![SuperRentals with global CSS](/assets/images/posts/2022-08-24-cookbook-ember-app-to-css-modules/screen-1.png)
 
 To use CSS modules, let's install
 [`ember-css-modules`](https://github.com/salsify/ember-css-modules):
@@ -108,7 +108,7 @@ the dependency to `package.json` and modifies the lock file.
 
 Let's run the local server again and see how our app is doing:
 
-![SuperRentals styles are broken](/assets/images/posts/2022-08-05-cookbook-ember-app-to-css-modules/screen-2.png)
+![SuperRentals styles are broken](/assets/images/posts/2022-08-24-cookbook-ember-app-to-css-modules/screen-2.png)
 
 Ouch, all the styles are broken. What we see now in the browser is very similar
 to a page with no CSS at all. To understand what is going on let's use the
@@ -148,7 +148,7 @@ shows using the following approach:
 
 Now, let's have a look at the CSS applied on the `<div>` element:
 
-![Tomster div highlighted in the DOM](/assets/images/posts/2022-08-05-cookbook-ember-app-to-css-modules/screen-3.png)
+![Tomster div highlighted in the DOM](/assets/images/posts/2022-08-24-cookbook-ember-app-to-css-modules/screen-3.png)
 
 Only two CSS rules apply on the Tomster `<div>`. The first one is a global rule
 to reset margins. The second one defines the font family and line height set on
@@ -248,7 +248,7 @@ use the `:global` pseudoselector:
 
 And let's see what happens in the browser:
 
-![Tomster shows again](/assets/images/posts/2022-08-05-cookbook-ember-app-to-css-modules/screen-4.png)
+![Tomster shows again](/assets/images/posts/2022-08-24-cookbook-ember-app-to-css-modules/screen-4.png)
 
 Tomster is back! If we take a new look at the generated CSS file in the
 browser's inspector, we can see this time the classes `.right` and `.tomster`
@@ -303,7 +303,7 @@ class local:
 
 Everything should show as before:
 
-![Tomster still shows as expected](/assets/images/posts/2022-08-05-cookbook-ember-app-to-css-modules/screen-5.png)
+![Tomster still shows as expected](/assets/images/posts/2022-08-24-cookbook-ember-app-to-css-modules/screen-5.png)
 
 If we look one more time at the CSS classes in the inspector, we'll see that
 class `.right` is still applied globally, but `.tomster` selector now owns a
