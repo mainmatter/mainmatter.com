@@ -35,7 +35,7 @@
     transform: rotate(0);
   }
 
-  .nav-submenu[open] & {
+  body[data-js-enabled="false"] .nav-submenu[open] & {
     svg {
       transform: rotate(180deg);
     }
@@ -116,7 +116,6 @@ body[data-js-enabled="true"] {
 
   .nav-submenu__toggle {
     svg {
-
       transform: rotate(-90deg);
     }
   }
@@ -130,6 +129,12 @@ body[data-js-enabled="true"] {
     svg {
       width: 2rem;
       height: 2rem;
+    }
+  }
+
+  .nav-submenu[open] .nav-submenu__toggle svg & {
+    svg {
+      transform: rotate(-90deg);
     }
   }
 }

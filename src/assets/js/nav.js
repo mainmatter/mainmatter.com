@@ -7,6 +7,10 @@ export class Nav {
     this.menuClose = this.container.querySelectorAll("[data-menu-close]");
     this.modals = this.container.querySelectorAll("[data-modal]");
 
+    this.animation = null;
+    this.isClosing = false;
+    this.isOpening = false;
+
     this.modals.forEach((modal) => {
       modal.setAttribute("aria-modal", true);
     });
@@ -16,11 +20,13 @@ export class Nav {
 
   bindEvents() {
     this.menuToggles.forEach((toggle) => {
-      toggle.addEventListener("click", () => {
+      toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+
         const menu = toggle.closest("[data-has-submenu]");
-        if (menu.hasAttribute("open")) {
+        if (this.isOpening || menu.open) {
           this.closeMenu(menu);
-        } else {
+        } else if (this.isClosing || !menu.open) {
           this.openMenu(menu);
         }
       });
@@ -53,6 +59,23 @@ export class Nav {
   }
 
   closeMenu(menu) {
+    const content = menu.querySelector("[data-modal]");
+    this.isClosing = true;
+
+    if (this.animation) {
+      this.animation.cancel();
+    }
+
+    this.animation = content.animate({
+      opacity: [1, 0]
+    }, {
+      duration: 200,
+      easing: 'ease-out'
+    });
+
+    this.animation.onfinish = () => this.onAnimationFinish(menu, false);
+    this.animation.oncancel = () => this.isClosing = false;
+
     const siblings = this.getAllSiblings(this.container);
     siblings.forEach((sibling) => sibling.removeAttribute("inert"));
     document.body.classList.remove("menu-open");
@@ -60,7 +83,29 @@ export class Nav {
     menuToggle.focus({focusVisible: false});
   }
 
+  animateOpacity(menu) {
+    const content = menu.querySelector("[data-modal]");
+    this.isOpening = true;
+
+    if (this.animation) {
+      this.animation.cancel();
+    }
+
+    this.animation = content.animate({
+      opacity: [0, 1]
+    }, {
+      duration: 200,
+      easing: 'ease-in'
+    });
+
+    this.animation.onfinish = () => this.onAnimationFinish(menu, true);
+    this.animation.oncancel = () => this.isOpening = false;
+  }
+
   openMenu(menu) {
+    menu.open = true;
+    window.requestAnimationFrame(() => this.animateOpacity(menu));
+
     const siblings = this.getAllSiblings(this.container);
     siblings.forEach((sibling) => sibling.setAttribute("inert", true));
     document.body.classList.add("menu-open");
@@ -70,6 +115,13 @@ export class Nav {
         trapFocus(menu);
       }, 100);
     }
+  }
+
+  onAnimationFinish(menu, open) {
+    menu.open = open;
+    this.animation = null;
+    this.isClosing = false;
+    this.isOpening = false;
   }
 }
 
