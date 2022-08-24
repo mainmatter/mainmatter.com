@@ -52,3 +52,140 @@ code {
     font-weight: 400;
   }
 }
+
+.language-yaml {
+  color: #d14;
+
+  .key,
+  .atrule,
+  .punctuation {
+    color: teal;
+  }
+}
+
+.language-js,
+.language-javascript {
+  .function-variable,
+  .keyword {
+    color: teal;
+  }
+
+  .function {
+    color: #900;
+    font-weight: 700;
+  }
+}
+
+.language-rb {
+  .operator,
+  .constant {
+    color: #458;
+    font-weight: 700;
+  }
+
+  .function {
+    color: #900;
+    font-weight: 700;
+  }
+
+  .variable {
+    color: teal;
+  }
+}
+
+.language-hbs {
+  .variable {
+    color: navy;
+  }
+}
+
+.language-md {
+  .title {
+    color: #900;
+    font-weight: 700;
+  }
+
+  .url {
+    color: #009926;
+  }
+
+  .content {
+    color: #d14;
+  }
+
+  .keyword {
+    font-weight: 400;
+  }
+}
+
+.language-css {
+  .rule {
+    font-weight: 700;
+  }
+
+  .selector {
+    color: teal;
+  }
+
+  .property {
+    color: navy;
+  }
+
+  .function {
+    color: #0086b3;
+  }
+}
+
+.language-handlebars {
+  .tag,
+  .variable {
+    color: navy;
+  }
+
+  .attr-name,
+  .boolean {
+    color: teal;
+  }
+}
+
+.language-kotlin {
+  .boolean {
+    color: teal;
+  }
+}
+
+.language-html {
+  .tag {
+    color: navy;
+  }
+
+  .attr-name {
+    color: teal;
+  }
+
+  .attr-value {
+    color: #d14;
+  }
+
+  .attr-equals {
+    color: #333;
+  }
+}
+
+.language-elixir {
+  .attr-name,
+  .atom {
+    color: #990073;
+  }
+
+  .module {
+    color: currentColor;
+    font-weight: 400;
+  }
+
+  .function,
+  .class-name {
+    color: #900;
+    font-weight: 700;
+  }
+}
