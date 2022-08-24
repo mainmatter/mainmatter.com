@@ -21,8 +21,7 @@
   text-underline-offset: 0.125rem;
   text-decoration-thickness: 0.0625rem;
   text-decoration-line: underline;
-  text-decoration-color: var(--color-purple);
-  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .case-study-card__tags {
@@ -39,7 +38,6 @@
   &:hover {
       &~.case-study-card__description .case-study-card__client {
         color: var(--color-aqua);
-        text-decoration-color: var(--color-aqua);
       }
     }
 }

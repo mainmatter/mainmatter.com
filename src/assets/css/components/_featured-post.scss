@@ -43,6 +43,11 @@
 
 .featured-post__author-name {
   color: var(--color-white);
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--color-aqua);
+  }
 }
 
 .featured-post__cta {
@@ -52,6 +57,11 @@
 
 .featured-post__tag {
   font-size: 1.125rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--color-aqua);
+  }
 }
 
 .featured-post__link {

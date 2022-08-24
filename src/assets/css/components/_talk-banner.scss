@@ -73,7 +73,7 @@
   text-decoration: underline 1px var(--color-purple);
   text-underline-offset: 0.125rem;
   text-decoration-thickness: 0.0625rem;
-  transition: text-decoration-color 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .talk-banner__title {
@@ -131,7 +131,6 @@
       &~.talk-banner__image-overlay .cta-link__arrow svg,
       &~.cta-link {
         color: var(--color-aqua);
-        text-decoration-color: var(--color-aqua);
       }
     }
   }
