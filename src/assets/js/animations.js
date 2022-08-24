@@ -53,9 +53,8 @@ export class Animations {
         scaleX: [
           {
             768: ["elOutY-100", "elOutY-50"],
-            1024: ["elOutY-200", "elOutY-100"],
-            1366: ["elOutY-200", "elOutY-150"],
-            1900: ["elOutY-300", "elOutY-200"],
+            1280: ["elOutY-200", "elOutY-100"],
+            1900: ["elOutY-300", "elOutY-100"],
           },
           [1, 0],
         ],
@@ -66,10 +65,9 @@ export class Animations {
       scrollY: {
         scaleX: [
           {
-            480: ["elOutY-200", "elOutY-100"],
-            1024: ["elCenterY-100", "elOutY-600"]
+            480: ["elOutY-400", "elOutY-100"],
+            1200: ["elOutY-900", "elOutY-600"]
           },
-
           [1, 0],
         ],
       },
