@@ -108,6 +108,7 @@
   background-color: var(--color-accent);
   color: var(--color-white);
   z-index: 2;
+  transition: background-color 0.3s ease;
 
   &::-webkit-details-marker {
     display: none;
