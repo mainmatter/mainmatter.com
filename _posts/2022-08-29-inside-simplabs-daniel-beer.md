@@ -19,10 +19,8 @@ Assistant, interviews Daniel Beer, Software Engineer at simplabs.
 
 As a Software Engineer, Daniel is often facing complicated problems that require
 lots of research and dedication. His tip for any developer is to commit to
-finding a solution even if it takes longer than expected.
-
-Communication and collaboration within the team are also crucial to Daniel’s
-work.
+finding a solution even if it takes longer than expected. Communication and
+collaboration within the team are also crucial to Daniel’s work.
 
 Outside of work, Daniel has various unusual projects. He is even planning to
 build a house for himself out of bamboo one day!
