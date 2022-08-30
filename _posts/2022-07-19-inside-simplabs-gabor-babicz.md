@@ -10,15 +10,12 @@ og:
   image: /assets/images/posts/2022-07-19-inside-simplabs-gabor-babicz/og-image.png
 ---
 
-In the ninth episode of Inside simplabs, Emma Dell'Acqua, Marketing Assistant,
+In the tenth episode of Inside simplabs, Emma Dell'Acqua, Marketing Assistant,
 interviews Gabor Babicz, Frontend Developer at simplabs.
 
 <!--break-->
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/97oo_5q2IwU" title="Embedded video of Inside simplabs episode 10" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-In the tenth episode of Inside simplabs, Emma Dell'Acqua, Marketing Assistant,
-interviews Gabor Babicz, Frontend Developer at simplabs.
 
 Being a frontend developer requires knowledge in a variety of fields. Consistent
 practice and taking up small challenges every day have helped Gabor improve to
