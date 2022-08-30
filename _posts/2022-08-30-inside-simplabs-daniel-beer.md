@@ -7,7 +7,7 @@ topic: insidesimplabs
 bio: 'Marketing Assistant'
 description: 'Interview with Daniel Beer, Software Engineer at simplabs.'
 og:
-  image: /assets/images/posts/2022-08-29-inside-simplabs-daniel-beer/og-image.png
+  image: /assets/images/posts/2022-08-30-inside-simplabs-daniel-beer/og-image.png
 ---
 
 In the eleventh episode of Inside simplabs, Emma Dell'Acqua, Marketing
