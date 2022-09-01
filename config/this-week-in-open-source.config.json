@@ -43,7 +43,9 @@
         "oscard0m/octoherd-script-migrate-pika",
         "oscard0m/octoherd-script-replace-all-repository-topics",
         "oscard0m/octoherd-script-watch-unwatch-or-ignore",
-        "marcoow/chat-server"
+        "marcoow/chat-server",
+        "oscard0m/gravity_dummy",
+        "oscard0m/example-vercel-ts]"
     ],
     "labels": [
         {
@@ -243,7 +245,16 @@
                 "octokit/openapi",
                 "octokit/request-action",
                 "octokit/webhooks",
-                "oscard0m/octokit-request-action"
+                "oscard0m/octokit-request-action",
+                "oscard0m/octoherd-script-fix-test-workflow-octokit",
+                "oscard0m/octoherd-script-remove-renovate-package.json"
+            ]
+        },
+        {
+            "name": "Probot",
+            "repos": [
+                "probot/example-vercel",
+                "probot/probot"
             ]
         },
         {

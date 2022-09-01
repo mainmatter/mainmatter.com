@@ -213,30 +213,15 @@ some of the work they have done the past weeks!
 - [octokit/oauth-app.js]
   [#331](https://github.com/octokit/oauth-app.js/pull/331) fix(bundlesize): move
   'aws-lambda' as devDependency ([@oscard0m])
-
-## Unknown
-
-- [oscard0m/example-vercel-ts]
-  [#1](https://github.com/oscard0m/example-vercel-ts/pull/1) refactor(probot):
-  migrate to TypeScript ([@oscard0m])
-- [oscard0m/gravity_dummy]
-  [#4](https://github.com/oscard0m/gravity_dummy/pull/4) PR build fail example
-  ([@oscard0m])
-- [oscard0m/gravity_dummy]
-  [#3](https://github.com/oscard0m/gravity_dummy/pull/3) feat(index): cowsay
-  library ([@oscard0m])
-- [oscard0m/gravity_dummy]
-  [#2](https://github.com/oscard0m/gravity_dummy/pull/2) build(package-lock):
-  add missing package-lock ([@oscard0m])
-- [oscard0m/gravity_dummy]
-  [#1](https://github.com/oscard0m/gravity_dummy/pull/1) Update index.ts
-  ([@oscard0m])
 - [oscard0m/octoherd-script-fix-test-workflow-octokit]
   [#1](https://github.com/oscard0m/octoherd-script-fix-test-workflow-octokit/pull/1)
   feat: Initial version ([@oscard0m])
 - [oscard0m/octoherd-script-remove-renovate-package.json]
   [#1](https://github.com/oscard0m/octoherd-script-remove-renovate-package.json/pull/1)
   feat: Initial version ([@oscard0m])
+
+## Probot
+
 - [probot/example-vercel]
   [#50](https://github.com/probot/example-vercel/pull/50) docs(README): add
   section for 'Other examples' ([@oscard0m])
@@ -245,6 +230,9 @@ some of the work they have done the past weeks!
   considerations for deploying with vercel ([@oscard0m])
 - [probot/probot] [#1724](https://github.com/probot/probot/pull/1724)
   build(deps): upgrade octokit/types to v7.1.1 ([@oscard0m])
+
+## Unknown
+
 - [soxhub/formatjs] [#2](https://github.com/soxhub/formatjs/pull/2) fix: the
   same description inside nested html should have equal ids ([@candunaj])
 
