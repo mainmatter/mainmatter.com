@@ -81,7 +81,9 @@
         {
             "name": "Octoherd",
             "repos": [
-                "octoherd/.github"
+                "octoherd/.github",
+                "octoherd/create-octoherd-script",
+                "octoherd/script-setup-renovate"
             ]
         },
         {
@@ -154,7 +156,8 @@
                 "ember-engines/ember-engines",
                 "ember-learn/tool-new-release",
                 "ember-template-lint/ember-template-lint",
-                "emberjs/rfcs-tooling"
+                "emberjs/rfcs-tooling",
+                "ember-codemods/ember-angle-brackets-codemod"
             ]
         },
         {
