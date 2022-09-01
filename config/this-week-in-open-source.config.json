@@ -57,7 +57,9 @@
                 "ferrous-systems/teaching-material",
                 "svartalf/rust-claim",
                 "Turbo87/sentry-conduit",
-                "kivikakk/comrak"
+                "kivikakk/comrak",
+                "LukeMathWalker/tracing-bunyan-formatter",
+                "Turbo87/segelflug-classifieds"
             ]
         },
         {
@@ -193,7 +195,8 @@
                 "cookpete/auto-changelog",
                 "axmccx/proxynexus",
                 "mansona/showdown-section-groups",
-                "calibreapp/image-actions"
+                "calibreapp/image-actions",
+                "volta-cli/action"
             ]
         },
         {

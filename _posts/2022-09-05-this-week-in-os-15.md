@@ -18,6 +18,15 @@ some of the work they have done the past weeks!
 
 <!--break-->
 
+## Rust
+
+- [LukeMathWalker/tracing-bunyan-formatter]
+  [#20](https://github.com/LukeMathWalker/tracing-bunyan-formatter/pull/20)
+  Migrate from `claim` to `claims` ([@Turbo87])
+- [Turbo87/segelflug-classifieds]
+  [#350](https://github.com/Turbo87/segelflug-classifieds/pull/350) Fix "byte
+  index is not a char boundary" crash ([@Turbo87])
+
 ## crates.io
 
 - [rust-lang/crates.io]
@@ -188,6 +197,11 @@ some of the work they have done the past weeks!
   [#6](https://github.com/mansona/lint-to-the-future-stylelint/pull/6) Add a
   basic testing system ([@mansona])
 
+## JavaScript
+
+- [volta-cli/action] [#100](https://github.com/volta-cli/action/pull/100) Fix
+  changelog heading ([@Turbo87])
+
 ## Octokit
 
 - [octokit/auth-oauth-device.js]
@@ -202,12 +216,6 @@ some of the work they have done the past weeks!
 
 ## Unknown
 
-- [LukeMathWalker/tracing-bunyan-formatter]
-  [#20](https://github.com/LukeMathWalker/tracing-bunyan-formatter/pull/20)
-  Migrate from `claim` to `claims` ([@Turbo87])
-- [Turbo87/segelflug-classifieds]
-  [#350](https://github.com/Turbo87/segelflug-classifieds/pull/350) Fix "byte
-  index is not a char boundary" crash ([@Turbo87])
 - [oscard0m/example-vercel-ts]
   [#1](https://github.com/oscard0m/example-vercel-ts/pull/1) refactor(probot):
   migrate to TypeScript ([@oscard0m])
@@ -239,8 +247,7 @@ some of the work they have done the past weeks!
   build(deps): upgrade octokit/types to v7.1.1 ([@oscard0m])
 - [soxhub/formatjs] [#2](https://github.com/soxhub/formatjs/pull/2) fix: the
   same description inside nested html should have equal ids ([@candunaj])
-- [volta-cli/action] [#100](https://github.com/volta-cli/action/pull/100) Fix
-  changelog heading ([@Turbo87])
+
 
 [@turbo87]: https://github.com/Turbo87
 [@candunaj]: https://github.com/candunaj
