@@ -231,12 +231,6 @@ some of the work they have done the past weeks!
 - [probot/probot] [#1724](https://github.com/probot/probot/pull/1724)
   build(deps): upgrade octokit/types to v7.1.1 ([@oscard0m])
 
-## Unknown
-
-- [soxhub/formatjs] [#2](https://github.com/soxhub/formatjs/pull/2) fix: the
-  same description inside nested html should have equal ids ([@candunaj])
-
-
 [@turbo87]: https://github.com/Turbo87
 [@candunaj]: https://github.com/candunaj
 [@locks]: https://github.com/locks

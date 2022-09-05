@@ -12,7 +12,8 @@
         "Mikek2252",
         "inesilva",
         "BobrImperator",
-        "candunaj"
+        "candunaj",
+        "lolmaus"
     ],
     "exclude": [
         "cardstack/animations-experiment",
@@ -46,7 +47,8 @@
         "marcoow/chat-server",
         "soxhub/formatjs",
         "oscard0m/gravity_dummy",
-        "oscard0m/example-vercel-ts"
+        "oscard0m/example-vercel-ts",
+        "soxhub/formatjs"
     ],
     "labels": [
         {
