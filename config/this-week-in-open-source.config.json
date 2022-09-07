@@ -12,7 +12,8 @@
         "Mikek2252",
         "inesilva",
         "BobrImperator",
-        "candunaj"
+        "candunaj",
+        "lolmaus"
     ],
     "exclude": [
         "cardstack/animations-experiment",
@@ -43,7 +44,11 @@
         "oscard0m/octoherd-script-migrate-pika",
         "oscard0m/octoherd-script-replace-all-repository-topics",
         "oscard0m/octoherd-script-watch-unwatch-or-ignore",
-        "marcoow/chat-server"
+        "marcoow/chat-server",
+        "soxhub/formatjs",
+        "oscard0m/gravity_dummy",
+        "oscard0m/example-vercel-ts",
+        "soxhub/formatjs"
     ],
     "labels": [
         {
@@ -57,7 +62,9 @@
                 "ferrous-systems/teaching-material",
                 "svartalf/rust-claim",
                 "Turbo87/sentry-conduit",
-                "kivikakk/comrak"
+                "kivikakk/comrak",
+                "LukeMathWalker/tracing-bunyan-formatter",
+                "Turbo87/segelflug-classifieds"
             ]
         },
         {
@@ -81,7 +88,9 @@
         {
             "name": "Octoherd",
             "repos": [
-                "octoherd/.github"
+                "octoherd/.github",
+                "octoherd/create-octoherd-script",
+                "octoherd/script-setup-renovate"
             ]
         },
         {
@@ -154,7 +163,8 @@
                 "ember-engines/ember-engines",
                 "ember-learn/tool-new-release",
                 "ember-template-lint/ember-template-lint",
-                "emberjs/rfcs-tooling"
+                "emberjs/rfcs-tooling",
+                "ember-codemods/ember-angle-brackets-codemod"
             ]
         },
         {
@@ -190,7 +200,8 @@
                 "cookpete/auto-changelog",
                 "axmccx/proxynexus",
                 "mansona/showdown-section-groups",
-                "calibreapp/image-actions"
+                "calibreapp/image-actions",
+                "volta-cli/action"
             ]
         },
         {
@@ -237,7 +248,16 @@
                 "octokit/openapi",
                 "octokit/request-action",
                 "octokit/webhooks",
-                "oscard0m/octokit-request-action"
+                "oscard0m/octokit-request-action",
+                "oscard0m/octoherd-script-fix-test-workflow-octokit",
+                "oscard0m/octoherd-script-remove-renovate-package.json"
+            ]
+        },
+        {
+            "name": "Probot",
+            "repos": [
+                "probot/example-vercel",
+                "probot/probot"
             ]
         },
         {
