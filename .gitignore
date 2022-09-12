@@ -17,7 +17,7 @@ dist
 .eslintcache
 package-lock.json
 .netlify/
-assets
+/assets
 
 # YARD artifacts
 .yardoc
