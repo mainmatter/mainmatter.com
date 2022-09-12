@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request: {}
+  schedule:
+    - cron:  '0 3 * * *' # daily, at 3am
+
+jobs:
+  lint:
+    name: Linting
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: volta-cli/action@v3
+
+      - name: install dependencies
+        run: yarn install
+
+      - name: lint
+        run: yarn lint
