@@ -3,7 +3,7 @@ import { Animations } from "./animations";
 import { Nav } from "./nav";
 import { ContactForm } from "./contact-form";
 import { LogoList } from "./logo-list";
-import bindSelectDropdowns from './select';
+import bindSelectDropdowns from "./select";
 
 const navElement = document.getElementById("nav");
 new Nav(navElement);

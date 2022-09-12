@@ -1,12 +1,12 @@
 const config = require("../src/_data/config");
 
-module.exports = (collection) => {
+module.exports = collection => {
   const tagList = require("./tags")(collection);
 
   const maxPostsPerPage = config.maxPostsPerPage;
   const pagedPosts = [];
 
-  Object.keys(tagList).forEach((tagName) => {
+  Object.keys(tagList).forEach(tagName => {
     const sortedPosts = [...collection.getFilteredByTag(tagName)].reverse();
     const numberOfPages = Math.ceil(sortedPosts.length / maxPostsPerPage);
 

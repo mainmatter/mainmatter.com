@@ -12,7 +12,7 @@ function fromEntries(iterable) {
   ...
 }
 */
-module.exports = (coll) => {
+module.exports = coll => {
   const posts = require("./posts")(coll);
 
   const tagListArr = posts
@@ -23,7 +23,7 @@ module.exports = (coll) => {
 
       return [...new Set(tags)];
     }, [])
-    .map((tag) => [tag, coll.getFilteredByTag(tag).length])
+    .map(tag => [tag, coll.getFilteredByTag(tag).length])
     .sort((a, b) => b[1] - a[1]);
 
   return fromEntries(tagListArr);

@@ -18,7 +18,7 @@ module.exports = function (value, outputPath) {
      */
     const textAnimations = [...document.querySelectorAll(".text-animation em")];
     if (textAnimations.length) {
-      textAnimations.forEach((textAnimation) => {
+      textAnimations.forEach(textAnimation => {
         const span = document.createElement("span");
         span.classList.add("text-animation__cover");
         return textAnimation.appendChild(span);
@@ -27,7 +27,7 @@ module.exports = function (value, outputPath) {
 
     const textAnimationsOffset = [...document.querySelectorAll(".text-animation-offset em")];
     if (textAnimationsOffset.length) {
-      textAnimationsOffset.forEach((textAnimationOffset) => {
+      textAnimationsOffset.forEach(textAnimationOffset => {
         const span = document.createElement("span");
         span.classList.add("text-animation__cover-offset");
         return textAnimationOffset.appendChild(span);
@@ -42,7 +42,7 @@ module.exports = function (value, outputPath) {
        * Create an anchor element inside each post heading
        * to link to the section
        */
-      articleHeadings.forEach((heading) => {
+      articleHeadings.forEach(heading => {
         // Create the anchor element
         const anchor = document.createElement("a");
         // Create the anchor slug
@@ -67,7 +67,7 @@ module.exports = function (value, outputPath) {
      */
     const articleEmbeds = [...document.querySelectorAll("main article iframe")];
     if (articleEmbeds.length) {
-      articleEmbeds.forEach((embed) => {
+      articleEmbeds.forEach(embed => {
         const container = document.createElement("div");
         const wrapper = document.createElement("div");
         container.classList.add("iframe-container");
@@ -84,7 +84,7 @@ module.exports = function (value, outputPath) {
      */
     const links = [...document.querySelectorAll("a")];
     if (links.length) {
-      links.forEach((link) => {
+      links.forEach(link => {
         const href = link.getAttribute("href");
         if (href.charAt(0) !== "/" && href.indexOf(config.url) < 0) {
           link.setAttribute("target", "_blank");
@@ -99,7 +99,7 @@ module.exports = function (value, outputPath) {
      */
     const images = [...document.querySelectorAll("article img")];
     if (images.length) {
-      images.forEach((image) => {
+      images.forEach(image => {
         if (image.classList.length > 0) {
           return;
         }
@@ -141,7 +141,7 @@ module.exports = function (value, outputPath) {
           formats,
           urlPath: imageData.directory,
           outputDir: "./dist/" + imageData.directory,
-          filenameFormat: function (id, src, width, format, options) {
+          filenameFormat: function (id, src, width, format) {
             const extension = path.extname(imageData.src);
             const name = path.basename(imageData.src, extension);
             return `${name}@${width}.${format}`;
@@ -157,9 +157,7 @@ module.exports = function (value, outputPath) {
           decoding: "async",
         };
 
-        let newImage = JSDOM.fragment(
-          Image.generateHTML(stats, imageAttributes)
-        );
+        let newImage = JSDOM.fragment(Image.generateHTML(stats, imageAttributes));
 
         if (imgClass) {
           newImage.firstElementChild.classList.add(imgClass);
@@ -172,7 +170,7 @@ module.exports = function (value, outputPath) {
     // Unwrap our images
     const allPTags = [...document.querySelectorAll(".rte p")];
     const elementList = ["IMG", "PICTURE", "VIDEO"];
-    allPTags.forEach((element) => {
+    allPTags.forEach(element => {
       if (
         element.childNodes.length === 1 &&
         elementList.indexOf(element.childNodes[0].tagName) > -1
@@ -188,7 +186,7 @@ module.exports = function (value, outputPath) {
 
 function setClass(element, list) {
   if (list) {
-    list.map((item) => element.classList.add(item));
+    list.map(item => element.classList.add(item));
   }
 }
 

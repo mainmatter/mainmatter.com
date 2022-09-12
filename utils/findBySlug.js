@@ -10,18 +10,16 @@ let memo;
  * @return {Array<Object>} The original collection. We return this to make
  * eleventy.addCollection happy since it expects a collection of some kind.
  */
-const memoize = (collection) => {
+const memoize = collection => {
   if (memo && Object.keys(memo).length) {
     /* eslint-disable-next-line */
     console.warn(`Overwriting existing memoized collection!`);
   }
 
   memo = {};
-  collection.forEach((item) => {
+  collection.forEach(item => {
     if (memo[item.template.parsed.name]) {
-      throw new Error(
-        `Found duplicate post slug: '${item.template.parsed.name}'`
-      );
+      throw new Error(`Found duplicate post slug: '${item.template.parsed.name}'`);
     }
 
     memo[item.template.parsed.name] = item;
@@ -37,7 +35,7 @@ const memoize = (collection) => {
  * @param {string} slug The post slug to look up.
  * @return {Object} An eleventy collection item.
  */
-const findBySlug = (slug) => {
+const findBySlug = slug => {
   if (!slug) {
     throw new Error(`slug is either null or undefined`);
   }

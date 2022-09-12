@@ -66,7 +66,7 @@ export class Animations {
         scaleX: [
           {
             480: ["elOutY-400", "elOutY-100"],
-            1200: ["elOutY-900", "elOutY-600"]
+            1200: ["elOutY-900", "elOutY-600"],
           },
           [1, 0],
         ],

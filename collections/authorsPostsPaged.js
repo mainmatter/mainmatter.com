@@ -1,14 +1,14 @@
 const config = require("../src/_data/config");
 
-module.exports = (collection) => {
+module.exports = collection => {
   const authorList = require("./authors")(collection);
   const postList = require("./posts")(collection);
 
   const maxPostsPerPage = config.maxPostsPerPage;
   const pagedPosts = [];
 
-  authorList.forEach((author) => {
-    const sortedPosts = postList.filter((post) => {
+  authorList.forEach(author => {
+    const sortedPosts = postList.filter(post => {
       return post.data.authorHandle === author.data.page.fileSlug;
     });
 

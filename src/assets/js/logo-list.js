@@ -8,7 +8,7 @@ export class LogoList {
   }
 
   bindEvents() {
-    this.controls.addEventListener("click", (e) => {
+    this.controls.addEventListener("click", () => {
       const className = "logo-list__inner--paused";
       const isPaused = this.marquee.classList.contains(className);
       const message = isPaused ? "Pause animation" : "Play animation";
@@ -18,4 +18,3 @@ export class LogoList {
     });
   }
 }
-

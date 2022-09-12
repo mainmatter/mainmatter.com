@@ -1,5 +1,3 @@
-import e from "lax.js";
-
 export class ContactForm {
   constructor(element) {
     this.form = element;
@@ -14,7 +12,7 @@ export class ContactForm {
   }
 
   bindEvents() {
-    this.form.addEventListener("submit", (event) => {
+    this.form.addEventListener("submit", event => {
       event.preventDefault();
       this.updateFormState("loading", "Your message is being sent...");
 
@@ -22,7 +20,7 @@ export class ContactForm {
       this.sendMessage(Object.fromEntries(formData.entries()));
     });
 
-    this.reset.forEach((reset) => {
+    this.reset.forEach(reset => {
       reset.addEventListener("click", () => {
         this.updateFormState("initial");
       });
@@ -39,7 +37,7 @@ export class ContactForm {
       method: "POST",
       mode: "cors",
     })
-      .then((response) => {
+      .then(response => {
         if (response.ok) {
           this.updateFormState("success", "Message sent successfully.");
         } else {
