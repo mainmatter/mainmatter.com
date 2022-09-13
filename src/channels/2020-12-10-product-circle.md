@@ -1,6 +1,6 @@
 ---
-title: 'Product Circle: Agile & Data - December 2020'
-image: '/assets/images/talks/2020-12-10-product-circle/logo.jpg'
+title: "Product Circle: Agile & Data - December 2020"
+image: "/assets/images/talks/2020-12-10-product-circle/logo.jpg"
 url: https://www.meetup.com/Product-Circle/
 ---
 

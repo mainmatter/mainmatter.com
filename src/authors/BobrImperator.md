@@ -1,6 +1,6 @@
 ---
-name: 'Bartlomiej Dudzik'
+name: "Bartlomiej Dudzik"
 github: BobrImperator
 twitter: BobrImperator
-bio: 'Software Developer'
+bio: "Software Developer"
 ---

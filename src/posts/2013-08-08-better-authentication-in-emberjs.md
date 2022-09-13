@@ -1,10 +1,10 @@
 ---
-title: '(better) Authentication in ember.js'
+title: "(better) Authentication in ember.js"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte introduces an update to the mechanism for implementing a
-  session, authentication and authorization in Ember.js applications.'
+  "Marco Otte-Witte introduces an update to the mechanism for implementing a
+  session, authentication and authorization in Ember.js applications."
 tags: ember
 tagline: |
   <p><strong>Update:</strong><em>I released an Ember.js plugin that makes it very easy to implement an authentication system as described in this post: <a href="/blog/2013/06/15/authentication-in-emberjs">Ember.SimpleAuth</a>.</em></p> <p>When we started our first <a href="http://emberjs.com">ember.js</a> project in June 2013, one of the first things we implemented was authentication. Now, almost 2 months later, <strong>it has become clear that our initial approach was not really the best and had some shortcomings. So I implemented a better authentication</strong> (mostly based on the embercasts on authentication).</p>
@@ -187,19 +187,19 @@ depend on your specific application):
 
 ```hbs
 {% raw %}
-<form {{action login on='submit'}}>
+<form {{action login on="submit"}}>
   {{view
     Ember.TextField
-    valueBinding='loginOrEmail'
-    placeholder='Login or Email'
+    valueBinding="loginOrEmail"
+    placeholder="Login or Email"
   }}
   {{view
     Ember.TextField
-    valueBinding='password'
-    type='password'
-    placeholder='Password'
+    valueBinding="password"
+    type="password"
+    placeholder="Password"
   }}
-  <button class='btn'>Login</button>
+  <button class="btn">Login</button>
 </form>
 {% endraw %}
 ```

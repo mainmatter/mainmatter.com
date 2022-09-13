@@ -1,11 +1,11 @@
 ---
-title: 'Sentry error reporting for Ember.js'
+title: "Sentry error reporting for Ember.js"
 authorHandle: tobiasbieniek
 tags: ember
-bio: 'Senior Frontend Engineer, Ember CLI core team member'
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 description:
-  'Tobias Bieniek explains how to set up Sentry for Ember.js applications using
-  @sentry/browser instead of the now unnecessary ember-cli-sentry.'
+  "Tobias Bieniek explains how to set up Sentry for Ember.js applications using
+  @sentry/browser instead of the now unnecessary ember-cli-sentry."
 og:
   image: /assets/images/posts/2019-07-15-sentry-and-ember/og-image.png
 tagline: |

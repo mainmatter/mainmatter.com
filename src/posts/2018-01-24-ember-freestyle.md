@@ -1,10 +1,10 @@
 ---
-title: 'Using ember-freestyle as a component playground'
+title: "Using ember-freestyle as a component playground"
 authorHandle: tobiasbieniek
-bio: 'Senior Frontend Engineer, Ember CLI core team member'
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 description:
-  'Tobias Bieniek gives an overview of how ember-freestyle can be used in
-  Ember.js applications for building and testing components in isolation.'
+  "Tobias Bieniek gives an overview of how ember-freestyle can be used in
+  Ember.js applications for building and testing components in isolation."
 tags: ember
 tagline: |
   <p>A component playground is an application that you can use to test out and play around with your custom components in isolation from the rest of your project. In the React and Vue ecosystem <a href="https://storybook.js.org/">Storybook</a> is a quite popular project that implements such a component playground as part of your app. In the Ember ecosystem we have the <a href="http://ember-freestyle.com/"><code>ember-freestyle</code></a> addon that can be used for this purpose. This blog post will show you how to install <code>ember-freestyle</code> in your app and how to use it to build and test components in isolation.</p>
@@ -229,17 +229,17 @@ Finally we will add the button to our component playground by editing the
 
 ```handlebars
 {% raw %}
-{{#freestyle-guide title='Ember Freestyle' subtitle='Living Style Guide'}}
+{{#freestyle-guide title="Ember Freestyle" subtitle="Living Style Guide"}}
   {{! ... }}
 
-  {{#freestyle-section name='Components' as |section|}}
-    {{#section.subsection name='styled-button'}}
+  {{#freestyle-section name="Components" as |section|}}
+    {{#section.subsection name="styled-button"}}
 
-      {{#freestyle-usage 'styled-button-example-1'}}
+      {{#freestyle-usage "styled-button-example-1"}}
         {{#styled-button}}Hello World!{{/styled-button}}
       {{/freestyle-usage}}
 
-      {{#freestyle-usage 'styled-button-example-2'}}
+      {{#freestyle-usage "styled-button-example-2"}}
         {{#styled-button}}😀 😎 👍 💯{{/styled-button}}
       {{/freestyle-usage}}
 

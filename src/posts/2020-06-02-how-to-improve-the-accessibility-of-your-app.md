@@ -1,11 +1,11 @@
 ---
-title: 'How to improve the accessibility of your existing Ember app'
+title: "How to improve the accessibility of your existing Ember app"
 authorHandle: sami_dbc
 tags: ember
-bio: 'Senior Frontend Engineer'
+bio: "Senior Frontend Engineer"
 description:
-  'Samanta de Barros on how to test the accessibility of your Ember app and what
-  accessibility considerations you should have when creating forms in Ember.'
+  "Samanta de Barros on how to test the accessibility of your Ember app and what
+  accessibility considerations you should have when creating forms in Ember."
 og:
   image: /assets/images/posts/2020-06-02-how-to-improve-the-accessibility-of-your-app/og-image.png
 tagline: |
@@ -332,7 +332,7 @@ where the actual checkbox is hidden but is still used for the states.
 ```
 
 ```css
-input[type='checkbox'].custom-checkbox {
+input[type="checkbox"].custom-checkbox {
   width: 0;
   height: 0;
   border: none;
@@ -340,12 +340,12 @@ input[type='checkbox'].custom-checkbox {
   margin: 0;
 }
 
-input[type='checkbox'].custom-checkbox + span {
+input[type="checkbox"].custom-checkbox + span {
   position: relative;
 }
 
-input[type='checkbox'].custom-checkbox + *::before {
-  content: ' ';
+input[type="checkbox"].custom-checkbox + *::before {
+  content: " ";
   display: block;
   position: absolute;
   left: 0;
@@ -356,14 +356,14 @@ input[type='checkbox'].custom-checkbox + *::before {
   background: #fff;
 }
 
-input[type='checkbox'].custom-checkbox:checked + *::before {
+input[type="checkbox"].custom-checkbox:checked + *::before {
   background: #01c3a7 url(images/checkmark_success_white.svg) center no-repeat;
   border-color: #01c3a7;
   background-size: 60%;
 }
 
 /* our focus style */
-input[type='checkbox'].custom-checkbox:focus + *::before {
+input[type="checkbox"].custom-checkbox:focus + *::before {
   border-color: #01c3a7;
 }
 ```

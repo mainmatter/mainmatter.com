@@ -360,7 +360,7 @@ addMethod(array, "relationship", function () {
       })
     );
 
-    return validations.every((validation) => validation);
+    return validations.every(validation => validation);
   });
 });
 ```

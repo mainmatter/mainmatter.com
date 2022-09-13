@@ -1,11 +1,11 @@
 ---
-title: 'Authentication in ember.js'
+title: "Authentication in ember.js"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 tags: ember
 description:
-  'Marco Otte-Witte describes an approach for implementing a session mechanism,
-  authentication and authorization in Ember.js applications.'
+  "Marco Otte-Witte describes an approach for implementing a session mechanism,
+  authentication and authorization in Ember.js applications."
 tagline: |
   <p><strong>Update:</strong><em>I released an Ember.js plugin that makes it very easy to implement an authentication system as described in this post: <a href="/blog/2013/10/09/embersimpleauth">Ember.SimpleAuth</a>.</em></p> <p><strong>Update:</strong> <em>After I wrote this I found out that it’s actually not the best approach to implement authentication in Ember.js… There are some things missing and some other things can be done in a much simpler way. <a href="/blog/2013/08/08/better-authentication-in-emberjs" title="(better) authnetication with ember.js">I wrote a summary of the (better) authentication mechanism we moved to.</a></em></p> <p><em>I’m using the latest (as of mid June 2013) <a href="https://github.com/emberjs/ember.js">ember</a>/<a href="https://github.com/emberjs/data">ember-data</a>/<a href="https://github.com/wycats/handlebars.js">handlebars</a> code directly from the respective github repositories in this example.</em></p>
 ---
@@ -34,15 +34,15 @@ implement a regular login form with username and password fields:
 ```hbs
 {% raw %}
 <form>
-  <label for='loginOrEmail'>Login or Email</label>
+  <label for="loginOrEmail">Login or Email</label>
   {{view
     Ember.TextField
-    valueBinding='loginOrEmail'
-    placeholder='Login or Email'
+    valueBinding="loginOrEmail"
+    placeholder="Login or Email"
   }}
-  <label for='password'>Password</label>
-  {{view Ember.TextField valueBinding='password' placeholder='Password'}}
-  <button {{action 'createSession'}}>Login</button>
+  <label for="password">Password</label>
+  {{view Ember.TextField valueBinding="password" placeholder="Password"}}
+  <button {{action "createSession"}}>Login</button>
 </form>
 {% endraw %}
 ```

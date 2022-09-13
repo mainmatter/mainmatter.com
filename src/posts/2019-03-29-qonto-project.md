@@ -2,7 +2,7 @@
 title: Qonto project
 authorHandle: mrmrcoleman
 tags: simplabs
-bio: 'Communications and Community Outreach Specialist'
+bio: "Communications and Community Outreach Specialist"
 description:
   'Mark Coleman announces our new client Qonto, a Paris based VC funded Fintech
   startup who are "the ideal banking alternative for freelancers, startups and

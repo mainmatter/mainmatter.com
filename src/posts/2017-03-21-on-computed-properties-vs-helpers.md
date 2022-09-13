@@ -1,10 +1,10 @@
 ---
 title: On Computed Properties vs. Helpers
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte discusses differences between computed properties and
-  helpers and explains pros and cons of each alternative.'
+  "Marco Otte-Witte discusses differences between computed properties and
+  helpers and explains pros and cons of each alternative."
 tags: ember
 og:
   image: /assets/images/posts/2017-03-21-on-computed-properties-vs-helpers/og-image.png
@@ -133,7 +133,7 @@ understand the template now:
 
 ```hbs
 {% raw %}
-{{#each (take 1 (shuffle (filter-by users 'state' 'active'))) as |user|}}
+{{#each (take 1 (shuffle (filter-by users "state" "active"))) as |user|}}
   {{user.name}}
 {{/each}}
 {% endraw %}
@@ -313,7 +313,7 @@ that using template helpers would look something like this:
 {% raw %}
 <ul>
   {{#each items as |item|}}
-    <li class='{{if (eq selectedItem item) 'selected'}}'>{{item}}</li>
+    <li class="{{if (eq selectedItem item) 'selected'}}">{{item}}</li>
   {{/each}}
 </ul>
 {% endraw %}
@@ -349,7 +349,7 @@ collection then:
 {% raw %}
 <ul>
   {{#each _listItems as |listItem|}}
-    <li class='{{if listItem.isSelected 'selected'}}'>{{listItem.item}}</li>
+    <li class="{{if listItem.isSelected 'selected'}}">{{listItem.item}}</li>
   {{/each}}
 </ul>
 {% endraw %}

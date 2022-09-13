@@ -1,10 +1,10 @@
 ---
 title: Using npm libraries in Ember CLI
 authorHandle: tobiasbieniek
-bio: 'Senior Frontend Engineer, Ember CLI core team member'
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 description:
-  'Tobias Bieniek introduces a mechanism for using arbitrary npm libraries in
-  Ember CLI applications and explains how that works under the hood.'
+  "Tobias Bieniek introduces a mechanism for using arbitrary npm libraries in
+  Ember CLI applications and explains how that works under the hood."
 tags: ember
 og:
   image: /assets/images/posts/2017-02-13-npm-libs-in-ember-cli/og-image.png
@@ -160,12 +160,10 @@ make sure that Ember CLI waits for the installation to finish.
 
 ## npm vs. Bower
 
-> &quot;What&#39;s bower?&quot;
-> &quot;A package manager, install it with npm.&quot;
-> &quot;What&#39;s npm?&quot;
-> &quot;A package manager, you can install it with brew&quot;
-> &quot;What&#39;s brew?&quot; ...
-> <author>Stefan Baumgartner (@ddprrt)
+> &quot;What&#39;s bower?&quot; > &quot;A package manager, install it with
+> npm.&quot; > &quot;What&#39;s npm?&quot; > &quot;A package manager, you can
+> install it with brew&quot; > &quot;What&#39;s brew?&quot; ... <author>Stefan
+> Baumgartner (@ddprrt)
 > <a href="https://twitter.com/ddprrt/status/529909875347030016">5. November
 > 2014</a></author>
 

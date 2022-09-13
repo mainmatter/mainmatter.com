@@ -1,10 +1,16 @@
 ---
 layout: case-study
 company: DDWRT
-companyDescription: DD-WRT is a Linux-based firmware for wireless routers. Originally designed for the Linksys WRT54G series, it now runs on a wide variety of models and is installed on millions of devices worldwide.
+companyDescription:
+  DD-WRT is a Linux-based firmware for wireless routers. Originally designed for
+  the Linksys WRT54G series, it now runs on a wide variety of models and is
+  installed on millions of devices worldwide.
 title: A modern UI for DD-WRT NXT based on Ember.js | Work
 displayTitle: "A modern user interface for <em>perennial</em> router firmware"
-description: "DD-WRT is a firmware for wireless routers running on millions of devices worldwide. Mainmatter developed an Ember.js based foundation for a new configuration UI."
+description:
+  "DD-WRT is a firmware for wireless routers running on millions of devices
+  worldwide. Mainmatter developed an Ember.js based foundation for a new
+  configuration UI."
 hero:
   color: purple
   textPosition: "center"
@@ -50,5 +56,4 @@ hero:
 {% set 'content' = {
   "text": "[Mainmatter's] expertise in developing Ember.js based applications helped us to define and develop the new DD-WRT NXT user experience. It was impressive to see in what short time such a complex application leveraging a customer backend interface could be implemented. simplabs' work provided the new foundation for our UI and our in-house development team greatly benefitted from their knowhow.",
   "source": "PETER STEINHÄUSER, EMBEDD CEO"
-} %}
-{{ quote(content) }}
+} %} {{ quote(content) }}

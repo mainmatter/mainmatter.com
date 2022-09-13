@@ -1,10 +1,10 @@
 ---
-title: 'From SPA to PWA'
+title: "From SPA to PWA"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte goes over the characteristics of progressive web apps and
-  shows how to make the next step from a SPA to a PWA.'
+  "Marco Otte-Witte goes over the characteristics of progressive web apps and
+  shows how to make the next step from a SPA to a PWA."
 tags: javascript
 og:
   image: /assets/images/posts/2018-07-24-from-spa-to-pwa/og-image.png
@@ -217,8 +217,8 @@ Installing a service worker is as simple as running a little script:
 
 ```html
 <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js').catch(function () {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js").catch(function () {
       // handle errors
     });
   }
@@ -380,33 +380,33 @@ measurement locations and data points,
 looks like this:
 
 ```typescript
-import { SchemaSettings } from '@orbit/data';
-import { ModelDefinition } from '@orbit/data';
+import { SchemaSettings } from "@orbit/data";
+import { ModelDefinition } from "@orbit/data";
 
 export const location: ModelDefinition = {
   attributes: {
-    label: { type: 'string' },
-    coordinates: { type: 'string' },
+    label: { type: "string" },
+    coordinates: { type: "string" },
   },
   relationships: {
     measurements: {
-      type: 'hasMany',
-      model: 'measurement',
-      inverse: 'location',
+      type: "hasMany",
+      model: "measurement",
+      inverse: "location",
     },
   },
 };
 
 export const measurement: ModelDefinition = {
   attributes: {
-    parameter: { type: 'string' },
-    measuredAt: { type: 'string' },
-    unit: { type: 'string' },
-    value: { type: 'string' },
-    qualityIndex: { type: 'string' },
+    parameter: { type: "string" },
+    measuredAt: { type: "string" },
+    unit: { type: "string" },
+    value: { type: "string" },
+    qualityIndex: { type: "string" },
   },
   relationships: {
-    location: { type: 'hasOne', model: 'location', inverse: 'measurements' },
+    location: { type: "hasOne", model: "location", inverse: "measurements" },
   },
 };
 
@@ -424,8 +424,8 @@ individual data points for particular parameters, e.g. 42.38 µg/m³ for Ozone
 (O₃). With that schema, a store can be instantiated:
 
 ```typescript
-import Store from '@orbit/store';
-import schema from './schema';
+import Store from "@orbit/store";
+import schema from "./schema";
 
 const store = new Store({ schema });
 ```
@@ -435,12 +435,12 @@ Stores in Orbit.js are backed by sources. In the case of Breethe, we use a
 [server API](https://github.com/simplabs/breethe-server):
 
 ```typescript
-import JSONAPISource from '@orbit/jsonapi';
+import JSONAPISource from "@orbit/jsonapi";
 
 const remote = new JSONAPISource({
   schema,
-  name: 'remote',
-  host: 'https://api.breethe.app',
+  name: "remote",
+  host: "https://api.breethe.app",
 });
 ```
 
@@ -449,15 +449,15 @@ offline, Breethe defines a second source that is backed by `IndexedDB` and that
 all data that enters the store via the remote source is synced into:
 
 ```typescript
-import IndexedDBSource from '@orbit/indexeddb';
+import IndexedDBSource from "@orbit/indexeddb";
 
 const backup = new IndexedDBSource({
   schema,
-  name: 'backup',
+  name: "backup",
 });
 
 // when the store changes, sync the changes into the backup source
-store.on('transform', (transform) => {
+store.on("transform", transform => {
   backup.sync(transform);
 });
 ```

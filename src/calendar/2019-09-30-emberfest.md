@@ -1,6 +1,6 @@
 ---
-title: 'EmberFest 2021'
-image: '/assets/images/calendar/2021-09-30-emberfest/logo.png'
+title: "EmberFest 2021"
+image: "/assets/images/calendar/2021-09-30-emberfest/logo.png"
 location: Rome
 url: https://emberfest.eu
 kind: conference

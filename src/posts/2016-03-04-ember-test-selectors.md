@@ -1,10 +1,10 @@
 ---
 title: Using better element selectors in Ember.js tests
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte announces the release of ember-test-selectors, an addon that
-  enables better element selectors in Ember.js tests.'
+  "Marco Otte-Witte announces the release of ember-test-selectors, an addon that
+  enables better element selectors in Ember.js tests."
 tags: ember
 tagline: |
   <p>We just released <a href="https://github.com/simplabs/ember-test-selectors">ember-test-selectors</a>, an <strong>Ember Addon that enables better element selectors in Ember.js tests</strong>. It removes all data attributes starting with <code>data-test-</code> from the application's templates in the <code>production</code> environment so that these attributes can be used to select elements with in acceptance and integration tests without polluting the markup that is delivered to the end user.</p>
@@ -40,7 +40,7 @@ This approach selects elements by CSS classes. For the following template:
 ```hbs
 {% raw %}
 <article>
-  <h1 class='post-title'>{{post.title}}</h1>
+  <h1 class="post-title">{{post.title}}</h1>
   <p>{{post.body}}</p>
 </article>
 {% endraw %}
@@ -63,7 +63,7 @@ following template:
 ```hbs
 {% raw %}
 <article>
-  <h1 data-test-selector='post-title'>{{post.title}}</h1>
+  <h1 data-test-selector="post-title">{{post.title}}</h1>
   <p>{{post.body}}</p>
 </article>
 {% endraw %}
@@ -82,8 +82,8 @@ in the markup like e.g. the post's id:
 {% raw %}
 <article>
   <h1
-    data-test-selector='post-title'
-    data-test-resource-id='{{post.id}}'
+    data-test-selector="post-title"
+    data-test-resource-id="{{post.id}}"
   >{{post.title}}</h1>
   <p>{{post.body}}</p>
 </article>
@@ -103,9 +103,8 @@ delivered**:
 
 ## Future Plans
 
-{% raw %}
-We have some future plans for ember-test-selectors to make working with data
-attributes as test selectors even more convenient:
+{% raw %} We have some future plans for ember-test-selectors to make working
+with data attributes as test selectors even more convenient:
 
 - custom test helpers that find elements by data attributes so that you don't
   have to write the quite long selectors yourselves; probably sth. like
@@ -117,4 +116,4 @@ attributes as test selectors even more convenient:
   `<div {{test-selector post}}>…</div>` which would result in
   `<div data-test-selector="post-1">…</div>`,
   [https://github.com/simplabs/ember-test-selectors/issues/9](https://github.com/simplabs/ember-test-selectors/issues/9)
-{% endraw %}
+  {% endraw %}

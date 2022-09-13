@@ -1,12 +1,12 @@
 ---
 videoUrl: https://www.youtube-nocookie.com/embed/3_1mk1164rU
 kind: built-to-last
-label: 'Built to Last #11: Expert insights'
+label: "Built to Last #11: Expert insights"
 title: Kenneth Larsen, Engineering Manager at CLARK
 pageTitle: Expert insights
 moreText: more Expert insights
 image: /assets/images/resources/videos/2021-10-10-built-to-last-11-kenneth-larsen/kenneth.jpg
-duration: '21:06'
+duration: "21:06"
 teaser:
   Kenneth explains his role at CLARK and gives us tips on making remote teams
   connect.

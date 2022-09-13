@@ -1,6 +1,6 @@
 ---
 title: "Commit Porto '19"
-image: '/assets/images/calendar/2019-06-22-commitporto/logo.png'
+image: "/assets/images/calendar/2019-06-22-commitporto/logo.png"
 location: Porto
 url: https://commitporto.com
 kind: conference

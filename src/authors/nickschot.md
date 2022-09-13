@@ -1,6 +1,6 @@
 ---
-name: 'Nick Schot'
+name: "Nick Schot"
 github: nickschot
 twitter: nickschot
-bio: 'Senior Software Engineer'
+bio: "Senior Software Engineer"
 ---

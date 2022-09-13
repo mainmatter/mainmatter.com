@@ -1,6 +1,6 @@
 ---
-name: 'Patsy Issa'
+name: "Patsy Issa"
 github: patsy-issa
 twitter: patsy_issa_p
-bio: 'Senior Frontend Engineer'
+bio: "Senior Frontend Engineer"
 ---

@@ -1,12 +1,12 @@
 ---
 videoUrl: https://www.youtube-nocookie.com/embed/21YpEGmR03s
 kind: built-to-last
-label: 'Built to Last #12: Expert insights'
+label: "Built to Last #12: Expert insights"
 title: Louise Deverell-Smith, Founder of Daisy Chain
 pageTitle: Expert insights
 moreText: more Expert insights
 image: /assets/images/resources/videos/2021-12-16-built-to-last-12-louise-deverell-smith/louise.jpg
-duration: '18:18'
+duration: "18:18"
 teaser:
   Louise shares her experience working with a partner for digital product
   development as a founder when lacking expertise in that field.

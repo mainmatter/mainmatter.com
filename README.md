@@ -59,5 +59,6 @@ Chrome Inspector to do so.**
 
 ## Copyright
 
-Copyright &copy; 2019 Mainmatter GmbH (https://mainmatter.com), released under the
+Copyright &copy; 2019 Mainmatter GmbH (https://mainmatter.com), released under
+the
 [Creative Commons Attribution-NonCommercial 4.0 International license](https://creativecommons.org/licenses/by-nc/4.0/).

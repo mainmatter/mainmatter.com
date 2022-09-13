@@ -1,11 +1,11 @@
 ---
 title:
-  'Calling all tech founders: we are seeking startups for pro-bono product
-  design!'
+  "Calling all tech founders: we are seeking startups for pro-bono product
+  design!"
 authorHandle: msmarhigh
 tags: design
-bio: 'Director of Product Design'
-description: 'We are seeking applicants for pro-bono digital product design.'
+bio: "Director of Product Design"
+description: "We are seeking applicants for pro-bono digital product design."
 og:
   image: /assets/images/posts/2020-11-09-pro-bono-open-call/og-image.png
 tagline: |

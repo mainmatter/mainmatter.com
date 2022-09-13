@@ -1,9 +1,9 @@
 ---
-title: 'Trying your GitHub Actions locally'
+title: "Trying your GitHub Actions locally"
 authorHandle: sami_dbc
 tags: github
-bio: 'Senior Frontend Engineer'
-description: 'Samanta de Barros on how to try locally your GitHub Actions'
+bio: "Senior Frontend Engineer"
+description: "Samanta de Barros on how to try locally your GitHub Actions"
 og:
   image: /assets/images/posts/2021-03-15-trying-github-actions-locally/og-image.png
 tagline: |
@@ -89,8 +89,7 @@ which is shown in the publish output here:
 After that, I committed my changes with confidence.
 
 P.S.: `act` is still under development, occasionally you may run into errors
-like these:
-{% raw %}
+like these: {% raw %}
 
 ```
 Error: yaml: unmarshal errors:
@@ -100,5 +99,4 @@ Error: yaml: unmarshal errors:
 It could mean a specific syntax is not yet supported, in this case, the use of
 `${{...}}` in `continue-on-error`. Since this wasn't part of the
 workflow/actions I wanted to try, I just worked around that by commenting that
-line so `act` wouldn't fail when parsing my actions.
-{% endraw %}
+line so `act` wouldn't fail when parsing my actions. {% endraw %}

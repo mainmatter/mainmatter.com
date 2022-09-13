@@ -1,9 +1,9 @@
 ---
-title: 'How to create an interface inventory'
+title: "How to create an interface inventory"
 authorHandle: msmarhigh
 tags: process
-bio: 'Director of Product Design'
-description: 'Mar High on how to create an interface inventory'
+bio: "Director of Product Design"
+description: "Mar High on how to create an interface inventory"
 og:
   image: /assets/images/posts/2021-06-02-interface-inventory/og-image.png
 tagline: |

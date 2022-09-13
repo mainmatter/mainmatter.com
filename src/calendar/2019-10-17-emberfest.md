@@ -1,6 +1,6 @@
 ---
-title: 'EmberFest 2019'
-image: '/assets/images/calendar/2019-10-17-emberfest/logo.png'
+title: "EmberFest 2019"
+image: "/assets/images/calendar/2019-10-17-emberfest/logo.png"
 location: Berlin
 url: https://emberfest.eu
 kind: conference

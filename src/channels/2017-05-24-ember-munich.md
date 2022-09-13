@@ -1,6 +1,6 @@
 ---
-title: 'Ember.js Munich May 2017'
-image: '/assets/images/talks/2017-05-24-ember-munich/logo.png'
+title: "Ember.js Munich May 2017"
+image: "/assets/images/talks/2017-05-24-ember-munich/logo.png"
 url: https://www.meetup.com/Ember-js-Munich/
 ---
 

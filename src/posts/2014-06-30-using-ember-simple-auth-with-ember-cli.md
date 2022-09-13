@@ -1,10 +1,10 @@
 ---
-title: 'Using Ember Simple Auth with ember-cli'
+title: "Using Ember Simple Auth with ember-cli"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte announces the release of ember-cli-simple-auth as an Ember
-  CLI addon.'
+  "Marco Otte-Witte announces the release of ember-cli-simple-auth as an Ember
+  CLI addon."
 tags: ember
 tagline: |
   <p>With the latest release of <a href="https://github.com/simplabs/ember-simple-auth">Ember Simple Auth</a>, using the library with <a href="https://github.com/ember-cli/ember-cli">ember-cli</a> has become much simpler. As ember-cli in general is still pretty new to many people though, <strong>this post describes how to setup a project using Ember Simple Auth with ember-cli</strong>.</p>
@@ -66,15 +66,13 @@ Router.map(function() {
 ```
 
 ```hbs
-{% raw %}
-// app/templates/application.hbs …
+{% raw %} // app/templates/application.hbs …
 {{#if session.isAuthenticated}}
-  <a {{action 'invalidateSession'}}>Logout</a>
+  <a {{action "invalidateSession"}}>Logout</a>
 {{else}}
-  {{#link-to 'login'}}Login{{/link-to}}
+  {{#link-to "login"}}Login{{/link-to}}
 {{/if}}
-…
-{% endraw %}
+… {% endraw %}
 ```
 
 Also implement the `ApplicationRouteMixin` in the project’s application route:
@@ -109,19 +107,18 @@ else has to be done in order to use the OAuth 2.0 functionality.
 The OAuth 2.0 authentication mechanism needs a login form, so let’s create that:
 
 ```hbs
-{% raw %}
-// app/templates/login.hbs
-<form {{action 'authenticate' on='submit'}}>
-  <label for='identification'>Login</label>
-  {{input id='identification' placeholder='Enter Login' value=identification}}
-  <label for='password'>Password</label>
+{% raw %} // app/templates/login.hbs
+<form {{action "authenticate" on="submit"}}>
+  <label for="identification">Login</label>
+  {{input id="identification" placeholder="Enter Login" value=identification}}
+  <label for="password">Password</label>
   {{input
-    id='password'
-    placeholder='Enter Password'
-    type='password'
+    id="password"
+    placeholder="Enter Password"
+    type="password"
     value=password
   }}
-  <button type='submit'>Login</button>
+  <button type="submit">Login</button>
 </form>
 {% endraw %}
 ```

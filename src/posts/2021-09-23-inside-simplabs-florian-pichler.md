@@ -1,10 +1,10 @@
 ---
-title: 'Inside simplabs #2: Florian Pichler, Senior Software-Engineer'
+title: "Inside simplabs #2: Florian Pichler, Senior Software-Engineer"
 authorHandle: emma_dellacqua
 tags: insidesimplabs
-bio: 'Marketing Assistant'
+bio: "Marketing Assistant"
 description:
-  'Interview with Florian Pichler, Senior Software-Engineer at simplabs.'
+  "Interview with Florian Pichler, Senior Software-Engineer at simplabs."
 og:
   image: /assets/images/posts/2021-09-23-inside-simplabs-florian-pichler/og-image.png
 tagline: |

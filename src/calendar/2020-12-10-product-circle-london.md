@@ -1,5 +1,6 @@
 ---
-title: "[Product Circle London] The three pillars of effective digital product
+title:
+  "[Product Circle London] The three pillars of effective digital product
   development"
 image: "/assets/images/calendar/2020-12-10-product-circle-london/logo.png"
 location: Remote

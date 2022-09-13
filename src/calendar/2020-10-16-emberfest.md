@@ -1,6 +1,6 @@
 ---
-title: 'EmberFest 2020'
-image: '/assets/images/calendar/2020-10-16-emberfest/logo.png'
+title: "EmberFest 2020"
+image: "/assets/images/calendar/2020-10-16-emberfest/logo.png"
 location: Berlin
 url: https://emberfest.eu
 kind: conference

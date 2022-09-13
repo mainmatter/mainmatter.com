@@ -168,7 +168,8 @@ Added more detailed information regarding issue preparation.
 [remy/nodemon]: https://github.com/remy/nodemon/
 [strapi/strapi]: https://github.com/strapi/strapi/
 [storybookjs/storybook]: https://github.com/storybookjs/storybook/
-[storybookjs/eslint-plugin-storybook]: https://github.com/storybookjs/eslint-plugin-storybook/
+[storybookjs/eslint-plugin-storybook]:
+  https://github.com/storybookjs/eslint-plugin-storybook/
 [@marcoow]: https://github.com/marcoow/
 [@bobrimperator]: https://github.com/BobrImperator/
 [@oscard0m]: https://github.com/oscard0m/

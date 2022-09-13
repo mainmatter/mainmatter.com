@@ -1,12 +1,12 @@
 ---
 title:
-  'Simpler and more powerful components in Ember Octane with Glimmer Components'
+  "Simpler and more powerful components in Ember Octane with Glimmer Components"
 authorHandle: locks
 tags: ember
-bio: 'Senior Frontend Engineer, Ember Framework and Learning Core teams member'
+bio: "Senior Frontend Engineer, Ember Framework and Learning Core teams member"
 description:
-  'Ricardo Mendes explains how Glimmer components provide a simpler and clearer,
-  yet more powerful, component layer for Ember Octane applications.'
+  "Ricardo Mendes explains how Glimmer components provide a simpler and clearer,
+  yet more powerful, component layer for Ember Octane applications."
 og:
   image: /assets/images/posts/2020-10-05-simpler-and-more-powerful-components-in-ember-octane-with-glimmer-components/og-image.png
 tagline: |
@@ -54,7 +54,7 @@ actions defined as a member function of the component, like so:
 ```javascript
 export default Component.extend({
   myActionHandler() {
-    console.log('myActionHandler triggered');
+    console.log("myActionHandler triggered");
   },
 });
 ```
@@ -69,7 +69,7 @@ actions in the actions hash:
 export default Component.extend({
   actions: {
     myActionHandler() {
-      console.log('myActionHandler triggered');
+      console.log("myActionHandler triggered");
     },
   },
 });
@@ -86,7 +86,7 @@ component is invoked like so:
 
 ```handlebars
 {% raw %}
-<OrderPasta @pasta='Spaghetti' @sauce='Carbonara' />
+<OrderPasta @pasta="Spaghetti" @sauce="Carbonara" />
 {% endraw %}
 ```
 
@@ -94,10 +94,10 @@ Now let us look at how both implementations differ. First, the Ember component:
 
 ```javascript
 /// app/components/order-pasta.js
-import Component from '@ember/component';
+import Component from "@ember/component";
 
 export default Component.extend({
-  dishName: computed('pasta', 'sauce', function () {
+  dishName: computed("pasta", "sauce", function () {
     return `${this.pasta} ${this.sauce}`;
   }),
 
@@ -112,7 +112,7 @@ export default Component.extend({
 ```handlebars
 {% raw %}
 <div>{{this.dishName}}
-  <button {{action 'handleReservation'}}>Reserve</button></div>
+  <button {{action "handleReservation"}}>Reserve</button></div>
 {% endraw %}
 ```
 
@@ -120,9 +120,9 @@ And now the Glimmer component:
 
 ```javascript
 // app/components/order-pasta.js
-import Component from '@ember/component';
-import { tracked } from '@glimmer/tracking';
-import { action } from '@ember/object';
+import Component from "@ember/component";
+import { tracked } from "@glimmer/tracking";
+import { action } from "@ember/object";
 
 export default class OrderPasta extends Component {
   get dishName() {
@@ -139,7 +139,7 @@ export default class OrderPasta extends Component {
 ```handlebars
 {% raw %}
 <div>{{this.dishName}}
-  <button {{on 'click' this.handleReservation}}>Reserve</button></div>
+  <button {{on "click" this.handleReservation}}>Reserve</button></div>
 {% endraw %}
 ```
 
@@ -177,10 +177,10 @@ will be overwritten.
 
 ```javascript
 /// app/components/order-pasta.js
-import Component from '@ember/component';
+import Component from "@ember/component";
 
 export default Component.extend({
-  pasta: 'Spaghetti',
+  pasta: "Spaghetti",
 });
 ```
 
@@ -193,7 +193,7 @@ refer to the property instead.
 // app/components/order-pasta.js
 export default class OrderPasta extends Component {
   get pasta() {
-    return this.args.pasta || 'Spaghetti';
+    return this.args.pasta || "Spaghetti";
   }
 
   get dishName() {
@@ -235,22 +235,21 @@ attribute. The component template itself will be the content for the button.
 
 ```javascript
 // app/components/my-button.js
-import Component from '@ember/component';
+import Component from "@ember/component";
 
 export default Component.extend({
-  tagName: 'button',
+  tagName: "button",
 
-  attributeBindings: ['isDisabled:disabled'],
+  attributeBindings: ["isDisabled:disabled"],
   isDisabled: false,
 
-  classNameBindings: ['buttonType'],
-  buttonType: 'primary',
+  classNameBindings: ["buttonType"],
+  buttonType: "primary",
 });
 ```
 
 ```handlebars
-{% raw %}
-// app/components/my-button.hbs
+{% raw %} // app/components/my-button.hbs
 {{yield}}
 {% endraw %}
 ```
@@ -261,19 +260,19 @@ Now you can call `MyButton` and dynamically change the class and the attribute:
 {% raw %}
 <MyButton>Click me</MyButton>
 {{! renders }}
-<button class='primary'>Click me</button>
+<button class="primary">Click me</button>
 
 <MyButton @isDisabled={{true}}>Click me</MyButton>
 {{! renders }}
-<button class='primary' disabled>Click me</button>
+<button class="primary" disabled>Click me</button>
 
-<MyButton @buttonType={{'secondary'}}>Click me</MyButton>
+<MyButton @buttonType={{"secondary"}}>Click me</MyButton>
 {{! renders }}
-<button class='secondary'>Click me</button>
+<button class="secondary">Click me</button>
 
-<MyButton @isDisabled={{true}} @buttonType={{'secondary'}}>Click me</MyButton>
+<MyButton @isDisabled={{true}} @buttonType={{"secondary"}}>Click me</MyButton>
 {{! renders }}
-<button class='secondary' disabled>Click me</button>
+<button class="secondary" disabled>Click me</button>
 {% endraw %}
 ```
 
@@ -289,32 +288,29 @@ Let's implement `MyButton` in Glimmer. As mentioned, we are moving the code from
 the component class to the template, so we don't need the JavaScript file.
 
 ```handlebars
-{% raw %}
-// app/components/my-button.hbs
-<button class={{if @buttonType @buttonType 'primary'}} ...attributes>
+{% raw %} // app/components/my-button.hbs
+<button class={{if @buttonType @buttonType "primary"}} ...attributes>
   {{yield}}
 </button>
 {% endraw %}
 ```
 
-{% raw %}
-Much more straightforward! In `{{if @buttonType @buttonType 'primary'}}` we are
-saying that the value should be `primary` if `@buttonType` is not defined, and
-in `...attribute` we are telling Ember where to put any HTML attributes that are
-passed in when calling the component.
-{% endraw %}
+{% raw %} Much more straightforward! In
+`{{if @buttonType @buttonType 'primary'}}` we are saying that the value should
+be `primary` if `@buttonType` is not defined, and in `...attribute` we are
+telling Ember where to put any HTML attributes that are passed in when calling
+the component. {% endraw %}
 
 In this case we do not want to pass `class` as an HTML attribute when calling
 the component because `class` is special in that it merged together the existing
 classes in the component with whatever you pass to the component:
 
 ````handlebars
-{% raw %}
-// app/components/my-button.hbs
-<button class='primary' ...attributes>
+{% raw %} // app/components/my-button.hbs
+<button class="primary" ...attributes>
   {{yield}}
 </button>``` ```handlebars
-<MyButton class='two'>Multiple classes</MyButton>
+<MyButton class="two">Multiple classes</MyButton>
 {% endraw %}
 ````
 
@@ -333,19 +329,19 @@ our Glimmer component, we need to update how we're calling the component:
 {% raw %}
 <MyButton>Click me</MyButton>
 {{! renders }}
-<button class='primary'>Click me</button>
+<button class="primary">Click me</button>
 
 <MyButton disabled>Click me</MyButton>
 {{! renders }}
-<button class='primary' disabled>Click me</button>
+<button class="primary" disabled>Click me</button>
 
-<MyButton @buttonType={{'secondary'}}>Click me</MyButton>
+<MyButton @buttonType={{"secondary"}}>Click me</MyButton>
 {{! renders }}
-<button class='secondary'>Click me</button>
+<button class="secondary">Click me</button>
 
-<MyButton @buttonType={{'secondary'}} disabled={{true}}>Click me</MyButton>
+<MyButton @buttonType={{"secondary"}} disabled={{true}}>Click me</MyButton>
 {{! renders }}
-<button class='secondary' disabled>Click me</button>
+<button class="secondary" disabled>Click me</button>
 {% endraw %}
 ```
 

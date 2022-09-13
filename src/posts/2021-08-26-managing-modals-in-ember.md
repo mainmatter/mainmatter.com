@@ -1,11 +1,11 @@
 ---
-title: 'Managing modal dialogs in Ember.js with Promises'
+title: "Managing modal dialogs in Ember.js with Promises"
 authorHandle: pichfl
 tags: ember
-bio: 'Consultant for Technology and Design at simplabs'
+bio: "Consultant for Technology and Design at simplabs"
 description:
-  'Exploring better and easier handling of modal dialogs in Ember.js
-  applications'
+  "Exploring better and easier handling of modal dialogs in Ember.js
+  applications"
 og:
   image: /assets/images/posts/2021-08-26-managing-modals-in-ember/og-image.png
 tagline: |
@@ -53,7 +53,7 @@ communicate data in the preferred Data-Down-Actions-Up pattern of Ember.js.
 {{! example modal component using passed data and close action}}
 <div>
   <header>
-    <button type='button' {{on 'click' @close}}>Close</button>
+    <button type="button" {{on "click" @close}}>Close</button>
   </header>
   <p>{{@data.question}}</p>
 </div>

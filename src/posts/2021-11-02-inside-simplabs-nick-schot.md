@@ -1,9 +1,9 @@
 ---
-title: 'Inside simplabs #3: Nick Schot, Senior Software-Engineer'
+title: "Inside simplabs #3: Nick Schot, Senior Software-Engineer"
 authorHandle: emma_dellacqua
 tags: insidesimplabs
-bio: 'Marketing Assistant'
-description: 'Interview with Nick Schot, Senior Software-Engineer at simplabs.'
+bio: "Marketing Assistant"
+description: "Interview with Nick Schot, Senior Software-Engineer at simplabs."
 og:
   image: /assets/images/posts/2021-11-02-inside-simplabs-nick-schot/og-image.png
 tagline: |

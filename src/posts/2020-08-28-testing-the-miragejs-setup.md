@@ -1,10 +1,10 @@
 ---
-title: 'Testing your Mirage.js setup'
+title: "Testing your Mirage.js setup"
 authorHandle: tobiasbieniek
 tags: ember
-bio: 'Senior Frontend Engineer'
+bio: "Senior Frontend Engineer"
 description:
-  'Tobias Bieniek explains how to write tests for your Mirage.js mock API setup.'
+  "Tobias Bieniek explains how to write tests for your Mirage.js mock API setup."
 og:
   image: /assets/images/posts/2020-08-28-testing-the-miragejs-setup/og-image.png
 tagline: |

@@ -1,6 +1,6 @@
 ---
-title: '!!Con West 2019'
-image: '/assets/images/talks/2019-02-23-bangbangconwest-2019/logo.png'
+title: "!!Con West 2019"
+image: "/assets/images/talks/2019-02-23-bangbangconwest-2019/logo.png"
 url: http://bangbangcon.com/west/
 ---
 

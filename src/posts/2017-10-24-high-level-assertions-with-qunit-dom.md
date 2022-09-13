@@ -1,11 +1,11 @@
 ---
 title: High Level Assertions with qunit-dom
 authorHandle: tobiasbieniek
-bio: 'Senior Frontend Engineer, Ember CLI core team member'
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 description:
-  'Tobias Bieniek introduces qunit-dom, an extension for qunit that allows
+  "Tobias Bieniek introduces qunit-dom, an extension for qunit that allows
   writing more expressive and less complex UI tests using high level DOM
-  assertions.'
+  assertions."
 tags: javascript
 tagline: |
   <p>At <a href="https://emberfest.eu/">EmberFest</a> this year we presented and released <a href="https://github.com/simplabs/qunit-dom"><code>qunit-dom</code></a>. A plugin for <a href="https://qunitjs.com/">QUnit</a> providing High Level DOM Assertions with the goal to reduce test complexity for all QUnit users. This blog post will show you how to write simpler tests using <code>async/await</code> and <code>qunit-dom</code>.</p>
@@ -16,7 +16,7 @@ an Ember app that we will write a test for:
 
 ```handlebars
 {% raw %}
-<h1 class='title {{if username 'has-username'}}'>
+<h1 class="title {{if username 'has-username'}}">
   {{#if username}}
     Welcome to Ember,
     <strong>{{username}}</strong>!

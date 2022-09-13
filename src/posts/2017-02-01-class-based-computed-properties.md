@@ -1,10 +1,10 @@
 ---
 title: Class based Computed Properties
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte introduces a mechanism for class based computed properties
-  in Ember.js and how those can be used instead of helpers.'
+  "Marco Otte-Witte introduces a mechanism for class based computed properties
+  in Ember.js and how those can be used instead of helpers."
 tags: ember
 tagline: |
   <p>We think Computed Properties in Ember are awesome. We also think they <a href="https://speakerdeck.com/marcoow/templates-and-logic-in-ember">are in many cases the better alternative to template helpers</a> as they allow for cleaner separation of where a computation is triggered and the implementation of that computation. In some cases though it is currently very hard to do things in Computed Properties (and Computed Property macros in particular) that are possible with Class based helpers. With the <strong>introduction of Class based Computed Properties</strong> we're aiming at making these scenarios solvable easily.</p>

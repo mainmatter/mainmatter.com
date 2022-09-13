@@ -1,11 +1,11 @@
 ---
-title: 'Autodiscovery for the Ember.js component playground'
+title: "Autodiscovery for the Ember.js component playground"
 authorHandle: tobiasbieniek
-bio: 'Senior Frontend Engineer, Ember CLI core team member'
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 description:
-  'Tobias Bieniek introduces a mechanism for automatically discovering new
+  "Tobias Bieniek introduces a mechanism for automatically discovering new
   components in Ember.js applications and showing them in an ember-freestyle
-  playground.'
+  playground."
 tags: ember
 tagline: |
   <p>In our <a href="/blog/2018/01/24/ember-freestyle">previous post</a> about <a href="http://ember-freestyle.com/"><code>ember-freestyle</code></a> we have setup a component playground for our Ember.js application. In this post we will discuss how to implement &quot;convention over configuration&quot; for it by automatically discovering new components and showing them in the playground.</p>
@@ -18,17 +18,17 @@ looking roughly like this:
 
 ```handlebars
 {% raw %}
-{{#freestyle-guide title='My Awesome App'}}
+{{#freestyle-guide title="My Awesome App"}}
   {{! ... }}
 
-  {{#freestyle-section name='Components' as |section|}}
-    {{#section.subsection name='styled-button'}}
+  {{#freestyle-section name="Components" as |section|}}
+    {{#section.subsection name="styled-button"}}
 
-      {{#freestyle-usage 'styled-button-example-1'}}
+      {{#freestyle-usage "styled-button-example-1"}}
         {{#styled-button}}Hello World!{{/styled-button}}
       {{/freestyle-usage}}
 
-      {{#freestyle-usage 'styled-button-example-2'}}
+      {{#freestyle-usage "styled-button-example-2"}}
         {{#styled-button}}😀 😎 👍 💯{{/styled-button}}
       {{/freestyle-usage}}
 
@@ -48,11 +48,11 @@ like this:
 
 ```handlebars
 {% raw %}
-{{#freestyle-usage 'styled-button-example-1'}}
+{{#freestyle-usage "styled-button-example-1"}}
   {{#styled-button}}Hello World!{{/styled-button}}
 {{/freestyle-usage}}
 
-{{#freestyle-usage 'styled-button-example-2'}}
+{{#freestyle-usage "styled-button-example-2"}}
   {{#styled-button}}😀 😎 👍 💯{{/styled-button}}
 {{/freestyle-usage}}
 {% endraw %}
@@ -62,7 +62,7 @@ and in the `freestyle.hbs` template we use the following snippet instead:
 
 ```handlebars
 {% raw %}
-{{#section.subsection name='styled-button'}}
+{{#section.subsection name="styled-button"}}
   {{usage/styled-button}}
 {{/section.subsection}}
 {% endraw %}
@@ -142,23 +142,22 @@ function findUsageComponents() {
 }
 {% endraw %}
 ```
-{% raw %}
-With that JavaScript code out of the way we can focus on our template. Here, we
-now have a `components` list available with the names of all our "usage
+
+{% raw %} With that JavaScript code out of the way we can focus on our template.
+Here, we now have a `components` list available with the names of all our "usage
 components". As usual with lists we will use a `{{#each}}` block to iterate over
-it:
-{% endraw %}
+it: {% endraw %}
 
 ```handlebars
 {% raw %}
-{{#freestyle-guide title='My Awesome App'}}
+{{#freestyle-guide title="My Awesome App"}}
   {{! ... }}
 
-  {{#freestyle-section name='Components' as |section|}}
+  {{#freestyle-section name="Components" as |section|}}
 
     {{#each components as |componentName|}}
       {{#section.subsection name=componentName}}
-        {{component (concat 'usage/' componentName)}}
+        {{component (concat "usage/" componentName)}}
       {{/section.subsection}}
     {{/each}}
 

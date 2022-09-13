@@ -1,10 +1,10 @@
 ---
-title: 'Building a PWA with Glimmer.js'
+title: "Building a PWA with Glimmer.js"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte dives deep into the details of how simplabs built Breethe,
-  an open source progressive web app, with Glimmer.js.'
+  "Marco Otte-Witte dives deep into the details of how simplabs built Breethe,
+  an open source progressive web app, with Glimmer.js."
 tags: ember
 og:
   image: /assets/images/posts/2018-07-03-building-a-pwa-with-glimmer-js/og-image.png
@@ -47,7 +47,7 @@ Glimmer.js templates use Handlebars-like syntax, e.g.:
 
 ```hbs
 {% raw %}
-{{#each measurementLists.first key='@index'}}
+{{#each measurementLists.first key="@index"}}
   <MeasurementRow
     @value={{measurement.value}}
     @parameter={{measurement.parameter}}
@@ -153,12 +153,11 @@ text field for the search term and the button to submit the search:
 {% endraw %}
 ```
 
-{% raw %}
-`@onSubmit={{action searchByTerm}}` assigns the `searchByTerm` method of the
-`Search` component as an action to the `@onSubmit` property of the `SearchForm`
-component. Whenever the search form is submitted, the `SearchForm` component
-invokes the assigned action:
-{% endraw %}
+{% raw %} `@onSubmit={{action searchByTerm}}` assigns the `searchByTerm` method
+of the `Search` component as an action to the `@onSubmit` property of the
+`SearchForm` component. Whenever the search form is submitted, the `SearchForm`
+component invokes the assigned action: {% endraw %}
+
 ```ts
 submitSearch(event) {
   event.preventDefault();
@@ -189,14 +188,14 @@ like this:
 
 ```hbs
 {% raw %}
-<div class='results'>
+<div class="results">
   {{#if loading}}
-    <div class='loader search-loader'></div>
+    <div class="loader search-loader"></div>
   {{else}}
     <ul>
-      {{#each locations key='id' as |location|}}
-        <li class='result'>
-          <a href='/location/{{location.id}}' class='result-link' data-internal>
+      {{#each locations key="id" as |location|}}
+        <li class="result">
+          <a href="/location/{{location.id}}" class="result-link" data-internal>
             {{location.label}}
           </a>
         </li>

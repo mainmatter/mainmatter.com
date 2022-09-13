@@ -1,14 +1,14 @@
 ---
-title: 'Inside simplabs #4: Michael Kerr, Senior Front-end Engineer'
+title: "Inside simplabs #4: Michael Kerr, Senior Front-end Engineer"
 authorHandle: emma_dellacqua
 tags: insidesimplabs
-bio: 'Marketing Assistant'
+bio: "Marketing Assistant"
 description:
-  'Interview with Michael Kerr, Senior Front-end Engineer at simplabs.'
+  "Interview with Michael Kerr, Senior Front-end Engineer at simplabs."
 og:
   image: /assets/images/posts/2021-12-23-inside-simplabs-michael-kerr/og-image.png
 tagline: |
-  <p>In the fourth episode of Inside simplabs, Emma Dell'Acqua, Marketing Assistant, interviews Michael Kerr, Senior Front-end Engineer.</p> 
+  <p>In the fourth episode of Inside simplabs, Emma Dell'Acqua, Marketing Assistant, interviews Michael Kerr, Senior Front-end Engineer.</p>
 ---
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2iQzIyZg0ls" title="Embedded video of Inside simplabs episode 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

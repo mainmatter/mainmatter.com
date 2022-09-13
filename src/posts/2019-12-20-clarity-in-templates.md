@@ -1,11 +1,11 @@
 ---
-title: 'Bringing clarity to templates through Ember Octane'
+title: "Bringing clarity to templates through Ember Octane"
 authorHandle: locks
 tags: ember
-bio: 'Senior Frontend Engineer, Ember Framework and Learning Core teams member'
+bio: "Senior Frontend Engineer, Ember Framework and Learning Core teams member"
 description:
-  'Ricardo Mendes explains how Ember templates have evolved in the path to Ember
-  Octane to bring more clarity for developers.'
+  "Ricardo Mendes explains how Ember templates have evolved in the path to Ember
+  Octane to bring more clarity for developers."
 og:
   image: /assets/images/posts/2019-12-20-clarity-in-templates/og-image.png
 tagline: |
@@ -41,11 +41,10 @@ You can read more about Octane in the
 
 ## Ambiguity
 
-{% raw %}
-In Ember templates, interpolation of dynamic values is done through curly
-braces, `{{}}`. Given this is the only syntax for dynamic values, there is an
-ambiguity problem at times. Let us look at a template:
-{% endraw %}
+{% raw %} In Ember templates, interpolation of dynamic values is done through
+curly braces, `{{}}`. Given this is the only syntax for dynamic values, there is
+an ambiguity problem at times. Let us look at a template: {% endraw %}
+
 ```hbs
 {% raw %}
 {{! app/templates/components/blog/post.hbs }}
@@ -142,7 +141,7 @@ the template for the `blog` route, where the component is used:
 ```hbs
 {% raw %}
 {{! app/templates/blog.hbs }}
-{{blog/post post=post onReportComment=(action 'onReportComment')}}
+{{blog/post post=post onReportComment=(action "onReportComment")}}
 {% endraw %}
 ```
 
@@ -202,7 +201,7 @@ Here is how the above `blog` and `blog/post` templates look like once updated:
 ```hbs
 {% raw %}
 {{! app/templates/blog.hbs }}
-<Blog::Post @post={{post}} @onReportComment={{action 'onReportComment'}} />
+<Blog::Post @post={{post}} @onReportComment={{action "onReportComment"}} />
 {% endraw %}
 ```
 

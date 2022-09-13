@@ -1,10 +1,16 @@
 ---
 layout: case-study
 company: Qonto
-companyDescription: Qonto is a B2B Neobank that provides banking services and credit cards to more than 75,000 freelancers and SMEs in Europe.
+companyDescription:
+  Qonto is a B2B Neobank that provides banking services and credit cards to more
+  than 75,000 freelancers and SMEs in Europe.
 title: Co-Engineering the Future of Banking for SMEs with Qonto | Work
 displayTitle: "A helping hand for a <em>visionary</em> fintech startup"
-description: <p>Qonto is the leading neobank for SMEs and freelancers in Europe.</p><p>Mainmatter worked with their web frontend team to boost their productivity, establish Ember.js best practices, and ensure long-term success.</p>
+description:
+  <p>Qonto is the leading neobank for SMEs and freelancers in
+  Europe.</p><p>Mainmatter worked with their web frontend team to boost their
+  productivity, establish Ember.js best practices, and ensure long-term
+  success.</p>
 hero:
   color: purple
   textPosition: "center"
@@ -45,8 +51,7 @@ hero:
   "image": "/assets/images/photos/qonto-marc-antoine-quote.jpg",
   "alt": "Elements of Qonto user interface on a mobile device",
   "loading": "lazy"
-} %}
-{{ quote(content) }}
+} %} {{ quote(content) }}
 
 <div class="case-study__section">
   <h2 class="case-study__heading h5">Clearing the roadblocks</h2>
@@ -76,5 +81,4 @@ hero:
   "image": "/assets/images/photos/qonto-alexander.png",
   "alt": "Alexandre Monjol, smiling at the camera wearing a Qonto t-shirt",
   "loading": "lazy"
-} %}
-{{ quote(content) }}
+} %} {{ quote(content) }}

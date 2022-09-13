@@ -222,16 +222,21 @@ imageAlt: "Screenshot of Ember simple auth"
 [emberjs/ember-string]: https://github.com/emberjs/ember-string/
 [ember-learn/guides-source]: https://github.com/ember-learn/guides-source/
 [mansona/ember-body-class]: https://github.com/mansona/ember-body-class/
-[empress/broccoli-static-site-json]: https://github.com/empress/broccoli-static-site-json/
+[empress/broccoli-static-site-json]:
+  https://github.com/empress/broccoli-static-site-json/
 [empress/empress-blog]: https://github.com/empress/empress-blog/
-[empress/empress-blog-casper-template]: https://github.com/empress/empress-blog-casper-template/
+[empress/empress-blog-casper-template]:
+  https://github.com/empress/empress-blog-casper-template/
 [empress/ember-cli-showdown]: https://github.com/empress/ember-cli-showdown
-[mansona/ember-cli-notifications]: https://github.com/mansona/ember-cli-notifications
+[mansona/ember-cli-notifications]:
+  https://github.com/mansona/ember-cli-notifications
 [simplabs/ember-intl-analyzer]: https://github.com/simplabs/ember-intl-analyzer
 [nickschot/ember-mobile-menu]: https://github.com/nickschot/ember-mobile-menu
-[simplabs/ember-promise-modals]: https://github.com/simplabs/ember-promise-modals
+[simplabs/ember-promise-modals]:
+  https://github.com/simplabs/ember-promise-modals
 [oscard0m/npm-snapshot]: https://github.com/oscard0m/npm-snapshot
-[commitizen/cz-conventional-changelog]: https://github.com/commitizen/cz-conventional-changelog
+[commitizen/cz-conventional-changelog]:
+  https://github.com/commitizen/cz-conventional-changelog
 [mansona/chris.manson.ie]: https://github.com/mansona/chris.manson.ie
 [@turbo87]: https://github.com/Turbo87/
 [@pichfl]: https://github.com/pichfl/

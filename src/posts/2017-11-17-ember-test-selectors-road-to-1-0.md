@@ -1,10 +1,10 @@
 ---
-title: 'ember-test-selectors: The road to 1.0'
+title: "ember-test-selectors: The road to 1.0"
 authorHandle: tobiasbieniek
-bio: 'Senior Frontend Engineer, Ember CLI core team member'
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 description:
-  'Tobias Bieniek goes through what happened in ember-test-selectors during the
-  past year and what the roadmap towards a 1.0 release is.'
+  "Tobias Bieniek goes through what happened in ember-test-selectors during the
+  past year and what the roadmap towards a 1.0 release is."
 tags: ember
 tagline: |
   <p>Back in January we wrote about the <a href="/blog/2017/01/13/ember-test-selectors">latest changes</a> in <a href="https://github.com/simplabs/ember-test-selectors"><code>ember-test-selectors</code></a> and how we implemented them. Since then we adjusted a few things and this blog post should give you an idea what has happened so far and what else will happen before we feel comfortable promoting the addon to v1.0.0.</p>

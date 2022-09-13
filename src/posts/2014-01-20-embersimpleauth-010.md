@@ -1,11 +1,11 @@
 ---
-title: 'Ember.SimpleAuth 0.1.0'
+title: "Ember.SimpleAuth 0.1.0"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte announces Ember.SimpleAuth 0.1.0 with an improved
+  "Marco Otte-Witte announces Ember.SimpleAuth 0.1.0 with an improved
   architecture that allows for arbitrary authentication and authorization
-  strategies.'
+  strategies."
 tags: ember
 tagline: |
   <p>Since <a href="https://github.com/simplabs/ember-simple-auth">Ember.SimpleAuth</a> was released in October 2013, there were lots of issues reported, pull requests submitted and merged etc. <strong>Now all this feedback together with some fundamental design improvements results in the <a href="https://github.com/simplabs/ember-simple-auth/releases/tag/0.1.0">release of the 0.1.0 version of Ember.SimpleAuth</a>.</strong> This is hopefully paving the way for a soon-to-be-released version 1.0.</p>

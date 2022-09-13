@@ -1,10 +1,10 @@
 ---
-title: 'ember-cli-deploy-notifications'
+title: "ember-cli-deploy-notifications"
 authorHandle: LevelbossMike
-bio: 'Full-Stack Engineer, Ember CLI Deploy core team member'
+bio: "Full-Stack Engineer, Ember CLI Deploy core team member"
 description:
-  'Michael Klein introduces ember-cli-deploy-notifications, an ember-cli-deploy
-  plugin for invoking arbitrary webhooks during the deployment process.'
+  "Michael Klein introduces ember-cli-deploy-notifications, an ember-cli-deploy
+  plugin for invoking arbitrary webhooks during the deployment process."
 tags: ember
 tagline: |
   <p>A few weeks ago a new version of the <em>&quot;official&quot;</em> ember deployment solution <a href="http://ember-cli-deploy.com/">ember-cli-deploy</a> was released:</p> <blockquote> <p>ember-cli-deploy 0.5 is now released and ready for use with a great docs site and already-rich plugin ecosystem: &lt;a href=&quot;https://t.co/6yhjmjQrYD&quot;&gt;https://t.co/6yhjmjQrYD&lt;/a&gt; &lt;author&gt;Luke Melia (@lukemelia) &lt;a href=&quot;https://twitter.com/lukemelia/status/659787938625134592&quot;&gt;29. Oktober 2015&lt;/a&gt;&lt;/author&gt;</p> </blockquote>

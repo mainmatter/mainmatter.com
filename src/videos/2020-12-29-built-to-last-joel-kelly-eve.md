@@ -11,7 +11,8 @@ teaser:
   'Coming from the event industry, Joel hits the nail right on the head: "It is
   fundamental that the engineering and product development team are working
   together really closely [...] so they can adapt quickly to what''s going on."'
-description: Marco Otte-Witte talks with Joel Kelly, founder & CEO of Eve, about
+description:
+  Marco Otte-Witte talks with Joel Kelly, founder & CEO of Eve, about
   development processes and the importance of engineering and product teams
   working closely together the entire time.
 og:

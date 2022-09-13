@@ -1,6 +1,6 @@
 ---
-name: 'Andy Brown'
+name: "Andy Brown"
 github: geekygrappler
 twitter: geekygrappler
-bio: 'Senior Frontend Engineer'
+bio: "Senior Frontend Engineer"
 ---

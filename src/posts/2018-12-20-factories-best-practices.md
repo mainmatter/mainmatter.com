@@ -1,8 +1,8 @@
 ---
-title: 'Factories best practices'
+title: "Factories best practices"
 authorHandle: geekygrappler
 tags: testing
-bio: 'Senior Frontend Engineer'
+bio: "Senior Frontend Engineer"
 description:
   "Andy Brown introduces best practices for using factories in order to make
   your colleagues' and your own future self's lives easier."

@@ -1,10 +1,10 @@
 ---
-title: 'Ember.SimpleAuth'
+title: "Ember.SimpleAuth"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte announces Ember.SimpleAuth, an addon for implementing a
-  session mechanism, authentication and authorization for Ember.js applications.'
+  "Marco Otte-Witte announces Ember.SimpleAuth, an addon for implementing a
+  session mechanism, authentication and authorization for Ember.js applications."
 tags: ember
 tagline: |
   <p><strong>Update: <a href="/blog/2014/01/20/embersimpleauth-010">Ember.SimpleAuth 0.1.0 has been released!</a></strong> The information in this is (partially) outdated.</p> <p>After I wrote 2 <a href="/blog/2013/06/15/authentication-in-emberjs" title="the initial post">blog</a> <a href="/blog/2013/08/08/better-authentication-in-emberjs" title="the second post with a refined implementation">posts</a> on implementing token based authentication in <a href="http://emberjs.com">Ember.js</a> applications and got quite some feedback, good suggestions etc., I thought it <strong>would be nice to pack all these ideas in an Ember.js plugin</strong> so everybody could easily integrate that into their applications. Now <strong>I finally managed to release version 0.0.1 of that plugin</strong>: <a href="https://github.com/simplabs/ember-simple-auth">Ember.SimpleAuth</a>.</p>
@@ -61,23 +61,23 @@ Of course the application also needs a template that renders the login form:
 
 ```hbs
 {% raw %}
-<form {{action login on='submit'}}>
-  <label for='identification'>Login</label>
+<form {{action login on="submit"}}>
+  <label for="identification">Login</label>
   {{view
     Ember.TextField
-    id='identification'
-    valueBinding='identification'
-    placeholder='Enter Login'
+    id="identification"
+    valueBinding="identification"
+    placeholder="Enter Login"
   }}
-  <label for='password'>Password</label>
+  <label for="password">Password</label>
   {{view
     Ember.TextField
-    id='password'
-    type='password'
-    valueBinding='password'
-    placeholder='Enter Password'
+    id="password"
+    type="password"
+    valueBinding="password"
+    placeholder="Enter Password"
   }}
-  <button type='submit'>Login</button>
+  <button type="submit">Login</button>
 </form>
 {% endraw %}
 ```

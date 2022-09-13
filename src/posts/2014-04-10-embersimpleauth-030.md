@@ -1,10 +1,10 @@
 ---
-title: 'Ember.SimpleAuth 0.3.0'
+title: "Ember.SimpleAuth 0.3.0"
 authorHandle: marcoow
-bio: 'Founding Director of simplabs, author of Ember Simple Auth'
+bio: "Founding Director of simplabs, author of Ember Simple Auth"
 description:
-  'Marco Otte-Witte announces Ember.SimpleAuth 0.3.0, splitting the addon into a
-  core and extensions for specific authentication/authorization mechanisms.'
+  "Marco Otte-Witte announces Ember.SimpleAuth 0.3.0, splitting the addon into a
+  core and extensions for specific authentication/authorization mechanisms."
 tags: ember
 tagline: |
   <p>Ember.SimpleAuth 0.3.0 was just released. The <strong>main change in this release is the split of Ember.SimpleAuth into one core library and a set of extension libraries</strong>. These extension libraries include everything that’s not mandatorily required for Ember.SimpleAuth like authenticators, stores etc. so that every application would only have to load whatever it needs.</p>

@@ -1,6 +1,6 @@
 ---
-title: 'DevFest Nantes 2018'
-image: '/assets/images/talks/2018-10-18-devfest-nantes-2018/logo.png'
+title: "DevFest Nantes 2018"
+image: "/assets/images/talks/2018-10-18-devfest-nantes-2018/logo.png"
 url: https://devfest2018.gdgnantes.com
 ---
 

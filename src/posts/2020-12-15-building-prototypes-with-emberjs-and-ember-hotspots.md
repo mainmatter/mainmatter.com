@@ -1,11 +1,11 @@
 ---
-title: 'Building prototypes with Ember.js'
+title: "Building prototypes with Ember.js"
 authorHandle: pichfl
 tags: ember
-bio: 'Consultant for Design & Technology'
+bio: "Consultant for Design & Technology"
 description:
-  'Create click dummies and prototypes that can grow over your initial ideas
-  with ease and the full force of the Ember.js ecosystem.'
+  "Create click dummies and prototypes that can grow over your initial ideas
+  with ease and the full force of the Ember.js ecosystem."
 og:
   image: /assets/images/posts/2020-12-15-building-prototypes-with-emberjs-and-ember-hotspots/og-image.png
 tagline: |
@@ -193,7 +193,7 @@ width when styling child elements of this component.
 
 ```hbs
 {% raw %}
-<div ...attributes class='eh-background' style={{this.style}}>
+<div ...attributes class="eh-background" style={{this.style}}>
   {{yield}}
 </div>
 {% endraw %}
@@ -259,9 +259,9 @@ detected and `false` on the corresponding `mouseup`.
 {% raw %}
 <div
   ...attributes
-  class='eh-hotspot {{if this.ehHotspots.showHotspots 'eh-hotspot--highlight'}}'
+  class="eh-hotspot {{if this.ehHotspots.showHotspots 'eh-hotspot--highlight'}}"
   style={{this.style}}
-  role={{if this.isInteractive (if @route 'link' 'button')}}
+  role={{if this.isInteractive (if @route "link" "button")}}
   {{on this.triggerEvent this.onTrigger}}
 >
   {{yield}}
@@ -322,9 +322,9 @@ export default class EHHotspotComponent extends Component {
 
 ```hbs
 {% raw %}
-<EhBackground @src='Home@2x.png'>
+<EhBackground @src="Home@2x.png">
   {{#if this.showMenu}}
-    <EhHotspot @rect={{array 40 40}} @src='Menu@2x.png' />
+    <EhHotspot @rect={{array 40 40}} @src="Menu@2x.png" />
   {{/if}}
 
   <EhHotspot
@@ -334,16 +334,16 @@ export default class EHHotspotComponent extends Component {
 
   <EhHotspot
     @rect={{array 341 671 304 90}}
-    @src={{if this.btnCargoHover 'button-install-cargo@2x.png'}}
+    @src={{if this.btnCargoHover "button-install-cargo@2x.png"}}
     @action={{fn (mut this.btnCargoHover) (not this.btnCargoHover)}}
-    @trigger='hover'
+    @trigger="hover"
   />
 
   <EhHotspot
     @rect={{array 655 671 290 90}}
-    @src={{if this.btnGetStartedHover 'button-get-started@2x.png'}}
+    @src={{if this.btnGetStartedHover "button-get-started@2x.png"}}
     @action={{fn (mut this.btnGetStartedHover) (not this.btnGetStartedHover)}}
-    @trigger='hover'
+    @trigger="hover"
   />
 </EhBackground>
 {% endraw %}

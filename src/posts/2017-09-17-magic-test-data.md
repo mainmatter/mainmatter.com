@@ -1,10 +1,10 @@
 ---
 title: Magic Data in Tests
 authorHandle: geekygrappler
-bio: 'Senior Frontend Engineer'
+bio: "Senior Frontend Engineer"
 description:
-  'Andy Brown explains the AAA principle for writing good tests and discusses
-  what the negative consequences of not adhering to it are.'
+  "Andy Brown explains the AAA principle for writing good tests and discusses
+  what the negative consequences of not adhering to it are."
 tags: misc
 tagline: |
   <p>Often when working on large codebases, my changes break some existing tests. While I would prefer my coding to be perfect, it's highly unlikely that I'll ever achieve the state of coding zen, so it's nice to know I have a test suite to catch me when I fall. Given that the codebase is large and in the majority not written by me, I tend to be introduced to code via the test files. One important principle I've started to follow when writing and refactoring tests is AAA.</p>

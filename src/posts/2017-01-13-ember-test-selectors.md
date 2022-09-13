@@ -1,11 +1,11 @@
 ---
 title: New features for ember-test-selectors
 authorHandle: tobiasbieniek
-bio: 'Senior Frontend Engineer, Ember CLI core team member'
+bio: "Senior Frontend Engineer, Ember CLI core team member"
 description:
-  'Tobias Bieniek announces new features in ember-test-selectors such as
+  "Tobias Bieniek announces new features in ember-test-selectors such as
   automatic binding of data-test-* properties and how these are stripped in
-  production.'
+  production."
 tags: ember
 tagline: |
   <p>In March 2016 we have released the first version of <a href="https://github.com/simplabs/ember-test-selectors">ember-test-selectors</a> and today we are proud to present you our next milestone: <code>0.1.0</code>.</p> <p>While <code>0.1.0</code> does not sound like much has changed, the addon has actually gained a lot of new functionality and should be considered our release candidate for <code>1.0.0</code>.</p> <p>This blog post will highlight the major changes in this release, and will give you a short introduction into <em>how</em> we have implemented these new features.</p>

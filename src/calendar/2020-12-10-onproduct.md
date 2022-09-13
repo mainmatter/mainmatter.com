@@ -1,7 +1,7 @@
 ---
 title:
-  '[OnProduct #26] Version control in design: best practices for collaboration'
-image: '/assets/images/calendar/2020-12-10-onproduct/logo.svg'
+  "[OnProduct #26] Version control in design: best practices for collaboration"
+image: "/assets/images/calendar/2020-12-10-onproduct/logo.svg"
 location: Remote
 url: https://www.meetup.com/OnProduct/events/274647325
 kind: meetup

@@ -1,6 +1,6 @@
 ---
-title: 'Banking Innovation Forum 2020'
-image: '/assets/images/calendar/2020-06-18-banking-innovation-forum/logo.jpg'
+title: "Banking Innovation Forum 2020"
+image: "/assets/images/calendar/2020-06-18-banking-innovation-forum/logo.jpg"
 location: Vienna
 url: https://ict-solutions-events.com/2nd-annual-international-banking-innovation-forum/
 kind: conference

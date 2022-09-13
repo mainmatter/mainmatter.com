@@ -1,6 +1,6 @@
 ---
-title: 'EmberConf 2020'
-image: '/assets/images/calendar/2020-03-16-emberconf/logo.svg'
+title: "EmberConf 2020"
+image: "/assets/images/calendar/2020-03-16-emberconf/logo.svg"
 location: Portland
 url: https://emberconf.com/
 kind: conference

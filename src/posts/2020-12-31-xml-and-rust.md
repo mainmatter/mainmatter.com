@@ -1,8 +1,8 @@
 ---
-title: 'XML parsing in Rust'
+title: "XML parsing in Rust"
 authorHandle: tobiasbieniek
 tags: rust
-bio: 'Senior Software Engineer'
+bio: "Senior Software Engineer"
 og:
   image: /assets/images/posts/2020-12-31-xml-and-rust/og-image.png
 tagline: |

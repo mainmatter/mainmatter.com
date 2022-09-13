@@ -1,11 +1,11 @@
 ---
-title: 'The guide to making remote work work'
+title: "The guide to making remote work work"
 authorHandle: marcoow
 tags: process
-bio: 'Founder and Managing Director of simplabs'
+bio: "Founder and Managing Director of simplabs"
 description:
-  'Marco Otte-Witte shares insights gained in many years of successfully
-  operating simplabs as a fully remote company.'
+  "Marco Otte-Witte shares insights gained in many years of successfully
+  operating simplabs as a fully remote company."
 og:
   image: /assets/images/posts/2020-11-16-the-guide-to-making-remote-work-work/og-image.png
 tagline: |
