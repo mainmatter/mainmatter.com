@@ -141,16 +141,16 @@ imageAlt: "Screenshot of Ember simple auth"
 ## Ember.js
 
 - [simplabs/ember-error-route]
-  [#66](https://github.com/simplabs/ember-error-route/pull/66) Add GitHub
+  [#66](https://github.com/mainmatter/ember-error-route/pull/66) Add GitHub
   project links ([@turbo87])
 - [simplabs/ember-error-route]
-  [#65](https://github.com/simplabs/ember-error-route/pull/65) README: Add basic
-  documentation ([@turbo87])
+  [#65](https://github.com/mainmatter/ember-error-route/pull/65) README: Add
+  basic documentation ([@turbo87])
 - [simplabs/ember-error-route]
-  [#64](https://github.com/simplabs/ember-error-route/pull/64) Improved styling
-  ([@turbo87])
+  [#64](https://github.com/mainmatter/ember-error-route/pull/64) Improved
+  styling ([@turbo87])
 - [simplabs/ember-error-route]
-  [#62](https://github.com/simplabs/ember-error-route/pull/62) Remove broken
+  [#62](https://github.com/mainmatter/ember-error-route/pull/62) Remove broken
   colors@1.4.2 subdependency ([@turbo87])
 
 - [ember-learn/ember-website]
@@ -267,10 +267,10 @@ imageAlt: "Screenshot of Ember simple auth"
 [authmaker/authmaker-ember-simple-auth]:
   https://github.com/Authmaker/authmaker-ember-simple-auth/
 [aprs-parser-rs]: https://github.com/aprs-parser-rs/
-[simplabs/ember-simple-auth]: https://github.com/simplabs/ember-simple-auth/
-[simplabs/playbook]: https://github.com/simplabs/playbook/
+[simplabs/ember-simple-auth]: https://github.com/mainmatter/ember-simple-auth/
+[simplabs/playbook]: https://github.com/mainmatter/playbook/
 [ember-cli/ember-exam]: https://github.com/ember-cli/ember-exam/
-[simplabs/ember-error-route]: https://github.com/simplabs/ember-error-route/
+[simplabs/ember-error-route]: https://github.com/mainmatter/ember-error-route/
 [emberjs/ember-string]: https://github.com/emberjs/ember-string/
 [ember-learn/guides-source]: https://github.com/ember-learn/guides-source/
 [mansona/ember-body-class]: https://github.com/mansona/ember-body-class/
@@ -282,10 +282,11 @@ imageAlt: "Screenshot of Ember simple auth"
 [empress/ember-cli-showdown]: https://github.com/empress/ember-cli-showdown
 [mansona/ember-cli-notifications]:
   https://github.com/mansona/ember-cli-notifications
-[simplabs/ember-intl-analyzer]: https://github.com/simplabs/ember-intl-analyzer
+[simplabs/ember-intl-analyzer]:
+  https://github.com/mainmatter/ember-intl-analyzer
 [nickschot/ember-mobile-menu]: https://github.com/nickschot/ember-mobile-menu
 [simplabs/ember-promise-modals]:
-  https://github.com/simplabs/ember-promise-modals
+  https://github.com/mainmatter/ember-promise-modals
 [oscard0m/npm-snapshot]: https://github.com/oscard0m/npm-snapshot
 [commitizen/cz-conventional-changelog]:
   https://github.com/commitizen/cz-conventional-changelog

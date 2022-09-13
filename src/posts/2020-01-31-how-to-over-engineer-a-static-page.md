@@ -27,7 +27,7 @@ Our goals for the new website were manifold:
 - We wanted to keep creating and maintaining content for the site as simple as
   it was with the previous site that was built on Jekyll and published via
   GitHub Pages; for example adding new blog posts should remain as easy as
-  [adding a new Markdown file with some front matter](https://github.com/simplabs/simplabs.github.io/pull/826).
+  [adding a new Markdown file with some front matter](https://github.com/mainmatter/simplabs.github.io/pull/826).
 - Although we are [huge fans of Elixir and Phoenix](/expertise/elixir-phoenix/)
   we did not want to create an API server for the site that would serve content
   etc. as that would have added quite some unnecessary complexity and should
@@ -102,11 +102,11 @@ network requests are necessary when browsing the site.
 Statically pre-rendering a client-side app at build time is relatively straight
 forward. As part of our Netlify deployment, we build the app and start a small
 Express Server that serves it. We then
-[visit each of the routes](https://github.com/simplabs/simplabs.github.io/blob/651b2e805c55fed5d152d82a3fee7b06874429b1/scripts/prerender.js#L69)
+[visit each of the routes](https://github.com/mainmatter/simplabs.github.io/blob/651b2e805c55fed5d152d82a3fee7b06874429b1/scripts/prerender.js#L69)
 with a headless instance of Chrome using Puppeteer,
-[take a snapshot of the page's DOM](https://github.com/simplabs/simplabs.github.io/blob/651b2e805c55fed5d152d82a3fee7b06874429b1/scripts/prerender.js#L70)
+[take a snapshot of the page's DOM](https://github.com/mainmatter/simplabs.github.io/blob/651b2e805c55fed5d152d82a3fee7b06874429b1/scripts/prerender.js#L70)
 and
-[save that to a respectively named file](https://github.com/simplabs/simplabs.github.io/blob/651b2e805c55fed5d152d82a3fee7b06874429b1/scripts/prerender.js#L71).
+[save that to a respectively named file](https://github.com/mainmatter/simplabs.github.io/blob/651b2e805c55fed5d152d82a3fee7b06874429b1/scripts/prerender.js#L71).
 All of these HTML files, along with the app itself and all other assets, then
 get uploaded to the CDN to be served from there.
 
@@ -123,10 +123,10 @@ significant additional complexity and none of our data actually needed to be
 computed on demand on the server as all of it is indeed static and known
 upfront. Leveraging Glimmer.js' Broccoli-based build pipeline, we set up a
 process that reads in all files in a directory and
-[converts the Markdown files into Glimmer.js components at build time](https://github.com/simplabs/simplabs.github.io/blob/master/lib/generate-blog/lib/components-builder.js).
+[converts the Markdown files into Glimmer.js components at build time](https://github.com/mainmatter/simplabs.github.io/blob/master/lib/generate-blog/lib/components-builder.js).
 
 That way we are generating dedicated components for all posts that are all
-[mapped to their own routes](https://github.com/simplabs/simplabs.github.io/blob/master/config/routes-map.js#L42).
+[mapped to their own routes](https://github.com/mainmatter/simplabs.github.io/blob/master/config/routes-map.js#L42).
 We also generate the components for the [blog listing page(s)](/blog/) and the
 ones that [list all posts by a particular author](/blog/author/marcoow). This
 approach basically moves what would typically be done by an API server at
@@ -215,7 +215,7 @@ performance characteristics as a resource cached in a service worker's cache.
 ### Service Worker
 
 Of course we also install a
-[service worker](https://github.com/simplabs/simplabs.github.io/blob/master/lib/service-workers/workers/service-worker.js)
+[service worker](https://github.com/mainmatter/simplabs.github.io/blob/master/lib/service-workers/workers/service-worker.js)
 that caches all of the page's resources to further improve caching and make the
 page work offline. The service worker loads of the JavaScript bundles described
 above into its cache eagerly. So even some of the pages' content is split into
@@ -252,7 +252,7 @@ performance numbers speak a clear language.
 
 We were able to get there without giving up on the ease of maintenance of the
 content so that writing a new blog post is as easy as adding a Markdown file and
-[opening a pull request](https://github.com/simplabs/simplabs.github.io/pull/826).
+[opening a pull request](https://github.com/mainmatter/simplabs.github.io/pull/826).
 
 And even though we spent an unreasonable amount of time and effort during the
 course of the project, there are many more things that we did not do or that I
@@ -272,7 +272,7 @@ optimizing for performance:
   huge payloads on small viewports.
 - Third-parties can have a significant negative impact on a site's performance
   and should generally be avoided (for example, you'll want to
-  [serve fonts from your own domain](https://github.com/simplabs/simplabs.github.io/pull/833)).
+  [serve fonts from your own domain](https://github.com/mainmatter/simplabs.github.io/pull/833)).
 - Optimizing for performance is an ongoing project and not a one-off effort;
   there needs to be tooling in place to be aware of degrations and accidental
   mistakes, e.g. you could have Lighthouse integrated into your Github Pipeline

@@ -20,9 +20,9 @@ raise awareness by providing everyone with easy access to accurate data.
 
 ![Video of the Breethe PWA](/assets/images/posts/2018-07-24-from-spa-to-pwa/breethe-video.gif)
 
-The application is [open source](https://github.com/simplabs/breethe-server) and
-we encourage everyone interested to look through the source for reference. The
-server for this application was implemented using an
+The application is [open source](https://github.com/mainmatter/breethe-server)
+and we encourage everyone interested to look through the source for reference.
+The server for this application was implemented using an
 [Elixir](https://elixir-lang.org) umbrella application which will be the focus
 of this post. The client for Breethe was built with
 [Glimmer.js](http://glimmerjs.com), which we discussed in previous posts:

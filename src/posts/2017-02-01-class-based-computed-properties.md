@@ -77,7 +77,7 @@ like this** (at least not as a reusable macro).
 ## Enter Class based Computed Properties
 
 With the Class based Computed Properties that
-[ember-classy-computed](https://github.com/simplabs/ember-classy-computed)
+[ember-classy-computed](https://github.com/mainmatter/ember-classy-computed)
 introduces it is **actually possible now to implement something like the above
 mentioned `filterByProperty` macro**. The computed property returned by that
 macro can now correctly be invalidated when any of the user's `isActive`,
@@ -154,8 +154,8 @@ helpers for Computed Properties** as well.
 
 ## Notice
 
-**[ember-classy-computed](https://github.com/simplabs/ember-classy-computed) is
-currently at a very early stage** and we haven't thoroughly tested the
+**[ember-classy-computed](https://github.com/mainmatter/ember-classy-computed)
+is currently at a very early stage** and we haven't thoroughly tested the
 implementation just yet. We have also not done any benchmarking to get a better
 understanding of what the performance implications are. That is to say, **while
 we encourage everyone to try this out, be aware you're currently doing so at

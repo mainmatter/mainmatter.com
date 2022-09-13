@@ -7,7 +7,7 @@ description:
   enables better element selectors in Ember.js tests."
 tags: ember
 tagline: |
-  <p>We just released <a href="https://github.com/simplabs/ember-test-selectors">ember-test-selectors</a>, an <strong>Ember Addon that enables better element selectors in Ember.js tests</strong>. It removes all data attributes starting with <code>data-test-</code> from the application's templates in the <code>production</code> environment so that these attributes can be used to select elements with in acceptance and integration tests without polluting the markup that is delivered to the end user.</p>
+  <p>We just released <a href="https://github.com/mainmatter/ember-test-selectors">ember-test-selectors</a>, an <strong>Ember Addon that enables better element selectors in Ember.js tests</strong>. It removes all data attributes starting with <code>data-test-</code> from the application's templates in the <code>production</code> environment so that these attributes can be used to select elements with in acceptance and integration tests without polluting the markup that is delivered to the end user.</p>
 ---
 
 ## Why even use `data` attributes as test selectors?
@@ -109,11 +109,11 @@ with data attributes as test selectors even more convenient:
 - custom test helpers that find elements by data attributes so that you don't
   have to write the quite long selectors yourselves; probably sth. like
   `findViaTestSelector('selector', 'post-title')`,
-  [https://github.com/simplabs/ember-test-selectors/issues/8](https://github.com/simplabs/ember-test-selectors/issues/8)
+  [https://github.com/mainmatter/ember-test-selectors/issues/8](https://github.com/mainmatter/ember-test-selectors/issues/8)
 - template helpers that generate data attributes for elements, e.g.
   `<h1 {{test-selector="post-title"}}>{{post.title}}</h1>` which would result in
   `<h1 data-test-selector="post-title">{{post.title}}</h1>` or
   `<div {{test-selector post}}>…</div>` which would result in
   `<div data-test-selector="post-1">…</div>`,
-  [https://github.com/simplabs/ember-test-selectors/issues/9](https://github.com/simplabs/ember-test-selectors/issues/9)
+  [https://github.com/mainmatter/ember-test-selectors/issues/9](https://github.com/mainmatter/ember-test-selectors/issues/9)
   {% endraw %}

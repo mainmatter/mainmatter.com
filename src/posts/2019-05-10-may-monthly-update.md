@@ -39,7 +39,7 @@ translations for you and will soon provide warnings for missing and broken
 translations too.
 
 Check it out here:
-[https://github.com/simplabs/ember-intl-analyzer](https://github.com/simplabs/ember-intl-analyzer)
+[https://github.com/mainmatter/ember-intl-analyzer](https://github.com/mainmatter/ember-intl-analyzer)
 
 #### simplabs is a founding sponsor of the Erlang Ecosystem Foundation
 

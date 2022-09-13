@@ -7,7 +7,7 @@ description:
   past year and what the roadmap towards a 1.0 release is."
 tags: ember
 tagline: |
-  <p>Back in January we wrote about the <a href="/blog/2017/01/13/ember-test-selectors">latest changes</a> in <a href="https://github.com/simplabs/ember-test-selectors"><code>ember-test-selectors</code></a> and how we implemented them. Since then we adjusted a few things and this blog post should give you an idea what has happened so far and what else will happen before we feel comfortable promoting the addon to v1.0.0.</p>
+  <p>Back in January we wrote about the <a href="/blog/2017/01/13/ember-test-selectors">latest changes</a> in <a href="https://github.com/mainmatter/ember-test-selectors"><code>ember-test-selectors</code></a> and how we implemented them. Since then we adjusted a few things and this blog post should give you an idea what has happened so far and what else will happen before we feel comfortable promoting the addon to v1.0.0.</p>
 ---
 
 ## v0.2.0: `data-test-*` attributes without values
@@ -108,7 +108,7 @@ correct test-selector stripping depending on the build environment.
 ## v0.3.7: Deprecation of the `testSelector` helper function
 
 A few weeks later [Kelly Selden](https://github.com/kellyselden) triggered a
-[conversation](https://github.com/simplabs/ember-test-selectors/issues/121)
+[conversation](https://github.com/mainmatter/ember-test-selectors/issues/121)
 about the `testSelector` helper function in `ember-test-selectors`.
 
 The purpose of the `testSelector` function is turning:
@@ -130,8 +130,8 @@ let bar = '[data-test-bar="baz"]';
 ```
 
 After discussing back and forth and coming up with
-[alternative APIs](https://github.com/simplabs/ember-test-selectors/pull/122) we
-decided the best way forward was actually to not use any helpers at all. This
+[alternative APIs](https://github.com/mainmatter/ember-test-selectors/pull/122)
+we decided the best way forward was actually to not use any helpers at all. This
 has the advantage of not hiding the actual CSS selector that is being used and
 requiring less knowledge of how `ember-test-selectors` works to understand what
 any test code is doing.

@@ -28,7 +28,7 @@ daily lives.
 ![Video of the Breethe PWA](/assets/images/posts/2018-07-03-building-a-pwa-with-glimmer-js/breethe-video.gif)
 
 The application is open source and
-[available on GitHub](https://github.com/simplabs/breethe-client).
+[available on GitHub](https://github.com/mainmatter/breethe-client).
 
 ## Glimmer.js
 
@@ -210,7 +210,7 @@ This is just a brief overview of how an application built with Glimmer.js works.
 We will cover some of these things in more detail in future posts, particularly
 how we load and manage data with Orbit.js. For a closer look on the inner
 workings of Breethe, check out the
-[code on github](https://github.com/simplabs/breethe-client).
+[code on github](https://github.com/mainmatter/breethe-client).
 
 ## From Glimmer.js to Ember.js
 

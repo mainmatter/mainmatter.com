@@ -25,7 +25,7 @@ deployments so we decided to write one.
 
 ## Introducing ember-cli-deploy-notifications
 
-[ember-cli-deploy-notifications](https://github.com/simplabs/ember-cli-deploy-notifications)
+[ember-cli-deploy-notifications](https://github.com/mainmatter/ember-cli-deploy-notifications)
 **makes it easy to notify external services** by adding them to a
 `notifications.services.<service>` property in `config/deploy.js`. First you
 have to install the addon:
@@ -233,7 +233,7 @@ client projects and, though pretty small, found it to be a very useful addition
 to our deployment workflow.
 
 Please refer to the project’s
-[README](https://github.com/simplabs/ember-cli-deploy-notifications#readme) for
-more detailed information about the plugin and don’t hesitate to open issues or
-ask questions, we’re happy to support you in setting up a great deployment
+[README](https://github.com/mainmatter/ember-cli-deploy-notifications#readme)
+for more detailed information about the plugin and don’t hesitate to open issues
+or ask questions, we’re happy to support you in setting up a great deployment
 workflow for your Ember applications.

@@ -7,7 +7,7 @@ description:
   session mechanism, authentication and authorization for Ember.js applications."
 tags: ember
 tagline: |
-  <p><strong>Update: <a href="/blog/2014/01/20/embersimpleauth-010">Ember.SimpleAuth 0.1.0 has been released!</a></strong> The information in this is (partially) outdated.</p> <p>After I wrote 2 <a href="/blog/2013/06/15/authentication-in-emberjs" title="the initial post">blog</a> <a href="/blog/2013/08/08/better-authentication-in-emberjs" title="the second post with a refined implementation">posts</a> on implementing token based authentication in <a href="http://emberjs.com">Ember.js</a> applications and got quite some feedback, good suggestions etc., I thought it <strong>would be nice to pack all these ideas in an Ember.js plugin</strong> so everybody could easily integrate that into their applications. Now <strong>I finally managed to release version 0.0.1 of that plugin</strong>: <a href="https://github.com/simplabs/ember-simple-auth">Ember.SimpleAuth</a>.</p>
+  <p><strong>Update: <a href="/blog/2014/01/20/embersimpleauth-010">Ember.SimpleAuth 0.1.0 has been released!</a></strong> The information in this is (partially) outdated.</p> <p>After I wrote 2 <a href="/blog/2013/06/15/authentication-in-emberjs" title="the initial post">blog</a> <a href="/blog/2013/08/08/better-authentication-in-emberjs" title="the second post with a refined implementation">posts</a> on implementing token based authentication in <a href="http://emberjs.com">Ember.js</a> applications and got quite some feedback, good suggestions etc., I thought it <strong>would be nice to pack all these ideas in an Ember.js plugin</strong> so everybody could easily integrate that into their applications. Now <strong>I finally managed to release version 0.0.1 of that plugin</strong>: <a href="https://github.com/mainmatter/ember-simple-auth">Ember.SimpleAuth</a>.</p>
 ---
 
 Instead of providing a heavyweight out-of-the-box solution with predefined
@@ -16,7 +16,7 @@ application code implements. It also **does not dictate anything with respect to
 application structure, routing etc**. However, setting up Ember.SimpleAuth is
 **very straight forward** and it can be **completely customized**. The
 requirements on the server interface are minimal
-([see the README for more information on the server side](https://github.com/simplabs/ember-simple-auth#the-server-side)).
+([see the README for more information on the server side](https://github.com/mainmatter/ember-simple-auth#the-server-side)).
 
 ## Using Ember.SimpleAuth
 
@@ -100,9 +100,9 @@ App.ProtectedRoute = Ember.Route.extend(
 ## More
 
 There is more documentation as well as examples in the
-[repository on github](https://github.com/simplabs/ember-simple-auth). Also the
-**code base is quite small so I suggest to read through it** to better
+[repository on github](https://github.com/mainmatter/ember-simple-auth). Also
+the **code base is quite small so I suggest to read through it** to better
 understand what’s going on internally.
 
 Patches, bug reports etc. are highly appreciated of course -
-[get started by forking the project on github](https://github.com/simplabs/ember-simple-auth)!
+[get started by forking the project on github](https://github.com/mainmatter/ember-simple-auth)!

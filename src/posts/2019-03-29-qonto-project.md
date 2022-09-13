@@ -35,8 +35,8 @@ members are working on the Qonto project. They started by analyzing Qonto's code
 and found the templates were using the rather antiquated Emblem.js which nobody
 was really happy with but was difficult to migrate away from. To tackle this
 Tobias created and open sourced
-[emblem-migrator](https://github.com/simplabs/emblem-migrator/) which Qonto and
-all other Emblem.js users can now use.
+[emblem-migrator](https://github.com/mainmatter/emblem-migrator/) which Qonto
+and all other Emblem.js users can now use.
 
 Next simplabs engineers identified that Qonto's test suite speed was impeding
 progress. They showed Qonto's engineers how to analyse the underlying causes and

@@ -7,7 +7,7 @@ description:
   release and shows how to use it in Ember CLI applications."
 tags: ember
 tagline: |
-  <p>With Ember Simple Auth 1.0.0 having been <a href="https://github.com/simplabs/ember-simple-auth/releases/tag/1.0.0">released a few days ago</a>, a lot of people will want to upgrade their applications to it so they can finally make the switch to Ember.js 2.0. While quite a big part of the <a href="http://ember-simple-auth.com/api/">public API</a> has been changed in 1.0.0, <strong>updating an application from Ember Simple Auth 0.8.0 or earlier versions is actually not as hard as it might appear</strong> at first glance. This post explains the steps that are necessary to bring an application to 1.0.0.</p>
+  <p>With Ember Simple Auth 1.0.0 having been <a href="https://github.com/mainmatter/ember-simple-auth/releases/tag/1.0.0">released a few days ago</a>, a lot of people will want to upgrade their applications to it so they can finally make the switch to Ember.js 2.0. While quite a big part of the <a href="http://ember-simple-auth.com/api/">public API</a> has been changed in 1.0.0, <strong>updating an application from Ember Simple Auth 0.8.0 or earlier versions is actually not as hard as it might appear</strong> at first glance. This post explains the steps that are necessary to bring an application to 1.0.0.</p>
 ---
 
 As 1.0.0 marks the first stable release of Ember Simple Auth, upcoming versions
@@ -318,9 +318,9 @@ these actions it would now have to override these methods.
 
 I hope this gives a good overview of how upgrading an Ember application to Ember
 Simple Auth 1.0.0 works. **There is lots of documentation available** in the
-[README](https://github.com/simplabs/ember-simple-auth#readme) and the
+[README](https://github.com/mainmatter/ember-simple-auth#readme) and the
 [API Docs](http://ember-simple-auth.com/api/index.html). You might also want to
 check out the
-[dummy application](https://github.com/simplabs/ember-simple-auth/tree/master/tests/dummy)
+[dummy application](https://github.com/mainmatter/ember-simple-auth/tree/master/tests/dummy)
 in the github repo and the
 [intro video on the website](http://ember-simple-auth.com).

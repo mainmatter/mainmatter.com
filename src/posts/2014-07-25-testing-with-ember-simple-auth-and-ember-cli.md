@@ -7,7 +7,7 @@ description:
   ember-cli-simple-auth with the testing package ember-cli-simple-auth-testing."
 tags: ember
 tagline: |
-  <p><a href="/blog/2014/06/30/using-ember-simple-auth-with-ember-cli" title="Using Ember Simple Auth with ember-cli">The last blog post</a> showed how to use <a href="https://github.com/simplabs/ember-simple-auth">Ember Simple Auth</a> with <a href="https://github.com/ember-cli/ember-cli">Ember CLI</a> to implement session handling and authentication. <strong>This post shows how to test that code</strong>.</p>
+  <p><a href="/blog/2014/06/30/using-ember-simple-auth-with-ember-cli" title="Using Ember Simple Auth with ember-cli">The last blog post</a> showed how to use <a href="https://github.com/mainmatter/ember-simple-auth">Ember Simple Auth</a> with <a href="https://github.com/ember-cli/ember-cli">Ember CLI</a> to implement session handling and authentication. <strong>This post shows how to test that code</strong>.</p>
 ---
 
 ## The testing package
@@ -93,4 +93,4 @@ test('a protected route is not accessible when the session is not authenticated'
 
 This is how easy it is to test session handling and authentication with Ember
 Simple Auth and Ember CLI. The full example project can be
-[found on github](https://github.com/simplabs/ember-simple-auth-example)
+[found on github](https://github.com/mainmatter/ember-simple-auth-example)

@@ -8,7 +8,7 @@ description:
   strategies."
 tags: ember
 tagline: |
-  <p>Since <a href="https://github.com/simplabs/ember-simple-auth">Ember.SimpleAuth</a> was released in October 2013, there were lots of issues reported, pull requests submitted and merged etc. <strong>Now all this feedback together with some fundamental design improvements results in the <a href="https://github.com/simplabs/ember-simple-auth/releases/tag/0.1.0">release of the 0.1.0 version of Ember.SimpleAuth</a>.</strong> This is hopefully paving the way for a soon-to-be-released version 1.0.</p>
+  <p>Since <a href="https://github.com/mainmatter/ember-simple-auth">Ember.SimpleAuth</a> was released in October 2013, there were lots of issues reported, pull requests submitted and merged etc. <strong>Now all this feedback together with some fundamental design improvements results in the <a href="https://github.com/mainmatter/ember-simple-auth/releases/tag/0.1.0">release of the 0.1.0 version of Ember.SimpleAuth</a>.</strong> This is hopefully paving the way for a soon-to-be-released version 1.0.</p>
 ---
 
 ## What changed?
@@ -40,7 +40,7 @@ the browser’s localStorage API and which is the new default as well as an
 in-memory store which is mainly useful for testing) as well as error
 handling/token invalidation, added callback actions like
 `sessionInvalidationSucceeded` etc. See the
-[README](https://github.com/simplabs/ember-simple-auth#readme) and the
+[README](https://github.com/mainmatter/ember-simple-auth#readme) and the
 [API docs](http://ember-simple-auth.com/api/) for complete documentation.
 
 ## Upgrading
@@ -121,7 +121,7 @@ to this:
 These are really the only changes needed if your application is using
 Ember.SimpleAuth’s default settings, the default OAuth 2.0 mechanism etc. For
 other scenarios, see the
-[README](https://github.com/simplabs/ember-simple-auth#readme),
+[README](https://github.com/mainmatter/ember-simple-auth#readme),
 [API docs](http://ember-simple-auth.com/api/) and also the examples provided in
 the repository.
 

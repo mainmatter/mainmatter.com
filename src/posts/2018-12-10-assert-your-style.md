@@ -193,7 +193,7 @@ But there's an even easier way to assert the computed styles of elements in your
 [qunit-dom](/blog/2017/10/24/high-level-assertions-with-qunit-dom) you can make
 your tests truly ✨
 
-Check it [out](https://github.com/simplabs/qunit-dom):
+Check it [out](https://github.com/mainmatter/qunit-dom):
 
 ```bash
 npm install --save-dev qunit-dom
@@ -231,13 +231,13 @@ module('Integration | Component | simplabs-logo-tile', function (hooks) {
 ```
 
 You can read more about the usage of the `.hasStyle` method in the
-[API documentation](https://github.com/simplabs/qunit-dom/blob/master/API.md#hasStyle).
+[API documentation](https://github.com/mainmatter/qunit-dom/blob/master/API.md#hasStyle).
 
 ---
 
 There are different ways to assert against inline styles and computed styles in
 your application and if you're using Ember & QUnit,
-[qunit-dom](https://github.com/simplabs/qunit-dom) is your best bet to make your
-style tests easy to write and read.
+[qunit-dom](https://github.com/mainmatter/qunit-dom) is your best bet to make
+your style tests easy to write and read.
 
 Questions? Suggestions? [Contact us!](/contact/)

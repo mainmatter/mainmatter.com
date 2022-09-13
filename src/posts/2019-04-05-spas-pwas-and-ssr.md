@@ -175,7 +175,7 @@ We implemented the patterns described in this post in
 [Breethe](https://breethe.app), a PWA for accessing air quality data for
 locations around the world that we built as a tech showcase. Breethe is
 completely open source and
-[available on github](https://github.com/simplabs/breethe-client) and we
+[available on github](https://github.com/mainmatter/breethe-client) and we
 encourage everyone interested in the topic to check it out for reference.
 
 ![Video of Breethe](/assets/images/posts/2019-03-16-spas-pwas-and-ssr/breethe.gif)

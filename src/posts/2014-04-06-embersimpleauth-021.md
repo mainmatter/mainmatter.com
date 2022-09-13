@@ -11,4 +11,4 @@ tagline: |
 ---
 
 Ember.SimpleAuth 0.2.1 was released with some minor improvements:
-[https://github.com/simplabs/ember-simple-auth/releases/tag/0.2.1](https://github.com/simplabs/ember-simple-auth/releases/tag/0.2.1)
+[https://github.com/mainmatter/ember-simple-auth/releases/tag/0.2.1](https://github.com/mainmatter/ember-simple-auth/releases/tag/0.2.1)

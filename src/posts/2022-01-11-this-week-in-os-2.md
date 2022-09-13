@@ -44,10 +44,10 @@ imageAlt: "Screenshot of Ember simple auth"
 ## Ember.js
 
 - [simplabs/ember-promise-modals]
-  [#500](https://github.com/simplabs/ember-promise-modals/pull/500) Specify
+  [#500](https://github.com/mainmatter/ember-promise-modals/pull/500) Specify
   octane edition in package.json & add missing optional features ([@nickschot])
 - [simplabs/ember-promise-modals]
-  [#499](https://github.com/simplabs/ember-promise-modals/pull/499) Update
+  [#499](https://github.com/mainmatter/ember-promise-modals/pull/499) Update
   ember-release scenario to use auto-import v2 ([@nickschot])
 
 - [nickschot/ember-mobile-menu]
@@ -55,7 +55,7 @@ imageAlt: "Screenshot of Ember simple auth"
   ember-keyboard v7 resolution to fix ember 4+ CI ([@nickschot])
 
 - [simplabs/ember-intl-analyzer]
-  [#447](https://github.com/simplabs/ember-intl-analyzer/pull/447) Add
+  [#447](https://github.com/mainmatter/ember-intl-analyzer/pull/447) Add
   additional guard to check if at the top of the parent tree and tests
   ([@mikek2252])
 
@@ -83,30 +83,30 @@ imageAlt: "Screenshot of Ember simple auth"
   htmlSafe from @ember/template, not @ember/string. ([@mansona])
 
 - [simplabs/ember-simple-auth]
-  [#2350](https://github.com/simplabs/ember-simple-auth/pull/2350) Upgrade to
+  [#2350](https://github.com/mainmatter/ember-simple-auth/pull/2350) Upgrade to
   qunit 5 ([@candunaj])
 - [simplabs/ember-simple-auth]
-  [#2349](https://github.com/simplabs/ember-simple-auth/pull/2349) Fixed failing
-  unit test - invalidate call revoke endpoint twice. Unit test did not validate
-  it correctly. ([@candunaj])
+  [#2349](https://github.com/mainmatter/ember-simple-auth/pull/2349) Fixed
+  failing unit test - invalidate call revoke endpoint twice. Unit test did not
+  validate it correctly. ([@candunaj])
 - [simplabs/ember-simple-auth]
-  [#2348](https://github.com/simplabs/ember-simple-auth/pull/2348) Fixed quietly
-  failing unit test because server returned nothing ([@candunaj])
+  [#2348](https://github.com/mainmatter/ember-simple-auth/pull/2348) Fixed
+  quietly failing unit test because server returned nothing ([@candunaj])
 - [simplabs/ember-simple-auth]
-  [#2345](https://github.com/simplabs/ember-simple-auth/pull/2345) Fixed failing
-  unit test - ember/object get function was removed from source code so I have
-  changed unit test accordingly ([@candunaj])
+  [#2345](https://github.com/mainmatter/ember-simple-auth/pull/2345) Fixed
+  failing unit test - ember/object get function was removed from source code so
+  I have changed unit test accordingly ([@candunaj])
 - [simplabs/ember-simple-auth]
-  [#2344](https://github.com/simplabs/ember-simple-auth/pull/2344) In some tests
-  was thrown undefined. ([@candunaj])
+  [#2344](https://github.com/mainmatter/ember-simple-auth/pull/2344) In some
+  tests was thrown undefined. ([@candunaj])
 - [simplabs/ember-simple-auth]
-  [#2343](https://github.com/simplabs/ember-simple-auth/pull/2343) Allow
+  [#2343](https://github.com/mainmatter/ember-simple-auth/pull/2343) Allow
   ember-release to fail ([@candunaj])
 - [simplabs/ember-simple-auth]
-  [#2342](https://github.com/simplabs/ember-simple-auth/pull/2342) Fixed 3
+  [#2342](https://github.com/mainmatter/ember-simple-auth/pull/2342) Fixed 3
   readonly tests. ([@candunaj])
 - [simplabs/ember-simple-auth]
-  [#2353](https://github.com/simplabs/ember-simple-auth/pull/2353) Fix
+  [#2353](https://github.com/mainmatter/ember-simple-auth/pull/2353) Fix
   ember-release + ember-beta build ([@marcoow])
 
 - [empress/empress-blog-casper-template]
@@ -141,16 +141,16 @@ imageAlt: "Screenshot of Ember simple auth"
   integration ([@turbo87])
 
 - [simplabs/ember-error-route]
-  [#27](https://github.com/simplabs/ember-error-route/pull/27) Add support for
+  [#27](https://github.com/mainmatter/ember-error-route/pull/27) Add support for
   custom rootURL values ([@turbo87])
 - [simplabs/ember-error-route]
-  [#26](https://github.com/simplabs/ember-error-route/pull/26) CI: Add deploy
+  [#26](https://github.com/mainmatter/ember-error-route/pull/26) CI: Add deploy
   job ([@turbo87])
 - [simplabs/ember-error-route]
-  [#29](https://github.com/simplabs/ember-error-route/pull/29) package.json:
+  [#29](https://github.com/mainmatter/ember-error-route/pull/29) package.json:
   Declare demoURL for EmberObserver ([@turbo87])
 - [simplabs/ember-error-route]
-  [#28](https://github.com/simplabs/ember-error-route/pull/29) GitHub Pages:
+  [#28](https://github.com/mainmatter/ember-error-route/pull/29) GitHub Pages:
   Migrate to locationType: history ([@turbo87])
 
 - [ember-cli/ember-exam]
@@ -210,15 +210,15 @@ imageAlt: "Screenshot of Ember simple auth"
 
 ## simplabs playbook
 
-- [simplabs/playbook] [#173](https://github.com/simplabs/playbook/pull/173) add
-  metric systems to the list of engineering tools ([@oscard0m])
+- [simplabs/playbook] [#173](https://github.com/mainmatter/playbook/pull/173)
+  add metric systems to the list of engineering tools ([@oscard0m])
 
 [rust-lang/crates.io]: https://github.com/rust-lang/crates.io/
 [ember-cli/ember-cli]: https://github.com/ember-cli/ember-cli/
-[simplabs/ember-simple-auth]: https://github.com/simplabs/ember-simple-auth/
-[simplabs/playbook]: https://github.com/simplabs/playbook/
+[simplabs/ember-simple-auth]: https://github.com/mainmatter/ember-simple-auth/
+[simplabs/playbook]: https://github.com/mainmatter/playbook/
 [ember-cli/ember-exam]: https://github.com/ember-cli/ember-exam/
-[simplabs/ember-error-route]: https://github.com/simplabs/ember-error-route/
+[simplabs/ember-error-route]: https://github.com/mainmatter/ember-error-route/
 [emberjs/ember-string]: https://github.com/emberjs/ember-string/
 [ember-learn/guides-source]: https://github.com/ember-learn/guides-source/
 [mansona/ember-body-class]: https://github.com/mansona/ember-body-class/
@@ -230,10 +230,11 @@ imageAlt: "Screenshot of Ember simple auth"
 [empress/ember-cli-showdown]: https://github.com/empress/ember-cli-showdown
 [mansona/ember-cli-notifications]:
   https://github.com/mansona/ember-cli-notifications
-[simplabs/ember-intl-analyzer]: https://github.com/simplabs/ember-intl-analyzer
+[simplabs/ember-intl-analyzer]:
+  https://github.com/mainmatter/ember-intl-analyzer
 [nickschot/ember-mobile-menu]: https://github.com/nickschot/ember-mobile-menu
 [simplabs/ember-promise-modals]:
-  https://github.com/simplabs/ember-promise-modals
+  https://github.com/mainmatter/ember-promise-modals
 [oscard0m/npm-snapshot]: https://github.com/oscard0m/npm-snapshot
 [commitizen/cz-conventional-changelog]:
   https://github.com/commitizen/cz-conventional-changelog

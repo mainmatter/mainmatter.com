@@ -253,10 +253,10 @@ providing any additional value** in these scenarios.
 
 We at simplabs prefer computed properties over template helpers in all of our
 projects and are putting some effort in making computed properties better.
-[ember-classy-computed](https://github.com/simplabs/ember-classy-computed) for
+[ember-classy-computed](https://github.com/mainmatter/ember-classy-computed) for
 example introduces a mechanism for class based computed properties that is
 actually quite similar to class based helpers. We are also currently
-[experimenting with computed properties that automatically track their dependent keys](https://github.com/simplabs/ember-auto-computed)
+[experimenting with computed properties that automatically track their dependent keys](https://github.com/mainmatter/ember-auto-computed)
 which would obviously remove a lot of complexity and eliminate people's fear to
 accidentally omit a dependency or specify a wrong one (besides that there could
 even be performance improvements as there could be less invalidations).

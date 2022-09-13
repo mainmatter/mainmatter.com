@@ -22,7 +22,7 @@ master.
 You may run into the situation where you have to change your action, push it,
 and wait for GitHub to run it to see if your changes work as intended. In my
 case, I wanted to test an action that is in charge of releasing
-[ember-simple-auth](https://github.com/simplabs/ember-simple-auth), to see if
+[ember-simple-auth](https://github.com/mainmatter/ember-simple-auth), to see if
 the change I had made worked as I intended. I wanted to avoid having to make a
 release for this and see it fail. After some digging, I couldn't find a way to
 do a dry run of the action from GitHub, but I found

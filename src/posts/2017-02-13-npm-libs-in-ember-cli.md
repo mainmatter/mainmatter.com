@@ -105,7 +105,7 @@ included() {
 Note that the `this.import()` method is only available starting with Ember CLI
 2.7. You can easily polyfill it though if you want to support Ember CLI releases
 below that. Have a look at the
-[ember-simple-auth](https://github.com/simplabs/ember-simple-auth/blob/1ca4ae678b7be9905076762220dcd9fcb0f27ac0/index.js#L24-L39)
+[ember-simple-auth](https://github.com/mainmatter/ember-simple-auth/blob/1ca4ae678b7be9905076762220dcd9fcb0f27ac0/index.js#L24-L39)
 code to find out how to do it.
 
 This seems to work fine now if we are just looking at the dummy app, but in

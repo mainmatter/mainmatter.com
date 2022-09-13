@@ -7,7 +7,7 @@ description:
   CLI addon."
 tags: ember
 tagline: |
-  <p>With the latest release of <a href="https://github.com/simplabs/ember-simple-auth">Ember Simple Auth</a>, using the library with <a href="https://github.com/ember-cli/ember-cli">ember-cli</a> has become much simpler. As ember-cli in general is still pretty new to many people though, <strong>this post describes how to setup a project using Ember Simple Auth with ember-cli</strong>.</p>
+  <p>With the latest release of <a href="https://github.com/mainmatter/ember-simple-auth">Ember Simple Auth</a>, using the library with <a href="https://github.com/ember-cli/ember-cli">ember-cli</a> has become much simpler. As ember-cli in general is still pretty new to many people though, <strong>this post describes how to setup a project using Ember Simple Auth with ember-cli</strong>.</p>
 ---
 
 ## Setting up the basic project
@@ -92,7 +92,7 @@ export default Ember.Route.extend(ApplicationRouteMixin);
 To actually give the user the option to login, we need to add an authentication
 package for Ember Simple Auth. Let’s assume you have an OAuth 2.0 compatible
 server running at `http://localhost:3000`. To use that, install the
-[OAuth 2.0 extension library](https://github.com/simplabs/ember-simple-auth/blob/master/addon/authenticators/oauth2-password-grant.js)
+[OAuth 2.0 extension library](https://github.com/mainmatter/ember-simple-auth/blob/master/addon/authenticators/oauth2-password-grant.js)
 which again is as easy as installing the
 [package from npm](https://www.npmjs.com/package/ember-cli-simple-auth-oauth2):
 
@@ -163,6 +163,6 @@ server).
 
 This is how you set up an ember-cli project with Ember Simple Auth. For further
 documentation and examples see the
-[github repository](https://github.com/simplabs/ember-simple-auth) and the
+[github repository](https://github.com/mainmatter/ember-simple-auth) and the
 [API docs for Ember Simple Auth](http://ember-simple-auth.com/api/) and the
 [OAuth 2.0 extension library](http://ember-simple-auth.com/api/).

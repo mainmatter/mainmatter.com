@@ -7,7 +7,7 @@ description:
   Simple Auth and explains how it works using ember-cookies."
 tags: ember
 tagline: |
-  <p>Ever since <a href="https://www.youtube.com/watch?v=o12-90Dm-Qs">FastBoot was first announced at EmberConf 2015</a> it was clear to us that we wanted to have out-of-the-box support for it in Ember Simple Auth. Our goal was to make sure that Ember Simple Auth did not keep anyone from adopting FastBoot and adopting FastBoot would not result in people having to figure out their own authentication and authorization solutions. Today we're happy to announce the availability of <a href="https://github.com/simplabs/ember-simple-auth/releases/tag/1.2.0-beta.1">Ember Simple Auth 1.2.0-beta.1</a>, the <strong>first release with out-of-the-box support for FastBoot</strong>.</p>
+  <p>Ever since <a href="https://www.youtube.com/watch?v=o12-90Dm-Qs">FastBoot was first announced at EmberConf 2015</a> it was clear to us that we wanted to have out-of-the-box support for it in Ember Simple Auth. Our goal was to make sure that Ember Simple Auth did not keep anyone from adopting FastBoot and adopting FastBoot would not result in people having to figure out their own authentication and authorization solutions. Today we're happy to announce the availability of <a href="https://github.com/mainmatter/ember-simple-auth/releases/tag/1.2.0-beta.1">Ember Simple Auth 1.2.0-beta.1</a>, the <strong>first release with out-of-the-box support for FastBoot</strong>.</p>
 ---
 
 ## Seamless Session Synchronization
@@ -45,12 +45,12 @@ specific APIs under the hood (much like what
 <a href="https://github.com/tomdale/ember-network">ember-network</a> does for
 the <a href="https://github.com/tomdale/ember-network">fetch API</a>). Therefore
 we created
-<strong><a href="https://github.com/simplabs/ember-cookies">ember-cookies</a>
+<strong><a href="https://github.com/mainmatter/ember-cookies">ember-cookies</a>
 which is a cookies abstraction that works in the browser as well as in
 Node</strong> and that's now being used internally by the cookie session store.
 
 ember-cookies exposes a cookies service with
-<a href="https://github.com/simplabs/ember-cookies#api">`read`, `write` and
+<a href="https://github.com/mainmatter/ember-cookies#api">`read`, `write` and
 `clear` methods</a>:
 
 <!-- prettier-ignore -->
@@ -102,29 +102,29 @@ including:
 
 - The default cookie names that the cookie session store uses are now compliant
   with RFC 2616, see
-  <a href="https://github.com/simplabs/ember-simple-auth/pull/978">#978</a>
+  <a href="https://github.com/mainmatter/ember-simple-auth/pull/978">#978</a>
 - Server responses are now validated in authenticators, preventing successful
   logins when required data is actually missing, see
-  <a href="https://github.com/simplabs/ember-simple-auth/pull/957">#957</a>
+  <a href="https://github.com/mainmatter/ember-simple-auth/pull/957">#957</a>
 - The OAuth 2.0 Password Grant authenticator can now send custom headers along
   with authentication requests, see
-  <a href="https://github.com/simplabs/ember-simple-auth/pull/1018">#1018</a>
+  <a href="https://github.com/mainmatter/ember-simple-auth/pull/1018">#1018</a>
 
 In addition to these changes, fixed issues include:
 
 - Routes like the login route can now be configured inline in routes using the
   respective mixins as opposed to `config/environment.js`, see
-  <a href="https://github.com/simplabs/ember-simple-auth/pull/1041">#1041</a>
+  <a href="https://github.com/mainmatter/ember-simple-auth/pull/1041">#1041</a>
 - The cookie session store will now rewrite its cookies when any of its
   configurable properties (like cookie name) change, see
-  <a href="https://github.com/simplabs/ember-simple-auth/pull/1056">#1056</a>
+  <a href="https://github.com/mainmatter/ember-simple-auth/pull/1056">#1056</a>
 
 ## A Community Effort
 
 This certainly is one of the larger releases in Ember Simple Auth's history and
 <strong>a lot of people have helped to make it happen</strong>. We'd like to
 thank all of our (at the time of this writing)
-<a href="https://github.com/simplabs/ember-simple-auth/graphs/contributors">141
+<a href="https://github.com/mainmatter/ember-simple-auth/graphs/contributors">141
 contributors</a>, with particular mention to
 <a href="https://github.com/stevenwu">Steven Wu</a>,
 <a href="https://github.com/kylemellander">Kyle Mellander</a>,
@@ -137,4 +137,4 @@ contributions to the Fastboot effort and ember-cookies.
 As this is a beta release, <strong>there are probably some rough edges</strong>.
 We'd like everyone to try it, regardless of whether they're using Fastboot
 already or not and <strong>report bugs, outdated or bad documentation etc. on
-<a href="https://github.com/simplabs/ember-simple-auth/releases">github</a></strong>.
+<a href="https://github.com/mainmatter/ember-simple-auth/releases">github</a></strong>.

@@ -213,7 +213,7 @@ End-to-end tests aren't the only valuable thing that is enabled by the ability
 to spin up instances of the system on demand though:
 
 - Providing fully functional
-  [preview systems](https://github.com/simplabs/playbook/tree/master/src/development-process#preview-systems)
+  [preview systems](https://github.com/mainmatter/playbook/tree/master/src/development-process#preview-systems)
   for every pull request allows getting stakeholder approval. If there's a
   preview link in every pull request that points to what's essentially the same
   system that the end-to-end tests run against, allows product managers,

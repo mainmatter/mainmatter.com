@@ -48,7 +48,7 @@ First announced in the
 ember-intl-analyzer CLI tool which analyzes your app code and finds unused
 translations for you has received an update. Supporta JS decorators now and will
 warn about missing translations. Check it out
-[on GitHub.](https://github.com/simplabs/ember-intl-analyzer)
+[on GitHub.](https://github.com/mainmatter/ember-intl-analyzer)
 
 ### Other news
 

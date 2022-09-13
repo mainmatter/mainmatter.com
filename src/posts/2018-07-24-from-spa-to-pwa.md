@@ -23,10 +23,10 @@ maybe change a few things in their daily lives.
 
 ![Video of the Breethe PWA](/assets/images/posts/2018-07-24-from-spa-to-pwa/breethe-video.gif)
 
-The application is [open source](https://github.com/simplabs/breethe-client) and
-we encourage everyone interested to look through the source for reference. To
-learn more about how we built Breethe with [Glimmer.js](http://glimmerjs.com),
-refer to the
+The application is [open source](https://github.com/mainmatter/breethe-client)
+and we encourage everyone interested to look through the source for reference.
+To learn more about how we built Breethe with
+[Glimmer.js](http://glimmerjs.com), refer to the
 [previous post in this series](/blog/2018/07/03/building-a-pwa-with-glimmer-js).
 None of the contents in this post are specific to Glimmer.js in any way though,
 but all generally applicable to all frontend stacks.
@@ -130,7 +130,7 @@ browser. The App Manifest is a simple JSON file with key/value pairs that
 configure the main aspects of the app.
 
 The
-[App Manifest for Breethe](https://github.com/simplabs/breethe-client/blob/master/public/manifest.webmanifest)
+[App Manifest for Breethe](https://github.com/mainmatter/breethe-client/blob/master/public/manifest.webmanifest)
 looks like this:
 
 ```js
@@ -318,7 +318,7 @@ self.addEventListener('fetch', function (event) {
 
 Here, we first check whether the request is asking for an HTML document (in
 reality in Breethe,
-[we check a few other things as well](https://github.com/simplabs/breethe-client/blob/master/lib/service-worker/workers/service-worker.js#L88))
+[we check a few other things as well](https://github.com/mainmatter/breethe-client/blob/master/lib/service-worker/workers/service-worker.js#L88))
 and if that is the case, try making the request and loading the resource from
 the network first. If that fails and the promise returned from `fetch` rejects
 (one possible reason for that being that the device is offline), we simply serve
@@ -326,11 +326,11 @@ the `index.html` from the service worker's cache so that the app can start up
 successfully in the browser. All of the application's assets that are referenced
 in `index.html` are cached to and served from the service worker's cache as well
 in a
-[separate event handler](https://github.com/simplabs/breethe-client/blob/master/lib/service-worker/workers/service-worker.js#L65).
+[separate event handler](https://github.com/mainmatter/breethe-client/blob/master/lib/service-worker/workers/service-worker.js#L65).
 
 Allowing apps to start up offline with Service Workers is very straight forward
 and does not even require implementing a whole lot of logic -
-[Breethe's service worker](https://github.com/simplabs/breethe-client/blob/master/lib/service-worker/workers/service-worker.js)
+[Breethe's service worker](https://github.com/mainmatter/breethe-client/blob/master/lib/service-worker/workers/service-worker.js)
 does not even have 100 lines of code. Of course being able to start up the app
 while the device is offline only solves half of the problem though when all of
 the app's data is loaded from a remote API and thus would be unavailable when
@@ -376,7 +376,7 @@ abstract its complexity behind more convenient APIs. For Breethe, we used
 Orbit.js works based on a schema definition that defines the models it operates
 on, their attributes and relationships. In the case of Breethe which works with
 measurement locations and data points,
-[the schema](https://github.com/simplabs/breethe-client/blob/master/src/utils/data/schema.ts)
+[the schema](https://github.com/mainmatter/breethe-client/blob/master/src/utils/data/schema.ts)
 looks like this:
 
 ```typescript
@@ -432,7 +432,7 @@ const store = new Store({ schema });
 
 Stores in Orbit.js are backed by sources. In the case of Breethe, we use a
 [json:api](http://jsonapi.org) source for loading data from a
-[server API](https://github.com/simplabs/breethe-server):
+[server API](https://github.com/mainmatter/breethe-server):
 
 ```typescript
 import JSONAPISource from "@orbit/jsonapi";
@@ -487,8 +487,8 @@ a small part of an app (a unit) in isolation. Depending on the framework of
 choice and its testing philosophy and tools, there might also be means of
 [higher level test](https://guides.emberjs.com/release/testing/testing-components/)
 that test larger subsets of an app (and we have
-[quite](https://github.com/simplabs/breethe-client/blob/master/src/ui/components/MeasurementRow/component-test.ts)
-[a lot](https://github.com/simplabs/breethe-client/blob/master/src/ui/components/SearchForm/component-test.ts)
+[quite](https://github.com/mainmatter/breethe-client/blob/master/src/ui/components/MeasurementRow/component-test.ts)
+[a lot](https://github.com/mainmatter/breethe-client/blob/master/src/ui/components/SearchForm/component-test.ts)
 of these for Breethe).
 
 Testing PWAs, in particular their offline behavior, is slightly different though
@@ -564,7 +564,7 @@ A testing setup like this makes it easy to achieve decent test coverage for
 PWAs, testing all of the parts involved - the app itself but also the service
 worker and storage APIs like `IndexedDB`. These test are even reasonably fast to
 execute -
-[Breethe's suite of puppeteer tests](https://github.com/simplabs/breethe-client/tree/master/integration-tests)
+[Breethe's suite of puppeteer tests](https://github.com/mainmatter/breethe-client/tree/master/integration-tests)
 completes in
 [around 1min](https://travis-ci.org/simplabs/breethe-client/jobs/403597086#L683).
 

@@ -8,7 +8,7 @@ description:
   assertions."
 tags: javascript
 tagline: |
-  <p>At <a href="https://emberfest.eu/">EmberFest</a> this year we presented and released <a href="https://github.com/simplabs/qunit-dom"><code>qunit-dom</code></a>. A plugin for <a href="https://qunitjs.com/">QUnit</a> providing High Level DOM Assertions with the goal to reduce test complexity for all QUnit users. This blog post will show you how to write simpler tests using <code>async/await</code> and <code>qunit-dom</code>.</p>
+  <p>At <a href="https://emberfest.eu/">EmberFest</a> this year we presented and released <a href="https://github.com/mainmatter/qunit-dom"><code>qunit-dom</code></a>. A plugin for <a href="https://qunitjs.com/">QUnit</a> providing High Level DOM Assertions with the goal to reduce test complexity for all QUnit users. This blog post will show you how to write simpler tests using <code>async/await</code> and <code>qunit-dom</code>.</p>
 ---
 
 As an introduction to what this means let's start with an example template for
@@ -205,16 +205,16 @@ Compared to what we started with this:
   elements
 
 As you might have figured out by now we've not just planned how it could look,
-we've also built and released it at <https://github.com/simplabs/qunit-dom>.
+we've also built and released it at <https://github.com/mainmatter/qunit-dom>.
 
 One additional advantage for Ember.js users is that it automatically hooks
 itself into the build pipeline of your projects, so all you need to do is
 `ember install qunit-dom`, and then you can immediately start using it!
 
 You can find examples of what assertions are available in the
-[README](https://github.com/simplabs/qunit-dom#qunit-dom) of the project and
+[README](https://github.com/mainmatter/qunit-dom#qunit-dom) of the project and
 even more information in the
-[API reference](https://github.com/simplabs/qunit-dom/blob/master/API.md).
+[API reference](https://github.com/mainmatter/qunit-dom/blob/master/API.md).
 
 ## qunit-dom-codemod
 
@@ -229,7 +229,7 @@ that did most of the rewriting automatically for us.
 After that initial thought we started working and after only a few minutes we
 already had a working proof-of-concept including passing tests. Since then we
 have put in some more work into the codemod and are happy to share it with you
-at <https://github.com/simplabs/qunit-dom-codemod>.
+at <https://github.com/mainmatter/qunit-dom-codemod>.
 
 All you need to do is install `jscodeshift` (the thing that runs the codemod):
 

@@ -12,4 +12,4 @@ tagline: |
 
 Ember.SimpleAuth was released with a **completely rebuilt build and testing
 infrastructure as well as some important bug fixes. Find the
-[complete release notes on github](https://github.com/simplabs/ember-simple-auth/releases/tag/0.2.0).**
+[complete release notes on github](https://github.com/mainmatter/ember-simple-auth/releases/tag/0.2.0).**

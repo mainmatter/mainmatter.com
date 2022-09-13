@@ -81,4 +81,4 @@ we can adapt the focus of the workshop more towards these aspects or cover
 additional topics as necessary.
 
 All content and examples of the workshop are available publicly on
-[GitHub](https://github.com/simplabs/git-workshop).
+[GitHub](https://github.com/mainmatter/git-workshop).

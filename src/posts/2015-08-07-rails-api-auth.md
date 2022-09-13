@@ -7,7 +7,7 @@ description:
   "Resource Owner Password Credentials Grant" OAuth 2.0 flow.'
 tags: ruby
 tagline: |
-  <p>We are happy to announce the first public release of the <a href="https://github.com/simplabs/rails_api_auth"><code>rails_api_auth</code> gem</a>. <code>rails_api_auth</code> is a <strong>lightweight Rails Engine that implements the <em>&quot;Resource Owner Password Credentials Grant&quot;</em> OAuth 2.0 flow</strong> as well as Facebook authentication and is <strong>built for usage in API projects</strong>. If you’re building a client side application with e.g. a browser MVC like <a href="http://emberjs.com">Ember.js</a> (where you might be using <a href="https://github.com/simplabs/ember-simple-auth">Ember Simple Auth</a> which works great with rails_api_auth of course), a mobile app or anything else that’s backed by a Rails-based API, rails_api_auth is for you.</p>
+  <p>We are happy to announce the first public release of the <a href="https://github.com/mainmatter/rails_api_auth"><code>rails_api_auth</code> gem</a>. <code>rails_api_auth</code> is a <strong>lightweight Rails Engine that implements the <em>&quot;Resource Owner Password Credentials Grant&quot;</em> OAuth 2.0 flow</strong> as well as Facebook authentication and is <strong>built for usage in API projects</strong>. If you’re building a client side application with e.g. a browser MVC like <a href="http://emberjs.com">Ember.js</a> (where you might be using <a href="https://github.com/mainmatter/ember-simple-auth">Ember Simple Auth</a> which works great with rails_api_auth of course), a mobile app or anything else that’s backed by a Rails-based API, rails_api_auth is for you.</p>
 ---
 
 ## Why another Authentication Engine?
@@ -39,7 +39,7 @@ application’s `User` model keeps the authentication code clearly separated fro
 user profile data etc. and makes the engine easier to integrate. The `Login`
 model can be associated to the application’s `User` model by setting the
 `user_model_relation` configuration value
-([see the README for more info on configuring the engine).](https://github.com/simplabs/rails_api_auth#configuration)
+([see the README for more info on configuring the engine).](https://github.com/mainmatter/rails_api_auth#configuration)
 
 The _"Resource Owner Password Credentials Grant"_ flow defines 2 endpoints - one
 for obtaining a token and one for revoking it (the 2nd one is actually optional
@@ -85,7 +85,7 @@ to validate it and exchange it for a Bearer token.
 
 rails_api_auth implements the API part of that in the `POST /token` route as
 well -
-[see the demo project for an example of how to use it](https://github.com/simplabs/rails_api_auth-demo#facebook-authentication).
+[see the demo project for an example of how to use it](https://github.com/mainmatter/rails_api_auth-demo#facebook-authentication).
 
 ## Feedback and contributions welcome!
 

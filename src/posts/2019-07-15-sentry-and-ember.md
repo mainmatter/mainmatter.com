@@ -284,5 +284,5 @@ your apps please [contact us][contact]. We're happy to help!
   https://github.com/getsentry/sentry-javascript/tree/master/packages/browser
 [ember-cli-deploy]: https://github.com/ember-cli-deploy/ember-cli-deploy
 [ember-cli-deploy-sentry]: https://github.com/dschmidt/ember-cli-deploy-sentry
-[ember-simple-auth]: https://github.com/simplabs/ember-simple-auth
+[ember-simple-auth]: https://github.com/mainmatter/ember-simple-auth
 [contact]: https://simplabs.com/contact/

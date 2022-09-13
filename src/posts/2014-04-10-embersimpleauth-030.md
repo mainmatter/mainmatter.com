@@ -47,4 +47,4 @@ Ember.Application.initializer({
 ```
 
 For more information about this release see the release notes at:
-[https://github.com/simplabs/ember-simple-auth/releases/tag/0.3.0](https://github.com/simplabs/ember-simple-auth/releases/tag/0.3.0)
+[https://github.com/mainmatter/ember-simple-auth/releases/tag/0.3.0](https://github.com/mainmatter/ember-simple-auth/releases/tag/0.3.0)

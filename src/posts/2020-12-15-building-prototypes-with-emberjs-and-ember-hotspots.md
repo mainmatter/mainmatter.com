@@ -97,7 +97,7 @@ hotspots and backgrounds.
 
 ```js
 {% raw %}
-// https://github.com/simplabs/ember-hotspots/blob/main/lib/SizeUpImages.js#L9-L41
+// https://github.com/mainmatter/ember-hotspots/blob/main/lib/SizeUpImages.js#L9-L41
 
 module.exports = class SizeUpImages extends Plugin {
   build() {
@@ -131,7 +131,7 @@ restart. This hook is helpful if you want to push things to your index.html.
 
 ```js
 {% raw %}
-// https://github.com/simplabs/ember-hotspots/blob/main/index.js
+// https://github.com/mainmatter/ember-hotspots/blob/main/index.js
 
 module.exports = {
   name: require('./package').name,
@@ -363,7 +363,7 @@ different `<EhBackground />` and more functionality.
 
 For further inspiration look at
 [the dummy application](https://simplabs.github.io/ember-hotspots/) that is part
-of the [ember-hotspots](https://github.com/simplabs/ember-hotspots).
+of the [ember-hotspots](https://github.com/mainmatter/ember-hotspots).
 
 The resulting Ember.js addon shows how little code is necessary to bring ideas
 to live thanks to the tools that make up the Ember.js ecosystem. There is a lot

@@ -8,7 +8,7 @@ description:
   production."
 tags: ember
 tagline: |
-  <p>In March 2016 we have released the first version of <a href="https://github.com/simplabs/ember-test-selectors">ember-test-selectors</a> and today we are proud to present you our next milestone: <code>0.1.0</code>.</p> <p>While <code>0.1.0</code> does not sound like much has changed, the addon has actually gained a lot of new functionality and should be considered our release candidate for <code>1.0.0</code>.</p> <p>This blog post will highlight the major changes in this release, and will give you a short introduction into <em>how</em> we have implemented these new features.</p>
+  <p>In March 2016 we have released the first version of <a href="https://github.com/mainmatter/ember-test-selectors">ember-test-selectors</a> and today we are proud to present you our next milestone: <code>0.1.0</code>.</p> <p>While <code>0.1.0</code> does not sound like much has changed, the addon has actually gained a lot of new functionality and should be considered our release candidate for <code>1.0.0</code>.</p> <p>This blog post will highlight the major changes in this release, and will give you a short introduction into <em>how</em> we have implemented these new features.</p>
 ---
 
 ## Automatic binding of `data-test-*` properties
@@ -69,12 +69,12 @@ had to `reopen()` the `Ember.Component` class, figure out the list of
 The natural way to do this within an addon is using an
 [initializer](https://guides.emberjs.com/v2.10.0/applications/initializers/), so
 that is what we
-[did](https://github.com/simplabs/ember-test-selectors/blob/v0.1.0/addon/initializers/ember-test-selectors.js#L5-L10).
+[did](https://github.com/mainmatter/ember-test-selectors/blob/v0.1.0/addon/initializers/ember-test-selectors.js#L5-L10).
 Instead of putting all the logic in the initializer itself, we have extracted it
 into a
-[`bindDataTestAttributes()`](https://github.com/simplabs/ember-test-selectors/blob/v0.1.0/addon/utils/bind-data-test-attributes.js)
+[`bindDataTestAttributes()`](https://github.com/mainmatter/ember-test-selectors/blob/v0.1.0/addon/utils/bind-data-test-attributes.js)
 function, which we were now able to
-[unit test](https://github.com/simplabs/ember-test-selectors/blob/v0.1.0/tests/unit/utils/bind-data-test-attributes-test.js)
+[unit test](https://github.com/mainmatter/ember-test-selectors/blob/v0.1.0/tests/unit/utils/bind-data-test-attributes-test.js)
 separately.
 
 As we are committed to not including any unnecessary code in your production
@@ -339,9 +339,9 @@ import testSelector from 'ember-test-selectors';
 
 We hope you enjoyed reading about our progress on this project and we would love
 to get feedback on what else we can improve. Feel free to
-[reach out](https://github.com/simplabs/ember-test-selectors/issues/new)!
+[reach out](https://github.com/mainmatter/ember-test-selectors/issues/new)!
 
 **Note:** The code examples in this blog posts are simplified to be easier to
 digest. Please refer to the
-[actual implementation](https://github.com/simplabs/ember-test-selectors) if you
-want to see all the glory details.
+[actual implementation](https://github.com/mainmatter/ember-test-selectors) if
+you want to see all the glory details.

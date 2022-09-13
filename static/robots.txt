@@ -5,4 +5,4 @@ Disallow: /imprint
 Disallow: /privacy
 Disallow: /imprint/
 Disallow: /privacy/
-Sitemap: https://simplabs.com/sitemap.xml
+Sitemap: https://mainmatter.com/sitemap.xml
