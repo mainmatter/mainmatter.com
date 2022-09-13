@@ -168,10 +168,10 @@ to work on open-source projects using the **20% time method**.
 
 The 20% time method allocates a fifth of an engineer's compensated working time
 for open-source projects and related activities, including development,
-community management or writing blog posts. At Mainmatter, we ensure that each IT
-and design professional has access to 20% time and makes use of it on a weekly
-basis: this boils down to 4 days of client work and 1 day of 20% time in a
-regular work week. Projects that our consultants work on generate tangible
+community management or writing blog posts. At Mainmatter, we ensure that each
+IT and design professional has access to 20% time and makes use of it on a
+weekly basis: this boils down to 4 days of client work and 1 day of 20% time in
+a regular work week. Projects that our consultants work on generate tangible
 outcomes which are shared with the team or the wider open-source community
 regularly. Some of these tangible outcomes among many others at our company
 include:

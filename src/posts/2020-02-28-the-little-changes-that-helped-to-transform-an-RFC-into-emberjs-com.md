@@ -100,11 +100,11 @@ preview][styleguide-preview] to learn more about this.
 
 ## Thanks
 
-Allocated time donated by Mainmatter allowed me and others to bring the styleguide
-and overall design of the website to what you can see online now. I was very
-honored by being invited to this project and my design changes were just an ever
-so small piece of the huge effort that went into the website from every single
-human on this team.
+Allocated time donated by Mainmatter allowed me and others to bring the
+styleguide and overall design of the website to what you can see online now. I
+was very honored by being invited to this project and my design changes were
+just an ever so small piece of the huge effort that went into the website from
+every single human on this team.
 
 I'm glad we made it, and I'm looking forward to contributing more and updating
 all the other aspecs of the Ember.js website landscape soon.

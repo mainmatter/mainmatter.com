@@ -51,7 +51,7 @@ example for our `qunit-dom` project on my machine:
 
 | Name         | URL                                       |
 | ------------ | ----------------------------------------- |
-| `upstream`   | `git@github.com:mainmatter/qunit-dom.git`   |
+| `upstream`   | `git@github.com:mainmatter/qunit-dom.git` |
 | `origin`     | `git@github.com:Turbo87/qunit-dom.git`    |
 | `lukemelia`  | `git@github.com:lukemelia/qunit-dom.git`  |
 | `jackbeegan` | `git@github.com:jackbeegan/qunit-dom.git` |

@@ -565,8 +565,7 @@ PWAs, testing all of the parts involved - the app itself but also the service
 worker and storage APIs like `IndexedDB`. These test are even reasonably fast to
 execute -
 [Breethe's suite of puppeteer tests](https://github.com/mainmatter/breethe-client/tree/master/integration-tests)
-completes in
-around 1min.
+completes in around 1min.
 
 ## Outlook
 

@@ -101,14 +101,11 @@ network requests are necessary when browsing the site.
 
 Statically pre-rendering a client-side app at build time is relatively straight
 forward. As part of our Netlify deployment, we build the app and start a small
-Express Server that serves it. We then
-visit each of the routes
-with a headless instance of Chrome using Puppeteer,
-take a snapshot of the page's DOM
-and
-save that to a respectively named file.
-All of these HTML files, along with the app itself and all other assets, then
-get uploaded to the CDN to be served from there.
+Express Server that serves it. We then visit each of the routes with a headless
+instance of Chrome using Puppeteer, take a snapshot of the page's DOM and save
+that to a respectively named file. All of these HTML files, along with the app
+itself and all other assets, then get uploaded to the CDN to be served from
+there.
 
 ## Maintaining content
 
@@ -122,17 +119,17 @@ for loading the content of particular pages dynamically as that would have added
 significant additional complexity and none of our data actually needed to be
 computed on demand on the server as all of it is indeed static and known
 upfront. Leveraging Glimmer.js' Broccoli-based build pipeline, we set up a
-process that reads in all files in a directory and
-converts the Markdown files into Glimmer.js components at build time.
+process that reads in all files in a directory and converts the Markdown files
+into Glimmer.js components at build time.
 
 That way we are generating dedicated components for all posts that are all
-mapped to their own routes.
-We also generate the components for the [blog listing page(s)](/blog/) and the
-ones that [list all posts by a particular author](/blog/author/marcoow). This
-approach basically moves what would typically be done by an API server at
-runtime (retrieving content from a repository that grows and changes over time)
-to build time, much like what the [Jamstack](https://jamstack.org) advocates for
-(and tools like [Empress](https://github.com/empress),
+mapped to their own routes. We also generate the components for the
+[blog listing page(s)](/blog/) and the ones that
+[list all posts by a particular author](/blog/author/marcoow). This approach
+basically moves what would typically be done by an API server at runtime
+(retrieving content from a repository that grows and changes over time) to build
+time, much like what the [Jamstack](https://jamstack.org) advocates for (and
+tools like [Empress](https://github.com/empress),
 [VuePress](https://vuepress.vuejs.org) or [Gatsby](https://www.gatsbyjs.org)
 would have done out of the box 😀). The same approach is used for other parts of
 the website that grow and change over time and that we want to be able to
@@ -214,15 +211,13 @@ performance characteristics as a resource cached in a service worker's cache.
 
 ### Service Worker
 
-Of course we also install a
-service worker
-that caches all of the page's resources to further improve caching and make the
-page work offline. The service worker loads of the JavaScript bundles described
-above into its cache eagerly. So even some of the pages' content is split into
-separate bundles that are loaded lazily, when that lazy load is triggered the
-respective bundle is likely to be in the service worker's cache already and be
-served from there so that the page transition can still be instant without a
-network request.
+Of course we also install a service worker that caches all of the page's
+resources to further improve caching and make the page work offline. The service
+worker loads of the JavaScript bundles described above into its cache eagerly.
+So even some of the pages' content is split into separate bundles that are
+loaded lazily, when that lazy load is triggered the respective bundle is likely
+to be in the service worker's cache already and be served from there so that the
+page transition can still be instant without a network request.
 
 #### Static Prerendering and service workers
 
@@ -271,8 +266,8 @@ optimizing for performance:
   after page load are to be named as well as using progressive images to avoid
   huge payloads on small viewports.
 - Third-parties can have a significant negative impact on a site's performance
-  and should generally be avoided (for example, you'll want to
-  serve fonts from your own domain).
+  and should generally be avoided (for example, you'll want to serve fonts from
+  your own domain).
 - Optimizing for performance is an ongoing project and not a one-off effort;
   there needs to be tooling in place to be aware of degrations and accidental
   mistakes, e.g. you could have Lighthouse integrated into your Github Pipeline
