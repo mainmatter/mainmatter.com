@@ -2,7 +2,7 @@
 title: "Managing modal dialogs in Ember.js with Promises"
 authorHandle: pichfl
 tags: ember
-bio: "Consultant for Technology and Design at simplabs"
+bio: "Consultant for Technology and Design at Mainmatter"
 description:
   "Exploring better and easier handling of modal dialogs in Ember.js
   applications"
@@ -20,7 +20,7 @@ managing modals. A rough concept could work like this:
 3. Resolve the promise to unrender the modal and pass back a result
 
 [Tobias](https://github.com/Turbo87) made
-[Ember Promise Modals](https://simplabs.github.io/ember-promise-modals/) so we
+[Ember Promise Modals](https://mainmatter.github.io/ember-promise-modals/) so we
 don't have to implement this on our own. With this addon, can launch any
 component as a modal, wait for a result, and continue with our apps workflow.
 

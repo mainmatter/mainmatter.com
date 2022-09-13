@@ -1,7 +1,7 @@
 ---
 title: "Using Ember Simple Auth with ember-cli"
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
 description:
   "Marco Otte-Witte announces the release of ember-cli-simple-auth as an Ember
   CLI addon."

@@ -100,7 +100,7 @@ preview][styleguide-preview] to learn more about this.
 
 ## Thanks
 
-Allocated time donated by simplabs allowed me and others to bring the styleguide
+Allocated time donated by Mainmatter allowed me and others to bring the styleguide
 and overall design of the website to what you can see online now. I was very
 honored by being invited to this project and my design changes were just an ever
 so small piece of the huge effort that went into the website from every single

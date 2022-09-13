@@ -2,7 +2,7 @@
 title: "Effective infrastructure for efficient development workflows"
 authorHandle: marcoow
 tags: process
-bio: "Founder and Managing Director of simplabs"
+bio: "Founder and Managing Director of Mainmatter"
 description:
   "Marco Otte-Witte on how highly automated and integrated development
   infrastructure enables simpler and more effective workflows."
@@ -277,12 +277,12 @@ time, is certainly much higher.
 
 If you're interested in development workflows and ways to increase efficiency,
 also have a look at
-[my talk on the topic](https://simplabs.com/resources/video/2020/12/10/the-three-pillars-of-successful-digital-product-development/)
+[my talk on the topic](https://mainmatter.com/resources/video/2020/12/10/the-three-pillars-of-successful-digital-product-development/)
 in which I also touch on some process aspects:
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3K9jQfpkGWU?rel=0" title="Three pillars of successful digital product development - Product Circle - December 2020" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-_simplabs is a digital product development consultancy that helps teams ship
+_Mainmatter is a digital product development consultancy that helps teams ship
 better software faster, more predictably, and with higher quality. If you're
 interested in how we could help improve your infrastructure and workflow,
 [schedule a call with us](/contact/)._

@@ -14,7 +14,7 @@ tagline: |
 
 ![kick-off-arches](/assets/images/posts/2020-05-04-facilitate-client-onboarding/kick-off-arches.png#@1440-2880)
 
-At simplabs, we believe in working alongside clients throughout projects not
+At Mainmatter, we believe in working alongside clients throughout projects not
 only as a way to get better outcomes but also because we aim to build
 relationships rather than just projects.
 

@@ -7,4 +7,4 @@ kind: conference
 ---
 
 EmberConf is the main yearly conference around all things Ember.js and the
-simplabs team will be present in full force, delivering workshops and talks.
+Mainmatter team will be present in full force, delivering workshops and talks.

@@ -1,7 +1,7 @@
 ---
 title: "From SPA to PWA"
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
 description:
   "Marco Otte-Witte goes over the characteristics of progressive web apps and
   shows how to make the next step from a SPA to a PWA."
@@ -478,7 +478,7 @@ details behind convenient APIs.
 
 ## Testing
 
-Testing is an essential part of modern software engineering and we at simplabs
+Testing is an essential part of modern software engineering and we at Mainmatter
 (and I'm sure this is true for anyone reading this as well) would **never ship
 code that is not fully tested** - as we could not know whether the code actually
 works or whether we subsequently break it when making changes. The first thing
@@ -566,7 +566,7 @@ worker and storage APIs like `IndexedDB`. These test are even reasonably fast to
 execute -
 [Breethe's suite of puppeteer tests](https://github.com/mainmatter/breethe-client/tree/master/integration-tests)
 completes in
-[around 1min](https://travis-ci.org/simplabs/breethe-client/jobs/403597086#L683).
+around 1min.
 
 ## Outlook
 

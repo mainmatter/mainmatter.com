@@ -1,7 +1,7 @@
 ---
 title: Out-of-the-box FastBoot support in Ember Simple Auth
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
 description:
   "Marco Otte-Witte announces out-of-the-box support for FastBoot in Ember
   Simple Auth and explains how it works using ember-cookies."

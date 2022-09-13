@@ -458,4 +458,4 @@ this to more complex use cases such as animating between elements and pages.
 Furthermore, we can think about using more advanced timing functions, their
 benefits and implications.
 
-[contact]: https://simplabs.com/contact/
+[contact]: https://mainmatter.com/contact/

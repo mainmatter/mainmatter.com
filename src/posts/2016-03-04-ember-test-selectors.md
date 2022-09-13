@@ -1,7 +1,7 @@
 ---
 title: Using better element selectors in Ember.js tests
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
 description:
   "Marco Otte-Witte announces the release of ember-test-selectors, an addon that
   enables better element selectors in Ember.js tests."

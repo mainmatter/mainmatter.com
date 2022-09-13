@@ -1,7 +1,7 @@
 ---
 title: On Computed Properties vs. Helpers
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
 description:
   "Marco Otte-Witte discusses differences between computed properties and
   helpers and explains pros and cons of each alternative."
@@ -251,7 +251,7 @@ template helpers can be used to implement the same functionality. There are
 **some drawbacks though that template helpers come with while not actually
 providing any additional value** in these scenarios.
 
-We at simplabs prefer computed properties over template helpers in all of our
+We at Mainmatter prefer computed properties over template helpers in all of our
 projects and are putting some effort in making computed properties better.
 [ember-classy-computed](https://github.com/mainmatter/ember-classy-computed) for
 example introduces a mechanism for class based computed properties that is

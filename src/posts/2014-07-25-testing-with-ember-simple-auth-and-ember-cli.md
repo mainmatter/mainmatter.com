@@ -1,7 +1,7 @@
 ---
 title: "Testing with Ember Simple Auth and Ember CLI"
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
 description:
   "Marco Otte-Witte explains how to test Ember CLI applications using
   ember-cli-simple-auth with the testing package ember-cli-simple-auth-testing."

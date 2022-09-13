@@ -96,7 +96,7 @@ will create is the `package.json` file:
   "private": true,
   "description": "Configuration for the Renovate bot at ACME Corp.",
   "repository": "git@gitlab.acme.com:acme/renovate-bot.git",
-  "author": "Tobias Bieniek <tobias.bieniek@simplabs.com>",
+  "author": "Tobias Bieniek <tobias.bieniek@mainmatter.com>",
   "scripts": {
     "renovate": "renovate"
   },
@@ -254,4 +254,4 @@ this blog post you can also let us know via [Twitter].
 [gl]: https://about.gitlab.com/
 [gl-ci]: https://about.gitlab.com/product/continuous-integration/
 [docker-executor]: https://docs.gitlab.com/runner/executors/docker.html
-[twitter]: http://twitter.com/simplabs/
+[twitter]: http://twitter.com/mainmatter/

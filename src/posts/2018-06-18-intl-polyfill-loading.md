@@ -7,7 +7,7 @@ description:
   older browsers most effectively when using ember-intl."
 tags: ember
 tagline: |
-  <p>At simplabs we ❤️ <a href="https://github.com/ember-intl/ember-intl">ember-intl</a> and use it for all our projects where translations or other localizations are needed. ember-intl is based on the native <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Intl">Intl APIs</a> that were introduced in <a href="https://caniuse.com/#feat=internationalization">all newer browsers</a> a while ago. Unfortunately some users are still using browsers that don't support them and this blog post will show you our preferred way to load the necessary polyfill and the associated data.</p>
+  <p>At Mainmatter we ❤️ <a href="https://github.com/ember-intl/ember-intl">ember-intl</a> and use it for all our projects where translations or other localizations are needed. ember-intl is based on the native <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Intl">Intl APIs</a> that were introduced in <a href="https://caniuse.com/#feat=internationalization">all newer browsers</a> a while ago. Unfortunately some users are still using browsers that don't support them and this blog post will show you our preferred way to load the necessary polyfill and the associated data.</p>
 ---
 
 ## Loading Translations

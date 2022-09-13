@@ -9,7 +9,7 @@ description:
 og:
   image: /assets/images/posts/2021-11-26-publish-on-npm/og-image.png
 tagline: |
-  <p>Publishing JavaScript projects on <a href="https://www.npmjs.com">npm</a> can become quite an overwhelming task when projects grow to a certain size. At simplabs we're maintaining over a dozen actively used JavaScript projects that we've published on npm. We don't always have plenty of time for that, but we made sure that at least the release process is as automated as possible, so that we can spend our time on the things that really matter.</p> <p>This blog post will show you three of our most important tricks to improve how you publish your packages to npm.</p>
+  <p>Publishing JavaScript projects on <a href="https://www.npmjs.com">npm</a> can become quite an overwhelming task when projects grow to a certain size. At Mainmatter we're maintaining over a dozen actively used JavaScript projects that we've published on npm. We don't always have plenty of time for that, but we made sure that at least the release process is as automated as possible, so that we can spend our time on the things that really matter.</p> <p>This blog post will show you three of our most important tricks to improve how you publish your packages to npm.</p>
 image: "/assets/images/photos/coding.jpg"
 imageAlt: "Woman reading code documentation at her laptop"
 ---
@@ -130,7 +130,7 @@ changelog generators. These tools usually look at the git commits between the
 current version and the last release and output an overview of what the relevant
 changes were.
 
-The changelog generator that we like to use at simplabs is: [lerna-changelog].
+The changelog generator that we like to use at Mainmatter is: [lerna-changelog].
 
 [lerna-changelog]: https://github.com/lerna/lerna-changelog
 
@@ -280,4 +280,4 @@ automations for projects on private GitLab instances, Rust projects, and also
 with different changelog generators. If you need any help setting this up, don't
 hesitate to [contact] us.
 
-[contact]: https://simplabs.com/contact/
+[contact]: https://mainmatter.com/contact/

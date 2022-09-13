@@ -1,7 +1,7 @@
 ---
 title: "Ember.SimpleAuth"
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
 description:
   "Marco Otte-Witte announces Ember.SimpleAuth, an addon for implementing a
   session mechanism, authentication and authorization for Ember.js applications."

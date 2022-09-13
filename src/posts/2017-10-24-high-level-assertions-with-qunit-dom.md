@@ -240,7 +240,7 @@ npm install -g jscodeshift
 and then run the codemod e.g. on your `tests` folder:
 
 ```
-jscodeshift -t https://raw.githubusercontent.com/simplabs/qunit-dom-codemod/master/qunit-dom-codemod.js ./tests/
+jscodeshift -t https://raw.githubusercontent.com/mainmatter/qunit-dom-codemod/master/qunit-dom-codemod.js ./tests/
 ```
 
 ## Conclusion

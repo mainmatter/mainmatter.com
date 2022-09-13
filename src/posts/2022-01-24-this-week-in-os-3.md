@@ -1,8 +1,8 @@
 ---
-title: "This week in Open Source at simplabs #3"
-authorHandle: simplabs
+title: "This week in Open Source at Mainmatter #3"
+authorHandle: mainmatter
 tags: open-source
-bio: "The simplabs team"
+bio: "The Mainmatter team"
 description:
   "A collection of work that our engineers have been carrying out in open-source
   in the past few weeks."
@@ -140,7 +140,7 @@ imageAlt: "Screenshot of Ember simple auth"
 
 ## Ember.js
 
-- [simplabs/ember-error-route]
+- [main/ember-error-route]
   [#66](https://github.com/mainmatter/ember-error-route/pull/66) Add GitHub
   project links ([@turbo87])
 - [simplabs/ember-error-route]
@@ -301,4 +301,4 @@ imageAlt: "Screenshot of Ember simple auth"
 [@nickschot]: https://github.com/nickschot
 [@bobrimperator]: https://github.com/BobrImperator/
 [@oscard0m]: https://github.com/oscard0m/
-[contact]: https://simplabs.com/contact/
+[contact]: https://mainmatter.com/contact/

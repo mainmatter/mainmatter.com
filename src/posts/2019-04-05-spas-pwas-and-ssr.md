@@ -2,7 +2,7 @@
 title: "SPAs, PWAs and SSR"
 authorHandle: marcoow
 tags: javascript
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
 description:
   "Marco Otte-Witte dives deep into different approaches for building web apps
   like SPAs, PWAs, SSR and how they all can be combined for the best result."

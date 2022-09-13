@@ -94,8 +94,8 @@ module.exports = function (deployTarget) {
 
     notifications: {
       services: {
-        simplabs: {
-          url: 'https://notify.simplabs.com/deploy',
+        mainmatter: {
+          url: 'https://notify.mainmatter.com/deploy',
           headers: {},
           method: 'POST',
           body: function (context) {

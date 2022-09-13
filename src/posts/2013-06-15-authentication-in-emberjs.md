@@ -1,7 +1,7 @@
 ---
 title: "Authentication in ember.js"
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
 tags: ember
 description:
   "Marco Otte-Witte describes an approach for implementing a session mechanism,

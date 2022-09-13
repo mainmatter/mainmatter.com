@@ -362,7 +362,7 @@ they not only have a hover effect, but also navigate to a new page with a
 different `<EhBackground />` and more functionality.
 
 For further inspiration look at
-[the dummy application](https://simplabs.github.io/ember-hotspots/) that is part
+[the dummy application](https://mainmatter.github.io/ember-hotspots/) that is part
 of the [ember-hotspots](https://github.com/mainmatter/ember-hotspots).
 
 The resulting Ember.js addon shows how little code is necessary to bring ideas

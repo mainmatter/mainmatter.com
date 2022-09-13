@@ -7,4 +7,4 @@ kind: conference
 ---
 
 EmberConf 2021 is going virtual again and will be live-streamed everywhere. The
-simplabs team will be around like every year, delivering workshops and talks.
+Mainmatter team will be around like every year, delivering workshops and talks.

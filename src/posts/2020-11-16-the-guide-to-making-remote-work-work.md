@@ -2,10 +2,10 @@
 title: "The guide to making remote work work"
 authorHandle: marcoow
 tags: process
-bio: "Founder and Managing Director of simplabs"
+bio: "Founder and Managing Director of Mainmatter"
 description:
   "Marco Otte-Witte shares insights gained in many years of successfully
-  operating simplabs as a fully remote company."
+  operating Mainmatter as a fully remote company."
 og:
   image: /assets/images/posts/2020-11-16-the-guide-to-making-remote-work-work/og-image.png
 tagline: |
@@ -32,7 +32,7 @@ not going to come back in many industries though and making remote work a
 success is going to be one of the key challenges many companies will be facing
 in the coming years.
 
-We have run simplabs as a remote company since the beginning. In the early days,
+We have run Mainmatter as a remote company since the beginning. In the early days,
 we faced many of the same challenges other teams are struggling with now. Over
 time, we overcame each one, and learned a lot along the way. Today, we have team
 members in six countries across Europe with people working from co-working
@@ -271,7 +271,7 @@ require everyone to work alone or from their homes. Teams can still have an
 optional office or people could work from coworking locations where they are
 surrounded by others although those people might not be their immediate
 teammates. After all, remote work is all about options, not about forcing a
-particular working environment on anyone. At simplabs, we give everyone the
+particular working environment on anyone. At Mainmatter, we give everyone the
 freedom to choose the work location that is best for them and the only things we
 ask for are to ensure a proper internet connection and for everyone to be in
 similar timezones – other companies with a less collaborative working style

@@ -1,10 +1,10 @@
 ---
 title: "Why Companies Invest In Open-Source and Why Yours Should, Too"
 authorHandle: jjordan_dev
-tags: simplabs
+tags: opensource
 bio: "Senior Frontend Engineer, Ember Learning Core team member"
 description:
-  "Jessica Jordan details how simplabs makes contributions to open-source
+  "Jessica Jordan details how Mainmatter makes contributions to open-source
   software work as a regular practice and how companies can benefit from an
   investment into OSS."
 og:
@@ -155,7 +155,7 @@ the process to short-term or long-term business needs is crucial to make the
 investment into OSS work alongside ongoing product development or infrastructure
 work.
 
-As a consulting company, **simplabs** also operates under time and project
+As a consulting company, Mainmatter also operates under time and project
 constraints. Still, open-source is at the heart of our company's work and
 besides contributing to EmberJS via our core team engagements, we maintain over
 a dozen of tools and libraries written in JavaScript and other programming
@@ -168,7 +168,7 @@ to work on open-source projects using the **20% time method**.
 
 The 20% time method allocates a fifth of an engineer's compensated working time
 for open-source projects and related activities, including development,
-community management or writing blog posts. At simplabs we ensure that each IT
+community management or writing blog posts. At Mainmatter, we ensure that each IT
 and design professional has access to 20% time and makes use of it on a weekly
 basis: this boils down to 4 days of client work and 1 day of 20% time in a
 regular work week. Projects that our consultants work on generate tangible
@@ -234,7 +234,7 @@ process of contributing.
 - [10: "Open Source in 2019". Open Source Initiative. 2019](https://opensource.org/node/1006)
 - [11: "Open Source Benefits to Innovation and Organizational Agility". Shaaron A Alvares. 2019.](https://www.infoq.com/news/2019/03/open-source-benefits/)
 - - [12: "Open Source Software from Commercial Firms – Tools, Complements, and Collective Invention ". Joachim Henkel. 2003](https://www.researchgate.net/profile/Joachim_Henkel/publication/251228522_Open_Source_Software_from_Commercial_Firms_-_Tools_Complements_and_Collective_Invention/links/54c3bb140cf219bbe4ec1cf5/Open-Source-Software-from-Commercial-Firms-Tools-Complements-and-Collective-Invention.pdf)
-- [13: "Europe's leading Ember experts". simplabs. 2019.](/ember-consulting/)
+- [13: "Europe's leading Ember experts". Mainmatter. 2019.](/ember-consulting/)
 - [14: "2016 - Future of Open Source Survey Results". Black Duck by Synopsys. 2016](https://www.slideshare.net/blackducksoftware/2016-future-of-open-source-survey-results)
 
 This post is based on the talk

@@ -51,7 +51,7 @@ example for our `qunit-dom` project on my machine:
 
 | Name         | URL                                       |
 | ------------ | ----------------------------------------- |
-| `upstream`   | `git@github.com:simplabs/qunit-dom.git`   |
+| `upstream`   | `git@github.com:mainmatter/qunit-dom.git`   |
 | `origin`     | `git@github.com:Turbo87/qunit-dom.git`    |
 | `lukemelia`  | `git@github.com:lukemelia/qunit-dom.git`  |
 | `jackbeegan` | `git@github.com:jackbeegan/qunit-dom.git` |
@@ -76,7 +76,7 @@ With these commands we can already speed up our workflow quite significantly.
 Here is an example for working on `qunit-dom` from zero to open pull request:
 
 ```bash
-clu git@github.com:simplabs/qunit-dom.git
+clu git@github.com:mainmatter/qunit-dom.git
 cd qunit-dom
 ao git@github.com:Turbo87/qunit-dom.git
 # create a new git branch in the GUI

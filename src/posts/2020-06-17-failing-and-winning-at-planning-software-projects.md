@@ -2,7 +2,7 @@
 title: "Failing (and winning) at planning software projects"
 authorHandle: marcoow
 tags: process
-bio: "Founder and Managing Director of simplabs"
+bio: "Founder and Managing Director of Mainmatter"
 description:
   "Marco Otte-Witte gives detailed advice on planning software projects and
   scoping as well as preparing work in an iterative process."
@@ -138,7 +138,7 @@ started.
 
 In order to improve planning on the micro level, it is essential to conduct
 thorough preparation. I will present four key techniques that are essential for
-effective preparation of tasks and that simplabs has been practicing
+effective preparation of tasks and that Mainmatter has been practicing
 successfully for years.
 
 ### 1. The source of tasks

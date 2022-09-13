@@ -1,8 +1,8 @@
 ---
-title: "This week in Open Source at simplabs #1"
-authorHandle: simplabs
+title: "This week in Open Source at Mainmatter #1"
+authorHandle: mainmatter
 tags: open-source
-bio: "The simplabs team"
+bio: "The Mainmatter team"
 description:
   "A collection of work that our engineers have been carrying out in open-source
   in the past few weeks."
@@ -146,7 +146,7 @@ typescript users.
   [#7](https://github.com/storybookjs/eslint-plugin-storybook/issues/7) ESLint
   error: TypeError: Cannot read property 'name' of undefined ([@oscard0m])
 
-## simplabs's playbook
+## Mainmatter's playbook
 
 Added more detailed information regarding issue preparation.
 
@@ -162,7 +162,7 @@ Added more detailed information regarding issue preparation.
 [crates.io]: https://crates.io/
 [rust]: https://rust-lang.org/
 [@turbo87]: https://github.com/Turbo87/
-[contact]: https://simplabs.com/contact/
+[contact]: https://mainmatter.com/contact/
 [simplabs/ember-simple-auth]: https://github.com/mainmatter/ember-simple-auth/
 [buschtoens/ember-link]: https://github.com/buschtoens/ember-link/
 [remy/nodemon]: https://github.com/remy/nodemon/

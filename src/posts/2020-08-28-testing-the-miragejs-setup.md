@@ -189,4 +189,4 @@ Finally, if you want more information on how we make sure that our mock APIs
 always match the production API or you need more help implementing these things
 in your own project, please [contact us]! 👋
 
-[contact us]: https://simplabs.com/contact/
+[contact us]: https://mainmatter.com/contact/

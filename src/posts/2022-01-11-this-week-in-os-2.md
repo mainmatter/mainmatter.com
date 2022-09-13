@@ -1,8 +1,8 @@
 ---
-title: "This week in Open Source at simplabs #2"
-authorHandle: simplabs
+title: "This week in Open Source at Mainmatter #2"
+authorHandle: mainmatter
 tags: open-source
-bio: "The simplabs team"
+bio: "The Mainmatter team"
 description:
   "A collection of work that our engineers have been carrying out in open-source
   in the past few weeks."
@@ -208,7 +208,7 @@ imageAlt: "Screenshot of Ember simple auth"
   [#4256](https://github.com/rust-lang/crates.io/pull/4256) Pin @ember/string
   dependency to v3.0.0 ([@turbo87])
 
-## simplabs playbook
+## Mainmatter playbook
 
 - [simplabs/playbook] [#173](https://github.com/mainmatter/playbook/pull/173)
   add metric systems to the list of engineering tools ([@oscard0m])
@@ -249,4 +249,4 @@ imageAlt: "Screenshot of Ember simple auth"
 [@nickschot]: https://github.com/nickschot
 [@bobrimperator]: https://github.com/BobrImperator/
 [@oscard0m]: https://github.com/oscard0m/
-[contact]: https://simplabs.com/contact/
+[contact]: https://mainmatter.com/contact/

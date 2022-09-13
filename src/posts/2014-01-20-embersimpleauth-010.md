@@ -1,7 +1,7 @@
 ---
 title: "Ember.SimpleAuth 0.1.0"
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
 description:
   "Marco Otte-Witte announces Ember.SimpleAuth 0.1.0 with an improved
   architecture that allows for arbitrary authentication and authorization

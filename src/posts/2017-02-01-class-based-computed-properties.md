@@ -1,7 +1,7 @@
 ---
 title: Class based Computed Properties
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
 description:
   "Marco Otte-Witte introduces a mechanism for class based computed properties
   in Ember.js and how those can be used instead of helpers."

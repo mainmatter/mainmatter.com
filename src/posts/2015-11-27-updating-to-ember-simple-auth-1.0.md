@@ -1,7 +1,7 @@
 ---
 title: "Updating to Ember Simple Auth 1.0"
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
 description:
   "Marco Otte-Witte gives an update on the upcoming Ember Simple Auth 1.0
   release and shows how to use it in Ember CLI applications."

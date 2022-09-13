@@ -12,7 +12,7 @@ Product Circle is an opportunity for all PMO's, Product Owners, Project
 Managers, Delivery Leads, and anyone involved in a Digital Product / Project
 team to come and network as well as to discuss trends and topics.
 
-simplabs' founder and CEO Marco Otte-Witte will present at Product Circle's
+Mainmatter's founder and CEO Marco Otte-Witte will present at Product Circle's
 Christmas Special and deliver a talk about the three pillars of effective
 digital product development. In the talk, Marco will explain how successful
 projects are scoped, planned and executed as well as what techniques and

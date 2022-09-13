@@ -1,7 +1,7 @@
 ---
 title: "Ember.SimpleAuth needs a logo!"
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
 description:
   "Marco Otte-Witte posts a request for the community to contribute a logo to
   Ember.SimpleAuth."

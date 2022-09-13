@@ -27,7 +27,7 @@ variable blue background color to it:
 
 ```js
 {% raw %}
-// app/components/simplabs-logo-tile.js
+// app/components/mainmatter-logo-tile.js
 import Component from '@ember/component';
 import { computed } from '@ember/object';
 
@@ -60,7 +60,7 @@ Which now allows you to tag your component for testing as follows:
 
 ```js
 {% raw %}
-// app/components/simplabs-logo-tile.js
+// app/components/mainmatter-logo-tile.js
 import Component from '@ember/component';
 import { computed } from '@ember/object';
 
@@ -72,7 +72,7 @@ const tileColors = {
 
 export default Component.extend({
   tileColor: 'mid',
-  'data-test-simplabs-logo-tile': true,
+  'data-test-mainmatter-logo-tile': true,
   attributeBindings: ['style'],
   style: computed('tileColor', function () {
     let colorShade = this.get('tileColor');
@@ -93,19 +93,19 @@ component:
 
 ```js
 {% raw %}
-// tests/integration/components/simplabs-logo-tile-test.js
+// tests/integration/components/mainmatter-logo-tile-test.js
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { find, render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | simplabs-logo-tile', function (hooks) {
+module('Integration | Component | mainmatter-logo-tile', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it allows setting a dark background color', async function (assert) {
-    await render(hbs`{{simplabs-logo-tile tileColor="dark"}}`);
+    await render(hbs`{{mainmatter-logo-tile tileColor="dark"}}`);
 
-    let elementStyle = find('[data-test-simplabs-logo-tile]').style;
+    let elementStyle = find('[data-test-mainmatter-logo-tile]').style;
     assert.equal(elementStyle.backgroundColor, 'rgb(29, 113, 182)');
   });
 });
@@ -157,20 +157,20 @@ styles of an element in rendering tests:
 
 ```js
 {% raw %}
-// tests/integration/components/simplabs-logo-tile-test.js
+// tests/integration/components/mainmatter-logo-tile-test.js
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { find, render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | simplabs-logo-tile', function (hooks) {
+module('Integration | Component | mainmatter-logo-tile', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it allows setting a dark background color', async function (assert) {
-    await render(hbs`{{simplabs-logo-tile tileColor="dark"}}`);
+    await render(hbs`{{mainmatter-logo-tile tileColor="dark"}}`);
 
     let computedStyle = window.getComputedStyle(
-      find('[data-test-simplabs-logo-tile]'),
+      find('[data-test-mainmatter-logo-tile]'),
       null,
     );
     assert.equal(
@@ -189,7 +189,7 @@ that assert that the expected styles are applied to elements on the web page.
 
 But there's an even easier way to assert the computed styles of elements in your
 **QUnit test suite**. Since
-[v0.8.1](https://twitter.com/simplabs/status/1065913669995978752) of
+[v0.8.1](https://twitter.com/mainmatter/status/1065913669995978752) of
 [qunit-dom](/blog/2017/10/24/high-level-assertions-with-qunit-dom) you can make
 your tests truly ✨
 
@@ -210,19 +210,19 @@ the `hasStyle` method:
 
 ```js
 {% raw %}
-// tests/integration/components/simplabs-logo-tile-test.js
+// tests/integration/components/mainmatter-logo-tile-test.js
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { find, render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | simplabs-logo-tile', function (hooks) {
+module('Integration | Component | mainmatter-logo-tile', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it allows setting a dark background color', async function (assert) {
-    await render(hbs`{{simplabs-logo-tile tileColor="dark"}}`);
+    await render(hbs`{{mainmatter-logo-tile tileColor="dark"}}`);
 
-    assert.dom('[data-test-simplabs-logo-tile]').hasStyle({
+    assert.dom('[data-test-mainmatter-logo-tile]').hasStyle({
       backgroundColor: 'rgb(29, 113, 182)',
     });
   });

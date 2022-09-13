@@ -102,7 +102,7 @@ you change 10 instances of one rule and 1 instance of another rule, the
 cognitive load of reviewing that PR becomes too much.
 
 While this post inspired by my work in open source, I have also recently given a
-[Git Workshop](https://simplabs.com/resources/workshop/effective-git) for a
+[Git Workshop](https://mainmatter.com/resources/workshop/effective-git) for a
 client where we communicated the exact same concepts: "the smaller the PR the
 more likely it will be to get merged quickly". And if you or your employer cares
 about efficiency then this can only be a good thing 😉
@@ -344,4 +344,4 @@ While everything in this post is completely optional, I hope that you can see
 the benefits and maybe adopt some of the ideas in your own workflow.
 
 If you need help with any of these topics or if you have questions we encourage
-you to [contact us](https://simplabs.com/contact/)!
+you to [contact us](https://mainmatter.com/contact/)!

@@ -9,7 +9,7 @@ description:
 og:
   image: /assets/images/posts/2019-07-15-sentry-and-ember/og-image.png
 tagline: |
-  <p>Are you confident that your apps have no bugs? Do you not need a support team because no user ever complains about something not working? Then this post is not for you!</p> <p>We use a lot of tools at simplabs to ensure reasonably high quality code, but occasionally something slips through. The important thing then is to notice and fix it quickly. This post will focus on the &quot;notice&quot; part by using <a href="https://sentry.io/">Sentry</a> error reporting in <a href="https://emberjs.com/">Ember.js</a> apps.</p>
+  <p>Are you confident that your apps have no bugs? Do you not need a support team because no user ever complains about something not working? Then this post is not for you!</p> <p>We use a lot of tools at Mainmatter to ensure reasonably high quality code, but occasionally something slips through. The important thing then is to notice and fix it quickly. This post will focus on the &quot;notice&quot; part by using <a href="https://sentry.io/">Sentry</a> error reporting in <a href="https://emberjs.com/">Ember.js</a> apps.</p>
 ---
 
 ## ember-cli-sentry
@@ -285,4 +285,4 @@ your apps please [contact us][contact]. We're happy to help!
 [ember-cli-deploy]: https://github.com/ember-cli-deploy/ember-cli-deploy
 [ember-cli-deploy-sentry]: https://github.com/dschmidt/ember-cli-deploy-sentry
 [ember-simple-auth]: https://github.com/mainmatter/ember-simple-auth
-[contact]: https://simplabs.com/contact/
+[contact]: https://mainmatter.com/contact/

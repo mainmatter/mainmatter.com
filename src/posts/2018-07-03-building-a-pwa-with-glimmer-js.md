@@ -1,9 +1,9 @@
 ---
 title: "Building a PWA with Glimmer.js"
 authorHandle: marcoow
-bio: "Founding Director of simplabs, author of Ember Simple Auth"
+bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
 description:
-  "Marco Otte-Witte dives deep into the details of how simplabs built Breethe,
+  "Marco Otte-Witte dives deep into the details of how Mainmatter built Breethe,
   an open source progressive web app, with Glimmer.js."
 tags: ember
 og:

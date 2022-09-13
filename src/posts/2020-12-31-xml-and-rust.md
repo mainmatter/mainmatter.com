@@ -247,4 +247,4 @@ rule of thumb though:
 We hope that this short intro to XML parsing in Rust was helpful to you and if
 you have any questions do not hesitate to [contact] us. We're happy to help!
 
-[contact]: https://simplabs.com/contact/
+[contact]: https://mainmatter.com/contact/
