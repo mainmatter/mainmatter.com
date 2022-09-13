@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "lint": "eslint . --cache",
-    "lint:fix": "eslint . --cache --fix",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --cache --fix",
     "lint:md": "prettier --check '**/*md'",
     "lint:md:fix": "prettier --write '**/*md'",
     "build": "cross-env ELEVENTY_ENV=production run-s build:sass build:js build:html",
