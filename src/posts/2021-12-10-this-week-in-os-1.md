@@ -110,10 +110,10 @@ ESA 4.0: Refactored internals of the addon to use Ember’s dependency injection
 making things simpler and easier to test. Successfully removed a lot of code,
 and simplified tests setup.
 
-- [simplabs/ember-simple-auth]
+- [mainmatter/ember-simple-auth]
   [#2315](https://github.com/mainmatter/ember-simple-auth/pull/2315) put
   internal-session into DI system ([@BobrImperator])
-- [simplabs/ember-simple-auth]
+- [mainmatter/ember-simple-auth]
   [#2312](https://github.com/mainmatter/ember-simple-auth/pull/2312) Refactor
   Adaptive store to use DI ([@BobrImperator])
 
@@ -122,7 +122,7 @@ to migrating from custom initializers, it excludes the application route that
 ESA adds automatically and that is causing build issues for embroider and
 typescript users.
 
-- [simplabs/ember-simple-auth]
+- [mainmatter/ember-simple-auth]
   [#2314](https://github.com/mainmatter/ember-simple-auth/issues/2314) Add
   #setup method to session service ([@BobrImperator])
 
@@ -150,7 +150,7 @@ typescript users.
 
 Added more detailed information regarding issue preparation.
 
-- [simplabs/playbook] [#171](https://github.com/mainmatter/playbook/pull/171)
+- [mainmatter/playbook] [#171](https://github.com/mainmatter/playbook/pull/171)
   Add more information about issue preparation ([@marcoow])
 
 [hyperium/http]: https://github.com/hyperium/http/
@@ -163,7 +163,7 @@ Added more detailed information regarding issue preparation.
 [rust]: https://rust-lang.org/
 [@turbo87]: https://github.com/Turbo87/
 [contact]: https://mainmatter.com/contact/
-[simplabs/ember-simple-auth]: https://github.com/mainmatter/ember-simple-auth/
+[mainmatter/ember-simple-auth]: https://github.com/mainmatter/ember-simple-auth/
 [buschtoens/ember-link]: https://github.com/buschtoens/ember-link/
 [remy/nodemon]: https://github.com/remy/nodemon/
 [strapi/strapi]: https://github.com/strapi/strapi/
@@ -173,4 +173,4 @@ Added more detailed information regarding issue preparation.
 [@marcoow]: https://github.com/marcoow/
 [@bobrimperator]: https://github.com/BobrImperator/
 [@oscard0m]: https://github.com/oscard0m/
-[simplabs/playbook]: https://github.com/mainmatter/playbook/
+[mainmatter/playbook]: https://github.com/mainmatter/playbook/
