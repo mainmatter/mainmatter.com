@@ -1,6 +1,6 @@
 ---
-name: "simplabs"
-github: simplabs
-twitter: simplabs
-bio: "The simplabs team"
+name: "Mainmatter"
+github: mainmatter
+twitter: mainmatter
+bio: "The Mainmatter team"
 ---
