@@ -55,7 +55,7 @@ All this eventually lead to the name "Mainmatter" we're releasing today. Our mai
 
 To go with the name we created a completely new visual identity. While that's still relatively simple and on point overall, it's significantly bolder and more vivid than what we had before:
 
-TODO: collage
+![The Mainmatter visual identity](/assets/images/posts/2022-09-18-simplabs-becomes-mainmatter/visual-identity.jpg#full)
 
 If you're interested in more details around the Mainmatter brand, check out our [brand styleguide](/assets/images/posts/2022-09-18-simplabs-becomes-mainmatter/Mainmatter-styleguide.pdf).
 
