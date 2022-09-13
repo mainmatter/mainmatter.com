@@ -84,6 +84,28 @@
       color: var(--color-purple);
     }
   }
+
+  blockquote {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    font-weight: 700;
+    position: relative;
+    margin: 2rem 0 2.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    &::before {
+      content: url("/assets/images/icons/quote.svg");
+      transform: none;
+    }
+  }
+
+  author {
+    display: block;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+  }
 }
 
 .rte--small {
@@ -108,6 +130,21 @@
   }
 }
 
+@media (min-width: 48em) {
+  .rte  {
+    blockquote {
+      margin: 4rem 0 3rem;
+      flex-wrap: nowrap;
+      gap: 1.5rem;
+  
+      &::before {
+        content: url("/assets/images/icons/quote.svg");
+        transform: translateY(-1.5rem);
+      }
+    }
+  }
+}
+
 @media (min-width: 72em) {
   .rte {
     h2 {
@@ -116,6 +153,14 @@
 
     h3 {
       margin: 2.5rem 0 1rem;
+    }
+
+    blockquote {
+      font-size: 1.5rem;
+
+      author {
+        margin-top: 2rem;
+      }
     }
   }
 }
