@@ -28,7 +28,7 @@
             <span class="nav__link-text{% if page.url and '/services/' in page.url %} nav__link-text--active{% endif %}">Services</span>
             {% include 'svg/arrow.njk' %}
           </summary>
-          <div class="nav-submenu__menu" data-modal aria-label="Services submenu">
+          <div class="nav-submenu__menu" data-modal data-modal-desktop aria-label="Services submenu">
             <div class="nav-submenu__menu-inner">
               <button class="nav-submenu__menu-close no-js-hidden" data-menu-close>
                 {% include 'svg/close.njk' %}
@@ -80,7 +80,7 @@
         Contact us
       </a>
       <details class="nav__mobile-menu-wrapper" data-has-submenu>
-        <summary class="nav__menu-toggle" data-menu-toggle>
+        <summary class="nav__menu-toggle" data-menu-toggle data-menu-mobile-close-toggle>
           {% include 'svg/menu.njk' %}
           {% include 'svg/close.njk' %}
           <span class="screenreader">Toggle Menu</span>

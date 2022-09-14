@@ -2,7 +2,7 @@
   background-color: var(--color-white);
   color: var(--color-black);
   position: absolute;
-  top: 0;
+  top: -1px; // TODO: change this to 0 once rebranding teaser is gone
   left: 0;
   width: 100%;
 }
