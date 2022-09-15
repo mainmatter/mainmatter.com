@@ -2,7 +2,7 @@ module.exports = {
   facebook: "",
   name: "Mainmatter",
   lang: "en",
-  url: process.env.URL || "https://mainmatter.com",
+  url: process.env.DEPLOY_PRIME_URL || "https://mainmatter.com",
   twitter: "",
   authorHandle: "",
   authorName: "",
