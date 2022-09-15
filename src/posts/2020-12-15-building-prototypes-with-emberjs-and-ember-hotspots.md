@@ -12,8 +12,6 @@ tagline: |
   <p>Have you ever been in charge of creating click dummies, interactive demos or that thing that is made from static images and enriched with hotspots, page transitions and states?</p> <p>Reaching for Invision or Marvel or the built-in features in Figma, Sketch or Adobe XD is your obvious choice. About 90% into the project you realize you need something in the demo which can't be done in the tool you chose. You hit the same wall I did a while ago.</p> <p>I was looking for alternative solutions and while Framer does provide many possibilities, I wished there was a different tool which would sit closer to the apps we write for our clients. Dummies are a helpful tool to explore new ideas inside an existing product after all.</p> <p>Given our client apps are written in Ember.js this was bound to be a new addon for the Ember community. Allowing you to create prototypes, while using little code, but with the full power of the Ember.js ecosystem whenever you need it, thus making it easier to explore new ideas no matter if you start from scratch or want to improve on an existing prject.</p>
 ---
 
-![Better click dummies and prototypes with Ember.js](/assets/images/posts/2020-12-15-building-prototypes-with-emberjs-and-ember-hotspots/illustration.svg#full)
-
 ### What makes a click dummy
 
 In short, we are talking about adding interaction to static images.

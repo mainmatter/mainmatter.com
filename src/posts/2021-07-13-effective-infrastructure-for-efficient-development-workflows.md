@@ -12,8 +12,6 @@ tagline: |
   <p>Building software products of any kind is hard enough. Doing so without the support of powerful infrastructure that enables efficient workflows is even harder. Yet, many teams are suffering from the absence of such infrastructure, forcing them into very much inefficient workflows with substantial time and effort going into synchronizing the work of different engineers, tracking down bugs, and getting back to tasks later that were already thought to be complete.</p>
 ---
 
-![Effective infrastructure for efficient development workflows illustration](/assets/images/posts/2021-07-13-effective-infrastructure-for-efficient-development-workflows/illustration.svg#full)
-
 ## The machine that builds the machine
 
 Elon Musk famously talks about the real challenge that Tesla faced/s isn't

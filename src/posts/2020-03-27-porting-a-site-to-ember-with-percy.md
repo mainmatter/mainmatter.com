@@ -12,8 +12,6 @@ tagline: |
   <p>This article details a technique where the visual testing software <a href="https://percy.io/">Percy</a> was used to port the old <a href="https://guides.emberjs.com/release/">Ember Guides</a> to an entirely different technology, without anybody noticing.</p>
 ---
 
-![Bringing clarity to your Ember templates](/assets/images/posts/2020-03-27-porting-a-site-to-ember-with-percy/illustration.jpg#full@1440-2880)
-
 ## Motivation
 
 This was one of the first steps in the long road to _Emberify_ and redesign the

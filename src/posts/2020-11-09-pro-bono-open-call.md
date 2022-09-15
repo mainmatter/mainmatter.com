@@ -12,8 +12,6 @@ tagline: |
   <p>We want to give back to our community by sharing our knowledge and expertise with a founder from an <strong>underrepresented diversity group in tech</strong>, so they can successfully grow and evolve their digital product.</p>
 ---
 
-![We are seeking applicants for pro-bono digital product design](/assets/images/posts/2020-11-09-pro-bono-open-call/illustration.svg#full)
-
 ## Seeking applicants for pro-bono product design
 
 Mainmatter is a digital product consultancy with an emphasis on sustainable

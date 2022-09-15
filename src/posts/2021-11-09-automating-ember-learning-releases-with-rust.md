@@ -12,8 +12,6 @@ tagline: |
   <p>Releasing a new version of Ember is no uncomplicated task. This process involves several different core teams, who are responsible for several packages and resources between them. In this post, I will explain how I used Rust to build a tool that automates part of the Ember release process.</p>
 ---
 
-![Effective infrastructure for efficient development workflows illustration](/assets/images/posts/2021-11-09-automating-ember-learning-releases-with-rust/illustration.svg#full)
-
 ## Release process for the Ember project
 
 An Ember project release involves 4 different Core teams: Framework, Data, CLI

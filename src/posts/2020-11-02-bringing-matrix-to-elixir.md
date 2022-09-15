@@ -10,8 +10,6 @@ tagline: |
   <p><a href="https://matrix.org">Matrix</a> is an open-source, end-to-end encrypted, real-time, open standard communication protocol designed to protect people's privacy. The technology has applications not only in messaging and Voice over IP (VoIP) but similarly in Internet of Things (IoT), Augmented Reality (AR) and Virtual Reality (VR).</p>
 ---
 
-![Bringing the Matrix Protocol to Elixir](/assets/images/posts/2020-11-02-bringing-matrix-to-elixir/illustration.svg#full)
-
 Introduced in 2014, Matrix is backed by [Element](https://element.io/about)
 (formerly New Vector), the company behind the
 [Element Matrix client](https://element.io/) (formerly Riot). Adopters include

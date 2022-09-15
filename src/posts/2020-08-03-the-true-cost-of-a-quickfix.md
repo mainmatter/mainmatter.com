@@ -12,8 +12,6 @@ tagline: |
   <p>Picture this, a sprint is underway, development is running smoothly, then QA reports a rather odd bug, you begin to investigate and lo and behold you find the following comment:</p> <pre><code class="language-javascript">// Dear programmer: // When I wrote this code, only god and I knew how it worked // Now, only god knows </code></pre>
 ---
 
-![the true cost of a quickfix illustration](/assets/images/posts/2020-08-03-the-true-cost-of-a-quickfix/illustration.png#full@1440-2880)
-
 While avoiding code that resulted in such comments was harder to enforce in the
 pre-framework era, opinionated frameworks such as
 [Ember.js](https://emberjs.com/) offer us concrete ways to ship code with

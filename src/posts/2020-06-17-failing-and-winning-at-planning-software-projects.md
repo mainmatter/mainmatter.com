@@ -12,8 +12,6 @@ tagline: |
   <p>Scoping and planning software projects of any kind is a challenging task that many teams struggle with. The negative consequences of mis-planning are manyfold – teams are unable to give reliable estimates, synchronize dependent activities (e.g. marketing) with the project's progress or maintain a high level of quality that will allow maintaining and evolving an application over the long term. In this post, I will analyse these typical problems in some detail and present techniques to address and overcome them, reducing uncertainty, risk and frustration.</p>
 ---
 
-![Strong Collaboration](/assets/images/posts/2020-06-17-failing-and-winning-at-planning-software-projects/illustration.png#full@1000-2000)
-
 ## Planning on the Macro Level
 
 When it comes to planning software projects on the macro level, there's two

@@ -13,8 +13,6 @@ tagline: |
   <p>When we set out to rebuild our own website <a href="https://web.archive.org/web/20220307135456/https://simplabs.com/">simplabs.com</a> in 2019, we wanted to use that project as an opportunity to ignore all economic considerations (and reason you could say) and dive deep into what was technically possible. Doing so would allow us to build something that was super customized for our specific needs and highly optimized for performance. We ended up spending a lot of time and effort but are quite pleased with the result.</p> <p>While we cannot recommend anyone following our example as your time is most likely better spent elsewhere, this post explains the approach we took. I will be covering topics like static pre-rendering and client-side rehydration, advanced bundling and caching strategies as well as service workers.</p>
 ---
 
-![Bringing clarity to your Ember templates](/assets/images/posts/2020-01-31-how-to-over-engineer-a-static-page/illustration.png#full@1200-2400)
-
 ## One Project, many Goals
 
 Our goals for the new website were manifold:

@@ -10,11 +10,8 @@ og:
   image: /assets/images/posts/2021-12-08-validations-in-ember-apps/og-image.png
 tagline: |
   <p>Since Ember's Octane edition it's much easier to integrate with third-party libraries. Because of that I've been searching for alternatives to <code>ember-changeset</code> and <code>ember-cp-validations</code>. I will show you how to create your own validations around the Yup validations library.</p>
-image: /assets/images/posts/2021-12-08-validations-in-ember-apps/illustration.svg
 imageAlt: Data validation in Ember with Yup illustration
 ---
-
-![Data validation in Ember with Yup illustration](/assets/images/posts/2021-12-08-validations-in-ember-apps/illustration.svg#full)
 
 ### Quick look at Yup
 

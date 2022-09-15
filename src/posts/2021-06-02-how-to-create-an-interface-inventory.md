@@ -10,8 +10,6 @@ tagline: |
   <p>Are you struggling with a messy interface? Is your digital product full of inconsistencies? Are your designers and developers having a hard time aligning on how to evolve your UI?</p> <p>If so, consider creating an interface inventory. It is a small but powerful step towards a homogenous, pattern-based digital design strategy.</p>
 ---
 
-![Trying your GitHub Actions locally illustration](/assets/images/posts/2021-06-02-interface-inventory/illustration.svg#full)
-
 ## Interface inventories 101
 
 An interface inventory is a categorized collection of every piece of design that

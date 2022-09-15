@@ -12,8 +12,6 @@ tagline: |
   <p>Making sure your web app is accessible can be a daunting task. Just as having a good testing suite or an app that's responsive and works well across devices, it seems easier to achieve when you're starting a new project than when working with an existing app. Knowing where to start can be tough, therefore we've outlined how to implement accessibility tests in Ember alongside a very common case: forms.</p>
 ---
 
-![improve the accessibility of your app illustration](/assets/images/posts/2020-06-02-how-to-improve-the-accessibility-of-your-app/illustration.png#full@720-1440)
-
 For some time now, there's been an ongoing effort in the Ember community to make
 accessibility an integral part of the framework. A handful of tools and
 resources have been created to give developers an easier time building

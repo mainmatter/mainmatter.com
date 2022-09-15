@@ -13,8 +13,6 @@ tagline: |
   <p>This post is designed to help you form a solid mental model while working with Git both professionally and in an open source project, and how to ensure you are following best practices to make the process easier for everyone.</p>
 ---
 
-![Trying your GitHub Actions locally illustration](/assets/images/posts/2021-05-26-keeping-a-clean-git-history/illustration.svg#full)
-
 This topic was inspired by some of my pairing sessions with my colleague
 [Tobias Bieniek](https://twitter.com/tobiasbieniek) and the concepts laid out in
 this post have become invaluable to me while working with open source

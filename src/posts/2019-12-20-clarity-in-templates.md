@@ -12,8 +12,6 @@ tagline: |
   <p>When reading Ember templates, have you ever wondered where a certain dynamic value comes from? Is that dynamic value a property of the component, a named argument that was passed in, or even a helper?</p> <p>In this blog post we will be discussing how recent Ember.js modernization efforts on the path to Ember Octane have brought features that help with this exact problem.</p>
 ---
 
-![Bringing clarity to your Ember templates](/assets/images/posts/2019-12-20-clarity-in-templates/illustration.jpg#full@720-1440)
-
 ## Ember Octane and editions
 
 As a framework that values stability and providing its users solid upgrade

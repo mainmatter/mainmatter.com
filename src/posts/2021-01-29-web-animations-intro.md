@@ -9,8 +9,6 @@ tagline: |
   <p>Animations can be a useful tool to enhance the user experience on the web. Aside from providing an appealing visual experience, animations can aid in the user's understanding of elements appearing, moving and disappearing from a page. This blog post will provide a short overview of the status quo of animating the web and take an initial look at the current capabilities of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API">Web Animations API</a>.</p>
 ---
 
-![An intro to animating with the Web Animations API](/assets/images/posts/2021-01-29-web-animations-intro/illustration.svg#full)
-
 ## The status quo of animating the web
 
 Currently, there are two animation techniques that are commonly used on the web:
