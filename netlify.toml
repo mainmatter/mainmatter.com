@@ -1,7 +1,7 @@
 [[plugins]]
-    package = "netlify-plugin-11ty"
-    [plugins.inputs]
-        cache_img = 'assets/images'
+  package = "netlify-plugin-11ty"
+  [plugins.inputs]
+    cache_img = 'assets/images'
 
 [build]
-    environment = { NODE_VERSION = "16.17.0" }
+  environment = { NODE_VERSION = "16.17.0" }
