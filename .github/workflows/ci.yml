@@ -42,3 +42,22 @@ jobs:
           PERCY_TARGET_BRANCH: ${{ github.base_ref }}
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
         run: yarn percy dist
+
+  performance:
+    name: 'Performance'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: volta-cli/action@v3
+
+      - name: install dependencies
+        run: yarn install
+
+      - name: build
+        run: yarn build
+
+      - name: lighthouse
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+        run: yarn run lhci autorun --collect.staticDistDir=./dist --collect.url=http://localhost/ --collect.url=http://localhost/blog/ --collect.url=http://localhost/services/team-augmentation-and-training/ --collect.url=http://localhost/ember-consulting/ --collect.url=http://localhost/playbook/ --collect.url=http://localhost/contact/ --collect.url=http://localhost/services/workshops/hands-on-ember/ --collect.url=http://localhost/blog/2022/09/18/simplabs-becomes-mainmatter/ --upload.target=temporary-public-storage

@@ -27,6 +27,7 @@
     "@11ty/eleventy-navigation": "^0.3.2",
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.1.0",
+    "@lhci/cli": "^0.9.0",
     "@percy/cli": "^1.10.2",
     "@quasibit/eleventy-plugin-sitemap": "^2.1.5",
     "@tbranyen/jsdom": "13.0.0",
