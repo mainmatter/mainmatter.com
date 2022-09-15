@@ -15,7 +15,7 @@ tagline: |
 
 Qonto reached out to Mainmatter looking for a combination of added engineering
 power and outside expertise to help their in-house engineers improve, we call
-this [Team Augmentation](/services/team-augmentation/).
+this [Team Augmentation](/services/team-augmentation-and-training/).
 
 This method of working sees our technology experts merge with our client's
 in-house engineering teams to share their know-how. Mainmatter engineers

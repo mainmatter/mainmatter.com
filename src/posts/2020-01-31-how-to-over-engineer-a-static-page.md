@@ -18,7 +18,7 @@ tagline: |
 Our goals for the new website were manifold:
 
 - We wanted to update the rather
-  [antiquated design of the old site](https://web.archive.org/web/20181021095200/https://mainmatter.com/)
+  [antiquated design of the old site](https://web.archive.org/web/20181021095200/https://simplabs.com/)
   and create a modern design language that represented our identity well and was
   build on a design system that we could build on in the future (the details of
   which are to be covered in a separate, future post).
@@ -122,17 +122,20 @@ into Glimmer.js components at build time.
 
 That way we are generating dedicated components for all posts that are all
 mapped to their own routes. We also generate the components for the
-[blog listing page(s)](/blog/) and the ones that
-[list all posts by a particular author](/blog/author/marcoow). This approach
-basically moves what would typically be done by an API server at runtime
-(retrieving content from a repository that grows and changes over time) to build
-time, much like what the [Jamstack](https://jamstack.org) advocates for (and
-tools like [Empress](https://github.com/empress),
+[blog listing page(s)](https://web.archive.org/web/20181021095200/https://simplabs.com/blog/)
+and the ones that
+[list all posts by a particular author](https://web.archive.org/web/20181021095200/https://simplabs.com/blog/author/marcoow).
+This approach basically moves what would typically be done by an API server at
+runtime (retrieving content from a repository that grows and changes over time)
+to build time, much like what the [Jamstack](https://jamstack.org) advocates for
+(and tools like [Empress](https://github.com/empress),
 [VuePress](https://vuepress.vuejs.org) or [Gatsby](https://www.gatsbyjs.org)
 would have done out of the box 😀). The same approach is used for other parts of
 the website that grow and change over time and that we want to be able to
-maintain content for with little effort like the [calendar](/calendar/) or
-[talks catalog](/talks/).
+maintain content for with little effort like the
+[calendar](https://web.archive.org/web/20181021095200/https://simplabs.com/calendar/)
+or
+[talks catalog](https://web.archive.org/web/20181021095200/https://simplabs.com/talks/).
 
 ## Bundling and Caching
 
@@ -159,15 +162,19 @@ Our site now has a multitude of bundles:
   site's content; that is about 70KB as of the writing of this post
 - the bundles for each of the blog's listing pages as well as individual bundles
   for each post; these are relatively small but change frequently of course
-- bundles for rarely accessed pages like [imprint](/imprint/) and
-  [privacy policy](/privacy/) that have a significant size (around 11KB as of
-  the writing of this post) but contain content that is accessed only by very
-  few users
+- bundles for rarely accessed pages like
+  [imprint](https://web.archive.org/web/20181021095200/https://simplabs.com/imprint/)
+  and
+  [privacy policy](https://web.archive.org/web/20181021095200/https://simplabs.com/privacy/)
+  that have a significant size (around 11KB as of the writing of this post) but
+  contain content that is accessed only by very few users
 - additional bundles for more frequently changing content like the
-  [calendar](/calendar/) or [talks catalog](/talks/)
+  [calendar](https://web.archive.org/web/20181021095200/https://simplabs.com/calendar/)
+  or
+  [talks catalog](https://web.archive.org/web/20181021095200/https://simplabs.com/talks/)
 - a bundle that contains a component that lists the most recent blog posts for a
   particular topic that; that component gets included on
-  [pages within the main site](/ember-consulting/)
+  [pages within the main site](https://web.archive.org/web/20181021095200/https://simplabs.com/ember-consulting/)
 
 ### Bundles and Caching
 
@@ -279,9 +286,11 @@ By spending a significant (and maybe unreasonable) amount of time and energy we
 ended up with the highly optimized site you're looking at. The downside is we
 ended up with our own custom static site generator essentially that we now need
 to maintain ourselves (one of the reasons why we recommend using a fully
-integrated framework like [Ember.js](/ember-consulting/) instead of compiling
-your own custom framework out of a bunch of micro libraries). However, it was
-definitely an interesting experiment and we hope you take some inspiration out
-of the patterns and mechanisms we describe in this post. If you are struggling
-with performance in your Ember.js or Glimmer.js or other apps, feel free to
-[reach out and talk to our experts](/contact/) to see how we can help.
+integrated framework like
+[Ember.js](https://web.archive.org/web/20181021095200/https://simplabs.com/ember-consulting/)
+instead of compiling your own custom framework out of a bunch of micro
+libraries). However, it was definitely an interesting experiment and we hope you
+take some inspiration out of the patterns and mechanisms we describe in this
+post. If you are struggling with performance in your Ember.js or Glimmer.js or
+other apps, feel free to [reach out and talk to our experts](/contact/) to see
+how we can help.

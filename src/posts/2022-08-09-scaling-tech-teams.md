@@ -77,7 +77,8 @@ during a code review or running workshops on particular topics that people are
 struggling with. We have worked with a number of fast-growing teams over the
 years and seen many beginners excel and turn into experienced senior engineers
 given the right support over the years – find out about our
-[team augmentation](/services/team-augmentation/) offering to learn more.
+[team augmentation](/services/team-augmentation-and-training/) offering to learn
+more.
 
 ## Code Health and Tech Debt
 
