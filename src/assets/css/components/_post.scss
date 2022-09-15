@@ -158,3 +158,16 @@
     padding: 10rem 0 5rem;
   }
 }
+
+
+@media (min-width: 62em) {
+  .post {
+    img:not(.image--small):not(.image--full):not(.author__image),
+    picture:not(.image--small):not(.image--full),
+    video:not(.image--small),
+    .iframe-container,
+    .quote {
+      grid-column: 1 / span 3;
+    }
+  }
+}
