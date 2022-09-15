@@ -5,3 +5,69 @@
 
 [build]
   environment = { NODE_VERSION = "16.17.0" }
+
+[[redirects]]
+  from = "/resources/workshop/digital-product-strategy"
+  to = "/services/workshops/digital-product-strategy/"
+
+[[redirects]]
+  from = "/resources/workshop/digital-product-strategy"
+  to = "/services/workshops/digital-product-strategy/"
+
+[[redirects]]
+  from = "/resources/workshop/design-system-kickoff-interface-inventory"
+  to = "/services/workshops/design-system-kickoff-interface-inventory/"
+
+[[redirects]]
+  from = "/resources/workshop/hands-on-ember"
+  to = "/services/workshops/hands-on-ember/"
+
+[[redirects]]
+  from = "/resources/workshop/effective-git"
+  to = "/services/workshops/hands-on-ember/"
+
+[[redirects]]
+  from = "/resources"
+  to = "/playbook/"
+
+[[redirects]]
+  from = "/calendar"
+  to = "/events/"
+
+[[redirects]]
+  from = "/talks"
+  to = "/events/"
+
+[[redirects]]
+  from = "/services"
+  to = "/"
+
+[[redirects]]
+  from = "/services/digital-products"
+  to = "/services/digital-products-and-design/"
+
+[[redirects]]
+  from = "/services/product-development"
+  to = "/services/digital-products-and-design/"
+
+[[redirects]]
+  from = "/services/product-design"
+  to = "/services/digital-products-and-design/"
+
+[[redirects]]
+  from = "/services/team-augmentation"
+  to = "/services/team-augmentation-and-training/"
+
+[[redirects]]
+  from = "/services/training"
+  to = "/services/team-augmentation-and-training/"
+
+[[redirects]]
+  from = "/why-simplabs"
+  to = "/"
+
+# serve 404 for all paths that don't exist
+[[redirects]]
+  from = "/*"
+  to = "/404/index.html"
+  status = 404
