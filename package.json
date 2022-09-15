@@ -18,7 +18,8 @@
     "watch": "cross-env ELEVENTY_ENV=development && run-p sass js serve",
     "sass": "sass src/assets/css/app.scss ./assets/css/app.css --style=compressed --watch",
     "serve": "eleventy  --quiet --serve --port=8080",
-    "dev": "npm run watch"
+    "dev": "npm run watch",
+    "percy": "percy snapshot"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
@@ -26,6 +27,7 @@
     "@11ty/eleventy-navigation": "^0.3.2",
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.1.0",
+    "@percy/cli": "^1.10.2",
     "@quasibit/eleventy-plugin-sitemap": "^2.1.5",
     "@tbranyen/jsdom": "13.0.0",
     "cross-env": "7.0.3",
