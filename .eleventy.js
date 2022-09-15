@@ -19,7 +19,7 @@ const { findBySlug } = require("./utils/findBySlug");
 /**
  * Import site configuration
  */
-const config = require("./src/_data/config.json");
+const config = require("./src/_data/config.js");
 const pathConfig = require("./src/_data/paths.json");
 
 module.exports = function (eleventyConfig) {
@@ -144,7 +144,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(sitemap, {
     sitemap: {
-      hostname: process.env.URL || "https://mainmatter.com",
+      hostname: config.url,
     },
   });
 

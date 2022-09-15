@@ -2,7 +2,7 @@ const jsdom = require("@tbranyen/jsdom");
 const { JSDOM } = jsdom;
 const slugify = require("slugify");
 const path = require("path");
-const config = require("../../src/_data/config.json");
+const config = require("../../src/_data/config.js");
 const Image = require("@11ty/eleventy-img");
 
 module.exports = function (value, outputPath) {
