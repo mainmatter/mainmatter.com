@@ -7,7 +7,7 @@ description:
   helpers and explains pros and cons of each alternative."
 tags: ember
 og:
-  image: /assets/images/posts/2017-03-21-on-computed-properties-vs-helpers/og-image.png
+  image: /assets/images/posts/2017-03-21-on-computed-properties-vs-helpers/og-image.jpg
 tagline: |
   <p>Ember's computed properties are a great mechanism for encapsulating reactive logic and implementing consistent, auto-updating UIs. Since the past year or so though, there seems to be an increasing tendency in the community to use template helpers as the main tool for expressing this kind of logic right in the templates. Following up on a <a href="https://speakerdeck.com/marcoow/templates-and-logic-in-ember">talk I gave at last year's EmberFest</a>, I'll elaborate in this post why I think that is often not the best choice and what the drawbacks are.</p>
 ---

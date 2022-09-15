@@ -7,7 +7,7 @@ description:
   Ember.js applications."
 tags: javascript
 og:
-  image: /assets/images/posts/2018-12-10-assert-your-style/og-image.png
+  image: /assets/images/posts/2018-12-10-assert-your-style/og-image.jpg
 tagline: |
   <p>Sometimes you really want to make sure that your web application looks good; and that it keeps doing so in the future. <strong>Automated tests</strong> are an important foundation for making your application's appearance future-proof and this may involve the integration of a screenshot-based testing tool like <a href="https://percy.io/">Percy.io</a> or <a href="https://github.com/HuddleEng/PhantomCSS">PhantomCSS</a>.</p> <p>But writing your own <strong>visual regression tests</strong> for critical styles in your application can be really useful, too - and it can be easily done on top of that!</p>
 ---

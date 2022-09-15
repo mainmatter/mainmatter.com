@@ -8,7 +8,7 @@ description:
   demonstrating how to easily add and update lint rules with the help of the
   tool.'
 og:
-  image: /assets/images/posts/2022-03-07-better-code-with-lint-to-the-future/og-image.png
+  image: /assets/images/posts/2022-03-07-better-code-with-lint-to-the-future/og-image.jpg
 tagline: |
   <p>Have you ever wanted to add a new lint rule to your project but didn’t have time
   to fix a thousand files at once just to get your ci passing again? In this post,

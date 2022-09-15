@@ -4,7 +4,7 @@ authorHandle: inesoaresilva
 tags: process
 bio: "Junior Software-Engineer"
 og:
-  image: /assets/images/posts/2022-05-19-journey-of-a-junior-software-engineer/og-image.png
+  image: /assets/images/posts/2022-05-19-journey-of-a-junior-software-engineer/og-image.jpg
 description:
   "Inês Silva is currently the only junior software-engineer at Mainmatter. She
   shares how it is to onboard into your 1st software engineer job, and how her

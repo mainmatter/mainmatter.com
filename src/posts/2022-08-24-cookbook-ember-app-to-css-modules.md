@@ -8,7 +8,7 @@ description:
   discovering ember-css-module from a practical perspective to get a different
   view on the doc."
 og:
-  image: /assets/images/posts/2022-08-24-cookbook-ember-app-to-css-modules/og-image.png
+  image: /assets/images/posts/2022-08-24-cookbook-ember-app-to-css-modules/og-image.jpg
 tagline: |
   <p>This short tutorial is intended to help Ember developers to migrate an Ember app
   using global CSS to CSS modules with <a href="https://github.com/salsify/ember-css-modules">ember-css-modules</a>.</p>

@@ -7,7 +7,7 @@ description:
   Ember CLI applications and explains how that works under the hood."
 tags: ember
 og:
-  image: /assets/images/posts/2017-02-13-npm-libs-in-ember-cli/og-image.png
+  image: /assets/images/posts/2017-02-13-npm-libs-in-ember-cli/og-image.jpg
 tagline: |
   <p>tl;dr Use npm instead of Bower whenever you can!</p> <p>With Ember 2.11 we are now using the [<code>ember-source</code>][ember-source] module and no longer the <code>ember</code> [Bower][bower] package. In the upcoming Ember CLI 2.12 release, Bower will also no longer be installed by default and only install lazily when an addon requests it. All this indicates that from now on we should try to use npm packages instead of Bower whenever possible. This blog post will explain how we can do that and what options are available to us.</p>
 ---

@@ -7,7 +7,7 @@ description:
   "Tobias Bieniek shares how to set up the Renovate bot for automatic dependency
   updates with self-hosted internal GitLab servers."
 og:
-  image: /assets/images/posts/2019-04-24-dependency-updates-for-gitlab/og-image.png
+  image: /assets/images/posts/2019-04-24-dependency-updates-for-gitlab/og-image.jpg
 tagline: |
   <p>Are your dependencies hopelessly outdated? Would you need to hire another developer just to keep up with the maintenance work of keeping them up-to-date? If those questions match your project then this blog post is for you. Keep reading and we will show you how to solve a lot of these issues with some easy to use tools.</p>
 ---

@@ -7,7 +7,7 @@ description:
   "Ghislaine Guerin presents techniques for getting the most out of kick-off
   meetings."
 og:
-  image: /assets/images/posts/2020-05-04-facilitate-client-onboarding/og-image.png
+  image: /assets/images/posts/2020-05-04-facilitate-client-onboarding/og-image.jpg
 tagline: |
   <p>Could some adjustments to kick-off meetings lead to a more streamlined and efficient collaboration?</p>
 ---

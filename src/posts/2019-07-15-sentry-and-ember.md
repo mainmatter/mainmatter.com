@@ -7,7 +7,7 @@ description:
   "Tobias Bieniek explains how to set up Sentry for Ember.js applications using
   @sentry/browser instead of the now unnecessary ember-cli-sentry."
 og:
-  image: /assets/images/posts/2019-07-15-sentry-and-ember/og-image.png
+  image: /assets/images/posts/2019-07-15-sentry-and-ember/og-image.jpg
 tagline: |
   <p>Are you confident that your apps have no bugs? Do you not need a support team because no user ever complains about something not working? Then this post is not for you!</p> <p>We use a lot of tools at Mainmatter to ensure reasonably high quality code, but occasionally something slips through. The important thing then is to notice and fix it quickly. This post will focus on the &quot;notice&quot; part by using <a href="https://sentry.io/">Sentry</a> error reporting in <a href="https://emberjs.com/">Ember.js</a> apps.</p>
 ---

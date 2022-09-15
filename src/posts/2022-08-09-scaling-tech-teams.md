@@ -7,7 +7,7 @@ description:
   "Marco Otte-Witte shares learnings around growing tech teams and how to avoid
   typical mistakes."
 og:
-  image: /assets/images/posts/2022-08-09-scaling-tech-teams/og-image.png
+  image: /assets/images/posts/2022-08-09-scaling-tech-teams/og-image.jpg
 tagline: |
   <p>Every successful company will face the challenge of having to scale their tech
   team sooner or later. There will be more to build and maintain than the small

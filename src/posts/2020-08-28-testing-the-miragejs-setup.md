@@ -6,7 +6,7 @@ bio: "Senior Frontend Engineer"
 description:
   "Tobias Bieniek explains how to write tests for your Mirage.js mock API setup."
 og:
-  image: /assets/images/posts/2020-08-28-testing-the-miragejs-setup/og-image.png
+  image: /assets/images/posts/2020-08-28-testing-the-miragejs-setup/og-image.jpg
 tagline: |
   <p><a href="https://miragejs.com/">Mirage.js</a> is a universal library to mock out HTTP-based APIs. It has proven quite useful to us in several client projects, where it helped us write a lot of acceptance tests in a concise, but flexible manner.</p> <p>The issue with tools like this is that you are not testing &quot;the real API&quot; though. This is where end-to-end tests are useful, but since those kinds of tests are quite slow and complex it would be quite costly to use them for all the kinds of tests in a modern web application.</p> <p>One solution to some of the challenges of using a mock API is to test it and make sure it matches what you would expect from your real API. In this blog post we will show you how we started writing tests for our Mirage.js setup and why it might be useful for you too.</p>
 ---

@@ -7,7 +7,7 @@ description:
   "Patsy Issa makes the case for refactoring legacy code sooner rather than
   later"
 og:
-  image: /assets/images/posts/2020-08-03-the-true-cost-of-a-quickfix/og-image.png
+  image: /assets/images/posts/2020-08-03-the-true-cost-of-a-quickfix/og-image.jpg
 tagline: |
   <p>Picture this, a sprint is underway, development is running smoothly, then QA reports a rather odd bug, you begin to investigate and lo and behold you find the following comment:</p> <pre><code class="language-javascript">// Dear programmer: // When I wrote this code, only god and I knew how it worked // Now, only god knows </code></pre>
 ---

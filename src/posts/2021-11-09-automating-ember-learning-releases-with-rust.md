@@ -7,7 +7,7 @@ description:
   "Ricardo Mendes discusses a command-line tool built in Rust that automates the
   releases process for the Ember Core Learning Team"
 og:
-  image: /assets/images/posts/2021-11-09-automating-ember-learning-releases-with-rust/og-image.png
+  image: /assets/images/posts/2021-11-09-automating-ember-learning-releases-with-rust/og-image.jpg
 tagline: |
   <p>Releasing a new version of Ember is no uncomplicated task. This process involves several different core teams, who are responsible for several packages and resources between them. In this post, I will explain how I used Rust to build a tool that automates part of the Ember release process.</p>
 ---

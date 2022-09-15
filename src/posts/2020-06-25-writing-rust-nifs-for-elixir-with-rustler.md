@@ -7,7 +7,7 @@ description:
   "Niklas Long describes the upcoming changes to Rustler and how it simplifies
   implementing NIFs."
 og:
-  image: /assets/images/posts/2020-06-25-writing-rust-nifs-for-elixir-with-rustler/og-image.png
+  image: /assets/images/posts/2020-06-25-writing-rust-nifs-for-elixir-with-rustler/og-image.jpg
 tagline: |
   <p>A Native Implemented Function is implemented in C (or Rust when using <a href="https://github.com/rusterlium/rustler">Rustler</a>) and can be called from Elixir or Erlang just like any other function. It's the simplest and fastest way to run native code from Erlang but it does come with a caveat: a crash in a NIF can bring down the whole BEAM. This makes Rust a safer option than C for implementing NIFs as its type system and ownership model guarantee memory and thread-safety.</p>
 ---

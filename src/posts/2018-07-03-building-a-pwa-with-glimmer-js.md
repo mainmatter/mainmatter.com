@@ -7,7 +7,7 @@ description:
   an open source progressive web app, with Glimmer.js."
 tags: ember
 og:
-  image: /assets/images/posts/2018-07-03-building-a-pwa-with-glimmer-js/og-image.png
+  image: /assets/images/posts/2018-07-03-building-a-pwa-with-glimmer-js/og-image.jpg
 tagline: |
   <p>We recently set out to build a progressive web app with <a href="http://glimmerjs.com">Glimmer.js</a>. Instead of building it with <a href="http://emberjs.com">Ember.js</a>, which is our standard framework of choice, we wanted to see how suitable for prime-time Glimmer.js is and what we'd be able to accomplish with it. To put it short, we are really happy with how building the app went and the result that we were able to achieve. In this series of posts, we will give some insights into how we built the app, why we made particular decisions and what the result looks like.</p>
 ---

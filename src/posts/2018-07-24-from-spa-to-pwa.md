@@ -7,7 +7,7 @@ description:
   shows how to make the next step from a SPA to a PWA."
 tags: javascript
 og:
-  image: /assets/images/posts/2018-07-24-from-spa-to-pwa/og-image.png
+  image: /assets/images/posts/2018-07-24-from-spa-to-pwa/og-image.jpg
 tagline: |
   <p>Progressive Web Apps are the next level of browser based applications. While Single Page Apps (SPAs) have already meant a giant leap forward, PWAs are taking things even one step further. They offer a rich user experience that parallels what users know and expect from native apps and combine that with the benefits that browser based applications provide. In this post, we'll look at how to turn a Single Page App into a Progressive Web App.</p>
 ---

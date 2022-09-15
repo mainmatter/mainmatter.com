@@ -7,7 +7,7 @@ description:
   "Ricardo Mendes explains how Ember templates have evolved in the path to Ember
   Octane to bring more clarity for developers."
 og:
-  image: /assets/images/posts/2019-12-20-clarity-in-templates/og-image.png
+  image: /assets/images/posts/2019-12-20-clarity-in-templates/og-image.jpg
 tagline: |
   <p>When reading Ember templates, have you ever wondered where a certain dynamic value comes from? Is that dynamic value a property of the component, a named argument that was passed in, or even a helper?</p> <p>In this blog post we will be discussing how recent Ember.js modernization efforts on the path to Ember Octane have brought features that help with this exact problem.</p>
 ---

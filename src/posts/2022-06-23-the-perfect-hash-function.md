@@ -8,7 +8,7 @@ description:
   faster by using perfect hash functions with the rust-phf crate and moving work
   from runtime to compile time."
 og:
-  image: /assets/images/posts/2022-06-23-the-perfect-hash-function/og-image.png
+  image: /assets/images/posts/2022-06-23-the-perfect-hash-function/og-image.jpg
 tagline: |
   <p>This is the story of how we made the <a href="https://github.com/conduit-rust/conduit-mime-types">conduit-mime-types</a> Rust crate almost
   infinitely faster, using perfect hash functions and compile-time code

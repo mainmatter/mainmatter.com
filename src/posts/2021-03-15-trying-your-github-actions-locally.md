@@ -5,7 +5,7 @@ tags: github
 bio: "Senior Frontend Engineer"
 description: "Samanta de Barros on how to try locally your GitHub Actions"
 og:
-  image: /assets/images/posts/2021-03-15-trying-github-actions-locally/og-image.png
+  image: /assets/images/posts/2021-03-15-trying-github-actions-locally/og-image.jpg
 tagline: |
   <p>If, like me, configuring <a href="https://docs.github.com/en/actions">GitHub Actions</a> is not your thing and you find yourself wanting to try something before actually pushing it to GitHub (and having to see the effects on real-life), follow this step by step of how to run your GitHub Actions on your own computer.</p>
 ---

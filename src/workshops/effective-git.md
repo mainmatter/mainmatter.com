@@ -14,7 +14,7 @@ hero:
   image: "/assets/images/workshops/effective-git/effective-git-workshop-hero.jpg"
   imageAlt: "Screenshot of an example Git project"
 og:
-  image: /assets/images/workshops/effective-git/og-image.png
+  image: /assets/images/workshops/effective-git/og-image.jpg
 topics:
   - heading: Delivery pipelines
     text: >

@@ -4,7 +4,7 @@ authorHandle: nickschot
 tags: ember
 bio: "Senior Software Engineer"
 og:
-  image: /assets/images/posts/2022-03-17-dynamic-components-embroider/og-image.png
+  image: /assets/images/posts/2022-03-17-dynamic-components-embroider/og-image.jpg
 description:
   "Nick Schot explains how to make dynamic component invocation work with
   Embroider's static analysis."

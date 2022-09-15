@@ -7,7 +7,7 @@ description:
   used to build a basic TCP client."
 tags: rust
 og:
-  image: /assets/images/posts/2018-06-27-actix-tcp-client/og-image.png
+  image: /assets/images/posts/2018-06-27-actix-tcp-client/og-image.jpg
 tagline: |
   <p>In our <a href="/blog/2018/06/11/actix/">last post</a> about <a href="https://actix.rs/">actix</a> we introduced you to the <a href="https://rust-lang.org/">Rust</a> programming language and the actix actor framework. This week we will build a basic TCP client with actix.</p>
 ---

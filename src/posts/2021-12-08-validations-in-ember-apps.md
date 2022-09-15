@@ -7,7 +7,7 @@ description:
   "Bartlomiej Dudzik shows how you can easily create validations wrapper based
   on a library of your liking."
 og:
-  image: /assets/images/posts/2021-12-08-validations-in-ember-apps/og-image.png
+  image: /assets/images/posts/2021-12-08-validations-in-ember-apps/og-image.jpg
 tagline: |
   <p>Since Ember's Octane edition it's much easier to integrate with third-party libraries. Because of that I've been searching for alternatives to <code>ember-changeset</code> and <code>ember-cp-validations</code>. I will show you how to create your own validations around the Yup validations library.</p>
 imageAlt: Data validation in Ember with Yup illustration

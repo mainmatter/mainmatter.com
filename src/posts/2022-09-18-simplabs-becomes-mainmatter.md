@@ -7,7 +7,7 @@ description:
   "Marco Otte-Witte shares some background on the rebranding from simplabs to
   Mainmatter."
 og:
-  image: /assets/images/posts/2022-09-18-simplabs-becomes-mainmatter/og-image.png
+  image: /assets/images/posts/2022-09-18-simplabs-becomes-mainmatter/og-image.jpg
 tagline: |
   <p>Today we are rebranding simplabs to Mainmatter! This change improves the alignment of our brand with what we stand for and what value we deliver for the teams we work with. In this post, I share some insights regarding the origins of the simplabs brand as well as how we got to our new brand Mainmatter.</p>
 image: "/assets/images/posts/2022-09-18-simplabs-becomes-mainmatter/mainmatter.svg"

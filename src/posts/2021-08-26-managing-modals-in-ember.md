@@ -7,7 +7,7 @@ description:
   "Exploring better and easier handling of modal dialogs in Ember.js
   applications"
 og:
-  image: /assets/images/posts/2021-08-26-managing-modals-in-ember/og-image.png
+  image: /assets/images/posts/2021-08-26-managing-modals-in-ember/og-image.jpg
 tagline: |
   <p>Modal dialogs are about as widespread as they are missunderstood. No matter if you call them modal windows, popups, popovers, overlays, or dialogs: A thing that asks a question or presents a subordinate task; a general annoyance to developers and accessibility experts alike.</p> <p>Even if you use them rarely, most applications will need modal dialogs at some point to ask existential questions. The app asks your user and waits to resolve its uncertainty by their answer.</p>
 ---

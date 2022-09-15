@@ -7,7 +7,7 @@ description:
   "Marco Otte-Witte on how highly automated and integrated development
   infrastructure enables simpler and more effective workflows."
 og:
-  image: /assets/images/posts/2021-07-13-effective-infrastructure-for-efficient-development-workflows/og-image.png
+  image: /assets/images/posts/2021-07-13-effective-infrastructure-for-efficient-development-workflows/og-image.jpg
 tagline: |
   <p>Building software products of any kind is hard enough. Doing so without the support of powerful infrastructure that enables efficient workflows is even harder. Yet, many teams are suffering from the absence of such infrastructure, forcing them into very much inefficient workflows with substantial time and effort going into synchronizing the work of different engineers, tracking down bugs, and getting back to tasks later that were already thought to be complete.</p>
 ---

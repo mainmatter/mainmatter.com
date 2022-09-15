@@ -4,7 +4,7 @@ authorHandle: nickschot
 tags: javascript
 bio: "Senior Software Engineer"
 og:
-  image: /assets/images/posts/2021-01-29-web-animations-intro/og-image.png
+  image: /assets/images/posts/2021-01-29-web-animations-intro/og-image.jpg
 tagline: |
   <p>Animations can be a useful tool to enhance the user experience on the web. Aside from providing an appealing visual experience, animations can aid in the user's understanding of elements appearing, moving and disappearing from a page. This blog post will provide a short overview of the status quo of animating the web and take an initial look at the current capabilities of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API">Web Animations API</a>.</p>
 ---

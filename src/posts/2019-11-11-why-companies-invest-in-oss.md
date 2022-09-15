@@ -8,7 +8,7 @@ description:
   software work as a regular practice and how companies can benefit from an
   investment into OSS."
 og:
-  image: /assets/images/posts/2019-11-11-why-companies-invest-in-oss/og-image.png
+  image: /assets/images/posts/2019-11-11-why-companies-invest-in-oss/og-image.jpg
 tagline: |
   <p>Less productivity, missed project deadlines and wasted money: that’s what you get for letting your developers work on open-source projects. Or do you really?</p> <p>This blog post highlights on which levels contribution to open-source provides value to businesses and demonstrates why paying your team to spend time on OSS might be the best business decision you will make this year.</p>
 ---

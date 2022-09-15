@@ -4,7 +4,7 @@ authorHandle: oscard0m_
 tags: company-culture
 bio: "Software Engineer"
 og:
-  image: /assets/images/posts/2022-05-11-what-to-do-if-you-dont-feel-heard-at-work/og-image.png
+  image: /assets/images/posts/2022-05-11-what-to-do-if-you-dont-feel-heard-at-work/og-image.jpg
 description:
   Oscar Dominguez writes to himself of the past and tries to make him realize
   that a better world is possible. There are companies where employees are

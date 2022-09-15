@@ -7,7 +7,7 @@ description:
   "Tobias Bieniek explains mechanisms for automating npm releases for reduced
   effort and improved reliability with lerna-changelog and release-it."
 og:
-  image: /assets/images/posts/2021-11-26-publish-on-npm/og-image.png
+  image: /assets/images/posts/2021-11-26-publish-on-npm/og-image.jpg
 tagline: |
   <p>Publishing JavaScript projects on <a href="https://www.npmjs.com">npm</a> can become quite an overwhelming task when projects grow to a certain size. At Mainmatter we're maintaining over a dozen actively used JavaScript projects that we've published on npm. We don't always have plenty of time for that, but we made sure that at least the release process is as automated as possible, so that we can spend our time on the things that really matter.</p> <p>This blog post will show you three of our most important tricks to improve how you publish your packages to npm.</p>
 image: "/assets/images/photos/coding.jpg"

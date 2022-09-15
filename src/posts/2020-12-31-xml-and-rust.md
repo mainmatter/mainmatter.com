@@ -4,7 +4,7 @@ authorHandle: tobiasbieniek
 tags: rust
 bio: "Senior Software Engineer"
 og:
-  image: /assets/images/posts/2020-12-31-xml-and-rust/og-image.png
+  image: /assets/images/posts/2020-12-31-xml-and-rust/og-image.jpg
 tagline: |
   <p>Last week we spent some time researching the current state of <a href="https://en.wikipedia.org/wiki/XML">XML</a> parsing and writing in the <a href="https://www.rust-lang.org">Rust</a> ecosystem. For a small side project we needed to read an XML file and turn its content into regular Rust <code>structs</code>. This blog post is a summary of what approaches we looked into, their tradeoffs and what we finally decided to use.</p>
 ---

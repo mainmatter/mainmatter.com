@@ -19,7 +19,7 @@ hero:
   image: "/assets/images/workshops/hands-on-ember/hands-on-ember-workshop-hero.jpg"
   imageAlt: "Illustration of Ember JS mascot Zoey on a purple background"
 og:
-  image: /assets/images/workshops/hands-on-ember/og-image.png
+  image: /assets/images/workshops/hands-on-ember/og-image.jpg
 topics:
   - heading: Ember.js basics
     text: >

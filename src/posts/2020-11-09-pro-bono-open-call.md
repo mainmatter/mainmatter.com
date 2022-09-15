@@ -7,7 +7,7 @@ tags: design
 bio: "Director of Product Design"
 description: "We are seeking applicants for pro-bono digital product design."
 og:
-  image: /assets/images/posts/2020-11-09-pro-bono-open-call/og-image.png
+  image: /assets/images/posts/2020-11-09-pro-bono-open-call/og-image.jpg
 tagline: |
   <p>We want to give back to our community by sharing our knowledge and expertise with a founder from an <strong>underrepresented diversity group in tech</strong>, so they can successfully grow and evolve their digital product.</p>
 ---

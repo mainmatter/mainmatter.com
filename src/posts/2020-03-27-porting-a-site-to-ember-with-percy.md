@@ -7,7 +7,7 @@ description:
   "Chris Manson details a novel way to use Percy for tracking approximation of a
   visual baseline when porting a site from one technology to another."
 og:
-  image: /assets/images/posts/2020-03-27-porting-a-site-to-ember-with-percy/og-image.png
+  image: /assets/images/posts/2020-03-27-porting-a-site-to-ember-with-percy/og-image.jpg
 tagline: |
   <p>This article details a technique where the visual testing software <a href="https://percy.io/">Percy</a> was used to port the old <a href="https://guides.emberjs.com/release/">Ember Guides</a> to an entirely different technology, without anybody noticing.</p>
 ---

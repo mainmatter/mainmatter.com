@@ -8,7 +8,7 @@ description:
   landing page for Ember.js, looking specifically at how a distributed team of
   volunteers can achieve consistent design."
 og:
-  image: /assets/images/posts/2020-02-28-the-little-changes-that-helped-to-transform-an-RFC-into-emberjs-com/og-image.png
+  image: /assets/images/posts/2020-02-28-the-little-changes-that-helped-to-transform-an-RFC-into-emberjs-com/og-image.jpg
 tagline: |
   <p>The new landing page for Ember.js is a big project.</p> <p>In 2018 there was <a href="https://github.com/emberjs/rfcs/pull/425">an RFC</a> for updating the website. Which was a great thing, but there was just a mockup for the desktop website and a few of the interactive states. No version for small screens, no layout grid or repeatable measures.</p> <p>So besides development, there was the task of converting this initial design mockup into a full-featured design system with elements and components that can be reused across the large Ember.js universe for which the landing page is only the doorway.</p> <p>This post highlights some of the changes I proposed and which made it to the final website.</p>
 ---

@@ -8,7 +8,7 @@ description: |
   describes some tips and tricks that really help you clean up your branches and
   Pull Requests
 og:
-  image: /assets/images/posts/2021-05-26-keeping-a-clean-git-history/og-image.png
+  image: /assets/images/posts/2021-05-26-keeping-a-clean-git-history/og-image.jpg
 tagline: |
   <p>This post is designed to help you form a solid mental model while working with Git both professionally and in an open source project, and how to ensure you are following best practices to make the process easier for everyone.</p>
 ---
