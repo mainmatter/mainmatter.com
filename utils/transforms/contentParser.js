@@ -6,7 +6,7 @@ const config = require("../../src/_data/config.json");
 const Image = require("@11ty/eleventy-img");
 
 module.exports = function (value, outputPath) {
-  if (outputPath) {
+  if (outputPath && path.extname(outputPath) === ".html") {
     /**
      * Create the document model
      */
