@@ -6,6 +6,52 @@
 [build]
   environment = { NODE_VERSION = "16.17.0" }
 
+# redirect old workshop pages
+[[redirects]]
+  from = "https://elixir-phoenix-workshop.simplabs.com/*"
+  to = "https://mainmatter.com/expertise/elixir-phoenix/"
+  force = true
+
+[[redirects]]
+  from = "https://elixir-phoenix-workshops.simplabs.com/*"
+  to = "https://mainmatter.com/expertise/elixir-phoenix/"
+  force = true
+
+[[redirects]]
+  from = "https://elixir-workshops.simplabs.com/*"
+  to = "https://mainmatter.com/expertise/elixir-phoenix/"
+  force = true
+
+[[redirects]]
+  from = "https://phoenix-workshops.simplabs.com/*"
+  to = "https://mainmatter.com/expertise/elixir-phoenix/"
+  force = true
+
+[[redirects]]
+  from = "https://ember-basics-workshop.simplabs.com/*"
+  to = "https://mainmatter.com/services/workshops/hands-on-ember/"
+  force = true
+
+[[redirects]]
+  from = "https://ember-pro-workshop.simplabs.com/*"
+  to = "https://mainmatter.com/services/workshops/hands-on-ember/"
+  force = true
+
+[[redirects]]
+  from = "https://ember-workshop.simplabs.com/*"
+  to = "https://mainmatter.com/services/workshops/hands-on-ember/"
+  force = true
+
+[[redirects]]
+  from = "https://ember-workshops.simplabs.com/*"
+  to = "https://mainmatter.com/services/workshops/hands-on-ember/"
+  force = true
+
+[[redirects]]
+  from = "https://git-workshop.simplabs.com/*"
+  to = "https://mainmatter.com/services/workshops/effective-git/"
+  force = true
+
 # redirect old simplabs.com URLs
 [[redirects]]
   from = "/resources/workshop/digital-product-strategy"
