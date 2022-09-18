@@ -213,7 +213,7 @@ Take the initiative to dominate this art while being empathetic with the others:
 We would love to hear your personal experience on this topic. Do you have any
 tip or story you would like to share with us and the rest of the readers? Feel
 free to comment on our [Twitter](https://twitter.com/_mainmatter) or
-[LinkedIn](https://www.linkedin.com/company/mainmatter-gmbh/).
+[LinkedIn](https://www.linkedin.com/company/mainmatter/).
 
 ---
 
