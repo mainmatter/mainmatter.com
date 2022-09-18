@@ -6,6 +6,27 @@
 [build]
   environment = { NODE_VERSION = "16.17.0" }
 
+# redirect simplabs to Mainmatter
+[[redirects]]
+  from = "https://simplabs.com/*"
+  to = "https://mainmatter.com/:splat"
+  force = true
+
+[[redirects]]
+  from = "https://www.simplabs.com/*"
+  to = "https://mainmatter.com/:splat"
+  force = true
+
+[[redirects]]
+  from = "https://simplabs.de/*"
+  to = "https://mainmatter.com/:splat"
+  force = true
+
+[[redirects]]
+  from = "https://www.simplabs.de/*"
+  to = "https://mainmatter.com/:splat"
+  force = true
+
 # redirect old workshop pages
 [[redirects]]
   from = "https://elixir-phoenix-workshop.simplabs.com/*"
