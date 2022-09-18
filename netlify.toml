@@ -6,6 +6,12 @@
 [build]
   environment = { NODE_VERSION = "16.17.0" }
 
+# serve 404 simplabs' sitemap
+  [[redirects]]
+    from = "https://simplabs.com/sitemap.xml"
+    to = "/404.html"
+    status = 404
+
 # redirect simplabs to Mainmatter
 [[redirects]]
   from = "https://simplabs.com/*"
