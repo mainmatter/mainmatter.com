@@ -273,11 +273,6 @@ having infrastructure like this once it's absolutely needed, which is when
 trying to scale a team up without scaling down its relative velocity at the same
 time, is certainly much higher.
 
-If you're interested in development workflows and ways to increase efficiency,
-also have a look at
-[my talk on the topic](https://mainmatter.com/resources/video/2020/12/10/the-three-pillars-of-successful-digital-product-development/)
-in which I also touch on some process aspects:
-
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3K9jQfpkGWU?rel=0" title="Three pillars of successful digital product development - Product Circle - December 2020" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 _Mainmatter is a digital product development consultancy that helps teams ship
