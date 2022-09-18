@@ -1,0 +1,57 @@
+.talk-card__image-overlay {
+  aspect-ratio: initial;
+}
+
+.talk-card__content {
+  &--mobile {
+    display: block;
+  }
+
+  &--desktop {
+    margin-top: 0.5rem;
+    display: none;
+  }
+}
+
+.talk-card__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.talk-card__logo {
+  max-width: 5rem;
+  max-height: 3.25rem;
+}
+
+.talk-card__description {
+  margin: 2rem 0 0.5rem;
+}
+
+@media (min-width: 64em) {
+  .talk-card__image-overlay {
+    aspect-ratio: 9/8;
+  }
+
+  .talk-card__content {
+    &--mobile {
+      display: none;
+    }
+
+    &--desktop {
+      display: flex;
+    }
+  }
+
+  .talk-card__description {
+    margin: 0.5rem 0 0;
+    font-size: 0.875rem;
+    line-height: 1.8;
+  }
+
+  .talk-card__logo {
+    max-width: 6rem;
+    max-height: 3.25rem;
+  }
+}

@@ -1,0 +1,178 @@
+.rte {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+
+  h2 {
+    margin: 3rem 0 1.5rem;
+  }
+
+  h3 {
+    margin: 2rem 0 1rem;
+  }
+
+  h4,
+  h5,
+  h6 {
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: rem-calc(36);
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-weight: 700;
+    font-size: rem-calc(24);
+    line-height: 1.5;
+  }
+
+  img,
+  picture {
+    & + h2,
+    & + h3 {
+      margin-top: 0;
+    }
+  }
+
+  img,
+  picture {
+    display: block;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  figure picture,
+  picture img {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .image--full {
+    position: relative;
+    max-width: none;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  iframe[src*="youtube"] {
+    aspect-ratio: 16/9;
+  }
+
+  video,
+  iframe {
+    margin: 2rem auto;
+    width: 100%;
+    height: auto;
+  }
+
+  figure {
+    margin: 3rem auto;
+
+    img {
+      max-width: 100%;
+      margin: 0 0 0.5rem;
+    }
+
+    figcaption:not([class]) {
+      color: var(--color-purple);
+    }
+  }
+
+  blockquote {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    font-weight: 700;
+    position: relative;
+    margin: 2rem 0 2.5rem;
+    padding-left: 0;
+
+    &::before {
+      content: url("/assets/images/icons/quote.svg");
+      display: block;
+      position: static;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  author {
+    display: block;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+  }
+}
+
+.rte--small {
+  h2,
+  .h2 {
+    font-family: var(--font-base);
+    font-weight: 700;
+    font-size: rem-calc(24);
+    line-height: 1.25;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  h3,
+  .h3 {
+    font-family: var(--font-base);
+    font-weight: 700;
+    font-size: rem-calc(16);
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .rte  {
+    blockquote {
+      margin: 4rem 0 3rem;
+      padding-left: 3.75rem;
+  
+      &::before {
+        position: absolute;
+        left: 0;
+        top: -1.5rem;
+        margin-bottom: 0;
+      }
+    }
+
+    .image--full {
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+@media (min-width: 72em) {
+  .rte {
+    h2 {
+      font-size: rem-calc(44);
+    }
+
+    h3 {
+      margin: 2.5rem 0 1rem;
+    }
+
+    blockquote {
+      font-size: 1.5rem;        
+    }
+
+    author {
+      margin-top: 2rem;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.tags {
+  margin-top: 0;
+  padding: 0;
+  margin-left: -0.25rem;
+  margin-bottom: -0.25rem;
+}
+
+.tags__tag-item {
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.tags__tag {
+  display: inline-block;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--color-tag);
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
+  text-underline-offset: 0.125rem;
+  text-decoration-thickness: 0.0625rem;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+@media (min-width: 48em) {
+
+}

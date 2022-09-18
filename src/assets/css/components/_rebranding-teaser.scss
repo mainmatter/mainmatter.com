@@ -1,0 +1,82 @@
+.rebranding-teaser {
+  background: url(/assets/images/rebranding/teaser-background-mobile.svg) top right no-repeat;
+}
+
+.rebranding-teaser__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0.75rem 0;
+}
+
+.rebranding-teaser__header {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 40%;
+  font-family: var(--font-base);
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin: 1.25rem .5rem 0 0;
+}
+
+.rebranding-teaser__side-text {
+  margin: 0;
+  order: 3;
+  flex-basis: 100%;
+}
+
+.rebranding-teaser__header-simplabs {
+  color: var(--color-simplabs-blue);
+}
+
+.rebranding-teaser__header-mainmatter {
+  color: var(--color-purple);
+}
+
+.rebranding-teaser__button {
+  flex-grow: 0;
+  flex-shrink: 0;
+  color: var(--color-white);
+  background-color: var(--color-simplabs-blue);
+  border: solid var(--color-white) 2px;
+  text-decoration: none;
+  padding: 0.125rem 1.75rem;
+  transition: background-color ease 0.3s, color ease 0.3s, border ease 0.3s;
+}
+
+.rebranding-teaser__button:hover {
+  color: var(--color-simplabs-blue);
+  background-color: var(--color-white);
+  border: solid var(--color-simplabs-blue) 2px;
+}
+
+@media (min-width: 18em) {
+  .rebranding-teaser__header {
+    margin: 0;
+  }
+}
+
+@media (min-width: 56em) {
+  .rebranding-teaser {
+    background-image: url(/assets/images/rebranding/teaser-background.svg);
+    background-position: center right;
+    background-size: contain;
+  }
+
+  .rebranding-teaser__wrapper {
+    align-items: baseline;
+    flex-wrap: nowrap;
+  }
+
+  .rebranding-teaser__header {
+    flex-basis: auto;
+    margin: 0;
+  }
+
+  .rebranding-teaser__side-text {
+    order: initial;
+    flex-basis: auto;
+  }
+}

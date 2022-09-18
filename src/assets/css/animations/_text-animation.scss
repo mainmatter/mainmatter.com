@@ -1,0 +1,30 @@
+.text-animation,
+.text-animation-offset {
+  em {
+    font-style: normal;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body[data-js-enabled="true"] {
+    .text-animation,
+    .text-animation-offset {
+      em {
+        display: inline-block;
+        position: relative;
+      }
+    }
+
+    .text-animation__cover,
+    .text-animation__cover-offset {
+      display: block;
+      position: absolute;
+      top: -0.0625rem;
+      left: -0.0625rem;
+      right: -0.0625rem;
+      bottom: -0.0625rem;
+      background-color: var(--color-animation);
+      transform-origin: center left;
+    }
+  }
+}

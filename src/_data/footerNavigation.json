@@ -1,0 +1,80 @@
+{
+  "menus": [
+    {
+      "heading": "Services",
+      "links": [
+        {
+          "text": "Team Augmentation & Training",
+          "link": "/services/team-augmentation-and-training/"
+        },
+        {
+          "text": "Digital Products & Design",
+          "link": "/services/digital-products-and-design/"
+        },
+        {
+          "text": "Workshops",
+          "link": "/services/workshops/"
+        }
+      ]
+    },
+    {
+      "heading": "Work",
+      "links": [
+        {
+          "text": "Qonto",
+          "link": "/cases/qonto/"
+        },
+        {
+          "text": "Trainline",
+          "link": "/cases/trainline/"
+        },
+        {
+          "text": "Timify",
+          "link": "/cases/timify/"
+        },
+        {
+          "text": "DDWRT",
+          "link": "/cases/ddwrt/"
+        },
+        {
+          "text": "Expedition",
+          "link": "/cases/expedition/"
+        }
+      ]
+    },
+    {
+      "heading": "Resources",
+      "links": [
+        {
+          "text": "Blog",
+          "link": "/blog/"
+        },
+        {
+          "text": "Playbook",
+          "link": "/playbook/"
+        },
+        {
+          "text": "Ember.js",
+          "link": "/ember-consulting/"
+        },
+        {
+          "text": "Elixir & Phoenix",
+          "link": "/expertise/elixir-phoenix/"
+        }
+      ]
+    },
+    {
+      "heading": "Connect",
+      "links": [
+        {
+          "text": "Contact us",
+          "link": "/contact/"
+        },
+        {
+          "text": "Events",
+          "link": "/events/"
+        }
+      ]
+    }
+  ]
+}

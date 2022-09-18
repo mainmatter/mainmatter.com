@@ -9,120 +9,50 @@ on:
     - cron:  '0 3 * * *' # daily, at 3am
 
 jobs:
-  lints:
+  lint:
     name: Linting
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        lint-suite:
-          - lint:ts
-          - lint:js
-          - lint:hbs
-          - lint:css
-          - lint:md
-
     steps:
-      - uses: actions/checkout@v1
-      - uses: volta-cli/action@v1
-
-      - name: get yarn cache dir
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - uses: actions/cache@v1
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-lint-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+      - uses: actions/checkout@v3
+      - uses: volta-cli/action@v3
 
       - name: install dependencies
         run: yarn install
 
       - name: lint
-        run: yarn ${{ matrix.lint-suite }}
+        run: yarn lint
 
-  tests:
-    name: Tests
+  visual-regressions:
+    name: 'Visual Regressions'
     runs-on: ubuntu-latest
-
+  
     steps:
-      - uses: actions/checkout@v1
-      - uses: volta-cli/action@v1
-
-      - name: get yarn cache dir
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - uses: actions/cache@v1
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-lint-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: install dependencies
-        run: yarn install
-
-      - name: test
-        run: yarn test
-
-  validations:
-    name: Validation
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        validation-suite:
-          - crawl
-          - percy
-
-    steps:
-      - uses: actions/checkout@v1
-      - uses: volta-cli/action@v1
-
-      - name: get yarn cache dir
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - uses: actions/cache@v1
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-lint-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+      - uses: actions/checkout@v3
+      - uses: volta-cli/action@v3
 
       - name: install dependencies
         run: yarn install
 
       - name: build
-        run: yarn build
+        # build and disable lazy loading of images which makes the Percy snapshots random otherwise
+        run: |
+          yarn build
+          find ./dist/**/*.html -type f -exec sed -i '' -e 's/loading=\"lazy\"//gI' {} \;
 
-      - name: validation
+      - name: snapshots
         env:
           PERCY_TARGET_BRANCH: ${{ github.base_ref }}
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-        run: yarn ${{ matrix.validation-suite }}
+        run: yarn percy dist
 
-  metrics:
-    name: Lighthouse
+  performance:
+    name: 'Performance'
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-      - uses: volta-cli/action@v1
-
-      - name: get yarn cache dir
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - uses: actions/cache@v1
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-lint-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+      - uses: actions/checkout@v3
+      - uses: volta-cli/action@v3
 
       - name: install dependencies
         run: yarn install
@@ -130,6 +60,26 @@ jobs:
       - name: build
         run: yarn build
 
-      - run: yarn run lhci autorun --collect.staticDistDir=./dist --collect.url=http://localhost/ --collect.url=http://localhost/blog/ --collect.url=http://localhost/services/ --collect.url=http://localhost/ember-consulting/ --collect.url=http://localhost/playbook/ --collect.url=http://localhost/contact/ --collect.url=http://localhost/resources/ --collect.url=http://localhost/resources/workshop/hands-on-ember/ --collect.url=http://localhost/resources/video/2020/12/02/built-to-last-christina-roinzheim-not-less-but-better/ --upload.target=temporary-public-storage
+      - name: lighthouse
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+        run: yarn run lhci autorun --collect.staticDistDir=./dist --collect.url=http://localhost/ --collect.url=http://localhost/blog/ --collect.url=http://localhost/services/team-augmentation-and-training/ --collect.url=http://localhost/ember-consulting/ --collect.url=http://localhost/playbook/ --collect.url=http://localhost/contact/ --collect.url=http://localhost/services/workshops/hands-on-ember/ --collect.url=http://localhost/blog/2022/09/18/simplabs-becomes-mainmatter/ --upload.target=temporary-public-storage
+
+  crawl:
+    name: 'Crawl Links'
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: volta-cli/action@v3
+    
+      - name: install dependencies
+        run: yarn install
+    
+      - name: build
+        run: yarn build
+    
+      - name: crawl
+        run: yarn crawl dist

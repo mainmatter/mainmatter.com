@@ -1,0 +1,25 @@
+.expertise__logo {
+  max-width: 8rem;
+  margin-bottom: 0.25rem;
+}
+
+.expertise__image-row {
+  margin: 1.5rem 0 3.25rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.expertise__image-ember-1 {
+  width: 8.25rem;
+}
+
+.expertise__image-ember-2 {
+  width: 19rem;
+}
+
+@media (min-width: 72em) {
+  .expertise__logo {
+      max-width: 18rem;
+    }
+}

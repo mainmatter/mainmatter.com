@@ -1,0 +1,21 @@
+{#
+List of clients as cards
+
+Configuration Options:
+list: An array where each item is the slug for the case study.
+#}
+{%- macro clientCards(clients) -%}
+  {% for clientHandle in clients -%}
+    {% set client = clientHandle | findBySlug %}
+    {% if client %}
+      <li class="client-card">
+        <div class="client-card__image">
+          {% set imagePath %}/assets/images/logos/monochrome/{{ clientHandle }}.svg{% endset %} <img src="{{ imagePath }}" alt="{{ client.data.company }}"/>
+        </div>
+        <div class="client-card__text text--sm">
+          {{ client.data.description | safe }}
+        </div>
+      </li>
+    {% endif %}
+  {% endfor %}
+{%- endmacro -%}

@@ -1,0 +1,12 @@
+{
+  "contactMethods": [
+    {
+      "text": "+49 89 452 139 03",
+      "link": "tel:+498945213903"
+    },
+    {
+      "text": "info@mainmatter.com",
+      "link": "mailto:info@mainmatter.com"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+.secondary-feature {
+  max-width: 23.75rem;
+  margin: 4.5rem auto 7rem;
+  color: var(--color-white);
+  background-color: var(--color-purple);
+  padding: 1.75rem 1.25rem;
+  box-shadow: 0px 2px 5px 0px rgba(135, 135, 135, 0.5);
+
+  .split-content__feature & {
+    margin: auto;
+  }
+}
+
+.secondary-feature__link {
+  color: currentColor;
+}
+
+.secondary-feature__text {
+  margin: 1rem 0 2rem;
+}
+
+.secondary-feature__image-wrapper {
+  max-width: 17rem;
+  padding: 2.5rem;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 0;
+  background-color: var(--color-white);
+  margin-bottom: -3.75rem;
+  box-shadow: 0px 2px 5px 0px rgba(135, 135, 135, 0.5);
+}
+
+.secondary-feature__image {
+  max-width: 7.25rem;
+}

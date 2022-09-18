@@ -1,44 +1,28 @@
-module.exports = {
-  globals: {
-    server: true,
-  },
-  root: true,
-  plugins: ['prettier'],
-  extends: ['simplabs', 'prettier'],
-  rules: {
-    'comma-dangle': ['error', 'always-multiline'],
-    quotes: ['error', 'single'],
+"use strict";
 
-    'prettier/prettier': 'error',
-  },
+module.exports = {
+  root: true,
   parserOptions: {
-    ecmaVersion: '2018',
+    ecmaVersion: "2020",
+    sourceType: "module",
+  },
+  plugins: ["prettier", "node"],
+  extends: ["eslint:recommended", "prettier"],
+  env: {
+    node: true,
+    browser: false,
+    es6: true,
+  },
+  rules: {
+    "prettier/prettier": "error",
   },
   overrides: [
     {
-      files: [
-        '.eslintrc.js',
-        'testem.js',
-        'ember-cli-build.js',
-        'config/**/*.js',
-        'lib/*/index.js',
-        'scripts/**/*.js',
-        'server/**/*.js',
-      ],
-      parserOptions: {
-        sourceType: 'script',
-        ecmaVersion: 2018,
-      },
+      // Test files:
+      files: ["src/assets/**/*.js"],
       env: {
-        browser: false,
-        node: true,
-      },
-    },
-    // CLI scripts
-    {
-      files: ['scripts/**/*.js'],
-      rules: {
-        'no-console': 'off',
+        node: false,
+        browser: true,
       },
     },
   ],

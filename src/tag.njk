@@ -1,0 +1,56 @@
+---
+renderData:
+  title: Tagged with “{{ paged.tag }}”
+description: 'The latest insights on product strategy, design and development. Read in-depth articles on the web technologies we master: Ember.js, Elixir/Phoenix, and JavaScript.'
+layout: base
+pagination:
+  data: collections.tagsPostsPaged
+  size: 1
+  alias: paged
+permalink: "/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 1 %}/page/{{ paged.number }}/{% endif %}"
+
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "post-card.njk" import postCard %}
+{% from "nav-pagination.njk" import navPagination %}
+
+<div class="collection-header">
+  <div class="container container--lg">
+    <h1>
+      <span class="collection-header__heading h4">Tagged with</span>
+      <span class="collection-header__heading h3 text--uppercase">#{{ paged.tag }}</span>
+    </h1>
+    <p class="collection-header__subheading">{{ paged.postTotal }} {% if paged.postTotal === 1 %}post {% else %}posts{% endif %}</p>
+  </div>
+</div>
+<div id="posts" class="container container--xl">
+  {% include 'global/tag-filter.njk' %}
+  <ol class="post-cards">
+    {%- for post in paged.posts -%}
+      <li class="post-cards__item">
+        {{ postCard(post) }}
+      </li>
+    {%- endfor -%}
+  </ol>
+
+  {% if paged.first != true %}
+    {%- set previous -%}/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 2 %}/page/{{ paged.number }}/{% endif %}{%- endset -%}
+  {% endif %}
+  {% if paged.last != true %}
+    {%- set next -%}/blog/tag/{{ paged.tag | slug }}/page/{{ paged.number + 1}}/{%- endset -%}
+  {% endif %}
+
+  {{ navPagination(previous, next) }}
+</div>
+
+{% set 'content' = {
+"title": "Grow <em>your business</em> with us",
+"text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+"linkUrl": "/contact/",
+"linkText": "Get in touch",
+"image": "/assets/images/photos/grow-with-us-blog.jpg",
+"alt": "Team member leaning against wall taking notes while talking to three other team members",
+"loading": "lazy"
+} %}
+{{ colorHero('center', 'small', 'aqua', content, true) }}

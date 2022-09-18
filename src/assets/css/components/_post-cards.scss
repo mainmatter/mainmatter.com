@@ -1,0 +1,152 @@
+.post-cards {
+  --spacing: 1rem;
+  --color-tag: var(--color-purple);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  padding-bottom: 8rem;
+}
+
+.post-cards__item {
+  &+& {
+    margin-top: 5rem;
+  }
+}
+
+.post-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  --color-tag: var(--color-purple);
+}
+
+.post-card__link-wrapper {
+  position: relative;
+}
+
+.post-card__link {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+
+  &:focus {
+    outline-offset: 0.25rem;
+  }
+
+  &:hover {
+    & ~ .post-card__cta:before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.post-card__tags {
+  margin: 1.25rem 0 var(--spacing);
+}
+
+.post-card__title {
+  display: none;
+  margin-bottom: 1.25rem;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.post-card__internal-link {
+  position: relative;
+  z-index: 3;
+  padding-right: 0.125rem;
+}
+
+.post-card__image-overlay {
+  position: relative;
+  min-width: 100%;
+  color: var(--color-white);
+  aspect-ratio: 9/8;
+}
+
+.post-card__image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.post-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.post-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
+  background-color: var(--color-black);
+  opacity: .6;
+}
+
+.post-card__content-wrapper {
+  position: relative;
+  padding: 1rem;
+  text-align: right;
+  height: 100%;
+}
+
+.post-card__mobile-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  gap: 1.5rem;
+}
+
+.post-card__content {
+  height: 100%;
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+}
+
+.post-card__author {
+  align-items: center;
+}
+
+.post-card__cta {
+  color: currentColor;
+}
+
+@media (min-width: 62em) {
+  .post-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem 1.5rem;
+  }
+
+  .post-cards__item {
+    &+& {
+      margin-top: 0;
+    }
+  }
+
+  .post-card__mobile-content {
+    display: none;
+  }
+
+  .post-card__title {
+    display: block;
+  }
+}

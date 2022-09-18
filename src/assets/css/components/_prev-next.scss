@@ -1,0 +1,20 @@
+.prev-next {
+  gap: 1rem;
+  margin-top: 5rem;
+  padding: 2rem 0 0;
+  border-top: rem-calc(1) solid var(--color-black);
+}
+
+.prev-next__title {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 700;
+  max-width: 20rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 48em) {
+  .prev-next__title {
+    font-size: 1.5rem;
+  }
+}

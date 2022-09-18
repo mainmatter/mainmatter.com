@@ -1,8 +1,0 @@
-:scope {
-  block-name: Container;
-
-  position: relative;
-  max-width: var(--max-width);
-  margin-left: auto;
-  margin-right: auto;
-}

@@ -1,0 +1,94 @@
+---
+layout: 'base'
+---
+
+{% from "author-socials.njk" import authorSocials %}
+{%- block content -%}
+<article>
+  <div class="workshop-hero color-hero color-hero--black" data-background-color="black">
+    <div class="color-hero__image-wrapper">
+      {% if hero.image %}
+        {% image hero.image, hero.imageAlt, '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
+      {% endif %}
+    </div>
+    <div class="color-hero__overlay"></div>
+    <div class="color-hero__container container container--lg color-hero__container--center">
+      <div class="color-hero__main">
+        <p class="workshop-hero__format">{{ format }}</p>
+        <h1 class="workshop-hero__title color-hero__title color-hero__title--full">{{ title | safe }}</h1>
+      </div>
+    </div>
+  </div>
+  <div class="workshop-authors">
+    <div class="container container--lg">
+      {%- for lead in leads -%}
+        <div class="author__wrapper">
+          <div class="author text--xs">
+            <div class="workshop-authors__image-wrapper author__image-wrapper">
+              {% image lead.image, lead.name, '3.75rem', 'eager', 'author__lead-image', [120] %}
+            </div>
+            <div class="author__text-wrapper">
+              <div class="author__name-wrapper">
+                <span>with&nbsp;</span>
+                {% if lead.handle %}
+                  <a href="/blog/author/{{ lead.handle }}" class="author__name">{{ lead.name }}</a>
+                {% else %}
+                  <p class="author__name">{{ lead.name }}</p>
+                {% endif %}
+              </div>
+              {% if lead.handle %}
+                {{ authorSocials(lead.handle, "author-socials--desktop-only") }}
+              {% endif %}
+              <div class="author__title">{{ lead.title }}</div>
+              {% if lead.handle %}
+                {{ authorSocials(lead.handle, "author-socials--mobile-only") }}
+              {% endif %}
+            </div>
+          </div>
+          <div class="author__details{% if lead.bio.length > 200 %} author__details--full-width{% endif %} text--sm">
+            <p>{{ lead.bio }}</p>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+  <div class="container container--lg post">
+    <div class="post__content post__content--workshop rte">
+      <div class="post__tagline">
+        {% if tagline %}
+          {{ tagline | safe }}
+        {% else %}
+          <p>{{ description | safe }}</p>
+        {% endif %}
+      </div>
+      {% set list %}
+      <h2 class="workshop-topics__heading h5">Workshop overview</h2>
+      <ol class="workshop-topics__list">
+        {% for item in topics %}
+          <li class="workshop-topics__item">
+            <div class="workshop-topics__text-wrapper">
+              <h3 class="workshop-topics__item-heading h4">{{ item.heading }}</h3>
+              <p class="text--sm">{{ item.text | safe }}</p>
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
+      {% if optional_topics %}
+        <h3 class="screenreader">Optional topics</h3>
+        <ul class="workshop-topics__list">
+          {% for item in optional_topics %}
+            <li class="workshop-topics__item workshop-topics__item--optional">
+              <div class="workshop-topics__text-wrapper">
+                <h3 class="workshop-topics__item-heading h4">{{ item.heading }}</h3>
+                <p class="text--sm">{{ item.text | safe }}</p>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {% endset %}
+      {{ content | replace('<!--break-->', list) | replace('<ul>', '<ul class="post__list post__list--workshop">') | safe }}
+    </div>
+  </div>
+</article>
+{% include 'content/hero-grow-with-us.njk' %}{%- endblock -%}

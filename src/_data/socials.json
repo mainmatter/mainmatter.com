@@ -1,0 +1,20 @@
+{
+  "socials": [
+    {
+      "text": "Youtube",
+      "link": "https://www.youtube.com/channel/UCVl-sKkK7VNcsKD4i2UbgAQ"
+    },
+    {
+      "text": "LinkedIn",
+      "link": "https://www.linkedin.com/company/mainmatter/"
+    },
+    {
+      "text": "Twitter",
+      "link": "https://twitter.com/_mainmatter/"
+    },
+    {
+      "text": "Github",
+      "link": "https://github.com/mainmatter/"
+    }
+  ]
+}

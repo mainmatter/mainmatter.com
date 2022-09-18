@@ -1,0 +1,45 @@
+{#
+List of logo items.
+
+Configuration Options:
+link: An array where each item is a string of the company name.
+An SVG image should be saved in the logos directory where the file name is equivalent to the slugified company name.
+
+Example usage:
+{% set logoCompanies = ['Qonto', 'Trainline', 'Timify', 'Cardstack', 'Generali', 'Experteer'] %}
+{{ logoList(logoCompanies) }}
+#}
+{%- macro logoList(logos, title) -%}
+  <section class="logo-list" id="logo-list">
+    {% if title %}
+      <div class="logo-list__title">
+        <h2 class="h3">{{ title }}</h2>
+      </div>
+    {% endif %}
+    <div class="logo-list__wrapper">
+      <div class="logo-list__inner" data-marquee style="--marquee-logo-count: {{ logos | length }};">
+        <ul class="logo-list__list">
+          {% for logo in logos %}
+            <li class="logo-list__item">
+              <div class="logo-list__image" aria-label="{{ logo }} logo">
+                {% set imagePath %}/logos/monochrome/{{ logo | slug }}.svg{% endset %}
+                {% svg imagePath, 'img' %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+        <ul class="logo-list__list logo-list__list--duplicate" aria-hidden="true">
+          {% for logo in logos %}
+            <li class="logo-list__item">
+              <div class="logo-list__image" aria-label="{{ logo }}">
+                {% set imagePath %}/logos/monochrome/{{ logo | slug }}.svg{% endset %}
+                {% svg imagePath, 'img' %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <button class="logo-list__button" data-marquee-controls>Pause animation</button>
+  </section>
+{%- endmacro -%}

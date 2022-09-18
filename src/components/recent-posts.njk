@@ -1,0 +1,28 @@
+{% from "cta-link.njk" import ctaLink %}
+{% from "post-banner.njk" import postBanner %}
+{% from "post-card.njk" import postCard %}
+
+{%- macro recentPosts(title, collection) -%}
+  <section class="recent-posts">
+    <div class="container container--xl">
+      <div class="recent-posts__title">
+        <h2 class="h5">{{ title }}</h2>
+        {{ ctaLink('/blog/', 'Explore more articles', 'recent-posts__cta recent-posts__cta--desktop') }}
+      </div>
+      <ol class="recent-posts__list">
+        {%- for post in collection -%}
+          {% if loop.index === 1 %}
+            <li class="recent-posts__item recent-posts__item--full-width">
+              {{ postBanner(post) }}
+            </li>
+          {% elif loop.index < 5 %}
+            <li class="recent-posts__item">
+              {{ postCard(post) }}
+            </li>
+          {% endif %}
+        {%- endfor -%}
+      </ol>
+      {{ ctaLink('/blog/', 'Explore more articles', 'recent-posts__cta recent-posts__cta--mobile') }}
+    </div>
+  </section>
+{%- endmacro -%}

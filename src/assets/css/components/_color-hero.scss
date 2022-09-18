@@ -1,0 +1,156 @@
+.color-hero {
+  position: relative;
+  aspect-ratio: auto;
+  overflow: hidden;
+  --overlay-opacity: 0.9;
+
+  &:first-of-type {
+    .color-hero__container {
+      padding: 6rem 0 3.25rem;
+    }
+  }
+
+  &--purple {
+    --color-animation: var(--color-aqua);
+    --color-link-background: var(--color-blue);
+    --color-overlay: var(--color-purple);
+    color: var(--color-white);
+  }
+
+  &--aqua {
+    --color-animation: var(--color-purple);
+    --color-overlay: var(--color-aqua);
+    color: var(--color-white);
+  }
+
+  &--black {
+    --color-animation: var(--color-purple);
+    --color-link-background: var(--color-aqua);
+    --color-overlay: var(--color-black);
+    color: var(--color-white);
+    --overlay-opacity: 0.2;
+  }
+
+  &--red {
+    --color-overlay: var(--color-red);
+    color: var(--color-white);
+    --overlay-opacity: 0.8;
+  }
+}
+
+.color-hero__image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.color-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-overlay);
+  mix-blend-mode: multiply;
+  opacity: var(--overlay-opacity);
+}
+
+.color-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.color-hero__container {
+  display: flex;
+  position: relative;
+  min-height: 100%;
+  padding: 3.25rem 0;
+  transform: translate3d(0, 0, 0);
+
+  &--center {
+    align-items: center;
+  }
+
+  &--bottom {
+    align-items: flex-end;
+  }
+}
+
+.color-hero__text {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  max-width: rem-calc(540);
+}
+
+.color-hero__title {
+  margin-bottom: 1.25rem;
+  max-width: rem-calc(620);
+
+  &--full {
+    max-width: rem-calc(780);
+  }
+}
+
+.color-hero__link {
+  margin-top: 2rem;
+  color: currentColor;
+}
+
+.color-hero__client-logo {
+  margin-bottom: 1rem;
+}
+
+.color-hero__client-tags {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 72em) {
+  .color-hero {
+    &:first-of-type {
+      .color-hero__container {
+        padding: 3.25rem 0;
+      }
+    }
+  }
+
+  .color-hero__text {
+    &--small {
+      font-size: 1.125rem;
+      line-height: 1.8;
+    }
+
+    &--large {
+      font-size: 1.5rem;
+      line-height: 1.6;
+    }
+  }
+
+  .color-hero__title {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .color-hero {
+    aspect-ratio: 5 / 3;
+    min-width: 100%;
+  }
+
+  .color-hero__container {
+    padding: 4.5rem 0;
+  }
+
+  .color-hero__link {
+    margin-top: 2.25rem;
+  }
+
+  .color-hero__client-tags {
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+  }
+}

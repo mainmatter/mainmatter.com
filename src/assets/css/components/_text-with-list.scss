@@ -1,0 +1,74 @@
+.text-with-list {
+  --color-text: var(--color-black);
+  --color-accent: var(--color-purple);
+  --icon-url: url("/assets/images/icons/arrow-purple.svg");
+  padding: 7.25rem 0;
+  color: var(--color-text);
+
+  &--purple,
+  &--black {
+    --color-text: var(--color-white);
+    --color-accent: var(--color-white);
+    --icon-url: url("/assets/images/icons/arrow-white.svg");
+    color: var(--color-accent);
+  }
+
+  &--purple {
+    background-color: var(--color-purple);
+  }
+
+  &--black {
+    background-color: var(--color-black);
+  }
+}
+
+.text-with-list__subheading {
+  max-width: 48.75rem;
+  margin: 3rem 0;
+}
+
+.text-with-list__text {
+  max-width: 23.75rem;
+}
+
+.text-with-list__list {
+  margin: 3.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: item;
+
+  &--unordered {
+    .text-with-list__item::before {
+      content: var(--icon-url);
+    }
+  }
+}
+
+.text-with-list__item {
+  display: flex;
+  align-items: center;
+  counter-increment: item;
+
+  &+& {
+    margin-top: 2rem;
+  }
+
+  &::before {
+    color: var(--color-accent);
+    height: 2rem;
+    width: 2rem;
+    content: counter(item) ".";
+    margin-right: 2.25rem;
+  }
+}
+
+.text-with-list__cta {
+  color: var(--color-accent);
+  margin-top: 3.5rem;
+}
+
+@media (min-width: 48em) {
+  .text-with-list {
+    padding: 7.75rem 0;
+  }
+}

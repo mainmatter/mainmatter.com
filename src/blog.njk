@@ -1,0 +1,50 @@
+---js
+{
+  title: "Product & Engineering Blog",
+  description: "The latest insights on product strategy, design and development. Read in-depth articles on the web technologies we master: Ember.js, Elixir/Phoenix, and JavaScript.",
+  permalink: "/blog/{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1 }}/{% endif %}",
+  layout: "base.njk",
+  pagination: {
+    data: "collections.posts",
+    size: 6,
+    alias: "posts",
+    before: function(data) { return data.slice(1); }
+  },
+  eleventyNavigation: {
+    key: "Blog",
+    order: 50
+  },
+  og: {
+    image: "/assets/images/blog/og-image.jpg"
+  }
+}
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "featured-post.njk" import featuredPost %}
+{% from "post-card.njk" import postCard %}
+{% from "nav-pagination.njk" import navPagination %}
+
+{{ featuredPost(collections.posts[0]) }}
+<div id="posts" class="container container--xl">
+  {% include 'global/tag-filter.njk' %}
+  <ol class="post-cards">
+    {%- for post in pagination.items -%}
+      <li class="post-cards__item">
+        {{ postCard(post) }}
+      </li>
+    {%- endfor -%}
+  </ol>
+  {% if pagination.pageNumber === 0 %}{% set nextLabel = 'Explore more articles' %}{% else %}{% set nextLabel = 'Next' %}{% endif %}
+  {{ navPagination(pagination.href.previous, pagination.href.next, nextLabel) }}
+</div>
+{% set 'content' = {
+  "title": "Grow <em>your business</em> with us",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact/",
+  "linkText": "Get in touch",
+  "image": "/assets/images/photos/grow-with-us-blog.jpg",
+  "alt": "Team member leaning against wall taking notes while talking to three other team members",
+  "loading": "lazy"
+} %}
+{{ colorHero('center', 'small', 'aqua', content, true) }}

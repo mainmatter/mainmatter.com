@@ -1,10 +1,10 @@
-const path = require('path');
-const express = require('express');
-const colors = require('colors');
-const { SiteChecker } = require('broken-link-checker');
+const path = require("path");
+const express = require("express");
+const colors = require("colors");
+const { SiteChecker } = require("broken-link-checker");
 
-const DIST_PATH = path.join(__dirname, '..', 'dist');
-const SERVER_URL = 'http://localhost:3000';
+const DIST_PATH = path.resolve(process.cwd(), "dist");
+const SERVER_URL = "http://localhost:3000";
 
 let server = express();
 server.use(express.static(DIST_PATH));
@@ -14,9 +14,7 @@ server.listen(3000, function () {
   let errors = 0;
 
   const siteChecker = new SiteChecker(
-    {
-      excludeExternalLinks: true,
-    },
+    {},
     {
       link(result) {
         if (result.broken) {
@@ -35,13 +33,13 @@ server.listen(3000, function () {
           process.exit(1);
         }
       },
-    },
+    }
   );
 
   siteChecker.enqueue(SERVER_URL);
 });
 
 function formatBrokenLink(link) {
-  let relativeBase = link.base.original.replace(SERVER_URL, '');
+  let relativeBase = link.base.original.replace(SERVER_URL, "");
   return `❌ ${relativeBase} -> ${link.url.original}`;
 }

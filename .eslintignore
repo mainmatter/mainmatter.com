@@ -1,11 +1,2 @@
-# unconventional js
-/blueprints/*/files/
-/vendor/
-/lib/*/vendor/
-
-# compiled output
-/dist/
-/tmp/
-
-# dependencies
-/node_modules/
+dist
+assets

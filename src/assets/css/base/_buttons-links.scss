@@ -1,0 +1,57 @@
+.cta-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-link-primary);
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover,
+  &:focus {
+    .cta-link__text {
+      color: var(--color-link-primary-hover);
+    }
+
+    .cta-link__arrow svg {
+      color: var(--color-link-primary-hover);
+    }
+  }
+}
+
+.cta-link__text {
+  position: relative;
+  z-index: 1;
+  color: currentColor;
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
+  text-underline-offset: 0.125rem;
+  text-decoration-thickness: 0.0625rem;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.cta-link__arrow {
+  position: relative;
+  margin-left: 0.25rem;
+  z-index: 1;
+
+  svg {
+    transform: rotate(-90deg);
+    transition: color 0.3s ease;
+  }
+
+  &--rotate {
+    margin-left: 0;
+    margin-right: 0.5rem;
+
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+}

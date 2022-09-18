@@ -1,0 +1,77 @@
+{#
+An individual card for post
+
+Configuration Options:
+post: A post object
+
+{{ postCard(post) }}
+#}
+{%- macro postCard(post) -%}
+  <div class="post-card">
+    <div class="post-card__link-wrapper">
+      <a href="{{ post.url }}" class="post-card__link">
+        <h2 class="screenreader">{{ post.data.title }}</h2>
+      </a>
+      <div class="post-card__image-overlay">
+        <div class="post-card__image-wrapper">
+          {% if post.data.image %}
+            {% image post.data.image, post.data.imageAlt, '(min-width: 48em) 44rem, 90vw', "lazy", 'post-card__image', [704, 1408] %}
+          {% else %}
+            {% image '/assets/images/photos/0027.jpg', 'Hands gesturing around a laptop', '(min-width: 48em) 44rem, 90vw', "lazy", 'post-card__image', [704, 1408]
+            %}
+          {% endif %}
+        </div>
+        <div class="post-card__overlay"></div>
+        <div class="post-card__content-wrapper">
+          <div class="post-card__date caption">{{ post.date | monthDayYear }}</div>
+          <div class="post-card__mobile-content" aria-hidden="true">
+            <p class="h4">{{ post.data.title }}</p>
+            <span class="post-card__cta cta-link">
+              <span class="cta-link__text-wrapper">
+                <span class="cta-link__text">Read article</span>
+                <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card__content">
+      <div class="post-card__content-top">
+        {% if post.data.tags %}
+          <div class="post-card__tags">
+            <ul class="tags">
+              {% for tag in post.data.tags %}
+                <li class="tags__tag-item">
+                  <a class="post-card__internal-link tags__tag tags__tag--link" href="/blog/tag/{{ tag | slug }}">#{{ tag }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+        <p class="post-card__title h4" aria-hidden="true">
+          <a href="{{ post.url }}">{{ post.data.title }}</a>
+        </p>
+      </div>
+
+      {% if post.data.authorHandle %}
+        {% set author = post.data.authorHandle | findBySlug %}
+        <div class="author post-card__author">
+          <div class="author__image-wrapper">
+            {% set imageUrl = '/assets/images/authors/' + author.data.page.fileSlug + '.jpg' %}
+            {% image imageUrl, '', '2.5rem', 'eager', 'author__image', [80] %}
+          </div>
+          <div class="author__text-wrapper">
+            <div class="author__byline text--sm">
+              by
+              <a class="author__name" href="/blog/author/{{ author.data.page.fileSlug }}">
+                {{ author.data.name }}
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{%- endmacro -%}

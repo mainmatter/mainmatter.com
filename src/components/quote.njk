@@ -1,0 +1,32 @@
+{#
+Styled blockquote
+
+Configuration Options:
+color: One of the core brand colors
+text: Block quote text
+source: Quote source, a person or organization
+container: Boolean for whether or not to wrap the quote in a containing element
+
+Example usage:
+{% set text = "Mainmatter's experienced engineers delivered a solid and well architected foundation for our web app. They also helped us establish best practices and a lean process internally. Working with them was a pleasure." %}
+{% set source = "Andreas Knürr, Timify CEO" %}
+{{ quote('aqua', text, source, true) }}
+#}
+{%- macro quote(content) -%}
+  <section class="quote">
+    {%- if content.image -%}
+      <div class="quote__image-wrapper">
+        {%- image content.image, content.alt, '(min-width: 48em) 50vw, 100vw', content.loading, 'quote__image', [400] -%}
+      </div>
+    {%- endif -%}
+    <span class="quote__icon">{% include 'svg/quote.njk' %}</span>
+    <figure class="quote__figure">
+      <div class="quote__content">
+        <blockquote class="quote__text">
+          {{ content.text | safe }}
+        </blockquote>
+        <figcaption class="quote__source">{{ content.source }}</figcaption>
+      </div>
+    </figure>
+  </section>
+{%- endmacro -%}
