@@ -254,4 +254,4 @@ this blog post you can also let us know via [Twitter].
 [gl]: https://about.gitlab.com/
 [gl-ci]: https://about.gitlab.com/product/continuous-integration/
 [docker-executor]: https://docs.gitlab.com/runner/executors/docker.html
-[twitter]: http://twitter.com/mainmatter/
+[twitter]: http://twitter.com/_mainmatter/

@@ -189,7 +189,7 @@ that assert that the expected styles are applied to elements on the web page.
 
 But there's an even easier way to assert the computed styles of elements in your
 **QUnit test suite**. Since
-[v0.8.1](https://twitter.com/mainmatter/status/1065913669995978752) of
+[v0.8.1](https://twitter.com/_mainmatter/status/1065913669995978752) of
 [qunit-dom](/blog/2017/10/24/high-level-assertions-with-qunit-dom) you can make
 your tests truly ✨
 
