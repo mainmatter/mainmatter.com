@@ -6,6 +6,7 @@
 [build]
   environment = { NODE_VERSION = "16.17.0" }
 
+# redirect old simplabs.com URLs
 [[redirects]]
   from = "/resources/workshop/digital-product-strategy"
   to = "/services/workshops/digital-product-strategy/"
