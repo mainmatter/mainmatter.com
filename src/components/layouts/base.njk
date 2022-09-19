@@ -17,9 +17,7 @@
     {% block head %}{{ head | safe }}{% endblock %}
 
     {% include "global/meta.njk" %}
-    {# <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <meta name="theme-color" content="#ffd82f"> #}
+    {% include "global/icons.njk" %}
 
     <script defer data-domain="mainmatter.com" src="https://plausible.io/js/plausible.js"></script>
   </head>
