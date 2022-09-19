@@ -43,7 +43,7 @@ The idea behind the name simplabs was that simplicity is key in software
 projects, a realization that every engineer will have in some form or another
 during their career. The _"labs"_ suffix didn't really mean much at all and I
 picked it mostly because it was kind of fashionable at the time (like leaving
-out vocals was a few years before – anyone remember
+out vowels was a few years before – anyone remember
 [twttr.com](http://twttr.com)?) There were always problems with the name
 however, the main one being that a lot of people misunderstood the name as
 "simple labs" which is the opposite of what I wanted to express – achieving
@@ -68,9 +68,9 @@ elevator pitch:
 > if the results are impractical, so we strive for effective and pragmatic
 > solutions for complex problems.
 >
-> Through guidance and knowledge transfer, we take a long- term view, rather
-> than chasing a short-term high, enabling our clients to shape the future of
-> their digital products. <author>the Mainmatter Team</author>
+> Through guidance and knowledge transfer, we take a long-term view, rather than
+> chasing a short-term high, enabling our clients to shape the future of their
+> digital products. <author>the Mainmatter Team</author>
 
 The core of our work has always been to build foundations that enable teams to
 be successful and deliver value. Doing so we focus on results and real value
