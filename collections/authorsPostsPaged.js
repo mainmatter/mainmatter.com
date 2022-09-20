@@ -1,4 +1,5 @@
 const config = require("../src/_data/config");
+const sortByDate = require("../utils/sortByDate");
 
 module.exports = collection => {
   const authorList = require("./authors")(collection);
@@ -8,9 +9,11 @@ module.exports = collection => {
   const pagedPosts = [];
 
   authorList.forEach(author => {
-    const sortedPosts = postList.filter(post => {
-      return post.data.authorHandle === author.data.page.fileSlug;
-    });
+    const sortedPosts = postList
+      .filter(post => {
+        return post.data.authorHandle === author.data.page.fileSlug;
+      })
+      .sort(sortByDate("desc"));
 
     const numberOfPages = Math.ceil(sortedPosts.length / maxPostsPerPage);
 
