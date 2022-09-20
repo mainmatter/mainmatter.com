@@ -99,8 +99,8 @@ Actix][actix], I often find myself reaching for fastify. It's a lot like the
 Express.js used by ember-cli internally, but has a few nice extras and I
 happened to have used it recently.
 
-If you want to serve HTTP/2 over HTTPS for your fastify API, you do need
-certificates also.
+If you want to serve HTTP/2 over HTTPS for your fastify API, you will also need
+certificates.
 
 [The documentation for this][fastify-https] is quite straightforward. The
 example there expects `fastify.key` and `fastify.cert` in a `https` folder.
@@ -160,7 +160,7 @@ Do not use this in production. It's a neat thing that helps you get your job as
 a developer done, but once you move to production, you should look for other
 options.
 
-One of these options would of course be [Let's Encrypt][letsencrypt].
+One of those options would of course be [Let's Encrypt][letsencrypt].
 
 Yes, you could also use that locally, but from my experience, if you are looking
 for a quick way to run a local development server with SSL, [mkcert][mkcert]
