@@ -14,10 +14,15 @@
 {%- endif -%}
 
 {%- if canonical -%}
-<link rel="canonical" href="{{ canonical }}" />
+  <link rel="canonical" href="{{ canonical }}" />
 {%- else -%}
-<link rel="canonical" href="{{ currentUrl }}" />
+  <link rel="canonical" href="{{ currentUrl }}" />
 {%- endif -%}
+
+{%- if noindex -%}
+  <meta name="robots" content="noindex">
+{%- endif -%}
+
 <meta property="og:site_name" content="{{ siteTitle }}" />
 <meta property="og:title" content="{{ pageTitle }}" />
 <meta property="og:type" content="website" />
