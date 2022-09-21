@@ -1,7 +1,6 @@
 {%- set pageTitle = config.name -%}
 {%- set pageDesc = config.description -%}
 {%- set siteTitle = config.name -%}
-{%- set currentUrl = config.url + page.url -%}
 
 {%- if renderData.title -%}
   {%- set pageTitle = renderData.title + ' - ' + config.name -%}
@@ -16,7 +15,7 @@
 {%- if canonical -%}
   <link rel="canonical" href="{{ canonical }}" />
 {%- else -%}
-  <link rel="canonical" href="{{ currentUrl }}" />
+  <link rel="canonical" href="https://mainmatter.com{{ page.url }}" />
 {%- endif -%}
 
 {%- if noindex -%}
