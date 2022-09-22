@@ -7,10 +7,10 @@ bio: "Florian Pichler"
 description: |
   Retrieving certifcates to serve your local development on HTTPS can be cumbersome. Use mkcert to automate the process, here is how.
 og:
-  image: /assets/images/posts/2022-09-20-selfsigned-certificates-for-development/og-image.png
+  image: /assets/images/posts/2022-09-22-selfsigned-certificates-for-development/og-image.png
 tagline: |
   <p>Serving HTTPS locally for development is annoying. Use mkcert and get started in minutes.</p>
-image: "/assets/images/posts/2022-09-20-selfsigned-certificates-for-development/signed.jpg"
+image: "/assets/images/posts/2022-09-22-selfsigned-certificates-for-development/signed.jpg"
 imageAlt: "A grid of lockets representing a safe connection in your browser"
 ---
 
