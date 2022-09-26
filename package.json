@@ -20,7 +20,8 @@
     "serve": "eleventy  --quiet --serve --port=8080",
     "dev": "npm run watch",
     "percy": "percy snapshot",
-    "crawl": "node scripts/crawl.js"
+    "crawl": "node scripts/crawl.js",
+    "this-week": "./bin/this-week-in-open-source --config-path=config/this-week-in-open-source.config.json"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
