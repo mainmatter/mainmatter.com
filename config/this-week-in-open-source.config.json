@@ -21,8 +21,8 @@
         "qonto/ember-amount-input",
         "qonto/ember-autofocus-modifier",
         "qonto/ember-phone-input",
-        "simplabs/simplabs.github.io",
-        "simplabs/this-week-in-open-source",
+        "mainmatter/mainmatter.com",
+        "mainmatter/this-week-in-open-source",
         "mansona/test-copy-file-dest",
         "oscard0m/web",
         "BobrImperator/tilex",
@@ -122,15 +122,15 @@
                 "mansona/ember-body-class",
                 "mansona/ember-cli-notifications",
                 "nickschot/ember-mobile-menu",
-                "simplabs/ember-cookies",
-                "simplabs/ember-error-route",
-                "simplabs/ember-intl-analyzer",
-                "simplabs/ember-promise-modals",
-                "simplabs/ember-simple-auth",
-                "simplabs/qunit-dom",
+                "mainmatter/ember-cookies",
+                "mainmatter/ember-error-route",
+                "mainmatter/ember-intl-analyzer",
+                "mainmatter/ember-promise-modals",
+                "mainmatter/ember-simple-auth",
+                "mainmatter/qunit-dom",
                 "zeppelin/ember-click-outside",
-                "simplabs/ember-hbs-minifier",
-                "simplabs/ember-test-selectors",
+                "mainmatter/ember-hbs-minifier",
+                "mainmatter/ember-test-selectors",
                 "ember-learn/deprecation-app",
                 "empress/rfc-process-mdbook-template",
                 "empress/rfc-process",
@@ -139,10 +139,10 @@
                 "GavinJoyce/ember-headlessui",
                 "qonto/ember-cp-validations",
                 "mansona/ember-get-config",
-                "simplabs/ember-workshop",
+                "mainmatter/ember-workshop",
                 "Turbo87/intellij-emberjs",
                 "offirgolan/ember-cp-validations",
-                "simplabs/ember-hotspots",
+                "mainmatter/ember-hotspots",
                 "ember-cli/ember-try",
                 "ember-learn/handbook",
                 "emberjs/rfcs",
@@ -267,15 +267,15 @@
             ]
         },
         {
-            "name": "simplabs's playbook",
+            "name": "Mainmatter's playbook",
             "repos": [
-                "simplabs/playbook"
+                "mainmatter/playbook"
             ]
         },
         {
             "name": "Internal",
             "repos": [
-                "simplabs/renovate-config"
+                "mainmatter/renovate-config"
             ]
         },
         {
