@@ -48,7 +48,12 @@
         "soxhub/formatjs",
         "oscard0m/gravity_dummy",
         "oscard0m/example-vercel-ts",
-        "soxhub/formatjs"
+        "soxhub/formatjs",
+        "oscard0m/octokit-auth-oauth-user.js",
+        "oscard0m/remix-deploy-netlify",
+        "oscard0m/remix-deploy-vercel",
+        "XCSoar/xcsoar-data-content",
+        "inesilva/my-website"
     ],
     "labels": [
         {
@@ -164,7 +169,11 @@
                 "ember-learn/tool-new-release",
                 "ember-template-lint/ember-template-lint",
                 "emberjs/rfcs-tooling",
-                "ember-codemods/ember-angle-brackets-codemod"
+                "ember-codemods/ember-angle-brackets-codemod",
+                "ember-cli/ember-cli-htmlbars",
+                "nickschot/ember-gesture-modifiers",
+                "ember-learn/ember-release-bot",
+                "mainmatter/ember2-x-codemods"
             ]
         },
         {
@@ -250,14 +259,34 @@
                 "octokit/webhooks",
                 "oscard0m/octokit-request-action",
                 "oscard0m/octoherd-script-fix-test-workflow-octokit",
-                "oscard0m/octoherd-script-remove-renovate-package.json"
+                "oscard0m/octoherd-script-remove-renovate-package.json",
+                "octoherd/cli",
+                "octoherd/octokit",
+                "oscard0m/octoherd-script-update-action-version-in-workflows"
+            ]
+        },
+        {
+            "name": "Rollup",
+            "repos": [
+                "empress/bottled-ember",
+                "erlef/website",
+                "ezolenko/rollup-plugin-typescript2"
+            ]
+        },
+        {
+            "name": "Elixir",
+            "repos": [
+                "rrrene/credo"
             ]
         },
         {
             "name": "Probot",
             "repos": [
                 "probot/example-vercel",
-                "probot/probot"
+                "probot/probot",
+                "probot/.github",
+                "probot/talks",
+                "probot/twitter"
             ]
         },
         {
