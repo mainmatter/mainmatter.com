@@ -117,13 +117,6 @@
                 "emberjs/ember-ordered-set",
                 "emberjs/ember-string",
                 "emberjs/ember.js",
-                "empress/broccoli-static-site-json",
-                "empress/ember-cli-notifications",
-                "empress/ember-cli-showdown",
-                "empress/ember-showdown-prism",
-                "empress/empress-blog",
-                "empress/empress-blog-casper-template",
-                "empress/field-guide",
                 "mansona/ember-body-class",
                 "mansona/ember-cli-notifications",
                 "nickschot/ember-mobile-menu",
@@ -137,8 +130,6 @@
                 "mainmatter/ember-hbs-minifier",
                 "mainmatter/ember-test-selectors",
                 "ember-learn/deprecation-app",
-                "empress/rfc-process-mdbook-template",
-                "empress/rfc-process",
                 "jelhan/ember-cli-browser-navigation-button-test-helpers",
                 "miguelcobain/ember-paper",
                 "GavinJoyce/ember-headlessui",
@@ -157,13 +148,10 @@
                 "ember-learn/ember-help-wanted-server",
                 "ember-learn/rfcs-app",
                 "mansona/ember-cli-babel",
-                "empress/field-guide-addon-docs-template",
                 "cibernox/ember-power-select",
                 "ember-codemods/ember-codemods-telemetry-helpers",
                 "ember-codemods/ember-native-class-codemod",
                 "ember-learn/guidemaker-ember-template",
-                "empress/guidemaker",
-                "empress/guidemaker-default-template",
                 "ember-cli/watch-detector",
                 "ember-engines/ember-engines",
                 "ember-learn/tool-new-release",
@@ -175,6 +163,25 @@
                 "ember-learn/ember-release-bot",
                 "mainmatter/ember2-x-codemods"
             ]
+        },
+        {
+          "name": "Empress",
+          "repos": [
+                "empress/rfc-process-mdbook-template",
+                "empress/rfc-process",
+                "empress/broccoli-static-site-json",
+                "empress/ember-cli-notifications",
+                "empress/ember-cli-showdown",
+                "empress/ember-showdown-prism",
+                "empress/empress-blog",
+                "empress/empress-blog-casper-template",
+                "empress/field-guide",
+                "empress/field-guide-addon-docs-template",
+                "empress/guidemaker",
+                "empress/guidemaker-default-template",
+                "empress/bottled-ember"
+
+          ]
         },
         {
             "name": "Lint to the future",
@@ -268,7 +275,6 @@
         {
             "name": "Rollup",
             "repos": [
-                "empress/bottled-ember",
                 "erlef/website",
                 "ezolenko/rollup-plugin-typescript2"
             ]
@@ -311,6 +317,12 @@
             "name": "Ruby",
             "repos": [
                 "rubyforgood/Flaredown"
+            ]
+        },
+        {
+            "name": "Gliding",
+            "repos": [
+                "weglide/GliderList"
             ]
         },
         {
