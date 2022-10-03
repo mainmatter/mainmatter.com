@@ -21,8 +21,8 @@
         "qonto/ember-amount-input",
         "qonto/ember-autofocus-modifier",
         "qonto/ember-phone-input",
-        "simplabs/simplabs.github.io",
-        "simplabs/this-week-in-open-source",
+        "mainmatter/mainmatter.com",
+        "mainmatter/this-week-in-open-source",
         "mansona/test-copy-file-dest",
         "oscard0m/web",
         "BobrImperator/tilex",
@@ -48,7 +48,12 @@
         "soxhub/formatjs",
         "oscard0m/gravity_dummy",
         "oscard0m/example-vercel-ts",
-        "soxhub/formatjs"
+        "soxhub/formatjs",
+        "oscard0m/octokit-auth-oauth-user.js",
+        "oscard0m/remix-deploy-netlify",
+        "oscard0m/remix-deploy-vercel",
+        "XCSoar/xcsoar-data-content",
+        "inesilva/my-website"
     ],
     "labels": [
         {
@@ -112,37 +117,28 @@
                 "emberjs/ember-ordered-set",
                 "emberjs/ember-string",
                 "emberjs/ember.js",
-                "empress/broccoli-static-site-json",
-                "empress/ember-cli-notifications",
-                "empress/ember-cli-showdown",
-                "empress/ember-showdown-prism",
-                "empress/empress-blog",
-                "empress/empress-blog-casper-template",
-                "empress/field-guide",
                 "mansona/ember-body-class",
                 "mansona/ember-cli-notifications",
                 "nickschot/ember-mobile-menu",
-                "simplabs/ember-cookies",
-                "simplabs/ember-error-route",
-                "simplabs/ember-intl-analyzer",
-                "simplabs/ember-promise-modals",
-                "simplabs/ember-simple-auth",
-                "simplabs/qunit-dom",
+                "mainmatter/ember-cookies",
+                "mainmatter/ember-error-route",
+                "mainmatter/ember-intl-analyzer",
+                "mainmatter/ember-promise-modals",
+                "mainmatter/ember-simple-auth",
+                "mainmatter/qunit-dom",
                 "zeppelin/ember-click-outside",
-                "simplabs/ember-hbs-minifier",
-                "simplabs/ember-test-selectors",
+                "mainmatter/ember-hbs-minifier",
+                "mainmatter/ember-test-selectors",
                 "ember-learn/deprecation-app",
-                "empress/rfc-process-mdbook-template",
-                "empress/rfc-process",
                 "jelhan/ember-cli-browser-navigation-button-test-helpers",
                 "miguelcobain/ember-paper",
                 "GavinJoyce/ember-headlessui",
                 "qonto/ember-cp-validations",
                 "mansona/ember-get-config",
-                "simplabs/ember-workshop",
+                "mainmatter/ember-workshop",
                 "Turbo87/intellij-emberjs",
                 "offirgolan/ember-cp-validations",
-                "simplabs/ember-hotspots",
+                "mainmatter/ember-hotspots",
                 "ember-cli/ember-try",
                 "ember-learn/handbook",
                 "emberjs/rfcs",
@@ -152,20 +148,40 @@
                 "ember-learn/ember-help-wanted-server",
                 "ember-learn/rfcs-app",
                 "mansona/ember-cli-babel",
-                "empress/field-guide-addon-docs-template",
                 "cibernox/ember-power-select",
                 "ember-codemods/ember-codemods-telemetry-helpers",
                 "ember-codemods/ember-native-class-codemod",
                 "ember-learn/guidemaker-ember-template",
-                "empress/guidemaker",
-                "empress/guidemaker-default-template",
                 "ember-cli/watch-detector",
                 "ember-engines/ember-engines",
                 "ember-learn/tool-new-release",
                 "ember-template-lint/ember-template-lint",
                 "emberjs/rfcs-tooling",
-                "ember-codemods/ember-angle-brackets-codemod"
+                "ember-codemods/ember-angle-brackets-codemod",
+                "ember-cli/ember-cli-htmlbars",
+                "nickschot/ember-gesture-modifiers",
+                "ember-learn/ember-release-bot",
+                "mainmatter/ember2-x-codemods"
             ]
+        },
+        {
+          "name": "Empress",
+          "repos": [
+                "empress/rfc-process-mdbook-template",
+                "empress/rfc-process",
+                "empress/broccoli-static-site-json",
+                "empress/ember-cli-notifications",
+                "empress/ember-cli-showdown",
+                "empress/ember-showdown-prism",
+                "empress/empress-blog",
+                "empress/empress-blog-casper-template",
+                "empress/field-guide",
+                "empress/field-guide-addon-docs-template",
+                "empress/guidemaker",
+                "empress/guidemaker-default-template",
+                "empress/bottled-ember"
+
+          ]
         },
         {
             "name": "Lint to the future",
@@ -250,14 +266,38 @@
                 "octokit/webhooks",
                 "oscard0m/octokit-request-action",
                 "oscard0m/octoherd-script-fix-test-workflow-octokit",
-                "oscard0m/octoherd-script-remove-renovate-package.json"
+                "oscard0m/octoherd-script-remove-renovate-package.json",
+                "octoherd/cli",
+                "octoherd/octokit",
+                "oscard0m/octoherd-script-update-action-version-in-workflows"
+            ]
+        },
+        {
+            "name": "Rollup",
+            "repos": [
+                "ezolenko/rollup-plugin-typescript2"
+            ]
+        },
+        {
+            "name": "Elixir",
+            "repos": [
+                "rrrene/credo"
+            ]
+        },
+        {
+            "name": "Clojure",
+            "repos": [
+                "mtgred/netrunner"
             ]
         },
         {
             "name": "Probot",
             "repos": [
                 "probot/example-vercel",
-                "probot/probot"
+                "probot/probot",
+                "probot/.github",
+                "probot/talks",
+                "probot/twitter"
             ]
         },
         {
@@ -267,21 +307,27 @@
             ]
         },
         {
-            "name": "simplabs's playbook",
+            "name": "Mainmatter's playbook",
             "repos": [
-                "simplabs/playbook"
+                "mainmatter/playbook"
             ]
         },
         {
             "name": "Internal",
             "repos": [
-                "simplabs/renovate-config"
+                "mainmatter/renovate-config"
             ]
         },
         {
             "name": "Ruby",
             "repos": [
                 "rubyforgood/Flaredown"
+            ]
+        },
+        {
+            "name": "Gliding",
+            "repos": [
+                "weglide/GliderList"
             ]
         },
         {
