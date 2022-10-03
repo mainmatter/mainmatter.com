@@ -7,7 +7,7 @@ description:
   "A collection of work that our engineers have been carrying out in open-source
   in the past few weeks."
 og:
-  image: /assets/images/posts/2022-09-27-this-week-in-os-16/og-image.jpg
+  image: /assets/images/posts/2022-10-03-this-week-in-os-16/og-image.jpg
 tagline: |
   <p>Our software engineers are all active members of the open-source community and
   enjoy collaborating on various projects. In this blog post, we have collected
