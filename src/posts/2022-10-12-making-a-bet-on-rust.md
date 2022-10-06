@@ -1,121 +1,134 @@
 ---
-title: "Making a bet on Rust"
+title: "Making a strategic bet on Rust"
 authorHandle: marcoow
-tags: mainmatter
+tags: rust
 bio: "Marco Otte-Witte"
 description:
-  "Mainmatter is making a bet on Rust to become the leading consultancy to help
-  teams adopt Rust for web projects."
+  "Mainmatter is making a strategic bet on Rust to become the leading
+  consultancy to help teams adopt Rust for web projects."
 og:
   image: /assets/images/posts/2022-10-12-making-a-bet-on-rust/og-image.jpg
 tagline: |
-  <p>Rust continues on its path of success across the industry. It's been adopted by most of the big tech companies including Google, Microsoft, and AWS, has been <a href="https://survey.stackoverflow.co/2022/#section-most-loved-dreaded-and-wanted-programming-scripting-and-markup-languages">voted the most loved language</a> seven years in a row and just recently <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=8aebac82933ff1a7c8eede18cab11e1115e2062b">was added to the Linux Kernel</a>.</p>
-image: "/assets/images/posts/2022-10-12-making-a-bet-on-rust/mainmatter-loves-rust.svg"
-imageAlt: "Mainmatter loves Rust"
+  <p>Rust continues on its path of success across the industry at full pace. It's been adopted by most big tech companies including Google, Microsoft, and AWS, has been <a href="https://survey.stackoverflow.co/2022/#section-most-loved-dreaded-and-wanted-programming-scripting-and-markup-languages">voted the most loved language</a> seven years in a row and just recently <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=8aebac82933ff1a7c8eede18cab11e1115e2062b">was added to the Linux Kernel</a>.</p>
+  <p>We feel now is the right time for more teams to adopt Rust also in web projects.
+  The ecosystem has reached sufficient maturity for that to be feasible and <strong>we're making
+  a strategic decision to establish Mainmatter as the leading consultancy for Rust
+  in web contexts</strong>. We will leverage our years long experience augmenting and
+  mentoring web teams to help them adopt Rust. Here's why we think this is the
+  right step at the right time.</p>
+
+# image: "/assets/images/posts/2022-10-12-making-a-bet-on-rust/mainmatter-loves-rust.svg"
+# imageAlt: "Mainmatter loves Rust"
 ---
 
-We feel now is the right time for more teams to adopt Rust also in web projects.
-The ecosystem is mature enough for that to be a feasible choice and we're making
-a strategic decision to establish Mainmatter as the leading consultancy for Rust
-in web contexts. We can leverage our years long experience augmenting and
-mentoring web teams to help them adopt Rust. Here's why we think this is the
-right thing to do at the right time.
+Rust makes a level of efficiency and performance that's on par with C and C++
+accessible to a wider audience of engineering teams. While C and C++ have
+allowed building highly efficient systems for decades, they come with so many
+footguns that only extremely skilled and experienced teams can dare to build
+anything substantial with them – and
+[even those end up with systems that have plenty of problems](https://www.memorysafety.org/about/).
+Now with Rust everyone can build systems with the same level of efficiency and
+performance without having to worry about any of these footguns. Building on
+Rust, their systems will not only be just as fast as an equivalent system
+written in C but also more stable and robust. In addition to ensuring memory
+safety, Rust's rich type system and concepts like the `Option` and `Result`
+types further increase confidence by encouraging solid error handling through
+concepts of the language itself.
 
-Rust makes a level of efficiency and performance that's on par with what C and
-C++ provide accessible to a wider audience of engineering teams. While C and C++
-allow to build highly efficient systems, they come with so many footguns that
-only extremely skilled and experienced teams can dare to build anything with
-them – and even those end up with lots of problems (TODO: link to C error rates
-thing). Now with Rust everyone can build systems with the same level of
-efficiency and performance without having to worry about any of these footguns
-so that what they build will not only be just as fast as an equivalent system
-written in C but also more stable and robust.
-
-TODO: mention robustness because types, option etc.
-
-Finally, Rust enables all that without sacrificing expressiveness of the
-language, productivity, and developer experience – it's essentially on par in
-that regard with other modern languages.
+Yet, Rust enables all that without sacrificing expressiveness of the language,
+productivity, and developer experience – it's essentially on par in that regard
+with other modern languages. Modern concepts like pattern matching and generics,
+the integrated [package manager](https://doc.rust-lang.org/cargo/) and its solid
+development tools make working with it a breeze.
 
 ## Rust on the Web
 
-So where do we see Rust fitting in in web projects? After ca. 10 years the
-ecosystem is still relatively young, at the same time mature enough for a
-variety of use cases already:
+So where do we see Rust fitting in for web projects? After ca. 10 years since
+the language's creation, the ecosystem is still relatively young, yet mature
+enough for a variety of use cases already:
 
-- NIFs (Natively Implemented Functions) can make existing code in Ruby, Elixir,
-  Node, and many other language, faster by several factors and provide an easy
-  onramp to introducing Rust into a team's tech stack.
+- NIFs (Natively Implemented Functions) can be used to speed up parts of
+  existing systems written in Ruby, Elixir, Node, and many other languages, be
+  orders of magnitude and provide an easy onramp to introducing Rust into a
+  team's tech stack.
 - Isolated subsystems of larger server systems with very specific requirements
   in terms of performance and robustness are great candidates to build in Rust –
-  whether those are services in a microservices architecture or core layers in
-  multi-layered systems.
+  whether those are individual services in a microservices architecture or
+  layers in multi-layered systems.
 - Similar to subsystems, downstream systems for e.g. data processing and similar
   tasks with relatively limited scope but hard requirements regarding efficiency
   will often benefit hugely from an implementation in Rust.
 
 While all these are relatively isolated use cases with limited scope, we believe
 that eventually Rust will be a reasonable choice for building complete API
-servers. That space still requires a bit of exploration to develop and establish
-best practices and architectures and we're excited to bring in our years long
-experience building web apps of all kinds to help our clients and the ecosystem
-overall to do this. Establishing these patterns and building consensus across
-the community will eventually drive adoption of Rust on the web even further as
-it will make it more accessible for more teams.
+servers as well. That problem space still requires some exploration to develop
+and establish best practices and architectures and we're excited to bring in our
+years long experience building web apps of all kinds to help do this for the
+benefit of our clients and the ecosystem overall. Establishing these patterns
+and building consensus across the community will eventually drive adoption of
+Rust on the web even further as it makes Rust more accessible for even more
+teams.
 
-Of course there's also WASM. While WASM sees adoption outside of the browser
-(e.g. https://github.com/bytecodealliance/wasm-micro-runtime), it was originally
-built to enable a new category of apps to run in browsers. Except for some high
-visibility examples ([Figma](https://www.figma.com/) likely being the most well
-known one), it remains unclear how the average team would leverage WASM and what
-real world use cases are. Yet we're excited to explore this space more and
-support the teams we work with experimenting what potential WASM can have for
-them.
+Of course there's also WASM – while that sees adoption outside of the browser
+(e.g. via the
+[WebAssembly Micro Runtime](https://github.com/bytecodealliance/wasm-micro-runtime)),
+it was originally built to enable an entirely new category of apps to run in
+browsers. Except for some high visibility examples
+([Figma](https://www.figma.com/) likely being the most well known one), it
+remains slightly unclear how the average team would leverage WASM and what real
+world use cases are. Yet we're excited to explore this space more and support
+the teams we work with experimenting what potential WASM can have for them.
 
-## Rust as a competitive advantage
+## Rust is a competitive advantage
 
-As mentioned above, Rust allows teams access to a level of efficiency,
-performance, and robustness that's far beyond that of most other commonly used
-technologies. Web apps written in Rust will have better response times while at
-the same time requiring fewer resources which saves money and energy (Shane
-Miller and Carl Lerche gave a
-[talk about using Rust helps minimizing the environmental impact of what we do at AWS re:Invent 2021](https://www.youtube.com/watch?v=yQZaBtUjQ1w)).
+As mentioned above, Rust gives teams access to a level of efficiency,
+performance, and robustness that's far beyond that of most other technologies
+commonly used for web apps. Web apps written in Rust will have better response
+times while at the same time requiring fewer resources which saves money and
+energy (Shane Miller and Carl Lerche gave a
+[talk about how using Rust helps minimizing the environmental impact](<(https://www.youtube.com/watch?v=yQZaBtUjQ1w)>)
+of the systems we all build every day at AWS re:Invent 2021).
 
 At the same time, teams working with Rust can have more confidence in their code
-because of Rust's advanced type system and abstractions like `Option` and
-`Result` that eliminate entire classes of errors. That does not only make code
-more stable at runtime and less likely to run into errors though but also makes
-it easier to make changes to systems and maintain them over time compared to
+because of Rust's rich type system and modern language concepts that eliminate
+entire classes of errors. That does not only make code more stable at runtime
+and less likely to run into unforeseen errors in production, but also makes it
+easier to make changes to systems and maintain them over time compared to
 dynamically typed languages (going back to strongly typed languages is a general
-trend in the industry of course, most prominently to be observed by the huge
+trend in the industry of course, most prominently demonstrated by the huge
 success that TypeScript had over the past few years).
 
-Finally, developing in Rust is a competitive advantage in an industry that
-continues to fight for the best talents like no other. As mentioned above, has
-been
+Finally, building system in Rust is a competitive advantage in an industry that
+continues to fight for the best talents like no other. As mentioned above, Rust
+has been
 [voted the most loved language](https://survey.stackoverflow.co/2022/#section-most-loved-dreaded-and-wanted-programming-scripting-and-markup-languages)
-seven years in a row and literally every engineer in the world™ wants to use it.
-Companies that are able to hire for Rust (and onboard people that are new to
-it), will have no problems finding people for years to come.
+seven years in a row and literally every engineer in the world™ is eager to work
+with it. Companies that can hire for Rust (and are willing to up-level people
+that are new to the language), will have no problems finding people for years to
+come.
 
 ## Mainmatter ❤️ Rust
 
 We believe betting on Rust will benefit the teams we work with and enable a
-bright future for our company as well. We're looking forward to help teams adopt
-Rust via team augmentation and training which we have both been doing for many
-years in web related environments. Via doing that work, we're excited to explore
-and pave the way for more widespread adoption of Rust in web projects, thus
-moving both our clients as well as the general Rust ecosystem forwards.
+bright future for our company at the same time. We're looking forward to
+<strong>helping teams adopt Rust for their web projects through
+[team augmentation and training](/services/team-augmentation-and-training/)</strong>
+which we have both been doing successfully for many years. By doing that work,
+we're looking forward to explore and pave the way for more widespread adoption
+of Rust in web projects, thus moving both our clients as well as the general
+Rust ecosystem forwards.
 
 We've invested in Rust quite significantly already by
 
-- joining the Rust Foundation as a Silver member
-- having several people on the team maintain crates.io on company time
+- joining the Rust Foundation as a
+  [Silver member](https://foundation.rust-lang.org/members/)
+- having several people on the team maintain [crates.io](https://crates.io) on
+  company time for several years now
 - running Rust workshops to help teams get started with the language
-- creating EuroRust, the conference for the European Rust community (EuroRust
-  2022 is happening on October 13+14: https://eurorust.eu)
+- creating [EuroRust](https://eurorust.eu), the conference for the European Rust
+  community (EuroRust 2022 is happening on October 13th and 14th)
 
 We're looking forward to continue these investments, extending our involvement
 with Rust even more over the next years and helping teams find their path
-towards Rust. If you're interested about Rust and want to adopt it in your
-organization, [reach out](/contact/)!
+towards Rust. If you're <strong>interested in Rust and want to adopt it in your
+organization</strong>, [reach out](/contact/)!
