@@ -28,7 +28,7 @@ footguns that only extremely skilled and experienced teams can dare to build
 anything substantial with them – and
 [even those end up with systems that have plenty of problems](https://www.memorysafety.org/about/).
 Now, with Rust, everyone can build systems with the same level of efficiency and
-performance without having to worry about any of said footguns. Building on
+performance without having to worry about most of said footguns. Building on
 Rust, their systems will not only be just as fast as an equivalent system
 written in C but also more stable and robust. In addition to ensuring memory
 safety, Rust's rich type system and concepts like the `Option` and `Result`
@@ -93,11 +93,11 @@ because of Rust's rich type system and modern language concepts that eliminate
 entire classes of errors. That does not only make code more stable at runtime
 and less likely to run into unforeseen errors in production, but also makes it
 easier to make changes to systems and maintain them over time compared to
-dynamically typed languages (going back to strongly typed languages is a general
-trend in the industry of course, most prominently demonstrated by the huge
+dynamically typed languages (going back to strongly typed languages appears to
+be a general trend in the industry, most prominently demonstrated by the huge
 success that TypeScript had over the past few years).
 
-Finally, building system in Rust is a competitive advantage in an industry that
+Finally, building systems in Rust is a competitive advantage in an industry that
 continues to fight for the best talents like no other. As mentioned above, Rust
 has been
 [voted the most loved language](https://survey.stackoverflow.co/2022/#section-most-loved-dreaded-and-wanted-programming-scripting-and-markup-languages)
@@ -121,13 +121,13 @@ We've invested in Rust quite significantly already by
 
 - joining the Rust Foundation as a
   [Silver member](https://foundation.rust-lang.org/members/)
-- having several people on the team maintain [crates.io](https://crates.io) on
-  company time for several years now
+- having several people on the team help maintain [crates.io](https://crates.io)
+  on company time for several years now
 - running Rust workshops to help teams get started with the language
 - creating [EuroRust](https://eurorust.eu), the conference for the European Rust
   community (EuroRust 2022 is happening on October 13th and 14th)
 
 We're looking forward to continue these investments, extending our involvement
 with Rust even more over the next years and helping teams find their path
-towards Rust. If you're <strong>interested in Rust and want to adopt it in your
-organization</strong>, [reach out](/contact/)!
+towards Rust. If you're **interested in Rust and want to adopt it in your
+organization**, [reach out](/contact/)!
