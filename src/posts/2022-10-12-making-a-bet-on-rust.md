@@ -85,7 +85,7 @@ performance, and robustness that's far beyond that of most other technologies
 commonly used for web apps. Web apps written in Rust will have better response
 times while requiring fewer resources which saves money and energy (Shane Miller
 and Carl Lerche gave a
-[talk about how using Rust helps minimizing the environmental impact](<(https://www.youtube.com/watch?v=yQZaBtUjQ1w)>)
+[talk about how using Rust helps minimizing the environmental impact](https://www.youtube.com/watch?v=yQZaBtUjQ1w)
 of the systems we all build every day at AWS re:Invent 2021).
 
 At the same time, teams working with Rust can have more confidence in their code
