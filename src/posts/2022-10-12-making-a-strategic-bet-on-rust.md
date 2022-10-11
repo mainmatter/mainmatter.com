@@ -16,8 +16,8 @@ tagline: |
   mentoring web teams to help them adopt Rust. Here's why we think this is the
   right step at the right time.</p>
 
-# image: "/assets/images/posts/2022-10-12-making-a-strategic-bet-on-rust/mainmatter-loves-rust.svg"
-# imageAlt: "Mainmatter loves Rust"
+image: "/assets/images/posts/2022-10-12-making-a-strategic-bet-on-rust/mainmatter-loves-rust.png"
+imageAlt: "Mainmatter loves Rust"
 ---
 
 Rust makes a level of efficiency and performance accessible to a wider audience
@@ -78,7 +78,7 @@ slightly unclear how the average team would leverage WASM and what real world
 use cases are. Yet, we're excited to explore this space more and support the
 teams we work with experimenting what potential WASM can have for them.
 
-![Mainmatter + Rust = 🚀🔥🚀](/assets/images/posts/2022-10-03-this-week-in-os-16/mainmatter-rust-rocket.png)
+![Mainmatter + Rust = 🚀🔥🚀](/assets/images/posts/2022-10-12-making-a-strategic-bet-on-rust/mainmatter-rust-rocket.png)
 
 ## Rust is a competitive advantage
 
