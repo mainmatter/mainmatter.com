@@ -78,6 +78,8 @@ slightly unclear how the average team would leverage WASM and what real world
 use cases are. Yet, we're excited to explore this space more and support the
 teams we work with experimenting what potential WASM can have for them.
 
+![Mainmatter + Rust = 🚀🔥🚀](/assets/images/posts/2022-10-03-this-week-in-os-16/mainmatter-rust-rocket.png)
+
 ## Rust is a competitive advantage
 
 Rust gives teams access to a level of efficiency, performance, and robustness
