@@ -7,7 +7,7 @@ description:
   "Mainmatter is making a strategic bet on Rust to become the leading
   consultancy to help teams adopt Rust for web projects."
 og:
-  image: /assets/images/posts/2022-10-12-making-a-bet-on-rust/og-image.jpg
+  image: /assets/images/posts/2022-10-12-making-a-strategic-bet-on-rust/og-image.jpg
 tagline: |
   <p>Rust continues on its path of success across the industry at full pace. It's been adopted by most big tech companies including Google, Microsoft, and AWS, <a href="https://survey.stackoverflow.co/2022/#section-most-loved-dreaded-and-wanted-programming-scripting-and-markup-languages">voted the most loved language</a> seven years in a row, and just recently <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=8aebac82933ff1a7c8eede18cab11e1115e2062b">was added to the Linux Kernel</a>.</p>
   <p>We feel now is the right time for more teams to adopt Rust also in web projects.
@@ -17,7 +17,7 @@ tagline: |
   mentoring web teams to help them adopt Rust. Here's why we think this is the
   right step at the right time.</p>
 
-# image: "/assets/images/posts/2022-10-12-making-a-bet-on-rust/mainmatter-loves-rust.svg"
+# image: "/assets/images/posts/2022-10-12-making-a-strategic-bet-on-rust/mainmatter-loves-rust.svg"
 # imageAlt: "Mainmatter loves Rust"
 ---
 
