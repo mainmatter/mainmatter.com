@@ -1,5 +1,5 @@
 ---
-title: "Authentication in ember.js"
+title: "Authentication in ember.js [TEST]"
 authorHandle: marcoow
 bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
 tags: ember
