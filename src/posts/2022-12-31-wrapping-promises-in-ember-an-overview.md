@@ -38,13 +38,13 @@ In a template, we need convenient access to the following values:
 - the error object in case the request fails;
 - the state of the promise:
   - is running;
+  - has resolved;
   - has errored.
 
-The challenge is that Promises a
-[thing-in-itself](https://en.wikipedia.org/wiki/Thing-in-itself), if you excuse
-an improper use of a philosopical term. 😬 Accessing these values is tricky.
-
-
+The challenge is that Promises are
+a [thing-in-itself](https://en.wikipedia.org/wiki/Thing-in-itself), if you
+excuse an improper use of a philosopical term. 😬 Accessing these values is
+tricky.
 
 ## Vanilla Promise
 
@@ -166,7 +166,7 @@ Finally, we can access promise values in a template:
 {% endraw %}
 ```
 
-The advantages of this appraoch are:
+The advantages of this approach are:
 
 1. No extra dependencies.
 2. The code can be customized to retain access the previous state of the promise
@@ -175,17 +175,17 @@ The advantages of this appraoch are:
 The vanilla promise approach has a number of bitter disadvantages:
 
 1. A lot of boilerplate code.
-2. Prone to bugs, requires tests which may and will get repetetive as you
+2. Prone to bugs, requires tests which may and will get repetitive as you
    implement more requests.
 3. When several promises need to be dealt with in one class, the code gets mixed
    up and hard to maintain.
 4. Need to start the promise manually.
-5. Need to deal with promise resolving after our component is destroyed.
+5. Need to work around the promise callback mutating the component after it is destroyed.
 
 ## PromiseProxyMixin
 
-`PromiseProxyMixin` was a very convenient way of wrapping promises in
-Classic Ember.
+`PromiseProxyMixin` was a very convenient way of wrapping promises in Classic
+Ember.
 
 ```js
 import ObjectProxy from "@ember/object/proxy";
@@ -423,12 +423,12 @@ Advantages of `trackedFunction`:
 
 1. Concise, declarative syntax.
 2. Restarts automatically when dependency properties change.
-3. Fancy new technology that Ember ecosystem is leaning toward.
+3. Fancy new technology that the Ember ecosystem is leaning toward.
 
 Disadvantages:
 
 1. Feels like black magic. Resources are difficult to learn.
-2. Restrating the promise imperatively is a bit tricky.
+2. Restarting the promise imperatively is a bit tricky.
 
 ## Comparison
 
