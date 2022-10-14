@@ -9,6 +9,12 @@
   padding: 6rem 0 3.5rem;
 }
 
+.post , .post__header {
+  a[href^="#"] {
+    text-decoration-style: dashed;
+  }
+}
+
 .post__author {
   margin-bottom: 2rem;
 }
