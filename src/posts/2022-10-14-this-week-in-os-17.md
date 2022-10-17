@@ -14,6 +14,12 @@ tagline: |
   some of the work they have done the past week!</p>
 ---
 
+## Rust
+
+- [AeroRust/nmea] [#59](https://github.com/AeroRust/nmea/pull/59) Implement `PGRMZ` support ([@Turbo87])
+- [AeroRust/nmea] [#57](https://github.com/AeroRust/nmea/pull/57) Update/Fix `RMC` docs ([@Turbo87])
+- [Swatinem/rust-cache] [#83](https://github.com/Swatinem/rust-cache/pull/83) Update `@actions/cors` to v1.10.0 ([@Turbo87])
+
 ## crates.io
 
 - [rust-lang/crates.io] [#5325](https://github.com/rust-lang/crates.io/pull/5325) CI: Remove obsolete `bors` CI jobs ([@Turbo87])
@@ -21,6 +27,10 @@ tagline: |
 - [rust-lang/crates.io] [#5298](https://github.com/rust-lang/crates.io/pull/5298) clap: Resolve deprecation warnings ([@Turbo87])
 - [rust-lang/crates.io] [#5297](https://github.com/rust-lang/crates.io/pull/5297) clap: Add new `wrap_help` feature flag ([@Turbo87])
 - [rust-lang/crates.io] [#5295](https://github.com/rust-lang/crates.io/pull/5295) clap: Derive possible values for `EventType` argument ([@Turbo87])
+
+## Embedded
+
+- [jomjol/AI-on-the-edge-device] [#1158](https://github.com/jomjol/AI-on-the-edge-device/pull/1158) FlowPostProcessing::GetJSON: Add `pre` field to the `/json` response ([@Turbo87])
 
 ## Ember.js
 
@@ -40,9 +50,6 @@ tagline: |
 
 ## Unknown
 
-- [AeroRust/nmea] [#59](https://github.com/AeroRust/nmea/pull/59) Implement `PGRMZ` support ([@Turbo87])
-- [AeroRust/nmea] [#57](https://github.com/AeroRust/nmea/pull/57) Update/Fix `RMC` docs ([@Turbo87])
-- [Swatinem/rust-cache] [#83](https://github.com/Swatinem/rust-cache/pull/83) Update `@actions/cors` to v1.10.0 ([@Turbo87])
 - [anuraghazra/github-readme-stats] [#2080](https://github.com/anuraghazra/github-readme-stats/pull/2080) ci(label-pr): upgrade actions/labeler to v4 ([@oscard0m])
 - [chrislgarry/Apollo-11] [#877](https://github.com/chrislgarry/Apollo-11/pull/877) ci(markdownlint): upgrade actions/checkout to v3 ([@oscard0m])
 - [git/git] [#1354](https://github.com/git/git/pull/1354) ci(main): upgrade actions/checkout to v3 ([@oscard0m])
@@ -54,7 +61,6 @@ tagline: |
 - [hoppscotch/hoppscotch] [#2721](https://github.com/hoppscotch/hoppscotch/pull/2721) ci(publish-docker): upgrade actions/checkout to v3 ([@oscard0m])
 - [huggingface/transformers] [#19281](https://github.com/huggingface/transformers/pull/19281) ci(stale.yml): upgrade actions/setup-python to v4 ([@oscard0m])
 - [huggingface/transformers] [#19280](https://github.com/huggingface/transformers/pull/19280) ci(stale.yml): update actions/checkout to v3 ([@oscard0m])
-- [jomjol/AI-on-the-edge-device] [#1158](https://github.com/jomjol/AI-on-the-edge-device/pull/1158) FlowPostProcessing::GetJSON: Add `pre` field to the `/json` response ([@Turbo87])
 - [mainmatter/eurorust.eu] [#217](https://github.com/mainmatter/eurorust.eu/pull/217) push out afternoon schedule on 13th by 30min ([@marcoow])
 - [mainmatter/eurorust.eu] [#216](https://github.com/mainmatter/eurorust.eu/pull/216) add coc phone numbers ([@marcoow])
 - [mainmatter/eurorust.eu] [#215](https://github.com/mainmatter/eurorust.eu/pull/215) fix Benoit's twitter ([@marcoow])

@@ -69,7 +69,9 @@
                 "Turbo87/sentry-conduit",
                 "kivikakk/comrak",
                 "LukeMathWalker/tracing-bunyan-formatter",
-                "Turbo87/segelflug-classifieds"
+                "Turbo87/segelflug-classifieds",
+                "AeroRust/nmea",
+                "Swatinem/rust-cache"
             ]
         },
         {
@@ -96,6 +98,12 @@
                 "octoherd/.github",
                 "octoherd/create-octoherd-script",
                 "octoherd/script-setup-renovate"
+            ]
+        },
+        {
+            "name": "Embedded",
+            "repos": [
+                "jomjol/AI-on-the-edge-device"
             ]
         },
         {
