@@ -383,7 +383,7 @@ a promise for you. Fortunately, `ember-resources` provides a number of helpful
 higher-level abstractions for all kinds of situations. We're gonna use the
 [trackedFunction](https://ember-resources.pages.dev/functions/util_function.trackedFunction)
 util which removes all the complexity of resources and can be used inline just
-like all other approaches in this artile.
+like all other approaches in this article.
 
 ```js
 import { trackedFunction } from "ember-resources/util/function";
