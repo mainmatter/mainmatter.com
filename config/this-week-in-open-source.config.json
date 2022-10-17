@@ -53,7 +53,9 @@
         "oscard0m/remix-deploy-netlify",
         "oscard0m/remix-deploy-vercel",
         "XCSoar/xcsoar-data-content",
-        "inesilva/my-website"
+        "inesilva/my-website",
+        "mainmatter/eurorust.eu",
+        "mainmatter/gravity"
     ],
     "labels": [
         {
