@@ -87,10 +87,6 @@ tagline: |
 [mainmatter/eurorust.eu]: https://github.com/mainmatter/eurorust.eu
 [mainmatter/gravity]: https://github.com/mainmatter/gravity
 [mansona/lint-to-the-future]: https://github.com/mansona/lint-to-the-future
-[microsoft/Web-Dev-For-Beginners]: https://github.com/microsoft/Web-Dev-For-Beginners
-[narze/profile-updater]: https://github.com/narze/profile-updater
-[nestjs/nest]: https://github.com/nestjs/nest
-[ohmyzsh/ohmyzsh]: https://github.com/ohmyzsh/ohmyzsh
 [rust-lang/crates.io]: https://github.com/rust-lang/crates.io
 [scrapy/scrapy]: https://github.com/scrapy/scrapy
 [sharkdp/bat]: https://github.com/sharkdp/bat
