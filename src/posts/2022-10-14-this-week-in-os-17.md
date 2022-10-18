@@ -57,8 +57,6 @@ tagline: |
 [@oscard0m]: https://github.com/oscard0m
 [AeroRust/nmea]: https://github.com/AeroRust/nmea
 [Swatinem/rust-cache]: https://github.com/Swatinem/rust-cache
-[anuraghazra/github-readme-stats]: https://github.com/anuraghazra/github-readme-stats
-[chrislgarry/Apollo-11]: https://github.com/chrislgarry/Apollo-11
 [empress/empress-blog]: https://github.com/empress/empress-blog
 [git/git]: https://github.com/git/git
 [hoppscotch/hoppscotch]: https://github.com/hoppscotch/hoppscotch
