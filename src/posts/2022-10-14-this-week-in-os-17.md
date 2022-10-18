@@ -52,22 +52,6 @@ tagline: |
 
 - [strapi/strapi] [#14516](https://github.com/strapi/strapi/pull/14516) ci(checks.yml): update actions/checkout to v3 ([@oscard0m])
 
-## Unknown
-
-- [anuraghazra/github-readme-stats] [#2080](https://github.com/anuraghazra/github-readme-stats/pull/2080) ci(label-pr): upgrade actions/labeler to v4 ([@oscard0m])
-- [chrislgarry/Apollo-11] [#877](https://github.com/chrislgarry/Apollo-11/pull/877) ci(markdownlint): upgrade actions/checkout to v3 ([@oscard0m])
-- [git/git] [#1354](https://github.com/git/git/pull/1354) ci(main): upgrade actions/checkout to v3 ([@oscard0m])
-- [hoppscotch/hoppscotch] [#2726](https://github.com/hoppscotch/hoppscotch/pull/2726) chore(PR template): fix typo ([@oscard0m])
-- [hoppscotch/hoppscotch] [#2725](https://github.com/hoppscotch/hoppscotch/pull/2725) ci(deploy-netlify): upgrade actions/checkout to v3 ([@oscard0m])
-- [hoppscotch/hoppscotch] [#2724](https://github.com/hoppscotch/hoppscotch/pull/2724) ci(codeql-analysis): upgrade actions/checkout to v3 ([@oscard0m])
-- [hoppscotch/hoppscotch] [#2723](https://github.com/hoppscotch/hoppscotch/pull/2723) ci(deploy-prod): upgrade actions/checkout to v3 ([@oscard0m])
-- [hoppscotch/hoppscotch] [#2722](https://github.com/hoppscotch/hoppscotch/pull/2722) ci(deploy-staging-netlify): upgrade actions/checkout to v3 ([@oscard0m])
-- [hoppscotch/hoppscotch] [#2721](https://github.com/hoppscotch/hoppscotch/pull/2721) ci(publish-docker): upgrade actions/checkout to v3 ([@oscard0m])
-- [huggingface/transformers] [#19281](https://github.com/huggingface/transformers/pull/19281) ci(stale.yml): upgrade actions/setup-python to v4 ([@oscard0m])
-- [huggingface/transformers] [#19280](https://github.com/huggingface/transformers/pull/19280) ci(stale.yml): update actions/checkout to v3 ([@oscard0m])
-
-
-
 [@Mikek2252]: https://github.com/Mikek2252
 [@Turbo87]: https://github.com/Turbo87
 [@inesilva]: https://github.com/inesilva
