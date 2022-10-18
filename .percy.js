@@ -10,5 +10,16 @@ module.exports = {
       /blog\/tag\/.*\/page\/*/,
       /blog\/author\/.*\/page\/*/
     ]
-  }
+  },
+  snapshot: {
+    percyCSS: `*, :before, :after {
+       /*CSS transitions*/
+       transition-property: none !important;
+       /*CSS transforms*/
+       transform: none !important;
+       /*CSS animations*/
+       animation: none !important;
+    }`,
+  },
 };
+
