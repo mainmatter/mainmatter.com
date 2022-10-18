@@ -62,19 +62,6 @@ tagline: |
 - [huggingface/transformers] [#19281](https://github.com/huggingface/transformers/pull/19281) ci(stale.yml): upgrade actions/setup-python to v4 ([@oscard0m])
 - [huggingface/transformers] [#19280](https://github.com/huggingface/transformers/pull/19280) ci(stale.yml): update actions/checkout to v3 ([@oscard0m])
 
-- [microsoft/Web-Dev-For-Beginners] [#766](https://github.com/microsoft/Web-Dev-For-Beginners/pull/766) ci(workflow): update actions/stale to v6 ([@oscard0m])
-- [microsoft/Web-Dev-For-Beginners] [#765](https://github.com/microsoft/Web-Dev-For-Beginners/pull/765) ci(workflow): update actions/checkout to v3 ([@oscard0m])
-- [narze/profile-updater] [#4](https://github.com/narze/profile-updater/pull/4) ci(run.yml): upgrade actions/cache to v3 ([@oscard0m])
-- [narze/profile-updater] [#3](https://github.com/narze/profile-updater/pull/3) ci(run.yml): upgrade actions/checkout to v3 ([@oscard0m])
-- [nestjs/nest] [#10335](https://github.com/nestjs/nest/pull/10335) ci(codeql-analysis): upgrade actions/checkout to v3 ([@oscard0m])
-- [ohmyzsh/ohmyzsh] [#11209](https://github.com/ohmyzsh/ohmyzsh/pull/11209) ci(workflows): update actions/checkout to v3 ([@oscard0m])
-- [scrapy/scrapy] [#5652](https://github.com/scrapy/scrapy/pull/5652) ci(test-macos): upgrade actions/setup-python to v4 ([@oscard0m])
-- [scrapy/scrapy] [#5651](https://github.com/scrapy/scrapy/pull/5651) ci(test-macos): upgrade actions/checkout to v3 ([@oscard0m])
-- [scrapy/scrapy] [#5650](https://github.com/scrapy/scrapy/pull/5650) ci(tests-windows): upgrade actions/checkout to v3 ([@oscard0m])
-- [scrapy/scrapy] [#5649](https://github.com/scrapy/scrapy/pull/5649) ci(tests-windows): upgrade actions/setup-python to v4 ([@oscard0m])
-- [sharkdp/bat] [#2341](https://github.com/sharkdp/bat/pull/2341) ci(CICD.yml): upgrade actions/checkout to v3 ([@oscard0m])
-- [tldr-pages/tldr] [#8615](https://github.com/tldr-pages/tldr/pull/8615) stale.yml: upgrade actions/stale to v6 ([@oscard0m])
-- [tldr-pages/tldr] [#8614](https://github.com/tldr-pages/tldr/pull/8614) ci: upgrade actions/setup-python to v4 ([@oscard0m])
 - [withastro/docs] [#1662](https://github.com/withastro/docs/pull/1662) i18n(es): Update sharing-state.md translation ([@oscard0m])
 
 [@Mikek2252]: https://github.com/Mikek2252
