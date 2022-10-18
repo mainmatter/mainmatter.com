@@ -62,8 +62,4 @@ tagline: |
 [mainmatter/ember2-x-codemods]: https://github.com/mainmatter/ember2-x-codemods
 [mansona/lint-to-the-future]: https://github.com/mansona/lint-to-the-future
 [rust-lang/crates.io]: https://github.com/rust-lang/crates.io
-[scrapy/scrapy]: https://github.com/scrapy/scrapy
-[sharkdp/bat]: https://github.com/sharkdp/bat
-[strapi/strapi]: https://github.com/strapi/strapi
-[tldr-pages/tldr]: https://github.com/tldr-pages/tldr
 [withastro/docs]: https://github.com/withastro/docs
