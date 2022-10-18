@@ -48,9 +48,6 @@ tagline: |
 
 - [mansona/lint-to-the-future] [#28](https://github.com/mansona/lint-to-the-future/pull/28) Move from minimist to commander ([@Mikek2252])
 
-## JavaScript
-
-- [strapi/strapi] [#14516](https://github.com/strapi/strapi/pull/14516) ci(checks.yml): update actions/checkout to v3 ([@oscard0m])
 
 [@Mikek2252]: https://github.com/Mikek2252
 [@Turbo87]: https://github.com/Turbo87
