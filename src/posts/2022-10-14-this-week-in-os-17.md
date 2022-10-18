@@ -84,8 +84,6 @@ tagline: |
 [huggingface/transformers]: https://github.com/huggingface/transformers
 [jomjol/AI-on-the-edge-device]: https://github.com/jomjol/AI-on-the-edge-device
 [mainmatter/ember2-x-codemods]: https://github.com/mainmatter/ember2-x-codemods
-[mainmatter/eurorust.eu]: https://github.com/mainmatter/eurorust.eu
-[mainmatter/gravity]: https://github.com/mainmatter/gravity
 [mansona/lint-to-the-future]: https://github.com/mansona/lint-to-the-future
 [rust-lang/crates.io]: https://github.com/rust-lang/crates.io
 [scrapy/scrapy]: https://github.com/scrapy/scrapy
