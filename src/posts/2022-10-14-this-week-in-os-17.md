@@ -28,6 +28,10 @@ tagline: |
 - [rust-lang/crates.io] [#5297](https://github.com/rust-lang/crates.io/pull/5297) clap: Add new `wrap_help` feature flag ([@Turbo87])
 - [rust-lang/crates.io] [#5295](https://github.com/rust-lang/crates.io/pull/5295) clap: Derive possible values for `EventType` argument ([@Turbo87])
 
+## Astro
+
+- [withastro/docs] [#1662](https://github.com/withastro/docs/pull/1662) i18n(es): Update sharing-state.md translation ([@oscard0m])
+
 ## Embedded
 
 - [jomjol/AI-on-the-edge-device] [#1158](https://github.com/jomjol/AI-on-the-edge-device/pull/1158) FlowPostProcessing::GetJSON: Add `pre` field to the `/json` response ([@Turbo87])
@@ -62,7 +66,7 @@ tagline: |
 - [huggingface/transformers] [#19281](https://github.com/huggingface/transformers/pull/19281) ci(stale.yml): upgrade actions/setup-python to v4 ([@oscard0m])
 - [huggingface/transformers] [#19280](https://github.com/huggingface/transformers/pull/19280) ci(stale.yml): update actions/checkout to v3 ([@oscard0m])
 
-- [withastro/docs] [#1662](https://github.com/withastro/docs/pull/1662) i18n(es): Update sharing-state.md translation ([@oscard0m])
+
 
 [@Mikek2252]: https://github.com/Mikek2252
 [@Turbo87]: https://github.com/Turbo87

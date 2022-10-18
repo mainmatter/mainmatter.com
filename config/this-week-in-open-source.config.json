@@ -103,6 +103,12 @@
             ]
         },
         {
+            "name": "Astro",
+            "repos": [
+                "withastro/docs"
+            ]
+        },
+        {
             "name": "Embedded",
             "repos": [
                 "jomjol/AI-on-the-edge-device"
