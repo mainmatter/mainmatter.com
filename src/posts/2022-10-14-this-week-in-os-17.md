@@ -16,49 +16,71 @@ tagline: |
 
 ## Rust
 
-- [AeroRust/nmea] [#59](https://github.com/AeroRust/nmea/pull/59) Implement `PGRMZ` support ([@Turbo87])
-- [AeroRust/nmea] [#57](https://github.com/AeroRust/nmea/pull/57) Update/Fix `RMC` docs ([@Turbo87])
-- [Swatinem/rust-cache] [#83](https://github.com/Swatinem/rust-cache/pull/83) Update `@actions/cors` to v1.10.0 ([@Turbo87])
+- [AeroRust/nmea] [#59](https://github.com/AeroRust/nmea/pull/59) Implement
+  `PGRMZ` support ([@Turbo87])
+- [AeroRust/nmea] [#57](https://github.com/AeroRust/nmea/pull/57) Update/Fix
+  `RMC` docs ([@Turbo87])
+- [Swatinem/rust-cache] [#83](https://github.com/Swatinem/rust-cache/pull/83)
+  Update `@actions/cors` to v1.10.0 ([@Turbo87])
 
 ## crates.io
 
-- [rust-lang/crates.io] [#5325](https://github.com/rust-lang/crates.io/pull/5325) CI: Remove obsolete `bors` CI jobs ([@Turbo87])
-- [rust-lang/crates.io] [#5324](https://github.com/rust-lang/crates.io/pull/5324) Remove outdated "Deploying & using a mirror" instructions ([@Turbo87])
-- [rust-lang/crates.io] [#5298](https://github.com/rust-lang/crates.io/pull/5298) clap: Resolve deprecation warnings ([@Turbo87])
-- [rust-lang/crates.io] [#5297](https://github.com/rust-lang/crates.io/pull/5297) clap: Add new `wrap_help` feature flag ([@Turbo87])
-- [rust-lang/crates.io] [#5295](https://github.com/rust-lang/crates.io/pull/5295) clap: Derive possible values for `EventType` argument ([@Turbo87])
+- [rust-lang/crates.io]
+  [#5325](https://github.com/rust-lang/crates.io/pull/5325) CI: Remove obsolete
+  `bors` CI jobs ([@Turbo87])
+- [rust-lang/crates.io]
+  [#5324](https://github.com/rust-lang/crates.io/pull/5324) Remove outdated
+  "Deploying & using a mirror" instructions ([@Turbo87])
+- [rust-lang/crates.io]
+  [#5298](https://github.com/rust-lang/crates.io/pull/5298) clap: Resolve
+  deprecation warnings ([@Turbo87])
+- [rust-lang/crates.io]
+  [#5297](https://github.com/rust-lang/crates.io/pull/5297) clap: Add new
+  `wrap_help` feature flag ([@Turbo87])
+- [rust-lang/crates.io]
+  [#5295](https://github.com/rust-lang/crates.io/pull/5295) clap: Derive
+  possible values for `EventType` argument ([@Turbo87])
 
 ## Astro
 
-- [withastro/docs] [#1662](https://github.com/withastro/docs/pull/1662) i18n(es): Update sharing-state.md translation ([@oscard0m])
+- [withastro/docs] [#1662](https://github.com/withastro/docs/pull/1662)
+  i18n(es): Update sharing-state.md translation ([@oscard0m])
 
 ## Embedded
 
-- [jomjol/AI-on-the-edge-device] [#1158](https://github.com/jomjol/AI-on-the-edge-device/pull/1158) FlowPostProcessing::GetJSON: Add `pre` field to the `/json` response ([@Turbo87])
+- [jomjol/AI-on-the-edge-device]
+  [#1158](https://github.com/jomjol/AI-on-the-edge-device/pull/1158)
+  FlowPostProcessing::GetJSON: Add `pre` field to the `/json` response
+  ([@Turbo87])
 
 ## Ember.js
 
-- [mainmatter/ember2-x-codemods] [#7](https://github.com/mainmatter/ember2-x-codemods/pull/7) computed property - Property to computed syntax transform. ([@Mikek2252])
+- [mainmatter/ember2-x-codemods]
+  [#7](https://github.com/mainmatter/ember2-x-codemods/pull/7) computed
+  property - Property to computed syntax transform. ([@Mikek2252])
 
 ## Empress
 
-- [empress/empress-blog] [#163](https://github.com/empress/empress-blog/pull/163) update ember-scroll to 1.0.3 ([@nickschot])
+- [empress/empress-blog]
+  [#163](https://github.com/empress/empress-blog/pull/163) update ember-scroll
+  to 1.0.3 ([@nickschot])
 
 ## Lint to the future
 
-- [mansona/lint-to-the-future] [#28](https://github.com/mansona/lint-to-the-future/pull/28) Move from minimist to commander ([@Mikek2252])
+- [mansona/lint-to-the-future]
+  [#28](https://github.com/mansona/lint-to-the-future/pull/28) Move from
+  minimist to commander ([@Mikek2252])
 
-
-[@Mikek2252]: https://github.com/Mikek2252
-[@Turbo87]: https://github.com/Turbo87
+[@mikek2252]: https://github.com/Mikek2252
+[@turbo87]: https://github.com/Turbo87
 [@inesilva]: https://github.com/inesilva
 [@marcoow]: https://github.com/marcoow
 [@nickschot]: https://github.com/nickschot
 [@oscard0m]: https://github.com/oscard0m
-[AeroRust/nmea]: https://github.com/AeroRust/nmea
-[Swatinem/rust-cache]: https://github.com/Swatinem/rust-cache
+[aerorust/nmea]: https://github.com/AeroRust/nmea
+[swatinem/rust-cache]: https://github.com/Swatinem/rust-cache
 [empress/empress-blog]: https://github.com/empress/empress-blog
-[jomjol/AI-on-the-edge-device]: https://github.com/jomjol/AI-on-the-edge-device
+[jomjol/ai-on-the-edge-device]: https://github.com/jomjol/AI-on-the-edge-device
 [mainmatter/ember2-x-codemods]: https://github.com/mainmatter/ember2-x-codemods
 [mansona/lint-to-the-future]: https://github.com/mansona/lint-to-the-future
 [rust-lang/crates.io]: https://github.com/rust-lang/crates.io
