@@ -58,9 +58,6 @@ tagline: |
 [AeroRust/nmea]: https://github.com/AeroRust/nmea
 [Swatinem/rust-cache]: https://github.com/Swatinem/rust-cache
 [empress/empress-blog]: https://github.com/empress/empress-blog
-[git/git]: https://github.com/git/git
-[hoppscotch/hoppscotch]: https://github.com/hoppscotch/hoppscotch
-[huggingface/transformers]: https://github.com/huggingface/transformers
 [jomjol/AI-on-the-edge-device]: https://github.com/jomjol/AI-on-the-edge-device
 [mainmatter/ember2-x-codemods]: https://github.com/mainmatter/ember2-x-codemods
 [mansona/lint-to-the-future]: https://github.com/mansona/lint-to-the-future
