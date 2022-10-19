@@ -53,7 +53,9 @@
         "oscard0m/remix-deploy-netlify",
         "oscard0m/remix-deploy-vercel",
         "XCSoar/xcsoar-data-content",
-        "inesilva/my-website"
+        "inesilva/my-website",
+        "mainmatter/eurorust.eu",
+        "mainmatter/gravity"
     ],
     "labels": [
         {
@@ -69,7 +71,9 @@
                 "Turbo87/sentry-conduit",
                 "kivikakk/comrak",
                 "LukeMathWalker/tracing-bunyan-formatter",
-                "Turbo87/segelflug-classifieds"
+                "Turbo87/segelflug-classifieds",
+                "AeroRust/nmea",
+                "Swatinem/rust-cache"
             ]
         },
         {
@@ -96,6 +100,18 @@
                 "octoherd/.github",
                 "octoherd/create-octoherd-script",
                 "octoherd/script-setup-renovate"
+            ]
+        },
+        {
+            "name": "Astro",
+            "repos": [
+                "withastro/docs"
+            ]
+        },
+        {
+            "name": "Embedded",
+            "repos": [
+                "jomjol/AI-on-the-edge-device"
             ]
         },
         {
