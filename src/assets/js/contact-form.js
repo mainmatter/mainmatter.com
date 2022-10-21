@@ -28,7 +28,7 @@ export class ContactForm {
   }
 
   sendMessage(formData) {
-    return fetch("https://simplabs-com-contact-form.herokuapp.com/api/send", {
+    return fetch("https://contact.mainmatter.dev/send", {
       body: JSON.stringify(formData),
       cache: "no-cache",
       headers: {
