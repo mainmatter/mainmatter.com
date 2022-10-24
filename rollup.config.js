@@ -7,6 +7,7 @@ export default {
   output: {
     file: "assets/js/app.js",
     format: "cjs",
+    sourcemap: true,
   },
   plugins: [nodeResolve({ browser: true }), commonjs(), terser()],
 };
