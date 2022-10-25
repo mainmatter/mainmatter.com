@@ -12,5 +12,5 @@ you might want to serve your Ember application over HTTPS locally.
 Learn how in this talk by Florian from EmberFest 2022.
 
 For more details, check out Florian's
-[blog post](/posts/2022-09-22-selfsigned-certificates-for-development/)
-on self-signed certificates.
+[blog post](/posts/2022-09-22-selfsigned-certificates-for-development.md) on
+self-signed certificates.
