@@ -1,3 +1,5 @@
+import * as Sentry from "@sentry/browser";
+
 export class ContactForm {
   constructor(element) {
     this.form = element;
@@ -28,6 +30,19 @@ export class ContactForm {
   }
 
   sendMessage(formData) {
+    const handleError = () => {
+      this.updateFormState("error", "An error occurred.");
+      if (window.location.host === "mainmatter.com") {
+        Sentry.addBreadcrumb({
+          category: "post",
+          message: "Submit Contact Form",
+          level: "info",
+          data: formData,
+        });
+        Sentry.captureException(new Error("Failed to deliver message via contact form!"));
+      }
+    };
+
     return fetch("https://contact.mainmatter.dev/send", {
       body: JSON.stringify(formData),
       cache: "no-cache",
@@ -41,11 +56,11 @@ export class ContactForm {
         if (response.ok) {
           this.updateFormState("success", "Message sent successfully.");
         } else {
-          this.updateFormState("error", "An error occurred.");
+          handleError();
         }
       })
       .catch(() => {
-        this.updateFormState("error", "An error occurred.");
+        handleError();
       });
   }
 
