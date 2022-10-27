@@ -55,5 +55,5 @@ hero:
 
 {% set 'content' = {
   "text": "[Mainmatter's] expertise in developing Ember.js based applications helped us to define and develop the new DD-WRT NXT user experience. It was impressive to see in what short time such a complex application leveraging a customer backend interface could be implemented. Mainmatter's work provided the new foundation for our UI and our in-house development team greatly benefitted from their knowhow.",
-  "source": "PETER STEINHÄUSER, EMBEDD CEO"
+  "source": "Peter Steinhäuser, embeDD CEO"
 } %} {{ quote(content) }}

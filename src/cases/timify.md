@@ -58,5 +58,5 @@ hero:
 
 {% set 'content' = {
   "text": "[Mainmatter's] experienced engineers delivered a solid and well architected foundation for our web app. They also helped us establish best practices and a lean process internally. Working with them was a pleasure.",
-  "source": "ANDREAS KNÜRR, TIMIFY CEO"
+  "source": "Andreas Knürr, Timify CEO"
 } %} {{ quote(content) }}

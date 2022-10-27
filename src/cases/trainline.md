@@ -47,7 +47,7 @@ hero:
 
 {% set 'content' = {
   "text": "It has been an absolute pleasure to work with [Mainmatter]. Their team of experienced JavaScript engineers quickly slotted in to our in-house development teams. Their expertise with modern, agile software development best practices and tools meant they were able to work with our processes to deliver fantastic customer experiences.",
-  "source": "MARK HOLT, TRAINLINE CTO"
+  "source": "Mark Holt, Trainline CTO"
 } %} {{ quote(content) }}
 
 <div class="case-study__image-wrapper">

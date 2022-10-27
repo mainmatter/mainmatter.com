@@ -43,6 +43,10 @@
   margin: 0 0 2rem;
 }
 
+.quote__source {
+  text-transform: uppercase;
+}
+
 @media (min-width: 48em) {
   .quote {
     margin: 6.25rem auto;
