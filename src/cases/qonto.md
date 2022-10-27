@@ -1,9 +1,6 @@
 ---
 layout: case-study
 company: Qonto
-companyDescription:
-  Qonto is a B2B Neobank that provides banking services and credit cards to more
-  than 75,000 freelancers and SMEs in Europe.
 title: Co-Engineering the Future of Banking for SMEs with Qonto | Work
 displayTitle: "A helping hand for a <em>visionary</em> fintech startup"
 description:
