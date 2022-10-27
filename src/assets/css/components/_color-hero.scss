@@ -102,6 +102,11 @@
 
 .color-hero__client-logo {
   margin-bottom: 1rem;
+
+  img {
+    max-height: 6rem;
+    max-width: 14rem;
+  }
 }
 
 .color-hero__client-tags {
