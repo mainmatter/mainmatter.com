@@ -1,10 +1,6 @@
 ---
 layout: case-study
 company: DDWRT
-companyDescription:
-  DD-WRT is a Linux-based firmware for wireless routers. Originally designed for
-  the Linksys WRT54G series, it now runs on a wide variety of models and is
-  installed on millions of devices worldwide.
 title: A modern UI for DD-WRT NXT based on Ember.js | Work
 displayTitle: "A modern user interface for <em>perennial</em> router firmware"
 description:

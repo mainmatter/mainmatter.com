@@ -1,9 +1,6 @@
 ---
 layout: case-study
 company: Expedition
-companyDescription:
-  Expedition is an online travel magazine for global citizens who want to
-  experience world’s best destinations through the eyes of a local.
 title: An architecture based on Elixir and Ember.js for Expedition | Work
 displayTitle: "A sturdy foundation for <em>advanced</em> system architecture"
 description:
