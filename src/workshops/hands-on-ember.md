@@ -69,16 +69,13 @@ optional_topics:
       properties and mixins. In this stage, we cover those concepts in-depth as
       well as explore approaches for migrating to native classes.
 leads:
-  - name: Ricardo Mendes
+  - name: Gabor Babicz
     title:
-      Senior Frontend Engineer, Ember Framework and Learning Core teams member
-    handle: locks
-    image: /assets/images/authors/locks.jpg
+      Senior Frontend Engineer
+    handle: zeppelin
+    image: /assets/images/authors/zeppelin.jpg
     bio: >
-      Ricardo is a long time Ember core team member and one of the main people
-      responsible for Ember's documentation. He is passionate about teaching and
-      has worked with teams around the world to deepen and extend their
-      knowledge about the framework.
+      Gabor is a very early Ember user since its pre-1.0 years, successfully completing several projects and helping teams with their applications, teaching them best practices relevant to either the latest or classic versions of Ember.
   - name: Marco Otte-Witte
     title: Founder and Managing Director at Mainmatter
     handle: marcoow
