@@ -7,5 +7,6 @@ kind: meetup
 color: aqua
 ---
 
-The Europe Ember.js m
-eetup is a one-day event, bringing together the Ember community from all of Europe once a quarter. The meetup is organized as a hybrid event to allow people to join remotely as well. 
+The Europe Ember.js meetup is a one-day event, bringing together the Ember
+community from all of Europe once a quarter. The meetup is organized as a hybrid
+event to allow people to join remotely as well.
