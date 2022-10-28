@@ -46,16 +46,17 @@ topics:
       diagram, wireframes for MVP, the product architecture diagram, and our <a
       href="/playbook/">40-page Playbook</a>
 leads:
-  - name: Mar High
-    title: Director of Product Design
-    handle: msmarhigh
-    image: /assets/images/authors/msmarhigh.jpg
+  - name: Florian Pichler
+    title: Consultant for Technology and Design
+    handle: pichfl
+    image: /assets/images/authors/pichfl.jpg
     bio: >
-      Linda helps companies solve their user's problems in creative and scalable
-      ways. She's experienced in strategy workshop facilitation and user
-      experience design.
+      Florian bridges the gap between development and design, mentoring clients
+      along the way. He created user experiences and design systems for
+      established brands like Audi, BASF, BMW, and Zurich Insurance.
   - name: Marco Otte-Witte
     title: Founder and Managing Director at Mainmatter
+    handle: marcoow
     image: /assets/images/authors/marcoow.jpg
     bio: >
       Marco has been working in tech with startups and enterprises for 2
