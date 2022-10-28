@@ -35,10 +35,7 @@ jobs:
         run: yarn install
 
       - name: build
-        # build and disable lazy loading of images which makes the Percy snapshots random otherwise
-        run: |
-          yarn build
-          find ./dist/**/*.html -type f -exec sed -i '' -e 's/loading=\"lazy\"//gI' {} \;
+        run: yarn percy:build
 
       - name: snapshots
         env:
