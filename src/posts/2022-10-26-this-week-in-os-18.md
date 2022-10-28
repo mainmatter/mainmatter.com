@@ -96,6 +96,8 @@ tagline: |
 - [Turbo87/auto-dist-tag]
   [#292](https://github.com/Turbo87/auto-dist-tag/pull/292) renovate: Simplify
   config by using shared config repo ([@Turbo87])
+- [miragejs/miragejs] [#1064](https://github.com/miragejs/miragejs/pull/1064)
+  Fix includes query params ([@mansona])
 
 ## Unknown
 
@@ -117,11 +119,6 @@ tagline: |
 - [mainmatter/mainmatter-website-mailer]
   [#1](https://github.com/mainmatter/mainmatter-website-mailer/pull/1) Add CI
   setup ([@marcoow])
-- [mansona/test-allow-failure]
-  [#1](https://github.com/mansona/test-allow-failure/pull/1) add readme
-  ([@mansona])
-- [miragejs/miragejs] [#1064](https://github.com/miragejs/miragejs/pull/1064)
-  Fix includes query params ([@mansona])
 
 [@turbo87]: https://github.com/Turbo87
 [@locks]: https://github.com/locks

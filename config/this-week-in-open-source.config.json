@@ -55,7 +55,8 @@
         "XCSoar/xcsoar-data-content",
         "inesilva/my-website",
         "mainmatter/eurorust.eu",
-        "mainmatter/gravity"
+        "mainmatter/gravity",
+        "mansona/test-allow-failure"
     ],
     "labels": [
         {
@@ -235,7 +236,8 @@
                 "mansona/showdown-section-groups",
                 "calibreapp/image-actions",
                 "volta-cli/action",
-                "Turbo87/auto-dist-tag"
+                "Turbo87/auto-dist-tag",
+                "miragejs/miragejs"
             ]
         },
         {
