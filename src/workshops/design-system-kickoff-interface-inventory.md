@@ -37,14 +37,14 @@ topics:
       We'll share crucial steps that help us succeed when transitioning an
       organization to a design system.
 leads:
-  - name: Mar High
-    handle: msmarhigh
-    title: Director of Product Design
-    image: /assets/images/authors/msmarhigh.jpg
+  - name: Florian Pichler
+    title: Consultant for Technology and Design
+    handle: pichfl
+    image: /assets/images/authors/pichfl.jpg
     bio: >
-      Linda helps companies solve their user's problems in creative and scalable
-      ways. She's experienced in strategy workshop facilitation and user
-      experience design.
+      Florian bridges the gap between development and design, mentoring clients
+      along the way. He created user experiences and design systems for
+      established brands like Audi, BASF, BMW, and Zurich Insurance.
 ---
 
 Interface inventories are a key first step to create alignment and advocate
