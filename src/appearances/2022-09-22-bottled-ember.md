@@ -1,7 +1,7 @@
 ---
 title:
   "Bottled Ember - Batteries Included Web Framework, tiny tiny living space"
-image: "/assets/images/talks/2022-09-22-emberfest-2022/certificates-for-ember-serve.jpeg"
+image: "/assets/images/talks/2022-09-22-emberfest-2022/bottled-ember.jpg"
 url: https://www.youtube.com/watch?v=On7gcZsuQ7g
 media: video
 channel: emberfest-2022
