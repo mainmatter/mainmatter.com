@@ -15,7 +15,7 @@ hero:
   image: "/assets/images/workshops/rust-for-the-web/header-background.jpg"
   imageAlt: "The Rust logo in white on top of a photo of a rusty metal surface"
 og:
-  image: /assets/images/workshops/hands-on-ember/og-image.jpg
+  image: /assets/images/workshops/rust-for-the-web/og-image.jpg
 topics:
   - heading: What is Rust
     text: >
