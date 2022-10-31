@@ -4,7 +4,6 @@ format: 2-3 days on-site or remote
 description:
   Create an interface inventory of your digital product, and align with your
   team on how to prioritize refactoring using a design systems methodology.
-tag: /assets/images/workshops/design-system-kickoff-interface-inventory/scissors.svg
 hero:
   image: "/assets/images/workshops/design-system-kickoff-interface-inventory/design-system-kickoff-interface-inventory-hero.jpg"
   imageAlt: "Design system on a computer screen"
