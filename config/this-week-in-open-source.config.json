@@ -237,7 +237,8 @@
                 "calibreapp/image-actions",
                 "volta-cli/action",
                 "Turbo87/auto-dist-tag",
-                "miragejs/miragejs"
+                "miragejs/miragejs",
+                "hakimel/reveal.js"
             ]
         },
         {
@@ -335,7 +336,8 @@
         {
             "name": "Internal",
             "repos": [
-                "mainmatter/renovate-config"
+                "mainmatter/renovate-config",
+                "mainmatter/mainmatter-website-mailer"
             ]
         },
         {
