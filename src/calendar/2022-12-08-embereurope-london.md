@@ -1,6 +1,6 @@
 ---
 title: "Ember Europe"
-image: "/assets/images/calendar/2022-12-08-embereurope-london/embereuropelogo.png"
+image: "/assets/images/calendar/2022-12-08-embereurope-london/embereuropelogo.svg"
 location: London & remote
 url: https://www.meetup.com/ember-europe/
 kind: meetup
