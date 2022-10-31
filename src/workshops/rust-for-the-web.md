@@ -10,7 +10,6 @@ description:
   their web projects. We will teach everything you need to know about the
   language and wider ecosystem to be able to write your own HTTP server in the
   end!</p>
-tag: /assets/images/workshops/hands-on-ember/ember.svg
 hero:
   image: "/assets/images/workshops/rust-for-the-web/header-background.jpg"
   imageAlt: "The Rust logo in white on top of a photo of a rusty metal surface"
