@@ -55,7 +55,8 @@
         "XCSoar/xcsoar-data-content",
         "inesilva/my-website",
         "mainmatter/eurorust.eu",
-        "mainmatter/gravity"
+        "mainmatter/gravity",
+        "mansona/test-allow-failure"
     ],
     "labels": [
         {
@@ -73,7 +74,8 @@
                 "LukeMathWalker/tracing-bunyan-formatter",
                 "Turbo87/segelflug-classifieds",
                 "AeroRust/nmea",
-                "Swatinem/rust-cache"
+                "Swatinem/rust-cache",
+                "pietroalbini/rfcs"
             ]
         },
         {
@@ -233,7 +235,10 @@
                 "axmccx/proxynexus",
                 "mansona/showdown-section-groups",
                 "calibreapp/image-actions",
-                "volta-cli/action"
+                "volta-cli/action",
+                "Turbo87/auto-dist-tag",
+                "miragejs/miragejs",
+                "hakimel/reveal.js"
             ]
         },
         {
@@ -331,7 +336,8 @@
         {
             "name": "Internal",
             "repos": [
-                "mainmatter/renovate-config"
+                "mainmatter/renovate-config",
+                "mainmatter/mainmatter-website-mailer"
             ]
         },
         {

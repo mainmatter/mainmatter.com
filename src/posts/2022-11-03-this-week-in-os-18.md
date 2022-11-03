@@ -1,0 +1,144 @@
+---
+title: "This week in Open Source at Mainmatter #18"
+authorHandle: mainmatter
+tags: open-source
+bio: "The Mainmatter team"
+description:
+  "A collection of work that our engineers have been carrying out in open-source
+  in the past few weeks."
+og:
+  image: /assets/images/posts/2022-11-03-this-week-in-os-18/og-image.jpg
+tagline: |
+  <p>Our software engineers are all active members of the open-source community and
+  enjoy collaborating on various projects. In this blog post, we have collected
+  some of the work they have done the past week!</p>
+---
+
+## Rust
+
+- [Turbo87/segelflug-classifieds]
+  [#401](https://github.com/Turbo87/segelflug-classifieds/pull/401) CI: Add
+  "Build and Deploy" workflow ([@Turbo87])
+- [pietroalbini/rfcs] [#2](https://github.com/pietroalbini/rfcs/pull/2) Improve
+  token scopes proposal ([@Turbo87])
+
+## crates.io
+
+- [rust-lang/crates.io]
+  [#5375](https://github.com/rust-lang/crates.io/pull/5375) Remove unused CSS
+  classes ([@Turbo87])
+- [rust-lang/crates.io]
+  [#5370](https://github.com/rust-lang/crates.io/pull/5370) Use a fluid space
+  scale ([@Turbo87])
+- [rust-lang/crates.io]
+  [#5369](https://github.com/rust-lang/crates.io/pull/5369) Remove unused CSS
+  classes ([@Turbo87])
+- [rust-lang/crates.io]
+  [#5366](https://github.com/rust-lang/crates.io/pull/5366) styles: Extract
+  `font-body/heading` font family design tokens ([@Turbo87])
+- [rust-lang/crates.io]
+  [#5355](https://github.com/rust-lang/crates.io/pull/5355) Revert "Netlify: Add
+  `_redirects` file" ([@Turbo87])
+- [rust-lang/crates.io]
+  [#5354](https://github.com/rust-lang/crates.io/pull/5354) footer: Add Zulip
+  channel to "Social" link list ([@Turbo87])
+- [rust-lang/crates.io]
+  [#5353](https://github.com/rust-lang/crates.io/pull/5353) styles: Extract
+  `transition` design tokens ([@Turbo87])
+- [rust-lang/crates.io]
+  [#5333](https://github.com/rust-lang/crates.io/pull/5333) Heroku: Remove
+  unused `app.json` file ([@Turbo87])
+- [rust-lang/crates.io]
+  [#5330](https://github.com/rust-lang/crates.io/pull/5330) docs: Reintroduce
+  `MIRROR.md` to keep third party links to the document working ([@Turbo87])
+- [rust-lang/crates.io]
+  [#5329](https://github.com/rust-lang/crates.io/pull/5329) Remove deprecated
+  `MIRROR` mode ([@Turbo87])
+
+## Ember.js
+
+- [ember-learn/ember-website]
+  [#969](https://github.com/ember-learn/ember-website/pull/969) Release Pages
+  v4.8.0 ([@locks])
+- [mainmatter/ember-promise-modals]
+  [#775](https://github.com/mainmatter/ember-promise-modals/pull/775) Deprecate
+  opening modals from paths ([@pichfl])
+- [qonto/ember-cp-validations]
+  [#22](https://github.com/qonto/ember-cp-validations/pull/22) Bump Node version
+  to 16 ([@zeppelin])
+- [qonto/ember-cp-validations]
+  [#20](https://github.com/qonto/ember-cp-validations/pull/20) Use `require`
+  instead of `import` to make Embroider happy ([@zeppelin])
+
+## Lint to the future
+
+- [mansona/lint-to-the-future]
+  [#30](https://github.com/mansona/lint-to-the-future/pull/30) add a basic tests
+  for rootUrl on output command ([@mansona])
+
+## JavaScript
+
+- [Turbo87/auto-dist-tag]
+  [#298](https://github.com/Turbo87/auto-dist-tag/pull/298) CI: Extract
+  `PNPM_VERSION` variable ([@Turbo87])
+- [Turbo87/auto-dist-tag]
+  [#296](https://github.com/Turbo87/auto-dist-tag/pull/296) fetch-dist-tags:
+  Convert to async function ([@Turbo87])
+- [Turbo87/auto-dist-tag]
+  [#295](https://github.com/Turbo87/auto-dist-tag/pull/295) Drop support for
+  Node.js 10 and 12 ([@Turbo87])
+- [Turbo87/auto-dist-tag]
+  [#294](https://github.com/Turbo87/auto-dist-tag/pull/294) renovate: Keep pnpm
+  up-to-date ([@Turbo87])
+- [Turbo87/auto-dist-tag]
+  [#293](https://github.com/Turbo87/auto-dist-tag/pull/293) CI: Pin action
+  versions ([@Turbo87])
+- [Turbo87/auto-dist-tag]
+  [#292](https://github.com/Turbo87/auto-dist-tag/pull/292) renovate: Simplify
+  config by using shared config repo ([@Turbo87])
+- [miragejs/miragejs] [#1064](https://github.com/miragejs/miragejs/pull/1064)
+  Fix includes query params ([@mansona])
+- [hakimel/reveal.js] [#3305](https://github.com/hakimel/reveal.js/pull/3305)
+  Gulp livereload: include subfolders to watch for changes in html and md
+  ([@lolmaus])
+
+## Internal
+
+- [mainmatter/mainmatter-website-mailer]
+  [#5](https://github.com/mainmatter/mainmatter-website-mailer/pull/5) User
+  better subject, sender and recipient name ([@marcoow])
+- [mainmatter/mainmatter-website-mailer]
+  [#4](https://github.com/mainmatter/mainmatter-website-mailer/pull/4) use
+  default message in case it's empty ([@marcoow])
+- [mainmatter/mainmatter-website-mailer]
+  [#3](https://github.com/mainmatter/mainmatter-website-mailer/pull/3) add CORS
+  headers ([@marcoow])
+- [mainmatter/mainmatter-website-mailer]
+  [#2](https://github.com/mainmatter/mainmatter-website-mailer/pull/2)
+  Auto-release from Actions ([@marcoow])
+- [mainmatter/mainmatter-website-mailer]
+  [#1](https://github.com/mainmatter/mainmatter-website-mailer/pull/1) Add CI
+  setup ([@marcoow])
+
+[@turbo87]: https://github.com/Turbo87
+[@locks]: https://github.com/locks
+[@lolmaus]: https://github.com/lolmaus
+[@mansona]: https://github.com/mansona
+[@marcoow]: https://github.com/marcoow
+[@pichfl]: https://github.com/pichfl
+[@zeppelin]: https://github.com/zeppelin
+[turbo87/auto-dist-tag]: https://github.com/Turbo87/auto-dist-tag
+[turbo87/segelflug-classifieds]:
+  https://github.com/Turbo87/segelflug-classifieds
+[ember-learn/ember-website]: https://github.com/ember-learn/ember-website
+[hakimel/reveal.js]: https://github.com/hakimel/reveal.js
+[mainmatter/ember-promise-modals]:
+  https://github.com/mainmatter/ember-promise-modals
+[mainmatter/mainmatter-website-mailer]:
+  https://github.com/mainmatter/mainmatter-website-mailer
+[mansona/lint-to-the-future]: https://github.com/mansona/lint-to-the-future
+[mansona/test-allow-failure]: https://github.com/mansona/test-allow-failure
+[miragejs/miragejs]: https://github.com/miragejs/miragejs
+[pietroalbini/rfcs]: https://github.com/pietroalbini/rfcs
+[qonto/ember-cp-validations]: https://github.com/qonto/ember-cp-validations
+[rust-lang/crates.io]: https://github.com/rust-lang/crates.io
