@@ -27,18 +27,20 @@ description: Find out about upcoming events, conferences and meetups we will be 
   </div>
 </div>
 
-<section class="section">
-  <div class="container container--xl">
-    <h2 class="section__introduction h5">Upcoming events</h2>
-  </div>
-  <div class="event-cards__wrapper">
-    <ul class="event-cards">
-      {% for event in collections.calendar %}
-      {{ eventCard(event) }}
-      {% endfor %}
-    </ul>
-  </div>
-</section>
+{% if collections.calendar.length > 0 %}
+  <section class="section">
+    <div class="container container--xl">
+      <h2 class="section__introduction h5">Upcoming events</h2>
+    </div>
+    <div class="event-cards__wrapper">
+      <ul class="event-cards">
+        {% for event in collections.calendar %}
+        {{ eventCard(event) }}
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+{% endif %}
 
 <section class="section">
   <div class="container container--xl">
