@@ -14,7 +14,6 @@ description: <p>We go through a series of stages that each build on one another.
 
   <p>All examples and practical assignments from the workshop are available
   publicly on GitHub.</p>
-tag: /assets/images/workshops/hands-on-ember/ember.svg
 hero:
   image: "/assets/images/workshops/hands-on-ember/hands-on-ember-workshop-hero.jpg"
   imageAlt: "Illustration of Ember JS mascot Zoey on a purple background"

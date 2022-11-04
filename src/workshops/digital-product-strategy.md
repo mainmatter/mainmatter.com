@@ -8,7 +8,6 @@ description:
   gain an overview of your business. Understanding the fundamentals such as your
   business model, competitor analysis, and users is an essential first step for
   this strategy workshop.
-tag: /assets/images/workshops/digital-product-strategy/flag.svg
 hero:
   image: "/assets/images/workshops/digital-product-strategy/digital-product-strategy-workshop-hero.jpg"
   imageAlt: "Hand-drawn wireframes and colorful Post-it notes on a desk"
