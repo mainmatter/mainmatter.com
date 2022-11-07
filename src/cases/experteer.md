@@ -47,3 +47,9 @@ hero:
     <p>In addition to implementing the application, we set up the infrastructure that would support its long-term evolution and maintenance. Our team established everything from the design system and component library to testing and deployment pipelines and preview systems for each pull request inside Experteer’s organization.</p>
   </div>
 </div>
+
+{% set 'content' = {
+  "text": "Mainmatter helped us tremendously to execute on our roadmap and move on with important strategic product features. On top of that, they pushed our engineering culture to a new level while we were transforming our legacy UI/UX to a state-of-the-art architecture.",
+  "source": "Thomas Nitsche, Director of Engineering, Experteer GmbH",
+  "loading": "lazy"
+} %} {{ quote(content) }}
