@@ -7,8 +7,8 @@ kind: meetup
 color: aqua
 ---
 
-Ember Europe is back in Q4 with the last event for the year, this time
-hosted by CrowdStrike in London. The Ember Europe meetup series brings together
-the Ember community from all of Europe once a quarter. The meetup is organized
-by Mainmatter and Intercom as a hybrid event, hosted from a different city each
+Ember Europe is back in Q4 with the last event for the year, this time hosted by
+CrowdStrike in London. The Ember Europe meetup series brings together the Ember
+community from all of Europe once a quarter. The meetup is organized by
+Mainmatter and Intercom as a hybrid event, hosted from a different city each
 time with the option for people to join remotely as well.
