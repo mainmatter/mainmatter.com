@@ -3,9 +3,11 @@
 
 {%- macro imageBannerWithText(content) -%}
   <section class="image-banner-with-text">
-    <div class="container container--lg">
-      <h2 class="image-banner-with-text__heading h5">{{ content.title }}</h2>
-    </div>
+    {% if content.title %}
+      <div class="container container--lg">
+        <h2 class="image-banner-with-text__heading h5">{{ content.title }}</h2>
+      </div>
+    {% endif %}
 
     {% if content.image %}
       {% set imageData = {
