@@ -72,6 +72,10 @@
         {
           "text": "Elixir & Phoenix",
           "link": "/expertise/elixir-phoenix/"
+        },
+        {
+          "text": "Rust",
+          "link": "/rust-consulting/"
         }
       ]
     },
