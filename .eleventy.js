@@ -48,6 +48,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("posts", require("./collections/posts"));
   eleventyConfig.addCollection("emberPosts", require("./collections/ember-posts"));
   eleventyConfig.addCollection("elixirPosts", require("./collections/elixirPosts"));
+  eleventyConfig.addCollection("rustPosts", require("./collections/rustPosts"));
   eleventyConfig.addCollection("authors", require("./collections/authors"));
   eleventyConfig.addCollection(
     "authorsPostsPaged",
