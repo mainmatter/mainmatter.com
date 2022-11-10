@@ -75,7 +75,7 @@ leads:
     handle: zeppelin
     image: /assets/images/authors/zeppelin.jpg
     bio: >
-      Gabor is a very early Ember user since its pre-1.0 years, successfully completing several projects and helping teams with their applications, teaching them best practices relevant to either the latest or classic versions of Ember.
+      Gabor was a very early adopter of Ember in the´ pre-1.0 years of the framework and has since successfully completed numerous projects with it. He helps teams build applications and teaches best practices along the way.
   - name: Marco Otte-Witte
     title: Founder and Managing Director at Mainmatter
     handle: marcoow
