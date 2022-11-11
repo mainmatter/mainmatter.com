@@ -14,7 +14,9 @@ server.listen(3000, function () {
   let errors = 0;
 
   const siteChecker = new SiteChecker(
-    {},
+    {
+      excludedKeywords: ["/blog/author/zeppelin"],
+    },
     {
       link(result) {
         if (result.broken) {
