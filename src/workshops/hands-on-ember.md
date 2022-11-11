@@ -70,12 +70,14 @@ optional_topics:
       well as explore approaches for migrating to native classes.
 leads:
   - name: Gabor Babicz
-    title:
-      Senior Frontend Engineer
+    title: Senior Frontend Engineer
     handle: zeppelin
     image: /assets/images/authors/zeppelin.jpg
     bio: >
-      Gabor was a very early adopter of Ember in the pre-1.0 years of the framework and has since successfully completed numerous projects with it. He helps teams build applications and teaches best practices along the way.
+      Gabor was a very early adopter of Ember in the pre-1.0 years of the
+      framework and has since successfully completed numerous projects with it.
+      He helps teams build applications and teaches best practices along the
+      way.
   - name: Marco Otte-Witte
     title: Founder and Managing Director at Mainmatter
     handle: marcoow
