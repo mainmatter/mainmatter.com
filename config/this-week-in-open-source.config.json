@@ -55,7 +55,8 @@
         "inesilva/my-website",
         "mainmatter/eurorust.eu",
         "mainmatter/gravity",
-        "mansona/test-allow-failure"
+        "mansona/test-allow-failure",
+        "Turbo87/renovate-config"
     ],
     "labels": [
         {
@@ -180,7 +181,8 @@
                 "nickschot/ember-gesture-modifiers",
                 "ember-learn/ember-release-bot",
                 "mainmatter/ember2-x-codemods",
-                "ember-cli/ember-try-config"
+                "ember-cli/ember-try-config",
+                "mainmatter/ember-api-actions"
             ]
         },
         {

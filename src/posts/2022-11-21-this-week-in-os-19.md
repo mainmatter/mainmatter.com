@@ -107,48 +107,6 @@ tagline: |
 - [qonto/ember-cp-validations]
   [#23](https://github.com/qonto/ember-cp-validations/pull/23) Ensure Ember Data
   4.4 compatibility ([@zeppelin])
-
-## Probot
-
-- [probot/probot] [#1763](https://github.com/probot/probot/pull/1763)
-  build(deps): upgrade @octokit/types to v8 ([@oscard0m])
-
-## Internal
-
-- [mainmatter/mainmatter-website-mailer]
-  [#7](https://github.com/mainmatter/mainmatter-website-mailer/pull/7) Add tests
-  ([@marcoow])
-
-## Unknown
-
-- [MinThaMie/more-confetti-addon]
-  [#1](https://github.com/MinThaMie/more-confetti-addon/pull/1) protect fire()
-  function from being run in fastboot ([@mansona])
-- [Turbo87/renovate-config]
-  [#27](https://github.com/Turbo87/renovate-config/pull/27) renovate: Use weekly
-  update schedule ([@Turbo87])
-- [Turbo87/renovate-config]
-  [#10](https://github.com/Turbo87/renovate-config/pull/10) Use Jest to test all
-  relevant JSON files in the project ([@Turbo87])
-- [Turbo87/renovate-config]
-  [#9](https://github.com/Turbo87/renovate-config/pull/9) Add
-  `githubActions/regexManagers` preset ([@Turbo87])
-- [cardstack/boxel-motion]
-  [#137](https://github.com/cardstack/boxel-motion/pull/137) Only register a
-  sprite modifier once, instead of whenever arguments change ([@nickschot])
-- [cardstack/boxel-motion]
-  [#134](https://github.com/cardstack/boxel-motion/pull/134) Fix location
-  deprecation by setting locationType to history ([@nickschot])
-- [cardstack/boxel-motion]
-  [#133](https://github.com/cardstack/boxel-motion/pull/133) Modernize
-  sprite-modifier to be compatible with the future ember-modifier v4
-  ([@nickschot])
-- [cardstack/boxel-motion]
-  [#129](https://github.com/cardstack/boxel-motion/pull/129) Remove
-  dependenciesMeta as it breaks things during development ([@nickschot])
-- [cardstack/boxel-motion]
-  [#128](https://github.com/cardstack/boxel-motion/pull/128) Remove unnecessary
-  re-exports ([@nickschot])
 - [mainmatter/ember-api-actions]
   [#37](https://github.com/mainmatter/ember-api-actions/pull/37) Implement
   experimental `adapterAction()` function ([@Turbo87])
@@ -200,6 +158,39 @@ tagline: |
 - [mainmatter/ember-api-actions]
   [#2](https://github.com/mainmatter/ember-api-actions/pull/2) CI: Migrate to
   pnpm ([@Turbo87])
+
+## Probot
+
+- [probot/probot] [#1763](https://github.com/probot/probot/pull/1763)
+  build(deps): upgrade @octokit/types to v8 ([@oscard0m])
+
+## Internal
+
+- [mainmatter/mainmatter-website-mailer]
+  [#7](https://github.com/mainmatter/mainmatter-website-mailer/pull/7) Add tests
+  ([@marcoow])
+
+## Unknown
+
+- [MinThaMie/more-confetti-addon]
+  [#1](https://github.com/MinThaMie/more-confetti-addon/pull/1) protect fire()
+  function from being run in fastboot ([@mansona])
+- [cardstack/boxel-motion]
+  [#137](https://github.com/cardstack/boxel-motion/pull/137) Only register a
+  sprite modifier once, instead of whenever arguments change ([@nickschot])
+- [cardstack/boxel-motion]
+  [#134](https://github.com/cardstack/boxel-motion/pull/134) Fix location
+  deprecation by setting locationType to history ([@nickschot])
+- [cardstack/boxel-motion]
+  [#133](https://github.com/cardstack/boxel-motion/pull/133) Modernize
+  sprite-modifier to be compatible with the future ember-modifier v4
+  ([@nickschot])
+- [cardstack/boxel-motion]
+  [#129](https://github.com/cardstack/boxel-motion/pull/129) Remove
+  dependenciesMeta as it breaks things during development ([@nickschot])
+- [cardstack/boxel-motion]
+  [#128](https://github.com/cardstack/boxel-motion/pull/128) Remove unnecessary
+  re-exports ([@nickschot])
 - [mainmatter/ember-cli-list-addons]
   [#1](https://github.com/mainmatter/ember-cli-list-addons/pull/1) Initial
   implementation ([@mansona])
