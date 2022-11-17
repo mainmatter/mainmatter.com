@@ -43,6 +43,11 @@ export class ContactForm {
       }
     };
 
+    const { plausible } = window;
+    if (plausible) {
+      plausible("Contact");
+    }
+
     return fetch("https://contact.mainmatter.dev/send", {
       body: JSON.stringify(formData),
       cache: "no-cache",
