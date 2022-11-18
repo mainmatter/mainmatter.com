@@ -3,7 +3,9 @@ title: "Sending Emails from the Edge with Rust"
 authorHandle: marcoow
 tags: rust
 bio: "Marco Otte-Witte"
-description: "TODO"
+description:
+  "Marco Otte-Witte explains how to send emails via the Sendgrid API from a WASM
+  edge function written in Rust."
 og:
   image: /assets/images/posts/2022-10-12-making-a-strategic-bet-on-rust/og-image.jpg
 tagline: |
@@ -78,7 +80,7 @@ _The complete code of our website mailer is
 
 The basic structure for a mailer service will look something like this:
 
-```rs
+```rust
 use worker::{
     event, Env, Request, Response, Result as WorkerResult, Router,
 };
@@ -106,7 +108,7 @@ Since we'll get the message details like the sender's name, email address and
 the message text in the request body in JSON, we need to parse that into a
 struct. We can use the [`serde` crate](https://crates.io/crates/serde) for that:
 
-```rs
+```rust
 use serde::Deserialize;
 use worker::{
     event, Env, Request, Response, Result as WorkerResult, Router,
@@ -139,7 +141,7 @@ If deserializing the request body into a `Payload` fails, we simply respond with
 status 422. Otherwise we can go on to send the message. Let's look at how that
 works:
 
-```rs
+```rust
 use reqwest::Client;
 use serde::Deserialize;
 use serde_json::json;
@@ -237,7 +239,7 @@ it indeed works correctly and avoid future regressions. Since we're compiling
 this to WASM, we cannot simply use Rust's standard `[test]` attribute though but
 need to use the [`wasm-bindgen` crate](https://crates.io/crates/wasm-bindgen):
 
-```rs
+```rust
 use wasm_bindgen_test::*;
 
 wasm_bindgen_test::wasm_bindgen_test_configure!(run_in_browser); // run this in an actual browser
@@ -263,7 +265,7 @@ out Sendgrid. We can just do that by moving the code we want to mock into its
 own function and passing that in to the `send_message` function so we can pass
 in a different function in the tests:
 
-```rs
+```rust
 #[event(fetch, respond_with_errors)]
 pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> WorkerResult<Response> {
     let response = Router::new()
@@ -347,7 +349,7 @@ exactly as it did before but in the tests, we can now pass in our own function
 that will not actually request the Sendgrid API and return a response right
 away:
 
-```rs
+```rust
 use mainmatter_website_mailer::{send_message, NetworkError, Payload};
 use serde_json::json;
 use wasm_bindgen_test::*;
