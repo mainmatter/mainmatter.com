@@ -159,7 +159,7 @@ svelte-super-rentals % npm run dev -- --open
 To keep this simple, we’re going to use the styles and assets from the
 Ember-Super-Rentals app and just copy them over into our project. I won’t paste
 them in here as the style sheet is pretty big and not worth the page space. If
-you want to see if it, feel free to check out the repo on GitHub.
+you want to see it, feel free to check out the repo on GitHub.
 
 Tomster image -
 [https://guides.emberjs.com/downloads/teaching-tomster.png](https://guides.emberjs.com/downloads/teaching-tomster.png)
@@ -356,7 +356,7 @@ created our SvelteKit app and they seem to work great together.
 
 There is already a single test that was created when we set up the app called
 `tests/test.js`, we will replace the content of this soon, but for now let’s see
-what happens when we run this tests:
+what happens when we run this test:
 
 ```js
 svelte-super-rentals % npm run test
@@ -402,7 +402,7 @@ Running 1 test using 1 worker
 
 As we would expect, this test is failing (after a while) because we are
 expecting to find an `h1` on the page with the text “About this app”, which we
-no longer have.
+no longer have since we replaced the default content of the file with the HTML for the Super Rentals app.
 
 Now let’s update the test so that is passes.
 
@@ -652,7 +652,7 @@ Then we will update our usage of these components in our routes
 </Jumbo>
 ```
 
-As you can see, another different between SvelteKit and Ember is that Ember has
+As you can see, another difference between SvelteKit and Ember is that Ember has
 chosen to separate the template from the component logic, whereas Svelte has
 opted for the single file approach.
 
@@ -750,7 +750,7 @@ await expect(page).toHaveURL("http://localhost:3000/");
 ```
 
 Let’s just clean it up a little so we aren’t referencing
-[localhost:3000](http://localhost:3000) directly (referencing localhost:3000
+http://localhost:3000 directly (referencing localhost:3000
 will still work but it just means we will always have to use port 3000 for our
 tests which could cause issues)
 
@@ -802,7 +802,7 @@ this way, but in general I prefer having to define the parameters over glimmers
 way of have the `this.args.` object that can be of any shape, though this can
 get confusing in Svelte when you have bigger components with more internal as
 well as external attributes, with Svelte it isn’t always clear if the attribute
-is external or internal, whereas the `@/this` syntax used in Ember gives a
+is external or internal, whereas the `@`/`this` syntax used in Ember gives a
 clearer distinction here.
 
 `<img {src} {alt} />` is making use of Svelte’s shorthand mechanism, if the
@@ -1056,7 +1056,7 @@ Now we have some nice looking components but they’re not very interesting, the
 component is hardcoded with the rental information which means we just have
 three of the same thing visible. So lets start populating our app with some
 dynamic data - usually this would be populated from a server, but we will be
-sticking with the Ember-super-rentals tutorial and store it inside our app, you
+sticking with the Ember-super-rentals tutorial and store it inside our app as JSON files, you
 can download the required files
 [here](https://guides.emberjs.com/downloads/data.zip).
 
@@ -1160,7 +1160,7 @@ Coming from an Ember background, the `each` block in the template looks very
 familiar and achieves the same goal, looping through the array of rentals and
 passing each rental into the Rental component.
 
-We can then update the Rental/Index component to receive the rental and use it’s
+We can then update the Rental/Index component to receive the rental and use its
 attributes to display the details of the rental instead of the hardcoded data we
 had before
 
@@ -1435,7 +1435,7 @@ test('visiting /rentals/grand-old-mansion', async ({ page }) => {
 ### Service injection
 [Repo](https://github.com/beerinho/sveltekit-super-rentals/tree/2.2-service-injection)
 
-Let’s start off by replacing that placeholder “Share to Twitter” button we
+Let’s continue by replacing that placeholder “Share to Twitter” button we
 created in the last section with a real, working button that can share a tweet
 to Twitter. First, we’ll create a new component to house all of this Twitter
 logic
@@ -1689,7 +1689,7 @@ And there we have it, SvelteKit Super Rentals!
 
 I really enjoyed getting stuck in with SvelteKit and I can certainly see the
 appeal of it, it’s a very lightweight framework and in a lot of ways it stays
-very close to native javascript, which makes me think I think it would be a
+very close to native javascript, which makes me think it would be a
 really great first framework for people that are new to front-end development,
 because it gives you a great understanding of how javascript works in a lot of
 scenarios, which will only help when trying out other frameworks in the future.
