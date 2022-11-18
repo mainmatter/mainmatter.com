@@ -1,9 +1,11 @@
 ---
-title: "A practical first look at the new Svelte framework"
+title: "A practical first look at the Svelte framework"
 authorHandle: mainmatter
 tags: [svelte, sveltekit]
 bio: "Daniel Beer"
-description: "Taking a practical look at the new Svelte framework by rebuilding the Ember super rentals app in SvelteKit."
+description:
+  "Taking a practical look at the Svelte framework by rebuilding the Ember super
+  rentals app in SvelteKit."
 og:
   image:
 tagline: |
@@ -35,21 +37,28 @@ for introducing the principles of the framework. So we will be cross-pollinating
 and using SvelteKit to build the Ember-Super-Rentals demo app. And while we’re
 at it, we can also draw some comparisons between the frameworks.
 
+This is what we will have by the end of this tutorial:
+![Screenshot of finished super-rentals app](/assets/images/posts/2022-11-18-sveltekit-super-rentals/finished-app.png)
+
 I have broken this demo app down into the same chunks as is done in the Ember
 Super Rentals tutorial, so feel free to follow along with both tutorials at the
 same time.
 
 You can also find snapshots of this tutorial as separate tags in the
-[github repo](https://github.com/beerinho/sveltekit-super-rentals/tags).
+[github repo](https://github.com/mainmatter/sveltekit-super-rentals/tags).
 
 ## Let’s get started
 
-> Before we get started, I just want to reiterate the notices on the SvelteKit
-> documentation site. **This technology is not yet suggested for use in
-> production applications.** SvelteKit is still pre version 1.0 and so is
-> constantly changing large parts of the framework; you can see the progress and
-> upcoming changes on the
-> [GitHub Discussions tab](https://github.com/sveltejs/kit/discussions?discussions_q=sort%3Atop).
+---
+
+_Before we get started, I just want to reiterate the notices on the SvelteKit
+documentation site. **This technology is not yet suggested for use in production
+applications.** SvelteKit is still pre version 1.0 and so is constantly changing
+large parts of the framework; you can see the progress and upcoming changes on
+the
+[GitHub Discussions tab](https://github.com/sveltejs/kit/discussions?discussions_q=sort%3Atop)._
+
+---
 
 With that warning out of the way, let’s create a new blank SvelteKit project.
 
@@ -154,18 +163,37 @@ svelte-super-rentals % npm run dev -- --open
 ## PART 1
 
 ### Orientation:
-[Repo](https://github.com/beerinho/sveltekit-super-rentals/tree/1.1-orientation)
+
+[Repo](https://github.com/mainmatter/sveltekit-super-rentals/tree/1.1-orientation)
 
 To keep this simple, we’re going to use the styles and assets from the
 Ember-Super-Rentals app and just copy them over into our project. I won’t paste
 them in here as the style sheet is pretty big and not worth the page space. If
 you want to see it, feel free to check out the repo on GitHub.
 
-Tomster image -
-[https://guides.emberjs.com/downloads/teaching-tomster.png](https://guides.emberjs.com/downloads/teaching-tomster.png)
+The [Tomster image](https://guides.emberjs.com/downloads/teaching-tomster.png)
+will go into a newly created `images` folder inside the `static` folder that was
+created by SvelteKit.
 
-Styles -
-[https://github.com/ember-learn/super-rentals/blob/super-rentals-tutorial-output/app/styles/app.css](https://github.com/ember-learn/super-rentals/blob/super-rentals-tutorial-output/app/styles/app.css)
+The
+[Styles](https://github.com/ember-learn/super-rentals/blob/super-rentals-tutorial-output/app/styles/app.css)
+will also go in the `static` folder, but just in a file we will name `app.css`.
+
+We will then update the `routes/+page.svelte` component so that we can see the
+basic shape of the site as well as the image of the Tomster.
+
+```js
+// routes/+page.svelte
+
+<div class="jumbo">
+  <div class="right tomster" />
+  <h2>Welcome to Super Rentals!</h2>
+  <p>We hope you find exactly what you're looking for in a place to stay.</p>
+  <a href="/about" class="button">
+    About Us
+  </a>
+</div>
+```
 
 And when we serve the app we are greeted by the friendly face of Tomster but it
 doesn’t do much yet, before we get into adding pages and component, I wanted a
@@ -222,25 +250,30 @@ classes from wherever needed.
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<link rel="stylesheet" href="%sveltekit.assets%/app.css" />
-		<meta name="viewport" content="width=device-width" />
-		%sveltekit.head%
-	</head>
-	<body>
-		<div>%sveltekit.body%</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+    <link rel="stylesheet" href="%sveltekit.assets%/app.css" />
+    <meta name="viewport" content="width=device-width" />
+    %sveltekit.head%
+  </head>
+  <body>
+    <div>%sveltekit.body%</div>
+  </body>
 </html>
 ```
 
 ### Building pages:
-[Repo](https://github.com/beerinho/sveltekit-super-rentals/tree/1.2-building-pages)
 
-> Please do not try to send messages to the email on the contact page, I
-> randomly assigned the email address so your email won’t be seen by anyone and
-> will most likely just bounce back to you.
+[Repo](https://github.com/mainmatter/sveltekit-super-rentals/tree/1.2-building-pages)
+
+---
+
+Please do not try to send messages to the email on the contact page, I randomly
+assigned the email address so your email won’t be seen by anyone and will most
+likely just bounce back to you.
+
+---
 
 When it comes to creating routes, there isn’t the same extensive CLI that Ember
 has, so instead we need to manually add the routes that we want in a folder
@@ -259,19 +292,6 @@ In SvelteKit we are missing the ability to create a route and give it a
 different name, so we need to be thoughtful about what we want the name of the
 route to be when creating it, as it is a very manual process to adapt a route
 name after it’s created.
-
-```js
-// routes/+page.svelte
-
-<div class="jumbo">
-  <div class="right tomster" />
-  <h2>Welcome to Super Rentals!</h2>
-  <p>We hope you find exactly what you're looking for in a place to stay.</p>
-  <a href="/about" class="button">
-    About Us
-  </a>
-</div>
-```
 
 ```js
 // routes/about/+page.svelte
@@ -336,9 +356,9 @@ structure like this:
 ```js
 routes/
 |- about-us/
-	|- +page.svelte
-	|- +page.server.js
-	|- +page.js
+  |- +page.svelte
+  |- +page.server.js
+  |- +page.js
 ```
 
 Which can get a little annoying when you end up with tabs like this in your IDE:
@@ -349,7 +369,8 @@ But hopefully the trade-off is worth it in exchange for the more concise file
 structure
 
 ### Automated testing:
-[Repo](https://github.com/beerinho/sveltekit-super-rentals/tree/1.3-automated-testing)
+
+[Repo](https://github.com/mainmatter/sveltekit-super-rentals/tree/1.3-automated-testing)
 
 [Playwright](https://playwright.dev/docs/intro) was added automatically when we
 created our SvelteKit app and they seem to work great together.
@@ -402,7 +423,8 @@ Running 1 test using 1 worker
 
 As we would expect, this test is failing (after a while) because we are
 expecting to find an `h1` on the page with the text “About this app”, which we
-no longer have since we replaced the default content of the file with the HTML for the Super Rentals app.
+no longer have since we replaced the default content of the file with the HTML
+for the Super Rentals app.
 
 Now let’s update the test so that is passes.
 
@@ -526,10 +548,14 @@ along with a more in-depth console that will give you the ability to step
 through your tests and see more detail about the current state of the DOM and
 test.
 
-> This confused me at first as Playwright will stop at each `await` so you will
-> need to manually step through the test until you find the part that you want
-> to stop it. It is quite intuitive once you realise it might not have paused
-> where you expected to begin with.
+---
+
+This confused me at first as Playwright will stop at each `await` so you will
+need to manually step through the test until you find the part that you want to
+stop it. It is quite intuitive once you realise it might not have paused where
+you expected to begin with.
+
+---
 
 To open the inspector when running the tests, be sure to specify the `PWDEBUG=1`
 flag when running the tests:
@@ -539,7 +565,8 @@ PWDEBUG=1 npm run test
 ```
 
 ### Component basics:
-[Repo](https://github.com/beerinho/sveltekit-super-rentals/tree/1.4-component-basics)
+
+[Repo](https://github.com/mainmatter/sveltekit-super-rentals/tree/1.4-component-basics)
 
 Similar to the routes, there is no command to generate components for us, so we
 will create the `src/components` folder along with the
@@ -567,12 +594,10 @@ this component as a wrapper for more HTML to be passed in from the parent.
   </a>
   <div class="links">
     <a href="/about" class="menu-about">
-      {" "}
-      About{" "}
+      About
     </a>
     <a href="/getting-in-touch" class="menu-contact">
-      {" "}
-      Contact{" "}
+      Contact
     </a>
   </div>
 </nav>
@@ -612,8 +637,10 @@ Then we will update our usage of these components in our routes
 </script>
 
 <Jumbo>
-	<h2>Welcome to Super Rentals!</h2>
-	<p>We hope you find exactly what you're looking for in a place to stay.</p>
+  <h2>Welcome to Super Rentals!</h2>
+  <p>
+    We hope you find exactly what you're looking for in a place to stay.
+  </p>
   <a href="/about" class="button">About Us</a>
 </Jumbo>
 ```
@@ -622,16 +649,16 @@ Then we will update our usage of these components in our routes
 //routes/about/+page.svelte
 
 <script>
-	import Jumbo from '@components/jumbo.svelte'
+  import Jumbo from '@components/jumbo.svelte'
 </script>
 
 <Jumbo>
-	<h2>About Super Rentals</h2>
-	<p>
-		The Super Rentals website is a delightful project created to explore Ember. By building a
-		property rental site, we can simultaneously imagine traveling AND building Ember applications.
-	</p>
-	<a href="/getting-in-touch" class="button">Contact Us</a>
+  <h2>About Super Rentals</h2>
+  <p>
+    The Super Rentals website is a delightful project created to explore Ember. By building a
+    property rental site, we can simultaneously imagine traveling AND building Ember applications.
+  </p>
+  <a href="/getting-in-touch" class="button">Contact Us</a>
 </Jumbo>
 ```
 
@@ -639,16 +666,16 @@ Then we will update our usage of these components in our routes
 // routes/getting-in-touch/+page.svelte
 
 <script>
-	import Jumbo from '@components/jumbo.svelte'
+  import Jumbo from '@components/jumbo.svelte'
 </script>
 
 <Jumbo>
-	<h2>Contact Us</h2>
-	<p>
-		Super Rentals Representatives would love to help you<br />
-		<a href="mailto:superrentalsrep@sveltedemo.com">superrentalsrep@sveltedemo.com</a>
-	</address>
-	<a href="/about" class="button">About</a>
+  <h2>Contact Us</h2>
+  <p>
+    Super Rentals Representatives would love to help you<br />
+    <a href="mailto:superrentalsrep@sveltedemo.com">superrentalsrep@sveltedemo.com</a>
+  </address>
+  <a href="/about" class="button">About</a>
 </Jumbo>
 ```
 
@@ -675,7 +702,7 @@ name of the component when you import it - i.e.
 
 ```js
 <script>
-	import AwesomeComponent from '@components/ui/layout/foo/bar/two-column/awesome-component.svelte'
+  import AwesomeComponent from '@components/ui/layout/foo/bar/two-column/awesome-component.svelte'
 </script>
 
 <AwesomeComponent/>
@@ -683,7 +710,9 @@ name of the component when you import it - i.e.
 
 But it can be argued that Svelte’s approach could lead to more confusion as the
 names can change depending on how they are imported, meaning it’s not
-immediately obvious which component is which.
+immediately obvious which component is which; although this isn't the strongest
+argument as this issue could easily be mitigated by using good naming
+conventions or implementing a lint rule for this.
 
 We also created the NavBar, which we want to be visible on all pages, instead of
 adding it individually to each page component, we will create a `+layout.svelte`
@@ -695,16 +724,16 @@ specified.
 // routes/+layout.svelte
 
 <script>
-	import NavBar from '@components/nav-bar.svelte';
+  import NavBar from '@components/nav-bar.svelte';
 </script>
 
 <NavBar />
 <slot />
 ```
 
-As mentioned, this will apply the `<NavBar/>` to all pages, the `<slot/>` is
-required and is similar to the `{{outlet}}` in Ember, in which it will allow a
-portal to render the route content through.
+As mentioned, this will apply the `<NavBar/>` to all pages. The `<slot/>` is
+required and is similar to the `{{outlet}}` in Ember, which allows the parent to
+render content to a specific area of the child component.
 
 If we wanted a different layout for just the `about` page, we could create
 another layout in `routes/about/+layout.svelte` and that would not impact the
@@ -749,10 +778,9 @@ await page.locator('h1:has-text("SuperRentals")').click();
 await expect(page).toHaveURL("http://localhost:3000/");
 ```
 
-Let’s just clean it up a little so we aren’t referencing
-http://localhost:3000 directly (referencing localhost:3000
-will still work but it just means we will always have to use port 3000 for our
-tests which could cause issues)
+Let’s just clean it up a little so we aren’t referencing http://localhost:3000
+directly (referencing localhost:3000 will still work but it just means we will
+always have to use port 3000 for our tests which could cause issues)
 
 ```js
 // Go to the index route
@@ -777,7 +805,8 @@ element and then adjusting the test to test the content rather than just
 clicking on the element.
 
 ### More about components
-[Repo](https://github.com/beerinho/sveltekit-super-rentals/tree/1.5-more-about-components)
+
+[Repo](https://github.com/mainmatter/sveltekit-super-rentals/tree/1.5-more-about-components)
 
 Now let’s create some components that will receive parameters to be handled by
 the component.
@@ -786,12 +815,12 @@ the component.
 // components/rental/image.svelte
 
 <script>
-	export let src;
-	export let alt;
+  export let src;
+  export let alt;
 </script>
 
 <div class="image">
-	<img {src} {alt} />
+  <img {src} {alt} />
 </div>
 ```
 
@@ -818,59 +847,60 @@ see on screen.
 // components/rental/index.svelte
 
 <script>
-	import RentalImage from './image.svelte';
+  import RentalImage from './image.svelte';
 </script>
 
 <article class="rental">
-	<RentalImage
-		src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg"
-		alt="A picture of Grand Old Mansion"
-	/>
-	<div class="details">
-		<h3>Grand Old Mansion</h3>
-		<div class="detail owner">
-			<span>Owner:</span> Veruca Salt
-		</div>
-		<div class="detail type">
-			<span>Type:</span> Standalone
-		</div>
-		<div class="detail location">
-			<span>Location:</span> San Francisco
-		</div>
-		<div class="detail bedrooms">
-			<span>Number of bedrooms:</span> 15
-		</div>
-	</div>
+  <RentalImage
+    src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg"
+    alt="A picture of Grand Old Mansion"
+  />
+  <div class="details">
+    <h3>Grand Old Mansion</h3>
+    <div class="detail owner">
+      <span>Owner:</span> Veruca Salt
+    </div>
+    <div class="detail type">
+      <span>Type:</span> Standalone
+    </div>
+    <div class="detail location">
+      <span>Location:</span> San Francisco
+    </div>
+    <div class="detail bedrooms">
+      <span>Number of bedrooms:</span> 15
+    </div>
+  </div>
 </article>
 ```
 
 And then add a few of these to the `index` page of our app.
 
-```js
+```diff
 // routes/+page.svelte
 
 <script>
   import Jumbo from '@components/jumbo.svelte';
-	+ import Rental from '@components/rental/index.svelte';
++ import Rental from '@components/rental/index.svelte';
 </script>
 
 <Jumbo>
-	<h2>Welcome to Super Rentals!</h2>
-	<p>We hope you find exactly what you're looking for in a place to stay.</p>
+  <h2>Welcome to Super Rentals!</h2>
+  <p>We hope you find exactly what you're looking for in a place to stay.</p>
   <a href="/about" class="button">About Us</a>
 </Jumbo>
 
 +<div class="rentals">
-+	<ul class="results">
-+		<li><Rental /></li>
-+		<li><Rental /></li>
-+	<li><Rental /></li>
-+	</ul>
++  <ul class="results">
++    <li><Rental /></li>
++    <li><Rental /></li>
++    <li><Rental /></li>
++  </ul>
 +</div>
 ```
 
 ### Interactive components
-[Repo](https://github.com/beerinho/sveltekit-super-rentals/tree/1.6-interactive-components)
+
+[Repo](https://github.com/mainmatter/sveltekit-super-rentals/tree/1.6-interactive-components)
 
 Now let’s add the ability to toggle the size of the image on click.
 
@@ -878,10 +908,10 @@ Now let’s add the ability to toggle the size of the image on click.
 // components/rental/image.svelte
 
 <script>
-	export let src;
-	export let alt;
+  export let src;
+  export let alt;
 
-	let isLarge = false;
+  let isLarge = false;
 
   function onToggleSize() {
    isLarge = !isLarge;
@@ -889,15 +919,15 @@ Now let’s add the ability to toggle the size of the image on click.
 </script>
 
 {#if isLarge}
-	<button on:click={onToggleSize} class="image large">
-		<img {src} {alt} />
-		<small>View Smaller</small>
-	</button>
+  <button on:click={onToggleSize} class="image large">
+    <img {src} {alt} />
+    <small>View Smaller</small>
+  </button>
 {:else}
-	<button on:click={onToggleSize} class="image">
-		<img {src} {alt} />
-		<small>View Larger</small>
-	</button>
+  <button on:click={onToggleSize} class="image">
+    <img {src} {alt} />
+    <small>View Larger</small>
+  </button>
 {/if}
 ```
 
@@ -910,9 +940,9 @@ But as you can see, the conditional syntax is very similar, where Ember has
 
 ```js
 {{#if this.thing}}
-	show thing
+  show thing
 {{else}}
-	show other thing
+  show other thing
 {{/if}}
 ```
 
@@ -920,14 +950,15 @@ Svelte has
 
 ```js
 {#if thing}
-	show thing
+  show thing
 {:else}
-	show other thing
+  show other thing
 {/if}
 ```
 
 ### Reusable components
-[Repo](https://github.com/beerinho/sveltekit-super-rentals/tree/1.7-reusable-components)
+
+[Repo](https://github.com/mainmatter/sveltekit-super-rentals/tree/1.7-reusable-components)
 
 Now let’s add an external API, for this we will need a Mapbox account and to
 create an access token. You can do so [here](https://www.mapbox.com/signup/).
@@ -937,10 +968,12 @@ applications, we will need to store our Mapbox access token elsewhere. We could
 do this in a number of places (e.g. in a store, or in the component) but for
 this example, we will use the suggested route, we will create a `.env` file in
 the root of our project and add `VITE_MAPBOX_ACCESS_TOKEN = 'your_access_token’`
-(this is ignored by git so isn’t shown in the repo), it is also important to
-start the key with `VITE` so that Vite knows that it should be accessible in the
-client via `import.meta.env.VITE_MAPBOX_ACCESS_TOKEN` (for more information,
-read [here](https://vitejs.dev/guide/env-and-mode.html#env-files)).
+(to avoid any confusion for those of you searching the GitHub repo for this
+file, the `.env` file is ignored by git so this line isn't shown in the
+repository on GitHub), it is also important to start the key with `VITE` so that
+Vite knows that it should be accessible in the client via
+`import.meta.env.VITE_MAPBOX_ACCESS_TOKEN` (for more information, read
+[here](https://vitejs.dev/guide/env-and-mode.html#env-files)).
 
 Now that we have the access token stored in our app, we can use it in our new
 Map component
@@ -949,28 +982,32 @@ Map component
 // components/map.svelte
 
 <script context="module">
-	const token = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
-	const MAPBOX_API = 'https://api.mapbox.com/styles/v1/mapbox/streets-v11/static';
+  const token = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
+  const MAPBOX_API = 'https://api.mapbox.com/styles/v1/mapbox/streets-v11/static';
 </script>
 
 <script>
-	export let lat
-	export let lng
-	export let height
-	export let width
-	export let zoom
-	export let alt = `Map image at coordinates ${lat},${lng}`;
+  export let lat
+  export let lng
+  export let height
+  export let width
+  export let zoom
+  export let alt = `Map image at coordinates ${lat},${lng}`;
 
-	$: src = `${MAPBOX_API}/${lng},${lat},${zoom}/${width}x${height}@2x?access_token=${token}`;
+  $: src = `${MAPBOX_API}/${lng},${lat},${zoom}/${width}x${height}@2x?access_token=${token}`;
 </script>
 
 <div class="map">
-	<img {alt} {src} {width} {height} />
+  <img {alt} {src} {width} {height} />
 </div>
 ```
 
-> As you can see, the `img` tag uses the shorthand that was explained earlier in
-> the “More about components” section.
+---
+
+As you can see, the `img` tag uses the shorthand that was explained earlier in
+the “More about components” section.
+
+---
 
 There are a couple of things to unwrap in this component, the first is that we
 have two `script` tags, the first script tag has `context="module"` which means
@@ -990,7 +1027,7 @@ So in Ember this line would look like:
 
 ```js
 get src(){
-	return `${MAPBOX_API}/${this.args.lng},${this.args.lat},${this.args.zoom}/${this.args.width}x${this.args.height}@2x?access_token=${token}`
+  return `${MAPBOX_API}/${this.args.lng},${this.args.lat},${this.args.zoom}/${this.args.width}x${this.args.height}@2x?access_token=${token}`
 }
 ```
 
@@ -998,12 +1035,13 @@ or
 
 ```js
 @tracked
-	src = `${MAPBOX_API}/${this.args.lng},${this.args.lat},${this.args.zoom}/${this.args.width}x${this.args.height}@2x?access_token=${token}`
+  src = `${MAPBOX_API}/${this.args.lng},${this.args.lat},${this.args.zoom}/${this.args.width}x${this.args.height}@2x?access_token=${token}`
 ```
 
-_(I noticed this wasn’t actually required as the attributes don’t ever change
-after the component is rendered, but to keep this tutorial in line with the
-Ember Super Rentals tutorial, we’ll keep it this way.)_
+_(I noticed that none of this was actually required as the attributes don’t ever
+change after the component is rendered, so this could be a variable on the
+component but to keep this tutorial in line with the Ember Super Rentals
+tutorial, we’ll keep it this way.)_
 
 We can then add this new Map component to the bottom of the `article` on our
 Rental/Index component:
@@ -1012,21 +1050,21 @@ Rental/Index component:
 // components/rental/index.svelte
 
 <script>
-	import RentalImage from './image.svelte';
-	import Map from '@components/map.svelte';
+  import RentalImage from './image.svelte';
+  import Map from '@components/map.svelte';
 </script>
 
 <article class="rental">
-	...
-	</div>
-	<Map
-		lat="37.7749"
-		lng="-122.4194"
-		zoom="9"
-		width="150"
-		height="150"
-		alt="A map of Grand Old Mansion"
-	/>
+  ...
+  </div>
+  <Map
+    lat="37.7749"
+    lng="-122.4194"
+    zoom="9"
+    width="150"
+    height="150"
+    alt="A map of Grand Old Mansion"
+  />
 </article>
 ```
 
@@ -1040,24 +1078,25 @@ components
 
 ...
 test('visiting /', async ({ page }) => {
-	...
-	// assert the title of the page is correct
-	expect(await page.textContent('h2')).toBe('Welcome to Super Rentals!');
-	// assert the map images are visible
-	await expect(page.locator('.map img')).toHaveCount(3);
-	...
+  ...
+  // assert the title of the page is correct
+  expect(await page.textContent('h2')).toBe('Welcome to Super Rentals!');
+  // assert the map images are visible
+  await expect(page.locator('.map img')).toHaveCount(3);
+  ...
 });
 ```
 
 ### Working with Data
-[Repo](https://github.com/beerinho/sveltekit-super-rentals/tree/1.8-working-with-data)
+
+[Repo](https://github.com/mainmatter/sveltekit-super-rentals/tree/1.8-working-with-data)
 
 Now we have some nice looking components but they’re not very interesting, the
 component is hardcoded with the rental information which means we just have
 three of the same thing visible. So lets start populating our app with some
 dynamic data - usually this would be populated from a server, but we will be
-sticking with the Ember-super-rentals tutorial and store it inside our app as JSON files, you
-can download the required files
+sticking with the Ember-super-rentals tutorial and store it inside our app as
+JSON files, you can download the required files
 [here](https://guides.emberjs.com/downloads/data.zip).
 
 As this data isn’t going to change, and we want it to be available in our app
@@ -1068,12 +1107,12 @@ our rentals data:
 
 ```xml
 static/
-	api/
-		rentals.json
-		rentals/
-			downtown-charm.json
-			grand-old-mansion.json
-			urban-living.json
+  api/
+    rentals.json
+    rentals/
+      downtown-charm.json
+      grand-old-mansion.json
+      urban-living.json
 ```
 
 I’ve used the slugs of each rental as the name to make it easier to reference
@@ -1085,12 +1124,12 @@ them easier to reference.
 ```xml
 // svelte.config.js
 
-	...
-	alias: {
-		'@api': path.resolve('./static/api'),
-		'@components': path.resolve('./src/components')
-	}
-	...
+  ...
+  alias: {
+    '@api': path.resolve('./static/api'),
+    '@components': path.resolve('./src/components')
+  }
+  ...
 ```
 
 Now we can introduce one of the strengths of SvelteKit, the `+page.server.js`
@@ -1127,32 +1166,36 @@ export const load = () => {
 };
 ```
 
-> The `load` function is a reserved word and is used to load the relevant data
-> for the page, the load function should return an object of the data but can
-> also return a redirect or an error. In this scenario, we are mapping the
-> rentals from the `static/api/rentals.json` and adding the `type` attribute.
+---
+
+The `load` function is a reserved word and is used to load the relevant data for
+the page, the load function should return an object of the data but can also
+return a redirect or an error. In this scenario, we are mapping the rentals from
+the `static/api/rentals.json` and adding the `type` attribute.
+
+---
 
 Then to make it available in the page template, we can add it as an expected
 import in the `+page.svelte` file and then replace the hardcoded rentals in the
 template.
 
-```js
+```diff
 // routes/+page.svelte
 
 <script>
-	...
-	export let data;
+  ...
+  export let data;
 </script>
 
 ...
-	<ul class="results">
--		<li><Rental /></li>
--		<li><Rental /></li>
--		<li><Rental /></li>
-+		{#each data.rentals as rental}
-+			<li><Rental {rental} /></li>
-+		{/each}
-	</ul>
+  <ul class="results">
+-    <li><Rental /></li>
+-    <li><Rental /></li>
+-    <li><Rental /></li>
++    {#each data.rentals as rental}
++      <li><Rental {rental} /></li>
++    {/each}
+  </ul>
 ...
 ```
 
@@ -1164,55 +1207,58 @@ We can then update the Rental/Index component to receive the rental and use its
 attributes to display the details of the rental instead of the hardcoded data we
 had before
 
-```js
+```diff
 // components/rental/index.svelte
 
 <script>
-	import RentalImage from './image.svelte';
-	import Map from '@components/map.svelte';
+  import RentalImage from './image.svelte';
+  import Map from '@components/map.svelte';
 
-+	export let rental
++  export let rental
 </script>
 
 <article class="rental">
--	<RentalImage
--		src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg"
--		alt="A picture of Grand Old Mansion"
--	/>
-+	<RentalImage src={rental.image} alt={rental.description} />
-	<div class="details">
--		<h3>Grand Old Mansion</h3>
-+		<h3>{rental.title}</h3>
-		<div class="detail owner">
--			<span>Owner:</span> Veruca Salt
-+			<span>Owner:</span> {rental.owner}
-		</div>
-		<div class="detail type">
--			<span>Type:</span> Standalone
-+			<span>Type:</span> {rental.type}
-		</div>
-		<div class="detail location">
--			<span>Location:</span> San Francisco
-+			<span>Location:</span> {rental.city}
-		</div>
-		<div class="detail bedrooms">
--			<span>Number of bedrooms:</span> 15
-+			<span>Number of bedrooms:</span> {rental.bedrooms}
-		</div>
-	</div>
-	<Map
--		lat="37.7749"
--		lng="-122.4194"
-+		lat={rental.location.lat}
-+		lng={rental.location.lng}
-		zoom="9"
-		width="150"
-		height="150"
--		alt="A map of Grand Old Mansion"
-+		alt="A map of {rental.title}"
-	/>
+-  <RentalImage
+-    src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg"
+-    alt="A picture of Grand Old Mansion"
+-  />
++  <RentalImage src={rental.image} alt={rental.description} />
+    <div class="details">
+-    <h3>Grand Old Mansion</h3>
++    <h3>{rental.title}</h3>
+    </div>
+    <div class="detail owner">
+-      <span>Owner:</span> Veruca Salt
++      <span>Owner:</span> {rental.owner}
+    </div>
+    <div class="detail type">
+-      <span>Type:</span> Standalone
++      <span>Type:</span> {rental.type}
+    </div>
+    <div class="detail location">
+-      <span>Location:</span> San Francisco
++      <span>Location:</span> {rental.city}
+    </div>
+    <div class="detail bedrooms">
+-      <span>Number of bedrooms:</span> 15
++      <span>Number of bedrooms:</span> {rental.bedrooms}
+    </div>
+  </div>
+  <Map
+-    lat="37.7749"
+-    lng="-122.4194"
++    lat={rental.location.lat}
++    lng={rental.location.lng}
+    zoom="9"
+    width="150"
+    height="150"
+-    alt="A map of Grand Old Mansion"
++    alt="A map of {rental.title}"
+  />
 </article>
 ```
+
+![Screenshot of the current state of the app](/assets/images/posts/2022-11-18-sveltekit-super-rentals/end-of-part-1.png)
 
 And now we have a lovely looking index page that shows us the data for each of
 our rentals.
@@ -1222,7 +1268,8 @@ Next stop, individual rental pages.
 ## PART 2
 
 ### Route params
-[Repo](https://github.com/beerinho/sveltekit-super-rentals/tree/2.1-route-params)
+
+[Repo](https://github.com/mainmatter/sveltekit-super-rentals/tree/2.1-route-params)
 
 To be able to show details of an individual rental, we will be using route
 params to decide which rental we need to load the data for; for this we will
@@ -1272,8 +1319,12 @@ access a file using a dynamic name directly, so what we do here instead is get
 all of the files from `@api/rentals/*.json` and then go through that array to
 find the rental of the route we are currently on.
 
-> This isn’t ideal, and the loading would normally be done by our back-end, but
-> for the limited number of rentals we have, this works nicely.
+---
+
+This isn’t ideal, and the loading would normally be done by our back-end, but
+for the limited number of rentals we have, this works nicely.
+
+---
 
 We can then create a page to display this data
 
@@ -1281,13 +1332,13 @@ We can then create a page to display this data
 // routes/rentals/[slug]/+page.svelte
 
 <script context="module">
-	import Jumbo from '@components/jumbo.svelte';
-	import Map from '@components/map.svelte';
-	import RentalImage from '@components/rental/image.svelte';
+  import Jumbo from '@components/jumbo.svelte';
+  import Map from '@components/map.svelte';
+  import RentalImage from '@components/rental/image.svelte';
 </script>
 
 <script>
-	export let data;
+  export let data;
   let rental = data.rental
 </script>
 
@@ -1349,20 +1400,20 @@ We also need to be able to add a class to the `Map` component so that it can be
 styled from the parent, so to do this we will add a new attribute to the
 component.
 
-```js
+```diff
 // components/map.svelte
 
-	...
-	export let alt = `Map image at coordinates ${lat},${lng}`;
+  ...
+  export let alt = `Map image at coordinates ${lat},${lng}`;
 +	export let styleClass = '';
 
-	$: src = `${MAPBOX_API}/${lng},${lat},${zoom}/${width}x${height}@2x?access_token=${token}`;
+  $: src = `${MAPBOX_API}/${lng},${lat},${zoom}/${width}x${height}@2x?access_token=${token}`;
 </script>
 
 - <div class="map">
 + <div class="map {styleClass}">
-		<img {alt} {src} {width} {height} />
-	</div>
+    <img {alt} {src} {width} {height} />
+  </div>
 ...
 ```
 
@@ -1377,19 +1428,20 @@ child component.
 To give users access to the individual rental detail page, we will update the
 Rental/Index component to contain a link to the rental detail page
 
-```js
+```diff
 // components/rental/index.svelte
 
-	...
-	<div class="details">
--		<h3>{rental.title}</h3>
-+		<h3>
-+			<a href="rentals/{rental.id}">
-+				{rental.title}
-+			</a>
-+		</h3>
-		<div class="detail owner">
-		...
+  ...
+  <div class="details">
+-    <h3>{rental.title}</h3>
++    <h3>
++      <a href="rentals/{rental.id}">
++        {rental.title}
++      </a>
++    </h3>
+  </div>
+  <div class="detail owner">
+  ...
 ```
 
 I personally prefer to use `slug` for a human-readable identifier, whereas the
@@ -1404,36 +1456,37 @@ Finally, we will add a couple of new tests to test this new functionality
 
 ...
 test('viewing the details of a rental property', async ({ page }) => {
-	// Go to the index route
-	await page.goto('/');
-	// Assert there there 3 properties displayed
-	await expect(page.locator('.rental')).toHaveCount(3);
+  // Go to the index route
+  await page.goto('/');
+  // Assert there there 3 properties displayed
+  await expect(page.locator('.rental')).toHaveCount(3);
 
-	// Click on a rental
-	await page.locator('text=Grand Old Mansion').click();
-	// Assert it has taken you to the rental page
-	await expect(page).toHaveURL('/rentals/grand-old-mansion');
+  // Click on a rental
+  await page.locator('text=Grand Old Mansion').click();
+  // Assert it has taken you to the rental page
+  await expect(page).toHaveURL('/rentals/grand-old-mansion');
 });
 
 test('visiting /rentals/grand-old-mansion', async ({ page }) => {
-	// Go to the rental page
-	await page.goto('/rentals/grand-old-mansion');
-	// Assert we are on the current URL
-	await expect(page).toHaveURL('/rentals/grand-old-mansion');
+  // Go to the rental page
+  await page.goto('/rentals/grand-old-mansion');
+  // Assert we are on the current URL
+  await expect(page).toHaveURL('/rentals/grand-old-mansion');
 
-	// Assert the nav exists
-	await expect(page.locator('nav')).toBeVisible();
-	// Assert the main title is still correct
-	expect(await page.textContent('h1')).toBe('SuperRentals');
-	// Assert the page title has the correct text
-	expect(await page.textContent('h2')).toBe('Grand Old Mansion');
-	// Assert the rental detail area is visible
-	await expect(page.locator('.rental.detailed')).toBeVisible();
+  // Assert the nav exists
+  await expect(page.locator('nav')).toBeVisible();
+  // Assert the main title is still correct
+  expect(await page.textContent('h1')).toBe('SuperRentals');
+  // Assert the page title has the correct text
+  expect(await page.textContent('h2')).toBe('Grand Old Mansion');
+  // Assert the rental detail area is visible
+  await expect(page.locator('.rental.detailed')).toBeVisible();
 });
 ```
 
 ### Service injection
-[Repo](https://github.com/beerinho/sveltekit-super-rentals/tree/2.2-service-injection)
+
+[Repo](https://github.com/mainmatter/sveltekit-super-rentals/tree/2.2-service-injection)
 
 Let’s continue by replacing that placeholder “Share to Twitter” button we
 created in the last section with a real, working button that can share a tweet
@@ -1444,94 +1497,98 @@ logic
 // components/share-button.svelte
 
 <script>
-	import { onMount } from 'svelte';
+  import { onMount } from 'svelte';
 
-	const TWEET_INTENT = 'https://twitter.com/intent/tweet';
+  const TWEET_INTENT = 'https://twitter.com/intent/tweet';
 
-	export let text
-	export let hashtags
-	export let via
+  export let text
+  export let hashtags
+  export let via
 
-	let shareURL;
+  let shareURL;
 
-	onMount(() => {
-		let url = new URL(TWEET_INTENT);
+  onMount(() => {
+    let url = new URL(TWEET_INTENT);
 
-		url.searchParams.set('url', window.location.href);
+    url.searchParams.set('url', window.location.href);
 
-		if (text) {
-			url.searchParams.set('text', text);
-		}
+    if (text) {
+      url.searchParams.set('text', text);
+    }
 
-		if (hashtags) {
-			url.searchParams.set('hashtags', hashtags);
-		}
+    if (hashtags) {
+      url.searchParams.set('hashtags', hashtags);
+    }
 
-		if (via) {
-			url.searchParams.set('via', via);
-		}
+    if (via) {
+      url.searchParams.set('via', via);
+    }
 
-		shareURL = url.href;
-	});
+    shareURL = url.href;
+  });
 </script>
 
 <a href={shareURL} target="_blank" rel="external nofollow noopener noreferrer" class="share button">
-	<slot />
+  <slot />
 </a>
 ```
 
-> The `onMount` function here is very similar to Glimmer’s `constructor`, this
-> is where you store the logic that needs to run before the component is
-> rendered, in this scenario we will be populating the URL that we will need to
-> create a tweet to share the rental we are looking at.
+---
+
+The `onMount` function here is very similar to Glimmer’s `constructor`, this is
+where you store the logic that needs to run before the component is rendered, in
+this scenario we will be populating the URL that we will need to create a tweet
+to share the rental we are looking at.
+
+---
 
 We will replace the placeholder with this new component on the `rentals/[slug]`
 page
 
-```js
+```diff
 // routes/rentals/[slug]/+page.svelte
 
 ...
-	import RentalImage from '@components/rental/image.svelte';
+  import RentalImage from '@components/rental/image.svelte';
 + import ShareButton from '@components/share-button.svelte'
 ...
 
 ...
--	<a href="#" target="_blank" rel="external nofollow noopener noreferrer" class="share button">
--   Share on Twitter
-- </a>
-+	<ShareButton
-+		text="Check out {rental.title} on Super Rentals!"
-+		hashtags="vacation,travel,authentic,blessed,superrentals"
-+		via="sveltejs"
-+	>
-+		Share on Twitter
-+	</ShareButton>
+-  <a href="#" target="_blank" rel="external nofollow noopener noreferrer" class="share button">
+-    Share on Twitter
+-  </a>
++  <ShareButton
++    text="Check out {rental.title} on Super Rentals!"
++    hashtags="vacation,travel,authentic,blessed,superrentals"
++    via="sveltejs"
++  >
++    Share on Twitter
++  </ShareButton>
 ...
 ```
 
 And finally we will extend the ‘viewing the details of a rental property’ test
 to check for this button
 
-```js
+```diff
 // tests/test.js
 
 ...
 test('viewing the details of a rental property', async ({ page }) => {
-	...
-	// Click on a rental
-	await page.locator('text=Grand Old Mansion').click();
+  ...
+  // Click on a rental
+  await page.locator('text=Grand Old Mansion').click();
 
-+	// Assert that the share button is visible and has the correct attributes
-+	expect(await page.textContent('.share.button')).toBe('Share on Twitter');
-+	const href = await page.getAttribute('.share.button', 'href');
-+	const tweetURL = new URL(href);
-+	expect(tweetURL.host).toBe('twitter.com');
-+	expect(tweetURL.searchParams.get('url')).toBe(`${[page.url()]}`);
++  // Assert that the share button is visible and has the correct attributes
++  expect(await page.textContent('.share.button')).toBe('Share on Twitter');
++  const href = await page.getAttribute('.share.button', 'href');
++  const tweetURL = new URL(href);
++  expect(tweetURL.host).toBe('twitter.com');
++  expect(tweetURL.searchParams.get('url')).toBe(`${[page.url()]}`);
 
-	// Assert it has taken you to the rental page
-	await expect(page).toHaveURL('/rentals/grand-old-mansion');
-	...
+  // Assert it has taken you to the rental page
+  await expect(page).toHaveURL('/rentals/grand-old-mansion');
+  ...
 ```
 
 In the Ember-super-rentals tutorial, there are steps about how to get the Router
@@ -1542,12 +1599,14 @@ tests, so it’s nice and simple to grab the current URL from there to compare
 instead of needing to go through the router.
 
 ### Ember Data
-[Repo](https://github.com/beerinho/sveltekit-super-rentals/tree/2.3-ember-data)
+
+[Repo](https://github.com/mainmatter/sveltekit-super-rentals/tree/2.3-ember-data)
 
 Because we are not using Ember Data, this part of the tutorial can be skipped
 
 ### Provider components
-[Repo](https://github.com/beerinho/sveltekit-super-rentals/tree/2.4-provider-components)
+
+[Repo](https://github.com/mainmatter/sveltekit-super-rentals/tree/2.4-provider-components)
 
 And to round things off, we will be adding the ability to filter our rentals
 based on a text search
@@ -1561,17 +1620,17 @@ track of the searchQuery directly in the index route.
 
 <script>
 
-	export let rentals;
-	export let query;
+  export let rentals;
+  export let query;
 
-	// we want to make the query lowercase and remove trailing/leading spaces
-	$: sanitisedQuery = query.toLowerCase().trim();
+  // we want to make the query lowercase and remove trailing/leading spaces
+  $: sanitisedQuery = query.toLowerCase().trim();
 
-	$: results = query
-		? rentals.filter(rental => {
-				return rental.title.toLowerCase().includes(sanitisedQuery);
-		  })
-		: rentals;
+  $: results = query
+    ? rentals.filter(rental => {
+        return rental.title.toLowerCase().includes(sanitisedQuery);
+      })
+    : rentals;
 </script>
 
 <slot {results} />
@@ -1586,38 +1645,38 @@ property back to the parent component by setting `{{yield results}}`.
 We can then update the index page to keep track of the query and utilise the new
 RentalsFilter component to display only the filtered rentals
 
-```js
+```diff
 // routes/+page.svelte
 
 <script>
   import Jumbo from '@components/jumbo.svelte';
-	import Rental from '@components/rental/index.svelte';
-+	import RentalsFilter from '@components/rentals-filter.svelte';
+  import Rental from '@components/rental/index.svelte';
++  import RentalsFilter from '@components/rentals-filter.svelte';
 
-	export let data;
+  export let data;
 
-+	let query = '';
++  let query = '';
 </script>
 
 ...
 <div class="rentals">
--	<ul class="results">
--		{#each data.rentals as rental}
--			<li><Rental {rental} /></li>
--		{/each}
--	</ul>
-+	<label>
-+		<span>Where would you like to stay?</span>
-+		<input class="light" bind:value={query} />
-+	</label>
+-  <ul class="results">
+-    {#each data.rentals as rental}
+-      <li><Rental {rental} /></li>
+-    {/each}
+-  </ul>
++  <label>
++    <span>Where would you like to stay?</span>
++    <input class="light" bind:value={query} />
++  </label>
 +
-+	<RentalsFilter {query} rentals={data.rentals} let:results>
-+		<ul class="results">
-+			{#each results as rental}
-+				<li><Rental {rental} /></li>
-+			{/each}
-+		</ul>
-+	</RentalsFilter>
++  <RentalsFilter {query} rentals={data.rentals} let:results>
++    <ul class="results">
++      {#each results as rental}
++        <li><Rental {rental} /></li>
++      {/each}
++    </ul>
++  </RentalsFilter>
 </div>
 ...
 ```
@@ -1637,49 +1696,49 @@ we are finished!
 
 ...
 test('the index page renders all given rental properties by default', async ({ page }) => {
-	// Go to the index page
-	await page.goto('/');
-	// Assert we are on the current URL
-	await expect(page).toHaveURL('/');
+  // Go to the index page
+  await page.goto('/');
+  // Assert we are on the current URL
+  await expect(page).toHaveURL('/');
 
-	// assert all rentals are loaded correctly
-	expect(page.locator('.rentals')).toBeVisible();
-	expect(page.locator('.rentals input')).toBeVisible();
-	expect(page.locator('.rentals .results')).toBeVisible();
-	expect(page.locator('.rentals .results li')).toHaveCount(3);
+  // assert all rentals are loaded correctly
+  expect(page.locator('.rentals')).toBeVisible();
+  expect(page.locator('.rentals input')).toBeVisible();
+  expect(page.locator('.rentals .results')).toBeVisible();
+  expect(page.locator('.rentals .results li')).toHaveCount(3);
 
-	expect(await page.textContent('.rentals .results li:nth-of-type(1) h3')).toBe(
-		'Grand Old Mansion'
-	);
-	expect(await page.textContent('.rentals .results li:nth-of-type(2) h3')).toBe('Urban Living');
-	expect(await page.textContent('.rentals .results li:nth-of-type(3) h3')).toBe('Downtown Charm');
+  expect(await page.textContent('.rentals .results li:nth-of-type(1) h3')).toBe(
+    'Grand Old Mansion'
+  );
+  expect(await page.textContent('.rentals .results li:nth-of-type(2) h3')).toBe('Urban Living');
+  expect(await page.textContent('.rentals .results li:nth-of-type(3) h3')).toBe('Downtown Charm');
 });
 
 test('the index page updates the results according to the search query', async ({ page }) => {
-	// Go to the index page
-	await page.goto('/');
-	// Assert we are on the current URL
-	await expect(page).toHaveURL('/');
+  // Go to the index page
+  await page.goto('/');
+  // Assert we are on the current URL
+  await expect(page).toHaveURL('/');
 
-	// assert all rentals are loaded correctly
-	expect(page.locator('.rentals')).toBeVisible();
-	expect(page.locator('.rentals input')).toBeVisible();
-	expect(page.locator('.rentals .results')).toBeVisible();
-	expect(page.locator('.rentals .results li')).toHaveCount(3);
+  // assert all rentals are loaded correctly
+  expect(page.locator('.rentals')).toBeVisible();
+  expect(page.locator('.rentals input')).toBeVisible();
+  expect(page.locator('.rentals .results')).toBeVisible();
+  expect(page.locator('.rentals .results li')).toHaveCount(3);
 
-	// Fill input
-	await page.locator('input').fill('Mansion');
+  // Fill input
+  await page.locator('input').fill('Mansion');
 
-	// assert that there is only one result and that it's title includes the word "mansion"
-	expect(page.locator('.rentals .results li')).toHaveCount(1);
-	expect(await page.textContent('.rentals .results li h3')).toBe('Grand Old Mansion');
+  // assert that there is only one result and that it's title includes the word "mansion"
+  expect(page.locator('.rentals .results li')).toHaveCount(1);
+  expect(await page.textContent('.rentals .results li h3')).toBe('Grand Old Mansion');
 
-	// Fill input with new search term
-	await page.locator('input').fill('DownTown');
+  // Fill input with new search term
+  await page.locator('input').fill('DownTown');
 
-	// assert that there is only one result and that it's title includes the word "downtown"
-	expect(page.locator('.rentals .results li')).toHaveCount(1);
-	expect(await page.textContent('.rentals .results li h3')).toBe('Downtown Charm');
+  // assert that there is only one result and that it's title includes the word "downtown"
+  expect(page.locator('.rentals .results li')).toHaveCount(1);
+  expect(await page.textContent('.rentals .results li h3')).toBe('Downtown Charm');
 });
 ```
 
@@ -1689,12 +1748,12 @@ And there we have it, SvelteKit Super Rentals!
 
 I really enjoyed getting stuck in with SvelteKit and I can certainly see the
 appeal of it, it’s a very lightweight framework and in a lot of ways it stays
-very close to native javascript, which makes me think it would be a
-really great first framework for people that are new to front-end development,
-because it gives you a great understanding of how javascript works in a lot of
-scenarios, which will only help when trying out other frameworks in the future.
-Which I feel is almost the opposite of Ember, there are a lot of areas of the
-framework where Ember does the heavy lifting for you, which is great for large
+very close to native javascript, which makes me think it would be a really great
+first framework for people that are new to front-end development, because it
+gives you a great understanding of how javascript works in a lot of scenarios,
+which will only help when trying out other frameworks in the future. Which I
+feel is almost the opposite of Ember, there are a lot of areas of the framework
+where Ember does the heavy lifting for you, which is great for large
 applications, but possibly not the best place to start if you want to build a
 base knowledge of the underlying technologies.
 
@@ -1715,8 +1774,8 @@ native web properties that aren’t correctly typed/typed at all).
 Thank you very much for reading, I hope you enjoyed this dive into SvelteKit.
 
 You can see the full repo here:
-[https://github.com/beerinho/sveltekit-super-rentals/](https://github.com/beerinho/sveltekit-super-rentals/tags)
+[https://github.com/mainmatter/sveltekit-super-rentals/](https://github.com/mainmatter/sveltekit-super-rentals/tags)
 
 And the breakdown of the individual parts here:
-[https://github.com/beerinho/sveltekit-super-rentals/tags](https://github.com/beerinho/sveltekit-super-rentals/tags)
+[https://github.com/mainmatter/sveltekit-super-rentals/tags](https://github.com/mainmatter/sveltekit-super-rentals/tags)
 {% endraw %}
