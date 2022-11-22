@@ -182,7 +182,12 @@
                 "ember-learn/ember-release-bot",
                 "mainmatter/ember2-x-codemods",
                 "ember-cli/ember-try-config",
-                "mainmatter/ember-api-actions"
+                "mainmatter/ember-api-actions",
+                "cardstack/boxel-motion",
+                "MinThaMie/more-confetti-addon",
+                "mainmatter/ember-cli-list-addons",
+                "mainmatter/eslint-plugin-emberobserver",
+                "mansona/ember-try"
             ]
         },
         {

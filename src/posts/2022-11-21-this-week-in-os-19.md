@@ -158,20 +158,6 @@ tagline: |
 - [mainmatter/ember-api-actions]
   [#2](https://github.com/mainmatter/ember-api-actions/pull/2) CI: Migrate to
   pnpm ([@Turbo87])
-
-## Probot
-
-- [probot/probot] [#1763](https://github.com/probot/probot/pull/1763)
-  build(deps): upgrade @octokit/types to v8 ([@oscard0m])
-
-## Internal
-
-- [mainmatter/mainmatter-website-mailer]
-  [#7](https://github.com/mainmatter/mainmatter-website-mailer/pull/7) Add tests
-  ([@marcoow])
-
-## Unknown
-
 - [MinThaMie/more-confetti-addon]
   [#1](https://github.com/MinThaMie/more-confetti-addon/pull/1) protect fire()
   function from being run in fastboot ([@mansona])
@@ -200,6 +186,17 @@ tagline: |
   compatibility ([@candunaj])
 - [mansona/ember-try] [#1](https://github.com/mansona/ember-try/pull/1)
   onlyVersionCompatibility to generateConfig ([@candunaj])
+
+## Probot
+
+- [probot/probot] [#1763](https://github.com/probot/probot/pull/1763)
+  build(deps): upgrade @octokit/types to v8 ([@oscard0m])
+
+## Internal
+
+- [mainmatter/mainmatter-website-mailer]
+  [#7](https://github.com/mainmatter/mainmatter-website-mailer/pull/7) Add tests
+  ([@marcoow])
 
 [@bobrimperator]: https://github.com/BobrImperator
 [@turbo87]: https://github.com/Turbo87
