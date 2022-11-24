@@ -2,7 +2,6 @@
     "exclude_closed_not_merged": true,
     "users": [
         "marcoow",
-        "locks",
         "zeppelin",
         "Turbo87",
         "pichfl",
@@ -56,7 +55,8 @@
         "inesilva/my-website",
         "mainmatter/eurorust.eu",
         "mainmatter/gravity",
-        "mansona/test-allow-failure"
+        "mansona/test-allow-failure",
+        "Turbo87/renovate-config"
     ],
     "labels": [
         {
@@ -75,7 +75,8 @@
                 "Turbo87/segelflug-classifieds",
                 "AeroRust/nmea",
                 "Swatinem/rust-cache",
-                "pietroalbini/rfcs"
+                "pietroalbini/rfcs",
+                "rust-lang/hashbrown"
             ]
         },
         {
@@ -179,7 +180,14 @@
                 "ember-cli/ember-cli-htmlbars",
                 "nickschot/ember-gesture-modifiers",
                 "ember-learn/ember-release-bot",
-                "mainmatter/ember2-x-codemods"
+                "mainmatter/ember2-x-codemods",
+                "ember-cli/ember-try-config",
+                "mainmatter/ember-api-actions",
+                "cardstack/boxel-motion",
+                "MinThaMie/more-confetti-addon",
+                "mainmatter/ember-cli-list-addons",
+                "mainmatter/eslint-plugin-emberobserver",
+                "mansona/ember-try"
             ]
         },
         {
