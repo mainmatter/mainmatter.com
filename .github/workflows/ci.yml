@@ -23,26 +23,6 @@ jobs:
       - name: lint
         run: yarn lint
 
-  visual-regressions:
-    name: 'Visual Regressions'
-    runs-on: ubuntu-latest
-  
-    steps:
-      - uses: actions/checkout@v3
-      - uses: volta-cli/action@v4
-
-      - name: install dependencies
-        run: yarn install
-
-      - name: build
-        run: yarn percy:build
-
-      - name: snapshots
-        env:
-          PERCY_TARGET_BRANCH: ${{ github.base_ref }}
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-        run: yarn percy dist
-
   performance:
     name: 'Performance'
     runs-on: ubuntu-latest
