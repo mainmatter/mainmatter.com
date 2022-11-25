@@ -1,6 +1,6 @@
 ---
 title: "A practical first look at the Svelte framework"
-authorHandle: mainmatter
+authorHandle: beerinho
 tags: [svelte, sveltekit]
 bio: "Daniel Beer"
 description:
@@ -46,6 +46,9 @@ same time.
 
 You can also find snapshots of this tutorial as separate tags in the
 [github repo](https://github.com/mainmatter/sveltekit-super-rentals/tags).
+
+To see the final app on Netlify, click
+[here](https://sveltekit-super-rentals.netlify.app/).
 
 ## Let’s get started
 
@@ -196,7 +199,7 @@ basic shape of the site as well as the image of the Tomster.
 ```
 
 And when we serve the app we are greeted by the friendly face of Tomster but it
-doesn’t do much yet, before we get into adding pages and component, I wanted a
+doesn’t do much yet, before we get into adding pages and components, I wanted a
 point out a couple of small “quality of life” adaptations to make the workflow
 easier going forward.
 
@@ -681,7 +684,9 @@ Then we will update our usage of these components in our routes
 
 As you can see, another difference between SvelteKit and Ember is that Ember has
 chosen to separate the template from the component logic, whereas Svelte has
-opted for the single file approach.
+opted for the single file approach (although this is currently in an
+[RFC](https://github.com/emberjs/rfcs/blob/master/text/0779-first-class-component-templates.md#sfcs)
+to be added to Ember).
 
 In terms of component usage, both Ember and Svelte have a similar approach but
 slightly differing syntax, both have opted for more native looking HTML - Ember
@@ -696,7 +701,7 @@ in Ember and you can simply invoke them in the template, whereas in SvelteKit
 you need to import the component in the script tag before you can use it in the
 template. I like the simplicity of Ember’s approach, but it does mean you can
 end up with quite long component names if your app has a lot of component
-nesting - i.e. `<Ui::Layout::Foo::Bar::TwoColumn::AwesomeComponent/>` whereas
+nesting - i.e. `<Ui::Layout::Foo::Bar::TwoColumn::AwesomeComponent/>` - whereas
 you likely don’t have this problem in Svelte because you can simply change the
 name of the component when you import it - i.e.
 
@@ -708,17 +713,25 @@ name of the component when you import it - i.e.
 <AwesomeComponent/>
 ```
 
+---
+
+_Note: There is currently an open
+[RFC](https://github.com/emberjs/rfcs/blob/master/text/0779-first-class-component-templates.md)
+which proposes to add template imports to Ember._
+
+---
+
 But it can be argued that Svelte’s approach could lead to more confusion as the
 names can change depending on how they are imported, meaning it’s not
 immediately obvious which component is which; although this isn't the strongest
 argument as this issue could easily be mitigated by using good naming
 conventions or implementing a lint rule for this.
 
-We also created the NavBar, which we want to be visible on all pages, instead of
-adding it individually to each page component, we will create a `+layout.svelte`
-component instead. The layout component sits in the nesting structure just like
-the `pages` and will apply a layout to all children routes unless otherwise
-specified.
+We also created the `<NavBar>`, which we want to be visible on all pages,
+instead of adding it individually to each page component, we will create a
+`+layout.svelte` component instead. The layout component sits in the nesting
+structure just like the `pages` and will apply a layout to all children routes
+unless otherwise specified.
 
 ```js
 // routes/+layout.svelte
@@ -732,8 +745,8 @@ specified.
 ```
 
 As mentioned, this will apply the `<NavBar/>` to all pages. The `<slot/>` is
-required and is similar to the `{{outlet}}` in Ember, which allows the parent to
-render content to a specific area of the child component.
+required and is similar to the `{{outlet}}` in Ember, which allows child routes
+to render content into a specific area of the parent route.
 
 If we wanted a different layout for just the `about` page, we could create
 another layout in `routes/about/+layout.svelte` and that would not impact the
@@ -839,9 +852,9 @@ attribute you are setting has the same name as the parameter, you can omit the
 element attribute and Svelte will figure it out for you. This could also be
 expressed as `<img src={src} alt={alt} />`.
 
-Using the new `rental/image` component, let’s create the `rental/index`
-component, which will just be hardcoded for now to give is some information to
-see on screen.
+Using the new `<RentalImage>` component, let’s create the `<Rental>` component,
+which will just be hardcoded for now to give is some information to see on
+screen.
 
 ```js
 // components/rental/index.svelte
@@ -875,7 +888,7 @@ see on screen.
 
 And then add a few of these to the `index` page of our app.
 
-```diff
+```diff-js
 // routes/+page.svelte
 
 <script>
@@ -967,22 +980,20 @@ Because we don’t have the full `environment` config that is present in Ember
 applications, we will need to store our Mapbox access token elsewhere. We could
 do this in a number of places (e.g. in a store, or in the component) but for
 this example, we will use the suggested route, we will create a `.env` file in
-the root of our project and add `VITE_MAPBOX_ACCESS_TOKEN = 'your_access_token’`
-(to avoid any confusion for those of you searching the GitHub repo for this
-file, the `.env` file is ignored by git so this line isn't shown in the
-repository on GitHub), it is also important to start the key with `VITE` so that
-Vite knows that it should be accessible in the client via
-`import.meta.env.VITE_MAPBOX_ACCESS_TOKEN` (for more information, read
-[here](https://vitejs.dev/guide/env-and-mode.html#env-files)).
+the root of our project and add `PUBLIC_MAPBOX_TOKEN = 'your_access_token’`, it
+is also important to start the key with `PUBLIC_` so that SvelteKit is aware
+that this token is public and will bundle it with all other static public keys
+that can be accessed through `'$env/static/public'`(for more information, read
+[here](https://kit.svelte.dev/docs/modules#$env-static-public)).
 
 Now that we have the access token stored in our app, we can use it in our new
-Map component
+`<Map>` component
 
 ```js
 // components/map.svelte
 
 <script context="module">
-  const token = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
+  import { PUBLIC_MAPBOX_TOKEN }  from '$env/static/public';
   const MAPBOX_API = 'https://api.mapbox.com/styles/v1/mapbox/streets-v11/static';
 </script>
 
@@ -994,7 +1005,7 @@ Map component
   export let zoom
   export let alt = `Map image at coordinates ${lat},${lng}`;
 
-  $: src = `${MAPBOX_API}/${lng},${lat},${zoom}/${width}x${height}@2x?access_token=${token}`;
+  $: src = `${MAPBOX_API}/${lng},${lat},${zoom}/${width}x${height}@2x?access_token=${PUBLIC_MAPBOX_TOKEN}`;
 </script>
 
 <div class="map">
@@ -1027,7 +1038,7 @@ So in Ember this line would look like:
 
 ```js
 get src(){
-  return `${MAPBOX_API}/${this.args.lng},${this.args.lat},${this.args.zoom}/${this.args.width}x${this.args.height}@2x?access_token=${token}`
+  return `${MAPBOX_API}/${this.args.lng},${this.args.lat},${this.args.zoom}/${this.args.width}x${this.args.height}@2x?access_token=${PUBLIC_MAPBOX_TOKEN}`
 }
 ```
 
@@ -1035,7 +1046,7 @@ or
 
 ```js
 @tracked
-  src = `${MAPBOX_API}/${this.args.lng},${this.args.lat},${this.args.zoom}/${this.args.width}x${this.args.height}@2x?access_token=${token}`
+  src = `${MAPBOX_API}/${this.args.lng},${this.args.lat},${this.args.zoom}/${this.args.width}x${this.args.height}@2x?access_token=${PUBLIC_MAPBOX_TOKEN}`
 ```
 
 _(I noticed that none of this was actually required as the attributes don’t ever
@@ -1044,7 +1055,7 @@ component but to keep this tutorial in line with the Ember Super Rentals
 tutorial, we’ll keep it this way.)_
 
 We can then add this new Map component to the bottom of the `article` on our
-Rental/Index component:
+`<Rental>` component:
 
 ```js
 // components/rental/index.svelte
@@ -1179,7 +1190,7 @@ Then to make it available in the page template, we can add it as an expected
 import in the `+page.svelte` file and then replace the hardcoded rentals in the
 template.
 
-```diff
+```diff-js
 // routes/+page.svelte
 
 <script>
@@ -1203,11 +1214,11 @@ Coming from an Ember background, the `each` block in the template looks very
 familiar and achieves the same goal, looping through the array of rentals and
 passing each rental into the Rental component.
 
-We can then update the Rental/Index component to receive the rental and use its
+We can then update the `<Rental>` component to receive the rental and use its
 attributes to display the details of the rental instead of the hardcoded data we
 had before
 
-```diff
+```diff-js
 // components/rental/index.svelte
 
 <script>
@@ -1396,16 +1407,16 @@ expanding the `data` object and assigning `data.rental` to it’s own property t
 make it easier to reference in the template. We will implement the “Share on
 Twitter” button later so this is just a placeholder for now.
 
-We also need to be able to add a class to the `Map` component so that it can be
-styled from the parent, so to do this we will add a new attribute to the
+We also need to be able to add a class to the `<Map>` component so that it can
+be styled from the parent, so to do this we will add a new attribute to the
 component.
 
-```diff
+```diff-js
 // components/map.svelte
 
   ...
   export let alt = `Map image at coordinates ${lat},${lng}`;
-+	export let styleClass = '';
++ export let styleClass = '';
 
   $: src = `${MAPBOX_API}/${lng},${lat},${zoom}/${width}x${height}@2x?access_token=${token}`;
 </script>
@@ -1426,9 +1437,9 @@ syntax is, where you can simply pass any attributes you want from parent to
 child component.
 
 To give users access to the individual rental detail page, we will update the
-Rental/Index component to contain a link to the rental detail page
+`<Rental>` component to contain a link to the rental detail page
 
-```diff
+```diff-js
 // components/rental/index.svelte
 
   ...
@@ -1545,7 +1556,7 @@ to share the rental we are looking at.
 We will replace the placeholder with this new component on the `rentals/[slug]`
 page
 
-```diff
+```diff-js
 // routes/rentals/[slug]/+page.svelte
 
 ...
@@ -1570,7 +1581,7 @@ page
 And finally we will extend the ‘viewing the details of a rental property’ test
 to check for this button
 
-```diff
+```diff-js
 // tests/test.js
 
 ...
@@ -1612,7 +1623,7 @@ And to round things off, we will be adding the ability to filter our rentals
 based on a text search
 
 Because we essentially already have the index route as a component, we won’t
-need to separate out the Rentals into their own component as we can easily keep
+need to separate out the rentals into their own component as we can easily keep
 track of the searchQuery directly in the index route.
 
 ```js
@@ -1643,9 +1654,9 @@ back the results. This is very similar to Ember in the way we can pass a
 property back to the parent component by setting `{{yield results}}`.
 
 We can then update the index page to keep track of the query and utilise the new
-RentalsFilter component to display only the filtered rentals
+`<RentalsFilter>` component to display only the filtered rentals
 
-```diff
+```diff-js
 // routes/+page.svelte
 
 <script>
@@ -1681,10 +1692,10 @@ RentalsFilter component to display only the filtered rentals
 ...
 ```
 
-Svelte doesn’t have anything like an `Input` component, so we will be using the
-standard HTML element and use Svelte’s `bind` property to bind our `query`
+Svelte doesn’t have anything like an `<Input>` component, so we will be using
+the standard HTML element and use Svelte’s `bind` property to bind our `query`
 property to the `value` of the input. We then receive the `results` from the
-RentalsFilter component using `let:results` and using it in a similar way to
+`<RentalsFilter>` component using `let:results` and using it in a similar way to
 Ember’s `<RentalFilters as |results|>` , you can learn more about slot props
 [here](https://svelte.dev/tutorial/slot-props).
 
@@ -1742,7 +1753,9 @@ test('the index page updates the results according to the search query', async (
 });
 ```
 
-And there we have it, SvelteKit Super Rentals!
+And there we have it, SvelteKit Super Rentals! (It's not covered as part of this
+tutorial, but you can see the final version deployed to Netlify
+[here](https://sveltekit-super-rentals.netlify.app/))
 
 ### Final Thoughts
 
