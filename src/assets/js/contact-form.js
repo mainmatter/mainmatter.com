@@ -18,8 +18,9 @@ export class ContactForm {
       event.preventDefault();
       this.updateFormState("loading", "Your message is being sent...");
 
+      const action = this.form.getAttribute("action");
       const formData = new FormData(this.form);
-      this.sendMessage(Object.fromEntries(formData.entries()));
+      this.sendMessage(Object.fromEntries(formData.entries()), action);
     });
 
     this.reset.forEach(reset => {
@@ -29,7 +30,7 @@ export class ContactForm {
     });
   }
 
-  sendMessage(formData) {
+  sendMessage(formData, action) {
     const handleError = () => {
       this.updateFormState("error", "An error occurred.");
       if (window.location.host === "mainmatter.com") {
@@ -48,7 +49,7 @@ export class ContactForm {
       plausible("Contact");
     }
 
-    return fetch("https://contact.mainmatter.dev/send", {
+    return fetch(action, {
       body: JSON.stringify(formData),
       cache: "no-cache",
       headers: {
