@@ -47,3 +47,7 @@
 {%- if config.paymentPointer -%}
   <meta name="monetization" content="{{ config.paymentPointer }}" />
 {%- endif -%}
+
+{%- if referrerPolicy -%}
+  <meta name="referrer" content="{{ referrerPolicy }}" />
+{%- endif -%}
