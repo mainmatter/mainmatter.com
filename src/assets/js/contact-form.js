@@ -11,6 +11,11 @@ export class ContactForm {
     this.reset = this.form.querySelectorAll("[data-reset-form]");
 
     this.bindEvents();
+
+    let currentUrl = new URL(location.href);
+    if (currentUrl.searchParams.has("sent")) {
+      this.updateFormState("success", "Message sent successfully.");
+    }
   }
 
   bindEvents() {
