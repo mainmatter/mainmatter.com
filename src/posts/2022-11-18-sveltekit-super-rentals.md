@@ -1,7 +1,7 @@
 ---
 title: "A practical first look at the Svelte framework"
 authorHandle: beerinho
-tags: [svelte, sveltekit]
+tags: [svelte]
 bio: "Daniel Beer"
 description:
   "Taking a practical look at the Svelte framework by rebuilding the Ember super
@@ -9,7 +9,7 @@ description:
 og:
   image:
 tagline: |
-  <p>As SvelteKit edges ever closer to it's 1.0 release, let's take a look at what makes it special and how it compares to EmberJS by recreating the Ember Super Rentals with SvelteKit.</p>
+  <p>As SvelteKit edges ever closer to its 1.0 release, let's take a look at what makes it unique and how it compares to EmberJS by recreating the Ember Super Rentals with SvelteKit.</p>
 
 image: ""
 imageAlt: ""
@@ -28,12 +28,12 @@ exactly what this post intends to do.
 
 The Svelte site has a nice
 [Tutorial playground area](https://svelte.dev/tutorial/basics) that is useful to
-understand the concepts behind the library, but because it is focused on the
-component side of Svelte (as opposed to the framework, SvelteKit) there isn’t
-any formal guide to help you get up and running with a real world application
-using SvelteKit. Thankfully, EmberJS has a fairly thorough
+understand the concepts behind the library. However, because it is focused on
+the component side of Svelte (as opposed to the framework, SvelteKit), there
+isn’t any formal guide to help you get up and running with a real world
+application using SvelteKit. Thankfully, EmberJS has a fairly thorough
 [Tutorial](https://guides.emberjs.com/release/tutorial/part-1/) that is great
-for introducing the principles of the framework. So we will be cross-pollinating
+for introducing the principles of the framework; so we will be cross-pollinating
 and using SvelteKit to build the Ember-Super-Rentals demo app. And while we’re
 at it, we can also draw some comparisons between the frameworks.
 
@@ -56,16 +56,16 @@ To see the final app on Netlify, click
 
 _Before we get started, I just want to reiterate the notices on the SvelteKit
 documentation site. **This technology is not yet suggested for use in production
-applications.** SvelteKit is still pre version 1.0 and so is constantly changing
-large parts of the framework; you can see the progress and upcoming changes on
-the
+applications.** SvelteKit is still pre version 1.0 and therefore constantly
+changing large parts of the framework; you can see the progress and upcoming
+changes on the
 [GitHub Discussions tab](https://github.com/sveltejs/kit/discussions?discussions_q=sort%3Atop)._
 
 ---
 
 With that warning out of the way, let’s create a new blank SvelteKit project.
 
-We’re going to skip typescript because, to quote Sweet Brown “Ain’t nobody got
+We’re going to skip TypeScript because, to quote Sweet Brown, “Ain’t nobody got
 time for that”. The rest of it is fairly straightforward, we will create a new
 project with the command:
 
@@ -82,7 +82,7 @@ there is some ongoing discussion on
 [the topic](https://github.com/sveltejs/kit/discussions/5285) and hopefully a
 decision will be made by the time SvelteKit hits 1.0.
 
-```js
+```bash
 Repos % npm create svelte@latest svelte-super-rentals
 
 create-svelte version 2.0.0-next.158
@@ -185,23 +185,24 @@ will also go in the `static` folder, but just in a file we will name `app.css`.
 We will then update the `routes/+page.svelte` component so that we can see the
 basic shape of the site as well as the image of the Tomster.
 
-```js
+```html
 // routes/+page.svelte
 
 <div class="jumbo">
   <div class="right tomster" />
   <h2>Welcome to Super Rentals!</h2>
   <p>We hope you find exactly what you're looking for in a place to stay.</p>
-  <a href="/about" class="button">
-    About Us
-  </a>
+  <a href="/about" class="button"> About Us </a>
 </div>
 ```
 
 And when we serve the app we are greeted by the friendly face of Tomster but it
-doesn’t do much yet, before we get into adding pages and components, I wanted a
-point out a couple of small “quality of life” adaptations to make the workflow
-easier going forward.
+doesn’t do much yet.
+
+![Screenshot of the state of the app after "orientation"](/assets/images/posts/2022-11-18-sveltekit-super-rentals/end-of-orientation.png)
+
+Before we get into adding pages and components, I wanted a point out a couple of
+small “quality of life” adaptations to make the workflow easier going forward.
 
 I updated the playwright config to use a fixed port so that if we are running
 the app (either through `npm run dev` or `npm run test`) we know which port we
@@ -248,8 +249,8 @@ I also added the global styles sheet to the `app.html` so that the styles are
 automatically applied to all pages and components, and I can use the global
 classes from wherever needed.
 
-```js
-// app.html
+```html
+<!-- app.html -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -296,8 +297,8 @@ different name, so we need to be thoughtful about what we want the name of the
 route to be when creating it, as it is a very manual process to adapt a route
 name after it’s created.
 
-```js
-// routes/about/+page.svelte
+```html
+<!-- routes/about/+page.svelte -->
 
 <div class="jumbo">
   <div class="right tomster" />
@@ -307,14 +308,12 @@ name after it’s created.
     By building a property rental site, we can simultaneously imagine traveling
     AND building Ember applications.
   </p>
-  <a href="/getting-in-touch" class="button">
-    Contact Us
-  </a>
+  <a href="/getting-in-touch" class="button"> Contact Us </a>
 </div>
 ```
 
-```js
-//routes/getting-in-touch/+page.svelte
+```html
+<!-- routes/getting-in-touch/+page.svelte -->
 
 <div class="jumbo">
   <div class="right tomster" />
@@ -337,13 +336,11 @@ name after it’s created.
       superrentalsrep@sveltedemo.com
     </a>
   </address>
-  <a href="/about" class="button">
-    About
-  </a>
+  <a href="/about" class="button"> About </a>
 </div>
 ```
 
-SvelteKit has an interesting naming convention for routes, we can still have
+SvelteKit has an interesting naming convention for routes; we can still have
 nested routes and dynamic routes, but now that they have embraced the folder
 based routing system, it means that each route has its own `+page.svelte` file;
 so instead of having `index` and `about` route files, we have folders -
@@ -356,7 +353,7 @@ server), as well as the `+page.js` file which is run both on the client during
 browser navigation, and on the server during SSR. So you end up with a file
 structure like this:
 
-```js
+```bash
 routes/
 |- about-us/
   |- +page.svelte
@@ -382,7 +379,7 @@ There is already a single test that was created when we set up the app called
 `tests/test.js`, we will replace the content of this soon, but for now let’s see
 what happens when we run this test:
 
-```js
+```bash
 svelte-super-rentals % npm run test
 
 > svelte-super-rentals@0.0.1 test
@@ -444,7 +441,7 @@ test("about page has expected h2", async ({ page }) => {
 
 And as expected, the test will now pass.
 
-```js
+```bash
 svelte-super-rentals % npm run test
 
 > svelte-super-rentals@0.0.1 test
@@ -515,7 +512,7 @@ test("visiting /getting-in-touch", async ({ page }) => {
 
 Now we can rerun our tests and see that they have been updated and are passing
 
-```js
+```bash
 svelte-super-rentals % npm run test
 
 > svelte-super-rentals@0.0.1 test
@@ -563,7 +560,7 @@ you expected to begin with.
 To open the inspector when running the tests, be sure to specify the `PWDEBUG=1`
 flag when running the tests:
 
-```js
+```bash
 PWDEBUG=1 npm run test
 ```
 
@@ -576,8 +573,8 @@ will create the `src/components` folder along with the
 `src/components/jumbo.svelte` and `src/components/nav-bar.svelte` component
 files
 
-```js
-// components/jumbo.svelte
+```html
+<!-- components/jumbo.svelte -->
 
 <div class="jumbo">
   <div class="right tomster" />
@@ -588,20 +585,16 @@ files
 The `<slot/>` here is similar to the `{{yield}}` in Ember, it allows us to use
 this component as a wrapper for more HTML to be passed in from the parent.
 
-```js
-// components/nav-bar.svelte
+```html
+<!-- components/nav-bar.svelte -->
 
 <nav class="menu">
   <a href="/" class="menu-index">
     <h1>SuperRentals</h1>
   </a>
   <div class="links">
-    <a href="/about" class="menu-about">
-      About
-    </a>
-    <a href="/getting-in-touch" class="menu-contact">
-      Contact
-    </a>
+    <a href="/about" class="menu-about"> About </a>
+    <a href="/getting-in-touch" class="menu-contact"> Contact </a>
   </div>
 </nav>
 ```
@@ -632,41 +625,40 @@ export default config;
 
 Then we will update our usage of these components in our routes
 
-```js
-// routes/+page.svelte
+```html
+<!-- routes/+page.svelte -->
 
 <script>
-  import Jumbo from '@components/jumbo.svelte';
+  import Jumbo from "@components/jumbo.svelte";
 </script>
 
 <Jumbo>
   <h2>Welcome to Super Rentals!</h2>
-  <p>
-    We hope you find exactly what you're looking for in a place to stay.
-  </p>
+  <p>We hope you find exactly what you're looking for in a place to stay.</p>
   <a href="/about" class="button">About Us</a>
 </Jumbo>
 ```
 
-```js
-//routes/about/+page.svelte
+```html
+<!-- routes/about/+page.svelte -->
 
 <script>
-  import Jumbo from '@components/jumbo.svelte'
+  import Jumbo from "@components/jumbo.svelte";
 </script>
 
 <Jumbo>
   <h2>About Super Rentals</h2>
   <p>
-    The Super Rentals website is a delightful project created to explore Ember. By building a
-    property rental site, we can simultaneously imagine traveling AND building Ember applications.
+    The Super Rentals website is a delightful project created to explore Ember.
+    By building a property rental site, we can simultaneously imagine traveling
+    AND building Ember applications.
   </p>
   <a href="/getting-in-touch" class="button">Contact Us</a>
 </Jumbo>
 ```
 
-```js
-// routes/getting-in-touch/+page.svelte
+```html
+<!-- routes/getting-in-touch/+page.svelte -->
 
 <script>
   import Jumbo from '@components/jumbo.svelte'
@@ -684,17 +676,20 @@ Then we will update our usage of these components in our routes
 
 As you can see, another difference between SvelteKit and Ember is that Ember has
 chosen to separate the template from the component logic, whereas Svelte has
-opted for the single file approach (although this is currently in an
+opted for the single file approach (although this will be added to Ember soon:
+the
 [RFC](https://github.com/emberjs/rfcs/blob/master/text/0779-first-class-component-templates.md#sfcs)
-to be added to Ember).
+has already been approved and merged and we are just waiting for it to be
+released now).
 
 In terms of component usage, both Ember and Svelte have a similar approach but
-slightly differing syntax, both have opted for more native looking HTML - Ember
-using HBS, while Svelte goes for pure HTML that can take pure JS expressions.
-Coming from Ember I found this aspect of Svelte to be quite easy to get to grips
-with, though the naming of component attributes can get a little confusing as
-there is no `@` syntax that Ember uses, so instead of `@image` you would have
-`image`. I’ll discuss this more in the next section “More about components”.
+slightly differing syntax. Both have opted for more native-looking HTML - Ember
+using HBS, while Svelte has opted to extend native HTML and allow us to write
+pure JavaScript in the template. Coming from Ember I found this aspect of Svelte
+to be quite easy to get to grips with, though the naming of component attributes
+can get a little confusing as there is no `@` syntax that Ember uses, so instead
+of `@image` you would have `image`. I’ll discuss this more in the next section
+“More about components”.
 
 Another big difference between the two is that components are always available
 in Ember and you can simply invoke them in the template, whereas in SvelteKit
@@ -705,23 +700,24 @@ nesting - i.e. `<Ui::Layout::Foo::Bar::TwoColumn::AwesomeComponent/>` - whereas
 you likely don’t have this problem in Svelte because you can simply change the
 name of the component when you import it - i.e.
 
-```js
+```html
 <script>
-  import AwesomeComponent from '@components/ui/layout/foo/bar/two-column/awesome-component.svelte'
+  import AwesomeComponent from "@components/ui/layout/foo/bar/two-column/awesome-component.svelte";
 </script>
 
-<AwesomeComponent/>
+<AwesomeComponent />
 ```
 
 ---
 
-_Note: There is currently an open
+_Note: The
 [RFC](https://github.com/emberjs/rfcs/blob/master/text/0779-first-class-component-templates.md)
-which proposes to add template imports to Ember._
+which proposes to add this to Ember has been approved and merged and we are now
+just awaiting the release._
 
 ---
 
-But it can be argued that Svelte’s approach could lead to more confusion as the
+It can be argued that Svelte’s approach could lead to more confusion as the
 names can change depending on how they are imported, meaning it’s not
 immediately obvious which component is which; although this isn't the strongest
 argument as this issue could easily be mitigated by using good naming
@@ -733,11 +729,11 @@ instead of adding it individually to each page component, we will create a
 structure just like the `pages` and will apply a layout to all children routes
 unless otherwise specified.
 
-```js
-// routes/+layout.svelte
+```html
+<!-- routes/+layout.svelte -->
 
 <script>
-  import NavBar from '@components/nav-bar.svelte';
+  import NavBar from "@components/nav-bar.svelte";
 </script>
 
 <NavBar />
@@ -754,12 +750,12 @@ other routes, but would apply a separate layout to all routes nested with
 `/about`.
 
 SvelteKit doesn’t come with a library for testing standalone components but we
-did opt to include Playwright when setting up the project, so I initially wanted
-to implement Playwright’s experimental Component Testing library but as of the
+did opt to include Playwright when setting up the project. I initially wanted to
+implement Playwright’s experimental Component Testing library, but as of the
 time of writing this, there are issues with the library that mean I wasn’t able
-to use it in this project. (there are other options for unit testing including
+to use it in this project (there are other options for unit testing including
 [Vitest](https://vitest.dev/guide/) but for the sake of brevity I’ll just stick
-to e2e testing using Playwright for this example)
+to e2e testing using Playwright for this example).
 
 Instead of writing out the code, let’s try and use
 [Playwright’s test generator](https://playwright.dev/docs/codegen) with the
@@ -767,7 +763,7 @@ command:
 
 _Note: make sure your app is already running on the port specified_
 
-```js
+```bash
 npx playwright codegen localhost:3000
 ```
 
@@ -810,12 +806,12 @@ await expect(page).toHaveURL("/");
 ```
 
 While using the Playwright test generator, I loved the simplicity of being able
-to use the UI to test the things that I wanted assure was actually working in
-the UI, so from this aspect I found it really useful. The main downside I found
-to using the test generator was that it wasn’t so simple to test that something
-was visible, to get around this it required clicking on a non-interactive
-element and then adjusting the test to test the content rather than just
-clicking on the element.
+to use the UI to test the things that I wanted to assure were actually working
+in the UI, so from this aspect I found it really useful. The main downside I
+found to using the test generator was that it wasn’t so simple to test that
+something was visible. To get around this it required clicking on a
+non-interactive element and then adjusting the test to test the content rather
+than just clicking on the element.
 
 ### More about components
 
@@ -824,8 +820,8 @@ clicking on the element.
 Now let’s create some components that will receive parameters to be handled by
 the component.
 
-```js
-// components/rental/image.svelte
+```html
+<!-- components/rental/image.svelte -->
 
 <script>
   export let src;
@@ -840,15 +836,15 @@ the component.
 A big difference between Ember and SvelteKit here is that Svelte requires you to
 express which parameters are expected by the component using the `export let`
 syntax. Coming from a JS background, it’s a little confusing to use `export` in
-this way, but in general I prefer having to define the parameters over glimmers
-way of have the `this.args.` object that can be of any shape, though this can
-get confusing in Svelte when you have bigger components with more internal as
-well as external attributes, with Svelte it isn’t always clear if the attribute
-is external or internal, whereas the `@`/`this` syntax used in Ember gives a
+this way, but in general I prefer having to define the parameters over Glimmers'
+way of have the `this.args` object that can be of any shape. Though this can get
+confusing in Svelte when you have bigger components with more internal as well
+as external attributes, with Svelte it isn’t always clear if the attribute is
+external or internal, whereas the `@`/`this` syntax used in Ember gives a
 clearer distinction here.
 
-`<img {src} {alt} />` is making use of Svelte’s shorthand mechanism, if the
-attribute you are setting has the same name as the parameter, you can omit the
+`<img {src} {alt} />` is making use of Svelte’s shorthand mechanism: if the
+attribute you are setting has the same name as the variable, you can omit the
 element attribute and Svelte will figure it out for you. This could also be
 expressed as `<img src={src} alt={alt} />`.
 
@@ -856,11 +852,11 @@ Using the new `<RentalImage>` component, let’s create the `<Rental>` component
 which will just be hardcoded for now to give is some information to see on
 screen.
 
-```js
-// components/rental/index.svelte
+```html
+<!-- components/rental/index.svelte -->
 
 <script>
-  import RentalImage from './image.svelte';
+  import RentalImage from "./image.svelte";
 </script>
 
 <article class="rental">
@@ -870,18 +866,10 @@ screen.
   />
   <div class="details">
     <h3>Grand Old Mansion</h3>
-    <div class="detail owner">
-      <span>Owner:</span> Veruca Salt
-    </div>
-    <div class="detail type">
-      <span>Type:</span> Standalone
-    </div>
-    <div class="detail location">
-      <span>Location:</span> San Francisco
-    </div>
-    <div class="detail bedrooms">
-      <span>Number of bedrooms:</span> 15
-    </div>
+    <div class="detail owner"><span>Owner:</span> Veruca Salt</div>
+    <div class="detail type"><span>Type:</span> Standalone</div>
+    <div class="detail location"><span>Location:</span> San Francisco</div>
+    <div class="detail bedrooms"><span>Number of bedrooms:</span> 15</div>
   </div>
 </article>
 ```
@@ -917,8 +905,8 @@ And then add a few of these to the `index` page of our app.
 
 Now let’s add the ability to toggle the size of the image on click.
 
-```js
-// components/rental/image.svelte
+```html
+<!-- components/rental/image.svelte -->
 
 <script>
   export let src;
@@ -927,24 +915,24 @@ Now let’s add the ability to toggle the size of the image on click.
   let isLarge = false;
 
   function onToggleSize() {
-   isLarge = !isLarge;
+    isLarge = !isLarge;
   }
 </script>
 
 {#if isLarge}
-  <button on:click={onToggleSize} class="image large">
-    <img {src} {alt} />
-    <small>View Smaller</small>
-  </button>
+<button on:click="{onToggleSize}" class="image large">
+  <img {src} {alt} />
+  <small>View Smaller</small>
+</button>
 {:else}
-  <button on:click={onToggleSize} class="image">
-    <img {src} {alt} />
-    <small>View Larger</small>
-  </button>
+<button on:click="{onToggleSize}" class="image">
+  <img {src} {alt} />
+  <small>View Larger</small>
+</button>
 {/if}
 ```
 
-This syntax will look very similar to that of Ember, with a few minor changes,
+This syntax will look very similar to that of Ember, with a few minor changes:
 instead of relying on Glimmer’s `{{on}}` modifier, we user Svelte’s `on:`
 modifier. Then instead of using an `@action` to link the template to the JS as
 we would in Ember, we simply call a regular JS function.
@@ -973,14 +961,14 @@ Svelte has
 
 [Repo](https://github.com/mainmatter/sveltekit-super-rentals/tree/1.7-reusable-components)
 
-Now let’s add an external API, for this we will need a Mapbox account and to
+Now, let’s add an external API. For this we will need a Mapbox account and to
 create an access token. You can do so [here](https://www.mapbox.com/signup/).
 
 Because we don’t have the full `environment` config that is present in Ember
 applications, we will need to store our Mapbox access token elsewhere. We could
 do this in a number of places (e.g. in a store, or in the component) but for
-this example, we will use the suggested route, we will create a `.env` file in
-the root of our project and add `PUBLIC_MAPBOX_TOKEN = 'your_access_token’`, it
+this example, we will use the suggested route. We will create a `.env` file in
+the root of our project and add `PUBLIC_MAPBOX_TOKEN = 'your_access_token’`. It
 is also important to start the key with `PUBLIC_` so that SvelteKit is aware
 that this token is public and will bundle it with all other static public keys
 that can be accessed through `'$env/static/public'`(for more information, read
@@ -989,20 +977,21 @@ that can be accessed through `'$env/static/public'`(for more information, read
 Now that we have the access token stored in our app, we can use it in our new
 `<Map>` component
 
-```js
-// components/map.svelte
+```html
+<!-- components/map.svelte -->
 
 <script context="module">
-  import { PUBLIC_MAPBOX_TOKEN }  from '$env/static/public';
-  const MAPBOX_API = 'https://api.mapbox.com/styles/v1/mapbox/streets-v11/static';
+  import { PUBLIC_MAPBOX_TOKEN } from "$env/static/public";
+  const MAPBOX_API =
+    "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static";
 </script>
 
 <script>
-  export let lat
-  export let lng
-  export let height
-  export let width
-  export let zoom
+  export let lat;
+  export let lng;
+  export let height;
+  export let width;
+  export let zoom;
   export let alt = `Map image at coordinates ${lat},${lng}`;
 
   $: src = `${MAPBOX_API}/${lng},${lat},${zoom}/${width}x${height}@2x?access_token=${PUBLIC_MAPBOX_TOKEN}`;
@@ -1020,14 +1009,14 @@ the “More about components” section.
 
 ---
 
-There are a couple of things to unwrap in this component, the first is that we
-have two `script` tags, the first script tag has `context="module"` which means
-it is only instantiated once in the application and the variables will not
-change. This is useful because the `token` and `MAPBOX_API` attributes will be
-the same for every instantiation of the component within our app.
+There are a couple of things to unwrap in this component. The first is that we
+have two `script` tags: the first has `context="module"`, which means it is only
+instantiated once in the application and the variables will not change. This is
+useful because the `token` and `MAPBOX_API` attributes will be the same for
+every instantiation of the component within our app.
 
-The second `script` is not a module which means the properties within it can
-change between instances, this is important as we will be using this component
+The second `script` is not a module, which means the properties within it can
+change between instances. This is important as we will be using this component
 in multiple places to show the different locations of our rentals.
 
 The next big difference is the `$` - this defines a computed property which will
@@ -1051,14 +1040,14 @@ or
 
 _(I noticed that none of this was actually required as the attributes don’t ever
 change after the component is rendered, so this could be a variable on the
-component but to keep this tutorial in line with the Ember Super Rentals
+component, but to keep this tutorial in line with the Ember Super Rentals
 tutorial, we’ll keep it this way.)_
 
 We can then add this new Map component to the bottom of the `article` on our
 `<Rental>` component:
 
-```js
-// components/rental/index.svelte
+```html
+<!-- components/rental/index.svelte -->
 
 <script>
   import RentalImage from './image.svelte';
@@ -1102,8 +1091,8 @@ test('visiting /', async ({ page }) => {
 
 [Repo](https://github.com/mainmatter/sveltekit-super-rentals/tree/1.8-working-with-data)
 
-Now we have some nice looking components but they’re not very interesting, the
-component is hardcoded with the rental information which means we just have
+Now we have some nice-looking components but they’re not very interesting yet.
+The component is hardcoded with the rental information which means we just have
 three of the same thing visible. So lets start populating our app with some
 dynamic data - usually this would be populated from a server, but we will be
 sticking with the Ember-super-rentals tutorial and store it inside our app as
@@ -1112,11 +1101,11 @@ JSON files, you can download the required files
 
 As this data isn’t going to change, and we want it to be available in our app
 build, I’m going to store it inside the `static` directory in a new folder
-called `api` alongside or `images` folder. (You can call this folder whatever
+called `api` alongside our `images` folder. (You can call this folder whatever
 you like, “api” isn’t a special name here), then inside the folder we will have
 our rentals data:
 
-```xml
+```
 static/
   api/
     rentals.json
@@ -1132,7 +1121,7 @@ and retrieve the file when we “load” the data.
 As with the `@components` alias, I’ll add the same for the api files to make
 them easier to reference.
 
-```xml
+```js
 // svelte.config.js
 
   ...
@@ -1149,8 +1138,8 @@ something on the server - usually loading/saving data. And this is only run on
 the server, which means you can expose sensitive credentials here without the
 client ever knowing about them. We don’t have any sensitive information in our
 app but it also gives us the benefit of having all of the data loaded and in the
-page source which means it is search engine bots are able to crawl it easier,
-increasing it’s SEO score.
+page source which means that search engine bots are able to crawl it easier,
+increasing its SEO score.
 
 ```js
 // routes/+page.server.js
@@ -1179,10 +1168,10 @@ export const load = () => {
 
 ---
 
-The `load` function is a reserved word and is used to load the relevant data for
-the page, the load function should return an object of the data but can also
-return a redirect or an error. In this scenario, we are mapping the rentals from
-the `static/api/rentals.json` and adding the `type` attribute.
+The `load` function is used to load the relevant data for the page and should
+return an object of the data but can also return a redirect or an error. In this
+scenario, we are mapping the rentals from the `static/api/rentals.json` and
+adding the `type` attribute.
 
 ---
 
@@ -1274,7 +1263,7 @@ had before
 And now we have a lovely looking index page that shows us the data for each of
 our rentals.
 
-Next stop, individual rental pages.
+Next stop: individual rental pages.
 
 ## PART 2
 
@@ -1339,30 +1328,35 @@ for the limited number of rentals we have, this works nicely.
 
 We can then create a page to display this data
 
-```js
-// routes/rentals/[slug]/+page.svelte
+```html
+<!-- routes/rentals/[slug]/+page.svelte -->
 
 <script context="module">
-  import Jumbo from '@components/jumbo.svelte';
-  import Map from '@components/map.svelte';
-  import RentalImage from '@components/rental/image.svelte';
+  import Jumbo from "@components/jumbo.svelte";
+  import Map from "@components/map.svelte";
+  import RentalImage from "@components/rental/image.svelte";
 </script>
 
 <script>
   export let data;
-  let rental = data.rental
+  let rental = data.rental;
 </script>
 
 <Jumbo>
   <h2>{rental.title}</h2>
   <p>Nice find! This looks like a nice place to stay near {rental.city}.</p>
-  <a href="#" target="_blank" rel="external nofollow noopener noreferrer" class="share button">
+  <a
+    href="#"
+    target="_blank"
+    rel="external nofollow noopener noreferrer"
+    class="share button"
+  >
     Share on Twitter
   </a>
 </Jumbo>
 
 <article class="rental detailed">
-  <RentalImage src={rental.image} alt="A picture of {rental.title}" />
+  <RentalImage src="{rental.image}" alt="A picture of {rental.title}" />
 
   <div class="details">
     <h3>About {rental.title}</h3>
@@ -1388,9 +1382,9 @@ We can then create a page to display this data
     </div>
   </div>
 
-  <Map
-    lat={rental.location.lat}
-    lng={rental.location.lng}
+  <map
+    lat="{rental.location.lat}"
+    lng="{rental.location.lng}"
     zoom="12"
     width="894"
     height="600"
@@ -1403,7 +1397,7 @@ We can then create a page to display this data
 As before, we’ll use a `script` tag with `context=”module”` to import things
 that won’t change between instances of the page, and a `script` without the
 context for the attributes that can change. You’ll notice here that we are
-expanding the `data` object and assigning `data.rental` to it’s own property to
+expanding the `data` object and assigning `data.rental` to its own property to
 make it easier to reference in the template. We will implement the “Share on
 Twitter” button later so this is just a placeholder for now.
 
@@ -1546,10 +1540,10 @@ logic
 
 ---
 
-The `onMount` function here is very similar to Glimmer’s `constructor`, this is
-where you store the logic that needs to run before the component is rendered, in
-this scenario we will be populating the URL that we will need to create a tweet
-to share the rental we are looking at.
+The `onMount` function here is very similar to Glimmer components' constructors,
+this is where you store the logic that needs to run before the component is
+rendered, in this scenario we will be populating the URL that we will need to
+create a tweet to share the rental we are looking at.
 
 ---
 
@@ -1620,17 +1614,16 @@ Because we are not using Ember Data, this part of the tutorial can be skipped
 [Repo](https://github.com/mainmatter/sveltekit-super-rentals/tree/2.4-provider-components)
 
 And to round things off, we will be adding the ability to filter our rentals
-based on a text search
+based on a text search.
 
 Because we essentially already have the index route as a component, we won’t
 need to separate out the rentals into their own component as we can easily keep
 track of the searchQuery directly in the index route.
 
-```js
-// components/rentals-filter.svelte
+```html
+<!-- components/rentals-filter.svelte -->
 
 <script>
-
   export let rentals;
   export let query;
 
@@ -1740,14 +1733,14 @@ test('the index page updates the results according to the search query', async (
   // Fill input
   await page.locator('input').fill('Mansion');
 
-  // assert that there is only one result and that it's title includes the word "mansion"
+  // assert that there is only one result and that its title includes the word "mansion"
   expect(page.locator('.rentals .results li')).toHaveCount(1);
   expect(await page.textContent('.rentals .results li h3')).toBe('Grand Old Mansion');
 
   // Fill input with new search term
   await page.locator('input').fill('DownTown');
 
-  // assert that there is only one result and that it's title includes the word "downtown"
+  // assert that there is only one result and that its title includes the word "downtown"
   expect(page.locator('.rentals .results li')).toHaveCount(1);
   expect(await page.textContent('.rentals .results li h3')).toBe('Downtown Charm');
 });
@@ -1760,24 +1753,24 @@ tutorial, but you can see the final version deployed to Netlify
 ### Final Thoughts
 
 I really enjoyed getting stuck in with SvelteKit and I can certainly see the
-appeal of it, it’s a very lightweight framework and in a lot of ways it stays
-very close to native javascript, which makes me think it would be a really great
+appeal of it. It’s a very lightweight framework and in a lot of ways it stays
+very close to native JavaScript, which makes me think it would be a really great
 first framework for people that are new to front-end development, because it
-gives you a great understanding of how javascript works in a lot of scenarios,
-which will only help when trying out other frameworks in the future. Which I
-feel is almost the opposite of Ember, there are a lot of areas of the framework
-where Ember does the heavy lifting for you, which is great for large
-applications, but possibly not the best place to start if you want to build a
-base knowledge of the underlying technologies.
+gives you a great understanding of how JavaScript works in a lot of scenarios,
+which will only help when trying out other frameworks in the future. I feel this
+is almost the opposite of Ember: there are a lot of areas of the framework where
+Ember does the heavy lifting for you, which is great for large applications, but
+possibly not the best place to start if you want to build a base knowledge of
+the underlying technologies.
 
 There were a few areas I did think SvelteKit could learn from Ember though. I
 find writing tests is much more enjoyable in Ember, and I think that shines a
-light on SvelteKit’s test suite as a whole, Ember’s qunit integration allows for
-a very simple way to cover your app with both integration and acceptance tests,
+light on SvelteKit’s test suite as a whole. Ember’s qunit integration allows for
+a very simple way to cover your app with unit, integration and acceptance tests,
 whereas SvelteKit only has a cooked-in integration with Playwright, which
-currently doesn’t offer a simple way to run integration tests. Although I have
-to admit, the Playwright test generator is very cool and certainly streamlines
-the test process.
+currently doesn’t offer a simple way to run unit tests. Although I have to
+admit, the Playwright test generator is very cool and certainly streamlines the
+test process.
 
 Ember Data is a very useful way of knowing the structure of the data coming from
 your BE without needing to use TypeScript - TypeScript can be used natively with
