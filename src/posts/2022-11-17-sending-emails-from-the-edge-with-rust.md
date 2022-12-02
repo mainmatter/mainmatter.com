@@ -9,16 +9,17 @@ description:
 og:
   image: /assets/images/posts/2022-10-12-making-a-strategic-bet-on-rust/og-image.jpg
 tagline: |
-  <p>Edge functions have seen a big rise over the past few years. They allow running code on servers close to your user's locations which minimizes latency. They typically run on V8 which supports WASM which means it's possible to run code written in Rust (and compiled to WASM) on them. When we were looking to move our old service that handled submissions of our [contact form](/contact/) off of AWS Lambda, writing it in Rust and running it on the edge seemed like an exciting option.</p>
+  <p>Edge computing has seen a big rise over the past few years. There's a bunch of providers that have edge function offering which typically is based on V8. As V8 support WASM, it's possible to run code written in Rust (and compiled to WASM) on those edge functions. When we were looking to move our old service that handled submissions of our <a href="/contact/">contact form</a> off of AWS Lambda (which is famous for having high latency), writing it in Rust and running it on the edge seemed like an exciting option.</p>
 
 image: "/assets/images/posts/2022-10-12-making-a-strategic-bet-on-rust/mainmatter-loves-rust.png"
 imageAlt: "TODO"
 ---
 
 If you want to send emails, you'll typically use a third party service for that.
-There's many options that all have their pros and cons – we chose Sendgrid.
-Whatever service you end up choosing, they'll provide some kind of HTTP API for
-sending emails. In the case of Sendgrid that looks roughly like this:
+There's many options that all have their pros and cons – we chose
+[Sendgrid](http://sendgrid.com). Whatever service you end up choosing, they'll
+provide some kind of HTTP API for sending emails. In the case of Sendgrid that
+looks roughly like this:
 
 ```bash
 curl --request POST \
@@ -31,11 +32,13 @@ curl --request POST \
 You send a `POST` request to `https://api.sendgrid.com/v3/mail/send` with a JSON
 body that contains the recipient's and sender's email addresses, the subject and
 the actual message. The API key that Sendgrid provides and uses to ensure the
-request comes from a subscribed user and which one is sent as a bearer token in
-the `Authorization` header. The API key is also the only reason really why we
+request comes from a subscribed user – and which one – is sent as a bearer token
+in the `Authorization` header. That key is also the only reason really why we
 can't just call the Sendgrid API directly from the browser – if we included the
 key in the website's source, we'd be making it publicly available and everyone
-could use it to send emails via our Sendgrid account.
+could use it to send emails via our Sendgrid account. So we need to keep the
+code that calls the Sendgrid API on a server (the edge function we're writing)
+and then call that from the browser.
 
 The JavaScript code that handles submission of our contact form (the `<form>`'s
 `submit` event) in the browser looks roughly like this:
@@ -51,9 +54,9 @@ fetch("https://contact.mainmatter.dev/send", {
 ```
 
 We're making a POST request to our edge function with the data the user put in
-the contact form's field sent as the request body. So in essence, the edge
-function acts as a proxy – it translates requests that users' browsers make to
-the edge function into requests from the edge function to Sendgrid.
+the contact form's fields sent as JSON in the request body. So in essence, the
+edge function acts as a proxy – it translates requests that users' browsers make
+to the edge function into requests from the edge function to the Sendgrid API.
 
 ## Cloudflare Workers
 
@@ -69,16 +72,16 @@ deploy your code and hides all of the JavaScript wrapper code that's necessary
 to run WASM in V8.
 
 Wrangler can be used to create a new project and will set up the necessary
-structure and build configuration. Cloudflare also has the
-[`worker` crate](https://crates.io/crates/worker) which provides some handy
-concepts that make writing your Rust code easier.
+structure and build configuration. Cloudflare also wrote the
+[`worker` crate](https://crates.io/crates/worker) which provides some handy APIs
+that make writing your worker in Rust easier.
 
 ## Implementing the Mailer
 
 _The complete code of our website mailer is
 [available on GitHub](https://github.com/mainmatter/mainmatter-website-mailer)._
 
-The basic structure for a mailer service will look something like this:
+The basic structure for our mailer worker looks like this:
 
 ```rust
 use worker::{
@@ -98,15 +101,17 @@ pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> WorkerResult
 }
 ```
 
-We're importing the structs and attributes we need from the `worker` package and
-define a main function that responds to `fetch` events (i.e. incoming requests).
-Inside of that function, we use the `Router` provided by the `worker` package to
-handle requests based on the path and method – in this case we're only
-interested in `POST` requests to `/send`.
+We're importing the structs and attributes we need from the `worker` crate and
+define a `main` function that responds to `fetch` events (i.e. incoming
+requests). Inside of that function, we use the `Router` provided by the `worker`
+package to handle requests based on the path and method – in this case we're
+only interested in `POST` requests to the `/send` path.
 
 Since we'll get the message details like the sender's name, email address and
-the message text in the request body in JSON, we need to parse that into a
-struct. We can use the [`serde` crate](https://crates.io/crates/serde) for that:
+the message text in the request body as JSON, we need to convert that JSON
+string into something we can work with. We can use the
+[`serde` crate](https://crates.io/crates/serde) to deserialize the string into a
+struct:
 
 ```rust
 use serde::Deserialize;
@@ -211,18 +216,19 @@ pub async fn send_message(payload: Payload, api_key: &str) -> WorkerResult<Respo
 }
 ```
 
-We extracted the actual logic to send the message into its own function
-`send_message`. That function receives the `Payload` as well as the Sendgrid API
-key that we get from the worker context (see the
+We extracted the actual logic to send the message into the `send_message`
+function. That function receives the `Payload` as well as the Sendgrid API key
+that we get from the worker context (see the
 [Cloudflare docs](https://developers.cloudflare.com/workers/platform/environment-variables/)
-for information on how to define secrets for workers).
+for information on how to set up secrets for workers).
 
 The function constructs the request body to send to Sendgrid (setting a default
 message body if it's empty as Sendgrid doesn't allow empty messages) as a JSON
-string using the [`serde_json` crate's](https://crates.io/crates/serde_json)
-`json!` macro. It then sends the request to the Sendgrid API (we use the
+string using the
+[`serde_json` crate's `json!` macro](https://docs.rs/serde_json/1.0.89/serde_json/macro.json.html).
+It then sends the request to the Sendgrid API (we use the
 [`reqwest` crate](https://crates.io/crates/reqwest) here but there are other
-options as well) and if that's successful with status code 202 (indicating the
+options as well) and if that succeeds with status code 202 (indicating the
 message was sent), returns an `ok` response.
 
 **And that's already all there is to it!** Of course, there are some details
@@ -250,7 +256,7 @@ async fn it_works() {
 }
 ```
 
-To run the tests in a headless Chrome instance, use the
+To run the tests in a headless Chrome instance, we use the
 [`wasm-pack` crate](https://crates.io/crates/wasm-pack):
 
 ```bash
@@ -258,12 +264,13 @@ wasm-pack test --headless --chrome
 ```
 
 The next challenge is that we don't want the code to actually request the
-Sendgrid API and send out real emails. Thus, we need to mock those API calls –
-however, the problem there is that the available crates for mocking HTTP
-requests do not work in WASM. So we need to find another approach for mocking
-out Sendgrid. We can just do that by moving the code we want to mock into its
-own function and passing that in to the `send_message` function so we can pass
-in a different function in the tests:
+Sendgrid API and send out real emails during tests. Thus, we need to mock those
+API calls – however, the problem there is that the available crates for mocking
+HTTP requests do not work in WASM. So we need to find another approach for
+mocking out Sendgrid. A straight-forward approach is to just move the code we
+want to mock into its own function and then pass that in to the `send_message`
+function. With that structure, we can simply pass a different function that does
+not actually call the Sendgrid API in the tests:
 
 ```rust
 #[event(fetch, respond_with_errors)]
@@ -345,7 +352,7 @@ calls the Sendgrid API and that we don't want to run during tests. The
 function argument it will call to make the request. The worker's request handler
 in the router simply passes in the `request_sendgrid` function to
 `send_message`. So overall, nothing has changed really and everything works
-exactly as it did before but in the tests, we can now pass in our own function
+exactly as it did before. But in the tests, we can now pass in our own function
 that will not actually request the Sendgrid API and return a response right
 away:
 
@@ -389,4 +396,4 @@ processing at all – which would typically be the main reason why you'd choose
 Rust/WASM. However, [we love Rust](/rust-consulting/) and wouldn't have wanted
 to let an opportunity to use it pass unused. So in short, would we recommend
 people to implement their mailers in Rust? – maybe not, just using JavaScript
-might be simpler. Was it fun writing this – yes, definitely 😍
+might be simpler. Was it fun writing this? Yes, definitely 😍
