@@ -9,14 +9,14 @@ description:
 og:
   image: /assets/images/posts/2022-10-12-making-a-strategic-bet-on-rust/og-image.jpg
 tagline: |
-  <p>Edge computing has seen a big rise over the past few years. There's a bunch of providers that have edge function offering which typically is based on V8. As V8 support WASM, it's possible to run code written in Rust (and compiled to WASM) on those edge functions. When we were looking to move our old service that handled submissions of our <a href="/contact/">contact form</a> off of AWS Lambda (which is famous for having high latency), writing it in Rust and running it on the edge seemed like an exciting option.</p>
+  <p>Edge computing has seen a big rise over the past few years. There are a bunch of providers that have edge function offering which typically is based on V8. As V8 supports WASM, it's possible to run code written in Rust (and compiled to WASM) on those edge functions. When we were looking to move our old service that handled submissions of our <a href="/contact/">contact form</a> off of AWS Lambda (which is famous for having high latency), writing it in Rust and running it on the edge seemed like an exciting option.</p>
 
 image: "/assets/images/posts/2022-10-12-making-a-strategic-bet-on-rust/mainmatter-loves-rust.png"
 imageAlt: "TODO"
 ---
 
 If you want to send emails, you'll typically use a third party service for that.
-There's many options that all have their pros and cons – we chose
+There are many options that all have their pros and cons – we chose
 [Sendgrid](http://sendgrid.com). Whatever service you end up choosing, they'll
 provide some kind of HTTP API for sending emails. In the case of Sendgrid that
 looks roughly like this:
@@ -33,7 +33,7 @@ You send a `POST` request to `https://api.sendgrid.com/v3/mail/send` with a JSON
 body that contains the recipient's and sender's email addresses, the subject and
 the actual message. The API key that Sendgrid provides and uses to ensure the
 request comes from a subscribed user – and which one – is sent as a bearer token
-in the `Authorization` header. That key is also the only reason really why we
+in the `Authorization` header. That key is also the only real reason why we
 can't just call the Sendgrid API directly from the browser – if we included the
 key in the website's source, we'd be making it publicly available and everyone
 could use it to send emails via our Sendgrid account. So we need to keep the
@@ -43,14 +43,14 @@ and then call that from the browser.
 The JavaScript code that handles submission of our contact form (the `<form>`'s
 `submit` event) in the browser looks roughly like this:
 
-```bash
+```js
 fetch("https://contact.mainmatter.dev/send", {
   body: JSON.stringify(formData),
   headers: {
     "Content-Type": "application/json; charset=UTF-8'",
   },
   method: "POST",
-})
+});
 ```
 
 We're making a POST request to our edge function with the data the user put in
@@ -60,8 +60,8 @@ to the edge function into requests from the edge function to the Sendgrid API.
 
 ## Cloudflare Workers
 
-As mentioned above, there's quite a few providers to pick from when you want to
-run WASM on the edge these days – among others,
+As mentioned above, there are quite a few providers to pick from when you want
+to run WASM on the edge these days – among others,
 [Vercel](https://vercel.com/docs/concepts/functions/edge-functions/wasm),
 [Netlify](https://docs.netlify.com/edge-functions/overview/),
 [Fastly](https://developer.fastly.com/learning/compute/), and
@@ -241,9 +241,10 @@ the complete code but it's not really much more than the above.
 ## Testing
 
 Having written the above code, of course we'd like to test it as well to ensure
-it indeed works correctly and avoid future regressions. Since we're compiling
-this to WASM, we cannot simply use Rust's standard `[test]` attribute though but
-need to use the [`wasm-bindgen` crate](https://crates.io/crates/wasm-bindgen):
+it indeed works correctly and to avoid future regressions. Since we're compiling
+this to WASM, we cannot simply use Rust's standard `[test]` attribute; instead,
+we need to use the
+[`wasm-bindgen` crate](https://crates.io/crates/wasm-bindgen):
 
 ```rust
 use wasm_bindgen_test::*;
@@ -351,10 +352,10 @@ calls the Sendgrid API and that we don't want to run during tests. The
 `send_message` function's signature has been changed so that it accepts a
 function argument it will call to make the request. The worker's request handler
 in the router simply passes in the `request_sendgrid` function to
-`send_message`. So overall, nothing has changed really and everything works
+`send_message`. So overall, nothing has really changed and everything works
 exactly as it did before. But in the tests, we can now pass in our own function
-that will not actually request the Sendgrid API and return a response right
-away:
+that will not actually request the Sendgrid API, but rather returns a response
+right away:
 
 ```rust
 use mainmatter_website_mailer::{send_message, NetworkError, Payload};
@@ -391,8 +392,8 @@ One question that remains is whether Rust/WASM is really needed here. You could
 argue this isn't a reasonable use case for Rust/WASM and you'd probably be
 right. We wrote a simply proxy service (for which we also don't expect a lot of
 traffic) where performance is almost entirely bound by network IO – there's no
-computationally expensive processing going on, or your could argue almost no
-processing at all – which would typically be the main reason why you'd choose
+computationally expensive processing going on (you could argue almost no
+processing at all) – which would typically be the main reason why you'd choose
 Rust/WASM. However, [we love Rust](/rust-consulting/) and wouldn't have wanted
 to let an opportunity to use it pass unused. So in short, would we recommend
 people to implement their mailers in Rust? – maybe not, just using JavaScript
