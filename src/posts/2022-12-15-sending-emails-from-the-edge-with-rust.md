@@ -7,7 +7,7 @@ description:
   "Marco Otte-Witte explains how to send emails via the Sendgrid API from a WASM
   edge function written in Rust."
 og:
-  image: /assets/images/posts/2022-10-12-making-a-strategic-bet-on-rust/og-image.jpg
+  image: /assets/images/posts/2022-12-15-sending-emails-from-the-edge-with-rust/og-image.jpg
 tagline: |
   <p>Edge computing has seen a big rise over the past few years. There are a bunch of providers that have edge function offering which typically is based on V8. As V8 supports WASM, it's possible to run code written in Rust (and compiled to WASM) on those edge functions. When we were looking to move our old service that handled submissions of our <a href="/contact/">contact form</a> off of AWS Lambda (which is famous for having high latency), writing it in Rust and running it on the edge seemed like an exciting option.</p>
 
