@@ -7,7 +7,7 @@ description:
   "Taking a practical look at the Svelte framework by rebuilding the Ember super
   rentals app in SvelteKit."
 og:
-  image:
+  image: /assets/images/posts/2022-11-18-sveltekit-super-rentals/og-image.jpg
 tagline: |
   <p>As SvelteKit edges ever closer to its 1.0 release, let's take a look at what makes it unique and how it compares to EmberJS by recreating the Ember Super Rentals with SvelteKit.</p>
 
