@@ -1649,7 +1649,7 @@ property back to the parent component by setting `{{yield results}}`.
 We can then update the index page to keep track of the query and utilise the new
 `<RentalsFilter>` component to display only the filtered rentals
 
-```diff-js
+```diff-javascript
 // routes/+page.svelte
 
 <script>
