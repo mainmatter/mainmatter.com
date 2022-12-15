@@ -876,7 +876,7 @@ screen.
 
 And then add a few of these to the `index` page of our app.
 
-```diff-javascript[class="diff-highlight"]
+```diff-js[class="diff-highlight"]
 // routes/+page.svelte
 
 <script>
