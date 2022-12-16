@@ -38,6 +38,8 @@
 {%- endif -%}
 
 {%- if og.image -%}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ pageTitle }}">
   <meta property="og:image" content="{{ config.url }}{{ og.image }}" />
   <meta name="twitter:image" content="{{ config.url }}{{ og.image }}" />
   <meta property="og:image:alt" content="{{ featured_image_caption  }}" />
