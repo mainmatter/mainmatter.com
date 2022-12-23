@@ -7,24 +7,24 @@ description:
   "Taking a practical look at the Svelte framework by rebuilding the Ember super
   rentals app in SvelteKit."
 og:
-  image: /assets/images/posts/2022-11-18-sveltekit-super-rentals/og-image.jpg
+  image: /assets/images/posts/2022-12-23-sveltekit-super-rentals/og-image.jpg
 tagline: |
-  <p>As SvelteKit edges ever closer to its 1.0 release, let's take a look at what makes it unique and how it compares to EmberJS by recreating the Ember Super Rentals with SvelteKit.</p>
+  <p>SvelteKit has just released version 1.0, so let's take a look at what makes it unique and how it compares to EmberJS by recreating the Ember Super Rentals with SvelteKit.</p>
 
 image: ""
 imageAlt: ""
 ---
 
 {% raw %} As with all new JS frameworks, there is a big buzz surrounding
-SvelteKit, and for good reason, it’s still pre-1.0 but the underlying library -
-SvelteJS - has been consistently popular since it emerged in 2019 (according to
-the
+SvelteKit, and for good reason, its underlying library - SvelteJS - has been
+consistently popular since it emerged in 2019 (according to the
 [stateofjs polls](https://2021.stateofjs.com/en-US/libraries/front-end-frameworks))
 and it looks like that popularity is only increasing.
 
 And like all new JS frameworks, it’s also difficult to understand the benefits
-and drawbacks of a new technology without getting hands-on with it, so that’s
-exactly what this post intends to do.
+and drawbacks of a new technology without getting hands-on with it, and with
+SvelteKit releasing version 1.0 and becoming "production ready", now is the
+perfect time to jump in and see how it fares against EmberJS.
 
 The Svelte site has a nice
 [Tutorial playground area](https://svelte.dev/tutorial/basics) that is useful to
@@ -38,7 +38,7 @@ and using SvelteKit to build the Ember-Super-Rentals demo app. And while we’re
 at it, we can also draw some comparisons between the frameworks.
 
 This is what we will have by the end of this tutorial:
-![Screenshot of finished super-rentals app](/assets/images/posts/2022-11-18-sveltekit-super-rentals/finished-app.png)
+![Screenshot of finished super-rentals app](/assets/images/posts/2022-12-23-sveltekit-super-rentals/finished-app.png)
 
 I have broken this demo app down into the same chunks as is done in the Ember
 Super Rentals tutorial, so feel free to follow along with both tutorials at the
@@ -52,18 +52,7 @@ To see the final app on Netlify, click
 
 ## Let’s get started
 
----
-
-_Before we get started, I just want to reiterate the notices on the SvelteKit
-documentation site. **This technology is not yet suggested for use in production
-applications.** SvelteKit is still pre version 1.0 and therefore constantly
-changing large parts of the framework; you can see the progress and upcoming
-changes on the
-[GitHub Discussions tab](https://github.com/sveltejs/kit/discussions?discussions_q=sort%3Atop)._
-
----
-
-With that warning out of the way, let’s create a new blank SvelteKit project.
+To kick things off, let’s create a new blank SvelteKit project.
 
 We’re going to skip TypeScript because, to quote Sweet Brown, “Ain’t nobody got
 time for that”. The rest of it is fairly straightforward, we will create a new
@@ -76,28 +65,22 @@ npm create svelte@latest svelte-super-rentals
 And when prompted, we will opt in for ESLint and Prettier to keep our code
 looking nice and uniform.
 
-We will also opt in for Playwright browser testing, unfortunately, we will be
-skipping unit testing as there isn’t a cooked in way of doing that just yet -
-there is some ongoing discussion on
-[the topic](https://github.com/sveltejs/kit/discussions/5285) and hopefully a
-decision will be made by the time SvelteKit hits 1.0.
+We will also opt in for Playwright browser testing. There is the option to add
+Vitest for unit testing. but for this tutorial we will just use Playwright.
 
 ```bash
 Repos % npm create svelte@latest svelte-super-rentals
 
-create-svelte version 2.0.0-next.158
+create-svelte version 2.0.1
 
 Welcome to SvelteKit!
 
-This is beta software; expect bugs and missing features.
-
-Problems? Open an issue on https://github.com/sveltejs/kit/issues if none exists already.
-
 ✔ Which Svelte app template? › Skeleton project
-✔ Add type checking with TypeScript? › No
-✔ Add ESLint for code linting? … Yes
-✔ Add Prettier for code formatting? … Yes
-✔ Add Playwright for browser testing? … Yes
+✔ Add type checking with TypeScript? No
+✔ Add ESLint for code linting? Yes
+✔ Add Prettier for code formatting? Yes
+✔ Add Playwright for browser testing? Yes
+✔ Add Vitest for unit testing? No
 
 Your project is ready!
 ✔ ESLint
@@ -125,17 +108,18 @@ Repos % cd svelte-super-rentals
 
 svelte-super-rentals % npm install
 
-added 220 packages, and audited 221 packages in 13s
+added 166 packages, and audited 167 packages in 13s
 
-34 packages are looking for funding
+33 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
 svelte-super-rentals % git init && git add -A && git commit -m "Initial commit"
-Initialized empty Git repository in /Users/dan/Documents/Repos/svelte-super-rentals/.git/
-[master (root-commit) 29ed85a] Initial commit
- 16 files changed, 5003 insertions(+)
+
+Initialized empty Git repository in .../svelte-super-rentals/.git/
+[master (root-commit) 6080ce5] Initial commit
+ 17 files changed, 4011 insertions(+)
  create mode 100644 .eslintignore
  create mode 100644 .eslintrc.cjs
  create mode 100644 .gitignore
@@ -147,21 +131,32 @@ Initialized empty Git repository in /Users/dan/Documents/Repos/svelte-super-rent
  create mode 100644 package.json
  create mode 100644 playwright.config.js
  create mode 100644 src/app.html
+ create mode 100644 src/index.test.js
  create mode 100644 src/routes/+page.svelte
  create mode 100644 static/favicon.png
  create mode 100644 svelte.config.js
  create mode 100644 tests/test.js
  create mode 100644 vite.config.js
+
 svelte-super-rentals % npm run dev -- --open
 
 > svelte-super-rentals@0.0.1 dev
 > vite dev "--open"
 
-  VITE v3.0.9  ready in 2475 ms
 
-  ➜  Local:   http://localhost:5173/
+Forced re-optimization of dependencies
+
+  VITE v4.0.3  ready in 667 ms
+
+  ➜  Local:   http://127.0.0.1:5173/
   ➜  Network: use --host to expose
+  ➜  press h to show help
+9:37:19 AM [vite-plugin-svelte] ssr compile done.
+package             	files	  time	  avg
+svelte-super-rentals	    3	29.4ms	9.8ms
 ```
+
+And just like that, we have an empty SvelteKit project!
 
 ## PART 1
 
@@ -199,7 +194,7 @@ basic shape of the site as well as the image of the Tomster.
 And when we serve the app we are greeted by the friendly face of Tomster but it
 doesn’t do much yet.
 
-![Screenshot of the state of the app after "orientation"](/assets/images/posts/2022-11-18-sveltekit-super-rentals/end-of-orientation.png)
+![Screenshot of the state of the app after "orientation"](/assets/images/posts/2022-12-23-sveltekit-super-rentals/end-of-orientation.png)
 
 Before we get into adding pages and components, I wanted a point out a couple of
 small “quality of life” adaptations to make the workflow easier going forward.
@@ -290,7 +285,7 @@ notice the
 offers a way to generate SvelteKit files, though I didn’t find this all that
 useful.
 
-![Screenshot of the sveltekit plugin for VS Code](/assets/images/posts/2022-11-18-sveltekit-super-rentals/sveltekit-plugin-vs-code.png)
+![Screenshot of the sveltekit plugin for VS Code](/assets/images/posts/2022-12-23-sveltekit-super-rentals/sveltekit-plugin-vs-code.png)
 
 In SvelteKit we are missing the ability to create a route and give it a
 different name, so we need to be thoughtful about what we want the name of the
@@ -363,7 +358,7 @@ routes/
 
 Which can get a little annoying when you end up with tabs like this in your IDE:
 
-![screenshot of pages in vs-code](/assets/images/posts/2022-11-18-sveltekit-super-rentals/pages-in-vs-code.png)
+![screenshot of pages in vs-code](/assets/images/posts/2022-12-23-sveltekit-super-rentals/pages-in-vs-code.png)
 
 But hopefully the trade-off is worth it in exchange for the more concise file
 structure
@@ -375,9 +370,9 @@ structure
 [Playwright](https://playwright.dev/docs/intro) was added automatically when we
 created our SvelteKit app and they seem to work great together.
 
-There is already a single test that was created when we set up the app called
-`tests/test.js`, we will replace the content of this soon, but for now let’s see
-what happens when we run this test:
+There is already a single test for Playwright that was created when we set up
+the app called `tests/test.js`; we will replace the content of this soon, but
+for now let’s see what happens when we run this test:
 
 ```bash
 svelte-super-rentals % npm run test
@@ -1258,7 +1253,7 @@ had before
 </article>
 ```
 
-![Screenshot of the current state of the app](/assets/images/posts/2022-11-18-sveltekit-super-rentals/end-of-part-1.png)
+![Screenshot of the current state of the app](/assets/images/posts/2022-12-23-sveltekit-super-rentals/end-of-part-1.png)
 
 And now we have a lovely looking index page that shows us the data for each of
 our rentals.
@@ -1766,11 +1761,17 @@ the underlying technologies.
 There were a few areas I did think SvelteKit could learn from Ember though. I
 find writing tests is much more enjoyable in Ember, and I think that shines a
 light on SvelteKit’s test suite as a whole. Ember’s qunit integration allows for
-a very simple way to cover your app with unit, integration and acceptance tests,
-whereas SvelteKit only has a cooked-in integration with Playwright, which
-currently doesn’t offer a simple way to run unit tests. Although I have to
-admit, the Playwright test generator is very cool and certainly streamlines the
-test process.
+a very simple way to cover your app with unit, integration and acceptance tests.
+It also allows you to run your tests on the "/tests" route, which I really love.
+
+SvelteKit also offers baked-in testing with Vitest (with
+[testing library](https://testing-library.com/docs/svelte-testing-library/intro/))
+and Playwright, but I don't find them quite as intuitive as qunit (but that
+could come down to my background with Ember). Although I have to admit, the
+Playwright test generator is very cool and certainly streamlines the test
+process. I think it still has some areas of improvement though - such as the
+ability to assert textContent or state, rather than just clicking around the
+app.
 
 Ember Data is a very useful way of knowing the structure of the data coming from
 your BE without needing to use TypeScript - TypeScript can be used natively with
