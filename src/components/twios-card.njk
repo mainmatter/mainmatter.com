@@ -1,0 +1,25 @@
+{#
+An individual card for this-week-in-open-source updates
+
+Configuration Options:
+post: A twios post object
+
+{{ twiosCard(post) }}
+#}
+{%- macro twiosCard(post) -%}
+  <div class="post-card twios-card">
+    <div class="post-card__link-wrapper">
+      <a href="{{ post.url }}" class="post-card__link">
+        <h2 class="screenreader">{{ post.data.title }}</h2>
+      </a>
+      <div class="twios-card__overlay">
+        <div class="post-card__content-wrapper">
+          <div class="post-card__date caption">{{ post.date | monthDayYear }}</div>
+          <div class="twios-card__content">
+            <p class="h4">#{{ post.data.number }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endmacro -%}

@@ -67,6 +67,7 @@ module.exports = function (eleventyConfig) {
     "caseStudiesFeatured",
     require("./collections/caseStudiesFeatured")
   );
+  eleventyConfig.addCollection("twios", require("./collections/twios"));
   eleventyConfig.addCollection("memoized", require("./collections/memoized"));
 
   /**
