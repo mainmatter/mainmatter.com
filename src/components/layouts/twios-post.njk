@@ -3,6 +3,7 @@ layout: base
 ---
 
 {%- block content -%}
+{% set post = collections.twios | getCollectionItem(page) %}
 <article>
   <div class="post__header">
     <div class="container container--lg">
