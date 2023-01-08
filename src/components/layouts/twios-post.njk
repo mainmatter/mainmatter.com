@@ -1,0 +1,23 @@
+---
+layout: base
+---
+
+{%- block content -%}
+<article>
+  <div class="post__header">
+    <div class="container container--lg">
+      <div class="post__meta">
+        <div class="post__date text--xs">
+          {{ page.date | monthDayYear }}
+        </div>
+      </div>
+      <h1 class="post__title">This week in Open Source at Mainmatter #{{ post.data.number }}</h1>
+    </div>
+  </div>
+  <div class="container container--lg post">
+    <div class="post__content rte">
+      {{ content | safe }}
+    </div>
+  </div>
+</article>
+{%- endblock -%}
