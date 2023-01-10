@@ -7,4 +7,4 @@ channel: embereurope-2022
 ---
 
 Florian Pichler showed how to build a snowflake effect with modifiers and Ember
-components the last Ember Europe Meetup of 2022.
+components at the last Ember Europe Q4 2022 Meetup.
