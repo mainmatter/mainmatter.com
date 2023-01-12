@@ -2,7 +2,9 @@ const htmlmin = require("html-minifier");
 
 module.exports = function (content, outputPath) {
   if (outputPath && outputPath.endsWith(".html")) {
-    let minified = htmlmin.minify(content, {
+    const sanitizedContent = content.replaceAll("<<", "&lt;<");
+
+    let minified = htmlmin.minify(sanitizedContent, {
       useShortDoctype: true,
       removeComments: true,
       collapseWhitespace: true,
