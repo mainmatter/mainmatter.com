@@ -1,7 +1,7 @@
 module.exports = {
   version: 2,
   static: {
-    // don't snapshot neither all of the blog not all of this-week-in-open-source
+    // don't snapshot neither all of the blog nor all of this-week-in-open-source
     exclude: [
       /blog\/page\/(?!(2|3))\/*/,
       /blog\/author\/(?!marcoow)\/*/,
