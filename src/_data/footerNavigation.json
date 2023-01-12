@@ -89,6 +89,10 @@
         {
           "text": "Events",
           "link": "/events/"
+        },
+        {
+          "text": "Open Source",
+          "link": "/this-week-in-open-source/"
         }
       ]
     }
