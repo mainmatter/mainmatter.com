@@ -14,19 +14,20 @@ image: "/assets/images/posts/2022-12-09-sending-emails-from-the-edge-with-rust/r
 imageAlt: ""
 ---
 
-Rust and Elixir work great combined! In their blog posts, Discord already
-showed that when used together, Rust and Elixir can help you increase performance significantly.
+Rust and Elixir work great combined! In their blog posts, Discord already showed
+that when used together, Rust and Elixir can help you increase performance
+significantly.
 [https://discord.com/blog/using-rust-to-scale-elixir-for-11-million-concurrent-users](https://discord.com/blog/using-rust-to-scale-elixir-for-11-million-concurrent-users)
 [https://discord.com/blog/why-discord-is-switching-from-go-to-rust](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)
 
-In this blog post, I will show you how easily you can build and use small programs
-inside Elixir using Rustler.
+In this blog post, I will show you how easily you can build and use small
+programs inside Elixir using Rustler.
 
-I recently needed a function to create and edit
-PDF files for a small private project. I searched for some packages and the most notable one for Elixir is
+I recently needed a function to create and edit PDF files for a small private
+project. I searched for some packages and the most notable one for Elixir is
 [https://github.com/andrewtimberlake/elixir-pdf](https://github.com/andrewtimberlake/elixir-pdf),
-but it only offers to create pdfs without additional manipulation. That was
-fine by me since I wanted an excuse to do some more things in Rust anyway, and I
+but it only offers to create pdfs without additional manipulation. That was fine
+by me since I wanted an excuse to do some more things in Rust anyway, and I
 found [https://github.com/J-F-Liu/lopdf](https://github.com/J-F-Liu/lopdf).
 
 In the beginning, I had written my program as a regular project in rust i.e.
@@ -36,21 +37,21 @@ some configuration and create/edit a PDF file based on it.
 After I played around with it, I started wondering “How much work would it be to
 make it an Elixir NIF?”.
 
-Turns out - there’s not a whole lot of additional stuff we need to do in order to
-comfortably use crates inside Elixir projects.
+Turns out - there’s not a whole lot of additional stuff we need to do in order
+to comfortably use crates inside Elixir projects.
 
 There are about 2 things we need to keep in mind and take care of:
 
 - Error handling: there needs to be something that maps Rust errors into Elixir
   atoms so that we could easily handle them.
-- Rustler traits: typically your functions and structs will need
-  to derive from appropriate traits so they can be usable inside Elixir (only
-  the public parts of it of course).
+- Rustler traits: typically your functions and structs will need to derive from
+  appropriate traits so they can be usable inside Elixir (only the public parts
+  of it of course).
 
 ## Setup
 
-Setting up a project with Rustler's fairly easy. You can find a link to Rustler’s
-instructions here:
+Setting up a project with Rustler's fairly easy. You can find a link to
+Rustler’s instructions here:
 [https://github.com/rusterlium/rustler#getting-started](https://github.com/rusterlium/rustler#getting-started)
 
 I’ll assume you have both Elixir and Rust installed on your development
@@ -173,9 +174,9 @@ This is the overview of pretty much the entirety of the Rust implementation
 PdfWriterConfiguration a `create_pdf` or `modify_pdf`, functions create or
 manipulate PDF files in some way.
 
-The only relevant part of implementation here is the
-struct itself, as you can see it has `numbers`, `strings`, `tuples`, `structs`
-and `enums`. Later we’ll see how they map to Elixir data structures.
+The only relevant part of implementation here is the struct itself, as you can
+see it has `numbers`, `strings`, `tuples`, `structs` and `enums`. Later we’ll
+see how they map to Elixir data structures.
 
 ## Rustler-ize-it
 
@@ -217,8 +218,8 @@ provide implementations and metadata for the languages to communicate.
 
 ### Enum variant with value - NifTaggedEnum
 
-An additional note here: I’m using `NifUnitEnum` which is a simple Enum variant. If
-you’d like to use Rust Enum variant that also carries data, you might use
+An additional note here: I’m using `NifUnitEnum` which is a simple Enum variant.
+If you’d like to use Rust Enum variant that also carries data, you might use
 `NifTaggedEnum` in order to use such Enums:
 
 ```rust
@@ -279,7 +280,8 @@ kind of IO, it just needs an attribute
 I’m also splitting the functions into the plain Rust functions and the public
 ones used by Rustler as bindings. This most definitely should be built as
 regular Rust crate and another Rustler ‘bridge’ module. I decided to just add
-prefixes here - for the purpose of this post, I believe this simplifies things a bit.
+prefixes here - for the purpose of this post, I believe this simplifies things a
+bit.
 
 ```rust
 use rustler::{Atom, Env, Error as RustlerError, NifStruct, NifUnitEnum, Term};
@@ -411,8 +413,8 @@ Notice how the Rust struct now maps to a plain Elixir `map` type with additional
 
 Out of curiosity I was also benchmarking this implementation against an Elixir
 library called `elixir-pdf` and it seems like it was roughly 2x slower, but
-interestingly used 1/3 less memory. I’m not too familiar with profiling, so
-I’ll leave it at that.
+interestingly used 1/3 less memory. I’m not too familiar with profiling, so I’ll
+leave it at that.
 
 ```elixir
 def benchmark() do
@@ -462,10 +464,25 @@ create_pdf           1.65 KB
 e_create_pdf         1.17 KB - 0.71x memory usage -0.47656 KB
 ```
 
-Code available at:
+### Conclusion
+
+I've shown how you can make use of Rustler in order to add a functionality to
+your Elixir program which natively might not exist. I hope I also managed to
+make you consider using Rust for your next high-peformant and type-safe Elixir
+module.
+
+In my opinion Rust and Elixir are a great match. Rust offers amazing processing
+performance while Elixir and the BEAM are excellent at low latency connections
+and message passing. With Rustler you don't need to choose between one or
+another, but you could use both instead :) So don't hesitate and experiment,
+it's both fun and productive for the developers and could be very beneficial for
+your bussiness.
+
+Consider taking a brief look at the full implementation of the Rust program
+here:
 [https://github.com/BobrImperator/rustler_pdf](https://github.com/BobrImperator/rustler_pdf)
 
-Resources used:
+Further reading:
 
 - [https://github.com/rusterlium/rustler#getting-started](https://github.com/rusterlium/rustler#getting-started)
 - [https://github.com/rusterlium/NifIo](https://github.com/rusterlium/NifIo)
