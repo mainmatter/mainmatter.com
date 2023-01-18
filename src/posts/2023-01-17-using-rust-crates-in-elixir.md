@@ -14,42 +14,42 @@ image: "/assets/images/posts/2022-12-09-sending-emails-from-the-edge-with-rust/r
 imageAlt: ""
 ---
 
-Rust and Elixir are a match made in heaven! Discord in their blog posts already
-shown that combining the two can give you insane performance boosts.
+Rust and Elixir work great combined! In their blog posts, Discord already
+showed that when used together, Rust and Elixir can help you increase performance significantly.
 [https://discord.com/blog/using-rust-to-scale-elixir-for-11-million-concurrent-users](https://discord.com/blog/using-rust-to-scale-elixir-for-11-million-concurrent-users)
 [https://discord.com/blog/why-discord-is-switching-from-go-to-rust](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)
 
-In this blog post I want to show how easily you can build and use small programs
+In this blog post, I will show you how easily you can build and use small programs
 inside Elixir using Rustler.
 
-Recently for a small private project I needed a functionality to create and edit
-PDF files. I searched for some packages and most notable one for Elixir is
+I recently needed a function to create and edit
+PDF files for a small private project. I searched for some packages and the most notable one for Elixir is
 [https://github.com/andrewtimberlake/elixir-pdf](https://github.com/andrewtimberlake/elixir-pdf),
-however it only offers creating pdfs without additional manipulation. That was
+but it only offers to create pdfs without additional manipulation. That was
 fine by me since I wanted an excuse to do some more things in Rust anyway, and I
 found [https://github.com/J-F-Liu/lopdf](https://github.com/J-F-Liu/lopdf).
 
-In the beginning I’ve written my program as a regular project in rust i.e.
-`cargo new my_pdf` and then it was happy coding 🙂 I wanted the program to take
+In the beginning, I had written my program as a regular project in rust i.e.
+`cargo new my_pdf` and then it was happy coding 🙂. I wanted the program to take
 some configuration and create/edit a PDF file based on it.
 
 After I played around with it, I started wondering “How much work would it be to
 make it an Elixir NIF?”.
 
-Turns out - there’s not a whole lot additional stuff we need to do in order to
+Turns out - there’s not a whole lot of additional stuff we need to do in order to
 comfortably use crates inside Elixir projects.
 
 There are about 2 things we need to keep in mind and take care of:
 
-- Error handling There needs to be something that maps Rust errors into Elixir
-  atoms that so we could easily handle them.
-- Spice it up with Rustler traits Typically your functions and structs will need
-  to derive from appropriate traits so they can be usable inside Elixir. Only
-  the public parts of it of course.
+- Error handling: there needs to be something that maps Rust errors into Elixir
+  atoms so that we could easily handle them.
+- Rustler traits: typically your functions and structs will need
+  to derive from appropriate traits so they can be usable inside Elixir (only
+  the public parts of it of course).
 
 ## Setup
 
-Setting up a project with Rustlers is too easy, you can find a link to Rustler’s
+Setting up a project with Rustler's fairly easy. You can find a link to Rustler’s
 instructions here:
 [https://github.com/rusterlium/rustler#getting-started](https://github.com/rusterlium/rustler#getting-started)
 
@@ -105,7 +105,7 @@ environment.
    rustler::init!("Elixir.RustlerPdf", [add]);
    ```
 
-6. Test that setup works
+6. Test that the setup works
    1. Run `iex -S mix`
    2. Execute `RustlerPdf.add(1,2)`
    3. See if it successfully outputs `3`
@@ -168,12 +168,12 @@ pub fn read_config() -> PdfWriterConfiguration {
 pub fn create_pdf(config: PdfWriterConfiguration) -> Result<(), std::io::Error> {}
 ```
 
-This would be the overview of pretty much entirety of Rust implementation
-“minus” the `lopdf` interaction. In general the idea is that given
-PdfWriterConfiguration a `create_pdf` or `modify_pdf` functions create or
+This is the overview of pretty much the entirety of the Rust implementation
+“minus” the `lopdf` interaction. In general, the idea is that given
+PdfWriterConfiguration a `create_pdf` or `modify_pdf`, functions create or
 manipulate PDF files in some way.
 
-The only relevant part of implementation here at the moment in my opinion is the
+The only relevant part of implementation here is the
 struct itself, as you can see it has `numbers`, `strings`, `tuples`, `structs`
 and `enums`. Later we’ll see how they map to Elixir data structures.
 
@@ -217,7 +217,7 @@ provide implementations and metadata for the languages to communicate.
 
 ### Enum variant with value - NifTaggedEnum
 
-Additional note here I’m using `NifUnitEnum` which is a simple Enum variant. If
+An additional note here: I’m using `NifUnitEnum` which is a simple Enum variant. If
 you’d like to use Rust Enum variant that also carries data, you might use
 `NifTaggedEnum` in order to use such Enums:
 
@@ -271,15 +271,15 @@ fn priv_read_config() -> PdfWriterConfiguration {
 ```
 
 `read_config` function is simple enough that it doesn’t require any additional
-treatment, since it’s only delivering hardcoded data and is not dealing with any
-kind of IO it just needs an attribute
+treatment. Since it’s only delivering hardcoded data and is not dealing with any
+kind of IO, it just needs an attribute
 
 `#[rustler::nif]`.
 
 I’m also splitting the functions into the plain Rust functions and the public
 ones used by Rustler as bindings. This most definitely should be built as
 regular Rust crate and another Rustler ‘bridge’ module. I decided to just add
-prefixes here - for the blog post I believe this simplifies things a bit.
+prefixes here - for the purpose of this post, I believe this simplifies things a bit.
 
 ```rust
 use rustler::{Atom, Env, Error as RustlerError, NifStruct, NifUnitEnum, Term};
@@ -342,7 +342,7 @@ always present with all NIFs. Env is used by Rustler for communication and
 encoding/decoding data between BEAM.
 
 `read_config` and `add` in the previous examples are not using it so it’s
-possible to omit it’s declaration.
+possible to omit its declaration.
 
 ### Exporting NIFs
 
@@ -350,7 +350,7 @@ possible to omit it’s declaration.
 rustler::init!("Elixir.RustlerPdf", [read_config, create_pdf]);
 ```
 
-At the end of the file change the `rustler::init!` macro to the above, this
+At the end of the file change the `rustler::init!` macro to the above: this
 let’s the Rustler know to bind `read_config` function to `Elixir.RustlerPdf`
 module.
 
@@ -406,12 +406,12 @@ iex(2)>
 ```
 
 Notice how the Rust struct now maps to a plain Elixir `map` type with additional
-\_\_struct\_\_ metadata, this is how Rustler ensures type safety. If the
+\_\_struct\_\_ metadata: this is how Rustler ensures type safety. If the
 \_\_struct\_\_ would be missing, then we’d get an `ArgumentError` exception.
 
 Out of curiosity I was also benchmarking this implementation against an Elixir
 library called `elixir-pdf` and it seems like it was roughly 2x slower, but
-interestingly used 1/3 of memory less. I’m not too familiar with profiling, so
+interestingly used 1/3 less memory. I’m not too familiar with profiling, so
 I’ll leave it at that.
 
 ```elixir
