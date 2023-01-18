@@ -24,10 +24,10 @@ inside Elixir using Rustler.
 
 Recently for a small private project I needed a functionality to create and edit
 PDF files. I searched for some packages and most notable one for Elixir is
-https://github.com/andrewtimberlake/elixir-pdf, however it only offers creating
-pdfs without additional manipulation. That was fine by me since I wanted an
-excuse to do some more things in Rust anyway, and I found
-https://github.com/J-F-Liu/lopdf.
+[https://github.com/andrewtimberlake/elixir-pdf](https://github.com/andrewtimberlake/elixir-pdf),
+however it only offers creating pdfs without additional manipulation. That was
+fine by me since I wanted an excuse to do some more things in Rust anyway, and I
+found [https://github.com/J-F-Liu/lopdf](https://github.com/J-F-Liu/lopdf).
 
 In the beginning I’ve written my program as a regular project in rust i.e.
 `cargo new my_pdf` and then it was happy coding 🙂 I wanted the program to take
@@ -94,7 +94,7 @@ environment.
 
    b. Make sure Rust’s boilerplate is this:
 
-   ```elixir
+   ```rust
    // native/src/lib.rs
 
    #[rustler::nif]
@@ -118,7 +118,7 @@ the beginning.
 
 First off let’s take a look at pure Rust structs and functions.
 
-```elixir
+```rust
 // Enum that determinates value formatting
 pub enum FieldType {
     Money,
@@ -182,7 +182,7 @@ and `enums`. Later we’ll see how they map to Elixir data structures.
 Now we need to add traits to our data and functions so the tooling knows how to
 marshall the data between Rust and Elixir environments.
 
-```elixir
+```rust
 // import Rustler traits
 use rustler::{NifStruct, NifUnitEnum};
 
@@ -221,7 +221,7 @@ Additional note here I’m using `NifUnitEnum` which is a simple Enum variant. I
 you’d like to use Rust Enum variant that also carries data, you might use
 `NifTaggedEnum` in order to use such Enums:
 
-```elixir
+```rust
 use rustler::NifTaggedEnum;
 
 #[derive(NifTaggedEnum)]
@@ -240,7 +240,7 @@ Then in Elixir they are represented as a tuple like this:
 
 ### Back to Rustlerizing - Functions
 
-```elixir
+```rust
 #[rustler::nif]
 pub fn read_config() -> PdfWriterConfiguration {
   priv_read_config()
@@ -361,7 +361,7 @@ what functions are expected to be bound with the module. Note that knowing the
 functions arity is important here, otherwise you’ll get errors saying that a
 function couldn’t be loaded.
 
-```rust
+```elixir
 defmodule RustlerPdf do
   use Rustler,
     otp_app: :rustler_pdf,
@@ -375,7 +375,7 @@ end
 Now we can use the NIFs like regular Elixir functions. Let’s try it out in the
 interactive console `iex -S mix`
 
-```rust
+```elixir
 [nix-shell:~/Projects/elixir-pdf-experiment/rustler_pdf]$ iex -S mix
 
 iex(1)> RustlerPdf.read_config()
@@ -465,10 +465,12 @@ e_create_pdf         1.17 KB - 0.71x memory usage -0.47656 KB
 Code available at:
 [https://github.com/BobrImperator/rustler_pdf](https://github.com/BobrImperator/rustler_pdf)
 
-Shoutout
-[https://github.com/rusterlium/rustler#getting-started](https://github.com/rusterlium/rustler#getting-started)
-[https://github.com/rusterlium/NifIo](https://github.com/rusterlium/NifIo)
-[https://github.com/discord/sorted_set_nif](https://github.com/discord/sorted_set_nif)
-[https://github.com/J-F-Liu/lopdf](https://github.com/J-F-Liu/lopdf)
+Resources used:
 
-[https://github.com/andrewtimberlake/elixir-pdf](https://github.com/andrewtimberlake/elixir-pdf)
+- [https://github.com/rusterlium/rustler#getting-started](https://github.com/rusterlium/rustler#getting-started)
+- [https://github.com/rusterlium/NifIo](https://github.com/rusterlium/NifIo)
+- [https://github.com/discord/sorted_set_nif](https://github.com/discord/sorted_set_nif)
+- [https://github.com/J-F-Liu/lopdf](https://github.com/J-F-Liu/lopdf)
+- [https://github.com/andrewtimberlake/elixir-pdf](https://github.com/andrewtimberlake/elixir-pdf)
+- [https://discord.com/blog/using-rust-to-scale-elixir-for-11-million-concurrent-users](https://discord.com/blog/using-rust-to-scale-elixir-for-11-million-concurrent-users)
+- [https://discord.com/blog/why-discord-is-switching-from-go-to-rust](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)
