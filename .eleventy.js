@@ -13,7 +13,6 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 const contentParser = require("./utils/transforms/contentParser.js");
-const htmlMinTransform = require("./utils/transforms/htmlmin.js");
 const { findBySlug } = require("./utils/findBySlug");
 
 /**
@@ -124,15 +123,6 @@ module.exports = function (eleventyConfig) {
     return Object.keys(collection);
   });
 
-  /*
-   * Add Transforms
-   *
-   * @link https://www.11ty.io/docs/config/#transforms
-   */
-  if (process.env.ELEVENTY_ENV === "production") {
-    // Minify HTML when building for production
-    eleventyConfig.addTransform("htmlmin", htmlMinTransform);
-  }
   // Parse the page HTML content and perform some manipulation
   eleventyConfig.addTransform("contentParser", contentParser);
 
