@@ -874,24 +874,24 @@ And then add a few of these to the `index` page of our app.
 ```diff-js
 // routes/+page.svelte
 
-<script>
+&lt;script&gt;
   import Jumbo from '@components/jumbo.svelte';
 + import Rental from '@components/rental/index.svelte';
-</script>
+&lt;/script&gt;
 
-<Jumbo>
-  <h2>Welcome to Super Rentals!</h2>
-  <p>We hope you find exactly what you're looking for in a place to stay.</p>
-  <a href="/about" class="button">About Us</a>
-</Jumbo>
+&lt;Jumbo&gt;
+  &lt;h2&gt;Welcome to Super Rentals!&lt;/h2&gt;
+  &lt;p&gt;We hope you find exactly what you're looking for in a place to stay.&lt;/p&gt;
+  &lt;a href="/about" class="button"&gt;About Us&lt;/a&gt;
+&lt;/Jumbo&gt;
 
-+<div class="rentals">
-+  <ul class="results">
-+    <li><Rental /></li>
-+    <li><Rental /></li>
-+    <li><Rental /></li>
-+  </ul>
-+</div>
++&lt;div class="rentals"&gt;
++  &lt;ul class="results"&gt;
++    &lt;li&gt;&lt;Rental /&gt;&lt;/li&gt;
++    &lt;li&gt;&lt;Rental /&gt;&lt;/li&gt;
++    &lt;li&gt;&lt;Rental /&gt;&lt;/li&gt;
++  &lt;/ul>
++&lt;/div>
 ```
 
 ### Interactive components
@@ -1177,20 +1177,20 @@ template.
 ```diff-js
 // routes/+page.svelte
 
-<script>
+&lt;script&gt;
   ...
   export let data;
-</script>
+&lt;/script&gt;
 
 ...
-  <ul class="results">
--    <li><Rental /></li>
--    <li><Rental /></li>
--    <li><Rental /></li>
+  &lt;ul class="results"&gt;
+-    &lt;li&gt;&lt;Rental /&gt;&lt;/li&gt;
+-    &lt;li&gt;&lt;Rental /&gt;&lt;/li&gt;
+-    &lt;li&gt;&lt;Rental /&gt;&lt;/li&gt;
 +    {#each data.rentals as rental}
-+      <li><Rental {rental} /></li>
++      &lt;li&gt;&lt;Rental {rental} /&gt;&lt;/li&gt;
 +    {/each}
-  </ul>
+  &lt;/ul&gt;
 ...
 ```
 
@@ -1205,41 +1205,41 @@ had before
 ```diff-js
 // components/rental/index.svelte
 
-<script>
+&lt;script&gt;
   import RentalImage from './image.svelte';
   import Map from '@components/map.svelte';
 
 +  export let rental
-</script>
+&lt;/script&gt;
 
-<article class="rental">
--  <RentalImage
+&lt;article class="rental"&gt;
+-  &lt;RentalImage
 -    src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg"
 -    alt="A picture of Grand Old Mansion"
--  />
-+  <RentalImage src={rental.image} alt={rental.description} />
-    <div class="details">
--    <h3>Grand Old Mansion</h3>
-+    <h3>{rental.title}</h3>
-    </div>
-    <div class="detail owner">
--      <span>Owner:</span> Veruca Salt
-+      <span>Owner:</span> {rental.owner}
-    </div>
-    <div class="detail type">
--      <span>Type:</span> Standalone
-+      <span>Type:</span> {rental.type}
-    </div>
-    <div class="detail location">
--      <span>Location:</span> San Francisco
-+      <span>Location:</span> {rental.city}
-    </div>
-    <div class="detail bedrooms">
--      <span>Number of bedrooms:</span> 15
-+      <span>Number of bedrooms:</span> {rental.bedrooms}
-    </div>
-  </div>
-  <Map
+-  /&gt;
++  &lt;RentalImage src={rental.image} alt={rental.description} /&gt;
+    &lt;div class="details"&gt;
+-    &lt;h3&gt;Grand Old Mansion&lt;/h3&gt;
++    &lt;h3&gt;{rental.title}&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="detail owner"&gt;
+-      &lt;span&gt;Owner:&lt;/span&gt; Veruca Salt
++      &lt;span&gt;Owner:&lt;/span&gt; {rental.owner}
+    &lt;/div&gt;
+    &lt;div class="detail type"&gt;
+-      &lt;span&gt;Type:&lt;/span&gt; Standalone
++      &lt;span&gt;Type:&lt;/span&gt; {rental.type}
+    &lt;/div&gt;
+    &lt;div class="detail location"&gt;
+-      &lt;span&gt;Location:&lt;/span&gt; San Francisco
++      &lt;span&gt;Location:&lt;/span&gt; {rental.city}
+    &lt;/div&gt;
+    &lt;div class="detail bedrooms"&gt;
+-      &lt;span&gt;Number of bedrooms:&lt;/span&gt; 15
++      &lt;span&gt;Number of bedrooms:&lt;/span&gt; {rental.bedrooms}
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;Map
 -    lat="37.7749"
 -    lng="-122.4194"
 +    lat={rental.location.lat}
@@ -1249,8 +1249,8 @@ had before
     height="150"
 -    alt="A map of Grand Old Mansion"
 +    alt="A map of {rental.title}"
-  />
-</article>
+  /&gt;
+&lt;/article&gt;
 ```
 
 ![Screenshot of the current state of the app](/assets/images/posts/2022-12-23-sveltekit-super-rentals/end-of-part-1.png)
@@ -1408,12 +1408,12 @@ component.
 + export let styleClass = '';
 
   $: src = `${MAPBOX_API}/${lng},${lat},${zoom}/${width}x${height}@2x?access_token=${token}`;
-</script>
+&lt;/script&gt;
 
-- <div class="map">
-+ <div class="map {styleClass}">
-    <img {alt} {src} {width} {height} />
-  </div>
+- &lt;div class="map"&gt;
++ &lt;div class="map {styleClass}"&gt;
+    &lt;img {alt} {src} {width} {height} /&gt;
+  &lt;/div&gt;
 ...
 ```
 
@@ -1432,15 +1432,15 @@ To give users access to the individual rental detail page, we will update the
 // components/rental/index.svelte
 
   ...
-  <div class="details">
--    <h3>{rental.title}</h3>
-+    <h3>
-+      <a href="rentals/{rental.id}">
+  &lt;div class="details"&gt;
+-    &lt;h3&gt;{rental.title}&lt;/h3&gt;
++    &lt;h3&gt;
++      &lt;a href="rentals/{rental.id}"&gt;
 +        {rental.title}
-+      </a>
-+    </h3>
-  </div>
-  <div class="detail owner">
++      &lt;/a&gt;
++    &lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="detail owner"&gt;
   ...
 ```
 
@@ -1554,16 +1554,16 @@ page
 ...
 
 ...
--  <a href="#" target="_blank" rel="external nofollow noopener noreferrer" class="share button">
+-  &lt;a href="#" target="_blank" rel="external nofollow noopener noreferrer" class="share button"&gt;
 -    Share on Twitter
--  </a>
-+  <ShareButton
+-  &lt;/a&gt;
++  &lt;ShareButton
 +    text="Check out {rental.title} on Super Rentals!"
 +    hashtags="vacation,travel,authentic,blessed,superrentals"
 +    via="sveltejs"
-+  >
++  &gt;
 +    Share on Twitter
-+  </ShareButton>
++  &lt;/ShareButton&gt;
 ...
 ```
 
@@ -1647,7 +1647,7 @@ We can then update the index page to keep track of the query and utilise the new
 ```diff-js
 // routes/+page.svelte
 
-<script>
+&lt;script&gt;
   import Jumbo from '@components/jumbo.svelte';
   import Rental from '@components/rental/index.svelte';
 +  import RentalsFilter from '@components/rentals-filter.svelte';
@@ -1655,28 +1655,28 @@ We can then update the index page to keep track of the query and utilise the new
   export let data;
 
 +  let query = '';
-</script>
+&lt;/script&gt;
 
 ...
-<div class="rentals">
--  <ul class="results">
+&lt;div class="rentals"&gt;
+-  &lt;ul class="results"&gt;
 -    {#each data.rentals as rental}
--      <li><Rental {rental} /></li>
+-      &lt;li&gt;&lt;Rental {rental} /&gt;&lt;/li&gt;
 -    {/each}
--  </ul>
-+  <label>
-+    <span>Where would you like to stay?</span>
-+    <input class="light" bind:value={query} />
-+  </label>
+-  &lt;/ul&gt;
++  &lt;label&gt;
++    &lt;span&gt;Where would you like to stay?&lt;/span&gt;
++    &lt;input class="light" bind:value={query} /&gt;
++  &lt;/label&gt;
 +
-+  <RentalsFilter {query} rentals={data.rentals} let:results>
-+    <ul class="results">
++  &lt;RentalsFilter {query} rentals={data.rentals} let:results&gt;
++    &lt;ul class="results"&gt;
 +      {#each results as rental}
-+        <li><Rental {rental} /></li>
++        &lt;li&gt;&lt;Rental {rental} /&gt;&lt;/li&gt;
 +      {/each}
-+    </ul>
-+  </RentalsFilter>
-</div>
++    &lt;/ul&gt;
++  &lt;/RentalsFilter&gt;
+&lt;/div&gt;
 ...
 ```
 
