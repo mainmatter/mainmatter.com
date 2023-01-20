@@ -129,12 +129,13 @@ module.exports = function (eleventyConfig) {
    *
    * @link https://www.11ty.io/docs/config/#transforms
    */
+  // Parse the page HTML content and perform some manipulation
+  eleventyConfig.addTransform("contentParser", contentParser);
+
   if (process.env.ELEVENTY_ENV === "production") {
     // Minify HTML when building for production
     eleventyConfig.addTransform("htmlmin", htmlMinTransform);
   }
-  // Parse the page HTML content and perform some manipulation
-  eleventyConfig.addTransform("contentParser", contentParser);
 
   /**
    * Add Plugins
