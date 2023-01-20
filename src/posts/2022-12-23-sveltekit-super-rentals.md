@@ -194,7 +194,7 @@ basic shape of the site as well as the image of the Tomster.
 And when we serve the app we are greeted by the friendly face of Tomster but it
 doesn’t do much yet.
 
-![Screenshot of the state of the app after "orientation"](/assets/images/posts/2022-12-23-sveltekit-super-rentals/end-of-orientation.png)
+![Screenshot of the state of the app after 'orientation'](/assets/images/posts/2022-12-23-sveltekit-super-rentals/end-of-orientation.png)
 
 Before we get into adding pages and components, I wanted a point out a couple of
 small “quality of life” adaptations to make the workflow easier going forward.
@@ -358,7 +358,7 @@ routes/
 
 Which can get a little annoying when you end up with tabs like this in your IDE:
 
-![screenshot of pages in vs-code](/assets/images/posts/2022-12-23-sveltekit-super-rentals/pages-in-vs-code.png)
+![screenshot of pages in VS Code](/assets/images/posts/2022-12-23-sveltekit-super-rentals/pages-in-vs-code.png)
 
 But hopefully the trade-off is worth it in exchange for the more concise file
 structure
