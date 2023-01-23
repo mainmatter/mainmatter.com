@@ -7,12 +7,12 @@ description:
   "Taking a practical look at the Svelte framework by rebuilding the Ember super
   rentals app in SvelteKit."
 og:
-  image: /assets/images/posts/2022-12-23-sveltekit-super-rentals/og-image.jpg
+  image: /assets/images/posts/2023-01-23-sveltekit-super-rentals/og-image.jpg
 tagline: |
   <p>SvelteKit has just released version 1.0, so let's take a look at what makes it unique and how it compares to EmberJS by recreating the Ember Super Rentals with SvelteKit.</p>
 
-image: ""
-imageAlt: ""
+image: "/assets/images/posts/2023-01-23-sveltekit-super-rentals/sveltekit-super-rentals-illustration.jpg"
+imageAlt: "The Svelte logo on a purple backround picture"
 ---
 
 {% raw %} As with all new JS frameworks, there is a big buzz surrounding
@@ -38,7 +38,7 @@ and using SvelteKit to build the Ember-Super-Rentals demo app. And while we’re
 at it, we can also draw some comparisons between the frameworks.
 
 This is what we will have by the end of this tutorial:
-![Screenshot of finished super-rentals app](/assets/images/posts/2022-12-23-sveltekit-super-rentals/finished-app.png)
+![Screenshot of finished super-rentals app](/assets/images/posts/2023-01-23-sveltekit-super-rentals/finished-app.png)
 
 I have broken this demo app down into the same chunks as is done in the Ember
 Super Rentals tutorial, so feel free to follow along with both tutorials at the
@@ -194,7 +194,7 @@ basic shape of the site as well as the image of the Tomster.
 And when we serve the app we are greeted by the friendly face of Tomster but it
 doesn’t do much yet.
 
-![Screenshot of the state of the app after 'orientation'](/assets/images/posts/2022-12-23-sveltekit-super-rentals/end-of-orientation.png)
+![Screenshot of the state of the app after 'orientation'](/assets/images/posts/2023-01-23-sveltekit-super-rentals/end-of-orientation.png)
 
 Before we get into adding pages and components, I wanted a point out a couple of
 small “quality of life” adaptations to make the workflow easier going forward.
@@ -285,7 +285,7 @@ notice the
 offers a way to generate SvelteKit files, though I didn’t find this all that
 useful.
 
-![Screenshot of the sveltekit plugin for VS Code](/assets/images/posts/2022-12-23-sveltekit-super-rentals/sveltekit-plugin-vs-code.png)
+![Screenshot of the sveltekit plugin for VS Code](/assets/images/posts/2023-01-23-sveltekit-super-rentals/sveltekit-plugin-vs-code.png)
 
 In SvelteKit we are missing the ability to create a route and give it a
 different name, so we need to be thoughtful about what we want the name of the
@@ -358,7 +358,7 @@ routes/
 
 Which can get a little annoying when you end up with tabs like this in your IDE:
 
-![screenshot of pages in VS Code](/assets/images/posts/2022-12-23-sveltekit-super-rentals/pages-in-vs-code.png)
+![screenshot of pages in VS Code](/assets/images/posts/2023-01-23-sveltekit-super-rentals/pages-in-vs-code.png)
 
 But hopefully the trade-off is worth it in exchange for the more concise file
 structure
@@ -1253,7 +1253,7 @@ had before
 </article>
 ```
 
-![Screenshot of the current state of the app](/assets/images/posts/2022-12-23-sveltekit-super-rentals/end-of-part-1.png)
+![Screenshot of the current state of the app](/assets/images/posts/2023-01-23-sveltekit-super-rentals/end-of-part-1.png)
 
 And now we have a lovely looking index page that shows us the data for each of
 our rentals.
