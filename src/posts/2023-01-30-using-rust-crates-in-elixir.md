@@ -7,10 +7,10 @@ description:
   "Bartłomiej Dudzik shows how you can use a Rust crate in Elixir using NIFs
   with Rustler."
 og:
-  image: /assets/images/posts/2022-12-09-sending-emails-from-the-edge-with-rust/og-image.jpg
+  image: /assets/images/posts/2023-01-30-using-rust-crates-in-elixir/og-image.jpeg
 tagline: |
   <p>You couldn't find an Elixir package? Let's see if Rust can help with that.</p>
-image: "/assets/images/posts/2022-12-09-sending-emails-from-the-edge-with-rust/rust-mail-server.png"
+image: /assets/images/posts/2023-01-30-using-rust-crates-in-elixir/og-image.jpeg
 imageAlt: ""
 ---
 
