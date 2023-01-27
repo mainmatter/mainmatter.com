@@ -10,8 +10,6 @@ og:
   image: /assets/images/posts/2023-01-30-using-rust-crates-in-elixir/og-image.jpeg
 tagline: |
   <p>You couldn't find an Elixir package? Let's see if Rust can help with that.</p>
-image: /assets/images/posts/2023-01-30-using-rust-crates-in-elixir/og-image.jpeg
-imageAlt: ""
 ---
 
 Rust and Elixir work great combined! Rust and Elixir can help you increase
