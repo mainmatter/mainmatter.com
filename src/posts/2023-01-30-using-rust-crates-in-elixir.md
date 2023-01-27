@@ -23,11 +23,10 @@ programs inside Elixir using Rustler.
 
 I recently needed a function to create and edit PDF files with Elixir for a
 small private project. I searched for some packages and the most notable one for
-Elixir is
-[https://github.com/andrewtimberlake/elixir-pdf](https://github.com/andrewtimberlake/elixir-pdf),
-but it only offers to create PDFs without additional manipulation. That was fine
-by me since I wanted an excuse to do some more things in Rust anyway, and I
-found [https://github.com/J-F-Liu/lopdf](https://github.com/J-F-Liu/lopdf).
+Elixir is [elixir-pdf](https://github.com/andrewtimberlake/elixir-pdf), but it
+only offers to create PDFs without additional manipulation. That was fine by me
+since I wanted an excuse to do some more things in Rust anyway, and I found
+[lopdf](https://github.com/J-F-Liu/lopdf).
 
 In the beginning, I had written my program as a regular project in Rust i.e.
 `cargo new my_pdf` and then it was happy coding 🙂. I wanted the program to take
@@ -39,8 +38,8 @@ make it an Elixir NIF?”.
 Turns out - there’s not a whole lot of additional stuff we need to do in order
 to comfortably use crates inside Elixir projects.
 
-[https://github.com/rusterlium/rustler](Rustler) is a library for writing
-[https://www.erlang.org/doc/tutorial/nif.html](Erlang NIFs) in a very easy and
+[Rustler](https://github.com/rusterlium/rustler) is a library for writing
+[Erlang NIFs](https://www.erlang.org/doc/tutorial/nif.html) in a very easy and
 straightforward way.
 
 There are about 2 things we need to keep in mind and take care of:
@@ -112,7 +111,7 @@ environment.
 
 I’ll mostly showcase contracts and interfaces of the Rust part of the program.
 If you're interested in the full implementation, you can find it
-[https://github.com/BobrImperator/rustler_pdf](here).
+[here](https://github.com/BobrImperator/rustler_pdf).
 
 First off let’s take a look at pure Rust structs and functions.
 
