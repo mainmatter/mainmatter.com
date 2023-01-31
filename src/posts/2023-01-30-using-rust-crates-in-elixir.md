@@ -46,9 +46,9 @@ There are about 2 things we need to keep in mind and take care of:
 
 - Error handling: there needs to be something that maps Rust errors into Elixir
   atoms so that we could easily handle them.
-- Rustler traits: typically your functions and structs will need to derive from
-  appropriate traits so they can be usable inside Elixir (only the public parts
-  of it of course).
+- Rustler traits: typically your functions and structs will need to derive the
+  implementation from appropriate traits so they can be usable inside Elixir
+  (only the public parts of it of course).
 
 ## Setup
 
@@ -60,7 +60,7 @@ I’ll assume you have both Elixir and Rust installed in your development
 environment.
 
 1. Create a new Elixir project `mix new rustler_pdf`
-2. Add `:rustler` dependency in `mix.exs`
+2. Add the `:rustler` dependency in `mix.exs`
    ```elixir
     # mix.exs
      defp deps do
@@ -69,15 +69,16 @@ environment.
        ]
      end
    ```
-3. Download packages `mix deps.get`
+3. Download packages: `mix deps.get`
 4. Setup Rustler
    1. Run `mix rustler.new`
    2. On “Module name” prompt type in `RustlerPdf` (Name of your Elixir module
       that Rustler registers NIFs to)
-   3. On “Library name” prompt type in `rustlerpdf` (Name of your cargo crate)
+   3. On the “Library name” prompt type in `rustlerpdf` (Name of your cargo
+      crate)
 5. Configure Rustler
 
-   1. Add Rustler behaviour in `rustler_pdf.ex`
+   1. Add the Rustler behaviour in `rustler_pdf.ex`
 
    ```elixir
    defmodule RustlerPdf do
@@ -170,9 +171,9 @@ This is the overview of pretty much the entirety of the Rust implementation
 `PdfWriterConfiguration` a `create_pdf` function will create a PDF file. Then I
 want to use those methods directly in Elixir.
 
-The only relevant part of implementation here are the structs themselves, as you
-can see they have `number`, `string`, `tuple`, `struct` and `enum` Rust types.
-Later we’ll see how they map to Elixir data structures.
+The only relevant part of the implementation here are the structs themselves, as
+you can see they have `i32`, `f64`, `string`, `tuple`, `struct` and `enum` Rust
+types. Later we’ll see how they map to Elixir data structures.
 
 ## Rustler-ize-it
 
@@ -267,14 +268,12 @@ fn priv_read_config() -> PdfWriterConfiguration {
 }
 ```
 
-`read_config` function is simple enough that it doesn’t require any additional
-treatment. Since it’s only delivering hardcoded data and is not dealing with any
-kind of IO, it just needs an attribute
-
-`#[rustler::nif]`.
+The `read_config` function is simple enough that it doesn’t require any
+additional treatment. Since it’s only delivering hardcoded data and is not
+dealing with any kind of IO, it just needs the `#[rustler::nif]` attribute.
 
 I’m also splitting the functions into the plain Rust functions and the public
-ones that Rustler exposes to Elixir. This most definitely should be built as
+ones that Rustler exposes to Elixir. This most definitely should be built as a
 regular Rust crate and another Rustler ‘bridge’ module. I decided to just add
 prefixes here - for the purpose of this post, I believe this simplifies things a
 bit.
@@ -284,7 +283,7 @@ use rustler::{Atom, Env, Error as RustlerError, NifStruct, NifUnitEnum, Term};
 use std::io::Error as IoError;
 use std::io::ErrorKind as IoErrorKind;
 
-// Creates atoms module using rustler macro
+// Creates an atoms module using the rustler macro
 mod atoms {
     rustler::atoms! {
         ok,
@@ -328,16 +327,16 @@ fn priv_create_pdf(config: PdfWriterConfiguration) -> Result<(), std::io::Error>
 `priv_create_pdf` is dealing with creating an actual file on the filesystem so
 it might result in an error.
 
-In order to handle such situation, we’ve defined a module called `atoms` which
+In order to handle that situation, we’ve defined a module called `atoms` which
 uses the `rustler::atoms!` macro to create methods to simplify creating and
 decoding atoms.
 
 `io_error_to_term` takes an `std::io::error`, matches on the kind of error and
 translates that into an `Atom`.
 
-As you’ve probably noticed `create_pdf` expects an `env` argument which is
+As you’ve probably noticed, `create_pdf` expects an `env` argument which is
 always present with all NIFs. Env is used by Rustler for communication and
-encoding/decoding data between BEAM.
+encoding/decoding data between the BEAM and Rust.
 
 `read_config` and `add` in the previous examples are not using it so it’s
 possible to omit its declaration.
@@ -348,14 +347,15 @@ possible to omit its declaration.
 rustler::init!("Elixir.RustlerPdf", [read_config, create_pdf]);
 ```
 
-At the end of the file change the `rustler::init!` macro to the above: this lets
-Rustler know to bind `read_config` function to `Elixir.RustlerPdf` module.
+At the end of the file, change the `rustler::init!` macro to the above: this
+lets Rustler know to bind `read_config` function to the `Elixir.RustlerPdf`
+module.
 
 ## The Elixir part
 
 Once the Rust crate exports the functions, we need to let the Elixir side know
 what functions are expected to be bound to the module. Note that knowing the
-functions arity is important here, otherwise you’ll get errors saying that a
+functions' arities is important here, otherwise you’ll get errors saying that a
 function couldn’t be loaded.
 
 ```elixir
@@ -465,7 +465,7 @@ your Elixir program which natively might not exist. I hope I also managed to
 make you consider using Rust for your next high-peformant and type-safe Elixir
 module.
 
-In my opinion Rust and Elixir are a great match. Rust offers amazing processing
+In my opinion, Rust and Elixir are a great match. Rust offers amazing processing
 performance while Elixir and the BEAM are excellent at low latency connections
 and message passing. With Rustler you don't need to choose between one or
 another, but you could use both instead :) So don't hesitate and experiment,
