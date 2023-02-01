@@ -7,9 +7,12 @@ description:
   "Bartłomiej Dudzik shows how you can use a Rust crate in Elixir using NIFs
   with Rustler."
 og:
-  image: /assets/images/posts/2023-01-30-using-rust-crates-in-elixir/og-image.jpeg
+  image: /assets/images/posts/2023-02-01-using-rust-crates-in-elixir/og-image.jpg
 tagline: |
   <p>You couldn't find an Elixir package? Let's see if Rust can help with that.</p>
+
+image: "/assets/images/posts/2023-02-01-using-rust-crates-in-elixir/header-illustration.jpg"
+imageAlt: "The Rust and Elixir logos on a gray backround picture"
 ---
 
 Rust and Elixir work great combined! Rust and Elixir can help you increase
