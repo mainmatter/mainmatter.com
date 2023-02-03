@@ -26,7 +26,7 @@ assert("Must pass myArgument", myArgument !== undefined);
 The `assert` statement by default runs only for development builds and is
 completely stripped from production. This rather useful functionality does by
 default not have an equal in an Ember template. This could be a useful addition
-especially for template only components, which have no JavaScript backing class.
+especially for template-only components, which have no JavaScript backing class.
 As such we'll create this helper and use this as an opportunity to show how to
 strip such an addon completely from production builds.
 
