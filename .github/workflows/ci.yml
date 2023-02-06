@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: volta-cli/action@v4
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
+      - uses: volta-cli/action@25888009cd70dbe17a140f1c56d93f8c09f7bcef # v4
 
       - name: install dependencies
         run: yarn install
@@ -28,8 +28,8 @@ jobs:
     runs-on: ubuntu-latest
   
     steps:
-      - uses: actions/checkout@v3
-      - uses: volta-cli/action@v4
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
+      - uses: volta-cli/action@25888009cd70dbe17a140f1c56d93f8c09f7bcef # v4
 
       - name: install dependencies
         run: yarn install
@@ -48,8 +48,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: volta-cli/action@v4
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
+      - uses: volta-cli/action@25888009cd70dbe17a140f1c56d93f8c09f7bcef # v4
 
       - name: install dependencies
         run: yarn install
@@ -67,10 +67,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-      - uses: volta-cli/action@v4
+      - uses: volta-cli/action@25888009cd70dbe17a140f1c56d93f8c09f7bcef # v4
     
       - name: install dependencies
         run: yarn install
