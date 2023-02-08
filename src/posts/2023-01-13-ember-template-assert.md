@@ -41,7 +41,7 @@ re-export that will make the helper discoverable by Ember apps
 
 Note that from Ember 4.5 onwards it is also possible to use plain functions as
 helpers, removing the need to wrap the function in a `helper()` call. For
-backwards compatibility reasons however, we will keep it for now.
+backward compatibility reasons, however, we will keep it for now.
 
 ```javascript
 // addon/helpers/assert.js
