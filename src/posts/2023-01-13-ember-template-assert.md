@@ -37,7 +37,7 @@ The helper itself is quite minimal, since we only need to wrap the original
 generate a helper with `ember g helper assert`. In an addon this will generate 3
 files. The file where our implementation will be `/addon/helpers/assert.js`, a
 re-export that will make the helper discoverable by Ember apps
-`/app/helpers/assert.js` and a test file.
+`/app/helpers/assert.js`, and a test file.
 
 Note that from Ember 4.5 onwards it is also possible to use plain functions as
 helpers, removing the need to wrap the function in a `helper()` call. For
