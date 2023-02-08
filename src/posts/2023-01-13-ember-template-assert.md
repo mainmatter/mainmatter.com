@@ -10,7 +10,7 @@ description:
 og:
   image: /assets/images/posts/2022-12-09-sending-emails-from-the-edge-with-rust/og-image.jpg
 tagline: |
-  <p>Sometimes there is the need for development-time only functionality, in this case in the form of an Ember addon. What we'd like to build is an addon that provides us with an <a href="https://api.emberjs.com/ember/4.6/functions/@ember%2Fdebug/assert">assert</a> template helper so that we can use these development time assertions in templates as well.</p>
+  <p>Sometimes there is the need for development-time-only functionality, in this case in the form of an Ember addon. We'd like to build an addon that provides us with an <a href="https://api.emberjs.com/ember/4.6/functions/@ember%2Fdebug/assert">assert</a> template helper so that we can use these development time assertions in templates as well.</p>
 
 image: "/assets/images/posts/2022-12-09-sending-emails-from-the-edge-with-rust/rust-mail-server.png"
 imageAlt: ""
