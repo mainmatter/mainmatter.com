@@ -210,10 +210,10 @@ build in production environments which we achieve by checking
 but not the re-export in the app folder.
 
 For that we also need to add the very similar hook called `treeForApp` which
-handles everything in the `app` folder of your v1 ember addon.
+handles everything in the `app` folder of your v1 Ember addon.
 
-Let's start with abstracting our existing addon filter a bit to make it
-reusable:
+Let's start with abstracting our existing addon tree filter code a bit to make
+it reusable:
 
 ```javascript
 _filterAssertHelper(tree) {
@@ -277,8 +277,14 @@ ember-template-assert addon tree
 ```
 
 If we run the app with `ember s --environment=production` the output should no
-longer show our assert helper.
+longer show our assert helper, meaning the helper was successfully removed from
+the build.
 
 ## Conclusion
 
-TBD
+While this is a small example where the benefits of removal are limited, one can
+think of more comprehensive debugging tools that benefit from being removed from
+production builds. This will allow you to have useful dev-time tools without the
+fear of increasing bundle size. At the same time we've created a small but
+useful helper for template-only components that can help prevent incorrect usage
+of these components.
