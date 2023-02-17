@@ -23,12 +23,12 @@ make sure, for example, that the correct data is passed.
 assert("Must pass myArgument", myArgument !== undefined);
 ```
 
-The `assert` statement by default runs only for development builds and is
-completely stripped from production. This rather useful functionality does by
-default not have an equal in an Ember template. This could be a useful addition
-especially for template-only components, which have no JavaScript backing class.
-As such we'll create this helper and use this as an opportunity to show how to
-strip such an addon completely from production builds.
+The `assert` statement runs only for development builds and is completely
+stripped from production. This rather useful functionality does by default not
+have an equal in an Ember template. This could be a useful addition especially
+for template-only components, which have no JavaScript backing class. As such
+we'll create this helper and use this as an opportunity to show how to strip
+such an addon completely from production builds.
 
 ## The `assert` helper
 
@@ -289,4 +289,5 @@ think of more comprehensive debugging tools that benefit from being removed from
 production builds. This will allow you to have useful dev-time tools without the
 fear of increasing bundle size. At the same time we've created a small but
 useful helper for template-only components that can help prevent incorrect usage
-of these components.
+of these components. The final `ember-template-assert` addon can be found here:
+[https://github.com/mainmatter/ember-template-assert](https://github.com/mainmatter/ember-template-assert).
