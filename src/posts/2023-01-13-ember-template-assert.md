@@ -8,12 +8,9 @@ description:
   "Nick Schot explains how to build an Ember addon that completely removes
   itself from production builds."
 og:
-  image: /assets/images/posts/2022-12-09-sending-emails-from-the-edge-with-rust/og-image.jpg
+  image: /assets/images/posts/2023-02-17-ember-template-assert/og-image.jpg
 tagline: |
   <p>Sometimes there is the need for development-time-only functionality, in this case in the form of an Ember addon. We'd like to build an addon that provides us with an <a href="https://api.emberjs.com/ember/4.6/functions/@ember%2Fdebug/assert">assert</a> template helper so that we can use these development time assertions in templates as well.</p>
-
-image: "/assets/images/posts/2022-12-09-sending-emails-from-the-edge-with-rust/rust-mail-server.png"
-imageAlt: ""
 ---
 
 Ember's `assert` function can be helpful to add checks meant for developers to
@@ -85,71 +82,33 @@ In order to remove helper invocations from consuming app code, we will need to
 add an AST-transform. In our case we'll specifically need to write a transform
 for the `htmlbars-ast-plugin`, which turns `.hbs` template files into an AST.
 
-### Setting up `htmlbars-ast-plugin`
-
-To get started we'll need to add `ember-auto-import` to the dependencies of our
-addon. After that we can add some configuration to the addon's `index.js` file
-to tell ember-cli about our new AST transform.
-
-```javascript
-"use strict";
-
-module.exports = {
-  name: require("./package").name,
-
-  options: {
-    babel: {
-      plugins: [require.resolve("ember-auto-import/babel-plugin")],
-    },
-  },
-
-  setupPreprocessorRegistry(type, registry) {
-    const plugin = this._buildPlugin();
-    plugin.parallelBabel = {
-      requireFile: __filename,
-      buildUsing: "_buildPlugin",
-      params: {},
-    };
-    registry.add("htmlbars-ast-plugin", plugin);
-  },
-
-  _buildPlugin() {
-    const emberTemplateAssertTransform = require("./lib/ast-transform");
-
-    return {
-      name: "ember-template-assert",
-      plugin: emberTemplateAssertTransform,
-      baseDir: emberTemplateAssertTransform.baseDir,
-      cacheKey: emberTemplateAssertTransform.cacheKey,
-    };
-  },
-};
-```
-
 ### Writing the AST transform
 
-The next thing we want to do is make sure we remove all calls of
+What we want to do is make sure we remove all calls of
 {% raw %}`{{assert}}`{% endraw %} from the templates in production builds. If we
 do not remove these, apart from shipping unnecessary code, Ember would also
 throw an error after we remove the helper code itself from the build in the next
-step.
+step. To figure out what exactly we need to do we can make use of
+[ast-explorer](https://astexplorer.net/#/gist/a62cdfd01800c7c97d67fdffe1ef03ea/ac85caf41c1af25787c5ae4b0d741cbea7fe903c).
 
-We can do this by writing a small visitor statement in the following format:
+![Screenshot of ast-explorer example](/assets/images/posts/2023-02-17-ember-template-assert/ast-explorer.png)
+
+Looking at our sample code, we can see that the `assert` shows up as a node of
+type "MustacheStatement" with `path.original` as `assert`. We can use this
+information to write a small visitor statement in the following format:
 
 ```javascript
+// /lib/ast-transform.js
 "use strict";
 
 module.exports = function emberTemplateAssertTransform(env) {
-  let visitor = {};
-  if (env.isProduction) {
-    visitor = {
-      MustacheStatement(node) {
-        if (node.path.original === "assert") {
-          return null;
-        }
-      },
-    };
-  }
+  let visitor = {
+    MustacheStatement(node) {
+      if (node.path.original === "assert") {
+        return null;
+      }
+    },
+  };
 
   return {
     name: "ember-template-assert",
@@ -178,10 +137,55 @@ visitor = {
 };
 ```
 
-This will remove all Mustache statements (any template statement that has
-handlebars syntax like {% raw %}`{{...}}`{% endraw %}) with the name `assert`.
-Since we want to remove all assert statements, there's no need to look at the
-arguments that are passed in to the assert helper.
+By returning `null` it will remove all Mustache statements (any template
+statement that has handlebars syntax like {% raw %}`{{...}}`{% endraw %}) with
+the name `assert`. Since we want to remove all assert statements, there's no
+need to look at the arguments that are passed in to the assert helper.
+
+### Setting up `htmlbars-ast-plugin`
+
+Next we need to hook up our new AST transform tp the build process. To do that
+we need to add some configuration to the addon's `index.js` file to tell
+ember-cli about our new AST transform.
+
+```javascript
+// /index.js
+"use strict";
+
+module.exports = {
+  name: require("./package").name,
+
+  setupPreprocessorRegistry(type, registry) {
+    let app = this._findHost();
+    let isProduction = app?.isProduction;
+
+    if (isProduction) {
+      const plugin = this._buildPlugin();
+      plugin.parallelBabel = {
+        requireFile: __filename,
+        buildUsing: "_buildPlugin",
+        params: {},
+      };
+      registry.add("htmlbars-ast-plugin", plugin);
+    }
+  },
+
+  _buildPlugin() {
+    const emberTemplateAssertTransform = require("./lib/ast-transform");
+
+    return {
+      name: "ember-template-assert",
+      plugin: emberTemplateAssertTransform,
+      baseDir: emberTemplateAssertTransform.baseDir,
+      cacheKey: emberTemplateAssertTransform.cacheKey,
+    };
+  },
+};
+```
+
+Note that we only load the plugin in production environments, since we don't
+want to remove {% raw %}`{{assert}}`{% endraw %} from templates in development
+or test environments.
 
 ## Removing the helper code itself from production
 
