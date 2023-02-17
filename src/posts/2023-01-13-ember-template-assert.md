@@ -2,7 +2,7 @@
 title:
   "Building a template assertion Ember addon that removes itself from production"
 authorHandle: nickschot
-tags: ember
+tags: [ember]
 bio: "Nick Schot"
 description:
   "Nick Schot explains how to build an Ember addon that completely removes
@@ -73,7 +73,9 @@ test("it fails to render when the assertion is falsy", async function (assert) {
     );
   };
 
-  await render(hbs`{{assert "Some assertion message" false}}`);
+  await render(
+    hbs`{% raw %}{{assert "Some assertion message" false}}{% endraw %}`
+  );
 });
 ```
 
@@ -126,10 +128,11 @@ module.exports = {
 
 ### Writing the AST transform
 
-The next thing we want to do is make sure we remove all calls of `{{assert}}`
-from the templates in production builds. If we do not remove these, apart from
-shipping unnecessary code, Ember would also throw an error after we remove the
-helper code itself from the build in the next step.
+The next thing we want to do is make sure we remove all calls of
+{% raw %}`{{assert}}`{% endraw %} from the templates in production builds. If we
+do not remove these, apart from shipping unnecessary code, Ember would also
+throw an error after we remove the helper code itself from the build in the next
+step.
 
 We can do this by writing a small visitor statement in the following format:
 
@@ -176,9 +179,9 @@ visitor = {
 ```
 
 This will remove all Mustache statements (any template statement that has
-handlebars syntax like `{{...}}`) with the name `assert`. Since we want to
-remove all assert statements, there's no need to look at the arguments that are
-passed in to the assert helper.
+handlebars syntax like {% raw %}`{{...}}`{% endraw %}) with the name `assert`.
+Since we want to remove all assert statements, there's no need to look at the
+arguments that are passed in to the assert helper.
 
 ## Removing the helper code itself from production
 
