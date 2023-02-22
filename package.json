@@ -26,12 +26,12 @@
     "this-week": "./bin/this-week-in-open-source --config-path=config/this-week-in-open-source.config.json"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2",
-    "@11ty/eleventy-img": "^2.0.1",
+    "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy-img": "^3.0.0",
     "@11ty/eleventy-navigation": "^0.3.2",
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.2.0",
-    "@lhci/cli": "^0.9.0",
+    "@lhci/cli": "^0.10.0",
     "@percy/cli": "^1.10.2",
     "@quasibit/eleventy-plugin-sitemap": "^2.1.5",
     "@tbranyen/jsdom": "13.0.0",
@@ -56,7 +56,7 @@
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.32.8",
     "slugify": "1.6.5",
-    "svgo": "^2.7.0",
+    "svgo": "^3.0.0",
     "wicg-inert": "^3.1.1"
   },
   "browserslist": [
@@ -73,7 +73,7 @@
     "node": ">=16"
   },
   "volta": {
-    "node": "16.17.0",
+    "node": "18.14.1",
     "yarn": "1.22.19"
   }
 }
