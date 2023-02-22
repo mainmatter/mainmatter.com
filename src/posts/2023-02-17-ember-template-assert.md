@@ -11,6 +11,9 @@ og:
   image: /assets/images/posts/2023-02-17-ember-template-assert/og-image.jpg
 tagline: |
   <p>Sometimes there is the need for development-time-only functionality, in this case in the form of an Ember addon. We'd like to build an addon that provides us with an <a href="https://api.emberjs.com/ember/4.6/functions/@ember%2Fdebug/assert">assert</a> template helper so that we can use these development time assertions in templates as well.</p>
+
+image: "/assets/images/posts/2023-02-17-ember-template-assert/header-illustration.jpg"
+imageAlt: "The Ember logo on a gray backround picture"
 ---
 
 Ember's `assert` function can be helpful to add checks meant for developers to
