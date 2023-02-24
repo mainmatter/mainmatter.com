@@ -216,8 +216,8 @@ following section:
 Of course, like the AST transform, we only want to remove the helper from the
 build in production environments which we achieve by checking
 `app.isProduction`. We can remove the file from the build by specifying
-`exclude: ['helpers/assert.js]` which matches the file path of the helper itself
-in the addon directory - `addon/helpers/assert.js`.
+`exclude: ['helpers/assert.js']` which matches the file path of the helper
+itself in the addon directory - `addon/helpers/assert.js`.
 
 However, we also need to remove the helper re-export from the app folder -
 `app/helpers/assert.js`. The very similar hook called `treeForApp` can be used
