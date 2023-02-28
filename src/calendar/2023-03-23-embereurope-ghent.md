@@ -8,6 +8,6 @@ color: purple
 ---
 
 Ember Europe is back in 2023 with the first Meetup of the year, hosted
-by OTA Insight in Ghent, BE. The Ember Europe meetup series brings together the
+by OTA Insight in Ghent, Belgium. The Ember Europe meetup series brings together the
 Ember community from all of Europe once a quarter. The meetup is organized by
 Mainmatter.
