@@ -8,11 +8,11 @@ description:
   "Nick Schot explains how to build an Ember addon that completely removes
   itself from production builds."
 og:
-  image: /assets/images/posts/2023-02-17-ember-template-assert/og-image.jpg
+  image: /assets/images/posts/2023-02-28-ember-template-assert/og-image.jpg
 tagline: |
   <p>Sometimes there is the need for development-time-only functionality, in this case in the form of an Ember addon. We'd like to build an addon that provides us with an <a href="https://api.emberjs.com/ember/4.6/functions/@ember%2Fdebug/assert">assert</a> template helper so that we can use these development time assertions in templates as well.</p>
 
-image: "/assets/images/posts/2023-02-17-ember-template-assert/header-illustration.jpg"
+image: "/assets/images/posts/2023-02-28-ember-template-assert/header-illustration.jpg"
 imageAlt: "The Ember logo on a gray backround picture"
 ---
 
@@ -94,7 +94,7 @@ throw an error after we remove the helper code itself from the build in the next
 step. To figure out what exactly we need to do we can make use of
 [ast-explorer](https://astexplorer.net/#/gist/a62cdfd01800c7c97d67fdffe1ef03ea/ac85caf41c1af25787c5ae4b0d741cbea7fe903c).
 
-![Screenshot of ast-explorer example](/assets/images/posts/2023-02-17-ember-template-assert/ast-explorer.png)
+![Screenshot of ast-explorer example](/assets/images/posts/2023-02-28-ember-template-assert/ast-explorer.png)
 
 Looking at our sample code, we can see that the `assert` shows up as a node of
 type "MustacheStatement" with `path.original` as `assert`. We can use this
