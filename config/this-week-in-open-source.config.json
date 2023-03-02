@@ -76,7 +76,9 @@
                 "AeroRust/nmea",
                 "Swatinem/rust-cache",
                 "pietroalbini/rfcs",
-                "rust-lang/hashbrown"
+                "rust-lang/hashbrown",
+                "marcoow/rust_rest",
+                "rust-lang/www.rust-lang.org"
             ]
         },
         {
@@ -187,7 +189,14 @@
                 "MinThaMie/more-confetti-addon",
                 "mainmatter/ember-cli-list-addons",
                 "mainmatter/eslint-plugin-emberobserver",
-                "mansona/ember-try"
+                "mansona/ember-try",
+                "mainmatter/ember-template-assert"
+            ]
+        },
+        {
+            "name": "Embroider",
+            "repos": [
+                "embroider-build/embroider"
             ]
         },
         {
