@@ -330,7 +330,7 @@
             ]
         },
         {
-            "name": "TypeScript",
+            "name": "Renovate",
             "repos": [
                 "renovatebot/renovate"
             ]
