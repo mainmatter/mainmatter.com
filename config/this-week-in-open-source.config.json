@@ -122,9 +122,9 @@
             ]
         },
         {
-            "name": "oCal.com",
+            "name": "Cal.com",
             "repos": [
-                "oscard0m/octoherd-script-review-pull-requests"
+                "calcom/cal.com"
             ]
         },
         {
