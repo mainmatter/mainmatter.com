@@ -204,7 +204,8 @@
                 "mainmatter/ember-cli-list-addons",
                 "mainmatter/eslint-plugin-emberobserver",
                 "mansona/ember-try",
-                "mainmatter/ember-template-assert"
+                "mainmatter/ember-template-assert",
+                "DazzlingFugu/ember-slugify"
             ]
         },
         {
