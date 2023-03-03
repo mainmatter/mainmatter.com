@@ -105,13 +105,26 @@
             "repos": [
                 "octoherd/.github",
                 "octoherd/create-octoherd-script",
-                "octoherd/script-setup-renovate"
+                "octoherd/script-setup-renovate",
+                "oscard0m/octoherd-script-review-pull-requests"
             ]
         },
         {
             "name": "Astro",
             "repos": [
                 "withastro/docs"
+            ]
+        },
+        {
+            "name": "BEM",
+            "repos": [
+                "getbem/getbem.github.io"
+            ]
+        },
+        {
+            "name": "oCal.com",
+            "repos": [
+                "oscard0m/octoherd-script-review-pull-requests"
             ]
         },
         {
