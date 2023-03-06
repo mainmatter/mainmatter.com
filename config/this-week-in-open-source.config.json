@@ -12,7 +12,8 @@
         "inesilva",
         "BobrImperator",
         "candunaj",
-        "lolmaus"
+        "lolmaus",
+        "BlueCutOfficial"
     ],
     "exclude": [
         "cardstack/animations-experiment",
@@ -76,7 +77,9 @@
                 "AeroRust/nmea",
                 "Swatinem/rust-cache",
                 "pietroalbini/rfcs",
-                "rust-lang/hashbrown"
+                "rust-lang/hashbrown",
+                "marcoow/rust_rest",
+                "rust-lang/www.rust-lang.org"
             ]
         },
         {
@@ -102,13 +105,26 @@
             "repos": [
                 "octoherd/.github",
                 "octoherd/create-octoherd-script",
-                "octoherd/script-setup-renovate"
+                "octoherd/script-setup-renovate",
+                "oscard0m/octoherd-script-review-pull-requests"
             ]
         },
         {
             "name": "Astro",
             "repos": [
                 "withastro/docs"
+            ]
+        },
+        {
+            "name": "BEM",
+            "repos": [
+                "getbem/getbem.github.io"
+            ]
+        },
+        {
+            "name": "Cal.com",
+            "repos": [
+                "calcom/cal.com"
             ]
         },
         {
@@ -187,7 +203,15 @@
                 "MinThaMie/more-confetti-addon",
                 "mainmatter/ember-cli-list-addons",
                 "mainmatter/eslint-plugin-emberobserver",
-                "mansona/ember-try"
+                "mansona/ember-try",
+                "mainmatter/ember-template-assert",
+                "DazzlingFugu/ember-slugify"
+            ]
+        },
+        {
+            "name": "Embroider",
+            "repos": [
+                "embroider-build/embroider"
             ]
         },
         {
