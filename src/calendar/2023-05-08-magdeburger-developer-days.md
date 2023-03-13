@@ -1,6 +1,6 @@
 ---
 title: "Magdeburger Developer Days"
-image: "/assets/images/calendar/2023-05-08-magdeburger-developer-days/magdeburger-developer-days.png"
+image: "/assets/images/calendar/2023-05-08-magdeburger-developer-days/mdd-logo-background.png"
 location: "Magdeburg"
 url: https://md-devdays.de/home
 kind: conference
