@@ -7,10 +7,9 @@ kind: conference
 color: aqua
 ---
 
-Magdeburger Developer Days ist eine 3-tagige Entwickler- & Community-Konferenz
-in Magdeburg. Dieses Jahr, wird Mainmatter Founder Marco Otte-Witte über
-Continuous Deployment Workflows sprechen. In dem Vortrag, liegt er wesentliche
-Vorteils gegenüber klassischen Prozessen dar, erläutert die wesentlichen
-Bestandteile eines solchen Prozesses (insb. im Hinblick auf Testing und
-Automatisierung) und diskutiert typische Herausforderungen und Strategien diese
-zu überwinden.
+Magdeburger Developer Days is a 3-day developer & community conference in
+Magdeburg. This year, Mainmatter Founder Marco Otte-Witte will talk about
+Continuous Deployment Workflows. In his talk, he will present main advantages
+compared to classical processes, explain the essential components of such a
+process (especially with ryegard to testing and automation), and discuss typical
+challenges and strategies to overcome them.
