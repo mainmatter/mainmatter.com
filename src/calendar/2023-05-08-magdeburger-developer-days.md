@@ -7,7 +7,7 @@ kind: conference
 color: aqua
 ---
 
-Magdeburger Developer Days is a 3-day developer & community conference in
+Magdeburger Developer Days is a 3-day software engineering conference in
 Magdeburg. This year, Mainmatter Founder Marco Otte-Witte will talk about
 Continuous Deployment Workflows. In his talk, he will present main advantages
 compared to classical processes, explain the essential components of such a
