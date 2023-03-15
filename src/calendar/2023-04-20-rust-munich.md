@@ -1,6 +1,6 @@
 ---
 title: "Rust Munich Meetup 2023"
-image: "/assets/images/calendar/2023-10-12-eurorust/eurorust-2023.jpg"
+image: "/assets/images/calendar/2023-04-20-rust-munich/Rust-meetup.png"
 location: "Munich"
 url: https://www.meetup.com/rust-munich/events/291965920/
 kind: meetup
