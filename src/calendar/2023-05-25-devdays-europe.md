@@ -1,6 +1,6 @@
 ---
 title: "DevDays Europe"
-image: "/assets/images/calendar/2023-04-20-rust-munich/Rust-meetup.png"
+image: "/assets/images/calendar/2023-05-25-devdays-europe/DevDays-banner.png"
 location: "Vilnius & remote"
 url: https://devdays.lt/
 kind: conference
