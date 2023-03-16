@@ -19,7 +19,8 @@ tagline: |
     <li><a href="#promiseproxymixin">PromiseProxyMixin</a>;
     <li><a href="#ember-concurrency">Ember Concurrency</a>;
     <li><a href="#ember-promise-helpers">Ember Promise Helpers</a>;
-    <li><a href="#trackedfunction-from-ember-resources">trackedFunction from Ember Resources</a> — the next big thing! 🙀
+    <li><a href="#ember-async-data-js">Ember Async Data via JS</a>;
+    <li><a href="#ember-async-data-template">Ember Async Data via template helpers</a>;
   </ul>
 ---
 
@@ -32,7 +33,7 @@ to deal with the `new Promise()` constructor:
 this.myService.getData(); // => Promise<Data>
 ```
 
-In a template, we need convenient access to the following values:
+In its template, the component needs convenient access to the following values:
 
 - the fetched data;
 - the error object in case the request fails;
@@ -41,10 +42,53 @@ In a template, we need convenient access to the following values:
   - has resolved;
   - has errored.
 
+Addtitionally, I want the following functionality in this component:
+- the promise should start automatically when the component is rendered;
+- the user should be able to restart a promise after it failed.
+
+Here's a boilerplate:
+
+```hbs
+{% raw %}{{#if this.PROMISE_IS_PENDING}}
+  Loading...
+{{else if this.PROMISE_HAS_RESOLVED}}
+  {{this.PROMISE_RESOLVED_VALUE.firstName}}
+{{else if this.HAS_PROMISE_REJECTED}}
+  Something went wrong:
+  {{format-error this.PROMISE_ERROR}}.
+
+  <button {{on "click" this.PROMISE_RETRY_ACTION}}>Retry</button>
+{{else}}
+  The promise failed to start, this should never happen.
+{{/if}}
+{% endraw %}
+```
+
 The challenge is that Promises are
 a [thing-in-itself](https://en.wikipedia.org/wiki/Thing-in-itself), if you
 excuse an improper use of a philosopical term. 😬 Accessing these values is
 tricky.
+
+Let's walk through a few ways taht make it possible.
+
+
+
+## Criteria
+
+I'm gonna compare promise wrappers using the following criteria:
+
+- **Dependency size**: the size of dependencies you have to pull.
+- **Boilerplate**: how much code you need to write to make it work.
+- **Autostart**: whether the promise starts automatically when accessed from a
+  template.
+- **Restart**: how easy it is to restart the promise.
+- **Modern**: how soon this approach will be phased out.
+- **Hidden complexity**: the amount of black box black magic that you need to be
+  aware of to avoid frustration.
+- **Auto cleanup**: takes care of cleanup when the parent object is destroyed.
+- **Additional**: extra features result in a higher score, extra trouble results in a lower score.
+
+
 
 ## Vanilla Promise
 
@@ -74,9 +118,6 @@ Additionally, we have to:
 The resulting code is rather verbose:
 
 ```js
-import ObjectProxy from '@ember/object/proxy';
-import PromiseProxyMixin from '@ember/object/promise-proxy-mixin';
-
 class MyComponent extends Component {
   @service myService;
 
@@ -129,19 +170,11 @@ class MyComponent extends Component {
     this.isPending = true;
 
     try {
-      const data = await this.myService.getData();
-
-      if (!this.isDestroying && !this.isDestroyed) {
-        this.data = data;
-      }
+      this.data = await this.myService.getData();
     } catch(error) {
-      if (!this.isDestroying && !this.isDestroyed) {
-        this.error = error;
-      }
+      this.error = error;
     } finally {
-      if (!this.isDestroying && !this.isDestroyed) {
-        this.isPending = false;
-      }
+      this.isPending = false;
     }
   }
 }
@@ -165,22 +198,41 @@ Finally, we can access promise values in a template:
 {{/if}}
 {% endraw %}
 ```
-
 The advantages of this approach are:
 
-1. No extra dependencies.
-2. The code can be customized to retain access the previous state of the promise
-   after restart.
+1. 💚 **Dependency size**: no extra dependencies.
+2. 💚 **Modern**: vanilla JS is understandable by any frontend developer and never becomes obsolete.
+3. 💚 **Hidden complexity**: no hidden complexity, everything is on the surface.
 
 The vanilla promise approach has a number of bitter disadvantages:
 
-1. A lot of boilerplate code.
-2. Prone to bugs, requires tests which may and will get repetitive as you
-   implement more requests.
-3. When several promises need to be dealt with in one class, the code gets mixed
-   up and hard to maintain.
-4. Need to start the promise manually.
-5. Need to work around the promise callback mutating the component after it is destroyed.
+1. 💔 **Boilerplate**: requires a lot of boilerplate code.
+2. 💔 **Autostart**: need to start the promise manually.
+3. 💛 **Restart**: can be restarted with some extra boilerplate.
+4. 💔 **Auto cleanup**: need to manually check for `isDestroying` and `isDestroyed` inside promise callbacks.
+5. 💔 **Additional**: When several promises need to be dealt with in one class, the code gets mixed up and hard to maintain.
+6. 💔 **Additional**: Need to work around the promise callback mutating the component after it is destroyed.
+7. 💔 **Additional**: Prone to bugs, requires tests which may and will get repetitive as you implement more requests.
+
+On top of that, you must be very careful when applying this approach in an older Ember codebase that uses `set`. If the promise resolves when the parent object has been destroyed (for example, a Classic Ember component has been removed from the page or an Ember Data record was unloaded), Ember would throw an assertion error. To work around that, you must do extra checks:
+
+```js
+try {
+  const data = await this.myService.getData({ shouldFail });
+
+  if (!this.isDestroying && !this.isDestroyed) {
+    this.set('data', data);
+  }
+} catch (error) {
+  if (!this.isDestroying && !this.isDestroyed) {
+    this.set('error', error);
+  }
+} finally {
+  if (!this.isDestroying && !this.isDestroyed) {
+    this.set('isPending', false);
+  }
+}
+```
 
 ## PromiseProxyMixin
 
@@ -188,8 +240,8 @@ The vanilla promise approach has a number of bitter disadvantages:
 Ember.
 
 ```js
-import ObjectProxy from "@ember/object/proxy";
-import PromiseProxyMixin from "@ember/object/promise-proxy-mixin";
+import EmberObject from '@ember/object';
+import PromiseProxyMixin from '@ember/object/promise-proxy-mixin';
 
 // An ObjectProxy variant of this is available as `import { PromiseObject } from '@ember-data/store';`
 const PromiseProxyObject = EmberObject.extend(PromiseProxyMixin);
@@ -211,7 +263,7 @@ To access the values, `PromiseProxyMixin` exposes a number of properties:
 {% raw %}
 {{#if this.promiseProxy.isPending}}
   Loading...
-{{else if this.promiseProxy.isSettled}}
+{{else if this.promiseProxy.isFulfilled}}
   {{this.promiseProxy.content.firstName}}
 {{else if this.promiseProxy.isRejected}}
   Something went wrong:
@@ -222,24 +274,47 @@ To access the values, `PromiseProxyMixin` exposes a number of properties:
 {% endraw %}
 ```
 
+In order to restart the promise, we create an action that assigns a new promise to a tracked property, then a cached getter wraps it into `PromiseProxyMixin`:
+
+```js
+export default class PromiseProxyMixinComponent extends Component {
+  @service('my-service') myService;
+
+  @tracked 
+
+  @cached
+  get promiseProxy() {
+    if (!this._promise) {
+      this._promise = this.myService.getData(); // Sync!
+    }
+
+    return PromiseProxyObject.create({ promise: this._promise });
+  }
+
+  restart = (shouldFail = false) => {
+    this._promise = this.myService.getData({ shouldFail }); // Sync!
+  };
+}
+```
+
+Note that the tracked property has an initial value, that's how this property starts when the Glimmer component is inserted.
+
 The advantages of this approach are:
 
-1. Very concise code, zero boilerplate.
-2. Declarative code.
-3. Thanks to a cached getter, the promise starts automatically when the template
+1. 💚 **Dependency size**: `PromiseProxyMixin` is part of Ember, so no extra dependencies.
+2. 💚 **Boilerplate**: very concise code, zero boilerplate, declarative code.
+3. 💚 **Autostart**: Thanks to a cached getter, the promise starts automatically when the template
    is rendering.
-4. Does not require checking for destroyed state thanks to not mutating the
-   component class.
-5. No extra dependencies.
+4. 💚 **Hidden complexity**: none.
+
 
 Disadvantages:
 
-1. Relies on Classic `EmberObject`, which is an outdated pattern in Octane and
+1. 💔 **Modern**: relies on Classic `EmberObject`, which is an outdated pattern in Octane and
    Polaris.
-2. In order to let you restart the promise, the code must get noticeably more
+2. 💔 **Restart**: in order to let you restart the promise, the code must get noticeably more
    boilerplatey.
-3. Accessing the previous value after restarting the promise makes the code even
-   more complicated.
+3. 💔 **Auto cleanup**: need to manually check for `isDestroying` and `isDestroyed` inside promise callbacks.
 
 ## Ember Concurrency
 
@@ -258,7 +333,7 @@ class MyComponent extends Component {
   @service myService;
 
   constructor() {
-    super();
+    super(...arguments);
     this.dataTask.perform();
   }
 
@@ -275,7 +350,7 @@ Here's how values are accessed with Ember Concurrency:
 {% raw %}
 {{#if this.dataTask.isRunning}}
   Loading...
-{{else if this.dataTask.last.isSettled}}
+{{else if this.dataTask.last.isSuccessful}}
   {{this.dataTask.last.value.firstName}}
 {{else if this.dataTask.last.isError}}
   Something went wrong:
@@ -288,19 +363,22 @@ Here's how values are accessed with Ember Concurrency:
 {% endraw %}
 ```
 
+Note that this example aready allows restarting, via the `(perform)` helper.
+
 Advantages:
 
-1. Concise code, almost no boilerplate.
-2. Declarative code.
-3. Ember Concurrency provides convient access to previous value after restarting
+1. 💚 **Boilerplate**: concise code, almost no boilerplate, declarative code.
    the promise.
-4. Lets you, well, manage the concurrency if you need it.
+2. 💚 **Modern**: Ember Concurrency is an infrastructural addon that every Ember developer should be familiar with. It's well-supported and not going to become outdated.
+3. 💚 **Auto cleanup**: you don't have to care about the parent object being destroyed when the callback runs.
+4. 💚 **Additional**: lets you, well, manage the concurrency if you need it.
+5. 💚 **Additional**: provides convient access to previous value after restarting.
 
 Disadvantages:
 
-1. The promise has to be started manually.
-2. A heavy dependency is an overkill for simply wrapping promises.
-3. Ember Concurrency performs black box black magic under the hood: it
+1. 💔 **Autostart**: the promise has to be started manually.
+2. 💔 **Dependency size**: a heavy dependency is an overkill for simply wrapping promises.
+3. 💔 **Hidden complexity**: Ember Concurrency performs black box black magic under the hood: it
    transpiles async/await code into generator/yield. The implication is that you
    _must_ write `return await promise`. If you simply do `return promise`, your
    code will look correct in IDE, but the transpiled code will be incorrect in
@@ -326,93 +404,93 @@ class MyComponent extends Component {
 Note how the code is delightfully concise! This is my one love♥ approach to
 promises.
 
-To access the values, `PromiseProxyMixin` exposes a number of values:
+To access the values, `ember-promise-helpers` offers a number of helpers to access the values:
 
 ```hbs
 {% raw %}
-{{#if (is-pending this.promiseProxy)}}
-  Loading...
-{{else if (is-fulfilled this.promise)}}
-  {{get (await this.promise) "firstName"}}
-{{else if (is-rejected this.promise)}}
-  Something went wrong:
-  {{format-error (promise-rejected-reason this.promise)}}.
-{{else}}
-  The promise failed to start, this should never happen.
+{{#if this.promise}}
+  {{#if (is-pending this.promise)}}
+    Loading via ember-promise-helper...
+  {{else if (is-fulfilled this.promise)}}
+    {{get (await this.promise) "firstName"}}
+  {{else if (is-rejected this.promise)}}
+    {{#let (promise-rejected-reason this.promise) as |error|}}
+      {{#if error}}
+        Something went wrong:
+        {{format-error error}}
+      {{/if}}
+    {{/let}}
+  {{else}}
+    The promise failed to start, this should never happen.
+  {{/if}}
 {{/if}}
 {% endraw %}
 ```
 
 Advantages:
 
-- Extremely consise, straightforward, declarative syntax.
-- Promise starts automatically.
+1. 💚 **Boilerplate**: Extremely consise, straightforward, declarative syntax.
+2. 💚 **Autostart**: the promise starts automatically.
+3. 💚 **Dependency size**: is a tiny addon.
+4. 💚 **Hidden complexity**: is very obvious and intuitive, no pitfalls.
 
 Disadvantages:
 
-- Only lets you access promise values in templates, not in JavaScript. This
+
+- 💔 **Restart**: Does not offer a way of restarting promises.
+- 💛 **Modern**: though this addon has a score of 9.4, it hasn't been updated in a year.
+- 💀 **Additional**: Only lets you access promise values in templates, not in JavaScript. This
   severely limits use cases for this addon.
-- Does not offer a way of restarting promises.
+- 💔 **Additional**: Requires extra boilerplate:
+    - A wrapping if clause {% raw %}`{{#if this.promise}}`{% endraw %} is necessary to trigger the promise before reading its state. If the promise is triggered with {% raw %}`{{#if (is-pending this.promise)}}`{% endraw %}, the `is-pending` helper will report that the promise is not pending.
+    - The `(promise-rejected-reason)` works asynchronously: it always returns `null` before returning an error object, even if a pre-rejected promise has been passed in to it! Thus, it must be wrapped with a `{{#let}}` and `{{#if}}` as shown in the code sample.
+    - Need to use the `get` helper to access properties on the resolved promise, which is inconvenient.
 
-## trackedFunction from Ember Resources
+## Ember Async Data
 
-[ember-resources](https://github.com/NullVoxPopuli/ember-resources) is an addon
-that implements the
-[Resource pattern](https://www.pzuraq.com/blog/introducing-use) in Ember.
+[ember-async-data](https://github.com/NullVoxPopuli/ember-resources) is a modern, Octane-friendly equivalent of the Classic PromiseProxyMixin.
 
-Ember Resources are vast topic that I can't cover within the scope of this
-article. Here's a TL/DR version:
+It wraps a promise with an object that exposes its values (state flags, the resolved value or the error). This wrapper is called `TrackedAsyncData`.
 
-- A resource is a subclass of `Resource` that encapsulates your
-  single-responsibility logic such as fetching data. By extracting logic into
-  resources, you can make your components/controllers/models/services more
-  lightweight and easier to maintain.
-- Resources bind with the lifecycle of components/controllers/models/services,
-  so you don't have to care about working around your promise callback mutating
-  a destroyed component.
-- Resources bind with tracked/computed propertes, so that they can automatically
-  and declaratively restart their logic when relevant properties change.
+"Tracked" means that the values can be transparently used in templates and getters and will automatically recompute/rerender.
 
-As of autumn 2022, the readme of `ember-resources` is rather scarce. A lot of
-useful documentation is scattered across
-[API docs](https://ember-resources.pages.dev): make sure to browse through every
-item of every module.
-
-The `Resource` class is a rather low-level approach that does not actually wrap
-a promise for you. Fortunately, `ember-resources` provides a number of helpful
-higher-level abstractions for all kinds of situations. We're gonna use the
-[trackedFunction](https://ember-resources.pages.dev/functions/util_function.trackedFunction)
-util which removes all the complexity of resources and can be used inline just
-like all other approaches in this article.
+In order to make  `TrackedAsyncData` restart automatically, we instantiate it in a getter, while we keep the promise in a normal property that the getter depends on:
 
 ```js
-import { trackedFunction } from "ember-resources/util/function";
+import { TrackedAsyncData } from 'ember-async-data';
 
 class Demo extends Component {
   @service myService;
 
-  resource = trackedFunction(this, () => {
-    return this.myService.getData();
-  });
+  @tracked promise;
+
+  @cached
+  get data() {
+    if (!this.promise) {
+      this.restart();
+    }
+
+    return new TrackedAsyncData(this.promise, this);
+  }
+
+  restart = () => {
+    this.promise = this.myService.getData(); // Sync!
+  };
 }
 ```
 
-Note: if you access any tracked properties from the callback passed into
-`trackedFunction` (this includes whatever the service does under the hood!),
-then the callback will be automatically restarted every time those properties
-change.
-
-Property names for promise values are documented in the
-[State](https://ember-resources.pages.dev/classes/util_function.State) class:
+The API of `TrackedAsyncData` is documented in the [readme](https://github.com/tracked-tools/ember-async-data#trackedasyncdata) of the `ember-async-data` addon.
 
 ```hbs{% raw %}
-{{#if this.request.isResolved}}
-  Loading...
-{{else if this.request.isSettled}}
-  {{this.request.value.firstName}}
-{{else if this.request.isError}}
+{{#if this.data.isPending}}
+  Loading via ember-async-data with JS...
+{{else if this.datah.isResolved}}
+  {{this.data.value.firstName}}
+{{else if this.data.isRejected}}
   Something went wrong:
-  {{format-error this.request.error}}.
+  {{format-error this.data.error}}.
+
+  <button {{on "click" this.restart}}>Retry</button>
 {{else}}
   The promise failed to start, this should never happen.
 {{/if}}
@@ -421,14 +499,15 @@ Property names for promise values are documented in the
 
 Advantages of `trackedFunction`:
 
-1. Concise, declarative syntax.
-2. Restarts automatically when dependency properties change.
-3. Fancy new technology that the Ember ecosystem is leaning toward.
+1. 💛 **Boilerplate**: not as concise as .
+2. 💛 **Autostart**: does not offer an autostart, but it can effortlessly be implemented with a cached getter.
+3. 💚 **Modern**: built for Octane.
+4. 💚 **Auto cleanup**: you don't have to care about the parent object being destroyed when the callback runs.
 
 Disadvantages:
 
-1. Feels like black magic. Resources are difficult to learn.
-2. Restarting the promise imperatively is a bit tricky.
+2. 💛 **Hidden complexity**: Feels like black magic. Resources are difficult to learn. On the other hand, they are the next big thing in Ember, so they deserve to be learned.
+
 
 ## Comparison
 
@@ -447,7 +526,7 @@ Disadvantages:
     <td>💚</td>
     <td>💚</td>
     <td>💔</td>
-    <td>💛</td>
+    <td>💚</td>
     <td>💛</td>
   </tr>
 
@@ -457,14 +536,14 @@ Disadvantages:
     <td>💔</td>
     <td>💚</td>
     <td>💔</td>
-    <td>💛</td>
+    <td>💔</td>
   </tr>
   
   <tr>
     <td>Boilerplate</td>
     <td>💔</td>
     <td>💚</td>
-    <td>💛</td>
+    <td>💚</td>
     <td>💚</td>
     <td>💚</td>
   </tr>
@@ -484,16 +563,7 @@ Disadvantages:
     <td>💔</td>
     <td>💚</td>
     <td>💔</td>
-    <td>💛</td>
-  </tr>
-  
-  <tr>
-    <td>Lifecycle</td>
     <td>💔</td>
-    <td>💚</td>
-    <td>💚</td>
-    <td>💚</td>
-    <td>💚</td>
   </tr>
   
   <tr>
@@ -515,12 +585,12 @@ Disadvantages:
   </tr>
   
   <tr>
-    <td>Useable in JS</td>
-    <td>💚</td>
-    <td>💚</td>
+    <td>Additional</td>
+    <td>💔<br>💔<br>💔</td>
+    <td></td>
     <td>💚</td>
     <td>💀</td>
-    <td>💚</td>
+    <td></td>
   </tr>
 </table>
 
@@ -547,26 +617,28 @@ Disadvantages:
 
     width: 30px;
   }
+
+  #promise-wrapper-comparison td {
+    vertical-align: top;
+    line-height: 1.2;
+    padding: 0.5em;
+  }
 </style>
 
 <p> </p>
 
 Explanation of criteria:
 
-- **Dependencies**: the size of dependencies you have to pull.
-- **Previous state**: how easy it is to access the previous state of the promise
-  after restarting.
+- **Dependency size**: the size of dependencies you have to pull.
 - **Boilerplate**: how much code you need to write to make it work.
 - **Autostart**: whether the promise starts automatically when accessed from a
   template.
 - **Restart**: how easy it is to restart the promise.
-- **Lifecycle**: whether you need to care about not mutating our component from
-  the promise callback.
 - **Modern**: how soon this approach will be phased out.
 - **Hidden complexity**: the amount of black box black magic that you need to be
   aware of to avoid frustration.
-- **Useable in JS**: whether promise values can be accessed from your
-  component's JavaScript code.
+- **Auto cleanup**: takes care of cleanup when the parent object is destroyed.
+- **Additional**: extra features result in a higher score, extra trouble results in a lower score.
 
 ## Conclusion
 
