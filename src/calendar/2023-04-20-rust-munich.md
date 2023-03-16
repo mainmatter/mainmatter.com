@@ -1,5 +1,5 @@
 ---
-title: "Rust Munich Meetup 2023"
+title: "Rust Munich Meetup"
 image: "/assets/images/calendar/2023-04-20-rust-munich/Rust-meetup.png"
 location: "Munich"
 url: https://www.meetup.com/rust-munich/events/291965920/
