@@ -1,6 +1,6 @@
 ---
 title: "ElixirConf EU"
-image: "/assets/images/calendar/2023-10-12-eurorust/eurorust-2023.jpg"
+image: "/assets/images/calendar/2023-04-20-elixirconf-eu/Elixirconf-banner.png"
 location: "Lisbon & remote"
 url: https://www.elixirconf.eu/
 kind: conference
