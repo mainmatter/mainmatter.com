@@ -6,6 +6,13 @@
 [build]
   environment = { NODE_VERSION = "16.17.0" }
 
+# rule for testing conditionalHeader edge function redirect from simplabs to mainmatter
+#[[redirects]]
+#  from = "/contact"
+#  to = "http://mainmatter.com:8888/"
+#  status = 301
+#  force = true
+
 # serve 404 simplabs' sitemap
   [[redirects]]
     from = "https://simplabs.com/sitemap.xml"
@@ -32,6 +39,10 @@
   from = "https://www.simplabs.de/*"
   to = "https://mainmatter.com/:splat"
   force = true
+
+[[edge_functions]]
+  path = "/*"
+  function = "conditionalHeader"
 
 # redirect old workshop pages
 [[redirects]]
