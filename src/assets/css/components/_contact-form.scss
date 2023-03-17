@@ -98,6 +98,28 @@ $states: "loading", "success", "error";
   }
 }
 
+.contact-form__select {
+  color: var(--color-white);
+  font-weight: 700;
+  display: block;
+  padding: 1rem 0;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: rem-calc(1) solid var(--color-white);
+  border-radius: 0;
+  width: 100%;
+  background: transparent;
+  -webkit-appearance: none;
+
+  &:has(option:not([value=""]):checked) {
+    ~ .contact-form__label {
+      opacity: 1;
+      transform: translateY(-0.75rem);
+    }
+  }
+}
+
 .contact-form__button {
   display: block;
   margin-left: auto;
