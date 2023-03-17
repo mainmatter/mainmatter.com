@@ -25,5 +25,14 @@ module.exports = {
         browser: true,
       },
     },
+    {
+      // Test files:
+      files: ["netlify/edge-functions/**/*.js"],
+      env: {
+        es2020: true,
+        node: false,
+        browser: true,
+      },
+    },
   ],
 };
