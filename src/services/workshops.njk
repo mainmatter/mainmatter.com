@@ -52,7 +52,15 @@ title: Workshops | Our Services
   "linkText": "Learn more"
 } %}
 
-{% set slides = [slide_1, slide_2, slide_3, slide_4] %}
+{% set 'slide_5' = {
+  "color": "purple",
+  "title": "Rust for the Web",
+  "text": "Two or three days Rust workshop. We cover all relevant aspects of the language and show how to leverage Rust for writing a high-performance web server.",
+  "linkUrl": "/services/workshops/rust-for-the-web/",
+  "linkText": "Learn more"
+} %}
+
+{% set slides = [slide_1, slide_2, slide_3, slide_4, slide_5] %}
 {{ scrollSlides('workshops', slides, page.url) }}
 
 {% include 'content/hero-grow-with-us.njk' %}

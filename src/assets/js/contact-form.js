@@ -1,3 +1,5 @@
+import * as Sentry from "@sentry/browser";
+
 export class ContactForm {
   constructor(element) {
     this.form = element;
@@ -28,7 +30,25 @@ export class ContactForm {
   }
 
   sendMessage(formData) {
-    return fetch("https://simplabs-com-contact-form.herokuapp.com/api/send", {
+    const handleError = () => {
+      this.updateFormState("error", "An error occurred.");
+      if (window.location.host === "mainmatter.com") {
+        Sentry.addBreadcrumb({
+          category: "post",
+          message: "Submit Contact Form",
+          level: "info",
+          data: formData,
+        });
+        Sentry.captureException(new Error("Failed to deliver message via contact form!"));
+      }
+    };
+
+    const { plausible } = window;
+    if (plausible) {
+      plausible("Contact");
+    }
+
+    return fetch("https://contact.mainmatter.dev/send", {
       body: JSON.stringify(formData),
       cache: "no-cache",
       headers: {
@@ -41,11 +61,11 @@ export class ContactForm {
         if (response.ok) {
           this.updateFormState("success", "Message sent successfully.");
         } else {
-          this.updateFormState("error", "An error occurred.");
+          handleError();
         }
       })
       .catch(() => {
-        this.updateFormState("error", "An error occurred.");
+        handleError();
       });
   }
 

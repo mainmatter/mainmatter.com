@@ -1,9 +1,6 @@
 ---
 layout: case-study
 company: Trainline
-companyDescription:
-  Trainline is Europe's leading independent rail and coach platform. They serve
-  more than 125,000 rides every single day in and across 36 countries.
 title: Mobile train tickets with Ember.js for Trainline | Work
 displayTitle: "The full market potential for a <em>leading</em> travel platform"
 description:
@@ -47,7 +44,7 @@ hero:
 
 {% set 'content' = {
   "text": "It has been an absolute pleasure to work with [Mainmatter]. Their team of experienced JavaScript engineers quickly slotted in to our in-house development teams. Their expertise with modern, agile software development best practices and tools meant they were able to work with our processes to deliver fantastic customer experiences.",
-  "source": "MARK HOLT, TRAINLINE CTO"
+  "source": "Mark Holt, Trainline CTO"
 } %} {{ quote(content) }}
 
 <div class="case-study__image-wrapper">

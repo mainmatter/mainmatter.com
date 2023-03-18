@@ -67,7 +67,7 @@ This is obviously not what we want. To fix this we will need to adjust the
 `app/templates/application.hbs` file and wrap the existing contents in a
 condition:
 
-```diff
+```diff-hbs
 {% raw %}
 +{{#if onFreestyleRoute}}
 +  {{outlet}}

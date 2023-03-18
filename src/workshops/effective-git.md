@@ -9,7 +9,6 @@ description:
   focus on real challenges developers face when working with Git, arming them
   with an understanding of the foundational concepts along with practical
   guidance for overcoming those challenges.</p>
-tag: /assets/images/workshops/effective-git/git.svg
 hero:
   image: "/assets/images/workshops/effective-git/effective-git-workshop-hero.jpg"
   imageAlt: "Screenshot of an example Git project"

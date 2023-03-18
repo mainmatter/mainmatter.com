@@ -1,0 +1,79 @@
+---
+layout: base
+title: Enable your team to leverage Rust
+description: Mainmatter enables teams to adopt Rust in their web projects and increase performance, efficiency, and maintainability.
+permalink: /rust-consulting/
+---
+
+{% from "image-banner-with-text.njk" import imageBannerWithText %}
+{% from "recent-posts.njk" import recentPosts %}
+{% from "logo-list.njk" import logoList %}
+{% from "cta-link.njk" import ctaLink %}
+
+<section class="color-hero color-hero--aqua" data-background-color="aqua">
+  <div class="color-hero__image-wrapper">
+    {% image '/assets/images/photos/eurorust-audience.jpg', 'The audience at the EuroRust 2022 conference as seen from stage', '100vw', 'eager',
+    'color-hero__image', [760, 1440, 1920] %}
+  </div>
+  <div class="color-hero__overlay"></div>
+  <div class="color-hero__container container container--lg color-hero__container--center">
+    <div class="color-hero__main">
+      {% set imagePath %}/assets/images/rust/rust-logo.svg{% endset %}
+      <img class="expertise__logo" src="{{ imagePath }}" alt="Rust logo" />
+      <h1 class="color-hero__title color-hero__title--full ">Rust puts teams miles ahead</h1>
+      <div class="color-hero__text color-hero__text--large">Rust checks all the boxes – performance, efficiency, maintainability, and developer experience. Mainmatter enables teams to get access to those benefits by adopting Rust in their web projects.</div>
+    </div>
+  </div>
+</section>
+
+<section class="split-content">
+  <div class="container container--lg">
+    <h2 class="h5">Rust & Mainmatter</h2>
+    <h3 class="split-content__subheading h2">A unique skillset</h3>
+    <div class="split-content__content">
+      <div class="split-content__text">
+        <p>Mainmatter has a unique combination of expertise both in building web applications as well as in Rust. We have built big web apps and mentored teams on design, backend and frontend with international clients such as Qonto, trainline, Experteer, and others. At the same time, we know the ins and outs of Rust. Several of our engineers have been on the crates.io team for years and we run workshops to teach others Rust.</p>
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-rust.njk' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set 'content' = {
+"subtitle": "We run the EuroRust conference",
+"text": "<p>EuroRust is the main conference for the European Rust community. EuroRust covers all things Rust and is part of the RustFest family of events.</p>",
+"linkUrl": "https://eurorust.eu",
+"linkText": "Watch past talks and get ready for the next conference at eurorust.eu.",
+"image": "/assets/images/rust/eurorust-header-2023.jpg",
+"alt": "The EuroRust header graphic",
+"loading": "lazy"
+} %}
+{{ imageBannerWithText(content) }}
+
+<section class="color-hero color-hero--black" data-background-color="black">
+  <div class="color-hero__image-wrapper">
+    {% image '/assets/images/workshops/rust-for-the-web/header-background.jpg', 'The Rust logo in white on top of a photo of a rusty metal surface', '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
+  </div>
+  <div class="color-hero__overlay"></div>
+  <div class="color-hero__container container container--lg color-hero__container--center">
+    <div class="color-hero__main">
+      <h1 class="color-hero__title color-hero__title--full ">Workshop: Rust for the Web</h1>
+      <div class="color-hero__text">Our Rust workshop provides a smooth entry into
+        the language for teams that are looking for leveraging Rust's capabilities in
+        their web projects. We teach everything you need to know about the
+        language and wider ecosystem to be able to write your own HTTP server in the
+        end!</div>
+        {{ ctaLink("/services/workshops/rust-for-the-web/", "Learn more", 'color-hero__link') }}
+    </div>
+  </div>
+</section>
+
+{{ recentPosts("Latest from our blog on the topic", collections.rustPosts) }}
+
+{% set logoCompanies = ['Rust Foundation', 'arm', 'Ferrocene', 'Google'] %}
+{% set title = 'We partner with international companies that bet on Rust' %}
+{{ logoList(logoCompanies, title) }}
+
+{% include 'content/hero-grow-with-us.njk' %}

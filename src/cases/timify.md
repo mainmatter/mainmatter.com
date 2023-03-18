@@ -1,9 +1,6 @@
 ---
 layout: case-study
 company: Timify
-companyDescription:
-  Timify is a cloud-based appointment scheduling system that serves over 50,000
-  businesses across a wide range of industries.
 displayTitle: "An engineering overhaul for a <em>validated</em> booking system"
 description:
   <p>Timify is an online appointment scheduling service that connects service
@@ -58,5 +55,5 @@ hero:
 
 {% set 'content' = {
   "text": "[Mainmatter's] experienced engineers delivered a solid and well architected foundation for our web app. They also helped us establish best practices and a lean process internally. Working with them was a pleasure.",
-  "source": "ANDREAS KNÜRR, TIMIFY CEO"
+  "source": "Andreas Knürr, Timify CEO"
 } %} {{ quote(content) }}

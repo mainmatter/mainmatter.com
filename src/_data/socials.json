@@ -10,11 +10,15 @@
     },
     {
       "text": "Twitter",
-      "link": "https://twitter.com/_mainmatter/"
+      "link": "https://twitter.com/mainmatter/"
     },
     {
       "text": "Github",
       "link": "https://github.com/mainmatter/"
+    },
+    {
+      "text": "Mastodon",
+      "link": "https://fosstodon.org/@mainmatter"
     }
   ]
 }

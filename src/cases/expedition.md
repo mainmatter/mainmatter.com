@@ -1,9 +1,6 @@
 ---
 layout: case-study
 company: Expedition
-companyDescription:
-  Expedition is an online travel magazine for global citizens who want to
-  experience world’s best destinations through the eyes of a local.
 title: An architecture based on Elixir and Ember.js for Expedition | Work
 displayTitle: "A sturdy foundation for <em>advanced</em> system architecture"
 description:
@@ -54,5 +51,5 @@ hero:
 
 {% set 'content' = {
   "text": "[Mainmatter] brought wisdom, flexibility, and sane solutions when facing complex problems. They went above and beyond to work with our unique situation - would recommend 1000x.",
-  "source": "BRYAN LANGSLET, EXPEDITION CEO"
+  "source": "Bryan Langslet, Expedition CEO"
 } %} {{- quote(content) -}}

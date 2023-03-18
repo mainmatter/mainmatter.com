@@ -14,7 +14,6 @@ description: <p>We go through a series of stages that each build on one another.
 
   <p>All examples and practical assignments from the workshop are available
   publicly on GitHub.</p>
-tag: /assets/images/workshops/hands-on-ember/ember.svg
 hero:
   image: "/assets/images/workshops/hands-on-ember/hands-on-ember-workshop-hero.jpg"
   imageAlt: "Illustration of Ember JS mascot Zoey on a purple background"
@@ -70,16 +69,15 @@ optional_topics:
       properties and mixins. In this stage, we cover those concepts in-depth as
       well as explore approaches for migrating to native classes.
 leads:
-  - name: Ricardo Mendes
-    title:
-      Senior Frontend Engineer, Ember Framework and Learning Core teams member
-    handle: locks
-    image: /assets/images/authors/locks.jpg
+  - name: Gabor Babicz
+    title: Senior Frontend Engineer
+    handle: zeppelin
+    image: /assets/images/authors/zeppelin.jpg
     bio: >
-      Ricardo is a long time Ember core team member and one of the main people
-      responsible for Ember's documentation. He is passionate about teaching and
-      has worked with teams around the world to deepen and extend their
-      knowledge about the framework.
+      Gabor was a very early adopter of Ember in the pre-1.0 years of the
+      framework and has since successfully completed numerous projects with it.
+      He helps teams build applications and teaches best practices along the
+      way.
   - name: Marco Otte-Witte
     title: Founder and Managing Director at Mainmatter
     handle: marcoow

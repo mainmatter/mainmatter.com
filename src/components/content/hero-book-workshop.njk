@@ -1,0 +1,11 @@
+{% from "color-hero.njk" import colorHero %}
+{% set 'content' = {
+  "title": "Book this workshop",
+  "text": "Our mentors look forward to working with your team and unlocking new capabilities.",
+  "linkUrl": "/contact/",
+  "linkText": "Get in touch",
+  "image": "/assets/images/photos/mainmatter-team-collaboration.jpg",
+  "alt": "Three smiling team members looking at a laptop",
+  "loading": "lazy"
+} %}
+{{ colorHero('center', 'small', 'purple', content, true) }}

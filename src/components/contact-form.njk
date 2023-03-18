@@ -27,6 +27,19 @@
             <span class="contact-form__label-required" aria-hidden="true">Required</span>
           </div>
           <div class="contact-form__field">
+            <select class="contact-form__select" name="service" id="service">
+              <option value="" selected disabled>How can we help you?</option>
+              <option value="Team Augmentation">Team Augmentation</option>
+              <option value="Digital Products & Design">Digital Products & Design</option>
+              <option value="Workshop & Training">Workshop & Training</option>
+              <option value="Code Review/Tech Assessment">Code Review/Tech Assessment</option>
+              <option value="Other">Other</option>
+            </select>
+            <label class="contact-form__label h4" for="service">
+              How can we help you?
+            </label>
+          </div>
+          <div class="contact-form__field">
             <textarea class="contact-form__input" id="contact-message" name="message" type="text" placeholder="Tell us about your project" rows="8"></textarea>
             <label class="contact-form__label h4" for="contact-message">
               Tell us about your project

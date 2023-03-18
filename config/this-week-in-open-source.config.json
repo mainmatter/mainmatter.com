@@ -2,7 +2,6 @@
     "exclude_closed_not_merged": true,
     "users": [
         "marcoow",
-        "locks",
         "zeppelin",
         "Turbo87",
         "pichfl",
@@ -13,7 +12,8 @@
         "inesilva",
         "BobrImperator",
         "candunaj",
-        "lolmaus"
+        "lolmaus",
+        "BlueCutOfficial"
     ],
     "exclude": [
         "cardstack/animations-experiment",
@@ -53,7 +53,11 @@
         "oscard0m/remix-deploy-netlify",
         "oscard0m/remix-deploy-vercel",
         "XCSoar/xcsoar-data-content",
-        "inesilva/my-website"
+        "inesilva/my-website",
+        "mainmatter/eurorust.eu",
+        "mainmatter/gravity",
+        "mansona/test-allow-failure",
+        "Turbo87/renovate-config"
     ],
     "labels": [
         {
@@ -69,7 +73,13 @@
                 "Turbo87/sentry-conduit",
                 "kivikakk/comrak",
                 "LukeMathWalker/tracing-bunyan-formatter",
-                "Turbo87/segelflug-classifieds"
+                "Turbo87/segelflug-classifieds",
+                "AeroRust/nmea",
+                "Swatinem/rust-cache",
+                "pietroalbini/rfcs",
+                "rust-lang/hashbrown",
+                "marcoow/rust_rest",
+                "rust-lang/www.rust-lang.org"
             ]
         },
         {
@@ -95,7 +105,32 @@
             "repos": [
                 "octoherd/.github",
                 "octoherd/create-octoherd-script",
-                "octoherd/script-setup-renovate"
+                "octoherd/script-setup-renovate",
+                "oscard0m/octoherd-script-review-pull-requests"
+            ]
+        },
+        {
+            "name": "Astro",
+            "repos": [
+                "withastro/docs"
+            ]
+        },
+        {
+            "name": "BEM",
+            "repos": [
+                "getbem/getbem.github.io"
+            ]
+        },
+        {
+            "name": "Cal.com",
+            "repos": [
+                "calcom/cal.com"
+            ]
+        },
+        {
+            "name": "Embedded",
+            "repos": [
+                "jomjol/AI-on-the-edge-device"
             ]
         },
         {
@@ -161,7 +196,22 @@
                 "ember-cli/ember-cli-htmlbars",
                 "nickschot/ember-gesture-modifiers",
                 "ember-learn/ember-release-bot",
-                "mainmatter/ember2-x-codemods"
+                "mainmatter/ember2-x-codemods",
+                "ember-cli/ember-try-config",
+                "mainmatter/ember-api-actions",
+                "cardstack/boxel-motion",
+                "MinThaMie/more-confetti-addon",
+                "mainmatter/ember-cli-list-addons",
+                "mainmatter/eslint-plugin-emberobserver",
+                "mansona/ember-try",
+                "mainmatter/ember-template-assert",
+                "DazzlingFugu/ember-slugify"
+            ]
+        },
+        {
+            "name": "Embroider",
+            "repos": [
+                "embroider-build/embroider"
             ]
         },
         {
@@ -217,7 +267,10 @@
                 "axmccx/proxynexus",
                 "mansona/showdown-section-groups",
                 "calibreapp/image-actions",
-                "volta-cli/action"
+                "volta-cli/action",
+                "Turbo87/auto-dist-tag",
+                "miragejs/miragejs",
+                "hakimel/reveal.js"
             ]
         },
         {
@@ -301,7 +354,7 @@
             ]
         },
         {
-            "name": "TypeScript",
+            "name": "Renovate",
             "repos": [
                 "renovatebot/renovate"
             ]
@@ -315,7 +368,8 @@
         {
             "name": "Internal",
             "repos": [
-                "mainmatter/renovate-config"
+                "mainmatter/renovate-config",
+                "mainmatter/mainmatter-website-mailer"
             ]
         },
         {

@@ -1,6 +1,7 @@
 {
   "src": "src",
   "blogdir": "posts",
+  "twiosdir": "twios",
   "includes": "components",
   "output": "dist"
 }

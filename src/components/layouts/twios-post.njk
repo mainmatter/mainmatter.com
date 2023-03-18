@@ -1,0 +1,35 @@
+---
+layout: base
+---
+
+{%- block content -%}
+{% set post = collections.twios | getCollectionItem(page) %}
+<article>
+  <div class="post__header">
+    <div class="container container--lg">
+      <div class="post__meta">
+        <div class="post__date text--xs">
+          {{ page.date | monthDayYear }}
+        </div>
+      </div>
+      <h1 class="post__title">This Week in Open Source at Mainmatter #{{ post.data.number }}</h1>
+    </div>
+  </div>
+  <div class="container container--lg post">
+    <nav>
+      <a class="pagination__previous" href="/this-week-in-open-source/">
+        <p class="cta-link">
+          <span class="cta-link__text-wrapper">
+            <span class="cta-link__arrow cta-link__arrow--rotate">{% include 'svg/arrow.njk' %}</span>
+            <span class="cta-link__text">Overview</span>
+          </span>
+        </p>
+        <p class="prev-next__title">See all Open Source Updates</p>
+      </a>
+    </nav>
+    <div class="post__content rte">
+      {{ content | safe }}
+    </div>
+  </div>
+</article>
+{%- endblock -%}

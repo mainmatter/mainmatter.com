@@ -48,6 +48,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("posts", require("./collections/posts"));
   eleventyConfig.addCollection("emberPosts", require("./collections/ember-posts"));
   eleventyConfig.addCollection("elixirPosts", require("./collections/elixirPosts"));
+  eleventyConfig.addCollection("rustPosts", require("./collections/rustPosts"));
   eleventyConfig.addCollection("authors", require("./collections/authors"));
   eleventyConfig.addCollection(
     "authorsPostsPaged",
@@ -66,6 +67,7 @@ module.exports = function (eleventyConfig) {
     "caseStudiesFeatured",
     require("./collections/caseStudiesFeatured")
   );
+  eleventyConfig.addCollection("twios", require("./collections/twios"));
   eleventyConfig.addCollection("memoized", require("./collections/memoized"));
 
   /**
@@ -128,12 +130,13 @@ module.exports = function (eleventyConfig) {
    *
    * @link https://www.11ty.io/docs/config/#transforms
    */
+  // Parse the page HTML content and perform some manipulation
+  eleventyConfig.addTransform("contentParser", contentParser);
+
   if (process.env.ELEVENTY_ENV === "production") {
     // Minify HTML when building for production
     eleventyConfig.addTransform("htmlmin", htmlMinTransform);
   }
-  // Parse the page HTML content and perform some manipulation
-  eleventyConfig.addTransform("contentParser", contentParser);
 
   /**
    * Add Plugins

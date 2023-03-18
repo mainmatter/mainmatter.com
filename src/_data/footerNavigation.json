@@ -29,6 +29,18 @@
           "link": "/cases/trainline/"
         },
         {
+          "text": "Experteer",
+          "link": "/cases/experteer/"
+        },
+        {
+          "text": "MVB",
+          "link": "/cases/mvb/"
+        },
+        {
+          "text": "AIS",
+          "link": "/cases/ais/"
+        },
+        {
           "text": "Timify",
           "link": "/cases/timify/"
         },
@@ -60,6 +72,10 @@
         {
           "text": "Elixir & Phoenix",
           "link": "/expertise/elixir-phoenix/"
+        },
+        {
+          "text": "Rust",
+          "link": "/rust-consulting/"
         }
       ]
     },
@@ -73,6 +89,10 @@
         {
           "text": "Events",
           "link": "/events/"
+        },
+        {
+          "text": "Open Source",
+          "link": "/this-week-in-open-source/"
         }
       ]
     }
