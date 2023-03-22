@@ -8,7 +8,7 @@ const customParseFormat = require("dayjs/plugin/customParseFormat");
 
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const Image = require("@11ty/eleventy-img");
-const rssPlugin = require("@11ty/eleventy-plugin-rss");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 
@@ -125,6 +125,9 @@ module.exports = function (eleventyConfig) {
     return Object.keys(collection);
   });
 
+  eleventyConfig.addLiquidFilter("dateToRfc3339", pluginRss.dateToRfc3339);
+  eleventyConfig.addLiquidFilter("dateToRfc822", pluginRss.dateToRfc822);
+
   /*
    * Add Transforms
    *
@@ -144,7 +147,7 @@ module.exports = function (eleventyConfig) {
    * @link https://github.com/11ty/eleventy-plugin-syntaxhighlight
    * @link https://github.com/okitavera/eleventy-plugin-pwa
    */
-  eleventyConfig.addPlugin(rssPlugin);
+  eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(syntaxHighlightPlugin);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(sitemap, {

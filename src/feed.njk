@@ -1,0 +1,34 @@
+---
+permalink: "feed.xml"
+eleventyExcludeFromCollections: true
+layout: ""
+metadata:
+  title: "Mainmatter"
+  subtitle: "We are Europe’s leading mobile and web design & development consultancy. Our clients value code quality, dependability and honesty. We are trusted by Generali, Qonto, Trainline, and CLARK."
+  language: "en"
+  url: "https://mainmatter.com/"
+  author:
+    name: "Mainmatter GmbH"
+    email: "info@mainmatter.com"
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ metadata.url }}" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ metadata.title }}</title>
+    <link>{{ metadata.url }}</link>
+    <atom:link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml" />
+    <description>{{ metadata.subtitle }}</description>
+    <language>{{ metadata.language }}</language>
+    {%- for post in collections.posts | limit(12) | reverse %}
+    {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
+    <item>
+      <title>{{ post.data.title }}</title>
+      <link>{{ absolutePostUrl }}</link>
+      <description>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
+      <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+      <dc:creator>{{ metadata.author.name }}</dc:creator>
+      <guid>{{ absolutePostUrl }}</guid>
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>
