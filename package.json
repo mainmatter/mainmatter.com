@@ -23,6 +23,7 @@
     "percy:disable-lazy-images": "replace-in-file --configFile=.percy-disable-lazy-loading.js",
     "percy": "percy snapshot",
     "crawl": "node scripts/crawl.js",
+    "gravityci": "gravityci",
     "this-week": "./bin/this-week-in-open-source --config-path=config/this-week-in-open-source.config.json"
   },
   "devDependencies": {
