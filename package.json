@@ -23,6 +23,7 @@
     "percy:disable-lazy-images": "replace-in-file --configFile=.percy-disable-lazy-loading.js",
     "percy": "percy snapshot",
     "crawl": "node scripts/crawl.js",
+    "gravityci": "gravityci",
     "this-week": "./bin/this-week-in-open-source --config-path=config/this-week-in-open-source.config.json"
   },
   "devDependencies": {
@@ -31,6 +32,7 @@
     "@11ty/eleventy-navigation": "^0.3.2",
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.2.0",
+    "@gravityci/cli": "^0.0.2-alpha.14",
     "@lhci/cli": "^0.11.0",
     "@percy/cli": "^1.10.2",
     "@quasibit/eleventy-plugin-sitemap": "^2.1.5",
