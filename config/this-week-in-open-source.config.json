@@ -56,7 +56,8 @@
         "mainmatter/eurorust.eu",
         "mainmatter/gravity",
         "mansona/test-allow-failure",
-        "Turbo87/renovate-config"
+        "Turbo87/renovate-config",
+        "mansona/twitch-overlay"
     ],
     "labels": [
         {
@@ -78,7 +79,8 @@
                 "pietroalbini/rfcs",
                 "rust-lang/hashbrown",
                 "marcoow/rust_rest",
-                "rust-lang/www.rust-lang.org"
+                "rust-lang/www.rust-lang.org",
+                "dimforge/rapier.rs"
             ]
         },
         {
@@ -208,7 +210,6 @@
                 "DazzlingFugu/ember-fr-guides-source",
                 "ember-cli/babel-plugin-htmlbars-inline-precompile",
                 "emberjs/babel-plugin-ember-template-compilation",
-                "freeCodeCamp/learn-bash-by-building-a-boilerplate",
                 "kategengler/ember-cli-code-coverage",
                 "mainmatter/ember-asset-size-action"
             ]
@@ -275,7 +276,9 @@
                 "volta-cli/action",
                 "Turbo87/auto-dist-tag",
                 "miragejs/miragejs",
-                "hakimel/reveal.js"
+                "hakimel/reveal.js",
+                "mainmatter/mocha-diff",
+                "mainmatter/compare-fixture"
             ]
         },
         {
@@ -393,7 +396,8 @@
         {
             "name": "Miscellaneous",
             "repos": [
-                "netlify/build-image"
+                "netlify/build-image",
+                "freeCodeCamp/learn-bash-by-building-a-boilerplate"
             ]
         }
     ]
