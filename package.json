@@ -57,7 +57,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.32.8",
-    "slugify": "1.6.5",
+    "slugify": "1.6.6",
     "svgo": "^3.0.0",
     "wicg-inert": "^3.1.1"
   },
