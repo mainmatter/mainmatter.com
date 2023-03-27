@@ -3,7 +3,6 @@
     "users": [
         "marcoow",
         "zeppelin",
-        "Turbo87",
         "pichfl",
         "nickschot",
         "mansona",
@@ -205,7 +204,13 @@
                 "mainmatter/eslint-plugin-emberobserver",
                 "mansona/ember-try",
                 "mainmatter/ember-template-assert",
-                "DazzlingFugu/ember-slugify"
+                "DazzlingFugu/ember-slugify",
+                "DazzlingFugu/ember-fr-guides-source",
+                "ember-cli/babel-plugin-htmlbars-inline-precompile",
+                "emberjs/babel-plugin-ember-template-compilation",
+                "freeCodeCamp/learn-bash-by-building-a-boilerplate",
+                "kategengler/ember-cli-code-coverage",
+                "mainmatter/ember-asset-size-action"
             ]
         },
         {
@@ -322,7 +327,8 @@
                 "oscard0m/octoherd-script-remove-renovate-package.json",
                 "octoherd/cli",
                 "octoherd/octokit",
-                "oscard0m/octoherd-script-update-action-version-in-workflows"
+                "oscard0m/octoherd-script-update-action-version-in-workflows",
+                "oscard0m/octoherd-script-release-workflow-patch"
             ]
         },
         {
