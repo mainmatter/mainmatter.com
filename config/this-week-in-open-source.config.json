@@ -216,7 +216,8 @@
                 "mainmatter/ember-asset-size-action",
                 "ember-learn/super-rentals-tutorial",
                 "emberobserver/eslint-plugin-ember-observer",
-                "emberobserver/server"
+                "emberobserver/server",
+                "qonto/ember-lottie"
             ]
         },
         {
