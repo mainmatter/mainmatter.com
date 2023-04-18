@@ -57,7 +57,9 @@
         "mainmatter/gravity",
         "mansona/test-allow-failure",
         "Turbo87/renovate-config",
-        "mansona/twitch-overlay"
+        "mansona/twitch-overlay",
+        "BlueCutOfficial/site-books",
+        "candunaj/template-precompile-scope"
     ],
     "labels": [
         {
@@ -211,7 +213,11 @@
                 "ember-cli/babel-plugin-htmlbars-inline-precompile",
                 "emberjs/babel-plugin-ember-template-compilation",
                 "kategengler/ember-cli-code-coverage",
-                "mainmatter/ember-asset-size-action"
+                "mainmatter/ember-asset-size-action",
+                "ember-learn/super-rentals-tutorial",
+                "emberobserver/eslint-plugin-ember-observer",
+                "emberobserver/server",
+                "qonto/ember-lottie"
             ]
         },
         {
@@ -278,7 +284,8 @@
                 "miragejs/miragejs",
                 "hakimel/reveal.js",
                 "mainmatter/mocha-diff",
-                "mainmatter/compare-fixture"
+                "mainmatter/compare-fixture",
+                "mansona/layer-gen"
             ]
         },
         {
