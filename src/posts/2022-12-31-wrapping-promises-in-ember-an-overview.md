@@ -137,31 +137,6 @@ class MyComponent extends Component {
     this.getData();
   }
 
-  // Traditional then syntax
-  @action
-  getData() {
-    this.data = undefined;
-    this.error = undefined;
-    this.isPending = true;
-
-    this.myService.getData()
-      .then(data => {
-        if (!this.isDestroying && !this.isDestroyed) {
-          this.data = data;
-        }
-      })
-      .catch(error => {
-        if (!this.isDestroying && !this.isDestroyed) {
-          this.error = error;
-        }
-      .finally(() => {
-        if (!this.isDestroying && !this.isDestroyed) {
-          this.isPending = false;
-        }
-      });
-  }
-
-  // Modern await syntax
   @action
   async getData() {
     this.data = undefined;
@@ -198,26 +173,6 @@ Finally, we can access promise values in a template:
 {% endraw %}
 ```
 
-The advantages of this approach are:
-
-1. 💚 **Dependency size**: no extra dependencies.
-2. 💚 **Modern**: vanilla JS is understandable by any frontend developer and
-   never becomes obsolete.
-3. 💚 **Hidden complexity**: no hidden complexity, everything is on the surface.
-
-The vanilla promise approach has a number of bitter disadvantages:
-
-1. 💔 **Boilerplate**: requires a lot of boilerplate code.
-2. 💔 **Autostart**: need to start the promise manually.
-3. 💔 **Auto cleanup**: need to manually check for `isDestroying` and
-   `isDestroyed` inside promise callbacks.
-4. 💔 **Additional**: When several promises need to be dealt with in one class,
-   the code gets mixed up and hard to maintain.
-5. 💔 **Additional**: Need to work around the promise callback mutating the
-   component after it is destroyed.
-6. 💔 **Additional**: Prone to bugs, requires tests which may and will get
-   repetitive as you implement more requests.
-
 On top of that, you must be very careful when applying this approach in an older
 Ember codebase that uses `set`. If the promise resolves when the parent object
 has been destroyed (for example, a Classic Ember component has been removed from
@@ -241,6 +196,26 @@ try {
   }
 }
 ```
+
+The advantages of this approach are:
+
+1. 💚 **Dependency size**: no extra dependencies.
+2. 💚 **Modern**: vanilla JS is understandable by any frontend developer and
+   never becomes obsolete.
+3. 💚 **Hidden complexity**: no hidden complexity, everything is on the surface.
+
+The vanilla promise approach has a number of bitter disadvantages:
+
+1. 💔 **Boilerplate**: requires a lot of boilerplate code.
+2. 💔 **Autostart**: need to start the promise manually.
+3. 💔 **Auto cleanup**: need to manually check for `isDestroying` and
+   `isDestroyed` inside promise callbacks.
+4. 💔 **Additional**: When several promises need to be dealt with in one class,
+   the code gets mixed up and hard to maintain.
+5. 💔 **Additional**: Need to work around the promise callback mutating the
+   component after it is destroyed.
+6. 💔 **Additional**: Prone to bugs, requires tests which may and will get
+   repetitive as you implement more requests.
 
 ## PromiseProxyMixin
 
@@ -282,27 +257,6 @@ To access the values, `PromiseProxyMixin` exposes a number of properties:
 {% endraw %}
 ```
 
-If you happen to use tracked properties in the getter, changing any such property will cause the getter to recalculate and restart the promise.
-
-If you don't use any tracked properties but still want to be able to restart the promise on demand, you can put the promise itself into a tracked property and have `PromiseProxyMixin` depend on it:
-
-```js
-export default class PromiseProxyMixinComponent extends Component {
-  @service('my-service') myService;
-
-  @tracked _promise = this.myService.getData(); // Sync!
-
-  @cached
-  get promiseProxy() {
-    return PromiseProxyObject.create({ promise: this._promise });
-  }
-
-  restart = (shouldFail = false) => {
-    this._promise = this.myService.getData({ shouldFail }); // Sync!
-  };
-}
-```
-
 Note that the tracked property has an initial value: that's how this promise
 starts when the Glimmer component is inserted.
 
@@ -329,7 +283,7 @@ of Ember infrastructure. It's an extremely powerful addon that lets you manage
 async tasks.
 
 On the other hand, many (if not most) projects do not actually require elaborate
-concurrency management, and Ember Concurrency is used essentially as a promise
+concurrency management, and Ember Concurrency is used as a humble promise
 wrapper:
 
 ```js
@@ -635,7 +589,7 @@ When invoked, `trackedFunction` returns a `State` object instance, which is docu
 {% endraw %}
 ```
 
-`ember-async-data` allows using it in template-only mode, quite similar to `ember-promise-helpers`, sans the extra ifs and lets:
+`ember-async-data` allows using it in template-only mode, quite similar to `ember-promise-helpers`, sans the extra ifs and lets (you only need one `let`):
 
 
 ```js
@@ -686,6 +640,71 @@ Advantages of `ember-async-data`:
 Disadvantages:
 
 1. 💛 **Hidden complexity**: does not allow accessing promise resolve value when the promise it's not resolved. Currently, this produces a harmless warning, but it says that it will crash in the future.
+
+
+
+## ember-async-data via template helpers
+
+If you happen to have an unwrapped promise in a property or a template variable, `ember-async-data` lets you access its values in the same way as with `ember-promise-modals`:
+
+```hbs{% raw %}
+    {{#let (load this.promise) as |result|}}
+      {{#if result.isPending}}
+        Loading via ember-async-data template helpers...
+      {{else if result.isResolved}}
+        <User @user={{result.value}}/>
+      {{else if result.isRejected}}
+        Something went wrong:
+        {{format-error result.error}}
+      {{else}}
+        The promise failed to start, this should never happen.
+      {{/if}}
+    {{/let}}
+{% endraw %}
+```
+
+
+
+## trackedFunction from ember-resources
+
+`ember-resources` is an addon that implements the resource pattern. A resource is a nice way to abstract portions of code away from your controllers, components and models. This lets you avoid the [god object](https://en.wikipedia.org/wiki/God_object) antipattern, so that each module is responsible for, ideally, one thing. `ember-resources` takes care of the component lifecycle for you, so that when the parent instance (e. g. component) is destroyed, the resource is also automatically destroyed, so that it does not leak and does not interact with the absent parent instance.
+
+`trackedFunction` is an util that wraps a promise using `ember-resources` under the hood. `trackedFunction` uses `ember-async-data` internally in order to access promise values, enriching it with a restart method.
+
+It offers the sortest syntax of all alternatives in this article:
+
+```js
+import { trackedFunction } from 'ember-resources/util/function';
+
+export default class TrackedFunctionComponent extends Component {
+  @service myService;
+
+  resource = trackedFunction(this, () => {
+    return this.myService.getData();
+  });
+}
+```
+
+Here's how you access promise values in the template:
+
+```hbs{% raw %}
+    {{#if this.resource.isPending}}
+      Loading via trackedFunction...
+    {{else if this.resource.isResolved}}
+      <User @user={{this.resource.value}}/>
+    {{else if this.resource.isRejected}}
+      Something went wrong:
+      {{format-error this.resource.error}}
+
+      <button {{on 'click' this.resource.retry}}>
+        Restart
+      </button>
+    {{else}}
+      The promise failed to start, this should never happen.
+    {{/if}}
+{% endraw %}
+```
+
 
 
 ## Comparison
