@@ -39,6 +39,7 @@ leads:
   - name: Florian Pichler
     title: Consultant for Technology and Design
     handle: pichfl
+    authorHandle: pichfl
     image: /assets/images/authors/pichfl.jpg
     bio: >
       Florian bridges the gap between development and design, mentoring clients

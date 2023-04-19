@@ -30,7 +30,7 @@ layout: 'base'
             <div class="author__text-wrapper">
               <div class="author__name-wrapper">
                 <span>with&nbsp;</span>
-                {% if lead.handle %}
+                {% if lead.authorHandle %}
                   <a href="/blog/author/{{ lead.handle }}" class="author__name">{{ lead.name }}</a>
                 {% else %}
                   <p class="author__name">{{ lead.name }}</p>

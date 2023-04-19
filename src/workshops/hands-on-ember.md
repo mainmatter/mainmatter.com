@@ -72,6 +72,7 @@ leads:
   - name: Gabor Babicz
     title: Senior Frontend Engineer
     handle: zeppelin
+    authorHandle: zeppelin
     image: /assets/images/authors/zeppelin.jpg
     bio: >
       Gabor was a very early adopter of Ember in the pre-1.0 years of the
@@ -81,6 +82,7 @@ leads:
   - name: Marco Otte-Witte
     title: Founder and Managing Director at Mainmatter
     handle: marcoow
+    authorHandle: marcoow
     image: /assets/images/authors/marcoow.jpg
     bio: >
       Marco has been working in tech with startups and enterprises for 2
