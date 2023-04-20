@@ -19,7 +19,7 @@ description: <p>Rust is an excellent programming language for developing web
   beforehand.</p>
 hero:
   image: "/assets/images/workshops/web-based-services-in-rust/header-background.jpg"
-  imageAlt: "TODO"
+  imageAlt: "Several cogs and mechanical elements in purple."
 og:
   image: /assets/images/workshops/web-based-services-in-rust/og-image.jpg
 topics:
