@@ -53,6 +53,7 @@ leads:
   - name: Chris Manson
     title: Senior Engineering Consultant
     handle: real_ate
+    authorHandle: real_ate
     image: /assets/images/authors/real_ate.jpg
     bio: >
       Chris has had a long history with version control systems, with his very
@@ -62,6 +63,7 @@ leads:
   - name: Marco Otte-Witte
     title: Founder and Managing Director at Mainmatter
     handle: marcoow
+    authorHandle: marcoow
     image: /assets/images/authors/marcoow.jpg
     bio: >
       Marco has been working in tech with startups and enterprises for 2

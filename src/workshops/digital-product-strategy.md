@@ -48,6 +48,7 @@ leads:
   - name: Florian Pichler
     title: Consultant for Technology and Design
     handle: pichfl
+    authorHandle: pichfl
     image: /assets/images/authors/pichfl.jpg
     bio: >
       Florian bridges the gap between development and design, mentoring clients
@@ -56,6 +57,7 @@ leads:
   - name: Marco Otte-Witte
     title: Founder and Managing Director at Mainmatter
     handle: marcoow
+    authorHandle: marcoow
     image: /assets/images/authors/marcoow.jpg
     bio: >
       Marco has been working in tech with startups and enterprises for 2
