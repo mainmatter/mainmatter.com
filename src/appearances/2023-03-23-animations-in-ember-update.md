@@ -1,7 +1,7 @@
 ---
 title: "Update on what's coming for animations in Ember"
 image: "/assets/images/talks/2023-03-23-embereurope-2023-q1/animations-in-ember-update.jpg"
-url: https://www.youtube.com/watch?v=b5gwt7yylx4
+url: https://youtu.be/sNy02WYh5po
 media: video
 channel: embereurope-q1-2023
 ---
