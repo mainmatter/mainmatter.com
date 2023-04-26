@@ -6,6 +6,5 @@ media: video
 channel: rustmunich-2-2023
 ---
 
-It is possible to write Edge functions in Rust. Marco Otte-Witte explained how
-and discussed the role of WASM in the process in his talk at the Rust Munich
-Meetup.
+Marco Otte-Witte explained how to run Rust code on edge functions in his talk at the Rust Munich
+Meetup. He showed how Rust, compiled to WASM, running on Cloudflare Workers handles submissions of [Mainmatter's contact form](/contact).
