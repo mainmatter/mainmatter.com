@@ -1,6 +1,6 @@
 ---
 title: "EmberConf"
-image: "/assets/images/calendar/2023-07-20-emberconf/emberconf-2023.jpg"
+image: "/assets/images/calendar/2023-07-20-emberconf/emberconf-2023.png"
 location: "Portland & online"
 url: https://www.emberconf.com/
 kind: conference
