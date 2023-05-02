@@ -33,7 +33,7 @@
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "5.0.0",
     "@gravityci/cli": "^0.0.2-alpha.14",
-    "@lhci/cli": "^0.11.0",
+    "@lhci/cli": "^0.12.0",
     "@percy/cli": "^1.10.2",
     "@quasibit/eleventy-plugin-sitemap": "^2.1.5",
     "@tbranyen/jsdom": "13.0.0",
