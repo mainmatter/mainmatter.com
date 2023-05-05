@@ -217,7 +217,12 @@
                 "ember-learn/super-rentals-tutorial",
                 "emberobserver/eslint-plugin-ember-observer",
                 "emberobserver/server",
-                "qonto/ember-lottie"
+                "qonto/ember-lottie",
+                "DazzlingFugu/ember-cli-embedded",
+                "adopted-ember-addons/ember-collapsible-panel",
+                "ember-learn/ember-api-docs-data",
+                "ember-learn/upgrade-guide",
+                "embroider-build/addon-blueprint"
             ]
         },
         {
