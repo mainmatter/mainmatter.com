@@ -59,7 +59,8 @@
         "Turbo87/renovate-config",
         "mansona/twitch-overlay",
         "BlueCutOfficial/site-books",
-        "candunaj/template-precompile-scope"
+        "candunaj/template-precompile-scope",
+        "emberjs/core-notes"
     ],
     "labels": [
         {
