@@ -111,19 +111,6 @@ export class Nav {
   openMenu(menu) {
     menu.open = true;
 
-    // TODO: remove this once rebranding teaser is gone
-    const desktopContent = menu.querySelector("[data-modal-desktop]");
-    if (desktopContent) {
-      const menuYOffset = desktopContent.getBoundingClientRect().y;
-      desktopContent.style.transform = `translateY(-${menuYOffset}px)`;
-    }
-    const mobileContent = menu.querySelector("[data-modal-mobile-content]");
-    if (mobileContent) {
-      const menuYOffset = mobileContent.getBoundingClientRect().y;
-      mobileContent.style.paddingBottom = `${menuYOffset}px`;
-    }
-    // …end TODO
-
     window.requestAnimationFrame(() => this.animateOpacity(menu));
 
     const siblings = this.getAllSiblings(this.container);
@@ -139,19 +126,6 @@ export class Nav {
 
   onAnimationFinish(menu, open) {
     menu.open = open;
-
-    // TODO: remove this once rebranding teaser is gone
-    if (!open) {
-      const desktopContent = menu.querySelector("[data-modal-desktop]");
-      if (desktopContent) {
-        desktopContent.style.transform = "translateY(0)";
-      }
-      const mobileContent = menu.querySelector("[data-modal-mobile-content]");
-      if (mobileContent) {
-        mobileContent.style.paddingBottom = "0";
-      }
-    }
-    // …end TODO
 
     this.animation = null;
     this.isClosing = false;
