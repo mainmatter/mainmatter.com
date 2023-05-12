@@ -29,7 +29,7 @@ Going through these many steps decreases productivity and makes working with
 Git a real struggle. The good news is, there is a way to work around this and
 make the whole process much leaner!
 
-Using FZF, the seven steps listed above become a one-liner:
+Using [FZF](https://github.com/junegunn/fzf), the seven steps listed above become a one-liner:
 `git branch | fzf | xargs git checkout` . This opens up an interactive dropdown
 that you can now easily navigate with arrows and the search input.
 
