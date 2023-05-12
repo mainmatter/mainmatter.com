@@ -43,6 +43,5 @@ the command, as follows:
 You should now be able to use this with a `gb` shorthand, making your experience
 smoother. Happy coding!
 
-If you are looking for a guide on using Fork to manage your Git actions, check
-out this blog post by Chris Manson:
+If you are looking for a guide on using Git with visual tools like Fork, check out this blog post by Chris Manson:
 https://mainmatter.com/blog/2021/05/26/keeping-a-clean-git-history/
