@@ -15,7 +15,7 @@ image: ""
 imageAlt: ""
 ---
 
-Does your current process to checkout a GitHub branch look something like this?
+Does your current process to checkout a Git branch look something like this?
 
 - `git branch` or `git branch --list`
 - outputs a non-interactive list of branches
