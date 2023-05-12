@@ -9,7 +9,7 @@ description:
 og:
   image:
 tagline: |
-  <p>Are you looking to be more efficient with Git while wokring with the CLI? There is an easy way to make checking out branches a one-step process.</p>
+  <p>Are you looking to be more efficient with Git while working with the CLI? There is an easy way to make checking out branches a one-step process.</p>
 
 image: ""
 imageAlt: ""
