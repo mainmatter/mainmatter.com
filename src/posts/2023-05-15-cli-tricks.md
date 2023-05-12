@@ -1,5 +1,5 @@
 ---
-title: "CLI Tricks for GitHub"
+title: "CLI Tricks for Git with FZF"
 authorHandle: BobrImperator
 tags: [misc]
 bio: "Bartłomiej Dudzik"
