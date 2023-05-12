@@ -26,7 +26,7 @@ Does your current process to checkout a Git branch look something like this?
 - prepend entry with `git checkout`
 
 Going through these many steps decreases productivity and makes working with
-GitHub a real struggle. The good news is, there is a way to work around this and
+Git a real struggle. The good news is, there is a way to work around this and
 make the whole process much leaner!
 
 Using FZF, the seven steps listed above become a one-liner:
