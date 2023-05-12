@@ -4,7 +4,7 @@ authorHandle: BobrImperator
 tags: [misc]
 bio: "Bartłomiej Dudzik"
 description:
-  "Bartłomiej Dudzik shows a trick to checkout a GitHub branch faster in the
+  "Bartłomiej Dudzik shows a trick to checkout a Git branch faster in the
   CLI."
 og:
   image:
