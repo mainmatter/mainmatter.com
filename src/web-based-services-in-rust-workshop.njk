@@ -1,0 +1,234 @@
+---
+title: "Workshop: Web-based Services in Rust"
+description: "Four half-days workshop that teaches developing web applications and web services in Rust."
+layout: false
+---
+
+{% from "author-socials.njk" import authorSocials %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "scroll-slides.njk" import scrollSlides %}
+{% from "quote.njk" import quote %}
+
+<html lang="{{ config.lang }}" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>{{ page.title }}</title>
+    {% include "global/fonts.njk" %}
+    <link rel="stylesheet" href="/assets/css/app.css" />
+    <link rel="stylesheet" href="/assets/css/workshop-lp.css" />
+    <script src="/assets/js/app.js" defer></script>
+    {% block head %}{{ head | safe }}{% endblock %}
+
+    {% include "global/meta.njk" %}
+    {% include "global/icons.njk" %}
+
+    <script src='https://js.tito.io/v2/with/development_mode' async></script>
+    <script defer data-domain="mainmatter.com" src="https://plausible.io/js/plausible.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    <link rel="feed alternate" type="application/rss+xml" href="/feed.xml" title="Mainmatter Blog RSS">
+    <link rel="feed alternate" type="application/atom+xml" href="/feed.atom" title="Mainmatter Blog Atom">
+
+    <style>
+      
+    </style>
+  </head>
+  <body data-js-enabled="false">
+    <a class="skip-link" href="#main">
+      Skip to main content
+    </a>
+    
+    <nav class="nav nav--accent-aqua" id="nav">
+      <div class="nav__wrapper container container--xl">
+        <div class="nav__logo">
+          <h1 class="nav__brand">
+            {% include 'svg/logo.njk' %}
+            <span class="screenreader">Mainmatter</span>
+          </h1>
+        </div>
+        <div class="nav__aside">
+          <tito-button event="simplabs/web-based-services-in-rust2023">Book your ticket</tito-button>
+        </div>
+      </div>
+    </nav>
+    
+    <main id="main">
+      <section class="color-hero color-hero--purple" data-background-color="purple">
+        <div class="color-hero__image-wrapper">
+          {% image '/assets/images/web-based-services-in-rust-workshop/header-background.jpg', 'a complex mechanism of various interconnected cogs and levers', '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
+        </div>
+        <div class="color-hero__overlay" data-color-hero></div>
+        <div class="color-hero__container container container--lg color-hero__container--center workshop-lp-hero__container">
+          <img class="workshop-lp-hero__image" src="/assets/images/web-based-services-in-rust-workshop/rust-logo.svg" alt="Rust logo" />
+          <div class="color-hero__main">
+            <p class="workshop-hero__format">Workshop</p>
+            <h1 class="workshop-lp-hero__title color-hero__title color-hero__title--full">Web-based Service in Rust</h1>
+            <div class="color-hero__text color-hero__text--small">11.-13. (14:00 - 18:00 CEST) July 2023</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="workshop-authors">
+        <div class="container container--lg">
+          <div class="author__wrapper">
+            <div class="author text--xs">
+              <div class="workshop-authors__image-wrapper author__image-wrapper">
+                {% image "/assets/images/authors/ddprrt.jpg", 'Stefan Baumgartner', '3.75rem', 'eager', 'author__lead-image', [120] %}
+              </div>
+              <div class="author__text-wrapper">
+                <div class="author__name-wrapper">
+                  <span>with&nbsp;</span>
+                  <p class="author__name">Stefan Baumgartner</p>
+                </div>
+                {{ authorSocials("ddprrt", "author-socials--desktop-only") }}
+                <div class="author__title">Architect and Independent Trainer</div>
+                {{ authorSocials("ddprrt", "author-socials--mobile-only") }}
+              </div>
+            </div>
+            <div class="author__details author__details--full-width text--sm">
+              <p>Stefan Baumgartner is an architect and developer based in Austria who specializes in serverless technologies. He has authored two books on TypeScript and is also the organizer of the Rust Linz meetup.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <section class="lp-section lang-features container container--lg">
+        <h2 class="lang-features__title h5">Workshop description</h2>
+        <div class="lang-features__list-wrapper">
+          <h3 class="h2">Rust is an excellent programming language</h3>
+          <ul class="lang-features__list">
+            <li class="lang-features__list-item">
+              <p class="lang-features__feature h4">
+                {% include 'svg/arrow.njk' %}
+                <span class="lang-features__feature-text">Concurrency approach</span>
+              </p>
+            </li>
+            <li class="lang-features__list-item">
+              <p class="lang-features__feature h4">
+                {% include 'svg/arrow.njk' %}
+                <span class="lang-features__feature-text">Tool flexibility</span>
+              </p>
+            </li>
+            <li class="lang-features__list-item">
+              <p class="lang-features__feature h4">
+                {% include 'svg/arrow.njk' %}
+                <span class="lang-features__feature-text">Library availability</span>
+              </p>
+            </li>
+            <li class="lang-features__list-item">
+              <p class="lang-features__feature h4">
+                {% include 'svg/arrow.njk' %}
+                <span class="lang-features__feature-text">Concurrency approach</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <p>Developing web applications and web services. As a result, you can create services that are fast, reliable, and cost-effective. In fact, using Rust to write services can tremendously reduce your operating costs. However, the main challenge is knowing where to start. This workshop aims to guide you through the process of building web services using the ecosystem around the Tokio async runtime. You will learn how to make basic API calls, create advanced middleware layers to add functionality, and conduct tracing and testing. Join us for three afternoons to acquire all the necessary skills to produce your own Rust-based web apps.</p>
+      </section>
+
+      <section class="lp-section">
+        <div class="container container--lg">
+          <h2 class="lp-section-subheading h2">Target Audience</h2>
+          <p>This workshop is intended for developers who have some experience with Rust and want to learn more about its problem domain for web applications. It is not necessary to have written Rust in a production environment yet. If you are just starting out with Rust, we will provide you with preparatory material beforehand.</p>
+        </div>
+      </section>
+
+      <section>
+        {% set imageData = {
+          "imgPath": "/assets/images/web-based-services-in-rust-workshop/stefan-teaching.jpg",
+          "alt": "Stefan talking to a workshop participant",
+          "sizes": "100vw",
+          "loading": "lazy",
+          "sizesArray": [760, 1440, 1920]
+        } %}
+        {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+      </section>
+
+      <section class="lp-section">
+        <div class="container container--lg">
+          <h2 class="lp-section-subheading h2">Mode</h2>
+          <p>The workshop will be held over three afternoons, and each session will include practical examples. In addition, we will provide optional homework for you to work on. For who? This workshop is intended for developers who have some experience with Rust and want to learn more about its problem domain for web applications. It is not necessary to have written Rust in a production environment yet. If you are just starting out with Rust, we will provide you with preparatory material beforehand.</p>
+        </div>
+      </section>
+
+      <section class="lp-section">
+        <div class="container container--lg">
+          <h2 class="lp-section-subheading h2">Prerequisites</h2>
+          <p>We will send a detailed list of instructions for preparation, including the installation of compiler toolchains, editors, and recommended plugins. We also send out material to get you familiar with Rust basics if you haven't written any Rust before. Additionally, we will share a Github project with workshop materials. This information will be provided closer to the workshop date.</p>
+        </div>
+      </section>
+
+      <section>
+        {% set imageData = {
+          "imgPath": "/assets/images/web-based-services-in-rust-workshop/classroom.jpg",
+          "alt": "Stefan sitting in front of a classroom smiling seen from the perspective of an attendee",
+          "sizes": "100vw",
+          "loading": "lazy",
+          "sizesArray": [760, 1440, 1920]
+        } %}
+        {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+      </section>
+
+      {% set 'slide_1' = {
+        "color": "white",
+        "tag": "Workshop Overview - Part 1",
+        "title": "Tokio, Hyper & Axum",
+        "text": "We will begin by setting up a web server for our web application using the Axum framework, which is built on top of Tokio and Hyper. We will learn about the FromRequest and IntoResponse traits, Extractors, Routers, and how to connect JSON serialization and deserialization. If time permits, we will also create a web socket connection for our clients."
+      } %}
+      
+      {% set 'slide_2' = {
+        "color": "purple",
+        "tag": "Workshop Overview - Part 2",
+        "title": "Tower & Middlewares",
+        "text": "We will expand our application by creating middleware layers that handle crucial aspects such as sessions, authentication, timeouts, and compression. We will not only apply built-in middlewares but also create our own by implementing Tower's Service trait and learning more about futures and async."
+      } %}
+      
+      {% set 'slide_3' = {
+        "color": "black",
+        "tag": "Workshop Overview - Part 3",
+        "title": "Tracing, Logging & Testing",
+        "text": "In the final part, we will examine how to gain insights into our application's behavior and perform performance and correctness tests. Ultimately, we will be able to publish our application on AWS, Shuttle, and other services."
+      } %}
+      
+      {% set slides = [slide_1, slide_2, slide_3] %}
+      {{ scrollSlides('workshops', slides, page.url) }}
+
+      <div class="container container--lg quote-section">
+        {% set 'content' = {
+          "text": "Stefan's workshop was enlightening. With his clear, friendly teaching style and expert knowledge, he inspired us to take our skills to the next level. Stefan is an excellent teacher, motivator and an inspiration.",
+          "source": "Zenon Huskić, Wüstenrot",
+          "image": "/assets/images/web-based-services-in-rust-workshop/zenon-huskic.png",
+          "alt": "Zenon Huskicć, smiling at the camera wearing a grey shirt",
+          "loading": "lazy"
+        } %} {{ quote(content) }}
+      </div>
+
+      <section class="color-hero color-hero--purple" data-background-color="purple">
+        <div class="color-hero__image-wrapper">
+          {% image '/assets/images/web-based-services-in-rust-workshop/cta-background.jpg', "a pair of hands tie an entry band around someone's arm", '100vw', 'lazy', 'color-hero__image', [760, 1440, 1920] %}
+        </div>
+        <div class="color-hero__overlay" data-color-hero></div>
+        <div class="color-hero__container container container--lg color-hero__container--center">
+          <div class="color-hero__main">
+            <h1 class="color-hero__title color-hero__title--full">Book your ticket</h1>
+            <div class="color-hero__text color-hero__text--small">Join our workshop and start building web services with Rust.</div>
+            <div class="cta-link__text-wrapper">
+              <span class="cta-link__text">
+                <tito-button event="simplabs/web-based-services-in-rust2023">Book your ticket</tito-button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    {% include "global/footer.njk" %}
+    <div aria-live="polite" id="live-region" class="screenreader"></div>
+    <div hidden>
+      <p id="external-new-window-message">Opens external website in a new window.</p>
+    </div>
+    <script>
+      document.querySelector('body').setAttribute('data-js-enabled', 'true');
+    </script>
+  </body>
+</html>

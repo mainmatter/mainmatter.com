@@ -1,0 +1,136 @@
+.lp-section {
+  padding: 7.25rem 0;
+}
+
+@media (min-width: 48em) {
+  .text-with-list {
+    padding: 7.75rem 0;
+  }
+}
+
+.lp-section-subheading {
+  max-width: 48.75rem;
+  margin: 0 0 3rem 0;
+}
+
+.lp-section + .lp-section {
+  padding-top: 0;
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.lang-features {
+  padding: 7rem 0 5rem;
+}
+
+.lang-features__list-wrapper {
+  margin: 3rem 0;
+}
+
+.lang-features__list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 0;
+}
+
+.lang-features__list-item {
+  &+& {
+    margin-top: 3rem;
+  }
+}
+
+.lang-features__feature {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  svg {
+    transform: rotate(-90deg);
+    height: 1.5rem;
+    width: 1.5rem;
+    color: var(--color-purple);
+    margin-right: 1.5rem;
+  }
+}
+
+.lang-features__feature-text {
+  display: inline-flex;
+}
+
+@media (min-width: 48em) {
+  .lang-features {
+    padding: 7rem 0;
+  }
+
+  .lang-features__list-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  .lang-features__list {
+    margin: 0;
+    flex: 0 0 50%;
+  }
+
+  .lang-features__list-item {
+    &+& {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.cta-link__text {
+  text-decoration-line: none;
+}
+
+.cta-link__text-wrapper {
+  text-decoration-line: none;
+  margin-top: 2rem;
+}
+
+.quote-section {
+  padding: 7.25rem 0;
+}
+
+.workshop-lp-hero__title {
+  margin: 1.25rem 0;
+}
+
+.workshop-lp-hero__image {
+  display: none;
+}
+
+@media (min-width: 48em) {
+  .cta-link__text-wrapper {
+    margin-top: 2.25rem;
+  }
+
+  .workshop-lp-hero__image {
+    margin-right: 2.5rem;
+    display: block;
+  }
+}
+
+.tito-widget-button {
+  display: block;
+  padding: 0.75rem 0.8rem;
+  line-height: 1;
+  background-color: var(--color-aqua);
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 0.125rem;
+  transition: background-color ease 0.3s;
+  font-size: 1rem;
+  line-height: 1rem;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  
+  &:hover {
+    background-color: var(--color-purple);
+  }
+}
