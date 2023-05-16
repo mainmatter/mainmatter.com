@@ -144,7 +144,7 @@
 # serve "Web-based Services in Rust" landing page for rust-web-services-workshop.mainmatter.com
 [[redirects]]
   from = "https://rust-web-services-workshop.mainmatter.com/*"
-  to = "https://mainmatter.com/web-based-services-in-rust-workshop/"
+  to = "https://mainmatter.com/web-based-services-in-rust-workshop/:splat"
   status = 200
 
 # serve 404 for all paths that don't exist
