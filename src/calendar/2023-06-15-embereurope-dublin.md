@@ -1,6 +1,6 @@
 ---
 title: "Ember Europe Q2 Meetup"
-image: "/assets/images/calendar/2023-06-15-embereurope-dublin"
+image: "/assets/images/calendar/2023-06-15-embereurope-dublin/embereurope.png"
 location: Dublin & remote
 url: https://www.meetup.com/ember-europe/
 kind: meetup
