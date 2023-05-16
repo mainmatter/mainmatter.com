@@ -66,6 +66,12 @@
   padding-left: 0;
 }
 
+.scroll-slides__tag {
+  margin: 0 0 1.5rem;
+  max-width: rem-calc(800);
+  flex-basis: 100%;
+}
+
 .scroll-slides__title {
   font-size: 2.25rem;
   max-width: rem-calc(800);
@@ -149,6 +155,10 @@
 
   .scroll-slides__icon {
     margin-bottom: 0;
+  }
+
+  .scroll-slides__tag {
+    margin: 0 0 .75rem;
   }
 
   .scroll-slides__title {
