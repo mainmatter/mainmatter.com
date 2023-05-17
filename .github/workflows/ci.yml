@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
-      - uses: volta-cli/action@25888009cd70dbe17a140f1c56d93f8c09f7bcef # v4
+      - uses: volta-cli/action@d253558a6e356722728a10e9a469190de21a83ef # v4
         with:
           registry-url: "https://registry.npmjs.org"
 
@@ -33,7 +33,7 @@ jobs:
   
     steps:
       - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
-      - uses: volta-cli/action@25888009cd70dbe17a140f1c56d93f8c09f7bcef # v4
+      - uses: volta-cli/action@d253558a6e356722728a10e9a469190de21a83ef # v4
         with:
           registry-url: "https://registry.npmjs.org"
 
@@ -57,7 +57,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
-      - uses: volta-cli/action@25888009cd70dbe17a140f1c56d93f8c09f7bcef # v4
+      - uses: volta-cli/action@d253558a6e356722728a10e9a469190de21a83ef # v4
         with:
           registry-url: "https://registry.npmjs.org"
 
@@ -82,7 +82,7 @@ jobs:
       - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-      - uses: volta-cli/action@25888009cd70dbe17a140f1c56d93f8c09f7bcef # v4
+      - uses: volta-cli/action@d253558a6e356722728a10e9a469190de21a83ef # v4
         with:
           registry-url: "https://registry.npmjs.org"
     
@@ -105,7 +105,7 @@ jobs:
       - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-      - uses: volta-cli/action@25888009cd70dbe17a140f1c56d93f8c09f7bcef # v4
+      - uses: volta-cli/action@d253558a6e356722728a10e9a469190de21a83ef # v4
         with:
           registry-url: "https://registry.npmjs.org"
     
