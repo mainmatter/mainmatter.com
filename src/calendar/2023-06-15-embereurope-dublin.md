@@ -8,6 +8,6 @@ color: purple
 ---
 
 The second Ember Europe meetup of 2023 is happening on June 15th and is hosted
-by Intercom at their Dublin's office. The Ember Europe meetup series brings
+by Intercom at their Dublin office. The Ember Europe meetup series brings
 together the Ember community from all of Europe once a quarter. The meetup is
 organized by Mainmatter and Intercom.
