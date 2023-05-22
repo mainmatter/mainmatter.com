@@ -6,6 +6,7 @@ description: Find out how can we help you grow your business.
 
 {% from "color-hero.njk" import colorHero %}
 {% from "featured-services.njk" import featuredServices %}
+{% from "logo-list.njk" import logoList %}
 
 {% set 'content' = {
   "title": "Burst through your scale-up bottleneck. We'll be your <em>expert</em> guides.",
@@ -35,3 +36,7 @@ description: Find out how can we help you grow your business.
   "loading": "lazy"
 } %}
 {{ colorHero('center', 'large', 'black', content) }}
+
+<h3 class="success_stories__title">Discover our success stories</h3>
+{% set logoCompanies = ['Qonto', 'Trainline', 'Cardstack', 'Timify', 'Experteer', 'Robin Hood', 'Dim3' ] %}
+{{ logoList(logoCompanies) }}
