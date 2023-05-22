@@ -24,3 +24,14 @@ description: Find out how can we help you grow your business.
   "text": "We teach, we mentor, we do. Our team of experts can help you strategically push through the next series of growth hurdles - from ideation to design to engineering."
 } %}
 {{ featuredServices(services['scaleup-services-list'], content) }}
+
+{% set 'content' = {
+  "title": "Instantly add years of <em>expertise</em> to your team to make your ideas happen faster.",
+  "text": "We are a team of engineers, inventors, designers, strategists, artists and storytellers, but our titles don’t define how we work. Our processes are focused on helping you get the results you need. We partner with our clients to mentor, develop and grow - whether it's your product, your base, your team, or your bottom line.",
+  "linkUrl": "/contact/",
+  "linkText": "Get started with us today",
+  "image": "/assets/images/photos/mainmatter-team-smiles-blur.jpg",
+  "alt": "Team member leaning against wall taking notes while talking to three other team members",
+  "loading": "lazy"
+} %}
+{{ colorHero('center', 'large', 'black', content) }}
