@@ -1,0 +1,17 @@
+---
+layout: 'base'
+title: Startups
+description: Find out how can we help you grow your business. 
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% set 'content' = {
+  "title": "Burst through your scale-up bottleneck. We'll be your <em>expert</em> guides.",
+  "image": "/assets/images/photos/ship-containers.jpg",
+  "text": "No business has “make or break” moments like a startup. At Mainmatter, we can instantly scale-up your team to develop digital products.
+   Our experts teach, cross-pollinate and collaborate with our clients for results that go beyond the scope of the project.",
+  "alt": "A massive vessel packed with cargo containers navigating in a water channel",
+  "loading": "eager",
+  "titleTag": "h1"
+} %}
+{{ colorHero('center', 'large', 'purple', content) }}
