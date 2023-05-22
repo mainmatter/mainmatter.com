@@ -5,6 +5,8 @@ description: Find out how can we help you grow your business.
 ---
 
 {% from "color-hero.njk" import colorHero %}
+{% from "featured-services.njk" import featuredServices %}
+
 {% set 'content' = {
   "title": "Burst through your scale-up bottleneck. We'll be your <em>expert</em> guides.",
   "image": "/assets/images/photos/ship-containers.jpg",
@@ -15,3 +17,10 @@ description: Find out how can we help you grow your business.
   "titleTag": "h1"
 } %}
 {{ colorHero('center', 'large', 'purple', content) }}
+
+{% set 'content' = {
+  "title": "Our Startup Ecosystem",
+  "subtitle": "We support growth.",
+  "text": "We teach, we mentor, we do. Our team of experts can help you strategically push through the next series of growth hurdles - from ideation to design to engineering."
+} %}
+{{ featuredServices(services['scaleup-services-list'], content) }}
