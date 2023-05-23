@@ -71,3 +71,14 @@ description: Find out how can we help you grow your business.
 
 {% set slides = [slide_1, slide_2, slide_3] %}
 {{ scrollSlides('workshops', slides, page.url) }}
+
+{% set 'content' = {
+  "title": "Grow <em>your</em> business with us.",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact/",
+  "linkText": "Get in touch",
+  "image": "/assets/images/photos/planting.jpg",
+  "alt": "Two people arranging plants in rounded transparent pot placed in a table surronded by other smaller pots with  plants.",
+  "loading": "lazy"
+} %}
+{{ colorHero('center', 'large', 'black', content) }}
