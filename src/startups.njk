@@ -1,13 +1,31 @@
----
-layout: 'base'
-title: Startups
-description: Find out how can we help you grow your business. 
+---js
+{
+  title: "Startups",
+  description: "Find out how can we help you grow your business.",
+  layout: "base.njk",
+  pagination: {
+    data: "collections.posts",
+    size: 3,
+    alias: "posts",
+    before: function(data) { return data.slice(1); }
+  },
+  eleventyNavigation: {
+    key: "Blog",
+    order: 50
+  },
+  og: {
+    image: "/assets/images/blog/og-image.jpg"
+  }
+}
 ---
 
 {% from "color-hero.njk" import colorHero %}
 {% from "featured-services.njk" import featuredServices %}
 {% from "logo-list.njk" import logoList %}
 {% from "scroll-slides.njk" import scrollSlides %}
+{% from "post-card.njk" import postCard %}
+{% from "nav-pagination.njk" import navPagination %}
+
 
 {% set 'content' = {
   "title": "Burst through your scale-up bottleneck. We'll be your <em>expert</em> guides.",
@@ -82,3 +100,16 @@ description: Find out how can we help you grow your business.
   "loading": "lazy"
 } %}
 {{ colorHero('center', 'large', 'black', content) }}
+
+<div id="posts" class="container container--xl">
+  <h5 class="posts__title h5">Read more about our work</h5>
+  <ol class="post-cards">
+    {%- for post in pagination.items -%}
+      <li class="post-cards__item">
+        {{ postCard(post) }}
+      </li>
+    {%- endfor -%}
+  </ol>
+  {% if pagination.pageNumber === 0 %}{% set nextLabel = 'Explore more articles' %}{% else %}{% set nextLabel = 'Next' %}{% endif %}
+  {{ navPagination(pagination.href.previous, pagination.href.next, nextLabel) }}
+</div>
