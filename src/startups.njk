@@ -7,6 +7,7 @@ description: Find out how can we help you grow your business.
 {% from "color-hero.njk" import colorHero %}
 {% from "featured-services.njk" import featuredServices %}
 {% from "logo-list.njk" import logoList %}
+{% from "scroll-slides.njk" import scrollSlides %}
 
 {% set 'content' = {
   "title": "Burst through your scale-up bottleneck. We'll be your <em>expert</em> guides.",
@@ -40,3 +41,33 @@ description: Find out how can we help you grow your business.
 <h3 class="success_stories__title">Discover our success stories</h3>
 {% set logoCompanies = ['Qonto', 'Trainline', 'Cardstack', 'Timify', 'Experteer', 'Robin Hood', 'Dim3' ] %}
 {{ logoList(logoCompanies) }}
+
+{% set 'slide_1' = {
+  "subtitle": "Team Augmentation & Growth",
+  "color": "black",
+  "title": "The team you needed yesterday, today.",
+  "text": "Scale your team instantly and sustainably. We’ll work with your existing team to develop products, productivity, or best practices so you can keep growing, even after our collaboration ends.",
+  "linkUrl": "/services/team-augmentation-and-training/",
+  "linkText": "Get started with us today"
+} %}
+
+{% set 'slide_2' = {
+  "subtitle": "Digital Product Development Support",
+  "color": "white",
+  "title": "The shortcut on your roadmap",
+  "text": "We will begin by setting up a web server for our web application using the Axum framework, which is built on top of Tokio and Hyper. We will learn about the FromRequest and IntoResponse traits, Extractors, Routers, and how to connect JSON serialization and deserialization. If time permits, we will also create a web socket connection for our clients.",
+  "linkUrl": "/services/digital-products-and-design/",
+  "linkText": "Learn more"
+} %}
+
+{% set 'slide_3' = {
+  "subtitle": "Skills-focused workshops",
+  "color": "purple",
+  "title": "The future-proof, know-how investment",
+  "text": "From engineering know-how to strategies that develop lasting success, our workshops will equip your team with the skills they need to make things happen.",
+  "linkUrl": "/services/workshops/",
+  "linkText": "Learn more"
+} %}
+
+{% set slides = [slide_1, slide_2, slide_3] %}
+{{ scrollSlides('workshops', slides, page.url) }}
