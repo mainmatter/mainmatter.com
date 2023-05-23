@@ -20,6 +20,9 @@
             {% if slide.tag %}
               <h2 class="scroll-slides__tag h5">{{slide.tag}}</h2>
             {% endif %}
+            {% if slide.subtitle %}
+              <h5 class="scroll-slides__subtitle h5">{{slide.subtitle}}</h5>
+            {% endif %}
             <h2 class="scroll-slides__title">{{ slide.title }}</h2>
             <p class="scroll-slides__text">{{ slide.text }}</p>
             {% if slide.linkUrl and slide.linkText %}
