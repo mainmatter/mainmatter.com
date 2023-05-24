@@ -113,6 +113,11 @@ jobs:
         run: yarn install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: install @gravityci/cli
+        run: yarn add -D @gravityci/cli
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     
       - name: build
         run: yarn build
