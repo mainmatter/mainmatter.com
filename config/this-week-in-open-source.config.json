@@ -12,7 +12,9 @@
         "BobrImperator",
         "candunaj",
         "lolmaus",
-        "BlueCutOfficial"
+        "BlueCutOfficial",
+        "shellandbull",
+        "oliverbarnes"
     ],
     "exclude": [
         "cardstack/animations-experiment",
@@ -60,7 +62,8 @@
         "mansona/twitch-overlay",
         "BlueCutOfficial/site-books",
         "candunaj/template-precompile-scope",
-        "emberjs/core-notes"
+        "emberjs/core-notes",
+        "candunaj/ember-in-viewport"
     ],
     "labels": [
         {
@@ -223,7 +226,12 @@
                 "adopted-ember-addons/ember-collapsible-panel",
                 "ember-learn/ember-api-docs-data",
                 "ember-learn/upgrade-guide",
-                "embroider-build/addon-blueprint"
+                "embroider-build/addon-blueprint",
+                "ember-fastboot/ember-cli-fastboot",
+                "DockYard/ember-in-viewport",
+                "DazzlingFugu/guidemaker-ember-locale-template",
+                "DazzlingFugu/ember-reading-time",
+                "BlueCutOfficial/ember-is-component"
             ]
         },
         {
@@ -291,7 +299,8 @@
                 "hakimel/reveal.js",
                 "mainmatter/mocha-diff",
                 "mainmatter/compare-fixture",
-                "mansona/layer-gen"
+                "mansona/layer-gen",
+                "timdp/rollup-timer"
             ]
         },
         {
