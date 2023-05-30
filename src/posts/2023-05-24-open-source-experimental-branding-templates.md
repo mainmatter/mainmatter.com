@@ -10,7 +10,7 @@ description:
 og:
   image: /assets/images/posts/2023-02-28-ember-template-assert/og-image.jpg
 tagline: |
-  <p>For the first hearing, it was surprising and challenging how a visual designer can start open-source projects. As an applied art service provider ~ ex freelancer, everything started with a client or project requirements and the number of projects that I did for myself just for fun was significantly shrinking, especially as a beginner father. At Mainmatter everyone spends 20% of their time as an active member of the open-source community, so I had to find a solution.</p>
+  <p>For the first hearing, it was surprising and challenging how a visual designer can start open-source projects. As an applied art service provider/ex freelancer, everything started with a client or project requirements and the number of projects that I did for myself just for fun was significantly shrinking, especially as a beginner father. At Mainmatter everyone spends 20% of their time as an active member of the open-source community, so I had to find a solution.</p>
 
 image: "/assets/images/posts/2023-05-24-open-source-experimental-branding-templates/header-illustration.jpg"
 imageAlt:
