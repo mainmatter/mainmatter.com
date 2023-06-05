@@ -47,7 +47,7 @@ Extraordinary. Surprising. Anything but boring.
 [Download Sketch file](https://drive.google.com/drive/folders/1Ns0HDHztA8Ki6v8kp8L9NoxP69fI7D-c)
 
 I was searching among Google fonts when I found the most ridiculous but
-strange but well-designed font I've ever seen called "Nabla". I knew I have to
+well-designed font I've ever seen, called "Nabla". I knew I had to
 start something with it.
 I don’t think I would ever suggest using a similar font to a client in a real-world
 situation, so this project was the perfect opportunity to experiment with it.
