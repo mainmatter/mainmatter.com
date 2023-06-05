@@ -104,7 +104,7 @@ After finding the ‘Rama Gothic C’ font which I considered the most well-desi
 in this category, I started to test different concepts.
 My idea quickly turned into a slideshow-style website combining colorful surfaces
 with typography playfulness, and wonderful monochrome photography with
-center-aligned overlay color circles, highlighting some important parts of the
+center-aligned overlay color circles, highlighting important parts of the
 image. I will be curious to try further different concepts with the ‘Rama Gothic
 C’ font.
 
