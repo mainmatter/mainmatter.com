@@ -106,7 +106,6 @@ My idea quickly turned into a slideshow-style website combining colorful surface
 with typography playfulness, and wonderful monochrome photography with
 center-aligned overlay color circles, highlighting important parts of the
 image. 
-C’ font.
 
 ## Conclusion
 
