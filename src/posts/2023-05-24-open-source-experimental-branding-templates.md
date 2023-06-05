@@ -34,7 +34,6 @@ I assume - "Let’s imagine a fictional client or project that I have to find a
 solution for". Instead of this, I thought: "What if I turn the whole process upside
 down and create something based on my gut feelings, combine surprising elements
 together as a montage, that is functional meanwhile, and see what comes out of
-it? Why not?
 
 The first concept became boring (I won't show it to anybody) I became a bit
 skeptical about my idea. But instead of giving up, I realized what I want.
