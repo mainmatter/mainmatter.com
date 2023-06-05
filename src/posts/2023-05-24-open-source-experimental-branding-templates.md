@@ -49,7 +49,7 @@ Extraordinary. Surprising. Anything but boring.
 I was searching among Google fonts when I found the most ridiculous but
 strange but well-designed font I've ever seen called "Nabla". I knew I have to
 start something with it.
-is only a joke. I don’t think I've ever would suggest this to a client in a real
+I don’t think I would ever suggest using a similar font to a client in a real-world
 situation, so this project was the perfect opportunity to experiment with it.
 the point when things became interesting. I started to combine the font with
 beautiful cloud illustrations, and soft and warm color tones and kept the
