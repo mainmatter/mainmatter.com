@@ -35,7 +35,7 @@ solution for". Instead of this, I thought: "What if I turn the whole process ups
 down and create something based on my gut feelings, combine surprising elements
 together as a montage, that is functional meanwhile, and see what comes out of
 
-The first concept became boring (I won't show it to anybody) I became a bit
+The first concept quickly turned boring and I started feeling a bit
 skeptical about my idea. But instead of giving up, I realized what I want.
 Extraordinary. Surprising. Anything but boring.
 
