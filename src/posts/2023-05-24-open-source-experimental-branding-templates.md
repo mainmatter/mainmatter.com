@@ -58,7 +58,7 @@ balance with Circular Std font which is a wonderful quality font with strong
 geometric types.
 
 Based on the overall impression I was getting from the design, I decided to use some professional Chinese
-street photography which was super hard to find, but after hours of searching
+street photography. It was hard to find exactly what I was looking for, but after hours of searching through seas of stock photos, I finally came across the perfect pictures for this project.
 These naturally led me into
 trying some traditional Chinese typography (which I never did before). It was very
 satisfying and mega fun. I'm quite happy with the overall result, can be ideal
