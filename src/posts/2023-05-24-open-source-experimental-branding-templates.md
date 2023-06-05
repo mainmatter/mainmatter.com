@@ -64,7 +64,7 @@ trying some traditional Chinese typography (which I never did before). It was ve
 satisfying and lots of fun. 
 
 I'm quite happy with the overall result and I believe it would look great
-for a fashion brand with a young target group for the Chinese market, or any
+for a fashion brand with a young target group within the Chinese market, or any
 other market with a strong connection to China.
 
 ## Concept 3
