@@ -61,7 +61,9 @@ Based on the overall impression I was getting from the design, I decided to use 
 street photography. It was hard to find exactly what I was looking for, but after hours of searching through seas of stock photos, I finally came across the perfect pictures for this project.
 These naturally led me into
 trying some traditional Chinese typography (which I never did before). It was very
-satisfying and mega fun. I'm quite happy with the overall result, can be ideal
+satisfying and lots of fun. 
+
+I'm quite happy with the overall result and I believe it would look great
 for a fashion brand with a young target group for the Chinese market, or any
 other market with some strong connection to China.
 
