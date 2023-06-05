@@ -50,7 +50,7 @@ I was searching among Google fonts when I found the most ridiculous but
 strange but well-designed font I've ever seen called "Nabla". I knew I have to
 start something with it.
 is only a joke. I don’t think I've ever would suggest this to a client in a real
-situation, so here is the time to find out if it is good for something. This was
+situation, so this project was the perfect opportunity to experiment with it.
 the point when things became interesting. I started to combine the font with
 beautiful cloud illustrations, and soft and warm color tones and kept the
 balance with Circular Std font which is a wonderful quality font with strong
