@@ -65,7 +65,7 @@ satisfying and lots of fun.
 
 I'm quite happy with the overall result and I believe it would look great
 for a fashion brand with a young target group for the Chinese market, or any
-other market with some strong connection to China.
+other market with a strong connection to China.
 
 ## Concept 3
 
