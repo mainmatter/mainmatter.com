@@ -86,7 +86,9 @@ elegant and crazy.
 The brutal geometric shapes required
 some smaller details for balance, I found a package with interesting bug
 illustrations which I modified to make them symmetrical and complement
-the concept. This idea has quite versatile usage of course the illustration
+the concept better. 
+
+This idea has a quite versatile usage and of course the illustration
 package can be changed to match specific cases.
 
 ## Concept 4
