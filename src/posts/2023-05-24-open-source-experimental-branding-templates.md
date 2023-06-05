@@ -82,7 +82,8 @@ but not too saturated colors.
 
 ​The Larken font immediately seemed a good combination here, I remembered for if
 from the past work: it is a very special bohemian font, between modern and classic,
-elegant and crazy. Fits just perfectly. The brutal geometric shapes required
+elegant and crazy. 
+The brutal geometric shapes required
 some smaller details for balance, I found a package with interesting bug
 illustrations which I modified to make them symmetrical and complement
 the concept. This idea has quite versatile usage of course the illustration
