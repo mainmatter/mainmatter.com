@@ -89,7 +89,7 @@ illustrations which I modified to make them symmetrical and complement
 the concept better. 
 
 This idea has a quite versatile usage and of course the illustration
-package can be changed to match specific cases.
+package can be changed to match specific contexts.
 
 ## Concept 4
 
