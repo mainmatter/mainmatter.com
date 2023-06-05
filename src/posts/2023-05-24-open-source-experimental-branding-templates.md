@@ -74,7 +74,7 @@ other market with some strong connection to China.
 [Preview](https://scene.zeplin.io/project/6455081b1dc67b3c0c397b0e/screen/64709e41b998e22206a0ad16)
 [Download Sketch file](https://drive.google.com/drive/folders/1Ns0HDHztA8Ki6v8kp8L9NoxP69fI7D-c)
 
-Berlin is an amazing inspiration for creative people even a poster on the street
+Berlin is a costant inspiration for creative people. Even a poster on the street
 can be a good start of something great, this is how Concept 2 was born. I
 decided to play around with brutal geometric shapes and patterns, with strong
 but not too saturated colors.
