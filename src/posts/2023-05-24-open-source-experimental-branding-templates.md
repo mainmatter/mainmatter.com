@@ -36,7 +36,7 @@ down and create something based on my gut feelings, combine surprising elements
 together as a montage, that is functional meanwhile, and see what comes out of
 
 The first concept quickly turned boring and I started feeling a bit
-skeptical about my idea. But instead of giving up, I realized what I want.
+skeptical about my idea. But instead of giving up, that brought me closer to what I really wanted.
 Extraordinary. Surprising. Anything but boring.
 
 ## Concept 2
