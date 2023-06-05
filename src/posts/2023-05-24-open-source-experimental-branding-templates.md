@@ -57,7 +57,7 @@ captivating cloud illustrations, focusing on using soft and warm color tones whi
 balance with Circular Std font which is a wonderful quality font with strong
 geometric types.
 
-Based on the overall impression I decided to use some professional Chinese
+Based on the overall impression I was getting from the design, I decided to use some professional Chinese
 street photography which was super hard to find, but after hours of searching
 stock photography, I found what I was looking for. After this it was obvious to
 try some traditional Chinese typography (what I never did before), it was very
