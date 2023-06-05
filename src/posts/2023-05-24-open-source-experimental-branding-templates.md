@@ -114,5 +114,5 @@ templates without any rules or requirements and it has surely motivated me to
 suggest braver and more outstanding elements in real-life projects as well. 
 I
 hope these templates will be just as useful and fun to work with - or
-implement further - for the designer community, as it was for me. I’d gladly
+implement further - for the designer community, as it was for me to create them. 
 offer these as open-source projects.
