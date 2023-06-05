@@ -1,6 +1,6 @@
 ---
 title: "WeAreDevelopers World Congress"
-image: "/assets/images/calendar/2023-05-25-devdays-europe/DevDays-banner.png"
+image: "/assets/images/calendar/2023-07-27-wearedevelopers/WeAreDevelopers-World-Congress.png"
 location: "Berlin"
 url: https://www.wearedevelopers.com/world-congress/
 kind: conference
