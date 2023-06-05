@@ -21,7 +21,7 @@ imageAlt:
 ## The idea
 
 Among the fields I have experience in, Branding and UI/UX seemed the best choice for starting a new open-source project. 
-something with and the idea came quickly, I can be useful for the designer
+The idea came quickly: I decided to create Branding and UI/UX Templates for fellow designers. In the past months, I have dedicated one day of my work week, my "20% time", to the conception and realization of this project and I will be showcasing the results in this post.
 community using my 20% time for creating inspiration, and free to use Branding -
 Ui/Ux Template projects that can be also developed further.
 
