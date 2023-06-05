@@ -110,7 +110,7 @@ image.
 ## Conclusion
 
 It was very valuable for me to experience the freedom of creating Branding
-templates’ without any rules or requirements and it’s strongly motivating to
+templates without any rules or requirements and it has surely motivated me to
 suggest braver and more outstanding elements in real-life projects as well. I
 hope these templates will be just as much useful and fun to work with - or
 implement further - for the designer community, as it was for me. I’d gladly
