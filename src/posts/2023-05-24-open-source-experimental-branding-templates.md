@@ -101,7 +101,7 @@ package can be changed to match specific contexts.
 Extremely condensed fonts were always something I wanted to try on the web but
 never had the chance to. Concept 4 seemed just the perfect time to experiment with them.
 After finding the ‘Rama Gothic C’ font which I considered the most well-designed
-in this category, started to test different concepts and how can I make the best
+in this category, I started to test different concepts.
 My idea quickly turned into a slideshow-style website combining colorful surfaces
 with typography playfulness and amazing monochrome photography with
 center-aligned overlay color circles, highlighting some important parts of the
