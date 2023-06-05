@@ -31,7 +31,7 @@ the results are interesting and motivating for others.
 
 At this point, I had a voice in my head - that most of the designers would hear
 I assume - "Let’s imagine a fictional client or project that I have to find a
-solution for". Instead of this, I thought what if turn the whole process upside
+solution for". Instead of this, I thought: "What if I turn the whole process upside
 down and create something based on my gut feelings, combine surprising elements
 together as a montage, that is functional meanwhile, and see what comes out of
 it? Why not?
