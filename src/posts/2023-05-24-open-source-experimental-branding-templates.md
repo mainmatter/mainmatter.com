@@ -99,7 +99,7 @@ package can be changed to match specific contexts.
 [Download Sketch file](https://drive.google.com/drive/folders/1Ns0HDHztA8Ki6v8kp8L9NoxP69fI7D-c)
 
 Extremely condensed fonts were always something I wanted to try on the web but
-never had a chance to do, so Concept 4 seemed just the perfect time for it.
+never had the chance to. Concept 4 seemed just the perfect time to experiment with them.
 After finding the ‘Rama Gothic C’ font which I considered the most well-designed
 in this category, started to test different concepts and how can I make the best
 My idea quickly turned into a slideshow-style website combining colorful surfaces
