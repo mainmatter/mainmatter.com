@@ -75,7 +75,8 @@ other market with some strong connection to China.
 [Download Sketch file](https://drive.google.com/drive/folders/1Ns0HDHztA8Ki6v8kp8L9NoxP69fI7D-c)
 
 Berlin is a costant inspiration for creative people. Even a poster on the street
-can be a good start of something great, this is how Concept 2 was born. I
+can turn into something great: this is how Concept 2 was born. 
+I
 decided to play around with brutal geometric shapes and patterns, with strong
 but not too saturated colors.
 
