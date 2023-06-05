@@ -100,7 +100,7 @@ Extremely condensed fonts were always something I wanted to try on the web but
 never had a chance to do, so Concept 4 seemed just the perfect time for it.
 After finding the ‘Rama Gothic C’ font which I considered the most well-designed
 in this category, started to test different concepts and how can I make the best
-out of it. It turned out a slideshow-style website combines colorful surfaces
+My idea quickly turned into a slideshow-style website combining colorful surfaces
 with typography playfulness and amazing monochrome photography with
 center-aligned overlay color circles, highlighting some important parts of the
 image. I will be curious to try further different concepts with the ‘Rama Gothic
