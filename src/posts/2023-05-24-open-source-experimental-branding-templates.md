@@ -27,7 +27,7 @@ Ui/Ux Template projects that can be also developed further.
 
 ## The journey & experience
 
-After getting used to rules and requirements everywhere at first it was kind of
+After getting used to rules and requirements, at first it felt kind of
 strange to have all the freedom of the world - I can do anything I want until
 the results are interesting and motivating for others.
 
