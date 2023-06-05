@@ -109,7 +109,7 @@ image.
 
 ## Conclusion
 
-It was very useful for me to experience the freedom of the creation of ‘Branding
+It was very valuable for me to experience the freedom of creating Branding
 templates’ without any rules or requirements and it’s strongly motivating to
 suggest braver and more outstanding elements in real-life projects as well. I
 hope these templates will be just as much useful and fun to work with - or
