@@ -53,7 +53,7 @@ I don’t think I would ever suggest using a similar font to a client in a real-
 situation, so this project was the perfect opportunity to experiment with it.
 
 Here things became interesting: I started to combine the font with
-beautiful cloud illustrations, and soft and warm color tones and kept the
+captivating cloud illustrations, focusing on using soft and warm color tones while maintaining the
 balance with Circular Std font which is a wonderful quality font with strong
 geometric types.
 
