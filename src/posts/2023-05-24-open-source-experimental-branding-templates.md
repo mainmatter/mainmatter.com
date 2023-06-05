@@ -60,7 +60,7 @@ geometric types.
 Based on the overall impression I was getting from the design, I decided to use some professional Chinese
 street photography which was super hard to find, but after hours of searching
 These naturally led me into
-try some traditional Chinese typography (what I never did before), it was very
+trying some traditional Chinese typography (which I never did before). It was very
 satisfying and mega fun. I'm quite happy with the overall result, can be ideal
 for a fashion brand with a young target group for the Chinese market, or any
 other market with some strong connection to China.
