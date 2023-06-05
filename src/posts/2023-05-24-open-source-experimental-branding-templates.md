@@ -81,7 +81,7 @@ decided to play around with brutal geometric shapes and patterns, with strong
 but not too saturated colors.
 
 ​The Larken font immediately seemed a good combination here, I remembered for if
-from the past, it is a very special bohemian, font between modern and classical,
+from the past work: it is a very special bohemian font, between modern and classic,
 elegant and crazy. Fits just perfectly. The brutal geometric shapes required
 some smaller details for balance, I found a package with interesting bug
 illustrations which I modified to make all the bugs symmetrical to fit better in
