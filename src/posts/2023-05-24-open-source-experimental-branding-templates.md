@@ -20,7 +20,7 @@ imageAlt:
 
 ## The idea
 
-Among my expertise Branding and Ui/Ux seemed the best direction to start
+Among the fields I have experience in, Branding and UI/UX seemed the best choice for starting a new open-source project. 
 something with and the idea came quickly, I can be useful for the designer
 community using my 20% time for creating inspiration, and free to use Branding -
 Ui/Ux Template projects that can be also developed further.
