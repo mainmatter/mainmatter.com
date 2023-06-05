@@ -48,7 +48,7 @@ Extraordinary. Surprising. Anything but boring.
 
 I was searching among Google fonts when I found the most ridiculous but
 strange but well-designed font I've ever seen called "Nabla". I knew I have to
-start something with this, let's see if it is even usable for anything or if it
+start something with it.
 is only a joke. I don’t think I've ever would suggest this to a client in a real
 situation, so here is the time to find out if it is good for something. This was
 the point when things became interesting. I started to combine the font with
