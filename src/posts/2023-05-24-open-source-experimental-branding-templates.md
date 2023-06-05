@@ -84,7 +84,7 @@ but not too saturated colors.
 from the past work: it is a very special bohemian font, between modern and classic,
 elegant and crazy. 
 The brutal geometric shapes required
-some smaller details for balance, I found a package with interesting bug
+some smaller details for balance so I found a package with some interesting bugs
 illustrations which I modified to make them symmetrical and complement
 the concept better. 
 
