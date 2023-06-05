@@ -80,7 +80,7 @@ I
 decided to play around with brutal geometric shapes and patterns, with strong
 but not too saturated colors.
 
-​The Larken font immediately seemed a good combination here, I remembered for if
+​The Larken font immediately seemed a good fit here. I remembered this font
 from the past work: it is a very special bohemian font, between modern and classic,
 elegant and crazy. 
 The brutal geometric shapes required
