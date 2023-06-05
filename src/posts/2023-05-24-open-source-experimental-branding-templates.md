@@ -51,7 +51,8 @@ well-designed font I've ever seen, called "Nabla". I knew I had to
 start something with it.
 I don’t think I would ever suggest using a similar font to a client in a real-world
 situation, so this project was the perfect opportunity to experiment with it.
-the point when things became interesting. I started to combine the font with
+
+Here things became interesting: I started to combine the font with
 beautiful cloud illustrations, and soft and warm color tones and kept the
 balance with Circular Std font which is a wonderful quality font with strong
 geometric types.
