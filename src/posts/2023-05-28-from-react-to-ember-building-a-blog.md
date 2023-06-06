@@ -32,7 +32,7 @@ world progressed, I knew it was time to build my own website.
 
 However, the amount of different tools for creating a website and the fact that
 I never have done one on my own was overwhelming me. I shared these dramas with
-my working in my working colleague, Chris. From that day forward, we began
+my working colleague, Chris. From that day forward, we began
 scheduling weekly pair programming sessions. Chris became my accountability
 partner and mentor, bringing immense value to my journey. 💜
 
@@ -51,7 +51,7 @@ rendering efficently my photos was my big issue._
 ## From React to Ember
 
 When I joined the company, I initially worked with React, and I was the only one
-who hadn't experienced working with Ember. This sparked my curiosity to know at
+who didn't have experience working with Ember. This sparked my curiosity to know at
 least what it looked like.
 
 Chris has been working with this framework for 10 years, starting those pair
@@ -183,22 +183,20 @@ not reusing it, so I didn’t feel the need to make it more customizable._
 - Time to dive into _dropdown.js_ file associated to my component:
   - Pretty much all my components have these 3 imports in their javascript
     files:
-    - **Component** is a class from the Glimmer library (DOM rendering engine
+    - `Component` is a class from the Glimmer library (DOM rendering engine
       made by the ember team) that allows me to define the behavior of my
-      component and its UI logic. In React, Component is a base class that the
-      developer can extend to create their own reusable components.
-    - `{action}` is a method coming from @ember/object module. It is Ember's own
-      object model, and it allows me to define an event handler in this case the
-      ?`dropdown()` function that gets trigger when the user clicks on the
-      button. There is no equivalent module in React, because objects are
-      normally plain js objects.
+      component and its UI logic. In the latest versions of React, functional components were introduced, meaning that they can be defined using regular JavaScript functions - this way, there is no need to extend a class from a Component base class.
+    - `{action}` is a method coming from the `@ember/object` module. It is Ember's own
+      object model, it allows me to define an event handler, in this case, the
+      `dropdown()` function that gets triggered when the user clicks on the
+      button. In React, we can use regular functions as event handlers directly.
     - And the last import {% raw %}`{tracked}`{% endraw %} from
-      @glimmer/tracking. This is a module provided by glimmer framework that
+      `@glimmer/tracking`. This is a module provided by glimmer framework that
       tells my code to keep an eye on a variable, in my case, the variable
       "open". This way, my app knows that when the value of this property
       changes, changes in the UI will be triggered. In React, we typically
       achieve this functionality using the built-in state management and the
-      useState hook. In my website this translates to - whenever a user clicks
+     `useState` hook. In my website this translates to - whenever a user clicks
       on the button, the value of the tracked variable changes, which controls
       the visibility of the dropdown's children and applies specific CSS
       classes.
@@ -227,7 +225,7 @@ not reusing it, so I didn’t feel the need to make it more customizable._
 
    _'How can I extract what I write in my markdown files into my HTML
    templates?'_ Another plugin enters the room: welcome to
-   [**Broccoli-Static-Site-Json.**](**https://www.npmjs.com/package/broccoli-static-site-json**)
+   [**Broccoli-Static-Site-Json.**](https://www.npmjs.com/package/broccoli-static-site-json)
    👋🏼 It generates a JSON API of the content of my markdowns. Let me guide you
    through the process:
 
@@ -347,7 +345,7 @@ I got myself a domain at [namecheap](https://www.namecheap.com/) and I used
 I faced some challenges with the deployment:
 
 1. Image fingerprinting The photos were not loading on the deployed website.
-   Why? The browser was adding a hash to my photo sources, e.g - from
+   Why? Ember was adding a hash to my photo sources, e.g - from
    ‘work-in-cv.jpg’ it would become ‘work-in-cv-h4323524hgs.jpg’. In my HTML the
    photo source would still be the one without the hash, but that path would not
    exist anymore. How did I fix it? I specified on ember-cli-build what type of
@@ -367,15 +365,15 @@ module.exports = function (defaults) {
 
 2. Routes were not found
 
-Ember is a SPA (Single Page Application), meaning that the browser just
-recognizes the index page and only knows how to go to the other pages from
-there, but if I would write down a specific URL, it won't know how to handle it.
+Ember is a SPA (Single Page Application)- it loads a single HTML page and then dynamically updates its content as the user interacts with the application without requiring full page reloads from the server each time. Therefore SPA websites provide a smoother user experience.
 
-Two ways to fix it:
+The downside of this approach is that if we directly request to the web server a specific URL, e.g., /blog/post, the server won't find a file at the specified path and responds with a 404. This happens because the server is only aware of the index page and serves this page for all URLs within the application. It is Ember's JavaScript code that takes care of rendering the appropriate content based on the requested route.
+
+To handle direct URLs requested to the web server, there are two approaches:
 
 1. Creating HTML files in the paths of the routes.
-2. If we want to keep this a SPA - we tell Netlify to give us the index.html
-   when we get a 404 error, and ember decides what page we will render.
+2. We tell Netlify to give us the index.html
+   when we get a 404 error, and Ember decides what page we will render.
 
 I chose the first solution - it is better for content websites, and we want SEO
 (Search Engine Optimization).
