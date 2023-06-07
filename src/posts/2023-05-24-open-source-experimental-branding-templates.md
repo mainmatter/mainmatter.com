@@ -33,7 +33,7 @@ At this point, I had a voice in my head - that most of the designers would hear
 I assume - "Let’s imagine a fictional client or project that I have to find a
 solution for". Instead of this, I thought: "What if I turn the whole process upside
 down and create something based on my gut feelings, combining surprise elements
-together as a montage, that is functional meanwhile, and see what comes out of
+together and see what comes out? "
 
 The first concept quickly turned boring and I started feeling a bit
 skeptical about my idea. But instead of giving up, that brought me closer to what I really wanted.
