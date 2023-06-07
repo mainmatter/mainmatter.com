@@ -55,7 +55,7 @@ situation, so this project was the perfect opportunity to experiment with it.
 Here things became interesting: I started to combine the font with
 captivating cloud illustrations, focusing on using soft and warm color tones while maintaining the
 balance with the Circular Std font, which has a strong
-geometric types.
+geometric typeface.
 
 Based on the overall impression I was getting from the design, I decided to use some professional Chinese
 street photography. It was hard to find exactly what I was looking for, but after hours of searching through seas of stock photos, I finally came across the perfect pictures for this project.
