@@ -10,9 +10,9 @@ description:
 og:
   image: /assets/images/posts/2023-06-09-securing-the-ecosystems-investment-in-emberjs/og-image.jpg
 tagline: |
-  <p><a href="https://github.com/embroider-build/embroider" rel="external nofollow noopener noreferrer">Embroider</a> is Ember’s new and coming build system, or really a pre-build system that translates Ember code into spec-compliant modern JavaScript so that the actual build can be handed over to tools like Webpack or Rollup. It does not only allow the Ember project to drop its current, custom build system implementation and thus take a lot of maintenance work from the team’s shoulders. Shipping Embroider also unlocks many of the new things in the coming Polaris release (the framework team shared some details on that in the <a href="https://www.youtube.com/watch?v=nPZkvGeQK2k" rel="external nofollow noopener noreferrer">AMA at Ember Europe’s Q1 meetup in March</a>).</p>
+  <p><a href="https://github.com/embroider-build/embroider" rel="external nofollow noopener noreferrer">Embroider</a> is Ember’s new and coming build system, or really a pre-build system that translates Ember code into spec-compliant modern JavaScript so that the actual build can be handed over to tools like Webpack or Rollup. It does not only allow the Ember project to drop its current custom build system implementation, thus taking a lot of maintenance work from the team’s shoulders, but it also unlocks many of the new things in the coming Polaris release. The framework team shared some details on that in the <a href="https://www.youtube.com/watch?v=nPZkvGeQK2k" rel="external nofollow noopener noreferrer">AMA at Ember Europe’s Q1 meetup in March</a>.</p>
 
-  <p>However, Embroider has been in the making for more than 4 years and is still not done. It remaining unshipped and not adopted across the Ember ecosystem poses a substantial risk for the entire Ember community and with that all companies that have built on Ember. <strong>Mainmatter, together with a group of sponsors from the Ember ecosystem, is starting an initiative to ship Embroider to secure Ember’s future and with that the investments of all teams that have built on Ember</strong>.</p>
+  <p>However, Embroider has been in the making for more than 4 years and is still not done. With Embroider remaining unshipped and unadopted across the Ember ecosystem, a substantial risk arises for the entire Ember community and with that all companies that have built on Ember. <strong>Mainmatter, together with a group of sponsors from the ecosystem, is starting an initiative to ship Embroider, ensure Ember’s future, as well as secure the investments in Ember that teams and companies who build on it have made</strong>.</p>
 image: "/assets/images/posts/2023-06-09-securing-the-ecosystems-investment-in-emberjs/header-illustration.jpg"
 imageAlt: "The Ember logo on a gray backround picture"
 ---
@@ -21,23 +21,23 @@ imageAlt: "The Ember logo on a gray backround picture"
 
 At the time of this writing, only few apps and teams are using Embroider (and
 only a fraction of the ones that do, use the optimized mode which is really the
-one that matters). It’s not enabled by default in the blueprints for new apps
-(or addons) and many addons in the ecosystem still need to be migrated to
-support it.
+one that matters). Embroider is also not enabled by default in the blueprints
+for new apps (or addons) and many addons in the ecosystem still need to be
+migrated to support it.
 
 ### Risk of Fragmentation
 
 While some teams managed to get their applications running in Embroider safe
 mode, if only part of the ecosystem migrates to Embroider, **we’re at the risk
-of fragmenting the ecosystem and community.** The worst case scenario is we end
-up with 2 camps: Embroider and Non-Embroider. The longer we remain in this
-intermediate state of ongoing migration, the higher the likelihood is for that
-to happen.
+of fragmenting the ecosystem and community.** The worst case scenario would be
+ending up with 2 camps: Embroider and Non-Embroider. The longer we remain in
+this intermediate state of ongoing migration, the higher the likelihood is for
+that to happen.
 
 The imminent risk of a fragmented community is threatening to break one of
 Ember’s key promises – the fact that the community is aligned around a set of
-patterns and practices that just work (what has been referred to as “the safety
-of the herd”). In a fragmented ecosystem where addons, patterns, and
+patterns and practices that _"just work"_ (what has been referred to as _“the
+safety of the herd”_). In a fragmented ecosystem where addons, patterns, and
 architectures cannot easily be shared, cross-pollination and sharing of
 solutions we all benefit from in the ecosystem at the moment will become much
 harder and much less effective. We're back to being on our own instead of being
@@ -50,37 +50,38 @@ techniques like bundle splitting**. Many applications suffer from large bundles
 and their impact on runtime performance, yet there is no straight-forward way to
 decrease bundle sizes.
 
-The same is the case for build performance: build times in Ember can be long, in
-particular for large applications. Only with Embroider do we get access to
-modern build tooling like [Vite](https://vitejs.dev),
+The same applies to build performance: build times in Ember can be long, in
+particular for large applications. Only with Embroider we get access to modern
+build tooling like [Vite](https://vitejs.dev),
 [Turbopack](https://turbo.build/pack), etc. which offer **orders-of-magnitude
-faster builds than are currently possible**.
+faster builds than what's currently possible**.
 
 ## Keep Ember ~~weird~~ relevant
 
 The risk of fragmentation and the gap to competing technologies regarding bundle
-sizes and build times **poses a threat for Ember and all teams that have built
-on it**. Eventually, teams might decide to leave Ember, it might be hard to
-attract engineers to work on Ember projects, and the ecosystem might shrink
-overall which leads to less work going into the project and less progress being
-made. On the other hand, once Embroider ships, Ember will be in good shape for
-the future and make a significant leap forward.
+sizes and build times **represents a threat to Ember and all teams that have
+built on it**. Eventually, teams might decide to leave Ember, it might become
+hard(er) to attract engineers to work on Ember projects, and the ecosystem might
+shrink overall which leads to less work going into the project and less progress
+being made. On the other hand, once Embroider ships, Ember will be in good shape
+for the future and make a significant leap forward.
 
 ### The Initiative
 
 In late 2022, Mainmatter started to reach out to companies that have invested in
-Ember, with an idea: we wanted to put a team to work on Embroider full-time,
+Ember with an idea: we wanted to put a team to work on Embroider full-time,
 finish the package itself, make it the standard for new apps and addons, and get
 it adopted across the ecosystem. We believe that **a team working on Embroider
-as their main and only priority** would be able to have a huge impact on the
-project and get it over the finish line (as much as everyone in the Ember
-ecosystem appreciates Ed’s work and the work of
+as their main and only priority** would have a huge impact on the project and
+get it over the finish line. As much as everyone in the Ember ecosystem
+appreciates Ed’s work and the work of
 [other contributors](https://github.com/embroider-build/embroider/graphs/contributors)
-without which we wouldn’t even be in the position to think about how we take the
-last steps). Mainmatter as a consultancy is in a unique position to do this kind
-of work since focusing on technical topics is at the core of what we do – we
-don’t need to pull people out of product work, negotiate that with product
-managers, get approval from project stakeholders, etc.
+(without which we wouldn’t even be in the position to think about how we take
+the last steps), a full-time team will be able to make progress at an increased
+pace. Mainmatter as a consultancy is in a unique position to do this kind of
+work since focusing on technical topics is at the core of what we do – we don’t
+need to pull people out of product work, negotiate that with product managers,
+get approval from project stakeholders, etc.
 
 We were able to get a number of companies on board as sponsors of the initiative
 quickly. All of those companies understand that investing in this initiative
@@ -89,8 +90,8 @@ building their applications on top of it. They understand they cannot expect the
 technical foundations of their applications to evolve and be maintained somehow
 automatically at all times but they need to be an active contributor to the
 evolution and maintenance that's essential for their businesses. **By sharing
-the investment collectively among a group of sponsors via this initiative, it
-becomes easier for everyone.**
+the investment collectively among a group of sponsors via this initiative, each
+party only gives a little but will get the full value in the end.**
 
 We’re thankful to [Ticketsolve](https://www.ticketsolve.com/),
 [Intercom](https://www.intercom.com/),
