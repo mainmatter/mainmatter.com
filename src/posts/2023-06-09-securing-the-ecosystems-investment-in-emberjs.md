@@ -134,14 +134,14 @@ Specifically, that is:
   a V2 addon
 - preparing an RFC for a V2 application format
 
-### Making Embroider maintainable
+### 2. Making Embroider maintainable
 
 The bus factor for the Embroider project is essentially 1 at the moment. That
 needs to be changed so a larger group of people in the community can take over
 ownership of Embroider and be responsible for maintaining it which requires
 better documentation as well as actively involving and teaching more people.
 
-### Shifting the Ecosystem
+### 3. Shifting the Ecosystem
 
 We’ll work on attracting contributions from the community to ensure the most
 important addons in the ecosystem are compatible with Embroider. We’ll also work
@@ -157,7 +157,7 @@ drive-by contributors to have a real impact
 - Our team will invest some of their open source time (20% of every engineer’s
   time) on working through the dashboard.
 
-### Making Embroider Mainstream
+### 4. Making Embroider Mainstream
 
 Eventually, we want to make Embroider mainstream across the community to align
 the ecosystem and avoid fragmentation. Specifically, that means making the V2
@@ -165,7 +165,7 @@ addon structure the default for new addons as well as making Embroider the
 default build system for new apps. Both tasks will likely require new RFCs and
 consultation across the core teams.
 
-### Next Steps
+### 5. Next Steps
 
 As a last step, we’ll build an initial version of an Ember plugin for Vite.
 
