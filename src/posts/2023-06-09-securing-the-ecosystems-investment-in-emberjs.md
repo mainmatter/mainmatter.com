@@ -13,7 +13,7 @@ tagline: |
   <p><a href="https://github.com/embroider-build/embroider" rel="external nofollow noopener noreferrer">Embroider</a> is Ember’s new and coming build system, or really a pre-build system that translates Ember code into spec-compliant modern JavaScript so that the actual build can be handed over to tools like Webpack or Rollup. It does not only allow the Ember project to drop its current, custom build system implementation and thus take a lot of maintenance work from the team’s shoulders. Shipping Embroider also unlocks many of the new things in the coming Polaris release (the framework team shared some details on that in the <a href="https://www.youtube.com/watch?v=nPZkvGeQK2k" rel="external nofollow noopener noreferrer">AMA at Ember Europe’s Q1 meetup in March</a>).</p>
 
   <p>However, Embroider has been in the making for more than 4 years and is still not done. It remaining unshipped and not adopted across the Ember ecosystem poses a substantial risk for the entire Ember community and with that all companies that have built on Ember. <strong>Mainmatter, together with a group of sponsors from the Ember ecosystem, is starting an initiative to ship Embroider to secure Ember’s future and with that the investments of all teams that have built on Ember</strong>.</p>
-image: "/assets/images/posts/2023-02-28-ember-template-assert/header-illustration.jpg"
+image: "/assets/images/posts/2023-06-09-securing-the-ecosystems-investment-in-emberjs/header-illustration.jpg"
 imageAlt: "The Ember logo on a gray backround picture"
 ---
 
