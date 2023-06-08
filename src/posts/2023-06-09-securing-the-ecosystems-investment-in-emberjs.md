@@ -8,7 +8,7 @@ description:
   Embroider and secure Ember's future Mainmatter is working on with sponsors
   like TicketSolve and Intercom."
 og:
-  image: /assets/images/posts/2023-02-28-ember-template-assert/og-image.jpg
+  image: /assets/images/posts/2023-06-09-securing-the-ecosystems-investment-in-emberjs/og-image.jpg
 tagline: |
   <p><a href="https://github.com/embroider-build/embroider" rel="external nofollow noopener noreferrer">Embroider</a> is Ember’s new and coming build system, or really a pre-build system that translates Ember code into spec-compliant modern JavaScript so that the actual build can be handed over to tools like Webpack or Rollup. It does not only allow the Ember project to drop its current, custom build system implementation and thus take a lot of maintenance work from the team’s shoulders. Shipping Embroider also unlocks many of the new things in the coming Polaris release (the framework team shared some details on that in the <a href="https://www.youtube.com/watch?v=nPZkvGeQK2k" rel="external nofollow noopener noreferrer">AMA at Ember Europe’s Q1 meetup in March</a>).</p>
 
