@@ -102,7 +102,7 @@ We’re thankful to [Ticketsolve](https://www.ticketsolve.com/),
 [redpencil](https://redpencil.io/), and [Productive](https://productive.io/) for
 sponsoring and supporting the initiative!
 
-TODO: logos
+![a collage of the logos and names of the sponsors: Ticketsolve, Intercom, OTA Insight, HashiCorp, XBE, Isaac Lee, Balint Erdi, HotDoc, solute, Triptyk, redpencil, Productive](/assets/images/posts/2023-06-09-securing-the-ecosystems-investment-in-emberjs/sponsors.png)
 
 ## The Roadmap
 
