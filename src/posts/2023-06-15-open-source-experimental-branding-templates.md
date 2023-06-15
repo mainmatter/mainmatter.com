@@ -14,8 +14,7 @@ tagline: |
 
 image: "/assets/images/posts/2023-06-15-open-source-experimental-branding-templates/header-illustration.jpg"
 imageAlt:
-  "On this cover image, there's a large white geometrical shape of a bug on a
-  purple/salmon color geometrical abstract background"
+  "a large white geometrical shape of a bug on a purple/salmon color geometrical abstract background"
 ---
 
 ## The idea
