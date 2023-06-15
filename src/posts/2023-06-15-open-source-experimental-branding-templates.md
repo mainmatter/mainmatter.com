@@ -4,9 +4,9 @@ authorHandle: davidhajba
 tags: [open-source, branding]
 bio: David Hajba
 description:
-  "David Hajba, senior visual/product designer at Mainmatter created
-  open source experimental branding templates. In this blog post, he talks about
-  the journey & experience"
+  "David Hajba, senior visual/product designer at Mainmatter created open source
+  experimental branding templates. In this blog post, he talks about the journey
+  & experience"
 og:
   image: /assets/images/posts/2023-06-15-open-source-experimental-branding-templates/og-image.jpg
 tagline: |
@@ -14,7 +14,8 @@ tagline: |
 
 image: "/assets/images/posts/2023-06-15-open-source-experimental-branding-templates/header-illustration.jpg"
 imageAlt:
-  "a large white geometrical shape of a bug on a purple/salmon color geometrical abstract background"
+  "a large white geometrical shape of a bug on a purple/salmon color geometrical
+  abstract background"
 ---
 
 ## The idea
