@@ -8,11 +8,11 @@ description:
   Open-source experimental branding templates. In this blog post, he talks about
   the journey & experience"
 og:
-  image: /assets/images/posts/2023-02-28-ember-template-assert/og-image.jpg
+  image: /assets/images/posts/2023-06-15-open-source-experimental-branding-templates/og-image.jpg
 tagline: |
   <p>How can a visual designer work and collaborate on open-source projects? As an applied art service provider/ex-freelancer, my projects always started with a client and project requirements. The number of projects I did for myself just for fun was significantly shrinking, especially since becoming a first-time father. At Mainmatter everyone spends 20% of their time as an active member of the open-source community, so I had to find a way.</p>
 
-image: "/assets/images/posts/2023-05-24-open-source-experimental-branding-templates/header-illustration.jpg"
+image: "/assets/images/posts/2023-06-15-open-source-experimental-branding-templates/header-illustration.jpg"
 imageAlt:
   "On this cover image, there's a large white geometrical shape of a bug on a
   purple/salmon color geometrical abstract background"
@@ -44,7 +44,7 @@ wanted. Extraordinary. Surprising. Anything but boring.
 
 ## Concept 2
 
-![Hero Concept 2 Screenshot](/assets/images/posts/2023-05-24-open-source-experimental-branding-templates/concept_2.jpg)
+![Hero Concept 2 Screenshot](/assets/images/posts/2023-06-15-open-source-experimental-branding-templates/concept_2.jpg)
 
 [Preview](https://scene.zeplin.io/project/6455081b1dc67b3c0c397b0e/screen/646f712c6f352921c02462e6)
 [Download Sketch file](https://drive.google.com/drive/folders/1Ns0HDHztA8Ki6v8kp8L9NoxP69fI7D-c)
@@ -73,7 +73,7 @@ market with a strong connection to China.
 
 ## Concept 3
 
-![Hero Concept 3 Screenshot](/assets/images/posts/2023-05-24-open-source-experimental-branding-templates/concept_3.jpg)
+![Hero Concept 3 Screenshot](/assets/images/posts/2023-06-15-open-source-experimental-branding-templates/concept_3.jpg)
 
 [Preview](https://scene.zeplin.io/project/6455081b1dc67b3c0c397b0e/screen/64709e41b998e22206a0ad16)
 [Download Sketch file](https://drive.google.com/drive/folders/1Ns0HDHztA8Ki6v8kp8L9NoxP69fI7D-c)
@@ -94,7 +94,7 @@ be changed to match specific contexts.
 
 ## Concept 4
 
-![Hero Concept 4 Screenshot](/assets/images/posts/2023-05-24-open-source-experimental-branding-templates/concept_4.jpg)
+![Hero Concept 4 Screenshot](/assets/images/posts/2023-06-15-open-source-experimental-branding-templates/concept_4.jpg)
 
 [Preview](https://scene.zeplin.io/project/6455081b1dc67b3c0c397b0e/screen/64709e5e678ed3223e6f312a)
 [Download Sketch file](https://drive.google.com/drive/folders/1Ns0HDHztA8Ki6v8kp8L9NoxP69fI7D-c)
