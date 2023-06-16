@@ -32,9 +32,9 @@ world progressed, I knew it was time to build my own website.
 
 However, the amount of different tools for creating a website and the fact that
 I never have done one on my own was overwhelming me. I shared these dramas with
-my working colleague, Chris. From that day forward, we began
-scheduling weekly pair programming sessions. Chris became my accountability
-partner and mentor, bringing immense value to my journey. 💜
+my working colleague, Chris. From that day forward, we began scheduling weekly
+pair programming sessions. Chris became my accountability partner and mentor,
+bringing immense value to my journey. 💜
 
 Working at a consultancy company like Mainmatter means that you don't always
 collaborate with everyone on the team. Chris and I never had the opportunity to
@@ -46,13 +46,13 @@ valuable for me.
 ![Pair programming session with Chris running lighthouse to check my website performace. ](/assets/images/posts/2023-05-28-from-react-to-ember-building-a-blog/calls-with-chris.png)_Chris
 and I in one of our pair programming sessions. This one was about improving the
 performance of my website, so we were running lighthouse. Spoiler alert - not
-rendering efficently my photos was my big issue._
+rendering efficiently my photos was my big issue._
 
 ## From React to Ember
 
 When I joined the company, I initially worked with React, and I was the only one
-who didn't have experience working with Ember. This sparked my curiosity to know at
-least what it looked like.
+who didn't have experience working with Ember. This sparked my curiosity to know
+at least what it looked like.
 
 Chris has been working with this framework for 10 years, starting those pair
 programming sessions with him seemed the good moment to start learning Ember.
@@ -66,7 +66,10 @@ Sketch on other projects, but I still find Figma easier to use and more
 intuitive. I collected some inspiration and colors I liked. Then I started with
 the landing page, and I kept going from there.
 
-Florian from our team (our design ninja) gave me a tip to use actual content on my mockups instead of using the classic 'Lorem Ipsum' placeholders - you better perceive the distance between the elements and how the font feels with your text.
+Florian from our team (our design ninja) gave me a tip to use actual content on
+my mockups instead of using the classic 'Lorem Ipsum' placeholders - you better
+perceive the distance between the elements and how the font feels with your
+text.
 
 ![Figma document of the mobile and desktop designs for my website. ](/assets/images/posts/2023-05-28-from-react-to-ember-building-a-blog/figma-mockups.png)_Figma
 document of the mobile and desktop designs for my website._
@@ -165,12 +168,11 @@ not reusing it, so I didn’t feel the need to make it more customizable._
 - My dropdown component has a button that renders a
   {% raw %}`{{@title}}`{% endraw %}. In React, this would be the `props.title`.
 - Then I have a `<div>` that will receive {% raw %}`{{yield}}`{% endraw %}. This
-  was a new keyword for me as well. This was a new keyword for me as well. The
-  yield acts like a placeholder, and if I use `<Dropdown>` in another component,
-  which is the case in the _header.bhs_, what I pass within the open and closing
-  tags of my component will be rendered in the place
-  of{% raw %}`{{yield}}`{% endraw %}. The equivalent of this in React would be
-  the “children” property.
+  was a new keyword for me as well. The yield acts like a placeholder, and if I
+  use `<Dropdown>` in another component, which is the case in the _header.bhs_,
+  what I pass within the open and closing tags of my component will be rendered
+  in the place of{% raw %}`{{yield}}`{% endraw %}. The equivalent of this in
+  React would be the “children” property.
 - In here
   {% raw %}`class='dropdown-button {{if this.open "focus"}}'`{% endraw %}, I’m
   dynamically changing the button class name so that when the open variable is
@@ -183,20 +185,30 @@ not reusing it, so I didn’t feel the need to make it more customizable._
 - Time to dive into _dropdown.js_ file associated to my component:
   - Pretty much all my components have these 3 imports in their javascript
     files:
-    - `Component` is a class from the Glimmer library (DOM rendering engine
-      made by the ember team) that allows me to define the behavior of my
-      component and its UI logic. In the latest versions of React, functional components were introduced, meaning that they can be defined using regular JavaScript functions - this way, there is no need to extend a class from a Component base class.
-    - `{action}` is a method coming from the `@ember/object` module. It is Ember's own
-      object model, it allows me to define an event handler, in this case, the
-      `dropdown()` function that gets triggered when the user clicks on the
-      button. In React, we can use regular functions as event handlers directly.
+    - `Component` is a class from the Glimmer library (DOM rendering engine made
+      by the ember team) that allows me to define the behavior of my component
+      and its UI logic. In the latest versions of React, functional components
+      were introduced, meaning that they can be defined using regular JavaScript
+      functions - this way, there is no need to extend a class from a Component
+      base class.
+    - `{action}` is a decorator coming from the `@ember/object` module. It is
+      Ember's own object model, it allows me to define an event handler, in this
+      case, the `dropdown()` function that gets triggered when the user clicks
+      on the button. `@action` here works similarly to `bind()` in JavaScript -
+      when I use `this.open` inside of my Dropdown class at the dropdown.js
+      file, I need to find a way to make sure `this` refers to the same context
+      as the one used in the template (Dropdown.hbs file), and `@action` does
+      this for us. This way, when calling the `dropdown()` function from the
+      template the right context (`this`) gets passed to it. files React doesn't
+      have decorators in their official API, we typically use regular functions
+      as event handlers directly.
     - And the last import {% raw %}`{tracked}`{% endraw %} from
       `@glimmer/tracking`. This is a module provided by glimmer framework that
       tells my code to keep an eye on a variable, in my case, the variable
       "open". This way, my app knows that when the value of this property
       changes, changes in the UI will be triggered. In React, we typically
       achieve this functionality using the built-in state management and the
-     `useState` hook. In my website this translates to - whenever a user clicks
+      `useState` hook. In my website this translates to - whenever a user clicks
       on the button, the value of the tracked variable changes, which controls
       the visibility of the dropdown's children and applies specific CSS
       classes.
@@ -217,9 +229,9 @@ not reusing it, so I didn’t feel the need to make it more customizable._
    Chris proposed an approach - ‘Let’s create posts using markdown files.’ He
    said we could use this tool - `ember-cli-showdown`.
 
-   This addon converts my markdown into readable HTLM objects, so I don’t need
-   to have that tedious & time-consuming job of writing an HTML file every time
-   I want to publish a new post. It was a deal. 🤝
+   This addon converts my markdown into HTLM, so I don’t need to have that
+   tedious & time-consuming job of writing an HTML file every time I want to
+   publish a new post. It was a deal. 🤝
 
 2. **Combining my posts information with my tool**
 
@@ -246,11 +258,12 @@ not reusing it, so I didn’t feel the need to make it more customizable._
    }
    ```
 
-   Now that I have them defined, I need to tell broccoli addon what attributes
-   to use when building the JSON API.
+   Now that I have them defined, I need to tell the broccoli addon what
+   attributes to use when building the JSON API.
 
-   Let’s add that in `/lib/content-generator/index.js` (a file that the addon
-   adds it to your project):
+   Let’s add that in `/lib/content-generator/index.js` (a file coming from the
+   in-repo Ember addon that you can use to add broccoli-static-site-json to your
+   project):
 
    ```js
    //lib/content-generator/index.js
@@ -268,12 +281,13 @@ not reusing it, so I didn’t feel the need to make it more customizable._
    The 'type' parameter defines the name of the JSON:API document. The name you
    assign to the 'type' parameter gets pluralized, so for the next attribute, it
    should be 'data/posts'. Next, I define the attributes I want to include.
-   Additionally, I utilize the last configuration variable, which allows me to
-   query all of my content at once, using 'findAll'. This is particularly useful
-   when I need to retrieve all posts. Now, let's move on to the fun part 🙌🏼 -
-   creating a template that will structure the information from the markdown
-   files. We'll then utilize our newly created API to populate the template. To
-   exemplify this, I'm going to show my `post-preview` template:
+   Additionally, I utilize the last configuration variable, `collate`, which
+   allows me to query all of my content at once, using 'findAll'. This is
+   particularly useful when I need to retrieve all posts. Now, let's move on to
+   the fun part 🙌🏼 - creating a template that will structure the information
+   from the markdown files. We'll then utilize our newly created API to populate
+   the template. To exemplify this, I'm going to show my `post-preview`
+   template:
 
 ### What they see
 
@@ -345,11 +359,11 @@ I got myself a domain at [namecheap](https://www.namecheap.com/) and I used
 I faced some challenges with the deployment:
 
 1. Image fingerprinting The photos were not loading on the deployed website.
-   Why? Ember was adding a hash to my photo sources, e.g - from
-   ‘work-in-cv.jpg’ it would become ‘work-in-cv-h4323524hgs.jpg’. In my HTML the
-   photo source would still be the one without the hash, but that path would not
-   exist anymore. How did I fix it? I specified on ember-cli-build what type of
-   files I wanted to get fingerprinted:
+   Why? Ember was adding a hash to my photo sources, e.g - from ‘work-in-cv.jpg’
+   it would become ‘work-in-cv-h4323524hgs.jpg’. In my HTML the photo source
+   would still be the one without the hash, but that path would not exist
+   anymore. How did I fix it? I specified on ember-cli-build what type of files
+   I wanted to get fingerprinted:
 
 ```js
 //ember-cli-build.js
@@ -365,15 +379,23 @@ module.exports = function (defaults) {
 
 2. Routes were not found
 
-Ember is a SPA (Single Page Application)- it loads a single HTML page and then dynamically updates its content as the user interacts with the application without requiring full page reloads from the server each time. Therefore SPA websites provide a smoother user experience.
+Ember is a SPA (Single Page Application)- it loads a single HTML page and then
+dynamically updates its content as the user interacts with the application
+without requiring full page reloads from the server each time. Therefore SPA
+websites provide a smoother user experience.
 
-The downside of this approach is that if we directly request to the web server a specific URL, e.g., /blog/post, the server won't find a file at the specified path and responds with a 404. This happens because the server is only aware of the index page and serves this page for all URLs within the application. It is Ember's JavaScript code that takes care of rendering the appropriate content based on the requested route.
+The downside of this approach is that if we directly request to the web server a
+specific URL, e.g., /blog/post, the server won't find a file at the specified
+path and responds with a 404. This happens because the server is only aware of
+the index page and serves this page for all URLs within the application. It is
+Ember's JavaScript code that takes care of rendering the appropriate content
+based on the requested route.
 
 To handle direct URLs requested to the web server, there are two approaches:
 
 1. Creating HTML files in the paths of the routes.
-2. We tell Netlify to give us the index.html
-   when we get a 404 error, and Ember decides what page we will render.
+2. We tell Netlify to give us the index.html when we get a 404 error, and Ember
+   decides what page we will render.
 
 I chose the first solution - it is better for content websites, and we want SEO
 (Search Engine Optimization).
@@ -445,11 +467,11 @@ preference matter.
 Ember has a more traditional approach to object-oriented programming. It
 resembled what I learned at university way more.
 
-Regarding the type of project I built - a personal website/blog. I might be
-falling into the group of people who create a blog and never post on it. 🙈 I
-think I put a lot of pressure when I start working on a post, and I made them
-very long - this adds friction to posting regularly. Also, when I designed how
-to present the information, I just kept long posts in mind.
+Regarding the type of project I built - a personal website/blog. I might be If
+you want to check my internet corner you can access it think I put a lot of
+pressure when I start working on a post, and I made them very long - this adds
+friction to posting regularly. Also, when I designed how to present the
+information, I just kept long posts in mind.
 
 My pieces of advice are: to choose a publishing tool that is easy enough - the
 markdown files approach is working well for me; when sketching your website,
@@ -460,7 +482,7 @@ website where you can share your work and interests - you can end up meeting
 more people with the same interests as you and possibly cool work
 collaborations.
 
-If you want to check my internet corner you can access
+If you want to check my internet corner you can access it
 [here](https://inesoaresilva.com/), there you can find another blog post about
 my journey building the project. What are your thoughts about having a personal
 website? Feel free to reach out to me with feedback or to discuss about this
