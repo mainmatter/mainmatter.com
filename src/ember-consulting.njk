@@ -10,6 +10,7 @@ permalink: /ember-consulting/
 {% from "recent-posts.njk" import recentPosts %}
 {% from "cta-link.njk" import ctaLink %}
 {% from "color-hero.njk" import colorHero %}
+{% from "cta-link.njk" import ctaLink %}
 
 <section class="color-hero color-hero--red" data-background-color="red">
   <div class="color-hero__image-wrapper">
@@ -109,17 +110,18 @@ permalink: /ember-consulting/
   {% endfor %}
 </section>
 
-{% set 'content' = {
-  "title": "The Embroider Initiative",
-  "titleTag": "h1",
-  "text": "Mainmatter, together with a group of sponsors, is working on an initiative to ship Embroider and secure the ecosystem’s investment in Ember.js.",
-  "image": "/assets/images/ember/embroider-initiative-sponsor-logos.png",
-  "alt": "4 people standing around a table with some printed diagrams on it. 2 people shake hands, one claps their hands.",
-  "linkUrl": "/embroider-initiative/",
-  "linkText": "Join the Embroider initiative",
-  "loading": "eager"
-} %}
-{{ colorHero('center', 'large', 'purple', content) }}
+<section class="color-hero color-hero--purple" data-background-color="purple">
+  <div class="color-hero__image-wrapper">
+    {% image "/assets/images/ember/embroider-initiative-sponsor-logos.png", "4 people standing around a table with some printed diagrams on it. 2 people shake hands, one claps their hands.", '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
+  </div>
+  <div class="color-hero__container container container--lg color-hero__container--center">
+    <div class="color-hero__main">
+        <h1 class="color-hero__title color-hero__title--full">The Embroider Initiative</h1>
+        <div class="color-hero__text color-hero__text--large">Mainmatter, together with a group of sponsors, is working on an initiative to ship Embroider and secure the ecosystem’s investment in Ember.js.</div>
+        {{ ctaLink("/embroider-initiative/", "Join the Embroider initiative", 'color-hero__link') }}
+    </div>
+  </div>
+</section>
 
 <section class="color-hero color-hero--aqua" data-background-color="aqua">
   <div class="color-hero__image-wrapper">
