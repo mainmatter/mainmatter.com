@@ -23,13 +23,6 @@
   align-items: center;
   text-decoration: none;
 
-  &:hover,
-  &:focus {
-    .featured-services__link-text {
-      color: var(--color-purple);
-    }
-  }
-
   svg {
     transform: rotate(-90deg);
     height: 1.5rem;
@@ -39,8 +32,20 @@
   }
 }
 
+a.featured-services__link {
+  &:hover,
+  &:focus {
+    .featured-services__link-text {
+      color: var(--color-purple);
+    }
+  }
+}
+
 .featured-services__link-text {
   display: inline-flex;
+}
+
+a .featured-services__link-text {
   text-underline-offset: 0.25rem;
   text-decoration-line: underline;
   text-decoration-thickness: 0.0625rem;
