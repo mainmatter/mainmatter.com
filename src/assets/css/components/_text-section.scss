@@ -1,0 +1,13 @@
+.text-section {
+  padding: 7.25rem 0 3.75rem;
+}
+
+.text-section + .text-section {
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.text-section__text {
+  margin: 1.75rem 0 3.5rem;
+}
