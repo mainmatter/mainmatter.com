@@ -63,7 +63,8 @@
         "BlueCutOfficial/site-books",
         "candunaj/template-precompile-scope",
         "emberjs/core-notes",
-        "candunaj/ember-in-viewport"
+        "candunaj/ember-in-viewport",
+        "oscard0m/openapi"        
     ],
     "labels": [
         {
@@ -231,7 +232,9 @@
                 "DockYard/ember-in-viewport",
                 "DazzlingFugu/guidemaker-ember-locale-template",
                 "DazzlingFugu/ember-reading-time",
-                "BlueCutOfficial/ember-is-component"
+                "BlueCutOfficial/ember-is-component",
+                "ember-learn/cli-guides",
+                "ember-fastboot/ember-cli-head"
             ]
         },
         {
