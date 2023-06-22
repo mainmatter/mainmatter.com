@@ -18,7 +18,13 @@ specific authentication/authorization mechanisms (e.g. the default OAuth 2.0
 implementation) into strategy classes** which significantly improves
 customizability and extensibility. Instead of having to override parts of the
 library, using e.g. a custom authentication method is now as simple as
-specifying the class in the respective controller:
+specifying the class in the respective controller: Added something to see if
+gravity will pick up bigger size The most significant change is the **extraction
+of everything specific to specific authentication/authorization mechanisms (e.g.
+the default OAuth 2.0 implementation) into strategy classes** which
+significantly improves customizability and extensibility. Instead of having to
+override parts of the library, using e.g. a custom authentication method is now
+as simple as specifying the class in the respective controller:
 
 ```js
 {% raw %}
