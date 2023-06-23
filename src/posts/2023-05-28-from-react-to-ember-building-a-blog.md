@@ -1,24 +1,24 @@
 ---
-title: "From React To Ember: Building a Personal Website/Blog"
+title: "From React To Ember: Building a Personal Website"
 authorHandle: inesoaresilva
 tags: [ember, react]
 bio: "Inês Silva"
 description:
   "Inês Silva explains her experience moving from React to Ember when building
   her personal website/blog. She explains the process behind the major website
-  features, the challenges she faced and she how overcame them. At the same
+  features, the challenges she faced, and how she overcame them. At the same
   time, she compares the differences of the development process between Ember
   and React."
 og:
   image: /assets/images/posts/2023-02-28-ember-template-assert/og-image.jpg
 tagline: |
-  <p>Having a personal website/blog has been on my to-do list for quite some time, but I always found myself stuck when answering the question, 'How do I start?' With countless frameworks and different tech stacks to choose from, the options seemed overwhelming. I've been working in React since I joined the company, but most of my colleagues are experts on Ember, so I wanted to learn more about it. I decided to use this project for that.
-  I will share my journey, detailing the challenges I encountered and how I overcame them while comparing the development process between Ember and React.</p>
+  <p>Having a personal website/blog has been on my to-do list for quite some time, but I always found myself stuck when answering the question: "How do I start?". With countless frameworks and different tech stacks to choose from, the options seemed overwhelming. I've been working with React since I joined the company, but most of my colleagues are experts in Ember, so I wanted to learn more about it. I decided to use this project as an opportunity to do that.
+  I will share my journey, including the challenges I encountered and how I overcame them, and compare the development process between Ember and React.</p>
 ---
 
 ### You might want to read this if
 
-- You would like to create your website/blog (if you decide to use Ember.js
+- You would like to create your own website/blog (if you decide to use Ember.js
   maybe you can get ideas from here)
 - You already know React, and you are curious about Ember.js.
 
@@ -30,41 +30,42 @@ lost touch with that blog. Nonetheless, I still longed for a space on the
 internet where I could freely express my thoughts. As my career in the tech
 world progressed, I knew it was time to build my own website.
 
-However, the amount of different tools for creating a website and the fact that
-I never have done one on my own was overwhelming me. I shared these dramas with
-my working colleague, Chris. From that day forward, we began scheduling weekly
-pair programming sessions. Chris became my accountability partner and mentor,
+The amount of different tools for creating a website and the fact that I had
+never done one on my own before, felt overwhelming. I shared my issues with my
+working colleague, Chris. From that day forward, we began scheduling weekly pair
+programming sessions. Chris became my accountability partner and mentor,
 bringing immense value to my journey. 💜
 
 Working at a consultancy company like Mainmatter means that you don't always
 collaborate with everyone on the team. Chris and I never had the opportunity to
-work together on a client project. However, I believe it's fantastic to have the
-chance to collaborate with someone outside of your usual circle. As the least
-experienced member of the company, these sessions have proven to be incredibly
-valuable for me.
+work together on a client project. I really enjoyed having the chance to
+collaborate with someone outside of my usual circle. As a junior developer,
+these sessions have proven to be incredibly experienced member of the company,
+these sessions have proven to be incredibly valuable for me.
 
 ![Pair programming session with Chris running lighthouse to check my website performace. ](/assets/images/posts/2023-05-28-from-react-to-ember-building-a-blog/calls-with-chris.png)_Chris
 and I in one of our pair programming sessions. This one was about improving the
 performance of my website, so we were running lighthouse. Spoiler alert - not
-rendering efficiently my photos was my big issue._
+efficiently rendering my photos was my big issue._
 
 ## From React to Ember
 
 When I joined the company, I initially worked with React, and I was the only one
-who didn't have experience working with Ember. This sparked my curiosity to know
-at least what it looked like.
+who didn't have experience working with Ember. This sparked my curiosity to
+learn at least what it looked like.
 
-Chris has been working with this framework for 10 years, starting those pair
-programming sessions with him seemed the good moment to start learning Ember.
+Chris has been working with this framework for 10 years, so starting those pair
+programming sessions with him seemed like the perfect way to start learning
+Ember.
 
 ## Design Mockups
 
-To me, this was an important step to kick off the project. It helped me
-visualize my ideas of what I wanted the website to look like. It got me learning
-a bit more about UI/UX, and I used Figma as a sketching tool. I've worked with
-Sketch on other projects, but I still find Figma easier to use and more
-intuitive. I collected some inspiration and colors I liked. Then I started with
-the landing page, and I kept going from there.
+To me, designing a mockup of the website was an important step to kick off the
+project. It helped me visualize my ideas of what I wanted the website to look
+like. It got me learning a bit more about UI/UX, and I used Figma as a sketching
+tool. I've worked with Sketch on other projects, but I still find Figma easier
+to use and more intuitive. I collected some inspiration and colors I liked. Then
+I started with the landing page, and I kept going from there.
 
 Florian from our team (our design ninja) gave me a tip to use actual content on
 my mockups instead of using the classic 'Lorem Ipsum' placeholders - you better
@@ -83,7 +84,8 @@ I created my first route - an 'About Me' page, made my first component -
 
 My first coding challenge was ‘_How to create a dropdown in Ember?_’. (now I’m
 having flashbacks from whenever I asked Chris _how do you do this in Ember?,_ he
-would answer _There is no such thing as in Ember. This is just javascript._ 😆)
+would answer _There is no such thing as "in Ember". This is just javascript._
+😆)
 
 As I transitioned from working with React to Ember, I noticed a shift in
 thinking. Ember introduced me to the handlebars templating language and a
@@ -153,17 +155,18 @@ export default class Dropdown extends Component {
 {% endraw %}
 ```
 
-I mean, from someone coming from React, there was a lot of new stuff going on in
+I mean, for someone coming from React, there was a lot of new stuff going on in
 these two files.
 
-Also, going back to using `this.` keyword made me relive my university times and
-how understanding it was the boss level of object-oriented programming. 😂
+Also, going back to using the `this.` keyword brought me memories from my
+classes at university and how understanding this concept was the boss level of
+object-oriented programming. 😂
 
 Let me break down what is happening in my `<Dropdown>`:
 
-_On a side note, I want to say that this is probably not the most helpful
-dropdown component since I can only customize its title. In my case, I ended up
-not reusing it, so I didn’t feel the need to make it more customizable._
+_Note, I want to say that this is probably not the most helpful dropdown
+component since I can only its title is customizable. In my case, I ended up not
+reusing it, so I didn’t feel the need to make it more customizable._
 
 - My dropdown component has a button that renders a
   {% raw %}`{{@title}}`{% endraw %}. In React, this would be the `props.title`.
@@ -179,9 +182,9 @@ not reusing it, so I didn’t feel the need to make it more customizable._
   set to true, I add ‘focus’ to the class name, which is how I apply the yellow
   color to the dropdown title when the user opens it. Same happens with
   {% raw %}`<div class='dropdown-list {{if this.open "show"}}'>`{% endraw %}.
-- Next we have {% raw %}`{{on 'click' this.dropdown}}`{% endraw %} where I'm
-  saying to my component that when someone clicks it, run the
-  `dropdown()`function - defined in the _dropdown.js_ file.
+- Next, we have {% raw %}`{{on 'click' this.dropdown}}`{% endraw %}, this
+  instructs my app to run the `dropdown()`function (defined in the _dropdown.js_
+  file) after the user clicks on the button.
 - Time to dive into _dropdown.js_ file associated to my component:
   - Pretty much all my components have these 3 imports in their javascript
     files:
@@ -195,13 +198,13 @@ not reusing it, so I didn’t feel the need to make it more customizable._
       Ember's own object model, it allows me to define an event handler, in this
       case, the `dropdown()` function that gets triggered when the user clicks
       on the button. `@action` here works similarly to `bind()` in JavaScript -
-      when I use `this.open` inside of my Dropdown class at the dropdown.js
+      when I use `this.open` inside of my Dropdown class in the dropdown.js
       file, I need to find a way to make sure `this` refers to the same context
       as the one used in the template (Dropdown.hbs file), and `@action` does
       this for us. This way, when calling the `dropdown()` function from the
-      template the right context (`this`) gets passed to it. files React doesn't
-      have decorators in their official API, we typically use regular functions
-      as event handlers directly.
+      template the right context (`this`) gets passed to it. React doesn't have
+      decorators in their official API, we typically use regular functions as
+      event handlers directly.
     - And the last import {% raw %}`{tracked}`{% endraw %} from
       `@glimmer/tracking`. This is a module provided by glimmer framework that
       tells my code to keep an eye on a variable, in my case, the variable
@@ -215,34 +218,34 @@ not reusing it, so I didn’t feel the need to make it more customizable._
 - Finally, it's time to look at the last file - the template where I use my
   `<Dropdown>` component, **header.hbs.**:
   - I’m passing to the `<Dropdown>` a list of `<LinkTo>`. The latter component
-    allows me to create a link to a route, the `@model` argument I use, allows
+    allows me to create a link to a route, while the `@model` argument, allows
     my app to know which data to retrieve when clicking on that route.
 
 ### Rendering My Blogposts
 
 1. **Finding a tool to publish my posts**
 
-   After giving the shape I wanted for my website, the question for one of the
-   key features was - ‘How do I create a not-so-complicated system that allows
-   me to publish blog posts?’ ‘Am I going to create HTML pages every time?´
+   After giving the shape I wanted to my website, the question for one of the
+   key features was: "How do I create a not-so-complicated system that allows me
+   to publish blog posts? Am I going to create HTML pages every time?"
 
-   Chris proposed an approach - ‘Let’s create posts using markdown files.’ He
-   said we could use this tool - `ember-cli-showdown`.
+   Chris proposed an approach: "Let’s create posts using markdown files." He
+   said we could use `ember-cli-showdown`.
 
-   This addon converts my markdown into HTLM, so I don’t need to have that
-   tedious & time-consuming job of writing an HTML file every time I want to
-   publish a new post. It was a deal. 🤝
+   This addon converts my markdown into HTLM, so I don’t need to do the tedious
+   & time-consuming job of writing an HTML file every time I want to publish a
+   new post. It was a deal. 🤝
 
-2. **Combining my posts information with my tool**
+2. **Combining my posts information with the tool**
 
-   _'How can I extract what I write in my markdown files into my HTML
-   templates?'_ Another plugin enters the room: welcome to
+   _"How can I extract what I write in my markdown files into my HTML
+   templates?"_ Another plugin enters the room: welcome to
    [**Broccoli-Static-Site-Json.**](https://www.npmjs.com/package/broccoli-static-site-json)
    👋🏼 It generates a JSON API of the content of my markdowns. Let me guide you
    through the process:
 
-   - I need to define what data will populate my JSON API, to do it, I define a
-     ‘Post’ model. It looks like this:
+   - I need to define what data will populate my JSON API and to do it, I define
+     a ‘Post’ model. It looks like this:
 
    ```js
    //app/models/post.js
@@ -258,7 +261,7 @@ not reusing it, so I didn’t feel the need to make it more customizable._
    }
    ```
 
-   Now that I have them defined, I need to tell the broccoli addon what
+   Now that I have that defined, I need to tell the broccoli addon what
    attributes to use when building the JSON API.
 
    Let’s add that in `/lib/content-generator/index.js` (a file coming from the
@@ -339,7 +342,7 @@ date: 2022-12-16T00:00:00.000Z
 
 This is information that all the posts will have - title, category, description,
 image and date. I’m keeping this as Frontmatter (metadata in Markdown files)
-because when my markdown is being converted into static JSON each of my
+because when my markdown is being converted into static JSON, each of my
 frontmatter keys will become keys in the JSON API. This way, I can access their
 data from my templates, e.g {% raw %}`{{@post.category}}`{% endraw %} ,
 {% raw %}`{{@post.image}}`{% endraw %}.
@@ -350,8 +353,8 @@ data from my templates, e.g {% raw %}`{{@post.category}}`{% endraw %} ,
 to what I sketched, time to make it public 😱”. It is very easy to fall in a
 situation where we say to ourselves that a project is still not ready to be
 shipped. There was a moment where Chris made me wear my Product Manager hat, and
-told me ‘Write down the minimum features you need to make it functional till you
-deploy it”, this help me prioritise what I really needed, and keep my focus.
+told me: "Write down the minimum features you need to make it functional till
+you deploy it”. This help me prioritize what I really needed and keep my focus.
 
 I got myself a domain at [namecheap](https://www.namecheap.com/) and I used
 [netlify](https://www.netlify.com/) to deploy it.
@@ -391,7 +394,7 @@ the index page and serves this page for all URLs within the application. It is
 Ember's JavaScript code that takes care of rendering the appropriate content
 based on the requested route.
 
-To handle direct URLs requested to the web server, there are two approaches:
+To handle direct URLs requests to the web server, there are two approaches:
 
 1. Creating HTML files in the paths of the routes.
 2. We tell Netlify to give us the index.html when we get a 404 error, and Ember
@@ -449,37 +452,46 @@ javascript will deconstruct my array and add its values to the urls array.
 
 ## My Thoughts About This Project
 
-Seven months have passed since I released it.
+It was rewarding to learn and use my current knowledge to create a website that
+would match my personality: it felt like decorating a house. 😆
+
+I started by collecting inspiration from other websites, then I sketched how I
+wanted the pages to look in Figma, and finally, I started coding. Having the
+sketches in the first place helped me a lot throughout the process. I also
+realized that some design choices were harder to implement than I thought, so I
+kept embracing some improvisation. 😅
+
+Seven months have passed since I released my new website.
 
 After I deployed it, I made some improvements, primarily related to the
-performance. After running Lighthouse, I saw that my biggest issue was not being
+performance. By running Lighthouse, I saw that my biggest issue was not being
 efficient when loading my images. I recently added a little reaction button at
 the end of my posts. (inspired by Josh Comeau's website).
 
 I don't have a long experience in web development, so for me, going from react
-to ember it wasn't the smoothest transition. I found Ember a bit harder. I guess
-every framework has its pros and cons. In React, dealing with component states
-can become messy; in Ember, you don't need to care about it. In Ember, having
-all these separate files that target the same page can confuse me - controllers,
-.js, .hbs. However, some people prefer it. In the end, there is also a
-preference matter.
+to ember it wasn't the smoothest transition as I found Ember a bit harder. I
+guess every framework has its pros and cons. In React, dealing with component
+states can become messy; in Ember, you don't need to care about it. In Ember,
+having all these separate files that target the same page can create confusion -
+controllers, .js, .hbs. However, some people prefer this approach. In the end,
+choices like these are very subjective.
 
 Ember has a more traditional approach to object-oriented programming. It
 resembled what I learned at university way more.
 
-Regarding the type of project I built - a personal website/blog. I might be If
-you want to check my internet corner you can access it think I put a lot of
-pressure when I start working on a post, and I made them very long - this adds
-friction to posting regularly. Also, when I designed how to present the
-information, I just kept long posts in mind.
+Regarding the type of project I built - a personal website/blog. I might be
+falling into the group of the people who create a blog and never post on it. 🙈
+I think I put a lot of pressure when I start working on a post, and I made them
+very long - this adds friction to posting regularly. Also, when I designed how
+to present the information, I just kept long posts in mind.
 
-My pieces of advice are: to choose a publishing tool that is easy enough - the
+My pieces of advice are: choose a publishing tool that is easy enough - the
 markdown files approach is working well for me; when sketching your website,
-keep in mind short posts as well.
+keep short posts in mind as well.
 
 Since almost every human is an internet user nowadays, it is nice to have your
-website where you can share your work and interests - you can end up meeting
-more people with the same interests as you and possibly cool work
+own website where you can share your work and interests - you can end up meeting
+more people with the same interests as you and possibly initiate cool work
 collaborations.
 
 If you want to check my internet corner you can access it
