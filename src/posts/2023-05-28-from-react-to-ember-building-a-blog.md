@@ -10,10 +10,13 @@ description:
   time, she compares the differences of the development process between Ember
   and React."
 og:
-  image: /assets/images/posts/2023-02-28-ember-template-assert/og-image.jpg
+  image: /assets/images/posts/2023-05-28-from-react-to-ember-building-a-blog/og-image.jpg
 tagline: |
   <p>Having a personal website/blog has been on my to-do list for quite some time, but I always found myself stuck when answering the question: "How do I start?". With countless frameworks and different tech stacks to choose from, the options seemed overwhelming. I've been working with React since I joined the company, but most of my colleagues are experts in Ember, so I wanted to learn more about it. I decided to use this project as an opportunity to do that.
   I will share my journey, including the challenges I encountered and how I overcame them, and compare the development process between Ember and React.</p>
+
+image: "/assets/images/posts/2023-05-28-from-react-to-ember-building-a-blog/header-illustration.jpg"
+imageAlt: "The Ember logo on a gray backround picture"
 ---
 
 ### You might want to read this if
