@@ -100,8 +100,8 @@ We’re thankful to [Ticketsolve](https://www.ticketsolve.com/),
 [Isaac Lee](https://crunchingnumbers.live/),
 [Balint Erdi](https://balinterdi.com/), [HotDoc](https://www.hotdoc.com.au/),
 [solute](https://www.solute.de/), [Triptyk](https://www.triptyk.eu/),
-[redpencil](https://redpencil.io/), and [Productive](https://productive.io/) for
-sponsoring and supporting the initiative!
+[redpencil](https://redpencil.io/), [Productive](https://productive.io/), and
+[Skovik](http://skovik.com) for sponsoring and supporting the initiative!
 
 ![a collage of the logos and names of the sponsors: Ticketsolve, Intercom, OTA Insight, HashiCorp, XBE, Isaac Lee, Balint Erdi, HotDoc, solute, Triptyk, redpencil, Productive](/assets/images/posts/2023-06-09-securing-the-ecosystems-investment-in-emberjs/sponsors.png)
 
