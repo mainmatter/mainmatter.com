@@ -2,9 +2,9 @@
 title:
   "Adopting Rust: present and future of the Rust Web Ecosystem - with Luca
   Palmieri"
-authorHandle:
+authorHandle: marcoow
 tags: [rust]
-bio: ""
+bio: "Marco Otte-Witte"
 description:
   "Luca Palmieri and Marco Otte-Witte discuss the present and future of the Rust
   Web Ecosystem."
