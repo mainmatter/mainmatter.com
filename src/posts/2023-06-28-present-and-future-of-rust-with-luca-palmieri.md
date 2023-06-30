@@ -54,3 +54,5 @@ Check out the full interview below and don’t hesitate to contact us to learn h
 your company could benefit from adopting Rust.
 
 <iframe width="560" height="315" src="https://youtu.be/Xb7NokhAVKI" title="Embedded video of Luca's interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+If you're looking to adopt Rust to develop web backends and need guidance along the way, [get in touch](/contact/) We offer [team augmentation, mentoring, as well as development with Rust](/rust-consulting/).
