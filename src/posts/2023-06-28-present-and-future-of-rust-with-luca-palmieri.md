@@ -24,8 +24,8 @@ scalability, and latency. Despite initial concerns about hiring and lacking
 expertise, the project was a success, leading to enhanced job satisfaction,
 streamlined recruitment, and the creation of reliable and performant services.
 
-Luca then talked about his book "Zero to Production in Rust: An introduction to
-backend development in Rust" with which he aimed to bridge the gap between
+Luca then talked about his book "Zero To Production In Rust: An Introduction To
+Backend Development" with which he aimed to bridge the gap between
 introductory resources and real-world application development in Rust. The book
 guides readers through the process of building a production-ready Rust
 application with a hands-on approach, covering crucial topics such as
