@@ -11,7 +11,7 @@ description:
 og:
   image: /assets/images/posts/2023-06-28-present-and-future-of-rust-with-luca-palmieri/og-image.jpg
 tagline: |
-  <p>Rust has become more popular among web developers in recent years. In this interview, Luca Palmieri, Senior Software Engineer at Mainmatter and Rust author, and Marco Otte-Witte, Founder of Maimatter, delved into the world of backend development with Rust, examining the state of the ecosystem, the challenges it faces, and the success stories it generated.</p>
+  <p>Rust has become more popular among web developers in recent years. In this interview, Luca Palmieri, Principal Engineering Consultant at Mainmatter and Rust author, and Marco Otte-Witte, Founder of Maimatter, delved into the world of backend development with Rust, examining the state of the ecosystem, the challenges it faces, and the success stories it generated.</p>
 
 image: "/assets/images/posts/2023-06-28-present-and-future-of-rust-with-luca-palmieri/header-illustration.jpg"
 imageAlt: "The Rust logo on a gray background"
