@@ -43,7 +43,6 @@ Working at a consultancy company like Mainmatter means that you don't always
 collaborate with everyone on the team. Chris and I never had the opportunity to
 work together on a client project. I really enjoyed having the chance to
 collaborate with someone outside of my usual circle. As a junior developer,
-these sessions have proven to be incredibly experienced member of the company,
 these sessions have proven to be incredibly valuable for me.
 
 ![Pair programming session with Chris running lighthouse to check my website performace. ](/assets/images/posts/2023-07-03-from-react-to-ember-building-a-blog/calls-with-chris.png)_Chris
