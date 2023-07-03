@@ -9,5 +9,5 @@ color: purple
 
 RustLab is an international Rust conference taking place annually over the
 course of two days: this year's event is hosted in Florence. Mainmatter's
-Principal Engineering Consultant Luca Palmieri, will discuss the current state
+Principal Engineering Consultant Luca Palmieri will discuss the current state
 and shortcomings of pavex, a new Rust framework for building APIs, in his talk.
