@@ -12,8 +12,8 @@ description:
 og:
   image: /assets/images/posts/2023-07-03-from-react-to-ember-building-a-blog/og-image.jpg
 tagline: |
-  <p>Having a personal website has been on my to-do list for quite some time, but I always found myself stuck when answering the question, 'How do I start?' With countless frameworks and different tech stacks to choose from, the options seemed overwhelming. I've been working in React since I joined the company, but most of my colleagues are experts on Ember, so I wanted to learn more about it. I decided to use this project for that.
-  I will share my journey, detailing the challenges I encountered and how I overcame them while comparing the development process between Ember and React.</p>
+  <p>Having a personal website/blog has been on my to-do list for quite some time, but I always found myself stuck when answering the question: "How do I start?". With countless frameworks and different tech stacks to choose from, the options seemed overwhelming. I've been working with React since I joined the company, but most of my colleagues are experts in Ember, so I wanted to learn more about it. I decided to use this project as an opportunity to do that.
+   I will share my journey, including the challenges I encountered and how I overcame them, and compare the development process between Ember and React.</p>
 
 image: "/assets/images/posts/2023-07-03-from-react-to-ember-building-a-blog/header-illustration.jpg"
 imageAlt: "The Ember logo on a gray backround picture"
@@ -455,7 +455,15 @@ javascript will deconstruct my array and add its values to the urls array.
 
 ## My Thoughts About This Project
 
-Seven months have passed since I released it.
+Seven months have passed since I released my website.
+
+It was rewarding to learn and use my current knowledge to create a website that
+would match my personality: it felt like decorating a house. 😆 I started by
+collecting inspiration from other websites, then I sketched how I wanted the
+pages to look in Figma, and finally, I started coding. Having the sketches in
+the first place helped me a lot throughout the process. I also realized that
+some design choices were harder to implement than I thought, so I kept embracing
+some improvisation. 😅
 
 After I deployed it, I made some improvements, primarily related to the
 performance. By running Lighthouse, I saw that my biggest issue was not being
@@ -487,14 +495,6 @@ Since almost every human is an internet user nowadays, it is nice to have your
 own website where you can share your work and interests - you can end up meeting
 more people with the same interests as you and possibly initiate cool work
 collaborations.
-
-It was rewarding to learn and use my current knowledge to create a website that
-would match my personality: it felt like decorating a house. 😆 I started by
-collecting inspiration from other websites, then I sketched how I wanted the
-pages to look in Figma, and finally, I started coding. Having the sketches in
-the first place helped me a lot throughout the process although they were not
-pixel-perfect. I also realized that some design choices were harder to implement
-than I thought, so I kept embracing some improvisation. 😅
 
 If you want to check my internet corner you can access it
 [here](https://inesoaresilva.com/), there you can find another blog post about
