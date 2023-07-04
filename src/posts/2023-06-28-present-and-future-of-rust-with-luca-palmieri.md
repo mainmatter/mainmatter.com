@@ -25,11 +25,11 @@ expertise, the project was a success, leading to enhanced job satisfaction,
 streamlined recruitment, and the creation of reliable and performant services.
 
 Luca then talked about his book "Zero To Production In Rust: An Introduction To
-Backend Development" with which he aimed to bridge the gap between
-introductory resources and real-world application development in Rust. The book
-guides readers through the process of building a production-ready Rust
-application with a hands-on approach, covering crucial topics such as
-observability, testing, security, and more.
+Backend Development" with which he aimed to bridge the gap between introductory
+resources and real-world application development in Rust. The book guides
+readers through the process of building a production-ready Rust application with
+a hands-on approach, covering crucial topics such as observability, testing,
+security, and more.
 
 At AWS, the investment made in Rust is evident through their deployment of Rust
 code in critical products and services, Luca explained. Projects like
@@ -55,4 +55,6 @@ your company could benefit from adopting Rust.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Xb7NokhAVKI?rel=0" title="Embedded video of Luca's interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-If you're looking to adopt Rust to develop web backends and need guidance along the way, [get in touch](/contact/) We offer [team augmentation, mentoring, as well as development with Rust](/rust-consulting/).
+If you're looking to adopt Rust to develop web backends and need guidance along
+the way, [get in touch](/contact/) We offer
+[team augmentation, mentoring, as well as development with Rust](/rust-consulting/).
