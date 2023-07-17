@@ -2,9 +2,7 @@
 {%- set pageDesc = config.description -%}
 {%- set siteTitle = config.name -%}
 
-{%- if renderData.title -%}
-  {%- set pageTitle = renderData.title + ' - ' + config.name -%}
-{%- elif title -%}
+{%- if title -%}
   {%- set pageTitle = title + ' - ' + config.name -%}
 {%- endif -%}
 
