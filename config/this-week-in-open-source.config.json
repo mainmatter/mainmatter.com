@@ -130,6 +130,12 @@
             ]
         },
         {
+            "name": "Svelte",
+            "repos": [
+                "sveltejs/v2.svelte.dev"
+            ]
+        },
+        {
             "name": "Cal.com",
             "repos": [
                 "calcom/cal.com"
