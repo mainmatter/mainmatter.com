@@ -36,6 +36,12 @@
     color: var(--color-white);
     --overlay-opacity: 0.8;
   }
+
+  &--transparent {
+    --color-animation: var(--color-purple);
+    color: var(--color-white);
+
+  }
 }
 
 .color-hero__image-wrapper {

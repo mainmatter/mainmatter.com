@@ -13,6 +13,20 @@
       "linkUrl": "/services/workshops/"
     }
   ],
+  "scaleup-services-list": [
+    {
+      "heading": "Team Augmentation",
+      "linkUrl": "/services/team-augmentation-and-training/"
+    },
+    {
+      "heading": "Digital Product Development support",
+      "linkUrl": "/services/digital-products-and-design/"
+    },
+    {
+      "heading": "Skills-focused workshops",
+      "linkUrl": "/services/workshops/"
+    }
+  ],
   "product-design": [
     {
       "heading": "Easy is delightful",
