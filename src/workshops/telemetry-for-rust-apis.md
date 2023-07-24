@@ -8,8 +8,10 @@ description:
   is designed for developers who are operating Rust services in production-like
   environments, or are preparing to do so.</p>
 hero:
-  image: "/assets/images/workshops/introduction-to-rust-for-web-developers/header-background.jpg"
-  imageAlt: "The Rust logo in white on top of a photo of a rusty metal surface"
+  image: "/assets/images/workshops/telemetry-for-rust-apis/header-background.jpg"
+  imageAlt:
+    "2 people in front of a notebook with 3 charts on the screen, only their
+    arms visible, one points at the screen"
 og:
   image: /assets/images/workshops/introduction-to-rust-for-web-developers/og-image.jpg
 topics:
