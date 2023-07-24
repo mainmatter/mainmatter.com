@@ -13,7 +13,7 @@ hero:
     "2 people in front of a notebook with 3 charts on the screen, only their
     arms visible, one points at the screen"
 og:
-  image: /assets/images/workshops/introduction-to-rust-for-web-developers/og-image.jpg
+  image: /assets/images/workshops/telemetry-for-rust-apis/og-image.jpg
 topics:
   - heading: Structured logging (tracing)
     text: >
