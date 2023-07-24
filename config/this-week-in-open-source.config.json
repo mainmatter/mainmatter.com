@@ -246,7 +246,9 @@
         {
             "name": "Embroider",
             "repos": [
-                "embroider-build/embroider"
+                "embroider-build/embroider",
+                "embroider-build/content-tag",
+                "embroider-build/ember-auto-import"
             ]
         },
         {
@@ -264,7 +266,9 @@
                 "empress/field-guide-addon-docs-template",
                 "empress/guidemaker",
                 "empress/guidemaker-default-template",
-                "empress/bottled-ember"
+                "empress/bottled-ember",
+                "empress/open-slide",
+                "empress/open-slide-reveal-template"
 
           ]
         },
@@ -309,7 +313,9 @@
                 "mainmatter/mocha-diff",
                 "mainmatter/compare-fixture",
                 "mansona/layer-gen",
-                "timdp/rollup-timer"
+                "timdp/rollup-timer",
+                "TelemetryDeck/WebSDK",
+                "ef4/code-equality-assertions"
             ]
         },
         {
