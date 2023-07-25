@@ -12,10 +12,10 @@ description: |
   If you've been working with Rust for a while, you might be interested instead in our 
   <a href="/services/workshops/advanced-testing-in-rust/">advanced testing workshop</a>.</p>
 hero:
-  image: "/assets/images/workshops/introduction-to-rust-for-web-developers/header-background.jpg"
-  imageAlt: "The Rust logo in white on top of a photo of a rusty metal surface"
+  image: "/assets/images/workshops/an-introduction-to-testing-in-rust/header-background.jpg"
+  imageAlt: "A drawing of a giant crab standing in a village."
 og:
-  image: /assets/images/workshops/introduction-to-rust-for-web-developers/og-image.jpg
+  image: /assets/images/workshops/an-introduction-to-testing-in-rust/og-image.jpg
 topics:
   - heading: Writing your first unit test
     text: >

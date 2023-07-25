@@ -12,10 +12,12 @@ description: |
   If you are new to Rust instead, you might be interested instead in our 
   <a href="/services/workshops/an-introduction-to-testing-in-rust/">introductory testing workshop</a>.</p>
 hero:
-  image: "/assets/images/workshops/introduction-to-rust-for-web-developers/header-background.jpg"
-  imageAlt: "The Rust logo in white on top of a photo of a rusty metal surface"
+  image: "/assets/images/workshops/advanced-testing-in-rust/header-background.jpg"
+  imageAlt:
+    "A schematic drawing of a grid with files on top and connecting lines
+    between the files."
 og:
-  image: /assets/images/workshops/introduction-to-rust-for-web-developers/og-image.jpg
+  image: /assets/images/workshops/advanced-testing-in-rust/og-image.jpg
 topics:
   - heading: What is a test?
     text: >
