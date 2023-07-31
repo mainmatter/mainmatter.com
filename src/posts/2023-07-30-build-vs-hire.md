@@ -111,7 +111,11 @@ toward building your ideal tech team: LINK TO STARTUP PAGE
 
 We successfuly augmented the teams of
 
-[![Qonto](/assets/images/posts/2023-07-30-build-vs-hire/qonto.svg)](https://mainmatter.com/cases/qonto/)![RailEurope](/assets/images/posts/2023-07-30-build-vs-hire/rail-europe.svg)[![MVB](/assets/images/posts/2023-07-30-build-vs-hire/mvb.png)](https://mainmatter.com/cases/mvb/)![Auditboard](/assets/images/posts/2023-07-30-build-vs-hire/auditboard.svg)![Sage](/assets/images/posts/2023-07-30-build-vs-hire/sage.svg)![Clark](/assets/images/posts/2023-07-30-build-vs-hire/clark.svg)
+[![Qonto](/assets/images/posts/2023-07-30-build-vs-hire/qonto.svg)](https://mainmatter.com/cases/qonto/)
+![RailEurope](/assets/images/posts/2023-07-30-build-vs-hire/rail-europe.svg)[![MVB](/assets/images/posts/2023-07-30-build-vs-hire/mvb.png)](https://mainmatter.com/cases/mvb/)
+![Auditboard](/assets/images/posts/2023-07-30-build-vs-hire/auditboard.svg)
+![Sage](/assets/images/posts/2023-07-30-build-vs-hire/sage.svg)
+![Clark](/assets/images/posts/2023-07-30-build-vs-hire/clark.svg)
 
 Quote by Jürgen Witte - CPO@RailEurope
 
