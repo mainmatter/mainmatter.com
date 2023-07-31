@@ -1,6 +1,5 @@
 ---
-title:
-  "Pitching Rust to decision-makers - with Joel Marcey"
+title: "Pitching Rust to decision-makers - with Joel Marcey"
 authorHandle: marcoow
 tags: [rust]
 bio: "Marco Otte-Witte"
