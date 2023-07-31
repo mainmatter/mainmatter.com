@@ -1,6 +1,6 @@
 ---
 title: "EmberFest"
-image: "/assets/images/calendar/2022-09-22-emberfest/emberfest-2022.jpg"
+image: "/assets/images/calendar/2023-09-21-emberfest/emberfest.jpg"
 location: Madrid
 url: https://emberfest.eu
 kind: conference
