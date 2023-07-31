@@ -1,7 +1,6 @@
 ---
 title:
-  "Adopting Rust: present and future of the Rust Web Ecosystem - with Luca
-  Palmieri"
+  "Pitching Rust to decision-makers - with Joel Marcey"
 authorHandle: marcoow
 tags: [rust]
 bio: "Marco Otte-Witte"
