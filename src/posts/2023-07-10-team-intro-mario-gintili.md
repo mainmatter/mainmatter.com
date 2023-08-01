@@ -8,10 +8,10 @@ bio: "Mario Gintili"
 description:
   "Mario Gintili introduces himself as a new team member of Mainmatter"
 og:
-  image: /assets/images/posts/2023-06-28-present-and-future-of-rust-with-luca-palmieri/og-image.jpg # TODO
+  image: /assets/images/posts/2023-07-10-team-intro-mario-gintili/cover.jpg
 tagline: |
   <p>Mario Gintili introduces himself as a new team member of Mainmatter. Having worked with Ember.js and Ruby on Rails</p>
-image: "/assets/images/posts/2023-06-28-present-and-future-of-rust-with-luca-palmieri/header-illustration.jpg" # TODO
+image: "/assets/images/posts/2023-07-10-team-intro-mario-gintili/cover.jpg"
 imageAlt: "Intro post Mario Gintili"
 ---
 
@@ -27,7 +27,7 @@ Becoming a professional full-stack developer was a milestone. Building products 
 
 When not coding, I have a range of hobbies. I go to the gym and try out different training methodologies(Hyperthropy, HIIT, LIST, Kettlebell-only, Crossfit, etc). I enjoy cooking, video games, techno and its subgenres, and hanging out with my cat, Nihil.
 
-![](/assets/images/posts/2023-07-10-team-intro-mario-gintili/nihiljpg)
+![](/assets/images/posts/2023-07-10-team-intro-mario-gintili/nihil.jpg)
 
 The programming journey has its challenges. Screen time and mental effort can be taxing. It's essential to take breaks and maintain a balanced lifestyle.
 
