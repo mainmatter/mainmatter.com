@@ -4,7 +4,7 @@ authorHandle: marcoow
 tags: [rust]
 bio: "Marco Otte-Witte"
 description:
-  "Joel Marcey and Marco Otte-Witte share talk about approaches for pitching
+  "Joel Marcey and Marco Otte-Witte talk about approaches for pitching
   Rust to decision-makers."
 og:
   image: /assets/images/posts/2023-08-01-pitching-rust-to-decision-makers-with-joel-marcey/og-image.jpg
