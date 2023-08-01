@@ -9,7 +9,7 @@ description:
 og:
   image: /assets/images/posts/2023-08-01-pitching-rust-to-decision-makers-with-joel-marcey/og-image.jpg
 tagline: |
-  <p>Director of Technology at Rust Foundation Joel Marcey and Mainmatter’s Founder Marco Otte-Witte discuss how to pitch Rust adoption to decision makers, success stories of different companies including 1password, KDAB, Tweede golf, and Meta, and Joel’s role at the Foundation.</p>
+  <p>Director of Technology at Rust Foundation Joel Marcey and Mainmatter’s Founder Marco Otte-Witte discuss how to pitch Rust to decision makers, share success stories of different companies including 1password, KDAB, Tweede golf, and Meta, and talk about Joel’s role at the Foundation.</p>
 
 image: "/assets/images/posts/2023-08-01-pitching-rust-to-decision-makers-with-joel-marcey/header-visual.jpg"
 imageAlt: "Joel's picture on a gray background"
