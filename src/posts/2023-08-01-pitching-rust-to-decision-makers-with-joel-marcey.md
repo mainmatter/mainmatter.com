@@ -38,7 +38,7 @@ Lastly, Joel highlights the importance of focusing on Rust’s stability,
 security, and significant operational cost reduction due to its efficiency, when
 pitching.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Xb7NokhAVKI?rel=0" title="Embedded video of Joel's interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/T951xRBcGD8" title="Embedded video of Joel's interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 If you're looking to adopt Rust to develop web backends and need guidance along
 the way, [get in touch](/contact/) We offer
