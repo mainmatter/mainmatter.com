@@ -7,10 +7,10 @@ bio: "Mario Gintili"
 description:
   "Mario Gintili bounces ideas off ChatGPT on how to use ChatGPT for better blog post writing"
 og:
-  image: /assets/images/posts/2023-06-28-present-and-future-of-rust-with-luca-palmieri/og-image.jpg # TODO
+  image: /assets/images/posts/2023-07-21-how-to-write-posts-with-chatgpt/cover.jpg
 tagline: |
   <p>Mario Gintili bounces ideas off ChatGPT on how to use ChatGPT for better blog post writing</p>
-image: "/assets/images/posts/2023-06-28-present-and-future-of-rust-with-luca-palmieri/header-illustration.jpg" # TODO
+image: "/assets/images/posts/2023-07-21-how-to-write-posts-with-chatgpt/cover.jpg"
 imageAlt: "Using ChatGPT for blogposts"
 ---
 
