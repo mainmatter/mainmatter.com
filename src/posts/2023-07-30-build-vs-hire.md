@@ -1,20 +1,15 @@
 ---
 title:
   "How expensive is setting up your own team vs. hiring one that is ready-to-go?"
-authorHandle: sarahlorenz
+authorHandle: BobrImperator
 tags: []
 bio: "Sarah Lorenz"
 description:
   "Sarah Lorenz explores the advantages and disadvantages of building a tech
   team versus hiring one. She suggests a hybrid method, team augmentation, and
   shares Mainmatter’s experience with it in previous projects."
-og:
-  image:
 tagline: |
   <p>When building a technical team, there are two main options: You can build your own team from scratch or hire a ready-made one. Each approach has its pros and cons that can significantly impact your project's cost and efficiency. However, there is also a third option: You can get external help while you build internal capacity/capability.</p>
-
-image: ""
-imageAlt: ""
 ---
 
 {% from "quote.njk" import quote %}
