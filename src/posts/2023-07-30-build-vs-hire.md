@@ -17,6 +17,8 @@ image: ""
 imageAlt: ""
 ---
 
+{% from "quote.njk" import quote %}
+
 ## Build vs. Hire
 
 Why decide if you can benefit from both? - Augment!
@@ -117,10 +119,7 @@ We successfuly augmented the teams of
 ![Sage](/assets/images/posts/2023-07-30-build-vs-hire/sage.svg)
 ![Clark](/assets/images/posts/2023-07-30-build-vs-hire/clark.svg)
 
-Quote by Jürgen Witte - CPO@RailEurope
-
-> ”Mainmatter enabled us to take our Product Development Organization to the
-> next level. They work closely with our team and help us establish new
-> practices while simultaneously delivering on our day to day product
-> initiatives. Their technical and organizational expertise and fresh views
-> allow us to set up the foundation for future success.”
+{% set 'content' = {
+  "text": "Mainmatter enabled us to take our Product Development Organization to the  next level. They work closely with our team and help us establish new  practices while simultaneously delivering on our day to day product  initiatives. Their technical and organizational expertise and fresh views  allow us to set up the foundation for future success.",
+  "source": "Jürgen Witte, CPO@RailEurope"
+} %} {{ quote(content) }}
