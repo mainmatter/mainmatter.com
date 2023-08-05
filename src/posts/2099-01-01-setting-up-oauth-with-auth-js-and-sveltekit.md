@@ -263,7 +263,6 @@ domain for everyone to resolve. But you can fake it for local development.
 To do so, locate the system-wide `hosts` file in your operating system, open it
 for editing with superuser rights and append like this:
 
-```julia
 {% raw %}127.0.0.1 my-app.example.com
 127.0.0.1 my-other-app.example.com    # you can do more than one if needed
 {% endraw %}
