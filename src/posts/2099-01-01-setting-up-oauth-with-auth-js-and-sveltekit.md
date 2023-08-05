@@ -33,7 +33,7 @@ To do so, your app redirects the user to an OAuth provider. The user approves
 authentication there, and the provider redirects back into the app, which ends
 up authenticated.
 
-I will not into more details about how OAuth works beyond and absolute minimum.
+I will not go into more details about how OAuth works beyond the absolute minimum.
 There are plenty of articles on the internet that let you understand this topic
 with a desired level of depth.
 
