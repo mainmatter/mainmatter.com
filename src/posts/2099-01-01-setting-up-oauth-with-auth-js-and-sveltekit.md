@@ -58,7 +58,7 @@ In this analogy, presenting your id to the Pass and Registration office is
 
 The problem is that in practice people don’t really distinguish between
 “authentication” and “authorization” that much. You can find these terms used
-interchangeably, without a second thought.
+interchangeably.
 
 People who know there’s a difference between the two terms but aren’t sure which
 one is appropriate in which context, have a loophole: simply say “auth”! 😬 The
