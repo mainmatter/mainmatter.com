@@ -13,7 +13,8 @@ description:
 og:
   image: /assets/images/posts/2023-07-03-from-react-to-ember-building-a-blog/og-image.jpg
 tagline: |
-  <p>OAuth can be notioriously difficult to set up, despite libraries and documentation available. The challenge lies not in code, but in wiring all the bits and pieces together. In the absence of a step-by-step guide, all attempts to set it up may fail to a very obscure error. Now you have such a guide for this particular combination: Auth.js + SvelteKit.</p>
+  <p>There are numerous articles and libraries around OAuth available, and yet setting it up may appear challenging — not due any particular code complexity, but rather due to small details missing or configured incorrectly. This article provides a step-by-step guide for setting up OAuth in a specific combination of technologies: SvelteKit + Auth.js, along with explanations of all the pitfalls.</p>
+  <p>This article describes configuration of Google and GitHub OAuth providers, since they are among the most popular ones with developers. You're not limited with those two, though: set it up with any other OAuth provider of your choice.</p>
 
 image: "/assets/images/posts/2023-07-03-from-react-to-ember-building-a-blog/header-illustration.jpg"
 imageAlt: "The Ember logo on a gray backround picture"
@@ -33,9 +34,17 @@ To do so, your app redirects the user to an OAuth provider. The user approves
 authentication there, and the provider redirects back into the app, which ends
 up authenticated.
 
-I will not go into more details about how OAuth works beyond the absolute minimum.
-There are plenty of articles on the internet that let you understand this topic
-with a desired level of depth.
+I will not go into more details about how OAuth works beyond the absolute
+minimum. There are plenty of articles on the internet that let you understand
+this topic with a desired level of depth.
+
+## What’s Auth.js
+
+[Auth.js](https://authjs.dev) is a library that aims to be a universal
+authentication layer for JS frontend and full-stack apps.
+
+It started as NextAuth, built specifically for the Next.js framework
+(full-stack, React-based), but later was converted into a universal library.
 
 ## Gotcha 0: authentication vs authorization
 
@@ -53,8 +62,10 @@ The security guard would make sure that the pass is still valid and they might
 even call the Registration Office to run your pass through their database.
 
 In this analogy, presenting your id to the Pass and Registration office is
-“authentication”. Presenting your daily pass to a security guard is
-“authorization”. Offices behind security checkpoints are API endpoints.
+“authentication” — checking that a person is who they claim to be. Presenting
+your daily pass to a security guard is “authorization” — checking if a person is
+allowed to perform an action such as visiting an office. Offices behind security
+checkpoints represent API endpoints.
 
 The problem is that in practice people don’t really distinguish between
 “authentication” and “authorization” that much. You can find these terms used
@@ -105,9 +116,9 @@ a fake copy of your app that authenticates users for real, stealing their auth
 tokens. As a result, the malefactor would be able to access your app as another
 user.
 
-For this reason, your frontend app must delegate the actual authentication to
-your backend. It’s your backend that safely stores the secret token and passes
-it to the OAuth provider.
+For this reason, your frontend app should not authenticate with an OAuth
+provider directly, but rather should this job to your backend. It’s your backend
+that safely stores the secret token and passes it to the OAuth provider.
 
 Luckily, SvelteKit can work as a full-stack app, with a frontend and a backend!
 
@@ -214,9 +225,12 @@ In order to let your app authenticate with an OAuth provider, you must access
 the provider’s admin panel and “create an app” in it. This will provide you with
 an ID and secret token for your app to use.
 
-Keep in mind that you need to “create” a separate “app” with the provider for
-each deployment environment, e. g. local development, staging and production.
-You will end up with three or more sets of app ids and secret tokens.
+Some OAuth providers let you define multiple webapp hostnames and callback URLs
+per app, but some important ones such as GitHub, only allow one hostname and one
+callback URL per app. For such providers, you need to “create” a separate “app”
+with the provider for each deployment environment, e. g. local development,
+staging and production. You will end up with three or more sets of app ids and
+secret tokens.
 
 ## Gotcha 6: you need a domain for local development
 
@@ -263,31 +277,12 @@ domain for everyone to resolve. But you can fake it for local development.
 To do so, locate the system-wide `hosts` file in your operating system, open it
 for editing with superuser rights and append like this:
 
-{% raw %}127.0.0.1 my-app.example.com
-127.0.0.1 my-other-app.example.com    # you can do more than one if needed
-{% endraw %}
-```
+{% raw %}127.0.0.1 my-app.example.com 127.0.0.1 my-other-app.example.com # you
+can do more than one if needed {% endraw %}
+
+````
 
 Changes should become effective immediately on save — on your machine only.
-
-## What’s Auth.js
-
-[Auth.js](https://authjs.dev) is a library that aims to be a universal
-authentication layer for JS frontend and full-stack apps.
-
-It started as NextAuth, built specifically for the Next.js framework
-(full-stack, React-based), but later was converted into a universal library.
-
-## Gotcha 8: Auth.js is evolving
-
-As of 2023, the library is relatively new. It’s core is more or less stable, but
-its SvelteKit integration claims to be under active development.
-
-The implication is that it may receive breaking changes. In order to upgrade to
-future versions you will need to follow the upgrade guide or release notes to
-rewrite some of your code accordingly.
-
-Keep that in mind.
 
 ## Configuring GitHub
 
@@ -328,21 +323,6 @@ https://authjs.dev/reference/core/providers_github
 Reference documentation for Auth.js Google Provider:
 https://authjs.dev/reference/core/providers_github
 
-## Gotcha 9: automatically generated routes
-
-Note that routes under `/auth` such as:
-
-- `/auth/callback/[provider]`
-- `/auth/signin`
-
-…are routes automatically generated by `@auth/sveltekit`. You don’t need to
-define them.
-
-The former is a backend route where OAuth providers should redirect the user to.
-
-The latter is a frontend route containing sign-in buttons for OAuth providers of
-your choice. The HTML/CSS of buttons will be generated for you by the package.
-
 ## Configuring SvelteKit
 
 Now we know all we need to set up OAuth in SvelteKit. Let’s proceed.
@@ -356,7 +336,7 @@ Now we know all we need to set up OAuth in SvelteKit. Let’s proceed.
 cd my-app/
 npm i
 {% endraw %}
-```
+````
 
 I’ll be using `my-app` as the name of the project and the subdomain. Substitute
 it for your app’s name.
@@ -517,18 +497,42 @@ Any page such as `src/routes/protected/+page.svelte`:
 {/if} {% endraw %}
 ```
 
-Alternatively, you can redirect from a `+layout.server.js`, which arguably
-provides better access management. See
+Alternatively, you can redirect from a `+layout.js`, which arguably provides
+better access management. See
 [this StackOverflow question](https://stackoverflow.com/q/74017730/901944) for
 possible ways to do it.
-
-### 8. ???
 
 ### 9. You’re breathtaking!
 
 Run your dev server with `npm run dev` and try it out.
 
 If you have wired everything correctly, it should work!
+
+## Gotcha 8: automatically generated routes
+
+Note that routes under `/auth` such as:
+
+- `/auth/callback/[provider]`
+- `/auth/signin`
+
+…are routes automatically generated by `@auth/sveltekit`. You don’t need to
+define them.
+
+The former is a backend route where OAuth providers should redirect the user to.
+
+The latter is a frontend route containing sign-in buttons for OAuth providers of
+your choice. The HTML/CSS of buttons will be generated for you by the package.
+
+## Gotcha 9: Auth.js is evolving
+
+As of 2023, the library is relatively new. It’s core is more or less stable, but
+its SvelteKit integration claims to be under active development.
+
+The implication is that it may receive breaking changes. In order to upgrade to
+future versions you will need to follow the upgrade guide or release notes to
+rewrite some of your code accordingly.
+
+Keep that in mind.
 
 ## Demo app
 
@@ -545,6 +549,7 @@ bootstrap your OAuth adventure.
 
 Some of aspects not covered are:
 
+- persisting the access token to your app's database;
 - refresh tokens;
 - deployment to production;
 - customizing the looks of sign-in buttons, overriding Auth.js routes.
