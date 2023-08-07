@@ -1,21 +1,18 @@
 ---
 title:
   "How expensive is setting up your own team vs. hiring one that is ready-to-go?"
-authorHandle: sarahlorenz
+authorHandle: BobrImperator
 tags: []
 bio: "Sarah Lorenz"
 description:
   "Sarah Lorenz explores the advantages and disadvantages of building a tech
   team versus hiring one. She suggests a hybrid method, team augmentation, and
   shares Mainmatter’s experience with it in previous projects."
-og:
-  image:
 tagline: |
   <p>When building a technical team, there are two main options: You can build your own team from scratch or hire a ready-made one. Each approach has its pros and cons that can significantly impact your project's cost and efficiency. However, there is also a third option: You can get external help while you build internal capacity/capability.</p>
-
-image: ""
-imageAlt: ""
 ---
+
+{% from "quote.njk" import quote %}
 
 ## Build vs. Hire
 
@@ -117,10 +114,7 @@ We successfuly augmented the teams of
 ![Sage](/assets/images/posts/2023-07-30-build-vs-hire/sage.svg)
 ![Clark](/assets/images/posts/2023-07-30-build-vs-hire/clark.svg)
 
-Quote by Jürgen Witte - CPO@RailEurope
-
-> ”Mainmatter enabled us to take our Product Development Organization to the
-> next level. They work closely with our team and help us establish new
-> practices while simultaneously delivering on our day to day product
-> initiatives. Their technical and organizational expertise and fresh views
-> allow us to set up the foundation for future success.”
+{% set 'content' = {
+  "text": "Mainmatter enabled us to take our Product Development Organization to the  next level. They work closely with our team and help us establish new  practices while simultaneously delivering on our day to day product  initiatives. Their technical and organizational expertise and fresh views  allow us to set up the foundation for future success.",
+  "source": "Jürgen Witte, CPO@RailEurope"
+} %} {{ quote(content) }}
