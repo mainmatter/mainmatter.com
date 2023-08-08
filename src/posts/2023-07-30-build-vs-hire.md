@@ -122,4 +122,6 @@ We successfuly augmented the teams of
 {% set 'content' = {
   "text": "Mainmatter enabled us to take our Product Development Organization to the  next level. They work closely with our team and help us establish new  practices while simultaneously delivering on our day to day product  initiatives. Their technical and organizational expertise and fresh views  allow us to set up the foundation for future success.",
   "source": "Jürgen Witte, CPO@RailEurope"
+  "image": "/assets/images/posts/2023-07-30-build-vs-hire/juergen-witte.jpg"
+  "alt": "Jürgen Witte from RailEurope"
 } %} {{ quote(content) }}
