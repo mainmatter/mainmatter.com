@@ -9,12 +9,12 @@ description:
   team versus hiring one. She suggests a hybrid method, team augmentation, and
   shares Mainmatter’s experience with it in previous projects."
 og:
-  image:
+  image: /assets/images/posts/2023-07-30-build-vs-hire/og-image.jpg
 tagline: |
   <p>When building a technical team, there are two main options: You can build your own team from scratch or hire a ready-made one. Each approach has its pros and cons that can significantly impact your project's cost and efficiency. However, there is also a third option: You can get external help while you build internal capacity/capability.</p>
 
-image: ""
-imageAlt: ""
+image: "/assets/images/posts/2023-07-30-build-vs-hire/header-illustration.jpg"
+imageAlt: "A rocket icon on a grey image background"
 ---
 
 {% from "quote.njk" import quote %}
