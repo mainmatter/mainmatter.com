@@ -108,8 +108,8 @@ build the product at the same time.
 At Mainmatter, we understand the challenges of assembling a tech team and the
 importance of building product- and tech know-how. We offer expertise and
 guidance to help you make the right decisions and support you throughout the
-process. Contact us to explore how we can assist you in taking the next steps
-toward building your ideal tech team: LINK TO STARTUP PAGE
+process. [Contact us](https://mainmatter.com/startups/) to explore how we can
+assist you in taking the next steps toward building your ideal tech team.
 
 We successfuly augmented the teams of
 
