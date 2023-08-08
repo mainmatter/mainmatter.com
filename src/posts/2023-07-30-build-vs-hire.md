@@ -1,7 +1,7 @@
 ---
 title:
   "How expensive is setting up your own team vs. hiring one that is ready-to-go?"
-authorHandle: BobrImperator
+authorHandle: sarahlorenz
 tags: []
 bio: "Sarah Lorenz"
 description:
