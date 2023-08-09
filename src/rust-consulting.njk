@@ -9,6 +9,7 @@ permalink: /rust-consulting/
 {% from "recent-posts.njk" import recentPosts %}
 {% from "logo-list.njk" import logoList %}
 {% from "cta-link.njk" import ctaLink %}
+{% from "scroll-slides.njk" import scrollSlides %}
 
 <section class="color-hero color-hero--aqua" data-background-color="aqua">
   <div class="color-hero__image-wrapper">
@@ -20,8 +21,8 @@ permalink: /rust-consulting/
     <div class="color-hero__main">
       {% set imagePath %}/assets/images/rust/rust-logo.svg{% endset %}
       <img class="expertise__logo" src="{{ imagePath }}" alt="Rust logo" />
-      <h1 class="color-hero__title color-hero__title--full ">Rust puts teams miles ahead</h1>
-      <div class="color-hero__text color-hero__text--large">Rust checks all the boxes – performance, efficiency, maintainability, and developer experience. Mainmatter enables teams to get access to those benefits by adopting Rust in their web projects.</div>
+      <h1 class="color-hero__title color-hero__title--full ">Rust is a competitive advantage</h1>
+      <div class="color-hero__text color-hero__text--large">Rust checks all the boxes – performance, efficiency, maintainability, and great developer experience. Mainmatter is here to empower your team to fully realize those benefits in your web and backend projects.</div>
     </div>
   </div>
 </section>
@@ -32,7 +33,8 @@ permalink: /rust-consulting/
     <h3 class="split-content__subheading h2">A unique skillset</h3>
     <div class="split-content__content">
       <div class="split-content__text">
-        <p>Mainmatter has a unique combination of expertise both in building web applications as well as in Rust. We have built big web apps and mentored teams on design, backend and frontend with international clients such as Qonto, trainline, Experteer, and others. At the same time, we know the ins and outs of Rust. Several of our engineers have been on the crates.io team for years and we run workshops to teach others Rust.</p>
+        <p>We’re experts - our Rust team is led by Luca Palmieri, author of "Zero to Production in Rust", and we have been part of the Rust ecosystem for years, helping out the <a href="https://crates.io">crates.io</a> project.</p>
+        <p>But we don't stop at Rust – we have built big web apps and mentored teams on backend, frontend, design, as well as process and developer infrastructure for years. We know what it takes to connect everything together and deliver a delightful end-to-end experience.</p>
       </div>
       <div class="split-content__feature">
         {% include 'content/secondary-feature-rust.njk' %}
@@ -41,54 +43,54 @@ permalink: /rust-consulting/
   </div>
 </section>
 
-{% set 'content' = {
-"subtitle": "We run the EuroRust conference",
-"text": "<p>EuroRust is the main conference for the European Rust community. EuroRust covers all things Rust and is part of the RustFest family of events.</p>",
-"linkUrl": "https://eurorust.eu",
-"linkText": "Watch past talks and get ready for the next conference at eurorust.eu.",
-"image": "/assets/images/rust/eurorust-header-2023.jpg",
-"alt": "The EuroRust header graphic",
-"loading": "lazy"
-} %}
-{{ imageBannerWithText(content) }}
-
-<section class="color-hero color-hero--black" data-background-color="black">
-  <div class="color-hero__image-wrapper">
-    {% image '/assets/images/workshops/introduction-to-rust-for-web-developers/header-background.jpg', 'The Rust logo in white on top of a photo of a rusty metal surface', '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
-  </div>
-  <div class="color-hero__overlay"></div>
-  <div class="color-hero__container container container--lg color-hero__container--center">
-    <div class="color-hero__main">
-      <h1 class="color-hero__title color-hero__title--full">Workshop: Introduction to Rust for Web Developers</h1>
-      <div class="color-hero__text">Our Rust workshop provides a smooth entry into
-        the language for teams that are looking for leveraging Rust's capabilities in
-        their web projects. We teach everything you need to know about the
-        language and wider ecosystem to be able to write your own HTTP server in the
-        end!</div>
-        {{ ctaLink("/services/workshops/introduction-to-rust-for-web-developers/", "Learn more", 'color-hero__link') }}
+<section class="split-content">
+  <div class="container container--lg">
+    <h2 class="h5">EuroRust</h2>
+    <h3 class="split-content__subheading h2">We run EuroRust</h3>
+    <div class="split-content__content">
+      <div class="split-content__text">
+        <p>EuroRust is the conference for the European Rust community. In 2022, we welcomed 250 Rustaceans on-site, with another 160 attending remotely.</p>
+        <p>In 2023, we are doubling down: bigger venue, more speakers, onsite workshops. Buy your ticket on <a href="https://eurorust.eu">eurorust.eu</a> before it’s too late!</p>
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-eurorust.njk' %}
+      </div>
     </div>
   </div>
 </section>
-<section class="color-hero color-hero--black" data-background-color="purple">
-  <div class="color-hero__image-wrapper">
-    {% image '/assets/images/workshops/web-based-services-in-rust/header-background.jpg', 'The Rust logo in white on top of a photo of a rusty metal surface', '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
-  </div>
-  <div class="color-hero__overlay"></div>
-  <div class="color-hero__container container container--lg color-hero__container--center">
-    <div class="color-hero__main">
-      <h1 class="color-hero__title color-hero__title--full">Workshop: Web-based Services in Rust</h1>
-      <div class="color-hero__text">Rust allows creating web services that are fast, reliable, and cost-effective. This workshop aims to guide you through the process of building web services using the ecosystem around the Tokio async runtime. You will learn how to make basic API calls, create
-        advanced middleware layers to add functionality, and conduct tracing and
-        testing.</div>
-        {{ ctaLink("/services/workshops/web-based-services-in-rust/", "Learn more", 'color-hero__link') }}
-    </div>
-  </div>
-</section>
-
-{{ recentPosts("Latest from our blog on the topic", collections.rustPosts) }}
 
 {% set logoCompanies = ['Rust Foundation', 'arm', 'Ferrocene', 'Google'] %}
-{% set title = 'We partner with international companies that bet on Rust' %}
+{% set title = 'Our EuroRust partners are betting on Rust' %}
 {{ logoList(logoCompanies, title) }}
+
+{% set 'slide_1' = {
+  "color": "purple",
+  "title": "Is Rust the right choice for me?",
+  "text": "Every new technology brings its own risks - Rust is no exception. Luca Palmieri, the author of <a href=\"http://zero2prod.com\">Zero to Production in Rust</a> and our in-house Rust expert, is here to help you. You walk him through your usecase and your requirements and he’ll do his best to suggest the best course of action. Sometimes Rust is not the answer, but if it is, he’ll make sure you are on the right track.",
+  "linkUrl": "/contact/",
+  "linkText": "Book a free 1:1 call with Luca"
+} %}
+
+{% set 'slide_2' = {
+  "color": "black",
+  "title": "Training",
+  "text": "There is excellent material out there for learning Rust on your own. But you might not have the luxury of time, or the in-house expertise, to upskill your entire team. Our trainers are world-class experts and can design a learning path that best fits your needs.",
+  "linkUrl": "/services/workshops/",
+  "linkText": "Check out our workshops!"
+} %}
+
+{% set 'slide_3' = {
+  "color": "aqua",
+  "title": "Team augmentation",
+  "text": "Rust is a young technology – hiring Senior talent can be a challenge.
+  Our experts can merge with your in-house product teams to ensure the timely delivery of mission-critical projects. We’re more than hired hands – we mentor your team throughout the process to help lift productivity long after our collaboration ends.",
+  "linkUrl": "/services/workshops/advanced-testing-in-rust/",
+  "linkText": "Learn more"
+} %}
+
+{% set slides = [slide_1, slide_2, slide_3] %}
+{{ scrollSlides('rust', slides, page.url) }}
+
+{{ recentPosts("Latest from our blog on the topic", collections.rustPosts) }}
 
 {% include 'content/hero-grow-with-us.njk' %}
