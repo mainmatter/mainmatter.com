@@ -141,12 +141,10 @@
   from = "/why-simplabs"
   to = "/"
 
-# serve "Web-based Services in Rust" landing page for rust-web-services-workshop.mainmatter.com
+# redirect old "Web-based Services in Rust" landing page to regular workshop
 [[redirects]]
   from = "https://rust-web-services-workshop.mainmatter.com"
-  to = "https://mainmatter.com/web-based-services-in-rust-workshop/"
-  force = true
-  status = 200
+  to = "https://mainmatter.com/services/workshops/web-based-services-in-rust/"
 
 # serve 404 for all paths that don't exist
 [[redirects]]
