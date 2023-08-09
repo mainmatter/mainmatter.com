@@ -1,7 +1,7 @@
 ---
 layout: base
-renderData:
-  title: All posts by {{ paged.author.data.name }}
+eleventyComputed:
+  title: "All posts by {{ paged.author.data.name }}"
 description: "Frontend and JavaScript, Svelte and Ember, Rust and WASM, Elixir and Phoenix, Product and Design: Stay on top of what's happening."
 pagination:
   data: collections.authorsPostsPaged
