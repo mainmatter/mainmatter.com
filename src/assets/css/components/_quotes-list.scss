@@ -1,0 +1,77 @@
+.quotes-list {
+  margin: 5rem 0 10rem;
+
+  @media (min-width: 48em) {
+    & {
+      margin: 6.25rem 0;
+    }
+  }
+
+  &__title {
+    margin: 2rem 0 2.5rem;
+    text-align: center;
+
+    @media (min-width: 48em) {
+      margin: 3.25rem 0;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    @media (min-width: 48em) {
+      & {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4.25rem 1.5rem;
+      }
+    }
+
+    .quotes-list__quote {
+      display: flex;
+      flex-direction: column;
+      margin: 5rem 0;
+
+      &-image {
+        display: flex;
+        align-items: center;
+        height: 5rem;
+        margin-bottom: 0.75rem;
+      
+        img {
+          max-height: 100%;
+          width: auto;
+          max-width: 10rem;
+        }
+      }
+
+      blockquote {
+        margin: 0;
+        font-style: italic;
+      }
+
+      &-source {
+        font-weight: 700;
+        color: var(--color-purple);
+
+        &--separator {
+          display: none;
+        }
+
+        &--jobtitle {
+          font-weight: 400;
+          display: block;
+        }
+      }
+
+      @media (min-width: 48em) {
+        & {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+

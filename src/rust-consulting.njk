@@ -9,10 +9,11 @@ permalink: /rust-consulting/
 {% from "recent-posts.njk" import recentPosts %}
 {% from "logo-list.njk" import logoList %}
 {% from "cta-link.njk" import ctaLink %}
+{% from "scroll-slides.njk" import scrollSlides %}
 
-<section class="color-hero color-hero--aqua" data-background-color="aqua">
+<section class="color-hero color-hero--purple" data-background-color="purple">
   <div class="color-hero__image-wrapper">
-    {% image '/assets/images/photos/eurorust-audience.jpg', 'The audience at the EuroRust 2022 conference as seen from stage', '100vw', 'eager',
+    {% image '/assets/images/photos/notebook-on-table.jpg', 'Notebook on a table, seen from the side', '100vw', 'eager',
     'color-hero__image', [760, 1440, 1920] %}
   </div>
   <div class="color-hero__overlay"></div>
@@ -20,8 +21,12 @@ permalink: /rust-consulting/
     <div class="color-hero__main">
       {% set imagePath %}/assets/images/rust/rust-logo.svg{% endset %}
       <img class="expertise__logo" src="{{ imagePath }}" alt="Rust logo" />
-      <h1 class="color-hero__title color-hero__title--full ">Rust puts teams miles ahead</h1>
-      <div class="color-hero__text color-hero__text--large">Rust checks all the boxes – performance, efficiency, maintainability, and developer experience. Mainmatter enables teams to get access to those benefits by adopting Rust in their web projects.</div>
+      <h1 class="color-hero__title color-hero__title--full ">Rust is a competitive advantage</h1>
+      <div class="color-hero__text color-hero__text--large">
+        <p>Rust checks all the boxes – performance, efficiency, maintainability, and great developer experience. Mainmatter is here to empower your team to fully realize those benefits in your web and backend projects.</p>
+        <p>
+          {{ ctaLink("/blog/2022/10/12/making-a-strategic-bet-on-rust/", "We're making a strategic bet on Rust", '') }}
+        </div>
     </div>
   </div>
 </section>
@@ -32,7 +37,8 @@ permalink: /rust-consulting/
     <h3 class="split-content__subheading h2">A unique skillset</h3>
     <div class="split-content__content">
       <div class="split-content__text">
-        <p>Mainmatter has a unique combination of expertise both in building web applications as well as in Rust. We have built big web apps and mentored teams on design, backend and frontend with international clients such as Qonto, trainline, Experteer, and others. At the same time, we know the ins and outs of Rust. Several of our engineers have been on the crates.io team for years and we run workshops to teach others Rust.</p>
+        <p>We’re experts - our Rust team is led by Luca Palmieri, author of <a href="https://zero2prod.com">"Zero to Production in Rust"</a>, and we have been part of the Rust ecosystem for years, helping out the <a href="https://crates.io">crates.io</a> project.</p>
+        <p>But we don't stop at Rust – we have built big web apps and mentored teams on backend, frontend, design, as well as process and developer infrastructure for years. We know what it takes to connect everything together and deliver a delightful end-to-end experience.</p>
       </div>
       <div class="split-content__feature">
         {% include 'content/secondary-feature-rust.njk' %}
@@ -41,54 +47,95 @@ permalink: /rust-consulting/
   </div>
 </section>
 
-{% set 'content' = {
-"subtitle": "We run the EuroRust conference",
-"text": "<p>EuroRust is the main conference for the European Rust community. EuroRust covers all things Rust and is part of the RustFest family of events.</p>",
-"linkUrl": "https://eurorust.eu",
-"linkText": "Watch past talks and get ready for the next conference at eurorust.eu.",
-"image": "/assets/images/rust/eurorust-header-2023.jpg",
-"alt": "The EuroRust header graphic",
-"loading": "lazy"
-} %}
-{{ imageBannerWithText(content) }}
-
-<section class="color-hero color-hero--black" data-background-color="black">
-  <div class="color-hero__image-wrapper">
-    {% image '/assets/images/workshops/introduction-to-rust-for-web-developers/header-background.jpg', 'The Rust logo in white on top of a photo of a rusty metal surface', '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
-  </div>
-  <div class="color-hero__overlay"></div>
-  <div class="color-hero__container container container--lg color-hero__container--center">
-    <div class="color-hero__main">
-      <h1 class="color-hero__title color-hero__title--full">Workshop: Introduction to Rust for Web Developers</h1>
-      <div class="color-hero__text">Our Rust workshop provides a smooth entry into
-        the language for teams that are looking for leveraging Rust's capabilities in
-        their web projects. We teach everything you need to know about the
-        language and wider ecosystem to be able to write your own HTTP server in the
-        end!</div>
-        {{ ctaLink("/services/workshops/introduction-to-rust-for-web-developers/", "Learn more", 'color-hero__link') }}
+<section class="split-content">
+  <div class="container container--lg">
+    <h2 class="h5">EuroRust</h2>
+    <h3 class="split-content__subheading h2">We run EuroRust</h3>
+    <div class="split-content__content">
+      <div class="split-content__text">
+        <p>EuroRust is the conference for the European Rust community. In 2022, we welcomed 250 Rustaceans on-site, with another 160 attending remotely.</p>
+        <p>In 2023, we are doubling down: bigger venue, more speakers, onsite workshops. Buy your ticket on <a href="https://eurorust.eu">eurorust.eu</a> before it’s too late!</p>
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-eurorust.njk' %}
+      </div>
     </div>
   </div>
 </section>
-<section class="color-hero color-hero--black" data-background-color="purple">
-  <div class="color-hero__image-wrapper">
-    {% image '/assets/images/workshops/web-based-services-in-rust/header-background.jpg', 'The Rust logo in white on top of a photo of a rusty metal surface', '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
-  </div>
-  <div class="color-hero__overlay"></div>
-  <div class="color-hero__container container container--lg color-hero__container--center">
-    <div class="color-hero__main">
-      <h1 class="color-hero__title color-hero__title--full">Workshop: Web-based Services in Rust</h1>
-      <div class="color-hero__text">Rust allows creating web services that are fast, reliable, and cost-effective. This workshop aims to guide you through the process of building web services using the ecosystem around the Tokio async runtime. You will learn how to make basic API calls, create
-        advanced middleware layers to add functionality, and conduct tracing and
-        testing.</div>
-        {{ ctaLink("/services/workshops/web-based-services-in-rust/", "Learn more", 'color-hero__link') }}
-    </div>
+
+{% set logoCompanies = ['Rust Foundation', 'arm', 'Ferrocene', 'Google'] %}
+{% set title = 'Our EuroRust partners are betting on Rust' %}
+{{ logoList(logoCompanies, title, "h4", "h5") }}
+
+{% set 'slide_1' = {
+  "color": "purple",
+  "title": "Is Rust the right choice for me?",
+  "text": "Every new technology brings its own risks - Rust is no exception. Luca Palmieri, the author of <a href=\"http://zero2prod.com\">Zero to Production in Rust</a> and our in-house Rust expert, is here to help you. You walk him through your usecase and your requirements and he’ll do his best to suggest the best course of action. Sometimes Rust is not the answer, but if it is, he’ll make sure you are on the right track.",
+  "linkUrl": "https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us",
+  "linkText": "Book a free 1:1 call with Luca"
+} %}
+
+{% set 'slide_2' = {
+  "color": "black",
+  "title": "Training",
+  "text": "There is excellent material out there for learning Rust on your own. But you might not have the luxury of time, or the in-house expertise, to upskill your entire team. Our trainers are world-class experts and can design a learning path that best fits your needs.",
+  "linkUrl": "/services/workshops/rust/",
+  "linkText": "Check out our workshops!"
+} %}
+
+{% set 'slide_3' = {
+  "color": "aqua",
+  "title": "Team augmentation",
+  "text": "Rust is a young technology – hiring Senior talent can be a challenge.
+  Our experts can merge with your in-house product teams to ensure the timely delivery of mission-critical projects. We’re more than hired hands – we mentor your team throughout the process to help lift productivity long after our collaboration ends.",
+  "linkUrl": "/contact/",
+  "linkText": "Work with us!"
+} %}
+
+{% set slides = [slide_1, slide_2, slide_3] %}
+{{ scrollSlides('rust', slides, page.url) }}
+
+<section class="quotes-list">
+  <div class="container container--xl">
+    <h2 class="quotes-list__title h2">Listen to our customers</h2>
+    <ul class="quotes-list__list">
+      <li class="quotes-list__quote">
+        <div class="quotes-list__quote-image">
+          <img src="/assets/images/logos/monochrome/mvb.svg" alt="MVB logo"/>
+        </div>
+        <div class="quotes-list__quote-text text--sm">
+          <blockquote>
+            ”Mainmatter’s team is highly experienced and professional. They not only helped us develop the product but also mentored our internal team and introduced a number of improvements around infrastructure and processes along the way. Due to their work, we increased our team’s efficiency substantially and will be able to deliver better results faster going forward.”
+          </blockquote>
+          <figcaption class="quotes-list__quote-source">Ronald Schild<span class="quotes-list__quote-source--separator">, </span><span class="quotes-list__quote-source--jobtitle">Managing Director of MVB</span></figcaption>
+        </div>
+      </li>
+      <li class="quotes-list__quote">
+        <div class="quotes-list__quote-image">
+          <img src="/assets/images/logos/monochrome/qonto.svg" alt="Qonto logo"/>
+        </div>
+        <div class="quotes-list__quote-text text--sm">
+          <blockquote>
+            ”Working with Mainmatter's experts has always been a good experience. We can really feel that they have mastery on many topics, and knowledge about complex technical problems. I’ve learned so much, especially during our pairing sessions, and it allows me to improve my technical skills and growth as an engineer.”
+          </blockquote>
+          <figcaption class="quotes-list__quote-source">Alexandre Monjol<span class="quotes-list__quote-source--separator">, </span><span class="quotes-list__quote-source--jobtitle">Engineer at Qonto</span></figcaption>
+        </div>
+      </li>
+      <li class="quotes-list__quote">
+        <div class="quotes-list__quote-image">
+          <img src="/assets/images/logos/monochrome/trainline.svg" alt="Trainline logo"/>
+        </div>
+        <div class="quotes-list__quote-text text--sm">
+          <blockquote>
+            ”We started working with simplabs to build a state-of-the-art mobile web app from the ground up and it was an absolute success! Not only are they web specialists, but their expertise in development practices and agile processes made our collaboration an absolute delight.”
+          </blockquote>
+          <figcaption class="quotes-list__quote-source">Carl Anderson<span class="quotes-list__quote-source--separator">, </span><span class="quotes-list__quote-source--jobtitle">General Manager at Trainline Europe</span></figcaption>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 
 {{ recentPosts("Latest from our blog on the topic", collections.rustPosts) }}
-
-{% set logoCompanies = ['Rust Foundation', 'arm', 'Ferrocene', 'Google'] %}
-{% set title = 'We partner with international companies that bet on Rust' %}
-{{ logoList(logoCompanies, title) }}
 
 {% include 'content/hero-grow-with-us.njk' %}
