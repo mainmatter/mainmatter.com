@@ -7,14 +7,16 @@ description: "TODO"
 og:
   image: /assets/images/posts/2023-06-09-securing-the-ecosystems-investment-in-emberjs/og-image.jpg
 tagline:
-  "Mainmatter made a strategic bet on Rust for the web in the last year. Our
-  goal is to guide teams during the process of adopting Rust in web environments
-  and we're on our way towards reaching that goal: we started the EuroRust
-  conference, we joined the Rust Foundation, we hired Luca Palmieri as our
-  Principal Engineering Consultant and are working on a number of Rust projects
-  internally as well as in the open source space.</p><p>In this post, I want to
-  share why we're confident taking that bet and why we believe Rust has a great
-  future ahead of it in the web and cloud space."
+  '<p>Mainmatter <a href="/blog/2022/10/12/making-a-strategic-bet-on-rust/">made
+  a strategic bet on Rust for the web</a> in the last year. Our goal is to guide
+  teams during the process of adopting Rust in web environments and we''re on
+  our way towards reaching that goal: we started the EuroRust conference, we
+  joined the Rust Foundation, we hired Rust expert and author <a
+  href=\"http://twitter.com/algo_luca/\">Luca Palmieri</a> as our Principal
+  Engineering Consultant and are working on a number of Rust projects internally
+  as well as in the open source space.</p><p>In this post, I want to share why
+  we''re confident taking that bet and why we believe Rust has a great future
+  ahead of it in the web and cloud space.</p>'
 image: "/assets/images/posts/2023-06-09-securing-the-ecosystems-investment-in-emberjs/header-illustration.jpg"
 imageAlt: "The Ember logo on a gray backround picture"
 ---
