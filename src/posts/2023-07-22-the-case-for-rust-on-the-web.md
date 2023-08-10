@@ -169,7 +169,7 @@ One thing to keep in mind when starting a project from scratch: Rust isn't neces
 
 #### Incremental Adoption
 
-While every engineer likes a greenfield project, incremental adoption paths are typically easier to manage. Instead of rewriting entire applications in Rust, it's usually much more straight forward to extract individual aspects of existing systems into Rust (micro) services. For these kinds of projects, the lack of full-featured macro frameworks also is less critical as much of the aspects that such frameworks would cover might not be relevant for these projects at all due to their limited scope.
+While every engineer likes a greenfield project, incremental adoption paths are typically easier to manage. Instead of rewriting entire applications in Rust, it's usually much more straightforward to extract individual aspects of existing systems into Rust (micro) services. For these kinds of projects, the lack of full-featured macro frameworks is also less critical, as much of the aspects that such frameworks would cover might not be relevant for these projects at all due to their limited scope.
 
 Overall, incremental adoption by (re-)implementing individual aspects of existing systems in Rust is the typical adoption path we're seeing. The reduced scope of such projects also reduces the overall risk – teams can evaluate whether Rust works for them without making a huge commitment. If they run into challenges working with Rust, no huge investment has been made and the decision is typically reversible without huge cost. If a team succeeds with Rust though, their success will typically inspire others and lead to more and more adoption throughout an organization.
 
@@ -194,4 +194,4 @@ While it might be questionable how that experience translates to other teams and
 
 We at Mainmatter are highly optimistic that Rust will take off in the web and cloud space in the coming months and years and for that reason have [made a strategic bet on Rust](/blog/2022/10/12/making-a-strategic-bet-on-rust/). We believe that Rust is the first step towards a new era of web development where developers can levarage a technology that allows them to reach higher and previously unthinkable levels of efficiency, stability, reliability, and maintainability without giving up on developer experience and productivity.
 
-If you're looking to adopt Rust but aren't comfortable going on the journey alone, [reach out](/contact/). We can help with [mentoring, team augmentation, and custom development](/rust-consulting/).
+If you're looking to adopt Rust but aren't comfortable going on the journey alone, [reach out](/contact/). We can help with [mentoring, training, team augmentation, and custom development](/rust-consulting/).
