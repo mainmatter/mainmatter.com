@@ -146,6 +146,7 @@ Rust apps being more reliable and thus requiring less time invested into bug fix
 
 Based on Rust's strengths and effort curve, whenever evaluating whether or not to choose Rust for a particular case, the main questions to answer are:
 
+* Does the team have Rust expertise already (and many teams that don't use Rust already actually have expertise because so many developers code in Rust in their freetime)?
 * What are the requirements regarding reliability?
 * What are the plans for long term maintenance?
 * What scale is the system being built for and thus how much money could Rust potentially save in terms of hosting?
