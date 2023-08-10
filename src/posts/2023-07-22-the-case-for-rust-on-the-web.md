@@ -252,8 +252,10 @@ Additionally, the `activation_date` argument of the function is always
 guaranteed to have a value when the function is called since Rust does not have
 a concept of implicit nullability (as opposed to e.g. Java). If the
 `activation_date` _could_ potentially not have a value at the place where its
-calculated, it would probably be an `Option<DateTime<Utc>>` which could not be
-passed to the `activate` function. The Rust compiler would only allow the code
+calculated, it would probably be an
+[`Option<DateTime<Utc>>`](https://doc.rust-lang.org/1.68.2/std/option/enum.Option.html)
+which could not be passed to the `activate` function as its a different type
+than the expected `DateTime<Utc>`. The Rust compiler would only allow the code
 path for the `Some` variant of that `Option` to result in an invocation of the
 `activate` method so that `activation_date` is guaranteed to have a value when
 the function runs.
