@@ -35,7 +35,18 @@
 }
 
 .secondary-feature-rust {
+  background-color: var(--color-aqua);
   .secondary-feature__image {
     max-width: 12rem;
+  }
+}
+
+.secondary-feature-eurorust {
+  .secondary-feature__image-wrapper {
+    padding: 0;
+
+    .secondary-feature__image {
+      max-width: 100%;
+    }
   }
 }

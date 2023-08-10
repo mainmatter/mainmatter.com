@@ -9,11 +9,11 @@ Example usage:
 {% set logoCompanies = ['Qonto', 'Trainline', 'Timify', 'Cardstack', 'Generali', 'Experteer'] %}
 {{ logoList(logoCompanies) }}
 #}
-{%- macro logoList(logos, title) -%}
+{%- macro logoList(logos, title, heading = "h2", headingClass = "h3") -%}
   <section class="logo-list" id="logo-list">
     {% if title %}
       <div class="logo-list__title">
-        <h2 class="h3">{{ title }}</h2>
+        <{{heading}} class="{{headingClass}}">{{ title }}</{{heading}}>
       </div>
     {% endif %}
     <div class="logo-list__wrapper">
