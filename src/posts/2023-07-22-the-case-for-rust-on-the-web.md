@@ -168,14 +168,14 @@ end
 user.activate(Time.now)
 ```
 
-While this code is quite expressive and writing code like this will let you
-reach your goal fast, there are problems. In this (admittedly simple) example,
-while we can see the user's attributes, we don't know what rules there might be
-around those (e.g., if `active` is `true`, `activation_date` must be set as well
-probably? If `active` is `false`, presumably `activation_date` should be
-`nil`?). In order to validate these assumption, one has to look into the
-implementation of the `activate` method which means relatively high effort is
-required to get to the information.
+While this code is quite succinct and pleasant to read and writing code like
+this will let you reach your goal fast, there are problems. In this (admittedly
+simple) example, while we can see the user's attributes, we don't know what
+rules there might be around those (e.g., if `active` is `true`,
+`activation_date` must be set as well probably? If `active` is `false`,
+presumably `activation_date` should be `nil`?). In order to validate these
+assumption, one has to look into the implementation of the `activate` method
+which means relatively high effort is required to get to the information.
 
 Looking at the invocation of the `activate` method, we can't know whether it
 might raise an error or what timezone we're supposed to pass the time in. And
