@@ -23,30 +23,33 @@ Rust has received a lot of developer attention and love ever since it entered
 the stage around a decade ago. And it's not only the developers that love the
 language – the decision makers at the big corporates agree Rust is a great
 technology to build on and the language has seen a lot of adoption throughout
-the industry over the past few years. AWS uses Rust heavily for their platform,
-Google uses it for example in Android, Microsoft uses it in Windows, it's used
-in the Linux kernel now and Rust flies planes and satellites. Essentially, Rust
-is replacing C and C++ everywhere those were used before: systems programming,
-operating systems, all kinds of embedded systems, low level tooling, as well as
-in games and game engines.
+the industry over the past few years. AWS uses Rust heavily
+[for their platform](https://aws.amazon.com/blogs/opensource/sustainability-with-rust/),
+Google uses it
+[in Android](https://security.googleblog.com/2022/12/memory-safe-languages-in-android-13.html),
+Microsoft uses it
+[in Windows](https://www.theregister.com/2023/04/27/microsoft_windows_rust/).
+Essentially, Rust is on track to replace C and C++ in many of the domains those
+were used before: systems programming, operating systems, all kinds of embedded
+systems, low level tooling, as well as in games and game engines.
 
-Yet, we believe Rust has even more potential and has a great future ahead of it
-in other areas like the web and cloud as well. While those areas aren't
-necessarily areas where many teams used C or C++ before and Rust might not be an
-obvious choice, we believe it can in fact take development of web backends to
-the next level as it gives teams access to capabilities that were previously out
-of reach – what those are we'll see in more detail below. And while the web and
-cloud space is a young and evolving area for Rust still, there are quite a few
-companies that already use Rust in that area and quite successfully so like
+Yet, we believe Rust has even more potential and a great future in other areas:
+the web and the cloud. Rust might not be an obvious choice there - those are not
+areas where many teams were previously using a low-level language like C or C++.
+Nonetheless, we believe that Rust can bring the development of web backends to
+the next level, giving teams access to capabilities that were previously out of
+reach – what those are we'll see in more detail below. We can already see quite
+a few companies using Rust successfully in the web and the cloud, even though
+Rust is still young and evolving in these areas:
 [Truelayer](http://truelayer.com), [Discord](http://discord.com),
 [Temporal](http://temporal.io), [Nando's](https://nandos.co.uk),
-[svix](http://svix.com), and many others.
+[svix](http://svix.com), [Wingback](https://www.wingback.com/), and many others.
 
 ## What?
 
 Around 8 years after its 1.0 release, Rust is still a relative young ecosystem.
 Yet, it's reached a level of maturity that makes it a viable choice to build
-real applications and Rust's web ecosystem is not exception there: Rust is
+real applications and Rust's web ecosystem is no exception there. Rust is
 clearly ready for the web as [arewewebyet.org](http://arewewebyet.org) confirms:
 
 ![arewewebyet.org](/assets/images/posts/2023-07-22-the-case-for-rust-on-the-web/arewewebyet.png)
@@ -54,44 +57,44 @@ clearly ready for the web as [arewewebyet.org](http://arewewebyet.org) confirms:
 First of all, there's [tokio](http://tokio.rs), an asynchronous runtime that's a
 solid and performant foundation for networking applications. On top of that,
 there's mature and well-maintained web frameworks like
-[axum](http://github.com/tokio-rs/axum/), as well as middleware solutions like
-tower. There's mature drivers for all of the relevant datastores as well as ORMs
-and of course some datastores that were written in Rust itself. Finally, all
-other relevant aspects for building web apps are covered as well like
-(de-)serialization, i18n, templating, observability, etc. So overall, Rust
-provides solid and stable building blocks for building ambitious web backends.
+[axum](http://github.com/tokio-rs/axum/) and [actix-web](https://actix.rs).
+There's mature drivers for all of the relevant datastores as well as ORMs.
+Finally, you can find libraries covering all other relevant aspects for building
+web apps, such as (de-)serialization, internationalisation, templating,
+observability, etc. Overall, Rust provides solid and stable building blocks for
+building ambitious web backends.
 
 ## Why?
 
 Of course one might ask: why should you care? What could motivate a team that
 already uses Ruby, Java, Elixir, TypeScript, Go, or whatever else, to adopt
-Rust? The answer to that question is straight forward really as there are
-essentially two main aspects that make Rust a great choice for building for the
-web: its efficiency and performance and the reliability and maintainability
-gains it comes with.
+Rust? There are two key aspects that make Rust a great choice for building for
+the web:
+
+- its efficiency and performance
+- the reliability and maintainability gains brought by its type system
 
 ### Efficiency and Performance
 
 Rust is famously efficient and performant. It will easily outperform languages
 like JavaScript, Ruby, Python, etc. that are commonly used for web applications,
-by several orders of magnitude. Also languages like Java or Go can't really
-reach the same levels of performance and efficiency that Rust offers. In
-addition, what separates Rust from all of these languages is its lack of a
-garbage collector. While garbage collected languages can be performant as well,
-they can never be performant consistently at all times. In regular intervals,
-execution will need to be paused so that the garbage collector can run and free
-unused memory, resulting in p95 performance numbers always being significantly
-worse than average performance. Rust not having a garbage collector means it can
-deliver consistent performance without those spikes.
+by several orders of magnitude. Other languages may have a higher performance
+ceiling (e.g. Java or C# or Go), but you need to invest serious engineering
+effort to come close to the level of performance offered by Rust's toolkit out
+of the box. In addition, Rust has a key advantage: it doesn't bundle a garbage
+collector. Garbage-collected languages can be plenty fast, but they are not
+**consistently** performant at all times. The garbage collector will introduce
+pauses in order to free unused memory, negatively impacting the tail latency
+(p95/p99) of your applications. Rust doesn't have this problem: it can deliver
+consistent performance without those spikes.
 
 ![Performance charts of garbage-collected languages and non-garbage-collected languages](/assets/images/posts/2023-07-22-the-case-for-rust-on-the-web/perf-charts.png)
 
-The only other languages that allowed for such stable and consistent performance
-on the same level as Rust does, were C and C++ before. The problem with those
-though is they are full of pitfalls and opportunities for shooting yourself in
-the foot, in particular by making mistakes doing manual memory management. As
-Linus Torvalds, who must know as he must have written millions of lines of code
-in both languages over the years, says:
+C and C++ are the only other languages that allowed for such stable and
+consistent performance. Unfortunately, they are full of pitfalls and
+opportunities for shooting yourself in the foot, in particular by making
+mistakes doing manual memory management. As Linus Torvalds, the creator of
+Linux, says:
 
 > "[…] it is so close to the hardware that you can do anything with it. It is
 > dangerous. It's like juggling chainsaws. I also see that it does have a lot of
@@ -108,14 +111,13 @@ typically outperform other technologies commonly used to build web backends by
 several orders of magnitude while at the same time keeping a significantly lower
 memory footprint.
 
-Of course, being able to write e.g. web servers that can respond to requests in
-a fraction of the time compared to other technologies, also means being able to
-respond to the same number of requests with a fraction of the servers, which
-again means a fraction of the hosting cost. That difference has real financial
-consequences – as great as cloud hosting is, it's certainly not cheap. Being
-able to just switch off a substantial amount of cloud servers can easily be a
-reduction of hundreds of thousands of Euros per month even for small to
-mid-sized products and companies.
+Of course, if your Rust web server can respond to requests in a fraction of the
+time compared to other technologies, it also means it can respond to the same
+number of requests with a fraction of the servers, which again means a fraction
+of the hosting cost. That difference has real financial consequences – as great
+as cloud hosting is, it's certainly not cheap. Being able to just switch off a
+substantial amount of cloud servers can easily be a reduction of hundreds of
+thousands of Euros per month even for small to mid-sized products and companies.
 
 > […] our Python services average about 50 req/s, NodeJS around 100 req/s, and
 > Rust hits about 690 req/s. We can fit 4 Rust services on a k8 EKS node that
@@ -135,13 +137,12 @@ input, that's an aspect to consider when choosing a technology.
 
 ### Reliability and Maintainability
 
-While Rust's performance and efficiency might be the most obvious reason to
-choose it for a project, it's not the only one. Other, maybe more relevant
+While performance and efficiency might be the most obvious reasons to choose
+Rust for a project, they are not the only ones. Other, maybe more relevant
 reasons in many cases, are the reliability and maintainability gains that Rust's
 strong type system unlocks.
 
-Everyone has seen code snippets like the following one (which is Ruby on Rails)
-that's quite typical for a web application:
+Snippets like this one are fairly typical for a web application (Ruby on Rails):
 
 ```ruby
 class User
@@ -165,8 +166,8 @@ end
 user.activate(Time.now)
 ```
 
-While this code is quite expressive and writing code like this will lets you
-reach your goal fast, there's problems. In this (admittedly simple) example,
+While this code is quite expressive and writing code like this will let you
+reach your goal fast, there are problems. In this (admittedly simple) example,
 while we can see the user's attributes, we don't know what rules there might be
 around those (e.g., if `active` is `true`, `activation_date` must be set as well
 probably? If `active` is `false`, presumably `activation_date` should be
