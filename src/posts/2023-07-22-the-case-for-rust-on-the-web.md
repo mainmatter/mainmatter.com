@@ -297,8 +297,8 @@ While languages like JavaScript and Ruby are made for getting results fast, Rust
 deliberately doesn't leave as much freedom and requires a program to pass all of
 the compiler's checks before one gets to a working result. That requires higher
 initial effort for building an application with Rust compared to those
-languages. Additionally, there's a few mountains people need to climb before
-they're productive with Rust at all – mastering Rust's unique ownership system.
+languages. Additionally, there's a mountain people need to climb before they're
+productive with Rust at all – that is mastering Rust's unique ownership system.
 
 However, when looking beyond the initial stages of a project and expanding the
 view on a longer time horizon where aspects like maintainability, reliability,
