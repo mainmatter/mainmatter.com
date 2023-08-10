@@ -243,7 +243,7 @@ untyped obviously but the types are also very precise so that e.g. for the
 The signature of the `activate` function also encodes, explicitly, a lot of the
 information that was implicit in the Rails example. Again, the expected timezone
 for the `activation_date` is right in the type, and also the function returns
-[Rust's `Result`](https://kapeli.com/dash_share?docset_file=Rust&docset_name=Rust&path=doc.rust-lang.org/1.68.2/std/result/enum.Result.html&platform=rust&repo=Main&source=doc.rust-lang.org/1.68.2/std/result/enum.Result.html&version=1.68.2)
+[Rust's `Result`](https://doc.rust-lang.org/1.68.2/std/result/enum.Result.html)
 which clearly communicates that errors might occur when calling it. In fact, the
 Rust compiler will require both the success and error variant of the `Result` to
 be handled so that no unhandled runtime exceptions can occur.
