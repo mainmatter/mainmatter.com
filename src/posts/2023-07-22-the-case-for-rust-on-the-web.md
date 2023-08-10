@@ -423,8 +423,8 @@ their concepts and APIs, making them easier to use. The ease of use of libraries
 like e.g. [express.js](http://expressjs.com) from the Node ecosystem is the
 benchmark that maintainers of web frameworks in Rust like
 [Rob Ede](http://twitter.com/robjtede), maintainer of [actix](http://actix.rs),
-are aiming for ([I talked about this and other topics recently](/blog/)). While
-an ambitious goal, it's actually one that's possible to reach in the mid future.
+are aiming for. While an ambitious goal, it's actually one that's possible to
+reach in the mid future.
 
 In parallel to existing frameworks and libraries like actix and axum continue to
 improve, new frameworks will be built at higher abstraction levels as well. As
