@@ -245,7 +245,7 @@ information that was implicit in the Rails example. Again, the expected timezone
 for the `activation_date` is right in the type, and also the function returns
 [Rust's `Result`](https://kapeli.com/dash_share?docset_file=Rust&docset_name=Rust&path=doc.rust-lang.org/1.68.2/std/result/enum.Result.html&platform=rust&repo=Main&source=doc.rust-lang.org/1.68.2/std/result/enum.Result.html&version=1.68.2)
 which clearly communicates that errors might occur when calling it. In fact, the
-Rust compiler will require both the success and error variant of the result to
+Rust compiler will require both the success and error variant of the `Result` to
 be handled so that no unhandled runtime exceptions can occur.
 
 Additionally, the `activation_date` argument of the function is always
