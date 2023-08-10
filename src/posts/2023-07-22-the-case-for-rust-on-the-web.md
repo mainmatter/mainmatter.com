@@ -428,7 +428,7 @@ reach in the mid future.
 
 In parallel to existing frameworks and libraries like actix and axum continue to
 improve, new frameworks will be built at higher abstraction levels as well. As
-more teams adopt Rust for web backends, the ecosystem will explore and evaluate
+more teams adopt Rust for web backends, the community will explore and evaluate
 approaches, learn from evaluating those in different use cases, and collectively
 settle on a set of patterns and architectures. Eventually, we'll see
 full-featured macro-frameworks like a "Rust on Rails" that will significantly
