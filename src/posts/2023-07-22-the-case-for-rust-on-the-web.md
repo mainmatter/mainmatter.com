@@ -5,7 +5,7 @@ tags: [rust]
 bio: "Marco Otte-Witte"
 description: "TODO"
 og:
-  image: /assets/images/posts/2023-06-09-securing-the-ecosystems-investment-in-emberjs/og-image.jpg
+  image: /assets/images/posts/2023-07-22-the-case-for-rust-on-the-web/og-image.png
 tagline:
   '<p>Mainmatter <a href="/blog/2022/10/12/making-a-strategic-bet-on-rust/">made
   a strategic bet on Rust for the web</a> in the last year. Our goal is to guide
@@ -17,8 +17,8 @@ tagline:
   as well as in the open source space.</p><p>In this post, I want to share why
   we''re confident taking that bet and why we believe Rust has a great future
   ahead of it in the web and cloud space.</p>'
-image: "/assets/images/posts/2023-06-09-securing-the-ecosystems-investment-in-emberjs/header-illustration.jpg"
-imageAlt: "The Ember logo on a gray backround picture"
+image: "/assets/images/posts/2023-07-22-the-case-for-rust-on-the-web/header.png"
+imageAlt: "The Rust logo on top of a stylized world map"
 ---
 
 Rust has received a lot of developer attention and love ever since it entered
