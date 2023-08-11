@@ -5,7 +5,7 @@ tags: [rust]
 bio: "Marco Otte-Witte"
 description: "TODO"
 og:
-  image: /assets/images/posts/2023-07-22-the-case-for-rust-on-the-web/og-image.png
+  image: /assets/images/posts/2023-08-14-the-case-for-rust-on-the-web/og-image.png
 tagline:
   '<p>Mainmatter <a href="/blog/2022/10/12/making-a-strategic-bet-on-rust/">made
   a strategic bet on Rust for the web</a> in the last year. Our goal is to guide
@@ -17,7 +17,7 @@ tagline:
   as well as in the open source space.</p><p>In this post, I want to share why
   we''re confident taking that bet and why we believe Rust has a great future
   ahead of it in the web and cloud space.</p>'
-image: "/assets/images/posts/2023-07-22-the-case-for-rust-on-the-web/header.png"
+image: "/assets/images/posts/2023-08-14-the-case-for-rust-on-the-web/header.png"
 imageAlt: "The Rust logo on top of a stylized world map"
 ---
 
@@ -54,7 +54,7 @@ Yet, it's reached a level of maturity that makes it a viable choice to build
 real applications and Rust's web ecosystem is no exception there. Rust is
 clearly ready for the web as [arewewebyet.org](http://arewewebyet.org) confirms:
 
-![arewewebyet.org](/assets/images/posts/2023-07-22-the-case-for-rust-on-the-web/arewewebyet.png)
+![arewewebyet.org](/assets/images/posts/2023-08-14-the-case-for-rust-on-the-web/arewewebyet.png)
 
 First of all, there's [tokio](http://tokio.rs), an asynchronous runtime that's a
 solid and performant foundation for networking applications. On top of that,
@@ -90,7 +90,7 @@ pauses in order to free unused memory, negatively impacting the tail latency
 (p95/p99) of your applications. Rust doesn't have this problem: it can deliver
 consistent performance without those spikes.
 
-![Performance charts of garbage-collected languages and non-garbage-collected languages](/assets/images/posts/2023-07-22-the-case-for-rust-on-the-web/perf-charts.png)
+![Performance charts of garbage-collected languages and non-garbage-collected languages](/assets/images/posts/2023-08-14-the-case-for-rust-on-the-web/perf-charts.png)
 
 C and C++ are the only other languages that allowed for such stable and
 consistent performance. Unfortunately, they are full of pitfalls and
@@ -291,7 +291,7 @@ needs to be accounted for.
 Overall, Rust still requires a higher upfront investment than other
 technologies, in particular compared to those commonly used in web projects:
 
-![Chart showing the initial effort for building on Rust compared to other languages](/assets/images/posts/2023-07-22-the-case-for-rust-on-the-web/initial-effort.png)
+![Chart showing the initial effort for building on Rust compared to other languages](/assets/images/posts/2023-08-14-the-case-for-rust-on-the-web/initial-effort.png)
 
 While languages like JavaScript and Ruby are made for getting results fast, Rust
 deliberately doesn't leave as much freedom and requires a program to pass all of
@@ -305,7 +305,7 @@ view on a longer time horizon where aspects like maintainability, reliability,
 and stability become exceedingly important, the picture changes as the effort
 for working on Rust projects goes down over time:
 
-![Chart showing the effort required for building and maintaining Rust applications over time](/assets/images/posts/2023-07-22-the-case-for-rust-on-the-web/total-effort.png)
+![Chart showing the effort required for building and maintaining Rust applications over time](/assets/images/posts/2023-08-14-the-case-for-rust-on-the-web/total-effort.png)
 
 Rust apps being more reliable and thus requiring less time invested into bug
 fixing, as well as being more maintainable and thus easier to work on
@@ -415,7 +415,7 @@ doesn't have to stay like that forever and over time the initial effort required
 for adopting and building with Rust will go down, making it a viable choice for
 even more teams and projects.
 
-![The initial effort required for building applications with Rust will go down over time](/assets/images/posts/2023-07-22-the-case-for-rust-on-the-web/reduce-effort.png)
+![The initial effort required for building applications with Rust will go down over time](/assets/images/posts/2023-08-14-the-case-for-rust-on-the-web/reduce-effort.png)
 
 The language itself will continue to evolve and become more approachable. At the
 same time, frameworks and libraries will also continue to evolve and improve
