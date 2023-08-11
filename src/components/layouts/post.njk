@@ -70,6 +70,19 @@ layout: base
   {% endif %}
   <div class="container container--lg post">
     <div class="post__content rte">
+      {% if tags %}
+        {% for tag in tags %}
+          {% if tag === "rust" %}
+            <blockquote><p>
+              If you're looking to adopt Rust to develop web backends and need guidance along the way, 
+              <a href="/contact/">reach out</a>! 
+              We can help with <a href="/rust-consulting/"> mentoring, training, team augmentation, 
+              and custom development</a>.
+              <author>Mainmatter team</author>
+            </p></blockquote>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
       {{ content | safe }}
     </div>
     <nav aria-label="Post Pagination" class="prev-next pagination">
