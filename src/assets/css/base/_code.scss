@@ -1,10 +1,12 @@
 pre,
 code {
   background-color: var(--color-offwhite);
+  color: red;
   color: #5b5b5b;
 }
 
 pre {
+  width: 0;
   width: 100%;
   overflow: auto;
   margin: 2rem 0 3rem;
@@ -17,6 +19,7 @@ code {
 }
 
 pre code {
+  display: inline;
   display: block;
   padding: 0.5rem 1rem;
 }
