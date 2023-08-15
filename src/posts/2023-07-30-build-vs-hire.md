@@ -129,4 +129,4 @@ We successfuly augmented the teams of
   "image": "/assets/images/posts/2023-07-30-build-vs-hire/juergen-witte.jpg",
   "alt": "Jürgen Witte from RailEurope",
   "loading": "lazy"
-} %} {{ quote(content) }}
+} %} {{ quote(content, hideQuoteIcon=true) }}
