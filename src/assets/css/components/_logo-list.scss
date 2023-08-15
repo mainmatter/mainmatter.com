@@ -22,7 +22,8 @@
   animation-play-state: running;
 
   &:hover,
-  &--paused {
+  &--paused,
+  &[data-marquee-disable] {
     animation-play-state: paused;
   }
 }
