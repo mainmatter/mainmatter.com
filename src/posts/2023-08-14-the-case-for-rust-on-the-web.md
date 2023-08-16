@@ -25,7 +25,7 @@ imageAlt: "The Rust logo on top of a stylized world map"
 
 Rust has received a lot of developer attention and love ever since it entered
 the stage around a decade ago. And it's not only the developers that love the
-language – the decision makers at the big corporates agree Rust is a great
+language – the decision makers at the big corporations agree Rust is a great
 technology to build on and the language has seen a lot of adoption throughout
 the industry over the past few years. AWS uses Rust heavily
 [for their platform](https://aws.amazon.com/blogs/opensource/sustainability-with-rust/),
