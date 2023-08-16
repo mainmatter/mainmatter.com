@@ -3,7 +3,9 @@ title: "The Case for Rust on the Web"
 authorHandle: marcoow
 tags: [rust]
 bio: "Marco Otte-Witte"
-description: "TODO"
+description:
+  "Marco Otte-Witte explains why Mainmatter believes Rust has a bright future
+  for web backend development."
 og:
   image: /assets/images/posts/2023-08-14-the-case-for-rust-on-the-web/og-image.png
 tagline:
