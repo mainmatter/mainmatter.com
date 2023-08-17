@@ -1,0 +1,22 @@
+.blog-cta {
+  background-color: var(--color-purple);
+  color: var(--color-white);
+  margin-bottom: 3.25rem;
+  padding: 3.25rem 1rem;
+
+  @media (min-width: 48em) {
+    & {
+      margin-bottom: 6.25rem;
+      padding: 3.5rem 5rem;
+    }
+  }
+
+  a {
+    color: var(--color-aqua);
+  }
+
+  .contact-us {
+    display: block;
+    color: var(--color-white);
+  }
+}
