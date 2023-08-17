@@ -128,6 +128,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLiquidFilter("dateToRfc3339", pluginRss.dateToRfc3339);
   eleventyConfig.addLiquidFilter("dateToRfc822", pluginRss.dateToRfc822);
 
+  eleventyConfig.addFilter("urlExists", (url, collection) => {
+    return Boolean(collection?.find(({ page }) => page.url === url));
+  });
   /*
    * Add Transforms
    *
