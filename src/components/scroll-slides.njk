@@ -24,9 +24,13 @@
               <h5 class="scroll-slides__subtitle h5">{{slide.subtitle}}</h5>
             {% endif %}
             <h2 class="scroll-slides__title">{{ slide.title }}</h2>
-            <p class="scroll-slides__text">{{ slide.text }}</p>
+            <p class="scroll-slides__text">{{ slide.text | safe }}</p>
             {% if slide.linkUrl and slide.linkText %}
-              {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
+              {% if slide.linkClass %}
+                {{ ctaLink(slide.linkUrl, slide.linkText, slide.linkClass) }}
+              {% else %}
+                {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
+              {% endif %}
             {% endif %}
           </div>
         </div>

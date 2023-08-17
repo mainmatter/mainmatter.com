@@ -10,6 +10,7 @@
     background-color: var(--color-white);
     color: var(--color-black);
     --color-accent: var(--color-aqua);
+    --color-default: #b3b3b3;
   }
 
   &--purple {
@@ -17,6 +18,7 @@
     color: var(--color-white);
     --color-link-primary: var(--color-white);
     --color-accent: var(--color-white);
+    --color-default: #b3b3b3;
   }
 
   &--black {
@@ -24,6 +26,16 @@
     color: var(--color-white);
     --color-link-primary: var(--color-white);
     --color-accent: var(--color-white);
+    --color-default: #b3b3b3;
+  }
+
+  &--aqua {
+    background-color: var(--color-aqua);
+    color: var(--color-black);
+    --color-link-primary: var(--color-black);
+    --color-accent: var(--color-white);
+    --color-default:var(--color-black);
+    --color-link-primary-hover: var(--color-white);
   }
 }
 
@@ -115,7 +127,7 @@
     content: "";
     width: 1px;
     height: 100%;
-    background-color: #b3b3b3;
+    background-color: var(--color-default);
     position: absolute;
   }
 }
@@ -133,11 +145,11 @@
 .scroll-slides__pagination-span {
   height: 0.75rem;
   width: 0.75rem;
-  background-color: #b3b3b3;
   display: inline-block;
   border-radius: 50%;
   z-index: 1;
   transition: transform 0.3s ease;
+  background-color: var(--color-default);
 
   &--active {
     height: 1rem;

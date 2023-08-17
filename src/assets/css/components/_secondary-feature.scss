@@ -13,9 +13,6 @@
 
 .secondary-feature__link {
   color: currentColor;
-}
-
-.secondary-feature__text {
   margin: 1rem 0 2rem;
 }
 
@@ -35,7 +32,18 @@
 }
 
 .secondary-feature-rust {
+  background-color: var(--color-aqua);
   .secondary-feature__image {
     max-width: 12rem;
+  }
+}
+
+.secondary-feature-eurorust {
+  .secondary-feature__image-wrapper {
+    padding: 0;
+
+    .secondary-feature__image {
+      max-width: 100%;
+    }
   }
 }
