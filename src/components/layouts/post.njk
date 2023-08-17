@@ -70,7 +70,21 @@ layout: base
   {% endif %}
   <div class="container container--lg post">
     <div class="post__content rte">
+      {% if tags %}
+        {% for tag in tags %}
+          {% if tag === "rust" %}
+            {% include "global/rust-cta.njk" %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
       {{ content | safe }}
+      {% if tags %}
+        {% for tag in tags %}
+          {% if tag === "rust" %}
+            {% include "global/rust-cta.njk" %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
     </div>
     <nav aria-label="Post Pagination" class="prev-next pagination">
       {% set previous = collections.posts | getPreviousCollectionItem(page) %}

@@ -488,7 +488,3 @@ Further reading:
 - [https://github.com/andrewtimberlake/elixir-pdf](https://github.com/andrewtimberlake/elixir-pdf)
 - [https://discord.com/blog/using-rust-to-scale-elixir-for-11-million-concurrent-users](https://discord.com/blog/using-rust-to-scale-elixir-for-11-million-concurrent-users)
 - [https://discord.com/blog/why-discord-is-switching-from-go-to-rust](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)
-
-Btw: if you'd like to get started using Rust but aren't sure how to get started,
-consider our
-[Rust workshop](/services/workshops/introduction-to-rust-for-web-developers/)!
