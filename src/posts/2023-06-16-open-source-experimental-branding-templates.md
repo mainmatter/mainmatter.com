@@ -4,9 +4,8 @@ authorHandle: davidhajba
 tags: [open-source, branding]
 bio: David Hajba
 description:
-  "David Hajba, senior visual/product designer at Mainmatter created open source
-  experimental branding templates. In this blog post, he talks about the journey
-  & experience"
+  "David Hajba, Art Director at Mainmatter created open source experimental
+  branding templates. In this blog post, he talks about the journey & experience"
 og:
   image: /assets/images/posts/2023-06-16-open-source-experimental-branding-templates/og-image.jpg
 tagline: |
