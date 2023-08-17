@@ -29,11 +29,11 @@ Example usage:
   </li>
 {%- endmacro %}
 
-{%- macro logoList(logos, title, animate=true) -%}
+{%- macro logoList(logos, title, heading = "h2", headingClass = "h3", animate=true) -%}
   <section class="logo-list" id="logo-list">
     {% if title %}
       <div class="logo-list__title">
-        <h2 class="h3">{{ title }}</h2>
+        <{{heading}} class="{{headingClass}}">{{ title }}</{{heading}}>
       </div>
     {% endif %}
     <div class="logo-list__wrapper">

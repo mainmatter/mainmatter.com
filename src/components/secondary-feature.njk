@@ -28,12 +28,12 @@ Example usage:
 {%- macro secondaryFeature(content, className) -%}
   <div class="secondary-feature{% if className %} {{ className }}{% endif %}" data-background-color="purple">
     <div class="secondary-feature__main">
-      {%- if content.linkUrl -%}
-        {{ ctaLink(content.linkUrl, content.linkText, 'secondary-feature__link') }}
-      {%- endif -%}
       {%- if content.text -%}
         <h2 class="secondary-feature__text h5 text--bold">{{ content.text | safe }}</h2>
       {%- endif %}
+      {%- if content.linkUrl -%}
+        {{ ctaLink(content.linkUrl, content.linkText, 'secondary-feature__link') }}
+      {%- endif -%}
     </div>
     <div class="secondary-feature__image-wrapper">
       {% if content.image -%}
