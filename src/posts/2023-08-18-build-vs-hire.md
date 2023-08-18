@@ -9,11 +9,11 @@ description:
   team versus hiring one. She suggests a hybrid method, team augmentation, and
   shares Mainmatter’s experience with it in previous projects."
 og:
-  image: /assets/images/posts/2023-07-30-build-vs-hire/og-image.jpg
+  image: /assets/images/posts/2023-08-18-build-vs-hire/og-image.jpg
 tagline: |
   <p>When building a technical team, there are two main options: You can build your own team from scratch or hire a ready-made one. Each approach has its pros and cons that can significantly impact your project's cost and efficiency. However, there is also a third option: You can get external help while you build internal capacity/capability.</p>
 
-image: "/assets/images/posts/2023-07-30-build-vs-hire/header-illustration.jpg"
+image: "/assets/images/posts/2023-08-18-build-vs-hire/header-illustration.jpg"
 imageAlt: "A rocket icon on a grey image background"
 ---
 
@@ -120,7 +120,7 @@ We successfuly augmented the teams of
 {% set 'content' = {
   "text": "Mainmatter enabled us to take our Product Development Organization to the  next level. They work closely with our team and help us establish new  practices while simultaneously delivering on our day to day product  initiatives. Their technical and organizational expertise and fresh views  allow us to set up the foundation for future success.",
   "source": "Jürgen Witte, CPO@RailEurope",
-  "image": "/assets/images/posts/2023-07-30-build-vs-hire/juergen-witte.jpg",
+  "image": "/assets/images/posts/2023-08-18-build-vs-hire/juergen-witte.jpg",
   "alt": "Jürgen Witte from RailEurope",
   "loading": "lazy"
 } %} {{ quote(content, hideQuoteIcon=true) }}
