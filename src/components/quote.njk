@@ -12,17 +12,14 @@ Example usage:
 {% set source = "Andreas Knürr, Timify CEO" %}
 {{ quote('aqua', text, source, true) }}
 #}
-{%- macro quote(content, hideQuoteIcon=false) -%}
+{%- macro quote(content) -%}
   <section class="quote">
     {%- if content.image -%}
       <div class="quote__image-wrapper">
         {%- image content.image, content.alt, '(min-width: 48em) 50vw, 100vw', content.loading, 'quote__image', [400] -%}
       </div>
-      {% if not hideQuoteIcon %}
-        <span class="quote__icon">{% include 'svg/quote.njk' %}</span>
-      {% endif %}
     {%- endif -%}
-
+    <span class="quote__icon">{% include 'svg/quote.njk' %}</span>
     <figure class="quote__figure">
       <div class="quote__content">
         <blockquote class="quote__text">
