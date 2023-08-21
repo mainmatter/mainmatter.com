@@ -45,7 +45,7 @@
     margin-bottom: 3rem;
   }
 
-  figure picture,
+  figure:not(.quote__figure) picture,
   picture img {
     margin-top: 0;
     margin-bottom: 0;
@@ -78,7 +78,7 @@
     height: auto;
   }
 
-  figure {
+  figure:not(.quote__figure) {
     margin: 3rem auto;
 
     img {
@@ -91,7 +91,7 @@
     }
   }
 
-  blockquote {
+  blockquote:not(.quote__text) {
     font-size: 1.125rem;
     line-height: 1.6;
     font-weight: 700;
@@ -138,7 +138,7 @@
 
 @media (min-width: 48em) {
   .rte  {
-    blockquote {
+    blockquote:not(.quote__text) {
       margin: 4rem 0 3rem;
       padding-left: 3.75rem;
   
@@ -167,7 +167,7 @@
       margin: 2.5rem 0 1rem;
     }
 
-    blockquote {
+    blockquote:not(.quote__text) {
       font-size: 1.5rem;        
     }
 

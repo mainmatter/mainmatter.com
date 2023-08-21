@@ -9,7 +9,27 @@ Example usage:
 {% set logoCompanies = ['Qonto', 'Trainline', 'Timify', 'Cardstack', 'Generali', 'Experteer'] %}
 {{ logoList(logoCompanies) }}
 #}
-{%- macro logoList(logos, title, heading = "h2", headingClass = "h3") -%}
+
+{% set caseStudies = collections.caseStudiesFeatured %}
+{%- macro listItem(logo) %}
+  {% set caseUrl %}/cases/{{ logo | slug }}/{% endset %}
+  {% set imagePath %}/logos/monochrome/{{ logo | slug }}.svg{% endset %}
+  <li class="logo-list__item">
+    {% if caseUrl | urlExists(caseStudies) %}
+      <a href="{{ caseUrl }}" title="{{ logo }} case study">
+        <div class="logo-list__image" aria-label="{{ logo }} logo">
+          {% svg imagePath, 'img' %}
+        </div>
+      </a>
+    {% else %}
+      <div class="logo-list__image" aria-label="{{ logo }} logo">
+        {% svg imagePath, 'img' %}
+      </div>
+    {% endif %}
+  </li>
+{%- endmacro %}
+
+{%- macro logoList(logos, title, heading = "h2", headingClass = "h3", animate=true) -%}
   <section class="logo-list" id="logo-list">
     {% if title %}
       <div class="logo-list__title">
@@ -17,25 +37,20 @@ Example usage:
       </div>
     {% endif %}
     <div class="logo-list__wrapper">
-      <div class="logo-list__inner" data-marquee style="--marquee-logo-count: {{ logos | length }};">
+      <div
+        class="logo-list__inner"
+        data-marquee
+        {% if not animate %}data-marquee-disable{% endif %}
+        style="--marquee-logo-count: {{ logos | length }};"
+      >
         <ul class="logo-list__list">
           {% for logo in logos %}
-            <li class="logo-list__item">
-              <div class="logo-list__image" aria-label="{{ logo }} logo">
-                {% set imagePath %}/logos/monochrome/{{ logo | slug }}.svg{% endset %}
-                {% svg imagePath, 'img' %}
-              </div>
-            </li>
+            {{ listItem(logo) }}
           {% endfor %}
         </ul>
         <ul class="logo-list__list logo-list__list--duplicate" aria-hidden="true">
           {% for logo in logos %}
-            <li class="logo-list__item">
-              <div class="logo-list__image" aria-label="{{ logo }}">
-                {% set imagePath %}/logos/monochrome/{{ logo | slug }}.svg{% endset %}
-                {% svg imagePath, 'img' %}
-              </div>
-            </li>
+            {{ listItem(logo) }}
           {% endfor %}
         </ul>
       </div>
