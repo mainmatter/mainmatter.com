@@ -455,7 +455,3 @@ We believe that Rust is the first step towards a new era of web development
 where developers can levarage a technology that allows them to reach higher and
 previously unthinkable levels of efficiency, stability, reliability, and
 maintainability without giving up on developer experience and productivity.
-
-_If you're looking to adopt Rust but aren't comfortable going on the journey
-alone, [reach out](/contact/). We can help with
-[mentoring, training, team augmentation, and custom development](/rust-consulting/)._
