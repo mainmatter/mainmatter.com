@@ -138,7 +138,9 @@
                 "poppa/sveltekit-svg",
                 "paoloricciuti/sveltekit-search-params",
                 "SvelteLab/SvelteLab",
-                "sveltejs/svelte"
+                "sveltejs/svelte",
+                "melt-ui/melt-ui",
+                "storybookjs/addon-svelte-csf"
             ]
         },
         {
@@ -247,7 +249,8 @@
                 "DazzlingFugu/ember-reading-time",
                 "BlueCutOfficial/ember-is-component",
                 "ember-learn/cli-guides",
-                "ember-fastboot/ember-cli-head"
+                "ember-fastboot/ember-cli-head",
+                "DockYard/ember-composable-helpers"
             ]
         },
         {
@@ -323,7 +326,9 @@
                 "mansona/layer-gen",
                 "timdp/rollup-timer",
                 "TelemetryDeck/WebSDK",
-                "ef4/code-equality-assertions"
+                "ef4/code-equality-assertions",
+                "kellyselden/boilerplate-update",
+                "stefanpenner/node-fixturify-project"
             ]
         },
         {
