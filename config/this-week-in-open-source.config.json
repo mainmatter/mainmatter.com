@@ -250,7 +250,8 @@
                 "BlueCutOfficial/ember-is-component",
                 "ember-learn/cli-guides",
                 "ember-fastboot/ember-cli-head",
-                "DockYard/ember-composable-helpers"
+                "DockYard/ember-composable-helpers",
+                "shipshapecode/swach"
             ]
         },
         {
