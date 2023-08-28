@@ -47,7 +47,7 @@ topics:
       This stage kicks off with an introduction of what stores are and how they
       work. We continue with looking into implementing the three main stores:
       writable, readable, and derived.
-  - heading: Form Actions
+  - heading: SvelteKit as a server
     text: >
       The final stage of the workshop teaches how to implement progressive
       enhancement with forms. We cover how to send data to an API, how to
