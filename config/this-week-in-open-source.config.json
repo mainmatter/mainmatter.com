@@ -133,7 +133,14 @@
         {
             "name": "Svelte",
             "repos": [
-                "sveltejs/v2.svelte.dev"
+                "sveltejs/v2.svelte.dev",
+                "pstanoev/simple-svelte-autocomplete",
+                "poppa/sveltekit-svg",
+                "paoloricciuti/sveltekit-search-params",
+                "SvelteLab/SvelteLab",
+                "sveltejs/svelte",
+                "melt-ui/melt-ui",
+                "storybookjs/addon-svelte-csf"
             ]
         },
         {
@@ -156,6 +163,7 @@
                 "ember-cli/ember-cli",
                 "ember-cli/ember-cli",
                 "ember-cli/ember-exam",
+                "ember-cli/ember-cli-update",
                 "ember-learn/ember-api-docs",
                 "ember-learn/ember-blog",
                 "ember-learn/ember-styleguide",
@@ -241,7 +249,9 @@
                 "DazzlingFugu/ember-reading-time",
                 "BlueCutOfficial/ember-is-component",
                 "ember-learn/cli-guides",
-                "ember-fastboot/ember-cli-head"
+                "ember-fastboot/ember-cli-head",
+                "DockYard/ember-composable-helpers",
+                "shipshapecode/swach"
             ]
         },
         {
@@ -249,7 +259,8 @@
             "repos": [
                 "embroider-build/embroider",
                 "embroider-build/content-tag",
-                "embroider-build/ember-auto-import"
+                "embroider-build/ember-auto-import",
+                "embroider-build/scenario-tester"
             ]
         },
         {
@@ -316,7 +327,9 @@
                 "mansona/layer-gen",
                 "timdp/rollup-timer",
                 "TelemetryDeck/WebSDK",
-                "ef4/code-equality-assertions"
+                "ef4/code-equality-assertions",
+                "kellyselden/boilerplate-update",
+                "stefanpenner/node-fixturify-project"
             ]
         },
         {
@@ -429,6 +442,13 @@
             "name": "Gliding",
             "repos": [
                 "weglide/GliderList"
+            ]
+        },
+        {
+            "name": "typesafe-i18n",
+            "repos": [
+                "ivanhofer/typesafe-i18n",
+                "ivanhofer/typesafe-i18n-demo-sveltekit"
             ]
         },
         {
