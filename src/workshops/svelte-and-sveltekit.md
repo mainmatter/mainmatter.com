@@ -75,7 +75,7 @@ leads:
     image: /assets/images/authors/pichfl.jpg
     bio: >
       Florian has been solving frontend challenges for over 15 years, with all
-      tools that became available. He built and coached teams of all sizes.
+      tools that became available. He has built and coached teams of all sizes.
 ---
 
 <!--break-->
