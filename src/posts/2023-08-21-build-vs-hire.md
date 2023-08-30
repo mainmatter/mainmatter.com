@@ -46,7 +46,7 @@ Job postings, application processing, interviews, and other related activities
 require both time and financial resources. On average, it costs six to nine
 times an employee's monthly salary to replace them and train a newly hired
 employee. Supervisors' valuable time spent monitoring the training progress must
-also be considered. (add source)
+also be considered.
 
 #### The new hire needs the proper infrastructure to be able to start working.
 
