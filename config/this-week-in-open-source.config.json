@@ -140,7 +140,8 @@
                 "SvelteLab/SvelteLab",
                 "sveltejs/svelte",
                 "melt-ui/melt-ui",
-                "storybookjs/addon-svelte-csf"
+                "storybookjs/addon-svelte-csf",
+                "sveltejs/kit"
             ]
         },
         {
