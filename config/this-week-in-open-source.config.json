@@ -65,7 +65,8 @@
         "candunaj/template-precompile-scope",
         "emberjs/core-notes",
         "candunaj/ember-in-viewport",
-        "oscard0m/openapi"        
+        "oscard0m/openapi",
+        "mansona/ember-inline-svg"       
     ],
     "labels": [
         {
@@ -253,7 +254,8 @@
                 "ember-learn/cli-guides",
                 "ember-fastboot/ember-cli-head",
                 "DockYard/ember-composable-helpers",
-                "shipshapecode/swach"
+                "shipshapecode/swach",
+                "minutebase/ember-inline-svg"
             ]
         },
         {
