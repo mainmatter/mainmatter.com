@@ -121,7 +121,8 @@
         {
             "name": "Astro",
             "repos": [
-                "withastro/docs"
+                "withastro/docs",
+                "natemoo-re/astro-capo"
             ]
         },
         {
@@ -450,6 +451,12 @@
             "repos": [
                 "ivanhofer/typesafe-i18n",
                 "ivanhofer/typesafe-i18n-demo-sveltekit"
+            ]
+        },
+        {
+            "name": "zola",
+            "repos": [
+                "getzola/zola"
             ]
         },
         {
