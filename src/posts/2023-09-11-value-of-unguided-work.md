@@ -8,11 +8,11 @@ description:
   through the steps to implement this practice, Mainmatter's experience with it,
   and useful tips."
 og:
-  image: /assets/images/posts/2023-09-20-value-of-unguided-work/og-image.jpg
+  image: /assets/images/posts/2023-09-11-value-of-unguided-work/og-image.jpg
 tagline: |
   <p>In today's business and technology world, the traditional approach of tightly managed work processes is reaching its limits. Companies that dare to break the conventional norm are discovering the untapped potential of unguided work. By encouraging experimentation and accepting the possibility of failure, companies can create an environment that fosters innovation and empowers their teams to reach new heights of productivity and creativity.</p>
 
-image: "/assets/images/posts/2023-09-20-value-of-unguided-work/header-illustration.jpg"
+image: "/assets/images/posts/2023-09-11-value-of-unguided-work/header-illustration.jpg"
 imageAlt: "A rocket icon on a grey image background"
 ---
 
@@ -67,7 +67,7 @@ need for constant synchronous meetings.
 > person, the company expects a 15% cost reduction. (Read more:
 > https://edition.cnn.com/2023/07/12/tech/shopify-meeting-cost-calculator/index.html)
 
-![Shopify's meeting cost calculator](/assets/images/posts/2023-09-20-value-of-unguided-work/shopify-meeting-cost-calculator.jpg)
+![Shopify's meeting cost calculator](/assets/images/posts/2023-09-11-value-of-unguided-work/shopify-meeting-cost-calculator.jpg)
 
 ## Time for Experimentation and Learning
 
