@@ -65,7 +65,8 @@
         "candunaj/template-precompile-scope",
         "emberjs/core-notes",
         "candunaj/ember-in-viewport",
-        "oscard0m/openapi"        
+        "oscard0m/openapi",
+        "mansona/ember-inline-svg"       
     ],
     "labels": [
         {
@@ -121,7 +122,8 @@
         {
             "name": "Astro",
             "repos": [
-                "withastro/docs"
+                "withastro/docs",
+                "natemoo-re/astro-capo"
             ]
         },
         {
@@ -140,7 +142,8 @@
                 "SvelteLab/SvelteLab",
                 "sveltejs/svelte",
                 "melt-ui/melt-ui",
-                "storybookjs/addon-svelte-csf"
+                "storybookjs/addon-svelte-csf",
+                "sveltejs/kit"
             ]
         },
         {
@@ -251,7 +254,8 @@
                 "ember-learn/cli-guides",
                 "ember-fastboot/ember-cli-head",
                 "DockYard/ember-composable-helpers",
-                "shipshapecode/swach"
+                "shipshapecode/swach",
+                "minutebase/ember-inline-svg"
             ]
         },
         {
@@ -449,6 +453,12 @@
             "repos": [
                 "ivanhofer/typesafe-i18n",
                 "ivanhofer/typesafe-i18n-demo-sveltekit"
+            ]
+        },
+        {
+            "name": "zola",
+            "repos": [
+                "getzola/zola"
             ]
         },
         {
