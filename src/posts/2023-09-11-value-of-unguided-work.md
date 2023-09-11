@@ -64,8 +64,8 @@ need for constant synchronous meetings.
 
 Shopify introduced its Meeting Cost Calculator in July 2023, helping estimate
 the cost of meetings. By getting rid of three meetings a week per person, the
-company expects a 15% cost reduction. (Read more:
-https://edition.cnn.com/2023/07/12/tech/shopify-meeting-cost-calculator/index.html)
+company expects a 15% cost reduction. (Read
+[more](https://edition.cnn.com/2023/07/12/tech/shopify-meeting-cost-calculator/index.html))
 
 ![Shopify's meeting cost calculator](/assets/images/posts/2023-09-11-value-of-unguided-work/shopify-meeting-cost-calculator.jpg)
 
@@ -91,7 +91,7 @@ deployment, incremental rollout strategies, quality assurance, and other
 mechanisms that can raise a team’s ability to experiment.
 
 Reach out to talk about how we can help your team:
-https://mainmatter.com/contact/
+[https://mainmatter.com/contact/](https://mainmatter.com/contact/)
 
 Find further information how we help you to burst through the bottleneck:
-https://mainmatter.com/startups/
+[https://mainmatter.com/startups/](https://mainmatter.com/startups/)
