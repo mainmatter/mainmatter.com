@@ -39,7 +39,7 @@ imageAlt: "A rocket icon on a grey image background"
 At Mainmatter, we've seen the transformative power of unguided work in action.
 Here are a few key aspects of our experience:
 
-## Open Source Work: A Testament to Unguided Collaboration
+### Open Source Work: A Testament to Unguided Collaboration
 
 Open Source projects epitomize the value of unguided work. Hundreds of thousands
 of developers worldwide contribute to these projects, often in their spare time,
@@ -47,7 +47,7 @@ without direct supervision. This collaborative and unguided approach has given
 rise to some of the most influential and widely used software in the world, such
 as Rust.
 
-## Embracing Flexibility: Working Whenever and Wherever
+### Embracing Flexibility: Working Whenever and Wherever
 
 The traditional 9-to-5 work model is no longer the only viable option. Embracing
 unguided work means acknowledging that people can be at their best at different
@@ -55,7 +55,7 @@ times and locations. Offering flexibility in working hours and remote work
 options empowers individuals to find their optimal productivity zones and leads
 to better work-life balance.
 
-## Async Work and Distributed Teams
+### Async Work and Distributed Teams
 
 Moving away from traditional meeting-heavy approaches, asynchronous
 communication has become a hallmark of unguided work. Distributed teams can
@@ -69,7 +69,7 @@ company expects a 15% cost reduction. (Read
 
 ![Shopify's meeting cost calculator](/assets/images/posts/2023-09-11-value-of-unguided-work/shopify-meeting-cost-calculator.jpg)
 
-## Time for Experimentation and Learning
+### Time for Experimentation and Learning
 
 Following the concept promoted by Google, we encourage our team members to spend
 20% of their work time on open source projects and experimenting with new ideas.
