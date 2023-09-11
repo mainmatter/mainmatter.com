@@ -71,7 +71,7 @@ company expects a 15% cost reduction. (Read
 
 ### Time for Experimentation and Learning
 
-Following the concept promoted by Google, we encourage our team members to spend
+Following the concept promoted by Google, our team members spend
 20% of their work time on open source projects and experimenting with new ideas.
 This "creative time" has yielded remarkable results, as several innovations have
 found their way into new projects.
