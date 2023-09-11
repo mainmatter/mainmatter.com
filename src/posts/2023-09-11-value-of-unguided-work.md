@@ -1,7 +1,7 @@
 ---
 title: "The Value of Unguided Work"
 authorHandle: sarahlorenzu
-tags: []
+tags: [culture]
 bio: "Sarah Lorenz"
 description:
   "Sarah Lorenz uncovers the value of unguided work for companies. She goes
@@ -71,9 +71,9 @@ company expects a 15% cost reduction. (Read
 
 ### Time for Experimentation and Learning
 
-Following the concept promoted by Google, our team members spend
-20% of their work time on open source projects and experimenting with new ideas.
-This "creative time" has yielded remarkable results, as several innovations have
+Following the concept promoted by Google, our team members spend 20% of their
+work time on open source projects and experimenting with new ideas. This
+"creative time" has yielded remarkable results, as several innovations have
 found their way into new projects.
 
 ## Rethinking Project Management
