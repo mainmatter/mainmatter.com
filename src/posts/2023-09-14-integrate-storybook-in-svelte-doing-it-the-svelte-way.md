@@ -7,7 +7,7 @@ description:
   "Explore the transformation of integrating Storybook with Svelte projects,
   focusing on the addon-svelte-csf for a more native Svelte experience."
 og:
-  image: /assets/images/posts/2023-08-19-integrate-storybook-in-svelte-doing-it-the-svelte-way/og-image.png
+  image: /assets/images/posts/2023-08-19-integrate-storybook-in-svelte-doing-it-the-svelte-way/og-image.jpg
 tagline:
   'Using <a href="https://storybook.js.org/">Storybook</a> in your <a
   href="https://svelte.dev/">Svelte</a> project? Annoyed by the fact of not
