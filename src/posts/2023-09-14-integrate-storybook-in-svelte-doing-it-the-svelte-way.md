@@ -4,8 +4,9 @@ authorHandle: oscard0m_
 tags: [svelte, storybook]
 bio: "Óscar Domínguez Celada"
 description:
-  "Explore the transformation of integrating Storybook with Svelte projects,
-  focusing on the addon-svelte-csf for a more native Svelte experience."
+  "Óscar Domínguez Celada explores the transformation of integrating Storybook
+  with Svelte projects, focusing on the addon-svelte-csf for a more native
+  Svelte experience."
 og:
   image: /assets/images/posts/2023-08-19-integrate-storybook-in-svelte-doing-it-the-svelte-way/og-image.jpg
 tagline:
@@ -20,8 +21,8 @@ imageAlt: "The Svelte logo on a gray background picture"
 In the web development space, [Storybook](https://storybookjs.org) is one of the
 main choices for developing UI components and pages in isolation, especially
 within a Design System framework. Out of the box, Storybook expects you to write
-stories in a JS file. The API is composition of JS Objects and properties. While
-this is very versatile it does not fit the syntax used in
+stories in a JS file. The API is a composition of JS Objects and properties.
+While this is very versatile and does not fit the syntax used in
 [Svelte](https://www.filmaffinity.com/es/film562915.html) so the experience of
 integrating Svelte Components with Storybook feels a bit unnatural.
 
@@ -184,7 +185,7 @@ yarn storybook
 
 - Navigate to the provided URL to inspect the Button component in action.
 
-Congratulations! You built your first Story using Svelte syntax! As you progress
+Congratulations! You built your first Story using Svelte syntax! As you continue
 building more components, you might want to explore:
 
 - Multiple stories for diverse components.
@@ -194,7 +195,7 @@ building more components, you might want to explore:
 
 I also invite you to take a look into
 [addon-svelte-csf's source code](https://github.com/storybookjs/addon-svelte-csf)
-and story examples in its repository as inspiration.
+and the story examples in its repository as inspiration.
 
 Lastly, a massive thank you to Jon McClure
 ([@hobbes7878](https://github.com/hobbes7878)), Jeppe Reinhold
