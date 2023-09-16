@@ -79,7 +79,9 @@ leads:
     authorHandle: zeppelin
     image: /assets/images/authors/zeppelin.jpg
     bio: >
-      …
+      Gabor is a passionate frontend engineer who has spent the past two decades
+      designing interfaces, merging functionality and aesthetics to create
+      remarkable digital experiences.
   - name: Florian Pichler
     title: Senior Frontend Engineer
     handle: pichfl
