@@ -8,13 +8,13 @@ description:
   with Svelte projects, focusing on the addon-svelte-csf for a more native
   Svelte experience."
 og:
-  image: /assets/images/posts/2023-08-19-integrate-storybook-in-svelte-doing-it-the-svelte-way/og-image.jpg
+  image: /assets/images/posts/2023-09-18-integrate-storybook-in-svelte-doing-it-the-svelte-way/og-image.jpg
 tagline:
   'Using <a href="https://storybook.js.org/">Storybook</a> in your <a
   href="https://svelte.dev/">Svelte</a> project? Annoyed by the fact of not
   being able to write your stories using Svelte syntax out of the box? I have
   good news for you: it''s possible and it''s easy!'
-image: "/assets/images/posts/2023-08-19-integrate-storybook-in-svelte-doing-it-the-svelte-way/header-illustration.jpg"
+image: "/assets/images/posts/2023-09-18-integrate-storybook-in-svelte-doing-it-the-svelte-way/header-illustration.jpg"
 imageAlt: "The Svelte logo on a gray background picture"
 ---
 
