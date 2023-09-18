@@ -1,0 +1,62 @@
+on:
+  schedule:
+    # Every Sunday 23:00
+    - cron: '0 23 * * 0'
+  pull_request:
+    types: [labeled, unlabeled]
+  issue_comment:
+    types: [edited]
+  workflow_dispatch:
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  TWIOS_BRANCH: "main"
+  TWIOS_PR_REF: ${{ github.event.pull_request.head.ref }}
+
+jobs:
+  create_twios:
+    runs-on: ubuntu-latest
+    if: ${{!github.event.pull_request.body}}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - name: Configure local git
+        run: |
+          git config --global user.email "twios@twios_test_dev.com"
+          git config --global user.name "TWIOS Dev"
+      - name: Generate Comment
+        run: |
+          GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN yarn this-week comment > comment.txt
+      - name: Generate TWIOS
+        run: GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN yarn this-week
+      - name: Push new TWIOS
+        run: |
+          FORMATTED_DATE="$(date +"%Y-%m-%d")"
+          BRANCH_NAME="twios-$FORMATTED_DATE"
+          git fetch origin $TWIOS_BRANCH
+          git checkout -b $BRANCH_NAME
+          git add **/*.md **/*.json && git commit -m "$BRANCH_NAME"
+          git push --set-upstream origin $BRANCH_NAME
+          gh pr create --base main --head $BRANCH_NAME --title "TWIOS $FORMATTED_DATE" --body-file comment.txt
+
+  edit_twios:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.body
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - name: Configure local git
+        run: |
+          git config --global user.email "twios@twios_test_dev.com"
+          git config --global user.name "TWIOS Dev"
+      - name: Read PR comment body
+        run: |
+          GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN yarn this-week comment --comment="${{ github.event.pull_request.body }}"
+      - name: Generate TWIOS
+        run: GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN yarn this-week -edit
+      - name: Push updated TWIOS
+        run: |
+          git fetch origin $TWIOS_PR_REF
+          git checkout $TWIOS_PR_REF
+          git add **/*.md **/*.json && git commit -m "Edited $TWIOS_PR_REF"
+          git push
