@@ -12,7 +12,7 @@ tagline: |
   <p>SvelteKit has just released version 1.0, so let's take a look at what makes it unique and how it compares to EmberJS by recreating the Ember Super Rentals with SvelteKit.</p>
 
 image: "/assets/images/posts/2023-01-24-sveltekit-super-rentals/header-illustration.jpg"
-imageAlt: "The Svelte logo on a gray backround picture"
+imageAlt: "The Svelte logo on a gray background picture"
 ---
 
 {% raw %} As with all new JS frameworks, there is a big buzz surrounding
