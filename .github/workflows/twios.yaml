@@ -10,7 +10,7 @@ on:
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  TWIOS_BRANCH: "main"
+  TWIOS_BRANCH: "master"
   TWIOS_PR_REF: ${{ github.event.pull_request.head.ref }}
 
 jobs:
@@ -19,7 +19,9 @@ jobs:
     if: ${{!github.event.pull_request.body}}
     steps:
       - uses: actions/checkout@v3
-      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - uses: volta-cli/action@d253558a6e356722728a10e9a469190de21a83ef # v4
+        with:
+          registry-url: "https://registry.npmjs.org"
       - name: Configure local git
         run: |
           git config --global user.email "twios@twios_test_dev.com"
@@ -44,7 +46,9 @@ jobs:
     if: github.event.pull_request.body
     steps:
       - uses: actions/checkout@v3
-      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - uses: volta-cli/action@d253558a6e356722728a10e9a469190de21a83ef # v4
+        with:
+          registry-url: "https://registry.npmjs.org"
       - name: Configure local git
         run: |
           git config --global user.email "twios@twios_test_dev.com"

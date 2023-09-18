@@ -1,4 +1,5 @@
 {
+    "output_path": "src/twios/",
     "exclude_closed_not_merged": true,
     "users": [
         "marcoow",
@@ -66,7 +67,7 @@
         "emberjs/core-notes",
         "candunaj/ember-in-viewport",
         "oscard0m/openapi",
-        "mansona/ember-inline-svg"       
+        "mansona/ember-inline-svg"
     ],
     "labels": [
         {
