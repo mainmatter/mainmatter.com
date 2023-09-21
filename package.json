@@ -28,7 +28,7 @@
     "percy": "percy snapshot",
     "crawl": "node scripts/crawl.js",
     "gravityci": "gravityci",
-    "this-week": "./bin/this-week.sh"
+    "this-week": "./twios/this-week.sh"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0",
