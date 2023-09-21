@@ -1,3 +1,5 @@
 #!/bin/sh
 
-twios/this-week-in-open-source --config-path=config/this-week-in-open-source.config.json
+chmod +x twios/this-week-in-open-source
+
+$(pwd)/twios/this-week-in-open-source --config-path=$(pwd)/config/this-week-in-open-source.config.json

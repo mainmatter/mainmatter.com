@@ -3,14 +3,14 @@ on:
     # Every Sunday 23:00
     - cron: '0 23 * * 0'
   pull_request:
-    types: [unlabeled]
+    types: [labeled, unlabeled]
   issue_comment:
     types: [edited]
   workflow_dispatch:
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  TWIOS_BRANCH: ${{ github.ref || 'master' }}
+  TWIOS_BRANCH: ${{ github.event.pull_request.head.ref || 'master' }}
   TWIOS_PR_REF: ${{ github.event.pull_request.head.ref }}
 
 permissions:
@@ -19,7 +19,7 @@ permissions:
 jobs:
   create_twios:
     runs-on: ubuntu-latest
-    if: ${{!github.event.pull_request.body && github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event.action == 'unlabeled'}}
+    if: ${{!github.event.pull_request.body && github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event.label.name == 'twios'}}
     steps:
       - uses: actions/checkout@v3
       - name: Fetch $TWIOS_BRANCH
