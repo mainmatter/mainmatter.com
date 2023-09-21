@@ -33,9 +33,9 @@ jobs:
           git config --global user.name "TWIOS Dev"
       - name: Generate Comment
         run: |
-          GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN ./twios/this-week.sh comment > comment.txt
+          GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN twios/this-week-in-open-source --config-path=config/this-week-in-open-source.config.json comment > comment.txt
       - name: Generate TWIOS
-        run: GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN ./twios/this-week.sh
+        run: GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN twios/this-week-in-open-source --config-path=config/this-week-in-open-source.config.json
       - name: Push new TWIOS
         run: |
           FORMATTED_DATE="$(date +"%Y-%m-%d")"
@@ -43,7 +43,7 @@ jobs:
           git checkout -b $BRANCH_NAME
           git add **/*.md **/*.json && git commit -m "$BRANCH_NAME"
           git push --set-upstream origin $BRANCH_NAME
-          gh pr create --base $TWIOS_BRANCH --head $BRANCH_NAME --title "TWIOS $FORMATTED_DATE" --body-file comment.txt
+          gh pr create -a emmasofiah2o --base $TWIOS_BRANCH --head $BRANCH_NAME --title "TWIOS $FORMATTED_DATE" --body-file comment.txt
 
   edit_twios:
     runs-on: ubuntu-latest
@@ -60,9 +60,9 @@ jobs:
           git config --global user.name "TWIOS Dev"
       - name: Read PR comment body
         run: |
-          GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN ./twios/this-week.sh comment --comment="${{ github.event.pull_request.body }}"
+          GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN twios/this-week-in-open-source --config-path=config/this-week-in-open-source.config.json comment --comment="${{ github.event.pull_request.body }}"
       - name: Generate TWIOS
-        run: GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN ./twios/this-week.sh -edit
+        run: GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN twios/this-week-in-open-source --config-path=config/this-week-in-open-source.config.json -edit
       - name: Push updated TWIOS
         run: |
           git add **/*.md **/*.json && git commit -m "Edited $TWIOS_PR_REF"
