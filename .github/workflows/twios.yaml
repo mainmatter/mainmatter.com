@@ -20,7 +20,7 @@ permissions:
 jobs:
   create_twios:
     runs-on: ubuntu-latest
-    if: ${{!github.event.pull_request.body && github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event.label.name == 'twios'}}
+    if: ${{!github.event.pull_request.body && github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event.label.name == 'create-twios'}}
     steps:
       - uses: actions/checkout@v3
       - name: Fetch $TWIOS_BRANCH
@@ -47,7 +47,7 @@ jobs:
 
   edit_twios:
     runs-on: ubuntu-latest
-    if: ${{github.event.pull_request.body && contains(github.event.pull_request.head.ref, 'twios')}}
+    if: ${{github.event.pull_request.body && contains(github.event.pull_request.head.ref, 'twios') || github.event.label.name == 'edit-twios'}}
     steps:
       - uses: actions/checkout@v3
       - name: Fetch $TWIOS_PR_REF
