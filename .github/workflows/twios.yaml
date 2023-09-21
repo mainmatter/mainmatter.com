@@ -32,7 +32,7 @@ jobs:
           git config --global user.name "TWIOS Dev"
       - name: Generate Comment
         run: |
-          GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN ./twios/this-week.sh comment
+          GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN ./twios/this-week.sh comment > comment.txt
       - name: Generate TWIOS
         run: GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN ./twios/this-week.sh
       - name: Push new TWIOS
