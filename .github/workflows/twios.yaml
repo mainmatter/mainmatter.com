@@ -13,6 +13,9 @@ env:
   TWIOS_BRANCH: "master"
   TWIOS_PR_REF: ${{ github.event.pull_request.head.ref }}
 
+permissions:
+  pull-requests: write
+
 jobs:
   create_twios:
     runs-on: ubuntu-latest
@@ -43,7 +46,7 @@ jobs:
 
   edit_twios:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.body
+    if: ${{github.event.pull_request.body && contains(github.event.pull_request.head.ref, 'twios')}}
     steps:
       - uses: actions/checkout@v3
       - uses: volta-cli/action@d253558a6e356722728a10e9a469190de21a83ef # v4
