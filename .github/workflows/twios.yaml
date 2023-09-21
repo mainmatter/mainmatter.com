@@ -3,7 +3,7 @@ on:
     # Every Sunday 23:00
     - cron: '0 23 * * 0'
   pull_request:
-    types: [labeled, unlabeled]
+    types: [unlabeled]
   issue_comment:
     types: [edited]
   workflow_dispatch:
@@ -19,7 +19,7 @@ permissions:
 jobs:
   create_twios:
     runs-on: ubuntu-latest
-    if: ${{!github.event.pull_request.body}}
+    if: ${{!github.event.pull_request.body && github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'}}
     steps:
       - uses: actions/checkout@v3
       - uses: volta-cli/action@d253558a6e356722728a10e9a469190de21a83ef # v4
