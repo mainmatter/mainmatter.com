@@ -1,474 +1,474 @@
 {
-    "output_path": "src/twios/",
-    "exclude_closed_not_merged": true,
-    "users": [
-        "marcoow",
-        "zeppelin",
-        "pichfl",
-        "nickschot",
-        "mansona",
-        "oscard0m",
-        "Mikek2252",
-        "inesilva",
-        "BobrImperator",
-        "candunaj",
-        "lolmaus",
-        "BlueCutOfficial",
-        "shellandbull",
-        "oliverbarnes",
-        "paoloricciuti"
-    ],
-    "exclude": [
-        "cardstack/animations-experiment",
-        "konfettiev/konfetti-muenchen.de",
-        "qonto/ember-amount-input",
-        "qonto/ember-autofocus-modifier",
-        "qonto/ember-phone-input",
-        "mainmatter/mainmatter.com",
-        "mainmatter/this-week-in-open-source",
-        "mansona/test-copy-file-dest",
-        "oscard0m/web",
-        "BobrImperator/tilex",
-        "BobrImperator/todo-app",
-        "emberfest/emberfest.github.io",
-        "mansona/ember-paper",
-        "mansona/rfcs",
-        "fzerocentral/fzerocentral-web",
-        "hugopeixoto/pokemon-collection-tracker-frontend",
-        "cgiffard/Downsize",
-        "machty/ember-concurrency",
-        "frontity/step-by-step-tutorial",
-        "marcoow/chat-client",
-        "soxhub/ember-formatjs",
-        "soxhub/intl-template-transform",
-        "oscard0m/graphql.js",
-        "oscard0m/octoherd-script-create-issue",
-        "oscard0m/octoherd-script-hello-world",
-        "oscard0m/octoherd-script-migrate-pika",
-        "oscard0m/octoherd-script-replace-all-repository-topics",
-        "oscard0m/octoherd-script-watch-unwatch-or-ignore",
-        "marcoow/chat-server",
-        "soxhub/formatjs",
-        "oscard0m/gravity_dummy",
-        "oscard0m/example-vercel-ts",
-        "soxhub/formatjs",
-        "oscard0m/octokit-auth-oauth-user.js",
-        "oscard0m/remix-deploy-netlify",
-        "oscard0m/remix-deploy-vercel",
-        "XCSoar/xcsoar-data-content",
-        "inesilva/my-website",
-        "mainmatter/eurorust.eu",
-        "mainmatter/gravity",
-        "mansona/test-allow-failure",
-        "Turbo87/renovate-config",
-        "mansona/twitch-overlay",
-        "BlueCutOfficial/site-books",
-        "candunaj/template-precompile-scope",
+  "labels": [
+    {
+      "name": "Rust",
+      "repos": [
+        "Turbo87/aprs-parser-rs",
+        "hyperium/http",
+        "rust-lang/cargo",
+        "rust-lang/rust-by-example",
+        "Turbo87/united-flarmnet",
+        "ferrous-systems/teaching-material",
+        "svartalf/rust-claim",
+        "Turbo87/sentry-conduit",
+        "kivikakk/comrak",
+        "LukeMathWalker/tracing-bunyan-formatter",
+        "Turbo87/segelflug-classifieds",
+        "AeroRust/nmea",
+        "Swatinem/rust-cache",
+        "pietroalbini/rfcs",
+        "rust-lang/hashbrown",
+        "marcoow/rust_rest",
+        "rust-lang/www.rust-lang.org",
+        "dimforge/rapier.rs"
+      ]
+    },
+    {
+      "name": "crates.io",
+      "repos": [
+        "conduit-rust/conduit-hyper",
+        "rust-lang/crates.io",
+        "Turbo87/renovate-crates-test"
+      ]
+    },
+    {
+      "name": "Mock Service Worker",
+      "repos": [
+        "mswjs/cookies",
+        "mswjs/gh-issue-forms",
+        "mswjs/interceptors",
+        "mswjs/msw-storybook-addon",
+        "mswjs/msw"
+      ]
+    },
+    {
+      "name": "Octoherd",
+      "repos": [
+        "octoherd/.github",
+        "octoherd/create-octoherd-script",
+        "octoherd/script-setup-renovate",
+        "oscard0m/octoherd-script-review-pull-requests"
+      ]
+    },
+    {
+      "name": "Astro",
+      "repos": [
+        "withastro/docs",
+        "natemoo-re/astro-capo"
+      ]
+    },
+    {
+      "name": "BEM",
+      "repos": [
+        "getbem/getbem.github.io"
+      ]
+    },
+    {
+      "name": "Svelte",
+      "repos": [
+        "sveltejs/v2.svelte.dev",
+        "pstanoev/simple-svelte-autocomplete",
+        "poppa/sveltekit-svg",
+        "paoloricciuti/sveltekit-search-params",
+        "SvelteLab/SvelteLab",
+        "sveltejs/svelte",
+        "melt-ui/melt-ui",
+        "storybookjs/addon-svelte-csf",
+        "sveltejs/kit"
+      ]
+    },
+    {
+      "name": "Cal.com",
+      "repos": [
+        "calcom/cal.com"
+      ]
+    },
+    {
+      "name": "Embedded",
+      "repos": [
+        "jomjol/AI-on-the-edge-device"
+      ]
+    },
+    {
+      "name": "Ember.js",
+      "repos": [
+        "Authmaker/authmaker-ember-simple-auth",
+        "buschtoens/ember-link",
+        "ember-cli/ember-cli",
+        "ember-cli/ember-cli",
+        "ember-cli/ember-exam",
+        "ember-cli/ember-cli-update",
+        "ember-learn/ember-api-docs",
+        "ember-learn/ember-blog",
+        "ember-learn/ember-styleguide",
+        "ember-learn/ember-website",
+        "ember-learn/empress-blog-ember-template",
+        "ember-learn/guides-source",
         "emberjs/core-notes",
-        "candunaj/ember-in-viewport",
-        "oscard0m/openapi",
-        "mansona/ember-inline-svg"
-    ],
-    "labels": [
-        {
-            "name": "Rust",
-            "repos": [
-                "Turbo87/aprs-parser-rs",
-                "hyperium/http",
-                "rust-lang/cargo",
-                "rust-lang/rust-by-example",
-                "Turbo87/united-flarmnet",
-                "ferrous-systems/teaching-material",
-                "svartalf/rust-claim",
-                "Turbo87/sentry-conduit",
-                "kivikakk/comrak",
-                "LukeMathWalker/tracing-bunyan-formatter",
-                "Turbo87/segelflug-classifieds",
-                "AeroRust/nmea",
-                "Swatinem/rust-cache",
-                "pietroalbini/rfcs",
-                "rust-lang/hashbrown",
-                "marcoow/rust_rest",
-                "rust-lang/www.rust-lang.org",
-                "dimforge/rapier.rs"
-            ]
-        },
-        {
-            "name": "crates.io",
-            "repos": [
-                "conduit-rust/conduit-hyper",
-                "rust-lang/crates.io",
-                "Turbo87/renovate-crates-test"
-            ]
-        },
-        {
-            "name": "Mock Service Worker",
-            "repos": [
-                "mswjs/cookies",
-                "mswjs/gh-issue-forms",
-                "mswjs/interceptors",
-                "mswjs/msw-storybook-addon",
-                "mswjs/msw"
-            ]
-        },
-        {
-            "name": "Octoherd",
-            "repos": [
-                "octoherd/.github",
-                "octoherd/create-octoherd-script",
-                "octoherd/script-setup-renovate",
-                "oscard0m/octoherd-script-review-pull-requests"
-            ]
-        },
-        {
-            "name": "Astro",
-            "repos": [
-                "withastro/docs",
-                "natemoo-re/astro-capo"
-            ]
-        },
-        {
-            "name": "BEM",
-            "repos": [
-                "getbem/getbem.github.io"
-            ]
-        },
-        {
-            "name": "Svelte",
-            "repos": [
-                "sveltejs/v2.svelte.dev",
-                "pstanoev/simple-svelte-autocomplete",
-                "poppa/sveltekit-svg",
-                "paoloricciuti/sveltekit-search-params",
-                "SvelteLab/SvelteLab",
-                "sveltejs/svelte",
-                "melt-ui/melt-ui",
-                "storybookjs/addon-svelte-csf",
-                "sveltejs/kit"
-            ]
-        },
-        {
-            "name": "Cal.com",
-            "repos": [
-                "calcom/cal.com"
-            ]
-        },
-        {
-            "name": "Embedded",
-            "repos": [
-                "jomjol/AI-on-the-edge-device"
-            ]
-        },
-        {
-            "name": "Ember.js",
-            "repos": [
-                "Authmaker/authmaker-ember-simple-auth",
-                "buschtoens/ember-link",
-                "ember-cli/ember-cli",
-                "ember-cli/ember-cli",
-                "ember-cli/ember-exam",
-                "ember-cli/ember-cli-update",
-                "ember-learn/ember-api-docs",
-                "ember-learn/ember-blog",
-                "ember-learn/ember-styleguide",
-                "ember-learn/ember-website",
-                "ember-learn/empress-blog-ember-template",
-                "ember-learn/guides-source",
-                "emberjs/core-notes",
-                "emberjs/data",
-                "emberjs/ember-ordered-set",
-                "emberjs/ember-string",
-                "emberjs/ember.js",
-                "mansona/ember-body-class",
-                "mansona/ember-cli-notifications",
-                "nickschot/ember-mobile-menu",
-                "mainmatter/ember-cookies",
-                "mainmatter/ember-error-route",
-                "mainmatter/ember-intl-analyzer",
-                "mainmatter/ember-promise-modals",
-                "mainmatter/ember-simple-auth",
-                "mainmatter/qunit-dom",
-                "zeppelin/ember-click-outside",
-                "mainmatter/ember-hbs-minifier",
-                "mainmatter/ember-test-selectors",
-                "ember-learn/deprecation-app",
-                "jelhan/ember-cli-browser-navigation-button-test-helpers",
-                "miguelcobain/ember-paper",
-                "GavinJoyce/ember-headlessui",
-                "qonto/ember-cp-validations",
-                "mansona/ember-get-config",
-                "mainmatter/ember-workshop",
-                "Turbo87/intellij-emberjs",
-                "offirgolan/ember-cp-validations",
-                "mainmatter/ember-hotspots",
-                "ember-cli/ember-try",
-                "ember-learn/handbook",
-                "emberjs/rfcs",
-                "mansona/ember-html-excerpt",
-                "babel/ember-cli-babel",
-                "ef4/ember-auto-import",
-                "ember-learn/ember-help-wanted-server",
-                "ember-learn/rfcs-app",
-                "mansona/ember-cli-babel",
-                "cibernox/ember-power-select",
-                "ember-codemods/ember-codemods-telemetry-helpers",
-                "ember-codemods/ember-native-class-codemod",
-                "ember-learn/guidemaker-ember-template",
-                "ember-cli/watch-detector",
-                "ember-engines/ember-engines",
-                "ember-learn/tool-new-release",
-                "ember-template-lint/ember-template-lint",
-                "emberjs/rfcs-tooling",
-                "ember-codemods/ember-angle-brackets-codemod",
-                "ember-cli/ember-cli-htmlbars",
-                "nickschot/ember-gesture-modifiers",
-                "ember-learn/ember-release-bot",
-                "mainmatter/ember2-x-codemods",
-                "ember-cli/ember-try-config",
-                "mainmatter/ember-api-actions",
-                "cardstack/boxel-motion",
-                "MinThaMie/more-confetti-addon",
-                "mainmatter/ember-cli-list-addons",
-                "mainmatter/eslint-plugin-emberobserver",
-                "mansona/ember-try",
-                "mainmatter/ember-template-assert",
-                "DazzlingFugu/ember-slugify",
-                "DazzlingFugu/ember-fr-guides-source",
-                "ember-cli/babel-plugin-htmlbars-inline-precompile",
-                "emberjs/babel-plugin-ember-template-compilation",
-                "kategengler/ember-cli-code-coverage",
-                "mainmatter/ember-asset-size-action",
-                "ember-learn/super-rentals-tutorial",
-                "emberobserver/eslint-plugin-ember-observer",
-                "emberobserver/server",
-                "qonto/ember-lottie",
-                "DazzlingFugu/ember-cli-embedded",
-                "adopted-ember-addons/ember-collapsible-panel",
-                "ember-learn/ember-api-docs-data",
-                "ember-learn/upgrade-guide",
-                "embroider-build/addon-blueprint",
-                "ember-fastboot/ember-cli-fastboot",
-                "DockYard/ember-in-viewport",
-                "DazzlingFugu/guidemaker-ember-locale-template",
-                "DazzlingFugu/ember-reading-time",
-                "BlueCutOfficial/ember-is-component",
-                "ember-learn/cli-guides",
-                "ember-fastboot/ember-cli-head",
-                "DockYard/ember-composable-helpers",
-                "shipshapecode/swach",
-                "minutebase/ember-inline-svg"
-            ]
-        },
-        {
-            "name": "Embroider",
-            "repos": [
-                "embroider-build/embroider",
-                "embroider-build/content-tag",
-                "embroider-build/ember-auto-import",
-                "embroider-build/scenario-tester"
-            ]
-        },
-        {
-          "name": "Empress",
-          "repos": [
-                "empress/rfc-process-mdbook-template",
-                "empress/rfc-process",
-                "empress/broccoli-static-site-json",
-                "empress/ember-cli-notifications",
-                "empress/ember-cli-showdown",
-                "empress/ember-showdown-prism",
-                "empress/empress-blog",
-                "empress/empress-blog-casper-template",
-                "empress/field-guide",
-                "empress/field-guide-addon-docs-template",
-                "empress/guidemaker",
-                "empress/guidemaker-default-template",
-                "empress/bottled-ember",
-                "empress/open-slide",
-                "empress/open-slide-reveal-template"
-
-          ]
-        },
-        {
-            "name": "Lint to the future",
-            "repos": [
-                "mansona/lint-to-the-future",
-                "mansona/lint-to-the-future-eslint",
-                "mansona/lint-to-the-future-ember-template",
-                "mansona/lint-to-the-future-stylelint",
-                "mansona/lint-to-the-future-dashboard-action"
-            ]
-        },
-        {
-            "name": "JavaScript",
-            "repos": [
-                "TelemetryDeck/JavaScriptSDK",
-                "commitizen/cz-conventional-changelog",
-                "oscard0m/npm-snapshot",
-                "remy/nodemon",
-                "storybookjs/eslint-plugin-storybook",
-                "storybookjs/storybook",
-                "strapi/strapi",
-                "mansona/express-autoroute-json",
-                "mansona/express-autoroute-json",
-                "yaacov/node-modbus-serial",
-                "actions/setup-python",
-                "showdownjs/showdown",
-                "Turbo87/lva-camo-status",
-                "mansona/Downsize",
-                "platinumazure/eslint-plugin-qunit",
-                "sinonjs/fake-timers",
-                "squash-commit-app/squash-commit-app",
-                "cookpete/auto-changelog",
-                "axmccx/proxynexus",
-                "mansona/showdown-section-groups",
-                "calibreapp/image-actions",
-                "volta-cli/action",
-                "Turbo87/auto-dist-tag",
-                "miragejs/miragejs",
-                "hakimel/reveal.js",
-                "mainmatter/mocha-diff",
-                "mainmatter/compare-fixture",
-                "mansona/layer-gen",
-                "timdp/rollup-timer",
-                "TelemetryDeck/WebSDK",
-                "ef4/code-equality-assertions",
-                "kellyselden/boilerplate-update",
-                "stefanpenner/node-fixturify-project"
-            ]
-        },
-        {
-            "name": "Octokit",
-            "repos": [
-                "octokit/plugin-throttling.js",
-                "octokit/core.js",
-                "octokit/octokit.js",
-                "octokit/webhooks.js",
-                "octokit/plugin-retry.js",
-                "octokit/plugin-rest-endpoint-methods.js",
-                "octokit/auth-token.js",
-                "octokit/plugin-paginate-rest.js",
-                "octokit/types.ts",
-                "octokit/.github",
-                "octokit/action.js",
-                "octokit/app.js",
-                "octokit/auth-action.js",
-                "octokit/auth-app.js",
-                "octokit/auth-callback.js",
-                "octokit/auth-oauth-app.js",
-                "octokit/auth-oauth-device.js",
-                "octokit/auth-oauth-user.js",
-                "octokit/auth-unauthenticated.js",
-                "octokit/endpoint.js",
-                "octokit/graphql.js",
-                "octokit/oauth-app.js",
-                "octokit/oauth-authorization-url.js",
-                "octokit/oauth-methods.js",
-                "octokit/plugin-create-or-update-text-file.js",
-                "octokit/plugin-enterprise-cloud.js",
-                "octokit/plugin-enterprise-compatibility.js",
-                "octokit/plugin-enterprise-server.js",
-                "octokit/plugin-request-log.js",
-                "octokit/request-error.js",
-                "octokit/request.js",
-                "octokit/rest.js",
-                "octokit/webhooks-methods.js",
-                "gamberrys/octokit-request-action",
-                "gamberrys/octokit-request-action-copy",
-                "octokit/app-permissions",
-                "octokit/create-octokit-project.js",
-                "octokit/graphql-action",
-                "octokit/openapi",
-                "octokit/request-action",
-                "octokit/webhooks",
-                "oscard0m/octokit-request-action",
-                "oscard0m/octoherd-script-fix-test-workflow-octokit",
-                "oscard0m/octoherd-script-remove-renovate-package.json",
-                "octoherd/cli",
-                "octoherd/octokit",
-                "oscard0m/octoherd-script-update-action-version-in-workflows",
-                "oscard0m/octoherd-script-release-workflow-patch"
-            ]
-        },
-        {
-            "name": "Rollup",
-            "repos": [
-                "ezolenko/rollup-plugin-typescript2"
-            ]
-        },
-        {
-            "name": "Elixir",
-            "repos": [
-                "rrrene/credo"
-            ]
-        },
-        {
-            "name": "Clojure",
-            "repos": [
-                "mtgred/netrunner"
-            ]
-        },
-        {
-            "name": "Probot",
-            "repos": [
-                "probot/example-vercel",
-                "probot/probot",
-                "probot/.github",
-                "probot/talks",
-                "probot/twitter"
-            ]
-        },
-        {
-            "name": "Renovate",
-            "repos": [
-                "renovatebot/renovate"
-            ]
-        },
-        {
-            "name": "Mainmatter's playbook",
-            "repos": [
-                "mainmatter/playbook"
-            ]
-        },
-        {
-            "name": "Internal",
-            "repos": [
-                "mainmatter/renovate-config",
-                "mainmatter/mainmatter-website-mailer"
-            ]
-        },
-        {
-            "name": "Ruby",
-            "repos": [
-                "rubyforgood/Flaredown"
-            ]
-        },
-        {
-            "name": "Gliding",
-            "repos": [
-                "weglide/GliderList"
-            ]
-        },
-        {
-            "name": "typesafe-i18n",
-            "repos": [
-                "ivanhofer/typesafe-i18n",
-                "ivanhofer/typesafe-i18n-demo-sveltekit"
-            ]
-        },
-        {
-            "name": "zola",
-            "repos": [
-                "getzola/zola"
-            ]
-        },
-        {
-            "name": "Miscellaneous",
-            "repos": [
-                "netlify/build-image",
-                "freeCodeCamp/learn-bash-by-building-a-boilerplate"
-            ]
-        }
-    ]
+        "emberjs/data",
+        "emberjs/ember-ordered-set",
+        "emberjs/ember-string",
+        "emberjs/ember.js",
+        "mansona/ember-body-class",
+        "mansona/ember-cli-notifications",
+        "nickschot/ember-mobile-menu",
+        "mainmatter/ember-cookies",
+        "mainmatter/ember-error-route",
+        "mainmatter/ember-intl-analyzer",
+        "mainmatter/ember-promise-modals",
+        "mainmatter/ember-simple-auth",
+        "mainmatter/qunit-dom",
+        "zeppelin/ember-click-outside",
+        "mainmatter/ember-hbs-minifier",
+        "mainmatter/ember-test-selectors",
+        "ember-learn/deprecation-app",
+        "jelhan/ember-cli-browser-navigation-button-test-helpers",
+        "miguelcobain/ember-paper",
+        "GavinJoyce/ember-headlessui",
+        "qonto/ember-cp-validations",
+        "mansona/ember-get-config",
+        "mainmatter/ember-workshop",
+        "Turbo87/intellij-emberjs",
+        "offirgolan/ember-cp-validations",
+        "mainmatter/ember-hotspots",
+        "ember-cli/ember-try",
+        "ember-learn/handbook",
+        "emberjs/rfcs",
+        "mansona/ember-html-excerpt",
+        "babel/ember-cli-babel",
+        "ef4/ember-auto-import",
+        "ember-learn/ember-help-wanted-server",
+        "ember-learn/rfcs-app",
+        "mansona/ember-cli-babel",
+        "cibernox/ember-power-select",
+        "ember-codemods/ember-codemods-telemetry-helpers",
+        "ember-codemods/ember-native-class-codemod",
+        "ember-learn/guidemaker-ember-template",
+        "ember-cli/watch-detector",
+        "ember-engines/ember-engines",
+        "ember-learn/tool-new-release",
+        "ember-template-lint/ember-template-lint",
+        "emberjs/rfcs-tooling",
+        "ember-codemods/ember-angle-brackets-codemod",
+        "ember-cli/ember-cli-htmlbars",
+        "nickschot/ember-gesture-modifiers",
+        "ember-learn/ember-release-bot",
+        "mainmatter/ember2-x-codemods",
+        "ember-cli/ember-try-config",
+        "mainmatter/ember-api-actions",
+        "cardstack/boxel-motion",
+        "MinThaMie/more-confetti-addon",
+        "mainmatter/ember-cli-list-addons",
+        "mainmatter/eslint-plugin-emberobserver",
+        "mansona/ember-try",
+        "mainmatter/ember-template-assert",
+        "DazzlingFugu/ember-slugify",
+        "DazzlingFugu/ember-fr-guides-source",
+        "ember-cli/babel-plugin-htmlbars-inline-precompile",
+        "emberjs/babel-plugin-ember-template-compilation",
+        "kategengler/ember-cli-code-coverage",
+        "mainmatter/ember-asset-size-action",
+        "ember-learn/super-rentals-tutorial",
+        "emberobserver/eslint-plugin-ember-observer",
+        "emberobserver/server",
+        "qonto/ember-lottie",
+        "DazzlingFugu/ember-cli-embedded",
+        "adopted-ember-addons/ember-collapsible-panel",
+        "ember-learn/ember-api-docs-data",
+        "ember-learn/upgrade-guide",
+        "embroider-build/addon-blueprint",
+        "ember-fastboot/ember-cli-fastboot",
+        "DockYard/ember-in-viewport",
+        "DazzlingFugu/guidemaker-ember-locale-template",
+        "DazzlingFugu/ember-reading-time",
+        "BlueCutOfficial/ember-is-component",
+        "ember-learn/cli-guides",
+        "ember-fastboot/ember-cli-head",
+        "DockYard/ember-composable-helpers",
+        "shipshapecode/swach",
+        "minutebase/ember-inline-svg"
+      ]
+    },
+    {
+      "name": "Embroider",
+      "repos": [
+        "embroider-build/embroider",
+        "embroider-build/content-tag",
+        "embroider-build/ember-auto-import",
+        "embroider-build/scenario-tester"
+      ]
+    },
+    {
+      "name": "Empress",
+      "repos": [
+        "empress/rfc-process-mdbook-template",
+        "empress/rfc-process",
+        "empress/broccoli-static-site-json",
+        "empress/ember-cli-notifications",
+        "empress/ember-cli-showdown",
+        "empress/ember-showdown-prism",
+        "empress/empress-blog",
+        "empress/empress-blog-casper-template",
+        "empress/field-guide",
+        "empress/field-guide-addon-docs-template",
+        "empress/guidemaker",
+        "empress/guidemaker-default-template",
+        "empress/bottled-ember",
+        "empress/open-slide",
+        "empress/open-slide-reveal-template"
+      ]
+    },
+    {
+      "name": "Lint to the future",
+      "repos": [
+        "mansona/lint-to-the-future",
+        "mansona/lint-to-the-future-eslint",
+        "mansona/lint-to-the-future-ember-template",
+        "mansona/lint-to-the-future-stylelint",
+        "mansona/lint-to-the-future-dashboard-action"
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "repos": [
+        "TelemetryDeck/JavaScriptSDK",
+        "commitizen/cz-conventional-changelog",
+        "oscard0m/npm-snapshot",
+        "remy/nodemon",
+        "storybookjs/eslint-plugin-storybook",
+        "storybookjs/storybook",
+        "strapi/strapi",
+        "mansona/express-autoroute-json",
+        "mansona/express-autoroute-json",
+        "yaacov/node-modbus-serial",
+        "actions/setup-python",
+        "showdownjs/showdown",
+        "Turbo87/lva-camo-status",
+        "mansona/Downsize",
+        "platinumazure/eslint-plugin-qunit",
+        "sinonjs/fake-timers",
+        "squash-commit-app/squash-commit-app",
+        "cookpete/auto-changelog",
+        "axmccx/proxynexus",
+        "mansona/showdown-section-groups",
+        "calibreapp/image-actions",
+        "volta-cli/action",
+        "Turbo87/auto-dist-tag",
+        "miragejs/miragejs",
+        "hakimel/reveal.js",
+        "mainmatter/mocha-diff",
+        "mainmatter/compare-fixture",
+        "mansona/layer-gen",
+        "timdp/rollup-timer",
+        "TelemetryDeck/WebSDK",
+        "ef4/code-equality-assertions",
+        "kellyselden/boilerplate-update",
+        "stefanpenner/node-fixturify-project"
+      ]
+    },
+    {
+      "name": "Octokit",
+      "repos": [
+        "octokit/plugin-throttling.js",
+        "octokit/core.js",
+        "octokit/octokit.js",
+        "octokit/webhooks.js",
+        "octokit/plugin-retry.js",
+        "octokit/plugin-rest-endpoint-methods.js",
+        "octokit/auth-token.js",
+        "octokit/plugin-paginate-rest.js",
+        "octokit/types.ts",
+        "octokit/.github",
+        "octokit/action.js",
+        "octokit/app.js",
+        "octokit/auth-action.js",
+        "octokit/auth-app.js",
+        "octokit/auth-callback.js",
+        "octokit/auth-oauth-app.js",
+        "octokit/auth-oauth-device.js",
+        "octokit/auth-oauth-user.js",
+        "octokit/auth-unauthenticated.js",
+        "octokit/endpoint.js",
+        "octokit/graphql.js",
+        "octokit/oauth-app.js",
+        "octokit/oauth-authorization-url.js",
+        "octokit/oauth-methods.js",
+        "octokit/plugin-create-or-update-text-file.js",
+        "octokit/plugin-enterprise-cloud.js",
+        "octokit/plugin-enterprise-compatibility.js",
+        "octokit/plugin-enterprise-server.js",
+        "octokit/plugin-request-log.js",
+        "octokit/request-error.js",
+        "octokit/request.js",
+        "octokit/rest.js",
+        "octokit/webhooks-methods.js",
+        "gamberrys/octokit-request-action",
+        "gamberrys/octokit-request-action-copy",
+        "octokit/app-permissions",
+        "octokit/create-octokit-project.js",
+        "octokit/graphql-action",
+        "octokit/openapi",
+        "octokit/request-action",
+        "octokit/webhooks",
+        "oscard0m/octokit-request-action",
+        "oscard0m/octoherd-script-fix-test-workflow-octokit",
+        "oscard0m/octoherd-script-remove-renovate-package.json",
+        "octoherd/cli",
+        "octoherd/octokit",
+        "oscard0m/octoherd-script-update-action-version-in-workflows",
+        "oscard0m/octoherd-script-release-workflow-patch"
+      ]
+    },
+    {
+      "name": "Rollup",
+      "repos": [
+        "ezolenko/rollup-plugin-typescript2"
+      ]
+    },
+    {
+      "name": "Elixir",
+      "repos": [
+        "rrrene/credo"
+      ]
+    },
+    {
+      "name": "Clojure",
+      "repos": [
+        "mtgred/netrunner"
+      ]
+    },
+    {
+      "name": "Probot",
+      "repos": [
+        "probot/example-vercel",
+        "probot/probot",
+        "probot/.github",
+        "probot/talks",
+        "probot/twitter"
+      ]
+    },
+    {
+      "name": "Renovate",
+      "repos": [
+        "renovatebot/renovate"
+      ]
+    },
+    {
+      "name": "Mainmatter's playbook",
+      "repos": [
+        "mainmatter/playbook"
+      ]
+    },
+    {
+      "name": "Internal",
+      "repos": [
+        "mainmatter/renovate-config",
+        "mainmatter/mainmatter-website-mailer"
+      ]
+    },
+    {
+      "name": "Ruby",
+      "repos": [
+        "rubyforgood/Flaredown"
+      ]
+    },
+    {
+      "name": "Gliding",
+      "repos": [
+        "weglide/GliderList"
+      ]
+    },
+    {
+      "name": "typesafe-i18n",
+      "repos": [
+        "ivanhofer/typesafe-i18n",
+        "ivanhofer/typesafe-i18n-demo-sveltekit"
+      ]
+    },
+    {
+      "name": "zola",
+      "repos": [
+        "getzola/zola"
+      ]
+    },
+    {
+      "name": "Miscellaneous",
+      "repos": [
+        "netlify/build-image",
+        "freeCodeCamp/learn-bash-by-building-a-boilerplate"
+      ]
+    }
+  ],
+  "header": [],
+  "users": [
+    "marcoow",
+    "zeppelin",
+    "pichfl",
+    "nickschot",
+    "mansona",
+    "oscard0m",
+    "Mikek2252",
+    "inesilva",
+    "BobrImperator",
+    "candunaj",
+    "lolmaus",
+    "BlueCutOfficial",
+    "shellandbull",
+    "oliverbarnes",
+    "paoloricciuti"
+  ],
+  "exclude": [
+    "cardstack/animations-experiment",
+    "konfettiev/konfetti-muenchen.de",
+    "qonto/ember-amount-input",
+    "qonto/ember-autofocus-modifier",
+    "qonto/ember-phone-input",
+    "mainmatter/mainmatter.com",
+    "mainmatter/this-week-in-open-source",
+    "mansona/test-copy-file-dest",
+    "oscard0m/web",
+    "BobrImperator/tilex",
+    "BobrImperator/todo-app",
+    "emberfest/emberfest.github.io",
+    "mansona/ember-paper",
+    "mansona/rfcs",
+    "fzerocentral/fzerocentral-web",
+    "hugopeixoto/pokemon-collection-tracker-frontend",
+    "cgiffard/Downsize",
+    "machty/ember-concurrency",
+    "frontity/step-by-step-tutorial",
+    "marcoow/chat-client",
+    "soxhub/ember-formatjs",
+    "soxhub/intl-template-transform",
+    "oscard0m/graphql.js",
+    "oscard0m/octoherd-script-create-issue",
+    "oscard0m/octoherd-script-hello-world",
+    "oscard0m/octoherd-script-migrate-pika",
+    "oscard0m/octoherd-script-replace-all-repository-topics",
+    "oscard0m/octoherd-script-watch-unwatch-or-ignore",
+    "marcoow/chat-server",
+    "soxhub/formatjs",
+    "oscard0m/gravity_dummy",
+    "oscard0m/example-vercel-ts",
+    "soxhub/formatjs",
+    "oscard0m/octokit-auth-oauth-user.js",
+    "oscard0m/remix-deploy-netlify",
+    "oscard0m/remix-deploy-vercel",
+    "XCSoar/xcsoar-data-content",
+    "inesilva/my-website",
+    "mainmatter/eurorust.eu",
+    "mainmatter/gravity",
+    "mansona/test-allow-failure",
+    "Turbo87/renovate-config",
+    "mansona/twitch-overlay",
+    "BlueCutOfficial/site-books",
+    "candunaj/template-precompile-scope",
+    "emberjs/core-notes",
+    "candunaj/ember-in-viewport",
+    "oscard0m/openapi",
+    "mansona/ember-inline-svg"
+  ],
+  "exclude_closed_not_merged": true,
+  "output_path": "src/twios/",
+  "last_date": ""
 }
-
