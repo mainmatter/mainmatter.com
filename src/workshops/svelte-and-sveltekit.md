@@ -17,7 +17,8 @@ description: <p>Svelte is great choice for building fast and light-weight web
   publicly on GitHub.</p>
 hero:
   image: "/assets/images/workshops/svelte-and-sveltekit/hero.jpg"
-  imageAlt: "Photo of a computer screen showing an IDE with an open Svelte project"
+  imageAlt:
+    "Photo of a computer screen showing an IDE with an open Svelte project"
 og:
   image: /assets/images/workshops/svelte-and-sveltekit/og-image.jpg
 topics:
