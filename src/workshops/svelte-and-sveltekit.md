@@ -16,8 +16,8 @@ description: <p>Svelte is great choice for building fast and light-weight web
   <p>All examples and practical assignments from the workshop are available
   publicly on GitHub.</p>
 hero:
-  image: "/assets/images/workshops/hands-on-ember/hands-on-ember-workshop-hero.jpg"
-  imageAlt: "Illustration of Ember JS mascot Zoey on a purple background"
+  image: "/assets/images/workshops/svelte-and-sveltekit/hero.jpg"
+  imageAlt: "Photo of a computer screen showing an IDE with an open Svelte project"
 og:
   image: /assets/images/workshops/svelte-and-sveltekit/og-image.jpg
 topics:
