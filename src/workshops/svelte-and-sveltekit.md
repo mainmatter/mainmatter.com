@@ -1,18 +1,18 @@
 ---
 title: Svelte & SvelteKit
 format: 2-3 days remote or on-site
-description:
-  <p>Svelte is great choice for building fast and light-weight web applications.
-  Its unique approach of generating reactive code at compile time instead of
-  relying on a runtime, moves work out of the browser and results in highly
-  efficient code. Combined with SvelteKit, it enables engineers to build large
-  applications with ease while being able to choose among patterns like SPA,
-  MPA, SSR, SSG on a per-route basis.</p> <p>This workshops takes participants
-  through the entire process of building a complete, real-world application and
-  teaches the theoretical concepts along the way. Each topic is introduced via
-  an in-depth presentation followed by a practice exercise. We are happy to
-  customize the workshop for the specific needs of a team and cover topics like
-  performance, debugging, or any topics particular to a team's application.</p>
+description: <p>Svelte is great choice for building fast and light-weight web
+  applications. Its unique approach of generating reactive code at compile time
+  instead of relying on a runtime, moves work out of the browser and results in
+  highly efficient code. Combined with SvelteKit, it enables engineers to build
+  large applications with ease while being able to choose among patterns like
+  SPA, MPA, SSR, SSG on a per-route basis.</p>
+
+  <p>This workshops takes participants through the entire process of building a
+  complete, real-world application and teaches the theoretical concepts along
+  the way. Each topic is introduced via an in-depth presentation followed by a
+  practice exercise.</p>
+
   <p>All examples and practical assignments from the workshop are available
   publicly on GitHub.</p>
 hero:
@@ -47,7 +47,7 @@ topics:
       This stage kicks off with an introduction of what stores are and how they
       work. We continue with looking into implementing the three main stores:
       writable, readable, and derived.
-  - heading: SvelteKit as a server
+  - heading: SvelteKit and Progressive Enhancement
     text: >
       The final stage of the workshop teaches how to implement progressive
       enhancement with forms. We cover how to send data to an API, how to
@@ -94,3 +94,6 @@ leads:
 ---
 
 <!--break-->
+
+The workshop can be customized for the specific needs of your team to cover
+topics like performance, debugging, or others.
