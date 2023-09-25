@@ -58,7 +58,6 @@ leads:
   - name: Paolo Ricciuti
     title: Senior Frontend Engineer
     handle: paoloricciuti
-    authorHandle: paoloricciuti
     image: /assets/images/authors/paoloricciuti.jpg
     bio: >
       Huge nerd, Svelte Ambassador and lover. He's one of the creators of <a
