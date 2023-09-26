@@ -75,6 +75,7 @@
         "melt-ui/melt-ui",
         "storybookjs/addon-svelte-csf",
         "sveltejs/kit",
+        "paoloricciuti/sveltekit-view-transition",
         "paoloricciuti/sveltekit-view-transition"
       ]
     },
@@ -264,7 +265,8 @@
         "TelemetryDeck/WebSDK",
         "ef4/code-equality-assertions",
         "kellyselden/boilerplate-update",
-        "stefanpenner/node-fixturify-project"
+        "stefanpenner/node-fixturify-project",
+        "broccolijs/broccoli-filter"
       ]
     },
     {
@@ -398,6 +400,12 @@
         "netlify/build-image",
         "freeCodeCamp/learn-bash-by-building-a-boilerplate"
       ]
+    },
+    {
+      "name": "Ember",
+      "repos": [
+        "ember-learn/ember-jsonapi-docs"
+      ]
     }
   ],
   "header": [],
@@ -467,7 +475,10 @@
     "emberjs/core-notes",
     "candunaj/ember-in-viewport",
     "oscard0m/openapi",
-    "mansona/ember-inline-svg"
+    "mansona/ember-inline-svg",
+    "mansona/broccoli-filter",
+    "mansona/chris.manson.ie",
+    "mansona/ember-vite-app"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
