@@ -12,9 +12,15 @@
       <ol class="recent-posts__list">
         {%- for post in collection -%}
           {% if loop.index === 1 %}
-            <li class="recent-posts__item recent-posts__item--full-width">
-              {{ postBanner(post) }}
-            </li>
+            {% if collection.length > 3 %}
+              <li class="recent-posts__item recent-posts__item--full-width">
+                {{ postBanner(post) }}
+              </li>
+            {% else %}
+              <li class="recent-posts__item">
+                {{ postCard(post) }}
+              </li>
+            {% endif %}  
           {% elif loop.index < 5 %}
             <li class="recent-posts__item">
               {{ postCard(post) }}
