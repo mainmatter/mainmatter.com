@@ -76,6 +76,10 @@
         {
           "text": "Rust",
           "link": "/rust-consulting/"
+        },
+        {
+          "text": "Svelte",
+          "link": "/svelte-consulting/"
         }
       ]
     },
