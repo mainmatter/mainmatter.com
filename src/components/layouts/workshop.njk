@@ -46,7 +46,7 @@ layout: 'base'
             </div>
           </div>
           <div class="author__details{% if lead.bio.length > 200 %} author__details--full-width{% endif %} text--sm">
-            <p>{{ lead.bio }}</p>
+            <p>{{ lead.bio | safe }}</p>
           </div>
         </div>
       {%- endfor -%}
