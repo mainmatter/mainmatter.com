@@ -7,7 +7,6 @@ permalink: /svelte-consulting/
 
 {% from "image-banner-with-text.njk" import imageBannerWithText %}
 {% from "recent-posts.njk" import recentPosts %}
-{% from "logo-list.njk" import logoList %}
 {% from "cta-link.njk" import ctaLink %}
 {% from "scroll-slides.njk" import scrollSlides %}
 {% from "quote.njk" import quote %}
@@ -47,10 +46,6 @@ permalink: /svelte-consulting/
     </div>
   </div>
 </section>
-
-{% set logoCompanies = ['Rust Foundation', 'arm', 'Ferrocene', 'Google'] %}
-{% set title = 'Our EuroRust partners are betting on Rust' %}
-{{ logoList(logoCompanies, title, "h4", "h5") }}
 
 {% set 'slide_1' = {
   "color": "purple",
