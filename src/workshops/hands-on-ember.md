@@ -72,7 +72,6 @@ leads:
   - name: Gabor Babicz
     title: Senior Frontend Engineer
     handle: zeppelin
-    authorHandle: zeppelin
     image: /assets/images/authors/zeppelin.jpg
     bio: >
       Gabor was a very early adopter of Ember in the pre-1.0 years of the
