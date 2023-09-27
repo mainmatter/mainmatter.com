@@ -2,7 +2,7 @@
 title:
   "How expensive is setting up your own team vs. hiring one that is ready-to-go?"
 authorHandle: sarahlorenzu
-tags: [start-up]
+tags: [startups]
 bio: "Sarah Lorenz"
 description:
   "Sarah Lorenz explores the advantages and disadvantages of building a tech
