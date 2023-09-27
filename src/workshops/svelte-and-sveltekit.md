@@ -76,7 +76,6 @@ leads:
   - name: Gabor Babicz
     title: Senior Frontend Engineer
     handle: zeppelin
-    authorHandle: zeppelin
     image: /assets/images/authors/zeppelin.jpg
     bio: >
       Gabor is a passionate frontend engineer who has spent the past two decades
