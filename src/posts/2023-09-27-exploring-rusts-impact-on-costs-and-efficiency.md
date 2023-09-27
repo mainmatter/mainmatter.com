@@ -6,8 +6,9 @@ authorHandle: marcoow
 tags: [rust]
 bio: "Marco Otte-Witte"
 description:
-  "Stefan Baumgartner and Marco Otte-Witte discuss the impact of Rust on efficiency and
-  operating costs and Stefan's experience learning and teaching Rust."
+  "Stefan Baumgartner and Marco Otte-Witte discuss the impact of Rust on
+  efficiency and operating costs and Stefan's experience learning and teaching
+  Rust."
 og:
   image: /assets/images/posts/2023-09-27-exploring-rusts-impact-on-costs-and-efficiency/og-image.png
 tagline: |
@@ -22,10 +23,10 @@ Senior Product Architect at Dynatrace, Rust allows developers to write more
 stable software with fewer maintenance issues and higher efficiency, resulting
 in cost savings for companies. In the interview, Stefan shared his experience
 introducing Rust to Dynatrace’s platform, and how they delivered a functioning
-prototype within a few days for a particular use case. Ever since, his
-team at Dynatrace has been able to maintain and run the Rust-based product
-smoothly with minimal issues, proving that Rust is a stable and efficient
-language for such projects.
+prototype within a few days for a particular use case. Ever since, his team at
+Dynatrace has been able to maintain and run the Rust-based product smoothly with
+minimal issues, proving that Rust is a stable and efficient language for such
+projects.
 
 The conversation then moves to Stefan's personal experience with programming
 languages and his journey to learning and teaching Rust. He discussed his
