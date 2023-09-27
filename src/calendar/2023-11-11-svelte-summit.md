@@ -7,5 +7,5 @@ kind: summit
 color: aqua
 ---
 
-Svelte Summit is an event dedicated to Svelte and everything that is happening
-in the community. We are joining the event as Gold Sponsors.
+Svelte Summit is an online conference dedicated to Svelte and everything that is happening
+in the community. We are supporting the event as a Gold Sponsor.
