@@ -25,7 +25,7 @@ introducing Rust to Dynatrace’s platform, and how they delivered a functioning
 prototype within a few days for a particular use case. Ever since, his
 team at Dynatrace has been able to maintain and run the Rust-based product
 smoothly with minimal issues, proving that Rust is a stable and efficient
-language for their projects.
+language for such projects.
 
 The conversation then moves to Stefan's personal experience with programming
 languages and his journey to learning and teaching Rust. He discussed his
