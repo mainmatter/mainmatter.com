@@ -1,0 +1,90 @@
+---
+layout: base
+title: Enable your team to succeed with Svelte
+description: Mainmatter enables teams to succedd with Svelte and build ambitious web apps that are fast and maintainable.
+permalink: /svelte-consulting/
+---
+
+{% from "image-banner-with-text.njk" import imageBannerWithText %}
+{% from "recent-posts.njk" import recentPosts %}
+{% from "cta-link.njk" import ctaLink %}
+{% from "scroll-slides.njk" import scrollSlides %}
+{% from "quote.njk" import quote %}
+
+<section class="color-hero color-hero--purple" data-background-color="purple">
+  <div class="color-hero__image-wrapper">
+    {% image '/assets/images/photos/notebook-on-table.jpg', 'Notebook on a table, seen from the side', '100vw', 'eager',
+    'color-hero__image', [760, 1440, 1920] %}
+  </div>
+  <div class="color-hero__overlay"></div>
+  <div class="color-hero__container container container--lg color-hero__container--center">
+    <div class="color-hero__main">
+      {% set imagePath %}/assets/images/logos/monochrome/svelte.svg{% endset %}
+      <img class="expertise__logo" src="{{ imagePath }}" alt="Svelte logo" />
+      <h1 class="color-hero__title color-hero__title--full ">Svelte is the future of frontend development</h1>
+      <div class="color-hero__text color-hero__text--large">
+        <p>Svelte combines a leading developer experience with performance and maintainability. With SvelteKit and its progressive enhancement capabilities, it's a fit for a wide range of use cases.</p>
+        <p>Mainmatter is here to empower your team to fully realize those benefits in your web and backend projects.</p>
+    </div>
+  </div>
+</section>
+
+<section class="split-content">
+  <div class="container container--lg">
+    <h2 class="h5">Svelte & Mainmatter</h2>
+    <h3 class="split-content__subheading h2">A unique skillset</h3>
+    <div class="split-content__content">
+      <div class="split-content__text">
+        <p>We’re frontend experts – our team speaks at international events, is <a href="/this-week-in-open-source/">actively contributing to a number of open source projects</a> and our Svelte expert Paolo Ricciuti is a Svelte ambassador and the co-author of <a href="https://www.sveltelab.dev/">SvelteLab</a>.</p>
+        <p>Mainmatter has been building big web apps and mentored international teams backend, frontend, design, as well as process and developer infrastructure for years. We know what it takes to connect everything together and deliver a delightful end-to-end experience.</p>
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-svelte.njk' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set 'slide_1' = {
+  "color": "purple",
+  "title": "Succeeding with Svelte",
+  "text": "Getting started with Svelte and SvelteKit is straightforward but an experienced partner can help ensure you're set up for success from the beginning. Paolo Ricciuti, co-author of <a href=\"https://www.sveltelab.dev\">SvelteLab</a> and our in-house Svelte expert, is here to help your team.",
+  "linkUrl": "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ26xh3Rs58rD4ZNFuzlzbTxFxubT5_9qSqc_NU4Pmqdot1YTIiylxcyL2kJrfEHn8tpgJqoHi8O",
+  "linkText": "Book a free 1:1 call with Paolo"
+} %}
+
+{% set 'slide_2' = {
+  "color": "black",
+  "title": "Training",
+  "text": "Svelte has excellent documentation for diving straight into the framework. However, sometimes active learning in a workshop taught by a subject matter expert can accelerate the learning experience. Our trainers are world-class mentors and can design a learning path that best fits your needs.",
+  "linkUrl": "/services/workshops/svelte-and-sveltekit/",
+  "linkClass": "plausible-event-name=Svelte+Workshop",
+  "linkText": "Check out our Svelte & SvelteKit workshop!"
+} %}
+
+{% set 'slide_3' = {
+  "color": "aqua",
+  "title": "Team augmentation",
+  "text": "Svelte is still a young technology – hiring senior talent can be a challenge.
+  Our experts can merge with your in-house product teams to ensure the timely delivery of mission-critical projects. We’re more than hired hands – we mentor your team throughout the process to help lift productivity long after our collaboration ends.",
+  "linkUrl": "/contact/",
+  "linkClass": "plausible-event-name=Svelte+Contact",
+  "linkText": "Work with us!"
+} %}
+
+{% set slides = [slide_1, slide_2, slide_3] %}
+{{ scrollSlides('svelte', slides, page.url) }}
+
+<div class="container container--lg quote-section">
+  {% set 'content' = {
+    "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
+    "source": "Jürgen Witte, CPO at Rail Europe",
+    "image": "/assets/images/photos/juergen-witte.png",
+    "alt": "Jürgen Witte, smiling at the camera wearing a light blue shirt and blue blazer",
+    "loading": "lazy"
+  } %} {{ quote(content) }}
+</div>
+
+{{ recentPosts("Latest from our blog on the topic", collections.sveltePosts) }}
+
+{% include 'content/hero-grow-with-us.njk' %}
