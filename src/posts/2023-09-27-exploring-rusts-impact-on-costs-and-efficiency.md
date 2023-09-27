@@ -6,7 +6,7 @@ authorHandle: marcoow
 tags: [rust]
 bio: "Marco Otte-Witte"
 description:
-  "Rob Ede and Marco Otte-Witte discuss the impact of Rust on efficiency and
+  "Stefan Baumgartner and Marco Otte-Witte discuss the impact of Rust on efficiency and
   operating costs and Stefan's experience learning and teaching Rust."
 og:
   image: /assets/images/posts/2023-09-27-exploring-rusts-impact-on-costs-and-efficiency/og-image.png
