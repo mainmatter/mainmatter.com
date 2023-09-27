@@ -22,7 +22,7 @@ Senior Product Architect at Dynatrace, Rust allows developers to write more
 stable software with fewer maintenance issues and higher efficiency, resulting
 in cost savings for companies. In the interview, Stefan shared his experience
 introducing Rust to Dynatrace’s platform, and how they delivered a functioning
-prototype within a few days for a particular use case. Ever since, the small
+prototype within a few days for a particular use case. Ever since, his
 team at Dynatrace has been able to maintain and run the Rust-based product
 smoothly with minimal issues, proving that Rust is a stable and efficient
 language for their projects.
