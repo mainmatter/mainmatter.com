@@ -35,6 +35,11 @@
   display: flex;
   align-items: center;
   width: 100%;
+  gap: 4rem;
+}
+
+.logo-list__list--duplicate {
+  margin-left: 4rem;
 }
 
 .logo-list__item {
@@ -45,6 +50,10 @@
 .logo-list__image {
   display: block;
   text-align: center;
+
+  img, svg {
+    max-height: 5rem;
+  }
 }
 
 .logo-list__button {
@@ -81,6 +90,14 @@
     padding: 5rem 0;
   }
 
+  .logo-list__list {
+    gap: 6rem;
+  }
+  
+  .logo-list__list--duplicate {
+    margin-left: 6rem;
+  }
+
   .logo-list__inner {
     width: 400%;
   }
@@ -95,6 +112,14 @@
 @media (min-width: 72em) {
   .logo-list__inner {
     width: calc(var(--marquee-logo-count) * 35%);
+  }
+
+  .logo-list__list {
+    gap: 8rem;
+  }
+  
+  .logo-list__list--duplicate {
+    margin-left: 8rem;
   }
 }
 
