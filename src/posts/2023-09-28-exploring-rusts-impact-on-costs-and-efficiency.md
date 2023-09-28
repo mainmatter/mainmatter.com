@@ -10,11 +10,11 @@ description:
   efficiency and operating costs and Stefan's experience learning and teaching
   Rust."
 og:
-  image: /assets/images/posts/2023-09-27-exploring-rusts-impact-on-costs-and-efficiency/og-image.png
+  image: /assets/images/posts/2023-09-28-exploring-rusts-impact-on-costs-and-efficiency/og-image.png
 tagline: |
   <p>Senior Product Architect at Dynatrace Stefan Baumgartner and Mainmatter’s Founder Marco Otte-Witte discuss the benefits and use cases of Rust adoption and Stefan shares his experience learning and teaching Rust first-hand.</p>
 
-image: "/assets/images/posts/2023-09-27-exploring-rusts-impact-on-costs-and-efficiency/header-visual.jpg"
+image: "/assets/images/posts/2023-09-28-exploring-rusts-impact-on-costs-and-efficiency/header-visual.jpg"
 imageAlt: "Stefan's picture on a gray background"
 ---
 
