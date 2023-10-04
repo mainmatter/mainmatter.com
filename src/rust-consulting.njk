@@ -38,7 +38,7 @@ permalink: /rust-consulting/
     <div class="split-content__content">
       <div class="split-content__text">
         <p>We’re experts - our Rust team is led by Luca Palmieri, author of <a href="https://zero2prod.com">"Zero to Production in Rust"</a>, and we have been part of the Rust ecosystem for years, helping out the <a href="https://crates.io">crates.io</a> project.</p>
-        <p>But we don't stop at Rust – we have built big web apps and mentored teams on backend, frontend, design, as well as process and developer infrastructure for years. We know what it takes to connect everything together and deliver a delightful end-to-end experience.</p>
+        <p>But we don't stop at Rust – we have developed big web apps and mentored teams on backend, frontend, design, as well as process and developer infrastructure for years. We know what it takes to connect everything together and deliver a delightful end-to-end experience.</p>
       </div>
       <div class="split-content__feature">
         {% include 'content/secondary-feature-rust.njk' %}
@@ -63,7 +63,7 @@ permalink: /rust-consulting/
   </div>
 </section>
 
-{% set logoCompanies = ['Rust Foundation', 'arm', 'Ferrocene', 'Google', 'Aleph Alpha'] %}
+{% set logoCompanies = ['Rust Foundation', 'arm', 'Huawei', 'Ferrocene', 'Sentry', 'Jetbrains', 'Aleph Alpha', 'Google', 'Realm'] %}
 {% set title = 'Our EuroRust partners are betting on Rust' %}
 {{ logoList(logoCompanies, title, "h4", "h5") }}
 
@@ -72,19 +72,29 @@ permalink: /rust-consulting/
   "title": "Is Rust the right choice for us?",
   "text": "Every new technology brings its own risks - Rust is no exception. Luca Palmieri, the author of <a href=\"http://zero2prod.com\">Zero to Production in Rust</a> and our in-house Rust expert, is here to help your team. You walk him through your company's usecase and your requirements and he’ll do his best to suggest the best course of action. Sometimes Rust is not the answer, but if it is, he’ll make sure you are on the right track.",
   "linkUrl": "https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us",
+  "linkClass": "plausible-event-name=Rust+1on1+Call",
   "linkText": "Book a free 1:1 call with Luca"
 } %}
 
 {% set 'slide_2' = {
   "color": "black",
-  "title": "Training",
-  "text": "There is excellent material out there for learning Rust on your own. But you might not have the luxury of time, or the in-house expertise, to upskill your entire team. Our trainers are world-class experts and can design a learning path that best fits your needs.",
+  "title": "Custom Development",
+  "text": "We develop complete web and cloud apps with Rust so your team can focus on other initiatives. We have experience with all relevant crates like actix, axum, tokio, hyper, and more – and in fact teach others how to use those. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.",
+  "linkUrl": "/contact/",
+  "linkClass": "plausible-event-name=Rust+Contact",
+  "linkText": "Work with us!"
+} %}
+
+{% set 'slide_3' = {
+  "color": "white",
+  "title": "Training and Support",
+  "text": "There is excellent material out there for learning Rust on your own. But you might not have the luxury of time, or the in-house expertise, to upskill your entire team or overcome obstacles on your own. Our trainers are world-class experts and can design a learning path that best fits your needs.",
   "linkUrl": "/services/workshops/rust/",
   "linkClass": "plausible-event-name=Rust+Workshops",
   "linkText": "Check out our workshops!"
 } %}
 
-{% set 'slide_3' = {
+{% set 'slide_4' = {
   "color": "aqua",
   "title": "Team augmentation",
   "text": "Rust is a young technology – hiring Senior talent can be a challenge.
@@ -94,7 +104,7 @@ permalink: /rust-consulting/
   "linkText": "Work with us!"
 } %}
 
-{% set slides = [slide_1, slide_2, slide_3] %}
+{% set slides = [slide_1, slide_2, slide_3, slide_4] %}
 {{ scrollSlides('rust', slides, page.url) }}
 
 <section class="quotes-list">
