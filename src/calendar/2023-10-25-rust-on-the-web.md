@@ -7,7 +7,6 @@ kind: meetup
 color: purple
 ---
 
-“Rust for the web” is a meetup organized by the Mainmatter team and the Rust
-Paris meetup group. The event is hosted by Qonto at their Parisian offices. Our
-Principal Engineering Consultant, Luca Palmieri, will be moderating a panel on
-using Rust in production.
+We are running a meetup together with the Rust Paris meetup group to talk about Rust for web and cloud applications. The event will be hosted by our friends at Qonto in their office in Paris.
+Our Principal Engineering Consultant, Luca Palmieri, will be moderating a panel on
+real world use cases and experiences with Rust in production.
