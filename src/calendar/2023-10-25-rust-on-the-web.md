@@ -7,6 +7,8 @@ kind: meetup
 color: purple
 ---
 
-We are running a meetup together with the Rust Paris meetup group to talk about Rust for web and cloud applications. The event will be hosted by our friends at Qonto in their office in Paris.
-Our Principal Engineering Consultant, Luca Palmieri, will be moderating a panel on
-real world use cases and experiences with Rust in production.
+We are running a meetup together with the Rust Paris meetup group to talk about
+Rust for web and cloud applications. The event will be hosted by our friends at
+Qonto in their office in Paris. Our Principal Engineering Consultant, Luca
+Palmieri, will be moderating a panel on real world use cases and experiences
+with Rust in production.
