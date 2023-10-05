@@ -1,6 +1,7 @@
 ---
 layout: case-study
 company: Timify
+title: Laying a solid frontend foundation for an ambitious startup | Work
 displayTitle: "An engineering overhaul for a <em>validated</em> booking system"
 description:
   <p>Timify is an online appointment scheduling service that connects service
