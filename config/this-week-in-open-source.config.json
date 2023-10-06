@@ -76,7 +76,8 @@
         "storybookjs/addon-svelte-csf",
         "sveltejs/kit",
         "paoloricciuti/sveltekit-view-transition",
-        "paoloricciuti/sveltekit-view-transition"
+        "paoloricciuti/sveltekit-view-transition",
+        "theetrain/this-week-in-svelte"
       ]
     },
     {
@@ -482,5 +483,5 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2023-09-14..2023-09-21"
+  "last_date": "2023-09-24..2023-10-01"
 }
