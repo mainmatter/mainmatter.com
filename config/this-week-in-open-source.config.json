@@ -401,7 +401,8 @@
         "ember-fastboot/ember-cli-head",
         "DockYard/ember-composable-helpers",
         "shipshapecode/swach",
-        "minutebase/ember-inline-svg"
+        "minutebase/ember-inline-svg",
+        "emberobserver/client"
       ]
     }
   ],
