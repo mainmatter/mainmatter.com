@@ -405,7 +405,8 @@
     {
       "name": "Ember",
       "repos": [
-        "ember-learn/ember-jsonapi-docs"
+        "ember-learn/ember-jsonapi-docs",
+        "emberobserver/client"
       ]
     }
   ],
