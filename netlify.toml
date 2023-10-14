@@ -143,8 +143,9 @@
 
 # redirect old "Web-based Services in Rust" landing page to regular workshop
 [[redirects]]
-  from = "https://rust-web-services-workshop.mainmatter.com"
+  from = "https://rust-web-services-workshop.mainmatter.com/*"
   to = "https://mainmatter.com/services/workshops/web-based-services-in-rust/"
+  force = true
 
 # serve 404 for all paths that don't exist
 [[redirects]]
