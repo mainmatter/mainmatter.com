@@ -146,6 +146,11 @@
   from = "https://rust-web-services-workshop.mainmatter.com"
   to = "https://mainmatter.com/services/workshops/web-based-services-in-rust/"
 
+# serve "Svelte & SvelteKit" landing page for svelte-sveltekit-workshop.mainmatter.com
+[[redirects]]
+  from = "https://svelte-sveltekit-workshop.mainmatter.com/*"
+  to = "https://mainmatter.com/svelte-sveltekit-workshop/"
+
 # serve 404 for all paths that don't exist
 [[redirects]]
   from = "/*"

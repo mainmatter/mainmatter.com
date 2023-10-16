@@ -1,6 +1,6 @@
 ---
 title: "Workshop: Svelte & SvelteKit"
-description: "This workshops takes participants through the entire process of building a complete, real-world application and teaches the theoretical concepts along the way. Each topic is introduced via an in-depth presentation followed by a practice exercise."
+description: "Online Svelte and SvelteKit workshop that takes participants through the process of building a complete SvelteKit application and teaches the underlying concepts along the way – 3 afternoons, Dec. 5th to 7th."
 layout: false
 og:
   image: /assets/images/workshops/svelte-and-sveltekit/og-image.jpg
@@ -64,10 +64,9 @@ og:
         <div class="color-hero__overlay" data-color-hero></div>
         <div class="color-hero__container container container--lg color-hero__container--center workshop-lp-hero__container">
           <div class="color-hero__main">
-            <p class="workshop-hero__format">Workshop</p>
+            <p class="workshop-hero__format">Online Workshop</p>
             <h1 class="workshop-lp-hero__title color-hero__title color-hero__title--full">Svelte & SvelteKit</h1>
-            <div class="color-hero__text color-hero__text--small">December 5th–7th, 2023</div>
-            <div class="color-hero__text color-hero__text--small">Remote</div>
+            <div class="color-hero__text color-hero__text--small">December 5th–7th, 2023 – 14:00 to 18:00 CET</div>
           </div>
         </div>
       </section>
@@ -128,120 +127,58 @@ og:
   large applications with ease while being able to choose among patterns like
   SPA, MPA, SSR, SSG on a per-route basis.</p>
 
-        <p>This workshops takes participants through the entire process of building a
-  complete, real-world application and teaches the theoretical concepts along
-  the way. Each topic is introduced via an in-depth presentation followed by a
+        <p><strong>This workshops takes participants through the entire process of building a
+  complete, real-world SvelteKit application and teaches the underlying concepts along
+  the way.</strong> Each topic is introduced via an in-depth presentation followed by a
   practice exercise.</p>
 
         <p>All examples and practical assignments from the workshop are available
   publicly on GitHub.</p>
 
-      </section>
-
-      {#       
-      <section class="lp-section lang-features container container--lg">
-        <h2 class="workshop-topics__heading h5">Additional Information</h2>
-        <ul class="workshop-topics__list">
-          <li class="workshop-topics__item">
-            <div class="workshop-topics__text-wrapper">
-              <h3 class="workshop-topics__item-heading h4">Svelte Basics</h3>
-              <p class="text--sm">Rendering reactive UIs is the core functionality of Svelte. We cover
-                  Svelte’s unique approach to reactivity, the <code>$</code> syntax and its
-                  template language. We then look into writing Svelte components, accepting
-                  props, and its CSS scoping feature.</p>
-            </div>
-          </li>
-          <li class="workshop-topics__item">
-            <div class="workshop-topics__text-wrapper">
-              <h3 class="workshop-topics__item-heading h4">SvelteKit Basics</h3>
-              <p class="text--sm">This stage introduces SvelteKit, the project framework built on Svelte. We
-                  cover project creation and management, SvelteKit’s file system as well as
-                  creating and managing pages.</p>
-            </div>
-          </li>
-          <li class="workshop-topics__item">
-            <div class="workshop-topics__text-wrapper">
-              <h3 class="workshop-topics__item-heading h4">Routing</h3>
-              <p class="text--sm">We’ll dive deep into SvelteKit’s file based routing, loading and
-                  displaying data as well as topics like route grouping, route params and
-                  redirects.</p>
-            </div>
-          </li>
-          <li class="workshop-topics__item">
-            <div class="workshop-topics__text-wrapper">
-              <h3 class="workshop-topics__item-heading h4">Testing</h3>
-              <p class="text--sm">SvelteKit comes with two testing strategies: Vitest for testing components
-                  in isolation and Playwright for end-to-end testing. We cover both in depth
-                  and present approaches for testing real applications.</p>
-            </div>
-          </li>
-          <li class="workshop-topics__item">
-            <div class="workshop-topics__text-wrapper">
-              <h3 class="workshop-topics__item-heading h4">Stores</h3>
-              <p class="text--sm">This stage kicks off with an introduction of what stores are and how they
-                  work. We continue with looking into implementing the three main stores:
-                  writable, readable, and derived.</p>
-            </div>
-          </li>
-          <li class="workshop-topics__item">
-            <div class="workshop-topics__text-wrapper">
-              <h3 class="workshop-topics__item-heading h4">SvelteKit and Progressive Enhancement</h3>
-              <p class="text--sm">The final stage of the workshop teaches how to implement progressive
-                  enhancement with forms. We cover how to send data to an API, how to
-                  validate forms, what server folders are, and give a brief introduction
-                  into hooks. We close by looking into how to implement authentication.</p>
-            </div>
-          </li>
-        </ul>
-        <p>The workshop can be customized for the specific needs of your team to cover topics like performance, debugging, or others.</p>
-
-      </section> #}
-
-      {# <section class="lp-section">
-          <div class="container container--lg">
-            <p>The workshop can be customized for the specific needs of your team to cover topics like performance, debugging, or others.</p>
-          </div>
-        </section> #}
+  </section>
 
       <section>
-        {% set imageData = {
+          {% set imageData = {
           "imgPath": "/assets/images/svelte-sveltekit-workshop/placeholder.png",
           "alt": "Girl coding at home",
           "sizes": "100vw",
           "loading": "lazy",
           "sizesArray": [760, 1440, 1920]
         } %}
-        {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+          {{ imageAspectRatio(imageData, "32/13", "35/19") }}
       </section>
 
-      <section class="lp-section container container--lg">
+
+        <section class="lp-section container container--lg">
         <h2 class="lp-section-subheading h2">Additional Information</h2>
-        <h3 class="h4">Duration & location</h3>
-        <p>The workshop takes place over three afternoons on Dec. 5th, 6th, and 7th., 14:00 to 18:00 CET each. That allows participants to use the mornings to exercise or keep up with work.
+            <h3 class="h4">Duration & location</h3>
+            <p>The workshop takes place over <strong>three afternoons on Dec. 5th, 6th, and 7th., 14:00 to 18:00 CET each</strong>. That allows participants to use the mornings to exercise or keep up with work.
             The workshop is run completely online and remote.</p>
-      </section>
-      <section class="lp-section container container--lg">
-        <h3 class="h4">Number of participants</h3>
-        <p>To ensure the highest quality, we accept up to 40 participants.</p>
-      </section>
-      <section class="lp-section container container--lg">
-        <h3 class="h4">For who?</h3>
-        <p>This workshop is intended for developers who have some experience with JavaScript and frontend development in general, that want to get started with Svelte & SvelteKit.</p>
-      </section>
-      <section class="lp-section container container--lg">
-        <h3 class="h4">Prerequisites</h3>
-        <p>We will send a detailed list of instructions for preparation, including the installation of tools, etc. Additionally, we will share a Github project with workshop materials. This information will be provided closer to the workshop date.</p>
-      </section>
+        </section>
+          <section class="lp-section container container--lg">
+            <h3 class="h4">Number of participants</h3>
+            <p>To ensure the highest quality, we accept up to 20 participants.</p>
+        </section>
+          <section class="lp-section container container--lg">
+            <h3 class="h4">For who?</h3>
+            <p>This workshop is intended for developers who have some experience with JavaScript and frontend development in general, that want to get started with Svelte & SvelteKit.</p>
+        </section>
+          <section class="lp-section container container--lg">
+            <h3 class="h4">Prerequisites</h3>
+            <p>We will send a detailed list of instructions for preparation, including the installation of tools, etc. Additionally, we will share a Github project with workshop materials. This information will be provided closer to the workshop date.</p>
+        </section>
+        
+
 
       <section>
-        {% set imageData = {
+          {% set imageData = {
           "imgPath": "/assets/images/svelte-sveltekit-workshop/placeholder-2.png",
           "alt": "Girl working on her laptop at home",
           "sizes": "100vw",
           "loading": "lazy",
           "sizesArray": [760, 1440, 1920]
         } %}
-        {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+          {{ imageAspectRatio(imageData, "32/13", "35/19") }}
       </section>
 
       {% set 'slide_1' = {
