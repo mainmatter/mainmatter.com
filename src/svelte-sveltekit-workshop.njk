@@ -3,7 +3,7 @@ title: "Workshop: Svelte & SvelteKit"
 description: "Online Svelte and SvelteKit workshop that takes participants through the process of building a complete SvelteKit application and teaches the underlying concepts along the way – 3 afternoons, Dec. 5th to 7th."
 layout: false
 og:
-  image: /assets/images/workshops/svelte-and-sveltekit/og-image.jpg
+  image: /assets/images/svelte-sveltekit-workshop/svelte-workshop-og-image.png
 ---
 
 {% from "author-socials.njk" import authorSocials %}
@@ -64,6 +64,7 @@ og:
         <div class="color-hero__overlay" data-color-hero></div>
         <div class="color-hero__container container container--lg color-hero__container--center workshop-lp-hero__container">
           <div class="color-hero__main">
+            <img class="workshop-lp-hero__logo" src="/assets/images/svelte-sveltekit-workshop/svelte.svg" alt="Svelte logo" />
             <p class="workshop-hero__format">Online Workshop</p>
             <h1 class="workshop-lp-hero__title color-hero__title color-hero__title--full">Svelte & SvelteKit</h1>
             <div class="color-hero__text color-hero__text--small">December 5th–7th, 2023 – 14:00 to 18:00 CET</div>
@@ -139,8 +140,8 @@ og:
 
       <section>
           {% set imageData = {
-          "imgPath": "/assets/images/svelte-sveltekit-workshop/placeholder.png",
-          "alt": "Girl coding at home",
+          "imgPath": "/assets/images/svelte-sveltekit-workshop/svelte-workshop-1.jpg",
+          "alt": "workshop participants discussing their results and asking questions",
           "sizes": "100vw",
           "loading": "lazy",
           "sizesArray": [760, 1440, 1920]
@@ -172,8 +173,8 @@ og:
 
       <section>
           {% set imageData = {
-          "imgPath": "/assets/images/svelte-sveltekit-workshop/placeholder-2.png",
-          "alt": "Girl working on her laptop at home",
+          "imgPath": "/assets/images/svelte-sveltekit-workshop/svelte-workshop-2.jpg",
+          "alt": "Happy workshop attendee smiling into the camera",
           "sizes": "100vw",
           "loading": "lazy",
           "sizesArray": [760, 1440, 1920]
@@ -246,17 +247,6 @@ og:
         slide_6
       ] %}
       {{ scrollSlides('workshops', slides, page.url) }}
-
-      {# <div class="container container--lg quote-section">
-          {% set 'content' = {
-          "text": "Stefan's workshop was enlightening. With his clear, friendly teaching style and expert knowledge, he inspired us to take our skills to the next level. Stefan is an excellent teacher, motivator and an inspiration.",
-          "source": "Zenon Huskić, Wüstenrot",
-          "image": "/assets/images/web-based-services-in-rust-workshop/zenon-huskic.png",
-          "alt": "Zenon Huskicć, smiling at the camera wearing a grey shirt",
-          "loading": "lazy"
-        } %}
-          {{ quote(content) }}
-        </div> #}
 
       <section class="color-hero color-hero--purple" data-background-color="purple">
         <div class="color-hero__image-wrapper">
