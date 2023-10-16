@@ -1,0 +1,280 @@
+---
+title: "Workshop: Svelte & SvelteKit"
+description: "Online Svelte and SvelteKit workshop that takes participants through the process of building a complete SvelteKit application and teaches the underlying concepts along the way – 3 afternoons, Dec. 5th to 7th."
+layout: false
+og:
+  image: /assets/images/svelte-sveltekit-workshop/svelte-workshop-og-image.png
+---
+
+{% from "author-socials.njk" import authorSocials %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "scroll-slides.njk" import scrollSlides %}
+{% from "quote.njk" import quote %}
+
+<html lang="{{ config.lang }}" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>{{ title }}</title>
+    {% include "global/fonts.njk" %}
+    <link rel="stylesheet" href="/assets/css/app.css"/>
+    <link rel="stylesheet" href="/assets/css/workshop-lp.css"/>
+    <script src="/assets/js/app.js" defer></script>
+    {% block head %}{{ head | safe }}
+    {% endblock %}
+
+    {% include "global/meta.njk" %}
+    {% include "global/icons.njk" %}
+
+    <script src='https://js.tito.io/v2/' async></script>
+    <script defer data-domain="rust-web-services-workshop.mainmatter.com" src="https://plausible.io/js/script.tagged-events.outbound-links.js"></script>
+    <script>
+      window.plausible = window.plausible || function () {
+        (window.plausible.q = window.plausible.q || []).push(arguments)
+      }
+    </script>
+  </head>
+  <body data-js-enabled="false">
+    <a class="skip-link" href="#main">
+      Skip to main content
+    </a>
+
+    <nav class="nav nav--accent-aqua" id="nav">
+      <div class="nav__wrapper container container--xl">
+        <div class="nav__logo">
+          <a href="/">
+            <h1 class="nav__brand">
+              {% include 'svg/logo.njk' %}
+              <span class="screenreader">Mainmatter</span>
+            </h1>
+          </a>
+        </div>
+        <div class="nav__aside">
+          <tito-button event="mainmatter/svelte-sveltekit-workshop">Book your ticket</tito-button>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <section class="color-hero color-hero--purple" data-background-color="purple">
+        <div class="color-hero__image-wrapper">
+          {% image '/assets/images/workshops/svelte-and-sveltekit/hero.jpg', 'Photo of a computer screen showing an IDE with an open Svelte project', '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
+        </div>
+        <div class="color-hero__overlay" data-color-hero></div>
+        <div class="color-hero__container container container--lg color-hero__container--center workshop-lp-hero__container">
+          <div class="color-hero__main">
+            <img class="workshop-lp-hero__logo" src="/assets/images/svelte-sveltekit-workshop/svelte.svg" alt="Svelte logo" />
+            <p class="workshop-hero__format">Online Workshop</p>
+            <h1 class="workshop-lp-hero__title color-hero__title color-hero__title--full">Svelte & SvelteKit</h1>
+            <div class="color-hero__text color-hero__text--small">December 5th–7th, 2023 – 14:00 to 18:00 CET</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="workshop-authors">
+        <div class="container container--lg">
+          <div class="author__wrapper">
+            <div class="author text--xs">
+              <div class="workshop-authors__image-wrapper author__image-wrapper">
+                {% image "/assets/images/authors/paoloricciuti.jpg", 'Paolo Ricciuti', '3.75rem', 'eager', 'author__lead-image', [120] %}
+              </div>
+              <div class="author__text-wrapper">
+                <div class="author__name-wrapper">
+                  <span>with&nbsp;</span>
+                  <p class="author__name">Paolo Ricciuti</p>
+                </div>
+                {{ authorSocials("paoloricciuti", "author-socials--desktop-only") }}
+                <div class="author__title">Senior Frontend Engineer</div>
+                {{ authorSocials("paoloricciuti", "author-socials--mobile-only") }}
+              </div>
+            </div>
+            <div class="author__details author__details--full-width text--sm">
+              <p>Huge nerd, Svelte Ambassador and lover. He's one of the creators of <a
+              href="https://sveltelab.dev">sveltelab.dev</a> - a REPL for SvelteKit -
+              built during the first Svelte hackathon that granted him and his
+              co-creator the first place for best integration.</p>
+            </div>
+          </div>
+          <div class="author__wrapper">
+            <div class="author text--xs">
+              <div class="workshop-authors__image-wrapper author__image-wrapper">
+                {% image "/assets/images/authors/pichfl.jpg", 'Florian Pichler', '3.75rem', 'eager', 'author__lead-image', [120] %}
+              </div>
+              <div class="author__text-wrapper">
+                <div class="author__name-wrapper">
+                  <span>with&nbsp;</span>
+                  <p class="author__name">Florian Pichler</p>
+                </div>
+                {{ authorSocials("pichfl", "author-socials--desktop-only") }}
+                <div class="author__title">Senior Frontend Engineer</div>
+                {{ authorSocials("pichfl", "author-socials--mobile-only") }}
+              </div>
+            </div>
+            <div class="author__details author__details--full-width text--sm">
+              <p>Florian has been solving frontend challenges for over 15 years, with all
+              tools that became available. He has built and coached design and
+              development teams of all sizes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="lp-section lang-features container container--lg">
+        <p>Svelte is great choice for building fast and light-weight web
+  applications. Its unique approach of generating reactive code at compile time
+  instead of relying on a runtime, moves work out of the browser and results in
+  highly efficient code. Combined with SvelteKit, it enables engineers to build
+  large applications with ease while being able to choose among patterns like
+  SPA, MPA, SSR, SSG on a per-route basis.</p>
+
+        <p><strong>This workshops takes participants through the entire process of building a
+  complete, real-world SvelteKit application and teaches the underlying concepts along
+  the way.</strong> Each topic is introduced via an in-depth presentation followed by a
+  practice exercise.</p>
+
+        <p>All examples and practical assignments from the workshop are available
+  publicly on GitHub.</p>
+
+  </section>
+
+      <section>
+          {% set imageData = {
+          "imgPath": "/assets/images/svelte-sveltekit-workshop/svelte-workshop-1.jpg",
+          "alt": "workshop participants discussing their results and asking questions",
+          "sizes": "100vw",
+          "loading": "lazy",
+          "sizesArray": [760, 1440, 1920]
+        } %}
+          {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+      </section>
+
+
+        <section class="lp-section container container--lg">
+        <h2 class="lp-section-subheading h2">Additional Information</h2>
+            <h3 class="h4">Duration & location</h3>
+            <p>The workshop takes place over <strong>three afternoons on Dec. 5th, 6th, and 7th., 14:00 to 18:00 CET each</strong>. That allows participants to use the mornings to exercise or keep up with work.
+            The workshop is run completely online and remote.</p>
+        </section>
+          <section class="lp-section container container--lg">
+            <h3 class="h4">Number of participants</h3>
+            <p>To ensure the highest quality, we accept up to 20 participants.</p>
+        </section>
+          <section class="lp-section container container--lg">
+            <h3 class="h4">For who?</h3>
+            <p>This workshop is intended for developers who have some experience with JavaScript and frontend development in general, that want to get started with Svelte & SvelteKit.</p>
+        </section>
+          <section class="lp-section container container--lg">
+            <h3 class="h4">Prerequisites</h3>
+            <p>We will send a detailed list of instructions for preparation, including the installation of tools, etc. Additionally, we will share a Github project with workshop materials. This information will be provided closer to the workshop date.</p>
+        </section>
+        
+
+
+      <section>
+          {% set imageData = {
+          "imgPath": "/assets/images/svelte-sveltekit-workshop/svelte-workshop-2.jpg",
+          "alt": "Happy workshop attendee smiling into the camera",
+          "sizes": "100vw",
+          "loading": "lazy",
+          "sizesArray": [760, 1440, 1920]
+        } %}
+          {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+      </section>
+
+      {% set 'slide_1' = {
+        "color": "white",
+        "tag": "Workshop Overview - Part 1",
+        "title": "Svelte Basics",
+        "text": "Rendering reactive UIs is the core functionality of Svelte. We cover
+      Svelte’s unique approach to reactivity, the <code>$</code> syntax and its
+      template language. We then look into writing Svelte components, accepting
+      props, and its CSS scoping feature."
+      } %}
+
+      {% set 'slide_2' = {
+        "color": "purple",
+        "tag": "Workshop Overview - Part 2",
+        "title": "SvelteKit Basics",
+        "text": "This stage introduces SvelteKit, the project framework built on Svelte. We
+      cover project creation and management, SvelteKit’s file system as well as
+      creating and managing pages."
+      } %}
+
+      {% set 'slide_3' = {
+        "color": "black",
+        "tag": "Workshop Overview - Part 3",
+        "title": "Routing",
+        "text": "We’ll dive deep into SvelteKit’s file based routing, loading and
+      displaying data as well as topics like route grouping, route params and
+      redirects."
+      } %}
+
+      {% set 'slide_4' = {
+        "color": "white",
+        "tag": "Workshop Overview - Part 4",
+        "title": "Testing",
+        "text": "SvelteKit comes with two testing strategies: Vitest for testing components
+      in isolation and Playwright for end-to-end testing. We cover both in depth
+      and present approaches for testing real applications."
+      } %}
+
+      {% set 'slide_5' = {
+        "color": "purple",
+        "tag": "Workshop Overview - Part 5",
+        "title": "Stores",
+        "text": "This stage kicks off with an introduction of what stores are and how they
+      work. We continue with looking into implementing the three main stores:
+      writable, readable, and derived."
+      } %}
+
+      {% set 'slide_6' = {
+        "color": "black",
+        "tag": "Workshop Overview - Part 6",
+        "title": "SvelteKit and Progressive Enhancement",
+        "text": "The final stage of the workshop teaches how to implement progressive
+      enhancement with forms. We cover how to send data to an API, how to
+      validate forms, what server folders are, and give a brief introduction
+      into hooks. We close by looking into how to implement authentication."
+      } %}
+
+      {% set slides = [
+        slide_1,
+        slide_2,
+        slide_3,
+        slide_4,
+        slide_5,
+        slide_6
+      ] %}
+      {{ scrollSlides('workshops', slides, page.url) }}
+
+      <section class="color-hero color-hero--purple" data-background-color="purple">
+        <div class="color-hero__image-wrapper">
+          {% image '/assets/images/web-based-services-in-rust-workshop/cta-background.jpg', "a pair of hands tie an entry band around someone's arm", '100vw', 'lazy', 'color-hero__image', [760, 1440, 1920] %}
+        </div>
+        <div class="color-hero__overlay"></div>
+        <div class="color-hero__container container container--lg color-hero__container--center">
+          <div class="color-hero__main">
+            <h1 class="color-hero__title color-hero__title--full">Book your ticket</h1>
+            <div class="color-hero__text color-hero__text--small">Join our workshop and start building web services with Svelte and SvelteKit.</div>
+            <div class="cta-link__text-wrapper">
+              <span class="cta-link__text">
+                <tito-button event="mainmatter/svelte-sveltekit-workshop">Book your ticket</tito-button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    {% include "global/footer.njk" %}
+    <div aria-live="polite" id="live-region" class="screenreader"></div>
+    <div hidden>
+      <p id="external-new-window-message">Opens external website in a new window.</p>
+    </div>
+    <script>
+      document
+        .querySelector('body')
+        .setAttribute('data-js-enabled', 'true');
+    </script>
+  </body>
+</html>
