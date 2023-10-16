@@ -1,5 +1,5 @@
 ---
-title: "EmberFest 2022"
+title: "EmberFest 2023"
 image: "/assets/images/talks/2023-09-21-emberfest-2023/logo.png"
 url: https://emberfest.eu/
 ---
