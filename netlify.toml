@@ -151,6 +151,8 @@
 [[redirects]]
   from = "https://svelte-sveltekit-workshop.mainmatter.com/*"
   to = "https://mainmatter.com/svelte-sveltekit-workshop/"
+  force = true
+  status = 200
 
 # serve 404 for all paths that don't exist
 [[redirects]]
