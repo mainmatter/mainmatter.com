@@ -167,7 +167,8 @@
         "ef4/code-equality-assertions",
         "kellyselden/boilerplate-update",
         "stefanpenner/node-fixturify-project",
-        "broccolijs/broccoli-filter"
+        "broccolijs/broccoli-filter",
+        "mainmatter/continue-on-error-comment"
       ]
     },
     {
@@ -478,5 +479,5 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2023-10-01..2023-10-09"
+  "last_date": "2023-10-08..2023-10-15"
 }
