@@ -1,7 +1,7 @@
 ---
 title: "Securing technology investments and open source funding"
 image: "/assets/images/talks/2023-09-21-emberfest-2023/securing-the-investment.jpg"
-url: https://www.youtube.com/watch?v=QMUm6UOoNRs&t=1888s
+url: https://youtu.be/QMUm6UOoNRs?si=tQMhxzxCRjpNsxli
 media: video
 channel: emberfest-2023
 ---
