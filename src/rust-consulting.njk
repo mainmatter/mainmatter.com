@@ -75,7 +75,9 @@ og:
   "text": "Every new technology brings its own risks - Rust is no exception. Luca Palmieri, the author of <a href=\"http://zero2prod.com\">Zero to Production in Rust</a> and our in-house Rust expert, is here to help your team. You walk him through your company's usecase and your requirements and he’ll do his best to suggest the best course of action. Sometimes Rust is not the answer, but if it is, he’ll make sure you are on the right track.",
   "linkUrl": "https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us",
   "linkClass": "plausible-event-name=Rust+1on1+Call",
-  "linkText": "Book a free 1:1 call with Luca"
+  "linkText": "Book a free 1:1 call with Luca",
+  "linkImage": "/assets/images/authors/algo_luca.jpg",
+  "linkImageCaption": "Luca Palmieri"
 } %}
 
 {% set 'slide_2' = {
@@ -107,7 +109,58 @@ og:
 } %}
 
 {% set slides = [slide_1, slide_2, slide_3, slide_4] %}
-{{ scrollSlides('rust', slides, page.url) }}
+<section class="scroll-slides" id="scroll-slides">
+    {% for slide in slides %}
+      {% set slideIndex = loop.index %}
+      <div id="ember-slide-{{ loop.index }}" class="scroll-slides__slide scroll-slides__slide--{{ slide.color }}"
+        data-scroll-slide  data-background-color="{{ slide.color }}">
+        <div class="scroll-slides__container container container--lg">
+          <div class="scroll-slides__pagination" aria-hidden="true">
+            {% for slide in slides %}
+              <span class="scroll-slides__pagination-item">
+                <span href="{{ pageUrl }}#{{ id }}-slide-{{ loop.index }}" class="scroll-slides__pagination-button">
+                  <span class="screenreader">Slide {{ loop.index }}
+                    {% if slideIndex == loop.index %} (Current slide) {% endif %}
+                  </span>
+                  <span
+                  class="scroll-slides__pagination-span{% if slideIndex == loop.index %} scroll-slides__pagination-span--active{% endif %}"
+                  aria-hidden></span>
+                </span>
+              </span>
+            {% endfor %}
+          </div>
+          <div class="scroll-slides__content">
+            <div class="scroll-slides__title-wrapper">
+              <h2 class="scroll-slides__title">{{ slide.title }}</h2>
+            </div>
+
+            <p class="scroll-slides__text">{{ slide.text | safe }}</>
+            {% if slide.linkUrl and slide.linkText %}
+              <div class="scroll-slides__link-wrapper">
+                {% if slide.linkImage %}
+                  <div class="scroll-slides__link-image">
+                    <img class="" src="{{ slide.linkImage }}" alt="{{ slide.linkImageCaption }}">
+                  </div>
+                {% endif %}
+
+                {% if slide.linkImageCaption %}
+                  <div class="scroll-slides__link-content">
+                    <p class="scroll-slides__link-imagecaption">
+                    {{ slide.linkImageCaption }}
+                    </p>
+                    {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
+                  </div>
+                {% else %}
+                  {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
+                {% endif %}
+              </div>
+            {% endif %}
+            
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </section>
 
 <section class="quotes-list">
   <div class="container container--xl">
