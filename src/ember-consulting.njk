@@ -162,16 +162,16 @@ permalink: /ember-consulting/
 
                 {% if slide.linkImageCaption %}
                   <div class="scroll-slides__link-content"
-              <p class="scroll-slides__link-imagecaption">
-              {{ slide.linkImageCaption }}
-              </p>
-              {% endif %}
-              {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
-              {% if slide.linkImageCaption %}
+                    <p class="scroll-slides__link-imagecaption">
+                    {{ slide.linkImageCaption }}
+                    </p>
+                    {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
+                  </div>
+                {% else %}
+                  {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
+                {% endif %}
               </div>
-              {% endif %}
-              </div>
-              {% endif %}
+            {% endif %}
             
           </div>
         </div>
