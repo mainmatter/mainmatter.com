@@ -13,6 +13,8 @@ hero:
   image: "/assets/images/work/expedition.jpg"
   imageAlt: "Expedition homepage viewed on an iPad"
   tags: "development / architecture / mentoring"
+og:
+  image: /assets/images/cases/cs-expedition-og-image.jpg
 ---
 
 {% from "quote.njk" import quote %}

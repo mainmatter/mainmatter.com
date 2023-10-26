@@ -14,6 +14,8 @@ hero:
   image: "/assets/images/work/mvb-background.jpg"
   imageAlt: "Servers in Rack"
   tags: "architecture / development / process"
+og:
+  image: /assets/images/cases/cs-mvb-og-image.jpg
 ---
 
 {% from "quote.njk" import quote %}

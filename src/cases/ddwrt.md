@@ -13,6 +13,8 @@ hero:
   image: "/assets/images/work/ddwrt.jpg"
   imageAlt: "Router on a white background"
   tags: "development / architecture"
+og:
+  image: /assets/images/cases/cs-dd-wrt-og-image.jpg
 ---
 
 {% from "secondary-feature.njk" import secondaryFeature %}
