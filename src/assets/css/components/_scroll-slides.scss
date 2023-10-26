@@ -100,6 +100,24 @@
   text-align: justify;
 }
 
+.scroll-slides__link-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.scroll-slides__link-image {
+  margin-right: 1rem;
+  line-height: 0;
+  width: 5rem;
+  height: 5rem;
+  clip-path: circle();
+}
+
+.scroll-slides__link-imagecaption {
+  color: inherit;
+}
+
 .scroll-slides__pagination,
 .scroll-slides__pagination-button {
   display: flex;
