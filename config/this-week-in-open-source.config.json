@@ -403,7 +403,10 @@
         "DockYard/ember-composable-helpers",
         "shipshapecode/swach",
         "minutebase/ember-inline-svg",
-        "emberobserver/client"
+        "emberobserver/client",
+        "emberjs/ember-test-helpers",
+        "lan0/ember-power-time-picker",
+        "mixonic/ember-cli-deprecation-workflow"
       ]
     }
   ],
@@ -479,5 +482,5 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2023-10-08..2023-10-15"
+  "last_date": "2023-10-15..2023-10-22"
 }
