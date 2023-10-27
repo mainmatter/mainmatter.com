@@ -25,20 +25,17 @@ topics:
     text: >
       We will cover Rust’s <code>Error</code> trait, with a focus on the
       information that can be retrieved and recorded in your logs; we will also
-      spend some time on logging patterns (e.g. when should an error be logged?)
-      and relevant libraries for error handling (anyhow/thiserror).
+      spend some time on logging patterns (e.g. when should an error be logged?).
   - heading: Panic handling
     text: >
       You should always manage to capture details about what went wrong, even if
       it’s due to an uncaught panic rather than an error. We will review panic
       hooks and integrate them in our <code>tracing</code> setup.
-  - heading: Metrics, both for application and runtime (tokio-metrics)
+  - heading: Metrics
     text: >
       Structured logs are important, but they don’t tell the full story. We will
       look at how to capture metric data using the <code>metrics</code> library,
       as a tool for designing alarms as well troubleshooting faulty behaviour.
-      We will spend some time on <code>tokio-metrics</code> and how to interpret
-      the data it shows with respect to your <code>tokio</code> runtime usage.
 leads:
   - name: Luca Palmieri
     title: Principal Engineering Consultant
