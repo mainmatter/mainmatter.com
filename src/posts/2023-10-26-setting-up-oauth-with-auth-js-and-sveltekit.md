@@ -162,7 +162,7 @@ precisely reflects the flow that Auth.js specifically is using.
 2. **The user clicks the "Sign in with GitHub" button.**
 
 3. **Your frontend makes a POST request to your backend** to
-   `http://my-app.example.com:5173/auth/signin/github`.
+   `http://my-app.example.com:5173/auth/signin/github`. This passes the control flow to the backend, which computes sign-in options for the OAuth provider: callback URL, scopes, etc.
 
 4. **Your backend makes a 302 redirect to GitHub** to:
    `https://github.com/login/oauth/authorize`, passing a number of query params,
@@ -277,12 +277,14 @@ domain for everyone to resolve. But you can fake it for local development.
 To do so, locate the system-wide `hosts` file in your operating system, open it
 for editing with superuser rights and append like this:
 
-{% raw %}127.0.0.1 my-app.example.com 127.0.0.1 my-other-app.example.com # you
-can do more than one if needed {% endraw %}
-
-````
+```
+{% raw %}127.0.0.1 my-app.example.com
+127.0.0.1 my-other-app.example.com # you can do more than one if needed {% endraw %}
+```
 
 Changes should become effective immediately on save — on your machine only.
+
+See the externals links section in this [Wikipedia article](https://en.wikipedia.org/wiki/Hosts_(file)) for detailed instructions.
 
 ## Configuring GitHub
 
@@ -549,7 +551,7 @@ bootstrap your OAuth adventure.
 
 Some of aspects not covered are:
 
-- persisting the access token to your app's database;
-- refresh tokens;
+- [persisting the access token to your app's database](https://authjs.dev/reference/core/adapters);
+- [refresh tokens](https://authjs.dev/guides/basics/refresh-token-rotation);
 - deployment to production;
-- customizing the looks of sign-in buttons, overriding Auth.js routes.
+- [customizing the looks of sign-in buttons, overriding Auth.js routes](https://github.com/nextauthjs/next-auth/discussions/7287).
