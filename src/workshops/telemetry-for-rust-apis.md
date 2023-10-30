@@ -25,7 +25,8 @@ topics:
     text: >
       We will cover Rust’s <code>Error</code> trait, with a focus on the
       information that can be retrieved and recorded in your logs; we will also
-      spend some time on logging patterns (e.g. when should an error be logged?).
+      spend some time on logging patterns (e.g. when should an error be
+      logged?).
   - heading: Panic handling
     text: >
       You should always manage to capture details about what went wrong, even if
