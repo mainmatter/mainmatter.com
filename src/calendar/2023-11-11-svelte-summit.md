@@ -8,4 +8,6 @@ color: aqua
 ---
 
 Svelte Summit is an online conference dedicated to Svelte and everything that is
-happening in the community. We are supporting the event as a Gold Sponsor.
+happening in the community. Mainmatter's Senior Frontend Engineer Paolo Ricciuti
+will talk about progressive enhancements in SvelteKit in his talk "Enhance!!!"
+and we are supporting the event as a Gold Sponsor.
