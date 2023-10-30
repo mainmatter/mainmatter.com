@@ -68,7 +68,7 @@ og:
         <div class="color-hero__overlay" data-color-hero></div>
         <div class="color-hero__container container container--lg color-hero__container--center workshop-lp-hero__container">
           <div class="color-hero__main">
-            <img class="workshop-lp-hero__logo" src="/assets/images/web-based-services-in-rust-workshop/rust-logo.svg" alt="Rust logo"/>
+            <img class="workshop-lp-hero__logo" src="/assets/images/web-based-services-in-rust-workshop/rust-logo.svg" alt="Rust logo" />
             <p class="workshop-hero__format">Remote Workshop</p>
             <h1 class="workshop-lp-hero__title color-hero__title color-hero__title--full">Telemetry for Rust APIs</h1>
             <div class="color-hero__text color-hero__text--small">December 12th–13th, 2023 – 14:00 to 18:00 CET</div>
@@ -114,65 +114,64 @@ og:
         is designed for developers who are operating Rust services in production-like
         environments, or are preparing to do so.
         </p>
-      </section>
+    </section>
 
-      <section class="lp-section container container--lg">
-        {% set 'content' = {
+<section class="lp-section container container--lg">
+    {% set 'content' = {
   "text": "I usually avoid workshops. The pace of more than 3 people is hard to sync: I always feel rushed in some bits, slowed down in others. You fixed that with the code-centric approach, I really enjoyed that.",
   "source": "Attendee of Luca's workshop held at EuroRust 2023",
   "loading": "lazy"
-} %}
-        {{ quote(content) }}
-      </section>
+} %} {{ quote(content) }}
+</section>
 
       <section>
-        {% set imageData = {
+          {% set imageData = {
           "imgPath": "/assets/images/rust-telemetry-workshop/rust-telemetry-eurorust-2023.jpg",
           "alt": "workshop participants discussing their results and asking questions",
           "sizes": "100vw",
           "loading": "lazy",
           "sizesArray": [760, 1440, 1920]
         } %}
-        {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+          {{ imageAspectRatio(imageData, "32/13", "35/19") }}
       </section>
 
-      <section class="lp-section container container--lg">
+
+        <section class="lp-section container container--lg">
         <h2 class="lp-section-subheading h2">Additional Information</h2>
-        <h3 class="h4">Duration & location</h3>
-        <p>The workshop takes place over two afternoons on Dec. 12th, and 13th., 14:00 to 18:00 CET each. That allows participants to use the mornings to exercise or keep up with work.
+            <h3 class="h4">Duration & location</h3>
+            <p>The workshop takes place over two afternoons on Dec. 12th, and 13th., 14:00 to 18:00 CET each. That allows participants to use the mornings to exercise or keep up with work.
             The workshop is run completely online and remote.</p>
-      </section>
-      <section class="lp-section container container--lg">
-        <h3 class="h4">Number of participants</h3>
-        <p>TTo ensure the highest quality, we accept up to 15 participants.</p>
-      </section>
-      <section class="lp-section container container--lg">
-        <h3 class="h4">For who?</h3>
-        <p>This workshop is intended for developers who have some experience with Rust already.</p>
-      </section>
-      <section class="lp-section container container--lg">
-        <h3 class="h4">Prerequisites</h3>
-        <p>We will send a detailed list of instructions for preparation, including the installation of tools, etc. Additionally, we will share a Github project with workshop materials. This information will be provided closer to the workshop date.</p>
-      </section>
+        </section>
+        <section class="lp-section container container--lg">
+            <h3 class="h4">Number of participants</h3>
+            <p>TTo ensure the highest quality, we accept up to 15 participants.</p>
+        </section>
+          <section class="lp-section container container--lg">
+            <h3 class="h4">For who?</h3>
+            <p>This workshop is intended for developers who have some experience with Rust already.</p>
+        </section>
+          <section class="lp-section container container--lg">
+            <h3 class="h4">Prerequisites</h3>
+            <p>We will send a detailed list of instructions for preparation, including the installation of tools, etc. Additionally, we will share a Github project with workshop materials. This information will be provided closer to the workshop date.</p>
+        </section>
 
-      <section class="lp-section container container--lg">
+<section class="lp-section container container--lg">
         {% set 'content' = {
-          "text": "Excellent workshop! It should be noted that it requires a solid base level of Rust knowledge [...]. Here I was able to fully use the time and knowledge of the trainer! 👍",
-          "source": "Attendee of Luca's workshop held at EuroRust 2023",
-          "loading": "lazy"
-        } %}
-        {{ quote(content) }}
-      </section>
+  "text": "Excellent workshop! It should be noted that it requires a solid base level of Rust knowledge [...]. Here I was able to fully use the time and knowledge of the trainer! 👍",
+  "source": "Attendee of Luca's workshop held at EuroRust 2023",
+  "loading": "lazy"
+} %} {{ quote(content) }}
+        </section>
 
       <section>
-        {% set imageData = {
+          {% set imageData = {
           "imgPath": "/assets/images/rust-telemetry-workshop/rust-telemetry-workshop-eurorust-2023.jpg",
           "alt": "Happy workshop attendee smiling into the camera",
           "sizes": "100vw",
           "loading": "lazy",
           "sizesArray": [760, 1440, 1920]
         } %}
-        {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+          {{ imageAspectRatio(imageData, "32/13", "35/19") }}
       </section>
 
       {% set 'slide_1' = {
@@ -203,7 +202,12 @@ og:
         "text": "Structured logs are important, but they don’t tell the full story. We will look at how to capture metric data using the metrics library, as a tool for designing alarms as well troubleshooting faulty behaviour."
       } %}
 
-      {% set slides = [slide_1, slide_2, slide_3, slide_4] %}
+      {% set slides = [
+        slide_1,
+        slide_2,
+        slide_3,
+        slide_4
+      ] %}
       {{ scrollSlides('workshops', slides, page.url) }}
 
       <section class="color-hero color-hero--purple" data-background-color="purple">
