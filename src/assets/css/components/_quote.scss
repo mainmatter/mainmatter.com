@@ -50,7 +50,7 @@
 }
 
 @media (min-width: 48em) {
-  .quote {
+  .quote:not(.quote__workshop) {
     margin: 6.25rem auto;
     flex-wrap: nowrap;
     gap: 1.5rem;
