@@ -7,11 +7,11 @@ description:
   "Sarah Lorenz explains the reasons not to have a classic project manager role
   and introduces Mainmatter's approach to self-managed teams."
 og:
-  image: /assets/images/posts/2023-11-03-the-case-against-project-managers/og-image.jpg
+  image: /assets/images/posts/2023-11-03-the-case-against-project-managers/og-image.jpeg
 tagline: |
   <p>Many organizations, including ours, have found that self-organizing teams that are aligned on a common goal and push towards that together, are more efficient and productive than the ones with classic, top-down management. In this article, we explore the reasons behind that believe and the negative impacts that a classic project manager role can have on productivity, quality, and morale.</p>
 
-image: "/assets/images/posts/2023-11-03-the-case-against-project-managers/header-visual.jpg"
+image: "/assets/images/posts/2023-11-03-the-case-against-project-managers/header-visual.jpeg"
 imageAlt: "A rocket icon on a grey image background"
 ---
 
