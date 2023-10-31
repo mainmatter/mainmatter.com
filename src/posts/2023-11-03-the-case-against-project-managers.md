@@ -4,8 +4,8 @@ authorHandle: sarahlorenzu
 tags: [startups]
 bio: "Sarah Lorenz"
 description:
-  "Sarah Lorenz showcases the reasons that make the classic project manager role
-  obsolete for teams."
+  "Sarah Lorenz explains the reasons not to have a classic project manager role
+  and introduces Mainmatter's approach to self-managed teams."
 og:
   image: /assets/images/posts/2023-11-03-the-case-against-project-managers/og-image.jpg
 tagline: |
