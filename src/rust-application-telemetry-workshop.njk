@@ -61,7 +61,7 @@ og:
     </nav>
 
     <main id="main">
-      <section class="color-hero color-hero--purple" data-background-color="purple">
+      <section class="color-hero color-hero--purple hero-rust" data-background-color="purple">
         <div class="color-hero__image-wrapper">
           {% image '/assets/images/workshops/telemetry-for-rust-apis/header-background.jpg', '2 people in front of a notebook with 3 charts on the screen, only their arms visible, one points at the screen', '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
         </div>
@@ -157,6 +157,9 @@ og:
       <section class="lp-section container container--lg">
         <h3 class="h4">Prerequisites</h3>
         <p>We will send a detailed list of instructions for preparation, including the installation of tools, etc. Additionally, we will share a Github project with workshop materials. This information will be provided closer to the workshop date.</p>
+        <div class="intro__link">
+          <tito-button event="mainmatter/telemetry-rust-2023/" class="plausible-event-name=Tickets+List">Book your ticket</tito-button>
+        </div>
       </section>
 
       <section>
@@ -170,36 +173,35 @@ og:
         {{ imageAspectRatio(imageData, "32/13", "35/19") }}
       </section>
 
-      {% set 'slide_1' = {
-        "color": "white",
-        "tag": "Workshop Overview - Part 1",
-        "title": "Structured logging (tracing)",
-        "text": "An introduction to the tracing instrumentation library, covering both how to instrument your code (capturing fields, log levels, macros) and how to process the resulting telemetry data in your application (subscriber configuration, logging levels, log filtering)."
-      } %}
-
-      {% set 'slide_2' = {
-        "color": "purple",
-        "tag": "Workshop Overview - Part 2",
-        "title": "Error handling",
-        "text": "We will cover Rust’s Error trait, with a focus on the information that can be retrieved and recorded in your logs; we will also spend some time on logging patterns (e.g. when should an error be logged?)."
-      } %}
-
-      {% set 'slide_3' = {
-        "color": "black",
-        "tag": "Workshop Overview - Part 3",
-        "title": "Panic handling",
-        "text": "You should always manage to capture details about what went wrong, even if it’s due to an uncaught panic rather than an error. We will review panic hooks and integrate them in our tracing setup."
-      } %}
-
-      {% set 'slide_4' = {
-        "color": "aqua",
-        "tag": "Workshop Overview - Part 4",
-        "title": "Metrics",
-        "text": "Structured logs are important, but they don’t tell the full story. We will look at how to capture metric data using the metrics library, as a tool for designing alarms as well troubleshooting faulty behaviour."
-      } %}
-
-      {% set slides = [slide_1, slide_2, slide_3, slide_4] %}
-      {{ scrollSlides('workshops', slides, page.url) }}
+      <section class="lp-section container container--lg">
+        <h2 class="workshop-topics__heading h2">Workshop overview</h2>
+        <ol class="workshop-topics__list">
+          <li class="workshop-topics__item">
+            <div class="workshop-topics__text-wrapper">
+              <h3 class="workshop-topics__item-heading h4">Structured logging (tracing)</h3>
+              <p class="text--sm">An introduction to the tracing instrumentation library, covering both how to instrument your code (capturing fields, log levels, macros) and how to process the resulting telemetry data in your application (subscriber configuration, logging levels, log filtering).</p>
+            </div>
+          </li>
+          <li class="workshop-topics__item">
+            <div class="workshop-topics__text-wrapper">
+              <h3 class="workshop-topics__item-heading h4">Error handling</h3>
+              <p class="text--sm">We will cover Rust’s Error trait, with a focus on the information that can be retrieved and recorded in your logs; we will also spend some time on logging patterns (e.g. when should an error be logged?).</p>
+            </div>
+          </li>
+          <li class="workshop-topics__item">
+            <div class="workshop-topics__text-wrapper">
+              <h3 class="workshop-topics__item-heading h4">Panic handling</h3>
+              <p class="text--sm">You should always manage to capture details about what went wrong, even if it’s due to an uncaught panic rather than an error. We will review panic hooks and integrate them in our tracing setup.</p>
+            </div>
+          </li>
+          <li class="workshop-topics__item">
+            <div class="workshop-topics__text-wrapper">
+              <h3 class="workshop-topics__item-heading h4">Metrics</h3>
+              <p class="text--sm">Structured logs are important, but they don’t tell the full story. We will look at how to capture metric data using the metrics library, as a tool for designing alarms as well troubleshooting faulty behaviour.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
 
       <section class="color-hero color-hero--purple" data-background-color="purple">
         <div class="color-hero__image-wrapper">
