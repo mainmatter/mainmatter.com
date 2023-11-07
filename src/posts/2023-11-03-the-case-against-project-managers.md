@@ -83,11 +83,10 @@ morale and a less confrontational work environment and overall atmosphere in
 project teams.
 
 If you’re interested in establishing the “iteration lead” approach in your own
-team, check out our [Playbook] (https://mainmatter.com/playbook/) or reach out
-and we’ll be happy to talk.
+team, check out our [Playbook](/playbook/) or reach out and we’ll be happy to
+talk.
 
-[Reach out](https://mainmatter.com/contact/) to talk about how we can help your
-team.
+[Reach out](/contact/) to talk about how we can help your team.
 
-Find [further information](https://mainmatter.com/startups/) on how we can help
-you to burst through the bottleneck.
+Find [further information](/startups/) on how we can help you to burst through
+the bottleneck.
