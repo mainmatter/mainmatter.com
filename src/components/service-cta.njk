@@ -4,6 +4,9 @@
       {% if tag === "rust" %}
         {% include "global/rust-cta.njk" %}
       {% endif %}
+      {% if tag === "svelte" %}
+        {% include "global/svelte-cta.njk" %}
+      {% endif %}
     {% endfor %}
   {% endif %}
 {%- endmacro -%}
