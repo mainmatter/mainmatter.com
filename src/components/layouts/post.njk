@@ -5,6 +5,7 @@ layout: base
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from "author-socials.njk" import authorSocials %}
 {% from "color-hero.njk" import colorHero %}
+{% from "service-cta.njk" import serviceCta %}
 
 {%- block content -%}
 <article>
@@ -70,21 +71,9 @@ layout: base
   {% endif %}
   <div class="container container--lg post">
     <div class="post__content rte">
-      {% if tags %}
-        {% for tag in tags %}
-          {% if tag === "rust" %}
-            {% include "global/rust-cta.njk" %}
-          {% endif %}
-        {% endfor %}
-      {% endif %}
+      {{ serviceCta(tags) }}
       {{ content | safe }}
-      {% if tags %}
-        {% for tag in tags %}
-          {% if tag === "rust" %}
-            {% include "global/rust-cta.njk" %}
-          {% endif %}
-        {% endfor %}
-      {% endif %}
+      {{ serviceCta(tags) }}
     </div>
     <nav aria-label="Post Pagination" class="prev-next pagination">
       {% set previous = collections.posts | getPreviousCollectionItem(page) %}

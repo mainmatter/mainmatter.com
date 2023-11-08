@@ -1,0 +1,9 @@
+{%- macro serviceCta(tags) -%}
+  {% if tags %}
+    {% for tag in tags %}
+      {% if tag === "rust" %}
+        {% include "global/rust-cta.njk" %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{%- endmacro -%}
