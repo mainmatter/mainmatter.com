@@ -1,0 +1,15 @@
+{%- macro serviceCta(tags) -%}
+  {% if tags %}
+    {% for tag in tags %}
+      {% if tag === "rust" %}
+        {% include "global/rust-cta.njk" %}
+      {% endif %}
+      {% if tag === "svelte" %}
+        {% include "global/svelte-cta.njk" %}
+      {% endif %}
+      {% if tag === "ember" %}
+        {% include "global/ember-cta.njk" %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{%- endmacro -%}
