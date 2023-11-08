@@ -1,6 +1,5 @@
 ---
-title:
-  "Setting up OAuth with Auth.js in a SvelteKit project for local development"
+title: "Setting up OAuth with Auth.js in a SvelteKit project"
 authorHandle: lolmaus
 tags: [svelte, sveltekit, oauth, authjs]
 bio: "Andrey Mikhaylov (lolmaus)"
@@ -52,7 +51,7 @@ There’s a lot of confusion around these terms.
 
 From an academic perspective, “authentication” means verifying who the user is,
 and “authorization” is verifying if the identified user is permitted to access
-something.
+or do something.
 
 A nice analogy is attending a regulated facility. In order to get in, you first
 need to visit a Pass and Registration Office. You show them your id and they
@@ -90,9 +89,9 @@ The OAuth standard offers a choice of four authentication flows:
 
 - **Client credentials** flow — implies passing a key and a secret, useful for
   server-to-server interactions, such as CI, CLI, etc.
-- \***\*Device authorization\*\*** flow — uses a separate device for user
-  authorization, such as a mobile phone. Useful for authenticating devices that
-  have limited user interface: servers, smart TVs, etc.
+- **Device authorization** flow — uses a separate device for user authorization,
+  such as a mobile phone. Useful for authenticating devices that have limited
+  user interface: servers, smart TVs, etc.
 - **Implicit** flow — a simple flow, useful for classic frontend-less apps that
   render HTML on the backend. Should not be used with a frontend, as it would
   required storing the app secret code in localStorage, which is unsafe.
@@ -131,24 +130,22 @@ This is because this flow can be implemented in different ways.
 
 For example, one could enable a frontend-only app to authenticate with OAuth by
 setting up a tiny backend microservice such as
-[prose/gatekeeper](https://pikabu.ru/story/myerilin_monro_10493776) (that you
-can even deploy to Heroku for free!) that will be used for one purpose: storing
-your app’s secret and passing it to an OAuth provider when requested. This
-approach is not very secure, though, as the access token will have to be stored
-in localStorage in the browser, unencrypted and easily accessible to physical
-users and scripts on the same domain.
+[prose/gatekeeper](https://github.com/prose/gatekeeper) (that you can even
+deploy to Heroku for free!) that will be used for one purpose: storing your
+app’s secret and passing it to an OAuth provider when requested. This approach
+is not very secure, though, as the access token will have to be stored in
+localStorage in the browser, unencrypted and easily accessible to physical users
+and scripts on the same domain.
 
-Many apps and libraries employ JWT tokens. They would store the access token
-securely on the backend side, but the session token used to authorize requests
-from their frontend to their backend is still stored in localStorage. Some
-developers and security professionals believe this to be insecure.
+Many apps and libraries store tokens in localStorage. Some developers and
+security professionals believe this to be insecure.
 
-Auth.js does not use JWT tokens. It stores the access token (used to authorize
-requests to third party APIs such as GitHub or Google) on the backend side and
-uses a Secure, HttpOnly cookie to store a session token (used to authorize
-requests to your own backend). Such a cookie can only be intercepted at the
-moment of issuing. Once set, it cannot be accessed or copied from browser Dev
-Tools or JS scripts. This substantially improves security.
+Auth.js stores the access token (used to authorize requests to third party APIs
+such as GitHub or Google) on the backend side and uses a Secure, HttpOnly cookie
+to store a session token (used to authorize requests to your own backend). Such
+a cookie can only be intercepted at the moment of issuing. Once set, it cannot
+be accessed or copied from browser Dev Tools or JS scripts. This substantially
+improves security.
 
 ## **OAuth Authorization Code Flow with Auth.js**
 
@@ -162,7 +159,9 @@ precisely reflects the flow that Auth.js specifically is using.
 2. **The user clicks the "Sign in with GitHub" button.**
 
 3. **Your frontend makes a POST request to your backend** to
-   `http://my-app.example.com:5173/auth/signin/github`. This passes the control flow to the backend, which computes sign-in options for the OAuth provider: callback URL, scopes, etc.
+   `http://my-app.example.com:5173/auth/signin/github`. This passes the control
+   flow to the backend, which computes sign-in options for the OAuth provider:
+   callback URL, scopes, etc.
 
 4. **Your backend makes a 302 redirect to GitHub** to:
    `https://github.com/login/oauth/authorize`, passing a number of query params,
@@ -263,9 +262,9 @@ There’s a loophole, though! Use a subdomain on the `example.com` domain, e. g.
 `my-app.example.com`.
 
 Google, for example, refuses to work with `http://local.my-app.dev` because of
-insecure protocol, but makes an exception for
-`http://my-app.[example.com](http://example.com)`, as the `example.com` domain
-is dedicated for testing and development purposes and can’t harm any users.
+insecure protocol, but makes an exception for `http://my-app.example.com`, as
+the `example.com` domain is dedicated for testing and development purposes and
+can’t harm any users.
 
 Google would also reject URLs on made-up top-level domains.
 
@@ -284,11 +283,15 @@ for editing with superuser rights and append like this:
 
 Changes should become effective immediately on save — on your machine only.
 
-See the externals links section in this [Wikipedia article](https://en.wikipedia.org/wiki/Hosts_(file)) for detailed instructions.
+See the externals links section in this
+[Wikipedia article](<https://en.wikipedia.org/wiki/Hosts_(file)>) for detailed
+instructions.
 
 ## Configuring GitHub
 
-1. Visit https://github.com/settings/developers and click `New OAuth app`.
+1. Visit
+   [https://github.com/settings/developers](https://github.com/settings/developers)
+   and click `New OAuth app`.
 2. Fill in the form, using the following URLs:
    - Application name: `My App (dev)`
    - Homepage URL:
@@ -300,30 +303,30 @@ See the externals links section in this [Wikipedia article](https://en.wikipedia
    password manager. GitHub will not let you see it again!
 
 Reference documentation for Auth.js GitHub Provider:
-https://authjs.dev/reference/core/providers_github
+[https://authjs.dev/reference/core/providers_github](https://authjs.dev/reference/core/providers_github)
 
 ## Configuring Google
 
-1. Visit https://console.cloud.google.com/ .
+1. Visit [https://console.cloud.google.com/](https://console.cloud.google.com/).
 2. In the top-left corner of the pae, expand the list of projects and click
    `New project`. Type `My App (dev)` and click `Create`.
 3. On the `Credentials` tab, click `Create credentials` → `OAuth Client ID`.
    Then Select `Web application`.
 4. Visit `APIs and Services` → `OAuth Consent Screen`
-   https://console.cloud.google.com/apis/credentials/consent and change the
-   `Publishing status` of your app to `Testing`.
+   [https://console.cloud.google.com/apis/credentials/consent](https://console.cloud.google.com/apis/credentials/consent)
+   and change the `Publishing status` of your app to `Testing`.
 5. Visit `APIs and Services` → `Credentials`
-   https://console.cloud.google.com/apis/credentials
+   [https://console.cloud.google.com/apis/credentials](https://console.cloud.google.com/apis/credentials)
 6. Click `Add URI` for `Authorized Javascript Origins`, use this value:
    [http://my-app.example.com:5173](http://fox-and-hound.example.com:5173/)
 7. Click `Add URI` for `Authorized redirect URIs`, use this value:
-   http://my-app.example.com:5173/auth/callback/google
+   [http://my-app.example.com:5173/auth/callback/google](http://my-app.example.com:5173/auth/callback/google)
 8. Copy `Client ID` and `Client Secret` from the right sidebar to your password
    manager. If no `Client Secret` exists, create one.
 9. Save.
 
 Reference documentation for Auth.js Google Provider:
-https://authjs.dev/reference/core/providers_github
+[https://authjs.dev/reference/core/providers_github](https://authjs.dev/reference/core/providers_github)
 
 ## Configuring SvelteKit
 
@@ -338,7 +341,7 @@ Now we know all we need to set up OAuth in SvelteKit. Let’s proceed.
 cd my-app/
 npm i
 {% endraw %}
-````
+```
 
 I’ll be using `my-app` as the name of the project and the subdomain. Substitute
 it for your app’s name.
@@ -542,7 +545,8 @@ Keep that in mind.
 
 - Live:
   [https://sveltekit-auth-example.vercel.app](https://sveltekit-auth-example.vercel.app/)
-- Source: https://github.com/nextauthjs/sveltekit-auth-example
+- Source:
+  [https://github.com/nextauthjs/sveltekit-auth-example](https://github.com/nextauthjs/sveltekit-auth-example)
 
 ## Next steps
 
