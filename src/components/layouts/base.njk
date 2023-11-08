@@ -10,8 +10,13 @@ og:
     {%- if title -%}
       {%- set pageTitle = title + ' | ' + config.name -%}
     {%- endif -%}
+    {%- if pagination and pagination.pageNumber > 0 -%}
+      {% set displayNumber = pagination.pageNumber + 1 %}
+      {%- set pageTitle = title + ' - Page ' + displayNumber + ' | ' + config.name -%}
+    {%- endif -%}
 
-    <title>{{ pageTitle }}</title>
+
+    <title>{{ pageTitle | safe}}</title>
     {% include "global/fonts.njk" %}
     <link rel="stylesheet" href="/assets/css/app.css" />
     <script src="/assets/js/app.js" defer></script>
