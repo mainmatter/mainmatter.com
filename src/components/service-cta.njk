@@ -7,6 +7,9 @@
       {% if tag === "svelte" %}
         {% include "global/svelte-cta.njk" %}
       {% endif %}
+      {% if tag === "ember" %}
+        {% include "global/ember-cta.njk" %}
+      {% endif %}
     {% endfor %}
   {% endif %}
 {%- endmacro -%}
