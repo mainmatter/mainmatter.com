@@ -8,7 +8,7 @@ color: purple
 ---
 
 The final Ember Europe meetup of 2023 is happening on December 7th and will be
-fully remote. Our Chris Manson will discuss recent updates on the Embroider
-initiative in his talk. The Ember Europe meetup series brings together the Ember
+fully remote. Our Chris Manson will give an update on the progress made with the Embroider
+initiative and answer questions in an Embroider AMA session together with Ed Faulkner. The Ember Europe meetup series brings together the Ember
 community from all of Europe once a quarter. The meetup is organized by
 Mainmatter and Intercom.
