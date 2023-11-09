@@ -1,7 +1,7 @@
 ---
 layout: base
 eleventyComputed:
-  title: "All posts by {{ paged.author.data.name }}"
+  title: "All posts by {{ paged.author.data.name }} {% if paged.number > 1 %}- Page {{ paged.number }}{% endif %}"
 description: "Frontend and JavaScript, Svelte and Ember, Rust and WASM, Elixir and Phoenix, Product and Design: Stay on top of what's happening."
 pagination:
   data: collections.authorsPostsPaged
