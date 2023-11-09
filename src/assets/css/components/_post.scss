@@ -67,6 +67,13 @@
 
 .post__tags {
   margin-bottom: 1.5rem;
+
+  .tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 }
 
 .post__date {
