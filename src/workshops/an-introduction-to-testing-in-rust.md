@@ -1,6 +1,6 @@
 ---
 title: "Testing in Rust: an introduction"
-format: 4 hours, on-site or remote
+format: "Workshop: 4 hours, on-site or remote"
 description: |
   <p>Rust's type system is great, but it's not enough on its own to ensure correctness: 
   a solid testing strategy is a requirement for any serious Rust application.</p>
