@@ -10,7 +10,7 @@ og:
     {%- if title -%}
       {%- set pageTitle = title + ' | ' + config.name -%}
     {%- endif -%}
-    {%- if title and pagination and isPaginated and pagination.pageNumber > 0 -%}
+    {%- if title and pagination and pagination.pageNumber > 0 -%}
       {% set displayNumber = pagination.pageNumber + 1 %}
       {%- set pageTitle = title + ' - Page ' + displayNumber + ' | ' + config.name -%}
     {%- endif -%}

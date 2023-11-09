@@ -4,7 +4,6 @@
   description: "Frontend and JavaScript, Svelte and Ember, Rust and WASM, Elixir and Phoenix, Product and Design: Stay on top of what's happening.",
   permalink: "/blog/{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1 }}/{% endif %}",
   layout: "base.njk",
-  isPaginated: "true",
   pagination: {
     data: "collections.posts",
     size: 6,
