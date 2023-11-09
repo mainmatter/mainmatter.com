@@ -19,6 +19,7 @@ permissions:
 
 jobs:
   create_twios:
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     if: ${{!github.event.pull_request.body && github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event.label.name == 'create-twios'}}
     steps:
@@ -51,6 +52,7 @@ jobs:
           gh pr create -a emmasofiah2o --base $TWIOS_BRANCH --head $BRANCH_NAME --title "TWIOS $FORMATTED_DATE" --body-file comment.txt
 
   edit_twios:
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     if: ${{github.event.pull_request.body && contains(github.event.pull_request.head.ref, 'twios') || github.event.label.name == 'edit-twios'}}
     steps:
