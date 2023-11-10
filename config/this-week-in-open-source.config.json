@@ -170,7 +170,8 @@
         "broccolijs/broccoli-filter",
         "mainmatter/continue-on-error-comment",
         "ember-learn/algolia-index-update-scripts",
-        "ember-learn/ember-jsonapi-docs"
+        "ember-learn/ember-jsonapi-docs",
+        "ember-learn/algolia-index-update-scripts"
       ]
     },
     {
@@ -481,6 +482,7 @@
     "mansona/broccoli-filter",
     "mansona/chris.manson.ie",
     "mansona/ember-vite-app",
+    "mansona/boilerplate-update",
     "mansona/boilerplate-update"
   ],
   "exclude_closed_not_merged": true,
