@@ -92,17 +92,23 @@ og:
     </div>
   </section>
 
-{% set 'slide_1' = {
-"color": "white",
-"title": "Is Ember the right choice for us?",
-"text": "Every new technology brings its own risks - Ember is no exception. Paolo Ricciuti, our in-house Ember expert, is here to help your team. You walk him through your company's usecase and your requirements and he’ll do his best to suggest the best course of action. Sometimes Ember is not the answer, but if it is, he’ll make sure you are on the right track.",
-"linkUrl": "/#",
-"linkText": "Book a free 1:1 call",
-"linkImage": "/assets/images/authors/paoloricciuti.jpg",
-"linkImageCaption": "Paolo Ricciuti"
-} %}
+<section class="split-content">
+    <div class="container container--lg">
+      <h2 class="h5">Book a free call</h2>
+      <h3 class="split-content__subheading h2">Is Rust the right choice for us?</h3>
+      <div class="split-content__content">
+        <div class="split-content__text">
+          <p>Every new technology brings its own risks - Rust is no exception. Luca Palmieri, the author of <a href=\"http://zero2prod.com\">Zero to Production in Rust</a> and our in-house Rust expert, is here to help your team. You walk him through your company's usecase and your requirements and he’ll do his best to suggest the best course of action. Sometimes Rust is not the answer, but if it is, he’ll make sure you are on the right track.</p>
+          {{ ctaLink('https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us', 'Book a 1:1 call with Luca', 'split-content__link') }}
+        </div>
+        <div class="split-content__feature">
+          <img src="/assets/images/authors/algo_luca.jpg" alt="Luca Palmieri" class="split-content__author"/>
+        </div>
+      </div>
+    </div>
+  </section>
 
-{% set 'slide_2' = {
+{% set 'slide_1' = {
 "color": "purple",
 "title": "Custom Development",
 "text": "We develop complete web and cloud apps with Ember so your team can focus on other initiatives. We have experience with all relevant crates and in fact teach others how to use those. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.",
@@ -110,7 +116,7 @@ og:
 "linkText": "Work with us!"
 } %}
 
-{% set 'slide_3' = {
+{% set 'slide_2' = {
 "color": "black",
 "title": "Training and Support",
 "text": "There is excellent material out there for learning Ember on your own. But you might not have the luxury of time, or the in-house expertise, to upskill your entire team or overcome obstacles on your own. Our trainers are world-class experts and can design a learning path that best fits your needs.",
@@ -118,7 +124,7 @@ og:
 "linkText": "Check out our workshops!"
 } %}
 
-{% set 'slide_4' = {
+{% set 'slide_3' = {
 "color": "aqua",
 "title": "Team augmentation",
 "text": "Ember is a young technology – hiring Senior talent can be a challenge. Our experts can merge with your in-house product teams to ensure the timely delivery of mission-critical projects. We’re more than hired hands – we mentor your team throughout the process to help lift productivity long after our collaboration ends.",
@@ -126,7 +132,7 @@ og:
 "linkText": "Work with us!"
 } %}
 
-{% set slides = [slide_1, slide_2, slide_3, slide_4] %}
+{% set slides = [slide_1, slide_2, slide_3] %}
 
   <section class="scroll-slides" id="scroll-slides">
     {% for slide in slides %}
