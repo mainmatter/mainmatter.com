@@ -150,7 +150,7 @@
 # serve "Svelte & SvelteKit" landing page for svelte-sveltekit-workshop.mainmatter.com
 [[redirects]]
   from = "https://svelte-sveltekit-workshop.mainmatter.com/"
-  to = "https://mainmatter.com/services/workshops/svelte-and-sveltekit/"
+  to = "https://mainmatter.com/svelte-sveltekit-workshop/"
   force = true
   status = 200
 
