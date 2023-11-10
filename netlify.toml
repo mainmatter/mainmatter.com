@@ -147,11 +147,12 @@
   to = "https://mainmatter.com/services/workshops/web-based-services-in-rust/"
   force = true
 
-# redirect Svelte & SvelteKit landing page to regular workshop temporarily
+# serve "Svelte & SvelteKit" landing page for svelte-sveltekit-workshop.mainmatter.com
 [[redirects]]
   from = "https://svelte-sveltekit-workshop.mainmatter.com/"
   to = "https://mainmatter.com/services/workshops/svelte-and-sveltekit/"
   force = true
+  status = 200
 
 # serve "Telemetry for Rust applications" landing page for rust-telemetry-workshop.mainmatter.com
 [[redirects]]
