@@ -98,14 +98,14 @@ og:
 <section class="split-content">
     <div class="container container--lg">
       <h2 class="h5">Book a free call</h2>
-      <h3 class="split-content__subheading h2">Is Rust the right choice for us?</h3>
+      <h3 class="split-content__subheading h2">Facing Challenges with Ember?</h3>
       <div class="split-content__content">
         <div class="split-content__text">
-          <p>Every new technology brings its own risks - Rust is no exception. Luca Palmieri, the author of <a href=\"http://zero2prod.com\">Zero to Production in Rust</a> and our in-house Rust expert, is here to help your team. You walk him through your company's usecase and your requirements and he’ll do his best to suggest the best course of action. Sometimes Rust is not the answer, but if it is, he’ll make sure you are on the right track.</p>
-          {{ ctaLink('https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us', 'Book a 1:1 call with Luca', 'split-content__link') }}
+          <p>Ember famously enforces a rigid structure and liberates engineers through constraints so they can remain focussed on delivering value for users. Yet, sometimes you get stuck and it can be hard to see the path forwards – be it upgrading an old codebase to modern Ember, adopting Embroider or architecting a new set of features. If your team is in a situation like that or you have any other question, book a call with Chris Manson, Ember expert and member of the Ember Learning and Embroider core teams.</p>
+          {{ ctaLink('https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us', 'Book a 1:1 call with Chris', 'split-content__link') }}
         </div>
         <div class="split-content__feature">
-          <img src="/assets/images/authors/algo_luca.jpg" alt="Luca Palmieri" class="split-content__author"/>
+          <img src="/assets/images/authors/real_ate.jpg" alt="Chris Manson" class="split-content__author"/>
         </div>
       </div>
     </div>
@@ -114,7 +114,7 @@ og:
 {% set 'slide_1' = {
 "color": "purple",
 "title": "Custom Development",
-"text": "We develop complete web and cloud apps with Ember so your team can focus on other initiatives. We have experience with all relevant crates and in fact teach others how to use those. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.",
+"text": "We develop complete apps with Ember so your team can focus on other initiatives. We are Ember experts and in fact have written and establishes important pieces of the Ember ecosystem ourselves. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.",
 "linkUrl": "/#",
 "linkText": "Work with us!"
 } %}
@@ -122,7 +122,7 @@ og:
 {% set 'slide_2' = {
 "color": "black",
 "title": "Training and Support",
-"text": "There is excellent material out there for learning Ember on your own. But you might not have the luxury of time, or the in-house expertise, to upskill your entire team or overcome obstacles on your own. Our trainers are world-class experts and can design a learning path that best fits your needs.",
+"text": "Ember is getting easier and easier to adopt but it can appear a bit unfamiliar to people with background in other frontend technologies, in particular versions before Octane. Our trainers are world-class experts have helped many international companies to build and scale up Ember teams in the past.",
 "linkUrl": "/#",
 "linkText": "Check out our workshops!"
 } %}
@@ -130,7 +130,7 @@ og:
 {% set 'slide_3' = {
 "color": "aqua",
 "title": "Team augmentation",
-"text": "Ember is a young technology – hiring Senior talent can be a challenge. Our experts can merge with your in-house product teams to ensure the timely delivery of mission-critical projects. We’re more than hired hands – we mentor your team throughout the process to help lift productivity long after our collaboration ends.",
+"text": "Our experts can merge with your in-house product teams to ensure the timely delivery of mission-critical projects – be it delivering new initiatives or modernizing codebase without interrupting feature delivery. We’re more than hired hands – we mentor your team throughout the process to help lift productivity long after our collaboration ends.",
 "linkUrl": "/#",
 "linkText": "Work with us!"
 } %}
@@ -190,51 +190,6 @@ og:
     {% endfor %}
   </section>
 
-  <section class="quotes-list">
-    <div class="container container--xl">
-      <h2 class="quotes-list__title h2">Listen to our customers</h2>
-      <ul class="quotes-list__list">
-        <li class="quotes-list__quote">
-          <div class="quotes-list__quote-image">
-            <img src="/assets/images/logos/monochrome/qonto.svg" alt="MVB logo"/>
-          </div>
-          <div class="quotes-list__quote-text text--sm">
-            <blockquote>
-              ”This is a positive review about collaborating with Mainmatter on an Ember project.”
-            </blockquote>
-            <figcaption class="quotes-list__quote-source">Client Name<span class="quotes-list__quote-source--separator">, </span><span class="quotes-list__quote-source--jobtitle">Client Position</span></figcaption>
-          </div>
-        </li>
-        <li class="quotes-list__quote">
-          <div class="quotes-list__quote-image">
-            <img src="/assets/images/logos/monochrome/qonto.svg" alt="Qonto logo"/>
-          </div>
-          <div class="quotes-list__quote-text text--sm">
-            <blockquote>
-              ”This is a positive review about collaborating with Mainmatter on an Ember project.”
-            </blockquote>
-            <figcaption class="quotes-list__quote-source">Client Name<span class="quotes-list__quote-source--separator">, </span>
-                <span class="quotes-list__quote-source--jobtitle">Client Position</span>
-            </figcaption>
-          </div>
-        </li>
-        <li class="quotes-list__quote">
-          <div class="quotes-list__quote-image">
-            <img src="/assets/images/logos/monochrome/qonto.svg" alt="Trainline logo"/>
-          </div>
-          <div class="quotes-list__quote-text text--sm">
-            <blockquote>
-              ”This is a positive review about collaborating with Mainmatter on an Ember project.”
-            </blockquote>
-            <figcaption class="quotes-list__quote-source">Client Name<span class="quotes-list__quote-source--separator">, </span>
-              <span class="quotes-list__quote-source--jobtitle">Client Position</span>
-            </figcaption>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
   <section class="opensource-list">
     <div class="container container--xl">
       <h2 class="opensource-list__title h2">We love Open Source</h2>
@@ -291,23 +246,68 @@ og:
     </div>
   </section>
 
-    {{ recentPosts("Latest from our blog on the topic", collections.emberPosts) }}
-
-    <section class="color-hero color-hero--aqua" data-background-color="aqua">
-      <div class="color-hero__image-wrapper">
-        <video class="color-hero__image" playsinline="" autoplay="" muted="" preload="" loop="" poster="/assets/images/ember/emberdoc-simplabs.poster.jpg"
-      width="1280" height="496">
-          <source src="/assets/images/ember/emberdoc-simplabs.mp4" type="video/mp4">
-        </video>
+  <section class="color-hero color-hero--aqua" data-background-color="aqua">
+    <div class="color-hero__image-wrapper">
+      <video class="color-hero__image" playsinline="" autoplay="" muted="" preload="" loop="" poster="/assets/images/ember/emberdoc-simplabs.poster.jpg"
+    width="1280" height="496">
+        <source src="/assets/images/ember/emberdoc-simplabs.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="color-hero__overlay"></div>
+    <div class="color-hero__container container container--lg color-hero__container--center">
+      <div class="color-hero__main">
+        <h1 class="color-hero__title color-hero__title--full ">Ember.js: The Documentary</h1>
+        <div class="color-hero__text">Several of our team members appear in the Ember.js documentary. We were pleased to welcome the film crew at our office in Munich and again at EmberFest in Amsterdam.</div>
+        {{ ctaLink("https://www.youtube.com/watch?v=Cvz-9ccflKQ", "Watch Video", 'color-hero__link') }}
       </div>
-      <div class="color-hero__overlay"></div>
-      <div class="color-hero__container container container--lg color-hero__container--center">
-        <div class="color-hero__main">
-          <h1 class="color-hero__title color-hero__title--full ">Ember.js: The Documentary</h1>
-          <div class="color-hero__text">Several of our team members appear in the Ember.js documentary. We were pleased to welcome the film crew at our office in Munich and again at EmberFest in Amsterdam.</div>
-          {{ ctaLink("https://www.youtube.com/watch?v=Cvz-9ccflKQ", "Watch Video", 'color-hero__link') }}
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    {% include 'content/hero-grow-with-us.njk' %}
+  <section class="quotes-list">
+    <div class="container container--xl">
+      <h2 class="quotes-list__title h2">Listen to our customers</h2>
+      <ul class="quotes-list__list">
+        <li class="quotes-list__quote">
+          <div class="quotes-list__quote-image">
+            <img src="/assets/images/logos/monochrome/qonto.svg" alt="MVB logo"/>
+          </div>
+          <div class="quotes-list__quote-text text--sm">
+            <blockquote>
+              ”This is a positive review about collaborating with Mainmatter on an Ember project.”
+            </blockquote>
+            <figcaption class="quotes-list__quote-source">Client Name<span class="quotes-list__quote-source--separator">, </span><span class="quotes-list__quote-source--jobtitle">Client Position</span></figcaption>
+          </div>
+        </li>
+        <li class="quotes-list__quote">
+          <div class="quotes-list__quote-image">
+            <img src="/assets/images/logos/monochrome/qonto.svg" alt="Qonto logo"/>
+          </div>
+          <div class="quotes-list__quote-text text--sm">
+            <blockquote>
+              ”This is a positive review about collaborating with Mainmatter on an Ember project.”
+            </blockquote>
+            <figcaption class="quotes-list__quote-source">Client Name<span class="quotes-list__quote-source--separator">, </span>
+                <span class="quotes-list__quote-source--jobtitle">Client Position</span>
+            </figcaption>
+          </div>
+        </li>
+        <li class="quotes-list__quote">
+          <div class="quotes-list__quote-image">
+            <img src="/assets/images/logos/monochrome/qonto.svg" alt="Trainline logo"/>
+          </div>
+          <div class="quotes-list__quote-text text--sm">
+            <blockquote>
+              ”This is a positive review about collaborating with Mainmatter on an Ember project.”
+            </blockquote>
+            <figcaption class="quotes-list__quote-source">Client Name<span class="quotes-list__quote-source--separator">, </span>
+              <span class="quotes-list__quote-source--jobtitle">Client Position</span>
+            </figcaption>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  {{ recentPosts("Latest from our blog on the topic", collections.emberPosts) }}
+
+  {% include 'content/hero-grow-with-us.njk' %}
