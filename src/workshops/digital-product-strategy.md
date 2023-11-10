@@ -1,6 +1,6 @@
 ---
 title: Digital product strategy workshop
-format: 2–3 days remote
+format: "Workshop: 2–3 days on-site or remote"
 description:
   In this workshop we will collaborate to formulate a clear product vision,
   establishing a blueprint for your digital product's development process. This

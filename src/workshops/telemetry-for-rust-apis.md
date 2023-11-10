@@ -1,6 +1,6 @@
 ---
 title: "You can't fix what you can't see: telemetry for Rust APIs"
-format: 1 day on-site or remote
+format: "Workshop: 1 day, on-site or remote"
 description:
   <p>Your Rust application has finally been deployed to production! Nice! But is
   it working? This workshop will introduce you to a comprehensive toolkit to
