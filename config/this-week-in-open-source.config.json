@@ -170,7 +170,6 @@
         "broccolijs/broccoli-filter",
         "mainmatter/continue-on-error-comment",
         "ember-learn/algolia-index-update-scripts",
-        "ember-learn/ember-jsonapi-docs",
         "ember-learn/algolia-index-update-scripts"
       ]
     },
@@ -309,7 +308,6 @@
     {
       "name": "Ember",
       "repos": [
-        "ember-learn/ember-jsonapi-docs",
         "emberobserver/client",
         "Authmaker/authmaker-ember-simple-auth",
         "buschtoens/ember-link",
