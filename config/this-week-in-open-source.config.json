@@ -169,7 +169,8 @@
         "stefanpenner/node-fixturify-project",
         "broccolijs/broccoli-filter",
         "mainmatter/continue-on-error-comment",
-        "ember-learn/algolia-index-update-scripts"
+        "ember-learn/algolia-index-update-scripts",
+        "ember-learn/ember-jsonapi-docs"
       ]
     },
     {
