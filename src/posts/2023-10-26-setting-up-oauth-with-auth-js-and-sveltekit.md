@@ -226,7 +226,7 @@ an ID and secret token for your app to use.
 Some OAuth providers let you define multiple webapp hostnames and callback URLs
 per app, but some important ones such as GitHub, only allow one hostname and one
 callback URL per app. For such providers, you need to “create” a separate “app”
-with the provider for each deployment environment, e. g. local development,
+with the provider for each deployment environment, e.g., local development,
 staging and production. You will end up with three or more sets of app ids and
 secret tokens.
 
