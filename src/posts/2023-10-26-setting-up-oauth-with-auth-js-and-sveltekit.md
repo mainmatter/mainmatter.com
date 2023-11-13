@@ -513,7 +513,7 @@ Run your dev server with `npm run dev` and try it out.
 
 If you have wired everything correctly, it should work!
 
-## Gotcha 8: automatically generated routes
+## Gotcha 8: Automatically Generated Routes
 
 Note that routes under `/auth` such as:
 
