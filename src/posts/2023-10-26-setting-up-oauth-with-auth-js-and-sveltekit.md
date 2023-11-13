@@ -381,7 +381,7 @@ GOOGLE_SECRET="5E17CA-3250e5657D80d848eAa65954822C"
   deployments.
 - `GITHUB_ID` — the id of your “app” on GitHub.
 - `GITHUB_SECRET` — the secret token of your app on GitHub. Note that GitHub
-  will only show it once! Don’t lose it or you’ll have to rejenerate it.
+  will only show it once! Don’t lose it, or you’ll have to regenerate it.
 - `GOOGLE_ID` — the id of your “app” on Google.
 - `GOOGLE_SECRET` — the secret token of your app on Google.
 
