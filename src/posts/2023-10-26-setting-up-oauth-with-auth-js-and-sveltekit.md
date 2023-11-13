@@ -426,7 +426,7 @@ In `src/routes/+layout.server.ts`:
 {% endraw %}
 ```
 
-### 5. Use the session in your frontend
+### 5. Use the Session in Your Frontend
 
 In `src/routes/+layout.svelte` or whateve layout or page you need it in:
 
