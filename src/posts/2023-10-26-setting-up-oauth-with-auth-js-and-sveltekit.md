@@ -507,7 +507,7 @@ better access management. See
 [this StackOverflow question](https://stackoverflow.com/q/74017730/901944) for
 possible ways to do it.
 
-### 9. You’re breathtaking!
+### 9. You Rock!
 
 Run your dev server with `npm run dev` and try it out.
 
