@@ -214,7 +214,7 @@ hypothetically be skipped.
 
 Why has OAuth implmented the flow with the authorization code? Many OAuth
 providers do not support the Implicit flow for web apps because it’s potentially
-insecure and only offer the Authorization code flow, so that’s what Auth.js is
+unsafe and only offer the Authorization code flow, so that’s what Auth.js is
 doing.
 
 ## Gotcha 5: you should “create” a separate “app” with each OAuth provider for every deployment environment
