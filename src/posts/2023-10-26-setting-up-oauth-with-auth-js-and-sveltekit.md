@@ -104,7 +104,7 @@ We’re gonna be doing the **authorization code** flow.
 
 ## Gotcha 3: you need a backend!
 
-OAuth authentication cannot be implemented in a frontend-only app, such as an
+OAuth authentication cannot be implemented in a frontend-only app without any backend, such as an
 SPA deployed to GitHub Pages.
 
 This is because the app needs to pass a secret token (essentially, a password)
