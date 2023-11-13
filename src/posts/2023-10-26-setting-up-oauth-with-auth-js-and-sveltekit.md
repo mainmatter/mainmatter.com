@@ -307,7 +307,7 @@ Reference documentation for Auth.js GitHub Provider:
 ## Configuring Google
 
 1. Visit [https://console.cloud.google.com/](https://console.cloud.google.com/).
-2. In the top-left corner of the pae, expand the list of projects and click
+2. In the top-left corner of the page, expand the list of projects and click
    `New project`. Type `My App (dev)` and click `Create`.
 3. On the `Credentials` tab, click `Create credentials` → `OAuth Client ID`.
    Then Select `Web application`.
