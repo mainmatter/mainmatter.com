@@ -539,7 +539,7 @@ rewrite some of your code accordingly.
 
 Keep that in mind.
 
-## Demo app
+## Demo App
 
 `@auth/sveltekit` has an official demo app:
 
