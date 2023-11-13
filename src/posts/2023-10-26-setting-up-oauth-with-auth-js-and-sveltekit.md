@@ -247,7 +247,7 @@ For these two reasons, you should use a unique domain that points at `127.0.0.1`
 or `::1` (note that multiple domains can do so).
 
 You could use a subdomain of your business domain, such as `local.my-app.dev`,
-but there’s another problem with it.
+but there’s another problem with this.
 
 ## Gotcha 7: some OAuth providers refuse to work with unencrypted http
 
