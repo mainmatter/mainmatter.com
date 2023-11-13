@@ -143,7 +143,7 @@ Auth.js stores the access token (used to authorize requests to third party APIs
 such as GitHub or Google) on the backend side and uses a Secure, HttpOnly cookie
 to store a session token (used to authorize requests to your own backend). Such
 a cookie can only be intercepted at the moment of issuing. Once set, it cannot
-be accessed or copied from browser Dev Tools or JS scripts. This substantially
+be accessed or copied from browsers' Dev Tools or JS scripts. This substantially
 improves security.
 
 ## **OAuth Authorization Code Flow with Auth.js**
