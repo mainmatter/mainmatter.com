@@ -34,7 +34,7 @@ authentication there, and the provider redirects back to the app, where the user
 authenticated.
 
 If you need to, you can look up more information on OAuth online, where you will find plenty of articles
-this topic with a desired level of depth.
+for your desired level of depth.
 
 ## What’s Auth.js
 
