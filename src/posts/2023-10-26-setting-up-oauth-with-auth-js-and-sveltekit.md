@@ -30,7 +30,7 @@ them being already authenticated with a popular third party service that offers
 OAuth (OAuth provider), such as Google and GitHub.
 
 To do so, your app redirects the user to an OAuth provider. The user approves
-authentication there, and the provider redirects back into the app, which ends
+authentication there, and the provider redirects back to the app, where the user is now
 up authenticated.
 
 I will not go into more details about how OAuth works beyond the absolute
