@@ -137,7 +137,7 @@ localStorage in the browser, unencrypted and easily accessible to physical users
 and scripts on the same domain.
 
 Many apps and libraries store tokens in localStorage, but some developers and
-security professionals believe this to be insecure.
+security professionals believe this to be unsafe.
 
 Auth.js stores the access token (used to authorize requests to third party APIs
 such as GitHub or Google) on the backend side and uses a Secure, HttpOnly cookie
