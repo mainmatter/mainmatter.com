@@ -49,7 +49,7 @@ It started as NextAuth, built specifically for the Next.js framework
 There’s a lot of confusion around the terms "authentication" and "authorization".
 
 From an academic perspective, “authentication” means verifying who the user is,
-and “authorization” is verifying if the identified user is permitted to access
+and “authorization” is verifying if the identified user has permission to access
 or do something.
 
 A nice analogy is attending a regulated facility. In order to get in, you first
