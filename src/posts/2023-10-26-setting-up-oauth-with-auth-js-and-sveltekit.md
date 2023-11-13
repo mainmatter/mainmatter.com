@@ -136,7 +136,7 @@ is not very secure, though, as the access token will have to be stored in
 localStorage in the browser, unencrypted and easily accessible to physical users
 and scripts on the same domain.
 
-Many apps and libraries store tokens in localStorage. Some developers and
+Many apps and libraries store tokens in localStorage, but some developers and
 security professionals believe this to be insecure.
 
 Auth.js stores the access token (used to authorize requests to third party APIs
