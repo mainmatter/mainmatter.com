@@ -42,7 +42,7 @@ for your desired level of depth.
 authentication layer for JS frontend and full-stack apps.
 
 It started as NextAuth, built specifically for the Next.js framework
-(full-stack, React-based), but later was converted into a universal library.
+(full-stack, React-based), but was later converted into a universal library.
 
 ## Gotcha 0: authentication vs authorization
 
