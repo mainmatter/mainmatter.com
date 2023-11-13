@@ -249,7 +249,7 @@ or `::1` (note that multiple domains can do so).
 You could use a subdomain of your business domain, such as `local.my-app.dev`,
 but there’s another problem with this.
 
-## Gotcha 7: some OAuth providers refuse to work with unencrypted http
+## Gotcha 7: Some OAuth Providers Refuse to Work with Unencrypted http
 
 The `http` protocol is inherently insecure and some OAuth providers would refuse
 to work with it.
