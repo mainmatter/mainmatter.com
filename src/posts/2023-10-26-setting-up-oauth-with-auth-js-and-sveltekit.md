@@ -528,7 +528,7 @@ The former is a backend route where OAuth providers should redirect the user to.
 The latter is a frontend route containing sign-in buttons for OAuth providers of
 your choice. The HTML/CSS of buttons will be generated for you by the package.
 
-## Gotcha 9: Auth.js is evolving
+## Gotcha 9: Auth.js Is Evolving
 
 As of 2023, the library is relatively new. Its core is more or less stable, but
 its SvelteKit integration claims to be under active development.
