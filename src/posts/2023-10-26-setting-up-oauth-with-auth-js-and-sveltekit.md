@@ -250,7 +250,7 @@ but there’s another problem with this.
 
 ## Gotcha 7: Some OAuth Providers Refuse to Work with Unencrypted http
 
-The `http` protocol is inherently insecure and some OAuth providers would refuse
+The `http` protocol is inherently unsafe and some OAuth providers refuse
 to work with it.
 
 That’s a problem because setting up `https` encryption certificates for _local
