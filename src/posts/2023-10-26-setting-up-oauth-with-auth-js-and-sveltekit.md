@@ -237,7 +237,7 @@ When you run the SvelteKit server for local development, it offers you this url:
 `http://localhost:5173``.
 
 The problem with it is the `localhost` domain is not unique and some OAuth
-providers would refuse to work with it.
+providers will refuse to work with it.
 
 On top of that, building more than one app on `http://localhost:5173` is an
 inconvenience, since cookies and localStorage entries mix up, forcing logouts
