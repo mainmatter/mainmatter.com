@@ -375,7 +375,7 @@ GOOGLE_SECRET="5E17CA-3250e5657D80d848eAa65954822C"
   openssl rand -base64 32
   ```
   If you don’t have `openssl`, you can generate a random string online
-  [here](https://generate-secret.vercel.app/32). That’s theoretically insecure,
+  [here](https://generate-secret.vercel.app/32). That’s theoretically unsafe,
   but should be fine for pet projects.
 - `AUTH_TRUST_HOST` must be `true` for all enviromnents except Vercel
   deployments.
