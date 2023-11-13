@@ -6,7 +6,7 @@ bio: "Andrey Mikhaylov (lolmaus)"
 description:
   "Andrey Mikhaylov (lolmaus) provides a step-by-step guide for setting up OAuth
   authentication using the Auth.js libry in a SvelteKit project. He describes a
-  number of pifalls that may be a source of frustration even to experienced
+  number of pitfalls that may be a source of frustration even to experienced
   developers, due to error messages being unhelpful — and explains how to get
   around them."
 og:
