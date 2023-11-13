@@ -121,7 +121,7 @@ that safely stores the secret token and passes it to the OAuth provider.
 
 Luckily, SvelteKit can work as a full-stack app, with a frontend and a backend!
 
-## Gotcha 4: the authorization code flow can be implemented in different ways
+## Gotcha 4: The Authorization Code Flow Can Be Implemented in Different Ways
 
 If you search the internet for diagrams explaining the OAuth authorization code
 flow, you’ll notice that they all vary in small details.
