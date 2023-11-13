@@ -352,7 +352,7 @@ it for your app’s name.
 {% endraw %}
 ```
 
-### 2. Set up environment variables
+### 2. Set Up the Environment Variables
 
 Edit the `.env` file in the root of your project, it should look like this:
 
