@@ -83,7 +83,7 @@ other. The modern version is OAuth 2, naturally. That’s what everyone uses.
 When OAuth is mentioned and the version is not specified, it normally means
 OAuth 2. This article does too.
 
-## Gotcha 2: OAuth authentication flow types
+## Gotcha 2: OAuth Authentication Flow Types
 
 The OAuth standard offers a choice of four authentication flows:
 
