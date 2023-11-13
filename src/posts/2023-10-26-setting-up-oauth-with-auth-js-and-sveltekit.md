@@ -267,7 +267,7 @@ can’t harm any users.
 
 Google, however, also rejects URLs on made-up top-level domains.
 
-## How to create a subdomain on example.com
+## How to Create a Subdomain on Example.com
 
 Of course, you can’t register a custom subdomain on the public `example.com`
 domain for everyone to resolve. But you can fake it for local development.
