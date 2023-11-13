@@ -197,7 +197,7 @@ precisely reflects the flow that Auth.js specifically is using.
    **GitHub responds to your backend with an access token.**
 10. **Your backend responds to the broswer with a 302 redirect** to a page where
     the user is supposed to land, e. g. `http://my-app.example.com:5173`.  
-    Here the backend sets a secure HttpOnly cookie containing a session token
+    Here, the backend sets a secure HttpOnly cookie containing a session token
     that your frontend will use to authorize requests to your backend.
 11. **Your frontend takes over** as the browser loads the page.  
     It can now use the cookie to authorize requests to your backend.  
