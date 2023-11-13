@@ -80,7 +80,7 @@ There are two versions of the OAuth protocol which are incompatible with each
 other. The modern version is OAuth 2, naturally. That’s what everyone uses.
 
 When OAuth is mentioned and the version is not specified, it normally means
-OAuth 2. This article does too.
+OAuth 2. This article does this, too.
 
 ## Gotcha 2: OAuth Authentication Flow Types
 
