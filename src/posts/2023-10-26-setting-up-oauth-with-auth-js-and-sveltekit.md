@@ -413,7 +413,7 @@ If you already have a `handle` hook, you should use the
 [sequence](https://kit.svelte.dev/docs/modules#sveltejs-kit-hooks-sequence)
 function to combine two hooks into one.
 
-### 4. Load the session from your backend
+### 4. Load the Session from Your Backend
 
 In `src/routes/+layout.server.ts`:
 
