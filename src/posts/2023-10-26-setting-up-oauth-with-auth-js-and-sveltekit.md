@@ -116,7 +116,7 @@ tokens. As a result, the malefactor would be able to access your app as another
 user.
 
 For this reason, your frontend app should not authenticate with an OAuth
-provider directly, but rather should this job to your backend. It’s your backend
+provider directly, but rather leave this job to your backend. It’s your backend
 that safely stores the secret token and passes it to the OAuth provider.
 
 Luckily, SvelteKit can work as a full-stack app, with a frontend **and** a backend!
