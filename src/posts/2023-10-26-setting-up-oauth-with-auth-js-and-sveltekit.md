@@ -457,7 +457,7 @@ In `src/routes/+layout.svelte` or whatever layout or page you need it in:
 {/if} {% endraw %}
 ```
 
-### 6. Add a sign-in button
+### 6. Add a Sign-in Button
 
 Add the `{:else}` clause to `{% raw %}{#if $page.data.session}{% endraw %}`:
 
