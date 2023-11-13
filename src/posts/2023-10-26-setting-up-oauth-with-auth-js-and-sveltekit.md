@@ -119,7 +119,7 @@ For this reason, your frontend app should not authenticate with an OAuth
 provider directly, but rather should this job to your backend. It’s your backend
 that safely stores the secret token and passes it to the OAuth provider.
 
-Luckily, SvelteKit can work as a full-stack app, with a frontend and a backend!
+Luckily, SvelteKit can work as a full-stack app, with a frontend **and** a backend!
 
 ## Gotcha 4: The Authorization Code Flow Can Be Implemented in Different Ways
 
