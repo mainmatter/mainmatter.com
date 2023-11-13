@@ -8,6 +8,6 @@ color: purple
 ---
 
 We are running a remote hands-on Svelte and SvelteKit workshop over three
-afternoons in December. Hosts Florian Pichler and Paolo Ricciuti take
-participants through the entire process of building a real-world, progressively
-enhanced SvelteKit application.
+afternoons from January 30th to February 1st. Hosts Florian Pichler and Paolo
+Ricciuti take participants through the entire process of building a real-world,
+progressively enhanced SvelteKit application.
