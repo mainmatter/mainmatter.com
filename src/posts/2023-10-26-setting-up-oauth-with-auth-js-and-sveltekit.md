@@ -13,7 +13,7 @@ og:
   image: /assets/images/posts/2023-07-03-from-react-to-ember-building-a-blog/og-image.jpg
 tagline: |
   <p>There are numerous articles and libraries around OAuth available, and yet setting it up may appear challenging — not due any particular code complexity, but rather due to small details missing or configured incorrectly. This article provides a step-by-step guide for setting up OAuth in a specific combination of technologies: SvelteKit + Auth.js, along with explanations of all the pitfalls.</p>
-  <p>This article describes configuration of Google and GitHub OAuth providers, since they are among the most popular ones with developers. You're not limited with those two, though: set it up with any other OAuth provider of your choice.</p>
+  <p>This article focuses on the configuration of Google and GitHub OAuth providers since they are among the most popular ones with developers. You're not limited with those two, though: set it up with any other OAuth provider of choice.</p>
 
 image: "/assets/images/posts/2023-07-03-from-react-to-ember-building-a-blog/header-illustration.jpg"
 imageAlt: "The Ember logo on a gray backround picture"
