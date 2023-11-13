@@ -530,7 +530,7 @@ your choice. The HTML/CSS of buttons will be generated for you by the package.
 
 ## Gotcha 9: Auth.js is evolving
 
-As of 2023, the library is relatively new. It’s core is more or less stable, but
+As of 2023, the library is relatively new. Its core is more or less stable, but
 its SvelteKit integration claims to be under active development.
 
 The implication is that it may receive breaking changes. In order to upgrade to
