@@ -169,7 +169,7 @@ precisely reflects the flow that Auth.js specifically is using.
    - `scope` of permissions to request;
    - `client_id` – the id of your app at GitHub;
    - `response_type=code` — the type of OAuth flow to use
-   - `redirect_uri=http://my-app.example.com:5173/auth/callback/github`: your
+   - `redirect_uri=http://my-app.example.com:5173/auth/callback/github` – your
      backend endpoint to redirect to.
 
 5. **The user authenticates with GitHub** using email and password, if they
