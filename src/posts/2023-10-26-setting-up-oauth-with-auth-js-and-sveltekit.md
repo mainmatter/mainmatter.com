@@ -24,7 +24,7 @@ imageAlt: "The Ember logo on a gray backround picture"
 For the sake of completeness of this article, let’s pretend you don’t already
 know. ;)
 
-In simplest words, OAuth is an approach for letting users log into your app
+In simple words, OAuth is an approach for letting users log into your app
 without having to come up with a username and password. Instead, you rely on
 them being already authenticated with a popular third party service that offers
 OAuth (OAuth provider), such as Google and GitHub.
