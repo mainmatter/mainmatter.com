@@ -105,7 +105,7 @@ We’re gonna be doing the **authorization code** flow.
 ## Gotcha 3: you need a backend!
 
 OAuth authentication cannot be implemented in a frontend-only app, such as an
-SPA deployed to GitHub Pages and not having any backend.
+SPA deployed to GitHub Pages.
 
 This is because the app needs to pass a secret token (essentially, a password)
 to the OAuth provider, so that the provider recognizes the app. If you added
