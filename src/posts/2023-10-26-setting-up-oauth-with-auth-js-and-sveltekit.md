@@ -56,7 +56,7 @@ A nice analogy is attending a regulated facility. In order to get in, you first
 need to visit a Pass and Registration Office. You show them your id and they
 issue a daily pass for you. Now you can enter, and every time you need go
 through a security checkpoint, you present your daily pass to a security guard.
-The security guard would make sure that the pass is still valid and they might
+The security guard would then make sure that the pass is still valid and might
 even call the Registration Office to run your pass through their database.
 
 In this analogy, presenting your id to the Pass and Registration office is
