@@ -102,7 +102,7 @@ The OAuth standard offers a choice of four authentication flows:
 
 We’re gonna be doing the **authorization code** flow.
 
-## Gotcha 3: you need a backend!
+## Gotcha 3: You Need a Backend!
 
 OAuth authentication cannot be implemented in a frontend-only app without any backend, such as an
 SPA deployed to GitHub Pages.
