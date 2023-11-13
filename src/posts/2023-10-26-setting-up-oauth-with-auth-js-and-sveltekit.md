@@ -100,7 +100,7 @@ The OAuth standard offers a choice of four authentication flows:
   The app secret code is safely stored on the backend, the access token can be
   stored on the backend too.
 
-We’re gonna be doing the **authorization code** flow.
+We will be using the **authorization code** flow.
 
 ## Gotcha 3: You Need a Backend!
 
