@@ -265,7 +265,7 @@ insecure protocol, but makes an exception for `http://my-app.example.com`, as
 the `example.com` domain is dedicated for testing and development purposes and
 can’t harm any users.
 
-Google would also reject URLs on made-up top-level domains.
+Google, however, also rejects URLs on made-up top-level domains.
 
 ## How to create a subdomain on example.com
 
