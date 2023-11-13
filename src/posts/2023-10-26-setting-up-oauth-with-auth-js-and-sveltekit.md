@@ -217,7 +217,7 @@ providers do not support the Implicit flow for web apps because it’s potential
 unsafe and only offer the Authorization code flow, so that’s what Auth.js is
 doing.
 
-## Gotcha 5: you should “create” a separate “app” with each OAuth provider for every deployment environment
+## Gotcha 5: You Should “Create” a Separate “App” with each OAuth Provider for Every Deployment Environment
 
 In order to let your app authenticate with an OAuth provider, you must access
 the provider’s admin panel and “create an app” in it. This will provide you with
