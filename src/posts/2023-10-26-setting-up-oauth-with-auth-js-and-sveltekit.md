@@ -175,7 +175,7 @@ precisely reflects the flow that Auth.js specifically is using.
 5. **The user authenticates with GitHub** using email and password, if they
    haven't already.
 
-6. **The user authorizes your app to authenticate with GitHub,** if they haven't
+6. **The user authorizes your app to authenticate with GitHub**, if they haven't
    already.  
    Yeah, it's a bit of a
    [Pimp My Ride](/assets/images/posts/2099-01-01-setting-up-oauth-with-auth-js-and-sveltekit/xzibit.jpg)
