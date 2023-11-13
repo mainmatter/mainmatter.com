@@ -209,7 +209,7 @@ Normally, the authorization code is used as a measure to prevent the frontend
 from knowing the app secret and the access token.
 
 But the way Auth.js implements the flow, the OAuth provider never responds to
-the fronted, only to the backend. This means that steps 7 and 8 could
+the frontend, only to the backend. This means that steps 7 and 8 could
 hypothetically be skipped.
 
 Why has OAuth implmented the flow with the authorization code? Many OAuth
