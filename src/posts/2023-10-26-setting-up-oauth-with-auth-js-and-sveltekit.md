@@ -236,7 +236,7 @@ secret tokens.
 When you run the SvelteKit server for local development, it offers you this url:
 `http://localhost:5173``.
 
-The problem with it is the `localhost` domain is not unique and some OAuth
+The problem with it is that the `localhost` domain is not unique, and some OAuth
 providers will refuse to work with it.
 
 On top of that, building more than one app on `http://localhost:5173` is an
