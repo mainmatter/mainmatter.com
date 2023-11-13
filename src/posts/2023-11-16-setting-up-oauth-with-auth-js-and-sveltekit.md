@@ -10,13 +10,13 @@ description:
   developers, due to error messages being unhelpful — and explains how to get
   around them."
 og:
-  image: /assets/images/posts/2023-07-03-from-react-to-ember-building-a-blog/og-image.jpg
+  image: /assets/images/posts/2023-11-16-setting-up-oauth-with-auth-js-and-sveltekit/og-image.jpg
 tagline: |
   <p>There are numerous OAuth articles and libraries available, and yet setting it up may appear challenging — not due to any particular code complexity, but rather to small details missing or incorrectly configured. This article provides a step-by-step guide for setting up OAuth using a specific combination of technologies, SvelteKit + Auth.js, along with explanations of all the pitfalls.</p>
   <p>This article focuses on the configuration of Google and GitHub OAuth providers since they are among the most popular ones with developers. You're not limited with those two, though: set it up with any other OAuth provider of choice.</p>
 
-image: "/assets/images/posts/2023-07-03-from-react-to-ember-building-a-blog/header-illustration.jpg"
-imageAlt: "The Ember logo on a gray backround picture"
+image: "/assets/images/posts/2023-11-16-setting-up-oauth-with-auth-js-and-sveltekit/header-visual.jpg"
+imageAlt: "The Svelte logo on a gray backround picture"
 ---
 
 ## What is OAuth
@@ -30,11 +30,11 @@ them being already authenticated with a popular third party service that offers
 OAuth (OAuth provider), such as Google and GitHub.
 
 To do so, your app redirects the user to an OAuth provider. The user approves
-authentication there, and the provider redirects back to the app, where the user is now
-authenticated.
+authentication there, and the provider redirects back to the app, where the user
+is now authenticated.
 
-If you need to, you can look up more information on OAuth online, where you will find plenty of articles
-for your desired level of depth.
+If you need to, you can look up more information on OAuth online, where you will
+find plenty of articles for your desired level of depth.
 
 ## What’s Auth.js
 
@@ -46,7 +46,8 @@ It started as NextAuth, built specifically for the Next.js framework
 
 ## Gotcha 0: Authentication vs Authorization
 
-There’s a lot of confusion around the terms "authentication" and "authorization".
+There’s a lot of confusion around the terms "authentication" and
+"authorization".
 
 From an academic perspective, “authentication” means verifying who the user is,
 and “authorization” is verifying if the identified user has permission to access
@@ -103,8 +104,8 @@ We will be using the **authorization code** flow.
 
 ## Gotcha 3: You Need a Backend!
 
-OAuth authentication cannot be implemented in a frontend-only app without any backend, such as an
-SPA deployed to GitHub Pages.
+OAuth authentication cannot be implemented in a frontend-only app without any
+backend, such as an SPA deployed to GitHub Pages.
 
 This is because the app needs to pass a secret token (essentially, a password)
 to the OAuth provider, so that the provider recognizes the app. If you added
@@ -118,7 +119,8 @@ For this reason, your frontend app should not authenticate with an OAuth
 provider directly, but rather leave this job to your backend. It’s your backend
 that safely stores the secret token and passes it to the OAuth provider.
 
-Luckily, SvelteKit can work as a full-stack app, with a frontend **and** a backend!
+Luckily, SvelteKit can work as a full-stack app, with a frontend **and** a
+backend!
 
 ## Gotcha 4: The Authorization Code Flow Can Be Implemented in Different Ways
 
@@ -151,7 +153,7 @@ improves security.
 This diagram is different from any other OAuth flow diagram on the internet. It
 precisely reflects the flow that Auth.js specifically is using.
 
-![authorization code flow diagram](/assets/images/posts/2099-01-01-setting-up-oauth-with-auth-js-and-sveltekit/authorization-code-flow-diagram.png)
+![authorization code flow diagram](/assets/images/posts/2023-11-16-setting-up-oauth-with-auth-js-and-sveltekit/authorization-code-flow-diagram.png)
 
 1. **The user opens your frontend in their browser.**
 
@@ -178,7 +180,7 @@ precisely reflects the flow that Auth.js specifically is using.
 6. **The user authorizes your app to authenticate with GitHub**, if they haven't
    already.  
    Yeah, it's a bit of a
-   [Pimp My Ride](/assets/images/posts/2099-01-01-setting-up-oauth-with-auth-js-and-sveltekit/xzibit.jpg)
+   [Pimp My Ride](/assets/images/posts/2023-11-16-setting-up-oauth-with-auth-js-and-sveltekit/xzibit.jpg)
    type of situation. 😅
 
 7. **GitHub makes a 302 redirect to your backend** to
@@ -250,8 +252,8 @@ but there’s another problem with this.
 
 ## Gotcha 7: Some OAuth Providers Refuse to Work with Unencrypted http
 
-The `http` protocol is inherently unsafe and some OAuth providers refuse
-to work with it.
+The `http` protocol is inherently unsafe and some OAuth providers refuse to work
+with it.
 
 That’s a problem because setting up `https` encryption certificates for _local
 development_ is a tedious hassle, as it requires either paying for certs, or
@@ -487,8 +489,8 @@ Any page such as `src/routes/protected/+page.svelte`:
 {#if $page.data.session}
 <h1>Protected page</h1>
 <p>
-  This is protected content. You can access this content because you are
-  signed in.
+  This is protected content. You can access this content because you are signed
+  in.
 </p>
 <p>Session expiry: {$page.data.session?.expires}</p>
 {:else}
