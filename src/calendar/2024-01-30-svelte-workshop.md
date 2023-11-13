@@ -1,6 +1,6 @@
 ---
 title: "Svelte Workshop"
-image: "/assets/images/calendar/2023-12-05-svelte-workshop/svelte-workshop.jpg"
+image: "/assets/images/calendar/2024-01-30-svelte-workshop/svelte-workshop.jpg"
 location: "Online"
 url: https://svelte-sveltekit-workshop.mainmatter.com
 kind: workshop
