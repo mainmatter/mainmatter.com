@@ -428,7 +428,7 @@ In `src/routes/+layout.server.ts`:
 
 ### 5. Use the Session in Your Frontend
 
-In `src/routes/+layout.svelte` or whateve layout or page you need it in:
+In `src/routes/+layout.svelte` or whatever layout or page you need it in:
 
 ```html
 {% raw %}
