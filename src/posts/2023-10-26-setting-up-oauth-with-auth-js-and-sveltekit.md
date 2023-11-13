@@ -548,7 +548,7 @@ Keep that in mind.
 - Source:
   [https://github.com/nextauthjs/sveltekit-auth-example](https://github.com/nextauthjs/sveltekit-auth-example)
 
-## Next steps
+## Next Steps
 
 The goal of this article is to help you connect all the parts together to
 bootstrap your OAuth adventure.
