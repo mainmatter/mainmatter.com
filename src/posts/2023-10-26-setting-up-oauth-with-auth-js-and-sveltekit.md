@@ -146,7 +146,7 @@ a cookie can only be intercepted at the moment of issuing. Once set, it cannot
 be accessed or copied from browsers' Dev Tools or JS scripts. This substantially
 improves security.
 
-## **OAuth Authorization Code Flow with Auth.js**
+## OAuth Authorization Code Flow with Auth.js
 
 This diagram is different from any other OAuth flow diagram on the internet. It
 precisely reflects the flow that Auth.js specifically is using.
