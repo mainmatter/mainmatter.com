@@ -234,7 +234,7 @@ secret tokens.
 ## Gotcha 6: you need a domain for local development
 
 When you run the SvelteKit server for local development, it offers you this url:
-`http://localhost:5173``.
+`http://localhost:5173`.
 
 The problem with it is that the `localhost` domain is not unique, and some OAuth
 providers will refuse to work with it.
