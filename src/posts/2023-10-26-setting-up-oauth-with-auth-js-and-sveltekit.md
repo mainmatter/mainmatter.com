@@ -1,5 +1,5 @@
 ---
-title: "Setting up OAuth with Auth.js in a SvelteKit project"
+title: "Setting up OAuth with Auth.js in a SvelteKit Project"
 authorHandle: lolmaus
 tags: [svelte, sveltekit, oauth, authjs]
 bio: "Andrey Mikhaylov (lolmaus)"
