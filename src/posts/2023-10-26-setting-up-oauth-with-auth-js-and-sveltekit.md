@@ -385,7 +385,7 @@ GOOGLE_SECRET="5E17CA-3250e5657D80d848eAa65954822C"
 - `GOOGLE_ID` — the id of your “app” on Google.
 - `GOOGLE_SECRET` — the secret token of your app on Google.
 
-### 3. Create a server hook to initialize AuthJS
+### 3. Create a Server Hook to Initialize AuthJS
 
 Create `src/hooks.server.ts`:
 
