@@ -331,7 +331,7 @@ Reference documentation for Auth.js Google Provider:
 
 Now we know all we need to set up OAuth in SvelteKit. Let’s proceed.
 
-### 0. Set up a SvelteKit codebase
+### 0. Set Up a SvelteKit Codebase
 
 …if you haven’t already.
 
