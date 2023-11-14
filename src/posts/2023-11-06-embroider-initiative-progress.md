@@ -11,20 +11,22 @@ image:
 imageAlt: 
 ---
 
-(Embroider background?)
+This post covers the progress over the last few months on the Embroider project and how the Embroider Initiative has helped to spark that progress. This will by no means be a comprehensive update but it plans to give you a taste of the significant progress that has been made and hopefully understand some of the challenges that are still remaining.
 
-The Embroider Initiative is an experimental programme that Mainmatter spearheaded to help finalise Embroider. 
+For anyone who has clicked the link to this blog post but doesn't already know, Embroider is a new build pipeline that compiles Ember apps into spec-compliant, modern JavaScript. Before Embroider it was somewhat difficult to participate in modern build-tooling optimisations such as code-splitting and tree-shaking but Embroider allows you to opt-into these behaviours out of the box.
 
-- benefits to the ember community
-- mention that Marco has talked about this in the previous blog post
-- mention that marco talked about this at ember fest
+The Embroider Initiative is an experimental programme that Mainmatter spearheaded to help speed up development on Embroider so that we can make it the default build system for newly generated apps as soon as possible. This will allow Ember to remain competitive with other modern frameworks and hopefully we will see Ember apps being built with Vite before the end of the year.
+
+
 - overview of the goals of the initiative (and link to sub sections)
   - need it to work
   - maintain it
 
 Call to action at the top here (somewhere) as well as the bottom.
 
-This blog post is going to take a slightly different approach to telling you about the Embroider Initiative. I have had the honour of working on the initiative for the last 22 weeks and I would like to tell you some of the key things that I have personally been able to achieve because of this Initiative (potentially rewrite as mine and Andrey's achievements)
+TODO how do we refer to people in our blogposts? full name? "our founder Marco"?
+
+Marco recently [talked about the Embroider Initiative at EmberFest in Madrid](https://www.youtube.com/watch?v=QMUm6UOoNRs) and detailed how important the Initiative is to the future of Ember itself. He also when into detail about the Embroider Initiative in his [original blog post that announced the initiative](https://mainmatter.com/blog/2023/06/09/securing-the-ecosystems-investment-in-emberjs/). This blog post is going to take a slightly different approach and instead of diving into the importance of the Initiative to the community, it will dive into the things our team has been able to achieve up until now.
 
 ## Great progress on the effort to get Ember working with Vite
 
