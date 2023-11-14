@@ -11,13 +11,40 @@ image:
 imageAlt: 
 ---
 
-(Embroider background?)
+## What is Embroider
 
-The Embroider Initiative is an experimental programme that Mainmatter spearheaded to help finalise Embroider. 
+Mature Ember apps are experiencing a lot of challenges:
+
+- painfully slow build and rebuild times;
+- a proprietary build system based on Broccoli and a lot of quirks around modules and imports that make it difficult to use standard JavaScript tools and patterns;
+- lack of hot reloading;
+- huge bundle size, lack of arbitrary code splitting;
+- lack of tree-shaking of unused modules, components, helpers, etc from the app and all addons.
+
+Embroider is a new build system for Ember that is aimed to bring Ember up to speed and make it competetive with other modern frameworks by solving all of the issues mentioned above, as well as enabling many of the new features from teh upcoming Polaris edition of Ember.
+
+Embroider's approach is two-faced. Its ultimate goal is to have Ember apps built by industry-standard JavaScript tools like Vite or Webpack, relying on common techniques and making app familiar to non-Ember developers.
+
+Such radical change requires a substantial modification of your app. Requiring to do it in one enormous pull request would violate Ember's motto "stability without stagnation". For this reason, Embroider aims to provide a compatibility layer that lets developers migrate their apps as gradually as possible, in relatively small, incremental steps.
+
+## What is Embroider Initiative
+
+The Embroider Initiative is an experimental programme that Mainmatter spearheaded to help finalise Embroider.
+
+It is a development effort to design and implement Embroider, funded by companies that require Ember to succeed for success of their businesses.
 
 - benefits to the ember community
+
+  Once Embroider reaches a certain level of readiness, it can be announced for the larger Ember community. Maintainers of addons will be able to proceed updating their addons, making them Embroider-friendly. App maintainers will be able to experiment with Embroider, pointing out unsolved issues. Enthusiasts and developers on salary will be able to start actively contributing to Embroider.
+
 - mention that Marco has talked about this in the previous blog post
+
+  You can read more about Embroider Initiative in [this blog post](https://mainmatter.com/blog/2023/06/09/securing-the-ecosystems-investment-in-emberjs/) by Marco Otte-Witte, the CEO and founder of Mainmatter.
+
 - mention that marco talked about this at ember fest
+
+  He elaborated on securing technology investments and open source funding in his [talk](https://www.youtube.com/watch?v=QMUm6UOoNRs) on EmberFest 2023.
+
 - overview of the goals of the initiative (and link to sub sections)
   - need it to work
   - maintain it
@@ -77,7 +104,17 @@ The embroider initiative can only work with backing from companies that see the 
 ## Improving the bus factor
 
 - talk about the complexity of the project
+
+  Embroider is a particularly sophisticated system that requires intimate knowledge of Vite, Webpack and Rollup that goes way beyond what's documented. It also requires understanding of numerous quirks of Ember, Ember CLI and Broccoli.
+
 - high learning curve
+
+  As a result, on the early stages of Embroider development it was effectively impossible for an Ember enthusiast to make substantial contributions. Up until very recently, Embroider has been in an experimental phase: its design has not been finalized. That made documenting its internals impractical, as documentation would get obsolete before it gets useful.
+
+  To address this challenge until Embroider internals are stabilized, we have adopted the apprenticeship model. Ed Faulkner ([@ef4](https://github.com/ef4/)) is the visionary and the main developer of Embroider who has an academic grade of understanding of the build pipeline. I pair with Ed every week, collaborating on solving complex problems, learning and gaining experience from it. The ultimate goal is to gain enough expertise to be able to drive Embroider development forward autonomously, without having to rely on Ed.
+
+  We extend the apprenticeship model one level further with Andrey Mikhaylov ([@lolmaus](https://github.com/lolmaus/)): he pairs with me in the same manner as I pair with Ed. The goal is to reduce the "bus factor" as much as possible and gradually get more developers involved.
+
 - growing confidence & independence (give example of identify, fix, merge, and release)
 - apprenticeship with Andrey
 
@@ -87,7 +124,16 @@ The embroider initiative can only work with backing from companies that see the 
 - ember-cli-update supporting v2 addons
 - ember-cli --embroider flag
 - scenario-tester ESM
+
+- The Embroider blueprint for Ember apps has been [updated](https://github.com/ember-cli/ember-cli/pull/10370) to use the Embroider optimized mode. This means that authors of new apps will get the best Embroider experience possible, and if they need any compatibility features that affect performance, they'll have to consciously opt into them.
+
 - TODO add andreys stuff in here
+
+  - Documenting the [scenario-tester](https://github.com/ef4/scenario-tester/) library.
+  
+    `scenario-tester` is to Embroider what `ember-try` is to Ember CLI: it's a tool that lets us perform automated tests with various combinations of dependencies, configs and circumstances. The approach of `scenario-tester` is different: instead of reinstalling dependencies for every test case, it has all dependencies (including all versions of dependencies) set up once, saving a lot of time. It leverages [fixturify-project](https://github.com/stefanpenner/node-fixturify-project) to create and emit to filesystem Ember apps and addons with predefined dependencies and configuration, in order to run tests on them.
+
+  - Working on the [@embroider/reverse-exports](https://github.com/embroider-build/embroider/pull/1652/) package. During the build, Embroider needs to expose Ember internals to Vite and Webpack in a way they can understand and consume. Modern Ember apps can have multiple [exports](https://nodejs.org/api/packages.html#package-entry-points) entry points in their `package.json` configs. This poses a peculiar challenge for Embroider: it needs to know how to reorganize files in an Ember project in such a way that they would resolve into paths defined as `exports` values. Essentially, this requires resolving `exports` in reverse, and this it what this package is for.
 
 ## Call to action
 
