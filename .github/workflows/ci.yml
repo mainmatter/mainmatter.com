@@ -10,6 +10,7 @@ on:
 
 jobs:
   lint:
+    timeout-minutes: 10
     name: Linting
     runs-on: ubuntu-latest
 
@@ -28,9 +29,10 @@ jobs:
         run: yarn lint
 
   visual-regressions:
+    timeout-minutes: 20
     name: 'Visual Regressions'
     runs-on: ubuntu-latest
-  
+
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
       - uses: volta-cli/action@d253558a6e356722728a10e9a469190de21a83ef # v4
@@ -52,6 +54,7 @@ jobs:
         run: yarn percy dist
 
   performance:
+    timeout-minutes: 10
     name: 'Performance'
     runs-on: ubuntu-latest
 
@@ -75,9 +78,10 @@ jobs:
         run: yarn run lhci autorun --collect.staticDistDir=./dist --collect.url=http://localhost/ --collect.url=http://localhost/blog/ --collect.url=http://localhost/services/team-augmentation-and-training/ --collect.url=http://localhost/ember-consulting/ --collect.url=http://localhost/playbook/ --collect.url=http://localhost/contact/ --collect.url=http://localhost/services/workshops/hands-on-ember/ --collect.url=http://localhost/blog/2022/09/18/simplabs-becomes-mainmatter/ --upload.target=temporary-public-storage
 
   crawl:
+    timeout-minutes: 10
     name: 'Crawl Links'
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
         with:
@@ -85,22 +89,23 @@ jobs:
       - uses: volta-cli/action@d253558a6e356722728a10e9a469190de21a83ef # v4
         with:
           registry-url: "https://registry.npmjs.org"
-    
+
       - name: install dependencies
         run: yarn install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-    
+
       - name: build
         run: yarn build
-    
+
       - name: crawl
         run: yarn crawl dist
 
   gravity:
+    timeout-minutes: 10
     name: 'Gravity'
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
         with:
@@ -108,7 +113,7 @@ jobs:
       - uses: volta-cli/action@d253558a6e356722728a10e9a469190de21a83ef # v4
         with:
           registry-url: "https://registry.npmjs.org"
-    
+
       - name: install dependencies
         run: yarn install
         env:
@@ -118,10 +123,10 @@ jobs:
         run: yarn add -D @gravityci/cli
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-    
+
       - name: build
         run: yarn build
-    
+
       - name: Run Gravity
         run: npm run gravityci "dist/**/*"
         env:
