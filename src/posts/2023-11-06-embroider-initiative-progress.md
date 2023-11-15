@@ -35,7 +35,7 @@ The Vite app that Ed demoed at EmberConf was a trivial app that is [a package in
 
 The issue with this trivial demo is that it doesn't represent an average Ember application. There aren't any Ember applications out there that don't have a single addon installed. While it's not exactly true that the demo doesn't have **any** addons installed, it doesn't have any addons that are doing any real work. And, as it turns out, getting dependencies to work right is the challenge with the Vite build.
 
-Ed and Mainmatter senior engineer Chris Manson have been pairing weekly, plugging away at the remaining things that are required to fix the Vite build. They will hopefully have some more progress over the coming weeks.
+Ed and Mainmatter Senior Engineer Chris Manson have been pairing weekly, plugging away at the remaining things that are required to fix the Vite build. They will hopefully have some more progress over the coming weeks.
 
 - TODO maybe talk about a few of the ebs and flows in the effort to get it working?
 - TODO (maybe talk about some of the embroider resolver work here?)
@@ -66,9 +66,13 @@ Let's see some success stories in details:
 
 ### Ticketsolve
 
-- converted their internal addon to v2
-- helped them to adopt GJS and GTS
-- helped to convert 2 of their 3 apps to embroider
+Like many companies, Ticketsolve has an internal addon that they use throughout their other applications. Internal addons are a great place to start when you are thinking about upgrading to Embroider because it's an isolated place to start opting into the stricter requirements of Embroider and there is a [clear specification](https://github.com/embroider-build/embroider/blob/main/docs/spec.md) of what your v2 addon can do. Chris also put a lot of work into improving the ergonomics of the v2 addon blueprint in the early weeks of the Embroider Initiative which was very useful during this process to convert this internal addon.
+
+After the internal addon was fully converted to v2 and deployed to all of Ticketsove's apps our next step was to add support for [GJS files](https://rfcs.emberjs.com/id/0779-first-class-component-templates/) in both the internal addon and their applications. Chris also worked on the ecosystem PRs required to enable GJS support in v2 addons in both a `@embroider/addon-dev` [PR](https://github.com/embroider-build/embroider/pull/1518) and a [PR](https://github.com/embroider-build/addon-blueprint/pull/159) to the `@embroider/addon-blueprint`. 
+
+Before the Embroider Initiative Ticketsolve had one of their three apps already running Embroider. We worked to update the Embroider version of the one that was already using it, but then we started to convert the remaining two apps. There were some challenges that blocked this work, but most of the effort was related to addons that just didn't support Embroider. A great example of this is the [ember-service-worker](https://github.com/DockYard/ember-service-worker) addon which uses the `postprocessTree()` hook that doesn't work with Embroider. We updated the addon locally using [`pnpm patch <pkg>`](https://pnpm.io/cli/patch) and [submitted a PR with the same changes](https://github.com/DockYard/ember-service-worker/pull/230) to help the rest of the community. 
+
+This is only a fraction of the changes that came out of these pairing sessions but it gives a flavour of the kinds of things that we have been able to achieve. While our Seniour Engineer Chris Manson has been instrumental in helping speed up this work, Ticketsolve's engineer [Andreas Minnich](https://github.com/enspandi) deserves a shout-out for the colossal amount of work they have put into this effort between pairing sessions
 
 ### Intercom
 
