@@ -105,7 +105,14 @@ When we added another full-time engineer to the Embroider Initiative, [Andrey Mi
 - ember-cli-update supporting v2 addons
 - ember-cli --embroider flag
 - scenario-tester ESM
-- TODO add andreys stuff in here
+  
+### Documenting the scenario-tester library.
+
+[`scenario-tester`](https://github.com/ef4/scenario-tester/) is to Embroider what `ember-try` is to Ember CLI: it's a tool that lets us perform automated tests with various combinations of dependencies, configs and circumstances. The approach of `scenario-tester` is different: instead of reinstalling dependencies for every test case, it has all dependencies (including all versions of dependencies) set up once, saving a lot of time. It leverages [fixturify-project](https://github.com/stefanpenner/node-fixturify-project) to create and emit to filesystem Ember apps and addons with predefined dependencies and configuration, in order to run tests on them.
+
+### Working on the reverse-exports
+
+During the build, Embroider needs to expose Ember internals to Vite and Webpack in a way they can understand and consume. Modern Ember apps can have multiple [exports](https://nodejs.org/api/packages.html#package-entry-points) entry points in their `package.json` configs. This poses a peculiar challenge for Embroider: it needs to know how to reorganize files in an Ember project in such a way that they would resolve into paths defined as `exports` values. Essentially, this requires resolving `exports` in reverse, and this it what the [reverse-exports](https://github.com/embroider-build/embroider/pull/1652/) package is for.
 
 ## Call to action
 
