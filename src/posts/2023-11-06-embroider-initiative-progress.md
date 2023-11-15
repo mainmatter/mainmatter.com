@@ -101,7 +101,10 @@ When we added another full-time engineer to the Embroider Initiative, [Andrey Mi
 
 ## General stability and ecosystem improvements
 
-- watch mode tests
+### Providing watch-mode tests for Embroider
+
+Recently, [Godfrey Chan](https://github.com/chancancode) has been discovering some places in Embroider and our Webpack plugin that were [causing crashes when certain files were added or deleted](https://github.com/embroider-build/embroider/issues/1619). He has already come up with a [fix for some of the cases](https://github.com/embroider-build/embroider/pull/1620), but it showed a blind spot in the team's testing infrastructure that meant we weren't testing "watch mode" in Embroider. [Preston Sego](https://github.com/NullVoxPopuli) and Chris paired together to [add some basic watch mode tests](https://github.com/embroider-build/embroider/pull/1624) that would highlight the problem and prove the effectiveness of the fix, but they were hit by some strange quirks that prevented the watch-mode tests from ever exiting properly on the Windows CI job. Chris spent most of his [weekly streaming session on Twitch](https://www.twitch.tv/real_ate) trying to [figure out the solution](https://github.com/embroider-build/embroider/pull/1624/files#diff-adeba5225992c6c7545d60355bcb082048a61ff39fdb2d9f5aa0d2c585e8d896R55-R62). The team finally got the PR merged and is now ready to start adding more expansive watch-mode tests.
+
 - ember-cli-update supporting v2 addons
 - ember-cli --embroider flag
 - scenario-tester ESM
