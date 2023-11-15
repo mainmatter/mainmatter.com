@@ -54,8 +54,6 @@ While this work has been done to facilitate v2 addons having the same install in
 
 ## Progress for Embroider Initiative backers
 
-The Embroider Initiative can only work with backing from companies that see the vision etc.
-
 For the Embroider Initiative to be successful, it needs backing from companies that would benefit from a modern and thriving Ember ecosystem. But the benefits of sponsoring the project go beyond the end goal.
 
 While all sponsorship tiers (starting at 3k€) include a backer's logo in Mainmatter communication around the Initiative, companies committing 18k€ to the project get access to the weekly 1-hour call with the team and get opportunities to discuss their technical needs and challenges related to Embroider.
