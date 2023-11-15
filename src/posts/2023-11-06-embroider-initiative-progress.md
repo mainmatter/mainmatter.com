@@ -19,7 +19,7 @@ The Embroider Initiative is an experimental programme that Mainmatter spearheade
 
 The Embroider Initiative aims to:
 
-1. **Finish Embroider** itself by assigning experienced Ember developers 4 days a week to the project. This covers work on Embroider and its dependencies, as well as helping backers setting it up in their repos to uncover and fix edge cases.
+1. **Finish Embroider** itself by assigning experienced Ember engineers full-time to the project. This covers development work on Embroider and its dependencies, as well as helping backers setting it up in their repos to uncover and fix edge cases.
 2. **Make Embroider maintainable** by decentralizing technical knowledge beyond the project's core developer [Ed Falkner](https://github.com/ef4) and thus [improving the bus factor](https://en.wikipedia.org/wiki/Bus_factor). Mainmatter makes use of the apprenticeship model to onboard and train new developers on the intricates parts of the project.
 3. **Shift the ecosystem and make Embroider mainstream** by making it easier to generate Embroider-optimized Ember apps and supporting addon developers make their addons compatible with Embroider.
 
@@ -33,7 +33,7 @@ At EmberConf this year [Ed Falkner](https://github.com/ef4) [announced that we w
 
 The Vite app that Ed demoed at EmberConf was a trivial app that is [a package in the Embroider monorepo](https://github.com/embroider-build/embroider/tree/main/tests/vite-app) and if you wanted to test it yourself then you could either clone the Embroider monorepo, or you could clone [this repo](https://github.com/mansona/ember-vite-app) which is essentially just extracting the same test app into an independent repo. It works, and you can even see the incredible rebuild speeds in action.
 
-The issue with this trivial demo is that it doesn't represent an average Ember application. I don't know of any Ember applications out there that don't have a single addon installed. While it's not exactly true that the demo doesn't have **any** addons installed, it doesn't have any addons that are doing any real work. And, as it turns out, getting dependencies to work right is the challenge with the Vite build.
+The issue with this trivial demo is that it doesn't represent an average Ember application. There aren't any Ember applications out there that don't have a single addon installed. While it's not exactly true that the demo doesn't have **any** addons installed, it doesn't have any addons that are doing any real work. And, as it turns out, getting dependencies to work right is the challenge with the Vite build.
 
 Ed and Mainmatter senior engineer Chris Manson have been pairing weekly, plugging away at the remaining things that are required to fix the Vite build. They will hopefully have some more progress over the coming weeks.
 
@@ -56,11 +56,13 @@ While this work has been done to facilitate v2 addons having the same install in
 
 The Embroider Initiative can only work with backing from companies that see the vision etc.
 
-- talk about the tiers a little bit
-- talk about the benefits of the 2 hour pairing sessions
-- talk about how solving specific issues for backers converted to solving general problems for the community
+For the Embroider Initiative to be successful, it needs backing from companies that would benefit from a modern and thriving Ember ecosystem. But the benefits of sponsoring the project go beyond the end goal.
 
-(maybe mention something about how the pairing sessions happened to be with incredibly talented engineers, and while I had a part in )
+While all sponsorship tiers (starting at 3k€) include a backer's logo in Mainmatter communication around the Initiative, companies committing 18k€ to the project get access to the weekly 1-hour call with the team and get opportunities to discuss their technical needs and challenges related to Embroider.
+
+Premium tiers of 36k€ and above include a 2-hour weekly private session with Mainmatter engineers focused on improving the backer's Ember build. In practice, these backers have seen a great return on their investment as the Mainmatter Embroider team has been able to deliver dramatic speed improvements to their build, removing a bottleneck in their development process. Some issues specific to these backers also resulted in solutions that the larger Ember community can now benefit from.
+
+Let's see some success stories in details:
 
 ### Ticketsolve
 
@@ -68,16 +70,16 @@ The Embroider Initiative can only work with backing from companies that see the 
 - helped them to adopt GJS and GTS
 - helped to convert 2 of their 3 apps to embroider
 
-### Intercom
+### Intercom
 
 - helped to convert internal app to v2
 - helped to identify and fix the performance slowdown
 - helped to identify a CI blocker around simlinking node_modules
 - helped to convert the app and test suite to work in embroider
 
-## Improving the bus factor
+## Improving the bus factor
 
-The goals of Embroider can seem simple from the outside, i.e. "just use Webpack or Vite to build your Ember app", but when you dig a bit deeper it's easy to see how complex it really is. This complexity arises from the project having challenging design constraints and it poses a significant challenge to anyone who would like to contribute to the core of Embroider. The main design constrait that causes a lot of this complexity arises from the fact that we want to provide an easy on-ramp for existing Ember apps to convert to embroider, and slowly then slowly move those apps from full-compatibility mode to a "fully static" build that can automatically benefit from tree-shaking and code-splitting. This means that we need to provide systems that can automatically convert the still-supported conventions of an Ember app to fully standard compliant ESM code. This is a significant challenge since some of the patterns that are still **officially** supported today date back to the 1.x series of Ember which was released in 2015. 
+The goals of Embroider can seem simple from the outside, i.e. "just use Webpack or Vite to build your Ember app", but when you dig a bit deeper it's easy to see how complex it really is. This complexity arises from the project having challenging design constraints and it poses a significant challenge to anyone who would like to contribute to the core of Embroider. The main design constraint that causes a lot of this complexity arises from the fact that we want to provide an easy on-ramp for existing Ember apps to convert to embroider, and slowly then slowly move those apps from full-compatibility mode to a "fully static" build that can automatically benefit from tree-shaking and code-splitting. This means that we need to provide systems that can automatically convert the still-supported conventions of an Ember app to fully standard compliant ESM code. This is a significant challenge since some of the patterns that are still **officially** supported today date back to the 1.x series of Ember which was released in 2015.
 
 TODO maybe say something specifically about template tags (example for above) or maybe not.
 
