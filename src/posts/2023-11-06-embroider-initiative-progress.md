@@ -35,10 +35,7 @@ The Vite app that Ed demoed at EmberConf was a trivial app that is [a package in
 
 The issue with this trivial demo is that it doesn't represent an average Ember application. There aren't any Ember applications out there that don't have a single addon installed. While it's not exactly true that the demo doesn't have **any** addons installed, it doesn't have any addons that are doing any real work. And, as it turns out, getting dependencies to work right is the challenge with the Vite build.
 
-Ed and Mainmatter Senior Engineer Chris Manson have been pairing weekly, plugging away at the remaining things that are required to fix the Vite build. They will hopefully have some more progress over the coming weeks.
-
-- TODO maybe talk about a few of the ebs and flows in the effort to get it working?
-- TODO (maybe talk about some of the embroider resolver work here?)
+Ed and Mainmatter Senior Engineer Chris Manson have been pairing weekly, plugging away at the remaining things that are required to fix the Vite build.
 
 ## ember-auto-import allowAppImports
 
@@ -49,8 +46,6 @@ If you're already using Embroider, you will know that a lot of the work to packa
 The issue is that ember-auto-import was originally designed to only work with npm packages, so that means that classic apps couldn't add a Webpack plugin that would influence the build process for any files controlled by their app, only for files controlled by npm packages or addons. This has been a [blocker for some addon developers who want to upgrade their addons to the new v2 format](https://github.com/simonihmig/ember-responsive-image/pull/442) and our solution to this problem has been to [add a new config to ember-auto-import](https://github.com/embroider-build/ember-auto-import/pull/587) to allow you to specify parts of your app that should be under its control.
 
 While this work has been done to facilitate v2 addons having the same install instructions for classic ember-cli builds and Embroider apps, this functionality could also be considered a way to allow you to opt-in to Embroider on a folder by folder basis and when your whole app is being controlled by ember-auto-import (and Webpack) the move to embroider should technically require no changes to the app.
-
-- TODO maybe asset import RFC https://github.com/emberjs/rfcs/blob/master/text/0763-asset-importing-spec.md
 
 ## Progress for Embroider Initiative backers
 
