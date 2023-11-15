@@ -105,7 +105,18 @@ When we added another full-time engineer to the Embroider Initiative, [Andrey Mi
 
 Recently, [Godfrey Chan](https://github.com/chancancode) has been discovering some places in Embroider and our Webpack plugin that were [causing crashes when certain files were added or deleted](https://github.com/embroider-build/embroider/issues/1619). He has already come up with a [fix for some of the cases](https://github.com/embroider-build/embroider/pull/1620), but it showed a blind spot in the team's testing infrastructure that meant we weren't testing "watch mode" in Embroider. [Preston Sego](https://github.com/NullVoxPopuli) and Chris paired together to [add some basic watch mode tests](https://github.com/embroider-build/embroider/pull/1624) that would highlight the problem and prove the effectiveness of the fix, but they were hit by some strange quirks that prevented the watch-mode tests from ever exiting properly on the Windows CI job. Chris spent most of his [weekly streaming session on Twitch](https://www.twitch.tv/real_ate) trying to [figure out the solution](https://github.com/embroider-build/embroider/pull/1624/files#diff-adeba5225992c6c7545d60355bcb082048a61ff39fdb2d9f5aa0d2c585e8d896R55-R62). The team finally got the PR merged and is now ready to start adding more expansive watch-mode tests.
 
-- ember-cli-update supporting v2 addons
+### `ember-cli-update` supporting v2 addons
+
+`ember-cli-update` is a great asset to the Ember community, and it's a vital tool during the push for Embroider and encouraging its community to use the new v2 addon blueprint because a lot of the recent changes require updating both a dependency version and related configuration.
+
+One issue the team worked through was to fix CI, which had been broken for a year. `ember-cli-update` interacts with the npm APIs to discover versions, but a change on the npm side prevented it from functioning properly. The solution to fixing CI was ultimately updating a dependency, `boilerplate-update`, to use [pacote](https://www.npmjs.com/package/pacote) to interact with the npm API. Once the upstream dependency was updated, the team only needed to [add a few tweaks to ember-cli-update](https://github.com/ember-cli/ember-cli-update/pull/1243) to get CI to finally pass. This gave us time and confidence to the rest of the project.
+
+The team then worked to get a new release of [ember-cli-update](https://github.com/ember-cli/ember-cli-update) so that it could update any Ember addon generated with the [v2 addon blueprint](https://github.com/embroider-build/addon-blueprint).
+
+`ember-cli-update` works by generating a diff between the version of the blueprint that the app or addon was generated with, and the version to update it to. Under the hood, this means that `ember-cli-update` will generate a pristine new version of the app/addon at its current version, then generates a new pristine copy of the target version. It generates a `git diff` between those versions then applies that diff to the current app.
+
+Generating these pristine "from" and "to" versions of the blueprint involved a custom code-path in `ember-cli-update` that aimed at working around some bugs in Node 8. As those workarounds were causing it to fail, Chris' [fix for custom blueprints](https://github.com/ember-cli/ember-cli-update/pull/1240) involved removing these workarounds. [This fix was released in `ember-cli-update v2.0.0`](https://github.com/ember-cli/ember-cli-update/releases/tag/v2.0.0), then followed by [another release](https://github.com/ember-cli/ember-cli-update/releases/tag/v2.0.1) that fixed a small bug. These two releases are a big deal for the wider Ember community, especially as its members are encouraged to migrate their existing v1 addons to v2 addons. They bring an important DX functionality that the Ember community has come to expect.
+
 - ember-cli --embroider flag
 - scenario-tester ESM
   
@@ -120,7 +131,3 @@ During the build, Embroider needs to expose Ember internals to Vite and Webpack 
 ## Call to action
 
 We are hoping we can extend the initiative's budget and timeline to keep up the momentum in 2024. Please [get in touch] to learn how to financially support the Embroider Initiative and directly benefit from this investment.
-
-This is just a snapshot of what I have been personally working on over the last 2 months. I hope to be able to continue this work but unless we can find some more backers teh initiative will end on (DATE).
-
-I will continue to write looser weekly updates on my personal blog and if the Initiative continues indefinitely I hope to write a roundup like this every month.
