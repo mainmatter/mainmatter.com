@@ -125,7 +125,9 @@ While more existing apps will work with a "full compat" mode, Ember has reached 
 
 The Mainmatter Embroider team opened a [PR to switch the functionality](https://github.com/ember-cli/ember-cli/pull/10370) so that passing the `--embroider` flag uses Embroider optimised by default. This involved working through issues with some of the slow test suites that rely on a custom package caching mechanism. The PR got merged and the functionality will be part of Ember v5.5.
 
-- scenario-tester ESM
+### `scenario-tester` ESM compatibility
+
+[Scenario tester](https://github.com/embroider-build/scenario-tester) is a testing tool that the team makes use of a lot when testing Embroider and `ember-auto-import`. It allows us to generate many scenarios with different combinations of dependencies. We tried using it outside of Embroider, or more specifically outside of a Typescript project, and saw it doesn't work in a CJS environment. [Chris started the effort to move the Typescript build to output an ESM-compatible build](https://github.com/embroider-build/scenario-tester/pull/18) so it can be consumed directly in ESM without a build step. The only remaining thing to do is test if it will work in Embroider before merging and releasing the new version.
   
 ### Documenting the scenario-tester library.
 
