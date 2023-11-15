@@ -117,7 +117,14 @@ The team then worked to get a new release of [ember-cli-update](https://github.c
 
 Generating these pristine "from" and "to" versions of the blueprint involved a custom code-path in `ember-cli-update` that aimed at working around some bugs in Node 8. As those workarounds were causing it to fail, Chris' [fix for custom blueprints](https://github.com/ember-cli/ember-cli-update/pull/1240) involved removing these workarounds. [This fix was released in `ember-cli-update v2.0.0`](https://github.com/ember-cli/ember-cli-update/releases/tag/v2.0.0), then followed by [another release](https://github.com/ember-cli/ember-cli-update/releases/tag/v2.0.1) that fixed a small bug. These two releases are a big deal for the wider Ember community, especially as its members are encouraged to migrate their existing v1 addons to v2 addons. They bring an important DX functionality that the Ember community has come to expect.
 
-- ember-cli --embroider flag
+### Embroider optimised with the `--embroider` flag
+
+Creating a new Ember app with the `embroider` flag (`ember new my-super-app --embroider`) generates a "full compat" app were none of the [Embroider optimisation flags](https://github.com/embroider-build/embroider#options) are passed to the build for the developer.
+
+While more existing apps will work with a "full compat" mode, Ember has reached a point where it makes sense for **newly generated apps** to start with a high water mark so that developers don't accidentally or unconsciously add functionality that won't work in a fully optimised Embroider application. Developers have the option to turn off any of the optimisation flags, but it would be a deliberate choice as they would need to add a specific dependency or functionality to their app.
+
+The Mainmatter Embroider team opened a [PR to switch the functionality](https://github.com/ember-cli/ember-cli/pull/10370) so that passing the `--embroider` flag uses Embroider optimised by default. This involved working through issues with some of the slow test suites that rely on a custom package caching mechanism. The PR got merged and the functionality will be part of Ember v5.5.
+
 - scenario-tester ESM
   
 ### Documenting the scenario-tester library.
