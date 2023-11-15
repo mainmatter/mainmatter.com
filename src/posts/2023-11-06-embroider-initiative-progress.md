@@ -77,8 +77,17 @@ The Embroider Initiative can only work with backing from companies that see the 
 
 ## Improving the bus factor
 
-- talk about the complexity of the project
-- high learning curve
+The goals of Embroider can seem simple from the outside, i.e. "just use Webpack or Vite to build your Ember app", but when you dig a bit deeper it's easy to see how complex it really is. This complexity arises from the project having challenging design constraints and it poses a significant challenge to anyone who would like to contribute to the core of Embroider. The main design constrait that causes a lot of this complexity arises from the fact that we want to provide an easy on-ramp for existing Ember apps to convert to embroider, and slowly then slowly move those apps from full-compatibility mode to a "fully static" build that can automatically benefit from tree-shaking and code-splitting. This means that we need to provide systems that can automatically convert the still-supported conventions of an Ember app to fully standard compliant ESM code. This is a significant challenge since some of the patterns that are still **officially** supported today date back to the 1.x series of Ember which was released in 2015. 
+
+TODO maybe say something specifically about template tags (example for above) or maybe not.
+
+
+> As a result, on the early stages of Embroider development it was effectively impossible for an Ember enthusiast to make substantial contributions. Up until very recently, Embroider has been in an experimental phase: its design has not been finalized. That made documenting its internals impractical, as documentation would get obsolete before it gets useful.
+
+> To address this challenge until Embroider internals are stabilized, we have adopted the apprenticeship model. Ed Faulkner ([@ef4](https://github.com/ef4/)) is the visionary and the main developer of Embroider who has an academic grade of understanding of the build pipeline. I pair with Ed every week, collaborating on solving complex problems, learning and gaining experience from it. The ultimate goal is to gain enough expertise to be able to drive Embroider development forward autonomously, without having to rely on Ed.
+
+> We extend the apprenticeship model one level further with Andrey Mikhaylov ([@lolmaus](https://github.com/lolmaus/)): he pairs with me in the same manner as I pair with Ed. The goal is to reduce the "bus factor" as much as possible and gradually get more developers involved.
+
 - growing confidence & independence (give example of identify, fix, merge, and release)
 - apprenticeship with Andrey
 
