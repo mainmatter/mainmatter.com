@@ -4,20 +4,16 @@ authorHandle: real_ate
 tags: [ember]
 bio: "Chris Manson"
 description:
+  "Chris Manson gives an update on the work the Mainmatter team has done on the
+  Embroider initiative so far, the achievements that have been made and what the
+  next steps ahead are."
 og:
   image:
-tagline:
+tagline: |
+  <p>This post covers the progress over the last few months on <a href="https://github.com/embroider-build/embroider">the Embroider project</a> that has been made through Mainmatter's <a href="https://mainmatter.com/embroider-initiative/">Embroider Initiative</a>. While this isn't a comprehensive update, it should give you a taste of the significant progress we've made and understand some of the challenges that are still remaining.</p>
 image:
 imageAlt:
 ---
-
-This post covers the progress over the last few months on
-[the Embroider project](https://github.com/embroider-build/embroider) and how
-Mainmatter's
-[Embroider Initiative](https://mainmatter.com/embroider-initiative/) has
-supported these efforts. While this isn't a comprehensive update, it should give
-you a taste of the significant progress we've made and understand some of the
-challenges that are still remaining.
 
 For anyone who has clicked the link to this blog post but doesn't already know,
 Embroider is a new build pipeline that compiles Ember apps into spec-compliant,
