@@ -11,6 +11,16 @@
     }
   }
 
+  p + & {
+    margin-top: 3.25rem;
+
+    @media (min-width: 48em) {
+      & {
+        margin-top: 6.25rem;
+      }
+    }
+  }
+
   a {
     color: var(--color-aqua);
   }
