@@ -1,5 +1,5 @@
 ---
-title: "Progress on the Embroider Initiative"
+title: "Embroider Initiative: Progress Update"
 authorHandle: real_ate
 tags: [ember]
 bio: "Chris Manson"
@@ -8,10 +8,10 @@ description:
   Embroider initiative so far, the achievements that have been made and what the
   next steps ahead are."
 og:
-  image: /assets/images/posts/2023-11-06-embroider-initiative-progress/og-image.jpeg
+  image: /assets/images/posts/2023-11-06-embroider-initiative-progress-update/og-image.jpeg
 tagline: |
   <p>This post covers the progress over the last few months on <a href="https://github.com/embroider-build/embroider">the Embroider project</a> that has been made through Mainmatter's <a href="https://mainmatter.com/embroider-initiative/">Embroider Initiative</a>. While this isn't a comprehensive update, it should give you a taste of the significant progress we've made and understand some of the challenges that are still remaining.</p>
-image: /assets/images/posts/2023-11-06-embroider-initiative-progress/header-visual.jpeg
+image: /assets/images/posts/2023-11-06-embroider-initiative-progress-update/header-visual.jpeg
 imageAlt:
   "The ember logo on a background showing people working together on a laptop"
 ---
