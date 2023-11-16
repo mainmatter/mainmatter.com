@@ -16,13 +16,19 @@
   flex: 1 0 100%;
 }
 
+.split-content__author {
+  max-width: 15rem;
+  max-height: 15rem;
+  clip-path: circle();
+}
+
+.split-content__link {
+  margin-top: 1.5rem;
+}
+
 @media (min-width: 48em) {
   .split-content {
     margin: 6.25rem 0;
-  }
-
-  .split-content__subheading {
-    margin: 3.25rem 0;
   }
 
   .split-content__content {

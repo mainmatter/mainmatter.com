@@ -1,6 +1,6 @@
 ---
 title: "Testing in Rust: going beyond the basics"
-format: 1 day, on-site or remote
+format: "Workshop: 1 day, on-site or remote"
 description: |
   <p>No application is an island: you need to interact with third-party APIs, databases and who knows what else. 
   Testing those interactions is tricky, to say the least! 

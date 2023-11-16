@@ -1,6 +1,6 @@
 ---
 title: "You can't fix what you can't see: telemetry for Rust APIs"
-format: 1 day on-site or remote
+format: "Workshop: 1 day, on-site or remote"
 description:
   <p>Your Rust application has finally been deployed to production! Nice! But is
   it working? This workshop will introduce you to a comprehensive toolkit to
@@ -25,30 +25,27 @@ topics:
     text: >
       We will cover Rust’s <code>Error</code> trait, with a focus on the
       information that can be retrieved and recorded in your logs; we will also
-      spend some time on logging patterns (e.g. when should an error be logged?)
-      and relevant libraries for error handling (anyhow/thiserror).
+      spend some time on logging patterns (e.g. when should an error be
+      logged?).
   - heading: Panic handling
     text: >
       You should always manage to capture details about what went wrong, even if
       it’s due to an uncaught panic rather than an error. We will review panic
       hooks and integrate them in our <code>tracing</code> setup.
-  - heading: Metrics, both for application and runtime (tokio-metrics)
+  - heading: Metrics
     text: >
       Structured logs are important, but they don’t tell the full story. We will
       look at how to capture metric data using the <code>metrics</code> library,
       as a tool for designing alarms as well troubleshooting faulty behaviour.
-      We will spend some time on <code>tokio-metrics</code> and how to interpret
-      the data it shows with respect to your <code>tokio</code> runtime usage.
 leads:
   - name: Luca Palmieri
     title: Principal Engineering Consultant
     handle: algo_luca
     image: /assets/images/authors/algo_luca.jpg
     bio: >
-      Luca Palmieri builds technology products for a living.  His current focus
+      Luca Palmieri builds technology products for a living. His current focus
       is on backend development, software architecture and the Rust programming
-      language.  
-      He is the author of "Zero to Production in Rust".
+      language. He is the author of "Zero to Production in Rust".
 ---
 
 <!--break-->

@@ -11,7 +11,7 @@ og:
       {%- set pageTitle = title + ' | ' + config.name -%}
     {%- endif -%}
 
-    <title>{{ pageTitle }}</title>
+    <title>{{ pageTitle | safe}}</title>
     {% include "global/fonts.njk" %}
     <link rel="stylesheet" href="/assets/css/app.css" />
     <script src="/assets/js/app.js" defer></script>

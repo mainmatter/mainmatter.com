@@ -13,6 +13,8 @@ hero:
   image: "/assets/images/work/timify.jpg"
   imageAlt: "Smiling blonde woman behind a counter serving another woman"
   tags: "development / architecture / mentoring"
+og:
+  image: /assets/images/cases/cs-timify-og-image.jpg
 ---
 
 {% from "quote.njk" import quote %}

@@ -1,6 +1,6 @@
 ---
 title: Svelte & SvelteKit
-format: 2-3 days remote or on-site
+format: "Workshop: 2-3 days, remote or on-site"
 description: <p>Svelte is great choice for building fast and light-weight web
   applications. Its unique approach of generating reactive code at compile time
   instead of relying on a runtime, moves work out of the browser and results in

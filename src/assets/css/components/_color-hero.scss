@@ -5,11 +5,11 @@
   --overlay-opacity: 0.9;
 
   &:first-of-type {
-    .color-hero__container {
+    .color-hero__container:not(.hero-resizable) {
       padding: 6rem 0 3.25rem;
     }
   }
-
+  
   &--purple {
     --color-animation: var(--color-aqua);
     --color-link-background: var(--color-blue);
@@ -151,7 +151,7 @@
 }
 
 @media (min-width: 48em) {
-  .color-hero {
+  .color-hero:not(.hero-resizable) {
     aspect-ratio: 5 / 3;
     min-width: 100%;
   }

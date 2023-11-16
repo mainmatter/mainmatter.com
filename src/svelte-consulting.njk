@@ -3,6 +3,8 @@ layout: base
 title: Enable your team to succeed with Svelte
 description: Mainmatter enables teams to succedd with Svelte and build ambitious web apps that are fast and maintainable.
 permalink: /svelte-consulting/
+og:
+  image: /assets/images/svelte/lp-svelte-consulting-og-image.jpg
 ---
 
 {% from "image-banner-with-text.njk" import imageBannerWithText %}
@@ -45,17 +47,24 @@ permalink: /svelte-consulting/
   </div>
 </section>
 
+<section class="split-content">
+  <div class="container container--lg">
+    <h2 class="h5">Book a free call</h2>
+    <h3 class="split-content__subheading h2">Succeeding with Svelte</h3>
+    <div class="split-content__content">
+      <div class="split-content__text">
+        <p>Getting started with Svelte and SvelteKit is straightforward but an experienced partner can help ensure you're set up for success from the beginning. Paolo Ricciuti, Svelte ambassador, co-author of <a href=\"https://www.sveltelab.dev\">SvelteLab</a>, and our in-house Svelte expert, is here to help your team.</p>
+        {{ ctaLink('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ26xh3Rs58rD4ZNFuzlzbTxFxubT5_9qSqc_NU4Pmqdot1YTIiylxcyL2kJrfEHn8tpgJqoHi8O', 'Book a 1:1 call with Paolo', 'split-content__link plausible-event-name=Svelte+1on1+Call') }}
+      </div>
+      <div class="split-content__feature">
+        <img src="/assets/images/authors/paoloricciuti.jpg" alt="Paolo Ricciuti" class="split-content__author"/>
+      </div>
+    </div>
+  </div>
+</section>
+
 {% set 'slide_1' = {
   "color": "purple",
-  "title": "Succeeding with Svelte",
-  "text": "Getting started with Svelte and SvelteKit is straightforward but an experienced partner can help ensure you're set up for success from the beginning. Paolo Ricciuti, Svelte ambassador, co-author of <a href=\"https://www.sveltelab.dev\">SvelteLab</a>, and our in-house Svelte expert, is here to help your team.",
-  "linkUrl": "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ26xh3Rs58rD4ZNFuzlzbTxFxubT5_9qSqc_NU4Pmqdot1YTIiylxcyL2kJrfEHn8tpgJqoHi8O",
-  "linkClass": "plausible-event-name=Svelte+1on1+Call",
-  "linkText": "Book a free 1:1 call with Paolo"
-} %}
-
-{% set 'slide_2' = {
-  "color": "black",
   "title": "Custom Development",
   "text": "We design and develop complete web apps in Svelte so your team can focus on other initiatives. We are experts in Svelte and SvelteKit as well as related technology like Tailwind, Storybook, and testing with Playwright etc. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.",
   "linkUrl": "/contact/",
@@ -63,7 +72,7 @@ permalink: /svelte-consulting/
   "linkText": "Work with us!"
 } %}
 
-{% set 'slide_3' = {
+{% set 'slide_2' = {
   "color": "white",
   "title": "Training and Support",
   "text": "Svelte has excellent documentation for diving straight into the framework. However, sometimes active learning in a workshop taught by a subject matter expert can accelerate the learning experience or help overcome challenges. Our trainers are world-class mentors and can design a learning path that best fits your needs.",
@@ -72,7 +81,7 @@ permalink: /svelte-consulting/
   "linkText": "Check out our Svelte & SvelteKit workshop!"
 } %}
 
-{% set 'slide_4' = {
+{% set 'slide_3' = {
   "color": "aqua",
   "title": "Team Augmentation",
   "text": "Svelte is still a young technology – hiring senior talent can be a challenge.
@@ -82,7 +91,7 @@ permalink: /svelte-consulting/
   "linkText": "Work with us!"
 } %}
 
-{% set slides = [slide_1, slide_2, slide_3, slide_4] %}
+{% set slides = [slide_1, slide_2, slide_3] %}
 {{ scrollSlides('svelte', slides, page.url) }}
 
 <div class="container container--lg quote-section">

@@ -1,6 +1,6 @@
 ---
 title: Effective Git
-format: Remote
+format: "Workshop: 1 day, on-site or remote"
 description:
   <p>Git is at the center of modern pull request-based development workflows.
   Mastering it makes teams more productive and developers' jobs more

@@ -3,6 +3,8 @@ layout: base
 title: Europe's leading Ember experts | Ember consulting
 description: Temporarily extend your team with Europe's leading Ember experts. Speed up projects and remove long-standing issues – from refactoring to shipping new features.
 permalink: /ember-consulting/
+og:
+  image: /assets/images/ember/lp-ember-consulting-og-image.jpg
 ---
 
 {% from "text-with-list.njk" import textWithList %}
@@ -23,8 +25,7 @@ permalink: /ember-consulting/
         {% set imagePath %}/assets/images/logos/ember-white.svg{% endset %}
         <img class="expertise__logo" src="{{ imagePath }}" alt="Ember logo"/>
         <h1 class="color-hero__title color-hero__title--full ">is our expertise</h1>
-        <div class="color-hero__text color-hero__text--large">We have been recognized as an official sponsor of the Ember.js project along with international brands like LinkedIn and
-        Yahoo.</div>
+        <div class="color-hero__text color-hero__text--large">We are long-time Ember experts and active contributors to the ecosystem. Our team of community leaders makes Mainmatter the foremost Ember consultancy.</div>
       </div>
     </div>
   </section>
@@ -32,11 +33,11 @@ permalink: /ember-consulting/
   <section class="split-content">
     <div class="container container--lg">
       <h2 class="h5">Ember & Mainmatter</h2>
-      <h3 class="split-content__subheading h2">Lorem Ipsum</h3>
+      <h3 class="split-content__subheading h2">Leading Exertise</h3>
       <div class="split-content__content">
         <div class="split-content__text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lorem vitae quam efficitur aliquam. Vestibulum volutpat quam in auctor rhoncus. Etiam bibendum aliquam urna vel tempus. Aliquam rutrum diam elementum nibh vulputate semper. Cras id posuere lorem, in consectetur risus. Praesent aliquam lectus ac orci posuere dapibus. Sed sollicitudin purus arcu, vitae pellentesque ipsum finibus eu. Nullam neque ante, placerat id sapien et, sollicitudin tempor diam. Nulla facilisi. Quisque at velit sit amet elit mollis viverra. Sed faucibus purus finibus velit malesuada, in condimentum nisl cursus. Quisque ut nulla id lorem consectetur tincidunt. Suspendisse potenti. Nulla in fringilla diam, in congue turpis.
+            Mainmatter has been an active member of the Ember community since the early days of the framework. Our veteran team has contributed substantially – both to Ember itself on various core teams as well as by creating and maintaining widely adopted packages. If you're working on an Ember application, you're already relying on code our team wrote and patterns we helped established. We have worked with countiess international clients over the year and helped them to succeed with Ember.
           </p>
         </div>
         <div class="split-content__feature">
@@ -48,12 +49,12 @@ permalink: /ember-consulting/
 
   <section class="split-content">
     <div class="container container--lg">
-      <h2 class="h5">Emberfest</h2>
-      <h3 class="split-content__subheading h2">Lorem Ipsum</h3>
+      <h2 class="h5">Emberfest & Ember Europe</h2>
+      <h3 class="split-content__subheading h2">Fostering the Community</h3>
       <div class="split-content__content">
         <div class="split-content__text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lorem vitae quam efficitur aliquam. Vestibulum volutpat quam in auctor rhoncus. Etiam bibendum aliquam urna vel tempus. Aliquam rutrum diam elementum nibh vulputate semper. Cras id posuere lorem, in consectetur risus. Praesent aliquam lectus ac orci posuere dapibus. Sed sollicitudin purus arcu, vitae pellentesque ipsum finibus eu. Nullam neque ante, placerat id sapien et, sollicitudin tempor diam. Nulla facilisi. Quisque at velit sit amet elit mollis viverra. Sed faucibus purus finibus velit malesuada, in condimentum nisl cursus. Quisque ut nulla id lorem consectetur tincidunt. Suspendisse potenti. Nulla in fringilla diam, in congue turpis.
+            Mainmatter believes open source communities are valuable and we strive for being an active contributor to fostering community spirit. Our team regularly speaks at all of the relevant Ember conferences as well as other conferences at which we pitch Ember to audiences from the wider frontend world. We've also been co-organize EmberFest, the European Ember Community Conference for many years and run Ember Europe, a hybrid meetup series, togehter with our friends at Intercom.
           </p>
         </div>
         <div class="split-content__feature">
@@ -70,16 +71,20 @@ permalink: /ember-consulting/
   'Sage',
   'Auditboard',
   'Timify',
-  'Experteer',
   'Robin Hood',
-  'Terminal49'
+  'Terminal49',
+  'MVB',
+  'Generali',
+  'Medify',
+  'CLARK',
+  'Phorest'
 ] %}
 {% set title = 'We are trusted by international companies that bet on Ember.js' %}
 {{ logoList(logoCompanies, title) }}
 
   <section class="color-hero color-hero--purple" data-background-color="purple">
     <div class="color-hero__image-wrapper">
-      {% image "/assets/images/ember/embroider-initiative-sponsor-logos.png", "4 people standing around a table with some printed diagrams on it. 2 people shake hands, one claps their hands.", '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
+      {% image "/assets/images/ember/embroider-initiative-sponsor-logos.png", "Collage of the logos of the Embroider initiative's sponsors with a purple overlay.", '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
     </div>
     <div class="color-hero__container container container--lg color-hero__container--center">
       <div class="color-hero__main">
@@ -90,41 +95,47 @@ permalink: /ember-consulting/
     </div>
   </section>
 
-{% set 'slide_1' = {
-"color": "white",
-"title": "Is Ember the right choice for us?",
-"text": "Every new technology brings its own risks - Ember is no exception. Paolo Ricciuti, our in-house Ember expert, is here to help your team. You walk him through your company's usecase and your requirements and he’ll do his best to suggest the best course of action. Sometimes Ember is not the answer, but if it is, he’ll make sure you are on the right track.",
-"linkUrl": "/#",
-"linkText": "Book a free 1:1 call",
-"linkImage": "/assets/images/authors/paoloricciuti.jpg",
-"linkImageCaption": "Paolo Ricciuti"
-} %}
+<section class="split-content">
+    <div class="container container--lg">
+      <h2 class="h5">Book a free call</h2>
+      <h3 class="split-content__subheading h2">Facing Challenges with Ember?</h3>
+      <div class="split-content__content">
+        <div class="split-content__text">
+          <p>Ember famously enforces a rigid structure and liberates engineers through constraints so they can remain focussed on delivering value for users. Yet, sometimes you get stuck and it can be hard to see the path forwards – be it upgrading an old codebase to modern Ember, adopting Embroider or architecting a new set of features. If your team is in a situation like that or you have any other question, book a call with Chris Manson, Ember expert and member of the Ember Learning and Embroider core teams.</p>
+          {{ ctaLink('https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us', 'Book a 1:1 call with Chris', 'split-content__link') }}
+        </div>
+        <div class="split-content__feature">
+          <img src="/assets/images/authors/real_ate.jpg" alt="Chris Manson" class="split-content__author"/>
+        </div>
+      </div>
+    </div>
+  </section>
 
-{% set 'slide_2' = {
+{% set 'slide_1' = {
 "color": "purple",
 "title": "Custom Development",
-"text": "We develop complete web and cloud apps with Ember so your team can focus on other initiatives. We have experience with all relevant crates and in fact teach others how to use those. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.",
+"text": "We develop complete apps with Ember so your team can focus on other initiatives. We are Ember experts and in fact have written and establishes important pieces of the Ember ecosystem ourselves. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.",
 "linkUrl": "/#",
 "linkText": "Work with us!"
 } %}
 
-{% set 'slide_3' = {
+{% set 'slide_2' = {
 "color": "black",
 "title": "Training and Support",
-"text": "There is excellent material out there for learning Ember on your own. But you might not have the luxury of time, or the in-house expertise, to upskill your entire team or overcome obstacles on your own. Our trainers are world-class experts and can design a learning path that best fits your needs.",
+"text": "Ember is getting easier and easier to adopt but it can appear a bit unfamiliar to people with background in other frontend technologies, in particular versions before Octane. Our trainers are world-class experts have helped many international companies to build and scale up Ember teams in the past.",
 "linkUrl": "/#",
 "linkText": "Check out our workshops!"
 } %}
 
-{% set 'slide_4' = {
+{% set 'slide_3' = {
 "color": "aqua",
 "title": "Team augmentation",
-"text": "Ember is a young technology – hiring Senior talent can be a challenge. Our experts can merge with your in-house product teams to ensure the timely delivery of mission-critical projects. We’re more than hired hands – we mentor your team throughout the process to help lift productivity long after our collaboration ends.",
+"text": "Our experts can merge with your in-house product teams to ensure the timely delivery of mission-critical projects – be it delivering new initiatives or modernizing codebase without interrupting feature delivery. We’re more than hired hands – we mentor your team throughout the process to help lift productivity long after our collaboration ends.",
 "linkUrl": "/#",
 "linkText": "Work with us!"
 } %}
 
-{% set slides = [slide_1, slide_2, slide_3, slide_4] %}
+{% set slides = [slide_1, slide_2, slide_3] %}
 
   <section class="scroll-slides" id="scroll-slides">
     {% for slide in slides %}
@@ -179,51 +190,6 @@ permalink: /ember-consulting/
     {% endfor %}
   </section>
 
-  <section class="quotes-list">
-    <div class="container container--xl">
-      <h2 class="quotes-list__title h2">Listen to our customers</h2>
-      <ul class="quotes-list__list">
-        <li class="quotes-list__quote">
-          <div class="quotes-list__quote-image">
-            <img src="/assets/images/logos/monochrome/qonto.svg" alt="MVB logo"/>
-          </div>
-          <div class="quotes-list__quote-text text--sm">
-            <blockquote>
-              ”This is a positive review about collaborating with Mainmatter on an Ember project.”
-            </blockquote>
-            <figcaption class="quotes-list__quote-source">Client Name<span class="quotes-list__quote-source--separator">, </span><span class="quotes-list__quote-source--jobtitle">Client Position</span></figcaption>
-          </div>
-        </li>
-        <li class="quotes-list__quote">
-          <div class="quotes-list__quote-image">
-            <img src="/assets/images/logos/monochrome/qonto.svg" alt="Qonto logo"/>
-          </div>
-          <div class="quotes-list__quote-text text--sm">
-            <blockquote>
-              ”This is a positive review about collaborating with Mainmatter on an Ember project.”
-            </blockquote>
-            <figcaption class="quotes-list__quote-source">Client Name<span class="quotes-list__quote-source--separator">, </span>
-                <span class="quotes-list__quote-source--jobtitle">Client Position</span>
-            </figcaption>
-          </div>
-        </li>
-        <li class="quotes-list__quote">
-          <div class="quotes-list__quote-image">
-            <img src="/assets/images/logos/monochrome/qonto.svg" alt="Trainline logo"/>
-          </div>
-          <div class="quotes-list__quote-text text--sm">
-            <blockquote>
-              ”This is a positive review about collaborating with Mainmatter on an Ember project.”
-            </blockquote>
-            <figcaption class="quotes-list__quote-source">Client Name<span class="quotes-list__quote-source--separator">, </span>
-              <span class="quotes-list__quote-source--jobtitle">Client Position</span>
-            </figcaption>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
   <section class="opensource-list">
     <div class="container container--xl">
       <h2 class="opensource-list__title h2">We love Open Source</h2>
@@ -237,7 +203,7 @@ permalink: /ember-consulting/
               <p>
               Authentication management for Ember.js applications.
               </p>
-              {{ ctaLink('/', 'View on github', 'opensource-list__link') }}
+              {{ ctaLink('http://github.com/mainmatter/ember-simple-auth', 'View on GitHub', 'opensource-list__link') }}
             </div>
           </li>
           <li class="opensource-list__project">
@@ -249,7 +215,7 @@ permalink: /ember-consulting/
               <p>
                 Cookie handling for Ember.js apps - in the browser and FastBoot.
               </p>
-              {{ ctaLink('/', 'View on github', 'opensource-list__link') }}
+              {{ ctaLink('http://github.com/mainmatter/ember-cookies', 'View on GitHub', 'opensource-list__link') }}
             </div>
           </li>
           <li class="opensource-list__project">
@@ -261,7 +227,7 @@ permalink: /ember-consulting/
               <p>
                 Enabling better element selectors in Ember.js tests.
               </p>
-              {{ ctaLink('/', 'View on github', 'opensource-list__link') }}
+              {{ ctaLink('http://github.com/mainmatter/ember-test-selectors', 'View on GitHub', 'opensource-list__link') }}
             </div>
           </li>
           <li class="opensource-list__project">
@@ -273,30 +239,75 @@ permalink: /ember-consulting/
               <p>
                 High Level DOM Assertions for QUnit with an expressive API.
               </p>
-              {{ ctaLink('/', 'View on github', 'opensource-list__link') }}
+              {{ ctaLink('http://github.com/mainmatter/qunit-dom', 'View on GitHub', 'opensource-list__link') }}
             </div>
           </li>
         </ul>
     </div>
   </section>
 
-    {{ recentPosts("Latest from our blog on the topic", collections.emberPosts) }}
-
-    <section class="color-hero color-hero--aqua" data-background-color="aqua">
-      <div class="color-hero__image-wrapper">
-        <video class="color-hero__image" playsinline="" autoplay="" muted="" preload="" loop="" poster="/assets/images/ember/emberdoc-simplabs.poster.jpg"
-      width="1280" height="496">
-          <source src="/assets/images/ember/emberdoc-simplabs.mp4" type="video/mp4">
-        </video>
+  <section class="color-hero color-hero--aqua" data-background-color="aqua">
+    <div class="color-hero__image-wrapper">
+      <video class="color-hero__image" playsinline="" autoplay="" muted="" preload="" loop="" poster="/assets/images/ember/emberdoc-simplabs.poster.jpg"
+    width="1280" height="496">
+        <source src="/assets/images/ember/emberdoc-simplabs.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="color-hero__overlay"></div>
+    <div class="color-hero__container container container--lg color-hero__container--center">
+      <div class="color-hero__main">
+        <h1 class="color-hero__title color-hero__title--full ">Ember.js: The Documentary</h1>
+        <div class="color-hero__text">Several of our team members appear in the Ember.js documentary. We were pleased to welcome the film crew at our office in Munich and again at EmberFest in Amsterdam.</div>
+        {{ ctaLink("https://www.youtube.com/watch?v=Cvz-9ccflKQ", "Watch Video", 'color-hero__link') }}
       </div>
-      <div class="color-hero__overlay"></div>
-      <div class="color-hero__container container container--lg color-hero__container--center">
-        <div class="color-hero__main">
-          <h1 class="color-hero__title color-hero__title--full ">Ember.js: The Documentary</h1>
-          <div class="color-hero__text">Several of our team members appear in the Ember.js documentary. We were pleased to welcome the film crew at our office in Munich and again at EmberFest in Amsterdam.</div>
-          {{ ctaLink("https://www.youtube.com/watch?v=Cvz-9ccflKQ", "Watch Video", 'color-hero__link') }}
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    {% include 'content/hero-grow-with-us.njk' %}
+  <section class="quotes-list">
+    <div class="container container--xl">
+      <h2 class="quotes-list__title h2">Listen to our customers</h2>
+      <ul class="quotes-list__list">
+        <li class="quotes-list__quote">
+          <div class="quotes-list__quote-image">
+            <img src="/assets/images/logos/monochrome/qonto.svg" alt="Trainline logo"/>
+          </div>
+          <div class="quotes-list__quote-text text--sm">
+            <blockquote>
+              ”Mainmatter are well known as the Ember.js experts and they absolutely live up to the expectations. They had an immediate as well as significant positive impact on both our velocity and quality of output.”
+            </blockquote>
+            <figcaption class="quotes-list__quote-source">Marc-Antoine Lacroix<span class="quotes-list__quote-source--separator">, </span>
+              <span class="quotes-list__quote-source--jobtitle">Qonto CPO</span>
+            </figcaption>
+          </div>
+        </li>
+        <li class="quotes-list__quote">
+          <div class="quotes-list__quote-image">
+            <img src="/assets/images/logos/monochrome/cardstack.svg" alt="MVB logo"/>
+            </div>
+          <div class="quotes-list__quote-text text--sm">
+            <blockquote>
+              ”I've had the opportunity to work alongside the Mainmatter team on both their client-facing work for Cardstack and their open source contributions. They are experts in Ember and they are a team that takes good software-development practice seriously.”
+            </blockquote>
+            <figcaption class="quotes-list__quote-source">Ed Faulkner<span class="quotes-list__quote-source--separator">, </span><span class="quotes-list__quote-source--jobtitle">Cardstack Lead Developer and member of the Ember.js Steering Committee</span></figcaption>
+          </div>
+        </li>
+        <li class="quotes-list__quote">
+          <div class="quotes-list__quote-image">
+            <img src="/assets/images/logos/monochrome/mvb.svg" alt="Qonto logo"/>
+          </div>
+          <div class="quotes-list__quote-text text--sm">
+            <blockquote>
+              ”Mainmatter’s team is highly experienced and professional. They not only helped us develop the product but also mentored our internal team and introduced a number of improvements around infrastructure and processes along the way.”
+            </blockquote>
+            <figcaption class="quotes-list__quote-source">Ronald Schild<span class="quotes-list__quote-source--separator">, </span>
+                <span class="quotes-list__quote-source--jobtitle">Managing Director of MVB</span>
+            </figcaption>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  {{ recentPosts("Latest from our blog on the topic", collections.emberPosts) }}
+
+  {% include 'content/hero-grow-with-us.njk' %}

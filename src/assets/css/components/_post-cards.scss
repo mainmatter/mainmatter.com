@@ -48,6 +48,13 @@
 
 .post-card__tags {
   margin: 1.25rem 0 var(--spacing);
+
+  .tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 }
 
 .post-card__title {

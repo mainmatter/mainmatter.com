@@ -15,6 +15,8 @@ hero:
   image: "/assets/images/work/qonto.jpg"
   imageAlt: "Woman holds a credit card while using the Qonto web application"
   tags: "architecture / development / design"
+og:
+  image: /assets/images/cases/cs-ais-og-image.jpg
 ---
 
 {% from "quote.njk" import quote %}
