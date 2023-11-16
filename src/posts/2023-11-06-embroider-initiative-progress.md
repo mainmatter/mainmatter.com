@@ -12,7 +12,8 @@ og:
 tagline: |
   <p>This post covers the progress over the last few months on <a href="https://github.com/embroider-build/embroider">the Embroider project</a> that has been made through Mainmatter's <a href="https://mainmatter.com/embroider-initiative/">Embroider Initiative</a>. While this isn't a comprehensive update, it should give you a taste of the significant progress we've made and understand some of the challenges that are still remaining.</p>
 image: /assets/images/posts/2023-11-06-embroider-initiative-progress/header-visual.jpeg
-imageAlt: "The ember logo on a background showing people working together on a laptop"
+imageAlt:
+  "The ember logo on a background showing people working together on a laptop"
 ---
 
 For anyone who has clicked the link to this blog post but doesn't already know,
