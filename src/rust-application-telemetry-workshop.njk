@@ -76,32 +76,42 @@ og:
         </div>
       </section>
 
-      <div class="workshop-authors">
-        <div class="container container--lg">
-          <div class="author__wrapper">
-            <div class="author text--xs">
-              <div class="workshop-authors__image-wrapper author__image-wrapper">
-                {% image "/assets/images/authors/algo_luca.jpg", 'Luca Palmieri', '3.75rem', 'eager', 'author__lead-image', [120] %}
-              </div>
-              <div class="author__text-wrapper">
-                <div class="author__name-wrapper">
-                  <span>with&nbsp;</span>
-                  <p class="author__name">Luca Palmieri</p>
-                </div>
-                {{ authorSocials("algo_luca", "author-socials--desktop-only") }}
-                <div class="author__title">Principal Engineering Consultant</div>
-                {{ authorSocials("algo_luca", "author-socials--mobile-only") }}
-              </div>
-            </div>
-            <div class="author__details author__details--full-width text--sm">
-              <p>Luca Palmieri builds technology products for a living.  His current focus
+            <section>
+        <div class="workshop-authors">
+          <div class="container container--lg">
+            <h2 class="workshop-authors__heading h2">Your guidance</h2>
+
+            <div class="author__wrapper">
+              <div class="author">
+                <div class="author__text-wrapper">
+                  <div class="author__details">
+                    <p>Luca Palmieri builds technology products for a living.  His current focus
               is on backend development, software architecture and the Rust programming
               language.  
               He is the author of "<a href="https://zero2prod.com">Zero to Production in Rust</a>".</p>
+                  </div>
+                  <div class="author__name-wrapper">
+                    <div>
+                      <a href="/blog/author/algo_luca" class="author__name">Luca Palmieri</a>
+                    </div>
+                    <div>
+                      {{ authorSocials("algo_luca", "workshop-socials
+                      author-socials--desktop-only") }} {{
+                      authorSocials("algo_luca", "workshop-socials
+                      author-socials--mobile-only") }}
+                    </div>
+                  </div>
+                  <div class="author__title">Principal Engineering Consultant</div>
+                </div>
+              </div>
+              <div class="workshop-authors__image-wrapper author__image-wrapper">
+                {% image "/assets/images/authors/algo_luca.jpg", 'Florian Pichler',
+                '3.75rem', 'eager', 'author__lead-image', [120] %}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <section class="lp-section container container--lg">
         <p>
