@@ -57,7 +57,9 @@ import scrollSlides %} {% from "quote.njk" import quote %}
           <tito-button
             event="mainmatter/svelte-sveltekit-workshop"
             class="plausible-event-name=Tickets+List"
-            >Book your ticket</tito-button
+            >Book your ticket
+            <div class="line"></div>
+            <span class="price-tag">Price TBA</span></tito-button
           >
         </div>
       </div>
@@ -96,6 +98,16 @@ import scrollSlides %} {% from "quote.njk" import quote %}
         </div>
       </section>
 
+      <div class="floating-btn">
+        <tito-button
+          event="mainmatter/svelte-sveltekit-workshop"
+          class="plausible-event-name=Tickets+List"
+          >Book your ticket
+          <div class="line"></div>
+          <span class="price-tag">Price TBA</span></tito-button
+        >
+      </div>
+
       <section class="lp-section lang-features container container--lg">
         <p>
           Svelte is great choice for building fast and light-weight web
@@ -126,7 +138,9 @@ import scrollSlides %} {% from "quote.njk" import quote %}
           <tito-button
             event="mainmatter/svelte-sveltekit-workshop"
             class="plausible-event-name=Tickets+List"
-            >Book your ticket</tito-button
+            >Book your ticket
+            <div class="line"></div>
+            <span class="price-tag">Price TBA</span></tito-button
           >
         </div>
       </section>
@@ -175,7 +189,9 @@ import scrollSlides %} {% from "quote.njk" import quote %}
           <tito-button
             event="mainmatter/svelte-sveltekit-workshop"
             class="plausible-event-name=Tickets+List"
-            >Book your ticket</tito-button
+            >Book your ticket
+            <div class="line"></div>
+            <span class="price-tag">Price TBA</span></tito-button
           >
         </div>
       </section>
@@ -188,7 +204,9 @@ import scrollSlides %} {% from "quote.njk" import quote %}
             <div class="author__wrapper">
               <div class="author">
                 <div class="author__text-wrapper">
-                  <div class="author__details author__details--full-width text--sm">
+                  <div
+                    class="author__details author__details--full-width text--sm"
+                  >
                     <p>
                       Huge nerd, Svelte Ambassador and lover. He's one of the
                       creators of
@@ -200,7 +218,9 @@ import scrollSlides %} {% from "quote.njk" import quote %}
                   </div>
                   <div class="author__name-wrapper">
                     <div>
-                      <a href="/blog/author/paoloricciuti" class="author__name">Paolo Ricciuti</a>
+                      <a href="/blog/author/paoloricciuti" class="author__name"
+                        >Paolo Ricciuti</a
+                      >
                     </div>
                     <div>
                       {{ authorSocials("paoloricciuti", "workshop-socials
@@ -212,7 +232,9 @@ import scrollSlides %} {% from "quote.njk" import quote %}
                   <div class="author__title">Senior Frontend Engineer</div>
                 </div>
               </div>
-              <div class="workshop-authors__image-wrapper author__image-wrapper">
+              <div
+                class="workshop-authors__image-wrapper author__image-wrapper"
+              >
                 {% image "/assets/images/authors/paoloricciuti.jpg", 'Paolo
                 Ricciuti', '3.75rem', 'eager', 'author__lead-image', [120] %}
               </div>
@@ -230,7 +252,9 @@ import scrollSlides %} {% from "quote.njk" import quote %}
                   </div>
                   <div class="author__name-wrapper">
                     <div>
-                      <a href="/blog/author/pichfl" class="author__name">Florian Pichler</a>
+                      <a href="/blog/author/pichfl" class="author__name"
+                        >Florian Pichler</a
+                      >
                     </div>
                     <div>
                       {{ authorSocials("pichfl", "workshop-socials
@@ -242,7 +266,9 @@ import scrollSlides %} {% from "quote.njk" import quote %}
                   <div class="author__title">Senior Frontend Engineer</div>
                 </div>
               </div>
-              <div class="workshop-authors__image-wrapper author__image-wrapper">
+              <div
+                class="workshop-authors__image-wrapper author__image-wrapper"
+              >
                 {% image "/assets/images/authors/pichfl.jpg", 'Florian Pichler',
                 '3.75rem', 'eager', 'author__lead-image', [120] %}
               </div>
@@ -317,7 +343,9 @@ import scrollSlides %} {% from "quote.njk" import quote %}
                 <tito-button
                   event="mainmatter/svelte-sveltekit-workshop"
                   class="plausible-event-name=Tickets+List"
-                  >Book your ticket</tito-button
+                  >Book your ticket
+                  <div class="line"></div>
+                  <span class="price-tag">Price TBA</span></tito-button
                 >
               </span>
             </div>
