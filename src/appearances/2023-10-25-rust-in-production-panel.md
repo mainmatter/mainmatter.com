@@ -7,6 +7,6 @@ channel: rustweb
 ---
 
 Our Principal Engineering Consultant, Luca Palmieri, moderated a panel on real
-world use cases and experiences with Rust in production, with hosts Jeremy
+world use cases and experiences with Rust in production, with panelists Jeremy
 Lempereur (Rust engineer at Apollo GraphQL), and Bastien Dolla (co-founder at
 Rayon).
