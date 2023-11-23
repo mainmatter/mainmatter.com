@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{!github.event.pull_request.body && github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event.label.name == 'create-twios'}}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: volta-cli/action@d253558a6e356722728a10e9a469190de21a83ef # v4
         with:
           registry-url: "https://registry.npmjs.org"
@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{github.event.pull_request.body && contains(github.event.pull_request.head.ref, 'twios') || github.event.label.name == 'edit-twios'}}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: volta-cli/action@d253558a6e356722728a10e9a469190de21a83ef # v4
         with:
           registry-url: "https://registry.npmjs.org"
