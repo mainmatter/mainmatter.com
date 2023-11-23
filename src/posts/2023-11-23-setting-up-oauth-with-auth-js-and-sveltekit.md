@@ -10,12 +10,12 @@ description:
   developers, due to error messages being unhelpful — and explains how to get
   around them."
 og:
-  image: /assets/images/posts/2023-11-16-setting-up-oauth-with-auth-js-and-sveltekit/og-image.jpg
+  image: /assets/images/posts/2023-11-23-setting-up-oauth-with-auth-js-and-sveltekit/og-image.jpg
 tagline: |
   <p>There are numerous OAuth articles and libraries available, and yet setting it up may appear challenging — not due to any particular code complexity, but rather to small details missing or incorrectly configured. This article provides a step-by-step guide for setting up OAuth using a specific combination of technologies, SvelteKit + Auth.js, along with explanations of all the pitfalls.</p>
   <p>This article focuses on the configuration of Google and GitHub OAuth providers since they are among the most popular ones with developers. You're not limited with those two, though: set it up with any other OAuth provider of choice.</p>
 
-image: "/assets/images/posts/2023-11-16-setting-up-oauth-with-auth-js-and-sveltekit/header-visual.jpg"
+image: "/assets/images/posts/2023-11-23-setting-up-oauth-with-auth-js-and-sveltekit/header-visual.jpg"
 imageAlt: "The Svelte logo on a gray backround picture"
 ---
 
@@ -153,7 +153,7 @@ improves security.
 This diagram is different from any other OAuth flow diagram on the internet. It
 precisely reflects the flow that Auth.js specifically is using.
 
-![authorization code flow diagram](/assets/images/posts/2023-11-16-setting-up-oauth-with-auth-js-and-sveltekit/authorization-code-flow-diagram.png)
+![authorization code flow diagram](/assets/images/posts/2023-11-23-setting-up-oauth-with-auth-js-and-sveltekit/authorization-code-flow-diagram.png)
 
 1. **The user opens your frontend in their browser.**
 
@@ -180,7 +180,7 @@ precisely reflects the flow that Auth.js specifically is using.
 6. **The user authorizes your app to authenticate with GitHub**, if they haven't
    already.  
    Yeah, it's a bit of a
-   [Pimp My Ride](/assets/images/posts/2023-11-16-setting-up-oauth-with-auth-js-and-sveltekit/xzibit.jpg)
+   [Pimp My Ride](/assets/images/posts/2023-11-23-setting-up-oauth-with-auth-js-and-sveltekit/xzibit.jpg)
    type of situation. 😅
 
 7. **GitHub makes a 302 redirect to your backend** to
