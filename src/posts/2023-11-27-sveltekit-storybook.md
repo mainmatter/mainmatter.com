@@ -1,7 +1,7 @@
 ---
 title: "SvelteKit 🤝 Storybook"
 authorHandle: paoloricciuti
-tags: [svelte, sveltekit, storybook]
+tags: [svelte, storybook]
 bio: "Paolo Ricciuti (paoloricciuti)"
 description:
   "Paolo Ricciuti (paoloricciuti) shows the newest addition to Storybook that
