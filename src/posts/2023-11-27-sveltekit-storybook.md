@@ -9,8 +9,7 @@ description:
 og:
   image: /assets/images/posts/2023-11-27-sveltekit-storybook/og-image.jpg
 tagline: |
-  <p>Our Paolo Ricciuti contributed to the newest version of Storybook by adding a much tighter integration with SvelteKit.</p>
-  <p>This article present the new features with a series of practical examples on how to use them.</p>
+  <p>Are you using SvelteKit? Are you using Storybook with it? Well, i have good news for you because the SvelteKit integration just got a whole lot better!</p>
 
 image: "/assets/images/posts/2023-11-27-sveltekit-storybook/header-visual.jpg"
 imageAlt: "The Svelte logo on a gray backround picture"
@@ -83,13 +82,13 @@ As you may know, in Storybook you can export the default value from
 
 ```ts
 const meta = {
-  title: 'Example/Button',
+  title: "Example/Button",
   component: Button,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color" },
     size: {
-      control: { type: 'select' },
-      options: ['small', 'medium', 'large'],
+      control: { type: "select" },
+      options: ["small", "medium", "large"],
     },
   },
 } satisfies Meta<Button>;
