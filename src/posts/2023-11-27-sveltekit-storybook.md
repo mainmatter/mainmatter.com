@@ -11,7 +11,7 @@ og:
 tagline: |
   <p>Are you using SvelteKit? Are you using Storybook with it? Well, i have good news for you because the SvelteKit integration just got a whole lot better!</p>
 
-image: "/assets/images/posts/2023-11-27-sveltekit-storybook/header-visual.jpg"
+image: "/assets/images/posts/2023-11-27-sveltekit-storybook/header.jpg"
 imageAlt: "The Svelte logo on a gray backround picture"
 ---
 
