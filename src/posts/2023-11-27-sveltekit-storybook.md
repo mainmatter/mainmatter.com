@@ -40,7 +40,7 @@ SvelteKit, which means that the `page` store is empty.
 
 Granted that using SvelteKit-specific stores inside components is generally
 considered a bad practice (you could just pass the store value as a prop),
-sometimes is just tedious to have to pass a prop every time. For example, if you
+sometimes it is just tedious having to pass a prop every time. For example, if you
 are dealing with i18n, you can return the detected locale from the root layout
 so that every page has access to it. Can you imagine having to pass the locale
 prop to every component when you could just use `$page.data.locale`?
