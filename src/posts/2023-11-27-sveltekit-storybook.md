@@ -234,7 +234,7 @@ export const Primary: Story = {
 
 The function you assign to this property will be called whenever the Story you
 are rendering calls `goto`. You will receive the same parameters passed to the
-`goto` function by the component. If you don't pass any function to this
+`goto` function by the component. If you don't pass any function to this,
 Storybook will log an action in the actions panel.
 
 ```ts
