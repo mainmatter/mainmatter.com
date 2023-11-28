@@ -367,7 +367,7 @@ is an object where every key is a string that should represent a link inside
 your Story, and the value is typed as such:
 `{ callback: () => void, asRegex?: boolean }`. As you might have guessed, the
 `callback` function will be called whenever the user clicks on an `A` tag that
-has an `href` equal to the key. If you specified `asRegex` as true the function
+has a `href` equal to the key. If you specified `asRegex` as true, the function
 will be called whenever your regular expression matches the `href` attribute of
 the tag.
 
