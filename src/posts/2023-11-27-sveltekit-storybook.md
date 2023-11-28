@@ -337,7 +337,7 @@ export const Primary: Story = {
 
 ### `forms.enhance`
 
-If you are using the `enhance` action on a form when inside Storybook the form
+If you are using the `enhance` action on a form when inside Storybook, the form
 submission will still be prevented and the function you assign to
 `forms.enhance` will be called.
 
