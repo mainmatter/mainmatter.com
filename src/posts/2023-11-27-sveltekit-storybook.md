@@ -152,7 +152,7 @@ gist of it is that you have three properties, one for every module exported from
 `$app` plus an `href` property. So, for example, to customize the behavior of
 the `page` store exported from `$app/stores`, you can set
 `sveltekit_experimental.stores.page`, or to customize the behavior of the `goto`
-function exported from `$app/navigation` you can set
+function exported from `$app/navigation`, you can set
 `sveltekit_experimental.navigation.goto`.
 
 Let's see what you can customize.
