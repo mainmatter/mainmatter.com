@@ -62,7 +62,7 @@ if you have to write all of this code every time you want to use Storybook in
 your SvelteKit application, wouldn't it be better to have this provided by
 Storybook itself? That was exactly my thought. At Mainmatter we love to give
 back to the open source that we use every day and we even have a whole day every
-week to work on open source. So I got in touch with
+week to work on open source projects. So I got in touch with
 [JReinhold](https://github.com/JReinhold) and after a quick chat, we decided
 that this was a good addition for the `@storybook/sveltekit` and I got to work.
 
