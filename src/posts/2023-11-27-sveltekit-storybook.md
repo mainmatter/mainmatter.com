@@ -47,7 +47,7 @@ prop to every component when you could just use `$page.data.locale`?
 
 ## The Solution
 
-Luckily for us, SvelteKit is just a Vite plugin. Storybook allows you to add any
+Luckily for us, SvelteKit is just a Vite plugin and Storybook allows you to add any
 Vite plugins to the default ones. Writing a Vite is not that complex, and to
 make this work we just need to override the `alias` config of Vite to point
 every import from `$app/stores` to a file that exports the same functions and
