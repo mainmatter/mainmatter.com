@@ -45,7 +45,7 @@ are dealing with i18n, you can return the detected locale from the root layout
 so that every page has access to it. Can you imagine having to pass the locale
 prop to every component when you could just use `$page.data.locale`?
 
-## The solution
+## The Solution
 
 Luckily for us, SvelteKit is just a Vite plugin. Storybook allows you to add any
 Vite plugins to the defaults ones, writing a Vite is not that complex, and to
