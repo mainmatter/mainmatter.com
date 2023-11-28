@@ -373,7 +373,7 @@ the tag.
 
 ## Conclusions
 
-And that was it: this was a brief introduction to those new features and I'm
+And that was it: this was a brief introduction to the new features, and I'm
 sure you will find crazy ways to use those functionalities. I'm so happy to have
 been able to contribute to such a pivotal project (also i want to thank Jeppe
 for helping me become familiar with this huge codebase) but i'm more than happy
