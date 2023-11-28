@@ -376,5 +376,5 @@ the tag.
 And that was it: this was a brief introduction to the new features, and I'm
 sure you will find crazy ways to use those functionalities. I'm so happy to have
 been able to contribute to such a pivotal project, and more so to be able to use those features myself! Also, I want to thank Jeppe
-for helping me become familiar with this huge codebase) but i'm more than happy
+for helping me become familiar with this huge codebase.
 that i will soon be able to use those features myself!
