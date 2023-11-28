@@ -2,7 +2,7 @@
 title: "SvelteKit 🤝 Storybook"
 authorHandle: paoloricciuti
 tags: [svelte, storybook]
-bio: "Paolo Ricciuti (paoloricciuti)"
+bio: "Paolo Ricciuti, Senior Software Engineer"
 description:
   "Paolo Ricciuti (paoloricciuti) shows the newest addition to Storybook that
   allows for a tighter integration between Storybook and SvelteKit"
