@@ -66,7 +66,7 @@ week to work on open source projects. So I got in touch with
 [JReinhold](https://github.com/JReinhold) and after a quick chat, we decided
 that this was a good addition for the `@storybook/sveltekit` and I got to work.
 
-So as of Storybook v7.6 if you are using the SvelteKit integration, you can now
+As of Storybook v7.6, if you are using the SvelteKit integration, you can now
 specify a new set of parameters for each Story that will allow you to control
 the values of those exports. Let's explore how to use this new feature and what
 benefits it brings to the table.
