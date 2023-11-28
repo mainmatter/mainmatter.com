@@ -185,7 +185,7 @@ export const Primary: Story = {
 ### `stores.navigating`
 
 The object you assign to this property will be the value of the `navigating`
-store. You are free to assign only a partial (what you need in the story)
+store. You are free to assign only a partial (what you need in the story).
 
 ```ts
 export const Primary: Story = {
