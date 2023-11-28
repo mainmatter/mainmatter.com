@@ -21,10 +21,10 @@ Are you using SvelteKit? Are you using Storybook with it? Well, i have good news
 for you because the SvelteKit integration just got a whole lot better!
 
 Here at Mainmatter we're fans of SvelteKit and use it to build ambitious
-projects with the teams we work with. Storybook was the obvious choice to
-make the onboarding for new devs seamless and allow all project
-stakeholders to follow the development of the internal design system. There was
-just a small problem...
+projects with the teams we work with. Storybook was the obvious choice to make
+the onboarding for new devs seamless and allow all project stakeholders to
+follow the development of the internal design system. There was just a small
+problem...
 
 ## The Problem
 
@@ -40,15 +40,15 @@ SvelteKit, which means that the `page` store is empty.
 
 Granted that using SvelteKit-specific stores inside components is generally
 considered a bad practice (you could just pass the store value as a prop),
-sometimes it is just tedious having to pass a prop every time. For example, if you
-are dealing with i18n, you can return the detected locale from the root layout
-so that every page has access to it. Can you imagine having to pass the locale
-prop to every component when you could just use `$page.data.locale`?
+sometimes it is just tedious having to pass a prop every time. For example, if
+you are dealing with i18n, you can return the detected locale from the root
+layout so that every page has access to it. Can you imagine having to pass the
+locale prop to every component when you could just use `$page.data.locale`?
 
 ## The Solution
 
-Luckily for us, SvelteKit is just a Vite plugin and Storybook allows you to add any
-Vite plugins to the default ones. Writing a Vite is not that complex, and to
+Luckily for us, SvelteKit is just a Vite plugin and Storybook allows you to add
+any Vite plugins to the default ones. Writing a Vite is not that complex, and to
 make this work we just need to override the `alias` config of Vite to point
 every import from `$app/stores` to a file that exports the same functions and
 stores. This way, if you are running your component in a SvelteKit application,
@@ -373,7 +373,8 @@ the tag.
 
 ## Conclusions
 
-And that was it: this was a brief introduction to the new features, and I'm
-sure you will find crazy ways to use those functionalities. I'm so happy to have
-been able to contribute to such a pivotal project, and more so to be able to use those features myself! Also, I want to thank Jeppe
-for helping me become familiar with this huge codebase.
+And that was it: this was a brief introduction to the new features, and I'm sure
+you will find crazy ways to use those functionalities. I'm so happy to have been
+able to contribute to such a pivotal project, and more so to be able to use
+those features myself! Also, I want to thank Jeppe for helping me become
+familiar with this huge codebase.
