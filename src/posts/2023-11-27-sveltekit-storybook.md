@@ -22,7 +22,7 @@ for you because the SvelteKit integration just got a whole lot better!
 
 Here at Mainmatter we're fans of SvelteKit and use it to build ambitious
 projects with the teams we work with, and Storybook was an obvious choice to
-make the onboarding for new devs to be seamless and also to allow all project
+make the onboarding for new devs seamless and allow all project
 stakeholders to follow the development of the internal design system. There was
 just a slight problem...
 
