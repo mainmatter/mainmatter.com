@@ -26,7 +26,7 @@ make the onboarding for new devs seamless and allow all project
 stakeholders to follow the development of the internal design system. There was
 just a small problem...
 
-## The problem
+## The Problem
 
 Storybook has a wonderful Story (pun intended) with Svelte, but the integration
 with SvelteKit was a bit more challenging. SvelteKit is a full-stack framework
