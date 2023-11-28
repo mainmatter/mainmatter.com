@@ -311,7 +311,7 @@ doesn't really make sense in Storybook since there's no router involved.
 Instead, if you call `afterNavigate` in your component, the function you passed
 as a parameter will be called on mount. The function you pass takes the
 information about the navigation as an argument and you can specify that
-argument using `navigation.afterNavigate` (you can pass a partial)
+argument using `navigation.afterNavigate` (you may also pass a partial).
 
 ```ts
 export const Primary: Story = {
