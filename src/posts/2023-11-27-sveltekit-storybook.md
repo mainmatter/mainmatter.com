@@ -28,7 +28,7 @@ just a small problem...
 
 ## The problem
 
-Storybook has a wonderful Story (pun intended) with Svelte but the integration
+Storybook has a wonderful Story (pun intended) with Svelte, but the integration
 with SvelteKit was a bit more challenging. SvelteKit is a full-stack framework
 and provides a lot of virtual exports that give your application the needed
 information about its current state. An example of this is the `page` store. It
