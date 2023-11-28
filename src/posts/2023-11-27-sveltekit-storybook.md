@@ -75,7 +75,7 @@ P.s. here's the
 [link to the PR](https://github.com/storybookjs/storybook/pull/24795) if you are
 curious on how all of this was implemented.
 
-### How to use it
+### How to Use It
 
 As you may know, in Storybook you can export the default value from
 `Button.stories.ts` like this:
