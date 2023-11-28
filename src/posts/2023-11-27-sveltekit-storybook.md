@@ -361,7 +361,7 @@ export const Primary: Story = {
 
 ### `hrefs`
 
-By default every link will log an action to the Actions panel but if you want
+By default, every link will log an action to the Actions panel, but if you want
 you can pass another property to the `sveltekit_experimental` parameter. `hrefs`
 is an object where every key is a string that should represent a link inside
 your Story, and the value is typed as such:
