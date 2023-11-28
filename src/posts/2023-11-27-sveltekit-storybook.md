@@ -21,7 +21,7 @@ Are you using SvelteKit? Are you using Storybook with it? Well, i have good news
 for you because the SvelteKit integration just got a whole lot better!
 
 Here at Mainmatter we're fans of SvelteKit and use it to build ambitious
-projects with the teams we work with, and Storybook was an obvious choice to
+projects with the teams we work with. Storybook was the obvious choice to
 make the onboarding for new devs seamless and allow all project
 stakeholders to follow the development of the internal design system. There was
 just a small problem...
