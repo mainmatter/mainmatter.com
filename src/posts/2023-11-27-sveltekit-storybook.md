@@ -39,7 +39,7 @@ But when your component is showcased in Storybook it doesn't actually run in
 SvelteKit, which means that the `page` store is empty.
 
 Granted that using SvelteKit-specific stores inside components is generally
-considered a bad practice (you could just pass the store value as a prop)
+considered a bad practice (you could just pass the store value as a prop),
 sometimes is just tedious to have to pass a prop every time. For example, if you
 are dealing with i18n, you can return the detected locale from the root layout
 so that every page has access to it. Can you imagine having to pass the locale
