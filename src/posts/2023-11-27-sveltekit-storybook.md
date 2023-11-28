@@ -283,7 +283,7 @@ export const Primary: Story = {
 ### `navigation.invalidateAll`
 
 The function you assign to this property will be called whenever the Story you
-are rendering calls `invalidateAll`. If you don't pass any function to this
+are rendering calls `invalidateAll`. If you don't pass any function to this,
 Storybook will log an action in the actions panel.
 
 ```ts
