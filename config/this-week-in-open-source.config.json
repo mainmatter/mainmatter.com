@@ -174,7 +174,8 @@
         "ember-learn/algolia-index-update-scripts",
         "ember-learn/algolia-index-update-scripts",
         "ember-learn/ember-jsonapi-docs",
-        "embroider-build/release-plan"
+        "embroider-build/release-plan",
+        "mansona/create-release-plan-setup"
       ]
     },
     {
@@ -489,9 +490,11 @@
     "mansona/boilerplate-update",
     "mainmatter/svelte-workshop",
     "mainmatter/svelte-workshop",
-    "rust-lang/this-week-in-rust"
+    "rust-lang/this-week-in-rust",
+    "Terminal49/API",
+    "Terminal49/API"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2023-11-12..2023-11-19"
+  "last_date": "2023-11-19..2023-11-26"
 }
