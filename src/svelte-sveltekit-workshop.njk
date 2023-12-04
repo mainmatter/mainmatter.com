@@ -71,7 +71,7 @@ import scrollSlides %}
 
     <main id="main">
       <section
-        class="color-hero color-hero--purple"
+        class="color-hero color-hero--purple hero-resizable"
         data-background-color="purple"
       >
         <div class="color-hero__image-wrapper">
@@ -276,52 +276,68 @@ import scrollSlides %}
         imageAspectRatio(imageData, "32/13", "35/19") }}
         </section>
 
-        {% set 'slide_1' = { "color": "white", "tag": "Workshop Overview - Part
-      1", "title": "Svelte Basics", "text": "Rendering reactive UIs is the core
+            <section class="lp-section container container--lg">
+        <h2 class="workshop-topics__heading h2">Workshop overview</h2>
+        <ol class="workshop-topics__list">
+          <li class="workshop-topics__item">
+            <div class="workshop-topics__text-wrapper">
+              <h3 class="workshop-topics__item-heading h4">Svelte Basics</h3>
+              <p class="text--sm">Rendering reactive UIs is the core
       functionality of Svelte. We cover Svelte’s unique approach to reactivity,
       the <code>$</code> syntax and its template language. We then look into
-      writing Svelte components, accepting props, and its CSS scoping feature."
-      } %}
-        {% set 'slide_2' = { "color": "purple", "tag": "Workshop Overview -
-      Part 2", "title": "SvelteKit Basics", "text": "This stage introduces
+      writing Svelte components, accepting props, and its CSS scoping feature.</p>
+            </div>
+          </li>
+          <li class="workshop-topics__item">
+            <div class="workshop-topics__text-wrapper">
+              <h3 class="workshop-topics__item-heading h4">SvelteKit Basics</h3>
+              <p class="text--sm">This stage introduces
       SvelteKit, the project framework built on Svelte. We cover project
       creation and management, SvelteKit’s file system as well as creating and
-      managing pages." } %}
-        {% set 'slide_3' = { "color": "black", "tag":
-      "Workshop Overview - Part 3", "title": "Routing", "text": "We’ll dive deep
+      managing pages.</p>
+            </div>
+          </li>
+          <li class="workshop-topics__item">
+            <div class="workshop-topics__text-wrapper">
+              <h3 class="workshop-topics__item-heading h4">Routing</h3>
+              <p class="text--sm">We’ll dive deep
       into SvelteKit’s file based routing, loading and displaying data as well
-      as topics like route grouping, route params and redirects." } %}
-        {% set
-      'slide_4' = { "color": "white", "tag": "Workshop Overview - Part 4",
-      "title": "Testing", "text": "SvelteKit comes with two testing strategies:
+      as topics like route grouping, route params and redirects.</p>
+            </div>
+          </li>
+          <li class="workshop-topics__item">
+            <div class="workshop-topics__text-wrapper">
+              <h3 class="workshop-topics__item-heading h4">Testing</h3>
+              <p class="text--sm">SvelteKit comes with two testing strategies:
       Vitest for testing components in isolation and Playwright for end-to-end
       testing. We cover both in depth and present approaches for testing real
-      applications." } %}
-        {% set 'slide_5' = { "color": "purple", "tag":
-      "Workshop Overview - Part 5", "title": "Stores", "text": "This stage kicks
+      applications.</p>
+            </div>
+          </li>
+          <li class="workshop-topics__item">
+            <div class="workshop-topics__text-wrapper">
+              <h3 class="workshop-topics__item-heading h4">Stores</h3>
+              <p class="text--sm">This stage kicks
       off with an introduction of what stores are and how they work. We continue
       with looking into implementing the three main stores: writable, readable,
-      and derived." } %}
-        {% set 'slide_6' = { "color": "black", "tag": "Workshop
-      Overview - Part 6", "title": "SvelteKit and Progressive Enhancement",
-      "text": "The final stage of the workshop teaches how to implement
+      and derived.</p>
+            </div>
+          </li>
+          <li class="workshop-topics__item">
+            <div class="workshop-topics__text-wrapper">
+              <h3 class="workshop-topics__item-heading h4">SvelteKit and Progressive Enhancement</h3>
+              <p class="text--sm">The final stage of the workshop teaches how to implement
       progressive enhancement with forms. We cover how to send data to an API,
       how to validate forms, what server folders are, and give a brief
       introduction into hooks. We close by looking into how to implement
-      authentication." } %}
-        {% set slides = [
-          slide_1,
-          slide_2,
-          slide_3,
-          slide_4,
-          slide_5,
-          slide_6
-        ] %}
-        {{ scrollSlides('workshops', slides,
-      page.url) }}
+      authentication.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
 
         <section
-        class="color-hero color-hero--purple"
+        class="color-hero color-hero--purple hero-resizable"
         data-background-color="purple"
       >
           <div class="color-hero__image-wrapper">
