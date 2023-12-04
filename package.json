@@ -49,7 +49,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "express": "^4.18.1",
-    "gsap": "^3.12.3",
     "html-minifier": "4.0.0",
     "markdown-it": "14.0.0",
     "netlify-plugin-11ty": "^1.1.0",
