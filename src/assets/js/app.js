@@ -5,7 +5,6 @@ import { Nav } from "./nav";
 import { ContactForm } from "./contact-form";
 import { LogoList } from "./logo-list";
 import bindSelectDropdowns from "./select";
-import * as Scroll from "./scroll"
 
 if (window.location.host === "mainmatter.com") {
   Sentry.init({
@@ -24,4 +23,3 @@ if (logoList) new LogoList(logoList);
 
 new Animations();
 bindSelectDropdowns();
-
