@@ -72,6 +72,7 @@
   ],
   "dependencies": {
     "@sentry/browser": "^7.16.0",
+    "gsap": "^3.12.3",
     "lax.js": "^2.0.3"
   },
   "engines": {
