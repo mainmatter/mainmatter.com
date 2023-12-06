@@ -5,7 +5,7 @@
 
 [build]
   environment = { NODE_VERSION = "16.17.0" }
-  command = "echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >> .npmrc && yarn install && yarn build"
+  command = "echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >> .npmrc && pnpm install && pnpm build"
 
 # serve 404 simplabs' sitemap
   [[redirects]]
