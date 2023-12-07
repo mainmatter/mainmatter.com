@@ -1,5 +1,5 @@
 ---
-title: "Adopting Rust: the missing playbook for CTOs and Engineering managers"
+title: "Adopting Rust: the missing playbook for managers and CTOs"
 authorHandle: algo_luca
 tags: [rust]
 bio: "Luca Palmieri, Principal Engineering Consultant"
