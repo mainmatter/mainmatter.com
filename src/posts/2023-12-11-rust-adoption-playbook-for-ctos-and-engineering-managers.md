@@ -17,7 +17,7 @@ bio: "Luca Palmieri, Principal Engineering Consultant"
 
 # Adopting Rust: the missing playbook for CTOs and Engineering managers
 
-If you search for "Rust adoption" in your favourite search engine, most of the content you'll find falls into one of two categories:
+If you look for "Rust adoption" in your favourite search engine, most of the content you'll find falls into one of two categories:
 
 - How to convince your organization to adopt Rust, usually from the point of view of an individual contributor acting as a Rust advocate
 - Survey data on Rust adoption
@@ -26,9 +26,9 @@ We feel there's a missing playbook: you are in charge of an engineering organiza
 that Rust is good technology to bet on. How do turn that bet into a success?
 
 This article is our attempt at filling that gap.  
-In particular, we'll focus on:
+We'll focus on:
 
-- How to build a team for your first Rust project: should you hire? How do you upskill your existing team?
+- How to build a team for your first Rust project
 - How to scale up your team once you have a successful Rust project under your belt
 
 ## Building a team for your first Rust project
@@ -38,8 +38,8 @@ You have a meaningful project in mind, and you are considering using Rust for it
 ### Should you hire?
 
 We recommend **not to hire additional staff for your first Rust project**.  
-If you go on the job market hiring for production Rust expertise, you'll be competing with the entire industry for a very limited
-pool of candidates. It may take you months to find the right people—assess your project timeline to see if you can afford that.
+If you go on the job market looking for production Rust expertise, you'll be competing with the entire industry for a very limited
+pool of candidates. It may take you months to find and onboard the right people: can your budget and project timeline afford that?
 
 Furthermore, it's dangerous to bring people onboard for a "Rust job": the technology might not be a good fit for your
 organization in the end. You don't want to end up with a team of frustrated Rust experts with no projects to work on:
@@ -47,7 +47,7 @@ it's not going to be a great experience for anyone involved.
 
 ### Assess the readiness of your existing team
 
-Unless you are tiny startup, you already have a team that, up until now, has been using other technologies. Can
+Unless you are tiny startup, you already have a team that has been working with other technologies up until now. Can
 they be productive with Rust? How long will it take them to get up to speed?
 
 Assessing their readiness is a key step in determining how to move forward. 
@@ -66,21 +66,20 @@ the knowledge is shared across the team: that's going to happen organically if y
 
 You might not have a hidden Rust expert in your team, but there might be others with experience in languages
 that are close enough to Rust to allow them to reach productivity quickly.  
-C and C++ are the obvious examples, but don't discount more functional languages like Haskell or OCaml: there is more
-than memory management to Rust's learning curve! Having to manage nullability (`Option`) and failures (`Result`) via
-the type system is a paradigm shift for many developers, and having previous experience with functional languages
-can help a lot.
+C and C++ are obvious candidates, but don't discount functional languages: there is more
+than memory management to Rust's learning curve! Having to manage nullability (`Option`) and failures (`Result`) as types
+is a paradigm shift: previous experience with functional languages can smooth the transition significantly.
 
 #### Willingness to learn
 
-We like to joke about developers spending most of their time chasing the "next shiny thing", but that attitude
-is a lot less common than you might think.  
+We like to joke about developers spending most of their time chasing the "next shiny thing", but don't take that 
+attitude for granted. 
 Is your team excited about the prospect of learning a new language? Are they willing to go through the discomfort
 of being a beginner again?
 
 Don't assume "yes" as the answer. Talk to your team, and make sure that they are on board with the idea.  
 This will become less of a factor once you have one or two successful Rust projects under your belt, with a mature
-infrastructure and established code practices, but it's key aspect to keep in mind for your very first project.
+infrastructure and established code practices, but it's a key aspect to keep in mind for your very first project.
 
 ### Upskilling your team
 
@@ -119,12 +118,19 @@ If the project is important enough, you might want to consider augmenting your t
 Embed them in your team: they'll be working alongside your engineers, helping them get up to speed, steering the
 project away from common pitfalls, and making sure that the codebase is built on solid foundations.
 
+It allows you to compress the timeline significantly: you can start delivering value _while_ your team is learning Rust.
+
 #### Code audits
 
 If budget is tight, you can consider a code audit as a cheaper alternative to team augmentation: you hire a consultant
 for a limited amount of time (e.g. a few days) to review your codebase.  
 At the end of the process, you get a report: critical issues that need to be addressed urgently, recommendations
-on how to improve the codebase, and a list of best practices that you might want to follow going forward.
+on how to improve the codebase, and a list of best practices that you might want to follow going forward. It becomes
+a technical roadmap that your team can integrate into their future planning.
+
+Alternatively, you can engage with a consultant _before_ starting the project: they can help you with the initial
+design and architecture, putting you on the right tracks. They can then pop in again, at regular intervals, to assess 
+the situation and provide guidance if the plan needs to be adjusted.
 
 ## Scaling up your team
 
