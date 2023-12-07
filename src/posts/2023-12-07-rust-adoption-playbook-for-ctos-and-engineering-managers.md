@@ -30,26 +30,26 @@ We feel there's a missing playbook: you are in charge of an engineering
 organization/unit, and you have determined that Rust is a good technology to bet
 on. How do you turn that bet into a success?
 
-This article is our attempt at filling that gap.  
+This article is our attempt at filling that gap.
 
 ### Table of contents
 
-* [Building a team for your first Rust project](#building-a-team-for-your-first-rust-project)
-  * [Should you hire?](#should-you-hire)
-  * [Assess the readiness of your existing team](#assess-the-readiness-of-your-existing-team)
-    * [Previous experience with Rust](#previous-experience-with-rust)
-    * [Language proximity](#language-proximity)
-    * [Willingness to learn](#willingness-to-learn)
-  * [Upskilling your team](#upskilling-your-team)
-    * [Self-guided learning](#self-guided-learning)
-    * [Training](#training)
-    * [Team augmentation](#team-augmentation)
-    * [Code audits](#code-audits)
-* [Scaling up your team](#scaling-up-your-team)
-  * [The state of the Rust job market](#the-state-of-the-rust-job-market)
-  * [Job boards](#job-boards)
-* [Wrapping up](#wrapping-up)
-* [Appendix: Learning resources](#appendix-learning-resources)
+- [Building a team for your first Rust project](#building-a-team-for-your-first-rust-project)
+  - [Should you hire?](#should-you-hire)
+  - [Assess the readiness of your existing team](#assess-the-readiness-of-your-existing-team)
+    - [Previous experience with Rust](#previous-experience-with-rust)
+    - [Language proximity](#language-proximity)
+    - [Willingness to learn](#willingness-to-learn)
+  - [Upskilling your team](#upskilling-your-team)
+    - [Self-guided learning](#self-guided-learning)
+    - [Training](#training)
+    - [Team augmentation](#team-augmentation)
+    - [Code audits](#code-audits)
+- [Scaling up your team](#scaling-up-your-team)
+  - [The state of the Rust job market](#the-state-of-the-rust-job-market)
+  - [Job boards](#job-boards)
+- [Wrapping up](#wrapping-up)
+- [Appendix: Learning resources](#appendix-learning-resources)
 
 ## Building a team for your first Rust project
 
