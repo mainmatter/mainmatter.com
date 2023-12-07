@@ -3,11 +3,14 @@ title: "Adopting Rust: the missing playbook for CTOs and Engineering managers"
 authorHandle: LukeMathWalker
 tags: [rust]
 bio: "Luca Palmieri, Principal Engineering Consultant"
-#description:
-#  "Paolo Ricciuti (paoloricciuti) shows the newest addition to Storybook that
-#  allows for a tighter integration between Storybook and SvelteKit"
-#tagline: |
-#  <p>Are you using SvelteKit? Are you using Storybook with it? Well, i have good news for you because the SvelteKit integration just got a whole lot better!</p>
+description:
+  "You want to kick off your first Rust project. How do you make it a success?
+   Here is a playbook for building your first Rust team and, if all goes well, scaling it up."
+tagline: |
+  <p>
+   You want to kick off your first Rust project. How do you make it a success?
+   Here is a playbook for building your first Rust team and, if all goes well, scaling it up."
+  </p>
 
 # og:
 #   image: 
@@ -23,7 +26,7 @@ If you look for "Rust adoption" in your favorite search engine, most of the cont
 - Survey data on Rust adoption
 
 We feel there's a missing playbook: you are in charge of an engineering organization/unit, and you have determined
-that Rust is a good technology to bet on. How do turn that bet into a success?
+that Rust is a good technology to bet on. How do you turn that bet into a success?
 
 This article is our attempt at filling that gap.  
 We'll focus on:
