@@ -19,8 +19,6 @@ tagline: |
 # imageAlt:
 ---
 
-# Adopting Rust: the missing playbook for CTOs and Engineering managers
-
 If you look for "Rust adoption" in your favorite search engine, most of the
 content you'll find falls into one of two categories:
 
@@ -104,8 +102,8 @@ practices, but it's a key aspect to keep in mind for your very first project.
 
 ### Upskilling your team
 
-> If you found enough Rust experts in your existing organization to staff your
-> team, you can skip this section.
+_If you found enough Rust experts in your existing organization to staff your
+team, you can skip this section._
 
 We'll assume the most common scenario: you have one or two people in your team
 who have played with Rust in their spare time, building a few toy projects, but
