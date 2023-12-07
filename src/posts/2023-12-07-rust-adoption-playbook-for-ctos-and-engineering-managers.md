@@ -13,10 +13,10 @@ tagline: |
    Here is a playbook for building your first Rust team and, if all goes well, scaling it up.
   </p>
 
-# og:
-#   image:
-# image:
-# imageAlt:
+og:
+  image: /assets/images/posts/2023-08-14-the-case-for-rust-on-the-web/og-image.png
+image: "/assets/images/posts/2023-08-14-the-case-for-rust-on-the-web/header.png"
+imageAlt: "The Rust logo on top of a stylized world map"
 ---
 
 If you look for "Rust adoption" in your favorite search engine, most of the
