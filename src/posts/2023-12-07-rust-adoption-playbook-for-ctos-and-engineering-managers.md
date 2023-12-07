@@ -10,7 +10,7 @@ description:
 tagline: |
   <p>
    You want to kick off your first Rust project. How do you make it a success?
-   Here is a playbook for building your first Rust team and, if all goes well, scaling it up."
+   Here is a playbook for building your first Rust team and, if all goes well, scaling it up.
   </p>
 
 # og:
