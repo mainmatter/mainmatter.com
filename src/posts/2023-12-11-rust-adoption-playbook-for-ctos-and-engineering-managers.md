@@ -1,7 +1,7 @@
 ---
 title: "Adopting Rust: the missing playbook for CTOs and Engineering managers"
 authorHandle: LukeMathWalker
-tags: [rust]
+tags: [ rust ]
 bio: "Luca Palmieri, Principal Engineering Consultant"
 description:
   "You want to kick off your first Rust project. How do you make it a success?
@@ -20,9 +20,11 @@ tagline: |
 
 # Adopting Rust: the missing playbook for CTOs and Engineering managers
 
-If you look for "Rust adoption" in your favorite search engine, most of the content you'll find falls into one of two categories:
+If you look for "Rust adoption" in your favorite search engine, most of the content you'll find falls into one of two
+categories:
 
-- How to convince your organization to adopt Rust, usually from the point of view of an individual contributor acting as a Rust advocate
+- How to convince your organization to adopt Rust, usually from the point of view of an individual contributor acting as
+  a Rust advocate
 - Survey data on Rust adoption
 
 We feel there's a missing playbook: you are in charge of an engineering organization/unit, and you have determined
@@ -41,8 +43,10 @@ You have a meaningful project in mind, and you are considering using Rust for it
 ### Should you hire?
 
 We recommend **not to hire additional staff for your first Rust project**.  
-If you go on the job market looking for production Rust expertise, you'll be competing with the entire industry for a very limited
-pool of candidates. It may take you months to find and onboard the right people: can your budget and project timeline afford that?
+If you go on the job market looking for production Rust expertise, you'll be competing with the entire industry for a
+very limited
+pool of candidates. It may take you months to find and onboard the right people: can your budget and project timeline
+afford that?
 
 Furthermore, it's dangerous to bring people on board for a "Rust job": the technology might not be a good fit for your
 organization in the end. You don't want to end up with a team of frustrated Rust experts with no projects to work on:
@@ -70,7 +74,8 @@ the knowledge is shared across the team: that's going to happen organically if y
 You might not have a hidden Rust expert in your team, but there might be others with experience in languages
 that are close enough to Rust to allow them to reach productivity quickly.  
 C and C++ are obvious candidates, but don't discount functional languages: there is more
-than memory management to Rust's learning curve! Having to manage nullability (`Option`) and failures (`Result`) as types
+than memory management to Rust's learning curve! Having to manage nullability (`Option`) and failures (`Result`) as
+types
 is a paradigm shift: previous experience with functional languages can smooth the transition significantly.
 
 #### Willingness to learn
@@ -110,14 +115,17 @@ Workshops are the most common solution.
 If you have a large team, you can bring in a trainer to run a dedicated workshop. If the team is small, you can buy
 tickets to join a public workshop alongside developers from other companies.
 
-Interactivity is the key here: you want to make sure that your team has the opportunity to ask questions to an experienced
+Interactivity is the key here: you want to make sure that your team has the opportunity to ask questions to an
+experienced
 Rust mentor to speed up the learning process and avoid common pitfalls.
 
-To get a sense of what kind of topics a Rust workshop could cover, you can check out the [Rust workshops](/services/workshops/rust/) that we offer here at Mainmatter.
+To get a sense of what kind of topics a Rust workshop could cover, you can check out
+the [Rust workshops](/services/workshops/rust/) that we offer here at Mainmatter.
 
 #### Team augmentation
 
-If the project is important enough, you might want to consider augmenting your team with one or two experienced Rust consultants.
+If the project is important enough, you might want to consider augmenting your team with one or two experienced Rust
+consultants.
 Embed them in your team: they'll be working alongside your engineers, helping them get up to speed, steering the
 project away from common pitfalls, and make sure that the codebase is built on solid foundations.
 
@@ -159,7 +167,8 @@ On top of the usual job boards, it pays off to advertise your open positions on 
 We recommend the following:
 
 - Every six weeks, there is a Rust jobs thread on [/r/rust](https://www.reddit.com/r/rust/). It's a great place to
-  advertise your open positions! Go [here](https://www.reddit.com/r/rust/comments/163w6fl/official_rrust_whos_hiring_thread_for_jobseekers/)
+  advertise your open positions!
+  Go [here](https://www.reddit.com/r/rust/comments/163w6fl/official_rrust_whos_hiring_thread_for_jobseekers/)
   for the latest thread at the time of writing.
 - Rust-focused events are a great place to find Rust developers. You can find a list of upcoming events, covering both
   conferences and meetups, on [This week in Rusts](https://this-week-in-rust.org/).
@@ -170,7 +179,8 @@ at this point, but it might be worth doing your research.
 ## Wrapping up
 
 We've covered a lot of ground in this article, but we hope we've given you a good starting point for your Rust journey.
-If you have any questions, or if you'd like help with any of the topics covered in the article (training, team augmentation, code audits, etc.)
+If you have any questions, or if you'd like help with any of the topics covered in the article (training, team
+augmentation, code audits, etc.)
 [get in touch](/contact)!
 
 ## Appendix: Learning resources
@@ -194,5 +204,6 @@ type of software project you are building.
 If you're dealing with embedded systems, [The Embedded Rust Book](https://rust-embedded.github.io/book/) is a great
 resource.  
 If you're building an API or other kinds of backend systems, check out [Zero to Production](https://zero2prod.com/).  
-If you need advanced Rust topics, [Rust for Rustaceans](https://nostarch.com/rust-rustaceans) and the [Rustonomicon](https://doc.rust-lang.org/nomicon/)
+If you need advanced Rust topics, [Rust for Rustaceans](https://nostarch.com/rust-rustaceans) and
+the [Rustonomicon](https://doc.rust-lang.org/nomicon/)
 are the way to go.
