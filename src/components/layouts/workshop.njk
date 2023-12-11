@@ -16,6 +16,11 @@ layout: 'base'
         <div class="color-hero__main">
           <p class="workshop-hero__format">{{ format }}</p>
           <h1 class="workshop-hero__title color-hero__title color-hero__title--full">{{ title | safe }}</h1>
+          {% if subtext %}
+            <div class="color-hero__text color-hero__text--small">
+              <p>{{ subtext }}</p>
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>
