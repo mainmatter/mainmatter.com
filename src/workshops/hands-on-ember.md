@@ -1,6 +1,7 @@
 ---
 title: Hands-on Ember.js
-format: "Workshop: 2-3 days on-site or remote"
+format: "Workshop: 2-3 days"
+subtext: "Bookable for teams – on-site or remote"
 description: <p>We go through a series of stages that each build on one another.
   Each topic is introduced via an in-depth presentation as well as a small,
   focussed demo application that illustrates the respective concept in practice.
