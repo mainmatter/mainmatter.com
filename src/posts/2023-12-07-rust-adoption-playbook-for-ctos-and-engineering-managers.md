@@ -14,9 +14,9 @@ tagline: |
   </p>
 
 og:
-  image: /assets/images/posts/2023-08-14-the-case-for-rust-on-the-web/og-image.png
-image: "/assets/images/posts/2023-08-14-the-case-for-rust-on-the-web/header.png"
-imageAlt: "The Rust logo on top of a stylized world map"
+  image: /assets/images/posts/2023-12-11-adopting-rust/og-image.png
+image: "/assets/images/posts/2023-12-11-adopting-rust/header.png"
+imageAlt: "The Rust logo on top of a street map"
 ---
 
 If you look for "Rust adoption" in your favorite search engine, most of the
