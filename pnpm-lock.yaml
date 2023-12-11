@@ -8,6 +8,9 @@ dependencies:
   '@sentry/browser':
     specifier: ^7.16.0
     version: 7.86.0
+  gsap:
+    specifier: ^3.12.3
+    version: 3.12.3
   lax.js:
     specifier: ^2.0.3
     version: 2.0.3
@@ -2836,6 +2839,10 @@ packages:
       section-matter: 1.0.0
       strip-bom-string: 1.0.0
     dev: true
+
+  /gsap@3.12.3:
+    resolution: {integrity: sha512-TySXTE+ABiAVa61W+h5wv2p5GkJT1Uj//4nWpK8EjmhcDqwH++35IvtbQlVVFj+rdcJdFCdCt0SKgb+SwdPq/A==}
+    dev: false
 
   /hamljs@0.6.2:
     resolution: {integrity: sha512-/chXRp4WpL47I+HX1vCCdSbEXAljEG2FBMmgO7Am0bYsqgnEjreeWzUdX1onXqwZtcfgxbCg5WtEYYvuZ5muBg==}

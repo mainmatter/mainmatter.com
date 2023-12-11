@@ -4,23 +4,66 @@ layout: 'base'
 
 {% from "author-socials.njk" import authorSocials %}
 {%- block content -%}
-<article>
-  <div class="workshop-hero color-hero color-hero--black" data-background-color="black">
-    <div class="color-hero__image-wrapper">
-      {% if hero.image %}
-        {% image hero.image, hero.imageAlt, '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
-      {% endif %}
-    </div>
-    <div class="color-hero__overlay"></div>
-    <div class="color-hero__container container container--lg color-hero__container--center">
-      <div class="color-hero__main">
-        <p class="workshop-hero__format">{{ format }}</p>
-        <h1 class="workshop-hero__title color-hero__title color-hero__title--full">{{ title | safe }}</h1>
+  <article>
+    <div class="workshop-hero color-hero color-hero--black" data-background-color="black">
+      <div class="color-hero__image-wrapper">
+        {% if hero.image %}
+          {% image hero.image, hero.imageAlt, '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
+        {% endif %}
+      </div>
+      <div class="color-hero__overlay"></div>
+      <div class="color-hero__container container container--lg color-hero__container--center">
+        <div class="color-hero__main">
+          <p class="workshop-hero__format">{{ format }}</p>
+          <h1 class="workshop-hero__title color-hero__title color-hero__title--full">{{ title | safe }}</h1>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="workshop-authors">
+
+    <div class="container container--lg post">
+      <div class="workshop__content post__content--workshop rte">
+        <h2 class="workshop-topics__heading">Workshop description</h2>
+        <div class="post__tagline">
+          {% if tagline %}
+            {{ tagline | safe }}
+          {% else %}
+            <p>{{ description | safe }}</p>
+          {% endif %}
+        </div>
+        {% set list %}
+        <h2 class="workshop-topics__heading">Workshop overview</h2>
+        <ol class="workshop-topics__list">
+          {% for item in topics %}
+            <li class="workshop-topics__item">
+              <div class="workshop-topics__text-wrapper">
+                <h3 class="workshop-topics__item-heading h4">{{ item.heading | safe }}</h3>
+                <p class="text--sm">{{ item.text | safe }}</p>
+              </div>
+            </li>
+          {% endfor %}
+        </ol>
+        {% if optional_topics %}
+          <h3 class="screenreader">Optional topics</h3>
+          <ul class="workshop-topics__list">
+            {% for item in optional_topics %}
+              <li class="workshop-topics__item workshop-topics__item--optional">
+                <div class="workshop-topics__text-wrapper">
+                  <h3 class="workshop-topics__item-heading h4">{{ item.heading | safe }}</h3>
+                  <p class="text--sm">{{ item.text | safe }}</p>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {% endset %}
+        {{ content | replace('<!--break-->', list) | replace('<ul>', '<ul class="post__list post__list--workshop">') | safe }}
+      </div>
+    </div>
+
+    <div class="workshop-authors">
     <div class="container container--lg">
+    <div class="workshop__content post__content--workshop">
+      <h2 class="workshop-topics__heading">Your guidance</h2>
       {%- for lead in leads -%}
         <div class="author__wrapper">
           <div class="author text--xs">
@@ -50,45 +93,10 @@ layout: 'base'
           </div>
         </div>
       {%- endfor -%}
-    </div>
-  </div>
-  <div class="container container--lg post">
-    <div class="post__content post__content--workshop rte">
-      <div class="post__tagline">
-        {% if tagline %}
-          {{ tagline | safe }}
-        {% else %}
-          <p>{{ description | safe }}</p>
-        {% endif %}
       </div>
-      {% set list %}
-      <h2 class="workshop-topics__heading h5">Workshop overview</h2>
-      <ol class="workshop-topics__list">
-        {% for item in topics %}
-          <li class="workshop-topics__item">
-            <div class="workshop-topics__text-wrapper">
-              <h3 class="workshop-topics__item-heading h4">{{ item.heading | safe }}</h3>
-              <p class="text--sm">{{ item.text | safe }}</p>
-            </div>
-          </li>
-        {% endfor %}
-      </ol>
-      {% if optional_topics %}
-        <h3 class="screenreader">Optional topics</h3>
-        <ul class="workshop-topics__list">
-          {% for item in optional_topics %}
-            <li class="workshop-topics__item workshop-topics__item--optional">
-              <div class="workshop-topics__text-wrapper">
-                <h3 class="workshop-topics__item-heading h4">{{ item.heading | safe }}</h3>
-                <p class="text--sm">{{ item.text | safe }}</p>
-              </div>
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-      {% endset %}
-      {{ content | replace('<!--break-->', list) | replace('<ul>', '<ul class="post__list post__list--workshop">') | safe }}
     </div>
   </div>
+
 </article>
-{% include 'content/hero-book-workshop.njk' %}{%- endblock -%}
+{% include 'content/hero-book-workshop.njk' %}
+{%- endblock -%}
