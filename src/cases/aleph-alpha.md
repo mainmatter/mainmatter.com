@@ -38,11 +38,11 @@ That's where we at Mainmatter come into the picture.
 
 ## Mainmatter's role
 
-We partnered with Aleph Alpha in September 2023 to help them design and implement the data pipeline they needed.  
-We followed a **team augmentation** approach: our Principal Engineering Consultant, Luca Palmieri, embedded into Aleph 
-Alpha's team for three months to help them deliver the project.
+We partnered with Aleph Alpha in September 2023 to help them design and implement the data pipeline they needed. 
+We followed a **team augmentation** approach. Our Principal Engineering Consultant, Luca Palmieri, embedded into 
+Aleph Alpha's team for three months to ensure they could deliver the project.  
 
-We took responsibility over four key areas: architecture, infrastructure, Rust and mentoring.
+We took responsibility in four key areas: architecture, infrastructure, Rust and mentoring.
 
 ### Architecture
 
