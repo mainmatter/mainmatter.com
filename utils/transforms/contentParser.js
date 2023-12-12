@@ -36,7 +36,7 @@ module.exports = function (value, outputPath) {
     /**
      * Get all the headings inside the post
      */
-    const articleHeadings = [...document.querySelectorAll("article h2")];
+    const articleHeadings = [...document.querySelectorAll("article h2"), ...document.querySelectorAll("article h3"), ...document.querySelectorAll("article h4")];
     if (articleHeadings.length) {
       /**
        * Create an anchor element inside each post heading
