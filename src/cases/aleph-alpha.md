@@ -94,7 +94,7 @@ The final infrastructure stack looked like this:
 ### Rust
 
 The entire data pipeline was built in Rust. That's the reason Aleph Alpha reached out to Mainmatter in the first place:
-they needed someone with deep expertise in Rust to help them deliver the project.  
+They needed someone with deep expertise in Rust to help them deliver the project.  
 
 Rust is a great fit for this kind of project: it delivers high and predictable performance, while giving you 
 precise control over the memory layout of your data. That efficiency is critical when you are dealing with 
