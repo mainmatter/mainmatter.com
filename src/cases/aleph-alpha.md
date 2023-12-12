@@ -48,7 +48,7 @@ We took responsibility in four key areas: architecture, infrastructure, Rust and
 
 You need to **distribute the workload** across multiple machines to run such a large-scale pipeline to completion in a 
 reasonable amount of time. That's how you fully leverage the capabilities of modern 
-cloud computing: going from zero to **thousands of CPUs** for a few hours, then back to zero.  
+cloud computing: Going from zero to **thousands of CPUs** for a few hours, then back to zero.  
 
 The system as a whole must also satisfy a variety of other constraints:
 - **Fault-tolerance**: if a machine fails, the pipeline should be able to recover and continue processing
