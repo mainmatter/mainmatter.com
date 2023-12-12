@@ -120,11 +120,11 @@ Throughout the project we came to appreciate a few more advantages of using Rust
 ### Mentoring
 
 We split our time between delivery and mentoring.  
-Mainmatter's Principal Engineering Consultant, Luca Palmieri, spent several hours a week pairing with Aleph Alpha's
-team: we worked on the project together, discussing design decisions, reviewing code, and sharing knowledge.  
+Luca spent several hours a week pairing with Aleph Alpha's team, working together on the project, discussing 
+design decisions, reviewing code and sharing knowledge.
 
 Aleph Alpha's team is experienced and highly talented. Nonetheless, the entire project was on an extremely
-tight schedule: having someone with the deep expertise on the team allowed them to **move faster** and **avoid costly
+tight schedule: Having someone with the deep expertise on the team allowed them to **move faster** and **avoid costly
 mistakes**.
 
 ## Outcome
