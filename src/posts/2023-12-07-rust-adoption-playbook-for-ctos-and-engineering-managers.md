@@ -49,7 +49,7 @@ This article is our attempt at filling that gap.
   - [The state of the Rust job market](#the-state-of-the-rust-job-market)
   - [Job boards](#job-boards)
 - [Wrapping up](#wrapping-up)
-- [Appendix: Learning resources](#appendix-learning-resources)
+- [Appendix: Learning resources](#appendix:-learning-resources)
 
 ## Building a team for your first Rust project
 
