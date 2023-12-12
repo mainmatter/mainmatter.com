@@ -20,7 +20,7 @@ They're one of the few major players in the AI space based (and funded) entirely
 ## The challenge
 
 Aleph Alpha wanted to train the next generation of their AI foundational models.  
-The name of the game in the world of AI is data: you want to train using a **large high-quality dataset** to 
+The name of the game in the world of AI is data: You want to train using a **large high-quality dataset** to 
 get the best results.
 
 But processing large amount of data is a challenge in itself: when you are dealing with **petabytes** of text 
