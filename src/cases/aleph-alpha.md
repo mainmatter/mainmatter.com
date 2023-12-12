@@ -15,7 +15,7 @@ permalink: false
 ## About Aleph Alpha
 
 Aleph Alpha is a German AI startup, a leader in the field of explainable and trustworthy sovereign AI.  
-They're one of the few major players in the AI space to be based (and funded) entirely in Europe.
+They're one of the few major players in the AI space based (and funded) entirely in Europe.
 
 ## The challenge
 
