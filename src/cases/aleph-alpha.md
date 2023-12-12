@@ -99,7 +99,8 @@ They needed someone with deep expertise in Rust to help them deliver the project
 Rust is a great fit for this kind of project as it delivers high and predictable performance, while giving you
 precise control over the memory layout of your data. That efficiency is critical when dealing with
 such a large dataset and you want to make sure you are not wasting CPU cycles or RAM.  
-But the Aleph Alpha team already knows all this: They've been using Rust to power their core product offering for years.
+But Aleph Alpha's engineering team already knows all this: They've been using Rust to power their core product 
+offering for years.
 
 Throughout the project we came to appreciate a few more advantages of using Rust:
 
@@ -107,12 +108,14 @@ Throughout the project we came to appreciate a few more advantages of using Rust
   That's even _more_ important on a project with such an aggressive timeline: you don't want to waste time debugging
   runtime errors or memory unsafety bugs. The more static analysis the compiler can do for you, the more confident
   you can be that your code is correct.
-- **Interoperability**: Python is king when it comes to the size of its AI ecosystem. Aleph Alpha's AI researchers
-  were working very closely with us on the project: tuning parameters, testing filters, checking data quality, etc. 
-  Using Rust's excellent Python interop capabilities, we empowered them to prototype in Python (the language they
-  were familiar with): we would then plug the Python code into the Rust pipeline (thanks [`pyo3`](https://crates.io/crates/pyo3)!) 
-  to verify it and run it at scale. If the change was desirable, and we needed better performance, we would then
-  port the Python code over to Rust.
+- **Interoperability**: Aleph Alpha's AI researchers were working very closely with us on the project: tuning parameters, 
+  testing filters, checking data quality, etc. Researchers, unlike engineers, are not familiar with Rust;
+  Python is king in the AI research ecosystem.  
+  We tried to make their lives as easy as possible while minimising the amount of time spent on rewrites.
+  Researchers prototyped in Python: Using Rust's excellent Python interop capabilities, we would then 
+  plug the Python code into the Rust pipeline (thanks [`pyo3`](https://crates.io/crates/pyo3)!) 
+  to verify its functionality and run it at scale. If the change was desirable, and we needed better performance, 
+  we would then port the Python code over to Rust. 
 
 ### Mentoring
 
