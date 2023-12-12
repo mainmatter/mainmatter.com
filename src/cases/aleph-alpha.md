@@ -32,7 +32,7 @@ dataset had to be processed and ready to go by the time cluster was available. T
 The plan: Build a **distributed data pipeline in Rust** in order to process the data in a reasonable amount of time.
 
 But, as all startups, Aleph Alpha has to deal with **limited resources**.  
-Their Engineering team must ensure that the existing product platform is running smoothly: they won't neglect 
+Their engineering team must ensure that the existing product platform is running smoothly: They won't neglect 
 their existing customers for the sake of a new project!  
 That's where we at Mainmatter come into the picture.
 
