@@ -76,10 +76,10 @@ from one cloud region to another, etc.
 We worked with Aleph Alpha's team to assess a few different cloud providers and pick the one that would best fit the
 needs of the system as well as the company's long-term strategy: [StackIt](https://stackit.de/), a German cloud provider.
 
-We chose to rely on managed versions of Open Source software: we were able to transfer knowledge built over years of
-experience with these tools to Aleph Alpha's team, while still benefiting from the ease of use of a managed service. 
-At the same time, it reduced the overall infrastructure risk for the project: if we were to run into an unsolvable
-issue with StackIt's managed offering, we could always fall back to the Open Source version or switch to another
+We chose to rely on managed versions of Open Source software. We were able to transfer knowledge built over years 
+of experience with these tools to Aleph Alpha's team, while still benefiting from the ease of use of a managed service. 
+At the same time, it reduced the overall infrastructure risk for the project. If we were to run into an unsolvable 
+issue with StackIt's managed offering, we could always fall back to the Open Source version or switch to another 
 provider.
 
 The final infrastructure stack looked like this:
