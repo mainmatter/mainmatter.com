@@ -1,6 +1,7 @@
 ---
 title: Web-based Services in Rust
-format: "Workshop: 2-3 days, on-site or remote"
+format: "Workshop: 2-3 days"
+subtext: "Bookable for teams – on-site or remote"
 description: <p>Rust is an excellent programming language for developing web
   applications and web services due to its concurrency approach, tool
   flexibility, library availability, and rich ecosystem. As a result, you can
