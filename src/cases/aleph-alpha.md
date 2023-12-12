@@ -23,14 +23,13 @@ Aleph Alpha wanted to train the next generation of their AI foundational models.
 The name of the game in the world of AI is data: You want to train using a **large high-quality dataset** to 
 get the best results.
 
-But processing large amount of data is a challenge in itself: when you are dealing with **petabytes** of text 
-you can't just spin up a single large server to process it all—**it would take forever**.  
-And "forever" is not an option when you are working in the AI space: you want to **iterate quickly** to
-improve your models and make sure your customers are always building on top of the latest and greatest. 
-Aleph Alpha had booked a GPU cluster to train their models a few months in advance: the dataset had to be
-processed and ready to go by the time the cluster was available. The clock was ticking!  
-
-The plan: build a **distributed data pipeline in Rust** in order to process the data in a reasonable amount of time. 
+Processing a lot of data is a challenge in itself. When you are dealing with **petabytes** of text, 
+you can't just spin up a single large server to process it all. That would take **forever** and **forever** 
+is not an option when you're working in the AI space. You have to **iterate quickly** to improve your models 
+and ensure that you as well as your customers are always building with the latest and greatest.   
+Aleph Alpha had booked a GPU cluster to train their models a few months in advance. The 
+dataset had to be processed and ready to go by the time cluster was available. The clock was ticking!  
+The plan: Build a **distributed data pipeline in Rust** in order to process the data in a reasonable amount of time.
 
 But, as all startups, Aleph Alpha has to deal with **limited resources**.  
 Their Engineering team must ensure that the existing product platform is running smoothly: they won't neglect 
