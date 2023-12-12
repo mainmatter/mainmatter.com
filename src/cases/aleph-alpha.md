@@ -96,11 +96,10 @@ The final infrastructure stack looked like this:
 The entire data pipeline was built in Rust. That's the reason Aleph Alpha reached out to Mainmatter in the first place:
 They needed someone with deep expertise in Rust to help them deliver the project.  
 
-Rust is a great fit for this kind of project: it delivers high and predictable performance, while giving you 
-precise control over the memory layout of your data. That efficiency is critical when you are dealing with 
-such a large dataset: you want to make sure you are not wasting CPU cycles or RAM.  
-Furthermore, Aleph Alpha's team was already familiar with it: they've been using Rust to power their core product
-offering for years.
+Rust is a great fit for this kind of project as it delivers high and predictable performance, while giving you
+precise control over the memory layout of your data. That efficiency is critical when dealing with
+such a large dataset and you want to make sure you are not wasting CPU cycles or RAM.  
+But the Aleph Alpha team already knows all this: They've been using Rust to power their core product offering for years.
 
 Throughout the project we came to appreciate a few more advantages of using Rust:
 
