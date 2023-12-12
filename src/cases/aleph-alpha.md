@@ -83,13 +83,13 @@ issue with StackIt's managed offering, we could always fall back to the Open Sou
 provider.
 
 The final infrastructure stack looked like this:
-- **Object storage**: we used StackIt's managed object storage to store the input and output data for the pipeline.
+- **Object storage**: We used StackIt's managed object storage to store the input and output data for the pipeline.
   The interface was compatible with the S3 API, which allowed us to rely on AWS' battle-tested Rust SDK.
-- **Message broker**: we picked RabbitMQ to pass messages between the different components
+- **Message broker**: We picked RabbitMQ to pass messages between the different components
   of the pipeline. [`lapin`](https://crates.io/crates/lapin) served well as a Rust client.
-- **Metadata storage**: we used PostgreSQL to store metadata about the pipeline's progress. We relied on
+- **Metadata storage**: We used PostgreSQL to store metadata about the pipeline's progress. We relied on
   [`sqlx`](https://crates.io/crates/sqlx) to interact with the database from Rust.
-- **Compute**: we relied on StackIt's managed Kubernetes offering to run the pipeline.
+- **Compute**: We relied on StackIt's managed Kubernetes offering to run the pipeline.
 
 ### Rust
 
