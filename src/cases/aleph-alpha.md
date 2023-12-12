@@ -68,6 +68,11 @@ The underlying provider determines the capabilities you have at your disposal an
 the maximum download/upload throughput you can expect from a single data bucket, the cost of moving a GB of data
 from one region to another, etc.
 
+You can't architect a system in a vacuum: You need to take into the **infrastructure** it will run on. 
+The underlying provider determines the capabilities and constraints you have to work with, such as the maximum 
+download / upload throughput you can expect from a single data bucket or the cost of moving a GB of data 
+from one cloud region to another, etc.
+
 We worked with Aleph Alpha's team to assess a few different cloud providers and pick the one that would best fit the
 needs of the system as well as the company's long-term strategy: [StackIt](https://stackit.de/), a German cloud provider.
 
