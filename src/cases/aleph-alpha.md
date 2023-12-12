@@ -51,11 +51,11 @@ reasonable amount of time. That's how you fully leverage the capabilities of mod
 cloud computing: Going from zero to **thousands of CPUs** for a few hours, then back to zero.  
 
 The system as a whole must also satisfy a variety of other constraints:
-- **Fault-tolerance**: if a machine fails, the pipeline should be able to recover and continue processing
+- **Fault-tolerance**: If a machine fails, the pipeline should be able to recover and continue processing
   from where it left off, without losing any data.
-- **Cost-efficiency**: storage fees, egress fees, compute fees... all of these can add up quickly.  
+- **Cost-efficiency**: Storage fees, egress fees, compute fees... all of these can add up quickly.  
   The system must be designed with cost-efficiency in mind from the get-go.
-- **Data lineage**: it should be possible to trace every piece of output data back to its source. This is
+- **Data lineage**: It should be possible to trace every piece of output data back to its source. This is
   critical for debugging and auditing purposes.
 
 We worked closely with Aleph Alpha's team to design a system that would satisfy all of these constraints, while 
