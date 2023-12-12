@@ -128,9 +128,6 @@ tight schedule: Having someone with the deep expertise on the team allowed them 
 mistakes**.
 
 ## Outcome
-
-The project was a success: we assembled a high-quality multilingual dataset with over **X trillion tokens**.  
-We also managed to design, develop and run the data pipeline on time and on budget: Aleph Alpha didn't have to delay 
-their training schedule by a single day. The data was ready to go by the time the GPU cluster was available.  
-
-We look forward to working together again in the future!
+We successfully assembled a high-quality multilingual dataset with more than **X trillion tokens**. 
+The data pipeline was also designed, developed and ran on time and on budget – Aleph Alpha didn't have to delay 
+their training schedule by a single day. The data was ready to go by the time the GPU cluster was available.
