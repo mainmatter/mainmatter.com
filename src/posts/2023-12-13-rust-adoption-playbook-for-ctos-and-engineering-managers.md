@@ -133,7 +133,7 @@ just to end up with a blank page when you try to write the first non-trivial
 program on your own.
 
 We have collected a vetted list of resources in the
-[Appendix](#appendix-learning-resources).
+[Appendix](#appendix:-learning-resources).
 
 #### Training
 
