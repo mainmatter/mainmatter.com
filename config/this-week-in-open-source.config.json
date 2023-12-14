@@ -20,7 +20,8 @@
         "rust-lang/hashbrown",
         "marcoow/rust_rest",
         "rust-lang/www.rust-lang.org",
-        "dimforge/rapier.rs"
+        "dimforge/rapier.rs",
+        "marcoow/pacesetter"
       ]
     },
     {
@@ -176,6 +177,7 @@
         "ember-learn/ember-jsonapi-docs",
         "embroider-build/release-plan",
         "mansona/create-release-plan-setup",
+        "ef4/lerna-changelog",
         "ef4/lerna-changelog"
       ]
     },
