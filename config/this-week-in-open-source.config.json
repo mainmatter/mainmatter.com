@@ -20,7 +20,8 @@
         "rust-lang/hashbrown",
         "marcoow/rust_rest",
         "rust-lang/www.rust-lang.org",
-        "dimforge/rapier.rs"
+        "dimforge/rapier.rs",
+        "marcoow/pacesetter"
       ]
     },
     {
@@ -77,7 +78,8 @@
         "sveltejs/kit",
         "paoloricciuti/sveltekit-view-transition",
         "paoloricciuti/sveltekit-view-transition",
-        "theetrain/this-week-in-svelte"
+        "theetrain/this-week-in-svelte",
+        "mainmatter/svelte-promise-modals"
       ]
     },
     {
@@ -172,7 +174,11 @@
         "ember-learn/algolia-index-update-scripts",
         "ember-learn/algolia-index-update-scripts",
         "ember-learn/algolia-index-update-scripts",
-        "ember-learn/ember-jsonapi-docs"
+        "ember-learn/ember-jsonapi-docs",
+        "embroider-build/release-plan",
+        "mansona/create-release-plan-setup",
+        "ef4/lerna-changelog",
+        "ef4/lerna-changelog"
       ]
     },
     {
@@ -484,9 +490,14 @@
     "mansona/ember-vite-app",
     "mansona/boilerplate-update",
     "mansona/boilerplate-update",
-    "mansona/boilerplate-update"
+    "mansona/boilerplate-update",
+    "mainmatter/svelte-workshop",
+    "mainmatter/svelte-workshop",
+    "rust-lang/this-week-in-rust",
+    "Terminal49/API",
+    "Terminal49/API"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2023-10-29..2023-11-05"
+  "last_date": "2023-12-03..2023-12-10"
 }

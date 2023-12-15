@@ -1,6 +1,7 @@
 ---
 title: Introduction to Rust for Web Developers
-format: "Workshop: 2-3 days, on-site or remote"
+format: "Workshop: 2-3 days"
+subtext: "Bookable for teams – on-site or remote"
 description: <p>According to the Stack Overflow survey, Rust is one of the most
   beloved programming languages. In recent years, it has also gained popularity.
   There has never been a better time to become familiar with Rust! Learning a
