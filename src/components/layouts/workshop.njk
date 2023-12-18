@@ -68,7 +68,7 @@ layout: 'base'
     <div class="workshop-authors">
     <div class="container container--lg">
     <div class="workshop__content post__content--workshop">
-      <h2 class="workshop-topics__heading">Your mentor(s)</h2>
+      <h2 class="workshop-topics__heading">Your mentor{%- if (leads | default([])).length > 1 -%}s{%- endif -%}</h2>
       {%- for lead in leads -%}
         <div class="author__wrapper">
           <div class="author text--xs">
