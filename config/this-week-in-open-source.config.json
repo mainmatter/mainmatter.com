@@ -423,6 +423,12 @@
       "repos": [
         "project-forms/project-forms.github.io"
       ]
+    },
+    {
+      "name": "Project",
+      "repos": [
+        "project-forms/project-forms.github.io"
+      ]
     }
   ],
   "header": [],
