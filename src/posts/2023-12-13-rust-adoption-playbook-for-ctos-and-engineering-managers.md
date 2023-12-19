@@ -214,7 +214,7 @@ Rust-specific channels. We recommend the following:
   for the latest thread at the time of writing.
 - Rust-focused events are a great place to find Rust developers. You can find a
   list of upcoming events, covering both conferences and meetups, on
-  [This week in Rusts](https://this-week-in-rust.org/).
+  [This week in Rust](https://this-week-in-rust.org/).
 
 There are also recruiting agencies who are starting to specialize in Rust. We
 don't have any specific recommendation at this point, but it might be worth
