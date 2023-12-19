@@ -1,16 +1,17 @@
 ---
-title: "A crash-course to build production-ready APIs in Rust"
+title: "A crash-course on how to build production-ready API services in Rust"
 format: "Workshop: 3 days, on-site or remote"
-description: <p>Rust is an excellent programming language for developing APIs.
-  You can build services that are fast, reliable, and cost-effective. In fact,
-  using Rust to write services can tremendously reduce your operating costs.
-  However, the main challenge is knowing where to start. This workshop guides
-  you through the process. At the end of the journey, you'll know enough to set
-  up a production-ready API using the Axum framework.</p></br>
+description: <p>Rust is an excellent programming language for developing API
+  services. You can build applications that are fast, reliable, and
+  cost-effective. In fact, using Rust to write services can tremendously reduce
+  your operating costs. However, the main challenge is knowing where to start.
+  This workshop guides you through the process. At the end of the journey,
+  you'll know enough to set up a production-ready HTTP API using the Axum
+  framework.</p></br>
 
   <p>This workshop is designed for developers who know the basics of Rust and
-  want to learn more about API development using Rust. Having written Rust in a
-  production environment is not a requirement.</p>
+  want to learn more about backend development using Rust. Having written Rust
+  in a production environment is not a requirement.</p>
 hero:
   image: "/assets/images/workshops/web-based-services-in-rust/header-background.jpg"
   imageAlt: "Several cogs and mechanical elements in purple."
@@ -20,7 +21,8 @@ topics:
   - heading: Hello Axum!
     text: >
       Axum is the web framework we will be using throughout the workshop.  
-      We'll go over its architecture and where it fits in the broader Rust ecosystem.
+      We'll go over its architecture and where it fits in the broader Rust
+      ecosystem.
   - heading: Your first endpoint
     text: >
       We'll learn enough about Axum to write an API with a single endpoint that
@@ -35,8 +37,8 @@ topics:
       We'll expand our API with new endpoints that leverage route parameters,
       query parameters and JSON bodies.  
       It'll be your introduction to the `FromRequest` trait and how to use it to
-      write extractors, the key mechanism to inject data from the  incoming request
-      into your handlers.
+      write extractors, the key mechanism to inject data from the incoming
+      request into your handlers.
   - heading: Telemetry
     text: >
       At this point, the API is starting to get complex and you're likely to run
@@ -51,7 +53,7 @@ topics:
       to access it from our handlers.
   - heading: Hierarchical configuration
     text: >
-      As soon as you start doing something non-trivial, you'll need to  configure
+      As soon as you start doing something non-trivial, you'll need to configure
       your application with parameters that are specific to the environment it's
       running in.  
       We'll learn how to use the `config` crate to load configuration from
@@ -64,8 +66,7 @@ topics:
       endpoints that interact with the database.
   - heading: External state, working with third-party APIs
     text: >
-      We'll learn how to use the `reqwest` crate to call third-party
-      APIs.  
+      We'll learn how to use the `reqwest` crate to call third-party APIs.  
       We'll cover connection management, retries and timeouts, as well as how to
       test endpoints that interact with third-party services via `wiremock`.
   - heading: Sharing logic between endpoints via middlewares
@@ -77,8 +78,8 @@ topics:
     text: >
       Most platforms require you to package your application as a Docker image
       for deployment. We'll cover how to write a Dockerfile to package our API,
-      with a focus on effective caching (via `cargo-chef`) and techniques to  minimise
-      the size of the final image.
+      with a focus on effective caching (via `cargo-chef`) and techniques to
+      minimise the size of the final image.
 leads:
   - name: Luca Palmieri
     title: Principal Engineering Consultant
