@@ -1,5 +1,5 @@
 ---
-title: "A crash-course on how to build production-ready API services in Rust"
+title: "Build production-ready API services in Rust"
 format: "Workshop: 3 days, on-site or remote"
 description: <p>Rust is an excellent programming language for developing API
   services. You can build applications that are fast, reliable, and
