@@ -20,7 +20,7 @@ topics:
   - heading: Hello Axum!
     text: >
       Axum is the web framework we will be using throughout the workshop.  
-      We'll go over its architecture and where it fits in the broader  Rust ecosystem.
+      We'll go over its architecture and where it fits in the broader Rust ecosystem.
   - heading: Your first endpoint
     text: >
       We'll learn enough about Axum to write an API with a single endpoint that
@@ -64,7 +64,7 @@ topics:
       endpoints that interact with the database.
   - heading: External state, working with third-party APIs
     text: >
-      We'll learn how to use the `reqwest` crate to connect to call third-party
+      We'll learn how to use the `reqwest` crate to call third-party
       APIs.  
       We'll cover connection management, retries and timeouts, as well as how to
       test endpoints that interact with third-party services via `wiremock`.
