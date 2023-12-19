@@ -16,7 +16,7 @@ hero:
   image: "/assets/images/workshops/web-based-services-in-rust/header-background.jpg"
   imageAlt: "Several cogs and mechanical elements in purple."
 og:
-  image: /assets/images/workshops/web-based-services-in-rust/og-image.jpg
+  image: /assets/images/workshops/production-ready-api-services-in-rust/og-image.jpeg
 topics:
   - heading: Hello Axum!
     text: >
