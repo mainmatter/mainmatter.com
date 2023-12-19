@@ -15,11 +15,13 @@ og:
 topics:
   - heading: Learn by doing
     text: >
-      The workshop is organised as a series of exercises. You'll be learning by doing!
-      Each concept will be introduced with a short presentation, followed by a hands-on exercise with tests
-      to make sure you've wrapped your head around it.  
-      By the end of the workshop, you'll have built a small command-line application in Rust: a simple
-      JIRA clone that  can be used to manage a backlog of tasks.
+      The workshop is organised as a series of exercises. You'll be learning by
+      doing! Each concept will be introduced with a short presentation, followed
+      by a hands-on exercise with tests to make sure you've wrapped your head
+      around it.  
+      By the end of the workshop, you'll have built a small command-line
+      application in Rust: a simple JIRA clone that can be used to manage a
+      backlog of tasks.
 leads:
   - name: Luca Palmieri
     title: Principal Engineering Consultant
