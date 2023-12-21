@@ -1,0 +1,101 @@
+---
+layout: base
+title: 
+description: 
+permalink: /ruby-consulting/
+og:
+  image: /assets/images/ruby/lp-ruby-consulting-og-image.jpg
+---
+
+{% from "image-banner-with-text.njk" import imageBannerWithText %}
+{% from "recent-posts.njk" import recentPosts %}
+{% from "logo-list.njk" import logoList %}
+{% from "cta-link.njk" import ctaLink %}
+{% from "scroll-slides.njk" import scrollSlides %}
+{% from "client-cards.njk" import clientCards %}
+
+<section class="color-hero color-hero--purple" data-background-color="purple">
+  <div class="color-hero__image-wrapper">
+    {% image '/assets/images/photos/notebook-on-table.jpg', 'Notebook on a table, seen from the side', '100vw', 'eager',
+    'color-hero__image', [760, 1440, 1920] %}
+  </div>
+  <div class="color-hero__overlay"></div>
+  <div class="color-hero__container container container--lg color-hero__container--center">
+    <div class="color-hero__main">
+      {% set imagePath %}/assets/images/logos/ruby.svg{% endset %}
+      <img class="expertise__logo" src="{{ imagePath }}" alt="Ruby logo"/>
+      <h1 class="color-hero__title color-hero__title--full ">Lorem ipsum Ruby dolor sit amet, consectetur adipiscing elit</h1>
+      <div class="color-hero__text color-hero__text--large">
+        <p>Praesent orci ante, cursus eu feugiat ut, posuere sed turpis. Suspendisse non congue magna. Pellentesque accumsan, orci ut euismod convallis, ipsum velit maximus neque.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="split-content">
+  <div class="container container--lg">
+    <h2 class="h5">Rust & Mainmatter</h2>
+    <h3 class="split-content__subheading h2">A unique skillset</h3>
+    <div class="split-content__content">
+      <div class="split-content__text">
+        <p>Cras eleifend vulputate laoreet. Phasellus non risus molestie, convallis lorem ut, commodo quam. </p>
+        <p>Nullam in cursus nisi. Nunc justo risus, lacinia ut viverra eget, finibus eu magna. In vel justo in est gravida aliquam a sed lacus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set logoCompanies = [
+  'Rust Foundation',
+  'arm',
+  'Huawei',
+  'Ferrocene',
+  'Sentry',
+  'Jetbrains',
+  'Aleph Alpha',
+  'Google',
+  'Realm'
+] %}
+{% set title = 'Our clients benefit from ruby' %}
+{{ logoList(logoCompanies, title, "h4", "h5") }}
+
+{% set 'slide_1' = {
+  "color": "purple",
+  "title": "Lorem Ipsum",
+  "text": "Cras eleifend vulputate laoreet. Phasellus non risus molestie, convallis lorem ut, commodo quam. ",
+  "linkUrl": "#",
+  "linkText": "Click me"
+} %}
+
+{% set 'slide_2' = {
+  "color": "white",
+  "title": "Lorem Ipsum",
+  "text": "Cras eleifend vulputate laoreet. Phasellus non risus molestie, convallis lorem ut, commodo quam. ",
+  "linkUrl": "#",
+  "linkText": "Click me"
+} %}
+
+{% set 'slide_3' = {
+  "color": "aqua",
+  "title": "Lorem Ipsum",
+  "text": "Cras eleifend vulputate laoreet. Phasellus non risus molestie, convallis lorem ut, commodo quam. ",
+  "linkUrl": "#",
+  "linkText": "Click me"
+} %}
+
+{% set slides = [slide_1, slide_2, slide_3] %}
+{{ scrollSlides('ruby', slides, page.url) }}
+
+<section class="ruby-work">
+  <div class="work container container--xl">
+    <ul class="work__list">
+      {{ clientCards(['rail-europe', 'aleph-alpha', 'auditboard']) }}
+    </ul>
+  </div>
+</section>
+
+<section>
+
+{% include 'content/hero-grow-with-us.njk' %}
+
+</section>
