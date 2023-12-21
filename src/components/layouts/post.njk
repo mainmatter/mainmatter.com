@@ -76,8 +76,8 @@ layout: base
       {{ serviceCta(tags) }}
     </div>
     <nav aria-label="Post Pagination" class="prev-next pagination">
-      {% set previous = collections.posts | getPreviousCollectionItem(page) %}
-      {% set next = collections.posts | getNextCollectionItem(page) %}
+      {% set previous = collections.posts | getPreviousCollectionItem  %}
+      {% set next = collections.posts | getNextCollectionItem %}
       {% if previous %}
         <a class="pagination__previous" href="{{ previous.url }}">
           <p class="cta-link">
