@@ -8,18 +8,46 @@
 
 .split-content__content {
   display: flex;
+  align-items: stretch;
   flex-wrap: wrap;
   gap: 3.25rem;
+
+  &-alignstart {
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 3.25rem;
+  }
+}
+
+.split-content__text-triple {
+  width: 100%;
 }
 
 .split-content__feature {
   flex: 1 0 100%;
+
+  &-triple {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+  }
 }
 
 .split-content__author {
   max-width: 15rem;
   max-height: 15rem;
   clip-path: circle();
+
+  &-triple {
+  width: 10rem;
+  height: auto;
+  clip-path: circle();
+  }
 }
 
 .split-content__link {
