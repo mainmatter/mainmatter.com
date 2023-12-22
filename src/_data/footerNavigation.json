@@ -80,6 +80,10 @@
         {
           "text": "Svelte",
           "link": "/svelte-consulting/"
+        },
+        {
+          "text": "Ruby & Ruby on Rails",
+          "link": "/ruby-consulting/"
         }
       ]
     },
