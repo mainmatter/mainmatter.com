@@ -35,7 +35,7 @@ topics:
       such as HTML or error messages. We will explore how to use the
       <code>insta</code> crate to implement snapshot testing and manage the
       snapshots lifecycle.
-  - heading: "Isolating your tests: filesystem"
+  - heading: "Isolating your tests: the filesystem"
     text: >
       All tests in Rust share the same filesystem as the underlying host, a
       problematic situation when multiple tests want to interact with the "same"
