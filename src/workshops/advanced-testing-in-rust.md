@@ -62,14 +62,14 @@ topics:
       We will review, in particular, the <code>mockall</code> crate and the
       testing implications of using generics and dynamic dispatch for
       polymorphism.
-  - heading: "Custom test runners: What is a test?"
+  - heading: "Custom test runners: what is a test?"
     text: >
       We will take a look under the hood to understand how the Rust built-in
       testing framework works. Armed with this knowledge, we will explore the
       runtime implications of different approaches for test organisation. We
       will also cover alternative test  runners, such as
       <code>cargo-nextest</code>.
-  - heading: "Custom test runners: Executing logic before and after a test run"
+  - heading: "Custom test runners: executing logic before and after a test run"
     text: >
       It is often desirable to execute the same logic before and after each test
       in our suite. We will explore a variety of techniques to achieve this,
