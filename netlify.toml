@@ -141,17 +141,6 @@
   from = "/why-simplabs"
   to = "/"
 
-# redirect old "Web-based Services in Rust" landing page to regular workshop
-[[redirects]]
-  from = "https://rust-web-services-workshop.mainmatter.com/"
-  to = "https://mainmatter.com/services/workshops/web-based-services-in-rust/"
-  force = true
-
-  [[redirects]]
-  from = "https://rust-web-services-workshop.mainmatter.com/*"
-  to = "https://mainmatter.com/:splat"
-  force = true
-
 # serve "Svelte & SvelteKit" landing page for svelte-sveltekit-workshop.mainmatter.com
 [[redirects]]
   from = "https://svelte-sveltekit-workshop.mainmatter.com/"
@@ -165,18 +154,6 @@
   force = true
   status = 200
 
-# serve "Telemetry for Rust applications" landing page for rust-telemetry-workshop.mainmatter.com
-[[redirects]]
-  from = "https://rust-telemetry-workshop.mainmatter.com/"
-  to = "https://mainmatter.com/rust-application-telemetry-workshop/"
-  force = true
-  status = 200
-
-[[redirects]]
-  from = "https://rust-telemetry-workshop.mainmatter.com/*"
-  to = "https://mainmatter.com/:splat"
-  force = true
-  status = 200
 
 # serve 404 for all paths that don't exist
 [[redirects]]
