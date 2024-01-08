@@ -50,7 +50,6 @@ permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/p
     {%- set next -%}/blog/author/{{ paged.author.fileSlug }}/page/{{ paged.number + 1}}/{%- endset -%}
   {% endif %}
 
-
   {{ navPagination(previous, next) }}
 </div>
 
