@@ -12,6 +12,7 @@ og:
 {% from "scroll-slides.njk"
 import scrollSlides %}
 {% from "quote.njk" import quote %}
+{% from "social-list.njk" import socialList %}
 
 <html lang="{{ config.lang }}" prefix="og: http://ogp.me/ns#">
   <head>
@@ -374,7 +375,38 @@ import scrollSlides %}
           </div>
         </section>
       </main>
-      {% include "global/footer.njk" %}
+      <footer class="footer">
+  <div class="footer__container container container--xl">
+    <div class="footer__logo">
+      <a class="footer__brand" href="https://mainmatter.com/">
+        {% include 'svg/logo.njk' %}
+        <span class="screenreader">Mainmatter</span>
+      </a>
+    </div>
+    <nav class="footer__nav" aria-label="Footer">
+      {% for menu in footerNavigation.menus %}
+        <div class="footer__menu footer-menu">
+          <h2 class="footer-menu__heading">{{ menu.heading }}</h2>
+          <ul class="footer-menu__list">
+            {% for item in menu.links %}
+              <li class="footer-menu__item">
+                <a class="footer-menu__link" href="https://mainmatter.com{{ item.link }}">
+                  {{ item.text }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    </nav>
+    <div class="footer__secondary">
+      <span class="footer__copyright">© 2014 - {% copyrightYear %} Mainmatter GmbH</span>
+      <a class="footer__inline-link" href="https://mainmatter.com/imprint/">Imprint</a>
+      <a class="footer__inline-link" href="https://mainmatter.com/privacy/">Privacy Policy</a>
+    </div>
+    {{ socialList(socials.socials, 'footer__socials')}}
+  </div>
+</footer>
       <div aria-live="polite" id="live-region" class="screenreader"></div>
       <div hidden>
         <p id="external-new-window-message">

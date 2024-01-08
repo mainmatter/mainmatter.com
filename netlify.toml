@@ -148,13 +148,6 @@
   force = true
   status = 200
 
-[[redirects]]
-  from = "https://svelte-sveltekit-workshop.mainmatter.com/*"
-  to = "https://mainmatter.com/:splat"
-  force = true
-  status = 200
-
-
 # serve 404 for all paths that don't exist
 [[redirects]]
   from = "/*"
