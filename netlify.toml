@@ -143,8 +143,13 @@
 
 # redirect old "Web-based Services in Rust" landing page to regular workshop
 [[redirects]]
-  from = "https://rust-web-services-workshop.mainmatter.com/*"
+  from = "https://rust-web-services-workshop.mainmatter.com/"
   to = "https://mainmatter.com/services/workshops/web-based-services-in-rust/"
+  force = true
+
+  [[redirects]]
+  from = "https://rust-web-services-workshop.mainmatter.com/*"
+  to = "https://mainmatter.com/svelte-sveltekit-workshop/:splat"
   force = true
 
 # serve "Svelte & SvelteKit" landing page for svelte-sveltekit-workshop.mainmatter.com
