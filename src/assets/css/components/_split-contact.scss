@@ -1,0 +1,50 @@
+.split-contact {
+  margin: 5rem 0 10rem;
+}
+
+.split-contact__subheading {
+  margin: 2rem 0 2.5rem;
+}
+
+.split-contact__content {
+  display: flex;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 3.25rem;
+}
+
+.split-contact__text {
+  width: 100%;
+}
+
+.split-contact__feature {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+
+.split-contact__author {
+  width: 10rem;
+  height: auto;
+  clip-path: circle();
+}
+
+.split-contact__link {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 48em) {
+  .split-contact {
+    margin: 6.25rem 0;
+  }
+
+  .split-contact__content {
+    flex-wrap: nowrap;
+    gap: 6.25rem;
+  }
+}
