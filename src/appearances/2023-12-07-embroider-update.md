@@ -7,4 +7,5 @@ channel: embereurope-q4-2023
 ---
 
 Chris Manson gave an update on the Embroider Initiative's progress so far. He
-discussed Vite support, challenges the team is facing and what's coming in the future.
+discussed Vite support, challenges the team is facing and what's coming in the
+future.
