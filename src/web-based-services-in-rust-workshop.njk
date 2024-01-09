@@ -18,37 +18,44 @@ og:
 
     <title>{{ title }}</title>
     {% include "global/fonts.njk" %}
-    <link rel="stylesheet" href="/assets/css/app.css" />
-    <link rel="stylesheet" href="/assets/css/workshop-lp.css" />
+    <link rel="stylesheet" href="/assets/css/app.css"/>
+    <link rel="stylesheet" href="/assets/css/workshop-lp.css"/>
     <script src="/assets/js/app.js" defer></script>
-    {% block head %}{{ head | safe }}{% endblock %}
+    {% block head %}{{ head | safe }}
+    {% endblock %}
 
     {% include "global/meta.njk" %}
     {% include "global/icons.njk" %}
 
     <script src='https://js.tito.io/v2/' async></script>
     <script defer data-domain="rust-web-services-workshop.mainmatter.com" src="https://plausible.io/js/script.tagged-events.outbound-links.js"></script>
-    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    <script>
+      window.plausible = window.plausible || function () {
+        (window.plausible.q = window.plausible.q || []).push(arguments)
+      }
+    </script>
   </head>
   <body data-js-enabled="false">
     <a class="skip-link" href="#main">
       Skip to main content
     </a>
-    
+
     <nav class="nav nav--accent-aqua" id="nav">
       <div class="nav__wrapper container container--xl">
         <div class="nav__logo">
-          <h1 class="nav__brand">
-            {% include 'svg/logo.njk' %}
-            <span class="screenreader">Mainmatter</span>
-          </h1>
+          <a href="https://mainmatter.com">
+            <h1 class="nav__brand">
+              {% include 'svg/logo.njk' %}
+              <span class="screenreader">Mainmatter</span>
+            </h1>
+          </a>
         </div>
         <div class="nav__aside">
           <tito-button event="simplabs/web-based-services-in-rust2023">Book your ticket</tito-button>
         </div>
       </div>
     </nav>
-    
+
     <main id="main">
       <section class="color-hero color-hero--purple" data-background-color="purple">
         <div class="color-hero__image-wrapper">
@@ -56,7 +63,7 @@ og:
         </div>
         <div class="color-hero__overlay" data-color-hero></div>
         <div class="color-hero__container container container--lg color-hero__container--center workshop-lp-hero__container">
-          <img class="workshop-lp-hero__image" src="/assets/images/web-based-services-in-rust-workshop/rust-logo.svg" alt="Rust logo" />
+          <img class="workshop-lp-hero__image" src="/assets/images/web-based-services-in-rust-workshop/rust-logo.svg" alt="Rust logo"/>
           <div class="color-hero__main">
             <p class="workshop-hero__format">Workshop</p>
             <h1 class="workshop-lp-hero__title color-hero__title color-hero__title--full">Web-based Services in Rust</h1>
@@ -89,7 +96,7 @@ og:
           </div>
         </div>
       </div>
-      
+
       <section class="lp-section lang-features container container--lg">
         <h2 class="lang-features__title h5">Workshop description</h2>
         <div class="lang-features__list-wrapper">
@@ -174,21 +181,21 @@ og:
         "title": "Tokio, Hyper & Axum",
         "text": "We will begin by setting up a web server for our web application using the Axum framework, which is built on top of Tokio and Hyper. We will learn about the FromRequest and IntoResponse traits, Extractors, Routers, and how to connect JSON serialization and deserialization. If time permits, we will also create a web socket connection for our clients."
       } %}
-      
+
       {% set 'slide_2' = {
         "color": "purple",
         "tag": "Workshop Overview - Part 2",
         "title": "Tower & Middlewares",
         "text": "We will expand our application by creating middleware layers that handle crucial aspects such as sessions, authentication, timeouts, and compression. We will not only apply built-in middlewares but also create our own by implementing Tower's Service trait and learning more about futures and async."
       } %}
-      
+
       {% set 'slide_3' = {
         "color": "black",
         "tag": "Workshop Overview - Part 3",
         "title": "Tracing, Logging & Testing",
         "text": "In the final part, we will examine how to gain insights into our application's behavior and perform performance and correctness tests. Ultimately, we will be able to publish our application on AWS, Shuttle, and other services."
       } %}
-      
+
       {% set slides = [slide_1, slide_2, slide_3] %}
       {{ scrollSlides('workshops', slides, page.url) }}
 
@@ -199,7 +206,8 @@ og:
           "image": "/assets/images/web-based-services-in-rust-workshop/zenon-huskic.png",
           "alt": "Zenon Huskicć, smiling at the camera wearing a grey shirt",
           "loading": "lazy"
-        } %} {{ quote(content) }}
+        } %}
+        {{ quote(content) }}
       </div>
 
       <section class="color-hero color-hero--purple" data-background-color="purple">
@@ -226,7 +234,9 @@ og:
       <p id="external-new-window-message">Opens external website in a new window.</p>
     </div>
     <script>
-      document.querySelector('body').setAttribute('data-js-enabled', 'true');
+      document
+        .querySelector('body')
+        .setAttribute('data-js-enabled', 'true');
     </script>
   </body>
 </html>
