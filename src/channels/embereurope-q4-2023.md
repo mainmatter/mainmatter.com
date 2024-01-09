@@ -5,4 +5,4 @@ url: https://www.meetup.com/de-DE/ember-europe/
 ---
 
 The Ember.js Europe meetup brings together the Ember community from all of
-Europe once a quarter.
+Europe once a quarter. Ember Europe is run by Mainmatter and Intercom.
