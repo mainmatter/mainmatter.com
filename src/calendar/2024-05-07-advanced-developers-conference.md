@@ -8,6 +8,5 @@ color: purple
 ---
 
 ADC 24 is taking place in Regensburg's Jahnstadion on May 6th to 8th. Mainmatter
-Founder Marco Otte-Witte will discuss the state of the web development ecosystem
-for Rust, the challenges that come with adopting it, and share some real-world
-examples to show what’s possible in his talk "Get Ready to Rustle".
+Founder Marco Otte-Witte will present the state of the web development ecosystem
+for Rust, reasons for adopting Rust for web developments, challenges that come with that, and share some real-world examples to show what’s possible in his talk "Get Ready to Rustle".
