@@ -2,7 +2,7 @@
 title: "Rust for the Web"
 image: "/assets/images/calendar/2024-02-07-rust-for-the-web/rust-for-the-web.jpg"
 location: "London"
-url: https://www.meetup.com/it-IT/rust-london-user-group/events/298413388/?isFirstPublish=true
+url: https://www.meetup.com/it-IT/rust-london-user-group/events/298413388/
 kind: meetup
 color: purple
 ---
