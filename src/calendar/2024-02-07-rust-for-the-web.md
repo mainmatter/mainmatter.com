@@ -7,8 +7,6 @@ kind: meetup
 color: purple
 ---
 
-We are running a meetup together with Shuttle and Vortexa to share learnings and
-success stories from using Rust in business. The event will be hosted by
-TrueLayer in London. Our Principal Engineering Consultant, Luca Palmieri, will
-discuss the missing steps in the Rust playbook and explain how to turn your bet
-on Rust into a success in his talk.
+We are running an event together with Shuttle, Vortexa, and the Rust London meetup group focused on using Rust for web development. The event will be hosted by
+TrueLayer in London on Feb. 7th, 2024. Our Principal Engineering Consultant, Luca Palmieri, will
+present the playbook for successful Rust adoption as well as moderate a panel talking about success stories and challenges with David Cole from Arwen.ai and Nodar Daneliya  from Shuttle.
