@@ -13,6 +13,7 @@ og:
 {% from "cta-link.njk" import ctaLink %}
 {% from "scroll-slides.njk" import scrollSlides %}
 {% from "client-cards.njk" import clientCards %}
+{% from "quote.njk" import quote %}
 
 <section class="color-hero color-hero--purple" data-background-color="purple">
   <div class="color-hero__image-wrapper">
@@ -34,7 +35,7 @@ og:
 
 <section class="split-content">
   <div class="container container--lg">
-    <h2 class="h5">Rust & Mainmatter</h2>
+    <h2 class="h5">Ruby, Rails & Mainmatter</h2>
     <h3 class="split-content__subheading h2">A unique skillset</h3>
     <div class="split-content__content">
       <div class="split-content__text">
@@ -65,30 +66,43 @@ og:
 
 {% set 'slide_1' = {
   "color": "purple",
-  "title": "Lorem Ipsum",
-  "text": "Cras eleifend vulputate laoreet. Phasellus non risus molestie, convallis lorem ut, commodo quam. ",
-  "linkUrl": "#",
-  "linkText": "Click me"
+  "title": "Team Augmentation",
+  "text": "Hiring senior Ruby talent can be a challenge. We help overcome bottlenecks – our experts can merge with your in-house product teams to ensure the timely delivery of mission-critical projects. We’re more than hired hands – we mentor your team throughout the process to help lift productivity long after our collaboration ends.",
+  "linkUrl": "/contact/",
+  "linkClass": "plausible-event-name=Ruby+Contact",
+  "linkText": "Work with us!"
 } %}
 
 {% set 'slide_2' = {
   "color": "white",
-  "title": "Lorem Ipsum",
-  "text": "Cras eleifend vulputate laoreet. Phasellus non risus molestie, convallis lorem ut, commodo quam. ",
-  "linkUrl": "#",
-  "linkText": "Click me"
+  "title": "Tech Stack Modernization",
+  "text": "Updating your  codebase shouldn’t stop your development in its tracks. We help you upgrade legacy code and leave technical debt behind – all while your team stays focussed on the roadmap. Our experts can take on the whole upgrade from the reviewing, planning and implementation – at a cost advantage over a complete rewrite later down the line. And we only call it a job well done when we leave your team with the know-how to keep up with future versions.",
+  "linkUrl": "/contact/",
+  "linkClass": "plausible-event-name=Ruby+Contact",
+  "linkText": "Work with us!"
 } %}
 
 {% set 'slide_3' = {
   "color": "aqua",
-  "title": "Lorem Ipsum",
-  "text": "Cras eleifend vulputate laoreet. Phasellus non risus molestie, convallis lorem ut, commodo quam. ",
-  "linkUrl": "#",
-  "linkText": "Click me"
+  "title": "Custom Development",
+  "text": "We design and develop complete web apps with Ruby on Rails so your team can focus on other initiatives. We are experts in building large and complex web apps and have proven our capabilities in many successful projects with international clients. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.",
+  "linkUrl": "/contact/",
+  "linkClass": "plausible-event-name=Ruby+Contact",
+  "linkText": "Work with us!"
 } %}
 
 {% set slides = [slide_1, slide_2, slide_3] %}
 {{ scrollSlides('ruby', slides, page.url) }}
+
+<div class="container container--lg quote-section">
+  {% set 'content' = {
+    "text": "We started working with Mainmatter to build a state-of-the-art mobile web app from the ground up and it was an absolute success! Not only are they web specialists, but their expertise in development practices and agile processes made our collaboration an absolute delight.",
+    "source": "Carl Anderson, General Manager at Trainline Europe",
+    "image": "/assets/images/photos/carl-anderson.jpg",
+    "alt": "Carl Anderson, looking at the camera wearing a checkered blue/grey shirt and white T-shirt",
+    "loading": "lazy"
+  } %} {{ quote(content) }}
+</div>
 
 <section class="ruby-work">
   <div class="work container container--xl">
