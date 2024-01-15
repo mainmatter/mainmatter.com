@@ -13,6 +13,8 @@ tagline: |
   <p>This post is designed to help you form a solid mental model while working with Git both professionally and in an open source project, and how to ensure you are following best practices to make the process easier for everyone.</p>
 ---
 
+{% include "global/git-workshop-cta.njk" %}
+
 This topic was inspired by some of my pairing sessions with my colleague
 [Tobias Bieniek](https://twitter.com/tobiasbieniek) and the concepts laid out in
 this post have become invaluable to me while working with open source
@@ -341,5 +343,4 @@ merging, squashing, and rebasing.
 While everything in this post is completely optional, I hope that you can see
 the benefits and maybe adopt some of the ideas in your own workflow.
 
-If you need help with any of these topics or if you have questions we encourage
-you to [contact us](https://mainmatter.com/contact/)!
+{% include "global/git-workshop-cta.njk" %}

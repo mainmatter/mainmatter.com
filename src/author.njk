@@ -44,7 +44,7 @@ permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/p
     {%- endfor -%}
   </ol>
   {% if paged.first != true %}
-    {%- set previous -%}/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 2 %}/page/{{ paged.number }}/{% endif %}{%- endset -%}
+    {%- set previous -%}/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 2 %}page/{{ paged.number - 1}}/{% endif %}{%- endset -%}
   {% endif %}
   {% if paged.last != true %}
     {%- set next -%}/blog/author/{{ paged.author.fileSlug }}/page/{{ paged.number + 1}}/{%- endset -%}

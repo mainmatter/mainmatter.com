@@ -1,7 +1,7 @@
 ---
 layout: base
-title: 
-description: 
+title: We're veteran Ruby and Ruby on Rails Consultants
+description: Mainmatter works with teams that build on Ruby and Ruby on Rails. We help pushing through bottlenecks, provide a fresh perspective, and modernize tech stacks.
 permalink: /ruby-rails-consulting/
 og:
   image: /assets/images/ruby/lp-ruby-consulting-og-image.jpg
@@ -13,6 +13,7 @@ og:
 {% from "cta-link.njk" import ctaLink %}
 {% from "scroll-slides.njk" import scrollSlides %}
 {% from "client-cards.njk" import clientCards %}
+{% from "quote.njk" import quote %}
 
 <section class="color-hero color-hero--purple" data-background-color="purple">
   <div class="color-hero__image-wrapper">
@@ -24,9 +25,9 @@ og:
     <div class="color-hero__main">
       {% set imagePath %}/assets/images/logos/ruby.svg{% endset %}
       <img class="expertise__logo" src="{{ imagePath }}" alt="Ruby logo"/>
-      <h1 class="color-hero__title color-hero__title--full ">Lorem ipsum Ruby dolor sit amet, consectetur adipiscing elit</h1>
+      <h1 class="color-hero__title color-hero__title--full ">We're veteran Ruby and Ruby on Rails experts</h1>
       <div class="color-hero__text color-hero__text--large">
-        <p>Praesent orci ante, cursus eu feugiat ut, posuere sed turpis. Suspendisse non congue magna. Pellentesque accumsan, orci ut euismod convallis, ipsum velit maximus neque.</p>
+        <p>The Mainmatter team has been an active part of the Ruby and Rails communities since the early days – from the first "whoops" to the latest release.</p>
       </div>
     </div>
   </div>
@@ -34,12 +35,12 @@ og:
 
 <section class="split-content">
   <div class="container container--lg">
-    <h2 class="h5">Rust & Mainmatter</h2>
-    <h3 class="split-content__subheading h2">A unique skillset</h3>
+    <h2 class="h5">Ruby, Rails & Mainmatter</h2>
+    <h3 class="split-content__subheading h2">Decades of experience</h3>
     <div class="split-content__content">
       <div class="split-content__text">
-        <p>Cras eleifend vulputate laoreet. Phasellus non risus molestie, convallis lorem ut, commodo quam. </p>
-        <p>Nullam in cursus nisi. Nunc justo risus, lacinia ut viverra eget, finibus eu magna. In vel justo in est gravida aliquam a sed lacus.</p>
+        <p>Rails famously scales from Hello World to IPO and we've partnered with many companies at all stages on that scaling journey over the past decades. Whatever challenges might lie along the way, we've seen and supported countless teams to overcome them.</p>
+        <p>We also deeply understand the technical foundations and are an active member of the open source ecosystem – contributing to open source, sharing our expertise in writing as well as speaking and organizing international events. We're not just mere users of technology – our ambition is to contribute to shaping them.</p>
       </div>
     </div>
   </div>
@@ -60,35 +61,48 @@ og:
   'trainline',
   'xbav'
 ] %}
-{% set title = 'We are trusted by international companies that build on Ruby' %}
+{% set title = 'We are trusted by international companies that build on Ruby and Ruby on Rails' %}
 {{ logoList(logoCompanies, title, "h4", "h5") }}
 
 {% set 'slide_1' = {
   "color": "purple",
-  "title": "Lorem Ipsum",
-  "text": "Cras eleifend vulputate laoreet. Phasellus non risus molestie, convallis lorem ut, commodo quam. ",
-  "linkUrl": "#",
-  "linkText": "Click me"
+  "title": "Team Augmentation",
+  "text": "Hiring senior Ruby talent can be a challenge. We help getting through bottlenecks – our experts merge with your in-house engineering teams to ensure the timely delivery of mission-critical projects. We’re more than hired hands – we'll assess and challenge the status quo, identify problems in code and architecture and support your team overcoming challenges, e.g. around maintainability or scalability.",
+  "linkUrl": "/contact/",
+  "linkClass": "plausible-event-name=Ruby+Contact",
+  "linkText": "Work with us!"
 } %}
 
 {% set 'slide_2' = {
   "color": "white",
-  "title": "Lorem Ipsum",
-  "text": "Cras eleifend vulputate laoreet. Phasellus non risus molestie, convallis lorem ut, commodo quam. ",
-  "linkUrl": "#",
-  "linkText": "Click me"
+  "title": "Tech Stack Modernization",
+  "text": "Updating your  codebase shouldn’t stop your development in its tracks. We help you upgrade legacy code and leave technical debt behind – all while your team stays focussed on the roadmap. Our experts can take on the whole upgrade from the reviewing, planning and implementation – at a cost advantage over a complete rewrite later down the line. And we only call it a job well done when we leave your team with the know-how to keep up with future versions.",
+  "linkUrl": "/contact/",
+  "linkClass": "plausible-event-name=Ruby+Contact",
+  "linkText": "Work with us!"
 } %}
 
 {% set 'slide_3' = {
   "color": "aqua",
-  "title": "Lorem Ipsum",
-  "text": "Cras eleifend vulputate laoreet. Phasellus non risus molestie, convallis lorem ut, commodo quam. ",
-  "linkUrl": "#",
-  "linkText": "Click me"
+  "title": "Custom Development",
+  "text": "We design and develop complete web apps with Ruby on Rails so your team can focus on other initiatives. We are experts in building large and complex web apps and have proven our capabilities in many successful projects with international clients. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.",
+  "linkUrl": "/contact/",
+  "linkClass": "plausible-event-name=Ruby+Contact",
+  "linkText": "Work with us!"
 } %}
 
 {% set slides = [slide_1, slide_2, slide_3] %}
 {{ scrollSlides('ruby', slides, page.url) }}
+
+<div class="container container--lg quote-section">
+  {% set 'content' = {
+    "text": "We started working with Mainmatter to build a state-of-the-art mobile web app from the ground up and it was an absolute success! Not only are they web specialists, but their expertise in development practices and agile processes made our collaboration an absolute delight.",
+    "source": "Carl Anderson, General Manager at Trainline Europe",
+    "image": "/assets/images/photos/carl-anderson.jpg",
+    "alt": "Carl Anderson, looking at the camera wearing a checkered blue/grey shirt and white T-shirt",
+    "loading": "lazy"
+  } %} {{ quote(content) }}
+</div>
 
 <section class="ruby-work">
   <div class="work container container--xl">

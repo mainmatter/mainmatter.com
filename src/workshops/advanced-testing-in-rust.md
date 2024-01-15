@@ -20,41 +20,14 @@ hero:
 og:
   image: /assets/images/workshops/advanced-testing-in-rust/og-image.jpg
 topics:
-  - heading: What is a test?
+  - heading: "Expanding your toolbox: better assertions"
     text: >
-      We will take a look under the hood to understand how the Rust built-in
-      testing framework works. Armed with this knowledge, we will explore the
-      runtime implications of different approaches for test organisation. We
-      will also cover alternative test  runners, such as
-      <code>cargo-nextest</code>.
-  - heading: "Test isolation: filesystem"
-    text: >
-      All tests in Rust share the same filesystem as the underlying host, a
-      problematic situation when multiple tests want to interact with the "same"
-      files or touch directories that could affect the behaviour of the system
-      they are being executed from.  We will explore various techniques to
-      manage this scenario, including the  <code>tempfile</code> crate.
-  - heading: "Test isolation: the database"
-    text: >
-      The database is another shared resource that can cause problems when
-      running tests in parallel. We will explore how to use Docker to run an
-      isolated database instance for each test, and how to use the
-      <code>sqlx</code> crate to manage the database lifecycle.
-  - heading: Mocks, stubs and fakes
-    text: >
-      In order to isolate the behaviour of a system under test, it is not
-      unusual to replace some of its dependencies with "fake" implementations.
-      We will explore the different types of fakes and how to use them in Rust.
-      We will review, in particular, the <code>mockall</code> crate and the
-      testing implications of using generics and dynamic dispatch for
-      polymorphism.
-  - heading: HTTP mocking
-    text: >
-      It is undesirable to have tests that hit real HTTP endpoints from
-      third-party APIs, for a variety of reasons. We will explore how to use the
-      <code>wiremock</code> crate to shield our tests from the outside world and
-      make assertions on the HTTP requests that are being sent.
-  - heading: Snapshot testing
+      The Rust standard library provides a few macros to perform assertions in
+      your tests: <code>assert!</code>, <code>assert_eq!</code>, etc. They are
+      good enough to get started, but the error messages they produce will often
+      fail to keep up with the complexity of your assertions: we'll explore
+      different libraries to boost the clarity of your test failures.
+  - heading: "Expanding your toolbox: snapshot testing"
     text: >
       Snapshot testing is a technique that allows us to capture the output of a
       system under test and compare it with a previously saved version. It is
@@ -62,13 +35,47 @@ topics:
       such as HTML or error messages. We will explore how to use the
       <code>insta</code> crate to implement snapshot testing and manage the
       snapshots lifecycle.
-  - heading: Executing logic before and after a test run
+  - heading: "Isolating your tests: the filesystem"
+    text: >
+      All tests in Rust share the same filesystem as the underlying host, a
+      problematic situation when multiple tests want to interact with the "same"
+      files or touch directories that could affect the behaviour of the system
+      they are being executed from.  We will explore various techniques to
+      manage this scenario, including the  <code>tempfile</code> crate.
+  - heading: "Isolating your tests: the database"
+    text: >
+      The database is another shared resource that can cause problems when
+      running tests in parallel. We will explore how to use Docker to run an
+      isolated database instance for each test, and how to use the
+      <code>sqlx</code> crate to manage the database lifecycle.
+  - heading: "Isolating your tests: HTTP mocking"
+    text: >
+      It is undesirable to have tests that hit real HTTP endpoints from
+      third-party APIs, for a variety of reasons. We will explore how to use the
+      <code>wiremock</code> crate to shield our tests from the outside world and
+      make assertions on the HTTP requests that are being sent.
+  - heading: "Isolating your tests: mocks, stubs and fakes"
+    text: >
+      In order to isolate the behaviour of a system under test, it is not
+      unusual to replace some of its dependencies with "fake" implementations.
+      We will explore the different types of fakes and how to use them in Rust.
+      We will review, in particular, the <code>mockall</code> crate and the
+      testing implications of using generics and dynamic dispatch for
+      polymorphism.
+  - heading: "Custom test runners: what is a test?"
+    text: >
+      We will take a look under the hood to understand how the Rust built-in
+      testing framework works. Armed with this knowledge, we will explore the
+      runtime implications of different approaches for test organisation. We
+      will also cover alternative test  runners, such as
+      <code>cargo-nextest</code>.
+  - heading: "Custom test runners: executing logic before and after a test run"
     text: >
       It is often desirable to execute the same logic before and after each test
       in our suite. We will explore a variety of techniques to achieve this,
       from a bespoke <code>#[test_case]</code> procedural macro to a custom test
       harness (via <code>libtest_mimic</code>).
-  - heading: Black-box testing
+  - heading: "Custom test runners: capstone project"
     text: >
       We will combine everything we have learned so far into an easy-to-use
       setup that allows you to run black-box tests against a real database and a
