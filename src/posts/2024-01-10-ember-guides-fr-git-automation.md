@@ -10,26 +10,26 @@ og:
   image: ""
 tagline: |
   <p>
-    One of the main blockers to translation projects is the overwhelming question: how to maintain it? The tool you're building is already something big, and the English docs for this tool are generally a complete website that you have to keep up to date as well. What's the best approach to setting up translations? the answer's probably unique to each project. But how to make maintenance a realistic task? the answer contains a tiny bit of genericity: automation saves time. What I built for the Ember Guides might give you some ideas. It's going to be about Node.js, git, and GitHub API.
+    One of the main blockers to translation projects is the overwhelming question: how do you maintain it? The tool you're building is already big, and the English docs for this tool are generally a complete website that you must keep up to date. What's the best approach to setting up translations? The answer's probably unique to each project. But how to make maintenance a realistic task? The answer contains a tiny bit of genericity: automation saves time. What I built for the Ember Guides might give you some ideas. It's going to be about Node.js, git, and GitHub API.
   </p>
 
 image: ""
 imageAlt: ""
 ---
 
-When I am writing these lines,
+As I am writing this blog post,
 [the Ember Guides](https://guides.emberjs.com/release/) are currently being
 translated into French.
 [The French website](https://ember-fr-guides.netlify.app) documents only the
 latest version of Ember (for time and human resources purposes). It means that
 when a new version of Ember is documented in English, we must adjust the French
-website accordingly. Let's say we must _"catch up"_ with English.
+website accordingly. Let's say we must _"catch up"_ with the English version.
 
 At EmberFest 2023, I presented the approach used to build the French website,
 and I described
-[the manual process to catch up with English](https://www.youtube.com/watch?v=hTc_vH-AQdk&t=282s)
-when a new version of the docs is released. However, such a manual process is
-not a realistic way to maintain the website in the long term.
+[the manual process of catching up with English](https://www.youtube.com/watch?v=hTc_vH-AQdk&t=282s)
+when a new version of the docs is released. However, such process is not a
+realistic way to maintain the website in the long run.
 
 Let's go on a journey to automate everything with a Node.js script that will run
 git commands and make requests to GitHub API! 🤖
@@ -40,9 +40,9 @@ git commands and make requests to GitHub API! 🤖
 from scratch. It aims to be accessible to beginners~intermediates, and we'll use
 the maintenance of the Ember Guides FR as a theme to introduce many concepts
 like using a modern node version, running commands, managing files and making
-API requests. However, it's not a "tutorial" so to speak, because we create the
-script in an existing app, we don't start from a blank page nor expect you to
-achieve exactly the same thing.
+API requests. However, it's not a "tutorial", because we create the script in an
+existing app. We don't start from a blank page nor expect you to achieve exactly
+the same thing.
 
 ❌ This article won't be about how to bootstrap a translation project and how to
 organize it to make it work in the long term. I can simply say that automating
@@ -126,12 +126,12 @@ You can check by running this command:
 % node -v
 ```
 
-At the moment I am writing these lines, the latest version is v21.5.0. It lets
-us use modules and syntaxes like `async` and top-level `await` to bring clarity
-to our asynchronous operations. This might be very handy to manage our calls to
-GitHub API later, so let’s make sure we have the latest Node.js. The way to
-update Node.js depends on the tools you used to install it (`brew`, `nvm`,
-`volta`...) If, just like me, you never remember what it was, this could help:
+At the moment I am writing this, the latest version is v21.5.0. It lets us use
+modules and syntaxes like `async` and top-level `await` to bring clarity to our
+asynchronous operations. This might be very handy to manage our calls to GitHub
+API later, so let’s make sure we have the latest Node.js. The way to update
+Node.js depends on the tools you used to install it (`brew`, `nvm`, `volta`...)
+If, just like me, you never remember what it was, this could help:
 
 ```js
 % whereis node
@@ -156,7 +156,7 @@ Then, from the terminal, we reach the folder `ember-fr-guides-source` and run:
 > I love Ember
 ```
 
-The output “I love Ember” shows up in the terminal 🎉
+The output “I love Ember” shows up in the terminal. 🎉
 
 #### b. Running a script with arguments
 
@@ -191,7 +191,7 @@ Then let's run:
 ```
 
 We could execute `process.argv.slice(2)` to remove the two first elements, then
-read options by index or using
+read options by index or using the
 [`indexOf`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
 function. Another handy solution is to rely on an external library like
 `minimist-lite`. This library maps the options we pass into a dictionary that
@@ -248,8 +248,8 @@ handled as `string`:
 > { _: [], from: '5.0', to: '5.4', o: 'hey' }
 ```
 
-Now we have the expected format, let's store the arguments into variables that
-we'll use later in our GitHub issue:
+Now that we have the expected format, let's store the arguments into variables
+that we'll use later in our GitHub issue:
 
 ```js
 import minimist from "minimist-lite";
@@ -309,7 +309,7 @@ possible. I decided to go with `fetch` because I think it’s a bit more
 accessible and generic, you could reuse this blog post more easily for different
 purposes. It’s essentially the same thing, except that we'll set our
 authorization header manually. Among other static things, the authorization
-header contains an `Authorization` field that must be filed with
+header contains an `Authorization` field that must be filled with
 `Bearer <YOUR-TOKEN>`.
 
 `<YOUR-TOKEN>` should be replaced with a secret token required by GitHub API to
@@ -327,15 +327,15 @@ but it’s sensitive, so it can’t be hardcoded in the script. We could pass a
 % node scripts/togithub.mjs --from=5.1 --to=5.4 --token="<YOUR-TOKEN>"
 ```
 
-It’s fine, but not good enough. We don’t want to copy manually the `token` from
+It’s fine, but not good enough. We don’t want to copy the `token` manually from
 somewhere to our command line each time we want to run the script. It would be
 more convenient if the script could read the token by itself.
 
 A common practice in web projects is to store the secret variables in a file
 `.env` which is added to the `.gitignore` file so we’re sure it won’t be
-committed to GitHub inadvertently. Along with this file, an `.env_example` which
-contains fake values is committed to GitHub and describes what secret variables
-the developer should set up to get the project working. The library
+committed to GitHub inadvertently. Along with this file, an `.env.example`,
+which contains fake values, is committed to GitHub and describes what secret
+variables the developer should set up to get the project working. The library
 [dotenv](https://www.npmjs.com/package/dotenv) brings this common practice into
 Node.js by providing the variables defined in `.env` through `process.env`:
 
@@ -362,9 +362,8 @@ console.log(token);
 > "<YOUR-TOKEN>"
 ```
 
-Let's remove that `console.log` now the check is done. Once the `token` variable
-is declared and assigned, it can be used anywhere in the script, for instance in
-a function:
+Let's remove that `console.log`. Once the `token` variable is declared and
+assigned, it can be used anywhere in the script, for instance in a function:
 
 ```js
 /*
@@ -424,7 +423,7 @@ operations) are finished. On the other hand, and thanks to our modern node
 version, we can "catch" errors with `try...catch` blocks and prevent the rest of
 the code from being executed instead of forcing the exit.
 
-For instance, if we take one of our argument reading block, it would look like:
+For instance, if we take one of our argument reading blocks, it would look like:
 
 ```diff
 + try {
@@ -524,7 +523,7 @@ The script knows all the arguments it needs to automate the process 🎉
 we print the result in a patch file `english.diff` that shows a list of diff
 blocks. If non-translated files have changes, we apply the changes
 automatically, which means these files are updated locally, which means we have
-to commit them in a working branch. Once it's done, we are officially
+to commit them in a working branch. Once that's done, we are officially
 translating the new Ember version, so we reset `origin/ref-upstream` to the same
 state as `upstream/master` to be ready for the next catch-up.
 
@@ -629,7 +628,7 @@ modified markdown file. This is where the manual process becomes a bit heavy:
   block from `english.diff`. Then we run `git apply english.diff` again, etc,
   etc...
 - We do this until `git apply english.diff` finally works because there are only
-  non-translated English files targetted by the remaining diff blocks.
+  non-translated English files targeted by the remaining diff blocks.
 
 🤔 This iterative process doesn't look easy to automate. We probably need a
 quite different strategy, and we can probably make it simpler to picture!
@@ -714,20 +713,20 @@ we'll come back to it in the next section.
 #### c. Managing new files
 
 🤔 We saw quite interesting `git diff` options to create all the resources we
-need. There's one case though we didn't mention at all. What if some of the
-"changed" files are new files that have been added to the latest Ember docs? so
-they don't exist at all in our current branch.
+need. There's one case though, we didn't mention at all. What if some of the
+"changed" files are new files that have been added to the latest Ember docs and
+that don't exist at all in our current branch?
 
 In that case, `git apply` will work like a charm and will create the new English
 file for us, but then... we'll need to open a GitHub issue to alert the
 translators there's something new to translate entirely. It means that the
 answer to the question "Should I open a GitHub issue?" doesn't depend only on
-`git apply` success or failure, it also depends on the existence of the file in
-the current branch, and at some point, we should probably track the files that
-should be posted.
+`git apply`'s success or failure, it also depends on the existence of the file
+in the current branch, and at some point, we should probably track the files
+that need to be posted.
 
 To check if the file exists on the current branch, we'll import a module called
-`fs` and use the function called `existsSync`. We'll learn more about `fs`
+`fs` and use the function called `existsSync`. We'll learn more about the `fs`
 module in the next section of the blog post 😉
 
 ```diff
@@ -755,7 +754,7 @@ module in the next section of the blog post 😉
 ```
 
 ℹ️ `git apply` runs after we've initialized `isNew`, because it can create the
-missing file and therefore false the value.
+missing file and therefore compromise the value.
 
 #### d. Closing commands
 
@@ -906,8 +905,8 @@ Here are the conclusions we can draw:
 - Once the `list.diff` is read, we no longer need it. And once a patch file is
   successfully applied, we no longer need it either, so we can remove these
   files.
-- In revenge, if a patch file cannot be aplied automatically, we'll reuse its
-  content to create the corresponding GitHub issue.
+- On the contrary, if a patch file cannot be applied automatically, we'll reuse
+  its content to create the corresponding GitHub issue.
 
 #### a. Reading files synchronously
 
@@ -937,14 +936,14 @@ const files = data.split(/[\n\r]/).filter(name => name.length);
 ```
 
 ℹ️ The first argument of `fs.readFileSync` is a relative path. `list.diff` is
-like `./list.diff`. Also, note that `./` is not the location of `catchup.mjs`
-script but it’s from where we are running the script. It means that if we are at
-the root of the `ember-fr-guides-source` folder then we use the command
-`node scripts/catchup.mjs` from there, then `./` is exactly where we are: the
-root of the `ember-fr-guides-source` folder. Here, the filename is `./list.diff`
-because we generated it at the root of the repository.
+like `./list.diff`. Also, note that `./` is not the location of the
+`catchup.mjs` script, but it’s from where we are running the script. It means
+that if we are at the root of the `ember-fr-guides-source` folder and we use the
+command `node scripts/catchup.mjs` from there, then `./` is exactly where we
+are: the root of the `ember-fr-guides-source` folder. Here, the filename is
+`./list.diff` because we generated it at the root of the repository.
 
-The content of `list.diff` contains one line per file name, using a
+The content of `list.diff` contains one line per file name: using a
 [`split`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
 by line breakers then filtering potential empty values is enough to create our
 array.
@@ -1005,7 +1004,7 @@ We now have a good place for our files, so we can create them here:
   }
 ```
 
-The patch files are created in `scripts/patches` folder. Once the file is
+The patch files are created in the `scripts/patches` folder. Once the file is
 written, `git apply` runs and... fails with the error "No such file or
 directory". Time to take care of this `guides` versus `guides/release` thing.
 
@@ -1197,8 +1196,8 @@ ${diffblock}
 }
 ```
 
-`shorterFilename` is just a way to remove `guides` from the filename to cut a
-bit the issue title. We can obtain it with a simple
+`shorterFilename` is just a way to remove `guides` from the filename to cut the
+issue title down a bit. We can obtain it with a simple
 [`substring`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring):
 
 ```js
@@ -1208,8 +1207,8 @@ const shorterName = filename.substring(5);
 `diffblock` is the content of the patch file `diffName` that we write in the
 body of the issue. One little detail to handle is that there are \``` symbols in
 the file content and this can break the body. To solve the problem and because
-we just want to show the diff on GitHub without it's necessarily a valid patch
-file, we can simply remove the \``` symbols from the file:
+we just want to show the diff on GitHub without it being necessarily a valid
+patch file, we can simply remove the \``` symbols from the file:
 
 ````js
 let diffblock;
@@ -1366,7 +1365,7 @@ to `postAllIssues`:
 
 ```
 
-Owww but wait a second 🙀 Earlier in this blog post, we introduced async
+Owww but wait a second 🙀. Earlier in this blog post, we introduced async
 behaviors in the function `applyPatches` but we didn't go back to where it's
 called. Our code no longer works, because the execution is not paused during
 `applyPatches`. In `applyPatches`, each iteration of the `forEach` loop starts
@@ -1470,12 +1469,12 @@ That's a lot of changes, let's see them in detail:
 - `files.forEach` has become `files.map`: instead of performing instructions at
   each iteration, we rather map our array of filenames to an array of `Promise`
   objects.
-- `Promise` constructor takes a function in argument. The core of this function
-  is executed when the promise is requested. Also, it has two parameters:
-  `resolve` and `reject`. These are functions to call respectively when the
-  promise is successful and when an error happens. Here, we didn't declare
-  `reject` and we use only `resolve`, because we don't have proper errors, only
-  warnings. The distinction is important when looking at MDN doc:
+- The `Promise` constructor takes a function in argument. The core of this
+  function is executed when the promise is requested. Also, it has two
+  parameters: `resolve` and `reject`. These are functions to call respectively
+  when the promise is successful and when an error happens. Here, we didn't
+  declare `reject` and we use only `resolve`, because we don't have proper
+  errors, only warnings. The distinction is important when looking at MDN doc:
   "[`Promise.all`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
   rejects when any of the input's promises rejects, with this first rejection
   reason." It means that if we used for instance `reject()` instead of
@@ -1540,35 +1539,35 @@ Sounds like our script is ready to work! We learned how to:
 
 ### 5. Last words
 
-In the big lines, this is it!
+This is it!
 
 There are still a couple of details we can add to improve the script. For
 instance, reworking the logs to have a clear list of "required actions" the
 developer has to do manually if something goes wrong, and that is visually
-separated from the rest of the logs. We could also switch back to `master` or
-`catchup` branch after resetting `ref-upstream`, depending on the required
-actions. In terms of clean-up, we could also remove `scripts/patches` folder and
-all its content once all the GitHub issues have been posted.
+separated from the rest of the logs. We could also switch back to the `master`
+or `catchup` branch after resetting `ref-upstream`, depending on the required
+actions. In terms of clean-up, we could also remove the `scripts/patches` folder
+and all its content once all the GitHub issues have been posted.
 
 On a different matter, we could also write some tests to make sure the script
-does what we think it does. In case you wonder, such tests don't exist when I am
-writing these lines. To test the render of the issues and what the catch-up PR
-looks like, I did what I usually do: manual process first, then automation will
-come when I am clear with what I want. I created a sandbox project that contains
-only a `guides/release/` folder with a couple of fake markdown files, then I
-forked it and added the `catchup.mjs` to the fork along with npm package manager
-to import the few dependencies the script needs. By committing to the upstream
-sandbox, I could test many cases, including some that never occurred in the real
-guides so far, like the deletion of markdown files.
+does what we think it does. In case you wonder, such tests don't exist yet as I
+am writing these lines. To test the render of the issues and what the catch-up
+PR looks like, I did what I usually do: manual process first, then switch to the
+automation when I am clear with what I want. I created a sandbox project that
+contains only a `guides/release/` folder with a couple of fake markdown files,
+then I forked it and added the `catchup.mjs` to the fork along with npm package
+manager to import the few dependencies the script needs. By committing to the
+upstream sandbox, I could test many cases, including some that never occurred in
+the real guides so far, like the deletion of markdown files.
 
-You can see the final version of the script in `ember-fr-guides-source`
+You can see the final version of the script in the `ember-fr-guides-source`
 repository, it's
 [right there](https://github.com/DazzlingFugu/ember-fr-guides-source/blob/master/scripts/catchup.mjs).
 
-As said at the beginning of this article, none of this answers the question how
-to bootstrap a translation project, what's the best approach to use? But all the
-above may have convinced you that maintenance automation is not a so big deal.
-And it's an iterative process. I could have started using this script to
-automate the git commands before it was able to do the API requests. Even now
-it's complete, there are certainly improvements to make, but it doesn't prevent
-me from using the script and saving time today 😉
+As said at the beginning of this article, none of this answers the question "how
+to bootstrap a translation project, what's the best approach to use?". However,
+all the above may have convinced you that maintenance automation is not that big
+of a deal. And it's an iterative process, too. I could have started using this
+script to automate the git commands before it was able to do the API requests.
+Even now that it's complete, there are certainly improvements to make, but it
+doesn't prevent me from using the script and saving time today 😉.
