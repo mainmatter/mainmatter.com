@@ -84,6 +84,12 @@
       ]
     },
     {
+      "name": "Raycast",
+      "repos": [
+        "raycast/extensions"
+      ]
+    },
+    {
       "name": "Cal.com",
       "repos": [
         "calcom/cal.com"
