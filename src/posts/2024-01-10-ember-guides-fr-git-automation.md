@@ -1021,8 +1021,8 @@ index 2253b1bdd..6e0e2a99d 100644
 
  ### Adding a label to an input element
 
--Every `<input>` element should have an associated `<label>` element. To do this, the `<input>` element's `id` attribute value should be the same as the `for` attribute value on the `<label>`, like this:
-+Every `<input>` element should have an associated `<label>` element. To do this, the `<input>` element's `id` attribute value should be the same as the `for` attribute value on the `<label>`. Ember has a built-in `unique-id` helper that can generate unique ids that you can use like this:
+-The `<input>` element's `id` attribute value should be the same as the `for` attribute value on the `<label>`, like this:
++The `<input>` element's `id` attribute value should be the same as the `for` attribute value on the `<label>`. Ember has a built-in `unique-id` helper that can generate unique ids that you can use like this:
 
 ```
 
