@@ -1,5 +1,5 @@
 ---
-title: "Automating the maintenance of the Ember Guides FR"
+title: "Automating the maintenance of the Ember Guides in French"
 authorHandle: academierenards
 tags: [ember, node, git]
 bio: "Marine Dunstetter, Senior Software Engineer"
@@ -10,7 +10,7 @@ og:
   image: ""
 tagline: |
   <p>
-    One of the main blockers to translation projects is the overwhelming question: how do you maintain it? The tool you're building is already big, and the English docs for this tool are generally a complete website that you must keep up to date. What's the best approach to setting up translations? The answer's probably unique to each project. But how to make maintenance a realistic task? The answer contains a tiny bit of genericity: automation saves time. What I built for the Ember Guides might give you some ideas. It's going to be about Node.js, git, and GitHub API.
+    One of the main blockers to translation projects is the overwhelming question: how do you maintain it? The tool you're building is already big, and the English docs for this tool are generally a complete website that you must keep up to date. What's the best approach to setting up translations? The answer's probably unique to each project. But how to make maintenance a realistic task? The answer contains a tiny bit of genericity: automation saves time. The Ember Guides are currently being translated into French, and what I built to automate the maintenance might give you some ideas. It's going to be about Node.js, git, and GitHub API.
   </p>
 
 image: ""
@@ -70,30 +70,29 @@ upstream git@github.com:ember-learn/guides-source.git (fetch and push)
 
 ## Table of contents
 
-- [Table of contents](#table-of-contents)
-  - [1. Writing a modern Node.js script](#1.-writing-a-modern-node.js-script)
-    - [a. Running a mjs script](#a.-running-a-mjs-script)
-    - [b. Running a script with arguments](#b.-running-a-script-with-arguments)
-    - [c. Using an environment variable](#c.-using-an-environment-variable)
-    - [d. Controlling the exit](#d.-controlling-the-exit)
-  - [2. Using git in a Node.js script](#2.-using-git-in-a-node.js-script)
-    - [a. Running git commands from a script](#a.-running-git-commands-from-a-script)
-    - [b. Using git diff like a boss](#b.-using-git-diff-like-a-boss)
-    - [c. Dealing with new files](#c.-managing-new-files)
-    - [d. Closing commands](#d.-closing-commands)
-  - [3. Managing files with Node.js](#3.-managing-files-with-nodejs)
-    - [a. Reading files synchronously](#a.-reading-files-synchronously)
-    - [b. Deleting files asynchronously](#b.-deleting-files-asynchronously)
-    - [c. Creating files into a new folder](#c.-creating-files-into-a-new-folder)
-    - [d. Writing files](#d.-writing-files)
-  - [4. Posting GitHub API requests with Node.js](#4.-posting-github-api-requests-with-node.js)
-    - [a. Preparing the payload](#a.-preparing-the-payload)
-    - [b. Using the fetch API](#b.-using-the-fetch-api)
-    - [c. Waiting for asynchronous operations with promises and `await`](#c.-waiting-for-asynchronous-operations-with-promises-and-await)
-    - [d. Opening a PR with GitHub API](#d.-opening-a-pr-with-github-api)
-  - [Last words](#last-words)
+- [1. Writing a modern Node.js script](#1.-writing-a-modern-node.js-script)
+  - [a. Running a mjs script](#a.-running-a-mjs-script)
+  - [b. Running a script with arguments](#b.-running-a-script-with-arguments)
+  - [c. Using an environment variable](#c.-using-an-environment-variable)
+  - [d. Controlling the exit](#d.-controlling-the-exit)
+- [2. Using git in a Node.js script](#2.-using-git-in-a-node.js-script)
+  - [a. Running git commands from a script](#a.-running-git-commands-from-a-script)
+  - [b. Using git diff like a boss](#b.-using-git-diff-like-a-boss)
+  - [c. Dealing with new files](#c.-managing-new-files)
+  - [d. Closing commands](#d.-closing-commands)
+- [3. Managing files with Node.js](#3.-managing-files-with-nodejs)
+  - [a. Reading files synchronously](#a.-reading-files-synchronously)
+  - [b. Deleting files asynchronously](#b.-deleting-files-asynchronously)
+  - [c. Creating files into a new folder](#c.-creating-files-into-a-new-folder)
+  - [d. Writing files](#d.-writing-files)
+- [4. Posting GitHub API requests with Node.js](#4.-posting-github-api-requests-with-node.js)
+  - [a. Preparing the payload](#a.-preparing-the-payload)
+  - [b. Using the fetch API](#b.-using-the-fetch-api)
+  - [c. Waiting for asynchronous operations with promises and `await`](#c.-waiting-for-asynchronous-operations-with-promises-and-await)
+  - [d. Opening a PR with GitHub API](#d.-opening-a-pr-with-github-api)
+- [Last words](#last-words)
 
-### 1. Writing a modern Node.js script
+## 1. Writing a modern Node.js script
 
 🐹🎥 _The talk in a nutshell:_ A new version of the Ember Guides was published
 🔥 What are the changes? To visualize them clearly, we can only compare English
@@ -116,7 +115,7 @@ script:
 
 Let's start with what we know then.
 
-#### a. Running a mjs script
+### a. Running an mjs script
 
 🤔 What’s your version of Node.js, by the way?
 
@@ -158,7 +157,7 @@ Then, from the terminal, we reach the folder `ember-fr-guides-source` and run:
 
 The output “I love Ember” shows up in the terminal. 🎉
 
-#### b. Running a script with arguments
+### b. Running a script with arguments
 
 🤔 If we want to write "from Ember 5.4 to Ember 5.5" in the body of our issue,
 then the script should know these numbers. First, we could declare two variables
@@ -258,7 +257,7 @@ import minimist from "minimist-lite";
 const argv = minimist(process.argv.slice(2), { string: ["from", "to"] });
 
 // Read current Ember version (under translation)
-const currentEmberVersion = `${argv.from}`;
+const currentEmberVersion = argv.from;
 if (currentEmberVersion.match(/\d+[.]\d+/g)?.[0] !== currentEmberVersion) {
   console.error(
     "Error: please provide the current Ember version under translation to option --from (e.g. --from=5.1)"
@@ -268,7 +267,7 @@ if (currentEmberVersion.match(/\d+[.]\d+/g)?.[0] !== currentEmberVersion) {
 console.log(`Ember version under translation: ${currentEmberVersion}`);
 
 // Read new Ember version (documented by the English guides)
-const newEmberVersion = `${argv.to}`;
+const newEmberVersion = argv.to;
 if (newEmberVersion.match(/\d+[.]\d+/g)?.[0] !== newEmberVersion) {
   console.error(
     "Error: please provide the new Ember version documented on upstream to option --to (e.g. --to=5.4)"
@@ -277,6 +276,10 @@ if (newEmberVersion.match(/\d+[.]\d+/g)?.[0] !== newEmberVersion) {
 }
 console.log(`New Ember version documented on upstream: ${newEmberVersion}`);
 ```
+
+ℹ️ `process.exit(9);` forces the process to exit. Any status but `0` indicates
+the process exited with errors. `9` is for invalid arguments. You can see the
+[list of error codes here](https://nodejs.org/api/process.html#exit-codes).
 
 ℹ️
 [`match`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match)
@@ -295,7 +298,7 @@ to exist and to be equal to the argument value:
 
 Great! Now we have the first piece of information to create a GitHub issue.
 
-#### c. Using an environment variable
+### c. Using an environment variable
 
 Most of the time, when we want to create a new GitHub issue on a repository, we
 do it manually via GitHub UI. We can achieve the same thing using GitHub API.
@@ -358,7 +361,7 @@ console.log(token);
 ```
 
 ```bash
-% node scripts/togithub.mjs --from=5.1 --to=5.4
+% node scripts/catchup.mjs --from=5.1 --to=5.4
 > "<YOUR-TOKEN>"
 ```
 
@@ -379,100 +382,84 @@ const getRequestHeaders = () => {
 };
 ```
 
-#### d. Controlling the exit
+### d. Controlling the exit
 
-Earlier in this section, we wrote something that wasn't explained:
+Earlier in this section, we wrote the following line:
 
 ```js
-if (newEmberVersion.match(/\d+[.]\d+/g)?.[0] !== newEmberVersion) {
-  console.error(
-    "Error: please provide the new Ember version documented on upstream to option --to (e.g. --to=5.4)"
-  );
-  process.exit(9); // 👈 this
-}
+process.exit(9);
 ```
 
-ℹ️ `process.exit(9);` is used to force the process to exit if a critical error
-prevents us from continuing. Any status but `0` indicates the process exited
-with errors. `9` is for invalid arguments. You can see the
-[list of error codes here](https://nodejs.org/api/process.html#exit-codes).
+This is used to force the process to exit if a critical error prevents us from
+continuing.
 
-🤔 For now, it's ok, because all the operations are synchronous. But be aware
-that if you start async operations in a script and `process.exit(n);` executes,
-then you have no way to know for sure what operations the script could perform
-before existing, and what operations were still to do. Let's imagine this kind
-of algorithm:
+🤔 For now, it's ok, because all the operations are synchronous. But later in
+this blog post, we will deal with async operations like writing files and
+posting to GitHub API. What happens if, at some point, a `process.exit(n);`
+instruction is executed while an async operation is running?
+
+The answer is that you don't know. You don't know for sure what operations the
+script could perform before existing, and what operations were still to do.
+Let's imagine this kind of algorithm:
 
 ```js
-// async operation1 = create a file 'my-file.txt'
-// wait for operation1
-// async operation2 = write the text 'I love Ember' in 'my-file.txt'
-// wait for operation2
+// async operation1 = create a file 'my-file.txt', then {
+//   async operation2 = write the text 'I love Ember' in 'my-file.txt'
+// }
 process.exit(0);
 ```
 
 If we implement the real code and run it, we don't know if the script could
-finish both `operation1` and `operation2`. For instance, it may have done the
-first one but not the second, and in the end, we have a file `my-file.txt` which
-is empty.
+finish `operation1` and `operation2`. For instance, it may have done the first
+one but not the second, and in the end, we have a file `my-file.txt` which is
+empty.
 
-It's usually good practice to have control over the process exit. On one hand,
-you generally don't write things like `process.exit(0);` because the script will
-exist with `0` code by itself when all the operations (including async
-operations) are finished. On the other hand, and thanks to our modern node
-version, we can "catch" errors with `try...catch` blocks and prevent the rest of
-the code from being executed instead of forcing the exit.
+It's usually good practice to have control over the process exit when you deal
+with async operations. On one hand, you generally don't write things like
+`process.exit(0);` because the script will exist with `0` code by itself when
+all the operations (including async operations) are finished. On the other hand,
+rather than forcing the exit when something goes wrong, there are ways to
+control errors and what part of the code shouldn't execute afterward.
 
-For instance, if we take one of our argument reading blocks, it would look like:
-
-```diff
-+ try {
-    // Read current Ember version (under translation)
-    const currentEmberVersion = `${argv.from}`;
-    if (currentEmberVersion.match(/\d+[.]\d+/g)?.[0] !== currentEmberVersion) {
-+     process.exitCode = 9;
-+     throw new error('Error: please provide the current Ember version under translation to option --from (e.g. --from=5.1)');
--     console.error('Error: please provide the current Ember version under translation to option --from (e.g. --from=5.1)');
--     process.exit(9);
-    }
-    // The rest of the script executes only if no error was thrown before
-
-+ } catch (error) {
-+  console.error(error);
-+ }
-```
-
-With this code, when `currentEmberVersion` is invalid, we enter the catch block
-instead of exiting the process. The process will keep running and will wait for
-any async action to terminate before exiting.
-
-ℹ️ `process.exitCode = n;` means that when the process finally exits, it will
-exit with code `n`. Manipulating the error codes allows you to decide how you
-treat errors. For instance, you can treat some errors as simple warnings and
-exit with `0`:
+To play with error handling and understand async behaviors in general, a nice
+tip is to use the JavaScript function
+[setTimeout](ttps://developer.mozilla.org/en-US/docs/Web/API/setTimeout). It
+allows you to execute code after a given delay. Here is an example of how you
+can let a script terminate an async operation before exiting, but prevent the
+next operations from starting. It uses
+[`throw`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw)
+and
+[`try...catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch):
 
 ```js
 try {
-  try {
-    // An async operation throws an error
-  } catch (error) {
-    console.warn(`This ${error} happened, but it's fine.`);
-    // We don't throw the error that was caught here, so we don't enter the top-level catch
-  }
-  // Process exits with code 0
+  setTimeout(() => {
+    console.log("code in setTimeout is exectuted!");
+  }, 2000);
+  throw new Error("something went wrong!");
+  console.log("code after throw is exectuted!");
 } catch (error) {
-  // This is not executed
-  console.error(error);
+  console.log(error.message);
   process.exitCode = 1;
 }
 ```
 
-In our case, we'll keep `process.exit(9);` while the script reads arguments
-because all the operations are synchronous. But for the rest of the script,
-we'll use a global `try...catch` to catch the errors and set the `exitCode` to
-`1`.
+ℹ️ `process.exitCode = n;` means that _when the process finally exits_, it will
+exit with code `n`.
 
-With the big parts cut, here is what our script looks like so far:
+After about two seconds, the script exited with an error state and the following
+logs:
+
+```bash
+% node scripts/test.mjs --from=5.1 --to=5.4
+> something went wrong!
+> code in setTimeout is exectuted!
+```
+
+In our case, we'll keep `process.exit(9);` while the script reads arguments
+because it's synchronous. But once the script really starts to work, we'll
+centralize error handling with a global `try...catch` for readability. With the
+big parts cut, here is what our script looks like:
 
 ```js
 import "dotenv/config";
@@ -516,7 +503,7 @@ So far, we learned how to:
 
 The script knows all the arguments it needs to automate the process 🎉
 
-### 2. Using git in a Node.js script
+## 2. Using git in a Node.js script
 
 🐹🎥 _The talk in a nutshell:_ A new version of the Ember Guides was published
 🔥 To see the changes, we compare `origin/ref-upstream` to `upstream/master` and
@@ -535,7 +522,7 @@ Sounds like the script is going to run a lot of git commands:
 - It will commit and push files.
 - It will reset `origin/ref-upstream` to `upstream/master`.
 
-#### a. Running git commands from a script
+### a. Running git commands from a script
 
 First, we want to create a new "catch-up" branch to work on. In the terminal, we
 would do this with `git switch --create <branch-name>`. It would be nice to
@@ -592,7 +579,7 @@ abstract our logic in a function so we don't have to rewrite the log each time:
   // catch(error) { ... }
 ```
 
-#### b. Using git diff like a boss
+### b. Using git diff like a boss
 
 The next step of the process is to generate the diff between
 `origin/ref-upstream` and `upstream/master` to view how the second impacts the
@@ -710,7 +697,7 @@ try {
 That's a great start! There's just this blocking `TODO` we need to figure out,
 we'll come back to it in the next section.
 
-#### c. Managing new files
+### c. Managing new files
 
 🤔 We saw quite interesting `git diff` options to create all the resources we
 need. There's one case though, we didn't mention at all. What if some of the
@@ -756,7 +743,7 @@ module in the next section of the blog post 😉
 ℹ️ `git apply` runs after we've initialized `isNew`, because it can create the
 missing file and therefore compromise the value.
 
-#### d. Closing commands
+### d. Closing commands
 
 There are other git commands we need to include in the script: those happening
 at the end of the process:
@@ -883,7 +870,7 @@ So far, we learned how to:
 In theory, git does a lot of things for us at this point. "In theory" because
 our array of `files` is still desperately empty! Let's do something about that.
 
-### 3. Managing files with Node.js
+## 3. Managing files with Node.js
 
 🐹🎥 _The talk in a nutshell:_ In the French website, we translate only the
 latest version of Ember, so the UI doesn't have a dropdown to navigate to legacy
@@ -908,7 +895,7 @@ Here are the conclusions we can draw:
 - On the contrary, if a patch file cannot be applied automatically, we'll reuse
   its content to create the corresponding GitHub issue.
 
-#### a. Reading files synchronously
+### a. Reading files synchronously
 
 We want to read the content of `list.diff` to extract an array of filenames. To
 deal with files, we’re going to use
@@ -948,7 +935,7 @@ The content of `list.diff` contains one line per file name: using a
 by line breakers then filtering potential empty values is enough to create our
 array.
 
-#### b. Deleting files asynchronously
+### b. Deleting files asynchronously
 
 The variable `files` now contains an array of filenames. `list.diff` did its job
 and we no longer need it. To remove `list.diff`, we can use `fs.unlink` or
@@ -976,7 +963,7 @@ We have our `files` ready, which means we can finally enter the function
 🤔 But don't you think it's a bit rough to create all our files at the root of
 the project like this? Couldn't we create our patch files in a dedicated folder?
 
-#### c. Creating files into a new folder
+### c. Creating files into a new folder
 
 To keep things clean, let’s not do what we did for `list.diff` and create a new
 folder in the scripts folder:
@@ -1008,7 +995,7 @@ The patch files are created in the `scripts/patches` folder. Once the file is
 written, `git apply` runs and... fails with the error "No such file or
 directory". Time to take care of this `guides` versus `guides/release` thing.
 
-#### d. Writing files
+### d. Writing files
 
 The content of a patch file looks like this:
 
@@ -1160,9 +1147,9 @@ these local operations. The next step is posting GitHub issues for the files git
 couldn’t change automatically, so translators are notified and can adjust the
 translation! 💪
 
-### 4. Posting GitHub API requests with Node.js
+## 4. Posting GitHub API requests with Node.js
 
-#### a. Preparing the payload
+### a. Preparing the payload
 
 Let's have a fresh look at the kind of issue we want to open:
 [#213 Translate /addons-and-dependencies/index.md, Ember 5.4](https://github.com/DazzlingFugu/ember-fr-guides-source/issues/213).
@@ -1263,7 +1250,7 @@ ${diffblock}
 Alright! Looks like we have everything we need to complete the payload. Let's
 create a proper request!
 
-#### b. Using the fetch API
+### b. Using the fetch API
 
 When we learned how to get the GitHub API `token` earlier, we said that we
 wanted to use the JavaScript method
@@ -1386,7 +1373,7 @@ controling timing and concurrency like we did in `postAllIssues`.
 No, here we really want to turn `applyPatches();` into `await applyPatches();`
 and make the function `async`. Let's figure out how to do that.
 
-#### c. Waiting for asynchronous operations with promises and `await`
+### c. Waiting for asynchronous operations with promises and `await`
 
 🤔 How do we make sure that all the operations on files are over before
 continuing the execution of the script? It was great to let the script deal with
@@ -1491,7 +1478,7 @@ That's a lot of changes, let's see them in detail:
 With this code, `applyPatches` has become an asynchronous function that we can
 call with `await applyPatches();` and we are all good to call `postAllIssues` 🎉
 
-#### d. Opening a PR with GitHub API
+### d. Opening a PR with GitHub API
 
 After the function `pushChanges()` is executed, we can open the "catchup PR"
 using GitHub API. It's essentially the same thing as GitHub issues, except that
@@ -1537,7 +1524,7 @@ Sounds like our script is ready to work! We learned how to:
 - Send requests with `fetch` and handle the response
 - Manage nested asynchronous operations with `Promise` and `Promise.all`
 
-### 5. Last words
+## 5. Last words
 
 This is it!
 
