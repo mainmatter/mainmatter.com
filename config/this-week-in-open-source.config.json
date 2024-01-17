@@ -185,7 +185,8 @@
         "embroider-build/release-plan",
         "mansona/create-release-plan-setup",
         "ef4/lerna-changelog",
-        "ef4/lerna-changelog"
+        "ef4/lerna-changelog",
+        "lifeart/glimmer-next"
       ]
     },
     {
