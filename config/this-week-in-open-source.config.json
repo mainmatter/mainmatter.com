@@ -107,7 +107,8 @@
         "embroider-build/embroider",
         "embroider-build/content-tag",
         "embroider-build/ember-auto-import",
-        "embroider-build/scenario-tester"
+        "embroider-build/scenario-tester",
+        "embroider-build/github-changelog"
       ]
     },
     {
@@ -186,6 +187,7 @@
         "mansona/create-release-plan-setup",
         "ef4/lerna-changelog",
         "ef4/lerna-changelog",
+        "lifeart/glimmer-next",
         "lifeart/glimmer-next"
       ]
     },
