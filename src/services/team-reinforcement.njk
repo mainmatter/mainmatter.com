@@ -1,0 +1,79 @@
+---
+layout: 'base-energy'
+title: Team Reinforcement | Our Services
+description: "There are lots of reasons that a team gets overextended – lack of people, lack of expertise, or even lack of time. At Mainmatter, we’ve built a team of diverse expertise in web and cloud projects that deliver with a fresh perspective. We support our clients with experienced people who are ready to build products, mentor people and support your goals. "
+---
+
+{% from "color-hero-energy.njk" import colorHero %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "strategy-list.njk" import strategyList %}
+
+{% set 'content' = {
+  "title": "Get the work done, even if your team has reached a limit 🔥",
+  "eyebrow": "Accelerate delivery and overcome challenges"
+} %}
+{{ colorHero('purple', content) }}
+
+<section class="my-10">
+  <div class="container container--lg">
+    <div class="intro-text">
+    <p class="body body_large">
+    There are lots of reasons that a team gets overextended – lack of people, lack of expertise, or even lack of time.
+    At Mainmatter, we’ve built a team of <strong>diverse expertise</strong> in web and cloud projects that deliver with a <strong>fresh perspective</strong>. We support our clients with experienced people who are ready <strong>to build products, mentor people and support your goals</strong>.
+    </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  {% set imageData = {
+    "imgPath": "/assets/images/photos/team-reinforcement.jpeg",
+    "alt": "Assemble your team!",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
+{% set 'list_1' = {
+  "title": "Develop an understanding of the project, the challenges and the desired outcome."
+} %}
+
+{% set 'list_2' = {
+  "title": "Assess the codebase and establish a recommended roadmap."
+} %}
+
+{% set 'list_3' = {
+  "title": "Our team gets hands-on and starts actively contributing to the codebase, mentoring your team as we go."
+} %}
+
+{% set elements = [list_1, list_2, list_3] %}
+{{ strategyList('team-reinforcement', 'We’ll work with you to:', elements) }}
+
+<section class="my-10">
+  <div class="container container--lg">
+    <div class="mb-4">
+      <h3 class="mb-2">Deliver on time and budget</h3>
+      <p class="body">
+        We’re ready to hit the ground running with you. Our experts will bring in their expertise and experience to increase productivity sustainably. At Mainmatter, we’ve supported dozens of partners in this kind of work and our senior engineers are capable of making meaningful contributions starting day 1.
+      </p>
+    </div>
+    <div class="mb-4">
+      <h3 class="mb-2">Overcome bottlenecks</h3>
+      <p class="body">
+        Backend, frontend or core infrastructure development – we’ll partner with you to take on the things that are holding your development cycles back. Our team ensures you’re no longer limited by missing expertise, a lack of experience or new – or even legacy – technology. We are hand-on consultants who love to mentor, leaving you and your team more independently capable.
+      </p>
+    </div>
+    <div class="mb-4">
+      <h3 class="mb-2">Gain a fresh perspective </h3>
+      <p class="body">
+        Using our years of experience, our team will help you gain a deeper understanding of the potential risk factors in your codebase that you may be overlooking. At the same time, we’ll also point out opportunities for you to move faster and accomplish your goals with less friction.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="my-10">
+

@@ -1,0 +1,61 @@
+.screenreader {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.skip-link {
+  position: absolute;
+  padding: 0.5rem;
+  background-color: var(--color-aqua);
+  color: var(--color-white);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+
+  &:focus {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.m {
+  &t-2 {
+  margin-top: 2rem;
+}
+  &t-4 {
+  margin-top: 4rem;
+}
+  &t-10 {
+  margin-top: 10rem;
+}
+  &b-2 {
+  margin-bottom: 2rem;
+}
+  &b-4 {
+  margin-bottom: 4rem;
+}
+  &b-10 {
+  margin-bottom: 10rem;
+}
+  &y-2 {
+  margin: 2rem auto;
+}
+  &y-4 {
+  margin: 4rem auto;
+}
+  &y-10 {
+  margin: 10rem auto;
+}
+}
+
+body[data-js-enabled="false"] * {
+  transition-duration: 0s !important;
+}
+
+body[data-js-enabled="false"] .no-js-hidden {
+  display: none;
+}
