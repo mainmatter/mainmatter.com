@@ -11,13 +11,13 @@ description:
   We identified impediments and since support their team to address those which
   includes fixing performance bottlenecks and rebuilding the B2C offering in
   Svelte.</p>
-hero: 
+hero:
   color: purple
   textPosition: "center"
   image: "/assets/images/work/rail-europe.jpg"
   imageAlt: "Train tracks on gravel"
   tags: "strategic advice / process / mentoring"
-og: 
+og:
   image: /assets/images/cases/cs-rail-europe-og-image.jpeg
 ---
 
@@ -77,5 +77,3 @@ og:
   "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
   "source": "JÜRGEN WITTE, CPO@RAILEUROPE"
 } %} {{ quote(content) }}
-
-
