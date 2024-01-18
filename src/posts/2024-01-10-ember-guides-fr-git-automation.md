@@ -7,14 +7,16 @@ description:
   "Marine Dunstetter builds an automation script in Node.js to maintain the
   translation of the Ember Guides with git and GitHub."
 og:
-  image: ""
+  image: "/assets/images/posts/2024-01-10-ember-guides-fr-git-automation/og-image.jpg"
 tagline: |
   <p>
     One of the main blockers to translation projects is the overwhelming question: how do you maintain it? The tool you're building is already big, and the English docs for this tool are generally a complete website that you must keep up to date. What's the best approach to setting up translations? The answer's probably unique to each project. But how to make maintenance a realistic task? The answer contains a tiny bit of genericity: automation saves time. The Ember Guides are currently being translated into French, and what I built to automate the maintenance might give you some ideas. It's going to be about Node.js, git, and GitHub API.
   </p>
 
-image: ""
-imageAlt: ""
+image: "/assets/images/posts/2024-01-10-ember-guides-fr-git-automation/header.jpg"
+imageAlt:
+  "The Ember logo on a grey background picture displaying a robot at work in a
+  factory"
 ---
 
 As I am writing this blog post,
