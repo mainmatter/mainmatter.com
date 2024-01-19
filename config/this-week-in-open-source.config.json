@@ -84,6 +84,12 @@
       ]
     },
     {
+      "name": "Raycast",
+      "repos": [
+        "raycast/extensions"
+      ]
+    },
+    {
       "name": "Cal.com",
       "repos": [
         "calcom/cal.com"
@@ -101,7 +107,8 @@
         "embroider-build/embroider",
         "embroider-build/content-tag",
         "embroider-build/ember-auto-import",
-        "embroider-build/scenario-tester"
+        "embroider-build/scenario-tester",
+        "embroider-build/github-changelog"
       ]
     },
     {
@@ -179,7 +186,9 @@
         "embroider-build/release-plan",
         "mansona/create-release-plan-setup",
         "ef4/lerna-changelog",
-        "ef4/lerna-changelog"
+        "ef4/lerna-changelog",
+        "lifeart/glimmer-next",
+        "lifeart/glimmer-next"
       ]
     },
     {
@@ -501,5 +510,5 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2023-12-31..2024-01-07"
+  "last_date": "2024-01-07..2024-01-14"
 }
