@@ -10,9 +10,10 @@ description: "There are lots of reasons that a team gets overextended – lack o
 {% from "tech-cards.njk" import techCards %}
 {% from "case-cards.njk" import caseCards %}
 {% from "cta-banner.njk" import ctaBanner %}
+{% from "featured-services.njk" import featuredServices %}
 
 {% set 'content' = {
-  "title": "Get the work done, even if your team has reached a limit 🔥",
+  "title": "Get the work done, even if your team has reached a limit",
   "eyebrow": "Accelerate delivery and overcome challenges"
 } %}
 {{ colorHero('purple', content) }}
@@ -28,7 +29,7 @@ description: "There are lots of reasons that a team gets overextended – lack o
   </div>
 </section>
 
-<section>
+<section class="my-10">
   {% set imageData = {
     "imgPath": "/assets/images/photos/team-reinforcement.jpeg",
     "alt": "Assemble your team!",
@@ -118,8 +119,33 @@ description: "There are lots of reasons that a team gets overextended – lack o
   "linkUrl": "/contact",
   "linkText": "Get in touch"
 } %}
-{{ ctaBanner('purple', content) }}
+{{ ctaBanner('purple', 'default', content) }}
+
+<section class="my-10">
+  {% set imageData = {
+    "imgPath": "/assets/images/services/team-reinforcement-cases.jpeg",
+    "alt": "Assemble your team!",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
 
 
-{% set clients = ['qonto', 'experteer', 'trainline', 'mvb'] %}
+{% set clients = ['aleph-alpha', 'auditboard', 'mvb'] %}
 {{ caseCards('Clients', 'Lorem Ipsum', clients)}}
+
+{% set 'content' = {
+  "subtitle": "Transform bold ideas into shipped products"
+  } %}
+{{ featuredServices(services['team-reinforcement'], content) }}
+
+
+{% set 'content' = {
+  "title": "Grow your business with us",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
+} %}
+{{ ctaBanner('aqua', 'full', content) }}

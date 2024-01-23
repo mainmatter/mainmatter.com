@@ -13,6 +13,18 @@
       "linkUrl": "/services/workshops/"
     }
   ],
+  "team-reinforcement": [
+    {
+      "heading": "Launch your idea",
+      "text": "Upgrades instead of rewrites",
+      "linkUrl": "/services/idea-to-release-projects/"
+    },
+    {
+      "heading": "Modernize your tech stack ",
+      "text": "Upgrades instead of rewrites",
+      "linkUrl": "/services/tech-modernization-projects/"
+    }
+  ],
   "scaleup-services-list": [
     {
       "heading": "Team Augmentation",

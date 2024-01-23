@@ -11,6 +11,7 @@
   }
 
   &--aqua {
+    background-color: var(--color-aqua);
     --color-animation: var(--color-purple);
     --color-overlay: var(--color-aqua);
     --color-link-primary: var(--color-white);
@@ -19,6 +20,7 @@
   }
 
   &--black {
+    background-color: var(--color-black);
     --color-animation: var(--color-purple);
     --color-link-background: var(--color-aqua);
     --color-overlay: var(--color-black);
@@ -39,10 +41,14 @@
   }
 }
 
-.cta-banner__content {
+.cta-banner__wrapper {
   display: flex;
   position: relative;
   padding: 6rem;
+}
+
+.cta-banner__main {
+  max-width: 48rem;
 }
 
 .cta-banner__text, .cta-banner__link {

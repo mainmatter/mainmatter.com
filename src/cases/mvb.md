@@ -1,6 +1,9 @@
 ---
 layout: case-study
 company: MVB
+problem: MVB lacked the experience to feel confident that they were delivering on quality under time pressure.
+solution: Our experts mentored the team to achieve both requirements.
+tags: Team Reinforcement
 title: A platform for the german book industry | Work
 displayTitle: "A platform for the <em>german</em> book industry"
 description:
@@ -13,7 +16,7 @@ hero:
   textPosition: "center"
   image: "/assets/images/work/mvb-background.jpg"
   imageAlt: "Servers in Rack"
-  tags: "architecture / development / process"
+  tags: "Team Reinforcement"
 og:
   image: /assets/images/cases/cs-mvb-og-image.jpg
 ---

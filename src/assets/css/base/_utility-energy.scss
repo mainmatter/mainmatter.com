@@ -22,7 +22,14 @@
   }
 }
 
+.hidden {
+  display: none;
+}
+
 .m {
+  &t-015 {
+    margin-top: 1.5rem;
+  }
   &t-2 {
   margin-top: 2rem;
 }
@@ -32,6 +39,9 @@
   &t-10 {
   margin-top: 10rem;
 }
+&b-015 {
+  margin-bottom: 1.5rem;
+}
   &b-2 {
   margin-bottom: 2rem;
 }
@@ -40,6 +50,9 @@
 }
   &b-10 {
   margin-bottom: 10rem;
+}
+&y-015 {
+  margin: 1.5rem auto;
 }
   &y-2 {
   margin: 2rem auto;

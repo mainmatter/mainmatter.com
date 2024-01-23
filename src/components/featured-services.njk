@@ -10,6 +10,9 @@
               {% include 'svg/arrow.njk' %}
               <span class="featured-services__link-text">{{ service.heading }}</span>
             </a>
+            {% if service.text%}
+            <p class="featured-services__link-description">{{ service.text }}</p>
+            {% endif %}
           </li>
         {% endfor %}
       </ul>

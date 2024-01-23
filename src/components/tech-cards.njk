@@ -13,12 +13,12 @@
             {% endif %}
             <div class="tech-cards__content">
               {% if card.title %}
-                <h4 class="tech-cards__title">{{ card.title }}</h4>
+                <h4 class="tech-cards__title mb-015">{{ card.title }}</h4>
               {% endif %}
               {% if card.link %}
                 <div class="tech-cards__link-wrapper">
                   <a href="/{{ card.link }}" class="tech-cards__link">
-                    <p class="tech-cards__link-label">Learn more</p>
+                    <p class="caption tech-cards__link-label">Learn more</p>
                     <span class="tech-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
                   </a>
                 </div>
