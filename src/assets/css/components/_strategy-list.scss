@@ -1,0 +1,16 @@
+.strategy-list__content {
+  position: relative;
+  margin: 4rem auto;
+}
+
+.strategy-list__number {
+  color: var(--color-purple);
+}
+
+@media (min-width: 72rem) {
+
+.strategy-list__number {
+  position: absolute;
+  transform: translateX(-5rem);
+}
+}

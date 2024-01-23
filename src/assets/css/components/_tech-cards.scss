@@ -1,0 +1,102 @@
+.tech-cards__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 30rem) {
+
+  .tech-cards__grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+}
+
+@media (min-width: 60rem) {
+
+  .tech-cards__grid {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+}
+
+.tech-cards__grid-element {
+  color: var(--color-white);
+  padding: 8rem 1.25rem 1.25rem 1.25rem;
+  min-height: 400px;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: end;
+}
+
+.tech-cards__bg-rust-tech {
+  background-image: url(/assets/images/services/rust-tech.png);
+  background-size: 60%;
+  background-position: 5% 5%;
+}
+
+.tech-cards__bg-ember-tech {
+  background-image: url(/assets/images/services/ember-tech.png);
+  background-size: 80%;
+  background-position: 5% 20%;
+}
+
+.tech-cards__bg-svelte-tech {
+  background-image: url(/assets/images/services/svelte-tech.png);
+  background-size: 50%;
+  background-position: 5% 5%;
+}
+
+.tech-cards__bg-elixir-tech {
+  background-image: url(/assets/images/services/elixir-tech.png);
+  background-size: 80%;
+  background-position: 5% 20%;
+}
+
+.tech-cards__bg-ruby-tech {
+  background-image: url(/assets/images/services/ruby-tech.png);
+  background-size: 60%;
+  background-position: 5% 5%;
+}
+
+.tech-cards__link {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: space-between;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.tech-cards__grid-element:nth-child(n) {
+  background-color: var(--color-aqua);
+}
+
+.tech-cards__grid-element:nth-child(2n) {
+  background-color: var(--color-purple);
+}
+
+.tech-cards__grid-element:nth-child(2n + 3) {
+  background-color: var(--color-black);
+}
+
+.tech-cards__link-arrow {
+  position: relative;
+  margin-left: 0.25rem;
+  z-index: 1;
+
+  svg {
+    transform: rotate(-90deg);
+    transition: color 0.3s ease;
+  }
+
+  &--rotate {
+    margin-left: 0;
+    margin-right: 0.5rem;
+
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+}

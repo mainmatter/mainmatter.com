@@ -7,6 +7,9 @@ description: "There are lots of reasons that a team gets overextended – lack o
 {% from "color-hero-energy.njk" import colorHero %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from "strategy-list.njk" import strategyList %}
+{% from "tech-cards.njk" import techCards %}
+{% from "case-cards.njk" import caseCards %}
+{% from "cta-banner.njk" import ctaBanner %}
 
 {% set 'content' = {
   "title": "Get the work done, even if your team has reached a limit 🔥",
@@ -75,5 +78,48 @@ description: "There are lots of reasons that a team gets overextended – lack o
   </div>
 </section>
 
-<section class="my-10">
+{% set 'tech_1' = {
+  "title": "Ember is our expertise",
+  "logo": "ember-tech",
+  "link": "ember-consulting"
+} %}
 
+{% set 'tech_2' = {
+  "title": "Rust is a competitive advantage",
+  "logo": "rust-tech",
+  "link": "rust-consulting"
+} %}
+
+{% set 'tech_3' = {
+  "title": "Svelte is the future of frontend development",
+  "logo": "svelte-tech",
+  "link": "svelte-consulting"
+} %}
+
+{% set 'tech_4' = {
+  "title": "Elixir and Phoenix: The best of all worlds",
+  "logo": "elixir-tech",
+  "link": "elixir-phoenix"
+} %}
+
+{% set 'tech_5' = {
+  "title": "We're veteran Ruby and Ruby on Rails experts",
+  "logo": "ruby-tech",
+  "link": "ruby-consulting"
+} %}
+
+
+{% set technologies = [tech_1, tech_2, tech_3, tech_4, tech_5 ] %}
+{{ techCards('Technologies', 'Our skillset is based on a core set of technologies that cover architecture, backend and frontend development with: ', technologies) }}
+
+{% set 'content' = {
+  "title": "Mentoring & Training",
+  "text": "At Mainmatter, we promise sustainable change. Our methods include mentoring, pair-programming, and reviews so every team we work with is more knowledgeable than when we started.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
+} %}
+{{ ctaBanner('purple', content) }}
+
+
+{% set clients = ['qonto', 'experteer', 'trainline', 'mvb'] %}
+{{ caseCards('Clients', 'Lorem Ipsum', clients)}}

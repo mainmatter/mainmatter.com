@@ -1,0 +1,54 @@
+.cta-banner {
+
+  &--purple {
+    background-color: var(--color-purple);
+    --color-animation: var(--color-aqua);
+    --color-link-background: var(--color-blue);
+    --color-overlay: var(--color-purple);
+    --color-link-primary: var(--color-white);
+    --color-link-primary-hover: var(--color-aqua);
+    color: var(--color-white);
+  }
+
+  &--aqua {
+    --color-animation: var(--color-purple);
+    --color-overlay: var(--color-aqua);
+    --color-link-primary: var(--color-white);
+    --color-link-primary-hover: var(--color-black);
+    color: var(--color-white);
+  }
+
+  &--black {
+    --color-animation: var(--color-purple);
+    --color-link-background: var(--color-aqua);
+    --color-overlay: var(--color-black);
+    color: var(--color-white);
+    --overlay-opacity: 0.2;
+  }
+
+  &--red {
+    --color-overlay: var(--color-red);
+    color: var(--color-white);
+    --overlay-opacity: 0.8;
+  }
+
+  &--transparent {
+    --color-animation: var(--color-purple);
+    color: var(--color-white);
+
+  }
+}
+
+.cta-banner__content {
+  display: flex;
+  position: relative;
+  padding: 6rem;
+}
+
+.cta-banner__text, .cta-banner__link {
+  margin-top: 2.5rem;
+}
+
+.cta-banner__eyebrow {
+  margin-bottom: 1.5rem;
+}
