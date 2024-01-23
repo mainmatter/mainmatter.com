@@ -17,12 +17,36 @@
     {
       "heading": "Launch your idea",
       "text": "Upgrades instead of rewrites",
-      "linkUrl": "/services/idea-to-release-projects/"
+      "linkUrl": "/services/idea-to-release/"
     },
     {
-      "heading": "Modernize your tech stack ",
+      "heading": "Modernize your tech stack",
       "text": "Upgrades instead of rewrites",
-      "linkUrl": "/services/tech-modernization-projects/"
+      "linkUrl": "/services/tech-modernization/"
+    }
+  ],
+  "idea-to-release": [
+    {
+      "heading": "Team Reinforcement",
+      "text": "Accelerate delivery and overcome challenges ",
+      "linkUrl": "/services/team-reinforcement/"
+    },
+    {
+      "heading": "Get strategic advice",
+      "text": "Assessments, transformation and scaling",
+      "linkUrl": "/services/strategic-advice/"
+    }
+  ],
+  "tech-modernization": [
+    {
+      "heading": "Get strategic advice",
+      "text": "Assessments, transformation and scaling",
+      "linkUrl": "/services/strategic-advice/"
+    },
+    {
+      "heading": "Team Reinforcement",
+      "text": "Accelerate delivery and overcome challenges ",
+      "linkUrl": "/services/team-reinforcement/"
     }
   ],
   "scaleup-services-list": [

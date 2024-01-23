@@ -1,6 +1,9 @@
 ---
 layout: case-study
 company: POELLATH
+problem: POELLATH wanted to offer their investors a digital onboarding experience. 
+solution: Our team walked them through the process and developed a concept they could build off of. 
+tags: Idea to release
 description:
   <p>POELLATH is a German law firm specializing in advice on transactions and
   asset management.</p><p>When they were looking to build custom software tools

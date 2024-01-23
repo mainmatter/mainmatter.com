@@ -2,6 +2,9 @@
 layout: case-study
 company: AIS
 title: An MVP for an IT security dashboard | Work
+problem: AIS wanted to be able to supervise their metrics with a dashboard.
+solution: We helped define the requirements, designed the look, and delivered a finished product. 
+tags: Idea to release
 displayTitle: "An MVP for an IT <em>infrastructure</em> security dashboard"
 description:
   <p>AIS provides continuous monitoring of companies' external assets, allowing

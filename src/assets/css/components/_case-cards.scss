@@ -30,6 +30,12 @@
   align-items: end;
 }
 
+.case-cards__logo svg {
+  fill: white;
+ }
+
+
+
 .case-cards__bg-rust-tech {
   background-image: url(/assets/images/services/rust-tech.png);
   background-size: 60%;
