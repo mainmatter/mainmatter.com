@@ -141,11 +141,20 @@
   from = "/why-simplabs"
   to = "/"
 
+[[redirects]]
+  from = "/rust"
+  to = "/rust-consulting/"
+
 # redirect old "Web-based Services in Rust" landing page to regular workshop
 [[redirects]]
   from = "https://rust-web-services-workshop.mainmatter.com/*"
   to = "https://mainmatter.com/services/workshops/web-based-services-in-rust/"
   force = true
+
+# redirect old "Web-based Servides in Rust" workshop to new one
+[[redirects]]
+  from = "/services/workshops/web-based-services-in-rust"
+  to = "/services/workshops/build-production-ready-apis-in-rust/"
 
 # serve "Svelte & SvelteKit" landing page for svelte-sveltekit-workshop.mainmatter.com
 [[redirects]]

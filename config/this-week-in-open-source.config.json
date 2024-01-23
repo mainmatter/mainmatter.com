@@ -79,7 +79,14 @@
         "paoloricciuti/sveltekit-view-transition",
         "paoloricciuti/sveltekit-view-transition",
         "theetrain/this-week-in-svelte",
-        "mainmatter/svelte-promise-modals"
+        "mainmatter/svelte-promise-modals",
+        "paoloricciuti/svelte-client-components"
+      ]
+    },
+    {
+      "name": "Raycast",
+      "repos": [
+        "raycast/extensions"
       ]
     },
     {
@@ -100,7 +107,8 @@
         "embroider-build/embroider",
         "embroider-build/content-tag",
         "embroider-build/ember-auto-import",
-        "embroider-build/scenario-tester"
+        "embroider-build/scenario-tester",
+        "embroider-build/github-changelog"
       ]
     },
     {
@@ -178,7 +186,9 @@
         "embroider-build/release-plan",
         "mansona/create-release-plan-setup",
         "ef4/lerna-changelog",
-        "ef4/lerna-changelog"
+        "ef4/lerna-changelog",
+        "lifeart/glimmer-next",
+        "lifeart/glimmer-next"
       ]
     },
     {
@@ -415,7 +425,8 @@
         "emberobserver/client",
         "emberjs/ember-test-helpers",
         "lan0/ember-power-time-picker",
-        "mixonic/ember-cli-deprecation-workflow"
+        "mixonic/ember-cli-deprecation-workflow",
+        "nickschot/ember-mobile-pane"
       ]
     }
   ],
@@ -499,5 +510,5 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2023-12-03..2023-12-10"
+  "last_date": "2024-01-07..2024-01-14"
 }
