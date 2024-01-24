@@ -188,7 +188,8 @@
         "ef4/lerna-changelog",
         "ef4/lerna-changelog",
         "lifeart/glimmer-next",
-        "lifeart/glimmer-next"
+        "lifeart/glimmer-next",
+        "opral/monorepo"
       ]
     },
     {
@@ -426,7 +427,15 @@
         "emberjs/ember-test-helpers",
         "lan0/ember-power-time-picker",
         "mixonic/ember-cli-deprecation-workflow",
-        "nickschot/ember-mobile-pane"
+        "nickschot/ember-mobile-pane",
+        "ember-codemods/ember-no-implicit-this-codemod",
+        "ember-codemods/ember-no-implicit-this-codemod"
+      ]
+    },
+    {
+      "name": "Project Forms",
+      "repos": [
+        "project-forms/project-forms.github.io"
       ]
     }
   ],
@@ -510,5 +519,5 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": ""
+  "last_date": "2024-01-14..2024-01-21"
 }
