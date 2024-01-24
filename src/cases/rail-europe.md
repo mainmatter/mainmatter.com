@@ -1,8 +1,10 @@
 ---
 layout: case-study
 company: Rail Europe
-problem: Rail Europe needed to establish the best way forward after an acquisition. 
-solution: We provided an assessment and a roadmap – then supported the implementation. 
+problem:
+  Rail Europe needed to establish the best way forward after an acquisition.
+solution:
+  We provided an assessment and a roadmap – then supported the implementation.
 tags: Strategic advice
 description:
   <p>Rail Europe is the reference brand for European train booking, providing

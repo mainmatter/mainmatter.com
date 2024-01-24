@@ -1,8 +1,10 @@
 ---
 layout: case-study
 company: Auditboard
-problem: AuditBoard needed senior developers to translate their entire application. 
-solution: We took it on so they didn’t have to disrupt their roadmap to get it done. 
+problem:
+  AuditBoard needed senior developers to translate their entire application.
+solution:
+  We took it on so they didn’t have to disrupt their roadmap to get it done.
 tags: Team Reinforcement
 description:
   <p>Auditboard enables companies to elevate their audit, risk, and compliance

@@ -1,7 +1,9 @@
 ---
 layout: case-study
 company: MVB
-problem: MVB lacked the experience to feel confident that they were delivering on quality under time pressure.
+problem:
+  MVB lacked the experience to feel confident that they were delivering on
+  quality under time pressure.
 solution: Our experts mentored the team to achieve both requirements.
 tags: Team Reinforcement
 title: A platform for the german book industry | Work

@@ -1,8 +1,10 @@
 ---
 layout: case-study
 company: Aleph Alpha
-problem: Aleph Alpha wanted to take advantage of Rust’s built-in efficiency for their latest learning model. 
-solution: We provided the know-how to build the infrastructure. 
+problem:
+  Aleph Alpha wanted to take advantage of Rust’s built-in efficiency for their
+  latest learning model.
+solution: We provided the know-how to build the infrastructure.
 tags: Team Reinforcement
 description:
   <p>Aleph Alpha empowers businesses and governments with the most advanced
