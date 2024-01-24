@@ -1,7 +1,7 @@
 {% from "cta-link.njk" import ctaLink %}
 {%- macro ctaBanner(color, width, content) -%}
   <section class="cta-banner cta-banner--{{ color }} {% if width == 'default' %}container container--xl my-10 {% endif %}" data-background-color="{{ color }}">
-    <div class="cta-banner__wrapper {% if width == 'full' %}container container--xl mt-4 {% endif %}">
+    <div class="cta-banner__wrapper {% if width == 'full' %}container container--xl {% endif %}">
       <div class="cta-banner__main">
         {% if content.eyebrow %}
           <h6 class="cta-banner__eyebrow">{{ content.eyebrow | safe }}</h6>

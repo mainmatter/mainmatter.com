@@ -9,6 +9,7 @@ title: null
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
 {% from "image-banner-with-text.njk" import imageBannerWithText %}
 {% from "cta-banner.njk" import ctaBanner %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
 
 {% set 'content' = {
   "title": "Your expert guides for the journey ahead",
@@ -23,7 +24,17 @@ title: null
 {{ featuredServices(services['services-list-energy'], content) }}
 {% set logoCompanies = ['Qonto', 'Trainline', 'Aleph Alpha', 'Timify', 'Experteer', 'Robin Hood', 'Rail Europe' ] %}
 {{ logoList(logoCompanies) }}
-{% set clients = ['qonto', 'experteer', 'trainline', 'mvb'] %}
+<section class="mb-5">
+  {% set imageData = {
+    "imgPath": "/assets/images/photos/mainmatter-smile.jpeg",
+    "alt": "Server room",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+{% set clients = ['qonto', 'experteer', 'aleph-alpha', 'mvb'] %}
 {{ featuredCaseStudies(clients, 'Browse our work') }}
 {% set 'content' = {
   "title": "Why mainmatter",
@@ -45,6 +56,16 @@ title: null
 } %}
 {{ ctaBanner('purple', 'default', content) }}
 
+<section class="mt-10 mb-0">
+  {% set imageData = {
+    "imgPath": "/assets/images/photos/mainmatter-balloon.jpeg",
+    "alt": "Server room",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
 {% set 'content' = {
   "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",

@@ -27,6 +27,9 @@
 }
 
 .m {
+  &t-0 {
+    margin-top: 0;
+  }
   &t-015 {
     margin-top: 1.5rem;
   }
@@ -45,6 +48,9 @@
   &t-10 {
     margin-top: 10rem;
   }
+  &b-0 {
+    margin-bottom: 0;
+  }
   &b-015 {
     margin-bottom: 1.5rem;
   }
@@ -62,6 +68,9 @@
   }
   &b-10 {
     margin-bottom: 10rem;
+  }
+  &y-0 {
+    margin: 0 auto;
   }
   &y-015 {
     margin: 1.5rem auto;
