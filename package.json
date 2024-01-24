@@ -15,6 +15,7 @@
     "build:sass": "run-p build:sass:app build:sass:workshop-lp",
     "build:sass:app": "sass src/assets/css/app.scss ./assets/css/app.css --style=compressed",
     "build:sass:workshop-lp": "sass src/assets/css/workshop-lp.scss ./assets/css/workshop-lp.css --style=compressed",
+    "build:sass:app-energy": "sass src/assets/css/app-energy.scss ./assets/css/app-energy.css --style=compressed",
     "debug": "DEBUG=Eleventy* eleventy",
     "js": "rollup --config ./rollup.config.js --watch",
     "watch": "cross-env ELEVENTY_ENV=development && run-p sass js serve",
