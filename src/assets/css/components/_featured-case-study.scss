@@ -139,6 +139,10 @@
     }
   }
 
+  .featured-case-studies .featured-case-study {
+    grid-column: span 3 / span 3;
+  }
+
   .featured-case-study__image-overlay {
     position: relative;
     min-width: 100%;

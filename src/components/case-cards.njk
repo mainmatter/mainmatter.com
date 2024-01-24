@@ -1,34 +1,34 @@
-{% macro caseCards(id, title, clients) %}
+{% macro caseCards(id, title, intro, clients) %}
   <section class="case-cards my-4">
     <div class="case-cards__container container container--lg">
-      <h6 class="case-cards__eyebrow">{{ eyebrow }}</h6>
       <h2 class"case-cards__title">{{ title }}</h2>
+      <p class="case-cards__intro mt-25 mb-5">{{ intro }}</p>
       <div class="case-cards__grid">
         {% for clientHandle in clients %}
-        {% set caseStudy = clientHandle | findBySlug %}
-          <div class="case-cards__grid-element ">
+          {% set caseStudy = clientHandle | findBySlug %}
+          {% if caseStudy.url %}
+            <a href="{{ caseStudy.url }}" class="case-cards__grid-element">
+          {% else %}
+            <a href="/work#{{ clientHandle }}" class="case-cards__grid-element">
+          {% endif %}
               <div class="case-cards__logo-wrapper">
-                {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %} <img class="case-cards__logo" src="{{ imagePath }}" alt="{{ company }}"/>
+                {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %}
+                <img class="case-cards__logo" src="{{ imagePath }}" alt="{{ company }}"/>
               </div>
-            <div class="case-cards__content">
-              {% if caseStudy.data.problem %}
-                <h4 class="case-cards__title mb-015">{{ caseStudy.data.problem }}</h4>
-                <h4 class="case-cards__title mb-015 hidden">{{ caseStudy.data.solution }}</h4>
-              {% endif %}
-
-                <div class="case-cards__link-wrapper">
-
-                    <p class="caption case-cards__link-label">{{ caseStudy.data.tags }}</p>
-                {% if caseStudy.url  %}
-                  <a href="{{ caseStudy.url }}" class="case-cards__link">
-                    <span class="case-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
-                  </a>
+              <div class="case-cards__content">
+                {% if caseStudy.data.problem %}
+                  <h4 class="case-cards__title mb-015">{{ caseStudy.data.problem }}</h4>
+                  <h4 class="case-cards__title mb-015 hidden">{{ caseStudy.data.solution }}</h4>
                 {% endif %}
+                <div class="case-cards__link-wrapper">
+                  <p class="caption case-cards__link-label">{{ caseStudy.data.tags }}</p>
+                  <div  class="case-cards__link">
+                    <span class="case-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
+                  </div>
                 </div>
-
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    </section>
-  {% endmacro %}
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </section>
+    {% endmacro %}

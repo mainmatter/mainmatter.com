@@ -1,11 +1,11 @@
-{% macro techCards(id, title, cards) %}
+{% macro techCards(id, title, intro, cards) %}
   <section class="tech-cards my-10">
     <div class="tech-cards__container container container--lg">
-      <h6 class="tech-cards__eyebrow">{{ eyebrow }}</h6>
       <h2 class"tech-cards__title">{{ title }}</h2>
+      <h6 class="tech-cards__intro mt-25 mb-5">{{ intro }}</h6>
       <div class="tech-cards__grid">
         {% for card in cards %}
-          <div class="tech-cards__grid-element tech-cards__bg-{{ card.logo }}">
+          <a href="/{{ card.link }}" class="tech-cards__grid-element tech-cards__bg-{{ card.logo }}">
             {% if type == 'casestudies' %}
               <div class="tech-cards__logo-wrapper">
                 <img class="tech-cards__logo" src="">
@@ -17,14 +17,12 @@
               {% endif %}
               {% if card.link %}
                 <div class="tech-cards__link-wrapper">
-                  <a href="/{{ card.link }}" class="tech-cards__link">
                     <p class="caption tech-cards__link-label">Learn more</p>
                     <span class="tech-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
-                  </a>
                 </div>
               {% endif %}
             </div>
-          </div>
+          </a>
         {% endfor %}
       </div>
     </section>

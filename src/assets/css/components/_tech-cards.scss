@@ -28,6 +28,7 @@
   background-repeat: no-repeat;
   display: flex;
   align-items: end;
+  text-decoration: none;
 }
 
 .tech-cards__bg-rust-tech {
@@ -60,10 +61,10 @@
   background-position: 5% 5%;
 }
 
-.tech-cards__link {
+.tech-cards__link-wrapper {
   display: flex;
   flex-direction: row;
-  align-items: end;
+  align-items: center;
   justify-content: space-between;
   text-decoration: none;
   transition: color 0.3s ease;

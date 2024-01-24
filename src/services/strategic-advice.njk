@@ -7,7 +7,6 @@ description: "There are lots of reasons that a team gets overextended – lack o
 {% from "color-hero-energy.njk" import colorHero %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from "strategy-list.njk" import strategyList %}
-{% from "tech-cards.njk" import techCards %}
 {% from "case-cards.njk" import caseCards %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "featured-services.njk" import featuredServices %}
@@ -48,7 +47,7 @@ description: "There are lots of reasons that a team gets overextended – lack o
 
 
 {% set clients = ['rail-europe', 'experteer-2'] %}
-{{ caseCards('Clients', 'Lorem Ipsum', clients)}}
+{{ caseCards('strategic-advice_clients', 'Clients', 'Some of the clients we worked with, offering strategic advice', clients)}}
 
 {% set 'content' = {
   "subtitle": "Transform bold ideas into shipped products"
