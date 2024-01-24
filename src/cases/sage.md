@@ -1,8 +1,10 @@
 ---
 layout: case-study
 company: Sage Intacct
-problem: Sage Software was being slowed down by its legacy code. 
-solution: We worked with them to update and streamline their codebase so they could move forward. 
+problem: Sage Software was being slowed down by its legacy code.
+solution:
+  We worked with them to update and streamline their codebase so they could move
+  forward.
 tags: Tech modernization
 description:
   <p>Sage Intacct is the leading provider of online Accounting and Finance
