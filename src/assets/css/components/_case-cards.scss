@@ -20,7 +20,7 @@
 .case-cards__grid-element {
   color: var(--color-white);
   padding: 1.25rem 1.25rem 1.25rem 1.25rem;
-  min-height: 400px;
+  min-height: 32rem;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -56,36 +56,6 @@
   fill: white;
 }
 
-.case-cards__bg-rust-tech {
-  background-image: url(/assets/images/services/rust-tech.png);
-  background-size: 60%;
-  background-position: 5% 5%;
-}
-
-.case-cards__bg-ember-tech {
-  background-image: url(/assets/images/services/ember-tech.png);
-  background-size: 80%;
-  background-position: 5% 20%;
-}
-
-.case-cards__bg-svelte-tech {
-  background-image: url(/assets/images/services/svelte-tech.png);
-  background-size: 50%;
-  background-position: 5% 5%;
-}
-
-.case-cards__bg-elixir-tech {
-  background-image: url(/assets/images/services/elixir-tech.png);
-  background-size: 80%;
-  background-position: 5% 20%;
-}
-
-.case-cards__bg-ruby-tech {
-  background-image: url(/assets/images/services/ruby-tech.png);
-  background-size: 60%;
-  background-position: 5% 5%;
-}
-
 .case-cards__link-wrapper {
   display: flex;
   flex-direction: row;
@@ -96,11 +66,11 @@
 }
 
 .case-cards__grid-element:nth-child(n) {
-  background-color: var(--color-aqua);
+  background-color: var(--color-purple);
 }
 
 .case-cards__grid-element:nth-child(2n) {
-  background-color: var(--color-purple);
+  background-color: var(--color-aqua);
 }
 
 .case-cards__grid-element:nth-child(2n + 3) {

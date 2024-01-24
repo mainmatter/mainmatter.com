@@ -1,23 +1,20 @@
 ---
-layout: 'base'
+layout: 'base-energy'
 title: null
 ---
 
-{% from "color-hero.njk" import colorHero %}
+{% from "color-hero-energy.njk" import colorHero %}
 {% from "featured-services.njk" import featuredServices %}
 {% from "logo-list.njk" import logoList %}
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
 {% from "image-banner-with-text.njk" import imageBannerWithText %}
+{% from "cta-banner.njk" import ctaBanner %}
 
 {% set 'content' = {
-  "title": "Your <em>expert</em> guides for the journey ahead",
-  "titleTag": "h1",
-  "text": "It takes brains to develop a no-brainer. At Mainmatter we teach, cross-pollinate and collaborate with our clients to develop digital products and practices they can build on.",
-  "image": "/assets/images/photos/0009.jpg",
-  "alt": "Three team members meeting in front of a whiteboard filled with colored Post-it notes",
-  "loading": "eager"
+  "title": "Your expert guides for the journey ahead",
+  "text": "It takes brains to develop a no-brainer. At Mainmatter we teach, cross-pollinate and collaborate with our clients to develop digital products and practices they can build on."
 } %}
-{{ colorHero('center', 'large', 'purple', content) }}
+{{ colorHero('purple', content) }}
 {% set 'content' = {
   "title": "Discover our services",
   "subtitle": "Transform bold ideas into shipped products",
@@ -39,23 +36,20 @@ title: null
   "loading": "lazy"
 } %}
 {{ imageBannerWithText(content) }}
+
 {% set 'content' = {
-  "title": "Build <em>lasting</em> products, systematically",
-  "text": "Our playbook describes methodologies for building sustainable digital products and running an effective, collaborative product development process. It is based on our experiences working on projects with international clients in various industries for many years.",
-  "linkUrl": "/playbook",
-  "linkText": "Download our playbook",
-  "image": "/assets/images/photos/notebook-list.jpg",
-  "alt": "Hand holding a pen over a notebook with a list of checkboxes",
-  "loading": "lazy"
+  "title": "Download our playbook",
+  "text": "We can walk alongside you on a journey from zero to hero, starting from the basics of the language all the way to advanced testing techniques and comprehensive telemetry instrumentation.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
 } %}
-{{ colorHero('center', 'small', 'purple', content, true) }}
+{{ ctaBanner('purple', 'default', content) }}
+
 {% set 'content' = {
-  "title": "Grow <em>your business</em> with us",
+  "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
-  "linkUrl": "/contact/",
-  "linkText": "Get in touch",
-  "image": "/assets/images/photos/mainmatter-team-collaboration.jpg",
-  "alt": "Three smiling team members looking at a laptop",
-  "loading": "lazy"
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
 } %}
-{{ colorHero('center', 'small', 'aqua', content, true) }}
+{{ ctaBanner('aqua', 'full', content) }}
+

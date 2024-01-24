@@ -38,7 +38,7 @@ Example usage:
           <p class="color-hero__subheading caption">{{ content.subheading | safe }}</p>
         {% endif %}
         {% if content.text %}
-          <div class="color-hero__text">{{ content.text | safe }}</div>
+          <div class="color-hero__text mt-2">{{ content.text | safe }}</div>
         {% endif %}
         {% if content.linkUrl %}
           {{ ctaLink(content.linkUrl, content.linkText, 'color-hero__link') }}

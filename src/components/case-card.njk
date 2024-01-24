@@ -1,0 +1,26 @@
+{% macro caseCard(clientHandle) %}
+
+  {% set caseStudy = clientHandle | findBySlug %}
+  {% if caseStudy.url %}
+    <a href="{{ caseStudy.url }}" class="case-cards__grid-element">
+    {% else %}
+      <a href="/work#{{ clientHandle }}" class="case-cards__grid-element">
+      {% endif %}
+      <div class="case-cards__logo-wrapper">
+        {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %}
+        <img class="case-cards__logo" src="{{ imagePath }}" alt="{{ company }}"/>
+      </div>
+      <div class="case-cards__content">
+        {% if caseStudy.data.problem %}
+          <div class="case-cards_headline">
+            <h4 class="case-cards__title mb-015 problem">{{ caseStudy.data.problem }}</h4>
+            <h4 class="case-cards__title mb-015 solution">{{ caseStudy.data.solution }}</h4>
+          </div>
+        {% endif %}
+        <div class="case-cards__link-wrapper">
+          <p class="caption case-cards__link-label">{{ caseStudy.data.tags }}</p>
+          <span class="case-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
+        </div>
+      </div>
+    </a>
+  {% endmacro %}

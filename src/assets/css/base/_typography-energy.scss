@@ -54,30 +54,43 @@ h5,
 @media (min-width: 72em) {
   h1,
   .h1 {
-    font-size: rem-calc(64);
-    line-height: 1.25;
+    font-size: 5rem;
+    line-height: 5.5rem;
   }
 
   h2,
   .h2 {
-    font-size: rem-calc(56);
+    font-size: 4rem;
+    line-height: 4.5rem;
   }
 
   h3,
   .h3 {
-    font-size: rem-calc(44);
+    font-size: 3.5rem;
+    line-height: 3.75rem;
   }
 
   h4,
   .h4 {
-    font-size: rem-calc(24);
+    font-size: 2rem;
+    line-height: 2.5rem;
   }
 }
 
+body {
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+}
+
+.large {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
 .caption {
-  font-size: 0.875rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  line-height: 1.6;
+  line-height: 2.4rem;
 }
 
 .text--accent {
