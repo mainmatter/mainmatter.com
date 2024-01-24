@@ -6,17 +6,15 @@
 }
 
 @media (min-width: 30rem) {
-
   .case-cards__grid {
-  grid-template-columns: 1fr 1fr;
-}
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (min-width: 60rem) {
-
   .case-cards__grid {
-  grid-template-columns: 1fr 1fr 1fr;
-}
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .case-cards__grid-element {
@@ -29,13 +27,34 @@
   justify-content: space-between;
   align-items: end;
   text-decoration: none;
+  transition: all 0.3s ease;
+
+  .problem {
+    opacity: 1;
+    display: block;
+  }
+
+  .solution {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.case-cards__grid-element:hover {
+  .problem {
+    opacity: 0;
+    display: none;
+  }
+
+  .solution {
+    opacity: 1;
+    display: block;
+  }
 }
 
 .case-cards__logo svg {
   fill: white;
- }
-
-
+}
 
 .case-cards__bg-rust-tech {
   background-image: url(/assets/images/services/rust-tech.png);
@@ -92,11 +111,18 @@
   position: relative;
   margin-left: 0.25rem;
   z-index: 1;
+  display: flex;
+  justify-content: center;
 
   svg {
     transform: rotate(-90deg);
     transition: color 0.3s ease;
+    @media (min-width: 72rem) {
+      width: 24px;
+      height: auto;
+    }
   }
+
 
   &--rotate {
     margin-left: 0;

@@ -6,19 +6,15 @@
 }
 
 @media (min-width: 30rem) {
-
   .tech-cards__grid {
-  grid-template-columns: 1fr 1fr;
-}
-
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (min-width: 60rem) {
-
   .tech-cards__grid {
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .tech-cards__grid-element {
@@ -29,6 +25,7 @@
   display: flex;
   align-items: end;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .tech-cards__bg-rust-tech {
@@ -61,6 +58,26 @@
   background-position: 5% 5%;
 }
 
+.tech-cards__bg-rust-tech:hover {
+  background-size: 70%;
+}
+
+.tech-cards__bg-ember-tech:hover {
+  background-size: 90%;
+}
+
+.tech-cards__bg-svelte-tech:hover {
+  background-size: 60%;
+}
+
+.tech-cards__bg-elixir-tech:hover {
+  background-size: 90%;
+}
+
+.tech-cards__bg-ruby-tech:hover {
+  background-size: 70%;
+}
+
 .tech-cards__link-wrapper {
   display: flex;
   flex-direction: row;
@@ -86,10 +103,16 @@
   position: relative;
   margin-left: 0.25rem;
   z-index: 1;
+  display: flex;
+  justify-content: center;
 
   svg {
     transform: rotate(-90deg);
     transition: color 0.3s ease;
+    @media (min-width: 72rem) {
+      width: 24px;
+      height: auto;
+    }
   }
 
   &--rotate {

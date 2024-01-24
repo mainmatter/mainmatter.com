@@ -2,7 +2,8 @@
   position: relative;
   margin: 4rem auto;
   display: flex;
-  align-items: center;
+  align-items: start;
+  flex-direction: column;
 }
 
 .strategy-list__number {
@@ -10,10 +11,14 @@
 }
 
 @media (min-width: 72rem) {
+  .strategy-list__content {
+    flex-direction: row;
+    align-items: center;
+  }
 
-.strategy-list__number {
-  position: absolute;
-  transform: translateX(-5rem);
-  opacity: 0;
-}
+  .strategy-list__number {
+    position: absolute;
+    transform: translateX(-5rem);
+    opacity: 0;
+  }
 }

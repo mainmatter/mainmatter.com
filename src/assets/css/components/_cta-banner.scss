@@ -44,7 +44,15 @@
 .cta-banner__wrapper {
   display: flex;
   position: relative;
+  padding: 2rem;
+}
+
+@media (min-width: 72rem) {
+.cta-banner__wrapper {
+  display: flex;
+  position: relative;
   padding: 6rem;
+}
 }
 
 .cta-banner__main {
