@@ -12,7 +12,7 @@
     "build": "cross-env ELEVENTY_ENV=production run-s build:sass build:js build:html",
     "build:html": "eleventy",
     "build:js": "rollup --config ./rollup.config.js",
-    "build:sass": "run-p build:sass:app build:sass:workshop-lp",
+    "build:sass": "run-p build:sass:app build:sass:workshop-lp build:sass:app-energy",
     "build:sass:app": "sass src/assets/css/app.scss ./assets/css/app.css --style=compressed",
     "build:sass:workshop-lp": "sass src/assets/css/workshop-lp.scss ./assets/css/workshop-lp.css --style=compressed",
     "build:sass:app-energy": "sass src/assets/css/app-energy.scss ./assets/css/app-energy.css --style=compressed",
