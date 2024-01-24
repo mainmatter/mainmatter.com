@@ -19,8 +19,8 @@
 @media (min-width: 48em) {
   .work__list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4.25rem 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 4.25rem 5rem;
   }
 
   .work__featured-case-study {

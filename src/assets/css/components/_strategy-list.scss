@@ -1,6 +1,8 @@
 .strategy-list__content {
   position: relative;
   margin: 4rem auto;
+  display: flex;
+  align-items: center;
 }
 
 .strategy-list__number {
@@ -12,5 +14,6 @@
 .strategy-list__number {
   position: absolute;
   transform: translateX(-5rem);
+  opacity: 0;
 }
 }

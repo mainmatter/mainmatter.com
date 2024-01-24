@@ -13,6 +13,24 @@
       "linkUrl": "/services/workshops/"
     }
   ],
+  "services-list-energy": [
+    {
+      "heading": "Team Reinforcement",
+      "linkUrl": "/services/team-reinforcement/"
+    },
+    {
+      "heading": "Launch your idea",
+      "linkUrl": "/services/idea-to-release/"
+    },
+    {
+      "heading": "Modernize your tech stack",
+      "linkUrl": "/services/tech-modernization/"
+    },
+    {
+      "heading": "Get strategic advice",
+      "linkUrl": "/services/strategic-advice"
+    }
+  ],
   "team-reinforcement": [
     {
       "heading": "Launch your idea",
