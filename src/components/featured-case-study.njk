@@ -8,9 +8,9 @@
       <div class="featured-case-study__content-wrapper">
         {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %} <img class="featured-case-study__logo" src="{{ imagePath }}" alt="{{ company }}"/>
         <div class="featured-case-study__content">
-          <div class="featured-case-study__description featured-case-study__description--desktop">
+          <div class="featured-case-study__description">
             <p class="featured-case-study__client h5">{{ caseStudy.data.company }}</p>
-            <h3 class="featured-case-study__title">{{ caseStudy.data.displayTitle | stripHTML }}</h3>
+            <h2 class="featured-case-study__title">{{ caseStudy.data.displayTitle | stripHTML }}</h2>
           </div>
           <p class="featured-case-study__tags caption">{{ caseStudy.data.hero.tags }}</p>
           <span class="featured-case-study__cta cta-link" aria-hidden="true">
@@ -21,10 +21,5 @@
           </span>
         </div>
       </div>
-
-    <div class="featured-case-study__description featured-case-study__description--mobile">
-      <p class="featured-case-study__client h5">{{ caseStudy.data.company }}</p>
-      <h3 class="featured-case-study__title">{{ caseStudy.data.displayTitle | stripHTML }}</h3>
-    </div>
   </li>
 {%- endmacro -%}

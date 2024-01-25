@@ -51,6 +51,16 @@ h5,
   letter-spacing: 0;
 }
 
+h6,
+  .h6 {
+    margin: 0;
+    font-family: var(--font-base);
+    font-size: 1.125rem;
+    line-height: 1.7rem;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
 @media (min-width: 72em) {
   h1,
   .h1 {
@@ -75,6 +85,13 @@ h5,
     font-size: 2rem;
     line-height: 2.5rem;
   }
+
+
+  h6,
+  .h6 {
+    font-size: 1.125rem;
+    line-height: 1.7rem;
+  }
 }
 
 body {
@@ -85,6 +102,12 @@ body {
 .large {
   font-size: 2rem;
   line-height: 3rem;
+}
+
+.small {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.7rem;
 }
 
 .caption {

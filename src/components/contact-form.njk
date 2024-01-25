@@ -1,13 +1,22 @@
+{% from "social-list.njk" import socialList %}
+
 <section class="contact-form color-hero hero-resizable color-hero--purple" data-background-color="purple">
-  <div class="color-hero__image-wrapper">
-    {% image '/assets/images/contact/contact-us.jpg', 'Mail icon leaning against brick wall', '100vw',
-    'eager',
-    'color-hero__image', [760, 1440, 1920] %}
-  </div>
-  <div class="color-hero__overlay"></div>
   <div class="contact-form__container color-hero__container color-hero__container--center">
     <div class="contact-form__main container container--lg">
-      <h1 class="color-hero__title color-hero__title--full ">Send us a message</h1>
+    <h1 class="contact-form__heading">Contact Us</h1>
+      <p class="contact-form__text">
+      Let's talk about the challenges you're facing.
+      Our experts are ready to guide you through your next big move.
+    </p>
+      <div class="contact-form__methods">
+        {% for method in contact.contactMethods %}
+          <a href="{{ method.link }}" class="contact-form__method-text h4">{{ method.text | safe }}</a>
+        {% endfor %}
+      </div>
+      <div class="contact-form__social-wrapper">
+        {{ socialList(socials.socials, 'contact-form__socials')}}
+      </div>
+      <h4 class="color-hero__title color-hero__title--full mt-10">Send us a message</h4>
       <form class="contact-form__form" id="contact-form" data-status="initial">
         <div data-form-content tabindex="-1">
           <div class="contact-form__field">
@@ -52,7 +61,7 @@
               <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
             </span>
           </button>
-          <p class="contact-form__text caption">
+          <p class="contact-form__text small">
             Following your message, we will schedule a call to understand your situation and discuss how we can help. We will use
             this information to prepare a proposal, laying out our process and how it would apply to your particular project.
           </p>
@@ -72,7 +81,8 @@
               <p>Please try again later or contact us at
               <a href="mailto:info@mainmatter.com">
                 info@mainmatter.com
-              </a></p>
+              </a>
+              </p>
             </div>
           </div>
           <div class="contact-form__success" tabindex="-1" data-form-success>

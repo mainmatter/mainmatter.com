@@ -7,6 +7,24 @@
   }
 }
 
+.contact-form__social-wrapper {
+  margin-top: 4.5rem;
+  color: var(--color-white);
+}
+
+.contact-form__socials {
+  gap: 1rem;
+}
+
+.contact-form__methods {
+  margin-top: 2rem;
+}
+
+.contact-form__method-text {
+  display: block;
+  margin: 2.5rem 0;
+}
+
 .contact-form__main {
   padding: 6.25rem 0 4rem;
 }
@@ -21,7 +39,8 @@
 }
 
 .contact-form__text {
-  margin-top: 3.5rem;
+  margin-top: 2rem;
+  max-width: 33.75rem;
 }
 
 $states: "loading", "success", "error";
@@ -110,6 +129,7 @@ $states: "loading", "success", "error";
   border-radius: 0;
   width: 100%;
   background: transparent;
+  appearance: none;
   -webkit-appearance: none;
 
   &:has(option:not([value=""]):checked) {

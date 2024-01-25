@@ -58,7 +58,7 @@
 .featured-case-study__content-wrapper {
   position: relative;
   padding: 1.5rem;
-  text-align: right;
+  text-align: left;
   justify-content: center;
   min-height: 640px;
 }
@@ -81,8 +81,8 @@
 
 .featured-case-study__logo {
   position: absolute;
-  top: 3rem;
-  right: 3rem;
+  top: 1.25rem;
+  right: 1.25rem;
   max-width: 6rem;
   max-height: 3.25rem;
   margin-bottom: 1rem;
@@ -111,7 +111,6 @@
 }
 
 .featured-case-study__tags {
-  align-self: flex-end;
   margin-top: 0;
 }
 
@@ -150,7 +149,6 @@
   .featured-case-study__content-wrapper {
     justify-content: center;
     align-items: flex-start;
-    text-align: left;
   }
 
   .featured-case-study__content {
