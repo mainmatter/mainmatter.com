@@ -35,23 +35,13 @@
 
   <section class="featured-post featured-post--desktop" data-background-color="purple">
     <div class="container container--lg">
-      <h2 class="h1">Blog highlight</h2>
+      <h2 class="h1">{{ post.data.title | safe }}</h2>
       <div class="featured-post__content">
-        <a href="{{ post.url }}" class="featured-post__image-wrapper">
-          {% if post.data.image %}
-            {% image post.data.image, post.data.imageAlt, '(min-width: 48em) 50vw, 100vw', 'eager', '' %}
-          {% else %}
-            {% image '/assets/images/photos/0027.jpg', 'Hands gesturing around a laptop', '(min-width: 48em) 50vw, 100vw', 'eager', '' %}
-          {% endif %}
-        </a>
         <div class="featured-post__text-wrapper">
           {{ tags | safe }}
-          <a class="featured-post__link" href="{{ post.url }}">
-            <h3 class="featured-post__post-title h4">{{ post.data.title | safe }}</h3>
-          </a>
           {{ authorInfo | safe }}
           {% if post.data.tagline %}
-          <div class="featured-post__tagline text--sm">{{ post.data.tagline | safe }}</div>
+          <div class="featured-post__tagline">{{ post.data.tagline | safe }}</div>
           {% endif %}
           {{ ctaLink(post.url, 'Learn more', 'featured-post__cta') }}
         </div>

@@ -1,159 +1,103 @@
-.post-cards {
-  --spacing: 1rem;
-  --color-tag: var(--color-purple);
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-  padding-bottom: 8rem;
-}
-
-.post-cards__item {
-  &+& {
-    margin-top: 5rem;
-  }
-}
-
-.post-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  --color-tag: var(--color-purple);
-}
-
-.post-card__link-wrapper {
-  position: relative;
-}
-
-.post-card__link {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-
-  &:focus {
-    outline-offset: 0.25rem;
-  }
-
-  &:hover {
-    & ~ .post-card__cta:before {
-      transform: scaleX(1);
-    }
-  }
-}
-
-.post-card__tags {
-  margin: 1.25rem 0 var(--spacing);
-
-  .tags {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-}
-
-.post-card__title {
-  display: none;
-  margin-bottom: 1.25rem;
-
-  a {
-    text-decoration: none;
-  }
-}
-
-.post-card__internal-link {
-  position: relative;
-  z-index: 3;
-  padding-right: 0.125rem;
-}
-
-.post-card__image-overlay {
-  position: relative;
-  min-width: 100%;
-  color: var(--color-white);
-  aspect-ratio: 9/8;
-}
-
-.post-card__image-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.post-card__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.post-card__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  mix-blend-mode: multiply;
-  background-color: var(--color-black);
-  opacity: .6;
-}
-
-.post-card__content-wrapper {
-  position: relative;
-  padding: 1rem;
-  text-align: right;
-  height: 100%;
-}
-
-.post-card__mobile-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
+.post-cards__grid {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
+  margin-top: 2.5rem;
 }
 
-.post-card__content {
-  height: 100%;
-  justify-content: space-between;
-  flex-direction: column;
-  display: flex;
-}
-
-.post-card__author {
-  align-items: center;
-}
-
-.post-card__cta {
-  color: currentColor;
-}
-
-@media (min-width: 62em) {
-  .post-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5rem 1.5rem;
+@media (min-width: 30rem) {
+  .post-cards__grid {
+    grid-template-columns: 1fr 1fr;
   }
+}
 
-  .post-cards__item {
-    &+& {
-      margin-top: 0;
+@media (min-width: 60rem) {
+  .post-cards__grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.post-cards__grid-element {
+  color: var(--color-white);
+  padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+  min-height: 32rem;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.post-cards__logo svg {
+  fill: white;
+}
+
+.post-cards__link-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.post-cards__grid-element:nth-child(2n+1) {
+  background-color: var(--color-purple);
+}
+
+.post-cards__grid-element:nth-child(2n) {
+  background-color: var(--color-black);
+}
+
+.post-cards__grid-element:nth-child(5n+1) {
+  background-color: var(--color-aqua);
+}
+
+.post-cards__author {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post-cards__author-image-wrapper {
+  line-height: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.post-cards__author-image {
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.post-cards__link-arrow {
+  position: relative;
+  margin-left: 0.25rem;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+
+  svg {
+    transform: rotate(-90deg);
+    transition: color 0.3s ease;
+    @media (min-width: 72rem) {
+      width: 24px;
+      height: auto;
     }
   }
 
-  .post-card__mobile-content {
-    display: none;
-  }
 
-  .post-card__title {
-    display: block;
+  &--rotate {
+    margin-left: 0;
+    margin-right: 0.5rem;
+
+    svg {
+      transform: rotate(90deg);
+    }
   }
 }

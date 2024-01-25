@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: base-energy
 title: Enable your team to leverage Rust
 description: Mainmatter enables teams to adopt Rust in their web projects and increase performance, efficiency, and maintainability.
 permalink: /rust-consulting/
@@ -12,26 +12,15 @@ og:
 {% from "logo-list.njk" import logoList %}
 {% from "cta-link.njk" import ctaLink %}
 {% from "scroll-slides.njk" import scrollSlides %}
+{% from "color-hero-energy.njk" import colorHero %}
 
-<section class="color-hero color-hero--purple" data-background-color="purple">
-  <div class="color-hero__image-wrapper">
-    {% image '/assets/images/photos/notebook-on-table.jpg', 'Notebook on a table, seen from the side', '100vw', 'eager',
-    'color-hero__image', [760, 1440, 1920] %}
-  </div>
-  <div class="color-hero__overlay"></div>
-  <div class="color-hero__container container container--lg color-hero__container--center">
-    <div class="color-hero__main">
-      {% set imagePath %}/assets/images/rust/rust-logo.svg{% endset %}
-      <img class="expertise__logo" src="{{ imagePath }}" alt="Rust logo" />
-      <h1 class="color-hero__title color-hero__title--full ">Rust is a competitive advantage</h1>
-      <div class="color-hero__text color-hero__text--large">
-        <p>Rust checks all the boxes – performance, efficiency, maintainability, and great developer experience. Mainmatter is here to empower your team to fully realize those benefits in your web and backend projects.</p>
-        <p>
-          {{ ctaLink("/blog/2022/10/12/making-a-strategic-bet-on-rust/", "We're making a strategic bet on Rust", '') }}
-        </div>
-    </div>
-  </div>
-</section>
+
+{% set 'content' = {
+  "eyebrow": "Our Expertise: Rust",
+  "title": "Rust is a competitive advantage",
+  "text": "Rust checks all the boxes – performance, efficiency, maintainability, and great developer experience. Mainmatter is here to empower your team to fully realize those benefits in your web and backend projects."
+} %}
+{{ colorHero('purple', content) }}
 
 <section class="split-content">
   <div class="container container--lg">
@@ -160,7 +149,7 @@ og:
                 {% endif %}
               </div>
             {% endif %}
-            
+
           </div>
         </div>
       </div>

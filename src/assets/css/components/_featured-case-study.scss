@@ -20,6 +20,7 @@
   }
 
   &--aqua {
+    background-color: var(--color-aqua);
     --color-animation: var(--color-purple);
     --color-overlay: var(--color-aqua);
     --color-link-primary: var(--color-white);
@@ -28,6 +29,7 @@
   }
 
   &--black {
+    background-color: var(--color-black);
     --color-animation: var(--color-purple);
     --color-link-background: var(--color-aqua);
     --color-overlay: var(--color-black);
