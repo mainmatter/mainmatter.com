@@ -552,7 +552,7 @@ const createDiff = (filename, index) => {
     runShell(`git diff origin/ref-upstream upstream/master -- ${filename} > ${diffName}`);
     return diffName;
   } catch (error) {
-    throw new Error(`Failed to create the diff for ${filename}. This was caused by: ${err}`);
+    throw new Error(`Failed to create the diff for ${filename}. This was caused by: ${error}`);
   }
 }
 
@@ -578,6 +578,7 @@ const applyPatches = (files) => {
 
 try {
   // Create catchup branch and fetch last changes { ... }
+
   // Output the list of markdown files impacted by latest changes on upstream
   runShell('git diff --name-only origin/ref-upstream upstream/master -- guides/release > list.diff');
 
@@ -640,7 +641,7 @@ module in the next section of the blog post 😉
   // { ... }
 
 - applyPatches(files);
-+ let filesToPost = applyPatches(files, filesToPost);
++ let filesToPost = applyPatches(files);
 
 ```
 
@@ -994,7 +995,7 @@ const applyPatches = async (files) => { // The function is now async
         results.push(0);
       } catch (error) {
         console.log(`"git apply" command failed for ${diffName}`);
-        filesToPost.push(unversionedFileName );
+        filesToPost.push(unversionedFileName, diffName);
         results.push(2);
       }
 
@@ -1033,7 +1034,8 @@ let { filesToPost, hasAutoApply, hasPendingDiff } = applyPatches(files);
 // TODO: postAllIssues(filesToPost)
 
 if (hasAutoApply) {
-  pushChanges();
+  // commit and push changes { ... }
+  // TODO: open a catch-up PR on GitHub
 }
 ```
 
@@ -1049,11 +1051,10 @@ Because of the `forEach` loop in `applyPatches`. We can't use `async/await` in a
 `forEach` loop, because `forEach` is not promise-aware, the iteration doesn't
 return a value so there's no value to potentially wait for, and `forEach` never
 waits to move to the next iteration after an async code is executed. Any value
-returned asynchronously would be ignored.
-
-Each iteration of the `forEach` loop starts a series of “read → write”, the
-iterations run in parallel, and as soon as everything has started, we leave the
-loop and the function while the files edition is ongoing!
+returned asynchronously would be ignored. In other words, the `forEach` loop
+starts a series of “read → write” that run in parallel, and as soon as
+everything has started, we leave the loop and the function while the files
+edition is ongoing!
 
 🤔 How do we make sure that all the operations on files are over before
 continuing the execution of the script? It was great to let the script deal with
@@ -1179,19 +1180,33 @@ const shorterName = filename.substring(5);
 body of the issue. One little detail to handle is that there are \``` symbols in
 the file content and this can break the body. To solve the problem and because
 we just want to show the diff on GitHub without it being necessarily a valid
-patch file, we can simply remove the \``` symbols from the file:
+patch file, we can simply remove the \``` symbols from the file.
+
+Also, the issue body above works only if there _is_ a diff block to paste. If
+the file is new, it means this is the first translation. We can implement a
+function `getIssueBodyDiff` to manage this properly:
 
 ````js
-let diffblock;
-if (diffName) {
+const getIssueBodyDiff = diffName => {
+  if (!diffName) {
+    return "This is the first translation for this file.";
+  }
+
   diffblock = fs.readFileSync(diffName, "utf8");
   diffblock = diffblock.replaceAll("```", "");
-}
+  return `
+In the snippet below, you can see what changes were done in the latest English documentation. The purpose of this issue is to adjust the French translation to match the new version:
+
+\`\`\`diff
+${diffblock}
+\`\`\`
+`;
+};
 ````
 
-We also need a pair `{ filename, diffName }` to know what markdown file
-corresponds to what patch file. This one is quite easy to obtain, we can simply
-turn `filesToPost` into an array of objects:
+Last but not least, we need a pair `{ filename, diffName }` to know what
+markdown file corresponds to what patch file. This one is quite easy to obtain,
+we can simply turn `filesToPost` into an array of objects:
 
 ```diff
 // No diff block
@@ -1201,34 +1216,6 @@ turn `filesToPost` into an array of objects:
 // With a diff block
 - filesToPost.push(unversionedFileName);
 + filesToPost.push({ filename: unversionedFileName, diffName });
-```
-
-Last but not least, the issue body above works only if there is a diff block to
-paste. If the file is new, it means this is the first translation. We can
-implement a function `getIssueBody` to manage this properly:
-
-```js
-const getIssueBody = (filename, diffblock) => {
-  diffblock = diffblock
-    ? `
-In the snippet below, you can see what changes were done in the latest English documentation. The purpose of this issue is to adjust the French translation to match the new version:
-
-\`\`\`diff
-${diffblock}
-\`\`\`
-`
-    : "This is the first translation for this file.";
-
-  return `
-Please assign yourself to the issue or let a comment at the very moment you start the translation.
-      
-File: \`${filename}\`
-From Ember: **${currentEmberVersion}**
-To Ember: **${newEmberVersion}**
-
-${diffblock}
-`;
-};
 ```
 
 Alright! Looks like we have everything we need to complete the payload. Let's
@@ -1243,43 +1230,53 @@ wanted to use the JavaScript method
 version, we don't need any specific import, we can use `fetch` natively. In the
 end, the implementation could look this way:
 
-````js
-const postIssue = file => {
+```js
+const postIssue = async (file, repo, currentEmberVersion, newEmberVersion) => {
   const { filename, diffName } = file;
   const shorterName = filename.substring(5);
 
-  let diffblock;
-  if (diffName) {
-    diffblock = fs.readFileSync(diffName, "utf8");
-    diffblock = diffblock.replaceAll("```", "");
-  }
-
-  return fetch(`https://api.github.com/repos/${repo}/issues`, {
+  let response = await fetch(`https://api.github.com/repos/${repo}/issues`, {
     method: "POST",
     headers: getRequestHeaders(),
     body: JSON.stringify({
       title: `Translate \`${shorterName}\`, Ember ${newEmberVersion}`,
-      body: getIssueBody(filename, diffblock),
+      body: `
+Please assign yourself to the issue or let a comment at the very moment you start the translation.
+      
+File: \`${filename}\`
+From Ember: **${currentEmberVersion}**
+To Ember: **${newEmberVersion}**
+
+${getIssueBodyDiff(diffName)}
+`,
       labels: ["Guides FR trad"],
     }),
   });
-};
 
-const postAllIssues = async filesToPost => {
-  for (const file of filesToPost) {
-    try {
-      console.log(`Attempting to open an issue for ${file.filename}`);
-      const response = await postIssue(file);
-      const jsonResponse = await response.json();
-      console.log("Server responded with:", jsonResponse);
-    } catch (error) {
-      console.warn(
-        `The issue for file ${file.filename} (${file.diffName}) couldn't be opened automatically. This was caused by: ${error}`
-      );
-    }
-  }
+  return response.json();
 };
-````
+```
+
+And we will post all the issues that way:
+
+```js
+for (const file of filesToPost) {
+  try {
+    console.log(`Attempting to open an issue for ${file.filename}`);
+    const jsonResponse = await postIssue(
+      file,
+      repo,
+      currentEmberVersion,
+      newEmberVersion
+    );
+    console.log("Server responded with:", jsonResponse);
+  } catch (error) {
+    console.warn(
+      `The issue for file ${file.filename} (${file.diffName}) couldn't be opened automatically. This was caused by: ${error}`
+    );
+  }
+}
+```
 
 🤔 This is a regular `for` loop. Using `await` in a good old `for` loop results
 in executing the iterations serially, it pauses the execution and waits for the
@@ -1295,45 +1292,49 @@ let’s follow the documentation's
 and set a timeout of 1 second after each request to avoid secondary rate limits:
 
 ```diff
-  const postAllIssues = async () => {
-    for (const file of filesToPost) {
-      try {
-        console.log(`Attempting to open an issue for ${file.filename}`);
-        const response = await postIssue(file);
-        const jsonResponse = await response.json();
-        console.log('Server responded with:', jsonResponse);
-      } catch (error) {
-        console.warn(`The issue for file ${file.filename} (${file.diffName}) couldn't be opened automatically. This was caused by: ${error}`);
--     }
-+     } finally {
-+       await new Promise(resolve => setTimeout(resolve, 1000));
-+     }
-    };
-}
+  for (const file of filesToPost) {
+    try {
+      console.log(`Attempting to open an issue for ${file.filename}`);
+      const response = await postIssue(file);
+      const jsonResponse = await response.json();
+      console.log('Server responded with:', jsonResponse);
+    } catch (error) {
+      console.warn(`The issue for file ${file.filename} (${file.diffName}) couldn't be opened automatically. This was caused by: ${error}`);
+-   }
++   } finally {
++     await new Promise(resolve => setTimeout(resolve, 1000));
++   }
+  }
 ```
 
-Alright! Let's go back for a second to our main `try...catch` and add the call
-to `postAllIssues`:
+Alright! Let's go back for a second to our main `try...catch` and add our loop
+here:
 
 ```diff
     let { filesToPost, hasAutoApply, hasPendingDiff } = await applyPatches(files);
-+   await postAllIssues(filesToPost);
++   for (const file of filesToPost) { ... }; // post all issues
 
     if (hasAutoApply) {
       // commit and push changes { ... }
+      // TODO: open a catch-up PR on GitHub
     }
 
 ```
 
 ### c. Opening a PR with GitHub API
 
-After we push the changes to GitHub, we can open the "catchup PR" using GitHub
+After we push the changes to GitHub, we can open the "catch-up PR" using GitHub
 API. It's essentially the same thing as GitHub issues, except that you need to
 specify what branch you want to merge into what other branch:
 
 ```js
-const openCatchupPR = () => {
-  return fetch(`https://api.github.com/repos/${repo}/pulls`, {
+const openCatchupPR = async (
+  repo,
+  catchupBranch,
+  currentEmberVersion,
+  newEmberVersion
+) => {
+  let response = await fetch(`https://api.github.com/repos/${repo}/pulls`, {
     method: "POST",
     headers: getRequestHeaders(),
     body: JSON.stringify({
@@ -1344,6 +1345,8 @@ const openCatchupPR = () => {
       labels: ["Guides FR trad"],
     }),
   });
+
+  return response.json();
 };
 ```
 
@@ -1354,8 +1357,12 @@ try {
   // commit and push changes { ... }
   try {
     console.log("Attempting to post the catch up PR");
-    const prResponse = await openCatchupPR();
-    const jsonPrResponse = await prResponse.json();
+    const jsonPrResponse = await openCatchupPR(
+      repo,
+      catchupBranch,
+      currentEmberVersion,
+      newEmberVersion
+    );
     console.log("Server responded with:", jsonPrResponse);
   } catch (error) {
     console.warn(`Failed to post the catchup PR. This was caused by: ${error}`);
@@ -1374,36 +1381,36 @@ Sounds like our script is ready to work! We learned how to:
 
 This is it!
 
-There are still a couple of details we can add to improve the script. We could:
+There are still a couple of details we can add to improve the script. Here are a
+few examples of things we could do, and there are certainly more:
 
 - rework the logs to have a clear list of "required actions" the developer has
-  to do manually, for instance, if a GitHub issue wasn't posted.
-- switch back to the `catchup` branch instead of `master` branch at the very end
-  of the process depending on the required actions.
-- in terms of clean-up, we could remove the files we created and the
+  to do manually when the process exits with warnings. For instance, if a GitHub
+  issue wasn't posted.
+- if there's a bit more time, offer the possibility to retry sending a failed
+  request.
+- in terms of clean-up, we could also remove the files we created and the
   `scripts/patches` folder if all the GitHub issues have been posted correctly.
 - replace the usage of `existsSync()` with `await stats()` now that the function
   calling it is asynchronous.
 
 On a different matter, we could also write some tests to make sure the script
-does what we think it does. In case you wonder, such tests don't exist yet as I
-am writing these lines. To test the render of the issues and what the catch-up
-PR looks like, I did what I usually do: manual process first, then switch to the
-automation when I am clear with what I want. I created a sandbox project that
-contains only a `guides/release/` folder with a couple of fake markdown files,
-then I forked it and added the `catchup.mjs` to the fork along with npm package
-manager to import the few dependencies the script needs. By committing to the
-upstream sandbox, I could test many cases, including some that never occurred in
-the real guides so far, like the deletion of markdown files.
-
-You can see the work-in-progress version of the script in the
-`ember-fr-guides-source` repository, it's
-[right there](https://github.com/DazzlingFugu/ember-fr-guides-source/blob/master/scripts/catchup.mjs).
+does what we think it does. Such tests don't exist yet as I am writing these
+lines. To check the render of the issues and what the catch-up PR looks like, I
+did what I usually do: manual process first, then switch to the automation when
+I am clear with what I want. I created a sandbox project that contains only a
+`guides/release/` folder with a couple of fake markdown files, then I forked it
+and added the `catchup.mjs` to the fork along with a package manager to import
+the few dependencies the script needs. By committing to the upstream sandbox, I
+could test many cases, including some that never occurred in the real guides so
+far, like the deletion of markdown files.
 
 As said at the beginning of this article, none of this answers the question "how
 to bootstrap a translation project, what's the best approach to use?". However,
 all the above may have convinced you that maintenance automation is not that big
 of a deal. And it's an iterative process, too. I could have started using this
-script to automate the git commands before it was able to do the API requests.
-Even now that it's complete, there are certainly improvements to make, but it
-doesn't prevent me from using the script and saving time today 😉.
+script to automate the git commands before it was able to do the API requests. I
+did start using it before it was able to handle new markdown files, and I
+iterated on the code again afterward. Even now that it's complete, there are
+certainly improvements to make, but it doesn't prevent me from using the script
+and saving time today 😉.
