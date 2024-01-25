@@ -191,7 +191,10 @@
         "lifeart/glimmer-next",
         "opral/monorepo",
         "mansona/lttf-dashboard",
-        "opral/monorepo"
+        "opral/monorepo",
+        "mansona/lttf-dashboard",
+        "opral/monorepo",
+        "thefrontside/effection"
       ]
     },
     {
@@ -433,12 +436,15 @@
         "ember-codemods/ember-no-implicit-this-codemod",
         "ember-codemods/ember-no-implicit-this-codemod",
         "ember-codemods/ember-no-implicit-this-codemod",
+        "ember-codemods/ember-no-implicit-this-codemod",
+        "ember-codemods/ember-no-implicit-this-codemod",
         "ember-codemods/ember-no-implicit-this-codemod"
       ]
     },
     {
       "name": "Project Forms",
       "repos": [
+        "project-forms/project-forms.github.io",
         "project-forms/project-forms.github.io",
         "project-forms/project-forms.github.io"
       ]
