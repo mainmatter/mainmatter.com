@@ -1,11 +1,12 @@
 ---
-layout: base
+layout: base-energy
 ---
 
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from "author-socials.njk" import authorSocials %}
-{% from "color-hero.njk" import colorHero %}
+{% from "color-hero-energy.njk" import colorHero %}
 {% from "service-cta.njk" import serviceCta %}
+{% from "cta-banner.njk" import ctaBanner %}
 
 {%- block content -%}
 <article>
@@ -59,6 +60,7 @@ layout: base
       </div>
     </div>
   </div>
+
   {% if image %}
     {% set imageData = {
       "imgPath": image,
@@ -107,12 +109,9 @@ layout: base
 {%- endblock -%}
 
 {% set 'content' = {
-"title": "Grow <em>your business</em> with us",
-"text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
-"linkUrl": "/contact/",
-"linkText": "Get in touch",
-"image": "/assets/images/photos/grow-with-us-blog.jpg",
-"alt": "Team member leaning against wall taking notes while talking to three other team members",
-"loading": "lazy"
+  "title": "Grow your business with us",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
 } %}
-{{ colorHero('center', 'small', 'aqua', content, true) }}
+{{ ctaBanner('aqua', 'full', content) }}

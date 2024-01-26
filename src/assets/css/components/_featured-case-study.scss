@@ -48,6 +48,11 @@
     color: var(--color-white);
 
   }
+
+  &:hover {
+    background-image: linear-gradient(to right top, #6200ee, #0074ff, #00a0ff, #00c1e8, #03dac5);
+
+  }
 }
 
 .featured-case-study__content-wrapper,
@@ -67,7 +72,7 @@
 
 .featured-case-study__content {
   justify-content: flex-start;
-  align-items: center;
+  align-items: start;
 
 }
 

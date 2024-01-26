@@ -5,21 +5,16 @@
       <span class="screenreader">{{ caseStudy.data.displayTitle }}</span>
     </a>
 
-      <div class="featured-case-study__content-wrapper">
-        {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %} <img class="featured-case-study__logo" src="{{ imagePath }}" alt="{{ company }}"/>
-        <div class="featured-case-study__content">
-          <div class="featured-case-study__description">
-            <p class="featured-case-study__client h5">{{ caseStudy.data.company }}</p>
-            <h2 class="featured-case-study__title">{{ caseStudy.data.displayTitle | stripHTML }}</h2>
-          </div>
-          <p class="featured-case-study__tags caption">{{ caseStudy.data.hero.tags }}</p>
-          <span class="featured-case-study__cta cta-link" aria-hidden="true">
-            <span class="cta-link__text-wrapper">
-              <span class="cta-link__text">Read the case study</span>
-              <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
-            </span>
-          </span>
+    <div class="featured-case-study__content-wrapper">
+      {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %}
+      <img class="featured-case-study__logo" src="{{ imagePath }}" alt="{{ company }}"/>
+      <div class="featured-case-study__content">
+        <div class="featured-case-study__description">
+          <p class="featured-case-study__client h5">{{ caseStudy.data.company }}</p>
+          <h2 class="featured-case-study__title">{{ caseStudy.data.displayTitle | stripHTML }}</h2>
         </div>
+        <p class="featured-case-study__tags caption">{{ caseStudy.data.hero.tags }}</p>
       </div>
+    </div>
   </li>
 {%- endmacro -%}

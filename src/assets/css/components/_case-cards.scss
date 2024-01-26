@@ -41,6 +41,9 @@
 }
 
 .case-cards__grid-element:hover {
+  background-image: linear-gradient(to right top, #6200ee, #0074ff, #00a0ff, #00c1e8, #03dac5);
+  color: var(--color-white);
+
   .problem {
     opacity: 0;
     display: none;

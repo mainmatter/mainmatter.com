@@ -1,4 +1,5 @@
 {% from "cta-link.njk" import ctaLink %}
+{% from "btn-secondary.njk" import btnSecondary %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 
 {%- macro imageBannerWithText(content) -%}
@@ -29,7 +30,12 @@
           <div class="image-banner-with-text__text">{{ content.text | safe }}</div>
         {% endif %}
         {% if content.linkUrl and content.linkText %}
-          {{ ctaLink(content.linkUrl, content.linkText, 'image-banner-with-text__link') }}
+          {% set link = {
+          "label": content.linkText,
+          "url": content.linkUrl
+          }
+      %}
+      {{ btnSecondary( link )}}
         {% endif %}
       </div>
     </div>

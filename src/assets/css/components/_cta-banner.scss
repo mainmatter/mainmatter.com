@@ -47,6 +47,13 @@
   padding: 2rem;
 }
 
+
+.cta-banner__main {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
 @media (min-width: 72rem) {
 .cta-banner__wrapper {
   display: flex;

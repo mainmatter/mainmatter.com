@@ -1,4 +1,5 @@
 {% from "social-list.njk" import socialList %}
+{% from "btn-primary.njk" import btnPrimary %}
 {% set navPages = collections.all | eleventyNavigation %}
 
 {% if page.url == '/services/workshops/' or page.url == '/work/' or page.url == '/playbook/' or page.url == '/events/' %}
@@ -79,7 +80,9 @@
 
       {%- for entry in navPages %}
         <li class="nav__item" {% if entry.children.length > 0 %} data-has-modal {% endif %}>
-          {% if entry.url == '/work/' %}{% set parentChildCompare = '/cases/' %}{% else %}{% set parentChildCompare = entry.url %}{% endif %}
+          {% if entry.url == '/work/' %}{% set parentChildCompare = '/cases/' %}
+          {% else %}{% set parentChildCompare = entry.url %}
+          {% endif %}
           <a class="nav__link nav__link-text{% if entry.url == page.url or (page.url and parentChildCompare in page.url) %} nav__link-text--active{% endif %}" {% if entry.url == page.url %} aria-current="page" {% endif %} href="{{ entry.url | url }}">
             {{ entry.title }}
           </a>
@@ -87,10 +90,14 @@
       {%- endfor %}
 
     </ul>
+
     <div class="nav__aside">
-      <a class="nav__cta nav__cta--{{ ctaColor }} text--sm" href="/contact/">
-        Contact us
-      </a>
+      {% set link = {
+        "label": "Contact us",
+        "url": "/contact/"
+      }
+      %}
+      {{ btnPrimary( link, ctaColor, 'nav__cta' )}}
       <details class="nav__mobile-menu-wrapper" data-has-submenu>
         <summary class="nav__menu-toggle" data-menu-toggle data-menu-mobile-close-toggle>
           {% include 'svg/menu.njk' %}

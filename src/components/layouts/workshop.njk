@@ -1,29 +1,18 @@
 ---
-layout: 'base'
+layout: 'base-energy'
 ---
 
 {% from "author-socials.njk" import authorSocials %}
+{% from "color-hero-energy.njk" import colorHero %}
+{% from "cta-banner.njk" import ctaBanner %}
 {%- block content -%}
   <article>
-    <div class="workshop-hero color-hero color-hero--black" data-background-color="black">
-      <div class="color-hero__image-wrapper">
-        {% if hero.image %}
-          {% image hero.image, hero.imageAlt, '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
-        {% endif %}
-      </div>
-      <div class="color-hero__overlay"></div>
-      <div class="color-hero__container container container--lg color-hero__container--center">
-        <div class="color-hero__main">
-          <p class="workshop-hero__format">{{ format }}</p>
-          <h1 class="workshop-hero__title color-hero__title color-hero__title--full">{{ title | safe }}</h1>
-          {% if subtext %}
-            <div class="color-hero__text color-hero__text--small">
-              <p>{{ subtext }}</p>
-            </div>
-          {% endif %}
-        </div>
-      </div>
-    </div>
+    {% set 'hero' = {
+      "eyebrow": format,
+      "title": title,
+      "text": subtext
+    } %}
+    {{ colorHero('purple', hero) }}
 
     <div class="container container--lg post">
       <div class="workshop__content post__content--workshop rte">
@@ -66,42 +55,49 @@ layout: 'base'
     </div>
 
     <div class="workshop-authors">
-    <div class="container container--lg">
-    <div class="workshop__content post__content--workshop">
-      <h2 class="workshop-topics__heading">Your mentor{%- if (leads | default([])).length > 1 -%}s{%- endif -%}</h2>
-      {%- for lead in leads -%}
-        <div class="author__wrapper">
-          <div class="author text--xs">
-            <div class="workshop-authors__image-wrapper author__image-wrapper">
-              {% image lead.image, lead.name, '3.75rem', 'eager', 'author__lead-image', [120] %}
-            </div>
-            <div class="author__text-wrapper">
-              <div class="author__name-wrapper">
-                <span>with&nbsp;</span>
-                {% if lead.authorHandle %}
-                  <a href="/blog/author/{{ lead.handle }}" class="author__name">{{ lead.name }}</a>
-                {% else %}
-                  <p class="author__name">{{ lead.name }}</p>
-                {% endif %}
+      <div class="container container--lg">
+        <div class="workshop__content post__content--workshop">
+          <h2 class="workshop-topics__heading">Your mentor{%- if (leads | default([])).length > 1 -%}s{%- endif -%}
+          </h2>
+          {%- for lead in leads -%}
+            <div class="author__wrapper">
+              <div class="author text--xs">
+                <div class="workshop-authors__image-wrapper author__image-wrapper">
+                  {% image lead.image, lead.name, '3.75rem', 'eager', 'author__lead-image', [120] %}
+                </div>
+                <div class="author__text-wrapper">
+                  <div class="author__name-wrapper">
+                    <span>with&nbsp;</span>
+                    {% if lead.authorHandle %}
+                      <a href="/blog/author/{{ lead.handle }}" class="author__name">{{ lead.name }}</a>
+                    {% else %}
+                      <p class="author__name">{{ lead.name }}</p>
+                    {% endif %}
+                  </div>
+                  {% if lead.handle %}
+                    {{ authorSocials(lead.handle, "author-socials--desktop-only") }}
+                  {% endif %}
+                  <div class="author__title">{{ lead.title }}</div>
+                  {% if lead.handle %}
+                    {{ authorSocials(lead.handle, "author-socials--mobile-only") }}
+                  {% endif %}
+                </div>
               </div>
-              {% if lead.handle %}
-                {{ authorSocials(lead.handle, "author-socials--desktop-only") }}
-              {% endif %}
-              <div class="author__title">{{ lead.title }}</div>
-              {% if lead.handle %}
-                {{ authorSocials(lead.handle, "author-socials--mobile-only") }}
-              {% endif %}
+              <div class="author__details{% if lead.bio.length > 200 %} author__details--full-width{% endif %} text--sm">
+                <p>{{ lead.bio | safe }}</p>
+              </div>
             </div>
-          </div>
-          <div class="author__details{% if lead.bio.length > 200 %} author__details--full-width{% endif %} text--sm">
-            <p>{{ lead.bio | safe }}</p>
-          </div>
+          {%- endfor -%}
         </div>
-      {%- endfor -%}
       </div>
     </div>
-  </div>
 
-</article>
-{% include 'content/hero-book-workshop.njk' %}
+  </article>
+  {% set 'content' = {
+    "title": "Book this workshop",
+    "text": "Our mentors look forward to working with your team and unlocking new capabilities.",
+    "linkUrl": "/contact",
+    "linkText": "Get in touch"
+  } %}
+  {{ ctaBanner('purple', 'full', content) }}
 {%- endblock -%}

@@ -1,3 +1,4 @@
+{% from "btn-primary.njk" import btnPrimary %}
 {% from "cta-link.njk" import ctaLink %}
 {%- macro ctaBanner(color, width, content) -%}
   <section class="cta-banner cta-banner--{{ color }} {% if width == 'default' %}container container--xl my-10 {% endif %}" data-background-color="{{ color }}">
@@ -16,7 +17,12 @@
           <div class="cta-banner__text">{{ content.text | safe }}</div>
         {% endif %}
         {% if content.linkUrl %}
-          {{ ctaLink(content.linkUrl, content.linkText, 'cta-banner__link') }}
+          {% set link = {
+            "label": content.linkText,
+            "url": content.linkUrl
+          }
+          %}
+          {{ btnPrimary( link, 'white', 'mt-2' )}}
         {% endif %}
       </div>
     </div>
