@@ -25,9 +25,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: end;
+  align-items: start;
   text-decoration: none;
   transition: all 0.3s ease;
+}
+
+.post-cards__grid-element:hover {
+  background-image: linear-gradient(to right top, #6200ee, #0074ff, #00a0ff, #00c1e8, #03dac5);
+  color: var(--color-white);
 }
 
 .post-cards__logo svg {
