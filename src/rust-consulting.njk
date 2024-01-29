@@ -11,9 +11,11 @@ og:
 {% from "recent-posts.njk" import recentPosts %}
 {% from "logo-list.njk" import logoList %}
 {% from "cta-link.njk" import ctaLink %}
-{% from "scroll-slides.njk" import scrollSlides %}
 {% from "color-hero-energy.njk" import colorHero %}
 {% from "btn-secondary.njk" import btnSecondary %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "quote.njk" import quote %}
 
 {% set 'content' = {
   "eyebrow": "Our Expertise: Rust",
@@ -94,6 +96,17 @@ og:
 {% set title = 'Our EuroRust partners are betting on Rust' %}
 {{ logoList(logoCompanies, title, "h4", "h5") }}
 
+<section class="mb-10">
+  {% set imageData = {
+    "imgPath": "/assets/images/rust/eurorust.jpeg",
+    "alt": "Server room",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
 <section class="my-10 container container--lg">
   <div class="split-content">
     <div class="split-content__wrapper">
@@ -158,48 +171,34 @@ og:
   </div>
 </section>
 
+<section class="mb-10">
+  {% set imageData = {
+    "imgPath": "/assets/images/rust/eurorust-2.jpeg",
+    "alt": "Server room",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
 
-<section class="quotes-list">
-  <div class="container container--xl">
-    <h2 class="quotes-list__title h2">Listen to our customers</h2>
-    <ul class="quotes-list__list">
-      <li class="quotes-list__quote">
-        <div class="quotes-list__quote-image">
-          <img src="/assets/images/logos/monochrome/mvb.svg" alt="MVB logo"/>
-        </div>
-        <div class="quotes-list__quote-text text--sm">
-          <blockquote>
-            ”Mainmatter’s team is highly experienced and professional. They not only helped us develop the product but also mentored our internal team and introduced a number of improvements around infrastructure and processes along the way. Due to their work, we increased our team’s efficiency substantially and will be able to deliver better results faster going forward.”
-          </blockquote>
-          <figcaption class="quotes-list__quote-source">Ronald Schild<span class="quotes-list__quote-source--separator">, </span>
-            <span class="quotes-list__quote-source--jobtitle">Managing Director of MVB</span></figcaption>
-        </div>
-      </li>
-      <li class="quotes-list__quote">
-        <div class="quotes-list__quote-image">
-          <img src="/assets/images/logos/monochrome/qonto.svg" alt="Qonto logo"/>
-        </div>
-        <div class="quotes-list__quote-text text--sm">
-          <blockquote>
-            ”Working with Mainmatter's experts has always been a good experience. We can really feel that they have mastery on many topics, and knowledge about complex technical problems. I’ve learned so much, especially during our pairing sessions, and it allows me to improve my technical skills and growth as an engineer.”
-          </blockquote>
-          <figcaption class="quotes-list__quote-source">Alexandre Monjol<span class="quotes-list__quote-source--separator">, </span>
-            <span class="quotes-list__quote-source--jobtitle">Engineer at Qonto</span></figcaption>
-        </div>
-      </li>
-      <li class="quotes-list__quote">
-        <div class="quotes-list__quote-image">
-          <img src="/assets/images/logos/monochrome/trainline.svg" alt="Trainline logo"/>
-        </div>
-        <div class="quotes-list__quote-text text--sm">
-          <blockquote>
-            ”We started working with simplabs to build a state-of-the-art mobile web app from the ground up and it was an absolute success! Not only are they web specialists, but their expertise in development practices and agile processes made our collaboration an absolute delight.”
-          </blockquote>
-          <figcaption class="quotes-list__quote-source">Carl Anderson<span class="quotes-list__quote-source--separator">, </span>
-            <span class="quotes-list__quote-source--jobtitle">General Manager at Trainline Europe</span></figcaption>
-        </div>
-      </li>
-    </ul>
+<section class="my-10">
+  <h2 class="quotes-list__title h2">Listen to our customers</h2>
+  <div class="container container--lg">
+    {% set 'content' = {
+      "text": "”Mainmatter’s team is highly experienced and professional. They not only helped us develop the product but also mentored our internal team and introduced a number of improvements around infrastructure and processes along the way. Due to their work, we increased our team’s efficiency substantially and will be able to deliver better results faster going forward.”",
+      "source": "Ronald Schild, Managing Director of MVB"
+    } %} {{ quote(content) }}
+
+    {% set 'content' = {
+      "text": "”Working with Mainmatter's experts has always been a good experience. We can really feel that they have mastery on many topics, and knowledge about complex technical problems. I’ve learned so much, especially during our pairing sessions, and it allows me to improve my technical skills and growth as an engineer.”",
+      "source": "Alexandre Monjol, Engineer at Qonto"
+    } %} {{ quote(content, alignment='right') }}
+
+    {% set 'content' = {
+      "text": "”We started working with simplabs to build a state-of-the-art mobile web app from the ground up and it was an absolute success! Not only are they web specialists, but their expertise in development practices and agile processes made our collaboration an absolute delight.”",
+      "source": "Carl Anderson, General Manager at Trainline Europe"
+    } %} {{ quote(content) }}
   </div>
 </section>
 
