@@ -160,7 +160,9 @@
   }
 
   .nav__list {
-    display: block;
+    display: flex;
+    flex-direction: row;
+
   }
 
   .nav__cta {
