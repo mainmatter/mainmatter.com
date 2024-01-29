@@ -1,4 +1,4 @@
-{% from "cta-link.njk" import ctaLink %}
+{% from "btn-primary.njk" import btnPrimary %}
 
 {%- macro featuredPost(post) -%}
   {% if post.data.tags %}
@@ -6,7 +6,7 @@
       <ul class="tags">
         {% for tag in post.data.tags %}
         <li class="tags__tag-item">
-          <a class="featured-post__tag tags__tag tags__tag--link" href="/blog/tag/{{ tag | slug }}">#{{ tag }}</a>
+          <a class="featured-post__tag tags__tag tags__tag--link" href="/blog/tag/{{ tag | slug }}">{{ tag }}</a>
         </li>
         {% endfor %}
       </ul>
@@ -37,37 +37,22 @@
     <div class="container container--lg">
       <h2 class="h1">{{ post.data.title | safe }}</h2>
       <div class="featured-post__content">
-        <div class="featured-post__text-wrapper">
+        <div class="featured-post__meta-wrapper mt-015 text--sm">
           {{ tags | safe }}
+          {{ post.date | monthDayYear }}
           {{ authorInfo | safe }}
-          {% if post.data.tagline %}
-          <div class="featured-post__tagline">{{ post.data.tagline | safe }}</div>
-          {% endif %}
-          {{ ctaLink(post.url, 'Learn more', 'featured-post__cta') }}
         </div>
+        {% if post.data.tagline %}
+          <div class="featured-post__tagline">{{ post.data.tagline | safe }}</div>
+        {% endif %}
+        {% set link = {
+            "label": "Read more",
+            "url": post.url
+          }
+          %}
+        {{ btnPrimary( link, 'white', 'mt-2' )}}
       </div>
     </div>
   </section>
-  <section class="featured-post featured-post--mobile color-hero color-hero--purple" data-background-color="purple">
-    <div class="color-hero__image-wrapper">
-      {% if post.data.image %}
-        {% image post.data.image, post.data.imageAlt, '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
-      {% endif %}
-    </div>
-    <div class="color-hero__overlay"></div>
-    <div class="color-hero__container container container--lg color-hero__container--center">
-      <div class="color-hero__main">
-        <h1 class="featured-post__title color-hero__title">Blog highlight</h1>
-          {{ tags | safe }}
-          <a class="featured-post__link" href="{{ post.url }}">
-            <h2 class="featured-post__post-title h5 text--bold">{{ post.data.title | safe }}</h2>
-          </a>
-          {{ authorInfo | safe }}
-          {% if post.data.tagline %}
-          <div class="featured-post__tagline text--sm">{{ post.data.tagline | safe }}</div>
-          {% endif %}
-          {{ ctaLink(post.url, 'Learn more', 'featured-post__cta') }}
-      </div>
-    </div>
-  </section>
+
 {%- endmacro -%}

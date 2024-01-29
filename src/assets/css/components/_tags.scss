@@ -1,8 +1,6 @@
 .tags {
   margin-top: 0;
   padding: 0;
-  margin-left: -0.25rem;
-  margin-bottom: -0.25rem;
 }
 
 .tags__tag-item {
@@ -14,7 +12,6 @@
   display: inline-block;
   font-weight: 500;
   line-height: 1;
-  text-transform: uppercase;
   color: var(--color-tag);
   text-decoration-line: underline;
   text-decoration-color: currentColor;

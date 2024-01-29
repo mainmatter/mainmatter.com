@@ -7,6 +7,7 @@ event: A event object
 {{ eventCard(event) }}
 #}
 {% from "cta-link.njk" import ctaLink %}
+{% from "btn-primary.njk" import btnPrimary %}
 {%- macro eventCard(event) -%}
   <li class="event-card event-card--{{ event.data.color }}" data-background-color="{{ event.data.color }}">
     <div class="event-card__image-wrapper">
@@ -26,7 +27,12 @@ event: A event object
         {{ event.templateContent | safe }}
       </div>
       {% set linkText = "Visit Website <span class='screenreader'>for " + event.data.title + "</span>" %}
-      {{ ctaLink(event.data.url, linkText, 'event-card__cta') }}
+        {% set link = {
+            "label": linkText | safe,
+            "url": event.data.url
+          }
+          %}
+        {{ btnPrimary( link, 'white', 'mt-2' )}}
     </div>
   </li>
 {%- endmacro -%}

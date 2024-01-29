@@ -1,23 +1,21 @@
 ---
-layout: 'base'
+layout: 'base-energy'
 title: Events
 description: Find out about upcoming events, conferences and meetups we will be attending or organizing.
 ---
 
-{% from "color-hero.njk" import colorHero %}
+{% from "color-hero-energy.njk" import colorHero %}
 {% from "event-card.njk" import eventCard %}
 {% from "talk-banner.njk" import talkBanner %}
 {% from "talk-card.njk" import talkCard %}
 {% from "cta-link.njk" import ctaLink %}
+{% from "btn-primary.njk" import btnPrimary %}
+{% from "cta-banner.njk" import ctaBanner %}
 
 {% set 'content' = {
-"title": "Guidance from our team of <em>trusted</em> industry experts",
-"image": "/assets/images/photos/events-2.jpg",
-"alt": "Audience seen from the back watching a presentation at Emberfest",
-"loading": "eager",
-"titleTag": "h1"
+  "title": "Guidance from our team of trusted industry experts"
 } %}
-{{ colorHero('center', 'large', 'black', content) }}
+{{ colorHero('black', content) }}
 
 <div class="section container container--lg">
   <div class="section__introduction">
@@ -69,4 +67,10 @@ description: Find out about upcoming events, conferences and meetups we will be 
   </div>
 </section>
 
-{% include 'content/hero-grow-with-us.njk' %}
+{% set 'content' = {
+  "title": "Grow your business with us",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
+} %}
+{{ ctaBanner('aqua', 'full', content) }}
