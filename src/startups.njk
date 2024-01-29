@@ -12,6 +12,7 @@ description: "Discover effective strategies to scale up your business, and achie
 {% from "post-card.njk" import postCard %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "btn-secondary.njk" import btnSecondary %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
 
 {% set 'content' = {
   "title": "Burst through your scale-up bottleneck. We'll be your expert guides.",
@@ -107,6 +108,16 @@ description: "Discover effective strategies to scale up your business, and achie
   </div>
 </section>
 
+<section class="mt-10 mb-0">
+  {% set imageData = {
+    "imgPath": "/assets/images/photos/mainmatter-balloon.jpeg",
+    "alt": "Server room",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
 
 {% set 'content' = {
   "title": "Grow your business with us",
