@@ -7,13 +7,13 @@ description:
   "Marine Dunstetter builds an automation script in Node.js to maintain the
   translation of the Ember Guides with git and GitHub."
 og:
-  image: "/assets/images/posts/2024-01-10-ember-guides-fr-git-automation/og-image.jpg"
+  image: "/assets/images/posts/2024-01-30-ember-guides-fr-git-automation/og-image.jpg"
 tagline: |
   <p>
     One of the main blockers to translation projects is the overwhelming question: how do you maintain it? The tool you're building is already big, and the English docs for this tool are generally a complete website that you must keep up to date. What's the best approach to setting up translations? The answer's probably unique to each project. But how to make maintenance a realistic task? The answer contains a tiny bit of genericity: automation saves time. The Ember Guides are currently being translated into French, and what I built to automate the maintenance might give you some ideas. It's going to be about Node.js, git, and GitHub API.
   </p>
 
-image: "/assets/images/posts/2024-01-10-ember-guides-fr-git-automation/header.jpg"
+image: "/assets/images/posts/2024-01-30-ember-guides-fr-git-automation/header.jpg"
 imageAlt:
   "The Ember logo on a grey background picture displaying a robot at work in a
   factory"
@@ -436,7 +436,7 @@ try {
   execSync(`git switch --create ${catchupBranch}`);
 } catch (error) {
   console.error(
-    `Failed to prepare the git branches for the catchup. This was caused by: ${error}`
+    `Failed to prepare the git branches for the catch-up. This was caused by: ${error}`
   );
   process.exitCode = 1;
 }
@@ -468,7 +468,7 @@ abstract our logic in a function so we don't have to rewrite the log each time:
   try {
 -   console.log(`Attempting to execute: "git switch --create ${catchupBranch}"`);
 -   execSync(`git switch --create ${catchupBranch}`);
-+   // Create a catchup branch out of the current branch (should be up to date master)
++   // Create a catch-up branch out of the current branch (should be up to date master)
 +   runShell('git switch --create ${catchupBranch}');
 +   // Fetch the latest ref-upstream branch (English version under translation on this repo)
 +   runShell('git fetch');
@@ -529,7 +529,7 @@ depending on the result.
 Thanks to `-- guides/release` option, we learned that `git diff` command can
 scope the comparison to a given folder. We could also scope it to one single
 markdown file! So we would run the command with
-`-- [my-file-1].md > [my-file].diff` to output all the different patches. But
+`-- [my-file-1].md > [my-file-1].diff` to output all the different patches. But
 how to get the list of markdown files that have been modified in
 `upstream/master`?
 
@@ -577,7 +577,7 @@ const applyPatches = (files) => {
 }
 
 try {
-  // Create catchup branch and fetch last changes { ... }
+  // Create catch-up branch and fetch last changes { ... }
 
   // Output the list of markdown files impacted by latest changes on upstream
   runShell('git diff --name-only origin/ref-upstream upstream/master -- guides/release > list.diff');
@@ -665,7 +665,7 @@ place:
 
 ```js
 /*
- * This function performs the last actions once most of the catchup is done
+ * This function performs the last actions once most of the catch-up is done.
  * It updates origin/ref-upstream to upstream/master if there's no pending manual action,
  * then it switches back to master.
  */
@@ -849,7 +849,7 @@ files. Let's imagine we reuse these files to create 3 GitHub issues and for some
 reason one of the POST requests fails. Today, the easiest way to finish the
 catch-up is to open manually the missing issue, so having the patch file still
 around will become handy. For this reason, we will create the folder permanently
-on the catchup branch.
+on the catch-up branch.
 
 Let’s create a new folder in the scripts folder:
 
@@ -1295,8 +1295,7 @@ and set a timeout of 1 second after each request to avoid secondary rate limits:
   for (const file of filesToPost) {
     try {
       console.log(`Attempting to open an issue for ${file.filename}`);
-      const response = await postIssue(file);
-      const jsonResponse = await response.json();
+      const jsonResponse = await postIssue(/* ... */);
       console.log('Server responded with:', jsonResponse);
     } catch (error) {
       console.warn(`The issue for file ${file.filename} (${file.diffName}) couldn't be opened automatically. This was caused by: ${error}`);
@@ -1365,10 +1364,12 @@ try {
     );
     console.log("Server responded with:", jsonPrResponse);
   } catch (error) {
-    console.warn(`Failed to post the catchup PR. This was caused by: ${error}`);
+    console.warn(
+      `Failed to post the catch-up PR. This was caused by: ${error}`
+    );
   }
 } catch (error) {
-  console.warn("Failed to push the catchup branch.");
+  console.warn("Failed to push the catch-up branch.");
 }
 ```
 
