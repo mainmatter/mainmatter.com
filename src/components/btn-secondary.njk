@@ -1,5 +1,5 @@
-{%- macro btnSecondary(link) -%}
-<a href="{{ link.url }}" class="btn-secondary h4">
+{%- macro btnSecondary(link, class) -%}
+<a href="{{ link.url }}" class="btn-secondary h4 {{ class }}">
   {% include 'svg/arrow.njk' %}
   <span class="btn-secondary__text">{{ link.label }}</span>
 </a>

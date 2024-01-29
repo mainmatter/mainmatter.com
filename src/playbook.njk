@@ -1,22 +1,19 @@
 ---
-layout: base
+layout: base-energy
 title: Our Playbook
 description: Our playbook describes methodologies for building sustainable digital products and provides guidance for teams of all sizes, on-site or remote.
 permalink: /playbook/
 ---
 
-{% from "color-hero.njk" import colorHero %}
+{% from "color-hero-energy.njk" import colorHero %}
 {% from "text-with-list.njk" import textWithList %}
 {% from "cta-link.njk" import ctaLink %}
+{% from "cta-banner.njk" import ctaBanner %}
 
 {% set 'content' = {
-"title": "Build <em>lasting</em> products systematically",
-"titleTag": "h1",
-"image": "/assets/images/playbook/playbook.jpg",
-"alt": "Close-up of multicolor constructor blocks",
-"loading": "eager"
-} %}
-{{ colorHero('center', 'large', 'black', content) }}
+  "title": "Build lasting products systematically"
+ } %}
+{{ colorHero('aqua', content) }}
 
 {% set content = {
 "title": "Our playbook",
@@ -90,12 +87,9 @@ quality.",
 </section>
 
 {% set 'content' = {
-"title": "Grow <em>your business</em> with us",
-"text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
-"linkUrl": "/contact/",
-"linkText": "Get in touch",
-"image": "/assets/images/photos/grow-with-us-playbook.jpg",
-"alt": "Hands gesturing in front of laptop",
-"loading": "lazy"
+  "title": "Grow your business with us",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
 } %}
-{{ colorHero('center', 'small', 'purple', content, true) }}
+{{ ctaBanner('aqua', 'full', content) }}

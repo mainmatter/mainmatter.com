@@ -1,106 +1,132 @@
----js
-{
-  title: "Startups - Scaling Up Your Business",
-  description: "Discover effective strategies to scale up your business, and achieve long-term success. Learn how we can help you unlock growth potential and optimize your processes for a sustainable expansion.",
-  layout: "base.njk",
-}
+---
+layout: 'base-energy'
+title: "Startups - Scaling Up Your Business"
+description: "Discover effective strategies to scale up your business, and achieve long-term success. Learn how we can help you unlock growth potential and optimize your processes for a sustainable expansion."
 ---
 
-{% from "color-hero.njk" import colorHero %}
+{% from "color-hero-energy.njk" import colorHero %}
 {% from "featured-services.njk" import featuredServices %}
 {% from "logo-list.njk" import logoList %}
 {% from "scroll-slides.njk" import scrollSlides %}
 {% from "cta-link.njk" import ctaLink %}
 {% from "post-card.njk" import postCard %}
-
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "btn-secondary.njk" import btnSecondary %}
 
 {% set 'content' = {
-  "title": "Burst through your scale-up bottleneck. We'll be your <em>expert</em> guides.",
-  "image": "/assets/images/photos/ever-given.jpg",
+  "title": "Burst through your scale-up bottleneck. We'll be your expert guides.",
   "text": "No business has “make or break” moments like a startup. At Mainmatter, we can instantly scale-up your team to develop digital products.
-   Our experts teach, cross-pollinate and collaborate with our clients for results that go beyond the scope of the project.",
-  "alt": "Ever Given, one of the largest container ship, in the Suez Canal",
-  "loading": "eager",
-  "titleTag": "h1"
+   Our experts teach, cross-pollinate and collaborate with our clients for results that go beyond the scope of the project."
 } %}
-{{ colorHero('center', 'large', 'purple', content) }}
+{{ colorHero('purple', content) }}
 
 {% set 'content' = {
   "title": "Our Startup Ecosystem",
   "subtitle": "We support growth.",
   "text": "We teach, we mentor, we do. Our team of experts can help you strategically push through the next series of growth hurdles - from ideation to design to engineering."
 } %}
-{{ featuredServices(services['scaleup-services-list'], content) }}
+{{ featuredServices(services['services-list-energy'], content) }}
 
 {% set 'content' = {
-  "title": "Instantly add years of <em>expertise</em> to your team to make your ideas happen faster.",
+  "title": "Instantly add years of expertise to your team to make your ideas happen faster.",
   "text": "We are a team of engineers, inventors, designers, strategists, artists and storytellers, but our titles don’t define how we work. Our processes are focused on helping you get the results you need. We partner with our clients to mentor, develop and grow - whether it's your product, your base, your team, or your bottom line.",
-  "linkUrl": "/contact/",
-  "linkText": "Get started with us today",
-  "image": "/assets/images/photos/mainmatter-team-smiles-blur.jpg",
-  "alt": "Team member leaning against wall taking notes while talking to three other team members",
-  "loading": "lazy"
-} %}
-{{ colorHero('center', 'large', 'transparent', content) }}
-
-<h3 class="success_stories__title">Discover our success stories</h3>
-{% set logoCompanies = ['Qonto', 'Trainline', 'Rail Europe', 'Cardstack', 'Timify', 'Experteer', 'Terminal49', 'Auditboard', 'Clark'] %}
-{{ logoList(logoCompanies) }}
-
-{% set 'slide_1' = {
-  "subtitle": "Team Augmentation & Growth",
-  "color": "black",
-  "title": "The team you needed yesterday, today.",
-  "text": "Scale your team instantly and sustainably. We’ll work with your existing team to develop products, productivity, or best practices so you can keep growing, even after our collaboration ends.",
-  "linkUrl": "/services/team-augmentation-and-training/",
+  "linkUrl": "/contact",
   "linkText": "Get started with us today"
 } %}
+{{ ctaBanner('aqua', 'full', content) }}
 
-{% set 'slide_2' = {
-  "subtitle": "Digital Product Development Support",
-  "color": "white",
-  "title": "The shortcut on your roadmap",
-  "text": "We’ve got a proven track record as digital product developers. We collaborate with our clients from the strategy phases to validation to MVP and beyond. Our experienced team will get you to market.",
-  "linkUrl": "/services/digital-products-and-design/",
-  "linkText": "Learn more"
-} %}
+<h3 class="success_stories__title">Discover our success stories</h3>
+{% set logoCompanies = [
+  'Qonto',
+  'Trainline',
+  'Rail Europe',
+  'Cardstack',
+  'Timify',
+  'Experteer',
+  'Terminal49',
+  'Auditboard',
+  'Clark'
+] %}
+{{ logoList(logoCompanies) }}
 
-{% set 'slide_3' = {
-  "subtitle": "Skills-focused workshops",
-  "color": "purple",
-  "title": "The future-proof, know-how investment",
-  "text": "From engineering know-how to strategies that develop lasting success, our workshops will equip your team with the skills they need to make things happen.",
-  "linkUrl": "/services/workshops/",
-  "linkText": "Learn more"
-} %}
-
-{% set slides = [slide_1, slide_2, slide_3] %}
-{{ scrollSlides('workshops', slides, page.url) }}
-
-{% set 'content' = {
-  "title": "Grow <em>your</em> business with us.",
-  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
-  "linkUrl": "/contact/",
-  "linkText": "Get in touch",
-  "image": "/assets/images/photos/planting.jpg",
-  "alt": "Two people arranging plants in rounded transparent pot placed in a table surronded by other smaller pots with  plants.",
-  "loading": "lazy"
-} %}
-{{ colorHero('center', 'large', 'transparent', content) }}
-
-  <div id="posts" class="container container--xl">
-    <h5 class="posts__title h5">Read more about our work</h5>
-    <ol class="startups post-cards">
-        {%- for post in collections.posts -%}
-          {% if loop.index < 4 %}
-            <li class="post-cards__item">
-              {{ postCard(post) }}
-            </li>
-          {% endif %}
-        {%- endfor -%}
-    </ol>
-    <div class="posts__cta-wrapper">
-      {{ ctaLink('/blog/page/2/#posts', 'Explore more articles', '') }}
+<section class="my-10">
+  <div class="container container--lg">
+    <div class="mb-10">
+      <h6 class="mb-015">Team Reinforcement</h6>
+      <h3 class="mb-2">Get the work done, even if your team has reached a limit   </h3>
+      <p class="body">
+        There are lots of reasons that a team gets overextended – lack of people, lack of expertise, or even lack of time.
+        At Mainmatter, we’ve built a team of diverse expertise in web and cloud projects that deliver with a fresh perspective. We support our clients with experienced people who are ready to build products, mentor people and support your goals.
+      </p>
+      {% set link = {
+        "label": 'Get started with us today',
+        "url": '/services/team-reinforcement/'
+      }
+      %}
+      {{ btnSecondary( link, 'mt-2' )}}
+    </div>
+    <div class="mb-10">
+      <h6 class="mb-015">Idea to release</h6>
+      <h3 class="mb-2">Full-service implementation of your idea into reality</h3>
+      <p class="body">
+        We’ll work with you to make the products you need to make your business better. From developing a rock-solid concept to providing customer-centric UI to building the whole MVP, Mainmatter has an experienced team of product builders. We’re a one-stop shop for founders, scaleups, and SMEs in making their digital products (better) – from strategy to design to implementation.
+      </p>
+      {% set link = {
+        "label": 'Learn more',
+        "url": '/services/idea-to-release'
+      }
+      %}
+      {{ btnSecondary( link, 'mt-2' )}}
+    </div>
+    <div class="mb-10">
+      <h6 class="mb-015">Tech modernization</h6>
+      <h3 class="mb-2">Give your codebase the necessary overhaul without the overtime</h3>
+      <p class="body">
+        Updating your codebase shouldn’t stop your development in its tracks. With Mainmatter, you can take on legacy code and leave your technical debt behind – all while your team stays focussed on the roadmap. Our experts can take on the whole upgrade from the reviewing, planning and implementation – at a cost advantage over a complete rewrite later down the line. And we only call it a job well done when we leave your team with the know-how to keep up with future versions.
+      </p>
+      {% set link = {
+        "label": 'Learn more',
+        "url": '/services/tech-modernization'
+      }
+      %}
+      {{ btnSecondary( link, 'mt-2' )}}
+    </div>
+    <div class="mb-10">
+      <h6 class="mb-015">Strategic advice</h6>
+      <h3 class="mb-2">Build a rock-solid strategy with reliable expertise at your side </h3>
+      <p class="body">
+        Whether you’re building a product or a team from the ground up or scaling up, we can provide a valuable and experienced outside perspective. Our assessments can help you understand the status quo and identify bottlenecks. We’ll work with you to set a strategic roadmap for product engineering teams. At Mainmatter, we know how successful, international, modern teams operate and can work with you to get you there.
+      </p>
+      {% set link = {
+        "label": 'Learn more',
+        "url": '/services/strategic-advice'
+      }
+      %}
+      {{ btnSecondary( link, 'mt-2' )}}
     </div>
   </div>
+</section>
+
+
+{% set 'content' = {
+  "title": "Grow your business with us",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
+} %}
+{{ ctaBanner('aqua', 'full', content) }}
+
+<div id="posts" class="container container--lg">
+  <h5 class="posts__title h5">Read more about our work</h5>
+  <ol class="startups__featured_posts">
+    {%- for post in collections.posts -%}
+      {% if loop.index < 4 %}
+        {{ postCard(post) }}
+      {% endif %}
+    {%- endfor -%}
+  </ol>
+  <div class="posts__cta-wrapper">
+    {{ ctaLink('/blog/page/2/#posts', 'Explore more articles', '') }}
+  </div>
+</div>
 </div>
