@@ -73,7 +73,20 @@ og:
   </div>
 </div>
 
+<section class="case-study__section">
+  {% set imageData = {
+    "imgPath": "/assets/images/cases/rail-europe-cs.jpg",
+    "alt": "A monitor showing the opened rail europe app, displaying available train connections",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
 {% set 'content' = {
   "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
   "source": "JÜRGEN WITTE, CPO@RAILEUROPE"
 } %} {{ quote(content) }}
+
+
