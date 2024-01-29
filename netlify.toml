@@ -141,6 +141,10 @@
   from = "/why-simplabs"
   to = "/"
 
+[[redirects]]
+  from = "/rust"
+  to = "/rust-consulting/"
+
 # redirect old "Web-based Services in Rust" landing page to regular workshop
 [[redirects]]
   from = "https://rust-web-services-workshop.mainmatter.com/*"
