@@ -1,10 +1,7 @@
 {% from "secondary-feature.njk" import secondaryFeature %}
 {% set 'content' = {
-  "text": "Mainmatter is a Gold Sponsor of Svelte Summit Fall 2023",
-  "linkUrl": "https://www.sveltesummit.com",
-  "linkText": "Find out more",
   "image": "/assets/images/logos/svelte-society.svg",
   "alt": "Svelte Society logo",
   "loading": "lazy"
 } %}
-{{ secondaryFeature(content, "secondary-feature-svelte") }}
+{{ secondaryFeature(content) }}
