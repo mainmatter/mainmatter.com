@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: base-energy
 title: Europe's leading Ember experts | Ember consulting
 description: Temporarily extend your team with Europe's leading Ember experts. Speed up projects and remove long-standing issues – from refactoring to shipping new features.
 permalink: /ember-consulting/
@@ -12,123 +12,291 @@ og:
 {% from "recent-posts.njk" import recentPosts %}
 {% from "cta-link.njk" import ctaLink %}
 {% from "color-hero.njk" import colorHero %}
+{% from "image-banner-with-text.njk" import imageBannerWithText %}
+{% from "scroll-slides.njk" import scrollSlides %}
+{% from "image-banner-with-text.njk" import imageBannerWithText %}
+{% from "recent-posts.njk" import recentPosts %}
 {% from "cta-link.njk" import ctaLink %}
+{% from "scroll-slides.njk" import scrollSlides %}
+{% from "quote.njk" import quote %}
+{% from "color-hero-energy.njk" import colorHero %}
+{% from "btn-secondary.njk" import btnSecondary %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "quote.njk" import quote %}
 
-<section class="color-hero color-hero--red" data-background-color="red">
-  <div class="color-hero__image-wrapper">
-    {% image '/assets/images/ember/ember.jpg', 'Audience facing a presentation at a conference', '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
+{% set 'content' = {
+  "eyebrow": "Our Expertise: Ember",
+  "title": "Ember is our expertise",
+  "text": "We are long-time Ember experts and active contributors to the ecosystem. Our team of community leaders makes Mainmatter the foremost Ember consultancy."
+  } %}
+{{ colorHero('purple', content) }}
+
+<section class="my-10 container container--lg">
+  <div class="">
+    <div class="mb-4">
+      <h6 class="mb-015">Ember & Mainmatter</h6>
+      <h3 class="mb-2">Europe's Leading Ember Team</h3>
+      <p>We’re frontend experts – our team speaks at international events, is <a href="/this-week-in-open-source/">actively contributing to a number of open source projects</a> and our Svelte expert Paolo Ricciuti is a Svelte ambassador and the co-author of <a href="https://www.sveltelab.dev/">SvelteLab</a>.</p>
+      <p>Mainmatter has been developing big web apps and mentored international teams around backend, frontend, design, as well as process and developer infrastructure for years. We know what it takes to connect everything together and deliver a delightful end-to-end experience.</p>
+    </div>
   </div>
-  <div class="color-hero__overlay"></div>
-  <div class="color-hero__container container container--lg color-hero__container--center">
-    <div class="color-hero__main">
-      {% set imagePath %}/assets/images/logos/ember-white.svg{% endset %}
-      <img class="expertise__logo" src="{{ imagePath }}" alt="Ember logo" />
-      <h1 class="color-hero__title color-hero__title--full ">is our expertise</h1>
-      <div class="color-hero__text color-hero__text--large">We have been recognized as an official sponsor of the Ember.js project along with international brands like LinkedIn and
-      Yahoo.</div>
+  <div class="split-content">
+    <div class="">
+      <div class="split-content__wrapper">
+        <div class="split-content__content">
+          <h4>Mainmatter is a Gold Sponsor of Svelte Summit Fall 2023</h4>
+          {% set link = {
+            "label": 'Learn more',
+            "url": 'https://www.sveltesummit.com/'
+          }
+          %}
+          {{ btnSecondary( link, 'mt-2' )}}
+        </div>
+        <div class="split-content__feature">
+          {% include 'content/secondary-feature-ember.njk' %}
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-{% set content = {
-"title": "We love open source",
-"subtitle": "We maintain a number of projects in the ecosystem that are widely adopted in the Ember community."
-} %}
-{{ textWithList(content, "white") }}
+  <section class="split-content">
+    <div class="container container--lg">
+      <h2 class="h5">Ember & Mainmatter</h2>
+      <h3 class="split-content__subheading h2">Europe's Leading Ember Team</h3>
+      <div class="split-content__content">
+        <div class="split-content__text">
+          <p>
+            Mainmatter has been an active member of the Ember community since the early days of the framework. Our veteran team has contributed substantially – both to Ember itself on various core teams as well as by creating and maintaining widely adopted packages. If you're working on an Ember application, you're already relying on code our team wrote and patterns we helped establish. We have worked with countless international clients over the years and helped them to succeed with Ember.
+          </p>
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-ember.njk' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="split-content">
+    <div class="container container--lg">
+      <h2 class="h5">EmberFest & Ember Europe</h2>
+      <h3 class="split-content__subheading h2">Fostering the Community</h3>
+      <div class="split-content__content">
+        <div class="split-content__text">
+          <p>
+            Mainmatter believes open source communities are valuable and we strive for being active community members. Our team regularly speaks at all of the relevant Ember conferences but also other conferences at which we pitch Ember to audiences from the wider frontend world. We've also been co-organizing EmberFest, the European Ember Community Conference for many years and run Ember Europe, a hybrid meetup series, together with our friends from Intercom.
+          </p>
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-emberfest.njk' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set logoCompanies = [
+  'Qonto',
+  'Trainline',
+  'Cardstack',
+  'Sage',
+  'Auditboard',
+  'Timify',
+  'Robin Hood',
+  'Terminal49',
+  'MVB',
+  'Generali',
+  'Medify',
+  'CLARK',
+  'Phorest'
+] %}
+{% set title = 'We are trusted by international companies that bet on Ember.js' %}
+{{ logoList(logoCompanies, title) }}
+
+<section class="color-hero color-hero--purple" data-background-color="purple">
+  <div class="color-hero__image-wrapper">
+    {% image "/assets/images/ember/embroider-initiative-sponsor-logos.png", "Collage of the logos of the Embroider initiative's sponsors with a purple overlay.", '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
+  </div>
+  <div class="color-hero__container container container--lg color-hero__container--center">
+    <div class="color-hero__main">
+      <h1 class="color-hero__title color-hero__title--full">The Embroider Initiative</h1>
+      <div class="color-hero__text color-hero__text--large">Mainmatter, together with a group of sponsors, is working on an initiative to ship Embroider and secure the ecosystem’s investment in Ember.js.</div>
+      {{ ctaLink("/embroider-initiative/", "Join the Embroider initiative", 'color-hero__link') }}
+    </div>
+  </div>
+</section>
+
+<section class="split-contact">
+  <div class="container container--lg">
+    <h3 class="split-contact__subheading h2">Facing Challenges with Ember?</h3>
+    <div class="split-contact__content">
+      <div class="split-contact__text">
+        <p>Ember famously enforces a rigid structure and liberates engineers through constraints so they can remain focussed on delivering value for users. Yet, sometimes you get stuck and it can be hard to see the path forwards – be it upgrading an old codebase to modern Ember, adopting Embroider or architecting a new feature. If your team is in a situation like that or you have any other question, reach and one of our ember experts will come back to you.</p>
+        {{ ctaLink("/contact", "Contact us", 'color-hero__link') }}
+      </div>
+      <div class="split-contact__feature">
+        <img src="/assets/images/authors/marcoow.jpg" alt="Marco Otte-Witte" class="split-contact__author"/>
+        <img src="/assets/images/authors/chris_ember.jpg" alt="Chris Manson" class="split-contact__author"/>
+        <img src="/assets/images/authors/nickschot.jpg" alt="Nick Schot" class="split-contact__author"/>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 {% set 'slide_1' = {
-"color": "white",
-"title": "Ember simple auth",
-"text": "Authentication management for Ember.js applications.",
-"icon": "/assets/images/ember/ember-simple-auth.svg",
-"linkUrl": "https://github.com/mainmatter/ember-simple-auth",
-"linkText": "View on github"
+"color": "purple",
+"title": "Custom Development",
+"text": "We develop complete apps with Ember so your team can focus on other initiatives. We are Ember experts and in fact have written and establishes important pieces of the Ember ecosystem ourselves. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.",
+"linkUrl": "/contact/",
+"linkClass": "plausible-event-name=Ember+Contact",
+"linkText": "Work with us!"
 } %}
 
 {% set 'slide_2' = {
-"color": "purple",
-"title": "Ember test selectors",
-"text": "Enabling better element selectors in Ember.js tests.",
-"icon": "/assets/images/ember/ember-test-selectors.svg",
-"linkUrl": "https://github.com/mainmatter/ember-test-selectors",
-"linkText": "View on github"
+"color": "black",
+"title": "Training and Support",
+"text": "Ember is getting easier and easier to adopt but it can appear a bit unfamiliar to people with backgrounds in other frontend technologies. Our trainers are world-class experts who have helped many international companies to build and scale up Ember teams.",
+"linkUrl": "/services/workshops/hands-on-ember/",
+"linkText": "Check out our workshops!"
 } %}
 
 {% set 'slide_3' = {
-"color": "black",
-"title": "Ember cookies",
-"text": "Cookie handling for Ember.js apps - in the browser and FastBoot.",
-"icon": "/assets/images/ember/ember-cookies.svg",
-"linkUrl": "https://github.com/mainmatter/ember-cookies",
-"linkText": "View on github"
+"color": "aqua",
+"title": "Team augmentation",
+"text": "Our experts can merge with your in-house frontend team to ensure the timely delivery of mission-critical projects – be it delivering new initiatives or modernizing codebase without interrupting feature delivery. We’re more than hired hands – we mentor your team throughout the process to help lift productivity long after our collaboration ends.",
+"linkUrl": "/contact/",
+"linkClass": "plausible-event-name=Ember+Contact",
+"linkText": "Work with us!"
 } %}
 
-{% set 'slide_4' = {
-"color": "white",
-"title": "Qunit DOM",
-"text": "High Level DOM Assertions for QUnit with an expressive API.",
-"icon": "/assets/images/ember/qunit-dom.svg",
-"linkUrl": "https://github.com/mainmatter/qunit-dom",
-"linkText": "View on github"
-} %}
-
-{% set slides = [slide_1, slide_2, slide_3, slide_4] %}
+{% set slides = [slide_1, slide_2, slide_3] %}
 
 <section class="scroll-slides" id="scroll-slides">
   {% for slide in slides %}
     {% set slideIndex = loop.index %}
     <div id="ember-slide-{{ loop.index }}" class="scroll-slides__slide scroll-slides__slide--{{ slide.color }}"
-      data-scroll-slide  data-background-color="{{ slide.color }}">
+        data-scroll-slide  data-background-color="{{ slide.color }}">
       <div class="scroll-slides__container container container--lg">
         <div class="scroll-slides__pagination" aria-hidden="true">
           {% for slide in slides %}
-          <span class="scroll-slides__pagination-item">
-            <span href="{{ pageUrl }}#{{ id }}-slide-{{ loop.index }}" class="scroll-slides__pagination-button">
-              <span class="screenreader">Slide {{ loop.index }}{% if slideIndex == loop.index %} (Current slide){% endif
-                %}</span>
-              <span
-                class="scroll-slides__pagination-span{% if slideIndex == loop.index %} scroll-slides__pagination-span--active{% endif %}"
-                aria-hidden></span>
+            <span class="scroll-slides__pagination-item">
+              <span href="{{ pageUrl }}#{{ id }}-slide-{{ loop.index }}" class="scroll-slides__pagination-button">
+                <span class="screenreader">Slide {{ loop.index }}
+                  {% if slideIndex == loop.index %} (Current slide) {% endif %}
+                </span>
+                <span
+                  class="scroll-slides__pagination-span{% if slideIndex == loop.index %} scroll-slides__pagination-span--active{% endif %}"
+                  aria-hidden></span>
+              </span>
             </span>
-          </span>
           {% endfor %}
         </div>
         <div class="scroll-slides__content">
           <div class="scroll-slides__title-wrapper">
-            <div class="scroll-slides__icon" aria-hidden="true">
-              <img class="" src="{{ slide.icon }}" alt="" />
-            </div>
             <h2 class="scroll-slides__title">{{ slide.title }}</h2>
           </div>
-          <div class="scroll-slides__text-wrapper">
-            <p class="scroll-slides__text">{{ slide.text }}</p>
-            {% if slide.linkUrl and slide.linkText %}
-            {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
-            {% endif %}
-          </div>
+
+          <p class="scroll-slides__text">{{ slide.text }}</p>
+          {% if slide.linkUrl and slide.linkText %}
+            <div class="scroll-slides__link-wrapper">
+              {% if slide.linkImage %}
+                <div class="scroll-slides__link-image">
+                  <img class="" src="{{ slide.linkImage }}" alt="{{ slide.linkImageCaption }}">
+                </div>
+              {% endif %}
+
+              {% if slide.linkImageCaption %}
+                <div class="scroll-slides__link-content">
+                  <p class="scroll-slides__link-imagecaption">
+                    {{ slide.linkImageCaption }}
+                  </p>
+                  {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
+                </div>
+              {% else %}
+                {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
+              {% endif %}
+            </div>
+          {% endif %}
+
         </div>
       </div>
     </div>
   {% endfor %}
 </section>
 
-<section class="color-hero color-hero--purple" data-background-color="purple">
-  <div class="color-hero__image-wrapper">
-    {% image "/assets/images/ember/embroider-initiative-sponsor-logos.png", "4 people standing around a table with some printed diagrams on it. 2 people shake hands, one claps their hands.", '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
-  </div>
-  <div class="color-hero__container container container--lg color-hero__container--center">
-    <div class="color-hero__main">
-        <h1 class="color-hero__title color-hero__title--full">The Embroider Initiative</h1>
-        <div class="color-hero__text color-hero__text--large">Mainmatter, together with a group of sponsors, is working on an initiative to ship Embroider and secure the ecosystem’s investment in Ember.js.</div>
-        {{ ctaLink("/embroider-initiative/", "Join the Embroider initiative", 'color-hero__link') }}
-    </div>
+<section class="opensource-list">
+  <div class="container container--xl">
+    <h2 class="opensource-list__title h2">We love Open Source</h2>
+    <ul class="opensource-list__list">
+      <li class="opensource-list__project">
+        <div class="opensource-list__project-image">
+          <img src="/assets/images/ember/ember-simple-auth-mono.svg" alt="Ember Simple Auth logo"/>
+        </div>
+        <div class="opensource-list__project-text text--sm">
+          <h4>Ember Simple Auth</h4>
+          <p>
+              Authentication management for Ember.js applications.
+              </p>
+          {{ ctaLink('http://github.com/mainmatter/ember-simple-auth', 'View on GitHub', 'opensource-list__link') }}
+        </div>
+      </li>
+      <li class="opensource-list__project">
+        <div class="opensource-list__project-image">
+          <img src="/assets/images/ember/ember-cookies-mono.svg" alt="Ember Cookies logo"/>
+        </div>
+        <div class="opensource-list__project-text text--sm">
+          <h4>Ember Cookies</h4>
+          <p>
+                Cookie handling for Ember.js apps - in the browser and FastBoot.
+              </p>
+          {{ ctaLink('http://github.com/mainmatter/ember-cookies', 'View on GitHub', 'opensource-list__link') }}
+        </div>
+      </li>
+      <li class="opensource-list__project">
+        <div class="opensource-list__project-image">
+          <img src="/assets/images/ember/ember-test-selectors-mono.svg" alt="Ember Test Selectors logo"/>
+        </div>
+        <div class="opensource-list__project-text text--sm">
+          <h4>Ember Test Selectors</h4>
+          <p>
+                Enabling better element selectors in Ember.js tests.
+              </p>
+          {{ ctaLink('http://github.com/mainmatter/ember-test-selectors', 'View on GitHub', 'opensource-list__link') }}
+        </div>
+      </li>
+      <li class="opensource-list__project">
+        <div class="opensource-list__project-image">
+          <img src="/assets/images/ember/qunit-dom-mono.svg" alt="Qunit Dom logo"/>
+        </div>
+        <div class="opensource-list__project-text text--sm">
+          <h4>Qunit Dom</h4>
+          <p>
+                High Level DOM Assertions for QUnit with an expressive API.
+              </p>
+          {{ ctaLink('http://github.com/mainmatter/qunit-dom', 'View on GitHub', 'opensource-list__link') }}
+        </div>
+      </li>
+      <li class="opensource-list__project">
+        <div class="opensource-list__project-image">
+          <img src="/assets/images/ember/ember-promise-modals.svg" alt="Ember Promise Modals logo"/>
+        </div>
+        <div class="opensource-list__project-text text--sm">
+          <h4>Ember Promise Modals</h4>
+          <p>
+                The easy solution for rendering and handling modals in Ember.js apps. Promised.
+              </p>
+          {{ ctaLink('https://github.com/mainmatter/ember-promise-modals', 'View on GitHub', 'opensource-list__link') }}
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 
 <section class="color-hero color-hero--aqua" data-background-color="aqua">
   <div class="color-hero__image-wrapper">
     <video class="color-hero__image" playsinline="" autoplay="" muted="" preload="" loop="" poster="/assets/images/ember/emberdoc-simplabs.poster.jpg"
-      width="1280" height="496">
+    width="1280" height="496">
       <source src="/assets/images/ember/emberdoc-simplabs.mp4" type="video/mp4">
     </video>
   </div>
@@ -142,49 +310,52 @@ og:
   </div>
 </section>
 
-{{ recentPosts("Latest from our blog on the topic", collections.emberPosts) }}
-
-{% set 'content' = {
-"title": "Conferences and talks",
-"subtitle": "Mainmatter engineers have spoken at all major Ember.js conferences and other events in the wider JavaScript community.",
-"text": "Ember.js is a project built by an open community, and we are an active member of that community. We run the Ember.js Europe Meetup with our partner Intercom and co-organize EmberFest , the European Ember Community Conference.",
-"linkUrl": "/events/",
-"linkText": "View our talks and check out our calendar for the next events",
-"image": "/assets/images/ember/ember-banner.jpg",
-"alt": "Collage of team members speaking at conferences",
-"loading": "lazy"
-} %}
-
-<section class="image-banner-with-text">
-  <div class="container container--lg">
-    <h2 class="image-banner-with-text__heading h5">{{ content.title }}</h2>
-  </div>
-  {% image content.image, content.alt, '100vw', content.loading, 'image-banner-with-text__image', [760, 1440, 1920] %}
-  <div class="container container--lg">
-    <div class="image-banner-with-text__content">
-      {% if content.subtitle %}
-      <h3 class="image-banner-with-text__subheading h4">{{ content.subtitle }}</h3>
-      {% endif %}
-      {% if content.text %}
-        <p class="image-banner-with-text__text">{{ content.text }}</p>
-      {% endif %}
-      <div class="expertise__image-row">
-        <a href="http://embereurope.org/">
-          {% image '/assets/images/ember/ember-europe-mascot.jpg', 'Ember Europe logo', '8.25rem', 'lazy', 'expertise__image-ember-1', [264] %}
-        </a>
-        <a href="http://emberfest.eu/">
-          {% image '/assets/images/ember/emberfest-logo.jpg', 'Emberfest logo', '19rem', 'lazy', 'expertise__image-ember-2', [608] %}
-        </a>
-      </div>
-      {% if content.linkUrl and content.linkText %}
-        {{ ctaLink(content.linkUrl, content.linkText, 'image-banner-with-text__link') }}
-      {% endif %}
-    </div>
+<section class="quotes-list">
+  <div class="container container--xl">
+    <h2 class="quotes-list__title h2">Listen to our customers</h2>
+    <ul class="quotes-list__list">
+      <li class="quotes-list__quote">
+        <div class="quotes-list__quote-image">
+          <img src="/assets/images/logos/monochrome/qonto.svg" alt="Trainline logo"/>
+        </div>
+        <div class="quotes-list__quote-text text--sm">
+          <blockquote>
+              ”Mainmatter are well known as the Ember.js experts and they absolutely live up to the expectations. They had an immediate as well as significant positive impact on both our velocity and quality of output.”
+            </blockquote>
+          <figcaption class="quotes-list__quote-source">Marc-Antoine Lacroix<span class="quotes-list__quote-source--separator">, </span>
+            <span class="quotes-list__quote-source--jobtitle">Qonto CPO</span>
+          </figcaption>
+        </div>
+      </li>
+      <li class="quotes-list__quote">
+        <div class="quotes-list__quote-image">
+          <img src="/assets/images/logos/monochrome/cardstack.svg" alt="MVB logo"/>
+        </div>
+        <div class="quotes-list__quote-text text--sm">
+          <blockquote>
+              ”I've had the opportunity to work alongside the Mainmatter team on both their client-facing work for Cardstack and their open source contributions. They are experts in Ember and they are a team that takes good software-development practice seriously.”
+            </blockquote>
+          <figcaption class="quotes-list__quote-source">Ed Faulkner<span class="quotes-list__quote-source--separator">, </span>
+            <span class="quotes-list__quote-source--jobtitle">Cardstack Lead Developer and member of the Ember.js Steering Committee</span></figcaption>
+        </div>
+      </li>
+      <li class="quotes-list__quote">
+        <div class="quotes-list__quote-image">
+          <img src="/assets/images/logos/monochrome/mvb.svg" alt="Qonto logo"/>
+        </div>
+        <div class="quotes-list__quote-text text--sm">
+          <blockquote>
+              ”Mainmatter’s team is highly experienced and professional. They not only helped us develop the product but also mentored our internal team and introduced a number of improvements around infrastructure and processes along the way.”
+            </blockquote>
+          <figcaption class="quotes-list__quote-source">Ronald Schild<span class="quotes-list__quote-source--separator">, </span>
+            <span class="quotes-list__quote-source--jobtitle">Managing Director of MVB</span>
+          </figcaption>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 
-{% set logoCompanies = ['Qonto', 'Trainline', 'Cardstack', 'Sage', 'Auditboard', 'Timify', 'Experteer', 'Robin Hood', 'Terminal49' ] %}
-{% set title = 'We are trusted by international companies that bet on Ember.js' %}
-{{ logoList(logoCompanies, title) }}
+{{ recentPosts("Latest from our blog on the topic", collections.emberPosts) }}
 
 {% include 'content/hero-grow-with-us.njk' %}
