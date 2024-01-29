@@ -28,6 +28,18 @@ description: "Discover effective strategies to scale up your business, and achie
 } %}
 {{ featuredServices(services['services-list-energy'], content) }}
 
+
+<section class="mt-10 mb-0">
+  {% set imageData = {
+    "imgPath": "/assets/images/photos/ever-given.jpg",
+    "alt": "Server room",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
 {% set 'content' = {
   "title": "Instantly add years of expertise to your team to make your ideas happen faster.",
   "text": "We are a team of engineers, inventors, designers, strategists, artists and storytellers, but our titles don’t define how we work. Our processes are focused on helping you get the results you need. We partner with our clients to mentor, develop and grow - whether it's your product, your base, your team, or your bottom line.",
@@ -110,7 +122,7 @@ description: "Discover effective strategies to scale up your business, and achie
 
 <section class="mt-10 mb-0">
   {% set imageData = {
-    "imgPath": "/assets/images/photos/mainmatter-balloon.jpeg",
+    "imgPath": "/assets/images/photos/planting.jpg",
     "alt": "Server room",
     "sizes": "100vw",
     "loading": "lazy",
@@ -127,7 +139,7 @@ description: "Discover effective strategies to scale up your business, and achie
 } %}
 {{ ctaBanner('aqua', 'full', content) }}
 
-<div id="posts" class="container container--lg">
+<div id="posts" class="container container--xl">
   <h5 class="posts__title h5">Read more about our work</h5>
   <ol class="startups__featured_posts">
     {%- for post in collections.posts -%}
