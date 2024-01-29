@@ -88,5 +88,3 @@ og:
   "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
   "source": "JÜRGEN WITTE, CPO@RAILEUROPE"
 } %} {{ quote(content) }}
-
-
