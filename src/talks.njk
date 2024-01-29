@@ -1,5 +1,5 @@
 ---
-layout: 'base'
+layout: 'base-energy'
 title: Talks, Workshops & Podcasts
 description: 'We value sharing our expertise. Watch 30+ videos. From Product Design to Engineering. Global events include: JSConf, EmberFest, ReactiveConf, and many more.'
 eleventyNavigation:
@@ -7,18 +7,15 @@ eleventyNavigation:
   parent: Resources
 ---
 
-{% from "color-hero.njk" import colorHero %}
+{% from "color-hero-energy.njk" import colorHero %}
 {% from "talk-banner.njk" import talkBanner %}
 {% from "talk-card.njk" import talkCard %}
+{% from "cta-banner.njk" import ctaBanner %}
 
 {% set 'content' = {
-"title": "Guidance from our team of <em>trusted</em> industry experts",
-"image": "/assets/images/photos/events.jpg",
-"alt": "Mainmatter team member seen from the back presenting to an audience",
-"loading": "eager",
-"titleTag": "h1"
+"title": "Guidance from our team of trusted industry experts"
 } %}
-{{ colorHero('center', 'large', 'black', content) }}
+{{ colorHero('black', content) }}
 
 <div class="talks section">
   <div class="section__introduction container container--xl">
@@ -40,5 +37,10 @@ eleventyNavigation:
     </ol>
   </div>
 </div>
-
-{% include 'content/hero-grow-with-us.njk' %}
+{% set 'content' = {
+  "title": "Grow your business with us",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
+} %}
+{{ ctaBanner('aqua', 'full', content) }}

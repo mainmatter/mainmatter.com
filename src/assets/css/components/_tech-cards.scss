@@ -23,10 +23,11 @@
   min-height: 32rem;
   background-repeat: no-repeat;
   display: flex;
-  align-items: start;
+  align-items: end;
   text-decoration: none;
   transition: all 0.3s ease;
 }
+
 
 .tech-cards__bg-rust-tech {
   background-image: url(/assets/images/services/rust-tech.png);
@@ -87,16 +88,16 @@
   transition: color 0.3s ease;
 }
 
-.tech-cards__grid-element:nth-child(n) {
-  background-color: var(--color-aqua);
-}
-
-.tech-cards__grid-element:nth-child(2n) {
+.tech-cards__grid-element:nth-child(2n+1) {
   background-color: var(--color-purple);
 }
 
-.tech-cards__grid-element:nth-child(2n + 3) {
+.tech-cards__grid-element:nth-child(2n) {
   background-color: var(--color-black);
+}
+
+.tech-cards__grid-element:nth-child(5n+1) {
+  background-color: var(--color-aqua);
 }
 
 .tech-cards__link-arrow {

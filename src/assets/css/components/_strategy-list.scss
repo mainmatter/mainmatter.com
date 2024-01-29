@@ -1,4 +1,4 @@
-.strategy-list__content {
+.strategy-list__wrapper {
   position: relative;
   margin: 4rem auto;
   display: flex;
@@ -11,9 +11,10 @@
 }
 
 @media (min-width: 72rem) {
-  .strategy-list__content {
+  .strategy-list__wrapper {
     flex-direction: row;
     align-items: center;
+
   }
 
   .strategy-list__number {

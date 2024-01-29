@@ -1,20 +1,17 @@
 ---
-layout: 'base'
+layout: 'base-energy'
 title: Rust Workshops | Our Services
 description: "We provide a number of workshops to enable teams to succeed with Rust – onsite or remote"
 ---
 
-{% from "color-hero.njk" import colorHero %}
+{% from "color-hero-energy.njk" import colorHero %}
 {% from "scroll-slides.njk" import scrollSlides %}
 
 {% set 'content' = {
   "title": "We teach teams like yours how to adopt and succeed with Rust",
-  "image": "/assets/images/photos/mainmatter-team-meeting.jpg",
-  "alt": "Man standing at whiteboard presenting to three team members sitting to either side of him",
-  "loading": "eager",
-  "titleTag": "h1"
+
 } %}
-{{ colorHero('center', 'large', 'aqua', content) }}
+{{ colorHero('aqua', content) }}
 
 {% set 'slide_1' = {
   "color": "white",
