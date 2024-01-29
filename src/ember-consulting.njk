@@ -37,18 +37,19 @@ og:
     <div class="mb-4">
       <h6 class="mb-015">Ember & Mainmatter</h6>
       <h3 class="mb-2">Europe's Leading Ember Team</h3>
-      <p>We’re frontend experts – our team speaks at international events, is <a href="/this-week-in-open-source/">actively contributing to a number of open source projects</a> and our Svelte expert Paolo Ricciuti is a Svelte ambassador and the co-author of <a href="https://www.sveltelab.dev/">SvelteLab</a>.</p>
-      <p>Mainmatter has been developing big web apps and mentored international teams around backend, frontend, design, as well as process and developer infrastructure for years. We know what it takes to connect everything together and deliver a delightful end-to-end experience.</p>
+      <p>
+        Mainmatter has been an active member of the Ember community since the early days of the framework. Our veteran team has contributed substantially – both to Ember itself on various core teams as well as by creating and maintaining widely adopted packages. If you're working on an Ember application, you're already relying on code our team wrote and patterns we helped establish. We have worked with countless international clients over the years and helped them to succeed with Ember.
+      </p>
     </div>
   </div>
   <div class="split-content">
     <div class="">
       <div class="split-content__wrapper">
         <div class="split-content__content">
-          <h4>Mainmatter is a Gold Sponsor of Svelte Summit Fall 2023</h4>
+          <h4>We are an official sponsor of the Ember.js project.</h4>
           {% set link = {
             "label": 'Learn more',
-            "url": 'https://www.sveltesummit.com/'
+            "url": 'https://emberjs.com/sponsors/'
           }
           %}
           {{ btnSecondary( link, 'mt-2' )}}
@@ -61,35 +62,31 @@ og:
   </div>
 </section>
 
-  <section class="split-content">
-    <div class="container container--lg">
-      <h2 class="h5">Ember & Mainmatter</h2>
-      <h3 class="split-content__subheading h2">Europe's Leading Ember Team</h3>
-      <div class="split-content__content">
-        <div class="split-content__text">
-          <p>
-            Mainmatter has been an active member of the Ember community since the early days of the framework. Our veteran team has contributed substantially – both to Ember itself on various core teams as well as by creating and maintaining widely adopted packages. If you're working on an Ember application, you're already relying on code our team wrote and patterns we helped establish. We have worked with countless international clients over the years and helped them to succeed with Ember.
-          </p>
-      </div>
-      <div class="split-content__feature">
-        {% include 'content/secondary-feature-ember.njk' %}
-      </div>
+<section class="my-10 container container--lg">
+  <div class="">
+    <div class="mb-4">
+      <h6 class="mb-015">EmberFest & Ember Europe</h6>
+      <h3 class="mb-2">Fostering the Community</h3>
+      <p>
+        Mainmatter believes open source communities are valuable and we strive for being active community members. Our team regularly speaks at all of the relevant Ember conferences but also other conferences at which we pitch Ember to audiences from the wider frontend world. We've also been co-organizing EmberFest, the European Ember Community Conference for many years and run Ember Europe, a hybrid meetup series, together with our friends from Intercom.
+      </p>
     </div>
   </div>
-</section>
-
-  <section class="split-content">
-    <div class="container container--lg">
-      <h2 class="h5">EmberFest & Ember Europe</h2>
-      <h3 class="split-content__subheading h2">Fostering the Community</h3>
-      <div class="split-content__content">
-        <div class="split-content__text">
-          <p>
-            Mainmatter believes open source communities are valuable and we strive for being active community members. Our team regularly speaks at all of the relevant Ember conferences but also other conferences at which we pitch Ember to audiences from the wider frontend world. We've also been co-organizing EmberFest, the European Ember Community Conference for many years and run Ember Europe, a hybrid meetup series, together with our friends from Intercom.
-          </p>
-      </div>
-      <div class="split-content__feature">
-        {% include 'content/secondary-feature-emberfest.njk' %}
+  <div class="split-content">
+    <div class="">
+      <div class="split-content__wrapper">
+        <div class="split-content__content">
+          <h4>We co-organize EmberFest, the European Community Ember Conference.</h4>
+          {% set link = {
+            "label": 'Learn more',
+            "url": 'https://emberfest.eu/'
+          }
+          %}
+          {{ btnSecondary( link, 'mt-2' )}}
+        </div>
+        <div class="split-content__feature">
+          {% include 'content/secondary-feature-emberfest.njk' %}
+        </div>
       </div>
     </div>
   </div>
@@ -113,7 +110,7 @@ og:
 {% set title = 'We are trusted by international companies that bet on Ember.js' %}
 {{ logoList(logoCompanies, title) }}
 
-<section class="color-hero color-hero--purple" data-background-color="purple">
+{# <section class="color-hero color-hero--purple" data-background-color="purple">
   <div class="color-hero__image-wrapper">
     {% image "/assets/images/ember/embroider-initiative-sponsor-logos.png", "Collage of the logos of the Embroider initiative's sponsors with a purple overlay.", '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
   </div>
@@ -124,7 +121,28 @@ og:
       {{ ctaLink("/embroider-initiative/", "Join the Embroider initiative", 'color-hero__link') }}
     </div>
   </div>
-</section>
+</section> #}
+
+<section class="my-10 container container--lg">
+  <div class="split-content">
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h6>We're here to help</h6>
+        <h3 class="split-content__subheading h2">Facing Challenges with Ember?</h3>
+        <p>Ember famously enforces a rigid structure and liberates engineers through constraints so they can remain focussed on delivering value for users. Yet, sometimes you get stuck and it can be hard to see the path forwards – be it upgrading an old codebase to modern Ember, adopting Embroider or architecting a new feature. If your team is in a situation like that or you have any other question, reach and one of our ember experts will come back to you.</p>
+        {% set link = {
+            "label": 'Contact us',
+            "url": '/contact/'
+          }
+          %}
+          {{ btnSecondary( link, 'mt-2') }}
+        </div>
+        <div class="split-content__feature">
+          {% include 'content/secondary-feature-ember-consulting.njk' %}
+        </div>
+      </div>
+    </div>
+  </section>
 
 <section class="split-contact">
   <div class="container container--lg">
