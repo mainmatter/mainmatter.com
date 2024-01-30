@@ -11,6 +11,26 @@
     --color-link-primary: var(--color-white);
     --color-link-primary-hover: var(--color-aqua);
     color: var(--color-white);
+
+    &.rust {
+      background-image: url(/assets/images/services/rust-tech_purple.png);
+    }
+
+    &.ember {
+      background-image: url(/assets/images/services/ember-tech_purple.png);
+    }
+
+    &.svelte {
+      background-image: url(/assets/images/services/svelte-tech_purple.png);
+    }
+
+    &.ruby {
+      background-image: url(/assets/images/services/ruby-tech_purple.png);
+    }
+
+    &.elixir {
+      background-image: url(/assets/images/services/elixir-tech_purple.png);
+    }
   }
 
   &--aqua {
@@ -20,6 +40,26 @@
     --color-link-primary: var(--color-white);
     --color-link-primary-hover: var(--color-black);
     color: var(--color-white);
+
+    &.rust {
+      background-image: url(/assets/images/services/rust-tech_aqua.png);
+    }
+
+    &.ember {
+      background-image: url(/assets/images/services/ember-tech_aqua.png);
+    }
+
+    &.svelte {
+      background-image: url(/assets/images/services/svelte-tech_aqua.png);
+    }
+
+    &.ruby {
+      background-image: url(/assets/images/services/ruby-tech_aqua.png);
+    }
+
+    &.elixir {
+      background-image: url(/assets/images/services/elixir-tech_aqua.png);
+    }
   }
 
   &--black {

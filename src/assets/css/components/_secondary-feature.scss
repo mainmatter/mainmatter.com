@@ -1,5 +1,5 @@
 .secondary-feature {
-  max-width: 18rem;
+  max-width: 16rem;
 
   .split-content__feature & {
     margin: auto;
@@ -7,10 +7,25 @@
 }
 
 .secondary-feature__image-wrapper {
-
   padding: 2.5rem;
   margin: 0 auto;
   text-align: center;
   line-height: 0;
+}
+
+.ember-consultants {
+  display: flex;
+  flex-direction: row;
+}
+
+.split-content__author img {
+  width: 100%;
+}
+
+@media (min-width: 48rem) {
+  .ember-consultants {
+    display: flex;
+    flex-direction: column;
+  }
 }
 

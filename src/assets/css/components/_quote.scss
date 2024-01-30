@@ -5,6 +5,10 @@
   gap: 0.5rem;
 }
 
+.align-right {
+  flex-direction: column-reverse;
+}
+
 .quote__image-wrapper,
 .quote__content {
   text-align: center;
@@ -54,6 +58,10 @@
     margin: 6.25rem auto;
     flex-wrap: nowrap;
     gap: 1.5rem;
+  }
+
+  .align-right {
+    flex-direction: row;
   }
 
   .quote__image-wrapper,

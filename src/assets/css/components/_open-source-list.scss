@@ -1,0 +1,15 @@
+
+.opensource-list__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 4rem;
+  row-gap: 8rem;
+  margin: 5rem 0;
+}
+
+@media (min-width: 72rem) {
+  .opensource-list__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+}

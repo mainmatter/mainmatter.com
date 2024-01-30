@@ -6,18 +6,6 @@
   margin: 2rem 0 2.5rem;
 }
 
-.split-content__wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 3.25rem;
-}
-
-.split-content__content {
-  display: flex;
-  flex-direction: column;
-}
-
 .split-content__feature {
   flex: 1 0 100%;
 }
@@ -31,6 +19,19 @@
 }
 
 @media (min-width: 48em) {
+
+  .split-content__wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 3.25rem;
+  }
+
+  .split-content__content {
+    display: flex;
+    flex-direction: column;
+  }
+
   .split-content {
     margin: 6.25rem 0;
   }

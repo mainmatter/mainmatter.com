@@ -28,57 +28,6 @@
   transition: all 0.3s ease;
 }
 
-
-.tech-cards__bg-rust-tech {
-  background-image: url(/assets/images/services/rust-tech.png);
-  background-size: 60%;
-  background-position: 5% 5%;
-}
-
-.tech-cards__bg-ember-tech {
-  background-image: url(/assets/images/services/ember-tech.png);
-  background-size: 80%;
-  background-position: 5% 20%;
-}
-
-.tech-cards__bg-svelte-tech {
-  background-image: url(/assets/images/services/svelte-tech.png);
-  background-size: 50%;
-  background-position: 5% 5%;
-}
-
-.tech-cards__bg-elixir-tech {
-  background-image: url(/assets/images/services/elixir-tech.png);
-  background-size: 80%;
-  background-position: 5% 20%;
-}
-
-.tech-cards__bg-ruby-tech {
-  background-image: url(/assets/images/services/ruby-tech.png);
-  background-size: 60%;
-  background-position: 5% 5%;
-}
-
-.tech-cards__bg-rust-tech:hover {
-  background-size: 70%;
-}
-
-.tech-cards__bg-ember-tech:hover {
-  background-size: 90%;
-}
-
-.tech-cards__bg-svelte-tech:hover {
-  background-size: 60%;
-}
-
-.tech-cards__bg-elixir-tech:hover {
-  background-size: 90%;
-}
-
-.tech-cards__bg-ruby-tech:hover {
-  background-size: 70%;
-}
-
 .tech-cards__link-wrapper {
   display: flex;
   flex-direction: row;
@@ -90,14 +39,165 @@
 
 .tech-cards__grid-element:nth-child(2n+1) {
   background-color: var(--color-purple);
+
+  &.rust {
+    background-image: url(/assets/images/services/rust-tech_purple.png);
+    background-size: 60%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-size: 70%;
+    }
+  }
+
+  &.ember {
+    background-image: url(/assets/images/services/ember-tech_purple.png);
+    background-size: 80%;
+    background-position: 5% 20%;
+
+    &:hover {
+      background-size: 90%;
+    }
+  }
+
+  &.svelte {
+    background-image: url(/assets/images/services/svelte-tech_purple.png);
+    background-size: 50%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-size: 60%;
+    }
+  }
+
+  &.elixir {
+    background-image: url(/assets/images/services/elixir-tech_purple.png);
+    background-size: 80%;
+    background-position: 5% 20%;
+
+    &:hover {
+      background-size: 90%;
+    }
+  }
+
+  &.ruby {
+    background-image: url(/assets/images/services/ruby-tech_purple.png);
+    background-size: 60%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-size: 70%;
+    }
+  }
 }
 
 .tech-cards__grid-element:nth-child(2n) {
   background-color: var(--color-black);
+
+
+  &.rust {
+    background-image: url(/assets/images/services/rust-tech_black.png);
+    background-size: 60%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-size: 70%;
+    }
+  }
+
+  &.ember {
+    background-image: url(/assets/images/services/ember-tech_black.png);
+    background-size: 80%;
+    background-position: 5% 20%;
+
+    &:hover {
+      background-size: 90%;
+    }
+  }
+
+  &.svelte {
+    background-image: url(/assets/images/services/svelte-tech_black.png);
+    background-size: 50%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-size: 60%;
+    }
+  }
+
+  &.elixir {
+    background-image: url(/assets/images/services/elixir-tech_black.png);
+    background-size: 80%;
+    background-position: 5% 20%;
+
+    &:hover {
+      background-size: 90%;
+    }
+  }
+
+  &.ruby {
+    background-image: url(/assets/images/services/ruby-tech_black.png);
+    background-size: 60%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-size: 70%;
+    }
+  }
 }
 
 .tech-cards__grid-element:nth-child(5n+1) {
   background-color: var(--color-aqua);
+
+  &.rust {
+    background-image: url(/assets/images/services/rust-tech_aqua.png);
+    background-size: 60%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-size: 70%;
+    }
+  }
+
+  &.ember {
+    background-image: url(/assets/images/services/ember-tech_aqua.png);
+    background-size: 80%;
+    background-position: 5% 20%;
+
+    &:hover {
+      background-size: 90%;
+    }
+  }
+
+  &.svelte {
+    background-image: url(/assets/images/services/svelte-tech_aqua.png);
+    background-size: 50%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-size: 60%;
+    }
+  }
+
+  &.elixir {
+    background-image: url(/assets/images/services/elixir-tech_aqua.png);
+    background-size: 80%;
+    background-position: 5% 20%;
+
+    &:hover {
+      background-size: 90%;
+    }
+  }
+
+  &.ruby {
+    background-image: url(/assets/images/services/ruby-tech_aqua.png);
+    background-size: 60%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-size: 70%;
+    }
+  }
 }
 
 .tech-cards__link-arrow {

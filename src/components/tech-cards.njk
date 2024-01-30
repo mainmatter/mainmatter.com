@@ -5,7 +5,7 @@
       <h6 class="tech-cards__intro mt-25 mb-5">{{ intro }}</h6>
       <div class="tech-cards__grid">
         {% for card in cards %}
-          <a href="/{{ card.link }}" class="tech-cards__grid-element tech-cards__bg-{{ card.logo }}">
+          <a href="/{{ card.link }}" class="tech-cards__grid-element {{ card.logo }}">
             {% if type == 'casestudies' %}
               <div class="tech-cards__logo-wrapper">
                 <img class="tech-cards__logo" src="">

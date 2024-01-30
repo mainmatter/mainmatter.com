@@ -1,4 +1,6 @@
 .cta-banner {
+  position: relative;
+  z-index: 50;
 
   &--purple {
     background-color: var(--color-purple);

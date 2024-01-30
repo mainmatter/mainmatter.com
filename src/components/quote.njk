@@ -13,7 +13,7 @@ Example usage:
 {{ quote('aqua', text, source, true) }}
 #}
 {%- macro quote(content, alignment='default') -%}
-  <section class="quote">
+  <section class="quote {% if alignment=='right' %}align-right{% endif %}">
     {%- if content.image -%}
       <div class="quote__image-wrapper">
         {%- image content.image, content.alt, '(min-width: 48em) 50vw, 100vw', content.loading, 'quote__image', [400] -%}
