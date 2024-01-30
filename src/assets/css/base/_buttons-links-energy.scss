@@ -70,11 +70,9 @@
     background-color: var(--color-purple);
 
   &:hover {
-    background-image: linear-gradient(to right top, #6200ee, #0074ff, #00a0ff, #00c1e8, #03dac5);
-    background-size:1px 400px;
-    background-position:100px;
-    transition: background-position 1s ease;
-    -webkit-transition:background-position 1s ease;
+    background: radial-gradient(50% 123.47% at 50% 50%, #03DAC5 0%, #6200EE 100%), linear-gradient(121.28deg, #213100 0%, #FF0000 100%), linear-gradient(360deg, #6200EE 0%, #03DAC5 100%), linear-gradient(114.9deg, #03DAC5 0%, #6200EE 100%), radial-gradient(100% 148.07% at 0% 0%, #FFFFFF 0%, #03DAC5 100%);
+    background-blend-mode: screen, color-dodge, overlay, difference, normal;
+    color: var(--color-white);
   }
   }
 
@@ -82,25 +80,20 @@
     background-color: var(--color-aqua);
 
   &:hover {
-    background-image: linear-gradient(to right top, #6200ee, #0074ff, #00a0ff, #00c1e8, #03dac5);
-    background-size:1px 400px;
-    background-position:100px;
-    transition: background-position 1s ease;
-    -webkit-transition:background-position 1s ease;
+    background: radial-gradient(50% 123.47% at 50% 50%, #03DAC5 0%, #6200EE 100%), linear-gradient(121.28deg, #213100 0%, #FF0000 100%), linear-gradient(360deg, #6200EE 0%, #03DAC5 100%), linear-gradient(114.9deg, #03DAC5 0%, #6200EE 100%), radial-gradient(100% 148.07% at 0% 0%, #FFFFFF 0%, #03DAC5 100%);
+    background-blend-mode: screen, color-dodge, overlay, difference, normal;
+    color: var(--color-white);
   }
   }
 
   &--white {
     background-color: var(--color-white);
-    color: var(--color-black);
+    color: var(--color-link-primary);
 
   &:hover {
-    background-image: linear-gradient(to right top, #6200ee, #0074ff, #00a0ff, #00c1e8, #03dac5);
+    background: radial-gradient(50% 123.47% at 50% 50%, #03DAC5 0%, #6200EE 100%), linear-gradient(121.28deg, #213100 0%, #FF0000 100%), linear-gradient(360deg, #6200EE 0%, #03DAC5 100%), linear-gradient(114.9deg, #03DAC5 0%, #6200EE 100%), radial-gradient(100% 148.07% at 0% 0%, #FFFFFF 0%, #03DAC5 100%);
+    background-blend-mode: screen, color-dodge, overlay, difference, normal;
     color: var(--color-white);
-    background-size:1px 400px;
-    background-position:100px;
-    transition: background-position 1s ease;
-    -webkit-transition:background-position 1s ease;
   }
   }
 

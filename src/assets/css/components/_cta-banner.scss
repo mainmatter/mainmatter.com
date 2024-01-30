@@ -7,8 +7,8 @@
     --color-animation: var(--color-aqua);
     --color-link-background: var(--color-blue);
     --color-overlay: var(--color-purple);
-    --color-link-primary: var(--color-white);
-    --color-link-primary-hover: var(--color-aqua);
+    --color-link-primary: var(--color-purple);
+    --color-link-primary-hover: var(--color-white);
     color: var(--color-white);
   }
 
@@ -16,8 +16,8 @@
     background-color: var(--color-aqua);
     --color-animation: var(--color-purple);
     --color-overlay: var(--color-aqua);
-    --color-link-primary: var(--color-white);
-    --color-link-primary-hover: var(--color-black);
+    --color-link-primary: var(--color-aqua);
+    --color-link-primary-hover: var(--color-white);
     color: var(--color-white);
   }
 
@@ -26,6 +26,8 @@
     --color-animation: var(--color-purple);
     --color-link-background: var(--color-aqua);
     --color-overlay: var(--color-black);
+    --color-link-primary: var(--color-white);
+    --color-link-primary-hover: var(--color-purple);
     color: var(--color-white);
     --overlay-opacity: 0.2;
   }

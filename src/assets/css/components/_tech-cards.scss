@@ -25,7 +25,17 @@
   display: flex;
   align-items: end;
   text-decoration: none;
-  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tech-cards_link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  background-repeat: no-repeat;
 }
 
 .tech-cards__link-wrapper {
@@ -37,166 +47,186 @@
   transition: color 0.3s ease;
 }
 
+.tech-cards__content {
+  width: 100%;
+}
+
+
+
 .tech-cards__grid-element:nth-child(2n+1) {
   background-color: var(--color-purple);
 
-  &.rust {
+  & .rust {
     background-image: url(/assets/images/services/rust-tech_purple.png);
     background-size: 60%;
     background-position: 5% 5%;
 
     &:hover {
-      background-size: 70%;
+      background-image: url(/assets/images/services/rust-tech_white.png);
     }
   }
 
-  &.ember {
+  & .ember {
     background-image: url(/assets/images/services/ember-tech_purple.png);
     background-size: 80%;
     background-position: 5% 20%;
 
     &:hover {
-      background-size: 90%;
+      background-image: url(/assets/images/services/ember-tech_white.png);
     }
   }
 
-  &.svelte {
+  & .svelte {
     background-image: url(/assets/images/services/svelte-tech_purple.png);
     background-size: 50%;
     background-position: 5% 5%;
 
     &:hover {
-      background-size: 60%;
+      background-image: url(/assets/images/services/svelte-tech_white.png);
     }
   }
 
-  &.elixir {
+  & .elixir {
     background-image: url(/assets/images/services/elixir-tech_purple.png);
     background-size: 80%;
     background-position: 5% 20%;
 
     &:hover {
-      background-size: 90%;
+      background-image: url(/assets/images/services/elixir-tech_white.png);
     }
   }
 
-  &.ruby {
+  & .ruby {
     background-image: url(/assets/images/services/ruby-tech_purple.png);
     background-size: 60%;
     background-position: 5% 5%;
 
     &:hover {
-      background-size: 70%;
+      background-image: url(/assets/images/services/ruby-tech_white.png);
     }
+  }
+
+  &:hover {
+    background: radial-gradient(50% 123.47% at 50% 50%, #03DAC5 0%, #6200EE 100%), linear-gradient(121.28deg, #213100 0%, #FF0000 100%), linear-gradient(360deg, #6200EE 0%, #03DAC5 100%), linear-gradient(114.9deg, #03DAC5 0%, #6200EE 100%), radial-gradient(100% 148.07% at 0% 0%, #FFFFFF 0%, #03DAC5 100%);
+    background-blend-mode: screen, color-dodge, overlay, difference, normal;
   }
 }
 
 .tech-cards__grid-element:nth-child(2n) {
   background-color: var(--color-black);
 
-
-  &.rust {
+  & .rust {
     background-image: url(/assets/images/services/rust-tech_black.png);
     background-size: 60%;
     background-position: 5% 5%;
 
     &:hover {
-      background-size: 70%;
+      background-image: url(/assets/images/services/rust-tech_white.png);
     }
   }
 
-  &.ember {
+  & .ember {
     background-image: url(/assets/images/services/ember-tech_black.png);
     background-size: 80%;
     background-position: 5% 20%;
 
     &:hover {
-      background-size: 90%;
+      background-image: url(/assets/images/services/ember-tech_white.png);
     }
   }
 
-  &.svelte {
+  & .svelte {
     background-image: url(/assets/images/services/svelte-tech_black.png);
-    background-size: 50%;
+    background-size: 60%;
     background-position: 5% 5%;
 
     &:hover {
-      background-size: 60%;
+      background-image: url(/assets/images/services/svelte-tech_white.png);
     }
   }
 
-  &.elixir {
+  & .elixir {
     background-image: url(/assets/images/services/elixir-tech_black.png);
     background-size: 80%;
     background-position: 5% 20%;
 
     &:hover {
-      background-size: 90%;
+      background-image: url(/assets/images/services/elixir-tech_white.png);
     }
   }
 
-  &.ruby {
+  & .ruby {
     background-image: url(/assets/images/services/ruby-tech_black.png);
     background-size: 60%;
     background-position: 5% 5%;
 
     &:hover {
-      background-size: 70%;
+      background-image: url(/assets/images/services/ruby-tech_white.png);
     }
+  }
+
+  &:hover {
+    background: radial-gradient(50% 123.47% at 50% 50%, #03DAC5 0%, #6200EE 100%), linear-gradient(121.28deg, #213100 0%, #FF0000 100%), linear-gradient(360deg, #6200EE 0%, #03DAC5 100%), linear-gradient(114.9deg, #03DAC5 0%, #6200EE 100%), radial-gradient(100% 148.07% at 0% 0%, #FFFFFF 0%, #03DAC5 100%);
+    background-blend-mode: screen, color-dodge, overlay, difference, normal;
   }
 }
 
 .tech-cards__grid-element:nth-child(5n+1) {
   background-color: var(--color-aqua);
 
-  &.rust {
+  & .rust {
     background-image: url(/assets/images/services/rust-tech_aqua.png);
     background-size: 60%;
     background-position: 5% 5%;
 
     &:hover {
-      background-size: 70%;
+      background-image: url(/assets/images/services/rust-tech_white.png);
     }
   }
 
-  &.ember {
+  & .ember {
     background-image: url(/assets/images/services/ember-tech_aqua.png);
     background-size: 80%;
     background-position: 5% 20%;
 
     &:hover {
-      background-size: 90%;
+      background-image: url(/assets/images/services/ember-tech_white.png);
     }
   }
 
-  &.svelte {
+  & .svelte {
     background-image: url(/assets/images/services/svelte-tech_aqua.png);
-    background-size: 50%;
+    background-size: 60%;
     background-position: 5% 5%;
 
     &:hover {
-      background-size: 60%;
+      background-image: url(/assets/images/services/svelte-tech_white.png);
     }
   }
 
-  &.elixir {
+  & .elixir {
     background-image: url(/assets/images/services/elixir-tech_aqua.png);
     background-size: 80%;
     background-position: 5% 20%;
 
     &:hover {
-      background-size: 90%;
+      background-image: url(/assets/images/services/elixir-tech_white.png);
     }
   }
 
-  &.ruby {
+  & .ruby {
     background-image: url(/assets/images/services/ruby-tech_aqua.png);
     background-size: 60%;
     background-position: 5% 5%;
 
     &:hover {
-      background-size: 70%;
+      background-image: url(/assets/images/services/ruby-tech_white.png);
     }
+  }
+
+  &:hover {
+    background: radial-gradient(50% 123.47% at 50% 50%, #03DAC5 0%, #6200EE 100%), linear-gradient(121.28deg, #213100 0%, #FF0000 100%), linear-gradient(360deg, #6200EE 0%, #03DAC5 100%), linear-gradient(114.9deg, #03DAC5 0%, #6200EE 100%), radial-gradient(100% 148.07% at 0% 0%, #FFFFFF 0%, #03DAC5 100%);
+    background-blend-mode: screen, color-dodge, overlay, difference, normal;
   }
 }
 
