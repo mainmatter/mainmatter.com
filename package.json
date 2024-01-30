@@ -77,5 +77,10 @@
   },
   "engines": {
     "node": ">=16"
+  },
+  "pnpm": {
+    "overrides": {
+      "sharp": "^0.33.2"
+    }
   }
 }
