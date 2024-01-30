@@ -85,9 +85,19 @@ description: "We teach teams like yours how to build sustainable products that w
   "link": "/services/workshops/advanced-testing-in-rust/"
 } %}
 
-{% set workshops = [workshop_1, workshop_2, workshop_3, workshop_4, workshop_5, workshop_6, workshop_7, workshop_8, workshop_9, workshop_10 ] %}
+{% set workshops = [
+  workshop_1,
+  workshop_2,
+  workshop_3,
+  workshop_4,
+  workshop_5,
+  workshop_6,
+  workshop_7,
+  workshop_8,
+  workshop_9,
+  workshop_10
+] %}
 {{ techCards('workshops', '', '', workshops) }}
-
 
 {% set 'content' = {
   "title": "Not the right workshop for you?",
@@ -115,4 +125,3 @@ description: "We teach teams like yours how to build sustainable products that w
   "linkText": "Get in touch"
 } %}
 {{ ctaBanner('purple', 'full', content) }}
-

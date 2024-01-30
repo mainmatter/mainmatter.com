@@ -31,11 +31,11 @@
         {% endif %}
         {% if content.linkUrl and content.linkText %}
           {% set link = {
-          "label": content.linkText,
-          "url": content.linkUrl
+            "label": content.linkText,
+            "url": content.linkUrl
           }
-      %}
-      {{ btnSecondary( link )}}
+ %}
+          {{ btnSecondary( link )}}
         {% endif %}
       </div>
     </div>

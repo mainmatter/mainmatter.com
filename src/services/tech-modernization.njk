@@ -21,8 +21,9 @@ description: "There are lots of reasons that a team gets overextended – lack o
 <section class="my-10">
   <div class="container container--lg">
     <div class="intro-text">
-    <p class="body body_large">
-    Updating your codebase shouldn’t stop your development in its tracks. With Mainmatter, you can take on legacy code <strong>and leave your technical debt behind</strong> – all while your team stays focussed on the roadmap. Our experts can take on the whole upgrade from the reviewing, planning and implementation – at a cost advantage over a complete rewrite later down the line. And we only call it a job well done when we leave your team <strong>with the know-how to keep up with future versions.</strong></p>
+      <p class="body body_large">
+    Updating your codebase shouldn’t stop your development in its tracks. With Mainmatter, you can take on legacy code <strong>and leave your technical debt behind</strong> – all while your team stays focussed on the roadmap. Our experts can take on the whole upgrade from the reviewing, planning and implementation – at a cost advantage over a complete rewrite later down the line. And we only call it a job well done when we leave your team <strong>with the know-how to keep up with future versions.</strong>
+      </p>
     </div>
   </div>
 </section>
@@ -107,8 +108,7 @@ description: "There are lots of reasons that a team gets overextended – lack o
   "link": "ruby-consulting"
 } %}
 
-
-{% set technologies = [tech_1, tech_2, tech_3, tech_4, tech_5 ] %}
+{% set technologies = [tech_1, tech_2, tech_3, tech_4, tech_5] %}
 {{ techCards('modernization_tech', 'Technologies', 'Our skillset is based on a core set of technologies that cover architecture, backend and frontend development with: ', technologies) }}
 
 <section class="my-10">
@@ -122,15 +122,13 @@ description: "There are lots of reasons that a team gets overextended – lack o
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
 
-
 {% set clients = ['sage', 'mobimed'] %}
 {{ caseCards('modernization_clients', 'Clients', 'Some projects that we helped modernize', clients)}}
 
 {% set 'content' = {
   "subtitle": "Transform bold ideas into shipped products"
-  } %}
+} %}
 {{ featuredServices(services['tech-modernization'], content) }}
-
 
 {% set 'content' = {
   "title": "Grow your business with us",

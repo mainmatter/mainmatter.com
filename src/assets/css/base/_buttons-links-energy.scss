@@ -69,34 +69,45 @@
   &--purple {
     background-color: var(--color-purple);
 
-  &:hover {
-    background: radial-gradient(50% 123.47% at 50% 50%, #03DAC5 0%, #6200EE 100%), linear-gradient(121.28deg, #213100 0%, #FF0000 100%), linear-gradient(360deg, #6200EE 0%, #03DAC5 100%), linear-gradient(114.9deg, #03DAC5 0%, #6200EE 100%), radial-gradient(100% 148.07% at 0% 0%, #FFFFFF 0%, #03DAC5 100%);
-    background-blend-mode: screen, color-dodge, overlay, difference, normal;
-    color: var(--color-white);
-  }
+    &:hover {
+      background: radial-gradient(50% 123.47% at 50% 50%, #03dac5 0%, #6200ee 100%),
+        linear-gradient(121.28deg, #213100 0%, #ff0000 100%),
+        linear-gradient(360deg, #6200ee 0%, #03dac5 100%),
+        linear-gradient(114.9deg, #03dac5 0%, #6200ee 100%),
+        radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
+      background-blend-mode: screen, color-dodge, overlay, difference, normal;
+      color: var(--color-white);
+    }
   }
 
   &--aqua {
     background-color: var(--color-aqua);
 
-  &:hover {
-    background: radial-gradient(50% 123.47% at 50% 50%, #03DAC5 0%, #6200EE 100%), linear-gradient(121.28deg, #213100 0%, #FF0000 100%), linear-gradient(360deg, #6200EE 0%, #03DAC5 100%), linear-gradient(114.9deg, #03DAC5 0%, #6200EE 100%), radial-gradient(100% 148.07% at 0% 0%, #FFFFFF 0%, #03DAC5 100%);
-    background-blend-mode: screen, color-dodge, overlay, difference, normal;
-    color: var(--color-white);
-  }
+    &:hover {
+      background: radial-gradient(50% 123.47% at 50% 50%, #03dac5 0%, #6200ee 100%),
+        linear-gradient(121.28deg, #213100 0%, #ff0000 100%),
+        linear-gradient(360deg, #6200ee 0%, #03dac5 100%),
+        linear-gradient(114.9deg, #03dac5 0%, #6200ee 100%),
+        radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
+      background-blend-mode: screen, color-dodge, overlay, difference, normal;
+      color: var(--color-white);
+    }
   }
 
   &--white {
     background-color: var(--color-white);
     color: var(--color-link-primary);
 
-  &:hover {
-    background: radial-gradient(50% 123.47% at 50% 50%, #03DAC5 0%, #6200EE 100%), linear-gradient(121.28deg, #213100 0%, #FF0000 100%), linear-gradient(360deg, #6200EE 0%, #03DAC5 100%), linear-gradient(114.9deg, #03DAC5 0%, #6200EE 100%), radial-gradient(100% 148.07% at 0% 0%, #FFFFFF 0%, #03DAC5 100%);
-    background-blend-mode: screen, color-dodge, overlay, difference, normal;
-    color: var(--color-white);
+    &:hover {
+      background: radial-gradient(50% 123.47% at 50% 50%, #03dac5 0%, #6200ee 100%),
+        linear-gradient(121.28deg, #213100 0%, #ff0000 100%),
+        linear-gradient(360deg, #6200ee 0%, #03dac5 100%),
+        linear-gradient(114.9deg, #03dac5 0%, #6200ee 100%),
+        radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
+      background-blend-mode: screen, color-dodge, overlay, difference, normal;
+      color: var(--color-white);
+    }
   }
-  }
-
 }
 
 .btn-secondary {

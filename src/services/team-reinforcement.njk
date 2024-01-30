@@ -21,7 +21,7 @@ description: "There are lots of reasons that a team gets overextended – lack o
 <section class="my-10">
   <div class="container container--lg">
     <div class="intro-text">
-    <p class="body body_large">
+      <p class="body body_large">
     There are lots of reasons that a team gets overextended – lack of people, lack of expertise, or even lack of time.
     At Mainmatter, we’ve built a team of <strong>diverse expertise</strong> in web and cloud projects that deliver with a <strong>fresh perspective</strong>. We support our clients with experienced people who are ready <strong>to build products, mentor people and support your goals</strong>.
     </p>
@@ -109,8 +109,7 @@ description: "There are lots of reasons that a team gets overextended – lack o
   "link": "ruby-consulting"
 } %}
 
-
-{% set technologies = [tech_1, tech_2, tech_3, tech_4, tech_5 ] %}
+{% set technologies = [tech_1, tech_2, tech_3, tech_4, tech_5] %}
 {{ techCards('team-reinforcement_technologies', 'Technologies', 'Our skillset is based on a core set of technologies that cover architecture, backend and frontend development with: ', technologies) }}
 
 {% set 'content' = {
@@ -132,15 +131,13 @@ description: "There are lots of reasons that a team gets overextended – lack o
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
 
-
 {% set clients = ['aleph-alpha', 'auditboard', 'mvb'] %}
 {{ caseCards('team-reinforcement_clients', 'Clients', 'Some of the clients we supported with Team Reinforcement', clients)}}
 
 {% set 'content' = {
   "subtitle": "Transform bold ideas into shipped products"
-  } %}
+} %}
 {{ featuredServices(services['team-reinforcement'], content) }}
-
 
 {% set 'content' = {
   "title": "Grow your business with us",

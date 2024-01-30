@@ -49,7 +49,7 @@ description: "We provide a number of workshops to enable teams to succeed with R
   "link": "/services/workshops/advanced-testing-in-rust/"
 } %}
 
-{% set workshops = [workshop_1, workshop_2, workshop_3, workshop_4, workshop_5 ] %}
+{% set workshops = [workshop_1, workshop_2, workshop_3, workshop_4, workshop_5] %}
 {{ techCards('workshops', 'Our training offering', 'We specialize on Rust on the backend: API services, workers, data pipelines. That focus shapes our training offering.
            We can walk alongside you on a journey from zero to hero,
            starting from the basics of the language all the way to advanced testing techniques and comprehensive
@@ -73,7 +73,7 @@ description: "We provide a number of workshops to enable teams to succeed with R
         If you decide to organise a workshop at your company, we are happy to tailor
           the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as
           develop new content if desired.<br>
-          <a href="https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us">Get in touch with us</a>
+        <a href="https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us">Get in touch with us</a>
           to discuss further!
         From time to time, we also organize public workshops. <br>
            Public workshops are the ideal solution for independent developers and small teams: it's enough to buy a ticket to join!<br>
@@ -93,36 +93,34 @@ description: "We provide a number of workshops to enable teams to succeed with R
           <blockquote>
             ”The individual exercises build on each other very well. Direct practice makes it easier to understand the topics. I have rarely taken part in such a good practical workshop!”
           </blockquote>
-          <figcaption class="quotes-list__quote-source">Remote attendee<span class="quotes-list__quote-source--separator">
-        </div>
-      </li>
-      <li class="quotes-list__quote">
-        <div class="quotes-list__quote-text text--sm">
-          <blockquote>
+          <figcaption class="quotes-list__quote-source">Remote attendee<span class="quotes-list__quote-source--separator"></div>
+          </li>
+          <li class="quotes-list__quote">
+            <div class="quotes-list__quote-text text--sm">
+              <blockquote>
             ”I usually avoid workshops. The pace of more than 3 people is hard to sync: I always feel rushed in some bits, slowed down in others. You fixed that with your code-centric approach: I was able to fully use the time and the knowledge of the trainer!”
           </blockquote>
-          <figcaption class="quotes-list__quote-source">Onsite attendee<span class="quotes-list__quote-source--separator">
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
+              <figcaption class="quotes-list__quote-source">Onsite attendee<span class="quotes-list__quote-source--separator"></div>
+              </li>
+            </ul>
+          </div>
+        </section>
 
-<section class="mt-10 mb-0">
-  {% set imageData = {
-    "imgPath": "/assets/images/services/workshops.jpeg",
-    "alt": "Server room",
-    "sizes": "100vw",
-    "loading": "lazy",
-    "sizesArray": [760, 1440, 1920]
-  } %}
-  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
-</section>
+        <section class="mt-10 mb-0">
+          {% set imageData = {
+            "imgPath": "/assets/images/services/workshops.jpeg",
+            "alt": "Server room",
+            "sizes": "100vw",
+            "loading": "lazy",
+            "sizesArray": [760, 1440, 1920]
+          } %}
+          {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+        </section>
 
-{% set 'content' = {
-  "title": "Grow your business with us",
-  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
-  "linkUrl": "/contact",
-  "linkText": "Get in touch"
-} %}
-{{ ctaBanner('purple', 'full', content) }}
+        {% set 'content' = {
+          "title": "Grow your business with us",
+          "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+          "linkUrl": "/contact",
+          "linkText": "Get in touch"
+        } %}
+        {{ ctaBanner('purple', 'full', content) }}

@@ -52,7 +52,7 @@ og:
             "label": 'Learn more',
             "url": 'https://emberjs.com/sponsors/'
           }
-          %}
+ %}
           {{ btnSecondary( link, 'mt-2' )}}
         </div>
         <div class="split-content__feature">
@@ -82,7 +82,7 @@ og:
             "label": 'Learn more',
             "url": 'https://emberfest.eu/'
           }
-          %}
+ %}
           {{ btnSecondary( link, 'mt-2' )}}
         </div>
         <div class="split-content__feature">
@@ -132,59 +132,59 @@ og:
         <h3 class="split-content__subheading h2">Facing Challenges with Ember?</h3>
         <p>Ember famously enforces a rigid structure and liberates engineers through constraints so they can remain focussed on delivering value for users. Yet, sometimes you get stuck and it can be hard to see the path forwards – be it upgrading an old codebase to modern Ember, adopting Embroider or architecting a new feature. If your team is in a situation like that or you have any other question, reach and one of our ember experts will come back to you.</p>
         {% set link = {
-            "label": 'Contact us',
-            "url": '/contact/'
-          }
-          %}
-          {{ btnSecondary( link, 'mt-2') }}
-        </div>
-        <div class="split-content__feature">
-          {% include 'content/secondary-feature-ember-consulting.njk' %}
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <section class="my-10">
-    <div class="container container--lg">
-      <div class="mb-10">
-        <h3 class="mb-2">Custom Development</h3>
-        <p class="body">
-          We develop complete apps with Ember so your team can focus on other initiatives. We are Ember experts and in fact have written and establishes important pieces of the Ember ecosystem ourselves. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.
-        </p>
-        {% set link = {
-          "label": 'Work with us!',
+          "label": 'Contact us',
           "url": '/contact/'
         }
-        %}
-        {{ btnSecondary( link, 'mt-2 plausible-event-name=Ember+Contact' )}}
+ %}
+        {{ btnSecondary( link, 'mt-2') }}
       </div>
-      <div class="mb-10">
-        <h3 class="mb-2">Training and Support</h3>
-        <p class="body">
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-ember-consulting.njk' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="my-10">
+  <div class="container container--lg">
+    <div class="mb-10">
+      <h3 class="mb-2">Custom Development</h3>
+      <p class="body">
+          We develop complete apps with Ember so your team can focus on other initiatives. We are Ember experts and in fact have written and establishes important pieces of the Ember ecosystem ourselves. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.
+        </p>
+      {% set link = {
+        "label": 'Work with us!',
+        "url": '/contact/'
+      }
+ %}
+      {{ btnSecondary( link, 'mt-2 plausible-event-name=Ember+Contact' )}}
+    </div>
+    <div class="mb-10">
+      <h3 class="mb-2">Training and Support</h3>
+      <p class="body">
         Ember is getting easier and easier to adopt but it can appear a bit unfamiliar to people with backgrounds in other frontend technologies. Our trainers are world-class experts who have helped many international companies to build and scale up Ember teams.
       </p>
-        {% set link = {
+      {% set link = {
             "label": 'Check out our workshops!',
             "url": '/services/workshops/hands-on-ember/'
           }
         %}
-        {{ btnSecondary( link, 'mt-2 plausible-event-name=Ember+Workshops' )}}
-      </div>
-      <div class="mb-10">
-        <h3 class="mb-2">Team Reinforcement</h3>
-        <p class="body">
+      {{ btnSecondary( link, 'mt-2 plausible-event-name=Ember+Workshops' )}}
+    </div>
+    <div class="mb-10">
+      <h3 class="mb-2">Team Reinforcement</h3>
+      <p class="body">
           Our experts can merge with your in-house frontend team to ensure the timely delivery of mission-critical projects – be it delivering new initiatives or modernizing codebase without interrupting feature delivery. We’re more than hired hands – we mentor your team throughout the process to help lift productivity long after our collaboration ends.
         </p>
-        {% set link = {
-          "label": 'Work with us!',
-          "url": '/contact/'
-        }
-        %}
-        {{ btnSecondary( link, 'mt-2 plausible-event-name=Ember+Contact' )}}
-      </div>
+      {% set link = {
+        "label": 'Work with us!',
+        "url": '/contact/'
+      }
+ %}
+      {{ btnSecondary( link, 'mt-2 plausible-event-name=Ember+Contact' )}}
     </div>
-  </section>
+  </div>
+</section>
 
 <section class="container container--xl opensource-list">
   <div class="">
@@ -239,7 +239,7 @@ og:
           }
           %}
           {{ btnSecondary( link, 'mt-2' )}}
-          </div>
+        </div>
       </li>
       <li class="opensource-list__project">
         <div class="opensource-list__project-image">
@@ -273,7 +273,7 @@ og:
           }
           %}
           {{ btnSecondary( link, 'mt-2' )}}
-          </div>
+        </div>
       </li>
     </ul>
   </div>
@@ -301,17 +301,20 @@ og:
     {% set 'content' = {
       "text": "Mainmatter are well known as the Ember.js experts and they absolutely live up to the expectations. They had an immediate as well as significant positive impact on both our velocity and quality of output.”",
       "source": "Marc-Antoine Lacroix, Qonto CPO"
-    } %} {{ quote(content) }}
+    } %}
+    {{ quote(content) }}
 
     {% set 'content' = {
       "text": "”I've had the opportunity to work alongside the Mainmatter team on both their client-facing work for Cardstack and their open source contributions. They are experts in Ember and they are a team that takes good software-development practice seriously.”",
       "source": "Ed Faulkner, Cardstack Lead Developer and member of the Ember.js Steering Committee"
-    } %} {{ quote(content, alignment='right') }}
+    } %}
+    {{ quote(content, alignment='right') }}
 
     {% set 'content' = {
       "text": "”Mainmatter’s team is highly experienced and professional. They not only helped us develop the product but also mentored our internal team and introduced a number of improvements around infrastructure and processes along the way.”",
       "source": "Ronald Schild, Managing Director of MVB"
-    } %} {{ quote(content) }}
+    } %}
+    {{ quote(content) }}
   </div>
 </section>
 

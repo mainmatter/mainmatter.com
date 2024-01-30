@@ -23,7 +23,7 @@ og:
   "title": "Svelte is the future of frontend development",
   "text": "Svelte combines a leading developer experience with performance and maintainability. With SvelteKit and its progressive enhancement capabilities, it's a fit for a wide range of use cases. Mainmatter is here to empower your team to fully realize those benefits in your web and backend projects.",
   "logo": "svelte"
-  } %}
+} %}
 {{ colorHero('purple', content) }}
 
 <section class="my-10 container container--lg">
@@ -44,7 +44,7 @@ og:
             "label": 'Learn more',
             "url": 'https://www.sveltesummit.com/'
           }
-          %}
+ %}
           {{ btnSecondary( link, 'mt-2' )}}
         </div>
         <div class="split-content__feature">
@@ -63,73 +63,73 @@ og:
         <h3 class="split-content__subheading h2">Succeeding with Svelte</h3>
         <p>Getting started with Svelte and SvelteKit is straightforward but an experienced partner can help ensure you're set up for success from the beginning. Paolo Ricciuti, Svelte ambassador, co-author of <a href="https://www.sveltelab.dev">SvelteLab</a>, and our in-house Svelte expert, is here to help your team.</p>
         {% set link = {
-            "label": 'Book a 1:1 call with Paolo',
-            "url": 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ26xh3Rs58rD4ZNFuzlzbTxFxubT5_9qSqc_NU4Pmqdot1YTIiylxcyL2kJrfEHn8tpgJqoHi8O'
-          }
-          %}
-          {{ btnSecondary( link, 'mt-2 plausible-event-name=Svelte+1on1+Call') }}
-        </div>
-        <div class="split-content__feature">
-          {% include 'content/secondary-feature-svelte-consulting.njk' %}
-        </div>
+          "label": 'Book a 1:1 call with Paolo',
+          "url": 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ26xh3Rs58rD4ZNFuzlzbTxFxubT5_9qSqc_NU4Pmqdot1YTIiylxcyL2kJrfEHn8tpgJqoHi8O'
+        }
+ %}
+        {{ btnSecondary( link, 'mt-2 plausible-event-name=Svelte+1on1+Call') }}
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-svelte-consulting.njk' %}
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="my-10">
-    <div class="container container--lg">
-      <div class="mb-10">
-        <h3 class="mb-2">Custom Development</h3>
-        <p class="body">
+<section class="my-10">
+  <div class="container container--lg">
+    <div class="mb-10">
+      <h3 class="mb-2">Custom Development</h3>
+      <p class="body">
         We design and develop complete web apps in Svelte so your team can focus on other initiatives. We are experts in Svelte and SvelteKit as well as related technology like Tailwind, Storybook, and testing with Playwright etc. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.
       </p>
-        {% set link = {
-          "label": 'Work with us!',
-          "url": '/contact/'
-        }
-        %}
-        {{ btnSecondary( link, 'mt-2 plausible-event-name=Svelte+Contact' )}}
-      </div>
-      <div class="mb-10">
-        <h3 class="mb-2">Training and Support</h3>
-        <p class="body">
+      {% set link = {
+        "label": 'Work with us!',
+        "url": '/contact/'
+      }
+ %}
+      {{ btnSecondary( link, 'mt-2 plausible-event-name=Svelte+Contact' )}}
+    </div>
+    <div class="mb-10">
+      <h3 class="mb-2">Training and Support</h3>
+      <p class="body">
         Svelte has excellent documentation for diving straight into the framework. However, sometimes active learning in a workshop taught by a subject matter expert can accelerate the learning experience or help overcome challenges. Our trainers are world-class mentors and can design a learning path that best fits your needs.
       </p>
-        {% set link = {
+      {% set link = {
             "label": 'Check out our workshops!',
             "url": '/services/workshops/svelte-and-sveltekit/'
           }
         %}
-        {{ btnSecondary( link, 'mt-2 plausible-event-name=Svelte+Workshops' )}}
-      </div>
-      <div class="mb-10">
-        <h3 class="mb-2">Team Reinforcement</h3>
-        <p class="body">
+      {{ btnSecondary( link, 'mt-2 plausible-event-name=Svelte+Workshops' )}}
+    </div>
+    <div class="mb-10">
+      <h3 class="mb-2">Team Reinforcement</h3>
+      <p class="body">
         Svelte is still a young technology – hiring senior talent can be a challenge.
         Our experts can merge with your in-house product teams to ensure the timely delivery of mission-critical projects. We’re more than hired hands – we mentor your team throughout the process to help lift productivity long after our collaboration ends.
       </p>
-        {% set link = {
-          "label": 'Work with us!',
-          "url": '/contact/'
-        }
-        %}
-        {{ btnSecondary( link, 'mt-2 plausible-event-name=Svelte+Contact' )}}
-      </div>
+      {% set link = {
+        "label": 'Work with us!',
+        "url": '/contact/'
+      }
+ %}
+      {{ btnSecondary( link, 'mt-2 plausible-event-name=Svelte+Contact' )}}
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="container container--lg quote-section">
-    {% set 'content' = {
+<div class="container container--lg quote-section">
+  {% set 'content' = {
     "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
     "source": "Jürgen Witte, CPO at Rail Europe",
     "image": "/assets/images/photos/juergen-witte.png",
     "alt": "Jürgen Witte, smiling at the camera wearing a light blue shirt and blue blazer",
     "loading": "lazy"
   } %}
-    {{ quote(content) }}
-  </div>
+  {{ quote(content) }}
+</div>
 
-  {{ recentPosts("Latest from our blog on the topic", collections.sveltePosts) }}
+{{ recentPosts("Latest from our blog on the topic", collections.sveltePosts) }}
 
 {% set 'content' = {
   "title": "Grow your business with us",

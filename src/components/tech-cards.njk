@@ -6,8 +6,7 @@
       <div class="tech-cards__grid">
         {% for card in cards %}
           <div class="tech-cards__grid-element">
-            <a href="/{{ card.link }}" class="tech-cards_link {{ card.logo }}">
-            </a>
+            <a href="/{{ card.link }}" class="tech-cards_link {{ card.logo }}"></a>
             <div class="tech-cards__content">
               {% if card.title %}
                 <h4 class="tech-cards__title mb-015">{{ card.title }}</h4>

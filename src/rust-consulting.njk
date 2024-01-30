@@ -136,24 +136,24 @@ og:
       <p class="body">
         We develop complete web and cloud apps with Rust so your team can focus on other initiatives. We have experience with all relevant crates like actix, axum, tokio, hyper, and more – and in fact teach others how to use those. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.
       </p>
-        {% set link = {
-            "label": 'Work with us!',
-            "url": '/contact/'
-          }
-        %}
-        {{ btnSecondary( link, 'mt-2 plausible-event-name=Rust+Contact' )}}
+      {% set link = {
+        "label": 'Work with us!',
+        "url": '/contact/'
+      }
+ %}
+      {{ btnSecondary( link, 'mt-2 plausible-event-name=Rust+Contact' )}}
     </div>
     <div class="mb-10">
       <h3 class="mb-2">Training and Support</h3>
       <p class="body">
         There is excellent material out there for learning Rust on your own. But you might not have the luxury of time, or the in-house expertise, to upskill your entire team or overcome obstacles on your own. Our trainers are world-class experts and can design a learning path that best fits your needs.
       </p>
-        {% set link = {
-            "label": 'Check out our workshops!',
-            "url": '/services/workshops/rust/'
-          }
-        %}
-        {{ btnSecondary( link, 'mt-2 plausible-event-name=Rust+Workshops' )}}
+      {% set link = {
+        "label": 'Check out our workshops!',
+        "url": '/services/workshops/rust/'
+      }
+ %}
+      {{ btnSecondary( link, 'mt-2 plausible-event-name=Rust+Workshops' )}}
     </div>
     <div class="mb-10">
       <h3 class="mb-2">Team Reinforcement</h3>
@@ -162,11 +162,11 @@ og:
         Our experts can merge with your in-house product teams to ensure the timely delivery of mission-critical projects. We’re more than hired hands – we mentor your team throughout the process to help lift productivity long after our collaboration ends.
       </p>
       {% set link = {
-            "label": 'Work with us!',
-            "url": '/contact/'
-          }
-        %}
-        {{ btnSecondary( link, 'mt-2 plausible-event-name=Rust+Contact' )}}
+        "label": 'Work with us!',
+        "url": '/contact/'
+      }
+ %}
+      {{ btnSecondary( link, 'mt-2 plausible-event-name=Rust+Contact' )}}
     </div>
 
   </div>
@@ -189,17 +189,20 @@ og:
     {% set 'content' = {
       "text": "”Mainmatter’s team is highly experienced and professional. They not only helped us develop the product but also mentored our internal team and introduced a number of improvements around infrastructure and processes along the way. Due to their work, we increased our team’s efficiency substantially and will be able to deliver better results faster going forward.”",
       "source": "Ronald Schild, Managing Director of MVB"
-    } %} {{ quote(content) }}
+    } %}
+    {{ quote(content) }}
 
     {% set 'content' = {
       "text": "”Working with Mainmatter's experts has always been a good experience. We can really feel that they have mastery on many topics, and knowledge about complex technical problems. I’ve learned so much, especially during our pairing sessions, and it allows me to improve my technical skills and growth as an engineer.”",
       "source": "Alexandre Monjol, Engineer at Qonto"
-    } %} {{ quote(content, alignment='right') }}
+    } %}
+    {{ quote(content, alignment='right') }}
 
     {% set 'content' = {
       "text": "”We started working with simplabs to build a state-of-the-art mobile web app from the ground up and it was an absolute success! Not only are they web specialists, but their expertise in development practices and agile processes made our collaboration an absolute delight.”",
       "source": "Carl Anderson, General Manager at Trainline Europe"
-    } %} {{ quote(content) }}
+    } %}
+    {{ quote(content) }}
   </div>
 </section>
 
