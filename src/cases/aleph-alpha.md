@@ -83,13 +83,18 @@ issue with StackIt's managed offering, we could always fall back to the Open Sou
 provider.
 
 The final infrastructure stack looked like this:
-- **Object storage**: We used StackIt's managed object storage to store the input and output data for the pipeline.
-  The interface was compatible with the S3 API, which allowed us to rely on AWS' battle-tested Rust SDK.
+- **Object storage**: We relied on StackIt's managed object storage to store hyperparameters, 
+  intermediate artefacts and the final output for the pipeline. The interface is compatible with the S3 API, 
+  allowing us to rely on AWS' battle-tested Rust SDK.
 - **Message broker**: We picked RabbitMQ to pass messages between the different components
   of the pipeline. [`lapin`](https://crates.io/crates/lapin) served well as a Rust client.
 - **Metadata storage**: We used PostgreSQL to store metadata about the pipeline's progress. We relied on
   [`sqlx`](https://crates.io/crates/sqlx) to interact with the database from Rust.
 - **Compute**: We relied on StackIt's managed Kubernetes offering to run the pipeline.
+- **Ecosystem**: A growing number of companies are building core machine learning infrastructure in Rust. 
+  As a by-product, you can find high-quality implementations of key algorithms on [crates.io](https://crates.io). 
+  A special mention goes to Hugging Face's [`tokenizers`](https://github.com/huggingface/tokenizers) crate, 
+  a load-bearing component of the final pipeline.
 
 ### Rust
 
@@ -128,6 +133,7 @@ tight schedule: Having someone with the deep expertise on the team allowed them 
 mistakes**.
 
 ## Outcome
-We successfully assembled a high-quality multilingual dataset with more than **X trillion tokens**. 
-The data pipeline was also designed, developed and ran on time and on budget – Aleph Alpha didn't have to delay 
+
+We successfully assembled a high-quality multilingual dataset with more than **4.5 trillion tokens**. 
+The data pipeline was designed, developed and ran on time and on budget—Aleph Alpha didn't have to delay 
 their training schedule by a single day. The data was ready to go by the time the GPU cluster was available.
