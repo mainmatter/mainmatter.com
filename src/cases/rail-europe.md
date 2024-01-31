@@ -91,5 +91,3 @@ og:
   } %}
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
-
-
