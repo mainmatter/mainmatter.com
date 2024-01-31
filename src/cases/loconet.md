@@ -1,6 +1,7 @@
 ---
 layout: case-study
 company: LoCoNET
+tags: Team Reinforcement
 description:
   <p>LoCoNET builds online games for the web. They reached out to Mainmatter to
   improve their team’s productivity.</p><p>We identified and fixed some blocking

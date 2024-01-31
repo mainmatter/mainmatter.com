@@ -1,6 +1,7 @@
 ---
 layout: case-study
 company: Neighbourhoodie
+tags: Team Reinforcement
 description:
   Mainmatter helped Neighbourhoodie successfully complete their first Ember.js
   project. We conducted an on-site workshop for their team, teaching Ember.js’

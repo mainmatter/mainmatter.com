@@ -1,6 +1,7 @@
 ---
 layout: case-study
 company: Robin Hood
+tags: Team Reinforcement
 description:
   <p>Robin Hood is a charitable foundation fighting poverty in New York
   City.</p><p>Mainmatter helped them establish an effective engineering process

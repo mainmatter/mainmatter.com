@@ -1,6 +1,7 @@
 ---
 layout: case-study
 company: Terminal49
+tags: Team Reinforcement
 description:
   <p>Terminal49 is the all-in-one shipment and container tracking
   platform.</p><p>When their team was facing challenges and delivery bottlenecks

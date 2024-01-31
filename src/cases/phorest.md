@@ -1,6 +1,7 @@
 ---
 layout: case-study
 company: Phorest
+tags: Team Reinforcement
 description:
   <p>Phorest provides software that enables 150.000+ salon and spa professionals
   worldwide to manage and market their businesses.</p><p>When they aimed to

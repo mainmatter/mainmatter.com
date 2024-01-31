@@ -1,6 +1,7 @@
 ---
 layout: case-study
 company: xbAV
+tags: Team Reinforcement
 description:
   <p>xbAV makes pensions accessible for employees, employers and
   agents.</p><p>They approached Mainmatter when they were looking for support

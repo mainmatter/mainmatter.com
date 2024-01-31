@@ -1,6 +1,7 @@
 ---
 layout: case-study
 company: Dim3
+tags: Team Reinforcement
 description:
   <p>Dim3 delivers software allowing hospitals to manage and optimize their
   patients’ nutrition plans.</p><p>They approached Mainmatter when they faced
