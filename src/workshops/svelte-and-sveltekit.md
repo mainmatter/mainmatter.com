@@ -23,33 +23,33 @@ hero:
 og:
   image: /assets/images/workshops/svelte-and-sveltekit/og-image.jpg
 topics:
-  - heading: Svelte Basics
+  - title: Svelte Basics
     text: >
       Rendering reactive UIs is the core functionality of Svelte. We cover
       Svelte’s unique approach to reactivity, the <code>$</code> syntax and its
       template language. We then look into writing Svelte components, accepting
       props, and its CSS scoping feature.
-  - heading: SvelteKit Basics
+  - title: SvelteKit Basics
     text: >
       This stage introduces SvelteKit, the project framework built on Svelte. We
       cover project creation and management, SvelteKit’s file system as well as
       creating and managing pages.
-  - heading: Routing
+  - title: Routing
     text: >
       We’ll dive deep into SvelteKit’s file based routing, loading and
       displaying data as well as topics like route grouping, route params and
       redirects.
-  - heading: Testing
+  - title: Testing
     text: >
       SvelteKit comes with two testing strategies: Vitest for testing components
       in isolation and Playwright for end-to-end testing. We cover both in depth
       and present approaches for testing real applications.
-  - heading: Stores
+  - title: Stores
     text: >
       This stage kicks off with an introduction of what stores are and how they
       work. We continue with looking into implementing the three main stores:
       writable, readable, and derived.
-  - heading: SvelteKit and Progressive Enhancement
+  - title: SvelteKit and Progressive Enhancement
     text: >
       The final stage of the workshop teaches how to implement progressive
       enhancement with forms. We cover how to send data to an API, how to

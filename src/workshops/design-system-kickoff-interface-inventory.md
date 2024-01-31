@@ -11,28 +11,28 @@ hero:
 og:
   image: /assets/images/workshops/design-system-kickoff-interface-inventory/og-image.jpg
 topics:
-  - heading: People, process, and tools
+  - title: People, process, and tools
     text: >
       Establish which core features in the user journey should be prioritized,
       clarify ownership and team communication, agree on criteria and a toolset.
-  - heading: UI patterns
+  - title: UI patterns
     text: >
       Go over different user interface pattern types: functional, perceptual,
       platform-specific, domain-specific, persuasive.
-  - heading: Hands-on work
+  - title: Hands-on work
     text: >
       Divide and categorize screenshots of core features of your web interface
       by functional categories (e.g. buttons, forms, navigation, typography,
       lists) and intended use.
-  - heading: Naming convention
+  - title: Naming convention
     text: >
       Discuss naming as a shared language and mental model. We will go over
       naming conventions and practice naming interface components.
-  - heading: Share and learn
+  - title: Share and learn
     text: >
       Share and discuss our findings and rationale, as well as which patterns we
       would keep, merge, and discard.
-  - heading: Next steps
+  - title: Next steps
     text: >
       We'll share crucial steps that help us succeed when transitioning an
       organization to a design system.

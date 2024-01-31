@@ -5,18 +5,20 @@ layout: 'base-energy'
 {% from "author-socials.njk" import authorSocials %}
 {% from "color-hero-energy.njk" import colorHero %}
 {% from "cta-banner.njk" import ctaBanner %}
-{%- block content -%}
-  <article>
-    {% set 'hero' = {
-      "eyebrow": format,
-      "title": title,
-      "text": subtext
-    } %}
-    {{ colorHero('purple', hero) }}
+{% from "strategy-list.njk" import strategyList %}
 
-    <div class="container container--lg post">
+{%- block content -%}
+
+  {% set 'hero' = {
+    "eyebrow": format,
+    "title": title,
+    "text": subtext
+  } %}
+  {{ colorHero('purple', hero) }}
+
+    <section class="container container--lg my-10"
       <div class="workshop__content post__content--workshop rte">
-        <h2 class="workshop-topics__heading">Workshop description</h2>
+        <h2 class="workshop-topics__heading mb-2">Workshop description</h2>
         <div class="post__tagline">
           {% if tagline %}
             {{ tagline | safe }}
@@ -24,80 +26,63 @@ layout: 'base-energy'
             <p>{{ description | safe }}</p>
           {% endif %}
         </div>
-        {% set list %}
-        <h2 class="workshop-topics__heading">Workshop overview</h2>
-        <ol class="workshop-topics__list">
-          {% for item in topics %}
-            <li class="workshop-topics__item">
-              <div class="workshop-topics__text-wrapper">
-                <h3 class="workshop-topics__item-heading h4">{{ item.heading | safe }}</h3>
-                <p class="text--sm">{{ item.text | safe }}</p>
-              </div>
-            </li>
-          {% endfor %}
-        </ol>
-        {% if optional_topics %}
-          <h3 class="screenreader">Optional topics</h3>
-          <ul class="workshop-topics__list">
-            {% for item in optional_topics %}
-              <li class="workshop-topics__item workshop-topics__item--optional">
-                <div class="workshop-topics__text-wrapper">
-                  <h3 class="workshop-topics__item-heading h4">{{ item.heading | safe }}</h3>
-                  <p class="text--sm">{{ item.text | safe }}</p>
-                </div>
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-        {% endset %}
-        {{ content | replace('<!--break-->', list) | replace('<ul>', '<ul class="post__list post__list--workshop">') | safe }}
       </div>
-    </div>
+  </section>
 
-    <div class="workshop-authors">
-      <div class="container container--lg">
-        <div class="workshop__content post__content--workshop">
-          <h2 class="workshop-topics__heading">Your mentor{%- if (leads | default([])).length > 1 -%}s{%- endif -%}
-          </h2>
-          {%- for lead in leads -%}
-            <div class="author__wrapper">
-              <div class="author text--xs">
-                <div class="workshop-authors__image-wrapper author__image-wrapper">
-                  {% image lead.image, lead.name, '3.75rem', 'eager', 'author__lead-image', [120] %}
-                </div>
-                <div class="author__text-wrapper">
-                  <div class="author__name-wrapper">
-                    <span>with&nbsp;</span>
-                    {% if lead.authorHandle %}
-                      <a href="/blog/author/{{ lead.handle }}" class="author__name">{{ lead.name }}</a>
-                    {% else %}
-                      <p class="author__name">{{ lead.name }}</p>
-                    {% endif %}
-                  </div>
-                  {% if lead.handle %}
-                    {{ authorSocials(lead.handle, "author-socials--desktop-only") }}
-                  {% endif %}
-                  <div class="author__title">{{ lead.title }}</div>
-                  {% if lead.handle %}
-                    {{ authorSocials(lead.handle, "author-socials--mobile-only") }}
-                  {% endif %}
-                </div>
-              </div>
-              <div class="author__details{% if lead.bio.length > 200 %} author__details--full-width{% endif %} text--sm">
-                <p>{{ lead.bio | safe }}</p>
-              </div>
-            </div>
-          {%- endfor -%}
+{% set 'content' = {
+"title": "Book this workshop",
+"text": "Our mentors look forward to working with your team and unlocking new capabilities.",
+"linkUrl": "/contact",
+"linkText": "Get in touch"
+} %}
+{{ ctaBanner('purple', 'default', content) }}
+
+{{ strategyList('workshop', '', topics) }}
+
+<section class="workshop-authors container container--lg">
+<div class="workshop__content post__content--workshop">
+<h2 class="workshop-topics__heading">Your mentor{%- if (leads | default([])).length > 1 -%}s{%- endif -%}
+</h2>
+{%- for lead in leads -%}
+  <div class="author__wrapper">
+    <div class="author">
+      <div class="workshop-authors__image-wrapper author__image-wrapper">
+        {% image lead.image, lead.name, '3.75rem', 'eager', 'author__lead-image', [120] %}
+      </div>
+      <div class="author__text-wrapper">
+        <div class="author__name-wrapper">
+          <h4 class="author__name">{{ lead.name }}</h4>
         </div>
+        {% if lead.handle %}
+          {{ authorSocials(lead.handle, "author-socials--desktop-only") }}
+        {% endif %}
+        <p class="author__title large">{{ lead.title }}</p>
+        {% if lead.handle %}
+          {{ authorSocials(lead.handle, "author-socials--mobile-only") }}
+        {% endif %}
       </div>
     </div>
+    <div class="author__details mt-3 {% if lead.bio.length > 200 %} author__details--full-width{% endif %} ">
+      <p>{{ lead.bio | safe }}</p>
+    </div>
+  </div>
+{%- endfor -%}
+</div>
+</section>
 
-  </article>
-  {% set 'content' = {
-    "title": "Book this workshop",
-    "text": "Our mentors look forward to working with your team and unlocking new capabilities.",
-    "linkUrl": "/contact",
-    "linkText": "Get in touch"
-  } %}
-  {{ ctaBanner('purple', 'full', content) }}
+{% set 'content' = {
+"title": "Not the right workshop for you?",
+"text": "Take a look at our wide range of workshops to take your team to the next level",
+"linkUrl": "/services/workshops/",
+"linkText": "Our workshops"
+} %}
+{{ ctaBanner('aqua', 'default', content) }}
+
+{% set 'content' = {
+"title": "Book this workshop",
+"text": "Our mentors look forward to working with your team and unlocking new capabilities.",
+"linkUrl": "/contact",
+"linkText": "Get in touch"
+} %}
+{{ ctaBanner('purple', 'full', content) }}
 {%- endblock -%}

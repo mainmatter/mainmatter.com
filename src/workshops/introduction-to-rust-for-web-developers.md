@@ -21,27 +21,27 @@ hero:
 og:
   image: /assets/images/workshops/introduction-to-rust-for-web-developers/og-image.jpg
 topics:
-  - heading: Getting Started
+  - title: Getting Started
     text: >
       We will begin by creating a new project and writing our first lines of
       Rust code. You will become familiar with new syntax primitives, basic
       types, expressions, function signatures, and the async/await syntax.
       Additionally, you will learn how to work with Rust's tooling, such as
       Cargo and Rust Analyzer.
-  - heading: Ownership and Borrowing
+  - title: Ownership and Borrowing
     text: >
       As we add more functionality to our application, we will explore Rust's
       unique approach to memory management: Ownership and Borrowing. We will
       delve into the intricacies of this system by examining common situations
       and understanding how it requires us to rethink application development.
-  - heading: Shared Access in Concurrent Applications
+  - title: Shared Access in Concurrent Applications
     text: >
       Rust's memory management system is ideal for shared access to data in
       multi-threaded applications, as it forces us to reconsider how we handle
       shared memory. In this section, we will learn how to share state across
       threads, how synchronization primitives function, and the significant role
       ownership plays.
-  - heading: Structs, Traits, Serialization and Deserialization of Data
+  - title: Structs, Traits, Serialization and Deserialization of Data
     text: >
       In the final part, we will gain insight into Rust's type system by
       exploring traits and their applications in serializing and deserializing

@@ -18,30 +18,30 @@ hero:
 og:
   image: /assets/images/workshops/an-introduction-to-testing-in-rust/og-image.jpg
 topics:
-  - heading: Writing your first unit test
+  - title: Writing your first unit test
     text: >
       Straight into the action: the <code>#[test]</code> annotation and  basic
       assertions!  
       We will wire everything up and get our feedback loop going.
-  - heading: Testing failures
+  - title: Testing failures
     text: >
       Unhappy scenarios are often more important than the happy ones!  
       We will discuss the <code>#[should_panic]</code> annotation as well
       as  the tradeoffs of returning a <code>Result</code> from your tests.
-  - heading: The Rust testing zoo
+  - title: The Rust testing zoo
     text: >
       Unit tests are just of the test approaches offered by Rust's built-in
       testing framework—we have integration and doc tests too.  
       We will look at each category and build a mental framework for
       choosing  the correct testing technique in each context.
-  - heading: Running your tests
+  - title: Running your tests
     text: >
       What is a test?  We will take a look under the hood to understand how the
       Rust built-in testing framework is actually implemented. Armed with this
       knowledge, we will explore the runtime implications of different
       approaches for test organisation. We will also cover alternative
       test  runners, such as <code>cargo-nextest</code>.
-  - heading: "Test helpers: where do they go?"
+  - title: "Test helpers: where do they go?"
     text: >
       Test code is just as important as production code: you want it to be terse
       and clearly communicate what is being tested. If you follow this
@@ -49,7 +49,7 @@ topics:
       helpers: where should they be located? We will cover the different
       strategies available (test modules, feature gate, helper crate) and their
       trade-offs.
-  - heading: Beyond assertions
+  - title: Beyond assertions
     text: >
       In closing, we will have a look at a few advanced techniques beyond
       the  standard toolkit: snapshot testing (<code>insta</code>) and
