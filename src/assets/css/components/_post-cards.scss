@@ -18,6 +18,7 @@
 }
 
 .post-cards__grid-element {
+  position: relative;
   color: var(--color-white);
   padding: 1.25rem 1.25rem 1.25rem 1.25rem;
   min-height: 32rem;
