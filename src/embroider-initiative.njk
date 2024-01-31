@@ -49,15 +49,22 @@ og:
   <p class="featured-services__text">Mainmatter assigns a team of 2 people to work on Embroider full time with guidance and support from Ed Faulkner. Join the initiative to help us extend that timeline and with that the scope of what the initiative will achieve.</p>
 </section>
 
-<section>
-  {% set imageData = {
-    "imgPath": "/assets/images/embroider-initiative/sponsor-logos.jpg",
-    "alt": "4 people talking in front of a wall with sticky notes; laid over that the logos of ticketsolve, Intercom, Lighthouse, HashiCorp, XBE, HotDoc, Isaac Lee, solute, Triptyk, Balint Erdi, redpencil, Productive, Skovik, Yapplabs, Adfinis",
-    "sizes": "100vw",
-    "loading": "lazy",
-    "sizesArray": [760, 1440, 1920]
-  } %}
-  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+<section class="embroider-sponsors my-10">
+  <div class="container container--xl">
+    <div class="embroider-sponsors__intro">
+      <h2 class="mb-2">The Embroider Initiative</h2>
+      <p class="large">
+      Mainmatter, together with a group of sponsors, is working on an initiative to ship Embroider and secure the ecosystem’s investment in Ember.js.
+    </p>
+      {% set link = {
+        "label": 'Join the Embroider initiative ',
+        "url": '/embroider-initiative/'
+      }
+    %}
+      {{ btnSecondary( link, 'mt-3' )}}
+    </div>
+    {% include 'content/embroider-sponsors.njk' %}
+  </div>
 </section>
 
 <section class="text-section">

@@ -1,6 +1,7 @@
 ---
 layout: case-study
 company: HopSkipDrive
+tags: Team Reinforcement
 description:
   <p>HopSkipDrive builds a safe and dependable transportation solution for
   schools and families.</p><p>Mainmatter built their internal dashboard on Ruby
