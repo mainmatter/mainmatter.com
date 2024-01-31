@@ -41,16 +41,12 @@
           "link": "/cases/ais/"
         },
         {
-          "text": "Timify",
-          "link": "/cases/timify/"
-        },
-        {
           "text": "DDWRT",
           "link": "/cases/ddwrt/"
         },
         {
-          "text": "Expedition",
-          "link": "/cases/expedition/"
+          "text": "Rail Europe",
+          "link": "/cases/rail-europe/"
         }
       ]
     },

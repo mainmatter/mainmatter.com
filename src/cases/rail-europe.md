@@ -27,7 +27,7 @@ og:
 <div class="case-study__section">
   <h2 class="case-study__heading h5">About Rail Europe</h2>
   <div class="case-study__text">
-    <h3 class="h4">Rail Europe was founded in 1931 and is looking back at an impressive history of 90+ years in the travel economy. Over the years, the company established itself as the go-to brand for European train bookings and technology solutions for over 15,000 travel professionals in 70 countries.</h3>
+    <h3 class="h4">Rail Europe was founded in 1931 and is looking back at an impressive history of 90+ years in the travel industry. Over the years, the company established itself as the go-to brand for European train bookings and technology solutions for over 15,000 travel professionals in 70 countries.</h3>
     <p>Over the past few years, Rail Europe has gone through some major changes, from being part of SNCF to eventually being acquired by an investor with ambitious goals.</p>
   </div>
 </div>
@@ -58,6 +58,14 @@ og:
   </div>
 </div>
 
+{% set 'content' = {
+  "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
+  "source": "Jürgen Witte, CPO @ Rail Europe",
+  "image": "/assets/images/photos/juergen-witte.png",
+  "alt": "Jürgen Witte",
+  "loading": "lazy"
+} %} {{ quote(content) }}
+
 <div class="case-study__section">
   <h2 class="case-study__heading h5">The Execution</h2>
   <div class="case-study__text">
@@ -84,7 +92,4 @@ og:
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
 
-{% set 'content' = {
-  "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
-  "source": "JÜRGEN WITTE, CPO@RAILEUROPE"
-} %} {{ quote(content) }}
+
