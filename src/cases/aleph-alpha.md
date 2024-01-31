@@ -12,6 +12,8 @@ description:
 permalink: false
 ---
 
+{% from "quote.njk" import quote %}
+
 ## About Aleph Alpha
 
 Aleph Alpha is a German AI startup, a leader in the field of explainable and trustworthy sovereign AI.  
@@ -137,3 +139,9 @@ mistakes**.
 We successfully assembled a high-quality multilingual dataset with more than **4.5 trillion tokens**. 
 The data pipeline was designed, developed and ran on time and on budget—Aleph Alpha didn't have to delay 
 their training schedule by a single day. The data was ready to go by the time the GPU cluster was available.
+
+{% set 'content' = {
+"text": "Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way. I've learned so much, especially during our pairing sessions—it allowed me to improve my technical skills and grow as an engineer.",
+"source": "Andreas Hartel, Senior Engineer at Aleph Alpha",
+"loading": "lazy"
+} %} {{ quote(content) }}
