@@ -55,6 +55,17 @@ og:
   </div>
 </section>
 
+<section class="my-10">
+  {% set imageData = {
+    "imgPath": "/assets/images/svelte/svelte-consulting.jpeg",
+    "alt": "People attending EmberFest",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
 <section class="my-10 container container--lg">
   <div class="split-content">
     <div class="split-content__wrapper">

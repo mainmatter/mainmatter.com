@@ -111,6 +111,18 @@ og:
 {% set title = 'We are trusted by international companies that bet on Ember.js' %}
 {{ logoList(logoCompanies, title) }}
 
+<section class="mb-10">
+  {% set imageData = {
+    "imgPath": "/assets/images/ember/ember-consulting.jpeg",
+    "alt": "A group of hamsters",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
+
 {# <section class="color-hero color-hero--purple" data-background-color="purple">
   <div class="color-hero__image-wrapper">
     {% image "/assets/images/ember/embroider-initiative-sponsor-logos.png", "Collage of the logos of the Embroider initiative's sponsors with a purple overlay.", '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
@@ -184,6 +196,17 @@ og:
       {{ btnSecondary( link, 'mt-2 plausible-event-name=Ember+Contact' )}}
     </div>
   </div>
+</section>
+
+<section class="mb-10">
+  {% set imageData = {
+    "imgPath": "/assets/images/ember/ember-events.jpeg",
+    "alt": "People attending EmberFest",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
 
 <section class="container container--xl opensource-list">
