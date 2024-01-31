@@ -1,6 +1,7 @@
 ---
 layout: case-study
 company: Camilyo
+tags: Team Reinforcement
 description:
   <p>Camilyo is an integrated marketing platform for online service
   providers.</p><p>Mainmatter supported their team with identifying and fixing

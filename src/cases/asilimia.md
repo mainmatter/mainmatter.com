@@ -1,6 +1,7 @@
 ---
 layout: case-study
 company: Asilimia
+tags: Idea to release
 description:
   <p>Asilimia is a Kenyan digital payment application tailored for micro and
   small businesses in Sub-Saharan Africa.</p><p>Mainmatter facilitated two

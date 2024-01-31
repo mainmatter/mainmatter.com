@@ -7,12 +7,13 @@ description:
   "DD-WRT is a firmware for wireless routers running on millions of devices
   worldwide. Mainmatter developed an Ember.js based foundation for a new
   configuration UI."
+tags: Team Reinforcement
 hero:
   color: purple
   textPosition: "center"
   image: "/assets/images/work/ddwrt.jpg"
   imageAlt: "Router on a white background"
-  tags: "development / architecture"
+  tags: Team Reinforcement
 og:
   image: /assets/images/cases/cs-dd-wrt-og-image.jpg
 ---

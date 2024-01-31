@@ -4,7 +4,7 @@ description: "Each week, we publish an update of our team's open source contribu
 layout: "base.njk"
 ---
 
-{% from "color-hero.njk" import colorHero %}
+{% from "color-hero-energy.njk" import colorHero %}
 {% from "twios-card.njk" import twiosCard %}
 
 {% set 'content' = {
@@ -22,14 +22,10 @@ layout: "base.njk"
     <h2 class="section__introduction h5">Latest Updates</h2>
   </div>
   <div class="container container--xl">
-    <div class="post-cards__wrapper">
-      <ol class="post-cards">
+    <div class="post-cards__grid">
         {% for post in collections.twios %}
-        <li class="post-cards__item">
           {{ twiosCard(post) }}
-        </li>
         {% endfor %}
-      </ol>
     </div>
   </div>
 </section>
