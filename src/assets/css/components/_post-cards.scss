@@ -31,7 +31,12 @@
 }
 
 .post-cards__grid-element:hover {
-  background-image: linear-gradient(to right top, #6200ee, #0074ff, #00a0ff, #00c1e8, #03dac5);
+  background: radial-gradient(50% 123.47% at 50% 50%, #03dac5 0%, #6200ee 100%),
+    linear-gradient(121.28deg, #213100 0%, #ff0000 100%),
+    linear-gradient(360deg, #6200ee 0%, #03dac5 100%),
+    linear-gradient(114.9deg, #03dac5 0%, #6200ee 100%),
+    radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
+  background-blend-mode: screen, color-dodge, overlay, difference, normal;
   color: var(--color-white);
 }
 
@@ -48,7 +53,7 @@
   transition: color 0.3s ease;
 }
 
-.post-cards__grid-element:nth-child(2n+1) {
+.post-cards__grid-element:nth-child(2n + 1) {
   background-color: var(--color-purple);
 }
 
@@ -56,7 +61,7 @@
   background-color: var(--color-black);
 }
 
-.post-cards__grid-element:nth-child(5n+1) {
+.post-cards__grid-element:nth-child(5n + 1) {
   background-color: var(--color-aqua);
 }
 
@@ -95,7 +100,6 @@
       height: auto;
     }
   }
-
 
   &--rotate {
     margin-left: 0;
