@@ -15,6 +15,7 @@ import scrollSlides %}
 {% from "color-hero-energy.njk" import colorHero %}
 {% from "strategy-list.njk" import strategyList %}
 {% from "cta-banner.njk" import ctaBanner %}
+{% from "btn-tito.njk" import btnTito %}
 
 <html lang="{{ config.lang }}" prefix="og: http://ogp.me/ns#">
   <head>
@@ -49,7 +50,7 @@ import scrollSlides %}
   <body data-js-enabled="false">
     <a class="skip-link" href="#main"> Skip to main content </a>
 
-    <nav class="nav nav--accent-aqua" id="nav">
+    <nav class="nav nav--accent-purple" id="nav">
       <div class="nav__wrapper container container--xl">
         <div class="nav__logo">
           <a href="/">
@@ -60,13 +61,7 @@ import scrollSlides %}
           </a>
         </div>
         <div class="nav__aside">
-          <tito-button
-            event="mainmatter/svelte-sveltekit-workshop"
-            class="plausible-event-name=Tickets+List"
-            >Book your ticket
-            <div class="line"></div>
-            <span class="price-tag">350€</span></tito-button
-          >
+          {{ btnTito('svelte-sveltekit-workshop', 'Book your ticket', '350€', 'aqua', '')}}
         </div>
       </div>
     </nav>
@@ -76,19 +71,14 @@ import scrollSlides %}
         "eyebrow": 'Online Workshop',
         "title": 'Svelte & SvelteKit',
         "text": '<p>Jan. 30th – Feb. 1st, 2024 – 14:00 to 18:00 CET<br>
-                <p>Take your Svelte and SvelteKit skills to the next level <strong>for 350€</strong>
+                Take your Svelte and SvelteKit skills to the next level <strong>for 350€</strong>
                 </p>'
       } %}
       {{ colorHero('purple', hero) }}
 
 
         <div class="floating-btn">
-          <tito-button
-          event="mainmatter/svelte-sveltekit-workshop"
-          class="plausible-event-name=Tickets+List"
-          >Book your ticket
-          <div class="line"></div>
-            <span class="price-tag">350€</span></tito-button>
+          {{ btnTito('svelte-sveltekit-workshop', 'Book your ticket', '350€', 'aqua', '')}}
         </div>
 
         <section class="lp-section lang-features container container--lg trigger">
@@ -252,10 +242,10 @@ import scrollSlides %}
 
         {% set 'list_1' = {
           "title": "Svelte Basics",
-          "text": "Rendering reactive UIs is the core
+          "text": 'Rendering reactive UIs is the core
           functionality of Svelte. We cover Svelte’s unique approach to reactivity,
-          the <code>$</code> syntax and its template language. We then look into
-          writing Svelte components, accepting props, and its CSS scoping feature."
+          the $ syntax and its template language. We then look into
+          writing Svelte components, accepting props, and its CSS scoping feature.'
         } %}
 
         {% set 'list_2' = {
@@ -302,54 +292,19 @@ import scrollSlides %}
 
         {{ strategyList('svelte-sveltekit', '', elements) }}
 
-
-      {% set 'content' = {
-      "title": "Book your ticket",
-      "text": "Join our workshop and start building web services with Svelte and
-              SvelteKit.",
-      "linkUrl": "/contact",
-      "linkText": "Get in touch",
-      "class": "end-trigger"
-      } %}
-      {{ ctaBanner('purple', 'full', content) }}
-
-        <section
-        class="color-hero color-hero--purple hero-resizable end-trigger"
-        data-background-color="purple"
-      >
-          <div class="color-hero__image-wrapper">
-            {% image
-          '/assets/images/web-based-services-in-rust-workshop/cta-background.jpg',
-          "a pair of hands tie an entry band around someone's arm", '100vw',
-          'lazy', 'color-hero__image', [760, 1440, 1920] %}
+  <section class="cta-banner cta-banner--purple end-trigger" data-background-color="purple">
+    <div class="cta-banner__wrapper container container--xl">
+      <div class="cta-banner__main">
+          <h2 class="cta-banner__title">Book your ticket</h2>
+          <div class="cta-banner__text">
+            Join our workshop and start building web services with Svelte and
+            SvelteKit.
           </div>
-          <div class="color-hero__overlay"></div>
-          <div
-          class="color-hero__container container container--lg color-hero__container--center"
-        >
-            <div class="color-hero__main">
-              <h1 class="color-hero__title color-hero__title--full">
-              Book your ticket
-            </h1>
-              <div class="color-hero__text color-hero__text--small">
-              Join our workshop and start building web services with Svelte and
-              SvelteKit.
-            </div>
-              <div class="cta-link__text-wrapper">
-                <span class="cta-link__text">
-                  <tito-button
-                  event="mainmatter/svelte-sveltekit-workshop"
-                  class="plausible-event-name=Tickets+List"
-                  >Book your ticket
-                  <div class="line"></div>
-                    <span class="price-tag">350€</span></tito-button
-                >
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+          {{ btnTito('svelte-sveltekit-workshop', 'Book your ticket', '350€', 'white', 'mt-2')}}
+      </div>
+    </div>
+  </section>
+</main>
       {% include "global/footer.njk" %}
       <div aria-live="polite" id="live-region" class="screenreader"></div>
       <div hidden>
