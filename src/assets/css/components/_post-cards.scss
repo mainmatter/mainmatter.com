@@ -85,6 +85,20 @@
   border-radius: 50%;
 }
 
+.post-cards__date-wrapper {
+  align-self: end;
+}
+
+.post-cards__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  background-repeat: no-repeat;
+}
+
 .post-cards__link-arrow {
   position: relative;
   margin-left: 0.25rem;

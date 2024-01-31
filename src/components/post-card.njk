@@ -7,7 +7,8 @@ post: A post object
 {{ postCard(post) }}
 #}
 {%- macro postCard(post) -%}
-  <a href="{{ post.url }}" class="post-cards__grid-element">
+  <div class="post-cards__grid-element">
+    <a href="{{ post.url }}" class="post-cards__link"></a>
     <div class="post-cards__date-wrapper">
       <p class="small">{{ post.date | monthDayYear }}</p>
     </div>
@@ -17,30 +18,33 @@ post: A post object
         <h4 class="post-cards__title mb-015 ">{{ post.data.title }}</h4>
       </div>
       {% if post.data.authorHandle %}
-      {% set author = post.data.authorHandle | findBySlug %}
-      <div class="post-cards__author">
+        {% set author = post.data.authorHandle | findBySlug %}
+        <div class="post-cards__author">
 
-        <div class="post-cards__author-image-wrapper">
-          {% set imageUrl = '/assets/images/authors/' + author.data.page.fileSlug + '.jpg' %}
-          {% image imageUrl,
+          <div class="post-cards__author-image-wrapper">
+            {% set imageUrl = '/assets/images/authors/' + author.data.page.fileSlug + '.jpg' %}
+            {% image imageUrl,
           '',
           '2.5rem',
           'eager',
           'post-cards__author-image',
           [80] %}
-        </div>
-        <div class="post-cards__author-name">
-          <p class="small">by
+          </div>
+          <div class="post-cards__author-name">
+            <p class="small">by
             {{ author.data.name }}
-          </p>
+            </p>
+          </div>
         </div>
-      </div>
       {% endif %}
       <div class="post-cards__link-wrapper">
-        <p class="small post-cards__link-label">{% for item in post.data.tags %}{% if loop.index != 1 %} / {% endif %}{{ item }}{% endfor %}</p>
+        <p class="small post-cards__link-label">
+          {% for item in post.data.tags %}
+            {% if loop.index != 1 %} / {% endif %}{{ item }}
+          {% endfor %}
+        </p>
         <span class="post-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
       </div>
     </div>
-  </a>
+  </div>
 {%- endmacro -%}
-

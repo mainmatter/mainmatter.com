@@ -68,6 +68,15 @@
   }
 }
 
+.case-cards_link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+
 .case-cards__logo-wrapper {
   align-self: end;
 }

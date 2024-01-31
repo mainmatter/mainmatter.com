@@ -5,11 +5,14 @@
       <p class="case-cards__intro mt-25 mb-5">{{ intro }}</p>
       <div class="case-cards__grid">
         {% for clientHandle in clients %}
+          <div class="case-cards__grid-element">
           {% set caseStudy = clientHandle | findBySlug %}
           {% if caseStudy.url %}
-            <a href="{{ caseStudy.url }}" class="case-cards__grid-element">
+            <a href="{{ caseStudy.url }}" class="case-cards__link">
+            </a>
             {% else %}
-              <a href="/work#{{ clientHandle }}" class="case-cards__grid-element">
+              <a href="/work#{{ clientHandle }}" class="case-cards__link">
+              </a>
               {% endif %}
               <div class="case-cards__logo-wrapper">
                 {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %}
@@ -27,7 +30,7 @@
                   <span class="case-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
                 </div>
               </div>
-            </a>
+            </div>
           {% endfor %}
         </div>
       </section>
