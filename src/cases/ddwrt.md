@@ -2,11 +2,14 @@
 layout: case-study
 company: DDWRT
 title: A modern UI for DD-WRT NXT based on Ember.js | Work
-displayTitle: "A modern user interface for <em>perennial</em> router firmware"
+displayTitle: "A modern user interface for perennial router firmware"
 description:
   "DD-WRT is a firmware for wireless routers running on millions of devices
   worldwide. Mainmatter developed an Ember.js based foundation for a new
   configuration UI."
+problem: DD-WRT wanted a new user experience for their Linux-based firmware.
+solution:
+  We built a new user interface using Ember.js as a strong foundation.
 tags: Team Reinforcement
 hero:
   color: purple
