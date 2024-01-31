@@ -16,18 +16,18 @@ layout: 'base-energy'
   } %}
   {{ colorHero('purple', hero) }}
 
-    <section class="container container--lg my-10"
-      <div class="workshop__content post__content--workshop rte">
-        <h2 class="workshop-topics__heading mb-2">Workshop description</h2>
-        <div class="post__tagline">
+<section class="container container--lg my-10"
+  <div class="workshop__content post__content--workshop rte">
+    <h2 class="workshop-topics__heading mb-2">Workshop description</h2>
+      <div class="post__tagline">
           {% if tagline %}
             {{ tagline | safe }}
           {% else %}
             <p>{{ description | safe }}</p>
           {% endif %}
-        </div>
       </div>
-  </section>
+  </div>
+</section>
 
 {% set 'content' = {
 "title": "Book this workshop",
@@ -40,34 +40,34 @@ layout: 'base-energy'
 {{ strategyList('workshop', '', topics) }}
 
 <section class="workshop-authors container container--lg">
-<div class="workshop__content post__content--workshop">
-<h2 class="workshop-topics__heading">Your mentor{%- if (leads | default([])).length > 1 -%}s{%- endif -%}
-</h2>
-{%- for lead in leads -%}
-  <div class="author__wrapper">
-    <div class="author">
-      <div class="workshop-authors__image-wrapper author__image-wrapper">
-        {% image lead.image, lead.name, '3.75rem', 'eager', 'author__lead-image', [120] %}
-      </div>
-      <div class="author__text-wrapper">
-        <div class="author__name-wrapper">
-          <h4 class="author__name">{{ lead.name }}</h4>
+  <div class="workshop__content post__content--workshop">
+    <h2 class="workshop-topics__heading">Your mentor{%- if (leads | default([])).length > 1 -%}s{%- endif -%}
+    </h2>
+    {%- for lead in leads -%}
+    <div class="author__wrapper">
+      <div class="author">
+        <div class="workshop-authors__image-wrapper author__image-wrapper">
+          {% image lead.image, lead.name, '3.75rem', 'eager', 'author__lead-image', [120] %}
         </div>
-        {% if lead.handle %}
-          {{ authorSocials(lead.handle, "author-socials--desktop-only") }}
-        {% endif %}
-        <p class="author__title large">{{ lead.title }}</p>
-        {% if lead.handle %}
-          {{ authorSocials(lead.handle, "author-socials--mobile-only") }}
-        {% endif %}
+        <div class="author__text-wrapper">
+          <div class="author__name-wrapper">
+            <h4 class="author__name">{{ lead.name }}</h4>
+          </div>
+          {% if lead.handle %}
+            {{ authorSocials(lead.handle, "author-socials--desktop-only") }}
+          {% endif %}
+          <p class="author__title large">{{ lead.title }}</p>
+          {% if lead.handle %}
+            {{ authorSocials(lead.handle, "author-socials--mobile-only") }}
+          {% endif %}
+        </div>
+      </div>
+      <div class="author__details mt-3 {% if lead.bio.length > 200 %} author__details--full-width{% endif %} ">
+        <p>{{ lead.bio | safe }}</p>
       </div>
     </div>
-    <div class="author__details mt-3 {% if lead.bio.length > 200 %} author__details--full-width{% endif %} ">
-      <p>{{ lead.bio | safe }}</p>
-    </div>
+    {%- endfor -%}
   </div>
-{%- endfor -%}
-</div>
 </section>
 
 {% set 'content' = {

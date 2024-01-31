@@ -25,7 +25,7 @@ Example usage:
 #}
 {% from "cta-link.njk" import ctaLink %}
 {%- macro colorHero(color, content) -%}
-  <section class="color-hero color-hero--{{ color }} {{ content.logo }}" data-background-color="{{ color }}">
+  <section class="color-hero color-hero--{{ color }} {% if content.class %}{{ content.class }}{% endif %}{{ content.logo }}" data-background-color="{{ color }}">
     <div class="color-hero__container container container--lg">
       <div class="color-hero__main">
         {% if content.eyebrow %}

@@ -1,3 +1,7 @@
+@import "components/color-hero-energy";
+@import "components/cta-banner";
+@import "base/utility-energy";
+
 .lp-section {
   padding: 3rem 0;
 }
@@ -133,7 +137,7 @@
   border: none;
   cursor: pointer;
   appearance: none;
-  
+
   &:hover {
     background-color: var(--color-purple);
   }

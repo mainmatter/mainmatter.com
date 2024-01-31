@@ -1,7 +1,7 @@
 {% from "btn-primary.njk" import btnPrimary %}
 {% from "cta-link.njk" import ctaLink %}
 {%- macro ctaBanner(color, width, content) -%}
-  <section class="cta-banner cta-banner--{{ color }} {% if width == 'default' %}container container--xl my-10 {% endif %}" data-background-color="{{ color }}">
+  <section class="cta-banner cta-banner--{{ color }} {% if content.class %}{{ content.class }}{% endif %} {% if width == 'default' %}container container--xl my-10 {% endif %}" data-background-color="{{ color }}">
     <div class="cta-banner__wrapper {% if width == 'full' %}container container--xl {% endif %}">
       <div class="cta-banner__main">
         {% if content.eyebrow %}
