@@ -8,8 +8,7 @@ description:
   worldwide. Mainmatter developed an Ember.js based foundation for a new
   configuration UI."
 problem: DD-WRT wanted a new user experience for their Linux-based firmware.
-solution:
-  We built a new user interface using Ember.js as a strong foundation.
+solution: We built a new user interface using Ember.js as a strong foundation.
 tags: Team Reinforcement
 hero:
   color: purple

@@ -3,9 +3,12 @@ layout: case-study
 company: Qonto
 title: Co-Engineering the Future of Banking for SMEs with Qonto | Work
 displayTitle: "A helping hand for a visionary fintech startup"
-problem: Qonto was facing a number of impediments that were slowing down their workflow.
+problem:
+  Qonto was facing a number of impediments that were slowing down their
+  workflow.
 solution:
-  We helped them release new features quickly while laying the foundations for sustainable growth at an accelerated pace.
+  We helped them release new features quickly while laying the foundations for
+  sustainable growth at an accelerated pace.
 tags: Team Reinforcement
 description:
   <p>Qonto is the leading neobank for SMEs and freelancers in
