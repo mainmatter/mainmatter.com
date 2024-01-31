@@ -10,16 +10,13 @@ og:
 {% from "color-hero-energy.njk" import colorHero %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from "logo-list.njk" import logoList %}
+{% from "btn-secondary.njk" import btnSecondary %}
 
 {% set 'content' = {
   "title": "The Embroider Initiative",
-  "titleTag": "h1",
-  "text": "Mainmatter, together with a group of sponsors, is working on an initiative to ship Embroider and secure the ecosystem’s investment in Ember.js.",
-  "image": "/assets/images/photos/0045.jpg",
-  "alt": "4 people standing around a table with some printed diagrams on it. 2 people shake hands, one claps their hands.",
-  "loading": "eager"
+  "text": "Mainmatter, together with a group of sponsors, is working on an initiative to ship Embroider and secure the ecosystem’s investment in Ember.js."
 } %}
-{{ colorHero('center', 'large', 'purple', content) }}
+{{ colorHero('purple', content) }}
 
 <section class="featured-services container container--lg">
   <h2 class="featured-services__title h5">The Initiative’s Goals</h2>
