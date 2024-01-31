@@ -11,6 +11,8 @@ og:
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from "logo-list.njk" import logoList %}
 {% from "btn-secondary.njk" import btnSecondary %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "featured-services.njk" import featuredServices %}
 
 {% set 'content' = {
   "title": "The Embroider Initiative",
@@ -18,33 +20,12 @@ og:
 } %}
 {{ colorHero('purple', content) }}
 
-<section class="featured-services container container--lg">
-  <h2 class="featured-services__title h5">The Initiative’s Goals</h2>
-  <div class="featured-services__list-wrapper">
-    <h3 class="h2">Shipping Embroider & making it mainstream</h3>
-    <ul class="featured-services__list">
-      <li class="featured-services__list-item">
-        <p class="featured-services__link h4">
-          {% include 'svg/arrow.njk' %}
-          <span class="featured-services__link-text">Completing Embroider itself</span>
-        </p>
-      </li>
-      <li class="featured-services__list-item">
-        <p class="featured-services__link h4">
-          {% include 'svg/arrow.njk' %}
-          <span class="featured-services__link-text">Making Embroider the default for new apps and addons</span>
-        </p>
-      </li>
-      <li class="featured-services__list-item">
-        <p class="featured-services__link h4">
-          {% include 'svg/arrow.njk' %}
-          <span class="featured-services__link-text">Kickstarting development of an Ember plugin for Vite</span>
-        </p>
-      </li>
-    </ul>
-  </div>
-  <p class="featured-services__text">Mainmatter assigns a team of 2 people to work on Embroider full time with guidance and support from Ed Faulkner. Join the initiative to help us extend that timeline and with that the scope of what the initiative will achieve.</p>
-</section>
+{% set 'content' = {
+  "title": "The Initiative’s Goals",
+  "subtitle": "Shipping Embroider & making it mainstream",
+  "text": "Mainmatter assigns a team of 2 people to work on Embroider full time with guidance and support from Ed Faulkner. Join the initiative to help us extend that timeline and with that the scope of what the initiative will achieve."
+} %}
+{{ featuredServices(services['embroider'], content) }}
 
 <section class="embroider-sponsors my-10">
   <div class="container container--xl">
@@ -64,12 +45,9 @@ og:
 {{ logoList(logoCompanies, title) }}
 
 {% set 'content' = {
-"title": "Join the Embroider Initiative!",
-"text": "Sponsor the Embroider Initiative, help us ship Embroider, and secure the future of Ember and your investment in it.",
-"linkUrl": "/contact/",
-"linkText": "Get in touch",
-"image": "/assets/images/photos/laptop-detail.jpg",
-"alt": "The back of a notebook with a bavarian Ember Tomster sticker on it, wearning Lederhosn",
-"loading": "lazy"
+  "title": "Join the Embroider Initiative!",
+  "text": "Sponsor the Embroider Initiative, help us ship Embroider, and secure the future of Ember and your investment in it.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
 } %}
-{{ colorHero('center', 'small', 'aqua', content, true) }}
+{{ ctaBanner('aqua', 'full', content) }}

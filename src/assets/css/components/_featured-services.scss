@@ -23,6 +23,7 @@
   align-items: center;
   text-decoration: none;
 
+
   &-text {
     text-decoration: none;
   }
@@ -47,6 +48,7 @@ a.featured-services__link {
 
 .featured-services__link-text {
   display: inline-flex;
+  flex-shrink: 2;
 }
 
 .featured-services__text {
