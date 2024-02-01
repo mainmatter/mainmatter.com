@@ -1,0 +1,24 @@
+.strategy-list__content {
+  position: relative;
+  margin: 4rem auto;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+
+.strategy-list__number {
+  color: var(--color-purple);
+}
+
+@media (min-width: 72rem) {
+  .strategy-list__content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .strategy-list__number {
+    position: absolute;
+    transform: translateX(-5rem);
+    opacity: 0;
+  }
+}

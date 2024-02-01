@@ -13,7 +13,7 @@
 }
 
 .featured-services__list-item {
-  &+& {
+  & + & {
     margin-top: 3rem;
   }
 }
@@ -22,6 +22,10 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+
+  &-text {
+    text-decoration: none;
+  }
 
   svg {
     transform: rotate(-90deg);
@@ -45,13 +49,6 @@ a.featured-services__link {
   display: inline-flex;
 }
 
-a .featured-services__link-text {
-  text-underline-offset: 0.25rem;
-  text-decoration-line: underline;
-  text-decoration-thickness: 0.0625rem;
-  transition: color 0.3s ease;
-}
-
 @media (min-width: 48em) {
   .featured-services {
     padding: 7rem 0;
@@ -69,7 +66,7 @@ a .featured-services__link-text {
   }
 
   .featured-services__list-item {
-    &+& {
+    & + & {
       margin-top: 2rem;
     }
   }

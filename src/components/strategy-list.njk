@@ -1,0 +1,17 @@
+{% macro strategyList(id, eyebrow, list) %}
+  <section class="strategy-list my-10">
+    <div class="strategy-list__container container container--lg">
+    <h6 class="strategy-list__eyebrow">{{ eyebrow }}</h6>
+    {% for el in list %}
+      {% set listIndex = loop.index %}
+      <div id="{{ id }}-list-{{ loop.index }}" class="strategy-list__element">
+        <div class="strategy-list__content">
+            <h2 class="strategy-list__number decorative">{{ loop.index }}</h2>
+            {% if el.title %}
+              <h4 class="strategy-list__title">{{el.title}}</h4>
+            {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+{% endmacro %}

@@ -1,41 +1,42 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
- 
-gsap.registerPlugin( ScrollTrigger );
 
-/* gsap.from(".floating-btn", {
-  y: 400,
-  scrollTrigger: {
-    trigger: ".trigger",
-    start: "top 50%",
-    toggleActions: "play complete reverse restart",
-  }
-  });
+gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to(".floating-btn", {
-    opacity: 0,
-    scrollTrigger: {
+const float = gsap.utils.toArray(".floating-btn");
+if (float) {
+  float.forEach(float => {
+    const anim = gsap.from(float, {
+      y: 400,
+      paused: true,
+    });
+
+    const playST = ScrollTrigger.create({
+      trigger: ".trigger",
+      start: "top 50%",
+      onEnter: () => anim.play(),
+      onLeaveBack: () => anim.reverse(),
+    });
+
+    const resetST = ScrollTrigger.create({
       trigger: ".end-trigger",
-      start: "bottom 90%",
-      toggleActions: "play none reset none",
-    }
-    }); */
+      onEnter: () => anim.reverse(),
+      onLeaveBack: () => anim.play(),
+    });
+  });
+}
 
-
-    const anim = gsap.from('.floating-btn', {
-        y: 400,
-        paused: true
-      });
-      
-      const playST = ScrollTrigger.create({
-        trigger:'.trigger', 
-        start:'top 50%', 
-        onEnter: () => anim.play(),
-        onLeaveBack: () => anim.reverse(),
-      });
-      
-      const resetST = ScrollTrigger.create({
-        trigger:'.end-trigger',
-        onEnter: () => anim.reverse(),
-        onLeaveBack: () => anim.play(),
-      });
+const numbers = gsap.utils.toArray(".strategy-list__number");
+if (numbers) {
+  numbers.forEach(number => {
+    gsap.to(number, {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: number,
+        start: "top 50%",
+        end: "top 25%",
+        toggleActions: "restart reverse restart reverse"
+      },
+    });
+  });
+}
