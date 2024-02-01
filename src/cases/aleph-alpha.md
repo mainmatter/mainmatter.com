@@ -113,6 +113,17 @@ og:
     </div>  
 </div>
 
+<section>
+        {% set imageData = {
+          "imgPath": "/assets/images/work/aleph-alpha-webiste.jpg",
+          "alt": "A MacBook with the Aleph Alpha website opened in the browser",
+          "sizes": "100vw",
+          "loading": "lazy",
+          "sizesArray": [760, 1440, 1920]
+        } %}
+        {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+      </section>
+
 <div class="case-study__section">
   <h2 class="case-study__heading h5">Rust</h2>
     <div class="case-study__text">
