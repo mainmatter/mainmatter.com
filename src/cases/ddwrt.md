@@ -39,7 +39,6 @@ og:
   </div>
 </div>
 
-
  <div class="split-content">
     <div class="split-content__wrapper">
         <div class="split-content__content">
@@ -52,8 +51,6 @@ og:
         </div>
       </div>
     </div>
-
-
 
 <div class="case-study__section">
   <h2 class="case-study__heading h5">Optimizing for stability and resilience</h2>
