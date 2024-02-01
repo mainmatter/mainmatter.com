@@ -2,6 +2,7 @@
 layout: case-study
 company: Aleph Alpha
 title: A large-scale data pipeline to feed AI models | Work
+displayTitle: "A large-scale data pipeline to feed AI models"
 description:
   <p>Aleph Alpha empowers businesses and governments with the most advanced
   generative AI technology, to gain a decisive edge in the thriving AI
@@ -9,7 +10,14 @@ description:
   When Aleph Alpha set out to leverage Rust to prepare the training dataset for their new model, 
   they reached out to Mainmatter for support in architecting and implementing a scalable 
   and efficient data pipeline.</p>
-permalink: false
+hero:
+  color: purple
+  textPosition: "center"
+  image: "/assets/images/work/aleph-alpha-background.jpg"
+  imageAlt: "Router on a white background"
+  tags: "development / architecture"
+og:
+  image: /assets/images/cases/cs-aleph-alpha-og-image.jpg
 ---
 
 {% from "quote.njk" import quote %}
