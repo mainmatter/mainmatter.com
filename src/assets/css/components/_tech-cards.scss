@@ -104,6 +104,38 @@
     }
   }
 
+  & .strategy {
+    background-image: url(/assets/images/services/strategy-purple.png);
+    background-size: 60%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-image: url(/assets/images/services/strategy-white.png);
+    }
+  }
+
+  & .git {
+    background-image: url(/assets/images/services/git-purple.png);
+    background-size: 60%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-image: url(/assets/images/services/git-white.png);
+    }
+  }
+
+  & .sprint {
+    background-image: url(/assets/images/services/sprint-purple.png);
+    background-size: 40%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-image: url(/assets/images/services/sprint-white.png);
+    }
+  }
+
+
+
   &:hover {
     background: radial-gradient(50% 123.47% at 50% 50%, #03dac5 0%, #6200ee 100%),
       linear-gradient(121.28deg, #213100 0%, #ff0000 100%),
@@ -167,6 +199,36 @@
     }
   }
 
+  & .strategy {
+    background-image: url(/assets/images/services/strategy-black.png);
+    background-size: 60%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-image: url(/assets/images/services/strategy-white.png);
+    }
+  }
+
+  & .git {
+    background-image: url(/assets/images/services/git-black.png);
+    background-size: 60%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-image: url(/assets/images/services/git-white.png);
+    }
+  }
+
+  & .sprint {
+    background-image: url(/assets/images/services/sprint-black.png);
+    background-size: 40%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-image: url(/assets/images/services/sprint-white.png);
+    }
+  }
+
   &:hover {
     background: radial-gradient(50% 123.47% at 50% 50%, #03dac5 0%, #6200ee 100%),
       linear-gradient(121.28deg, #213100 0%, #ff0000 100%),
@@ -227,6 +289,36 @@
 
     &:hover {
       background-image: url(/assets/images/services/ruby-tech_white.png);
+    }
+  }
+
+  & .strategy {
+    background-image: url(/assets/images/services/strategy-aqua.png);
+    background-size: 60%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-image: url(/assets/images/services/strategy-white.png);
+    }
+  }
+
+  & .git {
+    background-image: url(/assets/images/services/git-aqua.png);
+    background-size: 60%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-image: url(/assets/images/services/git-white.png);
+    }
+  }
+
+  & .sprint {
+    background-image: url(/assets/images/services/sprint-aqua.png);
+    background-size: 40%;
+    background-position: 5% 5%;
+
+    &:hover {
+      background-image: url(/assets/images/services/sprint-white.png);
     }
   }
 
