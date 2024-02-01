@@ -26,7 +26,7 @@ og:
 <div class="case-study__section">
   <h2 class="case-study__heading h5">About Aleph Alpha</h2>
   <div class="case-study__text">
-      <p>Aleph Alpha is a German AI startup, a leader in the field of explainable and trustworthy sovereign AI.<br>
+      <p>Aleph Alpha is a German AI startup, a leader in the field of explainable and trustworthy sovereign AI. 
       They're one of the few major players in the AI space based (and funded) entirely in Europe.</p>
   </div>
 </div>
@@ -105,10 +105,6 @@ og:
           <li><strong>Metadata storage</strong>: We used PostgreSQL to store metadata about the pipeline's progress. We relied on
           <a href="https://crates.io/crates/sqlx">sqlx</a> to interact with the database from Rust.</li>
           <li><strong>Compute</strong>: We relied on StackIt's managed Kubernetes offering to run the pipeline.</li>
-          <li><strong>Ecosystem</strong>: A growing number of companies are building core machine learning infrastructure in Rust.
-          As a by-product, you can find high-quality implementations of key algorithms on <a href="https://crates.io">crates.io</a>.
-          A special mention goes to Hugging Face's <a href="https://github.com/huggingface/tokenizers">tokenizers</a> crate,
-          a load-bearing component of the final pipeline.</li>
         </ul>
     </div>  
 </div>
@@ -147,7 +143,11 @@ og:
         Researchers prototyped in Python: Using Rust's excellent Python interop capabilities, we would then 
         plug the Python code into the Rust pipeline (thanks <a href="https://crates.io/crates/pyo3">pyo3</a>!) 
         to verify its functionality and run it at scale. If the change was desirable, and we needed better performance, 
-        we would then port the Python code over to Rust. </li>
+        we would then port the Python code over to Rust.</li>
+        <li><strong>Ecosystem</strong>: A growing number of companies are building core machine learning infrastructure in Rust.
+        As a by-product, you can find high-quality implementations of key algorithms on <a href="https://crates.io">crates.io</a>.
+        A special mention goes to Hugging Face's <a href="https://github.com/huggingface/tokenizers">tokenizers</a> crate,
+        a load-bearing component of the final pipeline.</li>
       </ul>
     </div>
 </div>
