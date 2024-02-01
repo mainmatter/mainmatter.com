@@ -167,7 +167,7 @@ og:
 <div class="case-study__section">
   <h2 class="case-study__heading h5">Outcome</h2>
     <div class="case-study__text">
-        <p>We successfully assembled a high-quality multilingual dataset with more than <strong>4.5 trillion tokens</strong>. 
+        <p>We successfully preprocessed <strong>4.5 trillion tokens</strong> to assemble a high-quality multilingual dataset. 
         The data pipeline was designed, developed and ran on time and on budget—Aleph Alpha didn't have to delay 
         their training schedule by a single day. The data was ready to go by the time the GPU cluster was available.</p>
     </div>
