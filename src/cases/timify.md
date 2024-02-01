@@ -39,7 +39,18 @@ og:
   </div>
 </div>
 
-{% include 'content/secondary-feature-ember.njk' %}
+ <div class="split-content">
+    <div class="split-content__wrapper">
+        <div class="split-content__content">
+          <h4>We are an official sponsor of the Ember.js project.</h4>
+        </div>
+        <div class="split-content__feature">
+          <a href="https://emberjs.com/sponsors/" class="btn-secondary h4 mt-2">
+          {% include 'content/secondary-feature-ember.njk' %}
+          </a>
+        </div>
+      </div>
+    </div>
 
 <div class="case-study__section">
   <h2 class="case-study__heading h5">Features for the future</h2>
