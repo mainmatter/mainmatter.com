@@ -51,6 +51,10 @@
         {
           "text": "Expedition",
           "link": "/cases/expedition/"
+        },
+        {
+          "text": "Aleph Alpha",
+          "link": "/cases/aleph-alpha/"
         }
       ]
     },
