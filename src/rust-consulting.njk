@@ -12,6 +12,7 @@ og:
 {% from "logo-list.njk" import logoList %}
 {% from "cta-link.njk" import ctaLink %}
 {% from "scroll-slides.njk" import scrollSlides %}
+{% from 'featured-case-study.njk' import featuredCaseStudy %}
 
 <section class="color-hero color-hero--purple" data-background-color="purple">
   <div class="color-hero__image-wrapper">
@@ -207,6 +208,12 @@ og:
     </ul>
   </div>
 </section>
+
+<div class="work container container--xl">
+  <ul class="work__list">
+    {{ featuredCaseStudy('aleph-alpha', 'black', 'work__featured-case-study') }}
+  </ul>
+</div>
 
 {{ recentPosts("Latest from our blog on the topic", collections.rustPosts) }}
 
