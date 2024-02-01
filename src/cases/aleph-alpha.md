@@ -6,20 +6,21 @@ displayTitle: "A large-scale data pipeline to feed AI models"
 description:
   <p>Aleph Alpha empowers businesses and governments with the most advanced
   generative AI technology, to gain a decisive edge in the thriving AI
-  economy.</p><p>Training AI models requires preprocessing large amounts of data.
-  When Aleph Alpha set out to leverage Rust to prepare the training dataset for their new model, 
-  they reached out to Mainmatter for support in architecting and implementing a scalable 
-  and efficient data pipeline.</p>
+  economy.</p><p>Training AI models requires preprocessing large amounts of
+  data. When Aleph Alpha set out to leverage Rust to prepare the training
+  dataset for their new model, they reached out to Mainmatter for support in
+  architecting and implementing a scalable and efficient data pipeline.</p>
 hero:
   color: purple
   textPosition: "center"
-  image: "/assets/images/work/aleph-alpha-background.jpg"
+  image: "/assets/images/work/aleph-alpha-background-2.jpg"
   imageAlt: "Router on a white background"
   tags: "development / architecture"
 og:
   image: /assets/images/cases/cs-aleph-alpha-og-image.jpg
 ---
 
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from "quote.njk" import quote %}
 
 <div class="case-study__section">
