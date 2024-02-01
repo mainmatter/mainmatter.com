@@ -13,7 +13,12 @@
           <p class="featured-case-study__client h5">{{ caseStudy.data.company }}</p>
           <h2 class="featured-case-study__title">{{ caseStudy.data.displayTitle | stripHTML }}</h2>
         </div>
-        <p class="featured-case-study__tags caption">{{ caseStudy.data.hero.tags }}</p>
+        <p class="featured-case-study__tags caption">
+          {% for item in caseStudy.data.tags %}
+            {% if loop.index != 1 %} / {% endif %}
+              <a href="/services/{{ item | slug }}/"> {{ item }} </a>
+            {% endfor %}
+        </p>
       </div>
     </div>
   </li>

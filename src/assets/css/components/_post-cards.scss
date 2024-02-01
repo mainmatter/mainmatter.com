@@ -29,6 +29,7 @@
   align-items: start;
   text-decoration: none;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .post-cards__grid-element:hover {
@@ -39,6 +40,7 @@
     radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
   background-blend-mode: screen, color-dodge, overlay, difference, normal;
   color: var(--color-white);
+  cursor: pointer;
 }
 
 .post-cards__logo svg {

@@ -115,6 +115,11 @@
 
 .featured-case-study__tags {
   margin-top: 0;
+  z-index: 100;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .featured-case-study__description {

@@ -26,6 +26,7 @@
   align-items: end;
   text-decoration: none;
   position: relative;
+  cursor: pointer;
 }
 
 .tech-cards_link {
@@ -36,6 +37,7 @@
   width: 100%;
   text-decoration: none;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .tech-cards__link-wrapper {
@@ -143,6 +145,7 @@
       linear-gradient(114.9deg, #03dac5 0%, #6200ee 100%),
       radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
     background-blend-mode: screen, color-dodge, overlay, difference, normal;
+    cursor: pointer;
   }
 }
 
@@ -236,6 +239,7 @@
       linear-gradient(114.9deg, #03dac5 0%, #6200ee 100%),
       radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
     background-blend-mode: screen, color-dodge, overlay, difference, normal;
+    cursor: pointer;
   }
 }
 

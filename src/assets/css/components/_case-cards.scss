@@ -30,6 +30,7 @@
   text-decoration: none;
   transition: all 0.3s ease;
   overflow: hidden;
+  cursor: pointer;
 
   .case-cards_headline {
     display: grid;
@@ -59,6 +60,7 @@
     radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
   background-blend-mode: screen, color-dodge, overlay, difference, normal;
   color: var(--color-white);
+  cursor: pointer;
 
   .problem {
     opacity: 0;
@@ -85,6 +87,17 @@
 .case-cards__logo svg {
   fill: white;
 }
+
+.case-cards__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  background-repeat: no-repeat;
+}
+
 
 .case-cards__link-wrapper {
   display: flex;
@@ -130,5 +143,15 @@
     svg {
       transform: rotate(90deg);
     }
+  }
+}
+
+.case-cards__link-label a {
+  text-decoration: none;
+  position: relative;
+  z-index: 100;
+
+  &:hover {
+    cursor: pointer;
   }
 }
