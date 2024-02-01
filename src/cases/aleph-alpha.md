@@ -115,7 +115,7 @@ og:
 
 <section>
         {% set imageData = {
-          "imgPath": "/assets/images/work/aleph-alpha-webiste.jpg",
+          "imgPath": "/assets/images/work/aleph-alpha-website.jpg",
           "alt": "A MacBook with the Aleph Alpha website opened in the browser",
           "sizes": "100vw",
           "loading": "lazy",
