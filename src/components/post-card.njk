@@ -32,7 +32,7 @@ post: A post object
           </div>
           <div class="post-cards__author-name">
             <p class="small">by
-            {{ author.data.name }}
+            <a href="/blog/author/{{ author.data.name | slug }}">{{ author.data.name }}</a>
             </p>
           </div>
         </div>
@@ -40,8 +40,9 @@ post: A post object
       <div class="post-cards__link-wrapper">
         <p class="small post-cards__link-label">
           {% for item in post.data.tags %}
-            {% if loop.index != 1 %} / {% endif %}{{ item }}
-          {% endfor %}
+            {% if loop.index != 1 %} / {% endif %}
+              <a href="/services/{{ item | slug }}/"> {{ item }} </a>
+            {% endfor %}
         </p>
         <span class="post-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
       </div>

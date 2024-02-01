@@ -32,6 +32,10 @@
   overflow: hidden;
   cursor: pointer;
 
+  a:hover {
+    color: var(--color-black);
+  }
+
   .case-cards_headline {
     display: grid;
     grid-template-columns: 1fr;
