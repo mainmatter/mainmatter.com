@@ -1,8 +1,8 @@
 ---
 layout: case-study
 company: Aleph Alpha
-title: A large-scale data pipeline to feed AI models | Work
-displayTitle: "A large-scale data pipeline to feed AI models"
+title: Preprocessing trillions of tokens with Rust | Work
+displayTitle: "Preprocessing trillions of tokens with Rust"
 description:
   <p>Aleph Alpha empowers businesses and governments with the most advanced
   generative AI technology, to gain a decisive edge in the thriving AI
