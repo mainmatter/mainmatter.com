@@ -12,6 +12,7 @@ og:
 {% from "cta-link.njk" import ctaLink %}
 {% from "scroll-slides.njk" import scrollSlides %}
 {% from "quote.njk" import quote %}
+{% from 'featured-case-study.njk' import featuredCaseStudy %}
 
 <section class="color-hero color-hero--purple" data-background-color="purple">
   <div class="color-hero__image-wrapper">
@@ -102,6 +103,12 @@ og:
     "alt": "Jürgen Witte, smiling at the camera wearing a light blue shirt and blue blazer",
     "loading": "lazy"
   } %} {{ quote(content) }}
+</div>
+
+<div class="work container container--xl">
+  <ul class="work__list">
+{{ featuredCaseStudy('rail-europe', 'purple', 'work__featured-case-study') }}
+  </ul>
 </div>
 
 {{ recentPosts("Latest from our blog on the topic", collections.sveltePosts) }}
