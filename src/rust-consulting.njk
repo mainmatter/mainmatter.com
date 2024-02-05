@@ -12,6 +12,7 @@ og:
 {% from "logo-list.njk" import logoList %}
 {% from "cta-link.njk" import ctaLink %}
 {% from "scroll-slides.njk" import scrollSlides %}
+{% from 'featured-case-study.njk' import featuredCaseStudy %}
 
 <section class="color-hero color-hero--purple" data-background-color="purple">
   <div class="color-hero__image-wrapper">
@@ -160,7 +161,7 @@ og:
                 {% endif %}
               </div>
             {% endif %}
-            
+
           </div>
         </div>
       </div>
@@ -173,13 +174,13 @@ og:
     <ul class="quotes-list__list">
       <li class="quotes-list__quote">
         <div class="quotes-list__quote-image">
-          <img src="/assets/images/logos/monochrome/mvb.svg" alt="MVB logo"/>
+          <img src="/assets/images/logos/monochrome/aleph-alpha.svg" alt="aleph alpha logo"/>
         </div>
         <div class="quotes-list__quote-text text--sm">
           <blockquote>
-            ”Mainmatter’s team is highly experienced and professional. They not only helped us develop the product but also mentored our internal team and introduced a number of improvements around infrastructure and processes along the way. Due to their work, we increased our team’s efficiency substantially and will be able to deliver better results faster going forward.”
+            ”Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way. I've learned so much, especially during our pairing sessions—it allowed me to improve my technical skills and grow as an engineer.”
           </blockquote>
-          <figcaption class="quotes-list__quote-source">Ronald Schild<span class="quotes-list__quote-source--separator">, </span><span class="quotes-list__quote-source--jobtitle">Managing Director of MVB</span></figcaption>
+          <figcaption class="quotes-list__quote-source">Andreas Hartel<span class="quotes-list__quote-source--separator">, </span><span class="quotes-list__quote-source--jobtitle">Senior Engineer at aleph alpha</span></figcaption>
         </div>
       </li>
       <li class="quotes-list__quote">
@@ -207,6 +208,12 @@ og:
     </ul>
   </div>
 </section>
+
+<div class="work container container--xl">
+  <ul class="work__list">
+    {{ featuredCaseStudy('aleph-alpha', 'black', 'work__featured-case-study') }}
+  </ul>
+</div>
 
 {{ recentPosts("Latest from our blog on the topic", collections.rustPosts) }}
 
