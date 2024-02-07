@@ -2,6 +2,7 @@
 
   <div class="case-cards__grid-element">
     {% set caseStudy = clientHandle | findBySlug %}
+    <div class="case-cards--hover"></div>
     {% if caseStudy.url %}
       <a href="{{ caseStudy.url }}" class="case-cards__link"></a>
     {% else %}
@@ -28,6 +29,6 @@
         <span class="case-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
       </div>
     </div>
-    <div class="case-cards--hover"></div>
+
   </div>
 {% endmacro %}

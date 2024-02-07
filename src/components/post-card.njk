@@ -8,6 +8,7 @@ post: A post object
 #}
 {%- macro postCard(post) -%}
   <div class="post-cards__grid-element">
+    <div class="post-cards--hover"></div>
     <a href="{{ post.url }}" class="post-cards__link"></a>
     <div class="post-cards__date-wrapper">
       <p class="small">{{ post.date | monthDayYear }}</p>
@@ -47,6 +48,6 @@ post: A post object
         <span class="post-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
       </div>
     </div>
-    <div class="post-cards--hover"></div>
+
   </div>
 {%- endmacro -%}

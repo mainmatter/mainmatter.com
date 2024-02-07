@@ -38,6 +38,7 @@
   text-decoration: none;
   background-repeat: no-repeat;
   cursor: pointer;
+  z-index: 50;
 }
 
 .tech-cards__link-wrapper {
@@ -46,12 +47,11 @@
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 .tech-cards__content {
   width: 100%;
-  z-index: 100;
+  position: relative;
 }
 
 .tech-cards--hover {
@@ -74,6 +74,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -84,6 +85,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -94,6 +96,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -104,6 +107,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -114,6 +118,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -124,6 +129,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -134,6 +140,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -144,6 +151,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -166,6 +174,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -176,6 +185,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -186,6 +196,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -196,6 +207,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -206,6 +218,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -216,6 +229,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -226,6 +240,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -236,6 +251,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -258,6 +274,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -268,6 +285,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -278,6 +296,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -288,6 +307,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -298,6 +318,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -308,6 +329,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -318,6 +340,7 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
     }
   }
 
@@ -328,6 +351,8 @@
 
     &:hover {
       background-image: none;
+      transition: all 1s ease;
+
     }
   }
 

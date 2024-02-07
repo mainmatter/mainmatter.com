@@ -6,6 +6,7 @@
       <div class="tech-cards__grid">
         {% for card in cards %}
           <div class="tech-cards__grid-element">
+            <div class="tech-cards--hover"></div>
             <a href="/{{ card.link }}" class="tech-cards_link {{ card.logo }}"></a>
             <div class="tech-cards__content">
               {% if card.title %}
@@ -18,7 +19,7 @@
                 </div>
               {% endif %}
             </div>
-            <div class="tech-cards--hover"></div>
+
           </div>
         {% endfor %}
       </div>

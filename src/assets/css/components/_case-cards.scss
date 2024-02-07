@@ -94,12 +94,12 @@
 }
 
 .case-cards__content {
-  z-index: 100;
+  position: relative;
 }
 
 .case-cards__logo-wrapper {
   align-self: end;
-  z-index: 100;
+  position: relative;
 }
 
 .case-cards__logo svg {
@@ -114,6 +114,7 @@
   width: 100%;
   text-decoration: none;
   background-repeat: no-repeat;
+  z-index: 50;
 }
 
 
