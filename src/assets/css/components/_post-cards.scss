@@ -28,7 +28,7 @@
   justify-content: space-between;
   align-items: start;
   text-decoration: none;
-  transition: all 0.3s ease;
+
   cursor: pointer;
 
   a:hover {
@@ -37,18 +37,22 @@
 }
 
 .post-cards__grid-element:hover {
-  background: radial-gradient(50% 123.47% at 50% 50%, #03dac5 0%, #6200ee 100%),
-    linear-gradient(121.28deg, #213100 0%, #ff0000 100%),
-    linear-gradient(360deg, #6200ee 0%, #03dac5 100%),
-    linear-gradient(114.9deg, #03dac5 0%, #6200ee 100%),
-    radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
-  background-blend-mode: screen, color-dodge, overlay, difference, normal;
+
   color: var(--color-white);
   cursor: pointer;
+
+  .post-cards--hover {
+    animation: holohover 1s;
+    animation-fill-mode: both;
+  }
 }
 
 .post-cards__logo svg {
   fill: white;
+}
+
+.post-cards__date-wrapper {
+  z-index: 100;
 }
 
 .post-cards__link-wrapper {
@@ -70,6 +74,10 @@
 
 .post-cards__grid-element:nth-child(5n + 1) {
   background-color: var(--color-aqua);
+}
+
+.post-cards__content {
+  z-index: 100;
 }
 
 .post-cards__author {
@@ -94,6 +102,16 @@
 
 .post-cards__date-wrapper {
   align-self: end;
+}
+
+.post-cards--hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  animation: holoout 1s;
+  animation-fill-mode: both;
 }
 
 .post-cards__link {
