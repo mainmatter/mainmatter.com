@@ -56,15 +56,24 @@
   }
 }
 
+.case-cards--hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  animation: holoout 1s;
+  animation-fill-mode: both;
+}
+
 .case-cards__grid-element:hover {
-  background: radial-gradient(50% 123.47% at 50% 50%, #03dac5 0%, #6200ee 100%),
-    linear-gradient(121.28deg, #213100 0%, #ff0000 100%),
-    linear-gradient(360deg, #6200ee 0%, #03dac5 100%),
-    linear-gradient(114.9deg, #03dac5 0%, #6200ee 100%),
-    radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
-  background-blend-mode: screen, color-dodge, overlay, difference, normal;
   color: var(--color-white);
   cursor: pointer;
+
+  .case-cards--hover {
+    animation: holohover 1s;
+    animation-fill-mode: both;
+  }
 
   .problem {
     opacity: 0;
@@ -84,8 +93,13 @@
   text-decoration: none;
 }
 
+.case-cards__content {
+  z-index: 100;
+}
+
 .case-cards__logo-wrapper {
   align-self: end;
+  z-index: 100;
 }
 
 .case-cards__logo svg {
