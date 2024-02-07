@@ -39,20 +39,19 @@ og:
     </div>
   </div>
   <div class="split-content">
-    <div class="">
-      <div class="split-content__wrapper">
-        <div class="split-content__content">
-          <h4>Mainmatter is a Founding sponsor of the Erlang Ecosystem Foundation.</h4>
-          {% set link = {
-            "label": 'Learn more',
-            "url": 'https://erlef.org/'
-          }
-           %}
-          {{ btnSecondary( link, 'mt-2' )}}
-        </div>
-        <div class="split-content__feature">
-          {% include 'content/secondary-feature-erlang.njk' %}
-        </div>
+    <a href="https://erlef.org/" class="split-content__link"></a>
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h4>Mainmatter is a Founding sponsor of the Erlang Ecosystem Foundation.</h4>
+        {% set link = {
+          "label": 'Learn more',
+          "url": 'https://erlef.org/'
+        }
+ %}
+        {{ btnSecondary( link, 'mt-2' )}}
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-erlang.njk' %}
       </div>
     </div>
   </div>
@@ -70,19 +69,18 @@ og:
     </div>
   </div>
   <div class="split-content">
-    <div class="">
-      <div class="split-content__wrapper">
-        <div class="split-content__content">
-          <h4>View our talks and check out our calendar for the next events</h4>
-          {% set link = {
-            "label": 'See our talks and events',
-            "url": '/events/'
-          }
+    <a href="/events/" class="split-content__link"></a>
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h4>View our talks and check out our calendar for the next events</h4>
+        {% set link = {
+          "label": 'See our talks and events',
+          "url": '/events/'
+        }
  %}
-          {{ btnSecondary( link, 'mt-2' )}}
-        </div>
-        <div class="split-content__feature"></div>
+        {{ btnSecondary( link, 'mt-2' )}}
       </div>
+      <div class="split-content__feature"></div>
     </div>
   </div>
 </section>

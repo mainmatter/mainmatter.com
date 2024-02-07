@@ -43,7 +43,7 @@ og:
 </div>
 
   <div class="split-content">
-    <div class="">
+    <a href="https://erlef.org/" class="split-content__link"></a>
       <div class="split-content__wrapper">
         <div class="split-content__content">
           <h4>Mainmatter is a Founding sponsor of the Erlang Ecosystem Foundation.</h4>
@@ -52,7 +52,6 @@ og:
           <a href="https://erlef.org/">{% include 'content/secondary-feature-erlang.njk' %}</a>
         </div>
       </div>
-    </div>
   </div>
 
 <div class="case-study__section">

@@ -36,20 +36,19 @@ og:
     </div>
   </div>
   <div class="split-content">
-    <div class="">
-      <div class="split-content__wrapper">
-        <div class="split-content__content">
-          <h4>Mainmatter is a Gold Sponsor of Svelte Summit Fall 2023</h4>
-          {% set link = {
-            "label": 'Learn more',
-            "url": 'https://www.sveltesummit.com/'
-          }
+    <a href="https://www.sveltesummit.com/" class="split-content__link"></a>
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h4>Mainmatter is a Gold Sponsor of Svelte Summit Fall 2023</h4>
+        {% set link = {
+          "label": 'Learn more',
+          "url": 'https://www.sveltesummit.com/'
+        }
  %}
-          {{ btnSecondary( link, 'mt-2' )}}
-        </div>
-        <div class="split-content__feature">
-          {% include 'content/secondary-feature-svelte.njk' %}
-        </div>
+        {{ btnSecondary( link, 'mt-2' )}}
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-svelte.njk' %}
       </div>
     </div>
   </div>

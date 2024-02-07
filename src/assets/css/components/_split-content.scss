@@ -1,9 +1,22 @@
 .split-content {
+  position: relative;
   margin: 5rem 0 10rem;
+
+  .btn-secondary {
+    z-index: 50;
+  }
 }
 
 .split-content__subheading {
   margin: 2rem 0 2.5rem;
+}
+
+.split-content__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .split-content__feature {
@@ -12,10 +25,6 @@
 
 .split-content__author img {
   clip-path: circle();
-}
-
-.split-content__link {
-  margin-top: 1.5rem;
 }
 
 @media (min-width: 48em) {

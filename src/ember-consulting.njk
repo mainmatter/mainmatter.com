@@ -43,20 +43,19 @@ og:
     </div>
   </div>
   <div class="split-content">
-    <div class="">
-      <div class="split-content__wrapper">
-        <div class="split-content__content">
-          <h4>We are an official sponsor of the Ember.js project.</h4>
-          {% set link = {
-            "label": 'Learn more',
-            "url": 'https://emberjs.com/sponsors/'
-          }
+    <a href="https://emberjs.com/sponsors/" class="split-content__link"></a>
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h4>We are an official sponsor of the Ember.js project.</h4>
+        {% set link = {
+          "label": 'Learn more',
+          "url": 'https://emberjs.com/sponsors/'
+        }
  %}
-          {{ btnSecondary( link, 'mt-2' )}}
-        </div>
-        <div class="split-content__feature">
-          {% include 'content/secondary-feature-ember.njk' %}
-        </div>
+        {{ btnSecondary( link, 'mt-2' )}}
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-ember.njk' %}
       </div>
     </div>
   </div>
@@ -73,20 +72,19 @@ og:
     </div>
   </div>
   <div class="split-content">
-    <div class="">
-      <div class="split-content__wrapper">
-        <div class="split-content__content">
-          <h4>We co-organize EmberFest, the European Community Ember Conference.</h4>
-          {% set link = {
-            "label": 'Learn more',
-            "url": 'https://emberfest.eu/'
-          }
+    <a href="https://emberfest.eu/" class="split-content__link"></a>
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h4>We co-organize EmberFest, the European Community Ember Conference.</h4>
+        {% set link = {
+          "label": 'Learn more',
+          "url": 'https://emberfest.eu/'
+        }
  %}
-          {{ btnSecondary( link, 'mt-2' )}}
-        </div>
-        <div class="split-content__feature">
-          {% include 'content/secondary-feature-emberfest.njk' %}
-        </div>
+        {{ btnSecondary( link, 'mt-2' )}}
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-emberfest.njk' %}
       </div>
     </div>
   </div>
