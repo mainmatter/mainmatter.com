@@ -84,6 +84,7 @@
   justify-content: flex-start;
   align-items: start;
   z-index: 100;
+  cursor: pointer;
 }
 
 .featured-case-study__cta {
@@ -103,6 +104,8 @@
   max-width: 6rem;
   max-height: 3.25rem;
   margin-bottom: 1rem;
+  z-index: 100;
+  cursor: pointer;
 }
 
 .featured-case-study__title {

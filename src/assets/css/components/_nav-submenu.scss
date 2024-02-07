@@ -79,11 +79,6 @@
 
   &:hover {
     color: var(--color-accent);
-
-    .nav-submenu__link-text {
-      text-decoration-line: underline;
-      text-decoration-color: rgba(var(--color-accent), 1);
-    }
   }
 
   svg {
