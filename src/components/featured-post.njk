@@ -13,6 +13,7 @@
     {% endset %}
   {% endif %}
 
+
   {% if post.data.authorHandle %}
     {% set authorInfo %}
     {% set author = post.data.authorHandle | findBySlug %}
@@ -45,11 +46,11 @@
         <div class="featured-post__meta-wrapper mt-015 text--sm">
             <span>
               {% for item in post.data.tags %}
-                {% if loop.index != 1 %} / {% endif %}{{ item }}
+                {% if loop.index != 1 %} / {% endif %}<a class="" href="/blog/tag/{{ item | slug }}">{{ item }}</a>
               {% endfor %}
             </span>
             <span>{{ post.date | monthDayYear }}</span>
-            <span>{{ authorInfo | safe }}</span>
+            <span>{{ authorInfo | safe }}</span></p>
         </div>
         {% if post.data.tagline %}
           <div class="featured-post__tagline">{{ post.data.tagline | safe }}</div>
