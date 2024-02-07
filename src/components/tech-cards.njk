@@ -7,7 +7,11 @@
         {% for card in cards %}
           <div class="tech-cards__grid-element">
             <div class="tech-cards--hover"></div>
-            <a href="/{{ card.link }}" class="tech-cards_link {{ card.logo }}"></a>
+            <a href="/{{ card.link }}" class="tech-cards_link"></a>
+            <div class="tech-cards__logo {{ card.logo }}">
+              {% set link='svg/'+ card.logo + '.njk'%}
+              {% include link %}
+            </div>
             <div class="tech-cards__content">
               {% if card.title %}
                 <h4 class="tech-cards__title mb-015">{{ card.title }}</h4>

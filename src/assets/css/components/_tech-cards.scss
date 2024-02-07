@@ -19,11 +19,13 @@
 
 .tech-cards__grid-element {
   color: var(--color-white);
-  padding: 8rem 1.25rem 1.25rem 1.25rem;
+  padding: 1.25rem 1.25rem 1.25rem 1.25rem;
   min-height: 32rem;
   background-repeat: no-repeat;
   display: flex;
-  align-items: end;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
   text-decoration: none;
   position: relative;
   cursor: pointer;
@@ -54,105 +56,41 @@
   position: relative;
 }
 
+.tech-cards__logo {
+  position: relative;
+  max-width: 80%;
+
+  &.rust {
+    max-width: 60%;
+  }
+
+  &.svelte {
+    max-width: 60%;
+  }
+
+  &.sprint {
+    max-width: 70%;
+  }
+}
+
 .tech-cards--hover {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  animation: holoout 1s;
+  animation: holohover 1s;
+  animation-direction: reverse;
   animation-fill-mode: both;
 }
 
 .tech-cards__grid-element:nth-child(2n + 1) {
   background-color: var(--color-purple);
 
-  & .rust {
-    background-image: url(/assets/images/services/rust-tech_purple.png);
-    background-size: 60%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .ember {
-    background-image: url(/assets/images/services/ember-tech_purple.png);
-    background-size: 80%;
-    background-position: 5% 20%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .svelte {
-    background-image: url(/assets/images/services/svelte-tech_purple.png);
-    background-size: 50%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .elixir {
-    background-image: url(/assets/images/services/elixir-tech_purple.png);
-    background-size: 80%;
-    background-position: 5% 20%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .ruby {
-    background-image: url(/assets/images/services/ruby-tech_purple.png);
-    background-size: 60%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .strategy {
-    background-image: url(/assets/images/services/strategy-purple.png);
-    background-size: 60%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .git {
-    background-image: url(/assets/images/services/git-purple.png);
-    background-size: 60%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .sprint {
-    background-image: url(/assets/images/services/sprint-purple.png);
-    background-size: 40%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
+  svg g {
+    animation: purplefill 1s;
+    animation-direction: reverse;
+    animation-fill-mode: both;
   }
 
   &:hover {
@@ -160,99 +98,21 @@
       animation: holohover 1s;
       animation-fill-mode: both;
     }
-    cursor: pointer;
+
+    svg g {
+      animation: purplefill 1s;
+      animation-fill-mode: both;
+    }
   }
 }
 
 .tech-cards__grid-element:nth-child(2n) {
   background-color: var(--color-black);
 
-  & .rust {
-    background-image: url(/assets/images/services/rust-tech_black.png);
-    background-size: 60%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .ember {
-    background-image: url(/assets/images/services/ember-tech_black.png);
-    background-size: 80%;
-    background-position: 5% 20%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .svelte {
-    background-image: url(/assets/images/services/svelte-tech_black.png);
-    background-size: 60%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .elixir {
-    background-image: url(/assets/images/services/elixir-tech_black.png);
-    background-size: 80%;
-    background-position: 5% 20%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .ruby {
-    background-image: url(/assets/images/services/ruby-tech_black.png);
-    background-size: 60%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .strategy {
-    background-image: url(/assets/images/services/strategy-black.png);
-    background-size: 60%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .git {
-    background-image: url(/assets/images/services/git-black.png);
-    background-size: 60%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .sprint {
-    background-image: url(/assets/images/services/sprint-black.png);
-    background-size: 40%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
+  svg g {
+    animation: blackfill 1s;
+    animation-direction: reverse;
+    animation-fill-mode: both;
   }
 
   &:hover {
@@ -260,105 +120,31 @@
       animation: holohover 1s;
       animation-fill-mode: both;
     }
-    cursor: pointer;
+
+    svg g {
+      animation: blackfill 1s;
+      animation-fill-mode: both;
+    }
   }
 }
 
 .tech-cards__grid-element:nth-child(5n + 1) {
   background-color: var(--color-aqua);
 
-  & .rust {
-    background-image: url(/assets/images/services/rust-tech_aqua.png);
-    background-size: 60%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .ember {
-    background-image: url(/assets/images/services/ember-tech_aqua.png);
-    background-size: 80%;
-    background-position: 5% 20%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .svelte {
-    background-image: url(/assets/images/services/svelte-tech_aqua.png);
-    background-size: 60%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .elixir {
-    background-image: url(/assets/images/services/elixir-tech_aqua.png);
-    background-size: 80%;
-    background-position: 5% 20%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .ruby {
-    background-image: url(/assets/images/services/ruby-tech_aqua.png);
-    background-size: 60%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .strategy {
-    background-image: url(/assets/images/services/strategy-aqua.png);
-    background-size: 60%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .git {
-    background-image: url(/assets/images/services/git-aqua.png);
-    background-size: 60%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-    }
-  }
-
-  & .sprint {
-    background-image: url(/assets/images/services/sprint-aqua.png);
-    background-size: 40%;
-    background-position: 5% 5%;
-
-    &:hover {
-      background-image: none;
-      transition: all 1s ease;
-
-    }
+  svg g {
+    animation: aquafill 1s;
+    animation-direction: reverse;
+    animation-fill-mode: both;
   }
 
   &:hover {
     .tech-cards--hover {
       animation: holohover 1s;
+      animation-fill-mode: both;
+    }
+
+    svg g {
+      animation: aquafill 1s;
       animation-fill-mode: both;
     }
   }

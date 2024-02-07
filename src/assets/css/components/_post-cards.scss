@@ -110,7 +110,8 @@
   left: 0;
   height: 100%;
   width: 100%;
-  animation: holoout 1s;
+  animation: holohover 1s;
+  animation-direction: reverse;
   animation-fill-mode: both;
 
 }

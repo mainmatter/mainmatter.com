@@ -22,26 +22,29 @@
   }
 }
 
-@keyframes holoout {
+@keyframes aquafill {
   from {
-    background-image: radial-gradient(50% 123.47% at 50% 50%, #03dac5 0%, #6200ee 100%),
-      linear-gradient(121.28deg, #213100 0%, #ff0000 100%),
-      linear-gradient(360deg, #6200ee 0%, #03dac5 100%),
-      linear-gradient(114.9deg, #03dac5 0%, #6200ee 100%),
-      radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
-    background-blend-mode: screen, color-dodge, overlay, difference, normal;
-    opacity: 100%;
-
+    fill: #55E6D8;
   }
-
   to {
-    background-image: radial-gradient(50% 123.47% at 50% 50%, #03dac5 0%, #6200ee 100%),
-      linear-gradient(121.28deg, #213100 0%, #ff0000 100%),
-      linear-gradient(360deg, #6200ee 0%, #03dac5 100%),
-      linear-gradient(114.9deg, #03dac5 0%, #6200ee 100%),
-      radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
-    background-blend-mode: screen, color-dodge, overlay, difference, normal;
-    color: var(--color-white);
-    opacity: 0%;
+    fill: #fff;
+  }
+}
+
+@keyframes purplefill {
+  from {
+    fill: #5600D1;
+  }
+  to {
+    fill: #fff;
+  }
+}
+
+@keyframes blackfill {
+  from {
+    fill: #2B2B2B;
+  }
+  to {
+    fill: #fff;
   }
 }
