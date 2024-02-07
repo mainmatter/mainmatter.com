@@ -3,6 +3,9 @@
   aspect-ratio: auto;
   overflow: hidden;
   background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 
   &--purple {
     background-color: var(--color-purple);
