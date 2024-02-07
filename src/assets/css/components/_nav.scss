@@ -84,15 +84,16 @@
 
 .nav__link-text {
   text-decoration-color: rgba(var(--color-accent), 0);
-  text-underline-offset: 0.125rem;
-  text-decoration-thickness: 0.0625rem;
+  text-decoration-thickness: 0.125rem;
+      text-underline-offset: 0.55rem;
   transition: text-decoration-color 0.3s ease;
 
   &--active {
     text-decoration: underline;
+    text-decoration-thickness: 0.125rem;
+      text-underline-offset: 0.55rem;
     text-decoration-color: rgba(var(--color-accent), 1);
-    text-decoration-thickness: 0.0625rem;
-    text-underline-offset: 0.125rem;
+
   }
 }
 

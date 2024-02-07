@@ -35,7 +35,7 @@ permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/p
   </div>
 </div>
 
-<div class="container container--xl">
+<div class="container container--xl mb-10">
   <div class="post-cards__grid">
     {%- for post in paged.posts -%}
       {{ postCard(post) }}
@@ -50,6 +50,7 @@ permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/p
 
   {{ navPagination(previous, next) }}
 </div>
+
 {% set 'content' = {
   "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",

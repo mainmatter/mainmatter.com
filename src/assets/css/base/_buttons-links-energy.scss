@@ -140,7 +140,19 @@
     height: 1.5rem;
     width: 1.5rem;
     color: var(--color-purple);
+    margin-left: 1.5rem;
+  }
+
+}
+
+.previous {
+  svg {
+    transform: rotate(90deg);
+    height: 1.5rem;
+    width: 1.5rem;
+    color: var(--color-purple);
     margin-right: 1.5rem;
+    margin-left: 0;
   }
 }
 

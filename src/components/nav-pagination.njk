@@ -11,26 +11,21 @@ nextLabel: string for Next button label only on first page
 {%- macro navPagination(previous, next, nextLabel) -%}
 
 
-
   {% if previous or next %}
 
     {% if nextLabel %}{% set next_label = nextLabel %}{% else %}{% set next_label = 'Next' %}{% endif %}
 
     <nav class="pagination" aria-label="Pagination">
       {% if previous %}
-        <a class="cta-link pagination__previous" href="{{ previous }}#posts">
-          <span class="cta-link__text-wrapper">
-            <span class="cta-link__arrow cta-link__arrow--rotate">{% include 'svg/arrow.njk' %}</span>
-            <span class="cta-link__text">Previous</span>
-          </span>
+        <a href="{{ previous }}#posts" class="btn-secondary h4 pagination-item previous">
+          {% include 'svg/arrow.njk' %}
+          <span class="btn-secondary__text">Previous</span>
         </a>
       {% endif %}
       {% if next %}
-        <a class="cta-link pagination__next" href="{{ next }}#posts">
-          <span class="cta-link__text-wrapper">
-            <span class="cta-link__text">{{ next_label }}</span>
-            <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
-          </span>
+        <a href="{{ next }}#posts" class="btn-secondary h4 pagination-item next">
+          <span class="btn-secondary__text">{{ next_label }}</span>
+          {% include 'svg/arrow.njk' %}
         </a>
       {% endif %}
     </nav>
