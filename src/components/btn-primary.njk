@@ -1,5 +1,7 @@
 {%- macro btnPrimary(link, color, class) -%}
   <a class="btn-primary btn-primary--{{ color }} {{ class }}" href="{{ link.url }}">
-    {{ link.label }}
+    <span>{{ link.label }}</span>
+    <div class="btn-primary--hover">
+    </div>
   </a>
 {% endmacro %}
