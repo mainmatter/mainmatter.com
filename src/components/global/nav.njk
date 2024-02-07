@@ -33,43 +33,42 @@
                 {% include 'svg/close.njk' %}
                 <span class="screenreader">Close Services submenu</span>
               </button>
-              <ul class="nav-submenu__list" role="list">
-                <li class="nav-submenu__item">
-                  <a class="nav-submenu__link" href="/services/team-reinforcement/" {%
-                    if '/services/team-reinforcement/'==page.url %} aria-current="page" {% endif %}>
+              <div class="nav-submenu__list">
+                <li class="nav-submenu__list-item mb-2">
+                  <a href="/services/team-reinforcement/" class="nav-submenu__link h4">
                     {% include 'svg/arrow.njk' %}
                     <span class="nav-submenu__link-text">Team Reinforcement</span>
                   </a>
+                  <p class="nav-submenu__link-description">Accelerate delivery and overcome challenges </p>
                 </li>
-                <li class="nav-submenu__item">
-                  <a class="nav-submenu__link" href="/services/idea-to-release/" {%
-                    if '/services/idea-to-release/'==page.url %} aria-current="page" {% endif %}>
+                <li class="nav-submenu__list-item mb-2">
+                  <a href="/services/idea-to-release/" class="nav-submenu__link h4">
                     {% include 'svg/arrow.njk' %}
                     <span class="nav-submenu__link-text">Launch your idea</span>
                   </a>
+                  <p class="nav-submenu__link-description">From Concept to MVP</p>
                 </li>
-                <li class="nav-submenu__item">
-                  <a class="nav-submenu__link" href="/services/tech-modernization/" {%
-                    if '/services/tech-modernization/'==page.url %} aria-current="page" {% endif %}>
+                <li class="nav-submenu__list-item mb-2">
+                  <a href="/services/tech-modernization/" class="nav-submenu__link h4">
                     {% include 'svg/arrow.njk' %}
-                    <span class="nav-submenu__link-text">Modernize your tech stack  </span>
+                    <span class="nav-submenu__link-text">Modernize your tech stack</span>
                   </a>
+                  <p class="nav-submenu__link-description">Upgrades instead of rewrites</p>
                 </li>
-                <li class="nav-submenu__item">
-                  <a class="nav-submenu__link" href="/services/strategic-advice/" {%
-                    if '/services/tech-modernization/'==page.url %} aria-current="page" {% endif %}>
+                <li class="nav-submenu__list-item mb-2">
+                  <a href="/services/strategic-advice/" class="nav-submenu__link h4">
                     {% include 'svg/arrow.njk' %}
                     <span class="nav-submenu__link-text">Get strategic advice</span>
                   </a>
+                  <p class="nav-submenu__link-description">Assessments, transformation and scaling</p>
                 </li>
-                <li class="nav-submenu__item">
-                  <a class="nav-submenu__link" href="/services/workshops/" {% if '/services/workshops/'==page.url %}
-                    aria-current="page" {% endif %}>
+                <li class="nav-submenu__list-item mb-2">
+                  <a href="/services/workshops/" class="nav-submenu__link h4">
                     {% include 'svg/arrow.njk' %}
-                    <span class="nav-submenu__link-text">Workshops</span>
+                    <span class="nav-submenu__link-text">Tailored Workshops</span>
                   </a>
                 </li>
-              </ul>
+              </div>
               <div class="no-js-hidden">
                 {% include 'global/nav-aside.njk' %}
               </div>

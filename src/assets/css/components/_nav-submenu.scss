@@ -9,6 +9,7 @@
   background-color: var(--color-white);
   padding: 1.5rem 2rem;
   margin-top: 1rem;
+  z-index: 200;
 }
 
 .nav-submenu__list {
@@ -56,6 +57,10 @@
   height: 2.75rem;
   align-self: flex-end;
   text-align: right;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   svg {
     transition: color 0.3s ease;
