@@ -27,6 +27,7 @@ og:
 } %}
 {{ featuredServices(services['embroider'], content) }}
 
+
 <section class="embroider-sponsors my-10">
   <div class="container container--xl">
     {% include 'content/embroider-sponsors.njk' %}
@@ -40,7 +41,7 @@ og:
   </div>
 </section>
 
-{% set logoCompanies = ['ticketsolve', 'intercom', 'lighthouse', 'hashicorp', 'xbe', 'hotdoc', 'isaac-lee', 'solute', 'triptyk', 'ember-checkup', 'redpencil', 'productive', 'skovik', 'yapplabs', 'adfinis' ] %}
+{% set logoCompanies = ['ticketsolve', 'intercom', 'lighthouse', 'crowdstrike', 'hashicorp', 'xbe', 'teamtailor', 'hotdoc', 'isaac-lee', 'solute', 'triptyk', 'ember-checkup', 'redpencil', 'productive', 'skovik', 'yapplabs', 'adfinis' ] %}
 {% set title = 'Companies and individuals that build on Ember support the initiative to secure the future of their investments.' %}
 {{ logoList(logoCompanies, title) }}
 

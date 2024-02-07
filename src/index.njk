@@ -25,6 +25,7 @@ title: null
 {{ featuredServices(services['services-list-energy'], content) }}
 {% set logoCompanies = ['Qonto', 'Trainline', 'Aleph Alpha', 'Timify', 'Experteer', 'Robin Hood', 'Rail Europe' ] %}
 {{ logoList(logoCompanies) }}
+
 <section class="mb-5">
   {% set imageData = {
     "imgPath": "/assets/images/photos/mainmatter-smile.jpeg",
@@ -35,7 +36,9 @@ title: null
   } %}
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
-{% set clients = ['qonto', 'experteer', 'aleph-alpha', 'mvb'] %}
+
+{% set clients = ['qonto', 'experteer', 'trainline', 'rail-europe'] %}
+
 {{ featuredCaseStudies(clients, 'Browse our work') }}
 {% set 'content' = {
   "title": "Why mainmatter",

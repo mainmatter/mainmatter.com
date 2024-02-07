@@ -7,11 +7,13 @@ layout: base-energy
 {% from "cta-banner.njk" import ctaBanner %}
 {% from 'case-card.njk' import caseCard %}
 {%- block content -%}
+
 {% set 'hero' = {
   "title": displayTitle ,
   "subheading": hero.tags
 } %}
 {{ colorHero('purple', hero) }}
+
     <article class="case-study">
       <div class="container container--lg">
         {{ content | safe }}

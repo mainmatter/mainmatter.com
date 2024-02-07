@@ -16,7 +16,6 @@ og:
 {% from "btn-secondary.njk" import btnSecondary %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
-{% from "quote.njk" import quote %}
 
 {% set 'content' = {
   "eyebrow": "Our Expertise: Svelte",
@@ -137,6 +136,12 @@ og:
     "loading": "lazy"
   } %}
   {{ quote(content) }}
+</div>
+
+<div class="work container container--xl">
+  <ul class="work__list">
+{{ featuredCaseStudy('rail-europe', 'purple', 'work__featured-case-study') }}
+  </ul>
 </div>
 
 {{ recentPosts("Latest from our blog on the topic", collections.sveltePosts) }}
