@@ -51,12 +51,30 @@
   }
 }
 
+@keyframes aquaout {
+  from {
+    fill: #fff;
+  }
+  to {
+    fill: #55E6D8;
+  }
+}
+
 @keyframes purplefill {
   from {
     fill: #5600D1;
   }
   to {
     fill: #fff;
+  }
+}
+
+@keyframes purpleout {
+  from {
+    fill: #fff;
+  }
+  to {
+    fill: #5600D1;
   }
 }
 
@@ -68,3 +86,14 @@
     fill: #fff;
   }
 }
+
+@keyframes blackout {
+  from {
+    fill: #fff;
+  }
+  to {
+    fill: #2B2B2B;
+  }
+}
+
+

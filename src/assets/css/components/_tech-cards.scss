@@ -88,8 +88,7 @@
   background-color: var(--color-purple);
 
   svg g {
-    animation: purplefill 3s;
-    animation-direction: reverse;
+    animation: purpleout 3s;
     animation-fill-mode: both;
   }
 
@@ -110,8 +109,7 @@
   background-color: var(--color-black);
 
   svg g {
-    animation: blackfill 3s;
-    animation-direction: reverse;
+    animation: blackout 3s;
     animation-fill-mode: both;
   }
 
@@ -132,8 +130,7 @@
   background-color: var(--color-aqua);
 
   svg g {
-    animation: aquafill 3s;
-    animation-direction: reverse;
+    animation: aquaout 3s;
     animation-fill-mode: both;
   }
 
