@@ -49,10 +49,18 @@
     margin-top: 5rem;
   }
   &t-10 {
-    margin-top: 10rem;
+    margin-top: 5rem;
+
+    @media (min-width: 48rem) {
+      margin-top: 10rem;
+    }
   }
   &t-15 {
-    margin-top: 15rem;
+    margin-top: 5rem;
+
+    @media (min-width: 48rem) {
+      margin-top: 15rem;
+    }
   }
   &b-0 {
     margin-bottom: 0;
@@ -76,10 +84,18 @@
     margin-bottom: 5rem;
   }
   &b-10 {
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
+
+    @media (min-width: 48rem) {
+      margin-bottom: 10rem;
+    }
   }
   &b-15 {
-    margin-bottom: 15rem;
+    margin-bottom: 5rem;
+
+    @media (min-width: 48rem) {
+      margin-bottom: 15rem;
+    }
   }
   &y-0 {
     margin: 0 auto;
@@ -103,10 +119,18 @@
     margin: 5rem auto;
   }
   &y-10 {
-    margin: 10rem auto;
+    margin: 5rem auto;
+
+    @media (min-width: 48rem) {
+      margin: 10rem auto;
+    }
   }
   &y-15 {
-    margin: 15rem auto;
+    margin: 5rem auto;
+
+    @media (min-width: 48rem) {
+      margin: 15rem auto;
+    }
   }
 }
 

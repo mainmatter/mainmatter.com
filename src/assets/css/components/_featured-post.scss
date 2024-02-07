@@ -14,17 +14,17 @@
   flex-direction: column;
   align-items: start;
   gap: 1.25rem;
+
+}
+
+.featured-post__container {
+  padding: 4rem 0 3rem;
 }
 
 .featured-post__meta-wrapper {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-
-
-  span {
-    margin-right: 1.5rem;
-  }
+  flex-direction: column;
+  align-items: start;
 
   a {
     text-decoration: none;
@@ -84,5 +84,16 @@
 
   .featured-post__cta {
     margin-top: 1.25rem;
+  }
+
+  .featured-post__meta-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    span {
+      margin-right: 1.5rem;
+    }
+
   }
 }

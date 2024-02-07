@@ -147,7 +147,7 @@
 .color-hero__container {
   display: flex;
   position: relative;
-  padding: 16.5rem 0 12.5rem;
+  padding: 4rem 0 3rem;
 }
 
 .color-hero__text {
@@ -163,6 +163,11 @@
 }
 
 @media (min-width: 72em) {
+  .color-hero__container {
+    display: flex;
+    position: relative;
+    padding: 16.5rem 0 12.5rem;
+  }
 }
 
 @media (min-width: 48em) {

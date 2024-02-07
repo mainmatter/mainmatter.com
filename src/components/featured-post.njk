@@ -38,19 +38,18 @@
     {% endset %}
   {% endif %}
 
-  <section class="featured-post featured-post--desktop" data-background-color="purple">
-    <div class="container container--lg">
+  <section class="featured-post" data-background-color="purple">
+    <div class="container container--lg featured-post__container">
       <h2 class="h1">{{ post.data.title | safe }}</h2>
       <div class="featured-post__content">
         <div class="featured-post__meta-wrapper mt-015 text--sm">
-          <p>
             <span>
               {% for item in post.data.tags %}
                 {% if loop.index != 1 %} / {% endif %}{{ item }}
               {% endfor %}
             </span>
             <span>{{ post.date | monthDayYear }}</span>
-            <span>{{ authorInfo | safe }}</span></p>
+            <span>{{ authorInfo | safe }}</span>
         </div>
         {% if post.data.tagline %}
           <div class="featured-post__tagline">{{ post.data.tagline | safe }}</div>

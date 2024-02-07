@@ -5,13 +5,13 @@
   margin-top: 2.5rem;
 }
 
-@media (min-width: 30rem) {
+@media (min-width: 48rem) {
   .case-cards__grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (min-width: 60rem) {
+@media (min-width: 72rem) {
   .case-cards__grid {
     grid-template-columns: 1fr 1fr 1fr;
   }

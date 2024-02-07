@@ -3,8 +3,8 @@ h1,
   margin: 0;
   font-family: var(--font-base);
   font-weight: 700;
-  font-size: rem-calc(36);
-  line-height: 1.3;
+  font-size: clamp(2.5rem, -2.5rem + 10.4167vw, 5rem);
+  line-height: 1.1;
   text-transform: none;
   letter-spacing: 0;
 }
@@ -14,8 +14,8 @@ h2,
   margin: 0;
   font-family: var(--font-base);
   font-weight: 700;
-  font-size: rem-calc(36);
-  line-height: 1.3;
+  font-size: clamp(2.5rem, -0.5rem + 6.25vw, 4rem);
+  line-height: 1.1;
   text-transform: none;
   letter-spacing: 0;
 }
@@ -25,8 +25,8 @@ h3,
   margin: 0;
   font-family: var(--font-base);
   font-weight: 700;
-  font-size: rem-calc(24);
-  line-height: 1.25;
+  font-size: clamp(2rem, -1rem + 6.25vw, 3.5rem);
+  line-height: 1.1;
   text-transform: none;
   letter-spacing: 0;
 }
@@ -36,8 +36,8 @@ h4,
   margin: 0;
   font-family: var(--font-base);
   font-weight: 700;
-  font-size: rem-calc(24);
-  line-height: 1.5;
+  font-size: clamp(1.75rem, 1.25rem + 1.0417vw, 2rem);
+  line-height: 1.3;
   letter-spacing: 0;
 }
 
@@ -46,8 +46,8 @@ h5,
   margin: 0;
   font-family: var(--font-base);
   font-weight: 500;
-  font-size: rem-calc(18);
-  line-height: 1.5;
+  font-size: clamp(1rem, 0.75rem + 0.5208vw, 1.125rem);
+  line-height: 1.3;
   letter-spacing: 0;
 }
 
@@ -55,65 +55,33 @@ h6,
   .h6 {
     margin: 0;
     font-family: var(--font-base);
-    font-size: 1.125rem;
-    line-height: 1.7rem;
+    font-size: clamp(1rem, 0.75rem + 0.5208vw, 1.125rem);
+    line-height: 1.3;
     font-weight: 500;
     letter-spacing: 0;
   }
 
-@media (min-width: 72em) {
-  h1,
-  .h1 {
-    font-size: 5rem;
-    line-height: 5.5rem;
-  }
-
-  h2,
-  .h2 {
-    font-size: 4rem;
-    line-height: 4.5rem;
-  }
-
-  h3,
-  .h3 {
-    font-size: 3.5rem;
-    line-height: 3.75rem;
-  }
-
-  h4,
-  .h4 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-  }
-
-
-  h6,
-  .h6 {
-    font-size: 1.125rem;
-    line-height: 1.7rem;
-  }
-}
 
 body {
   font-size: 1.4rem;
-  line-height: 2.4rem;
+  line-height: 1.5;
 }
 
 .large {
-  font-size: 2rem;
-  line-height: 3rem;
+  font-size: clamp(1.4rem, 0.2rem + 2.5vw, 2rem);
+  line-height: 1.5;
 }
 
 .small {
   font-size: 1rem;
   font-weight: 700;
-  line-height: 1.7rem;
+  line-height: 1.7;
 }
 
 .caption {
   font-size: 1.5rem;
   font-weight: 700;
-  line-height: 2.4rem;
+  line-height: 1.6;
 }
 
 .text--accent {
@@ -122,28 +90,6 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: rem-calc(2);
-}
-
-.text--sm {
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-.text--xs {
-  font-size: 0.875rem;
-  line-height: 1.7;
-}
-
-.text--xxs {
-  font-size: 0.75rem;
-}
-
-.text--semibold {
-  font-weight: 500;
-}
-
-.text--bold {
-  font-weight: 700;
 }
 
 .text--uppercase {
