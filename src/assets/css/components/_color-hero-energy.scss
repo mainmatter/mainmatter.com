@@ -8,6 +8,12 @@
   flex-direction: column;
   justify-content: center;
 
+  &.home {
+    background-image: url(/assets/images/photos/0009.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+  }
+
   &--purple {
     background-color: var(--color-purple);
     --color-animation: var(--color-aqua);

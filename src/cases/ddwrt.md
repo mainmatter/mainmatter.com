@@ -40,6 +40,7 @@ og:
 </div>
 
  <div class="split-content">
+  <a href="https://emberjs.com/sponsors/" class="split-content__link"></a>
     <div class="split-content__wrapper">
         <div class="split-content__content">
           <h4>We are an official sponsor of the Ember.js project.</h4>
