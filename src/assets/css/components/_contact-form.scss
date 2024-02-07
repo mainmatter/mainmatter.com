@@ -40,13 +40,12 @@
 
 .contact-form__text {
   margin-top: 2rem;
-  max-width: 33.75rem;
 }
 
 $states: "loading", "success", "error";
 
 .contact-form__form {
-  max-width: 33.75rem;
+  max-width: 48rem;
   margin-top: 3rem;
 
   @each $state in $states {

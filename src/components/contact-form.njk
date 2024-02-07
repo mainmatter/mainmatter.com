@@ -1,22 +1,14 @@
 {% from "social-list.njk" import socialList %}
 
-<section class="contact-form color-hero hero-resizable color-hero--purple" data-background-color="purple">
-  <div class="contact-form__container color-hero__container color-hero__container--center">
+<section class="contact-form color-hero color-hero--purple" data-background-color="purple">
+  <div class="contact-form__container">
     <div class="contact-form__main container container--lg">
-    <h1 class="contact-form__heading">Contact Us</h1>
+      <h1 class="contact-form__heading mt-5">Contact Us</h1>
       <p class="contact-form__text">
       Let's talk about the challenges you're facing.
       Our experts are ready to guide you through your next big move.
     </p>
-      <div class="contact-form__methods">
-        {% for method in contact.contactMethods %}
-          <a href="{{ method.link }}" class="contact-form__method-text h4">{{ method.text | safe }}</a>
-        {% endfor %}
-      </div>
-      <div class="contact-form__social-wrapper">
-        {{ socialList(socials.socials, 'contact-form__socials')}}
-      </div>
-      <h4 class="color-hero__title color-hero__title--full mt-10">Send us a message</h4>
+      <h4 class="mt-10">Send us a message</h4>
       <form class="contact-form__form" id="contact-form" data-status="initial">
         <div data-form-content tabindex="-1">
           <div class="contact-form__field">
@@ -101,6 +93,17 @@
           </div>
         </div>
       </form>
+
+      <h4 class="mt-10">Other ways to reach out</h4>
+      <div class="contact-form__methods">
+        {% for method in contact.contactMethods %}
+          <a href="{{ method.link }}" class="contact-form__method-text h4">{{ method.text | safe }}</a>
+        {% endfor %}
+      </div>
+      <div class="contact-form__social-wrapper">
+        {{ socialList(socials.socials, 'contact-form__socials')}}
+      </div>
     </div>
   </div>
+
 </section>
