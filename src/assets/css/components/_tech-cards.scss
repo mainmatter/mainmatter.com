@@ -51,6 +51,17 @@
 
 .tech-cards__content {
   width: 100%;
+  z-index: 100;
+}
+
+.tech-cards--hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  animation: holoout 1s;
+  animation-fill-mode: both;
 }
 
 .tech-cards__grid-element:nth-child(2n + 1) {
@@ -62,7 +73,7 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/rust-tech_white.png);
+      background-image: none;
     }
   }
 
@@ -72,7 +83,7 @@
     background-position: 5% 20%;
 
     &:hover {
-      background-image: url(/assets/images/services/ember-tech_white.png);
+      background-image: none;
     }
   }
 
@@ -82,7 +93,7 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/svelte-tech_white.png);
+      background-image: none;
     }
   }
 
@@ -92,7 +103,7 @@
     background-position: 5% 20%;
 
     &:hover {
-      background-image: url(/assets/images/services/elixir-tech_white.png);
+      background-image: none;
     }
   }
 
@@ -102,7 +113,7 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/ruby-tech_white.png);
+      background-image: none;
     }
   }
 
@@ -112,7 +123,7 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/strategy-white.png);
+      background-image: none;
     }
   }
 
@@ -122,7 +133,7 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/git-white.png);
+      background-image: none;
     }
   }
 
@@ -132,19 +143,15 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/sprint-white.png);
+      background-image: none;
     }
   }
 
-
-
   &:hover {
-    background: radial-gradient(50% 123.47% at 50% 50%, #03dac5 0%, #6200ee 100%),
-      linear-gradient(121.28deg, #213100 0%, #ff0000 100%),
-      linear-gradient(360deg, #6200ee 0%, #03dac5 100%),
-      linear-gradient(114.9deg, #03dac5 0%, #6200ee 100%),
-      radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
-    background-blend-mode: screen, color-dodge, overlay, difference, normal;
+    .tech-cards--hover {
+      animation: holohover 1s;
+      animation-fill-mode: both;
+    }
     cursor: pointer;
   }
 }
@@ -158,7 +165,7 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/rust-tech_white.png);
+      background-image: none;
     }
   }
 
@@ -168,7 +175,7 @@
     background-position: 5% 20%;
 
     &:hover {
-      background-image: url(/assets/images/services/ember-tech_white.png);
+      background-image: none;
     }
   }
 
@@ -178,7 +185,7 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/svelte-tech_white.png);
+      background-image: none;
     }
   }
 
@@ -188,7 +195,7 @@
     background-position: 5% 20%;
 
     &:hover {
-      background-image: url(/assets/images/services/elixir-tech_white.png);
+      background-image: none;
     }
   }
 
@@ -198,7 +205,7 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/ruby-tech_white.png);
+      background-image: none;
     }
   }
 
@@ -208,7 +215,7 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/strategy-white.png);
+      background-image: none;
     }
   }
 
@@ -218,7 +225,7 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/git-white.png);
+      background-image: none;
     }
   }
 
@@ -228,17 +235,15 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/sprint-white.png);
+      background-image: none;
     }
   }
 
   &:hover {
-    background: radial-gradient(50% 123.47% at 50% 50%, #03dac5 0%, #6200ee 100%),
-      linear-gradient(121.28deg, #213100 0%, #ff0000 100%),
-      linear-gradient(360deg, #6200ee 0%, #03dac5 100%),
-      linear-gradient(114.9deg, #03dac5 0%, #6200ee 100%),
-      radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
-    background-blend-mode: screen, color-dodge, overlay, difference, normal;
+    .tech-cards--hover {
+      animation: holohover 1s;
+      animation-fill-mode: both;
+    }
     cursor: pointer;
   }
 }
@@ -252,7 +257,7 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/rust-tech_white.png);
+      background-image: none;
     }
   }
 
@@ -262,7 +267,7 @@
     background-position: 5% 20%;
 
     &:hover {
-      background-image: url(/assets/images/services/ember-tech_white.png);
+      background-image: none;
     }
   }
 
@@ -272,7 +277,7 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/svelte-tech_white.png);
+      background-image: none;
     }
   }
 
@@ -282,7 +287,7 @@
     background-position: 5% 20%;
 
     &:hover {
-      background-image: url(/assets/images/services/elixir-tech_white.png);
+      background-image: none;
     }
   }
 
@@ -292,7 +297,7 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/ruby-tech_white.png);
+      background-image: none;
     }
   }
 
@@ -302,7 +307,7 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/strategy-white.png);
+      background-image: none;
     }
   }
 
@@ -312,7 +317,7 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/git-white.png);
+      background-image: none;
     }
   }
 
@@ -322,17 +327,15 @@
     background-position: 5% 5%;
 
     &:hover {
-      background-image: url(/assets/images/services/sprint-white.png);
+      background-image: none;
     }
   }
 
   &:hover {
-    background: radial-gradient(50% 123.47% at 50% 50%, #03dac5 0%, #6200ee 100%),
-      linear-gradient(121.28deg, #213100 0%, #ff0000 100%),
-      linear-gradient(360deg, #6200ee 0%, #03dac5 100%),
-      linear-gradient(114.9deg, #03dac5 0%, #6200ee 100%),
-      radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
-    background-blend-mode: screen, color-dodge, overlay, difference, normal;
+    .tech-cards--hover {
+      animation: holohover 1s;
+      animation-fill-mode: both;
+    }
   }
 }
 
