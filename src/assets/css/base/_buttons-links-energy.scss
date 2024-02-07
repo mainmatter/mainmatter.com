@@ -13,7 +13,7 @@
   font-weight: 700;
   line-height: 1.5;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.5s ease;
 
   &:hover,
   &:focus {
@@ -35,7 +35,7 @@
   text-decoration-color: currentColor;
   text-underline-offset: 0.125rem;
   text-decoration-thickness: 0.0625rem;
-  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+  transition: color 0.5s ease, text-decoration-color 0.5s ease;
 }
 
 .cta-link__arrow {
@@ -45,7 +45,7 @@
 
   svg {
     transform: rotate(-90deg);
-    transition: color 0.3s ease;
+    transition: color 0.5s ease;
   }
 
   &--rotate {
@@ -68,7 +68,7 @@
   text-decoration: none;
   font-weight: 700;
   border-radius: 0.125rem;
-  transition: background-color ease 0.3s;
+  transition: color ease 0.5s;
 
   &--hover {
     position: absolute;
@@ -76,9 +76,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    animation: holohover 1s;
-    animation-direction: reverse;
-    animation-fill-mode: both;
+    animation: holoout 0.5s;
     }
 
   span {
@@ -93,7 +91,7 @@
       color: var(--color-white);
 
       .btn-primary--hover {
-        animation: holohover 1s;
+        animation: holohover 0.5s;
         animation-fill-mode: both;
       }
     }
@@ -106,7 +104,7 @@
       color: var(--color-white);
 
       .btn-primary--hover {
-        animation: holohover 1s;
+        animation: holohover 0.5s;
         animation-fill-mode: both;
       }
     }
@@ -120,7 +118,7 @@
       color: var(--color-white);
 
       .btn-primary--hover {
-        animation: holohover 1s;
+        animation: holohover 0.5s;
         animation-fill-mode: both;
       }
     }

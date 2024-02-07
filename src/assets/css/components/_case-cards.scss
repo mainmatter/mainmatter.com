@@ -28,7 +28,6 @@
   justify-content: space-between;
   align-items: stretch;
   text-decoration: none;
-  transition: all 0.3s ease;
   overflow: hidden;
   cursor: pointer;
 
@@ -62,8 +61,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  animation: holohover 1s;
-  animation-direction: reverse;
+  animation: holoout 1s;
   animation-fill-mode: both;
 }
 
@@ -125,7 +123,7 @@
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.1s ease;
 }
 
 .case-cards__grid-element:nth-child(n) {
@@ -149,7 +147,7 @@
 
   svg {
     transform: rotate(-90deg);
-    transition: color 0.3s ease;
+    transition: color 0.1s ease;
     @media (min-width: 72rem) {
       width: 24px;
       height: auto;

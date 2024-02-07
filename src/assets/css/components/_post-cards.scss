@@ -36,13 +36,18 @@
   }
 }
 
+.post-cards--hover {
+  animation: holoout 3s;
+  animation-fill-mode: both;
+}
+
 .post-cards__grid-element:hover {
 
   color: var(--color-white);
   cursor: pointer;
 
   .post-cards--hover {
-    animation: holohover 1s;
+    animation: holohover 3s;
     animation-fill-mode: both;
   }
 }
@@ -110,10 +115,8 @@
   left: 0;
   height: 100%;
   width: 100%;
-  animation: holohover 1s;
-  animation-direction: reverse;
+  animation: holoout 3s;
   animation-fill-mode: both;
-
 }
 
 .post-cards__link {

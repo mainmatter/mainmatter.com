@@ -79,28 +79,28 @@
   left: 0;
   height: 100%;
   width: 100%;
-  animation: holohover 1s;
-  animation-direction: reverse;
+  animation: holoout 3s;
   animation-fill-mode: both;
+
 }
 
 .tech-cards__grid-element:nth-child(2n + 1) {
   background-color: var(--color-purple);
 
   svg g {
-    animation: purplefill 1s;
+    animation: purplefill 3s;
     animation-direction: reverse;
     animation-fill-mode: both;
   }
 
   &:hover {
     .tech-cards--hover {
-      animation: holohover 1s;
+      animation: holohover 3s;
       animation-fill-mode: both;
     }
 
     svg g {
-      animation: purplefill 1s;
+      animation: purplefill 3s;
       animation-fill-mode: both;
     }
   }
@@ -110,19 +110,19 @@
   background-color: var(--color-black);
 
   svg g {
-    animation: blackfill 1s;
+    animation: blackfill 3s;
     animation-direction: reverse;
     animation-fill-mode: both;
   }
 
   &:hover {
     .tech-cards--hover {
-      animation: holohover 1s;
+      animation: holohover 3s;
       animation-fill-mode: both;
     }
 
     svg g {
-      animation: blackfill 1s;
+      animation: blackfill 3s;
       animation-fill-mode: both;
     }
   }
@@ -132,19 +132,19 @@
   background-color: var(--color-aqua);
 
   svg g {
-    animation: aquafill 1s;
+    animation: aquafill 3s;
     animation-direction: reverse;
     animation-fill-mode: both;
   }
 
   &:hover {
     .tech-cards--hover {
-      animation: holohover 1s;
+      animation: holohover 3s;
       animation-fill-mode: both;
     }
 
     svg g {
-      animation: aquafill 1s;
+      animation: aquafill 3s;
       animation-fill-mode: both;
     }
   }
