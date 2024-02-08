@@ -92,7 +92,15 @@ p {
 
 a {
   color: currentColor;
-  text-underline-offset: 0.125rem;
+  text-decoration: none;
+  font-weight: 700;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.125rem;
+    text-underline-offset: 0.25rem;
+    text-decoration-color: inherit;
+  }
 }
 
 button {

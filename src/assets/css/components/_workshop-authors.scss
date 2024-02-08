@@ -6,7 +6,8 @@
 .workshop-authors__image-wrapper {
   margin-right: 3rem;
   width: 6rem;
-  height: 6rem;
+  height: auto;
+  flex-shrink: 0;
 }
 
 .workshop-authors__image-wrapper img {

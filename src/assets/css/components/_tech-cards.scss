@@ -56,6 +56,10 @@
   position: relative;
 }
 
+.tech-cards__intro {
+  max-width: 64rem;
+}
+
 .tech-cards__logo {
   position: relative;
   max-width: 80%;
@@ -65,11 +69,19 @@
   }
 
   &.svelte {
-    max-width: 60%;
+    max-width: 50%;
   }
 
   &.sprint {
+    max-width: 50%;
+  }
+
+  &.ruby {
     max-width: 70%;
+  }
+
+  &.strategy {
+    max-width: 60%;
   }
 }
 
@@ -79,7 +91,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  animation: holoout 3s;
+  animation: holoout 1s;
   animation-fill-mode: both;
 
 }
@@ -88,18 +100,18 @@
   background-color: var(--color-purple);
 
   svg g {
-    animation: purpleout 3s;
+    animation: purpleout 1s;
     animation-fill-mode: both;
   }
 
   &:hover {
     .tech-cards--hover {
-      animation: holohover 3s;
+      animation: holohover 1s;
       animation-fill-mode: both;
     }
 
     svg g {
-      animation: purplefill 3s;
+      animation: purplefill 1s;
       animation-fill-mode: both;
     }
   }
@@ -109,18 +121,18 @@
   background-color: var(--color-black);
 
   svg g {
-    animation: blackout 3s;
+    animation: blackout 1s;
     animation-fill-mode: both;
   }
 
   &:hover {
     .tech-cards--hover {
-      animation: holohover 3s;
+      animation: holohover 1s;
       animation-fill-mode: both;
     }
 
     svg g {
-      animation: blackfill 3s;
+      animation: blackfill 1s;
       animation-fill-mode: both;
     }
   }
@@ -130,18 +142,18 @@
   background-color: var(--color-aqua);
 
   svg g {
-    animation: aquaout 3s;
+    animation: aquaout 1s;
     animation-fill-mode: both;
   }
 
   &:hover {
     .tech-cards--hover {
-      animation: holohover 3s;
+      animation: holohover 1s;
       animation-fill-mode: both;
     }
 
     svg g {
-      animation: aquafill 3s;
+      animation: aquafill 1s;
       animation-fill-mode: both;
     }
   }
@@ -156,7 +168,7 @@
 
   svg {
     transform: rotate(-90deg);
-    transition: color 0.3s ease;
+    transition: color 0.1s ease;
     @media (min-width: 72rem) {
       width: 24px;
       height: auto;

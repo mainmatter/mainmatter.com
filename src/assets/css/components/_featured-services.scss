@@ -18,6 +18,10 @@
   }
 }
 
+.featured-services__link:hover {
+  text-decoration: none;
+}
+
 .featured-services__link {
   display: flex;
   align-items: center;
@@ -27,6 +31,7 @@
   &-text {
     text-decoration: none;
   }
+
 
   svg {
     transform: rotate(-90deg);

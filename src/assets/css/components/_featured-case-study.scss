@@ -49,7 +49,7 @@
 
   &:hover {
     .featured-case-study--hover {
-      animation: holohover 3s;
+      animation: holohover 1s;
       animation-fill-mode: both;
     }
   }
@@ -61,7 +61,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  animation: holoout 3s;
+  animation: holoout 1s;
   animation-fill-mode: both;
 }
 
@@ -94,7 +94,7 @@
   text-decoration: underline 1px var(--color-purple);
   text-underline-offset: 0.125rem;
   text-decoration-thickness: 0.0625rem;
-  transition: color 0.3s ease;
+  transition: color 0.1s ease;
 }
 
 .featured-case-study__logo {
@@ -128,10 +128,6 @@
 .featured-case-study__tags {
   margin-top: 0;
   z-index: 100;
-
-  a {
-    text-decoration: none;
-  }
 }
 
 .featured-case-study__description {
