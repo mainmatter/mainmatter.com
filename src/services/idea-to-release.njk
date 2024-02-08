@@ -13,30 +13,10 @@ description: "There are lots of reasons that a team gets overextended – lack o
 
 {% set 'content' = {
   "title": "Full-service implementation of your idea into reality",
+  "text": "We’ll work with you to make the products you need to make your business better. From developing a rock-solid concept to providing customer-centric UI to building the whole MVP, Mainmatter has an experienced team of product builders. We’re a one-stop shop for founders, scaleups, and SMEs in making their digital products (better) – from strategy to design to implementation.",
   "eyebrow": "From Concept to MVP"
 } %}
 {{ colorHero('purple', content) }}
-
-<section class="my-10">
-  <div class="container container--lg">
-    <div class="intro-text">
-    <p class="body body_large">
-    We’ll work with you to make the products you need to make your business better. From developing a rock-solid concept to providing customer-centric UI to building the whole MVP, Mainmatter has an experienced team of product builders. We’re a one-stop shop for founders, scaleups, and SMEs in making their digital products (better) – from strategy to design to implementation.
-    </p>
-    </div>
-  </div>
-</section>
-
-<section class="my-10">
-  {% set imageData = {
-    "imgPath": "/assets/images/services/idea-to-release.jpeg",
-    "alt": "Colorful lightbulbs",
-    "sizes": "100vw",
-    "loading": "lazy",
-    "sizesArray": [760, 1440, 1920]
-  } %}
-  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
-</section>
 
 {% set 'list_1' = {
   "title": "Strategically define your goals and requirements that will shape the MVP in a collective workshop."
@@ -60,6 +40,19 @@ description: "There are lots of reasons that a team gets overextended – lack o
 
 {% set elements = [list_1, list_2, list_3, list_4, list_5] %}
 {{ strategyList('idea-to-release', 'We’ll work with you to:', elements) }}
+
+
+<section class="my-10">
+  {% set imageData = {
+    "imgPath": "/assets/images/services/idea-to-release.jpeg",
+    "alt": "Colorful lightbulbs",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
 
 <section class="my-10">
   <div class="container container--lg">

@@ -13,29 +13,10 @@ description: "There are lots of reasons that a team gets overextended – lack o
 
 {% set 'content' = {
   "title": "Build a rock-solid strategy with reliable expertise at your side ",
+  "text": "Whether you’re building a product or a team from the ground up or scaling up, we can provide a valuable and experienced outside perspective. Our assessments can help you understand the status quo and identify bottlenecks. We’ll work with you to set a strategic roadmap for product engineering teams. At Mainmatter, we know how successful, international, modern teams operate and can work with you to get you there.",
   "eyebrow": "Assessments, transformation and scaling"
 } %}
 {{ colorHero('purple', content) }}
-
-<section class="my-10">
-  <div class="container container--lg">
-    <div class="intro-text">
-    <p class="body body_large">
-    Whether you’re building a product or a team from the ground up or scaling up, we can provide a valuable and experienced outside perspective. Our assessments can help you understand the status quo and identify bottlenecks. We’ll work with you to set a strategic roadmap for product engineering teams. At Mainmatter, we know how successful, international, modern teams operate and can work with you to get you there. </p>
-    </div>
-  </div>
-</section>
-
-<section class="my-10">
-  {% set imageData = {
-    "imgPath": "/assets/images/services/strategic-advice.jpg",
-    "alt": "Colorful statues",
-    "sizes": "100vw",
-    "loading": "lazy",
-    "sizesArray": [760, 1440, 1920]
-  } %}
-  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
-</section>
 
 {% set 'content' = {
   "title": "Mentoring & Training",
@@ -54,6 +35,17 @@ description: "There are lots of reasons that a team gets overextended – lack o
   } %}
 {{ featuredServices(services['team-reinforcement'], content) }}
 
+
+<section class="mt-10">
+  {% set imageData = {
+    "imgPath": "/assets/images/services/strategic-advice.jpg",
+    "alt": "Colorful statues",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
 
 {% set 'content' = {
   "title": "Grow your business with us",

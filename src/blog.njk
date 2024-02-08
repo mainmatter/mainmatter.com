@@ -24,7 +24,7 @@
 
 
 {{ featuredPost(collections.posts[0]) }}
-<div id="posts" class="container container--xl">
+<div id="posts" class="container container--xl mb-10">
   {% include 'global/tag-filter.njk' %}
   <div class="post-cards__grid">
     {%- for post in pagination.items -%}

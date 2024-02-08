@@ -14,30 +14,10 @@ description: "There are lots of reasons that a team gets overextended – lack o
 
 {% set 'content' = {
   "title": "Give your codebase the necessary overhaul without the overtime ",
+  "text": " Updating your codebase shouldn’t stop your development in its tracks. With Mainmatter, you can take on legacy code and leave your technical debt behind – all while your team stays focussed on the roadmap. Our experts can take on the whole upgrade from the reviewing, planning and implementation – at a cost advantage over a complete rewrite later down the line. And we only call it a job well done when we leave your team with the know-how to keep up with future versions.",
   "eyebrow": "Upgrades instead of rewrites "
 } %}
 {{ colorHero('purple', content) }}
-
-<section class="my-10">
-  <div class="container container--lg">
-    <div class="intro-text">
-      <p class="body body_large">
-    Updating your codebase shouldn’t stop your development in its tracks. With Mainmatter, you can take on legacy code and leave your technical debt behind – all while your team stays focussed on the roadmap. Our experts can take on the whole upgrade from the reviewing, planning and implementation – at a cost advantage over a complete rewrite later down the line. And we only call it a job well done when we leave your team with the know-how to keep up with future versions.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="my-10">
-  {% set imageData = {
-    "imgPath": "/assets/images/services/tech-modernization.jpeg",
-    "alt": "Rubberducks waiting for the next programming issue",
-    "sizes": "100vw",
-    "loading": "lazy",
-    "sizesArray": [760, 1440, 1920]
-  } %}
-  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
-</section>
 
 {% set 'list_1' = {
   "title": "Assess and analyze the status quo. "
@@ -53,6 +33,17 @@ description: "There are lots of reasons that a team gets overextended – lack o
 
 {% set elements = [list_1, list_2, list_3] %}
 {{ strategyList('tech-modernization', 'We’ll work with you to:', elements) }}
+
+<section class="my-10">
+  {% set imageData = {
+    "imgPath": "/assets/images/services/tech-modernization.jpeg",
+    "alt": "Rubberducks waiting for the next programming issue",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
 
 <section class="my-10">
   <div class="container container--lg">
