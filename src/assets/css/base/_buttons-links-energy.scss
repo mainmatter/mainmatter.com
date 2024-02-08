@@ -139,6 +139,10 @@
     text-decoration: none;
   }
 
+  .icon-arrow {
+    flex-shrink: 0;
+  }
+
   svg {
     transform: rotate(-90deg);
     height: 1.5rem;

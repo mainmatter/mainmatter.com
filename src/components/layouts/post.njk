@@ -38,7 +38,6 @@ layout: base-energy
         </div>
         <div class="author__text-wrapper">
           <div class="author__name-wrapper">
-            <span>by&nbsp;</span>
             {% if authorHandle %}
               <a href="/blog/author/{{ authorHandle }}" class="author__name post__author-name">{{ author.data.name }}{{ authorSocials(authorHandle, "post__author-socials") }}</a>
             {% else %}
