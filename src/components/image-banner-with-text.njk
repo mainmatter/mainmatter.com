@@ -3,7 +3,7 @@
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 
 {%- macro imageBannerWithText(content) -%}
-  <section class="image-banner-with-text">
+  <section class="image-banner-with-text my-5">
     {% if content.title %}
       <div class="container container--lg">
         <h2 class="image-banner-with-text__heading">{{ content.title }}</h2>

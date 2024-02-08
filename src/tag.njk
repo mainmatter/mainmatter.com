@@ -20,7 +20,7 @@ permalink: "/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 1 %}/page/{{ p
   <div class="container container--xl">
     <h1>
       <span class="collection-header__heading h4">Tagged with</span>
-      <span class="collection-header__heading h3 text--uppercase">#{{ paged.tag }}</span>
+      <span class="collection-header__heading h3">{{ paged.tag }}</span>
     </h1>
     <p class="collection-header__subheading">{{ paged.postTotal }} {% if paged.postTotal === 1 %}post {% else %}posts{% endif %}</p>
   </div>

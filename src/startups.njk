@@ -13,6 +13,7 @@ description: "Discover effective strategies to scale up your business, and achie
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "btn-secondary.njk" import btnSecondary %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "featured-case-studies.njk" import featuredCaseStudies %}
 
 {% set 'content' = {
   "title": "Burst through your scale-up bottleneck. We'll be your expert guides.",
@@ -131,6 +132,9 @@ description: "Discover effective strategies to scale up your business, and achie
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
 
+{% set clients = ['aleph-alpha', 'rail-europe', 'trainline', 'qonto'] %}
+{{ featuredCaseStudies(clients, 'Browse our work') }}
+
 {% set 'content' = {
   "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
@@ -139,17 +143,4 @@ description: "Discover effective strategies to scale up your business, and achie
 } %}
 {{ ctaBanner('aqua', 'full', content) }}
 
-<div id="posts" class="container container--xl">
-  <h5 class="posts__title h5">Read more about our work</h5>
-  <ol class="startups__featured_posts">
-    {%- for post in collections.posts -%}
-      {% if loop.index < 4 %}
-        {{ postCard(post) }}
-      {% endif %}
-    {%- endfor -%}
-  </ol>
-  <div class="posts__cta-wrapper">
-    {{ ctaLink('/blog/page/2/#posts', 'Explore more articles', '') }}
-  </div>
-</div>
 </div>
