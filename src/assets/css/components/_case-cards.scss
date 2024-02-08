@@ -94,6 +94,7 @@
 
 .case-cards__content {
   position: relative;
+  width: 100%;
 }
 
 .case-cards__logo-wrapper {
@@ -115,7 +116,6 @@
   background-repeat: no-repeat;
   z-index: 50;
 }
-
 
 .case-cards__link-wrapper {
   display: flex;
@@ -148,10 +148,8 @@
   svg {
     transform: rotate(-90deg);
     transition: color 0.1s ease;
-    @media (min-width: 48rem) {
-      width: 24px;
-      height: auto;
-    }
+    width: 24px;
+    height: auto;
   }
 
   &--rotate {

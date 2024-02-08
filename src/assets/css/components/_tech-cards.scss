@@ -93,7 +93,6 @@
   width: 100%;
   animation: holoout 1s;
   animation-fill-mode: both;
-
 }
 
 .tech-cards__grid-element:nth-child(2n + 1) {
@@ -169,10 +168,8 @@
   svg {
     transform: rotate(-90deg);
     transition: color 0.1s ease;
-    @media (min-width: 48rem) {
-      width: 24px;
-      height: auto;
-    }
+    width: 24px;
+    height: auto;
   }
 
   &--rotate {

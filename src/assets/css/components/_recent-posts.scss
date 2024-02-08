@@ -5,6 +5,7 @@
 .recent-posts__title {
   display: flex;
   flex-direction: column;
+  align-items: start;
   margin-bottom: 3.25rem;
 }
 
@@ -23,19 +24,26 @@
   gap: 1.5rem;
 }
 
-@media (min-width: 62em) {
+@media (min-width: 48rem) {
   .recent-posts__cta {
     text-align: left;
   }
 
   .recent-posts__list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 
   .recent-posts__title {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 72rem) {
+  .recent-posts__list {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

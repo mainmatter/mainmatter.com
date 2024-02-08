@@ -77,7 +77,7 @@
   padding: 1.5rem;
   text-align: left;
   justify-content: center;
-  min-height: 640px;
+  min-height: 400px;
 }
 
 .featured-case-study__content {
@@ -125,9 +125,14 @@
   z-index: 2;
 }
 
+.featured-case-study__link-wrapper {
+  margin: 1.25rem;
+  align-self: flex-end;
+}
+
 .featured-case-study__tags {
-  margin-top: 0;
   z-index: 100;
+  margin-top: 1.25rem;
 }
 
 .featured-case-study__description {
@@ -200,7 +205,7 @@
 
   .featured-case-study__tags {
     align-self: stretch;
-    margin-top: 1.25rem;
+
   }
 
   .featured-case-study__client {

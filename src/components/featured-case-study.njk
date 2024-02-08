@@ -1,6 +1,7 @@
 {% macro featuredCaseStudy(clientHandle, color, className) %}
   {% set caseStudy = clientHandle | findBySlug %}
   <li class="featured-case-study{% if className %} {{ className }}{% endif %} featured-case-study--{{ color }}" data-background-color="{{ color }}">
+    <div class="featured-case-study--hover"></div>
     <a class="featured-case-study__link" href="{{ caseStudy.url }}">
       <span class="screenreader">{{ caseStudy.data.displayTitle }}</span>
     </a>
@@ -21,6 +22,9 @@
         </p>
       </div>
     </div>
-    <div class="featured-case-study--hover"></div>
+
+    <div class="featured-case-study__link-wrapper">
+    <span class="case-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
+    </div>
   </li>
 {%- endmacro -%}

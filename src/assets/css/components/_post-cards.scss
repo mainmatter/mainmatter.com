@@ -42,7 +42,6 @@
 }
 
 .post-cards__grid-element:hover {
-
   color: var(--color-white);
   cursor: pointer;
 
@@ -83,6 +82,7 @@
 
 .post-cards__content {
   position: relative;
+  width: 100%;
 }
 
 .post-cards__author {
@@ -140,10 +140,8 @@
   svg {
     transform: rotate(-90deg);
     transition: color 0.3s ease;
-    @media (min-width: 48rem) {
-      width: 24px;
-      height: auto;
-    }
+    width: 24px;
+    height: auto;
   }
 
   &--rotate {
@@ -156,7 +154,8 @@
   }
 }
 
-.post-cards__link-label a, .post-cards__author-name a {
+.post-cards__link-label a,
+.post-cards__author-name a {
   text-decoration: none;
   position: relative;
   z-index: 100;
