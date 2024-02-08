@@ -47,12 +47,14 @@
     opacity: 1;
     grid-row: 1;
     grid-column: 1;
+    transition: opacity 1s ease;
   }
 
   .solution {
     opacity: 0;
     grid-row: 1;
     grid-column: 1;
+    transition: opacity 1s ease;
   }
 }
 
