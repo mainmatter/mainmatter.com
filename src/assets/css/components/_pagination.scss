@@ -14,10 +14,25 @@
   & .next:only-child {
     margin-left: auto;
   }
+
+  & .next-wrapper:only-child {
+    margin-left: auto;
+  }
 }
 
+.next-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  text-align: right;
+}
 
-
+.previous-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: left;
+}
 
 
 .pagination__link {

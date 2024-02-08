@@ -114,7 +114,7 @@ og:
     </div>  
 </div>
 
-<section>
+<section class="mt-5">
         {% set imageData = {
           "imgPath": "/assets/images/work/aleph-alpha-graphs.jpg",
           "alt": "A MacBook displaying data",
