@@ -1,6 +1,6 @@
 .post {
   --color-tag: var(--color-blue);
-  padding: 3.25rem 0 6.25rem;
+  margin: 3.25rem auto 6.25rem;
 }
 
 .post__header {
@@ -158,7 +158,7 @@
 
 @media (min-width: 48em) {
   .post {
-    padding: 6.25rem 0 8rem;
+    margin: 6.25rem auto 8rem;
   }
 
   .post__header {

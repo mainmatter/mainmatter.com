@@ -18,7 +18,7 @@ layout: base-energy
             <ul class="tags">
               {% for tag in tags %}
               <li class="tags__tag-item">
-                <a class="tags__tag tags__tag--link" href="/blog/tag/{{ tag | slug }}">#{{ tag }}</a>
+                <a class="tags__tag tags__tag--link" href="/blog/tag/{{ tag | slug }}">{% if loop.index != 1 %} / {% endif %}{{ tag }}</a>
               </li>
               {% endfor %}
             </ul>
@@ -40,18 +40,11 @@ layout: base-energy
           <div class="author__name-wrapper">
             <span>by&nbsp;</span>
             {% if authorHandle %}
-              <a href="/blog/author/{{ authorHandle }}" class="author__name post__author-name">{{ author.data.name }}</a>
+              <a href="/blog/author/{{ authorHandle }}" class="author__name post__author-name">{{ author.data.name }}{{ authorSocials(authorHandle, "post__author-socials") }}</a>
             {% else %}
-              <p class="author__name">{{ author.data.name }}</p>
+              <p class="author__name">{{ author.data.name }}{{ authorSocials(authorHandle, "post__author-socials") }}</p>
             {% endif %}
           </div>
-          {% if authorHandle %}
-            {{ authorSocials(authorHandle, "post__author-socials author-socials--desktop-only") }}
-          {% endif %}
-          <div class="author__title">{{ bio }}</div>
-          {% if authorHandle %}
-            {{ authorSocials(authorHandle, "post__author-socials author-socials--mobile-only") }}
-          {% endif %}
         </div>
       </div>
 
@@ -71,13 +64,15 @@ layout: base-energy
     } %}
     {{ imageAspectRatio(imageData, "32/13", "35/19") }}
   {% endif %}
-  <div class="container container--lg post">
-    <div class="post__content rte">
-      {{ serviceCta(tags) }}
+  {{ serviceCta(tags) }}
+  <div class="post">
+    <div class="post__content rte container container--lg ">
+
       {{ content | safe }}
-      {{ serviceCta(tags) }}
+
     </div>
-    <nav aria-label="Post Pagination" class="prev-next pagination">
+    {{ serviceCta(tags) }}
+    <nav aria-label="Post Pagination" class="prev-next pagination container container--lg ">
       {% set previous = collections.posts | getPreviousCollectionItem  %}
       {% set next = collections.posts | getNextCollectionItem %}
       {% if previous %}
@@ -100,6 +95,7 @@ layout: base-energy
       {% endif %}
     </nav>
   </div>
+
 </article>
 {%- endblock -%}
 
