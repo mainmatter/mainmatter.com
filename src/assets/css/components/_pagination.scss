@@ -33,6 +33,10 @@
 .pagination__previous,
 .pagination__next {
   text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .pagination__previous {
