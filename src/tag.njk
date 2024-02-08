@@ -25,7 +25,7 @@ permalink: "/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 1 %}/page/{{ p
     <p class="collection-header__subheading">{{ paged.postTotal }} {% if paged.postTotal === 1 %}post {% else %}posts{% endif %}</p>
   </div>
 </div>
-<div id="posts" class="container container--xl">
+<div id="posts" class="container container--xl mb-10">
   {% include 'global/tag-filter.njk' %}
   <div class="post-cards__grid">
     {%- for post in paged.posts -%}
