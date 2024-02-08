@@ -169,7 +169,7 @@
   svg {
     transform: rotate(-90deg);
     transition: color 0.1s ease;
-    @media (min-width: 72rem) {
+    @media (min-width: 48rem) {
       width: 24px;
       height: auto;
     }

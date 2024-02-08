@@ -16,7 +16,10 @@ list: An array where each item is the slug for the case study.
           {{ client.data.description | safe }}
         </div>
         <div class="client-card__tags">
-          <p class="caption mt-015">{{ client.data.tags | safe }}</p>
+          <p class="caption mt-015">{% for item in client.data.tags %}
+            {% if loop.index != 1 %} / {% endif %}
+            <a href="/services/{{ item | slug }}/"> {{ item }} </a>
+          {% endfor %}</p>
         </div>
       </li>
     {% endif %}

@@ -3,11 +3,11 @@ textarea {
   padding: 0.5rem 0;
   border: none;
   border-radius: 0;
-  border-bottom: rem-calc(1) solid currentColor;
+  border-bottom: 0.125rem solid currentColor;
   background-color: transparent;
 }
 
 input:focus-visible, textarea:focus-visible, select:focus-visible {
   outline: none;
-  border-bottom: rem-calc(1) solid var(--color-link-primary-hover);
+  border-bottom: 0.125rem solid var(--color-link-primary-hover);
 }

@@ -25,10 +25,6 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-
-  a {
-    text-decoration: none;
-  }
 }
 
 .featured-post__post-title {
@@ -45,24 +41,11 @@
 
 .featured-post__author-name {
   color: var(--color-white);
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: var(--color-aqua);
-  }
 }
 
 .featured-post__cta {
   margin-top: 2rem;
   color: currentColor;
-}
-
-.featured-post__tag {
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: var(--color-aqua);
-  }
 }
 
 .featured-post__link {

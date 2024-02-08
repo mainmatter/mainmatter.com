@@ -172,6 +172,21 @@
   }
 }
 
+.message {
+  cursor: pointer;
+
+  svg {
+    transform: rotate(-90deg);
+    margin-right: 0;
+    margin-left: 1.5rem;
+    color: var(--color-white);
+  }
+
+  &:hover {
+    color: var(--color-aqua);
+  }
+}
+
 a.btn-secondary {
   &:hover,
   &:focus {
