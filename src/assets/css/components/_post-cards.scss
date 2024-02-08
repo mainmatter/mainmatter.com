@@ -28,6 +28,7 @@
   justify-content: space-between;
   align-items: start;
   text-decoration: none;
+  overflow: hidden;
 
   cursor: pointer;
 
@@ -39,6 +40,7 @@
 .post-cards--hover {
   animation: holoout 1s;
   animation-fill-mode: both;
+  overflow: hidden;
 }
 
 .post-cards__grid-element:hover {

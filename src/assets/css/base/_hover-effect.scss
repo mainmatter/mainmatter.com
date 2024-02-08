@@ -1,50 +1,131 @@
 @keyframes holohover {
   from {
     opacity: 0%;
-    background-image: radial-gradient(50% 123.47% at 50% 50%, #03dac5 0%, #6200ee 100%),
-    linear-gradient(121.28deg, #213100 0%, #ff0000 100%),
-    linear-gradient(360deg, #6200ee 0%, #03dac5 100%),
-    linear-gradient(114.9deg, #03dac5 0%, #6200ee 100%),
-    radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
-  background-blend-mode: screen, color-dodge, overlay, difference, normal;
   }
 
   to {
     opacity: 100%;
-    background-image: radial-gradient(50% 123.47% at 50% 50%, #03dac5 0%, #6200ee 100%),
-    linear-gradient(121.28deg, #213100 0%, #ff0000 100%),
-    linear-gradient(360deg, #6200ee 0%, #03dac5 100%),
-    linear-gradient(114.9deg, #03dac5 0%, #6200ee 100%),
-    radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
-  background-blend-mode: screen, color-dodge, overlay, difference, normal;
+    background-color: rgba(98, 0, 238, 1);
+    background-repeat: no-repeat;
+    background-image: radial-gradient(
+        50% 123.47% at 50% 50%,
+        rgba(3, 218, 197, 0.5) 0%,
+        rgba(98, 0, 238, 0.5) 100%
+      ),
+      linear-gradient(121.28deg, rgba(33, 49, 0, 0.5) 0%, rgba(255, 0, 0, 0.5) 100%),
+      linear-gradient(360deg, rgba(98, 0, 238, 1) 0%, rgba(3, 218, 197, 1) 100%),
+      linear-gradient(114.9deg, rgba(3, 218, 197, 1) 0%, rgba(98, 0, 238, 1) 100%),
+      radial-gradient(100% 148.07% at 0% 0%, rgba(255, 255, 255, 1) 0%, rgba(3, 218, 197, 1) 100%);
+    background-image: -moz-radial-gradient(
+        50% 123.47% at 50% 50%,
+        rgba(3, 218, 197, 0.5) 0%,
+        rgba(98, 0, 238, 0.5) 100%
+      ),
+      -moz-linear-gradient(121.28deg, rgba(33, 49, 0, 0.5) 0%, rgba(255, 0, 0, 0.5) 100%),
+      -moz-linear-gradient(360deg, rgba(98, 0, 238, 1) 0%, rgba(3, 218, 197, 1) 100%),
+      -moz-linear-gradient(114.9deg, rgba(3, 218, 197, 1) 0%, rgba(98, 0, 238, 1) 100%),
+      -moz-linear-gradient(100% 148.07% at 0% 0%, rgba(255, 255, 255, 1) 0%, rgba(3, 218, 197, 1)
+            100%);
+    background-image: -webkit-radial-gradient(
+        50% 123.47% at 50% 50%,
+        rgba(3, 218, 197, 0.5) 0%,
+        rgba(98, 0, 238, 0.5) 100%
+      ),
+      -webkit-linear-gradient(121.28deg, rgba(33, 49, 0, 0.5) 0%, rgba(255, 0, 0, 0.5) 100%),
+      -webkit-linear-gradient(360deg, rgba(98, 0, 238, 1) 0%, rgba(3, 218, 197, 1) 100%),
+      -webkit-linear-gradient(114.9deg, rgba(3, 218, 197, 1) 0%, rgba(98, 0, 238, 1) 100%),
+      -webkit-linear-gradient(100% 148.07% at 0% 0%, rgba(255, 255, 255, 1) 0%, rgba(3, 218, 197, 1)
+            100%);
+    background-image: -o-radial-gradient(
+        50% 123.47% at 50% 50%,
+        rgba(3, 218, 197, 0.5) 0%,
+        rgba(98, 0, 238, 0.5) 100%
+      ),
+      -o-linear-gradient(121.28deg, rgba(33, 49, 0, 0.5) 0%, rgba(255, 0, 0, 0.5) 100%),
+      -o-linear-gradient(360deg, rgba(98, 0, 238, 1) 0%, rgba(3, 218, 197, 1) 100%),
+      -o-linear-gradient(114.9deg, rgba(3, 218, 197, 1) 0%, rgba(98, 0, 238, 1) 100%),
+      -o-linear-gradient(100% 148.07% at 0% 0%, rgba(255, 255, 255, 1) 0%, rgba(3, 218, 197, 1) 100%);
+
+    background-image: -ms-radial-gradient(
+        50% 123.47% at 50% 50%,
+        rgba(3, 218, 197, 0.5) 0%,
+        rgba(98, 0, 238, 0.5) 100%
+      ),
+      -ms-linear-gradient(121.28deg, rgba(33, 49, 0, 0.5) 0%, rgba(255, 0, 0, 0.5) 100%),
+      -ms-linear-gradient(360deg, rgba(98, 0, 238, 1) 0%, rgba(3, 218, 197, 1) 100%),
+      -ms-linear-gradient(114.9deg, rgba(3, 218, 197, 1) 0%, rgba(98, 0, 238, 1) 100%),
+      -ms-linear-gradient(100% 148.07% at 0% 0%, rgba(255, 255, 255, 1) 0%, rgba(3, 218, 197, 1)
+            100%);
+            background-blend-mode: lighten, lighten, overlay, difference, normal;
+    background-position: cover;
   }
 }
 
 @keyframes holoout {
   from {
     opacity: 100%;
-    background-image: radial-gradient(50% 123.47% at 50% 50%, #03dac5 0%, #6200ee 100%),
-    linear-gradient(121.28deg, #213100 0%, #ff0000 100%),
-    linear-gradient(360deg, #6200ee 0%, #03dac5 100%),
-    linear-gradient(114.9deg, #03dac5 0%, #6200ee 100%),
-    radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
-  background-blend-mode: screen, color-dodge, overlay, difference, normal;
+    background-repeat: no-repeat;
+    background-color: rgba(98, 0, 238, 1);
+    background-image: radial-gradient(
+        50% 123.47% at 50% 50%,
+        rgba(3, 218, 197, 0.5) 0%,
+        rgba(98, 0, 238, 0.5) 100%
+      ),
+      linear-gradient(121.28deg, rgba(33, 49, 0, 0.5) 0%, rgba(255, 0, 0, 0.5) 100%),
+      linear-gradient(360deg, rgba(98, 0, 238, 1) 0%, rgba(3, 218, 197, 1) 100%),
+      linear-gradient(114.9deg, rgba(3, 218, 197, 1) 0%, rgba(98, 0, 238, 1) 100%),
+      radial-gradient(100% 148.07% at 0% 0%, rgba(255, 255, 255, 1) 0%, rgba(3, 218, 197, 1) 100%);
+    background-image: -moz-radial-gradient(
+        50% 123.47% at 50% 50%,
+        rgba(3, 218, 197, 0.5) 0%,
+        rgba(98, 0, 238, 0.5) 100%
+      ),
+      -moz-linear-gradient(121.28deg, rgba(33, 49, 0, 0.5) 0%, rgba(255, 0, 0, 0.5) 100%),
+      -moz-linear-gradient(360deg, rgba(98, 0, 238, 1) 0%, rgba(3, 218, 197, 1) 100%),
+      -moz-linear-gradient(114.9deg, rgba(3, 218, 197, 1) 0%, rgba(98, 0, 238, 1) 100%),
+      -moz-linear-gradient(100% 148.07% at 0% 0%, rgba(255, 255, 255, 1) 0%, rgba(3, 218, 197, 1)
+            100%);
+    background-image: -webkit-radial-gradient(
+        50% 123.47% at 50% 50%,
+        rgba(3, 218, 197, 0.5) 0%,
+        rgba(98, 0, 238, 0.5) 100%
+      ),
+      -webkit-linear-gradient(121.28deg, rgba(33, 49, 0, 0.5) 0%, rgba(255, 0, 0, 0.5) 100%),
+      -webkit-linear-gradient(360deg, rgba(98, 0, 238, 1) 0%, rgba(3, 218, 197, 1) 100%),
+      -webkit-linear-gradient(114.9deg, rgba(3, 218, 197, 1) 0%, rgba(98, 0, 238, 1) 100%),
+      -webkit-linear-gradient(100% 148.07% at 0% 0%, rgba(255, 255, 255, 1) 0%, rgba(3, 218, 197, 1)
+            100%);
+    background-image: -o-radial-gradient(
+        50% 123.47% at 50% 50%,
+        rgba(3, 218, 197, 0.5) 0%,
+        rgba(98, 0, 238, 0.5) 100%
+      ),
+      -o-linear-gradient(121.28deg, rgba(33, 49, 0, 0.5) 0%, rgba(255, 0, 0, 0.5) 100%),
+      -o-linear-gradient(360deg, rgba(98, 0, 238, 1) 0%, rgba(3, 218, 197, 1) 100%),
+      -o-linear-gradient(114.9deg, rgba(3, 218, 197, 1) 0%, rgba(98, 0, 238, 1) 100%),
+      -o-linear-gradient(100% 148.07% at 0% 0%, rgba(255, 255, 255, 1) 0%, rgba(3, 218, 197, 1) 100%);
+    background-image: -ms-radial-gradient(
+        50% 123.47% at 50% 50%,
+        rgba(3, 218, 197, 0.5) 0%,
+        rgba(98, 0, 238, 0.5) 100%
+      ),
+      -ms-linear-gradient(121.28deg, rgba(33, 49, 0, 0.5) 0%, rgba(255, 0, 0, 0.5) 100%),
+      -ms-linear-gradient(360deg, rgba(98, 0, 238, 1) 0%, rgba(3, 218, 197, 1) 100%),
+      -ms-linear-gradient(114.9deg, rgba(3, 218, 197, 1) 0%, rgba(98, 0, 238, 1) 100%),
+      -ms-linear-gradient(100% 148.07% at 0% 0%, rgba(255, 255, 255, 1) 0%, rgba(3, 218, 197, 1)
+            100%);
+    background-blend-mode: lighten, lighten, overlay, difference, normal;
+    background-position: cover;
   }
 
   to {
     opacity: 0%;
-    background-image: radial-gradient(50% 123.47% at 50% 50%, #03dac5 0%, #6200ee 100%),
-    linear-gradient(121.28deg, #213100 0%, #ff0000 100%),
-    linear-gradient(360deg, #6200ee 0%, #03dac5 100%),
-    linear-gradient(114.9deg, #03dac5 0%, #6200ee 100%),
-    radial-gradient(100% 148.07% at 0% 0%, #ffffff 0%, #03dac5 100%);
-  background-blend-mode: screen, color-dodge, overlay, difference, normal;
   }
 }
 
 @keyframes aquafill {
   from {
-    fill: #55E6D8;
+    fill: #55e6d8;
   }
   to {
     fill: #fff;
@@ -56,13 +137,13 @@
     fill: #fff;
   }
   to {
-    fill: #55E6D8;
+    fill: #55e6d8;
   }
 }
 
 @keyframes purplefill {
   from {
-    fill: #5600D1;
+    fill: #5600d1;
   }
   to {
     fill: #fff;
@@ -74,13 +155,13 @@
     fill: #fff;
   }
   to {
-    fill: #5600D1;
+    fill: #5600d1;
   }
 }
 
 @keyframes blackfill {
   from {
-    fill: #2B2B2B;
+    fill: #2b2b2b;
   }
   to {
     fill: #fff;
@@ -92,8 +173,6 @@
     fill: #fff;
   }
   to {
-    fill: #2B2B2B;
+    fill: #2b2b2b;
   }
 }
-
-

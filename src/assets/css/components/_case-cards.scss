@@ -31,6 +31,7 @@
   overflow: hidden;
   cursor: pointer;
 
+
   a:hover {
     text-decoration: underline;
   }
@@ -63,6 +64,7 @@
   width: 100%;
   animation: holoout 1s;
   animation-fill-mode: both;
+  overflow: hidden;
 }
 
 .case-cards__grid-element:hover {

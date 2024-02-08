@@ -29,6 +29,7 @@
   text-decoration: none;
   position: relative;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .tech-cards_link {
@@ -93,6 +94,7 @@
   width: 100%;
   animation: holoout 1s;
   animation-fill-mode: both;
+  overflow: hidden;
 }
 
 .tech-cards__grid-element:nth-child(2n + 1) {
