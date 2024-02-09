@@ -91,14 +91,14 @@
     background-color: var(--color-purple);
 
     .btn-primary--hover {
-    animation: shinyout 0.5s;
+    animation: shinyout-aqua 0.5s;
     }
 
     &:hover {
 
       .btn-primary--hover {
         overflow: hidden;
-        animation: shinyhover 0.5s;
+        animation: shinyhover-aqua 0.5s;
         animation-fill-mode: both;
 
       }
@@ -127,14 +127,14 @@
     color: var(--color-link-primary);
 
     .btn-primary--hover {
-      animation: shinyout 0.5s;
+      animation: shinyout-aqua 0.5s;
       }
 
     &:hover {
 
       .btn-primary--hover {
         overflow: hidden;
-        animation: shinyhover 0.5s;
+        animation: shinyhover-aqua 0.5s;
         animation-fill-mode: both;
       }
     }

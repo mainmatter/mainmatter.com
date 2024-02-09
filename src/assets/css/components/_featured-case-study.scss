@@ -21,6 +21,18 @@
     .featured-case-study__image {
       mix-blend-mode: multiply;
     }
+
+    .featured-case-study--hover {
+      animation: shinyout 1s;
+      animation-fill-mode: both;
+    }
+
+    &:hover {
+      .featured-case-study--hover {
+        animation: shinyhover-aqua 1s;
+        animation-fill-mode: both;
+      }
+    }
   }
 
   &--aqua {
@@ -30,6 +42,18 @@
     --color-link-primary: var(--color-white);
     --color-link-primary-hover: var(--color-black);
     color: var(--color-white);
+
+    .featured-case-study--hover {
+      animation: shinyout 1s;
+      animation-fill-mode: both;
+    }
+
+    &:hover {
+      .featured-case-study--hover {
+        animation: shinyhover 1s;
+        animation-fill-mode: both;
+      }
+    }
   }
 
   &--black {
@@ -44,6 +68,18 @@
       opacity: 0.45;
       mix-blend-mode: screen;
     }
+
+    .featured-case-study--hover {
+      animation: shinyout 1s;
+      animation-fill-mode: both;
+    }
+
+    &:hover {
+      .featured-case-study--hover {
+        animation: shinyhover 1s;
+        animation-fill-mode: both;
+      }
+    }
   }
 
   &--red {
@@ -56,14 +92,9 @@
     --color-animation: var(--color-purple);
     color: var(--color-white);
   }
-
-  &:hover {
-    .featured-case-study--hover {
-      animation: shinyhover 1s;
-      animation-fill-mode: both;
-    }
-  }
 }
+
+
 
 .featured-case-study--hover {
   position: absolute;
@@ -71,8 +102,6 @@
   left: 0;
   height: 100%;
   width: 100%;
-  animation: shinyout 1s;
-  animation-fill-mode: both;
   overflow: hidden;
 }
 

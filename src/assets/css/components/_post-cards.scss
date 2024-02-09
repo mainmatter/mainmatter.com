@@ -37,20 +37,11 @@
   }
 }
 
-.post-cards--hover {
-  animation: shinyout 1s;
-  animation-fill-mode: both;
-  overflow: hidden;
-}
+
 
 .post-cards__grid-element:hover {
   color: var(--color-white);
   cursor: pointer;
-
-  .post-cards--hover {
-    animation: shinyhover 1s;
-    animation-fill-mode: both;
-  }
 }
 
 .post-cards__logo svg {
@@ -72,14 +63,56 @@
 
 .post-cards__grid-element:nth-child(2n + 1) {
   background-color: var(--color-purple);
+
+  .post-cards--hover {
+    animation: shinyout-aqua 1s;
+    animation-fill-mode: both;
+    overflow: hidden;
+  }
+
+  &:hover {
+    .post-cards--hover {
+      animation: shinyhover-aqua 1s;
+      animation-fill-mode: both;
+      overflow: hidden;
+    }
+  }
 }
 
 .post-cards__grid-element:nth-child(2n) {
   background-color: var(--color-black);
+
+  .post-cards--hover {
+    animation: shinyout 1s;
+    animation-fill-mode: both;
+    overflow: hidden;
+  }
+
+  &:hover {
+    .post-cards--hover {
+      animation: shinyhover 1s;
+      animation-fill-mode: both;
+      overflow: hidden;
+    }
+  }
 }
 
 .post-cards__grid-element:nth-child(5n + 1) {
   background-color: var(--color-aqua);
+
+  .post-cards--hover {
+    animation: shinyout 1s;
+    animation-fill-mode: both;
+    overflow: hidden;
+  }
+
+  &:hover {
+    .post-cards--hover {
+      animation: shinyhover 1s;
+      animation-fill-mode: both;
+      overflow: hidden;
+    }
+  }
 }
 
 .post-cards__content {
