@@ -18,6 +18,7 @@ description: <p>We go through a series of stages that each build on one another.
 hero:
   image: "/assets/images/workshops/hands-on-ember/hands-on-ember-workshop-hero.jpg"
   imageAlt: "Illustration of Ember JS mascot Zoey on a purple background"
+  background: "ember"
 og:
   image: /assets/images/workshops/hands-on-ember/og-image.jpg
 topics:

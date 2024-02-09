@@ -8,6 +8,7 @@ description:
 hero:
   image: "/assets/images/workshops/design-system-kickoff-interface-inventory/design-system-kickoff-interface-inventory-hero.jpg"
   imageAlt: "Design system on a computer screen"
+
 og:
   image: /assets/images/workshops/design-system-kickoff-interface-inventory/og-image.jpg
 topics:

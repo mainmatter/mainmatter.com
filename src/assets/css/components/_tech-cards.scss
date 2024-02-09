@@ -104,18 +104,12 @@
   }
 
   svg g {
-    animation: purpleout 1s;
-    animation-fill-mode: both;
+    fill: #5600d1;
   }
 
   &:hover {
     .tech-cards--hover {
       animation: shinyhover-aqua 1s;
-      animation-fill-mode: both;
-    }
-
-    svg g {
-      animation: purplefill 1s;
       animation-fill-mode: both;
     }
   }
@@ -130,18 +124,12 @@
   }
 
   svg g {
-    animation: blackout 1s;
-    animation-fill-mode: both;
+    fill: #2b2b2b;
   }
 
   &:hover {
     .tech-cards--hover {
       animation: shinyhover 1s;
-      animation-fill-mode: both;
-    }
-
-    svg g {
-      animation: blackfill 1s;
       animation-fill-mode: both;
     }
   }
@@ -156,18 +144,12 @@
   }
 
   svg g {
-    animation: aquaout 1s;
-    animation-fill-mode: both;
+    fill: #55e6d8;
   }
 
   &:hover {
     .tech-cards--hover {
       animation: shinyhover 1s;
-      animation-fill-mode: both;
-    }
-
-    svg g {
-      animation: aquafill 1s;
       animation-fill-mode: both;
     }
   }

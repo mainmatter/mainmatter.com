@@ -12,6 +12,7 @@ description:
 hero:
   image: "/assets/images/workshops/digital-product-strategy/digital-product-strategy-workshop-hero.jpg"
   imageAlt: "Hand-drawn wireframes and colorful Post-it notes on a desk"
+
 og:
   image: /assets/images/workshops/digital-product-strategy/og-image.jpg
 topics:

@@ -17,6 +17,7 @@ hero:
   imageAlt:
     "A schematic drawing of a grid with files on top and connecting lines
     between the files."
+  background: "rust"
 og:
   image: /assets/images/workshops/advanced-testing-in-rust/og-image.jpg
 topics:
