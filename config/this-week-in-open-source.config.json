@@ -194,7 +194,9 @@
         "opral/monorepo",
         "mansona/lttf-dashboard",
         "opral/monorepo",
-        "thefrontside/effection"
+        "thefrontside/effection",
+        "pichfl/auto-reveal",
+        "pichfl/auto-reveal"
       ]
     },
     {
@@ -439,7 +441,8 @@
         "ember-codemods/ember-no-implicit-this-codemod",
         "ember-codemods/ember-no-implicit-this-codemod",
         "ember-codemods/ember-no-implicit-this-codemod",
-        "adopted-ember-addons/ember-pikaday"
+        "adopted-ember-addons/ember-pikaday",
+        "funkensturm/ember-local-storage"
       ]
     },
     {
@@ -527,9 +530,10 @@
     "mainmatter/svelte-workshop",
     "rust-lang/this-week-in-rust",
     "Terminal49/API",
-    "Terminal49/API"
+    "Terminal49/API",
+    "mainmatter/git-workshop"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-01-21..2024-01-28"
+  "last_date": "2024-01-28..2024-02-04"
 }
