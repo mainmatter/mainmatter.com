@@ -4,7 +4,7 @@ h1,
   font-family: var(--font-base);
   font-weight: 700;
   font-size: clamp(2.5rem, -2.5rem + 10.4167vw, 5rem);
-  line-height: 1.1;
+  line-height: 1.3;
   text-transform: none;
   letter-spacing: 0;
 }
@@ -15,7 +15,7 @@ h2,
   font-family: var(--font-base);
   font-weight: 700;
   font-size: clamp(2.5rem, -0.5rem + 6.25vw, 4rem);
-  line-height: 1.1;
+  line-height: 1.3;
   text-transform: none;
   letter-spacing: 0;
 }
@@ -26,7 +26,7 @@ h3,
   font-family: var(--font-base);
   font-weight: 700;
   font-size: clamp(2rem, -1rem + 6.25vw, 3.5rem);
-  line-height: 1.1;
+  line-height: 1.25;
   text-transform: none;
   letter-spacing: 0;
 }
@@ -37,7 +37,7 @@ h4,
   font-family: var(--font-base);
   font-weight: 700;
   font-size: clamp(1.75rem, 1.25rem + 1.0417vw, 2rem);
-  line-height: 1.3;
+  line-height: 1.5;
   letter-spacing: 0;
 }
 
@@ -47,41 +47,30 @@ h5,
   font-family: var(--font-base);
   font-weight: 500;
   font-size: clamp(1rem, 0.75rem + 0.5208vw, 1.125rem);
-  line-height: 1.3;
+  line-height: 1.5;
   letter-spacing: 0;
 }
 
-h6,
-  .h6 {
-    margin: 0;
-    font-family: var(--font-base);
-    font-size: clamp(1rem, 0.75rem + 0.5208vw, 1.125rem);
-    line-height: 1.3;
-    font-weight: 500;
-    letter-spacing: 0;
-  }
-
-
 body {
-  font-size: 1.4rem;
-  line-height: 1.5;
+  font-size: 1.5rem;
+  line-height: 2;
 }
 
 .large {
-  font-size: clamp(1.4rem, 0.2rem + 2.5vw, 2rem);
-  line-height: 1.5;
+  font-size: clamp(1.5rem, 0.2rem + 2.5vw, 2rem);
+  line-height: 2;
 }
 
 .small {
   font-size: 1rem;
   font-weight: 700;
-  line-height: 1.7;
+  line-height: 2;
 }
 
 .caption {
   font-size: 1.5rem;
   font-weight: 700;
-  line-height: 1.6;
+  line-height: 2;
 }
 
 .text--accent {
