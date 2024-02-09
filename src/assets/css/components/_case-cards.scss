@@ -127,13 +127,13 @@
   background-color: var(--color-purple);
 
   .case-cards--hover {
-    animation: shinyout-aqua 1s;
+    animation: shinyout 1s;
     animation-fill-mode: both;
   }
 
   &:hover {
   .case-cards--hover {
-    animation: shinyhover-aqua 1s;
+    animation: shinyhover 1s;
     animation-fill-mode: both;
   }
   }

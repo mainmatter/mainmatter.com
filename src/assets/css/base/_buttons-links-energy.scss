@@ -91,19 +91,33 @@
     background-color: var(--color-purple);
 
     .btn-primary--hover {
-      background-color: var(--color-purple);
+      animation: shinyout 0.5s;
     }
 
     &:hover {
-      background-color: #5600d1;
+      .btn-primary--hover {
+        overflow: hidden;
+        animation: shinyhover 0.5s;
+
+        animation-fill-mode: both;
+      }
     }
   }
 
   &--aqua {
     background-color: var(--color-aqua);
 
+    .btn-primary--hover {
+      animation: shinyout 0.5s;
+    }
+
     &:hover {
-      background-color: #55e6d8;
+      .btn-primary--hover {
+        overflow: hidden;
+        animation: shinyhover 0.5s;
+
+        animation-fill-mode: both;
+      }
     }
   }
 
@@ -112,13 +126,14 @@
     color: var(--color-link-primary);
 
     .btn-primary--hover {
-      animation: shinyout-btn 0.5s;
+      animation: shinyout 0.5s;
     }
 
     &:hover {
       .btn-primary--hover {
         overflow: hidden;
-        animation: shinyhover-btn 0.5s;
+        animation: shinyhover 0.5s;
+
         animation-fill-mode: both;
       }
     }

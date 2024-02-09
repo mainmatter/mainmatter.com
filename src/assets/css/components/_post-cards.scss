@@ -65,14 +65,14 @@
   background-color: var(--color-purple);
 
   .post-cards--hover {
-    animation: shinyout-aqua 1s;
+    animation: shinyout 1s;
     animation-fill-mode: both;
     overflow: hidden;
   }
 
   &:hover {
     .post-cards--hover {
-      animation: shinyhover-aqua 1s;
+      animation: shinyhover 1s;
       animation-fill-mode: both;
       overflow: hidden;
     }
