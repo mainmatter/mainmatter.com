@@ -50,6 +50,34 @@
   }
 }
 
+@keyframes shinyhover-btn {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 100%;
+    background-repeat: no-repeat;
+    background-color: #c3cbdc;
+    background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);
+    background-position: cover;
+  }
+}
+
+@keyframes shinyout-btn {
+  from {
+    opacity: 100%;
+    background-repeat: no-repeat;
+    background-color: #c3cbdc;
+    background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);
+    background-position: cover;
+  }
+
+  to {
+    opacity: 0%;
+  }
+}
+
 @keyframes aquafill {
   from {
     fill: #55e6d8;

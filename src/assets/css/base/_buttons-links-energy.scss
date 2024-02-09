@@ -69,7 +69,7 @@
   border-radius: 0.125rem;
   transition: color ease 0.5s;
   overflow: hidden;
-  transform: translate3d(0,0,0);
+  transform: translate3d(0, 0, 0);
 
   &--hover {
     overflow: hidden;
@@ -79,8 +79,8 @@
     width: 100%;
     height: 100%;
 
-    transform: translate3d(0,0,0);
-    }
+    transform: translate3d(0, 0, 0);
+  }
 
   span {
     position: relative;
@@ -91,34 +91,19 @@
     background-color: var(--color-purple);
 
     .btn-primary--hover {
-    animation: shinyout-aqua 0.5s;
+      background-color: var(--color-purple);
     }
 
     &:hover {
-
-      .btn-primary--hover {
-        overflow: hidden;
-        animation: shinyhover-aqua 0.5s;
-        animation-fill-mode: both;
-
-      }
+      background-color: #5600d1;
     }
   }
 
   &--aqua {
     background-color: var(--color-aqua);
 
-    .btn-primary--hover {
-      animation: shinyout 0.5s;
-      }
-
     &:hover {
-
-      .btn-primary--hover {
-        overflow: hidden;
-        animation: shinyhover 0.5s;
-        animation-fill-mode: both;
-      }
+      background-color: #55e6d8;
     }
   }
 
@@ -127,14 +112,13 @@
     color: var(--color-link-primary);
 
     .btn-primary--hover {
-      animation: shinyout-aqua 0.5s;
-      }
+      animation: shinyout-btn 0.5s;
+    }
 
     &:hover {
-
       .btn-primary--hover {
         overflow: hidden;
-        animation: shinyhover-aqua 0.5s;
+        animation: shinyhover-btn 0.5s;
         animation-fill-mode: both;
       }
     }
@@ -142,9 +126,8 @@
 }
 
 .btn-primary:hover {
-    text-decoration: none
+  text-decoration: none;
 }
-
 
 .btn-secondary {
   display: flex;
