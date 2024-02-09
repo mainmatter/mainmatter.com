@@ -78,7 +78,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    animation: holoout 0.5s;
+
     transform: translate3d(0,0,0);
     }
 
@@ -90,12 +90,15 @@
   &--purple {
     background-color: var(--color-purple);
 
+    .btn-primary--hover {
+    animation: shinyout 0.5s;
+    }
+
     &:hover {
-      color: var(--color-white);
 
       .btn-primary--hover {
         overflow: hidden;
-        animation: holohover 0.5s;
+        animation: shinyhover 0.5s;
         animation-fill-mode: both;
 
       }
@@ -105,12 +108,15 @@
   &--aqua {
     background-color: var(--color-aqua);
 
+    .btn-primary--hover {
+      animation: shinyout 0.5s;
+      }
+
     &:hover {
-      color: var(--color-white);
 
       .btn-primary--hover {
         overflow: hidden;
-        animation: holohover 0.5s;
+        animation: shinyhover 0.5s;
         animation-fill-mode: both;
       }
     }
@@ -120,12 +126,15 @@
     background-color: var(--color-white);
     color: var(--color-link-primary);
 
+    .btn-primary--hover {
+      animation: shinyout 0.5s;
+      }
+
     &:hover {
-      color: var(--color-white);
 
       .btn-primary--hover {
         overflow: hidden;
-        animation: holohover 0.5s;
+        animation: shinyhover 0.5s;
         animation-fill-mode: both;
       }
     }

@@ -38,7 +38,7 @@
 }
 
 .post-cards--hover {
-  animation: holoout 1s;
+  animation: shinyout 1s;
   animation-fill-mode: both;
   overflow: hidden;
 }
@@ -48,7 +48,7 @@
   cursor: pointer;
 
   .post-cards--hover {
-    animation: holohover 1s;
+    animation: shinyhover 1s;
     animation-fill-mode: both;
   }
 }
@@ -117,7 +117,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  animation: holoout 1s;
+  animation: shinyout 1s;
   animation-fill-mode: both;
 }
 
