@@ -8,60 +8,6 @@
   flex-direction: column;
   justify-content: center;
 
-  &.home {
-    background-image: url(/assets/images/hero/home.jpg);
-    background-size: cover;
-    background-blend-mode: multiply;
-  }
-
-  &.work {
-    background-image: url(/assets/images/hero/work.jpg);
-    background-size: cover;
-    background-blend-mode: multiply;
-  }
-
-  &.rust-workshop {
-    background-image: url(/assets/images/hero/rust.jpg);
-    background-size: cover;
-    background-blend-mode: multiply;
-  }
-
-  &.idea-to-release {
-    background-image: url(/assets/images/hero/idea-to-release.jpg);
-    background-size: cover;
-    background-blend-mode: multiply;
-  }
-
-  &.strategic-advice {
-    background-image: url(/assets/images/hero/strategic-advice.jpg);
-    background-size: cover;
-    background-blend-mode: multiply;
-  }
-
-  &.team-reinforcement {
-    background-image: url(/assets/images/hero/team-reinforcement.jpg);
-    background-size: cover;
-    background-blend-mode: multiply;
-  }
-
-  &.tech-modernization {
-    background-image: url(/assets/images/hero/tech-modernization.jpg);
-    background-size: cover;
-    background-blend-mode: multiply;
-  }
-
-  &.workshops {
-    background-image: url(/assets/images/hero/workshops.jpg);
-    background-size: cover;
-    background-blend-mode: multiply;
-  }
-
-  &.startups {
-    background-image: url(/assets/images/hero/startups.jpg);
-    background-size: cover;
-    background-blend-mode: multiply;
-  }
-
   &--purple {
     background-color: var(--color-purple);
     --color-animation: var(--color-aqua);
@@ -70,36 +16,6 @@
     --color-link-primary: var(--color-purple);
     --color-link-primary-hover: var(--color-aqua);
     color: var(--color-white);
-
-    &.rust {
-      background-image: url(/assets/images/services/rust-tech_purple.png);
-      background-size: 20%;
-      background-position: 5% 30%;
-    }
-
-    &.ember {
-      background-image: url(/assets/images/services/ember-tech_purple.png);
-      background-size: 20%;
-      background-position: 5% 30%;
-    }
-
-    &.svelte {
-      background-image: url(/assets/images/services/svelte-tech_purple.png);
-      background-size: 20%;
-      background-position: 5% 30%;
-    }
-
-    &.ruby {
-      background-image: url(/assets/images/services/ruby-tech_purple.png);
-      background-size: 20%;
-      background-position: 5% 30%;
-    }
-
-    &.elixir {
-      background-image: url(/assets/images/services/elixir-tech_purple.png);
-      background-size: 20%;
-      background-position: 5% 30%;
-    }
   }
 
   &--aqua {
@@ -109,36 +25,6 @@
     --color-link-primary: var(--color-aqua);
     --color-link-primary-hover: var(--color-white);
     color: var(--color-white);
-
-    &.rust {
-      background-image: url(/assets/images/services/rust-tech_aqua.png);
-      background-size: 20%;
-      background-position: 5% 30%;
-    }
-
-    &.ember {
-      background-image: url(/assets/images/services/ember-tech_aqua.png);
-      background-size: 20%;
-      background-position: 5% 30%;
-    }
-
-    &.svelte {
-      background-image: url(/assets/images/services/svelte-tech_aqua.png);
-      background-size: 20%;
-      background-position: 5% 30%;
-    }
-
-    &.ruby {
-      background-image: url(/assets/images/services/ruby-tech_aqua.png);
-      background-size: 20%;
-      background-position: 5% 30%;
-    }
-
-    &.elixir {
-      background-image: url(/assets/images/services/elixir-tech_aqua.png);
-      background-size: 20%;
-      background-position: 5% 30%;
-    }
   }
 
   &--black {
@@ -148,36 +34,6 @@
     --color-overlay: var(--color-black);
     color: var(--color-white);
     --overlay-opacity: 0.2;
-
-    &.rust {
-      background-image: url(/assets/images/services/rust-tech_black.png);
-      background-size: 20%;
-      background-position: 5% 30%;
-    }
-
-    &.ember {
-      background-image: url(/assets/images/services/ember-tech_black.png);
-      background-size: 20%;
-      background-position: 5% 30%;
-    }
-
-    &.svelte {
-      background-image: url(/assets/images/services/svelte-tech_black.png);
-      background-size: 20%;
-      background-position: 5% 30%;
-    }
-
-    &.ruby {
-      background-image: url(/assets/images/services/ruby-tech_black.png);
-      background-size: 20%;
-      background-position: 5% 30%;
-    }
-
-    &.elixir {
-      background-image: url(/assets/images/services/elixir-tech_black.png);
-      background-size: 20%;
-      background-position: 5% 30%;
-    }
   }
 
   &--red {

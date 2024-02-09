@@ -64,19 +64,12 @@
   left: 0;
   height: 100%;
   width: 100%;
-  animation: shinyout 1s;
-  animation-fill-mode: both;
   overflow: hidden;
 }
 
 .case-cards__grid-element:hover {
   color: var(--color-white);
   cursor: pointer;
-
-  .case-cards--hover {
-    animation: shinyhover 1s;
-    animation-fill-mode: both;
-  }
 
   .problem {
     opacity: 0;
@@ -132,14 +125,51 @@
 
 .case-cards__grid-element:nth-child(n) {
   background-color: var(--color-purple);
+
+  .case-cards--hover {
+    animation: shinyout-aqua 1s;
+    animation-fill-mode: both;
+  }
+
+  &:hover {
+  .case-cards--hover {
+    animation: shinyhover-aqua 1s;
+    animation-fill-mode: both;
+  }
+  }
 }
 
 .case-cards__grid-element:nth-child(2n) {
   background-color: var(--color-aqua);
+
+  .case-cards--hover {
+    animation: shinyout 1s;
+    animation-fill-mode: both;
+  }
+
+  &:hover {
+  .case-cards--hover {
+    animation: shinyhover 1s;
+    animation-fill-mode: both;
+  }
+  }
 }
 
 .case-cards__grid-element:nth-child(2n + 3) {
   background-color: var(--color-black);
+
+  .case-cards--hover {
+    animation: shinyout 1s;
+    animation-fill-mode: both;
+  }
+
+  &:hover {
+  .case-cards--hover {
+    animation: shinyhover 1s;
+    animation-fill-mode: both;
+  }
+  }
+
 }
 
 .case-cards__link-arrow {

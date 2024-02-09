@@ -10,7 +10,9 @@ layout: base-energy
 
 {% set 'hero' = {
   "title": displayTitle ,
-  "subheading": hero.tags
+  "subheading": hero.tags,
+  "background": company | slug
+
 } %}
 {{ colorHero('purple', hero) }}
 
