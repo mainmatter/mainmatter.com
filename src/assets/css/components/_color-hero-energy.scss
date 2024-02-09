@@ -9,7 +9,55 @@
   justify-content: center;
 
   &.home {
-    background-image: url(/assets/images/photos/abstract-bg-4.jpg);
+    background-image: url(/assets/images/hero/home.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+  }
+
+  &.work {
+    background-image: url(/assets/images/hero/work.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+  }
+
+  &.rust-workshop {
+    background-image: url(/assets/images/hero/rust.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+  }
+
+  &.idea-to-release {
+    background-image: url(/assets/images/hero/idea-to-release.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+  }
+
+  &.strategic-advice {
+    background-image: url(/assets/images/hero/strategic-advice.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+  }
+
+  &.team-reinforcement {
+    background-image: url(/assets/images/hero/team-reinforcement.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+  }
+
+  &.tech-modernization {
+    background-image: url(/assets/images/hero/tech-modernization.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+  }
+
+  &.workshops {
+    background-image: url(/assets/images/hero/workshops.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+  }
+
+  &.startups {
+    background-image: url(/assets/images/hero/startups.jpg);
     background-size: cover;
     background-blend-mode: multiply;
   }

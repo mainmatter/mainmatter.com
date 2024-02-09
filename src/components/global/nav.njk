@@ -2,7 +2,7 @@
 {% from "btn-primary.njk" import btnPrimary %}
 {% set navPages = collections.all | eleventyNavigation %}
 
-{% if page.url == '/services/workshops/' or page.url == '/services/workshops/rust/' or page.url == '/work/' or page.url == '/playbook/' or page.url == '/events/' %}
+{% if page.url == '/services/workshops/rust/' or page.url == '/playbook/' or page.url == '/events/' %}
   {% set ctaColor = 'purple' %}
 {% else %}
   {% set ctaColor = 'aqua' %}
