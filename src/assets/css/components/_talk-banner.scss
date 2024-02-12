@@ -67,14 +67,8 @@
   align-items: start;
 }
 
-.talk-banner__cta {
-  margin: 1.25rem 0 0;
-  color: var(--color-white);
-  cursor: pointer;
-  text-decoration: underline 1px var(--color-purple);
-  text-underline-offset: 0.125rem;
-  text-decoration-thickness: 0.0625rem;
-  transition: color 0.3s ease;
+.talk-cta {
+  z-index: 150;
 }
 
 .talk-banner__title {
