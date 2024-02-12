@@ -126,13 +126,13 @@
     color: var(--color-link-primary);
 
     .btn-primary--hover {
-      animation: shinyout 0.5s;
+      animation: shinyout-btn 0.5s;
     }
 
     &:hover {
       .btn-primary--hover {
         overflow: hidden;
-        animation: shinyhover 0.5s;
+        animation: shinyhover-btn 0.5s;
 
         animation-fill-mode: both;
       }
