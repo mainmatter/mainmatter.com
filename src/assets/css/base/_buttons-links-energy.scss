@@ -190,6 +190,14 @@
   }
 }
 
+.videos {
+  svg {
+    transform: rotate(-90deg);
+    margin-right: 0;
+    margin-left: 1.5rem;
+  }
+}
+
 .message {
   cursor: pointer;
 

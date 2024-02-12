@@ -1,6 +1,6 @@
 ---
 title: "Intro to Svelte & SvelteKit"
-image: "/assets/images/calendar/2024-02-23-svelte-workshop/svelteworkshop.jpg"
+image: "/assets/images/calendar/2024-02-23-svelte-workshop/svelte-workshop.png"
 location: "Munich"
 url: https://ti.to/mainmatter/intro-to-svelte-sveltekit
 kind: workshop

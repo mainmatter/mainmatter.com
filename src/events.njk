@@ -51,17 +51,20 @@ description: Find out about upcoming events, conferences and meetups we will be 
           <li class="talks__item talks__item--full-width">
             {{ talkBanner(appearance, "black") }}
           </li>
-        {% elif loop.index < 11 %}
+        {% elif loop.index < 6 %}
           <li class="talks__item">
             {{ talkCard(appearance, "black") }}
           </li>
         {% endif %}
       {% endfor %}
     </ol>
-    {% if collections.appearances.length > 10 %}
-      <div class="talks__cta-wrapper">
-        {{ ctaLink('/talks/#more-talks', 'Load more videos', '') }}
-      </div>
+    {% if collections.appearances.length > 7 %}
+    <div class="talks_pagination">
+      <a href="/talks/#more-talks" class="btn-secondary h4 videos">
+          <span class="btn-secondary__text">Load more videos</span>
+          {% include 'svg/arrow.njk' %}
+        </a>
+    </div>
     {% endif %}
 
   </div>

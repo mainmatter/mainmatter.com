@@ -7,18 +7,17 @@
 }
 
 .talks__list {
-  margin: 0;
+  margin: 0 2rem;
   padding: 0;
   list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
 }
 
 .talks__item {
   &--full-width {
-    grid-column: span 3 / span 3;
-  }
-
-  &+& {
-    margin-top: 3rem;
+    grid-column: span 1 / span 1;
   }
 }
 
@@ -35,24 +34,40 @@
   }
 
   .talks__list {
+    margin: 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
   }
 
   .talks__item {
-    &+& {
-      margin-top: 5rem;
-    }
-
     &:nth-of-type(2),
-    &:nth-of-type(3),
-    &:nth-of-type(4) {
+    &:nth-of-type(3) {
       margin-top: 0;
+    }
+  }
+
+  .talks__item {
+    &--full-width {
+      grid-column: span 2 / span 2;
     }
   }
 
   .talks__cta-wrapper {
     text-align: right;
+  }
+}
+
+.talks_pagination {
+  display: flex;
+  align-items: end;
+  margin-top: 5rem;
+
+  & .videos:only-child {
+    margin-left: auto;
+  }
+
+  & .videos:only-child {
+    margin-left: auto;
   }
 }
