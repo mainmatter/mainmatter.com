@@ -1,54 +1,93 @@
-@keyframes shinyhover {
+@use 'sass:color';
+
+@keyframes purplehover {
   from {
-    opacity: 0%;
+    transform: translate(-100%);
+    background: color.scale(#6200EE, $lightness: -20%);
   }
 
   to {
-    opacity: 100%;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, .15)), to(rgba(0, 0, 0, .25))), -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(255, 255, 255, 0)), color-stop(0.5, rgba(255, 255, 255, .1)), color-stop(0.75, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0)));
-    background: -moz-linear-gradient(top, rgba(255, 255, 255, .15), rgba(0, 0, 0, .25)), -moz-linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0));
-    background: linear-gradient(top, rgba(255, 255, 255, .15), rgba(0, 0, 0, .25));
+    transform: translate(0);
+
   }
 }
 
-@keyframes shinyout {
+@keyframes purpleout {
   from {
-    opacity: 100%;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, .15)), to(rgba(0, 0, 0, .25))), -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(255, 255, 255, 0)), color-stop(0.5, rgba(255, 255, 255, .1)), color-stop(0.75, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0)));
-    background: -moz-linear-gradient(top, rgba(255, 255, 255, .15), rgba(0, 0, 0, .25)), -moz-linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0));
-    background: linear-gradient(top, rgba(255, 255, 255, .15), rgba(0, 0, 0, .25));
+    transform: translate(0);
+    background: color.scale(#6200EE, $lightness: -20%);
   }
 
   to {
-    opacity: 0%;
+    transform: translate(-100%);
   }
 }
 
-@keyframes shinyhover-btn {
+@keyframes whitehover {
   from {
-    opacity: 0%;
+    transform: translate(-100%);
+    background: color.scale(#fff, $lightness: -20%);
   }
 
   to {
-    opacity: 100%;
-    background-repeat: no-repeat;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(3,218,197, .15)), to(rgba(98, 0, 238, .25))), -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(3,218,197, 0)), color-stop(0.5, rgba(3,218,197, .1)), color-stop(0.75, rgba(3,218,197, 0)), color-stop(1, rgba(3,218,197, 0)));
-    background: -moz-linear-gradient(top, rgba(3,218,197, .15), rgba(98, 0, 238, .25)), -moz-linear-gradient(left top, rgba(3,218,197, 0), rgba(3,218,197, .1) 50%, rgba(3,218,197, 0) 25%, rgba(3,218,197, 0));
-    background: linear-gradient(top, rgba(3,218,197, .15), rgba(98, 0, 238, .15));
- }
+    transform: translate(0);
+
+  }
 }
 
-@keyframes shinyout-btn {
+@keyframes whiteout {
   from {
-    opacity: 100%;
-    background-repeat: no-repeat;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(3,218,197, .15)), to(rgba(98, 0, 238, .25))), -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(3,218,197, 0)), color-stop(0.5, rgba(3,218,197, .1)), color-stop(0.75, rgba(3,218,197, 0)), color-stop(1, rgba(3,218,197, 0)));
-    background: -moz-linear-gradient(top, rgba(3,218,197, .15), rgba(98, 0, 238, .25)), -moz-linear-gradient(left top, rgba(3,218,197, 0), rgba(3,218,197, .1) 50%, rgba(3,218,197, 0) 25%, rgba(3,218,197, 0));
-    background: linear-gradient(top, rgba(3,218,197, .15), rgba(98, 0, 238, .15));
+    transform: translate(0);
+    background: color.scale(#fff, $lightness: -20%);
   }
 
   to {
-    opacity: 0%;
+    transform: translate(-100%);
+  }
+}
+
+
+@keyframes blackhover {
+  from {
+    transform: translate(-100%);
+    background: color.scale(#000, $lightness: +20%);
+  }
+
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes blackout {
+  from {
+    transform: translate(0);
+    background: color.scale(#000, $lightness: +20%);
+  }
+
+  to {
+    transform: translate(-100%);
+  }
+}
+
+@keyframes aquahover {
+  from {
+    transform: translate(-100%);
+    background: color.scale(#02ceba, $lightness: -20%);
+  }
+
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes aquaout {
+  from {
+    transform: translate(0);
+    background: color.scale(#02ceba, $lightness: -20%);
+  }
+
+  to {
+    transform: translate(-100%);
   }
 }
 

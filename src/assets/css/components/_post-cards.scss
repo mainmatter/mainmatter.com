@@ -65,14 +65,14 @@
   background-color: var(--color-purple);
 
   .post-cards--hover {
-    animation: shinyout 1s;
+    animation: purpleout 1s;
     animation-fill-mode: both;
     overflow: hidden;
   }
 
   &:hover {
     .post-cards--hover {
-      animation: shinyhover 1s;
+      animation: purplehover 1s;
       animation-fill-mode: both;
       overflow: hidden;
     }
@@ -83,14 +83,14 @@
   background-color: var(--color-black);
 
   .post-cards--hover {
-    animation: shinyout 1s;
+    animation: blackout 1s;
     animation-fill-mode: both;
     overflow: hidden;
   }
 
   &:hover {
     .post-cards--hover {
-      animation: shinyhover 1s;
+      animation: blackhover 1s;
       animation-fill-mode: both;
       overflow: hidden;
     }
@@ -101,14 +101,14 @@
   background-color: var(--color-aqua);
 
   .post-cards--hover {
-    animation: shinyout 1s;
+    animation: aquaout 1s;
     animation-fill-mode: both;
     overflow: hidden;
   }
 
   &:hover {
     .post-cards--hover {
-      animation: shinyhover 1s;
+      animation: aquahover 1s;
       animation-fill-mode: both;
       overflow: hidden;
     }
@@ -150,8 +150,6 @@
   left: 0;
   height: 100%;
   width: 100%;
-  animation: shinyout 1s;
-  animation-fill-mode: both;
 }
 
 .post-cards__link {

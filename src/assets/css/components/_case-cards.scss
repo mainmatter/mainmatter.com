@@ -127,13 +127,13 @@
   background-color: var(--color-purple);
 
   .case-cards--hover {
-    animation: shinyout 1s;
+    animation: purpleout 1s;
     animation-fill-mode: both;
   }
 
   &:hover {
   .case-cards--hover {
-    animation: shinyhover 1s;
+    animation: purplehover 1s;
     animation-fill-mode: both;
   }
   }
@@ -143,13 +143,13 @@
   background-color: var(--color-aqua);
 
   .case-cards--hover {
-    animation: shinyout 1s;
+    animation: aquaout 1s;
     animation-fill-mode: both;
   }
 
   &:hover {
   .case-cards--hover {
-    animation: shinyhover 1s;
+    animation: aquahover 1s;
     animation-fill-mode: both;
   }
   }
@@ -159,13 +159,13 @@
   background-color: var(--color-black);
 
   .case-cards--hover {
-    animation: shinyout 1s;
+    animation: blackout 1s;
     animation-fill-mode: both;
   }
 
   &:hover {
   .case-cards--hover {
-    animation: shinyhover 1s;
+    animation: blackhover 1s;
     animation-fill-mode: both;
   }
   }

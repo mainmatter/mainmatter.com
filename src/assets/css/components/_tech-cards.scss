@@ -99,7 +99,7 @@
   background-color: var(--color-purple);
 
   .tech-cards--hover {
-    animation: shinyout 1s;
+    animation: purpleout 1s;
     animation-fill-mode: both;
   }
 
@@ -109,7 +109,7 @@
 
   &:hover {
     .tech-cards--hover {
-      animation: shinyhover 1s;
+      animation: purplehover 1s;
       animation-fill-mode: both;
     }
   }
@@ -119,7 +119,7 @@
   background-color: var(--color-black);
 
   .tech-cards--hover {
-    animation: shinyout 1s;
+    animation: blackout 1s;
     animation-fill-mode: both;
   }
 
@@ -129,7 +129,7 @@
 
   &:hover {
     .tech-cards--hover {
-      animation: shinyhover 1s;
+      animation: blackhover 1s;
       animation-fill-mode: both;
     }
   }
@@ -139,7 +139,7 @@
   background-color: var(--color-aqua);
 
   .tech-cards--hover {
-    animation: shinyout 1s;
+    animation: aquaout 1s;
     animation-fill-mode: both;
   }
 
@@ -149,7 +149,7 @@
 
   &:hover {
     .tech-cards--hover {
-      animation: shinyhover 1s;
+      animation: aquahover 1s;
       animation-fill-mode: both;
     }
   }

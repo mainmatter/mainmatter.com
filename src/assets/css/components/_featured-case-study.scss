@@ -23,13 +23,13 @@
     }
 
     .featured-case-study--hover {
-      animation: shinyout 1s;
+      animation: purpleout 1s;
       animation-fill-mode: both;
     }
 
     &:hover {
       .featured-case-study--hover {
-        animation: shinyhover 1s;
+        animation: purplehover 1s;
         animation-fill-mode: both;
       }
     }
@@ -44,13 +44,13 @@
     color: var(--color-white);
 
     .featured-case-study--hover {
-      animation: shinyout 1s;
+      animation: aquaout 1s;
       animation-fill-mode: both;
     }
 
     &:hover {
       .featured-case-study--hover {
-        animation: shinyhover 1s;
+        animation: aquahover 1s;
         animation-fill-mode: both;
       }
     }
@@ -70,13 +70,13 @@
     }
 
     .featured-case-study--hover {
-      animation: shinyout 1s;
+      animation: balckout 1s;
       animation-fill-mode: both;
     }
 
     &:hover {
       .featured-case-study--hover {
-        animation: shinyhover 1s;
+        animation: blackhover 1s;
         animation-fill-mode: both;
       }
     }
