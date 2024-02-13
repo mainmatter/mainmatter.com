@@ -2,92 +2,92 @@
 
 @keyframes purplehover {
   from {
-    transform: translate(-100%);
+    transform: translateX(-100%);
     background: color.scale(#6200EE, $lightness: -20%);
   }
 
   to {
-    transform: translate(0);
+    transform: translateX(0);
 
   }
 }
 
 @keyframes purpleout {
   from {
-    transform: translate(0);
+    transform: translateX(0);
     background: color.scale(#6200EE, $lightness: -20%);
   }
 
   to {
-    transform: translate(-100%);
+    transform: translateX(-100%);
   }
 }
 
 @keyframes whitehover {
   from {
-    transform: translate(-100%);
+    transform: translateX(-100%);
     background: color.scale(#fff, $lightness: -20%);
   }
 
   to {
-    transform: translate(0);
+    transform: translateX(0);
 
   }
 }
 
 @keyframes whiteout {
   from {
-    transform: translate(0);
+    transform: translateX(0);
     background: color.scale(#fff, $lightness: -20%);
   }
 
   to {
-    transform: translate(-100%);
+    transform: translateX(-100%);
   }
 }
 
 
 @keyframes blackhover {
   from {
-    transform: translate(-100%);
+    transform: translateX(-100%);
     background: color.scale(#000, $lightness: +20%);
   }
 
   to {
-    transform: translate(0);
+    transform: translateX(0);
   }
 }
 
 @keyframes blackout {
   from {
-    transform: translate(0);
+    transform: translateX(0);
     background: color.scale(#000, $lightness: +20%);
   }
 
   to {
-    transform: translate(-100%);
+    transform: translateX(-100%);
   }
 }
 
 @keyframes aquahover {
   from {
-    transform: translate(-100%);
+    transform: translateX(-100%);
     background: color.scale(#02ceba, $lightness: -20%);
   }
 
   to {
-    transform: translate(0);
+    transform: translateX(0);
   }
 }
 
 @keyframes aquaout {
   from {
-    transform: translate(0);
+    transform: translateX(0);
     background: color.scale(#02ceba, $lightness: -20%);
   }
 
   to {
-    transform: translate(-100%);
+    transform: translateX(-100%);
   }
 }
 
