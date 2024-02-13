@@ -1,96 +1,100 @@
-@use 'sass:color';
+@use "sass:color";
 
 @keyframes purplehover {
   from {
     transform: translateX(-100%);
-    background: color.scale(#6200EE, $lightness: -20%);
+    background: color.scale(#6200ee, $lightness: -10%);
   }
 
   to {
-    transform: translateX(0);
-
+    transform: translateX(0px);
+    background: color.scale(#6200ee, $lightness: -10%);
   }
 }
 
 @keyframes purpleout {
   from {
-    transform: translateX(0);
-    background: color.scale(#6200EE, $lightness: -20%);
+    transform: translateX(0px);
+    background: color.scale(#6200ee, $lightness: -10%);
   }
 
   to {
     transform: translateX(-100%);
+    background: color.scale(#6200ee, $lightness: -10%);
   }
 }
 
 @keyframes whitehover {
   from {
     transform: translateX(-100%);
-    background: color.scale(#fff, $lightness: -20%);
+    background: color.scale(#fff, $lightness: -10%);
   }
 
   to {
-    transform: translateX(0);
-
+    transform: translateX(0px);
+    background: color.scale(#fff, $lightness: -10%);
   }
 }
 
 @keyframes whiteout {
   from {
-    transform: translateX(0);
-    background: color.scale(#fff, $lightness: -20%);
+    transform: translateX(0px);
+    background: color.scale(#fff, $lightness: -10%);
   }
 
   to {
     transform: translateX(-100%);
+    background: color.scale(#fff, $lightness: -10%);
   }
 }
-
 
 @keyframes blackhover {
   from {
     transform: translateX(-100%);
-    background: color.scale(#000, $lightness: +20%);
+    background: color.scale(#000, $lightness: +10%);
   }
 
   to {
-    transform: translateX(0);
+    transform: translateX(0px);
+    background: color.scale(#000, $lightness: +10%);
   }
 }
 
 @keyframes blackout {
   from {
-    transform: translateX(0);
-    background: color.scale(#000, $lightness: +20%);
+    transform: translateX(0px);
+    background: color.scale(#000, $lightness: +10%);
   }
 
   to {
     transform: translateX(-100%);
+    background: color.scale(#000, $lightness: +10%);
   }
 }
 
 @keyframes aquahover {
   from {
     transform: translateX(-100%);
-    background: color.scale(#02ceba, $lightness: -20%);
+    background: color.scale(#02ceba, $lightness: -10%);
   }
 
   to {
-    transform: translateX(0);
+    transform: translateX(0px);
+    background: color.scale(#02ceba, $lightness: -10%);
   }
 }
 
 @keyframes aquaout {
   from {
-    transform: translateX(0);
-    background: color.scale(#02ceba, $lightness: -20%);
+    transform: translateX(0px);
+    background: color.scale(#02ceba, $lightness: -10%);
   }
 
   to {
     transform: translateX(-100%);
+    background: color.scale(#02ceba, $lightness: -10%);
   }
 }
-
 
 @keyframes aquafill {
   from {
