@@ -3,7 +3,7 @@ h1,
   margin: 0;
   font-family: var(--font-base);
   font-weight: 700;
-  font-size: clamp(2.5rem, -2.5rem + 10.4167vw, 5rem);
+  font-size: clamp(2.5rem, -0.5rem + 6.25vw, 4rem);
   line-height: 1.3;
   text-transform: none;
   letter-spacing: 0;
@@ -14,7 +14,7 @@ h2,
   margin: 0;
   font-family: var(--font-base);
   font-weight: 700;
-  font-size: clamp(2.5rem, -0.5rem + 6.25vw, 4rem);
+  font-size: clamp(2.25rem, -0.25rem + 5.2083vw, 3.5rem);
   line-height: 1.3;
   text-transform: none;
   letter-spacing: 0;
@@ -25,7 +25,7 @@ h3,
   margin: 0;
   font-family: var(--font-base);
   font-weight: 700;
-  font-size: clamp(2rem, -1rem + 6.25vw, 3.5rem);
+  font-size: clamp(2rem, 0rem + 4.1667vw, 3rem);
   line-height: 1.25;
   text-transform: none;
   letter-spacing: 0;
@@ -57,7 +57,7 @@ body {
 }
 
 .large {
-  font-size: clamp(1.5rem, 0.2rem + 2.5vw, 2rem);
+  font-size: clamp(1.5rem, 1rem + 1.0417vw, 1.75rem);
   line-height: 2;
 }
 
