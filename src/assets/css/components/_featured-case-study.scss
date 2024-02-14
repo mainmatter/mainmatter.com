@@ -9,6 +9,18 @@
     margin-top: rem-calc(80);
   }
 
+  svg {
+    animation: arrowout 0.5s;
+    animation-fill-mode: both;
+  }
+
+  &:hover {
+    svg {
+      animation: arrowhover 0.5s;
+      animation-fill-mode: both;
+    }
+  }
+
   &--purple {
     background-color: var(--color-purple);
     --color-animation: var(--color-aqua);
@@ -238,16 +250,6 @@
 
   .featured-case-study__cta {
     margin: 1.25rem 0 0;
-  }
-
-  .featured-case-study__link {
-    &:hover {
-      & ~ .featured-case-study__image-overlay .cta-link__text,
-      & ~ .featured-case-study__image-overlay .cta-link__arrow svg,
-      & ~ .cta-link {
-        color: var(--color-aqua);
-      }
-    }
   }
 
   .featured-case-study__logo {

@@ -30,6 +30,15 @@
   position: relative;
   cursor: pointer;
   overflow: hidden;
+
+  &:hover {
+    .tech-cards__link-arrow {
+      svg {
+        animation: arrowhover 0.5s;
+        animation-fill-mode: both;
+      }
+    }
+  }
 }
 
 .tech-cards_link {
@@ -98,60 +107,24 @@
 .tech-cards__grid-element:nth-child(2n + 1) {
   background-color: var(--color-purple);
 
-  .tech-cards--hover {
-    animation: purpleout 1s;
-    animation-fill-mode: both;
-  }
-
   svg g {
     fill: #5600d1;
-  }
-
-  &:hover {
-    .tech-cards--hover {
-      animation: purplehover 1s;
-      animation-fill-mode: both;
-    }
   }
 }
 
 .tech-cards__grid-element:nth-child(2n) {
   background-color: var(--color-black);
 
-  .tech-cards--hover {
-    animation: blackout 1s;
-    animation-fill-mode: both;
-  }
-
   svg g {
     fill: #2b2b2b;
-  }
-
-  &:hover {
-    .tech-cards--hover {
-      animation: blackhover 1s;
-      animation-fill-mode: both;
-    }
   }
 }
 
 .tech-cards__grid-element:nth-child(5n + 1) {
   background-color: var(--color-aqua);
 
-  .tech-cards--hover {
-    animation: aquaout 1s;
-    animation-fill-mode: both;
-  }
-
   svg g {
     fill: #55e6d8;
-  }
-
-  &:hover {
-    .tech-cards--hover {
-      animation: aquahover 1s;
-      animation-fill-mode: both;
-    }
   }
 }
 
@@ -167,6 +140,8 @@
     transition: color 0.1s ease;
     width: 24px;
     height: auto;
+    animation: arrowout 0.5s;
+    animation-fill-mode: both;
   }
 
   &--rotate {

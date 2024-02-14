@@ -8,99 +8,118 @@ $white-color: #ffffff;
 @keyframes whitehover {
   from {
     transform: translateX(-100%);
-    background: color.scale($aqua-color, $lightness: +10%);
+    background: var(--color-white);
   }
 
   to {
     transform: translateX(0px);
-    background: color.scale($aqua-color, $lightness: +10%);
+    background: var(--color-white);
   }
 }
 
 @keyframes whiteout {
   from {
     transform: translateX(0px);
-    background: color.scale($aqua-color, $lightness: +10%);
+    background: var(--color-white);
   }
 
   to {
     transform: translateX(-100%);
-    background: color.scale($aqua-color, $lightness: +10%);
+    background: var(--color-white);
   }
 }
 
 @keyframes blackhover {
   from {
     transform: translateX(-100%);
-    background: color.scale($purple-color, $lightness: -10%);
+    background: var(--color-black);
   }
 
   to {
     transform: translateX(0px);
-    background: color.scale($purple-color, $lightness: -10%);
+    background: var(--color-black);
   }
 }
 
 @keyframes blackout {
   from {
     transform: translateX(0px);
-    background: color.scale($purple-color, $lightness: -10%);
+    background: var(--color-black);
   }
 
   to {
     transform: translateX(-100%);
-    background: color.scale($purple-color, $lightness: -10%);
+    background: var(--color-black);
   }
 }
 
 @keyframes aquahover {
   from {
     transform: translateX(-100%);
-    background: color.scale($aqua-color, $lightness: +10%);
+    background: var(--color-aqua);
   }
 
   to {
     transform: translateX(0px);
-    background: color.scale($aqua-color, $lightness: +10%);
+    background: var(--color-aqua);
   }
 }
 
 @keyframes aquaout {
   from {
     transform: translateX(0px);
-    background: color.scale($aqua-color, $lightness: +10%);
+    background: var(--color-aqua);
   }
 
   to {
     transform: translateX(-100%);
-    background: color.scale($aqua-color, $lightness: +10%);
+    background: var(--color-aqua);
   }
 }
 
 @keyframes purplehover {
   from {
     transform: translateX(-100%);
-    background: color.scale($purple-color, $lightness: +10%);
+    background: var(--color-purple);
   }
 
   to {
     transform: translateX(0px);
-    background: color.scale($purple-color, $lightness: +10%);
+    background: var(--color-purple);
   }
 }
 
 @keyframes purpleout {
   from {
     transform: translateX(0px);
-    background: color.scale($purple-color, $lightness: +10%);
+    background: var(--color-purple);
   }
 
   to {
     transform: translateX(-100%);
-    background: color.scale($purple-color, $lightness: +10%);
+    background: var(--color-purple);
   }
 }
 
+@keyframes arrowhover {
+  from {
+    transform: translateX(0) rotate(-90deg);
+  }
+
+  to {
+    transform: translateX(0.5rem) rotate(-90deg);
+  }
+}
+
+@keyframes arrowout {
+  from {
+    transform: translateX(0.5rem) rotate(-90deg);
+  }
+
+  to {
+    transform: translateX(0) rotate(-90deg);
+  }
+}
 
 @keyframes aquafill {
   from {

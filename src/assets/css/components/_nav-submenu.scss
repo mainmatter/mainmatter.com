@@ -79,17 +79,23 @@
   outline-offset: -0.125rem;
   transition: color 0.3s ease;
 
+  svg {
+    width: 0.75rem;
+    height: 0.75rem;
+    transform: rotate(-90deg);
+    margin-right: 1rem;
+    animation: arrowout 0.5s;
+    animation-fill-mode: both;
+  }
+
   &:hover {
     color: var(--color-accent);
     text-decoration: none;
 
-  }
-
-  svg {
-    width: 1rem;
-    height: 1rem;
-    transform: rotate(-90deg);
-    margin-right: 1rem;
+    svg {
+      animation: arrowhover 0.5s;
+      animation-fill-mode: both;
+    }
   }
 }
 
@@ -136,6 +142,15 @@ body[data-js-enabled="true"] {
       transform: rotate(-90deg);
       height: 1rem;
       width: 1rem;
+      animation: arrowout 0.5s;
+      animation-fill-mode: both;
+    }
+
+    &:hover {
+      svg {
+        animation: arrowhover 0.5s;
+        animation-fill-mode: both;
+      }
     }
   }
 

@@ -37,11 +37,16 @@
   }
 }
 
-
-
 .post-cards__grid-element:hover {
   color: var(--color-white);
   cursor: pointer;
+
+  .post-cards__link-arrow {
+    svg {
+      animation: arrowhover 0.5s;
+      animation-fill-mode: both;
+    }
+  }
 }
 
 .post-cards__logo svg {
@@ -63,56 +68,14 @@
 
 .post-cards__grid-element:nth-child(2n + 1) {
   background-color: var(--color-purple);
-
-  .post-cards--hover {
-    animation: purpleout 1s;
-    animation-fill-mode: both;
-    overflow: hidden;
-  }
-
-  &:hover {
-    .post-cards--hover {
-      animation: purplehover 1s;
-      animation-fill-mode: both;
-      overflow: hidden;
-    }
-  }
 }
 
 .post-cards__grid-element:nth-child(2n) {
   background-color: var(--color-black);
-
-  .post-cards--hover {
-    animation: blackout 1s;
-    animation-fill-mode: both;
-    overflow: hidden;
-  }
-
-  &:hover {
-    .post-cards--hover {
-      animation: blackhover 1s;
-      animation-fill-mode: both;
-      overflow: hidden;
-    }
-  }
 }
 
 .post-cards__grid-element:nth-child(5n + 1) {
   background-color: var(--color-aqua);
-
-  .post-cards--hover {
-    animation: aquaout 1s;
-    animation-fill-mode: both;
-    overflow: hidden;
-  }
-
-  &:hover {
-    .post-cards--hover {
-      animation: aquahover 1s;
-      animation-fill-mode: both;
-      overflow: hidden;
-    }
-  }
 }
 
 .post-cards__content {
@@ -175,6 +138,8 @@
     transition: color 0.3s ease;
     width: 24px;
     height: auto;
+    animation: arrowout 0.5s;
+    animation-fill-mode: both;
   }
 
   &--rotate {

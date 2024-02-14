@@ -31,7 +31,6 @@
   overflow: hidden;
   cursor: pointer;
 
-
   a:hover {
     text-decoration: underline;
   }
@@ -77,6 +76,11 @@
 
   .solution {
     opacity: 1;
+  }
+
+  svg {
+    animation: arrowhover 0.5s;
+    animation-fill-mode: both;
   }
 }
 
@@ -133,9 +137,7 @@
 
 .case-cards__grid-element:nth-child(2n + 3) {
   background-color: var(--color-black);
-  }
-
-
+}
 
 .case-cards__link-arrow {
   position: relative;
@@ -149,6 +151,8 @@
     transition: color 0.1s ease;
     width: 24px;
     height: auto;
+    animation: arrowout 0.5s;
+    animation-fill-mode: both;
   }
 
   &--rotate {
