@@ -77,30 +77,18 @@ description: "There are lots of reasons that a team gets overextended – lack o
 } %}
 
 {% set 'tech_2' = {
-  "title": "Rust is a competitive advantage",
-  "logo": "rust",
-  "link": "rust-consulting"
-} %}
-
-{% set 'tech_3' = {
-  "title": "Svelte is the future of frontend development",
-  "logo": "svelte",
-  "link": "svelte-consulting"
-} %}
-
-{% set 'tech_4' = {
   "title": "Elixir and Phoenix: The best of all worlds",
   "logo": "elixir",
   "link": "expertise/elixir-phoenix"
 } %}
 
-{% set 'tech_5' = {
+{% set 'tech_3' = {
   "title": "We're veteran Ruby and Ruby on Rails experts",
   "logo": "ruby",
   "link": "ruby-rails-consulting"
 } %}
 
-{% set technologies = [tech_1, tech_2, tech_3, tech_4, tech_5] %}
+{% set technologies = [tech_1, tech_2, tech_3] %}
 {{ techCards('modernization_tech', 'Technologies', 'Our skillset is based on a core set of technologies that cover architecture, backend and frontend development with: ', technologies) }}
 
 <section class="my-10">
