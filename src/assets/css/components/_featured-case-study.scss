@@ -10,13 +10,15 @@
   }
 
   svg {
-    animation: arrowout 0.5s;
+   animation: arrowhover 0.3s;
+   animation-timing-function: ease;
     animation-fill-mode: both;
   }
 
   &:hover {
     svg {
-      animation: arrowhover 0.5s;
+      animation: arrowhover 0.3s;
+      animation-timing-function: ease;
       animation-fill-mode: both;
     }
   }

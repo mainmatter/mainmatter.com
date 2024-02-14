@@ -42,13 +42,14 @@
     width: 1.5rem;
     color: var(--color-purple);
     margin-right: 1.5rem;
-    animation: arrowout 0.5s;
-    animation-fill-mode: both;
+   animation: arrowout 0.3s;
+   animation-timing-function: ease;
   }
 
   &:hover {
     svg {
-      animation: arrowhover 0.5s;
+      animation: arrowhover 0.3s;
+      animation-timing-function: ease;
       animation-fill-mode: both;
     }
   }

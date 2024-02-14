@@ -34,7 +34,8 @@
   &:hover {
     .tech-cards__link-arrow {
       svg {
-        animation: arrowhover 0.5s;
+        animation: arrowhover 0.3s;
+        animation-timing-function: ease;
         animation-fill-mode: both;
       }
     }
@@ -140,8 +141,8 @@
     transition: color 0.1s ease;
     width: 24px;
     height: auto;
-    animation: arrowout 0.5s;
-    animation-fill-mode: both;
+    animation: arrowout 0.3s;
+    animation-timing-function: ease;
   }
 
   &--rotate {

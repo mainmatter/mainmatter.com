@@ -18,10 +18,7 @@ $white-color: #ffffff;
 }
 
 @keyframes whiteout {
-  from {
-    transform: translateX(0px);
-    background: var(--color-white);
-  }
+
 
   to {
     transform: translateX(-100%);
@@ -42,10 +39,6 @@ $white-color: #ffffff;
 }
 
 @keyframes blackout {
-  from {
-    transform: translateX(0px);
-    background: var(--color-black);
-  }
 
   to {
     transform: translateX(-100%);
@@ -66,10 +59,6 @@ $white-color: #ffffff;
 }
 
 @keyframes aquaout {
-  from {
-    transform: translateX(0px);
-    background: var(--color-aqua);
-  }
 
   to {
     transform: translateX(-100%);
@@ -90,11 +79,6 @@ $white-color: #ffffff;
 }
 
 @keyframes purpleout {
-  from {
-    transform: translateX(0px);
-    background: var(--color-purple);
-  }
-
   to {
     transform: translateX(-100%);
     background: var(--color-purple);
@@ -102,9 +86,6 @@ $white-color: #ffffff;
 }
 
 @keyframes arrowhover {
-  from {
-    transform: translateX(0) rotate(-90deg);
-  }
 
   to {
     transform: translateX(0.5rem) rotate(-90deg);
@@ -112,12 +93,8 @@ $white-color: #ffffff;
 }
 
 @keyframes arrowout {
-  from {
-    transform: translateX(0.5rem) rotate(-90deg);
-  }
-
   to {
-    transform: translateX(0) rotate(-90deg);
+    transform: translate(0rem) rotate(-90deg);
   }
 }
 
