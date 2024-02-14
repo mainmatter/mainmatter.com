@@ -28,13 +28,21 @@
 
 .featured-services__link {
   display: flex;
-  align-items: center;
+  align-items: start;
+  flex-direction: column;
   text-decoration: none;
-
 
   &-text {
     text-decoration: none;
   }
+
+  &:hover {
+
+    .featured-services__link-description {
+      color: var(--color-purple);
+    }
+  }
+
 
   svg {
     transform: rotate(-90deg);
@@ -53,6 +61,12 @@
       animation-fill-mode: both;
     }
   }
+}
+
+.featured-services__link-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 a.featured-services__link {
