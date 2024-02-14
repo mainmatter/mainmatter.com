@@ -92,13 +92,13 @@
 
     .btn-primary--hover {
       animation: purpleout 0.5s;
+      animation-fill-mode: both;
     }
 
     &:hover {
       .btn-primary--hover {
         overflow: hidden;
         animation: purplehover 0.5s;
-
         animation-fill-mode: both;
       }
     }
@@ -109,13 +109,13 @@
 
     .btn-primary--hover {
       animation: aquaout 0.5s;
+      animation-fill-mode: both;
     }
 
     &:hover {
       .btn-primary--hover {
         overflow: hidden;
         animation: aquahover 0.5s;
-
         animation-fill-mode: both;
       }
     }
@@ -127,13 +127,13 @@
 
     .btn-primary--hover {
       animation: whiteout 0.5s;
+      animation-fill-mode: both;
     }
 
     &:hover {
       .btn-primary--hover {
         overflow: hidden;
         animation: whitehover 0.5s;
-
         animation-fill-mode: both;
       }
     }

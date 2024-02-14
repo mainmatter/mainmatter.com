@@ -125,52 +125,17 @@
 
 .case-cards__grid-element:nth-child(n) {
   background-color: var(--color-purple);
-
-  .case-cards--hover {
-    animation: purpleout 1s;
-    animation-fill-mode: both;
-  }
-
-  &:hover {
-  .case-cards--hover {
-    animation: purplehover 1s;
-    animation-fill-mode: both;
-  }
-  }
 }
 
 .case-cards__grid-element:nth-child(2n) {
   background-color: var(--color-aqua);
-
-  .case-cards--hover {
-    animation: aquaout 1s;
-    animation-fill-mode: both;
-  }
-
-  &:hover {
-  .case-cards--hover {
-    animation: aquahover 1s;
-    animation-fill-mode: both;
-  }
-  }
 }
 
 .case-cards__grid-element:nth-child(2n + 3) {
   background-color: var(--color-black);
-
-  .case-cards--hover {
-    animation: blackout 1s;
-    animation-fill-mode: both;
   }
 
-  &:hover {
-  .case-cards--hover {
-    animation: blackhover 1s;
-    animation-fill-mode: both;
-  }
-  }
 
-}
 
 .case-cards__link-arrow {
   position: relative;
