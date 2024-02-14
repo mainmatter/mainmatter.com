@@ -1,8 +1,11 @@
 {%- macro featuredServices(services, content) -%}
   <section class="featured-services container container--lg">
-  <h2 class="featured-services__title h5">{{ content.title }}</h2>
+
     <div class="featured-services__list-wrapper">
+      <div>
+      <h2 class="featured-services__title h5 mb-2">{{ content.title }}</h2>
       <h3 class="h2">{{ content.subtitle }}</h3>
+      </div>
       <ul class="featured-services__list">
         {%- for service in services %}
           <li class="featured-services__list-item">
