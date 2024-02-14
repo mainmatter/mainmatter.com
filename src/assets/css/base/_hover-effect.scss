@@ -98,6 +98,19 @@ $white-color: #ffffff;
   }
 }
 
+@keyframes texthover {
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes textout {
+  to {
+    transform: translate(0px);
+  }
+}
+
 @keyframes aquafill {
   from {
     fill: #55e6d8;
