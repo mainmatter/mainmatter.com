@@ -2,6 +2,12 @@
   margin-bottom: 5rem;
 }
 
+.author-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 .workshop-authors__image-wrapper {
   margin-right: 3rem;
@@ -15,4 +21,10 @@
   height: 100%;
 }
 
+@media (min-width: 48em) {
+  .author-socials {
+    flex-direction: row;
+  }
+
+}
 

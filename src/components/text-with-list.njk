@@ -22,9 +22,6 @@
           {% endfor %}
         </{{ tag }}>
       {% endif %}
-      {% if content.linkUrl and content.linkText %}
-        {{ ctaLink(content.linkUrl, content.linkText, 'text-with-list__cta') }}
-      {% endif %}
     </div>
   </section>
 {% endmacro %}

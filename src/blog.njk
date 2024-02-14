@@ -22,18 +22,17 @@
 {% from "nav-pagination.njk" import navPagination %}
 {% from "cta-banner.njk" import ctaBanner %}
 
-
 {{ featuredPost(collections.posts[0]) }}
 <div id="posts" class="container container--xl mb-10">
   {% include 'global/tag-filter.njk' %}
   <div class="post-cards__grid">
     {%- for post in pagination.items -%}
-
-        {{ postCard(post) }}
-
+      {{ postCard(post) }}
     {%- endfor -%}
   </div>
-  {% if pagination.pageNumber === 0 %}{% set nextLabel = 'Explore more articles' %}{% else %}{% set nextLabel = 'Next' %}{% endif %}
+  {% if pagination.pageNumber === 0 %}{% set nextLabel = 'Explore more articles' %}
+  {% else %}{% set nextLabel = 'Next' %}
+  {% endif %}
   {{ navPagination(pagination.href.previous, pagination.href.next, nextLabel) }}
 </div>
 {% set 'content' = {
