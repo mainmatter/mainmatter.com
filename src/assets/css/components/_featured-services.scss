@@ -22,6 +22,10 @@
   text-decoration: none;
 }
 
+.icon-arrow {
+  flex-shrink: 0;
+}
+
 .featured-services__link {
   display: flex;
   align-items: center;
@@ -31,7 +35,6 @@
   &-text {
     text-decoration: none;
   }
-
 
   svg {
     transform: rotate(-90deg);
