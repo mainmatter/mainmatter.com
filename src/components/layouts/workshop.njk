@@ -53,14 +53,13 @@ layout: 'base-energy'
         <div class="author__text-wrapper">
           <div class="author__name-wrapper">
             <h4 class="author__name">{{ lead.name }}</h4>
+            {% if lead.handle %}
+            {{ authorSocials(lead.handle) }}
+          {% endif %}
           </div>
-          {% if lead.handle %}
-            {{ authorSocials(lead.handle, "author-socials--desktop-only") }}
-          {% endif %}
+
           <p class="author__title large">{{ lead.title }}</p>
-          {% if lead.handle %}
-            {{ authorSocials(lead.handle, "author-socials--mobile-only") }}
-          {% endif %}
+
         </div>
       </div>
       <div class="author__details mt-3 {% if lead.bio.length > 200 %} author__details--full-width{% endif %} ">
