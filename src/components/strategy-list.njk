@@ -16,7 +16,7 @@
               <h4 class="strategy-list__title">{{el.title}}</h4>
             {% endif %}
             {% if el.text %}
-              <p class="mt-2">{{ el.text }}</p>
+              <p class="mt-2">{{ el.text | safe }}</p>
             {% endif %}
             {% if el.linkUrl %}
               {% set link = {
