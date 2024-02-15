@@ -18,7 +18,7 @@ Mainmatter is a digital product consultancy with an emphasis on sustainable
 success. We have a proven track record of successful projects for international
 clients, ranging from startups to Fortune Global 500 enterprises. To learn more
 about our approach, take a look at our
-[services](/services/digital-products-and-design/) and [Playbook](/playbook).
+[services](/services/idea-to-release/) and [Playbook](/playbook).
 
 ### Anyone from an underrepresented group in tech is welcome to apply
 
