@@ -213,8 +213,8 @@ engineers to work on OSS will set your business up for success.
 
 If you have any questions on how to get started with contributing to open-source
 at your company, [send us a message](/contact/). You can also book
-[a workshop for your engineering team](/services/workshops/)
-to jump start the process of contributing.
+[a workshop for your engineering team](/services/workshops/) to jump start the
+process of contributing.
 
 ## Sources
 
