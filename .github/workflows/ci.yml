@@ -84,7 +84,7 @@ jobs:
       - name: lighthouse
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-        run: pnpm lhci autorun --collect.staticDistDir=./dist --collect.url=http://localhost/ --collect.url=http://localhost/blog/ --collect.url=http://localhost/services/team-augmentation-and-training/ --collect.url=http://localhost/ember-consulting/ --collect.url=http://localhost/playbook/ --collect.url=http://localhost/contact/ --collect.url=http://localhost/services/workshops/hands-on-ember/ --collect.url=http://localhost/blog/2022/09/18/simplabs-becomes-mainmatter/ --upload.target=temporary-public-storage
+        run: pnpm lhci autorun --collect.staticDistDir=./dist --collect.url=http://localhost/ --collect.url=http://localhost/blog/ --collect.url=http://localhost/services/team-reinforcement/ --collect.url=http://localhost/ember-consulting/ --collect.url=http://localhost/playbook/ --collect.url=http://localhost/contact/ --collect.url=http://localhost/services/workshops/hands-on-ember/ --collect.url=http://localhost/blog/2022/09/18/simplabs-becomes-mainmatter/ --upload.target=temporary-public-storage
 
   crawl:
     name: 'Crawl Links'
