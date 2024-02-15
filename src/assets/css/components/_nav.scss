@@ -1,7 +1,7 @@
 .nav {
   position: absolute;
   margin: 0 auto;;
-  width: 90%;
+  width: 100%;
   z-index: 1;
   color: var(--color-white);
 
@@ -21,7 +21,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 90%;
   padding: 0;
   text-decoration: none;
   background-color: transparent;
@@ -32,6 +32,7 @@
 }
 
 .nav__main {
+  margin: 5%;
   display: flex;
   align-items: center;
 }
@@ -61,7 +62,7 @@
   transition: color 0.3s ease;
 
   &:hover {
-    color: var(--color-accent);
+    color: var(--color-aqua);
 
     .nav__link-text {
       text-decoration-line: underline;
