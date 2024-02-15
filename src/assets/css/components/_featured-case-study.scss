@@ -106,6 +106,46 @@
   }
 }
 
+.featured-case-study__image-overlay {
+  position: relative;
+  min-width: 100%;
+  color: var(--color-white);
+  aspect-ratio: 9/8;
+}
+
+.featured-case-study__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
+
+  &--purple {
+    background-color: var(--color-purple);
+    opacity: 0.9;
+  }
+
+  &--black {
+    background-color: var(--color-black);
+    opacity: 0.6;
+  }
+}
+
+.featured-case-study__image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.featured-case-study__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
 
 .featured-case-study--hover {
