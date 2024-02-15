@@ -16,7 +16,6 @@ description:
   consulting.</p>
 hero:
   color: purple
-  textPosition: "center"
   image: "/assets/images/work/experteer.jpg"
   imageAlt: "Collage of the Experteer mobile application"
   tags: "architecture / development / process"

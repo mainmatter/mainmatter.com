@@ -14,7 +14,6 @@ description:
   their existing product, they trusted us to set them up for future success.</p>
 hero:
   color: purple
-  textPosition: "center"
   image: "/assets/images/work/timify.jpg"
   imageAlt: "Smiling blonde woman behind a counter serving another woman"
   tags: "development / architecture / mentoring"

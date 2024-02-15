@@ -17,7 +17,6 @@ description:
   success.</p>
 hero:
   color: purple
-  textPosition: "center"
   image: "/assets/images/work/qonto.jpg"
   imageAlt: "Woman holds a credit card while using the Qonto web application"
   tags: "development / refactoring / mentoring"

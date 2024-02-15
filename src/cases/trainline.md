@@ -16,7 +16,6 @@ description:
   process.</p>
 hero:
   color: purple
-  textPosition: "center"
   image: "/assets/images/work/trainline.jpg"
   imageAlt: "Back view of a man standing in front of departure boards"
   tags: "development / process / mentoring"

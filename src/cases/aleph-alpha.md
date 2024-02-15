@@ -17,7 +17,6 @@ description:
   architecting and implementing a scalable and efficient data pipeline.</p>
 hero:
   color: purple
-  textPosition: "center"
   image: "/assets/images/work/aleph-alpha-background-2.jpg"
   imageAlt: "Router on a white background"
   tags: "development / architecture"

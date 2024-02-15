@@ -12,7 +12,6 @@ solution: We built a new user interface using Ember.js as a strong foundation.
 tags: Team Reinforcement
 hero:
   color: purple
-  textPosition: "center"
   image: "/assets/images/work/ddwrt.jpg"
   imageAlt: "Router on a white background"
   tags: Team Reinforcement

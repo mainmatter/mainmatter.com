@@ -15,7 +15,6 @@ description:
   until its successful completion.</p>
 hero:
   color: purple
-  textPosition: "center"
   image: "/assets/images/work/mvb-background.jpg"
   imageAlt: "Servers in Rack"
   tags: "Team Reinforcement"

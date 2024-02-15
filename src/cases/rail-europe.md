@@ -18,7 +18,6 @@ description:
   Svelte.</p>
 hero:
   color: purple
-  textPosition: "center"
   image: "/assets/images/work/rail-europe.jpg"
   imageAlt: "Train tracks on gravel"
   tags: "strategic advice / process / mentoring"

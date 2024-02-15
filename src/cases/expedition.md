@@ -16,7 +16,6 @@ solution:
 tags: Strategic Advice
 hero:
   color: purple
-  textPosition: "center"
   image: "/assets/images/work/expedition.jpg"
   imageAlt: "Expedition homepage viewed on an iPad"
   tags: "development / architecture / mentoring"
