@@ -13,9 +13,12 @@ description: Find out about upcoming events, conferences and meetups we will be 
 {% from "cta-banner.njk" import ctaBanner %}
 
 {% set 'content' = {
-  "title": "Guidance from our team of trusted industry experts"
+  "title": "Guidance from our team of trusted industry experts",
+  "image": "/assets/images/hero/events.jpg",
+  "alt": "Detailed view of a microphone",
+  "loading": "eager"
 } %}
-{{ colorHero('black', content) }}
+{{ colorHero('purple', content) }}
 
 <div class="section container container--lg">
   <div class="section__introduction">
