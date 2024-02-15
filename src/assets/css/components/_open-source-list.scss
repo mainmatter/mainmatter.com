@@ -7,6 +7,11 @@
   margin: 5rem 0;
 }
 
+.opensource-list__project-image {
+  height: 4rem;
+  width: auto;
+}
+
 @media (min-width: 72rem) {
   .opensource-list__list {
   display: grid;

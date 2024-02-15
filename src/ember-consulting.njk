@@ -119,9 +119,8 @@ og:
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
 
-<section class="embroider-sponsors my-10">
-  <div class="container container--xl">
-    <div class="embroider-sponsors__intro">
+<section>
+<div class="embroider-sponsors__intro container container--xl">
       <h2 class="mb-2">The Embroider Initiative</h2>
       <p class="large">
       Mainmatter, together with a group of sponsors, is working on an initiative to ship Embroider and secure the ecosystem’s investment in Ember.js.
@@ -133,7 +132,10 @@ og:
     %}
       {{ btnSecondary( link, 'mt-3' )}}
     </div>
+<div class="embroider-sponsors my-10">
+  <div class="container container--xl">
     {% include 'content/embroider-sponsors.njk' %}
+  </div>
   </div>
 </section>
 
