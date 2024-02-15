@@ -202,8 +202,6 @@ $states: "loading", "success", "error";
   position: fixed;
   top: 0;
   right: 0;
-  margin-top: 2rem;
-  margin-right: 2rem;
   padding: 0.5rem;
   color: currentColor;
   background-color: transparent;
@@ -212,6 +210,7 @@ $states: "loading", "success", "error";
   height: 2.75rem;
   align-self: flex-end;
   text-align: right;
+  cursor: pointer;
 
   svg {
     transition: color 0.3s ease;
