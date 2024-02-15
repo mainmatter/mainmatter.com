@@ -16,6 +16,7 @@ description: <p>According to the Stack Overflow survey, Rust is one of the most
   experience in Rust. We recommend having prior experience in writing web
   applications.</p>
 hero:
+  color: purple
   image: "/assets/images/workshops/introduction-to-rust-for-web-developers/header-background.jpg"
   imageAlt: "The Rust logo in white on top of a photo of a rusty metal surface"
 og:

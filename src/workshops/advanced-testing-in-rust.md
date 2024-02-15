@@ -13,6 +13,7 @@ description: |
   If you are new to Rust instead, you might be interested instead in our 
   <a href="/services/workshops/an-introduction-to-testing-in-rust/">introductory testing workshop</a>.</p>
 hero:
+  color: purple
   image: "/assets/images/workshops/advanced-testing-in-rust/header-background.jpg"
   imageAlt:
     "A schematic drawing of a grid with files on top and connecting lines

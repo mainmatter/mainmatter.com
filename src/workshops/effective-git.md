@@ -11,6 +11,7 @@ description:
   with an understanding of the foundational concepts along with practical
   guidance for overcoming those challenges.</p>
 hero:
+  color: purple
   image: "/assets/images/workshops/effective-git/effective-git-workshop-hero.jpg"
   imageAlt: "Screenshot of an example Git project"
 og:

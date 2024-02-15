@@ -6,9 +6,9 @@ description:
   Create an interface inventory of your digital product, and align with your
   team on how to prioritize refactoring using a design systems methodology.
 hero:
+  color: purple
   image: "/assets/images/workshops/design-system-kickoff-interface-inventory/design-system-kickoff-interface-inventory-hero.jpg"
   imageAlt: "Design system on a computer screen"
-
 og:
   image: /assets/images/workshops/design-system-kickoff-interface-inventory/og-image.jpg
 topics:

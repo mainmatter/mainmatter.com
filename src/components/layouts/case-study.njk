@@ -8,35 +8,36 @@ layout: base
 {% from 'case-card.njk' import caseCard %}
 {%- block content -%}
 
-{% set 'hero' = {
-  "title": displayTitle ,
-  "subheading": hero.tags,
+  {% set 'hero' = {
+    "title": displayTitle,
+    "subheading": hero.tags,
+    "image": hero.image,
+    "alt": hero.imageAlt,
+    "loading": "eager"
+  } %}
+  {{ colorHero('purple', hero) }}
 
-
-} %}
-{{ colorHero('purple', hero) }}
-
-    <article class="case-study">
-      <div class="container container--lg">
-        {{ content | safe }}
+  <article class="case-study">
+    <div class="container container--lg">
+      {{ content | safe }}
+    </div>
+  </article>
+  {% set postsFromCollection = collections.caseStudiesFeatured | getMorePosts(page) %}
+  {% if postsFromCollection %}
+    <section class="featured-case-studies">
+      <div class="container container--xl">
+        <h2 class="featured-case-studies__heading h5">Discover more case studies</h2>
+        <ul class="featured-case-studies__list">
+          {% for post in postsFromCollection %}
+            {% if loop.index0 < 3 %}
+              {{ caseCard(post.fileSlug) }}
+            {% endif %}
+          {% endfor %}
+        </ul>
       </div>
-    </article>
-    {% set postsFromCollection = collections.caseStudiesFeatured | getMorePosts(page) %}
-    {% if postsFromCollection %}
-      <section class="featured-case-studies">
-        <div class="container container--xl">
-          <h2 class="featured-case-studies__heading h5">Discover more case studies</h2>
-          <ul class="featured-case-studies__list">
-            {% for post in postsFromCollection %}
-              {% if loop.index0 < 3 %}
-                {{ caseCard(post.fileSlug) }}
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </div>
-      </section>
-    {% endif %}
-  </div>
+    </section>
+  {% endif %}
+</div>
 
 {% set 'content' = {
   "title": "Grow your business with us",

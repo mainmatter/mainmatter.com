@@ -13,6 +13,7 @@ description: |
   If you've been working with Rust for a while, you might be interested instead in our 
   <a href="/services/workshops/advanced-testing-in-rust/">advanced testing workshop</a>.</p>
 hero:
+  color: purple
   image: "/assets/images/workshops/an-introduction-to-testing-in-rust/header-background.jpg"
   imageAlt: "A drawing of a giant crab standing in a village."
 

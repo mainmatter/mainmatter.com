@@ -13,6 +13,7 @@ description: <p>Rust is an excellent programming language for developing API
   want to learn more about backend development using Rust. Having written Rust
   in a production environment is not a requirement.</p>
 hero:
+  color: purple
   image: "/assets/images/workshops/web-based-services-in-rust/header-background.jpg"
   imageAlt: "Several cogs and mechanical elements in purple."
 og:

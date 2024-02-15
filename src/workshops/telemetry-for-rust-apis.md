@@ -9,6 +9,7 @@ description:
   is designed for developers who are operating Rust services in production-like
   environments, or are preparing to do so.</p>
 hero:
+  color: purple
   image: "/assets/images/workshops/telemetry-for-rust-apis/header-background.jpg"
   imageAlt:
     "2 people in front of a notebook with 3 charts on the screen, only their

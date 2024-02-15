@@ -16,6 +16,7 @@ description: |
   <p>The workshop is designed for developers who have experience using other programming languages 
   and are just getting started with Rust.</p>
 hero:
+  color: purple
   image: "/assets/images/workshops/an-introduction-to-testing-in-rust/header-background.jpg"
   imageAlt: "A drawing of a giant crab standing in a village."
   

@@ -17,6 +17,7 @@ description: <p>Svelte is great choice for building fast and light-weight web
   <p>All examples and practical assignments from the workshop are available
   publicly on GitHub.</p>
 hero:
+  color: purple
   image: "/assets/images/workshops/svelte-and-sveltekit/hero.jpg"
   imageAlt:
     "Photo of a computer screen showing an IDE with an open Svelte project"
