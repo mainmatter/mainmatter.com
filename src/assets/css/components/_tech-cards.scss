@@ -34,9 +34,8 @@
   &:hover {
     .tech-cards__link-arrow {
       svg {
-        animation: arrowhover 0.3s;
-        animation-timing-function: ease;
-        animation-fill-mode: both;
+        transform: translateX(0.5rem) rotate(-90deg);
+        transition: transform 0.5 ease;
       }
     }
   }
@@ -137,12 +136,11 @@
   justify-content: center;
 
   svg {
-    transform: rotate(-90deg);
-    transition: color 0.1s ease;
+    transform: translateX(0px) rotate(-90deg);
+    transition: transform 0.5s ease;
     width: 24px;
     height: auto;
-    animation: arrowout 0.3s;
-    animation-timing-function: ease;
+
   }
 
   &--rotate {

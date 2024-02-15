@@ -89,6 +89,7 @@ $white-color: #ffffff;
 
   to {
     transform: translateX(0.5rem) rotate(-90deg);
+    transition: transform 0.5 ease;
   }
 }
 
