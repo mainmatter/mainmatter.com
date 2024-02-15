@@ -20,12 +20,21 @@ Example usage:
   "text": "Mainmatter is a digital product consultancy that designs and develops web applications. We realize projects with clients across the globe and teach them how along the way.",
   "linkUrl": "/services",
   "linkText": "Our Services",
+  "image": "/assets/images/photos/collaboration@1200.jpg",
+  "alt": "Alt text",
+  "loading": "eager"
 } %}
 {{ colorHero('blue', content) }}
 #}
 {% from "cta-link.njk" import ctaLink %}
 {%- macro colorHero(color, content) -%}
   <section class="color-hero color-hero--{{ color }} {% if content.class %}{{ content.class }}{% endif %}{% if content.logo %}{{ content.logo }}{% elseif content.background %}{{ content.background }}{% endif %}" data-background-color="{{ color }}">
+    <div class="color-hero__image-wrapper">
+      {% if content.image %}
+        {% image content.image, content.alt, '100vw', content.loading, 'color-hero__image', [760, 1440, 1920, 2048] %}
+      {% endif %}
+    </div>
+    <div class="color-hero__overlay" data-color-hero></div>
     <div class="color-hero__container container container--lg">
       <div class="color-hero__main">
         {% if content.eyebrow %}

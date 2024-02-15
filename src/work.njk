@@ -13,7 +13,9 @@ eleventyNavigation:
 {% from "cta-banner.njk" import ctaBanner %}
 {% set 'content' = {
   "title": "A proven track record of successful projects for international clients",
-  "background": "work"
+  "image": "/assets/images/hero/work.jpg",
+  "alt": "Lego bricks lying around",
+  "loading": "eager"
 } %}
 {{ colorHero('purple', content) }}
 <div class="work container container--xl">
