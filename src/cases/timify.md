@@ -25,7 +25,7 @@ og:
 {% from "quote.njk" import quote %}
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">About Timify</h2>
+  <h3 class="case-study__heading">About Timify</h3>
   <div class="case-study__text">
     <h3 class="h4">Timify is a cloud-based appointment booking system that serves over 50,000 businesses worldwide.</h3><br>
     <p>The company had validated their product/market fit with an in-house prototype, but as the business grew, it became clear that this foundation was not sturdy enough to support further expansion. The entire system needed to be re-engineered from the ground up.</p>
@@ -33,7 +33,7 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Foundational structures and strategies</h2>
+  <h3 class="case-study__heading">Foundational structures and strategies</h3>
   <div class="case-study__text">
     <p>Timify had ambitious internal deadlines, so we completed the first release version of the new application in just over four months. Following the release, we joined forces with Timify’s engineers to get them up to speed on best practices and patterns for Ember.js. With the proper foundation now in place, their team could confidently build upon what we established long into the future.</p>
   </div>
@@ -54,7 +54,7 @@ og:
     </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Features for the future</h2>
+  <h3 class="case-study__heading">Features for the future</h3>
   <div class="case-study__text">
     <p>We spearheaded several engineering initiatives, including premium subscriptions, payment system integration, localization of the application in 15 languages, and support for time zones.</p>
     <p>Timify took over these initiatives after our time together, and they’ve continuted to maintain and iterate upon these features.</p>
@@ -66,7 +66,7 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Building on a modern stack</h2>
+  <h3 class="case-study__heading">Building on a modern stack</h3>
   <div class="case-study__text">
     <p>Ember.js proved to be the right technology choice for an ambitious application like Timify that was built to last for years. The framework’s baked-in conventions enable larger teams to move fast without breaking things—a key element of our design philosophy.</p>
     <p>Leveraging modern web technologies like SVG, we were able to achieve excellent runtime performance even for large data sets. The json:api-based server API allowed us to implement the client and server side of a feature concurrently.</p>

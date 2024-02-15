@@ -27,7 +27,7 @@ og:
 {% from "quote.njk" import quote %}
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">About AIS</h2>
+  <h3 class="case-study__heading">About AIS</h3>
   <div class="case-study__text">
     <h3 class="h4">AIS, founded in 2020 as a spin-off of the CISPA Helmholtz Center for Information Security, helps its customers understand their external attack surface and access the risks tied to it.</h3><br>
     <p>Their platform Findalyze collects and consolidates the publicly available information as observed from an attacker's perspective, prioritizes it, and delivers actionable insights to reduce the external attack surface.</p>
@@ -39,14 +39,14 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">The Challenge</h2>
+  <h3 class="case-study__heading">The Challenge</h3>
   <div class="case-study__text">
     <p>After developing the suite of data collection and analysis tools internally, AIS needed to build the dashboard application that would give its users access to the gathered information. The dashboard would list findings along with suggested prioritizations and recommended actions to mitigate security risks. Lacking both the expertise as well as the people for designing and building web frontends, AIS approached Mainmatter for support.</p>
   </div>
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Mainmatter’s Approach</h2>
+  <h3 class="case-study__heading">Mainmatter’s Approach</h3>
   <div class="case-study__text">
     <p>We kicked off the project with a <a href="/services/workshops/digital-product-strategy/">product strategy workshop</a> to define the desired outcomes. Together with the client, we agreed on a scope for an MVP version of the dashboard we'd build over 6 weeks. After a short design phase in which we laid out the visual foundation for the project, we then progressed to implementing the application and completing detailed designs. Simultaneously working on both design and implementation like that leads to less rework and stronger alignment between designers and engineers – read more about that in our playbook.</p>
     <p>Throughout the collaboration, we worked closely with AIS' team. Many small decisions need to be made while a project is developed – direct communication between the client's team and ours ensures these decisions are made transparently and fast without slowing down progress. We also shared the project's progress via a continuously updated preview system and weekly status calls.</p>
@@ -59,7 +59,7 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Outcome</h2>
+  <h3 class="case-study__heading">Outcome</h3>
   <div class="case-study__text">
     <p>The fully functional MVP of the dashboard application was delivered in just over 6 weeks. That allowed AIS to onboard the first test clients onto their service and get valuable feedback from them to ensure correct focus for the future. After Mainmatter put the foundation for further evolution of the application in place and mentored their team members, AIS will be able to continue extending and improving the application in the future.</p>
   </div>

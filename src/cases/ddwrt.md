@@ -25,14 +25,14 @@ og:
 {% from "btn-secondary.njk" import btnSecondary %}
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">About DD-WRT</h2>
+  <h3 class="case-study__heading">About DD-WRT</h3>
   <div class="case-study__text">
     <h3 class="h4">DD-WRT is a Linux-based firmware for wireless routers. Originally designed for the Linksys WRT54G series, it now runs on a wide variety of models and is installed on millions of devices worldwide.</h3>
   </div>
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Accommodating a special environment</h2>
+  <h3 class="case-study__heading">Accommodating a special environment</h3>
   <div class="case-study__text">
     <p>Shipping a single page app bundled with a router firmware is substantially different from serving it via the open web.</p>
     <p>The first step for our experts was to understand the characteristics of the environment, like limited hardware capabilities and slow update cycles. We then developed an application architecture for the project that was tailored to the particular requirements and limitations of this use case, accounting for infrequent updates, intermediate network outages, and a UI that adapts itself based on the capabilities of the device.</p>
@@ -54,14 +54,14 @@ og:
     </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Optimizing for stability and resilience</h2>
+  <h3 class="case-study__heading">Optimizing for stability and resilience</h3>
   <div class="case-study__text">
     <p>We recommended Ember.js as a stable foundation that would support the project for years to come. We completed the prototype implementation of the architecture in just over six weeks, defining the structure for the application and establishing good patterns. That prototype laid the foundation for subsequent engineering efforts taken on by embeDD's in-house engineering team.</p>
   </div>
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Ensuring long-term success</h2>
+  <h3 class="case-study__heading">Ensuring long-term success</h3>
   <div class="case-study__text">
     <p>Before our work with embeDD was complete, we took an extended period of time to coach their engineers and review their work. This is how we ensured that they would be able to confidently continue the project long after we’d handed it over.</p>
   </div>

@@ -27,7 +27,7 @@ og:
 {% from "quote.njk" import quote %}
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">About Trainline</h2>
+  <h3 class="case-study__heading">About Trainline</h3>
   <div class="case-study__text">
     <h3 class="h4">Trainline is Europe's leading independent rail and coach platform. They sell tickets to customers worldwide, enabling more than 125,000 journeys every single day in and across 36 countries, covering 150 different carriers.</h3><br>
     <p>We worked closely with Trainline’s engineering team to build a mobile web app to complement their existing desktop web app. This enabled Trainline to better serve customers on the go and leverage the full market potential.</p>
@@ -35,7 +35,7 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Solidifying sustainable strategies</h2>
+  <h3 class="case-study__heading">Solidifying sustainable strategies</h3>
   <div class="case-study__text">
     <p>Working closely with Trainline's engineering and product teams, we were able to deliver the first version of the mobile web app on time and on budget. We helped develop the team’s expertise through pair-programming sessions and code reviews.</p>
     <p>In addition to our engineering work, we also helped Trainline establish an iterative approach to their engineering process. This enabled both their engineers and management to better prioritize tasks and measure project progress.</p>
@@ -57,7 +57,7 @@ og:
     </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">More sales from happier customers</h2>
+  <h3 class="case-study__heading">More sales from happier customers</h3>
   <div class="case-study__text">
     <p>Beyond the core application, we spearheaded impovements in mobile performance, load times, server side rendering, and localization. Taken together, these changes resulted in a vastly improved user experience and, in turn, increased sales.</p>
   </div>

@@ -29,7 +29,7 @@ og:
 {% from "quote.njk" import quote %}
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">About Aleph Alpha</h2>
+  <h3 class="case-study__heading">About Aleph Alpha</h3>
   <div class="case-study__text">
       <p>Aleph Alpha is a German AI startup, a leader in the field of explainable and trustworthy sovereign AI. 
       They're one of the few major players in the AI space based (and funded) entirely in Europe.</p>
@@ -37,7 +37,7 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">The challenge</h2>
+  <h3 class="case-study__heading">The challenge</h3>
     <div class="case-study__text">
         <p>Aleph Alpha wanted to train the next generation of their AI foundational models.<br>
         The name of the game in the world of AI is data: You want to train using a <strong>large high-quality dataset</strong> to 
@@ -57,7 +57,7 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Mainmatter's role</h2>
+  <h3 class="case-study__heading">Mainmatter's role</h3>
     <div class="case-study__text">
         <p>We partnered with Aleph Alpha in September 2023 to help them design and implement the data pipeline they needed. 
         We followed a <strong>team augmentation</strong> approach. Our Principal Engineering Consultant, Luca Palmieri, embedded into 
@@ -67,7 +67,7 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Architecture</h2>
+  <h3 class="case-study__heading">Architecture</h3>
     <div class="case-study__text">
         <p>You need to <strong>distribute the workload</strong> across multiple machines to run such a large-scale pipeline to completion in a 
         reasonable amount of time. That's how you fully leverage the capabilities of modern 
@@ -87,7 +87,7 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Infrastructure</h2>
+  <h3 class="case-study__heading">Infrastructure</h3>
     <div class="case-study__text">
       <p>You can't architect a system in a vacuum: You need to take into the <strong>infrastructure</strong> it will run on. 
         The underlying provider determines the capabilities and constraints you have to work with, such as the maximum 
@@ -126,7 +126,7 @@ og:
       </section>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Rust</h2>
+  <h3 class="case-study__heading">Rust</h3>
     <div class="case-study__text">
       <p>The entire data pipeline was built in Rust. That's the reason Aleph Alpha reached out to Mainmatter in the first place:
       They needed someone with deep expertise in Rust to help them deliver the project.  </p>
@@ -158,7 +158,7 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Mentoring</h2>
+  <h3 class="case-study__heading">Mentoring</h3>
     <div class="case-study__text">
       <p>We split our time between delivery and mentoring.  
       Luca spent several hours a week pairing with Aleph Alpha's team, working together on the project, discussing 
@@ -170,7 +170,7 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Outcome</h2>
+  <h3 class="case-study__heading">Outcome</h3>
     <div class="case-study__text">
         <p>We successfully preprocessed <strong>4.5 trillion tokens</strong> to assemble a high-quality multilingual dataset. 
         The data pipeline was designed, developed and ran on time and on budget—Aleph Alpha didn't have to delay 
