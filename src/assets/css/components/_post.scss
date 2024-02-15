@@ -3,6 +3,7 @@
   margin: 3.25rem auto 6.25rem;
 }
 
+
 .post__header {
   background-color: var(--color-purple);
   color: var(--color-white);
@@ -130,6 +131,7 @@
   li {
     padding: 0.25rem;
   }
+
 }
 
 .post__content {
@@ -139,6 +141,10 @@
       font-weight: 500;
       margin: 6.25rem 0 3.25rem;
     }
+  }
+
+  li a {
+  color: var(--color-purple);
   }
 }
 

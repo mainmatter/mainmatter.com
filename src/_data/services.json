@@ -1,20 +1,6 @@
 {
   "services-list": [
     {
-      "heading": "Team Augmentation & Training",
-      "linkUrl": "/services/team-augmentation-and-training/"
-    },
-    {
-      "heading": "Digital Product Design & Development",
-      "linkUrl": "/services/digital-products-and-design/"
-    },
-    {
-      "heading": "Tailored Workshops",
-      "linkUrl": "/services/workshops/"
-    }
-  ],
-  "services-list-energy": [
-    {
       "heading": "Team Reinforcement",
       "linkUrl": "/services/team-reinforcement/"
     },

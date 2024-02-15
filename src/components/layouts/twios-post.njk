@@ -1,9 +1,9 @@
 ---
-layout: "base-energy"
+layout: "base"
 ---
 
 {%- block content -%}
-  {% from "color-hero-energy.njk" import colorHero %}
+  {% from "color-hero.njk" import colorHero %}
   {% set post = collections.twios | getCollectionItem(page) %}
   <article>
     {% set 'hero' = {

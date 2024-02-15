@@ -12,7 +12,7 @@ og:
 {% from "scroll-slides.njk"
 import scrollSlides %}
 {% from "quote.njk" import quote %}
-{% from "color-hero-energy.njk" import colorHero %}
+{% from "color-hero.njk" import colorHero %}
 {% from "strategy-list.njk" import strategyList %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "btn-tito.njk" import btnTito %}
@@ -26,7 +26,7 @@ import scrollSlides %}
 
     <title>{{ title }}</title>
     {% include "global/fonts.njk" %}
-    <link rel="stylesheet" href="/assets/css/app-energy.css"/>
+    <link rel="stylesheet" href="/assets/css/app.css"/>
     <link rel="stylesheet" href="/assets/css/workshop-lp.css"/>
     <script src="/assets/js/app.js" defer></script>
     {% block head %}{{ head | safe }}

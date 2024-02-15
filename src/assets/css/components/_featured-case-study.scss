@@ -35,14 +35,16 @@
     }
 
     .featured-case-study--hover {
-      animation: purpleout 1s;
-      animation-fill-mode: both;
+      transform: translateX(-100%);
+        background: var(--color-purple);
+        transition: transform 0.5s ease;
     }
 
     &:hover {
       .featured-case-study--hover {
-        animation: purplehover 1s;
-        animation-fill-mode: both;
+        transform: translateX(0px);
+        background: var(--color-purple);
+        transition: transform 0.5s ease;
       }
     }
   }
@@ -55,17 +57,6 @@
     --color-link-primary-hover: var(--color-black);
     color: var(--color-white);
 
-    .featured-case-study--hover {
-      animation: aquaout 1s;
-      animation-fill-mode: both;
-    }
-
-    &:hover {
-      .featured-case-study--hover {
-        animation: aquahover 1s;
-        animation-fill-mode: both;
-      }
-    }
   }
 
   &--black {
@@ -82,14 +73,16 @@
     }
 
     .featured-case-study--hover {
-      animation: balckout 1s;
-      animation-fill-mode: both;
+      transform: translateX(-100%);
+      background: var(--color-black);
+      transition: transform 0.5s ease;
     }
 
     &:hover {
       .featured-case-study--hover {
-        animation: blackhover 1s;
-        animation-fill-mode: both;
+        transform: translateX(0px);
+        background: var(--color-black);
+        transition: transform 0.5s ease;
       }
     }
   }

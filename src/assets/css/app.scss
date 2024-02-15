@@ -4,17 +4,17 @@
 @import "base/variables";
 @import "base/global";
 @import "base/containers";
-@import "base/buttons-links-energy";
-@import "base/typography-energy";
+@import "base/buttons-links";
+@import "base/typography";
 @import "base/forms";
-@import "base/code";
+@import "base/prism-theme";
 
 @import "components/nav";
 @import "components/nav-submenu";
 @import "components/mobile-menu";
 @import "components/nav-aside";
 @import "components/logo-list";
-@import "components/color-hero-energy";
+@import "components/color-hero";
 @import "components/social";
 @import "components/footer";
 @import "components/footer-menu";
@@ -66,6 +66,14 @@
 @import "components/scroll-slides";
 @import "components/quotes-list";
 @import "components/blog-cta";
+@import "components/intro-text";
+@import "components/tech-cards";
+@import "components/case-cards";
+@import "components/strategy-list";
+@import "components/cta-banner";
+@import "components/open-source-list";
+@import "components/video";
+@import "components/embroider-sponsors";
 
 @import "animations/text-animation";
 
