@@ -140,14 +140,16 @@ $states: "loading", "success", "error";
 }
 
 .contact-form__button {
-  display: block;
-  margin-left: auto;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  padding: 0;
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: end;
   color: currentColor;
   background-color: transparent;
   border: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .contact-form__status {
