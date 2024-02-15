@@ -132,6 +132,26 @@ button {
     color: var(--color-link-primary);
     text-decoration: none;
     font-weight: 700;
+    cursor: pointer;
+  }
+
+  .icon-arrow {
+    flex-shrink: 0;
+  }
+
+  svg {
+    transform: translateX(0px) rotate(-90deg);
+    height: 1rem;
+    width: 1rem;
+    color: var(--color-white);
+    margin-left: 0.5rem;
+    transition: transform 0.5 ease;
+  }
+
+  &.btn-primary--white {
+    svg {
+      color: var(--color-purple);
+    }
   }
 
   &:hover {
@@ -143,6 +163,26 @@ button {
       color: var(--color-white);
       text-decoration: none;
       font-weight: 700;
+    }
+
+    svg {
+      transform: translateX(0.5rem) rotate(-90deg);
+      transition: transform 0.5 ease;
+      color: var(--color-white);
+    }
+
+    &.btn-primary--white {
+      .line {
+        background-color: var(--color-purple);
+      }
+
+      span {
+        color: var(--color-purple);
+      }
+
+      svg {
+        color: var(--color-purple);
+      }
     }
   }
 }
@@ -158,6 +198,7 @@ button {
   right: 5%;
   z-index: 100;
   --color-link-primary: var(--color-white);
+  cursor: pointer;
 }
 
 .workshop-authors {

@@ -1,6 +1,7 @@
 .nav {
   position: absolute;
-  width: 100%;
+  margin: 0 auto;;
+  width: 90%;
   z-index: 1;
   color: var(--color-white);
 
@@ -16,6 +17,7 @@
 }
 
 .nav__wrapper {
+  margin: 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,7 +46,6 @@
 
 .nav__logo {
   line-height: 0;
-  margin-left: 5%;
 }
 
 .nav__list {
@@ -154,9 +155,13 @@
 }
 
 @media (min-width: 62em) {
+
+  .nav {
+    width: 100%;
+  }
   .nav__wrapper {
+    margin: 2.5% 5%;
     width: 90%;
-    padding: 1.75rem 0;
   }
 
   .nav__logo {
