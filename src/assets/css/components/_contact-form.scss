@@ -199,9 +199,11 @@ $states: "loading", "success", "error";
 }
 
 .contact-form__close {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
+  margin-top: 2rem;
+  margin-right: 2rem;
   padding: 0.5rem;
   color: currentColor;
   background-color: transparent;
@@ -227,7 +229,7 @@ $states: "loading", "success", "error";
 
   .contact-form__close {
     top: 2rem;
-    right: 3.25rem;
+    right: 2rem;
   }
 
   .contact-form__success-subheading {
