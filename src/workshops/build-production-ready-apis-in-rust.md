@@ -15,7 +15,6 @@ description: <p>Rust is an excellent programming language for developing API
 hero:
   image: "/assets/images/workshops/web-based-services-in-rust/header-background.jpg"
   imageAlt: "Several cogs and mechanical elements in purple."
-  background: "rust"
 og:
   image: /assets/images/workshops/production-ready-api-services-in-rust/og-image.jpeg
 topics:

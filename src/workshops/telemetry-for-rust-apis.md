@@ -13,7 +13,6 @@ hero:
   imageAlt:
     "2 people in front of a notebook with 3 charts on the screen, only their
     arms visible, one points at the screen"
-  background: "rust"
 og:
   image: /assets/images/workshops/telemetry-for-rust-apis/og-image.jpg
 topics:

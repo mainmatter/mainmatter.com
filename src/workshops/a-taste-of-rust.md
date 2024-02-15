@@ -18,7 +18,7 @@ description: |
 hero:
   image: "/assets/images/workshops/an-introduction-to-testing-in-rust/header-background.jpg"
   imageAlt: "A drawing of a giant crab standing in a village."
-  background: "rust"
+  
 og:
   image: /assets/images/workshops/a-taste-of-rust/a-taste-of-rust-og-image.jpeg
 topics:

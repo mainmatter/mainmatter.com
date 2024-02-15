@@ -18,7 +18,6 @@ description: <p>According to the Stack Overflow survey, Rust is one of the most
 hero:
   image: "/assets/images/workshops/introduction-to-rust-for-web-developers/header-background.jpg"
   imageAlt: "The Rust logo in white on top of a photo of a rusty metal surface"
-  background: "rust"
 og:
   image: /assets/images/workshops/introduction-to-rust-for-web-developers/og-image.jpg
 topics:
