@@ -8,7 +8,7 @@ description: "There are lots of reasons that a team gets overextended – lack o
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from "strategy-list.njk" import strategyList %}
 {% from "tech-cards.njk" import techCards %}
-{% from "case-cards.njk" import caseCards %}
+{% from "featured-case-studies.njk" import featuredCaseStudies %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "featured-services.njk" import featuredServices %}
 
@@ -114,19 +114,8 @@ description: "There are lots of reasons that a team gets overextended – lack o
 } %}
 {{ ctaBanner('purple', 'default', content) }}
 
-<section class="my-10">
-  {% set imageData = {
-    "imgPath": "/assets/images/services/team-reinforcement-cases.jpeg",
-    "alt": "Server room",
-    "sizes": "100vw",
-    "loading": "lazy",
-    "sizesArray": [760, 1440, 1920]
-  } %}
-  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
-</section>
-
-{% set clients = ['aleph-alpha', 'auditboard', 'mvb'] %}
-{{ caseCards('team-reinforcement_clients', 'Clients', 'Some of the clients we supported with Team Reinforcement', clients)}}
+{% set clients = ['qonto', 'aleph-alpha', 'auditboard', 'mvb'] %}
+{{ featuredCaseStudies(clients, 'Clients') }}
 
 {% set 'content' = {
   "subtitle": "Discover our other services"
