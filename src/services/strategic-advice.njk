@@ -21,6 +21,21 @@ description: "There are lots of reasons that a team gets overextended – lack o
 } %}
 {{ colorHero('purple', content) }}
 
+{% set 'list_1' = {
+  "title": "Assess the status quo via a thorough analysis of code, architecture, infrastructure, and processes, as well as interviews with stakeholders."
+} %}
+
+{% set 'list_2' = {
+  "title": "Prepare a roadmap for transforming the product development organization."
+} %}
+
+{% set 'list_3' = {
+  "title": "Guide your team through the transformation phase."
+} %}
+
+{% set elements = [list_1, list_2, list_3] %}
+{{ strategyList('strategic-advice', 'We’ll work with you to:', elements) }}
+
 {% set 'content' = {
   "title": "Mentoring & Training",
   "text": "At Mainmatter, we promise sustainable change. Our methods include mentoring, pair-programming, and reviews so every team we work with is more knowledgeable than when we started.",
