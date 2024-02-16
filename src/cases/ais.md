@@ -16,8 +16,8 @@ description:
   in 6 weeks, guiding AIS\' team along the way.</p>
 hero:
   color: purple
-  image: "/assets/images/work/qonto.jpg"
-  imageAlt: "Woman holds a credit card while using the Qonto web application"
+  image: "/assets/images/work/ais.jpg"
+  imageAlt: "2 walls with bank lockers, most closed but some open"
   tags: "architecture / development / design"
 og:
   image: /assets/images/cases/cs-ais-og-image.jpg
