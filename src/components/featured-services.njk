@@ -3,7 +3,9 @@
 
     <div class="featured-services__list-wrapper">
       <div>
-        <h2 class="featured-services__title h5 mb-2">{{ content.title }}</h2>
+        {% if content.title %}
+          <h2 class="featured-services__title h5 mb-2">{{ content.title }}</h2>
+        {% endif %}
         <h3 class="h2">{{ content.subtitle }}</h3>
       </div>
       <ul class="featured-services__list">
