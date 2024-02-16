@@ -7,7 +7,7 @@ description: "There are lots of reasons that a team gets overextended – lack o
 {% from "color-hero.njk" import colorHero %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from "strategy-list.njk" import strategyList %}
-{% from "case-cards.njk" import caseCards %}
+{% from "featured-case-studies.njk" import featuredCaseStudies %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "featured-services.njk" import featuredServices %}
 
@@ -44,9 +44,8 @@ description: "There are lots of reasons that a team gets overextended – lack o
 } %}
 {{ ctaBanner('purple', 'default', content) }}
 
-
-{% set clients = ['rail-europe', 'experteer'] %}
-{{ caseCards('strategic-advice_clients', 'Clients', 'Some of the clients we worked with, offering strategic advice', clients)}}
+{% set clients = ['rail-europe'] %}
+{{ featuredCaseStudies(clients, 'Clients') }}
 
 {% set 'content' = {
   "subtitle": "Discover our other services"
