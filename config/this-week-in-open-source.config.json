@@ -80,7 +80,8 @@
         "paoloricciuti/sveltekit-view-transition",
         "theetrain/this-week-in-svelte",
         "mainmatter/svelte-promise-modals",
-        "paoloricciuti/svelte-client-components"
+        "paoloricciuti/svelte-client-components",
+        "CodingGarden/listd"
       ]
     },
     {
@@ -535,5 +536,5 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-01-28..2024-02-04"
+  "last_date": "2024-02-04..2024-02-11"
 }
