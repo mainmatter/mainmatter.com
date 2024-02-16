@@ -7,7 +7,7 @@ description: "There are lots of reasons that a team gets overextended – lack o
 {% from "color-hero.njk" import colorHero %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from "strategy-list.njk" import strategyList %}
-{% from "case-cards.njk" import caseCards %}
+{% from "featured-case-studies.njk" import featuredCaseStudies %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "featured-services.njk" import featuredServices %}
 
@@ -101,9 +101,8 @@ description: "There are lots of reasons that a team gets overextended – lack o
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
 
-
-{% set clients = ['ais', 'poellath', 'experteer'] %}
-{{ caseCards('idea_clients', 'Our Clients', 'Some projects we built for our clients', clients)}}
+{% set clients = ['experteer', 'poellath', 'ais', 'mvb'] %}
+{{ featuredCaseStudies(clients, 'Clients') }}
 
 {% set 'content' = {
   "subtitle": "Discover our other services"
