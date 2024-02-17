@@ -4,8 +4,8 @@ company: AIS
 title: An MVP for an IT security dashboard | Work
 problem: AIS wanted to be able to supervise their metrics with a dashboard.
 solution:
-  We helped define the requirements, designed the look, and delivered a finished
-  product.
+  We helped defining and shaping the goal as well as designed and implemented a finished
+  MVP.
 tags: Launch your idea
 displayTitle: "An MVP for an IT <em>infrastructure</em> security dashboard"
 description:
