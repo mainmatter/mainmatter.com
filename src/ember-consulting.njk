@@ -341,6 +341,26 @@ og:
 
 {{ recentPosts("Latest from our blog on the topic", collections.emberPosts) }}
 
+<section class="my-10 container container--lg">
+  <div class="split-content">
+    <a href="https://www.youtube.com/playlist?list=PLdAi-nB9AYuuaWFjl_zwkrIvScJjnBYdZ" class="split-content__link"></a>
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h4>Check out our Ember.js videos on YouTube – including talks at EmberFest, Ember Europe, and more.</h4>
+        {% set link = {
+            "label": 'Watch videos',
+            "url": 'https://www.youtube.com/playlist?list=PLdAi-nB9AYuuaWFjl_zwkrIvScJjnBYdZ'
+          }
+          %}
+        {{ btnSecondary( link, 'mt-2' )}}
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-youtube.njk' %}
+      </div>
+    </div>
+  </div>
+</section>
+
 {% set 'content' = {
   "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
