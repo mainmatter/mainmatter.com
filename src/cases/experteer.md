@@ -28,7 +28,7 @@ og:
 <div class="case-study__section">
   <h3 class="case-study__heading">About Experteer</h3>
   <div class="case-study__text">
-    <h3 class="h4">Experteer is the executive career service for leading professionals. Their career and recruitment marketplace is used by 6 million executives and professionals worldwide.</h3><br>
+    <p class="h4">Experteer is the executive career service for leading professionals. Their career and recruitment marketplace is used by 6 million executives and professionals worldwide.</p>
     <p>The service offers access to the high-end job market with over 1.000.000 opportunities and confidentially connects candidates with approved headhunters and corporate recruiters.</p>
   </div>
 </div>

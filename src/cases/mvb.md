@@ -27,7 +27,7 @@ og:
 <div class="case-study__section">
   <h3 class="case-study__heading">About MVB</h3>
   <div class="case-study__text">
-    <h3 class="h4">MVB (part of the Börsenverein Group) provides digital platforms and services for the marketing and distribution of books for publishing houses and bookstores in Germany and abroad. One of their core offerings is VLB-TIX which provides a database with detailed information on new titles of all 21.000 publishers in Germany.</h3><br>
+    <p class="h4">MVB (part of the Börsenverein Group) provides digital platforms and services for the marketing and distribution of books for publishing houses and bookstores in Germany and abroad. One of their core offerings is VLB-TIX which provides a database with detailed information on new titles of all 21.000 publishers in Germany.</p>
     <p>The platform improves the flow of information between publishing houses, booksellers, journalists, bloggers, and interested readers.</p>
   </div>
 </div>

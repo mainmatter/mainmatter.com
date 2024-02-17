@@ -30,7 +30,7 @@ og:
 <div class="case-study__section">
   <h3 class="case-study__heading">About Aleph Alpha</h3>
   <div class="case-study__text">
-      <p>Aleph Alpha is a German AI startup, a leader in the field of explainable and trustworthy sovereign AI. 
+      <p class="h4">Aleph Alpha is a German AI startup, a leader in the field of explainable and trustworthy sovereign AI. 
       They're one of the few major players in the AI space based (and funded) entirely in Europe.</p>
   </div>
 </div>

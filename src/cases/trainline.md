@@ -28,7 +28,7 @@ og:
 <div class="case-study__section">
   <h3 class="case-study__heading">About Trainline</h3>
   <div class="case-study__text">
-    <h3 class="h4">Trainline is Europe's leading independent rail and coach platform. They sell tickets to customers worldwide, enabling more than 125,000 journeys every single day in and across 36 countries, covering 150 different carriers.</h3><br>
+    <p class="h4">Trainline is Europe's leading independent rail and coach platform. They sell tickets to customers worldwide, enabling more than 125,000 journeys every single day in and across 36 countries, covering 150 different carriers.</p>
     <p>We worked closely with Trainline’s engineering team to build a mobile web app to complement their existing desktop web app. This enabled Trainline to better serve customers on the go and leverage the full market potential.</p>
   </div>
 </div>

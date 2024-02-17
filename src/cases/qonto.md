@@ -29,7 +29,7 @@ og:
 <div class="case-study__section">
   <h3 class="case-study__heading">About Qonto</h3>
   <div class="case-study__text">
-    <h3 class="h4">Qonto is a European B2B Neobank for freelancers and SMEs. They provide over 75,000 clients with banking services, virtual and physical credit cards, and tools for accounting and expense management. In 2019 alone, they processed €10 billion in transactions.</h3><br>
+    <p class="h4">Qonto is a European B2B Neobank for freelancers and SMEs. They provide over 75,000 clients with banking services, virtual and physical credit cards, and tools for accounting and expense management. In 2019 alone, they processed €10 billion in transactions.</p>
     <p>The fintech company was rated among the five hottest startups in Europe by The Next Web. They’ve raised more than €150 million since they entered the market in 2017.</p>
   </div>
 </div>

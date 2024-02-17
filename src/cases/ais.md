@@ -28,7 +28,7 @@ og:
 <div class="case-study__section">
   <h3 class="case-study__heading">About AIS</h3>
   <div class="case-study__text">
-    <h3 class="h4">AIS, founded in 2020 as a spin-off of the CISPA Helmholtz Center for Information Security, helps its customers understand their external attack surface and access the risks tied to it.</h3><br>
+    <p class="h4">AIS, founded in 2020 as a spin-off of the CISPA Helmholtz Center for Information Security, helps its customers understand their external attack surface and access the risks tied to it.</p>
     <p>Their platform Findalyze collects and consolidates the publicly available information as observed from an attacker's perspective, prioritizes it, and delivers actionable insights to reduce the external attack surface.</p>
   </div>
 </div>

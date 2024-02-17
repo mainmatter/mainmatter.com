@@ -31,7 +31,7 @@ og:
 <div class="case-study__section">
   <h3 class="case-study__heading">About Rail Europe</h3>
   <div class="case-study__text">
-    <h3 class="h4">Rail Europe was founded in 1931 and is looking back at an impressive history of 90+ years in the travel industry. Over the years, the company established itself as the go-to brand for European train bookings and technology solutions for over 15,000 travel professionals in 70 countries.</h3>
+    <p class="h4">Rail Europe was founded in 1931 and is looking back at an impressive history of 90+ years in the travel industry. Over the years, the company established itself as the go-to brand for European train bookings and technology solutions for over 15,000 travel professionals in 70 countries.</p>
     <p>Over the past few years, Rail Europe has gone through some major changes, from being part of SNCF to eventually being acquired by an investor with ambitious goals.</p>
   </div>
 </div>

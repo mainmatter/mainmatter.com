@@ -26,7 +26,7 @@ og:
 <div class="case-study__section">
   <h3 class="case-study__heading">About DD-WRT</h3>
   <div class="case-study__text">
-    <h3 class="h4">DD-WRT is a Linux-based firmware for wireless routers. Originally designed for the Linksys WRT54G series, it now runs on a wide variety of models and is installed on millions of devices worldwide.</h3>
+    <p class="h4">DD-WRT is a Linux-based firmware for wireless routers. Originally designed for the Linksys WRT54G series, it now runs on a wide variety of models and is installed on millions of devices worldwide.</p>
   </div>
 </div>
 
