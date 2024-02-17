@@ -10,6 +10,7 @@ description: "There are lots of reasons that a team gets overextended – lack o
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "featured-services.njk" import featuredServices %}
+{% from "quote.njk" import quote %}
 
 {% set 'content' = {
   "title": "Full-service implementation of your idea into reality",
@@ -103,6 +104,16 @@ description: "There are lots of reasons that a team gets overextended – lack o
 
 {% set clients = ['experteer', 'poellath', 'ais', 'mvb'] %}
 {{ featuredCaseStudies(clients, 'Clients') }}
+
+<div class="container container--lg quote-section">
+{% set 'content' = {
+  "text": "As we did not have any design or frontend expertise in-house, we could not professionally build the user interface of our platform and bring the product to the market. We were looking for support and chose to work with Mainmatter, which turned out to be a great partner for us. The experienced team of Mainmatter helped us release an MVP and set the foundation for developing the application in the future.",
+  "source": "Milivoj Simeonovski, Chief Product Officer (Founding)",
+  "image": "/assets/images/photos/milivoj-simeonovski.png",
+  "alt": "Milivoj Simeonovski smiling at the camera wearing a red sweater",
+  "loading": "lazy"
+} %} {{ quote(content) }}
+</div>
 
 {% set 'content' = {
   "subtitle": "Discover our other services"
