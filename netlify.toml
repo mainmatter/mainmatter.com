@@ -145,12 +145,6 @@
   from = "/rust"
   to = "/rust-consulting/"
 
-# redirect Aleph Alphe cast study to Rust consulting page temporarily
-[[redirects]]
-  from = "/cases/aleph-alpha/"
-  to = "/rust-consulting/"
-  force = true
-
 # redirect old "Web-based Services in Rust" landing page to regular workshop
 [[redirects]]
   from = "https://rust-web-services-workshop.mainmatter.com/*"
