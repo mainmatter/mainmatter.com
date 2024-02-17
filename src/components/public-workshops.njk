@@ -4,9 +4,9 @@
   <section class="cta-banner cta-banner--purple container container--xl my-10" data-background-color="purple">
     <div class="cta-banner__wrapper">
       <div class="cta-banner__main">
-        <h6 class="cta-banner__eyebrow">Public Workshops</h6>
-        <h2 class="cta-banner__title">Attend one of our next public workshop</h2>
-        <p class="cta-banner__subheading caption">We regularly organize public workshops that everyone can buy tickets for. If a dedicated workshop for your team is not what you're looking for, attending one of those might be a better choice:</p>
+        <h6 class="cta-banner__eyebrow">Attend a public workshop</h6>
+        <p class="cta-banner__subheading caption">From time to time, we also organize public workshops. <br>
+           Public workshops are the ideal solution for independent developers and small teams: it's enough to buy a ticket to join!</p>
         {% for workshop in workshops %}
           <div class="cta-banner__text">
             <strong>{{ workshop.date }}</strong>: {{ workshop.text | safe }}
