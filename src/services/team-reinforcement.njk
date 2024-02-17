@@ -11,6 +11,7 @@ description: "There are lots of reasons that a team gets overextended – lack o
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "featured-services.njk" import featuredServices %}
+{% from "quote.njk" import quote %}
 
 {% set 'content' = {
   "title": "Get the work done, even if your team has reached a limit",
@@ -116,6 +117,16 @@ description: "There are lots of reasons that a team gets overextended – lack o
 
 {% set clients = ['qonto', 'aleph-alpha', 'auditboard', 'mvb'] %}
 {{ featuredCaseStudies(clients, 'Clients') }}
+
+<div class="container container--lg quote-section">
+  {% set 'content' = {
+    "text": "We started working with Mainmatter to build a state-of-the-art mobile web app from the ground up and it was an absolute success! Not only are they web specialists, but their expertise in development practices and agile processes made our collaboration an absolute delight.",
+    "source": "Carl Anderson, General Manager at Trainline Europe",
+    "image": "/assets/images/photos/carl-anderson.jpg",
+    "alt": "Carl Anderson, looking at the camera wearing a checkered blue/grey shirt and white T-shirt",
+    "loading": "lazy"
+  } %} {{ quote(content) }}
+</div>
 
 {% set 'content' = {
   "subtitle": "Discover our other services"
