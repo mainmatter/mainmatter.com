@@ -9,7 +9,7 @@ description: "We provide a number of workshops to enable teams to succeed with R
 {% from "tech-cards.njk" import techCards %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
-
+{% from "public-workshops.njk" import publicWorkshops %}
 
 {% set 'content' = {
   "title": "We teach teams like yours how to adopt and succeed with Rust",
@@ -61,6 +61,21 @@ description: "We provide a number of workshops to enable teams to succeed with R
            starting from the basics of the language all the way to advanced testing techniques and comprehensive
            telemetry instrumentation.', workshops) }}
 
+{% set 'public_workshop_1' = {
+  "date": "April 15th + 16th, 2024, 14:00-18:00 CEST",
+  "text": "Remote Workshop: Testing for Rust projects – going beyond the basics",
+  "link": "https://ti.to/mainmatter/rust-testing-april-2024"
+} %}
+{% set 'public_workshop_2' = {
+  "date": "May 28th + 29th, 2024, 14:00-18:00 CEST",
+  "text": "Remote Workshop: Telemetry for Rust APIs – you can't fix what you can't see",
+  "link": "https://ti.to/mainmatter/rust-telemetry-may-2024"
+} %}
+ 
+ {% set public_workshops = [public_workshop_1, public_workshop_2] %}
+ {{ publicWorkshops(public_workshops) }}
+
+publicWorkshops
 
 <section class="my-10">
   <div class="container container--lg">
