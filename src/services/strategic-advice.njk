@@ -10,6 +10,7 @@ description: "There are lots of reasons that a team gets overextended – lack o
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "featured-services.njk" import featuredServices %}
+{% from "quote.njk" import quote %}
 
 {% set 'content' = {
   "title": "Build a rock-solid strategy with reliable expertise at your side ",
@@ -46,6 +47,16 @@ description: "There are lots of reasons that a team gets overextended – lack o
 
 {% set clients = ['rail-europe'] %}
 {{ featuredCaseStudies(clients, 'Clients') }}
+
+<div class="container container--lg quote-section">
+{% set 'content' = {
+  "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
+  "source": "Jürgen Witte, CPO @ Rail Europe",
+  "image": "/assets/images/photos/juergen-witte.png",
+  "alt": "Jürgen Witte",
+  "loading": "lazy"
+} %} {{ quote(content) }}
+</div>
 
 {% set 'content' = {
   "subtitle": "Discover our other services"
