@@ -6,7 +6,7 @@
     },
     {
       "heading": "Launch your idea",
-      "linkUrl": "/services/idea-to-release/"
+      "linkUrl": "/services/launch-your-idea/"
     },
     {
       "heading": "Modernize your tech stack",
@@ -21,7 +21,7 @@
     {
       "heading": "Launch your idea",
       "text": "Upgrades instead of rewrites",
-      "linkUrl": "/services/idea-to-release/"
+      "linkUrl": "/services/launch-your-idea/"
     },
     {
       "heading": "Modernize your tech stack",
@@ -29,7 +29,7 @@
       "linkUrl": "/services/tech-modernization/"
     }
   ],
-  "idea-to-release": [
+  "launch-your-idea": [
     {
       "heading": "Team Reinforcement",
       "text": "Accelerate delivery and overcome challenges ",

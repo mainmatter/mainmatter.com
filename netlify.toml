@@ -119,15 +119,15 @@
 
 [[redirects]]
   from = "/services/digital-products"
-  to = "/services/idea-to-release/"
+  to = "/services/launch-your-idea/"
 
 [[redirects]]
   from = "/services/product-development"
-  to = "/services/idea-to-release/"
+  to = "/services/launch-your-idea/"
 
 [[redirects]]
   from = "/services/product-design"
-  to = "/services/idea-to-release/"
+  to = "/services/launch-your-idea/"
 
 [[redirects]]
   from = "/services/team-augmentation"
@@ -143,7 +143,7 @@
 
 [[redirects]]
   from = "/services/digital-products-and-design"
-  to = "/services/idea-to-release/"
+  to = "/services/launch-your-idea/"
 
 [[redirects]]
   from = "/why-simplabs"
