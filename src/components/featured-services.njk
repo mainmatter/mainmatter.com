@@ -36,6 +36,8 @@
         {% endfor %}
       </ul>
     </div>
-    <p class="featured-services__text">{{ content.text }}</p>
+    {% if content.text %}
+      <p class="featured-services__text">{{ content.text }}</p>
+    {% endif %}
   </section>
 {% endmacro %}
