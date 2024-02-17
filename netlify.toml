@@ -135,7 +135,15 @@
 
 [[redirects]]
   from = "/services/training"
-  to = "/services/strategic-advice/"
+  to = "/services/workshops/"
+
+[[redirects]]
+  from = "/services/team-augmentation-and-training"
+  to = "/services/team-reinforcement/"
+
+[[redirects]]
+  from = "/services/digital-products-and-design"
+  to = "/services/idea-to-release/"
 
 [[redirects]]
   from = "/why-simplabs"
