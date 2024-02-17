@@ -6,7 +6,7 @@ problem:
   Experteer was lacking the internal UI/UX capacity they needed to build
   user-focussed solutions.
 solution: Our experts mentored their team through designing a solution.
-tags: Idea to release
+tags: Launch your idea
 displayTitle:
   "A <em>smooth</em> mobile onboarding experience – design to release"
 description:

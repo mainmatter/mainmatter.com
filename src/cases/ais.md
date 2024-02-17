@@ -6,7 +6,7 @@ problem: AIS wanted to be able to supervise their metrics with a dashboard.
 solution:
   We helped define the requirements, designed the look, and delivered a finished
   product.
-tags: Idea to release
+tags: Launch your idea
 displayTitle: "An MVP for an IT <em>infrastructure</em> security dashboard"
 description:
   <p>AIS provides continuous monitoring of companies' external assets, allowing
