@@ -1,6 +1,6 @@
 ---
 title: "Launching RustRover: JetBrains’ Investment in Rust"
-uthorHandle: algo_luca
+authorHandle: algo_luca
 tags: [rust]
 bio: "Luca Palmieri, Principal Engineering Consultant"
 description:
