@@ -443,7 +443,9 @@
         "ember-codemods/ember-no-implicit-this-codemod",
         "ember-codemods/ember-no-implicit-this-codemod",
         "adopted-ember-addons/ember-pikaday",
-        "funkensturm/ember-local-storage"
+        "funkensturm/ember-local-storage",
+        "emberjs/ember-optional-features",
+        "miragejs/ember-cli-mirage"
       ]
     },
     {
@@ -532,9 +534,10 @@
     "rust-lang/this-week-in-rust",
     "Terminal49/API",
     "Terminal49/API",
-    "mainmatter/git-workshop"
+    "mainmatter/git-workshop",
+    "mansona/ember-cli-mirage"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": ""
+  "last_date": "2024-02-11..2024-02-18"
 }
