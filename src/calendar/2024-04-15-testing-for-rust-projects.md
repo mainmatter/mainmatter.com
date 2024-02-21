@@ -1,5 +1,5 @@
 ---
-title: "Testing for Rust projects – going beyond the basics"
+title: "Remote Workshop: Testing for Rust projects – going beyond the basics"
 image: "/assets/images/calendar/2024-04-15-testing-for-rust-projects/testingforrust.jpg"
 location: "Online"
 url: https://ti.to/mainmatter/rust-testing-april-2024
