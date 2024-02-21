@@ -1,7 +1,7 @@
 ---
 title:
   "Remote Workshop: Telemetry for Rust APIs – you can't fix what you can't see"
-image: "/assets/images/calendar/2024-05-28-telemetry-rust-workshop/telemetryforrust.jpg"
+image: "/assets/images/calendar/2024-05-28-telemetry-rust-workshop/telemetryforrustapis.jpg"
 location: "Online"
 url: https://ti.to/mainmatter/rust-telemetry-may-2024
 kind: workshop
