@@ -24,6 +24,11 @@ Example usage:
     {% endif %}
     <figure class="quote__figure">
       <div class="quote__content">
+          {%- if content.logo -%}
+            <div class="quote__logo-wrapper mb-2">
+              {%- image content.logo, content.logoAlt, '(min-width: 48em) 50vw, 100vw', content.logoLoading, 'quote__logo', [400] -%}
+            </div>
+          {%- endif -%}
         <blockquote class="quote__text">
           {{ content.text | safe }}
         </blockquote>

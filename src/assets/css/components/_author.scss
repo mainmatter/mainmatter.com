@@ -59,13 +59,12 @@
 .author__name-wrapper {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
+  margin-bottom: 0.5rem;
+  gap: 0.5rem
 }
 
-.author-socials {
-  margin-left: 0.5rem;
-  display: flex;
-}
 
 .author-socials__icon {
   margin: 0;
@@ -92,4 +91,11 @@
       margin-bottom: 1rem;
     }
   }
+
+  .author__name-wrapper {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
 }

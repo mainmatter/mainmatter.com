@@ -59,6 +59,17 @@ og:
 {% set title = 'We are trusted by international companies that build on Ruby and Ruby on Rails' %}
 {{ logoList(logoCompanies, title, "h4", "h5") }}
 
+<section class="mb-10">
+  {% set imageData = {
+    "imgPath": "/assets/images/photos/ruby.jpeg",
+    "alt": "Assemble your team!",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
 <section class="my-10">
   <div class="container container--lg">
     <div class="mb-10">

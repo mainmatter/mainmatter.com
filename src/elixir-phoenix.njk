@@ -84,6 +84,17 @@ og:
   </div>
 </section>
 
+<section class="my-10">
+  {% set imageData = {
+    "imgPath": "/assets/images/photos/elixir.jpeg",
+    "alt": "Assemble your team!",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
 {{ recentPosts("Latest from our blog on the topic", collections.elixirPosts) }}
 
 {% set 'content' = {

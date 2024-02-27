@@ -113,6 +113,17 @@ description: "Mainmatter supports clients with experienced people who are ready 
 {% set clients = ['qonto', 'aleph-alpha', 'auditboard', 'mvb'] %}
 {{ featuredCaseStudies(clients, 'Clients') }}
 
+<section class="mb-10">
+  {% set imageData = {
+    "imgPath": "/assets/images/photos/teams.jpeg",
+    "alt": "Assemble your team!",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
 <div class="container container--lg quote-section">
   {% set 'content' = {
     "text": "We started working with Mainmatter to build a state-of-the-art mobile web app from the ground up and it was an absolute success! Not only are they web specialists, but their expertise in development practices and agile processes made our collaboration an absolute delight.",

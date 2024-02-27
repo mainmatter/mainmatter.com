@@ -16,6 +16,7 @@
     --color-link-primary: var(--color-purple);
     --color-link-primary-hover: var(--color-aqua);
     color: var(--color-white);
+    --overlay-opacity: 0.9;
   }
 
   &--aqua {
@@ -25,6 +26,7 @@
     --color-link-primary: var(--color-aqua);
     --color-link-primary-hover: var(--color-white);
     color: var(--color-white);
+    --overlay-opacity: 0.9;
   }
 
   &--black {
@@ -77,7 +79,7 @@
 .color-hero__container {
   display: flex;
   position: relative;
-  padding: 4rem 0 3rem;
+  padding: 10% 0 5%;
 }
 
 .color-hero__text {
@@ -96,7 +98,8 @@
   .color-hero__container {
     display: flex;
     position: relative;
-    padding: 16.5rem 0 12.5rem;
+    width: 100%;
+    padding: 15vh 0 10vh;
   }
 }
 

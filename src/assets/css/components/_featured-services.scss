@@ -31,9 +31,14 @@
   align-items: start;
   flex-direction: column;
   text-decoration: none;
+  font-weight: 400;
 
   &-text {
     text-decoration: none;
+  }
+
+  .featured-services__link-description {
+    font-size: 1rem;
   }
 
   &:hover {
