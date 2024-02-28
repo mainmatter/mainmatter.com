@@ -4,28 +4,45 @@ authorHandle: BobrImperator
 tags: [ember]
 bio: "Software Developer"
 description:
-  "Bartlomiej Dudzik shows how to make an Ember App embeddable in other
+  "Bartlomiej Dudzik shows how to make an Ember App embeddable in non-Ember
   projects."
 og:
   image: /assets/images/posts/2021-12-08-validations-in-ember-apps/og-image.jpg
 tagline: |
-  <p>Taking a look at making Ember Apps embeddable.</p>
+  <p>Taking a look at making an Ember App embeddable in non-Ember projects and allow for communication between one another. Showing how to wrangle Webpack, Ember's build system and their caveats.</p>
 imageAlt: Embeddable Ember Apps image
 ---
 
 #### What we're working with
 
 We'll make a simple Ember Todo App (what else could it be :)) that's then loaded
-in another non-Ember app.
+in another non-Ember app. Use cases may wary, probably 2 most common ones are a
+widget that requires visualising data like maps or microfrontends that may need
+to share data between each other.
 
-_If your requirement is to also make that part Embeddable inside another Ember
-app, you should consider extracting that chunk into an Addon, publish it so it
-can be used in other apps as well as in the Embeddable wrapper._
+The goal of this post mainly to show how to wrangle the Ember's build system and
+show how a potential integration between applications could look like.
 
-The easiest, the most flexible approach for making the app embeddable would be
-to bundle everything into a single JS file and a single CSS file. In the "old
-Ember" we'd use a tool such as `ember-cli-concat` to do that, with Embroider we
-need to take care of things through webpack however.
+The easiest approach for making the app embeddable would be to bundle it's
+scripts into a single JS and CSS files. This is an additional build step we have
+to handle ourselves as by default Webpack splits code into chunks and while it
+could be disabled, the Ember-cli itself also always splits code into `vendor.js`
+and `app.js` files. In the "old Ember" we'd use a tool such as
+`ember-cli-concat` to do that, with Embroider we need to take care of things
+through webpack however.
+
+The end goal is to be able to include a script like so:
+
+```html
+<script src="https://ember-todo-test.onrender.com/bundle.js"></script>
+```
+
+and once loaded use it like so:
+
+```javascript
+const app = new window.MyEmbeddedApp(htmlElement, options);
+await app.start();
+```
 
 ##### Combining JS
 
@@ -170,8 +187,8 @@ First lets define the styles:
 - install packages `npm install postcss-loader mini-css-extract-plugin -D`
 - Create an `app.css` file in the `app` directory - on the same level as
   `app.js`
-- Scope the styles to `.ember-todo-test` to avoid collisions with users
-  (especially if you plan to use tools such as tailwind).
+- Scope the styles to `.ember-todo-test` to avoid style collisions with projects
+  that embed the app (especially if you plan to use tools such as tailwind).
 
 ```css
 /* app/app.css */
@@ -445,26 +462,27 @@ their count.
 
 #### Summary
 
-Making an Ember app isn't impossible or super hard but it is quirky, especially
-considering the nuances about what build step takes what responsibility.
-Currently the Embroider build feels like Webpack with Ember-cli on top, we've
-both old and new system to be mindful of when building it. And frankly an idea
-where I thought about extracting script paths from an already built `index.html`
-isn't that bad :)
+Making an Ember app embeddable isn't impossible or super hard but it is quirky,
+especially considering the nuances about what build step takes what
+responsibility. Currently the Embroider build feels like Webpack with Ember-cli
+on top, we've both old and new system to be mindful of when building it. And
+frankly an idea where I thought about extracting script paths from an already
+built `index.html` isn't that bad :)
 
-However, there is a future where this will become much easier! The Embroider
-Initiative is working its way towards full Vite support which should relief
-Ember from using the AMD format and allow for a much easier process where
-bundler users would only import that single class which initializes the App.
+However, there is a future where this will become much easier! The
+[Embroider Initiative](/embroider-initiative/) is working its way towards full
+Vite support which should relief Ember from using the AMD format and allow for a
+much easier process where bundler users would only import that single class
+which initializes the App.
 
 Time will tell.
 
 #### Resources
 
-- [Repository](https://github.com/BobrImperator/my-blogposts)
-- https://api.emberjs.com/ember/release/classes/application/
-- https://guides.emberjs.com/release/configuring-ember/embedding-applications/
-- https://web.dev/articles/iframe-lazy-loading
-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#async
-- https://webpack.js.org/api/module-methods/#require-amd-version
-- https://tailwindcss.com/docs/guides/emberjs
+- [Github Repository](https://github.com/BobrImperator/my-blogposts)
+- <https://api.emberjs.com/ember/release/classes/application>
+- <https://guides.emberjs.com/release/configuring-ember/embedding-applications>
+- <https://web.dev/articles/iframe-lazy-loading>
+- <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#async>
+- <https://webpack.js.org/api/module-methods/#require-amd-version>
+- <https://tailwindcss.com/docs/guides/emberjs>
