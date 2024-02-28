@@ -13,28 +13,14 @@ tagline: |
 imageAlt: Embeddable Ember Apps image
 ---
 
-#### Techniques
-
-There are a few embedding techniques that come to my mind
-
-- Insert a script and tell it where it needs to mount itself.
-- Import like any other library, initialize however you need.
-- Declare an iframe that loads your website
-
-Additionally if needed, create a loader script that does any of the above.
-That's a bit more complicated and ventures into the topic of microfronteds. I'm
-only mentioning this but it could be a good option if optimizing loading times
-is important for you. You might also consider `async` scripts or `lazy` iframes
-in this case.
-
 #### What we're working with
 
 We'll make a simple Ember Todo App (what else could it be :)) that's then loaded
 in another non-Ember app.
 
-> If your requirement is to also make that part Embeddable inside another Ember
-> app, you should consider extracting that chunk into an Addon, publish it so it
-> can be used in other apps as well as in the Embeddable wrapper.
+_If your requirement is to also make that part Embeddable inside another Ember
+app, you should consider extracting that chunk into an Addon, publish it so it
+can be used in other apps as well as in the Embeddable wrapper._
 
 The easiest, the most flexible approach for making the app embeddable would be
 to bundle everything into a single JS file and a single CSS file. In the "old
@@ -246,9 +232,10 @@ module.exports = function (defaults) {
 };
 ```
 
-**If you're interested in a full tailwind setup, tailwindcss's official
-documentation has an excellent [tutorial](https://tailwindcss.com/docs/guides/emberjs). Only a tiny amount of extending
-what I've shown is needed.**
+_If you're interested in a full tailwind setup, tailwindcss's official
+documentation has an excellent
+[tutorial](https://tailwindcss.com/docs/guides/emberjs). Only a tiny amount of
+extending what I've shown is needed._
 
 #### Booting up the Application on our own terms
 
@@ -289,9 +276,7 @@ export default class ApplicationController extends Controller {
   />
 </div>
 
-{{outlet}}
-
-{% endraw %}
+{{outlet}} {% endraw %}
 ```
 
 Some of the last shenanigans can be found in the `app.js` file. The only change
