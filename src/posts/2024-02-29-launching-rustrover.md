@@ -8,13 +8,13 @@ description:
   the launch of RustRover, the current state of Rust's ecosystem, and the status
   quo of developer tooling for Rust."
 og:
-  image: "/assets/images/posts/2024-02-19-launching-rustrover/og-image.jpg"
+  image: "/assets/images/posts/2024-02-29-launching-rustrover/og-image.jpg"
 tagline: |
   <p>
   Vitaly Bragilevsky, Developer Advocate at JetBrains, and Luca Palmieri, Principal Engineering Consultant at Mainmatter, talked about JetBrains’ Rust IDE RustRover and discussed Vitaly’s experience with Rust as well as the challenges and benefits of the language.
   </p>
 
-image: "/assets/images/posts/2024-02-19-launching-rustrover/header.jpg"
+image: "/assets/images/posts/2024-02-29-launching-rustrover/header.jpg"
 imageAlt: "Vitaly's picture on a gray background"
 ---
 
