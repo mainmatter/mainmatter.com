@@ -445,7 +445,8 @@
         "adopted-ember-addons/ember-pikaday",
         "funkensturm/ember-local-storage",
         "emberjs/ember-optional-features",
-        "miragejs/ember-cli-mirage"
+        "miragejs/ember-cli-mirage",
+        "bgantzler/ember-mirage"
       ]
     },
     {
@@ -536,6 +537,9 @@
     "Terminal49/API",
     "mainmatter/git-workshop",
     "mansona/ember-cli-mirage",
+    "sanity-io/sanity-template-sveltekit-clean",
+    "inesoaresilva/gravity_dummy",
+    "mansona/ember-mirage",
     "sanity-io/sanity-template-sveltekit-clean"
   ],
   "exclude_closed_not_merged": true,
