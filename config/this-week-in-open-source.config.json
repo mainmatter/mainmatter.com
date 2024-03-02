@@ -77,7 +77,6 @@
         "storybookjs/addon-svelte-csf",
         "sveltejs/kit",
         "paoloricciuti/sveltekit-view-transition",
-        "paoloricciuti/sveltekit-view-transition",
         "theetrain/this-week-in-svelte",
         "mainmatter/svelte-promise-modals",
         "paoloricciuti/svelte-client-components",
@@ -153,7 +152,6 @@
         "storybookjs/storybook",
         "strapi/strapi",
         "mansona/express-autoroute-json",
-        "mansona/express-autoroute-json",
         "yaacov/node-modbus-serial",
         "actions/setup-python",
         "showdownjs/showdown",
@@ -181,14 +179,10 @@
         "broccolijs/broccoli-filter",
         "mainmatter/continue-on-error-comment",
         "ember-learn/algolia-index-update-scripts",
-        "ember-learn/algolia-index-update-scripts",
-        "ember-learn/algolia-index-update-scripts",
         "ember-learn/ember-jsonapi-docs",
         "embroider-build/release-plan",
         "mansona/create-release-plan-setup",
         "ef4/lerna-changelog",
-        "ef4/lerna-changelog",
-        "lifeart/glimmer-next",
         "lifeart/glimmer-next",
         "opral/monorepo",
         "mansona/lttf-dashboard",
@@ -196,7 +190,6 @@
         "mansona/lttf-dashboard",
         "opral/monorepo",
         "thefrontside/effection",
-        "pichfl/auto-reveal",
         "pichfl/auto-reveal"
       ]
     },
@@ -339,7 +332,6 @@
         "Authmaker/authmaker-ember-simple-auth",
         "buschtoens/ember-link",
         "ember-cli/ember-cli",
-        "ember-cli/ember-cli",
         "ember-cli/ember-exam",
         "ember-cli/ember-cli-update",
         "ember-learn/ember-api-docs",
@@ -437,11 +429,6 @@
         "mixonic/ember-cli-deprecation-workflow",
         "nickschot/ember-mobile-pane",
         "ember-codemods/ember-no-implicit-this-codemod",
-        "ember-codemods/ember-no-implicit-this-codemod",
-        "ember-codemods/ember-no-implicit-this-codemod",
-        "ember-codemods/ember-no-implicit-this-codemod",
-        "ember-codemods/ember-no-implicit-this-codemod",
-        "ember-codemods/ember-no-implicit-this-codemod",
         "adopted-ember-addons/ember-pikaday",
         "funkensturm/ember-local-storage",
         "emberjs/ember-optional-features",
@@ -452,8 +439,6 @@
     {
       "name": "Project Forms",
       "repos": [
-        "project-forms/project-forms.github.io",
-        "project-forms/project-forms.github.io",
         "project-forms/project-forms.github.io"
       ]
     }
@@ -528,12 +513,8 @@
     "mansona/chris.manson.ie",
     "mansona/ember-vite-app",
     "mansona/boilerplate-update",
-    "mansona/boilerplate-update",
-    "mansona/boilerplate-update",
-    "mainmatter/svelte-workshop",
     "mainmatter/svelte-workshop",
     "rust-lang/this-week-in-rust",
-    "Terminal49/API",
     "Terminal49/API",
     "mainmatter/git-workshop",
     "mansona/ember-cli-mirage",
@@ -544,6 +525,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "query_type": "Merged",
-  "last_date": "2024-02-18..2024-02-25"
+  "last_date": "2024-02-18..2024-02-25",
+  "query_type": "Merged"
 }
