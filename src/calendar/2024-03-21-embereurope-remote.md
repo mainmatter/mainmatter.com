@@ -1,5 +1,5 @@
 ---
-title: "Ember Europe Q4 Meetup"
+title: "Ember Europe Q1 Meetup"
 image: "/assets/images/calendar/2024-03-21-embereurope-remote/embereurope.jpg"
 location: Remote
 url: https://www.meetup.com/ember-europe/
