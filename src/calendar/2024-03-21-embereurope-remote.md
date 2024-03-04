@@ -9,5 +9,5 @@ color: purple
 
 The first Ember Europe meetup of 2024 is taking place remotely on March 21st. Our
 Chris Manson will give an update on the progress made with the Embroider
-initiative. The Ember Europe meetup series brings together the Ember community
+initiative and show the current state of Vite support with Embroider. The Ember Europe meetup series brings together the Ember community
 from all of Europe once a quarter. The meetup is organized by Mainmatter.
