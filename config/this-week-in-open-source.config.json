@@ -80,7 +80,8 @@
         "theetrain/this-week-in-svelte",
         "mainmatter/svelte-promise-modals",
         "paoloricciuti/svelte-client-components",
-        "CodingGarden/listd"
+        "CodingGarden/listd",
+        "oscard0m/test-sveltekit"
       ]
     },
     {
@@ -433,7 +434,9 @@
         "funkensturm/ember-local-storage",
         "emberjs/ember-optional-features",
         "miragejs/ember-cli-mirage",
-        "bgantzler/ember-mirage"
+        "bgantzler/ember-mirage",
+        "adopted-ember-addons/ember-cp-validations",
+        "emberjs/ember-inflector"
       ]
     },
     {
@@ -521,7 +524,8 @@
     "sanity-io/sanity-template-sveltekit-clean",
     "inesoaresilva/gravity_dummy",
     "mansona/ember-mirage",
-    "sanity-io/sanity-template-sveltekit-clean"
+    "sanity-io/sanity-template-sveltekit-clean",
+    "tech-conferences/conference-data"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
