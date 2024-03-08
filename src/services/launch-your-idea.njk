@@ -2,8 +2,8 @@
 layout: 'base'
 title: Launch your idea | Our Services
 description: "We’ll work with you to make the products you need to make your business better – from developing a rock-solid concept to providing customer-centric UI to building the whole MVP."
-  og:
-    image: "/assets/images/services/launch-idea-og-image.jpg"
+og:
+  image: "/assets/images/services/launch-idea-og-image.jpg"
 ---
 
 {% from "color-hero.njk" import colorHero %}
@@ -47,7 +47,6 @@ description: "We’ll work with you to make the products you need to make your b
 {% set elements = [list_1, list_2, list_3, list_4, list_5] %}
 {{ strategyList('launch-your-idea', 'We’ll work with you to:', elements) }}
 
-
 <section class="my-10">
   {% set imageData = {
     "imgPath": "/assets/images/services/launch-your-idea.jpeg",
@@ -58,7 +57,6 @@ description: "We’ll work with you to make the products you need to make your b
   } %}
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
-
 
 <section class="my-10">
   <div class="container container--lg">
@@ -84,7 +82,6 @@ description: "We’ll work with you to make the products you need to make your b
   </div>
 </section>
 
-
 {% set 'content' = {
   "title": "Mentoring & Training",
   "text": "At Mainmatter, we promise sustainable change. Our methods include mentoring, pair-programming, and reviews so every team we work with is more knowledgeable than when we started.",
@@ -108,20 +105,20 @@ description: "We’ll work with you to make the products you need to make your b
 {{ featuredCaseStudies(clients, 'Clients') }}
 
 <div class="container container--lg quote-section">
-{% set 'content' = {
+  {% set 'content' = {
   "text": "As we did not have any design or frontend expertise in-house, we could not professionally build the user interface of our platform and bring the product to the market. We were looking for support and chose to work with Mainmatter, which turned out to be a great partner for us. The experienced team of Mainmatter helped us release an MVP and set the foundation for developing the application in the future.",
   "source": "Milivoj Simeonovski, Chief Product Officer (Founding)",
   "image": "/assets/images/photos/milivoj-simeonovski.png",
   "alt": "Milivoj Simeonovski smiling at the camera wearing a red sweater",
   "loading": "lazy"
-} %} {{ quote(content) }}
+} %}
+  {{ quote(content) }}
 </div>
 
 {% set 'content' = {
   "subtitle": "Discover our other services"
-  } %}
+} %}
 {{ featuredServices(services['launch-your-idea'], content) }}
-
 
 {% set 'content' = {
   "title": "Grow your business with us",

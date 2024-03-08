@@ -2,8 +2,8 @@
 layout: 'base'
 title: Strategic advice | Our Services
 description: "Whether you’re building a product or a team from the ground up or scaling up, we can provide a valuable and experienced outside perspective – from assessments to strategic roadmaps and support during execution."
-  og:
-    image: "/assets/images/services/strategic-advice-og-image.jpg"
+og:
+  image: "/assets/images/services/strategic-advice-og-image.jpg"
 ---
 
 {% from "color-hero.njk" import colorHero %}
@@ -51,20 +51,20 @@ description: "Whether you’re building a product or a team from the ground up o
 {{ featuredCaseStudies(clients, 'Clients') }}
 
 <div class="container container--lg quote-section">
-{% set 'content' = {
+  {% set 'content' = {
   "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
   "source": "Jürgen Witte, CPO @ Rail Europe",
   "image": "/assets/images/photos/juergen-witte.png",
   "alt": "Jürgen Witte",
   "loading": "lazy"
-} %} {{ quote(content) }}
+} %}
+  {{ quote(content) }}
 </div>
 
 {% set 'content' = {
   "subtitle": "Discover our other services"
-  } %}
+} %}
 {{ featuredServices(services['team-reinforcement'], content) }}
-
 
 <section class="mt-10">
   {% set imageData = {

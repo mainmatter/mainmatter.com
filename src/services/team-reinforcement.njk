@@ -2,8 +2,8 @@
 layout: 'base'
 title: Team Reinforcement | Our Services
 description: "Mainmatter supports clients with experienced people who are ready to build products, mentor people and support your goals, bringing in a fresh perspective along the way."
-  og:
-    image: "/assets/images/services/team-reinforcement-og-image.jpg"
+og:
+  image: "/assets/images/services/team-reinforcement-og-image.jpg"
 ---
 
 {% from "color-hero.njk" import colorHero %}
@@ -133,7 +133,8 @@ description: "Mainmatter supports clients with experienced people who are ready 
     "image": "/assets/images/photos/carl-anderson.jpg",
     "alt": "Carl Anderson, looking at the camera wearing a checkered blue/grey shirt and white T-shirt",
     "loading": "lazy"
-  } %} {{ quote(content) }}
+  } %}
+  {{ quote(content) }}
 </div>
 
 {% set 'content' = {
