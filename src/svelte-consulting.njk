@@ -68,7 +68,7 @@ og:
 </section>
 
 <section class="my-10 container container--lg">
-  <div class="split-content">
+  <div class="split-content no-link">
     <div class="split-content__wrapper">
       <div class="split-content__content">
         <h5>Book a free call</h5>
@@ -146,6 +146,31 @@ og:
 {{ featuredCaseStudy('rail-europe', 'purple', 'work__featured-case-study') }}
   </ul>
 </div>
+
+<section class="container container--xl opensource-list">
+  <div class="">
+    <h2 class="opensource-list__title h2">We love Open Source</h2>
+    <ul class="opensource-list__list">
+      <li class="opensource-list__project">
+        <div class="opensource-list__project-image">
+          <img src="/assets/images/svelte/crossedfingers.svg" alt="Svelte Promise Modals"/>
+        </div>
+        <div class="opensource-list__project-text">
+          <h4 class="mb-015">Svelte Promise Modals</h4>
+          <p>
+            Modals for Svelte made easy. Promised!
+          </p>
+          {% set link = {
+          "label": 'View on GitHub',
+          "url": 'http://github.com/mainmatter/svelte-promise-modals'
+          }
+          %}
+          {{ btnSecondary( link, 'mt-2' )}}
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
 
 {{ recentPosts("Latest from our blog on the topic", collections.sveltePosts) }}
 

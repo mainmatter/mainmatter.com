@@ -133,35 +133,6 @@ description: "We provide a number of workshops to enable teams to succeed with R
     </div>
 </section>
 
-<section class="my-10 container container--lg">
-    <a href="https://foundation.rust-lang.org/" class="split-content__link"></a>
-    <div class="split-content__wrapper">
-      <div class="split-content__content">
-        <h4>Mainmatter is a Silver Member of the Rust Foundation</h4>
-        {% set link = {
-            "label": 'Learn more',
-            "url": 'https://foundation.rust-lang.org/'
-          }
-          %}
-        {{ btnSecondary( link, 'mt-2' )}}
-      </div>
-      <div class="split-content__feature">
-        {% include 'content/secondary-feature-rust.njk' %}
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="my-10 container container--lg">
-  <div class="">
-    <div class="mb-4">
-      <h5 class="mb-015">EuroRust</h5>
-      <h3 class="mb-2">We run EuroRust</h3>
-      <p>Mainmatter runs EuroRust, the yearly 2-day conference for the European Rust community.</p>
-    </div>
-  </div>
-</section>
-
 {% set logoCompanies = [
   'Rust Foundation',
   'arm',
@@ -185,6 +156,63 @@ description: "We provide a number of workshops to enable teams to succeed with R
     "sizesArray": [760, 1440, 1920]
   } %}
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
+<section class="my-10 container container--lg">
+  <div class="">
+    <div class="mb-4">
+      <h5 class="mb-015">Rust & Mainmatter</h5>
+      <h3 class="mb-2">A unique skillset</h3>
+      <p>We’re experts - our Rust team is led by Luca Palmieri, author of <a href="http://zero2prod.com">"Zero to Production in Rust"</a>, and we have been part of the Rust ecosystem for years, helping out the <a href="https://crates.io">crates.io</a> project.</p>
+      <p>But we don't stop at Rust – we have developed big web apps and mentored teams on backend, frontend, design, as well as process and developer infrastructure for years. We know what it takes to connect everything together and deliver a delightful end-to-end experience.</p>
+    </div>
+  </div>
+  <div class="split-content">
+    <a href="https://foundation.rust-lang.org/" class="split-content__link"></a>
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h4>Mainmatter is a Silver Member of the Rust Foundation</h4>
+        {% set link = {
+            "label": 'Learn more',
+            "url": 'https://foundation.rust-lang.org/'
+          }
+          %}
+        {{ btnSecondary( link, 'mt-2' )}}
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-rust.njk' %}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="my-10 container container--lg">
+  <div class="">
+    <div class="mb-4">
+      <h5 class="mb-015">EuroRust</h5>
+      <h3 class="mb-2">We run EuroRust</h3>
+      <p>EuroRust 2023 was a big success - again: bigger venue, more speakers, onsite workshops, an after-party, and many opportunities to exchange with fellow Rustaceans.</p>
+      <p>EuroRust 2024 is already in the planning. It will take place on the 10th and 11th of October 2024, in Vienna and online.</p>
+    </div>
+  </div>
+  <div class="split-content">
+    <a href="https://www.youtube.com/playlist?list=PLh5-VpZ3SvUXLJ2xKnT1z12pTAUSgMAu7" class="split-content__link"></a>
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h4>All the talks from the previous editions are available on YouTube</h4>
+        {% set link = {
+            "label": 'Learn more',
+            "url": 'https://www.youtube.com/playlist?list=PLh5-VpZ3SvUXLJ2xKnT1z12pTAUSgMAu7'
+          }
+          %}
+        {{ btnSecondary( link, 'mt-2' )}}
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-eurorust.njk' %}
+      </div>
+    </div>
+  </div>
 </section>
 
 {% set 'content' = {

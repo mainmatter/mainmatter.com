@@ -5,10 +5,10 @@
   .btn-secondary {
     z-index: 50;
   }
+}
 
-  &:hover {
-    color: var(--color-purple);
-  }
+.split-content:not(.no-link):hover {
+  color: var(--color-purple);
 }
 
 .split-content__subheading {
