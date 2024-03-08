@@ -21,7 +21,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  min-width: 90%;
   padding: 0;
   text-decoration: none;
   background-color: transparent;
@@ -162,7 +162,7 @@
   }
   .nav__wrapper {
     margin: 2.5% 5%;
-    width: 90%;
+    min-width: 90%;
   }
 
   .nav__logo {
