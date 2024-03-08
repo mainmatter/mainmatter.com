@@ -21,5 +21,4 @@ if (contactForm) new ContactForm(contactForm);
 const logoList = document.getElementById("logo-list");
 if (logoList) new LogoList(logoList);
 
-new Animations();
 bindSelectDropdowns();
