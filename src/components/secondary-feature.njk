@@ -26,17 +26,20 @@ Example usage:
 #}
 {% from "cta-link.njk" import ctaLink %}
 {%- macro secondaryFeature(content, className) -%}
-  <div class="secondary-feature{% if className %} {{ className }}{% endif %}" data-background-color="purple">
+  <div
+    class="secondary-feature{% if className %}{{ className }}{% endif %}"
+    data-background-color="purple"
+  >
     <div class="secondary-feature__main">
       {%- if content.text -%}
         <h2 class="secondary-feature__text h5 text--bold">{{ content.text | safe }}</h2>
-      {%- endif %}
+      {%- endif -%}
       {%- if content.linkUrl -%}
         {{ ctaLink(content.linkUrl, content.linkText, 'secondary-feature__link') }}
       {%- endif -%}
     </div>
     <div class="secondary-feature__image-wrapper">
-      {% if content.image -%}
+      {%- if content.image -%}
         {%- image content.image, content.alt, '(min-width:62em) 15rem, 90vw', content.loading, 'secondary-feature__image', [250, 375, 500, 750] -%}
       {%- endif -%}
     </div>

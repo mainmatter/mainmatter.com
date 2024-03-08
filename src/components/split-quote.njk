@@ -23,14 +23,15 @@ Example usage:
 #}
 
 {%- macro splitQuote(desktopTextPosition, color, content) -%}
-  <section class="split-quote split-quote--quote split-quote--{{ color }}" data-background-color="{{ color }}">
+  <section
+    class="split-quote split-quote--quote split-quote--{{ color }}"
+    data-background-color="{{ color }}"
+  >
     <div class="split-quote__main split-quote__main--{{ desktopTextPosition }}">
       <div class="split-quote__container container">
         <figure class="split-quote__quote">
           <span class="split-quote__icon">{%- include 'svg/quote.njk' -%}</span>
-          <blockquote class="split-quote__text">
-            {{- content.text | safe -}}
-          </blockquote>
+          <blockquote class="split-quote__text">{{- content.text | safe -}}</blockquote>
           <figcaption class="split-quote__source h4">{{- content.source -}}</figcaption>
         </figure>
       </div>

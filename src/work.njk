@@ -1,5 +1,5 @@
 ---
-layout: 'base'
+layout: "base"
 title: Our Work
 description: A proven track record of building mobile and web apps for Europe's fastest growing start-ups and big enterprises – covering everything from design to code.
 eleventyNavigation:
@@ -10,13 +10,15 @@ eleventyNavigation:
 {% from "color-hero.njk" import colorHero %}
 {% from 'featured-case-study.njk' import featuredCaseStudy %}
 {% from "client-cards.njk" import clientCards %}
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "A proven track record of <em>successful</em> projects for international clients",
   "image": "/assets/images/photos/work-hero.jpg",
   "alt": "Man standing at whiteboard presenting to three team members sitting to either side of him",
   "loading": "eager",
   "titleTag": "h1"
-} %}
+  }
+%}
 {{ colorHero('center', 'large', 'aqua', content) }}
 <div class="work container container--xl">
   <h2 class="work__title h5">Meet our clients</h2>
@@ -44,7 +46,8 @@ eleventyNavigation:
   </ul>
 </div>
 
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Work with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
   "linkUrl": "/contact/",
@@ -52,5 +55,6 @@ eleventyNavigation:
   "image": "/assets/images/photos/grow-with-us-case-studies.jpg",
   "alt": "Three team members gathered around their laptops and tablets",
   "loading": "lazy"
-} %}
+  }
+%}
 {{ colorHero('center', 'small', 'purple', content, true) }}

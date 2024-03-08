@@ -9,31 +9,30 @@ Example usage:
 {% set logoCompanies = ['Qonto', 'Trainline', 'Timify', 'Cardstack', 'Generali', 'Experteer'] %}
 {{ logoList(logoCompanies) }}
 #}
-
 {% set caseStudies = collections.caseStudiesFeatured %}
-{%- macro listItem(logo) %}
+{%- macro listItem(logo) -%}
   {% set caseUrl %}/cases/{{ logo | slug }}/{% endset %}
   {% set imagePath %}/logos/monochrome/{{ logo | slug }}.svg{% endset %}
   <li class="logo-list__item">
     {% if caseUrl | urlExists(caseStudies) %}
       <a href="{{ caseUrl }}" title="{{ logo }} case study">
-        <div class="logo-list__image" aria-label="{{ logo }} logo">
-          {% svg imagePath, 'img' %}
-        </div>
+        <div class="logo-list__image" aria-label="{{ logo }} logo">{% svg imagePath, 'img' %}</div>
       </a>
     {% else %}
-      <div class="logo-list__image" aria-label="{{ logo }} logo">
-        {% svg imagePath, 'img' %}
-      </div>
+      <div class="logo-list__image" aria-label="{{ logo }} logo">{% svg imagePath, 'img' %}</div>
     {% endif %}
   </li>
-{%- endmacro %}
+{%- endmacro -%}
 
 {%- macro logoList(logos, title, heading = "h2", headingClass = "h3", animate=true) -%}
   <section class="logo-list" id="logo-list">
     {% if title %}
       <div class="logo-list__title">
-        <{{heading}} class="{{headingClass}}">{{ title }}</{{heading}}>
+        {% if heading == 'h2' %}
+          <h2 class="{{ headingClass }}">{{ title }}</h2>
+        {% else heading == 'h4' %}
+          <h4 class="{{ headingClass }}">{{ title }}</h4>
+        {% endif %}
       </div>
     {% endif %}
     <div class="logo-list__wrapper">

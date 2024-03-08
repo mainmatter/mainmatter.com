@@ -1,18 +1,19 @@
 ---
-layout: 'base'
+layout: "base"
 title: Rust Workshops | Our Services
 description: "We provide a number of workshops to enable teams to succeed with Rust – onsite or remote"
 ---
 
 {% from "color-hero.njk" import colorHero %}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "We teach teams like yours how to adopt and succeed with Rust",
   "image": "/assets/images/photos/mainmatter-team-meeting.jpg",
   "alt": "Man standing at whiteboard presenting to three team members sitting to either side of him",
   "loading": "eager",
   "titleTag": "h1"
-} %}
+  }
+%}
 {{ colorHero('center', 'large', 'aqua', content) }}
 
 <section class="split-content">
@@ -22,48 +23,91 @@ description: "We provide a number of workshops to enable teams to succeed with R
     <div class="split-content__content">
       <div class="split-content__text">
         <p>We specialize on Rust on the backend: API services, workers, data pipelines.</p>
-        <p>That focus shapes our training offering.<br>
-           We can walk alongside you on a journey from zero to hero,
-           starting from the basics of the language all the way to advanced testing techniques and comprehensive
-           telemetry instrumentation.</p>
+        <p>
+          That focus shapes our training offering.<br />
+          We can walk alongside you on a journey from zero to hero, starting from the basics of the
+          language all the way to advanced testing techniques and comprehensive telemetry
+          instrumentation.
+        </p>
         <p>Click on the links below to learn more about each workshop:</p>
         <ul>
-            <li><a href="/services/workshops/introduction-to-rust-for-web-developers/">Introduction to Rust for Web Developers</a></li>
-            <li><a href="/services/workshops/build-production-ready-apis-in-rust/">Build production-ready API services in Rust</a></li>
-            <li><a href="/services/workshops/telemetry-for-rust-apis/">You can't fix what you can't see: telemetry for Rust APIs</a></li>
-            <li><a href="/services/workshops/an-introduction-to-testing-in-rust/">Testing in Rust: an introduction</a></li>
-            <li><a href="/services/workshops/advanced-testing-in-rust/">Testing in Rust: going beyond the basics</a></li>
+          <li>
+            <a href="/services/workshops/introduction-to-rust-for-web-developers/"
+              >Introduction to Rust for Web Developers</a
+            >
+          </li>
+          <li>
+            <a href="/services/workshops/build-production-ready-apis-in-rust/"
+              >Build production-ready API services in Rust</a
+            >
+          </li>
+          <li>
+            <a href="/services/workshops/telemetry-for-rust-apis/"
+              >You can't fix what you can't see: telemetry for Rust APIs</a
+            >
+          </li>
+          <li>
+            <a href="/services/workshops/an-introduction-to-testing-in-rust/"
+              >Testing in Rust: an introduction</a
+            >
+          </li>
+          <li>
+            <a href="/services/workshops/advanced-testing-in-rust/"
+              >Testing in Rust: going beyond the basics</a
+            >
+          </li>
         </ul>
       </div>
     </div>
     <h3 class="split-content__subheading h2">Our methodology</h3>
     <div class="split-content__content">
       <div class="split-content__text">
-        <p>All our workshops are hands-on. We believe that the best way to learn is by doing. Workshop attendees
-           spend most of their time writing code, working through exercises with automated solution-checking.</p>
-        <p>This structure allows our trainers to spend most of their time in 1:1 conversations with attendees,
-           providing tailored feedback and guidance.</p>
+        <p>
+          All our workshops are hands-on. We believe that the best way to learn is by doing.
+          Workshop attendees spend most of their time writing code, working through exercises with
+          automated solution-checking.
+        </p>
+        <p>
+          This structure allows our trainers to spend most of their time in 1:1 conversations with
+          attendees, providing tailored feedback and guidance.
+        </p>
       </div>
     </div>
     <h3 class="split-content__subheading h2">Logistics</h3>
     <div class="split-content__content">
       <div class="split-content__text">
         <p>All our workshops can be held in-person or remotely.</p>
-        <p>If you decide to organise a workshop at your company, we are happy to tailor
-          the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as
-          develop new content if desired.<br>
-          <a href="https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us">Get in touch with us</a>
-          to discuss further!</p>
-        <p>From time to time, we also organize public workshops. <br>
-           Public workshops are the ideal solution for independent developers and small teams: it's enough to buy a ticket to join!<br>
-           Check out our upcoming events:
-           <ul>
-              <li>At <a href="https://www.rustnationuk.com/">RustNation UK</a> in London, on March 26th 2024—we'll
-           be in charge of the Expert workshop.</li>
-              <li><a href="https://ti.to/mainmatter/rust-testing-april-2024">Testing for Rust projects – going beyond the basics</a>, remote, on April 15th-16th 2024.</li>
-              <li><a href="https://ti.to/mainmatter/rust-telemetry-may-2024">Telemetry for Rust APIs – you can't fix what you can't see</a>, remote, on May 28th-29th 2024.</li>
-          </ul>
+        <p>
+          If you decide to organise a workshop at your company, we are happy to tailor the
+          curriculum to your needs. We can combine multiple workshops, pick and choose modules, as
+          well as develop new content if desired.<br />
+          <a href="https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us"
+            >Get in touch with us</a
+          >
+          to discuss further!
         </p>
+        <p>
+          From time to time, we also organize public workshops. <br />
+          Public workshops are the ideal solution for independent developers and small teams: it's
+          enough to buy a ticket to join!
+        </p>
+        Check out our upcoming events:
+        <ul>
+          <li>
+            At <a href="https://www.rustnationuk.com/">RustNation UK</a> in London, on March 26th
+            2024—we'll be in charge of the Expert workshop.
+          </li>
+          <li>
+            <a href="https://ti.to/mainmatter/rust-testing-april-2024"
+              >Testing for Rust projects – going beyond the basics</a
+            >, remote, on April 15th-16th 2024.
+          </li>
+          <li>
+            <a href="https://ti.to/mainmatter/rust-telemetry-may-2024"
+              >Telemetry for Rust APIs – you can't fix what you can't see</a
+            >, remote, on May 28th-29th 2024.
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -76,17 +120,24 @@ description: "We provide a number of workshops to enable teams to succeed with R
       <li class="quotes-list__quote">
         <div class="quotes-list__quote-text text--sm">
           <blockquote>
-            ”The individual exercises build on each other very well. Direct practice makes it easier to understand the topics. I have rarely taken part in such a good practical workshop!”
+            ”The individual exercises build on each other very well. Direct practice makes it easier
+            to understand the topics. I have rarely taken part in such a good practical workshop!”
           </blockquote>
-          <figcaption class="quotes-list__quote-source">Remote attendee<span class="quotes-list__quote-source--separator">
+          <figcaption class="quotes-list__quote-source">
+            Remote attendee<span class="quotes-list__quote-source--separator"></span>
+          </figcaption>
         </div>
       </li>
       <li class="quotes-list__quote">
         <div class="quotes-list__quote-text text--sm">
           <blockquote>
-            ”I usually avoid workshops. The pace of more than 3 people is hard to sync: I always feel rushed in some bits, slowed down in others. You fixed that with your code-centric approach: I was able to fully use the time and the knowledge of the trainer!”
+            ”I usually avoid workshops. The pace of more than 3 people is hard to sync: I always
+            feel rushed in some bits, slowed down in others. You fixed that with your code-centric
+            approach: I was able to fully use the time and the knowledge of the trainer!”
           </blockquote>
-          <figcaption class="quotes-list__quote-source">Onsite attendee<span class="quotes-list__quote-source--separator">
+          <figcaption class="quotes-list__quote-source">
+            Onsite attendee<span class="quotes-list__quote-source--separator"></span>
+          </figcaption>
         </div>
       </li>
     </ul>

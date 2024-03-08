@@ -33,24 +33,31 @@ Example usage:
 {%- macro colorHero(textPosition, textSize, color, content, textAnimationOffset) -%}
   {% if textAnimationOffset %}{% set textAnimationClasses = 'text-animation-offset' %}{% else %}{% set textAnimationClasses = 'text-animation' %}{% endif %}
   <section class="color-hero color-hero--{{ color }}" data-background-color="{{ color }}">
-    {%- if content.titleTag -%}
-      {%- set titleTag = content.titleTag -%}
-    {%- else -%}
-      {%- set titleTag = 'h2' -%}
-    {%- endif -%}
     <div class="color-hero__image-wrapper">
       {% if content.image %}
         {% image content.image, content.alt, '100vw', content.loading, 'color-hero__image', [760, 1440, 1920, 2048] %}
       {% endif %}
     </div>
     <div class="color-hero__overlay" data-color-hero></div>
-    <div class="color-hero__container container container--lg color-hero__container--{{ textPosition }}">
+    <div
+      class="color-hero__container container container--lg color-hero__container--{{ textPosition }}"
+    >
       <div class="color-hero__main">
-        {% if content.title %}
-          <{{ titleTag }} class="color-hero__title{% if titleTag == 'h1' %} color-hero__title--full{% endif %} {{ textAnimationClasses }}">{{ content.title | safe }}</{{ titleTag }}>
-        {% endif %}
+        {%- set titleClass = 'color-hero__title' -%}
+        {%- set titleText = content.title | safe -%}
+        {%- if content.titleTag == 'h1' -%}
+          {%- set titleClass = titleClass + " color-hero__title--full" -%}
+        {%- endif -%}
+
+        {%- if content.titleTag == 'h1' -%}
+          <h1 class="{{ titleClass }} {{ textAnimationClasses }}">{{ titleText }}</h1>
+        {%- else if content.titleTag == 'h2' -%}
+          <h2 class="{{ titleClass }} {{ textAnimationClasses }}">{{ titleText }}</h2>
+        {%- endif -%}
         {% if content.text %}
-          <div class="color-hero__text color-hero__text--{{ textSize }}">{{ content.text | safe }}</div>
+          <div class="color-hero__text color-hero__text--{{ textSize }}">
+            {{ content.text | safe }}
+          </div>
         {% endif %}
         {% if content.linkUrl %}
           {{ ctaLink(content.linkUrl, content.linkText, 'color-hero__link') }}

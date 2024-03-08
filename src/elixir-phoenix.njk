@@ -12,8 +12,10 @@ og:
 
 <section class="color-hero color-hero--aqua" data-background-color="aqua">
   <div class="color-hero__image-wrapper">
-    {% image '/assets/images/photos/0022.jpg', 'Smiling team members gathered around a laptop talking', '100vw', 'eager',
-    'color-hero__image', [760, 1440, 1920] %}
+    {%
+      image '/assets/images/photos/0022.jpg', 'Smiling team members gathered around a laptop talking', '100vw', 'eager',
+      'color-hero__image', [760, 1440, 1920]
+    %}
   </div>
   <div class="color-hero__overlay"></div>
   <div class="color-hero__container container container--lg color-hero__container--center">
@@ -21,7 +23,10 @@ og:
       {% set imagePath %}/assets/images/elixir/elixir-phoenix-logos.png{% endset %}
       <img class="expertise__logo" src="{{ imagePath }}" alt="Elixir and Phoenix logos" />
       <h1 class="color-hero__title color-hero__title--full ">Elixir & Phoenix</h1>
-      <div class="color-hero__text color-hero__text--large">Elixir and Phoenix form a modern and capable stack for building ambitious digital products of the future, based on an established foundation that has proven itself for decades.</div>
+      <div class="color-hero__text color-hero__text--large">
+        Elixir and Phoenix form a modern and capable stack for building ambitious digital products
+        of the future, based on an established foundation that has proven itself for decades.
+      </div>
     </div>
   </div>
 </section>
@@ -32,31 +37,33 @@ og:
     <h3 class="split-content__subheading h2">The best of all worlds</h3>
     <div class="split-content__content">
       <div class="split-content__text">
-        <p>Elixir combines the expressiveness and simplicity of Ruby with the performance and stability of the Erlang VM. Phoenix
-        builds on the concepts first introduced by Ruby on Rails, combining them with a number of architectural improvements to
-        take the architecture into the future.</p>
+        <p>
+          Elixir combines the expressiveness and simplicity of Ruby with the performance and
+          stability of the Erlang VM. Phoenix builds on the concepts first introduced by Ruby on
+          Rails, combining them with a number of architectural improvements to take the architecture
+          into the future.
+        </p>
       </div>
-      <div class="split-content__feature">
-        {% include 'content/secondary-feature-erlang.njk' %}
-      </div>
+      <div class="split-content__feature">{% include 'content/secondary-feature-erlang.njk' %}</div>
     </div>
   </div>
 </section>
 
-{% set 'content' = {
-"title": "Early adoption, long-term commitment",
-"subtitle": "Mainmatter was an early adopter of Elixir and Phoenix, offering trainings and leveraging the potential of the stack for
-our clients.",
-"text": "<p>We support the Elixir Munich meetup, have been actively involved with conferences like ElixirConf and ElixirConf EU and
-are honored to be a Founding Sponsor of the Erlang Ecosystem Foundation.</p><p>Every new project gives us the opportunity to learn and grow our expertise. We share what we learn with the community via talks at conferences, at meetups and on our blog.</p>",
-"linkUrl": "/events/",
-"linkText": "View our talks and check out our calendar for the next events",
-"image": "/assets/images/elixir/elixir-phoenix-banner.jpg",
-"alt": "Group photo of mainmatter team",
-"loading": "lazy"
-} %}
+{%
+  set 'content' = {
+  "title": "Early adoption, long-term commitment",
+  "subtitle": "Mainmatter was an early adopter of Elixir and Phoenix, offering trainings and leveraging the potential of the stack for
+  our clients.",
+  "text": "<p>We support the Elixir Munich meetup, have been actively involved with conferences like ElixirConf and ElixirConf EU and
+  are honored to be a Founding Sponsor of the Erlang Ecosystem Foundation.</p><p>Every new project gives us the opportunity to learn and grow our expertise. We share what we learn with the community via talks at conferences, at meetups and on our blog.</p>",
+  "linkUrl": "/events/",
+  "linkText": "View our talks and check out our calendar for the next events",
+  "image": "/assets/images/elixir/elixir-phoenix-banner.jpg",
+  "alt": "Group photo of mainmatter team",
+  "loading": "lazy"
+  }
+%}
 {{ imageBannerWithText(content) }}
 
 {{ recentPosts("Latest from our blog on the topic", collections.elixirPosts) }}
-
 {% include 'content/hero-grow-with-us.njk' %}

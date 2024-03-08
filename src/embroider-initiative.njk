@@ -10,15 +10,16 @@ og:
 {% from "color-hero.njk" import colorHero %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from "logo-list.njk" import logoList %}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "The Embroider Initiative",
   "titleTag": "h1",
   "text": "Mainmatter, together with a group of sponsors, is working on an initiative to ship Embroider and secure the ecosystem’s investment in Ember.js.",
   "image": "/assets/images/photos/0045.jpg",
   "alt": "4 people standing around a table with some printed diagrams on it. 2 people shake hands, one claps their hands.",
   "loading": "eager"
-} %}
+  }
+%}
 {{ colorHero('center', 'large', 'purple', content) }}
 
 <section class="featured-services container container--lg">
@@ -35,49 +36,66 @@ og:
       <li class="featured-services__list-item">
         <p class="featured-services__link h4">
           {% include 'svg/arrow.njk' %}
-          <span class="featured-services__link-text">Making Embroider the default for new apps and addons</span>
+          <span class="featured-services__link-text"
+            >Making Embroider the default for new apps and addons</span
+          >
         </p>
       </li>
       <li class="featured-services__list-item">
         <p class="featured-services__link h4">
           {% include 'svg/arrow.njk' %}
-          <span class="featured-services__link-text">Kickstarting development of an Ember plugin for Vite</span>
+          <span class="featured-services__link-text"
+            >Kickstarting development of an Ember plugin for Vite</span
+          >
         </p>
       </li>
     </ul>
   </div>
-  <p class="featured-services__text">Mainmatter assigns a team of 2 people to work on Embroider full time with guidance and support from Ed Faulkner. Join the initiative to help us extend that timeline and with that the scope of what the initiative will achieve.</p>
+  <p class="featured-services__text">
+    Mainmatter assigns a team of 2 people to work on Embroider full time with guidance and support
+    from Ed Faulkner. Join the initiative to help us extend that timeline and with that the scope of
+    what the initiative will achieve.
+  </p>
 </section>
 
 <section>
-  {% set imageData = {
+  {%
+    set imageData = {
     "imgPath": "/assets/images/embroider-initiative/sponsor-logos.jpg",
     "alt": "4 people talking in front of a wall with sticky notes; laid over that the logos of ticketsolve, Intercom, CrowdStrike, Lighthouse, HashiCorp, XBE, Teamtailor, HotDoc, Isaac Lee, solute, Triptyk, Balint Erdi, redpencil, Productive, Skovik, Yapplabs, Adfinis",
     "sizes": "100vw",
     "loading": "lazy",
     "sizesArray": [760, 1440, 1920]
-  } %}
+    }
+  %}
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
 
 <section class="text-section">
   <div class="container container--lg">
     <h2 class="h2">The Importance of Embroider</h2>
-    <p class="text-section__text">Embroider is of crucial importance for the future of Ember. It will enable new capabilities planned for Polaris, allow decreasing bundle sizes, and open a path towards to benefitting from modern build tooling like Vite. Embroider remaining unshipped represents a substantial risk for the entire Ember ecosystem and for the investments that companies have made that build on Ember.</p>
+    <p class="text-section__text">
+      Embroider is of crucial importance for the future of Ember. It will enable new capabilities
+      planned for Polaris, allow decreasing bundle sizes, and open a path towards to benefitting
+      from modern build tooling like Vite. Embroider remaining unshipped represents a substantial
+      risk for the entire Ember ecosystem and for the investments that companies have made that
+      build on Ember.
+    </p>
   </div>
 </section>
 
 {% set logoCompanies = ['ticketsolve', 'intercom', 'lighthouse', 'crowdstrike', 'hashicorp', 'xbe', 'teamtailor', 'hotdoc', 'isaac-lee', 'solute', 'triptyk', 'ember-checkup', 'redpencil', 'productive', 'skovik', 'yapplabs', 'adfinis' ] %}
 {% set title = 'Companies and individuals that build on Ember support the initiative to secure the future of their investments.' %}
 {{ logoList(logoCompanies, title) }}
-
-{% set 'content' = {
-"title": "Join the Embroider Initiative!",
-"text": "Sponsor the Embroider Initiative, help us ship Embroider, and secure the future of Ember and your investment in it.",
-"linkUrl": "/contact/",
-"linkText": "Get in touch",
-"image": "/assets/images/photos/laptop-detail.jpg",
-"alt": "The back of a notebook with a bavarian Ember Tomster sticker on it, wearning Lederhosn",
-"loading": "lazy"
-} %}
+{%
+  set 'content' = {
+  "title": "Join the Embroider Initiative!",
+  "text": "Sponsor the Embroider Initiative, help us ship Embroider, and secure the future of Ember and your investment in it.",
+  "linkUrl": "/contact/",
+  "linkText": "Get in touch",
+  "image": "/assets/images/photos/laptop-detail.jpg",
+  "alt": "The back of a notebook with a bavarian Ember Tomster sticker on it, wearning Lederhosn",
+  "loading": "lazy"
+  }
+%}
 {{ colorHero('center', 'small', 'aqua', content, true) }}

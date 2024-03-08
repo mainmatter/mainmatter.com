@@ -1,20 +1,21 @@
 ---
-  eleventyComputed:
-    title: "Engineering, Design & Product Blog {% if pagination.pageNumber > 0 %}- Page {{ pagination.pageNumber + 1 }}{% endif %}"
-  description: "Frontend and JavaScript, Svelte and Ember, Rust and WASM, Elixir and Phoenix, Product and Design: Stay on top of what's happening."
-  permalink: "/blog/{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}/{% endif %}"
-  layout: base
-  pagination: 
-    data: collections.posts
-    size: 6
-    alias: posts
-    before: function(data) { return data.slice(1); }
-  og: 
-    image: "/assets/images/blog/og-image.jpg"
-  eleventyNavigation: 
-    key: Blog
-    order: 50
-
+eleventyComputed:
+  title: "Engineering, Design & Product Blog {% if pagination.pageNumber > 0 %}
+    - Page {{ pagination.pageNumber + 1 }}
+  {% endif %}"
+description: "Frontend and JavaScript, Svelte and Ember, Rust and WASM, Elixir and Phoenix, Product and Design: Stay on top of what's happening."
+permalink: "/blog/{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1 }}/{% endif %}"
+layout: base
+pagination:
+  data: collections.posts
+  size: 6
+  alias: posts
+  before: function(data) { return data.slice(1); }
+og:
+  image: "/assets/images/blog/og-image.jpg"
+eleventyNavigation:
+  key: Blog
+  order: 50
 ---
 
 {% from "color-hero.njk" import colorHero %}
@@ -27,15 +28,14 @@
   {% include 'global/tag-filter.njk' %}
   <ol class="post-cards">
     {%- for post in pagination.items -%}
-      <li class="post-cards__item">
-        {{ postCard(post) }}
-      </li>
+      <li class="post-cards__item">{{ postCard(post) }}</li>
     {%- endfor -%}
   </ol>
   {% if pagination.pageNumber === 0 %}{% set nextLabel = 'Explore more articles' %}{% else %}{% set nextLabel = 'Next' %}{% endif %}
   {{ navPagination(pagination.href.previous, pagination.href.next, nextLabel) }}
 </div>
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Grow <em>your business</em> with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
   "linkUrl": "/contact/",
@@ -43,5 +43,6 @@
   "image": "/assets/images/photos/grow-with-us-blog.jpg",
   "alt": "Team member leaning against wall taking notes while talking to three other team members",
   "loading": "lazy"
-} %}
+  }
+%}
 {{ colorHero('center', 'small', 'aqua', content, true) }}

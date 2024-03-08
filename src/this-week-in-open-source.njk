@@ -6,15 +6,16 @@ layout: "base.njk"
 
 {% from "color-hero.njk" import colorHero %}
 {% from "twios-card.njk" import twiosCard %}
-
-{% set 'content' = {
-"title": "This Week in Open Source at Mainmatter",
-"text": "Our software engineers are all active members of the open source community and enjoy collaborating on various projects. Each week, we compile a summary of the team's latest contributions.",
-"image": "/assets/images/photos/code.jpg",
-"alt": "Photos of a screen showing some color-coded code on a black background",
-"loading": "eager",
-"titleTag": "h1"
-} %}
+{%
+  set 'content' = {
+  "title": "This Week in Open Source at Mainmatter",
+  "text": "Our software engineers are all active members of the open source community and enjoy collaborating on various projects. Each week, we compile a summary of the team's latest contributions.",
+  "image": "/assets/images/photos/code.jpg",
+  "alt": "Photos of a screen showing some color-coded code on a black background",
+  "loading": "eager",
+  "titleTag": "h1"
+  }
+%}
 {{ colorHero('center', 'large', 'black', content) }}
 
 <section class="section">
@@ -25,9 +26,7 @@ layout: "base.njk"
     <div class="post-cards__wrapper">
       <ol class="post-cards">
         {% for post in collections.twios %}
-        <li class="post-cards__item">
-          {{ twiosCard(post) }}
-        </li>
+          <li class="post-cards__item">{{ twiosCard(post) }}</li>
         {% endfor %}
       </ol>
     </div>
