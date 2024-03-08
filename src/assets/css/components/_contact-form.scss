@@ -154,20 +154,22 @@ $states: "loading", "success", "error";
 
 .contact-form__status {
   display: flex;
-  align-items: center;
+  align-items: start;
+  padding: 2.5rem;
+  padding-top: 20%;
   justify-content: center;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 2.5rem;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0);
   text-align: center;
   z-index: 1;
   pointer-events: none;
   transition: background-color 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
 }
 
 .contact-form__loading {
@@ -200,8 +202,10 @@ $states: "loading", "success", "error";
 
 .contact-form__close {
   position: fixed;
-  top: 0;
-  right: 0;
+  height: 100vh;
+  max-height: 100%;
+  top: 2rem;
+  right: 2rem;
   padding: 0.5rem;
   color: currentColor;
   background-color: transparent;
@@ -224,11 +228,6 @@ $states: "loading", "success", "error";
 @media (min-width: 62em) {
   .contact-form__main {
     padding: 9rem 0 5rem;
-  }
-
-  .contact-form__close {
-    top: 2rem;
-    right: 2rem;
   }
 
   .contact-form__success-subheading {

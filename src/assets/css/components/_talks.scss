@@ -1,13 +1,9 @@
-.talks {
-  margin: 2.5rem auto 5rem;
-}
-
 .talks__container {
   padding-bottom: 5rem;
 }
 
 .talks__list {
-  margin: 0 2rem;
+  max-width: 100%;
   padding: 0;
   list-style: none;
   display: grid;
@@ -15,42 +11,18 @@
   gap: 2.5rem;
 }
 
-.talks__item {
-  &--full-width {
-    grid-column: span 1 / span 1;
-  }
-}
-
 .talks__cta-wrapper {
   text-align: center;
   margin: 5rem 0 0;
 }
 
-@media (min-width: 64em) {
-  .talks__container {
-    width: 90%;
-    max-width: 86rem;
-    margin: 0 auto;
-  }
+@media (min-width: 72rem) {
 
   .talks__list {
     margin: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
-  }
-
-  .talks__item {
-    &:nth-of-type(2),
-    &:nth-of-type(3) {
-      margin-top: 0;
-    }
-  }
-
-  .talks__item {
-    &--full-width {
-      grid-column: span 2 / span 2;
-    }
   }
 
   .talks__cta-wrapper {

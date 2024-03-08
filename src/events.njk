@@ -43,18 +43,14 @@ description: Find out about upcoming events, conferences and meetups we will be 
   </section>
 {% endif %}
 
-<section class="section">
-  <div class="container container--xl">
+<section class="section container container--xl">
+  <div class="">
     <h2 class="section__introduction h5">Browse our past talks</h2>
   </div>
   <div class="talks__container">
     <ol class="talks__list">
       {% for appearance in collections.appearances %}
-        {% if loop.index === 1 %}
-          <li class="talks__item talks__item--full-width">
-            {{ talkBanner(appearance, "black") }}
-          </li>
-        {% elif loop.index < 6 %}
+        {% if loop.index < 6 %}
           <li class="talks__item">
             {{ talkCard(appearance, "black") }}
           </li>

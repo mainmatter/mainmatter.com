@@ -66,22 +66,23 @@
   overflow: hidden;
 }
 
-.case-cards__grid-element:hover {
-  color: var(--color-white);
-  cursor: pointer;
+@media (hover: hover) {
+  .case-cards__grid-element:hover {
+    color: var(--color-white);
+    cursor: pointer;
 
-  .problem {
+    .problem {
+      transform: translate(calc(-100% - 10rem));
+    }
 
-    transform: translate(calc(-100% - 10rem));
-  }
+    .solution {
+      transform: translate(0px);
+    }
 
-  .solution {
-    transform: translate(0px);
-  }
-
-  svg {
-    transform: translateX(0.5rem) rotate(-90deg);
-    transition: transform 0.5 ease;
+    svg {
+      transform: translateX(0.5rem) rotate(-90deg);
+      transition: transform 0.5 ease;
+    }
   }
 }
 

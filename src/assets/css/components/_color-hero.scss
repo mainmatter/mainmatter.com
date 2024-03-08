@@ -3,7 +3,6 @@
   aspect-ratio: auto;
   overflow: hidden;
   background-repeat: no-repeat;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,7 +78,7 @@
 .color-hero__container {
   display: flex;
   position: relative;
-  padding: 20% 0 5%;
+  padding: 12rem 0 6rem;
 }
 
 .color-hero__text {
@@ -94,6 +93,14 @@
   margin-top: 2rem;
 }
 
+@media (min-width: 48em) {
+
+  .color-hero__container {
+    padding: 33% 0 20%;
+  }
+
+}
+
 @media (min-width: 72em) {
   .color-hero__container {
     display: flex;
@@ -101,7 +108,10 @@
     width: 100%;
     padding: 25vh 0 10vh;
   }
+  .color-hero {
+    min-height: 100vh;
+  }
+
 }
 
-@media (min-width: 48em) {
-}
+
