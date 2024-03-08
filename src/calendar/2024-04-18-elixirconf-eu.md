@@ -1,6 +1,6 @@
 ---
 title: "ElixirConf EU"
-image: "/assets/images/calendar/2024-04-18-elixirconf-eu/elixirconf.jpg"
+image: "/assets/images/calendar/2024-04-18-elixirconf-eu/elixir-conf.png"
 location: "Lisbon & remote"
 url: https://www.elixirconf.eu/
 kind: conference

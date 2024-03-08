@@ -16,42 +16,44 @@ description: |
   <p>The workshop is designed for developers who have experience using other programming languages 
   and are just getting started with Rust.</p>
 hero:
+  color: purple
   image: "/assets/images/workshops/an-introduction-to-testing-in-rust/header-background.jpg"
   imageAlt: "A drawing of a giant crab standing in a village."
+
 og:
   image: /assets/images/workshops/a-taste-of-rust/a-taste-of-rust-og-image.jpeg
 topics:
-  - heading: Structs
+  - title: Structs
     text: >
       Structs are the building blocks of Rust programs. We'll cover how to
       define structs, how to implement methods on them, and how to manage their
        visibility across modules.
-  - heading: Enums
+  - title: Enums
     text: >
       Rust's enums are extremely powerful: each variant can have its own data!
       They're an excellent tool for modelling state machines, such as our tasks.
        We'll cover how to define enums, how to implement methods on them,  and
       how to leverage pattern matching when working with them.
-  - heading: Ownership
+  - title: Ownership
     text: >
       Ownership is Rust's most distinctive feature. It's what makes Rust code
       safe and performant. We'll cover how ownership works, how it impacts the
       way we write code, and how to leverage it to avoid unnecessary memory
       allocations.
-  - heading: Traits
+  - title: Traits
     text: >
       Traits are Rust's way of defining interfaces. We'll cover how to define
       traits, how to implement them for structs and enums, and how to use traits
       to write generic code. We'll also cover common traits from the standard
       library (e.g. `Debug`, `Display`, `Clone`, `PartialEq`) and how to derive
       them automatically.
-  - heading: Data structures
+  - title: Data structures
     text: >
       The Rust standard library provides a few key data structures that are used
       everywhere. We'll zoom in on `Vec` and `HashMap` as our reference
       examples. We'll review where they fit and how to leverage them in our
       code.
-  - heading: CLI applications
+  - title: CLI applications
     text: >
       As a capstone exercise, we'll build a small command-line application to
       expose our task management functionality.  

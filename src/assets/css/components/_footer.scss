@@ -4,6 +4,10 @@
   color: var(--color-bg);
 }
 
+.footer a {
+  font-weight: 400;
+}
+
 .footer__container {
   display: flex;
   flex-direction: column;

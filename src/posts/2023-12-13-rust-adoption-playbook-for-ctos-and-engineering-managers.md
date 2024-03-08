@@ -43,7 +43,7 @@ This article is our attempt at filling that gap.
   - [Upskilling your team](#upskilling-your-team)
     - [Self-guided learning](#self-guided-learning)
     - [Training](#training)
-    - [Team augmentation](#team-augmentation)
+    - [Team reinforcement](#team-reinforcement)
     - [Code audits](#code-audits)
 - [Scaling up your team](#scaling-up-your-team)
   - [The state of the Rust job market](#the-state-of-the-rust-job-market)
@@ -154,7 +154,7 @@ To get a sense of what kind of topics a Rust workshop could cover, you can check
 out the [Rust workshops](/services/workshops/rust/) that we offer here at
 Mainmatter.
 
-#### Team augmentation
+#### Team reinforcement
 
 If the project is important enough, you might want to consider augmenting your
 team with one or two experienced Rust consultants. Embed them in your team:

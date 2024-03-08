@@ -1,0 +1,13 @@
+{
+  "embroider": [
+    {
+      "heading": "Completing Embroider itself"
+    },
+    {
+      "heading": "Making Embroider the default for new apps and addons"
+    },
+    {
+      "heading": "Kickstarting development of an Ember plugin for Vite"
+    }
+  ]
+}

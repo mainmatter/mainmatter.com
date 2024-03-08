@@ -1,15 +1,14 @@
-{% from "cta-link.njk" import ctaLink %}
-
 {#
 A call-to-action meant to be displayed at the beginning of a blog post.
 #}
-<div class="blog-cta" data-background-color="purple">
-  <h4 class="h4">
-    If you're looking to adopt Svelte and SvelteKit and need guidance along the way, 
-    reach out!
-  </h4>
-  <p>
-    We can help with <a href="/svelte-consulting/" class="plausible-event-name=Svelte+Consulting">mentoring, training, team augmentation, and custom development</a>.</p>
-  </p>
-  {{ ctaLink("/contact/", "Contact us!", "contact-us plausible-event-name=Svelte+Contact") }}
-</div>
+
+{% from "cta-banner.njk" import ctaBanner %}
+
+{% set 'content' = {
+  "title": "If you're looking to adopt Svelte and SvelteKit and need guidance along the way,
+    reach out!",
+  "text": "We can help with <a href='/svelte-consulting/' class='plausible-event-name=Svelte+Consulting'>mentoring, training, team augmentation, and custom development</a>.",
+  "linkUrl": "/contact/",
+  "linkText": "Contact us!"
+} %}
+{{ ctaBanner('purple', 'default', content) }}

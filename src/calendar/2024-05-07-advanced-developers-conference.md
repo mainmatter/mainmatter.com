@@ -1,6 +1,6 @@
 ---
 title: "Advanced Developers Conference"
-image: "/assets/images/calendar/2024-05-07-advanced-developers-conference/adc.jpg"
+image: "/assets/images/calendar/2024-05-07-advanced-developers-conference/adc.png"
 location: "Regensburg"
 url: https://adc.ms/24/
 kind: conference

@@ -1,6 +1,6 @@
 ---
 title: "Rust Nation"
-image: "/assets/images/calendar/2024-03-26-rust-nation/rust-nation.jpg"
+image: "/assets/images/calendar/2024-03-26-rust-nation/rust-nation.png"
 location: "London"
 url: https://www.rustnationuk.com/
 kind: conference
