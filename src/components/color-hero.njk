@@ -51,7 +51,8 @@ Example usage:
 
         {%- if content.titleTag == 'h1' -%}
           <h1 class="{{ titleClass }} {{ textAnimationClasses }}">{{ titleText }}</h1>
-        {%- else if content.titleTag == 'h2' -%}
+        {%- endif -%}
+        {%- if content.titleTag == 'h2' -%}
           <h2 class="{{ titleClass }} {{ textAnimationClasses }}">{{ titleText }}</h2>
         {%- endif -%}
         {% if content.text %}

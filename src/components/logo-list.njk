@@ -30,7 +30,8 @@ Example usage:
       <div class="logo-list__title">
         {% if heading == 'h2' %}
           <h2 class="{{ headingClass }}">{{ title }}</h2>
-        {% else heading == 'h4' %}
+        {% endif %}
+        {% if heading == 'h4' %}
           <h4 class="{{ headingClass }}">{{ title }}</h4>
         {% endif %}
       </div>
