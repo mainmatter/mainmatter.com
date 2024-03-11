@@ -31,7 +31,7 @@
         <details class="nav-submenu" data-has-submenu>
           <summary class="nav-submenu__toggle nav__link" data-menu-toggle>
             <span
-              class="nav__link-text{% if page.url and '/services/' in page.url %}nav__link-text--active{% endif %}"
+              class="nav__link-text {% if page.url and '/services/' in page.url %}nav__link-text--active{% endif %}"
               >Services</span
             >
             {% include 'svg/arrow.njk' %}
