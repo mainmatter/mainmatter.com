@@ -27,7 +27,7 @@ Example usage:
 {% from "cta-link.njk" import ctaLink %}
 {%- macro secondaryFeature(content, className) -%}
   <div
-    class="secondary-feature{% if className %}{{ className }}{% endif %}"
+    class="secondary-feature {% if className %}{{ className }}{% endif %}"
     data-background-color="purple"
   >
     <div class="secondary-feature__main">
