@@ -9,7 +9,7 @@ description: "Our experts merge with our clients' teams to overcome blockers or 
 {% from "scroll-slides.njk" import scrollSlides %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {%
-  set 'content' = {
+  set content = {
   "title": "Accelerate your growth with <em>dedicated</em> specialists",
   "image": "/assets/images/photos/mainmatter-team-workshop.jpg",
   "alt": "Four team members gathered on the floor writing on sheets of paper",
@@ -27,14 +27,14 @@ description: "Our experts merge with our clients' teams to overcome blockers or 
 %}
 {{ textWithList(content) }}
 {%
-  set 'slide_1' = {
+  set slide_1 = {
   "color": "white",
   "title": "Deliver on time and budget",
   "text": "We’re ready to hit the ground running with you. Our senior engineers will guide you though any problems you’re facing, whether you’ve got a complex project with a tight deadline, or a team that needs to get up to speed quickly on the latest technologies."
   }
 %}
 {%
-  set 'slide_2' = {
+  set slide_2 = {
   "color": "purple",
   "title": "Gain a fresh perspective",
   "text": "Our team will help you gain a deeper understanding of the potential risk factors in your codebase that you may be
@@ -42,7 +42,7 @@ description: "Our experts merge with our clients' teams to overcome blockers or 
   }
 %}
 {%
-  set 'slide_3' = {
+  set slide_3 = {
   "color": "black",
   "title": "Boost productivity",
   "text": "Mentorship is central to our augmentation projects. We ensure that your team will become more efficient and impactful
@@ -72,7 +72,7 @@ description: "Our experts merge with our clients' teams to overcome blockers or 
 %}
 {{ textWithList(content) }}
 {%
-  set 'slide_1' = {
+  set slide_1 = {
   "color": "white",
   "title": "Workshops and in-house masterclasses",
   "text": "Bring your team up to speed with the necessary technologies so they can complete ambitious projects with confidence.",
@@ -81,7 +81,7 @@ description: "Our experts merge with our clients' teams to overcome blockers or 
   }
 %}
 {%
-  set 'slide_2' = {
+  set slide_2 = {
   "color": "purple",
   "title": "Custom training solutions",
   "text": "Your team has unique needs—which is why we offer customized training. We can help with Rust, Ember.js, Elixir/Phoenix,
@@ -89,7 +89,7 @@ description: "Our experts merge with our clients' teams to overcome blockers or 
   }
 %}
 {%
-  set 'slide_3' = {
+  set slide_3 = {
   "color": "black",
   "title": "Code review & audits",
   "text": "Our code reviews identify and explain technical problems, and offer pragmatic solutions for moving forward."
@@ -98,7 +98,7 @@ description: "Our experts merge with our clients' teams to overcome blockers or 
 {% set slides = [slide_1, slide_2, slide_3] %}
 {{ scrollSlides('team-augmentation-section-2', slides, page.url) }}
 {%
-  set 'content' = {
+  set content = {
   "title": "Grow <em>your business</em> with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
   "linkUrl": "/contact/",

@@ -7,7 +7,7 @@ description: "We teach teams like yours how to build sustainable products that w
 {% from "color-hero.njk" import colorHero %}
 {% from "scroll-slides.njk" import scrollSlides %}
 {%
-  set 'content' = {
+  set content = {
   "title": "We teach teams like yours how to build sustainable products that work well today and keep working well tomorrow",
   "image": "/assets/images/photos/mainmatter-team-meeting.jpg",
   "alt": "Man standing at whiteboard presenting to three team members sitting to either side of him",
@@ -17,7 +17,7 @@ description: "We teach teams like yours how to build sustainable products that w
 %}
 {{ colorHero('center', 'large', 'aqua', content) }}
 {%
-  set 'slide_1' = {
+  set slide_1 = {
   "color": "white",
   "title": "Design system kickoff (interface inventory)",
   "text": "Create an interface inventory of your digital product, and align with your team on how to prioritize refactoring using a
@@ -27,7 +27,7 @@ description: "We teach teams like yours how to build sustainable products that w
   }
 %}
 {%
-  set 'slide_2' = {
+  set slide_2 = {
   "color": "purple",
   "title": "Digital product strategy workshop",
   "text": "A clear product strategy is essential to get as much value as possible for your time and investment. In this workshop we
@@ -38,7 +38,7 @@ description: "We teach teams like yours how to build sustainable products that w
   }
 %}
 {%
-  set 'slide_3' = {
+  set slide_3 = {
   "color": "black",
   "title": "Effective Git",
   "text": "Git is at the center of modern pull request-based development workflows.
@@ -48,7 +48,7 @@ description: "We teach teams like yours how to build sustainable products that w
   }
 %}
 {%
-  set 'slide_4' = {
+  set slide_4 = {
   "color": "white",
   "title": "Svelte & SvelteKit",
   "text": "Two or three days hands-on Svelte and SvelteKit workshop. We take participants through the entire process of building a real-world, progressively enhanced application.",
@@ -57,7 +57,7 @@ description: "We teach teams like yours how to build sustainable products that w
   }
 %}
 {%
-  set 'slide_5' = {
+  set slide_5 = {
   "color": "purple",
   "title": "Hands-on Ember.js",
   "text": "Two or three days hands-on Ember.js workshop. We cover all relevant aspects of the framework from the CLI to routing and
@@ -67,7 +67,7 @@ description: "We teach teams like yours how to build sustainable products that w
   }
 %}
 {%
-  set 'slide_6' = {
+  set slide_6 = {
   "color": "black",
   "title": "Introduction to Rust for Web Developers",
   "text": "Two or three days hands-on Rust workshop teaching all the main concepts by developing a simple web application.",
@@ -76,7 +76,7 @@ description: "We teach teams like yours how to build sustainable products that w
   }
 %}
 {%
-  set 'slide_7' = {
+  set slide_7 = {
   "color": "white",
   "title": "Build production-ready API services in Rust",
   "text": "Rust allows creating web services that are fast, reliable, and cost-effective. However, the main challenge is knowing where to start. This workshop guides you through the process. At the end of the journey, you'll know enough to set up a production-ready HTTP API using the Axum framework.",
@@ -85,7 +85,7 @@ description: "We teach teams like yours how to build sustainable products that w
   }
 %}
 {%
-  set 'slide_8' = {
+  set slide_8 = {
   "color": "purple",
   "title": "You can't fix what you can't see: telemetry for Rust APIs",
   "text": "Your Rust application has finally been deployed to production! Nice! But is it working? This workshop will introduce you to a comprehensive toolkit to detect, troubleshoot and resolve issues in your Rust APIs.",
@@ -94,7 +94,7 @@ description: "We teach teams like yours how to build sustainable products that w
   }
 %}
 {%
-  set 'slide_9' = {
+  set slide_9 = {
   "color": "black",
   "title": "Testing in Rust: an introduction",
   "text": "Rust's type system is great, but it's not enough on its own to ensure correctness: a solid testing strategy is a requirement for any serious Rust application. By the end of this workshop, you will be well equipped for the testing journey ahead of you!",
@@ -103,7 +103,7 @@ description: "We teach teams like yours how to build sustainable products that w
   }
 %}
 {%
-  set 'slide_10' = {
+  set slide_10 = {
   "color": "white",
   "title": "Testing in Rust: going beyond the basics",
   "text": "No application is an island: you need to interact with third-party APIs, databases and who knows what else. Testing those interactions is tricky, to say the least! This workshop will focus on expanding your Rust testing toolkit, going beyond the basic techniques you're already familiar with. At the end of the session, you'll have a strategy to test most of the scenarios that are relevant for a complex Rust application.",

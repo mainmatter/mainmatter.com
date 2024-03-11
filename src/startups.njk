@@ -13,7 +13,7 @@
 {% from "cta-link.njk" import ctaLink %}
 {% from "post-card.njk" import postCard %}
 {%
-  set 'content' = {
+  set content = {
   "title": "Burst through your scale-up bottleneck. We'll be your <em>expert</em> guides.",
   "image": "/assets/images/photos/ever-given.jpg",
   "text": "No business has “make or break” moments like a startup. At Mainmatter, we can instantly scale-up your team to develop digital products.
@@ -25,7 +25,7 @@
 %}
 {{ colorHero('center', 'large', 'purple', content) }}
 {%
-  set 'content' = {
+  set content = {
   "title": "Our Startup Ecosystem",
   "subtitle": "We support growth.",
   "text": "We teach, we mentor, we do. Our team of experts can help you strategically push through the next series of growth hurdles - from ideation to design to engineering."
@@ -33,7 +33,7 @@
 %}
 {{ featuredServices(services['scaleup-services-list'], content) }}
 {%
-  set 'content' = {
+  set content = {
   "title": "Instantly add years of <em>expertise</em> to your team to make your ideas happen faster.",
   "text": "We are a team of engineers, inventors, designers, strategists, artists and storytellers, but our titles don’t define how we work. Our processes are focused on helping you get the results you need. We partner with our clients to mentor, develop and grow - whether it's your product, your base, your team, or your bottom line.",
   "linkUrl": "/contact/",
@@ -49,7 +49,7 @@
 {% set logoCompanies = ['Qonto', 'Trainline', 'Rail Europe', 'Cardstack', 'Timify', 'Experteer', 'Terminal49', 'Auditboard', 'Clark'] %}
 {{ logoList(logoCompanies) }}
 {%
-  set 'slide_1' = {
+  set slide_1 = {
   "subtitle": "Team Augmentation & Growth",
   "color": "black",
   "title": "The team you needed yesterday, today.",
@@ -59,7 +59,7 @@
   }
 %}
 {%
-  set 'slide_2' = {
+  set slide_2 = {
   "subtitle": "Digital Product Development Support",
   "color": "white",
   "title": "The shortcut on your roadmap",
@@ -69,7 +69,7 @@
   }
 %}
 {%
-  set 'slide_3' = {
+  set slide_3 = {
   "subtitle": "Skills-focused workshops",
   "color": "purple",
   "title": "The future-proof, know-how investment",
@@ -81,7 +81,7 @@
 {% set slides = [slide_1, slide_2, slide_3] %}
 {{ scrollSlides('workshops', slides, page.url) }}
 {%
-  set 'content' = {
+  set content = {
   "title": "Grow <em>your</em> business with us.",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
   "linkUrl": "/contact/",
