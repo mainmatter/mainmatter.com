@@ -16,18 +16,30 @@ og:
 
 <section class="color-hero color-hero--purple" data-background-color="purple">
   <div class="color-hero__image-wrapper">
-    {% image '/assets/images/photos/notebook-on-table.jpg', 'Notebook on a table, seen from the side', '100vw', 'eager',
-    'color-hero__image', [760, 1440, 1920] %}
+    {%
+      image '/assets/images/photos/notebook-on-table.jpg', 'Notebook on a table, seen from the side', '100vw', 'eager',
+      'color-hero__image', [760, 1440, 1920]
+    %}
   </div>
   <div class="color-hero__overlay"></div>
   <div class="color-hero__container container container--lg color-hero__container--center">
     <div class="color-hero__main">
       {% set imagePath %}/assets/images/logos/monochrome/svelte.svg{% endset %}
       <img class="expertise__logo" src="{{ imagePath }}" alt="Svelte logo" />
-      <h1 class="color-hero__title color-hero__title--full ">Svelte is the future of frontend development</h1>
+      <h1 class="color-hero__title color-hero__title--full ">
+        Svelte is the future of frontend development
+      </h1>
       <div class="color-hero__text color-hero__text--large">
-        <p>Svelte combines a leading developer experience with performance and maintainability. With SvelteKit and its progressive enhancement capabilities, it's a fit for a wide range of use cases.</p>
-        <p>Mainmatter is here to empower your team to fully realize Svelte's benefits in your projects.</p>
+        <p>
+          Svelte combines a leading developer experience with performance and maintainability. With
+          SvelteKit and its progressive enhancement capabilities, it's a fit for a wide range of use
+          cases.
+        </p>
+        <p>
+          Mainmatter is here to empower your team to fully realize Svelte's benefits in your
+          projects.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -38,12 +50,22 @@ og:
     <h3 class="split-content__subheading h2">A Unique Skillset</h3>
     <div class="split-content__content">
       <div class="split-content__text">
-        <p>We’re frontend experts – our team speaks at international events, is <a href="/this-week-in-open-source/">actively contributing to a number of open source projects</a> and our Svelte expert Paolo Ricciuti is a Svelte ambassador and the co-author of <a href="https://www.sveltelab.dev/">SvelteLab</a>.</p>
-        <p>Mainmatter has been developing big web apps and mentored international teams around backend, frontend, design, as well as process and developer infrastructure for years. We know what it takes to connect everything together and deliver a delightful end-to-end experience.</p>
+        <p>
+          We’re frontend experts – our team speaks at international events, is
+          <a href="/this-week-in-open-source/"
+            >actively contributing to a number of open source projects</a
+          >
+          and our Svelte expert Paolo Ricciuti is a Svelte ambassador and the co-author of
+          <a href="https://www.sveltelab.dev/">SvelteLab</a>.
+        </p>
+        <p>
+          Mainmatter has been developing big web apps and mentored international teams around
+          backend, frontend, design, as well as process and developer infrastructure for years. We
+          know what it takes to connect everything together and deliver a delightful end-to-end
+          experience.
+        </p>
       </div>
-      <div class="split-content__feature">
-        {% include 'content/secondary-feature-svelte.njk' %}
-      </div>
+      <div class="split-content__feature">{% include 'content/secondary-feature-svelte.njk' %}</div>
     </div>
   </div>
 </section>
@@ -54,35 +76,47 @@ og:
     <h3 class="split-content__subheading h2">Succeeding with Svelte</h3>
     <div class="split-content__content">
       <div class="split-content__text">
-        <p>Getting started with Svelte and SvelteKit is straightforward but an experienced partner can help ensure you're set up for success from the beginning. Paolo Ricciuti, Svelte ambassador, co-author of <a href="https://www.sveltelab.dev">SvelteLab</a>, and our in-house Svelte expert, is here to help your team.</p>
+        <p>
+          Getting started with Svelte and SvelteKit is straightforward but an experienced partner
+          can help ensure you're set up for success from the beginning. Paolo Ricciuti, Svelte
+          ambassador, co-author of <a href="https://www.sveltelab.dev">SvelteLab</a>, and our
+          in-house Svelte expert, is here to help your team.
+        </p>
         {{ ctaLink('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ26xh3Rs58rD4ZNFuzlzbTxFxubT5_9qSqc_NU4Pmqdot1YTIiylxcyL2kJrfEHn8tpgJqoHi8O', 'Book a 1:1 call with Paolo', 'split-content__link plausible-event-name=Svelte+1on1+Call') }}
       </div>
       <div class="split-content__feature">
-        <img src="/assets/images/authors/paoloricciuti.jpg" alt="Paolo Ricciuti" class="split-content__author"/>
+        <img
+          src="/assets/images/authors/paoloricciuti.jpg"
+          alt="Paolo Ricciuti"
+          class="split-content__author"
+        />
       </div>
     </div>
   </div>
 </section>
 
-{% set 'slide_1' = {
+{%
+  set slide_1 = {
   "color": "purple",
   "title": "Custom Development",
   "text": "We design and develop complete web apps in Svelte so your team can focus on other initiatives. We are experts in Svelte and SvelteKit as well as related technology like Tailwind, Storybook, and testing with Playwright etc. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.",
   "linkUrl": "/contact/",
   "linkClass": "plausible-event-name=Svelte+Contact",
   "linkText": "Work with us!"
-} %}
-
-{% set 'slide_2' = {
+  }
+%}
+{%
+  set slide_2 = {
   "color": "white",
   "title": "Training and Support",
   "text": "Svelte has excellent documentation for diving straight into the framework. However, sometimes active learning in a workshop taught by a subject matter expert can accelerate the learning experience or help overcome challenges. Our trainers are world-class mentors and can design a learning path that best fits your needs.",
   "linkUrl": "/services/workshops/svelte-and-sveltekit/",
   "linkClass": "plausible-event-name=Svelte+Workshop",
   "linkText": "Check out our Svelte & SvelteKit workshop!"
-} %}
-
-{% set 'slide_3' = {
+  }
+%}
+{%
+  set slide_3 = {
   "color": "aqua",
   "title": "Team Augmentation",
   "text": "Svelte is still a young technology – hiring senior talent can be a challenge.
@@ -90,27 +124,29 @@ og:
   "linkUrl": "/contact/",
   "linkClass": "plausible-event-name=Svelte+Contact",
   "linkText": "Work with us!"
-} %}
-
+  }
+%}
 {% set slides = [slide_1, slide_2, slide_3] %}
 {{ scrollSlides('svelte', slides, page.url) }}
 
 <div class="container container--lg quote-section">
-  {% set 'content' = {
+  {%
+    set content = {
     "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
     "source": "Jürgen Witte, CPO at Rail Europe",
     "image": "/assets/images/photos/juergen-witte.png",
     "alt": "Jürgen Witte, smiling at the camera wearing a light blue shirt and blue blazer",
     "loading": "lazy"
-  } %} {{ quote(content) }}
+    }
+  %}
+  {{ quote(content) }}
 </div>
 
 <div class="work container container--xl">
   <ul class="work__list">
-{{ featuredCaseStudy('rail-europe', 'purple', 'work__featured-case-study') }}
+    {{ featuredCaseStudy('rail-europe', 'purple', 'work__featured-case-study') }}
   </ul>
 </div>
 
 {{ recentPosts("Latest from our blog on the topic", collections.sveltePosts) }}
-
 {% include 'content/hero-grow-with-us.njk' %}

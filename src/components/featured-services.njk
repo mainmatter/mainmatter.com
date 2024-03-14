@@ -4,7 +4,7 @@
     <div class="featured-services__list-wrapper">
       <h3 class="h2">{{ content.subtitle }}</h3>
       <ul class="featured-services__list">
-        {%- for service in services %}
+        {%- for service in services -%}
           <li class="featured-services__list-item">
             <a href="{{ service.linkUrl }}" class="featured-services__link h4">
               {% include 'svg/arrow.njk' %}

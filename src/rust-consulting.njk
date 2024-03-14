@@ -16,8 +16,10 @@ og:
 
 <section class="color-hero color-hero--purple" data-background-color="purple">
   <div class="color-hero__image-wrapper">
-    {% image '/assets/images/photos/notebook-on-table.jpg', 'Notebook on a table, seen from the side', '100vw', 'eager',
-    'color-hero__image', [760, 1440, 1920] %}
+    {%
+      image '/assets/images/photos/notebook-on-table.jpg', 'Notebook on a table, seen from the side', '100vw', 'eager',
+      'color-hero__image', [760, 1440, 1920]
+    %}
   </div>
   <div class="color-hero__overlay"></div>
   <div class="color-hero__container container container--lg color-hero__container--center">
@@ -26,10 +28,15 @@ og:
       <img class="expertise__logo" src="{{ imagePath }}" alt="Rust logo" />
       <h1 class="color-hero__title color-hero__title--full ">Rust is a competitive advantage</h1>
       <div class="color-hero__text color-hero__text--large">
-        <p>Rust checks all the boxes – performance, efficiency, maintainability, and great developer experience. Mainmatter is here to empower your team to fully realize those benefits in your web and backend projects.</p>
+        <p>
+          Rust checks all the boxes – performance, efficiency, maintainability, and great developer
+          experience. Mainmatter is here to empower your team to fully realize those benefits in
+          your web and backend projects.
+        </p>
         <p>
           {{ ctaLink("/blog/2022/10/12/making-a-strategic-bet-on-rust/", "We're making a strategic bet on Rust", '') }}
-        </div>
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -40,12 +47,19 @@ og:
     <h3 class="split-content__subheading h2">A unique skillset</h3>
     <div class="split-content__content">
       <div class="split-content__text">
-        <p>We’re experts - our Rust team is led by Luca Palmieri, author of <a href="http://zero2prod.com">"Zero to Production in Rust"</a>, and we have been part of the Rust ecosystem for years, helping out the <a href="https://crates.io">crates.io</a> project.</p>
-        <p>But we don't stop at Rust – we have developed big web apps and mentored teams on backend, frontend, design, as well as process and developer infrastructure for years. We know what it takes to connect everything together and deliver a delightful end-to-end experience.</p>
+        <p>
+          We’re experts - our Rust team is led by Luca Palmieri, author of
+          <a href="http://zero2prod.com">"Zero to Production in Rust"</a>, and we have been part of
+          the Rust ecosystem for years, helping out the
+          <a href="https://crates.io">crates.io</a> project.
+        </p>
+        <p>
+          But we don't stop at Rust – we have developed big web apps and mentored teams on backend,
+          frontend, design, as well as process and developer infrastructure for years. We know what
+          it takes to connect everything together and deliver a delightful end-to-end experience.
+        </p>
       </div>
-      <div class="split-content__feature">
-        {% include 'content/secondary-feature-rust.njk' %}
-      </div>
+      <div class="split-content__feature">{% include 'content/secondary-feature-rust.njk' %}</div>
     </div>
   </div>
 </section>
@@ -56,7 +70,13 @@ og:
     <h3 class="split-content__subheading h2">We run EuroRust</h3>
     <div class="split-content__content">
       <div class="split-content__text">
-        <p>In 2024, EuroRust will be back on October 10th and 11th in Vienna, Austria as well as online. We'll have 2 days of talks with a main track as well as a side track for the first time this year. Plus, there'll be workshops on the day before the main conference, room for people to get together and hack on their favorite projects during the conference, as well as an after party on Friday night.</p>
+        <p>
+          In 2024, EuroRust will be back on October 10th and 11th in Vienna, Austria as well as
+          online. We'll have 2 days of talks with a main track as well as a side track for the first
+          time this year. Plus, there'll be workshops on the day before the main conference, room
+          for people to get together and hack on their favorite projects during the conference, as
+          well as an after party on Friday night.
+        </p>
       </div>
       <div class="split-content__feature">
         {% include 'content/secondary-feature-eurorust.njk' %}
@@ -75,35 +95,48 @@ og:
     <h3 class="split-content__subheading h2">Is Rust the right choice for us?</h3>
     <div class="split-content__content">
       <div class="split-content__text">
-        <p>Every new technology brings its own risks - Rust is no exception. Luca Palmieri, the author of <a href="https://zero2prod.com">Zero to Production in Rust</a> and our in-house Rust expert, is here to help your team. You walk him through your company's usecase and your requirements and he’ll do his best to suggest the best course of action. Sometimes Rust is not the answer, but if it is, he’ll make sure you are on the right track.</p>
+        <p>
+          Every new technology brings its own risks - Rust is no exception. Luca Palmieri, the
+          author of <a href="https://zero2prod.com">Zero to Production in Rust</a> and our in-house
+          Rust expert, is here to help your team. You walk him through your company's usecase and
+          your requirements and he’ll do his best to suggest the best course of action. Sometimes
+          Rust is not the answer, but if it is, he’ll make sure you are on the right track.
+        </p>
         {{ ctaLink('https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us', 'Book a 1:1 call with Luca', 'split-content__link') }}
       </div>
       <div class="split-content__feature">
-        <img src="/assets/images/authors/algo_luca.jpg" alt="Luca Palmieri" class="split-content__author"/>
+        <img
+          src="/assets/images/authors/algo_luca.jpg"
+          alt="Luca Palmieri"
+          class="split-content__author"
+        />
       </div>
     </div>
   </div>
 </section>
 
-{% set 'slide_1' = {
+{%
+  set slide_1 = {
   "color": "purple",
   "title": "Custom Development",
   "text": "We develop complete web and cloud apps with Rust so your team can focus on other initiatives. We have experience with all relevant crates like actix, axum, tokio, hyper, and more – and in fact teach others how to use those. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.",
   "linkUrl": "/contact/",
   "linkClass": "plausible-event-name=Rust+Contact",
   "linkText": "Work with us!"
-} %}
-
-{% set 'slide_2' = {
+  }
+%}
+{%
+  set slide_2 = {
   "color": "white",
   "title": "Training and Support",
   "text": "There is excellent material out there for learning Rust on your own. But you might not have the luxury of time, or the in-house expertise, to upskill your entire team or overcome obstacles on your own. Our trainers are world-class experts and can design a learning path that best fits your needs.",
   "linkUrl": "/services/workshops/rust/",
   "linkClass": "plausible-event-name=Rust+Workshops",
   "linkText": "Check out our workshops!"
-} %}
-
-{% set 'slide_3' = {
+  }
+%}
+{%
+  set slide_3 = {
   "color": "aqua",
   "title": "Team augmentation",
   "text": "Rust is a young technology – hiring Senior talent can be a challenge.
@@ -111,61 +144,67 @@ og:
   "linkUrl": "/contact/",
   "linkClass": "plausible-event-name=Rust+Contact",
   "linkText": "Work with us!"
-} %}
-
+  }
+%}
 {% set slides = [slide_1, slide_2, slide_3] %}
 <section class="scroll-slides" id="scroll-slides">
-    {% for slide in slides %}
-      {% set slideIndex = loop.index %}
-      <div id="ember-slide-{{ loop.index }}" class="scroll-slides__slide scroll-slides__slide--{{ slide.color }}"
-        data-scroll-slide  data-background-color="{{ slide.color }}">
-        <div class="scroll-slides__container container container--lg">
-          <div class="scroll-slides__pagination" aria-hidden="true">
-            {% for slide in slides %}
-              <span class="scroll-slides__pagination-item">
-                <span href="{{ pageUrl }}#{{ id }}-slide-{{ loop.index }}" class="scroll-slides__pagination-button">
-                  <span class="screenreader">Slide {{ loop.index }}
-                    {% if slideIndex == loop.index %} (Current slide) {% endif %}
-                  </span>
-                  <span
-                  class="scroll-slides__pagination-span{% if slideIndex == loop.index %} scroll-slides__pagination-span--active{% endif %}"
-                  aria-hidden></span>
+  {% for slide in slides %}
+    {% set slideIndex = loop.index %}
+    <div
+      id="ember-slide-{{ loop.index }}"
+      class="scroll-slides__slide scroll-slides__slide--{{ slide.color }}"
+      data-scroll-slide
+      data-background-color="{{ slide.color }}"
+    >
+      <div class="scroll-slides__container container container--lg">
+        <div class="scroll-slides__pagination" aria-hidden="true">
+          {% for slide in slides %}
+            <span class="scroll-slides__pagination-item">
+              <span
+                href="{{ pageUrl }}#{{ id }}-slide-{{ loop.index }}"
+                class="scroll-slides__pagination-button"
+              >
+                <span class="screenreader"
+                  >Slide {{ loop.index }}
+                  {% if slideIndex == loop.index %}(Current slide){% endif %}
                 </span>
+                <span
+                  class="scroll-slides__pagination-span {% if slideIndex == loop.index %}scroll-slides__pagination-span--active{% endif %}"
+                  aria-hidden
+                ></span>
               </span>
-            {% endfor %}
+            </span>
+          {% endfor %}
+        </div>
+        <div class="scroll-slides__content">
+          <div class="scroll-slides__title-wrapper">
+            <h2 class="scroll-slides__title">{{ slide.title }}</h2>
           </div>
-          <div class="scroll-slides__content">
-            <div class="scroll-slides__title-wrapper">
-              <h2 class="scroll-slides__title">{{ slide.title }}</h2>
-            </div>
 
-            <p class="scroll-slides__text">{{ slide.text | safe }}</>
-            {% if slide.linkUrl and slide.linkText %}
-              <div class="scroll-slides__link-wrapper">
-                {% if slide.linkImage %}
-                  <div class="scroll-slides__link-image">
-                    <img class="" src="{{ slide.linkImage }}" alt="{{ slide.linkImageCaption }}">
-                  </div>
-                {% endif %}
+          <p class="scroll-slides__text">{{ slide.text | safe }}</p>
+          {% if slide.linkUrl and slide.linkText %}
+            <div class="scroll-slides__link-wrapper">
+              {% if slide.linkImage %}
+                <div class="scroll-slides__link-image">
+                  <img class="" src="{{ slide.linkImage }}" alt="{{ slide.linkImageCaption }}" />
+                </div>
+              {% endif %}
 
-                {% if slide.linkImageCaption %}
-                  <div class="scroll-slides__link-content">
-                    <p class="scroll-slides__link-imagecaption">
-                    {{ slide.linkImageCaption }}
-                    </p>
-                    {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
-                  </div>
-                {% else %}
+              {% if slide.linkImageCaption %}
+                <div class="scroll-slides__link-content">
+                  <p class="scroll-slides__link-imagecaption">{{ slide.linkImageCaption }}</p>
                   {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
-                {% endif %}
-              </div>
-            {% endif %}
-
-          </div>
+                </div>
+              {% else %}
+                {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
+              {% endif %}
+            </div>
+          {% endif %}
         </div>
       </div>
-    {% endfor %}
-  </section>
+    </div>
+  {% endfor %}
+</section>
 
 <section class="quotes-list">
   <div class="container container--xl">
@@ -173,35 +212,56 @@ og:
     <ul class="quotes-list__list">
       <li class="quotes-list__quote">
         <div class="quotes-list__quote-image">
-          <img src="/assets/images/logos/monochrome/aleph-alpha.svg" alt="aleph alpha logo"/>
+          <img src="/assets/images/logos/monochrome/aleph-alpha.svg" alt="aleph alpha logo" />
         </div>
         <div class="quotes-list__quote-text text--sm">
           <blockquote>
-            ”Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way. I've learned so much, especially during our pairing sessions—it allowed me to improve my technical skills and grow as an engineer.”
+            ”Working with Mainmatter's experts has been a great experience. They helped us develop a
+            state-of-the-art data pipeline, mentored our internal team and introduced several
+            improvements around our Rust code and infrastructure along the way. I've learned so
+            much, especially during our pairing sessions—it allowed me to improve my technical
+            skills and grow as an engineer.”
           </blockquote>
-          <figcaption class="quotes-list__quote-source">Andreas Hartel<span class="quotes-list__quote-source--separator">, </span><span class="quotes-list__quote-source--jobtitle">Senior Engineer at aleph alpha</span></figcaption>
+          <figcaption class="quotes-list__quote-source">
+            Andreas Hartel<span class="quotes-list__quote-source--separator">, </span
+            ><span class="quotes-list__quote-source--jobtitle">Senior Engineer at aleph alpha</span>
+          </figcaption>
         </div>
       </li>
       <li class="quotes-list__quote">
         <div class="quotes-list__quote-image">
-          <img src="/assets/images/logos/monochrome/qonto.svg" alt="Qonto logo"/>
+          <img src="/assets/images/logos/monochrome/qonto.svg" alt="Qonto logo" />
         </div>
         <div class="quotes-list__quote-text text--sm">
           <blockquote>
-            ”Working with Mainmatter's experts has always been a good experience. We can really feel that they have mastery on many topics, and knowledge about complex technical problems. I’ve learned so much, especially during our pairing sessions, and it allows me to improve my technical skills and growth as an engineer.”
+            ”Working with Mainmatter's experts has always been a good experience. We can really feel
+            that they have mastery on many topics, and knowledge about complex technical problems.
+            I’ve learned so much, especially during our pairing sessions, and it allows me to
+            improve my technical skills and growth as an engineer.”
           </blockquote>
-          <figcaption class="quotes-list__quote-source">Alexandre Monjol<span class="quotes-list__quote-source--separator">, </span><span class="quotes-list__quote-source--jobtitle">Engineer at Qonto</span></figcaption>
+          <figcaption class="quotes-list__quote-source">
+            Alexandre Monjol<span class="quotes-list__quote-source--separator">, </span
+            ><span class="quotes-list__quote-source--jobtitle">Engineer at Qonto</span>
+          </figcaption>
         </div>
       </li>
       <li class="quotes-list__quote">
         <div class="quotes-list__quote-image">
-          <img src="/assets/images/logos/monochrome/trainline.svg" alt="Trainline logo"/>
+          <img src="/assets/images/logos/monochrome/trainline.svg" alt="Trainline logo" />
         </div>
         <div class="quotes-list__quote-text text--sm">
           <blockquote>
-            ”We started working with simplabs to build a state-of-the-art mobile web app from the ground up and it was an absolute success! Not only are they web specialists, but their expertise in development practices and agile processes made our collaboration an absolute delight.”
+            ”We started working with simplabs to build a state-of-the-art mobile web app from the
+            ground up and it was an absolute success! Not only are they web specialists, but their
+            expertise in development practices and agile processes made our collaboration an
+            absolute delight.”
           </blockquote>
-          <figcaption class="quotes-list__quote-source">Carl Anderson<span class="quotes-list__quote-source--separator">, </span><span class="quotes-list__quote-source--jobtitle">General Manager at Trainline Europe</span></figcaption>
+          <figcaption class="quotes-list__quote-source">
+            Carl Anderson<span class="quotes-list__quote-source--separator">, </span
+            ><span class="quotes-list__quote-source--jobtitle"
+              >General Manager at Trainline Europe</span
+            >
+          </figcaption>
         </div>
       </li>
     </ul>
@@ -215,5 +275,4 @@ og:
 </div>
 
 {{ recentPosts("Latest from our blog on the topic", collections.rustPosts) }}
-
 {% include 'content/hero-grow-with-us.njk' %}

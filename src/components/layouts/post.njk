@@ -8,111 +8,115 @@ layout: base
 {% from "service-cta.njk" import serviceCta %}
 
 {%- block content -%}
-<article>
-  <div class="post__header" data-background-color="purple">
-    <div class="container container--lg">
-      <div class="post__meta">
-        {% if tags %}
-          <div class="post__tags">
-            <ul class="tags">
-              {% for tag in tags %}
-              <li class="tags__tag-item">
-                <a class="tags__tag tags__tag--link" href="/blog/tag/{{ tag | slug }}">#{{ tag }}</a>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-        {% endif %}
-        <div class="post__date text--xs">
-          {{ page.date | monthDayYear }}
+  <article>
+    <div class="post__header" data-background-color="purple">
+      <div class="container container--lg">
+        <div class="post__meta">
+          {% if tags %}
+            <div class="post__tags">
+              <ul class="tags">
+                {% for tag in tags %}
+                  <li class="tags__tag-item">
+                    <a class="tags__tag tags__tag--link" href="/blog/tag/{{ tag | slug }}"
+                      >#{{ tag }}</a
+                    >
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+          <div class="post__date text--xs">{{ page.date | monthDayYear }}</div>
         </div>
-      </div>
-      <h1 class="post__title">{{ title }}</h1>
+        <h1 class="post__title">{{ title }}</h1>
 
-      {% set author = authorHandle | findBySlug %}
-      <div class="post__author author text--xs">
-        <div class="author__image-wrapper">
-          {% set imageUrl = '/assets/images/authors/' + author.data.page.fileSlug + '.jpg' %}
-          {% image imageUrl, '', '2.5rem', 'eager', 'author__image', [80] %}
-        </div>
-        <div class="author__text-wrapper">
-          <div class="author__name-wrapper">
-            <span>by&nbsp;</span>
+        {% set author = authorHandle | findBySlug %}
+        <div class="post__author author text--xs">
+          <div class="author__image-wrapper">
+            {% set imageUrl = '/assets/images/authors/' + author.data.page.fileSlug + '.jpg' %}
+            {% image imageUrl, '', '2.5rem', 'eager', 'author__image', [80] %}
+          </div>
+          <div class="author__text-wrapper">
+            <div class="author__name-wrapper">
+              <span>by&nbsp;</span>
+              {% if authorHandle %}
+                <a href="/blog/author/{{ authorHandle }}" class="author__name post__author-name"
+                  >{{ author.data.name }}</a
+                >
+              {% else %}
+                <p class="author__name">{{ author.data.name }}</p>
+              {% endif %}
+            </div>
             {% if authorHandle %}
-              <a href="/blog/author/{{ authorHandle }}" class="author__name post__author-name">{{ author.data.name }}</a>
-            {% else %}
-              <p class="author__name">{{ author.data.name }}</p>
+              {{ authorSocials(authorHandle, "post__author-socials author-socials--desktop-only") }}
+            {% endif %}
+            <div class="author__title">{{ bio }}</div>
+            {% if authorHandle %}
+              {{ authorSocials(authorHandle, "post__author-socials author-socials--mobile-only") }}
             {% endif %}
           </div>
-          {% if authorHandle %}
-            {{ authorSocials(authorHandle, "post__author-socials author-socials--desktop-only") }}
-          {% endif %}
-          <div class="author__title">{{ bio }}</div>
-          {% if authorHandle %}
-            {{ authorSocials(authorHandle, "post__author-socials author-socials--mobile-only") }}
-          {% endif %}
         </div>
-      </div>
 
-      <div class="post__tagline">
-        {{ tagline | safe }}
+        <div class="post__tagline">{{ tagline | safe }}</div>
       </div>
     </div>
-  </div>
-  {% if image %}
-    {% set imageData = {
-      "imgPath": image,
-      "alt": imageAlt,
-      "sizes": "100vw",
-      "loading": "eager",
-      "sizesArray": [640, 960, 1440, 1920]
-    } %}
-    {{ imageAspectRatio(imageData, "32/13", "35/19") }}
-  {% endif %}
-  <div class="container container--lg post">
-    <div class="post__content rte">
-      {{ serviceCta(tags) }}
-      {{ content | safe }}
-      {{ serviceCta(tags) }}
+    {% if image %}
+      {%
+        set imageData = {
+        "imgPath": image,
+        "alt": imageAlt,
+        "sizes": "100vw",
+        "loading": "eager",
+        "sizesArray": [640, 960, 1440, 1920]
+        }
+      %}
+      {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+    {% endif %}
+    <div class="container container--lg post">
+      <div class="post__content rte">
+        {{ serviceCta(tags) }}
+        {{ content | safe }}
+        {{ serviceCta(tags) }}
+      </div>
+      <nav aria-label="Post Pagination" class="prev-next pagination">
+        {% set previous = collections.posts | getPreviousCollectionItem %}
+        {% set next = collections.posts | getNextCollectionItem %}
+        {% if previous %}
+          <a class="pagination__previous" href="{{ previous.url }}">
+            <p class="cta-link">
+              <span class="cta-link__text-wrapper">
+                <span class="cta-link__arrow cta-link__arrow--rotate"
+                  >{% include 'svg/arrow.njk' %}</span
+                >
+                <span class="cta-link__text">Previous post</span>
+              </span>
+            </p>
+            <p class="prev-next__title">{{ previous.data.title }}</p>
+          </a>
+        {% endif %}
+        {% if next %}
+          <a class="pagination__next" href="{{ next.url }}">
+            <p class="cta-link">
+              <span class="cta-link__text-wrapper">
+                <span class="cta-link__text">Next post</span>
+                <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
+              </span>
+            </p>
+            <p class="prev-next__title">{{ next.data.title }}</p>
+          </a>
+        {% endif %}
+      </nav>
     </div>
-    <nav aria-label="Post Pagination" class="prev-next pagination">
-      {% set previous = collections.posts | getPreviousCollectionItem  %}
-      {% set next = collections.posts | getNextCollectionItem %}
-      {% if previous %}
-        <a class="pagination__previous" href="{{ previous.url }}">
-          <p class="cta-link">
-            <span class="cta-link__text-wrapper">
-              <span class="cta-link__arrow cta-link__arrow--rotate">{% include 'svg/arrow.njk' %}</span>
-              <span class="cta-link__text">Previous post</span>
-            </span>
-          </p>
-          <p class="prev-next__title">{{ previous.data.title }}</p>
-        </a>
-
-      {% endif %}
-      {% if next %}
-        <a class="pagination__next" href="{{ next.url }}">
-          <p class="cta-link">
-            <span class="cta-link__text-wrapper">
-              <span class="cta-link__text">Next post</span>
-              <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
-            </span>
-          </p>
-          <p class="prev-next__title">{{ next.data.title }}</p>
-        </a>
-      {% endif %}
-    </nav>
-  </div>
-</article>
+  </article>
 {%- endblock -%}
-
-{% set 'content' = {
-"title": "Grow <em>your business</em> with us",
-"text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
-"linkUrl": "/contact/",
-"linkText": "Get in touch",
-"image": "/assets/images/photos/grow-with-us-blog.jpg",
-"alt": "Team member leaning against wall taking notes while talking to three other team members",
-"loading": "lazy"
-} %}
+{%
+  set content = {
+  "title": "Grow <em>your business</em> with us",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact/",
+  "linkText": "Get in touch",
+  "image": "/assets/images/photos/grow-with-us-blog.jpg",
+  "alt": "Team member leaning against wall taking notes while talking to three other team members",
+  "loading": "lazy"
+  }
+%}
 {{ colorHero('center', 'small', 'aqua', content, true) }}

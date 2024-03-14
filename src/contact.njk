@@ -6,20 +6,19 @@ description: Whatever you're planning, we'd love to hear more. Send us a message
 
 {% from "logo-list.njk" import logoList %}
 {% from "color-hero.njk" import colorHero %}
-
 {% include 'contact-form.njk' %}
 {% include 'contact-info.njk' %}
-
 {% set logoCompanies = ['Qonto', 'Trainline', 'Cardstack', 'Timify', 'Experteer', 'Rail Europe', 'Robin Hood', 'Aleph Alpha'] %}
 {{ logoList(logoCompanies) }}
-
-{% set 'content' = {
-"title": "Grow <em>your business</em> with us",
-"text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
-"linkUrl": "/contact/",
-"linkText": "Get in touch",
-"image": "/assets/images/photos/grow-with-us-blog.jpg",
-"alt": "Team member leaning against wall taking notes while talking to three other team members",
-"loading": "lazy"
-} %}
+{%
+  set content = {
+  "title": "Grow <em>your business</em> with us",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact/",
+  "linkText": "Get in touch",
+  "image": "/assets/images/photos/grow-with-us-blog.jpg",
+  "alt": "Team member leaning against wall taking notes while talking to three other team members",
+  "loading": "lazy"
+  }
+%}
 {{ colorHero('center', 'small', 'aqua', content, true) }}

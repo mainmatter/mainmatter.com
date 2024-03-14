@@ -17,8 +17,7 @@ post: A post object
           {% if post.data.image %}
             {% image post.data.image, post.data.imageAlt, '(min-width: 48em) 44rem, 90vw', "lazy", 'post-card__image', [704, 1408] %}
           {% else %}
-            {% image '/assets/images/photos/0027.jpg', 'Hands gesturing around a laptop', '(min-width: 48em) 44rem, 90vw', "lazy", 'post-card__image', [704, 1408]
-            %}
+            {% image '/assets/images/photos/0027.jpg', 'Hands gesturing around a laptop', '(min-width: 48em) 44rem, 90vw', "lazy", 'post-card__image', [704, 1408] %}
           {% endif %}
         </div>
         <div class="post-card__overlay"></div>
@@ -44,7 +43,11 @@ post: A post object
             <ul class="tags">
               {% for tag in post.data.tags %}
                 <li class="tags__tag-item">
-                  <a class="post-card__internal-link tags__tag tags__tag--link" href="/blog/tag/{{ tag | slug }}">#{{ tag }}</a>
+                  <a
+                    class="post-card__internal-link tags__tag tags__tag--link"
+                    href="/blog/tag/{{ tag | slug }}"
+                    >#{{ tag }}</a
+                  >
                 </li>
               {% endfor %}
             </ul>

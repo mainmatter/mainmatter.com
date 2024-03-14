@@ -13,6 +13,14 @@ module.exports = {
         printWidth: 80,
         proseWrap: "always"
       },
+      
+    },
+    {
+      files: ["*.njk"],
+      options: {
+        plugins: ["prettier-plugin-jinja-template"],
+        parser: "jinja-template"
+      }
     },
   ]
 };

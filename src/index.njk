@@ -1,5 +1,5 @@
 ---
-layout: 'base'
+layout: "base"
 title: null
 ---
 
@@ -8,27 +8,31 @@ title: null
 {% from "logo-list.njk" import logoList %}
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
 {% from "image-banner-with-text.njk" import imageBannerWithText %}
-
-{% set 'content' = {
+{%
+  set content = {
   "title": "Your <em>expert</em> guides for the journey ahead",
   "titleTag": "h1",
   "text": "It takes brains to develop a no-brainer. At Mainmatter we teach, cross-pollinate and collaborate with our clients to develop digital products and practices they can build on.",
   "image": "/assets/images/photos/0009.jpg",
   "alt": "Three team members meeting in front of a whiteboard filled with colored Post-it notes",
   "loading": "eager"
-} %}
+  }
+%}
 {{ colorHero('center', 'large', 'purple', content) }}
-{% set 'content' = {
+{%
+  set content = {
   "title": "Discover our services",
   "subtitle": "Transform bold ideas into shipped products",
   "text": "Our team of experts delivers everything from ideation to design and engineering. We can turn any idea sketched on the back of a napkin into a production-ready application."
-} %}
+  }
+%}
 {{ featuredServices(services['services-list'], content) }}
 {% set logoCompanies = ['Qonto', 'Trainline', 'Aleph Alpha', 'Timify', 'Experteer', 'Robin Hood', 'Rail Europe' ] %}
 {{ logoList(logoCompanies) }}
 {% set clients = ['qonto', 'experteer', 'trainline', 'rail-europe'] %}
 {{ featuredCaseStudies(clients, 'Browse our work') }}
-{% set 'content' = {
+{%
+  set content = {
   "title": "Why mainmatter",
   "subtitle": "We are a team of developers, inventors, designers, strategists, artists and storytellers. We work remotely from 9 countries in Europe and we believe in recruiting top talents from any location.",
   "text": "<p>That said, we still value face time. We frequently come together for team events and workshops, and invite our clients to join us as well.</p>",
@@ -37,9 +41,11 @@ title: null
   "image": "/assets/images/photos/mainmatter-team.jpg",
   "alt": "Group photo of mainmatter team",
   "loading": "lazy"
-} %}
+  }
+%}
 {{ imageBannerWithText(content) }}
-{% set 'content' = {
+{%
+  set content = {
   "title": "Build <em>lasting</em> products, systematically",
   "text": "Our playbook describes methodologies for building sustainable digital products and running an effective, collaborative product development process. It is based on our experiences working on projects with international clients in various industries for many years.",
   "linkUrl": "/playbook",
@@ -47,9 +53,11 @@ title: null
   "image": "/assets/images/photos/notebook-list.jpg",
   "alt": "Hand holding a pen over a notebook with a list of checkboxes",
   "loading": "lazy"
-} %}
+  }
+%}
 {{ colorHero('center', 'small', 'purple', content, true) }}
-{% set 'content' = {
+{%
+  set content = {
   "title": "Grow <em>your business</em> with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
   "linkUrl": "/contact/",
@@ -57,5 +65,6 @@ title: null
   "image": "/assets/images/photos/mainmatter-team-collaboration.jpg",
   "alt": "Three smiling team members looking at a laptop",
   "loading": "lazy"
-} %}
+  }
+%}
 {{ colorHero('center', 'small', 'aqua', content, true) }}

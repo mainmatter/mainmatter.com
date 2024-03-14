@@ -1,5 +1,5 @@
 ---
-layout: 'base'
+layout: "base"
 title: Events
 description: Find out about upcoming events, conferences and meetups we will be attending or organizing.
 ---
@@ -9,21 +9,26 @@ description: Find out about upcoming events, conferences and meetups we will be 
 {% from "talk-banner.njk" import talkBanner %}
 {% from "talk-card.njk" import talkCard %}
 {% from "cta-link.njk" import ctaLink %}
-
-{% set 'content' = {
-"title": "Guidance from our team of <em>trusted</em> industry experts",
-"image": "/assets/images/photos/events-2.jpg",
-"alt": "Audience seen from the back watching a presentation at Emberfest",
-"loading": "eager",
-"titleTag": "h1"
-} %}
+{%
+  set content = {
+  "title": "Guidance from our team of <em>trusted</em> industry experts",
+  "image": "/assets/images/photos/events-2.jpg",
+  "alt": "Audience seen from the back watching a presentation at Emberfest",
+  "loading": "eager",
+  "titleTag": "h1"
+  }
+%}
 {{ colorHero('center', 'large', 'black', content) }}
 
 <div class="section container container--lg">
   <div class="section__introduction">
-    <h2 class="section__title h4">Mainmatter's guiding principles of collaboration and knowledge transfer extend well beyond our client
-      work.</h2>
-    <p>Find out about upcoming events, conferences and meetups we will be attending or organizing.</p>
+    <h2 class="section__title h4">
+      Mainmatter's guiding principles of collaboration and knowledge transfer extend well beyond our
+      client work.
+    </h2>
+    <p>
+      Find out about upcoming events, conferences and meetups we will be attending or organizing.
+    </p>
   </div>
 </div>
 
@@ -35,7 +40,7 @@ description: Find out about upcoming events, conferences and meetups we will be 
     <div class="event-cards__wrapper">
       <ul class="event-cards">
         {% for event in collections.calendar %}
-        {{ eventCard(event) }}
+          {{ eventCard(event) }}
         {% endfor %}
       </ul>
     </div>
@@ -50,13 +55,9 @@ description: Find out about upcoming events, conferences and meetups we will be 
     <ol class="talks__list">
       {% for appearance in collections.appearances %}
         {% if loop.index === 1 %}
-          <li class="talks__item talks__item--full-width">
-            {{ talkBanner(appearance, "black") }}
-          </li>
+          <li class="talks__item talks__item--full-width">{{ talkBanner(appearance, "black") }}</li>
         {% elif loop.index < 11 %}
-          <li class="talks__item">
-            {{ talkCard(appearance, "black") }}
-          </li>
+          <li class="talks__item">{{ talkCard(appearance, "black") }}</li>
         {% endif %}
       {% endfor %}
     </ol>
@@ -65,7 +66,6 @@ description: Find out about upcoming events, conferences and meetups we will be 
         {{ ctaLink('/talks/#more-talks', 'Load more videos', '') }}
       </div>
     {% endif %}
-
   </div>
 </section>
 

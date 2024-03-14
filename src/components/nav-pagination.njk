@@ -6,11 +6,7 @@ next: see above
 nextLabel: string for Next button label only on first page
 #}
 
-
-
 {%- macro navPagination(previous, next, nextLabel) -%}
-
-
 
   {% if previous or next %}
 
@@ -20,7 +16,9 @@ nextLabel: string for Next button label only on first page
       {% if previous %}
         <a class="cta-link pagination__previous" href="{{ previous }}#posts">
           <span class="cta-link__text-wrapper">
-            <span class="cta-link__arrow cta-link__arrow--rotate">{% include 'svg/arrow.njk' %}</span>
+            <span class="cta-link__arrow cta-link__arrow--rotate"
+              >{% include 'svg/arrow.njk' %}</span
+            >
             <span class="cta-link__text">Previous</span>
           </span>
         </a>

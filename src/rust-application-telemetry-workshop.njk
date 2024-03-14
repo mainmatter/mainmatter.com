@@ -17,32 +17,36 @@ og:
 
 <html lang="{{ config.lang }}" prefix="og: http://ogp.me/ns#">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
     <title>{{ title }}</title>
     {% include "global/fonts.njk" %}
-    <link rel="stylesheet" href="/assets/css/app.css"/>
-    <link rel="stylesheet" href="/assets/css/workshop-lp.css"/>
+    <link rel="stylesheet" href="/assets/css/app.css" />
+    <link rel="stylesheet" href="/assets/css/workshop-lp.css" />
     <script src="/assets/js/app.js" defer></script>
-    {% block head %}{{ head | safe }}
+    {% block head %}
+      {{ head | safe }}
     {% endblock %}
-
     {% include "global/meta.njk" %}
     {% include "global/icons.njk" %}
 
-    <script src='https://js.tito.io/v2/' async></script>
-    <script defer data-domain="rust-telemetry-workshop.mainmatter.com" src="https://plausible.io/js/script.tagged-events.outbound-links.js"></script>
+    <script src="https://js.tito.io/v2/" async></script>
+    <script
+      defer
+      data-domain="rust-telemetry-workshop.mainmatter.com"
+      src="https://plausible.io/js/script.tagged-events.outbound-links.js"
+    ></script>
     <script>
-      window.plausible = window.plausible || function () {
-        (window.plausible.q = window.plausible.q || []).push(arguments)
-      }
+      window.plausible =
+        window.plausible ||
+        function () {
+          (window.plausible.q = window.plausible.q || []).push(arguments);
+        };
     </script>
   </head>
   <body data-js-enabled="false">
-    <a class="skip-link" href="#main">
-      Skip to main content
-    </a>
+    <a class="skip-link" href="#main"> Skip to main content </a>
 
     <nav class="nav nav--accent-aqua" id="nav">
       <div class="nav__wrapper container container--xl">
@@ -55,8 +59,13 @@ og:
           </a>
         </div>
         <div class="nav__aside">
-          <tito-button event="mainmatter/telemetry-rust-2023/" class="plausible-event-name=Tickets+List">Book your ticket<div class="line"></div>
-            <span class="price-tag">300€</span></tito-button>
+          <tito-button
+            event="mainmatter/telemetry-rust-2023/"
+            class="plausible-event-name=Tickets+List"
+            >Book your ticket
+            <div class="line"></div>
+            <span class="price-tag">300€</span></tito-button
+          >
         </div>
       </div>
     </nav>
@@ -67,48 +76,62 @@ og:
           {% image '/assets/images/workshops/telemetry-for-rust-apis/header-background.jpg', '2 people in front of a notebook with 3 charts on the screen, only their arms visible, one points at the screen', '100vw', 'eager', 'color-hero__image', [760, 1440, 1920] %}
         </div>
         <div class="color-hero__overlay" data-color-hero></div>
-        <div class="color-hero__container container container--lg color-hero__container--center workshop-lp-hero__container">
+        <div
+          class="color-hero__container container container--lg color-hero__container--center workshop-lp-hero__container"
+        >
           <div class="color-hero__main">
-            <img class="workshop-lp-hero__logo" src="/assets/images/web-based-services-in-rust-workshop/rust-logo.svg" alt="Rust logo"/>
+            <img
+              class="workshop-lp-hero__logo"
+              src="/assets/images/web-based-services-in-rust-workshop/rust-logo.svg"
+              alt="Rust logo"
+            />
             <p class="workshop-hero__format">Remote Workshop</p>
-            <h1 class="workshop-lp-hero__title color-hero__title color-hero__title--full">Telemetry for Rust applications</h1>
+            <h1 class="workshop-lp-hero__title color-hero__title color-hero__title--full">
+              Telemetry for Rust applications
+            </h1>
             <div class="color-hero__text color-hero__text--small">
               <p>
-                <a href="https://everytimezone.com/s/03cf783a">December 12th–13th, 2023 – 14:00 to 18:00 CET</a>
-              </p><br>
-              <p>Take your Rust skills to the next level <strong>for 300€</strong>
+                <a href="https://everytimezone.com/s/03cf783a"
+                  >December 12th–13th, 2023 – 14:00 to 18:00 CET</a
+                >
               </p>
+              <br />
+              <p>Take your Rust skills to the next level <strong>for 300€</strong></p>
             </div>
-
           </div>
         </div>
       </section>
 
       <div class="floating-btn">
-        <tito-button event="mainmatter/telemetry-rust-2023/" class="plausible-event-name=Tickets+List">Book your ticket<div class="line"></div>
-          <span class="price-tag">300€</span></tito-button>
+        <tito-button
+          event="mainmatter/telemetry-rust-2023/"
+          class="plausible-event-name=Tickets+List"
+          >Book your ticket
+          <div class="line"></div>
+          <span class="price-tag">300€</span></tito-button
+        >
       </div>
 
       <section class="lp-section container container--lg trigger">
         <p>
-        Your Rust application has finally been deployed to production! Nice! But is
-        it working?<br> 
-        This workshop will introduce you to a comprehensive toolkit to
-        detect, troubleshoot and resolve issues in your Rust applications.
+          Your Rust application has finally been deployed to production! Nice! But is it working?<br />
+          This workshop will introduce you to a comprehensive toolkit to detect, troubleshoot and
+          resolve issues in your Rust applications.
         </p>
         <p>
-        This workshop
-        is designed for developers who are operating Rust services in production-like
-        environments, or are preparing to do so.
+          This workshop is designed for developers who are operating Rust services in
+          production-like environments, or are preparing to do so.
         </p>
       </section>
 
       <section class="lp-section container container--lg quote__workshop">
-        {% set 'content' = {
+        {%
+          set content = {
           "text": "I usually avoid workshops. The pace of more than 3 people is hard to sync: I always feel rushed in some bits, slowed down in others. Luca fixed that with his code-centric approach [...] Here I was able to fully use the time and the knowledge of the trainer!",
           "source": "Attendee of Luca's workshop held at EuroRust 2023",
           "loading": "lazy"
-        } %}
+          }
+        %}
         {{ quote(content) }}
       </section>
 
@@ -127,58 +150,66 @@ og:
                   </div>
                   <div class="author-big__title">
                     <strong>Principal Engineering Consultant</strong>
-                    {{ authorSocials("algo_luca", "workshop-socials
-                      author-socials--desktop-only") }}
                     {{
                       authorSocials("algo_luca", "workshop-socials
-                      author-socials--mobile-only") }}
+                      author-socials--desktop-only")
+                    }}
+                    {{
+                      authorSocials("algo_luca", "workshop-socials
+                      author-socials--mobile-only")
+                    }}
                   </div>
                   <div class="author-big__details">
                     <p>
-                      Luca Palmieri builds technology products for a living.  His current focus
-                      is on backend development, software architecture and the Rust programming
-                      language.  
-                      He is the author of "<a href="https://zero2prod.com">Zero to Production in Rust</a>".
+                      Luca Palmieri builds technology products for a living. His current focus is on
+                      backend development, software architecture and the Rust programming language.
+                      He is the author of "<a href="https://zero2prod.com"
+                        >Zero to Production in Rust</a
+                      >".
                     </p>
                   </div>
-
                 </div>
               </div>
               <div class="workshop-authors-big__image-wrapper author__image-wrapper">
-                {% image "/assets/images/authors/algo_luca.jpg", 'Florian Pichler',
-                '3.75rem', 'eager', 'author__lead-image', [120] %}
+                {%
+                  image "/assets/images/authors/algo_luca.jpg", 'Florian Pichler',
+                  '3.75rem', 'eager', 'author__lead-image', [120]
+                %}
               </div>
-
             </div>
           </div>
         </div>
       </section>
 
       <section>
-        {% set imageData = {
+        {%
+          set imageData = {
           "imgPath": "/assets/images/rust-telemetry-workshop/rust-telemetry-eurorust-2023.jpg",
           "alt": "workshop participants discussing their results and asking questions",
           "sizes": "100vw",
           "loading": "lazy",
           "sizesArray": [760, 1440, 1920]
-        } %}
+          }
+        %}
         {{ imageAspectRatio(imageData, "32/13", "35/19") }}
       </section>
 
       <section class="lp-section container container--lg">
         <h2 class="lp-section-subheading h2">Additional Information</h2>
         <h3 class="h4">Duration & location</h3>
-        <p>The workshop takes place over two days:
+        <p>The workshop takes place over two days:</p>
         <ul>
-            <li>
-              <a href="https://everytimezone.com/s/03cf783a">Dec. 12th, from 14:00 to 18:00 CET</a>
-            </li>
-            <li>
-              <a href="https://everytimezone.com/s/9b10cd40">Dec. 13th, from 14:00 to 18:00 CET</a>
-            </li>
-          </ul>
-        This allows participants to use the mornings to exercise or keep up with work.
-        The workshop is run completely online and remote.</p>
+          <li>
+            <a href="https://everytimezone.com/s/03cf783a">Dec. 12th, from 14:00 to 18:00 CET</a>
+          </li>
+          <li>
+            <a href="https://everytimezone.com/s/9b10cd40">Dec. 13th, from 14:00 to 18:00 CET</a>
+          </li>
+        </ul>
+        <p>
+          This allows participants to use the mornings to exercise or keep up with work. The
+          workshop is run completely online and remote.
+        </p>
       </section>
       <section class="lp-section container container--lg">
         <h3 class="h4">Number of participants</h3>
@@ -190,21 +221,30 @@ og:
       </section>
       <section class="lp-section container container--lg">
         <h3 class="h4">Prerequisites</h3>
-        <p>We will send a detailed list of instructions for preparation, including the installation of tools, etc. Additionally, we will share a Github project with workshop materials. This information will be provided closer to the workshop date.</p>
+        <p>
+          We will send a detailed list of instructions for preparation, including the installation
+          of tools, etc. Additionally, we will share a Github project with workshop materials. This
+          information will be provided closer to the workshop date.
+        </p>
       </section>
       <section class="lp-section container container--lg">
         <h3 class="h4">Pricing</h3>
-        <p>The workshop will cost 300€ for all two days. Included are the workshop sessions and the material for reviewing the learned lessons afterwards.</p>
+        <p>
+          The workshop will cost 300€ for all two days. Included are the workshop sessions and the
+          material for reviewing the learned lessons afterwards.
+        </p>
       </section>
 
       <section>
-        {% set imageData = {
+        {%
+          set imageData = {
           "imgPath": "/assets/images/rust-telemetry-workshop/rust-telemetry-workshop-eurorust-2023.jpg",
           "alt": "Happy workshop attendee smiling into the camera",
           "sizes": "100vw",
           "loading": "lazy",
           "sizesArray": [760, 1440, 1920]
-        } %}
+          }
+        %}
         {{ imageAspectRatio(imageData, "32/13", "35/19") }}
       </section>
 
@@ -214,31 +254,51 @@ og:
           <li class="workshop-topics__item">
             <div class="workshop-topics__text-wrapper">
               <h3 class="workshop-topics__item-heading h4">Structured logging (tracing)</h3>
-              <p class="text--sm">An introduction to the tracing instrumentation library, covering both how to instrument your code (capturing fields, log levels, macros) and how to process the resulting telemetry data in your application (subscriber configuration, logging levels, log filtering).</p>
+              <p class="text--sm">
+                An introduction to the tracing instrumentation library, covering both how to
+                instrument your code (capturing fields, log levels, macros) and how to process the
+                resulting telemetry data in your application (subscriber configuration, logging
+                levels, log filtering).
+              </p>
             </div>
           </li>
           <li class="workshop-topics__item">
             <div class="workshop-topics__text-wrapper">
               <h3 class="workshop-topics__item-heading h4">Error handling</h3>
-              <p class="text--sm">We will cover Rust’s Error trait, with a focus on the information that can be retrieved and recorded in your logs; we will also spend some time on logging patterns (e.g. when should an error be logged?).</p>
+              <p class="text--sm">
+                We will cover Rust’s Error trait, with a focus on the information that can be
+                retrieved and recorded in your logs; we will also spend some time on logging
+                patterns (e.g. when should an error be logged?).
+              </p>
             </div>
           </li>
           <li class="workshop-topics__item">
             <div class="workshop-topics__text-wrapper">
               <h3 class="workshop-topics__item-heading h4">Panic handling</h3>
-              <p class="text--sm">You should always manage to capture details about what went wrong, even if it’s due to an uncaught panic rather than an error. We will review panic hooks and integrate them in our tracing setup.</p>
+              <p class="text--sm">
+                You should always manage to capture details about what went wrong, even if it’s due
+                to an uncaught panic rather than an error. We will review panic hooks and integrate
+                them in our tracing setup.
+              </p>
             </div>
           </li>
           <li class="workshop-topics__item">
             <div class="workshop-topics__text-wrapper">
               <h3 class="workshop-topics__item-heading h4">Metrics</h3>
-              <p class="text--sm">Structured logs are important, but they don’t tell the full story. We will look at how to capture metric data using the metrics library, as a tool for designing alarms as well troubleshooting faulty behaviour.</p>
+              <p class="text--sm">
+                Structured logs are important, but they don’t tell the full story. We will look at
+                how to capture metric data using the metrics library, as a tool for designing alarms
+                as well troubleshooting faulty behaviour.
+              </p>
             </div>
           </li>
         </ol>
       </section>
 
-      <section class="color-hero color-hero--purple hero-resizable end-trigger" data-background-color="purple">
+      <section
+        class="color-hero color-hero--purple hero-resizable end-trigger"
+        data-background-color="purple"
+      >
         <div class="color-hero__image-wrapper">
           {% image '/assets/images/web-based-services-in-rust-workshop/cta-background.jpg', "a pair of hands tie an entry band around someone's arm", '100vw', 'lazy', 'color-hero__image', [760, 1440, 1920] %}
         </div>
@@ -246,11 +306,19 @@ og:
         <div class="color-hero__container container container--lg color-hero__container--center">
           <div class="color-hero__main">
             <h1 class="color-hero__title color-hero__title--full">Book your ticket</h1>
-            <div class="color-hero__text color-hero__text--small">Join our workshop and start detect, troubleshoot and resolve issues in your Rust applications.</div>
+            <div class="color-hero__text color-hero__text--small">
+              Join our workshop and start detect, troubleshoot and resolve issues in your Rust
+              applications.
+            </div>
             <div class="cta-link__text-wrapper">
               <span class="cta-link__text">
-                <tito-button event="mainmatter/telemetry-rust-2023/" class="plausible-event-name=Tickets+List">Book your ticket<div class="line"></div>
-                  <span class="price-tag">300€</span></tito-button>
+                <tito-button
+                  event="mainmatter/telemetry-rust-2023/"
+                  class="plausible-event-name=Tickets+List"
+                  >Book your ticket
+                  <div class="line"></div>
+                  <span class="price-tag">300€</span></tito-button
+                >
               </span>
             </div>
           </div>
@@ -263,9 +331,7 @@ og:
       <p id="external-new-window-message">Opens external website in a new window.</p>
     </div>
     <script>
-      document
-        .querySelector('body')
-        .setAttribute('data-js-enabled', 'true');
+      document.querySelector("body").setAttribute("data-js-enabled", "true");
     </script>
   </body>
 </html>

@@ -8,7 +8,10 @@ event: A event object
 #}
 {% from "cta-link.njk" import ctaLink %}
 {%- macro eventCard(event) -%}
-  <li class="event-card event-card--{{ event.data.color }}" data-background-color="{{ event.data.color }}">
+  <li
+    class="event-card event-card--{{ event.data.color }}"
+    data-background-color="{{ event.data.color }}"
+  >
     <div class="event-card__image-wrapper">
       {% image event.data.image, "", '16.438rem', 'lazy', 'event-card__image', [263, 400, 526] %}
     </div>
@@ -19,12 +22,8 @@ event: A event object
           <span class="event-card__meta-text">- {{ event.data.location }}</span>
         {% endif %}
       </div>
-      <h3 class="event-card__title h4">
-        {{ event.data.title }}
-      </h3>
-      <div class="event-card__description">
-        {{ event.templateContent | safe }}
-      </div>
+      <h3 class="event-card__title h4">{{ event.data.title }}</h3>
+      <div class="event-card__description">{{ event.templateContent | safe }}</div>
       {% set linkText = "Visit Website <span class='screenreader'>for " + event.data.title + "</span>" %}
       {{ ctaLink(event.data.url, linkText, 'event-card__cta') }}
     </div>

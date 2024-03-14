@@ -17,14 +17,10 @@
                 {{ postBanner(post) }}
               </li>
             {% else %}
-              <li class="recent-posts__item">
-                {{ postCard(post) }}
-              </li>
-            {% endif %}  
+              <li class="recent-posts__item">{{ postCard(post) }}</li>
+            {% endif %}
           {% elif loop.index < 5 %}
-            <li class="recent-posts__item">
-              {{ postCard(post) }}
-            </li>
+            <li class="recent-posts__item">{{ postCard(post) }}</li>
           {% endif %}
         {%- endfor -%}
       </ol>
