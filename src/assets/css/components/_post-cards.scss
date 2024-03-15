@@ -157,7 +157,7 @@
   position: relative;
   z-index: 100;
 
-  &:hover {
+  &:hover, &:focus {
     cursor: pointer;
   }
 }

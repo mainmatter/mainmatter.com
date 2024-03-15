@@ -31,7 +31,7 @@
   cursor: pointer;
   overflow: hidden;
 
-  &:hover {
+  &:hover, &:focus {
     .tech-cards__link-arrow {
       svg {
         transform: translateX(0.5rem) rotate(-90deg);
