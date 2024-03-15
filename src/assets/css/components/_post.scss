@@ -8,6 +8,10 @@
   background-color: var(--color-purple);
   color: var(--color-white);
   padding: 6rem 0 3.5rem;
+
+  a {
+    color: var(--color-white);
+  }
 }
 
 .post__author {
