@@ -153,6 +153,14 @@
   from = "/rust"
   to = "/rust-consulting/"
 
+[[redirects]]
+  from = "/services/team-augmentation-and-training/"
+  to = "/services/team-reinforcement/"
+
+[[redirects]]
+  from = "/services/digital-products-and-design/"
+  to = "/services/launch-your-idea/"
+
 # redirect old "Web-based Services in Rust" landing page to regular workshop
 [[redirects]]
   from = "https://rust-web-services-workshop.mainmatter.com/*"
