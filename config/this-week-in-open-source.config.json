@@ -524,10 +524,13 @@
     "inesoaresilva/gravity_dummy",
     "mansona/ember-mirage",
     "sanity-io/sanity-template-sveltekit-clean",
-    "tech-conferences/conference-data"
+    "tech-conferences/conference-data",
+    "erlef/website",
+    "oscard0m/example-probot-vercel-ts",
+    "paoloricciuti/darkmodething"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-02-25..2024-03-03",
+  "last_date": "2024-03-03..2024-03-10",
   "query_type": "Merged"
 }
