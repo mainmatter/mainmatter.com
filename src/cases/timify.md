@@ -7,7 +7,7 @@ problem: Timify's entire system needed to be re-engineered from the ground up.
 solution:
   We completed the first release version of the new application and got them up
   to speed on best practices and patterns for Ember.js
-tags: Team Reinforcement
+tags: Team reinforcement
 description:
   <p>Timify is an online appointment scheduling service that connects service
   providers with clients.</p><p>When they decided it was time to re-engineer

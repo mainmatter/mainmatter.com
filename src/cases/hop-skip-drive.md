@@ -1,7 +1,7 @@
 ---
 layout: case-study
 company: HopSkipDrive
-tags: Team Reinforcement
+tags: Team reinforcement
 problem:
   HopSkipDrive wanted to track rides in real time and react to exceptions
   immediately.

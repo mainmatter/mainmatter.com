@@ -9,7 +9,7 @@ problem:
 solution:
   We helped deliver the web app and developed the team’s expertise through
   pair-programming sessions and code reviews.
-tags: Team Reinforcement
+tags: Team reinforcement
 description:
   <p>Trainline is Europe’s leading rail and coach platform.</p><p>We helped them
   deliver a high-performance mobile web app, along with an improved engineering

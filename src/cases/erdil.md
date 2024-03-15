@@ -1,7 +1,7 @@
 ---
 layout: case-study
 company: ERDiL
-tags: Team Reinforcement
+tags: Team reinforcement
 description:
   <p>ERDiL builds natural language processing software that helps companies
   analyze messages from their customers.</p><p>They reached out to Mainmatter

@@ -1,7 +1,7 @@
 ---
 layout: case-study
 company: Sutori
-tags: Team Reinforcement
+tags: Team reinforcement
 description:
   <p>Sutori is an online, collaborative learning platform that helps teachers
   present information in the remote classroom.</p><p>When they wanted to

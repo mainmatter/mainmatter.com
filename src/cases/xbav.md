@@ -1,7 +1,7 @@
 ---
 layout: case-study
 company: xbAV
-tags: Team Reinforcement
+tags: Team reinforcement
 problem:
   xbAV were looking for support releasing a number of critical features built
   with Ruby on Rails.

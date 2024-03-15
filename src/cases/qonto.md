@@ -9,7 +9,7 @@ problem:
 solution:
   We helped them release new features quickly while laying the foundations for
   sustainable growth at an accelerated pace.
-tags: Team Reinforcement
+tags: Team reinforcement
 description:
   <p>Qonto is the leading neobank for SMEs and freelancers in
   Europe.</p><p>Mainmatter worked with their web frontend team to boost their

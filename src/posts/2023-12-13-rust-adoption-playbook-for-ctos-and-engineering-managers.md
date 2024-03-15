@@ -168,7 +168,7 @@ value _while_ your team is learning Rust.
 #### Code audits
 
 If budget is tight, you can consider a code audit as a cheaper alternative to
-team reinforcement: you hire a consultant for a limited amount of time (e.g. a
+Team reinforcement: you hire a consultant for a limited amount of time (e.g. a
 few days) to review your codebase.  
 At the end of the process, you get a report: critical issues that need to be
 addressed urgently, recommendations on how to improve the codebase, and a list

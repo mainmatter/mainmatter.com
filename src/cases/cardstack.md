@@ -1,7 +1,7 @@
 ---
 layout: case-study
 company: Cardstack
-tags: Team Reinforcement
+tags: Team reinforcement
 description:
   <p>Cardstack builds the experience layer for a decentralized
   internet.</p><p>Mainmatter helped them complete their Card UI system and

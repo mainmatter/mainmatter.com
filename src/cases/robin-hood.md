@@ -1,7 +1,7 @@
 ---
 layout: case-study
 company: Robin Hood
-tags: Team Reinforcement
+tags: Team reinforcement
 problem: Robin Hood wanted a tool for managing Civic User Testing Groups.
 solution:
   Mainmatter helped them improve their engineering process and built a web based

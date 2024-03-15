@@ -5,7 +5,7 @@ problem:
   MVB lacked the experience to feel confident that they were delivering on
   quality under time pressure.
 solution: Our experts mentored the team to achieve both requirements.
-tags: Team Reinforcement
+tags: Team reinforcement
 title: A platform for the german book industry | Work
 displayTitle: "A platform for the <em>german</em> book industry"
 description:
@@ -17,7 +17,7 @@ hero:
   color: purple
   image: "/assets/images/work/mvb-background.jpg"
   imageAlt: "Servers in Rack"
-  tags: "Team Reinforcement"
+  tags: "Team reinforcement"
 og:
   image: /assets/images/cases/cs-mvb-og-image.jpg
 ---

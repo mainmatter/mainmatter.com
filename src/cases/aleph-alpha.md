@@ -5,7 +5,7 @@ problem:
   Aleph Alpha wanted to take advantage of Rust’s built-in efficiency for their
   latest learning model.
 solution: We provided the know-how to build the infrastructure.
-tags: Team Reinforcement
+tags: Team reinforcement
 title: Preprocessing trillions of tokens with Rust | Work
 displayTitle: "Preprocessing trillions of tokens with Rust"
 description:
@@ -50,7 +50,7 @@ og:
 <div class="case-study__section">
   <h3 class="case-study__heading">Mainmatter's role</h3>
     <div class="case-study__text">
-        <p>We partnered with Aleph Alpha in September 2023 to help them design and implement the data pipeline they needed. We followed a <a href="/services/team-reinforcement/">team reinforcement</a> approach. Our Principal Engineering Consultant, Luca Palmieri, embedded into Aleph Alpha's team for three months to help their project team to deliver on their goals.</p>
+        <p>We partnered with Aleph Alpha in September 2023 to help them design and implement the data pipeline they needed. We followed a <a href="/services/team-reinforcement/">Team reinforcement</a> approach. Our Principal Engineering Consultant, Luca Palmieri, embedded into Aleph Alpha's team for three months to help their project team to deliver on their goals.</p>
         <p>In particular, we supported the team in four key areas: architecture, infrastructure, Rust and mentoring.</p>
     </div>
 </div>

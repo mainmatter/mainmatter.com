@@ -9,12 +9,12 @@ description:
   configuration UI."
 problem: DD-WRT wanted a new user experience for their Linux-based firmware.
 solution: We built a new user interface using Ember.js as a strong foundation.
-tags: Team Reinforcement
+tags: Team reinforcement
 hero:
   color: purple
   image: "/assets/images/work/ddwrt.jpg"
   imageAlt: "Router on a white background"
-  tags: Team Reinforcement
+  tags: Team reinforcement
 og:
   image: /assets/images/cases/cs-dd-wrt-og-image.jpg
 ---

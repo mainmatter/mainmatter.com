@@ -4,7 +4,7 @@ company: Experteer
 title: A mobile onboarding experience | Work
 problem:
   Experteer was lacking the internal UI/UX capacity they needed to build
-  user-focussed solutions.
+  user-focused solutions.
 solution: Our experts mentored their team through designing a solution.
 tags: Launch your idea
 displayTitle:
