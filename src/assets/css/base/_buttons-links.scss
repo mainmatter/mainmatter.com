@@ -29,7 +29,7 @@ p a {
     transition: transform 0.5 ease;
   }
 
-  &:hover {
+  &:hover, &:focus {
     svg {
       transform: translateX(0.5rem) rotate(-90deg);
       transition: transform 0.5 ease;
@@ -88,13 +88,13 @@ p a {
       transition: transform 0.5 ease;
     }
 
-    &:hover svg {
+    &:hover svg, &:focus svg {
       transform: translateX(-0.5rem) rotate(90deg);
     }
   }
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover, .btn-secondary:focus {
   text-decoration: none;
 
   svg {
@@ -133,7 +133,7 @@ p a {
     color: var(--color-white);
   }
 
-  &:hover {
+  &:hover, &:focus {
     color: var(--color-aqua);
   }
 }

@@ -27,7 +27,7 @@
   a {
     color: var(--color-white);
 
-    &:hover {
+    &:hover, &:focus {
       color: var(--color-aqua);
     }
   }

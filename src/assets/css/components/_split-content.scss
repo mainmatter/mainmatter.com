@@ -7,7 +7,7 @@
   }
 }
 
-.split-content:not(.no-link):hover {
+.split-content:not(.no-link):hover, .split-content:not(.no-link):focus {
   color: var(--color-purple);
 }
 

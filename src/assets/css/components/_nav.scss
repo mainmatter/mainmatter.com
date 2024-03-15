@@ -61,7 +61,7 @@
   display: inline-block;
   transition: color 0.3s ease;
 
-  &:hover {
+  &:hover, &:focus  {
     color: var(--color-aqua);
 
     .nav__link-text {

@@ -54,7 +54,7 @@
 .pagination__next {
   text-decoration: none;
 
-  &:hover {
+  &:hover, &:focus  {
     text-decoration: none;
   }
 }

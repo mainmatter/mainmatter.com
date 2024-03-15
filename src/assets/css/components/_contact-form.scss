@@ -226,7 +226,7 @@ $states: "loading", "success", "error";
     transition: color 0.3s ease;
   }
 
-  &:hover svg {
+  &:hover svg, &:focus svg {
     color: var(--color-aqua);
   }
 }

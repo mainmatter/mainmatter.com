@@ -120,7 +120,7 @@
   }
 
   .talk-banner__link {
-    &:hover {
+    &:hover, &:focus {
 
       &~.talk-banner__image-overlay .cta-link__text,
       &~.talk-banner__image-overlay .cta-link__arrow svg,

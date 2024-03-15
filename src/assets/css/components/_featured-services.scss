@@ -18,7 +18,7 @@
   }
 }
 
-.featured-services__link:hover {
+.featured-services__link:hover, .featured-services__link:focus {
   text-decoration: none;
 }
 
@@ -46,7 +46,7 @@
     margin-right: 1.5rem;
   }
 
-  &:hover {
+  &:hover, &:focus {
     .featured-services__link-description {
       color: var(--color-purple);
     }

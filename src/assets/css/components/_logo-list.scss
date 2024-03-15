@@ -22,6 +22,7 @@
   animation-play-state: running;
 
   &:hover,
+  &:focus,
   &--paused,
   &[data-marquee-disable] {
     animation-play-state: paused;
@@ -93,7 +94,7 @@
   .logo-list__list {
     gap: 6rem;
   }
-  
+
   .logo-list__list--duplicate {
     margin-left: 6rem;
   }
@@ -117,7 +118,7 @@
   .logo-list__list {
     gap: 8rem;
   }
-  
+
   .logo-list__list--duplicate {
     margin-left: 8rem;
   }

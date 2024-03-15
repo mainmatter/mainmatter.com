@@ -95,7 +95,7 @@ a {
   text-decoration: none;
   font-weight: 700;
 
-  &:hover {
+  &:hover, &:focus {
     text-decoration: underline;
     text-decoration-thickness: 0.125rem;
     text-underline-offset: 0.25rem;
