@@ -168,7 +168,7 @@ value _while_ your team is learning Rust.
 #### Code audits
 
 If budget is tight, you can consider a code audit as a cheaper alternative to
-team augmentation: you hire a consultant for a limited amount of time (e.g. a
+team reinforcement: you hire a consultant for a limited amount of time (e.g. a
 few days) to review your codebase.  
 At the end of the process, you get a report: critical issues that need to be
 addressed urgently, recommendations on how to improve the codebase, and a list
@@ -225,7 +225,7 @@ doing your research.
 We've covered a lot of ground in this article, but we hope we've given you a
 good starting point for your Rust journey. If you have any questions, or if
 you'd like help with any of the topics covered in the article (training, team
-augmentation, code audits, etc.) [get in touch](/contact)!
+reinforcement, code audits, etc.) [get in touch](/contact)!
 
 ## Appendix: Learning resources
 

@@ -23,7 +23,7 @@ spearhead and guide new development initiatives while establishing best
 practices and transferring knowledge to in-house engineers on the job via
 reviews and pairing sessions.
 
-Just as with previous Team Augmentation projects like
+Just as with previous Team Reinforcement projects like
 [trainline](/cases/trainline/) this approach brings "double value for the
 client" says simlpabs CEO Marco Otte-Witte, "short term value is added by the
 client immediately gaining more engineering power, but additional long term
@@ -47,5 +47,5 @@ happened in the first week!
 
 Mainmatter CEO Marco Otte-Witte says "I'm really pleased that Mainmatter have
 been able to add so much value in such a short amount of time proving that our
-team augmentation method works. We're all looking forward to continuing the
+team reinforcement method works. We're all looking forward to continuing the
 project and helping Qonto to succeed in their highly competitive market."

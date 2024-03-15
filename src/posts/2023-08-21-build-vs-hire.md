@@ -6,7 +6,7 @@ tags: [startups]
 bio: "Sarah Lorenz"
 description:
   "Sarah Lorenz explores the advantages and disadvantages of building a tech
-  team versus hiring one. She suggests a hybrid method, team augmentation, and
+  team versus hiring one. She suggests a hybrid method, team reinforcement, and
   shares Mainmatter’s experience with it in previous projects."
 og:
   image: /assets/images/posts/2023-08-21-build-vs-hire/og-image.jpg
@@ -85,7 +85,7 @@ you may have limited influence over the team's composition and processes.
 If you don’t have and don’t build up internal capability, you’ll be fully
 dependent on the agency.
 
-## A Hybrid Approach: Team Augmentation
+## A Hybrid Approach: Team Reinforcement
 
 ### Gradually build internal capacity while leveraging the expertise and efficiency of external professionals.
 
@@ -101,7 +101,7 @@ partner.
 
 #### You can also build on something you have no prior experience with yourself.
 
-Team augmentation is a great way to get started with new technologies. Through
+Team reinforcement is a great way to get started with new technologies. Through
 methodologies like Pair-programming, mentoring, and strategic support, we at
 Mainmatter help you to make the right tech stack decision, train your team and
 build the product at the same time.
