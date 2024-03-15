@@ -33,9 +33,9 @@
 
   &:hover, &:focus {
     .tech-cards__link-arrow {
-      svg {
+      .icon-arrow {
         transform: translateX(0.5rem) rotate(-90deg);
-        transition: transform 0.5 ease;
+        transition: transform 0.5s ease;
       }
     }
   }
@@ -135,7 +135,7 @@
   display: flex;
   justify-content: center;
 
-  svg {
+  .icon-arrow {
     transform: translateX(0px) rotate(-90deg);
     transition: transform 0.5s ease;
     width: 24px;
@@ -147,7 +147,7 @@
     margin-left: 0;
     margin-right: 0.5rem;
 
-    svg {
+    .icon-arrow {
       transform: rotate(90deg);
     }
   }

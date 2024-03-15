@@ -25,9 +25,9 @@
 .client-card__link {
   flex-shrink: 0;
 
-      svg {
+      .icon-arrow {
         transform: translateX(0px) rotate(-90deg);
-        transition: transform 0.5 ease;
+        transition: transform 0.5s ease;
         height: 1.5rem;
         width: 1.5rem;
         color: var(--color-purple);
@@ -35,9 +35,9 @@
       }
 
       &:hover, &:focus {
-        svg {
+        .icon-arrow {
           transform: translateX(0.5rem) rotate(-90deg);
-          transition: transform 0.5 ease;
+          transition: transform 0.5s ease;
         }
       }
     }

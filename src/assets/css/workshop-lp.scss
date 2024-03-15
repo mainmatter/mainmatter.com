@@ -137,15 +137,12 @@ button {
 
   .icon-arrow {
     flex-shrink: 0;
-  }
-
-  svg {
     transform: translateX(0px) rotate(-90deg);
     height: 1rem;
     width: 1rem;
     color: var(--color-white);
     margin-left: 0.5rem;
-    transition: transform 0.5 ease;
+    transition: transform 0.5s ease;
   }
 
   &.btn-primary--white {
@@ -165,9 +162,9 @@ button {
       font-weight: 700;
     }
 
-    svg {
+    .icon-arrow {
       transform: translateX(0.5rem) rotate(-90deg);
-      transition: transform 0.5 ease;
+      transition: transform 0.5s ease;
       color: var(--color-white);
     }
 

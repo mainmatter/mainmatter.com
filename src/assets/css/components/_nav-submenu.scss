@@ -79,21 +79,21 @@
   outline-offset: -0.125rem;
   transition: color 0.3s ease;
 
-  svg {
+  .icon-arrow {
     width: 0.75rem;
     height: 0.75rem;
     transform: translateX(0px) rotate(-90deg);
     margin-right: 1rem;
-    transition: transform 0.5 ease;
+    transition: transform 0.5s ease;
   }
 
   &:hover, &:focus  {
     color: var(--color-accent);
     text-decoration: none;
 
-    svg {
+    .icon-arrow {
       transform: translateX(0.5rem) rotate(-90deg);
-      transition: transform 0.5 ease;
+      transition: transform 0.5s ease;
     }
   }
 }
@@ -144,9 +144,9 @@ body[data-js-enabled="true"] {
     }
 
     &:hover, &:focus  {
-      svg {
+      .icon-arrow {
         transform: translateX(0.5rem) rotate(-90deg);
-        transition: transform 0.5 ease;
+        transition: transform 0.5s ease;
       }
     }
   }
@@ -157,7 +157,7 @@ body[data-js-enabled="true"] {
     align-items: start;
     padding: 0.5rem 0;
 
-    svg {
+    .icon-arrow {
       width: 2rem;
       height: 2rem;
     }

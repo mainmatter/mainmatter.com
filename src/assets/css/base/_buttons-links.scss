@@ -18,21 +18,18 @@ p a {
 
   .icon-arrow {
     flex-shrink: 0;
-  }
-
-  svg {
     transform: translateX(0px) rotate(-90deg);
     height: 1rem;
     width: 1rem;
     color: var(--color-white);
     margin-left: 0.5rem;
-    transition: transform 0.5 ease;
+    transition: transform 0.5s ease;
   }
 
   &:hover, &:focus {
-    svg {
+   .icon-arrow {
       transform: translateX(0.5rem) rotate(-90deg);
-      transition: transform 0.5 ease;
+      transition: transform 0.5s ease;
     }
   }
 
@@ -69,26 +66,23 @@ p a {
 
   .icon-arrow {
     flex-shrink: 0;
-  }
-
-  svg {
     transform: translateX(0px) rotate(-90deg);
     height: 1.5rem;
     width: 1.5rem;
     color: var(--color-purple);
     margin-right: 1.5rem;
-    transition: transform 0.5 ease;
+    transition: transform 0.5s ease;
   }
 
   &.previous {
-    svg {
+    .icon-arrow {
       transform: translateX(0px) rotate(90deg);
       margin-right: 1.5rem;
       margin-left: 0;
-      transition: transform 0.5 ease;
+      transition: transform 0.5s ease;
     }
 
-    &:hover svg, &:focus svg {
+    &:hover .icon-arrow, &:focus .icon-arrow {
       transform: translateX(-0.5rem) rotate(90deg);
     }
   }
@@ -97,9 +91,9 @@ p a {
 .btn-secondary:hover, .btn-secondary:focus {
   text-decoration: none;
 
-  svg {
+  .icon-arrow {
     transform: translateX(0.5rem) rotate(-90deg);
-    transition: transform 0.5 ease;
+    transition: transform 0.5s ease;
   }
 
   .btn-secondary-text {
