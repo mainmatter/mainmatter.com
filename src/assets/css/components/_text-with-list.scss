@@ -39,7 +39,9 @@
 
   &--unordered {
     .text-with-list__item::before {
-      content: var(--icon-url);
+      content: '●';
+      margin-right: 0.75rem;
+      color: var(--color-accent);
     }
   }
 }
@@ -53,13 +55,6 @@
     margin-top: 2rem;
   }
 
-  &::before {
-    color: var(--color-accent);
-    height: 2rem;
-    width: 2rem;
-    content: counter(item) ".";
-    margin-right: 2.25rem;
-  }
 }
 
 .text-with-list__cta {

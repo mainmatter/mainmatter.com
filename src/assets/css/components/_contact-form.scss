@@ -154,15 +154,14 @@ $states: "loading", "success", "error";
 
 .contact-form__status {
   display: flex;
-  align-items: start;
+  align-items: center;
   padding: 2.5rem;
-  padding-top: 20%;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0);
   text-align: center;
@@ -171,6 +170,8 @@ $states: "loading", "success", "error";
   transition: background-color 0.3s ease, opacity 0.3s ease;
   overflow: hidden;
 }
+
+
 
 .contact-form__loading {
   display: none;
