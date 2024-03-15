@@ -22,12 +22,26 @@
   align-items: center;
 }
 
-.client-card__link .icon-arrow {
-    margin-left: 0.75rem;
-    width: 24px;
-    height: auto;
-    transform: rotate(-90deg);
-}
+.client-card__link {
+  flex-shrink: 0;
+
+      svg {
+        transform: translateX(0px) rotate(-90deg);
+        transition: transform 0.5 ease;
+        height: 1.5rem;
+        width: 1.5rem;
+        color: var(--color-purple);
+        margin-left: 0.75rem;
+      }
+
+      &:hover {
+        svg {
+          transform: translateX(0.5rem) rotate(-90deg);
+          transition: transform 0.5 ease;
+        }
+      }
+    }
+
 
 @media (min-width: 48em) {
   .client-card {

@@ -24,6 +24,22 @@
 
 .icon-arrow {
   flex-shrink: 0;
+
+  svg {
+    transform: translateX(0px) rotate(-90deg);
+    transition: transform 0.5 ease;
+    height: 1.5rem;
+    width: 1.5rem;
+    color: var(--color-purple);
+    margin-right: 1.5rem;
+  }
+
+  &:hover {
+    svg {
+      transform: translateX(0.5rem) rotate(-90deg);
+      transition: transform 0.5 ease;
+    }
+  }
 }
 
 .featured-services__link {
@@ -42,26 +58,8 @@
   }
 
   &:hover {
-
     .featured-services__link-description {
       color: var(--color-purple);
-    }
-  }
-
-
-  svg {
-    transform: translateX(0px) rotate(-90deg);
-    transition: transform 0.5 ease;
-    height: 1.5rem;
-    width: 1.5rem;
-    color: var(--color-purple);
-    margin-right: 1.5rem;
-  }
-
-  &:hover {
-    svg {
-      transform: translateX(0.5rem) rotate(-90deg);
-      transition: transform 0.5 ease;
     }
   }
 }
