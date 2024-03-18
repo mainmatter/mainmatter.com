@@ -70,7 +70,7 @@ log = "0.4"
 
 ```toml
 # In a member's `Cargo.toml`
-[depenencies]
+[dependencies]
 log = { workspace = true }
 ```
 
