@@ -8,7 +8,6 @@ description:
   workspace to use dependency inheritance, wherever possible. It helps you to
   keep your dependencies DRY, reducing the risk of version mismatches and
   unnecessary duplication."
-# TODO: Adjust header image
 og:
   image: /assets/images/posts/2024-03-18-cargo-autoinherit/og-image.png
 image: "/assets/images/posts/2024-03-18-cargo-autoinherit/cargo_rust.png"
