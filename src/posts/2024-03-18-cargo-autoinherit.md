@@ -10,9 +10,9 @@ description:
   unnecessary duplication."
 # TODO: Adjust header image
 og:
-  image: /assets/images/posts/2023-12-13-adopting-rust/og-image.png
-image: "/assets/images/posts/2023-12-13-adopting-rust/header.png"
-imageAlt: "The Rust logo on top of a street map"
+  image: /assets/images/posts/2024-03-18-cargo-autoinherit/og-image.png
+image: "/assets/images/posts/2024-03-18-cargo-autoinherit/cargo_rust.png"
+imageAlt: "The Rust logo on a background showing cargo containers"
 ---
 
 [`cargo-autoinherit`] is a new Cargo subcommand that automatically DRYs up your
