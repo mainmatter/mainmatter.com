@@ -80,7 +80,7 @@ Nice and DRY!
 
 A couple of weeks ago I had some maintenance work on the agenda: update all
 dependencies in
-[Mainmatter's Rust telemetry workshop](https://github.com/mainmatter/rust-telemetry-workshop). 
+[Mainmatter's Rust telemetry workshop](https://github.com/mainmatter/rust-telemetry-workshop).
 Each step of the workshop is a separate Cargo package, for a grand total of 30
 `Cargo.toml` files in a single workspace.
 
