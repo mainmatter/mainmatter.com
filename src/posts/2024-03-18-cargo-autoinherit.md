@@ -47,7 +47,7 @@ This duplication can become an issue:
 - When you need to add a new dependency, you first have to check if it's already
   used in another package of your workspace to keep versions in sync.
 
-This process it's error-prone and tedious.  
+This process is error-prone and tedious.  
 If you mess it up, you end up with different versions of the same dependency
 within your workspace. This can lead to hard-to-debug compilation errors or
 bloat your artifacts with unnecessary copies of the same package.
