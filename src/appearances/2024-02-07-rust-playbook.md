@@ -6,6 +6,6 @@ media: video
 channel: rustweb-london
 ---
 
-Our Principal Engineer Consultant, Luca Palmieri, presented the missing playbook
+Our Principal Engineering Consultant, Luca Palmieri, presented the missing playbook
 for Rust adoption for managers and CTOs at our second Rust for the Web meetup in
 London.
