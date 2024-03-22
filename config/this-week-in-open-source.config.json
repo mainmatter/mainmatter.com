@@ -436,7 +436,8 @@
         "miragejs/ember-cli-mirage",
         "bgantzler/ember-mirage",
         "adopted-ember-addons/ember-cp-validations",
-        "emberjs/ember-inflector"
+        "emberjs/ember-inflector",
+        "yapplabs/ember-tether"
       ]
     },
     {
@@ -531,6 +532,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-03-03..2024-03-10",
+  "last_date": "2024-03-10..2024-03-17",
   "query_type": "Merged"
 }
