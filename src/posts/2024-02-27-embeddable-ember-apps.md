@@ -9,7 +9,7 @@ description:
 og:
   image: /assets/images/posts/2021-12-08-validations-in-ember-apps/og-image.jpg
 tagline: |
-  <p>Taking a look at making an Ember app embeddable in non-Ember projects and allowwing for communication between both apps. Showing how to wrangle Webpack, Ember's build system and their caveats.</p>
+  <p>Taking a look at making an Ember app embeddable in non-Ember projects and allowwing for communication between both apps. Showing how to wrangle Webpack, Ember's build systems and their caveats.</p>
 imageAlt: Embeddable Ember Apps image
 ---
 
