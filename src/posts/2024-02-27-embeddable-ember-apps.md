@@ -16,7 +16,7 @@ imageAlt: Embeddable Ember Apps image
 #### What we're working with
 
 We'll make a simple Ember to-do app (what else could it be :)) that's then
-loaded in another non-Ember app. Use cases may vary, but probably the two most
+loaded inside another non-Ember app. Use cases may vary, but probably the two most
 common ones are a widget that requires visualizing data like maps or
 micro-frontends that may need to share data between each other.
 
