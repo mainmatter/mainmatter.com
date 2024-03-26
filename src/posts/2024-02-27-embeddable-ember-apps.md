@@ -56,7 +56,7 @@ is the very first thing in the bundle file. Ember apps provide that inside the
 `vendor.js` script that precedes the other scripts inside an `index.html` entry
 point.
 
-A few Webpack plugins that do concatenation, but there's nuance to handling
+A few Webpack plugins do concatenation, but there's nuance to handling
 concatenation, because we must ensure that the `vendor.js` file is at the top
 and is processed first. For this reason, I recommend rolling out your own.
 
