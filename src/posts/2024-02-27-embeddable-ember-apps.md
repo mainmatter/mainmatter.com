@@ -25,7 +25,7 @@ potential integration between applications could look like.
 
 The easiest approach for making the app embeddable would be to bundle its
 scripts into single JS and CSS files. This is an additional build step we have
-to handle manually as by default, Webpack splits code into chunks, and while
+to handle manually as, by default, Webpack splits code into chunks, and while
 that could be disabled, the Ember-cli itself also always splits code into
 `vendor.js` and `app.js` files. In the "old Ember" we'd use a tool such as
 `ember-cli-concat` to do that, but with Embroider, we need to take care of
@@ -46,15 +46,15 @@ await app.start();
 
 ##### Combining JS
 
-This in my opinion is the most complicated step and unfortunately for the wrong
+This, in my opinion, is the most complicated step and unfortunately for the wrong
 reasons. When you're working with Ember, you yourself define and import files as
 ES6 modules. During build, they are then compiled as AMD modules, meaning that
 your application needs to bring a `requirejs` runtime with it.
 
 What it means for us is that we need to make sure that the `requirejs` runtime
 is the very first thing in the bundle file. Ember apps provide that inside the
-`vendor.js` script that preceeds the other scripts inside an `index.html`
-entrypoint.
+`vendor.js` script that precedes the other scripts inside an `index.html`
+entry point.
 
 There are a couple of Webpack plugins that do concatenation, but there's nuance
 to how we must handle concatenation in this case, because we must ensure that
@@ -131,7 +131,7 @@ class FileConcatenationPlugin {
 
 Now `ember-cli-build` needs to be configured:
 
-- set `storeConfigInMeta` to `false` so configuration defined in
+- set `storeConfigInMeta` to `false` so configuration is defined in
   `config/environment.js` is embedded directly with the application code as
   opposed to the default behavior where your configuration would be a part of
   some separate tag inside `index.html`,
@@ -172,14 +172,14 @@ module.exports = function (defaults) {
 ##### Combining CSS
 
 My recommendation is to opt out of the default styles CSS handling that Ember
-provides and do it on our own. Reason being that unfortunately `ember-cli`
+provides and do it on our own. The reason being that `ember-cli`
 doesn't seem to be using Webpack directly and it's not straightforward to know
 how and when to concatenate them.
 
-Luckily a basic PostCSS setup isn't scary and is more common nowadays and even
+Luckily, a basic PostCSS setup isn't scary and is more common nowadays, and even
 recommended.
 
-First lets define the styles:
+First, let's define the styles:
 
 - install packages `npm install postcss-loader mini-css-extract-plugin -D`,
 - create an `app.css` file in the `app` directory - on the same level as
@@ -255,7 +255,7 @@ extending what I've already shown is needed._
 
 The application is only a few lines of code living inside `application.js`,
 `application.hbs` and `app.js` - there's also a `todo-list.gjs` that I won't
-show in this post in order to save some space but you'll find a link to the rest
+show in this post in order to save some space, but you'll find a link to the rest
 of the code at the bottom.
 
 ```js
@@ -299,12 +299,12 @@ that the app won't boot by default where usually it'd attempt to load and mount
 itself to `body` or `rootElement` configuration found in
 `config/environment.js`.
 
-Below it we add a `MyEmbeddedApp` class wrapper. Its job is to take over of App
+Below it, we add a `MyEmbeddedApp` class wrapper. Its job is to take over the App
 initialization as well as serve as a communication layer between the App and
 whoever uses it.
 
 There's probably a few different ways to organize this. Here, for simplicity,
-the wrapper talks to the `application` controller directly but, if you have a
+the wrapper talks to the `application` controller directly, but, if you have a
 more complicated use case, you could use services, proper events, and such to do
 the job.
 
@@ -374,7 +374,7 @@ class MyEmbeddedApp {
 
 #### Build, Deploy and Use
 
-Now the App can be built, run the build script as usual `npm run build` and
+Now the App can be built: run the build script as usual `npm run build` and
 deploy the `dist` to your static server or publish as an npm package.
 
 Then add `script` and `link` tags pointing to the deployed bundles and
@@ -382,9 +382,9 @@ initialize the App.
 
 In this [Embeddable Demo](https://svelte-todo-13xa.onrender.com), the app is
 initialized when a `<div>` element is inserted. The app is initialized twice
-with different configurations, one configuration allows to remove items, the
-other doesn't, also both configurations set up a callback that will be called
-when to-do items have changed, then they will display their count.
+with different configurations; one configuration allows to remove items, the
+other doesn't. Also, both configurations set up a callback that will be called
+when to-do items have changed and will then display their count.
 
 ```html
 {% raw %}
@@ -454,9 +454,9 @@ when to-do items have changed, then they will display their count.
   Instead of providing and using the bundles directly, it could be a good idea
   to create a tiny wrapping script whose only job is to append script tags and
   expose a promise or hook to notify that they're loaded.
-- Depending on a use case, an iframe could be simpler. On the other hand, this
+- Depending on the use case, an iframe could be simpler. On the other hand, this
   approach gives the most flexibility when it's necessary to allow manipulating
-  the ambedded app at runtime.
+  the embedded app at runtime.
 
 #### Summary
 
