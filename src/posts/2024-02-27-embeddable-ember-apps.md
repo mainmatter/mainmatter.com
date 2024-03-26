@@ -16,8 +16,8 @@ imageAlt: Embeddable Ember Apps image
 #### What we're working with
 
 We'll make a simple Ember to-do app (what else could it be :)) that's then
-loaded inside another non-Ember app. Use cases may vary, but probably the two most
-common ones are a widget that requires visualizing data like maps or
+loaded inside another non-Ember app. Use cases may vary, but probably the two
+most common ones are a widget that requires visualizing data like maps or
 micro-frontends that may need to share data between each other.
 
 The goal of this post is to show how to wrangle Ember's build system and how a
@@ -46,20 +46,19 @@ await app.start();
 
 ##### Combining JS
 
-This, in my opinion, is the most complicated step and unfortunately for the wrong
-reasons. When you're working with Ember, you yourself define and import files as
-ES6 modules. During build, they are then compiled as AMD modules, meaning that
-your application needs to bring a `requirejs` runtime with it.
+This, in my opinion, is the most complicated step and unfortunately for the
+wrong reasons. When you're working with Ember, you yourself define and import
+files as ES6 modules. During build, they are then compiled as AMD modules,
+meaning that your application needs to bring a `requirejs` runtime with it.
 
 What it means for us is that we need to make sure that the `requirejs` runtime
 is the very first thing in the bundle file. Ember apps provide that inside the
-`vendor.js` script that precedes the other scripts inside an `index.html`
-entry point.
+`vendor.js` script that precedes the other scripts inside an `index.html` entry
+point.
 
-There are a couple of Webpack plugins that do concatenation, but there's nuance
-to how we must handle concatenation in this case, because we must ensure that
-the `vendor.js` file is at the top and is processed first. For this reason, I
-recommend rolling out your own.
+A few Webpack plugins that do concatenation, but there's nuance to handling
+concatenation, because we must ensure that the `vendor.js` file is at the top
+and is processed first. For this reason, I recommend rolling out your own.
 
 The Webpack plugin needs to:
 
@@ -172,9 +171,9 @@ module.exports = function (defaults) {
 ##### Combining CSS
 
 My recommendation is to opt out of the default styles CSS handling that Ember
-provides and do it on our own. The reason being that `ember-cli`
-doesn't seem to be using Webpack directly and it's not straightforward to know
-how and when to concatenate them.
+provides and do it on our own. The reason being that `ember-cli` doesn't seem to
+be using Webpack directly and it's not straightforward to know how and when to
+concatenate them.
 
 Luckily, a basic PostCSS setup isn't scary and is more common nowadays, and even
 recommended.
@@ -255,8 +254,8 @@ extending what I've already shown is needed._
 
 The application is only a few lines of code living inside `application.js`,
 `application.hbs` and `app.js` - there's also a `todo-list.gjs` that I won't
-show in this post in order to save some space, but you'll find a link to the rest
-of the code at the bottom.
+show in this post in order to save some space, but you'll find a link to the
+rest of the code at the bottom.
 
 ```js
 import Controller from "@ember/controller";
@@ -299,8 +298,8 @@ that the app won't boot by default where usually it'd attempt to load and mount
 itself to `body` or `rootElement` configuration found in
 `config/environment.js`.
 
-Below it, we add a `MyEmbeddedApp` class wrapper. Its job is to take over the App
-initialization as well as serve as a communication layer between the App and
+Below it, we add a `MyEmbeddedApp` class wrapper. Its job is to take over the
+App initialization as well as serve as a communication layer between the App and
 whoever uses it.
 
 There's probably a few different ways to organize this. Here, for simplicity,
