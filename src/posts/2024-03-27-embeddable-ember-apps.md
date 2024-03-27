@@ -8,6 +8,7 @@ description:
   projects."
 og:
   image: /assets/images/posts/2024-03-27-embeddable-ember-apps/og-image.jpg
+image: /assets/images/posts/2024-03-27-embeddable-ember-apps/header.jpg
 tagline: |
   <p>Taking a look at making an Ember app embeddable in non-Ember projects and allowwing for communication between both apps. Showing how to wrangle Webpack, Ember's build systems and their caveats.</p>
 imageAlt: Embeddable Ember Apps image
