@@ -40,6 +40,9 @@ devDependencies:
   '@quasibit/eleventy-plugin-sitemap':
     specifier: ^2.1.5
     version: 2.2.0
+  '@rollup/plugin-node-resolve':
+    specifier: ^6.0.0
+    version: 6.1.0(rollup@2.79.1)
   '@tbranyen/jsdom':
     specifier: 13.0.0
     version: 13.0.0
@@ -97,9 +100,6 @@ devDependencies:
   rollup-plugin-commonjs:
     specifier: ^10.1.0
     version: 10.1.0(rollup@2.79.1)
-  rollup-plugin-node-resolve:
-    specifier: ^5.2.0
-    version: 5.2.0(rollup@2.79.1)
   rollup-plugin-terser:
     specifier: ^7.0.2
     version: 7.0.2(rollup@2.79.1)
@@ -916,6 +916,32 @@ packages:
       sitemap: 6.4.0
     dev: true
 
+  /@rollup/plugin-node-resolve@6.1.0(rollup@2.79.1):
+    resolution: {integrity: sha512-Cv7PDIvxdE40SWilY5WgZpqfIUEaDxFxs89zCAHjqyRwlTSuql4M5hjIuc5QYJkOH0/vyiyNXKD72O+LhRipGA==}
+    engines: {node: '>= 8.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0
+    dependencies:
+      '@rollup/pluginutils': 3.1.0(rollup@2.79.1)
+      '@types/resolve': 0.0.8
+      builtin-modules: 3.3.0
+      is-module: 1.0.0
+      resolve: 1.22.8
+      rollup: 2.79.1
+    dev: true
+
+  /@rollup/pluginutils@3.1.0(rollup@2.79.1):
+    resolution: {integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==}
+    engines: {node: '>= 8.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0
+    dependencies:
+      '@types/estree': 0.0.39
+      estree-walker: 1.0.1
+      picomatch: 2.3.1
+      rollup: 2.79.1
+    dev: true
+
   /@sentry-internal/feedback@7.88.0:
     resolution: {integrity: sha512-lbK6jgO1I0M96nZQ99mcLSZ55ebwPAP6LhEWhkmc+eAfy97VpiY+qsbmgsmOzCEPqMmEUCEcI0rEZ7fiye2v2Q==}
     engines: {node: '>=12'}
@@ -1093,6 +1119,10 @@ packages:
   /@trysound/sax@0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
+    dev: true
+
+  /@types/estree@0.0.39:
+    resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
     dev: true
 
   /@types/estree@1.0.5:
@@ -2599,6 +2629,10 @@ packages:
 
   /estree-walker@0.6.1:
     resolution: {integrity: sha512-SqmZANLWS0mnatqbSfRP5g8OXZC12Fgg1IwNtLsyHDzJizORW4khDfjPqJZsemPWBB2uqykUah5YpQ6epsqC/w==}
+    dev: true
+
+  /estree-walker@1.0.1:
+    resolution: {integrity: sha512-1fMXF3YP4pZZVozF8j/ZLfvnR8NSIljt56UhbZ5PeeDmmGHpgpdwQt7ITlGvYaQukCvuBRMLEiKiYC+oeIg4cg==}
     dev: true
 
   /esutils@2.0.3:
@@ -4943,20 +4977,6 @@ packages:
       estree-walker: 0.6.1
       is-reference: 1.2.1
       magic-string: 0.25.9
-      resolve: 1.22.8
-      rollup: 2.79.1
-      rollup-pluginutils: 2.8.2
-    dev: true
-
-  /rollup-plugin-node-resolve@5.2.0(rollup@2.79.1):
-    resolution: {integrity: sha512-jUlyaDXts7TW2CqQ4GaO5VJ4PwwaV8VUGA7+km3n6k6xtOEacf61u0VXwN80phY/evMcaS+9eIeJ9MOyDxt5Zw==}
-    deprecated: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.
-    peerDependencies:
-      rollup: '>=1.11.0'
-    dependencies:
-      '@types/resolve': 0.0.8
-      builtin-modules: 3.3.0
-      is-module: 1.0.0
       resolve: 1.22.8
       rollup: 2.79.1
       rollup-pluginutils: 2.8.2
