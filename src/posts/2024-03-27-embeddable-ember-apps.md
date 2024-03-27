@@ -7,7 +7,7 @@ description:
   "Bartlomiej Dudzik shows how to make an Ember App embeddable in non-Ember
   projects."
 og:
-  image: /assets/images/posts/2021-12-08-validations-in-ember-apps/og-image.jpg
+  image: /assets/images/posts/2024-03-27-embeddable-ember-apps/og-image.jpg
 tagline: |
   <p>Taking a look at making an Ember app embeddable in non-Ember projects and allowwing for communication between both apps. Showing how to wrangle Webpack, Ember's build systems and their caveats.</p>
 imageAlt: Embeddable Ember Apps image
@@ -444,7 +444,7 @@ when to-do items have changed and will then display their count.
 {% endraw %}
 ```
 
-![Final result](/assets/images/posts/2024-02-27-embeddable-ember-apps/ember-todo-test.mp4#video)
+![Final result](/assets/images/posts/2024-03-27-embeddable-ember-apps/ember-todo-test.mp4#video)
 
 #### Considerations
 
