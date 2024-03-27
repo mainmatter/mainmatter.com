@@ -81,7 +81,8 @@
         "mainmatter/svelte-promise-modals",
         "paoloricciuti/svelte-client-components",
         "CodingGarden/listd",
-        "oscard0m/test-sveltekit"
+        "oscard0m/test-sveltekit",
+        "mainmatter/svelte-concurrency"
       ]
     },
     {
@@ -532,6 +533,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-03-10..2024-03-17",
+  "last_date": "2024-03-17..2024-03-24",
   "query_type": "Merged"
 }
