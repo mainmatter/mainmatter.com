@@ -1,5 +1,5 @@
 ---
-title: "Embedding an Ember App With Webpack"
+title: "Embedding an Ember App with Webpack"
 authorHandle: BobrImperator
 tags: [ember]
 bio: "Software Developer"
