@@ -54,7 +54,8 @@ async function clearShoppingList(id) {
 
 Confirmation modal:
 
-```svelte
+```html
+{% raw %}
 <script>
 let isModalOpened = false;
 
@@ -78,6 +79,7 @@ function handleConfirmModal() {
 		onReject={() => isModalOpened = false}
 	/>
 {/if}
+{% endraw %}
 ```
 
 Despite all similarities in async-ness, their implementation differ greatly. Why
