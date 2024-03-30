@@ -135,7 +135,7 @@ module.exports = function (value, outputPath) {
 
         let formats = ["webp", imageData.fileType];
         if (imageData.fileType === "gif") {
-          formats = ["webp"];
+          formats = ["gif"];
         }
 
         let url = "./static" + imageData.src;
