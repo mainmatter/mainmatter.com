@@ -5,8 +5,7 @@ description: |
   <p>Rust is a general-purpose programming languages that's been growing in popularity over the past few years.
     It's known for its strong type system, its focus on safety and performance, and its modern tooling.</p>
   <p>We designed this workshop to help you get started with Rust, assuming no prior knowledge of the language.</p>
-  <p>The workshop covers a large collection of topics. 
-  We'll start from the absolute basics and gradually build up to more advanced topics, interleaving theory with practice.</p>
+  <p>The workshop starts from the absolute basics and gradually builds up to more advanced topics, interleaving theory with practice.</p>
   The goal is to offer you a coherent learning path that provides the right level of challenge at every step, 
   without being overwhelming.</p>
   <p>By the end of the workshop, you will have a solid understanding of the Rust language, its standard library,
