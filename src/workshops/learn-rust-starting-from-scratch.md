@@ -21,28 +21,25 @@ topics:
   - heading: The toolbox
     text: >
       We will cover the tools that every Rust developer should have in their
-      toolbox: `rustup` (toolchain management), `cargo` (build system and
-      package manager),  `clippy` (linter), `rustfmt` (formatter), and `rustdoc`
-      (documentation generator).
+      toolbox: <code>rustup</code> (toolchain management), <code>cargo</code>
+      (build system and package manager),  <code>clippy</code> (linter),
+      <code>rustfmt</code> (formatter), and <code>rustdoc</code> (documentation
+      generator).
   - heading: The language
     text: >
-      We will cover in detail the core constructs of the Rust language,
-      including: 
-
-        - Syntax 
-        - Control flow constructs 
-        - Type system 
-        - Ownership and borrowing 
-        - Polymorphism (generics and trait objects) 
-        - Closures and `Fn*` traits - Panics
+      We will cover in detail the core constructs of the Rust language: syntax,
+      control flow, pattern matching, type system (traits), ownership and
+      borrowing, polymorphism (generics and trait objects), closures and `Fn*`
+      traits, and panics.
   - heading: The standard library
     text: >
       Writing Rust programs is significantly easier if you have mastered the
       standard library. We will cover the most important parts of the standard
-      library, including: - Primitive types - Collections and iterators -
-      Conversion traits - Smart pointers (Box, Arc, Rc) - Nullability handling
-      (Option) - Error handling (Result) - Concurrency primitives (threads,
-      channels, locks)
+      library, including: primitive types, strings and string slices,
+      collections and iterators, conversion traits, smart pointers
+      (<code>Box</code>, <code>Arc</code>, <code>Rc</code>), nullability
+      handling (<code>Option</code>), error handling (<code>Result</code>), and
+      concurrency primitives (threads, channels, locks).
   - heading: Testing
     text: >
       We will build up your Rust's testing toolkit. We will start from scratch,
@@ -52,9 +49,11 @@ topics:
       equipped for the testing challenges ahead of you!
   - heading: Async Rust
     text: >
-      We will cover the basics of asynchronous programming in Rust, including: -
-      The `Future` trait - `async` functions - Spawning tasks - Overview of
-      `tokio`, the most popular async runtime in Rust - Common pitfalls
+      We will cover the basics of asynchronous programming in Rust,
+      including:  the <code>Future</code> trait, <code>async</code> functions,
+      the <code>.await</code> operator, spawning tasks, an overview of
+      <code>tokio</code> (the most popular async runtime in Rust), as well as
+      common pitfalls.
 leads:
   - name: Luca Palmieri
     title: Principal Engineering Consultant
