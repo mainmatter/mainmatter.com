@@ -15,9 +15,7 @@
           <ul class="footer-menu__list">
             {% for item in menu.links %}
               <li class="footer-menu__item">
-                <a class="footer-menu__link" href="{{ item.link }}">
-                  {{ item.text }}
-                </a>
+                <a class="footer-menu__link" href="{{ item.link }}"> {{ item.text }} </a>
               </li>
             {% endfor %}
           </ul>
@@ -29,6 +27,6 @@
       <a class="footer__inline-link" href="/imprint/">Imprint</a>
       <a class="footer__inline-link" href="/privacy/">Privacy Policy</a>
     </div>
-    {{ socialList(socials.socials, 'footer__socials')}}
+    {{ socialList(socials.socials, 'footer__socials') }}
   </div>
 </footer>

@@ -24,73 +24,92 @@ og:
       {% set imagePath %}/assets/images/logos/ember-white.svg{% endset %}
       <img class="expertise__logo" src="{{ imagePath }}" alt="Ember logo" />
       <h1 class="color-hero__title color-hero__title--full ">is our expertise</h1>
-      <div class="color-hero__text color-hero__text--large">We have been recognized as an official sponsor of the Ember.js project along with international brands like LinkedIn and
-      Yahoo.</div>
+      <div class="color-hero__text color-hero__text--large">
+        We have been recognized as an official sponsor of the Ember.js project along with
+        international brands like LinkedIn and Yahoo.
+      </div>
     </div>
   </div>
 </section>
 
-{% set content = {
-"title": "We love open source",
-"subtitle": "We maintain a number of projects in the ecosystem that are widely adopted in the Ember community."
-} %}
+{%
+  set content = {
+  "title": "We love open source",
+  "subtitle": "We maintain a number of projects in the ecosystem that are widely adopted in the Ember community."
+  }
+%}
 {{ textWithList(content, "white") }}
-
-{% set 'slide_1' = {
-"color": "white",
-"title": "Ember simple auth",
-"text": "Authentication management for Ember.js applications.",
-"icon": "/assets/images/ember/ember-simple-auth.svg",
-"linkUrl": "https://github.com/mainmatter/ember-simple-auth",
-"linkText": "View on github"
-} %}
-
-{% set 'slide_2' = {
-"color": "purple",
-"title": "Ember test selectors",
-"text": "Enabling better element selectors in Ember.js tests.",
-"icon": "/assets/images/ember/ember-test-selectors.svg",
-"linkUrl": "https://github.com/mainmatter/ember-test-selectors",
-"linkText": "View on github"
-} %}
-
-{% set 'slide_3' = {
-"color": "black",
-"title": "Ember cookies",
-"text": "Cookie handling for Ember.js apps - in the browser and FastBoot.",
-"icon": "/assets/images/ember/ember-cookies.svg",
-"linkUrl": "https://github.com/mainmatter/ember-cookies",
-"linkText": "View on github"
-} %}
-
-{% set 'slide_4' = {
-"color": "white",
-"title": "Qunit DOM",
-"text": "High Level DOM Assertions for QUnit with an expressive API.",
-"icon": "/assets/images/ember/qunit-dom.svg",
-"linkUrl": "https://github.com/mainmatter/qunit-dom",
-"linkText": "View on github"
-} %}
-
+{%
+  set slide_1 = {
+  "color": "white",
+  "title": "Ember simple auth",
+  "text": "Authentication management for Ember.js applications.",
+  "icon": "/assets/images/ember/ember-simple-auth.svg",
+  "linkUrl": "https://github.com/mainmatter/ember-simple-auth",
+  "linkText": "View on github"
+  }
+%}
+{%
+  set slide_2 = {
+  "color": "purple",
+  "title": "Ember test selectors",
+  "text": "Enabling better element selectors in Ember.js tests.",
+  "icon": "/assets/images/ember/ember-test-selectors.svg",
+  "linkUrl": "https://github.com/mainmatter/ember-test-selectors",
+  "linkText": "View on github"
+  }
+%}
+{%
+  set slide_3 = {
+  "color": "black",
+  "title": "Ember cookies",
+  "text": "Cookie handling for Ember.js apps - in the browser and FastBoot.",
+  "icon": "/assets/images/ember/ember-cookies.svg",
+  "linkUrl": "https://github.com/mainmatter/ember-cookies",
+  "linkText": "View on github"
+  }
+%}
+{%
+  set slide_4 = {
+  "color": "white",
+  "title": "Qunit DOM",
+  "text": "High Level DOM Assertions for QUnit with an expressive API.",
+  "icon": "/assets/images/ember/qunit-dom.svg",
+  "linkUrl": "https://github.com/mainmatter/qunit-dom",
+  "linkText": "View on github"
+  }
+%}
 {% set slides = [slide_1, slide_2, slide_3, slide_4] %}
 
 <section class="scroll-slides" id="scroll-slides">
   {% for slide in slides %}
     {% set slideIndex = loop.index %}
-    <div id="ember-slide-{{ loop.index }}" class="scroll-slides__slide scroll-slides__slide--{{ slide.color }}"
-      data-scroll-slide  data-background-color="{{ slide.color }}">
+    <div
+      id="ember-slide-{{ loop.index }}"
+      class="scroll-slides__slide scroll-slides__slide--{{ slide.color }}"
+      data-scroll-slide
+      data-background-color="{{ slide.color }}"
+    >
       <div class="scroll-slides__container container container--lg">
         <div class="scroll-slides__pagination" aria-hidden="true">
           {% for slide in slides %}
-          <span class="scroll-slides__pagination-item">
-            <span href="{{ pageUrl }}#{{ id }}-slide-{{ loop.index }}" class="scroll-slides__pagination-button">
-              <span class="screenreader">Slide {{ loop.index }}{% if slideIndex == loop.index %} (Current slide){% endif
-                %}</span>
+            <span class="scroll-slides__pagination-item">
               <span
-                class="scroll-slides__pagination-span{% if slideIndex == loop.index %} scroll-slides__pagination-span--active{% endif %}"
-                aria-hidden></span>
+                href="{{ pageUrl }}#{{ id }}-slide-{{ loop.index }}"
+                class="scroll-slides__pagination-button"
+              >
+                <span class="screenreader"
+                  >Slide
+                  {{ loop.index }}{% if slideIndex == loop.index %}
+                    (Current slide)
+                  {% endif %}</span
+                >
+                <span
+                  class="scroll-slides__pagination-span {% if slideIndex == loop.index %}scroll-slides__pagination-span--active{% endif %}"
+                  aria-hidden
+                ></span>
+              </span>
             </span>
-          </span>
           {% endfor %}
         </div>
         <div class="scroll-slides__content">
@@ -103,7 +122,7 @@ og:
           <div class="scroll-slides__text-wrapper">
             <p class="scroll-slides__text">{{ slide.text }}</p>
             {% if slide.linkUrl and slide.linkText %}
-            {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
+              {{ ctaLink(slide.linkUrl, slide.linkText, '') }}
             {% endif %}
           </div>
         </div>
@@ -118,42 +137,58 @@ og:
   </div>
   <div class="color-hero__container container container--lg color-hero__container--center">
     <div class="color-hero__main">
-        <h1 class="color-hero__title color-hero__title--full">The Embroider Initiative</h1>
-        <div class="color-hero__text color-hero__text--large">Mainmatter, together with a group of sponsors, is working on an initiative to ship Embroider and secure the ecosystem’s investment in Ember.js.</div>
-        {{ ctaLink("/embroider-initiative/", "Join the Embroider initiative", 'color-hero__link') }}
+      <h1 class="color-hero__title color-hero__title--full">The Embroider Initiative</h1>
+      <div class="color-hero__text color-hero__text--large">
+        Mainmatter, together with a group of sponsors, is working on an initiative to ship Embroider
+        and secure the ecosystem’s investment in Ember.js.
+      </div>
+      {{ ctaLink("/embroider-initiative/", "Join the Embroider initiative", 'color-hero__link') }}
     </div>
   </div>
 </section>
 
 <section class="color-hero color-hero--aqua" data-background-color="aqua">
   <div class="color-hero__image-wrapper">
-    <video class="color-hero__image" playsinline="" autoplay="" muted="" preload="" loop="" poster="/assets/images/ember/emberdoc-simplabs.poster.jpg"
-      width="1280" height="496">
-      <source src="/assets/images/ember/emberdoc-simplabs.mp4" type="video/mp4">
+    <video
+      class="color-hero__image"
+      playsinline=""
+      autoplay=""
+      muted=""
+      preload=""
+      loop=""
+      poster="/assets/images/ember/emberdoc-simplabs.poster.jpg"
+      width="1280"
+      height="496"
+    >
+      <source src="/assets/images/ember/emberdoc-simplabs.mp4" type="video/mp4" />
     </video>
   </div>
   <div class="color-hero__overlay"></div>
   <div class="color-hero__container container container--lg color-hero__container--center">
     <div class="color-hero__main">
       <h1 class="color-hero__title color-hero__title--full ">Ember.js: The Documentary</h1>
-      <div class="color-hero__text">Several of our team members appear in the Ember.js documentary. We were pleased to welcome the film crew at our office in Munich and again at EmberFest in Amsterdam.</div>
+      <div class="color-hero__text">
+        Several of our team members appear in the Ember.js documentary. We were pleased to welcome
+        the film crew at our office in Munich and again at EmberFest in Amsterdam.
+      </div>
       {{ ctaLink("https://www.youtube.com/watch?v=Cvz-9ccflKQ", "Watch Video", 'color-hero__link') }}
     </div>
   </div>
 </section>
 
 {{ recentPosts("Latest from our blog on the topic", collections.emberPosts) }}
-
-{% set 'content' = {
-"title": "Conferences and talks",
-"subtitle": "Mainmatter engineers have spoken at all major Ember.js conferences and other events in the wider JavaScript community.",
-"text": "Ember.js is a project built by an open community, and we are an active member of that community. We run the Ember.js Europe Meetup with our partner Intercom and co-organize EmberFest , the European Ember Community Conference.",
-"linkUrl": "/events/",
-"linkText": "View our talks and check out our calendar for the next events",
-"image": "/assets/images/ember/ember-banner.jpg",
-"alt": "Collage of team members speaking at conferences",
-"loading": "lazy"
-} %}
+{%
+  set content = {
+  "title": "Conferences and talks",
+  "subtitle": "Mainmatter engineers have spoken at all major Ember.js conferences and other events in the wider JavaScript community.",
+  "text": "Ember.js is a project built by an open community, and we are an active member of that community. We run the Ember.js Europe Meetup with our partner Intercom and co-organize EmberFest , the European Ember Community Conference.",
+  "linkUrl": "/events/",
+  "linkText": "View our talks and check out our calendar for the next events",
+  "image": "/assets/images/ember/ember-banner.jpg",
+  "alt": "Collage of team members speaking at conferences",
+  "loading": "lazy"
+  }
+%}
 
 <section class="image-banner-with-text">
   <div class="container container--lg">
@@ -163,7 +198,7 @@ og:
   <div class="container container--lg">
     <div class="image-banner-with-text__content">
       {% if content.subtitle %}
-      <h3 class="image-banner-with-text__subheading h4">{{ content.subtitle }}</h3>
+        <h3 class="image-banner-with-text__subheading h4">{{ content.subtitle }}</h3>
       {% endif %}
       {% if content.text %}
         <p class="image-banner-with-text__text">{{ content.text }}</p>
@@ -186,5 +221,4 @@ og:
 {% set logoCompanies = ['Qonto', 'Trainline', 'Cardstack', 'Sage', 'Auditboard', 'Timify', 'Experteer', 'Robin Hood', 'Terminal49' ] %}
 {% set title = 'We are trusted by international companies that bet on Ember.js' %}
 {{ logoList(logoCompanies, title) }}
-
 {% include 'content/hero-grow-with-us.njk' %}

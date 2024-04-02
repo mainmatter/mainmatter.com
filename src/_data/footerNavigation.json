@@ -41,16 +41,16 @@
           "link": "/cases/ais/"
         },
         {
-          "text": "Timify",
-          "link": "/cases/timify/"
-        },
-        {
           "text": "DDWRT",
           "link": "/cases/ddwrt/"
         },
         {
-          "text": "Expedition",
-          "link": "/cases/expedition/"
+          "text": "Rail Europe",
+          "link": "/cases/rail-europe/"
+        },
+        {
+          "text": "Aleph Alpha",
+          "link": "/cases/aleph-alpha/"
         }
       ]
     },
@@ -80,6 +80,10 @@
         {
           "text": "Svelte",
           "link": "/svelte-consulting/"
+        },
+        {
+          "text": "Ruby & Ruby on Rails",
+          "link": "/ruby-rails-consulting/"
         }
       ]
     },

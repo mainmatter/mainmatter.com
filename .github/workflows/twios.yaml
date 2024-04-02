@@ -22,10 +22,14 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{!github.event.pull_request.body && github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event.label.name == 'create-twios'}}
     steps:
-      - uses: actions/checkout@v3
-      - uses: volta-cli/action@d253558a6e356722728a10e9a469190de21a83ef # v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           registry-url: "https://registry.npmjs.org"
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
       - name: Fetch $TWIOS_BRANCH
         run: |
           git fetch origin $TWIOS_BRANCH
@@ -37,10 +41,10 @@ jobs:
       - name: Generate Comment
         run: |
           GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN twios/this-week-in-open-source --config-path=config/this-week-in-open-source.config.json comment > comment.txt
-      - run: yarn install
+      - run: pnpm install
       - name: Generate TWIOS
         run: GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN twios/this-week-in-open-source --config-path=config/this-week-in-open-source.config.json
-      - run: yarn lint:fix
+      - run: pnpm lint:fix
       - name: Push new TWIOS
         run: |
           FORMATTED_DATE="$(date +"%Y-%m-%d")"
@@ -54,10 +58,14 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{github.event.pull_request.body && contains(github.event.pull_request.head.ref, 'twios') || github.event.label.name == 'edit-twios'}}
     steps:
-      - uses: actions/checkout@v3
-      - uses: volta-cli/action@d253558a6e356722728a10e9a469190de21a83ef # v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           registry-url: "https://registry.npmjs.org"
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
       - name: Fetch $TWIOS_PR_REF
         run: |
           git fetch origin $TWIOS_PR_REF
@@ -69,10 +77,10 @@ jobs:
       - name: Read PR comment body
         run: |
           GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN twios/this-week-in-open-source --config-path=config/this-week-in-open-source.config.json comment --comment="${{ github.event.pull_request.body }}"
-      - run: yarn install
+      - run: pnpm install
       - name: Generate TWIOS
         run: GITHUB_PERSONAL_TOKEN=$GITHUB_TOKEN twios/this-week-in-open-source --config-path=config/this-week-in-open-source.config.json -edit
-      - run: yarn lint:fix
+      - run: pnpm lint:fix
       - name: Push updated TWIOS
         run: |
           git add **/*.md **/*.json && git commit -m "Edited $TWIOS_PR_REF"

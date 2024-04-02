@@ -1,9 +1,11 @@
 {% from "social-list.njk" import socialList %}
 {% set navPages = collections.all | eleventyNavigation %}
 
-{% if page.url == '/services/workshops/' or page.url == '/services/digital-products-and-design/' or page.url ==
-'/services/team-augmentation-and-training/' or page.url == '/work/' or page.url == '/playbook/' or page.url ==
-'/events/' %}
+{%
+  if page.url == '/services/workshops/' or page.url == '/services/digital-products-and-design/' or page.url ==
+  '/services/team-augmentation-and-training/' or page.url == '/work/' or page.url == '/playbook/' or page.url ==
+  '/events/'
+%}
   {% set ctaColor = 'purple' %}
 {% else %}
   {% set ctaColor = 'aqua' %}
@@ -12,23 +14,34 @@
 <nav class="nav nav--accent-{{ ctaColor }}" id="nav">
   <div class="nav__wrapper container container--xl">
     <div class="nav__logo">
-      {% set tag = 'a' %}
       {% if page.url == '/' %}
-        {% set tag = 'h1' %}
+        <h1 class="nav__brand">
+          {% include 'svg/logo.njk' %}
+          <span class="screenreader">Mainmatter</span>
+        </h1>
+      {% else %}
+        <a class="nav__brand" href="/">
+          {% include 'svg/logo.njk' %}
+          <span class="screenreader">Mainmatter</span>
+        </a>
       {% endif %}
-      <{{ tag }} class="nav__brand" {% if tag == 'a' %} href="/" {% endif %}>
-        {% include 'svg/logo.njk' %}
-        <span class="screenreader">Mainmatter</span>
-      </{{ tag }}>
     </div>
     <ul class="nav__list" role="list">
       <li class="nav__item">
         <details class="nav-submenu" data-has-submenu>
           <summary class="nav-submenu__toggle nav__link" data-menu-toggle>
-            <span class="nav__link-text{% if page.url and '/services/' in page.url %} nav__link-text--active{% endif %}">Services</span>
+            <span
+              class="nav__link-text {% if page.url and '/services/' in page.url %}nav__link-text--active{% endif %}"
+              >Services</span
+            >
             {% include 'svg/arrow.njk' %}
           </summary>
-          <div class="nav-submenu__menu" data-modal data-modal-desktop aria-label="Services submenu">
+          <div
+            class="nav-submenu__menu"
+            data-modal
+            data-modal-desktop
+            aria-label="Services submenu"
+          >
             <div class="nav-submenu__menu-inner">
               <button class="nav-submenu__menu-close no-js-hidden" data-menu-close>
                 {% include 'svg/close.njk' %}
@@ -36,49 +49,63 @@
               </button>
               <ul class="nav-submenu__list" role="list">
                 <li class="nav-submenu__item">
-                  <a class="nav-submenu__link" href="/services/team-augmentation-and-training/" {%
-                    if '/services/team-augmentation-and-training/'==page.url %} aria-current="page" {% endif %}>
+                  <a
+                    class="nav-submenu__link"
+                    href="/services/team-augmentation-and-training/"
+                    {% if '/services/team-augmentation-and-training/'==page.url %}
+                      aria-current="page"
+                    {% endif %}
+                  >
                     {% include 'svg/arrow.njk' %}
                     <span class="nav-submenu__link-text">Team Augmentation & Training</span>
                   </a>
                 </li>
                 <li class="nav-submenu__item">
-                  <a class="nav-submenu__link" href="/services/digital-products-and-design/" {%
-                    if '/services/digital-products-and-design/'==page.url %} aria-current="page" {% endif %}>
+                  <a
+                    class="nav-submenu__link"
+                    href="/services/digital-products-and-design/"
+                    {% if '/services/digital-products-and-design/'==page.url %}
+                      aria-current="page"
+                    {% endif %}
+                  >
                     {% include 'svg/arrow.njk' %}
                     <span class="nav-submenu__link-text">Digital Products & Design</span>
                   </a>
                 </li>
                 <li class="nav-submenu__item">
-                  <a class="nav-submenu__link" href="/services/workshops/" {% if '/services/workshops/'==page.url %}
-                    aria-current="page" {% endif %}>
+                  <a
+                    class="nav-submenu__link"
+                    href="/services/workshops/"
+                    {% if '/services/workshops/'==page.url %}
+                      aria-current="page"
+                    {% endif %}
+                  >
                     {% include 'svg/arrow.njk' %}
                     <span class="nav-submenu__link-text">Workshops</span>
                   </a>
                 </li>
               </ul>
-              <div class="no-js-hidden">
-                {% include 'global/nav-aside.njk' %}
-              </div>
+              <div class="no-js-hidden">{% include 'global/nav-aside.njk' %}</div>
             </div>
           </div>
         </details>
       </li>
 
-      {%- for entry in navPages %}
-        <li class="nav__item" {% if entry.children.length > 0 %} data-has-modal {% endif %}>
+      {%- for entry in navPages -%}
+        <li class="nav__item" {% if entry.children.length > 0 %}data-has-modal{% endif %}>
           {% if entry.url == '/work/' %}{% set parentChildCompare = '/cases/' %}{% else %}{% set parentChildCompare = entry.url %}{% endif %}
-          <a class="nav__link nav__link-text{% if entry.url == page.url or (page.url and parentChildCompare in page.url) %} nav__link-text--active{% endif %}" {% if entry.url == page.url %} aria-current="page" {% endif %} href="{{ entry.url | url }}">
+          <a
+            class="nav__link nav__link-text {% if entry.url == page.url or (page.url and parentChildCompare in page.url) %}nav__link-text--active{% endif %}"
+            {% if entry.url == page.url %}aria-current="page"{% endif %}
+            href="{{ entry.url | url }}"
+          >
             {{ entry.title }}
           </a>
         </li>
-      {%- endfor %}
-
+      {%- endfor -%}
     </ul>
     <div class="nav__aside">
-      <a class="nav__cta nav__cta--{{ ctaColor }} text--sm" href="/contact/">
-        Contact us
-      </a>
+      <a class="nav__cta nav__cta--{{ ctaColor }} text--sm" href="/contact/"> Contact us </a>
       <details class="nav__mobile-menu-wrapper" data-has-submenu>
         <summary class="nav__menu-toggle" data-menu-toggle data-menu-mobile-close-toggle>
           {% include 'svg/menu.njk' %}
@@ -86,7 +113,7 @@
           <span class="screenreader">Toggle Menu</span>
         </summary>
         {% include 'global/mobile-menu.njk' %}
-      </div>
+      </details>
     </div>
   </div>
 </nav>

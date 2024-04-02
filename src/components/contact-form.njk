@@ -1,8 +1,13 @@
-<section class="contact-form color-hero hero-resizable color-hero--purple" data-background-color="purple">
+<section
+  class="contact-form color-hero hero-resizable color-hero--purple"
+  data-background-color="purple"
+>
   <div class="color-hero__image-wrapper">
-    {% image '/assets/images/contact/contact-us.jpg', 'Mail icon leaning against brick wall', '100vw',
-    'eager',
-    'color-hero__image', [760, 1440, 1920] %}
+    {%
+      image '/assets/images/contact/contact-us.jpg', 'Mail icon leaning against brick wall', '100vw',
+      'eager',
+      'color-hero__image', [760, 1440, 1920]
+    %}
   </div>
   <div class="color-hero__overlay"></div>
   <div class="contact-form__container color-hero__container color-hero__container--center">
@@ -11,7 +16,14 @@
       <form class="contact-form__form" id="contact-form" data-status="initial">
         <div data-form-content tabindex="-1">
           <div class="contact-form__field">
-            <input class="contact-form__input" id="contact-name" type="text" name="name" placeholder="Your name" required>
+            <input
+              class="contact-form__input"
+              id="contact-name"
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+            />
             <label class="contact-form__label h4" for="contact-name">
               Your name
               <span class="screenreader">(Required)</span>
@@ -19,7 +31,14 @@
             <span class="contact-form__label-required" aria-hidden="true">Required</span>
           </div>
           <div class="contact-form__field">
-            <input class="contact-form__input" id="contact-email" type="email" name="email" placeholder="Your e-mail" required>
+            <input
+              class="contact-form__input"
+              id="contact-email"
+              type="email"
+              name="email"
+              placeholder="Your e-mail"
+              required
+            />
             <label class="contact-form__label h4" for="contact-email">
               Your e-mail
               <span class="screenreader">(Required)</span>
@@ -36,12 +55,17 @@
               <option value="Embroider Initiative">Embroider Initiative</option>
               <option value="Other">Other</option>
             </select>
-            <label class="contact-form__label h4" for="service">
-              How can we help you?
-            </label>
+            <label class="contact-form__label h4" for="service"> How can we help you? </label>
           </div>
           <div class="contact-form__field">
-            <textarea class="contact-form__input" id="contact-message" name="message" type="text" placeholder="Tell us about your project" rows="8"></textarea>
+            <textarea
+              class="contact-form__input"
+              id="contact-message"
+              name="message"
+              type="text"
+              placeholder="Tell us about your project"
+              rows="8"
+            ></textarea>
             <label class="contact-form__label h4" for="contact-message">
               Tell us about your project
             </label>
@@ -53,8 +77,9 @@
             </span>
           </button>
           <p class="contact-form__text caption">
-            Following your message, we will schedule a call to understand your situation and discuss how we can help. We will use
-            this information to prepare a proposal, laying out our process and how it would apply to your particular project.
+            Following your message, we will schedule a call to understand your situation and discuss
+            how we can help. We will use this information to prepare a proposal, laying out our
+            process and how it would apply to your particular project.
           </p>
         </div>
         <div class="contact-form__status">
@@ -69,19 +94,17 @@
           <div class="contact-form__error" tabindex="-1" data-form-error>
             <div class="contact-form__status-wrapper">
               <h2 class="contact-form__success-subheading h3">Unable to send message.</h2>
-              <p>Please try again later or contact us at
-              <a href="mailto:info@mainmatter.com">
-                info@mainmatter.com
-              </a></p>
+              <p>
+                Please try again later or contact us at
+                <a href="mailto:info@mainmatter.com">info@mainmatter.com</a>
+              </p>
             </div>
           </div>
           <div class="contact-form__success" tabindex="-1" data-form-success>
             <div class="contact-form__status-wrapper">
               <h2 class="contact-form__success-heading h3">Thank you!</h2>
               <p class="contact-form__success-subheading h3">We will be in touch soon.</p>
-              <p>
-                One of our experts will get back to you shortly.
-              </p>
+              <p>One of our experts will get back to you shortly.</p>
               <p>
                 In the meantime, have a look at our <a href="/playbook/">playbook</a>
                 to learn more about how we build ambitious digital products or read about the

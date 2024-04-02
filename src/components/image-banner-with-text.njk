@@ -10,13 +10,15 @@
     {% endif %}
 
     {% if content.image %}
-      {% set imageData = {
+      {%
+        set imageData = {
         "imgPath": content.image,
         "alt": content.alt,
         "sizes": "100vw",
         "loading": "lazy",
         "sizesArray": [760, 1440, 1920]
-      } %}
+        }
+      %}
       {{ imageAspectRatio(imageData, "32/13", "35/19") }}
     {% endif %}
 

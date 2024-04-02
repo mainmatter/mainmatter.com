@@ -20,7 +20,8 @@
         "rust-lang/hashbrown",
         "marcoow/rust_rest",
         "rust-lang/www.rust-lang.org",
-        "dimforge/rapier.rs"
+        "dimforge/rapier.rs",
+        "marcoow/pacesetter"
       ]
     },
     {
@@ -76,9 +77,18 @@
         "storybookjs/addon-svelte-csf",
         "sveltejs/kit",
         "paoloricciuti/sveltekit-view-transition",
-        "paoloricciuti/sveltekit-view-transition",
         "theetrain/this-week-in-svelte",
-        "mainmatter/svelte-promise-modals"
+        "mainmatter/svelte-promise-modals",
+        "paoloricciuti/svelte-client-components",
+        "CodingGarden/listd",
+        "oscard0m/test-sveltekit",
+        "mainmatter/svelte-concurrency"
+      ]
+    },
+    {
+      "name": "Raycast",
+      "repos": [
+        "raycast/extensions"
       ]
     },
     {
@@ -99,7 +109,8 @@
         "embroider-build/embroider",
         "embroider-build/content-tag",
         "embroider-build/ember-auto-import",
-        "embroider-build/scenario-tester"
+        "embroider-build/scenario-tester",
+        "embroider-build/github-changelog"
       ]
     },
     {
@@ -143,7 +154,6 @@
         "storybookjs/storybook",
         "strapi/strapi",
         "mansona/express-autoroute-json",
-        "mansona/express-autoroute-json",
         "yaacov/node-modbus-serial",
         "actions/setup-python",
         "showdownjs/showdown",
@@ -171,11 +181,18 @@
         "broccolijs/broccoli-filter",
         "mainmatter/continue-on-error-comment",
         "ember-learn/algolia-index-update-scripts",
-        "ember-learn/algolia-index-update-scripts",
-        "ember-learn/algolia-index-update-scripts",
         "ember-learn/ember-jsonapi-docs",
         "embroider-build/release-plan",
-        "mansona/create-release-plan-setup"
+        "mansona/create-release-plan-setup",
+        "ef4/lerna-changelog",
+        "lifeart/glimmer-next",
+        "opral/monorepo",
+        "mansona/lttf-dashboard",
+        "opral/monorepo",
+        "mansona/lttf-dashboard",
+        "opral/monorepo",
+        "thefrontside/effection",
+        "pichfl/auto-reveal"
       ]
     },
     {
@@ -317,7 +334,6 @@
         "Authmaker/authmaker-ember-simple-auth",
         "buschtoens/ember-link",
         "ember-cli/ember-cli",
-        "ember-cli/ember-cli",
         "ember-cli/ember-exam",
         "ember-cli/ember-cli-update",
         "ember-learn/ember-api-docs",
@@ -412,7 +428,23 @@
         "emberobserver/client",
         "emberjs/ember-test-helpers",
         "lan0/ember-power-time-picker",
-        "mixonic/ember-cli-deprecation-workflow"
+        "mixonic/ember-cli-deprecation-workflow",
+        "nickschot/ember-mobile-pane",
+        "ember-codemods/ember-no-implicit-this-codemod",
+        "adopted-ember-addons/ember-pikaday",
+        "funkensturm/ember-local-storage",
+        "emberjs/ember-optional-features",
+        "miragejs/ember-cli-mirage",
+        "bgantzler/ember-mirage",
+        "adopted-ember-addons/ember-cp-validations",
+        "emberjs/ember-inflector",
+        "yapplabs/ember-tether"
+      ]
+    },
+    {
+      "name": "Project Forms",
+      "repos": [
+        "project-forms/project-forms.github.io"
       ]
     }
   ],
@@ -427,7 +459,6 @@
     "Mikek2252",
     "inesoaresilva",
     "BobrImperator",
-    "lolmaus",
     "BlueCutOfficial",
     "oliverbarnes",
     "paoloricciuti"
@@ -486,15 +517,22 @@
     "mansona/chris.manson.ie",
     "mansona/ember-vite-app",
     "mansona/boilerplate-update",
-    "mansona/boilerplate-update",
-    "mansona/boilerplate-update",
-    "mainmatter/svelte-workshop",
     "mainmatter/svelte-workshop",
     "rust-lang/this-week-in-rust",
     "Terminal49/API",
-    "Terminal49/API"
+    "mainmatter/git-workshop",
+    "mansona/ember-cli-mirage",
+    "sanity-io/sanity-template-sveltekit-clean",
+    "inesoaresilva/gravity_dummy",
+    "mansona/ember-mirage",
+    "sanity-io/sanity-template-sveltekit-clean",
+    "tech-conferences/conference-data",
+    "erlef/website",
+    "oscard0m/example-probot-vercel-ts",
+    "paoloricciuti/darkmodething"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2023-11-19..2023-11-26"
+  "last_date": "2024-03-17..2024-03-24",
+  "query_type": "Merged"
 }

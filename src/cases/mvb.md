@@ -66,7 +66,7 @@ og:
   </div>
 </div>
 
-{% set 'content' = {
+{% set content = {
   "text": "Mainmatter’s team is highly experienced and professional. They not only helped us develop the product but also mentored our internal team and introduced a number of improvements around infrastructure and processes along the way. Due to their work, we increased our team’s efficiency substantially and will be able to deliver better results faster going forward.",
   "source": "Ronald Schild, Managing Director of MVB",
   "image": "/assets/images/photos/mvb-ronald-schild.png",

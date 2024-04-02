@@ -1,7 +1,7 @@
 ---
-layout: 'base'
+layout: "base"
 title: Talks, Workshops & Podcasts
-description: 'We value sharing our expertise. Watch 30+ videos. From Product Design to Engineering. Global events include: JSConf, EmberFest, ReactiveConf, and many more.'
+description: "We value sharing our expertise. Watch 30+ videos. From Product Design to Engineering. Global events include: JSConf, EmberFest, ReactiveConf, and many more."
 eleventyNavigation:
   key: Talks
   parent: Resources
@@ -10,14 +10,15 @@ eleventyNavigation:
 {% from "color-hero.njk" import colorHero %}
 {% from "talk-banner.njk" import talkBanner %}
 {% from "talk-card.njk" import talkCard %}
-
-{% set 'content' = {
-"title": "Guidance from our team of <em>trusted</em> industry experts",
-"image": "/assets/images/photos/events.jpg",
-"alt": "Mainmatter team member seen from the back presenting to an audience",
-"loading": "eager",
-"titleTag": "h1"
-} %}
+{%
+  set content = {
+  "title": "Guidance from our team of <em>trusted</em> industry experts",
+  "image": "/assets/images/photos/events.jpg",
+  "alt": "Mainmatter team member seen from the back presenting to an audience",
+  "loading": "eager",
+  "titleTag": "h1"
+  }
+%}
 {{ colorHero('center', 'large', 'black', content) }}
 
 <div class="talks section">
@@ -28,11 +29,9 @@ eleventyNavigation:
     <ol class="talks__list">
       {% for appearance in collections.appearances %}
         {% if loop.index === 1 %}
-          <li class="talks__item talks__item--full-width">
-            {{ talkBanner(appearance, "black") }}
-          </li>
+          <li class="talks__item talks__item--full-width">{{ talkBanner(appearance, "black") }}</li>
         {% else %}
-          <li class="talks__item"{% if loop.index === 11 %} id="more-talks"{% endif %}>
+          <li class="talks__item" {% if loop.index === 11 %}id="more-talks"{% endif %}>
             {{ talkCard(appearance, "black") }}
           </li>
         {% endif %}

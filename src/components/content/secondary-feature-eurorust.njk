@@ -1,10 +1,12 @@
 {% from "secondary-feature.njk" import secondaryFeature %}
-{% set 'content' = {
-  "text": "All the talks from the previous edition are available on YouTube",
-  "linkUrl": "https://www.youtube.com/playlist?list=PLH6-VpZ3SvUXLJ2xKnT1z12pTAUSgMAu7",
-  "linkText": "Watch them now",
+{%
+  set content = {
+  "text": "Join us in Vienna for 2 days of celebrating the European Rust community",
+  "linkUrl": "https://eurorust.eu",
+  "linkText": "Get your ticket now!",
   "image": "/assets/images/rust/eurorust-teaser.png",
   "alt": "EuroRust logo",
   "loading": "lazy"
-} %}
+  }
+%}
 {{ secondaryFeature(content, "secondary-feature-eurorust") }}

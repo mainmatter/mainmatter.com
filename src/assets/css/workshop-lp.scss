@@ -119,7 +119,7 @@
 }
 
 .tito-widget-button {
-  display: block;
+  display: -webkit-inline-flex;
   padding: 0.75rem 0.8rem;
   line-height: 1;
   background-color: var(--color-aqua);
@@ -137,4 +137,28 @@
   &:hover {
     background-color: var(--color-purple);
   }
+}
+
+.line {
+  display: inline-block;
+  margin: 0 0.5rem;
+  width: 1px;
+  background-color: var(--color-white);
+  height: 1rem;
+}
+
+.price-tag {
+  font-weight: 400;
+}
+
+.floating-btn {
+  opacity: 1;
+  position: fixed;
+  bottom: 32px;
+  right: 5%;
+  z-index: 100;
+}
+
+.workshop-authors {
+  margin: 3rem 0;
 }

@@ -36,7 +36,11 @@ module.exports = function (value, outputPath) {
     /**
      * Get all the headings inside the post
      */
-    const articleHeadings = [...document.querySelectorAll("article h2")];
+    const articleHeadings = [
+      ...document.querySelectorAll("article h2"),
+      ...document.querySelectorAll("article h3"),
+      ...document.querySelectorAll("article h4"),
+    ];
     if (articleHeadings.length) {
       /**
        * Create an anchor element inside each post heading
@@ -86,7 +90,7 @@ module.exports = function (value, outputPath) {
     if (links.length) {
       links.forEach(link => {
         const href = link.getAttribute("href");
-        if (href.charAt(0) !== "/" && href.indexOf(config.url) < 0) {
+        if (href.charAt(0) !== "/" && href.charAt(0) !== "#" && href.indexOf(config.url) < 0) {
           link.setAttribute("target", "_blank");
           link.setAttribute("rel", "nofollow noopener");
           link.setAttribute("aria-describedby", "external-new-window-message");

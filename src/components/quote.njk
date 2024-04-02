@@ -22,9 +22,7 @@ Example usage:
     <span class="quote__icon">{% include 'svg/quote.njk' %}</span>
     <figure class="quote__figure">
       <div class="quote__content">
-        <blockquote class="quote__text">
-          {{ content.text | safe }}
-        </blockquote>
+        <blockquote class="quote__text">{{ content.text | safe }}</blockquote>
         <figcaption class="quote__source">{{ content.source }}</figcaption>
       </div>
     </figure>

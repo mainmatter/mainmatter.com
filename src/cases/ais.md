@@ -60,7 +60,7 @@ og:
   </div>
 </div>
 
-{% set 'content' = {
+{% set content = {
   "text": "As we did not have any design or frontend expertise in-house, we could not professionally build the user interface of our platform and bring the product to the market. We were looking for support and chose to work with Mainmatter, which turned out to be a great partner for us. The experienced team of Mainmatter helped us release an MVP and set the foundation for developing the application in the future.",
   "source": "Milivoj Simeonovski, Chief Product Officer (Founding)",
   "image": "/assets/images/photos/milivoj-simeonovski.png",

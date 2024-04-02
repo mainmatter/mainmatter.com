@@ -1,0 +1,13 @@
+{% from "cta-link.njk" import ctaLink %}
+
+{#
+A call-to-action meant to be displayed at the beginning of a blog post.
+#}
+<div class="blog-cta" data-background-color="purple">
+  <h4 class="h4">Looking to move towards a design system?</h4>
+  <p class="blog-cta_content">
+    We help teams create an interface inventory and start their journey towards a design system with
+    our design system kickoff workshop.
+  </p>
+  {{ ctaLink("/services/workshops/design-system-kickoff-interface-inventory/", "Book Workshop", "contact-us plausible-event-name=Interface+Inventory+Post+Workshop") }}
+</div>

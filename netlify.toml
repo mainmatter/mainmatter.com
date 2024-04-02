@@ -5,7 +5,7 @@
 
 [build]
   environment = { NODE_VERSION = "16.17.0" }
-  command = "echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >> .npmrc && yarn install && yarn build"
+  command = "echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >> .npmrc && pnpm install && pnpm build"
 
 # serve 404 simplabs' sitemap
   [[redirects]]
@@ -141,25 +141,32 @@
   from = "/why-simplabs"
   to = "/"
 
+[[redirects]]
+  from = "/rust"
+  to = "/rust-consulting/"
+
 # redirect old "Web-based Services in Rust" landing page to regular workshop
 [[redirects]]
   from = "https://rust-web-services-workshop.mainmatter.com/*"
   to = "https://mainmatter.com/services/workshops/web-based-services-in-rust/"
   force = true
 
-# serve "Svelte & SvelteKit" landing page for svelte-sveltekit-workshop.mainmatter.com
+# redirect old "Web-based Servides in Rust" workshop to new one
+[[redirects]]
+  from = "/services/workshops/web-based-services-in-rust"
+  to = "/services/workshops/build-production-ready-apis-in-rust/"
+
+# redirect old "Svelte & SvelteKit" landing page to regular workshop
 [[redirects]]
   from = "https://svelte-sveltekit-workshop.mainmatter.com/"
-  to = "https://mainmatter.com/svelte-sveltekit-workshop/"
+  to = "https://mainmatter.com/services/workshops/svelte-and-sveltekit/"
   force = true
-  status = 200
 
-# serve "Telemetry for Rust applications" landing page for rust-telemetry-workshop.mainmatter.com
+# redirect "Telemetry for Rust applications" landing page to regular workshop
 [[redirects]]
   from = "https://rust-telemetry-workshop.mainmatter.com/"
-  to = "https://mainmatter.com/rust-application-telemetry-workshop/"
+  to = "https://mainmatter.com/services/workshops/telemetry-for-rust-apis/"
   force = true
-  status = 200
 
 # serve 404 for all paths that don't exist
 [[redirects]]

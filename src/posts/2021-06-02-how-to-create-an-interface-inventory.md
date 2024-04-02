@@ -10,6 +10,8 @@ tagline: |
   <p>Are you struggling with a messy interface? Is your digital product full of inconsistencies? Are your designers and developers having a hard time aligning on how to evolve your UI?</p> <p>If so, consider creating an interface inventory. It is a small but powerful step towards a homogenous, pattern-based digital design strategy.</p>
 ---
 
+{% include "global/interface-inventory-workshop-cta.njk" %}
+
 ## Interface inventories 101
 
 An interface inventory is a categorized collection of every piece of design that
@@ -226,3 +228,5 @@ and audit on your own, you are never alone. Consider joining the
 place to ask questions or get feedback regarding this process), or
 [hire a facilitator](/services/workshops/design-system-kickoff-interface-inventory/)
 to help make this project a success.
+
+{% include "global/interface-inventory-workshop-cta.njk" %}
