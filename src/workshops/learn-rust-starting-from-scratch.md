@@ -1,6 +1,7 @@
 ---
 title: "Learn Rust, starting from scratch"
-format: "Workshop: 4 days, on-site or remote"
+format: "Workshop: 4 days"
+subtext: "Bookable for teams – on-site or remote"
 description: |
   <p>Rust is a general-purpose programming languages that's been growing in popularity over the past few years.
     It's known for its strong type system, its focus on safety and performance, and its modern tooling.</p>
