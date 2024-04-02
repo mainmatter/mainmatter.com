@@ -44,8 +44,8 @@ topics:
       We will build up your Rust's testing toolkit. We will start from scratch,
       with your first unit test. By the end, you will have a comprehensive
       understanding of the available  test types, the best practices in terms of
-      test organization as well as their runtime implications. You will be well equipped
-      for the testing challenges ahead of you!
+      test organization as well as their runtime implications. You will be well
+      equipped for the testing challenges ahead of you!
   - heading: Async Rust
     text: >
       We will cover the basics of asynchronous programming in Rust, including: -
