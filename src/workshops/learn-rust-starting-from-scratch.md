@@ -17,7 +17,7 @@ hero:
   image: "/assets/images/workshops/an-introduction-to-testing-in-rust/header-background.jpg"
   imageAlt: "A drawing of a giant crab standing in a village."
 og:
-  image: /assets/images/workshops/an-introduction-to-testing-in-rust/og-image.jpg
+  image: /assets/images/workshops/learn-rust-starting-from-scratch/og-image.jpeg
 topics:
   - heading: The toolbox
     text: >
