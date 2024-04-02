@@ -27,9 +27,14 @@ topics:
   - heading: The language
     text: >
       We will cover in detail the core constructs of the Rust language,
-      including: - Syntax - Control flow constructs - Type system - Ownership
-      and borrowing - Polymorphism (generics and trait objects) - Closures and
-      `Fn*` traits - Panics
+      including: 
+
+        - Syntax 
+        - Control flow constructs 
+        - Type system 
+        - Ownership and borrowing 
+        - Polymorphism (generics and trait objects) 
+        - Closures and `Fn*` traits - Panics
   - heading: The standard library
     text: >
       Writing Rust programs is significantly easier if you have mastered the
