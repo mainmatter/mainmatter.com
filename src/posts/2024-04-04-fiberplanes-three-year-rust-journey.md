@@ -19,9 +19,10 @@ imageAlt: "Benno's picture on a gray background"
 ---
 
 Benno kicks off the interview by tracing his personal experience switching from
-.NET to Rust and the beginning of his career at Fiberplane. He then describes
-Fiberplane’s current offer, which includes a collaborative notebook product and
-an observability product, Autometrics.
+.NET to Rust and the beginning of his career at
+[Fiberplane](https://fiberplane.com/). He then describes Fiberplane’s current
+offer, which includes a collaborative notebook product and an observability
+product, [Autometrics](https://fiberplane.com/autometrics).
 
 Benno and Luca discuss Fiberplane’s reasons for choosing Rust and their
 experience thus far with the language. Benno highlights Rust's consistency in
