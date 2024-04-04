@@ -35,4 +35,4 @@ seekers from a recruiter’s perspective: he encourages collecting hands-on
 experience with Rust and embracing compiler errors as a guide while learning the
 language.
 
-<iframe width="560" height="315" src="https://youtu.be/wCASwxfPBGM" title="Embedded video of Benno's interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wCASwxfPBGM" title="Embedded video of Benno's interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
