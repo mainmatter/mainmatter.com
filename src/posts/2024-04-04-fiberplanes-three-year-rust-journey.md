@@ -8,13 +8,13 @@ description:
   reasons for choosing Rust and their 3-year experience maintaining a large Rust
   codebase and building an observability product."
 og:
-  image: "/assets/images/posts/2024-04-09-fiberplanes-three-year-rust-journey/og-image.png"
+  image: "/assets/images/posts/2024-04-04-fiberplanes-three-year-rust-journey/og-image.png"
 tagline: |
   <p>
   Benno van den Berg, Principal Software Engineer at Fiberplane, and Luca Palmieri, Principal Engineering Consultant at Mainmatter, discussed Fiberplane’s 3-year Rust journey building an observability product and interactive notebook with Rust.
   </p>
 
-image: "/assets/images/posts/2024-04-09-fiberplanes-three-year-rust-journey/header.jpg"
+image: "/assets/images/posts/2024-04-04-fiberplanes-three-year-rust-journey/header.jpg"
 imageAlt: "Benno's picture on a gray background"
 ---
 
