@@ -2,7 +2,7 @@
 title: "Exploring Fiberplane's 3-Year Rust Journey"
 authorHandle: algo_luca
 tags: [rust]
-bio: "Luca Palmieri, Principal Engineering Consultant"
+bio: "Principal Engineering Consultant"
 description:
   "Fiberplane's Benno van den Berg and Luca Palmieri discuss Fiberplane’s
   reasons for choosing Rust and their 3-year experience maintaining a large Rust
