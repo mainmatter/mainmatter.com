@@ -70,7 +70,7 @@ Confirmation modal:
   }
 </script>
 
-<button on:click="{openConfirmationModal}">Clear Shopping List</button>
+<button on:click={openConfirmationModal}>Clear Shopping List</button>
 
 {#if isModalOpened}
   <Modal onConfirm={handleConfirmModal} onReject={() => isModalOpened = false} />
