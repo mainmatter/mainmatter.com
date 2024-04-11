@@ -45,7 +45,7 @@ p a {
     background-color: var(--color-white);
     color: var(--color-link-primary);
 
-    svg {
+    .icon-arrow {
       color: var(--color-link-primary);
     }
   }
@@ -102,7 +102,7 @@ p a {
 }
 
 .next {
-  svg {
+  .icon-arrow {
     transform: rotate(-90deg);
     margin-right: 0;
     margin-left: 1.5rem;
@@ -110,7 +110,7 @@ p a {
 }
 
 .videos {
-  svg {
+  .icon-arrow {
     transform: rotate(-90deg);
     margin-right: 0;
     margin-left: 1.5rem;
@@ -120,7 +120,7 @@ p a {
 .message {
   cursor: pointer;
 
-  svg {
+  .icon-arrow {
     transform: rotate(-90deg);
     margin-right: 0;
     margin-left: 1.5rem;
