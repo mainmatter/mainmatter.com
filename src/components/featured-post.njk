@@ -13,7 +13,6 @@
     {% endset %}
   {% endif %}
 
-
   {% if post.data.authorHandle %}
     {% set authorInfo %}
     {% set author = post.data.authorHandle | findBySlug %}
@@ -40,30 +39,31 @@
   {% endif %}
 
   <section class="featured-post" data-background-color="purple">
-  <a class="featured-post__link" href="{{ post.url }}"></a>
+    <a class="featured-post__link" href="{{ post.url }}"></a>
     <div class="container container--lg featured-post__container">
       <h2 class="h1">{{ post.data.title | safe }}</h2>
       <div class="featured-post__content">
         <div class="featured-post__meta-wrapper mt-015 text--sm">
-            <span>
-              {% for item in post.data.tags %}
-                {% if loop.index != 1 %} / {% endif %}<a class="" href="/blog/tag/{{ item | slug }}">{{ item }}</a>
-              {% endfor %}
-            </span>
-            <span>{{ post.date | monthDayYear }}</span>
-            <span>{{ authorInfo | safe }}</span></p>
-        </div>
-        {% if post.data.tagline %}
-          <div class="featured-post__tagline">{{ post.data.tagline | safe }}</div>
-        {% endif %}
-        {% set link = {
-          "label": "Read more",
-          "url": post.url
-        }
- %}
-        {{ btnPrimary( link, 'white', 'mt-2' )}}
+          <span>
+            {% for item in post.data.tags %}
+              {% if loop.index != 1 %} / {% endif %}
+              <a class="" href="/blog/tag/{{ item | slug }}">{{ item }}</a>
+            {% endfor %}
+          </span>
+          <span>{{ post.date | monthDayYear }}</span>
+          <span>{{ authorInfo | safe }}</span></p>
       </div>
+      {% if post.data.tagline %}
+        <div class="featured-post__tagline">{{ post.data.tagline | safe }}</div>
+      {% endif %}
+      {% set link = {
+        "label": "Read more",
+        "url": post.url
+      }
+ %}
+      {{ btnPrimary( link, 'white', 'mt-2' )}}
     </div>
-  </section>
+  </div>
+</section>
 
 {%- endmacro -%}

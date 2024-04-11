@@ -3,17 +3,15 @@
     <div class="case-cards__container container container--xl">
       <h2 class="case-cards__title">{{ title }}</h2>
       <p class="case-cards__intro mt-25 mb-5">{{ intro }}</p>
-      <div class="case-cards__grid">
-        {% for clientHandle in clients %}
-          <div class="case-cards__grid-element">
-          {% set caseStudy = clientHandle | findBySlug %}
-          <div class="case-cards--hover"></div>
-          {% if caseStudy.url %}
-            <a href="{{ caseStudy.url }}" class="case-cards__link">
-            </a>
-            {% else %}
-              <a href="/work#{{ clientHandle }}" class="case-cards__link">
-              </a>
+        <div class="case-cards__grid">
+          {% for clientHandle in clients %}
+            <div class="case-cards__grid-element">
+              {% set caseStudy = clientHandle | findBySlug %}
+              <div class="case-cards--hover"></div>
+              {% if caseStudy.url %}
+                <a href="{{ caseStudy.url }}" class="case-cards__link"></a>
+              {% else %}
+                <a href="/work#{{ clientHandle }}" class="case-cards__link"></a>
               {% endif %}
               <div class="case-cards__logo-wrapper">
                 {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %}
@@ -30,7 +28,9 @@
                   <div class="small case-cards__link-label">
                     {% for item in caseStudy.data.tags %}
                       {% if loop.index != 1 %} / {% endif %}
-                        <a href="/services/{{ item | slug }}/"> {{ item }} </a>
+                      <a href="/services/{{ item | slug }}/">
+                        {{ item }}
+                      </a>
                     {% endfor %}
                   </div>
                   <span class="case-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
@@ -39,5 +39,6 @@
             </div>
           {% endfor %}
         </div>
-      </section>
-    {% endmacro %}
+      </div>
+  </section>
+{% endmacro %}

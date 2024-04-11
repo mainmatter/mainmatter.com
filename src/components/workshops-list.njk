@@ -1,32 +1,33 @@
 {% macro workshopsList(title, intro, workshops) %}
-<section class="tech-cards my-10">
-  <div class="tech-cards__container container container--xl">
-    <h2 class="tech-cards__title">{{ title }}</h2>
-    <p class="tech-cards__intro mt-25 mb-5">{{ intro }}</p>
-    <h2 class="tech-cards__title">Workshops Catalog</h2>
-    <div class="tech-cards__grid">
-      {% for workshop in workshops %}
-        <div class="tech-cards__grid-element">
-          <div class="tech-cards--hover"></div>
-          <a href="/{{ workshop.link }}" class="tech-cards_link"></a>
-          <div class="tech-cards__logo {{ workshop.logo }}">
-            {% set link='svg/'+ workshop.logo + '.njk'%}
-            {% include link %}
-          </div>
-          <div class="tech-cards__content">
-            {% if workshop.title %}
-              <h4 class="tech-cards__title mb-015">{{ workshop.title }}</h4>
-            {% endif %}
-            {% if workshop.link %}
-              <div class="tech-cards__link-wrapper">
-                <p class="caption tech-cards__link-label">Learn more</p>
-                <span class="tech-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
-              </div>
-            {% endif %}
-          </div>
+  <section class="tech-cards my-10">
+    <div class="tech-cards__container container container--xl">
+      <h2 class="tech-cards__title">{{ title }}</h2>
+      <p class="tech-cards__intro mt-25 mb-5">{{ intro }}</p>
+      <h2 class="tech-cards__title">Workshops Catalog</h2>
+      <div class="tech-cards__grid">
+        {% for workshop in workshops %}
+          <div class="tech-cards__grid-element">
+            <div class="tech-cards--hover"></div>
+            <a href="/{{ workshop.link }}" class="tech-cards_link"></a>
+            <div class="tech-cards__logo {{ workshop.logo }}">
+              {% set link='svg/'+ workshop.logo + '.njk'%}
+              {% include link %}
+            </div>
+            <div class="tech-cards__content">
+              {% if workshop.title %}
+                <h4 class="tech-cards__title mb-015">{{ workshop.title }}</h4>
+              {% endif %}
+              {% if workshop.link %}
+                <div class="tech-cards__link-wrapper">
+                  <p class="caption tech-cards__link-label">Learn more</p>
+                  <span class="tech-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
+                </div>
+              {% endif %}
+            </div>
 
-        </div>
-      {% endfor %}
+          </div>
+        {% endfor %}
+      </div>
     </div>
   </section>
 {% endmacro %}

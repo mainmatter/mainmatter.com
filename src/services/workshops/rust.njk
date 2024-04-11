@@ -4,7 +4,6 @@ title: Rust Workshops | Our Services
 description: "We provide a number of workshops to enable teams to succeed with Rust – onsite or remote"
 ---
 
-
 {% from "color-hero.njk" import colorHero %}
 {% from "tech-cards.njk" import techCards %}
 {% from "cta-banner.njk" import ctaBanner %}
@@ -22,7 +21,6 @@ description: "We provide a number of workshops to enable teams to succeed with R
   "loading": "eager"
 } %}
 {{ colorHero('aqua', content) }}
-
 
 {% set 'workshop_1' = {
   "eyebrow": "Bookable for teams",
@@ -81,8 +79,8 @@ description: "We provide a number of workshops to enable teams to succeed with R
   "link": "https://ti.to/mainmatter/rust-telemetry-may-2024"
 } %}
 
- {% set public_workshops = [public_workshop_1, public_workshop_2, public_workshop_3] %}
- {{ publicWorkshops(public_workshops) }}
+{% set public_workshops = [public_workshop_1, public_workshop_2, public_workshop_3] %}
+{{ publicWorkshops(public_workshops) }}
 
 <section class="my-10">
   <div class="container container--lg">
@@ -102,10 +100,9 @@ description: "We provide a number of workshops to enable teams to succeed with R
         If you decide to organise a workshop at your company, we are happy to tailor
           the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as
           develop new content if desired.<br>
-          <a href="https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us">Get in touch with us</a>
+        <a href="https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us">Get in touch with us</a>
           to discuss further!
         </p>
-      </div>
     </div>
   </div>
 </section>
@@ -119,18 +116,19 @@ description: "We provide a number of workshops to enable teams to succeed with R
           <blockquote>
             ”The individual exercises build on each other very well. Direct practice makes it easier to understand the topics. I have rarely taken part in such a good practical workshop!”
           </blockquote>
-          <figcaption class="quotes-list__quote-source">Remote attendee<span class="quotes-list__quote-source--separator">
+          <figcaption class="quotes-list__quote-source">Remote attendee<span class="quotes-list__quote-source--separator"></span></figcaption>
         </div>
       </li>
       <li class="quotes-list__quote">
         <div class="quotes-list__quote-text text--sm">
           <blockquote>
-            ”I usually avoid workshops. The pace of more than 3 people is hard to sync: I always feel rushed in some bits, slowed down in others. You fixed that with your code-centric approach: I was able to fully use the time and the knowledge of the trainer!”
-          </blockquote>
-          <figcaption class="quotes-list__quote-source">Onsite attendee<span class="quotes-list__quote-source--separator"></div>
-        </li>
-      </ul>
-    </div>
+              ”I usually avoid workshops. The pace of more than 3 people is hard to sync: I always feel rushed in some bits, slowed down in others. You fixed that with your code-centric approach: I was able to fully use the time and the knowledge of the trainer!”
+            </blockquote>
+          <figcaption class="quotes-list__quote-source">Onsite attendee<span class="quotes-list__quote-source--separator"></span></figcaption>
+        </div>
+      </li>
+    </ul>
+  </div>
 </section>
 
 {% set logoCompanies = [
@@ -201,10 +199,10 @@ description: "We provide a number of workshops to enable teams to succeed with R
       <div class="split-content__content">
         <h4>All the talks from the previous editions are available on YouTube</h4>
         {% set link = {
-            "label": 'Learn more',
-            "url": 'https://www.youtube.com/playlist?list=PLh5-VpZ3SvUXLJ2xKnT1z12pTAUSgMAu7'
-          }
-          %}
+          "label": 'Learn more',
+          "url": 'https://www.youtube.com/playlist?list=PLh5-VpZ3SvUXLJ2xKnT1z12pTAUSgMAu7'
+        }
+ %}
         {{ btnSecondary( link, 'mt-2' )}}
       </div>
       <div class="split-content__feature">

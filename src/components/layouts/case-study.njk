@@ -37,14 +37,13 @@ layout: base
       </div>
     </section>
   {% endif %}
-</div>
 
-{% set 'content' = {
-  "title": "Grow your business with us",
-  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
-  "linkUrl": "/contact",
-  "linkText": "Get in touch"
-} %}
-{{ ctaBanner('aqua', 'full', content) }}
+  {% set 'content' = {
+    "title": "Grow your business with us",
+    "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+    "linkUrl": "/contact",
+    "linkText": "Get in touch"
+  } %}
+  {{ ctaBanner('aqua', 'full', content) }}
 
 {%- endblock -%}
