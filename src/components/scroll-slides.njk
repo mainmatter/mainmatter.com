@@ -20,7 +20,9 @@
                 >
                   <span class="screenreader"
                     >Slide
-                    {{ loop.index }}{% if slideIndex == loop.index %}(Current slide){% endif %}</span
+                    {{ loop.index }}
+                    {% if slideIndex == loop.index %}(Current slide){% endif %}
+                  </span
                   >
                   <span
                     class="scroll-slides__pagination-span {% if slideIndex == loop.index %}scroll-slides__pagination-span--active{% endif %}"
