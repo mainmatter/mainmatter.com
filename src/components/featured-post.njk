@@ -58,11 +58,11 @@
         {% endif %}
         {% set link = {
           "label": "Read more",
-          "url": post.url
-        }
-        %}
-        {{ btnPrimary( link, 'white', 'mt-2' )}}
+          "url": post.url }%}
+          {{ btnPrimary( link, 'white', 'mt-2' )}}
+        {% endset %}
       </div>
-    </section>
+    </div>
+  </section>
 
   {%- endmacro -%}
