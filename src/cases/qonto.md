@@ -48,7 +48,7 @@ og:
   </div>
 </div>
 
-{% set 'content' = {
+{% set content = {
   "text": "Mainmatter are well known as the Ember.js experts and they absolutely live up to the expectations. They had an immediate as well as significant positive impact on both our velocity and quality of output.",
   "source": "Marc-Antoine Lacroix, Qonto CPO",
   "image": "/assets/images/photos/qonto-marc-antoine-quote.jpg",
