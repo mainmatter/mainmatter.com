@@ -41,7 +41,8 @@ og:
   </div>
 </section>
 
-{% set logoCompanies = [
+{%
+  set logoCompanies = [
   'clark',
   'erdil',
   'experteer',
@@ -55,7 +56,8 @@ og:
   'terminal49',
   'trainline',
   'xbav'
-] %}
+  ]
+%}
 {% set title = 'We are trusted by international companies that build on Ruby and Ruby on Rails' %}
 {{ logoList(logoCompanies, title, "h4", "h5") }}
 
@@ -113,13 +115,16 @@ og:
 </section>
 
 <div class="container container--lg quote-section">
-  {% set 'content' = {
+  {%
+    set content = {
     "text": "We started working with Mainmatter to build a state-of-the-art mobile web app from the ground up and it was an absolute success! Not only are they web specialists, but their expertise in development practices and agile processes made our collaboration an absolute delight.",
     "source": "Carl Anderson, General Manager at Trainline Europe",
     "image": "/assets/images/photos/carl-anderson.jpg",
     "alt": "Carl Anderson, looking at the camera wearing a checkered blue/grey shirt and white T-shirt",
     "loading": "lazy"
-  } %} {{ quote(content) }}
+    }
+  %}
+  {{ quote(content) }}
 </div>
 <section class="featured-case-studies">
   <div class="container container--xl">

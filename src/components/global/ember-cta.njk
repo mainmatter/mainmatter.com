@@ -4,11 +4,12 @@ A call-to-action meant to be displayed at the beginning of a blog post.
 
 {% from "cta-banner.njk" import ctaBanner %}
 
-{% set 'content' = {
+{% set content = {
   "title": "If you're facing challenges with Ember.js and need a helping hand,
     reach out!",
   "text": "We can help with <a href='/ember-consulting/' class='plausible-event-name=Ember+Consulting'>mentoring, training, Team reinforcement, and custom development</a>.",
   "linkUrl": "/contact",
   "linkText": "Contact us!"
-} %}
+}
+%}
 {{ ctaBanner('purple', 'default', content) }}

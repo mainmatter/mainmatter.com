@@ -1,7 +1,8 @@
 {% from "secondary-feature.njk" import secondaryFeature %}
-{% set 'content' = {
+{% set content = {
   "image": "/assets/images/svelte/svelte-summit.png",
   "alt": "Svelte Society logo",
   "loading": "lazy"
-} %}
+}
+%}
 {{ secondaryFeature(content) }}

@@ -1,5 +1,5 @@
 ---
-layout: 'base'
+layout: "base"
 title: Events
 description: Find out about upcoming events, conferences and meetups we will be attending or organizing.
 ---
@@ -22,9 +22,13 @@ description: Find out about upcoming events, conferences and meetups we will be 
 
 <div class="section container container--lg">
   <div class="section__introduction">
-    <h2 class="section__title h4">Mainmatter's guiding principles of collaboration and knowledge transfer extend well beyond our client
-      work.</h2>
-    <p>Find out about upcoming events, conferences and meetups we will be attending or organizing.</p>
+    <h2 class="section__title h4">
+      Mainmatter's guiding principles of collaboration and knowledge transfer extend well beyond our
+      client work.
+    </h2>
+    <p>
+      Find out about upcoming events, conferences and meetups we will be attending or organizing.
+    </p>
   </div>
 </div>
 
@@ -36,7 +40,7 @@ description: Find out about upcoming events, conferences and meetups we will be 
     <div class="event-cards__wrapper">
       <ul class="event-cards">
         {% for event in collections.calendar %}
-        {{ eventCard(event) }}
+          {{ eventCard(event) }}
         {% endfor %}
       </ul>
     </div>
@@ -65,7 +69,6 @@ description: Find out about upcoming events, conferences and meetups we will be 
         </a>
     </div>
     {% endif %}
-
   </div>
 </section>
 

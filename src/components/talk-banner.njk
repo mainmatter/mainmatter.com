@@ -5,15 +5,16 @@
       <h3 class="screenreader">{{ talk.data.title }}</h3>
     </a>
     <div class="talk-banner__image-overlay">
-
       {% if talk.data.channel %}
         {% set channel = talk.data.channel | findBySlug %}
       {% endif %}
 
       {% if talk.data.image %}
         <div class="talk-banner__image-wrapper">
-          {% image talk.data.image, "", '(min-width: 48em) 60rem, 90vw', "eager",
-          'talk-banner__image', [760, 1440, 1920] %}
+          {%
+            image talk.data.image, "", '(min-width: 48em) 60rem, 90vw', "eager",
+            'talk-banner__image', [760, 1440, 1920]
+          %}
         </div>
         <div class="talk-banner__overlay talk-banner__overlay--{{ color }}"></div>
       {% endif %}
@@ -41,3 +42,4 @@
     </div>
   </div>
 {% endmacro %}
+

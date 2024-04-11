@@ -7,10 +7,14 @@ og:
 ---
 
 {% from "author-socials.njk" import authorSocials %}
-{% from
-"image-aspect-ratio.njk" import imageAspectRatio %}
-{% from "scroll-slides.njk"
-import scrollSlides %}
+{%
+  from
+  "image-aspect-ratio.njk" import imageAspectRatio
+%}
+{%
+  from "scroll-slides.njk"
+  import scrollSlides
+%}
 {% from "quote.njk" import quote %}
 {% from "color-hero.njk" import colorHero %}
 {% from "strategy-list.njk" import strategyList %}
@@ -29,7 +33,8 @@ import scrollSlides %}
     <link rel="stylesheet" href="/assets/css/app.css"/>
     <link rel="stylesheet" href="/assets/css/workshop-lp.css"/>
     <script src="/assets/js/app.js" defer></script>
-    {% block head %}{{ head | safe }}
+    {% block head %}
+      {{ head | safe }}
     {% endblock %}
     {% include
     "global/meta.njk" %}
@@ -108,14 +113,15 @@ import scrollSlides %}
           </p>
         </section>
 
-        <section>
-          {% set imageData = { "imgPath":
-        "/assets/images/svelte-sveltekit-workshop/svelte-workshop-1.jpg", "alt":
-        "workshop participants discussing their results and asking questions",
-        "sizes": "100vw", "loading": "lazy", "sizesArray": [760, 1440, 1920] }
+      <section>
+        {%
+          set imageData = { "imgPath":
+          "/assets/images/svelte-sveltekit-workshop/svelte-workshop-1.jpg", "alt":
+          "workshop participants discussing their results and asking questions",
+          "sizes": "100vw", "loading": "lazy", "sizesArray": [760, 1440, 1920] }
         %}
-          {{ imageAspectRatio(imageData, "32/13", "35/19") }}
-        </section>
+        {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+      </section>
 
         <section class="lp-section container container--lg mt-10">
           <h2 class="lp-section-subheading h2">Additional Information</h2>
@@ -153,10 +159,10 @@ import scrollSlides %}
           <p>The workshop will cost 350€ for all three days. Included are the workshop sessions, the material and the slides for reviewing the learned lessons afterwards.</p>
         </section>
 
-        <section>
-          <div class="workshop-authors-big">
-            <div class="container container--lg">
-              <h2 class="workshop-authors-big__heading h2">Your mentors</h2>
+      <section>
+        <div class="workshop-authors-big">
+          <div class="container container--lg">
+            <h2 class="workshop-authors-big__heading h2">Your mentors</h2>
 
               <div class="author-big__wrapper">
                 <div class="author">

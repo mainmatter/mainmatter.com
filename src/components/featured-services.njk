@@ -9,7 +9,7 @@
         <h3 class="h2">{{ content.subtitle }}</h3>
       </div>
       <ul class="featured-services__list">
-        {%- for service in services %}
+        {%- for service in services -%}
           <li class="featured-services__list-item">
             {% if service.linkUrl %}
               <a href="{{ service.linkUrl }}" class="featured-services__link">

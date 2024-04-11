@@ -21,7 +21,8 @@
         "marcoow/rust_rest",
         "rust-lang/www.rust-lang.org",
         "dimforge/rapier.rs",
-        "marcoow/pacesetter"
+        "marcoow/pacesetter",
+        "mainmatter/cargo-autoinherit"
       ]
     },
     {
@@ -81,7 +82,8 @@
         "mainmatter/svelte-promise-modals",
         "paoloricciuti/svelte-client-components",
         "CodingGarden/listd",
-        "oscard0m/test-sveltekit"
+        "oscard0m/test-sveltekit",
+        "mainmatter/svelte-concurrency"
       ]
     },
     {
@@ -436,7 +438,8 @@
         "miragejs/ember-cli-mirage",
         "bgantzler/ember-mirage",
         "adopted-ember-addons/ember-cp-validations",
-        "emberjs/ember-inflector"
+        "emberjs/ember-inflector",
+        "yapplabs/ember-tether"
       ]
     },
     {
@@ -524,10 +527,13 @@
     "inesoaresilva/gravity_dummy",
     "mansona/ember-mirage",
     "sanity-io/sanity-template-sveltekit-clean",
-    "tech-conferences/conference-data"
+    "tech-conferences/conference-data",
+    "erlef/website",
+    "oscard0m/example-probot-vercel-ts",
+    "paoloricciuti/darkmodething"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-02-25..2024-03-03",
+  "last_date": "2024-03-24..2024-03-31",
   "query_type": "Merged"
 }

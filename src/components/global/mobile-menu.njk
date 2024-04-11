@@ -42,9 +42,13 @@
         </ul>
       </li>
 
-      {%- for entry in navPages %}
+      {%- for entry in navPages -%}
         <li class="mobile-menu__item">
-          <a class="mobile-menu__link h4" {% if entry.url == page.url %} aria-current="page" {% endif %} href="{{ entry.url | url }}">
+          <a
+            class="mobile-menu__link h4"
+            {% if entry.url == page.url %}aria-current="page"{% endif %}
+            href="{{ entry.url | url }}"
+          >
             {% include 'svg/arrow.njk' %}
             {{ entry.title }}
           </a>
@@ -52,7 +56,11 @@
             <ul class="mobile-menu__list mobile-menu__list--submenu">
               {% for childEntry in entry.children %}
                 <li class="mobile-menu__item">
-                  <a class="mobile-menu__link h4" {% if childEntry.url == page.url %} aria-current="page" {% endif %} href="{{ childEntry.url | url }}">
+                  <a
+                    class="mobile-menu__link h4"
+                    {% if childEntry.url == page.url %}aria-current="page"{% endif %}
+                    href="{{ childEntry.url | url }}"
+                  >
                     {% include 'svg/arrow.njk' %}
                     {{ childEntry.title }}
                   </a>
@@ -61,7 +69,8 @@
             </ul>
           {% endif %}
         </li>
-      {%- endfor %}
+      {%- endfor -%}
     </ul>
   </div>
 </div>
+

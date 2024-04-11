@@ -1,5 +1,5 @@
 ---
-layout: 'base'
+layout: "base"
 title: null
 ---
 
@@ -24,7 +24,15 @@ title: null
   "subtitle": "Transform bold ideas into shipped products"
 } %}
 {{ featuredServices(services['services-list'], content) }}
-{% set logoCompanies = ['Qonto', 'Trainline', 'Aleph Alpha', 'Timify', 'Experteer', 'Robin Hood', 'Rail Europe' ] %}
+{% set logoCompanies = [
+  'Qonto',
+  'Trainline',
+  'Aleph Alpha',
+  'Timify',
+  'Experteer',
+  'Robin Hood',
+  'Rail Europe'
+] %}
 {{ logoList(logoCompanies) }}
 
 <section class="mb-10">
@@ -48,7 +56,8 @@ title: null
   "image": "/assets/images/photos/mainmatter-team.jpg",
   "alt": "Group photo of Mainmatter team",
   "loading": "lazy"
-} %}
+  }
+%}
 {{ imageBannerWithText(content) }}
 
 {% set 'content' = {

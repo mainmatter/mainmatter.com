@@ -3,12 +3,12 @@
   <div class="tag-filter__select-wrapper no-js-hidden">
     <label class="tag-filter__label h5" for="tag-select">Filter by:</label>
     <select class="tag-filter__select" name="tag-filter" id="tag-select" data-select>
-      <option value="/blog/" {% if paged.tag == false %} selected{% endif %}>All tags</option>
+      <option value="/blog/" {% if paged.tag == false %}selected{% endif %}>All tags</option>
       {% set allTags = collections.tags | getCollectionKeys() | sort() %}
       {% for tag in allTags %}
         {% set targetUrl = "/blog/tag/" + tag + "/" %}
         {% set isCurrentPage = targetUrl == page.url %}
-        <option value="{{ targetUrl }}" {% if isCurrentPage %} selected{% endif %}>{{ tag }}</option>
+        <option value="{{ targetUrl }}" {% if isCurrentPage %}selected{% endif %}>{{ tag }}</option>
       {% endfor %}
     </select>
   </div>

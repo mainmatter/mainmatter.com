@@ -131,7 +131,8 @@ og:
 </section>
 
 <div class="container container--lg quote-section">
-  {% set 'content' = {
+  {%
+    set content = {
     "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
     "source": "Jürgen Witte, CPO at Rail Europe",
     "image": "/assets/images/photos/juergen-witte.png",
@@ -143,7 +144,7 @@ og:
 
 <div class="work container container--xl">
   <ul class="work__list">
-{{ featuredCaseStudy('rail-europe', 'purple', 'work__featured-case-study') }}
+    {{ featuredCaseStudy('rail-europe', 'purple', 'work__featured-case-study') }}
   </ul>
 </div>
 

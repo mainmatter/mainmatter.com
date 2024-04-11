@@ -1,7 +1,9 @@
 ---
 layout: base
 eleventyComputed:
-  title: "All posts by {{ paged.author.data.name }}{% if paged.number > 1 %}- Page {{ paged.number }}{% endif %}"
+  title: "All posts by {{ paged.author.data.name }}{% if paged.number > 1 %}
+    - Page {{ paged.number }}
+  {% endif %}"
 description: "Frontend and JavaScript, Svelte and Ember, Rust and WASM, Elixir and Phoenix, Product and Design: Stay on top of what's happening."
 pagination:
   data: collections.authorsPostsPaged
@@ -42,10 +44,10 @@ permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/p
     {%- endfor -%}
   </div>
   {% if paged.first != true %}
-    {%- set previous -%}/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 2 %}page/{{ paged.number - 1}}/{% endif %}{%- endset -%}
+    {%- set previous -%}/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 2 %}page/{{ paged.number - 1 }}/{% endif %}{%- endset -%}
   {% endif %}
   {% if paged.last != true %}
-    {%- set next -%}/blog/author/{{ paged.author.fileSlug }}/page/{{ paged.number + 1}}/{%- endset -%}
+    {%- set next -%}/blog/author/{{ paged.author.fileSlug }}/page/{{ paged.number + 1 }}/{%- endset -%}
   {% endif %}
 
   {{ navPagination(previous, next) }}

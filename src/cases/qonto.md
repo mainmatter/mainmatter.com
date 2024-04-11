@@ -78,8 +78,8 @@ og:
   </div>
 </div>
 
-{% set 'content' = {
-  "text": "Working with Mainmatter’s experts has always been a good experience. We can really feel that they have mastery on many topics, and knowledge about complex technical problems. I’ve learned so much, especially during our pairing sessions, and it allows me to improve my technical skillsand growth as an engineer.",
+{% set content = {
+  "text": "Working with mainmatter’s experts has always been a good experience. We can really feel that they have mastery on many topics, and knowledge about complex technical problems. I’ve learned so much, especially during our pairing sessions, and it allows me to improve my technical skillsand growth as an engineer.",
   "source": "Alexandre Monjol, Frontend Engineer at Qonto",
   "image": "/assets/images/photos/qonto-alexander.png",
   "alt": "Alexandre Monjol, smiling at the camera wearing a Qonto t-shirt",

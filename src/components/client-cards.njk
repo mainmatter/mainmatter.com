@@ -5,7 +5,7 @@ Configuration Options:
 list: An array where each item is the slug for the case study.
 #}
 {%- macro clientCards(clients) -%}
-  {% for clientHandle in clients -%}
+  {%- for clientHandle in clients -%}
     {% set client = clientHandle | findBySlug %}
     {% if client %}
       <li id="{{ clientHandle }}" class="client-card">
@@ -25,3 +25,4 @@ list: An array where each item is the slug for the case study.
     {% endif %}
   {% endfor %}
 {%- endmacro -%}
+

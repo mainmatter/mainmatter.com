@@ -27,14 +27,18 @@ og:
     <link rel="stylesheet" href="/assets/css/app.css"/>
     <link rel="stylesheet" href="/assets/css/workshop-lp.css"/>
     <script src="/assets/js/app.js" defer></script>
-    {% block head %}{{ head | safe }}
+    {% block head %}
+      {{ head | safe }}
     {% endblock %}
-
     {% include "global/meta.njk" %}
     {% include "global/icons.njk" %}
 
-    <script src='https://js.tito.io/v2/' async></script>
-    <script defer data-domain="rust-telemetry-workshop.mainmatter.com" src="https://plausible.io/js/script.tagged-events.outbound-links.js"></script>
+    <script src="https://js.tito.io/v2/" async></script>
+    <script
+      defer
+      data-domain="rust-telemetry-workshop.mainmatter.com"
+      src="https://plausible.io/js/script.tagged-events.outbound-links.js"
+    ></script>
     <script>
       window.plausible = window.plausible || function () {
         (window.plausible.q = window.plausible.q || []).push(arguments)
@@ -42,9 +46,7 @@ og:
     </script>
   </head>
   <body data-js-enabled="false">
-    <a class="skip-link" href="#main">
-      Skip to main content
-    </a>
+    <a class="skip-link" href="#main"> Skip to main content </a>
 
     <nav class="nav nav--accent-aqua" id="nav">
       <div class="nav__wrapper container container--xl">
@@ -101,3 +103,4 @@ og:
     </script>
   </body>
 </html>
+
