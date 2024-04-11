@@ -42,8 +42,10 @@ post: A post object
         <div class="small post-cards__link-label">
           {% for item in post.data.tags %}
             {% if loop.index != 1 %} / {% endif %}
-              <a href="/blog/tag/{{ item | slug }}/"> {{ item }} </a>
-            {% endfor %}
+            <a href="/blog/tag/{{ item | slug }}/">
+              {{ item }}
+            </a>
+          {% endfor %}
         </div>
         <span class="post-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
       </div>

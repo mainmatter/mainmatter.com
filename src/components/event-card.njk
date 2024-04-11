@@ -25,11 +25,11 @@ event: A event object
       </div>
 
       {% set link = {
-            "label": 'Visit Website',
-            "url": event.data.url
-          }
-          %}
-          {{ btnPrimary( link, 'white', 'mt-2' )}}
+        "label": 'Visit Website',
+        "url": event.data.url
+      }
+ %}
+      {{ btnPrimary( link, 'white', 'mt-2' )}}
     </div>
   </li>
 {%- endmacro -%}

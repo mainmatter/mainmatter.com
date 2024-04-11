@@ -15,20 +15,20 @@ nextLabel: string for Next button label only on first page
 
     <nav class="pagination" aria-label="Pagination">
       {% if previous %}
-      <div class="previous-wrapper">
-        <a href="{{ previous }}#posts" class="btn-secondary h4 pagination-item previous">
-          {% include 'svg/arrow.njk' %}
-          <span class="btn-secondary__text">Previous</span>
-        </a>
-      </div>
+        <div class="previous-wrapper">
+          <a href="{{ previous }}#posts" class="btn-secondary h4 pagination-item previous">
+            {% include 'svg/arrow.njk' %}
+            <span class="btn-secondary__text">Previous</span>
+          </a>
+        </div>
       {% endif %}
       {% if next %}
-      <div class="next-wrapper">
-        <a href="{{ next }}#posts" class="btn-secondary h4 pagination-item next">
-          <span class="btn-secondary__text">{{ next_label }}</span>
-          {% include 'svg/arrow.njk' %}
-        </a>
-      </div>
+        <div class="next-wrapper">
+          <a href="{{ next }}#posts" class="btn-secondary h4 pagination-item next">
+            <span class="btn-secondary__text">{{ next_label }}</span>
+            {% include 'svg/arrow.njk' %}
+          </a>
+        </div>
       {% endif %}
     </nav>
   {% endif %}

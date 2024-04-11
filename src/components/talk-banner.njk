@@ -1,5 +1,5 @@
 {% macro talkBanner(talk, color) %}
-{% from "btn-primary.njk" import btnPrimary %}
+  {% from "btn-primary.njk" import btnPrimary %}
   <div class="talk-banner" data-background-color="{{ color }}">
     <a class="talk-banner__link" href="{{ talk.data.url }}">
       <h3 class="screenreader">{{ talk.data.title }}</h3>
@@ -20,7 +20,7 @@
       {% endif %}
       <div class="talk-banner__content-wrapper">
         {% if channel.data.image %}
-          <img class="talk-banner__logo" src="{{ channel.data.image }}" alt="{{ channel.data.title }} logo" />
+          <img class="talk-banner__logo" src="{{ channel.data.image }}" alt="{{ channel.data.title }} logo"/>
         {% endif %}
         <div class="talk-banner__content">
           {% if channel.data.title %}
@@ -35,11 +35,10 @@
             "label": 'Watch ' + talk.data.media,
             "url": talk.data.url
           }
-          %}
+ %}
           {{ btnPrimary( link, 'white', 'mt-2 talk-cta' )}}
         </div>
       </div>
     </div>
   </div>
 {% endmacro %}
-

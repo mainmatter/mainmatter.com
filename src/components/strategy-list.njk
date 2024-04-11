@@ -2,34 +2,34 @@
 {% macro strategyList(id, eyebrow, list) %}
   <section class="strategy-list my-10">
     <div class="strategy-list__container container container--lg">
-    <h5 class="strategy-list__eyebrow">{{ eyebrow }}</h5>
-    {% for el in list %}
-      {% set listIndex = loop.index %}
-      <div id="{{ id }}-list-{{ loop.index }}" class="strategy-list__element">
-        <div class="strategy-list__wrapper">
+      <h5 class="strategy-list__eyebrow">{{ eyebrow }}</h5>
+      {% for el in list %}
+        {% set listIndex = loop.index %}
+        <div id="{{ id }}-list-{{ loop.index }}" class="strategy-list__element">
+          <div class="strategy-list__wrapper">
             <h2 class="strategy-list__number decorative">{{ loop.index }}</h2>
             <div class="strategy-list__content">
-            {% if el.eyebrow %}
-              <h5 class="strategy-list__eyebrow mb-015">{{el.eyebrow}}</h5>
-            {% endif %}
-            {% if el.title %}
-              <h4 class="strategy-list__title">{{el.title}}</h4>
-            {% endif %}
-            {% if el.text %}
-              <p class="mt-2">{{ el.text | safe }}</p>
-            {% endif %}
-            {% if el.linkUrl %}
-              {% set link = {
-              "label": el.linkLabel,
-              "url": el.linkUrl
-              }
-            %}
-            {{ btnSecondary( link, 'mt-2' )}}
-            {% endif %}
+              {% if el.eyebrow %}
+                <h5 class="strategy-list__eyebrow mb-015">{{el.eyebrow}}</h5>
+              {% endif %}
+              {% if el.title %}
+                <h4 class="strategy-list__title">{{el.title}}</h4>
+              {% endif %}
+              {% if el.text %}
+                <p class="mt-2">{{ el.text | safe }}</p>
+              {% endif %}
+              {% if el.linkUrl %}
+                {% set link = {
+                  "label": el.linkLabel,
+                  "url": el.linkUrl
+                }
+ %}
+                {{ btnSecondary( link, 'mt-2' )}}
+              {% endif %}
             </div>
+          </div>
         </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
     </div>
   </section>
 {% endmacro %}

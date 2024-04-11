@@ -22,7 +22,12 @@ permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/p
     <div class="author-header__wrapper">
       <div class="author-header__image-wrapper">
         {% set imageUrl = '/assets/images/authors/' + paged.author.fileSlug + '.jpg' %}
-        {% image imageUrl, '', '6.75rem', 'eager', 'author__image', [108] %}
+        {% image imageUrl,
+        '',
+        '6.75rem',
+        'eager',
+        'author__image',
+        [108] %}
       </div>
 
       <div class="author-header__text-wrapper">
@@ -30,7 +35,9 @@ permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/p
         <h2 class="author-header__subheading">{{ paged.author.data.bio }}</h2>
         <div class="author-header__socials-wrapper">
           {{ authorSocials(paged.author.fileSlug, 'author-header__socials') }}
-          <p class="h5">{{ paged.postTotal }} {% if paged.postTotal === 1 %}post {% else %}posts{% endif %}</p>
+          <p class="h5">{{ paged.postTotal }}
+            {% if paged.postTotal === 1 %}post {% else %}posts{% endif %}
+          </p>
         </div>
       </div>
     </div>

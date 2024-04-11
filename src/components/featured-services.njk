@@ -13,24 +13,23 @@
           <li class="featured-services__list-item">
             {% if service.linkUrl %}
               <a href="{{ service.linkUrl }}" class="featured-services__link">
-              <div class="featured-services__link-wrap">
-                {% include 'svg/arrow.njk' %}
-                <span class="featured-services__link-text h4">{{ service.heading }}</span></div>
-                {% if service.text%}
-                <p class="featured-services__link-description">{{ service.text }}</p>
-                {% endif %}
-                </a>
-              {% else %}
-                <div class="featured-services__link">
                 <div class="featured-services__link-wrap">
                   {% include 'svg/arrow.njk' %}
                   <span class="featured-services__link-text h4">{{ service.heading }}</span></div>
-                  {% if service.text%}
-                <p class="featured-services__link-description">{{ service.text }}</p>
-              {% endif %}
-                </div>
-              {% endif %}
-
+                {% if service.text%}
+                  <p class="featured-services__link-description">{{ service.text }}</p>
+                {% endif %}
+              </a>
+            {% else %}
+              <div class="featured-services__link">
+                <div class="featured-services__link-wrap">
+                  {% include 'svg/arrow.njk' %}
+                  <span class="featured-services__link-text h4">{{ service.heading }}</span></div>
+                {% if service.text%}
+                  <p class="featured-services__link-description">{{ service.text }}</p>
+                {% endif %}
+              </div>
+            {% endif %}
 
           </li>
         {% endfor %}

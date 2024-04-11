@@ -1,8 +1,8 @@
 ---
-  eleventyComputed:
-    title: "Engineering, Design & Product Blog {% if pagination.pageNumber > 0 %}- Page {{ pagination.pageNumber + 1 }}{% endif %}"
+eleventyComputed:
+  title: "Engineering, Design & Product Blog {% if pagination.pageNumber > 0 %} - Page {{ pagination.pageNumber + 1 }} {% endif %}"
   description: "Frontend and JavaScript, Svelte and Ember, Rust and WASM, Elixir and Phoenix, Product and Design: Stay on top of what's happening."
-  permalink: "/blog/{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}/{% endif %}"
+  permalink: "/blog/{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1 }}/{% endif %}"
   layout: base
   pagination:
     data: collections.posts
@@ -14,10 +14,8 @@
   eleventyNavigation:
     key: Blog
     order: 50
-
 ---
 
-{% from "featured-post.njk" import featuredPost %}
 {% from "post-card.njk" import postCard %}
 {% from "nav-pagination.njk" import navPagination %}
 {% from "cta-banner.njk" import ctaBanner %}
