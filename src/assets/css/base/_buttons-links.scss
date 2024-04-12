@@ -26,9 +26,8 @@ p a {
     transition: transform 0.5s ease;
   }
 
-  &:hover,
-  &:focus {
-    .icon-arrow {
+  &:hover, &:focus {
+   .icon-arrow {
       transform: translateX(0.5rem) rotate(-90deg);
       transition: transform 0.5s ease;
     }
@@ -83,15 +82,13 @@ p a {
       transition: transform 0.5s ease;
     }
 
-    &:hover .icon-arrow,
-    &:focus .icon-arrow {
+    &:hover .icon-arrow, &:focus .icon-arrow {
       transform: translateX(-0.5rem) rotate(90deg);
     }
   }
 }
 
-.btn-secondary:hover,
-.btn-secondary:focus {
+.btn-secondary:hover, .btn-secondary:focus {
   text-decoration: none;
 
   .icon-arrow {
@@ -130,8 +127,7 @@ p a {
     color: var(--color-white);
   }
 
-  &:hover,
-  &:focus {
+  &:hover, &:focus {
     color: var(--color-aqua);
   }
 }

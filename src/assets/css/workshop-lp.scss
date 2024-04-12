@@ -151,8 +151,7 @@ button {
     }
   }
 
-  &:hover,
-  &:focus {
+  &:hover, &:focus {
     .line {
       background-color: var(--color-white);
     }

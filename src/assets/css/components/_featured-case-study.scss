@@ -14,8 +14,7 @@
     transition: transform 0.5s ease;
   }
 
-  &:hover,
-  &:focus {
+  &:hover, &:focus {
     .icon-arrow {
       transform: translateX(0.5rem) rotate(-90deg);
       transition: transform 0.5s ease;
@@ -38,12 +37,11 @@
 
     .featured-case-study--hover {
       transform: translateX(-100%);
-      background: var(--color-purple);
-      transition: transform 0.5s ease;
+        background: var(--color-purple);
+        transition: transform 0.5s ease;
     }
 
-    &:hover,
-    &:focus {
+    &:hover, &:focus {
       .featured-case-study--hover {
         transform: translateX(0px);
         background: var(--color-purple);
@@ -59,6 +57,7 @@
     --color-link-primary: var(--color-white);
     --color-link-primary-hover: var(--color-black);
     color: var(--color-white);
+
   }
 
   &--black {
@@ -80,8 +79,7 @@
       transition: transform 0.5s ease;
     }
 
-    &:hover,
-    &:focus {
+    &:hover, &:focus {
       .featured-case-study--hover {
         transform: translateX(0px);
         background: var(--color-black);
@@ -135,6 +133,7 @@
   object-fit: cover;
   object-position: center;
 }
+
 
 .featured-case-study--hover {
   position: absolute;
@@ -246,6 +245,7 @@
     grid-column: span 3 / span 3;
   }
 
+
   .featured-case-study__content-wrapper {
     justify-content: center;
     align-items: flex-start;
@@ -274,6 +274,7 @@
 
   .featured-case-study__tags {
     align-self: stretch;
+
   }
 
   .featured-case-study__client {

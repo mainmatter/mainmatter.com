@@ -80,7 +80,7 @@ $states: "loading", "success", "error";
   top: 0;
   left: 0;
   opacity: 0;
-  font-size: 0.875rem;
+  font-size: .875rem;
   transform: translateY(-0.5rem);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -176,6 +176,8 @@ $states: "loading", "success", "error";
   overflow: hidden;
 }
 
+
+
 .contact-form__loading {
   display: none;
 }
@@ -224,8 +226,7 @@ $states: "loading", "success", "error";
     transition: color 0.3s ease;
   }
 
-  &:hover svg,
-  &:focus svg {
+  &:hover svg, &:focus svg {
     color: var(--color-aqua);
   }
 }

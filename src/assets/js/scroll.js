@@ -35,7 +35,7 @@ if (numbers) {
         trigger: number,
         start: "top 50%",
         end: "top 25%",
-        toggleActions: "restart reverse restart reverse",
+        toggleActions: "restart reverse restart reverse"
       },
     });
   });

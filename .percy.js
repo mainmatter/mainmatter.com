@@ -10,7 +10,7 @@ module.exports = {
       /blog\/tag\/.*\/page\/*/,
       /blog\/author\/.*\/page\/*/,
       /this-week-in-open-source\/20(?!21)\/*/,
-    ],
+    ]
   },
   snapshot: {
     percyCSS: `*, :before, :after {

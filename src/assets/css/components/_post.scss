@@ -3,6 +3,7 @@
   margin: 3.25rem auto 6.25rem;
 }
 
+
 .post__header {
   background-color: var(--color-purple);
   color: var(--color-white);
@@ -21,6 +22,8 @@
 .post__author-socials a {
   color: var(--color-white);
 }
+
+
 
 .post__author-name {
   font-weight: 500;
@@ -124,7 +127,7 @@
     font-weight: 700;
     margin-top: 3.25rem;
 
-    li + li {
+    li+li {
       margin-top: 1.5rem;
     }
   }
@@ -132,6 +135,7 @@
   li {
     padding: 0.25rem;
   }
+
 }
 
 .post__content {
@@ -144,7 +148,7 @@
   }
 
   li a {
-    color: var(--color-purple);
+  color: var(--color-purple);
   }
 }
 
@@ -173,6 +177,7 @@
     padding: 10rem 0 5rem;
   }
 }
+
 
 @media (min-width: 62em) {
   .post {

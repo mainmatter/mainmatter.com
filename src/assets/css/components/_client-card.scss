@@ -25,23 +25,23 @@
 .client-card__link {
   flex-shrink: 0;
 
-  .icon-arrow {
-    transform: translateX(0px) rotate(-90deg);
-    transition: transform 0.5s ease;
-    height: 1.5rem;
-    width: 1.5rem;
-    color: var(--color-purple);
-    margin-left: 0.75rem;
-  }
+      .icon-arrow {
+        transform: translateX(0px) rotate(-90deg);
+        transition: transform 0.5s ease;
+        height: 1.5rem;
+        width: 1.5rem;
+        color: var(--color-purple);
+        margin-left: 0.75rem;
+      }
 
-  &:hover,
-  &:focus {
-    .icon-arrow {
-      transform: translateX(0.5rem) rotate(-90deg);
-      transition: transform 0.5s ease;
+      &:hover, &:focus {
+        .icon-arrow {
+          transform: translateX(0.5rem) rotate(-90deg);
+          transition: transform 0.5s ease;
+        }
+      }
     }
-  }
-}
+
 
 @media (min-width: 48em) {
   .client-card {

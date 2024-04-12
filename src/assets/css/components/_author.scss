@@ -2,7 +2,7 @@
   padding: 1.5rem 0 2.25rem;
   margin: auto;
 
-  & + & {
+  &+& {
     padding-top: 0.25rem;
   }
 }
@@ -62,8 +62,9 @@
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 0.5rem;
-  gap: 0.5rem;
+  gap: 0.5rem
 }
+
 
 .author-socials__icon {
   margin: 0;
@@ -96,4 +97,5 @@
     align-items: center;
     margin-bottom: 0;
   }
+
 }

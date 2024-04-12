@@ -33,9 +33,15 @@ module.exports = function (eleventyConfig) {
   /**
    * Create custom data collections
    */
-  eleventyConfig.addCollection("appearances", require("./collections/appearances"));
+  eleventyConfig.addCollection(
+    "appearances",
+    require("./collections/appearances")
+  );
   eleventyConfig.addCollection("channels", require("./collections/channels"));
-  eleventyConfig.addCollection("channelsAppearances", require("./collections/channelsAppearances"));
+  eleventyConfig.addCollection(
+    "channelsAppearances",
+    require("./collections/channelsAppearances")
+  );
   eleventyConfig.addCollection("calendar", require("./collections/calendar"));
   eleventyConfig.addCollection("videos", require("./collections/videos"));
   eleventyConfig.addCollection("workshops", require("./collections/workshops"));
@@ -45,11 +51,23 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("rustPosts", require("./collections/rustPosts"));
   eleventyConfig.addCollection("sveltePosts", require("./collections/sveltePosts"));
   eleventyConfig.addCollection("authors", require("./collections/authors"));
-  eleventyConfig.addCollection("authorsPostsPaged", require("./collections/authorsPostsPaged"));
+  eleventyConfig.addCollection(
+    "authorsPostsPaged",
+    require("./collections/authorsPostsPaged")
+  );
   eleventyConfig.addCollection("tags", require("./collections/tags"));
-  eleventyConfig.addCollection("tagsPostsPaged", require("./collections/tagsPostsPaged"));
-  eleventyConfig.addCollection("caseStudies", require("./collections/caseStudies"));
-  eleventyConfig.addCollection("caseStudiesFeatured", require("./collections/caseStudiesFeatured"));
+  eleventyConfig.addCollection(
+    "tagsPostsPaged",
+    require("./collections/tagsPostsPaged")
+  );
+  eleventyConfig.addCollection(
+    "caseStudies",
+    require("./collections/caseStudies")
+  );
+  eleventyConfig.addCollection(
+    "caseStudiesFeatured",
+    require("./collections/caseStudiesFeatured")
+  );
   eleventyConfig.addCollection("twios", require("./collections/twios"));
   eleventyConfig.addCollection("memoized", require("./collections/memoized"));
 
@@ -80,7 +98,7 @@ module.exports = function (eleventyConfig) {
     return tagline.split("</p>")[0].replace(/<\/?[^>]+(>|$)/g, "");
   });
 
-  eleventyConfig.addFilter("stripHTML", value => {
+  eleventyConfig.addFilter("stripHTML", (value) => {
     return value.replace(/(<([^>]+)>)/gi, "");
   });
 
@@ -93,7 +111,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("filterByAttribute", (array, attribute, value) => {
-    return array.filter(element => element.data[attribute] === value);
+    return array.filter((element) => element.data[attribute] === value);
   });
 
   eleventyConfig.addFilter("limit", (array, limit) => {
@@ -101,7 +119,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("getMorePosts", function (array, post) {
-    return array.filter(element => element.inputPath !== post.inputPath);
+    return array.filter((element) => element.inputPath !== post.inputPath);
   });
 
   eleventyConfig.addFilter("getCollectionKeys", function (collection) {
@@ -151,46 +169,50 @@ module.exports = function (eleventyConfig) {
     return `${now.getFullYear()}`;
   });
 
-  eleventyConfig.addShortcode(
-    "image",
-    function (imgPath, alt, sizes, loading, className, sizesArray) {
-      let url = "./static" + imgPath;
-      const fileType = path.extname(imgPath).replace(".", "");
-      const directory = path.dirname(imgPath);
-      let formats = ["webp", ...(fileType !== "gif" ? [fileType] : [])];
+  eleventyConfig.addShortcode("image", function (
+    imgPath,
+    alt,
+    sizes,
+    loading,
+    className,
+    sizesArray
+  ) {
+    let url = "./static" + imgPath;
+    const fileType = path.extname(imgPath).replace(".", "");
+    const directory = path.dirname(imgPath);
+    let formats = ["webp", ...(fileType !== "gif" ? [fileType] : [])];
 
-      if (!sizesArray) {
-        sizesArray = [720, 1024, 1440];
-      }
-
-      const options = {
-        svgShortCircuit: true,
-        widths: sizesArray,
-        formats,
-        urlPath: directory,
-        outputDir: "./dist/" + directory,
-        filenameFormat: function (id, src, width, format, options) {
-          const extension = path.extname(imgPath);
-          const name = path.basename(imgPath, extension);
-          return `${name}@${width}.${format}`;
-        },
-      };
-
-      let stats = Image.statsSync(url, options);
-      Image(url, options);
-
-      let imageAttributes = {
-        class: className,
-        alt,
-        sizes: sizes ? sizes : "100vw",
-        loading: loading,
-      };
-
-      return Image.generateHTML(stats, imageAttributes);
+    if (!sizesArray) {
+      sizesArray = [720, 1024, 1440];
     }
-  );
 
-  eleventyConfig.addShortcode("svg", svgPath => {
+    const options = {
+      svgShortCircuit: true,
+      widths: sizesArray,
+      formats,
+      urlPath: directory,
+      outputDir: "./dist/" + directory,
+      filenameFormat: function (id, src, width, format, options) {
+        const extension = path.extname(imgPath);
+        const name = path.basename(imgPath, extension);
+        return `${name}@${width}.${format}`;
+      },
+    };
+
+    let stats = Image.statsSync(url, options);
+    Image(url, options);
+
+    let imageAttributes = {
+      class: className,
+      alt,
+      sizes: sizes ? sizes : "100vw",
+      loading: loading,
+    };
+
+    return Image.generateHTML(stats, imageAttributes);
+  });
+
+  eleventyConfig.addShortcode("svg", (svgPath) => {
     const svgData = fs.readFileSync("./static/assets/images" + svgPath, "utf8");
     const response = optimize(svgData, {
       plugins: [
@@ -204,7 +226,10 @@ module.exports = function (eleventyConfig) {
         },
       ],
     });
-    return response.data.replace("<svg", `<svg focusable="false" role="presentation"`);
+    return response.data.replace(
+      "<svg",
+      `<svg focusable="false" role="presentation"`
+    );
   });
 
   /**

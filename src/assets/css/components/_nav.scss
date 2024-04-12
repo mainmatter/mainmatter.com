@@ -61,8 +61,7 @@
   display: inline-block;
   transition: color 0.3s ease;
 
-  &:hover,
-  &:focus {
+  &:hover, &:focus  {
     color: var(--color-aqua);
 
     .nav__link-text {
@@ -88,14 +87,15 @@
 .nav__link-text {
   text-decoration-color: rgba(var(--color-accent), 0);
   text-decoration-thickness: 0.125rem;
-  text-underline-offset: 0.55rem;
+      text-underline-offset: 0.55rem;
   transition: text-decoration-color 0.3s ease;
 
   &--active {
     text-decoration: underline;
     text-decoration-thickness: 0.125rem;
-    text-underline-offset: 0.55rem;
+      text-underline-offset: 0.55rem;
     text-decoration-color: rgba(var(--color-accent), 1);
+
   }
 }
 
@@ -156,6 +156,7 @@
 }
 
 @media (min-width: 62em) {
+
   .nav {
     width: 100%;
   }

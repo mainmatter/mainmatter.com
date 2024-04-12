@@ -120,11 +120,11 @@
   }
 
   .talk-banner__link {
-    &:hover,
-    &:focus {
-      & ~ .talk-banner__image-overlay .cta-link__text,
-      & ~ .talk-banner__image-overlay .cta-link__arrow svg,
-      & ~ .cta-link {
+    &:hover, &:focus {
+
+      &~.talk-banner__image-overlay .cta-link__text,
+      &~.talk-banner__image-overlay .cta-link__arrow svg,
+      &~.cta-link {
         color: var(--color-aqua);
       }
     }

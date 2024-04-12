@@ -1,3 +1,4 @@
+
 .opensource-list__list {
   display: grid;
   grid-template-columns: 1fr;
@@ -13,7 +14,7 @@
 
 @media (min-width: 72rem) {
   .opensource-list__list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
 }

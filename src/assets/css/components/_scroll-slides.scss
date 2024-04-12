@@ -1,3 +1,4 @@
+
 .scroll-slides__slide {
   height: 100vh;
   display: flex;
@@ -33,7 +34,7 @@
     color: var(--color-black);
     --color-link-primary: var(--color-black);
     --color-accent: var(--color-white);
-    --color-default: var(--color-black);
+    --color-default:var(--color-black);
     --color-link-primary-hover: var(--color-white);
   }
 }
@@ -178,6 +179,8 @@
 }
 
 @media (min-width: 48em) and (min-height: 32rem) {
+
+
   .scroll-slides__container {
     gap: 2.5rem;
   }
@@ -191,7 +194,7 @@
   }
 
   .scroll-slides__tag {
-    margin: 0 0 0.75rem;
+    margin: 0 0 .75rem;
   }
 
   .scroll-slides__title {

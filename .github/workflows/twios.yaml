@@ -1,7 +1,7 @@
 on:
   schedule:
     # Every Sunday 23:00
-    - cron: "0 23 * * 0"
+    - cron: '0 23 * * 0'
   pull_request:
     types: [labeled, unlabeled]
   issue_comment:

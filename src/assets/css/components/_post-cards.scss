@@ -32,14 +32,12 @@
 
   cursor: pointer;
 
-  a:hover,
-  &:focus {
+  a:hover, &:focus  {
     text-decoration: underline;
   }
 }
 
-.post-cards__grid-element:hover,
-.post-cards__grid-element:focus {
+.post-cards__grid-element:hover, .post-cards__grid-element:focus {
   color: var(--color-white);
   cursor: pointer;
 
@@ -159,8 +157,7 @@
   position: relative;
   z-index: 100;
 
-  &:hover,
-  &:focus {
+  &:hover, &:focus {
     cursor: pointer;
   }
 }

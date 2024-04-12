@@ -20,7 +20,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-
+    
     @media (min-width: 48em) {
       & {
         display: grid;
@@ -39,7 +39,7 @@
         align-items: center;
         height: 5rem;
         margin-bottom: 0.75rem;
-
+      
         img {
           max-height: 100%;
           width: auto;
@@ -74,3 +74,4 @@
     }
   }
 }
+

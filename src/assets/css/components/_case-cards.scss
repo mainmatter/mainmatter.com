@@ -31,8 +31,7 @@
   overflow: hidden;
   cursor: pointer;
 
-  a:hover,
-  &:focus {
+  a:hover, &:focus {
     text-decoration: underline;
   }
 
@@ -68,8 +67,7 @@
 }
 
 @media (hover: hover) {
-  .case-cards__grid-element:hover,
-  .case-cards__grid-element:focus {
+  .case-cards__grid-element:hover, .case-cards__grid-element:focus {
     color: var(--color-white);
     cursor: pointer;
 
@@ -172,8 +170,7 @@
   position: relative;
   z-index: 100;
 
-  &:hover,
-  &:focus {
+  &:hover, &:focus {
     cursor: pointer;
     color: var(--color-white);
   }

@@ -27,7 +27,11 @@
     },
     {
       "name": "crates.io",
-      "repos": ["conduit-rust/conduit-hyper", "rust-lang/crates.io", "Turbo87/renovate-crates-test"]
+      "repos": [
+        "conduit-rust/conduit-hyper",
+        "rust-lang/crates.io",
+        "Turbo87/renovate-crates-test"
+      ]
     },
     {
       "name": "Mock Service Worker",
@@ -50,11 +54,16 @@
     },
     {
       "name": "Astro",
-      "repos": ["withastro/docs", "natemoo-re/astro-capo"]
+      "repos": [
+        "withastro/docs",
+        "natemoo-re/astro-capo"
+      ]
     },
     {
       "name": "BEM",
-      "repos": ["getbem/getbem.github.io"]
+      "repos": [
+        "getbem/getbem.github.io"
+      ]
     },
     {
       "name": "Svelte",
@@ -79,15 +88,21 @@
     },
     {
       "name": "Raycast",
-      "repos": ["raycast/extensions"]
+      "repos": [
+        "raycast/extensions"
+      ]
     },
     {
       "name": "Cal.com",
-      "repos": ["calcom/cal.com"]
+      "repos": [
+        "calcom/cal.com"
+      ]
     },
     {
       "name": "Embedded",
-      "repos": ["jomjol/AI-on-the-edge-device"]
+      "repos": [
+        "jomjol/AI-on-the-edge-device"
+      ]
     },
     {
       "name": "Embroider",
@@ -236,15 +251,21 @@
     },
     {
       "name": "Rollup",
-      "repos": ["ezolenko/rollup-plugin-typescript2"]
+      "repos": [
+        "ezolenko/rollup-plugin-typescript2"
+      ]
     },
     {
       "name": "Elixir",
-      "repos": ["rrrene/credo"]
+      "repos": [
+        "rrrene/credo"
+      ]
     },
     {
       "name": "Clojure",
-      "repos": ["mtgred/netrunner"]
+      "repos": [
+        "mtgred/netrunner"
+      ]
     },
     {
       "name": "Probot",
@@ -258,35 +279,54 @@
     },
     {
       "name": "Renovate",
-      "repos": ["renovatebot/renovate"]
+      "repos": [
+        "renovatebot/renovate"
+      ]
     },
     {
       "name": "Mainmatter's playbook",
-      "repos": ["mainmatter/playbook"]
+      "repos": [
+        "mainmatter/playbook"
+      ]
     },
     {
       "name": "Internal",
-      "repos": ["mainmatter/renovate-config", "mainmatter/mainmatter-website-mailer"]
+      "repos": [
+        "mainmatter/renovate-config",
+        "mainmatter/mainmatter-website-mailer"
+      ]
     },
     {
       "name": "Ruby",
-      "repos": ["rubyforgood/Flaredown"]
+      "repos": [
+        "rubyforgood/Flaredown"
+      ]
     },
     {
       "name": "Gliding",
-      "repos": ["weglide/GliderList"]
+      "repos": [
+        "weglide/GliderList"
+      ]
     },
     {
       "name": "typesafe-i18n",
-      "repos": ["ivanhofer/typesafe-i18n", "ivanhofer/typesafe-i18n-demo-sveltekit"]
+      "repos": [
+        "ivanhofer/typesafe-i18n",
+        "ivanhofer/typesafe-i18n-demo-sveltekit"
+      ]
     },
     {
       "name": "zola",
-      "repos": ["getzola/zola"]
+      "repos": [
+        "getzola/zola"
+      ]
     },
     {
       "name": "Miscellaneous",
-      "repos": ["netlify/build-image", "freeCodeCamp/learn-bash-by-building-a-boilerplate"]
+      "repos": [
+        "netlify/build-image",
+        "freeCodeCamp/learn-bash-by-building-a-boilerplate"
+      ]
     },
     {
       "name": "Ember",
@@ -404,7 +444,9 @@
     },
     {
       "name": "Project Forms",
-      "repos": ["project-forms/project-forms.github.io"]
+      "repos": [
+        "project-forms/project-forms.github.io"
+      ]
     }
   ],
   "header": [],

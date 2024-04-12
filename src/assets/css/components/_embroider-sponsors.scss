@@ -19,32 +19,33 @@
     max-width: 160px;
   }
 
-  @media (min-width: 62em) {
-    &.tier-one {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 4rem;
-      margin-bottom: 4.5rem;
-    }
+@media (min-width: 62em) {
 
-    &.tier-two {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 3.5rem;
-      margin-bottom: 4.5rem;
-    }
-
-    &.tier-three {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 4.5rem;
-    }
-
-    .embroider-sponsor__grid-element {
-      max-width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  &.tier-one {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    margin-bottom: 4.5rem;
   }
+
+  &.tier-two {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3.5rem;
+    margin-bottom: 4.5rem;
+  }
+
+  &.tier-three {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4.5rem;
+  }
+
+  .embroider-sponsor__grid-element {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 }

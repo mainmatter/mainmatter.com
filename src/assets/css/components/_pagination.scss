@@ -39,6 +39,7 @@
   flex-grow: 2;
 }
 
+
 .pagination__link {
   padding: 0.75rem 1rem;
 
@@ -53,8 +54,7 @@
 .pagination__next {
   text-decoration: none;
 
-  &:hover,
-  &:focus {
+  &:hover, &:focus  {
     text-decoration: none;
   }
 }
