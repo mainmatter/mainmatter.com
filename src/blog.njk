@@ -1,6 +1,7 @@
 ---
 eleventyComputed:
-  title: "Engineering, Design & Product Blog {% if pagination.pageNumber > 0 %} - Page {{ pagination.pageNumber + 1 }}{% endif %}"
+  title: "Engineering, Design & Product Blog {% if pagination.pageNumber > 0 %}- Page
+  {{ pagination.pageNumber + 1 }}{% endif %}"
   description: "Frontend and JavaScript, Svelte and Ember, Rust and WASM, Elixir and Phoenix, Product and Design: Stay on top of what's happening."
   permalink: "/blog/{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1 }}/{% endif %}"
   layout: base
