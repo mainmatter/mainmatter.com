@@ -34,12 +34,13 @@
   visibility: visible;
 }
 
-.case-study-card__link  {
-  &:hover, &:focus {
-      &~.case-study-card__description .case-study-card__client {
-        color: var(--color-aqua);
-      }
+.case-study-card__link {
+  &:hover,
+  &:focus {
+    & ~ .case-study-card__description .case-study-card__client {
+      color: var(--color-aqua);
     }
+  }
 }
 
 @media (min-width: 48em) {
@@ -48,9 +49,8 @@
     margin-top: 0;
   }
 
-    .case-study-card__cta {
-      display: none;
-      visibility: hidden;
-    }
+  .case-study-card__cta {
+    display: none;
+    visibility: hidden;
+  }
 }
-

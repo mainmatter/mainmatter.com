@@ -11,7 +11,7 @@
   counter-increment: item;
   display: flex;
 
-  &+& {
+  & + & {
     margin-top: 2rem;
   }
 
@@ -57,10 +57,9 @@
   margin-bottom: 1rem;
 }
 
-
 @media (min-width: 62em) {
-.workshop-topics__item {
-    &+& {
+  .workshop-topics__item {
+    & + & {
       margin-top: 2.75rem;
     }
   }

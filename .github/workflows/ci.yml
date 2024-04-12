@@ -6,7 +6,7 @@ on:
       - master
   pull_request: {}
   schedule:
-    - cron:  '0 3 * * *' # daily, at 3am
+    - cron: "0 3 * * *" # daily, at 3am
 
 jobs:
   lint:
@@ -32,7 +32,7 @@ jobs:
         run: pnpm lint
 
   visual-regressions:
-    name: 'Visual Regressions'
+    name: "Visual Regressions"
     runs-on: ubuntu-latest
 
     steps:
@@ -60,7 +60,7 @@ jobs:
         run: pnpm percy dist
 
   performance:
-    name: 'Performance'
+    name: "Performance"
     runs-on: ubuntu-latest
 
     steps:
@@ -89,7 +89,7 @@ jobs:
         run: pnpm lhci autorun --collect.staticDistDir=./dist --collect.url=http://localhost/ --collect.url=http://localhost/blog/ --collect.url=http://localhost/services/team-reinforcement/ --collect.url=http://localhost/ember-consulting/ --collect.url=http://localhost/playbook/ --collect.url=http://localhost/contact/ --collect.url=http://localhost/services/workshops/hands-on-ember/ --collect.url=http://localhost/blog/2022/09/18/simplabs-becomes-mainmatter/ --upload.target=temporary-public-storage
 
   crawl:
-    name: 'Crawl Links'
+    name: "Crawl Links"
     runs-on: ubuntu-latest
 
     steps:
@@ -116,7 +116,7 @@ jobs:
         run: pnpm crawl dist
 
   gravity:
-    name: 'Gravity'
+    name: "Gravity"
     runs-on: ubuntu-latest
 
     steps:

@@ -31,7 +31,8 @@
   justify-content: flex-start;
   gap: 1rem;
 
-  .social__link:hover, .social__link:focus {
+  .social__link:hover,
+  .social__link:focus {
     color: var(--color-aqua);
   }
 }

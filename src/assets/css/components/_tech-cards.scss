@@ -31,7 +31,8 @@
   cursor: pointer;
   overflow: hidden;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     .tech-cards__link-arrow {
       .icon-arrow {
         transform: translateX(0.5rem) rotate(-90deg);
@@ -140,7 +141,6 @@
     transition: transform 0.5s ease;
     width: 24px;
     height: auto;
-
   }
 
   &--rotate {

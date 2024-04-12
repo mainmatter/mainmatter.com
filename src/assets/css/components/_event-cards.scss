@@ -5,8 +5,6 @@
   margin-bottom: 5rem;
 }
 
-
-
 .event-card {
   position: relative;
   display: flex;
@@ -26,11 +24,10 @@
     --color-link-primary-hover: var(--color-purple);
   }
 
-  &+& {
+  & + & {
     margin-top: 2.5rem;
   }
 }
-
 
 .event-card__content-wrapper {
   padding: 2.5rem;
@@ -63,7 +60,7 @@
   }
 
   .event-card {
-    &+& {
+    & + & {
       margin-top: 0;
     }
   }
@@ -77,5 +74,4 @@
   .event-card__content-wrapper {
     padding: 5rem;
   }
-
 }

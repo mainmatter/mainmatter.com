@@ -39,7 +39,7 @@
 
   &--unordered {
     .text-with-list__item::before {
-      content: '●';
+      content: "●";
       margin-right: 0.75rem;
       color: var(--color-accent);
     }
@@ -51,10 +51,9 @@
   align-items: center;
   counter-increment: item;
 
-  &+& {
+  & + & {
     margin-top: 2rem;
   }
-
 }
 
 .text-with-list__cta {

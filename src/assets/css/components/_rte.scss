@@ -137,11 +137,11 @@
 }
 
 @media (min-width: 48em) {
-  .rte  {
+  .rte {
     blockquote:not(.quote__text) {
       margin: 4rem 0 3rem;
       padding-left: 3.75rem;
-  
+
       &::before {
         position: absolute;
         left: 0;
@@ -168,7 +168,7 @@
     }
 
     blockquote:not(.quote__text) {
-      font-size: 1.5rem;        
+      font-size: 1.5rem;
     }
 
     author {
