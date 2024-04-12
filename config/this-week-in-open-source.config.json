@@ -193,7 +193,8 @@
         "mansona/lttf-dashboard",
         "opral/monorepo",
         "thefrontside/effection",
-        "pichfl/auto-reveal"
+        "pichfl/auto-reveal",
+        "embroider-build/create-release-plan-setup"
       ]
     },
     {
@@ -534,6 +535,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-03-24..2024-03-31",
+  "last_date": "2024-03-31..2024-04-07",
   "query_type": "Merged"
 }
