@@ -7,20 +7,19 @@ layout: base
 {% from "cta-banner.njk" import ctaBanner %}
 {% from 'case-card.njk' import caseCard %}
 {%- block content -%}
-
-  {% set 'hero' = {
+  {%
+    set 'hero' = {
     "title": displayTitle,
     "subheading": hero.tags,
     "image": hero.image,
     "alt": hero.imageAlt,
     "loading": "eager"
-  } %}
+    }
+  %}
   {{ colorHero('purple', hero) }}
 
   <article class="case-study">
-    <div class="container container--lg">
-      {{ content | safe }}
-    </div>
+    <div class="container container--lg">{{ content | safe }}</div>
   </article>
   {% set postsFromCollection = collections.caseStudiesFeatured | getMorePosts(page) %}
   {% if postsFromCollection %}
@@ -37,13 +36,13 @@ layout: base
       </div>
     </section>
   {% endif %}
-
-  {% set 'content' = {
+  {%
+    set 'content' = {
     "title": "Grow your business with us",
     "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
     "linkUrl": "/contact",
     "linkText": "Get in touch"
-  } %}
+    }
+  %}
   {{ ctaBanner('aqua', 'full', content) }}
-
 {%- endblock -%}

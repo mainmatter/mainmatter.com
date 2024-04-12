@@ -16,12 +16,20 @@ Example usage:
   <li class="logo-list__item">
     {% if caseUrl | urlExists(caseStudies) %}
       <a href="{{ caseUrl }}" title="{{ logo }} case study">
-        <div class="logo-list__image" aria-label="{{ logo }} logo">{% svg imagePath,
-          'img' %}</div>
+        <div class="logo-list__image" aria-label="{{ logo }} logo">
+          {%
+            svg imagePath,
+            'img'
+          %}
+        </div>
       </a>
     {% else %}
-      <div class="logo-list__image" aria-label="{{ logo }} logo">{% svg imagePath,
-        'img' %}</div>
+      <div class="logo-list__image" aria-label="{{ logo }} logo">
+        {%
+          svg imagePath,
+          'img'
+        %}
+      </div>
     {% endif %}
   </li>
 {%- endmacro -%}
@@ -49,14 +57,14 @@ Example usage:
           {% for logo in logos %}
             {{ listItem(logo) }}
           {% endfor %}
-      </ul>
-      <ul class="logo-list__list logo-list__list--duplicate" aria-hidden="true">
-        {% for logo in logos %}
-          {{ listItem(logo) }}
-        {% endfor %}
-      </ul>
+        </ul>
+        <ul class="logo-list__list logo-list__list--duplicate" aria-hidden="true">
+          {% for logo in logos %}
+            {{ listItem(logo) }}
+          {% endfor %}
+        </ul>
+      </div>
     </div>
-  </div>
-  <button class="logo-list__button" data-marquee-controls>Pause animation</button>
-</section>
+    <button class="logo-list__button" data-marquee-controls>Pause animation</button>
+  </section>
 {%- endmacro -%}

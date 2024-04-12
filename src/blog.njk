@@ -1,6 +1,7 @@
 ---
 eleventyComputed:
-  title: "Engineering, Design & Product Blog {% if pagination.pageNumber > 0 %} - Page {{ pagination.pageNumber + 1 }} {% endif %}"
+  title: "Engineering, Design & Product Blog {% if pagination.pageNumber > 0 %}- Page
+  {{ pagination.pageNumber + 1 }}{% endif %}"
   description: "Frontend and JavaScript, Svelte and Ember, Rust and WASM, Elixir and Phoenix, Product and Design: Stay on top of what's happening."
   permalink: "/blog/{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1 }}/{% endif %}"
   layout: base
@@ -20,15 +21,16 @@ eleventyComputed:
 {% from "nav-pagination.njk" import navPagination %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "color-hero.njk" import colorHero %}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "eyebrow": "Blog",
   "title": "Engineering, Design & Product Blog",
   "text": "Frontend and JavaScript, Svelte and Ember, Rust and WASM, Elixir and Phoenix, Product and Design",
   "image": "/assets/images/hero/blog.jpg",
   "alt": "Lots of books in a shelf wall",
   "loading": "eager"
-} %}
+  }
+%}
 {{ colorHero('purple', content) }}
 <div id="posts" class="container container--xl mb-10">
   {% include 'global/tag-filter.njk' %}
@@ -37,15 +39,19 @@ eleventyComputed:
       {{ postCard(post) }}
     {%- endfor -%}
   </div>
-  {% if pagination.pageNumber === 0 %}{% set nextLabel = 'Explore more articles' %}
-  {% else %}{% set nextLabel = 'Next' %}
+  {% if pagination.pageNumber === 0 %}
+    {% set nextLabel = 'Explore more articles' %}
+  {% else %}
+    {% set nextLabel = 'Next' %}
   {% endif %}
   {{ navPagination(pagination.href.previous, pagination.href.next, nextLabel) }}
 </div>
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
   "linkUrl": "/contact",
   "linkText": "Get in touch"
-} %}
+  }
+%}
 {{ ctaBanner('aqua', 'full', content) }}

@@ -11,13 +11,14 @@ eleventyNavigation:
 {% from "talk-banner.njk" import talkBanner %}
 {% from "talk-card.njk" import talkCard %}
 {% from "cta-banner.njk" import ctaBanner %}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Guidance from our team of trusted industry experts",
   "image": "/assets/images/hero/events.jpg",
   "alt": "Detailed view of a microphone",
   "loading": "eager"
-} %}
+  }
+%}
 {{ colorHero('purple', content) }}
 
 <section class="talks container container--xl">
@@ -25,17 +26,19 @@ eleventyNavigation:
   <div class="talks__container">
     <ol class="talks__list">
       {% for appearance in collections.appearances %}
-          <li class="talks__item"{% if loop.index === 11 %} id="more-talks"{% endif %}>
-            {{ talkCard(appearance, "black") }}
-          </li>
+        <li class="talks__item" {% if loop.index === 11 %}id="more-talks"{% endif %}>
+          {{ talkCard(appearance, "black") }}
+        </li>
       {% endfor %}
     </ol>
   </div>
 </section>
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
   "linkUrl": "/contact",
   "linkText": "Get in touch"
-} %}
+  }
+%}
 {{ ctaBanner('aqua', 'full', content) }}

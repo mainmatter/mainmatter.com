@@ -2,11 +2,12 @@
 A call-to-action meant to be displayed at the beginning of a blog post.
 #}
 {% from "cta-banner.njk" import ctaBanner %}
-
-{% set content = {
+{%
+  set content = {
   "title": "Struggling with Git?",
   "text": "We help teams master Git and end the struggle with our 1 day Git workshop.",
   "linkUrl": "/services/workshops/effective-git/",
   "linkText": "Book workshop!"
-} %}
+  }
+%}
 {{ ctaBanner('purple', 'default', content) }}

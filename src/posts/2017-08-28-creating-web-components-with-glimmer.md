@@ -55,7 +55,7 @@ Finally, a custom element that has been registered via the
 `CustomElementRegistry` can simply be used anywhere in HTML like any other tag:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>My Custom Element Demo</title>
@@ -411,7 +411,7 @@ finalizes our example:
 
 ```html
 // your/other/app/template/or/plain/html/page.html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <!-- ... -->

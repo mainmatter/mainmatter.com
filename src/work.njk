@@ -11,12 +11,14 @@ eleventyNavigation:
 {% from 'featured-case-study.njk' import featuredCaseStudy %}
 {% from "client-cards.njk" import clientCards %}
 {% from "cta-banner.njk" import ctaBanner %}
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "A proven track record of successful projects for international clients",
   "image": "/assets/images/hero/work.jpg",
   "alt": "Lego bricks lying around",
   "loading": "eager"
-} %}
+  }
+%}
 {{ colorHero('purple', content) }}
 <div class="work container container--xl">
   <h2 class="work__title h5">Meet our clients</h2>
@@ -46,14 +48,15 @@ eleventyNavigation:
     {{ clientCards(['timify', 'aleph-alpha']) }}
     {{ clientCards(['ringler', 'dim3']) }}
     {{ clientCards(['clark', 'rail-europe']) }}
-
   </ul>
 </div>
 
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
   "linkUrl": "/contact",
   "linkText": "Get in touch"
-} %}
+  }
+%}
 {{ ctaBanner('aqua', 'full', content) }}

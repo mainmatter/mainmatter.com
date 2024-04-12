@@ -11,7 +11,7 @@
             <div class="tech-cards--hover"></div>
             <a href="/{{ card.link }}" class="tech-cards_link"></a>
             <div class="tech-cards__logo {{ card.logo }}">
-              {% set link='svg/'+ card.logo + '.njk'%}
+              {% set link='svg/'+ card.logo + '.njk' %}
               {% include link %}
             </div>
             <div class="tech-cards__content">
@@ -25,7 +25,6 @@
                 </div>
               {% endif %}
             </div>
-
           </div>
         {% endfor %}
       </div>

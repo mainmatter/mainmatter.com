@@ -28,7 +28,10 @@ Example usage:
 #}
 {% from "cta-link.njk" import ctaLink %}
 {%- macro colorHero(color, content) -%}
-  <section class="color-hero color-hero--{{ color }} {% if content.class %}{{ content.class }}{% endif %}{% if content.logo %}{{ content.logo }}{% elseif content.background %}{{ content.background }}{% endif %}" data-background-color="{{ color }}">
+  <section
+    class="color-hero color-hero--{{ color }} {% if content.class %}{{ content.class }}{% endif %}{% if content.logo %}{{ content.logo }}{% elseif content.background %}{{ content.background }}{% endif %}"
+    data-background-color="{{ color }}"
+  >
     {% if content.image %}
       <div class="color-hero__image-wrapper">
         {% image content.image, content.alt, '100vw', content.loading, 'color-hero__image', [760, 1440, 1920, 2048] %}

@@ -13,28 +13,27 @@ og:
 {% from "btn-secondary.njk" import btnSecondary %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "featured-services.njk" import featuredServices %}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "The Embroider Initiative",
   "text": "Mainmatter, together with a group of sponsors, is working on an initiative to ship Embroider and secure the ecosystem’s investment in Ember.js.",
   "image": "/assets/images/hero/embroider.jpeg",
   "alt": "Different thread bobbins for embroidery",
   "loading": "eager"
-} %}
+  }
+%}
 {{ colorHero('purple', content) }}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "The Initiative’s Goals",
   "subtitle": "Shipping Embroider & making it mainstream",
   "text": "Mainmatter assigns a team of 2 people to work on Embroider full time with guidance and support from Ed Faulkner. Join the initiative to help us extend that timeline and with that the scope of what the initiative will achieve."
-} %}
+  }
+%}
 {{ featuredServices(embroider['embroider'], content) }}
 
-
 <section class="embroider-sponsors my-10">
-  <div class="container container--xl">
-    {% include 'content/embroider-sponsors.njk' %}
-  </div>
+  <div class="container container--xl">{% include 'content/embroider-sponsors.njk' %}</div>
 </section>
 
 <section class="text-section">
@@ -53,11 +52,12 @@ og:
 {% set logoCompanies = ['ticketsolve', 'intercom', 'lighthouse', 'crowdstrike', 'hashicorp', 'xbe', 'teamtailor', 'hotdoc', 'isaac-lee', 'solute', 'triptyk', 'ember-checkup', 'redpencil', 'productive', 'skovik', 'yapplabs', 'adfinis' ] %}
 {% set title = 'Companies and individuals that build on Ember support the initiative to secure the future of their investments.' %}
 {{ logoList(logoCompanies, title) }}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Join the Embroider Initiative!",
   "text": "Sponsor the Embroider Initiative, help us ship Embroider, and secure the future of Ember and your investment in it.",
   "linkUrl": "/contact",
   "linkText": "Get in touch"
-} %}
+  }
+%}
 {{ ctaBanner('aqua', 'full', content) }}

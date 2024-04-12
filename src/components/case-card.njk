@@ -1,5 +1,4 @@
 {% macro caseCard(clientHandle) %}
-
   <div class="case-cards__grid-element">
     {% set caseStudy = clientHandle | findBySlug %}
     <div class="case-cards--hover"></div>
@@ -10,7 +9,7 @@
     {% endif %}
     <div class="case-cards__logo-wrapper">
       {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %}
-      <img class="case-cards__logo" src="{{ imagePath }}" alt="{{ company }}"/>
+      <img class="case-cards__logo" src="{{ imagePath }}" alt="{{ company }}" />
     </div>
     <div class="case-cards__content">
       {% if caseStudy.data.problem %}
@@ -22,15 +21,12 @@
       <div class="case-cards__link-wrapper">
         <div class="small case-cards__link-label">
           {% for item in caseStudy.data.tags %}
-            {% if loop.index != 1 %} / {% endif %}
-            <a href="/services/{{ item | slug }}/">
-              {{ item }}
-            </a>
+            {% if loop.index != 1 %}/{% endif %}
+            <a href="/services/{{ item | slug }}/"> {{ item }} </a>
           {% endfor %}
         </div>
         <span class="case-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
       </div>
     </div>
-
   </div>
 {% endmacro %}

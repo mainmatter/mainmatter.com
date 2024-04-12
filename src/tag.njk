@@ -21,7 +21,9 @@ permalink: "/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 1 %}/page/{{ p
       <span class="collection-header__heading h4">Tagged with</span>
       <span class="collection-header__heading h3">{{ paged.tag }}</span>
     </h1>
-    <p class="collection-header__subheading">{{ paged.postTotal }} {% if paged.postTotal === 1 %}post {% else %}posts{% endif %}</p>
+    <p class="collection-header__subheading">
+      {{ paged.postTotal }} {% if paged.postTotal === 1 %}post{% else %}posts{% endif %}
+    </p>
   </div>
 </div>
 <div id="posts" class="container container--xl mb-10">
@@ -42,10 +44,12 @@ permalink: "/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 1 %}/page/{{ p
   {{ navPagination(previous, next) }}
 </div>
 
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
   "linkUrl": "/contact",
   "linkText": "Get in touch"
-} %}
+  }
+%}
 {{ ctaBanner('aqua', 'full', content) }}

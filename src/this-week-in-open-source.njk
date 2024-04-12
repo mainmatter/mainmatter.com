@@ -6,11 +6,12 @@ layout: "base.njk"
 
 {% from "color-hero.njk" import colorHero %}
 {% from "twios-card.njk" import twiosCard %}
-
-{% set 'content' = {
-"title": "This Week in Open Source at Mainmatter",
-"text": "Our software engineers are all active members of the open source community and enjoy collaborating on various projects. Each week, we compile a summary of the team's latest contributions."
-} %}
+{%
+  set 'content' = {
+  "title": "This Week in Open Source at Mainmatter",
+  "text": "Our software engineers are all active members of the open source community and enjoy collaborating on various projects. Each week, we compile a summary of the team's latest contributions."
+  }
+%}
 {{ colorHero('black', content) }}
 
 <section class="section mb-10">
@@ -19,9 +20,9 @@ layout: "base.njk"
   </div>
   <div class="container container--xl">
     <div class="post-cards__grid">
-        {% for post in collections.twios %}
-          {{ twiosCard(post) }}
-        {% endfor %}
+      {% for post in collections.twios %}
+        {{ twiosCard(post) }}
+      {% endfor %}
     </div>
   </div>
 </section>

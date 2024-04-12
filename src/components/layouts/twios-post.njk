@@ -6,10 +6,12 @@ layout: "base"
   {% from "color-hero.njk" import colorHero %}
   {% set post = collections.twios | getCollectionItem(page) %}
   <article>
-    {% set 'hero' = {
+    {%
+      set 'hero' = {
       "title": 'This Week in Open Source at Mainmatter #' + post.data.number,
       "eyebrow": page.date | monthDayYear
-    } %}
+      }
+    %}
     {{ colorHero('purple', hero) }}
     <div class="container container--lg post">
       <a href="/this-week-in-open-source/" class="btn-secondary h4 pagination-item previous">
@@ -18,9 +20,7 @@ layout: "base"
       </a>
       <p class="prev-next__title">See all Open Source Updates</p>
 
-      <div class="post__content rte">
-        {{ content | safe }}
-      </div>
+      <div class="post__content rte">{{ content | safe }}</div>
     </div>
   </article>
 {%- endblock -%}

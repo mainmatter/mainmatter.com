@@ -11,14 +11,15 @@
     {% endif %}
 
     {% if content.image %}
-      {% set imageData = {
+      {%
+        set imageData = {
         "imgPath": content.image,
         "alt": content.alt,
         "sizes": "100vw",
         "loading": "lazy",
         "sizesArray": [760, 1440, 1920]
-      }
- %}
+        }
+      %}
       {{ imageAspectRatio(imageData, "32/13", "35/19") }}
     {% endif %}
 
@@ -31,12 +32,13 @@
           <div class="image-banner-with-text__text">{{ content.text | safe }}</div>
         {% endif %}
         {% if content.linkUrl and content.linkText %}
-          {% set link = {
+          {%
+            set link = {
             "label": content.linkText,
             "url": content.linkUrl
-          }
- %}
-          {{ btnSecondary( link )}}
+            }
+          %}
+          {{ btnSecondary( link ) }}
         {% endif %}
       </div>
     </div>

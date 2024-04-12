@@ -11,13 +11,14 @@ description: Find out about upcoming events, conferences and meetups we will be 
 {% from "cta-link.njk" import ctaLink %}
 {% from "btn-primary.njk" import btnPrimary %}
 {% from "cta-banner.njk" import ctaBanner %}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Guidance from our team of trusted industry experts",
   "image": "/assets/images/hero/events.jpg",
   "alt": "Detailed view of a microphone",
   "loading": "eager"
-} %}
+  }
+%}
 {{ colorHero('purple', content) }}
 
 <div class="section container container--lg">
@@ -55,27 +56,27 @@ description: Find out about upcoming events, conferences and meetups we will be 
     <ol class="talks__list">
       {% for appearance in collections.appearances %}
         {% if loop.index < 6 %}
-          <li class="talks__item">
-            {{ talkCard(appearance, "black") }}
-          </li>
+          <li class="talks__item">{{ talkCard(appearance, "black") }}</li>
         {% endif %}
       {% endfor %}
     </ol>
     {% if collections.appearances.length > 7 %}
-    <div class="talks_pagination">
-      <a href="/talks/#more-talks" class="btn-secondary h4 videos">
+      <div class="talks_pagination">
+        <a href="/talks/#more-talks" class="btn-secondary h4 videos">
           <span class="btn-secondary__text">Load more videos</span>
           {% include 'svg/arrow.njk' %}
         </a>
-    </div>
+      </div>
     {% endif %}
   </div>
 </section>
 
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
   "linkUrl": "/contact",
   "linkText": "Get in touch"
-} %}
+  }
+%}
 {{ ctaBanner('aqua', 'full', content) }}

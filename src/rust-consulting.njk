@@ -17,16 +17,16 @@ og:
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from "quote.njk" import quote %}
 {% from 'featured-case-study.njk' import featuredCaseStudy %}
-
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "eyebrow": "Our Expertise: Rust",
   "title": "Rust is a competitive advantage",
   "text": "Rust checks all the boxes – performance, efficiency, maintainability, and great developer experience. Mainmatter is here to empower your team to fully realize those benefits in your web and backend projects.",
   "image": "/assets/images/hero/rust.jpg",
   "alt": "Crabs climbing a rock on a beach",
   "loading": "eager"
-} %}
+  }
+%}
 {{ colorHero('purple', content) }}
 
 <section class="my-10 container container--lg">
@@ -34,8 +34,17 @@ og:
     <div class="mb-4">
       <h5 class="mb-015">Rust & Mainmatter</h5>
       <h3 class="mb-2">A unique skillset</h3>
-      <p>We’re experts - our Rust team is led by Luca Palmieri, author of <a href="http://zero2prod.com">"Zero to Production in Rust"</a>, and we have been part of the Rust ecosystem for years, helping out the <a href="https://crates.io">crates.io</a> project.</p>
-      <p>But we don't stop at Rust – we have developed big web apps and mentored teams on backend, frontend, design, as well as process and developer infrastructure for years. We know what it takes to connect everything together and deliver a delightful end-to-end experience.</p>
+      <p>
+        We’re experts - our Rust team is led by Luca Palmieri, author of
+        <a href="http://zero2prod.com">"Zero to Production in Rust"</a>, and we have been part of
+        the Rust ecosystem for years, helping out the
+        <a href="https://crates.io">crates.io</a> project.
+      </p>
+      <p>
+        But we don't stop at Rust – we have developed big web apps and mentored teams on backend,
+        frontend, design, as well as process and developer infrastructure for years. We know what it
+        takes to connect everything together and deliver a delightful end-to-end experience.
+      </p>
     </div>
   </div>
   <div class="split-content">
@@ -43,28 +52,31 @@ og:
     <div class="split-content__wrapper">
       <div class="split-content__content">
         <h4>Mainmatter is a Silver Member of the Rust Foundation</h4>
-        {% set link = {
-            "label": 'Learn more',
-            "url": 'https://foundation.rust-lang.org/'
+        {%
+          set link = {
+          "label": 'Learn more',
+          "url": 'https://foundation.rust-lang.org/'
           }
-          %}
-        {{ btnSecondary( link, 'mt-2' )}}
+        %}
+        {{ btnSecondary( link, 'mt-2' ) }}
       </div>
-      <div class="split-content__feature">
-        {% include 'content/secondary-feature-rust.njk' %}
-      </div>
+      <div class="split-content__feature">{% include 'content/secondary-feature-rust.njk' %}</div>
     </div>
-
   </div>
 </section>
-
 
 <section class="my-10 container container--lg">
   <div class="">
     <div class="mb-4">
       <h5 class="mb-015">EuroRust</h5>
       <h3 class="mb-2">We run EuroRust</h3>
-      <p>In 2024, EuroRust will be back on October 10th and 11th in Vienna, Austria as well as online. We'll have 2 days of talks with a main track as well as a side track for the first time this year. Plus, there'll be workshops on the day before the main conference, room for people to get together and hack on their favorite projects during the conference, as well as an after party on Friday night.</p>
+      <p>
+        In 2024, EuroRust will be back on October 10th and 11th in Vienna, Austria as well as
+        online. We'll have 2 days of talks with a main track as well as a side track for the first
+        time this year. Plus, there'll be workshops on the day before the main conference, room for
+        people to get together and hack on their favorite projects during the conference, as well as
+        an after party on Friday night.
+      </p>
     </div>
   </div>
   <div class="split-content">
@@ -72,12 +84,13 @@ og:
     <div class="split-content__wrapper">
       <div class="split-content__content">
         <h4>Join us in Vienna for 2 days of celebrating the European Rust community</h4>
-        {% set link = {
-            "label": 'Get your ticket now!',
-            "url": 'https://eurorust.eu'
+        {%
+          set link = {
+          "label": 'Get your ticket now!',
+          "url": 'https://eurorust.eu'
           }
-          %}
-        {{ btnSecondary( link, 'mt-2' )}}
+        %}
+        {{ btnSecondary( link, 'mt-2' ) }}
       </div>
       <div class="split-content__feature">
         {% include 'content/secondary-feature-eurorust.njk' %}
@@ -86,7 +99,8 @@ og:
   </div>
 </section>
 
-{% set logoCompanies = [
+{%
+  set logoCompanies = [
   'Rust Foundation',
   'arm',
   'Huawei',
@@ -96,18 +110,21 @@ og:
   'Aleph Alpha',
   'Google',
   'Realm'
-] %}
+  ]
+%}
 {% set title = 'Our EuroRust partners are betting on Rust' %}
 {{ logoList(logoCompanies, title, "h4", "h5") }}
 
 <section class="mb-10">
-  {% set imageData = {
+  {%
+    set imageData = {
     "imgPath": "/assets/images/rust/eurorust.jpeg",
     "alt": "Server room",
     "sizes": "100vw",
     "loading": "lazy",
     "sizesArray": [760, 1440, 1920]
-  } %}
+    }
+  %}
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
 
@@ -117,13 +134,20 @@ og:
       <div class="split-content__content">
         <h5>Book a free call</h5>
         <h3 class="split-content__subheading h2">Is Rust the right choice for us?</h3>
-        <p>Every new technology brings its own risks - Rust is no exception. Luca Palmieri, the author of <a href="https://zero2prod.com">Zero to Production in Rust</a> and our in-house Rust expert, is here to help your team. You walk him through your company's usecase and your requirements and he’ll do his best to suggest the best course of action. Sometimes Rust is not the answer, but if it is, he’ll make sure you are on the right track.</p>
-        {% set link = {
-            "label": 'Book a 1:1 call with Luca',
-            "url": 'https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us'
+        <p>
+          Every new technology brings its own risks - Rust is no exception. Luca Palmieri, the
+          author of <a href="https://zero2prod.com">Zero to Production in Rust</a> and our in-house
+          Rust expert, is here to help your team. You walk him through your company's usecase and
+          your requirements and he’ll do his best to suggest the best course of action. Sometimes
+          Rust is not the answer, but if it is, he’ll make sure you are on the right track.
+        </p>
+        {%
+          set link = {
+          "label": 'Book a 1:1 call with Luca',
+          "url": 'https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us'
           }
-          %}
-        {{ btnSecondary( link, 'mt-2' )}}
+        %}
+        {{ btnSecondary( link, 'mt-2' ) }}
       </div>
       <div class="split-content__feature">
         {% include 'content/secondary-feature-rust-consulting.njk' %}
@@ -137,76 +161,91 @@ og:
     <div class="mb-10">
       <h3 class="mb-2">Custom Development</h3>
       <p class="body">
-        We develop complete web and cloud apps with Rust so your team can focus on other initiatives. We have experience with all relevant crates like actix, axum, tokio, hyper, and more – and in fact teach others how to use those. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.
+        We develop complete web and cloud apps with Rust so your team can focus on other
+        initiatives. We have experience with all relevant crates like actix, axum, tokio, hyper, and
+        more – and in fact teach others how to use those. Our team delivers high quality codebases
+        as well as the tooling and infrastructure needed for sustainable maintenance.
       </p>
-      {% set link = {
+      {%
+        set link = {
         "label": 'Work with us!',
         "url": '/contact/'
-      }
- %}
-      {{ btnSecondary( link, 'mt-2 plausible-event-name=Rust+Contact' )}}
+        }
+      %}
+      {{ btnSecondary( link, 'mt-2 plausible-event-name=Rust+Contact' ) }}
     </div>
     <div class="mb-10">
       <h3 class="mb-2">Training and Support</h3>
       <p class="body">
-        There is excellent material out there for learning Rust on your own. But you might not have the luxury of time, or the in-house expertise, to upskill your entire team or overcome obstacles on your own. Our trainers are world-class experts and can design a learning path that best fits your needs.
+        There is excellent material out there for learning Rust on your own. But you might not have
+        the luxury of time, or the in-house expertise, to upskill your entire team or overcome
+        obstacles on your own. Our trainers are world-class experts and can design a learning path
+        that best fits your needs.
       </p>
-      {% set link = {
+      {%
+        set link = {
         "label": 'Check out our workshops!',
         "url": '/services/workshops/rust/'
-      }
- %}
-      {{ btnSecondary( link, 'mt-2 plausible-event-name=Rust+Workshops' )}}
+        }
+      %}
+      {{ btnSecondary( link, 'mt-2 plausible-event-name=Rust+Workshops' ) }}
     </div>
     <div class="mb-10">
       <h3 class="mb-2">Team reinforcement</h3>
       <p class="body">
-        Rust is a young technology – hiring Senior talent can be a challenge.
-        Our experts can merge with your in-house product teams to ensure the timely delivery of mission-critical projects. We’re more than hired hands – we mentor your team throughout the process to help lift productivity long after our collaboration ends.
+        Rust is a young technology – hiring Senior talent can be a challenge. Our experts can merge
+        with your in-house product teams to ensure the timely delivery of mission-critical projects.
+        We’re more than hired hands – we mentor your team throughout the process to help lift
+        productivity long after our collaboration ends.
       </p>
-      {% set link = {
+      {%
+        set link = {
         "label": 'Work with us!',
         "url": '/contact/'
-      }
- %}
-      {{ btnSecondary( link, 'mt-2 plausible-event-name=Rust+Contact' )}}
+        }
+      %}
+      {{ btnSecondary( link, 'mt-2 plausible-event-name=Rust+Contact' ) }}
     </div>
-
   </div>
 </section>
 
 <section class="mb-10">
-  {% set imageData = {
+  {%
+    set imageData = {
     "imgPath": "/assets/images/rust/eurorust-2.jpeg",
     "alt": "Server room",
     "sizes": "100vw",
     "loading": "lazy",
     "sizesArray": [760, 1440, 1920]
-  } %}
+    }
+  %}
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
 
 <section class="my-10">
   <h2 class="quotes-list__title h2">Our customers say about us</h2>
   <div class="container container--lg">
-    {% set 'content' = {
+    {%
+      set 'content' = {
       "text": "”Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way. I've learned so much, especially during our pairing sessions—it allowed me to improve my technical skills and grow as an engineer.”",
       "source": "Andreas Hartel, Senior Engineer at aleph alpha"
-    } %}
+      }
+    %}
     {{ quote(content) }}
-
-    {% set 'content' = {
+    {%
+      set 'content' = {
       "text": "”Working with Mainmatter's experts has always been a good experience. We can really feel that they have mastery on many topics, and knowledge about complex technical problems. I’ve learned so much, especially during our pairing sessions, and it allows me to improve my technical skills and growth as an engineer.”",
       "source": "Alexandre Monjol, Engineer at Qonto"
-    } %}
+      }
+    %}
     {{ quote(content, alignment='right') }}
-
-    {% set 'content' = {
+    {%
+      set 'content' = {
       "text": "”We started working with simplabs to build a state-of-the-art mobile web app from the ground up and it was an absolute success! Not only are they web specialists, but their expertise in development practices and agile processes made our collaboration an absolute delight.”",
       "source": "Carl Anderson, General Manager at Trainline Europe"
-    } %}
+      }
+    %}
     {{ quote(content) }}
-
   </div>
 </section>
 
@@ -218,16 +257,23 @@ og:
 
 <section class="my-10 container container--lg">
   <div class="split-content">
-    <a href="https://www.youtube.com/playlist?list=PLdAi-nB9AYut1ftpNKFeqmrW-4VrCujsq" class="split-content__link"></a>
+    <a
+      href="https://www.youtube.com/playlist?list=PLdAi-nB9AYut1ftpNKFeqmrW-4VrCujsq"
+      class="split-content__link"
+    ></a>
     <div class="split-content__wrapper">
       <div class="split-content__content">
-        <h4>Check out our Rust videos on YouTube – interviews with Rust leaders, recordings of events, and more.</h4>
-        {% set link = {
-            "label": 'Watch videos',
-            "url": 'https://www.youtube.com/playlist?list=PLdAi-nB9AYut1ftpNKFeqmrW-4VrCujsq'
+        <h4>
+          Check out our Rust videos on YouTube – interviews with Rust leaders, recordings of events,
+          and more.
+        </h4>
+        {%
+          set link = {
+          "label": 'Watch videos',
+          "url": 'https://www.youtube.com/playlist?list=PLdAi-nB9AYut1ftpNKFeqmrW-4VrCujsq'
           }
-          %}
-        {{ btnSecondary( link, 'mt-2' )}}
+        %}
+        {{ btnSecondary( link, 'mt-2' ) }}
       </div>
       <div class="split-content__feature">
         {% include 'content/secondary-feature-youtube.njk' %}
@@ -237,11 +283,12 @@ og:
 </section>
 
 {{ recentPosts("Latest from our blog on the topic", collections.rustPosts) }}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
   "linkUrl": "/contact",
   "linkText": "Get in touch"
-} %}
+  }
+%}
 {{ ctaBanner('purple', 'full', content) }}

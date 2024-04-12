@@ -29,9 +29,7 @@ Example usage:
             {%- image content.logo, content.logoAlt, '(min-width: 48em) 50vw, 100vw', content.logoLoading, 'quote__logo', [400] -%}
           </div>
         {%- endif -%}
-        <blockquote class="quote__text">
-          {{ content.text | safe }}
-        </blockquote>
+        <blockquote class="quote__text">{{ content.text | safe }}</blockquote>
         <figcaption class="quote__source">{{ content.source }}</figcaption>
       </div>
     </figure>

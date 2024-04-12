@@ -10,21 +10,25 @@ title: null
 {% from "image-banner-with-text.njk" import imageBannerWithText %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Your expert guides for the journey ahead",
   "text": "It takes brains to develop a no-brainer. At Mainmatter we teach, cross-pollinate and collaborate with our clients to develop digital products and practices they can build on.",
   "image": "/assets/images/hero/home.jpg",
   "alt": "Balloons flying over the sky",
   "loading": "eager"
-} %}
+  }
+%}
 {{ colorHero('purple', content) }}
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Discover our services",
   "subtitle": "Transform bold ideas into shipped products"
-} %}
+  }
+%}
 {{ featuredServices(services['services-list'], content) }}
-{% set logoCompanies = [
+{%
+  set logoCompanies = [
   'Qonto',
   'Trainline',
   'Aleph Alpha',
@@ -32,24 +36,27 @@ title: null
   'Experteer',
   'Robin Hood',
   'Rail Europe'
-] %}
+  ]
+%}
 {{ logoList(logoCompanies) }}
 
 <section class="mb-10">
-  {% set imageData = {
+  {%
+    set imageData = {
     "imgPath": "/assets/images/photos/balloons-top.jpeg",
     "alt": "Server room",
     "sizes": "100vw",
     "loading": "lazy",
     "sizesArray": [760, 1440, 1920]
-  } %}
+    }
+  %}
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
 
 {% set clients = ['qonto', 'experteer', 'trainline', 'rail-europe'] %}
 {{ featuredCaseStudies(clients, 'Browse our work') }}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Why Mainmatter",
   "subtitle": "We are a team of developers, inventors, designers, strategists, artists and storytellers. We work remotely from 9 countries in Europe and we believe in recruiting top talents from any location.",
   "text": "<p>That said, we still value face time. We frequently come together for team events and workshops, and invite our clients to join us as well.</p>",
@@ -59,30 +66,34 @@ title: null
   }
 %}
 {{ imageBannerWithText(content) }}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Build lasting products, systematically",
   "text": "Our playbook describes methodologies for building sustainable digital products and running an effective, collaborative product development process. It is based on our experiences working on projects with international clients in various industries for many years.",
   "linkUrl": "/playbook",
   "linkText": "Download our playbook"
-} %}
+  }
+%}
 {{ ctaBanner('purple', 'default', content) }}
 
 <section class="mt-15 mb-0">
-  {% set imageData = {
+  {%
+    set imageData = {
     "imgPath": "/assets/images/photos/balloons-line.jpeg",
     "alt": "Server room",
     "sizes": "100vw",
     "loading": "lazy",
     "sizesArray": [760, 1440, 1920]
-  } %}
+    }
+  %}
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
   "linkUrl": "/contact",
   "linkText": "Get in touch"
-} %}
+  }
+%}
 {{ ctaBanner('aqua', 'full', content) }}
-

@@ -11,7 +11,7 @@ list: An array where each item is the slug for the case study.
     <div class="container container--xl">
       <h2 class="featured-case-studies__heading h5">{{ heading }}</h2>
       <div class="featured-case-studies__list">
-        {% for caseStudyHandle in caseStudies -%}
+        {%- for caseStudyHandle in caseStudies -%}
           {% if loop.index === 1 %}
             {{ featuredCaseStudy(caseStudyHandle, 'purple') }}
           {% else %}

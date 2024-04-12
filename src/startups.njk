@@ -1,5 +1,5 @@
 ---
-layout: 'base'
+layout: "base"
 title: "Startups - Scaling Up Your Business"
 description: "Discover effective strategies to scale up your business, and achieve long-term success. Learn how we can help you unlock growth potential and optimize your processes for a sustainable expansion."
 ---
@@ -14,34 +14,38 @@ description: "Discover effective strategies to scale up your business, and achie
 {% from "btn-secondary.njk" import btnSecondary %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Burst through your scale-up bottleneck. We'll be your expert guides.",
   "text": "No business has “make or break” moments like a startup. At Mainmatter, we can instantly scale-up your team to develop digital products.
-   Our experts teach, cross-pollinate and collaborate with our clients for results that go beyond the scope of the project.",
+  Our experts teach, cross-pollinate and collaborate with our clients for results that go beyond the scope of the project.",
   "image": "/assets/images/photos/ever-given.jpg",
   "alt": "Growing green grass",
   "loading": "eager"
-} %}
+  }
+%}
 {{ colorHero('purple', content) }}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Our Startup Ecosystem",
   "subtitle": "We support growth.",
   "text": "We teach, we mentor, we do. Our team of experts can help you strategically push through the next series of growth hurdles - from ideation to design to engineering."
-} %}
+  }
+%}
 {{ featuredServices(services['services-list'], content) }}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Instantly add years of expertise to your team to make your ideas happen faster.",
   "text": "We are a team of engineers, inventors, designers, strategists, artists and storytellers, but our titles don’t define how we work. Our processes are focused on helping you get the results you need. We partner with our clients to mentor, develop and grow - whether it's your product, your base, your team, or your bottom line.",
   "linkUrl": "/contact",
   "linkText": "Get started with us today"
-} %}
+  }
+%}
 {{ ctaBanner('aqua', 'full', content) }}
 
 <h3 class="success_stories__title">Discover our success stories</h3>
-{% set logoCompanies = [
+{%
+  set logoCompanies = [
   'Qonto',
   'Trainline',
   'Rail Europe',
@@ -51,85 +55,108 @@ description: "Discover effective strategies to scale up your business, and achie
   'Terminal49',
   'Auditboard',
   'Clark'
-] %}
+  ]
+%}
 {{ logoList(logoCompanies) }}
 
 <section class="my-10">
   <div class="container container--lg">
     <div class="mb-10">
       <h5 class="mb-015">Team reinforcement</h5>
-      <h3 class="mb-2">Get the work done, even if your team has reached a limit   </h3>
+      <h3 class="mb-2">Get the work done, even if your team has reached a limit</h3>
       <p class="body">
-        There are lots of reasons that a team gets overextended – lack of people, lack of expertise, or even lack of time.
-        At Mainmatter, we’ve built a team of diverse expertise in web and cloud projects that deliver with a fresh perspective. We support our clients with experienced people who are ready to build products, mentor people and support your goals.
+        There are lots of reasons that a team gets overextended – lack of people, lack of expertise,
+        or even lack of time. At Mainmatter, we’ve built a team of diverse expertise in web and
+        cloud projects that deliver with a fresh perspective. We support our clients with
+        experienced people who are ready to build products, mentor people and support your goals.
       </p>
-      {% set link = {
+      {%
+        set link = {
         "label": 'Get started with us today',
         "url": '/services/team-reinforcement/'
-      }
+        }
       %}
-      {{ btnSecondary( link, 'mt-2' )}}
+      {{ btnSecondary( link, 'mt-2' ) }}
     </div>
     <div class="mb-10">
       <h5 class="mb-015">Launch your idea</h5>
       <h3 class="mb-2">Full-service implementation of your idea into reality</h3>
       <p class="body">
-        We’ll work with you to make the products you need to make your business better. From developing a rock-solid concept to providing customer-centric UI to building the whole MVP, Mainmatter has an experienced team of product builders. We’re a one-stop shop for founders, scaleups, and SMEs in making their digital products (better) – from strategy to design to implementation.
+        We’ll work with you to make the products you need to make your business better. From
+        developing a rock-solid concept to providing customer-centric UI to building the whole MVP,
+        Mainmatter has an experienced team of product builders. We’re a one-stop shop for founders,
+        scaleups, and SMEs in making their digital products (better) – from strategy to design to
+        implementation.
       </p>
-      {% set link = {
+      {%
+        set link = {
         "label": 'Learn more',
         "url": '/services/launch-your-idea'
-      }
+        }
       %}
-      {{ btnSecondary( link, 'mt-2' )}}
+      {{ btnSecondary( link, 'mt-2' ) }}
     </div>
     <div class="mb-10">
       <h5 class="mb-015">Tech modernization</h5>
       <h3 class="mb-2">Give your codebase the necessary overhaul without the overtime</h3>
       <p class="body">
-        Updating your codebase shouldn’t stop your development in its tracks. With Mainmatter, you can take on legacy code and leave your technical debt behind – all while your team stays focussed on the roadmap. Our experts can take on the whole upgrade from the reviewing, planning and implementation – at a cost advantage over a complete rewrite later down the line. And we only call it a job well done when we leave your team with the know-how to keep up with future versions.
+        Updating your codebase shouldn’t stop your development in its tracks. With Mainmatter, you
+        can take on legacy code and leave your technical debt behind – all while your team stays
+        focussed on the roadmap. Our experts can take on the whole upgrade from the reviewing,
+        planning and implementation – at a cost advantage over a complete rewrite later down the
+        line. And we only call it a job well done when we leave your team with the know-how to keep
+        up with future versions.
       </p>
-      {% set link = {
+      {%
+        set link = {
         "label": 'Learn more',
         "url": '/services/tech-modernization'
-      }
+        }
       %}
-      {{ btnSecondary( link, 'mt-2' )}}
+      {{ btnSecondary( link, 'mt-2' ) }}
     </div>
     <div class="mb-10">
       <h5 class="mb-015">Strategic advice</h5>
-      <h3 class="mb-2">Build a rock-solid strategy with reliable expertise at your side </h3>
+      <h3 class="mb-2">Build a rock-solid strategy with reliable expertise at your side</h3>
       <p class="body">
-        Whether you’re building a product or a team from the ground up or scaling up, we can provide a valuable and experienced outside perspective. Our assessments can help you understand the status quo and identify bottlenecks. We’ll work with you to set a strategic roadmap for product engineering teams. At Mainmatter, we know how successful, international, modern teams operate and can work with you to get you there.
+        Whether you’re building a product or a team from the ground up or scaling up, we can provide
+        a valuable and experienced outside perspective. Our assessments can help you understand the
+        status quo and identify bottlenecks. We’ll work with you to set a strategic roadmap for
+        product engineering teams. At Mainmatter, we know how successful, international, modern
+        teams operate and can work with you to get you there.
       </p>
-      {% set link = {
+      {%
+        set link = {
         "label": 'Learn more',
         "url": '/services/strategic-advice'
-      }
+        }
       %}
-      {{ btnSecondary( link, 'mt-2' )}}
+      {{ btnSecondary( link, 'mt-2' ) }}
     </div>
   </div>
 </section>
 
 <section class="mt-10 mb-0">
-  {% set imageData = {
+  {%
+    set imageData = {
     "imgPath": "/assets/images/photos/planting.jpg",
     "alt": "Server room",
     "sizes": "100vw",
     "loading": "lazy",
     "sizesArray": [760, 1440, 1920]
-  } %}
+    }
+  %}
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
 
 {% set clients = ['aleph-alpha', 'rail-europe', 'trainline', 'qonto'] %}
 {{ featuredCaseStudies(clients, 'Browse our work') }}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
   "linkUrl": "/contact",
   "linkText": "Get in touch"
-} %}
+  }
+%}
 {{ ctaBanner('aqua', 'full', content) }}

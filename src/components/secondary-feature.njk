@@ -18,7 +18,7 @@ Example usage:
 #}
 
 {%- macro secondaryFeature(content, className) -%}
-  <div class="secondary-feature{% if className %} {{ className }}{% endif %}">
+  <div class="secondary-feature{% if className %}{{ className }}{% endif %}">
     <div class="secondary-feature__image-wrapper">
       {%- if content.image -%}
         {%- image content.image, content.alt, '(min-width:62em) 15rem, 90vw', content.loading, 'secondary-feature__image', [250, 375, 500, 750] -%}

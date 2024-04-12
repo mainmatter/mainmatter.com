@@ -10,49 +10,53 @@ permalink: /playbook/
 {% from "cta-link.njk" import ctaLink %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "strategy-list.njk" import strategyList %}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Build lasting products systematically",
   "image": "/assets/images/playbook/playbook.jpg",
   "alt": "Stacked lego building bricks",
   "loading": "eager"
- } %}
+  }
+%}
 {{ colorHero('aqua', content) }}
-
-{% set content = {
-"title": "Our playbook",
-"subtitle": "For big and small teams — on-site or remote",
-"text": "The patterns and practices in our playbook work for teams and companies of all sizes and all kinds of projects: whether
-it’s an established company aiming for a remote-friendly process, a founder setting up their own product team or
-individuals looking to make their team more effective.",
-"listType": "unordered",
-"list": ["Collaborating closely among all stakeholders", "Iterating in small, functional increments", "Validating assumptions early and often",
-"Supporting remote teams through transparency", "Delivering products with sustainable foundations"]
-} %}
+{%
+  set content = {
+  "title": "Our playbook",
+  "subtitle": "For big and small teams — on-site or remote",
+  "text": "The patterns and practices in our playbook work for teams and companies of all sizes and all kinds of projects: whether
+  it’s an established company aiming for a remote-friendly process, a founder setting up their own product team or
+  individuals looking to make their team more effective.",
+  "listType": "unordered",
+  "list": ["Collaborating closely among all stakeholders", "Iterating in small, functional increments", "Validating assumptions early and often",
+  "Supporting remote teams through transparency", "Delivering products with sustainable foundations"]
+  }
+%}
 {{ textWithList(content) }}
-
-{% set 'list_1' = {
+{%
+  set 'list_1' = {
   "eyebrow": "Organization of this book",
   "title": "Digital product projects",
   "text": "Iterating in small increments and validating assumptions at every step of the process allows addressing business needs
-    with digital products effectively."
-} %}
-
-{% set 'list_2' = {
+  with digital products effectively."
+  }
+%}
+{%
+  set 'list_2' = {
   "title": "Development Process",
   "text": "Organizing and preparing work based on the input of all project shareholders maximizes a team's effectiveness and output
   quality.",
   "linkUrl": "https://github.com/mainmatter/playbook/releases/download/1.2/Mainmatter-Playbook.pdf",
   "linkLabel": "Download the playbook"
-} %}
-
+  }
+%}
 {% set elements = [list_1, list_2] %}
 {{ strategyList('playbook', list=elements) }}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
   "linkUrl": "/contact",
   "linkText": "Get in touch"
-} %}
+  }
+%}
 {{ ctaBanner('aqua', 'full', content) }}

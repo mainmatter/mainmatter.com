@@ -2,41 +2,53 @@
   <div class="mobile-menu__inner" data-modal-mobile-content>
     <ul class="mobile-menu__list">
       <li class="mobile-menu__item">
-        <span class="mobile-menu__link h4">
-          {% include 'svg/arrow.njk' %}
-          Services
-        </span>
+        <span class="mobile-menu__link h4"> {% include 'svg/arrow.njk' %} Services </span>
         <ul class="mobile-menu__list mobile-menu__list--submenu">
           <li class="mobile-menu__item">
-            <a class="mobile-menu__link h4" {% if '/services/team-reinforcement/'==page.url %} aria-current="page" {%
-              endif %} href="/services/team-reinforcement/">
-              {% include 'svg/arrow.njk' %}
-              Team reinforcement
+            <a
+              class="mobile-menu__link h4"
+              {% if '/services/team-reinforcement/'==page.url %}
+                aria-current="page"
+              {% endif %}
+              href="/services/team-reinforcement/"
+            >
+              {% include 'svg/arrow.njk' %} Team reinforcement
             </a>
           </li>
           <li class="mobile-menu__item">
-            <a class="mobile-menu__link h4" {% if '/services/launch-your-idea/'== page.url %} aria-current="page" {% endif %} href="/services/launch-your-idea/">
-              {% include 'svg/arrow.njk' %}
-              Launch your idea
+            <a
+              class="mobile-menu__link h4"
+              {% if '/services/launch-your-idea/'== page.url %}aria-current="page"{% endif %}
+              href="/services/launch-your-idea/"
+            >
+              {% include 'svg/arrow.njk' %} Launch your idea
             </a>
           </li>
           <li class="mobile-menu__item">
-            <a class="mobile-menu__link h4" {% if '/services/tech-modernization/'== page.url %} aria-current="page" {% endif %} href="/services/tech-modernization/">
-              {% include 'svg/arrow.njk' %}
-              Tech Modernization
+            <a
+              class="mobile-menu__link h4"
+              {% if '/services/tech-modernization/'== page.url %}aria-current="page"{% endif %}
+              href="/services/tech-modernization/"
+            >
+              {% include 'svg/arrow.njk' %} Tech Modernization
             </a>
           </li>
           <li class="mobile-menu__item">
-            <a class="mobile-menu__link h4" {% if '/services/strategic-advice/'== page.url %} aria-current="page" {% endif %} href="/services/strategic-advice/">
-              {% include 'svg/arrow.njk' %}
-              Strategic Advice
+            <a
+              class="mobile-menu__link h4"
+              {% if '/services/strategic-advice/'== page.url %}aria-current="page"{% endif %}
+              href="/services/strategic-advice/"
+            >
+              {% include 'svg/arrow.njk' %} Strategic Advice
             </a>
           </li>
           <li class="mobile-menu__item">
-            <a class="mobile-menu__link h4" {% if '/services/workshops/'==page.url %} aria-current="page" {% endif %}
-              href="/services/workshops/">
-              {% include 'svg/arrow.njk' %}
-              Workshops
+            <a
+              class="mobile-menu__link h4"
+              {% if '/services/workshops/'==page.url %}aria-current="page"{% endif %}
+              href="/services/workshops/"
+            >
+              {% include 'svg/arrow.njk' %} Workshops
             </a>
           </li>
         </ul>
@@ -73,4 +85,3 @@
     </ul>
   </div>
 </div>
-

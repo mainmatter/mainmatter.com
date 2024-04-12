@@ -9,8 +9,10 @@ nextLabel: string for Next button label only on first page
 {%- macro navPagination(previous, next, nextLabel) -%}
   {% if previous or next %}
 
-    {% if nextLabel %}{% set next_label = nextLabel %}
-    {% else %}{% set next_label = 'Next' %}
+    {% if nextLabel %}
+      {% set next_label = nextLabel %}
+    {% else %}
+      {% set next_label = 'Next' %}
     {% endif %}
 
     <nav class="pagination" aria-label="Pagination">

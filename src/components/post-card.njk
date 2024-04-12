@@ -21,19 +21,21 @@ post: A post object
       {% if post.data.authorHandle %}
         {% set author = post.data.authorHandle | findBySlug %}
         <div class="post-cards__author">
-
           <div class="post-cards__author-image-wrapper">
             {% set imageUrl = '/assets/images/authors/' + author.data.page.fileSlug + '.jpg' %}
-            {% image imageUrl,
-          '',
-          '2.5rem',
-          'eager',
-          'post-cards__author-image',
-          [80] %}
+            {%
+              image imageUrl,
+              '',
+              '2.5rem',
+              'eager',
+              'post-cards__author-image',
+              [80]
+            %}
           </div>
           <div class="post-cards__author-name">
-            <div class="small">by
-            <a href="/blog/author/{{ author.data.page.fileSlug }}">{{ author.data.name }}</a>
+            <div class="small">
+              by
+              <a href="/blog/author/{{ author.data.page.fileSlug }}">{{ author.data.name }}</a>
             </div>
           </div>
         </div>
@@ -41,15 +43,12 @@ post: A post object
       <div class="post-cards__link-wrapper">
         <div class="small post-cards__link-label">
           {% for item in post.data.tags %}
-            {% if loop.index != 1 %} / {% endif %}
-            <a href="/blog/tag/{{ item | slug }}/">
-              {{ item }}
-            </a>
+            {% if loop.index != 1 %}/{% endif %}
+            <a href="/blog/tag/{{ item | slug }}/"> {{ item }} </a>
           {% endfor %}
         </div>
         <span class="post-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
       </div>
     </div>
-
   </div>
 {%- endmacro -%}

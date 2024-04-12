@@ -1,7 +1,9 @@
 {% from "secondary-feature.njk" import secondaryFeature %}
-{% set 'content' = {
+{%
+  set 'content' = {
   "image": "/assets/images/ember/ember-event-logos.png",
   "alt": "Ember.js logo",
   "loading": "lazy"
-} %}
+  }
+%}
 {{ secondaryFeature(content) }}

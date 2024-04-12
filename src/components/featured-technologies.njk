@@ -11,15 +11,15 @@ list: An array where each item is the slug for the case study.
     <div class="container container--lg">
       <h2>Technologies</h2>
       <p class="body">
-        Our skillset is based on a core set of technologies that cover architecture, backend and frontend development with:
+        Our skillset is based on a core set of technologies that cover architecture, backend and
+        frontend development with:
       </p>
     </div>
     <div class="container container--xl">
       <ul class="featured-technologies__list">
-        {% for technologyHandle in technologies -%}
+        {%- for technologyHandle in technologies -%}
 
           {{ caseStudyCard(technologyHandle) }}
-
         {% endfor %}
       </ul>
     </div>

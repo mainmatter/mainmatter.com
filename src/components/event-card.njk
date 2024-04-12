@@ -9,7 +9,10 @@ event: A event object
 {% from "cta-link.njk" import ctaLink %}
 {% from "btn-primary.njk" import btnPrimary %}
 {%- macro eventCard(event) -%}
-  <li class="event-card event-card--{{ event.data.color }}" data-background-color="{{ event.data.color }}">
+  <li
+    class="event-card event-card--{{ event.data.color }}"
+    data-background-color="{{ event.data.color }}"
+  >
     <div class="event-card__content-wrapper">
       <div class="event-card__meta">
         <span class="event-card__meta-text">{{ event.date | monthDayYear }}</span>
@@ -17,19 +20,16 @@ event: A event object
           <span class="event-card__meta-text">- {{ event.data.location }}</span>
         {% endif %}
       </div>
-      <h3 class="event-card__title">
-        {{ event.data.title }}
-      </h3>
-      <div class="event-card__description">
-        {{ event.templateContent | safe }}
-      </div>
+      <h3 class="event-card__title">{{ event.data.title }}</h3>
+      <div class="event-card__description">{{ event.templateContent | safe }}</div>
 
-      {% set link = {
+      {%
+        set link = {
         "label": 'Visit Website',
         "url": event.data.url
-      }
- %}
-      {{ btnPrimary( link, 'white', 'mt-2' )}}
+        }
+      %}
+      {{ btnPrimary( link, 'white', 'mt-2' ) }}
     </div>
   </li>
 {%- endmacro -%}

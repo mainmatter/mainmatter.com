@@ -19,15 +19,16 @@ og:
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from 'case-card.njk' import caseCard %}
-
-{% set 'content' = {
+{%
+  set 'content' = {
   "eyebrow": "Our Expertise: Ruby and Ruby on Rails",
   "title": "We're veteran Ruby and Ruby on Rails experts",
   "text": "The Mainmatter team has been an active part of the Ruby and Rails communities since the early days – from the first 'whoops' to the latest release.",
   "image": "/assets/images/hero/ruby.jpg",
   "alt": "A couple of diamonds",
   "loading": "eager"
-} %}
+  }
+%}
 {{ colorHero('purple', content) }}
 
 <section class="my-10 container container--lg">
@@ -35,8 +36,17 @@ og:
     <div class="mb-4">
       <h6 class="mb-015">Ruby, Rails & Mainmatter</h6>
       <h3 class="mb-2">Decades of experience</h3>
-      <p>Rails famously scales from Hello World to IPO and we've partnered with many companies at all stages on that scaling journey over the past decades. Whatever challenges might lie along the way, we've seen and supported countless teams to overcome them.</p>
-      <p>We also deeply understand the technical foundations and are an active member of the open source ecosystem – contributing to open source, sharing our expertise in writing as well as speaking and organizing international events. We're not just mere users of technology – our ambition is to contribute to shaping them.</p>
+      <p>
+        Rails famously scales from Hello World to IPO and we've partnered with many companies at all
+        stages on that scaling journey over the past decades. Whatever challenges might lie along
+        the way, we've seen and supported countless teams to overcome them.
+      </p>
+      <p>
+        We also deeply understand the technical foundations and are an active member of the open
+        source ecosystem – contributing to open source, sharing our expertise in writing as well as
+        speaking and organizing international events. We're not just mere users of technology – our
+        ambition is to contribute to shaping them.
+      </p>
     </div>
   </div>
 </section>
@@ -62,13 +72,15 @@ og:
 {{ logoList(logoCompanies, title, "h4", "h5") }}
 
 <section class="mb-10">
-  {% set imageData = {
+  {%
+    set imageData = {
     "imgPath": "/assets/images/photos/ruby.jpeg",
     "alt": "Assemble your team!",
     "sizes": "100vw",
     "loading": "lazy",
     "sizesArray": [760, 1440, 1920]
-  } %}
+    }
+  %}
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
 
@@ -77,40 +89,55 @@ og:
     <div class="mb-10">
       <h3 class="mb-2">Team reinforcement</h3>
       <p class="body">
-       Hiring senior Ruby talent can be a challenge. We help getting through bottlenecks – our experts merge with your in-house engineering teams to ensure the timely delivery of mission-critical projects. We’re more than hired hands – we'll assess and challenge the status quo, identify problems in code and architecture and support your team overcoming challenges, e.g. around maintainability or scalability.
+        Hiring senior Ruby talent can be a challenge. We help getting through bottlenecks – our
+        experts merge with your in-house engineering teams to ensure the timely delivery of
+        mission-critical projects. We’re more than hired hands – we'll assess and challenge the
+        status quo, identify problems in code and architecture and support your team overcoming
+        challenges, e.g. around maintainability or scalability.
       </p>
-      {% set link = {
+      {%
+        set link = {
         "label": 'Work with us!',
         "url": '/contact/'
-      }
- %}
-      {{ btnSecondary( link, 'mt-2 plausible-event-name=Ruby+Contact' )}}
+        }
+      %}
+      {{ btnSecondary( link, 'mt-2 plausible-event-name=Ruby+Contact' ) }}
     </div>
     <div class="mb-10">
       <h3 class="mb-2">Tech Stack Modernization</h3>
       <p class="body">
-        Updating your  codebase shouldn’t stop your development in its tracks. We help you upgrade legacy code and leave technical debt behind – all while your team stays focussed on the roadmap. Our experts can take on the whole upgrade from the reviewing, planning and implementation – at a cost advantage over a complete rewrite later down the line. And we only call it a job well done when we leave your team with the know-how to keep up with future versions.
+        Updating your codebase shouldn’t stop your development in its tracks. We help you upgrade
+        legacy code and leave technical debt behind – all while your team stays focussed on the
+        roadmap. Our experts can take on the whole upgrade from the reviewing, planning and
+        implementation – at a cost advantage over a complete rewrite later down the line. And we
+        only call it a job well done when we leave your team with the know-how to keep up with
+        future versions.
       </p>
-      {% set link = {
+      {%
+        set link = {
         "label": 'Work with us!',
         "url": '/contact/'
-      }
- %}
-      {{ btnSecondary( link, 'mt-2 plausible-event-name=Ruby+Contact' )}}
+        }
+      %}
+      {{ btnSecondary( link, 'mt-2 plausible-event-name=Ruby+Contact' ) }}
     </div>
     <div class="mb-10">
       <h3 class="mb-2">Custom Development</h3>
       <p class="body">
-        We design and develop complete web apps with Ruby on Rails so your team can focus on other initiatives. We are experts in building large and complex web apps and have proven our capabilities in many successful projects with international clients. Our team delivers high quality codebases as well as the tooling and infrastructure needed for sustainable maintenance.
+        We design and develop complete web apps with Ruby on Rails so your team can focus on other
+        initiatives. We are experts in building large and complex web apps and have proven our
+        capabilities in many successful projects with international clients. Our team delivers high
+        quality codebases as well as the tooling and infrastructure needed for sustainable
+        maintenance.
       </p>
-      {% set link = {
+      {%
+        set link = {
         "label": 'Work with us!',
         "url": '/contact/'
-      }
- %}
-      {{ btnSecondary( link, 'mt-2 plausible-event-name=Ruby+Contact' )}}
+        }
+      %}
+      {{ btnSecondary( link, 'mt-2 plausible-event-name=Ruby+Contact' ) }}
     </div>
-
   </div>
 </section>
 
@@ -136,10 +163,12 @@ og:
   </div>
 </section>
 
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
   "linkUrl": "/contact",
   "linkText": "Get in touch"
-} %}
+  }
+%}
 {{ ctaBanner('purple', 'full', content) }}
