@@ -194,7 +194,8 @@
         "opral/monorepo",
         "thefrontside/effection",
         "pichfl/auto-reveal",
-        "embroider-build/create-release-plan-setup"
+        "embroider-build/create-release-plan-setup",
+        "shikijs/shiki-magic-move"
       ]
     },
     {
