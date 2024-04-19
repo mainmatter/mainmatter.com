@@ -1,6 +1,10 @@
 .post {
   --color-tag: var(--color-blue);
   margin: 3.25rem auto 6.25rem;
+
+  a {
+    color: var(--color-purple);
+  }
 }
 
 
