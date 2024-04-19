@@ -1,0 +1,97 @@
+---
+layout: "base"
+title: Strategic advice | Our Services
+description: "Whether you’re building a product or a team from the ground up or scaling up, we can provide a valuable and experienced outside perspective – from assessments to strategic roadmaps and support during execution."
+og:
+  image: "/assets/images/services/strategic-advice-og-image.jpg"
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "strategy-list.njk" import strategyList %}
+{% from "featured-case-studies.njk" import featuredCaseStudies %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "featured-services.njk" import featuredServices %}
+{% from "quote.njk" import quote %}
+{%
+  set 'content' = {
+  "title": "Build a rock-solid strategy with reliable expertise at your side ",
+  "text": "Whether you’re building a product or a team from the ground up or scaling up, we can provide a valuable and experienced outside perspective. Our assessments can help you understand the status quo and identify bottlenecks. We’ll work with you to set a strategic roadmap for product engineering teams. At Mainmatter, we know how successful, international, modern teams operate and can work with you to get you there.",
+  "eyebrow": "Assessments, transformation and scaling",
+  "image": "/assets/images/hero/strategic-advice.jpg",
+  "alt": "Circular running track for sprints",
+  "loading": "eager"
+  }
+%}
+{{ colorHero('purple', content) }}
+{%
+  set 'list_1' = {
+  "title": "Assess the status quo via a thorough analysis of code, architecture, infrastructure, and processes, as well as interviews with stakeholders."
+  }
+%}
+{%
+  set 'list_2' = {
+  "title": "Prepare a roadmap for transforming the product development organization."
+  }
+%}
+{%
+  set 'list_3' = {
+  "title": "Guide your team through the transformation phase."
+  }
+%}
+{% set elements = [list_1, list_2, list_3] %}
+{{ strategyList('strategic-advice', 'We’ll work with you to:', elements) }}
+{%
+  set 'content' = {
+  "title": "Mentoring & Training",
+  "text": "At Mainmatter, we promise sustainable change. Our methods include mentoring, pair-programming, and reviews so every team we work with is more knowledgeable than when we started.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
+  }
+%}
+{{ ctaBanner('purple', 'default', content) }}
+{% set clients = ['rail-europe'] %}
+{{ featuredCaseStudies(clients, 'Clients') }}
+
+<div class="container container--lg quote-section">
+  {%
+    set 'content' = {
+    "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
+    "source": "Jürgen Witte, CPO @ Rail Europe",
+    "image": "/assets/images/photos/juergen-witte.png",
+    "alt": "Jürgen Witte",
+    "loading": "lazy"
+    }
+  %}
+  {{ quote(content) }}
+</div>
+
+{%
+  set 'content' = {
+  "subtitle": "Discover our other services"
+  }
+%}
+{{ featuredServices(services['team-reinforcement'], content) }}
+
+<section class="mt-10">
+  {%
+    set imageData = {
+    "imgPath": "/assets/images/services/strategic-advice.jpg",
+    "alt": "Colorful statues",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+    }
+  %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
+{%
+  set 'content' = {
+  "title": "Grow your business with us",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
+  }
+%}
+{{ ctaBanner('aqua', 'full', content) }}

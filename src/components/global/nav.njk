@@ -1,11 +1,8 @@
 {% from "social-list.njk" import socialList %}
+{% from "btn-primary.njk" import btnPrimary %}
 {% set navPages = collections.all | eleventyNavigation %}
 
-{%
-  if page.url == '/services/workshops/' or page.url == '/services/digital-products-and-design/' or page.url ==
-  '/services/team-augmentation-and-training/' or page.url == '/work/' or page.url == '/playbook/' or page.url ==
-  '/events/'
-%}
+{% if page.url == '/services/workshops/rust/' or page.url == '/playbook/' %}
   {% set ctaColor = 'purple' %}
 {% else %}
   {% set ctaColor = 'aqua' %}
@@ -31,10 +28,10 @@
         <details class="nav-submenu" data-has-submenu>
           <summary class="nav-submenu__toggle nav__link" data-menu-toggle>
             <span
-              class="nav__link-text {% if page.url and '/services/' in page.url %}nav__link-text--active{% endif %}"
+              class="nav__link-text{% if page.url and '/services/' in page.url %}nav__link-text--active{% endif %}"
               >Services</span
             >
-            {% include 'svg/arrow.njk' %}
+            <span class="nav__link-arrow">{% include 'svg/arrow.njk' %}</span>
           </summary>
           <div
             class="nav-submenu__menu"
@@ -47,45 +44,56 @@
                 {% include 'svg/close.njk' %}
                 <span class="screenreader">Close Services submenu</span>
               </button>
-              <ul class="nav-submenu__list" role="list">
-                <li class="nav-submenu__item">
-                  <a
-                    class="nav-submenu__link"
-                    href="/services/team-augmentation-and-training/"
-                    {% if '/services/team-augmentation-and-training/'==page.url %}
-                      aria-current="page"
-                    {% endif %}
-                  >
-                    {% include 'svg/arrow.njk' %}
-                    <span class="nav-submenu__link-text">Team Augmentation & Training</span>
+              <div class="nav-submenu__list">
+                <li class="nav-submenu__list-item mb-2">
+                  <a href="/services/team-reinforcement/" class="nav-submenu__link">
+                    <div class="nav-submenu__link-wrap">
+                      {% include 'svg/arrow.njk' %}
+                      <h4 class="nav-submenu__link-text">Team reinforcement</h4>
+                    </div>
+                    <p class="nav-submenu__link-description">
+                      Accelerate delivery and overcome challenges
+                    </p>
                   </a>
                 </li>
-                <li class="nav-submenu__item">
-                  <a
-                    class="nav-submenu__link"
-                    href="/services/digital-products-and-design/"
-                    {% if '/services/digital-products-and-design/'==page.url %}
-                      aria-current="page"
-                    {% endif %}
-                  >
-                    {% include 'svg/arrow.njk' %}
-                    <span class="nav-submenu__link-text">Digital Products & Design</span>
+                <li class="nav-submenu__list-item mb-2">
+                  <a href="/services/launch-your-idea/" class="nav-submenu__link">
+                    <div class="nav-submenu__link-wrap">
+                      {% include 'svg/arrow.njk' %}
+                      <h4 class="nav-submenu__link-text">Launch your idea</h4>
+                    </div>
+                    <p class="nav-submenu__link-description">From Concept to MVP</p>
                   </a>
                 </li>
-                <li class="nav-submenu__item">
-                  <a
-                    class="nav-submenu__link"
-                    href="/services/workshops/"
-                    {% if '/services/workshops/'==page.url %}
-                      aria-current="page"
-                    {% endif %}
-                  >
-                    {% include 'svg/arrow.njk' %}
-                    <span class="nav-submenu__link-text">Workshops</span>
+                <li class="nav-submenu__list-item mb-2">
+                  <a href="/services/tech-modernization/" class="nav-submenu__link">
+                    <div class="nav-submenu__link-wrap">
+                      {% include 'svg/arrow.njk' %}
+                      <h4 class="nav-submenu__link-text">Modernize your tech stack</h4>
+                    </div>
+                    <p class="nav-submenu__link-description">Upgrades instead of rewrites</p>
                   </a>
                 </li>
-              </ul>
-              <div class="no-js-hidden">{% include 'global/nav-aside.njk' %}</div>
+                <li class="nav-submenu__list-item mb-2">
+                  <a href="/services/strategic-advice/" class="nav-submenu__link">
+                    <div class="nav-submenu__link-wrap">
+                      {% include 'svg/arrow.njk' %}
+                      <h4 class="nav-submenu__link-text">Get strategic advice</h4>
+                    </div>
+                    <p class="nav-submenu__link-description">
+                      Assessments, transformation and scaling
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-submenu__list-item">
+                  <a href="/services/workshops/" class="nav-submenu__link">
+                    <div class="nav-submenu__link-wrap">
+                      {% include 'svg/arrow.njk' %}
+                      <h4 class="nav-submenu__link-text">Tailored Workshops</h4>
+                    </div>
+                  </a>
+                </li>
+              </div>
             </div>
           </div>
         </details>
@@ -93,9 +101,13 @@
 
       {%- for entry in navPages -%}
         <li class="nav__item" {% if entry.children.length > 0 %}data-has-modal{% endif %}>
-          {% if entry.url == '/work/' %}{% set parentChildCompare = '/cases/' %}{% else %}{% set parentChildCompare = entry.url %}{% endif %}
+          {% if entry.url == '/work/' %}
+            {% set parentChildCompare = '/cases/' %}
+          {% else %}
+            {% set parentChildCompare = entry.url %}
+          {% endif %}
           <a
-            class="nav__link nav__link-text {% if entry.url == page.url or (page.url and parentChildCompare in page.url) %}nav__link-text--active{% endif %}"
+            class="nav__link nav__link-text{% if entry.url == page.url or (page.url and parentChildCompare in page.url) %}nav__link-text--active{% endif %}"
             {% if entry.url == page.url %}aria-current="page"{% endif %}
             href="{{ entry.url | url }}"
           >
@@ -104,8 +116,15 @@
         </li>
       {%- endfor -%}
     </ul>
+
     <div class="nav__aside">
-      <a class="nav__cta nav__cta--{{ ctaColor }} text--sm" href="/contact/"> Contact us </a>
+      {%
+        set link = {
+        "label": "Contact us",
+        "url": "/contact/"
+        }
+      %}
+      {{ btnPrimary( link, ctaColor, 'nav__cta' ) }}
       <details class="nav__mobile-menu-wrapper" data-has-submenu>
         <summary class="nav__menu-toggle" data-menu-toggle data-menu-mobile-close-toggle>
           {% include 'svg/menu.njk' %}

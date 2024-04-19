@@ -18,31 +18,41 @@ eleventyNavigation:
   order: 50
 ---
 
-{% from "color-hero.njk" import colorHero %}
-{% from "featured-post.njk" import featuredPost %}
 {% from "post-card.njk" import postCard %}
 {% from "nav-pagination.njk" import navPagination %}
-
-{{ featuredPost(collections.posts[0]) }}
-<div id="posts" class="container container--xl">
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "color-hero.njk" import colorHero %}
+{%
+  set 'content' = {
+  "eyebrow": "Blog",
+  "title": "Engineering, Design & Product Blog",
+  "text": "Frontend and JavaScript, Svelte and Ember, Rust and WASM, Elixir and Phoenix, Product and Design",
+  "image": "/assets/images/hero/blog.jpg",
+  "alt": "Lots of books in a shelf wall",
+  "loading": "eager"
+  }
+%}
+{{ colorHero('purple', content) }}
+<div id="posts" class="container container--xl mb-10">
   {% include 'global/tag-filter.njk' %}
-  <ol class="post-cards">
+  <div class="post-cards__grid">
     {%- for post in pagination.items -%}
-      <li class="post-cards__item">{{ postCard(post) }}</li>
+      {{ postCard(post) }}
     {%- endfor -%}
-  </ol>
-  {% if pagination.pageNumber === 0 %}{% set nextLabel = 'Explore more articles' %}{% else %}{% set nextLabel = 'Next' %}{% endif %}
+  </div>
+  {% if pagination.pageNumber === 0 %}
+    {% set nextLabel = 'Explore more articles' %}
+  {% else %}
+    {% set nextLabel = 'Next' %}
+  {% endif %}
   {{ navPagination(pagination.href.previous, pagination.href.next, nextLabel) }}
 </div>
 {%
-  set content = {
-  "title": "Grow <em>your business</em> with us",
+  set 'content' = {
+  "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
-  "linkUrl": "/contact/",
-  "linkText": "Get in touch",
-  "image": "/assets/images/photos/grow-with-us-blog.jpg",
-  "alt": "Team member leaning against wall taking notes while talking to three other team members",
-  "loading": "lazy"
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
   }
 %}
-{{ colorHero('center', 'small', 'aqua', content, true) }}
+{{ ctaBanner('aqua', 'full', content) }}

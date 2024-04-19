@@ -2,16 +2,21 @@
   margin-bottom: 5rem;
 }
 
+.author-socials {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
 
 .workshop-authors__image-wrapper {
-  margin-right: 1.25rem;
-  width: 3.75rem;
-  height: 3.75rem;
+  margin-right: 3rem;
+  width: 6rem;
+  height: auto;
+  flex-shrink: 0;
 }
 
 .workshop-authors__image-wrapper img {
   width: 100%;
   height: 100%;
 }
-
 

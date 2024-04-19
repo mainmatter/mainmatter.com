@@ -119,23 +119,31 @@
 
 [[redirects]]
   from = "/services/digital-products"
-  to = "/services/digital-products-and-design/"
+  to = "/services/launch-your-idea/"
 
 [[redirects]]
   from = "/services/product-development"
-  to = "/services/digital-products-and-design/"
+  to = "/services/launch-your-idea/"
 
 [[redirects]]
   from = "/services/product-design"
-  to = "/services/digital-products-and-design/"
+  to = "/services/launch-your-idea/"
 
 [[redirects]]
   from = "/services/team-augmentation"
-  to = "/services/team-augmentation-and-training/"
+  to = "/services/team-reinforcement/"
 
 [[redirects]]
   from = "/services/training"
-  to = "/services/team-augmentation-and-training/"
+  to = "/services/workshops/"
+
+[[redirects]]
+  from = "/services/team-augmentation-and-training"
+  to = "/services/team-reinforcement/"
+
+[[redirects]]
+  from = "/services/digital-products-and-design"
+  to = "/services/launch-your-idea/"
 
 [[redirects]]
   from = "/why-simplabs"
@@ -144,6 +152,14 @@
 [[redirects]]
   from = "/rust"
   to = "/rust-consulting/"
+
+[[redirects]]
+  from = "/services/team-augmentation-and-training/"
+  to = "/services/team-reinforcement/"
+
+[[redirects]]
+  from = "/services/digital-products-and-design/"
+  to = "/services/launch-your-idea/"
 
 # redirect old "Web-based Services in Rust" landing page to regular workshop
 [[redirects]]

@@ -1,0 +1,6 @@
+{%- macro btnPrimary(link, color, class) -%}
+  <a class="btn-primary btn-primary--{{ color }} {{ class }}" href="{{ link.url }}">
+    <span>{{ link.label }}</span>
+    {% include 'svg/arrow.njk' %}
+  </a>
+{% endmacro %}

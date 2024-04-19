@@ -8,12 +8,23 @@ list: An array where each item is the slug for the case study.
   {%- for clientHandle in clients -%}
     {% set client = clientHandle | findBySlug %}
     {% if client %}
-      <li class="client-card">
+      <li id="{{ clientHandle }}" class="client-card">
         <div class="client-card__image">
           {% set imagePath %}/assets/images/logos/monochrome/{{ clientHandle }}.svg{% endset %}
           <img src="{{ imagePath }}" alt="{{ client.data.company }}" />
         </div>
-        <div class="client-card__text text--sm">{{ client.data.description | safe }}</div>
+        <div class="client-card__text">{{ client.data.description | safe }}</div>
+        <div class="client-card__tags">
+          <p class="caption mt-015">
+            {% for item in client.data.tags %}
+              {% if loop.index != 1 %}/{% endif %}
+              <a href="/services/{{ item | slug }}/" class="client-card__link">
+                {{ item }}
+                {% include 'svg/arrow.njk' %}</a
+              >
+            {% endfor %}
+          </p>
+        </div>
       </li>
     {% endif %}
   {% endfor %}

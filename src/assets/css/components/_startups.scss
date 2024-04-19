@@ -16,3 +16,21 @@
 .startups.post-cards {
   padding-bottom: 0;
 }
+.startups__featured_posts {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 48em) {
+  .startups__featured_posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    gap: 1.5rem;
+  }
+}

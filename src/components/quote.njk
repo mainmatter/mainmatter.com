@@ -12,19 +12,29 @@ Example usage:
 {% set source = "Andreas Knürr, Timify CEO" %}
 {{ quote('aqua', text, source, true) }}
 #}
-{%- macro quote(content) -%}
-  <section class="quote">
+{%- macro quote(content, alignment='default') -%}
+  <section class="quote {% if alignment=='right' %}align-right{% endif %}">
     {%- if content.image -%}
       <div class="quote__image-wrapper">
         {%- image content.image, content.alt, '(min-width: 48em) 50vw, 100vw', content.loading, 'quote__image', [400] -%}
       </div>
     {%- endif -%}
-    <span class="quote__icon">{% include 'svg/quote.njk' %}</span>
+    {% if alignment == 'default' %}
+      <span class="quote__icon">{% include 'svg/quote.njk' %}</span>
+    {% endif %}
     <figure class="quote__figure">
       <div class="quote__content">
+        {%- if content.logo -%}
+          <div class="quote__logo-wrapper mb-2">
+            {%- image content.logo, content.logoAlt, '(min-width: 48em) 50vw, 100vw', content.logoLoading, 'quote__logo', [400] -%}
+          </div>
+        {%- endif -%}
         <blockquote class="quote__text">{{ content.text | safe }}</blockquote>
         <figcaption class="quote__source">{{ content.source }}</figcaption>
       </div>
     </figure>
+    {% if alignment == 'right' %}
+      <span class="quote__icon">{% include 'svg/quote.njk' %}</span>
+    {% endif %}
   </section>
 {%- endmacro -%}

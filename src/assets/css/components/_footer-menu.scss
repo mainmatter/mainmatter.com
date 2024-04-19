@@ -1,5 +1,6 @@
 .footer-menu {
   display: flex;
+  align-items: baseline;
 }
 
 .footer-menu__heading {
@@ -30,7 +31,7 @@
   line-height: 1.4;
   text-decoration: none;
 
-  &:hover {
+  &:hover, &:focus {
     text-decoration: underline;
   }
 }

@@ -4,7 +4,14 @@
     {% set author = post.data.authorHandle | findBySlug %}
       <div class="author post-card__author">
         <div class="author__image-wrapper">
-          {% image '/assets/images/authors/' + author.data.page.fileSlug + '.jpg', '', '2.5rem', 'eager', 'author__image', [80] %}
+          {%
+            image '/assets/images/authors/' + author.data.page.fileSlug + '.jpg',
+            '',
+            '2.5rem',
+            'eager',
+            'author__image',
+            [80]
+          %}
         </div>
         <div class="author__text-wrapper">
           <div class="author__byline text--sm">

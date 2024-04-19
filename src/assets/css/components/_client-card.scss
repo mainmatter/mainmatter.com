@@ -8,14 +8,40 @@
   display: flex;
   align-items: center;
   height: 5rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 
   img {
     max-height: 100%;
     width: auto;
-    max-width: 10rem;
+    max-width: 15rem;
   }
 }
+
+.client-card__link {
+  display: flex;
+  align-items: center;
+}
+
+.client-card__link {
+  flex-shrink: 0;
+
+      .icon-arrow {
+        transform: translateX(0px) rotate(-90deg);
+        transition: transform 0.5s ease;
+        height: 1.5rem;
+        width: 1.5rem;
+        color: var(--color-purple);
+        margin-left: 0.75rem;
+      }
+
+      &:hover, &:focus {
+        .icon-arrow {
+          transform: translateX(0.5rem) rotate(-90deg);
+          transition: transform 0.5s ease;
+        }
+      }
+    }
+
 
 @media (min-width: 48em) {
   .client-card {

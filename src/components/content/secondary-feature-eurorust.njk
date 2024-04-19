@@ -1,12 +1,9 @@
 {% from "secondary-feature.njk" import secondaryFeature %}
 {%
   set content = {
-  "text": "Join us in Vienna for 2 days of celebrating the European Rust community",
-  "linkUrl": "https://eurorust.eu",
-  "linkText": "Get your ticket now!",
   "image": "/assets/images/rust/eurorust-teaser.png",
   "alt": "EuroRust logo",
   "loading": "lazy"
   }
 %}
-{{ secondaryFeature(content, "secondary-feature-eurorust") }}
+{{ secondaryFeature(content) }}

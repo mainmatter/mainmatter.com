@@ -1,6 +1,11 @@
 ---
 layout: case-study
 company: MVB
+problem:
+  MVB lacked the experience to feel confident that they were delivering on
+  quality under time pressure.
+solution: Our experts mentored the team to achieve both requirements.
+tags: Team reinforcement
 title: A platform for the german book industry | Work
 displayTitle: "A platform for the <em>german</em> book industry"
 description:
@@ -10,10 +15,9 @@ description:
   until its successful completion.</p>
 hero:
   color: purple
-  textPosition: "center"
   image: "/assets/images/work/mvb-background.jpg"
   imageAlt: "Servers in Rack"
-  tags: "architecture / development / process"
+  tags: "Team reinforcement"
 og:
   image: /assets/images/cases/cs-mvb-og-image.jpg
 ---
@@ -21,15 +25,15 @@ og:
 {% from "quote.njk" import quote %}
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">About MVB</h2>
+  <h3 class="case-study__heading">About MVB</h3>
   <div class="case-study__text">
-    <h3 class="h4">MVB (part of the Börsenverein Group) provides digital platforms and services for the marketing and distribution of books for publishing houses and bookstores in Germany and abroad. One of their core offerings is VLB-TIX which provides a database with detailed information on new titles of all 21.000 publishers in Germany.</h3><br>
+    <p class="h4">MVB (part of the Börsenverein Group) provides digital platforms and services for the marketing and distribution of books for publishing houses and bookstores in Germany and abroad. One of their core offerings is VLB-TIX which provides a database with detailed information on new titles of all 21.000 publishers in Germany.</p>
     <p>The platform improves the flow of information between publishing houses, booksellers, journalists, bloggers, and interested readers.</p>
   </div>
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">The Challenge</h2>
+  <h3 class="case-study__heading">The Challenge</h3>
   <div class="case-study__text">
     <p>Having previously relied on an external provider to develop VLB-TIX for them, MVB’s goal was in-house development and maintenance of the platform. At the same time, they needed to rewrite the existing product to align it with their internal tech stack and to integrate it better with other systems. Lacking the internal expertise and staff for a strategic project like this, MVB reached out to Mainmatter for help.</p>
   </div>
@@ -40,7 +44,7 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Mainmatter's Approach</h2>
+  <h3 class="case-study__heading">Mainmatter's Approach</h3>
   <div class="case-study__text">
     <p>Throughout the collaboration, we supported MVB mainly in four areas:</p>
     <h3 class="h4">Product Development & Mentoring</h3>
@@ -60,7 +64,7 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Outcome</h2>
+  <h3 class="case-study__heading">Outcome</h3>
   <div class="case-study__text">
     <p>We guided MVB to deliver a capable product while at the same time establishing the processes and infrastructure that will support its sustainable growth and evolution. By improving collaboration and raising the level of expertise among engineers, we enabled the team to successfully continue the project for the long term.</p>
   </div>

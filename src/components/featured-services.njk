@@ -1,19 +1,42 @@
 {%- macro featuredServices(services, content) -%}
   <section class="featured-services container container--lg">
-    <h2 class="featured-services__title h5">{{ content.title }}</h2>
     <div class="featured-services__list-wrapper">
-      <h3 class="h2">{{ content.subtitle }}</h3>
+      <div>
+        {% if content.title %}
+          <h2 class="featured-services__title h5 mb-2">{{ content.title }}</h2>
+        {% endif %}
+        <h3 class="h2">{{ content.subtitle }}</h3>
+      </div>
       <ul class="featured-services__list">
         {%- for service in services -%}
           <li class="featured-services__list-item">
-            <a href="{{ service.linkUrl }}" class="featured-services__link h4">
-              {% include 'svg/arrow.njk' %}
-              <span class="featured-services__link-text">{{ service.heading }}</span>
-            </a>
+            {% if service.linkUrl %}
+              <a href="{{ service.linkUrl }}" class="featured-services__link">
+                <div class="featured-services__link-wrap">
+                  {% include 'svg/arrow.njk' %}
+                  <span class="featured-services__link-text h4">{{ service.heading }}</span>
+                </div>
+                {% if service.text %}
+                  <p class="featured-services__link-description">{{ service.text }}</p>
+                {% endif %}
+              </a>
+            {% else %}
+              <div class="featured-services__link">
+                <div class="featured-services__link-wrap">
+                  {% include 'svg/arrow.njk' %}
+                  <span class="featured-services__link-text h4">{{ service.heading }}</span>
+                </div>
+                {% if service.text %}
+                  <p class="featured-services__link-description">{{ service.text }}</p>
+                {% endif %}
+              </div>
+            {% endif %}
           </li>
         {% endfor %}
       </ul>
     </div>
-    <p class="featured-services__text">{{ content.text }}</p>
+    {% if content.text %}
+      <p class="featured-services__text">{{ content.text }}</p>
+    {% endif %}
   </section>
 {% endmacro %}

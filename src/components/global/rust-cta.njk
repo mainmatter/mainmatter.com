@@ -1,15 +1,13 @@
-{% from "cta-link.njk" import ctaLink %}
-
 {#
 A call-to-action meant to be displayed at the beginning of a blog post.
 #}
-<div class="blog-cta" data-background-color="purple">
-  <h4 class="h4">Are you on a Rust journey?</h4>
-  <p>
-    We can help with
-    <a href="/rust-consulting/" class="plausible-event-name=Rust+Consulting"
-      >mentoring, training, team augmentation, and custom development</a
-    >.
-  </p>
-  {{ ctaLink("https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us", "Talk to us!", "contact-us plausible-event-name=Rust+Contact") }}
-</div>
+{% from "cta-banner.njk" import ctaBanner %}
+{%
+  set 'content' = {
+  "title": "Are you on a Rust journey?",
+  "text": "We can help with <a href='/rust-consulting/' class='plausible-event-name=Rust+Consulting'>mentoring, training, Team reinforcement, and custom development</a>.",
+  "linkUrl": "https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us",
+  "linkText": "Talk to us!"
+  }
+%}
+{{ ctaBanner('purple', 'default', content) }}

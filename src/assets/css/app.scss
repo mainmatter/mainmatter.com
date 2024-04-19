@@ -7,7 +7,7 @@
 @import "base/buttons-links";
 @import "base/typography";
 @import "base/forms";
-@import "base/code";
+@import "base/prism-theme";
 
 @import "components/nav";
 @import "components/nav-submenu";
@@ -24,7 +24,6 @@
 @import "components/contact-form";
 @import "components/rte";
 @import "components/author";
-@import "components/author-socials";
 @import "components/author-header";
 @import "components/featured-post";
 @import "components/post";
@@ -67,6 +66,14 @@
 @import "components/scroll-slides";
 @import "components/quotes-list";
 @import "components/blog-cta";
+@import "components/intro-text";
+@import "components/tech-cards";
+@import "components/case-cards";
+@import "components/strategy-list";
+@import "components/cta-banner";
+@import "components/open-source-list";
+@import "components/video";
+@import "components/embroider-sponsors";
 
 @import "animations/text-animation";
 

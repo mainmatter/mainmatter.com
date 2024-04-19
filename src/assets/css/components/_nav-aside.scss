@@ -65,7 +65,7 @@
   .nav-aside__cta {
     transition: background-color ease 0.3s;
 
-    &:hover {
+    &:hover, &:focus {
       background-color: var(--color-accent-hover);
     }
   }

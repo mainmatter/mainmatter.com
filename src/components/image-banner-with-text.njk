@@ -1,11 +1,12 @@
 {% from "cta-link.njk" import ctaLink %}
+{% from "btn-secondary.njk" import btnSecondary %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 
 {%- macro imageBannerWithText(content) -%}
-  <section class="image-banner-with-text">
+  <section class="image-banner-with-text my-5">
     {% if content.title %}
       <div class="container container--lg">
-        <h2 class="image-banner-with-text__heading h5">{{ content.title }}</h2>
+        <h2 class="image-banner-with-text__heading">{{ content.title }}</h2>
       </div>
     {% endif %}
 
@@ -31,7 +32,13 @@
           <div class="image-banner-with-text__text">{{ content.text | safe }}</div>
         {% endif %}
         {% if content.linkUrl and content.linkText %}
-          {{ ctaLink(content.linkUrl, content.linkText, 'image-banner-with-text__link') }}
+          {%
+            set link = {
+            "label": content.linkText,
+            "url": content.linkUrl
+            }
+          %}
+          {{ btnSecondary( link ) }}
         {% endif %}
       </div>
     </div>

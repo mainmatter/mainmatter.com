@@ -1,4 +1,3 @@
-{% from "cta-link.njk" import ctaLink %}
 {% macro textWithList(content, color) %}
   <section
     class="text-with-list {% if color %}text-with-list--{{ color }}{% endif %}"
@@ -28,9 +27,6 @@
             {% endfor %}
           </ol>
         {% endif %}
-      {% endif %}
-      {% if content.linkUrl and content.linkText %}
-        {{ ctaLink(content.linkUrl, content.linkText, 'text-with-list__cta') }}
       {% endif %}
     </div>
   </section>

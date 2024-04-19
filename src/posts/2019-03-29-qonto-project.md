@@ -15,7 +15,7 @@ tagline: |
 
 Qonto reached out to Mainmatter looking for a combination of added engineering
 power and outside expertise to help their in-house engineers improve, we call
-this [Team Augmentation](/services/team-augmentation-and-training/).
+this [Team reinforcement](/services/team-reinforcement/).
 
 This method of working sees our technology experts merge with our client's
 in-house engineering teams to share their know-how. Mainmatter engineers
@@ -23,7 +23,7 @@ spearhead and guide new development initiatives while establishing best
 practices and transferring knowledge to in-house engineers on the job via
 reviews and pairing sessions.
 
-Just as with previous Team Augmentation projects like
+Just as with previous Team reinforcement projects like
 [trainline](/cases/trainline/) this approach brings "double value for the
 client" says simlpabs CEO Marco Otte-Witte, "short term value is added by the
 client immediately gaining more engineering power, but additional long term
@@ -47,5 +47,5 @@ happened in the first week!
 
 Mainmatter CEO Marco Otte-Witte says "I'm really pleased that Mainmatter have
 been able to add so much value in such a short amount of time proving that our
-team augmentation method works. We're all looking forward to continuing the
+Team reinforcement method works. We're all looking forward to continuing the
 project and helping Qonto to succeed in their highly competitive market."

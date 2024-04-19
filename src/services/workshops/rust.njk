@@ -5,120 +5,116 @@ description: "We provide a number of workshops to enable teams to succeed with R
 ---
 
 {% from "color-hero.njk" import colorHero %}
+{% from "tech-cards.njk" import techCards %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "public-workshops.njk" import publicWorkshops %}
+{% from "btn-secondary.njk" import btnSecondary %}
+{% from "featured-services.njk" import featuredServices %}
+{% from "logo-list.njk" import logoList %}
+{% from "workshops-list.njk" import workshopsList %}
 {%
-  set content = {
+  set 'content' = {
   "title": "We teach teams like yours how to adopt and succeed with Rust",
-  "image": "/assets/images/photos/mainmatter-team-meeting.jpg",
-  "alt": "Man standing at whiteboard presenting to three team members sitting to either side of him",
-  "loading": "eager",
-  "titleTag": "h1"
+  "image": "/assets/images/hero/rust.jpg",
+  "alt": "Crabs climbing a rock on a beach",
+  "loading": "eager"
   }
 %}
-{{ colorHero('center', 'large', 'aqua', content) }}
+{{ colorHero('aqua', content) }}
+{%
+  set 'workshop_1' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Introduction to Rust for Web Developers",
+  "logo": "rust",
+  "link": "services/workshops/introduction-to-rust-for-web-developers/"
+  }
+%}
+{%
+  set 'workshop_2' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Build production-ready API services in Rust",
+  "logo": "rust",
+  "link": "services/workshops/build-production-ready-apis-in-rust/"
+  }
+%}
+{%
+  set 'workshop_3' = {
+  "eyebrow": "Bookable for teams",
+  "title": "You can't fix what you can't see: telemetry for Rust APIs",
+  "logo": "rust",
+  "link": "services/workshops/telemetry-for-rust-apis/"
+  }
+%}
+{%
+  set 'workshop_4' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Testing in Rust: an introduction",
+  "logo": "rust",
+  "link": "services/workshops/introduction-to-rust-for-web-developers/"
+  }
+%}
+{%
+  set 'workshop_5' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Testing in Rust: going beyond the basics",
+  "logo": "rust",
+  "link": "services/workshops/advanced-testing-in-rust/"
+  }
+%}
+{% set workshops = [workshop_1, workshop_2, workshop_3, workshop_4, workshop_5] %}
+{{
+  workshopsList('Our training offering', 'We specialize on Rust on the backend: API services, workers, data pipelines. That focus shapes our training offering.
+  We can walk alongside you on a journey from zero to hero,
+  starting from the basics of the language all the way to advanced testing techniques and comprehensive
+  telemetry instrumentation.', workshops)
+}}
+{%
+  set 'public_workshop_1' = {
+  "date": "March 26th, 2024",
+  "text": "Workshop at RustNation UK: Testing for Rust projects – going beyond the basics",
+  "link": "https://www.rustnationuk.com/tickets"
+  }
+%}
+{%
+  set 'public_workshop_2' = {
+  "date": "April 15th + 16th, 2024, 14:00-18:00 CEST",
+  "text": "Remote Workshop: Testing for Rust projects – going beyond the basics",
+  "link": "https://ti.to/mainmatter/rust-testing-april-2024"
+  }
+%}
+{%
+  set 'public_workshop_3' = {
+  "date": "May 28th + 29th, 2024, 14:00-18:00 CEST",
+  "text": "Remote Workshop: Telemetry for Rust APIs – you can't fix what you can't see",
+  "link": "https://ti.to/mainmatter/rust-telemetry-may-2024"
+  }
+%}
+{% set public_workshops = [public_workshop_1, public_workshop_2, public_workshop_3] %}
+{{ publicWorkshops(public_workshops) }}
 
-<section class="split-content">
+<section class="my-10">
   <div class="container container--lg">
-    <h2 class="h5">Rust & Mainmatter</h2>
-    <h3 class="split-content__subheading h2">Our training offering</h3>
-    <div class="split-content__content">
-      <div class="split-content__text">
-        <p>We specialize on Rust on the backend: API services, workers, data pipelines.</p>
-        <p>
-          That focus shapes our training offering.<br />
-          We can walk alongside you on a journey from zero to hero, starting from the basics of the
-          language all the way to advanced testing techniques and comprehensive telemetry
-          instrumentation.
-        </p>
-        <p>If you want to learn Rust, we offer different introductions to the language:</p>
-        <ul>
-          <li>
-            <a href="/services/workshops/a-taste-of-rust/">A taste of Rust</a>, a 1-day workshop to
-            explore the language, covering the core concepts.
-          </li>
-          <li>
-            <a href="/services/workshops/learn-rust-starting-from-scratch/"
-              >Learn Rust, starting from scratch</a
-            >, a thorough introduction to Rust over 4 days.
-          </li>
-          <li>
-            <a href="/services/workshops/introduction-to-rust-for-web-developers/"
-              >Introduction to Rust for Web Developers</a
-            >, a 3-day workshop tailored for web developers adopting Rust.
-          </li>
-        </ul>
-        <p>
-          If you're already familiar with Rust, check out our advanced workshops. They're designed
-          to level up your skills on specific topics:
-        </p>
-        <ul>
-          <li>
-            <a href="/services/workshops/build-production-ready-apis-in-rust/"
-              >Build production-ready API services in Rust</a
-            >
-          </li>
-          <li>
-            <a href="/services/workshops/telemetry-for-rust-apis/"
-              >You can't fix what you can't see: telemetry for Rust APIs</a
-            >
-          </li>
-          <li>
-            <a href="/services/workshops/advanced-testing-in-rust/"
-              >Testing in Rust: going beyond the basics</a
-            >
-          </li>
-        </ul>
-      </div>
+    <div class="mb-4">
+      <h3 class="mb-2">Our methodology</h3>
+      <p class="body">
+        All our workshops are hands-on. We believe that the best way to learn is by doing. Workshop
+        attendees spend most of their time writing code, working through exercises with automated
+        solution-checking. This structure allows our trainers to spend most of their time in 1:1
+        conversations with attendees, providing tailored feedback and guidance.
+      </p>
     </div>
-    <h3 class="split-content__subheading h2">Our methodology</h3>
-    <div class="split-content__content">
-      <div class="split-content__text">
-        <p>
-          All our workshops are hands-on. We believe that the best way to learn is by doing.
-          Workshop attendees spend most of their time writing code, working through exercises with
-          automated solution-checking.
-        </p>
-        <p>
-          This structure allows our trainers to spend most of their time in 1:1 conversations with
-          attendees, providing tailored feedback and guidance.
-        </p>
-      </div>
-    </div>
-    <h3 class="split-content__subheading h2">Logistics</h3>
-    <div class="split-content__content">
-      <div class="split-content__text">
-        <p>All our workshops can be held in-person or remotely.</p>
-        <p>
-          If you decide to organise a workshop at your company, we are happy to tailor the
-          curriculum to your needs. We can combine multiple workshops, pick and choose modules, as
-          well as develop new content if desired.<br />
-          <a href="https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us"
-            >Get in touch with us</a
-          >
-          to discuss further!
-        </p>
-        <p>
-          From time to time, we also organize public workshops. <br />
-          Public workshops are the ideal solution for independent developers and small teams: it's
-          enough to buy a ticket to join!
-        </p>
-        Check out our upcoming events:
-        <ul>
-          <li>
-            At <a href="https://www.rustnationuk.com/">RustNation UK</a> in London, on March 26th
-            2024—we'll be in charge of the Expert workshop.
-          </li>
-          <li>
-            <a href="https://ti.to/mainmatter/rust-testing-april-2024"
-              >Testing for Rust projects – going beyond the basics</a
-            >, remote, on April 15th-16th 2024.
-          </li>
-          <li>
-            <a href="https://ti.to/mainmatter/rust-telemetry-may-2024"
-              >Telemetry for Rust APIs – you can't fix what you can't see</a
-            >, remote, on May 28th-29th 2024.
-          </li>
-        </ul>
-      </div>
+    <div class="mb-4">
+      <h3 class="mb-2">Logistics</h3>
+      <p class="body">
+        All our workshops can be held in-person or remotely. If you decide to organise a workshop at
+        your company, we are happy to tailor the curriculum to your needs. We can combine multiple
+        workshops, pick and choose modules, as well as develop new content if desired.<br />
+        <a href="https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us"
+          >Get in touch with us</a
+        >
+        to discuss further!
+      </p>
     </div>
   </div>
 </section>
@@ -154,4 +150,120 @@ description: "We provide a number of workshops to enable teams to succeed with R
   </div>
 </section>
 
-{% include 'content/hero-grow-with-us.njk' %}
+{%
+  set logoCompanies = [
+  'Rust Foundation',
+  'arm',
+  'Huawei',
+  'Ferrocene',
+  'Sentry',
+  'Jetbrains',
+  'Aleph Alpha',
+  'Google',
+  'Realm'
+  ]
+%}
+{% set title = 'Our EuroRust partners are betting on Rust' %}
+{{ logoList(logoCompanies, title, "h4", "h5") }}
+
+<section class="mb-10">
+  {%
+    set imageData = {
+    "imgPath": "/assets/images/rust/eurorust.jpeg",
+    "alt": "Server room",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+    }
+  %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
+<section class="my-10 container container--lg">
+  <div class="">
+    <div class="mb-4">
+      <h5 class="mb-015">Rust & Mainmatter</h5>
+      <h3 class="mb-2">A unique skillset</h3>
+      <p>
+        We’re experts - our Rust team is led by Luca Palmieri, author of
+        <a href="http://zero2prod.com">"Zero to Production in Rust"</a>, and we have been part of
+        the Rust ecosystem for years, helping out the
+        <a href="https://crates.io">crates.io</a> project.
+      </p>
+      <p>
+        But we don't stop at Rust – we have developed big web apps and mentored teams on backend,
+        frontend, design, as well as process and developer infrastructure for years. We know what it
+        takes to connect everything together and deliver a delightful end-to-end experience.
+      </p>
+    </div>
+  </div>
+  <div class="split-content">
+    <a href="https://foundation.rust-lang.org/" class="split-content__link"></a>
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h4>Mainmatter is a Silver Member of the Rust Foundation</h4>
+        {%
+          set link = {
+          "label": 'Learn more',
+          "url": 'https://foundation.rust-lang.org/'
+          }
+        %}
+        {{ btnSecondary( link, 'mt-2' ) }}
+      </div>
+      <div class="split-content__feature">{% include 'content/secondary-feature-rust.njk' %}</div>
+    </div>
+  </div>
+</section>
+
+<section class="my-10 container container--lg">
+  <div class="">
+    <div class="mb-4">
+      <h5 class="mb-015">EuroRust</h5>
+      <h3 class="mb-2">We run EuroRust</h3>
+      <p>
+        In 2024, EuroRust will be back on October 10th and 11th in Vienna, Austria as well as
+        online. We'll have 2 days of talks with a main track as well as a side track for the first
+        time this year. Plus, there'll be workshops on the day before the main conference, room for
+        people to get together and hack on their favorite projects during the conference, as well as
+        an after party on Friday night.
+      </p>
+    </div>
+  </div>
+  <div class="split-content">
+    <a
+      href="https://www.youtube.com/playlist?list=PLh5-VpZ3SvUXLJ2xKnT1z12pTAUSgMAu7"
+      class="split-content__link"
+    ></a>
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h4>All the talks from the previous editions are available on YouTube</h4>
+        {%
+          set link = {
+          "label": 'Learn more',
+          "url": 'https://www.youtube.com/playlist?list=PLh5-VpZ3SvUXLJ2xKnT1z12pTAUSgMAu7'
+          }
+        %}
+        {{ btnSecondary( link, 'mt-2' ) }}
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-eurorust.njk' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{%
+  set 'content' = {
+  "subtitle": "Discover our other services"
+  }
+%}
+{{ featuredServices(services['rust-workshops'], content) }}
+{%
+  set 'content' = {
+  "title": "Grow your business with us",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
+  }
+%}
+{{ ctaBanner('purple', 'full', content) }}

@@ -2,124 +2,134 @@
 layout: "base"
 title: Workshops | Our Services
 description: "We teach teams like yours how to build sustainable products that work well today and keep working well tomorrow"
+og:
+  image: "/assets/images/services/workshops-og-image.jpg"
 ---
 
 {% from "color-hero.njk" import colorHero %}
-{% from "scroll-slides.njk" import scrollSlides %}
+{% from "strategy-list.njk" import strategyList %}
+{% from "tech-cards.njk" import techCards %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {%
-  set content = {
+  set 'content' = {
   "title": "We teach teams like yours how to build sustainable products that work well today and keep working well tomorrow",
-  "image": "/assets/images/photos/mainmatter-team-meeting.jpg",
-  "alt": "Man standing at whiteboard presenting to three team members sitting to either side of him",
-  "loading": "eager",
-  "titleTag": "h1"
+  "image": "/assets/images/hero/workshops.jpg",
+  "alt": "Paperbacks stacked together in a small space",
+  "loading": "eager"
   }
 %}
-{{ colorHero('center', 'large', 'aqua', content) }}
+{{ colorHero('purple', content) }}
 {%
-  set slide_1 = {
-  "color": "white",
+  set 'workshop_1' = {
+  "eyebrow": "Bookable for teams",
   "title": "Design system kickoff (interface inventory)",
-  "text": "Create an interface inventory of your digital product, and align with your team on how to prioritize refactoring using a
-  design systems methodology.",
-  "linkUrl": "/services/workshops/design-system-kickoff-interface-inventory/",
-  "linkText": "Learn more"
+  "logo": "sprint",
+  "link": "services/workshops/design-system-kickoff-interface-inventory/"
   }
 %}
 {%
-  set slide_2 = {
-  "color": "purple",
+  set 'workshop_2' = {
+  "eyebrow": "Bookable for teams",
   "title": "Digital product strategy workshop",
-  "text": "A clear product strategy is essential to get as much value as possible for your time and investment. In this workshop we
-  will collaborate to formulate clear product vision, establishing a blueprint for your digital product’s development
-  process. This workshop is a great kickoff for an MVP project.",
-  "linkUrl": "/services/workshops/digital-product-strategy/",
-  "linkText": "Learn more"
+  "logo": "strategy",
+  "link": "services/workshops/digital-product-strategy/"
   }
 %}
 {%
-  set slide_3 = {
-  "color": "black",
+  set 'workshop_3' = {
+  "eyebrow": "Bookable for teams",
   "title": "Effective Git",
-  "text": "Git is at the center of modern pull request-based development workflows.
-  Mastering it makes teams more productive and developers’ job more enjoyable.",
-  "linkUrl": "/services/workshops/effective-git/",
-  "linkText": "Learn more"
+  "logo": "git",
+  "link": "services/workshops/effective-git/"
   }
 %}
 {%
-  set slide_4 = {
-  "color": "white",
+  set 'workshop_4' = {
+  "eyebrow": "Bookable for teams",
   "title": "Svelte & SvelteKit",
-  "text": "Two or three days hands-on Svelte and SvelteKit workshop. We take participants through the entire process of building a real-world, progressively enhanced application.",
-  "linkUrl": "/services/workshops/svelte-and-sveltekit/",
-  "linkText": "Learn more"
+  "logo": "svelte",
+  "link": "services/workshops/svelte-and-sveltekit/"
   }
 %}
 {%
-  set slide_5 = {
-  "color": "purple",
+  set 'workshop_5' = {
+  "eyebrow": "Bookable for teams",
   "title": "Hands-on Ember.js",
-  "text": "Two or three days hands-on Ember.js workshop. We cover all relevant aspects of the framework from the CLI to routing and
-  components, ember-data and testing.",
-  "linkUrl": "/services/workshops/hands-on-ember/",
-  "linkText": "Learn more"
+  "logo": "ember",
+  "link": "services/workshops/hands-on-ember/"
   }
 %}
 {%
-  set slide_6 = {
-  "color": "black",
-  "title": "Learn Rust, starting from scratch",
-  "text": "Four days hands-on workshop to master Rust from scratch. It's a thorough introduction to the language, the standard library and Rust's tooling.",
-  "linkUrl": "/services/workshops/learn-rust-starting-from-scratch/",
-  "linkText": "Learn more"
-  }
-%}
-{%
-  set slide_7 = {
-  "color": "white",
+  set 'workshop_6' = {
+  "eyebrow": "Bookable for teams",
   "title": "Introduction to Rust for Web Developers",
-  "text": "Two or three days hands-on Rust workshop teaching all the main concepts by developing a simple web application.",
-  "linkUrl": "/services/workshops/introduction-to-rust-for-web-developers/",
-  "linkText": "Learn more"
+  "logo": "rust",
+  "link": "services/workshops/introduction-to-rust-for-web-developers/"
   }
 %}
 {%
-  set slide_8 = {
-  "color": "purple",
+  set 'workshop_7' = {
+  "eyebrow": "Bookable for teams",
   "title": "Build production-ready API services in Rust",
-  "text": "Rust allows creating web services that are fast, reliable, and cost-effective. However, the main challenge is knowing where to start. This workshop guides you through the process. At the end of the journey, you'll know enough to set up a production-ready HTTP API using the Axum framework.",
-  "linkUrl": "/services/workshops/build-production-ready-apis-in-rust/",
-  "linkText": "Learn more"
+  "logo": "rust",
+  "link": "services/workshops/build-production-ready-apis-in-rust/"
   }
 %}
 {%
-  set slide_9 = {
-  "color": "black",
+  set 'workshop_8' = {
+  "eyebrow": "Bookable for teams",
   "title": "You can't fix what you can't see: telemetry for Rust APIs",
-  "text": "Your Rust application has finally been deployed to production! Nice! But is it working? This workshop will introduce you to a comprehensive toolkit to detect, troubleshoot and resolve issues in your Rust APIs.",
-  "linkUrl": "/services/workshops/telemetry-for-rust-apis/",
-  "linkText": "Learn more"
+  "logo": "rust",
+  "link": "services/workshops/telemetry-for-rust-apis/"
   }
 %}
 {%
-  set slide_10 = {
-  "color": "white",
+  set 'workshop_9' = {
+  "eyebrow": "Bookable for teams",
   "title": "Testing in Rust: an introduction",
-  "text": "Rust's type system is great, but it's not enough on its own to ensure correctness: a solid testing strategy is a requirement for any serious Rust application. By the end of this workshop, you will be well equipped for the testing journey ahead of you!",
-  "linkUrl": "/services/workshops/an-introduction-to-testing-in-rust/",
-  "linkText": "Learn more"
+  "logo": "rust",
+  "link": "services/workshops/introduction-to-rust-for-web-developers/"
   }
 %}
 {%
-  set slide_11 = {
-  "color": "purple",
+  set 'workshop_10' = {
+  "eyebrow": "Bookable for teams",
   "title": "Testing in Rust: going beyond the basics",
-  "text": "No application is an island: you need to interact with third-party APIs, databases and who knows what else. Testing those interactions is tricky, to say the least! This workshop will focus on expanding your Rust testing toolkit, going beyond the basic techniques you're already familiar with. At the end of the session, you'll have a strategy to test most of the scenarios that are relevant for a complex Rust application.",
-  "linkUrl": "/services/workshops/advanced-testing-in-rust/",
-  "linkText": "Learn more"
+  "logo": "rust",
+  "link": "services/workshops/advanced-testing-in-rust/"
   }
 %}
-{% set slides = [slide_1, slide_2, slide_3, slide_4, slide_5, slide_6, slide_7, slide_8, slide_9, slide_10, slide_11] %}
-{{ scrollSlides('workshops', slides, page.url) }}
-{% include 'content/hero-grow-with-us.njk' %}
+{%
+  set workshops = [
+  workshop_1,
+  workshop_2,
+  workshop_3,
+  workshop_4,
+  workshop_5,
+  workshop_6,
+  workshop_7,
+  workshop_8,
+  workshop_9,
+  workshop_10
+  ]
+%}
+{{ techCards('workshops', 'Workshops Catalog', 'We offer a range of workshops bookable for teams that want to grow – on-site or remote. We\'re also happy to prepare custom workshops – <a href="/contact/">get in touch with us</a> to talk about what curriculum fits your team best!', workshops) }}
+{%
+  set 'content' = {
+  "title": "Not the right workshop for you?",
+  "text": "If you decide to organise a workshop at your company, we are happy to tailor the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as develop new content if desired.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
+  }
+%}
+{{ ctaBanner('aqua', 'default', content) }}
+{%
+  set 'content' = {
+  "title": "Grow your business with us",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
+  }
+%}
+{{ ctaBanner('purple', 'full', content) }}

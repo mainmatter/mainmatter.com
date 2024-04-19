@@ -15,14 +15,14 @@
   &--purple {
     background-color: var(--color-purple);
     color: var(--color-white);
-    --color-link-primary: var(--color-white);
+    --color-link-primary: var(--color-purple);
     --color-link-primary-hover: var(--color-aqua);
   }
 
   &--aqua {
     background-color: var(--color-aqua);
     color: var(--color-white);
-    --color-link-primary: var(--color-white);
+    --color-link-primary: var(--color-aqua);
     --color-link-primary-hover: var(--color-purple);
   }
 
@@ -31,22 +31,19 @@
   }
 }
 
-.event-card__description {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.7;
-}
 
 .event-card__content-wrapper {
-  padding: 2rem 1rem 2.5rem;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 
 .event-card__image {
   display: block;
   width: 100%;
-  aspect-ratio: 23 / 4;
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain;
+  margin-bottom: 2.5rem;
 }
 
 .event-card__title {
@@ -60,7 +57,7 @@
 @media (min-width: 64em) {
   .event-cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-bottom: 3.25rem;
   }
@@ -78,11 +75,7 @@
   }
 
   .event-card__content-wrapper {
-    padding: 2rem 12% 2.5rem;
+    padding: 5rem;
   }
 
-  .event-card__description {
-    font-weight: 700;
-    font-size: 0.875rem;
-  }
 }

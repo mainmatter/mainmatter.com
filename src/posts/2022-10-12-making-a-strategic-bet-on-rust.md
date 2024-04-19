@@ -112,7 +112,7 @@ years to come.
 We believe betting on Rust will benefit the teams we work with and enable a
 bright future for Mainmatter at the same time. We're looking forward to
 <strong>helping our clients adopt Rust for their web projects through
-[team augmentation and training](/services/team-augmentation-and-training/)</strong>
+[Team reinforcement](/services/team-reinforcement/)</strong>
 
 We've invested in Rust quite significantly already by
 

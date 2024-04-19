@@ -1,0 +1,36 @@
+{% from "btn-primary.njk" import btnPrimary %}
+{% from "cta-link.njk" import ctaLink %}
+{%- macro publicWorkshops(workshops) -%}
+  <section class="tech-cards my-10">
+    <div class="tech-cards__container container container--xl">
+      <h2 class="tech-cards__title">Attend a public workshop</h2>
+      <p class="tech-cards__intro mt-25 mb-5">
+        From time to time, we also organize public workshops. <br />
+        Public workshops are the ideal solution for independent developers and small teams: it's
+        enough to buy a ticket to join!
+      </p>
+      <div class="tech-cards__grid">
+        {% for workshop in workshops %}
+          <div class="tech-cards__grid-element">
+            <div class="tech-cards--hover"></div>
+            <a href="{{ workshop.link }}" class="tech-cards_link"></a>
+            <div class="workshop-date">
+              <p class="small">{{ workshop.date }}</p>
+            </div>
+            <div class="tech-cards__content">
+              {% if workshop.text %}
+                <h4 class="tech-cards__title mb-015">{{ workshop.text | safe }}</h4>
+              {% endif %}
+              {% if workshop.link %}
+                <div class="tech-cards__link-wrapper">
+                  <p class="caption tech-cards__link-label">Register here</p>
+                  <span class="tech-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{%- endmacro -%}

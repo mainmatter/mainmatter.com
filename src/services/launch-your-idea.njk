@@ -1,0 +1,154 @@
+---
+layout: "base"
+title: Launch your idea | Our Services
+description: "We’ll work with you to make the products you need to make your business better – from developing a rock-solid concept to providing customer-centric UI to building the whole MVP."
+og:
+  image: "/assets/images/services/launch-idea-og-image.jpg"
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "strategy-list.njk" import strategyList %}
+{% from "featured-case-studies.njk" import featuredCaseStudies %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "featured-services.njk" import featuredServices %}
+{% from "quote.njk" import quote %}
+{%
+  set 'content' = {
+  "title": "Full-service implementation of your idea into reality",
+  "text": "We’ll work with you to make the products you need to make your business better. From developing a rock-solid concept to providing customer-centric UI to building the whole MVP, Mainmatter has an experienced team of product builders. We’re a one-stop shop for founders, scaleups, and SMEs in making their digital products (better) – from strategy to design to implementation.",
+  "eyebrow": "From Concept to MVP",
+  "image": "/assets/images/hero/launch-your-idea.jpg",
+  "alt": "A dog sleeping in fairy lights",
+  "loading": "eager"
+  }
+%}
+{{ colorHero('purple', content) }}
+{%
+  set 'list_1' = {
+  "title": "Strategically define your goals and requirements that will shape the MVP in a collective workshop."
+  }
+%}
+{%
+  set 'list_2' = {
+  "title": "Kickoff the design to build an aligned visual foundation and enable the start of development."
+  }
+%}
+{%
+  set 'list_3' = {
+  "title": "Start engineering in parallel to the design deployment."
+  }
+%}
+{%
+  set 'list_4' = {
+  "title": "Launch."
+  }
+%}
+{%
+  set 'list_5' = {
+  "title": "Handover the project to your internal team."
+  }
+%}
+{% set elements = [list_1, list_2, list_3, list_4, list_5] %}
+{{ strategyList('launch-your-idea', 'We’ll work with you to:', elements) }}
+
+<section class="my-10">
+  {%
+    set imageData = {
+    "imgPath": "/assets/images/services/launch-your-idea.jpeg",
+    "alt": "Colorful lightbulbs",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+    }
+  %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
+<section class="my-10">
+  <div class="container container--lg">
+    <div class="mb-4">
+      <h3 class="mb-2">Create a strategic foundation</h3>
+      <p class="body">
+        Any product is only as good as the assumptions it's built on. We’ll work with you to develop
+        a product strategy based on validated product concepts. Strategic clarity based on market
+        research, validation, and product principles enables us to iterate on ideas that work. The
+        result is an MVP with a clear direction for follow-on improvements.
+      </p>
+    </div>
+    <div class="mb-4">
+      <h3 class="mb-2">Design an experience</h3>
+      <p class="body">
+        Our product design process focuses on creating not a product but an experience –
+        specifically experiences that users will love. Our approach starts with the stakeholders and
+        their expectations and translating that into a wireframe. We ideate across the entire user
+        journey to delight them with ease of use, smart design and visual appeal to create a better
+        solution.
+      </p>
+    </div>
+    <div class="mb-4">
+      <h3 class="mb-2">Collaborate for solid development</h3>
+      <p class="body">
+        Product development can pose a unique and complex engineering challenge – and that’s what we
+        do best. We build for long-term sustainability with full-stack development delivered
+        continuously in product increments that are intensively tested. The result is the quality
+        that we know only comes from close collaboration between designers and developers.
+      </p>
+    </div>
+  </div>
+</section>
+
+{%
+  set 'content' = {
+  "title": "Mentoring & Training",
+  "text": "At Mainmatter, we promise sustainable change. Our methods include mentoring, pair-programming, and reviews so every team we work with is more knowledgeable than when we started.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
+  }
+%}
+{{ ctaBanner('purple', 'default', content) }}
+
+<section class="my-10">
+  {%
+    set imageData = {
+    "imgPath": "/assets/images/services/launch-your-idea-cases.jpeg",
+    "alt": "Colorful clockwork",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+    }
+  %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
+{% set clients = ['experteer', 'poellath', 'ais', 'mvb'] %}
+{{ featuredCaseStudies(clients, 'Clients') }}
+
+<div class="container container--lg quote-section">
+  {%
+    set 'content' = {
+    "text": "As we did not have any design or frontend expertise in-house, we could not professionally build the user interface of our platform and bring the product to the market. We were looking for support and chose to work with Mainmatter, which turned out to be a great partner for us. The experienced team of Mainmatter helped us release an MVP and set the foundation for developing the application in the future.",
+    "source": "Milivoj Simeonovski, Chief Product Officer (Founding)",
+    "image": "/assets/images/photos/milivoj-simeonovski.png",
+    "alt": "Milivoj Simeonovski smiling at the camera wearing a red sweater",
+    "loading": "lazy"
+    }
+  %}
+  {{ quote(content) }}
+</div>
+
+{%
+  set 'content' = {
+  "subtitle": "Discover our other services"
+  }
+%}
+{{ featuredServices(services['launch-your-idea'], content) }}
+{%
+  set 'content' = {
+  "title": "Grow your business with us",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
+  }
+%}
+{{ ctaBanner('aqua', 'full', content) }}

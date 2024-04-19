@@ -1,0 +1,9 @@
+{% from "secondary-feature.njk" import secondaryFeature %}
+{%
+  set 'content' = {
+  "image": "/assets/images/teasers/youtube-logo.svg",
+  "alt": "YouTube logo",
+  "loading": "lazy"
+  }
+%}
+{{ secondaryFeature(content, "secondary-feature-rust") }}

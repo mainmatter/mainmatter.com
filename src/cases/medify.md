@@ -1,6 +1,7 @@
 ---
 layout: case-study
 company: Medify
+tags: Team reinforcement
 description:
   <p>Medify offers high-quality medical admissions help and was used by 2 in 3
   of 2020's UCAT applicants in the UK.</p><p>Mainmatter supported their team

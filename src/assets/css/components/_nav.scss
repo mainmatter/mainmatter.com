@@ -1,5 +1,6 @@
 .nav {
   position: absolute;
+  margin: 0 auto;
   width: 100%;
   z-index: 1;
   color: var(--color-white);
@@ -16,10 +17,11 @@
 }
 
 .nav__wrapper {
+  margin: 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  min-width: 90%;
   padding: 0;
   text-decoration: none;
   background-color: transparent;
@@ -30,6 +32,7 @@
 }
 
 .nav__main {
+  margin: 5%;
   display: flex;
   align-items: center;
 }
@@ -37,11 +40,13 @@
 .nav__brand {
   margin-right: 2rem;
   font-size: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .nav__logo {
   line-height: 0;
-  margin-left: 5%;
 }
 
 .nav__list {
@@ -52,15 +57,18 @@
 }
 
 .nav__item {
+  font-size: 1.5rem;
   display: inline-block;
   transition: color 0.3s ease;
 
-  &:hover {
-    color: var(--color-accent);
+  &:hover, &:focus  {
+    color: var(--color-aqua);
 
     .nav__link-text {
       text-decoration-line: underline;
-      text-decoration-color: rgba(var(--color-accent), 1);
+      text-decoration-thickness: 0.125rem;
+      text-underline-offset: 0.55rem;
+      text-decoration-color: rgba(var(--color-aqua), 1);
     }
   }
 }
@@ -69,7 +77,7 @@
   display: inline-block;
   padding: 1.25rem;
   line-height: 1;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 700;
   vertical-align: middle;
   text-decoration: none;
@@ -78,15 +86,16 @@
 
 .nav__link-text {
   text-decoration-color: rgba(var(--color-accent), 0);
-  text-underline-offset: 0.125rem;
-  text-decoration-thickness: 0.0625rem;
+  text-decoration-thickness: 0.125rem;
+      text-underline-offset: 0.55rem;
   transition: text-decoration-color 0.3s ease;
 
   &--active {
     text-decoration: underline;
+    text-decoration-thickness: 0.125rem;
+      text-underline-offset: 0.55rem;
     text-decoration-color: rgba(var(--color-accent), 1);
-    text-decoration-thickness: 0.0625rem;
-    text-underline-offset: 0.125rem;
+
   }
 }
 
@@ -147,9 +156,13 @@
 }
 
 @media (min-width: 62em) {
+
+  .nav {
+    width: 100%;
+  }
   .nav__wrapper {
-    width: 90%;
-    padding: 1.75rem 0;
+    margin: 2.5% 5%;
+    min-width: 90%;
   }
 
   .nav__logo {
@@ -157,24 +170,12 @@
   }
 
   .nav__list {
-    display: block;
+    display: flex;
+    flex-direction: row;
   }
 
   .nav__cta {
     display: block;
-    padding: 0.75rem 0.8rem;
-    line-height: 1;
-    background-color: var(--color-accent);
-    color: var(--color-white);
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 0.125rem;
-    transition: background-color ease 0.3s;
-
-    &:hover {
-      background-color: var(--color-accent-hover);
-    }
-
   }
 
   .nav__menu-toggle {

@@ -7,18 +7,20 @@ post: A twios post object
 {{ twiosCard(post) }}
 #}
 {%- macro twiosCard(post) -%}
-  <div class="post-card twios-card">
-    <div class="post-card__link-wrapper">
-      <a href="{{ post.url }}" class="post-card__link">
-        <h2 class="screenreader">{{ post.data.title }}</h2>
-      </a>
-      <div class="twios-card__overlay">
-        <div class="post-card__content-wrapper">
-          <div class="post-card__date caption">{{ post.date | monthDayYear }}</div>
-          <div class="twios-card__content">
-            <p class="h4">#{{ post.data.number }}</p>
-          </div>
-        </div>
+  <div class="post-cards__grid-element">
+    <div class="post-cards--hover"></div>
+    <a href="{{ post.url }}" class="post-cards__link"></a>
+    <div class="post-cards__date-wrapper">
+      <p class="small">{{ post.date | monthDayYear }}</p>
+    </div>
+
+    <div class="post-cards__content">
+      <div class="post-cards_headline">
+        <h4 class="post-cards__title mb-015 ">{{ post.data.title }}</h4>
+      </div>
+      <div class="post-cards__link-wrapper">
+        <p class="small post-cards__link-label">{{ post.data.number }}</p>
+        <span class="post-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
       </div>
     </div>
   </div>

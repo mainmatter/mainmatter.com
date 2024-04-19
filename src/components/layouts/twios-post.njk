@@ -3,30 +3,23 @@ layout: "base"
 ---
 
 {%- block content -%}
+  {% from "color-hero.njk" import colorHero %}
   {% set post = collections.twios | getCollectionItem(page) %}
   <article>
-    <div class="post__header">
-      <div class="container container--lg">
-        <div class="post__meta">
-          <div class="post__date text--xs">{{ page.date | monthDayYear }}</div>
-        </div>
-        <h1 class="post__title">This Week in Open Source at Mainmatter #{{ post.data.number }}</h1>
-      </div>
-    </div>
+    {%
+      set 'hero' = {
+      "title": 'This Week in Open Source at Mainmatter #' + post.data.number,
+      "eyebrow": page.date | monthDayYear
+      }
+    %}
+    {{ colorHero('purple', hero) }}
     <div class="container container--lg post">
-      <nav>
-        <a class="pagination__previous" href="/this-week-in-open-source/">
-          <p class="cta-link">
-            <span class="cta-link__text-wrapper">
-              <span class="cta-link__arrow cta-link__arrow--rotate"
-                >{% include 'svg/arrow.njk' %}</span
-              >
-              <span class="cta-link__text">Overview</span>
-            </span>
-          </p>
-          <p class="prev-next__title">See all Open Source Updates</p>
-        </a>
-      </nav>
+      <a href="/this-week-in-open-source/" class="btn-secondary h4 pagination-item previous">
+        {% include 'svg/arrow.njk' %}
+        <span class="btn-secondary__text">Overview</span>
+      </a>
+      <p class="prev-next__title">See all Open Source Updates</p>
+
       <div class="post__content rte">{{ content | safe }}</div>
     </div>
   </article>

@@ -35,7 +35,7 @@
 }
 
 .case-study-card__link  {
-  &:hover {
+  &:hover, &:focus {
       &~.case-study-card__description .case-study-card__client {
         color: var(--color-aqua);
       }

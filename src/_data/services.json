@@ -1,30 +1,72 @@
 {
   "services-list": [
     {
-      "heading": "Team Augmentation & Training",
-      "linkUrl": "/services/team-augmentation-and-training/"
+      "heading": "Team reinforcement",
+      "text": "Accelerate delivery and overcome challenges ",
+      "linkUrl": "/services/team-reinforcement/"
     },
     {
-      "heading": "Digital Product Design & Development",
-      "linkUrl": "/services/digital-products-and-design/"
+      "heading": "Launch your idea",
+      "text": "From Concept to MVP",
+      "linkUrl": "/services/launch-your-idea/"
     },
     {
-      "heading": "Tailored Workshops",
-      "linkUrl": "/services/workshops/"
+      "heading": "Modernize your tech stack",
+      "text": "Upgrades instead of rewrites",
+      "linkUrl": "/services/tech-modernization/"
+    },
+    {
+      "heading": "Get strategic advice",
+      "text": "Assessments, transformation and scaling",
+      "linkUrl": "/services/strategic-advice"
     }
   ],
-  "scaleup-services-list": [
+  "team-reinforcement": [
     {
-      "heading": "Team Augmentation",
-      "linkUrl": "/services/team-augmentation-and-training/"
+      "heading": "Launch your idea",
+      "text": "From Concept to MVP",
+      "linkUrl": "/services/launch-your-idea/"
     },
     {
-      "heading": "Digital Product Development support",
-      "linkUrl": "/services/digital-products-and-design/"
+      "heading": "Modernize your tech stack",
+      "text": "Upgrades instead of rewrites",
+      "linkUrl": "/services/tech-modernization/"
+    }
+  ],
+  "launch-your-idea": [
+    {
+      "heading": "Team reinforcement",
+      "text": "Accelerate delivery and overcome challenges ",
+      "linkUrl": "/services/team-reinforcement/"
     },
     {
-      "heading": "Skills-focused workshops",
-      "linkUrl": "/services/workshops/"
+      "heading": "Get strategic advice",
+      "text": "Assessments, transformation and scaling",
+      "linkUrl": "/services/strategic-advice/"
+    }
+  ],
+  "tech-modernization": [
+    {
+      "heading": "Get strategic advice",
+      "text": "Assessments, transformation and scaling",
+      "linkUrl": "/services/strategic-advice/"
+    },
+    {
+      "heading": "Team reinforcement",
+      "text": "Accelerate delivery and overcome challenges ",
+      "linkUrl": "/services/team-reinforcement/"
+    }
+  ],
+  "rust-workshops": [
+    {
+      "heading": "Team reinforcement",
+      "text": "Accelerate delivery and overcome challenges ",
+      "linkUrl": "/services/team-reinforcement/"
+    },
+    {
+      "heading": "Get strategic advice",
+      "text": "Assessments, transformation and scaling",
+      "linkUrl": "/services/strategic-advice/"
     }
   ],
   "product-design": [
@@ -47,7 +89,7 @@
       "linkUrl": "/contact/"
     }
   ],
-  "team-augmentation-and-training": [
+  "team-reinforcement-and-training": [
     {
       "heading": "Deliver on time and on budget",
       "text": "We’ll be there in all conversations with your product teams to clarify goals and deadlines, discuss implementation options, and carefully assess the pros and cons of all major decisions. We’ll pair with your engineers to build features and squash bugs, and we’ll add numbers to your ranks to overcome any technical obstacles along the way.",
@@ -56,7 +98,7 @@
     },
     {
       "heading": "Boost productivity",
-      "text": "Mentorship is central to our team augmentation projects. We work to ensure that your team will become more efficient and impactful over the long term—well beyond our joint ventures.",
+      "text": "Mentorship is central to our Team reinforcement projects. We work to ensure that your team will become more efficient and impactful over the long term—well beyond our joint ventures.",
       "linkText": "Read about how we work",
       "linkUrl": "/playbook/"
     },

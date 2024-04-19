@@ -12,39 +12,47 @@ pagination:
 permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/page/{{ paged.number }}/{% endif %}"
 ---
 
-{% from "color-hero.njk" import colorHero %}
 {% from "post-card.njk" import postCard %}
 {% from "author-socials.njk" import authorSocials %}
 {% from "nav-pagination.njk" import navPagination %}
+{% from "cta-banner.njk" import ctaBanner %}
 
 <div class="collection-header">
   <div class="container container--xl">
     <div class="author-header__wrapper">
       <div class="author-header__image-wrapper">
         {% set imageUrl = '/assets/images/authors/' + paged.author.fileSlug + '.jpg' %}
-        {% image imageUrl, '', '6.75rem', 'eager', 'author__image', [108] %}
-        {{ authorSocials(paged.author.fileSlug, 'author-header__socials author-header__socials--mobile') }}
+        {%
+          image imageUrl,
+          '',
+          '6.75rem',
+          'eager',
+          'author__image',
+          [108]
+        %}
       </div>
 
       <div class="author-header__text-wrapper">
         <h1 class="h3">All posts by {{ paged.author.data.name }}</h1>
         <h2 class="author-header__subheading">{{ paged.author.data.bio }}</h2>
         <div class="author-header__socials-wrapper">
-          {{ authorSocials(paged.author.fileSlug, 'author-header__socials author-header__socials--desktop') }}
+          {{ authorSocials(paged.author.fileSlug, 'author-header__socials') }}
           <p class="h5">
-            {{ paged.postTotal }} {% if paged.postTotal === 1 %}post{% else %}posts{% endif %}
+            {{ paged.postTotal }}
+            {% if paged.postTotal === 1 %}post{% else %}posts{% endif %}
           </p>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="section container container--xl">
-  <ol class="post-cards">
+
+<div class="container container--xl mb-10">
+  <div class="post-cards__grid">
     {%- for post in paged.posts -%}
-      <li class="post-cards__item">{{ postCard(post) }}</li>
+      {{ postCard(post) }}
     {%- endfor -%}
-  </ol>
+  </div>
   {% if paged.first != true %}
     {%- set previous -%}/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 2 %}page/{{ paged.number - 1 }}/{% endif %}{%- endset -%}
   {% endif %}
@@ -56,14 +64,11 @@ permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/p
 </div>
 
 {%
-  set content = {
-  "title": "Grow <em>your business</em> with us",
+  set 'content' = {
+  "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
-  "linkUrl": "/contact/",
-  "linkText": "Get in touch",
-  "image": "/assets/images/photos/grow-with-us-blog.jpg",
-  "alt": "Team member leaning against wall taking notes while talking to three other team members",
-  "loading": "lazy"
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
   }
 %}
-{{ colorHero('center', 'small', 'aqua', content, true) }}
+{{ ctaBanner('aqua', 'full', content) }}

@@ -25,7 +25,7 @@
   z-index: 2;
   outline-offset: 0.25rem;
 
-  &:hover {
+  &:hover, &:focus  {
     & ~ .workshop-card__cta:before {
       transform: scaleX(1);
     }

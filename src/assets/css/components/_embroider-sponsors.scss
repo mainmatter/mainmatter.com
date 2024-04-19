@@ -1,0 +1,51 @@
+.embroider-sponsors {
+  background-color: var(--color-purple);
+  padding: 2.5rem 0 2rem;
+}
+
+.ember-sponsors__image {
+  color: var(--color-white);
+}
+
+.embroider-sponsors__grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  .embroider-sponsor__grid-element {
+    max-width: 160px;
+  }
+
+@media (min-width: 62em) {
+
+  &.tier-one {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    margin-bottom: 4.5rem;
+  }
+
+  &.tier-two {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3.5rem;
+    margin-bottom: 4.5rem;
+  }
+
+  &.tier-three {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4.5rem;
+  }
+
+  .embroider-sponsor__grid-element {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+}

@@ -1,0 +1,27 @@
+{#
+List of case studies as cards
+
+Configuration Options:
+list: An array where each item is the slug for the case study.
+#}
+{% from 'featured-case-study.njk' import featuredCaseStudy %}
+{% from 'case-study-card.njk' import caseStudyCard %}
+{%- macro featuredCaseStudies(technologies, heading) -%}
+  <section class="featured-technologies my-10">
+    <div class="container container--lg">
+      <h2>Technologies</h2>
+      <p class="body">
+        Our skillset is based on a core set of technologies that cover architecture, backend and
+        frontend development with:
+      </p>
+    </div>
+    <div class="container container--xl">
+      <ul class="featured-technologies__list">
+        {%- for technologyHandle in technologies -%}
+
+          {{ caseStudyCard(technologyHandle) }}
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+{%- endmacro -%}

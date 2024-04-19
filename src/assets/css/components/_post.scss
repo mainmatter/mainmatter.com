@@ -1,12 +1,21 @@
 .post {
   --color-tag: var(--color-blue);
-  padding: 3.25rem 0 6.25rem;
+  margin: 3.25rem auto 6.25rem;
+
+  a {
+    color: var(--color-purple);
+  }
 }
+
 
 .post__header {
   background-color: var(--color-purple);
   color: var(--color-white);
   padding: 6rem 0 3.5rem;
+
+  a {
+    color: var(--color-white);
+  }
 }
 
 .post__author {
@@ -17,6 +26,8 @@
 .post__author-socials a {
   color: var(--color-white);
 }
+
+
 
 .post__author-name {
   font-weight: 500;
@@ -128,6 +139,7 @@
   li {
     padding: 0.25rem;
   }
+
 }
 
 .post__content {
@@ -137,6 +149,10 @@
       font-weight: 500;
       margin: 6.25rem 0 3.25rem;
     }
+  }
+
+  li a {
+  color: var(--color-purple);
   }
 }
 
@@ -158,7 +174,7 @@
 
 @media (min-width: 48em) {
   .post {
-    padding: 6.25rem 0 8rem;
+    margin: 6.25rem auto 8rem;
   }
 
   .post__header {

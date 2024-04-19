@@ -1,3 +1,8 @@
+body.modal-active {
+  position: fixed;
+  overflow: hidden;
+}
+
 .contact-form {
   max-height: initial;
   aspect-ratio: initial;
@@ -5,6 +10,24 @@
   &:first-of-type .color-hero__container {
     padding: 0;
   }
+}
+
+.contact-form__social-wrapper {
+  margin-top: 4.5rem;
+  color: var(--color-white);
+}
+
+.contact-form__socials {
+  gap: 1rem;
+}
+
+.contact-form__methods {
+  margin-top: 2rem;
+}
+
+.contact-form__method-text {
+  display: block;
+  margin: 2.5rem 0;
 }
 
 .contact-form__main {
@@ -21,13 +44,13 @@
 }
 
 .contact-form__text {
-  margin-top: 3.5rem;
+  margin-top: 2rem;
 }
 
 $states: "loading", "success", "error";
 
 .contact-form__form {
-  max-width: 33.75rem;
+  max-width: 48rem;
   margin-top: 3rem;
 
   @each $state in $states {
@@ -110,6 +133,7 @@ $states: "loading", "success", "error";
   border-radius: 0;
   width: 100%;
   background: transparent;
+  appearance: none;
   -webkit-appearance: none;
 
   &:has(option:not([value=""]):checked) {
@@ -121,33 +145,38 @@ $states: "loading", "success", "error";
 }
 
 .contact-form__button {
-  display: block;
-  margin-left: auto;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  padding: 0;
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: end;
   color: currentColor;
   background-color: transparent;
   border: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .contact-form__status {
   display: flex;
   align-items: center;
+  padding: 2.5rem;
   justify-content: center;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 2.5rem;
+  min-width: 100vw;
+  min-height: 100vh;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0);
   text-align: center;
   z-index: 1;
   pointer-events: none;
   transition: background-color 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
 }
+
+
 
 .contact-form__loading {
   display: none;
@@ -178,9 +207,11 @@ $states: "loading", "success", "error";
 }
 
 .contact-form__close {
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: fixed;
+  height: 100vh;
+  max-height: 100%;
+  top: 2rem;
+  right: 2rem;
   padding: 0.5rem;
   color: currentColor;
   background-color: transparent;
@@ -189,12 +220,13 @@ $states: "loading", "success", "error";
   height: 2.75rem;
   align-self: flex-end;
   text-align: right;
+  cursor: pointer;
 
   svg {
     transition: color 0.3s ease;
   }
 
-  &:hover svg {
+  &:hover svg, &:focus svg {
     color: var(--color-aqua);
   }
 }
@@ -202,11 +234,6 @@ $states: "loading", "success", "error";
 @media (min-width: 62em) {
   .contact-form__main {
     padding: 9rem 0 5rem;
-  }
-
-  .contact-form__close {
-    top: 2rem;
-    right: 3.25rem;
   }
 
   .contact-form__success-subheading {

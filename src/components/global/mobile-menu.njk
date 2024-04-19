@@ -7,21 +7,39 @@
           <li class="mobile-menu__item">
             <a
               class="mobile-menu__link h4"
-              {% if '/services/team-augmentation-and-training/'==page.url %}
+              {% if '/services/team-reinforcement/'==page.url %}
                 aria-current="page"
               {% endif %}
-              href="/services/team-augmentation-and-training/"
+              href="/services/team-reinforcement/"
             >
-              {% include 'svg/arrow.njk' %} Team Augmentation & Training
+              {% include 'svg/arrow.njk' %} Team reinforcement
             </a>
           </li>
           <li class="mobile-menu__item">
             <a
               class="mobile-menu__link h4"
-              {% if '/services/digital-products-and-design/'== page.url %}aria-current="page"{% endif %}
-              href="/services/digital-products-and-design/"
+              {% if '/services/launch-your-idea/'== page.url %}aria-current="page"{% endif %}
+              href="/services/launch-your-idea/"
             >
-              {% include 'svg/arrow.njk' %} Digital Products & Design
+              {% include 'svg/arrow.njk' %} Launch your idea
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a
+              class="mobile-menu__link h4"
+              {% if '/services/tech-modernization/'== page.url %}aria-current="page"{% endif %}
+              href="/services/tech-modernization/"
+            >
+              {% include 'svg/arrow.njk' %} Tech Modernization
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a
+              class="mobile-menu__link h4"
+              {% if '/services/strategic-advice/'== page.url %}aria-current="page"{% endif %}
+              href="/services/strategic-advice/"
+            >
+              {% include 'svg/arrow.njk' %} Strategic Advice
             </a>
           </li>
           <li class="mobile-menu__item">
@@ -65,6 +83,5 @@
         </li>
       {%- endfor -%}
     </ul>
-    {% include 'global/nav-aside.njk' %}
   </div>
 </div>

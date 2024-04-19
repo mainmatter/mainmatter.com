@@ -1,6 +1,11 @@
 ---
 layout: case-study
 company: Aleph Alpha
+problem:
+  Aleph Alpha wanted to take advantage of Rust’s built-in efficiency for their
+  latest learning model.
+solution: We provided the know-how to build the infrastructure.
+tags: Team reinforcement
 title: Preprocessing trillions of tokens with Rust | Work
 displayTitle: "Preprocessing trillions of tokens with Rust"
 description:
@@ -12,7 +17,6 @@ description:
   architecting and implementing a scalable and efficient data pipeline.</p>
 hero:
   color: purple
-  textPosition: "center"
   image: "/assets/images/work/aleph-alpha-background-2.jpg"
   imageAlt: "Router on a white background"
   tags: "development / architecture"
@@ -24,14 +28,14 @@ og:
 {% from "quote.njk" import quote %}
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">About Aleph Alpha</h2>
+  <h3 class="case-study__heading">About Aleph Alpha</h3>
   <div class="case-study__text">
       <p>Aleph Alpha is a German AI startup, a leader in the field of explainable and trustworthy sovereign AI. They're one of the few major players in the AI space based entirely in Europe.</p>
   </div>
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">The challenge</h2>
+  <h3 class="case-study__heading">The challenge</h3>
     <div class="case-study__text">
         <p>Aleph Alpha wanted to train their next generation of their AI foundational models.<br>
         The name of the game in the world of AI is data: You want to train using a <strong>large high-quality dataset</strong> to get the best results.</p>
@@ -44,15 +48,15 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Mainmatter's role</h2>
+  <h3 class="case-study__heading">Mainmatter's role</h3>
     <div class="case-study__text">
-        <p>We partnered with Aleph Alpha in September 2023 to help them design and implement the data pipeline they needed. We followed a <a href="/services/team-augmentation-and-training/">team augmentation</a> approach. Our Principal Engineering Consultant, Luca Palmieri, embedded into Aleph Alpha's team for three months to help their project team to deliver on their goals.</p>
+        <p>We partnered with Aleph Alpha in September 2023 to help them design and implement the data pipeline they needed. We followed a <a href="/services/team-reinforcement/">Team reinforcement</a> approach. Our Principal Engineering Consultant, Luca Palmieri, embedded into Aleph Alpha's team for three months to help their project team to deliver on their goals.</p>
         <p>In particular, we supported the team in four key areas: architecture, infrastructure, Rust and mentoring.</p>
     </div>
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Architecture</h2>
+  <h3 class="case-study__heading">Architecture</h3>
     <div class="case-study__text">
         <p>To run such a large-scale pipeline to completion in a reasonable amount of time, you need to <strong>distribute the workload</strong> across multiple machines. That's how you fully leverage the capabilities of modern cloud computing: Going from zero to <strong>thousands of CPUs</strong> for a few hours, then back to zero.</p>
         <p>The system as a whole must also satisfy a variety of other constraints:</p>
@@ -66,7 +70,7 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Infrastructure</h2>
+  <h3 class="case-study__heading">Infrastructure</h3>
     <div class="case-study__text">
       <p>You can't architect a system in a vacuum: You need to take into consideration the <strong>infrastructure</strong> it will run on. The underlying provider determines the capabilities and constraints you have to work with, such as the maximum download/upload throughput you can expect from a single data bucket or the cost of moving GB of data from one cloud region to another, etc.</p>
         <p>For this data pipeline, we worked with Aleph Alpha's team to assess different cloud providers and pick the one that would best fit the needs of the system as well as the company's long-term strategy: <a href="https://stackit.de/">StackIt</a>, a German cloud provider.</p>
@@ -81,7 +85,7 @@ og:
     </div>  
 </div>
 
-<section>
+<section class="mt-5">
         {% set imageData = {
           "imgPath": "/assets/images/work/aleph-alpha-graphs.jpg",
           "alt": "A MacBook displaying data",
@@ -93,7 +97,7 @@ og:
       </section>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Rust</h2>
+  <h3 class="case-study__heading">Rust</h3>
     <div class="case-study__text">
       <p>The entire data pipeline was built in Rust. That's the reason Aleph Alpha reached out to Mainmatter in the first place: They needed someone with deep expertise in Rust to help them deliver the project.</p>
       <p>Rust is a great fit for this kind of project as it delivers high and predictable performance, while giving you precise control over the memory layout of your data. That efficiency is critical when dealing with such a large dataset and wanting to make sure you are not wasting CPU cycles or RAM. Building on Aleph Alpha's existing experience in using Rust, we came to appreciate a few more advantages of using Rust:</p>
@@ -107,7 +111,7 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">Outcome</h2>
+  <h3 class="case-study__heading">Outcome</h3>
     <div class="case-study__text">
         <p>We successfully preprocessed <strong>4.5 trillion tokens</strong> to assemble a high-quality multilingual dataset. The data pipeline was designed, developed and ran on time and on budget—Aleph Alpha didn't have to delay their training schedule by a single day. The data was ready to go by the time the GPU cluster was available.</p>
     </div>
@@ -116,5 +120,7 @@ og:
 {% set content = {
 "text": "Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way. I've learned so much, especially during our pairing sessions—it allowed me to improve my technical skills and grow as an engineer.",
 "source": "Andreas Hartel, Senior Engineer at Aleph Alpha",
-"loading": "lazy"
+"logo": "/assets/images/logos/monochrome/aleph-alpha.svg",
+"logoAlt": "aleph-alpha logo",
+"logoLoading": "lazy"
 } %} {{ quote(content) }}

@@ -24,17 +24,15 @@
 .author-header__socials {
   margin: 0;
 
-  &--desktop {
-    display: none;
-  }
-
-  &--mobile {
-    display: block;
-  }
-
   a {
     color: var(--color-white);
+
+    &:hover, &:focus {
+      color: var(--color-aqua);
+    }
   }
+
+
 }
 
 @media (min-width: 48em) {

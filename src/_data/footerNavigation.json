@@ -4,12 +4,20 @@
       "heading": "Services",
       "links": [
         {
-          "text": "Team Augmentation & Training",
-          "link": "/services/team-augmentation-and-training/"
+          "text": "Team reinforcement",
+          "link": "/services/team-reinforcement/"
         },
         {
-          "text": "Digital Products & Design",
-          "link": "/services/digital-products-and-design/"
+          "text": "Launch your idea",
+          "link": "/services/launch-your-idea/"
+        },
+        {
+          "text": "Tech modernization",
+          "link": "/services/tech-modernization/"
+        },
+        {
+          "text": "Strategic advice",
+          "link": "/services/strategic-advice/"
         },
         {
           "text": "Workshops",

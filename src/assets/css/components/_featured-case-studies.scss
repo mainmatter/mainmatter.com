@@ -11,6 +11,9 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 @media (min-width: 48em) {
@@ -20,7 +23,7 @@
 
   .featured-case-studies__list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(2, auto);
     gap: 1.5rem;
   }

@@ -8,7 +8,7 @@ description:
   implement modals in a few lines of code, following the async patterns that are
   already in your Svelte app"
 og:
-  image: "/assets/images/posts/2024-04-08-introducing-svelte-promise-modals/og-image.jpg"
+  image: "/assets/images/posts/2024-04-08-introducing-svelte-promise-modals/og-image.png"
 image: "/assets/images/posts/2024-04-08-introducing-svelte-promise-modals/header-visual.png"
 imageAlt: "The Svelte logo on a grey background picture"
 ---

@@ -13,25 +13,26 @@ permalink: "/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 1 %}/page/{{ p
 {% from "color-hero.njk" import colorHero %}
 {% from "post-card.njk" import postCard %}
 {% from "nav-pagination.njk" import navPagination %}
+{% from "cta-banner.njk" import ctaBanner %}
 
 <div class="collection-header">
-  <div class="container container--lg">
+  <div class="container container--xl">
     <h1>
       <span class="collection-header__heading h4">Tagged with</span>
-      <span class="collection-header__heading h3 text--uppercase">#{{ paged.tag }}</span>
+      <span class="collection-header__heading h3">{{ paged.tag }}</span>
     </h1>
     <p class="collection-header__subheading">
       {{ paged.postTotal }} {% if paged.postTotal === 1 %}post{% else %}posts{% endif %}
     </p>
   </div>
 </div>
-<div id="posts" class="container container--xl">
+<div id="posts" class="container container--xl mb-10">
   {% include 'global/tag-filter.njk' %}
-  <ol class="post-cards">
+  <div class="post-cards__grid">
     {%- for post in paged.posts -%}
-      <li class="post-cards__item">{{ postCard(post) }}</li>
+      {{ postCard(post) }}
     {%- endfor -%}
-  </ol>
+  </div>
 
   {% if paged.first != true %}
     {%- set previous -%}/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 2 %}page/{{ paged.number -1 }}/{% endif %}{%- endset -%}
@@ -44,14 +45,11 @@ permalink: "/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 1 %}/page/{{ p
 </div>
 
 {%
-  set content = {
-  "title": "Grow <em>your business</em> with us",
+  set 'content' = {
+  "title": "Grow your business with us",
   "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
-  "linkUrl": "/contact/",
-  "linkText": "Get in touch",
-  "image": "/assets/images/photos/grow-with-us-blog.jpg",
-  "alt": "Team member leaning against wall taking notes while talking to three other team members",
-  "loading": "lazy"
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
   }
 %}
-{{ colorHero('center', 'small', 'aqua', content, true) }}
+{{ ctaBanner('aqua', 'full', content) }}

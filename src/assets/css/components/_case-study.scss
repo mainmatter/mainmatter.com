@@ -1,3 +1,9 @@
+.case-study {
+  a {
+    color: var(--color-purple);
+  }
+}
+
 .case-study__section {
   margin: 5rem 0 0;
 }
@@ -7,7 +13,7 @@
 }
 
 .case-study__text {
-  max-width: 50rem;
+
   margin: 0 auto;
   overflow-wrap: break-word;
   word-wrap: break-word;

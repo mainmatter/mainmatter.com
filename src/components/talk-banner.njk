@@ -1,4 +1,5 @@
 {% macro talkBanner(talk, color) %}
+  {% from "btn-primary.njk" import btnPrimary %}
   <div class="talk-banner" data-background-color="{{ color }}">
     <a class="talk-banner__link" href="{{ talk.data.url }}">
       <h3 class="screenreader">{{ talk.data.title }}</h3>
@@ -31,12 +32,14 @@
           {% endif %}
           <p class="talk-banner__title h3">{{ talk.data.title }}</p>
           <div class="talk-banner__description caption">{{ talk.templateContent | safe }}</div>
-          <span class="talk-banner__cta cta-link" aria-hidden="true">
-            <span class="cta-link__text-wrapper">
-              <span class="cta-link__text">Watch {{ talk.data.media }}</span>
-              <span class="cta-link__arrow">{% include 'svg/arrow.njk' %}</span>
-            </span>
-          </span>
+
+          {%
+            set link = {
+            "label": 'Watch ' + talk.data.media,
+            "url": talk.data.url
+            }
+          %}
+          {{ btnPrimary( link, 'white', 'mt-2 talk-cta' ) }}
         </div>
       </div>
     </div>

@@ -1,6 +1,11 @@
 ---
 layout: case-study
 company: Rail Europe
+problem:
+  Rail Europe needed to establish the best way forward after an acquisition.
+solution:
+  We provided an assessment and a roadmap – then supported the implementation.
+tags: Strategic advice
 title: Transformation for Growth | Work
 displayTitle: Transformation for Growth
 description:
@@ -13,7 +18,6 @@ description:
   Svelte.</p>
 hero:
   color: purple
-  textPosition: "center"
   image: "/assets/images/work/rail-europe.jpg"
   imageAlt: "Train tracks on gravel"
   tags: "strategic advice / process / mentoring"
@@ -25,9 +29,9 @@ og:
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">About Rail Europe</h2>
+  <h3 class="case-study__heading">About Rail Europe</h3>
   <div class="case-study__text">
-    <h3 class="h4">Rail Europe was founded in 1931 and is looking back at an impressive history of 90+ years in the travel industry. Over the years, the company established itself as the go-to brand for European train bookings and technology solutions for over 15,000 travel professionals in 70 countries.</h3>
+    <p class="h4">Rail Europe was founded in 1931 and is looking back at an impressive history of 90+ years in the travel industry. Over the years, the company established itself as the go-to brand for European train bookings and technology solutions for over 15,000 travel professionals in 70 countries.</p>
     <p>Over the past few years, Rail Europe has gone through some major changes, from being part of SNCF to eventually being acquired by an investor with ambitious goals.</p>
   </div>
 </div>
@@ -44,7 +48,7 @@ og:
 </section>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">The Challenge</h2>
+  <h3 class="case-study__heading">The Challenge</h3>
   <div class="case-study__text">
     <p>In 2022, while the travel industry was still recovering from the pandemic, Rail Europe was acquired by a private equity firm and thus became independent from SNCF Voyageurs and SBB, the previous parent companies. Along with the acquisition came ambitious plans for the future and Rail Europe embarked on a growth initiative, aiming to significantly expand the business.</p>
     <p>Rail Europe was looking for an experienced partner to assess their platform, address concerns, and suggest a route forward. Because of our broad experience building large scale tech products and our previous experience in the Rail industry, Mainmatter was an ideal fit for the project.</p>
@@ -52,7 +56,7 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">The Assessment</h2>
+  <h3 class="case-study__heading">The Assessment</h3>
   <div class="case-study__text">
     <p>To tackle the challenge and answer Rail Europe’s questions, we conducted a comprehensive assessment of the existing code, infrastructure, and processes. We also interviewed a diverse group of members of Rail Europe’s team, including top management, engineers, designers, as well as business stakeholders. This allowed us to gain a holistic understanding of the status quo and provide a detailed report with a clear tech transformation roadmap.</p>
   </div>
@@ -67,7 +71,7 @@ og:
 } %} {{ quote(content) }}
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">The Execution</h2>
+  <h3 class="case-study__heading">The Execution</h3>
   <div class="case-study__text">
     <p>We merged with their team and have since supported them along the way. To kickstart the work, we immediately focused on two main aspects of the initiative. Firstly, we started building a new B2C offering using Svelte and SvelteKit, a cutting-edge web framework. Secondly, we worked on improving the performance of a key part of their system.</p>
     <p>Throughout the collaboration, we not only actively contribute to those tech initiatives but also mentor the Rail Europe team on new technologies like Svelte. As we go, we also challenge the status quo in terms of tooling, infrastructure, and process – we support Rail Europe’s team to critically look at every aspect of the product development organization and bring in our expertise to pave the way towards a leaner, more efficient way of working for the future.</p>
@@ -75,7 +79,7 @@ og:
 </div>
 
 <div class="case-study__section">
-  <h2 class="case-study__heading h5">The Outcome</h2>
+  <h3 class="case-study__heading">The Outcome</h3>
   <div class="case-study__text">
     <p>By integrating with their team for the initiative, we are able to help Rail Europe move forward without the need to build up internal expertise from scratch first. Instead, we help build up the expertise as we progress on the project, ensuring a sustainable future.</p>
   </div>

@@ -1,3 +1,11 @@
+@import "components/color-hero";
+@import "components/cta-banner";
+@import "base/utility";
+
+nav {
+  --color-link-primary: var(--color-white);
+}
+
 .lp-section {
   padding: 3rem 0;
 }
@@ -36,7 +44,7 @@
 }
 
 .lang-features__list-item {
-  &+& {
+  & + & {
     margin-top: 3rem;
   }
 }
@@ -76,19 +84,10 @@
   }
 
   .lang-features__list-item {
-    &+& {
+    & + & {
       margin-top: 2rem;
     }
   }
-}
-
-.cta-link__text {
-  text-decoration-line: none;
-}
-
-.cta-link__text-wrapper {
-  text-decoration-line: none;
-  margin-top: 2rem;
 }
 
 .intro__link {
@@ -99,52 +98,90 @@
   padding: 7.25rem 0;
 }
 
-.workshop-lp-hero__title {
-  margin: 1.25rem 0;
+.btn-flex {
+  display: flex;
+  align-items: center;
 }
 
-.workshop-lp-hero__logo {
-  margin-bottom: 0.5rem;
-}
-
-@media (min-width: 48em) {
-  .cta-link__text-wrapper {
-    margin-top: 2.25rem;
-  }
-
-  .workshop-lp-hero__image {
-    margin-right: 2.5rem;
-    display: block;
-  }
+button {
+  background-color: transparent;
 }
 
 .tito-widget-button {
-  display: -webkit-inline-flex;
-  padding: 0.75rem 0.8rem;
-  line-height: 1;
-  background-color: var(--color-aqua);
-  color: var(--color-white);
-  text-decoration: none;
-  font-weight: 700;
-  border-radius: 0.125rem;
-  transition: background-color ease 0.3s;
-  font-size: 1rem;
-  line-height: 1rem;
-  border: none;
-  cursor: pointer;
   appearance: none;
-  
-  &:hover {
-    background-color: var(--color-purple);
-  }
+  border: 0;
+  line-height: 1;
 }
 
-.line {
-  display: inline-block;
-  margin: 0 0.5rem;
-  width: 1px;
-  background-color: var(--color-white);
-  height: 1rem;
+.tito-btn {
+  cursor: pointer;
+  appearance: none;
+  border: 0;
+  display: block;
+  padding: 1rem 1.75rem;
+  line-height: 1;
+
+  .line {
+    display: inline-block;
+    margin: 0 0.75rem;
+    width: 2px;
+    height: 1em;
+    background-color: var(--color-link-primary);
+  }
+  span {
+    color: var(--color-link-primary);
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .icon-arrow {
+    flex-shrink: 0;
+    transform: translateX(0px) rotate(-90deg);
+    height: 1rem;
+    width: 1rem;
+    color: var(--color-white);
+    margin-left: 0.5rem;
+    transition: transform 0.5s ease;
+  }
+
+  &.btn-primary--white {
+    svg {
+      color: var(--color-purple);
+    }
+  }
+
+  &:hover, &:focus {
+    .line {
+      background-color: var(--color-white);
+    }
+
+    span {
+      color: var(--color-white);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .icon-arrow {
+      transform: translateX(0.5rem) rotate(-90deg);
+      transition: transform 0.5s ease;
+      color: var(--color-white);
+    }
+
+    &.btn-primary--white {
+      .line {
+        background-color: var(--color-purple);
+      }
+
+      span {
+        color: var(--color-purple);
+      }
+
+      svg {
+        color: var(--color-purple);
+      }
+    }
+  }
 }
 
 .price-tag {
@@ -157,6 +194,8 @@
   bottom: 32px;
   right: 5%;
   z-index: 100;
+  --color-link-primary: var(--color-white);
+  cursor: pointer;
 }
 
 .workshop-authors {

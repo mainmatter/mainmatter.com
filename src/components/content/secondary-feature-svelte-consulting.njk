@@ -1,0 +1,9 @@
+{% from "secondary-feature.njk" import secondaryFeature %}
+{%
+  set 'content' = {
+  "image": "/assets/images/authors/paoloricciuti.jpg",
+  "alt": "Paolo Ricciuti",
+  "loading": "lazy"
+  }
+%}
+{{ secondaryFeature(content, 'split-content__author') }}
