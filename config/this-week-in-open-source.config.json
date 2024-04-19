@@ -194,7 +194,8 @@
         "opral/monorepo",
         "thefrontside/effection",
         "pichfl/auto-reveal",
-        "embroider-build/create-release-plan-setup"
+        "embroider-build/create-release-plan-setup",
+        "shikijs/shiki-magic-move"
       ]
     },
     {
@@ -440,7 +441,8 @@
         "bgantzler/ember-mirage",
         "adopted-ember-addons/ember-cp-validations",
         "emberjs/ember-inflector",
-        "yapplabs/ember-tether"
+        "yapplabs/ember-tether",
+        "cibernox/ember-power-calendar"
       ]
     },
     {
@@ -535,6 +537,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-03-31..2024-04-07",
+  "last_date": "2024-04-07..2024-04-14",
   "query_type": "Merged"
 }
