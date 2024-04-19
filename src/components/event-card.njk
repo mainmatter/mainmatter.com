@@ -14,6 +14,9 @@ event: A event object
     data-background-color="{{ event.data.color }}"
   >
     <div class="event-card__content-wrapper">
+      <div class="event-card__image-wrapper">
+      {% image event.data.image, "", '8rem', 'lazy', 'event-card__image', [264, 420, 500] %}
+    </div>
       <div class="event-card__meta">
         <span class="event-card__meta-text">{{ event.date | monthDayYear }}</span>
         {% if event.data.location %}

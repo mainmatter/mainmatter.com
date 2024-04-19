@@ -1,6 +1,6 @@
 ---
 title: "Rust for the Web"
-image: "/assets/images/calendar/2024-04-23-rust-for-the-web/banner.jpg"
+image: "/assets/images/calendar/2024-04-23-rust-for-the-web/rust.png"
 location: "Berlin"
 url: https://berline.rs/2024/04/23/rust-and-tell-rust-for-the-web.html
 kind: meetup
