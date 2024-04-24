@@ -195,7 +195,9 @@
         "thefrontside/effection",
         "pichfl/auto-reveal",
         "embroider-build/create-release-plan-setup",
-        "shikijs/shiki-magic-move"
+        "shikijs/shiki-magic-move",
+        "adopted-ember-addons/ember-drag-drop",
+        "tleunen/babel-plugin-module-resolver"
       ]
     },
     {
@@ -442,7 +444,8 @@
         "adopted-ember-addons/ember-cp-validations",
         "emberjs/ember-inflector",
         "yapplabs/ember-tether",
-        "cibernox/ember-power-calendar"
+        "cibernox/ember-power-calendar",
+        "ef4/decorator-transforms"
       ]
     },
     {
@@ -537,6 +540,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "",
+  "last_date": "2024-04-14..2024-04-21",
   "query_type": "Merged"
 }
