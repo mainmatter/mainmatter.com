@@ -28,7 +28,7 @@
         <details class="nav-submenu" data-has-submenu>
           <summary class="nav-submenu__toggle nav__link" data-menu-toggle>
             <span
-              class="nav__link-text{% if page.url and '/services/' in page.url %}nav__link-text--active{% endif %}"
+              class="nav__link-text {% if page.url and '/services/' in page.url %} nav__link-text--active {% endif %}"
               >Services</span
             >
             <span class="nav__link-arrow">{% include 'svg/arrow.njk' %}</span>
@@ -107,7 +107,7 @@
             {% set parentChildCompare = entry.url %}
           {% endif %}
           <a
-            class="nav__link nav__link-text{% if entry.url == page.url or (page.url and parentChildCompare in page.url) %}nav__link-text--active{% endif %}"
+            class="nav__link nav__link-text {% if entry.url == page.url or (page.url and parentChildCompare in page.url) %} nav__link-text--active{% endif %}"
             {% if entry.url == page.url %}aria-current="page"{% endif %}
             href="{{ entry.url | url }}"
           >
