@@ -39,16 +39,24 @@
   }
 }
 
+.mobile-menu__contact {
+  color: var(--color-purple);
+
+  &:hover {
+    color: var(--color-aqua);
+  }
+}
+
 .mobile-menu__link {
   display: flex;
   align-items: center;
   text-decoration: none;
   transition: color 0.3s ease;
 
-  svg {
+  .icon-arrow {
     flex-shrink: 0;
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     transform: rotate(-90deg);
     margin-right: 2rem;
   }
