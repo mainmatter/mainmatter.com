@@ -2,22 +2,16 @@
   background-color: var(--color-white);
   color: var(--color-black);
   position: absolute;
-  top: -1px; // TODO: change this to 0 once rebranding teaser is gone
+  z-index: 150;
+  top: 0; // TODO: change this to 0 once rebranding teaser is gone
   left: 0;
   width: 100%;
-}
-
-.mobile-menu {
-  z-index: 1;
 }
 
 .mobile-menu__inner {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.mobile-menu__inner {
   height: 100%;
   overflow-x: hidden;
 }
@@ -27,6 +21,9 @@
   margin: 0;
   padding: 6rem 1rem;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 
   &--submenu {
     padding: 2.5rem 0 0 2.5rem;
@@ -40,11 +37,7 @@
 }
 
 .mobile-menu__contact {
-  color: var(--color-purple);
-
-  &:hover {
-    color: var(--color-aqua);
-  }
+  z-index: 260;
 }
 
 .mobile-menu__link {
@@ -53,10 +46,10 @@
   text-decoration: none;
   transition: color 0.3s ease;
 
-  .icon-arrow {
+  svg {
     flex-shrink: 0;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     transform: rotate(-90deg);
     margin-right: 2rem;
   }
