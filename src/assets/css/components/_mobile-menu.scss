@@ -2,22 +2,16 @@
   background-color: var(--color-white);
   color: var(--color-black);
   position: absolute;
-  top: -1px; // TODO: change this to 0 once rebranding teaser is gone
+  z-index: 150;
+  top: 0;
   left: 0;
   width: 100%;
-}
-
-.mobile-menu {
-  z-index: 1;
 }
 
 .mobile-menu__inner {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.mobile-menu__inner {
   height: 100%;
   overflow-x: hidden;
 }
@@ -27,6 +21,9 @@
   margin: 0;
   padding: 6rem 1rem;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 
   &--submenu {
     padding: 2.5rem 0 0 2.5rem;
@@ -37,6 +34,10 @@
   & + & {
     margin-top: rem-calc(40);
   }
+}
+
+.mobile-menu__contact {
+  z-index: 260;
 }
 
 .mobile-menu__link {
