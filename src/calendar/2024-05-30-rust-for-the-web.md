@@ -1,5 +1,5 @@
 ---
-title: "Rust for the Web"
+title: "Rust for the Web Barcelona"
 image: "/assets/images/calendar/2024-05-30-rust-for-the-web/rust.png"
 location: "Barcelona"
 url: https://www.meetup.com/es-ES/bcnrust/events/300765894/
