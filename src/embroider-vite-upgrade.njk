@@ -1,0 +1,71 @@
+---
+layout: base
+title: We upgrade Ember apps to Embroider and Vite
+description: Mainmatter upgrades clients' apps to Embroider and Vite – while the client's team stays focused on delivering value to their users.
+permalink: /embroider-vite-upgrade/
+og:
+  image: /assets/images/embroider-initiative/og-image.jpg
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "logo-list.njk" import logoList %}
+{% from "strategy-list.njk" import strategyList %}
+{% from "btn-secondary.njk" import btnSecondary %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "featured-services.njk" import featuredServices %}
+
+{%
+  set 'content' = {
+  "title": "Build your Ember app with <nobr>Vite ⚡</nobr>️",
+  "subheading": "We are the team behind the <a href=\"/embroider-initiative/\">Embroider initiative</a>",
+  "text": "Mainmatter upgrades Ember apps to Embroider and Vite to reduce rebuild times from seconds to instant. We plan the roadmap to Vite and execute it step-by-step, without interfering with your team's feature delivery.",
+  "image": "/assets/images/hero/yarns.jpg",
+  "alt": "Multiple yarns arranged so that a heart shape remains in the middle",
+  "loading": "eager"
+  }
+%}
+{{ colorHero('purple', content) }}
+
+<section class="my-10">
+  <div class="container container--lg">
+    <div class="mb-4">
+      <h3 class="mb-2">Gain without pain</h3>
+      <p class="body">
+        After the successful Embroider initative, there is now a path open to building Ember apps with Vite. That allows for instant rebuilds where teams are currently struggling from build times of multiple seconds, having an impact on efficiency and velocity.
+      </p>
+      [TODO: add image on how much faster Vite is]
+      <p class="body">
+        Yet, getting to Vite isn't always straight forward with old versions of Ember and addons, or outdated patterns being potential obstacles along the way. Working on upgrades like the one to Vite, at the expense of having to slow down feature work, is no easy sell though for many teams which can result in these tasks never being prioritized. Mainmatter is uniquely positioned to take on projects like that – we've been working with Ember for many years and have completed many Ember upgrade projects. We're also the team behind the <a href="/embroider-initiative">Embroider initiative</a> and know exactly what to change, where and how to avoid the cliffs.
+      </p>
+    </div>
+  </div>
+</section>
+
+{%
+  set 'list_1' = {
+  "title": "Assess the status quo of your codebase and create a roadmap towards Embroider and then Vite."
+  }
+%}
+{%
+  set 'list_2' = {
+  "title": "Execute the roadmap in small steps so we don't interfere with your team's workflow."
+  }
+%}
+{%
+  set 'list_3' = {
+  "title": "As we replace new patterns and dependencies with new ones, we can mentor your team along the way to ensure they follow along."
+  }
+%}
+{% set elements = [list_1, list_2, list_3] %}
+{{ strategyList('team-reinforcement', 'We’ll work with you to:', elements) }}
+
+{%
+  set 'content' = {
+  "title": "Get your app on Vite!",
+  "text": "Benefit from instant rebuilds while staying focused on delivering value for your users.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
+  }
+%}
+{{ ctaBanner('aqua', 'full', content) }}
