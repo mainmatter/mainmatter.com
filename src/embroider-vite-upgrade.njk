@@ -38,10 +38,16 @@ og:
 
       <div class="vite-upgrade-grid my-5">
         <div class="image-wrapper">
-          <img src="/assets/images/embroider-initiative/embroider-vite-upgrade/slow.png" alt="Graphic showing build times using classic builds">
+          <img
+            src="/assets/images/embroider-initiative/embroider-vite-upgrade/slow.png"
+            alt="Graphic showing build times using classic builds"
+          />
         </div>
         <div class="image-wrapper">
-          <img src="/assets/images/embroider-initiative/embroider-vite-upgrade/fast.png" alt="Graphic showing build times using vite">
+          <img
+            src="/assets/images/embroider-initiative/embroider-vite-upgrade/fast.png"
+            alt="Graphic showing build times using vite"
+          />
         </div>
       </div>
 
@@ -58,21 +64,29 @@ og:
   </div>
 </section>
 
-{% set 'list_1' = {
+{%
+  set 'list_1' = {
   "title": "Assess the status quo of your codebase and develop a roadmap towards Embroider, and eventually Vite."
-} %}
-{% set 'list_2' = {
+  }
+%}
+{%
+  set 'list_2' = {
   "title": "Implement the roadmap in small increments to avoid disrupting your team's workflow."
-} %}
-{% set 'list_3' = {
+  }
+%}
+{%
+  set 'list_3' = {
   "title": "As we introduce new patterns and dependencies, we will mentor your team to ensure they follow these changes."
-} %}
+  }
+%}
 {% set elements = [list_1, list_2, list_3] %}
 {{ strategyList('team-reinforcement', 'We’ll work with you to:', elements) }}
-{% set 'content' = {
+{%
+  set 'content' = {
   "title": "Get your app on Vite!",
   "text": "Benefit from instant rebuilds while your teams stays focused on delivering business value.",
   "linkUrl": "/contact",
   "linkText": "Get in touch"
-} %}
+  }
+%}
 {{ ctaBanner('aqua', 'full', content) }}
