@@ -76,6 +76,10 @@
 .cta-banner__text,
 .cta-banner__link {
   margin-top: 2.5rem;
+
+  a {
+    color: var(--color-white);
+  }
 }
 
 .cta-banner__eyebrow {
