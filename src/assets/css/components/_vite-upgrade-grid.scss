@@ -1,0 +1,17 @@
+.vite-upgrade-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+@media (min-width: 48em) {
+    
+    .vite-upgrade-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+}
+
+}

@@ -4,7 +4,7 @@ title: We upgrade Ember apps to Embroider and Vite
 description: Mainmatter upgrades clients' apps to Embroider and Vite – while the client's team stays focused on delivering value to their users.
 permalink: /embroider-vite-upgrade/
 og:
-  image: /assets/images/embroider-initiative/embroider-vite-upgrade/og-image.jpg
+  image: /assets/images/embroider-initiative/embroider-vite-upgrade/og-image.png
 ---
 
 {% from "color-hero.njk" import colorHero %}
@@ -36,18 +36,17 @@ og:
         of multiple seconds that are affecting efficiency and velocity.
       </p>
 
-      <section class="mb-10">
-        {% set imageData = {
-          "imgPath": "/assets/images/embroider-initiative/embroider-vite-upgrade/vite_slow.gif",
-          "alt": "Server room",
-          "sizes": "100vw",
-          "loading": "lazy",
-          "sizesArray": [760, 1440, 1920]
-        }
-        %}
-        {{ imageAspectRatio(imageData, "23/9") }}
-      </section>
       
+        <div class="vite-upgrade-grid my-5">
+          <div class="image-wrapper">
+            <img src="/assets/images/embroider-initiative/embroider-vite-upgrade/slow.png" alt="Graphic showing build times using classic builds">
+          </div>
+          <div class="image-wrapper">
+            <img src="/assets/images/embroider-initiative/embroider-vite-upgrade/fast.png" alt="Graphic showing build times using vite">
+          </div>
+        </div>
+      
+
       <p class="body">
         Yet, switching to Vite may be challenging due to outdated Ember versions, addons, or
         patterns. Also, assigning teams to prioritize such upgrades, at the expense of slowing down
