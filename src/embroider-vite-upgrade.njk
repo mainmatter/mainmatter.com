@@ -4,7 +4,7 @@ title: We upgrade Ember apps to Embroider and Vite
 description: Mainmatter upgrades clients' apps to Embroider and Vite – while the client's team stays focused on delivering value to their users.
 permalink: /embroider-vite-upgrade/
 og:
-  image: /assets/images/embroider-initiative/og-image.jpg
+  image: /assets/images/embroider-initiative/embroider-vite-upgrade/og-image.jpg
 ---
 
 {% from "color-hero.njk" import colorHero %}
@@ -35,7 +35,19 @@ og:
         Vite. This allows for instant rebuilds where teams are currently struggling from build times
         of multiple seconds that are affecting efficiency and velocity.
       </p>
-      [TODO: add image on how much faster Vite is]
+
+      <section class="mb-10">
+        {% set imageData = {
+          "imgPath": "/assets/images/embroider-initiative/embroider-vite-upgrade/vite_slow.gif",
+          "alt": "Server room",
+          "sizes": "100vw",
+          "loading": "lazy",
+          "sizesArray": [760, 1440, 1920]
+        }
+        %}
+        {{ imageAspectRatio(imageData, "23/9") }}
+      </section>
+      
       <p class="body">
         Yet, switching to Vite may be challenging due to outdated Ember versions, addons, or
         patterns. Also, assigning teams to prioritize such upgrades, at the expense of slowing down
@@ -49,29 +61,21 @@ og:
   </div>
 </section>
 
-{%
-  set 'list_1' = {
+{% set 'list_1' = {
   "title": "Assess the status quo of your codebase and develop a roadmap towards Embroider, and eventually Vite."
-  }
-%}
-{%
-  set 'list_2' = {
+} %}
+{% set 'list_2' = {
   "title": "Implement the roadmap in small increments to avoid disrupting your team's workflow."
-  }
-%}
-{%
-  set 'list_3' = {
+} %}
+{% set 'list_3' = {
   "title": "As we introduce new patterns and dependencies, we will mentor your team to ensure they follow these changes."
-  }
-%}
+} %}
 {% set elements = [list_1, list_2, list_3] %}
 {{ strategyList('team-reinforcement', 'We’ll work with you to:', elements) }}
-{%
-  set 'content' = {
+{% set 'content' = {
   "title": "Get your app on Vite!",
   "text": "Benefit from instant rebuilds while your teams stays focused on delivering business value.",
   "linkUrl": "/contact",
   "linkText": "Get in touch"
-  }
-%}
+} %}
 {{ ctaBanner('aqua', 'full', content) }}
