@@ -54,10 +54,19 @@ og:
 {{ logoList(logoCompanies, title) }}
 {%
   set 'content' = {
+  "title": "Get your Ember app on <nobr>Vite ⚡</nobr>️",
+  "text": "We upgrades clients' apps to Embroider and Vite – get instant rebuilds while your team stays focused on shipping business value!",
+  "linkUrl": "/embroider-vite-upgrade/",
+  "linkText": "Give your team an efficiency boost!"
+  }
+%}
+{{ ctaBanner('aqua', 'full', content) }}
+{%
+  set 'content' = {
   "title": "Join the Embroider Initiative!",
   "text": "Sponsor the Embroider Initiative, help us ship Embroider, and secure the future of Ember and your investment in it.",
   "linkUrl": "/contact",
   "linkText": "Get in touch"
   }
 %}
-{{ ctaBanner('aqua', 'full', content) }}
+{{ ctaBanner('purple', 'full', content) }}

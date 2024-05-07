@@ -16,6 +16,10 @@
     --color-link-primary-hover: var(--color-aqua);
     color: var(--color-white);
     --overlay-opacity: 0.9;
+
+    p a {
+      color: var(--color-aqua);
+    }
   }
 
   &--aqua {
