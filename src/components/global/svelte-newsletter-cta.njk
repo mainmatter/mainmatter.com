@@ -1,10 +1,8 @@
 {% from "cta-banner.njk" import ctaBanner %}
-{%
-  set content = {
+{% set content = {
   "title": "Stay up to date on Svelte",
   "text": "Subscribe to our newsletter to stay informed about the latest events we organise, workshops we hold and blog posts about Svelte.",
   "linkUrl": "http://eepurl.com/iPrV22",
   "linkText": "Subscribe!"
-  }
-%}
+} %}
 {{ ctaBanner('aqua', 'full', content) }}
