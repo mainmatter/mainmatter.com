@@ -54,7 +54,7 @@ nav {
   align-items: center;
   text-decoration: none;
 
-  svg {
+.icon-arrow  {
     transform: rotate(-90deg);
     height: 1.5rem;
     width: 1.5rem;
@@ -146,7 +146,7 @@ button {
   }
 
   &.btn-primary--white {
-    svg {
+    .icon-arrow {
       color: var(--color-purple);
     }
   }
