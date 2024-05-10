@@ -21,6 +21,18 @@
         {% if content.text %}
           <div class="cta-banner__text">{{ content.text | safe }}</div>
         {% endif %}
+        {% if content.mailInput %}
+        <div class="mb-2 mt-2">
+            <input
+              class="contact-form__input"
+              id="contact-email"
+              type="email"
+              name="email"
+              placeholder="Your e-mail"
+              required
+            />
+          </div>
+        {% endif %}
         {% if content.linkUrl %}
           {%
             set link = {
