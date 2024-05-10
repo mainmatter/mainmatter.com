@@ -118,7 +118,7 @@
   margin: 1.25rem 0 var(--spacing);
 }
 
-@media (min-width: 62em) {
+@media (min-width: 64em) {
   .post-banner {
     grid-column: span 3 / span 3;
     --color-tag: var(--color-white);
