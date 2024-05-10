@@ -1,5 +1,6 @@
 ---
 title: Design system kickoff (interface inventory)
+tags: "design"
 format: "Workshop: 2-3 days"
 subtext: Bookable on request – onsite or remote
 description:

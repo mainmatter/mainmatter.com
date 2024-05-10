@@ -5,6 +5,7 @@ layout: "base"
 {% from "author-socials.njk" import authorSocials %}
 {% from "color-hero.njk" import colorHero %}
 {% from "cta-banner.njk" import ctaBanner %}
+{% from "newsletter-cta.njk" import newsletterCta %}
 {% from "strategy-list.njk" import strategyList %}
 
 {%- block content -%}
@@ -86,6 +87,7 @@ layout: "base"
     }
   %}
   {{ ctaBanner('aqua', 'default', content) }}
+  {{ newsletterCta(tags) }}
   {%
     set 'content' = {
     "title": "Book this workshop",

@@ -1,5 +1,6 @@
 ---
 title: Introduction to Rust for Web Developers
+tags: "rust"
 format: "Workshop: 2-3 days"
 subtext: "Bookable for teams – on-site or remote"
 description: <p>According to the Stack Overflow survey, Rust is one of the most
