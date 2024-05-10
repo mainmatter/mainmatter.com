@@ -23,7 +23,7 @@
         {% endif %}
         {% if content.newsletterSignup %}
           <form action="{{ content.newsletterSignupAction }}" method="post" target="_blank">
-            <div class="mb-2 mt-2">
+            <div class="contact-form__field cta__input mb-2 mt-2">
               <input
                 class="contact-form__input"
                 id="email"
@@ -32,6 +32,9 @@
                 placeholder="Your e-mail"
                 required
               />
+              <label class="contact-form__label h4" for="email">
+              Your e-mail
+            </label>
             </div>
             <button class="btn-primary btn-primary--white {{ class }}" type="submit">
               <span>Subscribe</span>
