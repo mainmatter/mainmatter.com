@@ -1,5 +1,6 @@
 ---
 title: Effective Git
+tags: "git"
 format: "Workshop: 1 day"
 subtext: "Bookable for teams – on-site or remote"
 description:

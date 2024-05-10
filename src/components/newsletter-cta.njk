@@ -1,0 +1,15 @@
+{%- macro newsletterCta(tags) -%}
+  {% if tags %}
+    {% for tag in tags %}
+      {% if tag === "rust" %}
+        {% include "global/rust-newsletter-cta.njk" %}
+      {% elif tag === "svelte" %}
+        {% include "global/svelte-newsletter-cta.njk" %}
+      {% elif tag === "ember" %}
+        {% include "global/ember-newsletter-cta.njk" %}
+      {% else %}
+        {% include "global/default-newsletter-cta.njk" %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{%- endmacro -%}

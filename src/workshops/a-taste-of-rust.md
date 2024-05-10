@@ -1,5 +1,6 @@
 ---
 title: "A taste of Rust"
+tags: "rust"
 format: "Workshop: 1 day"
 subtext: "Bookable for teams – on-site or remote"
 description: |

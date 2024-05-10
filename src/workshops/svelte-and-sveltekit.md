@@ -1,5 +1,6 @@
 ---
 title: Svelte & SvelteKit
+tags: "svelte"
 format: "Workshop: 2-3 days"
 subtext: "Bookable for teams – on-site or remote"
 description: <p>Svelte is great choice for building fast and light-weight web

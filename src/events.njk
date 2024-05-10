@@ -71,6 +71,7 @@ description: Find out about upcoming events, conferences and meetups we will be 
   </div>
 </section>
 
+{% include "global/default-newsletter-cta.njk" %}
 {%
   set 'content' = {
   "title": "Grow your business with us",
@@ -79,4 +80,4 @@ description: Find out about upcoming events, conferences and meetups we will be 
   "linkText": "Get in touch"
   }
 %}
-{{ ctaBanner('aqua', 'full', content) }}
+{{ ctaBanner('purple', 'full', content) }}

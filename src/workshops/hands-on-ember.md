@@ -1,5 +1,6 @@
 ---
 title: Hands-on Ember.js
+tags: "ember"
 format: "Workshop: 2-3 days"
 subtext: "Bookable for teams – on-site or remote"
 description: <p>We go through a series of stages that each build on one another.
