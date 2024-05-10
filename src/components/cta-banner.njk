@@ -21,32 +21,31 @@
         {% if content.text %}
           <div class="cta-banner__text">{{ content.text | safe }}</div>
         {% endif %}
-        {% if content.mailInput %}
-          <form
-            action="{{ content.mailAction }}"
-            method="post"
-            name="{{ content.mailName }}"
-            target="_blank"
-            novalidate
-            >
+        {% if content.newsletterSignup %}
+          <form action="{{ content.newsletterSignupAction }}" method="post" target="_blank">
             <div class="mb-2 mt-2">
               <input
-              class="contact-form__input"
-              id="contact-email"
-              type="email"
-              name="email"
-              placeholder="Your e-mail"
-              required
+                class="contact-form__input"
+                id="email"
+                type="email"
+                name="EMAIL"
+                placeholder="Your e-mail"
+                required
               />
             </div>
+            <button class="btn-primary btn-primary--white {{ class }}" type="submit">
+              <span>Subscribe</span>
+              {% include 'svg/arrow.njk' %}
+            </button>
           </form>
         {% endif %}
         {% if content.linkUrl %}
-          {% set link = {
+          {%
+            set link = {
             "label": content.linkText,
             "url": content.linkUrl
-          }
- %}
+            }
+          %}
           {{ btnPrimary( link, 'white', 'mt-2' ) }}
         {% endif %}
       </div>

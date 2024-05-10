@@ -1,11 +1,10 @@
 {% from "cta-banner.njk" import ctaBanner %}
-{% set content = {
+{%
+  set content = {
   "title": "Stay up to date on Rust",
-  "text": "Subscribe to our newsletter to stay informed about the latest events we organise, workshops we hold and blog posts about Rust.",
-  "linkUrl": "http://eepurl.com/iPrXXU",
-  "linkText": "Subscribe!",
-  "mailInput": true,
-  "mailAction": "placeholder",
-  "mailName": "placeholder"
-} %}
+  "text": "Subscribe to our newsletter and stay up to date about the latest events, workshops, and other news around Rust.",
+  "newsletterSignupAction": "//mainmatter.us13.list-manage.com/subscribe?u=50bd3378ab1da4988aa174d0b&id=f4b3a4ff26",
+  "newsletterSignup": true
+  }
+%}
 {{ ctaBanner('aqua', 'full', content) }}

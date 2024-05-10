@@ -1,11 +1,10 @@
 {% from "cta-banner.njk" import ctaBanner %}
-{% set content = {
-  "title": "Stay up to date on Mainmatter!",
-  "text": "Subscribe to our newsletter to stay informed about the latest events we organise, workshops we hold and blog posts about our work at Mainmatter.",
-  "linkUrl": "http://eepurl.com/iPrXOs",
-  "linkText": "Subscribe!",
-  "mailInput": true,
-  "mailAction": "placeholder",
-  "mailName": "placeholder"
-} %}
+{%
+  set content = {
+  "title": "Stay up to date!",
+  "text": "Subscribe to our newsletter and stay up to date about the latest events, workshops, and other news around our work.",
+  "newsletterSignupAction": "//mainmatter.us13.list-manage.com/subscribe?u=50bd3378ab1da4988aa174d0b&id=be6246b386",
+  "newsletterSignup": true
+  }
+%}
 {{ ctaBanner('purple', 'full', content) }}
