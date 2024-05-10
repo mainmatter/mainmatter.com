@@ -21,6 +21,29 @@
         {% if content.text %}
           <div class="cta-banner__text">{{ content.text | safe }}</div>
         {% endif %}
+        {% if content.newsletterSignup %}
+          <form action="{{ content.newsletterSignupAction }}" method="post" target="_blank">
+            <div class="contact-form__field cta__input mb-2 mt-2">
+              <input
+                class="contact-form__input"
+                id="email"
+                type="email"
+                name="EMAIL"
+                placeholder="Your e-mail"
+                required
+              />
+              <label class="contact-form__label h4" for="email">
+                Your e-mail
+                <span class="screenreader">(Required)</span>
+              </label>
+              <span class="contact-form__label-required" aria-hidden="true">Required</span>
+            </div>
+            <button class="btn-primary btn-primary--white {{ class }}" type="submit">
+              <span>Subscribe</span>
+              {% include 'svg/arrow.njk' %}
+            </button>
+          </form>
+        {% endif %}
         {% if content.linkUrl %}
           {%
             set link = {

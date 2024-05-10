@@ -85,3 +85,12 @@
 .cta-banner__eyebrow {
   margin-bottom: 1.5rem;
 }
+
+.cta__input {
+  min-width: 100%;
+}
+@media (min-width: 48rem) {
+  .cta__input {
+    min-width: 32rem;
+  }
+}
