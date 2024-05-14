@@ -226,4 +226,3 @@ and audit on your own, you are never alone. Consider joining the
 place to ask questions or get feedback regarding this process), or
 [hire a facilitator](/services/workshops/design-system-kickoff-interface-inventory/)
 to help make this project a success.
-

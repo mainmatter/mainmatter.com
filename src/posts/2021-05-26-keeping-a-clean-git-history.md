@@ -340,5 +340,3 @@ merging, squashing, and rebasing.
 
 While everything in this post is completely optional, I hope that you can see
 the benefits and maybe adopt some of the ideas in your own workflow.
-
-
