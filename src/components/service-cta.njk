@@ -10,6 +10,12 @@
       {% if tag === "ember" %}
         {% include "global/ember-cta.njk" %}
       {% endif %}
+      {% if tag === "git" %}
+        {% include "global/git-workshop-cta.njk" %}
+      {% endif %}
+      {% if tag === "design" %}
+        {% include "global/interface-inventory-workshop-cta.njk" %}
+      {% endif %}
     {% endfor %}
   {% endif %}
 {%- endmacro -%}

@@ -1,7 +1,7 @@
 ---
 title: "How to create an interface inventory"
 authorHandle: msmarhigh
-tags: process
+tags: process design
 bio: "Director of Product Design"
 description: "Mar High on how to create an interface inventory"
 og:
@@ -9,8 +9,6 @@ og:
 tagline: |
   <p>Are you struggling with a messy interface? Is your digital product full of inconsistencies? Are your designers and developers having a hard time aligning on how to evolve your UI?</p> <p>If so, consider creating an interface inventory. It is a small but powerful step towards a homogenous, pattern-based digital design strategy.</p>
 ---
-
-{% include "global/interface-inventory-workshop-cta.njk" %}
 
 ## Interface inventories 101
 
@@ -229,4 +227,3 @@ place to ask questions or get feedback regarding this process), or
 [hire a facilitator](/services/workshops/design-system-kickoff-interface-inventory/)
 to help make this project a success.
 
-{% include "global/interface-inventory-workshop-cta.njk" %}

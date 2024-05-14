@@ -1,7 +1,7 @@
 ---
 title: "Git Good - The magic of keeping a clean Git history"
 authorHandle: real_ate
-tags: misc
+tags: [git, misc]
 bio: "Senior Software Engineer, Ember Learning Core Team member"
 description: |
   Chris Manson goes into detail about the benefits of a clean git history and
@@ -12,8 +12,6 @@ og:
 tagline: |
   <p>This post is designed to help you form a solid mental model while working with Git both professionally and in an open source project, and how to ensure you are following best practices to make the process easier for everyone.</p>
 ---
-
-{% include "global/git-workshop-cta.njk" %}
 
 This topic was inspired by some of my pairing sessions with my colleague
 [Tobias Bieniek](https://twitter.com/tobiasbieniek) and the concepts laid out in
@@ -343,4 +341,4 @@ merging, squashing, and rebasing.
 While everything in this post is completely optional, I hope that you can see
 the benefits and maybe adopt some of the ideas in your own workflow.
 
-{% include "global/git-workshop-cta.njk" %}
+
