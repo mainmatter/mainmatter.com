@@ -1,7 +1,7 @@
 ---
 title: "How to create an interface inventory"
 authorHandle: msmarhigh
-tags: process design
+tags: [process, design]
 bio: "Director of Product Design"
 description: "Mar High on how to create an interface inventory"
 og:
