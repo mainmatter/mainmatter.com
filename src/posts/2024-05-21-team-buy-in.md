@@ -1,6 +1,7 @@
 ---
 title: "Team Buy-in"
 authorHandle: oliverbarnes
+twitter: oliverbarnes
 tags: [startups, consulting]
 bio: "Oliver Azevedo Barnes"
 description:
