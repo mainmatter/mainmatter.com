@@ -10,6 +10,7 @@ title: null
 {% from "image-banner-with-text.njk" import imageBannerWithText %}
 {% from "tech-cards.njk" import techCards %}
 {% from "cta-banner.njk" import ctaBanner %}
+{% from "quote.njk" import quote %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {%
   set 'content' = {
@@ -56,6 +57,20 @@ title: null
 
 {% set clients = ['qonto', 'experteer', 'trainline', 'rail-europe'] %}
 {{ featuredCaseStudies(clients, 'Browse our work') }}
+
+<div class="container container--lg quote-section">
+  {%
+    set content = {
+    "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
+    "source": "Jürgen Witte, CPO at Rail Europe",
+    "image": "/assets/images/photos/juergen-witte.png",
+    "alt": "Jürgen Witte, smiling at the camera wearing a light blue shirt and blue blazer",
+    "loading": "lazy"
+    }
+  %}
+  {{ quote(content) }}
+</div>
+
 {%
   set 'content' = {
   "title": "Why Mainmatter",
