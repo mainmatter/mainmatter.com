@@ -117,7 +117,6 @@ title: null
   }
 %}
 {{ ctaBanner('purple', 'default', content) }}
-
 {%
   set 'content' = {
   "title": "Why Mainmatter",
@@ -129,6 +128,36 @@ title: null
   }
 %}
 {{ imageBannerWithText(content) }}
+
+{% if collections.calendar.length > 0 %}
+  <section class="next-events">
+    <div class="container container--xl">
+      <h2 class="section__introduction h5">Upcoming events</h2>
+      <ol class="next-events__list">
+        {% for event in collections.calendar %}
+          {% if loop.index < 4 %}
+            <div class="next-events-cards__grid-element">
+              <div class="next-events-cards--hover"></div>
+              <a href="{{ event.data.url }}" class="next-events-cards__link"></a>
+              <div class="next-events-cards__date-wrapper">
+                <p class="small">{{ event.date | monthDayYear }}</p>
+              </div>
+
+              <div class="next-events-cards__content">
+                <div class="next-events-cards_headline">
+                  <h4 class="next-events-cards__title mb-015 ">{{ event.data.title }}</h4>
+                </div>
+                <div class="next-events-cards__link-wrapper">
+                  <span class="next-events-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+{% endif %}
 
 <section class="mt-15 mb-0">
   {%
