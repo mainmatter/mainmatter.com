@@ -72,17 +72,6 @@ title: null
 </div>
 
 {%
-  set 'content' = {
-  "title": "Why Mainmatter",
-  "subtitle": "We are a team of developers, inventors, designers, strategists, artists and storytellers. We work remotely from 9 countries in Europe and we believe in recruiting top talents from any location.",
-  "text": "<p>That said, we still value face time. We frequently come together for team events and workshops, and invite our clients to join us as well.</p>",
-  "image": "/assets/images/photos/mainmatter-team.jpg",
-  "alt": "Group photo of Mainmatter team",
-  "loading": "lazy"
-  }
-%}
-{{ imageBannerWithText(content) }}
-{%
   set 'tech_1' = {
   "title": "Rust is a competitive advantage",
   "logo": "rust",
@@ -128,6 +117,18 @@ title: null
   }
 %}
 {{ ctaBanner('purple', 'default', content) }}
+
+{%
+  set 'content' = {
+  "title": "Why Mainmatter",
+  "subtitle": "We are a team of developers, inventors, designers, strategists, artists and storytellers. We work remotely from 9 countries in Europe and we believe in recruiting top talents from any location.",
+  "text": "<p>That said, we still value face time. We frequently come together for team events and workshops, and invite our clients to join us as well.</p>",
+  "image": "/assets/images/photos/mainmatter-team.jpg",
+  "alt": "Group photo of Mainmatter team",
+  "loading": "lazy"
+  }
+%}
+{{ imageBannerWithText(content) }}
 
 <section class="mt-15 mb-0">
   {%
