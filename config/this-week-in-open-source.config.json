@@ -83,7 +83,9 @@
         "paoloricciuti/svelte-client-components",
         "CodingGarden/listd",
         "oscard0m/test-sveltekit",
-        "mainmatter/svelte-concurrency"
+        "mainmatter/svelte-concurrency",
+        "bmdavis419/sveltekit-pgvector-supabase",
+        "sveltejs/language-tools"
       ]
     },
     {
@@ -445,7 +447,8 @@
         "emberjs/ember-inflector",
         "yapplabs/ember-tether",
         "cibernox/ember-power-calendar",
-        "ef4/decorator-transforms"
+        "ef4/decorator-transforms",
+        "adopted-ember-addons/ember-infinity"
       ]
     },
     {
@@ -540,6 +543,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "",
+  "last_date": "2024-05-12..2024-05-19",
   "query_type": "Merged"
 }
