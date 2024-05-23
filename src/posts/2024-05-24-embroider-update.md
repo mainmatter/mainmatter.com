@@ -25,44 +25,47 @@ If this is the first time you have heard about Embroider, we encourage you to
 read the introduction of the November blog post, which explains what Embroider
 is in more detail and presents the Embroider Initiative.
 
-Regarding the progress update itself, the first section of the November blog
-post was “Getting Ember to work with Vite”. We concluded by expressing the
-team’s optimism in reaching the point where it's possible to build the first
-real-world Ember applications with Vite until the end of the year.
-
-About six months later, we are glad to name the main section of this article…
+The main goal that we laid out in the last blog was to get our Ember apps
+building with Vite, not only have we achieved that landmark we have moved onto
+the next phase which all about brining the wonderful DX improvments that vite
+can promise to all Ember apps.
 
 ## Improving how Ember works with Vite
 
-Currently, our challenge is no longer to get Ember working with Vite, but to
-optimize the Vite build and maintain the compatibility of all classic features.
+Now that our challenge is no longer to get Ember working with Vite we need to
+figure out how to optimize the Vite build and maintain the compatibility of all
+classic features. To understand how to optimize, we need to dive into the
+chalange that an Ember build presents to us
 
 ### How we make it work: the rewritten app
 
-By default, an Ember application cannot be built with Vite. Indeed, Ember
-performs some “magic” around resolving imports, relying on
+By default, an Ember application cannot be built with Vite. The reason for this
+is because Ember performs some “magic” around resolving imports, relying on
 [AMD modules](https://github.com/emberjs/rfcs/pull/938) and other specific build
-actions, which are incompatible with Vite resolver. Let’s take an example: you
-generated an Ember app using the default blueprint, and you got a file
-`app/index.html` which contains a reference to the CSS stylesheet
-`“assets/vendor.css”`. This file is supposed to contain the styles provided by
-the libraries you use, but… it doesn’t exist. Your `app/index.html` points to a
-file that is literally nowhere in your app files. Ember expects this: at build
-time, it will go through all the active Ember addons used in your app and will
-emit the `assets/vendor.css` file in the build output. But this is an
-Ember-specific behavior that Vite cannot deal with. Vite expects the referenced
-file to exist, it cannot guess how to find it or write it.
+actions, which are incompatible with the Vite resolver. Let’s take an example:
+if you generated an Ember app using the default blueprint, and you will get a
+file `app/index.html` which contains a reference to the CSS stylesheet
+`“assets/vendor.css”`. This file is supposed to contain the vendor styles that
+are automatically provided by the Ember addons you use, but that files doesn’t
+exist in your repo. Your `app/index.html` points to a file that is literally
+nowhere in your app files. At build time Ember will go through all the active
+Ember addons used in your app and will emit the `assets/vendor.css` file at some
+point in the build pipeline. But this is an Ember-specific behavior that Vite
+cannot deal with. Vite expects the referenced file to exist, it cannot guess how
+to find it or write it.
 
 To solve this issue, when the build starts, Embroider first produces an
-intermediate Ember application that we call the “rewritten app”. The rewritten
-app is slightly different from the initial Ember app, in a way it can be
-consumed by Vite. For instance, it has an `index.html` at the root and it does
-contain the `assets/vendor.css`. This approach allows us to build real-world
-applications with Vite, but it has performance downsides: Vite prebuilds the app
+intermediate Ember application that we call the “rewritten app” and outputs it
+to `node_modules/.embroider/rewritten-app`. The rewritten app is slightly
+different from the initial Ember app, in a way it can be consumed by Vite. For
+instance, it has an `index.html` at the root and it does contain the
+`assets/vendor.css`. This approach allows us to build real-world applications
+with Vite, but it has performance (and other) downsides: Vite prebuilds the app
 dependencies for optimization purposes, but the rewritten app _is_ considered a
-dependency. Therefore, changes in the Ember app that need to be reflected in the
-rewritten app imply changes in a dependency, so Vite has to go through bundling
-dependencies again and we lose the advantage of the prebuild.
+dependency because it lives in a folder in node_modules. Therefore, changes in
+the Ember app that need to be reflected in the rewritten app imply changes in a
+dependency, so Vite has to go through bundling dependencies again and we lose
+the advantage of the prebuild.
 
 ### How we want to make it work: “inversion of control”
 
@@ -78,13 +81,13 @@ our `vendor.css` case. Before inversion of control, Embroider produces a
 rewritten app that concats all the styles provided by the classic addons into a
 file `assets/vendor.css`, and this file is referenced in the `index.html`. Vite
 has no trouble consuming that. But now, we want to get rid of the rewritten app
-step. To inverse the control, we use a special identifier in the `index.html`
+step. To invert the control, we use a special identifier in the `index.html`
 that starts with `@embroider`. For instance: `@embroider/core/vendor.css`. Then
 we implement our own Vite resolver plugin that is able to recognize this
 identifier and ask Embroider to return the content for this file. Embroider
-executes a code that is very similar to the code that was initially used to
-create the `assets/vendor.css` in the rewritten app, but this time, it doesn’t
-write any file: it just returns the content to Vite as “virtual” content.
+executes code that is very similar to the code initially used to create the
+`assets/vendor.css` in the rewritten app, but this time, it doesn’t write any
+file: it just returns the content to Vite as “virtual” content.
 
 ### Progress and next steps
 
@@ -92,59 +95,61 @@ The “inversion of control” topic includes every task that is necessary to re
 the rewritten app. Among these tasks, we have the virtualization of several
 files, handling the public assets provided by the app and addons, and also
 maintaining the compatibility of classic addons with Embroider by getting
-functionalities like content-for to work with Vite, etc… A wide part of this
-work is done already: all the app entrypoints are virtualized, the new authoring
-format for the `index.html` is ready, and we have identified the few pieces we
-still miss to maintain entirely the compatibility with the classic world.
+functionalities like content-for to work with Vite. A wide part of this work is
+done already: all the app entrypoints are virtualized, the new authoring format
+for the `index.html` is ready, and we have identified the few pieces we still
+have to work on to maintain the compatibility with the classic world (the best
+example is fastboot supports).
 
-The task that will close the “inversion of control” topic will be the one that
-actually turns off the writing of the rewritten app. From this moment, the
+The task that will close out the “inversion of control” topic will be the one
+that actually turns off the writing of the rewritten app. From this moment, the
 initial Ember app will have to contain everything Vite needs to communicate with
-Embroider. That’s why another important step comes along with this one: updating
-the application blueprint so newly generated Ember apps have everything in place
-to build with Vite.
+Embroider. This will also require us to update the application blueprint so
+newly generated Ember apps have everything in place to build with Vite. We're
+hoping to have a preview of this new blueprint ready in the next few days for
+people to try out.
 
-There is another side field we haven’t mentioned so far but is crucial: as we
-progressively improve how Ember works with Vite, we need to test the new way our
-functionalities work. Huge progress has been made already on this part as well.
-
-### The test suite uses Vite
+### The Embroider test suite now uses Vite
 
 Embroider’s test suite relies on minimalist Ember app and addon templates that
 can be overridden and output according to the needs of each test scenario. Some
 of the new functionalities mentioned above required the test suite to build
 these output apps with Vite. It has been a long road, but we are finally there:
-most of Embroider's test suite uses Vite commands to get the app built.
+all of Embroider's test suite uses Vite to get the app built.
 
 For the new tests, we started to reorganize things in a way that allows us to
 assert each functionality behaves as expected in build mode and dev mode: the
 approach that was previously used to start the Ember dev server in one specific
 test file has been refactored to a `CommandWatcher` helper that can be imported
-in tests to easily start Vite or Ember server depending on arguments.
+in tests to easily start Vite and wait for logs that say building is complete
+before asserting.
 
-Also, we added an audit system that fits Vite: Some tests require asserting the
-content of the build output in a way that cannot be anticipated. For instance,
-let’s suppose you want to check a specific piece of code is present in the
-production build. You don’t know how Rollup is going to organize the files, so
-you don’t know where to look. One purpose of the audit is to serve the build
-output at an http location, so your test can ask for fetching the URL that is
-supposed to respond with the piece of code you are looking for.
+Also, we improved the existing audit system so that it can interface with both
+the Vite dev server and the build output. Because Vite behaves differently in
+dev mode and build (it essentially just uses Rollup during the build) we need to
+verify that some of the virtualisation features we are implementing work both
+when Ember developers are developing their app and when they are deploying to
+production. Using this new audit system also allows us to more easly investigate
+the contents of the build, e.g. because don’t know how Rollup is going to
+organize the files, so you don’t know where to look for a specific piece of code
+you want to verify made it into the build.
 
-## A word about reducing the bus factor
+## Reducing the bus factor
 
 In the section “Improving the bus factor” of the November blog post, we
 explained how challenging it is to contribute to the core of Embroider and we
 introduced the apprenticeship model we adopted to address the
 [bus factor](https://en.wikipedia.org/wiki/Bus_factor) issue. This model still
 stands today: Chris pairs with [Ed Faulkner](https://github.com/ef4/) every week
-and acquired a solid knowledge of the heart of the Embroider codebase.
+and now has a solid knowledge of the heart of the Embroider codebase.
 
 Following Andrey Mikhaylov’s departure in March,
 [Marine Dunstetter](https://github.com/BlueCutOfficial) joined the Embroider
 Initiative as a full-time engineer. We have extended the apprenticeship model by
-having Chris and Marine meet and pair half a day each week. Marine’s ramp-up was
-successful and she made impactful contributions to the project over the past
-three months.
+having Chris and Marine meet and pair regularly each week. Marine’s ramp-up was
+very successful and she has made many impactful contributions to the project
+over the past three months and we wouldn't be so close to completing the
+inversion of control work at the time of writing without her!
 
 ## Last words
 
