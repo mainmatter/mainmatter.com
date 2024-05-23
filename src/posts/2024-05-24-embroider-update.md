@@ -27,7 +27,7 @@ is in more detail and presents the Embroider Initiative.
 
 The main goal that we laid out in the last blog was to get our Ember apps
 building with Vite, not only have we achieved that landmark we have moved onto
-the next phase which all about brining the wonderful DX improvments that vite
+the next phase which all about brining the wonderful DX improvments that Vite
 can promise to all Ember apps.
 
 ## Improving how Ember works with Vite
@@ -35,7 +35,7 @@ can promise to all Ember apps.
 Now that our challenge is no longer to get Ember working with Vite we need to
 figure out how to optimize the Vite build and maintain the compatibility of all
 classic features. To understand how to optimize, we need to dive into the
-chalange that an Ember build presents to us
+challenge that an Ember build presents to us
 
 ### How we make it work: the rewritten app
 
@@ -99,7 +99,7 @@ functionalities like content-for to work with Vite. A wide part of this work is
 done already: all the app entrypoints are virtualized, the new authoring format
 for the `index.html` is ready, and we have identified the few pieces we still
 have to work on to maintain the compatibility with the classic world (the best
-example is fastboot supports).
+example is FastBoot supports).
 
 The task that will close out the “inversion of control” topic will be the one
 that actually turns off the writing of the rewritten app. From this moment, the
@@ -130,7 +130,7 @@ dev mode and build (it essentially just uses Rollup during the build) we need to
 verify that some of the virtualisation features we are implementing work both
 when Ember developers are developing their app and when they are deploying to
 production. Using this new audit system also allows us to more easly investigate
-the contents of the build, e.g. because don’t know how Rollup is going to
+the contents of the build, e.g. you don’t know how Rollup is going to
 organize the files, so you don’t know where to look for a specific piece of code
 you want to verify made it into the build.
 
