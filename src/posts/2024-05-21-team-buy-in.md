@@ -89,9 +89,9 @@ Otherwise, once we start the collaboration, it'll be an uphill battle earning th
 
 #### Alignment on scope
 
-An engagement can take many shapes and forms. It can go from something tightly bounded like updating the runtime and dependencies of a given codebase, to something much broader like continuous assessment of processes and practices. Some times implementation work will be done in parallel with continuous assessment and counselling.
+An engagement can take many shapes and forms. It can have a tightly bounded scope like updating the runtime and dependencies of a given codebase, or much broader and open ended, as with continuous assessment of team processes and practices. Sometimes implementation work might be done in tandem with continuous assessment and counselling, too.
 
-People can become territorial over their work. Nobody likes somebody looking over their shoulders and giving unsolicited advice. When there's a misunderstanding over the scope of our work, that's exactly how it'll feel like to the client team.
+Whatever the scope, it needs to be clearly communicated as soon as it is known. People can become territorial over their work. Nobody likes someone looking over their shoulders nor receiving unsolicited advice. If there's a misunderstanding over the scope of our work, that's exactly how it'll feel to the client team.
 
 ## While engaging
 
