@@ -169,4 +169,4 @@ To keep up to date with the latest developments on the
 [Embroider Initiative](https://mainmatter.com/embroider-initiative/), don't miss
 Chris Manson's talk at
 [EmberConf](https://www.emberconf.com/schedule/launching-ember-into-the-future-)
-on May 31th.
+on May 31st.
