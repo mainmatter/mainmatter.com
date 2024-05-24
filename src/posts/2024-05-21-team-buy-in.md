@@ -93,11 +93,15 @@ An engagement can take many shapes and forms. It can have a tightly bounded scop
 
 Whatever the scope, it needs to be clearly communicated as soon as it is known. People can become territorial over their work. Nobody likes someone looking over their shoulders nor receiving unsolicited advice. If there's a misunderstanding over the scope of our work, that's exactly how it'll feel to the client team.
 
-## While engaging
+## During the engagement
 
-Working from pain points
+Client team buy-in involves accepting to hear recommendations from us, and for this to continue, our recommendations have to resonate and make sense within their context. 
 
-Picking battles
+Addressing declared pain points is a great way to ensure this relevance. We're bringing immediate value, solving real problems for the client team.
+
+When detecting issues around which there's not yet agreement with the client team, we need to pick our battles carefully. Pushing for something that's not deemed to be a priority can backfire.
+
+Trust is something that builds over time.
 
 ## Wrapping up
 
