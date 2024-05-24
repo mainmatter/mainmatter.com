@@ -134,9 +134,9 @@ developers are developing their app and when they are deploying to production.
 Using this new audit system also allows us to more easily investigate the
 content of the build, e.g. you want to verify a specific piece of code has been
 included into the build, but you don’t know how Rollup is going to organize the
-files, so you don’t know what file to look in to assert the code is present: the
-audit system is designed to figure this out for you, so you can focus your test
-purpose without struggling with Rollup internals.
+files, so you don’t know what file to look into to verify that the code is
+present: the audit system is designed to figure this out for you, so you can
+focus on your test's purpose without struggling with Rollup internals.
 
 ## Reducing the bus factor
 
