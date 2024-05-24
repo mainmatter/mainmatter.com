@@ -37,7 +37,7 @@ Everybody wins.
 
 ### ...and without
 
-We might still get results, but it'll be (a lot) harder. 
+We might still get results, but it'll be (a lot) harder and it'll take much longer.
 
 The engagement might be met with subtle, and not so subtle, resistance and obstruction. Morale is hit on both sides. People might even leave, disgruntled, sometimes taking precious domain knowledge with them.
 
@@ -86,6 +86,12 @@ In a similar fashion, when we augment a team (with engineers, architects, design
 Internal framing of augmentation work as such is key, as well. 
 
 Otherwise, once we start the collaboration, it'll be an uphill battle earning the trust of our colleagues on the client side.
+
+#### Alignment on scope
+
+An engagement can take many shapes and forms. It can go from something tightly bounded like updating the runtime and dependencies of a given codebase, to something much broader like continuous assessment of processes and practices. Some times implementation work will be done in parallel with continuous assessment and counselling.
+
+People can become territorial over their work. Nobody likes somebody looking over their shoulders and giving unsolicited advice. When there's a misunderstanding over the scope of our work, that's exactly how it'll feel like to the client team.
 
 ## While engaging
 
