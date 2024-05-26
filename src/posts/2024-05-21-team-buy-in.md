@@ -31,17 +31,7 @@ When the client team is bought-in, we get an environment of trust, a sweet spot 
 
 Context and knowledge are shared proactively, affording us smooth onboarding. Once we have some recommendations to give, these are discussed constructively. Decisions on what to implement are naturally done in consensus.
 
-A virtuous cycle ensues, where implementing changes is progressively faster and more effective, and ideas flow freely back and forth. Together we shift into continous improvement mode.
-
-Everybody wins.
-
-### Rocky path
-
-When the team isn't aligned with the engagement, we might still get results, but it's (a lot) harder and it takes much longer.
-
-The engagement might be met with subtle, and not so subtle, resistance and obstruction. Morale is hit on both sides. People might even leave, disgruntled, sometimes taking precious domain knowledge with them.
-
-It's no fun for any of the involved. And, bottom-line, the client gets less return over their investment.
+A virtuous cycle ensues, where implementing changes is progressively faster and more effective, and ideas flow freely back and forth. Together we shift into continous improvement mode. Everybody wins.
 
 So. How do you get buy-in?
 
