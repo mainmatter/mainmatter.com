@@ -4,7 +4,10 @@
 }
 
 .ember-sponsors__image {
-  color: var(--color-white);
+  max-width: 90%;
+  max-height: 100%;
+  object-fit: scale-down;
+  filter: grayscale(100%) brightness(0) invert(1);
 }
 
 .embroider-sponsors__grid {
@@ -19,33 +22,40 @@
     max-width: 160px;
   }
 
-@media (min-width: 62em) {
+  @media (min-width: 62em) {
+    .embroider-sponsor__grid-element {
+      max-width: unset;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-  &.tier-one {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
-    margin-bottom: 4.5rem;
-  }
+    &.tier-one {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+      margin-bottom: 4.5rem;
+    }
 
-  &.tier-two {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3.5rem;
-    margin-bottom: 4.5rem;
-  }
+    &.tier-two {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3.5rem;
+      margin-bottom: 4.5rem;
+    }
 
-  &.tier-three {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 4.5rem;
-  }
+    &.tier-three {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 4.5rem;
 
-  .embroider-sponsor__grid-element {
-    max-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+      .embroider-sponsor__grid-element {
+        grid-column: span 2;
+      }
+
+      &:has(:nth-last-child(odd)) :nth-last-child(5) {
+        grid-column: 2 / span 2;
+      }
+    }
   }
-}
 }
