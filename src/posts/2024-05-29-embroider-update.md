@@ -13,7 +13,7 @@ tagline: |
     This post covers the progress over the last six months on <a href="https://github.com/embroider-build/embroider">the Embroider project</a> that has been made through Mainmatter's <a href="https://mainmatter.com/embroider-initiative/">Embroider Initiative</a>.
   </p>
 
-image: /assets/images/posts/2024-05-29-embroider-update/header.jpg
+image: /assets/images/posts/2024-05-29-embroider-update/header-embroider.jpg
 imageAlt:
   "The logo of companies supporting the Embroider Initiative on a background
   showing people working together on a laptop"
