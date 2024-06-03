@@ -85,7 +85,8 @@
         "oscard0m/test-sveltekit",
         "mainmatter/svelte-concurrency",
         "bmdavis419/sveltekit-pgvector-supabase",
-        "sveltejs/language-tools"
+        "sveltejs/language-tools",
+        "svecosystem/runed"
       ]
     },
     {
