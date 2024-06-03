@@ -8,7 +8,9 @@ title: null
 {% from "logo-list.njk" import logoList %}
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
 {% from "image-banner-with-text.njk" import imageBannerWithText %}
+{% from "tech-cards.njk" import techCards %}
 {% from "cta-banner.njk" import ctaBanner %}
+{% from "quote.njk" import quote %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {%
   set 'content' = {
@@ -55,10 +57,70 @@ title: null
 
 {% set clients = ['qonto', 'experteer', 'trainline', 'rail-europe'] %}
 {{ featuredCaseStudies(clients, 'Browse our work') }}
+
+<div class="container container--lg quote-section">
+  {%
+    set content = {
+    "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
+    "source": "Jürgen Witte, CPO at Rail Europe",
+    "image": "/assets/images/photos/juergen-witte.png",
+    "alt": "Jürgen Witte, smiling at the camera wearing a light blue shirt and blue blazer",
+    "loading": "lazy"
+    }
+  %}
+  {{ quote(content) }}
+</div>
+
+{%
+  set 'tech_1' = {
+  "title": "Rust is a competitive advantage",
+  "logo": "rust",
+  "link": "rust-consulting"
+  }
+%}
+{%
+  set 'tech_2' = {
+  "title": "Svelte is the future of frontend development",
+  "logo": "svelte",
+  "link": "svelte-consulting"
+  }
+%}
+{%
+  set 'tech_3' = {
+  "title": "Elixir and Phoenix: The best of all worlds",
+  "logo": "elixir",
+  "link": "expertise/elixir-phoenix"
+  }
+%}
+{%
+  set 'tech_4' = {
+  "title": "We're veteran Ruby and Ruby on Rails experts",
+  "logo": "ruby",
+  "link": "ruby-rails-consulting"
+  }
+%}
+{%
+  set 'tech_5' = {
+  "title": "Ember is our expertise",
+  "logo": "ember",
+  "link": "ember-consulting"
+  }
+%}
+{% set technologies = [tech_1, tech_2, tech_3, tech_4, tech_5] %}
+{{ techCards('team-reinforcement_technologies', 'Technologies', 'Our skillset is based on a core set of technologies that cover architecture, backend and frontend development with: ', technologies) }}
+{%
+  set 'content' = {
+  "title": "Workshops & Training",
+  "text": "We teach teams how to build sustainable products, help them adopt new technologies, and set them up for long-term success.",
+  "linkUrl": "/services/workshops/",
+  "linkText": "Check out our workshops catalog"
+  }
+%}
+{{ ctaBanner('purple', 'default', content) }}
 {%
   set 'content' = {
   "title": "Why Mainmatter",
-  "subtitle": "We are a team of developers, inventors, designers, strategists, artists and storytellers. We work remotely from 9 countries in Europe and we believe in recruiting top talents from any location.",
+  "subtitle": "We are a team of developers, inventors, designers, strategists, artists and storytellers. We work remotely from 10 countries in Europe and we believe in recruiting top talents from any location.",
   "text": "<p>That said, we still value face time. We frequently come together for team events and workshops, and invite our clients to join us as well.</p>",
   "image": "/assets/images/photos/mainmatter-team.jpg",
   "alt": "Group photo of Mainmatter team",
@@ -66,15 +128,36 @@ title: null
   }
 %}
 {{ imageBannerWithText(content) }}
-{%
-  set 'content' = {
-  "title": "Build lasting products, systematically",
-  "text": "Our playbook describes methodologies for building sustainable digital products and running an effective, collaborative product development process. It is based on our experiences working on projects with international clients in various industries for many years.",
-  "linkUrl": "/playbook",
-  "linkText": "Download our playbook"
-  }
-%}
-{{ ctaBanner('purple', 'default', content) }}
+
+{% if collections.calendar.length > 0 %}
+  <section class="next-events">
+    <div class="container container--xl">
+      <h2 class="section__introduction h5">Upcoming events</h2>
+      <ol class="next-events__list">
+        {% for event in collections.calendar %}
+          {% if loop.index < 4 %}
+            <div class="next-events-cards__grid-element">
+              <div class="next-events-cards--hover"></div>
+              <a href="{{ event.data.url }}" class="next-events-cards__link"></a>
+              <div class="next-events-cards__date-wrapper">
+                <p class="small">{{ event.date | monthDayYear }}</p>
+              </div>
+
+              <div class="next-events-cards__content">
+                <div class="next-events-cards_headline">
+                  <h4 class="next-events-cards__title mb-015 ">{{ event.data.title }}</h4>
+                </div>
+                <div class="next-events-cards__link-wrapper">
+                  <span class="next-events-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+{% endif %}
 
 <section class="mt-15 mb-0">
   {%
