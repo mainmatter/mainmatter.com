@@ -7,13 +7,13 @@ description:
   "Nikulipe's Florent Bécart and Luca Palmieri explored Nikulipe's journey using
   Rust across all layers of their stack to develop payment processing services."
 og:
-  image: "/assets/images/posts/2024-04-11-fiberplanes-three-year-rust-journey/og-image.png"
+  image: "/assets/images/posts/2024-06-06-payment-infrastructure-with-rust/og-image.jpg"
 tagline: |
   <p>
   Florent Bécart, CTO of Nikulipe, and Luca Palmieri, Principal Engineering Consultant at Mainmatter, reviewed Nikulipe's experience with Rust, along with the reasons for adopting it as well as challenges they faced along the way.
   </p>
 
-image: "/assets/images/posts/2024-04-11-fiberplanes-three-year-rust-journey/header.jpg"
+image: "/assets/images/posts/2024-06-06-payment-infrastructure-with-rust/header-visual.jpg"
 imageAlt: "Florent's picture on a gray background"
 ---
 
@@ -35,6 +35,4 @@ caching as the primary drawbacks. They end by talking about the obstacles faced
 working with Protobuf in Rust which led to code duplication and further
 complications.
 
-<iframe width="560" height="315" src="" title="Embedded video of Florent's interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-<rust-newsletter-cta></rust-newsletter-cta>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RA-r4F4ZmXM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
