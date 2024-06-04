@@ -42,6 +42,9 @@ importers:
       '@quasibit/eleventy-plugin-sitemap':
         specifier: ^2.1.5
         version: 2.2.0
+      '@rollup/plugin-node-resolve':
+        specifier: ^6.0.0
+        version: 6.1.0(rollup@2.79.1)
       '@tbranyen/jsdom':
         specifier: 13.0.0
         version: 13.0.0
@@ -68,7 +71,7 @@ importers:
         version: 11.1.0(eslint@8.57.0)
       eslint-plugin-prettier:
         specifier: ^5.1.3
-        version: 5.1.3(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.2.5)
+        version: 5.1.3(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.2.5)
       express:
         specifier: ^4.18.1
         version: 4.18.2
@@ -99,9 +102,6 @@ importers:
       rollup-plugin-commonjs:
         specifier: ^10.1.0
         version: 10.1.0(rollup@2.79.1)
-      rollup-plugin-node-resolve:
-        specifier: ^5.2.0
-        version: 5.2.0(rollup@2.79.1)
       rollup-plugin-terser:
         specifier: ^7.0.2
         version: 7.0.2(rollup@2.79.1)
@@ -469,6 +469,18 @@ packages:
     resolution: {integrity: sha512-7YoU4jjipLjifBhZwttLWbAAkImmBfeMQ0+1ST6mJO45z2mFLHZcgnfHwGF2joNk74wiYNsNOB1ennouzQFZIQ==}
     engines: {node: '>=10.0.0'}
 
+  '@rollup/plugin-node-resolve@6.1.0':
+    resolution: {integrity: sha512-Cv7PDIvxdE40SWilY5WgZpqfIUEaDxFxs89zCAHjqyRwlTSuql4M5hjIuc5QYJkOH0/vyiyNXKD72O+LhRipGA==}
+    engines: {node: '>= 8.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0
+
+  '@rollup/pluginutils@3.1.0':
+    resolution: {integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==}
+    engines: {node: '>= 8.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0
+
   '@sentry-internal/browser-utils@8.0.0':
     resolution: {integrity: sha512-dzmoDK7mzP7MvNt/jjs9a4OQ18H/8NyhDiKoJakVZnvk8ComGIv01vOOxDhrNmLyaJSq2KVNsiIJ+AkTmwcmyQ==}
     engines: {node: '>=14.18'}
@@ -543,6 +555,9 @@ packages:
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
+
+  '@types/estree@0.0.39':
+    resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -1395,6 +1410,9 @@ packages:
   estree-walker@0.6.1:
     resolution: {integrity: sha512-SqmZANLWS0mnatqbSfRP5g8OXZC12Fgg1IwNtLsyHDzJizORW4khDfjPqJZsemPWBB2uqykUah5YpQ6epsqC/w==}
 
+  estree-walker@1.0.1:
+    resolution: {integrity: sha512-1fMXF3YP4pZZVozF8j/ZLfvnR8NSIljt56UhbZ5PeeDmmGHpgpdwQt7ITlGvYaQukCvuBRMLEiKiYC+oeIg4cg==}
+
   esutils@2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
@@ -1556,10 +1574,12 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   glob@8.1.0:
     resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==}
     engines: {node: '>=12'}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   globals@13.24.0:
     resolution: {integrity: sha512-AhO5QUcj8llrbG09iWhPU2B204J1xnPeL8kQmVorSsy+Sjj1sk8gIyh6cUocGmH4L0UuhAJy+hJMRA4mgA4mFQ==}
@@ -1720,6 +1740,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -2664,10 +2685,12 @@ packages:
 
   rimraf@2.7.1:
     resolution: {integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   robot-directives@0.3.0:
@@ -2689,12 +2712,6 @@ packages:
     deprecated: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-commonjs.
     peerDependencies:
       rollup: '>=1.12.0'
-
-  rollup-plugin-node-resolve@5.2.0:
-    resolution: {integrity: sha512-jUlyaDXts7TW2CqQ4GaO5VJ4PwwaV8VUGA7+km3n6k6xtOEacf61u0VXwN80phY/evMcaS+9eIeJ9MOyDxt5Zw==}
-    deprecated: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.
-    peerDependencies:
-      rollup: '>=1.11.0'
 
   rollup-plugin-terser@7.0.2:
     resolution: {integrity: sha512-w3iIaU4OxcF52UUXiZNsNeuXIMDvFrr+ZXK6bFZ0Q60qyVfq4uLptoS4bbq3paG3x216eQllFZX7zt6TIImguQ==}
@@ -3846,6 +3863,22 @@ snapshots:
       array-flat-polyfill: 1.0.1
       sitemap: 6.4.0
 
+  '@rollup/plugin-node-resolve@6.1.0(rollup@2.79.1)':
+    dependencies:
+      '@rollup/pluginutils': 3.1.0(rollup@2.79.1)
+      '@types/resolve': 0.0.8
+      builtin-modules: 3.3.0
+      is-module: 1.0.0
+      resolve: 1.22.8
+      rollup: 2.79.1
+
+  '@rollup/pluginutils@3.1.0(rollup@2.79.1)':
+    dependencies:
+      '@types/estree': 0.0.39
+      estree-walker: 1.0.1
+      picomatch: 2.3.1
+      rollup: 2.79.1
+
   '@sentry-internal/browser-utils@8.0.0':
     dependencies:
       '@sentry/core': 8.0.0
@@ -3979,6 +4012,8 @@ snapshots:
   '@tootallnate/quickjs-emscripten@0.23.0': {}
 
   '@trysound/sax@0.2.0': {}
+
+  '@types/estree@0.0.39': {}
 
   '@types/estree@1.0.5': {}
 
@@ -4773,13 +4808,14 @@ snapshots:
       resolve: 1.22.8
       semver: 6.3.1
 
-  eslint-plugin-prettier@5.1.3(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.2.5):
+  eslint-plugin-prettier@5.1.3(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.2.5):
     dependencies:
       eslint: 8.57.0
-      eslint-config-prettier: 9.1.0(eslint@8.57.0)
       prettier: 3.2.5
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.8
+    optionalDependencies:
+      eslint-config-prettier: 9.1.0(eslint@8.57.0)
 
   eslint-scope@7.2.2:
     dependencies:
@@ -4858,6 +4894,8 @@ snapshots:
   estraverse@5.3.0: {}
 
   estree-walker@0.6.1: {}
+
+  estree-walker@1.0.1: {}
 
   esutils@2.0.3: {}
 
@@ -5756,8 +5794,9 @@ snapshots:
     dependencies:
       a-sync-waterfall: 1.0.1
       asap: 2.0.6
-      chokidar: 3.5.3
       commander: 5.1.0
+    optionalDependencies:
+      chokidar: 3.5.3
 
   nwsapi@2.2.7: {}
 
@@ -6260,15 +6299,6 @@ snapshots:
       estree-walker: 0.6.1
       is-reference: 1.2.1
       magic-string: 0.25.9
-      resolve: 1.22.8
-      rollup: 2.79.1
-      rollup-pluginutils: 2.8.2
-
-  rollup-plugin-node-resolve@5.2.0(rollup@2.79.1):
-    dependencies:
-      '@types/resolve': 0.0.8
-      builtin-modules: 3.3.0
-      is-module: 1.0.0
       resolve: 1.22.8
       rollup: 2.79.1
       rollup-pluginutils: 2.8.2
