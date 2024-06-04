@@ -39,7 +39,7 @@
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "5.0.0",
     "@lhci/cli": "^0.13.0",
-    "@percy/cli": "^1.27.5",
+    "@percy/cli": "^1.28.7",
     "@quasibit/eleventy-plugin-sitemap": "^2.1.5",
     "@tbranyen/jsdom": "13.0.0",
     "broken-link-checker": "^0.7.8",
