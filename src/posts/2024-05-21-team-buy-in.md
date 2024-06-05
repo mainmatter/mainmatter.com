@@ -15,9 +15,19 @@ image: "/assets/images/posts/2024-05-21-team-buy-in/header-visual.jpeg"
 imageAlt: "A rocket icon on a grey image background"
 ---
 
+Consultants get a bad rep sometimes (and sometimes for good reason). 
+
+As @KevinBongart puts it eloquently:
+
+> "Ugh, leadership is bringing in a bunch of consultants from Big Co to audit the team and identify inefficiencies across the team… this doesn't sound good, right?"
+>
+> Of course this will look like bad news to the client's team. Audit! Inefficiencies! Changes suggested by _outsiders_! The team is going to resist the implementation of changes - even positive ones.
+>
+>They would need a very good reason to be on board... and that's called team buy-in.
+
 ## Reading the room
 
-As with any collaboration, it's important to be aware of the context interactions are happening in.
+As with any collaboration, it's important to be aware of context, and of history.
 
 Whenever engaging with a new client, we're mindful that we're coming in as an outsider, often during a time of difficult change - be it in technical terms (changing stacks or merging systems, for example) or organizationally, say when expanding a team or changing the team structure. And many times, both.
 
