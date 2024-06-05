@@ -23,17 +23,17 @@ As @KevinBongart puts it eloquently:
 >
 > Of course this will look like bad news to the client's team. Audit! Inefficiencies! Changes suggested by _outsiders_! The team is going to resist the implementation of changes - even positive ones.
 >
->They would need a very good reason to be on board... and that's called team buy-in.
+> They would need a very good reason to be on board... and that's called team buy-in.
 
 ## Reading the room
 
-As with any collaboration, it's important to be aware of context, and of history.
+As with any collaboration, it's important to be aware of context and history.
 
-Whenever engaging with a new client, we're mindful that we're coming in as an outsider, often during a time of difficult change - be it in technical terms (changing stacks or merging systems, for example) or organizationally, say when expanding a team or changing the team structure. And many times, both.
+When starting with a new client, we're mindful that we're coming in as outsiders, often during a time of difficult change - be it in technical terms (changing stacks or merging systems, for example) or organizationally, say when expanding a team or changing the team structure. And many times, both.
 
-It's crucial that we earn the team's trust from the get go, in order for the collaboration to be successful.
+We discuss that with leadership, and ask that they try to first bring the team onboard with having us.
 
-Ideally we should get the client's team to commit to the engagement before even starting.
+Ideally we'd like to get the team to commit to an engagement before it starts at all.
 
 ### Happy path
 
@@ -43,7 +43,7 @@ Context and knowledge are shared proactively, affording us smooth onboarding. On
 
 A virtuous cycle ensues, where implementing changes is progressively faster and more effective, and ideas flow freely back and forth. Together we shift into continous improvement mode. Everybody wins.
 
-So. How do you get buy-in?
+So. Just how do you get buy-in?
 
 ## Get the team involved early on
 
@@ -95,17 +95,14 @@ Whatever the scope, it needs to be clearly communicated as soon as it is known. 
 
 ## During the engagement
 
-Client team buy-in involves accepting to hear recommendations from us, and for this to continue, our recommendations have to resonate and make sense within their context. 
+Client team buy-in involves accepting to hear recommendations from us, and for this to continue, our recommendations have to resonate and make sense.
 
-Addressing declared pain points is a great way to ensure this relevance. We're delivering immediate value, solving real problems for the client team.
+Addressing pain points is a great way to ensure this relevance, and build trust. We're solving real problems, removing slogs.
 
-When detecting issues around which there's not yet agreement with the client team, we bring awareness and dialogue until there's enough consensus to prioritize. 
+Often we'll find issues that weren't raised before. Or ones where a priority and solution aren't yet agreed upon. In these cases, we study and discuss until there's enough consensus, and the team prioritizes it.
 
-And then we help them implement it.
+And then we help them implement it, as part of the team.
 
-## Wrapping up
-
-?
 
 [Reach out](/contact/) to talk about how we can help your team.
 
