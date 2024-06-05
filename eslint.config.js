@@ -8,6 +8,9 @@ module.exports = [
   js.configs.recommended,
   eslintConfigPrettier,
   {
+    ignores: ["dist/", "assets/"],
+  },
+  {
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: "module",
