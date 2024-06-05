@@ -12,7 +12,6 @@ let memo;
  */
 const memoize = collection => {
   if (memo && Object.keys(memo).length) {
-    /* eslint-disable-next-line */
     console.warn(`Overwriting existing memoized collection!`);
   }
 
