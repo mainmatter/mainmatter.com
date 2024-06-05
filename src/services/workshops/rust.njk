@@ -77,14 +77,7 @@ description: "We provide a number of workshops to enable teams to succeed with R
   starting from the basics of the language all the way to advanced testing techniques and comprehensive
   telemetry instrumentation.', workshops)
 }}
-{%
-  set 'public_workshop' = {
-  "date": "May 28th + 29th, 2024, 14:00-18:00 CEST",
-  "text": "Remote Workshop: Telemetry for Rust APIs – you can't fix what you can't see",
-  "link": "https://ti.to/mainmatter/rust-telemetry-may-2024"
-  }
-%}
-{% set public_workshops = [public_workshop] %}
+{% set public_workshops = [] %}
 {{ publicWorkshops(public_workshops) }}
 
 <section class="my-10">
