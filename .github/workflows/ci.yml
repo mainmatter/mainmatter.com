@@ -145,7 +145,7 @@ jobs:
         run: pnpm build
 
       - name: Run Gravity
-        run: npm run gravityci "dist/**/*"
+        run: npm run gravityci "dist/**/!(*.js.map)"
         env:
           GRAVITY_TOKEN: ${{ secrets.GRAVITY_TOKEN }}
           GRAVITY_HOST: ${{ vars.GRAVITY_HOST }}
