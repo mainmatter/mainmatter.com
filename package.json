@@ -55,7 +55,7 @@
     "markdown-it": "14.1.0",
     "netlify-plugin-11ty": "^1.1.0",
     "npm-run-all2": "^6.0.0",
-    "prettier": "^3.2.5",
+    "prettier": "3.2.5",
     "prettier-plugin-jinja-template": "^1.3.3",
     "replace-in-file": "^7.0.0",
     "rollup": "^2.40.0",
