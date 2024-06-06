@@ -114,7 +114,8 @@
         "embroider-build/content-tag",
         "embroider-build/ember-auto-import",
         "embroider-build/scenario-tester",
-        "embroider-build/github-changelog"
+        "embroider-build/github-changelog",
+        "embroider-build/app-blueprint"
       ]
     },
     {
