@@ -9,13 +9,13 @@ description:
   "Nikulipe's Florent Bécart and Luca Palmieri explored Nikulipe's journey using
   Rust across all layers of their stack to develop payment processing services."
 og:
-  image: "/assets/images/posts/2024-06-06-payment-infrastructure-with-rust/og-image.jpg"
+  image: "/assets/images/posts/2024-06-07-payment-infrastructure-with-rust/og-image.jpg"
 tagline: |
   <p>
   Florent Bécart, CTO of Nikulipe, and Luca Palmieri, Principal Engineering Consultant at Mainmatter, reviewed Nikulipe's experience with Rust, along with the reasons for adopting it as well as challenges they faced along the way.
   </p>
 
-image: "/assets/images/posts/2024-06-06-payment-infrastructure-with-rust/header-visual.jpg"
+image: "/assets/images/posts/2024-06-07-payment-infrastructure-with-rust/header-visual.jpg"
 imageAlt: "Florent's picture on a gray background"
 ---
 
