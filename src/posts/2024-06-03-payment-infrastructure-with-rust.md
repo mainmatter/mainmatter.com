@@ -1,5 +1,7 @@
 ---
-title: "How Nikulipe develops their B2B payment infrastructure with Rust – with Florent Bécart"
+title:
+  "How Nikulipe develops their B2B payment infrastructure with Rust – with
+  Florent Bécart"
 authorHandle: algo_luca
 tags: [rust]
 bio: "Principal Engineering Consultant"
