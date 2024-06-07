@@ -1,0 +1,26 @@
+.next-events {
+  margin: 6.75rem 0;
+}
+
+.next-events__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+@media (min-width: 48rem) {
+  .next-events__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 72rem) {
+  .next-events__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

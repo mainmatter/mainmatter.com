@@ -11,14 +11,14 @@ if (float) {
       paused: true,
     });
 
-    const playST = ScrollTrigger.create({
+    ScrollTrigger.create({
       trigger: ".trigger",
       start: "top 50%",
       onEnter: () => anim.play(),
       onLeaveBack: () => anim.reverse(),
     });
 
-    const resetST = ScrollTrigger.create({
+    ScrollTrigger.create({
       trigger: ".end-trigger",
       onEnter: () => anim.reverse(),
       onLeaveBack: () => anim.play(),
@@ -35,7 +35,7 @@ if (numbers) {
         trigger: number,
         start: "top 50%",
         end: "top 25%",
-        toggleActions: "restart reverse restart reverse"
+        toggleActions: "restart reverse restart reverse",
       },
     });
   });
