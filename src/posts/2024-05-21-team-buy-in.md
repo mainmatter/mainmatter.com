@@ -59,7 +59,7 @@ When the invitation comes from the very top, it makes a huge difference when man
 
 ## Framing the engagement
 
-_How_ the engagement itself is communicated is key, of course.
+_How_ the engagement itself is communicated is key.
 
 ### Assessments, not audits
 
