@@ -19,7 +19,7 @@ Consultants get a bad rep sometimes, and often for good reason, specially due to
 
 Boutique, technical consultancies like Mainmatter are nothing like that, but still "consultant" is a title with plenty of loaded meanings and associations.
 
-As our Engineering Manager @KevinBongart puts it eloquently, the perception can be like:
+As our Engineering Manager, [Kevin Bongart](https://github.com/KevinBongart), puts it eloquently, the perception can be like:
 
 "Ugh, leadership is bringing in a bunch of consultants from Big Co to audit the team and point out our inefficiencies… this can't be good, right?"
 
