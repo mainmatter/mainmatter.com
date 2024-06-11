@@ -21,11 +21,11 @@ Boutique, technical consultancies like Mainmatter are nothing like that, but sti
 
 As our Engineering Manager @KevinBongart puts it eloquently, the perception can be like:
 
-> "Ugh, leadership is bringing in a bunch of consultants from Big Co to audit the team and identify inefficiencies across the team… this doesn't sound good, right?"
->
-> Of course this will look like bad news to the client's team. Audit! Inefficiencies! Changes suggested by _outsiders_! The team is going to resist the implementation of changes - even positive ones.
->
-> They would need a very good reason to be on board... and that's called team buy-in.
+"Ugh, leadership is bringing in a bunch of consultants from Big Co to audit the team and point out our inefficiencies… this can't be good, right?"
+
+In the team's view, consultants are bad news: audits, inefficiencies, and changes suggested by _outsiders_! The natural reaction is to resist the implementation of all adjustments, even positive ones.
+
+The team would need a very good reason to be on board. And that's called team buy-in.
 
 ## Making sure we're welcome guests
 
