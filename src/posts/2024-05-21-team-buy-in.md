@@ -35,7 +35,7 @@ When starting with a new client, we're mindful that we're many times coming in a
 
 We discuss that with leadership, and different stakeholders who might be involved in bringing us, and try to work with them in preparing the terrain for the engagement.
 
-### Happy path
+## Happy path
 
 When the client team is bought-in, we get an environment of trust, a sweet spot where we complement the client team seamlessly. 
 
