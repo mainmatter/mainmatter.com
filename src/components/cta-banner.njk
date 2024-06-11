@@ -22,7 +22,12 @@
           <div class="cta-banner__text">{{ content.text | safe }}</div>
         {% endif %}
         {% if content.newsletterSignup %}
-          <form action="{{ content.newsletterSignupAction }}" method="post" target="_blank">
+          <form
+            id="newsletter-signup"
+            action="{{ content.newsletterSignupAction }}"
+            method="post"
+            target="_blank"
+          >
             <div class="contact-form__field cta__input mb-2 mt-2">
               <input
                 class="contact-form__input"
