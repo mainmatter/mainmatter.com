@@ -29,7 +29,7 @@ As @KevinBongart puts it eloquently, the perception can be like:
 
 ## Making sure we're welcome guests
 
-As with any collaboration, it's important to be aware of context and history.
+Outsiders can be helpful, of course. External experience and a fresh view on things can be very useful. But, as with any collaboration, it's important to be aware of local context and history.
 
 When starting with a new client, we're mindful that we're many times coming in as outsiders during a time of difficult change for them - be it in technical terms (changing stacks or merging systems, for example) or organizational ones, say when a team is expanding and re-organizing. And, as often happens, both things at the same time.
 
