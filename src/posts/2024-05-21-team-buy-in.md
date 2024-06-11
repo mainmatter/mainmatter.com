@@ -1,5 +1,5 @@
 ---
-title: "Team Buy-in"
+title: "Preparing the Terrain"
 authorHandle: oliverbarnes
 twitter: oliverbarnes
 tags: [startups, consulting]
