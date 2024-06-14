@@ -1,0 +1,14 @@
+.mainmatter-team {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: 48em) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  
+  @media (min-width: 72em) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
