@@ -1,0 +1,38 @@
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+
+{%- macro mainmatterTeam() -%}
+  <section class="image-banner-with-text my-5">
+    <div class="container container--lg">
+      <h2 class="image-banner-with-text__heading">"Why Mainmatter"</h2>
+    </div>
+
+    {%
+      set imageData = {
+      "imgPath": "/assets/images/photos/mainmatter-team.jpg",
+      "alt": "Group photo of Mainmatter team",
+      "sizes": "100vw",
+      "loading": "lazy",
+      "sizesArray": [760, 1440, 1920]
+      }
+    %}
+    {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+
+    <div class="container container--lg">
+      <div class="image-banner-with-text__content">
+        <h3 class="image-banner-with-text__subheading h4">
+          "We are a team of developers, inventors, designers, strategists, artists and storytellers.
+          We work remotely from 10 countries in Europe and we believe in recruiting top talents from
+          any location."
+        </h3>
+        <div class="image-banner-with-text__text">
+          <p>
+            That said, we still value face time. We frequently come together for team events and
+            workshops, and invite our clients to join us as well. The team also frequently attends
+            and speaks at international conferences and we host a series of conferences and meetups
+            ourselves.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+{%- endmacro -%}
