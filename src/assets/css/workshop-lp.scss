@@ -129,6 +129,7 @@ button {
     height: 1em;
     background-color: var(--color-link-primary);
   }
+
   span {
     color: var(--color-link-primary);
     text-decoration: none;
@@ -136,53 +137,9 @@ button {
     cursor: pointer;
   }
 
-  .icon-arrow {
-    flex-shrink: 0;
-    transform: translateX(0px) rotate(-90deg);
-    height: 1rem;
-    width: 1rem;
-    color: var(--color-white);
-    margin-left: 0.5rem;
-    transition: transform 0.5s ease;
-  }
-
-  &.btn-primary--white {
-    svg {
-      color: var(--color-purple);
-    }
-  }
-
   &:hover,
   &:focus {
-    .line {
-      background-color: var(--color-white);
-    }
-
-    span {
-      color: var(--color-white);
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .icon-arrow {
-      transform: translateX(0.5rem) rotate(-90deg);
-      transition: transform 0.5s ease;
-      color: var(--color-white);
-    }
-
-    &.btn-primary--white {
-      .line {
-        background-color: var(--color-purple);
-      }
-
-      span {
-        color: var(--color-purple);
-      }
-
-      svg {
-        color: var(--color-purple);
-      }
-    }
+    --icon-arrow-transform: translate3d(0.5rem, 0, 0);
   }
 }
 

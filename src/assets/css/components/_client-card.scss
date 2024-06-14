@@ -18,32 +18,19 @@
 }
 
 .client-card__link {
+  --icon-arrow-size: 1.5rem;
+  --icon-arrow-margin: 0 0 0 0.75rem;
   display: flex;
   align-items: center;
-}
-
-.client-card__link {
   flex-shrink: 0;
-
-  .icon-arrow {
-    transform: translateX(0px) rotate(-90deg);
-    transition: transform 0.5s ease;
-    height: 1.5rem;
-    width: 1.5rem;
-    color: var(--color-purple);
-    margin-left: 0.75rem;
-  }
 
   &:hover,
   &:focus {
-    .icon-arrow {
-      transform: translateX(0.5rem) rotate(-90deg);
-      transition: transform 0.5s ease;
-    }
+    --icon-arrow-transform: translate3d(0.5rem, 0, 0);
   }
 }
 
-@media (min-width: $breakpoint-s) {
+@media (min-width: 48em) {
   .client-card {
     margin: 0;
   }

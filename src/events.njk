@@ -10,6 +10,7 @@ description: Find out about upcoming events, conferences and meetups we will be 
 {% from "talk-card.njk" import talkCard %}
 {% from "cta-link.njk" import ctaLink %}
 {% from "btn-primary.njk" import btnPrimary %}
+{% from "btn-secondary.njk" import btnSecondary %}
 {% from "cta-banner.njk" import ctaBanner %}
 {%
   set 'content' = {
@@ -61,11 +62,14 @@ description: Find out about upcoming events, conferences and meetups we will be 
       {% endfor %}
     </ol>
     {% if collections.appearances.length > 7 %}
-      <div class="talks_pagination">
-        <a href="/talks/#more-talks" class="btn-secondary h4 videos">
-          <span class="btn-secondary__text">Load more videos</span>
-          {% include 'svg/arrow.njk' %}
-        </a>
+      <div class="pagination">
+        {%-
+          set link = {
+          "label": "Load more videos",
+          "url": "/talks/#more-talks"
+          }
+        -%}
+        {{- btnSecondary(link, '', true) -}}
       </div>
     {% endif %}
   </div>

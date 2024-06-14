@@ -10,17 +10,9 @@
     margin-top: rem-calc(80);
   }
 
-  .icon-arrow {
-    transform: translateX(0px) rotate(-90deg);
-    transition: transform 0.5s ease;
-  }
-
   &:hover,
   &:focus {
-    .icon-arrow {
-      transform: translateX(0.5rem) rotate(-90deg);
-      transition: transform 0.5s ease;
-    }
+    --icon-arrow-transform: translate3d(0.5rem, 0, 0);
   }
 
   &--purple {
@@ -239,6 +231,10 @@
     & + & {
       margin-top: 0;
     }
+  }
+
+  .featured-case-studies .featured-case-study {
+    grid-column: span 3 / span 3;
   }
 
   .featured-case-study__content-wrapper {

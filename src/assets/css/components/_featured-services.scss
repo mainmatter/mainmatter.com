@@ -24,6 +24,9 @@
 }
 
 .featured-services__link {
+  --icon-arrow-color: var(--color-purple);
+  --icon-arrow-size: 1.5rem;
+  --icon-arrow-margin: 0 1.5rem 0 0;
   display: flex;
   align-items: start;
   flex-direction: column;
@@ -38,24 +41,12 @@
     font-size: 1rem;
   }
 
-  .icon-arrow {
-    transform: translateX(0px) rotate(-90deg);
-    transition: transform 0.5s ease;
-    height: 1.5rem;
-    width: 1.5rem;
-    color: var(--color-purple);
-    margin-right: 1.5rem;
-  }
-
   &:hover,
   &:focus {
+    --icon-arrow-transform: translate3d(0.5rem, 0, 0);
+
     .featured-services__link-description {
       color: var(--color-purple);
-    }
-
-    .icon-arrow {
-      transform: translateX(0.5rem) rotate(-90deg);
-      transition: transform 0.5s ease;
     }
   }
 }
@@ -66,7 +57,7 @@
   align-items: center;
 }
 
-a.featured-services__link {
+.featured-services__link {
   &:hover,
   &:focus {
     .featured-services__link-text {

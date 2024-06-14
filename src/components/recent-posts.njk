@@ -1,6 +1,7 @@
 {% from "cta-link.njk" import ctaLink %}
 {% from "post-banner.njk" import postBanner %}
 {% from "post-card.njk" import postCard %}
+{% from "btn-secondary.njk" import btnSecondary %}
 
 {%- macro recentPosts(title, collection) -%}
   <section class="recent-posts">
@@ -15,12 +16,15 @@
           {% endif %}
         {%- endfor -%}
       </ol>
-      <nav class="pagination" aria-label="Pagination">
-        <a href="/blog/" class="btn-secondary h4 pagination-item next mt-2">
-          <span class="btn-secondary__text">Explore more articles</span>
-          {% include 'svg/arrow.njk' %}
-        </a>
-      </nav>
+      <div class="pagination">
+        {%-
+          set link = {
+          "label": "Explore more articles",
+          "url": "/blog/"
+          }
+        -%}
+        {{- btnSecondary(link, 'mt-2', true) -}}
+      </div>
     </div>
   </section>
 {%- endmacro -%}

@@ -35,10 +35,10 @@ permalink: "/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 1 %}/page/{{ p
   </div>
 
   {% if paged.first != true %}
-    {%- set previous -%}/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 2 %}page/{{ paged.number -1 }}/{% endif %}{%- endset -%}
+    {%- set previous -%}/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 2 %}page/{{ paged.number -1 }}/{% endif %}#posts{%- endset -%}
   {% endif %}
   {% if paged.last != true %}
-    {%- set next -%}/blog/tag/{{ paged.tag | slug }}/page/{{ paged.number + 1 }}/{%- endset -%}
+    {%- set next -%}/blog/tag/{{ paged.tag | slug }}/page/{{ paged.number + 1 }}/#posts{%- endset -%}
   {% endif %}
 
   {{ navPagination(previous, next) }}
