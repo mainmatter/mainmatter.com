@@ -15,6 +15,5 @@
   color: var(--color-tag);
 }
 
-@media (min-width: 48em) {
-
+@media (min-width: $breakpoint-s) {
 }

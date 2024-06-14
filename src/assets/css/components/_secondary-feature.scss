@@ -22,10 +22,9 @@
   width: 100%;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: $breakpoint-s) {
   .ember-consultants {
     display: flex;
     flex-direction: column;
   }
 }
-

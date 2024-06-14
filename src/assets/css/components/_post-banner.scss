@@ -9,7 +9,7 @@
   --color-tag: var(--color-purple);
   --spacing: 1rem;
 
-  &+& {
+  & + & {
     margin-top: rem-calc(80);
   }
 }
@@ -118,12 +118,12 @@
   margin: 1.25rem 0 var(--spacing);
 }
 
-@media (min-width: 62em) {
+@media (min-width: $breakpoint-m) {
   .post-banner {
     grid-column: span 3 / span 3;
     --color-tag: var(--color-white);
 
-    &+& {
+    & + & {
       margin-top: 0;
     }
   }
@@ -172,7 +172,7 @@
   }
 }
 
-@media (min-width: 72em) {
+@media (min-width: $breakpoint-l) {
   .post-banner__title {
     font-size: 3.5rem;
     margin-bottom: 0.5rem;

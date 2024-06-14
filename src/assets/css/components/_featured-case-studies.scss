@@ -16,7 +16,7 @@
   gap: 1.5rem;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $breakpoint-m) {
   .featured-case-studies {
     padding: 5rem 0 11rem;
   }

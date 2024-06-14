@@ -34,23 +34,23 @@
   visibility: visible;
 }
 
-.case-study-card__link  {
-  &:hover, &:focus {
-      &~.case-study-card__description .case-study-card__client {
-        color: var(--color-aqua);
-      }
+.case-study-card__link {
+  &:hover,
+  &:focus {
+    & ~ .case-study-card__description .case-study-card__client {
+      color: var(--color-aqua);
     }
+  }
 }
 
-@media (min-width: 48em) {
+@media (min-width: $breakpoint-s) {
   .case-study-card {
     grid-column: span 1 / span 1;
     margin-top: 0;
   }
 
-    .case-study-card__cta {
-      display: none;
-      visibility: hidden;
-    }
+  .case-study-card__cta {
+    display: none;
+    visibility: hidden;
+  }
 }
-

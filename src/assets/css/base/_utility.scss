@@ -51,14 +51,14 @@
   &t-10 {
     margin-top: 5rem;
 
-    @media (min-width: 48rem) {
+    @media (min-width: $breakpoint-s) {
       margin-top: 10rem;
     }
   }
   &t-15 {
     margin-top: 5rem;
 
-    @media (min-width: 48rem) {
+    @media (min-width: $breakpoint-s) {
       margin-top: 15rem;
     }
   }
@@ -86,14 +86,14 @@
   &b-10 {
     margin-bottom: 5rem;
 
-    @media (min-width: 48rem) {
+    @media (min-width: $breakpoint-s) {
       margin-bottom: 10rem;
     }
   }
   &b-15 {
     margin-bottom: 5rem;
 
-    @media (min-width: 48rem) {
+    @media (min-width: $breakpoint-s) {
       margin-bottom: 15rem;
     }
   }
@@ -121,14 +121,14 @@
   &y-10 {
     margin: 5rem auto;
 
-    @media (min-width: 48rem) {
+    @media (min-width: $breakpoint-s) {
       margin: 10rem auto;
     }
   }
   &y-15 {
     margin: 5rem auto;
 
-    @media (min-width: 48rem) {
+    @media (min-width: $breakpoint-s) {
       margin: 15rem auto;
     }
   }

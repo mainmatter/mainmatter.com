@@ -29,7 +29,7 @@
   margin: 0.5rem 0 0.5rem;
 }
 
-@media (min-width: 64em) {
+@media (min-width: $breakpoint-m) {
   .talk-card__image-overlay {
     aspect-ratio: 9/8;
   }

@@ -31,7 +31,8 @@
   line-height: 1.4;
   text-decoration: none;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     text-decoration: underline;
   }
 }
@@ -41,7 +42,7 @@
   color: var(--color-yellow);
 }
 
-@media (min-width: 48em) {
+@media (min-width: $breakpoint-s) {
   .footer-menu {
     display: block;
   }

@@ -50,7 +50,7 @@
   margin: 0 0 2rem;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $breakpoint-s) {
   .quote:not(.quote__workshop) {
     margin: 6.25rem auto;
     flex-wrap: nowrap;

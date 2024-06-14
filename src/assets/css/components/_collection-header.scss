@@ -18,7 +18,7 @@
   font-weight: 500;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $breakpoint-s) {
   .collection-header {
     padding: 10rem 0;
   }

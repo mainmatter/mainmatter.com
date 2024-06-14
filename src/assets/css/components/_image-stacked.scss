@@ -38,7 +38,7 @@
   display: block;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $breakpoint-s) {
   .image-stacked__image-wrapper {
     width: 40rem;
 

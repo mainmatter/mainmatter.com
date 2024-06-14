@@ -36,7 +36,7 @@
   background-size: 0.75rem;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $breakpoint-s) {
   .tag-filter {
     display: flex;
     flex-wrap: nowrap;

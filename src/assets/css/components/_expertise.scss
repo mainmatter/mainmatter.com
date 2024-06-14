@@ -18,8 +18,8 @@
   width: 19rem;
 }
 
-@media (min-width: 72em) {
+@media (min-width: $breakpoint-l) {
   .expertise__logo {
-      max-width: 18rem;
-    }
+    max-width: 18rem;
+  }
 }

@@ -16,8 +16,7 @@
   margin: 5rem 0 0;
 }
 
-@media (min-width: 72rem) {
-
+@media (min-width: $breakpoint-l) {
   .talks__list {
     margin: 0;
     display: grid;

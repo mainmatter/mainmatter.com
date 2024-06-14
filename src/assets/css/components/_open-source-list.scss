@@ -1,4 +1,3 @@
-
 .opensource-list__list {
   display: grid;
   grid-template-columns: 1fr;
@@ -12,9 +11,9 @@
   width: auto;
 }
 
-@media (min-width: 72rem) {
+@media (min-width: $breakpoint-l) {
   .opensource-list__list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

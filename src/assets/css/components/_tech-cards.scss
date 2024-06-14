@@ -5,13 +5,13 @@
   margin-top: 2.5rem;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: $breakpoint-s) {
   .tech-cards__grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (min-width: 72rem) {
+@media (min-width: $breakpoint-l) {
   .tech-cards__grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -31,7 +31,8 @@
   cursor: pointer;
   overflow: hidden;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     .tech-cards__link-arrow {
       .icon-arrow {
         transform: translateX(0.5rem) rotate(-90deg);
@@ -140,7 +141,6 @@
     transition: transform 0.5s ease;
     width: 24px;
     height: auto;
-
   }
 
   &--rotate {

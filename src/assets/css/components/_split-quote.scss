@@ -70,7 +70,7 @@
   color: var(--color-quote-icon);
 }
 
-@media (min-width: 48em) {
+@media (min-width: $breakpoint-s) {
   .split-quote {
     flex-direction: row;
   }
@@ -95,7 +95,7 @@
   }
 }
 
-@media (min-width: 62em) {
+@media (min-width: $breakpoint-m) {
   .split-quote__quote {
     grid-template-columns: 3rem auto;
   }
