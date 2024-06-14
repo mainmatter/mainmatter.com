@@ -5,7 +5,7 @@ import { terser } from "rollup-plugin-terser";
 export default {
   input: "src/assets/js/app.js",
   output: {
-    file: "assets/js/app.js",
+    file: "dist/assets/js/app.js",
     format: "cjs",
     sourcemap: true,
   },
