@@ -27,7 +27,6 @@ module.exports = function (eleventyConfig) {
    * Removed renaming Passthrough file copy due to issues with incremental
    * https://github.com/11ty/eleventy/issues/1299
    */
-  eleventyConfig.addPassthroughCopy({ assets: "assets" });
   eleventyConfig.addPassthroughCopy({ static: "/" });
 
   /**
@@ -207,37 +206,8 @@ module.exports = function (eleventyConfig) {
     return response.data.replace("<svg", `<svg focusable="false" role="presentation"`);
   });
 
-  /**
-   * Override BrowserSync Server options
-   *
-   * @link https://www.11ty.dev/docs/config/#override-browsersync-server-options
-   */
-  eleventyConfig.setBrowserSyncConfig({
-    notify: false,
-    open: true,
-    snippetOptions: {
-      rule: {
-        match: /<\/head>/i,
-        fn: function (snippet, match) {
-          return snippet + match;
-        },
-      },
-    },
-    // Set local server 404 fallback
-    callbacks: {
-      ready: function (err, browserSync) {
-        const content_404 = fs.readFileSync("dist/404.html");
-
-        browserSync.addMiddleware("*", (req, res) => {
-          // Provides the 404 content without redirect.
-          res.writeHead(404, {
-            "Content-Type": "text/html",
-          });
-          res.write(content_404);
-          res.end();
-        });
-      },
-    },
+  eleventyConfig.setServerOptions({
+    watch: ["./dist/assets/css/*.css", "./dist/assets/js/*.js"],
   });
 
   /*
