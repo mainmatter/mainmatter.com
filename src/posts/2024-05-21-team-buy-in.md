@@ -15,17 +15,16 @@ image: "/assets/images/posts/2024-05-21-team-buy-in/header-visual.jpeg"
 imageAlt: "A rocket icon on a grey image background"
 ---
 
-Consultants get a bad rep sometimes, and often for good reason, specially due to powerful top tier consultancies involved in everything from privatization of public companies to disaster relief. They're everywhere these days.
+"Ugh, leadership is bringing in a bunch of consultants from Evil Co to audit the team and point out our inefficiencies… this can't be good, right?"
 
-Boutique, technical consultancies like Mainmatter are nothing like that, but still "consultant" is a title with plenty of loaded meanings and associations.
+Consultants get a bad rep sometimes, and often for good reason, specially due to powerful top tier consultancies involved in 
+everything from privatization of public companies to disaster relief. They're everywhere these days.
 
-As our Engineering Manager, [Kevin Bongart](https://github.com/KevinBongart), puts it eloquently, the perception can be like:
+Software engineering consultancies like Mainmatter are nothing like that, but still "consultant" is a title with plenty of loaded meanings and associations.
 
-"Ugh, leadership is bringing in a bunch of consultants from Big Co to audit the team and point out our inefficiencies… this can't be good, right?"
+In the in-house team's view, consultants are often bad news: audits, inefficiencies, and changes suggested by _outsiders_! The natural reaction is to resist opening up, and then implementation of adjustments, even positive ones.
 
-In the team's view, consultants are bad news: audits, inefficiencies, and changes suggested by _outsiders_! The natural reaction is to resist the implementation of all adjustments, even positive ones.
-
-The team would need a very good reason to be on board. And that's called team buy-in.
+The team needs a very good reason to be on board.
 
 ## Making sure we're welcome guests
 
@@ -76,6 +75,13 @@ And some discontent might start brewing, understandably. In turn, potential futu
 That's a very bad start for a long term relationship.
 
 Hence, Mainmatter doesn't do audits. We offer blameless assessments as a resource to help teams plan their future work, possibly leading us to a fruitful collaboration down the line. 
+
+TODO: add concrete examples of where the assessment can help the team
+
+- provide more budget or people, better tooling
+- help push through a team's long standing priorities
+- help decide on competing priorities
+-
 
 
 ### Collaboration, not intervention
