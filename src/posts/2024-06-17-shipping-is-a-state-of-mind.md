@@ -181,7 +181,7 @@ since the scope of changes in each branch is much smaller, and branches are
 continuously integrated with the main branch much more often, there’s a smaller
 chance for conflicts when merging back.
 
-### ~Shortening~ Removing the deployment delay
+### ~~Shortening~~ Removing the deployment delay
 
 The other big problem with legacy release process is the deployment delay as
 explained above – the artificial delay resulting out of the process between
