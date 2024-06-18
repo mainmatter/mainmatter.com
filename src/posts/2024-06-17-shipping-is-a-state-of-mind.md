@@ -380,12 +380,12 @@ time.
 
 When the goal is to break features or other changes down into steps that are
 each the “smallest-mergable-unit-of-work” possible so that each of these steps
-is also shippable individually, product, design, and engineering have to work
-together on each of these steps. They need to figure out what the next step is
-and how it can go to production (e.g. behind a feature flag) together. That way,
-walls between product, design, and engineering are broken down and role
-definitions change: product and design are exposed to the small steps in which
-engineers evolve a codebase. At the same time, engineers have to work more
+is also shippable individually, product, design, engineering, and ops have to
+work together on each of these steps. They need to figure out what the next step
+is and how it can go to production (e.g. behind a feature flag) together. That
+way, walls between product, design, engineering, and ops are broken down and
+role definitions change: product and design are exposed to the small steps in
+which engineers evolve a codebase. At the same time, engineers have to work more
 closely with product managers and designers to help them translate their needs
 into chunks that can be merged and deployed individually. While that closer
 collaboration and change of role definitions necessarily leads to friction,
@@ -400,7 +400,7 @@ automation, less time spent on process and ceremony around deployment decisions
 and smaller tasks that are better understood by everyone.
 
 Their collaboration is much better due to the increased frequency and amount of
-communication between product, design and engineering which improves
+communication between product, design, engineering, and ops which improves
 transparency and allows people to better understand and thus appreciate the
 perspectives and needs of the other stakeholder groups.
 
