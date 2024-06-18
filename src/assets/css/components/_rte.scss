@@ -112,6 +112,43 @@
     text-transform: uppercase;
     margin-top: 1.5rem;
   }
+
+  strong {
+    font-weight: 700;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  ul {
+    margin: 1rem 0 1rem 1.25rem;
+
+    li {
+      padding-left: 0.75rem;
+    }
+
+    ::marker {
+      content: "●";
+      color: var(--color-purple);
+    }
+  }
+
+
+  ol  {
+    margin: 1rem 0 1rem 1.75rem;
+    list-style-type: decimal;
+
+    li {
+      padding-left: 0.25rem;
+    }
+
+   ::marker {
+      font-weight: 700;
+      color: var(--color-purple);
+    }
+  }
+
 }
 
 .rte--small {

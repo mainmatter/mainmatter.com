@@ -4,8 +4,8 @@
  * @author Katorly
  */
 /* General */
-pre[class*="language-"],
-code[class*="language-"] {
+pre,
+code {
   color: #c9d1d9;
   font-size: 1.5rem;
   text-shadow: none;
@@ -24,26 +24,26 @@ code[class*="language-"] {
   -ms-hyphens: none;
   hyphens: none;
 }
-pre[class*="language-"]::selection,
-code[class*="language-"]::selection,
-pre[class*="language-"]::mozselection,
-code[class*="language-"]::mozselection {
+pre::selection,
+code::selection,
+pre::mozselection,
+code::mozselection {
   text-shadow: none;
   background: #234879;
 }
 @media print {
-  pre[class*="language-"],
-  code[class*="language-"] {
+  pre,
+  code {
     text-shadow: none;
   }
 }
-pre[class*="language-"] {
+pre {
   padding: 1em;
   margin: 2em 0;
   overflow: auto;
   background: #161b22;
 }
-:not(pre) > code[class*="language-"] {
+:not(pre) > code {
   padding: .1em .3em;
   border-radius: .3em;
   color: #c9d1d9;
@@ -53,7 +53,7 @@ pre[class*="language-"] {
 pre[data-line] {
   position: relative;
 }
-pre[class*="language-"] > code[class*="language-"] {
+pre > code {
   position: relative;
   z-index: 1;
 }
