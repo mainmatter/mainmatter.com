@@ -99,7 +99,7 @@ deployment is 3 weeks! That has a number of negative consequences:
   after the same delay. Getting feedback from users and getting it fast is
   critical for efficient product development though – nobody wants to hear
   they've been heading in the wrong direction for 2 weeks already.
-- **Larger, Riskier, Deployments:** Finally, legacy release processes lead to
+- **Larger, riskier deployments:** Finally, legacy release processes lead to
   deployments becoming unnecessarily large and risky. As many, unrelated changes
   accumulate in the `develop` branch within each interval between two releases,
   those unrelated changes are all deployed together. That means that more things
