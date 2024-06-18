@@ -57,7 +57,7 @@
   padding: 4rem 0 3rem;
 }
 
-@media (min-width: 72rem) {
+@media (min-width: $breakpoint-l) {
   .cta-banner__wrapper {
     display: flex;
     position: relative;
@@ -89,7 +89,7 @@
 .cta__input {
   min-width: 100%;
 }
-@media (min-width: 48rem) {
+@media (min-width: $breakpoint-s) {
   .cta__input {
     min-width: 32rem;
   }

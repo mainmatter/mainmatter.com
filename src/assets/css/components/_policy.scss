@@ -37,7 +37,7 @@
   font-style: normal;
 }
 
-@media (min-width: 72em) {
+@media (min-width: $breakpoint-l) {
   .policy {
     padding: 10rem 0;
 

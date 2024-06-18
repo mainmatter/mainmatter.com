@@ -4,6 +4,7 @@
   flex-direction: column;
   align-self: flex-start;
   overflow: hidden;
+  grid-column: 1 / -1;
 
   & + & {
     margin-top: rem-calc(80);
@@ -14,7 +15,8 @@
     transition: transform 0.5s ease;
   }
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     .icon-arrow {
       transform: translateX(0.5rem) rotate(-90deg);
       transition: transform 0.5s ease;
@@ -37,11 +39,12 @@
 
     .featured-case-study--hover {
       transform: translateX(-100%);
-        background: var(--color-purple);
-        transition: transform 0.5s ease;
+      background: var(--color-purple);
+      transition: transform 0.5s ease;
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       .featured-case-study--hover {
         transform: translateX(0px);
         background: var(--color-purple);
@@ -57,7 +60,6 @@
     --color-link-primary: var(--color-white);
     --color-link-primary-hover: var(--color-black);
     color: var(--color-white);
-
   }
 
   &--black {
@@ -79,7 +81,8 @@
       transition: transform 0.5s ease;
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       .featured-case-study--hover {
         transform: translateX(0px);
         background: var(--color-black);
@@ -133,7 +136,6 @@
   object-fit: cover;
   object-position: center;
 }
-
 
 .featured-case-study--hover {
   position: absolute;
@@ -232,19 +234,12 @@
   }
 }
 
-@media (min-width: 48em) {
+@media (min-width: $breakpoint-m) {
   .featured-case-study {
-    grid-column: span 2 / span 2;
-
     & + & {
       margin-top: 0;
     }
   }
-
-  .featured-case-studies .featured-case-study {
-    grid-column: span 3 / span 3;
-  }
-
 
   .featured-case-study__content-wrapper {
     justify-content: center;
@@ -274,7 +269,6 @@
 
   .featured-case-study__tags {
     align-self: stretch;
-
   }
 
   .featured-case-study__client {
@@ -298,7 +292,7 @@
   }
 }
 
-@media (min-width: 72em) {
+@media (min-width: $breakpoint-l) {
   .featured-case-study__content-wrapper {
     padding: 1.25rem;
   }

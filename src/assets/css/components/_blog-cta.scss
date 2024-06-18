@@ -4,7 +4,7 @@
   margin-bottom: 3.25rem;
   padding: 3.25rem 1rem;
 
-  @media (min-width: 48em) {
+  @media (min-width: $breakpoint-s) {
     & {
       margin-bottom: 6.25rem;
       padding: 3.5rem 5rem;
@@ -14,7 +14,7 @@
   p + & {
     margin-top: 3.25rem;
 
-    @media (min-width: 48em) {
+    @media (min-width: $breakpoint-s) {
       & {
         margin-top: 6.25rem;
       }

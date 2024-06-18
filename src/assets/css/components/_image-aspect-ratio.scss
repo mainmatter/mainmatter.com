@@ -13,7 +13,7 @@
   object-position: center;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $breakpoint-s) {
   .image-aspect-ratio__wrapper {
     aspect-ratio: var(--aspect-ratio-desktop);
   }

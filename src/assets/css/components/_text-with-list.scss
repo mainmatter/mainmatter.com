@@ -39,7 +39,7 @@
 
   &--unordered {
     .text-with-list__item::before {
-      content: '●';
+      content: "●";
       margin-right: 0.75rem;
       color: var(--color-accent);
     }
@@ -51,10 +51,9 @@
   align-items: center;
   counter-increment: item;
 
-  &+& {
+  & + & {
     margin-top: 2rem;
   }
-
 }
 
 .text-with-list__cta {
@@ -62,7 +61,7 @@
   margin-top: 3.5rem;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $breakpoint-s) {
   .text-with-list {
     padding: 7.75rem 0;
   }

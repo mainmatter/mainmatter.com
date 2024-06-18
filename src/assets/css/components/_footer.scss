@@ -31,7 +31,8 @@
   justify-content: flex-start;
   gap: 1rem;
 
-  .social__link:hover, .social__link:focus {
+  .social__link:hover,
+  .social__link:focus {
     color: var(--color-aqua);
   }
 }
@@ -53,7 +54,7 @@
   text-transform: lowercase;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $breakpoint-s) {
   .footer {
     padding: 4.5rem 0 1.75rem;
   }
@@ -82,7 +83,7 @@
   }
 }
 
-@media (min-width: 72em) {
+@media (min-width: $breakpoint-l) {
   .footer__container {
     flex-direction: row;
     justify-content: space-between;

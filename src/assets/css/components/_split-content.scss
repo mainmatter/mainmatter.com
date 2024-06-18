@@ -7,7 +7,8 @@
   }
 }
 
-.split-content:not(.no-link):hover, .split-content:not(.no-link):focus {
+.split-content:not(.no-link):hover,
+.split-content:not(.no-link):focus {
   color: var(--color-purple);
 }
 
@@ -31,8 +32,7 @@
   clip-path: circle();
 }
 
-@media (min-width: 48em) {
-
+@media (min-width: $breakpoint-s) {
   .split-content__wrapper {
     display: flex;
     flex-direction: row;
@@ -51,12 +51,10 @@
 
   .split-content__wrapper {
     align-items: center;
-
   }
 
   .split-content__content {
     flex-wrap: nowrap;
-
   }
 
   .split-content__feature {

@@ -136,12 +136,12 @@
   }
 }
 
-@media (min-width: 48em) {
-  .rte  {
+@media (min-width: $breakpoint-s) {
+  .rte {
     blockquote:not(.quote__text) {
       margin: 4rem 0 3rem;
       padding-left: 3.75rem;
-  
+
       &::before {
         position: absolute;
         left: 0;
@@ -157,7 +157,7 @@
   }
 }
 
-@media (min-width: 72em) {
+@media (min-width: $breakpoint-l) {
   .rte {
     h2 {
       font-size: rem-calc(44);
@@ -168,7 +168,7 @@
     }
 
     blockquote:not(.quote__text) {
-      font-size: 1.5rem;        
+      font-size: 1.5rem;
     }
 
     author {

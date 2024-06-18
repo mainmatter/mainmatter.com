@@ -24,7 +24,7 @@
   gap: 1.5rem;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: $breakpoint-s) {
   .recent-posts__cta {
     text-align: left;
   }
@@ -42,7 +42,7 @@
   }
 }
 
-@media (min-width: 72rem) {
+@media (min-width: $breakpoint-l) {
   .recent-posts__list {
     grid-template-columns: repeat(3, 1fr);
   }

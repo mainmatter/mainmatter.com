@@ -13,7 +13,6 @@
 }
 
 .case-study__text {
-
   margin: 0 auto;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -32,7 +31,7 @@
   margin-top: 3.5rem;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $breakpoint-s) {
   .case-study__section {
     margin: 5rem 0 0;
   }

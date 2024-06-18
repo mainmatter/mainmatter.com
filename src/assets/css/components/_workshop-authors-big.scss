@@ -2,7 +2,6 @@
   margin: 5rem 0 10rem;
 }
 
-
 .author-big__wrapper {
   margin: 3rem 0;
   display: grid;
@@ -10,12 +9,10 @@
   justify-items: center;
   align-items: center;
 
-  @media (min-width: 64em) {
+  @media (min-width: $breakpoint-m) {
     grid-template-columns: 1fr 1fr;
-    
   }
 }
-
 
 .workshop-authors-big__image-wrapper {
   margin-right: 1.25rem;
