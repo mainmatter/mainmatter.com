@@ -84,7 +84,11 @@ module.exports = function (eleventyConfig) {
     return value.replace(/(<([^>]+)>)/gi, "");
   });
 
-  const mdRender = new markdownIt({}).use(markdownItFootnote);
+  const mdRender = new markdownIt({
+    html: true,
+    breaks: true,
+    linkify: true,
+  }).use(markdownItFootnote);
   eleventyConfig.addFilter("markdown", function (value) {
     if (value) {
       return mdRender.render(value);
