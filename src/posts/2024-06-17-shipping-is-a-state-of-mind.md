@@ -362,7 +362,10 @@ engineer has seen Grafana dashboards that nobody has looked at in weeks and
 months or Sentry projects with 1000s of unresolved errors that just end up being
 ignored as they are overwhelming anyway. Teams that operate at peak efficiency
 will look at their data and at least be aware of sudden spikes that often
-indicate things going differently than they should have.
+indicate things going differently than they should have. In fact, some of these
+teams even go a step further by collecting their own custom metrics or
+customizing how traces are recorded and woven together to get the most of their
+data.
 
 ## Constant shipping as a driver for true agility
 
