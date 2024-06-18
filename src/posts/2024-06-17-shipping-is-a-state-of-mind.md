@@ -252,7 +252,7 @@ That necessarily implies:
 in general! Teams that test manually will be slower, less efficient, and ship
 worse quality than the ones who don’t. [^1]**
 
-A solid, automated testing setup, that enables teams to ship constantly end
+A solid, automated testing setup, that enables teams to ship constantly and
 never stop, covers all relevant aspects:
 
 - **Functional correctness within subsystems:** This is the foundation for
