@@ -3,33 +3,34 @@ Previous / next pagination for within listing pages
 Configuration Options:
 previous: page object of the next page, or null.
 next: see above
-nextLabel: string for Next button label only on first page
+nextLabel: string for Previous button label
+nextLabel: string for Next button label
 #}
+{% from "btn-secondary.njk" import btnSecondary %}
 
-{%- macro navPagination(previous, next, nextLabel) -%}
+{%- macro navPagination(previous, next, previousLabel = "Previous", nextLabel = "Next") -%}
   {% if previous or next %}
-
-    {% if nextLabel %}
-      {% set next_label = nextLabel %}
-    {% else %}
-      {% set next_label = 'Next' %}
-    {% endif %}
-
     <nav class="pagination" aria-label="Pagination">
       {% if previous %}
         <div class="previous-wrapper">
-          <a href="{{ previous }}#posts" class="btn-secondary h4 pagination-item previous">
-            {% include 'svg/arrow.njk' %}
-            <span class="btn-secondary__text">Previous</span>
-          </a>
+          {%
+            set link = {
+            "label": previousLabel,
+            "url": previous
+            }
+          %}
+          {{ btnSecondary(link, '') }}
         </div>
       {% endif %}
       {% if next %}
         <div class="next-wrapper">
-          <a href="{{ next }}#posts" class="btn-secondary h4 pagination-item next">
-            <span class="btn-secondary__text">{{ next_label }}</span>
-            {% include 'svg/arrow.njk' %}
-          </a>
+          {%
+            set link = {
+            "label": nextLabel,
+            "url": next
+            }
+          %}
+          {{ btnSecondary(link, '', true) }}
         </div>
       {% endif %}
     </nav>

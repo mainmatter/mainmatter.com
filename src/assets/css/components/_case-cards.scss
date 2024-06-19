@@ -70,6 +70,7 @@
 @media (hover: hover) {
   .case-cards__grid-element:hover,
   .case-cards__grid-element:focus {
+    --icon-arrow-transform: translate3d(0.5rem, 0, 0);
     color: var(--color-white);
     cursor: pointer;
 
@@ -80,21 +81,7 @@
     .solution {
       transform: translate(0px);
     }
-
-    .icon-arrow {
-      transform: translateX(0.5rem) rotate(-90deg);
-      transition: transform 0.5s ease;
-    }
   }
-}
-
-.case-cards_link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  text-decoration: none;
 }
 
 .case-cards__content {
@@ -120,6 +107,7 @@
   text-decoration: none;
   background-repeat: no-repeat;
   z-index: 50;
+  outline-offset: -0.5rem;
 }
 
 .case-cards__link-wrapper {
@@ -144,37 +132,16 @@
 }
 
 .case-cards__link-arrow {
+  --icon-arrow-size: 1.5rem;
   position: relative;
   margin-left: 0.25rem;
   z-index: 1;
   display: flex;
   justify-content: center;
-
-  .icon-arrow {
-    transform: translateX(0px) rotate(-90deg);
-    transition: transform 0.5s ease;
-    width: 24px;
-    height: auto;
-  }
-
-  &--rotate {
-    margin-left: 0;
-    margin-right: 0.5rem;
-
-    .icon-arrow {
-      transform: rotate(90deg);
-    }
-  }
 }
 
 .case-cards__link-label a {
   text-decoration: none;
   position: relative;
   z-index: 100;
-
-  &:hover,
-  &:focus {
-    cursor: pointer;
-    color: var(--color-white);
-  }
 }

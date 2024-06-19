@@ -17,6 +17,7 @@
 }
 
 .nav-submenu__toggle {
+  --icon-arrow-margin: 0 0 0 0.5rem;
   display: flex;
   align-items: center;
   border: 0;
@@ -29,15 +30,8 @@
     display: none;
   }
 
-  svg {
-    margin-left: 0.5rem;
-    transform: rotate(0);
-  }
-
   body[data-js-enabled="false"] .nav-submenu[open] & {
-    svg {
-      transform: rotate(180deg);
-    }
+    --icon-arrow-rotate: 0deg;
   }
 }
 
@@ -72,6 +66,9 @@
 }
 
 .nav-submenu__link {
+  --icon-arrow-size: 0.75rem;
+  --icon-arrow-margin: 0 1rem 0 0;
+
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -79,22 +76,10 @@
   outline-offset: -0.125rem;
   transition: color 0.3s ease;
 
-  .icon-arrow {
-    width: 0.75rem;
-    height: 0.75rem;
-    transform: translateX(0px) rotate(-90deg);
-    margin-right: 1rem;
-    transition: transform 0.5s ease;
-  }
-
   &:hover, &:focus  {
+    --icon-arrow-transform: translate3d(0.5rem, 0, 0);
     color: var(--color-accent);
     text-decoration: none;
-
-    .icon-arrow {
-      transform: translateX(0.5rem) rotate(-90deg);
-      transition: transform 0.5s ease;
-    }
   }
 }
 
@@ -137,35 +122,16 @@ body[data-js-enabled="true"] {
   }
 
   .nav-submenu__toggle {
-    svg {
-      transform: translateX(0px) rotate(-90deg);
-      height: 1rem;
-      width: 1rem;
-    }
-
     &:hover, &:focus  {
-      .icon-arrow {
-        transform: translateX(0.5rem) rotate(-90deg);
-        transition: transform 0.5s ease;
-      }
+      --icon-arrow-transform: translate3d(0.5rem, 0, 0);
     }
   }
 
   .nav-submenu__link {
+    --icon-arrow-size: 2rem;
     font-size: 2rem;
     display: flex;
     align-items: start;
     padding: 0.5rem 0;
-
-    .icon-arrow {
-      width: 2rem;
-      height: 2rem;
-    }
-  }
-
-  .nav-submenu[open] .nav-submenu__toggle svg & {
-    svg {
-      transform: rotate(-90deg);
-    }
   }
 }
