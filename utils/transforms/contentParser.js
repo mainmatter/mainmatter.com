@@ -114,8 +114,12 @@ module.exports = function (value, outputPath) {
         }
 
         let formats = ["webp", imageData.fileType];
-        if (imageData.fileType === "gif") {
-          formats = ["gif"];
+        let sharpOptions = {};
+        if (imageData.fileType === "gif" || imageData.fileType === "webp") {
+          formats = ["gif", "webp"];
+          sharpOptions = {
+            animated: true,
+          };
         }
 
         let url = "./static" + imageData.src;
@@ -123,6 +127,7 @@ module.exports = function (value, outputPath) {
           svgShortCircuit: true,
           widths: sizes,
           formats,
+          sharpOptions,
           urlPath: imageData.directory,
           outputDir: "./dist/" + imageData.directory,
           filenameFormat: function (id, src, width, format) {
