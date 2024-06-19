@@ -46,7 +46,7 @@ eleventyNavigation:
     {% set nextLabel = 'Next' %}
   {% endif %}
   {% if pagination.href.previous %}{% set previous %}{{ pagination.href.previous }}#posts{% endset %}{% endif %}
-  {% set next %}{{ pagination.href.next }}#posts{% endset %}
+  {% if pagination.href.next %}{% set next %}{{ pagination.href.next }}#posts{% endset %}{% endif %}
   {{ navPagination(previous, next, 'Previous', nextLabel) }}
 </div>
 {%
