@@ -1,5 +1,6 @@
 const config = require("../src/_data/config");
 const sortByDate = require("../utils/sortByDate");
+const livePosts = require("./posts");
 
 module.exports = collection => {
   const tagList = require("./tags")(collection);
@@ -7,8 +8,15 @@ module.exports = collection => {
   const maxPostsPerPage = config.maxPostsPerPage;
   const pagedPosts = [];
 
+  const allPosts = livePosts(collection);
+
   Object.keys(tagList).forEach(tagName => {
-    const sortedPosts = [...collection.getFilteredByTag(tagName)].sort(sortByDate("desc"));
+    const filtered = allPosts.filter(post => {
+      if (post.data.tags.length > 0) {
+        return post?.data?.tags?.includes(tagName)
+      }
+    })
+    const sortedPosts = filtered.sort(sortByDate("desc"));
     const numberOfPages = Math.ceil(sortedPosts.length / maxPostsPerPage);
 
     for (let pageNum = 1; pageNum <= numberOfPages; pageNum++) {
