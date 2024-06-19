@@ -121,31 +121,37 @@
     font-style: italic;
   }
 
-  ul {
-    margin: 1rem 0 1rem 1.25rem;
+  ul, ol {
+    margin: 1rem 0 1rem 1rem;
 
     li {
-      padding-left: 0.75rem;
-    }
+      display: flex;
+      padding-left: 0;
 
-    ::marker {
-      content: "●";
-      color: var(--color-purple);
+      &::before {
+        display: inline-block;
+        flex: 0 0 1.5rem;
+        content: "●";
+        margin-right: 1rem;
+        color: var(--color-purple);
+        font-weight: 700;
+      }
     }
   }
 
+  ul li::before {
+    content: "●";
+  }
 
   ol  {
-    margin: 1rem 0 1rem 1.75rem;
-    list-style-type: decimal;
+    list-style: none;
+    counter-reset: list;
 
     li {
-      padding-left: 0.25rem;
-    }
-
-   ::marker {
-      font-weight: 700;
-      color: var(--color-purple);
+      &::before {
+        counter-increment: list;
+        content: counter(list) ".";
+      }
     }
   }
 
@@ -178,7 +184,7 @@
     blockquote:not(.quote__text) {
       margin: 4rem 0 3rem;
       padding-left: 3.75rem;
-  
+
       &::before {
         position: absolute;
         left: 0;
@@ -205,7 +211,7 @@
     }
 
     blockquote:not(.quote__text) {
-      font-size: 1.5rem;        
+      font-size: 1.5rem;
     }
 
     author {

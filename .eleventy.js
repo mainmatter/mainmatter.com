@@ -86,7 +86,7 @@ module.exports = function (eleventyConfig) {
 
   const mdRender = new markdownIt({
     html: true,
-    breaks: true,
+    breaks: false,
     linkify: true,
   }).use(markdownItFootnote);
   eleventyConfig.addFilter("markdown", function (value) {
