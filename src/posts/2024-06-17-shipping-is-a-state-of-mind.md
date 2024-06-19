@@ -16,8 +16,10 @@ tagline:
   dozens of times per day, every day, not every 2 weeks on particularly
   designated release days, or only at the end of the sprint – for those teams,
   shipping is a permanent state rather than an occasional event.</p>"
-image: "/assets/images/posts/2023-08-14-the-case-for-rust-on-the-web/header.png"
-imageAlt: "The Rust logo on top of a stylized world map"
+image: "/assets/images/posts/2024-06-17-shipping-is-a-state-of-mind/header.jpg"
+imageAlt:
+  "Close-up photo of a green rope on a sailboat, with blurred figures in the
+  background and a sail catching the wind against a clear blue sky."
 ---
 
 ## Legacy release processes
