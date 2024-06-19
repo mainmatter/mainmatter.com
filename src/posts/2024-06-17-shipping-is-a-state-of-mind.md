@@ -7,7 +7,7 @@ description:
   "Marco Otte-Witte explains how for the leading teams in the industry shipping
   is a permanent state rather than an occasional event."
 og:
-  image: /assets/images/posts/2023-08-14-the-case-for-rust-on-the-web/og-image.png
+  image: /assets/images/posts/2024-06-17-shipping-is-a-state-of-mind/og-image.png
 tagline:
   "<p>Shipping software to production so it’s available to real users is the
   ultimate goal of every digital product development team. There is no value in
