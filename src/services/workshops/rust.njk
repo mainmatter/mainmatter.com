@@ -77,8 +77,8 @@ description: "We provide a number of workshops to enable teams to succeed with R
   starting from the basics of the language all the way to advanced testing techniques and comprehensive
   telemetry instrumentation.', workshops)
 }}
-{% set public_workshops = [] %}
-{{ publicWorkshops(public_workshops) }}
+{% set futurePublicWorkshops = publicRustWorkshops.workshops | future %}
+{{ publicWorkshops(futurePublicWorkshops) }}
 
 <section class="my-10">
   <div class="container container--lg">

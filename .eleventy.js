@@ -113,6 +113,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("urlExists", (url, collection) => {
     return Boolean(collection?.find(({ page }) => page.url === url));
   });
+
+  eleventyConfig.addFilter("future", collection => {
+    return collection.filter(item => {
+      if (Number.isNaN(Date.parse(item.endDate))) return console.log("Workshop has invalid date!");
+      return Date.parse(item.endDate) > new Date();
+    });
+  });
+
   /*
    * Add Transforms
    *
