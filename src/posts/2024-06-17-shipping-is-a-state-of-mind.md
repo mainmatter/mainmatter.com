@@ -427,7 +427,8 @@ be. As Charity Majors puts it:
 >
 > <author>[Charity Majors](https://charity.wtf)</author>
 
-[^1] Yes, some exceptions do exist but no, your case is almost certainly not one
-of those.
+[^1]:
+    Yes, some exceptions do exist but no, your case is almost certainly not one
+    of those.
 
-[^2] see [^1]
+[^2]: see [^1]
