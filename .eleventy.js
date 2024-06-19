@@ -3,6 +3,7 @@ const util = require("util");
 const { optimize } = require("svgo");
 const path = require("path");
 const markdownIt = require("markdown-it");
+const markdownItFootnote = require("markdown-it-footnote");
 const dayjs = require("dayjs");
 const customParseFormat = require("dayjs/plugin/customParseFormat");
 
@@ -83,13 +84,18 @@ module.exports = function (eleventyConfig) {
     return value.replace(/(<([^>]+)>)/gi, "");
   });
 
-  const mdRender = new markdownIt({});
+  const mdRender = new markdownIt({
+    html: true,
+    breaks: false,
+    linkify: true,
+  }).use(markdownItFootnote);
   eleventyConfig.addFilter("markdown", function (value) {
     if (value) {
       return mdRender.render(value);
     }
     return "";
   });
+  eleventyConfig.setLibrary("md", mdRender);
 
   eleventyConfig.addFilter("filterByAttribute", (array, attribute, value) => {
     return array.filter(element => element.data[attribute] === value);

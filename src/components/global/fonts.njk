@@ -19,6 +19,13 @@
   type="font/woff2"
   crossorigin
 />
+<link
+  rel="preload"
+  href="/assets/fonts/core-sans/CoreSansA45it.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
 <style>
   @font-face {
     font-family: "Core Sans A";
@@ -47,6 +54,16 @@
       url("/assets/fonts/core-sans/CoreSansA65Bold.woff") format("woff");
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Core Sans A";
+    src:
+      url("/assets/fonts/core-sans/CoreSansA45it.woff2") format("woff2"),
+      url("/assets/fonts/core-sans/CoreSansA45it.woff") format("woff");
+    font-weight: 400;
+    font-style: italic;
     font-display: swap;
   }
 </style>
