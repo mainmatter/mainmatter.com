@@ -18,7 +18,7 @@
   width: 100%;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $breakpoint-s) {
   .image-banner-with-text__heading {
     margin-bottom: 3.25rem;
   }

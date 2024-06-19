@@ -10,11 +10,10 @@
   color: var(--color-purple);
 }
 
-@media (min-width: 72rem) {
+@media (min-width: $breakpoint-l) {
   .strategy-list__wrapper {
     flex-direction: row;
     align-items: center;
-
   }
 
   .strategy-list__number {

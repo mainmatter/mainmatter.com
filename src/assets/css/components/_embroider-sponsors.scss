@@ -22,7 +22,7 @@
     max-width: 160px;
   }
 
-  @media (min-width: 62em) {
+  @media (min-width: $breakpoint-m) {
     .embroider-sponsor__grid-element {
       max-width: unset;
       display: flex;

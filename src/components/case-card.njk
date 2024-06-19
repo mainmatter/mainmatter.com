@@ -1,5 +1,5 @@
 {% macro caseCard(clientHandle) %}
-  <div class="case-cards__grid-element">
+  <li class="case-cards__grid-element">
     {% set caseStudy = clientHandle | findBySlug %}
     <div class="case-cards--hover"></div>
     {% if caseStudy.url %}
@@ -28,5 +28,5 @@
         <span class="case-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
       </div>
     </div>
-  </div>
+  </li>
 {% endmacro %}

@@ -1,7 +1,7 @@
 .quotes-list {
   margin: 5rem 0 10rem;
 
-  @media (min-width: 48em) {
+  @media (min-width: $breakpoint-s) {
     & {
       margin: 6.25rem 0;
     }
@@ -11,7 +11,7 @@
     margin: 2rem 0 2.5rem;
     text-align: center;
 
-    @media (min-width: 48em) {
+    @media (min-width: $breakpoint-s) {
       margin: 3.25rem 0;
     }
   }
@@ -20,8 +20,8 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    
-    @media (min-width: 48em) {
+
+    @media (min-width: $breakpoint-s) {
       & {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -39,7 +39,7 @@
         align-items: center;
         height: 5rem;
         margin-bottom: 0.75rem;
-      
+
         img {
           max-height: 100%;
           width: auto;
@@ -66,7 +66,7 @@
         }
       }
 
-      @media (min-width: 48em) {
+      @media (min-width: $breakpoint-s) {
         & {
           margin: 0;
         }
@@ -74,4 +74,3 @@
     }
   }
 }
-

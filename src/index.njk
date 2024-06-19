@@ -7,7 +7,7 @@ title: null
 {% from "featured-services.njk" import featuredServices %}
 {% from "logo-list.njk" import logoList %}
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
-{% from "image-banner-with-text.njk" import imageBannerWithText %}
+{% from "mainmatter-team.njk" import mainmatterTeam %}
 {% from "tech-cards.njk" import techCards %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "quote.njk" import quote %}
@@ -117,17 +117,8 @@ title: null
   }
 %}
 {{ ctaBanner('purple', 'default', content) }}
-{%
-  set 'content' = {
-  "title": "Why Mainmatter",
-  "subtitle": "We are a team of developers, inventors, designers, strategists, artists and storytellers. We work remotely from 10 countries in Europe and we believe in recruiting top talents from any location.",
-  "text": "<p>That said, we still value face time. We frequently come together for team events and workshops, and invite our clients to join us as well. The team also frequently attends and speaks at international conferences and we host a series of conferences and meetups ourselves.</p>",
-  "image": "/assets/images/photos/mainmatter-team.jpg",
-  "alt": "Group photo of Mainmatter team",
-  "loading": "lazy"
-  }
-%}
-{{ imageBannerWithText(content) }}
+
+{{ mainmatterTeam() }}
 
 {% if collections.calendar.length > 0 %}
   <section class="next-events">
