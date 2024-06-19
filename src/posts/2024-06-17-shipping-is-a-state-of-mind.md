@@ -285,9 +285,10 @@ never stop, covers all relevant aspects:
   before actually deploying is a critical piece of a solid testing setup as
   well, in particular for server backends and deployments that include database
   migrations (after all, production data always looks different than you think).
-  Not only will testing deployments avoid potential downtimes due to e.g.
-  failing migrations but also will it ensure a smooth process by preventing
-  rollbacks from being necessary.
+  Not only will testing deployments (e.g. by running them on a clone of the
+  production environment) avoid potential downtimes due to e.g. failing
+  migrations but also will it ensure a smooth process by preventing rollbacks
+  from being necessary.
 
 And there’s more – depending on the type of application a team works on, they
 might want to test for translation strings being complete for all supported
