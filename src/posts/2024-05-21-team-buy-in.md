@@ -1,5 +1,5 @@
 ---
-title: "Preparing the Terrain for Sucessful Engagements"
+title: "Preparing the Terrain for Successful Engagements"
 authorHandle: oliverbarnes
 twitter: oliverbarnes
 tags: [startups, consulting]
