@@ -4,8 +4,8 @@ authorHandle: marcoow
 tags: [process]
 bio: "Marco Otte-Witte"
 description:
-  "Marco Otte-Witte explains how for the leading teams in the industry shipping
-  is a permanent state rather than an occasional event."
+  "Marco Otte-Witte explains how, for the leading teams in the industry,
+  shipping is a permanent state rather than an occasional event."
 og:
   image: /assets/images/posts/2024-06-17-shipping-is-a-state-of-mind/og-image.png
 tagline:
@@ -13,7 +13,7 @@ tagline:
   ultimate goal of every digital product development team. There is no value in
   specs, designs, or changes committed to git, unless the code has made it to
   the production system and thus into the hands of users. The best teams ship
-  dozens of times per day, every day, not every 2 weeks on particularly
+  dozens of times per day, every day, instead of every 2 weeks on particularly
   designated release days, or only at the end of the sprint – for those teams,
   shipping is a permanent state rather than an occasional event.</p>"
 image: "/assets/images/posts/2024-06-17-shipping-is-a-state-of-mind/header.jpg"
@@ -26,8 +26,8 @@ imageAlt:
 
 Despite the importance of shipping, many teams we work with in our consulting
 projects still follow slow and complex processes for releasing changes to
-production. There are many variations but usually these processes look something
-like this:
+production. There are many variations, but usually, these processes look
+something like this:
 
 ![diagram showing a legacy release process with main and develop, feature and hotfix branches](/assets/images/posts/2024-06-17-shipping-is-a-state-of-mind/legacy-process.png)
 
@@ -38,16 +38,17 @@ like this:
 - The engineers make their changes in dedicated branches for the feature they
   work on (what you'd call "feature branches" typically). They will occasionally
   rebase their branch on `develop` but in many cases these branch tend to stay
-  open for 1-2 weeks easily if not longer.
-- Once the work that's done in a feature branch is finished, a PR is opened that
-  is reviewed and eventually merged to `develop`.
-- When there are "enough" changes (whatever that means) or at a certain point in
-  time, a `release` branch is branched off from the `develop` branch.
+  open for 1 to 2 weeks, if not longer.
+- Once the work done in a feature branch is finished, a PR is opened that is
+  reviewed and eventually merged to `develop`.
+- When there are "enough" changes (whatever that means) or when a certain point
+  in time is reached, a `release` branch is branched off from the `develop`
+  branch.
 - That `release` branch then goes through some kind of QA process.
 - Once QA is done and potential bugs have been fixed, the `release` branch is
-  merged back to `main` which is deployed to production. **This is the big day –
-  everyone’s changes that have been collected on the develop branch for weeks or
-  months in the worst case are finally released to the users!**
+  merged back to `main`, which is deployed to production. **This is the big day
+  – everyone’s changes that have been collected on the develop branch for weeks,
+  or months in the worst case, are finally released to the users!**
 - If there's a bug in production, it is fixed in a `hotfix` branch that's
   branched off of the `main` branch, merged back to it and deployed. The changes
   are also propagated back to the `develop` branch.
@@ -57,7 +58,7 @@ like this:
 
 ## Plenty of problems
 
-These outdated release processes lead to all kinds of problems – all of them
+These outdated release processes lead to several problems – all of which are
 related to long intervals.
 
 First, there’s the potentially long interval between branching off a feature
@@ -67,7 +68,7 @@ for conflicts when merging back (yes, engineers should rebase but that’s by fa
 not as common a practice as it should be in our experience). Also, if multiple
 engineers each develop in their own, isolated feature branches for extended
 periods of time, they all make changes in isolation and there’s a risk that the
-changes might be incompatible, although they can be completely consistent within
+changes might be incompatible, even if they are completely consistent within
 each branch.
 
 More importantly though, teams following legacy release processes, deal with
@@ -86,7 +87,7 @@ deployment is 3 weeks! That has a number of negative consequences:
   risk of having to go back to the changes to fix things that come up during QA
   or after deployment. If that happens and indeed things need to be fixed later,
   the engineer has to get back to code they last touched weeks ago potentially.
-  In the meantime they have moved on though and started to work on something
+  In the meantime, however, they have moved on and started to work on something
   else. They will now have to stop working on that new task and build up the
   mental model for the old task again to be able to fix the bug that was found.
   At the same time, since work on the new task does not progress anymore while
@@ -99,8 +100,8 @@ deployment is 3 weeks! That has a number of negative consequences:
   next release window to get access to that feature. That's not only annoying
   for users, it also means they will only be able to provide their feedback
   after the same delay. Getting feedback from users and getting it fast is
-  critical for efficient product development though – nobody wants to hear
-  they've been heading in the wrong direction for 2 weeks already.
+  critical for efficient product development – nobody wants to hear they've been
+  heading in the wrong direction for 2 weeks already.
 - **Larger, riskier deployments:** Finally, legacy release processes lead to
   deployments becoming unnecessarily large and risky. As many, unrelated changes
   accumulate in the `develop` branch within each interval between two releases,
@@ -117,10 +118,10 @@ deployment is 3 weeks! That has a number of negative consequences:
   on…
 
 Overall, these legacy release processes are a bit like opening the flood gates
-every now and then to release a large swath of water which has been collected in
+every now and then to release a large swath of water that has been collected in
 a reservoir (the `develop` branch) for some time. Once the gates are opened,
-these teams are in gods hands – the uncontrollable waters have been set free and
-they can only hope for things to go well:
+these teams are in God's hands – the uncontrollable waters have been set free,
+and they can only hope for things to go well:
 
 ![video of a gate in a dam being opened, releasing a large flood of water](/assets/images/posts/2024-06-17-shipping-is-a-state-of-mind/legacy-release.gif)
 
@@ -143,11 +144,11 @@ and deploying.
 ### Shortening branch lifetimes
 
 Shorter branch lifetimes and a faster branch turnover requires reducing the
-scope of the work that’s done in each branch obviously. The main change to make
-in order to achieve that is to stop thinking about branches as “feature”
-branches in which complete features are developed until they are 100% done
-including every little detail and instead, breaking things down into much
-smaller steps. A good way to think of these branches is “task branches” or
+scope of the work that’s done in each branch. The main change to make in order
+to achieve that is to stop thinking about branches as “feature” branches in
+which complete features are developed until they are 100% done, including every
+little detail. Instead, things need to be broken down into much smaller steps. A
+good way to think of these branches is “task branches” or
 “smallest-mergable-units-of-work” branches – the idea is to advance the codebase
 in small steps so that each step leaves the codebase in a consistent (and
 deployable) state. Generally, a good rule of thumb is no branch should be so
@@ -162,7 +163,7 @@ number of changes that all have to be made to complete that feature:
 - then the user accounts model has to be changed to model the relation to the
   external authentication provider
 - …and existing user data has to be migrated
-- finally, the UI needs to be build
+- finally, the UI needs to be built
 - …and translated
 
 Instead of doing all this in one long-lived branch that is only merged back when
@@ -180,12 +181,12 @@ That way, both problems of long-lived feature branches mentioned above are
 solved: shorter lived branches with a shorter turnover time diverge less and
 branches of different engineers have a lower risk of being incompatible. Also,
 since the scope of changes in each branch is much smaller, and branches are
-continuously integrated with the main branch much more often, there’s a smaller
-chance for conflicts when merging back.
+continuously integrated with the main branch, there’s a smaller chance for
+conflicts when merging back.
 
 ### ~~Shortening~~ Removing the deployment delay
 
-The other big problem with legacy release process is the deployment delay as
+The other big problem with legacy release process is the deployment delay, as
 explained above – the artificial delay resulting out of the process between
 making a change (and merging it back to some mainline) and releasing the change
 to production. Efficient teams shorten that delay to 0 by simply removing it
@@ -194,9 +195,9 @@ via a PR is released to production instantly:
 
 ![diagram showing the same commits/steps in individual branches with deployments after each branch is merged](/assets/images/posts/2024-06-17-shipping-is-a-state-of-mind/task-deployments.png)
 
-_While this sounds like it might not be always possible, e.g. since users cannot
-be confronted with half-done UIs, remember that releasing something to
-production does not necessarily mean exposing it to (all) users. You can
+_While this sounds like it might not always be possible, since, for example,
+users cannot be confronted with half-done UIs, remember that releasing something
+to production does not necessarily mean exposing it to (all) users. You can
 leverage techniques like feature flags or canary deployments to limit the
 visibility of things that are still under active development._
 
@@ -206,7 +207,7 @@ release processes:
 - **Smaller, less risky deployments:** since the amount of changes in each
   deployment is much smaller, fewer things can go wrong. And if anything goes
   wrong, it’s much easier to find the root cause since the amounts of changes
-  that need to be examined is much smaller.
+  that need to be examined is considerably smaller.
 - **No delay between completion of a task and potential rework:** since each
   branch/task is deployed immediately after its completion, the deployment is an
   integral part of the work on the task. If anything goes wrong during
@@ -223,9 +224,9 @@ release processes:
 
 ## Shipping based on pipelines
 
-This might raise the question why not all teams are working like this, and
-consequently, what teams that work like this have that teams that use legacy
-release process don’t have. The answer to that question is they have top-notch
+This might raise the question of why not all teams work like this, and
+consequently, what do teams that work like this have that teams using legacy
+release process don’t. The answer to that question is that they have top-notch
 infrastructure and shipping pipelines. Teams that are in a state of shipping
 constantly stand on the shoulders of highly integrated and automated
 infrastructure that enables an efficient and stable process. A well oiled
@@ -236,19 +237,19 @@ shipping pipeline covers testing, previewing, deploying, and observing.
 Merging every PR directly to the `main` branch and shipping it to production
 right away might seem like giving up on QA and just pushing out changes without
 further control, but it’s actually quite the opposite. Thorough testing is even
-more important than it is with legacy release processes. In order to even be
-able to deploy dozens or hundreds of times per day, things can’t regularly go
-wrong in production and require rollbacks. Not only would that lead to unhappy
-users, it would also be an impediment to the process as such and eventually
-bring it to a halt.
+more important than it is with legacy release processes. In order to be able to
+deploy dozens or hundreds of times per day, things can’t regularly go wrong in
+production and require rollbacks. Not only would that lead to unhappy users, it
+would also be an impediment to the process as such and eventually bring it to a
+halt.
 
 When merging PRs directly to and deploying from the `main` branch, testing works
-a bit differently than with legacy release processes though. While those
-processes have a central `release` branch that undergoes QA and thus acts as a
-safety net, that safety net no longer exists when deploying from `main` right
-after merge. Instead all testing needs to happen before a PR is merged. As there
-are several PRs at any given time, all of those have to be tested in parallel.
-That necessarily implies:
+a bit differently than with legacy release processes. While those processes have
+a central `release` branch that undergoes QA and thus acts as a safety net, that
+safety net no longer exists when deploying from `main` right after merge.
+Instead, all testing needs to happen before a PR is merged. As there are several
+PRs at any given time, all of those have to be tested in parallel. That
+necessarily implies:
 
 **Manual testing has no place in such processes or modern software development
 in general! Teams that test manually will be slower, less efficient, and ship
@@ -263,8 +264,8 @@ never stop, covers all relevant aspects:
   within itself.
 - **Functional correctness across subsystems:** The next step after guaranteeing
   that each subsystem is correct within itself, is ensuring that subsystems work
-  together as well. It’s possible for e.g. both a client app and the backend it
-  talks to to be correct within themselves while not working together correctly
+  together as well. It’s possible for, e.g. both a client app and the backend it
+  talks to, to be correct within themselves while not working together correctly
   in combination.
 - **Visual correctness:** Unit, integration and other kinds of tests ensure
   correctness but don’t look at an app the same way a real user does. An app can
@@ -286,21 +287,21 @@ never stop, covers all relevant aspects:
   well, in particular for server backends and deployments that include database
   migrations (after all, production data always looks different than you think).
   Not only will testing deployments (e.g. by running them on a clone of the
-  production environment) avoid potential downtimes due to e.g. failing
-  migrations but also will it ensure a smooth process by preventing rollbacks
-  from being necessary.
+  production environment) avoid potential downtimes due to, for instance,
+  failing migrations, but it will also ensure a smooth process by preventing
+  rollbacks from being necessary.
 
 And there’s more – depending on the type of application a team works on, they
 might want to test for translation strings being complete for all supported
-locales, external links still being reachable or accessibility requirements
+locales, external links still being reachable, or accessibility requirements
 being met.
 
 ### 2. Previewing
 
-Even if pushing out changes to production behind feature flags, developers will
-need a way to share their work with stakeholders before the changes go to
+Even when pushing out changes to production behind feature flags, developers
+will need a way to share their work with stakeholders before the changes go to
 production. While teams that use legacy release processes often have a central
-staging system that e.g. product managers can access, teams that deploy any
+staging system that, e.g., product managers can access, teams that deploy any
 change that’s merged to main directly can’t have such a central staging system
 anymore – there’s just no central branch that the staging system could be
 deployed from before going to production. There can well be multiple staging
@@ -308,25 +309,24 @@ systems though – precisely, one per PR. These systems are typically called
 “Preview Systems”.
 
 The idea is to, for every PR, boot up an environment that simulates the
-production system as it will look once the respective PR is merged. E.g. for a
-PR for a web frontend app, an instance of that frontend with the code from the
-PR is set up and connected to a dedicated instance of the backend server it
+production system as it will look once the respective PR is merged. For example,
+for a PR for a web frontend app, an instance of that frontend with the code from
+the PR is set up and connected to a dedicated instance of the backend server it
 speaks to at the revision of the backend code that’s currently running in
 production. The dedicated URL to that system can then be shared with
 stakeholders to preview and approve the changes in the PR or ask for
-modifications if there e.g. was a misunderstanding. Once the PR is merged, the
+modifications if there was a misunderstanding. Once the PR is merged, the
 preview system can be automatically torn down again.
 
 Services like Netlify of Vercel offer support for setting up preview systems for
 frontend apps automatically out-of-the-box. On the server side, there are
-services like Heroku and ArgoCD that have support for preview systems and even
+services like Heroku and ArgoCD that have support for preview systems. Even
 setting up a custom process is an option with manageable complexity in many
 cases. The challenging part is typically making a well-defined and realistic
-dataset available to these systems so that stakeholder know e.g. how to log in
-to these systems and have actual data to play with. Modern database providers
-like [Neon](https://neon.tech) make setting up such systems easier with support
-for forking (and anonymizing) the production database for use in preview
-systems.
+dataset available to these systems so that stakeholder know how to log in to
+these systems and have actual data to play with. Modern database providers like
+[Neon](https://neon.tech) make setting up such systems easier with support for
+forking (and anonymizing) the production database for use in preview systems.
 
 ### 3. Deploying
 
@@ -342,12 +342,12 @@ Teams that aim to push to production several times per day need a stable, fast,
 and reversible deployment process. Stability is essential so randomly failing
 deployments don’t cause friction and slow the process (and thus the team’s
 velocity) down. A fast deployment process is essential for being able to deploy
-multiple times per day at all – if e.g. a deployment takes 1h, the maximum
-number of deployments in a day is 8, or maybe 9-10 max. That will turn into a
-bottleneck even for small teams quickly. Finally, even when testing deployments
-before executing them, things can go wrong occasionally. If that happens, it
-must be easy to revert the deployment to fix the production system and clear the
-path for the next deployment that’s likely already waiting.
+multiple times per day at all – if a deployment takes 1h, the maximum number of
+deployments in a day is 8, or maybe 9-10 max. That will turn into a bottleneck
+even for small teams quickly. Finally, even when testing deployments before
+executing them, things can go wrong occasionally. If that happens, it must be
+easy to revert the deployment to fix the production system and clear the path
+for the next deployment that’s likely already waiting.
 
 ### 4. Observing
 
@@ -361,12 +361,12 @@ gone unnoticed?
 
 While the need to have observability in place is not controversial in the
 industry, in reality the collected data is often not looked at by anyone. Every
-engineer has seen Grafana dashboards that nobody has looked at in weeks and
-months or Sentry projects with 1000s of unresolved errors that just end up being
-ignored as they are overwhelming anyway. Teams that operate at peak efficiency
-will look at their data and at least be aware of sudden spikes that often
-indicate things going differently than they should have. In fact, some of these
-teams even go a step further by collecting their own custom metrics or
+engineer has witnessed Grafana dashboards that nobody has looked at in weeks or
+Sentry projects with thousands of unresolved errors that just end up being
+ignored as the amount of data simply is overwhelming. Teams that operate at peak
+efficiency will look at their data and at least be aware of sudden spikes that
+often indicate things going differently than they should have. In fact, some of
+these teams even go a step further by collecting their own custom metrics or
 customizing how traces are recorded and woven together to get the most of their
 data.
 
@@ -382,13 +382,13 @@ work through the process in many small iterations, closely together the entire
 time.
 
 When the goal is to break features or other changes down into steps that are
-each the “smallest-mergable-unit-of-work” possible so that each of these steps
+each the “smallest-mergeable-unit-of-work” possible so that each of these steps
 is also shippable individually, product, design, engineering, and ops have to
-work together on each of these steps. They need to figure out what the next step
-is and how it can go to production (e.g. behind a feature flag) together. That
-way, walls between product, design, engineering, and ops are broken down and
-role definitions change: product and design are exposed to the small steps in
-which engineers evolve a codebase. At the same time, engineers have to work more
+work together on every step. They need to figure out what the next action is and
+how it can go to production (e.g. behind a feature flag) together. That way,
+walls between product, design, engineering, and ops are broken down and role
+definitions change: product and design are exposed to the small steps in which
+engineers evolve a codebase. At the same time, engineers have to work more
 closely with product managers and designers to help them translate their needs
 into chunks that can be merged and deployed individually. While that closer
 collaboration and change of role definitions necessarily leads to friction,
