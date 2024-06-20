@@ -7,7 +7,7 @@ description:
   "Marco Otte-Witte explains how, for the leading teams in the industry,
   shipping is a permanent state rather than an occasional event."
 og:
-  image: /assets/images/posts/2024-06-17-shipping-is-a-state-of-mind/og-image.png
+  image: /assets/images/posts/2024-06-21-shipping-is-a-state-of-mind/og-image.png
 tagline:
   "<p>Shipping software to production so it’s available to real users is the
   ultimate goal of every digital product development team. There is no value in
@@ -16,7 +16,7 @@ tagline:
   dozens of times per day, every day, instead of every 2 weeks on particularly
   designated release days, or only at the end of the sprint – for those teams,
   shipping is a permanent state rather than an occasional event.</p>"
-image: "/assets/images/posts/2024-06-17-shipping-is-a-state-of-mind/header.jpg"
+image: "/assets/images/posts/2024-06-21-shipping-is-a-state-of-mind/header.jpg"
 imageAlt:
   "Close-up photo of a green rope on a sailboat, with blurred figures in the
   background and a sail catching the wind against a clear blue sky."
@@ -29,7 +29,7 @@ projects still follow slow and complex processes for releasing changes to
 production. There are many variations, but usually, these processes look
 something like this:
 
-![diagram showing a legacy release process with main and develop, feature and hotfix branches](/assets/images/posts/2024-06-17-shipping-is-a-state-of-mind/legacy-process.png)
+![diagram showing a legacy release process with main and develop, feature and hotfix branches](/assets/images/posts/2024-06-21-shipping-is-a-state-of-mind/legacy-process.png)
 
 - There is a `main` branch that contains the code currently running on the
   production system.
@@ -123,7 +123,7 @@ a reservoir (the `develop` branch) for some time. Once the gates are opened,
 these teams are in God's hands – the uncontrollable waters have been set free,
 and they can only hope for things to go well:
 
-![video of a gate in a dam being opened, releasing a large flood of water](/assets/images/posts/2024-06-17-shipping-is-a-state-of-mind/legacy-release.gif)
+![video of a gate in a dam being opened, releasing a large flood of water](/assets/images/posts/2024-06-21-shipping-is-a-state-of-mind/legacy-release.gif)
 
 ## Shipping constantly, continuously, sanely
 
@@ -131,7 +131,7 @@ As stated above, the best modern teams ship differently – they ship constantly
 continuously, in small steps, and because of that, much more sanely. Their
 continuous stream of deployments looks like this:
 
-![video of a small, calm stream of water](/assets/images/posts/2024-06-17-shipping-is-a-state-of-mind/continuously-releasing.gif)
+![video of a small, calm stream of water](/assets/images/posts/2024-06-21-shipping-is-a-state-of-mind/continuously-releasing.gif)
 
 They will deliver the same amount of water over the same period of time, just
 without the delays, without the stress and without the risk of breaking
@@ -169,13 +169,13 @@ number of changes that all have to be made to complete that feature:
 Instead of doing all this in one long-lived branch that is only merged back when
 all the changes are made,
 
-![diagram showing a feature branch with a number of commits/steps](/assets/images/posts/2024-06-17-shipping-is-a-state-of-mind/feature-branch.png)
+![diagram showing a feature branch with a number of commits/steps](/assets/images/posts/2024-06-21-shipping-is-a-state-of-mind/feature-branch.png)
 
 the same changes can be done in multiple, small branches, that can each be
 merged back individually with a much shorter turnover time, leaving the main
 branch in a consistent state at all times:
 
-![diagram showing the same commits/steps as in the above image, separated into individual branches](/assets/images/posts/2024-06-17-shipping-is-a-state-of-mind/task-branches.png)
+![diagram showing the same commits/steps as in the above image, separated into individual branches](/assets/images/posts/2024-06-21-shipping-is-a-state-of-mind/task-branches.png)
 
 That way, both problems of long-lived feature branches mentioned above are
 solved: shorter lived branches with a shorter turnover time diverge less and
@@ -193,7 +193,7 @@ to production. Efficient teams shorten that delay to 0 by simply removing it
 altogether – every set of changes that a developer merges back to the mainline
 via a PR is released to production instantly:
 
-![diagram showing the same commits/steps in individual branches with deployments after each branch is merged](/assets/images/posts/2024-06-17-shipping-is-a-state-of-mind/task-deployments.png)
+![diagram showing the same commits/steps in individual branches with deployments after each branch is merged](/assets/images/posts/2024-06-21-shipping-is-a-state-of-mind/task-deployments.png)
 
 _While this sounds like it might not always be possible, since, for example,
 users cannot be confronted with half-done UIs, remember that releasing something
