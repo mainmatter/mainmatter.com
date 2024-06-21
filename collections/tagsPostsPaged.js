@@ -13,9 +13,9 @@ module.exports = collection => {
   Object.keys(tagList).forEach(tagName => {
     const filtered = allPosts.filter(post => {
       if (post.data.tags.length > 0) {
-        return post?.data?.tags?.includes(tagName)
+        return post?.data?.tags?.includes(tagName);
       }
-    })
+    });
     const sortedPosts = filtered.sort(sortByDate("desc"));
     const numberOfPages = Math.ceil(sortedPosts.length / maxPostsPerPage);
 

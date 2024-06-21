@@ -238,12 +238,32 @@ description: "We provide a number of workshops to enable teams to succeed with R
   </div>
 </section>
 
+<section class="my-10 container container--lg">
+  <div class="split-content no-link">
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h2 class="split-content__subheading">Your mentor</h2>
+        <p>
+          Luca Palmieri is a Principal Engineering Consultant at Mainmatter and builds technology
+          products for a living. His current focus is on backend development, software architecture
+          and the Rust programming language. He is the author of
+          <a href="https://zero2prod.com">"Zero to Production in Rust"</a>.
+        </p>
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-rust-consulting.njk' %}
+      </div>
+    </div>
+  </div>
+</section>
+
 {%
   set 'content' = {
   "subtitle": "Discover our other services"
   }
 %}
 {{ featuredServices(services['rust-workshops'], content) }}
+{% include "global/rust-cta.njk" %}
 {% include "global/rust-newsletter-cta.njk" %}
 {%
   set 'content' = {
