@@ -22,7 +22,6 @@ const { findBySlug } = require("./utils/findBySlug");
  */
 const config = require("./src/_data/config.js");
 const pathConfig = require("./src/_data/paths.json");
-const e = require("express");
 
 module.exports = function (eleventyConfig) {
   /**

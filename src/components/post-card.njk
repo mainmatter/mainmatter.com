@@ -9,9 +9,11 @@ post: A post object
 {%- macro postCard(post, tag = 'h3') -%}
   <li class="card__grid-element">
     <a href="{{ post.url }}" class="card__link">
+      <!-- prettier-ignore-start -->
       <{{tag}} class="screenreader">
         {{ post.data.title }}
       </{{tag}}>
+      <!-- prettier-ignore-end -->
     </a>
     <div class="card__logo-wrapper">
       <p class="small">{{ post.date | monthDayYear }}</p>
@@ -44,7 +46,7 @@ post: A post object
       <div class="card__link-wrapper">
         <div class="small">
           {% for item in post.data.tags %}
-            {% if loop.index != 1 %} / {% endif %}
+            {% if loop.index != 1 %}/{% endif %}
             <a href="/blog/tag/{{ item | slug }}/">{{- item -}}</a>
           {% endfor %}
         </div>

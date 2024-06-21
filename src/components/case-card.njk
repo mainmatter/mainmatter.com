@@ -1,7 +1,10 @@
 {%- macro caseCard(clientHandle) -%}
   <li class="case-cards__grid-element card__grid-element">
     {% set caseStudy = clientHandle | findBySlug %}
-    <a href="{% if caseStudy.url %}{{ caseStudy.url }}{% else %}/work#{{ clientHandle }}{% endif %}" class="card__link">
+    <a
+      href="{% if caseStudy.url %}{{ caseStudy.url }}{% else %}/work#{{ clientHandle }}{% endif %}"
+      class="card__link"
+    >
       <h3 class="screenreader">
         {{ caseStudy.data.problem }}
         {{ caseStudy.data.solution }}
@@ -14,8 +17,8 @@
     <div class="card__content">
       {% if caseStudy.data.problem %}
         <div class="case-cards__headline" aria-hidden="true">
-          <p class="case-cards__problem mb-015 h4">{{ caseStudy.data.problem }}</h4>
-          <p class="case-cards__solution mb-015 h4">{{ caseStudy.data.solution }}</h4>
+          <p class="case-cards__problem mb-015 h4">{{ caseStudy.data.problem }}</p>
+          <p class="case-cards__solution mb-015 h4">{{ caseStudy.data.solution }}</p>
         </div>
       {% endif %}
       <div class="card__link-wrapper">
