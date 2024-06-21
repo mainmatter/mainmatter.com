@@ -34,7 +34,7 @@ permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/p
 
       <div class="author-header__text-wrapper">
         <h1 class="h3">All posts by {{ paged.author.data.name }}</h1>
-        <h2 class="author-header__subheading">{{ paged.author.data.bio }}</h2>
+        <p class="author-header__subheading h2">{{ paged.author.data.bio }}</p>
         <div class="author-header__socials-wrapper">
           {{ authorSocials(paged.author.fileSlug, 'author-header__socials') }}
           <p class="h5">
@@ -50,7 +50,7 @@ permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/p
 <div class="container container--xl mb-10">
   <div class="post-cards__grid">
     {%- for post in paged.posts -%}
-      {{ postCard(post) }}
+      {{ postCard(post, 'h2') }}
     {%- endfor -%}
   </div>
   {% if paged.first != true %}

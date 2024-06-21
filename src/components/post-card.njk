@@ -6,16 +6,21 @@ post: A post object
 
 {{ postCard(post) }}
 #}
-{%- macro postCard(post) -%}
+{%- macro postCard(post, tag = 'h3') -%}
+
   <div class="post-cards__grid-element">
-    <a href="{{ post.url }}" class="post-cards__link"></a>
+    <a href="{{ post.url }}" class="post-cards__link">
+      <{{tag}} class="screenreader">
+        {{ post.data.title }}
+      </{{tag}}>
+    </a>
     <div class="post-cards__date-wrapper">
       <p class="small">{{ post.date | monthDayYear }}</p>
     </div>
 
     <div class="post-cards__content">
       <div class="post-cards_headline">
-        <h4 class="post-cards__title mb-015 ">{{ post.data.title }}</h4>
+        <p class="post-cards__title mb-015 h4">{{ post.data.title }}</p>
       </div>
       {% if post.data.authorHandle %}
         {% set author = post.data.authorHandle | findBySlug %}
