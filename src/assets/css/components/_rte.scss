@@ -112,6 +112,60 @@
     text-transform: uppercase;
     margin-top: 1.5rem;
   }
+
+  strong {
+    font-weight: 700;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  ul, ol {
+    margin: 1rem 0 1rem 3.5rem;
+
+    li {
+      position: relative;
+      padding-left: 0;
+
+      &::before {
+        position: absolute;
+        width: 2.5rem;
+        transform: translateX(-3.5rem);
+        color: var(--color-purple);
+        font-weight: 700;
+        text-align: right;
+      }
+    }
+  }
+
+  ul li::before {
+    content: "●";
+  }
+
+  ol  {
+    list-style: none;
+    counter-reset: list;
+
+    li {
+      &::before {
+        counter-increment: list;
+        content: counter(list) ".";
+      }
+    }
+  }
+
+  ol ol {
+    counter-reset: sublist;
+
+    li {
+      counter-increment: sublist;
+
+      &::before {
+        content: counter(sublist, lower-alpha) '.';
+      }
+    }
+  }
 }
 
 .rte--small {

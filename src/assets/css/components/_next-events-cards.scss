@@ -10,7 +10,6 @@
   align-items: start;
   text-decoration: none;
   overflow: hidden;
-
   cursor: pointer;
 
   a:hover, &:focus  {
@@ -18,16 +17,8 @@
   }
 }
 
-.next-events-cards__grid-element:hover, .next-events-cards__grid-element:focus {
-  color: var(--color-white);
-  cursor: pointer;
-
-  .next-events-cards__link-arrow {
-    .icon-arrow {
-      transform: translateX(0.5rem) rotate(-90deg);
-      transition: transform 0.5s ease;
-    }
-  }
+.next-events-cards__grid-element:hover, .next-events-cards__grid-element:focus-within {
+  --icon-arrow-transform: translate3d(0.5rem, 0, 0);
 }
 
 .next-events-cards__date-wrapper {
@@ -64,14 +55,6 @@
   align-self: end;
 }
 
-.next-events-cards--hover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
-
 .next-events-cards__link {
   position: absolute;
   top: 0;
@@ -84,26 +67,10 @@
 }
 
 .next-events-cards__link-arrow {
+  --icon-arrow-size: 1.5rem;
   position: relative;
   margin-left: 0.25rem;
   z-index: 1;
   display: flex;
   justify-content: center;
-
-  .icon-arrow {
-    transform: translateX(0px) rotate(-90deg);
-    transition: color 0.3s ease;
-    width: 24px;
-    height: auto;
-    transition: transform 0.5s ease;
-  }
-
-  &--rotate {
-    margin-left: 0;
-    margin-right: 0.5rem;
-
-    .icon-arrow {
-      transform: rotate(90deg);
-    }
-  }
 }

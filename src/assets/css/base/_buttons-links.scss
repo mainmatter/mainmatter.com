@@ -16,22 +16,11 @@ p a {
   transition: color ease 0.5s;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
+  --icon-arrow-margin: 0 0 0 0.5rem;
 
-  .icon-arrow {
-    flex-shrink: 0;
-    transform: translateX(0px) rotate(-90deg);
-    height: 1rem;
-    width: 1rem;
-    color: var(--color-white);
-    margin-left: 0.5rem;
-    transition: transform 0.5s ease;
-  }
 
   &:hover, &:focus {
-   .icon-arrow {
-      transform: translateX(0.5rem) rotate(-90deg);
-      transition: transform 0.5s ease;
-    }
+    --icon-arrow-transform: translate3d(0.5rem, 0, 0);
   }
 
   &--purple {
@@ -45,10 +34,6 @@ p a {
   &--white {
     background-color: var(--color-white);
     color: var(--color-link-primary);
-
-    .icon-arrow {
-      color: var(--color-link-primary);
-    }
   }
 }
 
@@ -60,85 +45,22 @@ p a {
   display: flex;
   align-items: center;
   text-decoration: none;
+  --icon-arrow-size: 1.5rem;
+  --icon-arrow-margin: 0 1.5rem 0 0;
+  --icon-arrow-color: var(--color-purple);
 
   &-text {
     text-decoration: none;
   }
 
-  .icon-arrow {
-    flex-shrink: 0;
-    transform: translateX(0px) rotate(-90deg);
-    height: 1.5rem;
-    width: 1.5rem;
-    color: var(--color-purple);
-    margin-right: 1.5rem;
-    transition: transform 0.5s ease;
-  }
-
-  &.previous {
-    .icon-arrow {
-      transform: translateX(0px) rotate(90deg);
-      margin-right: 1.5rem;
-      margin-left: 0;
-      transition: transform 0.5s ease;
-    }
-
-    &:hover .icon-arrow, &:focus .icon-arrow {
-      transform: translateX(-0.5rem) rotate(90deg);
-    }
-  }
-}
-
-.btn-secondary:hover, .btn-secondary:focus {
-  text-decoration: none;
-
-  .icon-arrow {
-    transform: translateX(0.5rem) rotate(-90deg);
-    transition: transform 0.5s ease;
-  }
-
-  .btn-secondary-text {
-    text-decoration: none;
-  }
-}
-
-.next {
-  .icon-arrow {
-    transform: rotate(-90deg);
-    margin-right: 0;
-    margin-left: 1.5rem;
-  }
-}
-
-.videos {
-  .icon-arrow {
-    transform: rotate(-90deg);
-    margin-right: 0;
-    margin-left: 1.5rem;
-  }
-}
-
-.message {
-  cursor: pointer;
-
-  .icon-arrow {
-    transform: rotate(-90deg);
-    margin-right: 0;
-    margin-left: 1.5rem;
-    color: var(--color-white);
-  }
-
   &:hover, &:focus {
-    color: var(--color-aqua);
+    --icon-arrow-transform: translate3d(0.5rem,0,0);
+    text-decoration: none;
+    color: var(--color-purple);
   }
-}
 
-a.btn-secondary {
-  &:hover,
-  &:focus {
-    .btn-secondary__text {
-      color: var(--color-purple);
-    }
+  &--reversed {
+    --icon-arrow-margin: 0 0 0 1.5rem;
   }
 }
 

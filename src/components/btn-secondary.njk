@@ -1,6 +1,14 @@
-{%- macro btnSecondary(link, class) -%}
-  <a href="{{ link.url }}" class="btn-secondary h4 {{ class }}">
-    {% include 'svg/arrow.njk' %}
+{%- macro btnSecondary(link, class, flip = false) -%}
+  <a
+    href="{{ link.url }}"
+    class="btn-secondary h4 {{ class }} {% if flip %}btn-secondary--reversed{% endif %}"
+  >
+    {% if flip == false %}
+      {% include 'svg/arrow.njk' %}
+    {% endif %}
     <span class="btn-secondary__text">{{ link.label }}</span>
+    {% if flip == true %}
+      {% include 'svg/arrow.njk' %}
+    {% endif %}
   </a>
 {% endmacro %}

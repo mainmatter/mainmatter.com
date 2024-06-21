@@ -128,7 +128,6 @@ title: null
         {% for event in collections.calendar %}
           {% if loop.index < 4 %}
             <div class="next-events-cards__grid-element">
-              <div class="next-events-cards--hover"></div>
               <a href="{{ event.data.url }}" class="next-events-cards__link"></a>
               <div class="next-events-cards__date-wrapper">
                 <p class="small">{{ event.date | monthDayYear }}</p>

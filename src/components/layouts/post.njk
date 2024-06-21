@@ -86,7 +86,10 @@ layout: base
         {% endif %}
         {% if next %}
           <div class="next-wrapper">
-            <a href="{{ next.url }}" class="btn-secondary h4 pagination-item next">
+            <a
+              href="{{ next.url }}"
+              class="btn-secondary h4 pagination-item btn-secondary--reversed"
+            >
               <span class="btn-secondary__text">Next post</span>
               {% include 'svg/arrow.njk' %}
             </a>

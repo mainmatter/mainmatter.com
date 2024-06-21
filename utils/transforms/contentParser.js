@@ -14,26 +14,6 @@ module.exports = function (value, outputPath) {
     const document = DOM.window.document;
 
     /**
-     * Add a span for text-animation
-     */
-    const textAnimations = [...document.querySelectorAll(".text-animation em")];
-    if (textAnimations.length) {
-      textAnimations.forEach(textAnimation => {
-        const span = document.createElement("span");
-        span.classList.add("text-animation__cover");
-        return textAnimation.appendChild(span);
-      });
-    }
-
-    const textAnimationsOffset = [...document.querySelectorAll(".text-animation-offset em")];
-    if (textAnimationsOffset.length) {
-      textAnimationsOffset.forEach(textAnimationOffset => {
-        const span = document.createElement("span");
-        span.classList.add("text-animation__cover-offset");
-        return textAnimationOffset.appendChild(span);
-      });
-    }
-    /**
      * Get all the headings inside the post
      */
     const articleHeadings = [
@@ -134,8 +114,12 @@ module.exports = function (value, outputPath) {
         }
 
         let formats = ["webp", imageData.fileType];
-        if (imageData.fileType === "gif") {
-          formats = ["gif"];
+        let sharpOptions = {};
+        if (imageData.fileType === "gif" || imageData.fileType === "webp") {
+          formats = ["gif", "webp"];
+          sharpOptions = {
+            animated: true,
+          };
         }
 
         let url = "./static" + imageData.src;
@@ -143,6 +127,7 @@ module.exports = function (value, outputPath) {
           svgShortCircuit: true,
           widths: sizes,
           formats,
+          sharpOptions,
           urlPath: imageData.directory,
           outputDir: "./dist/" + imageData.directory,
           filenameFormat: function (id, src, width, format) {
