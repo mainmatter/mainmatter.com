@@ -257,20 +257,5 @@ description: "We provide a number of workshops to enable teams to succeed with R
   </div>
 </section>
 
-{%
-  set 'content' = {
-  "subtitle": "Discover our other services"
-  }
-%}
-{{ featuredServices(services['rust-workshops'], content) }}
 {% include "global/rust-cta.njk" %}
 {% include "global/rust-newsletter-cta.njk" %}
-{%
-  set 'content' = {
-  "title": "Grow your business with us",
-  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
-  "linkUrl": "/contact",
-  "linkText": "Get in touch"
-  }
-%}
-{{ ctaBanner('purple', 'full', content) }}
