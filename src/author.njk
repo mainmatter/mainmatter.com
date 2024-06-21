@@ -48,11 +48,11 @@ permalink: "/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 1 %}/p
 </div>
 
 <div class="container container--xl mb-10">
-  <div class="post-cards__grid">
+  <ul class="cards__grid">
     {%- for post in paged.posts -%}
       {{ postCard(post, 'h2') }}
     {%- endfor -%}
-  </div>
+  </ul>
   {% if paged.first != true %}
     {%- set previous -%}/blog/author/{{ paged.author.fileSlug }}/{% if paged.number > 2 %}page/{{ paged.number - 1 }}/{% endif %}{%- endset -%}
   {% endif %}

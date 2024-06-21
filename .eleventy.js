@@ -22,6 +22,7 @@ const { findBySlug } = require("./utils/findBySlug");
  */
 const config = require("./src/_data/config.js");
 const pathConfig = require("./src/_data/paths.json");
+const e = require("express");
 
 module.exports = function (eleventyConfig) {
   /**
@@ -106,7 +107,11 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("getMorePosts", function (array, post) {
-    return array.filter(element => element.inputPath !== post.inputPath);
+    return array
+      .filter(element => element.inputPath !== post.inputPath)
+      .map(el => {
+        return el.fileSlug;
+      });
   });
 
   eleventyConfig.addFilter("getCollectionKeys", function (collection) {

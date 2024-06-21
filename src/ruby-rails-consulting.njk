@@ -18,7 +18,7 @@ og:
 {% from "btn-secondary.njk" import btnSecondary %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
-{% from 'case-card.njk' import caseCard %}
+{% from 'case-cards.njk' import caseCards %}
 {%
   set 'content' = {
   "eyebrow": "Our Expertise: Ruby and Ruby on Rails",
@@ -153,15 +153,9 @@ og:
   %}
   {{ quote(content) }}
 </div>
-<section class="featured-case-studies">
-  <div class="container container--xl">
-    <div class="featured-case-studies__list">
-      {{ caseCard('xbav') }}
-      {{ caseCard('hop-skip-drive') }}
-      {{ caseCard('robin-hood') }}
-    </div>
-  </div>
-</section>
+
+{% set clients = ['xbav','hop-skip-drive', 'robin-hood'] %}
+{{ caseCards('', '', '', clients)}}
 
 {%
   set 'content' = {

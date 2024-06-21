@@ -4,7 +4,7 @@ layout: base
 
 {% from "color-hero.njk" import colorHero %}
 {% from "cta-banner.njk" import ctaBanner %}
-{% from 'case-card.njk' import caseCard %}
+{% from 'case-cards.njk' import caseCards %}
 {%- block content -%}
   {%
     set 'hero' = {
@@ -20,20 +20,9 @@ layout: base
   <article class="case-study">
     <div class="container container--lg">{{ content | safe }}</div>
   </article>
-  {% set postsFromCollection = collections.caseStudiesFeatured | getMorePosts(page) %}
+  {% set postsFromCollection = collections.caseStudiesFeatured | getMorePosts(page) | limit(3) %}
   {% if postsFromCollection %}
-    <section class="featured-case-studies">
-      <div class="container container--xl">
-        <h2 class="featured-case-studies__heading">Discover more case studies</h2>
-        <ul class="featured-case-studies__list">
-          {% for post in postsFromCollection %}
-            {% if loop.index0 < 3 %}
-              {{ caseCard(post.fileSlug) }}
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </div>
-    </section>
+    {{ caseCards('featured', 'Discover more case studies', '', postsFromCollection) }}
   {% endif %}
   {%
     set 'content' = {
