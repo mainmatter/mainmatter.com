@@ -254,7 +254,10 @@
         "octoherd/cli",
         "octoherd/octokit",
         "oscard0m/octoherd-script-update-action-version-in-workflows",
-        "oscard0m/octoherd-script-release-workflow-patch"
+        "oscard0m/octoherd-script-release-workflow-patch",
+        "oscard0m/octoherd-script-add-cache-to-node-github-action",
+        "oscard0m/octoherd-script-add-or-delete-issue-label",
+        "oscard0m/octoherd-script-sync-repo-settings"
       ]
     },
     {
@@ -551,6 +554,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "",
+  "last_date": "2024-06-09..2024-06-16",
   "query_type": "Merged"
 }

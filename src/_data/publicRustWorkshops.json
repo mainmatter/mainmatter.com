@@ -1,0 +1,10 @@
+{
+  "workshops": [
+    {
+      "endDate": "2024-05-29T18:00+02:00",
+      "date": "May 28th + 29th, 2024, 14:00-18:00 CEST",
+      "text": "Remote Workshop: Telemetry for Rust APIs – you can't fix what you can't see",
+      "link": "https://ti.to/mainmatter/rust-telemetry-may-2024"
+    }
+  ]
+}
