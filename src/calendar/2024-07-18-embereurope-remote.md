@@ -5,6 +5,9 @@ location: Remote
 url: https://www.meetup.com/ember-europe/
 kind: meetup
 color: purple
+hero:
+  image: "/assets/images/calendar/2024-07-18-embereurope-remote/embereurope.png"
+  imageAlt: "A tiled background of European flags"
 ---
 
 We are back with our Q2 2024 event in July (yes, we're doing a Q2 event in Q3).
