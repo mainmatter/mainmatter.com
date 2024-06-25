@@ -1,6 +1,8 @@
 ---
 layout: "base"
 title: null
+eleventyImport:
+  collections: ["calendar", "caseStudies"]
 ---
 
 {% from "color-hero.njk" import colorHero %}
@@ -130,13 +132,18 @@ title: null
                 <span class="screenreader">{{ event.data.title }}</span>
               </a>
               <div class="card__logo-wrapper">
-                <p class="small">{{ event.date | monthDayYear }}</p>
+                {% image event.data.image, "", '8rem', 'lazy', 'event-card__image', [264, 420, 500] %}
               </div>
 
               <div class="card__content">
-                <p class="h4 mb-015" aria-hidden="true">{{ event.data.title }}</p>
+                <div class="mb-015">
+                  <p class="h4" aria-hidden="true">{{ event.data.title }}</p>
+                  {% if event.data.location %}
+                    <p class="card__subtitle mt-0">{{ event.data.location }}</p>
+                  {% endif %}
+                </div>
                 <div class="card__link-wrapper">
-                  <span></span>
+                  <span><p class="small">{{ event.date | monthDayYear }}</p></span>
                   <span class="card__link-arrow">{% include 'svg/arrow.njk' %}</span>
                 </div>
               </div>
