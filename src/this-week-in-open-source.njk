@@ -19,10 +19,10 @@ layout: "base.njk"
     <h2 class="section__introduction h5">Latest Updates</h2>
   </div>
   <div class="container container--xl">
-    <div class="post-cards__grid">
+    <ul class="cards__grid">
       {% for post in collections.twios %}
         {{ twiosCard(post) }}
       {% endfor %}
-    </div>
+    </ul>
   </div>
 </section>

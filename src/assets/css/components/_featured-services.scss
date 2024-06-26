@@ -1,7 +1,3 @@
-.featured-services {
-  padding: 2.5rem 0 5rem;
-}
-
 .featured-services__list-wrapper {
   margin: 3rem 0;
 }
@@ -76,10 +72,6 @@
 }
 
 @media (min-width: $breakpoint-s) {
-  .featured-services {
-    padding: 7rem 0;
-  }
-
   .featured-services__list-wrapper {
     display: flex;
     align-items: center;

@@ -1,0 +1,88 @@
+{
+  "team": [
+    {
+      "name": "Florian Pichler",
+      "imgPath": "/assets/images/team/florian.jpg"
+    },
+    {
+      "name": "Veronica Schucan",
+      "imgPath": "/assets/images/team/veronica.jpg"
+    },
+    {
+      "name": "Daniel Beer",
+      "imgPath": "/assets/images/team/dan.jpg"
+    },
+    {
+      "name": "Gábor Babicz",
+      "imgPath": "/assets/images/team/gabor.jpg"
+    },
+    {
+      "name": "Nina Arndt",
+      "imgPath": "/assets/images/team/nina.jpg"
+    },
+    {
+      "name": "Sarah Lorenz",
+      "imgPath": "/assets/images/team/sarah.jpg"
+    },
+    {
+      "name": "Bartłomiej Dudzik",
+      "imgPath": "/assets/images/team/bart.jpg"
+    },
+    {
+      "name": "Kevin Bongart",
+      "imgPath": "/assets/images/team/kevin.jpg"
+    },
+    {
+      "name": "Marine Dunstettter",
+      "imgPath": "/assets/images/team/marine.jpg"
+    },
+    {
+      "name": "Nora Burkhardt",
+      "imgPath": "/assets/images/team/nora.jpg"
+    },
+    {
+      "name": "Paolo Ricciuti",
+      "imgPath": "/assets/images/team/paolo.jpg"
+    },
+    {
+      "name": "Nick Schot",
+      "imgPath": "/assets/images/team/nick.jpg"
+    },
+    {
+      "name": "Idelia Risella",
+      "imgPath": "/assets/images/team/idelia.jpg"
+    },
+    {
+      "name": "Majd Bayassi",
+      "imgPath": "/assets/images/team/majd.jpg"
+    },
+    {
+      "name": "Emma Sofia Dell'Acqua",
+      "imgPath": "/assets/images/team/emma.jpg"
+    },
+    {
+      "name": "Marco Otte-Witte",
+      "imgPath": "/assets/images/team/marco.jpg"
+    },
+    {
+      "name": "Chris Manson",
+      "imgPath": "/assets/images/team/chris.jpg"
+    },
+    {
+      "name": "Inês Silva",
+      "imgPath": "/assets/images/team/ines.jpg"
+    },
+    {
+      "name": "Óscar Domínguez Celada",
+      "imgPath": "/assets/images/team/oscar.png"
+    },
+    {
+      "name": "Luca Palmieri",
+      "imgPath": "/assets/images/team/luca.jpg"
+    },
+    {
+      "name": "Oliver Azevedo Barnes",
+      "imgPath": "/assets/images/team/oliver.jpg"
+    }
+  ]
+}

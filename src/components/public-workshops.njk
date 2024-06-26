@@ -10,22 +10,23 @@
           Public workshops are the ideal solution for independent developers and small teams: it's
           enough to buy a ticket to join!
         </p>
-        <div class="tech-cards__grid">
+        <div class="cards__grid">
           {% for workshop in workshops %}
-            <div class="tech-cards__grid-element">
-              <div class="tech-cards--hover"></div>
-              <a href="{{ workshop.link }}" class="tech-cards_link"></a>
-              <div class="workshop-date">
+            <div class="tech-cards__grid-element card__grid-element">
+              <a href="{{ workshop.link }}" class="card__link">
+                <h3 class="screenreader">{{ workshop.title }}</h3>
+              </a>
+              <div class="">
                 <p class="small">{{ workshop.date }}</p>
               </div>
-              <div class="tech-cards__content">
+              <div class="card__content">
                 {% if workshop.text %}
-                  <h4 class="tech-cards__title mb-015">{{ workshop.text | safe }}</h4>
+                  <p class="h4 mb-015" aria-hidden="true">{{ workshop.text | safe }}</p>
                 {% endif %}
                 {% if workshop.link %}
-                  <div class="tech-cards__link-wrapper">
-                    <p class="caption tech-cards__link-label">Register here</p>
-                    <span class="tech-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
+                  <div class="card__link-wrapper">
+                    <p class="caption ">Register here</p>
+                    <span class="card__link-arrow">{% include 'svg/arrow.njk' %}</span>
                   </div>
                 {% endif %}
               </div>

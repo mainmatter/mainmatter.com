@@ -5,23 +5,24 @@
         <h2 class="tech-cards__title">{{ title }}</h2>
       {% endif %}
       <p class="tech-cards__intro mt-25 mb-5">{{ intro | safe }}</p>
-      <div class="tech-cards__grid">
+      <div class="cards__grid">
         {% for card in cards %}
-          <div class="tech-cards__grid-element">
-            <div class="tech-cards--hover"></div>
-            <a href="/{{ card.link }}" class="tech-cards_link"></a>
+          <div class="tech-cards__grid-element card__grid-element">
+            <a href="/{{ card.link }}" class="card__link">
+              <h3 class="screenreader">{{ card.title }}</h3>
+            </a>
             <div class="tech-cards__logo {{ card.logo }}">
               {% set link='svg/'+ card.logo + '.njk' %}
               {% include link %}
             </div>
-            <div class="tech-cards__content">
+            <div class="card__content">
               {% if card.title %}
-                <h4 class="tech-cards__title mb-015">{{ card.title }}</h4>
+                <p class="tech-cards__title mb-015 h4">{{ card.title }}</p>
               {% endif %}
               {% if card.link %}
-                <div class="tech-cards__link-wrapper">
-                  <p class="caption tech-cards__link-label">Learn more</p>
-                  <span class="tech-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
+                <div class="card__link-wrapper">
+                  <p class="caption">Learn more</p>
+                  <span class="card__link-arrow">{% include 'svg/arrow.njk' %}</span>
                 </div>
               {% endif %}
             </div>

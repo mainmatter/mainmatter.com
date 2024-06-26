@@ -6,17 +6,21 @@ post: A post object
 
 {{ postCard(post) }}
 #}
-{%- macro postCard(post) -%}
-  <div class="post-cards__grid-element">
-    <a href="{{ post.url }}" class="post-cards__link"></a>
-    <div class="post-cards__date-wrapper">
+{%- macro postCard(post, tag = 'h3') -%}
+  <li class="card__grid-element">
+    <a href="{{ post.url }}" class="card__link">
+      <!-- prettier-ignore-start -->
+      <{{tag}} class="screenreader">
+        {{ post.data.title }}
+      </{{tag}}>
+      <!-- prettier-ignore-end -->
+    </a>
+    <div class="card__logo-wrapper">
       <p class="small">{{ post.date | monthDayYear }}</p>
     </div>
 
-    <div class="post-cards__content">
-      <div class="post-cards_headline">
-        <h4 class="post-cards__title mb-015 ">{{ post.data.title }}</h4>
-      </div>
+    <div class="card__content">
+      <p class="mb-015 h4" aria-hidden="true">{{ post.data.title }}</p>
       {% if post.data.authorHandle %}
         {% set author = post.data.authorHandle | findBySlug %}
         <div class="post-cards__author">
@@ -39,15 +43,15 @@ post: A post object
           </div>
         </div>
       {% endif %}
-      <div class="post-cards__link-wrapper">
-        <div class="small post-cards__link-label">
+      <div class="card__link-wrapper">
+        <div class="small">
           {% for item in post.data.tags %}
             {% if loop.index != 1 %}/{% endif %}
-            <a href="/blog/tag/{{ item | slug }}/"> {{ item }} </a>
+            <a href="/blog/tag/{{ item | slug }}/">{{- item -}}</a>
           {% endfor %}
         </div>
-        <span class="post-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
+        <span class="card__link-arrow">{% include 'svg/arrow.njk' %}</span>
       </div>
     </div>
-  </div>
+  </li>
 {%- endmacro -%}
