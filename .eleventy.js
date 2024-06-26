@@ -106,7 +106,11 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("getMorePosts", function (array, post) {
-    return array.filter(element => element.inputPath !== post.inputPath);
+    return array
+      .filter(element => element.inputPath !== post.inputPath)
+      .map(el => {
+        return el.fileSlug;
+      });
   });
 
   eleventyConfig.addFilter("getCollectionKeys", function (collection) {

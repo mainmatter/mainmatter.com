@@ -1,240 +1,41 @@
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 
-{%- macro mainmatterTeam() -%}
-  <section class="image-banner-with-text my-5">
-    <div class="container container--lg">
-      <h2 class="image-banner-with-text__heading">Why Mainmatter</h2>
-    </div>
+<section class="image-banner-with-text my-5">
+  <div class="container container--lg">
+    <h2 class="image-banner-with-text__heading">Why Mainmatter</h2>
+  </div>
 
-    <div class="mainmatter-team">
-      {%
+  <div class="mainmatter-team">
+    {%- for teammate in team.team -%}
+      {% set alt %}{{ teammate.name }} looking straight into the camera{% endset %}
+      {%-
         set imageData = {
-        "imgPath": "/assets/images/team/florian.jpg",
-        "alt": "Portrail photo of Florian Pichler looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/veronica.jpg",
-        "alt": "Portrail photo of Veronica Schucan looking straight into the camera",
-        "sizes": "400px",
+        "imgPath": teammate.imgPath,
+        "alt": alt,
+        "sizes": "200px, 400px",
         "loading": "lazy",
         "sizesArray": [200, 400]
         }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/dan.jpg",
-        "alt": "Portrail photo of Daniel Beer looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/gabor.jpg",
-        "alt": "Portrail photo of Gábor Babicz looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/nina.jpg",
-        "alt": "Portrail photo of Nina Arndt looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/sarah.jpg",
-        "alt": "Portrail photo of Sarah Lorenz looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/bart.jpg",
-        "alt": "Portrail photo of Bartłomiej Dudzik looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/kevin.jpg",
-        "alt": "Portrail photo of Kevin Bongart looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/marine.jpg",
-        "alt": "Portrail photo of Marine Dunstetter looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/nora.jpg",
-        "alt": "Portrail photo of Nora Burkhardt looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/paolo.jpg",
-        "alt": "Portrail photo of Paolo Ricciuti looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/nick.jpg",
-        "alt": "Portrail photo of Nick Schot looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/idelia.jpg",
-        "alt": "Portrail photo of Idelia Risella looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/majd.jpg",
-        "alt": "Portrail photo of Majd Bayassi looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/emma.jpg",
-        "alt": "Portrail photo of Emma Sofia Dell'Acqua looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/marco.jpg",
-        "alt": "Portrail photo of Marco Otte-Witte looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/chris.jpg",
-        "alt": "Portrail photo of Chris Manson looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/ines.jpg",
-        "alt": "Portrail photo of Inês Silva looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/oscar.png",
-        "alt": "Portrail photo of Óscar Domínguez Celada looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/luca.jpg",
-        "alt": "Portrail photo of Luca Palmieri looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-      {%
-        set imageData = {
-        "imgPath": "/assets/images/team/oliver.jpg",
-        "alt": "Portrail photo of Oliver Azevedo Barnes looking straight into the camera",
-        "sizes": "400px",
-        "loading": "lazy",
-        "sizesArray": [200, 400]
-        }
-      %}
-      {{ imageAspectRatio(imageData, "40/32", "40/32") }}
-    </div>
+      -%}
+      {{- imageAspectRatio(imageData, "40/32", "40/32") -}}
+    {%- endfor -%}
+  </div>
 
-    <div class="container container--lg">
-      <div class="image-banner-with-text__content">
-        <h3 class="image-banner-with-text__subheading h4">
-          We are a team of developers, inventors, designers, strategists, artists and storytellers.
-          We work remotely from 10 countries in Europe and we believe in recruiting top talents from
-          any location.
-        </h3>
-        <div class="image-banner-with-text__text">
-          <p>
-            That said, we still value face time. We frequently come together for team events and
-            workshops, and invite our clients to join us as well. The team also frequently attends
-            and speaks at international conferences and we host a series of conferences and meetups
-            ourselves.
-          </p>
-        </div>
+  <div class="container container--lg">
+    <div class="image-banner-with-text__content">
+      <h3 class="image-banner-with-text__subheading h4">
+        We are a team of developers, inventors, designers, strategists, artists and storytellers. We
+        work remotely from 10 countries in Europe and we believe in recruiting top talents from any
+        location.
+      </h3>
+      <div class="image-banner-with-text__text">
+        <p>
+          That said, we still value face time. We frequently come together for team events and
+          workshops, and invite our clients to join us as well. The team also frequently attends and
+          speaks at international conferences and we host a series of conferences and meetups
+          ourselves.
+        </p>
       </div>
     </div>
-  </section>
-{%- endmacro -%}
+  </div>
+</section>

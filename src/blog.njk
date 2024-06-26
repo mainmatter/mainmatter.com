@@ -35,11 +35,11 @@ eleventyNavigation:
 {{ colorHero('purple', content) }}
 <div id="posts" class="container container--xl mb-10">
   {% include 'global/tag-filter.njk' %}
-  <div class="post-cards__grid">
+  <ul class="cards__grid">
     {%- for post in pagination.items -%}
       {{ postCard(post) }}
     {%- endfor -%}
-  </div>
+  </ul>
   {% if pagination.pageNumber === 0 %}
     {% set nextLabel = 'Explore more articles' %}
   {% else %}

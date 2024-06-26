@@ -18,8 +18,8 @@ p a {
   transform: translate3d(0, 0, 0);
   --icon-arrow-margin: 0 0 0 0.5rem;
 
-
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     --icon-arrow-transform: translate3d(0.5rem, 0, 0);
   }
 
@@ -34,6 +34,10 @@ p a {
   &--white {
     background-color: var(--color-white);
     color: var(--color-link-primary);
+  }
+
+  .icon-arrow {
+    display: inline-block;
   }
 }
 
@@ -53,14 +57,19 @@ p a {
     text-decoration: none;
   }
 
-  &:hover, &:focus {
-    --icon-arrow-transform: translate3d(0.5rem,0,0);
+  &:hover,
+  &:focus {
+    --icon-arrow-transform: translate3d(0.5rem, 0, 0);
     text-decoration: none;
     color: var(--color-purple);
   }
 
   &--reversed {
     --icon-arrow-margin: 0 0 0 1.5rem;
+  }
+
+  .icon-arrow {
+    display: inline-block;
   }
 }
 

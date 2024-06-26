@@ -1,32 +1,35 @@
-{% macro caseCard(clientHandle) %}
-  <li class="case-cards__grid-element">
+{%- macro caseCard(clientHandle) -%}
+  <li class="case-cards__grid-element card__grid-element">
     {% set caseStudy = clientHandle | findBySlug %}
-    <div class="case-cards--hover"></div>
-    {% if caseStudy.url %}
-      <a href="{{ caseStudy.url }}" class="case-cards__link"></a>
-    {% else %}
-      <a href="/work#{{ clientHandle }}" class="case-cards__link"></a>
-    {% endif %}
-    <div class="case-cards__logo-wrapper">
+    <a
+      href="{% if caseStudy.url %}{{ caseStudy.url }}{% else %}/work#{{ clientHandle }}{% endif %}"
+      class="card__link"
+    >
+      <h3 class="screenreader">
+        {{ caseStudy.data.problem }}
+        {{ caseStudy.data.solution }}
+      </h3>
+    </a>
+    <div class="card__logo-wrapper">
       {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %}
-      <img class="case-cards__logo" src="{{ imagePath }}" alt="{{ company }}" />
+      <img src="{{ imagePath }}" alt="{{ company }}" />
     </div>
-    <div class="case-cards__content">
+    <div class="card__content">
       {% if caseStudy.data.problem %}
-        <div class="case-cards_headline">
-          <h4 class="case-cards__title mb-015 problem">{{ caseStudy.data.problem }}</h4>
-          <h4 class="case-cards__title mb-015 solution">{{ caseStudy.data.solution }}</h4>
+        <div class="case-cards__headline" aria-hidden="true">
+          <p class="case-cards__problem mb-015 h4">{{ caseStudy.data.problem }}</p>
+          <p class="case-cards__solution mb-015 h4">{{ caseStudy.data.solution }}</p>
         </div>
       {% endif %}
-      <div class="case-cards__link-wrapper">
-        <div class="small case-cards__link-label">
+      <div class="card__link-wrapper">
+        <div class="small">
           {% for item in caseStudy.data.tags %}
             {% if loop.index != 1 %}/{% endif %}
             <a href="/services/{{ item | slug }}/"> {{ item }} </a>
           {% endfor %}
         </div>
-        <span class="case-cards__link-arrow">{% include 'svg/arrow.njk' %}</span>
+        <span class="card__link-arrow">{% include 'svg/arrow.njk' %}</span>
       </div>
     </div>
   </li>
-{% endmacro %}
+{%- endmacro -%}

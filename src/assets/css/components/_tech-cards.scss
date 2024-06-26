@@ -1,74 +1,5 @@
-.tech-cards__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-}
-
-@media (min-width: $breakpoint-s) {
-  .tech-cards__grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: $breakpoint-l) {
-  .tech-cards__grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-.tech-cards__grid-element {
-  color: var(--color-white);
-  padding: 1.25rem 1.25rem 1.25rem 1.25rem;
-  min-height: 32rem;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: start;
-  text-decoration: none;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-
-  &:hover,
-  &:focus {
-    .tech-cards__link-arrow {
-      .icon-arrow {
-        transform: translateX(0.5rem) rotate(-90deg);
-        transition: transform 0.5s ease;
-      }
-    }
-  }
-}
-
-.tech-cards_link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  text-decoration: none;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  z-index: 50;
-}
-
-.tech-cards__link-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  text-decoration: none;
-}
-
-.tech-cards__content {
-  width: 100%;
-  position: relative;
-}
-
 .tech-cards__intro {
-  max-width: 64rem;
+  max-width: 64remp;
 }
 
 .tech-cards__logo {
@@ -96,17 +27,8 @@
   }
 }
 
-.tech-cards--hover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-
 .tech-cards__grid-element:nth-child(2n + 1) {
-  background-color: var(--color-purple);
+  --background-color: var(--color-purple);
 
   svg g {
     fill: #5600d1;
@@ -114,7 +36,7 @@
 }
 
 .tech-cards__grid-element:nth-child(2n) {
-  background-color: var(--color-black);
+  --background-color: var(--color-black);
 
   svg g {
     fill: #2b2b2b;
@@ -122,33 +44,9 @@
 }
 
 .tech-cards__grid-element:nth-child(5n + 1) {
-  background-color: var(--color-aqua);
+  --background-color: var(--color-aqua);
 
   svg g {
     fill: #55e6d8;
-  }
-}
-
-.tech-cards__link-arrow {
-  position: relative;
-  margin-left: 0.25rem;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-
-  .icon-arrow {
-    transform: translateX(0px) rotate(-90deg);
-    transition: transform 0.5s ease;
-    width: 24px;
-    height: auto;
-  }
-
-  &--rotate {
-    margin-left: 0;
-    margin-right: 0.5rem;
-
-    .icon-arrow {
-      transform: rotate(90deg);
-    }
   }
 }

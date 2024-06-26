@@ -28,11 +28,11 @@ permalink: "/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 1 %}/page/{{ p
 </div>
 <div id="posts" class="container container--xl mb-10">
   {% include 'global/tag-filter.njk' %}
-  <div class="post-cards__grid">
+  <ul class="cards__grid">
     {%- for post in paged.posts -%}
       {{ postCard(post) }}
     {%- endfor -%}
-  </div>
+  </ul>
 
   {% if paged.first != true %}
     {%- set previous -%}/blog/tag/{{ paged.tag | slug }}/{% if paged.number > 2 %}page/{{ paged.number -1 }}/{% endif %}#posts{%- endset -%}

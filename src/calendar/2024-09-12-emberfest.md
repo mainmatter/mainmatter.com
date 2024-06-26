@@ -5,6 +5,9 @@ location: Dublin
 url: https://emberfest.eu
 kind: conference
 color: purple
+hero:
+  image: "/assets/images/calendar/2024-09-12-emberfest/venue.jpg"
+  imageAlt: "EmberFest Venue, Williams & Woods"
 ---
 
 EmberFest is the European Community Ember Conference, this year happening in
