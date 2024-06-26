@@ -12,5 +12,7 @@ description:
   asset management.</p><p>When they were looking to build custom software tools
   to improve workflows, we conducted a product strategy workshop with them to
   develop a clear understanding of these tools and enable the next steps.</p>
+hero:
+  tags: "product strategy / architecture"
 permalink: false
 ---

@@ -7,5 +7,7 @@ description:
   small businesses in Sub-Saharan Africa.</p><p>Mainmatter facilitated two
   remote product design sprints to ideate, prototype, validate and test
   product-market fit of its new bookkeeping features.</p>
+hero:
+  tags: "design sprint"
 permalink: false
 ---

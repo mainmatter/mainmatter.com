@@ -8,5 +8,7 @@ description:
   with their frontend application, they reached out to Mainmatter for support.
   We performed an assessment of their codebase, prepared a roadmap and supported
   their team to follow that.</p>
+hero:
+  tags: "architecture / development / Ember.js"
 permalink: false
 ---

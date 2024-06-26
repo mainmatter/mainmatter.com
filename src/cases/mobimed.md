@@ -1,11 +1,13 @@
 ---
 layout: case-study
 company: Mobi.MED
-problem: mobi.MED needed to upgrade their old Ember codebase.
+problem: mobi.MED needed to refresh their codebase and UI.
 solution:
-  Our team applied both their expertise in the language and experience to get
-  the work done efficiently.
+  Our team developed a design system, implemented it in the application, and
+  modernized the codebase along the way.
 tags: Tech modernization
 description: <p>Mobi.MED description</p>
 permalink: false
+hero:
+  tags: "design / development / mentoring"
 ---

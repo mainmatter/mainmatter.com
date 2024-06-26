@@ -14,5 +14,7 @@ description:
   releasing a number of critical features built with Ruby on Rails. Our
   technology experts joined xbAV’s internal team, increasing the available
   workforce while boosting their expertise.</p>
+hero:
+  tags: "architecture / development / Ruby on Rails"
 permalink: false
 ---

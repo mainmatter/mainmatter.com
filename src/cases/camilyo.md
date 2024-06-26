@@ -12,5 +12,7 @@ description:
   issues in their Ember.js applications, improving their testing practices,
   adopting modern Ember.js patterns and leveling up their team along the
   way.</p>
+hero:
+  tags: "development / mentoring / Ember.js"
 permalink: false
 ---

@@ -14,7 +14,7 @@ hero:
   color: purple
   image: "/assets/images/work/ddwrt.jpg"
   imageAlt: "Router on a white background"
-  tags: Team reinforcement
+  tags: "development / Ember.js"
 og:
   image: /assets/images/cases/cs-dd-wrt-og-image.jpg
 ---

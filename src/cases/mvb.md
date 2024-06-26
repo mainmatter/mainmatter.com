@@ -17,7 +17,7 @@ hero:
   color: purple
   image: "/assets/images/work/mvb-background.jpg"
   imageAlt: "Servers in Rack"
-  tags: "Team reinforcement"
+  tags: "architecture / development / process"
 og:
   image: /assets/images/cases/cs-mvb-og-image.jpg
 ---

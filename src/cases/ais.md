@@ -18,7 +18,7 @@ hero:
   color: purple
   image: "/assets/images/work/ais.jpg"
   imageAlt: "2 walls with bank lockers, most closed but some open"
-  tags: "architecture / development / design"
+  tags: "design / development / React"
 og:
   image: /assets/images/cases/cs-ais-og-image.jpg
 ---

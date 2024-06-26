@@ -19,7 +19,7 @@ hero:
   color: purple
   image: "/assets/images/work/qonto.jpg"
   imageAlt: "Woman holds a credit card while using the Qonto web application"
-  tags: "development / refactoring / mentoring"
+  tags: "development / architecture / mentoring"
 og:
   image: /assets/images/cases/cs-qonto-og-image.jpg
 ---

@@ -8,5 +8,7 @@ description:
   internationalize their service, Mainmatter set up the architecture in their
   application as well as the infrastructure that supports their development
   team.</p>
+hero:
+  tags: "architecture / development"
 permalink: false
 ---

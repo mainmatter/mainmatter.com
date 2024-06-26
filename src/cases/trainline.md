@@ -18,7 +18,7 @@ hero:
   color: purple
   image: "/assets/images/work/trainline.jpg"
   imageAlt: "Back view of a man standing in front of departure boards"
-  tags: "development / process / mentoring"
+  tags: "development / process / Ruby on Rails"
 og:
   image: /assets/images/cases/cs-trainline-og-image.jpg
 ---
