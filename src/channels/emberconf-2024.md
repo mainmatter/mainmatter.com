@@ -1,6 +1,6 @@
 ---
 title: "EmberConf 2024"
-image: "/assets/images/talks/2024-05-31-emberconf-2024/logo.svg"
+image: "/assets/images/talks/2024-05-31-emberconf-2024/logo.png"
 url: https://emberconf.com
 ---
 
