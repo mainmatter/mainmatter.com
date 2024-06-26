@@ -18,7 +18,7 @@ hero:
   color: purple
   image: "/assets/images/work/experteer.jpg"
   imageAlt: "Collage of the Experteer mobile application"
-  tags: "architecture / development / process"
+  tags: "development / process / React"
 og:
   image: /assets/images/cases/cs-experteer-og-image.jpg
 ---

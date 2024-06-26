@@ -18,7 +18,7 @@ hero:
   color: purple
   image: "/assets/images/work/expedition.jpg"
   imageAlt: "Expedition homepage viewed on an iPad"
-  tags: "development / architecture / mentoring"
+  tags: "development / architecture / Elixir"
 og:
   image: /assets/images/cases/cs-expedition-og-image.jpg
 ---

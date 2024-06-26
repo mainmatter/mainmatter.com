@@ -19,7 +19,7 @@ hero:
   color: purple
   image: "/assets/images/work/aleph-alpha-background-2.jpg"
   imageAlt: "Router on a white background"
-  tags: "development / architecture"
+  tags: "development / architecture / Rust"
 og:
   image: /assets/images/cases/cs-aleph-alpha-og-image.jpg
 ---

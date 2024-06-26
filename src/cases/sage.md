@@ -11,6 +11,8 @@ description:
   Management software.</p><p>Mainmatter helped their engineering team to
   identify and overcome issues that had a negative impact on their velocity as
   well as migrate the codebase to more modern patterns and a more sustainable
-  architecture..</p>
+  architecture.</p>
+hero:
+  tags: "development / architecture / mentoring"
 permalink: false
 ---

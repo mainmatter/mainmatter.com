@@ -13,6 +13,9 @@ list: An array where each item is the slug for the case study.
           {% set imagePath %}/assets/images/logos/monochrome/{{ clientHandle }}.svg{% endset %}
           <img src="{{ imagePath }}" alt="{{ client.data.company }}" />
         </div>
+        {%- if client.data.hero.tags -%}
+          <p class="client-card__tag-group">{{- client.data.hero.tags -}}</p>
+        {%- endif -%}
         <div class="client-card__text">{{ client.data.description | safe }}</div>
         <div class="client-card__tags">
           <p class="caption mt-015">

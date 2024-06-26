@@ -20,7 +20,7 @@ hero:
   color: purple
   image: "/assets/images/work/rail-europe.jpg"
   imageAlt: "Train tracks on gravel"
-  tags: "strategic advice / process / mentoring"
+  tags: "strategic advice / process / development"
 og:
   image: /assets/images/cases/cs-rail-europe-og-image.jpeg
 ---
