@@ -32,6 +32,7 @@
   text-decoration: none;
   overflow: hidden;
   cursor: pointer;
+  background-color: var(--background-color);
 
   &:hover,
   &:focus {
@@ -43,16 +44,50 @@
   }
 
   &:nth-child(2n + 1) {
-    background-color: var(--color-purple);
+    --background-color: var(--color-purple);
   }
 
   &:nth-child(2n) {
-    background-color: var(--color-black);
+    --background-color: var(--color-black);
   }
 
   &:nth-child(5n + 1) {
-    background-color: var(--color-aqua);
+    --background-color: var(--color-aqua);
   }
+}
+
+.card__background-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--background-color);
+    mix-blend-mode: multiply;
+    z-index: 1;
+  }
+}
+
+.card__hover {
+  position: absolute;
+  inset: 0;
+  background-color: var(--background-color);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.card__background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.8;
 }
 
 .card__logo-wrapper {
@@ -86,6 +121,13 @@
   width: 100%;
   z-index: 50;
   outline-offset: -0.25rem;
+
+  &:hover,
+  &:focus {
+    & ~ .card__hover {
+      transform: translateX(0);
+    }
+  }
 }
 
 .card__link-arrow {

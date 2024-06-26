@@ -28,7 +28,7 @@
 }
 
 .tech-cards__grid-element:nth-child(2n + 1) {
-  background-color: var(--color-purple);
+  --background-color: var(--color-purple);
 
   svg g {
     fill: #5600d1;
@@ -36,7 +36,7 @@
 }
 
 .tech-cards__grid-element:nth-child(2n) {
-  background-color: var(--color-black);
+  --background-color: var(--color-black);
 
   svg g {
     fill: #2b2b2b;
@@ -44,7 +44,7 @@
 }
 
 .tech-cards__grid-element:nth-child(5n + 1) {
-  background-color: var(--color-aqua);
+  --background-color: var(--color-aqua);
 
   svg g {
     fill: #55e6d8;

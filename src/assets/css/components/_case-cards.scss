@@ -1,14 +1,14 @@
 .case-cards__grid-element {
   &:nth-child(n) {
-    background-color: var(--color-purple);
+    --background-color: var(--color-purple);
   }
 
   &:nth-child(2n) {
-    background-color: var(--color-aqua);
+    --background-color: var(--color-aqua);
   }
 
   &:nth-child(2n + 3) {
-    background-color: var(--color-black);
+    --background-color: var(--color-black);
   }
 }
 

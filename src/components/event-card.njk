@@ -14,8 +14,8 @@ event: A event object
     data-background-color="{{ event.data.color }}"
   >
     {% if event.data.hero.image %}
-      <div class="event-card__background-wrapper">
-        {% image event.data.hero.image, event.data.hero.imageAlt, '(min-width: 48em) 60rem, 90vw', "lazy", 'event-card__background-image', [760, 1440, 1920] %}
+      <div class="card__background-wrapper">
+        {% image event.data.hero.image, event.data.hero.imageAlt, '(min-width: 48em) 60rem, 90vw', "lazy", 'card__background-image', [760, 1440, 1920] %}
       </div>
     {% endif %}
     <div class="event-card__content-wrapper">

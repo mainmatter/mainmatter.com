@@ -127,12 +127,18 @@ eleventyImport:
       <ol class="cards__grid">
         {% for event in collections.calendar %}
           {% if loop.index < 4 %}
-            <div class="card__grid-element">
+            <div class="card__grid-element grid-event-card__grid-element">
+              {% if event.data.hero.image %}
+                <div class="card__background-wrapper">
+                  {% image event.data.hero.image, event.data.hero.imageAlt, '(min-width: 48em) 60rem, 90vw', "lazy", 'card__background-image', [760, 1440, 1920] %}
+                </div>
+              {% endif %}
               <a href="{{ event.data.url }}" class="card__link">
                 <span class="screenreader">{{ event.data.title }}</span>
               </a>
+              <div class="card__hover"></div>
               <div class="card__logo-wrapper">
-                {% image event.data.image, "", '8rem', 'lazy', 'event-card__image', [264, 420, 500] %}
+                {% image event.data.image, "", '8rem', 'lazy', 'grid-event-card__logo', [264, 420, 500] %}
               </div>
 
               <div class="card__content">

@@ -1,0 +1,16 @@
+.grid-event-card__grid-element {
+  &:nth-child(odd) {
+    --background-color: var(--color-purple);
+  }
+
+  &:nth-child(even) {
+    --background-color: var(--color-aqua);
+  }
+}
+
+.grid-event-card__logo {
+  max-width: 8rem;
+  width: auto;
+  height: auto;
+  max-height: 6rem;
+}
