@@ -1,10 +1,16 @@
 .icon-arrow {
+  display: block;
   flex-shrink: 0;
   height: var(--icon-arrow-size);
   width: var(--icon-arrow-size);
   margin: var(--icon-arrow-margin);
-  transform: var(--icon-arrow-transform) rotate(var(--icon-arrow-rotate));
+  transform: var(--icon-arrow-transform);
   transition: transform 0.5s ease;
   will-change: transform;
   color: var(--icon-arrow-color, inherit);
+
+  path {
+    transform: rotate(var(--icon-arrow-rotate));
+    transform-origin: center;
+  }
 }
