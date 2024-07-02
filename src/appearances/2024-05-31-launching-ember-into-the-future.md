@@ -1,6 +1,6 @@
 ---
 title: "Launching Ember into the Future"
-image: "/assets/images/talks/2024-04-27-fullstack-testing/thumbnail.jpg"
+image: "/assets/images/talks/2024-05-31-emberconf-2024/thumbnail.jpg"
 url: https://www.youtube.com/watch?v=qlLWRCEDvPI
 media: video
 channel: emberconf-2024
