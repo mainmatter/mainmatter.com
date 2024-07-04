@@ -211,6 +211,18 @@ og:
   </div>
 </section>
 
+{%
+  set logoCompanies = [
+  'Aleph Alpha',
+  'KISTERS',
+  'BMW Car IT',
+  'Faculty',
+  'Otto'
+  ]
+%}
+{% set title = 'We are trusted by international companies that bet on Rust' %}
+{{ logoList(logoCompanies, title, "h4", "h5") }}
+
 <section class="mb-10">
   {%
     set imageData = {
