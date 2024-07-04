@@ -2,8 +2,7 @@
 layout: case-study
 company: BMW Car IT
 problem:
-  BMW Car IT was looking to get a group of developers up to speed with Rust
-  fast.
+  BMW Car IT was looking to get a group of developers up to speed with Rust.
 solution:
   We ran a 4-day mixed on-site and remote workshop for them, covering all the
   topics they needed to know.
