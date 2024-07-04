@@ -17,6 +17,7 @@ og:
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from "quote.njk" import quote %}
 {% from 'featured-case-study.njk' import featuredCaseStudy %}
+{% from "featured-case-studies.njk" import featuredCaseStudies %}
 {%
   set 'content' = {
   "eyebrow": "Our Expertise: Rust",
@@ -250,11 +251,8 @@ og:
   </div>
 </section>
 
-<div class="work container container--xl">
-  <ul class="work__list">
-    {{ featuredCaseStudy('aleph-alpha', 'black', 'work__featured-case-study') }}
-  </ul>
-</div>
+{% set clients = ['aleph-alpha', 'kisters'] %}
+{{ featuredCaseStudies(clients, 'Browse our work') }}
 
 <section class="my-10 container container--lg">
   <div class="split-content">
