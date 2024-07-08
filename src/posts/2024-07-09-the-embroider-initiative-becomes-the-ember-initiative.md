@@ -1,5 +1,5 @@
 ---
-title: "The Embroider Initiative becomes the Ember Initiative"
+title: "The Embroider Initiative Becomes the Ember Initiative"
 authorHandle: marcoow
 tags: [ember]
 bio: "Marco Otte-Witte"
@@ -58,7 +58,7 @@ past few years. We suggest working on:
 
 - **Ember Inspector:** The inspector needs some changes to work properly with
   Vite-built Ember apps. Also, its capabilities for modern Ember patterns like
-  `<template>`tag components are limited. Fixing this will make developers more
+  `<template>` tag components are limited. Fixing this will make developers more
   efficient.
 - **Glint tooling and TS support:** We suggest our team works with Alex
   Matchneer, who has already begun improving Ember’s developer experience with
