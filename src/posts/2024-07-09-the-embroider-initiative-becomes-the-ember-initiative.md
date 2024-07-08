@@ -22,10 +22,8 @@ tagline:
   reach our goals, which have real value for everyone in the ecosystem. That’s
   why we’re proposing to turn the Embroider initiative into a permanent effort –
   the <strong>Ember Initiative</strong>.</p>"
-image: "/assets/images/posts/2024-06-21-shipping-is-a-state-of-mind/header.jpg"
-imageAlt:
-  "Close-up photo of a green rope on a sailboat, with blurred figures in the
-  background and a sail catching the wind against a clear blue sky."
+image: "/assets/images/ember/ember-consulting.jpeg"
+imageAlt: "A group of hamsters"
 ---
 
 ## What is the Ember Initiative about?
