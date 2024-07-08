@@ -78,10 +78,10 @@ Ember in these contexts.
 ### Route and Router Manager APIs
 
 Improving the router has been a long-standing goal in the Ember community, with
-little progress in recent years (the topic was recently removed from Polaris,
-Ember's next edition). While the topic is big and we won't be able to ship a new
-router soon, we suggest working on the first step: implementing manager APIs for
-routes and the routing system. This will unblock experimentation by allowing the
+little progress in recent years (Polaris, Ember's next edition, will not ship
+with a router). While the topic is big and we won't be able to ship a new router
+soon, we suggest working on the first step: implementing manager APIs for routes
+and the routing system. This will unblock experimentation by allowing the
 implementation of routes and the routing system to be swapped, bringing the
 ecosystem one step closer to a new router.
 
