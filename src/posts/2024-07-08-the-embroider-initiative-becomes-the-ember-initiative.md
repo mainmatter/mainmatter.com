@@ -15,13 +15,13 @@ tagline:
   point where new Ember apps can now be built with Vite from the start. It might
   not be as easy for teams working on slightly older Ember versions, but the
   path to Vite is open. Most teams just need to update their apps to the latest
-  Ember version to follow it to the end.</p> <p>While the Embroider initiative
-  has come to a successful end, we don’t want to stop pushing the Ember
-  ecosystem forward. The success of the initiative has shown that crowd-funded
-  work on Ember is effective: companies see the reasons to invest, and we can
-  reach our goals, which have real value for everyone in the ecosystem. That’s
-  why we’re proposing to turn the Embroider initiative into a permanent effort –
-  the <strong>Ember Initiative</strong>.</p>"
+  Ember version to get on to Vite.</p> <p>While the Embroider initiative has
+  come to a successful end, we don’t want to stop pushing the Ember ecosystem
+  forward. The success of the initiative has shown that crowd-funded work on
+  Ember is effective: companies see the reasons to invest, and we can reach our
+  goals, which have real value for everyone in the ecosystem. That’s why we’re
+  proposing to turn the Embroider initiative into a permanent effort – the
+  <strong>Ember Initiative</strong>.</p>"
 image: "/assets/images/ember/ember-consulting.jpeg"
 imageAlt: "A group of hamsters"
 ---
