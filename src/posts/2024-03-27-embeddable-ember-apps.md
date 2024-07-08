@@ -467,10 +467,10 @@ Ember-cli on top, where we have both old and new systems to be mindful of when
 building the app.
 
 However, there is a future where this will become much easier! The
-[Embroider Initiative](/embroider-initiative/) is working its way towards full
-Vite support which should relief Ember from using the AMD format and allow for a
-much easier process where bundler users would only import that single class
-which initializes the App.
+[Embroider Initiative](/ember-initiative/) is working its way towards full Vite
+support which should relief Ember from using the AMD format and allow for a much
+easier process where bundler users would only import that single class which
+initializes the App.
 
 #### Resources
 
