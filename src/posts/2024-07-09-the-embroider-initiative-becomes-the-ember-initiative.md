@@ -8,7 +8,7 @@ description:
   advance the Ember ecosystem, building on the success of the Embroider
   Initiative."
 og:
-  image: /assets/images/posts/2024-07-08-the-embroider-initiative-becomes-the-ember-initiative/og-image.png
+  image: /assets/images/posts/2024-07-09-the-embroider-initiative-becomes-the-ember-initiative/og-image.png
 tagline:
   "<p>The Embroider initiative was a big success for the Ember ecosystem. Having
   two engineers work full-time on Embroider for a year allowed us to reach a
