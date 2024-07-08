@@ -42,14 +42,15 @@ While the Embroider initiative has been a great success and the path towards
 Vite is wide open, there is some work left to do to polish the experience:
 
 - **Backwards compatibility:** Making Vite builds work with older Ember versions
-  will make it easier for many teams to switch. We suggest working on making
-  Embroider and Vite compatible with Ember 4.x.
+  will make it easier for many teams to switch. We suggest making Embroider and
+  Vite compatible with Ember 4.x.
 - **Documentation:** While building Ember apps with Vite should be an
-  out-of-the-box experience, some documentation is needed to make this
-  accessible for the wider Ember community.
+  out-of-the-box experience, some documentation will need to be updated before
+  it can be the default experience for the wider Ember community.
 - **Opening upgrade paths for the most popular addons:** Ember apps rely heavily
-  on addons, but not all widely used ones work with Vite. We suggest adding
-  support for these addons or documenting alternatives.
+  on addons, but not all widely used ones work with Vite. We propose that we add
+  support or document alternatives for the most used addons in the Ember
+  ecosystem.
 
 ### Developer Tooling
 
