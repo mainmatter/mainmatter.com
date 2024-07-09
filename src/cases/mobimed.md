@@ -43,7 +43,7 @@ og:
 <div class="case-study__section">
   <h3 class="case-study__heading">Setting the Stage: Simplification and Modernization</h3>
   <div class="case-study__text">
-    <p>We started by updating and simplifying the codebase. We methodically updated old dependencies to newer versions. While doing this, we replaced outdated patterns with modern best practices, and guided the client's team through these changes. This significantly simplified the codebase, streamlined the workflow, and made onboarding new team members easier, while also removing user-facing bugs.</p>
+    <p>We started by updating and simplifying the codebase. We methodically updated old dependencies to newer versions. While doing this, we replaced outdated patterns with modern best practices, and guided the client's team through these changes. This streamlined the workflow, and made onboarding new team members easier, while also removing user-facing bugs.</p>
   </div>
 </div>
 
