@@ -161,6 +161,11 @@
   from = "/services/digital-products-and-design/"
   to = "/services/launch-your-idea/"
 
+# redirect Embroider initiative to Ember initiative
+[[redirects]]
+  from = "/embroider-initiative"
+  to = "/ember-initiative/"
+
 # redirect old "Web-based Services in Rust" landing page to regular workshop
 [[redirects]]
   from = "https://rust-web-services-workshop.mainmatter.com/*"
