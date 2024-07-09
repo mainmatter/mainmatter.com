@@ -167,5 +167,5 @@ default experience for all Ember users.
 
 To keep up to date with the latest developments on the
 [Embroider Initiative](/ember-initiative/), don't miss Chris Manson's talk at
-[EmberConf](https://www.emberconf.com/schedule/launching-ember-into-the-future-)
-on May 31st.
+[EmberConf](https://www.emberconf.com/talks/launching-ember-into-the-future-) on
+May 31st.
