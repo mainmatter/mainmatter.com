@@ -202,7 +202,8 @@
         "embroider-build/create-release-plan-setup",
         "shikijs/shiki-magic-move",
         "adopted-ember-addons/ember-drag-drop",
-        "tleunen/babel-plugin-module-resolver"
+        "tleunen/babel-plugin-module-resolver",
+        "snewcomer/intersection-observer-admin"
       ]
     },
     {
@@ -455,7 +456,8 @@
         "yapplabs/ember-tether",
         "cibernox/ember-power-calendar",
         "ef4/decorator-transforms",
-        "adopted-ember-addons/ember-infinity"
+        "adopted-ember-addons/ember-infinity",
+        "ember-cli/ember-cli-deprecation-workflow"
       ]
     },
     {
@@ -556,6 +558,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-06-16..2024-06-23",
+  "last_date": "2024-06-23..2024-06-30",
   "query_type": "Merged"
 }
