@@ -202,7 +202,8 @@
         "embroider-build/create-release-plan-setup",
         "shikijs/shiki-magic-move",
         "adopted-ember-addons/ember-drag-drop",
-        "tleunen/babel-plugin-module-resolver"
+        "tleunen/babel-plugin-module-resolver",
+        "snewcomer/intersection-observer-admin"
       ]
     },
     {
@@ -457,7 +458,8 @@
         "ef4/decorator-transforms",
         "adopted-ember-addons/ember-infinity",
         "ef4/prember",
-        "ember-learn/ember-data-request-service-cheat-sheet"
+        "ember-learn/ember-data-request-service-cheat-sheet",
+        "ember-cli/ember-cli-deprecation-workflow"
       ]
     },
     {

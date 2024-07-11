@@ -10,7 +10,7 @@ og:
   image: /assets/images/posts/2024-05-29-embroider-update/og-image.jpg
 tagline: |
   <p>
-    This post covers the progress over the last six months on <a href="https://github.com/embroider-build/embroider">the Embroider project</a> that has been made through Mainmatter's <a href="https://mainmatter.com/embroider-initiative/">Embroider Initiative</a>.
+    This post covers the progress over the last six months on <a href="https://github.com/embroider-build/embroider">the Embroider project</a> that has been made through Mainmatter's <a href="/ember-initiative/">Embroider Initiative</a>.
   </p>
 
 image: /assets/images/posts/2024-05-29-embroider-update/header-embroider.jpg
@@ -166,7 +166,6 @@ and community work: we want this new fast Embroider + Vite experience to be the
 default experience for all Ember users.
 
 To keep up to date with the latest developments on the
-[Embroider Initiative](https://mainmatter.com/embroider-initiative/), don't miss
-Chris Manson's talk at
-[EmberConf](https://www.emberconf.com/schedule/launching-ember-into-the-future-)
-on May 31st.
+[Embroider Initiative](/ember-initiative/), don't miss Chris Manson's talk at
+[EmberConf](https://www.emberconf.com/talks/launching-ember-into-the-future-) on
+May 31st.
