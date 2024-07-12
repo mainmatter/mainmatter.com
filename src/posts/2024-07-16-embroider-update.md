@@ -10,7 +10,7 @@ og:
   image: /assets/images/posts/2024-05-29-embroider-update/og-image.jpg
 tagline: |
   <p>
-    The Embroider initiative was a big success for the Ember ecosystem that opened the door to building Ember apps with Vite. Having two engineers work full-time on Embroider allowed many important achievements towards that goal. In this blog post, we will look back at the roadmap to present how far we could go, what are the next steps for the community, and how Mainmatter can make them happen through the new [Ember Initiative](/ember-initiative/).
+    The Embroider initiative was a big success for the Ember ecosystem that opened the door to building Ember apps with Vite. Having two engineers work full-time on Embroider allowed many important achievements towards that goal. In this blog post, we will look back at the roadmap to present how far we could go, what are the next steps for the community, and how Mainmatter can make them happen through the new <a href="/ember-initiative/">Ember Initiative</a>.
   </p>
 
 image: /assets/images/posts/2024-05-29-embroider-update/header-embroider.jpg
@@ -68,14 +68,14 @@ the build process that cannot be part of the Ember app code base. When these
 nonexisting files are requested to the Vite dev server, Embroider must be able
 to return a consistent answer on the spot as virtual content. The clearest
 example is probably the vendor file. In classic apps, `index.html` contains a
-reference to `{{rootURL}}assets/vendor.js`, which points to a file created
-during the classic build pipeline. When using Vite, this reference must be
-replaced with `/@embroider/core/vendor.js`, a virtual identifier that will tell
-Vite to ask Embroider for the content. On the other hand, part of these virtual
-content must be emitted as assets for the production build, and now this has to
-be done by Vite through custom plugins. Files virtualization came with its set
-of challenges, like finding the right approach to deal with Vite specifics in a
-way that keeps Embroider core bundler-agnostic.
+reference to `assets/vendor.js` (prefixed by the root URL), which points to a
+file created during the classic build pipeline. When using Vite, this reference
+must be replaced with `/@embroider/core/vendor.js`, a virtual identifier that
+will tell Vite to ask Embroider for the content. On the other hand, part of
+these virtual content must be emitted as assets for the production build, and
+now this has to be done by Vite through custom plugins. Files virtualization
+came with its set of challenges, like finding the right approach to deal with
+Vite specifics in a way that keeps Embroider core bundler-agnostic.
 
 🐹 _What's next:_ During the Embroider initiative, we have reached a point where
 we are very close to removing the need for the rewritten app completely; there
