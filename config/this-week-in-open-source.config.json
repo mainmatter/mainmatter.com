@@ -558,6 +558,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-06-23..2024-06-30",
+  "last_date": "",
   "query_type": "Merged"
 }
