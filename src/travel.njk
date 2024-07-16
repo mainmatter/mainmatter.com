@@ -1,0 +1,93 @@
+---
+layout: "base"
+title: "Travel - We modernize the travel industry"
+description: "We transform travel companies holistically, building modern organizations along with industry-leading products."
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "strategy-list.njk" import strategyList %}
+{% from "quote.njk" import quote %}
+{% from "featured-case-studies.njk" import featuredCaseStudies %}
+{% from "recent-posts.njk" import recentPosts %}
+{% from "featured-services.njk" import featuredServices %}
+{% from "cta-banner.njk" import ctaBanner %}
+{%
+  set 'content' = {
+  "title": "We modernize the travel industry",
+  "text": "We transform travel companies holistically, building modern organizations along with industry-leading products",
+  "image": "/assets/images/photos/travel-hero.jpg",
+  "alt": "Lego city scape",
+  "loading": "eager"
+  }
+%}
+{{ colorHero('purple', content) }}
+
+<section class="my-10">
+  <div class="container container--lg">
+    <div class="mb-4">
+      <p class="body">
+        Mainmatter understands the offerings and operations of the leading players in the travel
+        industry - in fact, we’ve been involved with shaping them. We can transform your company to
+        match these standards. We will assess the status quo, create a roadmap towards your future
+        shape, and guide you throughout the journey.
+      </p>
+    </div>
+    <div class="mb-4">
+      <h2 class="mb-3">Overcoming challenges together</h2>
+      <p class="body">
+        The travel industry is under rising pressure as user expectations grow, entry barriers
+        decrease, and disruptive newcomers enter the market. To maintain or expand their market
+        share, companies must innovate quickly, deliver impressive results, and adapt flexibly to a
+        changing landscape.
+      </p>
+    </div>
+  </div>
+</section>
+
+{%
+  set list =  [{
+    "title": "Assess the status quo via a thorough analysis of code, architecture, infrastructure, and processes, as well as interviews with stakeholders."
+  },{
+    "title": "Prepare a roadmap for transforming the product as well as the development organization behind it."
+  },{
+    "title": "Guide your team through the transformation phase."
+  }]
+%}
+
+{{ strategyList('launch-your-idea', 'We’ll work with you to:', list) }}
+{% set clients = ['rail-europe'] %}
+{{ featuredCaseStudies(clients) }}
+
+<div class="container container--lg quote-section">
+  {%
+    set 'content' = {
+    "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
+    "source": "Jürgen Witte, CPO @ Rail Europe",
+    "image": "/assets/images/photos/juergen-witte.png",
+    "alt": "Jürgen Witte",
+    "loading": "lazy"
+    }
+  %}
+  {{ quote(content) }}
+</div>
+
+{% set clients = ['trainline', 'hop-skip-drive', 'terminal49', 'aleph-alpha'] %}
+{{ featuredCaseStudies(clients) }}
+
+{{ recentPosts("Latest from our blog", collections.posts) }}
+{%
+  set 'content' = {
+  "subtitle": "Discover our services"
+  }
+%}
+{{ featuredServices(services["services-list"], content) }}
+{% include "global/default-newsletter-cta.njk" %}
+{%
+  set 'content' = {
+  "title": "Grow your business with us",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
+  }
+%}
+{{ ctaBanner('purple', 'full', content) }}
