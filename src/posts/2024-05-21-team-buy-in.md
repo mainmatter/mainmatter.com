@@ -36,7 +36,7 @@ The team needs a very good reason to be on board.
 
 Outsiders can be helpful, of course. External experience and a fresh view on
 things can be very useful. But, as with any collaboration, it's important to be
-aware of local context and history.
+aware of given context and history.
 
 When starting with a new client, we're mindful that we're many times coming in
 as outsiders during a time of difficult change for them - be it in technical
@@ -44,13 +44,13 @@ terms (changing stacks or merging systems, for example) or organizational ones,
 say when a team is expanding and re-organizing. And, as often happens, both
 things at the same time.
 
-We discuss that with leadership, and different stakeholders who might be
+We discuss that with the leadership team, and different stakeholders who might be
 involved in bringing us, and try to work with them in preparing the terrain for
 the engagement.
 
 ## Happy path
 
-When the client team is bought-in, we get an environment of trust, a sweet spot
+When the client's team is bought-in, we get an environment of trust, a sweet spot
 where we complement the client team seamlessly.
 
 Context and knowledge are shared proactively, affording us smooth onboarding.
@@ -67,7 +67,7 @@ So. Just how do you get buy-in?
 
 The earlier the intention to bring us in is communicated, the better. Before
 even making a decision, hearing the team out and addressing any concerns is a
-very good idea. Building consensus regarding the engagement.
+very good idea - building consensus regarding the engagement.
 
 Sometimes it's hard to get consensus, of course. But when dissenters have been
 heard in earnest, that goes a _long_ way towards getting people to
