@@ -9,7 +9,9 @@ list: An array where each item is the slug for the case study.
 {%- macro featuredCaseStudies(caseStudies, heading) -%}
   <section class="featured-case-studies">
     <div class="container container--xl">
-      <h2 class="featured-case-studies__heading h5">{{ heading }}</h2>
+      {%- if heading -%}
+        <h2 class="featured-case-studies__heading h5">{{ heading }}</h2>
+      {%- endif -%}
       <ul class="featured-case-studies__list">
         {%- for caseStudyHandle in caseStudies -%}
           {% if loop.index === 1 %}

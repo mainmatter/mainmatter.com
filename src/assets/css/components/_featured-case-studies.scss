@@ -1,5 +1,6 @@
 .featured-case-studies {
-  padding: 3rem 0 5rem;
+  margin-block-start: 3rem;
+  margin-block-end: 5rem;
 }
 
 .featured-case-studies__heading {
@@ -18,7 +19,8 @@
 
 @media (min-width: $breakpoint-m) {
   .featured-case-studies {
-    padding: 5rem 0 11rem;
+    margin-block-start: 5rem;
+    margin-block-end: 11rem;
   }
 
   .featured-case-studies__list {
