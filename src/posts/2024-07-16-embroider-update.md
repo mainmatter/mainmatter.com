@@ -20,14 +20,15 @@ imageAlt:
 ---
 
 Over the past year, the Embroider Initiative has opened the door to building
-Ember apps with Vite, raising Ember back up to the same level as other modern
-frameworks. Ember has started to be noticed in a wider community and remains a
-good choice in 2024, thanks to everything that was accomplished through the
-Embroider Initiative and all the companies that invested to make it happen. As
-the Embroider Initiative becomes the Ember Initiative, let's take a look at what
-we achieved so far and the next steps that are now possible.
+Ember apps with Vite, bringing Ember's build system more in line with other
+modern frameworks. Ember has started to be noticed in the wider Javascript
+community and remains a good choice in 2024, thanks to everything that was
+accomplished through the Embroider Initiative and all the companies that
+invested to make it happen. As the Embroider Initiative becomes the Ember
+Initiative, let's take a look at what we achieved so far and the next steps that
+are now possible.
 
-## 1. Implement the core of Embroider
+## Implement the core of Embroider
 
 The biggest part of the work so far was of course to implement the core of
 Embroider. The
@@ -35,30 +36,28 @@ Embroider. The
 is a good summary of the different steps of the implementation. In even shorter
 words:
 
-- Stage 1 (achieved in the 1st half of the initiative): To achieve backward
-  compatibility, each classic Ember Addon package is rebuilt into a new v2
-  package format stored in a `rewritten-packages` folder, more static and
-  analyzable.
+- To achieve backward compatibility, each classic Ember Addon package is rebuilt
+  into a new v2 package format stored in a `rewritten-packages` folder, more
+  static and analyzable.
 
-- Stage 2 (achieved in the 1st half of the initiative): By default, Ember apps
-  can't be built with Vite because they rely on features Vite cannot understand.
-  To work around this problem, Embroider generates a `rewritten-app`, which is
-  slightly different from the initial Ember app in a way it can be consumed by
-  Vite. But the generation of this rewritten app is an extra step that comes
-  with performance downsides.
+- By default, Ember apps can't be built with Vite because they rely on features
+  Vite cannot understand. To work around this problem, Embroider generates a
+  `rewritten-app`, which is slightly different from the initial Ember app in a
+  way it can be consumed by Vite. But the generation of this rewritten app is an
+  extra step that comes with performance downsides.
 
-- Stage 3 (team's focus on the 2nd half of the initiative): To optimize the Vite
-  build, we have started a wide technical topic called “inversion of control”.
-  The idea is that instead of having Embroider produce a rewritten app, and then
-  passing over to Vite once the rewritten app is ready, Vite takes the lead, and
-  when it’s unable to resolve Ember-specific requests, it asks Embroider to
-  return the information without the need of a rewritten app.
+- To optimize the Vite build, we have started a wide technical topic called
+  “Inversion of Control”. The idea is that instead of having Embroider produce a
+  rewritten app, and then passing over to Vite once the rewritten app is ready,
+  Vite takes the lead, and when it’s unable to resolve Ember-specific requests,
+  it asks Embroider to return the information without the need of a rewritten
+  app.
 
-The sections below provide an overview of Stage 3, which consists of gradually
-replacing a large proportion of Stage 2 behaviors with this new “inversion of
-control” approach.
+The sections below provide an overview of this "Inversion of Control" process,
+which consists of gradually replacing a large proportion of the `rewritten-app`
+with this virtual content that Vite can understand
 
-### a. Optimize the Vite build with inversion of control
+### Optimize the Vite build with inversion of control
 
 To put it very simply: Vite cannot build the initial Ember app, but it can build
 the rewritten app, so we are going to remove all the differences between both
@@ -85,7 +84,7 @@ use this new approach. Once the rewritten app is removed, one next step will be
 to re-implement Webpack support with the inversion of control approach, and
 therefore prove Embroider is truly bundler-agnostic.
 
-### b. Maintain the compatibility of all classic features
+### Maintain the compatibility of all classic features
 
 A very wide part of the inversion of control is related to maintaining classic
 functionalities and keeping v1 addons working the way they used to work in
@@ -141,22 +140,22 @@ environment config in JS rather than `index.html` meta. The issue
 [embroider-build/embroider#1860](https://github.com/embroider-build/embroider/issues/1860)
 contains a list of identified features that still require work.
 
-## 2. Support older Ember versions
+## Support older Ember versions
 
 Embroider uses a tool called scenario-tester to test many apps and addons
 scenarios against different Ember versions. Currently, the Vite branch of the
 Embroider project runs against Ember 5.8 and canary, which means you need to
 upgrade your app to the latest Ember to build with Vite.
 
-Recently, we have been working hard on improving the scenario-tester and having
-the stable branch run against Ember 3.28 and above. This work includes an
-important fix for ember-data 4.x: the latest improvements on the scenario-tester
-fixed the way some dependencies are managed, which highlighted false positives
-in the test suite and reproduced errors encountered by developers in their apps.
-This allowed us to find the root cause and fix Embroider to manage correctly
+Recently, we have been working hard on improving scenario-tester and having the
+stable branch run against Ember 3.28 and above. This work includes an important
+fix for ember-data 4.x: the latest improvements on scenario-tester fixed the way
+some dependencies are managed, which highlighted false positives in the test
+suite and reproduced errors encountered by developers in their apps. This
+allowed us to find the root cause and fix Embroider to correctly manage
 ember-data 4.x and any addon that may behave the same way. Not only did this
-work on the stable branch positively impact apps using Embroider Stable, but it
-also paved the ground to support older Ember versions in Vite.
+work positively impact the stable branch of Embroider, it also laid the
+groundwork to support older Ember versions in Vite.
 
 🐹 _What's next:_ Ideally, we would like to bring the Vite build to Ember 3.28,
 as it's the oldest version supported on Embroider Stable. The task will
@@ -165,7 +164,7 @@ correct ESM graph. Functionalities like assert, debug, deprecate… need to be
 patched in older Ember versions. The idea is to implement a set of patches for
 each version we want to support.
 
-## 3. Stabilize the app blueprint
+## Stabilize the app blueprint
 
 The implementation of the core of Embroider drives a new authoring format for
 modern Ember apps. The approach we choose to answer compatibility questions
@@ -189,14 +188,14 @@ modern Ember apps, the `babel.config.cjs` file will be responsible for the Babel
 config, and the power to control Babel should not be split between
 `babel.config.cjs` and build options. We are currently working on removing the
 mandatory dependency to ember-cli-babel by creating a `babel.config.cjs`
-made-for-Ember that will be provided in... the app blueprint.
+made-for-Ember that will be provided in a new app blueprint.
 
-On May 31st, Chris presented at EmberConf the
-[app blueprint](https://github.com/embroider-build/app-blueprint) that allows
-people to generate an Ember app building with Vite from the start. The CI runs
-against the Vite branch of Embroider, so each time we merge something, we can
-see if the app generated by the blueprint runs correctly. An important step of
-Embroider development is to answer all the questions that allow us to define
+On May 31st, Chris presented at EmberConf and introduced the
+[new Vite app blueprint](https://github.com/embroider-build/app-blueprint) that
+allows people to generate an Ember app building with Vite from the start. The CI
+runs against the Vite branch of Embroider, so each time we merge something, we
+can see if the app generated by the blueprint runs correctly. An important step
+of Embroider development is to answer all the questions that allow us to define
 what the app blueprint looks like, and therefore what developers start with when
 creating a brand new app.
 
@@ -204,27 +203,31 @@ creating a brand new app.
 like, an important next step is to describe it in an RFC to introduce it to the
 community and open the door to potential discussions and improvements.
 
-## 4. Handover
+## Handover
 
-The Embroider Initiative now comes to a - successful - end; We have achieved so
-many important pieces and we are proud to see the first Ember apps in the
-community making their way to Vite. It's now up to the Ember community to pursue
-the implementation of Embroider: achieve the topics that remain open, challenge
-the blueprint to make Ember as intuitive as possible, support the classic
-features that are still wanted, enhance the documentation, make sure all the
-most popular addons work with Vite... To ease the handover, the public GitHub
-project
-[Embroider Working Group](https://github.com/orgs/embroider-build/projects/2)
-has been created to help future contributors keep track of the existing issues
-and their current status. We plan to work on some of these issues as part of the
-[Ember initiative](/blog/2024/07/09/the-embroider-initiative-becomes-the-ember-initiative/).
+The Embroider Initiative has come to a successful end; We have achieved so much
+and we are proud to see some Ember apps in the community making their way to
+Vite. As it currently stands, it's now up to the Ember Community to continue the
+implementation of Embroider. To facilitate the handover from the Embroider
+Initiative, we created the public GitHub project
+[Embroider Working Group](https://github.com/orgs/embroider-build/projects/2) to
+help future contributors keep track of the existing issues and their current
+status.
+
+We at Mainmatter want to continue investing into the Ember ecosystem which is
+why we're starting the Ember initiative as a successor to the Embroider
+initiative. The Ember Initiative will not be focused on a single topic like the
+Embroider Initiative, it will instead address a number of topics relevant to the
+Ember ecosystem and every company that uses Ember. Polishing Embroider and
+making it the default experience for new Ember apps is part of the main topics
+we're proposing. Check out our [Ember Initiative](/ember-initiative/) page and
+our dedicated blog post
+[The Embroider Initiative Becomes the Ember Initiative](/blog/2024/07/09/the-embroider-initiative-becomes-the-ember-initiative/).
+
+## Conclusion
 
 Over the past year, our team at Mainmatter has built a solid knowledge of
-Embroider's core. We can help the Ember community push Embroider further and
-further if you give us the means to do it. We’re proposing to turn the Embroider
-Initiative into a permanent effort – the Ember Initiative. Mainmatter will
-continue to assign a team to work on Ember and its ecosystem full-time. They
-will address topics relevant to the Ember ecosystem and every company that uses
-Ember. Polishing Embroider is part of the main topics we're proposing. Check out
-our [Ember Initiative](/ember-initiative/) page and our dedicated blog post
-[The Embroider Initiative Becomes the Ember Initiative](/blog/2024/07/09/the-embroider-initiative-becomes-the-ember-initiative/).
+Embroider's core and we have helped Embroider clear the monumental hurdle that
+has been enabling Vite support. We can help the Ember community cross the finish
+line with Embroider and continue to improve Ember and its ecosystem if you give
+us the means to do it by backing the Ember Initiative.
