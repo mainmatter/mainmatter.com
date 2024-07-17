@@ -457,6 +457,8 @@
         "cibernox/ember-power-calendar",
         "ef4/decorator-transforms",
         "adopted-ember-addons/ember-infinity",
+        "ef4/prember",
+        "ember-learn/ember-data-request-service-cheat-sheet",
         "ember-cli/ember-cli-deprecation-workflow"
       ]
     },
@@ -554,7 +556,8 @@
     "tech-conferences/conference-data",
     "erlef/website",
     "oscard0m/example-probot-vercel-ts",
-    "paoloricciuti/darkmodething"
+    "paoloricciuti/darkmodething",
+    "mansona/testing-release-plan"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
