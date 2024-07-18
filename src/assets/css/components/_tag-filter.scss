@@ -15,7 +15,12 @@
 }
 
 .tag-filter__label {
-  display: none;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
   margin-right: 1.25rem;
 }
 
@@ -51,10 +56,13 @@
 
   .tag-filter__label {
     display: inline-flex;
+    position: relative;
+    clip: initial;
+    width: auto;
+    height: auto;
   }
 
   .tag-filter__title {
-    display: inline-flex;
     visibility: visible;
   }
 
