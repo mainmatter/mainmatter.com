@@ -52,7 +52,7 @@ jobs:
           git checkout -b $BRANCH_NAME
           git add **/*.md **/*.json && git commit -m "$BRANCH_NAME"
           git push --set-upstream origin $BRANCH_NAME
-          gh pr create -a emmasofiah2o --base $TWIOS_BRANCH --head $BRANCH_NAME --title "TWIOS $FORMATTED_DATE" --body-file comment.txt
+          gh pr create -a IdeliaRisella --base $TWIOS_BRANCH --head $BRANCH_NAME --title "TWIOS $FORMATTED_DATE" --body-file comment.txt
 
   edit_twios:
     runs-on: ubuntu-latest
