@@ -459,7 +459,8 @@
         "adopted-ember-addons/ember-infinity",
         "ef4/prember",
         "ember-learn/ember-data-request-service-cheat-sheet",
-        "ember-cli/ember-cli-deprecation-workflow"
+        "ember-cli/ember-cli-deprecation-workflow",
+        "ember-cli/babel-plugin-debug-macros"
       ]
     },
     {
