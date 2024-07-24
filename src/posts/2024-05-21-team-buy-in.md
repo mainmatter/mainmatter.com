@@ -10,7 +10,7 @@ description:
 og:
   image: /assets/images/posts/2024-05-21-team-buy-in/og-image.jpg
 tagline: |
-  <p>A consultancy engagement can be a very productive, gratifying collaborative process. That's _if_ the client team is onboard with having it come in to help</p>
+  <p>A consultancy engagement can be a very productive, gratifying collaborative process. That's _if_ the client's team is onboard with having it come in to help</p>
 
 image: "/assets/images/posts/2024-05-21-team-buy-in/header-visual.jpeg"
 imageAlt: "A rocket icon on a grey image background"
@@ -51,7 +51,7 @@ the engagement.
 ## Happy path
 
 When the client's team is bought-in, we get an environment of trust, a sweet spot
-where we complement the client team seamlessly.
+where we complement the client's team seamlessly.
 
 Context and knowledge are shared proactively, affording us smooth onboarding.
 Once we have some recommendations to give, these are discussed constructively.
@@ -137,14 +137,15 @@ We're complementing the team until they no longer need us.
 
 An engagement can take many shapes and forms. It can have a tightly bounded
 scope, like updating the runtime and dependencies of a given codebase, or a much
-broader and open ended one, as with continuous assessment of team processes and
-practices. Sometimes implementation work might be done in tandem with continuous
-assessment and counselling, too.
+broader and open ended one, into architecture, engineering processes and practices.
 
-Whatever the scope, it needs to be clearly communicated as soon as it is known.
-People can become territorial over their work. Nobody likes someone looking over
-their shoulders nor receiving unsolicited advice. If there's a misunderstanding
-over the scope of our work, that's exactly how it'll feel to the client team.
+Whatever the scope, the earliest it is clearly communicated, the better.
+
+People can become territorial over their work. Nobody likes having someone unexpected 
+looking over their shoulders, or receiving unsolicited advice. 
+
+And iff there's a misunderstanding over the scope of our work, that's exactly
+how it'll feel to the client's team.
 
 ## During the engagement
 
