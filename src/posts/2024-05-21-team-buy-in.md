@@ -110,5 +110,5 @@ And then we help them implement it. As part of the team.
 
 [Reach out](/contact/) to talk about how we can help your team.
 
-Find [further information](/startups/) on how we can help you to burst through
+Find [further information](/services/team-reinforcement/) on how we can help you to burst through
 the bottleneck.
