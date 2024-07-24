@@ -26,27 +26,20 @@ public companies to disaster relief. They're everywhere these days.
 Software engineering consultancies like Mainmatter are nothing like that, but
 still "consultant" is a title with plenty of loaded meanings and associations.
 
-In the in-house team's view, consultants are often bad news: audits,
-inefficiencies, and changes suggested by _outsiders_! The natural reaction is to
-resist opening up, and then implementation of adjustments, even positive ones.
+Outsiders can be helpful. External experience and a fresh view on things can be very useful.
 
-The team needs a very good reason to be on board.
+But, as with any collaboration, it's important to be aware of given context and history, and
+to get the client team onboard.
 
 ## Making sure we're welcome guests
 
-Outsiders can be helpful, of course. External experience and a fresh view on
-things can be very useful. But, as with any collaboration, it's important to be
-aware of given context and history.
+When starting with a new client, we're mindful that we're coming in during a time 
+of difficult change - be it in technical terms (changing stacks or merging systems, for example) or organizational ones, say when a team is expanding and re-organizing.
 
-When starting with a new client, we're mindful that we're many times coming in
-as outsiders during a time of difficult change for them - be it in technical
-terms (changing stacks or merging systems, for example) or organizational ones,
-say when a team is expanding and re-organizing. And, as often happens, both
-things at the same time.
+And, as often happens, both at once.
 
-We discuss that with the leadership team, and different stakeholders who might be
-involved in bringing us, and try to work with them in preparing the terrain for
-the engagement.
+We discuss that with the leadership team and with different stakeholders who might be
+involved in bringing us in to prepare the terrain for the engagement.
 
 ## Happy path
 
