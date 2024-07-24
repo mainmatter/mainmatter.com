@@ -203,7 +203,8 @@
         "shikijs/shiki-magic-move",
         "adopted-ember-addons/ember-drag-drop",
         "tleunen/babel-plugin-module-resolver",
-        "snewcomer/intersection-observer-admin"
+        "snewcomer/intersection-observer-admin",
+        "mansona/auto-reveal-theme-mainmatter"
       ]
     },
     {
@@ -460,7 +461,9 @@
         "ef4/prember",
         "ember-learn/ember-data-request-service-cheat-sheet",
         "ember-cli/ember-cli-deprecation-workflow",
-        "ember-cli/babel-plugin-debug-macros"
+        "ember-cli/babel-plugin-debug-macros",
+        "adopted-ember-addons/ember-sortable",
+        "elwayman02/ember-resize-modifier"
       ]
     },
     {
@@ -562,6 +565,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-07-07..2024-07-14",
+  "last_date": "2024-07-14..2024-07-21",
   "query_type": "Merged"
 }
