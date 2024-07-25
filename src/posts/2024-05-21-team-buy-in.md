@@ -50,9 +50,9 @@ Sometimes it's hard to get that trust, of course. But when dissenters have been 
 
 ## Who invites us
 
-Some very successful engagements happened when we were invited by people from the tech or product teams, who are closer to where the action will happen. This can help a lot in getting buy-in.
+Sometimes we are invited by people from the tech or product teams, who are closer to where the action happens. In this case, the team is already bought-in - the invitation addresses specific demands from the teams we'll be working with.
 
-When the invitation comes from the very top, it makes a huge difference when management goes the extra mile and talks to the teams that will directly be involved in and impacted by the engagement.
+In other instances, the invitation comes from a client's leadership. In these cases it makes a huge difference when they openly talk about it to the teams that will directly be involved in, and impacted by, the engagement.
 
 ## Framing the engagement
 
