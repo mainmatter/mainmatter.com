@@ -42,7 +42,7 @@ Context and knowledge are shared proactively, affording us smooth onboarding. On
 
 A virtuous cycle ensues, where implementing changes is progressively faster and more effective, and ideas flow freely back and forth. Together we shift into continous improvement mode. Everybody wins.
 
-So. Just how do you get buy-in?
+So. How do you get buy-in?
 
 ## Get the team involved early on
 
