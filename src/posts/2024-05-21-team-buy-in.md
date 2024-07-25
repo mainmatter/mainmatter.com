@@ -22,9 +22,7 @@ Consultants get a bad rep sometimes, and often for good reason, specially due to
 
 Software engineering consultancies like Mainmatter are nothing like that, but still "consultant" is a title with plenty of loaded meanings and associations.
 
-Outsiders _can_ be helpful. External experience and a fresh view on things can be very useful.
-
-But, as with any collaboration, it's important to respect context and history, and to get the client's team onboard.
+Outsiders _can_ be helpful. External experience and a fresh view on things can be very useful. But, as with any collaboration, it's important to respect context and history, and to get the client's team onboard.
 
 ## Making sure we're welcome guests
 
