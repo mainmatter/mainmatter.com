@@ -36,7 +36,7 @@ We discuss that with the leadership team and with different stakeholders who mig
 
 When the client's team is bought-in, we get an environment of trust, a sweet spot where we complement the client's team seamlessly.
 
-Context and knowledge are shared proactively, affording us smooth onboarding. Once we have some recommendations to give, these are discussed constructively. Decisions on what to implement are naturally done in consensus.
+Context and knowledge are shared proactively, affording us smooth onboarding. Once we have some recommendations to give, these are discussed constructively. Decisions on what to implement are naturally done in alignment.
 
 A virtuous cycle ensues, where implementing changes is progressively faster and more effective, and ideas flow freely back and forth. Together we shift into continous improvement mode. Everybody wins.
 
@@ -102,7 +102,7 @@ Client team buy-in involves accepting to at least hear recommendations from us, 
 
 Addressing pain points is a great way to ensure this relevance, and build trust. We're solving real problems, removing slogs. Improving productivity. Making work more pleasurable.
 
-Often we'll find issues that weren't raised before. Or ones where a priority and solution weren't yet agreed upon. In these cases, we study and discuss until there's enough consensus.
+Often we'll find issues that weren't raised before. Or ones where a priority and solution weren't yet agreed upon. In these cases, we study and discuss until there's enough alignment.
 
 And then we help them implement it. As part of the team.
 
