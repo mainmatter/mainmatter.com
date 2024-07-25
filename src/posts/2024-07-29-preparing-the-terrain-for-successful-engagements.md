@@ -8,11 +8,11 @@ description:
   "Oliver Barnes on the importance of getting the team onboard when bringing in
   a consultancy"
 og:
-  image: /assets/images/posts/2024-05-21-team-buy-in/og-image.jpg
+  image: /assets/images/posts/2024-07-29-preparing-the-terrain-for-successful-engagements/og-image.jpg
 tagline: |
   <p>A consultancy engagement can be a very productive, gratifying collaborative process. That's _if_ the client's team is onboard with having it come in to help</p>
 
-image: "/assets/images/posts/2024-05-21-team-buy-in/header-visual.jpeg"
+image: "/assets/images/posts/2024-07-29-preparing-the-terrain-for-successful-engagements/header-visual.jpeg"
 imageAlt: "A rocket icon on a grey image background"
 ---
 
