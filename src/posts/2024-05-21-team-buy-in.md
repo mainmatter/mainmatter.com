@@ -48,7 +48,7 @@ So. How do you get buy-in?
 
 The earlier the intention to bring us in is communicated, the better. Before even making a decision, hearing the team out and addressing any concerns is a very good idea - building trust in the engagement.
 
-Sometimes it's hard to get consensus, of course. But when dissenters have been heard in earnest, that goes a _long_ way towards getting people to [disagree and commit](https://en.wikipedia.org/wiki/Disagree_and_commit).
+Sometimes it's hard to get that trust, of course. But when dissenters have been heard in earnest, that goes a _long_ way towards getting people to [disagree and commit](https://en.wikipedia.org/wiki/Disagree_and_commit).
 
 ## Who invites us
 
