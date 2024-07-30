@@ -55,6 +55,17 @@ description: "We transform travel companies holistically, building modern organi
 %}
 
 {{ strategyList('launch-your-idea', 'We’ll work with you to:', list) }}
+
+{# TODO: put in download URL once we have the PDF! #}
+{%
+  set 'content' = {
+  "title": "The Travel Transformation Whitepaper",
+  "text": "Download our whitepaper for an in-depth analysis of the challenges the digital travel, transport, and mobility industries are facing. Discover what there is to learn from leading tech scaleups to modernize your company and boost competitiveness.",
+  "linkUrl": "#",
+  "linkText": "Download Whitepaper"
+  }
+%}
+{{ ctaBanner('aqua', 'default', content) }}
 {% set clients = ['rail-europe'] %}
 {{ featuredCaseStudies(clients) }}
 
