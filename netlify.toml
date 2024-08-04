@@ -34,6 +34,16 @@
   to = "https://mainmatter.com/:splat"
   force = true
 
+[[redirects]]
+  from = "https://mainmatter.de/*"
+  to = "https://mainmatter.com/:splat"
+  force = true
+
+[[redirects]]
+  from = "https://www.mainmatter.de/*"
+  to = "https://mainmatter.com/:splat"
+  force = true
+
 # redirect old workshop pages
 [[redirects]]
   from = "https://elixir-phoenix-workshop.simplabs.com/*"
