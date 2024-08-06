@@ -6,6 +6,4 @@ media: video
 channel: embereurope-q4-2023
 ---
 
-Chris Manson and Ed Faulkner answered questions about Embroider and previewed
-the upcoming release as well as Vite support, at the Q4 2023 Ember Europe
-meetup.
+Chris Manson and Ed Faulkner answered questions about Embroider and previewed the upcoming release as well as Vite support, at the Q4 2023 Ember Europe meetup.

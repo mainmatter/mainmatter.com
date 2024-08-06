@@ -6,6 +6,4 @@ media: video
 channel: emberfest-2023
 ---
 
-Marine Dunstetter walked us through the process of translating the Ember Guides
-to French and highlighted the importance of translation in making documentation
-more accessible at EmberFest 2023 in Madrid.
+Marine Dunstetter walked us through the process of translating the Ember Guides to French and highlighted the importance of translation in making documentation more accessible at EmberFest 2023 in Madrid.

@@ -3,17 +3,10 @@ layout: case-study
 company: AIS
 title: An MVP for an IT security dashboard | Work
 problem: AIS wanted to be able to supervise their metrics with a dashboard.
-solution:
-  We helped defining and shaping the goal as well as designed and implemented a
-  finished MVP.
+solution: We helped defining and shaping the goal as well as designed and implemented a finished MVP.
 tags: Launch your idea
 displayTitle: "An MVP for an IT <em>infrastructure</em> security dashboard"
-description:
-  <p>AIS provides continuous monitoring of companies' external assets, allowing
-  to proactively secure their attack surfaces.</p><p>Having built the core of
-  their product in-house, they approached Mainmatter for support with building a
-  web frontend for it. We conceptualized, designed and developed the application
-  in 6 weeks, guiding AIS\' team along the way.</p>
+description: <p>AIS provides continuous monitoring of companies' external assets, allowing to proactively secure their attack surfaces.</p><p>Having built the core of their product in-house, they approached Mainmatter for support with building a web frontend for it. We conceptualized, designed and developed the application in 6 weeks, guiding AIS\' team along the way.</p>
 hero:
   color: purple
   image: "/assets/images/work/ais.jpg"

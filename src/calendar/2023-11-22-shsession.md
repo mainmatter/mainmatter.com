@@ -7,7 +7,4 @@ kind: meetup
 color: aqua
 ---
 
-Schrodinger Session is a meetup series fully accessible and free for everyone,
-organized by Schrödinger Hat. Mainmatter's Principal Engineering Consultant Luca
-Palmieri will host the workshop "Learning Rust, one exercise at a time!",
-covering all core concepts of the Rust programming language.
+Schrodinger Session is a meetup series fully accessible and free for everyone, organized by Schrödinger Hat. Mainmatter's Principal Engineering Consultant Luca Palmieri will host the workshop "Learning Rust, one exercise at a time!", covering all core concepts of the Rust programming language.

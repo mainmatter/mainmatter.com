@@ -6,7 +6,4 @@ media: video
 channel: embereurope-q1-2023
 ---
 
-Animations in Ember are evolving! Nick Schot presented upcoming changes,
-covering different animation techniques with demos. He also shared the progress
-on a new framework he’s been working on that will make animations in Ember even
-better.
+Animations in Ember are evolving! Nick Schot presented upcoming changes, covering different animation techniques with demos. He also shared the progress on a new framework he’s been working on that will make animations in Ember even better.

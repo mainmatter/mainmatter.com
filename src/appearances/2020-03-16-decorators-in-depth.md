@@ -6,5 +6,4 @@ media: video
 channel: emberconf-2020
 ---
 
-Marco Otte-Witte explains how decorators that are the foundation for Ember's
-@tracked and @actions work under the hood.
+Marco Otte-Witte explains how decorators that are the foundation for Ember's @tracked and @actions work under the hood.

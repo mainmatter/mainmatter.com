@@ -6,5 +6,4 @@ url: https://emberfest.eu
 kind: conference
 ---
 
-We are co-organizing EmberFest and the team is looking forward to meeting up
-with the Ember.js community in Copenhagen.
+We are co-organizing EmberFest and the team is looking forward to meeting up with the Ember.js community in Copenhagen.

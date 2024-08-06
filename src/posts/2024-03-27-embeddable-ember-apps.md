@@ -3,9 +3,7 @@ title: "Embedding an Ember App with Webpack"
 authorHandle: BobrImperator
 tags: [ember]
 bio: "Software Developer"
-description:
-  "Bartlomiej Dudzik shows how to make an Ember App embeddable in non-Ember
-  projects."
+description: "Bartlomiej Dudzik shows how to make an Ember App embeddable in non-Ember projects."
 og:
   image: /assets/images/posts/2024-03-27-embeddable-ember-apps/og-image.png
 image: /assets/images/posts/2024-03-27-embeddable-ember-apps/header.jpg
@@ -16,21 +14,11 @@ imageAlt: Embeddable Ember Apps image
 
 #### What we're working with
 
-We'll make a simple Ember to-do app (what else could it be :)) that's then
-loaded inside another non-Ember app. Use cases may vary, but probably the two
-most common ones are a widget that requires visualizing data like maps or
-micro-frontends that may need to share data between each other.
+We'll make a simple Ember to-do app (what else could it be :)) that's then loaded inside another non-Ember app. Use cases may vary, but probably the two most common ones are a widget that requires visualizing data like maps or micro-frontends that may need to share data between each other.
 
-The goal of this post is to show how to wrangle Ember's build system and how a
-potential integration between applications could look like.
+The goal of this post is to show how to wrangle Ember's build system and how a potential integration between applications could look like.
 
-The easiest approach for making the app embeddable would be to bundle its
-scripts into single JS and CSS files. This is an additional build step we have
-to handle manually as, by default, Webpack splits code into chunks, and while
-that could be disabled, the Ember-cli itself also always splits code into
-`vendor.js` and `app.js` files. In the "old Ember" we'd use a tool such as
-`ember-cli-concat` to do that, but with Embroider, we need to take care of
-things through Webpack.
+The easiest approach for making the app embeddable would be to bundle its scripts into single JS and CSS files. This is an additional build step we have to handle manually as, by default, Webpack splits code into chunks, and while that could be disabled, the Ember-cli itself also always splits code into `vendor.js` and `app.js` files. In the "old Ember" we'd use a tool such as `ember-cli-concat` to do that, but with Embroider, we need to take care of things through Webpack.
 
 The end goal is to be able to include a script like so:
 
@@ -47,26 +35,17 @@ await app.start();
 
 ##### Combining JS
 
-This, in my opinion, is the most complicated step and unfortunately for the
-wrong reasons. When you're working with Ember, you yourself define and import
-files as ES6 modules. During build, they are then compiled as AMD modules,
-meaning that your application needs to bring a `requirejs` runtime with it.
+This, in my opinion, is the most complicated step and unfortunately for the wrong reasons. When you're working with Ember, you yourself define and import files as ES6 modules. During build, they are then compiled as AMD modules, meaning that your application needs to bring a `requirejs` runtime with it.
 
-What it means for us is that we need to make sure that the `requirejs` runtime
-is the very first thing in the bundle file. Ember apps provide that inside the
-`vendor.js` script that precedes the other scripts inside an `index.html` entry
-point.
+What it means for us is that we need to make sure that the `requirejs` runtime is the very first thing in the bundle file. Ember apps provide that inside the `vendor.js` script that precedes the other scripts inside an `index.html` entry point.
 
-A few Webpack plugins do concatenation, but there's nuance to handling
-concatenation, because we must ensure that the `vendor.js` file is at the top
-and is processed first. For this reason, I recommend rolling out your own.
+A few Webpack plugins do concatenation, but there's nuance to handling concatenation, because we must ensure that the `vendor.js` file is at the top and is processed first. For this reason, I recommend rolling out your own.
 
 The Webpack plugin needs to:
 
 - run after compilation is finished,
 - lookup all the js files it produced,
-- sort files so `vendor` is first (the order of other files and chunks doesn't
-  matter),
+- sort files so `vendor` is first (the order of other files and chunks doesn't matter),
 - concatenate contents of all the JavasSript files into a single file.
 
 ```js
@@ -131,10 +110,7 @@ class FileConcatenationPlugin {
 
 Now `ember-cli-build` needs to be configured:
 
-- set `storeConfigInMeta` to `false` so configuration is defined in
-  `config/environment.js` is embedded directly with the application code as
-  opposed to the default behavior where your configuration would be a part of
-  some separate tag inside `index.html`,
+- set `storeConfigInMeta` to `false` so configuration is defined in `config/environment.js` is embedded directly with the application code as opposed to the default behavior where your configuration would be a part of some separate tag inside `index.html`,
 - use our defined plugin,
 - (optionally) set the Embroider static flags.
 
@@ -171,21 +147,15 @@ module.exports = function (defaults) {
 
 ##### Combining CSS
 
-My recommendation is to opt out of the default styles CSS handling that Ember
-provides and do it on our own. The reason being that `ember-cli` doesn't seem to
-be using Webpack directly and it's not straightforward to know how and when to
-concatenate them.
+My recommendation is to opt out of the default styles CSS handling that Ember provides and do it on our own. The reason being that `ember-cli` doesn't seem to be using Webpack directly and it's not straightforward to know how and when to concatenate them.
 
-Luckily, a basic PostCSS setup isn't scary and is more common nowadays, and even
-recommended.
+Luckily, a basic PostCSS setup isn't scary and is more common nowadays, and even recommended.
 
 First, let's define the styles:
 
 - install packages `npm install postcss-loader mini-css-extract-plugin -D`,
-- create an `app.css` file in the `app` directory - on the same level as
-  `app.js`,
-- scope the styles to `.ember-todo-test` to avoid style collisions with projects
-  that embed the app (especially if you plan to use tools such as tailwind).
+- create an `app.css` file in the `app` directory - on the same level as `app.js`,
+- scope the styles to `.ember-todo-test` to avoid style collisions with projects that embed the app (especially if you plan to use tools such as tailwind).
 
 ```css
 /* app/app.css */
@@ -246,17 +216,11 @@ module.exports = function (defaults) {
 };
 ```
 
-_If you're interested in a full tailwind setup, tailwindcss's official
-documentation has an excellent
-[tutorial](https://tailwindcss.com/docs/guides/emberjs). Only a tiny amount of
-extending what I've already shown is needed._
+_If you're interested in a full tailwind setup, tailwindcss's official documentation has an excellent [tutorial](https://tailwindcss.com/docs/guides/emberjs). Only a tiny amount of extending what I've already shown is needed._
 
 #### Booting up the application on our own terms
 
-The application is only a few lines of code living inside `application.js`,
-`application.hbs` and `app.js` - there's also a `todo-list.gjs` that I won't
-show in this post in order to save some space, but you'll find a link to the
-rest of the code at the bottom.
+The application is only a few lines of code living inside `application.js`, `application.hbs` and `app.js` - there's also a `todo-list.gjs` that I won't show in this post in order to save some space, but you'll find a link to the rest of the code at the bottom.
 
 ```js
 import Controller from "@ember/controller";
@@ -293,20 +257,11 @@ export default class ApplicationController extends Controller {
 {{outlet}} {% endraw %}
 ```
 
-Some of the last shenanigans can be found in the `app.js` file. The only change
-that the default `app.js` has is the `autoboot = false` option. It makes sure
-that the app won't boot by default where usually it'd attempt to load and mount
-itself to `body` or `rootElement` configuration found in
-`config/environment.js`.
+Some of the last shenanigans can be found in the `app.js` file. The only change that the default `app.js` has is the `autoboot = false` option. It makes sure that the app won't boot by default where usually it'd attempt to load and mount itself to `body` or `rootElement` configuration found in `config/environment.js`.
 
-Below it, we add a `MyEmbeddedApp` class wrapper. Its job is to take over the
-App initialization as well as serve as a communication layer between the App and
-whoever uses it.
+Below it, we add a `MyEmbeddedApp` class wrapper. Its job is to take over the App initialization as well as serve as a communication layer between the App and whoever uses it.
 
-There's probably a few different ways to organize this. Here, for simplicity,
-the wrapper talks to the `application` controller directly, but, if you have a
-more complicated use case, you could use services, proper events, and such to do
-the job.
+There's probably a few different ways to organize this. Here, for simplicity, the wrapper talks to the `application` controller directly, but, if you have a more complicated use case, you could use services, proper events, and such to do the job.
 
 ```js
 import Application from "@ember/application";
@@ -374,17 +329,11 @@ class MyEmbeddedApp {
 
 #### Build, Deploy and Use
 
-Now the App can be built: run the build script as usual `npm run build` and
-deploy the `dist` to your static server or publish as an npm package.
+Now the App can be built: run the build script as usual `npm run build` and deploy the `dist` to your static server or publish as an npm package.
 
-Then add `script` and `link` tags pointing to the deployed bundles and
-initialize the App.
+Then add `script` and `link` tags pointing to the deployed bundles and initialize the App.
 
-In this [Embeddable Demo](https://svelte-todo-13xa.onrender.com), the app is
-initialized when a `<div>` element is inserted. The app is initialized twice
-with different configurations; one configuration allows to remove items, the
-other doesn't. Also, both configurations set up a callback that will be called
-when to-do items have changed and will then display their count.
+In this [Embeddable Demo](https://svelte-todo-13xa.onrender.com), the app is initialized when a `<div>` element is inserted. The app is initialized twice with different configurations; one configuration allows to remove items, the other doesn't. Also, both configurations set up a callback that will be called when to-do items have changed and will then display their count.
 
 ```html
 {% raw %}
@@ -449,28 +398,14 @@ when to-do items have changed and will then display their count.
 
 #### Considerations
 
-- The embeddable app is initialized under the assumption that the script was
-  already loaded beforehand, making it difficult when loading asynchronously.
-  Instead of providing and using the bundles directly, it could be a good idea
-  to create a tiny wrapping script whose only job is to append script tags and
-  expose a promise or hook to notify that they're loaded.
-- Depending on the use case, an iframe could be simpler. On the other hand, this
-  approach gives the most flexibility when it's necessary to allow manipulating
-  the embedded app at runtime.
+- The embeddable app is initialized under the assumption that the script was already loaded beforehand, making it difficult when loading asynchronously. Instead of providing and using the bundles directly, it could be a good idea to create a tiny wrapping script whose only job is to append script tags and expose a promise or hook to notify that they're loaded.
+- Depending on the use case, an iframe could be simpler. On the other hand, this approach gives the most flexibility when it's necessary to allow manipulating the embedded app at runtime.
 
 #### Summary
 
-Embedding an Ember app isn't impossible or super hard but it is quirky,
-requiring understanding and working through the nuances of the build step
-responsibilities. Currently, the Embroider build feels like Webpack with
-Ember-cli on top, where we have both old and new systems to be mindful of when
-building the app.
+Embedding an Ember app isn't impossible or super hard but it is quirky, requiring understanding and working through the nuances of the build step responsibilities. Currently, the Embroider build feels like Webpack with Ember-cli on top, where we have both old and new systems to be mindful of when building the app.
 
-However, there is a future where this will become much easier! The
-[Embroider Initiative](/ember-initiative/) is working its way towards full Vite
-support which should relief Ember from using the AMD format and allow for a much
-easier process where bundler users would only import that single class which
-initializes the App.
+However, there is a future where this will become much easier! The [Embroider Initiative](/ember-initiative/) is working its way towards full Vite support which should relief Ember from using the AMD format and allow for a much easier process where bundler users would only import that single class which initializes the App.
 
 #### Resources
 

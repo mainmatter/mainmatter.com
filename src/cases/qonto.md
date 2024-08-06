@@ -3,18 +3,10 @@ layout: case-study
 company: Qonto
 title: Co-Engineering the Future of Banking for SMEs with Qonto | Work
 displayTitle: "A helping hand for a visionary fintech startup"
-problem:
-  Qonto was facing a number of impediments that were slowing down their
-  workflow.
-solution:
-  We helped them release new features quickly while laying the foundations for
-  sustainable growth at an accelerated pace.
+problem: Qonto was facing a number of impediments that were slowing down their workflow.
+solution: We helped them release new features quickly while laying the foundations for sustainable growth at an accelerated pace.
 tags: Team reinforcement
-description:
-  <p>Qonto is the leading neobank for SMEs and freelancers in
-  Europe.</p><p>Mainmatter worked with their web frontend team to boost their
-  productivity, establish Ember.js best practices, and ensure long-term
-  success.</p>
+description: <p>Qonto is the leading neobank for SMEs and freelancers in Europe.</p><p>Mainmatter worked with their web frontend team to boost their productivity, establish Ember.js best practices, and ensure long-term success.</p>
 hero:
   color: purple
   image: "/assets/images/work/qonto.jpg"

@@ -7,6 +7,4 @@ kind: workshop
 color: aqua
 ---
 
-We are running a remote Rust Telemetry workshop over two afternoons in December.
-Host Luca Palmieri will introduce you to a comprehensive toolkit to detect,
-troubleshoot and resolve issues in your Rust applications.
+We are running a remote Rust Telemetry workshop over two afternoons in December. Host Luca Palmieri will introduce you to a comprehensive toolkit to detect, troubleshoot and resolve issues in your Rust applications.

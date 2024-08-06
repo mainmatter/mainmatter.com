@@ -6,5 +6,4 @@ media: video
 channel: emberconf-2020
 ---
 
-Samanta de Barros explains how to leverage tools to debug and better understand
-the structure of Ember apps.
+Samanta de Barros explains how to leverage tools to debug and better understand the structure of Ember apps.

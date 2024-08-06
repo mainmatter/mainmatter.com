@@ -6,6 +6,4 @@ url: https://emberfest.eu
 kind: conference
 ---
 
-EmberFest is back with a hybrid on-site/virtual event in September. We are
-co-organizing the event and our team is looking forward to meeting up with the
-Ember.js community in Rome.
+EmberFest is back with a hybrid on-site/virtual event in September. We are co-organizing the event and our team is looking forward to meeting up with the Ember.js community in Rome.

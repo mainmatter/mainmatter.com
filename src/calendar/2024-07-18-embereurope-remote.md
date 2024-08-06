@@ -10,7 +10,4 @@ hero:
   imageAlt: "A tiled background of European flags"
 ---
 
-We are back with our Q2 2024 event in July (yes, we're doing a Q2 event in Q3).
-Join remotely on July 18th starting from 19:00 CEST. The Ember Europe meetup
-series brings together the Ember community from all of Europe once a quarter.
-The meetup is organized by Mainmatter and Intercom.
+We are back with our Q2 2024 event in July (yes, we're doing a Q2 event in Q3). Join remotely on July 18th starting from 19:00 CEST. The Ember Europe meetup series brings together the Ember community from all of Europe once a quarter. The meetup is organized by Mainmatter and Intercom.

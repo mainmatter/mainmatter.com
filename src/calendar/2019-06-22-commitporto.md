@@ -6,5 +6,4 @@ url: https://commitporto.com
 kind: conference
 ---
 
-Ricardo Mendes will tell a story about the JavaScript hype cycles and how
-Ember.js has managed to keep up with them.
+Ricardo Mendes will tell a story about the JavaScript hype cycles and how Ember.js has managed to keep up with them.

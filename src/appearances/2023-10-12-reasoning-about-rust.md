@@ -6,6 +6,4 @@ media: video
 channel: eurorust23
 ---
 
-Our Principal Engineering Consultant, Luca Palmieri, introduced us to Rustdoc’s
-JSON format and the possibilities that come with this new #rustlang feature in
-his talk at EuroRust 2023.
+Our Principal Engineering Consultant, Luca Palmieri, introduced us to Rustdoc’s JSON format and the possibilities that come with this new #rustlang feature in his talk at EuroRust 2023.

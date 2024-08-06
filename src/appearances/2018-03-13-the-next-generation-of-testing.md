@@ -6,5 +6,4 @@ media: video
 channel: emberconf-2018
 ---
 
-Tobias Bieniek elaborates on what modern testing of Ember.js applications looks
-like.
+Tobias Bieniek elaborates on what modern testing of Ember.js applications looks like.

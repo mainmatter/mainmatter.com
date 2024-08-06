@@ -6,5 +6,4 @@ media: video
 channel: emberfest-2019
 ---
 
-Tobias Bieniek shows how grouping console statements makes for a better QUnit
-experience.
+Tobias Bieniek shows how grouping console statements makes for a better QUnit experience.

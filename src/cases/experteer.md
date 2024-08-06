@@ -2,18 +2,11 @@
 layout: case-study
 company: Experteer
 title: A mobile onboarding experience | Work
-problem:
-  Experteer was lacking the internal UI/UX capacity they needed to build
-  user-focused solutions.
+problem: Experteer was lacking the internal UI/UX capacity they needed to build user-focused solutions.
 solution: Our experts mentored their team through designing a solution.
 tags: Launch your idea
-displayTitle:
-  "A <em>smooth</em> mobile onboarding experience – design to release"
-description:
-  <p>Experteer is Europe’s leading executive career service.</p><p>Mainmatter
-  has supported them in various ways over the years, building custom web apps,
-  reviewing their code as well as providing architecture and process
-  consulting.</p>
+displayTitle: "A <em>smooth</em> mobile onboarding experience – design to release"
+description: <p>Experteer is Europe’s leading executive career service.</p><p>Mainmatter has supported them in various ways over the years, building custom web apps, reviewing their code as well as providing architecture and process consulting.</p>
 hero:
   color: purple
   image: "/assets/images/work/experteer.jpg"

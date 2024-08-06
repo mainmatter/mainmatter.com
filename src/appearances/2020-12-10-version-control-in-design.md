@@ -6,5 +6,4 @@ media: video
 channel: on-product
 ---
 
-Mar High explains how design teams can benefit from version control and explores
-best practices for collaboration.
+Mar High explains how design teams can benefit from version control and explores best practices for collaboration.

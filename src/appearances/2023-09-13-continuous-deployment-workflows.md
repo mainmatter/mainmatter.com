@@ -6,7 +6,4 @@ media: video
 channel: stackconf-2023
 ---
 
-Marco Otte-Witte presented the main advantages of continuous deployment over
-traditional release processes, explained the essential components of a
-continuous deployment infrastructure, and discussed typical challenges as well
-as strategies to overcome them.
+Marco Otte-Witte presented the main advantages of continuous deployment over traditional release processes, explained the essential components of a continuous deployment infrastructure, and discussed typical challenges as well as strategies to overcome them.

@@ -3,16 +3,9 @@ layout: case-study
 company: Expedition
 title: An architecture based on Elixir and Ember.js for Expedition | Work
 displayTitle: "A sturdy foundation for advanced system architecture"
-description:
-  <p>Expedition is an online travel magazine for global citizens.</p><p>They
-  turned to Mainmatter when they were looking for guidance to get the most out
-  of their technology stack based on Elixir, Phoenix and Ember.js.</p>
-problem:
-  Expedition needed help sharpening up their Ember.js client and their Elixir &
-  Phoenix API.
-solution:
-  We reviewed their codebase and identified a priority list for the existing
-  issues.
+description: <p>Expedition is an online travel magazine for global citizens.</p><p>They turned to Mainmatter when they were looking for guidance to get the most out of their technology stack based on Elixir, Phoenix and Ember.js.</p>
+problem: Expedition needed help sharpening up their Ember.js client and their Elixir & Phoenix API.
+solution: We reviewed their codebase and identified a priority list for the existing issues.
 tags: Strategic Advice
 hero:
   color: purple

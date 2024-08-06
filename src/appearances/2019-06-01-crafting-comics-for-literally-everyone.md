@@ -6,5 +6,4 @@ media: video
 channel: jsconf-eu-2019
 ---
 
-Jessica Jordan demonstrates how to create an immersive web comic experience that
-is not only engaging for sighted users but accessible for everyone.
+Jessica Jordan demonstrates how to create an immersive web comic experience that is not only engaging for sighted users but accessible for everyone.

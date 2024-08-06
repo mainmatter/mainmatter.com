@@ -6,5 +6,4 @@ media: video
 channel: reactiveconf-2018
 ---
 
-Jessica Jordan shares how to build comics for the web using Ember.js and the Web
-Animation API.
+Jessica Jordan shares how to build comics for the web using Ember.js and the Web Animation API.

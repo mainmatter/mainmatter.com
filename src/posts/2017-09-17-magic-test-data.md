@@ -2,16 +2,13 @@
 title: Magic Data in Tests
 authorHandle: geekygrappler
 bio: "Senior Frontend Engineer"
-description:
-  "Andy Brown explains the AAA principle for writing good tests and discusses
-  what the negative consequences of not adhering to it are."
+description: "Andy Brown explains the AAA principle for writing good tests and discusses what the negative consequences of not adhering to it are."
 tags: misc
 tagline: |
   <p>Often when working on large codebases, my changes break some existing tests. While I would prefer my coding to be perfect, it's highly unlikely that I'll ever achieve the state of coding zen, so it's nice to know I have a test suite to catch me when I fall. Given that the codebase is large and in the majority not written by me, I tend to be introduced to code via the test files. One important principle I've started to follow when writing and refactoring tests is AAA.</p>
 ---
 
-The [AAA principle](http://wiki.c2.com/?ArrangeActAssert) for testing is Arrange
-Act Assert and it's Amazing. The TL;DR is:
+The [AAA principle](http://wiki.c2.com/?ArrangeActAssert) for testing is Arrange Act Assert and it's Amazing. The TL;DR is:
 
 - Setup the data/inputs for the code you're testing (Arrange)
 - Invoke the code you are testing (Act)
@@ -36,13 +33,11 @@ test('toLowerCase makes string all lower case', function (assert) {
 
 If you have a test that doesn't Arrange, your test may be brittle.
 
-Don't believe me? Lets go through a real life example. You are tasked with
-making a country/language picker for a website that looks something like this.
+Don't believe me? Lets go through a real life example. You are tasked with making a country/language picker for a website that looks something like this.
 
 ![Country picker component](/assets/images/posts/2017-09-25-magic-test-data/tl-country-picker.png)
 
-You will probably have a hardcoded list of countries that your website supports
-somewhere in your app.
+You will probably have a hardcoded list of countries that your website supports somewhere in your app.
 
 ```js
 {% raw %}
@@ -64,11 +59,9 @@ export default [
 {% endraw %}
 ```
 
-We need to write a function that adds a url pointing to an image of the country
-flag so that the component can display that flag image.
+We need to write a function that adds a url pointing to an image of the country flag so that the component can display that flag image.
 
-So we write a component, here we're using Ember, but the principle is similar
-for any JS framework or vanilla JS.
+So we write a component, here we're using Ember, but the principle is similar for any JS framework or vanilla JS.
 
 ```js
 {% raw %}
@@ -109,8 +102,7 @@ I don't think it's a good test though.
 
 <strong>The test is brittle.</strong>
 
-Let's say our business development team have made inroads into Bulgaria and now
-we need to add it to the the list of countries and locales.
+Let's say our business development team have made inroads into Bulgaria and now we need to add it to the the list of countries and locales.
 
 ```js
 {% raw %}
@@ -138,19 +130,11 @@ export default [
 {% endraw %}
 ```
 
-The test will now fail without us having changed the code. No code change, no
-behaviour change, but failing tests. The definition of a brittle test. The test
-relies on magic data from an external file, namely `COUNTRIES`. It may only take
-the original writer of the test minutes to figure out why the test fails, but it
-might take any one new to the code unit a bit longer to figure out why.
+The test will now fail without us having changed the code. No code change, no behaviour change, but failing tests. The definition of a brittle test. The test relies on magic data from an external file, namely `COUNTRIES`. It may only take the original writer of the test minutes to figure out why the test fails, but it might take any one new to the code unit a bit longer to figure out why.
 
-What you should do is _Arrange_ the data. When you do this it becomes clear that
-the function is simply adding a key, and it won't break due to external data
-changes. All you care about is that given a starting set of data, after applying
-your function you get the resultant set of data, as clearly defined in the test.
+What you should do is _Arrange_ the data. When you do this it becomes clear that the function is simply adding a key, and it won't break due to external data changes. All you care about is that given a starting set of data, after applying your function you get the resultant set of data, as clearly defined in the test.
 
-First we need to stop using a constant directly in our component. This way we
-can override the `countries` property in the test and _arrange_ the data.
+First we need to stop using a constant directly in our component. This way we can override the `countries` property in the test and _arrange_ the data.
 
 ```js
 {% raw %}
@@ -205,8 +189,7 @@ test('displayCountries will add a flag key to a country object', function (asser
 {% endraw %}
 ```
 
-I feel much better about this test. It is no longer brittle as it's not
-dependent on an external `JSON` file.
+I feel much better about this test. It is no longer brittle as it's not dependent on an external `JSON` file.
 
 And I get to commit GoT & LOTR to the code base.
 
