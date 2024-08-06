@@ -1,9 +1,3 @@
-body.modal-active {
-  position: fixed;
-  overflow: hidden;
-  width: 100vw;
-}
-
 .contact-form {
   max-height: initial;
   aspect-ratio: initial;
@@ -166,11 +160,11 @@ $states: "loading", "success", "error";
   align-items: center;
   padding: 2.5rem;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  min-width: 100vw;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0);
   text-align: center;
