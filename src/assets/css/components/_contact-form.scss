@@ -1,6 +1,7 @@
 body.modal-active {
   position: fixed;
   overflow: hidden;
+  width: 100vw;
 }
 
 .contact-form {
@@ -59,6 +60,7 @@ $states: "loading", "success", "error";
         opacity: 1;
         background-color: rgba(0, 0, 0, 0.8);
         pointer-events: auto;
+        z-index: 999;
       }
 
       .contact-form__#{$state} {
