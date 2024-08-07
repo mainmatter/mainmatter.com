@@ -14,8 +14,10 @@ if (window.location.host === "mainmatter.com") {
 const navElement = document.getElementById("nav");
 new Nav(navElement);
 
-const contactForm = document.getElementById("contact-form");
-if (contactForm) new ContactForm(contactForm);
+for (const form of document.querySelectorAll("[data-contact-form]")) {
+  console.log(form);
+  new ContactForm(form);
+}
 
 const logoList = document.getElementById("logo-list");
 if (logoList) new LogoList(logoList);
