@@ -48,15 +48,15 @@ export class ContactForm {
       plausible("Contact");
     }
 
-    const { action } = this.form.dataset;
+    const { action, method } = this.form.dataset;
     return fetch(action, {
       body: JSON.stringify(formData),
       cache: "no-cache",
       headers: {
         "Content-Type": "application/json; charset=UTF-8'",
       },
-      method: "POST",
-      mode: "cors",
+      method,
+      mode: "no-cors",
     })
       .then(response => {
         if (response.ok) {
