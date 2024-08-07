@@ -48,7 +48,8 @@ export class ContactForm {
       plausible("Contact");
     }
 
-    return fetch("https://contact.mainmatter.dev/send", {
+    const { action } = this.form.dataset;
+    return fetch(action, {
       body: JSON.stringify(formData),
       cache: "no-cache",
       headers: {
