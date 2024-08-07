@@ -44,20 +44,32 @@ export class ContactForm {
     };
 
     const { plausible } = window;
+    const { goal } = this.form.dataset;
     if (plausible) {
-      plausible("Contact");
+      plausible(goal);
     }
 
-    const { action, method } = this.form.dataset;
-    return fetch(action, {
-      body: JSON.stringify(formData),
+    let { action, method } = this.form.dataset;
+
+    let params = {
       cache: "no-cache",
-      headers: {
-        "Content-Type": "application/json; charset=UTF-8'",
-      },
       method,
-      mode: "no-cors",
-    })
+      mode: "cors",
+    };
+    if (method.toLowerCase() === "get") {
+      const queryString = new URLSearchParams(formData).toString();
+      action = `${action}?${queryString}`;
+    } else {
+      params = {
+        ...params,
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8'",
+        },
+      };
+    }
+
+    return fetch(action, params)
       .then(response => {
         if (response.ok) {
           this.updateFormState("success", "Message sent successfully.");
