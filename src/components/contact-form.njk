@@ -9,7 +9,15 @@
         your next big move.
       </p>
       <h4 class="mt-10">Send us a message</h4>
-      <form class="contact-form__form" id="contact-form" data-status="initial">
+      <form
+        class="contact-form__form"
+        id="contact-form"
+        data-contact-form
+        data-status="initial"
+        data-action="https://contact.mainmatter.dev/send"
+        data-method="post"
+        data-goal="Contact"
+      >
         <div data-form-content tabindex="-1">
           <div class="contact-form__field">
             <input
@@ -61,8 +69,6 @@
               <option value="Tech stack modernization">Tech stack modernization</option>
               <option value="Strategic advice">Strategic advice</option>
               <option value="Workshops">Workshops</option>
-              <option value="Ember Initiative">Ember Initiative</option>
-              <option value="Getting an Ember app on Vite">Getting an Ember app on Vite</option>
               <option value="Other">Other</option>
             </select>
             <label class="contact-form__label h4" for="service"> How can we help you? </label>
@@ -95,7 +101,7 @@
         <div class="contact-form__status">
           <button class="contact-form__close" data-reset-form>
             {% include 'svg/close.njk' %}
-            <span class="screenreader">Close Menu</span>
+            <span class="screenreader">Close</span>
           </button>
           <div class="contact-form__loading h4" data-form-loading>
             Your message is being sent…
