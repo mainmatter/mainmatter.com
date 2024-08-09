@@ -1,7 +1,5 @@
 import * as Sentry from "@sentry/browser";
 
-const body = document.getElementsByTagName("body");
-
 export class ContactForm {
   constructor(element) {
     this.form = element;
@@ -79,11 +77,9 @@ export class ContactForm {
 
     if (state === "initial") {
       this.formContent.removeAttribute("inert");
-      body[0].classList.remove("modal-active");
       this.form.reset();
     } else {
       this.formContent.setAttribute("inert", true);
-      body[0].classList.add("modal-active");
     }
 
     this.form.setAttribute("data-status", state);

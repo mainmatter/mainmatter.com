@@ -562,7 +562,8 @@
     "erlef/website",
     "oscard0m/example-probot-vercel-ts",
     "paoloricciuti/darkmodething",
-    "mansona/testing-release-plan"
+    "mansona/testing-release-plan",
+    "BlueCutOfficial/site-cv"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
