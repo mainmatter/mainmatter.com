@@ -6,8 +6,4 @@ media: video
 channel: rustweb-london
 ---
 
-Moderator Luca Palmieri (Principal Engineering Consultant at Mainmatter) and
-panelists ​Edward Wright (Lead GIS Engineer at Vortexa), ​Nodar Daneliya
-(Founder and CEO of Shuttle), and ​James Cole (Arwen.ai), discussed the reasons
-for choosing Rust and how they use it in production at our Rust for the Web
-meetup in London.
+Moderator Luca Palmieri (Principal Engineering Consultant at Mainmatter) and panelists ​Edward Wright (Lead GIS Engineer at Vortexa), ​Nodar Daneliya (Founder and CEO of Shuttle), and ​James Cole (Arwen.ai), discussed the reasons for choosing Rust and how they use it in production at our Rust for the Web meetup in London.

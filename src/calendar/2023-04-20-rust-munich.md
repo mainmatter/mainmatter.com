@@ -7,5 +7,4 @@ kind: meetup
 color: purple
 ---
 
-The next Rust meetup for Rust fans in and around Munich is happening on the 20th
-of April. The meetup is hosted by Mainmatter at our office.
+The next Rust meetup for Rust fans in and around Munich is happening on the 20th of April. The meetup is hosted by Mainmatter at our office.

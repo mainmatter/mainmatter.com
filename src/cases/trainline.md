@@ -3,17 +3,10 @@ layout: case-study
 company: Trainline
 title: Mobile train tickets with Ember.js for Trainline | Work
 displayTitle: "The full market potential for a <em>leading</em> travel platform"
-problem:
-  Trainline was in need of a mobile web app to complement their desktop
-  apllication.
-solution:
-  We helped deliver the web app and developed the team’s expertise through
-  pair-programming sessions and code reviews.
+problem: Trainline was in need of a mobile web app to complement their desktop apllication.
+solution: We helped deliver the web app and developed the team’s expertise through pair-programming sessions and code reviews.
 tags: Team reinforcement
-description:
-  <p>Trainline is Europe’s leading rail and coach platform.</p><p>We helped them
-  deliver a high-performance mobile web app, along with an improved engineering
-  process.</p>
+description: <p>Trainline is Europe’s leading rail and coach platform.</p><p>We helped them deliver a high-performance mobile web app, along with an improved engineering process.</p>
 hero:
   color: purple
   image: "/assets/images/work/trainline.jpg"

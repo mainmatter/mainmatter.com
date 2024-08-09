@@ -6,5 +6,4 @@ media: video
 channel: emberfest-2019
 ---
 
-Jessica Jordan explains how state management works with decorators and tracked
-properties in Ember Octane apps.
+Jessica Jordan explains how state management works with decorators and tracked properties in Ember Octane apps.

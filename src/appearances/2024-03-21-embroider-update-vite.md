@@ -6,5 +6,4 @@ media: video
 channel: embereurope-q1-2024
 ---
 
-Chris Manson gave an update on the Embroider Initiative's progress so far and
-showed off a real world Vite build.
+Chris Manson gave an update on the Embroider Initiative's progress so far and showed off a real world Vite build.

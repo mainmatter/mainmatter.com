@@ -7,6 +7,4 @@ kind: workshop
 color: aqua
 ---
 
-We are running a remote Rust workshop over two afternoons on April 15th & 16th,
-hosted by Luca Palmieri. Luca will present advanced testing patterns for Rust
-projects.
+We are running a remote Rust workshop over two afternoons on April 15th & 16th, hosted by Luca Palmieri. Luca will present advanced testing patterns for Rust projects.

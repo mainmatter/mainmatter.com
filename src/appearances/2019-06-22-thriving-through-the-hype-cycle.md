@@ -6,5 +6,4 @@ media: video
 channel: commit-porto-2019
 ---
 
-Ricardo Mendes goes through the history of Ember.js as a project and how it
-braves the fads of front-end development.
+Ricardo Mendes goes through the history of Ember.js as a project and how it braves the fads of front-end development.

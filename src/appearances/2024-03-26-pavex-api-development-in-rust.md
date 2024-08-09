@@ -6,5 +6,4 @@ media: video
 channel: rustnationuk
 ---
 
-Our Principal Engineering Consultant, Luca Palmieri, talked about the state of
-Rust’s web ecosystem and his Pavex project in his talk at Rust Nation UK 2024.
+Our Principal Engineering Consultant, Luca Palmieri, talked about the state of Rust’s web ecosystem and his Pavex project in his talk at Rust Nation UK 2024.

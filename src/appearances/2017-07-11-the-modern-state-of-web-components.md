@@ -6,5 +6,4 @@ media: video
 channel: embercamp-2017
 ---
 
-Jessica Jordan gives an update on the status of native web components and shows
-how they can be used via Glimmer.js today.
+Jessica Jordan gives an update on the status of native web components and shows how they can be used via Glimmer.js today.

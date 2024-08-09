@@ -6,6 +6,4 @@ media: video
 channel: rustweb-berlin
 ---
 
-Mainmatter's Principal Engineering Consultant Luca Palmieri, SAP's Jonas Dohse,
-and Fermyon's Ryan Levick discussed aspects of using Rust in production and
-answered questions from the audience at our Rust for the Web event in Berlin.
+Mainmatter's Principal Engineering Consultant Luca Palmieri, SAP's Jonas Dohse, and Fermyon's Ryan Levick discussed aspects of using Rust in production and answered questions from the audience at our Rust for the Web event in Berlin.
