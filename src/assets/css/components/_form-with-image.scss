@@ -8,12 +8,7 @@
 }
 
 .form-with-image__image {
-  margin:3rem 0 0 0;
-  position:relative;  
-}
-
-.form-with-image__image img {
-  width:15rem;
+  margin:3rem auto 0 auto;  
 }
 
 @media (min-width: $breakpoint-m) {
@@ -22,19 +17,7 @@
   }
 
   .form-with-image__image {
-    margin: 0;
+    margin: 0 0 0 4rem;
     align-self: flex-end;
-    position:absolute;
-    right:3rem;
-  }
-}
-
-@media (min-width: $breakpoint-l) {
-  .form-with-image__image {
-    right:4rem;   
-  }
-
-  .form-with-image__image img {
-    width:16.5rem;
   }
 }
