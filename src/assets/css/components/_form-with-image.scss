@@ -8,33 +8,22 @@
 }
 
 .form-with-image__image {
-  margin:3rem 0 0 0;
-  position:relative;  
+  margin: 3rem 0 0 0;
 }
 
 .form-with-image__image img {
-  width:15rem;
+  width: 100%;
 }
 
 @media (min-width: $breakpoint-m) {
   .form-with-image {
-    flex-direction:row;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2.5rem;
   }
 
   .form-with-image__image {
     margin: 0;
-    align-self: flex-end;
-    position:absolute;
-    right:3rem;
-  }
-}
-
-@media (min-width: $breakpoint-l) {
-  .form-with-image__image {
-    right:4rem;   
-  }
-
-  .form-with-image__image img {
-    width:16.5rem;
   }
 }
