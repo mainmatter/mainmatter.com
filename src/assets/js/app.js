@@ -15,7 +15,6 @@ const navElement = document.getElementById("nav");
 new Nav(navElement);
 
 for (const form of document.querySelectorAll("[data-contact-form]")) {
-  console.log(form);
   new ContactForm(form);
 }
 
