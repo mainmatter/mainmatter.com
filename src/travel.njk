@@ -10,7 +10,9 @@ description: "We transform travel companies holistically, building modern organi
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
 {% from "recent-posts.njk" import recentPosts %}
 {% from "featured-services.njk" import featuredServices %}
+{% from "secondary-feature.njk" import secondaryFeature %}
 {% from "cta-banner.njk" import ctaBanner %}
+{% from "btn-secondary.njk" import btnSecondary %}
 {%
   set 'content' = {
   "title": "We Modernize the Travel Industry",
@@ -173,6 +175,39 @@ description: "We transform travel companies holistically, building modern organi
         quickly, deliver impressive results, and adapt flexibly to a changing landscape. We partner
         with companies in the travel industry to overcome those challenges.
       </p>
+    </div>
+  </div>
+</section>
+
+<section class="my-10 container container--lg">
+  <div class="split-content no-link">
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h5>Book a free call</h5>
+        <h3 class="split-content__subheading h2">Looking to transform your company?</h3>
+        <p>
+          Mainmatter's Founder and Managing Director, Marco Otte-Witte, is available to give you an
+          in-depth introduction to how we transform companies or share his thoughts on any
+          challenges you're facing.
+        </p>
+        {%
+          set link = {
+          "label": 'Book a 1:1 call with us',
+          "url": 'https://calendar.app.google/3FHWr4pdh2kNrZnv9'
+          }
+        %}
+        {{ btnSecondary( link, 'mt-2' ) }}
+      </div>
+      <div class="split-content__feature">
+        {%
+          set 'content' = {
+          "image": "/assets/images/authors/marcoow.jpg",
+          "alt": "Marco Otte-Witte",
+          "loading": "lazy"
+          }
+        %}
+        {{ secondaryFeature(content, 'split-content__author') }}
+      </div>
     </div>
   </div>
 </section>
