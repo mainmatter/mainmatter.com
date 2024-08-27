@@ -26,4 +26,3 @@ doc/
 _site
 .DS_Store
 .sass-cache
-package.json
