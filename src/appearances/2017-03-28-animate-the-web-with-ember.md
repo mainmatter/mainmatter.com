@@ -6,5 +6,4 @@ media: video
 channel: emberconf-2017
 ---
 
-Jessica Jordan shows how to do animations on the web leveraging HTML5 canvas and
-the Web Animation API.
+Jessica Jordan shows how to do animations on the web leveraging HTML5 canvas and the Web Animation API.

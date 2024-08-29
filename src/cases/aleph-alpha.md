@@ -1,20 +1,12 @@
 ---
 layout: case-study
 company: Aleph Alpha
-problem:
-  Aleph Alpha wanted to take advantage of Rust’s built-in efficiency for their
-  latest learning model.
+problem: Aleph Alpha wanted to take advantage of Rust’s built-in efficiency for their latest learning model.
 solution: We provided the know-how to build the infrastructure.
 tags: Team reinforcement
 title: Preprocessing trillions of tokens with Rust | Work
 displayTitle: "Preprocessing trillions of tokens with Rust"
-description:
-  <p>Aleph Alpha empowers businesses and governments with the most advanced
-  generative AI technology, to gain a decisive edge in the thriving AI
-  economy.</p><p>Training AI models requires preprocessing large amounts of
-  data. When Aleph Alpha set out to leverage Rust to prepare the training
-  dataset for their new model, they reached out to Mainmatter for support in
-  architecting and implementing a scalable and efficient data pipeline.</p>
+description: <p>Aleph Alpha empowers businesses and governments with the most advanced generative AI technology, to gain a decisive edge in the thriving AI economy.</p><p>Training AI models requires preprocessing large amounts of data. When Aleph Alpha set out to leverage Rust to prepare the training dataset for their new model, they reached out to Mainmatter for support in architecting and implementing a scalable and efficient data pipeline.</p>
 hero:
   color: purple
   image: "/assets/images/work/aleph-alpha-background-2.jpg"
@@ -24,8 +16,7 @@ og:
   image: /assets/images/cases/cs-aleph-alpha-og-image.jpg
 ---
 
-{% from "image-aspect-ratio.njk" import imageAspectRatio %}
-{% from "quote.njk" import quote %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %} {% from "quote.njk" import quote %}
 
 <div class="case-study__section">
   <h3 class="case-study__heading">About Aleph Alpha</h3>

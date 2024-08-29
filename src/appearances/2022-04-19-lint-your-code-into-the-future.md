@@ -6,9 +6,6 @@ media: video
 channel: emberconf-2022
 ---
 
-Adopting new linting rules in modestly sized apps can often leave you with
-several linting errors across hundreds of files.
+Adopting new linting rules in modestly sized apps can often leave you with several linting errors across hundreds of files.
 
-Chris Manson explains how you can reduce the struggle and happily lint large
-apps all the way to modern Ember at your own pace in his talk from
-EmberConf 2022.
+Chris Manson explains how you can reduce the struggle and happily lint large apps all the way to modern Ember at your own pace in his talk from EmberConf 2022.

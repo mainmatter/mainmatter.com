@@ -6,5 +6,4 @@ media: video
 channel: ember-munich
 ---
 
-Marco Otte-Witte introduces Glimmer.js and the Glimmer VM and explains how they
-work.
+Marco Otte-Witte introduces Glimmer.js and the Glimmer VM and explains how they work.

@@ -7,7 +7,4 @@ kind: meetup
 color: aqua
 ---
 
-We are running an event together with the Barcelona Rust meetup group focused on
-using Rust for web development. The event is happening at AdevintaSpain, in
-Barcelona, on May 30th. Our Principal Engineering Consultant, Luca Palmieri,
-will moderate a panel featuring Matilda Smeds and Gleb Pomykalov.
+We are running an event together with the Barcelona Rust meetup group focused on using Rust for web development. The event is happening at AdevintaSpain, in Barcelona, on May 30th. Our Principal Engineering Consultant, Luca Palmieri, will moderate a panel featuring Matilda Smeds and Gleb Pomykalov.

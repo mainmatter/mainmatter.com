@@ -6,5 +6,4 @@ media: video
 channel: sveltesummit
 ---
 
-Paolo Ricciuti shared how to full-stack-test SvelteKit applications at Svelte
-Summit Spring 2024.
+Paolo Ricciuti shared how to full-stack-test SvelteKit applications at Svelte Summit Spring 2024.

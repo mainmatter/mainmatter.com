@@ -6,5 +6,4 @@ media: video
 channel: emberfest-2018
 ---
 
-Marco Otte-Witte talks about optimizing JavaScript bundles and loading behaviour
-of Ember.js apps.
+Marco Otte-Witte talks about optimizing JavaScript bundles and loading behaviour of Ember.js apps.

@@ -6,6 +6,4 @@ media: video
 channel: emberconf-2021
 ---
 
-Tobias Bieniek explains how to implement and test loading states, how to deal
-with network errors and how to prevent Sentry from filling up with uncaught
-promise errors.
+Tobias Bieniek explains how to implement and test loading states, how to deal with network errors and how to prevent Sentry from filling up with uncaught promise errors.

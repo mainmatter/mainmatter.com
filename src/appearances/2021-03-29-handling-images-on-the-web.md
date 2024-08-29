@@ -6,6 +6,4 @@ media: video
 channel: emberconf-2021
 ---
 
-Handling images on the web has evolved from a simple task to a complex topic.
-Marco Otte-Witte presents options for different scenarios along with challenges
-and advantages as well as disadvantages of different approaches.
+Handling images on the web has evolved from a simple task to a complex topic. Marco Otte-Witte presents options for different scenarios along with challenges and advantages as well as disadvantages of different approaches.
