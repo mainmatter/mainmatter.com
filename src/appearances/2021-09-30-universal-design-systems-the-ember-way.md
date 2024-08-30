@@ -6,6 +6,4 @@ media: video
 channel: emberfest-2021
 ---
 
-With Ember being HTML-First, doors open to new possibilities. Chris Manson
-explores the opportunity of building a design system with Ember that can also be
-consumed by apps that are not using JavaScript in his talk.
+With Ember being HTML-First, doors open to new possibilities. Chris Manson explores the opportunity of building a design system with Ember that can also be consumed by apps that are not using JavaScript in his talk.

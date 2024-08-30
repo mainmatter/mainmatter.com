@@ -4,21 +4,13 @@ company: Mobi.MED
 title: Modernizing Code and Design for a Healthcare Software Supplier
 displayTitle: "Modernizing Healthcare Software"
 problem: mobi.MED needed to refresh their codebase and UI.
-solution:
-  Our team developed a design system, implemented it in the application, and
-  modernized the codebase along the way.
+solution: Our team developed a design system, implemented it in the application, and modernized the codebase along the way.
 tags: Tech modernization
-description:
-  <p>mobi.MED offers an all-in-one software solution for doctors' practices in
-  Austria and Germany</p><p>Mainmatter modernized the codebase of their
-  frontend, established a design system and refreshed the UI and UX of the
-  application.</p>
+description: <p>mobi.MED offers an all-in-one software solution for doctors' practices in Austria and Germany</p><p>Mainmatter modernized the codebase of their frontend, established a design system and refreshed the UI and UX of the application.</p>
 hero:
   color: purple
   image: "/assets/images/work/mobimed.jpg"
-  imageAlt:
-    "Woman in green protective clothes sitting in front of 3 computer screens
-    holding a computer mouse"
+  imageAlt: "Woman in green protective clothes sitting in front of 3 computer screens holding a computer mouse"
   tags: "design / development / mentoring"
 og:
   image: /assets/images/cases/cs-mobimed-og-image.jpg

@@ -1,18 +1,12 @@
 ---
 layout: case-study
 company: MVB
-problem:
-  MVB lacked the experience to feel confident that they were delivering on
-  quality under time pressure.
+problem: MVB lacked the experience to feel confident that they were delivering on quality under time pressure.
 solution: Our experts mentored the team to achieve both requirements.
 tags: Team reinforcement
 title: A platform for the german book industry | Work
 displayTitle: "A platform for the <em>german</em> book industry"
-description:
-  <p>MVB provides marketing solutions for the German book industry.</p><p>They
-  approached Mainmatter when they were looking for external expertise. We
-  performed a workshop, leveling up the team’s expertise and guided the project
-  until its successful completion.</p>
+description: <p>MVB provides marketing solutions for the German book industry.</p><p>They approached Mainmatter when they were looking for external expertise. We performed a workshop, leveling up the team’s expertise and guided the project until its successful completion.</p>
 hero:
   color: purple
   image: "/assets/images/work/mvb-background.jpg"

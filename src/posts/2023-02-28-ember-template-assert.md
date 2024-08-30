@@ -1,12 +1,9 @@
 ---
-title:
-  "Building a template assertion Ember addon that removes itself from production"
+title: "Building a template assertion Ember addon that removes itself from production"
 authorHandle: nickschot
 tags: [ember]
 bio: "Nick Schot"
-description:
-  "Nick Schot explains how to build an Ember addon that completely removes
-  itself from production builds."
+description: "Nick Schot explains how to build an Ember addon that completely removes itself from production builds."
 og:
   image: /assets/images/posts/2023-02-28-ember-template-assert/og-image.jpg
 tagline: |
@@ -16,32 +13,19 @@ image: "/assets/images/posts/2023-02-28-ember-template-assert/header-illustratio
 imageAlt: "The Ember logo on a gray backround picture"
 ---
 
-Ember's `assert` function can be helpful to add checks meant for developers to
-make sure, for example, that the correct data is passed.
+Ember's `assert` function can be helpful to add checks meant for developers to make sure, for example, that the correct data is passed.
 
 ```javascript
 assert("Must pass myArgument", myArgument !== undefined);
 ```
 
-The `assert` statement runs only for development builds and is completely
-stripped from production. This rather useful functionality does by default not
-have an equal in an Ember template. This could be a useful addition especially
-for template-only components, which have no JavaScript backing class. As such
-we'll create this helper and use this as an opportunity to show how to strip
-such an addon completely from production builds.
+The `assert` statement runs only for development builds and is completely stripped from production. This rather useful functionality does by default not have an equal in an Ember template. This could be a useful addition especially for template-only components, which have no JavaScript backing class. As such we'll create this helper and use this as an opportunity to show how to strip such an addon completely from production builds.
 
 ## The `assert` helper
 
-The helper itself is quite minimal, since we only need to wrap the original
-`assert` function provided by Ember in a helper. We can first use ember-cli to
-generate a helper with `ember g helper assert`. In an addon this will generate 3
-files. The file where our implementation will be `/addon/helpers/assert.js`, a
-re-export that will make the helper discoverable by Ember apps
-`/app/helpers/assert.js`, and a test file.
+The helper itself is quite minimal, since we only need to wrap the original `assert` function provided by Ember in a helper. We can first use ember-cli to generate a helper with `ember g helper assert`. In an addon this will generate 3 files. The file where our implementation will be `/addon/helpers/assert.js`, a re-export that will make the helper discoverable by Ember apps `/app/helpers/assert.js`, and a test file.
 
-Note that from Ember 4.5 onwards it is also possible to use plain functions as
-helpers, removing the need to wrap the function in a `helper()` call. For
-backward compatibility reasons, however, we will keep it for now.
+Note that from Ember 4.5 onwards it is also possible to use plain functions as helpers, removing the need to wrap the function in a `helper()` call. For backward compatibility reasons, however, we will keep it for now.
 
 ```javascript
 // addon/helpers/assert.js
@@ -56,11 +40,7 @@ export default helper(function templateAssert([message, condition]) {
 
 ## Testing an assertion
 
-Testing an assertion is slightly tricky, since by default an assertion will
-cause an uncaught error which crashes the app (and tests). In order to prevent
-this from happening we can add a custom `Ember.onerror` hook for our test and
-handle the assertion error there. This will make our test look like the
-following:
+Testing an assertion is slightly tricky, since by default an assertion will cause an uncaught error which crashes the app (and tests). In order to prevent this from happening we can add a custom `Ember.onerror` hook for our test and handle the assertion error there. This will make our test look like the following:
 
 ```javascript
 test("it fails to render when the assertion is falsy", async function (assert) {
@@ -81,24 +61,15 @@ test("it fails to render when the assertion is falsy", async function (assert) {
 
 ## Removing helper invocations from production using an AST-transform
 
-In order to remove helper invocations from consuming app code, we will need to
-add an AST-transform. In our case we'll specifically need to write a transform
-for the `htmlbars-ast-plugin`, which turns `.hbs` template files into an AST.
+In order to remove helper invocations from consuming app code, we will need to add an AST-transform. In our case we'll specifically need to write a transform for the `htmlbars-ast-plugin`, which turns `.hbs` template files into an AST.
 
 ### Writing the AST transform
 
-What we want to do is make sure we remove all calls of
-{% raw %}`{{assert}}`{% endraw %} from the templates in production builds. If we
-do not remove these, apart from shipping unnecessary code, Ember would also
-throw an error after we remove the helper code itself from the build in the next
-step. To figure out what exactly we need to do we can make use of
-[ast-explorer](https://astexplorer.net/#/gist/a62cdfd01800c7c97d67fdffe1ef03ea/ac85caf41c1af25787c5ae4b0d741cbea7fe903c).
+What we want to do is make sure we remove all calls of {% raw %}`{{assert}}`{% endraw %} from the templates in production builds. If we do not remove these, apart from shipping unnecessary code, Ember would also throw an error after we remove the helper code itself from the build in the next step. To figure out what exactly we need to do we can make use of [ast-explorer](https://astexplorer.net/#/gist/a62cdfd01800c7c97d67fdffe1ef03ea/ac85caf41c1af25787c5ae4b0d741cbea7fe903c).
 
 ![Screenshot of ast-explorer example](/assets/images/posts/2023-02-28-ember-template-assert/ast-explorer.png)
 
-Looking at our sample code, we can see that the `assert` shows up as a node of
-type "MustacheStatement" with `path.original` as `assert`. We can use this
-information to write a small visitor statement in the following format:
+Looking at our sample code, we can see that the `assert` shows up as a node of type "MustacheStatement" with `path.original` as `assert`. We can use this information to write a small visitor statement in the following format:
 
 ```javascript
 // /lib/ast-transform.js
@@ -140,16 +111,11 @@ visitor = {
 };
 ```
 
-By returning `null` it will remove all Mustache statements (any template
-statement that has handlebars syntax like {% raw %}`{{...}}`{% endraw %}) with
-the name `assert`. Since we want to remove all assert statements, there's no
-need to look at the arguments that are passed in to the assert helper.
+By returning `null` it will remove all Mustache statements (any template statement that has handlebars syntax like {% raw %}`{{...}}`{% endraw %}) with the name `assert`. Since we want to remove all assert statements, there's no need to look at the arguments that are passed in to the assert helper.
 
 ### Setting up `htmlbars-ast-plugin`
 
-Next we need to hook up our new AST transform tp the build process. To do that
-we need to add some configuration to the addon's `index.js` file to tell
-ember-cli about our new AST transform.
+Next we need to hook up our new AST transform tp the build process. To do that we need to add some configuration to the addon's `index.js` file to tell ember-cli about our new AST transform.
 
 ```javascript
 // /index.js
@@ -186,17 +152,11 @@ module.exports = {
 };
 ```
 
-Note that we only load the plugin in production environments, since we don't
-want to remove {% raw %}`{{assert}}`{% endraw %} from templates in development
-or test environments.
+Note that we only load the plugin in production environments, since we don't want to remove {% raw %}`{{assert}}`{% endraw %} from templates in development or test environments.
 
 ## Removing the helper code itself from production
 
-In order to remove our addon files from production builds, we can rely on a
-plugin for broccoli called `broccoli-funnel`. It will allow us to specify file
-paths that need to be filtered from the addon's file tree. After adding the
-`broccoli-funnel` dependency, we can modify `index.js` again to add the
-following section:
+In order to remove our addon files from production builds, we can rely on a plugin for broccoli called `broccoli-funnel`. It will allow us to specify file paths that need to be filtered from the addon's file tree. After adding the `broccoli-funnel` dependency, we can modify `index.js` again to add the following section:
 
 ```javascript
   treeForAddon(tree) {
@@ -213,19 +173,11 @@ following section:
   }
 ```
 
-Of course, like the AST transform, we only want to remove the helper from the
-build in production environments which we achieve by checking
-`app.isProduction`. We can remove the file from the build by specifying
-`exclude: ['helpers/assert.js']` which matches the file path of the helper
-itself in the addon directory - `addon/helpers/assert.js`.
+Of course, like the AST transform, we only want to remove the helper from the build in production environments which we achieve by checking `app.isProduction`. We can remove the file from the build by specifying `exclude: ['helpers/assert.js']` which matches the file path of the helper itself in the addon directory - `addon/helpers/assert.js`.
 
-However, we also need to remove the helper re-export from the app folder -
-`app/helpers/assert.js`. The very similar hook called `treeForApp` can be used
-for this purpose. It handles everything in the `app` folder of your v1 Ember
-addon.
+However, we also need to remove the helper re-export from the app folder - `app/helpers/assert.js`. The very similar hook called `treeForApp` can be used for this purpose. It handles everything in the `app` folder of your v1 Ember addon.
 
-Let's start with abstracting our existing addon tree filter code a bit to make
-it reusable:
+Let's start with abstracting our existing addon tree filter code a bit to make it reusable:
 
 ```javascript
 _filterAssertHelper(tree) {
@@ -246,8 +198,7 @@ treeForAddon(tree) {
 }
 ```
 
-We now only need to add the following to also filter the re-export
-`app/helpers/assert.js`.
+We now only need to add the following to also filter the re-export `app/helpers/assert.js`.
 
 ```javascript
 treeForApp(tree) {
@@ -255,9 +206,7 @@ treeForApp(tree) {
 }
 ```
 
-To verify that we have done the right thing we can use a package called
-`broccoli-stew`. It provides a log utility that will output the tree it's passed
-to the console.
+To verify that we have done the right thing we can use a package called `broccoli-stew`. It provides a log utility that will output the tree it's passed to the console.
 
 By modifying the `_filterAssertHelper` function as follows:
 
@@ -288,16 +237,8 @@ ember-template-assert addon tree
    └── helpers/assert.js
 ```
 
-If we run the app with `ember s --environment=production` the output should no
-longer show our assert helper, meaning the helper was successfully removed from
-the build.
+If we run the app with `ember s --environment=production` the output should no longer show our assert helper, meaning the helper was successfully removed from the build.
 
 ## Conclusion
 
-While this is a small example where the benefits of removal are limited, one can
-think of more comprehensive debugging tools that benefit from being removed from
-production builds. This will allow you to have useful dev-time tools without the
-fear of increasing bundle size. At the same time we've created a small but
-useful helper for template-only components that can help prevent incorrect usage
-of these components. The final `ember-template-assert` addon can be found here:
-[https://github.com/mainmatter/ember-template-assert](https://github.com/mainmatter/ember-template-assert).
+While this is a small example where the benefits of removal are limited, one can think of more comprehensive debugging tools that benefit from being removed from production builds. This will allow you to have useful dev-time tools without the fear of increasing bundle size. At the same time we've created a small but useful helper for template-only components that can help prevent incorrect usage of these components. The final `ember-template-assert` addon can be found here: [https://github.com/mainmatter/ember-template-assert](https://github.com/mainmatter/ember-template-assert).

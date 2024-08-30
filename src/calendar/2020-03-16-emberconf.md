@@ -6,5 +6,4 @@ url: https://emberconf.com/
 kind: conference
 ---
 
-EmberConf is the main yearly conference around all things Ember.js and the
-Mainmatter team will be present in full force, delivering workshops and talks.
+EmberConf is the main yearly conference around all things Ember.js and the Mainmatter team will be present in full force, delivering workshops and talks.

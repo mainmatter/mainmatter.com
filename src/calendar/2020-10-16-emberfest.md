@@ -6,6 +6,4 @@ url: https://emberfest.eu
 kind: conference
 ---
 
-EmberFest is the European Community Ember Conference. While there will be no
-actual conference in 2020, Chris Manson and Ricardo Mendes will lead a remote
-Ember.js contributor workshop.
+EmberFest is the European Community Ember Conference. While there will be no actual conference in 2020, Chris Manson and Ricardo Mendes will lead a remote Ember.js contributor workshop.

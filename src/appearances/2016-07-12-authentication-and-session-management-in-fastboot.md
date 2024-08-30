@@ -6,5 +6,4 @@ media: video
 channel: embercamp-2016
 ---
 
-Marco Otte-Witte shows how authentication ans session management works in
-FastBoot with cookies.
+Marco Otte-Witte shows how authentication ans session management works in FastBoot with cookies.

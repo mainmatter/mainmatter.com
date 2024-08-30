@@ -6,6 +6,4 @@ media: video
 channel: product-circle
 ---
 
-Marco Otte-Witte shares best practices for digital product development in the
-areas of planning and preparation, process and collaboration, as well as
-infrastructure and practices.
+Marco Otte-Witte shares best practices for digital product development in the areas of planning and preparation, process and collaboration, as well as infrastructure and practices.

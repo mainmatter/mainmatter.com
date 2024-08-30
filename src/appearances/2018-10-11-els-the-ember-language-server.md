@@ -6,5 +6,4 @@ media: video
 channel: emberfest-2018
 ---
 
-Tobias Bieniek gives an update on the status of the Ember Language Server and
-goals for the future.
+Tobias Bieniek gives an update on the status of the Ember Language Server and goals for the future.

@@ -6,5 +6,4 @@ url: https://skillsmatter.com/conferences/11213-fullstack-london-2019-the-confer
 kind: conference
 ---
 
-Jessica Jordan will give a talk about crafting web comics for literally
-everyone.
+Jessica Jordan will give a talk about crafting web comics for literally everyone.
