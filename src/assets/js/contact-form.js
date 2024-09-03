@@ -30,7 +30,7 @@ export class ContactForm {
   }
 
   sendMessage(formData) {
-    const handleError = () => {
+    const handleError = e => {
       this.updateFormState("error", "An error occurred.");
       if (window.location.host === "mainmatter.com") {
         Sentry.addBreadcrumb({
@@ -39,7 +39,7 @@ export class ContactForm {
           level: "info",
           data: formData,
         });
-        Sentry.captureException(new Error("Failed to deliver message via contact form!"));
+        Sentry.captureException(e);
       }
     };
 
@@ -74,12 +74,10 @@ export class ContactForm {
         if (response.ok) {
           this.updateFormState("success", "Message sent successfully.");
         } else {
-          handleError();
+          handleError(new Error("Failed to deliver message via contact form!"));
         }
       })
-      .catch(() => {
-        handleError();
-      });
+      .catch(handleError);
   }
 
   updateFormState(state, screenreaderAnnouncement) {
