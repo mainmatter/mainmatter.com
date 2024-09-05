@@ -563,10 +563,11 @@
     "oscard0m/example-probot-vercel-ts",
     "paoloricciuti/darkmodething",
     "mansona/testing-release-plan",
-    "BlueCutOfficial/site-cv"
+    "BlueCutOfficial/site-cv",
+    "mainmatter/gravity_dummy"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-07-28..2024-08-04",
+  "last_date": "2024-08-25..2024-09-01",
   "query_type": "Merged"
 }
