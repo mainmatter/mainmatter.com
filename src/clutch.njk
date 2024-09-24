@@ -2,6 +2,8 @@
 layout: "base"
 title: "Team up with Mainmatter to go further!"
 description: "We transform bold ideas into shipped products, sharing our skills and expertise with our clients as teammates."
+og:
+  image: "/assets/images/clutch/og-image.jpg"
 ---
 
 {% from "color-hero.njk" import colorHero %}
@@ -129,7 +131,17 @@ description: "We transform bold ideas into shipped products, sharing our skills 
         {{ btnSecondary( link, 'mt-2' ) }}
       </div>
       <div class="split-content__feature">
-        {% image "/assets/images/clutch/reviews.png", "12 reviews on Clutch: 5/5 stars average rating", '(min-width:62em) 15rem, 90vw', 'eager', '', [200] %}
+        <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+        <div
+          class="clutch-widget"
+          data-url="https://widget.clutch.co"
+          data-widget-type="1"
+          data-height="40"
+          data-nofollow="true"
+          data-expandifr="true"
+          data-scale="100"
+          data-clutchcompany-id="850814"
+        ></div>
       </div>
     </div>
   </div>
