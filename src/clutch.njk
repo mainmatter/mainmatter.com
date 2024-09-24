@@ -34,17 +34,48 @@ og:
 %}
 {{ featuredServices(services['services-list-clutch'], content) }}
 {%
-  set logoCompanies = [
-  'Qonto',
-  'Trainline',
-  'Aleph Alpha',
-  'Timify',
-  'Experteer',
-  'Robin Hood',
-  'Rail Europe'
+  set awards = [
+  'ember',
+  'node',
+  'rust',
+  'financial',
+  'logistics',
+  'arts-entertainment',
+  'staff-aug'
   ]
 %}
-{{ logoList(logoCompanies) }}
+{%- macro awardItem(award) -%}
+  {% set imagePath %}/assets/images/clutch/awards/{{ award }}.png{% endset %}
+  <li class="logo-list__item">
+    <div class="logo-list__image clutch-award__image">
+      {% image imagePath, "Clutch award icon", "5rem", "eager" %}
+    </div>
+  </li>
+{%- endmacro -%}
+<style>
+  .clutch-award__image img {
+    height: 12rem;
+    max-height: unset;
+    width: auto;
+  }
+</style>
+<section class="logo-list" id="logo-list">
+  <div class="logo-list__wrapper">
+    <div class="logo-list__inner" data-marquee style="--marquee-logo-count: {{ awards | length }};">
+      <ul class="logo-list__list">
+        {% for award in awards %}
+          {{ awardItem(award) }}
+        {% endfor %}
+      </ul>
+      <ul class="logo-list__list logo-list__list--duplicate" aria-hidden="true">
+        {% for award in awards %}
+          {{ awardItem(award) }}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <button class="logo-list__button" data-marquee-controls>Pause animation</button>
+</section>
 
 <section class="mb-10">
   {%
@@ -131,21 +162,41 @@ og:
         {{ btnSecondary( link, 'mt-2' ) }}
       </div>
       <div class="split-content__feature">
-        <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
-        <div
-          class="clutch-widget"
-          data-url="https://widget.clutch.co"
-          data-widget-type="1"
-          data-height="40"
-          data-nofollow="true"
-          data-expandifr="true"
-          data-scale="100"
-          data-clutchcompany-id="850814"
-        ></div>
+        <div class="secondary-feature">
+          <div class="secondary-feature__image-wrapper">
+            <script
+              type="text/javascript"
+              src="https://widget.clutch.co/static/js/widget.js"
+            ></script>
+            <div
+              class="clutch-widget"
+              data-url="https://widget.clutch.co"
+              data-widget-type="1"
+              data-height="80"
+              data-nofollow="true"
+              data-expandifr="true"
+              data-scale="100"
+              data-clutchcompany-id="850814"
+            ></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+{%
+  set logoCompanies = [
+  'Qonto',
+  'Trainline',
+  'Aleph Alpha',
+  'Timify',
+  'Experteer',
+  'Robin Hood',
+  'Rail Europe'
+  ]
+%}
+{{ logoList(logoCompanies) }}
 
 <section class="mt-15 mb-0">
   {%
