@@ -1,0 +1,13 @@
+---
+title: "ViteConf"
+image: "/assets/images/calendar/2024-10-3-viteconf-24/viteconf-logo.png"
+location: Online
+url: https://viteconf.org/
+kind: conference
+color: purple
+hero:
+  image: "/assets/images/hero/viteconf-24.png"
+  imageAlt: "ViteConf pyramid."
+---
+
+ViteConf 2024 will be held online on October 3rd and 4th. Mainmatter’s Senior Developer, Chris Manson, will be presenting a talk titled “Ember’s Journey to Build with Vite”. This session will cover how Ember.js developers can now use Vite to build their applications, offering a new approach for Ember’s development workflow.
