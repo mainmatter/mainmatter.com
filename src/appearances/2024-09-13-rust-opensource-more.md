@@ -6,4 +6,4 @@ media: video
 channel: rust-linux-inlaws
 ---
 
-Mainmatter’s Founder @marcoow was on the Linux Inlaws podcast to discuss #rustlang, open source, foundations, #eurorust and more
+Mainmatter’s Founder Marco Otte-Witte was on the Linux Inlaws podcast to discuss Rust, open source, foundations, EuroRust and more.
