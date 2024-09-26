@@ -1,6 +1,6 @@
 ---
 title: "Panel discussion at Rust for the Web x BCN Rust"
-image: "/assets/images/talks/2024-09-13-rustweb-barcelona/thumbnail.png"
+image: "/assets/images/talks/2024-09-13-rustweb-barcelona/new-thumbnail.png"
 url: https://youtu.be/3G4DPk5y6iM
 media: video
 channel: rustweb-barcelona
