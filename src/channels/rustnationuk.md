@@ -1,6 +1,6 @@
 ---
 title: "Rust Nation UK 2024"
-image: "/assets/images/talks/2024-03-26-rustnationuk-2024/logo.svg"
+image: "/assets/images/talks/2024-03-26-rustnationuk-2024/new-logo.png"
 url: https://www.rustnationuk.com/
 ---
 

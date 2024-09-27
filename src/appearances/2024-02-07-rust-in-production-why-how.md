@@ -1,6 +1,6 @@
 ---
 title: "Panel - Rust in Production: Why? How?"
-image: "/assets/images/talks/2024-02-07-rustweb-london/thumbnail-panel.jpg"
+image: "/assets/images/talks/2024-02-07-rustweb-london/new-thumbnail.png"
 url: https://youtu.be/ZRBayed8cLw
 media: video
 channel: rustweb-london

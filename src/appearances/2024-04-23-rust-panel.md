@@ -1,6 +1,6 @@
 ---
 title: "Panel discussion at Rust'n'Tell Berlin"
-image: "/assets/images/talks/2024-04-23-rust-web-berlin/thumbnail-panel.jpg"
+image: "/assets/images/talks/2024-04-23-rust-web-berlin/new-thumbnails.png"
 url: https://youtu.be/_D0IS1ftlPc
 media: video
 channel: rustweb-berlin
