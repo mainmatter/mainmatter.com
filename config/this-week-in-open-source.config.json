@@ -272,7 +272,8 @@
         "oscard0m/octoherd-script-add-cache-to-node-github-action",
         "oscard0m/octoherd-script-add-or-delete-issue-label",
         "oscard0m/octoherd-script-sync-repo-settings",
-        "oscard0m/octoherd-script-remove-branches-config-semantic-release"
+        "oscard0m/octoherd-script-remove-branches-config-semantic-release",
+        "octokit/tsconfig"
       ]
     },
     {
@@ -496,6 +497,12 @@
       "repos": [
         "semantic-release/github"
       ]
+    },
+    {
+      "name": "Storyblok",
+      "repos": [
+        "storyblok/richtext"
+      ]
     }
   ],
   "header": [],
@@ -589,6 +596,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-09-08..2024-09-15",
+  "last_date": "2024-09-22..2024-09-29",
   "query_type": "Merged"
 }
