@@ -6,7 +6,7 @@ url: https://www.meetup.com/rust-meetup-hamburg/events/303898286/
 kind: meetup
 color: aqua
 hero:
-  image: "/assets/images/hero/hamburg.jpg"
+  image: "/assets/images/hero/hamburg.png"
   imageAlt: "The view of Hamburg"
 ---
 
