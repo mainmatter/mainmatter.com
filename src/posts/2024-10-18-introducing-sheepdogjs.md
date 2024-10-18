@@ -26,21 +26,21 @@ After spending some time playing around with these two options and deeming them 
 
 ## Introducing Sheepdog
 
-After weeks of work, we are proud to unveil our creation: [Sheepdog](https://sheepdogjs.com/)! A lightweight way to herd your asynchronous tasks.
+After weeks of work, we are proud to unveil our creation: [Sheepdog](https://sheepdog.run/)! A lightweight way to herd your asynchronous tasks.
 
-You can learn all about Sheepdog and how it works in [the docs](https://sheepdogjs.com/getting-started/what-is-it/) so for now, I'll give you a quick rundown of why you'll want to keep it in your Svelte toolbox.
+You can learn all about Sheepdog and how it works in [the docs](https://sheepdog.run/getting-started/what-is-it/) so for now, I'll give you a quick rundown of why you'll want to keep it in your Svelte toolbox.
 
 ### Easily get derived state for your tasks
 
 When a user is interacting with your app, it’s vital that they understand what is currently happening, whether they are waiting for something to load or waiting for a response from an input. Using a Sheepdog task gives you several derived properties out of the box so you can hook it into your UI with ease. Properties like `isRunning` can be used to show the current state of the task, while properties like `lastCanceled`, `lastSuccessful` and `lastErrored` help to give a concise view of exactly what has been returned from previous executions of your task.
 
-You can read more about Tasks [here](https://sheepdogjs.com/getting-started/usage/).
+You can read more about Tasks [here](https://sheepdog.run/getting-started/usage/).
 
 ### Different tasks for different needs
 
-With the default task, you unlock the simplicity I mentioned above, but Sheepdog exposes several task types for all different use-cases. Whether you want to debounce your input using a [Restart task](https://sheepdogjs.com/reference/restart/) or make sure your polling is always up-to-date with a [KeepLatest task](https://sheepdogjs.com/reference/keep-latest/); Sheepdog has you covered.
+With the default task, you unlock the simplicity I mentioned above, but Sheepdog exposes several task types for all different use-cases. Whether you want to debounce your input using a [Restart task](https://sheepdog.run/reference/restart/) or make sure your polling is always up-to-date with a [KeepLatest task](https://sheepdog.run/reference/keep-latest/); Sheepdog has you covered.
 
-You can read about the 5 different types of task [here](https://sheepdogjs.com/explainers/task-modifiers/)
+You can read about the 5 different types of task [here](https://sheepdog.run/explainers/task-modifiers/)
 
 ### Mid-run cancellation
 
@@ -48,7 +48,7 @@ One of the biggest issues with Promises is that it requires a lot of boilerplate
 
 For instance, imagine you have a task that makes multiple API calls based on the return value of each previous API call. Then imagine for some reason you want to cancel that task after it’s started, with standard Promises you would have to set and check a bunch of values between each API call to have some semblance of cancellation. And even then, you can’t be sure which API calls have been initiated. With Sheepdog, we do all the heavy lifting for you, so if you cancel a task mid-run, then it’s cancelled - as soon as the current API call is completed, the task will stop executing.
 
-You can read more about Mid-run cancellation [here](https://sheepdogjs.com/explainers/mid-run-cancellation/)
+You can read more about Mid-run cancellation [here](https://sheepdog.run/explainers/mid-run-cancellation/)
 
 ### No need to clean up after yourself
 
@@ -56,13 +56,13 @@ Sheepdog automatically binds the task to the context it was created in, meaning 
 
 ### Bind tasks together
 
-Sometimes you want one task to be entirely dependant on another, meaning that the child task is cancelled when the parent task is cancelled. Using the [Link function](https://sheepdogjs.com/explainers/linking-tasks/), binding tasks together is as easy as counting sheep.
+Sometimes you want one task to be entirely dependant on another, meaning that the child task is cancelled when the parent task is cancelled. Using the [Link function](https://sheepdog.run/explainers/linking-tasks/), binding tasks together is as easy as counting sheep.
 
 ### Write what you know
 
-Under the hood, Sheepdog will turn all of your tasks into a generator function but with the [Async Transform](https://sheepdogjs.com/explainers/async-transform/), you can keep your async functions and Sheepdog will convert it to a generator function at build time, meaning you don’t have to know how generator functions work to benefit from them.
+Under the hood, Sheepdog will turn all of your tasks into a generator function but with the [Async Transform](https://sheepdog.run/explainers/async-transform/), you can keep your async functions and Sheepdog will convert it to a generator function at build time, meaning you don’t have to know how generator functions work to benefit from them.
 
-You can read more about the Async Transform [here](https://sheepdogjs.com/explainers/async-transform/)
+You can read more about the Async Transform [here](https://sheepdog.run/explainers/async-transform/)
 
 ## Branching out
 
