@@ -109,6 +109,14 @@ og:
   }
 %}
 {%
+  set 'workshop_12' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Progressive Enhancement with SvelteKit",
+  "logo": "svelte",
+  "link": "services/workshops/progressive-enhancement-with-sveltekit/"
+  }
+%}
+{%
   set workshops = [
   workshop_1,
   workshop_2,
@@ -120,7 +128,8 @@ og:
   workshop_8,
   workshop_9,
   workshop_10,
-  workshop_11
+  workshop_11,
+  workshop_12
   ]
 %}
 {{ techCards('workshops', 'Workshops Catalog', 'We offer a range of workshops bookable for teams that want to grow – on-site or remote. We\'re also happy to prepare custom workshops – <a href="/contact/">get in touch with us</a> to talk about what curriculum fits your team best!', workshops) }}
