@@ -100,8 +100,8 @@ importers:
         specifier: 3.2.5
         version: 3.2.5
       prettier-plugin-jinja-template:
-        specifier: ^1.3.3
-        version: 1.4.1(prettier@3.2.5)
+        specifier: ^2.0.0
+        version: 2.0.0(prettier@3.2.5)
       replace-in-file:
         specifier: ^7.0.0
         version: 7.2.0
@@ -2666,8 +2666,8 @@ packages:
     resolution: {integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==}
     engines: {node: '>=6.0.0'}
 
-  prettier-plugin-jinja-template@1.4.1:
-    resolution: {integrity: sha512-YHDa/f9BpEDIYIPKsnmoKQudWszXBPaVifjR7X+W2n/uAzWLXV/j9FEvua3np7gkzSEOFyapJQrCS4YhhbhbdA==}
+  prettier-plugin-jinja-template@2.0.0:
+    resolution: {integrity: sha512-REZDAcZuOUvMDaPS47/GNRLKvbxh9DO9euXhWA7gJGqTLGzHPK2Z841F8I4bxsR7e2lqnHezkQ8GcWaKekKBVQ==}
     peerDependencies:
       prettier: ^3.0.0
 
@@ -6336,7 +6336,7 @@ snapshots:
     dependencies:
       fast-diff: 1.3.0
 
-  prettier-plugin-jinja-template@1.4.1(prettier@3.2.5):
+  prettier-plugin-jinja-template@2.0.0(prettier@3.2.5):
     dependencies:
       prettier: 3.2.5
 
