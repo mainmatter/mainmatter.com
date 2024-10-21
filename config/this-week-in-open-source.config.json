@@ -470,7 +470,8 @@
         "ember-cli/babel-plugin-debug-macros",
         "adopted-ember-addons/ember-sortable",
         "elwayman02/ember-resize-modifier",
-        "ember-codemods/tagless-ember-components-codemod"
+        "ember-codemods/tagless-ember-components-codemod",
+        "adopted-ember-addons/ember-paper"
       ]
     },
     {
