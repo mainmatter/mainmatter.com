@@ -5,7 +5,7 @@ tags: ["svelte"]
 bio: "Daniel Beer"
 description: "Daniel Beer introduces Sheepdog, the newest way to handle asynchronous tasks in your Svelte app"
 og:
-  image: ""
+  image: "/assets/images/posts/2024-10-18-introducing-sheepdogjs/og-image.png"
 tagline: |
   <p>
     Sometimes handling async tasks can feel like trying to herd sheep. With Sheepdog, you'll have an expert to help you keep your async flock in order.
