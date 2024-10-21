@@ -22,7 +22,9 @@
         "rust-lang/www.rust-lang.org",
         "dimforge/rapier.rs",
         "marcoow/pacesetter",
-        "mainmatter/cargo-autoinherit"
+        "mainmatter/cargo-autoinherit",
+        "mainmatter/100-exercises-to-learn-rust",
+        "mainmatter/gerust"
       ]
     },
     {
@@ -88,7 +90,8 @@
         "sveltejs/language-tools",
         "svecosystem/runed",
         "mainmatter/sheepdog",
-        "paoloricciuti/optimistikit"
+        "paoloricciuti/optimistikit",
+        "animotionjs/animotion"
       ]
     },
     {
@@ -205,7 +208,9 @@
         "adopted-ember-addons/ember-drag-drop",
         "tleunen/babel-plugin-module-resolver",
         "snewcomer/intersection-observer-admin",
-        "mansona/auto-reveal-theme-mainmatter"
+        "mansona/auto-reveal-theme-mainmatter",
+        "formatjs/formatjs",
+        "vitejs/vite"
       ]
     },
     {
@@ -464,7 +469,9 @@
         "ember-cli/ember-cli-deprecation-workflow",
         "ember-cli/babel-plugin-debug-macros",
         "adopted-ember-addons/ember-sortable",
-        "elwayman02/ember-resize-modifier"
+        "elwayman02/ember-resize-modifier",
+        "ember-codemods/tagless-ember-components-codemod",
+        "adopted-ember-addons/ember-paper"
       ]
     },
     {
@@ -568,6 +575,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "",
+  "last_date": "2024-09-29..2024-10-06",
   "query_type": "Merged"
 }
