@@ -117,6 +117,14 @@ og:
   }
 %}
 {%
+  set 'workshop_13' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Testing Svelte & SvelteKit applications",
+  "logo": "svelte",
+  "link": "services/workshops/testing-svelte-sveltekit-applications/"
+  }
+%}
+{%
   set workshops = [
   workshop_1,
   workshop_2,
@@ -129,7 +137,8 @@ og:
   workshop_9,
   workshop_10,
   workshop_11,
-  workshop_12
+  workshop_12,
+  workshop_13
   ]
 %}
 {{ techCards('workshops', 'Workshops Catalog', 'We offer a range of workshops bookable for teams that want to grow – on-site or remote. We\'re also happy to prepare custom workshops – <a href="/contact/">get in touch with us</a> to talk about what curriculum fits your team best!', workshops) }}
