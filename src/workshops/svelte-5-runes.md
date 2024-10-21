@@ -16,33 +16,41 @@ topics:
     text: >
       We'll start with reviewing the differences between Svelte 4 and 5 before looking into the main changes in more detail.
 
+
   - title: The `$state` rune
     text: >
       The `$state` rune is at the core of Svelte 5's runes system so we start with that. We'll cover it's core behavior and implement some examples together.
+
 
   - title: The `$derived` rune
     text: >
       The `$derived` rune replaces Svelte's `$:` syntax. We'll look into how the rune works, subtle differences to `$:`, as well as how to migrate to it for typical scenarios.
 
+
   - title: The `$effect` rune
     text: >
       Next, we move to the `$effect` rune. Like for the `$state` rune, we'll implement some examples and talk about typical use cases.
+
 
   - title: The `$props` rune
     text: >
       The `$props` rune replaces a number of previous concepts around declaring, and receiving properties in components. We'll look into how the rune works as well as how to migrate to it for typical scenarios.
 
+
   - title: Introduction to JavaScript signals
     text: >
       Once we covered runes, we'll briefly look into JavaScript's upcoming [signals primitive](https://github.com/tc39/proposal-signals) which runes are based on. We'll cover the fundamentals of signals and how they might eventually establish a cross-framework reactivity primitive.
+
 
   - title: From Slots to Snippets
     text: >
       Snippets are a new concept in Svelte 5 that replace slots which are less powerful and flexible. We'll look into how snippets work, what new patterns they enable, and how to migrate from slots to snippets.
 
+
   - title: Automating the Migration
     text: >
       At least parts of the migration from Svelte 4 to 5 can be automated. We'll look into how that works, what to be aware of, and how to resolve situations where automatic migration fails.
+
 
 leads:
   - name: Paolo Ricciuti

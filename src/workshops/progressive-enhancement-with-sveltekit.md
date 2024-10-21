@@ -16,29 +16,36 @@ topics:
     text: >
       We'll start by looking into what progressive enhancement is and why it's relevant. We'll look at network speeds and typical latency numbers, as well as at JavaScript bundle sizes, and their impact on load times.
 
+
   - title: Forms in SvelteKit
     text: >
       One of SvelteKit's main mechanisms for supporting progressive enhancment are forms and form actions that can run in Node on the server side. We'll look at data flows, how forms can be enhanced to be handled on the clients side, and a bit at the underlying magic that makes that process seamless for the developer.
+
 
   - title: "Example: Autocomplete"
     text: >
       We'll build a simple autocomplete component that works with and without JavaScript.
 
+
   - title: "Example: Search"
     text: >
       Next, we'll build a search UI that works with and without JavaScript.
+
 
   - title: "Testing"
     text: >
       Building progressively enhanced applications requires testing two scenarios for all flows: one with and one without JavaScript. We'll cover the topic by writing Playwright tests for the previously implemented examples.
 
+
   - title: CSS & Progressive Enhancement
     text: >
       Some elements of user interfaces can be made functional with CSS alone. We'll look at typical scenarios where that approach works and how UI state can be kept in sync with our Svelte application.
 
+
   - title: "Example: Dialog with inline JavaScript"
     text: >
       Finally, we'll build a dialog with a tiny snipped of inline JavaScript that works without the entirety of the Svelte application having started.
+
 
 leads:
   - name: Paolo Ricciuti
