@@ -2,7 +2,7 @@
 title: "Ember Europe Q4 Meetup"
 image: "/assets/images/calendar/2024-11-19-embereuropeq4-remote/logo.png"
 location: Remote
-url: https://www.meetup.com/ember-europe/
+url: https://www.meetup.com/ember-europe/events/301437560/
 kind: meetup
 color: purple
 hero:
