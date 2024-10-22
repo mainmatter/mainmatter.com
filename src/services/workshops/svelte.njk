@@ -55,7 +55,15 @@ description: "We provide a number of workshops to enable teams to succeed with S
   "link": "services/workshops/svelte-5-runes/"
   }
 %}
-{% set workshops = [workshop_1, workshop_2, workshop_3, workshop_4] %}
+{%
+  set 'workshop_5' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Authentication for Svelte & SvelteKit",
+  "logo": "svelte",
+  "link": "services/workshops/authentication-for-svelte-sveltekit/"
+  }
+%}
+{% set workshops = [workshop_1, workshop_2, workshop_3, workshop_4, workshop_5] %}
 {{
   workshopsList('Our training offering', "We are Svelte experts and want others to get the most of it as well. That's why we provide a range of trainings on Svelte and SvelteKit.
   We can get teams up to speed with Svelte from scratch,
