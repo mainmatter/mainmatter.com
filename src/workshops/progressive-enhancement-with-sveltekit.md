@@ -24,7 +24,7 @@ topics:
 
   - title: "Example: Autocomplete"
     text: >
-      We'll build a simple autocomplete component that works with and without JavaScript.
+      We'll build am input component that starts off as a simple text field without JavaScript and is progressively enhanced into an auto-complete input with JavaScript.
 
 
   - title: "Example: Search"
