@@ -78,6 +78,15 @@ layout: "base"
 
   {%
     set 'content' = {
+    "title": "Book this workshop",
+    "text": "Our mentors look forward to working with your team and unlocking new capabilities.",
+    "linkUrl": "/contact",
+    "linkText": "Get in touch"
+    }
+  %}
+  {{ ctaBanner('purple', 'default', content) }}
+  {%
+    set 'content' = {
     "title": "Not the right workshop for you?",
     "text": "Take a look at our wide range of workshops to take your team to the next level",
     "linkUrl": "/services/workshops/",
@@ -86,13 +95,4 @@ layout: "base"
   %}
   {{ ctaBanner('aqua', 'default', content) }}
   {{ newsletterCta(tags) }}
-  {%
-    set 'content' = {
-    "title": "Book this workshop",
-    "text": "Our mentors look forward to working with your team and unlocking new capabilities.",
-    "linkUrl": "/contact",
-    "linkText": "Get in touch"
-    }
-  %}
-  {{ ctaBanner('purple', 'full', content) }}
 {%- endblock -%}
