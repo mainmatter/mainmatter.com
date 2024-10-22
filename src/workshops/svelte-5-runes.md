@@ -17,29 +17,29 @@ topics:
       We'll start with reviewing the differences between Svelte 4 and 5 before looking into the main changes in more detail.
 
 
-  - title: The `$state` rune
+  - title: The <code>$state</code> rune
     text: >
-      The `$state` rune is at the core of Svelte 5's runes system so we start with that. We'll cover it's core behavior and implement some examples together.
+      The <code>$state</code> rune is at the core of Svelte 5's runes system so we start with that. We'll cover it's core behavior and implement some examples together.
 
 
-  - title: The `$derived` rune
+  - title: The <code>$derived</code> rune
     text: >
-      The `$derived` rune replaces Svelte's `$:` syntax. We'll look into how the rune works, subtle differences to `$:`, as well as how to migrate to it for typical scenarios.
+      The <code>$derived</code> rune replaces Svelte's <code>$:</code> syntax. We'll look into how the rune works, subtle differences to <code>$:</code>, as well as how to migrate to it for typical scenarios.
 
 
-  - title: The `$effect` rune
+  - title: The <code>$effect</code> rune
     text: >
-      Next, we move to the `$effect` rune. Like for the `$state` rune, we'll implement some examples and talk about typical use cases.
+      Next, we move to the <code>$effect</code> rune. Like for the <code>$state</code> rune, we'll implement some examples and talk about typical use cases.
 
 
-  - title: The `$props` rune
+  - title: The <code>$props</code> rune
     text: >
-      The `$props` rune replaces a number of previous concepts around declaring, and receiving properties in components. We'll look into how the rune works as well as how to migrate to it for typical scenarios.
+      The <code>$props</code> rune replaces a number of previous concepts around declaring, and receiving properties in components. We'll look into how the rune works as well as how to migrate to it for typical scenarios.
 
 
   - title: Introduction to JavaScript signals
     text: >
-      Once we covered runes, we'll briefly look into JavaScript's upcoming [signals primitive](https://github.com/tc39/proposal-signals) which runes are based on. We'll cover the fundamentals of signals and how they might eventually establish a cross-framework reactivity primitive.
+      Once we covered runes, we'll briefly look into JavaScript's upcoming <a href="https://github.com/tc39/proposal-signals">signals primitive</a> which runes are based on. We'll cover the fundamentals of signals and how they might eventually establish a cross-framework reactivity primitive.
 
 
   - title: From Slots to Snippets
