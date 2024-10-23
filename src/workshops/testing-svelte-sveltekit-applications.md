@@ -9,8 +9,7 @@ hero:
   image: "/assets/images/workshops/testing-svelte-sveltekit-applications/classroom.jpg"
   imageAlt: "Photo of a classroom with benches facing a blackboard"
 og:
-  # TODO: fix og-image
-  image: /assets/images/workshops/telemetry-for-rust-apis/og-image.jpg
+  image: /assets/images/workshops/testing-svelte-sveltekit-applications/og-image.jpg
 topics:
   - title: The Testing Pyramid
     text: >

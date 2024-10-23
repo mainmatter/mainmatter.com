@@ -9,8 +9,7 @@ hero:
   image: "/assets/images/workshops/svelte-5-runes/runes.jpg"
   imageAlt: "A bunch of white stones with yellow runes written on them lying on a grey surface"
 og:
-  # TODO: fix og-image
-  image: /assets/images/workshops/telemetry-for-rust-apis/og-image.jpg
+  image: /assets/images/workshops/svelte-5-runes/og-image.jpg
 topics:
   - title: From Svelte 4 to 5
     text: >

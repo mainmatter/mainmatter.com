@@ -9,8 +9,7 @@ hero:
   image: "/assets/images/workshops/authentication-for-svelte-sveltekit/lock.jpg"
   imageAlt: "Close-up photo of a lock attached to a metal fence"
 og:
-  # TODO: fix og-image
-  image: /assets/images/workshops/telemetry-for-rust-apis/og-image.jpg
+  image: /assets/images/workshops/authentication-for-svelte-sveltekit/og-image.jpg
 topics:
   - title: The Basics of Authentication
     text: >
