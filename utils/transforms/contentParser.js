@@ -70,7 +70,12 @@ module.exports = function (value, outputPath) {
     if (links.length) {
       links.forEach(link => {
         const href = link.getAttribute("href");
-        if (href && href.charAt(0) !== "/" && href.charAt(0) !== "#" && href.indexOf(config.url) < 0) {
+        if (
+          href &&
+          href.charAt(0) !== "/" &&
+          href.charAt(0) !== "#" &&
+          href.indexOf(config.url) < 0
+        ) {
           link.setAttribute("target", "_blank");
           link.setAttribute("rel", "nofollow noopener");
           link.setAttribute("aria-describedby", "external-new-window-message");
