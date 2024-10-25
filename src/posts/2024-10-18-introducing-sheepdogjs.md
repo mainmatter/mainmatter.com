@@ -17,10 +17,10 @@ imageAlt: ""
 
 ## The motivation
 
-Coming from an EmberJS background, one of the utilities I immediately missed in the Svelte ecosystem was a way to handle concurrency the way that [ember-concurrency](https://ember-concurrency.com/) does so well. Assuming this must have been a path that had already been trodden by other bright minds, our team took to google to see what was already out there we found two options that could be interesting:
+Coming from an EmberJS background, one of the utilities I immediately missed in the Svelte ecosystem was a way to handle concurrency the way that [ember-concurrency](https://ember-concurrency.com/) does so well. Assuming this must have been a path that had already been trodden by other bright minds, our team took to Google to see what was already out there. We found two options that could be interesting:
 
 - [svelte-concurrency](https://github.com/machty/svelte-concurrency) - made by the creator of ember-concurrency but unfortunately hasn’t been touched in 5 years
-- [effection](https://github.com/thefrontside/effection) - a powerful framework agnostic currency library but this felt a bit too heavy for what we wanted to do, ideally we’d have something a bit more svelte (geddit)
+- [effection](https://github.com/thefrontside/effection) - a powerful framework agnostic concurrency library, but it felt a bit too heavy for what we wanted to do. Ideally we’d have something a bit more svelte (geddit)
 
 After spending some time playing around with these two options and deeming them as unsuitable for our use-case, a small team lead by our Svelte expert [Paolo Ricciuti](https://x.com/paoloricciuti) (co-creator of [SvelteLab](https://www.sveltelab.dev/) and Svelte ambassador and maintainer) set out to create a lightweight package that could handle concurrency in Svelte applications.
 
@@ -73,7 +73,7 @@ You can read more about Tasks [here](https://sheepdog.run/getting-started/usage/
 
 With the default task, you unlock the simplicity I mentioned above, but Sheepdog exposes several task types for all different use-cases. Whether you want to debounce your input using a [Restart task](https://sheepdog.run/reference/restart/) or make sure your polling is always up-to-date with a [KeepLatest task](https://sheepdog.run/reference/keep-latest/); Sheepdog has you covered.
 
-You can read about the 5 different types of task [here](https://sheepdog.run/explainers/task-modifiers/)
+You can read about the 5 different types of task [here](https://sheepdog.run/explainers/task-modifiers/).
 
 ### Mid-run cancellation
 
@@ -81,7 +81,7 @@ One of the biggest issues with Promises is that they require a lot of boilerplat
 
 For instance, imagine you have a task that makes multiple API calls based on the return value of each previous API call. Then imagine for some reason you want to cancel that task after it’s started, with standard Promises you would have to set and check a bunch of values between each API call to have some semblance of cancellation. And even then, you can’t be sure which API calls have been initiated. With Sheepdog, we do all the heavy lifting for you, so if you cancel a task mid-run, then it’s cancelled - as soon as the current API call is completed, the task will stop executing.
 
-You can read more about Mid-run cancellation [here](https://sheepdog.run/explainers/mid-run-cancellation/)
+You can read more about Mid-run cancellation [here](https://sheepdog.run/explainers/mid-run-cancellation/).
 
 ### No need to clean up after yourself
 
@@ -165,7 +165,7 @@ The output of the Async Transform would be:
 
 As you can see, the Async Transform has only touched the single property that was wrapped in the imported `task`, and even then, we touch your code the minimum amount possible to give you all the benefits of Sheepdog.
 
-You can read more about the Async Transform [here](https://sheepdog.run/explainers/async-transform/)
+You can read more about the Async Transform [here](https://sheepdog.run/explainers/async-transform/).
 
 ## Branching out
 
