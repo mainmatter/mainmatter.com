@@ -77,7 +77,7 @@ You can read about the 5 different types of task [here](https://sheepdog.run/exp
 
 ### Mid-run cancellation
 
-One of the biggest issues with Promises is that they require a lot of boilerplate to have any kind of mid-run cancellation. With Sheepdog, you immediately get that out of the box (when using the [Async Transform](#write-what-you-know), without the Async Transform you will need to use generator functions).
+One of the biggest issues with Promises is that they require a lot of boilerplate to have any kind of mid-run cancellation. With Sheepdog, you immediately get that out of the box (when using the [Async Transform](https://sheepdog.run/explainers/async-transform/), without the Async Transform you will need to use generator functions).
 
 For instance, imagine you have a task that makes multiple API calls based on the return value of each previous API call. Then imagine for some reason you want to cancel that task after it’s started, with standard Promises you would have to set and check a bunch of values between each API call to have some semblance of cancellation. And even then, you can’t be sure which API calls have been initiated. With Sheepdog, we do all the heavy lifting for you, so if you cancel a task mid-run, then it’s cancelled - as soon as the current API call is completed, the task will stop executing.
 
