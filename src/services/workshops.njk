@@ -109,6 +109,38 @@ og:
   }
 %}
 {%
+  set 'workshop_12' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Progressive Enhancement with SvelteKit",
+  "logo": "svelte",
+  "link": "services/workshops/progressive-enhancement-with-sveltekit/"
+  }
+%}
+{%
+  set 'workshop_13' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Testing Svelte & SvelteKit applications",
+  "logo": "svelte",
+  "link": "services/workshops/testing-svelte-sveltekit-applications/"
+  }
+%}
+{%
+  set 'workshop_14' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Svelte 5 & Runes",
+  "logo": "svelte",
+  "link": "services/workshops/svelte-5-runes/"
+  }
+%}
+{%
+  set 'workshop_15' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Authentication for Svelte & SvelteKit",
+  "logo": "svelte",
+  "link": "services/workshops/authentication-for-svelte-sveltekit/"
+  }
+%}
+{%
   set workshops = [
   workshop_1,
   workshop_2,
@@ -120,14 +152,18 @@ og:
   workshop_8,
   workshop_9,
   workshop_10,
-  workshop_11
+  workshop_11,
+  workshop_12,
+  workshop_13,
+  workshop_14,
+  workshop_15
   ]
 %}
 {{ techCards('workshops', 'Workshops Catalog', 'We offer a range of workshops bookable for teams that want to grow – on-site or remote. We\'re also happy to prepare custom workshops – <a href="/contact/">get in touch with us</a> to talk about what curriculum fits your team best!', workshops) }}
 {%
   set 'content' = {
-  "title": "Not the right workshop for you?",
-  "text": "If you decide to organise a workshop at your company, we are happy to tailor the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as develop new content if desired.",
+  "title": "Can't find the right workshops for your team?",
+  "text": "We are happy to tailor the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as develop new content if desired.",
   "linkUrl": "/contact",
   "linkText": "Get in touch"
   }

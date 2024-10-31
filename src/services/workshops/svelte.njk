@@ -1,0 +1,147 @@
+---
+layout: "base"
+title: Svelte Workshops | Our Services
+description: "We provide a number of workshops to enable teams to succeed with Svelte and SvelteKit – onsite or remote"
+og:
+  image: "/assets/images/workshops/svelte-workshops-og-image.jpg"
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "tech-cards.njk" import techCards %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "public-workshops.njk" import publicWorkshops %}
+{% from "btn-secondary.njk" import btnSecondary %}
+{% from "featured-services.njk" import featuredServices %}
+{% from "logo-list.njk" import logoList %}
+{% from "workshops-list.njk" import workshopsList %}
+{% from "secondary-feature.njk" import secondaryFeature %}
+{%
+  set 'content' = {
+  "title": "We teach teams like yours how to succeed with Svelte and SvelteKit",
+  "image": "/assets/images/hero/table-soccer.jpg",
+  "alt": "A close-up photo of the figures on a table soccer table",
+  "loading": "eager"
+  }
+%}
+{{ colorHero('purple', content) }}
+{%
+  set 'workshop_1' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Svelte & SvelteKit",
+  "logo": "svelte",
+  "link": "services/workshops/svelte-and-sveltekit/"
+  }
+%}
+{%
+  set 'workshop_2' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Progressive Enhancement with SvelteKit",
+  "logo": "svelte",
+  "link": "services/workshops/progressive-enhancement-with-sveltekit/"
+  }
+%}
+{%
+  set 'workshop_3' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Testing Svelte & SvelteKit applications",
+  "logo": "svelte",
+  "link": "services/workshops/testing-svelte-sveltekit-applications/"
+  }
+%}
+{%
+  set 'workshop_4' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Svelte 5 & Runes",
+  "logo": "svelte",
+  "link": "services/workshops/svelte-5-runes/"
+  }
+%}
+{%
+  set 'workshop_5' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Authentication for Svelte & SvelteKit",
+  "logo": "svelte",
+  "link": "services/workshops/authentication-for-svelte-sveltekit/"
+  }
+%}
+{% set workshops = [workshop_1, workshop_2, workshop_3, workshop_4, workshop_5] %}
+{{
+  workshopsList('Our training offering', "We are Svelte experts and want others to get the most of it as well. That's why we provide a range of trainings on Svelte and SvelteKit.
+  We can get teams up to speed with Svelte from scratch,
+  or help them tackle a range of specific topics.", workshops)
+}}
+
+<section class="my-10">
+  <div class="container container--lg">
+    <div class="mb-4">
+      <h3 class="mb-2">Our methodology</h3>
+      <p class="body">
+        All our workshops are hands-on. We believe that the best way to learn is by doing. Our
+        trainers introduce concepts and patterns but attendees spend the majority of their time
+        during the workshops writing code, and applying those concepts in practical examples. This
+        structure allows our trainers to spend most of their time in 1:1 conversations with
+        attendees, providing tailored feedback and guidance.
+      </p>
+    </div>
+    <div class="mb-4">
+      <h3 class="mb-2">Logistics</h3>
+      <p class="body">
+        All our workshops can be held in-person or remotely. If you decide to organise a workshop at
+        your company, we are happy to tailor the curriculum to your needs. We can combine multiple
+        workshops, pick and choose modules, as well as develop new content if desired.<br />
+        <a href="/contact/">Get in touch with us</a>
+        to discuss further!
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="my-10 container container--lg">
+  <div class="">
+    <div class="mb-4">
+      <h5 class="mb-015">Svelte & Mainmatter</h5>
+      <h3 class="mb-2">A unique skillset</h3>
+      <p>
+        We’re frontend experts – our team speaks at international events, is
+        <a href="/this-week-in-open-source/"
+          >actively contributing to a number of open source projects</a
+        >
+        and our Svelte expert Paolo Ricciuti is a Svelte maintainer and the co-author of
+        <a href="https://www.sveltelab.dev/">SvelteLab</a>.
+      </p>
+      <p>
+        Mainmatter has been developing big web apps and mentored international teams around backend,
+        frontend, design, as well as process and developer infrastructure for years. We know what it
+        takes to connect everything together and deliver a delightful end-to-end experience.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="my-10 container container--lg">
+  <div class="split-content no-link">
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h2 class="split-content__subheading">Your mentor</h2>
+        <p>
+          Paolo Ricciuti is a huge nerd and Svelte maintainer. He's also one of the creators of
+          <a href="https://sveltelab.dev">sveltelab.dev</a> - a REPL for SvelteKit.
+        </p>
+      </div>
+      <div class="split-content__feature">
+        {%
+          set 'content' = {
+          "image": "/assets/images/authors/paoloricciuti.jpg",
+          "alt": "Paolo Ricciuti",
+          "loading": "lazy"
+          }
+        %}
+        {{ secondaryFeature(content, 'split-content__author') }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "global/svelte-cta.njk" %}
+{% include "global/svelte-newsletter-cta.njk" %}

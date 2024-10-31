@@ -4,7 +4,7 @@ title: Enable your team to succeed with Svelte
 description: Mainmatter enables teams to succedd with Svelte and build ambitious web apps that are fast and maintainable.
 permalink: /svelte-consulting/
 og:
-  image: /assets/images/svelte/lp-svelte-consulting-og-image.jpg
+  image: /assets/images/svelte/lp-svelte-consulting-og-image.png
 ---
 
 {% from "image-banner-with-text.njk" import imageBannerWithText %}
@@ -39,7 +39,7 @@ og:
         <a href="/this-week-in-open-source/"
           >actively contributing to a number of open source projects</a
         >
-        and our Svelte expert Paolo Ricciuti is a Svelte ambassador and the co-author of
+        and our Svelte expert Paolo Ricciuti is a Svelte maintainer and the co-author of
         <a href="https://www.sveltelab.dev/">SvelteLab</a>.
       </p>
       <p>
@@ -136,7 +136,7 @@ og:
       {%
         set link = {
         "label": 'Check out our workshops!',
-        "url": '/services/workshops/svelte-and-sveltekit/'
+        "url": '/services/workshops/svelte/'
         }
       %}
       {{ btnSecondary( link, 'mt-2 plausible-event-name=Svelte+Workshops' ) }}
@@ -194,6 +194,22 @@ og:
             set link = {
             "label": 'View on GitHub',
             "url": 'http://github.com/mainmatter/svelte-promise-modals'
+            }
+          %}
+          {{ btnSecondary( link, 'mt-2' ) }}
+        </div>
+      </li>
+      <li class="opensource-list__project">
+        <div class="opensource-list__project-image">
+          <img src="/assets/images/svelte/sheepdog.svg" alt="Sheepdog" />
+        </div>
+        <div class="opensource-list__project-text">
+          <h4 class="mb-015">@sheepdog/svelte</h4>
+          <p>Herd your async tasks!</p>
+          {%
+            set link = {
+            "label": 'View on GitHub',
+            "url": 'https://github.com/mainmatter/sheepdog'
             }
           %}
           {{ btnSecondary( link, 'mt-2' ) }}
