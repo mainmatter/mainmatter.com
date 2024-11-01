@@ -10,8 +10,8 @@ description: |
   <p>The workshop is organised as a series of exercises. You'll be learning by
   doing! Each concept will be introduced with a short presentation, followed
   by a hands-on exercise with tests to make sure you've wrapped your head
-  around it.<br>
-  By the end of the workshop, you'll have built a small command-line
+  around it.</p>
+  <p>By the end of the workshop, you'll have built a small command-line
   application in Rust: a simple JIRA clone that can be used to manage a
   backlog of tasks.</p>
   <p>The workshop is designed for developers who have experience using other programming languages 

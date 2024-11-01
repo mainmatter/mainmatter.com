@@ -28,7 +28,7 @@ layout: "base"
         {% if tagline %}
           {{ tagline | safe }}
         {% else %}
-          <p>{{ description | safe }}</p>
+          {{ description | safe }}
         {% endif %}
       </div>
     </div>
