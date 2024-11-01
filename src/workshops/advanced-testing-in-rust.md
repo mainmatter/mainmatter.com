@@ -3,7 +3,8 @@ title: "Testing in Rust: going beyond the basics"
 tags: "rust"
 format: "Workshop: 1 day"
 subtext: "Bookable for teams – on-site or remote"
-description: |
+description: The workshop is designed for software developers who have a good understanding of Rust's basic concepts and want to move beyond the built-in testing toolkit.
+introduction: |
   <p>No application is an island: you need to interact with third-party APIs, databases and who knows what else. 
   Testing those interactions is tricky, to say the least! 
   This workshop will focus on expanding your Rust testing toolkit, going beyond the basic techniques 

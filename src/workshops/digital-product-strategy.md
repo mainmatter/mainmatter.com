@@ -3,7 +3,7 @@ title: Digital product strategy workshop
 tags: "strategy"
 format: "Collaborative Workshop: 1–2 days"
 subtext: "Bookable on request – on-site or remote"
-description: In this workshop we will collaborate to formulate a clear product vision, establishing a blueprint for your digital product's development process. This workshop is a great kickoff for an MVP project. Before starting out, we will gain an overview of your business. Understanding the fundamentals such as your business model, competitor analysis, and users is an essential first step for this strategy workshop.
+description: <p>In this workshop we will collaborate to formulate a clear product vision, establishing a blueprint for your digital product's development process. This workshop is a great kickoff for an MVP project. Before starting out, we will gain an overview of your business. Understanding the fundamentals such as your business model, competitor analysis, and users is an essential first step for this strategy workshop.</p>
 hero:
   color: purple
   image: "/assets/images/workshops/digital-product-strategy/digital-product-strategy-workshop-hero.jpg"
