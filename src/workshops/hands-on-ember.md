@@ -1,9 +1,9 @@
 ---
-title: Hands-on Ember.js
+title: "Workshop: Hands-on Ember.js"
 tags: "ember"
 format: "Workshop: 2-3 days"
 subtext: "Bookable for teams – on-site or remote"
-description: We go through a series of stages that each build on one another. Each topic is introduced via an in-depth presentation as well as a small, focussed demo application that illustrates the respective concept in practice.
+description: A 2-3 days workshop in which we go through a series of stages that each build on one another. Each topic is introduced via an in-depth presentation as well as a small, focussed demo application that illustrates the respective concept in practice.
 introduction:
   <p>We go through a series of stages that each build on one another. Each topic is introduced via an in-depth presentation as well as a small, focussed demo application that illustrates the respective concept in practice. Over the course of the workshop we take participants through building a full Ember application step by step so each topic can be applied hands-on with the support of our tutors. Depending on each team's needs and previous experience, we will cover each topic in varying depth. We are also happy to customize workshops for the specific needs of a team and cover topics like performance, debugging, upgrading from older versions of Ember, or any topics particular to a team's application.</p>
 

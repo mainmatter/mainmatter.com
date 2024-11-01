@@ -1,9 +1,9 @@
 ---
-title: Effective Git
+title: "Workshop: Effective Git"
 tags: "git"
 format: "Workshop: 1 day"
 subtext: "Bookable for teams – on-site or remote"
-description: Git is at the center of modern pull request-based development workflows. Mastering it makes teams more productive and developers' jobs more enjoyable.
+description: 1-day workshop – Git is at the center of modern pull request-based development workflows. Mastering it makes teams more productive and developers' jobs more enjoyable.
 introduction: <p>Git is at the center of modern pull request-based development workflows. Mastering it makes teams more productive and developers' jobs more enjoyable.</p><p>The goal of the workshop is to provide just enough detail for practical daily use without getting too academic or deep in the weeds. We focus on real challenges developers face when working with Git, arming them with an understanding of the foundational concepts along with practical guidance for overcoming those challenges.</p>
 hero:
   color: purple

@@ -1,13 +1,13 @@
 ---
-title: Svelte & SvelteKit
+title: "Workshop: Svelte & SvelteKit"
 tags: "svelte"
 format: "Workshop: 2-3 days"
 subtext: "Bookable for teams – on-site or remote"
-description: This workshops takes participants through the entire process of building a complete, real-world application and teaches the theoretical concepts along the way. Each topic is introduced via an in-depth presentation followed by a practice exercise.
+description: This 2-3days workshop takes participants through the entire process of building a complete, real-world application and teaches the theoretical concepts along the way. Each topic is introduced via an in-depth presentation followed by a practice exercise.
 introduction:
   <p>Svelte is great choice for building fast and light-weight web applications. Its unique approach of generating reactive code at compile time instead of relying on a runtime, moves work out of the browser and results in highly efficient code. Combined with SvelteKit, it enables engineers to build large applications with ease while being able to choose among patterns like SPA, MPA, SSR, SSG on a per-route basis.</p>
 
-  <p>This workshops takes participants through the entire process of building a complete, real-world application and teaches the theoretical concepts along the way. Each topic is introduced via an in-depth presentation followed by a practice exercise.</p>
+  <p>This workshop takes participants through the entire process of building a complete, real-world application and teaches the theoretical concepts along the way. Each topic is introduced via an in-depth presentation followed by a practice exercise.</p>
 
   <p>All examples and practical assignments from the workshop are available publicly on GitHub.</p>
 hero:

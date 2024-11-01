@@ -1,9 +1,10 @@
 ---
-title: "Testing Svelte & SvelteKit applications"
+title: "Workshop: Testing Svelte & SvelteKit applications"
 tags: "svelte"
 format: "Workshop: 1 day"
 subtext: "Bookable for teams – on-site or remote"
-description: "<p>Testing is a critical part of building any non-trivial application – without automatic test coverage, you can't really know whether things work as expected or you're breaking things as you continue building out an application. This workshop covers both guidance on what to test and how, as well as concrete techniques for writing tests that are fast, stable, and easy to maintain.</p>"
+description: "This 1-day workshop is a complete introduction to testing Svelte and SvelteKit applications. It covers both guidance on what to test and how, as well as concrete techniques for writing tests that are fast, stable, and easy to maintain."
+introduction: "<p>Testing is a critical part of building any non-trivial application – without automatic test coverage, you can't really know whether things work as expected or you're breaking things as you continue building out an application. This workshop covers both guidance on what to test and how, as well as concrete techniques for writing tests that are fast, stable, and easy to maintain.</p>"
 hero:
   color: purple
   image: "/assets/images/workshops/testing-svelte-sveltekit-applications/classroom.jpg"

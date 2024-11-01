@@ -1,9 +1,9 @@
 ---
-title: Introduction to Rust for Web Developers
+title: "Workshop: Introduction to Rust for Web Developers"
 tags: "rust"
 format: "Workshop: 2-3 days"
 subtext: "Bookable for teams – on-site or remote"
-description: In this workshop, we will explore the main concepts of Rust by developing web applications. We will cover topics such as ownership and borrowing, concurrency, types and structs, all while building a real-world web app together.
+description: In this 2-3 days workshop, we will explore the main concepts of Rust by developing web applications. We will cover topics such as ownership and borrowing, concurrency, types and structs, all while building a real-world web app together.
 introduction:
   <p>According to the Stack Overflow survey, Rust is one of the most beloved programming languages. In recent years, it has also gained popularity. There has never been a better time to become familiar with Rust! Learning a new programming language is always easier when you start with topics within your comfort zone. In this workshop, we will explore the main concepts of Rust by developing web applications. We will cover topics such as ownership and borrowing, concurrency, types and structs, all while building a real-world web app together. If you have a basic understanding of creating web back-ends and APIs, this workshop will get you up to speed with Rust.</p>
 

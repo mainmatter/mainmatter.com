@@ -1,9 +1,9 @@
 ---
-title: "Svelte 5 & Runes"
+title: "Workshop: Svelte 5 & Runes"
 tags: "svelte"
 format: "Workshop: 1 day"
 subtext: "Bookable for teams – on-site or remote"
-description: This workshop is an introduction to Svelte 5's new concepts, as well as a hands-on guide to migrating from old patterns to Svelte 5 and runes.
+description: This 1-day workshop is an introduction to Svelte 5's new concepts, as well as a hands-on guide to migrating from old patterns to Svelte 5 and runes.
 introduction: "<p>Svelte 5 is a major step forward from version 4 and simplifies how Svelte applications are written. Concepts like snippets and runes, Svelte 5's new set of primitives for controlling reactivity, will replace a number of current concepts that will no longer by required with runes. Yet, as these concept are newly introduced, developers need to learn and them before they can leverage them. This workshop serves as an introduction to Svelte 5's new concepts, as well as a hands-on guide to migrating from old patterns to Svelte 5 and runes.</p>"
 hero:
   color: purple
