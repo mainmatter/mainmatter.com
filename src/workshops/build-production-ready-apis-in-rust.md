@@ -8,7 +8,7 @@ description:
   <p>This workshop is designed for developers who know the basics of Rust and want to learn more about backend development using Rust. Having written Rust in a production environment is not a requirement.</p>
 hero:
   color: purple
-  image: "/assets/images/workshops/web-based-services-in-rust/header-background.jpg"
+  image: "/assets/images/workshops/production-ready-api-services-in-rust/header-background.jpg"
   imageAlt: "Several cogs and mechanical elements in purple."
 og:
   image: /assets/images/workshops/production-ready-api-services-in-rust/og-image.jpg
