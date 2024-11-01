@@ -27,7 +27,7 @@ layout: "base"
       <div class="post__tagline">
         {% if tagline %}
           {{ tagline | safe }}
-        {% elseif introduction %}
+          {% elseif introduction %}
           {{ introduction | safe }}
         {% else %}
           {{ description | safe }}
