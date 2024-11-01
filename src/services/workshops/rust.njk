@@ -72,7 +72,15 @@ image: "/assets/images/workshops/rust-og-image.jpg"
   "link": "services/workshops/advanced-testing-in-rust/"
   }
 %}
-{% set workshops = [workshop_1, workshop_2, workshop_3, workshop_4, workshop_5, workshop_6] %}
+{%
+  set 'workshop_7' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Rust-Python Interoperability",
+  "logo": "rust",
+  "link": "services/workshops/rust-python-interoperability/"
+  }
+%}
+{% set workshops = [workshop_1, workshop_2, workshop_3, workshop_4, workshop_5, workshop_6, workshop_7] %}
 {{
   workshopsList('Our training offering', 'We specialize on Rust on the backend: API services, workers, data pipelines. That focus shapes our training offering.
   We can walk alongside you on a journey from zero to hero,
