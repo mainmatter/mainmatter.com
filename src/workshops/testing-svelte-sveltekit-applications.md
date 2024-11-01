@@ -1,5 +1,5 @@
 ---
-title: "Workshop: Testing Svelte & SvelteKit applications"
+title: "Testing Svelte & SvelteKit applications"
 tags: "svelte"
 format: "Workshop: 1 day"
 subtext: "Bookable for teams – on-site or remote"

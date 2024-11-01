@@ -1,5 +1,5 @@
 ---
-title: "Workshop: You can't fix what you can't see: telemetry for Rust APIs"
+title: "You can't fix what you can't see: telemetry for Rust APIs"
 tags: "rust"
 format: "Workshop: 1 day"
 subtext: "Bookable for teams – on-site or remote"

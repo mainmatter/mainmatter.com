@@ -1,5 +1,5 @@
 ---
-title: "Workshop: Build production-ready API services in Rust"
+title: "Build production-ready API services in Rust"
 tags: "rust"
 format: "Workshop: 3 days, on-site or remote"
 description: This 3-day workshop is designed for developers who know the basics of Rust and want to learn more about backend development using Rust. Having written Rust in a production environment is not a requirement.

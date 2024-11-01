@@ -1,5 +1,5 @@
 ---
-title: "Workshop: Learn Rust, starting from scratch"
+title: "Learn Rust, starting from scratch"
 tags: "rust"
 format: "Workshop: 4 days"
 subtext: "Bookable for teams – on-site or remote"

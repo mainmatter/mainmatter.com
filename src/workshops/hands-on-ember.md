@@ -1,5 +1,5 @@
 ---
-title: "Workshop: Hands-on Ember.js"
+title: "Hands-on Ember.js"
 tags: "ember"
 format: "Workshop: 2-3 days"
 subtext: "Bookable for teams – on-site or remote"

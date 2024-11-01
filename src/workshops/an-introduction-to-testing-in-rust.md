@@ -1,5 +1,5 @@
 ---
-title: "Workshop: Testing in Rust: an introduction"
+title: "Testing in Rust: an introduction"
 tags: "rust"
 format: "Workshop: 4 hours"
 subtext: "Bookable for teams – on-site or remote"

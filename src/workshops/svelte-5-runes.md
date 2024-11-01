@@ -1,5 +1,5 @@
 ---
-title: "Workshop: Svelte 5 & Runes"
+title: "Svelte 5 & Runes"
 tags: "svelte"
 format: "Workshop: 1 day"
 subtext: "Bookable for teams – on-site or remote"

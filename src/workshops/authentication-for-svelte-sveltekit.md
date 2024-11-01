@@ -1,5 +1,5 @@
 ---
-title: "Workshop: Authentication for Svelte & SvelteKit"
+title: "Authentication for Svelte & SvelteKit"
 tags: "svelte"
 format: "Workshop: 1 day"
 subtext: "Bookable for teams – on-site or remote"

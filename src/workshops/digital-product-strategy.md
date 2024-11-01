@@ -1,5 +1,5 @@
 ---
-title: "Workshop: Digital product strategy workshop"
+title: "Digital product strategy workshop"
 tags: "strategy"
 format: "Collaborative Workshop: 1–2 days"
 subtext: "Bookable on request – on-site or remote"
