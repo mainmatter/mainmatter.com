@@ -2,16 +2,17 @@
 title: "Build production-ready API services in Rust"
 tags: "rust"
 format: "Workshop: 3 days, on-site or remote"
-description:
-  <p>Rust is an excellent programming language for developing API services. You can build applications that are fast, reliable, and cost-effective. In fact, using Rust to write services can tremendously reduce your operating costs. However, the main challenge is knowing where to start. This workshop guides you through the process. At the end of the journey, you'll know enough to set up a production-ready HTTP API using the Axum framework.</p></br>
+description: This 3-day workshop is designed for developers who know the basics of Rust and want to learn more about backend development using Rust. Having written Rust in a production environment is not a requirement.
+introduction:
+  <p>Rust is an excellent programming language for developing API services. You can build applications that are fast, reliable, and cost-effective. In fact, using Rust to write services can tremendously reduce your operating costs. However, the main challenge is knowing where to start. This workshop guides you through the process. At the end of the journey, you'll know enough to set up a production-ready HTTP API using the Axum framework.</p>
 
   <p>This workshop is designed for developers who know the basics of Rust and want to learn more about backend development using Rust. Having written Rust in a production environment is not a requirement.</p>
 hero:
   color: purple
-  image: "/assets/images/workshops/web-based-services-in-rust/header-background.jpg"
+  image: "/assets/images/workshops/production-ready-api-services-in-rust/header-background.jpg"
   imageAlt: "Several cogs and mechanical elements in purple."
 og:
-  image: /assets/images/workshops/production-ready-api-services-in-rust/og-image.jpeg
+  image: /assets/images/workshops/production-ready-api-services-in-rust/og-image.jpg
 topics:
   - title: Hello Axum!
     text: >
