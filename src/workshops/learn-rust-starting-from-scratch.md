@@ -3,7 +3,8 @@ title: "Learn Rust, starting from scratch"
 tags: "rust"
 format: "Workshop: 4 days"
 subtext: "Bookable for teams – on-site or remote"
-description: |
+description: This 4-days workshop helps you get started with Rust, assuming no prior knowledge of the language. The workshop starts from the absolute basics and gradually builds up to more advanced topics.
+introduction: |
   <p>Rust is a general-purpose programming languages that's been growing in popularity over the past few years.
     It's known for its strong type system, its focus on safety and performance, and its modern tooling.</p>
   <p>We designed this workshop to help you get started with Rust, assuming no prior knowledge of the language.</p>
@@ -18,7 +19,7 @@ hero:
   image: "/assets/images/workshops/an-introduction-to-testing-in-rust/header-background.jpg"
   imageAlt: "A drawing of a giant crab standing in a village."
 og:
-  image: /assets/images/workshops/learn-rust-starting-from-scratch/og-image.jpeg
+  image: /assets/images/workshops/learn-rust-starting-from-scratch/og-image.jpg
 topics:
   - heading: The toolbox
     text: >

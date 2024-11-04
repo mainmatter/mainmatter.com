@@ -3,7 +3,8 @@ title: "Authentication for Svelte & SvelteKit"
 tags: "svelte"
 format: "Workshop: 1 day"
 subtext: "Bookable for teams – on-site or remote"
-description: "<p>Most real-world applications provide some means for users to authenticate – either to get access to the application at all, or to get access to specific functionality or data within the application. Since authentication is a critical topic though, it's important to get it right. In this workshop, we cover everything one needs to know to implement authentication in Svelte and SvelteKit so that it's functional, secure, and maintainable.</p>"
+description: In this 1-day workshop, we cover everything one needs to know to implement authentication in Svelte and SvelteKit so that it's functional, secure, and maintainable.
+introduction: "<p>Most real-world applications provide some means for users to authenticate – either to get access to the application at all, or to get access to specific functionality or data within the application. Since authentication is a critical topic though, it's important to get it right. In this workshop, we cover everything one needs to know to implement authentication in Svelte and SvelteKit so that it's functional, secure, and maintainable.</p>"
 hero:
   color: aqua
   image: "/assets/images/workshops/authentication-for-svelte-sveltekit/lock.jpg"
