@@ -9,6 +9,6 @@ module.exports = {
   authorHandle: "",
   authorName: "",
   description:
-    "We are Europe’s leading mobile and web design & development consultancy. Our clients value code quality, dependability and honesty. We are trusted by Generali, Qonto, Trainline, and CLARK.",
+    "We know the code, tools, and practices that go into successful development. We partner with our clients to solve their toughest tech challenges by sharing our skills and expertise as teammates.",
   maxPostsPerPage: 6,
 };

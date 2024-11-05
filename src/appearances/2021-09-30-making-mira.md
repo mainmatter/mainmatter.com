@@ -6,6 +6,4 @@ media: video
 channel: emberfest-2021
 ---
 
-Mira is a robot created by Pixar artist Alonso Martinez, capable of recreating a
-great number of emotions and interactions. In his talk, Nick Schot brings Mira
-to the web while explaining different animation techniques.
+Mira is a robot created by Pixar artist Alonso Martinez, capable of recreating a great number of emotions and interactions. In his talk, Nick Schot brings Mira to the web while explaining different animation techniques.

@@ -34,6 +34,36 @@
   to = "https://mainmatter.com/:splat"
   force = true
 
+[[redirects]]
+  from = "https://mainmatter.de/*"
+  to = "https://mainmatter.com/:splat"
+  force = true
+
+[[redirects]]
+  from = "https://www.mainmatter.de/*"
+  to = "https://mainmatter.com/:splat"
+  force = true
+
+[[redirects]]
+  from = "https://mainmatter.net/*"
+  to = "https://mainmatter.com/:splat"
+  force = true
+
+[[redirects]]
+  from = "https://www.mainmatter.net/*"
+  to = "https://mainmatter.com/:splat"
+  force = true
+
+[[redirects]]
+  from = "https://mainmatter.eu/*"
+  to = "https://mainmatter.com/:splat"
+  force = true
+
+[[redirects]]
+  from = "https://www.mainmatter.eu/*"
+  to = "https://mainmatter.com/:splat"
+  force = true
+
 # redirect old workshop pages
 [[redirects]]
   from = "https://elixir-phoenix-workshop.simplabs.com/*"
@@ -169,7 +199,7 @@
 # redirect old "Web-based Services in Rust" landing page to regular workshop
 [[redirects]]
   from = "https://rust-web-services-workshop.mainmatter.com/*"
-  to = "https://mainmatter.com/services/workshops/web-based-services-in-rust/"
+  to = "https://mainmatter.com/services/workshops/build-production-ready-apis-in-rust/"
   force = true
 
 # redirect old "Web-based Servides in Rust" workshop to new one

@@ -7,6 +7,4 @@ kind: summit
 color: aqua
 ---
 
-Svelte Summit is an online conference dedicated to Svelte and everything that is
-happening in the community. Mainmatter's Svelte expert Paolo Ricciuti will talk
-about full-stack testing for SvelteKit applications.
+Svelte Summit is an online conference dedicated to Svelte and everything that is happening in the community. Mainmatter's Svelte expert Paolo Ricciuti will talk about full-stack testing for SvelteKit applications.

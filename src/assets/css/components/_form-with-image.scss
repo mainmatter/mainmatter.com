@@ -1,0 +1,29 @@
+.form-with-image {
+  display: flex;
+  flex-direction:column-reverse;
+}
+
+.form-with-image__form {
+  margin-top:0;
+}
+
+.form-with-image__image {
+  margin: 3rem 0 0 0;
+}
+
+.form-with-image__image img {
+  width: 100%;
+}
+
+@media (min-width: $breakpoint-m) {
+  .form-with-image {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+
+  .form-with-image__image {
+    margin: 0;
+  }
+}

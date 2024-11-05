@@ -30,10 +30,12 @@
 {%- endif -%}
 
 {%- if pageDesc -%}
-  <meta name="description" content="{{ pageDesc }}" />
-  <meta name="twitter:description" content="{{ pageDesc }}" />
-  <meta property="og:description" content="{{ pageDesc }}" />
+  <meta name="description" content="{{ pageDesc | striptags(true) | escape | nl2br }}" />
+  <meta name="twitter:description" content="{{ pageDesc | striptags(true) | escape | nl2br }}" />
+  <meta property="og:description" content="{{ pageDesc | striptags(true) | escape | nl2br }}" />
 {%- endif -%}
+
+<meta name="fediverse:creator" content="@mainmatter@fosstodon.org" />
 
 {%- if og.image -%}
   <meta name="twitter:card" content="summary_large_image" />

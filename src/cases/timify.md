@@ -4,14 +4,9 @@ company: Timify
 title: Laying a solid frontend foundation for an ambitious startup | Work
 displayTitle: "An engineering overhaul for a <em>validated</em> booking system"
 problem: Timify's entire system needed to be re-engineered from the ground up.
-solution:
-  We completed the first release version of the new application and got them up
-  to speed on best practices and patterns for Ember.js
+solution: We completed the first release version of the new application and got them up to speed on best practices and patterns for Ember.js
 tags: Team reinforcement
-description:
-  <p>Timify is an online appointment scheduling service that connects service
-  providers with clients.</p><p>When they decided it was time to re-engineer
-  their existing product, they trusted us to set them up for future success.</p>
+description: <p>Timify is an online appointment scheduling service that connects service providers with clients.</p><p>When they decided it was time to re-engineer their existing product, they trusted us to set them up for future success.</p>
 hero:
   color: purple
   image: "/assets/images/work/timify.jpg"

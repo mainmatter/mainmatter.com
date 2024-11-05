@@ -6,5 +6,4 @@ media: video
 channel: embereurope-q4-2022
 ---
 
-Andrey Mikhaylov explained how to test Ember apps with Cucumber at the Ember
-Europe Q4 2002 Meetup.
+Andrey Mikhaylov explained how to test Ember apps with Cucumber at the Ember Europe Q4 2002 Meetup.

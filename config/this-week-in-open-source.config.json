@@ -22,7 +22,9 @@
         "rust-lang/www.rust-lang.org",
         "dimforge/rapier.rs",
         "marcoow/pacesetter",
-        "mainmatter/cargo-autoinherit"
+        "mainmatter/cargo-autoinherit",
+        "mainmatter/100-exercises-to-learn-rust",
+        "mainmatter/gerust"
       ]
     },
     {
@@ -87,7 +89,9 @@
         "bmdavis419/sveltekit-pgvector-supabase",
         "sveltejs/language-tools",
         "svecosystem/runed",
-        "mainmatter/sheepdog"
+        "mainmatter/sheepdog",
+        "paoloricciuti/optimistikit",
+        "animotionjs/animotion"
       ]
     },
     {
@@ -203,7 +207,10 @@
         "shikijs/shiki-magic-move",
         "adopted-ember-addons/ember-drag-drop",
         "tleunen/babel-plugin-module-resolver",
-        "snewcomer/intersection-observer-admin"
+        "snewcomer/intersection-observer-admin",
+        "mansona/auto-reveal-theme-mainmatter",
+        "formatjs/formatjs",
+        "vitejs/vite"
       ]
     },
     {
@@ -457,7 +464,14 @@
         "cibernox/ember-power-calendar",
         "ef4/decorator-transforms",
         "adopted-ember-addons/ember-infinity",
-        "ember-cli/ember-cli-deprecation-workflow"
+        "ef4/prember",
+        "ember-learn/ember-data-request-service-cheat-sheet",
+        "ember-cli/ember-cli-deprecation-workflow",
+        "ember-cli/babel-plugin-debug-macros",
+        "adopted-ember-addons/ember-sortable",
+        "elwayman02/ember-resize-modifier",
+        "ember-codemods/tagless-ember-components-codemod",
+        "adopted-ember-addons/ember-paper"
       ]
     },
     {
@@ -554,10 +568,13 @@
     "tech-conferences/conference-data",
     "erlef/website",
     "oscard0m/example-probot-vercel-ts",
-    "paoloricciuti/darkmodething"
+    "paoloricciuti/darkmodething",
+    "mansona/testing-release-plan",
+    "BlueCutOfficial/site-cv",
+    "mainmatter/gravity_dummy"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-06-23..2024-06-30",
+  "last_date": "2024-09-29..2024-10-06",
   "query_type": "Merged"
 }

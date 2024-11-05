@@ -1,7 +1,5 @@
 import * as Sentry from "@sentry/browser";
 
-const body = document.getElementsByTagName("body");
-
 export class ContactForm {
   constructor(element) {
     this.form = element;
@@ -32,7 +30,7 @@ export class ContactForm {
   }
 
   sendMessage(formData) {
-    const handleError = () => {
+    const handleError = e => {
       this.updateFormState("error", "An error occurred.");
       if (window.location.host === "mainmatter.com") {
         Sentry.addBreadcrumb({
@@ -41,34 +39,45 @@ export class ContactForm {
           level: "info",
           data: formData,
         });
-        Sentry.captureException(new Error("Failed to deliver message via contact form!"));
+        Sentry.captureException(e);
       }
     };
 
     const { plausible } = window;
+    const { goal } = this.form.dataset;
     if (plausible) {
-      plausible("Contact");
+      plausible(goal);
     }
 
-    return fetch("https://contact.mainmatter.dev/send", {
-      body: JSON.stringify(formData),
+    let { action, method } = this.form.dataset;
+
+    let params = {
       cache: "no-cache",
-      headers: {
-        "Content-Type": "application/json; charset=UTF-8'",
-      },
-      method: "POST",
+      method,
       mode: "cors",
-    })
+    };
+    if (method.toLowerCase() === "get") {
+      const queryString = new URLSearchParams(formData).toString();
+      action = `${action}?${queryString}`;
+    } else {
+      params = {
+        ...params,
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8'",
+        },
+      };
+    }
+
+    return fetch(action, params)
       .then(response => {
         if (response.ok) {
           this.updateFormState("success", "Message sent successfully.");
         } else {
-          handleError();
+          handleError(new Error("Failed to deliver message via contact form!"));
         }
       })
-      .catch(() => {
-        handleError();
-      });
+      .catch(handleError);
   }
 
   updateFormState(state, screenreaderAnnouncement) {
@@ -79,11 +88,9 @@ export class ContactForm {
 
     if (state === "initial") {
       this.formContent.removeAttribute("inert");
-      body[0].classList.remove("modal-active");
       this.form.reset();
     } else {
       this.formContent.setAttribute("inert", true);
-      body[0].classList.add("modal-active");
     }
 
     this.form.setAttribute("data-status", state);

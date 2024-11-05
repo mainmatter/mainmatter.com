@@ -6,5 +6,4 @@ media: video
 channel: international-javascript-conference-2017
 ---
 
-Jessica Jordan elaborates on how web components can be built today leveraging
-Glimmer.js.
+Jessica Jordan elaborates on how web components can be built today leveraging Glimmer.js.

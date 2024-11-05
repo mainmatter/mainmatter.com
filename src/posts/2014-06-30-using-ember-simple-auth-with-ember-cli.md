@@ -2,9 +2,7 @@
 title: "Using Ember Simple Auth with ember-cli"
 authorHandle: marcoow
 bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
-description:
-  "Marco Otte-Witte announces the release of ember-cli-simple-auth as an Ember
-  CLI addon."
+description: "Marco Otte-Witte announces the release of ember-cli-simple-auth as an Ember CLI addon."
 tags: ember
 tagline: |
   <p>With the latest release of <a href="https://github.com/mainmatter/ember-simple-auth">Ember Simple Auth</a>, using the library with <a href="https://github.com/ember-cli/ember-cli">ember-cli</a> has become much simpler. As ember-cli in general is still pretty new to many people though, <strong>this post describes how to setup a project using Ember Simple Auth with ember-cli</strong>.</p>
@@ -12,9 +10,7 @@ tagline: |
 
 ## Setting up the basic project
 
-First of all you need to install [PhantomJS](http://phantomjs.org),
-[bower](http://bower.io) and of course ember-cli (Ember Simple Auth requires
-**at least Ember CLI 0.0.44**):
+First of all you need to install [PhantomJS](http://phantomjs.org), [bower](http://bower.io) and of course ember-cli (Ember Simple Auth requires **at least Ember CLI 0.0.44**):
 
 ```bash
 npm install -g phantomjs
@@ -37,22 +33,16 @@ ember server
 
 ## Installing Ember Simple Auth
 
-Installing Ember Simple Auth in an ember-cli project is really easy now. All you
-have to do is install
-[the ember-cli addon from npm](https://www.npmjs.com/package/ember-cli-simple-auth):
+Installing Ember Simple Auth in an ember-cli project is really easy now. All you have to do is install [the ember-cli addon from npm](https://www.npmjs.com/package/ember-cli-simple-auth):
 
 ```bash
 npm install --save-dev ember-cli-simple-auth
 ember generate ember-cli-simple-auth
 ```
 
-This will install Ember Simple Auth’s
-[AMD](http://requirejs.org/docs/whyamd.html) distribution into the project,
-register the initializer so Ember Simple Auth automatically sets itself up and
-add itself as a dependency to the project’s `package.json`.
+This will install Ember Simple Auth’s [AMD](http://requirejs.org/docs/whyamd.html) distribution into the project, register the initializer so Ember Simple Auth automatically sets itself up and add itself as a dependency to the project’s `package.json`.
 
-You can add a login route and login/logout links to verify it all actually
-works:
+You can add a login route and login/logout links to verify it all actually works:
 
 ```js
 {% raw %}
@@ -89,20 +79,14 @@ export default Ember.Route.extend(ApplicationRouteMixin);
 
 ## Setting up authentication
 
-To actually give the user the option to login, we need to add an authentication
-package for Ember Simple Auth. Let’s assume you have an OAuth 2.0 compatible
-server running at `http://localhost:3000`. To use that, install the
-[OAuth 2.0 extension library](https://github.com/mainmatter/ember-simple-auth/blob/master/addon/authenticators/oauth2-password-grant.js)
-which again is as easy as installing the
-[package from npm](https://www.npmjs.com/package/ember-cli-simple-auth-oauth2):
+To actually give the user the option to login, we need to add an authentication package for Ember Simple Auth. Let’s assume you have an OAuth 2.0 compatible server running at `http://localhost:3000`. To use that, install the [OAuth 2.0 extension library](https://github.com/mainmatter/ember-simple-auth/blob/master/addon/authenticators/oauth2-password-grant.js) which again is as easy as installing the [package from npm](https://www.npmjs.com/package/ember-cli-simple-auth-oauth2):
 
 ```bash
 npm install --save-dev ember-cli-simple-auth-oauth2
 ember generate ember-cli-simple-auth-oauth2
 ```
 
-Like the ember-cli-simple-auth package this will setup itself so that nothing
-else has to be done in order to use the OAuth 2.0 functionality.
+Like the ember-cli-simple-auth package this will setup itself so that nothing else has to be done in order to use the OAuth 2.0 functionality.
 
 The OAuth 2.0 authentication mechanism needs a login form, so let’s create that:
 
@@ -123,8 +107,7 @@ The OAuth 2.0 authentication mechanism needs a login form, so let’s create tha
 {% endraw %}
 ```
 
-Then implement the `LoginControllerMixin` in the login controller and make that
-use the OAuth 2.0 authenticator to perform the actual authentication:
+Then implement the `LoginControllerMixin` in the login controller and make that use the OAuth 2.0 authenticator to perform the actual authentication:
 
 ```js
 {% raw %}
@@ -138,9 +121,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
 {% endraw %}
 ```
 
-As the OAuth 2.0 authenticator would by default use the same domain and port to
-send the authentication requests to that the Ember.js is loaded from you need to
-configure it to use `http://localhost:3000` instead:
+As the OAuth 2.0 authenticator would by default use the same domain and port to send the authentication requests to that the Ember.js is loaded from you need to configure it to use `http://localhost:3000` instead:
 
 ```js
 {% raw %}
@@ -154,15 +135,8 @@ if (environment === 'development') {
 {% endraw %}
 ```
 
-You also need to make sure that your server allows cross origin requests by
-[enabling CORS](http://enable-cors.org) (e.g. with
-[rack-cors](https://github.com/cyu/rack-cors) if you’re using a rack based
-server).
+You also need to make sure that your server allows cross origin requests by [enabling CORS](http://enable-cors.org) (e.g. with [rack-cors](https://github.com/cyu/rack-cors) if you’re using a rack based server).
 
 ## Conclusion
 
-This is how you set up an ember-cli project with Ember Simple Auth. For further
-documentation and examples see the
-[github repository](https://github.com/mainmatter/ember-simple-auth) and the
-[API docs for Ember Simple Auth](http://ember-simple-auth.com/api/) and the
-[OAuth 2.0 extension library](http://ember-simple-auth.com/api/).
+This is how you set up an ember-cli project with Ember Simple Auth. For further documentation and examples see the [github repository](https://github.com/mainmatter/ember-simple-auth) and the [API docs for Ember Simple Auth](http://ember-simple-auth.com/api/) and the [OAuth 2.0 extension library](http://ember-simple-auth.com/api/).

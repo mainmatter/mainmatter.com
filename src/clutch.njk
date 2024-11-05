@@ -1,0 +1,223 @@
+---
+layout: "base"
+title: "Team Up With Us for Better Tech!"
+description: "We transform bold ideas into shipped products, sharing our skills and expertise with our clients as teammates."
+og:
+  image: "/assets/images/clutch/og-image.jpg"
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "featured-services.njk" import featuredServices %}
+{% from "logo-list.njk" import logoList %}
+{% from "featured-case-studies.njk" import featuredCaseStudies %}
+{% from "image-banner-with-text.njk" import imageBannerWithText %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "quote.njk" import quote %}
+{% from "tech-cards.njk" import techCards %}
+{% from "btn-secondary.njk" import btnSecondary %}
+{%
+  set 'content' = {
+  "title": "Team Up With Us for Better Tech!",
+  "text": "We know the skills, practices and code that goes into winning product development. Our team of experts is ready to roll up their sleeves to help you tackle your toughest tech challenges so you can focus on your main matter.",
+  "image": "/assets/images/hero/home.jpg",
+  "alt": "Balloons flying over the sky",
+  "loading": "eager"
+  }
+%}
+{{ colorHero('purple', content) }}
+{%
+  set 'content' = {
+  "title": "Discover our services",
+  "subtitle": "Transform bold ideas into shipped products"
+  }
+%}
+{{ featuredServices(services['services-list-clutch'], content) }}
+{%
+  set awards = [
+  'ember',
+  'node',
+  'rust',
+  'financial',
+  'logistics',
+  'arts-entertainment',
+  'staff-aug'
+  ]
+%}
+{%- macro awardItem(award) -%}
+  {% set imagePath %}/assets/images/clutch/awards/{{ award }}.png{% endset %}
+  <li class="logo-list__item">
+    <div class="logo-list__image clutch-award__image">
+      {% image imagePath, "Clutch award icon", "5rem", "eager" %}
+    </div>
+  </li>
+{%- endmacro -%}
+<style>
+  .clutch-award__image img {
+    height: 12rem;
+    max-height: unset;
+    width: auto;
+  }
+</style>
+<section class="logo-list" id="logo-list">
+  <div class="logo-list__wrapper">
+    <div class="logo-list__inner" data-marquee style="--marquee-logo-count: {{ awards | length }};">
+      <ul class="logo-list__list">
+        {% for award in awards %}
+          {{ awardItem(award) }}
+        {% endfor %}
+      </ul>
+      <ul class="logo-list__list logo-list__list--duplicate" aria-hidden="true">
+        {% for award in awards %}
+          {{ awardItem(award) }}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <button class="logo-list__button" data-marquee-controls>Pause animation</button>
+</section>
+
+<section class="mb-10">
+  {%
+    set imageData = {
+    "imgPath": "/assets/images/photos/balloons-top.jpeg",
+    "alt": "Server room",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+    }
+  %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
+{% set clients = ['experteer', 'mvb', 'trainline', 'ais'] %}
+{{ featuredCaseStudies(clients, 'Browse our work') }}
+
+<div class="container container--lg quote-section">
+  {%
+    set content = {
+    "text": "As we did not have any design or frontend expertise in-house, we could not professionally build the user interface of our platform and bring the product to the market. We were looking for support and chose to work with Mainmatter, which turned out to be a great partner for us. The experienced team of Mainmatter helped us release an MVP and set the foundation for developing the application in the future.",
+    "source": "Milivoj Simeonovski, Chief Product Officer (Founding)",
+    "image": "/assets/images/photos/milivoj-simeonovski.png",
+    "alt": "Milivoj Simeonovski smiling at the camera wearing a red sweater",
+    "loading": "lazy"
+    }
+  %}
+  {{ quote(content) }}
+</div>
+
+{%
+  set 'tech_1' = {
+  "title": "Rust is a competitive advantage",
+  "logo": "rust",
+  "link": "rust-consulting"
+  }
+%}
+{%
+  set 'tech_2' = {
+  "title": "Svelte is the future of frontend development",
+  "logo": "svelte",
+  "link": "svelte-consulting"
+  }
+%}
+{%
+  set 'tech_3' = {
+  "title": "Elixir and Phoenix: The best of all worlds",
+  "logo": "elixir",
+  "link": "expertise/elixir-phoenix"
+  }
+%}
+{%
+  set 'tech_4' = {
+  "title": "We're veteran Ruby and Ruby on Rails experts",
+  "logo": "ruby",
+  "link": "ruby-rails-consulting"
+  }
+%}
+{%
+  set 'tech_5' = {
+  "title": "Ember is our expertise",
+  "logo": "ember",
+  "link": "ember-consulting"
+  }
+%}
+{% set technologies = [tech_1, tech_2, tech_3, tech_4, tech_5] %}
+{{ techCards('team-reinforcement_technologies', 'Technologies', 'Our skillset is based on a core set of technologies that cover architecture, backend and frontend development with: ', technologies) }}
+
+<section class="my-10 container container--lg">
+  <div class="split-content">
+    <a href="https://clutch.co/profile/mainmatter" class="split-content__link"></a>
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h4>
+          We are trusted by innovative companies with high ambitions – check out what they have to
+          say about us!
+        </h4>
+        {%
+          set link = {
+          "label": 'Read reviews',
+          "url": 'https://clutch.co/profile/mainmatter#reviews'
+          }
+        %}
+        {{ btnSecondary( link, 'mt-2' ) }}
+      </div>
+      <div class="split-content__feature">
+        <div class="secondary-feature">
+          <div class="secondary-feature__image-wrapper">
+            <script
+              type="text/javascript"
+              src="https://widget.clutch.co/static/js/widget.js"
+            ></script>
+            <div
+              class="clutch-widget"
+              data-url="https://widget.clutch.co"
+              data-widget-type="1"
+              data-height="80"
+              data-nofollow="true"
+              data-expandifr="true"
+              data-scale="100"
+              data-clutchcompany-id="850814"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%
+  set logoCompanies = [
+  'Qonto',
+  'Trainline',
+  'Aleph Alpha',
+  'Timify',
+  'Experteer',
+  'Robin Hood',
+  'Rail Europe'
+  ]
+%}
+{{ logoList(logoCompanies) }}
+
+<section class="mt-15 mb-0">
+  {%
+    set imageData = {
+    "imgPath": "/assets/images/photos/balloons-line.jpeg",
+    "alt": "Server room",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+    }
+  %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
+{% include "global/default-newsletter-cta.njk" %}
+{%
+  set 'content' = {
+  "title": "Team up with us for better tech!",
+  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
+  "linkUrl": "/contact",
+  "linkText": "Get in touch"
+  }
+%}
+{{ ctaBanner('purple', 'full', content) }}

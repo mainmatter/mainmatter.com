@@ -6,5 +6,4 @@ media: video
 channel: emberfest-2019
 ---
 
-Chris Manson shares what the JAM stack even is and how Ember developers can
-leverage its concepts.
+Chris Manson shares what the JAM stack even is and how Ember developers can leverage its concepts.

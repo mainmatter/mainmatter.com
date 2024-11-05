@@ -1,0 +1,338 @@
+---
+layout: "base"
+title: "We Modernize the Travel Industry"
+description: "We transform travel companies holistically, building modern organizations along with industry-leading products."
+og:
+  image: /assets/images/travel/lp-travel-og-image.jpg
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "strategy-list.njk" import strategyList %}
+{% from "quote.njk" import quote %}
+{% from "featured-case-studies.njk" import featuredCaseStudies %}
+{% from "recent-posts.njk" import recentPosts %}
+{% from "featured-services.njk" import featuredServices %}
+{% from "secondary-feature.njk" import secondaryFeature %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "btn-secondary.njk" import btnSecondary %}
+{%
+  set 'content' = {
+  "title": "We Modernize the Travel Industry",
+  "text": "We transform companies in the digital travel, transport and mobility industries holistically, building modern organizations along with industry-leading products.",
+  "image": "/assets/images/photos/travel-hero.jpg",
+  "alt": "Lego city scape",
+  "loading": "eager"
+  }
+%}
+{{ colorHero('purple', content) }}
+
+<section class="my-10">
+  <div class="container container--lg">
+    <div class="mb-4">
+      <p class="body">
+        We know the products and practices of the leading tech teams in the world - in fact, we’ve
+        been involved with shaping them. We can transform your company to match these standards. We
+        will assess the status quo, create a roadmap towards your future shape, and guide you
+        throughout the journey.
+      </p>
+    </div>
+  </div>
+</section>
+
+{%
+  set list =  [{
+    "title": "Assess the status quo via a thorough analysis of code, architecture, infrastructure, and processes, as well as interviews with stakeholders."
+  },{
+    "title": "Prepare a roadmap for transforming the product as well as the development organization behind it."
+  },{
+    "title": "Guide your team through the transformation phase."
+  }]
+%}
+
+{{ strategyList('launch-your-idea', 'We’ll work with you to:', list) }}
+
+<section
+  class="cta-banner cta-banner--aqua container container--xl my-10"
+  data-background-color="aqua"
+>
+  <div class="cta-banner__wrapper">
+    <div class="cta-banner__main">
+      <h2 class="cta-banner__title">The Travel Transformation Whitepaper</h2>
+      <div class="cta-banner__text">
+        Download our whitepaper for an in-depth analysis of the challenges the digital travel,
+        transport, and mobility industries are facing. Discover what there is to learn from leading
+        tech teams to modernize your company and boost competitiveness.
+      </div>
+      <div class="form-with-image">
+        <form
+          id="whitepaper-form"
+          data-contact-form
+          class="contact-form__form form-with-image__form"
+          data-status="initial"
+          data-action="https://hooks.zapier.com/hooks/catch/4837956/24hp3a0/"
+          data-method="get"
+          data-goal="Travel+Whitepaper"
+        >
+          <div data-form-content class="contact-form__field cta__input mb-2 mt-2">
+            <input
+              class="contact-form__input"
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+            />
+            <label class="contact-form__label h4" for="name">
+              Your name
+              <span class="screenreader">(Required)</span>
+            </label>
+            <span class="contact-form__label-required" aria-hidden="true">Required</span>
+          </div>
+          <div class="contact-form__field cta__input mb-2 mt-2">
+            <input
+              class="contact-form__input"
+              id="company"
+              type="text"
+              name="company"
+              placeholder="Your company's name"
+            />
+            <label class="contact-form__label h4" for="name"> Your company's name </label>
+          </div>
+          <div class="contact-form__field cta__input mb-2 mt-2">
+            <input
+              class="contact-form__input"
+              id="email"
+              type="email"
+              name="email"
+              placeholder="Your e-mail"
+              required
+            />
+            <label class="contact-form__label h4" for="email">
+              Your e-mail
+              <span class="screenreader">(Required)</span>
+            </label>
+            <span class="contact-form__label-required" aria-hidden="true">Required</span>
+          </div>
+          <div class="contact-form__field cta__input mb-2 mt-2">
+            <label class="contact-form__label h4 contact-form__label-checkbox">
+              <input
+                class="contact-form__input contact-form__input-checkbox"
+                id="marketing_opt_in"
+                type="checkbox"
+                name="marketing_opt_in"
+                required
+              />
+              <span>I agree to receive other communication from Mainmatter.</span>
+            </label>
+          </div>
+          <button class="btn-primary btn-primary--white" type="submit">
+            <span>Download whitepaper</span>
+            {% include 'svg/arrow.njk' %}
+          </button>
+          <div class="contact-form__status">
+            <button class="contact-form__close" data-reset-form>
+              {% include 'svg/close.njk' %}
+              <span class="screenreader">Close</span>
+            </button>
+            <div class="contact-form__loading h4" data-form-loading>
+              Your message is being sent…
+              <div class="loader" aria-hidden="true"></div>
+            </div>
+            <div class="contact-form__error" tabindex="-1" data-form-error>
+              <div class="contact-form__status-wrapper">
+                <h2 class="contact-form__success-subheading h3">Unable to send message.</h2>
+                <p>
+                  Please try again later or contact us at
+                  <a href="mailto:travel@mainmatter.com">travel@mainmatter.com</a>
+                </p>
+              </div>
+            </div>
+            <div class="contact-form__success" tabindex="-1" data-form-success>
+              <div class="contact-form__status-wrapper">
+                <h2 class="contact-form__success-heading h3">Thank you!</h2>
+                <p class="contact-form__success-subheading h3">We will be in touch soon.</p>
+                <p>You will receive an email with the whitepaper shortly.</p>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="form-with-image__image">
+          <div class="image-wrapper">
+            {% image '/assets/images/photos/travel-whitepaper-cover.jpg', "Title page of Mainmatter's Travel Transformation whitepaper", '(min-width: 48em) 40rem, 90vw', 'lazy', '', [400, 800, 1200] %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="my-10">
+  <div class="container container--lg">
+    <div class="mb-4">
+      <h2 class="mb-3">Team up with Mainmatter to overcome challenges together</h2>
+      <p class="body">
+        The travel industry is under rising pressure as user expectations grow, entry barriers
+        decrease, gatekeepers like Booking become ever more powerful, and disruptive newcomers enter
+        the market. To maintain or expand their market share, established companies must innovate
+        quickly, deliver impressive results, and adapt flexibly to a changing landscape. We partner
+        with companies in the travel industry to overcome those challenges.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="my-10 container container--lg">
+  <div class="split-content no-link">
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h5>Book a free call</h5>
+        <h3 class="split-content__subheading h2">Looking to transform your company?</h3>
+        <p>
+          Mainmatter's Founder and Managing Director, Marco Otte-Witte, is available to give you an
+          in-depth introduction to how we transform companies or share his thoughts on any
+          challenges you're facing.
+        </p>
+        {%
+          set link = {
+          "label": 'Book a 1:1 call with us',
+          "url": 'https://calendar.app.google/3FHWr4pdh2kNrZnv9'
+          }
+        %}
+        {{ btnSecondary( link, 'mt-2 plausible-event-name=Travel+1on1+Call' ) }}
+      </div>
+      <div class="split-content__feature">
+        {%
+          set 'content' = {
+          "image": "/assets/images/authors/marcoow.jpg",
+          "alt": "Marco Otte-Witte",
+          "loading": "lazy"
+          }
+        %}
+        {{ secondaryFeature(content, 'split-content__author') }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set clients = ['rail-europe'] %}
+{{ featuredCaseStudies(clients) }}
+
+<div class="container container--lg quote-section">
+  {%
+    set 'content' = {
+    "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
+    "source": "Jürgen Witte, CPO @ Rail Europe",
+    "image": "/assets/images/photos/juergen-witte.png",
+    "alt": "Jürgen Witte",
+    "loading": "lazy"
+    }
+  %}
+  {{ quote(content) }}
+</div>
+
+{% set clients = ['trainline', 'hop-skip-drive', 'terminal49', 'aleph-alpha'] %}
+{{ featuredCaseStudies(clients) }}
+
+{{ recentPosts("Latest from our blog", collections.travelPosts) }}
+{%
+  set 'content' = {
+  "subtitle": "Discover our services"
+  }
+%}
+
+<section class="cta-banner cta-banner--purple" data-background-color="purple">
+  <div class="cta-banner__wrapper container container--xl">
+    <div class="cta-banner__main">
+      <h2 class="cta-banner__title">Team up with us!</h2>
+      <div class="cta-banner__text">
+        We are your partner to modernize your company and boost competitiveness.
+      </div>
+      <form
+        id="contact-form"
+        data-contact-form
+        class="contact-form__form"
+        data-status="initial"
+        data-action="https://contact.mainmatter.dev/send"
+        data-method="post"
+        data-goal="Travel+Whitepaper"
+      >
+        <input type="hidden" name="service" id="service" value="Travel" />
+        <input type="hidden" name="message" id="message" value="" />
+        <div data-form-content class="contact-form__field cta__input mb-2 mt-2">
+          <input
+            class="contact-form__input"
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Your name"
+            required
+          />
+          <label class="contact-form__label h4" for="name">
+            Your name
+            <span class="screenreader">(Required)</span>
+          </label>
+          <span class="contact-form__label-required" aria-hidden="true">Required</span>
+        </div>
+        <div class="contact-form__field cta__input mb-2 mt-2">
+          <input
+            class="contact-form__input"
+            id="company"
+            type="text"
+            name="company"
+            placeholder="Your company's name"
+          />
+          <label class="contact-form__label h4" for="name"> Your company's name </label>
+        </div>
+        <div class="contact-form__field cta__input mb-2 mt-2">
+          <input
+            class="contact-form__input"
+            id="email"
+            type="email"
+            name="email"
+            placeholder="Your e-mail"
+            required
+          />
+          <label class="contact-form__label h4" for="email">
+            Your e-mail
+            <span class="screenreader">(Required)</span>
+          </label>
+          <span class="contact-form__label-required" aria-hidden="true">Required</span>
+        </div>
+        <button class="btn-primary btn-primary--white">
+          <span>Submit</span>
+          {% include 'svg/arrow.njk' %}
+        </button>
+        <div class="contact-form__status">
+          <button class="contact-form__close" data-reset-form>
+            {% include 'svg/close.njk' %}
+            <span class="screenreader">Close</span>
+          </button>
+          <div class="contact-form__loading h4" data-form-loading>
+            Your message is being sent…
+            <div class="loader" aria-hidden="true"></div>
+          </div>
+          <div class="contact-form__error" tabindex="-1" data-form-error>
+            <div class="contact-form__status-wrapper">
+              <h2 class="contact-form__success-subheading h3">Unable to send message.</h2>
+              <p>
+                Please try again later or contact us at
+                <a href="mailto:travel@mainmatter.com">travel@mainmatter.com</a>
+              </p>
+            </div>
+          </div>
+          <div class="contact-form__success" tabindex="-1" data-form-success>
+            <div class="contact-form__status-wrapper">
+              <h2 class="contact-form__success-heading h3">Thank you!</h2>
+              <p class="contact-form__success-subheading h3">We will be in touch soon.</p>
+              <p>One of our experts will get back to you shortly.</p>
+              <p>
+                In the meantime, have a look at our <a href="/work/">work</a>
+                to learn more about how we helped other companies in the past.
+              </p>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

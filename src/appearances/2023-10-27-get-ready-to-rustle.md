@@ -6,5 +6,4 @@ media: video
 channel: portotechhub-2023
 ---
 
-Marco Otte-Witte talked about how Rust is the next step for backend web
-development at Porto Tech Hub 2023.
+Marco Otte-Witte talked about how Rust is the next step for backend web development at Porto Tech Hub 2023.

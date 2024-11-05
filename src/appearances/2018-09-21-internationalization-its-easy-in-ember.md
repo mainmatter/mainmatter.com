@@ -6,5 +6,4 @@ media: video
 channel: embercamp-2018
 ---
 
-Tobias Bieniek shares just how easy internationalization of Ember apps can be
-when done right.
+Tobias Bieniek shares just how easy internationalization of Ember apps can be when done right.

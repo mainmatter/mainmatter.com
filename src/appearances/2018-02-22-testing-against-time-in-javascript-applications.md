@@ -6,5 +6,4 @@ media: video
 channel: assertjs-2018
 ---
 
-Jessica Jordan introduces patterns and best practices around testing
-asynchronous and time-dependent behaviors.
+Jessica Jordan introduces patterns and best practices around testing asynchronous and time-dependent behaviors.
