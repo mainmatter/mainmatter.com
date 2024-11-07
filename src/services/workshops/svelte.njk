@@ -71,6 +71,8 @@ og:
   We can get teams up to speed with Svelte from scratch,
   or help them tackle a range of specific topics.", workshops)
 }}
+{% set futurePublicWorkshops = publicSvelteWorkshops.workshops | future %}
+{{ publicWorkshops(futurePublicWorkshops) }}
 
 <section class="my-10">
   <div class="container container--lg">
