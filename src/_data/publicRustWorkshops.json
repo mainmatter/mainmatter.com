@@ -1,10 +1,22 @@
 {
   "workshops": [
     {
-      "endDate": "2024-05-29T18:00+02:00",
-      "date": "May 28th + 29th, 2024, 14:00-18:00 CEST",
-      "text": "Remote Workshop: Telemetry for Rust APIs – you can't fix what you can't see",
-      "link": "https://ti.to/mainmatter/rust-telemetry-may-2024"
+      "endDate": "2025-01-24T18:00+01:00",
+      "date": "Jan 23rd + 24th, 2025, 14:00-18:00 CET",
+      "text": "Remote Workshop: Testing for Rust projects – going beyond the basics",
+      "link": "https://ti.to/mainmatter/rust-testing-jan-2025"
+    },
+    {
+      "endDate": "2025-02-28T18:00+01:00",
+      "date": "Feb 27th + 28th, 2025, 14:00-18:00 CET",
+      "text": "Remote Workshop: Rust-Python Interoperability",
+      "link": "https://ti.to/mainmatter/rust-python-feb-2025"
+    },
+    {
+      "endDate": "2025-02-21T18:00+01:00",
+      "date": "Jan 30th – Feb 21st, 2025, 14:00-18:00 CET",
+      "text": "Remote Workshop: Learn Rust, starting from scratch",
+      "link": "https://ti.to/mainmatter/rust-from-scratch-jan-2025"
     }
   ]
 }
