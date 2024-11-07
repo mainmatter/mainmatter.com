@@ -14,24 +14,34 @@ hero:
 og:
   image: /assets/images/workshops/rust-python-interoperability/og-image.jpg
 topics:
-  - title: Python extensions, <code>maturin</code> & <code>pyo3</code>
+  - title: Introduction to Rust-Python Interoperability
     text: >
-      An introduction to the anatomy of Python extensions, <code>maturin</code>, a library for building, packaging and publishing Python extensions written in Rust, as well as <code>pyo3</code>, a crate that exposes Rust bindings for Python.
+      We kick off with looking at the advantages of combining Rust and Python, understanding where each language shines and why interoperability is valuable. This module introduces tools like <code>PyO3</code>, which enables Rust code integration within Python environments, and <code>maturin</code>, a library for building, packaging and publishing Python extensions written in Rust.
 
 
-  - title: Global Interpreter Lock
+  - title: Building Python Extensions in Rust
     text: >
-      Python's Global Interpreter Lock (GIL) prevents data races as Python's own data structures are not thread-safe. When building native extensions in Rust, special care is required to prevent Rust code from interacting with Python object without holding the GIL. We'll look into how <code>pyo3</code>'s <code>Python<'py></code> type guarantees correct usage of the GIL.
+      We'll continue with the process of creating Python-callable Rust functions, setting up projects using <code>PyO3</code>, and configuring the development environment to handle Rust extensions in Python.
 
 
-  - title: Output values and exceptions
+  - title: Managing Data and Types
     text: >
-      Let's now move our focus to output values: how do you return something from your Rust functions to Python? And how are Python exceptions converted to Rust <code>Result</code>s?
+      Next, participants will learn how to handle complex data structures shared between Rust and Python, with a focus on type conversions, data ownership, and ensuring memory safety across both languages.
 
 
-  - title: Classes
+  - title: Concurrency and the GIL
     text: >
-      Classes are a cornerstone of every Python program. How do they map to Rust code, including constructors, methods, getters and setters, static methods, and inheritance?
+      The workshop covers Python’s Global Interpreter Lock (GIL) and strategies for concurrent programming, including async programming in Rust that can enhance Python’s parallel processing capabilities.
+
+
+  - title: Creating Python Classes with Rust
+    text: >
+      We move on to explore creating Python-accessible classes directly in Rust using <code>PyO3</code>'s <code>#[pyclass]</code> attribute. This module teaches struct definition, implementing methods, and adding Rust-based functionality to Python classes.
+
+
+  - title: Static Methods and Inheritance
+    text: >
+      The final module details adding static methods to Rust-backed Python classes, along with managing inheritance and visibility in Python environments.
 
 
 leads:
