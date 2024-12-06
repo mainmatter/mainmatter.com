@@ -25,7 +25,7 @@ system that lets you offload many checks to the compiler: it supports generics,
 data-carrying enums, closures, visibility specifiers, _explicit_ conversions, and
 much more. These are neat features that make performant, low-level programming 
 feel as ergonomic as high-level languages. Sure, Rust has a learning curve, and
-thatlearning curve is a result of Rust's tendency to make complexity really _in
+that learning curve is a result of Rust's tendency to make complexity really _in
 your face_.
 
 Make no mistake, every piece of software is complex: it has to run on
@@ -74,8 +74,8 @@ In this article, I'd like to give three main pieces of advice:
   information.
 
 ## Ticket to heaven
-We'll need a case to show how all this works, and since Mainmatter loves the
-travel industry, let's write up an API for booking train tickets.
+We'll need a case to show how all this works, and since Mainmatter [loves the
+travel industry](/travel/), let's write up an API for booking train tickets.
 
 Looking at different train ticket services, in general, the steps towards booking
 are pretty similar: first, you enter the location you want to depart from and
