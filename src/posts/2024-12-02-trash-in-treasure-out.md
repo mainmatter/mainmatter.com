@@ -27,11 +27,12 @@ user of the code's API, the colleague refactoring the codebase, and new
 developers are on the same page about the _intent_ and _invariants_ of that
 code. What is this code doing? How am I supposed to use it correctly? What
 happens if I mess up? How do I protect this API from input it might choke on?
-Traditionally, one would write in documentation and code comments the answers
-to these and many other questions. Writing documentation is a very valuable
-job, but sadly, developers are human. And humans make mistakes. And if the
-humans think they _themselves_ don't make mistakes, they will surely agree
-that their colleagues _do_.
+Because 'Garbage in, garbage out' is not a great philosophy when setting up
+critical and robust systems. Traditionally, one would write in documentation and
+code comments the answers to these and many other questions. Writing
+documentation is a very valuable job, but sadly, developers are human. And
+humans make mistakes. And if the humans think they _themselves_ don't make
+mistakes, they will surely agree that their colleagues _do_.
 
 Documentation written in human language needs to be clear, specific, and up-to-
 date. And even if it's written well, for it to do its job, documentation needs
