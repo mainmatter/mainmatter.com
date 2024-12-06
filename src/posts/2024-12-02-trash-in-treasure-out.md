@@ -10,9 +10,6 @@ tagline: |
   <p>
     Making your API clear and robust with Rust's type system.
   </p>
-
-image: ""
-imageAlt: ""
 ---
 
 ## Intro
