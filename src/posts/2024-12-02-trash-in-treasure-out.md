@@ -1,6 +1,21 @@
-# Trash in, treasure out
+---
+title: "Trash in, treasure out"
+authorHandle: hdoordt
+tags: ["rust"]
+bio: "Henk Oordt, Senior Software Engineering Consultant"
+description: "Making your API clear and robust with Rust's type system"
+og:
+  image: "/assets/images/posts/2024-12-02-trash-in-treasure-out/og-image.png"
+tagline: |
+  <p>
+    Making your API clear and robust with Rust's type system.
+  </p>
 
-*Making your API clear and robust with Rust's type system*
+image: ""
+imageAlt: ""
+---
+
+## Intro
 
 By now, you're probably aware that at Mainmatter, we like Rust a lot. If you
 aren't: [have a look at our Rust page](https://mainmatter.com/rust-consulting/).
