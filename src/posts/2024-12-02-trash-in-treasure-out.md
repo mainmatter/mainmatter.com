@@ -36,7 +36,11 @@ We'll need a case to show how all this works, and since Mainmatter [loves the tr
 
 Looking at different train ticket services, in general, the steps towards booking are pretty similar: first, you enter the location you want to depart from and where you want to go, then you enter either your preferred moment of departure or when you want to arrive. Next, you select one of several suggested trips and enter your personal information. With all the information complete, you're all set to book the ticket and pay. Here's what that looks like as a flowchart:
 
+<div style="margin: 2em auto; width: 493px">
+
 ![State diagam](/assets/images/posts/2024-12-02-trash-in-treasure-out/state-diagram.svg)
+
+</div>
 
 Pretty straightforward, right? Let's code one up.
 
