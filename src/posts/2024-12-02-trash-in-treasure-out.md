@@ -8,7 +8,7 @@ og:
   image: "/assets/images/posts/2024-12-02-trash-in-treasure-out/og-image.png"
 tagline: |
   <p>
-    Making your API clear and robust with Rust's type system.
+    Using Rust, you can encode a large part of the constraints and semantics of your API using the type system. In this article, we'll discuss how to do it, and how you can use it to your benefit.
   </p>
 ---
 
