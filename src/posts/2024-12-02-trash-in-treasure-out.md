@@ -84,22 +84,7 @@ or when you want to arrive. Next, you select one of several suggested trips and
 enter your personal information. With all the information complete, you're all
 set to book the ticket and pay. Here's what that looks like as a flowchart:
 
-```mermaid
----
-title: Ticket office
----
-flowchart TD
-    Origin(Select origin) -->
-    Destination(Select destination) -->
-    DepartureTimestamp(Enter departure timestamp) --> Trip
-    Destination --> ArrivalTimestamp(Enter arrival timestamp) --> Trip
-    Trip(Select trip) -->
-    Class(Select class) -->
-    Name(Enter name) -->
-    Email(Enter email) -->
-    PhoneNumber(Enter phone number) -->
-    Book(Book and pay)
-```
+![State diagam](/assets/images/posts/2024-12-02-trash-in-treasure-out/state-diagram.svg)
 
 Pretty straightforward, right? Let's code one up.
 
