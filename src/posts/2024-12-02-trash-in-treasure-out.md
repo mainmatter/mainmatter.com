@@ -570,11 +570,11 @@ Other than that, rigidity may not always be what you want. Sometimes your invari
 
 _In [step 4], I've updated the rest of the method handlers, and demonstrate the [`validator`] and [`nutype`] crates briefly. Be sure to have a look!_
 
-[step 0]: https://github.com/mainmatter/trash-in-treasure-out/commit/abaa132a4250c71846ddf9a4540129af9952c9e8
-[step 1]: https://github.com/mainmatter/trash-in-treasure-out/commit/5c03b284bc0b1c932ec1c09b6abfef13f5cdfa4e
-[step 2]: https://github.com/mainmatter/trash-in-treasure-out/commit/305b8088b5155aeb13a473ca398fd1d522405b7d
-[step 3]: https://github.com/mainmatter/trash-in-treasure-out/commit/1dc8400afff4a31bcc1586e577a4af39124b8dfa
-[step 4]: https://github.com/mainmatter/trash-in-treasure-out/commit/305b8088b5155aeb13a473ca398fd1d522405b7d
+[step 0]: https://github.com/mainmatter/trash-in-treasure-out/tree/abaa132a4250c71846ddf9a4540129af9952c9e8
+[step 1]: https://github.com/mainmatter/trash-in-treasure-out/tree/5c03b284bc0b1c932ec1c09b6abfef13f5cdfa4e
+[step 2]: https://github.com/mainmatter/trash-in-treasure-out/tree/305b8088b5155aeb13a473ca398fd1d522405b7d
+[step 3]: https://github.com/mainmatter/trash-in-treasure-out/tree/1dc8400afff4a31bcc1586e577a4af39124b8dfa
+[step 4]: https://github.com/mainmatter/trash-in-treasure-out/tree/305b8088b5155aeb13a473ca398fd1d522405b7d
 [`axum`]: https://crates.io/crates/axum/
 [`reqwest`]: https://crates.io/crates/reqwest/
 [`cargo-nextest`]: https://nexte.st/
