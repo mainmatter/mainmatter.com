@@ -29,6 +29,14 @@
           </a>
         </li>
       {% endif %}
+      {% if author.data.bluesky %}
+        <li>
+          <a class="author-socials__icon" href="https://bsky.app/profile/{{ author.data.bluesky }}">
+            {% include 'svg/social-bluesky.njk' %}
+            <span class="screenreader">{{ author.data.bluesky }} on Bluesky</span>
+          </a>
+        </li>
+      {% endif %}
     </ul>
   {% endif %}
 {%- endmacro -%}
