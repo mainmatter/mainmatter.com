@@ -1,0 +1,20 @@
+---
+title: "Gravity - the next tool to keep your bundle size in check"
+authorHandle: inesoaresilva
+tags: [""]
+bio: ""
+description: "Gravity keeps track of asset sizes to prevent accidental increases – fully integrated with your CI setup."
+og:
+  image: "/assets/images/posts/2024-12-02-trash-in-treasure-out/og-image.png"
+tagline: |
+  <p>
+   Have you ever struggled to keep your assets and bundle size under control? We did too. That’s why we built Gravity — a GitHub App that keeps an eye on your pull requests and ensures you don’t accidentally import that 200MB library.
+  </p>
+---
+
+## Hello Gravity
+
+Have you ever struggled in keeping your assets and bundle size under control?
+Do you relate with this meme?
+
+![](/assets/images/posts/2022-10-12-making-a-strategic-bet-on-rust/mainmatter-rust-rocket.png)
