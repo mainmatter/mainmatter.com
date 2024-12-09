@@ -1,7 +1,7 @@
 ---
 name: "Gabor Babicz"
 github: zeppelin
-twitter: xeppelin
+mastodon: "@gabor@babicz.social"
 linkedin: xeppelin
 bio: "Senior Software Engineer"
 ---
