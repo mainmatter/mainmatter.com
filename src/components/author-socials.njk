@@ -21,6 +21,14 @@
           </a>
         </li>
       {% endif %}
+      {% if author.data.mastodon %}
+        <li>
+          <a class="author-socials__icon" href="{% mastodonHandleUrl author.data.mastodon %}">
+            {% include 'svg/social-mastodon.njk' %}
+            <span class="screenreader">{{ author.data.mastodon }} on Mastodon</span>
+          </a>
+        </li>
+      {% endif %}
     </ul>
   {% endif %}
 {%- endmacro -%}
