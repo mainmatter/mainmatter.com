@@ -225,6 +225,11 @@ module.exports = function (eleventyConfig) {
     return response.data.replace("<svg", `<svg focusable="false" role="presentation"`);
   });
 
+  eleventyConfig.addShortcode("mastodonHandleUrl", handle => {
+    const [user, server] = handle.split("@").filter(Boolean);
+    return `https://${server}/@${user}`;
+  });
+
   eleventyConfig.setServerOptions({
     watch: ["./dist/assets/css/*.css", "./dist/assets/js/*.js"],
   });
