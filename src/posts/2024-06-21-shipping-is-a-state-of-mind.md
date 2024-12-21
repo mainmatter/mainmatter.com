@@ -163,4 +163,5 @@ Finally teams that ship constantly and continuously are reported to have improve
 > <author>[Charity Majors](https://charity.wtf)</author>
 
 [^1]: Yes, some exceptions do exist but no, your case is almost certainly not one of those.
+
 [^2]: see [^1]
