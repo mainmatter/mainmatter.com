@@ -68,10 +68,8 @@ If you don't like the default, how about something a little more menacing?
 }
 
 :root {
-  --epm-animation-modal-in: var(--epm-animation-modal-in-duration) ease-out var(
-      --epm-animation-modal-in-delay
-    )
-    forwards spiral-in;
+  --epm-animation-modal-in: var(--epm-animation-modal-in-duration) ease-out
+    var(--epm-animation-modal-in-delay) forwards spiral-in;
   --epm-animation-modal-in-duration: 0.7s;
 }
 ```
