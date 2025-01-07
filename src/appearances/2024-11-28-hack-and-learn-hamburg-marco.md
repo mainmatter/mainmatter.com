@@ -6,4 +6,4 @@ media: video
 channel: rust-hackandlearn-hamburg
 ---
 
-Marco Otte-Witte introduced Gerust's architecture and tooling for simplifying Rust backend projects at Rust Hack & Learn in Hamburg.
+Marco Otte-Witte introduced [Gerust](https://gerust.rs), a generator for Rust backend projects at Rust Hack & Learn in Hamburg.
