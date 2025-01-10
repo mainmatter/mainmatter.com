@@ -22,8 +22,8 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1
       '@11ty/eleventy-img':
-        specifier: ^5.0.0
-        version: 5.0.0
+        specifier: ^6.0.0
+        version: 6.0.0
       '@11ty/eleventy-navigation':
         specifier: ^0.3.2
         version: 0.3.5
@@ -131,12 +131,12 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
-  '@11ty/eleventy-fetch@4.0.1':
-    resolution: {integrity: sha512-yIiLM5ziBmg86i4TlXpBdcIygJHvh/GgPJyAiFOckO9H4y9cQDM8eIcJCUQ4Mum0NEVui/OjhEut2R08xw0vlQ==}
-    engines: {node: '>=14'}
+  '@11ty/eleventy-fetch@5.0.2':
+    resolution: {integrity: sha512-yu7oZ5iv7zvFDawSYcN19cz7ddJB7OXPGZ47z/MzYmLa2LkpJm0KnZW2xGwpKvVrXd+tyb96ts6AqlkJT/ibwQ==}
+    engines: {node: '>=18'}
 
-  '@11ty/eleventy-img@5.0.0':
-    resolution: {integrity: sha512-hJ4X5ZIRSOCooL0uXegj+nZi1abWNj22BR4PzF6e9iJg9DGYGxPrC0rg0Hy+7xzP7mzTYiOpDjZVv/NgrHNx6w==}
+  '@11ty/eleventy-img@6.0.0':
+    resolution: {integrity: sha512-5vQj6NMxaRwI/rkRkrDajUvNy4p4xJz2DJrlgk0JpvYegkC8OxAoLE+sXqd5Ij5IgqfoPHiepf/3FbTHAnYXzg==}
     engines: {node: '>=18'}
 
   '@11ty/eleventy-navigation@0.3.5':
@@ -151,6 +151,10 @@ packages:
   '@11ty/eleventy-utils@1.0.3':
     resolution: {integrity: sha512-nULO91om7vQw4Y/UBjM8i7nJ1xl+/nyK4rImZ41lFxiY2d+XUz7ChAj1CDYFjrLZeu0utAYJTZ45LlcHTkUG4g==}
     engines: {node: '>=12'}
+
+  '@11ty/eleventy-utils@2.0.0':
+    resolution: {integrity: sha512-rKny6X7+ARuke0TaA6FwNv2PWJCNSdPQqbqDgaZgi+bPXwnPRTEi3CWzvr6vVgh/1XpO1G4FhRPreLhtcwHUyg==}
+    engines: {node: '>=18'}
 
   '@11ty/eleventy@2.0.1':
     resolution: {integrity: sha512-t8XVUbCJByhVEa1RzO0zS2QzbL3wPY8ot1yUw9noqiSHxJWUwv6jiwm1/MZDPTYtkZH2ZHvdQIRQ5/SjG9XmLw==}
@@ -383,6 +387,9 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
+  '@keyv/serialize@1.0.2':
+    resolution: {integrity: sha512-+E/LyaAeuABniD/RvUezWVXKpeuvwLEA9//nE9952zBaOdBd2mQ3pPoM8cUe2X6IcMByfuSLzmYqnYshG60+HQ==}
+
   '@lhci/cli@0.14.0':
     resolution: {integrity: sha512-TxOH9pFBnmmN7Jmo2Aimxx5UhE8veqXpHfFJDMWsCVxkwh7mGxcAWchGl84mK139SZbbRmerqZ72c+h2nG9/QQ==}
     hasBin: true
@@ -564,6 +571,10 @@ packages:
   '@quasibit/eleventy-plugin-sitemap@2.2.0':
     resolution: {integrity: sha512-7YoU4jjipLjifBhZwttLWbAAkImmBfeMQ0+1ST6mJO45z2mFLHZcgnfHwGF2joNk74wiYNsNOB1ennouzQFZIQ==}
     engines: {node: '>=10.0.0'}
+
+  '@rgrove/parse-xml@4.2.0':
+    resolution: {integrity: sha512-UuBOt7BOsKVOkFXRe4Ypd/lADuNIfqJXv8GvHqtXaTYXPPKkj2nS2zPllVsrtRjcomDhIJVBnZwfmlI222WH8g==}
+    engines: {node: '>=14.0.0'}
 
   '@rollup/plugin-commonjs@28.0.2':
     resolution: {integrity: sha512-BEFI2EDqzl+vA1rl97IDRZ61AIwGH093d9nz8+dThxJNH8oSoB7MjWvPCX3dkaK1/RCJ/1v/R1XB15FuSs0fQw==}
@@ -1072,9 +1083,15 @@ packages:
   buffer@5.7.1:
     resolution: {integrity: sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==}
 
+  buffer@6.0.3:
+    resolution: {integrity: sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==}
+
   bytes@3.1.2:
     resolution: {integrity: sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==}
     engines: {node: '>= 0.8'}
+
+  cacheable@1.8.7:
+    resolution: {integrity: sha512-AbfG7dAuYNjYxFUtL1lAqmlWdxczCJ47w7cFjhGcnGnUdwSo6VgmSojfoW3tUI12HUkgTJ5kqj78yyq6TsFtlg==}
 
   call-bind-apply-helpers@1.0.1:
     resolution: {integrity: sha512-BhYE+WDaywFg2TBWYNXAE+8B1ATnThNBqXHP5nQu0jWJdVvY2hvkpyB3qOmtmDePiS5/BDQ8wASEWGMWRG148g==}
@@ -1517,8 +1534,8 @@ packages:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
     engines: {node: '>=0.12'}
 
-  entities@5.0.0:
-    resolution: {integrity: sha512-BeJFvFRJddxobhvEdm5GqHzRV/X+ACeuw0/BuuxsCh1EUZcAIz8+kYmBp/LrQuloy6K1f3a0M7+IhmZ7QnkISA==}
+  entities@6.0.0:
+    resolution: {integrity: sha512-aKstq2TDOndCn4diEyp9Uq/Flu2i1GlLkc6XIDQSDMuaFE3OPW5OphLCyQ5SpSJZTb4reN+kTcYru5yIfXoRPw==}
     engines: {node: '>=0.12'}
 
   eol@0.2.0:
@@ -1764,13 +1781,12 @@ packages:
     resolution: {integrity: sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng==}
     engines: {node: '>=10'}
 
-  flat-cache@3.2.0:
-    resolution: {integrity: sha512-CYcENa+FtcUKLmhhqyctpclsq7QF38pKjZHsGNiSQF5r4FtoKDWabFDl3hzaEQMvT1LHEysw5twgLvpYYb4vbw==}
-    engines: {node: ^10.12.0 || >=12.0.0}
-
   flat-cache@4.0.1:
     resolution: {integrity: sha512-f7ccFPK3SXFHpx15UIGyRJ/FJQctuKZ0zVuN3frBo4HnK3cay9VEW0R6yPYFHC0AgqhukPzKjq22t5DmAyqGyw==}
     engines: {node: '>=16'}
+
+  flat-cache@6.1.5:
+    resolution: {integrity: sha512-QR+2kN38f8nMfiIQ1LHYjuDEmZNZVjxuxY+HufbS3BW0EX01Q5OnH7iduOYRutmgiXb797HAKcXUeXrvRjjgSQ==}
 
   flatted@3.3.2:
     resolution: {integrity: sha512-AiwGJM8YcNOaobumgtng+6NHuOqC3A7MixFeDafM3X9cIUM+xUXoS5Vfgf+OihAYe20fxqNM9yPBXJzRtZ/4eA==}
@@ -1921,6 +1937,9 @@ packages:
   he@1.2.0:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
+
+  hookified@1.6.0:
+    resolution: {integrity: sha512-se7cpwTA+iA/eY548Bu03JJqBiEZAqU2jnyKdj5B5qurtBg64CZGHTgqCv4Yh7NWu6FGI09W61MCq+NoPj9GXA==}
 
   html-encoding-sniffer@1.0.2:
     resolution: {integrity: sha512-71lZziiDnsuabfdYiUeWdCVyKuqwWi23L8YeIgV9jSSZHCtb6wB1BKWooH7L3tn4/FuZJMVWyNaIDr4RGmaSYw==}
@@ -2212,6 +2231,9 @@ packages:
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
+
+  keyv@5.2.3:
+    resolution: {integrity: sha512-AGKecUfzrowabUv0bH1RIR5Vf7w+l4S3xtQAypKaUpTdIR1EbrAcTxHCrpo9Q+IWeUlFE2palRtgIQcgm+PQJw==}
 
   kind-of@6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
@@ -3627,28 +3649,27 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@11ty/eleventy-fetch@4.0.1':
+  '@11ty/eleventy-fetch@5.0.2':
     dependencies:
+      '@rgrove/parse-xml': 4.2.0
       debug: 4.4.0
-      flat-cache: 3.2.0
-      node-fetch: 2.7.0
+      flat-cache: 6.1.5
+      graceful-fs: 4.2.11
       p-queue: 6.6.2
     transitivePeerDependencies:
-      - encoding
       - supports-color
 
-  '@11ty/eleventy-img@5.0.0':
+  '@11ty/eleventy-img@6.0.0':
     dependencies:
-      '@11ty/eleventy-fetch': 4.0.1
-      '@11ty/eleventy-utils': 1.0.3
+      '@11ty/eleventy-fetch': 5.0.2
+      '@11ty/eleventy-utils': 2.0.0
       brotli-size: 4.0.0
       debug: 4.4.0
-      entities: 5.0.0
+      entities: 6.0.0
       image-size: 1.2.0
       p-queue: 6.6.2
       sharp: 0.33.5
     transitivePeerDependencies:
-      - encoding
       - supports-color
 
   '@11ty/eleventy-navigation@0.3.5':
@@ -3670,6 +3691,8 @@ snapshots:
   '@11ty/eleventy-utils@1.0.3':
     dependencies:
       normalize-path: 3.0.0
+
+  '@11ty/eleventy-utils@2.0.0': {}
 
   '@11ty/eleventy@2.0.1':
     dependencies:
@@ -3920,6 +3943,10 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  '@keyv/serialize@1.0.2':
+    dependencies:
+      buffer: 6.0.3
 
   '@lhci/cli@0.14.0':
     dependencies:
@@ -4196,6 +4223,8 @@ snapshots:
     dependencies:
       array-flat-polyfill: 1.0.1
       sitemap: 6.4.0
+
+  '@rgrove/parse-xml@4.2.0': {}
 
   '@rollup/plugin-commonjs@28.0.2(rollup@4.29.2)':
     dependencies:
@@ -4720,7 +4749,17 @@ snapshots:
       base64-js: 1.5.1
       ieee754: 1.2.1
 
+  buffer@6.0.3:
+    dependencies:
+      base64-js: 1.5.1
+      ieee754: 1.2.1
+
   bytes@3.1.2: {}
+
+  cacheable@1.8.7:
+    dependencies:
+      hookified: 1.6.0
+      keyv: 5.2.3
 
   call-bind-apply-helpers@1.0.1:
     dependencies:
@@ -5165,7 +5204,7 @@ snapshots:
 
   entities@4.5.0: {}
 
-  entities@5.0.0: {}
+  entities@6.0.0: {}
 
   eol@0.2.0: {}
 
@@ -5459,16 +5498,16 @@ snapshots:
       locate-path: 6.0.0
       path-exists: 4.0.0
 
-  flat-cache@3.2.0:
-    dependencies:
-      flatted: 3.3.2
-      keyv: 4.5.4
-      rimraf: 3.0.2
-
   flat-cache@4.0.1:
     dependencies:
       flatted: 3.3.2
       keyv: 4.5.4
+
+  flat-cache@6.1.5:
+    dependencies:
+      cacheable: 1.8.7
+      flatted: 3.3.2
+      hookified: 1.6.0
 
   flatted@3.3.2: {}
 
@@ -5626,6 +5665,8 @@ snapshots:
       function-bind: 1.1.2
 
   he@1.2.0: {}
+
+  hookified@1.6.0: {}
 
   html-encoding-sniffer@1.0.2:
     dependencies:
@@ -5911,6 +5952,10 @@ snapshots:
   keyv@4.5.4:
     dependencies:
       json-buffer: 3.0.1
+
+  keyv@5.2.3:
+    dependencies:
+      '@keyv/serialize': 1.0.2
 
   kind-of@6.0.3: {}
 
