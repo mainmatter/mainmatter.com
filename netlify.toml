@@ -4,7 +4,7 @@
     cache_img = 'assets/images'
 
 [build]
-  environment = { NODE_VERSION = "16.17.0" }
+  environment = { NODE_VERSION = "22.13.0" }
   command = "echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >> .npmrc && pnpm install && pnpm build"
 
 # serve 404 simplabs' sitemap
