@@ -28,8 +28,6 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - uses: pnpm/action-setup@v2
         name: Install pnpm
-        with:
-          version: 8
       - name: Fetch $TWIOS_BRANCH
         run: |
           git fetch origin $TWIOS_BRANCH
@@ -64,8 +62,6 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - uses: pnpm/action-setup@v2
         name: Install pnpm
-        with:
-          version: 8
       - name: Fetch $TWIOS_PR_REF
         run: |
           git fetch origin $TWIOS_PR_REF

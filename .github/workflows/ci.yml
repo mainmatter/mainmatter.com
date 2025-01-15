@@ -21,8 +21,6 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - uses: pnpm/action-setup@v4
         name: Install pnpm
-        with:
-          version: 9
 
       - name: install dependencies
         run: pnpm install
@@ -44,8 +42,6 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - uses: pnpm/action-setup@v4
         name: Install pnpm
-        with:
-          version: 9
 
       - name: install dependencies
         run: pnpm install
@@ -75,8 +71,6 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - uses: pnpm/action-setup@v4
         name: Install pnpm
-        with:
-          version: 9
 
       - name: install dependencies
         run: pnpm install
@@ -105,8 +99,6 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - uses: pnpm/action-setup@v4
         name: Install pnpm
-        with:
-          version: 9
 
       - name: install dependencies
         run: pnpm install
@@ -133,8 +125,6 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - uses: pnpm/action-setup@v4
         name: Install pnpm
-        with:
-          version: 9
 
       - name: install dependencies
         run: pnpm install
