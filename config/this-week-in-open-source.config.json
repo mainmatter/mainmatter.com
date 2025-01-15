@@ -210,7 +210,9 @@
         "snewcomer/intersection-observer-admin",
         "mansona/auto-reveal-theme-mainmatter",
         "formatjs/formatjs",
-        "vitejs/vite"
+        "vitejs/vite",
+        "mainmatter/auto-reveal",
+        "mainmatter/auto-reveal-theme-mainmatter"
       ]
     },
     {
@@ -571,10 +573,11 @@
     "paoloricciuti/darkmodething",
     "mansona/testing-release-plan",
     "BlueCutOfficial/site-cv",
-    "mainmatter/gravity_dummy"
+    "mainmatter/gravity_dummy",
+    "web-and-wine/talks"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-09-29..2024-10-06",
+  "last_date": "2024-08-04..2024-08-11",
   "query_type": "Merged"
 }
