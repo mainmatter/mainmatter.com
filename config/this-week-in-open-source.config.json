@@ -91,7 +91,8 @@
         "svecosystem/runed",
         "mainmatter/sheepdog",
         "paoloricciuti/optimistikit",
-        "animotionjs/animotion"
+        "animotionjs/animotion",
+        "vitejs/vite"
       ]
     },
     {
@@ -212,7 +213,9 @@
         "formatjs/formatjs",
         "vitejs/vite",
         "mainmatter/auto-reveal",
-        "mainmatter/auto-reveal-theme-mainmatter"
+        "mainmatter/auto-reveal-theme-mainmatter",
+        "mainmatter/memory-leak-detector",
+        "sveltejs/vite-plugin-svelte"
       ]
     },
     {
@@ -487,6 +490,12 @@
       "repos": [
         "svecosystem/runed"
       ]
+    },
+    {
+      "name": "DevOps",
+      "repos": [
+        "semantic-release/github"
+      ]
     }
   ],
   "header": [],
@@ -574,10 +583,12 @@
     "mansona/testing-release-plan",
     "BlueCutOfficial/site-cv",
     "mainmatter/gravity_dummy",
-    "web-and-wine/talks"
+    "web-and-wine/talks",
+    "oscard0m/octokit-core.js",
+    "oscard0m/semantic-release-github"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-08-04..2024-08-11",
+  "last_date": "2024-09-08..2024-09-15",
   "query_type": "Merged"
 }
