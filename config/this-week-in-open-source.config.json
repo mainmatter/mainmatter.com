@@ -477,7 +477,10 @@
         "adopted-ember-addons/ember-sortable",
         "elwayman02/ember-resize-modifier",
         "ember-codemods/tagless-ember-components-codemod",
-        "adopted-ember-addons/ember-paper"
+        "adopted-ember-addons/ember-paper",
+        "beerinho/ember-glob-import-demo",
+        "ember-cli/babel-remove-types",
+        "sethwebster/ember-cli-new-version"
       ]
     },
     {
