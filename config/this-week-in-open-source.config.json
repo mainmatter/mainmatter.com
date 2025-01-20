@@ -595,7 +595,8 @@
     "mainmatter/gravity_dummy",
     "web-and-wine/talks",
     "oscard0m/octokit-core.js",
-    "oscard0m/semantic-release-github"
+    "oscard0m/semantic-release-github",
+    "mansona/local-snapshots"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
