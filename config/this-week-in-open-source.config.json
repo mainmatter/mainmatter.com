@@ -92,7 +92,8 @@
         "mainmatter/sheepdog",
         "paoloricciuti/optimistikit",
         "animotionjs/animotion",
-        "vitejs/vite"
+        "vitejs/vite",
+        "sveltejs/svelte.dev"
       ]
     },
     {
@@ -595,10 +596,11 @@
     "mainmatter/gravity_dummy",
     "web-and-wine/talks",
     "oscard0m/octokit-core.js",
-    "oscard0m/semantic-release-github"
+    "oscard0m/semantic-release-github",
+    "mansona/local-snapshots"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-09-22..2024-09-29",
+  "last_date": "2024-10-13..2024-10-20",
   "query_type": "Merged"
 }
