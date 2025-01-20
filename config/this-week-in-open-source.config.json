@@ -223,7 +223,8 @@
         "sveltejs/vite-plugin-svelte",
         "Rich-Harris/esrap",
         "mansona/codeowners-commit",
-        "mansona/commander-docs"
+        "mansona/commander-docs",
+        "sveltejs/esrap"
       ]
     },
     {
