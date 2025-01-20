@@ -92,7 +92,8 @@
         "mainmatter/sheepdog",
         "paoloricciuti/optimistikit",
         "animotionjs/animotion",
-        "vitejs/vite"
+        "vitejs/vite",
+        "sveltejs/svelte.dev"
       ]
     },
     {
