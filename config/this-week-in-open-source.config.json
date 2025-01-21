@@ -611,7 +611,8 @@
     "mansona/ember.js-release-plan-testing",
     "oscard0m/qunit-dom",
     "oscard0m/semantic-release",
-    "oscard0m/storyblok-js-client"
+    "oscard0m/storyblok-js-client",
+    "oscard0m/ember-website"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
