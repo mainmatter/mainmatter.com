@@ -9,10 +9,10 @@ description: >
 
 hero:
   color: purple
-  image: "/assets/images/workshops/an-introduction-to-testing-in-rust/header-background.jpg"
-  imageAlt: "A drawing of a giant crab standing in a village."
+  image: "/assets/images/workshops/foundations-of-embedded-rust/embedded-rust-hero.jpg"
+  imageAlt: "A crab standing on a printed circuit board"
 og:
-  image: /assets/images/workshops/learn-rust-starting-from-scratch/og-image.jpg
+  image: /assets/images/workshops/foundations-of-embedded-rust/og-image.jpg
 topics:
   - title: Rust's embedded ecosystem
     text: >
