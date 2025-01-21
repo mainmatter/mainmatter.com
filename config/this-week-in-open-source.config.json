@@ -99,7 +99,8 @@
         "vitejs/vite",
         "sveltejs/svelte.dev",
         "ericclemmons/awesome-starter-packs",
-        "svelte-society/summit-website"
+        "svelte-society/summit-website",
+        "sveltejs/esrap"
       ]
     },
     {
@@ -494,7 +495,8 @@
         "ember-cli/babel-remove-types",
         "sethwebster/ember-cli-new-version",
         "oscard0m/ember-website",
-        "ember-learn/ember-learn-release-tool"
+        "ember-learn/ember-learn-release-tool",
+        "miguelcobain/ember-yeti-table"
       ]
     },
     {
@@ -620,6 +622,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "",
+  "last_date": "2025-01-12..2025-01-19",
   "query_type": "Merged"
 }
