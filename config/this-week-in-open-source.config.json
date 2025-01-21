@@ -27,7 +27,8 @@
         "mainmatter/gerust",
         "mainmatter/rust-advanced-testing-workshop",
         "mainmatter/rust-python-interoperability",
-        "mainmatter/rust-telemetry-workshop"
+        "mainmatter/rust-telemetry-workshop",
+        "rust-meetup-munich/hack-evening-2024-4"
       ]
     },
     {
@@ -97,7 +98,8 @@
         "animotionjs/animotion",
         "vitejs/vite",
         "sveltejs/svelte.dev",
-        "ericclemmons/awesome-starter-packs"
+        "ericclemmons/awesome-starter-packs",
+        "svelte-society/summit-website"
       ]
     },
     {
@@ -490,7 +492,8 @@
         "beerinho/ember-glob-import-demo",
         "ember-cli/babel-remove-types",
         "sethwebster/ember-cli-new-version",
-        "oscard0m/ember-website"
+        "oscard0m/ember-website",
+        "ember-learn/ember-learn-release-tool"
       ]
     },
     {
@@ -616,6 +619,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2024-12-01..2024-12-08",
+  "last_date": "2024-12-08..2024-12-15",
   "query_type": "Merged"
 }
