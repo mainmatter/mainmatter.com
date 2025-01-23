@@ -16,8 +16,7 @@ og:
 topics:
   - title: Rust's embedded ecosystem
     text: >
-      Rust's embedded ecosystem is built around a set of standard APIs that let you write platform-independent code even for bare-metal development. This is possible thanks to Rust's strong and expressive type system and its package manager, Cargo, which makes it easy to add and manage dependencies on third-party libraries.
-      In this part, you'll get an overview of the ecosystem, with a focus on the <code>core</code> library and the structure of Peripheral Access Crates and Hardware Abstraction Layers (HALs).
+      Rust's embedded ecosystem is built around a set of standard APIs that let you write platform-independent code even for bare-metal development. This is possible thanks to Rust's strong and expressive type system and its package manager, Cargo, which makes it easy to add and manage dependencies on third-party libraries. In this part, you'll get an overview of the ecosystem, with a focus on the <code>core</code> library and the structure of Peripheral Access Crates and Hardware Abstraction Layers (HALs).
 
 
   - title: Tooling and documentation
