@@ -4,7 +4,7 @@ tags: "rust"
 format: "Workshop: 3 days"
 subtext: "Bookable for teams – on-site or remote"
 description: >
-  <p>Whether you’re developing robust embedded systems, creating low-power, secure IoT products, or taking your device to space, Rust evolves embedded software engineering. In this workshop, you’ll learn to apply your embedded engineering skills to the modern, ergonomic, performant, and memory safe programming language that is Rust. You’ll get acquainted with Rust’s embedded ecosystem, widely used tooling, and work your way from the basics to writing complex, multitasking applications.</p> <p>Furthermore, this workshops covers the current state of art when it comes to using Rust in safety-critical systems with real-time requirements.</p> <p>At the end of this workshop, you will be able to build robust and secure (asynchronous) embedded applications in Rust, write platform-agnostic device drivers, and work with tools and frameworks that are widely used in Rust's embedded ecosystem. On top of that, you know what to consider when it comes to using Rust in safety-critical systems.</p> <p>This workshop is targeted at experienced embedded developers that want to learn embedded development in Rust. Limited knowledge of Rust is assumed, but you are assumed to be proficient in low-level embedded software engineering in C or C++.</p><p>We will work with real hardware during this workshop</p>
+  <p>Rust is the future of embedded software. No matter if you’re developing robust embedded systems, creating low-power, secure IoT products, or taking your device to space, Rust revolutionizes embedded software engineering. In this workshop, you’ll learn to apply your embedded engineering skills to the modern, ergonomic, performant, and memory safe programming language that is Rust. You’ll get acquainted with Rust’s embedded ecosystem, widely used tooling, and work your way from the basics to writing complex, multitasking applications.</p> <p>Furthermore, this workshops covers the current state of art when it comes to using Rust in safety-critical systems with real-time requirements.</p> <p>At the end of this workshop, you will be able to build robust and secure (asynchronous) embedded applications in Rust, write platform-agnostic device drivers, and work with tools and frameworks that are widely used in Rust's embedded ecosystem. On top of that, you know what to consider when it comes to using Rust in safety-critical systems.</p> <p>This workshop is targeted at experienced embedded developers that want to learn embedded development in Rust. Limited knowledge of Rust is assumed, but you are assumed to be proficient in low-level embedded software engineering in C or C++.</p><p>We will work with real hardware during this workshop.</p>
 
 
 hero:
@@ -16,7 +16,8 @@ og:
 topics:
   - title: Rust's embedded ecosystem
     text: >
-      Using Rust's strong and expressive type system, and with the ease of adding dependencies to your project using Cargo, Rust's library and tooling ecosystem revolves around standard APIs that allow for writing platform-independent code even in bare-metal embedded software development. This part covers the outline of this ecosystem, and draws the context in which the ecosystem lives, covering the <code>core</code> library, and the structure of Peripheral Access Crates and Hardware Abstraction Layers.
+      Rust's embedded ecosystem is built around a set of standard APIs that let you write platform-independent code even for bare-metal development. This is possible thanks to Rust's strong and expressive type system and its package manager, Cargo, which makes it easy to add and manage dependencies on third-party libraries.
+      In this part, you'll get an overview of the ecosystem, with a focus on the <code>core</code> library and the structure of Peripheral Access Crates and Hardware Abstraction Layers (HALs).
 
 
   - title: Tooling and documentation
@@ -26,7 +27,7 @@ topics:
 
   - title: A basic Rust application
     text: >
-      With a solid grasp of the context and tools, you’re ready to write your first embedded Rust application. In this part, you’ll learn the Rust way of writing embedded applications, interacting with hardware and configuring interrupts. This part covers the hardships of sharing resources between application code and interrupt handler, how Rust makes those explicit, and how to overcome them in a safe way.
+      With a solid grasp of the context and tools, you’re ready to write your first embedded Rust application. In this part, you’ll learn the Rust way of writing embedded applications, interacting with hardware and configuring interrupts. This part covers the hardships of sharing resources between application code and interrupt handlers, how Rust makes those explicit, and how to overcome them safely.
 
 
   - title: Writing cross-platform device drivers
@@ -36,12 +37,12 @@ topics:
 
   - title: An async Rust application
     text: >
-      One of Rust's killer features for embedded development is language support for asynchronous multitasking, independent of the runtime. This part introduces how Rust transforms async code into state machines that can be executed by executors such as <code>embassy-executor</code>. You’ll learn how a typical <code>embassy</code>-based application is structured, how to interact with hardware in an asynchronous way, and configuring interrupts and background tasks.
+      One of Rust's killer features for embedded development is language support for asynchronous multitasking. This part introduces how Rust transforms async code into state machines that can be run by embedded-specific executors such as <code>embassy-executor</code>. You’ll learn how a typical <code>embassy</code>-based application is structured, how to interact with hardware asynchronously, and how to configure interrupts and background tasks.
 
 
   - title: Rust in IoT
     text: >
-      Communicating with systems external to the device is a basic feature that is a requirement for almost every embedded system. In this part, you’ll learn how to leverage Rust for setting up robust, re-usable, secure and maintainable communications, sharing code between device and server. You’ll make your device speak MQTT, communicating custom-defined, encrypted messages with a server.
+      Communicating with systems external to the device is an essential requirement for almost every embedded system. In this part, you’ll learn how to leverage Rust to set up robust, re-usable, secure, and maintainable communications, as well as share code between device and server. You’ll make your device speak MQTT to exchange custom-defined, encrypted messages with a remote server.
 
 
   - title: A Zephyr application written in Rust
