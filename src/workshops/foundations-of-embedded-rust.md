@@ -22,7 +22,7 @@ topics:
 
   - title: Tooling and documentation
     text: >
-      There are various great tools out there that make life of an embedded Rust engineer much easier. This part covers the structure of a typical embedded Rust project, finding and adding dependencies and finding their documentation and usage examples, and optimising your code. Furthermore, you’ll work with <code>probe-rs</code> to load and debug your application and log over RTT and <code>defmt</code>.
+      There are various great tools out there that make life of an embedded Rust engineer much easier. This part covers the structure of a typical embedded Rust project, finding and adding dependencies and finding their documentation and usage examples, and optimising your code. Furthermore, you’ll work with <a href="https://probe.rs/"><code>probe-rs</code></a> to load and debug your application and log over RTT and <a href="https://github.com/knurling-rs/defmt"><code>defmt</code></a>.
 
 
   - title: A basic Rust application
@@ -37,7 +37,7 @@ topics:
 
   - title: An async Rust application
     text: >
-      One of Rust's killer features for embedded development is language support for asynchronous multitasking. This part introduces how Rust transforms async code into state machines that can be run by embedded-specific executors such as <code>embassy-executor</code>. You’ll learn how a typical <code>embassy</code>-based application is structured, how to interact with hardware asynchronously, and how to configure interrupts and background tasks.
+      One of Rust's killer features for embedded development is language support for asynchronous multitasking. This part introduces how Rust transforms async code into state machines that can be run by embedded-specific executors such as <a href="https://embassy.dev/"><code>embassy-executor</code></a>. You’ll learn how a typical <code>embassy</code>-based application is structured, how to interact with hardware asynchronously, and how to configure interrupts and background tasks.
 
 
   - title: Rust in IoT
@@ -47,12 +47,12 @@ topics:
 
   - title: A Zephyr application written in Rust
     text: >
-      Sometimes, you’re in a situation where choices have been made for you. With the rising popularity of Zephyr RTOS you may well find yourself having to write your code as a Zephyr application. In this part, you’ll learn how to write your Zephyr applications in Rust. This part covers the current state of Rust support in Zephyr, and interacting with various OS APIs.
+      Sometimes, you’re in a situation where choices have been made for you. With the rising popularity of <a href="https://www.zephyrproject.org/">Zephyr RTOS</a> you may well find yourself having to write your code as a Zephyr application. In this part, you’ll learn how to write your Zephyr applications in Rust. This part covers the current state of Rust support in Zephyr, and interacting with various OS APIs.
 
 
   - title: Rust in safety-critical systems
     text: >
-      Picking a memory safe programming language when creating safety-critical systems seems a no-brainer, but with the embedded world still relying heavily on older programming languages, deviating from the standard has implications. This part covers the current state of art when it comes to using Rust to write safety-critical code, and what to consider in doing so. In addition, this part covers writing embedded applications with real-time requirements using the RTIC concurrency framework.
+      Picking a memory safe programming language when creating safety-critical systems seems a no-brainer, but with the embedded world still relying heavily on older programming languages, deviating from the standard has implications. This part covers the current state of art when it comes to using Rust to write safety-critical code, and what to consider in doing so. In addition, this part covers writing embedded applications with real-time requirements using the <a href="https://rtic.rs/">RTIC</a> concurrency framework.
 
 
 leads:
@@ -61,5 +61,5 @@ leads:
     handle: hdoordt
     image: /assets/images/authors/hdoordt.jpg
     bio: >
-      Henk is a long time Rust engineer with a diverse background in developing Rust applications and others the trade, and has been writing embedded Rust since the early days. As a member of Rust's embedded working group, Henk works on creating educational content on embedded Rust, such as Rust's Discovery book.
+      Henk is a long time Rust engineer with a diverse background in developing Rust applications and others the trade, and has been writing embedded Rust since the early days. As a member of Rust's <a href="https://github.com/rust-embedded/wg/">embedded working group</a>, Henk works on creating educational content on embedded Rust, such as Rust's Discovery book.
 ---
