@@ -43,7 +43,7 @@ Making sure your business is compliant could be a significant amount of product 
 
 Nowadays there’s a plethora of tools to help tackle the accessibility requirements. Most popular UI development frameworks such as Ember and Svelte document their solutions and integrations that help with a11y.
 
-- Code analysis - linting: Allows checking code for missing or misspelled HTML element attributes as the code is developed. It only allows to fix so many issues but they provide the quickest feedback and are the easiest to setup. They can be used as a starting point to accessibility. An example of such a tool is [ember-template-lint](https://github.com/ember-template-lint/ember-template-lint?tab=readme-ov-file).
+- Code analysis or linting tools that automatically and continuously check the code for missing or invalid HTML element attributes. They are easy to set up and provide quick feedback but are limited to most common issues. They represent a good starting point to making your web products accessible. An example of such a tool is [ember-template-lint](https://github.com/ember-template-lint/ember-template-lint?tab=readme-ov-file).
 - [Axe](https://www.deque.com/axe/) provides excellent accessibility analysis of web pages. By using [axe-core](https://github.com/dequelabs/axe-core), it can integrate with an automated test suite and inspect web pages or individual components according to all sorts of scenarios. For instance, here's an integration with the Playwright test framework: [axe-core/playwright](https://playwright.dev/docs/accessibility-testing).
 
 ### Manual testing
