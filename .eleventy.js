@@ -16,6 +16,7 @@ const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const contentParser = require("./utils/transforms/contentParser.js");
 const htmlMinTransform = require("./utils/transforms/htmlmin.js");
 const { findBySlug } = require("./utils/findBySlug");
+const { init } = require("./utils/svelteSyntaxHighlight");
 
 /**
  * Import site configuration
@@ -152,7 +153,9 @@ module.exports = function (eleventyConfig) {
    * @link https://github.com/okitavera/eleventy-plugin-pwa
    */
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(syntaxHighlightPlugin);
+  eleventyConfig.addPlugin(syntaxHighlightPlugin, {
+    init,
+  });
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(sitemap, {
     sitemap: {

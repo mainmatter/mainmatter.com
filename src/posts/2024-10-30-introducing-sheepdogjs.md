@@ -32,7 +32,7 @@ You can learn all about Sheepdog and how it works in [the docs](https://sheepdog
 
 As a very basic example, imagine you want to create a Svelte component that will search while the user types, but to reduce the number of requests sent to your server, you want to wait for the user to stop typing before you send the request. With Sheepdog, it would look like this:
 
-```js
+```svelte
 {% raw %}
 <script>
   import { task, timeout } from '@sheepdog/svelte';
@@ -91,7 +91,7 @@ Sheepdog automatically binds the task to the component it was created in, meanin
 
 Sometimes you want one task to be entirely dependant on another, meaning that the child task is cancelled when the parent task is cancelled. Using the [Link function](https://sheepdog.run/explainers/linking-tasks/), binding tasks together is as easy as counting sheep.
 
-```js
+```svelte
 // Child.svelte
 <script>
   import { task, timeout } from '@sheepdog/svelte';
@@ -115,7 +115,7 @@ Under the hood, Sheepdog will turn all of your tasks into a generator function b
 
 So if you wrote the following code:
 
-```js
+```svelte
 <script>
   import { task } from '@sheepdog/svelte';
 
@@ -140,7 +140,7 @@ So if you wrote the following code:
 
 The output of the Async Transform would be:
 
-```js
+```svelte
 <script>
   import { task } from '@sheepdog/svelte';
 

@@ -66,7 +66,7 @@ module.exports = {
 
 Let’s use a foundational `Button.svelte` component in `src/components/` as an example:
 
-```html
+```svelte
 <script>
   export let label = "";
   export let type = "submit";
@@ -118,7 +118,7 @@ export const withLongText = {
 
 But when using `addon-svelte-csf`, the corresponding Story looks something like this:
 
-```jsx
+```svelte
 <script>
   import { Meta, Story, Template } from "@storybook/addon-svelte-csf";
   import Button from "./Button.svelte";

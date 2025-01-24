@@ -24,7 +24,7 @@ Now let's look at the common implementations for the above two, pretty similar t
 
 Network request:
 
-```js
+```svelte
 <script>
   async function clearShoppingList(id) {
     let result = await fetch('/api/lists/${id}/clear', {
@@ -43,7 +43,7 @@ Network request:
 Confirmation modal:
 
 <!-- prettier-ignore -->
-```html
+```svelte
 {% raw %}
 <script>
   let isModalOpened = false;
