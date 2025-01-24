@@ -128,8 +128,9 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("future", collection => {
     return collection.filter(item => {
-      if (Number.isNaN(Date.parse(item.endDate))) return console.log("Workshop has invalid date!");
-      return Date.parse(item.endDate) > new Date();
+      if (Number.isNaN(Date.parse(item.startDate)))
+        return console.log("Workshop has invalid date!");
+      return Date.parse(item.startDate) > new Date();
     });
   });
 
