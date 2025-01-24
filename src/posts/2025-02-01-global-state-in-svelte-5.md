@@ -39,9 +39,9 @@ export const count = writable(0);
 
 from a javascript file and use this throughout your application
 
-```html
+```svelte
 <script>
-	import { count } from "./my-count";
+  import { count } from "./my-count";
 </script>
 
 <button on:click={()=>{
@@ -141,9 +141,9 @@ export function set(new_count) {
 
 just by doing this our count variable will now be fully reactive
 
-```html
+```svelte
 <script>
-	import { get, set } from "./count.svelte.js";
+  import { get, set } from "./count.svelte.js";
 </script>
 
 <button onclick={()=>{
@@ -174,9 +174,9 @@ export const counter = {
 
 and you can use it like this
 
-```html
+```svelte
 <script>
-	import { counter } from "./count.svelte.js";
+  import { counter } from "./count.svelte.js";
 </script>
 
 <button onclick={()=>{
