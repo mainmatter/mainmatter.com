@@ -145,7 +145,7 @@ The [Styles](https://github.com/ember-learn/super-rentals/blob/super-rentals-tut
 
 We will then update the `routes/+page.svelte` component so that we can see the basic shape of the site as well as the image of the Tomster.
 
-```html
+```svelte
 // routes/+page.svelte
 
 <div class="jumbo">
@@ -203,7 +203,7 @@ export default config;
 
 I also added the global styles sheet to the `app.html` so that the styles are automatically applied to all pages and components, and I can use the global classes from wherever needed.
 
-```html
+```svelte
 <!-- app.html -->
 
 <!doctype html>
@@ -237,7 +237,7 @@ When it comes to creating routes, there isn’t the same extensive CLI that Embe
 
 In SvelteKit we are missing the ability to create a route and give it a different name, so we need to be thoughtful about what we want the name of the route to be when creating it, as it is a very manual process to adapt a route name after it’s created.
 
-```html
+```svelte
 <!-- routes/about/+page.svelte -->
 
 <div class="jumbo">
@@ -252,7 +252,7 @@ In SvelteKit we are missing the ability to create a route and give it a differen
 </div>
 ```
 
-```html
+```svelte
 <!-- routes/getting-in-touch/+page.svelte -->
 
 <div class="jumbo">
@@ -482,7 +482,7 @@ PWDEBUG=1 npm run test
 
 Similar to the routes, there is no command to generate components for us, so we will create the `src/components` folder along with the `src/components/jumbo.svelte` and `src/components/nav-bar.svelte` component files
 
-```html
+```svelte
 <!-- components/jumbo.svelte -->
 
 <div class="jumbo">
@@ -493,7 +493,7 @@ Similar to the routes, there is no command to generate components for us, so we 
 
 The `<slot/>` here is similar to the `{{yield}}` in Ember, it allows us to use this component as a wrapper for more HTML to be passed in from the parent.
 
-```html
+```svelte
 <!-- components/nav-bar.svelte -->
 
 <nav class="menu">
@@ -531,7 +531,7 @@ export default config;
 
 Then we will update our usage of these components in our routes
 
-```html
+```svelte
 <!-- routes/+page.svelte -->
 
 <script>
@@ -545,7 +545,7 @@ Then we will update our usage of these components in our routes
 </Jumbo>
 ```
 
-```html
+```svelte
 <!-- routes/about/+page.svelte -->
 
 <script>
@@ -563,7 +563,7 @@ Then we will update our usage of these components in our routes
 </Jumbo>
 ```
 
-```html
+```svelte
 <!-- routes/getting-in-touch/+page.svelte -->
 
 <script>
@@ -586,7 +586,7 @@ In terms of component usage, both Ember and Svelte have a similar approach but s
 
 Another big difference between the two is that components are always available in Ember and you can simply invoke them in the template, whereas in SvelteKit you need to import the component in the script tag before you can use it in the template. I like the simplicity of Ember’s approach, but it does mean you can end up with quite long component names if your app has a lot of component nesting - i.e. `<Ui::Layout::Foo::Bar::TwoColumn::AwesomeComponent/>` - whereas you likely don’t have this problem in Svelte because you can simply change the name of the component when you import it - i.e.
 
-```html
+```svelte
 <script>
   import AwesomeComponent from "@components/ui/layout/foo/bar/two-column/awesome-component.svelte";
 </script>
@@ -604,7 +604,7 @@ It can be argued that Svelte’s approach could lead to more confusion as the na
 
 We also created the `<NavBar>`, which we want to be visible on all pages, instead of adding it individually to each page component, we will create a `+layout.svelte` component instead. The layout component sits in the nesting structure just like the `pages` and will apply a layout to all children routes unless otherwise specified.
 
-```html
+```svelte
 <!-- routes/+layout.svelte -->
 
 <script>
@@ -669,7 +669,7 @@ While using the Playwright test generator, I loved the simplicity of being able 
 
 Now let’s create some components that will receive parameters to be handled by the component.
 
-```html
+```svelte
 <!-- components/rental/image.svelte -->
 
 <script>
@@ -688,7 +688,7 @@ A big difference between Ember and SvelteKit here is that Svelte requires you to
 
 Using the new `<RentalImage>` component, let’s create the `<Rental>` component, which will just be hardcoded for now to give is some information to see on screen.
 
-```html
+```svelte
 <!-- components/rental/index.svelte -->
 
 <script>
@@ -741,7 +741,7 @@ And then add a few of these to the `index` page of our app.
 
 Now let’s add the ability to toggle the size of the image on click.
 
-```html
+```svelte
 <!-- components/rental/image.svelte -->
 
 <script>
@@ -800,7 +800,7 @@ Because we don’t have the full `environment` config that is present in Ember a
 
 Now that we have the access token stored in our app, we can use it in our new `<Map>` component
 
-```html
+```svelte
 <!-- components/map.svelte -->
 
 <script context="module">
@@ -856,7 +856,7 @@ _(I noticed that none of this was actually required as the attributes don’t ev
 
 We can then add this new Map component to the bottom of the `article` on our `<Rental>` component:
 
-```html
+```svelte
 <!-- components/rental/index.svelte -->
 
 <script>
@@ -1094,7 +1094,7 @@ This isn’t ideal, and the loading would normally be done by our back-end, but 
 
 We can then create a page to display this data
 
-```html
+```svelte
 <!-- routes/rentals/[slug]/+page.svelte -->
 
 <script context="module">
@@ -1353,7 +1353,7 @@ And to round things off, we will be adding the ability to filter our rentals bas
 
 Because we essentially already have the index route as a component, we won’t need to separate out the rentals into their own component as we can easily keep track of the searchQuery directly in the index route.
 
-```html
+```svelte
 <!-- components/rentals-filter.svelte -->
 
 <script>
