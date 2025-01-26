@@ -131,16 +131,10 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: install @gravityci/cli
-        run: pnpm add -D @gravityci/cli
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: build
         run: pnpm build
 
       - name: Run Gravity
-        run: npm run gravityci "dist/**/!(*.js.map)"
+        run: pnpm dlx @gravityci/cli "dist/**/!(*.js.map)"
         env:
           GRAVITY_TOKEN: ${{ secrets.GRAVITY_TOKEN }}
-          GRAVITY_HOST: ${{ vars.GRAVITY_HOST }}
