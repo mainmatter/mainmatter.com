@@ -126,12 +126,10 @@ module.exports = function (eleventyConfig) {
     return Boolean(collection?.find(({ page }) => page.url === url));
   });
 
-  eleventyConfig.addFilter("future", collection => {
-    return collection.filter(item => {
-      if (Number.isNaN(Date.parse(item.startDate)))
-        return console.log("Workshop has invalid date!");
-      return Date.parse(item.startDate) > new Date();
-    });
+  eleventyConfig.addFilter("upcoming", collection => {
+    return collection
+      .filter(item => Date.parse(item.startDate) > new Date())
+      .sort((a, b) => Date.parse(a.startDate) - Date.parse(b.startDate));
   });
 
   /*

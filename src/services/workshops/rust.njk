@@ -95,7 +95,7 @@ image: "/assets/images/workshops/rust-og-image.jpg"
   starting from the basics of the language all the way to advanced testing techniques and comprehensive
   telemetry instrumentation.', workshops)
 }}
-{% set futurePublicWorkshops = publicRustWorkshops.workshops | future %}
+{% set futurePublicWorkshops = publicRustWorkshops.workshops | upcoming %}
 {{ publicWorkshops(futurePublicWorkshops) }}
 
 <section class="my-10">
