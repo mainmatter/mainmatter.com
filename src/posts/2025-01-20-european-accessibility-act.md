@@ -31,10 +31,6 @@ Product teams need to be aware of these key deadlines:
 
 Preparing early for these dates is essential to ensure compliance, avoid penalties, and meet market expectations for accessible products.
 
-### Expansion Beyond Web Accessibility
-
-The EAA builds on the Web Accessibility Directive, which originally focused on public sector websites and mobile applications, and extends accessibility requirements to the private sector. This expansion ensures that a broader range of digital and physical products in the private sector adhere to inclusive standards. The EAA’s implementation also benefits from the models and expert groups developed for the Web Accessibility Directive, promoting consistency in enforcement across the EU.
-
 ## Meeting compliance requirements
 
 Making sure your business is compliant could be a significant amount of product design and engineering work that also requires a know-how of the web application development field. This section will provide you steps to navigate the problem.
