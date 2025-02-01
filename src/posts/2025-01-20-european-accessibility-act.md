@@ -35,6 +35,40 @@ Preparing early for these dates is essential to ensure compliance, avoid penalti
 
 Ensuring compliance with the EAA requires product design and engineering work. This section shows the key steps.
 
+## Success Criteria
+
+Let's look at some specific accessibility criteria from WCAG (version 2.2, Levels A and AA), which the EAA uses as a technical basis.
+
+The WCAG guidelines establish accessibility standards based on four key principles: **Perceivable**, **Operable**, **Understandable**, and **Robust**. These principles ensure content is accessible to all users, including those with disabilities.
+
+#### Perceivable
+
+- **Text Alternatives:** Provide text alternatives for all non-text content to convey the same information. Use brief descriptions for simple content and detailed descriptions when more context is needed, especially for control elements or user input fields. Mark purely decorative content to be ignored by assistive technologies.
+- **Adaptable:** Ensure content can adapt to different layouts without losing meaning. Content order should remain programmatically identifiable, and instructions shouldn’t rely solely on visual cues like color. Input fields collecting user information should be programmatically identifiable.
+- **Distinguishable:** Improve content visibility and audibility, maintaining a minimum contrast ratio of 4.5:1 for readability. Users should be able to resize text up to 200% without losing functionality. Limit reliance on images of text where text can achieve the same effect, and provide independent controls for audio that auto-plays.
+
+#### Operable
+
+- **Keyboard Accessible:** All functionality must be accessible via keyboard without requiring specific timings for keystrokes. Avoid trapping users within components and allow remapping of character shortcuts where applicable.
+- **Enough Time:** Provide options for users to control time limits, or turn off or pause moving content. Offer controls for blinking or scrolling content longer than five seconds, or stop it automatically.
+- **Seizures and Physical Reactions:** Avoid flashing content that could provoke seizures, keeping any flashes below the defined threshold.
+- **Navigable:** Support intuitive navigation through clear titles, bypass options for repetitive content, logical focus order, and contextually clear link purposes. Focus indicators should be visible, and elements receiving focus should not be obscured.
+- **Input Modalities:** Ensure interaction compatibility with various input methods, like single pointers or motion-based gestures. Components should be operable through either large or alternative touch targets (minimum 24x24 CSS pixels), with options to cancel actions if needed.
+
+#### Understandable
+
+- **Readable:** Specify the default language for each webpage to support accurate text rendering by assistive technologies. Indicate changes in language to maintain clarity, except in cases like proper names or technical terms.
+- **No automatic context switch:** Components shouldn’t change contexts automatically when receiving focus.
+- **Content order:** Ensure consistent relative order of navigational elements across pages
+- **Consistent identification:** Label elements with similar functions consistently across the site.
+- **User-initiated changes:** Warn users of any context changes triggered by their input.
+- **Input Assistance:** Help users avoid and correct errors by providing clear labels, descriptive instructions, and accessible error alerts. Detect errors automatically and offer correction suggestions unless security is compromised. For sensitive actions, implement safeguards against accidental submissions.
+
+#### Robust
+
+- **Name, Role, Value:** Ensure that user interface components (like buttons or input fields) are compatible with assistive technologies by making names, roles, states, and properties programmatically accessible. Use ARIA attributes and proper HTML markup to maintain accessibility.
+- **Status Messages:** Status updates, such as success messages or alerts, should be communicated to assistive technologies without disrupting the user’s focus. Utilize roles and properties like `role=status` or `role=alert` to achieve this.
+
 ### Automated tooling
 
 Nowadays there’s a plethora of tools to help tackle the accessibility requirements. Most popular UI development frameworks such as Ember and Svelte document their solutions and integrations that help with a11y.
@@ -67,40 +101,6 @@ Accessibility can’t simply be “done”; it must be an ongoing process integr
 ### Costs of compliance
 
 The cost of ensuring compliance with the European Accessibility Act depends on the complexity of your web application. The process typically begins with an initial accessibility audit to identify areas requiring updates. Simpler applications may only require one-time investments to implement these updates, while more complex platforms may involve ongoing expenses for development, user testing, and the integration of assistive technologies. Training your team is another important factor, with costs associated with workshops or courses. Additionally, businesses should consider the long-term expenses of ongoing compliance monitoring and enhancing customer support for accessibility. Failing to comply may result in fines ranging from €5,000 to €20,000 _per violation_, with ongoing non-compliance penalties reaching as high as €1,000 per day. While these efforts require investment, the benefits include broader user engagement, reduced legal risks, and a strengthened reputation for inclusivity.
-
-## Quick intro to WCAG 2.2 (Levels A and AA) Success Criteria
-
-Let's look at some specific accessibility criteria from WCAG, which the EAA uses as a technical basis.
-
-The WCAG 2.2 guidelines establish accessibility standards based on four key principles: **Perceivable**, **Operable**, **Understandable**, and **Robust**. These principles ensure content is accessible to all users, including those with disabilities.
-
-#### Perceivable
-
-- **Text Alternatives:** Provide text alternatives for all non-text content to convey the same information. Use brief descriptions for simple content and detailed descriptions when more context is needed, especially for control elements or user input fields. Mark purely decorative content to be ignored by assistive technologies.
-- **Adaptable:** Ensure content can adapt to different layouts without losing meaning. Content order should remain programmatically identifiable, and instructions shouldn’t rely solely on visual cues like color. Input fields collecting user information should be programmatically identifiable.
-- **Distinguishable:** Improve content visibility and audibility, maintaining a minimum contrast ratio of 4.5:1 for readability. Users should be able to resize text up to 200% without losing functionality. Limit reliance on images of text where text can achieve the same effect, and provide independent controls for audio that auto-plays.
-
-#### Operable
-
-- **Keyboard Accessible:** All functionality must be accessible via keyboard without requiring specific timings for keystrokes. Avoid trapping users within components and allow remapping of character shortcuts where applicable.
-- **Enough Time:** Provide options for users to control time limits, or turn off or pause moving content. Offer controls for blinking or scrolling content longer than five seconds, or stop it automatically.
-- **Seizures and Physical Reactions:** Avoid flashing content that could provoke seizures, keeping any flashes below the defined threshold.
-- **Navigable:** Support intuitive navigation through clear titles, bypass options for repetitive content, logical focus order, and contextually clear link purposes. Focus indicators should be visible, and elements receiving focus should not be obscured.
-- **Input Modalities:** Ensure interaction compatibility with various input methods, like single pointers or motion-based gestures. Components should be operable through either large or alternative touch targets (minimum 24x24 CSS pixels), with options to cancel actions if needed.
-
-#### Understandable
-
-- **Readable:** Specify the default language for each webpage to support accurate text rendering by assistive technologies. Indicate changes in language to maintain clarity, except in cases like proper names or technical terms.
-- **No automatic context switch:** Components shouldn’t change contexts automatically when receiving focus.
-- **Content order:** Ensure consistent relative order of navigational elements across pages
-- **Consistent identification:** Label elements with similar functions consistently across the site.
-- **User-initiated changes:** Warn users of any context changes triggered by their input.
-- **Input Assistance:** Help users avoid and correct errors by providing clear labels, descriptive instructions, and accessible error alerts. Detect errors automatically and offer correction suggestions unless security is compromised. For sensitive actions, implement safeguards against accidental submissions.
-
-#### Robust
-
-- **Name, Role, Value:** Ensure that user interface components (like buttons or input fields) are compatible with assistive technologies by making names, roles, states, and properties programmatically accessible. Use ARIA attributes and proper HTML markup to maintain accessibility.
-- **Status Messages:** Status updates, such as success messages or alerts, should be communicated to assistive technologies without disrupting the user’s focus. Utilize roles and properties like `role=status` or `role=alert` to achieve this.
 
 ## Bottom line
 
