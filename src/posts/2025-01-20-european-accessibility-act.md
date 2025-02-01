@@ -13,8 +13,8 @@ tagline: |
 ---
 
 > TL;DR: By June 28, 2025, all digital products and services targeting EU users must meet accessibility standards under the [European Accessibility Act (EAA)](https://employment-social-affairs.ec.europa.eu/policies-and-activities/social-protection-social-inclusion/persons-disabilities/union-equality-strategy-rights-persons-disabilities-2021-2030/european-accessibility-act_en). This includes everything from websites and apps to platforms in sectors like e-commerce, finance, and education. Failing to comply could result in fines of €5,000 to €20,000 per violation, with daily penalties up to €1,000 if issues persist.
->
-> Mainmatter can simplify this process for you. With our expertise, we’ll help ensure your products meet modern accessibility expectations, minimizing legal risks and improving the experience for all your users.
+
+Mainmatter can simplify this process for you. With our expertise, we’ll help ensure your products meet modern accessibility expectations, minimizing legal risks and improving the experience for all your users.
 
 ## Introduction to the **European Accessibility Act**
 
