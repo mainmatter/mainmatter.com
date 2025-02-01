@@ -33,7 +33,7 @@ Preparing early for these dates is essential to ensure compliance, avoid penalti
 
 ## Meeting compliance requirements
 
-Making sure your business is compliant could be a significant amount of product design and engineering work that also requires a know-how of the web application development field. This section will provide you steps to navigate the problem.
+Ensuring compliance with the EAA requires product design and engineering work. This section shows the key steps.
 
 ### Automated tooling
 
