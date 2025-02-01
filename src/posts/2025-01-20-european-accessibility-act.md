@@ -24,7 +24,7 @@ Failing to comply can lead to fines and legal action, especially if essential se
 
 ### Compliance Timeline
 
-Product owners need to be aware of these key deadlines:
+Product teams need to be aware of these key deadlines:
 
 - **June 28, 2025**: Deadline for most digital platforms (websites, mobile apps) and other covered products to comply with EAA accessibility standards.
 - **June 28, 2030**: Extended compliance deadline for certain self-service terminals, such as ATMs and ticket machines.
