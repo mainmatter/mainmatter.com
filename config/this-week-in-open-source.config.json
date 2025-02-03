@@ -100,7 +100,8 @@
         "sveltejs/svelte.dev",
         "ericclemmons/awesome-starter-packs",
         "svelte-society/summit-website",
-        "sveltejs/esrap"
+        "sveltejs/esrap",
+        "sveltejs/cli"
       ]
     },
     {
@@ -623,6 +624,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2025-01-19..2025-01-26",
+  "last_date": "2025-01-26..2025-02-02",
   "query_type": "Merged"
 }
