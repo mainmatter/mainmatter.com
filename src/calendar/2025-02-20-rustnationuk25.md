@@ -6,7 +6,7 @@ url: https://www.rustnationuk.com/workshops
 kind: conference
 color: aqua
 hero:
-  image: "static/assets/images/calendar/2025-02-20-rustnationuk25/london.png"
+  image: "/assets/images/calendar/2025-02-20-rustnationuk25/london.png"
   imageAlt: "View of the city of London"
 ---
 
