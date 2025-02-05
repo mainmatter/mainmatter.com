@@ -1,12 +1,12 @@
 ---
 title: "Rust Nation UK 2025"
-image: "/assets/images/calendar/2025-02-20-rustnationuk25/rust.png"
+image: "/assets/images/calendar/2025-02-19-rustnationuk25/rust.png"
 location: "London, UK"
 url: https://www.rustnationuk.com/workshops
 kind: conference
 color: aqua
 hero:
-  image: "/assets/images/calendar/2025-02-20-rustnationuk25/london.png"
+  image: "/assets/images/calendar/2025-02-19-rustnationuk25/london.png"
   imageAlt: "View of the city of London"
 ---
 
