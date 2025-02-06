@@ -152,7 +152,7 @@ just by doing this, our `count` variable will now be fully reactive
 </button>
 ```
 
-Thanks for reading, bye!
+Here's a [svelte repl](https://svelte.dev/playground/a54adf9ebd2e41eb8e44886d67768077?version=5.19.8) you can play around with. Thanks for reading, bye!
 
 ...
 
@@ -185,7 +185,9 @@ and you can use it like this
 </button>
 ```
 
-Much nicer right? We can do even better...when you pass an object to `$state` svelte cleverly wrap that object in a Proxy (you can read more about proxies on the official [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)...they are a fascinating feature of the language). To make it short: with proxies, we wrap every property of the object with a _getter_ and a _setter_ for you. So our declaration file becomes even shorter.
+And here's the obligatory [repl](https://svelte.dev/playground/911996cc305d4794b3e2b2e10e2faa60?version=5.19.8) to play around with.
+
+Much nicer right? We can do even better...when you pass an object to `$state` svelte cleverly wrap that object in a Proxy (you can read more about proxies on the official [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)...they are a fascinating feature of the language). To make it short: with proxies, we wrap every property of the object with a _getter_ and a _setter_ for you. So our declaration file becomes even shorter (relevant [repl](https://svelte.dev/playground/352c991f203d4feebb3c371e6166b9c3?version=5.19.8)).
 
 ```ts
 export const counter = $state({ value: 0 });
@@ -205,7 +207,7 @@ class Counter {
 export const counter = new Counter();
 ```
 
-and yes, you can use this in the same way.
+and yes, you can use this in the same way as you can see in [this repl](https://svelte.dev/playground/c3006274ed734e2eadb64b8b2f094717?version=5.19.8).
 
 ## The perils of Global State
 
