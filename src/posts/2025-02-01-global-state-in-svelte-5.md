@@ -336,6 +336,8 @@ export function get_notifications() {
 
 by doing this we can then update our root layout to initialize a new stateful variable and add it to the context.
 
+{% raw %}
+
 ```svelte
 <script lang="ts">
 	import { set_notifications } from '$lib/notification-context.ts';
@@ -354,6 +356,8 @@ by doing this we can then update our root layout to initialize a new stateful va
 	{/each}
 </aside>
 ```
+
+{% endraw %}
 
 now to show a new notification we can just retrieve the notifications and push to the array
 
