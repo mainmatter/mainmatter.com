@@ -229,3 +229,148 @@ Well, still not: it might be good as long as you don't have asynchronous code, b
 ![a diagram showing how multiple async request could mutate global state causing the read of the wrong value](/assets/images/posts/2025-02-01-global-state-in-svelte-5/global-state-diagram.png)
 
 That's obviously wrong and very dangerous! But I would not be here blabbering if I didn't have a solution to this problem!
+
+### The solution
+
+Before we begin diving in the solution a small disclaimer: what I'm about to explain make things way safer (eliminating the problems we talked in the above paragraph) but does make things a bit more complex. But don't worry we will go in details about how it works and everything will be clear by the end of this blog post.
+
+The first thing to know is that if you need to access state inside a `load` function there's a tool appositely made for that: the [`locals`](https://svelte.dev/docs/kit/hooks#Server-hooks-locals) object. Every time a new request is handled by Svelte Kit you can access the `event` which will be unique for the duration of the request. On the `event` you can read or write to `event.locals` to share context throughout the various `load` function.
+
+Let's make an example to make this clearer: let's say you want to have a `user` object that will contain the currently logged in user info. The first thing you would do (if you are using Typescript...but let's be honest who doesn't) is update [`app.d.ts`](https://svelte.dev/docs/kit/types#app.d.ts) which is a global declaration files that Svelte Kit uses to allow you to specify four kind of types: by default it will look like this
+
+```ts
+declare global {
+  namespace App {
+    // interface Error {}
+    // interface Locals {}
+    // interface PageData {}
+    // interface PageState {}
+    // interface Platform {}
+  }
+}
+
+export {};
+```
+
+As you might have guessed the line we are interested in is `interface Locals`...by uncommenting and modifying that line we can specify the shape for `event.locals`
+
+```ts
+declare global {
+  namespace App {
+    // interface Error {}
+    interface Locals {
+      user?: { name: string; last_name: string };
+    }
+    // interface PageData {}
+    // interface PageState {}
+    // interface Platform {}
+  }
+}
+
+export {};
+```
+
+then we can proceed with the second piece of the puzzle: [the hooks file](https://svelte.dev/docs/kit/hooks#Server-hooks).
+
+You can create a file name `hooks.server.ts` in the `src` folder and define a `handle` function there. This will act as a sort of middleware, being invoked on each request. And inside the function we can fetch the current user and update the `locals` object.
+
+```ts
+export function handle({ event, resolve }) {
+  const user_cookie = event.cookies.get("user");
+  if (user_cookie) {
+    // update the locals object
+    event.locals.user = await fetch_user(user_cookie);
+  }
+  return resolve(event);
+}
+```
+
+Now we have our `event.locals.user` everywhere in our `load` functions! But what about the client side?
+
+For that we need a bit more work. We can create a root layout in `/src/routes` and we can return the user from our locals
+
+```ts
+export function load({ locals }) {
+  return {
+    user: locals.user,
+  };
+}
+```
+
+this will make `user` accessible through `page.data`
+
+```svelte
+<script>
+	import { page } from '$app/state';
+</script>
+```
+
+and since states from `$app/state` are managed by sveltekit they are already safe against cross request leakage.
+
+But what if you have some stateful variable that is not coming from the server? And maybe you want to be able to also set that and have the new value be reflected in the whole app? We've got a solution for that too!
+
+We can utilize the same technique that Svelte Kit uses to make their state unique per request by making use of another svelte primitive: contexts. If we create a context in the root layout our whole app will have access to that context and since the root layout will be instantiated anew for every request it will also be safe to use. Let's see how we can do it.
+
+### Using contexts
+
+Let's imagine that we want to have a global notifications state so that we can push new notifications to it from everywhere and show all the notifications from the root of our application.
+
+You can technically just use context from the root layout and be done with it but that's error prone and not really type safe so a much better alternative is to create a module where we instantiate out context and export a couple of type-safe functions to access it.
+
+```ts
+import { getContext, setContext } from "svelte";
+
+// we can use this as the key of the context to prevent conflicts
+const CONTEXT_KEY = Symbol();
+
+type Notifications = string[];
+
+export function set_notifications(notifications: Notifications) {
+  return setContext<Notifications>(CONTEXT_KEY, notifications);
+}
+
+export function get_notifications() {
+  return getContext<Notifications>(CONTEXT_KEY);
+}
+```
+
+by doing this we can then update our root layout to initialize a new stateful variable and add it to the context.
+
+```svelte
+<script lang="ts">
+	import { set_notifications } from '$lib/notification-context.ts';
+	const { children } = $props();
+
+	const notifications = $state<string[]>([]);
+
+	set_notifications(notifications);
+</script>
+
+{@render children()}
+
+<aside>
+	{#each notifications as notification}
+		<article>{notification}</article>
+	{/each}
+</aside>
+```
+
+now to show a new notification we can just retrieve the notifications and push to the array
+
+```svelte
+<script lang="ts">
+	import { get_notifications } from '$lib/notification-context.ts';
+
+	const notifications = set_notifications(notifications);
+</script>
+
+<button onclick={()=>{
+	notifications.push("New notification!");
+}}>send notification</button>
+```
+
+and voilà! Now we have global state that is safe and easy to use!
+
+## Conclusions
+
+Global state is sometimes un-avoidable but luckily it doesn't have to be scary and svelte provides all the tools to make the job safe and simple...i hope this brief article will help you do the right choices the next time you'll need something like this!
