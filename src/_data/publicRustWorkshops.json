@@ -1,19 +1,19 @@
 {
   "workshops": [
     {
-      "endDate": "2025-01-24T18:00+01:00",
+      "startDate": "2025-01-23T14:00+01:00",
       "date": "Jan 23rd + 24th, 2025, 14:00-18:00 CET",
       "text": "Remote Workshop: Testing for Rust projects – going beyond the basics",
       "link": "https://ti.to/mainmatter/rust-testing-jan-2025"
     },
     {
-      "endDate": "2025-02-28T18:00+01:00",
+      "startDate": "2025-02-27T14:00+01:00",
       "date": "Feb 27th + 28th, 2025, 14:00-18:00 CET",
       "text": "Remote Workshop: Rust-Python Interoperability",
       "link": "https://ti.to/mainmatter/rust-python-feb-2025"
     },
     {
-      "endDate": "2025-02-21T18:00+01:00",
+      "startDate": "2025-01-30T14:00+01:00",
       "date": "Jan 30th – Feb 21st, 2025, 14:00-18:00 CET",
       "text": "Remote Workshop: Learn Rust, starting from scratch",
       "link": "https://ti.to/mainmatter/rust-from-scratch-jan-2025"

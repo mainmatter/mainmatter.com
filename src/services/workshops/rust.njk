@@ -90,12 +90,12 @@ image: "/assets/images/workshops/rust-og-image.jpg"
 %}
 {% set workshops = [workshop_1, workshop_2, workshop_3, workshop_4, workshop_5, workshop_6, workshop_7, workshop_8] %}
 {{
-  workshopsList('Our training offering', 'We specialize on Rust on the backend: API services, workers, data pipelines. That focus shapes our training offering.
+  workshopsList('Our training offering', 'We teach Rust across a range of use-cases: API services, workers, data pipelines, native extensions, WASM, and more.
   We can walk alongside you on a journey from zero to hero,
   starting from the basics of the language all the way to advanced testing techniques and comprehensive
   telemetry instrumentation.', workshops)
 }}
-{% set futurePublicWorkshops = publicRustWorkshops.workshops | future %}
+{% set futurePublicWorkshops = publicRustWorkshops.workshops | upcoming %}
 {{ publicWorkshops(futurePublicWorkshops) }}
 
 <section class="my-10">
