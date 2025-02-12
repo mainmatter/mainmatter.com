@@ -4,7 +4,7 @@ image: "/assets/images/calendar/2025-05-14-elixirconf/rust.png"
 location: "Kraków & Online"
 url: https://www.elixirconf.eu/participants/luca-palmieri/
 kind: workshop
-color: Aqua
+color: aqua
 hero:
   image: "/assets/images/calendar/2025-05-14-elixirconf/Krakow.png"
   imageAlt: "Memorial statue of the Romantic poet Adam Mickiewicz located at Stare Miasto Rynek Glowny in Krakow, Poland."
