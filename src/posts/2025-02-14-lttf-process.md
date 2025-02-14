@@ -5,7 +5,7 @@ tags: ["lint"]
 bio: "Senior Software Engineer, Creator of Lint to the Future"
 description: "A walkthrough of the day-to-day process of using Lint to the Future to iteratively improve your codebase"
 og:
-  image: 
+  image:
 tagline: |
   <p>
     With Lint to the Future you can quickly add new lint rules and track all the places that you still need to fix. In this article, we'll go into more detail about how to work through those big lists of files you have yet to fix all the lint rules for.
@@ -22,8 +22,14 @@ I'll list the commands that you'll learn about in this post, feel free to keep r
 
 - `npx lttf ignore`
 - `npx lttf remove my-custom-plugin/name-of-rule --filter 'app/**/*.[tj]s'`
-- `eslint --no-eslintrc --parser-options "{ecmaVersion: 2021, sourceType: \"module\"}" --env "es6" --parser "@typescript-eslint/parser" --fix --no-inline-config --rule "{ my-custom-plugin/name-of-rule: error }" --plugin "my-custom-plugin" ./app/**/*.[tj]s`
+- `eslint --no-eslintrc \`
+  - `--parser-options "{ecmaVersion: 2021, sourceType: \"module\"}" \`
+  - `--env "es6" --parser "@typescript-eslint/parser" \`
+  - `--fix --no-inline-config --rule "{ my-custom-plugin/name-of-rule: error }" \`
+  - `--plugin "my-custom-plugin" ./app/**/*.[tj]s`
 - `npx codeowners-commit`
+
+**Note:** That eslint command is all one command, and yes it's massive. Keep reading to understand why it needs to be so long.
 
 ## What is Lint to the Future
 
