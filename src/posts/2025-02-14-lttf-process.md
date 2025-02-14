@@ -1,7 +1,7 @@
 ---
 title: "Progressively Improving a Massive Codebase With Lint to the Future"
 authorHandle: real_ate
-tags: ["lint"]
+tags: ["process"]
 bio: "Senior Software Engineer, Creator of Lint to the Future"
 description: "A walkthrough of the day-to-day process of using Lint to the Future to iteratively improve your codebase"
 og:
