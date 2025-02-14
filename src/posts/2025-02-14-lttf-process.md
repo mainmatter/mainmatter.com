@@ -69,7 +69,7 @@ eslint --no-eslintrc --parser-options "{ecmaVersion: 2021, sourceType: \"module\
 
 If you think this is a mouthful then you'd be right 🫠. It shouldn't really be this hard to execute eslint for a single rule but as I break it down you'll understand why it is.
 
-The key thing here is that when we pass `--no-eslintrc` it's not going to load **anything** from your config, and that doesn't just mean rules. If you are using TypeScript in your project you probably have parser options that allow eslint to even read your files, this is what the first block of commands referrs to:
+The key thing here is that when we pass `--no-eslintrc` it's not going to load **anything** from your config, and that doesn't just mean rules. If you are using TypeScript in your project you probably have parser options that allow eslint to even read your files, this is what the first block of commands refers to:
 
 ```
 --parser-options "{ecmaVersion: 2021, sourceType: \"module\"}" --env "es6" --parser "@typescript-eslint/parser"
