@@ -20,8 +20,8 @@ For anyone who has talked to me recently in a professional capacity, you will kn
 
 I'm not going to go into detail on what Lint to the Future is this too much in this post. [I've given a talk at EmberConf](https://youtu.be/Nl8gHDdkI0Y?si=3GOYECfPkGVsj_YW) if you want a bit more detail but the high level idea is this:
 
-- You want to enable a new lint rule for your repo but you don't want to enable it and fix it for all the files at once. 
-- You know it's pointless enabling a lint rule as a warning because it will just get ignored and people will find it annoying. 
+- You want to enable a new lint rule for your repo but you don't want to enable it and fix it for all the files at once.
+- You know it's pointless enabling a lint rule as a warning because it will just get ignored and people will find it annoying.
 - You want to draw a **temporary** line under the files that you currently have in the repo
 - You want to make sure that any new files don't get introduced that violate the lint rule.
 - And finally, you want to be able to keep track of all the files that you temporarily ignored so you can come back and fix them over time.
@@ -44,8 +44,8 @@ As I said in the intro, I am currently working with a client that has a rule the
 Here is the process that I'm currently using to burn down those 6k files:
 
 ### Remove all the lint ignores from a part of the app
-I have used this process to improve a number of codebases in the past years and I have to say it feels glorious. I guess it's just a trick of our psychology that seeing the graph slowly go down over time can be a great source of dopamine.
-Lint to the future started with the ability to automatically add lint ignores to all your files. As people started to use it the very first feature request was to add the ability to remove lint ignores from all your files, this may seem like a silly request at first but it can be very tedious to remove ignoes from the top of each file you want to fix and using find and replace can be temperamental. So to remove a lint ignore across all your files you can run:
+
+I have used this process to improve a number of codebases in the past years and I have to say it feels glorious. I guess it's just a trick of our psychology that seeing the graph slowly go down over time can be a great source of dopamine. Lint to the future started with the ability to automatically add lint ignores to all your files. As people started to use it the very first feature request was to add the ability to remove lint ignores from all your files, this may seem like a silly request at first but it can be very tedious to remove ignoes from the top of each file you want to fix and using find and replace can be temperamental. So to remove a lint ignore across all your files you can run:
 
 ```
 npx lttf remove my-custom-plugin/name-of-rule --filter 'app/**/*.[tj]s'
