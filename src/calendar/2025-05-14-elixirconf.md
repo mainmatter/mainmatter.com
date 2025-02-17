@@ -2,7 +2,7 @@
 title: "ElixirConf EU"
 image: "/assets/images/calendar/2025-05-14-elixirconf/rust.png"
 location: "Kraków & Online"
-url: https://www.elixirconf.eu/participants/luca-palmieri/
+url: https://www.elixirconf.eu/trainings/interfacing-rust-in-elixir/
 kind: workshop
 color: aqua
 hero:
