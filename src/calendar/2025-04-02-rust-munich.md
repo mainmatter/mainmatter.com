@@ -10,4 +10,4 @@ hero:
   imageAlt: "Siegestor, Munich's memorial arch, crowned with a statue of Bavaria with a lion-quadriga."
 ---
 
-Rust Munich is back, and we’re hosting it! Join us for a night of Rust talks, great discussions, and good company. Our Marco Otte-Witte will introduce Gerust. Limited in-person spots, but you can always tune in online. Grab a drink and let’s talk Rust!
+Rust Munich is back, and we’re hosting it! Join us for a night of Rust talks, great discussions, and good company. Our Marco Otte-Witte will introduce [Gerust](https://gerust.rs). Limited in-person spots, but you can always tune in online. Grab a drink and let’s talk Rust!
