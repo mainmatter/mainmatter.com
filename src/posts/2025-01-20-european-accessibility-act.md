@@ -27,7 +27,7 @@ Product teams need to be aware of these key deadlines:
 - **June 28, 2025**: Deadline for most digital platforms (websites, mobile apps) and other covered products to comply with EAA accessibility standards.
 - **June 28, 2030**: Extended compliance deadline for certain self-service terminals, such as ATMs and ticket machines.
 
-Preparing early for these dates is essential to ensure compliance, avoid penalties, and meet market expectations for accessible products.
+Let's focus on the first deadline, June 28, 2025, which is the most immediate one and the one that most likely applies to you. Is is essential to prepare for it so as to ensure compliance, avoid penalties, and meet market expectations for accessible products.
 
 ## Meeting compliance requirements
 
