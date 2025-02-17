@@ -16,24 +16,19 @@ tagline: |
 
 ## What is the **European Accessibility Act**?
 
-The **[European Accessibility Act (EAA)](https://employment-social-affairs.ec.europa.eu/policies-and-activities/social-protection-social-inclusion/persons-disabilities/union-equality-strategy-rights-persons-disabilities-2021-2030/european-accessibility-act_en)** sets digital accessibility standards across the EU, covering websites, apps, software, and other products in sectors like e-commerce, finance, education, and transportation. By standardizing requirements, the EAA makes compliance easier for businesses operating in multiple countries, reducing costs and opening up market opportunities. It also improves digital access for people with disabilities and older adults.
+With the **[European Accessibility Act (EAA)](https://employment-social-affairs.ec.europa.eu/policies-and-activities/social-protection-social-inclusion/persons-disabilities/union-equality-strategy-rights-persons-disabilities-2021-2030/european-accessibility-act_en)**, the EU requires digital products to be accessible, improving access for people with all sorts of disabilities.
 
-Failing to comply can lead to fines and legal action, especially if essential services remain inaccessible. To stay compliant, businesses should conduct regular audits, maintain detailed records, and build accessibility into customer support. Prioritizing accessibility not only reduces legal risks but also creates a better experience for all users.
+Failing to comply can lead to fines and legal action, especially if essential services remain inaccessible. To meet compliance requirements, businesses should conduct audits and integrate accessibility into their software development process. Prioritizing accessibility creates a better experience for all users in addition to reducing legal risks.
 
 ### Compliance Timeline
 
-Product teams need to be aware of these key deadlines:
-
-- **June 28, 2025**: Deadline for most digital platforms (websites, mobile apps) and other covered products to comply with EAA accessibility standards.
-- **June 28, 2030**: Extended compliance deadline for certain self-service terminals, such as ATMs and ticket machines.
-
-Let's focus on the first deadline, June 28, 2025, which is the most immediate one and the one that most likely applies to you. Is is essential to prepare for it so as to ensure compliance, avoid penalties, and meet market expectations for accessible products.
+Product teams need to focus on the **June 28, 2025** deadline which applies to most digital platforms (websites, mobile apps) and expect products to comply with EAA accessibility standards. Is is essential to prepare for it so as to ensure compliance, avoid penalties, and meet market expectations for accessible products.
 
 ## Meeting compliance requirements
 
 Ensuring compliance with the EAA requires product design and engineering work. This section shows the key steps.
 
-## Success Criteria
+### Success Criteria
 
 Let's look at some specific accessibility criteria from WCAG (version 2.2, Levels A and AA), which the EAA uses as a technical basis.
 
