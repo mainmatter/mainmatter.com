@@ -81,16 +81,9 @@ Although automated tools can significantly streamline the process, they cannot u
 - [Axe extension](https://www.deque.com/axe/browser-extensions/): Axe is a browser extension developed by the creators of Axe-core. It allows you to run Axe-core directly in your browser to assist with manual audits. The extension comes in free and paid versions. The free version is sufficient for most needs, while the paid version includes additional features such as a “Guided test,” which provides a checklist and guidance for completing it—although this feature is available for free in another tool we’ll mention later.
 - [Accessibility Insights](https://accessibilityinsights.io/): Accessibility Insights, developed by Microsoft, is a completely free browser extension that may serve as the only tool you need for manual audits. It offers a guided assessment feature to assist you through the process and includes "ad-hoc" tools like "Tab stops" which visualize where keyboard navigation moves during keyboard accessibility testing.
 
-### Screen readers
+### Supporting screen readers
 
-Keyboard accessibility—the way keyboard navigation behaves—is the minimum requirement that needs to be supported. True accessibility, however, is achieved when a product is fully usable with the help of screen-reading technology.
-
-Without going into details, here are some screen readers available across different operating systems:
-
-- [NVDA](https://www.nvaccess.org/download/): A third-party screen reader available for Windows.
-- [JAWS](https://www.freedomscientific.com/products/software/jaws/): A commercial screen reader for Windows.
-- **VoiceOver**: A built-in screen reader included with macOS.
-- [Orca](https://orca.gnome.org/): A screen reader for Linux systems, specifically those running the GNOME desktop environment.
+The EAA requires web applications to be accessible via screen readers. Assessing screen reader compatibility requires accessibility expertise and tools, such as hardware screen readers (such as [NVDA](https://www.nvaccess.org/download/) or [JAWS](https://www.freedomscientific.com/products/software/jaws/)) or software solutions (e.g. [Silktide](https://silktide.com/toolbar/screen-reader-simulator/)). Going further, making your web application compatible with screen readers requires deep web engineering expertise that Mainmatter can provide.
 
 ### Staff training
 
