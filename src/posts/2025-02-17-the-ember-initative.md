@@ -1,5 +1,5 @@
 ---
-title: "The Start of the Ember Initative"
+title: "The Start of the Ember Initiative"
 authorHandle: real_ate
 tags: ["ember"]
 bio: "Senior Software Engineer, Memeber of the Ember Core Learning and Ember Core Tooling teams."
@@ -27,7 +27,7 @@ The Ember Initiative is intended to be just like the Embroider Initiative, but i
 
 Because the Ember Initiative is not just focusing on a single project, we are encouraging people to think of it as an ongoing subscription that new backers can join at any time. Just like last time, you get a number of perks depending on what level of backing you join the Initiative on, but crucially this time if you're on the top tier you can **influence what the team focuses on**. The roadmap for the first 3 months of the Ember Initiative has already been agreed on with input from the Ember Core Team and the Ember Initiative Backers. If you want to influence next quarter's roadmap, please get in touch and join the Initiative as a backer!
 
-We're tracking our work on the [Mainmatter Ember Initiative GitHub project](https://github.com/orgs/mainmatter/projects/14). If you look at the project you'll see that there are two main focus items for this quarter (and a smaller sub-focus)
+We're tracking our work on the [Mainmatter Ember Initiative GitHub project](https://github.com/orgs/mainmatter/projects/14). If you look at the project you'll see that there are two main focus items for this quarter (and a smaller sub-focus):
 
 - Polishing Embroider
 - Starting the Route Manager API
@@ -45,7 +45,7 @@ If you want to try out the new proposed v2 app, you can check out the [preview a
 
 ## Route and Routing Manager API
 
-Routing has been identified as an area of improvement in the Ember framework. Our Router has undergone little change since it was first introduced in the first Ember 1.0 prerelease. [The commit that switched over to the Router was in June 2012](https://github.com/emberjs/ember.js/commit/d23ea3ab501fc0e8f591a793b927f572436647a1)—which was over 12 years ago at the time of writing. That is a very long time to have an essentially stable routing API.
+Routing has been identified as an area of improvement in the Ember framework. Our Router has undergone little change since it was first introduced in the first Ember 1.0 prerelease. [The commit that switched over to the Router was in June 2012](https://github.com/emberjs/ember.js/commit/d23ea3ab501fc0e8f591a793b927f572436647a1)— which was over 12 years ago at the time of writing. That is a very long time to have an essentially stable routing API.
 
 A lot has changed in Ember in 12 years, and JavaScript has also changed so much in that time! This was before Classes or ES Modules were part of the language.
 
@@ -57,10 +57,10 @@ Our goal as part of the Ember Initiative is to start the process of improving th
 
 The first push for the Ember Initiative will be to write a new RFC and to provide a test implementation for the Route Manager API. The Router/Routing Manager API is a much larger task to tackle because it is so deeply ingrained into how Ember works, but we are actively discussing this topic at the weekly Ember Spec Meeting, which is public on the Ember Discord every Thursday at 21h GMT if you want to come along.
 
-## Developer tooling
+## Developer tooling
 
 The first two topics I described above are more than enough for us to be working on for the first 3 months of the Initiative, but we also plan to make a start on the substantial topic of Developer tooling. We don't intend to get any of the work done; we just want to define a roadmap and get a feel for the current state of play with developer tooling for Ember developers in the ever-changing Vite and GJS world. Our deliverable for the first 3 months of the Initiative is to have a well-defined set of tasks that we can add to the roadmap.
 
 ## Conclusion
 
-I am very excited about the start of the Ember initiative. If reading about all these upcoming improvements has made you even a fraction as excited as it has done for me, consider encouraging the organisation you work for to back the Initiative. We plan to get a lot done in the first 3 months, but if we can get enough regular backers we can keep this train going and make Ember shine for everyone for the next decade 💪
+I am very excited about the start of the Ember Initiative. If reading about all these upcoming improvements has made you even a fraction as excited as it has done for me, consider encouraging the organisation you work for to back the Initiative. We plan to get a lot done in the first 3 months, but if we can get enough regular backers we can keep this train going and make Ember shine for everyone for the next decade 💪
