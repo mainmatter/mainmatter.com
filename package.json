@@ -74,7 +74,7 @@
     "last 1 Edge versions"
   ],
   "dependencies": {
-    "@sentry/browser": "^8.0.0",
+    "@sentry/browser": "^9.0.0",
     "gsap": "^3.12.3",
     "lax.js": "^2.0.3"
   },
@@ -82,7 +82,7 @@
     "node": ">=20"
   },
   "volta": {
-    "node": "22.13.1",
+    "node": "22.14.0",
     "pnpm": "9.15.4"
   },
   "packageManager": "pnpm@9.15.4"
