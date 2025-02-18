@@ -21,32 +21,31 @@ og:
 <div class="case-study__section">
   <h3 class="case-study__heading">About KISTERS</h3>
   <div class="case-study__text">
-    <p>Based in Aachen, Germany, <a href="http://kisters.eu/">KISTERS</a> provides software for collecting, analyzing, and providing information based on environmental data.<br>
-      The department we’ve been working with provides solutions that can help warn people of upcoming floods using data obtained from numerous sensor devices deployed throughout the globe.</p>
+    <p><a href="http://kisters.eu/">KISTERS</a> provides software for collecting and analyzing environmental data.<br>
+      In particular, they provide solutions to warn people of upcoming floods using data obtained from numerous sensor devices deployed throughout the globe.</p>
   </div>
 </div>
 
 <div class="case-study__section">
   <h3 class="case-study__heading">The challenge</h3>
     <div class="case-study__text">
-      <p>With big data comes big computation. KISTERS wanted to <strong>handle large traffic spikes by dynamially switching</strong> between serving from a traditional server, from an edge function, or by offloading cumputation to end user's devices.</p>
-      <p>The data KISTERS obtains from their sensor devices is packaged in large <a href="https://en.wikipedia.org/wiki/Apache_Parquet">parquet files</a> and needs processing to become useful for analysis.<br>
-        The concrete steps taken in filtering, grouping, and post-processing depend on dynamic inputs reflecting the needs of KISTERS’ clients. These processing steps can, therefore, not simply be executed in batches during nightly computations; they need to be carried out on user demand.</p>
-      <p>That in and of itself warrants a well-optimized design, but in times of calamity, <strong>the amount of users requesting information may rise quickly</strong>: residents of endangered areas can use KISTERS’ software to obtain real-time information regarding their situation.</p>
-      <p><strong>To handle traffic spikes</strong>, KISTERS’ sought to employ a design that would allow them to <strong>quickly deploy their data processing to edge functions</strong> and, in case of extreme traffic surges, allow the processing steps to be <strong>run within the browser</strong> on end user’s devices.</p>
+      <p>KISTERS wanted to <strong>handle large traffic spikes by dynamially switching</strong> between serving from a traditional server, from an edge function, or by offloading cumputation to end user's devices.</p>
+      <p>Why? Well, the data KISTERS obtains from their sensor devices needs processing to become useful for analysis. The concrete processing steps taken, such as filtering, grouping, and post-processing, depend on dynamic inputs reflecting the needs of KISTERS’ clients. Therefore, they need to be carried out on user demand.</p>
+      <p>That in and of itself warrants a well-optimized design and use of performant technologies, but in times of calamity, <strong>the amount of users requesting information may rise quickly</strong>: residents of endangered areas can use KISTERS’ software to obtain real-time information regarding their situation.</p>
+      <p><strong>To handle large demand efficiently</strong>, without risking astronomic cloud expenses, KISTERS’ sought to employ a design that would allow them to <strong>quickly deploy their data processing to edge functions</strong> and, in case of extreme traffic surges, allow the processing steps to be <strong>run within the browser</strong> on end user’s devices.</p>
     </div>
 </div>
 
 <div class="case-study__section">
   <h3 class="case-study__heading">How Mainmatter helped out</h3>
     <div class="case-study__text">
-        <p>During an initial development cycle, Mainmatter proposed and implemented an architecture that isolates the implementation of the data processing steps in a platform-independent package<p>
-        <p>That way, the package can be thinly wrapped for use by a web server, served as an edge function, or compiled to Web Assembly for execution in browsers.</p>
+        <p>During an initial development cycle, Mainmatter proposed and implemented an architecture that isolates the implementation of the data processing steps in a platform-independent package.<p>
+        <p>That way, the package can be thinly wrapped for use by a web server, served as an edge function, or compiled to Web Assembly for execution in browsers, guaranteeing application behavior on different platforms to be equal.</p>
     </div>
 </div>
 
 <section class="mt-5">
-        <!-->TODO add image for KISTERS<-->
+        <!-- TODO add image for KISTERS -->
         {% set imageData = {
           "imgPath": "/assets/images/work/aleph-alpha-graphs.jpg",
           "alt": "TODO",
@@ -60,7 +59,8 @@ og:
 <div class="case-study__section">
   <h3 class="case-study__heading">Technology</h3>
     <div class="case-study__text">
-      <p>Given the requirement of <strong>high performance, cross-platform code sharing</strong>, and the need for <strong>integration with their current software</strong>, Rust was a natural choice as a language with which to implement the architecture.<br>
+      <p></p>
+      <p>Given the requirements of <strong>efficiency, high availability, cross-platform code sharing</strong>, and the need for <strong>integration with their current software</strong>, Rust was a natural choice as a language with which to implement the design.<br>
       What’s more, <a href="https://pola.rs/">Polars</a>, the famous high-performance open-source data frame manipulation library, is implemented in Rust and <a href="https://crates.io/crates/polars">published</a> on Rust’s package registry, allowing our engineers to <strong>trivially import it as a dependency</strong> in their application and reap the <strong>benefits of executing data processing in Rust</strong>.</p>
       <p>Rust has proven to be an excellent basis for developing performant applications that are required to run on multiple platforms, including the end user’s browser.</p>
     </div>
