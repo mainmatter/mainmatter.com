@@ -6,7 +6,7 @@ solution: We created a data processing package suitable for server, edge, and WA
 tags: Launch your idea
 title: Dynamically switching execution platforms with Rust | Work
 displayTitle: "Dynamically switching execution platforms with Rust"
-description: <p>KISTERS builds solutions for collecting, analyzing, and providing information based on environmental data.</p><p>The department we’ve been working with provides software that can help warn people of upcoming floods using data obtained from numerous sensor devices deployed throughout the globe.</p>
+description: <p>KISTERS builds solutions for collecting, analyzing, and providing information based on environmental data. The HydroMet division provides software that helps warn people of upcoming floods using data obtained from numerous sensor devices deployed across the globe.</p>
 hero:
   color: purple
   image: "/assets/images/work/aleph-alpha-background-2.jpg" # TODO
@@ -29,18 +29,17 @@ og:
 <div class="case-study__section">
   <h3 class="case-study__heading">The challenge</h3>
     <div class="case-study__text">
-      <p>KISTERS wanted to <strong>handle large traffic spikes by dynamially switching</strong> between serving from a traditional server, from an edge function, or by offloading cumputation to end user's devices.</p>
-      <p>Why? Well, the data KISTERS obtains from their sensor devices needs processing to become useful for analysis. The concrete processing steps taken, such as filtering, grouping, and post-processing, depend on dynamic inputs reflecting the needs of KISTERS’ clients. Therefore, they need to be carried out on user demand.</p>
+      <p>To be able to <strong>handle large traffic spikes efficiently without risking astronomic cloud expenses, KISTERS needed the ability to dynamically move computation</strong> between traditional servers and edge functions, or offloading to end user's devices.</p>
+      <p>The large amounts of data KISTERS obtains from sensor devices needs processing to become useful for analysis. Filtering, grouping, and post-processing, depend on dynamic inputs and need to be carried out on demand.</p>
       <p>That in and of itself warrants a well-optimized design and use of performant technologies, but in times of calamity, <strong>the amount of users requesting information may rise quickly</strong>: residents of endangered areas can use KISTERS’ software to obtain real-time information regarding their situation.</p>
-      <p><strong>To handle large demand efficiently</strong>, without risking astronomic cloud expenses, KISTERS’ sought to employ a design that would allow them to <strong>quickly deploy their data processing to edge functions</strong> and, in case of extreme traffic surges, allow the processing steps to be <strong>run within the browser</strong> on end user’s devices.</p>
     </div>
 </div>
 
 <div class="case-study__section">
   <h3 class="case-study__heading">How Mainmatter helped out</h3>
     <div class="case-study__text">
-        <p>During an initial development cycle, Mainmatter proposed and implemented an architecture that isolates the implementation of the data processing steps in a platform-independent package.<p>
-        <p>That way, the package can be thinly wrapped for use by a web server, served as an edge function, or compiled to Web Assembly for execution in browsers, guaranteeing application behavior on different platforms to be equal.</p>
+        <p>During an initial development cycle, Mainmatter proposed and implemented an architecture that isolates the data processing implementation in a platform-independent package written in Rust.<p>
+        <p>That package can be thinly wrapped for use in a web server, run as an edge function, or compiled to Web Assembly (WASM) for execution in browsers. All of these different environments run the same efficient code with close to no duplication.</p>
     </div>
 </div>
 
@@ -60,16 +59,14 @@ og:
   <h3 class="case-study__heading">Technology</h3>
     <div class="case-study__text">
       <p></p>
-      <p>Given the requirements of <strong>efficiency, high availability, cross-platform code sharing</strong>, and the need for <strong>integration with their current software</strong>, Rust was a natural choice as a language with which to implement the design.<br>
-      What’s more, <a href="https://pola.rs/">Polars</a>, the famous high-performance open-source data frame manipulation library, is implemented in Rust and <a href="https://crates.io/crates/polars">published</a> on Rust’s package registry, allowing our engineers to <strong>trivially import it as a dependency</strong> in their application and reap the <strong>benefits of executing data processing in Rust</strong>.</p>
-      <p>Rust has proven to be an excellent basis for developing performant applications that are required to run on multiple platforms, including the end user’s browser.</p>
+      <p>Rust, with its strong performance and stability characteristics and solid WASM support, was a natural choice as a language with which to implement the design. What’s more, <a href="https://pola.rs/">Polars</a>, the famous high-performance open-source data frame manipulation library, is implemented in Rust itself and easily usable in Rust projects including those targeting WASM.</p>
     </div>
 </div>
 
 <div class="case-study__section">
   <h3 class="case-study__heading">Aftercare</h3>
     <div class="case-study__text">
-      <p>Upon finishing and delivering the proof-of-concept, Mainmatter provided guidance to their team on integrating it into KISTERS’ platform.</p>
+      <p>Upon finishing and delivering the proof-of-concept, Mainmatter provided guidance to KISTERS' team on integrating the code into their platform.</p>
       <p>Mainmatter has reviewed and optimized the integration code during several pairing sessions, ensuring that not just the product but also the knowledge required to maintain and expand it is transferred to KISTERS’ engineering team.</p>
     </div>  
 </div>
