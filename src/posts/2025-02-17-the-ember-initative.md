@@ -8,30 +8,30 @@ og:
   image:
 tagline: |
   <p>
-    After the success of the Embroider Initiative we are thrilled to be starting the Ember Initiative, a new on-going programme to improve various parts of the Ember ecosystem. This post recaps the status of Embroider since the end of the Embroider Initiative and what we're going to be focusing on for the first 3 months of the Ember initiative. 
+    After the success of the Embroider Initiative we are thrilled to be starting the Ember Initiative, a new on-going programme to improve various parts of the Ember ecosystem. This post recaps the status of Embroider since the end of the Embroider Initiative and what we're going to be focusing on for the first 3 months of the Ember Initiative. 
   </p>
 ---
 
 ## Recap - The Story so Far
 
-[The Embroider Initiative concluded](/blog/2024/07/16/embroider-update/) in July of last year and by all accounts it was a resounding success. The goal was to inject life into the Embroider project and get it across the finish line so people could start using Vite to build their Ember apps. While we didn't manage to deploy the final production version of Embroider with Vite, we succeeded in the goal of unsticking the project and getting it back on the rails. Since we concluded the Embroider Initiative, there have been two significant milestones reached:
+Between 2023 and 2024, Mainmatter helped modernize Ember by fundraising and executing [the Embroider Initiative](/blog/2024/07/16/embroider-update/) so developers could use Vite to build their Ember apps. The initiative was a resounding success in that it got the Embroider project back on the rails and close to the final production version of Embroider with Vite. Since we concluded the Embroider Initiative, there have been two significant milestones reached:
 
 - [The v2 app blueprint RFC](https://rfcs.emberjs.com/id/0977-v2-app-format) has been accepted, and
 - We have [released our first alpha of the upcoming Embroider](https://github.com/embroider-build/embroider/releases/tag/v8.0.0-alpha.0-%40embroider%2Faddon-dev) release
 
-While this is monumental, we're not quite at the point where running `ember new` gives you a Vite-powered app. We hope to fix that soon with the Ember initiative.
+While this is monumental, we're not quite at the point where running `ember new` gives you a Vite-powered app. We hope to fix that soon with the Ember Initiative.
 
 ## The Ember Initiative
 
-The Ember Initiative is intended to be just like the Embroider Initiative, but it is ongoing and does not just focus on a single topic. You can read more detail about this in [Marco's Blog Post that introduces the Ember Initiative](/blog/2024/07/09/the-embroider-initiative-becomes-the-ember-initiative/), but the short version is that the Embroider Initiative was so successful that we want to keep that train running 🎉
+The Ember Initiative is intended to be just like the Embroider Initiative, but it is ongoing and does not just focus on a single topic. You can read more detail about this in [our blog post that introduces the Ember Initiative](/blog/2024/07/09/the-embroider-initiative-becomes-the-ember-initiative/), but the short version is that the Embroider Initiative was so successful that we want to keep that train running 🎉
 
 Because the Ember Initiative is not just focusing on a single project, we are encouraging people to think of it as an ongoing subscription that new backers can join at any time. Just like last time, you get a number of perks depending on what level of backing you join the Initiative on, but crucially this time if you're on the top tier you can **influence what the team focuses on**. The roadmap for the first 3 months of the Ember Initiative has already been agreed on with input from the Ember Core Team and the Ember Initiative Backers. If you want to influence next quarter's roadmap, please get in touch and join the Initiative as a backer!
 
 We're tracking our work on the [Mainmatter Ember Initiative GitHub project](https://github.com/orgs/mainmatter/projects/14). If you look at the project you'll see that there are two main focus items for this quarter (and a smaller sub-focus):
 
-- Polishing Embroider
-- Starting the Route Manager API
-- Preparing the "Developer Tooling" work for next quarter
+1. Polishing Embroider
+2. Starting the Route Manager API
+3. Preparing the "Developer Tooling" work for next quarter
 
 In the following sections, I'll expand on those focus areas and what they mean.
 
