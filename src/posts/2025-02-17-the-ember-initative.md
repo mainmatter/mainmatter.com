@@ -23,7 +23,7 @@ While this is monumental, we're not quite at the point where running `ember new`
 
 ## The Ember Initiative
 
-The Ember Initiative is intended to be just like the Embroider Initiative, but it is ongoing and does not just focus on a single topic. You can read more detail about this in [our blog post that introduces the Ember Initiative](/blog/2024/07/09/the-embroider-initiative-becomes-the-ember-initiative/), but the short version is that the Embroider Initiative was so successful that we want to keep that train running 🎉
+The Ember Initiative is intended to be just like the Embroider Initiative, but it is ongoing and does not just focus on a single topic. You can read more detail about this in [our blog post that introduces the Ember Initiative](/blog/2024/07/09/the-embroider-initiative-becomes-the-ember-initiative/), but the short version is that the Embroider Initiative was so successful that the whole Ember Community wants to keep that train running 🎉
 
 Because the Ember Initiative is not just focusing on a single project, we are encouraging people to think of it as an ongoing subscription that new backers can join at any time. Just like last time, you get a number of perks depending on what level of backing you join the Initiative on, but crucially this time if you're on the top tier you can **influence what the team focuses on**. The roadmap for the first 3 months of the Ember Initiative has already been agreed on with input from the Ember Core Team and the Ember Initiative Backers. If you want to influence next quarter's roadmap, please get in touch and join the Initiative as a backer!
 
@@ -33,23 +33,21 @@ We're tracking our work on the [Mainmatter Ember Initiative GitHub project](http
 2. Starting the Route Manager API
 3. Preparing the "Developer Tooling" work for next quarter
 
-In the following sections, I'll expand on those focus areas and what they mean.
-
-## Polishing Embroider
+### Polishing Embroider
 
 As I mentioned in the intro, we achieved a lot with the Embroider Initiative, and this will not only improve the lives of developers currently using Ember but also allow us to reach other parts of the JavaScript ecosystem. I had the opportunity to [speak at ViteConf last year](https://viteconf.org/24/replay/ember), where I talked about some of the interesting things we are doing with Vite. To say that the atmosphere was electric during our talk is an understatement. There are a core group of Ember fans out there that would love to recommend Ember for their next project but the fact that our build system is not modern enough has been a real blocker, and that's what we are hoping to fix.
 
-The [the v2 app blueprint RFC](https://rfcs.emberjs.com/id/0977-v2-app-format) is currently in the `accepted` stage, which means that we have agreed on the plan and we need to work on the implementation and documentation before it becomes the default. You can read more about the RFC Stages on the [Ember RFC website](https://rfcs.emberjs.com/#stages) and the [RFC that introduced stages to the process](https://rfcs.emberjs.com/id/0617-rfc-stages).
+The [the v2 app blueprint RFC](https://rfcs.emberjs.com/id/0977-v2-app-format) is currently in the `accepted` stage, which means that we have agreed on the plan and we need to work on the implementation and documentation before it becomes the default. You can read more about the RFC Stages on the [Ember RFC website](https://rfcs.emberjs.com/#stages) but the short version is that when we reach the final stage `recommended` that is when running `ember new` will generate a Embroider and Vite powered app. This is our goal, to finish off the small number of implementation tasks and add the required documentation so that Vite can be the default experience for every Ember developer.
 
 If you want to try out the new proposed v2 app, you can check out the [preview app-blueprint](https://github.com/embroider-build/app-blueprint?tab=readme-ov-file#embroiderapp-blueprint). Throughout the Ember Initiative, we will keep you updated on the progress towards making Vite the default build system for Ember apps.
 
-## Route and Routing Manager API
+### Route and Routing Manager API
 
-Routing has been identified as an area of improvement in the Ember framework. Our Router has undergone little change since it was first introduced in the first Ember 1.0 prerelease. [The commit that switched over to the Router was in June 2012](https://github.com/emberjs/ember.js/commit/d23ea3ab501fc0e8f591a793b927f572436647a1)— which was over 12 years ago at the time of writing. That is a very long time to have an essentially stable routing API.
+The Ember Core team has identified Routing as an area that needs some improvement in the framework. Our Router has undergone little change since it was introduced in the first Ember 1.0 prerelease. [The commit that switched over to the Router was in June 2012](https://github.com/emberjs/ember.js/commit/d23ea3ab501fc0e8f591a793b927f572436647a1)— which was over 12 years ago at the time of writing. That is a very long time to have an essentially stable routing API.
 
 A lot has changed in Ember in 12 years, and JavaScript has also changed so much in that time! This was before Classes or ES Modules were part of the language.
 
-I'm not trying to imply that our Router is bad because its foundations are so old; it just doesn't fit into the modern architectures as well as it could. Some examples are the reliance on the _Ember Global Resolver_ for each of the parts of the route (template, route, controller). There has been some movement on this recently with the [introduction of Template Tag in Routes](https://rfcs.emberjs.com/id/1046-template-tag-in-routes), which allows you to essentially write Routable Components for the template part of your Route, but the underlying architecture that ties this all together is still based on the Global Resolver.
+Even after all this time, Ember's Router is still state of the art, however, it just doesn't quite fit into modern architectures as well as it could. Some examples are the reliance on the _Ember Global Resolver_ for each of the parts of the route (template, route, controller). There has been some movement on this recently with the [introduction of Template Tag in Routes](https://rfcs.emberjs.com/id/1046-template-tag-in-routes), which allows you to essentially write Routable Components for the template part of your Route, but the underlying architecture that ties this all together is still based on the Global Resolver.
 
 The second key part of the architecture we know we need to improve is the reactivity. We have almost fully transitioned our concept of reactivity to `@tracked` variables (which are akin to [signals](https://github.com/tc39/proposal-signals)), and the last thing that we need to transition is our routing system. The Ember Core team is currently exploring a new architecture based on resources, which you can see a great explanation of in [Ed Falkner's video in EmberFest Paris](https://www.youtube.com/watch?v=sWGyJR6P-V0).
 
@@ -57,9 +55,9 @@ Our goal as part of the Ember Initiative is to start the process of improving th
 
 The first push for the Ember Initiative will be to write a new RFC and to provide a test implementation for the Route Manager API. The Router/Routing Manager API is a much larger task to tackle because it is so deeply ingrained into how Ember works, but we are actively discussing this topic at the weekly Ember Spec Meeting, which is public on the Ember Discord every Thursday at 21h GMT if you want to come along.
 
-## Developer tooling
+### Developer tooling
 
-The first two topics I described above are more than enough for us to be working on for the first 3 months of the Initiative, but we also plan to make a start on the substantial topic of Developer tooling. We don't intend to get any of the work done; we just want to define a roadmap and get a feel for the current state of play with developer tooling for Ember developers in the ever-changing Vite and GJS world. Our deliverable for the first 3 months of the Initiative is to have a well-defined set of tasks that we can add to the roadmap.
+The first two topics I described above are more than enough to keep our team busy during the first 3 months of the Initiative, but we also plan to make a start on the substantial topic of Developer tooling. We don't intend to get any of the work done; we just want to define a roadmap and get a feel for the current state of play with developer tooling for Ember developers in the ever-changing Vite and GJS world. Our deliverable for the first 3 months of the Initiative is to have a well-defined set of tasks that we can add to the roadmap.
 
 ## Conclusion
 
