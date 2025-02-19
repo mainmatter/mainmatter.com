@@ -1,11 +1,72 @@
 ---
 layout: case-study
-company: POELLATH
-problem: KISTERS was looking for a way to move load transparently between their servers, edge functions, and users' browsers.
-solution: We developed a prototype tool for them that runs the same Rust code on the server, edge function, and browsers via WebAssembly.
+company: KISTERS
+problem: KISTERS wanted to use Rust's cross-platform support to its full potential.
+solution: We created a data processing package suitable for server, edge, and WASM.
 tags: Launch your idea
-description: <p>KISTERS are experts in environmental monitoring, IT and data management</p><p>We developed a prototype tool for them that runs the same Rust code on the server as well as on an edge function and in the browser via WebAssembly.</p>
+title: Dynamically switching execution platforms with Rust | Work
+displayTitle: "Dynamically switching execution platforms with Rust"
+description: <p>KISTERS builds solutions for collecting, analyzing, and providing information based on environmental data. The HydroMet division provides software that helps warn people of upcoming floods using data obtained from numerous sensor devices deployed across the globe.</p>
 hero:
-  tags: "architecture / Rust / WASM"
-permalink: false
+  color: purple
+  image: "/assets/images/work/aleph-alpha-background-2.jpg" # TODO
+  imageAlt: "TODO" # TODO
+  tags: "development / architecture / Rust"
+og:
+  image: /assets/images/cases/cs-aleph-alpha-og-image.jpg # TODO
 ---
+
+{% from "image-aspect-ratio.njk" import imageAspectRatio %} {% from "quote.njk" import quote %}
+
+<div class="case-study__section">
+  <h3 class="case-study__heading">About KISTERS</h3>
+  <div class="case-study__text">
+    <p><a href="http://kisters.eu/">KISTERS</a> provides software for collecting and analyzing environmental data.<br>
+      In particular, they provide solutions to warn people of upcoming floods using data obtained from numerous sensor devices deployed throughout the globe.</p>
+  </div>
+</div>
+
+<div class="case-study__section">
+  <h3 class="case-study__heading">The challenge</h3>
+    <div class="case-study__text">
+      <p>To be able to <strong>handle large traffic spikes efficiently without risking astronomic cloud expenses, KISTERS needed the ability to dynamically move computation</strong> between traditional servers and edge functions, or offloading to end user's devices.</p>
+      <p>The large amounts of data KISTERS obtains from sensor devices needs processing to become useful for analysis. Filtering, grouping, and post-processing, depend on dynamic inputs and need to be carried out on demand.</p>
+      <p>That in and of itself warrants a well-optimized design and use of performant technologies, but in times of calamity, <strong>the amount of users requesting information may rise quickly</strong>: residents of endangered areas can use KISTERS’ software to obtain real-time information regarding their situation.</p>
+    </div>
+</div>
+
+<div class="case-study__section">
+  <h3 class="case-study__heading">How Mainmatter helped out</h3>
+    <div class="case-study__text">
+        <p>During an initial development cycle, Mainmatter proposed and implemented an architecture that isolates the data processing implementation in a platform-independent package written in Rust.<p>
+        <p>That package can be thinly wrapped for use in a web server, run as an edge function, or compiled to Web Assembly (WASM) for execution in browsers. All of these different environments run the same efficient code with close to no duplication.</p>
+    </div>
+</div>
+
+<section class="mt-5">
+        <!-- TODO add image for KISTERS -->
+        {% set imageData = {
+          "imgPath": "/assets/images/work/aleph-alpha-graphs.jpg",
+          "alt": "TODO",
+          "sizes": "100vw",
+          "loading": "lazy",
+          "sizesArray": [760, 1440, 1920]
+        } %}
+        {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
+<div class="case-study__section">
+  <h3 class="case-study__heading">Technology</h3>
+    <div class="case-study__text">
+      <p></p>
+      <p>Rust, with its strong performance and stability characteristics and solid WASM support, was a natural choice as a language with which to implement the design. What’s more, <a href="https://pola.rs/">Polars</a>, the famous high-performance open-source data frame manipulation library, is implemented in Rust itself and easily usable in Rust projects including those targeting WASM.</p>
+    </div>
+</div>
+
+<div class="case-study__section">
+  <h3 class="case-study__heading">Aftercare</h3>
+    <div class="case-study__text">
+      <p>Upon finishing and delivering the proof-of-concept, Mainmatter provided guidance to KISTERS' team on integrating the code into their platform.</p>
+      <p>Mainmatter has reviewed and optimized the integration code during several pairing sessions, ensuring that not just the product but also the knowledge required to maintain and expand it is transferred to KISTERS’ engineering team.</p>
+    </div>  
+</div>
