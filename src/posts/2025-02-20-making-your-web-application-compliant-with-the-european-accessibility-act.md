@@ -1,11 +1,11 @@
 ---
-title: "European Accessibility Act"
+title: "Making Your Web Application Compliant With the European Accessibility Act"
 authorHandle: zeppelin
 tags: [process]
 bio: "Gabor Babicz, Senior Software Engineering Consultant"
 description: "What the European Accessibility Act means for you"
 og:
-  image: "/assets/images/posts/2025-01-20-european-accessibility-act/og-image.png"
+  image: "/assets/images/posts/2025-02-20-making-your-web-application-compliant-with-the-european-accessibility-act/og-image.png"
 tagline: |
   <p>
     The European Accessibility Act (EAA) is already in effect, and by June 2025, digital products targeting European users must be fully accessible to people with disabilities. If you haven't started planning for compliance, now is the time because non-compliance could cost your business.
