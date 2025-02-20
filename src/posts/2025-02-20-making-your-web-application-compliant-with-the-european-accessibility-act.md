@@ -3,7 +3,7 @@ title: "Making Your Web Application Compliant With the European Accessibility Ac
 authorHandle: zeppelin
 tags: [process]
 bio: "Gabor Babicz, Senior Software Engineering Consultant"
-description: "What the European Accessibility Act means for you"
+description: "Why making your digital product comply with the European Accessibility Act by June 2025 requires web engineering expertise."
 og:
   image: "/assets/images/posts/2025-02-20-making-your-web-application-compliant-with-the-european-accessibility-act/og-image.png"
 tagline: |
