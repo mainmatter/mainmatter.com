@@ -2,7 +2,7 @@
 layout: case-study
 company: KISTERS
 problem: KISTERS wanted to use Rust's cross-platform support to its full potential.
-solution: We created a data processing package suitable for server, edge, and WASM.
+solution: We created a data-processing package suitable for server, edge, and WASM.
 tags: Launch your idea
 title: Dynamically switching execution platforms with Rust | Work
 displayTitle: "Dynamically switching execution platforms with Rust"
@@ -29,8 +29,8 @@ og:
 <div class="case-study__section">
   <h3 class="case-study__heading">The challenge</h3>
     <div class="case-study__text">
-      <p>To be able to <strong>handle large traffic spikes efficiently without risking astronomic cloud expenses, KISTERS needed the ability to dynamically move computation</strong> between traditional servers and edge functions, or offloading to end user's devices.</p>
-      <p>The large amounts of data KISTERS obtains from sensor devices needs processing to become useful for analysis. Filtering, grouping, and post-processing, depend on dynamic inputs and need to be carried out on demand.</p>
+      <p>To be able to <strong>handle large traffic spikes efficiently without risking astronomic cloud expenses, KISTERS needed the ability to dynamically move computation</strong> between traditional servers and edge functions, or offloading to end-user devices.</p>
+      <p>The large amounts of data KISTERS obtains from sensor devices need processing to become useful for analysis. Filtering, grouping, and post-processing, depend on dynamic inputs and need to be carried out on demand.</p>
       <p>That in and of itself warrants a well-optimized design and use of performant technologies, but in times of calamity, <strong>the amount of users requesting information may rise quickly</strong>: residents of endangered areas can use KISTERS’ software to obtain real-time information regarding their situation.</p>
     </div>
 </div>
@@ -38,7 +38,7 @@ og:
 <div class="case-study__section">
   <h3 class="case-study__heading">How Mainmatter helped out</h3>
     <div class="case-study__text">
-        <p>During an initial development cycle, Mainmatter proposed and implemented an architecture that isolates the data processing implementation in a platform-independent package written in Rust.<p>
+        <p>Mainmatter proposed and implemented an architecture that isolates the data processing implementation in a platform-independent package written in Rust.<p>
         <p>That package can be thinly wrapped for use in a web server, run as an edge function, or compiled to Web Assembly (WASM) for execution in browsers. All of these different environments run the same efficient code with close to no duplication.</p>
     </div>
 </div>
@@ -67,6 +67,6 @@ og:
   <h3 class="case-study__heading">Aftercare</h3>
     <div class="case-study__text">
       <p>Upon finishing and delivering the proof-of-concept, Mainmatter provided guidance to KISTERS' team on integrating the code into their platform.</p>
-      <p>Mainmatter has reviewed and optimized the integration code during several pairing sessions, ensuring that not just the product but also the knowledge required to maintain and expand it is transferred to KISTERS’ engineering team.</p>
+      <p>Mainmatter has reviewed and optimized the integration code during several pairing sessions with KISTERS’ engineering team, ensuring the delivery of both the product and the technical knowledge required to maintain and expand it.</p>
     </div>  
 </div>
