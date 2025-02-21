@@ -32,7 +32,7 @@ Ensuring compliance with the EAA requires product design and engineering work. T
 
 Let's look at some specific accessibility criteria from [Web Content Accessibility Guidelines (WCAG) version 2.2](https://www.w3.org/WAI/standards-guidelines/wcag/), which the EAA uses as a technical basis. The WCAG guidelines establish accessibility standards based on four key principles: **Perceivable**, **Operable**, **Understandable**, and **Robust**. Addressing them requires expertise in building web applications:
 
-The WCAG guidelines define four key principles: **Perceivable, Operable, Understandable, and Robust**. Addressing them demands expertise in building web applications, not just surface-level fixes.  
+The WCAG guidelines define four key principles: **Perceivable, Operable, Understandable, and Robust**. Addressing them demands expertise in building web applications, not just surface-level fixes.
 
 - Perceivable: Ensuring content is accessible means going beyond basic `alt` text. For example, maintaining a minimum contrast ratio of 4.5:1 for readability requires considering background images, branding, and a wide range of dynamic states. Similarly, input fields must be programmatically identifiable, ensuring screen readers correctly interpret form elements rather than relying on placeholder text alone.
 - Operable: In order to offering a keyboard-accessible experience, developers need to proper focus support and prevent users from getting trapped in interactive elements like modal dialogs. Ensuring that touch targets meet the minimum size of 24x24 pixels requires thoughtful UI design in mobile interfaces.
