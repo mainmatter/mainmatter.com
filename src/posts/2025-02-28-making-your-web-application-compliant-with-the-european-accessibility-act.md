@@ -5,7 +5,7 @@ tags: [process]
 bio: "Gabor Babicz, Senior Software Engineering Consultant"
 description: "Why making your digital product comply with the European Accessibility Act by June 2025 requires web engineering expertise."
 og:
-  image: "/assets/images/posts/2025-02-20-making-your-web-application-compliant-with-the-european-accessibility-act/og-image.png"
+  image: "/assets/images/posts/2025-02-28-making-your-web-application-compliant-with-the-european-accessibility-act/og-image.png"
 tagline: |
   <p>
     The European Accessibility Act (EAA) is already in effect, and by June 2025, digital products targeting European users must be fully accessible to people with disabilities. If you haven't started planning for compliance, now is the time because non-compliance could cost your business.
