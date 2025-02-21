@@ -29,7 +29,7 @@ og:
 <div class="case-study__section">
   <h3 class="case-study__heading">The challenge</h3>
     <div class="case-study__text">
-      <p>To be able to <strong>handle large traffic spikes efficiently without risking astronomic cloud expenses, KISTERS needed the ability to dynamically move computation</strong> between traditional servers and edge functions, or offloading to end-user devices.</p>
+      <p>KISTERS needed the ability to dynamically move computation between traditional servers and edge functions, or offloading to end-user devices. That way, they would be able to <strong>handle large traffic spikes efficiently without risking astronomic cloud expenses</strong></p>
       <p>The large amounts of data KISTERS obtains from sensor devices need processing to become useful for analysis. Filtering, grouping, and post-processing, depend on dynamic inputs and need to be carried out on demand.</p>
       <p>That in and of itself warrants a well-optimized design and use of performant technologies, but in times of calamity, <strong>the amount of users requesting information may rise quickly</strong>: residents of endangered areas can use KISTERS’ software to obtain real-time information regarding their situation.</p>
     </div>
