@@ -1,7 +1,7 @@
 ---
 layout: case-study
 company: KISTERS
-problem: KISTERS wanted to use Rust's cross-platform support to its full potential.
+problem: KISTERS wanted to handle traffic spikes by dynamically moving computation to different platforms.
 solution: We created a data-processing package suitable for server, edge, and WASM.
 tags: Launch your idea
 title: Dynamically switching execution platforms with Rust | Work
