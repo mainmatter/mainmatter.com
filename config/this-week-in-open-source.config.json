@@ -101,7 +101,8 @@
         "ericclemmons/awesome-starter-packs",
         "svelte-society/summit-website",
         "sveltejs/esrap",
-        "sveltejs/cli"
+        "sveltejs/cli",
+        "paoloricciuti/sveltekit-server-islands"
       ]
     },
     {
