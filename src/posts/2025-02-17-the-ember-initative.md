@@ -25,7 +25,7 @@ While this is monumental, we're not quite at the point where running `ember new`
 
 The Ember Initiative is intended to be just like the Embroider Initiative, but it is ongoing and does not just focus on a single topic. You can read more detail about this in [our blog post that introduces the Ember Initiative](/blog/2024/07/09/the-embroider-initiative-becomes-the-ember-initiative/), but the short version is that the Embroider Initiative was so successful that the whole Ember Community wants to keep that train running 🎉
 
-Because the Ember Initiative is not just focusing on a single project, we are encouraging people to think of it as an ongoing subscription that new backers can join at any time. Just like last time, you get a number of perks depending on what level of backing you join the Initiative on, but crucially this time if you're on the top tier you can **influence what the team focuses on**. The roadmap for the first 3 months of the Ember Initiative has already been agreed on with input from the Ember Core Team and the Ember Initiative Backers. If you want to influence next quarter's roadmap, please get in touch and join the Initiative as a backer!
+Because the Ember Initiative is not just focusing on a single project, we are encouraging people to think of it as an ongoing subscription that new backers can join at any time. Just like last time, you get a number of perks depending on what level of backing you join the Initiative on, but crucially this time if you're on the top tier you can **influence what the team focuses on**. The roadmap for the first 3 months of the Ember Initiative has already been agreed on with input from the Ember Core Team and the Ember Initiative Backers. If you want to influence next quarter's roadmap, please [get in touch](/contact/) and join the Initiative as a backer!
 
 We're tracking our work on the [Mainmatter Ember Initiative GitHub project](https://github.com/orgs/mainmatter/projects/14). If you look at the project you'll see that there are two main focus items for this quarter (and a smaller sub-focus):
 
@@ -59,6 +59,8 @@ The first push for the Ember Initiative will be to write a new RFC and to provid
 
 The first two topics I described above are more than enough to keep our team busy during the first 3 months of the Initiative, but we also plan to make a start on the substantial topic of Developer tooling. We don't intend to get any of the work done; we just want to define a roadmap and get a feel for the current state of play with developer tooling for Ember developers in the ever-changing Vite and GJS world. Our deliverable for the first 3 months of the Initiative is to have a well-defined set of tasks that we can add to the roadmap.
 
-## Conclusion
+## Next Steps
 
-I am very excited about the start of the Ember Initiative. If reading about all these upcoming improvements has made you even a fraction as excited as it has done for me, consider encouraging the organisation you work for to back the Initiative. We plan to get a lot done in the first 3 months, but if we can get enough regular backers we can keep this train going and make Ember shine for everyone for the next decade 💪
+I am very excited about the start of the Ember Initiative. If you are too, you can follow our progress on this blog so be sure to follow us on socials and be notified when we post another update.
+
+To ensure we can continue improving Ember for the entire community beyond these first 3 months of work we need more backers like you. If you want to help, consider encouraging the organisation you work for to sponsor the Initiative. You can get dedicated engineering time with our team and have an influence the roadmap. With your help, we could keep this train going and make Ember shine for everyone for the next decade 💪
