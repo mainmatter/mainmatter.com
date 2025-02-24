@@ -14,7 +14,7 @@ tagline: |
 
 ## Intro
 
-Anyone who has talked to me recently in a professional capacity will know that I'm low-key obsessed with using [Lint to the Future](https://github.com/mansona/lint-to-the-future) to improve a codebase gradually. This post won't go much into what Lint to the Future is, but instead, I'm going to showcase the day-to-day process I'm using to migrate ~6k files.
+Anyone who has talked to me recently in a professional capacity will know that I'm low-key obsessed with using [Lint to the Future](https://github.com/mansona/lint-to-the-future) to improve a codebase gradually. I'm going to showcase the day-to-day process I'm using to migrate ~6k files.
 
 ## What is Lint to the Future
 
@@ -59,7 +59,7 @@ For most repos, running eslint should be super quick so you can fix rules using 
 
 `eslint . --fix`
 
-Unfortunately, not all of us have a fast setup 😔 Because I'm working with such a large codebase that has 6k files to fix, my eslint is a bit slower than usual, but the real problem that we face with this repo is the use of the typescript-eslint plugin. With typescript-eslint it has to do a complete `tsc` compilation of your codebase before it can give you any type information for your lint rules, and if your `tsc` is slow your `eslint` is doubly slow. Since you know which rule you want to target it would be nice to run eslint with just one rule setup to improve the performance, but alas this isn't easy.
+Unfortunately, not all of us have a fast setup 😔 Because I'm working with such a large codebase that has 6k files to fix, my eslint is a bit slower than usual, but the real problem that we face with this repo is the use of the [`typescript-eslint` plugin](https://typescript-eslint.io). With `typescript-eslint` it has to do a complete `tsc` compilation of your codebase before it can give you any type information for your lint rules, and if your `tsc` is slow your `eslint` is doubly slow. Since you know which rule you want to target it would be nice to run `eslint` with just one rule setup to improve the performance, but alas this isn't easy.
 
 If you search for "how to run eslint with one rule" you will find many different approaches. You might find some eslint plugins and even an eslint wrapper script that can do what you need. I have been working with a carefully crafted command line execution that I edit accordingly. I'll show you the command first and then break it down:
 
