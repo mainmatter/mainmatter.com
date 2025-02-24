@@ -3,7 +3,7 @@ layout: case-study
 company: KISTERS
 problem: KISTERS wanted to handle traffic spikes by dynamically moving computation to different platforms.
 solution: We created a data-processing package suitable for server, edge, and WASM.
-tags: Launch your idea
+tags: Team Reinforcement
 title: Dynamically switching execution platforms with Rust | Work
 displayTitle: "Dynamically switching execution platforms with Rust"
 description: <p>KISTERS builds solutions for collecting, analyzing, and providing information based on environmental data. The HydroMet division provides software that helps warn people of upcoming floods using data obtained from numerous sensor devices deployed across the globe.</p>
