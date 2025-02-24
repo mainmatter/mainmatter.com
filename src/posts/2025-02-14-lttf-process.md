@@ -8,7 +8,7 @@ og:
   image:
 tagline: |
   <p>
-    With Lint to the Future you can quickly add new lint rules and track all the places you still need to fix. In this article, we'll go into more detail about how to work through those big lists of files you have yet to fix all the lint rules for.
+    When was the last time that you wanted to add a new lint rule to a massive codebase but decided against it becuase it would be too much effort to fix all the existing files? Maybe you though about turning the new rule on as a warning but realised it was pointless because lint-warnings are too easy to ignore. This post offers a better way to add new lint rules to existing codebases with Lint to the Future, and teaches you the best way to progressively improve your codebase over time.
   </p>
 ---
 
@@ -32,6 +32,8 @@ This is the situation that Lint to the Future is designed to help you with. Once
 - Install Lint to the Future (if you haven't already)
 - Run `npx lttf ignore` to add file-based ignores to all the files that have lint errors
 - Install the Lint to the Future dashboard to keep track of the files that you want to come back to
+
+![Example graph the Lint to the Future dashboard produces](/assets/images/posts/2025-02-14-lttf-process/lttf-graph.png)
 
 I have used this process to improve a number of codebases in the past years and it feels glorious. I guess it's just a trick of our psychology that seeing the graph slowly go down over time can be a great source of dopamine.
 
