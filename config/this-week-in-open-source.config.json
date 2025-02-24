@@ -29,7 +29,8 @@
         "mainmatter/rust-python-interoperability",
         "mainmatter/rust-telemetry-workshop",
         "rust-meetup-munich/hack-evening-2024-4",
-        "mainmatter/eserde"
+        "mainmatter/eserde",
+        "mainmatter/og-loc"
       ]
     },
     {
