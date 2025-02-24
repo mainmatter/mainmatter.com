@@ -12,7 +12,7 @@ tagline: |
   </p>
 ---
 
-**TL;DR:** By June 28, 2025, all digital products and services targeting EU users must meet accessibility standards under the [European Accessibility Act (EAA)](https://employment-social-affairs.ec.europa.eu/policies-and-activities/social-protection-social-inclusion/persons-disabilities/union-equality-strategy-rights-persons-disabilities-2021-2030/european-accessibility-act_en). This includes everything from websites and apps to platforms. Failing to comply could result in fines up to €20,000 per violation with additional daily penalties. Meeting these requirements involves deep web engineering expertise. Mainmatter can help modernize your web applications to improve the experience for all your users and minimize legal risk.
+**TL;DR:** By June 28, 2025, all digital products and services targeting EU users must meet accessibility standards under the [European Accessibility Act (EAA)](https://employment-social-affairs.ec.europa.eu/policies-and-activities/social-protection-social-inclusion/persons-disabilities/union-equality-strategy-rights-persons-disabilities-2021-2030/european-accessibility-act_en). This includes everything from websites and apps to platforms. Failing to comply could result in fines up to €20,000 per violation with additional daily penalties. Meeting these requirements involves deep web engineering expertise. Mainmatter can help modernize your web applications to improve the experience for all your users and minimize legal risk. [Contact Mainmatter today](/contact) for an accessibility audit.
 
 ## What is the **European Accessibility Act**?
 
@@ -70,6 +70,6 @@ The work to comply with the European Accessibility Act depends on the complexity
 
 1. Audit: We typically begin with an initial accessibility audit to identify areas of your web application needing improvements. You get a list of accessibility issues and a prioritized roadmap to addressing them.
 2. Implementation: We would then execute the recommended roadmap to compliance, working alongside your team. Simpler applications may only require one-time investments to implement these updates, while more complex platforms may involve ongoing engineering work, user testing, and the integration of assistive technologies.
-3. Engineering training: By working alongside your team, we can train your product managers, softwrae developers and QA engineers on web accessibility, incorporate accessibility best practices into the product development process. We use pair-programming and workshops to ensure your team is eventually able to continue the development of your product independently.
+3. Engineering training: By working alongside your team, we can train your product managers, software developers and QA engineers on web accessibility, incorporating accessibility best practices into the product development process. We use pair-programming and workshops to ensure your team is eventually able to continue the development of your product independently.
 
 Making accessibility a priority now doesn’t just help you avoid penalties, it makes your products better for everyone. Let’s get started and make sure your digital products are accessible to all. [Contact us today](/contact) for an accessibility audit.
