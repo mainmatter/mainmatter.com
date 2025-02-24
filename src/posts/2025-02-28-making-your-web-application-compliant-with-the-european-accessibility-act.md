@@ -18,9 +18,9 @@ tagline: |
 
 With the **[European Accessibility Act (EAA)](https://employment-social-affairs.ec.europa.eu/policies-and-activities/social-protection-social-inclusion/persons-disabilities/union-equality-strategy-rights-persons-disabilities-2021-2030/european-accessibility-act_en)**, the EU requires digital products to be accessible, improving access for people with all sorts of disabilities.
 
-Product teams need to focus on the **June 28, 2025** deadline which applies to most digital platforms (websites, mobile apps) and expect products to comply with EAA accessibility standards. Is is essential to prepare for it so as to ensure compliance, avoid penalties, and meet market expectations for accessible products.
+Product teams need to focus on the **June 28, 2025** deadline which applies to most digital platforms (websites, mobile apps) and expect products to comply with EAA accessibility standards. It is essential to prepare for it so as to ensure compliance, avoid penalties, and meet market expectations for accessible products.
 
-Failing to comply can lead to fines (up to €20,000 _per violation_ with ongoing penalties up to €1,000 per day) and even legal action, especially if essential services remain inaccessible. To meet compliance requirements, businesses should conduct audits and integrate accessibility into their software development process. Prioritizing accessibility creates a better experience for all users in addition to reducing legal risks.
+Failing to comply can lead to fines (up to €20,000 _per accessibility issue_ with ongoing penalties up to €1,000 per day) and even legal action, especially if essential services remain inaccessible. To meet compliance requirements, businesses should conduct audits and integrate accessibility into their software development process. Prioritizing accessibility creates a better experience for all users in addition to reducing legal risks.
 
 ## Meeting compliance requirements
 
@@ -32,17 +32,17 @@ Let's look at some specific accessibility criteria from [Web Content Accessibili
 
 
 - Perceivable: Ensuring content is accessible means going beyond basic `alt` text. For example, maintaining a minimum contrast ratio of 4.5:1 for readability requires considering background images, branding, and a wide range of dynamic states. Similarly, input fields must be programmatically identifiable, ensuring screen readers correctly interpret form elements rather than relying on placeholder text alone.
-- Operable: In order to offering a keyboard-accessible experience, developers need to proper focus support and prevent users from getting trapped in interactive elements like modal dialogs. Ensuring that touch targets meet the minimum size of 24x24 pixels requires thoughtful UI design in mobile interfaces.
+- Operable: In order to offer a keyboard-accessible experience, developers need to proper focus support and prevent users from getting trapped in interactive elements like modal dialogs. Ensuring that touch targets meet the minimum size of 24x24 pixels requires thoughtful UI design in mobile interfaces.
 - Understandable: Navigational elements must appear in a predictable order across pages, and buttons performing the same function must have uniform labels. More than just UX considerations, these require structured content modeling and rigorous front-end implementation.
 - Robust: Proper use of [ARIA attributes](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) ensures assistive technologies interpret UI components correctly. A visually hidden success message must be conveyed programmatically using `role=status` so that screen readers announce it without disrupting user flow.
 
-The examples above highlight how making your web application accessible isn't quick checkbox but requires deep technical expertise in web development.
+The examples above highlight how making your web application accessible isn't a quick checkbox but requires deep technical expertise in web development.
 
 ### Automated tools can support the assessment process
 
 Automated tools can help assess the accessibility of simple web products such as websites. However, these tools require engineering work to cover more dynamic parts of a web such as logged-in states, user flows with various permissions, or all sorts of user-generated content.
 
-- Code analysis or linting tools that automatically and continuously check the code for missing or invalid HTML element attributes. They are easy to set up and provide quick feedback but are limited to most common issues. They represent a good starting point to making your web products accessible. Here's a tool that we typically use for Ember applications: [ember-template-lint](https://github.com/ember-template-lint/ember-template-lint?tab=readme-ov-file).
+- Code analysis or linting tools that automatically and continuously check the code for missing or invalid HTML element attributes. They are easy to set up and provide quick feedback but are limited to the most common issues. They represent a good starting point to making your web products accessible. Here's a tool that we typically use for Ember applications: [ember-template-lint](https://github.com/ember-template-lint/ember-template-lint?tab=readme-ov-file).
 - [Axe](https://www.deque.com/axe/) provides excellent accessibility analysis of web pages. By using [axe-core](https://github.com/dequelabs/axe-core), it can integrate with an automated test suite and inspect web pages or individual components according to all sorts of scenarios.
 
 While some automated tools will make recommendations on how to address accessibility issues, none of them will actually implement them as this requires manual web engineering work.
@@ -66,6 +66,10 @@ Accessibility can’t simply be “done”; it must be an ongoing process integr
 
 The European Accessibility Act is setting the bar for accessibility across the EU, with the June 2025 deadline fast approaching. Achieving compliance isn't just a box to check, and identifying compliance gaps and implementing solutions takes more than just the right tools: it requires experience in building web applications and expertise in web engineering. With years of experience in accessibility and web development, we specialize in identifying and addressing accessibility challenges to ensure your digital products meet the highest standards.
 
-The work to comply with the European Accessibility Act depends on the complexity of your web application. With Mainmatter, the process would typically begin with an initial accessibility audit to identify areas requiring updates. We would then execute the recommended roadmap to compliance, working alongside and train your existing team on web accessibility. Simpler applications may only require one-time investments to implement these updates, while more complex platforms may involve ongoing engineering work, user testing, and the integration of assistive technologies.
+The work to comply with the European Accessibility Act depends on the complexity of your web application. The Mainmatter team has decades of cumulated experience building accessible web applications. Partnering with us would look like this:
 
-Making accessibility a priority now doesn’t just help you avoid penalties, it makes your products better for everyone. Let’s get started and make sure your digital products are accessible to all.
+1. Audit: We typically begin with an initial accessibility audit to identify areas of your web application needing improvements. You get a list of accessibility issues and a prioritized roadmap to addressing them.
+2. Implementation: We would then execute the recommended roadmap to compliance, working alongside your team. Simpler applications may only require one-time investments to implement these updates, while more complex platforms may involve ongoing engineering work, user testing, and the integration of assistive technologies.
+3. Engineering training: By working alongside your team, we can train your product managers, softwrae developers and QA engineers on web accessibility, incorporate accessibility best practices into the product development process. We use pair-programming and workshops to ensure your team is eventually able to continue the development of your product independently.
+
+Making accessibility a priority now doesn’t just help you avoid penalties, it makes your products better for everyone. Let’s get started and make sure your digital products are accessible to all. [Contact us today](/contact) for an accessibility audit.
