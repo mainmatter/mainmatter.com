@@ -9,11 +9,11 @@ displayTitle: "Dynamically switching execution platforms with Rust"
 description: <p>KISTERS builds solutions for collecting, analyzing, and providing information based on environmental data. The HydroMet division provides software that helps warn people of upcoming floods using data obtained from numerous sensor devices deployed across the globe.</p>
 hero:
   color: purple
-  image: "/assets/images/work/aleph-alpha-background-2.jpg" # TODO
+  image: "/assets/images/work/kisters-background.png" # TODO
   imageAlt: "TODO" # TODO
   tags: "development / architecture / Rust"
 og:
-  image: /assets/images/cases/cs-aleph-alpha-og-image.jpg # TODO
+  image: /assets/images/cases/cs-kisters-og-image.jpg # TODO
 ---
 
 {% from "image-aspect-ratio.njk" import imageAspectRatio %} {% from "quote.njk" import quote %}
