@@ -8,7 +8,7 @@ og:
   image: "/assets/images/posts/2025-02-14-lttf-process/lttf-process-og.jpg"
 tagline: |
   <p>
-    When was the last time that you wanted to add a new lint rule to a massive codebase but decided against it becuase it would be too much effort to fix all the existing files? Maybe you though about turning the new rule on as a warning but realised it was pointless because lint-warnings are too easy to ignore. This post offers a better way to add new lint rules to existing codebases with Lint to the Future, and teaches you the best way to progressively improve your codebase over time.
+    When did you last want to add a new lint rule to a massive codebase but decided against it because it would be too much effort to fix all the existing files? You may have considered turning the new rule on as a warning but realised it was pointless because lint warnings are too easy to ignore. This post offers a better way to add new lint rules to existing codebases with Lint to the Future and teaches you the best way to progressively improve your codebase over time.
   </p>
 ---
 
