@@ -33,7 +33,7 @@ This is the situation that Lint to the Future is designed to help you with. Once
 - Run `npx lttf ignore` to add file-based ignores to all the files that have lint errors
 - Install the Lint to the Future dashboard to keep track of the files that you want to come back to
 
-![Example graph the Lint to the Future dashboard produces](/assets/images/posts/2025-02-14-lttf-process/lttf-graph.png)
+![Example graph the Lint to the Future dashboard produces](/assets/images/posts/2025-03-03-lttf-process/lttf-graph.png)
 
 I have used this process to improve a number of codebases in the past years and it feels glorious. I guess it's just a trick of our psychology that seeing the graph slowly go down over time can be a great source of dopamine.
 
