@@ -2,7 +2,7 @@
 title: "The Start of the Ember Initiative"
 authorHandle: real_ate
 tags: ["ember"]
-bio: "Senior Software Engineer, Memeber of the Ember Core Learning and Ember Core Tooling teams."
+bio: "Senior Software Engineer, Member of the Ember Core Learning and Ember Core Tooling teams."
 description: "Announcing the start of the Ember Iniative"
 og:
   image: "/assets/images/posts/2025-02-25-the-ember-initative/og-image.jpg"
