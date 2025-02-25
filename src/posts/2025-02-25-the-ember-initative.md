@@ -5,7 +5,7 @@ tags: ["ember"]
 bio: "Senior Software Engineer, Memeber of the Ember Core Learning and Ember Core Tooling teams."
 description: "Announcing the start of the Ember Iniative"
 og:
-  image: "/assets/images/posts/2025-02-17-the-ember-initative/og-image.jpg"
+  image: "/assets/images/posts/2025-02-25-the-ember-initative/og-image.jpg"
 tagline: |
   <p>
     After the success of the Embroider Initiative we are thrilled to be starting the Ember Initiative, a new on-going programme to improve various parts of the Ember ecosystem. This post recaps the status of Embroider since the end of the Embroider Initiative and what we're going to be focusing on for the first 3 months of the Ember Initiative. 
