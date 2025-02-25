@@ -55,7 +55,7 @@ Our goal as part of the Ember Initiative is to start the process of improving th
 
 The first push for the Ember Initiative will be to write a new RFC and to provide a test implementation for the Route Manager API. The Router/Routing Manager API is a much larger task to tackle because it is so deeply ingrained into how Ember works, but we are actively discussing this topic at the weekly Ember Spec Meeting, which is public on the Ember Discord every Thursday at 21h GMT if you want to come along.
 
-### Developer tooling
+### Developer Tooling
 
 The first two topics I described above are more than enough to keep our team busy during the first 3 months of the Initiative, but we also plan to make a start on the substantial topic of Developer tooling. We don't intend to get any of the work done; we just want to define a roadmap and get a feel for the current state of play with developer tooling for Ember developers in the ever-changing Vite and GJS world. Our deliverable for the first 3 months of the Initiative is to have a well-defined set of tasks that we can add to the roadmap.
 
