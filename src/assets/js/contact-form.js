@@ -34,6 +34,7 @@ export class ContactForm {
   prefillService() {
     const currentUrl = new URL(window.location.href);
     const selectedService = currentUrl.searchParams.get("service");
+    console.log({ selectedService });
     if (selectedService) {
       const options = Array.from(this.form.service.options);
       const optionToSelect = options.find(
