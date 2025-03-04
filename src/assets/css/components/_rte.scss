@@ -24,7 +24,7 @@
     line-height: 1.25;
   }
 
-  h3 {
+  h3, h4 {
     font-weight: 700;
     font-size: rem-calc(24);
     line-height: 1.5;
@@ -180,7 +180,9 @@
   }
 
   h3,
-  .h3 {
+  .h3,
+  h4,
+  .h4 {
     font-family: var(--font-base);
     font-weight: 700;
     font-size: rem-calc(16);
@@ -217,7 +219,7 @@
       font-size: rem-calc(44);
     }
 
-    h3 {
+    h3, h4 {
       margin: 2.5rem 0 1rem;
     }
 
