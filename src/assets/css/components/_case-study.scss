@@ -1,3 +1,5 @@
+@use "../base/breakpoints" as *;
+
 .case-study {
   a {
     color: var(--color-purple);

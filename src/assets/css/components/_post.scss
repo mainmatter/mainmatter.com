@@ -1,3 +1,6 @@
+@use "../base/breakpoints" as *;
+@use "../mixins/rem-calc" as *;
+
 .post {
   --color-tag: var(--color-blue);
   margin: 3.25rem auto 6.25rem;

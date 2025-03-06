@@ -1,3 +1,5 @@
+@use "../base/breakpoints" as *;
+
 .collection-header {
   color: var(--color-white);
   background-color: var(--color-purple);

@@ -1,3 +1,5 @@
+@use "../base/breakpoints" as *;
+
 .images-side-by-side-grid {
   display: grid;
   grid-template-columns: 1fr;

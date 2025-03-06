@@ -1,3 +1,6 @@
+@use "../base/breakpoints" as *;
+@use "../mixins/rem-calc" as *;
+
 .policy {
   background-color: var(--color-purple);
   color: var(--color-white);

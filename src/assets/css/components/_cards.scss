@@ -1,3 +1,5 @@
+@use "../base/breakpoints" as *;
+
 .cards__grid {
   display: grid;
   grid-template-columns: 1fr;

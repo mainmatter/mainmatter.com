@@ -1,7 +1,7 @@
-@import "base/variables";
-@import "components/color-hero";
-@import "components/cta-banner";
-@import "base/utility";
+@use "./base/breakpoints" as *;
+@use "./components/color-hero";
+@use "./components/cta-banner";
+@use "./base/utility";
 
 nav {
   --color-link-primary: var(--color-white);

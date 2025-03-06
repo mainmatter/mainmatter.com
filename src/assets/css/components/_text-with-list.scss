@@ -1,3 +1,5 @@
+@use "../base/breakpoints" as *;
+
 .text-with-list {
   --color-text: var(--color-black);
   --color-accent: var(--color-purple);

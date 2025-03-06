@@ -1,3 +1,6 @@
+@use "../base/breakpoints" as *;
+@use "../mixins/rem-calc" as *;
+
 .rte {
   overflow-wrap: break-word;
   word-wrap: break-word;
