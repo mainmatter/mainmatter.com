@@ -11,13 +11,11 @@ metadata:
     name: "Mainmatter GmbH"
     email: "info@mainmatter.com"
 ---
-
-<!-- prettier-ignore-start -->
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ metadata.url }}" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ metadata.title }}</title>
-        <link>{{ metadata.url }}</link>
+    <link>{{ metadata.url }}</link>
     <atom:link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml" />
     <description>{{ metadata.subtitle }}</description>
     <language>{{ metadata.language }}</language>
@@ -26,7 +24,7 @@ metadata:
       <item>
         <title>{{ post.data.title }}</title>
         <link>{{ absolutePostUrl }}</link>
-        <description>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
+        <description><![CDATA[{{ post.content | htmlToAbsoluteUrls(absolutePostUrl) | safe }}]]></description>
         <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
         <dc:creator>{{ metadata.author.name }}</dc:creator>
         <guid>{{ absolutePostUrl }}</guid>
@@ -34,4 +32,3 @@ metadata:
     {%- endfor %}
   </channel>
 </rss>
-<!-- prettier-ignore-end -->
