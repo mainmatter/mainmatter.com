@@ -1,3 +1,5 @@
+@use "../base/breakpoints" as *;
+
 .form-with-image {
   display: flex;
   flex-direction:column-reverse;

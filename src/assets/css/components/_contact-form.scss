@@ -1,3 +1,6 @@
+@use "../base/breakpoints" as *;
+@use "../mixins/rem-calc" as *;
+
 .contact-form {
   max-height: initial;
   aspect-ratio: initial;

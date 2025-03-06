@@ -1,3 +1,5 @@
+@use "../base/breakpoints" as *;
+
 .image-aspect-ratio__wrapper {
   aspect-ratio: var(--aspect-ratio-mobile);
   position: relative;
