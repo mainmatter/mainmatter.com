@@ -11,7 +11,6 @@ metadata:
     name: "Mainmatter GmbH"
     email: "info@mainmatter.com"
 ---
-
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.url }}">
   <title>{{ metadata.title }}</title>
@@ -31,9 +30,7 @@ metadata:
       <link href="{{ absolutePostUrl }}" />
       <updated>{{ post.date | dateToRfc3339 }}</updated>
       <id>{{ absolutePostUrl }}</id>
-      <content xml:lang="{{ metadata.language }}" type="html"
-        >{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content
-      >
+      <content xml:lang="{{ metadata.language }}" type="html"><![CDATA[{{ post.content | htmlToAbsoluteUrls(absolutePostUrl) | safe }}]]></content>
     </entry>
   {%- endfor -%}
 </feed>
