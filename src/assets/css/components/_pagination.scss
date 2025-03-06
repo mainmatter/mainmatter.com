@@ -27,7 +27,6 @@
   flex-grow: 2;
 }
 
-
 .previous-wrapper {
   --icon-arrow-rotate: 90deg;
   display: flex;
@@ -36,7 +35,8 @@
   text-align: left;
   flex-grow: 2;
 
-  a:hover, a:focus {
+  a:hover,
+  a:focus {
     --icon-arrow-transform: translate3d(-0.5rem, 0, 0);
   }
 }

@@ -9,7 +9,9 @@ textarea {
   background-color: transparent;
 }
 
-input:focus-visible, textarea:focus-visible, select:focus-visible {
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
   outline: none;
   border-bottom: rem-calc(1) solid var(--color-link-primary-hover);
 }

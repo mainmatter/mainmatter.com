@@ -27,7 +27,8 @@
     line-height: 1.25;
   }
 
-  h3, h4 {
+  h3,
+  h4 {
     font-weight: 700;
     font-size: rem-calc(24);
     line-height: 1.5;
@@ -124,7 +125,8 @@
     font-style: italic;
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin: 1rem 0 1rem 3.5rem;
 
     li {
@@ -146,7 +148,7 @@
     content: "●";
   }
 
-  ol  {
+  ol {
     list-style: none;
     counter-reset: list;
 
@@ -165,7 +167,7 @@
       counter-increment: sublist;
 
       &::before {
-        content: counter(sublist, lower-alpha) '.';
+        content: counter(sublist, lower-alpha) ".";
       }
     }
   }
@@ -222,7 +224,8 @@
       font-size: rem-calc(44);
     }
 
-    h3, h4 {
+    h3,
+    h4 {
       margin: 2.5rem 0 1rem;
     }
 

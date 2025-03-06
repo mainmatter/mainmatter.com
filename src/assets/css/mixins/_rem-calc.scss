@@ -7,15 +7,19 @@ $rem-base: 16px;
   @return math.div($num, ($num * 0 + 1));
 }
 
-@function convert-to-rem($value, $base-value: $rem-base)  {
+@function convert-to-rem($value, $base-value: $rem-base) {
   $value: calc(strip-unit($value) / strip-unit($base-value) * 1rem);
-  @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
+  @if ($value == 0rem) {
+    $value: 0;
+  } // Turn 0rem into 0
   @return $value;
 }
 
 @function rem-calc($values, $base-value: $rem-base) {
   $max: list.length($values);
-  @if $max == 1 { @return convert-to-rem(list.nth($values, 1), $base-value); }
+  @if $max == 1 {
+    @return convert-to-rem(list.nth($values, 1), $base-value);
+  }
   $remValues: ();
   @for $i from 1 through $max {
     $remValues: list.append($remValues, convert-to-rem(list.nth($values, $i), $base-value));
