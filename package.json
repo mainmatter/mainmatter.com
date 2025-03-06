@@ -7,6 +7,8 @@
     "lint:js:fix": "eslint . --cache --fix",
     "lint:md": "prettier --check '**/*md'",
     "lint:md:fix": "prettier --write '**/*md'",
+    "lint:sass": "prettier --check '**/*scss'",
+    "lint:sass:fix": "prettier --write '**/*scss'",
     "lint:njk": "prettier --check '**/*njk'",
     "lint:njk:fix": "prettier --write '**/*njk'",
     "lint": "npm-run-all --print-name --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
