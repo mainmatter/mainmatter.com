@@ -93,7 +93,7 @@ This insight is more about blueprints than codemods. If you expect your users to
 
 ## The way back to Ember 3.28
 
-As part of the Ember Initiative, we implemented the first iteration of the codemod using a freshly generated Ember `6.2` app. We'd like to help the Ember community to build Ember `3.28` apps with Vite, so we need a strategy to go all the way back. To achieve this, we used tests and Continuous Integration (CI).
+As part of the Ember Initiative, we implemented the first iteration of the codemod using a freshly generated Ember `6.2` app. We'd like to help the Ember community build Ember `3.28` apps with Vite, so we need a strategy to go all the way back. To achieve this, we used tests and Continuous Integration (CI).
 
 The idea is that we have a CI job that runs a Vitest test called [`all-versions.test.js`](https://github.com/mainmatter/ember-vite-codemod/blob/main/tests/all-versions.test.js). This test:
 
@@ -120,4 +120,6 @@ const testVersions = [
 
 <br />
 
-Having the first version of the codemod released is an excellent achievement for the start of the [Ember Initiative](/ember-initiative/). Now we have a clear path to follow to support all versions back to `3.28`. Also, there is one case we want to _do over document_, which is the apps building with `@embroider/webpack`. Adding more support to the codemod is our next focus, so everyone can move to Vite as easily as possible. If you'd like to help us improve Ember for the entire web, consider encouraging the organization you work for to sponsor Mainmatter's Ember Initiative : [get in touch with us](/contact/), spread the word, and follow our progress on this blog.
+Having the first version of the codemod released is an excellent achievement for the start of the [Ember Initiative](/ember-initiative/). Now we have a clear path to supporting all versions back to `3.28`. Also, there is one case we want to _do over document_, which is the apps building with `@embroider/webpack`. Adding more support to the codemod is our next focus, so everyone can move to Vite as easily as possible.
+
+If you'd like to help us improve Ember for the entire web, consider encouraging the organization you work for to sponsor Mainmatter's Ember Initiative : [get in touch with us](/contact/), spread the word, and follow our progress on this blog.
