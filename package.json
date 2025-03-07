@@ -41,7 +41,6 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "5.0.0",
     "@lhci/cli": "^0.14.0",
     "@percy/cli": "^1.28.7",
-    "@quasibit/eleventy-plugin-sitemap": "^2.1.5",
     "@rollup/plugin-commonjs": "^28.0.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",

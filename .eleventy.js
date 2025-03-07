@@ -11,7 +11,6 @@ const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const Image = require("@11ty/eleventy-img");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 const contentParser = require("./utils/transforms/contentParser.js");
 const htmlMinTransform = require("./utils/transforms/htmlmin.js");
@@ -156,11 +155,6 @@ module.exports = function (eleventyConfig) {
     init,
   });
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
-  eleventyConfig.addPlugin(sitemap, {
-    sitemap: {
-      hostname: config.url,
-    },
-  });
 
   /**
    * Add Shortcodes
