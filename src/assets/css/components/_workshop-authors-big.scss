@@ -1,3 +1,6 @@
+@use "../base/breakpoints" as *;
+@use "../mixins/rem-calc" as *;
+
 .workshop-authors-big {
   margin: 5rem 0 10rem;
 }

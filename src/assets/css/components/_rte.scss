@@ -1,8 +1,19 @@
+@use "../base/breakpoints" as *;
+@use "../mixins/rem-calc" as *;
+
 .rte {
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
   hyphens: auto;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
 
   h2 {
     margin: 3rem 0 1.5rem;
@@ -20,13 +31,19 @@
 
   h2 {
     font-weight: 700;
-    font-size: rem-calc(36);
+    font-size: clamp(2rem, 1.8964rem + 0.442vw, 2.25rem); /* 32-36 */
     line-height: 1.25;
   }
 
-  h3, h4 {
+  h3 {
     font-weight: 700;
-    font-size: rem-calc(24);
+    font-size: clamp(1.5rem, 1.3964rem + 0.442vw, 1.75rem); /* 24-28 */
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-weight: 700;
+    font-size: clamp(1.25rem, 1.1464rem + 0.442vw, 1.5rem); /* 20-24 */
     line-height: 1.5;
   }
 
@@ -121,7 +138,8 @@
     font-style: italic;
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin: 1rem 0 1rem 3.5rem;
 
     li {
@@ -143,7 +161,7 @@
     content: "●";
   }
 
-  ol  {
+  ol {
     list-style: none;
     counter-reset: list;
 
@@ -162,7 +180,7 @@
       counter-increment: sublist;
 
       &::before {
-        content: counter(sublist, lower-alpha) '.';
+        content: counter(sublist, lower-alpha) ".";
       }
     }
   }
@@ -180,7 +198,15 @@
   }
 
   h3,
-  .h3,
+  .h3 {
+    font-family: var(--font-base);
+    font-weight: 700;
+    font-size: rem-calc(18);
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+  }
+
   h4,
   .h4 {
     font-family: var(--font-base);
@@ -219,7 +245,8 @@
       font-size: rem-calc(44);
     }
 
-    h3, h4 {
+    h3,
+    h4 {
       margin: 2.5rem 0 1rem;
     }
 
