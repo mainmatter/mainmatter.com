@@ -20,7 +20,6 @@ const { init } = require("./utils/svelteSyntaxHighlight");
 /**
  * Import site configuration
  */
-const config = require("./src/_data/config.js");
 const pathConfig = require("./src/_data/paths.json");
 
 module.exports = function (eleventyConfig) {
