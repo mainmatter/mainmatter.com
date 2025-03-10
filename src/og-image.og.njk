@@ -1,0 +1,62 @@
+<style>
+  .root {
+    width: 100%;
+    height: 100%;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: #6300ee;
+    color: white;
+    font-name: "CoreSans";
+    font-weight: bold;
+  }
+
+  .title {
+    font-size: 70px;
+    margin: auto 0;
+  }
+
+  .type {
+    font-size: 30px;
+  }
+
+  .author {
+    display: flex;
+  }
+
+  .author img {
+    width: 80px;
+    border-radius: 50%;
+  }
+
+  .author-detail {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    font-size: 30px;
+  }
+
+  .author-bio {
+    font-weight: normal;
+  }
+
+  .logo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+</style>
+
+<div class="root">
+  <div class="type">Blog Post</div>
+  <h1 class="title">{{ title }}</h1>
+  <div class="author">
+    <img src="{% inlineImage "assets/images/authors/" + authorHandle + ".jpg" %}" />
+    <div class="author-detail">
+      <span class="author-name">{{ author.name }}</span>
+      <span class="author-bio">{{ author.bio }}</span>
+    </div>
+  </div>
+  <img class="logo" src="{% inlineImage "favicon.svg" %}" width="160" height="160" />
+</div>

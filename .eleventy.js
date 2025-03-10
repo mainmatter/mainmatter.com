@@ -22,7 +22,7 @@ const { init } = require("./utils/svelteSyntaxHighlight");
  */
 const pathConfig = require("./src/_data/paths.json");
 
-module.exports = function (eleventyConfig) {
+module.exports = async function (eleventyConfig) {
   /**
    * Removed renaming Passthrough file copy due to issues with incremental
    * https://github.com/11ty/eleventy/issues/1299
@@ -130,6 +130,11 @@ module.exports = function (eleventyConfig) {
       .sort((a, b) => Date.parse(a.startDate) - Date.parse(b.startDate));
   });
 
+  eleventyConfig.addFilter("getAuthor", (authors, label) => {
+    let author = authors.filter(a => a.key === label)[0];
+    return author;
+  });
+
   /*
    * Add Transforms
    *
@@ -155,6 +160,28 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
+  const EleventyPluginOgImage = (await import("eleventy-plugin-og-image")).default;
+  eleventyConfig.addPlugin(EleventyPluginOgImage, {
+    satoriOptions: {
+      fonts: [
+        {
+          name: "CoreSans",
+          data: fs.readFileSync("./static/assets/fonts/core-sans/CoreSansA65Bold.woff"),
+          weight: 700,
+          style: "normal",
+        },
+        {
+          name: "CoreSans",
+          data: fs.readFileSync("./static/assets/fonts/core-sans/CoreSansA45Regular.woff"),
+          weight: 400,
+          style: "normal",
+        },
+      ],
+    },
+    async shortcodeOutput(ogImage) {
+      return ogImage.outputUrl();
+    },
+  });
   /**
    * Add Shortcodes
    */
@@ -227,6 +254,22 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setServerOptions({
     watch: ["./dist/assets/css/*.css", "./dist/assets/js/*.js"],
+  });
+
+  eleventyConfig.addShortcode(`inlineImage`, async imagePath => {
+    let extension = path.extname(imagePath).slice(1);
+    let fullImagePath = path.join("static", imagePath);
+    let base64Image = fs.readFileSync(fullImagePath, `base64`);
+
+    if (extension === `svg`) {
+      extension = `svg+xml`;
+    }
+
+    if (extension === `jpg`) {
+      extension = `jpeg`;
+    }
+
+    return `data:image/${extension};base64,${base64Image}`;
   });
 
   /*
