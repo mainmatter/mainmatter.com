@@ -5,7 +5,7 @@ tags: [svelte]
 bio: "Paolo Ricciuti, Senior Software Engineer"
 description: "Paolo Ricciuti (paoloricciuti) shows how (but most importantly how not) handle global state in Svelte 5"
 og:
-  image: /assets/images/posts/2023-11-28-sveltekit-storybook/og-image.jpg
+  image: /assets/images/posts/2025-02-01-global-state-in-svelte-5/og-image.jpg
 tagline: <p>Global state doesn't have to be scary! Embark in this journey to understand how to deal with it!</p>
 
 image: "/assets/images/posts/2025-02-01-global-state-in-svelte-5/header.jpg"
