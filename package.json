@@ -34,14 +34,13 @@
     "this-week": "twios/this-week-in-open-source --config-path=config/this-week-in-open-source.config.json"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-img": "^6.0.0",
     "@11ty/eleventy-navigation": "^0.3.2",
-    "@11ty/eleventy-plugin-rss": "1.2.0",
+    "@11ty/eleventy-plugin-rss": "2.0.3",
     "@11ty/eleventy-plugin-syntaxhighlight": "5.0.0",
     "@lhci/cli": "^0.14.0",
     "@percy/cli": "^1.28.7",
-    "@quasibit/eleventy-plugin-sitemap": "^2.1.5",
     "@rollup/plugin-commonjs": "^28.0.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
