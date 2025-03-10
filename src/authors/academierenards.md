@@ -1,7 +1,7 @@
 ---
 name: "Marine Dunstetter"
 github: BlueCutOfficial
-twitter: academierenards
+mastodon: "BlueCut@mastodon.social"
 linkedin: mdunstetter
 bio: Senior Software Engineer
 ---
