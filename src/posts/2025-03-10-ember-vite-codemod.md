@@ -5,7 +5,7 @@ tags: [ember, embroider, vite]
 bio: "Marine Dunstetter, Senior Software Engineer"
 description: "Announcing the first release of ember-vite-codemod"
 og:
-  image: "/assets/images/posts/2025-03-07-ember-vite-codemod/og-image.jpg"
+  image: "/assets/images/posts/2025-03-10-ember-vite-codemod/og-image.jpg"
 tagline: |
   <p>
    As part of our work on the <a href="/ember-initiative/">Ember Initiative</a>, we are thrilled to announce the initial release of <a href="https://github.com/mainmatter/ember-vite-codemod">ember-vite-codemod</a>, a codemod that brings Vite to Ember apps with just one command.
@@ -59,7 +59,7 @@ Once the perfect use case is identified, let's look at it and what is wanted ins
 
 An example of a mirror view for `app/app.js`:
 
-![On the left is the content of app/app.js in the classic 6.2 app. On the right is the content of app/app.js in the Vite app](/assets/images/posts/2025-03-07-ember-vite-codemod/compare-app-js.png)
+![On the left is the content of app/app.js in the classic 6.2 app. On the right is the content of app/app.js in the Vite app](/assets/images/posts/2025-03-10-ember-vite-codemod/compare-app-js.png)
 
 This approach can be combined with git features: Make two custom commands or shortcuts that allow you to almost instantaneously run the codemod, then reset the state of the classic app to HEAD, to remove everything the codemod has done. By alternating the commands and using a JavaScript Debug Terminal console, you get a comfortable enough workflow.
 
