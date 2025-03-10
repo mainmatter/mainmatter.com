@@ -10,4 +10,4 @@ hero:
   imageAlt: "Image of a railroad"
 ---
 
-Join us for an interactive session on the future of travel! Industry leaders Jürgen Witte (Rail Europe) & Marco Otte-Witte (Mainmatter) will share insights, followed by open discussions & collaboration.
+We’re excited to host an exclusive online session designed to bring together a diverse group of professionals to discuss key challenges and innovative solutions shaping the travel industry. Join us for an interactive session where industry leaders, Jürgen Witte (Rail Europe) & Marco Otte-Witte (Mainmatter) will share insights, followed by open discussions & collaboration.
