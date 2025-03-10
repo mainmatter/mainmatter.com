@@ -30,7 +30,8 @@
         "mainmatter/rust-telemetry-workshop",
         "rust-meetup-munich/hack-evening-2024-4",
         "mainmatter/eserde",
-        "mainmatter/og-loc"
+        "mainmatter/og-loc",
+        "mainmatter/reStations"
       ]
     },
     {
@@ -503,7 +504,10 @@
         "ember-learn/ember-learn-release-tool",
         "miguelcobain/ember-yeti-table",
         "ember-a11y/ember-a11y-testing",
-        "mainmatter/ember-vite-codemod"
+        "mainmatter/ember-vite-codemod",
+        "ember-cli/capture-exit",
+        "ember-learn/ember-help-wanted",
+        "nickschot/ember-vite"
       ]
     },
     {
@@ -631,6 +635,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "",
+  "last_date": "2025-03-02..2025-03-09",
   "query_type": "Merged"
 }
