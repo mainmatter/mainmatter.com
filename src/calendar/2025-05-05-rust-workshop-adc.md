@@ -4,7 +4,7 @@ image: "/assets/images/calendar/2025-05-05-rust-workshop-adc/rust.png"
 location: "Regensburg & Online"
 url: https://adc.ms/25/Workshops
 kind: workshop
-color: aqua
+color: purple
 hero:
   image: "/assets/images/hero/Regensburg.png"
   imageAlt: "The view of Regensburg"
