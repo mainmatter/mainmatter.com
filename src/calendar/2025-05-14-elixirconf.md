@@ -4,7 +4,7 @@ image: "/assets/images/calendar/2025-05-14-elixirconf/rust.png"
 location: "Kraków & Online"
 url: https://www.elixirconf.eu/trainings/interfacing-rust-in-elixir/
 kind: workshop
-color: aqua
+color: purple
 hero:
   image: "/assets/images/calendar/2025-05-14-elixirconf/Krakow.png"
   imageAlt: "Memorial statue of the Romantic poet Adam Mickiewicz located at Stare Miasto Rynek Glowny in Krakow, Poland."

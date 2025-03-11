@@ -4,7 +4,7 @@ image: "/assets/images/calendar/2025-05-08-svelte-summit/svelte.png"
 location: "Barcelona & Online"
 url: https://www.sveltesummit.com
 kind: conference
-color: purple
+color: aqua
 hero:
   image: "/assets/images/calendar/2025-05-08-svelte-summit/venue.jpg"
   imageAlt: "View of the Svelte Summit venue in Barcelona: a courtyard with concrete floor, tablees with chairs and light garlands."
