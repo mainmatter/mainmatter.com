@@ -574,7 +574,7 @@ _In [step 4], I've updated the rest of the method handlers, and demonstrate the 
 [step 1]: https://github.com/mainmatter/trash-in-treasure-out/tree/5c03b284bc0b1c932ec1c09b6abfef13f5cdfa4e
 [step 2]: https://github.com/mainmatter/trash-in-treasure-out/tree/305b8088b5155aeb13a473ca398fd1d522405b7d
 [step 3]: https://github.com/mainmatter/trash-in-treasure-out/tree/1dc8400afff4a31bcc1586e577a4af39124b8dfa
-[step 4]: https://github.com/mainmatter/trash-in-treasure-out/tree/305b8088b5155aeb13a473ca398fd1d522405b7d
+[step 4]: https://github.com/mainmatter/trash-in-treasure-out/tree/f194371b6f5fa762002b00e3c4f6d6fcd81dcbc9
 [`axum`]: https://crates.io/crates/axum/
 [`reqwest`]: https://crates.io/crates/reqwest/
 [`cargo-nextest`]: https://nexte.st/
