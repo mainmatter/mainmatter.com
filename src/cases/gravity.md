@@ -1,7 +1,6 @@
 ---
 layout: case-study
 company: Gravity
-tags: Product
 title: "Gravity: Keep your artifact sizes under control | Work"
 displayTitle: "Gravity: Keep your artifact sizes under control"
 description: <p>It's easy to miss small changes that have a big impact on a project's artifact sizes.</p><p>Added npm packages end up exploding bundle sizes, oversized and uncompressed images make it to websites, etc. We built Gravity to help teams catch such regressions early.</p>
