@@ -219,6 +219,12 @@
   to = "https://mainmatter.com/services/workshops/telemetry-for-rust-apis/"
   force = true
 
+# redirect wrongly published "Global state in svelte 5" post to new post
+[[redirects]]
+  from = "https://mainmatter.com/blog/2025/02/01/global-state-in-svelte-5/"
+  to = "https://mainmatter.com/blog/2025/03/11/global-state-in-svelte-5/"
+  force = true
+
 # serve 404 for all paths that don't exist
 [[redirects]]
   from = "/*"
