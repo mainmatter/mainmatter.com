@@ -37,12 +37,21 @@
 
 <meta name="fediverse:creator" content="@mainmatter@fosstodon.org" />
 
-{%- if og.image -%}
+{%- if autoOg -%}
+  {% set author = authorHandle | findBySlug %}
+  {% setAsync "ogImageUrl" -%}
+    {% ogImage "./og-image.og.njk", { title: title, author: author.data, authorHandle: authorHandle } %}
+  {%- endsetAsync %}
+{%- else -%}
+  {% set ogImageUrl=og.image %}
+{%- endif -%}
+
+{%- if ogImageUrl -%}
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{ pageTitle }}" />
   <meta name="twitter:site" content="@mainmatter" />
-  <meta property="og:image" content="{{ config.url }}{{ og.image }}" />
-  <meta name="twitter:image" content="{{ config.url }}{{ og.image }}" />
+  <meta property="og:image" content="{{ config.url }}{{ ogImageUrl }}" />
+  <meta name="twitter:image" content="{{ config.url }}{{ ogImageUrl }}" />
   <meta property="og:image:alt" content="{{ featured_image_caption }}" />
   <meta name="twitter:image:alt" content="{{ featured_image_caption }}" />
 {%- endif -%}
