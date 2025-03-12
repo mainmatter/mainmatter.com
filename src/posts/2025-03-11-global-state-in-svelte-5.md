@@ -5,10 +5,10 @@ tags: [svelte]
 bio: "Paolo Ricciuti, Senior Software Engineer"
 description: "Paolo Ricciuti (paoloricciuti) shows how (but most importantly how not) handle global state in Svelte 5"
 og:
-  image: /assets/images/posts/2025-02-01-global-state-in-svelte-5/og-image.jpg
+  image: /assets/images/posts/2025-03-11-global-state-in-svelte-5/og-image.jpg
 tagline: <p>Global state doesn't have to be scary! Embark in this journey to understand how to deal with it!</p>
 
-image: "/assets/images/posts/2025-02-01-global-state-in-svelte-5/header.jpg"
+image: "/assets/images/posts/2025-03-11-global-state-in-svelte-5/header.jpg"
 imageAlt: "The Svelte logo on a gray background picture"
 ---
 
@@ -227,7 +227,7 @@ _"But if i reassign it every time it's fine right?"_
 
 Well, still not: it might be good as long as you don't have asynchronous code, but as soon as you do a `fetch` request (which is almost a guarantee), here's what could happen:
 
-![a diagram showing how multiple async request could mutate global state causing the read of the wrong value](/assets/images/posts/2025-02-01-global-state-in-svelte-5/global-state-diagram.png)
+![a diagram showing how multiple async request could mutate global state causing the read of the wrong value](/assets/images/posts/2025-03-11-global-state-in-svelte-5/global-state-diagram.png)
 
 That's obviously wrong and very dangerous! But I would not be here blabbering if I didn't have a solution to this problem!
 
