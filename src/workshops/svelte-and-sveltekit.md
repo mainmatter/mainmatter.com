@@ -54,32 +54,6 @@ leads:
     image: /assets/images/authors/paoloricciuti.jpg
     bio: >
       Huge nerd, Svelte Ambassador and lover. He's one of the creators of <a href="https://sveltelab.dev">sveltelab.dev</a> - a REPL for SvelteKit - built during the first Svelte hackathon that granted him and his co-creator the first place for best integration.
-
-
-  - name: Daniel Beer
-    title: Senior Frontend Engineer
-    handle: beerinho
-    authorHandle: beerinho
-    image: /assets/images/authors/beerinho.jpg
-    bio: >
-      With experience in Angular and EmberJS, Daniel has as a varied background in JS Frameworks and enjoys exploring new technologies. He has used SvelteKit on multiple projects with great success.
-
-
-  - name: Gabor Babicz
-    title: Senior Frontend Engineer
-    handle: zeppelin
-    image: /assets/images/authors/zeppelin.jpg
-    bio: >
-      Gabor is a passionate frontend engineer who has spent the past two decades designing interfaces, merging functionality and aesthetics to create remarkable digital experiences.
-
-
-  - name: Florian Pichler
-    title: Senior Frontend Engineer
-    handle: pichfl
-    authorHandle: pichfl
-    image: /assets/images/authors/pichfl.jpg
-    bio: >
-      Florian has been solving frontend challenges for over 15 years, with all tools that became available. He has built and coached design and development teams of all sizes.
 ---
 
 <!--break-->
