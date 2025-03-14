@@ -10,6 +10,8 @@ export class ContactForm {
     this.success = this.form.querySelector("[data-form-success]");
     this.reset = this.form.querySelectorAll("[data-reset-form]");
 
+    this.prefillService();
+
     this.bindEvents();
   }
 
@@ -27,6 +29,21 @@ export class ContactForm {
         this.updateFormState("initial");
       });
     });
+  }
+
+  prefillService() {
+    const currentUrl = new URL(window.location.href);
+    const selectedService = currentUrl.searchParams.get("service");
+    console.log({ selectedService });
+    if (selectedService) {
+      const options = Array.from(this.form.service.options);
+      const optionToSelect = options.find(
+        o => o.value.toLowerCase() === selectedService.toLowerCase()
+      );
+      if (optionToSelect) {
+        optionToSelect.selected = true;
+      }
+    }
   }
 
   sendMessage(formData) {
