@@ -6,8 +6,8 @@ displayTitle: "Gravity: Keep your artifact sizes under control"
 description: <p>It's easy to miss small changes that have a big impact on a project's artifact sizes.</p><p>Added npm packages end up exploding bundle sizes, oversized and uncompressed images make it to websites, etc. We built Gravity to help teams catch such regressions early.</p>
 hero:
   color: purple
-  image: "/assets/images/work/gravity-background.svg" # TODO: better background image
-  imageAlt: "TODO" # TODO
+  image: "/assets/images/work/gravity-visual.jpg"
+  imageAlt: "Gravity logo floating in space"
   tags: "Mainmatter Product"
 og:
   image: /assets/images/cases/cs-kisters-og-image.jpg # TODO: add og:image
