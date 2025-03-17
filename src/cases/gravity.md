@@ -22,9 +22,14 @@ og:
 </div>
 
 <div class="case-study__section">
-  <div class="case-study__text">
-    TODO: add Gravity image here
-  </div>
+  {% set imageData = {
+    "imgPath": "/assets/images/work/gravity-laptop-visualized.jpg",
+    "alt": "Gravity website open on a laptop",  
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </div>
 
 <div class="case-study__section">
