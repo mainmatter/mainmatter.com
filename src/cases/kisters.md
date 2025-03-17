@@ -9,11 +9,11 @@ displayTitle: "Dynamically switching execution platforms with Rust"
 description: <p>KISTERS builds solutions for collecting, analyzing, and providing information based on environmental data. The HydroMet division provides software that helps warn people of upcoming floods using data obtained from numerous sensor devices deployed across the globe.</p>
 hero:
   color: purple
-  image: "/assets/images/work/kisters-background.jpg" # TODO
-  imageAlt: "TODO" # TODO
+  image: "/assets/images/work/kisters-background.jpg"
+  imageAlt: "Wave in the ocean"
   tags: "development / architecture / Rust"
 og:
-  image: /assets/images/cases/cs-kisters-og-image.jpg # TODO
+  image: /assets/images/cases/cs-kisters-og-image.jpg
 ---
 
 {% from "image-aspect-ratio.njk" import imageAspectRatio %} {% from "quote.njk" import quote %}
@@ -44,10 +44,9 @@ og:
 </div>
 
 <section class="mt-5">
-        <!-- TODO add image for KISTERS -->
         {% set imageData = {
           "imgPath": "/assets/images/work/kisters-graph.png",
-          "alt": "TODO",
+          "alt": "KISTERS software open on a laptop",
           "sizes": "100vw",
           "loading": "lazy",
           "sizesArray": [760, 1440, 1920]
