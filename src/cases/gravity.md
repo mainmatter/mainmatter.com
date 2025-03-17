@@ -10,7 +10,7 @@ hero:
   imageAlt: "Gravity logo floating in space"
   tags: "Mainmatter Product"
 og:
-  image: /assets/images/cases/cs-kisters-og-image.jpg # TODO: add og:image
+  image: /assets/images/cases/cs-gravity-og-image.jpg
 ---
 
 {% from "image-aspect-ratio.njk" import imageAspectRatio %} {% from "quote.njk" import quote %}
