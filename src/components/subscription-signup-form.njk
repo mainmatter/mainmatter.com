@@ -1,0 +1,95 @@
+{%- macro subscriptionSignupForm(content) -%}
+  <section
+    class="cta-banner cta-banner--purple container container--xl my-10"
+    data-background-color="purple"
+  >
+    <a id="signup-subscription"></a>
+    <div class="cta-banner__wrapper">
+      <div class="cta-banner__main">
+        <h2 class="cta-banner__title">{{ content.title }}</h2>
+        <div class="cta-banner__text">
+          <p>{{ content.text | safe }}</p>
+        </div>
+        <form
+          data-contact-form
+          class="contact-form__form"
+          data-status="initial"
+          data-action="https://hooks.zapier.com/hooks/catch/4837956/29yixsv/"
+          data-method="get"
+          data-goal="Subscription+Contact+{{ content.kind | capitalize }}"
+        >
+          <input type="hidden" name="workshop" value="{{ content.kind }}" />
+          <div data-form-content class="contact-form__field cta__input mb-2 mt-2">
+            <input
+              class="contact-form__input"
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+            />
+            <label class="contact-form__label h4" for="name">
+              Your name
+              <span class="screenreader">(Required)</span>
+            </label>
+            <span class="contact-form__label-required" aria-hidden="true">Required</span>
+          </div>
+          <div class="contact-form__field cta__input mb-2 mt-2">
+            <input
+              class="contact-form__input"
+              id="company"
+              type="text"
+              name="company"
+              placeholder="Your company's name"
+            />
+            <label class="contact-form__label h4" for="name"> Your company's name </label>
+          </div>
+          <div class="contact-form__field cta__input mb-2 mt-2">
+            <input
+              class="contact-form__input"
+              id="email"
+              type="email"
+              name="email"
+              placeholder="Your e-mail"
+              required
+            />
+            <label class="contact-form__label h4" for="email">
+              Your e-mail
+              <span class="screenreader">(Required)</span>
+            </label>
+            <span class="contact-form__label-required" aria-hidden="true">Required</span>
+          </div>
+          <button class="btn-primary btn-primary--white" type="submit">
+            <span>Get in touch</span>
+            {% include 'svg/arrow.njk' %}
+          </button>
+          <div class="contact-form__status">
+            <button class="contact-form__close" data-reset-form>
+              {% include 'svg/close.njk' %}
+              <span class="screenreader">Close</span>
+            </button>
+            <div class="contact-form__loading h4" data-form-loading>
+              Your message is being sent…
+              <div class="loader" aria-hidden="true"></div>
+            </div>
+            <div class="contact-form__error" tabindex="-1" data-form-error>
+              <div class="contact-form__status-wrapper">
+                <h2 class="contact-form__success-subheading h3">Unable to send message.</h2>
+                <p>
+                  Please try again later or contact us at
+                  <a href="mailto:info@mainmatter.com">info@mainmatter.com</a>
+                </p>
+              </div>
+            </div>
+            <div class="contact-form__success" tabindex="-1" data-form-success>
+              <div class="contact-form__status-wrapper">
+                <h2 class="contact-form__success-heading h3">Thank you!</h2>
+                <p class="contact-form__success-subheading h3">We will be in touch soon.</p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+{%- endmacro -%}
