@@ -19,6 +19,11 @@ layout: base
 
   <article class="case-study">
     <div class="container container--lg">{{ content | safe }}</div>
+    {% if cta == "gravity" %}
+      <div class="case-study__section">
+        <div class="case-study__text">{% include "global/gravity-cta.njk" %}</div>
+      </div>
+    {% endif %}
   </article>
   {% set postsFromCollection = collections.caseStudiesFeatured | getMorePosts(page) | limit(3) %}
   {% if postsFromCollection %}
