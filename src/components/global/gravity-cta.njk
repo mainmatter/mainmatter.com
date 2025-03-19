@@ -1,0 +1,14 @@
+{#
+A call-to-action meant to be displayed at the bottom of a blog post.
+#}
+{% from "cta-banner.njk" import ctaBanner %}
+{%
+  set content = {
+    "title": "Try Gravity Today",
+    "subheading": "Gravity is free for public projects and set up in minutes.",
+    "linkUrl": "https://gravity.ci/?utm_source=mainmatter.com",
+    "linkText": "Try Gravity",
+    "class": "cta-banner__gravity"
+  }
+%}
+{{ ctaBanner('purple', 'default', content) }}
