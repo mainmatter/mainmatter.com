@@ -4,6 +4,7 @@ company: Gravity
 title: "Gravity: Keep your artifact sizes under control | Work"
 displayTitle: "Gravity: Keep your artifact sizes under control"
 description: <p>It's easy to miss small changes that have a big impact on a project's artifact sizes.</p><p>Added npm packages end up exploding bundle sizes, oversized and uncompressed images make it to websites, etc. We built Gravity to help teams catch such regressions early.</p>
+cta: gravity
 hero:
   color: purple
   image: "/assets/images/work/gravity-visual.jpg"
@@ -45,11 +46,5 @@ og:
 <div class="case-study__section">
   <div class="case-study__text rte">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/2vD_geF_Ask" title="Gravity Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
-</div>
-
-<div class="case-study__section">
-  <div class="case-study__text">
-    TODO: Gravity Teaser
   </div>
 </div>
