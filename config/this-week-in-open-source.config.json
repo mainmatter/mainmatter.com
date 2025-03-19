@@ -105,7 +105,8 @@
         "svelte-society/summit-website",
         "sveltejs/esrap",
         "sveltejs/cli",
-        "paoloricciuti/sveltekit-server-islands"
+        "paoloricciuti/sveltekit-server-islands",
+        "paoloricciuti/bsky-svelte-feed"
       ]
     },
     {
@@ -635,6 +636,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2025-03-02..2025-03-09",
+  "last_date": "2025-03-09..2025-03-16",
   "query_type": "Merged"
 }
