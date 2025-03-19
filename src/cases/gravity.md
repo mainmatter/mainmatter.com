@@ -18,7 +18,7 @@ og:
 
 <div class="case-study__section">
   <div class="case-study__text">
-    <p>Working with numerous teams over the years on all kinds of [projects](/work/), we've noticed a common issue over and over: small changes can lead to big impacts on artifact sizes which go unnoticed until they hit production systems. Adding a new npm package might bloat your frontend app, unoptimized images can slow down your website, and even binary assets like Docker images or Rust crates can grow disproportionally. These size increases result in slower load times, extra computation, and higher data transfer and storage costs.</p>
+    <p>Working with numerous teams over the years on all kinds of <a href="/work/">projects</a>, we've noticed a common issue over and over: small changes can lead to big impacts on artifact sizes which go unnoticed until they hit production systems. Adding a new npm package might bloat your frontend app, unoptimized images can slow down your website, and even binary assets like Docker images or Rust crates can grow disproportionally. These size increases result in slower load times, extra computation, and higher data transfer and storage costs.</p>
   </div>
 </div>
 
