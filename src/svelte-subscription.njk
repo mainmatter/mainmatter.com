@@ -1,0 +1,155 @@
+---
+layout: base
+title: "Svelte Support Subscription | A Direct line to Mainmatter's experts"
+description: "Get instant access to our Svelte experts: whether you need a quick gut check, a deep code review, or a hands-on pairing session, we’re here to help."
+permalink: /svelte-subscription/
+og:
+  image: /assets/images/svelte-subscription/og-image.jpg
+---
+
+{% from "logo-list.njk" import logoList %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "color-hero.njk" import colorHero %}
+{% from "btn-secondary.njk" import btnSecondary %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "quote.njk" import quote %}
+{% from 'featured-case-study.njk' import featuredCaseStudy %}
+{% from "featured-services.njk" import featuredServices %}
+{% from "subscription-signup-form.njk" import subscriptionSignupForm %}
+{%
+  set 'content' = {
+  "eyebrow": "A Direct line to Mainmatter's experts",
+  "title": "Svelte Support Subscription",
+  "text": "Get instant access to our svelte experts: whether you need a quick gut check, a deep code review, or a hands-on pairing session, we’re here to help.",
+  "image": "/assets/images/hero/svelte-subscribe.jpg",
+  "alt": "Lifebuoys in a pool",
+  "loading": "eager"
+  }
+%}
+{{ colorHero('purple', content) }}
+
+<section class="my-10 container container--lg">
+  <div class="split-content no-link">
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h5>Instant Support Without Long-term Commitment</h5>
+        <h3 class="split-content__subheading h2">Svelte Expertise on a Monthly Subscription</h3>
+        <p>
+          Get direct access to our Svelte experts, led by Svelte maintainer
+          <a href="https://github.com/paoloricciuti">Paolo Ricciuti</a>, without the hassle of
+          long-term contracts or hiring delays. With our subscription,
+          <strong class="strong">your team joins our Slack channel</strong> for quick support and
+          gets <strong class="strong">2 hours of dedicated expert time each week</strong> for
+          pairing sessions, code reviews, and technical guidance.
+        </p>
+        {%
+          set link = {
+          "label": 'Sign up today for 4.000€ per month, cancel anytime',
+          "url": '#signup-subscription'
+          }
+        %}
+        {{ btnSecondary( link, 'mt-2' ) }}
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-svelte-consulting.njk' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{%
+  set 'content' = {
+  "title": "Expert Svelte Support, When You Need It",
+  "subtitle": "We help you tackle your toughest Svelte challenges."
+  }
+%}
+{%
+  set 'features' = [{
+  "heading": "Pairing Sessions",
+  "text": "1:1 mentoring from Svelte experts"
+  },{
+  "heading": "PR Reviews",
+  "text": "Catch mistakes early and level up your team"
+  },{
+  "heading": "Whiteboard Sessions",
+  "text": "Make the right decision from the get-go"
+  },{
+  "heading": "Issue Resolution",
+  "text": "Unblock your team and ship faster"
+  },{
+  "heading": "Interviews",
+  "text": "Hire the right Svelte talent with expert guidance"
+  }]
+%}
+{{ featuredServices(features, content) }}
+{%
+  set 'content' = {
+  "title": "Signup for our Svelte Support Subscription",
+  "text": "Get direct access to our Svelte experts for <strong class=\"strong\">4.000€ per month</strong>, with no long-term commitment—<strong class=\"strong\">cancel anytime.</strong>",
+  "kind": "svelte"
+  }
+%}
+{{ subscriptionSignupForm(content) }}
+
+<section class="my-10 container container--lg">
+  <div class="">
+    <div class="mb-4">
+      <h5 class="mb-015">Mainmatter & Svelte</h5>
+      <h3 class="mb-2">Deeply Committed to Svelte</h3>
+      <p>
+        We’re not just Svelte experts—we’re actively shaping the ecosystem. We co-organize Svelte
+        Summit, speak at international conferences, run Svelte workshops, contribute to Svelte
+        itself and our own open-source projects in the ecosystem.
+      </p>
+      {%
+        set link = {
+        "label": 'Learn more about our work with Svelte',
+        "url": '/svelte-consulting/'
+        }
+      %}
+      {{ btnSecondary( link, 'mt-2' ) }}
+    </div>
+  </div>
+</section>
+
+<section class="my-10">
+  {%
+    set imageData = {
+    "imgPath": "/assets/images/svelte/konfetti.jpg",
+    "alt": "photo of colorful konfetti in front of a blue wall",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+    }
+  %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
+<section class="my-10">
+  <h2 class="quotes-list__title h2">Our customers say about us</h2>
+  <div class="container container--lg">
+    {%
+      set 'content' = {
+      "text": "”Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.”",
+      "source": "Jürgen Witte, CPO at Rail Europe"
+      }
+    %}
+    {{ quote(content) }}
+  </div>
+</section>
+
+<div class="work container container--xl">
+  <ul class="work__list">
+    {{ featuredCaseStudy('rail-europe', 'purple', 'work__featured-case-study') }}
+  </ul>
+</div>
+
+{%
+  set 'content' = {
+  "title": "Sign up",
+  "text": "Sign up today for 4.000€ per month, cancel anytime.",
+  "linkUrl": "#signup-subscription",
+  "linkText": "Sign up"
+  }
+%}
+{{ ctaBanner('purple', 'full', content) }}

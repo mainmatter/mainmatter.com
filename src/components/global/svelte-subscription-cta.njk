@@ -1,0 +1,13 @@
+{#
+A call-to-action meant to be displayed at the beginning of a blog post.
+#}
+{% from "cta-banner.njk" import ctaBanner %}
+{%
+  set 'content' = {
+  "title": "Svelte Support Subscription",
+  "text": "Open up a direct line to Mainmatter's Svelte experts, led by Paolo Ricciuti.",
+  "linkUrl": "/svelte-subscription/",
+  "linkText": "More info & sign up"
+  }
+%}
+{{ ctaBanner('purple', 'default', content) }}

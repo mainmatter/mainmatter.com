@@ -21,7 +21,8 @@
   text-decoration: none;
 }
 
-.featured-services__link {
+.featured-services__link,
+.featured-services__link--inactive {
   --icon-arrow-color: var(--color-purple);
   --icon-arrow-size: 1.5rem;
   --icon-arrow-margin: 0 1.5rem 0 0;
@@ -38,7 +39,9 @@
   .featured-services__link-description {
     font-size: 1rem;
   }
+}
 
+.featured-services__link {
   &:hover,
   &:focus {
     --icon-arrow-transform: translate3d(0.5rem, 0, 0);

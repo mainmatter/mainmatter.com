@@ -1,0 +1,178 @@
+---
+layout: base
+title: "Rust Support Subscription | A Direct line to Mainmatter's experts"
+description: "Get instant access to our Rust experts: whether you need a quick gut check, a deep code review, or a hands-on pairing session, we’re here to help."
+permalink: /rust-subscription/
+og:
+  image: /assets/images/rust-subscription/og-image.jpg
+---
+
+{% from "logo-list.njk" import logoList %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "color-hero.njk" import colorHero %}
+{% from "btn-secondary.njk" import btnSecondary %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "quote.njk" import quote %}
+{% from "featured-case-studies.njk" import featuredCaseStudies %}
+{% from "featured-services.njk" import featuredServices %}
+{% from "subscription-signup-form.njk" import subscriptionSignupForm %}
+{%
+  set 'content' = {
+  "eyebrow": "A Direct line to Mainmatter's experts",
+  "title": "Rust Support Subscription",
+  "text": "Get instant access to our Rust experts: whether you need a quick gut check, a deep code review, or a hands-on pairing session, we’re here to help.",
+  "image": "/assets/images/hero/rust-subscribe.jpg",
+  "alt": "Crabs arranged in a pattern",
+  "loading": "eager"
+  }
+%}
+{{ colorHero('purple', content) }}
+
+<section class="my-10 container container--lg">
+  <div class="split-content no-link">
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h5>Instant Support Without Long-term Commitment</h5>
+        <h3 class="split-content__subheading h2">Rust Expertise on a Monthly Subscription</h3>
+        <p>
+          Get direct access to our Rust experts, led by
+          <a href="https://github.com/LukeMathWalker">Luca Palmieri</a>, without the hassle of
+          long-term contracts or hiring delays. With our subscription,
+          <strong class="strong">your team joins our Slack channel</strong> for quick support and
+          gets <strong class="strong">2 hours of dedicated expert time each week</strong> for
+          pairing sessions, code reviews, and technical guidance.
+        </p>
+        {%
+          set link = {
+          "label": 'Sign up today for 4.000€ per month, cancel anytime',
+          "url": '#signup-subscription'
+          }
+        %}
+        {{ btnSecondary( link, 'mt-2' ) }}
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-rust-consulting.njk' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{%
+  set 'content' = {
+  "title": "Expert Rust Support, When You Need It",
+  "subtitle": "We help you tackle your toughest Rust challenges."
+  }
+%}
+{%
+  set 'features' = [{
+  "heading": "Pairing Sessions",
+  "text": "1:1 mentoring from Rust experts"
+  },{
+  "heading": "PR Reviews",
+  "text": "Catch mistakes early and level up your team"
+  },{
+  "heading": "Whiteboard Sessions",
+  "text": "Make the right decision from the get-go"
+  },{
+  "heading": "Issue Resolution",
+  "text": "Unblock your team and ship faster"
+  },{
+  "heading": "Interviews",
+  "text": "Hire the right Rust talent with expert guidance"
+  }]
+%}
+{{ featuredServices(features, content) }}
+{%
+  set 'content' = {
+  "title": "Signup for our Rust Support Subscription",
+  "text": "Get direct access to our Rust experts for <strong class=\"strong\">4.000€ per month</strong>, with no long-term commitment—<strong class=\"strong\">cancel anytime.</strong>",
+  "kind": "rust"
+  }
+%}
+{{ subscriptionSignupForm(content) }}
+
+<section class="my-10 container container--lg">
+  <div class="">
+    <div class="mb-4">
+      <h5 class="mb-015">Mainmatter & Rust</h5>
+      <h3 class="mb-2">Deeply Committed to Rust</h3>
+      <p>
+        We’re not just Rust experts—we’re actively shaping the ecosystem. We are a member of the
+        Rust Foundation, we organize EuroRust, speak at international conferences, published a Rust
+        book, and contribute to open-source.
+      </p>
+      {%
+        set link = {
+        "label": 'Learn more about our work with Rust',
+        "url": '/rust-consulting/'
+        }
+      %}
+      {{ btnSecondary( link, 'mt-2' ) }}
+    </div>
+  </div>
+</section>
+
+{%
+  set logoCompanies = [
+  'Aleph Alpha',
+  'KISTERS',
+  'BMW Car IT',
+  'Faculty',
+  'Otto',
+  'Redis'
+  ]
+%}
+{% set title = 'We are trusted by international companies that bet on Rust' %}
+{{ logoList(logoCompanies, title, "h4", "h5") }}
+
+<section class="mb-10">
+  {%
+    set imageData = {
+    "imgPath": "/assets/images/rust/eurorust-crab.jpg",
+    "alt": "People standing together in groups at EuroRust in conversations, a big, ca. 3min tall, inflatable Ferris in the background",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+    }
+  %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
+<section class="my-10">
+  <h2 class="quotes-list__title h2">Our customers say about us</h2>
+  <div class="container container--lg">
+    {%
+      set 'content' = {
+      "text": "”Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way. I've learned so much, especially during our pairing sessions—it allowed me to improve my technical skills and grow as an engineer.”",
+      "source": "Andreas Hartel, Senior Engineer at aleph alpha"
+      }
+    %}
+    {{ quote(content) }}
+    {%
+      set 'content' = {
+      "text": "”Working with Mainmatter's experts has always been a good experience. We can really feel that they have mastery on many topics, and knowledge about complex technical problems. I’ve learned so much, especially during our pairing sessions, and it allows me to improve my technical skills and growth as an engineer.”",
+      "source": "Alexandre Monjol, Engineer at Qonto"
+      }
+    %}
+    {{ quote(content, alignment='right') }}
+    {%
+      set 'content' = {
+      "text": "”We started working with simplabs to build a state-of-the-art mobile web app from the ground up and it was an absolute success! Not only are they web specialists, but their expertise in development practices and agile processes made our collaboration an absolute delight.”",
+      "source": "Carl Anderson, General Manager at Trainline Europe"
+      }
+    %}
+    {{ quote(content) }}
+  </div>
+</section>
+
+{% set clients = ['aleph-alpha', 'kisters', 'bmw-car-it', 'redis'] %}
+{{ featuredCaseStudies(clients, 'Browse our work') }}
+{%
+  set 'content' = {
+  "title": "Sign up",
+  "text": "Sign up today for 4.000€ per month, cancel anytime.",
+  "linkUrl": "#signup-subscription",
+  "linkText": "Sign up"
+  }
+%}
+{{ ctaBanner('purple', 'full', content) }}
