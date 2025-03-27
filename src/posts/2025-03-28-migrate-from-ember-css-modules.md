@@ -19,11 +19,9 @@ Mainmatter started the [Ember Initiative](/ember-initiative/) and made Vite supp
 
 Just like ember-css-modules, ember-scoped-css is an Ember addon that brings CSS modules to your Ember apps. It is a v2 addon that can be used in conjunction with a v1 addon - ember-scoped-css-compat - that brings the same functionality to classic apps.
 
-### I want to start using CSS modules in my Ember Vite app, should I use ember-scoped-css?
+### Is ember-scoped-css the best choice?
 
-No, not necessarily; ember-scoped-css is not the only option. You could also follow [Vite documentation](https://vite.dev/guide/features#css-modules) directly or look into some other solutions the Ember community came up with. The advantage of ember-scoped-css is that it's quite similar to ember-css-modules in the way the implementation is structured, so it's a migration path we recommend to unblock your upgrade to Vite without drastically changing all your CSS.
-
-### I use ember-css-modules and want to migrate to a Vite-compatible solution, why should I favor ember-scoped-css?
+If you want to start using CSS modules in an Ember Vite app, ember-scoped-css is not the only option. You could also follow [Vite documentation](https://vite.dev/guide/features#css-modules) directly or look into some other solutions the Ember community came up with. The advantage of ember-scoped-css is that it's quite similar to ember-css-modules in the way the implementation is structured, so it's a migration path we recommend to unblock your upgrade to Vite without drastically changing all your CSS.
 
 The similarities between ember-css-modules and ember-scoped-css enable the possibility to get them to work at the same time. Let's assume your Ember app contains lots of components and you are using a continuous deployment process: it could be very challenging for you to upgrade to Vite if you need to drastically refactor the CSS as part of the upgrade in a single Pull Request. The path we suggest in this blog post allows you to enable ember-scoped-css file by file, so you can control the pace of the migration until ember-css-modules is no longer used.
 
