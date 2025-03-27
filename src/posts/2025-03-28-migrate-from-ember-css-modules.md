@@ -7,7 +7,7 @@ description: "Introducing the migration path from ember-css-modules to ember-sco
 autoOg: true
 tagline: |
   <p>
-  Ember apps from 3.28 to latest can build with Vite. This is a great achievement for the whole Ember community which Mainmatter has led as part of the <a href="/ember-initiative/">Ember Initiative</a>. Popular community addons must get ready for the change - more than half already are. However, a few classic addons rely too much on classic-world semantic and should be replaced with a different Vite-compatible solution. ember-css-modules is one of them. Fortunately, the Ember Initiative team has worked out a migration path you can follow to pave your way to Vite.
+  Ember apps from version 3.28 to the latest can now be built with Vite. Popular community addons must get ready for the change - more than half already are. However, a few classic addons rely too much on classic-build semantics and should be replaced with a different Vite-compatible solution. ember-css-modules is one of them. Fortunately, Mainmatter <a href="/ember-initiative/">Ember Initiative</a> team has worked out a migration path you can follow to pave your way to Vite.
   </p>
 ---
 
