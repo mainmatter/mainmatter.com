@@ -11,9 +11,9 @@ tagline: |
   </p>
 ---
 
-Mainmatter started the [Ember Initiative](/ember-initiative/) and made Vite support our team's first goal. After one month of work, new Ember apps from `3.28` to latest can build with Vite. One blocker developers may encouter though relates to the addons they use. If your app depends on a classic addon that turns to be incompatible with Vite, you will be stucked in the classic-world. It's not the way of the Ember community to let this happen, it doesn't leave anyone behind, and we - the Ember Initiative team - are aligned with this philosophy. To prevent developers from being blocked by classic addons, we audited of the top 100 addons on [Ember Observer](https://emberobserver.com/) and started to sort them out: Which are already v2? Which classic ones should be compatible with Vite? Which need a bit of rework? And last but not least, which rely too much on classic-world and should be abandonned in favor of a different solution?
+Mainmatter started the [Ember Initiative](/ember-initiative/) and made Vite support our team's first goal. After one month of work, new Ember apps from `3.28` to latest can build with Vite. One blocker developers may encounter though relates to the addons they use. If your app depends on a classic addon that turns to be incompatible with Vite, you will be stuck in the classic-world. It's not the way of the Ember community to let this happen, it doesn't leave anyone behind, and we - the Ember Initiative team - are aligned with this philosophy. To prevent developers from being blocked by classic addons, we audited of the top 100 addons on [Ember Observer](https://emberobserver.com/) and started to sort them out: Which are already v2? Which classic ones should be compatible with Vite? Which ones need a bit of rework? And last but not least, which ones rely too much on classic-world and should be abandoned in favor of a different solution?
 
-[ember-css-modules](https://github.com/salsify/ember-css-modules) is a widely used addon that brings CSS modules to classic Ember apps. However, it was identified as an addon that should be replaced with a different solution before moving to `@embroider/vite`. The problem is that until a week ago, there was no out-of-the-box solution to migrate away from ember-css-modules. You would have to figure out a way all by yourself, but CSS management is so challenging, especially in bigger apps. Fear no more, we have paved the way for you: it goes through [ember-scoped-css](https://github.com/soxhub/ember-scoped-css). In this blog post, we will explain everything about the migration strategy we recommend and the type of refactoring you should expect.
+[ember-css-modules](https://github.com/salsify/ember-css-modules) is a widely used addon that brings CSS modules to classic Ember apps. However, we identified it as an addon that should be replaced with a different solution before moving to `@embroider/vite`. The problem is that until a week ago, there was no out-of-the-box solution to migrate away from ember-css-modules. You would have to figure out a way all by yourself, but CSS management is so challenging, especially in bigger apps. Fear no more, we have paved the way for you: it goes through [ember-scoped-css](https://github.com/soxhub/ember-scoped-css). In this blog post, we will explain everything about the migration strategy we recommend and the type of refactoring you should expect.
 
 ## About ember-scoped-css
 
@@ -25,14 +25,14 @@ No, not necessarily; ember-scoped-css is not the only option. You could also fol
 
 ### I use ember-css-modules and want to migrate to a Vite-compatible solution, why should I favor ember-scoped-css?
 
-The similarities between ember-css-modules and ember-scoped-css enable the possibility to get them to work at the same time. Let's assume your Ember app contains a lot of components and is integrated to a continuous deployment process: it could be very challenging for you to upgrade to Vite if you need to drastically refactor the CSS as part of the upgrade. The path we suggest in this blog post allows you to enable ember-scoped-css file by file, so you can control the pace of the migration until ember-css-modules is no longer used.
+The similarities between ember-css-modules and ember-scoped-css enable the possibility to get them to work at the same time. Let's assume your Ember app contains a lot of components and is integrated into a continuous deployment process: it could be very challenging for you to upgrade to Vite if you need to drastically refactor the CSS as part of the upgrade. The path we suggest in this blog post allows you to enable ember-scoped-css file by file, so you can control the pace of the migration until ember-css-modules is no longer used.
 
 ### CSS isolation by class rename
 
-ember-css-modules and ember-scoped-css both allow you to isolate your components styles by creating a CSS file alongside your components templates. They are different, but they both work following the same general idea: "CSS isolation by class rename". To understand this approach, you can use two resources:
+ember-css-modules and ember-scoped-css both allow you to isolate your component styles by creating a CSS file alongside your component templates. They are different, but they both work following the same general idea: "CSS isolation by class rename". To understand this approach, you can use two resources:
 
 - The document [CSS Isolation](https://github.com/soxhub/ember-scoped-css/blob/main/docs/css-isolation.md) from ember-scoped-css repository.
-- The article [Cookbook: migrate an existing Ember app to CSS modules](https://mainmatter.com/blog/2022/08/24/cookbook-ember-app-to-css-modules/) is a walkthrough to install ember-css-modules in an Ember application that used initially one global CSS file. It presents the introduction of CSS modules with a more "practical" angle that allow you to see clearly the "without / with" CSS modules.
+- The article [Cookbook: migrate an existing Ember app to CSS modules](https://mainmatter.com/blog/2022/08/24/cookbook-ember-app-to-css-modules/) is a walkthrough to install ember-css-modules in an Ember application that used initially one global CSS file. It presents the introduction of CSS modules with a more "practical" angle that allows you to see clearly the "without / with" CSS modules.
 
 To sum it up, ember-css-modules and ember-scoped-css both provide ways to have your `custom-class` renamed to `custom-class+sha` following an interpolation pattern. This way, this class becomes unique and applies only to this specific component.
 
@@ -58,7 +58,7 @@ To use ember-scoped-css in a classic Ember app, you need to install `ember-scope
 
 ### 1. Change the modules extension for ember-css-modules
 
-The `extension` option of ember-css-modules defines what's the file extension of CSS modules (`.css` by default). This option is not properly documented as an individual feature, it's only mentionned in integration with other features like [using sass preprocessor](https://github.com/salsify/ember-css-modules/blob/master/docs/PREPROCESSORS.md#custom-syntax-directly-in-modules), but it actually works as an individual feature.
+The `extension` option of ember-css-modules defines what's the file extension of CSS modules (`.css` by default). This option is not properly documented as an individual feature, it's only mentioned in integration with other features like [using sass preprocessor](https://github.com/salsify/ember-css-modules/blob/master/docs/PREPROCESSORS.md#custom-syntax-directly-in-modules), but it actually works as an individual feature.
 
 👉 Change the extension of all the CSS files of your app to `.module.css`, including `app.css` to `app.module.css`.
 
@@ -115,7 +115,7 @@ The migration consists in having more and more CSS modules processed by ember-sc
 
 ### 1. `local-class` _versus_ `class`
 
-ember-css-modules introduces the attribute `local-class` has a marker that identifies scoped classes. In a template, it's your responsability as a developer to assign to `local-class` the scoped classes that you defined in the corresponding CSS module, and to assign to `class` the global classes.
+ember-css-modules introduces the attribute `local-class` as a marker that identifies scoped classes. In a template, it's your responsibility as a developer to assign to `local-class` the scoped classes that you defined in the corresponding CSS module, and to assign to `class` the global classes.
 
 In ember-scoped-css, you only use the attribute `class`. If the class name is defined in the CSS module, it will be transformed, else it just stays what it is and the global styles apply.
 
@@ -123,7 +123,7 @@ In ember-scoped-css, you only use the attribute `class`. If the class name is de
 
 ember-css-modules is designed to rename class selectors. It doesn't rename tag selectors like `div`, `p`, `img`, `a`... even when they are defined in the CSS module of a component. These selectors are bundled as is in the final style and therefore the style applies globally. In that way, using tag selectors in components when using ember-css-modules requires caution.
 
-ember-scoped-css is a bit more intuitive on that field. The tag selectors are no longer global but scoped. When these selectors are used in the component's CSS, a class named after the `sha` is added to the corresponding DOM elements, and the syntax `selector.sha` is used CSS-side to scope the style only to the component. This way, tag selectors behave just like any class selector, which can make the CSS module clearer.
+ember-scoped-css is a bit more intuitive on that front. The tag selectors are no longer global but scoped. When these selectors are used in the component's CSS, a class named after the `sha` is added to the corresponding DOM elements, and the syntax `selector.sha` is used CSS-side to scope the style only to the component. This way, tag selectors behave just like any class selector, which can make the CSS module clearer.
 
 ```html
 <!-- Final DOM -->
@@ -142,7 +142,7 @@ ul.e9accf110 > li.e9accf110 {
 
 ### 3. Id selectors: weird _versus_ global
 
-If you use ember-css-modules, you may know already that its behavior with ids is a bit buggy. It doesn't rename elements ids in the DOM, but it transforms them in the CSS. As result, you can't use HTML ids to style the component, the styles wouldn't be applied:
+If you use ember-css-modules, you may know already that its behavior with ids is a bit buggy. It doesn't rename element ids in the DOM, but it transforms them in the CSS. As a result, you can't use HTML ids to style the component, the styles wouldn't be applied:
 
 ```html
 <!-- Final DOM -->
@@ -176,7 +176,7 @@ ember-css-modules has three specific features:
 <p class="{% raw %}{{local-class 'postscript' from='css-modules-to-scoped-css/components/welcome-page-copy.css'}}{% endraw %}">
 ```
 
-`composes` gets a local class inherit from another local class that could be located in another CSS module.
+`composes` gets a local class inherited from another local class that could be located in another CSS module.
 
 ```css
 .guide {
@@ -195,7 +195,7 @@ ember-css-modules has three specific features:
 @value ember-orange from 'css-modules-to-scoped-css/styles/app';
 ```
 
-All of these features are based on the same idea: given the path to a CSS module, the content of this CSS module can be imported in another CSS module. Phrased this way, the approach sounds inspired from importing js modules in our code files, but applied to CSS with a very specific semantic.
+All of these features are based on the same idea: given the path to a CSS module, the content of this CSS module can be imported in another CSS module. Phrased this way, the approach sounds inspired by importing js modules in our code files, but applied to CSS with a very specific semantic.
 
 #### ii. Alternatives in ember-scoped-css
 
@@ -211,7 +211,7 @@ By default, ember-scoped-css emits the components CSS in a [CSS layer](https://d
 
 ⚠️ If you were not using layers until now, you can choose disable this behavior with `layerName: false`, but... We recommend to start using them. [Vite manages the CSS](https://vite.dev/guide/features.html#css) a bit differently in dev mode and build mode. Without layers to state the CSS order clearly, you may end up with a different order between what you see in development and your production build.
 
-As long as your app is still a classic app though, `ember-scoped-css` is not very intuitive when it comes to layers. You need to state the layers order first, but `ember-scoped-css` won't let you do this in `app.css`, it will define your components styles first. To work around this issue, you can add a `<style>` tag in your `index.html` before any CSS is imported:
+As long as your app is still a classic app though, `ember-scoped-css` is not very intuitive when it comes to layers. You need to state the layers order first, but `ember-scoped-css` won't let you do this in `app.css`, it will define your component styles first. To work around this issue, you can add a `<style>` tag in your `index.html` before any CSS is imported:
 
 ```diff
 + <style>
@@ -228,12 +228,12 @@ As long as your app is still a classic app though, `ember-scoped-css` is not ver
 
 Once your classic app uses only ember-scoped-css without style regressions, your app is one step closer to Vite. If you don't have any other blocker to handle, then you can start building with Vite. [ember-vite-codemod](https://github.com/mainmatter/ember-vite-codemod) is here to help!
 
-👉 After running the codemod, remove `ember-scoped-css-compat` from your dependencies. It was here only for the compatibility with the classic app.
+👉 After running the codemod, remove `ember-scoped-css-compat` from your dependencies. It was here only to ensure compatibility with the classic app.
 
 👉 [Adapt ember-scoped-css configuration](https://github.com/soxhub/ember-scoped-css?tab=readme-ov-file#configuration). You can also have a look at [the corresponding PR](https://github.com/BlueCutOfficial/css-modules-to-scoped-css/pull/2) on this repository to see additional comments.
 
 ## Conclusion
 
-With the introduction of 3.28 support, even your oldest Ember apps are closer to Vite than they have ever been. Managing all the prerequisite to use Vite is also a very good way to pave a smoother upgrade path for the future of your app and adopt all the modern practices at your own pace. As long as the [Ember Initiative](/ember-initiative/) goes on, we will continue to work hard to keep Ember in line with the latest standards, smart and easy to use.
+With the introduction of 3.28 support, even your oldest Ember apps are closer to Vite than they have ever been. Managing all the prerequisites to use Vite is also a very good way to pave a smoother upgrade path for the future of your app and adopt all the modern practices at your own pace. As long as the [Ember Initiative](/ember-initiative/) goes on, we will continue to work hard to keep Ember in line with the latest standards, smart and easy to use.
 
 Do you rely on v1 addons that don't belong to the top 100? Do you need guidance to make them compatible with Vite or find a migration path like the one presented in this blog post? If you'd like to help us help you, and improve Ember for the entire web, [support the Ember Initiative](/contact/), spread the word, and follow our progress on this blog.
