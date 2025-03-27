@@ -40,21 +40,21 @@ ember-css-modules renames the classes to `._custom-class_sha`, and ember-scoped-
 
 ## Introducing the resource repository
 
-To help you with the migration, we have created [a GitHub repository](https://github.com/BlueCutOfficial/css-modules-to-scoped-css) that serves as resource material. The demo consists of a `6.2` app inspired by [ember-welcome-page](https://github.com/ember-cli/ember-welcome-page). A `<WelcomePageCopy />` component has been implemented directly in the application and has been reworked to illustrate ember-css-modules and ember-scoped-css features.
+To help you with the migration, we have created [a GitHub repository](https://github.com/mainmatter/css-modules-to-scoped-css) that serves as resource material. The demo consists of a `6.2` app inspired by [ember-welcome-page](https://github.com/ember-cli/ember-welcome-page). A `<WelcomePageCopy />` component has been implemented directly in the application and has been reworked to illustrate ember-css-modules and ember-scoped-css features.
 
 This repository contains several branches that can be compared as a before/after diff views. These branches and views illustrate the different steps of the migration:
 
-1. Installing ember-scoped-css for a file by file migration: [diff](https://github.com/BlueCutOfficial/css-modules-to-scoped-css/compare/demo-ember-css-modules..demo-both-addons-installed)
-2. From ember-css-modules to ember-scoped-css: [diff](https://github.com/BlueCutOfficial/css-modules-to-scoped-css/compare/demo-ember-css-modules..demo-ember-scoped-css)
-3. From Classic to Vite once ember-scoped-css is used: [diff](https://github.com/BlueCutOfficial/css-modules-to-scoped-css/compare/demo-ember-scoped-css..demo-ember-scoped-css-vite)
+1. Installing ember-scoped-css for a file by file migration: [diff](https://github.com/mainmatter/css-modules-to-scoped-css/compare/demo-ember-css-modules..demo-both-addons-installed)
+2. From ember-css-modules to ember-scoped-css: [diff](https://github.com/mainmatter/css-modules-to-scoped-css/compare/demo-ember-css-modules..demo-ember-scoped-css)
+3. From Classic to Vite once ember-scoped-css is used: [diff](https://github.com/mainmatter/css-modules-to-scoped-css/compare/demo-ember-scoped-css..demo-ember-scoped-css-vite)
 
-Additionally, refer to the [How to use this repo](https://github.com/BlueCutOfficial/css-modules-to-scoped-css/blob/main/README.md#how-to-use-this-repo) section of the `README.md`, and especially the [Try it yourself](https://github.com/BlueCutOfficial/css-modules-to-scoped-css/blob/main/README.md#try-it-yourself) for additional information about the available resources for comparing and experimenting.
+Additionally, refer to the [How to use this repo](https://github.com/mainmatter/css-modules-to-scoped-css/blob/main/README.md#how-to-use-this-repo) section of the `README.md`, and especially the [Try it yourself](https://github.com/mainmatter/css-modules-to-scoped-css/blob/main/README.md#try-it-yourself) for additional information about the available resources for comparing and experimenting.
 
 ## Installing ember-scoped-css for a file by file migration
 
 ✨ [**Click here to see the diff**](https://github.com/BlueCutOfficial/css-modules-to-scoped-css/compare/demo-ember-css-modules..demo-both-addons-installed) ✨
 
-To use ember-scoped-css in a classic Ember app, you need to install `ember-scoped-css` and `ember-scoped-css-compat`. As soon as you do this, ember-scoped-css class rename starts to apply to your `.css` files and conflicts with ember-css-modules class rename. As result, your styles are broken. To solve this problem, the idea is to split the CSS files into two categories: those handled by ember-css-modules, and those handled by ember-scoped-css. To create these categories, we are going to use the `extension` option of ember-css-modules, and a few other things.
+To use ember-scoped-css in a classic Ember app, you need to install `ember-scoped-css` and `ember-scoped-css-compat`. As soon as you do this, ember-scoped-css class rename starts to apply to your `.css` files and conflicts with ember-css-modules class rename. As a result, your styles are broken. To solve this problem, the idea is to split the CSS files into two categories: those handled by ember-css-modules, and those handled by ember-scoped-css. To create these categories, we are going to use the `extension` option of ember-css-modules, and a few other things.
 
 ### 1. Change the modules extension for ember-css-modules
 
