@@ -234,6 +234,6 @@ Once your classic app uses only ember-scoped-css without style regressions, your
 
 ## Conclusion
 
-With the introduction of 3.28 support, even your oldest Ember apps are closer to Vite than they have ever been. Managing all the prerequisites to use Vite is also a very good way to pave a smoother upgrade path for the future of your app and adopt all the modern practices at your own pace. As long as the [Ember Initiative](/ember-initiative/) goes on, we will continue to work hard to keep Ember in line with the latest standards, smart and easy to use.
+With the introduction of 3.28 support, even your oldest Ember apps are closer to Vite than they have ever been. Managing all the prerequisites to use Vite is also a very good way to pave a smoother upgrade path for the future of your app and adopt all the modern practices at your own pace. As long as the [Ember Initiative](/ember-initiative/) goes on, we will continue to work hard to keep Ember easy to use and up-to-date with the latest web standards
 
 Do you rely on v1 addons that don't belong to the top 100? Do you need guidance to make them compatible with Vite or find a migration path like the one presented in this blog post? If you'd like to help us help you, and improve Ember for the entire web, [support the Ember Initiative](/contact/), spread the word, and follow our progress on this blog.
