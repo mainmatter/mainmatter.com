@@ -73,6 +73,13 @@ leads:
     image: /assets/images/authors/algo_luca.jpg
     bio: >
       Luca Palmieri builds technology products for a living. His current focus is on backend development,  software architecture and the Rust programming language. He is the author of "Zero to Production in Rust".
+
+
+quotes:
+  - text: "Extremely well set up!"
+    source: Onsite attendee
+  - text: "Well constructed exercises that cover various testing topics. Well done."
+    source: Onsite attendee
 ---
 
 <!--break-->
