@@ -35,29 +35,13 @@ image: "/assets/images/workshops/rust-og-image.jpg"
 {%
   set 'workshop_2' = {
   "eyebrow": "Bookable for teams",
-  "title": "Introduction to Rust for Web Developers",
+  "title": "Rust-Python Interoperability",
   "logo": "rust",
-  "link": "services/workshops/introduction-to-rust-for-web-developers/"
+  "link": "services/workshops/rust-python-interoperability/"
   }
 %}
 {%
   set 'workshop_3' = {
-  "eyebrow": "Bookable for teams",
-  "title": "Build production-ready API services in Rust",
-  "logo": "rust",
-  "link": "services/workshops/build-production-ready-apis-in-rust/"
-  }
-%}
-{%
-  set 'workshop_4' = {
-  "eyebrow": "Bookable for teams",
-  "title": "You can't fix what you can't see: telemetry for Rust APIs",
-  "logo": "rust",
-  "link": "services/workshops/telemetry-for-rust-apis/"
-  }
-%}
-{%
-  set 'workshop_5' = {
   "eyebrow": "Bookable for teams",
   "title": "Testing in Rust: an introduction",
   "logo": "rust",
@@ -65,7 +49,7 @@ image: "/assets/images/workshops/rust-og-image.jpg"
   }
 %}
 {%
-  set 'workshop_6' = {
+  set 'workshop_4' = {
   "eyebrow": "Bookable for teams",
   "title": "Testing in Rust: going beyond the basics",
   "logo": "rust",
@@ -73,19 +57,35 @@ image: "/assets/images/workshops/rust-og-image.jpg"
   }
 %}
 {%
+  set 'workshop_5' = {
+  "eyebrow": "Bookable for teams",
+  "title": "You can't fix what you can't see: telemetry for Rust APIs",
+  "logo": "rust",
+  "link": "services/workshops/telemetry-for-rust-apis/"
+  }
+%}
+{%
+  set 'workshop_6' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Foundations of Embedded Rust",
+  "logo": "rust",
+  "link": "services/workshops/foundations-of-embedded-rust/"
+  }
+%}
+{%
   set 'workshop_7' = {
   "eyebrow": "Bookable for teams",
-  "title": "Rust-Python Interoperability",
+  "title": "Introduction to Rust for Web Developers",
   "logo": "rust",
-  "link": "services/workshops/rust-python-interoperability/"
+  "link": "services/workshops/introduction-to-rust-for-web-developers/"
   }
 %}
 {%
   set 'workshop_8' = {
   "eyebrow": "Bookable for teams",
-  "title": "Foundations of Embedded Rust",
+  "title": "Build production-ready API services in Rust",
   "logo": "rust",
-  "link": "services/workshops/foundations-of-embedded-rust/"
+  "link": "services/workshops/build-production-ready-apis-in-rust/"
   }
 %}
 {% set workshops = [workshop_1, workshop_2, workshop_3, workshop_4, workshop_5, workshop_6, workshop_7, workshop_8] %}
@@ -234,17 +234,14 @@ image: "/assets/images/workshops/rust-og-image.jpg"
     </div>
   </div>
   <div class="split-content">
-    <a
-      href="https://www.youtube.com/playlist?list=PLh5-VpZ3SvUXLJ2xKnT1z12pTAUSgMAu7"
-      class="split-content__link"
-    ></a>
+    <a href="https://www.youtube.com/@eurorust" class="split-content__link"></a>
     <div class="split-content__wrapper">
       <div class="split-content__content">
         <h4>All the talks from the previous editions are available on YouTube</h4>
         {%
           set link = {
           "label": 'Learn more',
-          "url": 'https://www.youtube.com/playlist?list=PLh5-VpZ3SvUXLJ2xKnT1z12pTAUSgMAu7'
+          "url": 'https://www.youtube.com/@eurorust'
           }
         %}
         {{ btnSecondary( link, 'mt-2' ) }}

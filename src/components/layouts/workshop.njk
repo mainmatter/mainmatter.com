@@ -78,6 +78,26 @@ layout: "base"
     </div>
   </section>
 
+  {%- if quotes -%}
+    <section class="quotes-list">
+      <div class="container container--lg">
+        <h2 class="quotes-list__title h2">Listen to our students</h2>
+        <ul class="quotes-list__list" style="grid-template-columns: repeat(2, 1fr);">
+          {%- for quote in quotes -%}
+            <li class="quotes-list__quote">
+              <div class="quotes-list__quote-text text--sm">
+                <blockquote>”{{ quote.text }}”</blockquote>
+                <figcaption class="quotes-list__quote-source">
+                  {{ quote.source }}<span class="quotes-list__quote-source--separator"></span>
+                </figcaption>
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </section>
+  {%- endif -%}
+
   <section
     class="cta-banner cta-banner--purple container container--xl my-10"
     data-background-color="purple"
