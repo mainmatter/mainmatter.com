@@ -75,3 +75,5 @@ While this is still a measurable amount of work, it's better than having to migr
 The Ember initiative has already been a massive success for the whole Ember community. We have achieved so much and relatively quickly. We are still working hard to bring significant improvements to the DX of anyone using Ember.
 
 If we want this success to continue, The Ember Initiative needs more backers. We currently have enough support to continue working for another four months, and if we can get enough backers to keep the initiative going indefinitely, then there is truly no limit to what we can achieve for the Ember community over the coming years.
+
+If you want to join the Ember Initiative you [can contact us](https://mainmatter.com/contact/) and be a part of this movement!
