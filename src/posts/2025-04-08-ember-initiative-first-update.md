@@ -15,7 +15,7 @@ If you don't yet know about the Ember Initiative, you can catch up by reading ou
 
 The main focus so far has been "Polishing Embroider", with the explicit goal of making Vite the default experience for Ember developers. Finishing off Embroider has been a mixture of technical tasks and more "community" tasks, where we provide guidance and tooling for people moving their apps to Vite.
 
-Thanks to the [success of the previous Embroider Initiative](https://mainmatter.com/blog/2024/07/16/embroider-update/), large and time-consuming tasks have already been done. We have been able to progress at a remarkable pace and finally deploy things in a way that people can easily consume
+Thanks to the [success of the previous Embroider Initiative](https://mainmatter.com/blog/2024/07/16/embroider-update/), large and time-consuming tasks have already been done. We have been able to progress at a remarkable pace and finally deploy things in a way that people can easily consume.
 
 ## Stable Vite Implementation
 
@@ -39,7 +39,7 @@ Instead, we created [ember-vite-codemod](https://github.com/mainmatter/ember-vit
 - Identify the addons you are using that have already been updated to v2, and prompt you to update them.
 - Identify known problems that you should fix, and warn you before continuing.
 
-Having a codemod that guides you through the process is intended to significantly lower the barrier to entry for people testing out Vite with their Ember apps. Also, The more people who try out the codemod and give feedback, the more we can improve the upgrade experience for everyone.
+Having a codemod that guides you through the process is intended to significantly lower the barrier to entry for people testing out Vite with their Ember apps. Also, the more people who try out the codemod and give feedback, the more we can improve the upgrade experience for everyone.
 
 ## Audit the top 100 Ember addons
 
@@ -74,6 +74,6 @@ While this is still a measurable amount of work, it's better than having to migr
 
 The Ember initiative has already been a massive success for the whole Ember community. We have achieved so much and relatively quickly. We are still working hard to bring significant improvements to the DX of anyone using Ember.
 
-If we want this success to continue, The Ember Initiative needs more backers. We currently have enough support to continue working for another four months, and if we can get enough backers to keep the initiative going indefinitely, then there is truly no limit to what we can achieve for the Ember community over the coming years.
+If we want this success to continue, The Ember Initiative needs more backers. We currently have enough support to continue working for another two months, and if we can get enough backers to keep the initiative going indefinitely, then there is truly no limit to what we can achieve for the Ember community over the coming years.
 
 If you want to join the Ember Initiative you [can contact us](https://mainmatter.com/contact/) and be a part of this movement!
