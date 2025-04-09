@@ -508,7 +508,9 @@
         "mainmatter/ember-vite-codemod",
         "ember-cli/capture-exit",
         "ember-learn/ember-help-wanted",
-        "nickschot/ember-vite"
+        "nickschot/ember-vite",
+        "ember-cli/ember-addon-blueprint",
+        "soxhub/ember-scoped-css"
       ]
     },
     {
@@ -632,10 +634,14 @@
     "oscard0m/storyblok-js-client",
     "oscard0m/ember-website",
     "BlueCutOfficial/BlueCutOfficial",
-    "malone46/BewilderHouseOpSource"
+    "malone46/BewilderHouseOpSource",
+    "mainmatter/melt-ui",
+    "mainmatter/remix-website",
+    "mainmatter/svelte.dev",
+    "thedaviddias/Front-End-Performance-Checklist"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "",
+  "last_date": "2025-03-23..2025-03-30",
   "query_type": "Merged"
 }
