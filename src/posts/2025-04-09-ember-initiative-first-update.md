@@ -7,7 +7,7 @@ description: "An update on the progress made so far in the Ember Initiative"
 autoOg: true
 tagline: |
   <p>
-    The Ember Initiative has been running for a month and a half and has been a wild ride of success after success. The Ember Initiative backers have had big wins and these have trickled down to the rest of the community, making it better for everyone. We have also hit significant milestones with Embroider.
+    The Ember Initiative has been running for a month and a half and has been a wild ride of success after success. The backers have had big wins and these have trickled down to the rest of the community, making it better for everyone. We have also hit significant milestones with Embroider.
   </p>
 ---
 
@@ -41,7 +41,7 @@ Instead, we created [ember-vite-codemod](https://github.com/mainmatter/ember-vit
 
 Having a codemod that guides you through the process is intended to significantly lower the barrier to entry for people testing out Vite with their Ember apps. Also, the more people who try out the codemod and give feedback, the more we can improve the upgrade experience for everyone.
 
-## Audit the top 100 Ember addons
+## Auditing the top 100 Ember addons
 
 Since the `ember-vite-codemod` is able to give recommendations to update or replace addons you are using before upgrading to Vite, we decided to verify that it would give the correct information for the most popular addons. We have audited the top 100 most-used addons and tried to categorise them based on what the `ember-vite-codemod` should do:
 
@@ -54,11 +54,11 @@ Our job here isn't to make sure that each the top 100 addons work; we just want 
 
 We are planning a blog post that goes into more detail about the top 100 addons, but the most important finding from the audit was that there was only one addon that we knew wouldn't work but didn't yet have a migration plan defined: `ember-css-modules`. We wrote a migration plan to unblock anyone depending on that addon.
 
-## Define a Migration Plan for ember-css-modules
+## Defining a Migration Plan for ember-css-modules
 
 I mentioned already that Embroider can automatically upgrade most addons during a prebuild step in your apps. The prebuild step has been invaluable for people trying out Embroider because they don't need to wait for addons to upgrade to v2 and be more aligned with modern tooling.
 
-Unfortunately, some addons will never work because they rely on parts of the v1 addon API that we don't want to support going forward. You can read more about those APIs in the [rfc that introduced the v2 addon format](https://rfcs.emberjs.com/id/0507-embroider-v2-package-format/), with some justification for why we don't want to support those APIs.
+Unfortunately, some addons will never work because they rely on parts of the v1 addon API that we don't want to support going forward. You can read more about those APIs in the [RFC that introduced the v2 addon format](https://rfcs.emberjs.com/id/0507-embroider-v2-package-format/), with some justification for why we don't want to support those APIs.
 
 `ember-css-modules` is, unfortunately, too tied into how the classic addon build process worked. Some efforts have been made to make it compatible with Embroider over the years, but none succeeded. It is generally accepted that the best thing for people to do is to migrate away from `ember-css-modules` before upgrading to Vite. We came up with a migration path that utilises `ember-scoped-css`, which gives you most of the same functionality as `ember-css-modules` in a format that can be implemented successfully with Embroider.
 
@@ -68,12 +68,12 @@ We recently wrote a blog post that goes into a lot more detail on [how to migrat
 - Migrate from ember-css-modules to ember-css-modules file-by-file.
 - After you have switched to Vite, change the config to use a Vite plugin.
 
-While this is still a measurable amount of work, it's better than having to migrate to Vite and change your css system at the same time and should represent a valid migration path for large applications relying on ember-css-modules.
+While this is still a measurable amount of work, it's better than having to migrate to Vite and change your CSS system at the same time and should represent a valid migration path for large applications relying on ember-css-modules.
 
 ## Conclusion and next steps
 
 The Ember initiative has already been a massive success for the whole Ember community. We have achieved so much and relatively quickly. We are still working hard to bring significant improvements to the DX of anyone using Ember.
 
-If we want this success to continue, The Ember Initiative needs more backers. We currently have enough support to continue working for another two months, and if we can get enough backers to keep the initiative going indefinitely, then there is truly no limit to what we can achieve for the Ember community over the coming years.
+If we want this success to continue, The Ember Initiative needs more backers. We currently have enough support to continue working for another few months, and if we can get enough backers to keep the initiative going indefinitely, then there is truly no limit to what we can achieve for the Ember community over the coming years.
 
-If you want to join the Ember Initiative you [can contact us](https://mainmatter.com/contact/) and be a part of this movement!
+If you want to join the Ember Initiative you [can contact us](https://mainmatter.com/contact/?service=ember+initiative) and be a part of this movement!
