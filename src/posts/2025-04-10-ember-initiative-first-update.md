@@ -62,7 +62,7 @@ Unfortunately, some addons will never work because they rely on parts of the v1 
 
 `ember-css-modules` is, unfortunately, too tied into how the classic addon build process worked. Some efforts have been made to make it compatible with Embroider over the years, but none succeeded. It is generally accepted that the best thing for people to do is to migrate away from `ember-css-modules` before upgrading to Vite. We came up with a migration path that utilises `ember-scoped-css`, which gives you most of the same functionality as `ember-css-modules` in a format that can be implemented successfully with Embroider.
 
-We recently wrote a blog post that goes into a lot more detail on [how to migrate away from ember-scoped-css](/blog/2025/03/28/migrate-from-ember-css-modules/) but here is a quick summary of the steps:
+We recently wrote a blog post that goes into a lot more detail on [how to migrate away from ember-css-modules](/blog/2025/03/28/migrate-from-ember-css-modules/) but here is a quick summary of the steps:
 
 - Implement ember-scoped-css and ember-css-modules at the same time.
 - Migrate from ember-css-modules to ember-css-modules file-by-file.
