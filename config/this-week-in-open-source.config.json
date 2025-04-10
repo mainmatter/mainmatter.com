@@ -512,7 +512,8 @@
         "BlueCutOfficial/css-modules-to-scoped-css",
         "adopted-ember-addons/ember-data-factory-guy",
         "emberjs/ember-classic-decorator",
-        "soxhub/ember-scoped-css"
+        "soxhub/ember-scoped-css",
+        "mainmatter/css-modules-to-scoped-css"
       ]
     },
     {
