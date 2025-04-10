@@ -1,0 +1,256 @@
+---
+layout: "base"
+title: "The Rust Adoption Handbook"
+description: "Mainmatter's handbook is a practical guide to successfully adopting Rust for cloud-native systems."
+og:
+  image: /assets/images/rust/lp-adoption-handbook-og-image.jpg
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "strategy-list.njk" import strategyList %}
+{% from "quote.njk" import quote %}
+{% from "featured-case-studies.njk" import featuredCaseStudies %}
+{% from "recent-posts.njk" import recentPosts %}
+{% from "featured-services.njk" import featuredServices %}
+{% from "logo-list.njk" import logoList %}
+{% from "secondary-feature.njk" import secondaryFeature %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "btn-secondary.njk" import btnSecondary %}
+{%
+  set 'content' = {
+  "title": "The Rust Adoption Handbook",
+  "text": "Adopting Rust can be challenging. Our handbook is a practical guide to why, where, and how to successfully adopt Rust for cloud-native systems.",
+  "image": "/assets/images/photos/rust-adoption-handbook-hero.jpg",
+  "alt": "Hand protruding into the picture from the right, touching a crab-shaped Pop-it toy in rainbow colors lying on the table",
+  "loading": "eager"
+  }
+%}
+{{ colorHero('purple', content) }}
+
+<section class="my-10">
+  <div class="container container--lg">
+    <div class="mb-4">
+      <p class="body">
+        We’re Rust experts - our team is led by Luca Palmieri, author of
+        <a href="http://zero2prod.com">"Zero to Production in Rust"</a>, and we have been part of
+        the Rust ecosystem for years – helping teams succeed with Rust, working on
+        <a href="https://crates.io">crates.io</a>, and hosting the
+        <a href="https://eurorust.eu/">EuroRust conference</a>.
+      </p>
+      <p class="body">
+        The Rust Adoption Handbook includes winning strategies for adopting Rust based on our
+        experience working with teams during their Rust journeys for years.
+      </p>
+    </div>
+  </div>
+</section>
+
+{%
+  set list =  [{
+    "title": "Why: Rust delivers top performance, safety, and maintainability, ideal for cloud-native systems."
+  },{
+    "title": "Where: Use Rust in backends, data pipelines, native extensions, and as WebAssembly."
+  },{
+    "title": "How: Upskill your team, start small, and scale with training or expert support."
+  }]
+%}
+
+{{ strategyList('launch-your-idea', 'The handbook covers:', list) }}
+
+<section
+  class="cta-banner cta-banner--aqua container container--xl my-10"
+  data-background-color="aqua"
+>
+  <div class="cta-banner__wrapper">
+    <div class="cta-banner__main">
+      <h2 class="cta-banner__title">The Rust Adoption Handbook</h2>
+      <div class="cta-banner__text">
+        Download the handbook for a practical guide to why, where, and how to successfully adopt
+        Rust for cloud-native systems.
+      </div>
+      <div class="form-with-image">
+        <form
+          id="rust-adoption-handbook-form"
+          data-contact-form
+          class="contact-form__form form-with-image__form"
+          data-status="initial"
+          data-action="https://hooks.zapier.com/hooks/catch/4837956/201xuui/"
+          data-method="get"
+          data-goal="Rust+Adoption+Handbook"
+        >
+          <div data-form-content class="contact-form__field cta__input mb-2 mt-2">
+            <input
+              class="contact-form__input"
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+            />
+            <label class="contact-form__label h4" for="name">
+              Your name
+              <span class="screenreader">(Required)</span>
+            </label>
+            <span class="contact-form__label-required" aria-hidden="true">Required</span>
+          </div>
+          <div class="contact-form__field cta__input mb-2 mt-2">
+            <input
+              class="contact-form__input"
+              id="company"
+              type="text"
+              name="company"
+              placeholder="Your company's name"
+            />
+            <label class="contact-form__label h4" for="name"> Your company's name </label>
+          </div>
+          <div class="contact-form__field cta__input mb-2 mt-2">
+            <input
+              class="contact-form__input"
+              id="email"
+              type="email"
+              name="email"
+              placeholder="Your e-mail"
+              required
+            />
+            <label class="contact-form__label h4" for="email">
+              Your e-mail
+              <span class="screenreader">(Required)</span>
+            </label>
+            <span class="contact-form__label-required" aria-hidden="true">Required</span>
+          </div>
+          <div class="contact-form__field cta__input mb-2 mt-2">
+            <label class="contact-form__label h4 contact-form__label-checkbox">
+              <input
+                class="contact-form__input contact-form__input-checkbox"
+                id="marketing_opt_in"
+                type="checkbox"
+                name="marketing_opt_in"
+                required
+              />
+              <span>I agree to receive other communication from Mainmatter.</span>
+            </label>
+          </div>
+          <button class="btn-primary btn-primary--white" type="submit">
+            <span>Download handbook</span>
+            {% include 'svg/arrow.njk' %}
+          </button>
+          <div class="contact-form__status">
+            <button class="contact-form__close" data-reset-form>
+              {% include 'svg/close.njk' %}
+              <span class="screenreader">Close</span>
+            </button>
+            <div class="contact-form__loading h4" data-form-loading>
+              Your message is being sent…
+              <div class="loader" aria-hidden="true"></div>
+            </div>
+            <div class="contact-form__error" tabindex="-1" data-form-error>
+              <div class="contact-form__status-wrapper">
+                <h2 class="contact-form__success-subheading h3">Unable to send message.</h2>
+                <p>
+                  Please try again later or contact us at
+                  <a href="mailto:rust@mainmatter.com">rust@mainmatter.com</a>
+                </p>
+              </div>
+            </div>
+            <div class="contact-form__success" tabindex="-1" data-form-success>
+              <div class="contact-form__status-wrapper">
+                <h2 class="contact-form__success-heading h3">Thank you!</h2>
+                <p class="contact-form__success-subheading h3">We will be in touch soon.</p>
+                <p>You will receive an email with the Rust Adoption Handbook shortly.</p>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="form-with-image__image">
+          <div class="image-wrapper">
+            {% image '/assets/images/photos/rust-adoption-handbook-cover.jpg', "Title page of Mainmatter's Rust Adoption Handbook", '(min-width: 48em) 40rem, 90vw', 'lazy', '', [400, 800, 1200] %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="my-10">
+  <div class="container container--lg">
+    <div class="mb-4">
+      <h2 class="mb-3">Rust & Mainmatter: a unique skillset</h2>
+      <p class="body">
+        We support clients in rewriting existing codebases to Rust, using Rust to accelerate hot
+        modules in Python, Ruby, Node.js, or other languages, and in building new systems with Rust
+        from scratch.
+      </p>
+      <p class="body">
+        We also train teams on Rust, from getting them started from scratch to advanced topics. Find
+        more information on our Rust trainings in our extensive
+        <a href="/services/workshops/rust/">Rust workshops catalog</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="my-10 container container--lg">
+  <div class="split-content no-link">
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h5>Book a free call</h5>
+        <h3 class="split-content__subheading h2">Is Rust the right choice for us?</h3>
+        <p>
+          Every new technology brings its own risks - Rust is no exception. Our team of Rust experts
+          is here to help you. You walk us through your company's usecase and your requirements and
+          we'll do our best to suggest the best course of action. Sometimes Rust is not the answer,
+          but if it is, we'll make sure you are on the right track.
+        </p>
+        {%
+          set link = {
+          "label": 'Book a 1:1 call with us',
+          "url": 'https://calendly.com/luca-palmieri/talk-to-a-rust-expert'
+          }
+        %}
+        {{ btnSecondary( link, 'mt-2 plausible-event-name=Rust+1on1+Call' ) }}
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-rust-consulting.njk' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "global/rust-subscription-cta.njk" %}
+{%
+  set logoCompanies = [
+  'Aleph Alpha',
+  'KISTERS',
+  'BMW Car IT',
+  'Faculty',
+  'Otto',
+  'Redis'
+  ]
+%}
+{% set title = 'We are trusted by international companies that bet on Rust' %}
+{{ logoList(logoCompanies, title, "h4", "h5") }}
+
+<section class="my-10">
+  <h2 class="quotes-list__title h2">Our customers say about us</h2>
+  <div class="container container--lg">
+    {%
+      set 'content' = {
+      "text": "”Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way. I've learned so much, especially during our pairing sessions—it allowed me to improve my technical skills and grow as an engineer.”",
+      "source": "Andreas Hartel, Senior Engineer at aleph alpha"
+      }
+    %}
+    {{ quote(content) }}
+  </div>
+</section>
+
+{% set clients = ['aleph-alpha', 'kisters', 'bmw-car-it', 'redis'] %}
+{{ featuredCaseStudies(clients, 'Browse our work') }}
+{%
+  set 'content' = {
+  "title": "Download the handbook!",
+  "text": "Download our practical guide to why, where, and how to successfully adopt Rust for cloud-native systems.",
+  "linkUrl": "#rust-adoption-handbook-form",
+  "linkText": "Download handbook"
+  }
+%}
+{{ ctaBanner('purple', 'full', content) }}
