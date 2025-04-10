@@ -19,7 +19,7 @@ Thanks to the [success of the previous Embroider Initiative](https://mainmatter.
 
 ## Stable Vite Implementation
 
-Over the past two years, the Ember Tooling Team has been releasing the upcoming Embroider+Vite implementation under nightly unstable or alpha versions on npm. This has been useful for allowing people to experiment with the implementation in their own apps, but some teams may have put off upgrading their apps until Embroider was deemed stable.
+Over the past two years, the [Ember Tooling Core Team](https://emberjs.com/teams/#the-ember-tooling-core-team) has been releasing the upcoming Embroider+Vite implementation under nightly unstable or alpha versions on npm. This has been useful for allowing people to experiment with the implementation in their own apps, but some teams may have put off upgrading their apps until Embroider was deemed stable.
 
 Well the wait is over! We have just released the first stable version of Embroider@4 🎉 There is still a little work to do to make it so that someone running `ember new fancy-app` will generate a Vite app by default, but anyone migrating to Embroider today will be migrating to the Vite-powered build.
 
