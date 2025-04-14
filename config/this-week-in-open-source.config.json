@@ -648,7 +648,8 @@
     "mainmatter/storyblok-js-client",
     "mainmatter/svelte",
     "mainmatter/tailwindcss.com",
-    "thedaviddias/Front-End-Performance-Checklist"
+    "thedaviddias/Front-End-Performance-Checklist",
+    "paoloricciuti/rccl.ink"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
