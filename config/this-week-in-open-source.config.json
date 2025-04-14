@@ -509,6 +509,7 @@
         "ember-cli/capture-exit",
         "ember-learn/ember-help-wanted",
         "nickschot/ember-vite",
+        "ember-cli/ember-addon-blueprint",
         "BlueCutOfficial/css-modules-to-scoped-css",
         "adopted-ember-addons/ember-data-factory-guy",
         "emberjs/ember-classic-decorator",
@@ -639,6 +640,8 @@
     "BlueCutOfficial/BlueCutOfficial",
     "malone46/BewilderHouseOpSource",
     "mainmatter/melt-ui",
+    "mainmatter/remix-website",
+    "mainmatter/svelte.dev",
     "mainmatter/msw",
     "mainmatter/mswjs.io",
     "mainmatter/semantic-release",
@@ -649,6 +652,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2025-03-16..2025-03-23",
+  "last_date": "2025-03-23..2025-03-30",
   "query_type": "Merged"
 }
