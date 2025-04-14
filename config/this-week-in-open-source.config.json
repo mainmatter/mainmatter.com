@@ -508,7 +508,13 @@
         "mainmatter/ember-vite-codemod",
         "ember-cli/capture-exit",
         "ember-learn/ember-help-wanted",
-        "nickschot/ember-vite"
+        "nickschot/ember-vite",
+        "ember-cli/ember-addon-blueprint",
+        "BlueCutOfficial/css-modules-to-scoped-css",
+        "adopted-ember-addons/ember-data-factory-guy",
+        "emberjs/ember-classic-decorator",
+        "soxhub/ember-scoped-css",
+        "mainmatter/css-modules-to-scoped-css"
       ]
     },
     {
@@ -632,7 +638,18 @@
     "oscard0m/storyblok-js-client",
     "oscard0m/ember-website",
     "BlueCutOfficial/BlueCutOfficial",
-    "malone46/BewilderHouseOpSource"
+    "malone46/BewilderHouseOpSource",
+    "mainmatter/melt-ui",
+    "mainmatter/remix-website",
+    "mainmatter/svelte.dev",
+    "mainmatter/msw",
+    "mainmatter/mswjs.io",
+    "mainmatter/semantic-release",
+    "mainmatter/storyblok-js-client",
+    "mainmatter/svelte",
+    "mainmatter/tailwindcss.com",
+    "thedaviddias/Front-End-Performance-Checklist",
+    "paoloricciuti/rccl.ink"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
