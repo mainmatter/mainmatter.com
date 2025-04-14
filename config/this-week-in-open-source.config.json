@@ -510,7 +510,11 @@
         "ember-learn/ember-help-wanted",
         "nickschot/ember-vite",
         "ember-cli/ember-addon-blueprint",
-        "soxhub/ember-scoped-css"
+        "BlueCutOfficial/css-modules-to-scoped-css",
+        "adopted-ember-addons/ember-data-factory-guy",
+        "emberjs/ember-classic-decorator",
+        "soxhub/ember-scoped-css",
+        "mainmatter/css-modules-to-scoped-css"
       ]
     },
     {
@@ -638,6 +642,12 @@
     "mainmatter/melt-ui",
     "mainmatter/remix-website",
     "mainmatter/svelte.dev",
+    "mainmatter/msw",
+    "mainmatter/mswjs.io",
+    "mainmatter/semantic-release",
+    "mainmatter/storyblok-js-client",
+    "mainmatter/svelte",
+    "mainmatter/tailwindcss.com",
     "thedaviddias/Front-End-Performance-Checklist"
   ],
   "exclude_closed_not_merged": true,
