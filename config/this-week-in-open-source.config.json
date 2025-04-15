@@ -31,7 +31,8 @@
         "rust-meetup-munich/hack-evening-2024-4",
         "mainmatter/eserde",
         "mainmatter/og-loc",
-        "mainmatter/reStations"
+        "mainmatter/reStations",
+        "tensorzero/tensorzero"
       ]
     },
     {
@@ -514,7 +515,8 @@
         "adopted-ember-addons/ember-data-factory-guy",
         "emberjs/ember-classic-decorator",
         "soxhub/ember-scoped-css",
-        "mainmatter/css-modules-to-scoped-css"
+        "mainmatter/css-modules-to-scoped-css",
+        "pichfl/smite"
       ]
     },
     {
@@ -653,6 +655,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2025-03-30..2025-04-06",
+  "last_date": "2025-04-06..2025-04-13",
   "query_type": "Merged"
 }
