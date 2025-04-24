@@ -1,5 +1,5 @@
 ---
-title: "Get ready for Vite, Top 100 Ember addons status"
+title: "Getting ready for Vite! The status of the top 100 Ember addons"
 authorHandle: academierenards
 tags: [ember, embroider, vite]
 bio: "Marine Dunstetter, Senior Software Engineer"
@@ -7,7 +7,7 @@ description: "Introducing the summary of the top 100 addons audit"
 autoOg: true
 tagline: |
   <p>
-  Ember apps from version 3.28 to the latest can now build with Vite. Community addons must get ready for the change. How many of them are already V2? How many are still V1 but should be compatible with your Vite app? How many still require some work? And which ones rely too much on classic-build semantics and should be replaced with a different Vite-compatible solution? As part of Mainmatter <a href="/ember-initiative/">Ember Initiative</a>, our team performed an audit of the most popular community addons to get a picture of where the community stands at this time.
+  Ember apps from version 3.28 to the latest can now build with Vite. Community addons must get ready for the change. How many of them are already V2? How many are still V1 but should be compatible with your Vite app? How many still require some work? And which ones rely too much on classic-build semantics and should be replaced with a different Vite-compatible solution? As part of the Mainmatter <a href="/ember-initiative/">Ember Initiative</a>, our team performed an audit of the most popular community addons to get a picture of where the community currently stands.
   </p>
 ---
 
@@ -23,7 +23,7 @@ At the time of writing, about 56% of the most popular community addons provide a
 
 You can view the exhaustive list of the top-100 Ember addons that provided a V2 format or became basic npm packages last time the audit script was run (April 17th) on the GitHub issue [embroider-build/embroider#2288](https://github.com/embroider-build/embroider/issues/2288#issuecomment-2713639700).
 
-💡 **Tip**: More community addons that don't belong to the top-100 may also have been converted to V2. If you want to check an addon metadata with only one command instead of searching for the repository, run `npm view <your-addon-name>@latest ember-addon` in a terminal. V2 addons have the metadata `version: 2`. If the command doesn't return anything, it might have been converted to a basic Vite-compatible npm package that is not properly an Ember addon, or there might be a subtlety with the repository structure; double-check on GitHub.
+💡 **Tip**: More community addons that don't belong to the top-100 may also have been converted to V2. If you want to check an addon metadata with only one command instead of searching for the repository, run `npm view <your-addon-name>@latest ember-addon` in a terminal. V2 addons have the metadata `version: 2`. If the command doesn't return anything, it might have been converted to a basic Vite-compatible npm package and is not an Ember-specific addon any more, or there might be a subtlety with the repository structure; double-check on GitHub.
 
 ## V1 addons may just work
 
@@ -43,11 +43,11 @@ That being said, the fewer v1 addons you have, the faster your initial build and
 
 ## The case of FastBoot
 
-FastBoot brings Server Side Rendering (SSR) to your Ember apps using mainly two addons: `ember-cli-fastboot` and `fastboot-app-server`. In the very big lines, when `ember-cli-fastboot` is installed in your Ember app, you have the possibility to build it for client (code runs in a browser) or to build it for SSR (code runs in a node environment), and both build outputs are slightly different. Along with deploying the build for SSR somewhere, you install `fastboot-app-server` on the server side, and you point it to where the build is so it can consume it and serve the requested pages.
+FastBoot brings Server Side Rendering (SSR) to your Ember apps using the addon `ember-cli-fastboot`. When `ember-cli-fastboot` is installed in your Classic Ember app, it integrates with the express server that ember-cli provides and ships a SSR (server side rendered) version of your app during local development. The SSR build of your app can be very slightly different since it needs to run in a NodeJS environment, and ember-cli and fastboot manage those differences for you. Once you are ready to deploy your app you can use `fastboot-app-server` on the server side to host your app or prember to output a SSG (server side generated) version of your app.
 
-Long story short: today, you can't migrate your FastBoot app to Embroider+Vite; the work to make it work hasn't been achieved yet.
+To make a long story short: today, you can't migrate your FastBoot app to Embroider+Vite; the work needed to integrate fastboot with the modern build system hasn't been completed yet.
 
-[Vite has its own way of bringing SSR to apps](https://vite.dev/guide/ssr.html#server-side-rendering-ssr), which modern apps should rely on. In the migration path considered by the Ember core team, `ember-cli-fastboot` would be deprecated in favor of a new way to tell Vite to build the SSR version of the app, to generate a build that can be correctly consumed by `fastboot-app-server`. There are still blockers to set this migration path ready, though. For instance, one relates to module resolution in the Node environment; another relates to the local development part that depends entirely on the Ember-CLI Express server, which disappears completely with Vite because the dev server is the Vite dev server.
+[Vite has its own way of bringing SSR to apps](https://vite.dev/guide/ssr.html#server-side-rendering-ssr), which modern apps should rely on. In the migration path considered by the [Ember Core Tooling Team](https://emberjs.com/teams/#the-ember-tooling-core-team), `ember-cli-fastboot` and `fastboot-app-server` would be deprecated in favour of using Vite SSR directly and there is a plan to generate a build that can be correctly consumed by `fastboot-app-server` for any team that wants to move to Vite but can't transition to Vite SRR yet. There are still blockers to set this migration path ready, though. For instance, one relates to module resolution in the Node environment; another relates to the local development part that depends entirely on the Ember-CLI Express server, which disappears completely with Vite because the dev server is the Vite dev server.
 
 FastBoot migration path is currently not included in the Ember Initiative because other issues have a higher priority. However, we could include it if the Initiative receives enough support to make it possible. [Get in touch with Mainmatter](/contact/) if your company is highly interested in this issue.
 
@@ -65,13 +65,13 @@ For instance, if you used Webpack to configure some CSS processing, you can refe
 
 Additionally, a few classic addons rely too much on classic-build semantics and should be replaced with a different Vite-compatible solution. For each of these addons, our team made sure there is a migration path to point you at:
 
-- `ember-fetch` behaves in a way that is incompatible with modern JavaScript tooling, including building with Vite. To remove ember-fetch dependency, check out https://rfcs.emberjs.com/id/1065-remove-ember-fetch and see recommended alternatives.
+- `ember-fetch` behaves in a way that is incompatible with modern JavaScript tooling, including building with Vite. To remove ember-fetch dependency, check out the [Deprecate and Remove ember-fetch RFC](https://rfcs.emberjs.com/id/1065-remove-ember-fetch) and see recommended alternatives.
 
 - `ember-composable-helpers` contains a "won't fix" Babel issue that makes it incompatible with Vite. The current way to solve this problem is to move from the original `ember-composable-helpers` to `@nullvoxpopuli/ember-composable-helpers`. Check out the first section of the repository's README: https://github.com/NullVoxPopuli/ember-composable-helpers.
 
 - `ember-cli-mirage` doesn't work correctly with Vite. The recommendation is to move to `ember-mirage`. For guidance, check out https://github.com/bgantzler/ember-mirage/blob/main/docs/migration.md.
 
-- `ember-css-modules` behavior is incompatible with Vite; you should migrate to a different solution to manage your CSS modules. Mainmatter team worked out a recommended migration path that you can follow for a file-by-file migration to ember-scoped-css, which is compatible with Vite. Check out https://github.com/mainmatter/css-modules-to-scoped-css or our [dedicated blog post](https://mainmatter.com/blog/2025/03/28/migrate-from-ember-css-modules/).
+- `ember-css-modules` behavior is incompatible with Vite; you should migrate to a different solution to manage your CSS modules. The Mainmatter team worked out a recommended migration path that you can follow for a file-by-file migration to ember-scoped-css, which is compatible with Vite. Check out our [dedicated blog post](https://mainmatter.com/blog/2025/03/28/migrate-from-ember-css-modules/) on the migration path for more info.
 
 - `ember-cli-typescript` is deprecated. The app blueprints combined with the `ember-cli-babel` configuration include everything you need to use TypeScript in your application. See [ember-cli-typescript README](https://github.com/typed-ember/ember-cli-typescript) to read about the migration path.
 
