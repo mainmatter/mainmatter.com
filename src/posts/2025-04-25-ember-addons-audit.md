@@ -43,7 +43,7 @@ That being said, the fewer v1 addons you have, the faster your initial build and
 
 ## The case of FastBoot
 
-FastBoot brings Server Side Rendering (SSR) to your Ember apps using the addon `ember-cli-fastboot`. When `ember-cli-fastboot` is installed in your Classic Ember app, it integrates with the express server that ember-cli provides and ships a SSR (server side rendered) version of your app during local development. The SSR build of your app can be very slightly different since it needs to run in a NodeJS environment, and ember-cli and fastboot manage those differences for you. Once you are ready to deploy your app you can use `fastboot-app-server` on the server side to host your app or prember to output a SSG (server side generated) version of your app.
+FastBoot brings Server Side Rendering (SSR) to your Ember apps using the addon `ember-cli-fastboot`. When `ember-cli-fastboot` is installed in your Classic Ember app, it integrates with the express server that ember-cli provides and ships a  Server Side Rendered (SSR) version of your app during local development. The SSR build of your app can be very slightly different since it needs to run in a NodeJS environment, and ember-cli and FastBoot manage those differences for you. Once you are ready to deploy your app you can use `fastboot-app-server` on the server side to host your app or prember to output a Server Side Generated (SSG) version of your app.
 
 To make a long story short: today, you can't migrate your FastBoot app to Embroider+Vite; the work needed to integrate fastboot with the modern build system hasn't been completed yet.
 
