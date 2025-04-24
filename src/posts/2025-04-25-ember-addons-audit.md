@@ -69,7 +69,7 @@ Additionally, a few classic addons rely too much on classic-build semantics and 
 
 - `ember-composable-helpers` contains a "won't fix" Babel issue that makes it incompatible with Vite. The current way to solve this problem is to move from the original `ember-composable-helpers` to `@nullvoxpopuli/ember-composable-helpers`. Check out the first section of the repository's README: https://github.com/NullVoxPopuli/ember-composable-helpers.
 
-- `ember-cli-mirage` doesn't work correctly with Vite. The recommendation is to move to `ember-mirage`. For guidance, check out https://github.com/bgantzler/ember-mirage/blob/main/docs/migration.md.
+- `ember-cli-mirage` doesn't work correctly with Vite. The recommendation is to move to `ember-mirage`. For guidance, you can check out https://github.com/bgantzler/ember-mirage/blob/main/docs/migration.md or watch the talk [Modern take on ember-cli-mirage that is ready for Embroider and Vite](https://www.youtube.com/watch?app=desktop&v=dW9p9cI7fSQ) by Nick Schot.
 
 - `ember-css-modules` behavior is incompatible with Vite; you should migrate to a different solution to manage your CSS modules. The Mainmatter team worked out a recommended migration path that you can follow for a file-by-file migration to ember-scoped-css, which is compatible with Vite. Check out our [dedicated blog post](https://mainmatter.com/blog/2025/03/28/migrate-from-ember-css-modules/) on the migration path for more info.
 
