@@ -43,7 +43,7 @@ That being said, the fewer v1 addons you have, the faster your initial build and
 
 ## The case of FastBoot
 
-FastBoot brings Server Side Rendering (SSR) to your Ember apps using the addon `ember-cli-fastboot`. When `ember-cli-fastboot` is installed in your Classic Ember app, it integrates with the express server that ember-cli provides and ships a  Server Side Rendered (SSR) version of your app during local development. The SSR build of your app can be very slightly different since it needs to run in a NodeJS environment, and ember-cli and FastBoot manage those differences for you. Once you are ready to deploy your app you can use `fastboot-app-server` on the server side to host your app or prember to output a Server Side Generated (SSG) version of your app.
+FastBoot brings Server Side Rendering (SSR) to your Ember apps using the addon `ember-cli-fastboot`. When `ember-cli-fastboot` is installed in your Classic Ember app, it integrates with the express server that ember-cli provides and ships a Server Side Rendered (SSR) version of your app during local development. The SSR build of your app can be very slightly different since it needs to run in a NodeJS environment, and ember-cli and FastBoot manage those differences for you. Once you are ready to deploy your app you can use `fastboot-app-server` on the server side to host your app or [prember](https://github.com/ef4/prember) to output a Server Side Generated (SSG) version of your app.
 
 To make a long story short: today, you can't migrate your FastBoot app to Embroider+Vite; the work needed to integrate fastboot with the modern build system hasn't been completed yet.
 
@@ -67,9 +67,9 @@ Additionally, a few classic addons rely too much on classic-build semantics and 
 
 - `ember-fetch` behaves in a way that is incompatible with modern JavaScript tooling, including building with Vite. To remove ember-fetch dependency, check out the [Deprecate and Remove ember-fetch RFC](https://rfcs.emberjs.com/id/1065-remove-ember-fetch) and see recommended alternatives.
 
-- `ember-composable-helpers` contains a "won't fix" Babel issue that makes it incompatible with Vite. The current way to solve this problem is to move from the original `ember-composable-helpers` to `@nullvoxpopuli/ember-composable-helpers`. Check out the first section of the repository's README: https://github.com/NullVoxPopuli/ember-composable-helpers.
+- `ember-composable-helpers` contains a "won't fix" Babel issue that makes it incompatible with Vite. The current way to solve this problem is to move from the original `ember-composable-helpers` to `@nullvoxpopuli/ember-composable-helpers`. Check out [the first section of the repository's README](https://github.com/NullVoxPopuli/ember-composable-helpers).
 
-- `ember-cli-mirage` doesn't work correctly with Vite. The recommendation is to move to `ember-mirage`. For guidance, you can check out https://github.com/bgantzler/ember-mirage/blob/main/docs/migration.md or watch the talk [Modern take on ember-cli-mirage that is ready for Embroider and Vite](https://www.youtube.com/watch?app=desktop&v=dW9p9cI7fSQ) by Nick Schot.
+- `ember-cli-mirage` doesn't work correctly with Vite. The recommendation is to move to `ember-mirage`. For guidance, you can check out [ember-mirage migration document](https://github.com/bgantzler/ember-mirage/blob/main/docs/migration.md) or watch the talk [Modern take on ember-cli-mirage that is ready for Embroider and Vite](https://www.youtube.com/watch?app=desktop&v=dW9p9cI7fSQ) by Nick Schot.
 
 - `ember-css-modules` behavior is incompatible with Vite; you should migrate to a different solution to manage your CSS modules. The Mainmatter team worked out a recommended migration path that you can follow for a file-by-file migration to ember-scoped-css, which is compatible with Vite. Check out our [dedicated blog post](https://mainmatter.com/blog/2025/03/28/migrate-from-ember-css-modules/) on the migration path for more info.
 
