@@ -156,7 +156,8 @@
         "empress/guidemaker-default-template",
         "empress/bottled-ember",
         "empress/open-slide",
-        "empress/open-slide-reveal-template"
+        "empress/open-slide-reveal-template",
+        "empress/field-guide-default-template"
       ]
     },
     {
@@ -656,6 +657,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2025-04-20..2025-04-27",
+  "last_date": "2025-04-27..2025-05-04",
   "query_type": "Merged"
 }
