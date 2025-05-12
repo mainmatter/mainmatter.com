@@ -13,15 +13,21 @@ export class ContactForm {
     this.prefillService();
 
     this.bindEvents();
+
+    this.enableForm();
   }
 
   bindEvents() {
     this.form.addEventListener("submit", event => {
-      event.preventDefault();
-      this.updateFormState("loading", "Your message is being sent...");
+      if (this.form.reportValidity()) {
+        event.preventDefault();
+        this.updateFormState("loading", "Your message is being sent...");
 
-      const formData = new FormData(this.form);
-      this.sendMessage(Object.fromEntries(formData.entries()));
+        const formData = new FormData(this.form);
+        this.sendMessage(Object.fromEntries(formData.entries()));
+      } else {
+        event.preventDefault();
+      }
     });
 
     this.reset.forEach(reset => {
@@ -29,6 +35,13 @@ export class ContactForm {
         this.updateFormState("initial");
       });
     });
+  }
+
+  enableForm() {
+    let fieldsets = this.form.querySelectorAll("fieldset");
+    for (let fieldset of fieldsets) {
+      fieldset.disabled = false;
+    }
   }
 
   prefillService() {

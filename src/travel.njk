@@ -73,62 +73,64 @@ og:
           data-method="get"
           data-goal="Travel+Whitepaper"
         >
-          <div data-form-content class="contact-form__field cta__input mb-2 mt-2">
-            <input
-              class="contact-form__input"
-              id="name"
-              type="text"
-              name="name"
-              placeholder="Your name"
-              required
-            />
-            <label class="contact-form__label h4" for="name">
-              Your name
-              <span class="screenreader">(Required)</span>
-            </label>
-            <span class="contact-form__label-required" aria-hidden="true">Required</span>
-          </div>
-          <div class="contact-form__field cta__input mb-2 mt-2">
-            <input
-              class="contact-form__input"
-              id="company"
-              type="text"
-              name="company"
-              placeholder="Your company's name"
-            />
-            <label class="contact-form__label h4" for="name"> Your company's name </label>
-          </div>
-          <div class="contact-form__field cta__input mb-2 mt-2">
-            <input
-              class="contact-form__input"
-              id="email"
-              type="email"
-              name="email"
-              placeholder="Your e-mail"
-              required
-            />
-            <label class="contact-form__label h4" for="email">
-              Your e-mail
-              <span class="screenreader">(Required)</span>
-            </label>
-            <span class="contact-form__label-required" aria-hidden="true">Required</span>
-          </div>
-          <div class="contact-form__field cta__input mb-2 mt-2">
-            <label class="contact-form__label h4 contact-form__label-checkbox">
+          <fieldset data-form-content tabindex="-1" disabled>
+            <div data-form-content class="contact-form__field cta__input mb-2 mt-2">
               <input
-                class="contact-form__input contact-form__input-checkbox"
-                id="marketing_opt_in"
-                type="checkbox"
-                name="marketing_opt_in"
+                class="contact-form__input"
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Your name"
                 required
               />
-              <span>I agree to receive other communication from Mainmatter.</span>
-            </label>
-          </div>
-          <button class="btn-primary btn-primary--white" type="submit">
-            <span>Download whitepaper</span>
-            {% include 'svg/arrow.njk' %}
-          </button>
+              <label class="contact-form__label h4" for="name">
+                Your name
+                <span class="screenreader">(Required)</span>
+              </label>
+              <span class="contact-form__label-required" aria-hidden="true">Required</span>
+            </div>
+            <div class="contact-form__field cta__input mb-2 mt-2">
+              <input
+                class="contact-form__input"
+                id="company"
+                type="text"
+                name="company"
+                placeholder="Your company's name"
+              />
+              <label class="contact-form__label h4" for="name"> Your company's name </label>
+            </div>
+            <div class="contact-form__field cta__input mb-2 mt-2">
+              <input
+                class="contact-form__input"
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Your e-mail"
+                required
+              />
+              <label class="contact-form__label h4" for="email">
+                Your e-mail
+                <span class="screenreader">(Required)</span>
+              </label>
+              <span class="contact-form__label-required" aria-hidden="true">Required</span>
+            </div>
+            <div class="contact-form__field cta__input mb-2 mt-2">
+              <label class="contact-form__label h4 contact-form__label-checkbox">
+                <input
+                  class="contact-form__input contact-form__input-checkbox"
+                  id="marketing_opt_in"
+                  type="checkbox"
+                  name="marketing_opt_in"
+                  required
+                />
+                <span>I agree to receive other communication from Mainmatter.</span>
+              </label>
+            </div>
+            <button class="btn-primary btn-primary--white" type="submit">
+              <span>Download whitepaper</span>
+              {% include 'svg/arrow.njk' %}
+            </button>
+          </fieldset>
           <div class="contact-form__status">
             <button class="contact-form__close" data-reset-form>
               {% include 'svg/close.njk' %}
@@ -257,52 +259,54 @@ og:
         data-method="post"
         data-goal="Travel+Whitepaper"
       >
-        <input type="hidden" name="service" id="service" value="Travel" />
-        <input type="hidden" name="message" id="message" value="" />
-        <div data-form-content class="contact-form__field cta__input mb-2 mt-2">
-          <input
-            class="contact-form__input"
-            id="name"
-            type="text"
-            name="name"
-            placeholder="Your name"
-            required
-          />
-          <label class="contact-form__label h4" for="name">
-            Your name
-            <span class="screenreader">(Required)</span>
-          </label>
-          <span class="contact-form__label-required" aria-hidden="true">Required</span>
-        </div>
-        <div class="contact-form__field cta__input mb-2 mt-2">
-          <input
-            class="contact-form__input"
-            id="company"
-            type="text"
-            name="company"
-            placeholder="Your company's name"
-          />
-          <label class="contact-form__label h4" for="name"> Your company's name </label>
-        </div>
-        <div class="contact-form__field cta__input mb-2 mt-2">
-          <input
-            class="contact-form__input"
-            id="email"
-            type="email"
-            name="email"
-            placeholder="Your e-mail"
-            required
-          />
-          <label class="contact-form__label h4" for="email">
-            Your e-mail
-            <span class="screenreader">(Required)</span>
-          </label>
-          <span class="contact-form__label-required" aria-hidden="true">Required</span>
-        </div>
-        <button class="btn-primary btn-primary--white">
-          <span>Submit</span>
-          {% include 'svg/arrow.njk' %}
-        </button>
+        <fieldset data-form-content tabindex="-1" disabled>
+          <input type="hidden" name="service" id="service" value="Travel" />
+          <input type="hidden" name="message" id="message" value="" />
+          <div data-form-content class="contact-form__field cta__input mb-2 mt-2">
+            <input
+              class="contact-form__input"
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+            />
+            <label class="contact-form__label h4" for="name">
+              Your name
+              <span class="screenreader">(Required)</span>
+            </label>
+            <span class="contact-form__label-required" aria-hidden="true">Required</span>
+          </div>
+          <div class="contact-form__field cta__input mb-2 mt-2">
+            <input
+              class="contact-form__input"
+              id="company"
+              type="text"
+              name="company"
+              placeholder="Your company's name"
+            />
+            <label class="contact-form__label h4" for="name"> Your company's name </label>
+          </div>
+          <div class="contact-form__field cta__input mb-2 mt-2">
+            <input
+              class="contact-form__input"
+              id="email"
+              type="email"
+              name="email"
+              placeholder="Your e-mail"
+              required
+            />
+            <label class="contact-form__label h4" for="email">
+              Your e-mail
+              <span class="screenreader">(Required)</span>
+            </label>
+            <span class="contact-form__label-required" aria-hidden="true">Required</span>
+          </div>
+          <button class="btn-primary btn-primary--white">
+            <span>Submit</span>
+            {% include 'svg/arrow.njk' %}
+          </button>
+        </fieldset>
         <div class="contact-form__status">
           <button class="contact-form__close" data-reset-form>
             {% include 'svg/close.njk' %}
