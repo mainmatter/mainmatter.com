@@ -19,14 +19,12 @@ export class ContactForm {
 
   bindEvents() {
     this.form.addEventListener("submit", event => {
+      event.preventDefault();
       if (this.form.reportValidity()) {
-        event.preventDefault();
         this.updateFormState("loading", "Your message is being sent...");
 
         const formData = new FormData(this.form);
         this.sendMessage(Object.fromEntries(formData.entries()));
-      } else {
-        event.preventDefault();
       }
     });
 
