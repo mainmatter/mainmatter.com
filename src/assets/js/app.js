@@ -10,6 +10,7 @@ if (window.location.host === "mainmatter.com") {
     dsn: "https://43f7627909d94dc4a769340ad730f1a2@o68744.ingest.sentry.io/4504039028817920",
     integrations: [Sentry.httpClientIntegration(), Sentry.captureConsoleIntegration()],
     sendDefaultPii: true,
+    tracesSampleRate: 1.0,
   });
 }
 
