@@ -4,7 +4,7 @@ image: "/assets/images/calendar/2025-06-03-karlsruher-entwicklertag/rust.png"
 location: "Karlsruhe"
 url: https://entwicklertag.de/programm/BackendEntwicklungmitRust
 kind: conference
-color: aqua
+color: purple
 hero:
   image: "/assets/images/calendar/2025-06-03-karlsruher-entwicklertag/hero.png"
   imageAlt: "View of the town of Karlsruher"
