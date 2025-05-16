@@ -19,12 +19,17 @@ export class ContactForm {
 
   bindEvents() {
     this.form.addEventListener("submit", event => {
-      event.preventDefault();
-      if (this.form.reportValidity()) {
-        this.updateFormState("loading", "Your message is being sent...");
+      try {
+        event.preventDefault();
+        if (this.form.reportValidity()) {
+          this.updateFormState("loading", "Your message is being sent...");
 
-        const formData = new FormData(this.form);
-        this.sendMessage(Object.fromEntries(formData.entries()));
+          const formData = new FormData(this.form);
+          this.sendMessage(Object.fromEntries(formData.entries()));
+        }
+      } catch (error) {
+        this.updateFormState("error", "An error occurred.");
+        throw error;
       }
     });
 
@@ -45,7 +50,7 @@ export class ContactForm {
   prefillService() {
     const currentUrl = new URL(window.location.href);
     const selectedService = currentUrl.searchParams.get("service");
-    console.log({ selectedService });
+
     if (selectedService) {
       const options = Array.from(this.form.service.options);
       const optionToSelect = options.find(
@@ -78,15 +83,15 @@ export class ContactForm {
     }
 
     let { action, method } = this.form.dataset;
+    action = new URL(action);
 
     let params = {
       cache: "no-cache",
       method,
       mode: "cors",
     };
-    if (method.toLowerCase() === "get") {
-      const queryString = new URLSearchParams(formData).toString();
-      action = `${action}?${queryString}`;
+    if (method.toLowerCase().includes("get")) {
+      action.search = new URLSearchParams(formData);
     } else {
       params = {
         ...params,
