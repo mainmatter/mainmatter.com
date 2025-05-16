@@ -19,12 +19,17 @@ export class ContactForm {
 
   bindEvents() {
     this.form.addEventListener("submit", event => {
-      event.preventDefault();
-      if (this.form.reportValidity()) {
-        this.updateFormState("loading", "Your message is being sent...");
+      try {
+        event.preventDefault();
+        if (this.form.reportValidity()) {
+          this.updateFormState("loading", "Your message is being sent...");
 
-        const formData = new FormData(this.form);
-        this.sendMessage(Object.fromEntries(formData.entries()));
+          const formData = new FormData(this.form);
+          this.sendMessage(Object.fromEntries(formData.entries()));
+        }
+      } catch (error) {
+        this.updateFormState("error", "An error occurred.");
+        throw error;
       }
     });
 
