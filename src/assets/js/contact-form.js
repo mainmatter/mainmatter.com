@@ -90,7 +90,7 @@ export class ContactForm {
       method,
       mode: "cors",
     };
-    if (method.toLowerCase().match(/get/)) {
+    if (method.toLowerCase().includes("get")) {
       action.search = new URLSearchParams(formData);
     } else {
       params = {
