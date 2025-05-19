@@ -1,7 +1,7 @@
 ---
 title: "Truly Native Apps with Svelte?"
 authorHandle: paoloricciuti
-tags: [Svelte]
+tags: [svelte]
 bio: "Paolo Ricciuti, Senior Software Engineer"
 description: "How we set up to build an integration with Lynx to make truly native apps in Svelte"
 og:
