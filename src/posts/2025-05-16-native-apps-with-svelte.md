@@ -56,7 +56,7 @@ So we decided to start from the first building block: the custom renderer API!
 
 ### The approach
 
-If you have ever used Svelte, you might be aware of its approach: Svelte is a compiler that takes your `.Svelte` files and turns them into highly performant JavaScript. When you compile a Svelte component, you can specify the `generate` option: if the option is `client`, it will generate a function that uses signals under the hood to wire up the reactivity to your DOM; if it is `server`, it will generate a function that will concatenate a string to server-side render your application.
+If you have ever used Svelte, you might be aware of its approach: Svelte is a compiler that takes your `.svelte` files and turns them into highly performant JavaScript. When you compile a Svelte component, you can specify the `generate` option: if the option is `client`, it will generate a function that uses signals under the hood to wire up the reactivity to your DOM; if it is `server`, it will generate a function that will concatenate a string to server-side render your application.
 
 The first problem we faced in building the custom renderer API is that, as of today, a client component kind of assumes that it will be executed in the browser. To quickly and performantly generate the elements that it needs, it uses the [template tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/template). It basically does something like this:
 
@@ -84,7 +84,7 @@ var root = $.template_fn([
 ]);
 ```
 
-Under the hood, this function invokes `document.createElement`, `document.createTextNode`, or `element.setAttribute` to generate the same DOM that a browser would generate using the template tag. At this point, we didn't know how the custom renderer API would look yet, but we knew that this was a necessary step. If you are curious about the changes to Svelte to achieve this, here's [the PR](https://github.com/Sveltejs/Svelte/pull/15538) where this was implemented.
+Under the hood, this function invokes `document.createElement`, `document.createTextNode`, or `element.setAttribute` to generate the same DOM that a browser would generate using the template tag. At this point, we didn't know how the custom renderer API would look yet, but we knew that this was a necessary step. If you are curious about the changes to Svelte to achieve this, here's [the PR](https://github.com/sveltejs/svelte/pull/15538) where this was implemented.
 
 At this point, I started looking at other frameworks for inspiration. [Vue](https://vuejs.org/) already had a [rough implementation of the Lynx integration](https://github.com/lynx-family/lynx-stack/commit/d4f42f32ac64b47c6f24c31df513e70bb82d5659), so I started looking into that. The idea is that you can provide a series of functions to the framework to create an element or a text node, to insert an element in another, or to set a prop. The framework will call those functions instead of `document.createElement`. However, at least for now, the Vue model is quite different from Svelte. It's still using a virtual DOM, and it does things in a slightly different way. [Solid](https://www.solidjs.com/), on the other hand, is way closer to Svelte, both in terms of the reactivity model and in terms of output (as an example, Solid also uses the same template trick to get all the elements). Funnily enough, Solid's custom render API was inspired by the Vue one.
 
@@ -163,7 +163,7 @@ Let's look at a very simple Svelte component:
 
 {% raw %}
 
-```Svelte
+```svelte
 <script>
 	let count = $state(0);
 </script>
@@ -182,8 +182,8 @@ Let's look at a very simple Svelte component:
 This is compiled to this:
 
 ```ts
-import "Svelte/internal/disclose-version";
-import * as $ from "Svelte/internal/client";
+import "svelte/internal/disclose-version";
+import * as $ from "svelte/internal/client";
 
 var on_click = (_, count) => {
   $.update(count);
@@ -230,7 +230,7 @@ Also, the template part (`$.template_fn` and `$.if`) are dealing with hydration,
 Here's how a custom renderer compiled component looks like if we set the `customRenderer` compile option to `my-custom-renderer-package`:
 
 ```ts
-import * as $ from "Svelte/internal/custom";
+import * as $ from "svelte/internal/custom";
 import $renderer from "my-custom-renderer-package";
 
 var root = $.template_fn([{ e: "button", c: [" "] }, " ", ,], 1);
@@ -272,7 +272,7 @@ export default function App($$anchor) {
 As you can see, the changes are pretty minimal:
 
 - We don't disclose the version anymore since that is adding the version on the `window`.
-- We import from `Svelte/internal/custom` rather than `Svelte/internal/client`... this is our new minimal runtime.
+- We import from `svelte/internal/custom` rather than `svelte/internal/client`... this is our new minimal runtime.
 - We import the renderer from the package that you provide.
 - We push the renderer in a global variable at the beginning of the component so that inside every function we can use that.
 - The rest basically looks the same except we don't delegate events (since that is assuming a bubbling event system)... luckily some events in DOM also receive this treatment so it's just a flag in the compiler.
@@ -290,7 +290,7 @@ Lynx is brand new, and there's not much documentation about it, even less about 
 I know you are eager to look at it, so here we go: here's a very rough custom renderer for Lynx.
 
 ```ts
-import { createCustomRenderer } from "Svelte/renderer";
+import { createCustomRenderer } from "svelte/renderer";
 
 let pageId;
 
@@ -439,11 +439,11 @@ This is the component that is being rendered
 
 {% raw %}
 
-```Svelte
-<Svelte:options customRenderer="./renderer.js" />
+```svelte
+<svelte:options customRenderer="./renderer.js" />
 
 <script>
-	import Todo from './Todo.Svelte';
+	import Todo from './Todo.svelte';
 	let todo = $state('');
 	let todos = $state([]);
 </script>
@@ -451,7 +451,7 @@ This is the component that is being rendered
 <view class="main">
 	{#key todos.length}
 		<image
-			src="https://github.com/Sveltejs/branding/blob/master/Svelte-logo-square.png?raw=true"
+			src="https://github.com/sveltejs/branding/blob/master/svelte-logo-square.png?raw=true"
 		></image>
 	{/key}
 	<view class="add">
@@ -560,7 +560,7 @@ This is the end result:
 
 </div>
 
-You can find the whole project [at this repo](https://github.com/mainmatter/Svelte-lynx-integration) and even run the app by installing [Lynx Explorer](https://lynxjs.org/guide/start/quick-start.html#prepare-lynx-explorer) and scanning the following qr code
+You can find the whole project [at this repo](https://github.com/mainmatter/svelte-lynx-integration) and even run the app by installing [Lynx Explorer](https://lynxjs.org/guide/start/quick-start.html#prepare-lynx-explorer) and scanning the following qr code
 
 ![A qr code to scan with the Lynx Explorer app](/assets/images/posts/2025-05-16-native-apps-with-svelte/qr.png)
 
