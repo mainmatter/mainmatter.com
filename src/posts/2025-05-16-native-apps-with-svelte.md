@@ -24,7 +24,7 @@ To be completely fair, sometimes this is a non-issue. There are plenty of projec
 
 - **[Capacitor](https://capacitorjs.com/)**: Sprouted from a similar project (Ionic), it builds your svelte app as a static website and serves it directly from your phone while mounting a web view to display it. It has a rich ecosystem and provides bindings to access the native layer.
 - **[Tauri](https://v2.tauri.app/start/)**: It also mounts your web application in a web view, providing bindings to access the native layer in Rust. It can also build for Desktop (similar to [Electron](https://www.electronjs.org/)) and promises fast and lightweight apps.
-- **[NativeScript](https://nativescript.org/)**: Among the three, NativeScript is effectively the only one that actually builds on top of a truly native application. However, the community is not super great, and it doesn't work with the latest version of svelte.
+- **[NativeScript](https://nativescript.org/)**: Among the three, NativeScript is effectively the only one that actually results in a truly native application. However, the community is not super great, and it doesn't work with the latest version of svelte.
 
 ## A new player: Lynx
 
@@ -36,7 +36,7 @@ Lynx is backed by ByteDance, the company behind the popular app _TikTok_, and th
 
 ### The catch
 
-This seems like a dream come true... Can we finally ship svelte apps in production? Unfortunately, not so fast!
+This seems like a dream come true... Can we finally ship native apps written in Svelte to production? Unfortunately, not so fast!
 
 Firstly, the Lynx ecosystem is still very much in the early stages, but most importantly, to really make use of the agnostic core of Lynx, a framework has to have a key feature that svelte is currently lacking: a custom renderer API!
 
@@ -44,9 +44,9 @@ Firstly, the Lynx ecosystem is still very much in the early stages, but most imp
 
 The first thing you think about when you talk about a JS framework like svelte is something that allows you to create HTML with a declarative method: instead of imperatively adding an event listener and setting the text content of an element, you declare how your UI should look, and the framework executes the JavaScript needed to make that happen. But it doesn't need to be that way. The reason why [React Native](https://reactnative.dev/) can exist is because React didn't concern itself with the DOM. In fact, React is basically just a diffing library. It takes your code, performs the reconciliation on your JSX, and keeps track through the virtual DOM of the current state of the tree.
 
-What actually renders React to the DOM is a renderer (most of the time React-DOM). However, since the two pieces are separated, you can actually change the React renderer. This allows you to render a React component to the DOM, to a native interface, [the terminal](https://github.com/vadimdemedes/ink), or even to [a video](https://www.remotion.dev/).
+What actually applies React's state to the DOM is a renderer (most of the time React-DOM). However, since the two pieces are separated, you can actually change the React renderer. This allows you to render a React component to the DOM, to a native interface, [the terminal](https://github.com/vadimdemedes/ink), or even to [a video](https://www.remotion.dev/).
 
-Wouldn't it be cool if you could write all of this in svelte?
+Wouldn't it be cool if we had this in svelte?
 
 ## The mission
 
@@ -223,7 +223,7 @@ export default function App($$anchor) {
 $.delegate(["click"]);
 ```
 
-The reactivity part of this (those `$.state`, `$.get`, and `$.update` functions) are just JavaScript, but the rest is reaching for some DOM API under the hood to get the first child, append, set the text value, etc.
+The reactivity part of this (those `$.state`, `$.get`, and `$.update` functions) is just JavaScript, but the rest is reaching for some DOM API under the hood to get the first child, append, set the text value, etc.
 
 Also, the template part (`$.template_fn` and `$.if`) are dealing with hydration, transitions, and animations... all things that only really make sense in a DOM environment (hydration is the idea of attaching listeners to server-side rendered DOM elements, animation and transitions use the web animation API under the hood). So what we could do is just swap the whole runtime for a much simpler one that doesn't need to take care of hydration, animation, transitions, and most importantly, doesn't use DOM quirky behaviors. As mentioned, this will also help with maintainability since the two runtimes are separate, so we don't risk using quirky behaviors in one that break the other.
 
@@ -578,11 +578,11 @@ The svelte codebase will need a decently sized refactor for the custom runtime t
 
 What can you do? Well, since you're asking...
 
-## The future
+## The Future
 
-Mainmatter is currently sponsoring my work on Svelte to bring you the custom renderer API. However, as you can see, there's still a lot to do, and even more to make this production-ready. So if you or your company are interested in funding the development of the custom renderer API (and a custom renderer for Lynx), please reach out!
+Mainmatter is currently sponsoring my work on Svelte to bring you the custom renderer API. However, as you can see, there's still a lot to do, and even more to make this production-ready. So if you or your company are interested in building truly native apps with Svelte and want to support us getting this ready to use, please [reach out](/contact/)!
 
-# Conclusion
+## Conclusion
 
 Well... this was a long one. I hope I didn't bore you (I guess if you're still here, maybe I managed to keep you interested enough), and I hope you leave this blog post with the same excitement I have for what this feature will unlock for the future.
 
