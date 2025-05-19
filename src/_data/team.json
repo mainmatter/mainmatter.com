@@ -5,24 +5,12 @@
       "imgPath": "/assets/images/team/florian.jpg"
     },
     {
-      "name": "Veronica Schucan",
-      "imgPath": "/assets/images/team/veronica.jpg"
-    },
-    {
-      "name": "Daniel Beer",
-      "imgPath": "/assets/images/team/dan.jpg"
-    },
-    {
       "name": "Gábor Babicz",
       "imgPath": "/assets/images/team/gabor.jpg"
     },
     {
       "name": "Nina Arndt",
       "imgPath": "/assets/images/team/nina.jpg"
-    },
-    {
-      "name": "Sarah Lorenz",
-      "imgPath": "/assets/images/team/sarah.jpg"
     },
     {
       "name": "Bartłomiej Dudzik",
@@ -37,10 +25,6 @@
       "imgPath": "/assets/images/team/marine.jpg"
     },
     {
-      "name": "Nora Burkhardt",
-      "imgPath": "/assets/images/team/nora.jpg"
-    },
-    {
       "name": "Paolo Ricciuti",
       "imgPath": "/assets/images/team/paolo.jpg"
     },
@@ -53,10 +37,6 @@
       "imgPath": "/assets/images/team/idelia.jpg"
     },
     {
-      "name": "Majd Bayassi",
-      "imgPath": "/assets/images/team/majd.jpg"
-    },
-    {
       "name": "Marco Otte-Witte",
       "imgPath": "/assets/images/team/marco.jpg"
     },
@@ -67,10 +47,6 @@
     {
       "name": "Chris Manson",
       "imgPath": "/assets/images/team/chris.jpg"
-    },
-    {
-      "name": "Inês Silva",
-      "imgPath": "/assets/images/team/ines.jpg"
     },
     {
       "name": "Óscar Domínguez Celada",
