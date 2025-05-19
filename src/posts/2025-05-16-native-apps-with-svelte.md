@@ -32,7 +32,7 @@ Earlier this year, a new player entered the space: [Lynx](https://lynxjs.org/)!
 
 ![Homepage of the Lynx framework asserting the goal is to unlock native for more people](/assets/images/posts/2025-05-16-native-apps-with-Svelte/lynx-homepage.png)
 
-Lynx is backed by ByteDance, the company behind the popular app _TikTok_, and they are using it for some subsidiary apps. In their [introductory blog post](https://lynxjs.org/blog/lynx-unlock-native-for-more.html), they claim better performance thanks to a brand-new dual-thread model that separates the rendering of your application from the logic of your application and, most importantly for Svelte, an agnostic core.
+Lynx is backed by ByteDance, the company behind the popular app _TikTok_, and they are using it for some subsidiary apps. In their [introductory blog post](https://lynxjs.org/blog/lynx-unlock-native-for-more.html), they claim better performance thanks to a brand-new dual-thread model that separates the rendering of your application from the logic of your application, the capability of rendering your application for native as well as for web and, most importantly for Svelte, an agnostic core.
 
 ### The catch
 
