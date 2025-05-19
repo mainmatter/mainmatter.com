@@ -38,7 +38,7 @@ Lynx is backed by ByteDance, the company behind the popular app _TikTok_, and th
 
 This seems like a dream come true... Can we finally ship native apps written in Svelte to production? Unfortunately, not so fast!
 
-Firstly, the Lynx ecosystem is still very much in the early stages, but most importantly, to really make use of the agnostic core of Lynx, a framework has to have a key feature that svelte is currently lacking: a custom renderer API!
+Firstly, the Lynx ecosystem is still very much in the early stages and only work out-of-the-box with React, but most importantly, to really make use of the agnostic core of Lynx, a framework has to have a key feature that svelte is currently lacking: a custom renderer API!
 
 ## What is a custom renderer?
 
