@@ -13,6 +13,10 @@
       "imgPath": "/assets/images/team/nina.jpg"
     },
     {
+      "name": "Pieter Engelbrecht",
+      "imgPath": "/assets/images/team/nina.jpg"
+    },
+    {
       "name": "Bartłomiej Dudzik",
       "imgPath": "/assets/images/team/bart.jpg"
     },
@@ -22,6 +26,10 @@
     },
     {
       "name": "Marine Dunstettter",
+      "imgPath": "/assets/images/team/marine.jpg"
+    },
+    {
+      "name": "Guillaume Desmotttes",
       "imgPath": "/assets/images/team/marine.jpg"
     },
     {
@@ -35,6 +43,10 @@
     {
       "name": "Idelia Risella",
       "imgPath": "/assets/images/team/idelia.jpg"
+    },
+    {
+      "name": "Jonas Kruckenberg",
+      "imgPath": "/assets/images/team/marco.jpg"
     },
     {
       "name": "Marco Otte-Witte",
