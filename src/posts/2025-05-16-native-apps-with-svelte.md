@@ -4,8 +4,7 @@ authorHandle: paoloricciuti
 tags: [svelte]
 bio: "Paolo Ricciuti, Senior Software Engineer"
 description: "How we set up to build an integration with Lynx to make truly native apps in Svelte"
-og:
-  image: /assets/images/posts/2025-05-16-native-apps-with-svelte/og-image.jpg
+autoOg: true
 tagline: <p>Is it possible to build a truly native app in Svelte? Soon™ it might be!</p>
 
 image: "/assets/images/posts/2025-05-16-native-apps-with-svelte/header.jpg"
