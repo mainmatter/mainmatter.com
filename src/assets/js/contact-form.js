@@ -62,7 +62,7 @@ export class ContactForm {
     }
   }
 
-  sendMessage(formData) {
+  async sendMessage(formData) {
     const handleError = e => {
       this.updateFormState("error", "An error occurred.");
       if (window.location.host === "mainmatter.com") {
@@ -106,16 +106,15 @@ export class ContactForm {
       });
     }
 
-    return request.then(({ response, error }) => {
-      if (response?.ok) {
-        this.updateFormState("success", "Message sent successfully.");
-      } else {
-        handleError(new Error("Failed to deliver message via contact form!"));
-      }
-      if (error) {
-        handleError(error);
-      }
-    });
+    let { response, error } = await request;
+    if (response?.ok) {
+      this.updateFormState("success", "Message sent successfully.");
+    } else {
+      handleError(new Error(`Failed to deliver message via contact form!`));
+    }
+    if (error) {
+      handleError(error);
+    }
   }
 
   updateFormState(state, screenreaderAnnouncement) {
@@ -142,18 +141,6 @@ export class ContactForm {
     }
   }
 
-  /**
-   * Makes and instruments an HTTP request using Sentry.
-   *
-   * This function is infallbile. Meaning it will never reject.
-   *
-   * @memberof ContactForm
-   * @method makeRequest
-   * @param {string | URL} url
-   * @param {{ cache: string, method: string, mode: string, headers: Object }} params
-   *
-   * @returns {{ response?: Response, error?: Error }}
-   */
   async makeRequest(url, params) {
     return Sentry.startSpan(
       {
