@@ -7,13 +7,13 @@ description: "How we set up to build an integration with Lynx to make truly nati
 autoOg: true
 tagline: <p>Is it possible to build a truly native app in Svelte? Soon™ it might be!</p>
 
-image: "/assets/images/posts/2025-05-16-native-apps-with-svelte/header.jpg"
+image: "/assets/images/posts/2025-05-22-native-apps-with-svelte/header.jpg"
 imageAlt: "The Svelte logo on a gray background picture"
 ---
 
 After the introduction of Svelte version 3 on the 22nd of April 2019, it kind of took the web development world by storm. Since its original release, it has consistently been the most loved and interesting framework in the [State of JS](https://share.stateofjs.com/share/prerendered?localeId=en-US&surveyId=state_of_js&editionId=js2024&blockId=front_end_frameworks_ratios&params=&sectionId=libraries&subSectionId=front_end_frameworks).
 
-![State of JS survey results showing Svelte consistently on top for interest](/assets/images/posts/2025-05-16-native-apps-with-svelte/state-of-js.png)
+![State of JS survey results showing Svelte consistently on top for interest](/assets/images/posts/2025-05-22-native-apps-with-svelte/state-of-js.png)
 
 So, it's no surprise that developers want to use it for work.
 
@@ -29,7 +29,7 @@ To be completely fair, sometimes this is a non-issue. There are plenty of projec
 
 Earlier this year, a new player entered the space: [Lynx](https://lynxjs.org/)!
 
-![Homepage of the Lynx framework asserting the goal is to unlock native for more people](/assets/images/posts/2025-05-16-native-apps-with-svelte/lynx-homepage.png)
+![Homepage of the Lynx framework asserting the goal is to unlock native for more people](/assets/images/posts/2025-05-22-native-apps-with-svelte/lynx-homepage.png)
 
 Lynx is backed by ByteDance, the company behind the popular app _TikTok_, and they are using it for some subsidiary apps. In their [introductory blog post](https://lynxjs.org/blog/lynx-unlock-native-for-more.html), they claim better performance thanks to a brand-new dual-thread model that separates the rendering of your application from the logic of your application, the capability of rendering your application for native as well as for web and, most importantly for Svelte, an agnostic core.
 
@@ -555,13 +555,13 @@ This is the end result:
 
 <div style="display: grid; place-items: center;">
 
-![A video of a basic Todo app built with Lynx and Svelte](/assets/images/posts/2025-05-16-native-apps-with-svelte/todo-lynx.webp)
+![A video of a basic Todo app built with Lynx and Svelte](/assets/images/posts/2025-05-22-native-apps-with-svelte/todo-lynx.webp)
 
 </div>
 
 You can find the whole project [at this repo](https://github.com/mainmatter/svelte-lynx-integration) and even run the app by installing [Lynx Explorer](https://lynxjs.org/guide/start/quick-start.html#prepare-lynx-explorer) and scanning the following qr code
 
-![A qr code to scan with the Lynx Explorer app](/assets/images/posts/2025-05-16-native-apps-with-svelte/qr.png)
+![A qr code to scan with the Lynx Explorer app](/assets/images/posts/2025-05-22-native-apps-with-svelte/qr.png)
 
 ## So...can I ship Lynx to prod? 🚀
 
