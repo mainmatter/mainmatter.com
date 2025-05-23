@@ -7,8 +7,8 @@ description: Can't wait to use Svelte in your day-to-day job but stuck with a le
 introduction: "<p>If you've tried Svelte, you most likely love it and can't wait to start using it in your day-to-day job. But if you're stuck in a React codebase, it may seem impossible to convince your colleagues to migrate the whole project. There's another way! Svelte is very flexible, and Vite even more so. Combined, they can bring Svelte into your life now!</p>"
 hero:
   color: purple
-  image: "/assets/images/workshops/svelte-without-svelte/runes.jpg"
-  imageAlt: "A bunch of white stones with yellow runes written on them lying on a grey surface"
+  image: "/assets/images/workshops/svelte-without-svelte/magician.jpg"
+  imageAlt: "A magician in a vintage suit holds a large Ace of Hearts card, performing a dramatic trick against a blue background."
 og:
   image: /assets/images/workshops/svelte-without-svelte/og-image.jpg
 topics:
