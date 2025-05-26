@@ -521,7 +521,8 @@
         "pichfl/smite",
         "ember-cli/ember-app-blueprint",
         "blogic/ember-ui",
-        "mainmatter/ember-formatjs"
+        "mainmatter/ember-formatjs",
+        "ember-cli/update-blueprint-deps"
       ]
     },
     {
@@ -660,6 +661,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2025-05-11..2025-05-18",
+  "last_date": "2025-05-18..2025-05-25",
   "query_type": "Merged"
 }
