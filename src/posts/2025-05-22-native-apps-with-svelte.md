@@ -23,7 +23,7 @@ To be completely fair, sometimes this is a non-issue. There are plenty of projec
 
 - **[Capacitor](https://capacitorjs.com/)**: Sprouted from a similar project (Ionic), it builds your Svelte app as a static website and serves it directly from your phone while mounting a web view to display it. It has a rich ecosystem and provides bindings to access the native layer.
 - **[Tauri](https://v2.tauri.app/start/)**: It also mounts your web application in a web view, providing bindings to access the native layer in Rust. It can also build for Desktop (similar to [Electron](https://www.electronjs.org/)) and promises fast and lightweight apps.
-- **[NativeScript](https://nativescript.org/)**: Among the three, NativeScript is effectively the only one that actually results in a truly native application. However, the community is not very big, it doesn't work with the latest version of Svelte and _currently_ there's no way to render both for web AND for native.
+- **[NativeScript](https://nativescript.org/)**: Among the three, NativeScript is effectively the only one that actually results in a truly native application. However, the community is still growing, it doesn't work with the latest version of Svelte and _currently_ there's no way to render both for web AND for native.
 
 ## A new player: Lynx
 
