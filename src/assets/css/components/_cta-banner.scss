@@ -136,6 +136,24 @@
   }
 }
 
+.cta-banner__svelteCustomRenderers {
+  background: #191c23;
+
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-weight: 400;
+  }
+
+  & a.btn-primary {
+    background-color: #ff3e00;
+    color: #fff;
+    border-radius: 6rem;
+  }
+}
+
 .cta__input {
   min-width: 100%;
 }

@@ -2,7 +2,7 @@
 title: "Truly Native Apps with Svelte?"
 authorHandle: paoloricciuti
 tags: [svelte]
-customCta: true
+customCta: "global/svelte-custom-renders.njk"
 bio: "Paolo Ricciuti, Senior Software Engineer"
 description: "How we set up to build an integration with Lynx to make truly native apps in Svelte"
 autoOg: true

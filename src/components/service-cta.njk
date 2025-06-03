@@ -1,5 +1,7 @@
-{%- macro serviceCta(tags) -%}
-  {% if not customCta %}
+{%- macro serviceCta(tags, customCta) -%}
+  {% if customCta %}
+    {% include customCta %}
+  {% else %}
     {% if tags %}
       {% for tag in tags %}
         {% if tag === "rust" %}
