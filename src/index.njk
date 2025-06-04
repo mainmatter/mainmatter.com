@@ -89,26 +89,12 @@ eleventyImport:
 %}
 {%
   set 'tech_3' = {
-  "title": "Elixir and Phoenix: The best of all worlds",
-  "logo": "elixir",
-  "link": "expertise/elixir-phoenix"
-  }
-%}`
-{%
-  set 'tech_4' = {
-  "title": "We're veteran Ruby and Ruby on Rails experts",
-  "logo": "ruby",
-  "link": "ruby-rails-consulting"
-  }
-%}
-{%
-  set 'tech_5' = {
   "title": "Ember is our expertise",
   "logo": "ember",
   "link": "ember-consulting"
   }
 %}
-{% set technologies = [tech_1, tech_2, tech_3, tech_4, tech_5] %}
+{% set technologies = [tech_1, tech_2, tech_3] %}
 {{ techCards('team-reinforcement_technologies', 'Technologies', 'Our skillset is based on a core set of technologies that cover architecture, backend and frontend development with: ', technologies) }}
 {%
   set 'content' = {
