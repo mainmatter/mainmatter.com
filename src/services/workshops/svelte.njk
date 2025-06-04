@@ -65,7 +65,15 @@ og:
   "link": "services/workshops/authentication-for-svelte-sveltekit/"
   }
 %}
-{% set workshops = [workshop_1, workshop_2, workshop_3, workshop_4, workshop_5] %}
+{%
+  set 'workshop_6' = {
+  "eyebrow": "Bookable for teams",
+  "title": "Svelte without Svelte",
+  "logo": "svelte",
+  "link": "services/workshops/svelte-without-svelte/"
+  }
+%}
+{% set workshops = [workshop_1, workshop_2, workshop_3, workshop_4, workshop_5, workshop_6] %}
 {{
   workshopsList('Our training offering', "We are Svelte experts and want others to get the most of it as well. That's why we provide a range of trainings on Svelte and SvelteKit.
   We can get teams up to speed with Svelte from scratch,

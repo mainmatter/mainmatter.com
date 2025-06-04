@@ -62,7 +62,7 @@ export class ContactForm {
     }
   }
 
-  sendMessage(formData) {
+  async sendMessage(formData) {
     const handleError = e => {
       this.updateFormState("error", "An error occurred.");
       if (window.location.host === "mainmatter.com") {
@@ -90,27 +90,31 @@ export class ContactForm {
       method,
       mode: "cors",
     };
+
+    let request;
     if (method.toLowerCase().includes("get")) {
       action.search = new URLSearchParams(formData);
+
+      request = this.makeRequest(action, params);
     } else {
-      params = {
+      request = this.makeRequest(action, {
         ...params,
         body: JSON.stringify(formData),
         headers: {
           "Content-Type": "application/json; charset=UTF-8'",
         },
-      };
+      });
     }
 
-    return fetch(action, params)
-      .then(response => {
-        if (response.ok) {
-          this.updateFormState("success", "Message sent successfully.");
-        } else {
-          handleError(new Error("Failed to deliver message via contact form!"));
-        }
-      })
-      .catch(handleError);
+    let { response, error } = await request;
+    if (response?.ok) {
+      this.updateFormState("success", "Message sent successfully.");
+    } else {
+      handleError(new Error(`Failed to deliver message via contact form!`));
+    }
+    if (error) {
+      handleError(error);
+    }
   }
 
   updateFormState(state, screenreaderAnnouncement) {
@@ -135,5 +139,31 @@ export class ContactForm {
     } else if (state === "initial") {
       setTimeout(() => this.formContent.focus(), 200);
     }
+  }
+
+  async makeRequest(url, params) {
+    return Sentry.startSpan(
+      {
+        name: `${params.method} ${url}`,
+        op: "http.client",
+        attributes: {
+          url,
+          ...params,
+        },
+      },
+      async span => {
+        try {
+          const response = await fetch(url, params);
+          span.setAttribute("http.response.ok", response.ok);
+          span.setAttribute("http.response.status", response.status);
+          return { response };
+        } catch (error) {
+          span.setAttribute("http.response.error", error);
+          return { error };
+        } finally {
+          span.end();
+        }
+      }
+    );
   }
 }
