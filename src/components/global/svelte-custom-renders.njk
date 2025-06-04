@@ -1,0 +1,14 @@
+{#
+A call-to-action meant to be displayed at the bottom of a blog post.
+#}
+{% from "cta-banner.njk" import ctaBanner %}
+{%
+  set content = {
+    "title": "Support the Svelte Custom Renderers Initiative",
+    "subheading": "Mainmatter has built a working prototype that proves this is not just an idea—it’s feasible and already functional. We now look for funding that will allow us convert the prototype into a robust, production-ready foundation, ready for everyone to use.",
+    "linkUrl": "https://svelte-custom-renderers.com/?utm_source=mainmatter.com",
+    "linkText": "Support the Initiative",
+    "class": "cta-banner__svelteCustomRenderers"
+  }
+%}
+{{ ctaBanner('purple', 'default', content) }}
