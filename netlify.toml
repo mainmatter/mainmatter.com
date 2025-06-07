@@ -209,13 +209,13 @@
 
 # redirect old "Svelte & SvelteKit" landing page to regular workshop
 [[redirects]]
-  from = "https://svelte-sveltekit-workshop.mainmatter.com/"
+  from = "https://svelte-sveltekit-workshop.mainmatter.com/*"
   to = "https://mainmatter.com/services/workshops/svelte-and-sveltekit/"
   force = true
 
 # redirect "Telemetry for Rust applications" landing page to regular workshop
 [[redirects]]
-  from = "https://rust-telemetry-workshop.mainmatter.com/"
+  from = "https://rust-telemetry-workshop.mainmatter.com/*"
   to = "https://mainmatter.com/services/workshops/telemetry-for-rust-apis/"
   force = true
 
