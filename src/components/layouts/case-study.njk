@@ -23,6 +23,10 @@ layout: base
       <div class="case-study__section">
         <div class="case-study__text">{% include "global/gravity-cta.njk" %}</div>
       </div>
+      {% elseif cta == "whirlwind" %}
+      <div class="case-study__section">
+        <div class="case-study__text">{% include "global/whirlwind-cta.njk" %}</div>
+      </div>
     {% endif %}
   </article>
   {% set postsFromCollection = collections.caseStudiesFeatured | getMorePosts(page) | limit(3) %}
