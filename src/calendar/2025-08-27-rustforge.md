@@ -2,7 +2,7 @@
 title: "Rust Forge"
 image: "/assets/images/calendar/2025-08-27-rustforge/rust.png"
 location: "Wellington, New Zealand"
-url: https://rustforgeconf.com/speakers 
+url: https://rustforgeconf.com/speakers
 kind: conference
 color: aqua
 hero:
