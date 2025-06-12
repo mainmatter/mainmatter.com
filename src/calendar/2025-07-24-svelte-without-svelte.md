@@ -4,7 +4,7 @@ image: "/assets/images/calendar/2025-07-24-svelte-without-svelte/svelte.png"
 location: "Online"
 url: https://ti.to/mainmatter/svelte-without-svelte-july-2025
 kind: Workshop
-color: aqua
+color: purple
 hero:
   image: "/assets/images/calendar/2025-07-24-svelte-without-svelte/Programming.jpg"
   imageAlt: "Two people are working on laptop in a bar"
