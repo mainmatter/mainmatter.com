@@ -10,4 +10,4 @@ hero:
   imageAlt: "An set of microphone and laptop for a livestream event"
 ---
 
-Ember Europe Q2 is here, bringing the community together for another round of updates, talks, and conversations around Ember. We’re starting strong with our own Chris Manson, who will share what’s new with the Ember Initiative and what’s coming next.
+Ember Europe Q2 is here, bringing the community together for another round of updates, talks, and conversations around Ember. We’re starting strong with our own Chris Manson, who will share what’s new with the [Ember Initiative](/ember-initiative/) and what’s coming next.
