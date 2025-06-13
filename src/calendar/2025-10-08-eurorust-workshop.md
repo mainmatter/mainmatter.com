@@ -1,5 +1,5 @@
 ---
-title: "Workshop Day at EuroRust 2025"
+title: "Workshop: Rust-Python Inter­operability at EuroRust 2025"
 image: "/assets/images/calendar/2025-10-08-eurorust-workshop/rust.png"
 location: "Paris"
 url: https://eurorust.eu/workshops/rust-python-interoperability/
