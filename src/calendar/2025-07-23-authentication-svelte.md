@@ -4,7 +4,7 @@ image: "/assets/images/calendar/2025-07-23-authentication-svelte/svelte.png"
 location: "Online"
 url: https://ti.to/mainmatter/authentication-for-svelte-july-2025
 kind: Workshop
-color: purple
+color: aqua
 hero:
   image: "/assets/images/calendar/2025-07-23-authentication-svelte/programming.jpg"
   imageAlt: "Female hands typing computer keyboard"

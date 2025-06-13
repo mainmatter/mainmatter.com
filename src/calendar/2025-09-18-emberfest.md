@@ -4,7 +4,7 @@ image: "/assets/images/calendar/2025-09-18-emberfest/ember.png"
 location: "Brussels & Online"
 url: https://emberfest.eu/
 kind: conference
-color: purple
+color: aqua
 hero:
   image: "/assets/images/calendar/2025-09-18-emberfest/Brussels.png"
   imageAlt: "A classic cityscape of Brussels from Mont des Arts, showcasing grand architecture and the spire of the Town Hall in the distance."

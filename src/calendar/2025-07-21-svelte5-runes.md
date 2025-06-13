@@ -4,7 +4,7 @@ image: "/assets/images/calendar/2025-07-21-svelte5-runes/svelte.png"
 location: "Online"
 url: https://ti.to/mainmatter/svelte-5-runes-july-2025
 kind: Workshop
-color: purple
+color: aqua
 hero:
   image: "/assets/images/calendar/2025-07-21-svelte5-runes/programming.jpg"
   imageAlt: "Coding concept collage"
