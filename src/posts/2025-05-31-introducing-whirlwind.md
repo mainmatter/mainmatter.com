@@ -1,14 +1,14 @@
 ---
-title: "Wirlwind: Learnings behind building a P2P video chat"
+title: "Whirlwind: Learnings behind building a P2P video chat"
 authorHandle: BobrImperator
 tags: [rust, svelte, webrtc]
 bio: "Bartlomiej Dudzik, Software Developer"
-description: "A technical overview of Whirlwind and a look at the more interesting bits."
+description: "A technical overview of Whirlwind: P2P browser video chat, learnings behind it and a look at the more interesting bits."
 autoOg: true
 tagline: <p>Lessons learned behind Whirlwind and its structure.</p>
 
-image: "/assets/images/posts/2025-05-22-native-apps-with-svelte/header.jpg"
-imageAlt: "The Svelte logo on a gray background picture"
+image: "/assets/images/posts/2025-05-31-introducing-whirlwind/header.png"
+imageAlt: "Smiling and waving geometric shape folks with Whirlwind in between."
 ---
 
 # Whirlwind: peer-to-peer video chat in the browser for hybrid events
@@ -19,7 +19,7 @@ The goal of this blog post is to provide a technical overview for a video chat a
 
 Spontaneous one-on-one conversations are still hard to replicate at online events. We built [Whirlwind](https://whirlwind.chat/) to make that easier. It's a simple app for short, peer-to-peer video chats. You join a group then get matched with others for 2-minute conversations.
 
-If you're more interested in how Whirlwind works as a product for events, check out this [case study on using Whirlwind at hybrid meetups](https://www.notion.so/mainmatter/TODO).
+If you're more interested in how Whirlwind works as a product for events, check out our [case study on using Whirlwind at hybrid meetups](/cases/whirlwind).
 
 ## The core: Rust, SvelteKit, and WebRTC
 
@@ -31,7 +31,7 @@ The actual video and audio data never touch our servers. Everything flows direct
 
 The backend is written in Rust using [Axum](https://docs.rs/axum/latest/axum/) which is somewhat split into two parts: The web server and a Supervisor that takes care of spawning session servers as they’re requested.
 
-It also relies on Postgresql as a persistence layer for user records and the Cloudflare Realtime service which provides TURN servers for WebRTC.
+It also relies on PostgreSQL as a persistence layer for user records and the Cloudflare Realtime service which provides TURN servers for WebRTC.
 
 The web server handles:
 
@@ -52,7 +52,7 @@ As a result we’ve created an `ApplicationSupervisor` that takes care of spawni
 
 Lobby servers don’t run always, instead they’re spawned on-demand as users join a lobby for the first time and later they’re shutdown after some period of time when a lobby is considered inactive.
 
-Additionally we take advantage of that fact to make a request to fetch STUN/TURN server configuration to [Cloudflare Realtime API](https://developers.cloudflare.com/realtime/) before a Lobby wakes up. That is because STUN/TURN server configuration must be shipped to the end users, but making a hardcoded, long lived configuration could easily allow somebody to user our Cloudflare service. So instead the credentials are generated per-server .
+Additionally we take advantage of that fact to make a request to fetch STUN/TURN server configuration to [Cloudflare Realtime API](https://developers.cloudflare.com/realtime/) before a Lobby wakes up. That is because STUN/TURN server configuration must be shipped to the end users, but making a hardcoded, long lived configuration could easily allow somebody to use our Cloudflare service. So instead the credentials are generated per-server.
 
 Another function of a Supervisor is to provide an access to the internal state of a given lobby. We rely on this mechanism internally for owner actions which are regular HTTP calls instead and not WebSocket messages. This helps with avoiding re-implementing request/response and authentication mechanisms in a WebSocket connection, ultimately making things simpler by relying on the already coined practices around HTTP authentication.
 
@@ -62,9 +62,9 @@ The Supervisor isn’t very sophisticated though and doesn’t attempt to restar
 
 ### InMemory
 
-`InMemory` is a module that stores and implements methods to add or change the `Lobby` data and it’s deeply connected to a specific `Lobby` . It’s initialized by a `Lobby` when it starts and goes away with it.
+`InMemory` is a module that stores and implements methods to add or change the `Lobby` data and it's deeply connected to a specific `Lobby`.
 
-It stores all the information needed for a `Lobby` to function i.e. matches, user readiness and their `mailboxes` , it also emits events and talks to users connected to a given `Lobby`. Essentially it facilitates all of the `User` → `User` communication and `Lobby` → `User` through a `mailbox`.
+It stores all the information needed for a `Lobby` to function i.e. matches, user readiness and their `mailboxes`, it also emits events and talks to users connected to a given `Lobby`. Essentially it facilitates all of the `User` → `User` communication and `Lobby` → `User` through a `mailbox`.
 
 A `mailbox` is an `mpsc` channel of each users’ Websocket connection when they connect to a `Lobby`. Without it users wouldn’t be able to talk to each other or get notified by the `Lobby`.
 
@@ -78,9 +78,9 @@ It serves a few purposes:
 - Users must be able to send a dozen messages as fast as possible to each other when negotiating a WebRTC connection.
 - Keep track of whether users are still participating in the session or if they’ve quit or lost connection.
 
-The Websocket is pretty simple, it’s role is to receive and react to messages from a user. A Websocket connection is a `tokio::task` that `axum` spawns for us and provides us with a `stream` . Additionally when the Websocket connection is already upgraded, when “connecting” to a `Lobby`, the handler takes a hold of an `InMemoryHandle` that is the de-facto interface of `InMemory` that give us read and write access to `InMemory` via `Actor` model messaging using `oneshot` channels.
+The Websocket is pretty simple, its role is to receive and react to messages from a user. A Websocket connection is a `tokio::task` that `axum` spawns for us and provides us with a `stream`. Additionally when the Websocket connection is already upgraded, when "connecting" to a `Lobby`, the handler takes a hold of an `InMemoryHandle` that is the de-facto interface of `InMemory` that give us read and write access to `InMemory` via `Actor` model messaging using `oneshot` channels.
 
-By itself it can’t interact with the rest of the system or users however. In order to handle that the Websocket spawns more tasks and channels. It creates a `mailbox` and forwards the writer side of it to the `InMemory` so the `InMemory` module and other users have an ability to push messages to that user who owns the receiving side of `mailbox`. It also creates a `queue` channel, once a message reaches the channel it’s read by the `sender` task which pushes that message to the client, `queue` collects messages from other sources like `queue` , `receiver` .
+By itself it can't interact with the rest of the system or users however. In order to handle that the Websocket spawns more tasks and channels. It creates a `mailbox` and forwards the writer side of it to the `InMemory` so the `InMemory` module and other users have the ability to push messages to that user who owns the receiving side of `mailbox`. It also creates a `queue` channel - once a message reaches the channel it's read by the `sender` task which pushes that message to the client. The `queue` collects messages from other sources like the `mailbox` and `receiver`.
 
 Messages sent to a user are generally either a result of their direct actions like sending a `Ready` message or indirect like somebody joining to the Lobby, in that case user will receive a `LobbyStatus` message originating from the session server.
 
@@ -92,7 +92,7 @@ Whirlwind is an application where 90% of the work and functionality happens in t
 
 As such it requires a different testing approach that’s more similar to testing `Evented systems` rather than an `HTTP API`.
 
-First of all, the test setup actually runs our Server by binding it to a random port with it’s own database and configuration on a test by test basis - making sure everything is isolated, concurrent and fast. It also works great when testing different configurations of various `matchmaking` task settings.
+First of all, the test setup actually runs our Server by binding it to a random port with its own database and configuration on a test by test basis - making sure everything is isolated, concurrent and fast. It also works great when testing different configurations of various `matchmaking` task settings.
 
 The test suite essentially uses `Black Box testing` approach. Our tests define and make use of a stateful `Interactions` module. The `Interactions` module is a test helper that defines methods that make _real_ HTTP calls (not mocked), and uses `tokio_tungstenite` to make a real Websocket connection to the server, so it can act as a real user using their browser. `Interactions` also stores received messages for inspection, which helps with keeping tests fast and accurate by making sure it’s OK to receive different messages while we’re waiting for a specific one; since messages are unordered by nature and the client might receive a `UserStatus` message in between awaiting an `IceAnswer` message.
 
