@@ -1,5 +1,5 @@
 ---
-title: "Whirlwind: peer-to-peer video chat in the browser for hybrid events"
+title: "Wirlwind: Learnings behind building a P2P video chat"
 authorHandle: BobrImperator
 tags: [rust, svelte, webrtc]
 bio: "Bartlomiej Dudzik, Software Developer"
