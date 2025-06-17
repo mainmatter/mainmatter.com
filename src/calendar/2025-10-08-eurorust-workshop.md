@@ -10,4 +10,4 @@ hero:
   imageAlt: "This is a nighttime photo of the illuminated Louvre Pyramid in Paris"
 ---
 
-Our Rust expert Luca Palmieri will give our popular workshop on Rust-Python interoperability at EuroRust in Paris. 
+Our Rust expert Luca Palmieri will give our popular workshop on Rust-Python interoperability at EuroRust in Paris.
