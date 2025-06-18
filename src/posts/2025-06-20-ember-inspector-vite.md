@@ -7,7 +7,7 @@ description: "Introducing challenges and strategy to implement Vite support in e
 autoOg: true
 tagline: |
   <p>
-  The <a href="https://github.com/emberjs/ember-inspector">Ember Inspector</a> is a popular browser extension in the Ember world, which allows Ember developers to inspect from their oldest to their most recent Ember apps... as long as they build with Ember CLI and Broccoli. Ember apps from version 3.28 to the latest can now be built with Vite, but the Ember Inspector doesn't support these modern apps yet. Fixing this is the primary focus of the <a href="/ember-initiative/">Ember Initiative</a> at the moment. This blog post overviews the challenges and the strategy we designed to reach this goal.
+  The <a href="https://github.com/emberjs/ember-inspector">Ember Inspector</a> is a popular browser extension in the Ember world, which allows Ember developers to inspect from their oldest to their most recent Ember apps... as long as they build with Ember CLI and Broccoli. It's currently lacking support for the new Vite build process, which is available for all Ember apps from version 3.28 now. Fixing this is the primary focus of the <a href="/ember-initiative/">Ember Initiative</a> at the moment. This blog post overviews the challenges and the strategy we designed to reach this goal.
   </p>
 ---
 
@@ -109,4 +109,4 @@ Since the review will take some time and won't require a full-time investment fr
 
 Getting the Ember Inspector to support Vite apps is a demanding project that requires its own micro-roadmap, and involves three different repositories: ember-inspector, ember.js, and potentially Embroider for < 4.8 support. We have designed the plan, started to apply it, and made significant progress, overcoming hidden obstacles as they arise. We are still in the middle of the way, and the Ember Inspector should keep our team busy for a couple of weeks.
 
-Once we reach the final stage (Watch and implement the RFC), we will start investigating the next topic of the Initiative. If your work relies on Ember and you want to have your say about our next priorities, consider encouraging your organization to sponsor Mainmatter's Ember Initiative : [get in touch with us](/contact/), spread the word, and follow our progress on this blog.
+Once we reach the final stage and start watching the RFC, we will investigate the next topic of the Initiative. If your work relies on Ember and you want to have your say about our next priorities, consider encouraging your organization to sponsor Mainmatter's Ember Initiative : [get in touch with us](/contact/), spread the word, and follow our progress on this blog.
