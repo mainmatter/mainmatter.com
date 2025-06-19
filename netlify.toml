@@ -180,6 +180,14 @@
   to = "/"
 
 [[redirects]]
+  from = "/ember"
+  to = "/ember-consulting/"
+
+[[redirects]]
+  from = "/svelte"
+  to = "/svelte-consulting/"
+
+[[redirects]]
   from = "/rust"
   to = "/rust-consulting/"
 
