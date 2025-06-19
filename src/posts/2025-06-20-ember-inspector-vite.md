@@ -1,5 +1,5 @@
 ---
-title: "The road to Ember Inspector supporting Vite apps"
+title: "The road to Vite support for the Ember Inspector"
 authorHandle: academierenards
 tags: [ember, embroider, vite]
 bio: "Marine Dunstetter, Senior Software Engineer"
@@ -7,11 +7,11 @@ description: "Introducing challenges and strategy to implement Vite support in e
 autoOg: true
 tagline: |
   <p>
-  The <a href="https://github.com/emberjs/ember-inspector">Ember Inspector</a> is a popular browser extension in the Ember world, which allows Ember developers to inspect from their oldest to their most recent Ember apps... as long as they build with Ember CLI and Broccoli. It's currently lacking support for the new Vite build process, which is available for all Ember apps from version 3.28 now. Fixing this is the primary focus of the <a href="/ember-initiative/">Ember Initiative</a> at the moment. This blog post overviews the challenges and the strategy we designed to reach this goal.
+  The <a href="https://github.com/emberjs/ember-inspector">Ember Inspector</a> is a popular browser extension in the Ember world, which allows Ember developers to inspect their apps no matter what version they are on... as long as they build with Ember CLI and Broccoli. The Ember Inspector does not yet support the new Vite build process, which is available for all Ember apps from version 3.28 upward. Fixing this is the primary focus of the <a href="/ember-initiative/">Ember Initiative</a> at the moment. This blog post overviews the challenges and the strategy we designed to reach this goal.
   </p>
 ---
 
-The <a href="https://github.com/emberjs/ember-inspector">Ember Inspector</a> is a browser extension that extends the capacity of regular debuggers for Ember specifically. It allows developers to inspect their Ember apps and view information like the version of Ember and Ember Data running, the components render tree, the data loaded on the page, the state of the different Ember object instances like services, controllers, routes... It's a practical extension widely used in the Ember community. Such a popular tool must be able to inspect modern Ember apps built with Vite. The goal is as easy to state as it is hard to achieve.
+The <a href="https://github.com/emberjs/ember-inspector">Ember Inspector</a> is a browser extension that extends the capability of regular debuggers for Ember specifically. It allows developers to inspect their Ember apps and view information like the version of Ember and Ember Data running, the components render tree, the data loaded on the page, the state of the different Ember object instances like services, controllers, routes... It's a practical extension widely used in the Ember community. Such a popular tool must be able to inspect modern Ember apps built with Vite. The goal is as easy to state as it is hard to achieve.
 
 The Ember Inspector project is complex enough to require its own micro-roadmap. This is exactly the kind of project that Mainmatter's [Ember Initiative](/ember-initiative/) exists to manage. Implementing Vite support for the Inspector is our team's primary focus at the moment. In this blog post, we will explain the problem, the strategy we designed to implement the support, and where we are so far with the implementation.
 
@@ -26,7 +26,7 @@ The Inspector (on the right) is composed of two main pieces:
 - The UI is an Ember app that displays what you see when the inspector runs.
 - The folder `ember_debug` is built into a script `ember_debug.js`. The Inspector injects this script into your page to connect to your app.
 
-The incompatibility with Vite apps lies in how `ember_debug.js` (on the left) uses ember-source. For a long time, `ember-cli` expressed all the modules using AMD (Asynchronous Module Definition) and `requirejs` `define()` statements. Addons and applications could rely on AMD loading to use these modules. This is what the Inspector does. When you use `@embroider/vite` to build your Ember app with Vite, ember-source is loaded as ESM (ECMAScript modules), and you essentially have no `requirejs` module support: the Inspector was designed to work with the AMD approach and breaks.
+The incompatibility with Vite apps lies in how `ember_debug.js` (on the left) uses ember-source. For a long time, `ember-cli` expressed all the modules using AMD (Asynchronous Module Definition) and `requirejs` `define()` statements. Addons and applications could rely on AMD loading to use these modules. This is what the Inspector does. When you use `@embroider/vite` to build your Ember app with Vite, ember-source is loaded as ESM (ECMAScript modules), and you essentially have no `requirejs` module support: the Inspector was designed to work with the AMD approach and breaks when we move to ESM.
 
 In a nutshell, supporting Vite means fixing the bridge between ember-source and `ember_debug.js`.
 
@@ -46,7 +46,7 @@ On the other hand, proposing changes in ember.js requires going through the [RFC
 
 To approach this work and draw the next steps, we started by implementing a proof of concept: We forked ember.js and ember-inspector and created testing branches that are not intended to be merged to design the new interaction system. Our approach relies on a global loading function exposed by ember-source and top-level `await` on the Inspector side to wait for the modules to be loaded.
 
-Out of our functional but rough proof of concept, we started to dig deeper into the Inspector side to refine the implementation and figure out all the pieces. By doing this first, we will kill two birds with one stone: we will prepare the ground for Vite support by managing any refactoring that turns out to be necessary, and we will find out the exact list of modules the ember-inspector relies on to reuse it in the future RFC.
+Out of our functional but rough proof of concept, we started to dig deeper into the Inspector side to refine the implementation and figure out all the pieces. By doing this first, we will kill two birds with one stone: we will prepare the ground for Vite support by managing any refactoring that turns out to be necessary, and we will find out the exact list of modules the ember-inspector relies on and can use this list to write the RFC.
 
 ## The ember-inspector side
 
@@ -62,7 +62,7 @@ The CI is now green again:
 
 - `release`, `beta`, and `canary` (6.x) scenarios were failing essentially because the way ember-source exposes the modules changed. These versions introduce an `ember/barrel` module that the Inspector didn't know about. Additionally, non-colocated components are no longer allowed in these versions, so a few fixtures had to be rewritten in tests to adjust to this breaking change.
 
-An interesting part of this was the large contribution of [Patrick Pircher](https://github.com/patricklx). (Many thanks to him!) Sometimes, open source doesn't consist of coding things but rather of guiding others through a certain strategy and helping them help you.
+An interesting part of this was a series of large contributions from [Patrick Pircher](https://github.com/emberjs/ember-inspector/pulls?q=is%3Apr+is%3Amerged+author%3Apatricklx+reviewed-by%3ABlueCutOfficial+) (Many thanks to him!) Sometimes, open source doesn't consist of coding things but rather of guiding others through a certain strategy and helping them help you.
 
 ### Build `ember_debug` with Rollup
 
@@ -107,6 +107,6 @@ Since the review will take some time and won't require a full-time investment fr
 
 ## Summary
 
-Getting the Ember Inspector to support Vite apps is a demanding project that requires its own micro-roadmap, and involves three different repositories: ember-inspector, ember.js, and potentially Embroider for < 4.8 support. We have designed the plan, started to apply it, and made significant progress, overcoming hidden obstacles as they arise. We are still in the middle of the way, and the Ember Inspector should keep our team busy for a couple of weeks.
+Getting the Ember Inspector to support Vite apps is a demanding project that requires its own micro-roadmap, and involves three different repositories: ember-inspector, ember.js, and potentially Embroider for < 4.8 support. We have designed the plan, started to apply it, and made significant progress, overcoming hidden obstacles as they arise. Our work is still in progress, and the Ember Inspector should keep our team busy for a couple of weeks.
 
 Once we reach the final stage and start watching the RFC, we will investigate the next topic of the Initiative. If your work relies on Ember and you want to have your say about our next priorities, consider encouraging your organization to sponsor Mainmatter's Ember Initiative : [get in touch with us](/contact/), spread the word, and follow our progress on this blog.
