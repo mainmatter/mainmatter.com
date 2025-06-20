@@ -21,6 +21,7 @@ const { init } = require("./utils/svelteSyntaxHighlight");
  * Import site configuration
  */
 const pathConfig = require("./src/_data/paths.json");
+const { default: findByCollectionSlug } = require("./utils/findByCollectionSlug.mjs");
 
 module.exports = async function (eleventyConfig) {
   /**
@@ -74,6 +75,10 @@ module.exports = async function (eleventyConfig) {
 
   eleventyConfig.addFilter("findBySlug", function (slug) {
     return findBySlug(slug);
+  });
+
+  eleventyConfig.addFilter("findByCollectionSlug", function (collection, slug) {
+    return findByCollectionSlug(collection, slug);
   });
 
   eleventyConfig.addFilter("formatTagline", function (tagline) {

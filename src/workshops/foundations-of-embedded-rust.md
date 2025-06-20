@@ -1,5 +1,5 @@
 ---
-title: "Foundations of embedded Rust"
+title: "Foundations of Embedded Rust"
 tags: "rust"
 format: "Workshop: 3 days"
 subtext: "Bookable for teams – on-site or remote"
