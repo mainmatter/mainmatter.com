@@ -11,7 +11,7 @@ hero:
   imageAlt: "Characters interacting with each other inside a whirlwind"
   tags: "Mainmatter Product"
 og:
-  image: /assets/images/cases/cs-gravity-og-image.jpg
+  image: /assets/images/cases/cs-whirlwind-og-image.jpg
 ---
 
 {% from "image-aspect-ratio.njk" import imageAspectRatio %} {% from "quote.njk" import quote %}
