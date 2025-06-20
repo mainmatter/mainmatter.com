@@ -7,8 +7,8 @@ description: "<p>Connecting with others remotely is hard.</p><p>After years of r
 cta: whirlwind
 hero:
   color: purple
-  image: "/assets/images/work/gravity-visual.jpg"
-  imageAlt: "Gravity logo floating in space"
+  image: "/assets/images/work/whirlwind-visual.jpg"
+  imageAlt: "Characters interacting with each other inside a whirlwind"
   tags: "Mainmatter Product"
 og:
   image: /assets/images/cases/cs-gravity-og-image.jpg
@@ -25,7 +25,17 @@ og:
   </div>
 </div>
 
-![Whirlwind animated video](/assets/images/work/whirlwind-hero.mp4#video)\
+<div class="case-study__section">
+  {% set imageData = {
+    "imgPath": "/assets/images/work/whirlwind_logo.png",
+    "alt": "Whirlwind logo",  
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+![Whirlwind animated video](/assets/images/work/whirlwind-hero.mp4#video)
+</div>
 
 <div class="case-study__section">
   <h3 class="case-study__heading">The Solution: Fast, Fun, and Human</h3>
