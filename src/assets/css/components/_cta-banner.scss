@@ -89,13 +89,15 @@
 
 .cta-banner__whirlwind {
   background-color: #fdfebc;
-  box-shadow: 0 20px 0 0 #af7fd5,0 40px 0 0 #7fe6bb;
+  box-shadow:
+    0 20px 0 0 #af7fd5,
+    0 40px 0 0 #7fe6bb;
   border-radius: 44px;
   color: var(--black);
 
   & h2,
   & p {
-    font-weight:900;
+    font-weight: 900;
   }
 
   & a.btn-primary {
