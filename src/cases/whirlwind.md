@@ -16,7 +16,7 @@ og:
 
 {% from "image-aspect-ratio.njk" import imageAspectRatio %} {% from "quote.njk" import quote %}
 
-<div class="case-study__section">
+<div class="case-study__section mb-5">
   <div class="case-study__text">
     <p>After years of organizing hybrid conferences like <a href="https://eurorust.eu">EuroRust</a>, <a href="https://emberfest.eu">EmberFest</a>, and <a href="https://sveltesummit.com">Svelte Summit</a>, one problem became clear: remote attendees consistently felt disconnected. They missed out on the energy of the event and found it awkward or difficult to meet new people. The same holds true in remote teams. Casual hallway chats and spontaneous connections are hard to replicate online.
     </p>
@@ -25,18 +25,7 @@ og:
   </div>
 </div>
 
-TODO: replace this image with the video from the whirlwind.chat landing page
-
-<div class="case-study__section">
-  {% set imageData = {
-    "imgPath": "/assets/images/work/gravity-laptop-visualized.jpg",
-    "alt": "Gravity website open on a laptop",  
-    "sizes": "100vw",
-    "loading": "lazy",
-    "sizesArray": [760, 1440, 1920]
-  } %}
-  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
-</div>
+![Whirlwind animated video](/assets/images/work/whirlwind-hero.mp4#video)\
 
 <div class="case-study__section">
   <h3 class="case-study__heading">The Solution: Fast, Fun, and Human</h3>
