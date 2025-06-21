@@ -168,6 +168,10 @@
   to = "/services/workshops/"
 
 [[redirects]]
+  from = "/workshops"
+  to = "/services/workshops/"
+
+[[redirects]]
   from = "/services/team-augmentation-and-training"
   to = "/services/team-reinforcement/"
 
