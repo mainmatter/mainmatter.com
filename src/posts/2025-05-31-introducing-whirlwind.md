@@ -10,21 +10,21 @@ image: "/assets/images/posts/2025-05-31-introducing-whirlwind/whirlwind-visual.j
 imageAlt: "Smiling and waving geometric shape folks swept by a whirlwind."
 ---
 
-# Whirlwind: peer-to-peer video chat in the browser for hybrid events
+# Whirlwind Chat: peer-to-peer video chat in the browser for hybrid events
 
-The goal of this blog post is to provide a technical overview for a video chat application [Whirlwind](https://whirlwind.chat/) which we’ve made, as well as give an insight into some of the more interesting parts and the intentions behind them.
+The goal of this blog post is to provide a technical overview for a video chat application [Whirlwind Chat](https://whirlwind.chat/) which we've made, as well as give an insight into some of the more interesting parts and the intentions behind them.
 
-## Why Whirlwind exists?
+## Why Whirlwind Chat exists?
 
-Spontaneous one-on-one conversations are still hard to replicate at online events. We built [Whirlwind](https://whirlwind.chat/) to make that easier. It's a simple app for short, peer-to-peer video chats. You join a group then get matched with others for 2-minute conversations.
+Spontaneous one-on-one conversations are still hard to replicate at online events. We built [Whirlwind Chat](https://whirlwind.chat/) to make that easier. It's a simple app for short, peer-to-peer video chats. You join a group then get matched with others for 2-minute conversations.
 
-If you're more interested in how Whirlwind works as a product for events, check out our [case study on using Whirlwind at hybrid meetups](/cases/whirlwind).
+If you're more interested in how Whirlwind Chat works as a product for events, check out our [case study on using Whirlwind Chat at hybrid meetups](/cases/whirlwind).
 
 ## The core: Rust, SvelteKit, and WebRTC
 
-Whirlwind has two parts: a web app written in Svelte, and a backend server written in Rust. The frontend runs entirely in the browser and handles video calls using WebRTC. The backend coordinates users, manages sessions, and helps peers connect.
+Whirlwind Chat has two parts: a web app written in Svelte, and a backend server written in Rust. The frontend runs entirely in the browser and handles video calls using WebRTC. The backend coordinates users, manages sessions, and helps peers connect.
 
-The actual video and audio data never touch our servers. Everything flows directly between browsers using peer-to-peer connections. This approach improves privacy (no server sits in the middle watching calls) and it makes Whirlwind scalable to a large number of users with minimal infrastructure.
+The actual video and audio data never touch our servers. Everything flows directly between browsers using peer-to-peer connections. This approach improves privacy (no server sits in the middle watching calls) and it makes Whirlwind Chat scalable to a large number of users with minimal infrastructure.
 
 ## The backend
 
@@ -69,7 +69,7 @@ A `mailbox` is an `mpsc` channel of each users’ Websocket connection when they
 
 ### Websocket
 
-A great chunk of Whirlwind functionalities are a part of Websocket connections.
+A great chunk of Whirlwind Chat functionalities are a part of Websocket connections.
 
 It serves a few purposes:
 
@@ -87,7 +87,7 @@ Messages sent to a user are generally either a result of their direct actions li
 
 ### Testing
 
-Whirlwind is an application where 90% of the work and functionality happens in the Websockets.
+Whirlwind Chat is an application where 90% of the work and functionality happens in the Websockets.
 
 As such it requires a different testing approach that’s more similar to testing `Evented systems` rather than an `HTTP API`.
 
@@ -130,4 +130,4 @@ This mechanism works great for situations where:
 
 ## Give it a try
 
-Whether you're organizing a meetup or just curious to see how it works, you can try Whirlwind right now at [whirlwind.chat](https://whirlwind.chat/). No sign-up, no install.
+Whether you're organizing a meetup or just curious to see how it works, you can try Whirlwind Chat right now at [whirlwind.chat](https://whirlwind.chat/). No sign-up, no install.
