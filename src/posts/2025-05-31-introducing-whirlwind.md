@@ -1,14 +1,13 @@
 ---
-title: "Whirlwind: Learnings behind building a P2P video chat"
+title: "Whirlwind Chat: Learnings behind building a P2P video chat in browser"
 authorHandle: BobrImperator
 tags: [rust, svelte, webrtc]
 bio: "Bartlomiej Dudzik, Software Developer"
-description: "A technical overview of Whirlwind: P2P browser video chat, learnings behind it and a look at the more interesting bits."
+description: "A technical overview of Whirlwind Chat: P2P browser video chat, learnings behind it and a look at the more interesting bits."
 autoOg: true
-tagline: <p>Lessons learned behind Whirlwind and its structure.</p>
-
-image: "/assets/images/posts/2025-05-31-introducing-whirlwind/header.png"
-imageAlt: "Smiling and waving geometric shape folks with Whirlwind in between."
+tagline: <p>Lessons learned and decisions made behind Whirlwind Chat and its structure.</p>
+image: "/assets/images/posts/2025-05-31-introducing-whirlwind/whirlwind-visual.jpg"
+imageAlt: "Smiling and waving geometric shape folks swept by a whirlwind."
 ---
 
 # Whirlwind: peer-to-peer video chat in the browser for hybrid events
