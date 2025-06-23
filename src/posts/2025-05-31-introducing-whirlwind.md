@@ -1,24 +1,21 @@
 ---
-title: "Whirlwind Chat: Learnings behind building a P2P video chat in browser"
+title: "Whirlwind Chat: Learnings from building a browser-based P2P video chat"
 authorHandle: BobrImperator
 tags: [rust, svelte, webrtc]
 bio: "Bartlomiej Dudzik, Software Developer"
-description: "A technical overview of Whirlwind Chat: P2P browser video chat, learnings behind it and a look at the more interesting bits."
+description: "A technical overview of Whirlwind Chat: learnings from building a browser-based P2P video chat."
 autoOg: true
+customCta: "global/whirlwind-cta.njk"
 tagline: <p>Lessons learned and decisions made behind Whirlwind Chat and its structure.</p>
 image: "/assets/images/posts/2025-05-31-introducing-whirlwind/whirlwind-visual.jpg"
 imageAlt: "Smiling and waving geometric shape folks swept by a whirlwind."
 ---
 
-# Whirlwind Chat: peer-to-peer video chat in the browser for hybrid events
-
-The goal of this blog post is to provide a technical overview for a video chat application [Whirlwind Chat](https://whirlwind.chat/) which we've made, as well as give an insight into some of the more interesting parts and the intentions behind them.
-
-## Why Whirlwind Chat exists?
-
 Spontaneous one-on-one conversations are still hard to replicate at online events. We built [Whirlwind Chat](https://whirlwind.chat/) to make that easier. It's a simple app for short, peer-to-peer video chats. You join a group then get matched with others for 2-minute conversations.
 
-If you're more interested in how Whirlwind Chat works as a product for events, check out our [case study on using Whirlwind Chat at hybrid meetups](/cases/whirlwind).
+This post is to provide a technical overview for a video chat application [Whirlwind Chat](https://whirlwind.chat/) which we've made, as well as give an insight into some of the more interesting parts and the intentions behind them.
+
+![A screenshot showcasing how Whirlwind Chat looks like on mobile](/assets/images/posts/2025-05-31-introducing-whirlwind/mobile-screenshot.png)
 
 ## The core: Rust, SvelteKit, and WebRTC
 
@@ -28,7 +25,7 @@ The actual video and audio data never touch our servers. Everything flows direct
 
 ## The backend
 
-The backend is written in Rust using [Axum](https://docs.rs/axum/latest/axum/) which is somewhat split into two parts: The web server and a Supervisor that takes care of spawning session servers as they’re requested.
+The backend is written in [Rust](/rust-consulting/) using [Axum](https://docs.rs/axum/latest/axum/) which is somewhat split into two parts: The web server and a Supervisor that takes care of spawning session servers as they’re requested.
 
 It also relies on PostgreSQL as a persistence layer for user records and the Cloudflare Realtime service which provides TURN servers for WebRTC.
 
@@ -39,9 +36,9 @@ The web server handles:
 
 Session servers are responsible for:
 
-- matchmaking
+- matchmaking and keeping track of previous matches
 - managing real-time user states like “readiness”
-- exchanging messages between users in that group
+- exchanging WebRTC messages between users in that group
 
 ### Supervisor
 
@@ -53,19 +50,9 @@ Lobby servers don’t run always, instead they’re spawned on-demand as users j
 
 Additionally we take advantage of that fact to make a request to fetch STUN/TURN server configuration to [Cloudflare Realtime API](https://developers.cloudflare.com/realtime/) before a Lobby wakes up. That is because STUN/TURN server configuration must be shipped to the end users, but making a hardcoded, long lived configuration could easily allow somebody to use our Cloudflare service. So instead the credentials are generated per-server.
 
-Another function of a Supervisor is to provide an access to the internal state of a given lobby. We rely on this mechanism internally for owner actions which are regular HTTP calls instead and not WebSocket messages. This helps with avoiding re-implementing request/response and authentication mechanisms in a WebSocket connection, ultimately making things simpler by relying on the already coined practices around HTTP authentication.
-
-The Supervisor isn’t very sophisticated though and doesn’t attempt to restart a Lobby once it crashes. Instead if a Lobby or any of its child tasks encounter an unrecoverable error, the Lobby is shutdown immediately, while not great, it’s still an annoyance at best.
+Another function of a Supervisor is to provide an access to the internal state of a given lobby. We rely on this mechanism internally for owner actions which are regular HTTP calls instead and not just WebSocket messages. This helps with avoiding re-implementing request/response and authentication mechanisms in a WebSocket connection, ultimately making things simpler by relying on the already coined practices around HTTP authentication.
 
 ![Server structure quick overview](/assets/images/posts/2025-05-31-introducing-whirlwind/server-structure.png)
-
-### InMemory
-
-`InMemory` is a module that stores and implements methods to add or change the `Lobby` data and it's deeply connected to a specific `Lobby`.
-
-It stores all the information needed for a `Lobby` to function i.e. matches, user readiness and their `mailboxes`, it also emits events and talks to users connected to a given `Lobby`. Essentially it facilitates all of the `User` → `User` communication and `Lobby` → `User` through a `mailbox`.
-
-A `mailbox` is an `mpsc` channel of each users’ Websocket connection when they connect to a `Lobby`. Without it users wouldn’t be able to talk to each other or get notified by the `Lobby`.
 
 ### Websocket
 
@@ -89,19 +76,19 @@ Messages sent to a user are generally either a result of their direct actions li
 
 Whirlwind Chat is an application where 90% of the work and functionality happens in the Websockets.
 
-As such it requires a different testing approach that’s more similar to testing `Evented systems` rather than an `HTTP API`.
+As such it requires a different testing approach that’s more similar to testing Evented systems rather than an HTTP API.
 
 First of all, the test setup actually runs our Server by binding it to a random port with its own database and configuration on a test by test basis - making sure everything is isolated, concurrent and fast. It also works great when testing different configurations of various `matchmaking` task settings.
 
-The test suite essentially uses `Black Box testing` approach. Our tests define and make use of a stateful `Interactions` module. The `Interactions` module is a test helper that defines methods that make _real_ HTTP calls (not mocked), and uses `tokio_tungstenite` to make a real Websocket connection to the server, so it can act as a real user using their browser. `Interactions` also stores received messages for inspection, which helps with keeping tests fast and accurate by making sure it’s OK to receive different messages while we’re waiting for a specific one; since messages are unordered by nature and the client might receive a `UserStatus` message in between awaiting an `IceAnswer` message.
+The test suite essentially uses Black Box testing approach. Our tests define and make use of a stateful `Interactions` module. The `Interactions` module is a test helper that defines methods that make _real_ HTTP calls (not mocked), and uses `tokio_tungstenite` to make a real Websocket connection to the server, so it can act as a real user using their browser. `Interactions` also stores received messages for inspection, which helps with keeping tests fast and accurate by making sure it’s OK to receive different messages while we’re waiting for a specific one; since messages are unordered by nature and the client might receive a `UserStatus` message in between awaiting an `IceAnswer` message.
 
 ## The frontend
 
-We used [SvelteKit](https://svelte.dev/docs/kit/introduction) for the frontend. It's a good fit for reactive UIs while keeping bundle size to minimum. (At Mainmatter, [we like Svelte and SvelteKit](https://mainmatter.com/svelte-consulting/) because they strike the right balance between developer productivity and building lightweight, performant web apps.)
+We used [SvelteKit](https://svelte.dev/docs/kit/introduction) for the frontend. It's a good fit for reactive UIs while keeping bundle size to minimum. (At Mainmatter, [we like Svelte and SvelteKit](/svelte-consulting/) because they strike the right balance between developer productivity and building lightweight, performant web apps.)
 
 The hard part wasn't building the interface, it was making it work reliably across all the different browsers, devices, and hardware users bring. Some users join from phones, others from dual-screen desktops. Microphones and cameras vary. Permission prompts behave differently across OS/browser combinations.
 
-We also had to handle stream negotiation, dynamic device selection, and failure cases where the camera or microphone is missing, in use elsewhere, or blocked. An optional background blur feature added one more layer of complexity by having to juggle multiple video streams and elements, which is more tricky than it sounds.
+We also had to handle stream negotiation, dynamic device selection, and failure cases where the camera or microphone is missing, is in use elsewhere, or blocked. An optional background blur feature added one more layer of complexity by having to juggle multiple video streams and elements, which is more tricky than it sounds.
 
 ![WebRTC overview](/assets/images/posts/2025-05-31-introducing-whirlwind/webrtc-overview.png)
 
@@ -127,7 +114,3 @@ This mechanism works great for situations where:
 - Peers are not sending data to one another
 - Peers are using incompatible codecs
 - The internet connection quality has dropped or switched from wifi to mobile data.
-
-## Give it a try
-
-Whether you're organizing a meetup or just curious to see how it works, you can try Whirlwind Chat right now at [whirlwind.chat](https://whirlwind.chat/). No sign-up, no install.
