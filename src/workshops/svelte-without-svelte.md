@@ -43,12 +43,7 @@ topics:
 
 
 leads:
-  - name: Paolo Ricciuti
-    title: Senior Frontend Engineer
-    handle: paoloricciuti
-    image: /assets/images/authors/paoloricciuti.jpg
-    bio: >
-      Paolo is a huge nerd and Svelte maintainer. He's also one of the creators of <a href="https://sveltelab.dev">sveltelab.dev</a> - a REPL for SvelteKit.
+  - handle: paoloricciuti
 ---
 
 <!--break-->
