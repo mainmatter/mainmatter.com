@@ -663,7 +663,8 @@
     "mainmatter/svelte",
     "mainmatter/tailwindcss.com",
     "thedaviddias/Front-End-Performance-Checklist",
-    "paoloricciuti/rccl.ink"
+    "paoloricciuti/rccl.ink",
+    "paoloricciuti/ricciuti.me"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
