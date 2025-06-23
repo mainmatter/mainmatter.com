@@ -33,12 +33,21 @@ event: A event object
       <div class="event-card__body">
         <h3 class="h2 event-card__title">{{ event.data.title }}</h3>
         <div class="event-card__description">{{ event.templateContent | safe }}</div>
-        {%
-          set link = {
-          "label": 'Visit Website',
-          "url": event.data.url
-          }
-        %}
+        {% if event.data.kind == "Workshop" %}
+          {%
+            set link = {
+            "label": 'Register Now',
+            "url": event.data.url
+            }
+          %}
+        {% else %}
+          {%
+            set link = {
+            "label": 'Visit Website',
+            "url": event.data.url
+            }
+          %}
+        {% endif %}
         {{ btnPrimary( link, 'white', 'mt-2' ) }}
       </div>
     </div>
