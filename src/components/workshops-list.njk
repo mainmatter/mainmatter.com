@@ -2,28 +2,28 @@
   <section class="tech-cards my-10">
     <div class="tech-cards__container container container--xl">
       <h2 class="tech-cards__title">{{ title }}</h2>
-      <p class="tech-cards__intro mt-25 mb-5">{{ intro }}</p>
-      <h2 class="tech-cards__title">Workshops Catalog</h2>
+      <p class="tech-cards__intro mt-25 mb-5">{{ intro | safe }}</p>
       <div class="cards__grid">
         {% for workshop in workshops %}
           <div class="tech-cards__grid-element card__grid-element">
-            <a href="/{{ workshop.link }}" class="card__link">
-              <h3 class="screenreader">{{ workshop.title }}</h3>
+            <a href="/services/workshops/{{ workshop.fileSlug }}" class="card__link">
+              <h3 class="screenreader">{{ workshop.data.title }}</h3>
             </a>
-            <div class="card__logo tech-cards__logo {{ workshop.logo }}">
-              {% set link='svg/'+ workshop.logo + '.njk' %}
-              {% include link %}
-            </div>
+
+            {% set workshop_logo = workshop.data.tags[0] %}
+            {% if workshop_logo %}
+              <div class="tech-cards__logo {{ workshop_logo }}">
+                {% set link='svg/'+ workshop_logo + '.njk' %}
+                {% include link %}
+              </div>
+            {% endif %}
             <div class="card__content">
-              {% if workshop.title %}
-                <p class="h4 mb-015" aria-hidden="true">{{ workshop.title }}</p>
-              {% endif %}
-              {% if workshop.link %}
-                <div class="card__link-wrapper">
-                  <p class="caption">Learn more</p>
-                  <span class="card__link-arrow">{% include 'svg/arrow.njk' %}</span>
-                </div>
-              {% endif %}
+              <p class="tech-cards__title mb-015 h4">{{ workshop.data.title }}</p>
+
+              <div class="card__link-wrapper">
+                <p class="caption">Learn more</p>
+                <span class="card__link-arrow">{% include 'svg/arrow.njk' %}</span>
+              </div>
             </div>
           </div>
         {% endfor %}
