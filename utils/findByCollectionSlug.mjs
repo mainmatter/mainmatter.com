@@ -4,7 +4,7 @@
  * @param {string} slug The post slug to look up.
  * @return {Object} An eleventy collection item.
  */
-export default function findByCollectionSlug(collection, slug) {
+export function findByCollectionSlug(collection, slug) {
   if (!collection) {
     throw new Error("collection is not defined");
   }
