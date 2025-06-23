@@ -525,7 +525,9 @@
         "mainmatter/ember-formatjs",
         "ember-cli/update-blueprint-deps",
         "emberjs/ember-inspector",
-        "ember-intl/ember-intl"
+        "ember-intl/ember-intl",
+        "NetrunnerDB/NRDBv2",
+        "yapplabs/ember-wormhole"
       ]
     },
     {
@@ -660,10 +662,11 @@
     "mainmatter/svelte",
     "mainmatter/tailwindcss.com",
     "thedaviddias/Front-End-Performance-Checklist",
-    "paoloricciuti/rccl.ink"
+    "paoloricciuti/rccl.ink",
+    "paoloricciuti/ricciuti.me"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2025-06-08..2025-06-15",
+  "last_date": "2025-06-15..2025-06-22",
   "query_type": "Merged"
 }
