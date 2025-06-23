@@ -109,8 +109,7 @@
         "paoloricciuti/sveltekit-server-islands",
         "paoloricciuti/bsky-svelte-feed",
         "pngwn/MDsveX",
-        "mainmatter/svelte-custom-renderers",
-        "paoloricciuti/ricciuti.me"
+        "mainmatter/svelte-custom-renderers"
       ]
     },
     {
