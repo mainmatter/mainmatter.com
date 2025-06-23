@@ -6,7 +6,7 @@ bio: "Bartlomiej Dudzik, Software Developer"
 description: "A technical overview of Whirlwind Chat: learnings from building a browser-based P2P video chat."
 autoOg: true
 customCta: "global/whirlwind-cta.njk"
-tagline: <p>Lessons learned and decisions made behind Whirlwind Chat and its structure.</p>
+tagline: <p>Spontaneous one-on-one conversations are still hard to replicate at online events. We built <a href="https://whirlwind.chat/">Whirlwind Chat</a> to make that easier. It's a simple app for short, peer-to-peer video chats. You join a group then get matched with others for 2-minute conversations.</p>
 image: "/assets/images/posts/2025-06-23-introducing-whirlwind/whirlwind-visual.jpg"
 imageAlt: "Smiling and waving geometric shape folks swept by a whirlwind."
 ---
