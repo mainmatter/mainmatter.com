@@ -11,6 +11,8 @@ image: "/assets/images/posts/2025-06-23-introducing-whirlwind/whirlwind-visual.j
 imageAlt: "Smiling and waving geometric shape folks swept by a whirlwind."
 ---
 
+## What is Whirlwind Chat
+
 Spontaneous one-on-one conversations are still hard to replicate at online events. We built [Whirlwind Chat](https://whirlwind.chat/) to make that easier. It's a simple app for short, peer-to-peer video chats. You join a group then get matched with others for 2-minute conversations.
 
 This post is to provide a technical overview for a video chat application [Whirlwind Chat](https://whirlwind.chat/) which we've made, as well as give an insight into some of the more interesting parts and the intentions behind them.
