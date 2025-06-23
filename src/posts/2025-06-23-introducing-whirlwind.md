@@ -27,9 +27,9 @@ The actual video and audio data never touch our servers. Everything flows direct
 
 ## The backend
 
-The backend is written in [Rust](/rust-consulting/) using [Axum](https://docs.rs/axum/latest/axum/). It's into two parts: a web server and a Supervisor that spawns session servers on demand.
+The backend is written in [Rust](/rust-consulting/) using [Axum](https://docs.rs/axum/latest/axum/). It's split into two parts: a web server and a Supervisor that spawns session servers on demand.
 
-It relies on PostgreSQL as a persistence layer for user records and the Cloudflare Realtime service. The Cloudflare Realtime service provides STUN/TURN servers for WebRTC, which are what allows devices to discover each other and establish a direct connection. Most connections will work well by utilizing only the STUN server, which essentially help finding a "path" to the other device and once it does the devices can use that information to connect. This doesn't work always however, when one of the devices is behind a hardened network that uses a hardened firewall or a more restrictive NAT, then a direct connection likely won't be possible - and here's where TURN servers come in. TURN servers are relays that transmit data between users.
+It relies on PostgreSQL as a persistence layer for user records and the Cloudflare Realtime service. The Cloudflare Realtime service provides STUN and TURN servers for WebRTC, which allow devices to discover each other and establish a direct connection. Most connections will work well by utilizing only the STUN server, which essentially help finding a "path" to the other device and once it does the devices can use that information to connect. This doesn't always work. If one of the devices is behind a firewall or a restrictive NAT, then a direct connection likely won't be possible - and that's when TURN servers come in. TURN servers are relays that transmit data between users.
 
 The web server handles:
 
@@ -92,9 +92,9 @@ To power the background blur feature, we use TensorFlow.js together with BodyPix
 
 While integration was relatively straightforward, applying it to a real-time video call presented a few challenges in the context of WebRTC.
 
-- The person segmentation model is quite heavy and ideally is sideloaded
-- Video processing is pretty heavy on CPU and so we needed a way to limit how often segmentation runs using `requestAnimationFrame` and then limit it further by pegging it to the video stream fps by counting how much time has elapsed between draws. Current frequency is `1000ms / 30fps` .
-- It requires swapping out a `video` element with a `canvas` element when blur is toggled on. Video element must be kept in the background and overlayed with `canvas` because it’s still the video camera and audio source.
+- The person segmentation model is quite large and should ideally be sideloaded rather than bundled.
+- Video processing is pretty heavy on CPU. We needed a way to limit how often segmentation runs using `requestAnimationFrame` and then limit it further by pegging it to the video frame rate by counting how much time has elapsed between draws. The current frequency is `1000ms / 30fps`.
+- It requires swapping out a `video` element with a `canvas` element when blur is toggled on. The video element must be kept in the background and overlayed with `canvas` because it remains the video camera and audio source.
 - Video processing sometimes throws errors that’d typically stop blur from functioning. When that happens, we’re restarting the process.
 
 One of the trickiest problems was deciding which video track to send to the peer. We wanted to avoid adding extra metadata to describe the current stream. WebRTC provides a `replaceTrack` API, but calling it too frequently can cause the connection to stop transmitting video. To avoid that, we debounce the blur toggle (i.e. wait briefly before applying the change) so that track switching only happens once the user has made a final decision.
