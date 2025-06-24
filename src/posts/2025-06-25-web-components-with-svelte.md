@@ -299,3 +299,5 @@ How? Well, this would require far more words than this blog post can contain wit
 # Conclusion
 
 Web Components are a really powerful feature of the Platform™, but they really didn't gain much traction because of how much more maintainable it is to write your components with a framework... but sometimes they can be the right solution, and I absolutely love the fact that Svelte allows you to build them in the same simple way with just a bit of configuration.
+
+P.S. Huge and necessary shout-out to Theodore Steiner, fellow Svelte ambassador who presented a talk about Svelte and Web Components at [last Svelte Summit](https://www.youtube.com/watch?v=lDWfdfTH3e8) and is also providing the Svelte community with a lot of tools to more easily build Web Components with Svelte!
