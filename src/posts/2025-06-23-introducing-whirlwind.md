@@ -91,7 +91,7 @@ To power the background blur feature, we use [TensorFlow.js](https://www.tensorf
 While integration was relatively straightforward, applying it to a real-time video call presented a few challenges in the context of WebRTC.
 
 - The person segmentation model is quite large and should ideally be sideloaded rather than bundled.
-- Video processing is pretty heavy on CPU. We needed a way to limit how often segmentation runs using `requestAnimationFrame` and then limit it further by pegging it to the video frame rate by counting how much time has elapsed between draws. The current frequency is `1000ms / 30fps`.
+- Video processing is pretty heavy on the CPU. We needed a way to throttle segmentation using `requestAnimationFrame`, then we limited it further by skipping updates when the interval between frames was too short. This keeps segmentation close to a frame rate of 30 FPS.
 - It requires swapping out a `video` element with a `canvas` element when blur is toggled on. The video element must be kept in the background and overlayed with `canvas` because it remains the video camera and audio source.
 - Video processing sometimes throws errors that’d typically stop blur from functioning. When that happens, we’re restarting the process.
 
