@@ -15,7 +15,7 @@ imageAlt: "Smiling and waving geometric shape folks swept by a whirlwind."
 
 This post is to provide a technical overview of Whirlwind, as well as give an insight into some of the more interesting parts and the intentions behind them.
 
-![A screenshot showcasing how Whirlwind Chat looks like on mobile](/assets/images/posts/2025-06-23-introducing-whirlwind/mobile-screenshot.png)
+![A screenshot showcasing how Whirlwind Chat looks like on mobile](/assets/images/posts/2025-06-23-introducing-whirlwind/screenshot.png)
 
 ## The Core: Rust, SvelteKit, and WebRTC
 
@@ -58,7 +58,7 @@ A large part of Whirlwind’s functionality relies on WebSocket connections. The
 
 The WebSocket connection is managed as a `tokio::task` spawned by Axum. When a user connects to a `Lobby`, the handler also takes ownership of an `InMemoryHandle`, a message-passing interface for reading and writing lobby state via an actor-style model using `oneshot` channels.
 
-The WebSocket task can't interact with the rest of the system on its own. To do that, it spawns additional tasks and channels. It creates a `mailbox` (the sending side of an `mpsc` channel) and registers it with `InMemory`, allowing the lobby and other users to send messages to this user. It also sets up a `queue` channel that collects messages from multiple sources and forwards them to the client.
+The WebSocket task can't interact with the rest of the system on its own. To do that, it spawns additional tasks and channels. It creates a `mailbox` and registers it with `InMemory`, allowing the lobby and other users to send messages to this user. It also sets up a `queue` channel that collects messages from multiple sources and forwards them to the client.
 
 Messages sent to a user can be triggered by their own actions (such as sending a Ready message) or by external events (like another user joining). For example, when someone joins the lobby, all connected users receive a LobbyStatus message from the session server.
 
@@ -102,3 +102,11 @@ One of the trickiest problems was deciding which video track to send to the peer
 This was one of our favorite challenges. WebRTC does not provide a simple API to tell whether the connection is working and video is actually being delivered to the peer. You can see your own camera feed just fine, but the person on the other end might not be receiving anything.
 
 Luckily, WebRTC does provide connection statistics through the `getStats` method on the `RTCPeerConnection object`. We use this to monitor the video channel and look at the `framesReceived` count in each report. If the number of frames received stays low for several seconds, we assume the connection is stalled and we call restartIce to force renegotiation between peers. This often fixes problems caused by codec mismatches, connection drops, or switching networks during a call.
+
+## Conclusion
+
+A proof-of-concept we'd built before making Whirlwind Chat made it seem like building the actual thing would be effortless, after all, we'd already figured out how to connect two devices, right? That was the case until we discovered cross-platform and cross-browser issues with things like codecs and device reporting. Even though WebRTC is great, supporting multiple operating systems and browsers can still be challenging.
+
+Things like designing an `ApplicationSupervisor` architecture and managing WebSocket connections with multiple message sources weren't immediately obvious either.
+
+Ultimately, solving all those challenges was great fun and a great learning experience!
