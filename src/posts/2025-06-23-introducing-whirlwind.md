@@ -11,8 +11,6 @@ image: "/assets/images/posts/2025-06-24-introducing-whirlwind/whirlwind-visual.j
 imageAlt: "Smiling and waving geometric shape folks swept by a whirlwind."
 ---
 
-## What is Whirlwind Chat
-
 This post is to provide a technical overview of Whirlwind, as well as give an insight into some of the more interesting parts and the intentions behind them.
 
 ![A screenshot showcasing how Whirlwind Chat looks like on mobile](/assets/images/posts/2025-06-24-introducing-whirlwind/screenshot.png)
