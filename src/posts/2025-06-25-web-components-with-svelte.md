@@ -105,7 +105,7 @@ class CounterComponent extends HTMLElement {
       }
     );
     const style = document.createElement("style");
-    // we can just reference `button` since all the styles will be "trapped" in the shadow DOM
+    // we can just reference `button` since all the styles will be "encapsulated" in the shadow DOM
     style.innerHTML = `button{
 	all: unset;
 	border-radius: 100vmax;
