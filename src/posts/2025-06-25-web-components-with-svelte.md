@@ -292,10 +292,10 @@ Once again, here's a [Svelte playground](https://svelte.dev/playground/e309ec57a
 
 ## Where do we go from here?
 
-I can already hear a question building up in your mind...what even is the point of all this? Why would I build a Web Component with Svelte if I could just use the Svelte component as a Svelte component? Well, the nice thing about web components is that they are effectively framework agnostic...if you build your Svelte project as a library and install it in your React project you can effectively start using Svelte in your legacy-different-framework project TODAY!
+I can already hear a question building up in your mind... what even is the point of all this? Why would I build a Web Component with Svelte if I could just use the Svelte component as a Svelte component? Well, the nice thing about Web Components is that they are effectively framework agnostic... if you build your Svelte project as a library and install it in your React project, you can effectively start using Svelte in your legacy-different-framework project TODAY!
 
-How? Well this would require far more words than this blog post can contain without it being too long but I have a good news for you: we are organizing [a workshop](https://ti.to/mainmatter/svelte-without-svelte-july-2025) that is fully focused on how to use Svelte in your non Svelte project...we will go over how to build effective Web Component, how to build a library out of them but also how to use Svelte next to your React app as is without the need to build a Web Component library first.
+How? Well, this would require far more words than this blog post can contain without it being too long, but I have good news for you: we are organizing [a workshop](https://ti.to/mainmatter/svelte-without-svelte-july-2025) that is fully focused on how to use Svelte in your non-Svelte project... we will go over how to build effective Web Components, how to build a library out of them, but also how to use Svelte next to your React app as is without the need to build a Web Component library first.
 
-# Conclusions
+# Conclusion
 
-Web Components are a really powerful feature of the Platform™ but they really didn't gain much traction because of how much more maintainable is to write your Components with a framework...but sometimes they can be the right solution and I absolutely love the fact that Svelte allows you to build them in the same simple way with just a bit of configuration.
+Web Components are a really powerful feature of the Platform™, but they really didn't gain much traction because of how much more maintainable it is to write your components with a framework... but sometimes they can be the right solution, and I absolutely love the fact that Svelte allows you to build them in the same simple way with just a bit of configuration.
