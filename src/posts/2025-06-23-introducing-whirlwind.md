@@ -7,7 +7,7 @@ description: "A technical overview of Whirlwind Chat: learnings from building a 
 autoOg: true
 customCta: "global/whirlwind-cta.njk"
 tagline: <p>Spontaneous one-on-one conversations are still hard to replicate at online events. We built <a href="https://whirlwind.chat/">Whirlwind Chat</a> to make that easier. It's a simple app for short, peer-to-peer video chats. You join a group, then get matched with others for 2-minute conversations.</p>
-image: "/assets/images/posts/2025-06-23-introducing-whirlwind/whirlwind-visual.jpg"
+image: "/assets/images/posts/2025-06-24-introducing-whirlwind/whirlwind-visual.jpg"
 imageAlt: "Smiling and waving geometric shape folks swept by a whirlwind."
 ---
 
@@ -15,7 +15,7 @@ imageAlt: "Smiling and waving geometric shape folks swept by a whirlwind."
 
 This post is to provide a technical overview of Whirlwind, as well as give an insight into some of the more interesting parts and the intentions behind them.
 
-![A screenshot showcasing how Whirlwind Chat looks like on mobile](/assets/images/posts/2025-06-23-introducing-whirlwind/screenshot.png)
+![A screenshot showcasing how Whirlwind Chat looks like on mobile](/assets/images/posts/2025-06-24-introducing-whirlwind/screenshot.png)
 
 ## The Core: Rust, SvelteKit, and WebRTC
 
@@ -50,7 +50,7 @@ Lobby servers don’t run continuously. They are spawned on demand as users join
 
 Another function of a Supervisor is to provide an access to the internal state of a given lobby. We rely on this mechanism internally for owner actions which are regular HTTP calls instead of WebSocket messages. This helps with avoiding re-implementing request/response and authentication mechanisms in a WebSocket connection, ultimately making things simpler by reusing well established HTTP practices.
 
-![Server structure quick overview](/assets/images/posts/2025-06-23-introducing-whirlwind/server-structure.png)
+![Server structure quick overview](/assets/images/posts/2025-06-24-introducing-whirlwind/server-structure.png)
 
 ### WebSockets
 
@@ -62,7 +62,7 @@ The WebSocket task can't interact with the rest of the system on its own. To do 
 
 Messages sent to a user can be triggered by their own actions (such as sending a Ready message) or by external events (like another user joining). For example, when someone joins the lobby, all connected users receive a LobbyStatus message from the session server.
 
-![WebSocket communication flow](/assets/images/posts/2025-06-23-introducing-whirlwind/websocket-overview.png)
+![WebSocket communication flow](/assets/images/posts/2025-06-24-introducing-whirlwind/websocket-overview.png)
 
 ### Testing
 
@@ -82,7 +82,7 @@ The hard part wasn't building the interface, it was making it work reliably acro
 
 We also had to handle stream negotiation, dynamic device selection, and failure cases where the camera or microphone is missing, is in use elsewhere, or blocked. An optional background blur feature added one more layer of complexity by having to juggle multiple video streams and elements, which is more tricky than it sounds.
 
-![WebRTC overview](/assets/images/posts/2025-06-23-introducing-whirlwind/webrtc-overview.png)
+![WebRTC overview](/assets/images/posts/2025-06-24-introducing-whirlwind/webrtc-overview.png)
 
 ### Background Blur with Tensorflow
 
