@@ -74,7 +74,7 @@ layout: "base"
           <div class="author__details mt-3 author__details--full-width">
             <p>
               {% if lead.bio %}
-                {{ lead.bio }}
+                {{ lead.bio | safe }}
               {% else %}
                 {{ author.data.longBio | safe }}
               {% endif %}
