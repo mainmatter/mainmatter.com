@@ -16,7 +16,7 @@ When I started learning HTML, I was quite fascinated by how a simple `<marquee>`
 
 <marquee>Come on! Isn't this cool?</marquee>
 
-But especially when I started building for the web, there weren't that many cool tags: for instance, `<input type="date" />` was not a thing back then, and the number of people who actually **surfed the web** (gosh, I miss the times when the web had all these cool words... I'll secretly continue to call myself a Web Master until the doom of humanity) explicitly disabling JavaScript was a concern to have.
+But especially when I started building for the web, there weren't that many cool tags: for instance, `<input type="date" />` was not a thing back then, and the number of people who actually **surfed the web** with JavaScript explicitly disabled was a concern to have (gosh, I miss the times when the web had all these cool words like **surfing the web**... I'll secretly continue to call myself a Web Master until the doom of humanity).
 
 Over the years, CSS and HTML became more and more powerful, and nowadays we can do things that weren't even imaginable 18 years ago. When I got back into web development from my detour into photography, I started exploring the space again. One of the first things I learned was about this pretty new API available in browsers: the [Web Components API](https://developer.mozilla.org/en-US/docs/Web/API/Web_components)!
 
@@ -80,7 +80,7 @@ class CounterComponent extends HTMLElement {
       this.#preSentence = new_value;
     }
     // this callback can be called before the connectedCallback if the attribute
-    // is present when it's mounted so we need to check if btn is there before mounting
+    // is present when it's mounted, so we need to check if btn is there before updating
     if (this.#btn) {
       this.#btn.textContent = `${this.#preSentence} ${this.#count}`;
     }
@@ -176,7 +176,7 @@ $.create_custom_element(Empty, {}, [], [], true);
 
 I bet you can guess which line we are interested in! 😄
 
-The `create_custom_element` function receives the Svelte component as input (and a series of arguments we will explore later) and wraps it with a class that handles all the annoying bits for you. However, it doesn't define a custom element for you unless you specify the tag name with `<svelte:options customElement="my-tag" />` in your component. However, you can find the class on the `element` property of the function, which means that if you want, you can use the Svelte component just as a Svelte component, but if you want to use it as a custom element, you can manually register it as you want like this:
+The `create_custom_element` function receives the Svelte component as input (and a series of arguments we will explore later) and wraps it with a class that handles all the annoying bits for you. However, it doesn't define a custom element for you unless you specify the tag name with `<svelte:options customElement="my-tag" />` in your component. However, you can find the class on the `element` property of the function, which means that if you want, you can use the Svelte component just as a Svelte component, but if you want to use it as a custom element, you can manually register it as you like:
 
 ```ts
 import Empty from "./Empty.svelte";
@@ -290,14 +290,17 @@ As you can see, Svelte created getters and setters for our props so that we can 
 
 Once again, here's a [Svelte playground](https://svelte.dev/playground/e309ec57a14d4c11aa3edf1934fb3670?version=5.34.7) if you want to play around with it. (Unfortunately, based on how the playground doesn't refresh the page and how you can't redefine the same custom element twice, you'll need to refresh the page if you want to make a change to the code 🤷🏻‍♂️)
 
-## Where do we go from here?
+## So... are Web Components the future?
 
-I can already hear a question building up in your mind... what even is the point of all this? Why would I build a Web Component with Svelte if I could just use the Svelte component as a Svelte component? Well, the nice thing about Web Components is that they are effectively framework agnostic... if you build your Svelte project as a library and install it in your React project, you can effectively start using Svelte in your legacy-different-framework project TODAY!
+Well... unfortunately no: as we've seen, Web Components are pretty powerful and they are getting even more powerful with the addition of [Declarative Shadow DOM](https://web.dev/articles/declarative-shadow-dom), but they are not short of pitfalls:
 
-How? Well, this would require far more words than this blog post can contain without it being too long, but I have good news for you: we are organizing [a workshop](https://ti.to/mainmatter/svelte-without-svelte-july-2025) that is fully focused on how to use Svelte in your non-Svelte project... we will go over how to build effective Web Components, how to build a library out of them, but also how to use Svelte next to your React app as is without the need to build a Web Component library first.
+- They require JavaScript, which means that if you don't build them following a certain design pattern (they should basically be used as a wrapper to add interactivity to an already present and styled DOM), they will "pop" into existence causing layout shift.
+- Following along with the previous point, they can't be server-side rendered (although there's been some experimentation on this... you can learn more about this from fellow Svelte ambassador Theodor Steiner who presented a talk about Svelte and Web Components at [last Svelte Summit](https://www.youtube.com/watch?v=lDWfdfTH3e8) and is also providing the Svelte community with a [lot of tools](https://github.com/svebcomponents/svebcomponents) to more easily build Web Components with Svelte).
+- Passing any "complex" prop to them (everything that is not a literal value) requires you to `JSON.stringify` them 😬
+- Bundle size could also be hard to optimize since each Web Component will need the Svelte runtime to work (this will be less problematic if you build your component library in one single package).
+
+So while, to this day, it's still better to use a framework to build the majority of your application, if you can't wait to use Svelte in your React project or you want to build some self-contained component that you want to be able to just drop in every project of yours, then Web Components could be the right solution.
 
 # Conclusion
 
 Web Components are a really powerful feature of the Platform™, but they really didn't gain much traction because of how much more maintainable it is to write your components with a framework... but sometimes they can be the right solution, and I absolutely love the fact that Svelte allows you to build them in the same simple way with just a bit of configuration.
-
-P.S. Huge and necessary shout-out to Theodor Steiner, fellow Svelte ambassador who presented a talk about Svelte and Web Components at [last Svelte Summit](https://www.youtube.com/watch?v=lDWfdfTH3e8) and is also providing the Svelte community with a [lot of tools](https://github.com/svebcomponents/svebcomponents) to more easily build Web Components with Svelte!
