@@ -64,7 +64,7 @@ Messages sent to a user can be triggered by their own actions (such as sending a
 
 ### Testing
 
-Whirlwind Chat is an application where 90% of the work and functionality happens in the WebSockets. As such it requires a different testing approach that’s more similar to testing Evented systems rather than an HTTP API.
+Whirlwind Chat is an application where most of the functionality takes place in the WebSocket connections. As such it requires a different testing approach that’s more similar to testing evented systems rather than an HTTP API.
 
 Each test runs a full server instance, bound to a random port with its own database and configuration. This keeps tests isolated, allows them to run in parallel, and supports custom matchmaking configurations.
 
