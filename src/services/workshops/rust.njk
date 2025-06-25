@@ -25,75 +25,23 @@ image: "/assets/images/workshops/rust-og-image.jpg"
 %}
 {{ colorHero('aqua', content) }}
 {%
-  set 'workshop_1' = {
-  "eyebrow": "Bookable for teams",
-  "title": "Learn Rust, starting from scratch",
-  "logo": "rust",
-  "link": "services/workshops/learn-rust-starting-from-scratch/"
-  }
+  set workshops = [
+    collections.workshops | findByCollectionSlug("learn-rust-starting-from-scratch"),
+    collections.workshops | findByCollectionSlug("rust-python-interoperability"),
+    collections.workshops | findByCollectionSlug("an-introduction-to-testing-in-rust"),
+    collections.workshops | findByCollectionSlug("advanced-testing-in-rust"),
+    collections.workshops | findByCollectionSlug("telemetry-for-rust-apis"),
+    collections.workshops | findByCollectionSlug("foundations-of-embedded-rust"),
+    collections.workshops | findByCollectionSlug("introduction-to-rust-for-web-developers"),
+    collections.workshops | findByCollectionSlug("build-production-ready-apis-in-rust")
+  ]
 %}
-{%
-  set 'workshop_2' = {
-  "eyebrow": "Bookable for teams",
-  "title": "Rust-Python Interoperability",
-  "logo": "rust",
-  "link": "services/workshops/rust-python-interoperability/"
-  }
-%}
-{%
-  set 'workshop_3' = {
-  "eyebrow": "Bookable for teams",
-  "title": "Testing in Rust: an introduction",
-  "logo": "rust",
-  "link": "services/workshops/an-introduction-to-testing-in-rust/"
-  }
-%}
-{%
-  set 'workshop_4' = {
-  "eyebrow": "Bookable for teams",
-  "title": "Testing in Rust: going beyond the basics",
-  "logo": "rust",
-  "link": "services/workshops/advanced-testing-in-rust/"
-  }
-%}
-{%
-  set 'workshop_5' = {
-  "eyebrow": "Bookable for teams",
-  "title": "You can't fix what you can't see: telemetry for Rust APIs",
-  "logo": "rust",
-  "link": "services/workshops/telemetry-for-rust-apis/"
-  }
-%}
-{%
-  set 'workshop_6' = {
-  "eyebrow": "Bookable for teams",
-  "title": "Foundations of Embedded Rust",
-  "logo": "rust",
-  "link": "services/workshops/foundations-of-embedded-rust/"
-  }
-%}
-{%
-  set 'workshop_7' = {
-  "eyebrow": "Bookable for teams",
-  "title": "Introduction to Rust for Web Developers",
-  "logo": "rust",
-  "link": "services/workshops/introduction-to-rust-for-web-developers/"
-  }
-%}
-{%
-  set 'workshop_8' = {
-  "eyebrow": "Bookable for teams",
-  "title": "Build production-ready API services in Rust",
-  "logo": "rust",
-  "link": "services/workshops/build-production-ready-apis-in-rust/"
-  }
-%}
-{% set workshops = [workshop_1, workshop_2, workshop_3, workshop_4, workshop_5, workshop_6, workshop_7, workshop_8] %}
 {{
   workshopsList('Our training offering', 'We teach Rust across a range of use-cases: API services, workers, data pipelines, native extensions, WASM, and more.
   We can walk alongside you on a journey from zero to hero,
   starting from the basics of the language all the way to advanced testing techniques and comprehensive
-  telemetry instrumentation.', workshops)
+  telemetry instrumentation.
+  <h2 class="tech-cards__title">Workshops Catalog</h2>', workshops)
 }}
 {% set futurePublicWorkshops = publicRustWorkshops.workshops | upcoming %}
 {{ publicWorkshops(futurePublicWorkshops) }}

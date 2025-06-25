@@ -1,5 +1,5 @@
 ---
-title: "Svelte Without Svelte"
+title: "Svelte without Svelte"
 tags: "svelte"
 format: "Workshop: 1 day"
 subtext: "Bookable for teams – on-site or remote"
