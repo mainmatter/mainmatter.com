@@ -103,8 +103,8 @@ Luckily, WebRTC does provide connection statistics through the `getStats` method
 
 ## Conclusion
 
-A proof-of-concept we'd built before making Whirlwind Chat made it seem like building the actual thing would be effortless, after all, we'd already figured out how to connect two devices, right? That was the case until we discovered cross-platform and cross-browser issues with things like codecs and device reporting. Even though WebRTC is great, supporting multiple operating systems and browsers can still be challenging.
+The proof of concept we initially built made it seem like building the full Whirlwind Chat app would be straightforward. After all, we had already figured out how to connect two devices, right? That held up until we ran into cross-platform and cross-browser issues, including codec differences and inconsistent device reporting. Even though WebRTC is great, supporting multiple operating systems and browsers can still be challenging.
 
-Things like designing an `ApplicationSupervisor` architecture and managing WebSocket connections with multiple message sources weren't immediately obvious either.
+Designing the `ApplicationSupervisor` architecture and managing WebSocket connections with multiple message sources also presented challenges that weren't immediately obvious.
 
-Ultimately, solving all those challenges was great fun and a great learning experience!
+Ultimately, solving these challenges was fun and pushed us to solve tough problems across Rust, SvelteKit, and WebRTC. If you're building in any of those areas, [we’d love to help](https://mainmatter.com/contact/). In the meantime, [give Whirlwind Chat a try](https://whirlwind.chat)!
