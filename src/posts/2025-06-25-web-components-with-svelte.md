@@ -294,8 +294,8 @@ Once again, here's a [Svelte playground](https://svelte.dev/playground/e309ec57a
 
 Well... unfortunately no: as we've seen, Web Components are pretty powerful and they are getting even more powerful with the addition of [Declarative Shadow DOM](https://web.dev/articles/declarative-shadow-dom), but they are not short of pitfalls:
 
-- They require JavaScript, which means that if you don't build them following a certain design pattern (they should basically be used as a wrapper to add interactivity to an already present and styled DOM), they will "pop" into existence causing layout shift.
-- Following along with the previous point, they can't be server-side rendered (although there's been some experimentation on this... you can learn more about this from fellow Svelte ambassador Theodor Steiner who presented a talk about Svelte and Web Components at [last Svelte Summit](https://www.youtube.com/watch?v=lDWfdfTH3e8) and is also providing the Svelte community with a [lot of tools](https://github.com/svebcomponents/svebcomponents) to more easily build Web Components with Svelte).
+- They require JavaScript, which means that if you don't build them following a certain design pattern, they might "pop" into existence as they mount, causing layout shift.
+- They can't be server-side rendered, unless carefully built to support server-side rendering. Although there's been some experimentation on this... you can learn more about this from fellow Svelte ambassador Theodor Steiner who presented a talk about Svelte and Web Components at [last Svelte Summit](https://www.youtube.com/watch?v=lDWfdfTH3e8) and is also providing the Svelte community with a [lot of tools](https://github.com/svebcomponents/svebcomponents) to more easily build Web Components with Svelte.
 - Passing any "complex" prop to them (everything that is not a literal value) requires you to `JSON.stringify` them 😬
 - Bundle size could also be hard to optimize since each Web Component will need the Svelte runtime to work (this will be less problematic if you build your component library in one single package).
 
