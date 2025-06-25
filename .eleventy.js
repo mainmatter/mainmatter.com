@@ -133,9 +133,8 @@ module.exports = async function (eleventyConfig) {
       .sort((a, b) => Date.parse(a.startDate) - Date.parse(b.startDate));
   });
 
-  eleventyConfig.addFilter("getAuthor", (authors, label) => {
-    let author = authors.filter(a => a.key === label)[0];
-    return author;
+  eleventyConfig.addFilter("getAuthor", (authors, handle) => {
+    return authors.find(a => a.fileSlug === handle);
   });
 
   /*

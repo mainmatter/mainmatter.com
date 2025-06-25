@@ -43,22 +43,12 @@ topics:
 
 
 leads:
-  - name: Chris Manson
-    title: Senior Engineering Consultant
-    handle: real_ate
-    authorHandle: real_ate
-    image: /assets/images/authors/real_ate.jpg
+  - handle: real_ate
     bio: >
       Chris has had a long history with version control systems, with his very first Open Source experience being involved in the transition of the massive KDE codebase from CVS to Git. These days Chris is deeply involved in the JAM Stack movement, giving him a new outlet for his love for Git.
 
 
-  - name: Marco Otte-Witte
-    title: Founder and Managing Director at Mainmatter
-    handle: marcoow
-    authorHandle: marcoow
-    image: /assets/images/authors/marcoow.jpg
-    bio: >
-      Marco has been working in tech with startups and enterprises for 2 decades. He's helped companies bring relevant products to market in various industries – among them Blackberry, Generali and Experteer.
+  - handle: marcoow
 ---
 
 <!--break-->

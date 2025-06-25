@@ -54,24 +54,31 @@ layout: "base"
         Your mentor{%- if (leads | default([])).length > 1 -%}s{%- endif -%}
       </h2>
       {%- for lead in leads -%}
+
+        {% set author = collections.authors | getAuthor(lead.handle) %}
+
         <div class="author__wrapper">
           <div class="author">
             <div class="workshop-authors__image-wrapper author__image-wrapper">
-              {% image lead.image, lead.name, '3.75rem', 'eager', 'author__lead-image', [120] %}
+              {% image "/assets/images/authors/" + lead.handle + ".jpg", author.data.name, '3.75rem', 'eager', 'author__lead-image', [120] %}
             </div>
             <div class="author__text-wrapper">
               <div class="author__name-wrapper">
-                <h4 class="author__name">{{ lead.name }}</h4>
-                {% if lead.handle %}
-                  {{ authorSocials(lead.handle) }}
-                {% endif %}
+                <h4 class="author__name">{{ author.data.name }}</h4>
+                {{ authorSocials(lead.handle) }}
               </div>
 
-              <p class="author__title large">{{ lead.title }}</p>
+              <p class="author__title large">{{ author.data.title }}</p>
             </div>
           </div>
           <div class="author__details mt-3 author__details--full-width">
-            <p>{{ lead.bio | safe }}</p>
+            <p>
+              {% if lead.bio %}
+                {{ lead.bio | safe }}
+              {% else %}
+                {{ author.data.longBio | safe }}
+              {% endif %}
+            </p>
           </div>
         </div>
       {%- endfor -%}
