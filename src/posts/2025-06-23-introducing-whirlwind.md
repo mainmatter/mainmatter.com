@@ -95,6 +95,8 @@ While integration was relatively straightforward, applying it to a real-time vid
 
 One of the trickiest problems was deciding which video track to send to the peer. We wanted to avoid adding extra metadata to describe the current stream. WebRTC provides a `replaceTrack` API, but calling it too frequently can cause the connection to stop transmitting video. To avoid that, we debounce the blur toggle (i.e. wait briefly before applying the change) so that track switching only happens once the user has made a final decision.
 
+![A screenshot showcasing background blur functionality](/assets/images/posts/2025-06-24-introducing-whirlwind/blur-screenshot.png)
+
 ### Detecting When a Video Stream Stops Working
 
 This was one of our favorite challenges. WebRTC does not provide a simple API to tell whether the connection is working and video is actually being delivered to the peer. You can see your own camera feed just fine, but the person on the other end might not be receiving anything.
