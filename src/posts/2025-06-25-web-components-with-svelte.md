@@ -301,6 +301,6 @@ Well... unfortunately no: as we've seen, Web Components are pretty powerful and 
 
 So while, to this day, it's still better to use a framework to build the majority of your application, if you can't wait to use Svelte in your React project or you want to build some self-contained component that you want to be able to just drop in every project of yours, then Web Components could be the right solution.
 
-# Conclusion
+## Conclusion
 
 Web Components are a really powerful feature of the Platform™, but they really didn't gain much traction because of how much more maintainable it is to write your components with a framework... but sometimes they can be the right solution, and I absolutely love the fact that Svelte allows you to build them in the same simple way with just a bit of configuration.
