@@ -36,12 +36,7 @@ topics:
 
 
 leads:
-  - name: Stefan Baumgartner
-    title: Architect and Independent Trainer
-    handle: ddprrt
-    image: /assets/images/authors/ddprrt.jpg
-    bio: >
-      Stefan Baumgartner is an architect and developer based in Austria who specializes in serverless technologies. He has authored two books on TypeScript and is also the organizer of the Rust Linz meetup.
+  - handle: ddprrt
 ---
 
 <!--break-->

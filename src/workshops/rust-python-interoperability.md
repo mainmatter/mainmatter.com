@@ -45,13 +45,7 @@ topics:
 
 
 leads:
-  - name: Luca Palmieri
-    title: Principal Engineering Consultant
-    handle: algo_luca
-    image: /assets/images/authors/algo_luca.jpg
-    bio: >
-      Luca Palmieri builds technology products for a living. His current focus is on backend development, software architecture and the Rust programming language. He is the author of "Zero to Production in Rust".
-
+  - handle: algo_luca
 
 quotes:
   - text: "[…] Really enjoyed the training. The approach of self-paced, bit of background reading and including solutions, works for me."
