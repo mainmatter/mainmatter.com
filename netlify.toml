@@ -245,6 +245,11 @@
   to = "https://mainmatter.com/blog/2025/03/11/global-state-in-svelte-5/"
   force = true
 
+# redirect exercises.mainmatter.com to Rust Exercises
+[[redirects]]
+  from = "https://exercises.mainmatter.com/*"
+  to = "https://rust-exercises.com"
+
 # serve 404 for all paths that don't exist
 [[redirects]]
   from = "/*"
