@@ -1,5 +1,5 @@
 ---
-title: "Modern Ember.js Upgrade"
+title: "Modernising your Ember App Development with GJS and Vite"
 tags: "ember"
 format: "Workshop: 2-5 days"
 subtext: "Bookable for teams – on-site or remote"
