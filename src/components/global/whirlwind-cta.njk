@@ -1,0 +1,14 @@
+{#
+A call-to-action meant to be displayed at the bottom of a blog post.
+#}
+{% from "cta-banner.njk" import ctaBanner %}
+{%
+  set content = {
+    "title": "Try Whirlwind Today",
+    "subheading": "Whirlwind is free – start chatting now!",
+    "linkUrl": "https://whirlwind.chat/?utm_source=mainmatter.com",
+    "linkText": "Try Whirlwind",
+    "class": "cta-banner__whirlwind"
+  }
+%}
+{{ ctaBanner('purple', 'default', content) }}
