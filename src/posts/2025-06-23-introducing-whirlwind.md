@@ -52,7 +52,7 @@ Another function of a Supervisor is to provide an access to the internal state o
 
 ### WebSockets
 
-A large part of Whirlwind’s functionality relies on WebSocket connections. These connections are used to notify users of real-time changes (such as state or matches), fast exchange of messages during the WebRTC negotiation, and track whether users are still connected.
+A large part of Whirlwind’s functionality relies on WebSocket connections. These connections are used to notify users of real-time changes (such as state or matches), for fast exchange of messages during the WebRTC negotiation, and to track whether users are still connected.
 
 The WebSocket connection is managed as a `tokio::task` spawned by Axum. When a user connects to a `Lobby`, the handler also takes ownership of an `InMemoryHandle`, a message-passing interface for reading and writing lobby state via an actor-style model using `oneshot` channels.
 
@@ -74,7 +74,7 @@ The Interactions module stores all received messages for later inspection. This 
 
 ## The Frontend
 
-We used [SvelteKit](https://svelte.dev/docs/kit/introduction) for the frontend. It's a good fit for reactive UIs while keeping bundle size to minimum. (At Mainmatter, [we like Svelte and SvelteKit](/svelte-consulting/) because they strike the right balance between developer productivity and building lightweight, performant web apps.)
+We used [SvelteKit](https://svelte.dev/docs/kit/introduction) for the frontend. It's a good fit for reactive UIs while keeping bundle size to a minimum. (At Mainmatter, [we like Svelte and SvelteKit](/svelte-consulting/) because they strike the right balance between developer productivity and building lightweight, performant web apps.)
 
 The hard part wasn't building the interface, it was making it work reliably across all the different browsers, devices, and hardware users bring. Some users join from phones, others from dual-screen desktops. Microphones and cameras vary. Permission prompts behave differently across OS/browser combinations.
 
