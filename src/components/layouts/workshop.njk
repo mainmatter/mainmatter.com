@@ -54,24 +54,31 @@ layout: "base"
         Your mentor{%- if (leads | default([])).length > 1 -%}s{%- endif -%}
       </h2>
       {%- for lead in leads -%}
+
+        {% set author = collections.authors | getAuthor(lead.handle) %}
+
         <div class="author__wrapper">
           <div class="author">
             <div class="workshop-authors__image-wrapper author__image-wrapper">
-              {% image lead.image, lead.name, '3.75rem', 'eager', 'author__lead-image', [120] %}
+              {% image "/assets/images/authors/" + lead.handle + ".jpg", author.data.name, '3.75rem', 'eager', 'author__lead-image', [120] %}
             </div>
             <div class="author__text-wrapper">
               <div class="author__name-wrapper">
-                <h4 class="author__name">{{ lead.name }}</h4>
-                {% if lead.handle %}
-                  {{ authorSocials(lead.handle) }}
-                {% endif %}
+                <h4 class="author__name">{{ author.data.name }}</h4>
+                {{ authorSocials(lead.handle) }}
               </div>
 
-              <p class="author__title large">{{ lead.title }}</p>
+              <p class="author__title large">{{ author.data.title }}</p>
             </div>
           </div>
           <div class="author__details mt-3 author__details--full-width">
-            <p>{{ lead.bio | safe }}</p>
+            <p>
+              {% if lead.bio %}
+                {{ lead.bio | safe }}
+              {% else %}
+                {{ author.data.longBio | safe }}
+              {% endif %}
+            </p>
           </div>
         </div>
       {%- endfor -%}
@@ -117,64 +124,66 @@ layout: "base"
           data-method="get"
           data-goal="Workshop+Contact"
         >
-          <input type="hidden" name="workshop" value="{{ title }}" />
-          <div data-form-content class="contact-form__field cta__input mb-2 mt-2">
-            <input
-              class="contact-form__input"
-              id="name"
-              type="text"
-              name="name"
-              placeholder="Your name"
-              required
-            />
-            <label class="contact-form__label h4" for="name">
-              Your name
-              <span class="screenreader">(Required)</span>
-            </label>
-            <span class="contact-form__label-required" aria-hidden="true">Required</span>
-          </div>
-          <div class="contact-form__field cta__input mb-2 mt-2">
-            <input
-              class="contact-form__input"
-              id="company"
-              type="text"
-              name="company"
-              placeholder="Your company's name"
-            />
-            <label class="contact-form__label h4" for="name"> Your company's name </label>
-          </div>
-          <div class="contact-form__field cta__input mb-2 mt-2">
-            <input
-              class="contact-form__input"
-              id="email"
-              type="email"
-              name="email"
-              placeholder="Your e-mail"
-              required
-            />
-            <label class="contact-form__label h4" for="email">
-              Your e-mail
-              <span class="screenreader">(Required)</span>
-            </label>
-            <span class="contact-form__label-required" aria-hidden="true">Required</span>
-          </div>
-          <div class="contact-form__field">
-            <textarea
-              class="contact-form__input"
-              id="contact-message"
-              name="message"
-              type="text"
-              placeholder="Tell us about your training needs"
-              rows="8"
-            ></textarea>
-            <label class="contact-form__label h4" for="contact-message">
-              Tell us about your training needs
-            </label>
-          </div>
-          <button class="btn-primary btn-primary--white" type="submit">
-            <span>Get in touch</span>
-            {% include 'svg/arrow.njk' %}
-          </button>
+          <fieldset data-form-content tabindex="-1" disabled>
+            <input type="hidden" name="workshop" value="{{ title }}" />
+            <div data-form-content class="contact-form__field cta__input mb-2 mt-2">
+              <input
+                class="contact-form__input"
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+              <label class="contact-form__label h4" for="name">
+                Your name
+                <span class="screenreader">(Required)</span>
+              </label>
+              <span class="contact-form__label-required" aria-hidden="true">Required</span>
+            </div>
+            <div class="contact-form__field cta__input mb-2 mt-2">
+              <input
+                class="contact-form__input"
+                id="company"
+                type="text"
+                name="company"
+                placeholder="Your company's name"
+              />
+              <label class="contact-form__label h4" for="name"> Your company's name </label>
+            </div>
+            <div class="contact-form__field cta__input mb-2 mt-2">
+              <input
+                class="contact-form__input"
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Your e-mail"
+                required
+              />
+              <label class="contact-form__label h4" for="email">
+                Your e-mail
+                <span class="screenreader">(Required)</span>
+              </label>
+              <span class="contact-form__label-required" aria-hidden="true">Required</span>
+            </div>
+            <div class="contact-form__field">
+              <textarea
+                class="contact-form__input"
+                id="contact-message"
+                name="message"
+                type="text"
+                placeholder="Tell us about your training needs"
+                rows="8"
+              ></textarea>
+              <label class="contact-form__label h4" for="contact-message">
+                Tell us about your training needs
+              </label>
+            </div>
+            <button class="btn-primary btn-primary--white" type="submit">
+              <span>Get in touch</span>
+              {% include 'svg/arrow.njk' %}
+            </button>
+          </fieldset>
           <div class="contact-form__status">
             <button class="contact-form__close" data-reset-form>
               {% include 'svg/close.njk' %}

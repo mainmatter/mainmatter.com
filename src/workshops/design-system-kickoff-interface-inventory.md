@@ -43,13 +43,7 @@ topics:
 
 
 leads:
-  - name: Florian Pichler
-    title: Consultant for Technology and Design
-    handle: pichfl
-    authorHandle: pichfl
-    image: /assets/images/authors/pichfl.jpg
-    bio: >
-      Florian bridges the gap between development and design, mentoring clients along the way. He created user experiences and design systems for established brands like Audi, BASF, BMW, and Zurich Insurance.
+  - handle: pichfl
 ---
 
 Interface inventories are a key first step to create alignment and advocate transitioning to using design patterns in an organization. To get the most out of this workshop, bring in a cross-disciplinary team – we encourage people from every department that builds your product to join. Designers, developers, project managers, business owners, QA – are all welcome. These are the benefits of having an interface inventory:

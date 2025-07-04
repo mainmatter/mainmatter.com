@@ -1,24 +1,28 @@
-{%- macro serviceCta(tags) -%}
-  {% if tags %}
-    {% for tag in tags %}
-      {% if tag === "rust" %}
-        {% include "global/rust-cta.njk" %}
-      {% endif %}
-      {% if tag === "svelte" %}
-        {% include "global/svelte-cta.njk" %}
-      {% endif %}
-      {% if tag === "ember" %}
-        {% include "global/ember-cta.njk" %}
-      {% endif %}
-      {% if tag === "git" %}
-        {% include "global/git-workshop-cta.njk" %}
-      {% endif %}
-      {% if tag === "design" %}
-        {% include "global/interface-inventory-workshop-cta.njk" %}
-      {% endif %}
-      {% if tag === "gravity" %}
-        {% include "global/gravity-cta.njk" %}
-      {% endif %}
-    {% endfor %}
+{%- macro serviceCta(tags, customCta) -%}
+  {% if customCta %}
+    {% include customCta %}
+  {% else %}
+    {% if tags %}
+      {% for tag in tags %}
+        {% if tag === "rust" %}
+          {% include "global/rust-cta.njk" %}
+        {% endif %}
+        {% if tag === "svelte" %}
+          {% include "global/svelte-cta.njk" %}
+        {% endif %}
+        {% if tag === "ember" %}
+          {% include "global/ember-cta.njk" %}
+        {% endif %}
+        {% if tag === "git" %}
+          {% include "global/git-workshop-cta.njk" %}
+        {% endif %}
+        {% if tag === "design" %}
+          {% include "global/interface-inventory-workshop-cta.njk" %}
+        {% endif %}
+        {% if tag === "gravity" %}
+          {% include "global/gravity-cta.njk" %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
   {% endif %}
 {%- endmacro -%}

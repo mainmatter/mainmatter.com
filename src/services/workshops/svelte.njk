@@ -7,7 +7,6 @@ og:
 ---
 
 {% from "color-hero.njk" import colorHero %}
-{% from "tech-cards.njk" import techCards %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from "public-workshops.njk" import publicWorkshops %}
@@ -26,50 +25,20 @@ og:
 %}
 {{ colorHero('purple', content) }}
 {%
-  set 'workshop_1' = {
-  "eyebrow": "Bookable for teams",
-  "title": "Svelte & SvelteKit",
-  "logo": "svelte",
-  "link": "services/workshops/svelte-and-sveltekit/"
-  }
+  set workshops = [
+  collections.workshops | findByCollectionSlug("svelte-and-sveltekit"),
+  collections.workshops | findByCollectionSlug("progressive-enhancement-with-sveltekit"),
+  collections.workshops | findByCollectionSlug("testing-svelte-sveltekit-applications"),
+  collections.workshops | findByCollectionSlug("svelte-5-runes"),
+  collections.workshops | findByCollectionSlug("authentication-for-svelte-sveltekit"),
+  collections.workshops | findByCollectionSlug("svelte-without-svelte")
+  ]
 %}
-{%
-  set 'workshop_2' = {
-  "eyebrow": "Bookable for teams",
-  "title": "Progressive Enhancement with SvelteKit",
-  "logo": "svelte",
-  "link": "services/workshops/progressive-enhancement-with-sveltekit/"
-  }
-%}
-{%
-  set 'workshop_3' = {
-  "eyebrow": "Bookable for teams",
-  "title": "Testing Svelte & SvelteKit applications",
-  "logo": "svelte",
-  "link": "services/workshops/testing-svelte-sveltekit-applications/"
-  }
-%}
-{%
-  set 'workshop_4' = {
-  "eyebrow": "Bookable for teams",
-  "title": "Svelte 5 & Runes",
-  "logo": "svelte",
-  "link": "services/workshops/svelte-5-runes/"
-  }
-%}
-{%
-  set 'workshop_5' = {
-  "eyebrow": "Bookable for teams",
-  "title": "Authentication for Svelte & SvelteKit",
-  "logo": "svelte",
-  "link": "services/workshops/authentication-for-svelte-sveltekit/"
-  }
-%}
-{% set workshops = [workshop_1, workshop_2, workshop_3, workshop_4, workshop_5] %}
 {{
   workshopsList('Our training offering', "We are Svelte experts and want others to get the most of it as well. That's why we provide a range of trainings on Svelte and SvelteKit.
   We can get teams up to speed with Svelte from scratch,
-  or help them tackle a range of specific topics.", workshops)
+  or help them tackle a range of specific topics.
+  <h2 class=\"tech-cards__title\">Workshops Catalog</h2>", workshops)
 }}
 {% set futurePublicWorkshops = publicSvelteWorkshops.workshops | upcoming %}
 {{ publicWorkshops(futurePublicWorkshops) }}

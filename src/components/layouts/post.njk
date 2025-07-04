@@ -68,10 +68,10 @@ layout: base
       %}
       {{ imageAspectRatio(imageData, "32/13", "35/19") }}
     {% endif %}
-    {{ serviceCta(tags) }}
+    {{ serviceCta(tags, customCta) }}
     <div class="post">
       <div class="post__content rte container container--lg ">{{ content | safe }}</div>
-      {{ serviceCta(tags) }}
+      {{ serviceCta(tags, customCta) }}
       <nav aria-label="Post Pagination" class="prev-next pagination container container--lg ">
         {% set previous = collections.posts | getPreviousCollectionItem %}
         {% set next = collections.posts | getNextCollectionItem %}

@@ -168,6 +168,10 @@
   to = "/services/workshops/"
 
 [[redirects]]
+  from = "/workshops"
+  to = "/services/workshops/"
+
+[[redirects]]
   from = "/services/team-augmentation-and-training"
   to = "/services/team-reinforcement/"
 
@@ -178,6 +182,14 @@
 [[redirects]]
   from = "/why-simplabs"
   to = "/"
+
+[[redirects]]
+  from = "/ember"
+  to = "/ember-consulting/"
+
+[[redirects]]
+  from = "/svelte"
+  to = "/svelte-consulting/"
 
 [[redirects]]
   from = "/rust"
@@ -196,6 +208,14 @@
   from = "/embroider-initiative"
   to = "/ember-initiative/"
 
+# redirect /svelte-week to July '25 workshops
+[[redirects]]
+  from = "/svelte-week"
+  to = "/events/#svelte-5-and-runes"
+[[redirects]]
+  from = "/svelteweek"
+  to = "/events/#svelte-5-and-runes"
+
 # redirect old "Web-based Services in Rust" landing page to regular workshop
 [[redirects]]
   from = "https://rust-web-services-workshop.mainmatter.com/*"
@@ -209,13 +229,13 @@
 
 # redirect old "Svelte & SvelteKit" landing page to regular workshop
 [[redirects]]
-  from = "https://svelte-sveltekit-workshop.mainmatter.com/"
+  from = "https://svelte-sveltekit-workshop.mainmatter.com/*"
   to = "https://mainmatter.com/services/workshops/svelte-and-sveltekit/"
   force = true
 
 # redirect "Telemetry for Rust applications" landing page to regular workshop
 [[redirects]]
-  from = "https://rust-telemetry-workshop.mainmatter.com/"
+  from = "https://rust-telemetry-workshop.mainmatter.com/*"
   to = "https://mainmatter.com/services/workshops/telemetry-for-rust-apis/"
   force = true
 
@@ -224,6 +244,11 @@
   from = "https://mainmatter.com/blog/2025/02/01/global-state-in-svelte-5/"
   to = "https://mainmatter.com/blog/2025/03/11/global-state-in-svelte-5/"
   force = true
+
+# redirect exercises.mainmatter.com to Rust Exercises
+[[redirects]]
+  from = "https://exercises.mainmatter.com/*"
+  to = "https://rust-exercises.com"
 
 # serve 404 for all paths that don't exist
 [[redirects]]

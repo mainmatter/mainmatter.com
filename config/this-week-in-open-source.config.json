@@ -107,7 +107,9 @@
         "sveltejs/esrap",
         "sveltejs/cli",
         "paoloricciuti/sveltekit-server-islands",
-        "paoloricciuti/bsky-svelte-feed"
+        "paoloricciuti/bsky-svelte-feed",
+        "pngwn/MDsveX",
+        "mainmatter/svelte-custom-renderers"
       ]
     },
     {
@@ -156,7 +158,8 @@
         "empress/guidemaker-default-template",
         "empress/bottled-ember",
         "empress/open-slide",
-        "empress/open-slide-reveal-template"
+        "empress/open-slide-reveal-template",
+        "empress/field-guide-default-template"
       ]
     },
     {
@@ -517,7 +520,14 @@
         "soxhub/ember-scoped-css",
         "mainmatter/css-modules-to-scoped-css",
         "pichfl/smite",
-        "ember-cli/ember-app-blueprint"
+        "ember-cli/ember-app-blueprint",
+        "blogic/ember-ui",
+        "mainmatter/ember-formatjs",
+        "ember-cli/update-blueprint-deps",
+        "emberjs/ember-inspector",
+        "ember-intl/ember-intl",
+        "NetrunnerDB/NRDBv2",
+        "yapplabs/ember-wormhole"
       ]
     },
     {
@@ -652,10 +662,11 @@
     "mainmatter/svelte",
     "mainmatter/tailwindcss.com",
     "thedaviddias/Front-End-Performance-Checklist",
-    "paoloricciuti/rccl.ink"
+    "paoloricciuti/rccl.ink",
+    "paoloricciuti/ricciuti.me"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2025-04-20..2025-04-27",
+  "last_date": "",
   "query_type": "Merged"
 }
