@@ -32,7 +32,8 @@
         "mainmatter/eserde",
         "mainmatter/og-loc",
         "mainmatter/reStations",
-        "tensorzero/tensorzero"
+        "tensorzero/tensorzero",
+        "LukeMathWalker/pavex"
       ]
     },
     {
@@ -109,7 +110,8 @@
         "paoloricciuti/sveltekit-server-islands",
         "paoloricciuti/bsky-svelte-feed",
         "pngwn/MDsveX",
-        "mainmatter/svelte-custom-renderers"
+        "mainmatter/svelte-custom-renderers",
+        "StephenGunn/svelte-component-to-image"
       ]
     },
     {
@@ -667,6 +669,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "",
+  "last_date": "2025-06-29..2025-07-06",
   "query_type": "Merged"
 }
