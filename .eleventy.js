@@ -15,6 +15,7 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const contentParser = require("./utils/transforms/contentParser.js");
 const htmlMinTransform = require("./utils/transforms/htmlmin.js");
 const { findBySlug } = require("./utils/findBySlug");
+const { filterByCollectionTag } = require("./utils/filterByCollectionTag.mjs");
 const { init } = require("./utils/svelteSyntaxHighlight");
 
 /**
@@ -78,6 +79,8 @@ module.exports = async function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("findByCollectionSlug", findByCollectionSlug);
+
+	eleventyConfig.addFilter("filterByCollectionTag", filterByCollectionTag);
 
   eleventyConfig.addFilter("formatTagline", function (tagline) {
     return tagline.split("</p>")[0].replace(/<\/?[^>]+(>|$)/g, "");
