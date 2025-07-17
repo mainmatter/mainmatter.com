@@ -80,7 +80,7 @@ module.exports = async function (eleventyConfig) {
 
   eleventyConfig.addFilter("findByCollectionSlug", findByCollectionSlug);
 
-	eleventyConfig.addFilter("filterByCollectionTag", filterByCollectionTag);
+  eleventyConfig.addFilter("filterByCollectionTag", filterByCollectionTag);
 
   eleventyConfig.addFilter("formatTagline", function (tagline) {
     return tagline.split("</p>")[0].replace(/<\/?[^>]+(>|$)/g, "");
