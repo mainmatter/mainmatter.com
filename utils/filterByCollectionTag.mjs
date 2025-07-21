@@ -1,8 +1,8 @@
-/**
- * Look up a post in a collection by its slug.
+/*
+ * Look up a post in a collection by a specific tag.
  * @param {collection} collection The collection to look in
  * @param {string} tag The post tag to look up.
- * @return {Object} An eleventy collection item.
+ * @return {Array} An array of eleventy collection item.
  */
 export function filterByCollectionTag(collection, tag) {
   if (!collection) {

@@ -12,6 +12,7 @@ event: A event object
   <li
     class="event-card event-card--{{ event.data.color }}"
     data-background-color="{{ event.data.color }}"
+    id="{{ event.data.title | slug }}"
   >
     {% if event.data.hero.image %}
       <div class="card__background-wrapper">

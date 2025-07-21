@@ -1,7 +1,7 @@
 ---
 layout: base
-title: "Svelte Support Subscription | A Direct line to Mainmatter's experts"
-description: "Reach our team on Slack and get 2h of dedicated time per week – whether you need a quick gut check, a deep code review, or a hands-on pairing session, we’re here to help"
+title: "Expert Svelte Support for Your Team, On Demand"
+description: "Unlimited PR reviews, architecture help, and direct access to world-leading Svelte experts — for a fixed monthly price."
 permalink: /svelte-subscription/
 og:
   image: /assets/images/svelte-subscription/og-image.jpg
@@ -18,9 +18,8 @@ og:
 {% from "subscription-signup-form.njk" import subscriptionSignupForm %}
 {%
   set 'content' = {
-  "eyebrow": "A Direct line to Mainmatter's experts",
-  "title": "Svelte Support Subscription",
-  "text": "Get instant access to our svelte experts: whether you need a quick gut check, a deep code review, or a hands-on pairing session, we’re here to help.",
+  "title": "Expert Svelte Support for Your Team, On Demand",
+  "text": "Unlimited PR reviews, architecture help, and direct access to world-leading Svelte experts—for a fixed monthly price.",
   "image": "/assets/images/hero/svelte-subscribe.jpg",
   "alt": "Lifebuoys in a pool",
   "loading": "eager"
@@ -32,19 +31,17 @@ og:
   <div class="split-content no-link">
     <div class="split-content__wrapper">
       <div class="split-content__content">
-        <h5>Instant Support Without Long-term Commitment</h5>
-        <h3 class="split-content__subheading h2">Svelte Expertise on a Monthly Subscription</h3>
+        <h3 class="split-content__subheading h2">Ship Better Svelte Code, Faster</h3>
         <p>
-          Get direct access to our Svelte experts, led by Svelte maintainer
-          <a href="https://github.com/paoloricciuti">Paolo Ricciuti</a>, without the hassle of
-          long-term contracts or hiring delays. With our subscription,
-          <strong class="strong">your team joins our Slack channel</strong> for quick support and
-          gets <strong class="strong">2 hours of dedicated expert time each week</strong> for
-          pairing sessions, code reviews, and technical guidance.
+          Our Svelte experts, led by Svelte maintainer
+          <a href="https://github.com/paoloricciuti">Paolo Ricciuti</a>, review all of your Svelte
+          PRs and are only a Slack message away to answer any question your team runs into. We
+          enable teams to ship faster, with higher quality, resolve blockers, level up juniors, and
+          avoid dead-ends.
         </p>
         {%
           set link = {
-          "label": 'Sign up today for 4.000€ per month, cancel anytime',
+          "label": 'Sign up today for 1.500€ per seat/month, cancel anytime',
           "url": '#signup-subscription'
           }
         %}
@@ -59,33 +56,29 @@ og:
 
 {%
   set 'content' = {
-  "title": "Expert Svelte Support, When You Need It",
-  "subtitle": "We help you tackle your toughest Svelte challenges."
+  "subtitle": "Scale Your Svelte Team Without Hiring"
   }
 %}
 {%
   set 'features' = [{
-  "heading": "Pairing Sessions",
-  "text": "1:1 mentoring from Svelte experts"
+  "heading": "Unlimited PR Reviews",
+  "text": "Ensure code quality, avoid pitfalls, and level up"
   },{
-  "heading": "PR Reviews",
-  "text": "Catch mistakes early and level up your team"
+  "heading": "Private Slack Access",
+  "text": "A direct line to Svelte experts, 24h response time"
   },{
-  "heading": "Whiteboard Sessions",
-  "text": "Make the right decision from the get-go"
+  "heading": "Weekly Dedicated Time",
+  "text": "1h per week for pairing, whiteboard sessions or hiring support"
   },{
-  "heading": "Issue Resolution",
-  "text": "Unblock your team and ship faster"
-  },{
-  "heading": "Interviews",
-  "text": "Hire the right Svelte talent with expert guidance"
+  "heading": "Optional Addons",
+  "text": "On-demand trainings, hands-on delivery support, audits, and more"
   }]
 %}
 {{ featuredServices(features, content) }}
 {%
   set 'content' = {
-  "title": "Signup for our Svelte Support Subscription",
-  "text": "Get direct access to our Svelte experts for <strong class=\"strong\">4.000€ per month</strong>, with no long-term commitment—<strong class=\"strong\">cancel anytime.</strong>",
+  "title": "Sign up for Svelte Expert Support",
+  "text": "Sign up today for <strong class=\"strong\">1.500€ per seat per month<sup>*</sup></strong>, with no long-term commitment—<strong class=\"strong\">cancel anytime.</strong><br><small class=\"small\"><sup>*</sup>20% discount for 10+ seats</small>",
   "kind": "svelte"
   }
 %}
@@ -147,7 +140,7 @@ og:
 {%
   set 'content' = {
   "title": "Sign up",
-  "text": "Sign up today for 4.000€ per month, cancel anytime.",
+  "text": "Sign up today for 1.500€ per seat per month, cancel anytime.",
   "linkUrl": "#signup-subscription",
   "linkText": "Sign up"
   }

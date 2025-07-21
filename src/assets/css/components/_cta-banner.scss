@@ -156,6 +156,19 @@
   }
 }
 
+.cta-banner__svelteWorkshops {
+  .cta-banner__wrapper {
+    padding: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+
+  .cta-banner__text {
+    font-size: 1rem;
+  }
+}
+
 .cta__input {
   min-width: 100%;
 }

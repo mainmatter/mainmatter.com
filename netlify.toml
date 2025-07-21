@@ -208,6 +208,14 @@
   from = "/embroider-initiative"
   to = "/ember-initiative/"
 
+# redirect /svelte-week to July '25 workshops
+[[redirects]]
+  from = "/svelte-week"
+  to = "/events/#svelte-5-and-runes"
+[[redirects]]
+  from = "/svelteweek"
+  to = "/events/#svelte-5-and-runes"
+
 # redirect old "Web-based Services in Rust" landing page to regular workshop
 [[redirects]]
   from = "https://rust-web-services-workshop.mainmatter.com/*"
@@ -236,6 +244,11 @@
   from = "https://mainmatter.com/blog/2025/02/01/global-state-in-svelte-5/"
   to = "https://mainmatter.com/blog/2025/03/11/global-state-in-svelte-5/"
   force = true
+
+# redirect exercises.mainmatter.com to Rust Exercises
+[[redirects]]
+  from = "https://exercises.mainmatter.com/*"
+  to = "https://rust-exercises.com"
 
 # serve 404 for all paths that don't exist
 [[redirects]]
