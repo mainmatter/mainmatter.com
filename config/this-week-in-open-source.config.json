@@ -111,7 +111,9 @@
         "paoloricciuti/bsky-svelte-feed",
         "pngwn/MDsveX",
         "mainmatter/svelte-custom-renderers",
-        "StephenGunn/svelte-component-to-image"
+        "StephenGunn/svelte-component-to-image",
+        "paoloricciuti/tmcp",
+        "paoloricciuti/uri-template-matcher"
       ]
     },
     {
@@ -529,7 +531,8 @@
         "emberjs/ember-inspector",
         "ember-intl/ember-intl",
         "NetrunnerDB/NRDBv2",
-        "yapplabs/ember-wormhole"
+        "yapplabs/ember-wormhole",
+        "mainmatter/ember-multiframework"
       ]
     },
     {
@@ -669,6 +672,6 @@
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "2025-06-29..2025-07-06",
+  "last_date": "2025-07-06..2025-07-13",
   "query_type": "Merged"
 }
