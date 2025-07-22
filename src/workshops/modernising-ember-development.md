@@ -1,11 +1,11 @@
 ---
 title: "Modernising your Ember App Development with GJS and Vite"
 tags: "ember"
-format: "Workshop: 2-5 days"
+format: "Workshop: 2–5 days"
 subtext: "Bookable for teams – on-site or remote"
-description: A 2-5 day workshop in which we teach you how to upgrade any Ember app to the most modern techiques in the Polaris Edition. We introduce you to single-file-components (GJS) and in which we go through a series of stages that each build on one another. Each topic is introduced via an in-depth presentation as well as a small, focussed demo application that illustrates the respective concept in practice.
+description: A 2–5 day workshop in which we teach you how to upgrade any Ember app to the most modern techiques in the Polaris Edition. We introduce you to single-file-components (GJS) and in which we go through a series of stages that each build on one another. Each topic is introduced via an in-depth presentation as well as a small, focussed demo application that illustrates the respective concept in practice.
 introduction:
-  <p>A 2-5 day workshop in which we teach you how to upgrade any Ember app to the most modern techniques in the Polaris Edition. We introduce you to single-file-components (GJS) and walk you through the template-tag-codemod that can upgrade all of your existing Ember templates to GJS.</p>
+  <p>A 2–5 day workshop in which we teach you how to upgrade any Ember app to the most modern techniques in the Polaris Edition. We introduce you to single-file-components (GJS) and walk you through the template-tag-codemod that can upgrade all of your existing Ember templates to GJS.</p>
 
   <p>We also introduce you to the new default blueprint in Polaris that uses Vite by default to build your Ember app, and we walk you through the ember-vite-codemod that should simplify the migration path for your existing Ember apps.</p>
 
