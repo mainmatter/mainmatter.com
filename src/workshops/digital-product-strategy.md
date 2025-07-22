@@ -43,22 +43,8 @@ topics:
 
 
 leads:
-  - name: Florian Pichler
-    title: Consultant for Technology and Design
-    handle: pichfl
-    authorHandle: pichfl
-    image: /assets/images/authors/pichfl.jpg
-    bio: >
-      Florian bridges the gap between development and design, mentoring clients along the way. He created user experiences and design systems for established brands like Audi, BASF, BMW, and Zurich Insurance.
-
-
-  - name: Marco Otte-Witte
-    title: Founder and Managing Director at Mainmatter
-    handle: marcoow
-    authorHandle: marcoow
-    image: /assets/images/authors/marcoow.jpg
-    bio: >
-      Marco has been working in tech with startups and enterprises for 2 decades. He's helped companies bring relevant products to market in various industries – among them Blackberry, Generali and Experteer.
+  - handle: pichfl
+  - handle: marcoow
 ---
 
 <!--break-->

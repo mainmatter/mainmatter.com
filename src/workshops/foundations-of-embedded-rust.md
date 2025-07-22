@@ -55,10 +55,5 @@ topics:
 
 
 leads:
-  - name: Henk Oordt
-    title: Senior Software Engineering Consultant
-    handle: hdoordt
-    image: /assets/images/authors/hdoordt.jpg
-    bio: >
-      Henk is a long time Rust engineer with a diverse background in developing Rust applications and others the trade, and has been writing embedded Rust since the early days. As a member of Rust's <a href="https://github.com/rust-embedded/wg/">embedded working group</a>, Henk works on creating educational content on embedded Rust, such as Rust's Discovery book.
+  - handle: hdoordt
 ---
