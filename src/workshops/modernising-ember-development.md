@@ -12,8 +12,8 @@ introduction:
   <p>This workshop can be tailored, in both length and content, to solve specific challenges that you face in your application so reach out if you would like to discuss the topics you would like to see us cover.</p>
 hero:
   color: purple
-  image: "/assets/images/workshops/hands-on-ember/hands-on-ember-workshop-hero.jpg"
-  imageAlt: "Illustration of Ember JS mascot Zoey on a purple background"
+  image: "/assets/images/workshops/modernising-ember-development/modernising-ember-development-hero.jpg"
+  imageAlt: "Hamster sitting behind a hamster-sized desk"
 
 og:
   image: /assets/images/workshops/hands-on-ember/og-image.jpg
