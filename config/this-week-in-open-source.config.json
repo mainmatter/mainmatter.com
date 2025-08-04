@@ -111,7 +111,9 @@
         "paoloricciuti/bsky-svelte-feed",
         "pngwn/MDsveX",
         "mainmatter/svelte-custom-renderers",
-        "StephenGunn/svelte-component-to-image"
+        "StephenGunn/svelte-component-to-image",
+        "paoloricciuti/tmcp",
+        "paoloricciuti/uri-template-matcher"
       ]
     },
     {
@@ -529,7 +531,8 @@
         "emberjs/ember-inspector",
         "ember-intl/ember-intl",
         "NetrunnerDB/NRDBv2",
-        "yapplabs/ember-wormhole"
+        "yapplabs/ember-wormhole",
+        "mainmatter/ember-multiframework"
       ]
     },
     {
