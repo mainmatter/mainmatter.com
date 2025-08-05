@@ -534,7 +534,9 @@
         "ember-intl/ember-intl",
         "NetrunnerDB/NRDBv2",
         "yapplabs/ember-wormhole",
-        "mainmatter/ember-multiframework"
+        "mainmatter/ember-multiframework",
+        "MinThaMie/rfcs-pipeline",
+        "mainmatter/ember-web-components-demo"
       ]
     },
     {
