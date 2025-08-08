@@ -15,7 +15,6 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const contentParser = require("./utils/transforms/contentParser.js");
 const htmlMinTransform = require("./utils/transforms/htmlmin.js");
 const { findBySlug } = require("./utils/findBySlug");
-const { filterByCollectionTag } = require("./utils/filterByCollectionTag.mjs");
 const { init } = require("./utils/svelteSyntaxHighlight");
 
 /**
@@ -23,6 +22,7 @@ const { init } = require("./utils/svelteSyntaxHighlight");
  */
 const pathConfig = require("./src/_data/paths.json");
 const { findByCollectionSlug } = require("./utils/findByCollectionSlug.mjs");
+const { filterByCollectionTag } = require("./utils/filterByCollectionTag.mjs");
 
 module.exports = async function (eleventyConfig) {
   /**

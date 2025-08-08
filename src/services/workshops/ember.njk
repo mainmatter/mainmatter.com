@@ -1,0 +1,112 @@
+---
+layout: "base"
+title: Ember Workshops | Our Services
+description: "We offer workshops to enable teams to succeed with Ember.js – covering a wide range from basics to advanced topics, onsite or remote."
+og:
+  image: "/assets/images/workshops/ember-workshops-og-image.jpg"
+eleventyImport:
+  collections: ["workshops"]
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "public-workshops.njk" import publicWorkshops %}
+{% from "btn-secondary.njk" import btnSecondary %}
+{% from "featured-services.njk" import featuredServices %}
+{% from "logo-list.njk" import logoList %}
+{% from "workshops-list.njk" import workshopsList %}
+{% from "secondary-feature.njk" import secondaryFeature %}
+{%
+  set 'content' = {
+  "title": "We teach teams like yours how to succeed with Ember.js",
+  "image": "/assets/images/hero/curious-hamster.jpg",
+  "alt": "A close-up photo of a hamster",
+  "loading": "eager"
+  }
+%}
+{{ colorHero('purple', content) }}
+{% set workshops = collections.workshops | filterByCollectionTag("ember") %}
+{{
+  workshopsList('Our training offering', "We are long-time Ember experts and are best placed to train your team, no matter what level they are at.
+  If you have an existing Ember.js codebase and need to onboard new developers, or if your existing team want to level up their understanding of modern Ember techniques, we have the workshops that you need.
+  <h2 class=\"tech-cards__title\">Workshops Catalog</h2>", workshops)
+}}
+{% set futurePublicWorkshops = publicSvelteWorkshops.workshops | upcoming %}
+{{ publicWorkshops(futurePublicWorkshops) }}
+
+<section class="my-10">
+  <div class="container container--lg">
+    <div class="mb-4">
+      <h3 class="mb-2">Our methodology</h3>
+      <p class="body">
+        All our workshops are hands-on. We believe that the best way to learn is by doing. Our
+        trainers introduce concepts and patterns but attendees spend the majority of their time
+        during the workshops writing code, and applying those concepts in practical examples. This
+        structure allows our trainers to spend most of their time in 1:1 conversations with
+        attendees, providing tailored feedback and guidance.
+      </p>
+    </div>
+    <div class="mb-4">
+      <h3 class="mb-2">Logistics</h3>
+      <p class="body">
+        All our workshops can be held in-person or remotely. If you decide to organise a workshop at
+        your company, we are happy to tailor the curriculum to your needs. We can combine multiple
+        workshops, pick and choose modules, as well as develop new content if desired.<br />
+        <a href="/contact/">Get in touch with us</a>
+        to discuss further!
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="my-10 container container--lg">
+  <div class="">
+    <div class="mb-4">
+      <h5 class="mb-015">Ember & Mainmatter</h5>
+      <h3 class="mb-2">A unique skillset</h3>
+      <p>
+        We’re the foremost experts in Ember.js – our team has regularly spoken at
+        <a href="https://emberfest.eu/" target="_blank">EmberFest</a> and
+        <a href="https://www.emberconf.com/">EmberConf</a>, we are
+        <a href="/this-week-in-open-source/"
+          >actively contributing to a number of open source projects across the Ember Ecosystem,
+        </a>
+        and our Ember expert Chris Manson is a Member of multiple Ember Core teams and the creator
+        of <a href="https://github.com/empress" target="_blank">Empress</a>.
+      </p>
+      <p>
+        Mainmatter has been developing big web apps and mentored international teams around backend,
+        frontend, design, as well as process and developer infrastructure for years. We know what it
+        takes to connect everything together and deliver a delightful end-to-end experience.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="my-10 container container--lg">
+  <div class="split-content no-link">
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h2 class="split-content__subheading">Your mentor</h2>
+        <p>
+          Chris Manson is a member of the Ember Core team and a long-time Ember user, building his
+          first Ember app in 2011.
+        </p>
+      </div>
+      <div class="split-content__feature">
+        {%
+          set 'content' = {
+          "image": "/assets/images/authors/real_ate.jpg",
+          "alt": "Chris Manson",
+          "loading": "lazy"
+          }
+        %}
+        {{ secondaryFeature(content, 'split-content__author') }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "global/ember-cta.njk" %}
+{% include "global/ember-newsletter-cta.njk" %}
