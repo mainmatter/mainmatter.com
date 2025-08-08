@@ -242,7 +242,9 @@
         "mansona/codeowners-commit",
         "mansona/commander-docs",
         "sveltejs/esrap",
-        "web-and-wine/talks"
+        "web-and-wine/talks",
+        "fabian-hiller/valibot",
+        "mdn/content"
       ]
     },
     {
@@ -532,7 +534,9 @@
         "ember-intl/ember-intl",
         "NetrunnerDB/NRDBv2",
         "yapplabs/ember-wormhole",
-        "mainmatter/ember-multiframework"
+        "mainmatter/ember-multiframework",
+        "MinThaMie/rfcs-pipeline",
+        "mainmatter/ember-web-components-demo"
       ]
     },
     {
@@ -668,10 +672,11 @@
     "mainmatter/tailwindcss.com",
     "thedaviddias/Front-End-Performance-Checklist",
     "paoloricciuti/rccl.ink",
-    "paoloricciuti/ricciuti.me"
+    "paoloricciuti/ricciuti.me",
+    "paoloricciuti/squiggles"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "",
+  "last_date": "2025-07-20..2025-07-27",
   "query_type": "Merged"
 }
