@@ -1,5 +1,5 @@
 ---
-title: "TypeScript"
+title: "Practical TypeScript"
 tags: "typescript"
 format: "Workshop: 2 days"
 subtext: "Bookable for teams – on-site or remote"
