@@ -7,10 +7,10 @@ description: This comprehensive 2-day workshop covers TypeScript from basics to 
 introduction: "<p>TypeScript has become the de facto standard for building scalable JavaScript applications, offering powerful type safety and developer experience improvements. This workshop takes you from the fundamentals of TypeScript to advanced patterns and techniques used in production applications. Whether you're new to TypeScript or looking to deepen your understanding of advanced features like generics, conditional types, and branded types, this workshop provides comprehensive coverage with practical, hands-on exercises.</p>"
 hero:
   color: blue
-  image: "/assets/images/workshops/typescript/typescript.jpg"
-  imageAlt: "TypeScript logo and code examples on a blue background"
+  image: "/assets/images/workshops/typescript/header.jpg"
+  imageAlt: "Close-up of vintage metal letterpress type blocks arranged in rows, showing reversed letters and numbers in various fonts and sizes."
 og:
-  image: /assets/images/workshops/typescript/og-image.jpg
+  image: /assets/images/workshops/typescript/og-image.png
 topics:
   - title: TypeScript Fundamentals
     text: >
