@@ -242,7 +242,8 @@
         "mansona/codeowners-commit",
         "mansona/commander-docs",
         "sveltejs/esrap",
-        "web-and-wine/talks"
+        "web-and-wine/talks",
+        "fabian-hiller/valibot"
       ]
     },
     {
@@ -668,10 +669,11 @@
     "mainmatter/tailwindcss.com",
     "thedaviddias/Front-End-Performance-Checklist",
     "paoloricciuti/rccl.ink",
-    "paoloricciuti/ricciuti.me"
+    "paoloricciuti/ricciuti.me",
+    "paoloricciuti/the-blog-of-alexandria"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
-  "last_date": "",
+  "last_date": "2025-08-03..2025-08-10",
   "query_type": "Merged"
 }
