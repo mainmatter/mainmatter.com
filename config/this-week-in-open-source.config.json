@@ -112,7 +112,6 @@
         "pngwn/MDsveX",
         "mainmatter/svelte-custom-renderers",
         "StephenGunn/svelte-component-to-image",
-        "paoloricciuti/tmcp",
         "paoloricciuti/uri-template-matcher"
       ]
     },
@@ -244,7 +243,8 @@
         "sveltejs/esrap",
         "web-and-wine/talks",
         "fabian-hiller/valibot",
-        "mdn/content"
+        "mdn/content",
+        "paoloricciuti/tmcp"
       ]
     },
     {
@@ -535,7 +535,7 @@
         "NetrunnerDB/NRDBv2",
         "yapplabs/ember-wormhole",
         "mainmatter/ember-multiframework",
-        "mainmatter/build-start-rebuild-perf"
+        "mainmatter/build-start-rebuild-perf",
         "MinThaMie/rfcs-pipeline",
         "mainmatter/ember-web-components-demo"
       ]
