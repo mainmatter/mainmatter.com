@@ -242,7 +242,6 @@
         "mansona/codeowners-commit",
         "mansona/commander-docs",
         "sveltejs/esrap",
-        "web-and-wine/talks",
         "fabian-hiller/valibot"
       ]
     },
@@ -533,7 +532,8 @@
         "ember-intl/ember-intl",
         "NetrunnerDB/NRDBv2",
         "yapplabs/ember-wormhole",
-        "mainmatter/ember-multiframework"
+        "mainmatter/ember-multiframework",
+        "mainmatter/build-start-rebuild-perf"
       ]
     },
     {
