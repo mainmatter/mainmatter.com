@@ -1,33 +1,35 @@
 ---
-title: "Ember Initiative: Measure the impact of Vite on your project"
+title: "The Impact of Vite on Building your Ember App"
 authorHandle: pichfl
 tags: [ember, embroider, vite]
 bio: "Florian Pichler, Software Developer"
-description: ""
+description: "A Post describing the differences in Ember App build characteristics between classic ember-cli and modern Embroider with Vite"
 autoOg: true
 customCta: "global/whirlwind-cta.njk"
-tagline: <p>Help</p>
+tagline: <p>Ember will soon use Vite as its default build system, and we would like the developer experience to be as fast as possible for small and large apps. This post details the difference between the old way and the new Vite build system and shows you how to test your app to give us useful feedback on how to make things better.</p>
 image: ""
 imageAlt: ""
 ---
 
-One goal of the Ember Initiative is moving from the current build chain using `ember-cli` and `embroider` with `webpack` to a more unified approach using `vite`.
+One goal of the Ember Initiative is to move from the classic build chain for an Ember App that uses `ember-cli` or `embroider` with `webpack` to a more modern build system based on [Vite](https://vite.dev/).
 
-One of our sponsors of the Ember Initiative approached us to measure the differences in build and page reaction to make sure that their large application won't perform worse for developers and users alike. We've built that tool for them, but we also made sure it's open source and easy to use so we can get more metrics from you across the Ember.js community.
+As part of a recent Roadmap discussion in the [Ember Initiative](https://mainmatter.com/ember-initiative/), [Discourse](https://www.discourse.org/), which is one of the top-tier backers, expressed the fact that they wanted their new Vite-based build system to be at least on par with their current build. This is important because one of the stated benefits of the move to Vite is an improvement in build and rebuild speeds, and they want to make sure that their stakeholders don't have a regression as part of this change. 
 
-## A high level recap of changes
+We've built a tool in collaboration with Discource to measure the differences in build and pageload times. We also made sure it's open source and easy to use so we can collect more metrics from across the Ember.js community.
 
-The current setup with `ember-cli` uses `broccoli`, and `webpack` through `embroider`. Everything is compiled up front and the app is loaded as a few bundled AMD-based files; even when the app runs in development mode. Roughly said, we are slow first, but save some speed later by bundling everything up.
+## How the classic build system differs from Vite
 
-Vite changes things a lot. It has multiple stages to optimize the input and sends real JavaScript modules and entry points to the client. We start blazing fast and only get slowed down as the browser isn't so great at loading large numbers of tiny files.
+The classic build setup uses `ember-cli`, which builds your app using an underlying technology called `broccoli`, or some more adventurous Ember developers might have been using `webpack` through `embroider`. Both of these ways of building your app behave the same: Everything is compiled up front, and the app is loaded as a few bundled AMD-based entry files or chunks, even when the app runs in development mode. Roughly speaking, we are slow at first, but we make up for some of that time during the page load by bundling everything up into a minimal number of files.
 
-## Build, Measure, Optimize, Repeat
+[Vite follows a very different philosophy](https://vite.dev/guide/philosophy) when it comes to dev builds. It has multiple stages to optimise the input and sends real JavaScript modules and entry points to the client. This means that for every module in your app (and every entry-point in your dependencies), you will see a new network request for that individual module in the browser. With large apps, you could start the dev server blazingly fast, only to have a perceived slowdown as the browser loads large numbers of tiny files.
 
-We think, the change is worth it. Vite is the future for Ember and while it feels different, it should speed us up.
+### Build, Measure, Optimise, Repeat
+
+Converting to Vite has many more benefits than just raw speed, but this is important to many teams, and it is worth spending some time investigating the impact of the upcoming change. Vite is the future for Ember, and we want to make sure that most developers have fast build times after they make this transition.
 
 ## We need _your_ numbers
 
-To verify these claims, we'll need your help, and data from your apps big and small.
+To verify that the transition to Vite will improve build times, we'll need your help and data from your apps, big and small.
 
 We are interested in the following metrics, both from a cold start and a warm start after caches have been created:
 
@@ -37,74 +39,146 @@ We are interested in the following metrics, both from a cold start and a warm st
 - Development time to app load, waiting for an element rendered by your app
 - Development reload time after a file in your app changes
 
-We built [build-start-rebuild-perf](https://github.com/mainmatter/build-start-rebuild-perf) to take care of the development measurements. See it's README for or `--help` output for supported parameters.
+We built [build-start-rebuild-perf](https://github.com/mainmatter/build-start-rebuild-perf) to take care of the development measurements. See its README for or `--help` output for supported parameters.
 
 ### Test protocol
 
-As projects have their individual choices, we decided to not fully automate the workflow. This post makes assumes a plain Ember project as generated by a current run of `ember-cli init`. 
+As projects have their individual choices, we decided to not fully automate the workflow. This post makes assumes a plain Ember project as generated by a current run of `ember new`. 
 
 Expectations:
 
 - You run macOS or Linux (or are willing to go on your own adventures on Windows)
 - You have a `main` branch of your app that builds and runs using `ember-cli`
 - You have a `migrate-to-vite` branch that builds and runs using the _new_ Embroider and Vite
-- Either branches use the same version of node and the package manager of your choice i.e. pnpm
+- Either branches use the same version of Node and the package manager of your choice, i.e. pnpm
 - Your app has a `<img class="logo">` that is part of your components and _not_ inside your `index.html`
-- Your app has a `app/router.js` which when changed triggers `ember-cli` or `vite` to rebuild
+- Your app has an `app/router.js` which, when changed, triggers `ember-cli` or `vite` to rebuild
 
-Let's get started! Open up the [survey form](https://www.notion.so/mainmatter/Testing-forms-24c64e58ddfa8033913bd3545df03386), which will give you the same prompts as below and input fields to put the results. Don't rush this.
+Let's get started! Open up the [survey form](https://mainmatter.notion.site/24c64e58ddfa80aaaf15fc85633f6aae), which will give you the same prompts as below and input fields to put the results. Don't rush this.
+
+
+#### 1 - Ember CLI Production Build Time
+
+Let's start by switching to your main branch and cleaning your built assets and caches:
 
 ```sh
 # Start from main
 git switch main
 
-# Make sure you clear out artifacts
+# Make sure you clear out artefacts
 rm -r dist
 
+# TODO add the nuke cache command
+```
+
+Now, let's get our first build measurement. You will run your ember-cli build with `time` to measure things. The following example assumes your package.json script `build` command runs `ember build --env=production`. The output will print extra output at the end, containing the execution time measurement. We are looking for the `real` or `total` or `Executed in` number, i.e. `real 0m4.139s`
+
+```sh
 # 1 - Ember CLI Production Build Time
 # -----------------------------------
-# Run your ember-cli build with `time` to measure things.
-# Assumes your `build` command runs `ember build --env=production`
-# The output will print extra output at the end,
-# containing the execution optimize measurement
-# We are looking for the "real" or "total" or "Executed in" number,
-# i.e. "real 0m4.139s"
 time npm run build
+```
 
-# 2 - Cold Start
-# --------------
+#### 2 - Ember CLI Cold Start
+
+Next, we will measure the "cold start" of your dev build. This means how long it takes to start the build and see your app running in the browser, assuming you're starting without any build caches. Let's start by removing dist again and clearing our cache: 
+
+```sh
+# Make sure you clear out artefacts
+rm -r dist
+
+# TODO add the nuke cache command
+```
+
+Then we're going to execute the `build-start-rebuild-perf` command to measure the important aspects of your dev server build time. Note this assumes that the development server launches at `//localhost:4200`
+
+```sh
+# 2 - Ember CLI Cold Start
+# ------------------------
 # 2.1 Dev Server Ready
 # 2.2 Development time to first paint
 # 2.3 First Paint
 # 2.4 Development reload time
-# All of the above are returned by running build-start-rebuild-perf
-# Assuming that your developement server launches at //localhost:4200
 npx build-start-rebuild-perf --file "app/router.js" --wait-for ".logo" --command "npm start"
-
-# 3 - Warm Start - Repeat the command from 2 without clearing caches
-npx build-start-rebuild -perf --file "app/router.js" --wait-for ".logo" --command "npm start"
-
-# Delete build output and switch to your Vite branch
-rm -r dist
-git switch migrate-to-vite
-
-# 4 - Vite Production Build
-# Run your vite build with `time` to measure things.
-# # Assumes your `build` command runs `vite build --prod`
-time npm run build
-
-# 5 - Vite Cold Start
-# --------------
-# Get the numbers for 5.1 to 5.4 by repeating the command from #2
-npx build-start-rebuild-perf --file "app/router.js" --wait-for ".logo" --command "npm start"
-
-# 6 - Vite Warm Start
-# --------------
-# Get the numbers for 6.1 to 6.4 by repeating the command from #3
-npx build-start-rebuild-perf --file "app/router.js" --wait-for ".logo" --command "npm start"
-
-# Enter all numbers in the survey form at:
-# https://www.notion.so/mainmatter/Testing-forms-24c64e58ddfa8033913bd3545df03386
 ```
 
-You made it. Thank you for contributing to the Ember Initiative's efforts.
+#### 3 - Ember CLI Warm Start
+
+Next, we do the same command, but we don't clear the caches first this time.
+
+```sh
+# 3 - Ember CLI Warm Start
+# ------------------------
+# 3.1 Dev Server Ready
+# 3.2 Development time to first paint
+# 3.3 First Paint
+# 3.4 Development reload time
+npx build-start-rebuild -perf --file "app/router.js" --wait-for ".logo" --command "npm start"
+```
+
+And that's it for the classic build; it's time for us to switch over to your Vite branch. 
+
+By the way, you made it to the halfway point of this process 🎉 Let's keep going.
+
+#### 4 - Vite Production Build
+
+First, we will switch to our Vite branch and clear out any caches you had from previous Vite builds
+
+```sh
+git switch migrate-to-vite
+
+# Remove any build caches
+rm -rf node_modules/.vite node_modules/.embroider
+```
+
+Next, we will again time the production build time using the `time` command. This assumes that your package.json `build` script has been updated to run `vite build`
+
+```sh
+# 4 - Vite Production Build
+# -------------------------
+time npm run build
+```
+
+#### 5 - Vite Cold Start
+
+Just to make sure that the Vite Production Build didn't create any build caches, we should clear them out again: 
+
+
+```sh
+# Remove any build caches
+rm -rf node_modules/.vite node_modules/.embroider
+```
+
+And then we run the same command that we did in #2 above and report the same numbers, but this time with Vite:
+
+```sh
+# 5 - Vite Cold Start
+# -------------------
+# 5.1 Dev Server Ready
+# 5.2 Development time to first paint
+# 5.3 First Paint
+# 5.4 Development reload time
+npx build-start-rebuild-perf --file "app/router.js" --wait-for ".logo" --command "npm start"
+```
+
+And just like we did before, to get the warm start numbers, we just run the same command without first clearing any caches:
+
+```sh
+# 6 - Vite Warm Start
+# -------------------
+# 6.1 Dev Server Ready
+# 6.2 Development time to first paint
+# 6.3 First Paint
+# 6.4 Development reload time
+npx build-start-rebuild-perf --file "app/router.js" --wait-for ".logo" --command "npm start"
+```
+
+#### Submit your numbers
+
+You made it all the way to the end 🎉 Assuming you have been filling in the form as you went along, it's now time to hit that submit button. Otherwise, [here is the link again](https://mainmatter.notion.site/24c64e58ddfa80aaaf15fc85633f6aae) if you want to fill in all the numbers you have collected. 
+
+## Conclusion
+
+If you made it through this blog and submitted the form, thank you very much. We appreciate the time you spent, and you have contributed to the Ember Initiative's efforts to make Ember better for everyone. 
+
+We are still looking for more Ember Initiative backers if you want to contribute more directly. You can read more about the benefits of joining the Ember Initiative as a backer [on our dedicated Ember Initiative page](/ember-initiative/)
