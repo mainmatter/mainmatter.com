@@ -242,7 +242,9 @@
         "mansona/codeowners-commit",
         "mansona/commander-docs",
         "sveltejs/esrap",
-        "fabian-hiller/valibot"
+        "web-and-wine/talks",
+        "fabian-hiller/valibot",
+        "mdn/content"
       ]
     },
     {
@@ -534,6 +536,8 @@
         "yapplabs/ember-wormhole",
         "mainmatter/ember-multiframework",
         "mainmatter/build-start-rebuild-perf"
+        "MinThaMie/rfcs-pipeline",
+        "mainmatter/ember-web-components-demo"
       ]
     },
     {
@@ -670,7 +674,8 @@
     "thedaviddias/Front-End-Performance-Checklist",
     "paoloricciuti/rccl.ink",
     "paoloricciuti/ricciuti.me",
-    "paoloricciuti/the-blog-of-alexandria"
+    "paoloricciuti/the-blog-of-alexandria",
+    "paoloricciuti/squiggles"
   ],
   "exclude_closed_not_merged": true,
   "output_path": "src/twios/",
