@@ -41,8 +41,8 @@
       "imgPath": "/assets/images/team/nick.jpg"
     },
     {
-      "name": "Idelia Risella",
-      "imgPath": "/assets/images/team/idelia.jpg"
+      "name": "Linn Björklund Pettersson",
+      "imgPath": "/assets/images/team/linn.jpg"
     },
     {
       "name": "Jonas Kruckenberg",
@@ -61,10 +61,6 @@
       "imgPath": "/assets/images/team/chris.jpg"
     },
     {
-      "name": "Óscar Domínguez Celada",
-      "imgPath": "/assets/images/team/oscar.png"
-    },
-    {
       "name": "Luca Palmieri",
       "imgPath": "/assets/images/team/luca.jpg"
     },
@@ -72,7 +68,11 @@
       "name": "Oliver Azevedo Barnes",
       "imgPath": "/assets/images/team/oliver.jpg"
     },
-     {
+    {
+      "name": "Tim Janus",
+      "imgPath": "/assets/images/team/tim.jpg"
+    },
+    {
       "name": "Xenia Latii",
       "imgPath": "/assets/images/team/xenia.jpg"
     }
