@@ -41,10 +41,6 @@
       "imgPath": "/assets/images/team/nick.jpg"
     },
     {
-      "name": "Idelia Risella",
-      "imgPath": "/assets/images/team/idelia.jpg"
-    },
-    {
       "name": "Jonas Kruckenberg",
       "imgPath": "/assets/images/team/jonas.jpg"
     },
@@ -72,7 +68,7 @@
       "name": "Oliver Azevedo Barnes",
       "imgPath": "/assets/images/team/oliver.jpg"
     },
-     {
+    {
       "name": "Xenia Latii",
       "imgPath": "/assets/images/team/xenia.jpg"
     }
