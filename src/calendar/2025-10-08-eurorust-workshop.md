@@ -4,7 +4,7 @@ image: "/assets/images/calendar/2025-10-08-eurorust-workshop/rust.png"
 location: "Paris"
 url: https://eurorust.eu/workshops/rust-python-interoperability/
 kind: workshop
-color: purple
+color: aqua
 hero:
   image: "/assets/images/calendar/2025-10-08-eurorust-workshop/Paris.png"
   imageAlt: "This is a nighttime photo of the illuminated Louvre Pyramid in Paris"
