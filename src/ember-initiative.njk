@@ -33,6 +33,16 @@ og:
 %}
 {{ featuredServices(emberInitiative['ember'], content) }}
 
+{%
+  set 'content' = {
+  "title": "Join the Ember Initiative!",
+  "text": "Sponsor the Ember Initiative, allowing our team to work on Ember full time, and secure the future of Ember and your investment in it.",
+  "linkUrl": "/contact/?service=ember+initiative",
+  "linkText": "Get in touch"
+  }
+%}
+{{ ctaBanner('purple', 'default', content) }}
+
 <section class="mt-5">
   {%
     set imageData = {
@@ -56,7 +66,7 @@ og:
       investments they have made in the technology. Depending on the sponsorship tier, sponsors
       further benefit from regular office hours and pairing sessions, as well as being able to
       contribute to the initiative's quarterly roadmap.
-      <a href="/contact/">Contact us</a> to get on board!
+      <a href="/contact/?service=ember+initiative">Contact us</a> to get on board!
     </p>
   </div>
 </section>
@@ -68,7 +78,7 @@ og:
   set 'content' = {
   "title": "Join the Ember Initiative!",
   "text": "Sponsor the Ember Initiative, allowing our team to work on Ember full time, and secure the future of Ember and your investment in it.",
-  "linkUrl": "/contact",
+  "linkUrl": "/contact/?service=ember+initiative",
   "linkText": "Get in touch"
   }
 %}
