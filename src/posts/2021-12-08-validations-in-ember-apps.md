@@ -1,6 +1,6 @@
 ---
 title: "Data validation in Ember with Yup"
-authorHandle: BobrImperator
+authorHandle: bobrimperator
 tags: ember
 bio: "Software Developer"
 description: "Bartlomiej Dudzik shows how you can easily create validations wrapper based on a library of your liking."

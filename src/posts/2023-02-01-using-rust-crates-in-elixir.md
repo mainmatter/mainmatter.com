@@ -1,6 +1,6 @@
 ---
 title: "Rustler - Using Rust crates in Elixir"
-authorHandle: BobrImperator
+authorHandle: bobrimperator
 tags: [elixir, rust]
 bio: "Software Developer"
 description: "Bartłomiej Dudzik shows how you can use a Rust crate in Elixir using NIFs with Rustler."
