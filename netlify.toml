@@ -208,6 +208,11 @@
   from = "/embroider-initiative"
   to = "/ember-initiative/"
 
+# redirect old Embroider/Vite upgrade to Ember initiative
+[[redirects]]
+  from = "/embroider-vite-upgrade"
+  to = "/ember-initiative/"
+
 # redirect /svelte-week to July '25 workshops
 [[redirects]]
   from = "/svelte-week"

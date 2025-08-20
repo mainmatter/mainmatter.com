@@ -1,10 +1,10 @@
 ---
 layout: base
 title: Ember Initiative
-description: "Mainmatter, together with a group of sponsors, is working on the Ember initiative – a permanent effort to advance the Ember ecosystem and secury its members' investments in Ember.js."
+description: "Mainmatter's Ember Initiative moves the ecosystem and our members' apps forward."
 permalink: /ember-initiative/
 og:
-  image: /assets/images/ember-initiative/og-image.jpeg
+  image: /assets/images/ember-initiative/og-image.jpg
 ---
 
 {% from "color-hero.njk" import colorHero %}
@@ -16,8 +16,7 @@ og:
 {%
   set 'content' = {
   "title": "The Ember Initiative",
-  "text": "Mainmatter, together with a group of sponsors, is working on the Ember initiative – a permanent effort to
-  advance the Ember ecosystem and secure its members' investments in Ember.js. We build on top of the success of the Embroider initiative.",
+  "text": "Mainmatter’s Ember Initiative advances the Ember ecosystem to protect our members' investments in the framework. We drive critical projects and support members through modernizing their apps. We build on top of the success of the Embroider initiative.",
   "image": "/assets/images/ember/ember-consulting.jpeg",
   "alt": "A group of hamsters",
   "loading": "eager"
@@ -26,17 +25,27 @@ og:
 {{ colorHero('purple', content) }}
 {%
   set 'content' = {
-  "title": "The Initiative’s Goals",
+  "title": "Membership Benefits",
   "subtitle": "Advancing the Ember ecosystem",
-  "text": "Mainmatter assigns a team to work on Ember full time indefinitely. They work on topics that are critical for the Ember ecosystem and every company that builds on Ember. Initiative sponsors get a say in deciding on the team's priorities and quarterly roadmaps to ensure they get the most out of their investment."
+  "text": "Mainmatter's team works on Ember topics that are critical for the Ember ecosystem and every company that has built on Ember. Initiative members invest in Ember's future as well as the healthiness of their own codebases."
   }
 %}
 {{ featuredServices(emberInitiative['ember'], content) }}
 
+{%
+  set 'content' = {
+  "title": "Join the Ember Initiative!",
+  "text": "Invest in Ember's future and future-proof your codebase.",
+  "linkUrl": "/contact/?service=ember+initiative",
+  "linkText": "Get in touch"
+  }
+%}
+{{ ctaBanner('aqua', 'default', content) }}
+
 <section class="mt-5">
   {%
     set imageData = {
-    "imgPath": "/assets/images/ember-initiative/ember-initiative-sponsors-visual.jpg",
+    "imgPath": "/assets/images/ember-initiative/ember-initiative-sponsors.jpg",
     "alt": "Ember initiative sponsor logos",
     "sizes": "100vw",
     "loading": "lazy",
@@ -48,37 +57,26 @@ og:
 
 <section class="text-section">
   <div class="container container--lg">
-    <h2 class="h2">Why Sponsor?</h2>
+    <h2 class="h2">Why Invest?</h2>
     <p class="text-section__text">
-      Companies that have invested into Ember depend on the healthiness and longevity of the
-      ecosystem. They cannot risk Ember becoming legacy technology, requiring expensive rewrites in
-      the worst case. Supporting the Ember initiative for them means securing much larger
-      investments they have made in the technology. Depending on the sponsorship tier, sponsors
-      further benefit from regular office hours and pairing sessions, as well as being able to
-      contribute to the initiative's quarterly roadmap.
-      <a href="/contact/">Contact us</a> to get on board!
+      Companies that rely on Ember need the framework to stay healthy and future-proof. Letting
+      Ember slip into legacy status would risk costly rewrites. By joining the Ember Initiative, you
+      protect the larger investments you’ve already made and gain our team’s support to modernize
+      your apps and overcome blockers.
+      <a href="/contact/?service=ember+initiative">Get in touch</a> to join!
     </p>
   </div>
 </section>
 
 {% set logoCompanies = ['ticketsolve', 'intercom', 'lighthouse', 'auditboard', 'crowdstrike', 'hashicorp', 'xbe', 'teamtailor', 'hotdoc', 'isaac-lee', 'solute', 'triptyk', 'ember-checkup', 'redpencil', 'productive', 'skovik', 'yapplabs', 'adfinis', 'emergent-tree'] %}
-{% set title = 'The Ember and Embroider initiatives are supported by a large group of individuals and companies that build on Ember' %}
+{% set title = 'Companies that build on Ember join the Ember and Embroider initiatives' %}
 {{ logoList(logoCompanies, title) }}
 {%
   set 'content' = {
   "title": "Join the Ember Initiative!",
-  "text": "Sponsor the Ember Initiative, allowing our team to work on Ember full time, and secure the future of Ember and your investment in it.",
-  "linkUrl": "/contact",
+  "text": "Invest in Ember's future and future-proof your codebase.",
+  "linkUrl": "/contact/?service=ember+initiative",
   "linkText": "Get in touch"
-  }
-%}
-{{ ctaBanner('purple', 'full', content) }}
-{%
-  set 'content' = {
-  "title": "Get your Ember app on <nobr>Vite ⚡</nobr>️",
-  "text": "We upgrade clients' apps to Embroider and Vite – get instant rebuilds while your team stays focused on shipping business value!",
-  "linkUrl": "/embroider-vite-upgrade/",
-  "linkText": "Give your team an efficiency boost!"
   }
 %}
 {{ ctaBanner('aqua', 'full', content) }}
