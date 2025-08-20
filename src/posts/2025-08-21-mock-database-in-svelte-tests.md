@@ -4,7 +4,7 @@ authorHandle: paoloricciuti
 tags: [svelte]
 customCta: ""
 bio: "Paolo Ricciuti, Senior Software Engineer"
-description: "Writing tests when you are loading your data from a database is very annoying but we can make it better"
+description: "Writing tests when you are loading your data from a database is very annoying but we can make it better."
 autoOg: true
 tagline: <p>Writing tests when you are loading your data from a database is very annoying but we can make it better</p>
 
@@ -43,7 +43,7 @@ As we hinted before, this approach sounds like the most reasonable...there's a p
 
 Now one of the solutions could be to simply add an API layer in front of our db and mock that, or we could contain all our db access into a single module and mock that module during testing, but both are not ideal: the first one adds an unnecessary network jump, the second one forces us to structure our code in a certain way and we are one new hire away from messing up that structure (and we would also need to reimplement all the logic in the mocking module).
 
-What we really want is a way to write our code just like we want with the ability to interact with the database from our tests.
+What we really want is a way to write our code naturally while also having the ability to interact with the database from our tests.
 
 ## Before we start
 
