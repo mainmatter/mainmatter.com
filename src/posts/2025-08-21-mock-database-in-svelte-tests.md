@@ -289,6 +289,8 @@ This is already a huge step forward but we can also do better...as we said, we w
 
 #### Putting it all together
 
+Now that we understand how fixtures work we can use the `seed` and `reset` functions from `drizzle-seed`...the `seed` function will generate 10 random (but seeded, so consistent) users in out DB...we can do this before calling `use` to add the users to our database before the test start. After `use` we also invoke `reset` that takes care of wiping our db completely so it will be ready for the next iteration.
+
 ```ts
 /* eslint-disable no-empty-pattern */
 import { test as base } from "@playwright/test";
@@ -479,7 +481,34 @@ test.describe("one specific user", () => {
 });
 ```
 
+Personally I would suggest to default to this strategy if you need to make assertions on the data and use the `seed` function only for the cases where you need "some" data to be there but you don't care about which data is it.
+
 And that's it! All of this can be further improved using the `refine` function of `drizzle-seed` (more documentation on the package [here](https://orm.drizzle.team/docs/seed-overview)) but now that you know the basics the world is your playground!
+
+#### A small caveat
+
+There's a small caveat here that I've kept hidden from you this whole time: given we only have one SvelteKit application running we can only have one db. This means that every test needs to run in series otherwise two tests will update the data of the db at the same time. This is pretty straightforward to do in your `playwright.config.ts` by setting the number of workers to 1
+
+```ts
+import { defineConfig } from "@playwright/test";
+import { migrate } from "drizzle-orm/libsql/migrator";
+import { db } from "./src/lib/server/db/index.js";
+
+migrate(db, {
+  migrationsFolder: "./drizzle",
+});
+
+export default defineConfig({
+  webServer: {
+    command: "pnpm build && pnpm preview",
+    port: 4173,
+  },
+  testDir: "e2e",
+  workers: 1,
+});
+```
+
+This will make your CI slower but personally it's a price I'm willing to pay for the flexibility this method gives me. I'm also exploring ways in which this constraint can be lifted and I will update this blog post in case I found a decent solution.
 
 ## Conclusions
 
