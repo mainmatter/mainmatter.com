@@ -1,14 +1,12 @@
 ---
-title: "The Impact of Vite on Building your Ember App"
+title: "Ember Initiative: Tell us how much faster Vite makes your Ember app"
 authorHandle: pichfl
 tags: [ember, embroider, vite]
 bio: "Florian Pichler, Software Developer"
 description: "A Post describing the differences in Ember App build characteristics between classic ember-cli and modern Embroider with Vite"
 autoOg: true
-customCta: "global/whirlwind-cta.njk"
+customCta: "global/ember-cta.njk"
 tagline: <p>Ember will soon use Vite as its default build system, and we would like the developer experience to be as fast as possible for small and large apps. This post details the difference between the old way and the new Vite build system and shows you how to test your app to give us useful feedback on how to make things better.</p>
-image: ""
-imageAlt: ""
 ---
 
 One goal of the Ember Initiative is to move from the classic build chain for an Ember App that uses `ember-cli` or `embroider` with `webpack` to a more modern build system based on [Vite](https://vite.dev/).
