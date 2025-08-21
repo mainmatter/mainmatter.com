@@ -289,7 +289,7 @@ This is already a huge step forward but we can also do better...as we said, we w
 
 #### Putting it all together
 
-Now that we understand how fixtures work we can use the `seed` and `reset` functions from `drizzle-seed`...the `seed` function will generate 10 random (but seeded, so consistent) users in out DB...we can do this before calling `use` to add the users to our database before the test start. After `use` we also invoke `reset` that takes care of wiping our db completely so it will be ready for the next iteration.
+Now that we understand how fixtures work we can use the `seed` and `reset` functions from `drizzle-seed`...the `seed` function will generate 10 random (but seeded, so consistent) users in our DB...we can do this before calling `use` to add the users to our database before the test start. After `use` we also invoke `reset` that takes care of wiping our db completely so it will be ready for the next iteration.
 
 ```ts
 /* eslint-disable no-empty-pattern */
@@ -487,7 +487,7 @@ And that's it! All of this can be further improved using the `refine` function o
 
 #### A small caveat
 
-There's a small caveat here that I've kept hidden from you this whole time: given we only have one SvelteKit application running we can only have one db. This means that every test needs to run in series otherwise two tests will update the data of the db at the same time. This is pretty straightforward to do in your `playwright.config.ts` by setting the number of workers to 1
+There's a small caveat here that I've kept hidden from you this whole time: given we only have one SvelteKit application running we can only have one db. This means that tests cannot run in parallel but have to run in sequence. Otherwise two tests could update the data of the db at the same time. This is pretty straightforward to do in your `playwright.config.ts` by setting the number of workers to 1
 
 ```ts
 import { defineConfig } from "@playwright/test";
