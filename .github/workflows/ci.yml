@@ -150,7 +150,9 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - name: Install xmllint
-        run: sudo apt-get -y install libxml2-utils
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install libxml2-utils
 
       - uses: pnpm/action-setup@v4
         name: Install pnpm
