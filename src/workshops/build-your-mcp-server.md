@@ -1,5 +1,5 @@
 ---
-title: "Build Your MCP Server"
+title: "Building MCP Servers"
 tags: "mcp"
 format: "Workshop: 2 days"
 subtext: "Bookable for teams – on-site or remote"
