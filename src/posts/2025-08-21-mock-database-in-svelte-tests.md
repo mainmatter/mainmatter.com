@@ -2,7 +2,7 @@
 title: "Mock database in Svelte e2e tests with drizzle and playwright fixtures"
 authorHandle: paoloricciuti
 tags: [svelte]
-customCta: ""
+customCta: "global/svelte-workshops-cta.njk"
 bio: "Paolo Ricciuti, Senior Software Engineer"
 description: "Writing tests when you are loading your data from a database is very annoying but we can make it better."
 autoOg: true
