@@ -1,0 +1,67 @@
+{% from "btn-primary.njk" import btnPrimary %}
+{% from "cta-link.njk" import ctaLink %}
+{%- macro ctaBanner(color, width, content) -%}
+  <section
+    class="cta-banner cta-banner--{{ color }} {% if content.class %}{{ content.class }}{% endif %} {% if width == 'default' %}
+      container container--xl my-10
+    {% endif %}"
+    id="{% if content.id %}{{ content.id }}{% endif %}"
+    data-background-color="{{ color }}"
+  >
+    <div class="cta-banner__wrapper {% if width == 'full' %}container container--xl{% endif %}">
+      <div class="cta-banner__main">
+        {% if content.eyebrow %}
+          <h6 class="cta-banner__eyebrow">{{ content.eyebrow | safe }}</h6>
+        {% endif %}
+        {% if content.title %}
+          <h2 class="cta-banner__title">{{ content.title | safe }}</h2>
+        {% endif %}
+        {% if content.workshopTitle1 %}
+          <h4 class="cta-banner__subheading caption mt-3">{{ content.workshopTitle1 | safe }}</h4>
+        {% endif %}
+        {% if content.workshopDesc1 %}
+          <p class="cta-banner__text mt-0">{{ content.workshopDesc1 | safe }}</p>
+        {% endif %}
+        {% if content.linkUrl1 %}
+          {%
+            set link = {
+            "label": content.linkText1,
+            "url": content.linkUrl1
+            }
+          %}
+          {{ btnPrimary( link, 'white', 'mt-2' ) }}
+        {% endif %}
+        {% if content.workshopTitle2 %}
+          <h4 class="cta-banner__subheading caption mt-3">{{ content.workshopTitle2 | safe }}</h4>
+        {% endif %}
+        {% if content.workshopDesc2 %}
+          <p class="cta-banner__text mt-0">{{ content.workshopDesc2 | safe }}</p>
+        {% endif %}
+        {% if content.linkUrl2 %}
+          {%
+            set link = {
+            "label": content.linkText2,
+            "url": content.linkUrl2
+            }
+          %}
+          {{ btnPrimary( link, 'white', 'mt-2' ) }}
+        {% endif %}
+        {% if content.workshopTitle3 %}
+          <h4 class="cta-banner__subheading caption mt-3">{{ content.workshopTitle3 | safe }}</h4>
+        {% endif %}
+        {% if content.workshopDesc3 %}
+          <p class="cta-banner__text mt-0">{{ content.workshopDesc3 | safe }}</p>
+        {% endif %}
+        {% if content.linkUrl3 %}
+          {%
+            set link = {
+            "label": content.linkText3,
+            "url": content.linkUrl3
+            }
+          %}
+          {{ btnPrimary( link, 'white', 'mt-2' ) }}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{%- endmacro -%}

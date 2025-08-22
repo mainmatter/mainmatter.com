@@ -1,53 +1,23 @@
-{% from "btn-primary.njk" import btnPrimary %}
-{% from "cta-link.njk" import ctaLink %}
-
-<section
-  class="cta-banner cta-banner--purple cta-banner__svelteWorkshops container container--xl my-10"
-  data-background-color="purple"
->
-  <div class="cta-banner__wrapper">
-    <div class="cta-banner__main">
-      <h2 class="cta-banner__title">Join Our Workshops in September!</h2>
-      <div class="cta-banner__text">
-        We are running a series of workshops on Svelte and TypeScript in September, all taught by
-        Svelte Maintainer Paolo Ricciuti fully remote over multiple afternoons.
-      </div>
-      <h3 class="cta-banner__subheading">Svelte 5 & Runes</h3>
-      <p class="small">September 1st & 2nd 2025, 14:00-18:00 CEST</p>
-      <p>
-        Learn all about Svelte 5’s new runes and snippets as well as how to migrate from older
-        patterns.
-      </p>
-      {%
-        set link = {
-        "label": "Sign up",
-        "url": "https://ti.to/mainmatter/svelte-5-runes-sept-2025"
-        }
-      %}
-      {{ btnPrimary( link, 'white', 'mt-2' ) }}
-      <h3 class="cta-banner__subheading">Testing Svelte and SvelteKit Applications</h3>
-      <p class="small">September 3rd & 4th 2025, 14:00-18:00 CEST</p>
-      <p>
-        Learn how to write tests for Svlete and SvelteKit apps that are fast, stable, and easy to
-        maintain.
-      </p>
-      {%
-        set link = {
-        "label": "Sign up",
-        "url": "https://ti.to/mainmatter/testing-svelte-sept-2025"
-        }
-      %}
-      {{ btnPrimary( link, 'white', 'mt-2' ) }}
-      <h3 class="cta-banner__subheading">Practical TypeScript</h3>
-      <p class="small">September 15th-18th 2025, 14:00-18:00 CEST</p>
-      <p>Master TypeScript and turn it from a pain into a powerful ally.</p>
-      {%
-        set link = {
-        "label": "Sign up",
-        "url": "https://ti.to/mainmatter/typescript-sept-2025"
-        }
-      %}
-      {{ btnPrimary( link, 'white', 'mt-2' ) }}
-    </div>
-  </div>
-</section>
+{#
+A call-to-action meant to be displayed at the beginning of a blog post.
+#}
+{% from "cta-banner-workshops.njk" import ctaBanner %}
+{%
+  set 'content' = {
+  "title": "Join our remote workshops in September",
+  "workshopTitle1": "September 1–2: Svelte 5 & Runes",
+  "workshopDesc1": "This workshop serves as an introduction to Svelte 5's new concepts, as well as a hands-on guide to migrating from old patterns to Svelte 5 and runes.",
+  "linkUrl1": "https://ti.to/mainmatter/svelte-5-runes-sept-2025",
+  "linkText1": "Sign up for €476",
+  "workshopTitle2": "September 3–4: Testing Svelte and SvelteKit Applications",
+  "workshopDesc2": "This workshop covers both guidance on what to test and how, as well as concrete techniques for writing tests that are fast, stable, and easy to maintain.",
+  "linkUrl2": "https://ti.to/mainmatter/testing-svelte-sept-2025",
+  "linkText2": "Sign up for €476",
+  "workshopTitle3": "September 15–18: Practical TypeScript",
+  "workshopDesc3": " Whether you're new to TypeScript or looking to deepen your understanding of advanced features like generics, conditional types, and branded types, this workshop provides comprehensive coverage with practical, hands-on exercises.",
+  "linkUrl3": "https://ti.to/mainmatter/typescript-sept-2025",
+  "linkText3": "Sign up for €952",
+  "class": "cta-banner__svelteWorkshops"
+  }
+%}
+{{ ctaBanner('purple', 'default', content) }}
