@@ -2,7 +2,7 @@
 title: "How to build Web Components with Svelte"
 authorHandle: paoloricciuti
 tags: [svelte]
-customCta: ""
+customCta: "global/svelte-workshops-cta.njk"
 bio: "Paolo Ricciuti, Senior Software Engineer"
 description: "What is a Web Component, how to build one and, most importantly, how to do it with Svelte for ease of development"
 autoOg: true
