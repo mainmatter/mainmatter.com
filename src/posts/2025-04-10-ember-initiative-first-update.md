@@ -4,7 +4,6 @@ authorHandle: real_ate
 tags: ["ember"]
 bio: "Senior Software Engineer, Member of the Ember Core Learning and Ember Core Tooling teams."
 description: "An update on the progress made so far in the Ember Initiative"
-autoOg: true
 tagline: |
   <p>
     The Ember Initiative has been running for a month and a half and has been a wild ride of success after success. The backers have had big wins and these have trickled down to the rest of the community, making it better for everyone. We have also hit significant milestones with Embroider.

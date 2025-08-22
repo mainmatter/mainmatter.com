@@ -4,7 +4,6 @@ authorHandle: academierenards
 tags: [ember, embroider, vite]
 bio: "Marine Dunstetter, Senior Software Engineer"
 description: "Introducing challenges and strategy to implement Vite support in ember-inspector"
-autoOg: true
 tagline: |
   <p>
   The <a href="https://github.com/emberjs/ember-inspector">Ember Inspector</a> is a popular browser extension in the Ember world, which allows Ember developers to inspect their apps no matter what version they are on... as long as they build with Ember CLI and Broccoli. The Ember Inspector does not yet support the new Vite build process, which is available for all Ember apps from version 3.28 upward. Fixing this is the primary focus of the <a href="/ember-initiative/">Ember Initiative</a> at the moment. This blog post overviews the challenges and the strategy we designed to reach this goal.

@@ -5,7 +5,6 @@ tags: [svelte]
 customCta: "global/svelte-custom-renders.njk"
 bio: "Paolo Ricciuti, Senior Software Engineer"
 description: "How we set up to build an integration with Lynx to make truly native apps in Svelte"
-autoOg: true
 tagline: <p>Is it possible to build a truly native app in Svelte? Soon™ it might be!</p>
 
 image: "/assets/images/posts/2025-05-22-native-apps-with-svelte/header.jpg"

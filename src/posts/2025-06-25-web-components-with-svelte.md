@@ -5,7 +5,6 @@ tags: [svelte]
 customCta: ""
 bio: "Paolo Ricciuti, Senior Software Engineer"
 description: "What is a Web Component, how to build one and, most importantly, how to do it with Svelte for ease of development"
-autoOg: true
 tagline: <p>Web Components are cool but very difficult to build... can Svelte be of any help here?</p>
 
 image: "/assets/images/posts/2025-06-25-web-components-with-svelte/header.jpg"

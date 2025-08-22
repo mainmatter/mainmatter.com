@@ -4,7 +4,6 @@ authorHandle: academierenards
 tags: [ember, embroider, vite]
 bio: "Marine Dunstetter, Senior Software Engineer"
 description: "Introducing the summary of the top 100 addons audit"
-autoOg: true
 tagline: |
   <p>
   Ember apps from version 3.28 to the latest can now build with Vite. Community addons must get ready for the change. How many of them are already V2? How many are still V1 but should be compatible with your Vite app? How many still require some work? And which ones rely too much on classic-build semantics and should be replaced with a different Vite-compatible solution? As part of the Mainmatter <a href="/ember-initiative/">Ember Initiative</a>, our team performed an audit of the most popular community addons to get a picture of where the community currently stands.

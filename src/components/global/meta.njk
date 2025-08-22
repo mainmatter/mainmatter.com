@@ -37,14 +37,7 @@
 
 <meta name="fediverse:creator" content="@mainmatter@fosstodon.org" />
 
-{%- if autoOg -%}
-  {% set author = authorHandle | findBySlug %}
-  {% setAsync "ogImageUrl" -%}
-    {% ogImage "./og-image.og.njk", { title: title, author: author.data, authorHandle: authorHandle } %}
-  {%- endsetAsync %}
-{%- else -%}
-  {% set ogImageUrl=og.image %}
-{%- endif -%}
+{% set ogImageUrl=og.image %}
 
 {%- if ogImageUrl -%}
   <meta name="twitter:card" content="summary_large_image" />
