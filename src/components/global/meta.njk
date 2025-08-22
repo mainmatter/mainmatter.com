@@ -37,7 +37,7 @@
 
 <meta name="fediverse:creator" content="@mainmatter@fosstodon.org" />
 
-{%- if autoOg -%}
+{%- if autoOg and eleventy.env.runMode === "build" -%}
   {% set author = authorHandle | findBySlug %}
   {% setAsync "ogImageUrl" -%}
     {% ogImage "./og-image.og.njk", { title: title, author: author.data, authorHandle: authorHandle } %}
