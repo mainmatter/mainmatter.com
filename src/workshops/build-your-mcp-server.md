@@ -8,7 +8,7 @@ introduction: "<p>The Model Context Protocol (MCP) is revolutionizing how AI sys
 hero:
   color: purple
   image: "/assets/images/workshops/mcp/header.jpg"
-  imageAlt: ""
+  imageAlt: "Traditional colorful Rajasthani string puppets (Kathputli) dressed in bright red and yellow clothes with painted wooden faces and intricate headgear, hanging on strings and used in folk performances."
 og:
   image: /assets/images/workshops/mcp/og-image.png
 topics:
