@@ -3,6 +3,7 @@ title: "Whirlwind Chat: Learnings from building a browser-based P2P video chat"
 authorHandle: bobrimperator
 tags: [rust, svelte, webrtc]
 bio: "Bartlomiej Dudzik, Software Developer"
+autoOg: true
 description: "A technical overview of Whirlwind Chat: learnings from building a browser-based P2P video chat."
 customCta: "global/whirlwind-cta.njk"
 tagline: <p>Spontaneous one-on-one conversations are still hard to replicate at online events. We built <a href="https://whirlwind.chat/">Whirlwind Chat</a> to make that easier. It's a simple app for short, peer-to-peer video chats. You join a group, then get matched with others for 2-minute conversations.</p>
