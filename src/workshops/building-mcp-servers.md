@@ -10,7 +10,7 @@ hero:
   image: "/assets/images/workshops/mcp/header.jpg"
   imageAlt: "Traditional colorful Rajasthani string puppets (Kathputli) dressed in bright red and yellow clothes with painted wooden faces and intricate headgear, hanging on strings and used in folk performances."
 og:
-  image: /assets/images/workshops/mcp/og-image.png
+  image: /assets/images/workshops/mcp/og-image.jpg
 topics:
   - title: What is MCP?
     text: >
