@@ -11,7 +11,7 @@ tagline: <p>Ember will soon use Vite as its default build system, and we would l
 
 One goal of the Ember Initiative is to move from the classic build chain for an Ember App that uses `ember-cli` or `embroider` with `webpack` to a more modern build system based on [Vite](https://vite.dev/).
 
-As part of a recent Roadmap discussion in the [Ember Initiative](https://mainmatter.com/ember-initiative/), [Discourse](https://www.discourse.org/), which is one of the top-tier backers, expressed the fact that they wanted their new Vite-based build system to be at least on par with their current build. This is important because one of the stated benefits of the move to Vite is an improvement in build and rebuild speeds, and they want to make sure that their stakeholders don't have a regression as part of this change.
+As part of a recent Roadmap discussion in the [Ember Initiative](https://mainmatter.com/ember-initiative/), [Discourse](https://www.discourse.org/), which is one of the initiative members, expressed the fact that they wanted compare their new Vite-based build system to the existing build setup. This is important because one of the stated benefits of the move to Vite is an improvement in build and rebuild speeds, and they want to make sure that their stakeholders don't have a regression as part of this change.
 
 We've built a tool in collaboration with Discource to measure the differences in build and pageload times. We also made sure it's open source and easy to use so we can collect more metrics from across the Ember.js community.
 
@@ -37,7 +37,7 @@ We are interested in the following metrics, both from a cold start and a warm st
 - Development time to app load, waiting for an element rendered by your app
 - Development reload time after a file in your app changes
 
-We built [build-start-rebuild-perf](https://github.com/mainmatter/build-start-rebuild-perf) to take care of the development measurements. See its README for or `--help` output for supported parameters.
+We built [build-start-rebuild-perf](https://github.com/mainmatter/build-start-rebuild-perf) to take care of the development measurements. See its README or `--help` output for supported parameters.
 
 ### Test protocol
 
@@ -48,7 +48,7 @@ Expectations:
 - You run macOS or Linux (or are willing to go on your own adventures on Windows)
 - You have a `main` branch of your app that builds and runs using `ember-cli`
 - You have a `migrate-to-vite` branch that builds and runs using the _new_ Embroider and Vite
-- Either branches use the same version of Node and the package manager of your choice, i.e. pnpm
+- Both branches use the same version of Node and the package manager of your choice, i.e. pnpm
 - Your app has a `<img class="logo">` that is part of your components and _not_ inside your `index.html`
 - Your app has an `app/router.js` which, when changed, triggers `ember-cli` or `vite` to rebuild
 
@@ -69,7 +69,7 @@ rm -rf dist
 rm -rf $TMPDIR/embroider $TMPDIR/broccoli-*(N) node_modules/.embroider
 ```
 
-Now, let's get our first build measurement. You will run your ember-cli build with `time` to measure things. The following example assumes your package.json script `build` command runs `ember build --env=production`. The output will print extra output at the end, containing the execution time measurement. We are looking for the `real` or `total` or `Executed in` number, i.e. `real 0m4.139s`
+Now, let's get the first build measurement. You will run your ember-cli build with `time` to measure things. The following example assumes your package.json script `build` command runs `ember build --env=production`. The output will print extra lines at the end, containing the execution time measurement. We are looking for the `real` or `total` or `Executed in` number, i.e. `real 0m4.139s`
 
 ```sh
 # 1 - Ember CLI Production Build Time
@@ -79,7 +79,7 @@ time npm run build
 
 #### 2 - Ember CLI Cold Start
 
-Next, we will measure the "cold start" of your dev build. This means how long it takes to start the build and see your app running in the browser, assuming you're starting without any build caches. Let's start by removing dist again and clearing our cache:
+Next, we will measure the "cold start" of your dev build. This means how long it takes to start the build and see your app running in the browser, assuming you're starting without any build caches. Let's start by removing `./dist` again and clearing our cache:
 
 ```sh
 # Make sure you clear out artefacts
@@ -130,7 +130,7 @@ git switch migrate-to-vite
 rm -rf node_modules/.vite node_modules/.embroider
 ```
 
-Next, we will again time the production build time using the `time` command. This assumes that your package.json `build` script has been updated to run `vite build`
+Next, we will again time the production build time using the `time` command. This assumes that your `package.json` `build` script has been updated to run `vite build`
 
 ```sh
 # 4 - Vite Production Build
@@ -140,7 +140,7 @@ time npm run build
 
 #### 5 - Vite Cold Start
 
-Just to make sure that the Vite Production Build didn't create any build caches, we should clear them out again:
+Just to make sure that the Vite production build didn't create any build caches, we should clear them out again:
 
 ```sh
 # Remove any build caches
@@ -159,7 +159,7 @@ And then we run the same command that we did in #2 above and report the same num
 npx build-start-rebuild-perf --file "app/router.js" --wait-for ".logo" --command "npm start"
 ```
 
-And just like we did before, to get the warm start numbers, we just run the same command without first clearing any caches:
+And just like we did before, to get the warm start numbers, we run the same command without first clearing any caches:
 
 ```sh
 # 6 - Vite Warm Start
