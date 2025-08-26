@@ -14,7 +14,7 @@ og:
 topics:
   - title: What is MCP?
     text: >
-      We'll explore what Model Context Protocol is, why it's needed, and what the main applications are for extending AI capabilities.
+      We'll explore what the Model Context Protocol is and the main applications for extending AI capabilities.
 
 
   - title: MCP Lifecycle
