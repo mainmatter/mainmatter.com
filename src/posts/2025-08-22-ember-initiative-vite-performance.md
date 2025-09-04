@@ -6,30 +6,24 @@ bio: "Florian Pichler, Software Developer"
 description: "A Post describing the differences in Ember App build characteristics between classic ember-cli and modern Embroider with Vite"
 autoOg: true
 customCta: "global/ember-cta.njk"
-tagline: <p>Ember will soon use Vite as its default build system, and we would like the developer experience to be as fast as possible for small and large apps. This post details the difference between the old way and the new Vite build system and shows you how to test your app to give us useful feedback on how to make things better.</p>
+tagline: <p>Ember will soon use Vite as its default build system, and we would like the developer experience to be as fast as possible for small and large apps. Learn the difference between the old way and the new Vite build system and explains how to test your app to give us useful feedback on how to make things better.</p>
 ---
 
-One goal of the Ember Initiative is to move from the classic build chain for an Ember App that uses `ember-cli` or `embroider` with `webpack` to a more modern build system based on [Vite](https://vite.dev/).
+One goal of the [Ember Initiative](https://mainmatter.com/ember-initiative/) is to bring a modern toolchain based on [Vite](https://vite.dev/) to Ember. This increases compatiblity with the wider JavaScipt ecosystem, but also brings potential for faster builds, rebuilds, route splitting, and more.
 
-As part of a recent Roadmap discussion in the [Ember Initiative](https://mainmatter.com/ember-initiative/), [Discourse](https://www.discourse.org/), which is one of the initiative members, expressed the fact that they wanted compare their new Vite-based build system to the existing build setup. This is important because one of the stated benefits of the move to Vite is an improvement in build and rebuild speeds, and they want to make sure that their stakeholders don't have a regression as part of this change.
-
-We've built a tool in collaboration with Discource to measure the differences in build and pageload times. We also made sure it's open source and easy to use so we can collect more metrics from across the Ember.js community.
+We'd love your feedback, because in real-world production applications, it's not always that simple. We need your help to understand how Vite is improving your build pipeline (or not). Using the open source tool we've built to measure the differences in build and pageload times, you can share your numbers so we can make Ember better and faster. 
 
 ## How the classic build system differs from Vite
 
 The classic build setup uses `ember-cli`, which builds your app using an underlying technology called `broccoli`, or some more adventurous Ember developers might have been using `webpack` through `embroider`. Both of these ways of building your app behave the same: Everything is compiled up front, and the app is loaded as a few bundled AMD-based entry files or chunks, even when the app runs in development mode. Roughly speaking, we are slow at first, but we make up for some of that time during the page load by bundling everything up into a minimal number of files.
 
-[Vite follows a very different philosophy](https://vite.dev/guide/philosophy) when it comes to dev builds. It has multiple stages to optimise the input and sends real JavaScript modules and entry points to the client. This means that for every module in your app (and every entry-point in your dependencies), you will see a new network request for that individual module in the browser. With large apps, you could start the dev server blazingly fast, only to have a perceived slowdown as the browser loads large numbers of tiny files.
+[Vite follows a very different philosophy](https://vite.dev/guide/philosophy) when it comes to dev builds. It has multiple stages to optimise the input and sends real JavaScript modules and entry points to the client. This means that for every module in your app (and every entry-point in your dependencies), you will see a new network request for that individual module in the browser. With large apps, you could start the dev server blazingly fast, only to have a perceived slowdown as the browser loads large numbers of tiny files, which in turn are much faster to reload for small changes.
 
-### Build, Measure, Optimise, Repeat
+## Build, Measure, Optimise, Repeat
 
-Converting to Vite has many more benefits than just raw speed, but this is important to many teams, and it is worth spending some time investigating the impact of the upcoming change. Vite is the future for Ember, and we want to make sure that most developers have fast build times after they make this transition.
+Moving to Vite has many more benefits than just raw speed, but it is important to many teams, and it is worth spending some time investigating the impact of the upcoming change. 
 
-## We need _your_ numbers
-
-To verify that the transition to Vite will improve build times, we'll need your help and data from your apps, big and small.
-
-We are interested in the following metrics, both from a cold start and a warm start after caches have been created:
+We want to learn how well Vite does in on __your__ applications, big and small. We are interested in the following metrics, both from a cold start and a warm start after caches have been created:
 
 - Production build time after installing the packages
 - Development server startup time
@@ -69,7 +63,7 @@ rm -rf dist
 rm -rf $TMPDIR/embroider $TMPDIR/broccoli-*(N) node_modules/.embroider
 ```
 
-Now, let's get the first build measurement. You will run your ember-cli build with `time` to measure things. The following example assumes your package.json script `build` command runs `ember build --env=production`. The output will print extra lines at the end, containing the execution time measurement. We are looking for the `real` or `total` or `Executed in` number, i.e. `real 0m4.139s`
+Now, let's get the first build measurement. You will run your ember-cli build with `time` to measure things. The following example assumes your package.json script `build` command runs `ember build --env=production`. The output will print extra lines at the end, containing the execution time measurement. We are looking for the `real` or `total` or `Executed in` number, i.e. `real 0m4.139s`:
 
 ```sh
 # 1 - Ember CLI Production Build Time
@@ -89,7 +83,7 @@ rm -rf dist
 rm -rf $TMPDIR/embroider $TMPDIR/broccoli-*(N) node_modules/.embroider
 ```
 
-Then we're going to execute the `build-start-rebuild-perf` command to measure the important aspects of your dev server build time. Note this assumes that the development server launches at `//localhost:4200`
+Then we're going to execute the `build-start-rebuild-perf` command to measure the important aspects of your dev server build time. Note this assumes that the development server launches at `//localhost:4200`:
 
 ```sh
 # 2 - Ember CLI Cold Start
@@ -179,4 +173,4 @@ You made it all the way to the end 🎉 Assuming you have been filling in the fo
 
 If you made it through this blog and submitted the form, thank you very much. We appreciate the time you spent, and you have contributed to the Ember Initiative's efforts to make Ember better for everyone.
 
-We are still looking for more Ember Initiative backers if you want to contribute more directly. You can read more about the benefits of joining the Ember Initiative as a backer [on our dedicated Ember Initiative page](/ember-initiative/)
+We are still looking for more Ember Initiative members if you want to contribute more directly. You can read more about the benefits of joining the Ember Initiative a member [on our dedicated Ember Initiative page](/ember-initiative/).
