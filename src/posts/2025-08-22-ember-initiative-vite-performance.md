@@ -115,7 +115,7 @@ By the way, you made it to the halfway point of this process 🎉 Let's keep goi
 
 #### 4 - Vite Production Build
 
-First, we will switch to our Vite branch and clear out any caches you had from previous Vite builds
+First, we will switch to our Vite branch and clear out any caches you had from previous Vite builds:
 
 ```sh
 git switch migrate-to-vite
@@ -124,7 +124,7 @@ git switch migrate-to-vite
 rm -rf node_modules/.vite node_modules/.embroider
 ```
 
-Next, we will again time the production build time using the `time` command. This assumes that your `package.json` `build` script has been updated to run `vite build`
+Next, we will again time the production build time using the `time` command. This assumes that your `package.json` `build` script has been updated to run `vite build`:
 
 ```sh
 # 4 - Vite Production Build
