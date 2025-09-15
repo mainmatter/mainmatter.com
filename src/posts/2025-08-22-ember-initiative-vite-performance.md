@@ -9,9 +9,9 @@ customCta: "global/ember-cta.njk"
 tagline: <p>Ember will soon use Vite as its default build system, and we would like the developer experience to be as fast as possible for small and large apps. Learn the difference between the old way and the new Vite build system and explains how to test your app to give us useful feedback on how to make things better.</p>
 ---
 
-One goal of the [Ember Initiative](https://mainmatter.com/ember-initiative/) is to bring a modern toolchain based on [Vite](https://vite.dev/) to Ember. This increases compatiblity with the wider JavaScipt ecosystem, but also brings potential for faster builds, rebuilds, route splitting, and more.
+One goal of the [Ember Initiative](https://mainmatter.com/ember-initiative/) is to bring a modern toolchain based on [Vite](https://vite.dev/) to Ember. This increases compatibility with the wider JavaScript ecosystem and brings potential for faster builds, rebuilds, route splitting, and more.
 
-We'd love your feedback, because in real-world production applications, it's not always that simple. We need your help to understand how Vite is improving your build pipeline (or not). Using the open source tool we've built to measure the differences in build and pageload times, you can share your numbers so we can make Ember better and faster. 
+To ensure Vite can improve the build pipeline of real-world production applications, we need your feedback. Using the open source tool we've built to measure the differences in build and pageload times, you can share your benchmarks with us so we can make Ember better and faster for everyone.
 
 ## How the classic build system differs from Vite
 
