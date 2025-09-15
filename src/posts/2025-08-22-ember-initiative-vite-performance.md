@@ -21,9 +21,9 @@ The classic build setup uses `ember-cli`, which builds your app using an underly
 
 ## Build, Measure, Optimise, Repeat
 
-Moving to Vite has many more benefits than just raw speed, but it is important to many teams, and it is worth spending some time investigating the impact of the upcoming change. 
+Moving to Vite has many more benefits than just raw speed, but speed is always an important factor of development, and it is worth spending some time investigating the impact of the upcoming change. 
 
-We want to learn how well Vite does in on __your__ applications, big and small. We are interested in the following metrics, both from a cold start and a warm start after caches have been created:
+We need to learn how well Vite does in on __your__ applications, big and small. We are looking for the following metrics, both from a cold start and a warm start after caches have been created:
 
 - Production build time after installing the packages
 - Development server startup time
