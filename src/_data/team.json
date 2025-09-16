@@ -79,6 +79,14 @@
     {
       "name": "Xenia Latii",
       "imgPath": "/assets/images/team/xenia.jpg"
+    },
+    {
+      "name": "Glen De Cauwsemaecker",
+      "imgPath": "/assets/images/team/glen.jpg"
+    },
+    {
+      "name": "Enrico Borba",
+      "imgPath": "/assets/images/team/enrico.jpg"
     }
   ]
 }
