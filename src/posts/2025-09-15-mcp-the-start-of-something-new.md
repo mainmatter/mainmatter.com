@@ -4,9 +4,9 @@ authorHandle: paoloricciuti
 tags: [mcp, ai]
 customCta: "global/svelte-workshops-cta.njk"
 bio: "Paolo Ricciuti, Senior Software Engineer"
-description: "The Model Context Protocol is shaping up to be something that will likely change the way we consume content...let's see what all of this is about"
+description: "The Model Context Protocol is shaping up to be something that will likely change the way we consume reality...let's see what all of this is about"
 autoOg: true
-tagline: <p>The Model Context Protocol is shaping up to be something that will likely change the way we consume content...let's see what all of this is about</p>
+tagline: <p>The Model Context Protocol is shaping up to be something that will likely change the way we consume reality...let's see what all of this is about</p>
 ---
 
 "You are absolutely right!"
@@ -110,52 +110,6 @@ What is a protocol? An example is the Hypertext Transfer Protocol. You might be 
 > A communication protocol is a system of rules that allows two or more entities of a communications system to transmit information via any variation of a physical quantity. The protocol defines the rules, syntax, semantics, and synchronization of communication and possible error recovery methods. Protocols may be implemented by hardware, software, or a combination of both.
 
 In simpler terms: it’s a contract between two entities. It’s a way to know which language the other party is using so that both sides can parse the communication “package” appropriately.
-
-Let’s see an example of an HTTP request made with `curl` to `https://mainmatter.com/blog/`:
-
-```http
-GET /blog/ HTTP/2
-Host: mainmatter.com
-User-Agent: curl/8.7.1
-Accept: */*
-```
-
-This may seem like a series of somewhat random words, but there’s a well‑defined structure here:
-
-```http
-[HTTP_VERB] [pathname] [HTTP_VERSION]
-[HEADER_NAME]: [HEADER_VALUE]
-
-[OPTIONAL_BODY]
-```
-
-And what about the response?
-
-```http
-HTTP/2 200 OK
-accept-ranges: bytes
-age: 0
-cache-control: public,max-age=0,must-revalidate
-cache-status: "Netlify Edge"; fwd=miss
-content-type: text/html; charset=UTF-8
-date: Thu, 11 Sep 2025 13:28:17 GMT
-etag: "931f7feb97ef78ef0201e40f4b094bf3-ssl"
-server: Netlify
-strict-transport-security: max-age=31536000
-x-nf-request-id: 01K4WFCV24X1V0M4X1SA87S19X
-content-length: 46224
-
-[THE_HTML_OF_THE_PAGE]
-```
-
-As you can see, it follows a similar structure:
-
-```http
-[HTTP_VERSION] [HTTP_STATUS_CODE] [OPTIONAL_REASON_PHRASE]
-[HEADER_NAME]: [HEADER_VALUE]
-
-[OPTIONAL_BODY]
-```
 
 The fact that every request has the same structure allows your HTTP client (usually the browser or curl) and your HTTP server to talk to each other.
 
@@ -307,7 +261,7 @@ I really do think it’s the best way to build MCP servers, and the API is simil
 
 ### Tools
 
-Tools are the feature that kicked off MCP adoption: they’re a way for a Large Language Model to interact directly with your MCP server. When you define your MCP server, you can register one or more tools with a handler that will be invoked when the LLM requests that tool. Every time you register a tool, it’s also added to the collection of tools that will be listed with the `tools/list` method from the MCP client.
+Tools are the feature that kicked off MCP adoption: they’re a way for a Large Language Model to interact directly with potentially anything (a file, an API etc) through your MCP server. When you define your MCP server, you can register one or more tools with a handler that will be invoked when the LLM requests that tool. Every time you register a tool, it’s also added to the collection of tools that will be listed with the `tools/list` method from the MCP client.
 
 ```ts
 import { McpServer } from "tmcp";
@@ -335,7 +289,19 @@ server.tool(
 );
 ```
 
-As soon as the MCP client starts and connects to this MCP server, it’s going to request the list of available tools, and that list is added as context to every message the user sends. This informs the LLM that it has certain tools at its disposal. If the LLM wants to call a specific tool, it just needs to send a message formatted in a specific way. This message is almost never shown to the user, and each MCP client implements a different UI to ask the user for permission to do that tool call. Once the user agrees, the message is exchanged and the return value from the handler is “added to the context.”
+As soon as the MCP client starts and connects to this MCP server, it’s going to request the list of available tools, and that list is added as context to every message the user sends. This informs the LLM that it has certain tools at its disposal. If the LLM wants to call a specific tool, it just needs to send a message in chat formatted in a specific way.
+
+This changes from model to model, for example OpenAI produces something like this
+
+```
+I'll check the weather in San Francisco
+
+<tool_call>
+{"id": "call_abc123", "type": "function", "function": {"name": "get_weather", "arguments": "{\"location\": \"San Francisco\", \"unit\": \"celsius\"}"}}
+</tool_call>
+```
+
+This message is almost never shown to the user (at least not as an actual message), and each MCP client implements a different UI to ask the user for permission to do that tool call. Once the user agrees, the message is exchanged and the return value from the handler is “added to the context.”
 
 The above example is obviously trivial, but it already unlocks the possibility for the LLM to properly generate a random number (LLMs can probably do that on their own—but is that really a random number?).
 
@@ -351,7 +317,7 @@ Everything—ranging from the tool name to the tool description to the return va
 
 {% endnote %}
 
-The real power of tools, though, comes from the fact that you can specify a schema with a validation library of your choice and instruct the LLM to pass those inputs.
+Input-less tools are already pretty powerful (especially when they can interact with something on your behalf) but, at least in my option, the real power of tools comes from the fact that you can instruct the LLM in natural language and it will come up with the right inputs for your tools. Since LLM are non deterministic in our code we are required to specify a schema with the validation library of our choice (this will make sure the tool is called with what we actually expect).
 
 ```ts
 #!/usr/bin/env node
@@ -431,22 +397,18 @@ The MCP server developer can register as many resources as they want, and you, t
 
 server.resource(
   {
-    name: "gaussian-elimination",
-    description:
-      "A resource that explain how to perform the Gaussian elimination on a matrix",
-    uri: "math://gaussian-elimination",
-    title: "Gaussian Elimination",
+    name: "history",
+    description: "The list of all operations up until this moment",
+    uri: "math://history",
+    title: "History",
   },
   async uri => {
-    // we fetch the wikipedia source for the gaussian elimination
-    const wikipedia_page = await fetch(
-      "https://en.wikipedia.org/w/rest.php/v1/page/Gaussian_elimination"
-    ).then(res => res.json());
+    const history = await db.select().from(history).all();
     return {
       contents: [
         {
-          mimeType: "text",
-          text: wikipedia_page.source,
+          mimeType: "application/json",
+          text: history,
           uri,
         },
       ],
