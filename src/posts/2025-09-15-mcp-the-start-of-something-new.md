@@ -1,5 +1,12 @@
-title: "Model Context Protocol: the start of something new" authorHandle: paoloricciuti tags: [mcp, ai] customCta: "global/svelte-workshops-cta.njk" bio: "Paolo Ricciuti, Senior Software Engineer" description: "The Model Context Protocol is shaping up to be something that will likely change how we consume content... let's see what this is all about." autoOg: true tagline: <p>The Model Context Protocol is shaping up to be something that will likely change how we consume content... let's see what this is all about.</p>
-
+---
+title: "Model Context Protocol: the start of something new"
+authorHandle: paoloricciuti
+tags: [mcp, ai]
+customCta: "global/svelte-workshops-cta.njk"
+bio: "Paolo Ricciuti, Senior Software Engineer"
+description: "The Model Context Protocol is shaping up to be something that will likely change the way we consume content...let's see what all of this is about"
+autoOg: true
+tagline: <p>The Model Context Protocol is shaping up to be something that will likely change the way we consume content...let's see what all of this is about</p>
 ---
 
 "You are absolutely right!"
