@@ -1,0 +1,70 @@
+.note {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid;
+  position: relative;
+
+  // Default note styling
+  background-color: #f8fafc;
+  border-color: #e2e8f0;
+  color: #475569;
+
+  &--warning {
+    background-color: #fefce8;
+    border-color: #facc15;
+    color: #a16207;
+
+    .note__icon {
+      color: #f59e0b;
+    }
+  }
+
+  &--tip {
+    background-color: #ecfdf5;
+    border-color: #22c55e;
+    color: #166534;
+
+    .note__icon {
+      color: #16a34a;
+    }
+  }
+
+  &--info {
+    background-color: #eff6ff;
+    border-color: #60a5fa;
+    color: #1e40af;
+
+    .note__icon {
+      color: #3b82f6;
+    }
+  }
+}
+
+.note__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.note__icon {
+  flex-shrink: 0;
+  color: #64748b;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: block;
+  }
+}
+
+.note__content {
+  flex: 1;
+  min-width: 0;
+}
+
+h4.note__title {
+  margin: 0;
+  font-weight: 600;
+  color: inherit;
+}
