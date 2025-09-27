@@ -5,4 +5,5 @@ src/ui/components/Header/template.hbs
 src/sitemap.njk
 
 src/feed.njk
+src/llms.njk
 src/atom.njk
