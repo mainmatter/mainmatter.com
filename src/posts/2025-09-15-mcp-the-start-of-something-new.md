@@ -2,7 +2,7 @@
 title: "Model Context Protocol: the start of something new"
 authorHandle: paoloricciuti
 tags: [mcp, ai]
-customCta: "global/svelte-workshops-cta.njk"
+customCta: "global/svelte-cta.njk"
 bio: "Paolo Ricciuti, Senior Software Engineer"
 description: "The Model Context Protocol is shaping up to be something that will likely change the way we consume reality...let's see what all of this is about"
 autoOg: true
