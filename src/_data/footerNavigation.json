@@ -29,6 +29,10 @@
       "heading": "Work",
       "links": [
         {
+          "text": "Redis",
+          "link": "/cases/redis/"
+        },
+        {
           "text": "Qonto",
           "link": "/cases/qonto/"
         },
