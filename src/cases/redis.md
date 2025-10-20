@@ -11,8 +11,8 @@ hero:
   image: "/assets/images/work/redis.jpg"
   imageAlt: "Close-up of a red LED grid pattern."
   tags: "Rust / development / mentoring"
-title: From C to Rust | Work
-displayTitle: From C to Rust
+title: "Modernizing Redis: Safe, Fast, Future-Ready | Work"
+displayTitle: "Modernizing Redis: Safe, Fast, Future-Ready"
 ---
 
 {% from "quote.njk" import quote %} {% from "image-aspect-ratio.njk" import imageAspectRatio %}
