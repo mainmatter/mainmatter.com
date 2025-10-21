@@ -19,7 +19,7 @@ displayTitle: "Modernizing Redis: Safe, Fast, Future-Ready"
 
 <div class="case-study__section">
   <div class="case-study__text">
-    <p class="h4">Redis is an open-source, in-memory data store built for speed and reliability. It powers real-time applications around the world, from caching to analytics, with sub-millisecond performance. The project is maintained and advanced by Redis Inc.</p>
+    <p class="h4">Redis is the open-source data platform behind some of the world’s fastest applications. Built for real-time speed and reliability, it powers everything from caching to analytics with sub-millisecond performance. To extend Redis beyond simple key-value lookups, Redis Inc.—the company behind Redis—created the Redis Query Engine, a search layer that enables powerful, real-time querying.</p>
   </div>
 </div>
 
@@ -27,7 +27,7 @@ displayTitle: "Modernizing Redis: Safe, Fast, Future-Ready"
   <h3 class="case-study__heading">The Challenge</h3>
   <div class="case-study__text">
     <p>
-      Redis’ core is a large and mature C codebase—highly optimized, but increasingly difficult to evolve safely at the pace of active development. Memory-safety issues and accumulated technical debt made change risky, even for experienced contributors. To address these challenges, Redis decided to gradually migrate parts of the codebase to Rust, aiming for stronger safety guarantees and more sustainable long-term development. With limited in-house Rust expertise, the team reach out to Mainmatter to guide them through the transition.
+      Redis Query Engine’s core is a large and mature C codebase—highly optimized, but increasingly difficult to evolve safely at the pace of active development. Memory-safety issues and accumulated technical debt made change risky, even for experienced contributors. To address these challenges, the Redis team decided to gradually migrate parts of the codebase to Rust, aiming for stronger safety guarantees and more sustainable long-term development. With limited in-house Rust expertise, the team reach out to Mainmatter to guide them through the transition.
     </p>
   </div>
 </div>
@@ -71,7 +71,7 @@ displayTitle: "Modernizing Redis: Safe, Fast, Future-Ready"
 <div class="case-study__section">
   <h3 class="case-study__heading">The Outcome</h3>
   <div class="case-study__text">
-    <p>The collaboration has set Redis on a clear path toward a safer, more maintainable codebase. Key modules have already been ported and released with Redis 8.2, validating the approach and demonstrating tangible benefits. With a well-defined process for migrating C modules to Rust, a strong foundation of reusable Rust components, and growing in-house expertise, Redis is steadily advancing its modernization journey—supported by Mainmatter’s experts, who continue to provide hands-on guidance throughout the transformation.</p>
+    <p>The collaboration has set Redis Query Engine on a clear path toward a safer, more maintainable codebase. Key modules have already been ported and released with Redis 8.2, validating the approach and demonstrating tangible benefits. With a well-defined process for migrating C modules to Rust, a strong foundation of reusable Rust components, and growing in-house expertise, the Redis team is steadily advancing its modernization journey—supported by Mainmatter’s experts, who continue to provide hands-on guidance throughout the transformation.</p>
   </div>
 </div>
 
