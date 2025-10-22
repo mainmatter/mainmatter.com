@@ -42,5 +42,5 @@ server.listen(3000, function () {
 
 function formatBrokenLink(link) {
   let relativeBase = link.base.original.replace(SERVER_URL, "");
-  return `❌ ${relativeBase} -> ${link.url.original} (${link.brokenReason})`;
+  return `\n❌ ${relativeBase} -> ${link.url.original} (${link.brokenReason})`;
 }
