@@ -52,22 +52,15 @@ og:
 
 {%
   set logoCompanies = [
-  'Rust Foundation',
-  'arm',
-  'Huawei',
-  'Ferrocene',
-  'Sentry',
-  'Jetbrains',
   'Aleph Alpha',
-  'Google',
-  'Realm',
-  'Astral',
-  'Helsing',
-  'CrabNebula',
-  'Oreilly'
+  'KISTERS',
+  'BMW Car IT',
+  'Faculty',
+  'Otto',
+  'Redis'
   ]
 %}
-{% set title = 'Our EuroRust partners are betting on Rust' %}
+{% set title = 'We are trusted by international companies that bet on Rust' %}
 {{ logoList(logoCompanies, title, "h4", "h5") }}
 
 <section class="my-10 container container--lg">
@@ -196,6 +189,26 @@ og:
   </div>
 </section>
 
+{%
+  set logoCompanies = [
+  'Rust Foundation',
+  'arm',
+  'Huawei',
+  'Ferrocene',
+  'Sentry',
+  'Jetbrains',
+  'Aleph Alpha',
+  'Google',
+  'Realm',
+  'Astral',
+  'Helsing',
+  'CrabNebula',
+  'Oreilly'
+  ]
+%}
+{% set title = 'Our EuroRust partners are betting on Rust' %}
+{{ logoList(logoCompanies, title, "h4", "h5") }}
+
 {% include "global/rust-subscription-cta.njk" %}
 
 <section class="my-10 container container--lg">
@@ -216,19 +229,6 @@ og:
     </div>
   </div>
 </section>
-
-{%
-  set logoCompanies = [
-  'Aleph Alpha',
-  'KISTERS',
-  'BMW Car IT',
-  'Faculty',
-  'Otto',
-  'Redis'
-  ]
-%}
-{% set title = 'We are trusted by international companies that bet on Rust' %}
-{{ logoList(logoCompanies, title, "h4", "h5") }}
 
 <section class="mb-10">
   {%
