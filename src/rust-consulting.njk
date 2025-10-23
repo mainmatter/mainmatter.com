@@ -36,10 +36,12 @@ og:
       <h5 class="mb-015">Rust & Mainmatter</h5>
       <h3 class="mb-2">A unique skillset</h3>
       <p>
-        We’re experts - our Rust team is led by Luca Palmieri, author of
-        <a href="http://zero2prod.com">"Zero to Production in Rust"</a>, and we have been part of
-        the Rust ecosystem for years, helping out the
-        <a href="https://crates.io">crates.io</a> project.
+        We’re Rust experts — our team is led by Luca Palmieri, author of
+        <a href="http://zero2prod.com">"Zero to Production in Rust"</a>. We’ve been active in the
+        Rust ecosystem for years, creating the
+        <a href="https://rust-exercises.com">100 Exercises to Learn Rust</a> course, contributing to
+        <a href="https://crates.io">crates.io</a>, and maintaining several other
+        <a href="#open-source">open-source projects</a>.
       </p>
       <p>
         We support you in rewriting existing codebases to Rust, using Rust to accelerate hot modules
@@ -48,89 +50,20 @@ og:
       </p>
     </div>
   </div>
-  <div class="split-content">
-    <a href="https://foundation.rust-lang.org/" class="split-content__link"></a>
-    <div class="split-content__wrapper">
-      <div class="split-content__content">
-        <h4>Mainmatter is a Silver Member of the Rust Foundation</h4>
-        {%
-          set link = {
-          "label": 'Learn more',
-          "url": 'https://foundation.rust-lang.org/'
-          }
-        %}
-        {{ btnSecondary( link, 'mt-2' ) }}
-      </div>
-      <div class="split-content__feature">{% include 'content/secondary-feature-rust.njk' %}</div>
-    </div>
-  </div>
-</section>
-
-<section class="my-10 container container--lg">
-  <div class="">
-    <div class="mb-4">
-      <h5 class="mb-015">EuroRust</h5>
-      <h3 class="mb-2">We run EuroRust</h3>
-      <p>
-        In 2026, EuroRust comes to Barcelona from October 14th to 17th. We’ll have two days of talks
-        with a main track and a side track as well as an impl room. Plus, there will be workshops on
-        the day before the main conference, an impl day on the day after, several side activities
-        around the event, as well as our hallmark after party on Friday night.
-      </p>
-    </div>
-  </div>
-  <div class="split-content">
-    <a href="https://eurorust.eu" class="split-content__link"></a>
-    <div class="split-content__wrapper">
-      <div class="split-content__content">
-        <h4>Join us in Barcelona in 2026 for 4 days of celebrating the European Rust community</h4>
-        {%
-          set link = {
-          "label": 'Stay up to date!',
-          "url": 'https://eurorust.eu'
-          }
-        %}
-        {{ btnSecondary( link, 'mt-2' ) }}
-      </div>
-      <div class="split-content__feature">
-        {% include 'content/secondary-feature-eurorust.njk' %}
-      </div>
-    </div>
-  </div>
 </section>
 
 {%
   set logoCompanies = [
-  'Rust Foundation',
-  'arm',
-  'Huawei',
-  'Ferrocene',
-  'Sentry',
-  'Jetbrains',
   'Aleph Alpha',
-  'Google',
-  'Realm',
-  'Astral',
-  'Helsing',
-  'CrabNebula',
-  'Oreilly'
+  'KISTERS',
+  'BMW Car IT',
+  'Faculty',
+  'Otto',
+  'Redis'
   ]
 %}
-{% set title = 'Our EuroRust partners are betting on Rust' %}
+{% set title = 'We are trusted by international companies that bet on Rust' %}
 {{ logoList(logoCompanies, title, "h4", "h5") }}
-
-<section class="mb-10">
-  {%
-    set imageData = {
-    "imgPath": "/assets/images/rust/eurorust-2024.jpg",
-    "alt": "Photo of EuroRust 2024's speakers, organizers, moderators and the audience in the background, all with theirs hands in the air",
-    "sizes": "100vw",
-    "loading": "lazy",
-    "sizesArray": [760, 1440, 1920]
-    }
-  %}
-  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
-</section>
 
 <section class="my-10 container container--lg">
   <div class="split-content no-link">
@@ -212,19 +145,91 @@ og:
   </div>
 </section>
 
-{% include "global/rust-subscription-cta.njk" %}
+<section class="mb-10">
+  {%
+    set imageData = {
+    "imgPath": "/assets/images/rust/eurorust-2024.jpg",
+    "alt": "Photo of EuroRust 2024's speakers, organizers, moderators and the audience in the background, all with theirs hands in the air",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+    }
+  %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
+<section class="my-10 container container--lg">
+  <div class="">
+    <div class="mb-4">
+      <h5 class="mb-015">EuroRust</h5>
+      <h3 class="mb-2">We run EuroRust</h3>
+      <p>
+        In 2026, EuroRust comes to Barcelona from October 14th to 17th. We’ll have two days of talks
+        with a main track and a side track as well as an impl room. Plus, there will be workshops on
+        the day before the main conference, an impl day on the day after, several side activities
+        around the event, as well as our hallmark after party on Friday night.
+      </p>
+    </div>
+  </div>
+  <div class="split-content">
+    <a href="https://eurorust.eu" class="split-content__link"></a>
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h4>Join us in Barcelona in 2026 for 4 days of celebrating the European Rust community</h4>
+        {%
+          set link = {
+          "label": 'Stay up to date!',
+          "url": 'https://eurorust.eu'
+          }
+        %}
+        {{ btnSecondary( link, 'mt-2' ) }}
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-eurorust.njk' %}
+      </div>
+    </div>
+  </div>
+</section>
+
 {%
   set logoCompanies = [
+  'Rust Foundation',
+  'arm',
+  'Huawei',
+  'Ferrocene',
+  'Sentry',
+  'Jetbrains',
   'Aleph Alpha',
-  'KISTERS',
-  'BMW Car IT',
-  'Faculty',
-  'Otto',
-  'Redis'
+  'Google',
+  'Realm',
+  'Astral',
+  'Helsing',
+  'CrabNebula',
+  'Oreilly'
   ]
 %}
-{% set title = 'We are trusted by international companies that bet on Rust' %}
+{% set title = 'Our EuroRust partners are betting on Rust' %}
 {{ logoList(logoCompanies, title, "h4", "h5") }}
+{% include "global/rust-subscription-cta.njk" %}
+
+<section class="my-10 container container--lg">
+  <div class="split-content">
+    <a href="https://foundation.rust-lang.org/" class="split-content__link"></a>
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h4>Mainmatter is a Silver Member of the Rust Foundation</h4>
+        {%
+          set link = {
+          "label": 'Learn more',
+          "url": 'https://foundation.rust-lang.org/'
+          }
+        %}
+        {{ btnSecondary( link, 'mt-2' ) }}
+      </div>
+      <div class="split-content__feature">{% include 'content/secondary-feature-rust.njk' %}</div>
+    </div>
+  </div>
+</section>
 
 <section class="mb-10">
   {%
@@ -296,7 +301,7 @@ og:
   </div>
 </section>
 
-<section class="container container--xl opensource-list">
+<section class="container container--xl opensource-list" id="open-source">
   <div class="">
     <h2 class="opensource-list__title h2">We love Open Source</h2>
     <ul class="opensource-list__list">
