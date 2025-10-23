@@ -14,7 +14,7 @@ server.listen(3000, function () {
   let errors = 0;
 
   const siteChecker = new SiteChecker(
-    {},
+    { maxSocketsPerHost: 1 },
     {
       link(result) {
         if (result.broken) {
