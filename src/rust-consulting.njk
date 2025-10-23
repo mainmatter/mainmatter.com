@@ -48,22 +48,6 @@ og:
       </p>
     </div>
   </div>
-  <div class="split-content">
-    <a href="https://foundation.rust-lang.org/" class="split-content__link"></a>
-    <div class="split-content__wrapper">
-      <div class="split-content__content">
-        <h4>Mainmatter is a Silver Member of the Rust Foundation</h4>
-        {%
-          set link = {
-          "label": 'Learn more',
-          "url": 'https://foundation.rust-lang.org/'
-          }
-        %}
-        {{ btnSecondary( link, 'mt-2' ) }}
-      </div>
-      <div class="split-content__feature">{% include 'content/secondary-feature-rust.njk' %}</div>
-    </div>
-  </div>
 </section>
 
 <section class="my-10 container container--lg">
@@ -213,6 +197,26 @@ og:
 </section>
 
 {% include "global/rust-subscription-cta.njk" %}
+
+<section class="my-10 container container--lg">
+  <div class="split-content">
+    <a href="https://foundation.rust-lang.org/" class="split-content__link"></a>
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h4>Mainmatter is a Silver Member of the Rust Foundation</h4>
+        {%
+          set link = {
+          "label": 'Learn more',
+          "url": 'https://foundation.rust-lang.org/'
+          }
+        %}
+        {{ btnSecondary( link, 'mt-2' ) }}
+      </div>
+      <div class="split-content__feature">{% include 'content/secondary-feature-rust.njk' %}</div>
+    </div>
+  </div>
+</section>
+
 {%
   set logoCompanies = [
   'Aleph Alpha',
