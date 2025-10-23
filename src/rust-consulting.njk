@@ -50,39 +50,6 @@ og:
   </div>
 </section>
 
-<section class="my-10 container container--lg">
-  <div class="">
-    <div class="mb-4">
-      <h5 class="mb-015">EuroRust</h5>
-      <h3 class="mb-2">We run EuroRust</h3>
-      <p>
-        In 2026, EuroRust comes to Barcelona from October 14th to 17th. We’ll have two days of talks
-        with a main track and a side track as well as an impl room. Plus, there will be workshops on
-        the day before the main conference, an impl day on the day after, several side activities
-        around the event, as well as our hallmark after party on Friday night.
-      </p>
-    </div>
-  </div>
-  <div class="split-content">
-    <a href="https://eurorust.eu" class="split-content__link"></a>
-    <div class="split-content__wrapper">
-      <div class="split-content__content">
-        <h4>Join us in Barcelona in 2026 for 4 days of celebrating the European Rust community</h4>
-        {%
-          set link = {
-          "label": 'Stay up to date!',
-          "url": 'https://eurorust.eu'
-          }
-        %}
-        {{ btnSecondary( link, 'mt-2' ) }}
-      </div>
-      <div class="split-content__feature">
-        {% include 'content/secondary-feature-eurorust.njk' %}
-      </div>
-    </div>
-  </div>
-</section>
-
 {%
   set logoCompanies = [
   'Rust Foundation',
@@ -102,19 +69,6 @@ og:
 %}
 {% set title = 'Our EuroRust partners are betting on Rust' %}
 {{ logoList(logoCompanies, title, "h4", "h5") }}
-
-<section class="mb-10">
-  {%
-    set imageData = {
-    "imgPath": "/assets/images/rust/eurorust-2024.jpg",
-    "alt": "Photo of EuroRust 2024's speakers, organizers, moderators and the audience in the background, all with theirs hands in the air",
-    "sizes": "100vw",
-    "loading": "lazy",
-    "sizesArray": [760, 1440, 1920]
-    }
-  %}
-  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
-</section>
 
 <section class="my-10 container container--lg">
   <div class="split-content no-link">
@@ -192,6 +146,52 @@ og:
         }
       %}
       {{ btnSecondary( link, 'mt-2 plausible-event-name=Rust+Contact' ) }}
+    </div>
+  </div>
+</section>
+
+<section class="mb-10">
+  {%
+    set imageData = {
+    "imgPath": "/assets/images/rust/eurorust-2024.jpg",
+    "alt": "Photo of EuroRust 2024's speakers, organizers, moderators and the audience in the background, all with theirs hands in the air",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+    }
+  %}
+  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+</section>
+
+<section class="my-10 container container--lg">
+  <div class="">
+    <div class="mb-4">
+      <h5 class="mb-015">EuroRust</h5>
+      <h3 class="mb-2">We run EuroRust</h3>
+      <p>
+        In 2026, EuroRust comes to Barcelona from October 14th to 17th. We’ll have two days of talks
+        with a main track and a side track as well as an impl room. Plus, there will be workshops on
+        the day before the main conference, an impl day on the day after, several side activities
+        around the event, as well as our hallmark after party on Friday night.
+      </p>
+    </div>
+  </div>
+  <div class="split-content">
+    <a href="https://eurorust.eu" class="split-content__link"></a>
+    <div class="split-content__wrapper">
+      <div class="split-content__content">
+        <h4>Join us in Barcelona in 2026 for 4 days of celebrating the European Rust community</h4>
+        {%
+          set link = {
+          "label": 'Stay up to date!',
+          "url": 'https://eurorust.eu'
+          }
+        %}
+        {{ btnSecondary( link, 'mt-2' ) }}
+      </div>
+      <div class="split-content__feature">
+        {% include 'content/secondary-feature-eurorust.njk' %}
+      </div>
     </div>
   </div>
 </section>
