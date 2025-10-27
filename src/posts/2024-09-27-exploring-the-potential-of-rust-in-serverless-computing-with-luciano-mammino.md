@@ -23,4 +23,4 @@ Luciano highlighted that serverless computing is an ideal entry point for Rust i
 
 While Rust may be challenging to learn, Luciano emphasized the confidence it brings in production environments due to its focus on safety. He believes that as more developers and organizations experience these benefits, Rust will gain more traction in the serverless ecosystem. Luciano’s experience offers valuable insights for anyone considering Rust for their next cloud-native project, demonstrating the language’s potential to optimize serverless functions and build more reliable applications.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/U9JZD7d9OmA" title="Embedded video of Luciano's interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/U9JZD7d9OmA" title="Embedded video of Luciano's interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

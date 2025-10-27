@@ -23,4 +23,4 @@ Vitaly then discusses JetBrains’ potential role in providing more professional
 
 Luca and Vitaly also mention how Rust is becoming more popular for backend development because of its performance and safety features. Vitaly concludes the interview by encouraging viewers to give feedback on JetBrains' RustRover to improve it.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cc-o1UMw__M" title="Embedded video of Vitaly's interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cc-o1UMw__M" title="Embedded video of Vitaly's interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

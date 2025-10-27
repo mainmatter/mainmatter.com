@@ -45,6 +45,6 @@ og:
 
 <div class="case-study__section">
   <div class="case-study__text rte">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/2vD_geF_Ask" title="Gravity Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2vD_geF_Ask" title="Gravity Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
 </div>

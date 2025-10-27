@@ -21,4 +21,4 @@ Tim and Marco also talk about the fact that many engineers remain unaware of how
 
 Finally, they emphasize the need for senior engineers who are proficient in Rust to mentor juniors within companies in order to make Rust adoption a success. Spreading Rust knowledge is critical to avoid dependencies on isolated groups of developers, ensuring successful integration across the organization.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nPFXIBbjJuM?si=eQDXD1KvBpMF-dY9" title="Embedded video of Tim's interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/nPFXIBbjJuM?si=eQDXD1KvBpMF-dY9" title="Embedded video of Tim's interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
