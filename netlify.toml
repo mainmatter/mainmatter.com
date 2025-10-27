@@ -3,6 +3,11 @@
   [plugins.inputs]
     cache_img = 'assets/images'
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+  "Content-Security-Policy" = "script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://plausible.io https://app.netlify.com; frame-src https://challenges.cloudflare.com https://app.netlify.com; object-src 'none';"
+
 [build]
   environment = { NODE_VERSION = "22.13.0" }
   command = "echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' >> .npmrc && pnpm install && pnpm build"
