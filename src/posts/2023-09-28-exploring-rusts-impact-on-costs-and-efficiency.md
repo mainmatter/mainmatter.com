@@ -21,4 +21,4 @@ Stefan highlights the importance of understanding memory management and low-leve
 
 Lastly, Stefan discusses different timelines from his own experience and suggested that having mentors and guidance throughout the learning process is essential for success in Rust due to its explicit decision-making requirements and complex concepts.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KTJIsicwW5s?si=fk_MRap9FIzbP44U" title="Embedded video of Stefan's interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KTJIsicwW5s?si=fk_MRap9FIzbP44U" title="Embedded video of Stefan's interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

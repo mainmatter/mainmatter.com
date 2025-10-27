@@ -7,6 +7,7 @@ layout: "base"
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "newsletter-cta.njk" import newsletterCta %}
 {% from "strategy-list.njk" import strategyList %}
+{% from "global/invisible-captcha.njk" import invisibleCaptcha %}
 
 {%- block content -%}
   {%
@@ -209,6 +210,7 @@ layout: "base"
               </div>
             </div>
           </div>
+          {{ invisibleCaptcha() }}
         </form>
       </div>
     </div>

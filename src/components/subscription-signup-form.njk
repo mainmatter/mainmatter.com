@@ -1,3 +1,5 @@
+{% from "global/invisible-captcha.njk" import invisibleCaptcha %}
+
 {%- macro subscriptionSignupForm(content) -%}
   <section
     class="cta-banner cta-banner--purple container container--xl my-10"
@@ -90,6 +92,7 @@
               </div>
             </div>
           </div>
+          {{ invisibleCaptcha() }}
         </form>
       </div>
     </div>

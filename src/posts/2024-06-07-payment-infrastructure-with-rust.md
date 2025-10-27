@@ -21,4 +21,4 @@ Nikulipe uses Rust across all layers of their stack, which promotes full-stack a
 
 Next, Florent and Luca moved on to the challenges that Nikulipe faced on their Rust journey. They discussed Rust's long compile times, Cargo's handling of larger workspaces, and the lack of optimization in feature management and caching as the primary drawbacks. They end by talking about the obstacles faced working with Protobuf in Rust which led to code duplication and further complications.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RA-r4F4ZmXM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RA-r4F4ZmXM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

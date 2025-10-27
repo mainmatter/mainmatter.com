@@ -19,4 +19,4 @@ Marco and Rob talk about Kraken’s migration to Rust microservices and the sign
 
 Finally, they discuss updates in Rust’s web development ecosystem and actix specifically, and Rob shares his view on how improvements in the language and framework space will eventually lead to a future where web development in Rust can be as approachable as development with e.g. express.js.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4J7FChl7jfw?si=TJ0C_i22L6gHDUpz" title="Embedded video of Rob's interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4J7FChl7jfw?si=TJ0C_i22L6gHDUpz" title="Embedded video of Rob's interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

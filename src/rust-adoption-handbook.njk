@@ -16,6 +16,8 @@ og:
 {% from "secondary-feature.njk" import secondaryFeature %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "btn-secondary.njk" import btnSecondary %}
+{% from "global/invisible-captcha.njk" import invisibleCaptcha %}
+
 {%
   set 'content' = {
   "title": "The Rust Adoption Handbook",
@@ -162,6 +164,7 @@ og:
               </div>
             </div>
           </div>
+          {{ invisibleCaptcha() }}
         </form>
         <script>
           document.addEventListener("DOMContentLoaded", () => {

@@ -45,6 +45,7 @@
     "colors": "^1.4.0",
     "cross-env": "7.0.3",
     "dayjs": "^1.10.4",
+    "dotenv": "^17.2.3",
     "eleventy-plugin-og-image": "^4.0.1",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^10.0.0",

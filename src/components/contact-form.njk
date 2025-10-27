@@ -1,4 +1,5 @@
 {% from "social-list.njk" import socialList %}
+{% from "global/invisible-captcha.njk" import invisibleCaptcha %}
 
 <section class="contact-form color-hero color-hero--purple" data-background-color="purple">
   <div class="contact-form__container">
@@ -133,6 +134,7 @@
             </div>
           </div>
         </div>
+        {{ invisibleCaptcha() }}
       </form>
 
       <h4 class="mt-10">Other ways to reach out</h4>
