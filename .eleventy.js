@@ -18,6 +18,8 @@ const { findBySlug } = require("./utils/findBySlug");
 const { filterByCollectionTag } = require("./utils/filterByCollectionTag.mjs");
 const { init } = require("./utils/svelteSyntaxHighlight");
 
+require("dotenv").config();
+
 /**
  * Import site configuration
  */
@@ -195,6 +197,8 @@ module.exports = async function (eleventyConfig) {
   eleventyConfig.addShortcode("copyrightYear", function () {
     return `${now.getFullYear()}`;
   });
+
+  eleventyConfig.addShortcode("turnstileSiteKey", () => process.env.CF_TURNSTILE_KEY);
 
   eleventyConfig.addShortcode(
     "image",
