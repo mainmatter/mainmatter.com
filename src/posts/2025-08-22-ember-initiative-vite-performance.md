@@ -11,13 +11,13 @@ tagline: <p>Ember will soon use Vite as its default build system, and we would l
 
 One goal of the [Ember Initiative](https://mainmatter.com/ember-initiative/) is to bring a modern toolchain based on [Vite](https://vite.dev/) to Ember. This increases compatibility with the wider JavaScript ecosystem and brings potential for faster builds, rebuilds, route splitting, and more.
 
-To ensure Vite can improve the build pipeline of real-world production applications, we need your feedback. Using the open source tool we've built to measure the differences in build and pageload times, you can share your benchmarks with us so we can make Ember better and faster for everyone.
+To ensure Vite can improve the build pipeline of real-world production applications, we need your feedback. Using the open source tool we've built to measure the differences in build and pageload times, you can share your benchmarks with us so we can continue making Ember better and faster for everyone.
 
 ## How the classic build system differs from Vite
 
-The classic build setup uses `ember-cli`, which builds your app using an underlying technology called `broccoli`, or some more adventurous Ember developers might have been using `webpack` through `embroider`. Both of these ways of building your app behave the same: Everything is compiled up front, and the app is loaded as a few bundled AMD-based entry files or chunks, even when the app runs in development mode. Roughly speaking, we are slow at first, but we make up for some of that time during the page load by bundling everything up into a minimal number of files.
+The classic build setup uses `ember-cli`, which builds your app using an underlying technology called `broccoli`, although some adventurous Ember developers might have been using `webpack` through `embroider`. In both cases, everything is compiled up front, and the app is loaded as a few bundled AMD-based entry files or chunks, even when the app runs in development mode. Roughly speaking, the initial build is slow, then makes up for some of that time during the page load by bundling everything up into a minimal number of files.
 
-[Vite follows a very different philosophy](https://vite.dev/guide/philosophy) when it comes to dev builds. It has multiple stages to optimise the input and sends real JavaScript modules and entry points to the client. This means that for every module in your app (and every entry-point in your dependencies), you will see a new network request for that individual module in the browser. With large apps, you could start the dev server blazingly fast, only to have a perceived slowdown as the browser loads large numbers of tiny files, which in turn are much faster to reload for small changes.
+[Vite follows a very different philosophy](https://vite.dev/guide/philosophy) when it comes to dev builds: it has multiple stages to optimise the input and sends real JavaScript modules and entry points to the client. This means that for every module in your app (and every entry-point in your dependencies), you will see a new network request for that individual module in the browser. With large apps, you could start the dev server blazingly fast, only to have a perceived slowdown as the browser loads large numbers of tiny files, which in turn are much faster to reload for small changes.
 
 ## Build, Measure, Optimise, Repeat
 
