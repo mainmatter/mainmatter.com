@@ -27,7 +27,7 @@ displayTitle: "Modernizing Redis Querying: Safe, Fast, Future-Ready"
   <h3 class="case-study__heading">The Challenge</h3>
   <div class="case-study__text">
     <p>
-      Redis Query Engine’s core is a large and mature C codebase—highly optimized, but increasingly difficult to evolve safely at the pace of active development. Memory-safety issues and accumulated technical debt made change risky, even for experienced contributors. To address these challenges, the Redis team decided to gradually migrate parts of the codebase to Rust, aiming for stronger safety guarantees and more sustainable long-term development. With limited in-house Rust expertise, the team reach out to Mainmatter to guide them through the transition.
+      Redis Query Engine’s core is a mature and highly optimized C codebase—powerful, but ready for a more modern foundation as the project continues to grow. To support faster innovation and benefit from stronger safety guarantees, the Redis team decided to gradually migrate the codebase to Rust. This shift promised more sustainable long-term development and a smoother path for future features. With limited in-house Rust expertise, the team reach out to Mainmatter to guide them through the transition.
     </p>
   </div>
 </div>
