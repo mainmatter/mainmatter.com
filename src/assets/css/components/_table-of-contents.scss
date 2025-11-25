@@ -20,14 +20,15 @@
   @media (min-width: $breakpoint-xl) {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     }
  
   color: var(--color-white);
 
   & .btn-secondary {
     color: var(--color-white);
-    text-decoration: underline; 
+    text-decoration: underline;
+    text-underline-offset: 0.25rem; 
 
     & .icon-arrow {
       color: var(--color-white);
