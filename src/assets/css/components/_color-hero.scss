@@ -107,6 +107,14 @@
     padding: 25vh 0 10vh;
   }
 
+  .color-hero__container.container-- {
+    &xl {
+      width:90%;
+      padding: 12rem 0 6rem;
+    }
+    
+  }
+
   .color-hero {
     min-height: 90vh;
   }

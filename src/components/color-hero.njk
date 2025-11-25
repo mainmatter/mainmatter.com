@@ -11,6 +11,7 @@ content: A content block with the following options:
   text: String or markup for body text
   linkUrl: Optional link destination
   linkText: Optional link text
+  contentWidth: Width of the container; normally set to container--lg on all hero sections. To set it to something else, use "xl", "s", etc. If the container width is specified, it will also be set as the width of the color-hero__text section. 
 
 Example usage:
 {% set content = {
@@ -38,7 +39,7 @@ Example usage:
       </div>
       <div class="color-hero__overlay"></div>
     {% endif %}
-    <div class="color-hero__container container container--lg">
+    <div class="color-hero__container container {% if content.containerWidth %}container--{{ content.containerWidth }}{% else %}container--lg{% endif %}">
       <div class="color-hero__main">
         {% if content.eyebrow %}
           <p class="color-hero__eyebrow h5">{{ content.eyebrow | safe }}</p>
@@ -50,7 +51,7 @@ Example usage:
           <p class="color-hero__subheading caption">{{ content.subheading | safe }}</p>
         {% endif %}
         {% if content.text %}
-          <div class="color-hero__text mt-2">{{ content.text | safe }}</div>
+          <div class="{% if content.containerWidth %}container--{{ content.containerWidth }}{% else %}color-hero__text{% endif %} mt-2">{{ content.text | safe }}</div>
         {% endif %}
         {% if content.linkUrl %}
           {{ ctaLink(content.linkUrl, content.linkText, 'color-hero__link') }}
