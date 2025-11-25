@@ -1,0 +1,36 @@
+@use "../base/breakpoints" as *;
+
+.table-of-contents {
+  background-color: var(--color-purple);
+}
+
+.table-of-contents__list {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-m) {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  row-gap: .5rem;
+  column-gap: 3rem;
+  justify-items: center;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    }
+ 
+  color: var(--color-white);
+
+  & .btn-secondary {
+    color: var(--color-white);
+    text-decoration: underline; 
+
+    & .icon-arrow {
+      color: var(--color-white);
+    }
+  }
+}

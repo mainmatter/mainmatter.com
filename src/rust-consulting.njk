@@ -8,6 +8,7 @@ og:
 ---
 
 {% from "image-banner-with-text.njk" import imageBannerWithText %}
+{% from "table-of-contents.njk" import tableOfContents %}
 {% from "recent-posts.njk" import recentPosts %}
 {% from "logo-list.njk" import logoList %}
 {% from "cta-link.njk" import ctaLink %}
@@ -20,17 +21,23 @@ og:
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
 {%
   set 'content' = {
-  "eyebrow": "Our Expertise: Rust",
   "title": "Team Up With Us for Rust!",
-  "text": "Rust checks all the boxes – performance, efficiency, maintainability, and great developer experience. Mainmatter is here to empower your team to fully realize those benefits in your projects.",
-  "image": "/assets/images/hero/rust.jpg",
-  "alt": "Crabs climbing a rock on a beach",
+  "text": "Mainmatter is here to empower your team to fully realize Rust’s benefits in your projects. Mainmatter is here to empower your team to fully realize Rust’s benefits in your projects. Mainmatter is here to empower your team to fully realize Rust’s benefits in your projects. Mainmatter is here to empower your team to fully realize Rust’s benefits in your projects.",
   "loading": "eager"
   }
 %}
 {{ colorHero('purple', content) }}
 
-<section class="my-10 container container--lg">
+{% set content = {
+  'Our services': '#services',
+  'Our team': '#team',
+  'Our customers say': '#customer-feedback',
+  'Contact us': '#contact'
+} %}
+{{ tableOfContents(content) }}
+
+
+<section class="my-10 container container--lg" id="team">
   <div class="">
     <div class="mb-4">
       <h5 class="mb-015">Rust & Mainmatter</h5>

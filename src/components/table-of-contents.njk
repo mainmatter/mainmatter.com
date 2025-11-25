@@ -1,0 +1,19 @@
+{% from "btn-secondary.njk" import btnSecondary %}
+
+{%- macro tableOfContents(content) -%}
+  <section class="table-of-contents">
+    <div class="table-of-contents__list container container--xl py-10">
+      {% for text, anchor in content %}
+        <div>
+        {%-
+            set link = {
+            "label": text,
+            "url": anchor
+            }
+          -%}
+          {{- btnSecondary(link, 'mt-2', true) -}}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{%- endmacro -%}
