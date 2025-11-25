@@ -137,6 +137,12 @@
 }
 
 .p {
+  &t-3 {
+    padding-top: 3rem;
+  }
+  &b-3 {
+    padding-bottom: 3rem;
+  }
   &y-10 {
     padding-top: 5rem;
     padding-bottom: 5rem;
