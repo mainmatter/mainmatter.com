@@ -3,7 +3,7 @@ title: "Beyond the AI Hype: Realizing Real Engineering Value"
 authorHandle: marcoow
 tags: [ai, process, mainmatter]
 bio: "Marco Otte-Witte"
-description: "Marco Otte-Witte explores the opportunities and challenges of AI-accelerated software engineering and introduces Mainmatter’s new offering to guides teams through adopting AI."
+description: "Marco Otte-Witte explores the opportunities and challenges of AI-accelerated software engineering and shares how Mainmatter guides teams through adopting AI."
 tagline: '<p>We’ve moved beyond the peak of the AI hype cycle. Yes, <a href="https://youtube.com/shorts/ppy_toLPeqQ">there’s still a bubble</a> that is yet to burst. But that doesn’t mean there’s no real value inside. The era when the AI conversation was mostly about who could make the boldest claims, grab the most attention, and sound the most visionary is (mostly) behind us. What’s left is something more grounded, more practical, and ultimately far more useful: the recognition that AI is a tool that, among other things, unlocks real productivity gains for software engineering teams.</p>'
 og:
   image: /assets/images/posts/2025-10-29-beyond-the-ai-hype-realizing-real-engineering-value/og-image.png
@@ -39,7 +39,7 @@ If code production is in fact accelerated successfully through AI, the surroundi
 
 All that shows that AI only increases the importance of what has always distinguished great engineering teams from the rest: a strong engineering culture and the infrastructure and tooling that engineers thrive on. The companies that will struggle with adopting AI will be the same ones that have struggled with quality, velocity, and consistency before AI. AI just increases the pressure – if practices are weak, systems brittle, reviews inconsistent, AI will expose and amplify that, making the teams that are already at a competitive disadvantage fall behind further.
 
-### AI and Engineering Consulting
+### Guiding Teams Through Adopting AI
 
 Mainmatter has spent years helping clients build strong engineering cultures and the infrastructure needed to support them. Our work has never been just about writing code—it’s been about shaping the systems and processes that reliably and efficiently turn ideas into running systems. That work is more important than ever, now with an added dimension: enabling teams to harness AI in ways that genuinely accelerate their ability to deliver value—sustainably, and at scale.
 
