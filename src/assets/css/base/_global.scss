@@ -185,6 +185,10 @@ a {
     text-underline-offset: 0.25rem;
     text-decoration-color: inherit;
   }
+
+  &.link-black {
+    color: var(--color-body-text);
+  }
 }
 
 button {
@@ -197,6 +201,16 @@ button {
 
   [data-background-color="purple"] & {
     background-color: var(--color-aqua);
+  }
+}
+
+.background- {
+  &aqua {
+    background-color: var(--color-aqua);
+  }
+
+  &white {
+    background-color: var(--color-white);
   }
 }
 
