@@ -116,7 +116,7 @@ og:
       }
     %}
     {{ btnSecondary( link, 'mt-2' ) }}
-    
+
     {% 
       set link = {
       "label": 'Stay up to date!',
@@ -125,6 +125,17 @@ og:
     %}
     {{ btnSecondary( link, 'mt-2' ) }}
   </div>
+  {%
+    set logoCompanies = [
+    'Aleph Alpha',
+    'KISTERS',
+    'BMW Car IT',
+    'Faculty',
+    'Otto',
+    'Redis'
+    ]
+  %}
+  {{ logoList(logoCompanies) }}
 </section>
 
 <section class="my-10">
@@ -202,18 +213,7 @@ og:
   </div>
 </section>
 
-{%
-  set logoCompanies = [
-  'Aleph Alpha',
-  'KISTERS',
-  'BMW Car IT',
-  'Faculty',
-  'Otto',
-  'Redis'
-  ]
-%}
-{% set title = 'We are trusted by international companies that bet on Rust' %}
-{{ logoList(logoCompanies, title, "h4", "h5") }}
+
 
 <section class="mb-10">
   {%
