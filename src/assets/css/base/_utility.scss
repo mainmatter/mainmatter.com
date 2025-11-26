@@ -88,6 +88,13 @@
   &b-5 {
     margin-bottom: 5rem;
   }
+  &b-6 {
+    margin-bottom: 5rem;
+
+    @media (min-width: $breakpoint-s) {
+      margin-bottom: 6rem;
+    }
+  }
   &b-10 {
     margin-bottom: 5rem;
 
