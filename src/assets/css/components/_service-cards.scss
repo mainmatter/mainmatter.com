@@ -1,0 +1,37 @@
+.service-cards {
+  background-color: var(--color-purple);
+
+  & h1 {
+    color: var(--color-white);
+  }
+
+  & .card__grid-element {
+    padding: 4rem;
+  }
+}
+
+.service-cards__intro {
+  max-width: 64remp;
+}
+
+.service-cards__logo {
+  position: relative;
+  max-width: 80%;
+}
+
+.service-cards__btn {
+  display: inline;
+}
+
+.service-cards__grid-element {
+  background-color: var(--color-white);
+  color: black;
+
+  & a {
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

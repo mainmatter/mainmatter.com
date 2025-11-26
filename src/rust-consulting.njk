@@ -9,6 +9,7 @@ og:
 
 {% from "image-banner-with-text.njk" import imageBannerWithText %}
 {% from "table-of-contents.njk" import tableOfContents %}
+{% from "service-cards.njk" import serviceCards %}
 {% from "recent-posts.njk" import recentPosts %}
 {% from "logo-list.njk" import logoList %}
 {% from "cta-link.njk" import ctaLink %}
@@ -36,6 +37,32 @@ og:
   'Contact us': '#contact'
 } %}
 {{ tableOfContents(content) }}
+{%
+  set 'tech_1' = {
+  "title": "Rust is a competitive advantage",
+  "text": "Roughly 15 words about C to Rust migration here. Word word. More words. Maybe some more, not more than this though.",
+  "label": "Click here",
+  "link": "rust-consulting"
+  }
+%}
+{%
+  set 'tech_2' = {
+  "title": "Svelte is the future of frontend development",
+  "text": "Roughly 15 words about C to Rust migration here. Word word. More words. Maybe some more, not more than this though.",
+  "label": "See here",
+  "link": "svelte-consulting"
+  }
+%}
+{%
+  set 'tech_3' = {
+  "title": "Ember is our expertise",
+  "text": "Roughly 15 words about C to Rust migration here. Word word. More words. Maybe some more, not more than this though.",
+  "label": "Mouse over here",
+  "link": "ember-consulting"
+  }
+%}
+{% set technologies = [tech_1, tech_2, tech_3] %}
+{{ serviceCards('team-reinforcement_technologies', 'Technologies', technologies) }}
 
 <section class="py-10 background-aqua" id="team">
   <div class="container container--xl p-5 background-white">
@@ -57,6 +84,19 @@ og:
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="my-10">
+  <div class="container container--xl">
+    <h1>Our customers say about us</h1>
+    {%
+      set 'content' = {
+      "text": "”Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way. I've learned so much, especially during our pairing sessions—it allowed me to improve my technical skills and grow as an engineer.”",
+      "source": "Andreas Hartel, Senior Engineer at aleph alpha"
+      }
+    %}
+    {{ quote(content) }}
   </div>
 </section>
 
@@ -245,33 +285,6 @@ og:
     }
   %}
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
-</section>
-
-<section class="my-10">
-  <h2 class="quotes-list__title h2">Our customers say about us</h2>
-  <div class="container container--lg">
-    {%
-      set 'content' = {
-      "text": "”Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way. I've learned so much, especially during our pairing sessions—it allowed me to improve my technical skills and grow as an engineer.”",
-      "source": "Andreas Hartel, Senior Engineer at aleph alpha"
-      }
-    %}
-    {{ quote(content) }}
-    {%
-      set 'content' = {
-      "text": "”Working with Mainmatter's experts has always been a good experience. We can really feel that they have mastery on many topics, and knowledge about complex technical problems. I’ve learned so much, especially during our pairing sessions, and it allows me to improve my technical skills and growth as an engineer.”",
-      "source": "Alexandre Monjol, Engineer at Qonto"
-      }
-    %}
-    {{ quote(content, alignment='right') }}
-    {%
-      set 'content' = {
-      "text": "”We started working with simplabs to build a state-of-the-art mobile web app from the ground up and it was an absolute success! Not only are they web specialists, but their expertise in development practices and agile processes made our collaboration an absolute delight.”",
-      "source": "Carl Anderson, General Manager at Trainline Europe"
-      }
-    %}
-    {{ quote(content) }}
-  </div>
 </section>
 
 {% set clients = ['aleph-alpha', 'kisters', 'bmw-car-it', 'redis'] %}
