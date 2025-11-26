@@ -152,6 +152,16 @@
   &b-3 {
     padding-bottom: 3rem;
   }
+  &b-5 {
+    padding-bottom: 5rem;
+  }
+  &b-10 {
+    padding-bottom: 5rem;
+
+    @media (min-width: $breakpoint-s) {
+      padding-bottom: 10rem;
+    }
+  }
   &y-10 {
     padding-top: 5rem;
     padding-bottom: 5rem;
