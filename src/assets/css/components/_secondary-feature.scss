@@ -15,6 +15,10 @@
   line-height: 0;
 }
 
+.secondary-feature__image-square.split-content__author img{
+  clip-path: none;
+}
+
 .ember-consultants {
   display: flex;
   flex-direction: row;
