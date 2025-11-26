@@ -87,16 +87,43 @@ og:
   </div>
 </section>
 
-<section class="my-10">
-  <div class="container container--xl">
+<section class="my-10" id="successes">
+  <div class="container container--xl mb-6">
     <h1>Our customers say about us</h1>
     {%
       set 'content' = {
       "text": "”Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way. I've learned so much, especially during our pairing sessions—it allowed me to improve my technical skills and grow as an engineer.”",
-      "source": "Andreas Hartel, Senior Engineer at aleph alpha"
+      "source": "Andreas Hartel",
+      "position": "Senior Engineer at Aleph Alpha",
+      "styling": "redesigned"
       }
     %}
     {{ quote(content) }}
+  </div>
+  <div class="container container--xl mb-6">
+    {% 
+      set link = {
+      "label": 'Stay up to date!',
+      "url": 'https://eurorust.eu'
+      }
+    %}
+    {{ btnSecondary( link, 'mt-2' ) }}
+
+    {% 
+      set link = {
+      "label": 'Stay up to date!',
+      "url": 'https://eurorust.eu'
+      }
+    %}
+    {{ btnSecondary( link, 'mt-2' ) }}
+    
+    {% 
+      set link = {
+      "label": 'Stay up to date!',
+      "url": 'https://eurorust.eu'
+      }
+    %}
+    {{ btnSecondary( link, 'mt-2' ) }}
   </div>
 </section>
 
