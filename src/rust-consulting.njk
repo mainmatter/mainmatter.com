@@ -37,64 +37,24 @@ og:
 } %}
 {{ tableOfContents(content) }}
 
-
-<section class="my-10 container container--lg" id="team">
-  <div class="">
-    <div class="mb-4">
-      <h5 class="mb-015">Rust & Mainmatter</h5>
-      <h3 class="mb-2">A unique skillset</h3>
-      <p>
+<section class="py-10 background-aqua" id="team">
+  <div class="container container--xl p-5 background-white">
+    <div class="split-content no-link m-0">
+      <h1 class="mb-2">Is Rust the right choice for us?</h1>
+      <div class="split-content__wrapper">  
+        <div class="split-content__content m-0">  
+          <p>
         We’re Rust experts — our team is led by Luca Palmieri, author of
-        <a href="http://zero2prod.com">"Zero to Production in Rust"</a>. We’ve been active in the
+        <a href="http://zero2prod.com" class="link-black">"Zero to Production in Rust"</a>. We’ve been active in the
         Rust ecosystem for years, creating the
-        <a href="https://rust-exercises.com">100 Exercises to Learn Rust</a> course, contributing to
-        <a href="https://crates.io">crates.io</a>, and maintaining several other
-        <a href="#open-source">open-source projects</a>.
-      </p>
-      <p>
-        We support you in rewriting existing codebases to Rust, using Rust to accelerate hot modules
-        in Python, Ruby, Node.js, or other languages, and in building new systems with Rust from
-        scratch.
-      </p>
-    </div>
-  </div>
-</section>
-
-{%
-  set logoCompanies = [
-  'Aleph Alpha',
-  'KISTERS',
-  'BMW Car IT',
-  'Faculty',
-  'Otto',
-  'Redis'
-  ]
-%}
-{% set title = 'We are trusted by international companies that bet on Rust' %}
-{{ logoList(logoCompanies, title, "h4", "h5") }}
-
-<section class="my-10 container container--lg">
-  <div class="split-content no-link">
-    <div class="split-content__wrapper">
-      <div class="split-content__content">
-        <h5>Book a free call</h5>
-        <h3 class="split-content__subheading h2">Is Rust the right choice for us?</h3>
-        <p>
-          Every new technology brings its own risks - Rust is no exception. Our team of Rust experts
-          is here to help you. You walk us through your company's usecase and your requirements and
-          we'll do our best to suggest the best course of action. Sometimes Rust is not the answer,
-          but if it is, we'll make sure you are on the right track.
-        </p>
-        {%
-          set link = {
-          "label": 'Book a 1:1 call with us',
-          "url": 'https://calendly.com/luca-palmieri/talk-to-a-rust-expert'
-          }
-        %}
-        {{ btnSecondary( link, 'mt-2 plausible-event-name=Rust+1on1+Call' ) }}
-      </div>
-      <div class="split-content__feature">
-        {% include 'content/secondary-feature-rust-consulting.njk' %}
+        <a href="https://rust-exercises.com" class="link-black">100 Exercises to Learn Rust</a> course, contributing to
+        <a href="https://crates.io" class="link-black">crates.io</a>, and maintaining several other
+        <a href="#open-source" class="link-black">open-source projects</a>.
+          </p>
+        </div>
+        <div class="split-content__feature">
+          {% include 'content/secondary-feature-rust-consulting.njk' %}
+        </div>
       </div>
     </div>
   </div>
@@ -152,6 +112,41 @@ og:
     </div>
   </div>
 </section>
+
+<section class="my-10 container container--lg">
+  <div class="">
+    <div class="mb-4">
+      <h5 class="mb-015">Rust & Mainmatter</h5>
+      <h3 class="mb-2">A unique skillset</h3>
+      <p>
+        We’re Rust experts — our team is led by Luca Palmieri, author of
+        <a href="http://zero2prod.com">"Zero to Production in Rust"</a>. We’ve been active in the
+        Rust ecosystem for years, creating the
+        <a href="https://rust-exercises.com">100 Exercises to Learn Rust</a> course, contributing to
+        <a href="https://crates.io">crates.io</a>, and maintaining several other
+        <a href="#open-source">open-source projects</a>.
+      </p>
+      <p>
+        We support you in rewriting existing codebases to Rust, using Rust to accelerate hot modules
+        in Python, Ruby, Node.js, or other languages, and in building new systems with Rust from
+        scratch.
+      </p>
+    </div>
+  </div>
+</section>
+
+{%
+  set logoCompanies = [
+  'Aleph Alpha',
+  'KISTERS',
+  'BMW Car IT',
+  'Faculty',
+  'Otto',
+  'Redis'
+  ]
+%}
+{% set title = 'We are trusted by international companies that bet on Rust' %}
+{{ logoList(logoCompanies, title, "h4", "h5") }}
 
 <section class="mb-10">
   {%
