@@ -204,6 +204,12 @@ button {
   }
 }
 
+.color- {
+  &white {
+    color: var(--color-white) !important;
+  }
+}
+
 .background- {
   &aqua {
     background-color: var(--color-aqua);
