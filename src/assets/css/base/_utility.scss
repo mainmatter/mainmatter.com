@@ -28,6 +28,13 @@
   display: none;
 }
 
+.mobile-hidden {
+  @media (max-width: $breakpoint-s) {
+    display: none;
+  }
+
+}
+
 .m {
   &-0 {
     margin: 0;
