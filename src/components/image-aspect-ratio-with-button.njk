@@ -1,0 +1,36 @@
+{% from "btn-primary.njk" import btnPrimary %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+
+{%- macro imageAspectRatioWithButton(content) -%}
+  <div class="image-aspect-ratio-with-button__wrapper">
+    <div class="image-aspect-ratio-with-button__button">
+      {% if content.linkUrl %}
+        {%
+          set link = {
+          "label": content.linkText,
+          "url": content.linkUrl
+          }
+      %}
+        {{ btnPrimary( link, 'white', 'mt-2' ) }}
+      {% endif %}
+    </div>
+    <div class="image-aspect-ratio-with-button__image">
+      {%
+        set imageData = {
+        "imgPath": content.imgPath,
+        "alt": content.alt,
+        "sizes": content.sizes,
+        "loading": content.loading,
+        "sizesArray": content.sizesArray
+        }
+      %}
+      {% if content.aspectRatioDesktop %}
+        {% set aspectRatioDesktop = content.aspectRatioDesktop %}
+      {% endif %}
+        {% if content.aspectRatioMobile %}
+        {% set aspectRatioMobile = content.aspectRatioMobile %}
+      {% endif %}
+      {{ imageAspectRatio(imageData, aspectRatioDesktop, aspectRatioMobile) }}
+    </div>
+  </div>
+{% endmacro %}

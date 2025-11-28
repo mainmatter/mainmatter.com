@@ -16,7 +16,7 @@ og:
 {% from "color-hero.njk" import colorHero %}
 {% from "btn-secondary.njk" import btnSecondary %}
 {% from "cta-banner.njk" import ctaBanner %}
-{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "image-aspect-ratio-with-button.njk" import imageAspectRatioWithButton %}
 {% from "quote.njk" import quote %}
 {% from 'featured-case-study.njk' import featuredCaseStudy %}
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
@@ -87,17 +87,20 @@ og:
   </div>
 </section>
 
-<section class="mb-10">
+<section class="mb-10 mobile-hidden">
   {%
-    set imageData = {
-    "imgPath": "/assets/images/rust/eurorust-2024.jpg",
-    "alt": "Photo of EuroRust 2024's speakers, organizers, moderators and the audience in the background, all with theirs hands in the air",
-    "sizes": "100vw",
-    "loading": "lazy",
-    "sizesArray": [760, 1440, 1920]
+    set 'content' = {
+      "imgPath": "/assets/images/rust/eurorust-2024.jpg",
+      "alt": "Photo of EuroRust 2024's speakers, organizers, moderators and the audience in the background, all with theirs hands in the air",
+      "sizes": "100vw",
+      "loading": "lazy",
+      "sizesArray": [760, 1440, 1920],
+      "aspectRatioDesktop": "32/6",
+      "linkUrl": "/contact",
+      "linkText": "Get in touch"
     }
   %}
-  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+  {{ imageAspectRatioWithButton(content) }}
 </section>
 
 <section class="mt-10 mb-5" id="successes">
