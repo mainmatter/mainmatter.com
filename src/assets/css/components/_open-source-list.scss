@@ -8,6 +8,18 @@
   margin: 5rem 0;
 }
 
+.opensource-list__list-redesigned {
+    column-gap: 1.5rem;
+
+    & .opensource-list__project-image {
+      height: auto;
+    }
+
+    & .btn-secondary__text {
+      font-size: 1.5rem;
+    }
+}
+
 .opensource-list__project-image {
   height: 4rem;
   width: auto;

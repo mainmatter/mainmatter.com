@@ -1,6 +1,6 @@
 ---
 layout: base
-title: "Team Up With Us for Rust! | Rust consulting"
+title: "Accelerate your Rust projects! | Rust consulting"
 description: Mainmatter enables teams to adopt Rust in their web projects and increase performance, efficiency, and maintainability.
 permalink: /rust-consulting/
 og:
@@ -22,8 +22,8 @@ og:
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
 {%
   set 'content' = {
-  "title": "Team Up With Us for Rust!",
-  "text": "Mainmatter is here to empower your team to fully realize Rust’s benefits in your projects. Mainmatter is here to empower your team to fully realize Rust’s benefits in your projects. Mainmatter is here to empower your team to fully realize Rust’s benefits in your projects. Mainmatter is here to empower your team to fully realize Rust’s benefits in your projects.",
+  "title": "Accelerate your Rust projects!",
+  "text": "On paper, Rust checks all the boxes—performance, efficiency, maintainability, and great developer experience. But it takes time (and a few mistakes) to realize those benefits.  That’s where Mainmatter comes in—our experts join your team to accelerate your efforts and minimize execution risk. Together, we can take your Rust projects to the next level.",
   "loading": "eager",
   "containerType": "lp"
   }
@@ -31,10 +31,10 @@ og:
 {{ colorHero('purple', content) }}
 
 {% set content = {
-  'Our services': '#services',
+  'What we do best': '#services',
   'Our team': '#team',
-  'Our customers say': '#customer-feedback',
-  'Contact us': '#contact'
+  'Success stories': '#successes',
+  'Let’s talk': '#contact'
 } %}
 {{ tableOfContents(content) }}
 {%
@@ -62,21 +62,24 @@ og:
   }
 %}
 {% set technologies = [tech_1, tech_2, tech_3] %}
-{{ serviceCards('team-reinforcement_technologies', 'Technologies', technologies) }}
+{{ serviceCards('services', 'What we do best', technologies) }}
 
-<section class="py-10 background-aqua" id="team">
-  <div class="container container--xl p-5 background-white">
+<section class="py-10 background-aqua">
+  <div class="container container--xl p-5 background-white" id="team">
     <div class="split-content no-link m-0">
-      <h1 class="mb-2">Is Rust the right choice for us?</h1>
+      <h1 class="mb-2">We are Rust experts</h1>
       <div class="split-content__wrapper">  
         <div class="split-content__content m-0">  
           <p>
-        We’re Rust experts — our team is led by Luca Palmieri, author of
-        <a href="http://zero2prod.com" class="link-black">"Zero to Production in Rust"</a>. We’ve been active in the
-        Rust ecosystem for years, creating the
-        <a href="https://rust-exercises.com" class="link-black">100 Exercises to Learn Rust</a> course, contributing to
-        <a href="https://crates.io" class="link-black">crates.io</a>, and maintaining several other
-        <a href="#open-source" class="link-black">open-source projects</a>.
+            Mainmatter has been active in the Rust ecosystem for years, creating the 
+            <a href="https://rust-exercises.com" class="link-black">100 Exercises to Learn Rust</a> course, organizing 
+            <a href="https://www.eurorust.eu" class="link-black">EuroRust</a>, contributing to
+            <a href="https://crates.io" class="link-black">crates.io</a>, and maintaining several other
+            <a href="#open-source" class="link-black">open-source&nbsp;projects</a>. 
+          </p>
+          <p>
+            Our team is led by Luca Palmieri, author of
+            <a href="http://zero2prod.com" class="link-black">"Zero to Production in&nbsp;Rust"</a>.
           </p>
         </div>
         <div class="split-content__feature">
@@ -90,14 +93,14 @@ og:
 <section class="mb-10 mobile-hidden">
   {%
     set 'content' = {
-      "imgPath": "/assets/images/rust/eurorust-2024.jpg",
-      "alt": "Photo of EuroRust 2024's speakers, organizers, moderators and the audience in the background, all with theirs hands in the air",
+      "imgPath": "/assets/images/rust/rust-landing-page-crab.webp",
+      "alt": "Colorful crab",
       "sizes": "100vw",
       "loading": "lazy",
       "sizesArray": [760, 1440, 1920],
       "aspectRatioDesktop": "32/6",
-      "linkUrl": "/contact",
-      "linkText": "Get in touch"
+      "linkUrl": "#contact",
+      "linkText": "Let's talk"
     }
   %}
   {{ imageAspectRatioWithButton(content) }}
@@ -105,10 +108,10 @@ og:
 
 <section class="mt-10 mb-5" id="successes">
   <div class="container container--xl mb-6">
-    <h1>Our customers say about us</h1>
+    <h1>Success stories</h1>
     {%
       set 'content' = {
-      "text": "”Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way. I've learned so much, especially during our pairing sessions—it allowed me to improve my technical skills and grow as an engineer.”",
+      "text": "Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way.”",
       "source": "Andreas Hartel",
       "position": "Senior Engineer at Aleph Alpha",
       "styling": "redesigned"
@@ -119,24 +122,24 @@ og:
   <div class="container container--xl mb-6">
     {% 
       set link = {
-      "label": 'Stay up to date!',
-      "url": 'https://eurorust.eu'
+      "label": '5-8 words summarizing the Redis project here',
+      "url": '/work#redis'
       }
     %}
     {{ btnSecondary( link, 'mt-2' ) }}
 
     {% 
       set link = {
-      "label": 'Stay up to date!',
-      "url": 'https://eurorust.eu'
+      "label": '5-8 words summarizing the KISTERS project here',
+      "url": '/cases/kisters/'
       }
     %}
     {{ btnSecondary( link, 'mt-2' ) }}
 
     {% 
       set link = {
-      "label": 'Stay up to date!',
-      "url": 'https://eurorust.eu'
+      "label": '5-8 words summarizing the Aleph Alpha project here',
+      "url": '/cases/aleph-alpha/'
       }
     %}
     {{ btnSecondary( link, 'mt-2' ) }}
@@ -144,6 +147,7 @@ og:
   {%
     set logoCompanies = [
     'Aleph Alpha',
+    'Google',
     'KISTERS',
     'BMW Car IT',
     'Faculty',
@@ -158,54 +162,51 @@ og:
 
 <section class="container container--xl opensource-list my-10" id="open-source">
   <div class="">
-    <h2 class="opensource-list__title h2">We love Open Source</h2>
-    <ul class="opensource-list__list">
+    <h1 class="opensource-list__title">You might like...</h1>
+    <ul class="opensource-list__list opensource-list__list-redesigned">
       <li class="opensource-list__project">
-        <div class="opensource-list__project-image pb-5">
-          <img src="/assets/images/rust/gerust-logo.svg" alt="Gerust" />
+        <div class="opensource-list__project-image">
+          <img src="/assets/images/rust/redis-youtube-talk.webp" alt="Luca Palmieri presenting Mainmatter's Redis contributions on stage" />
         </div>
         <div class="opensource-list__project-text">
-          <h4 class="mb-015 mt-3">Gerust</h4>
-          <p>Generator for Rust backend&nbsp;projects</p>
+          <h4 class="mb-015">A deep-dive into our work for Redis at EuroRust 2025</h4>
           {%
             set link = {
-            "label": 'View on GitHub',
+            "label": 'Watch on YouTube',
             "url": 'https://github.com/mainmatter/gerust'
             }
           %}
-          {{ btnSecondary( link, 'mt-2' ) }}
+          {{ btnSecondary( link, 'mt-2 link-purple' ) }}
         </div>
       </li>
       <li class="opensource-list__project">
         <div class="opensource-list__project-image">
-          <img src="/assets/images/rust/book.svg" alt="100 Exercises to Learn Rust" />
+          <img src="/assets/images/rust/eserde-blog-post.webp" alt="Rust logo" />
         </div>
         <div class="opensource-list__project-text">
-          <h4 class="mb-015">100 Exercises To Learn&nbsp;Rust</h4>
-          <p>Learn Rust by solving 100&nbsp;exercises</p>
+          <h4 class="mb-015">Blog post: eserde: Don't stop at the first deserialization error</h4>
           {%
             set link = {
-            "label": 'View on GitHub',
+            "label": 'Read blog post',
             "url": 'https://github.com/mainmatter/100-exercises-to-learn-rust'
             }
           %}
-          {{ btnSecondary( link, 'mt-2' ) }}
+          {{ btnSecondary( link, 'mt-2 link-purple' ) }}
         </div>
       </li>
       <li class="opensource-list__project">
         <div class="opensource-list__project-image">
-          <img src="/assets/images/rust/cargo.svg" alt="cargo-autoinherit" />
+          <img src="/assets/images/rust/rust-handbook.webp" alt="Hand reaching out to a crab-shaped toy" />
         </div>
         <div class="opensource-list__project-text">
-          <h4 class="mb-015 mt-3">cargo-autoinherit</h4>
-          <p>Dry up your <code>Cargo.toml</code> manifests</p>
+          <h4 class="mb-015">The Rust Adoption Handbook</h4>
           {%
             set link = {
-            "label": 'View on GitHub',
+            "label": 'Download handbook',
             "url": 'https://github.com/mainmatter/cargo-autoinherit'
             }
           %}
-          {{ btnSecondary( link, 'mt-2' ) }}
+          {{ btnSecondary( link, 'mt-2 link-purple' ) }}
         </div>
       </li>
     </ul>
