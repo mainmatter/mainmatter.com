@@ -96,11 +96,17 @@
 // Quote styling redesign, as featured in the Rust Services LP
 
 .quote__redesigned {
-  margin: 7rem auto 0;
-  gap: 2rem;
+  margin: 3rem auto 0;
+  gap: 1rem;
+
+  @media (min-width: $breakpoint-s) {
+    margin: 7rem auto 0;
+    gap: 2rem;
+  } 
 
   & .quote__content {
     max-width: 70rem;
+    text-align: left;
   }
 
   & .quote__text {

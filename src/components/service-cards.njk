@@ -7,9 +7,9 @@
         <h1 class="service-cards__title">{{ title }}</h1>
       {% endif %}
       <p class="service-cards__intro mt-25 mb-5">{{ intro | safe }}</p>
-      <div class="cards__grid pb-10">
+      <div class="cards__grid pb-10 service-cards__grid">
         {% for card in cards %}
-          <div class="service-cards__grid-element card__grid-element">
+          <div class="service-cards__grid-element service-card__grid-element">
               <h3 class="screenreader">{{ card.title }}</h3>
             <div class="card__content">
               {% if card.title %}

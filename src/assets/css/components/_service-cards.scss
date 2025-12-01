@@ -1,3 +1,13 @@
+@use "../base/breakpoints" as *;
+
+.service-cards__grid {
+  grid-template-columns: 1fr;
+
+    @media (min-width: $breakpoint-m) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
 .service-cards {
   background-color: var(--color-purple);
 
@@ -5,8 +15,12 @@
     color: var(--color-white);
   }
 
-  & .card__grid-element {
-    padding: 4rem;
+  & .service-card__grid-element {
+    padding: 4rem 2rem;
+
+    @media (min-width: $breakpoint-m) {
+      padding: 4rem;
+    }
   }
 }
 
@@ -34,4 +48,9 @@
       text-decoration: none;
     }
   }
+}
+
+.service-card__content {
+  min-height: max-content;
+  
 }

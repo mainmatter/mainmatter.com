@@ -154,14 +154,26 @@
 }
 
 .p {
+  &-2 {
+    padding: 2rem;
+  }
   &-3 {
     padding: 3rem;
   }
   &-5 {
     padding: 5rem;
   }
+  &-s-5 {
+    @media (min-width: $breakpoint-s) {
+      padding: 5rem;
+    }
+    
+  }
   &t-3 {
     padding-top: 3rem;
+  }
+  &t-4 {
+    padding-top: 4rem;
   }
   &b-0 {
     padding-bottom: 0;
