@@ -1,17 +1,17 @@
 @use "../base/breakpoints" as *;
 
 .image-aspect-ratio-with-button__wrapper {
-  position:relative;
+  position: relative;
 
   & .image-aspect-ratio-with-button__image {
     filter: grayscale(100%);
-    transition: all .5s ease-out;
+    transition: all 0.5s ease-out;
   }
 
   &:hover {
     & .image-aspect-ratio-with-button__image {
-      filter:none;
-      transition: all .25s ease-out;
+      filter: none;
+      transition: all 0.25s ease-out;
     }
   }
 }
@@ -23,5 +23,3 @@
   transform: translate(-44%, -50%);
   z-index: 2;
 }
-
-

@@ -10,7 +10,7 @@
           "label": content.linkText,
           "url": content.linkUrl
           }
-      %}
+        %}
         {{ btnPrimary( link, 'white', 'mt-2' ) }}
       {% endif %}
     </div>
@@ -27,7 +27,7 @@
       {% if content.aspectRatioDesktop %}
         {% set aspectRatioDesktop = content.aspectRatioDesktop %}
       {% endif %}
-        {% if content.aspectRatioMobile %}
+      {% if content.aspectRatioMobile %}
         {% set aspectRatioMobile = content.aspectRatioMobile %}
       {% endif %}
       {{ imageAspectRatio(imageData, aspectRatioDesktop, aspectRatioMobile) }}

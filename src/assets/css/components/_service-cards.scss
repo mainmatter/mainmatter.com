@@ -3,9 +3,9 @@
 .service-cards__grid {
   grid-template-columns: 1fr;
 
-    @media (min-width: $breakpoint-m) {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
+  @media (min-width: $breakpoint-m) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .service-cards {
@@ -43,7 +43,7 @@
 
   & a {
     text-decoration: none;
-    
+
     &:hover {
       text-decoration: none;
     }
@@ -52,5 +52,4 @@
 
 .service-card__content {
   min-height: max-content;
-  
 }

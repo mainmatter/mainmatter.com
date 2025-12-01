@@ -9,19 +9,19 @@
 }
 
 .opensource-list__list-redesigned {
-    column-gap: 1.5rem;
+  column-gap: 1.5rem;
 
-    & .opensource-list__project-image {
-      height: auto;
-    }
+  & .opensource-list__project-image {
+    height: auto;
+  }
 
-    & .btn-secondary__text {
-      font-size: 1.5rem;
-    }
+  & .btn-secondary__text {
+    font-size: 1.5rem;
+  }
 
-    & .opensource-list__project-image {
-      max-width: 32rem;
-    }
+  & .opensource-list__project-image {
+    max-width: 32rem;
+  }
 }
 
 .opensource-list__project-image {

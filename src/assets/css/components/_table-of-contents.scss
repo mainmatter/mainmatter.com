@@ -9,26 +9,26 @@
   flex-direction: column;
 
   @media (min-width: $breakpoint-m) {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  row-gap: .5rem;
-  column-gap: 3rem;
-  justify-items: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0.5rem;
+    column-gap: 3rem;
+    justify-items: center;
   }
 
   @media (min-width: $breakpoint-xl) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    }
- 
+  }
+
   color: var(--color-white);
 
   & .btn-secondary {
     color: var(--color-white);
     text-decoration: underline;
-    text-underline-offset: 0.25rem; 
+    text-underline-offset: 0.25rem;
 
     & .icon-arrow {
       color: var(--color-white);

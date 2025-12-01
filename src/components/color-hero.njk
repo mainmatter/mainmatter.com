@@ -40,7 +40,13 @@ Example usage:
       </div>
       <div class="color-hero__overlay"></div>
     {% endif %}
-    <div class=" container container--xl {% if content.containerType == "lp" %}color-hero__container__LP container__LP{% else %}color-hero__container container--lg{% endif %}">
+    <div
+      class=" container container--xl {% if content.containerType == "lp" %}
+        color-hero__container__LP container__LP
+      {% else %}
+        color-hero__container container--lg
+      {% endif %}"
+    >
       <div class="color-hero__main">
         {% if content.eyebrow %}
           <p class="color-hero__eyebrow h5">{{ content.eyebrow | safe }}</p>
@@ -52,7 +58,11 @@ Example usage:
           <p class="color-hero__subheading caption">{{ content.subheading | safe }}</p>
         {% endif %}
         {% if content.text %}
-          <div class="{% if content.containerType == "lp" %}container--xl{% else %}color-hero__text{% endif %} mt-2">{{ content.text | safe }}</div>
+          <div
+            class="{% if content.containerType == "lp" %}container--xl{% else %}color-hero__text{% endif %} mt-2"
+          >
+            {{ content.text | safe }}
+          </div>
         {% endif %}
         {% if content.linkUrl %}
           {{ ctaLink(content.linkUrl, content.linkText, 'color-hero__link') }}
