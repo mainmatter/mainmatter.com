@@ -1,9 +1,5 @@
 @use "../base/breakpoints" as *;
 
-.table-of-contents {
-  background-color: var(--color-purple);
-}
-
 .table-of-contents__list {
   display: flex;
   flex-direction: column;
@@ -29,8 +25,11 @@
     color: var(--color-white);
     text-decoration: underline;
     text-underline-offset: 0.25rem;
+    font-size: 1.5rem;
+    line-height: 2;
 
     & .icon-arrow {
+      --icon-arrow-size: 1.5rem;
       color: var(--color-white);
     }
   }

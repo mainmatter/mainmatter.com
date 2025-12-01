@@ -29,6 +29,8 @@ Example usage:
 {{ colorHero('blue', content) }}
 #}
 {% from "cta-link.njk" import ctaLink %}
+{% from "btn-secondary.njk" import btnSecondary %}
+
 {%- macro colorHero(color, content) -%}
   <section
     class="color-hero color-hero--{{ color }} {% if content.class %}{{ content.class }}{% endif %}{% if content.logo %}{{ content.logo }}{% elseif content.background %}{{ content.background }}{% endif %}{% if content.containerType == "lp" %}color-hero__LP{% endif %}"
@@ -66,6 +68,21 @@ Example usage:
         {% endif %}
         {% if content.linkUrl %}
           {{ ctaLink(content.linkUrl, content.linkText, 'color-hero__link') }}
+        {% endif %}
+        {% if content.toc %}
+          <div class="table-of-contents__list container--xl mt-2">
+            {% for text, anchor in content.toc %}
+              <div>
+                {%-
+                  set link = {
+                  "label": text,
+                  "url": anchor
+                  }
+                -%}
+                {{- btnSecondary(link, '', true) -}}
+              </div>
+            {% endfor %}
+          </div>
         {% endif %}
       </div>
     </div>

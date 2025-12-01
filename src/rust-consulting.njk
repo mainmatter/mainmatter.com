@@ -8,7 +8,6 @@ og:
 ---
 
 {% from "image-banner-with-text.njk" import imageBannerWithText %}
-{% from "table-of-contents.njk" import tableOfContents %}
 {% from "service-cards.njk" import serviceCards %}
 {% from "recent-posts.njk" import recentPosts %}
 {% from "logo-list.njk" import logoList %}
@@ -20,25 +19,26 @@ og:
 {% from "quote.njk" import quote %}
 {% from 'featured-case-study.njk' import featuredCaseStudy %}
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
-{%
-  set 'content' = {
-  "title": "Accelerate your Rust projects!",
-  "text": "On paper, Rust checks all the boxes—performance, efficiency, maintainability, and great developer experience. But it takes time (and a few mistakes) to realize those benefits.  That’s where Mainmatter comes in—our experts join your team to accelerate your efforts and minimize execution risk. Together, we can take your Rust projects to the next level.",
-  "loading": "eager",
-  "containerType": "lp"
-  }
-%}
-{{ colorHero('purple', content) }}
 
 {%
-  set content = {
+  set toc = {
     'What we do best': '#services',
     'Our team': '#team',
     'Success stories': '#successes',
     'Let’s talk': '#contact'
   }
 %}
-{{ tableOfContents(content) }}
+{%
+  set 'content' = {
+  "title": "Accelerate your Rust projects!",
+  "text": "On paper, Rust checks all the boxes—performance, efficiency, maintainability, and great developer experience. But it takes time (and a few mistakes) to realize those benefits.  That’s where Mainmatter comes in—our experts join your team to accelerate your efforts and minimize execution risk. Together, we can take your Rust projects to the next level.",
+  "loading": "eager",
+  "containerType": "lp",
+  "toc": toc
+  }
+%}
+{{ colorHero('purple', content) }}
+
 {%
   set 'tech_1' = {
   "title": "Rust is a competitive advantage",
