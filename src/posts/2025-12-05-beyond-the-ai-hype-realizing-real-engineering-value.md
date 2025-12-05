@@ -6,7 +6,7 @@ bio: "Marco Otte-Witte"
 description: "Marco Otte-Witte explores the opportunities and challenges of AI-accelerated software engineering and shares how Mainmatter guides teams through adopting AI."
 tagline: '<p>We’ve moved beyond the peak of the AI hype cycle. Yes, <a href="https://youtube.com/shorts/ppy_toLPeqQ">there’s still a bubble</a> that is yet to burst. But that doesn’t mean there’s no real value inside. The era when the AI conversation was mostly about who would make the boldest claims, get the most attention, and seem the most visionary is (mostly) behind us. What’s left is something more grounded, more practical, and ultimately far more useful: the understanding that AI is a tool that unlocks real productivity gains for software engineering teams (instead of replacing them).</p>'
 og:
-  image: /assets/images/posts/2025-10-29-beyond-the-ai-hype-realizing-real-engineering-value/og-image.png
+  image: /assets/images/posts/2025-12-05-beyond-the-ai-hype-realizing-real-engineering-value/og-image.png
 ---
 
 AI, if applied right, is helping teams work faster, better, and more confidently. And while nobody is able to exactly quantify the productivity gain – depending on who you ask it might be 10% or 10x – the exact number doesn't matter anyway. Even if it's only 10%, that must make everyone ask themselves: how can I realize that productivity gain for myself and my team? Certainly everyone with budget responsibility is rightfully asking themselves that question.
