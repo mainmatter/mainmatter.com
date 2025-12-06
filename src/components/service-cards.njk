@@ -18,7 +18,8 @@
               {% if card.text %}
                 <p class="mb-2">{{ card.text }}</p>
               {% endif %}
-              {% if card.link %}
+            </div>
+            {% if card.link %}
                 {%
                   set link = {
                   "label": card.label,
@@ -27,7 +28,6 @@
                 %}
                 {{ btnPrimary( link, 'aqua', 'nav__cta service-cards__btn' ) }}
               {% endif %}
-            </div>
           </div>
         {% endfor %}
       </div>
