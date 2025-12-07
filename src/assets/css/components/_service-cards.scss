@@ -16,12 +16,13 @@
   }
 
   & .service-card__grid-element {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: inline;
     padding: 4rem 2rem;
 
     @media (min-width: $breakpoint-m) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       padding: 2.3rem;
     }
   }
@@ -51,4 +52,10 @@
 
 .service-card__content {
   min-height: max-content;
+}
+
+.service-cards__btn {
+  @media (max-width: $breakpoint-m) {
+    display: inline;
+  }
 }
