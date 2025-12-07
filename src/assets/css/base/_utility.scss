@@ -34,8 +34,8 @@
   }
 }
 
-.display-hidden {
-  @media (min-width: $breakpoint-s) {
+.desktop-hidden {
+  @media (min-width: $breakpoint-m) {
     display: none;
   }
 }
