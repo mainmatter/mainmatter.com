@@ -111,10 +111,12 @@
 
   & .quote__text {
     font-weight: inherit;
-    line-height: 3rem;
+    line-height: 2;
+    font-size: 1.2rem;
   }
 
   & .quote__source {
-    line-height: 3rem;
+    line-height: 2;
+    font-size: 1.2rem;
   }
 }

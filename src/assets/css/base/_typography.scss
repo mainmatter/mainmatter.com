@@ -67,6 +67,12 @@ body {
   font-weight: 700;
 }
 
+.medium {
+  font-size: 1.2rem;
+  line-height: 2;
+  font-weight: 400;
+}
+
 .small {
   font-size: 1rem;
   font-weight: 700;
@@ -89,4 +95,10 @@ body {
 
 .text--uppercase {
   text-transform: uppercase;
+}
+
+h4.medium {
+  font-size: clamp(1.3rem, 0.94rem + 0.78vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.5; 
 }

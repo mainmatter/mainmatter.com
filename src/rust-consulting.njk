@@ -66,13 +66,13 @@ og:
 {% set technologies = [tech_1, tech_2, tech_3] %}
 {{ serviceCards('services', 'What we do best', technologies) }}
 
-<section class="py-10 background-aqua">
-  <div class="container container--xl p-2 pt-4 p-s-5 background-white" id="team">
+<section class="py-7 background-aqua">
+  <div class="container container--lg p-2 p-3 background-white" id="team">
     <div class="split-content no-link m-0">
       <h1 class="mb-2">We are Rust experts</h1>
       <div class="split-content__wrapper">
         <div class="split-content__content m-0">
-          <p>
+          <p class="medium">
             Mainmatter has been active in the Rust ecosystem for years, creating the
             <a href="https://rust-exercises.com" class="link-black">100 Exercises to Learn Rust</a>
             course, organizing <a href="https://www.eurorust.eu" class="link-black">EuroRust</a>,
@@ -80,7 +80,7 @@ og:
             maintaining several other
             <a href="#open-source" class="link-black">open-source&nbsp;projects</a>.
           </p>
-          <p>
+          <p class="medium">
             Our team is led by Luca Palmieri, author of
             <a href="http://zero2prod.com" class="link-black">"Zero to Production in&nbsp;Rust"</a>.
           </p>
@@ -93,7 +93,7 @@ og:
   </div>
 </section>
 
-<section class="mb-10 mobile-hidden">
+<section class="mobile-hidden">
   {%
     set 'content' = {
       "imgPath": "/assets/images/rust/rust-landing-page-crab.webp",
@@ -109,8 +109,8 @@ og:
   {{ imageAspectRatioWithButton(content) }}
 </section>
 
-<section class="mt-10 mb-5" id="successes">
-  <div class="container container--xl mb-6">
+<section class="mt-7 mb-5" id="successes">
+  <div class="container container--lg mb-6">
     <h1>Success stories</h1>
     {%
       set 'content' = {
@@ -122,7 +122,7 @@ og:
     %}
     {{ quote(content) }}
   </div>
-  <div class="container container--xl mb-6">
+  <div class="container container--lg mb-6">
     {%
       set link = {
       "label": 'Rewriting Redis Query Engine in Rust, one C module at a time',
@@ -163,7 +163,7 @@ og:
 
 {% include 'contact-form-LP.njk' %}
 
-<section class="container container--xl opensource-list my-10 image-max-width-32" id="open-source">
+<section class="container container--lg opensource-list py-7 image-max-width-32" id="open-source">
   <div class="">
     <h1 class="opensource-list__title">You might like...</h1>
     <ul class="opensource-list__list opensource-list__list-redesigned">
@@ -175,7 +175,7 @@ og:
           />
         </div>
         <div class="opensource-list__project-text">
-          <h4 class="mb-015">A deep-dive into our work for Redis at EuroRust 2025</h4>
+          <h4 class="mb-015 medium">A deep-dive into our work for Redis at EuroRust 2025</h4>
           {%
             set link = {
             "label": 'Watch on YouTube',
@@ -190,7 +190,7 @@ og:
           <img src="/assets/images/rust/eserde-blog-post.webp" alt="Rust logo" />
         </div>
         <div class="opensource-list__project-text">
-          <h4 class="mb-015">Blog post: eserde: Don't stop at the first deserialization error</h4>
+          <h4 class="mb-015 medium">Blog post: eserde: Don't stop at the first deserialization error</h4>
           {%
             set link = {
             "label": 'Read blog post',
@@ -208,7 +208,7 @@ og:
           />
         </div>
         <div class="opensource-list__project-text">
-          <h4 class="mb-015">The Rust Adoption Handbook</h4>
+          <h4 class="mb-015 medium">The Rust Adoption Handbook</h4>
           {%
             set link = {
             "label": 'Download handbook',

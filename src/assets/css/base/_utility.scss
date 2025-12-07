@@ -65,6 +65,13 @@
   &t-5 {
     margin-top: 5rem;
   }
+  &t-7 {
+    margin-top: 5rem;
+
+    @media (min-width: $breakpoint-s) {
+      margin-top: 7rem;
+    }
+  }
   &t-10 {
     margin-top: 5rem;
 
@@ -179,6 +186,13 @@
   &t-4 {
     padding-top: 4rem;
   }
+  &t-7 {
+    padding-top: 5rem;
+
+    @media (min-width: $breakpoint-s) {
+      padding-top: 7rem;
+    }
+  }
   &b-0 {
     padding-bottom: 0;
   }
@@ -188,11 +202,27 @@
   &b-5 {
     padding-bottom: 5rem;
   }
+  &b-7 {
+    padding-bottom: 5rem;
+
+    @media (min-width: $breakpoint-s) {
+      padding-bottom: 7rem;
+    }
+  }
   &b-10 {
     padding-bottom: 5rem;
 
     @media (min-width: $breakpoint-s) {
       padding-bottom: 10rem;
+    }
+  }
+  &y-7 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    @media (min-width: $breakpoint-s) {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
     }
   }
   &y-10 {

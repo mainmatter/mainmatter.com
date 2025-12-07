@@ -12,7 +12,7 @@ content: A content block with the following options:
   linkUrl: Optional link destination
   linkText: Optional link text
   contentType: Width of the container; normally set to container--lg on all hero sections. 
-  Landing page hero sections are indicated via setting ContentType to "lp".
+  Landing page hero sections are indicated via setting ContentType to "lp". 
 
 Example usage:
 {% set content = {
@@ -44,7 +44,7 @@ Example usage:
     {% endif %}
     <div
       class=" container container--xl {% if content.containerType == "lp" %}
-        color-hero__container__LP container__LP
+        color-hero__container__LP container__LP container--lg
       {% else %}
         color-hero__container container--lg
       {% endif %}"
@@ -61,7 +61,7 @@ Example usage:
         {% endif %}
         {% if content.text %}
           <div
-            class="{% if content.containerType == "lp" %}container--xl{% else %}color-hero__text{% endif %} mt-2"
+            class="{% if content.containerType == "lp" %}medium {% else %}color-hero__text{% endif %} mt-2"
           >
             {{ content.text | safe }}
           </div>
