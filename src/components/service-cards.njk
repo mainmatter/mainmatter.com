@@ -19,14 +19,14 @@
               {% endif %}
             </div>
             {% if card.link %}
-                {%
-                  set link = {
-                  "label": card.label,
-                  "url": card.link
-                  }
-                %}
-                {{ btnPrimary( link, 'aqua', 'nav__cta service-cards__btn' ) }}
-              {% endif %}
+              {%
+                set link = {
+                "label": card.label,
+                "url": card.link
+                }
+              %}
+              {{ btnPrimary( link, 'aqua', 'nav__cta service-cards__btn' ) }}
+            {% endif %}
           </div>
         {% endfor %}
       </div>
