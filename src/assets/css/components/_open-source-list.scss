@@ -11,6 +11,12 @@
 .opensource-list__list-redesigned {
   column-gap: 1.5rem;
 
+  & .opensource-list__project {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
   & .opensource-list__project-image {
     height: auto;
   }
