@@ -28,22 +28,7 @@
   display: none;
 }
 
-.mobile-hidden {
-  @media (max-width: $breakpoint-s) {
-    display: none;
-  }
-}
-
-.desktop-hidden {
-  @media (min-width: $breakpoint-m) {
-    display: none;
-  }
-}
-
 .m {
-  &-0 {
-    margin: 0;
-  }
   &t-0 {
     margin-top: 0;
   }
@@ -64,13 +49,6 @@
   }
   &t-5 {
     margin-top: 5rem;
-  }
-  &t-7 {
-    margin-top: 5rem;
-
-    @media (min-width: $breakpoint-s) {
-      margin-top: 7rem;
-    }
   }
   &t-10 {
     margin-top: 5rem;
@@ -106,13 +84,6 @@
   }
   &b-5 {
     margin-bottom: 5rem;
-  }
-  &b-6 {
-    margin-bottom: 5rem;
-
-    @media (min-width: $breakpoint-s) {
-      margin-bottom: 6rem;
-    }
   }
   &b-10 {
     margin-bottom: 5rem;
@@ -161,77 +132,6 @@
 
     @media (min-width: $breakpoint-s) {
       margin: 15rem auto;
-    }
-  }
-}
-
-.p {
-  &-2 {
-    padding: 2rem;
-  }
-  &-3 {
-    padding: 3rem;
-  }
-  &-5 {
-    padding: 5rem;
-  }
-  &-s-5 {
-    @media (min-width: $breakpoint-s) {
-      padding: 5rem;
-    }
-  }
-  &t-3 {
-    padding-top: 3rem;
-  }
-  &t-4 {
-    padding-top: 4rem;
-  }
-  &t-7 {
-    padding-top: 5rem;
-
-    @media (min-width: $breakpoint-s) {
-      padding-top: 7rem;
-    }
-  }
-  &b-0 {
-    padding-bottom: 0;
-  }
-  &b-3 {
-    padding-bottom: 3rem;
-  }
-  &b-5 {
-    padding-bottom: 5rem;
-  }
-  &b-7 {
-    padding-bottom: 5rem;
-
-    @media (min-width: $breakpoint-s) {
-      padding-bottom: 7rem;
-    }
-  }
-  &b-10 {
-    padding-bottom: 5rem;
-
-    @media (min-width: $breakpoint-s) {
-      padding-bottom: 10rem;
-    }
-  }
-  &y-7 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-
-    @media (min-width: $breakpoint-s) {
-      padding-top: 7rem;
-      padding-bottom: 7rem;
-    }
-  }
-  &y-10 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-
-    @media (min-width: $breakpoint-s) {
-      padding-top: 10rem;
-      padding-bottom: 10rem;
     }
   }
 }

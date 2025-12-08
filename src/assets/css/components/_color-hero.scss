@@ -109,18 +109,5 @@
 
   .color-hero {
     min-height: 90vh;
-
-    &__LP {
-      min-height: max-content;
-    }
-  }
-}
-
-.color-hero__container__LP {
-  width: 90%;
-  padding: 12rem 0 10vh;
-
-  .color-hero__text {
-    max-width: max-content;
   }
 }

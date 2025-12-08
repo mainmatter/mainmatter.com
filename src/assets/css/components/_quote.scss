@@ -52,12 +52,8 @@
   margin: 0 0 2rem;
 }
 
-.quote__position {
-  font-weight: 300;
-}
-
 @media (min-width: $breakpoint-s) {
-  .quote:not(.quote__workshop, .quote__redesigned) {
+  .quote:not(.quote__workshop) {
     margin: 6.25rem auto;
     flex-wrap: nowrap;
     gap: 1.5rem;
@@ -90,33 +86,5 @@
 
   .quote__source {
     text-align: right;
-  }
-}
-
-// Quote styling redesign, as featured in the Rust Services LP
-
-.quote__redesigned {
-  margin: 3rem auto 0;
-  gap: 1rem;
-
-  @media (min-width: $breakpoint-s) {
-    margin: 7rem auto 0;
-    gap: 2rem;
-  }
-
-  & .quote__content {
-    max-width: 70rem;
-    text-align: left;
-  }
-
-  & .quote__text {
-    font-weight: inherit;
-    line-height: 2;
-    font-size: 1.2rem;
-  }
-
-  & .quote__source {
-    line-height: 2;
-    font-size: 1.2rem;
   }
 }
