@@ -5,6 +5,11 @@ Configuration Options:
 color: One of the core brand colors
 text: Block quote text
 source: Quote source, a person or organization
+position: The source's job position
+styling: Enter within the source array. Set to "redesigned" in order to style quotes as pre our Rust LP as of Dec. 2025:
+- quote text is non-bolded
+- quote text is the width of the container
+- quoted person's job description is on a new line
 container: Boolean for whether or not to wrap the quote in a containing element
 
 Example usage:
@@ -13,7 +18,9 @@ Example usage:
 {{ quote('aqua', text, source, true) }}
 #}
 {%- macro quote(content, alignment='default') -%}
-  <section class="quote {% if alignment=='right' %}align-right{% endif %}">
+  <section
+    class="quote {% if alignment=='right' %}align-right{% endif %} {% if content.styling=="redesigned" %}quote__redesigned{% endif %}"
+  >
     {%- if content.image -%}
       <div class="quote__image-wrapper">
         {%- image content.image, content.alt, '(min-width: 48em) 50vw, 100vw', content.loading, 'quote__image', [400] -%}
@@ -30,7 +37,11 @@ Example usage:
           </div>
         {%- endif -%}
         <blockquote class="quote__text">{{ content.text | safe }}</blockquote>
-        <figcaption class="quote__source">{{ content.source }}</figcaption>
+        <figcaption class="quote__source">
+          {{ content.source }}{% if content.position %}
+            <br /><span class="quote__position">{{ content.position }}</span>
+          {% endif %}
+        </figcaption>
       </div>
     </figure>
     {% if alignment == 'right' %}
