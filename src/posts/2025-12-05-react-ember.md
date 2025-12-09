@@ -5,8 +5,7 @@ tags: [ember, react, mainmatter]
 bio: "Nick Schot"
 description: "tbd"
 tagline: "tbd"
-og:
-  image: /assets/images/posts/2025-12-05-beyond-the-ai-hype-realizing-real-engineering-value/og-image.png
+autoOg: true
 ---
 
 Due to Ember.JS being such a long lived framework it’s become increasingly common among companies to find a need to integrate or even migrate to a different framework. No matter the reason or direction, there’s a few core concerns that need to be adressed in all cases. Let's take a look at what it takes to make React components work in an Ember.JS app.
