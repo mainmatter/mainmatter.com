@@ -6,12 +6,12 @@ bio: "Florian Pichler, Software Developer"
 description: "A Post describing the differences in Ember App build characteristics between classic ember-cli and modern Embroider with Vite"
 autoOg: true
 customCta: "global/ember-cta.njk"
-tagline: <p>Ember will soon use Vite as its default build system, and we would like the developer experience to be as fast as possible for small and large apps. Learn the difference between the old way and the new Vite build system and explains how to test your app to give us useful feedback on how to make things better.</p>
+tagline: <p>Nowadays, Ember uses Vite as its default build system, and we would like the developer experience to be as fast as possible for small and large apps. Learn the difference between the old way and the new Vite build system and explains how to test your app to give us useful feedback on how to make things better.</p>
 ---
 
 One goal of the [Ember Initiative](https://mainmatter.com/ember-initiative/) is to bring a modern toolchain based on [Vite](https://vite.dev/) to Ember. This increases compatibility with the wider JavaScript ecosystem and brings potential for faster builds, rebuilds, route splitting, and more.
 
-To ensure Vite can improve the build pipeline of real-world production applications, we need your feedback. Using the open source tool we've built to measure the differences in build and pageload times, you can share your benchmarks with us so we can continue making Ember better and faster for everyone.
+To get numbers on how Vite can improve the build pipeline of real-world production applications, we need your feedback. Using the open source tool we've built to measure the differences in build and pageload times, you can share your benchmarks with us so we can continue making Ember better and faster for everyone.
 
 ## How the classic build system differs from Vite
 
@@ -21,9 +21,9 @@ The classic build setup uses `ember-cli`, which builds your app using an underly
 
 ## Build, Measure, Optimise, Repeat
 
-Moving to Vite has many more benefits than just raw speed, but speed is always an important factor of development, and it is worth spending some time investigating the impact of the upcoming change. 
+Moving to Vite has many more benefits than just raw speed, but speed is always an important factor of development, and it is worth spending some time investigating the impact of migrating a classic Ember app to build with Vite.
 
-We need to learn how well Vite does in on __your__ applications, big and small. We are looking for the following metrics, both from a cold start and a warm start after caches have been created:
+We need to learn how well Vite does in on _your_ applications, big and small. We are looking for the following metrics, both from a cold start and a warm start after caches have been created:
 
 - Production build time after installing the packages
 - Development server startup time
@@ -40,8 +40,8 @@ As projects have their individual choices, we decided to not fully automate the 
 Expectations:
 
 - You run macOS or Linux (or are willing to go on your own adventures on Windows)
-- You have a `main` branch of your app that builds and runs using `ember-cli`
-- You have a `migrate-to-vite` branch that builds and runs using the _new_ Embroider and Vite
+- You have a `main` branch (or a last commit "C") of your app that builds and runs using `ember-cli`
+- You have a `migrate-to-vite` branch (or a first commit "C+1") that builds and runs using the _new_ Embroider and Vite
 - Both branches use the same version of Node and the package manager of your choice, i.e. pnpm
 - Your app has a `<img class="logo">` that is part of your components and _not_ inside your `index.html`
 - Your app has an `app/router.js` which, when changed, triggers `ember-cli` or `vite` to rebuild
