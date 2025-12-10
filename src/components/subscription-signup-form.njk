@@ -1,4 +1,5 @@
 {% from "global/invisible-captcha.njk" import invisibleCaptcha %}
+{% from "global/li-fat-id.njk" import liFatId %}
 
 {%- macro subscriptionSignupForm(content) -%}
   <section
@@ -93,6 +94,7 @@
             </div>
           </div>
           {{ invisibleCaptcha() }}
+          {{ liFatId() }}
         </form>
       </div>
     </div>

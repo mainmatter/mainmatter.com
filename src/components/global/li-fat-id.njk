@@ -1,0 +1,10 @@
+{%- macro liFatId() -%}
+  <input type="hidden" name="li_fat_id" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const liFatId = urlParams.get("li_fat_id");
+      document.querySelector("[name=li_fat_id]").value = liFatId;
+    });
+  </script>
+{%- endmacro -%}
