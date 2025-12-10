@@ -16,6 +16,7 @@ og:
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "btn-secondary.njk" import btnSecondary %}
 {% from "global/invisible-captcha.njk" import invisibleCaptcha %}
+{% from "global/li-fat-id.njk" import liFatId %}
 
 {%
   set 'content' = {
@@ -338,6 +339,7 @@ og:
           </div>
         </div>
         {{ invisibleCaptcha() }}
+        {{ liFatId() }}
       </form>
     </div>
   </div>

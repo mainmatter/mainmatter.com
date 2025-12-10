@@ -17,6 +17,7 @@ og:
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "btn-secondary.njk" import btnSecondary %}
 {% from "global/invisible-captcha.njk" import invisibleCaptcha %}
+{% from "global/li-fat-id.njk" import liFatId %}
 
 {%
   set 'content' = {
@@ -81,7 +82,6 @@ og:
           data-goal="Rust+Adoption+Handbook"
         >
           <fieldset data-form-content tabindex="-1" disabled>
-            <input type="hidden" name="li_fat_id" />
             <div data-form-content class="contact-form__field cta__input mb-2 mt-2">
               <input
                 class="contact-form__input"
@@ -165,14 +165,8 @@ og:
             </div>
           </div>
           {{ invisibleCaptcha() }}
+          {{ liFatId() }}
         </form>
-        <script>
-          document.addEventListener("DOMContentLoaded", () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const liFatId = urlParams.get("li_fat_id");
-            document.querySelector("[name=li_fat_id]").value = liFatId;
-          });
-        </script>
         <div class="form-with-image__image">
           <div class="image-wrapper">
             {% image '/assets/images/photos/rust-adoption-handbook-cover.jpg', "Title page of Mainmatter's Rust Adoption Handbook", '(min-width: 48em) 40rem, 90vw', 'lazy', '', [400, 800, 1200] %}
