@@ -15,7 +15,7 @@ Let’s start by setting up the Ember app for React. This post assumes a modern 
 
 **Note:** This setup can also be made to work with a classic Ember.JS build as long as `ember-auto-import` is present. The Vite plugins need to be replaced with their Webpack equivalents.
 
-Let’s start by adding the base dependencies for React as well as the [Vite plugin](https://github.com/vitejs/vite-plugin-react) by running `pnpm add -D react react-dom @vitejs/plugin-react`. And updating the Vite configuration to add the new plugin.
+Let’s add the base dependencies for React as well as the [React Vite plugin](https://github.com/vitejs/vite-plugin-react) by running `pnpm add -D react react-dom @vitejs/plugin-react`. And updating the Vite configuration to add the new plugin.
 
 ```javascript
 // vite.config.mjs
