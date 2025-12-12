@@ -157,4 +157,4 @@ When React becomes involved you can't rely on certain paradigms from Ember you'r
 
 While it's certainly not impossible to mix frameworks, it's not necessarily trivial. After the initial implementation it's important to keep in mind the other concerns to limit impact on the development experience and velocity as well as the maintainability of the codebase.
 
-Interested to learn more about this topic? Make sure to check out the recording of [Multi-framework mashup - making other frameworks work in Ember](https://www.youtube.com/watch?v=oPOZKeebnDM) from Emberfest 2025!
+Interested to learn more about this topic? Make sure to check out the recording of [Multi-framework mashup - making other frameworks work in Ember](https://www.youtube.com/watch?v=oPOZKeebnDM) from EmberFest 2025!
