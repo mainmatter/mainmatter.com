@@ -8,11 +8,11 @@ tagline: "tbd"
 autoOg: true
 ---
 
-Due to Ember.JS being such a long lived framework it’s become increasingly common among companies to find a need to integrate or even migrate to a different framework. No matter the reason or direction, there’s a few core concerns that need to be addressed in all cases. Let's take a look at what it takes to make React components work in an Ember.JS app.
+Due to Ember.JS being such a long-lived framework, it’s become increasingly common among companies to find a need to integrate or even migrate to a different framework. No matter the reason or direction, there’s a few core concerns that need to be addressed in all cases. Let's take a look at what it takes to make React components work in an Ember.JS app.
 
 ### Setting up
 
-Let’s start by setting up the app for React. This post assumes a modern Vite based setup using pnpm for Ember.JS which has recently become the default when generating a new project with `ember-cli`.
+Let’s start by setting up the Ember app for React. This post assumes a modern Vite based setup using pnpm for Ember.JS which has recently become the default when generating a new project with `ember-cli`.
 
 **Note:** This setup can also be made to work with a classic Ember.JS build as long as `ember-auto-import` is present. The Vite plugins need to be replaced with their Webpack equivalents.
 
@@ -21,12 +21,14 @@ Let’s start by adding the base dependencies for React as well as the [Vite plu
 ```javascript
 // vite.config.mjs
 ...
+import { ember } from '@embroider/vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [
 	...
-  	react(),
+  	ember(),
+    react(),
   ],
 });
 ```
@@ -47,7 +49,7 @@ The first thing we’ll do is create a fresh GJS template-only component with a 
 </template>
 ```
 
-In order to get access to this element we’ll add an inline [modifier](https://github.com/ember-modifier/ember-modifier). We will also pass on the component and props arguments.
+In order to get access to this element we’ll add an inline [modifier](https://github.com/ember-modifier/ember-modifier). We will also pass on the React component reference and props arguments.
 
 ```js
 {% raw %}
@@ -67,7 +69,7 @@ class ReactModifier extends Modifier {
 {% endraw %}
 ```
 
-`react-dom` provides us with a way to render React components in an element through [`createRoot`](https://react.dev/reference/react-dom/client/createRoot) for which we’ll store a reference in the `root` variable. We need to make sure that `createRoot` called only once on initialization. The next step is to make the React component renderable with `createElement`. The output of that function can then be passed to `this.root.render`. If we call these functions every time the modifier runs, the arguments/props are already reactive!
+`react-dom` provides us with a way to render React components in an element through [`createRoot`](https://react.dev/reference/react-dom/client/createRoot) for which we’ll store a reference in the `root` variable. We need to make sure that `createRoot` is called only once on initialization. The next step is to make the React component renderable with `createElement`. The output of that function can then be passed to `this.root.render`. If we call these functions every time the modifier runs, the arguments/props are already reactive!
 
 ```js
 class ReactModifier extends Modifier {
