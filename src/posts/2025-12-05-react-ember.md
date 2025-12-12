@@ -52,8 +52,9 @@ The first thing we’ll do is create a fresh GJS template-only component with a 
 
 In order to get access to this element we’ll add an inline [modifier](https://github.com/ember-modifier/ember-modifier). We will also pass on the React component reference and props arguments.
 
-```js
-{% raw %}
+```js {% raw %}
+// react-bridge.gjs
+
 import Modifier from 'ember-modifier';
 
 class ReactModifier extends Modifier {
@@ -73,6 +74,8 @@ class ReactModifier extends Modifier {
 `react-dom` provides us with a way to render React components in an element through [`createRoot`](https://react.dev/reference/react-dom/client/createRoot) for which we’ll store a reference in the `root` variable. We need to make sure that `createRoot` is called only once on initialization. The next step is to make the React component renderable with `createElement`. The output of that function can then be passed to `this.root.render`. If we call these functions every time the modifier runs, the arguments/props are already reactive!
 
 ```js
+// react-bridge.gjs
+
 class ReactModifier extends Modifier {
   root = null;
 
@@ -90,6 +93,8 @@ class ReactModifier extends Modifier {
 What remains is cleanup. The way to this within Ember is to register a destructor with a function that’s called when the modifier instance is destroyed.
 
 ```js
+// react-bridge.gjs
+
 function cleanup(instance) {
   instance.root?.unmount();
 }
@@ -115,9 +120,9 @@ The implementation we have right now will give us reactivity at the boundary. Th
 
 In the below example, clicking the button will update the value of `foo` and automatically trigger a re-render of the React component as expected.
 
-```js
-{% raw %}
+```js {% raw %}
 // my-component.gjs
+
 import ReactBridge from './react-bridge.gjs';
 import MyReactComponent from './my-react-component.jsx';
 
@@ -154,6 +159,53 @@ One of the trickier things to deal with is routing. The easiest way for now is t
 ### Testing
 
 When React becomes involved you can't rely on certain paradigms from Ember you're used to out of the box with Ember's testing infrastructure. Some examples: Ember's test-waiter system is not integrated (by default). Combined with React's asynchronous rendering this may mean your tests need to be adjusted to account for this. Similarly, dispatching (simulated) DOM events will also not work out of the box.
+
+Let's take an example React component that takes a numerical `counter` argument and an `onCounterClick` callback. It renders the current value of the counter and a button that triggers the callback when clicked.
+```js {% raw %}
+test('[React] it should trigger the onCounterClick action when clicked', async function (assert) {
+  const state = new TrackedObject({
+    count: 0,
+    incrementCount: () => {
+      state.count++;
+    },
+  });
+
+  await render(
+    <template>
+      <ReactBridge
+        @component={{ReactCounter}}
+        @props={{hash
+          counter=state.count
+          onCounterClick=state.incrementCount
+        }}
+      />
+    </template>
+  );
+
+  await click('[data-test-increment-button]');
+  
+  assert.dom('[data-test-counter]').hasText(`${state.count}`);
+  ...
+});
+{% endraw %}
+```
+
+With our current implementation, this test will fail with `Element [data-test-counter] should exist`. This is because after the button is clicked, the assertion does not wait for React to finish rendering. In this case we can fix this by modifying the bridge component by using React's [`act` helper](https://it.react.dev/reference/react/act) when in a testing environment.
+
+```js
+// react-bridge.gjs
+
+if (macroCondition(isTesting())) {
+  window.IS_REACT_ACT_ENVIRONMENT = true;
+  act(() => {
+    this.root?.render(wrappedComponent);
+  });
+} else {
+  this.root.render(wrappedComponent);
+}
+```
+
+Now the test will pass.
 
 ## Final thoughts
 
