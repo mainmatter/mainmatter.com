@@ -147,7 +147,7 @@ Getting a component to render is not all you need to think about. There's variou
 
 ### Routing
 
-One of the trickier things to deal with is routing. The easiest way for now is to keep the Ember.JS app fully in charge of routing. When you start trying to mix routers you’ll start to find problems around, for example, query parameter management due to Ember’s tight coupling of the router to the URL. In a future version of the Ember.JS router it may become easier to offload certain responsibilities to another router or even use a generic router not bound to a specific framework.
+One of the trickier things to deal with is routing. The easiest way for now is to keep the Ember.JS app fully in charge of routing. When you start trying to mix routers you’ll find problems around, for example, query parameter management due to Ember’s tight coupling of the router to the URL. In a future version of the Ember.JS router it may become easier to offload certain responsibilities to another router or even use a generic router not bound to a specific framework.
 
 ### Testing
 
