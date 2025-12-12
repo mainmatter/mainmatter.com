@@ -190,7 +190,7 @@ test('[React] it should trigger the onCounterClick action when clicked', async f
 {% endraw %}
 ```
 
-With our current implementation, this test will fail with `Element [data-test-counter] should exist`. This is because after the button is clicked, the assertion does not wait for React to finish rendering. In this case we can fix this by modifying the bridge component by using React's [`act` helper](https://it.react.dev/reference/react/act) when in a testing environment.
+With our current implementation, this test will fail with `Element [data-test-counter] should exist`. This is because after the button is clicked, the assertion does not wait for React to finish rendering. In this case we could for example decide to fix this by modifying the bridge component by using React's [`act` helper](https://it.react.dev/reference/react/act) when in a testing environment.
 
 ```js
 // react-bridge.gjs
@@ -206,6 +206,10 @@ if (macroCondition(isTesting())) {
 ```
 
 Now the test will pass.
+
+### Usage of the bridge component
+
+Even though it has a relatively small API surface, overuse of the bridge component can unnecessarily increase the complexity of the codebase.
 
 ## Final thoughts
 
