@@ -141,7 +141,7 @@ class MyComponent extends Component {
 }
 ```
 
-This should generally be enough for the use case where you want to embed a size-able component tree or widget. However, when migrating a full app this way, it may become necessary to have a way to share global (or local) state. Think of an Ember.JS service or a context API. Even if made accessible from within React, these will not necessarily be reactive.
+This should generally be enough for the use case where you want to embed a size-able component tree or widget. However, when migrating a full app this way, it may become necessary to have a way to share global (or local) state. Think of an Ember.JS service or a context API. Even if made accessible from within React, these will not necessarily be reactive. This keeps the implementation simple while also providing a clear reactive boundary. Integrating fully transparent reactivity dramatically increases complexity and may not be necessary for contained integrations or temporary situations caused by a framework migration.
 
 ## Other concerns
 
