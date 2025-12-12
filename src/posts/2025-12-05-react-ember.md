@@ -8,14 +8,11 @@ tagline: "Due to Ember.JS being such a long-lived framework, it’s become incre
 autoOg: true
 ---
 
-
 ### Setting up
 
 Let’s start by setting up the Ember app for React. This post assumes a modern Vite based setup using pnpm for Ember.JS which has recently become the default when generating a new project with `ember-cli`.
 
-{% note "info", "Classic build" %}
-This setup can also be made to work with a classic Ember.JS build as long as `ember-auto-import` is present. The Vite plugins need to be replaced with their Webpack equivalents.
-{% endnote %}
+{% note "info", "Classic build" %} This setup can also be made to work with a classic Ember.JS build as long as `ember-auto-import` is present. The Vite plugins need to be replaced with their Webpack equivalents. {% endnote %}
 
 Let’s add the base dependencies for React as well as the [React Vite plugin](https://github.com/vitejs/vite-plugin-react) by running `pnpm add -D react react-dom @vitejs/plugin-react`. And updating the Vite configuration to add the new plugin.
 
@@ -161,6 +158,7 @@ One of the trickier things to deal with is routing. The easiest way for now is t
 When React becomes involved you can't rely on certain paradigms from Ember you're used to out of the box with Ember's testing infrastructure. Some examples: Ember's test-waiter system is not integrated (by default). Combined with React's asynchronous rendering this may mean your tests need to be adjusted to account for this. Similarly, dispatching (simulated) DOM events will also not work out of the box.
 
 Let's take an example React component that takes a numerical `counter` argument and an `onCounterClick` callback. It renders the current value of the counter and a button that triggers the callback when clicked.
+
 ```js {% raw %}
 test('[React] it should trigger the onCounterClick action when clicked', async function (assert) {
   const state = new TrackedObject({
@@ -183,7 +181,7 @@ test('[React] it should trigger the onCounterClick action when clicked', async f
   );
 
   await click('[data-test-increment-button]');
-  
+
   assert.dom('[data-test-counter]').hasText(`${state.count}`);
   ...
 });
@@ -209,7 +207,7 @@ Now the test will pass.
 
 ### Usage of the bridge component
 
-Even though it has a relatively small API surface, overuse of the bridge component can unnecessarily increase the complexity of the codebase.
+Even though it has a relatively small API surface, overuse of the bridge component will increase the complexity and potentially affect the performance and reliability of the codebase. It is recommended to limit the amount of times the bridge component is used to a minimum.
 
 ## Final thoughts
 
