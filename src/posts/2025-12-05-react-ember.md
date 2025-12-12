@@ -37,7 +37,7 @@ That’s all that’s necessary for the build to work.
 
 In order to be able to render a React component from within an Ember component we need to do a bit more work. We need an element for the React component to render in, a way to pass props, reactivity and finally take care of unmounting and cleaning up when necessary.
 
-The first thing we’ll do is create a fresh GJS template-only component with a `div` element that will serve as the root element for the bridge component. `react-dom` will use this as it's root attachment point for the React components.
+The first thing we’ll do is create a fresh GJS template-only component with a `div` element that will serve as the root element for the bridge component. `react-dom` will use this as it's root element for the React component.
 
 ```js
 // react-bridge.gjs
