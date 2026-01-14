@@ -8,7 +8,7 @@ autoOg: true
 customCta: "global/ember-cta.njk"
 tagline: |
   <p>
-  You chose Ember to develop your application, and you want to ensure the ecosystem you’ve invested in continues to evolve according to the latest standards. Consider joining the <a href="/ember-initiative/">Ember Initiative</a>. Members receive one-on-one pairing sessions with the Ember Initiative team to get help with their own codebase. But that’s not all. The Ember Initiative is about keeping the entire ecosystem performant and up to date. As a member, you also contribute to this goal because: your challenges are often shared by the whole community.
+  When you chose a framework to develop your application, you want to ensure the ecosystem you’ve invested in continues to evolve according to the latest standards. The <a href="/ember-initiative/">Ember Initiative</a> offers a solution for the Ember framework. Members receive one-on-one pairing sessions with the Ember Initiative team to get help with their own codebase. But that’s not all. The Ember Initiative is about keeping the entire ecosystem performant and up to date. Members also contribute to this goal because, as developers, our challenges are often shared by the whole community.
   </p>
 ---
 
@@ -16,7 +16,7 @@ Whenever you face a technical problem while developing a product, chances are yo
 
 When you run into a problem with open-source code, the best course of action is to improve it, so everyone facing the same issue can benefit from your contribution. And if others do the same, _you_’ll benefit from _their_ work too. However, there are two main obstacles: you’re usually too busy with other priorities, or the open-source codebase is too complex to tackle the issue in the limited time you have.
 
-The [Ember Initiative](/ember-initiative/) offers a solution for issues related to the Ember ecosystem. As a member, you can participate in pairing sessions with the Ember Initiative team. Whenever we identify a problem outside your codebase, we can address it upstream—either with you or for you—so the solution benefits the entire community. Every time you think, _“If only we could fix this upstream…”_ during a pairing session, that thought becomes an actionable task on [our board](https://github.com/orgs/mainmatter/projects/14/views/7).
+The [Ember Initiative](/ember-initiative/) offers a solution for issues related to the Ember ecosystem. The members can participate in pairing sessions with us—the Ember Initiative team. Whenever we identify a problem outside their codebase, we can address it upstream—either with them or for them—so the solution benefits the entire community. Every time a member thinks, _“If only I could fix this upstream…”_ during a pairing session, that thought becomes an actionable task on [our board](https://github.com/orgs/mainmatter/projects/14/views/7).
 
 Here are a few examples of how our members have contributed to the broader community through pairing sessions.
 
