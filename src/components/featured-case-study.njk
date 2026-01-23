@@ -23,11 +23,15 @@
     </div>
 
     <div class="featured-case-study__content-wrapper">
-      {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %}
-      <img class="featured-case-study__logo" src="{{ imagePath }}" alt="{{ company }}" />
+      {% if not caseStudy.data.anonymous %}
+        {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %}
+        <img class="featured-case-study__logo" src="{{ imagePath }}" alt="{{ company }}" />
+      {% endif %}
       <div class="featured-case-study__content">
         <div class="featured-case-study__description">
-          <p class="featured-case-study__client h5">{{ caseStudy.data.company }}</p>
+          {% if caseStudy.data.company %}
+            <p class="featured-case-study__client h5">{{ caseStudy.data.company }}</p>
+          {% endif %}
           <h2 class="featured-case-study__title">{{ caseStudy.data.displayTitle | stripHTML }}</h2>
         </div>
         <div class="featured-case-study__tags caption">
