@@ -14,36 +14,17 @@ og:
 topics:
   - title: Foundations
     text: >
-      We start by introducing the basic concepts and building our first WebAssembly HTTP handler in Rust, from setup to deployment. You'll build your first modules, look at raw WebAssembly modules and understand the current ecosystem of standards and tooling.
-      
-You will:
-- Set up the project and discover how the Rust compiler produces to WebAssembly binaries.
-- Be calling your first functions and experience core WebAssembly's limitations by manually passing strings as pointer-length pairs.
-- Transition to the Component Model and use WIT interface definitions to eliminate manual memory management with automatic type marshaling.
-- Build a WebAssembly CLI component that runs as a standalone executable.
+      We introduce the core concepts by building a WebAssembly HTTP handler in Rust from setup to deployment. You’ll create your first modules, examine raw WebAssembly binaries, and explore the surrounding standards and tooling, while seeing how Rust compiles to WebAssembly. After calling your first functions and confronting core WebAssembly’s manual memory model, you’ll transition to the Component Model, use WIT to enable automatic type marshaling, and finish by building a standalone WebAssembly CLI component.
 
 
   - title: Building Real-World Services
     text: >
-      We then expand on our basic HTTP handler, looking at different Wasm runtimes, deployment options, and common backend patterns in WebAssembly. You'll learn how to work with databases, manage state, and integrate Wasm modules into existing architectures.
-      
-You will:
-- Discover why WebAssembly is superior for serverless workloads.
-- Understand WebAssembly's capability-based security model by explicitly granting your component permission to make outbound HTTP requests.
-- Create your first HTTP endpoint and implement proper error handling with Result types.
-- Add persistent state to your serverless functions by storing and retrieving data from a key-value store.
-- Upgrade to SQLite for data storage and learn how to safely manage queries and connections.
-- Implement both in-component routing with path parameters and multi-component routing.
+      We expand the basic HTTP handler to explore different Wasm runtimes, deployment options, and common backend patterns in WebAssembly. You’ll see why WebAssembly excels in serverless environments, learn its capability-based security model by explicitly granting outbound HTTP access, and build robust HTTP endpoints with proper error handling. Along the way, you’ll add persistent state using a key–value store, upgrade to SQLite for safe and efficient data access, and implement both in-component routing with path parameters and multi-component routing within a larger architecture.
 
 
   - title: Advanced Topics
     text: >
-      No production application is complete without tools to debug it. We will look debuggers, performance profiling tools, as well as monitoring solutions. We finish off by building expanding our HTTP handler yet again and - with everything we learned - build a simple calculator API service.
-      
-You will:
-- Set up OpenTelemetry instrumentation and explore metrics, traces, and logs using Jaeger, Grafana, and Prometheus.
-- Dramatically reduce binary sizes using release builds, aggressive optimization flags, and wasm-opt post-processing to achieve sub-400KB modules.
-- Explore ideas for extending your calculator with features like queryable history, sharing, and Rust-based frontends.
+      No production application is complete without effective debugging and observability, so we explore debugging tools, performance profiling, and monitoring solutions. You’ll instrument your application with OpenTelemetry, examine metrics, traces, and logs using common observability stacks, and learn how to aggressively reduce WebAssembly binary sizes through optimization and post-processing. We conclude by expanding the HTTP handler once more and applying everything you’ve learned to build a simple calculator API service, with ideas for extending it further through features like history, sharing, and Rust-based frontends.
 
 
 leads:
