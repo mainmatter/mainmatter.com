@@ -39,6 +39,17 @@ displayTitle: "Modernizing a Database With Rust: Safe, Fast, Future-Ready"
   </div>
 </div>
 
+<section class="case-study__section">
+  {% set imageData = {
+    "imgPath": "/assets/images/work/anondb-modules.png",
+    "alt": "A toy train traveling in an upwards direction",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+  } %}
+  {{ imageAspectRatio(imageData, "1961/2048", "1961/2048") }}
+</section>
+
 <div class="case-study__section">
   <div class="case-study__text">
     Meanwhile, to ensure robust execution and skill transfer, we established a full-fledged testing and tooling infrastructure. We setup a CI pipeline covering tests, linting, sanitizers (including Miri), and coverage tracking. Concurrently, our team provided training, held workshops and presentations, and ran pair-review sessions to mentor the client's engineers through the Rust learning curve—embedding new practices while sustaining day-to-day development.
