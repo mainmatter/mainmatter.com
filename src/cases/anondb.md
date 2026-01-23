@@ -20,7 +20,7 @@ displayTitle: "Modernizing a Database With Rust: Safe, Fast, Future-Ready"
 
 <div class="case-study__section">
   <div class="case-study__text">
-    <p class="h4">Our client is the company behind an open-source data platform that many of the world’s fastest applications run on. Built for real-time speed and reliability, it powers everything from caching to analytics with sub-millisecond performance. Besides key-value lookups, the platform also includes a query engine that enables powerful, real-time querying.</p>
+    <p class="h4">Our client maintains an open-source data platform commonly adopted in systems where responsiveness and consistency matter. The platform is optimized for real-time operation and supports multiple data access patterns, from simple key-value lookups to real-time analytical use cases. It also provides an integrated search engine for performing rich queries on live data.</p>
   </div>
 </div>
 
@@ -28,7 +28,7 @@ displayTitle: "Modernizing a Database With Rust: Safe, Fast, Future-Ready"
   <h3 class="case-study__heading">The Challenge</h3>
   <div class="case-study__text">
     <p>
-      The query engine at its core is a mature and highly optimized C codebase – powerful, but ready for a more modern foundation as the project continues to grow. To support faster innovation and benefit from stronger safety guarantees, the team decided to gradually migrate the codebase to Rust. This shift promised more sustainable long-term development and a smoother path for future features. With limited in-house Rust expertise, the team reach out to Mainmatter to guide them through the transition.
+      The search engine at its core is a mature and highly optimized C codebase – powerful, but ready for a more modern foundation as the project continues to grow. To support faster innovation and benefit from stronger safety guarantees, the team decided to gradually migrate the codebase to Rust. This shift promised more sustainable long-term development and a smoother path for future features. With limited in-house Rust expertise, the team reach out to Mainmatter to guide them through the transition.
     </p>
   </div>
 </div>
@@ -60,6 +60,6 @@ displayTitle: "Modernizing a Database With Rust: Safe, Fast, Future-Ready"
 <div class="case-study__section">
   <h3 class="case-study__heading">The Outcome</h3>
   <div class="case-study__text">
-    <p>The collaboration has set the query engine on a clear path toward a safer, more maintainable codebase. Key modules have already been ported and released to the public, validating the approach and demonstrating tangible benefits. With a well-defined process for migrating C modules to Rust, a strong foundation of reusable Rust components, and growing in-house expertise, the client's team is steadily advancing its modernization journey—supported by Mainmatter’s experts, who continue to provide hands-on guidance throughout the transformation.</p>
+    <p>The collaboration has set the search engine on a clear path toward a safer, more maintainable codebase. Key modules have already been ported and released to the public, validating the approach and demonstrating tangible benefits. With a well-defined process for migrating C modules to Rust, a strong foundation of reusable Rust components, and growing in-house expertise, the client's team is steadily advancing its modernization journey—supported by Mainmatter’s experts, who continue to provide hands-on guidance throughout the transformation.</p>
   </div>
 </div>
