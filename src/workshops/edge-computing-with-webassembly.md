@@ -53,5 +53,3 @@ leads:
 ## Customised to your team’s needs
 
 We're happy to customize the workshop to precisely fit your team's specific needs or challenges. If you have a very specific branching model or infrastructure or your team frequently struggles with particular aspects of Git, we can adapt the focus of the workshop more towards these aspects or cover additional topics as necessary.
-
-All content and examples of the workshop are available publicly on [GitHub](https://github.com/mainmatter/git-workshop).
