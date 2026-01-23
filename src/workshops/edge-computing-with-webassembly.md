@@ -13,29 +13,34 @@ og:
   image: /assets/images/workshops/edge-computing-with-webassembly/og-image.jpg
 topics:
   - title: Getting Started with WebAssembly
-    text: > 
+    text: >
       We introduce the core concepts by building a WebAssembly HTTP handler in Rust from setup to deployment. You’ll create your first modules, examine raw WebAssembly binaries, and explore the surrounding standards and tooling, while seeing how Rust compiles to WebAssembly.
-  
+
+
   - title: Understanding Memory and the Component Model
     text: >
       After calling your first functions and confronting core WebAssembly's manual memory model, you'll transition to the Component Model, use WIT to enable automatic type marshaling, and finish by building a standalone WebAssembly CLI component.
-      
+
+
   - title: Going Serverless
     text: >
       We expand the basic HTTP handler to explore different Wasm runtimes, deployment options, and common backend patterns in WebAssembly. You'll see why WebAssembly excels in serverless environments, learn its capability-based security model by explicitly granting outbound HTTP access, and build robust HTTP endpoints with proper error handling.
-      
+
+
   - title: Data Persistence and Routing
     text: >
       You’ll add persistent state using a key–value store, upgrade to SQLite for safe and efficient data access, and implement both in-component routing with path parameters and multi-component routing within a larger architecture.
 
+
   - title: Debugging and Observability
     text: >
       No production application is complete without effective debugging and observability, so we explore debugging tools, performance profiling, and monitoring solutions. You’ll instrument your application with OpenTelemetry, examine metrics, traces, and logs using common observability stacks.
-  
+
+
   - title: Optimizing WebAssembly
     text: >
-      We will aggressively reduce WebAssembly binary sizes through optimization and post-processing. 
-      You'll understand how to profile and improve WebAssembly performance.
+      We will aggressively reduce WebAssembly binary sizes through optimization and post-processing.  You'll understand how to profile and improve WebAssembly performance.
+
 
 leads:
   - handle: JonasKruckenberg
