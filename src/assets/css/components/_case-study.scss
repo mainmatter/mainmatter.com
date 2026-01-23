@@ -33,6 +33,19 @@
   margin-top: 3.5rem;
 }
 
+.case-study__image-wrapper {
+  max-width: 50rem;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 3.5rem;
+
+  &.case-study__image-wrapper--small {
+    @media (min-width: $breakpoint-s) {
+      max-width: 35rem;
+    }
+  }
+}
+
 @media (min-width: $breakpoint-s) {
   .case-study__section {
     margin: 5rem 0 0;

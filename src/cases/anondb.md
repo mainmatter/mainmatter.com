@@ -39,7 +39,7 @@ displayTitle: "Modernizing a Database With Rust: Safe, Fast, Future-Ready"
   </div>
 </div>
 
-<section class="case-study__section">
+<div class="case-study__image-wrapper case-study__image-wrapper--small">
   {% set imageData = {
     "imgPath": "/assets/images/work/anondb-modules.png",
     "alt": "A toy train traveling in an upwards direction",
@@ -48,7 +48,7 @@ displayTitle: "Modernizing a Database With Rust: Safe, Fast, Future-Ready"
     "sizesArray": [760, 1440, 1920]
   } %}
   {{ imageAspectRatio(imageData, "1961/2048", "1961/2048") }}
-</section>
+</div>
 
 <div class="case-study__section">
   <div class="case-study__text">
