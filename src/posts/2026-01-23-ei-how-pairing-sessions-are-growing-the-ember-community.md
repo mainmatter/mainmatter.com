@@ -8,7 +8,7 @@ autoOg: true
 customCta: "global/ember-cta.njk"
 tagline: |
   <p>
-  When you chose a framework to develop your application, you want to ensure the ecosystem you’ve invested in continues to evolve according to the latest standards. The <a href="/ember-initiative/">Ember Initiative</a> offers a solution for the Ember framework. Members receive one-on-one pairing sessions with the Ember Initiative team to get help with their own codebase. But that’s not all. The Ember Initiative is about keeping the entire ecosystem performant and up to date. Members also contribute to this goal because, as developers, our challenges are often shared by the whole community.
+  When you chose a framework to develop your application, you want to ensure the ecosystem you’ve invested in continues to evolve according to the latest standards. The <a href="/ember-initiative/">Ember Initiative</a> offers a solution for the Ember framework. Members receive one-on-one pairing sessions with the Ember Initiative team to get help with their own codebase. But that’s not all. The Ember Initiative is about keeping the entire ecosystem performant and up to date. Members also contribute to this goal because, as developers, our challenges are often shared by the whole community. In this blog post, let's walk through a few examples of how our members have contributed to the broader community through pairing sessions.
   </p>
 ---
 
@@ -36,7 +36,7 @@ When aligning a classic Ember app with a modern stack (such as GJS files and Vit
 
 Addons used by Ember Initiative members receive extra attention. The Ember Initiative allocates time to migrate them to the v2 format and ensure our members have high-performing, compatible addons.
 
-**Example:** We helped migrate [ember-scroll-modifiers](https://github.com/elwayman02/ember-scroll-modifiers) to the v2 format. There was an initial attempt by community members in September 2024, but completing such an upgrade is non-trivial, and the pull request was abandoned. The Ember Initiative allowed us to revisit this. With our experience and methodology, we completed the work. This was made possible by the responsiveness of the maintainer, elwayman02, who regularly merged our PRs—many thanks to him. ([#1268](https://github.com/elwayman02/ember-scroll-modifiers/pull/1268), [#1273](https://github.com/elwayman02/ember-scroll-modifiers/pull/1273), [#1274](https://github.com/elwayman02/ember-scroll-modifiers/pull/1274), [#1275](https://github.com/elwayman02/ember-scroll-modifiers/pull/1275), [#1276](https://github.com/elwayman02/ember-scroll-modifiers/pull/1276))
+**Example:** We helped migrate [ember-scroll-modifiers](https://github.com/elwayman02/ember-scroll-modifiers) to the v2 format. There was an initial attempt by community members in September 2024, but completing such an upgrade is non-trivial, and the pull request was abandoned. The Ember Initiative allowed us to revisit this. With our experience and methodology, we completed the work. This was made possible by the responsiveness of the maintainer, [Jordan Hawker](https://www.jordanhawker.com/), who regularly merged our PRs—many thanks to him. ([#1268](https://github.com/elwayman02/ember-scroll-modifiers/pull/1268), [#1273](https://github.com/elwayman02/ember-scroll-modifiers/pull/1273), [#1274](https://github.com/elwayman02/ember-scroll-modifiers/pull/1274), [#1275](https://github.com/elwayman02/ember-scroll-modifiers/pull/1275), [#1276](https://github.com/elwayman02/ember-scroll-modifiers/pull/1276))
 
 ## We Create New Tools
 
