@@ -14,12 +14,12 @@ og:
 topics:
   - title: Foundations
     text: >
-      We start by introducing the basic concepts and building our first WebAssembly HTTP handler in Rust, from setup to deployment.
+      We start by introducing the basic concepts and building our first WebAssembly HTTP handler in Rust, from setup to deployment. You'll build your first modules, look at raw WebAssembly modules and understand the current ecosystem of standards and tooling.
 
 
   - title: Building Real-World Services
     text: >
-      We then expand on our basic HTTP handler, looking at different Wasm runtimes, deployment options, and common backend patterns in WebAssembly.
+      We then expand on our basic HTTP handler, looking at different Wasm runtimes, deployment options, and common backend patterns in WebAssembly. You'll learn how to work with databases, manage state, and integrate Wasm modules into existing architectures.
 
 
   - title: Advanced Topics
