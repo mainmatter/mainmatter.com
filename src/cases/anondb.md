@@ -7,7 +7,7 @@ tags: Team Reinforcement
 description: <p>Our client maintains a widely adopted open-source data platform.</p><p>When they decided to migrate part of their C codebase to Rust, they turned to Mainmatter for support. Our team collaborates closely with their engineers throughout the migration process, teaching them Rust as we go.</p>
 hero:
   color: black
-  image: "/assets/images/work/redis.jpg"
+  image: "/assets/images/work/anondb.jpg"
   imageAlt: "Close-up of a red LED grid pattern."
   tags: "Rust / development / mentoring"
 og:
