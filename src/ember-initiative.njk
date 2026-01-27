@@ -12,6 +12,7 @@ og:
 {% from "logo-list.njk" import logoList %}
 {% from "btn-secondary.njk" import btnSecondary %}
 {% from "cta-banner.njk" import ctaBanner %}
+{% from "featured-case-studies.njk" import featuredCaseStudies %}
 {% from "featured-services.njk" import featuredServices %}
 {%
   set 'content' = {
@@ -71,6 +72,10 @@ og:
 {% set logoCompanies = ['ticketsolve', 'intercom', 'lighthouse', 'auditboard', 'crowdstrike', 'hashicorp', 'xbe', 'teamtailor', 'hotdoc', 'isaac-lee', 'solute', 'triptyk', 'ember-checkup', 'redpencil', 'productive', 'skovik', 'yapplabs', 'adfinis', 'emergent-tree', 'tuition'] %}
 {% set title = 'Companies that build on Ember join the Ember and Embroider initiatives' %}
 {{ logoList(logoCompanies, title) }}
+
+{% set clients = ['tuition'] %}
+{{ featuredCaseStudies(clients, 'Clients') }}
+
 {%
   set 'content' = {
   "title": "Join the Ember Initiative!",

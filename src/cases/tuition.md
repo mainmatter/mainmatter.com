@@ -3,7 +3,7 @@ layout: case-study
 company: Tuition
 title: Ensuring long-term Ember.js codebase health through the Ember Initiative | Work
 displayTitle: "Ensuring long-term Ember.js codebase health through the Ember Initiative"
-tags: Ember.js
+tags: Ember Initiative
 description: <p>Tuition.io helps employers offer simple, effective education benefits like tuition assistance and student loan repayment.</p><p>Through their Ember Initiative membership, we helped them upgrade their codebase and ensure its long-term health.</p>
 hero:
   color: purple
