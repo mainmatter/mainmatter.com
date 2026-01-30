@@ -38,6 +38,6 @@ og:
 </div>
 
 {% set content = {
-  "text": "TODO",
+  "text": "Being a member of the Ember Initiative is providing great help. We're 100% Vite, fixed many outstanding issues, and on the remaining things we have a plan to move forward.",
   "source": "Cory Loken, Tuition"
 } %} {{ quote(content) }}
