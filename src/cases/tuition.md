@@ -1,8 +1,8 @@
 ---
 layout: case-study
 company: Tuition
-title: Ensuring long-term Ember.js codebase health through the Ember Initiative | Work
-displayTitle: "Ensuring long-term Ember.js codebase health through the Ember Initiative"
+title: Ensuring long-term codebase health through the Ember Initiative | Work
+displayTitle: "Ensuring long-term codebase health through the Ember Initiative"
 tags: Ember Initiative
 description: <p>Tuition.io helps employers offer simple, effective education benefits like tuition assistance and student loan repayment.</p><p>Through their Ember Initiative membership, we helped them upgrade their codebase and ensure its long-term health.</p>
 hero:
@@ -17,24 +17,23 @@ og:
 {% from "quote.njk" import quote %}
 
 <div class="case-study__section">
-  <h3 class="case-study__heading">About Tuition</h3>
   <div class="case-study__text">
-    <p class="h4">Tuition.io is a benefits platform that helps employers turn education support into a meaningful part of the employee experience. By bringing tuition assistance, student loan repayment, and personalized guidance into one intuitive system, it removes complexity for HR teams and financial stress for employees.</p>
-    <p>Tuition joined Mainmatter's <a href="/ember-initiative/">Ember Initiative</a> as a way to invest into the health and longevity of their Ember codebase. They were looking to get access to our team's know-how as well as get assistance with some critical upgrades.</p>
+    <p class="h4">Tuition.io is a benefits platform that helps employers offer tuition assistance, student loan repayment, and education guidance in one system—reducing administrative overhead for HR teams and financial stress for employees.</p>
+    <p>Tuition joined Mainmatter’s <a href="/ember-initiative/">Ember Initiative</a> to modernize their Ember.js codebase and reduce long-term maintenance risk. They were looking for direct access to Ember expertise and hands-on support for several critical upgrades.</p>
   </div>
 </div>
 
 <div class="case-study__section">
-  <h3 class="case-study__heading">Upgrading</h3>
+  <h3 class="case-study__heading">Incremental Improvements with Immediate Impact</h3>
   <div class="case-study__text">
-    <p>TODO: With pairing and weekly calls, we guided their team, fixed some issues in the ecosystem, etc. </p>
+    <p>We started by migrating their build system to Vite, which significantly improved local development speed and reduced CI build times. This work demonstrated for the entire Ember ecosystem what modern Ember tooling can look like beyond ember-cli. We then integrated ember-intl with Vite, enabling live reloading for translations so engineers no longer needed to restart the development server when copy changed. Finally, we upgraded the project to Glint 2, improving type safety, autocomplete, and overall developer confidence.</p>
   </div>
 </div>
 
 <div class="case-study__section">
-  <h3 class="case-study__heading">A Sustainable Foundation for Future Success</h3>
+  <h3 class="case-study__heading">A Codebase Built to Last</h3>
   <div class="case-study__text">
-    <p>After working with our team for a few months, Tuition's Ember.js codebase is now probably the most modern codebase in the world known to our team. It offers a smooth developer experience and establishes a solid foundation for the company to build on for the long term.</p>
+    <p>After a few months of collaboration, Tuition’s Ember.js setup is fully up to date with modern tooling and practices. Their team now works faster, catches issues earlier, and has a stable foundation for future feature work—without needing large, disruptive upgrades down the line.</p>
   </div>
 </div>
 
