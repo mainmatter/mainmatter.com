@@ -11,7 +11,7 @@ hero:
   imageAlt: "A group of college students sit in a classroom taking notes, while one student stands beside her desk holding notebooks and a backpack."
   tags: "development / consulting / Ember.js"
 og:
-  image: /assets/images/cases/cs-trainline-og-image.jpg
+  image: /assets/images/cases/cs-tuition-og-image.jpg
 ---
 
 {% from "quote.njk" import quote %}
