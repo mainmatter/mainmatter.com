@@ -8,6 +8,7 @@ layout: "base"
 {% from "newsletter-cta.njk" import newsletterCta %}
 {% from "strategy-list.njk" import strategyList %}
 {% from "global/invisible-captcha.njk" import invisibleCaptcha %}
+{% from "global/li-fat-id.njk" import liFatId %}
 
 {%- block content -%}
   {%
@@ -211,6 +212,7 @@ layout: "base"
             </div>
           </div>
           {{ invisibleCaptcha() }}
+          {{ liFatId() }}
         </form>
       </div>
     </div>
