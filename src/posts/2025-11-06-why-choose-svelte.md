@@ -49,7 +49,7 @@ You might argue that vibes are subjective but the fact that the design decisions
 
 ![State of JS survey results showing Svelte consistently on top for interest](/assets/images/posts/2025-11-06-why-choose-svelte/state-of-js.png)
 
-Svelte is constantly the most interesting framework in online surveys: developers wants to learn Svelte!
+Svelte is constantly the most interesting framework in online surveys like "The State of JS" and "StackOverflow Annual Developer Survey": developers wants to learn Svelte!
 
 This means that:
 
