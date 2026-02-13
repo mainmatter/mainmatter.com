@@ -27,9 +27,9 @@ I still remember the first time I heard of Svelte: I was in the excruciating lin
 
 In this talk Rich showcased the idea of moving reactivity from the runtime into the language itself. A compiler! Just like in the good ol' days a C compiler could help you write programs more easily by writing the ASSEMBLY code for you, Svelte can help you write websites more easily by writing JavaScript code for you. Being a compiler is the first reason why I would choose Svelte, and this has several implications:
 
-1. **New language constructs**: A compiler gives you a superpower—if you write a JavaScript variable in an HTML file, you can't use it in the template below. In Svelte you can! This is powered by the compiler that turns your template into JavaScript expressions that are in the same scope as your variables.
-2. **Write efficient code by default**: Many C developers could not write ASSEMBLY as efficiently as `gcc` can—the same is true for JavaScript. Sometimes it can be difficult to write efficient code, but the Svelte compiler is written by a lot of very smart people (and me) who know how to write efficient JS for you.
-3. **Ability to change the runtime without changing the syntax**: Another somewhat hidden feature of a compiler is that you can change the underlying runtime without having to change the syntax. We recently released Svelte 5, which, to be fair, was quite the syntax change—but you can still use your old components in Legacy mode. The same syntax now uses completely different technology under the hood (compile-time reactivity vs. signal-based reactivity). If tomorrow a brand new technique much better than signals is discovered, Svelte can pretty much just rewrite the runtime without changing the syntax.
+1. **New language constructs**: A compiler gives you a superpower, if you write a JavaScript variable in an HTML file, you can't use it in the template below. In Svelte you can! This is powered by the compiler that turns your template into JavaScript expressions that are in the same scope as your variables.
+2. **Write efficient code by default**: Many C developers could not write ASSEMBLY as efficiently as `gcc` can, the same is true for JavaScript. Sometimes it can be difficult to write efficient code, but the Svelte compiler is written by a lot of very smart people (and me) who know how to write efficient JS for you.
+3. **Ability to change the runtime without changing the syntax**: Another somewhat hidden feature of a compiler is that you can change the underlying runtime without having to change the syntax. We recently released Svelte 5, which, to be fair, was quite the syntax change, but you can still use your old components in Legacy mode. The same syntax now uses completely different technology under the hood (compile-time reactivity vs. signal-based reactivity). If tomorrow a brand new technique much better than signals is discovered, Svelte can pretty much just rewrite the runtime without changing the syntax.
 
 Another very good example of the power a compiler gives you is the brand new experimental `await` API: since the compiler does not abide by the rules of JavaScript, you can use `await` in the middle of your script tag or component template and retain the signal-based reactivity even after the `await`; or we can `Promise.all` all your `await`s in the template so that they don't waterfall.
 
@@ -54,13 +54,13 @@ Svelte is consistently framework most people are interested in in online surveys
 This means that:
 
 1. **Your engineers will be happy**: It's no secret that people work better when they use something that just makes sense to them. Less frustration with weird APIs, less context switching to look at the docs, fewer abstractions needed to make the code readable and maintainable.
-2. **Onboarding new hires will be easier**: For the same reason, onboarding new hires on a project will take a lot less time—people learn React because they have to; people learn Svelte because they want to.
+2. **Onboarding new hires will be easier**: For the same reason, onboarding new hires on a project will take a lot less time, people learn React because they have to; people learn Svelte because they want to.
 
 ## SvelteKit: the meta-framework for Svelte
 
 I'm very often regarded as "The Svelte Guy" but a small confession I have to make is that I would consider myself "The SvelteKit Guy". I love Svelte but what really hooked me into it is SvelteKit.
 
-SvelteKit is the meta-framework for Svelte, basically what Next.js is to React or Nuxt is to Vue. It uses Svelte as the templating language and builds an opinionated layer on top to develop actual applications. It provides ways to load data, handle routing, observability, and much more. As I've said, almost every framework has its own meta-framework that allows for all of this—so what's the deal with SvelteKit specifically?
+SvelteKit is the meta-framework for Svelte, basically what Next.js is to React or Nuxt is to Vue. It uses Svelte as the templating language and builds an opinionated layer on top to develop actual applications. It provides ways to load data, handle routing, observability, and much more. As I've said, almost every framework has its own meta-framework that allows for all of this, so what's the deal with SvelteKit specifically?
 
 ### The absolute care for DX
 
@@ -75,11 +75,11 @@ A lot of people in the community were flabbergasted by this change: it felt weir
 
 "What about calling this `page.svelte` instead, like Next.js?"...the answer to this question is what really sold me on SvelteKit: naming your component `+page.svelte` makes sure that the SvelteKit-specific files are always recognizable and, most importantly, **always on top**!
 
-Is this the killer feature that sold me? No, this is a nicety—but this told me that the SvelteKit team is obsessed with DX. They think about every single detail to make your life as a developer easier.
+Is this the killer feature that sold me? No, this is a nicety, but this told me that the SvelteKit team is obsessed with DX. They think about every single detail to make your life as a developer easier.
 
 ### In house meta-framework
 
-There's another reason why SvelteKit can have a small but important advantage over the other meta-frameworks: for the first time, the same team that builds the UI framework is also the one responsible for the meta-framework (and even the templating language itself). Obviously the Vue team has a direct line of communication with the Nuxt team, and a lot of the engineers who work at Vercel also work on React directly—but having literally the same team work on both sides of the deal can really change the game.
+There's another reason why SvelteKit can have a small but important advantage over the other meta-frameworks: for the first time, the same team that builds the UI framework is also the one responsible for the meta-framework (and even the templating language itself). Obviously the Vue team has a direct line of communication with the Nuxt team, and a lot of the engineers who work at Vercel also work on React directly, but having literally the same team work on both sides of the deal can really change the game.
 
 The moment SvelteKit needs a new Svelte API, there's no need to communicate: the team already knows if it's feasible, if it makes sense to put that in Svelte, and how hard it would be. Inversely, a new API in Svelte is developed keeping in mind the opportunities that it opens for SvelteKit. The synergy is unrivaled.
 
@@ -136,9 +136,9 @@ Svelte is one of the fastest frameworks out there, right next to SolidJS in the 
 
 AI is changing the world of development, so it's only fair to dedicate a paragraph to this aspect. Hearing about a company migrating away from their existing stack to something that AI understands better is not unheard of (React being the usual choice). However (and, spoiler, this is an opinion, not a fact), I would argue that being more present in the training set of a Large Language Model doesn't automatically make it better.
 
-Something is definitely true: React is kind of the default for LLMs because a big portion of the Web is built on top of it. Be it code snippets on GitHub, blog posts, tutorials, or actual open source products—the training set is just enormous. However, a lot of code also means a lot of **BAD** code. React being the first choice for junior devs who want to break into the tech scene makes LLMs very good at simple components and very bad at complex ones.
+Something is definitely true: React is kind of the default for LLMs because a big portion of the Web is built on top of it. Be it code snippets on GitHub, blog posts, tutorials, or actual open source products, the training set is just enormous. However, a lot of code also means a lot of **BAD** code. React being the first choice for junior devs who want to break into the tech scene makes LLMs very good at simple components and very bad at complex ones.
 
-How does Svelte fare in this? Well, people who pick Svelte tend to be more senior engineers who evaluate their tech stack and spend time figuring out what's best. This also generally relates to better code. There's still a small issue, though: Svelte 5 was released a few months after the first big models started to become popular, which means that a lot of the training data is now outdated—but fear not: as I've said before, we truly want to make the DX of Svelte the best possible, and that, nowadays, includes being able to write good Svelte code with the help of your agent. That's why Svelte has an [official MCP server](svelte.dev/docs/mcp) that helps your agent get the documentation AND uses static analysis to correct it when it falls back to the old syntax. The best part? The MCP server can also steer the LLM to write **good** Svelte code, not just syntactically correct code.
+How does Svelte fare in this? Well, people who pick Svelte tend to be more senior engineers who evaluate their tech stack and spend time figuring out what's best. This also generally relates to better code. There's still a small issue, though: Svelte 5 was released a few months after the first big models started to become popular, which means that a lot of the training data is now outdated, but fear not: as I've said before, we truly want to make the DX of Svelte the best possible, and that, nowadays, includes being able to write good Svelte code with the help of your agent. That's why Svelte has an [official MCP server](svelte.dev/docs/mcp) that helps your agent get the documentation AND uses static analysis to correct it when it falls back to the old syntax. The best part? The MCP server can also steer the LLM to write **good** Svelte code, not just syntactically correct code.
 
 ## When NOT to use Svelte?
 
@@ -151,7 +151,7 @@ If I told you that Svelte was the best at everything, I would:
 Almost no tool is the perfect tool for every job, and Svelte is no different. That's why in this section I want to go over the situations where I would not choose Svelte:
 
 - **You need a big migration**: If you already have a big codebase that's written in React/Vue/Solid/Angular, migrating to Svelte would, most likely, be a bad choice. Especially if you come from React, the mental model is very different, and migrating the whole codebase while also re-adjusting the mental model of your team could prove challenging and might not be worth the time and energy spent on it.
-- **All your team already knows something else**: Even if you are not migrating but starting a greenfield project, it's important to coordinate with your team—if all your engineers are already versed in a different framework, starting your project while learning a new framework (and its relative quirks) could slow your project down too much.
+- **All your team already knows something else**: Even if you are not migrating but starting a greenfield project, it's important to coordinate with your team, if all your engineers are already versed in a different framework, starting your project while learning a new framework (and its relative quirks) could slow your project down too much.
 - **Content-heavy websites**: If your website mostly consists of relatively static content (a blog, a documentation website), you could consider Astro as an alternative. Astro focuses on static websites and has tools built in for content management, documentation, etc. As a bonus: you can also add the Svelte plugin for Astro to sprinkle reactivity into your static website with Svelte.
 - **You need specific libraries that are not supported**: Some libraries (like [tldraw](https://tldraw.dev)) are built around the React mental model and thus do not offer an agnostic version that you can safely use in Svelte.
 
