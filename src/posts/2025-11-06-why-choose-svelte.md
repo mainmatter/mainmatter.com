@@ -9,7 +9,7 @@ autoOg: true
 tagline: <p>We know Svelte is THE best framework (😎)...but why? Let's explore why (and when) I think Svelte is the right choice for you</p>
 ---
 
-At Mainmatter we are well aware of our choices. As Marco wrote in his blog post ["Ember.js in 2021 - a beacon of productivity"](https://mainmatter.com/blog/2021/03/12/ember.js-in-2021---a-beacon-of-productivity/) we firmly believe in picking the right tool for the job. Frontend exists on a spectrum (from a static document to a fully dynamic dashboard). Svelte covers a wide range of use cases and that why, when we think our clients project fall below this umbrella, we suggests to them to pick Svelte for their job.
+At Mainmatter we are well aware of our choices. [As Marco wrote](https://mainmatter.com/blog/2021/03/12/ember.js-in-2021---a-beacon-of-productivity/#the-right-tool-for-the-right-job), we firmly believe in picking the right tool for the job. Frontend projects exist on a spectrum (from static documents to fully dynamic, complex dashboards). Svelte covers a wide range of that spectrum which is why, we recommend it to our clients regularly.
 
 Our clients, following good engineering practices, don't just blindly trust us and ask: Why? Why should I choose Svelte to develop my product?
 
