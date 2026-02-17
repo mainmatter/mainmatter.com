@@ -40,8 +40,8 @@ importers:
         specifier: ^1.28.7
         version: 1.30.10
       '@quasibit/eleventy-plugin-schema':
-        specifier: ^1.12.0
-        version: 1.12.0(@11ty/eleventy@3.0.0)
+        specifier: github:mainmatter/eleventy-plugin-schema#service
+        version: https://codeload.github.com/mainmatter/eleventy-plugin-schema/tar.gz/bb88c198e8ec506fc40c10c65075393d55eba245(@11ty/eleventy@3.0.0)
       '@rollup/plugin-commonjs':
         specifier: ^28.0.0
         version: 28.0.3(rollup@4.40.0)
@@ -588,8 +588,9 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@quasibit/eleventy-plugin-schema@1.12.0':
-    resolution: {integrity: sha512-wVqbJ5OkzeWZOlG7rnl78vNRf9GBKLIVW+Hyyxvot6eYdwM55dgKEqBYCFsPpsA21gcGD05cKhOgmH1uMzDr1Q==}
+  '@quasibit/eleventy-plugin-schema@https://codeload.github.com/mainmatter/eleventy-plugin-schema/tar.gz/bb88c198e8ec506fc40c10c65075393d55eba245':
+    resolution: {tarball: https://codeload.github.com/mainmatter/eleventy-plugin-schema/tar.gz/bb88c198e8ec506fc40c10c65075393d55eba245}
+    version: 1.12.0
     engines: {node: '>=18.0.0'}
     peerDependencies:
       '@11ty/eleventy': '>=0.11.0'
@@ -4459,7 +4460,7 @@ snapshots:
       - bare-buffer
       - supports-color
 
-  '@quasibit/eleventy-plugin-schema@1.12.0(@11ty/eleventy@3.0.0)':
+  '@quasibit/eleventy-plugin-schema@https://codeload.github.com/mainmatter/eleventy-plugin-schema/tar.gz/bb88c198e8ec506fc40c10c65075393d55eba245(@11ty/eleventy@3.0.0)':
     dependencies:
       '@11ty/eleventy': 3.0.0
 
