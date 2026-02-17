@@ -27,7 +27,9 @@ We offer a range of trainings Rust, Wasm, Svelte, Ember.js, Git, as well as gene
 ## Clients
 
 {% for case in collections.caseStudies -%}
+{%- if case.data.company -%}
 * {{case.data.company}}
+{%- endif %}
 {% endfor %}
 ## Case Studies
 
