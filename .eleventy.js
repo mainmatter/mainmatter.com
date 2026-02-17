@@ -10,6 +10,7 @@ const customParseFormat = require("dayjs/plugin/customParseFormat");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const Image = require("@11ty/eleventy-img");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const schemaPlugin = require("@quasibit/eleventy-plugin-schema");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 const contentParser = require("./utils/transforms/contentParser.js");
@@ -166,6 +167,7 @@ module.exports = async function (eleventyConfig) {
     init,
   });
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(schemaPlugin);
 
   const EleventyPluginOgImage = (await import("eleventy-plugin-og-image")).default;
   eleventyConfig.addPlugin(EleventyPluginOgImage, {
