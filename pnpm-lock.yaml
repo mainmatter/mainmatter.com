@@ -39,6 +39,9 @@ importers:
       '@percy/cli':
         specifier: ^1.28.7
         version: 1.30.10
+      '@quasibit/eleventy-plugin-schema':
+        specifier: github:mainmatter/eleventy-plugin-schema#service
+        version: https://codeload.github.com/mainmatter/eleventy-plugin-schema/tar.gz/bb88c198e8ec506fc40c10c65075393d55eba245(@11ty/eleventy@3.0.0)
       '@rollup/plugin-commonjs':
         specifier: ^28.0.0
         version: 28.0.3(rollup@4.40.0)
@@ -584,6 +587,13 @@ packages:
     resolution: {integrity: sha512-ioXoq9gPxkss4MYhD+SFaU9p1IHFUX0ILAWFPyjGaBdjLsYAlZw6j1iLA0N/m12uVHLFDfSYNF7EQccjinIMDA==}
     engines: {node: '>=18'}
     hasBin: true
+
+  '@quasibit/eleventy-plugin-schema@https://codeload.github.com/mainmatter/eleventy-plugin-schema/tar.gz/bb88c198e8ec506fc40c10c65075393d55eba245':
+    resolution: {tarball: https://codeload.github.com/mainmatter/eleventy-plugin-schema/tar.gz/bb88c198e8ec506fc40c10c65075393d55eba245}
+    version: 1.12.0
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      '@11ty/eleventy': '>=0.11.0'
 
   '@resvg/resvg-js-android-arm-eabi@2.6.2':
     resolution: {integrity: sha512-FrJibrAk6v29eabIPgcTUMPXiEz8ssrAk7TXxsiZzww9UTQ1Z5KAbFJs+Z0Ez+VZTYgnE5IQJqBcoSiMebtPHA==}
@@ -4449,6 +4459,10 @@ snapshots:
     transitivePeerDependencies:
       - bare-buffer
       - supports-color
+
+  '@quasibit/eleventy-plugin-schema@https://codeload.github.com/mainmatter/eleventy-plugin-schema/tar.gz/bb88c198e8ec506fc40c10c65075393d55eba245(@11ty/eleventy@3.0.0)':
+    dependencies:
+      '@11ty/eleventy': 3.0.0
 
   '@resvg/resvg-js-android-arm-eabi@2.6.2':
     optional: true

@@ -1,5 +1,6 @@
 {%- set pageTitle = config.name -%}
 {%- set pageDesc = config.description -%}
+{%- set pageUrl = "https://mainmatter.com" ~ page.url -%}
 {%- set siteTitle = config.name -%}
 
 {%- if title -%}
@@ -11,9 +12,8 @@
 {%- endif -%}
 
 {%- if canonical -%}
+  {%- set pageUrl = canonical -%}
   <link rel="canonical" href="{{ canonical }}" />
-{%- else -%}
-  <link rel="canonical" href="https://mainmatter.com{{ page.url }}" />
 {%- endif -%}
 
 {%- if noindex -%}
@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="{{ siteTitle }}" />
 <meta property="og:title" content="{{ pageTitle }}" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="{{ currentUrl }}" />
+<meta property="og:url" content="{{ pageUrl }}" />
 
 {%- if config.authorHandle -%}
   <meta name="twitter:creator" content="@{{ config.authorHandle | replace('@', '') }}" />
@@ -59,3 +59,29 @@
 {%- if config.paymentPointer -%}
   <meta name="monetization" content="{{ config.paymentPointer }}" />
 {%- endif -%}
+
+{%
+  set schemaMeta = {
+    "site": {
+      "name": "Mainmatter",
+      "url": "https://mainmatter.com",
+      "logo": {
+        "src": meta.site.logo.src,
+        "width": meta.site.logo.width,
+        "height": meta.site.logo.height
+      }
+    },
+    "language": meta.language,
+    "image": {
+      "src": meta.image.src
+    },
+    "url": pageUrl,
+    "title": pageTitle,
+    "description": pageDesc,
+    "organization": meta.organization,
+    "published": meta.published,
+    "serviceType": meta.serviceType,
+    "name": meta.name
+  }
+%}
+{% jsonLdScript schemaMeta, type, tags %}
