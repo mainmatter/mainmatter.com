@@ -1,6 +1,6 @@
 ---
 layout: base
-title: "Team Up With Us for Svelte! | Svelte consulting"
+title: "Accelerate your Svelte projects! | Svelte consulting"
 description: Mainmatter's experts join your team to accelerate your efforts and minimize execution risk. We focus on Svelte 5 migrations, team augmentation to accelerate delivery, and training.
 permalink: /svelte-consulting/
 type: service
@@ -12,248 +12,207 @@ og:
 ---
 
 {% from "image-banner-with-text.njk" import imageBannerWithText %}
+{% from "service-cards.njk" import serviceCards %}
 {% from "recent-posts.njk" import recentPosts %}
+{% from "logo-list.njk" import logoList %}
 {% from "cta-link.njk" import ctaLink %}
-{% from "scroll-slides.njk" import scrollSlides %}
-{% from "quote.njk" import quote %}
 {% from "color-hero.njk" import colorHero %}
 {% from "btn-secondary.njk" import btnSecondary %}
 {% from "cta-banner.njk" import ctaBanner %}
-{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "image-aspect-ratio-with-button.njk" import imageAspectRatioWithButton %}
 {% from 'featured-case-study.njk' import featuredCaseStudy %}
+{% from "featured-case-studies.njk" import featuredCaseStudies %}
+
+{%
+  set toc = {
+    'What we do best': '#services',
+    'Our team': '#team',
+    'Success stories': '#successes',
+    'Let’s talk': '#contact'
+  }
+%}
 {%
   set 'content' = {
-  "eyebrow": "Our Expertise: Svelte & SvelteKit",
-  "title": "Team Up With Us for Svelte!",
-  "text": "Svelte combines a leading developer experience with performance and maintainability. With SvelteKit and its progressive enhancement capabilities, it's a fit for a wide range of use cases. Mainmatter is here to empower your team to fully realize those benefits in your web and backend projects.",
-  "image": "/assets/images/hero/svelte.jpg",
-  "alt": "A metal chain",
-  "loading": "eager"
+  "title": "Accelerate your Svelte projects!",
+  "text": "Svelte combines a leading developer experience with performance and maintainability. But in order to effectively utilize its full potential, nothing beats experience. That’s where Mainmatter comes in—our experts join your team to accelerate your efforts and minimize execution risk.",
+  "loading": "eager",
+  "containerType": "lp",
+  "toc": toc
   }
 %}
 {{ colorHero('purple', content) }}
 
-<section class="my-10 container container--lg">
-  <div class="">
-    <div class="mb-4">
-      <h5 class="mb-015">Svelte & Mainmatter</h5>
-      <h3 class="mb-2">A unique skillset</h3>
-      <p>
-        We’re frontend experts – our team speaks at international events, is
-        <a href="/this-week-in-open-source/"
-          >actively contributing to a number of open source projects</a
-        >
-        and our Svelte expert Paolo Ricciuti is a Svelte maintainer and the co-author of
-        <a href="https://www.sveltelab.dev/">SvelteLab</a>.
-      </p>
-      <p>
-        Mainmatter has been developing big web apps and mentored international teams around backend,
-        frontend, design, as well as process and developer infrastructure for years. We know what it
-        takes to connect everything together and deliver a delightful end-to-end experience.
-      </p>
-    </div>
-  </div>
-</section>
+{%
+  set 'tech_1' = {
+  "title": "Svelte 5 Migration",
+  "text": "We migrate your project incrementally, improving capability, speed, and maintainability without interrupting ongoing product development.",
+  "label": "Learn more",
+  "link": "#successes"
+  }
+%}
+{%
+  set 'tech_2' = {
+  "title": "Team Augmentation",
+  "text": "We support you in delivering in time and on budget. We don’t just write code, we architect advanced solutions and help teams level up through direct collaboration.",
+  "label": "Learn more",
+  "link": "#successes"
+  }
+%}
+{%
+  set 'tech_3' = {
+  "title": "Trainings and Workshops",
+  "text": "We help you master Svelte. We’ve trained countless engineers on Svelte’s basics, advanced topics like auth and testing, and the magic of its internals.",
+  "label": "Learn more",
+  "link": "/services/workshops/svelte/"
+  }
+%}
+{% set technologies = [tech_1, tech_2, tech_3] %}
+{{ serviceCards('services', 'What We Do Best', technologies) }}
 
-<section class="my-10 container container--lg">
-  <div class="">
-    <div class="mb-4">
-      <h5 class="mb-015">Svelte Summit & This Week in Svelte</h5>
-      <h3 class="mb-2">Fostering the Community</h3>
-      <p>
-        Mainmatter believes open source communities are valuable and we strive for being active
-        community members. Our team regularly speaks at all of the relevant Svelte conferences but
-        also other conferences. We also co-organize Svelte Summit together with our friends at
-        Svelte Society and our Svelte lead, Paolo Riccuiti is the host of the
-        <a
-          href="https://www.youtube.com/playlist?list=PL8bMgX1kyZTiLCyvf8vF13sdnR4fhNl6v"
-          target="_blank"
-          rel="external nofollow noopener noreferrer"
-          >This Week in Svelte video series</a
-        >.
-      </p>
-    </div>
-  </div>
-  <div class="split-content">
-    <a href="https://www.sveltesummit.com" class="split-content__link"></a>
-    <div class="split-content__wrapper">
-      <div class="split-content__content">
-        <h4>We co-organize Svelte Summit together with our friends at Svelte Society.</h4>
-        {%
-          set link = {
-          "label": 'Learn more',
-          "url": 'https://www.sveltesummit.com/'
-          }
-        %}
-        {{ btnSecondary( link, 'mt-2' ) }}
-      </div>
-      <div class="split-content__feature">{% include 'content/secondary-feature-svelte.njk' %}</div>
-    </div>
-  </div>
-</section>
-
-<section class="my-10">
-  {%
-    set imageData = {
-    "imgPath": "/assets/images/svelte/svelte-consulting.jpeg",
-    "alt": "People attending EmberFest",
-    "sizes": "100vw",
-    "loading": "lazy",
-    "sizesArray": [760, 1440, 1920]
-    }
-  %}
-  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
-</section>
-
-<section class="my-10 container container--lg">
-  <div class="split-content no-link">
-    <div class="split-content__wrapper">
-      <div class="split-content__content">
-        <h5>Book a free call</h5>
-        <h3 class="split-content__subheading h2">Succeeding with Svelte</h3>
-        <p>
-          Getting started with Svelte and SvelteKit is straightforward but an experienced partner
-          can help ensure you're set up for success from the beginning. Paolo Ricciuti, Svelte
-          ambassador, co-author of <a href="https://www.sveltelab.dev">SvelteLab</a>, and our
-          in-house Svelte expert, is here to help your team.
-        </p>
-        {%
-          set link = {
-          "label": 'Book a 1:1 call with Paolo',
-          "url": 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ26xh3Rs58rD4ZNFuzlzbTxFxubT5_9qSqc_NU4Pmqdot1YTIiylxcyL2kJrfEHn8tpgJqoHi8O'
-          }
-        %}
-        {{ btnSecondary( link, 'mt-2 plausible-event-name=Svelte+1on1+Call') }}
-      </div>
-      <div class="split-content__feature">
-        {% include 'content/secondary-feature-svelte-consulting.njk' %}
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="my-10">
-  <div class="container container--lg">
-    <div class="mb-10">
-      <h3 class="mb-2">Custom Development</h3>
-      <p class="body">
-        We design and develop complete web apps in Svelte so your team can focus on other
-        initiatives. We are experts in Svelte and SvelteKit as well as related technology like
-        Tailwind, Storybook, and testing with Playwright etc. Our team delivers high quality
-        codebases as well as the tooling and infrastructure needed for sustainable maintenance.
-      </p>
-      {%
-        set link = {
-        "label": 'Work with us!',
-        "url": '/contact/?service=svelte'
-        }
-      %}
-      {{ btnSecondary( link, 'mt-2 plausible-event-name=Svelte+Contact' ) }}
-    </div>
-    <div class="mb-10">
-      <h3 class="mb-2">Training and Support</h3>
-      <p class="body">
-        Svelte has excellent documentation for diving straight into the framework. However,
-        sometimes active learning in a workshop taught by a subject matter expert can accelerate the
-        learning experience or help overcome challenges. Our trainers are world-class mentors and
-        can design a learning path that best fits your needs.
-      </p>
-      {%
-        set link = {
-        "label": 'Check out our workshops!',
-        "url": '/services/workshops/svelte/'
-        }
-      %}
-      {{ btnSecondary( link, 'mt-2 plausible-event-name=Svelte+Workshops' ) }}
-    </div>
-    <div class="mb-10">
-      <h3 class="mb-2">Team reinforcement</h3>
-      <p class="body">
-        Svelte is still a young technology – hiring senior talent can be a challenge. Our experts
-        can merge with your in-house product teams to ensure the timely delivery of mission-critical
-        projects. We’re more than hired hands – we mentor your team throughout the process to help
-        lift productivity long after our collaboration ends.
-      </p>
-      {%
-        set link = {
-        "label": 'Work with us!',
-        "url": '/contact/?service=svelte'
-        }
-      %}
-      {{ btnSecondary( link, 'mt-2 plausible-event-name=Svelte+Contact' ) }}
-    </div>
-  </div>
-</section>
-
-{% include "global/svelte-subscription-cta.njk" %}
-
-<div class="container container--lg quote-section">
-  {%
-    set content = {
-    "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
-    "source": "Jürgen Witte, CPO at Rail Europe",
-    "image": "/assets/images/photos/juergen-witte.png",
-    "alt": "Jürgen Witte, smiling at the camera wearing a light blue shirt and blue blazer",
-    "loading": "lazy"
-    }
-  %}
-  {{ quote(content) }}
-</div>
-
-<div class="work container container--xl">
-  <ul class="work__list">
-    {{ featuredCaseStudy('rail-europe', 'purple', 'work__featured-case-study') }}
-  </ul>
-</div>
-
-<section class="container container--xl opensource-list">
-  <div class="">
-    <h2 class="opensource-list__title h2">We love Open Source</h2>
-    <ul class="opensource-list__list">
-      <li class="opensource-list__project">
-        <div class="opensource-list__project-image">
-          <img src="/assets/images/svelte/crossedfingers.svg" alt="Svelte Promise Modals" />
+<section class="py-7 background-aqua">
+  <div class="container container--lg p-2 p-3 background-white" id="team">
+    <div class="split-content no-link m-0">
+      <h1 class="mb-2">We Are Svelte Experts</h1>
+      <div class="split-content__wrapper">
+        <div class="split-content__content m-0">
+          <p class="medium">
+            Our team is led by Paolo Ricciuti, Svelte maintainer 
+            and co-author of SvelteLab. Mainmatter is the steward 
+            of the Svelte Custom Renderers initiative, an active contributor 
+            to a number of open source projects and co-organizer of Svelte Summit. 
+          </p>
         </div>
-        <div class="opensource-list__project-text">
-          <h4 class="mb-015">Svelte Promise Modals</h4>
-          <p>Modals for Svelte made easy. Promised!</p>
+        <div class="split-content__feature">
+          {% include 'content/secondary-feature-svelte-consulting.njk' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mobile-hidden">
+  {%
+    set 'content' = {
+      "imgPath": "/assets/images/svelte/svelte-consulting.jpeg",
+      "alt": "Colorful paper clips",
+      "sizes": "100vw",
+      "loading": "lazy",
+      "sizesArray": [760, 1440, 1920],
+      "aspectRatioDesktop": "32/6",
+      "linkUrl": "#contact",
+      "linkText": "Let's talk"
+    }
+  %}
+  {{ imageAspectRatioWithButton(content) }}
+</section>
+
+<section class="mt-7 mb-5" id="successes">
+  <div class="container container--lg mb-6">
+    <h1>Our Success Stories</h1>
+  </div>
+  <div class="container container--lg mb-6">
+    {%
+      set link = {
+      "label": 'Modernizing Hyland’s Svelte component library',
+      "url": '/cases/hyland'
+      }
+    %}
+    {{ btnSecondary( link, 'mt-2' ) }}
+
+    {%
+      set link = {
+      "label": 'Modernizing and rebuilding Rail Europe’s B2C platform',
+      "url": '/cases/rail-europe/'
+      }
+    %}
+    {{ btnSecondary( link, 'mt-2' ) }}
+
+  </div>
+  {%
+    set logoCompanies = [
+    'Aleph Alpha',
+    'Google',
+    'KISTERS',
+    'BMW Car IT',
+    'Faculty',
+    'Otto',
+    'Redis'
+    ]
+  %}
+  {{ logoList(logoCompanies) }}
+</section>
+
+{% include 'contact-form-LP.njk' %}
+
+<section class="container container--lg opensource-list py-7 image-max-width-32" id="open-source">
+  <div class="">
+    <h1 class="opensource-list__title">You Might Like...</h1>
+    <ul class="opensource-list__list opensource-list__list-redesigned">
+      <li class="opensource-list__project">
+        <div>
+          <div class="opensource-list__project-image">
+            <img
+              src="/assets/images/svelte/svelte-custom-renderers.webp"
+              alt="Custom Renderers"
+            />
+          </div>
+          <div class="opensource-list__project-text">
+            <h4 class="mb-015 medium">Support Mainmatter’s Svelte Custom Renderers project</h4>
+          </div>
+        </div>
+        <div class="opensource-list__project-link">
           {%
             set link = {
-            "label": 'View on GitHub',
-            "url": 'http://github.com/mainmatter/svelte-promise-modals'
+            "label": 'Learn more',
+            "url": 'https://svelte-custom-renderers.com/?utm_source=mainmatter.com'
             }
           %}
-          {{ btnSecondary( link, 'mt-2' ) }}
+          {{ btnSecondary( link, 'link-purple' ) }}
         </div>
       </li>
       <li class="opensource-list__project">
-        <div class="opensource-list__project-image">
-          <img src="/assets/images/svelte/sheepdog.svg" alt="Sheepdog" />
+        <div>
+          <div class="opensource-list__project-image">
+            <img src="/assets/images/svelte/svelte-blog-post.webp" alt="Svelte" />
+          </div>
+          <div class="opensource-list__project-text">
+            <h4 class="mb-015 medium">
+              Blog post: Runes and Global state do’s and don’ts
+            </h4>
+          </div>
         </div>
-        <div class="opensource-list__project-text">
-          <h4 class="mb-015">@sheepdog/svelte</h4>
-          <p>Herd your async tasks!</p>
+        <div class="opensource-list__project-link">
           {%
             set link = {
-            "label": 'View on GitHub',
-            "url": 'https://github.com/mainmatter/sheepdog'
+            "label": 'Read blog post',
+            "url": '/blog/2025/03/11/global-state-in-svelte-5/'
             }
           %}
-          {{ btnSecondary( link, 'mt-2' ) }}
+          {{ btnSecondary( link, 'link-purple' ) }}
+        </div>
+      </li>
+      <li class="opensource-list__project">
+        <div>
+          <div class="opensource-list__project-image">
+            <img
+              src="/assets/images/svelte/svelte-radio.webp"
+              alt="Svelte Radio"
+            />
+          </div>
+          <div class="opensource-list__project-text">
+            <h4 class="mb-015 medium">Paolo discusses Custom Renderers with Svelte Radio</h4>
+          </div>
+        </div>
+        <div class="opensource-list__project-link">
+          {%
+            set link = {
+            "label": 'Watch on YouTube',
+            "url": 'https://www.youtube.com/watch?v=CCZbiOBTMas'
+            }
+          %}
+          {{ btnSecondary( link, 'link-purple' ) }}
         </div>
       </li>
     </ul>
   </div>
 </section>
-
-{{ recentPosts("Latest from our blog on the topic", collections.sveltePosts) }}
-{% include "global/svelte-newsletter-cta.njk" %}
-{%
-  set 'content' = {
-  "title": "Team up with us for Svelte",
-  "text": "Our Svelte experts are ready to guide you through your next big move. Let us know how we can help.",
-  "linkUrl": "/contact/?service=svelte",
-  "linkText": "Get in touch"
-  }
-%}
-{{ ctaBanner('purple', 'full', content) }}
