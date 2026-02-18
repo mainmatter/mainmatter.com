@@ -47,7 +47,7 @@ Quoting Rich Harris once again, one of the tenets of Svelte is "[Optimize for th
 
 You might argue that vibes are subjective but the fact that the design decisions around the framework strive specifically to make the framework the most intuitive have consequences on the engineering side.
 
-![State of JS survey results showing Svelte consistently on top for interest](/assets/images/posts/2025-11-06-why-choose-svelte/state-of-js.png)
+![State of JS survey results showing Svelte consistently on top for interest](/assets/images/posts/2026-02-24-why-choose-svelte/state-of-js.png)
 
 Svelte is consistently framework most people are interested in in online surveys like "The State of JS" and "Stack Overflow Annual Developer Survey": developers want to learn Svelte!
 
@@ -87,7 +87,7 @@ The moment SvelteKit needs a new Svelte API, there's no need to communicate: the
 
 Every product has its own set of constraints, and one of these can be where to deploy it. Maybe you need a specific Azure/AWS product, or you appreciate the velocity and scalability of serverless environments like Netlify, Vercel, or Cloudflare. With SvelteKit, that's likely not a constraint: whenever you create a new Svelte project with the `sv` CLI, you are already presented with the choice of an adapter.
 
-![output of the sv cli asking the question of what to add](/assets/images/posts/2025-11-06-why-choose-svelte/sv-create.png)
+![output of the sv cli asking the question of what to add](/assets/images/posts/2026-02-24-why-choose-svelte/sv-create.png)
 
 There are a lot of adapters that are officially maintained by the Svelte team and even more that are community maintained...and creating a new one is also very easy in case your specific use case is not covered.
 
@@ -128,7 +128,7 @@ It takes courage for a framework to make the developer's life a bit harder (nobo
 
 I've avoided talking about the performance of Svelte because that's something that will likely change over time (and because, except for certain kinds of applications, most modern frameworks are good enough). But if you are interested in it, it is worth looking into:
 
-![output of the krausest js framework benchmark](/assets/images/posts/2025-11-06-why-choose-svelte/benchmark.png)
+![output of the krausest js framework benchmark](/assets/images/posts/2026-02-24-why-choose-svelte/benchmark.png)
 
 Svelte is one of the fastest frameworks out there, right next to SolidJS in the [krausest benchmark for JS frameworks](https://krausest.github.io/js-framework-benchmark/current.html), and the simple SSR logic (basically just string concatenation) makes SvelteKit consistently top [benchmarks](https://bsky.app/profile/alexanderkaran.bsky.social/post/3meg2c3v7ek26) for the server side too.
 
