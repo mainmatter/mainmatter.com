@@ -97,11 +97,11 @@ Before [`@sveltejs/kit@v1.8.0`](https://github.com/sveltejs/kit/releases/tag/%40
 
 What do those two facts have in common? That I've built support for both of them in SvelteKit before they were available (here's the repo for [`sveltekit-defer`](https://github.com/paoloricciuti/sveltekit-defer) and here's the one for [`sveltekit-server-islands`](https://github.com/paoloricciuti/sveltekit-server-islands))...how? Because SvelteKit is just a [Vite plugin](https://vite.dev/guide/api-plugin)! With that and the [handle hook](https://svelte.dev/docs/kit/hooks), you can craft very complex scenarios as if they were baked into the framework.
 
-## Ecosystem
+## My ecosystem is bigger than yours
 
 In some other articles, you might have seen this point in the list of "cons" for Svelte. Let's be honest: React definitely has a much bigger ecosystem than Svelte. That said, I wouldn't necessarily consider this a downside:
 
-1. Svelte still has a [very decent](https://svelte.dev/packages) ecosystem.
+1. Svelte still has a [very good](https://svelte.dev/packages) ecosystem.
 2. You don't really need a lot of custom-made packages for Svelte: working directly with the DOM is very simple (we even have a [primitive specifically for it](https://svelte.dev/docs/svelte/@attach)), so your ecosystem is really the **whole JavaScript ecosystem**.
 
 ## Use the Platform™
@@ -157,4 +157,8 @@ Almost no tool is the perfect tool for every job, and Svelte is no different. Th
 
 ## Conclusion
 
-I hope this small tour inside my head helped you make your own informed choice about Svelte (and I secretly hope I've convinced you about how good it is). Luckily, the framework in our tech stack is becoming less and less relevant, and in terms of raw capabilities, every framework will do: we are getting closer to a future where the framework you pick will really be a choice driven by passion.
+So, should you use Svelte? If you are starting a new project and your team is either already familiar with it or open to learning, yes, absolutely. If you care about DX, about writing accessible code without having to think too hard about it, about deploying wherever you need, about having a meta-framework that actually talks to the UI framework it's built on, then Svelte is a very easy recommendation from me.
+
+If you are sitting on a large React codebase, or your whole team lives and breathes Vue, or you just need a documentation site, then probably not right now.
+
+If you are still on the fence or have a more specific situation in mind, feel free to reach out. I'm happy to talk through it.
