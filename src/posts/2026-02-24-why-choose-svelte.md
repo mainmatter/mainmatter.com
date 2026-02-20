@@ -97,7 +97,7 @@ Before [`@sveltejs/kit@v1.8.0`](https://github.com/sveltejs/kit/releases/tag/%40
 
 What do those two facts have in common? That I've built support for both of them in SvelteKit before they were available (here's the repo for [`sveltekit-defer`](https://github.com/paoloricciuti/sveltekit-defer) and here's the one for [`sveltekit-server-islands`](https://github.com/paoloricciuti/sveltekit-server-islands))...how? Because SvelteKit is just a [Vite plugin](https://vite.dev/guide/api-plugin)! With that and the [handle hook](https://svelte.dev/docs/kit/hooks), you can craft very complex scenarios as if they were baked into the framework.
 
-## My ecosystem is bigger than yours
+## The Svelte ecosystem
 
 In some other articles, you might have seen this point in the list of "cons" for Svelte. Let's be honest: React definitely has a much bigger ecosystem than Svelte. That said, I wouldn't necessarily consider this a downside:
 
