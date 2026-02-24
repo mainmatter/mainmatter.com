@@ -14,12 +14,34 @@ eleventyImport:
 {% from "quote.njk" import quote %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {%
+  set 'tech_1' = {
+  "title": "Rust is a competitive advantage",
+  "logo": "rust",
+  "link": "rust-consulting"
+  }
+%}
+{%
+  set 'tech_2' = {
+  "title": "Svelte is the future of frontend development",
+  "logo": "svelte",
+  "link": "svelte-consulting"
+  }
+%}
+{%
+  set 'tech_3' = {
+  "title": "Ember is our expertise",
+  "logo": "ember",
+  "link": "ember-consulting"
+  }
+%}
+{%
   set 'content' = {
   "title": "Team Up With Us To Go Further!",
   "text": "We know the code, tools, and practices that go into successful development. We partner with our clients to solve their toughest tech challenges by sharing our skills and expertise as teammates.",
-  "image": "/assets/images/hero/home.jpg",
+  "image": "/assets/images/hero/image5.jpg",
   "alt": "Balloons flying over the sky",
-  "loading": "eager"
+  "loading": "eager",
+  "technologies": [tech_1, tech_2, tech_3]
   }
 %}
 {{ colorHero('purple', content) }}
