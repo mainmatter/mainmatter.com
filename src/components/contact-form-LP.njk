@@ -20,6 +20,9 @@
         data-goal="Contact"
       >
         <fieldset data-form-content tabindex="-1" disabled>
+          {% if predefinedService %}
+            <input type="hidden" name="service" id="service" value="{{ predefinedService }}" />
+          {% endif %}
           <div class="contact-form__field">
             <input
               class="contact-form__input"
