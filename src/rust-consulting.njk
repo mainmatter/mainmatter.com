@@ -23,6 +23,7 @@ og:
 {% from "quote.njk" import quote %}
 {% from 'featured-case-study.njk' import featuredCaseStudy %}
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
+{% from "contact-form-LP.njk" import contactFormLP %}
 
 {%
   set toc = {
@@ -166,7 +167,7 @@ og:
   {{ logoList(logoCompanies) }}
 </section>
 
-{% include 'contact-form-LP.njk' %}
+{{ contactFormLP('Rust') }}
 
 <section class="container container--lg opensource-list py-7 image-max-width-32" id="open-source">
   <div class="">
