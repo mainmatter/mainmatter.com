@@ -84,107 +84,17 @@ We partner with you to solve your toughest tech challenges as&nbsp;teammates.",
     <p class="medium">We invest heavily in the communities we inhabit by running leading conferences such as <a href="https://eurorust.eu" class="link-black">EuroRust</a>, <a href="https://emberfest.eu" class="link-black">EmberFest</a>, and <a href="https://sveltesummit.com/" class="link-black">Svelte Summit</a>, supporting foundations like the Rust Foundation, contributing to open source, and creating widely used learning resources. We discover and establish new patterns and practices that advance the state of the art, through continuous experimentation and real-world application.</p>
 </section>
 
-<section class="mb-10">
+{% include 'contact-form.njk' %}
+
+<section>
   {%
     set imageData = {
-    "imgPath": "/assets/images/photos/balloons-top.jpeg",
-    "alt": "Server room",
+    "imgPath": "/assets/images/photos/toys.webp",
+    "alt": "Children's toys",
     "sizes": "100vw",
     "loading": "lazy",
     "sizesArray": [760, 1440, 1920]
     }
   %}
-  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+  {{ imageAspectRatio(imageData, "4/1", "35/19") }}
 </section>
-
-{% set clients = ['qonto', 'experteer', 'trainline', 'rail-europe'] %}
-{{ featuredCaseStudies(clients, 'Browse our work') }}
-
-<div class="container container--lg quote-section">
-  {%
-    set content = {
-    "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
-    "source": "Jürgen Witte, CPO at Rail Europe",
-    "image": "/assets/images/photos/juergen-witte.png",
-    "alt": "Jürgen Witte, smiling at the camera wearing a light blue shirt and blue blazer",
-    "loading": "lazy"
-    }
-  %}
-  {{ quote(content) }}
-</div>
-
-
-{%
-  set 'content' = {
-  "title": "Workshops & Training",
-  "text": "We teach teams how to build sustainable products, help them adopt new technologies, and set them up for long-term success.",
-  "linkUrl": "/services/workshops/",
-  "linkText": "Check out our workshops catalog"
-  }
-%}
-{{ ctaBanner('purple', 'default', content) }}
-{%- include 'mainmatter-team.njk' -%}
-
-{% if collections.calendar.length > 0 %}
-  <section class="my-10">
-    <div class="container container--xl">
-      <h2 class="section__introduction h5">Upcoming events</h2>
-      <ol class="cards__grid">
-        {% for event in collections.calendar %}
-          {% if loop.index < 4 %}
-            <div class="card__grid-element grid-event-card__grid-element">
-              {% if event.data.hero.image %}
-                <div class="card__background-wrapper">
-                  {% image event.data.hero.image, event.data.hero.imageAlt, '(min-width: 48em) 60rem, 90vw', "lazy", 'card__background-image', [760, 1440, 1920] %}
-                </div>
-              {% endif %}
-              <a href="{{ event.data.url }}" class="card__link">
-                <span class="screenreader">{{ event.data.title }}</span>
-              </a>
-              <div class="card__hover"></div>
-              <div class="card__logo-wrapper">
-                {% image event.data.image, "", '8rem', 'lazy', 'grid-event-card__logo', [264, 420, 500] %}
-              </div>
-
-              <div class="card__content">
-                <div class="mb-015">
-                  <p class="h4" aria-hidden="true">{{ event.data.title }}</p>
-                  {% if event.data.location %}
-                    <p class="card__subtitle mt-0">{{ event.data.location }}</p>
-                  {% endif %}
-                </div>
-                <div class="card__link-wrapper">
-                  <span><p class="small">{{ event.date | monthDayYear }}</p></span>
-                  <span class="card__link-arrow">{% include 'svg/arrow.njk' %}</span>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-        {% endfor %}
-      </ol>
-    </div>
-  </section>
-{% endif %}
-
-<section class="mt-15 mb-0">
-  {%
-    set imageData = {
-    "imgPath": "/assets/images/photos/balloons-line.jpeg",
-    "alt": "Server room",
-    "sizes": "100vw",
-    "loading": "lazy",
-    "sizesArray": [760, 1440, 1920]
-    }
-  %}
-  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
-</section>
-{% include "global/default-newsletter-cta.njk" %}
-{%
-  set 'content' = {
-  "title": "Team up with us to go further!",
-  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
-  "linkUrl": "/contact",
-  "linkText": "Get in touch"
-  }
-%}
-{{ ctaBanner('purple', 'full', content) }}
