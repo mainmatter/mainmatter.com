@@ -6,7 +6,6 @@ eleventyImport:
 ---
 
 {% from "color-hero.njk" import colorHero %}
-{% from "featured-services.njk" import featuredServices %}
 {% from "logo-list.njk" import logoList %}
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
 {% from "cta-banner.njk" import ctaBanner %}
@@ -45,13 +44,7 @@ We partner with you to solve your toughest tech challenges as&nbsp;teammates.",
   }
 %}
 {{ colorHero('purple', content) }}
-{%
-  set 'content' = {
-  "title": "Discover our services",
-  "subtitle": "Transform bold ideas into shipped products"
-  }
-%}
-{{ featuredServices(services['services-list'], content) }}
+
 {%
   set logoCompanies = [
   'Timify',
@@ -69,6 +62,21 @@ We partner with you to solve your toughest tech challenges as&nbsp;teammates.",
   ]
 %}
 {{ logoList(logoCompanies) }}
+
+<section class="py-7 background-aqua" id="our-clients-say">
+  <div class="container container--lg quote-homepage">
+    <h1 class="color-white">Our Clients Say</h1>
+    {%
+      set 'content' = {
+      "text": "Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way.”",
+      "source": "Andreas Hartel",
+      "position": "Senior Engineer at Aleph Alpha",
+      "styling": "redesigned"
+      }
+    %}
+    {{ quote(content) }}
+</section>
+
 
 <section class="mb-10">
   {%

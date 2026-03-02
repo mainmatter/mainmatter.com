@@ -93,7 +93,7 @@
   }
 }
 
-// Quote styling redesign, as featured in the Rust Services LP
+// Quote styling redesign, as featured in the Rust Services LP and Homepage
 
 .quote__redesigned {
   margin: 3rem auto 0;
@@ -118,5 +118,12 @@
   & .quote__source {
     line-height: 2;
     font-size: 1.2rem;
+  }
+}
+
+.quote-homepage {
+  .quote__redesigned {
+    padding: 5rem 3rem 3rem 3rem;
+    background-color: var(--color-white);
   }
 }
