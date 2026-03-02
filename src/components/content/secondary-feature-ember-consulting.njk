@@ -1,27 +1,9 @@
 {% from "secondary-feature.njk" import secondaryFeature %}
-<div class="ember-consultants">
-  {%
-    set 'content' = {
-    "image": "/assets/images/authors/chris_ember.jpg",
-    "alt": "Chris Manson",
-    "loading": "lazy"
-    }
-  %}
-  {{ secondaryFeature(content, 'split-content__author') }}
-  {%
-    set 'content' = {
-    "image": "/assets/images/authors/marcoow.jpg",
-    "alt": "Marco Otte-Witte",
-    "loading": "lazy"
-    }
-  %}
-  {{ secondaryFeature(content, 'split-content__author') }}
-  {%
-    set 'content' = {
-    "image": "/assets/images/authors/nickschot.jpg",
-    "alt": "Nick Schot",
-    "loading": "lazy"
-    }
-  %}
-  {{ secondaryFeature(content, 'split-content__author') }}
-</div>
+{%
+  set 'content' = {
+  "image": "/assets/images/team/chris.jpg",
+  "alt": "Chris Manson.split-content__author img",
+  "loading": "lazy"
+  }
+%}
+{{ secondaryFeature(content, 'split-content__author secondary-feature__image-square') }}
