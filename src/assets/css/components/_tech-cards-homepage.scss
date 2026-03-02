@@ -1,0 +1,36 @@
+.tech-cards-homepage__grid-element:nth-child(5n+1),
+.tech-cards-homepage__grid-element:nth-child(2n),
+.tech-cards-homepage__grid-element:nth-child(2n+1) {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.tech-cards-homepage__grid-element {
+  min-height: auto;
+  svg g {
+    fill: #049A91;
+  }
+}
+
+.tech-cards-homepage__link-arrow {
+  svg path {
+    fill: var(--color-aqua);
+  }
+}
+
+.tech-cards-homepage__logo {
+  &.rust {
+    max-width: 75%;
+  }
+
+  &.svelte {
+    max-width: 65%;
+  }
+
+  &.ember {
+    max-width: 90%;
+  }
+}
+
+.tech-card__content {
+  margin-top: 6rem;
+}

@@ -1,0 +1,33 @@
+{% macro techCardsHomepage(id, title, cards) %}
+  <div class="tech-cards my-4">
+    <div class="tech-cards__container">
+      {% if title %}
+        <h1 class="tech-cards__title">{{ title }}</h1>
+      {% endif %}
+      {% if intro %}
+        <p class="tech-cards__intro mt-25 mb-5">{{ intro | safe }}</p>
+      {% endif %}
+      <div class="cards__grid">
+        {% for card in cards %}
+          <div class="tech-cards-homepage__grid-element card__grid-element">
+            <a href="/{{ card.link }}" class="card__link"> </a>
+            <div class="tech-cards__logo tech-cards-homepage__logo {{ card.logo }}">
+              {% set link='svg/'+ card.logo + '.njk' %}
+              {% include link %}
+            </div>
+            <div class="card__content tech-card__content">
+              {% if card.link %}
+                <div class="card__link-wrapper">
+                  <p class="caption">
+                    {% if card.linkText %}{{ card.linkText }}{% else %}Learn more{% endif %}
+                  </p>
+                  <span class="tech-cards-homepage__link-arrow">{% include 'svg/arrow.njk' %}</span>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endmacro %}

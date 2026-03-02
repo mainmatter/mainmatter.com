@@ -30,7 +30,7 @@ Example usage:
 #}
 {% from "cta-link.njk" import ctaLink %}
 {% from "btn-secondary.njk" import btnSecondary %}
-{% from "tech-cards.njk" import techCards %}
+{% from "tech-cards-homepage.njk" import techCardsHomepage %}
 
 {%- macro colorHero(color, content) -%}
   <section
@@ -86,7 +86,7 @@ Example usage:
           </div>
         {% endif %}
         {% if content.technologies %}
-          {{ techCards('team-reinforcement_technologies', 'Technologies', null, content.technologies) }}
+          {{ techCardsHomepage('homepage__tech-cards', 'Technologies', content.technologies) }}
         {% endif %}
       </div>
     </div>

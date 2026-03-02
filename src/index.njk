@@ -9,36 +9,36 @@ eleventyImport:
 {% from "featured-services.njk" import featuredServices %}
 {% from "logo-list.njk" import logoList %}
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
-{% from "tech-cards.njk" import techCards %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "quote.njk" import quote %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {%
   set 'tech_1' = {
-  "title": "Rust is a competitive advantage",
   "logo": "rust",
-  "link": "rust-consulting"
+  "link": "rust-consulting",
+  "linkText": "Rust"
   }
 %}
 {%
   set 'tech_2' = {
-  "title": "Svelte is the future of frontend development",
-  "logo": "svelte",
-  "link": "svelte-consulting"
+  "logo": "ember",
+  "link": "ember-consulting",
+  "linkText": "Ember"
   }
 %}
 {%
   set 'tech_3' = {
-  "title": "Ember is our expertise",
-  "logo": "ember",
-  "link": "ember-consulting"
+  "logo": "svelte",
+  "link": "svelte-consulting",
+  "linkText": "Svelte"
   }
 %}
 {%
   set 'content' = {
-  "title": "Team Up With Us To Go Further!",
-  "text": "We know the code, tools, and practices that go into successful development. We partner with our clients to solve their toughest tech challenges by sharing our skills and expertise as teammates.",
-  "image": "/assets/images/hero/image5.jpg",
+  "title": "Together We Go Further!",
+  "text": "We know the tools and practices required for successful&nbsp;development. <br/>
+We partner with you to solve your toughest tech challenges as&nbsp;teammates.",
+  "image": "/assets/images/hero/image7.jpg",
   "alt": "Balloons flying over the sky",
   "loading": "eager",
   "technologies": [tech_1, tech_2, tech_3]
@@ -99,29 +99,7 @@ eleventyImport:
   {{ quote(content) }}
 </div>
 
-{%
-  set 'tech_1' = {
-  "title": "Rust is a competitive advantage",
-  "logo": "rust",
-  "link": "rust-consulting"
-  }
-%}
-{%
-  set 'tech_2' = {
-  "title": "Svelte is the future of frontend development",
-  "logo": "svelte",
-  "link": "svelte-consulting"
-  }
-%}
-{%
-  set 'tech_3' = {
-  "title": "Ember is our expertise",
-  "logo": "ember",
-  "link": "ember-consulting"
-  }
-%}
-{% set technologies = [tech_1, tech_2, tech_3] %}
-{{ techCards('team-reinforcement_technologies', 'Technologies', 'Our skillset is based on a core set of technologies that cover architecture, backend and frontend development with: ', technologies) }}
+
 {%
   set 'content' = {
   "title": "Workshops & Training",
