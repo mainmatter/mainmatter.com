@@ -16,7 +16,10 @@ Example usage:
   {% set imagePath %}/image-list/{{ fileName | slug }}.{{ fileExt }}{% endset %}
 
   <li class="logo-list__item">
-    <div class="logo-list__image image-list__image" aria-label="{{ fileName | replace('-', ' ') | title }}">
+    <div
+      class="logo-list__image image-list__image"
+      aria-label="{{ fileName | replace('-', ' ') | title }}"
+    >
       {% if fileExt == 'svg' %}
         {%
           svg imagePath,
