@@ -47,6 +47,11 @@
   cursor: pointer;
 }
 
+.nav__logo-list-group {
+  display: flex;
+  align-items: center;
+}
+
 .nav__logo {
   line-height: 0;
 }
