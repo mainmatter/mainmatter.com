@@ -15,8 +15,8 @@ Example usage:
   {% set fileExt = image[1] %}
   {% set imagePath %}/image-list/{{ fileName | slug }}.{{ fileExt }}{% endset %}
 
-  <li class="image-list__item">
-    <div class="image-list__image" aria-label="{{ fileName | replace('-', ' ') | title }}">
+  <li class="logo-list__item">
+    <div class="logo-list__image image-list__image" aria-label="{{ fileName | replace('-', ' ') | title }}">
       {% if fileExt == 'svg' %}
         {%
           svg imagePath,
@@ -34,9 +34,9 @@ Example usage:
 {%- endmacro -%}
 
 {%- macro imageList(images, title, heading = "h2", headingClass = "h3", animate=true) -%}
-  <section class="image-list" id="image-list">
+  <section class="logo-list" id="image-list">
     {% if title %}
-      <div class="image-list__title">
+      <div class="logo-list__title">
         {% if heading == 'h2' %}
           <h2 class="{{ headingClass }}">{{ title }}</h2>
         {% endif %}
@@ -45,25 +45,25 @@ Example usage:
         {% endif %}
       </div>
     {% endif %}
-    <div class="image-list__wrapper">
+    <div class="logo-list__wrapper">
       <div
-        class="image-list__inner"
+        class="logo-list__inner"
         data-marquee
         {% if not animate %}data-marquee-disable{% endif %}
         style="--marquee-image-count: {{ images | length }};"
       >
-        <ul class="image-list__list">
+        <ul class="logo-list__list">
           {% for image in images %}
             {{ listItem(image) }}
           {% endfor %}
         </ul>
-        <ul class="image-list__list image-list__list--duplicate" aria-hidden="true">
+        <ul class="logo-list__list logo-list__list--duplicate" aria-hidden="true">
           {% for image in images %}
             {{ listItem(image) }}
           {% endfor %}
         </ul>
       </div>
     </div>
-    <button class="image-list__button" data-marquee-controls>Pause animation</button>
+    <button class="logo-list__button" data-marquee-controls>Pause animation</button>
   </section>
 {%- endmacro -%}
