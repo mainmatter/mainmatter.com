@@ -12,6 +12,7 @@ eleventyImport:
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "quote.njk" import quote %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "contact-form-LP.njk" import contactFormLP %}
 {%
   set 'tech_1' = {
   "logo": "rust",
@@ -101,7 +102,7 @@ We partner with you to solve your toughest tech challenges as&nbsp;teammates.",
 %}
 {{ imageList(images) }}
 
-{% include 'contact-form.njk' %}
+{{ contactFormLP(null) }}
 
 <section>
   {%
