@@ -7,6 +7,7 @@ eleventyImport:
 
 {% from "color-hero.njk" import colorHero %}
 {% from "logo-list.njk" import logoList %}
+{% from "image-list.njk" import imageList %}
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "quote.njk" import quote %}
@@ -84,22 +85,21 @@ We partner with you to solve your toughest tech challenges as&nbsp;teammates.",
     <p class="medium">We invest heavily in the communities we inhabit by running leading conferences such as <a href="https://eurorust.eu" class="link-black">EuroRust</a>, <a href="https://emberfest.eu" class="link-black">EmberFest</a>, and <a href="https://sveltesummit.com/" class="link-black">Svelte Summit</a>, supporting foundations like the Rust Foundation, contributing to open source, and creating widely used learning resources. We discover and establish new patterns and practices that advance the state of the art, through continuous experimentation and real-world application.</p>
 </section>
 {%
-  set logoCompanies1 = [
-  '100 exercises, png',
-  'BMW Car IT',
-  'Qonto',
-  'Trainline',
-  'Redis',
-  'Aleph Alpha',
-  'Auditboard',
-  'Otto',
-  'UCSF',
-  'Bluecode',
-  'Experteer',
-  'Rail Europe'
+  set images = [
+    ['eurorust', 'webp'],
+    ['emberfest', 'svg'],
+    ['sveltesummit', 'svg'],
+    ['rust-foundation', 'png'],
+    ['ember-initiative', 'svg'],
+    ['svelte-custom-renderers', 'svg'],
+    ['100-exercises-to-learn-rust', 'webp'],
+    ['ember-simple-auth', 'png'],
+    ['ember-test-selectors', 'png'],
+    ['sheepdog', 'svg'],
+    ['ember-europe', 'jpg']
   ]
 %}
-{{ logoList(logoCompanies1) }}
+{{ imageList(images) }}
 
 {% include 'contact-form.njk' %}
 
