@@ -1,4 +1,4 @@
-const jsdom = require("@tbranyen/jsdom");
+const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const slugify = require("slugify");
 const path = require("path");
