@@ -11,9 +11,9 @@
 }
 
 .tech-cards-homepage__grid-element {
-  min-height: 25rem;
+  min-height: 20rem;
   svg g {
-    fill: #049a91;
+    fill: #0E6C81;
   }
 
   @media (min-width: $breakpoint-s) {
@@ -21,15 +21,9 @@
   }
 }
 
-.tech-cards-homepage__link-arrow {
-  svg path {
-    fill: var(--color-aqua);
-  }
-}
-
 .tech-cards-homepage__logo {
   &.rust {
-    max-width: 15rem;
+    max-width: 11rem;
 
     @media (min-width: $breakpoint-s) {
       max-width: 75%;
@@ -37,7 +31,7 @@
   }
 
   &.svelte {
-    max-width: 10rem;
+    max-width: 9rem;
 
     @media (min-width: $breakpoint-s) {
       max-width: 65%;
@@ -54,5 +48,5 @@
 }
 
 .tech-card__content {
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
