@@ -23,7 +23,7 @@ Example usage:
           'img'
         %}
       {% else %}
-        <img src="/assets/images{{ imagePath }}" alt="{{ fileName | replace('-', ' ') | title }}">
+        <img src="/assets/images{{ imagePath }}" alt="{{ fileName | replace('-', ' ') | title }} loading="lazy">
       {% endif %}
     </div>
   </li>
