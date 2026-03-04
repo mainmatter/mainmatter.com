@@ -1,0 +1,52 @@
+@use "../base/breakpoints" as *;
+
+.tech-cards-homepage__grid-element:nth-child(5n + 1),
+.tech-cards-homepage__grid-element:nth-child(2n),
+.tech-cards-homepage__grid-element:nth-child(2n + 1) {
+  background-color: rgba(0, 0, 0, 0.9);
+
+  @media (min-width: $breakpoint-s) {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.tech-cards-homepage__grid-element {
+  min-height: 20rem;
+  svg g {
+    fill: #0e6c81;
+  }
+
+  @media (min-width: $breakpoint-s) {
+    min-height: auto;
+  }
+}
+
+.tech-cards-homepage__logo {
+  &.rust {
+    max-width: 11rem;
+
+    @media (min-width: $breakpoint-s) {
+      max-width: 75%;
+    }
+  }
+
+  &.svelte {
+    max-width: 9rem;
+
+    @media (min-width: $breakpoint-s) {
+      max-width: 65%;
+    }
+  }
+
+  &.ember {
+    max-width: 20rem;
+
+    @media (min-width: $breakpoint-s) {
+      max-width: 90%;
+    }
+  }
+}
+
+.tech-card__content {
+  margin-top: 3rem;
+}
