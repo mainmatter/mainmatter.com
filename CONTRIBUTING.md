@@ -13,5 +13,5 @@ pnpm build
 pnpm run lint
 
 # Fix formatting and linting
-pnpm run lint:fix
+pnpm run fix
 ```
