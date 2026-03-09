@@ -10,4 +10,4 @@ hero:
   imageAlt: "A set of microphone and laptop for a livestream event"
 ---
 
-The Ember Europe meetup series brings together the Ember community from all of Europe once a quarter. This is the first Ember Europe Meetup of 2026!
+The Ember Europe meetup series brings together the Ember community from all of Europe once a quarter. This is the first Ember Europe Meetup of 2026! Our Chris Manson will host and give an update from the Ember Initiative team.
