@@ -1,4 +1,4 @@
-# mainmatter.github.io
+# mainmatter.com
 
 The source code for [https://mainmatter.com](https://mainmatter.com).
 
