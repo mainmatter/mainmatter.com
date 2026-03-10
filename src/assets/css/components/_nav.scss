@@ -196,24 +196,29 @@
 /* new nav mess */
 
 .nav {
-  position: sticky;
+  position: absolute;
   top: 0;
   z-index: 999;
+  width: 100%;
   anchor-scope: --nav-overflow;
-  background: var(--color-white);
+  transition: background 0.3s ease, padding 0.3s ease;
+  background: transparent;
 }
 
 .nav__logo {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   line-height: 1;
   font-size: inherit;
 }
 
 .nav__logo svg {
-  display: block;
+  display: inline-block;
+  vertical-align: baseline;
   height: 1.6875rem;
-  color: var(--color-purple);
+  color: var(--color-white);
+  position: relative;
+  top: 2px;
 }
 
 .nav button {
@@ -227,6 +232,7 @@
 
 .nav__item {
   line-height: 2rem;
+  color: var(--color-white);
 }
 
 .nav__item a,
@@ -236,6 +242,7 @@
   gap: 0.5rem;
   padding: 0;
   font-weight: bold;
+  color: inherit;
 }
 
 .nav__item span {
@@ -280,7 +287,7 @@
 
 .nav__wrapper {
   display: grid;
-  align-items: center;
+  align-items: baseline;
 }
 
 @media (max-width: calc($breakpoint-m - 1px)) {
@@ -346,5 +353,20 @@
     border-left: 2px solid var(--color-aqua);
     margin-left: 2rem;
     padding-left: 2rem;
+  }
+}
+
+//Styling on scroll
+.nav__scrolled {
+  position: sticky;
+  background: var(--color-white);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+  .nav__logo svg {
+    color: var(--color-purple);
+  }
+
+  .nav__item {
+    color: #000;
   }
 }
