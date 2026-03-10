@@ -284,19 +284,32 @@
 }
 
 #nav-overflow {
+  --no-anchor-top: 5rem;
+	--no-anchor-left: 50%;
   position: absolute;
-  position-anchor: --nav-overflow;
-  top: calc(anchor(bottom) + 2rem);
-  left: anchor(left);
-  padding: 2rem;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
+	inset: var(--no-anchor-top) auto auto var(--no-anchor-left);
+	transform: translateX(-50%);
+	padding: 2rem;
+	box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
+	border: 0;
   font-size: 1.25rem;
-
+  
   .nav__item {
     line-height: 3rem;
     color: #000;
-
   }
+}
+
+@supports (anchor-name: --n) and (position-anchor: --n) and (position-area: none) {
+  #nav-overflow {
+	  position-anchor: --nav-overflow;
+	  inset: unset;
+      position-area: block-end span-inline-end;
+	  margin: 0;
+	  padding: 2rem;
+	  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
+	  transform: none;
+	}
 }
 
 .nav__wrapper {
