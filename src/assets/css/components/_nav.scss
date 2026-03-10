@@ -201,7 +201,9 @@
   z-index: 999;
   width: 100%;
   anchor-scope: --nav-overflow;
-  transition: background 0.3s ease, padding 0.3s ease;
+  transition:
+    background 0.3s ease,
+    padding 0.3s ease;
   background: transparent;
   --nav-underline-weight: 0.125rem;
   --nav-underline-offset: 0.55rem;
@@ -212,6 +214,7 @@
   align-items: baseline;
   line-height: 1;
   font-size: inherit;
+  padding-right: 1rem;
 }
 
 .nav__logo svg {
@@ -253,14 +256,16 @@
   white-space: nowrap;
 }
 
-.nav__item svg {
+.nav__list--pinned .nav__item svg {
   color: var(--color-aqua);
+}
+.nav__item svg {
   display: inline-block;
   vertical-align: baseline;
 }
 
 .nav__item :is(a, button):is(:focus, :hover) {
-color: var(--color-aqua);
+  color: var(--color-aqua);
   text-decoration: underline;
   text-decoration-thickness: var(--nav-underline-weight);
   text-underline-offset: var(--nav-underline-offset);
@@ -288,18 +293,19 @@ color: var(--color-aqua);
 }
 
 .nav__link-text {
- /* This ensures the underline is always "there" but invisible until active/hover */
+  /* This ensures the underline is always "there" but invisible until active/hover */
   text-decoration: underline;
   text-decoration-thickness: var(--nav-underline-weight);
   text-underline-offset: var(--nav-underline-offset);
-  text-decoration-color: transparent; 
-  transition: text-decoration-color 0.3s ease, color 0.3s ease;
+  text-decoration-color: transparent;
+  transition:
+    text-decoration-color 0.3s ease,
+    color 0.3s ease;
 
   &--active {
     text-decoration-color: var(--color-accent);
   }
-  }
-
+}
 
 @media (max-width: calc($breakpoint-m - 1px)) {
   button[popovertarget="nav-overflow"] {
@@ -352,6 +358,7 @@ color: var(--color-aqua);
       "logo  pinned  more  contact" min-content
       / max-content max-content auto max-content;
     margin-block: 0.75rem; /* margin goes away on scroll, padding sticks */
+    padding: 0.75rem 0;
   }
 
   .nav__list:not(.nav__list--overflow) {
@@ -371,7 +378,7 @@ color: var(--color-aqua);
 .nav__scrolled {
   position: sticky;
   background: var(--color-white);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
   .nav__logo svg {
     color: var(--color-purple);
@@ -379,5 +386,23 @@ color: var(--color-aqua);
 
   .nav__item {
     color: #000;
+  }
+
+  .nav__expandable {
+    --icon-caret-color: #000;
+  }
+}
+
+.nav__expandable {
+  --icon-caret-margin: 0;
+  --icon-caret-color: var(--color-white);
+
+  &:hover {
+    --icon-caret-color: var(--color-aqua);
+  }
+
+  &:focus {
+    --icon-caret-transform: rotate(180deg) translate3d(0, -0.25rem, 0);
+    --icon-caret-color: var(--color-aqua);
   }
 }

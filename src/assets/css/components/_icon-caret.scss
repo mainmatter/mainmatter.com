@@ -1,0 +1,16 @@
+.icon-caret {
+  display: block;
+  flex-shrink: 0;
+  height: var(--icon-caret-size);
+  width: var(--icon-caret-size);
+  margin: var(--icon-caret-margin);
+  transform: var(--icon-caret-transform);
+  transition: 0;
+  will-change: transform;
+  color: var(--icon-caret-color, inherit);
+
+  path {
+    transform: rotate(var(--icon-caret-rotate));
+    transform-origin: center;
+  }
+}

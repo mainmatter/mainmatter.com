@@ -32,7 +32,11 @@
 
       {% macro navListItem(entry) -%}
         <li class="nav__item">
-          <a href="{{ entry.url }}" class="nav__link-text{% if entry.url == page.url %} nav__link-text--active" aria-current="page{% endif %}">
+          <a
+            href="{{ entry.url }}"
+            class="nav__link-text{% if entry.url == page.url %}nav__link-text--active"
+            aria-current="page{% endif %}"
+          >
             {% if entry.icon %}{% include entry.icon %}{% endif %}
             <span>{{ entry.title }}</span>
           </a>
@@ -57,8 +61,9 @@
         {%- endfor -%}
 
         <li class="nav__item">
-          <button type="button" popovertarget="nav-overflow" class="nav-button">
+          <button type="button" popovertarget="nav-overflow" class="nav-button nav__expandable">
             <span> Other work </span>
+            {% include 'svg/caret.njk' %}
           </button>
         </li>
       </ul>
