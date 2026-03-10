@@ -90,7 +90,6 @@
 
 #nav-overflow {
   position: absolute;
-	transform: translateX(-50%);
   inset: 6rem auto auto calc(50% + 6rem);
   padding: 2rem;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
@@ -104,7 +103,6 @@
 
 @supports (anchor-name: --n) and (position-anchor: --n) and (position-area: none) {
   #nav-overflow {
-	  transform: none;
     position-anchor: --nav-overflow;
     inset: unset;
     position-area: block-end span-inline-end;
