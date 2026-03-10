@@ -116,7 +116,31 @@ og:
   <div class="container container--lg mb-6">
     {%
       set link = {
-      "label": 'Modernizing and rebuilding Rail Europe’s B2C platform',
+      "label": 'Building Copley’s new platform',
+      "url": '/work#copley'
+      }
+    %}
+    {{ btnSecondary( link, 'mt-2' ) }}
+
+    {%
+      set link = {
+      "label": 'Addressing Morphic’s tech debt',
+      "url": '/work#morphic'
+      }
+    %}
+    {{ btnSecondary( link, 'mt-2' ) }}
+
+    {%
+      set link = {
+      "label": 'Modernizing Rillet’s frontend codebase',
+      "url": '/work#rillet'
+      }
+    %}
+    {{ btnSecondary( link, 'mt-2' ) }}
+
+    {%
+      set link = {
+      "label": 'Rebuilding Rail Europe’s B2C platform',
       "url": '/cases/rail-europe/'
       }
     %}
@@ -132,7 +156,10 @@ og:
     'Aleph Alpha',
     'Auditboard',
     'Experteer',
-    'Rail Europe'
+    'Rail Europe',
+    'Rillet',
+    'Morphic',
+    'Copley'
     ]
   %}
   {{ logoList(logoCompanies) }}
