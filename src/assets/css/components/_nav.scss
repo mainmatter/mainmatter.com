@@ -281,10 +281,17 @@
 #nav-overflow {
   position: absolute;
   position-anchor: --nav-overflow;
-  top: anchor(bottom);
-  left: calc(anchor(left) - 2rem);
+  top: calc(anchor(bottom) + 2rem);
+  left: anchor(left);
   padding: 2rem;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
+  font-size: 1.25rem;
+
+  .nav__item {
+    line-height: 3rem;
+    color: #000;
+
+  }
 }
 
 .nav__wrapper {
