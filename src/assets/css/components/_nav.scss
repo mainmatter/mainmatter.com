@@ -255,6 +255,8 @@
 
 .nav__item svg {
   color: var(--color-aqua);
+  display: inline-block;
+  vertical-align: baseline;
 }
 
 .nav__item :is(a, button):is(:focus, :hover) {
@@ -354,7 +356,7 @@ color: var(--color-aqua);
 
   .nav__list:not(.nav__list--overflow) {
     display: flex;
-    align-items: center;
+    align-items: last baseline;
     column-gap: 1rem;
   }
 
