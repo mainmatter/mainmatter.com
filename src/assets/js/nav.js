@@ -133,13 +133,17 @@ export class Nav {
   }
 }
 
-//Scrolling event listener for the sticky nav bar
-const nav = document.querySelector('.nav');
+// Scrolling event listener for the sticky nav bar
+const nav = document.querySelector(".nav");
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 10) {
-    nav.classList.add('nav__scrolled');
-  } else {
-    nav.classList.remove('nav__scrolled');
-  }
-}, { passive: true });
+window.addEventListener(
+  "scroll",
+  () => {
+    if (window.scrollY > 10) {
+      nav.classList.add("nav__scrolled");
+    } else {
+      nav.classList.remove("nav__scrolled");
+    }
+  },
+  { passive: true }
+);

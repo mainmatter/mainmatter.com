@@ -34,8 +34,9 @@
         <li class="nav__item">
           <a
             href="{{ entry.url }}"
-            class="nav__link-text {% if entry.url == page.url %}nav__link-text--active"
-            aria-current="page{% endif %}"
+            class="nav__link-text {% if entry.url == page.url %}
+              nav__link-text--active" aria-current="page
+            {% endif %}"
           >
             {% if entry.icon %}{% include entry.icon %}{% endif %}
             <span>{{ entry.title }}</span>
