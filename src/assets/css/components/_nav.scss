@@ -203,6 +203,8 @@
   anchor-scope: --nav-overflow;
   transition: background 0.3s ease, padding 0.3s ease;
   background: transparent;
+  --nav-underline-weight: 0.125rem;
+  --nav-underline-offset: 0.55rem;
 }
 
 .nav__logo {
@@ -256,19 +258,12 @@
 }
 
 .nav__item :is(a, button):is(:focus, :hover) {
-  text-decoration: none;
-  color: var(--color-aqua);
+color: var(--color-aqua);
+  text-decoration: underline;
+  text-decoration-thickness: var(--nav-underline-weight);
+  text-underline-offset: var(--nav-underline-offset);
+  text-decoration-color: var(--color-aqua);
   cursor: pointer;
-}
-
-.nav__item :is(a, button):is(:focus, :hover) span:after {
-  position: absolute;
-  bottom: -0.5rem;
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: var(--color-aqua);
 }
 
 [popovertarget="nav-overflow"] {
@@ -291,18 +286,18 @@
 }
 
 .nav__link-text {
-  text-decoration-color: rgba(var(--color-accent), 0);
-  text-decoration-thickness: 0.125rem;
-  text-underline-offset: 0.55rem;
-  transition: text-decoration-color 0.3s ease;
+ /* This ensures the underline is always "there" but invisible until active/hover */
+  text-decoration: underline;
+  text-decoration-thickness: var(--nav-underline-weight);
+  text-underline-offset: var(--nav-underline-offset);
+  text-decoration-color: transparent; 
+  transition: text-decoration-color 0.3s ease, color 0.3s ease;
 
   &--active {
-    text-decoration: underline;
-    text-decoration-thickness: 0.125rem;
-    text-underline-offset: 0.55rem;
-    text-decoration-color: rgba(var(--color-accent), 1);
+    text-decoration-color: var(--color-accent);
   }
-}
+  }
+
 
 @media (max-width: calc($breakpoint-m - 1px)) {
   button[popovertarget="nav-overflow"] {
