@@ -24,7 +24,6 @@
 
 .nav__logo svg {
   display: block;
-  vertical-align: middle;
   height: 1.6875rem;
   color: var(--color-white);
   position: relative;
@@ -46,9 +45,10 @@
   color: var(--color-white);
 }
 
-.nav__item, .nav__cta {
-    font-size: 1rem;
-  }
+.nav__item,
+.nav__cta {
+  font-size: 1rem;
+}
 
 .nav__item a,
 .nav__item button {
@@ -89,16 +89,13 @@
 }
 
 #nav-overflow {
-  --no-anchor-top: 5rem;
-	--no-anchor-left: 50%;
   position: absolute;
-	inset: var(--no-anchor-top) auto auto var(--no-anchor-left);
 	transform: translateX(-50%);
-	padding: 2rem;
-	box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
-	border: 0;
+  inset: 6rem auto auto calc(50% + 6rem);
+  padding: 2rem;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
   font-size: 1.25rem;
-  
+
   .nav__item {
     line-height: 3rem;
     color: #000;
@@ -107,18 +104,17 @@
 
 @supports (anchor-name: --n) and (position-anchor: --n) and (position-area: none) {
   #nav-overflow {
-	  position-anchor: --nav-overflow;
-	  inset: unset;
-      position-area: block-end span-inline-end;
-	  margin: 0;
-	  padding: 2rem;
-	  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
 	  transform: none;
-	}
+    position-anchor: --nav-overflow;
+    inset: unset;
+    position-area: block-end span-inline-end;
+    margin: 1rem 0 0;
+    padding: 2rem;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
+  }
 }
 
-.nav__wrapper {
-  display: grid;
+.nav__wrapper {  display: grid;
   align-items: stretch;
 }
 
@@ -137,7 +133,7 @@
   }
 }
 
-//Styling on scroll
+// Styling on scroll
 .nav__scrolled {
   position: sticky;
   background: var(--color-white);
@@ -159,30 +155,28 @@
 .nav__expandable {
   --icon-caret-margin: 0;
   --icon-caret-color: var(--color-white);
-  
 
   &:hover {
     --icon-caret-color: var(--color-aqua);
     color: var(--color-aqua);
-  text-decoration: underline;
-  text-decoration-thickness: var(--nav-underline-weight);
-  text-underline-offset: var(--nav-underline-offset);
-  text-decoration-color: var(--color-aqua);
-  cursor: pointer;
+    text-decoration: underline;
+    text-decoration-thickness: var(--nav-underline-weight);
+    text-underline-offset: var(--nav-underline-offset);
+    text-decoration-color: var(--color-aqua);
+    cursor: pointer;
   }
 }
 
 :has(#nav-overflow:popover-open) .nav__expandable {
-    --icon-caret-transform: rotate(180deg) translate3d(0, -0.25rem, 0);
-    --icon-caret-color: var(--color-aqua);
-    color: var(--color-aqua);
+  --icon-caret-transform: rotate(180deg) translate3d(0, -0.25rem, 0);
+  --icon-caret-color: var(--color-aqua);
+  color: var(--color-aqua);
   text-decoration: underline;
   text-decoration-thickness: var(--nav-underline-weight);
   text-underline-offset: var(--nav-underline-offset);
   text-decoration-color: var(--color-aqua);
   cursor: pointer;
 }
-
 
 @media (max-width: calc($breakpoint-m - 1px)) {
   button[popovertarget="nav-overflow"] {
@@ -244,7 +238,7 @@
     column-gap: 1.5rem;
   }
 
-  .nav__list--pinned+.nav__list .nav__item:first-child {
+  .nav__list--pinned + .nav__list .nav__item:first-child {
     border-left: 2px solid var(--color-aqua);
     margin-left: 1.5rem;
     padding-left: 1.5rem;
@@ -252,7 +246,8 @@
 }
 
 @media (min-width: $breakpoint-xl) {
-  .nav__item, .nav__cta {
+  .nav__item,
+  .nav__cta {
     font-size: inherit;
   }
 }
