@@ -357,13 +357,13 @@ color: var(--color-aqua);
   .nav__list:not(.nav__list--overflow) {
     display: flex;
     align-items: last baseline;
-    column-gap: 1rem;
+    column-gap: 1.5rem;
   }
 
   .nav__list--pinned + .nav__list {
     border-left: 2px solid var(--color-aqua);
-    margin-left: 2rem;
-    padding-left: 2rem;
+    margin-left: 1.5rem;
+    padding-left: 1.5rem;
   }
 }
 
