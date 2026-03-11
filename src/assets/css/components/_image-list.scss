@@ -1,0 +1,11 @@
+.image-list__image {
+  text-align: center;
+
+  img,
+  svg {
+    max-height: 10rem;
+    max-width: 10rem;
+    margin: 0 auto;
+    display: block;
+  }
+}
