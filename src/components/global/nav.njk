@@ -34,11 +34,15 @@
 
       {% macro navListItem(entry) -%}
         <li class="nav__item">
+          {% if entry.url == '/work/' %}
+            {% set parentChildCompare = '/cases/' %}
+          {% else %}
+            {% set parentChildCompare = entry.url %}
+          {% endif %}
           <a
             href="{{ entry.url }}"
-            class="nav__link-text {% if entry.url == page.url %}
-              nav__link-text--active" aria-current="page
-            {% endif %}"
+            class="nav__link-text {% if entry.url == page.url or (page.url and parentChildCompare in page.url) %}nav__link-text--active{% endif %}"
+            {% if entry.url == page.url %}aria-current="page"{% endif %}
           >
             {% if entry.icon %}{% include entry.icon %}{% endif %}
             <span>{{ entry.title }}</span>
