@@ -13,7 +13,7 @@
 .tech-cards-homepage__grid-element {
   min-height: 20rem;
   svg g {
-    fill: var(--color-aqua);
+    fill: rgba(255, 255, 255, 0.6);
   }
 
   @media (min-width: $breakpoint-s) {
@@ -39,7 +39,7 @@
   }
 
   &.ember {
-    max-width: 20rem;
+    max-width: 11rem;
 
     @media (min-width: $breakpoint-s) {
       max-width: 70%;
