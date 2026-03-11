@@ -13,7 +13,7 @@
 .tech-cards-homepage__grid-element {
   min-height: 20rem;
   svg g {
-    fill: #0e6c81;
+    fill: var(--color-aqua);
   }
 
   @media (min-width: $breakpoint-s) {
@@ -26,7 +26,7 @@
     max-width: 11rem;
 
     @media (min-width: $breakpoint-s) {
-      max-width: 75%;
+      max-width: 70%;
     }
   }
 
@@ -34,7 +34,7 @@
     max-width: 9rem;
 
     @media (min-width: $breakpoint-s) {
-      max-width: 65%;
+      max-width: 60%;
     }
   }
 
@@ -42,7 +42,7 @@
     max-width: 20rem;
 
     @media (min-width: $breakpoint-s) {
-      max-width: 90%;
+      max-width: 70%;
     }
   }
 }
