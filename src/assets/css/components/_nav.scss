@@ -40,14 +40,12 @@
 }
 
 .nav__item {
-  line-height: 2rem;
-  font-size: 1.25rem;
   color: var(--color-white);
 }
 
 .nav__item,
 .nav__cta {
-  font-size: 1rem;
+  font-size: inherit;
 }
 
 .nav__item a,
@@ -96,7 +94,6 @@
   font-size: 1.25rem;
 
   .nav__item {
-    line-height: 3rem;
     color: #000;
   }
 }
@@ -176,6 +173,41 @@
   cursor: pointer;
 }
 
+//Open nav menu on mobile
+:has(#nav-menu:popover-open) #nav-menu {
+  display: grid;
+  align-items: start;
+  grid-template-columns: [content-start] 1fr [content-end sidebar-start] max-content [sidebar-end];
+  justify-content: space-between;
+  align-content: start;
+
+  > :nth-child(1) {
+  grid-column: sidebar;
+  grid-row: 1 / -1;
+  justify-self: end;
+  }
+
+  > :nth-child(n+2), #nav-overflow > * {
+  grid-column: content;
+  }
+
+  #nav-overflow h2 {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    color: #000;
+  }
+
+  .nav__item {
+    color: #000;
+  }
+
+  .nav__list--pinned + .nav__list .nav__item:first-child {
+    border-top: 2px solid var(--color-aqua);
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+}
+
 @media (max-width: calc($breakpoint-m - 1px)) {
   button[popovertarget="nav-overflow"] {
     display: none;
@@ -184,32 +216,34 @@
   #nav-overflow {
     display: contents;
   }
-
-  #nav-overflow h2 {
-    margin-top: 1rem;
-    font-size: inherit;
-    color: var(--color-mid-gray);
-  }
-
+  
   #nav-overflow ul {
-    padding: 1rem;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
   }
 
   #nav-menu {
     width: 100%;
     min-height: 100%;
     background: var(--color-white);
-    padding: 2rem;
+    padding: 5%;
   }
 
   .nav__wrapper {
     grid-template:
       "logo open" auto
       / auto max-content;
+      margin: 5%;
   }
 }
 
 @media (min-width: $breakpoint-m) {
+  .nav__item,
+  .nav__cta {
+    font-size: 0.85rem;
+    line-height: 1.7rem;
+  }
+
   button[popovertarget="nav-menu"] {
     display: none;
   }
@@ -247,5 +281,25 @@
   .nav__item,
   .nav__cta {
     font-size: inherit;
+    line-height: inherit;
   }
+}
+
+//Mobile menu button: open
+button[popovertarget="nav-menu"] {
+  padding: .75rem;
+  background-color: var(--color-aqua);
+  color: var(--color-white);
+  z-index: 250;
+  transition: background-color .3s ease;
+
+  svg {
+    display: block;
+  }
+}
+
+//Mobile menu button: close
+#nav-menu button[popovertarget="nav-menu"] {
+  color: #000;
+  background-color: transparent;
 }

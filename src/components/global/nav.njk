@@ -22,12 +22,14 @@
     {% endif %}
 
     <button type="button" popovertarget="nav-menu" popovertargetaction="show" class="nav-button">
-      Open Menu
+      {% include 'svg/menu.njk' %}
+      <span class="screenreader">Open Menu</span>
     </button>
 
     <div id="nav-menu" popover>
       <button type="button" popovertarget="nav-menu" popovertargetaction="hide" class="nav-button">
-        Close Menu
+        {% include 'svg/close.njk' %}
+        <span class="screenreader">Close Menu</span>
       </button>
 
       {% macro navListItem(entry) -%}
