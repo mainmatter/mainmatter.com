@@ -94,7 +94,7 @@
   font-size: 1.25rem;
 
   .nav__item {
-    color: #000;
+    color: var(--color-black);
   }
 }
 
@@ -139,11 +139,11 @@
   }
 
   .nav__item {
-    color: #000;
+    color: var(--color-black);
   }
 
   .nav__expandable {
-    --icon-caret-color: #000;
+    --icon-caret-color: var(--color-black);
   }
 }
 
@@ -194,11 +194,11 @@
   #nav-overflow h2 {
     font-size: 1.5rem;
     line-height: 2.5rem;
-    color: #000;
+    color: var(--color-black);
   }
 
   .nav__item {
-    color: #000;
+    color: var(--color-black);
   }
 
   .nav__list--pinned + .nav__list .nav__item:first-child {
@@ -216,7 +216,7 @@
   #nav-overflow {
     display: contents;
   }
-  
+
   #nav-overflow ul {
     padding-left: 2rem;
     margin-bottom: 2rem;
@@ -300,6 +300,6 @@ button[popovertarget="nav-menu"] {
 
 //Mobile menu button: close
 #nav-menu button[popovertarget="nav-menu"] {
-  color: #000;
+  color: var(--color-black);
   background-color: transparent;
 }
