@@ -254,9 +254,16 @@
     display: contents;
   }
 
-  #nav-overflow h2 {
+  #nav-overflow {
+    .nav-item {
+      font-size: 1rem;
+      line-height: 2rem;
+    }
+    
+    h2 {
     display: none;
-  }
+    }
+  }  
 
   .nav__wrapper {
     grid-template:
@@ -284,6 +291,11 @@
   .nav__cta {
     font-size: 1.25rem;
     line-height: 2rem;
+  }
+
+  #nav-overflow .nav__item {
+    font-size: 1rem;
+    line-height: 2.5rem;
   }
 }
 
