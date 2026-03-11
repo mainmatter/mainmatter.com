@@ -262,7 +262,7 @@
     grid-template:
       "logo  pinned  more  contact" min-content
       / max-content max-content auto max-content;
-    margin-block: 0.75rem; /* margin goes away on scroll, padding sticks */
+    margin: 1.5% 5%; /* margin goes away on scroll, padding sticks */
     padding: 0.75rem 0;
   }
 
@@ -282,7 +282,7 @@
 @media (min-width: $breakpoint-xl) {
   .nav__item,
   .nav__cta {
-    font-size: inherit;
+    font-size: 1.25rem;
     line-height: 2rem;
   }
 }
