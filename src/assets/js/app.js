@@ -4,6 +4,7 @@ import { Nav } from "./nav";
 import { ContactForm } from "./contact-form";
 import { LogoList } from "./logo-list";
 import bindSelectDropdowns from "./select";
+import './silktide-consent-manager.js';
 
 if (window.location.host === "mainmatter.com" || window.location.host.includes("deploy-preview")) {
   Sentry.init({
@@ -29,3 +30,46 @@ const logoList = document.getElementById("logo-list");
 if (logoList) new LogoList(logoList);
 
 bindSelectDropdowns();
+
+//Silktide consent manager
+window.silktideConsentManager.init({
+  text: {
+  prompt: {
+    description: '<p>We use cookies to enhance your experience.</p>',
+    acceptAllButtonText: 'Accept all',
+    acceptAllButtonAccessibleLabel: 'Accept all cookies',
+    rejectNonEssentialButtonText: 'Reject non-essential',
+    rejectNonEssentialButtonAccessibleLabel: 'Reject all non-essential cookies',
+    preferencesButtonText: 'Preferences',
+    preferencesButtonAccessibleLabel: 'Manage cookie preferences',
+  },
+  preferences: {
+    title: 'Customize your preferences',
+    description: '<p>Choose which cookies you want to accept.</p>',
+    saveButtonText: 'Save and close',
+    saveButtonAccessibleLabel: 'Save your cookie preferences',
+    creditLinkText: '',
+    creditLinkAccessibleLabel: '',
+  }
+},
+  consentTypes: [
+    {
+      id: 'essential',
+      label: 'Essential',
+      description: 'Required for the website to function. Cannot be switched off.',
+      required: true
+    },
+    {
+      id: 'analytics',
+      label: 'Analytics',
+      description: 'Help us understand how visitors use the site.',
+      defaultValue: true,
+    },
+    {
+      id: 'marketing',
+      label: 'Marketing',
+      description: 'Used to deliver personalised ads.',
+      defaultValue: false,
+    }
+  ]
+});
