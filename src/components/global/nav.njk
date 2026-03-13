@@ -8,131 +8,91 @@
   {% set ctaColor = 'aqua' %}
 {% endif %}
 
-<nav class="nav nav--accent-{{ ctaColor }}" id="nav">
+<nav class="nav" id="nav">
   <div class="nav__wrapper container container--xl">
-    <div class="nav__logo">
-      {% if page.url == '/' %}
-        <h1 class="nav__brand">
-          {% include 'svg/logo.njk' %}
-          <span class="screenreader">Mainmatter</span>
-        </h1>
-      {% else %}
-        <a class="nav__brand" href="/">
-          {% include 'svg/logo.njk' %}
-          <span class="screenreader">Mainmatter</span>
-        </a>
-      {% endif %}
-    </div>
-    <ul class="nav__list" role="list">
-      <li class="nav__item">
-        <details class="nav-submenu" data-has-submenu>
-          <summary class="nav-submenu__toggle nav__link" data-menu-toggle>
-            <span
-              class="nav__link-text {% if page.url and '/services/' in page.url %}nav__link-text--active{% endif %}"
-              >Services</span
-            >
-            <span class="nav__link-arrow">{% include 'svg/arrow.njk' %}</span>
-          </summary>
-          <div
-            class="nav-submenu__menu"
-            data-modal
-            data-modal-desktop
-            aria-label="Services submenu"
-          >
-            <div class="nav-submenu__menu-inner">
-              <button class="nav-submenu__menu-close no-js-hidden" data-menu-close>
-                {% include 'svg/close.njk' %}
-                <span class="screenreader">Close Services submenu</span>
-              </button>
-              <div class="nav-submenu__list">
-                <li class="nav-submenu__list-item mb-2">
-                  <a href="/services/team-reinforcement/" class="nav-submenu__link">
-                    <div class="nav-submenu__link-wrap">
-                      {% include 'svg/arrow.njk' %}
-                      <h2 class="h4 nav-submenu__link-text">Team reinforcement</h2>
-                    </div>
-                    <p class="nav-submenu__link-description">
-                      Accelerate delivery and overcome challenges
-                    </p>
-                  </a>
-                </li>
-                <li class="nav-submenu__list-item mb-2">
-                  <a href="/services/launch-your-idea/" class="nav-submenu__link">
-                    <div class="nav-submenu__link-wrap">
-                      {% include 'svg/arrow.njk' %}
-                      <h2 class="h4 nav-submenu__link-text">Launch your idea</h2>
-                    </div>
-                    <p class="nav-submenu__link-description">From Concept to MVP</p>
-                  </a>
-                </li>
-                <li class="nav-submenu__list-item mb-2">
-                  <a href="/services/tech-modernization/" class="nav-submenu__link">
-                    <div class="nav-submenu__link-wrap">
-                      {% include 'svg/arrow.njk' %}
-                      <h2 class="h4 nav-submenu__link-text">Modernize your tech stack</h2>
-                    </div>
-                    <p class="nav-submenu__link-description">Upgrades instead of rewrites</p>
-                  </a>
-                </li>
-                <li class="nav-submenu__list-item mb-2">
-                  <a href="/services/strategic-advice/" class="nav-submenu__link">
-                    <div class="nav-submenu__link-wrap">
-                      {% include 'svg/arrow.njk' %}
-                      <h2 class="h4 nav-submenu__link-text">Get strategic advice</h2>
-                    </div>
-                    <p class="nav-submenu__link-description">
-                      Assessments, transformation and scaling
-                    </p>
-                  </a>
-                </li>
-                <li class="nav-submenu__list-item">
-                  <a href="/services/workshops/" class="nav-submenu__link">
-                    <div class="nav-submenu__link-wrap">
-                      {% include 'svg/arrow.njk' %}
-                      <h2 class="h4 nav-submenu__link-text">Tailored Workshops</h2>
-                    </div>
-                  </a>
-                </li>
-              </div>
-            </div>
-          </div>
-        </details>
-      </li>
+    {%- macro logo() -%}
+      {%- include 'svg/logo.njk' -%}
+      <span class="screenreader">Mainmatter</span>
+    {%- endmacro -%}
 
-      {%- for entry in navPages -%}
-        <li class="nav__item" {% if entry.children.length > 0 %}data-has-modal{% endif %}>
+    {% if page.url == '/' %}
+      <h1 class="nav__logo">{{ logo() }}</h1>
+    {% else %}
+      <a href="/" class="nav__logo">{{ logo() }}</a>
+    {% endif %}
+
+    <button type="button" popovertarget="nav-menu" popovertargetaction="show" class="nav-button">
+      {% include 'svg/menu.njk' %}
+      <span class="screenreader">Open Menu</span>
+    </button>
+
+    <div id="nav-menu" popover>
+      <button type="button" popovertarget="nav-menu" popovertargetaction="hide" class="nav-button">
+        {% include 'svg/close.njk' %}
+        <span class="screenreader">Close Menu</span>
+      </button>
+
+      {% macro navListItem(entry) -%}
+        <li class="nav__item">
           {% if entry.url == '/work/' %}
             {% set parentChildCompare = '/cases/' %}
           {% else %}
             {% set parentChildCompare = entry.url %}
           {% endif %}
           <a
-            class="nav__link nav__link-text {% if entry.url == page.url or (page.url and parentChildCompare in page.url) %}nav__link-text--active{% endif %}"
+            href="{{ entry.url }}"
+            class="nav__link-text {% if entry.url == page.url or (page.url and parentChildCompare in page.url) %}nav__link-text--active{% endif %}"
             {% if entry.url == page.url %}aria-current="page"{% endif %}
-            href="{{ entry.url | url }}"
           >
-            {{ entry.title }}
+            {% if entry.icon %}{% include entry.icon %}{% endif %}
+            <span>{{ entry.title }}</span>
           </a>
         </li>
-      {%- endfor -%}
-    </ul>
+      {%- endmacro %}
 
-    <div class="nav__aside">
-      {%
-        set link = {
+      <ul class="nav__list nav__list--pinned">
+        <!-- Pinned entries with icon -->
+        {%- for entry in navPages -%}
+          {%- if entry.pinned and entry.icon -%}
+            {{ navListItem(entry) }}
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+
+      <ul class="nav__list">
+        <!-- Pinned entries without icon -->
+        {%- for entry in navPages -%}
+          {%- if entry.pinned and not entry.icon -%}
+            {{ navListItem(entry) }}
+          {%- endif -%}
+        {%- endfor -%}
+
+        <li class="nav__item">
+          <button type="button" popovertarget="nav-overflow" class="nav-button nav__expandable">
+            <span>More</span>
+            {% include 'svg/caret.njk' %}
+          </button>
+        </li>
+      </ul>
+
+      <div id="nav-overflow" class="nav-popover" popover>
+        <h2>More</h2>
+
+        <ul class="nav__list nav__list--overflow">
+          {%- for entry in navPages -%}
+            {%- if not entry.pinned -%}
+              {{ navListItem(entry) }}
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+
+      {{
+        btnPrimary({
         "label": "Contact us",
         "url": "/contact/"
-        }
-      %}
-      {{ btnPrimary( link, ctaColor, 'nav__cta' ) }}
-      <details class="nav__mobile-menu-wrapper" data-has-submenu>
-        <summary class="nav__menu-toggle" data-menu-toggle data-menu-mobile-close-toggle>
-          {% include 'svg/menu.njk' %}
-          {% include 'svg/close.njk' %}
-          <span class="screenreader">Toggle Menu</span>
-        </summary>
-        {% include 'global/mobile-menu.njk' %}
-      </details>
+        }, ctaColor, 'nav__cta' )
+      }}
     </div>
   </div>
 </nav>
