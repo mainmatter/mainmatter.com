@@ -4,6 +4,7 @@ import { Nav } from "./nav";
 import { ContactForm } from "./contact-form";
 import { LogoList } from "./logo-list";
 import bindSelectDropdowns from "./select";
+import { initHomeHero } from "./home-hero";
 
 if (window.location.host === "mainmatter.com" || window.location.host.includes("deploy-preview")) {
   Sentry.init({
@@ -29,3 +30,4 @@ const logoList = document.getElementById("logo-list");
 if (logoList) new LogoList(logoList);
 
 bindSelectDropdowns();
+initHomeHero();

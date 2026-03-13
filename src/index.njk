@@ -5,24 +5,44 @@ eleventyImport:
   collections: ["calendar", "caseStudies"]
 ---
 
-{% from "color-hero.njk" import colorHero %}
+{% from "home-hero.njk" import homeHero %}
 {% from "featured-services.njk" import featuredServices %}
-{% from "logo-list.njk" import logoList %}
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
 {% from "tech-cards.njk" import techCards %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "quote.njk" import quote %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "home-hero.njk" import homeHero %}
+
 {%
-  set 'content' = {
-  "title": "Team Up With Us To Go Further!",
-  "text": "We know the code, tools, and practices that go into successful development. We partner with our clients to solve their toughest tech challenges by sharing our skills and expertise as teammates.",
-  "image": "/assets/images/hero/home.jpg",
-  "alt": "Balloons flying over the sky",
-  "loading": "eager"
+  set content = {
+    "eyebrow": "Experts in Rust, Ember and Svelte",
+    "title": "Build and evolve modern<br>software products",
+    "text": "Mainmatter works alongside your engineers to design, build, and modernize ambitious software systems.
+      From <span class='highlight'>architecture</span> and <span class='highlight'>migrations</span> to <span class='highlight'>mentoring</span> and delivery, we help teams solve complex <span class='highlight'>engineering challenges</span>.",
+    "linkUrl": "/contact",
+    "linkText": "Talk to our experts",
+    "image": "/assets/images/hero/hero-image-comp.png",
+    "alt": "Svelte logo",
+    "loading": "eager",
+    "logoCompanies": [
+      "Timify",
+      "BMW Car IT",
+      "Qonto",
+      "Trainline",
+      "Redis",
+      "Aleph Alpha",
+      "Auditboard",
+      "Otto",
+      "UCSF",
+      "Bluecode",
+      "Experteer",
+      "Rail Europe"
+    ]
   }
 %}
-{{ colorHero('purple', content) }}
+
+{{ homeHero(content) }}
 {%
   set 'content' = {
   "title": "Discover our services",
@@ -30,23 +50,6 @@ eleventyImport:
   }
 %}
 {{ featuredServices(services['services-list'], content) }}
-{%
-  set logoCompanies = [
-  'Timify',
-  'BMW Car IT',
-  'Qonto',
-  'Trainline',
-  'Redis',
-  'Aleph Alpha',
-  'Auditboard',
-  'Otto',
-  'UCSF',
-  'Bluecode',
-  'Experteer',
-  'Rail Europe'
-  ]
-%}
-{{ logoList(logoCompanies) }}
 
 <section class="mb-10">
   {%

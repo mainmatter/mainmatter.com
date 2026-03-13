@@ -1,0 +1,156 @@
+@use "../base/breakpoints" as *;
+
+@property --hero-glow-x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 30%;
+}
+
+@property --hero-glow-y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 40%;
+}
+
+@keyframes hero-glow {
+  from {
+    --hero-glow-x: 30%;
+    --hero-glow-y: 40%;
+  }
+
+  to {
+    --hero-glow-x: 35%;
+    --hero-glow-y: 45%;
+  }
+}
+
+.home-hero {
+  position: relative;
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+  background-color: var(--color-purple);
+  color: var(--color-white);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    animation: hero-glow 10s ease-in-out infinite alternate;
+    background: radial-gradient(
+        1200px circle at var(--hero-glow-x) var(--hero-glow-y),
+        rgba(255, 255, 255, 0.12),
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0.1) 40%,
+        rgba(40, 0, 90, 0.35) 80%,
+        rgba(20, 0, 60, 0.65) 100%
+      );
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__main {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    padding: 10rem 0 4rem;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    order: 2;
+  }
+
+  &__eyebrow {
+    margin-bottom: 1rem;
+    color: var(--color-aqua);
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__text {
+    max-width: 42rem;
+  }
+
+  .highlight {
+    color: var(--color-aqua);
+    font-weight: 700;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__media {
+    position: relative;
+    min-width: 0;
+    order: 1;
+  }
+
+  &__image {
+    display: block;
+    width: 50%;
+    height: auto;
+    margin-inline: auto;
+    object-fit: cover;
+  }
+
+  &__logos {
+    width: 100%;
+
+    svg {
+      color: var(--color-white);
+      max-height: 4rem;
+      opacity: 0;
+
+      path {
+        fill: currentColor;
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-m) {
+    &__main {
+      align-items: center;
+    }
+
+    &__grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 4rem;
+    }
+
+    &__content {
+      order: 1;
+    }
+
+    &__media {
+      order: 2;
+      transform: translate(-1rem, -5rem);
+    }
+
+    &__image {
+      width: 120%;
+      max-width: none;
+    }
+  }
+}

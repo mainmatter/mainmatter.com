@@ -1,0 +1,49 @@
+{% from "btn-primary.njk" import btnPrimary %}
+{% from "logo-list.njk" import logoList %}
+
+{%- macro homeHero(content) -%}
+  <section class="home-hero" data-background-color="purple">
+    <div class="home-hero__main">
+      <div class="container container--xl">
+        <div class="home-hero__grid">
+          <div class="home-hero__content">
+            {% if content.eyebrow %}
+              <p class="home-hero__eyebrow h5">{{ content.eyebrow | safe }}</p>
+            {% endif %}
+
+            {% if content.title %}
+              <h1 class="home-hero__title">{{ content.title | safe }}</h1>
+            {% endif %}
+
+            {% if content.text %}
+              <div class="home-hero__text mt-2">{{ content.text | safe }}</div>
+            {% endif %}
+
+            {% if content.linkUrl %}
+              {%
+                set link = {
+                  "label": content.linkText,
+                  "url": content.linkUrl
+                }
+              %}
+
+              <div class="home-hero__actions mt-3">
+                {{ btnPrimary(link, 'aqua', 'home-hero__primary-link') }}
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="home-hero__media">
+            {% if content.image %}
+              {% image content.image, content.alt, '(min-width: 64em) 50vw, 100vw', content.loading or 'eager', 'home-hero__image', [760,1200,1440,1920] %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% if content.logoCompanies %}
+      <div class="home-hero__logos">{{ logoList(content.logoCompanies) }}</div>
+    {% endif %}
+  </section>
+{%- endmacro -%}
