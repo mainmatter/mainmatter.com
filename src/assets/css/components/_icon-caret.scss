@@ -7,7 +7,6 @@
   transform: var(--icon-caret-transform);
   transition: 0;
   will-change: transform;
-  color: var(--icon-caret-color, inherit);
 
   path {
     transform: rotate(var(--icon-caret-rotate));

@@ -68,7 +68,7 @@
   color: var(--color-aqua);
 }
 
-.nav__item svg path {
+.nav__list--pinned .nav__item svg path {
   fill: var(--color-aqua);
 }
 
@@ -180,7 +180,7 @@
     color: var(--color-purple);
   }
 
-  .nav__item svg path {
+  .nav__list--pinned .nav__item svg path {
     fill: var(--color-purple);
   }
 
