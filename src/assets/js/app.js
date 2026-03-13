@@ -48,8 +48,8 @@ window.silktideConsentManager.init({
     description: '<p>Choose which cookies you want to accept.</p>',
     saveButtonText: 'Save and close',
     saveButtonAccessibleLabel: 'Save your cookie preferences',
-    creditLinkText: '',
-    creditLinkAccessibleLabel: '',
+    creditLinkText: ' ',
+    creditLinkAccessibleLabel: ' ',
   }
 },
   consentTypes: [
