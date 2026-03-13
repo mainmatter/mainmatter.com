@@ -64,9 +64,14 @@
   white-space: nowrap;
 }
 
-.nav__list--pinned .nav__item svg {
+.nav__list--pinned {
   color: var(--color-aqua);
 }
+
+.nav__item svg path {
+  fill: var(--color-aqua);
+}
+
 .nav__item svg {
   display: inline-block;
   vertical-align: baseline;
@@ -130,29 +135,6 @@
   }
 }
 
-// Styling on scroll
-.nav__scrolled {
-  .nav__wrapper {
-    margin: 0.5rem 5%;
-  }
-
-  position: fixed;
-  background: var(--color-white);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-  .nav__logo svg {
-    color: var(--color-purple);
-  }
-
-  .nav__item {
-    color: var(--color-black);
-  }
-
-  .nav__expandable {
-    --icon-caret-color: var(--color-black);
-  }
-}
-
 .nav__expandable {
   --icon-caret-margin: 0;
   --icon-caret-color: var(--color-white);
@@ -177,6 +159,56 @@
   text-underline-offset: var(--nav-underline-offset);
   text-decoration-color: var(--color-aqua);
   cursor: pointer;
+}
+
+// Styling on scroll
+.nav__scrolled :has(#nav-overflow:popover-open) .nav__expandable {
+  text-decoration-color: var(--color-purple);
+  color: var(--color-purple);
+}
+
+.nav__scrolled {
+  .nav__wrapper {
+    margin: 0.5rem 5%;
+  }
+
+  position: fixed;
+  background: var(--color-white);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  .nav__list--pinned {
+    color: var(--color-purple);
+  }
+
+  .nav__item svg path {
+    fill: var(--color-purple);
+  }
+
+  .nav__logo svg {
+    color: var(--color-purple);
+  }
+
+  .nav__item {
+    color: var(--color-black);
+  }
+
+  .nav__expandable {
+    --icon-caret-color: var(--color-black);
+
+    &:hover {
+      color: var(--color-purple);
+      text-decoration-color: var(--color-purple);
+    }
+  }
+
+  .nav__list--pinned + .nav__list .nav__item:first-child {
+    border-left: 2px solid var(--color-purple);
+  }
+
+  .nav__item :is(a):is(:focus, :hover) {
+    color: var(--color-purple);
+    text-decoration-color: var(--color-purple);
+  }
 }
 
 //Open nav menu on mobile
@@ -287,6 +319,22 @@
     margin-left: 1.5rem;
     padding-left: 1.5rem;
   }
+
+  /*.nav__scrolled  {
+    .nav__list--pinned + .nav__list .nav__item:first-child {
+      border-left: 2px solid var(--color-purple);
+    }
+
+    .nav__item :is(a):is(:focus, :hover) {
+      color: var(--color-purple);
+      text-decoration-color: var(--color-purple);
+    }
+
+    :has(#nav-overflow:popover-open) .nav__expandable {
+      text-decoration-color: var(--color-purple);
+    }
+
+  }*/
 }
 
 @media (min-width: $breakpoint-xl) {

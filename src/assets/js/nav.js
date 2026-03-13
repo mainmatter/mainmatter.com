@@ -133,13 +133,14 @@ export class Nav {
   }
 }
 
-// Scrolling event listener for the sticky nav bar
+// Scrolling event listener for the sticky nav bar. Only appiles class="nav__scrolled" on breakpoints larger than breakpoint-m
 const nav = document.querySelector(".nav");
+const breakpointM = parseFloat(getComputedStyle(document.documentElement).fontSize) * 62;
 
 window.addEventListener(
   "scroll",
   () => {
-    if (window.scrollY > 10) {
+    if (window.innerWidth > breakpointM && window.scrollY > 10) {
       nav.classList.add("nav__scrolled");
     } else {
       nav.classList.remove("nav__scrolled");
