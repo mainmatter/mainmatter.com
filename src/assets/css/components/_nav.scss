@@ -161,56 +161,6 @@
   cursor: pointer;
 }
 
-// Styling on scroll
-.nav__scrolled :has(#nav-overflow:popover-open) .nav__expandable {
-  text-decoration-color: var(--color-purple);
-  color: var(--color-purple);
-}
-
-.nav__scrolled {
-  position: fixed;
-  background: var(--color-white);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-  .nav__wrapper {
-    margin: 0.5rem 5%;
-  }
-
-  .nav__list--pinned {
-    color: var(--color-purple);
-  }
-
-  .nav__list--pinned .nav__item svg path {
-    fill: var(--color-purple);
-  }
-
-  .nav__logo svg {
-    color: var(--color-purple);
-  }
-
-  .nav__item {
-    color: var(--color-black);
-  }
-
-  .nav__expandable {
-    --icon-caret-color: var(--color-black);
-
-    &:hover {
-      color: var(--color-purple);
-      text-decoration-color: var(--color-purple);
-    }
-  }
-
-  .nav__list--pinned + .nav__list .nav__item:first-child {
-    border-left: 2px solid var(--color-purple);
-  }
-
-  .nav__item :is(a):is(:focus, :hover) {
-    color: var(--color-purple);
-    text-decoration-color: var(--color-purple);
-  }
-}
-
 //Open nav menu on mobile
 :has(#nav-menu:popover-open) #nav-menu {
   display: grid;
@@ -318,6 +268,55 @@
     border-left: 2px solid var(--color-aqua);
     margin-left: 1.5rem;
     padding-left: 1.5rem;
+  }
+
+  .nav__scrolled {
+    position: fixed;
+    background: var(--color-white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    & :has(#nav-overflow:popover-open) .nav__expandable {
+      text-decoration-color: var(--color-purple);
+      color: var(--color-purple);
+    }
+
+    .nav__wrapper {
+      margin: 0.5rem 5%;
+    }
+
+    .nav__list--pinned {
+      color: var(--color-purple);
+    }
+
+    .nav__list--pinned .nav__item svg path {
+      fill: var(--color-purple);
+    }
+
+    .nav__logo svg {
+      color: var(--color-purple);
+    }
+
+    .nav__item {
+      color: var(--color-black);
+    }
+
+    .nav__expandable {
+      --icon-caret-color: var(--color-black);
+
+      &:hover {
+        color: var(--color-purple);
+        text-decoration-color: var(--color-purple);
+      }
+    }
+
+    .nav__list--pinned + .nav__list .nav__item:first-child {
+      border-left: 2px solid var(--color-purple);
+    }
+
+    .nav__item :is(a):is(:focus, :hover) {
+      color: var(--color-purple);
+      text-decoration-color: var(--color-purple);
+    }
   }
 }
 
