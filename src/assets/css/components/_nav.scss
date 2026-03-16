@@ -88,12 +88,11 @@
 }
 
 [popovertarget="nav-overflow"] {
-  position: relative;
   anchor-name: --nav-overflow;
 }
 
 #nav-overflow {
-  position: absolute;
+  position: fixed;
   inset: 6rem auto auto calc(50% + 6rem);
   padding: 2rem;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
