@@ -13,7 +13,7 @@
     background-color: var(--color-purple);
     --color-animation: var(--color-aqua);
     --color-link-background: var(--color-blue);
-    --color-overlay: var(--color-purple);
+    --color-overlay: var(--color-purple-dark);
     --color-link-primary: var(--color-purple);
     --color-link-primary-hover: var(--color-aqua);
     color: var(--color-white);
@@ -88,7 +88,7 @@
 }
 
 .color-hero__text {
-  max-width: 45rem;
+  max-width: 40rem;
 }
 
 .color-hero__eyebrow {
@@ -104,7 +104,7 @@
     display: flex;
     position: relative;
     width: 100%;
-    padding: 25vh 0 10vh;
+    padding: 25vh 2vw 10vh;
   }
 
   .color-hero {

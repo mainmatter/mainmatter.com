@@ -135,7 +135,7 @@ html,
 body {
   height: 100%;
   min-height: 100%;
-  line-height: 2;
+  line-height: 1.5;
   font-family: var(--font-base);
   font-size: 1rem;
   color: var(--color-body-text);
@@ -149,7 +149,7 @@ html {
 
 body {
   font-size: 1rem;
-  line-height: 2;
+  line-height: 1.5;
 
   &.menu-open {
     overflow: hidden;
