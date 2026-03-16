@@ -8,10 +8,10 @@
 /* Wrapper (Global) */
 #stcm-wrapper {
   --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
-  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
-  --primaryColor: #F9D000;
-  --backgroundColor: #050505;
-  --textColor: #F4F0DF;
+  --fontFamily: inherit;
+  --primaryColor: var(--color-purple);
+  --backgroundColor: var(--color-white);
+  --textColor: var(--color-black);
   --backdropBackgroundColor: #00000077;
   --backdropBackgroundBlur: 0px;
   --iconColor: #050505;
@@ -66,7 +66,7 @@ General Styles
 #stcm-wrapper .stcm-button {
   color: var(--backgroundColor);
   background-color: var(--primaryColor);
-  border: 2px solid var(--primaryColor);
+  border: .125rem solid var(--primaryColor);
   padding: 10px 20px;
   text-decoration: none;
   text-align: center;
@@ -101,7 +101,7 @@ Banner
   background-color: var(--backgroundColor);
   box-sizing: border-box;
   padding: 32px;
-  border-radius: 12px;
+  border-radius: 0.125rem;
   pointer-events: auto;
   border: 0px;
   position: fixed;
@@ -170,7 +170,10 @@ Banner
 }
 
 #stcm-banner .stcm-preferences-button span:hover {
-  color: var(--textColor);
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--primaryColor), 0);
+  text-decoration-thickness: .125rem;
+  text-underline-offset: .25rem;
 }
 
 #stcm-banner p {
@@ -192,14 +195,7 @@ Banner
 }
 
 #stcm-banner a.stcm-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  fill: var(--primaryColor); /* passed down to svg > path */
-  margin-left: auto;
-  width: 48px;
-  height: 48px;
-  text-decoration: none;
+  display: none;
 }
 
 #stcm-banner .stcm-actions {
@@ -245,7 +241,7 @@ Modal
   flex-direction: column;
   padding: 30px;
   background-color: var(--backgroundColor);
-  border-radius: 12px;
+  border-radius: 0.125rem;
   box-sizing: border-box;
 }
 
@@ -263,8 +259,9 @@ Modal - Header
 #stcm-modal h1 {
   font-family: var(--fontFamily);
   color: var(--textColor);
-  font-size: 24px;
-  font-weight: 500;
+  font-size: clamp(1.3rem, 0.94rem + 0.78vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.5;
   margin: 0px;
 }
 
@@ -278,7 +275,7 @@ Modal - Header
 }
 
 #stcm-modal .stcm-modal-close svg {
-  fill: var(--primaryColor);
+  fill: var(--textColor);
 }
 
 /* --------------------------------
@@ -299,11 +296,10 @@ Modal - Content
   border-radius: 10px; /* Rounded corners for the thumb */
 }
 
-#stcm-modal p {
+#stcm-modal p, #stcm-modal .stcm-consent-description {
   font-size: 16px;
   line-height: 24px;
   color: var(--textColor);
-  opacity: 0.6;
   margin: 0px 0px 15px;
 }
 
@@ -384,7 +380,7 @@ Modal - Switches
 #stcm-modal .stcm-toggle-off,
 #stcm-modal .stcm-toggle-on {
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--backgroundColor);
   position: absolute;
@@ -421,8 +417,7 @@ Modal - Switches
 }
 
 #stcm-modal .stcm-toggle input:disabled + .stcm-toggle-track {
-  opacity: 0.65;
-  filter: grayscale(100%);
+  opacity: 0.45;
   cursor: not-allowed;
 }
 
@@ -458,22 +453,7 @@ Modal - Footer
 
 /* Cookie Icon */
 #stcm-icon {
-  display: none;
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  padding: 0px;
-  border: none;
-  background-color: var(--iconColor);
-  cursor: pointer;
-  box-shadow: 0px 0px 6px 0px #0000001a;
-  pointer-events: auto;
-  animation: stcm-fade-in 0.3s ease-in-out forwards;
+  display: none !important;
 }
 
 #stcm-icon.stcm-pos-bottom-right {
