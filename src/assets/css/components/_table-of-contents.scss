@@ -3,14 +3,13 @@
 .table-of-contents__list {
   display: flex;
   flex-direction: column;
+  color: var(--color-white);
 
   @media (min-width: $breakpoint-m) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-
-  color: var(--color-white);
 
   & .btn-secondary {
     color: var(--color-white);

@@ -168,13 +168,13 @@
 }
 
 .nav__scrolled {
-  .nav__wrapper {
-    margin: 0.5rem 5%;
-  }
-
   position: fixed;
   background: var(--color-white);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  .nav__wrapper {
+    margin: 0.5rem 5%;
+  }
 
   .nav__list--pinned {
     color: var(--color-purple);
