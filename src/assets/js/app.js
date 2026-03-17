@@ -61,6 +61,12 @@ window.silktideConsentManager.init({
       label: "Analytics",
       description: "Help us understand how visitors use the site.",
       defaultValue: true,
+      scripts: [
+        {
+          url: "https://t.contentsquare.net/uxa/d631f9850485f.js",
+          load: "async",
+        },
+      ],
     },
     {
       id: "marketing",
