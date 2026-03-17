@@ -3,11 +3,18 @@
 const nav = document.querySelector(".nav");
 
 const throttle = (fn, delay) => {
-  let t = Date.now();
-  return () => {
-    if (t + delay - Date.now() <= 0) {
-      fn();
-      t = Date.now();
+  let now = Date.now();
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    if (now + delay - Date.now() <= 0) {
+      fn.call(null, ...args);
+      now = Date.now();
+    } else {
+      timer = setTimeout(() => {
+        fn.call(null, ...args);
+        now = Date.now();
+      }, delay);
     }
   };
 };

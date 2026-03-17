@@ -1,5 +1,6 @@
 import * as Sentry from "@sentry/browser";
 import "wicg-inert";
+import "./nav.js";
 import { ContactForm } from "./contact-form";
 import { LogoList } from "./logo-list";
 import bindSelectDropdowns from "./select";
