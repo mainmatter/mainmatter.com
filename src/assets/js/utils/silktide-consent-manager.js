@@ -9,6 +9,8 @@
  * @class
  * @param {Object} config - Configuration object for the consent manager
  */
+
+const arrowSVG = `<svg class="icon-arrow" focusable="false" aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M 12 6 10.9425 4.9425 6.75 9.1275 6.75 0 5.25 0 5.25 9.1275 1.065 4.935 0 6 6 12z" fill="currentColor"/></svg>`;
 class SilktideConsentManager {
   constructor(config) {
     this._validateConfig(config);
@@ -875,23 +877,23 @@ class SilktideConsentManager {
     // Accept button
     const acceptAllButtonText = this.config.text?.prompt?.acceptAllButtonText || "Accept all";
     const acceptAllButtonLabel = this.config.text?.prompt?.acceptAllButtonAccessibleLabel;
-    const acceptAllButton = `<button class="stcm-accept-all stcm-button stcm-button-primary"${
+    const acceptAllButton = `<button class="stcm-accept-all btn-primary btn-primary--purple"${
       acceptAllButtonLabel && acceptAllButtonLabel !== acceptAllButtonText
         ? ` aria-label="${acceptAllButtonLabel}"`
         : ""
-    }>${acceptAllButtonText}</button>`;
+    }><span>${acceptAllButtonText}</span>${arrowSVG}</button>`;
 
     // Reject button
     const rejectNonEssentialButtonText =
       this.config.text?.prompt?.rejectNonEssentialButtonText || "Reject non-essential";
     const rejectNonEssentialButtonLabel =
       this.config.text?.prompt?.rejectNonEssentialButtonAccessibleLabel;
-    const rejectNonEssentialButton = `<button class="stcm-reject-all stcm-button stcm-button-primary"${
+    const rejectNonEssentialButton = `<button class="stcm-reject-all btn-primary btn-primary--purple"${
       rejectNonEssentialButtonLabel &&
       rejectNonEssentialButtonLabel !== rejectNonEssentialButtonText
         ? ` aria-label="${rejectNonEssentialButtonLabel}"`
         : ""
-    }>${rejectNonEssentialButtonText}</button>`;
+    }><span>${rejectNonEssentialButtonText}</span>${arrowSVG}</button>`;
 
     // Preferences button
     const preferencesButtonText = this.config.text?.prompt?.preferencesButtonText || "Preferences";
@@ -1027,23 +1029,23 @@ class SilktideConsentManager {
     // Save button
     const saveButtonText = this.config.text?.preferences?.saveButtonText || "Save and close";
     const saveButtonLabel = this.config.text?.preferences?.saveButtonAccessibleLabel;
-    const saveButton = `<button class="stcm-modal-save stcm-button stcm-button-primary"${
+    const saveButton = `<button class="stcm-modal-save btn-primary btn-primary--purple"${
       saveButtonLabel && saveButtonLabel !== saveButtonText
         ? ` aria-label="${saveButtonLabel}"`
         : ""
-    }>${saveButtonText}</button>`;
+    }><span>${saveButtonText}</span>${arrowSVG}</button>`;
 
     // Reject button
     const rejectNonEssentialButtonText =
       this.config.text?.prompt?.rejectNonEssentialButtonText || "Reject non-essential";
     const rejectNonEssentialButtonLabel =
       this.config.text?.prompt?.rejectNonEssentialButtonAccessibleLabel;
-    const rejectNonEssentialButton = `<button class="stcm-modal-reject-all stcm-button stcm-button-primary"${
+    const rejectNonEssentialButton = `<button class="stcm-modal-reject-all btn-primary btn-primary--purple"${
       rejectNonEssentialButtonLabel &&
       rejectNonEssentialButtonLabel !== rejectNonEssentialButtonText
         ? ` aria-label="${rejectNonEssentialButtonLabel}"`
         : ""
-    }>${rejectNonEssentialButtonText}</button>`;
+    }><span>${rejectNonEssentialButtonText}</span>${arrowSVG}</button>`;
 
     // Credit link
     const creditLinkText =
@@ -1296,11 +1298,6 @@ class SilktideConsentManager {
           }
         }
       });
-
-      // Set initial focus
-      if (this.config.mode !== "wizard") {
-        acceptButton?.focus();
-      }
     }
 
     // Check Preferences exists before trying to add event listeners

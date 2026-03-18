@@ -27,6 +27,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  --color-accent: var(--color-purple);
+  --color-accent-hover: var(--color-aqua);
 }
 
 /* --------------------------------
@@ -51,11 +53,17 @@ Focus Styles
 #stcm-wrapper #stcm-banner button:focus,
 #stcm-wrapper #stcm-modal button:focus,
 #stcm-wrapper #stcm-icon:focus {
-  outline: none;
   box-shadow:
     0 0 0 2px var(--backgroundColor),
     0 0 0 4px #ffffff;
-  border-radius: 5px;
+  border-radius: 0.125rem;
+}
+
+#stcm-wrapper #stcm-banner button:focus-visible,
+#stcm-wrapper #stcm-modal button:focus-visible {
+  outline: revert;
+  box-shadow: none;
+  border-radius: 0.125rem;
 }
 
 #stcm-wrapper #stcm-icon:focus {
@@ -65,23 +73,8 @@ Focus Styles
 /* --------------------------------
 General Styles
 -------------------------------- */
-#stcm-wrapper .stcm-button {
-  color: var(--backgroundColor);
-  background-color: var(--primaryColor);
-  border: 0.125rem solid var(--primaryColor);
-  padding: 10px 20px;
-  text-decoration: none;
-  text-align: center;
-  display: inline-block;
-  font-size: 16px;
-  line-height: 24px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-#stcm-wrapper .stcm-button-primary:hover {
-  background-color: var(--backgroundColor);
-  color: var(--primaryColor);
+#stcm-wrapper .btn-primary {
+  font-size: 1rem;
 }
 
 #stcm-wrapper .stcm-button-secondary {
