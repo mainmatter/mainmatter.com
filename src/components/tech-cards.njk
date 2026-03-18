@@ -4,7 +4,9 @@
       {% if title %}
         <h2 class="tech-cards__title">{{ title }}</h2>
       {% endif %}
-      <p class="tech-cards__intro mt-25 mb-5">{{ intro | safe }}</p>
+      {% if intro %}
+        <p class="tech-cards__intro mt-25 mb-5">{{ intro | safe }}</p>
+      {% endif %}
       <div class="cards__grid">
         {% for card in cards %}
           <div class="tech-cards__grid-element card__grid-element">

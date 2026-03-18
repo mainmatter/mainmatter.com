@@ -14,6 +14,7 @@
 @use "components/nav-submenu";
 @use "components/mobile-menu";
 @use "components/logo-list";
+@use "components/image-list";
 @use "components/color-hero";
 @use "components/social";
 @use "components/footer";
@@ -61,6 +62,7 @@
 @use "components/scroll-slides";
 @use "components/quotes-list";
 @use "components/tech-cards";
+@use "components/tech-cards-homepage";
 @use "components/service-cards";
 @use "components/case-cards";
 @use "components/strategy-list";
@@ -76,3 +78,5 @@
 @use "animations/text-animation";
 
 @use "base/utility";
+
+@import "utils/silktide-consent-manager";
