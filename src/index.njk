@@ -6,30 +6,47 @@ eleventyImport:
 ---
 
 {% from "color-hero.njk" import colorHero %}
-{% from "featured-services.njk" import featuredServices %}
 {% from "logo-list.njk" import logoList %}
+{% from "image-list.njk" import imageList %}
 {% from "featured-case-studies.njk" import featuredCaseStudies %}
-{% from "tech-cards.njk" import techCards %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "quote.njk" import quote %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "contact-form-LP.njk" import contactFormLP %}
+{%
+  set 'tech_1' = {
+  "logo": "rust",
+  "link": "rust-consulting",
+  "linkText": "Rust"
+  }
+%}
+{%
+  set 'tech_2' = {
+  "logo": "ember",
+  "link": "ember-consulting",
+  "linkText": "Ember"
+  }
+%}
+{%
+  set 'tech_3' = {
+  "logo": "svelte",
+  "link": "svelte-consulting",
+  "linkText": "Svelte"
+  }
+%}
 {%
   set 'content' = {
-  "title": "Team Up With Us To Go Further!",
-  "text": "We know the code, tools, and practices that go into successful development. We partner with our clients to solve their toughest tech challenges by sharing our skills and expertise as teammates.",
-  "image": "/assets/images/hero/home.jpg",
-  "alt": "Balloons flying over the sky",
-  "loading": "eager"
-  }
+    "title": "Together We Go Further!",
+    "text": "We know the tools and practices required for successful&nbsp;development. <br/>
+  We partner with you to solve your toughest tech challenges as&nbsp;teammates.",
+    "image": "/assets/images/hero/toys-hero.webp",
+    "alt": "Toys arranged in a neat grid",
+    "loading": "eager",
+    "technologies": [tech_1, tech_2, tech_3]
+    }
 %}
 {{ colorHero('purple', content) }}
-{%
-  set 'content' = {
-  "title": "Discover our services",
-  "subtitle": "Transform bold ideas into shipped products"
-  }
-%}
-{{ featuredServices(services['services-list'], content) }}
+
 {%
   set logoCompanies = [
   'Timify',
@@ -48,129 +65,68 @@ eleventyImport:
 %}
 {{ logoList(logoCompanies) }}
 
-<section class="mb-10">
+<section class="py-7 background-aqua" id="our-clients-say">
+  <div class="container container--lg quote-homepage">
+    <h1 class="color-white">Our Clients Say</h1>
+    {%
+      set 'content' = {
+      "text": "Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way.”",
+      "source": "Andreas Hartel",
+      "position": "Senior Engineer at Aleph Alpha",
+      "styling": "redesigned"
+      }
+    %}
+    {{ quote(content) }}
+  </div>
+</section>
+
+<section class="pt-7" id="what-sets-us-apart">
+  <div class="container container--lg">
+    <h1 class="mb-2">What Sets Us Apart</h1>
+    <p class="medium">
+      We focus on a core set of technologies and commit to them fully. For each, we build teams
+      around industry leaders, maintainers, authors, and long-time contributors — people who don't
+      just use the technology, but help shape it.
+    </p>
+    <p class="medium">
+      We invest in the communities we're part of by running conferences like
+      <a href="https://eurorust.eu" class="link-black">EuroRust</a>,
+      <a href="https://emberfest.eu" class="link-black">EmberFest</a>, and
+      <a href="https://www.sveltesummit.com" class="link-black">Svelte Summit</a>, supporting
+      foundations like the Rust Foundation, and contributing to open source and learning resources.
+      Through real-world application and continuous experimentation, we help advance the state of
+      the art.
+    </p>
+  </div>
+</section>
+{%
+  set images = [
+    ['eurorust', 'webp'],
+    ['emberfest', 'svg'],
+    ['sveltesummit', 'svg'],
+    ['rust-foundation', 'png'],
+    ['ember-initiative', 'svg'],
+    ['svelte-custom-renderers', 'svg'],
+    ['100-exercises-to-learn-rust', 'webp'],
+    ['ember-simple-auth', 'png'],
+    ['ember-test-selectors', 'png'],
+    ['sheepdog', 'svg'],
+    ['ember-europe', 'jpg']
+  ]
+%}
+{{ imageList(images) }}
+
+{{ contactFormLP(null) }}
+
+<section>
   {%
     set imageData = {
-    "imgPath": "/assets/images/photos/balloons-top.jpeg",
-    "alt": "Server room",
+    "imgPath": "/assets/images/photos/toys.webp",
+    "alt": "Children's toys",
     "sizes": "100vw",
     "loading": "lazy",
     "sizesArray": [760, 1440, 1920]
     }
   %}
-  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
+  {{ imageAspectRatio(imageData, "4/1", "35/19") }}
 </section>
-
-{% set clients = ['qonto', 'experteer', 'trainline', 'rail-europe'] %}
-{{ featuredCaseStudies(clients, 'Browse our work') }}
-
-<div class="container container--lg quote-section">
-  {%
-    set content = {
-    "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
-    "source": "Jürgen Witte, CPO at Rail Europe",
-    "image": "/assets/images/photos/juergen-witte.png",
-    "alt": "Jürgen Witte, smiling at the camera wearing a light blue shirt and blue blazer",
-    "loading": "lazy"
-    }
-  %}
-  {{ quote(content) }}
-</div>
-
-{%
-  set 'tech_1' = {
-  "title": "Rust is a competitive advantage",
-  "logo": "rust",
-  "link": "rust-consulting"
-  }
-%}
-{%
-  set 'tech_2' = {
-  "title": "Svelte is the future of frontend development",
-  "logo": "svelte",
-  "link": "svelte-consulting"
-  }
-%}
-{%
-  set 'tech_3' = {
-  "title": "Ember is our expertise",
-  "logo": "ember",
-  "link": "ember-consulting"
-  }
-%}
-{% set technologies = [tech_1, tech_2, tech_3] %}
-{{ techCards('team-reinforcement_technologies', 'Technologies', 'Our skillset is based on a core set of technologies that cover architecture, backend and frontend development with: ', technologies) }}
-{%
-  set 'content' = {
-  "title": "Workshops & Training",
-  "text": "We teach teams how to build sustainable products, help them adopt new technologies, and set them up for long-term success.",
-  "linkUrl": "/services/workshops/",
-  "linkText": "Check out our workshops catalog"
-  }
-%}
-{{ ctaBanner('purple', 'default', content) }}
-{%- include 'mainmatter-team.njk' -%}
-
-{% if collections.calendar.length > 0 %}
-  <section class="my-10">
-    <div class="container container--xl">
-      <h2 class="section__introduction h5">Upcoming events</h2>
-      <ol class="cards__grid">
-        {% for event in collections.calendar %}
-          {% if loop.index < 4 %}
-            <div class="card__grid-element grid-event-card__grid-element">
-              {% if event.data.hero.image %}
-                <div class="card__background-wrapper">
-                  {% image event.data.hero.image, event.data.hero.imageAlt, '(min-width: 48em) 60rem, 90vw', "lazy", 'card__background-image', [760, 1440, 1920] %}
-                </div>
-              {% endif %}
-              <a href="{{ event.data.url }}" class="card__link">
-                <span class="screenreader">{{ event.data.title }}</span>
-              </a>
-              <div class="card__hover"></div>
-              <div class="card__logo-wrapper">
-                {% image event.data.image, "", '8rem', 'lazy', 'grid-event-card__logo', [264, 420, 500] %}
-              </div>
-
-              <div class="card__content">
-                <div class="mb-015">
-                  <p class="h4" aria-hidden="true">{{ event.data.title }}</p>
-                  {% if event.data.location %}
-                    <p class="card__subtitle mt-0">{{ event.data.location }}</p>
-                  {% endif %}
-                </div>
-                <div class="card__link-wrapper">
-                  <span><p class="small">{{ event.date | monthDayYear }}</p></span>
-                  <span class="card__link-arrow">{% include 'svg/arrow.njk' %}</span>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-        {% endfor %}
-      </ol>
-    </div>
-  </section>
-{% endif %}
-
-<section class="mt-15 mb-0">
-  {%
-    set imageData = {
-    "imgPath": "/assets/images/photos/balloons-line.jpeg",
-    "alt": "Server room",
-    "sizes": "100vw",
-    "loading": "lazy",
-    "sizesArray": [760, 1440, 1920]
-    }
-  %}
-  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
-</section>
-{% include "global/default-newsletter-cta.njk" %}
-{%
-  set 'content' = {
-  "title": "Team up with us to go further!",
-  "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
-  "linkUrl": "/contact",
-  "linkText": "Get in touch"
-  }
-%}
-{{ ctaBanner('purple', 'full', content) }}

@@ -6,6 +6,10 @@
   position: relative;
   max-width: 80%;
 
+  &.ember {
+    max-width: 55%;
+  }
+
   &.rust {
     max-width: 60%;
   }
