@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
 /**
  * Silktide Consent Manager v2.0
  * https://silktide.com/consent-manager/
  * This class is typically not instantiated directly. Use the global
  * window.silktideConsentManager API below.
- * 
+ *
  * @class
  * @param {Object} config - Configuration object for the consent manager
  */
@@ -15,8 +15,8 @@ class SilktideConsentManager {
     this.config = config;
 
     // Set default eventName if not provided
-    this.config.eventName = this.config.eventName || 'stcm_consent_update';
-    
+    this.config.eventName = this.config.eventName || "stcm_consent_update";
+
     // Set default debug mode (false = no console logs in production)
     // Ensure debug is a boolean, default to false
     this.config.debug = this.config.debug === true;
@@ -59,13 +59,13 @@ class SilktideConsentManager {
    */
   _validateConfig(config) {
     if (!config) {
-      throw new Error('Silktide Consent Manager: config is required');
+      throw new Error("Silktide Consent Manager: config is required");
     }
     if (!config.consentTypes || !Array.isArray(config.consentTypes)) {
-      throw new Error('Silktide Consent Manager: config.consentTypes must be an array');
+      throw new Error("Silktide Consent Manager: config.consentTypes must be an array");
     }
     if (config.consentTypes.length === 0) {
-      throw new Error('Silktide Consent Manager: config.consentTypes cannot be empty');
+      throw new Error("Silktide Consent Manager: config.consentTypes cannot be empty");
     }
   }
 
@@ -76,12 +76,15 @@ class SilktideConsentManager {
    */
   _checkLocalStorageAvailable() {
     try {
-      const testKey = '__stcm_test__';
-      localStorage.setItem(testKey, '1');
+      const testKey = "__stcm_test__";
+      localStorage.setItem(testKey, "1");
       localStorage.removeItem(testKey);
       return true;
     } catch (e) {
-      console.warn('Silktide Consent Manager: localStorage is not available. Consent choices will not persist.', e);
+      console.warn(
+        "Silktide Consent Manager: localStorage is not available. Consent choices will not persist.",
+        e
+      );
       return false;
     }
   }
@@ -99,7 +102,7 @@ class SilktideConsentManager {
     try {
       return localStorage.getItem(key);
     } catch (e) {
-      console.warn('Silktide Consent Manager: Error reading from localStorage', e);
+      console.warn("Silktide Consent Manager: Error reading from localStorage", e);
       return null;
     }
   }
@@ -119,7 +122,7 @@ class SilktideConsentManager {
       localStorage.setItem(key, value);
       return true;
     } catch (e) {
-      console.warn('Silktide Consent Manager: Error writing to localStorage', e);
+      console.warn("Silktide Consent Manager: Error writing to localStorage", e);
       return false;
     }
   }
@@ -138,7 +141,7 @@ class SilktideConsentManager {
       localStorage.removeItem(key);
       return true;
     } catch (e) {
-      console.warn('Silktide Consent Manager: Error removing from localStorage', e);
+      console.warn("Silktide Consent Manager: Error removing from localStorage", e);
       return false;
     }
   }
@@ -178,11 +181,12 @@ class SilktideConsentManager {
       for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
         // Match both old and new key patterns
-        if (key && (
-          key.startsWith('silktideCookieBanner_') ||
-          key.startsWith('silktideCookieChoice_') ||
-          key.startsWith('stcm.')
-        )) {
+        if (
+          key &&
+          (key.startsWith("silktideCookieBanner_") ||
+            key.startsWith("silktideCookieChoice_") ||
+            key.startsWith("stcm."))
+        ) {
           keysToRemove.push(key);
         }
       }
@@ -199,23 +203,23 @@ class SilktideConsentManager {
 
   // Old key builders (for migration only)
   _buildOldConsentKey(typeId) {
-    const suffix = this.config.namespace ? `_${this.config.namespace}` : '';
+    const suffix = this.config.namespace ? `_${this.config.namespace}` : "";
     return `silktideCookieChoice_${typeId}${suffix}`;
   }
 
   _buildOldHasConsentedKey() {
-    const suffix = this.config.namespace ? `_${this.config.namespace}` : '';
+    const suffix = this.config.namespace ? `_${this.config.namespace}` : "";
     return `silktideCookieBanner_InitialChoice${suffix}`;
   }
 
   // New key builders
   _buildConsentKey(typeId) {
-    const ns = this.config.namespace ? `${this.config.namespace}.` : '';
+    const ns = this.config.namespace ? `${this.config.namespace}.` : "";
     return `stcm.${ns}consent.${typeId}`;
   }
 
   _buildHasConsentedKey() {
-    const ns = this.config.namespace ? `${this.config.namespace}.` : '';
+    const ns = this.config.namespace ? `${this.config.namespace}.` : "";
     return `stcm.${ns}hasConsented`;
   }
 
@@ -241,7 +245,7 @@ class SilktideConsentManager {
     }
 
     // Return null if no value exists, otherwise return boolean
-    return value === null ? null : value === 'true';
+    return value === null ? null : value === "true";
   }
 
   /**
@@ -284,7 +288,7 @@ class SilktideConsentManager {
 
   setHasConsented() {
     const newKey = this._buildHasConsentedKey();
-    this._setLocalStorageItem(newKey, '1');
+    this._setLocalStorageItem(newKey, "1");
 
     // Cleanup old key
     const oldKey = this._buildOldHasConsentedKey();
@@ -307,7 +311,7 @@ class SilktideConsentManager {
     const { url, load, type, crossorigin, integrity } = scriptConfig;
 
     if (!url) {
-      console.warn('Silktide Consent Manager: Script URL is required', scriptConfig);
+      console.warn("Silktide Consent Manager: Script URL is required", scriptConfig);
       return;
     }
 
@@ -317,12 +321,12 @@ class SilktideConsentManager {
       return; // Already injected
     }
 
-    const script = document.createElement('script');
+    const script = document.createElement("script");
     script.src = url;
     script.dataset.consentId = consentId; // Track which consent type added this
 
-    if (load === 'async') script.async = true;
-    if (load === 'defer') script.defer = true;
+    if (load === "async") script.async = true;
+    if (load === "defer") script.defer = true;
     if (type) script.type = type;
     if (crossorigin) script.crossOrigin = crossorigin;
     if (integrity) script.integrity = integrity;
@@ -362,8 +366,8 @@ class SilktideConsentManager {
   // Wrapper
   // ----------------------------------------------------------------
   createWrapper() {
-    this.wrapper = document.createElement('div');
-    this.wrapper.id = 'stcm-wrapper';
+    this.wrapper = document.createElement("div");
+    this.wrapper.id = "stcm-wrapper";
     document.body.insertBefore(this.wrapper, document.body.firstChild);
   }
 
@@ -372,7 +376,7 @@ class SilktideConsentManager {
   // ----------------------------------------------------------------
   createWrapperChild(htmlContent, id) {
     // Create child element
-    const child = document.createElement('div');
+    const child = document.createElement("div");
     child.id = id;
     child.innerHTML = htmlContent;
 
@@ -390,31 +394,31 @@ class SilktideConsentManager {
   // Backdrop
   // ----------------------------------------------------------------
   createBackdrop() {
-    this.backdrop = this.createWrapperChild(null, 'stcm-backdrop');
+    this.backdrop = this.createWrapperChild(null, "stcm-backdrop");
 
     // Add click handler to nudge banner/modal when backdrop is clicked
-    this.backdrop.addEventListener('click', () => {
+    this.backdrop.addEventListener("click", () => {
       this.nudgePrompt();
     });
   }
 
   showBackdrop() {
     if (this.backdrop) {
-      this.backdrop.style.display = 'block';
+      this.backdrop.style.display = "block";
     }
     // Trigger optional onBackdropOpen callback
-    if (typeof this.config.onBackdropOpen === 'function') {
+    if (typeof this.config.onBackdropOpen === "function") {
       this.config.onBackdropOpen();
     }
   }
 
   hideBackdrop() {
     if (this.backdrop) {
-      this.backdrop.style.display = 'none';
+      this.backdrop.style.display = "none";
     }
 
     // Trigger optional onBackdropClose callback
-    if (typeof this.config.onBackdropClose === 'function') {
+    if (typeof this.config.onBackdropClose === "function") {
       this.config.onBackdropClose();
     }
   }
@@ -430,11 +434,11 @@ class SilktideConsentManager {
 
   /**
    * Nudge the consent prompt to draw attention when backdrop is clicked
-   * 
+   *
    * Note: This deliberately only nudges the prompt, not the modal.
    * The prompt is the initial banner that requires immediate action.
    * Nudging the modal would be disruptive to users reviewing preferences.
-   * 
+   *
    * @private
    */
   nudgePrompt() {
@@ -443,29 +447,33 @@ class SilktideConsentManager {
     }
 
     // Remove class if it exists
-    this.prompt.classList.remove('stcm-nudge');
+    this.prompt.classList.remove("stcm-nudge");
 
     // Force reflow to restart animation
     void this.prompt.offsetWidth;
 
     // Add class to trigger animation
-    this.prompt.classList.add('stcm-nudge');
+    this.prompt.classList.add("stcm-nudge");
 
     // Remove class when animation completes (CSS defines duration)
-    this.prompt.addEventListener('animationend', () => {
-      if (this.prompt) {
-        this.prompt.classList.remove('stcm-nudge');
-      }
-    }, { once: true });
+    this.prompt.addEventListener(
+      "animationend",
+      () => {
+        if (this.prompt) {
+          this.prompt.classList.remove("stcm-nudge");
+        }
+      },
+      { once: true }
+    );
   }
 
   // update the checkboxes in the preferences with the values from localStorage
   updateCheckboxState(saveToStorage = false) {
-    const preferencesSection = this.preferences.querySelector('#stcm-form');
+    const preferencesSection = this.preferences.querySelector("#stcm-form");
     const checkboxes = preferencesSection.querySelectorAll('input[type="checkbox"]');
 
-    checkboxes.forEach((checkbox) => {
-      const [, consentId] = checkbox.id.split('consent-');
+    checkboxes.forEach(checkbox => {
+      const [, consentId] = checkbox.id.split("consent-");
       const consentType = this.config.consentTypes.find(type => type.id === consentId);
 
       if (!consentType) return;
@@ -498,9 +506,9 @@ class SilktideConsentManager {
             this.triggerConsentIntegration(consentType, currentState);
 
             // Run appropriate callback
-            if (currentState && typeof consentType.onAccept === 'function') {
+            if (currentState && typeof consentType.onAccept === "function") {
               consentType.onAccept();
-            } else if (!currentState && typeof consentType.onReject === 'function') {
+            } else if (!currentState && typeof consentType.onReject === "function") {
               consentType.onReject();
             }
           }
@@ -541,25 +549,25 @@ class SilktideConsentManager {
     const gtagParams = Array.isArray(consentType.gtag) ? consentType.gtag : [consentType.gtag];
 
     // If GTM exists, call gtag
-    if (typeof gtag === 'function') {
-      const consentState = accepted ? 'granted' : 'denied';
+    if (typeof gtag === "function") {
+      const consentState = accepted ? "granted" : "denied";
       const consentUpdate = {};
 
       gtagParams.forEach(param => {
         consentUpdate[param] = consentState;
       });
 
-      gtag('consent', 'update', consentUpdate);
-    } else if (gtagParams.includes('analytics_storage')) {
+      gtag("consent", "update", consentUpdate);
+    } else if (gtagParams.includes("analytics_storage")) {
       // Otherwise, if Silktide Analytics exists, fire consent event
-      if (typeof window.silktide === 'function') {
-        window.silktide(accepted ? 'consent' : 'unconsent');
+      if (typeof window.silktide === "function") {
+        window.silktide(accepted ? "consent" : "unconsent");
       }
     }
 
     // Push generic consent update event to dataLayer for GTM tag triggers
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ 'event': this.config.eventName });
+    window.dataLayer.push({ event: this.config.eventName });
   }
 
   /**
@@ -575,18 +583,18 @@ class SilktideConsentManager {
     let needsReload = false;
 
     // First pass: identify changes and build gtag consent object
-    this.config.consentTypes.forEach((type) => {
+    this.config.consentTypes.forEach(type => {
       const newState = consentStates[type.id];
       const previousState = this.getConsentChoice(type.id);
-      
+
       // Check if this consent actually changed
       if (newState !== previousState) {
         hasChanges = true;
-        
+
         changes.push({
           type: type,
           newState: newState,
-          previousState: previousState
+          previousState: previousState,
         });
 
         // Check if consent was revoked and had scripts
@@ -599,7 +607,7 @@ class SilktideConsentManager {
         // Build gtag consent parameters
         if (type.gtag) {
           const gtagParams = Array.isArray(type.gtag) ? type.gtag : [type.gtag];
-          const consentState = newState ? 'granted' : 'denied';
+          const consentState = newState ? "granted" : "denied";
           gtagParams.forEach(param => {
             gtagConsentUpdate[param] = consentState;
           });
@@ -618,35 +626,35 @@ class SilktideConsentManager {
     });
 
     // Call gtag once with all consent updates
-    if (Object.keys(gtagConsentUpdate).length > 0 && typeof gtag === 'function') {
-      gtag('consent', 'update', gtagConsentUpdate);
+    if (Object.keys(gtagConsentUpdate).length > 0 && typeof gtag === "function") {
+      gtag("consent", "update", gtagConsentUpdate);
       if (this.config.debug) {
-        console.log('✓ gtag consent updated (from user action):', gtagConsentUpdate);
+        console.log("✓ gtag consent updated (from user action):", gtagConsentUpdate);
       }
     } else if (gtagConsentUpdate.analytics_storage) {
       // Silktide Analytics fallback
-      if (typeof window.silktide === 'function') {
-        const analyticsGranted = gtagConsentUpdate.analytics_storage === 'granted';
-        window.silktide(analyticsGranted ? 'consent' : 'unconsent');
+      if (typeof window.silktide === "function") {
+        const analyticsGranted = gtagConsentUpdate.analytics_storage === "granted";
+        window.silktide(analyticsGranted ? "consent" : "unconsent");
       }
     }
 
     // Fire single GTM event
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ 'event': this.config.eventName });
+    window.dataLayer.push({ event: this.config.eventName });
     if (this.config.debug) {
-      console.log('▶ GTM Event Sent: ' + this.config.eventName + ' (from user action)');
+      console.log("▶ GTM Event Sent: " + this.config.eventName + " (from user action)");
     }
 
     // Third pass: run callbacks and inject scripts
     changes.forEach(({ type, newState }) => {
       if (newState) {
         this._injectConsentScripts(type);
-        if (typeof type.onAccept === 'function') {
+        if (typeof type.onAccept === "function") {
           type.onAccept();
         }
       } else {
-        if (typeof type.onReject === 'function') {
+        if (typeof type.onReject === "function") {
           type.onReject();
         }
       }
@@ -676,7 +684,7 @@ class SilktideConsentManager {
 
     // Build consent states object for all consent types
     const consentStates = {};
-    this.config.consentTypes.forEach((type) => {
+    this.config.consentTypes.forEach(type => {
       if (type.required) {
         consentStates[type.id] = true;
       } else {
@@ -688,9 +696,9 @@ class SilktideConsentManager {
     this.batchUpdateConsents(consentStates);
 
     // Trigger optional onAcceptAll/onRejectAll callbacks
-    if (accepted && typeof this.config.onAcceptAll === 'function') {
+    if (accepted && typeof this.config.onAcceptAll === "function") {
       this.config.onAcceptAll();
-    } else if (!accepted && typeof this.config.onRejectAll === 'function') {
+    } else if (!accepted && typeof this.config.onRejectAll === "function") {
       this.config.onRejectAll();
     }
 
@@ -739,7 +747,7 @@ class SilktideConsentManager {
     const rejectedConsents = this.getRejectedConsents();
 
     // Process all consent types and build one comprehensive gtag object
-    this.config.consentTypes.forEach((type) => {
+    this.config.consentTypes.forEach(type => {
       // Handle required consents (always inject scripts and run onAccept)
       if (type.required) {
         // Set to localStorage immediately if not already set (prevents duplicate firing)
@@ -748,19 +756,19 @@ class SilktideConsentManager {
           this.setConsentChoice(type.id, true);
           isFirstConsentLoad = true; // Required consent was just set for first time
         }
-        
+
         this._injectConsentScripts(type);
-        
+
         // Add required consents to gtag update (always granted)
         if (type.gtag) {
           hasGtagUpdates = true;
           const gtagParams = Array.isArray(type.gtag) ? type.gtag : [type.gtag];
           gtagParams.forEach(param => {
-            gtagConsentUpdate[param] = 'granted';
+            gtagConsentUpdate[param] = "granted";
           });
         }
-        
-        if (typeof type.onAccept === 'function') {
+
+        if (typeof type.onAccept === "function") {
           type.onAccept();
         }
         return;
@@ -769,16 +777,16 @@ class SilktideConsentManager {
       // Check if accepted
       if (acceptedConsents[type.id]) {
         this._injectConsentScripts(type);
-        
+
         if (type.gtag) {
           hasGtagUpdates = true;
           const gtagParams = Array.isArray(type.gtag) ? type.gtag : [type.gtag];
           gtagParams.forEach(param => {
-            gtagConsentUpdate[param] = 'granted';
+            gtagConsentUpdate[param] = "granted";
           });
         }
 
-        if (typeof type.onAccept === 'function') {
+        if (typeof type.onAccept === "function") {
           type.onAccept();
         }
       }
@@ -788,37 +796,37 @@ class SilktideConsentManager {
           hasGtagUpdates = true;
           const gtagParams = Array.isArray(type.gtag) ? type.gtag : [type.gtag];
           gtagParams.forEach(param => {
-            gtagConsentUpdate[param] = 'denied';
+            gtagConsentUpdate[param] = "denied";
           });
         }
 
-        if (typeof type.onReject === 'function') {
+        if (typeof type.onReject === "function") {
           type.onReject();
         }
       }
     });
 
     // Call gtag ONCE with all consent states (both granted and denied)
-    if (hasGtagUpdates && typeof gtag === 'function') {
-      gtag('consent', 'update', gtagConsentUpdate);
+    if (hasGtagUpdates && typeof gtag === "function") {
+      gtag("consent", "update", gtagConsentUpdate);
       if (this.config.debug) {
-        console.log('✓ gtag consent updated (on page load):', gtagConsentUpdate);
+        console.log("✓ gtag consent updated (on page load):", gtagConsentUpdate);
       }
-    } else if (gtagConsentUpdate.analytics_storage && typeof window.silktide === 'function') {
+    } else if (gtagConsentUpdate.analytics_storage && typeof window.silktide === "function") {
       // Silktide Analytics fallback
-      const analyticsGranted = gtagConsentUpdate.analytics_storage === 'granted';
-      window.silktide(analyticsGranted ? 'consent' : 'unconsent');
+      const analyticsGranted = gtagConsentUpdate.analytics_storage === "granted";
+      window.silktide(analyticsGranted ? "consent" : "unconsent");
     }
 
     // Fire GTM event if we have any granted consents (so GTM tags can trigger)
     // Check if any consent is granted (not just denied)
-    const hasGrantedConsents = Object.values(gtagConsentUpdate).some(value => value === 'granted');
+    const hasGrantedConsents = Object.values(gtagConsentUpdate).some(value => value === "granted");
     if (hasGtagUpdates && hasGrantedConsents) {
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ 'event': this.config.eventName });
+      window.dataLayer.push({ event: this.config.eventName });
       if (this.config.debug) {
-        const eventContext = isFirstConsentLoad ? 'from first page load' : 'from return visit';
-        console.log('▶ GTM Event Sent: ' + this.config.eventName + ' (' + eventContext + ')');
+        const eventContext = isFirstConsentLoad ? "from first page load" : "from return visit";
+        console.log("▶ GTM Event Sent: " + this.config.eventName + " (" + eventContext + ")");
       }
     }
   }
@@ -827,7 +835,7 @@ class SilktideConsentManager {
    * Run through all of the consent callbacks based on the current localStorage values
    */
   runStoredConsentCallbacks() {
-    this.config.consentTypes.forEach((type) => {
+    this.config.consentTypes.forEach(type => {
       const accepted = this.getConsentChoice(type.id);
 
       if (accepted) {
@@ -839,11 +847,11 @@ class SilktideConsentManager {
 
       // Set localStorage and run accept/reject callbacks
       if (accepted) {
-        if (typeof type.onAccept === 'function') {
+        if (typeof type.onAccept === "function") {
           type.onAccept();
         }
       } else {
-        if (typeof type.onReject === 'function') {
+        if (typeof type.onReject === "function") {
           type.onReject();
         }
       }
@@ -853,7 +861,7 @@ class SilktideConsentManager {
   // ----------------------------------------------------------------
   // Banner
   // ----------------------------------------------------------------
-  
+
   /**
    * Get banner HTML content
    * @private
@@ -865,32 +873,34 @@ class SilktideConsentManager {
       "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic.</p>";
 
     // Accept button
-    const acceptAllButtonText = this.config.text?.prompt?.acceptAllButtonText || 'Accept all';
+    const acceptAllButtonText = this.config.text?.prompt?.acceptAllButtonText || "Accept all";
     const acceptAllButtonLabel = this.config.text?.prompt?.acceptAllButtonAccessibleLabel;
     const acceptAllButton = `<button class="stcm-accept-all stcm-button stcm-button-primary"${
       acceptAllButtonLabel && acceptAllButtonLabel !== acceptAllButtonText
         ? ` aria-label="${acceptAllButtonLabel}"`
-        : ''
+        : ""
     }>${acceptAllButtonText}</button>`;
 
     // Reject button
-    const rejectNonEssentialButtonText = this.config.text?.prompt?.rejectNonEssentialButtonText || 'Reject non-essential';
-    const rejectNonEssentialButtonLabel = this.config.text?.prompt?.rejectNonEssentialButtonAccessibleLabel;
+    const rejectNonEssentialButtonText =
+      this.config.text?.prompt?.rejectNonEssentialButtonText || "Reject non-essential";
+    const rejectNonEssentialButtonLabel =
+      this.config.text?.prompt?.rejectNonEssentialButtonAccessibleLabel;
     const rejectNonEssentialButton = `<button class="stcm-reject-all stcm-button stcm-button-primary"${
-      rejectNonEssentialButtonLabel && rejectNonEssentialButtonLabel !== rejectNonEssentialButtonText
+      rejectNonEssentialButtonLabel &&
+      rejectNonEssentialButtonLabel !== rejectNonEssentialButtonText
         ? ` aria-label="${rejectNonEssentialButtonLabel}"`
-        : ''
+        : ""
     }>${rejectNonEssentialButtonText}</button>`;
 
     // Preferences button
-    const preferencesButtonText = this.config.text?.prompt?.preferencesButtonText || 'Preferences';
+    const preferencesButtonText = this.config.text?.prompt?.preferencesButtonText || "Preferences";
     const preferencesButtonLabel = this.config.text?.prompt?.preferencesButtonAccessibleLabel;
     const preferencesButton = `<button class="stcm-preferences-button"${
       preferencesButtonLabel && preferencesButtonLabel !== preferencesButtonText
         ? ` aria-label="${preferencesButtonLabel}"`
-        : ''
+        : ""
     }><span>${preferencesButtonText}</span></button>`;
-
 
     // Silktide logo link
     const silktideLogo = `
@@ -926,31 +936,36 @@ class SilktideConsentManager {
 
   createBanner() {
     // Create prompt element
-    this.prompt = this.createWrapperChild(this.getBannerContent(), 'stcm-banner');
+    this.prompt = this.createWrapperChild(this.getBannerContent(), "stcm-banner");
 
     // Add positioning class from config
     if (this.prompt && this.config.prompt?.position) {
       // Map old position names to new stcm- prefixed names
       const positionMap = {
-        'center': 'stcm-pos-center',
-        'bottomLeft': 'stcm-pos-bottom-left',
-        'bottomCenter': 'stcm-pos-bottom-center',
-        'bottomRight': 'stcm-pos-bottom-right'
+        center: "stcm-pos-center",
+        bottomLeft: "stcm-pos-bottom-left",
+        bottomCenter: "stcm-pos-bottom-center",
+        bottomRight: "stcm-pos-bottom-right",
       };
-      const mappedPosition = positionMap[this.config.prompt.position] || this.config.prompt.position;
+      const mappedPosition =
+        positionMap[this.config.prompt.position] || this.config.prompt.position;
       this.prompt.classList.add(mappedPosition);
     }
 
     // Lock in final state after slide-in animation completes
     // This allows nudge animation to work without conflicts
-    this.prompt.addEventListener('animationend', () => {
-      if (this.prompt) {
-        this.prompt.classList.add('stcm-loaded');
-      }
-    }, { once: true });
+    this.prompt.addEventListener(
+      "animationend",
+      () => {
+        if (this.prompt) {
+          this.prompt.classList.add("stcm-loaded");
+        }
+      },
+      { once: true }
+    );
 
     // Trigger optional onPromptOpen callback
-    if (this.prompt && typeof this.config.onPromptOpen === 'function') {
+    if (this.prompt && typeof this.config.onPromptOpen === "function") {
       this.config.onPromptOpen();
     }
   }
@@ -961,7 +976,7 @@ class SilktideConsentManager {
       this.prompt = null;
 
       // Trigger optional onPromptClose callback
-      if (typeof this.config.onPromptClose === 'function') {
+      if (typeof this.config.onPromptClose === "function") {
         this.config.onPromptClose();
       }
     }
@@ -983,7 +998,7 @@ class SilktideConsentManager {
   // ----------------------------------------------------------------
   // Modal
   // ----------------------------------------------------------------
-  
+
   /**
    * Get modal HTML content
    * @private
@@ -991,7 +1006,7 @@ class SilktideConsentManager {
    */
   getModalContent() {
     const preferencesTitle =
-      this.config.text?.preferences?.title || 'Customize your cookie preferences';
+      this.config.text?.preferences?.title || "Customize your cookie preferences";
 
     const preferencesDescription =
       this.config.text?.preferences?.description ||
@@ -1000,44 +1015,45 @@ class SilktideConsentManager {
     // Preferences button
     const preferencesButtonLabel = this.config.text?.prompt?.preferencesButtonAccessibleLabel;
 
-    const closeModalButton = `<button class="stcm-modal-close"${preferencesButtonLabel ? ` aria-label="${preferencesButtonLabel}"` : ''}>
+    const closeModalButton = `<button class="stcm-modal-close"${preferencesButtonLabel ? ` aria-label="${preferencesButtonLabel}"` : ""}>
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M19.4081 3.41559C20.189 2.6347 20.189 1.36655 19.4081 0.585663C18.6272 -0.195221 17.3591 -0.195221 16.5782 0.585663L10 7.17008L3.41559 0.59191C2.6347 -0.188974 1.36655 -0.188974 0.585663 0.59191C-0.195221 1.37279 -0.195221 2.64095 0.585663 3.42183L7.17008 10L0.59191 16.5844C-0.188974 17.3653 -0.188974 18.6335 0.59191 19.4143C1.37279 20.1952 2.64095 20.1952 3.42183 19.4143L10 12.8299L16.5844 19.4081C17.3653 20.189 18.6335 20.189 19.4143 19.4081C20.1952 18.6272 20.1952 17.3591 19.4143 16.5782L12.8299 10L19.4081 3.41559Z"/>
       </svg>
     </button>`;
 
-
     const consentTypes = this.config.consentTypes || [];
     const acceptedConsentMap = this.getAcceptedConsents();
 
     // Save button
-    const saveButtonText = this.config.text?.preferences?.saveButtonText || 'Save and close';
+    const saveButtonText = this.config.text?.preferences?.saveButtonText || "Save and close";
     const saveButtonLabel = this.config.text?.preferences?.saveButtonAccessibleLabel;
     const saveButton = `<button class="stcm-modal-save stcm-button stcm-button-primary"${
       saveButtonLabel && saveButtonLabel !== saveButtonText
         ? ` aria-label="${saveButtonLabel}"`
-        : ''
+        : ""
     }>${saveButtonText}</button>`;
 
     // Reject button
-    const rejectNonEssentialButtonText = this.config.text?.prompt?.rejectNonEssentialButtonText || 'Reject non-essential';
-    const rejectNonEssentialButtonLabel = this.config.text?.prompt?.rejectNonEssentialButtonAccessibleLabel;
+    const rejectNonEssentialButtonText =
+      this.config.text?.prompt?.rejectNonEssentialButtonText || "Reject non-essential";
+    const rejectNonEssentialButtonLabel =
+      this.config.text?.prompt?.rejectNonEssentialButtonAccessibleLabel;
     const rejectNonEssentialButton = `<button class="stcm-modal-reject-all stcm-button stcm-button-primary"${
-      rejectNonEssentialButtonLabel && rejectNonEssentialButtonLabel !== rejectNonEssentialButtonText
+      rejectNonEssentialButtonLabel &&
+      rejectNonEssentialButtonLabel !== rejectNonEssentialButtonText
         ? ` aria-label="${rejectNonEssentialButtonLabel}"`
-        : ''
+        : ""
     }>${rejectNonEssentialButtonText}</button>`;
 
     // Credit link
-    const creditLinkText = this.config.text?.preferences?.creditLinkText || 'Get this consent manager for free';
+    const creditLinkText =
+      this.config.text?.preferences?.creditLinkText || "Get this consent manager for free";
     const creditLinkAccessibleLabel = this.config.text?.preferences?.creditLinkAccessibleLabel;
     const creditLink = `<a class="stcm-credit-link" href="https://silktide.com/consent-manager" target="_blank" rel="noreferrer"${
       creditLinkAccessibleLabel && creditLinkAccessibleLabel !== creditLinkText
         ? ` aria-label="${creditLinkAccessibleLabel}"`
-        : ''
+        : ""
     }>${creditLinkText}</a>`;
-
-
 
     const modalContent = `
       <header>
@@ -1047,7 +1063,7 @@ class SilktideConsentManager {
       ${preferencesDescription}
       <section id="stcm-form">
         ${consentTypes
-          .map((type) => {
+          .map(type => {
             const accepted = acceptedConsentMap[type.id];
             let isChecked = false;
 
@@ -1068,8 +1084,8 @@ class SilktideConsentManager {
                 <div class="stcm-consent-description">${type.description}</div>
                 <label class="stcm-toggle" for="consent-${type.id}">
                   <input type="checkbox" id="consent-${type.id}" ${
-              type.required ? 'checked disabled' : isChecked ? 'checked' : ''
-            } />
+                    type.required ? "checked disabled" : isChecked ? "checked" : ""
+                  } />
                   <span class="stcm-toggle-track" aria-hidden="true"></span>
                   <span class="stcm-toggle-thumb" aria-hidden="true"></span>
                   <span class="stcm-toggle-off" aria-hidden="true">Off</span>
@@ -1079,7 +1095,7 @@ class SilktideConsentManager {
             </fieldset>
           `;
           })
-          .join('')}
+          .join("")}
       </section>
       <footer>
         ${saveButton}
@@ -1093,13 +1109,13 @@ class SilktideConsentManager {
 
   createModal() {
     // Create preferences element
-    this.preferences = this.createWrapperChild(this.getModalContent(), 'stcm-modal');
+    this.preferences = this.createWrapperChild(this.getModalContent(), "stcm-modal");
   }
 
   toggleModal(show) {
     if (!this.preferences) return;
 
-    this.preferences.style.display = show ? 'flex' : 'none';
+    this.preferences.style.display = show ? "flex" : "none";
 
     if (show) {
       this.showBackdrop();
@@ -1108,11 +1124,11 @@ class SilktideConsentManager {
       this.preventBodyScroll();
 
       // Focus the close button
-      const modalCloseButton = this.preferences.querySelector('.stcm-modal-close');
+      const modalCloseButton = this.preferences.querySelector(".stcm-modal-close");
       modalCloseButton.focus();
 
       // Trigger optional onPreferencesOpen callback
-      if (typeof this.config.onPreferencesOpen === 'function') {
+      if (typeof this.config.onPreferencesOpen === "function") {
         this.config.onPreferencesOpen();
       }
 
@@ -1124,7 +1140,7 @@ class SilktideConsentManager {
       this.allowBodyScroll();
 
       // Trigger optional onPreferencesClose callback
-      if (typeof this.config.onPreferencesClose === 'function') {
+      if (typeof this.config.onPreferencesClose === "function") {
         this.config.onPreferencesClose();
       }
     }
@@ -1133,7 +1149,7 @@ class SilktideConsentManager {
   // ----------------------------------------------------------------
   // Consent Icon
   // ----------------------------------------------------------------
-  
+
   /**
    * Get cookie icon SVG content
    * @private
@@ -1148,9 +1164,9 @@ class SilktideConsentManager {
   }
 
   createCookieIcon() {
-    this.icon = document.createElement('button');
-    this.icon.id = 'stcm-icon';
-    this.icon.title = 'Manage your consent preferences for this site';
+    this.icon = document.createElement("button");
+    this.icon.id = "stcm-icon";
+    this.icon.title = "Manage your consent preferences for this site";
     this.icon.innerHTML = this.getCookieIconContent();
 
     if (this.config.text?.prompt?.preferencesButtonAccessibleLabel) {
@@ -1169,8 +1185,8 @@ class SilktideConsentManager {
     if (this.icon && this.config.icon?.position) {
       // Map old position names to new stcm- prefixed names
       const positionMap = {
-        'bottomRight': 'stcm-pos-bottom-right',
-        'bottomLeft': 'stcm-pos-bottom-left'
+        bottomRight: "stcm-pos-bottom-right",
+        bottomLeft: "stcm-pos-bottom-left",
       };
       const mappedPosition = positionMap[this.config.icon.position] || this.config.icon.position;
       this.icon.classList.add(mappedPosition);
@@ -1184,13 +1200,13 @@ class SilktideConsentManager {
 
   showCookieIcon() {
     if (this.icon) {
-      this.icon.style.display = 'flex';
+      this.icon.style.display = "flex";
     }
   }
 
   hideCookieIcon() {
     if (this.icon) {
-      this.icon.style.display = 'none';
+      this.icon.style.display = "none";
     }
   }
 
@@ -1199,7 +1215,7 @@ class SilktideConsentManager {
    * We apply the default values and the necessary values as default
    */
   handleDefaultConsent() {
-    this.config.consentTypes.forEach((type) => {
+    this.config.consentTypes.forEach(type => {
       let accepted = true;
       // Set localStorage and run accept/reject callbacks
       if (type.required || type.defaultValue) {
@@ -1210,11 +1226,11 @@ class SilktideConsentManager {
       }
 
       if (accepted) {
-        if (typeof type.onAccept === 'function') {
+        if (typeof type.onAccept === "function") {
           type.onAccept();
         }
       } else {
-        if (typeof type.onReject === 'function') {
+        if (typeof type.onReject === "function") {
           type.onReject();
         }
       }
@@ -1227,7 +1243,7 @@ class SilktideConsentManager {
   // ----------------------------------------------------------------
   // Focusable Elements
   // ----------------------------------------------------------------
-  
+
   /**
    * Get all focusable elements within a container
    * @private
@@ -1236,7 +1252,7 @@ class SilktideConsentManager {
    */
   getFocusableElements(element) {
     return element.querySelectorAll(
-      'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
     );
   }
 
@@ -1247,14 +1263,14 @@ class SilktideConsentManager {
     // Check Prompt exists before trying to add event listeners
     if (this.prompt) {
       // Get the buttons
-      const acceptButton = this.prompt.querySelector('.stcm-accept-all');
-      const rejectButton = this.prompt.querySelector('.stcm-reject-all');
-      const preferencesButton = this.prompt.querySelector('.stcm-preferences-button');
+      const acceptButton = this.prompt.querySelector(".stcm-accept-all");
+      const rejectButton = this.prompt.querySelector(".stcm-reject-all");
+      const preferencesButton = this.prompt.querySelector(".stcm-preferences-button");
 
       // Add event listeners to the buttons
-      acceptButton?.addEventListener('click', () => this.handleConsentChoice(true));
-      rejectButton?.addEventListener('click', () => this.handleConsentChoice(false));
-      preferencesButton?.addEventListener('click', () => {
+      acceptButton?.addEventListener("click", () => this.handleConsentChoice(true));
+      rejectButton?.addEventListener("click", () => this.handleConsentChoice(false));
+      preferencesButton?.addEventListener("click", () => {
         this.showBackdrop();
         this.toggleModal(true);
       });
@@ -1265,8 +1281,8 @@ class SilktideConsentManager {
       const lastFocusableEl = focusableElements[focusableElements.length - 1];
 
       // Add keydown event listener to handle tab navigation
-      this.prompt.addEventListener('keydown', (e) => {
-        if (e.key === 'Tab') {
+      this.prompt.addEventListener("keydown", e => {
+        if (e.key === "Tab") {
           if (e.shiftKey) {
             if (document.activeElement === firstFocusableEl) {
               lastFocusableEl.focus();
@@ -1282,38 +1298,38 @@ class SilktideConsentManager {
       });
 
       // Set initial focus
-      if (this.config.mode !== 'wizard') {
+      if (this.config.mode !== "wizard") {
         acceptButton?.focus();
       }
     }
 
     // Check Preferences exists before trying to add event listeners
     if (this.preferences) {
-      const closeButton = this.preferences.querySelector('.stcm-modal-close');
-      const saveButton = this.preferences.querySelector('.stcm-modal-save');
-      const rejectAllButton = this.preferences.querySelector('.stcm-modal-reject-all');
+      const closeButton = this.preferences.querySelector(".stcm-modal-close");
+      const saveButton = this.preferences.querySelector(".stcm-modal-save");
+      const rejectAllButton = this.preferences.querySelector(".stcm-modal-reject-all");
 
       // Close button - only closes modal, doesn't save or fire events
-      closeButton?.addEventListener('click', () => {
+      closeButton?.addEventListener("click", () => {
         this.toggleModal(false);
         this.hideBackdrop();
-        
+
         // If user hasn't made initial choice, show prompt again next time
         // Otherwise, just close without doing anything
       });
 
       // Save button - reads checkbox states and batch updates
-      saveButton?.addEventListener('click', () => {
+      saveButton?.addEventListener("click", () => {
         // We set that an initial choice was made
         this.setHasConsented();
 
         // Read current checkbox states from the modal
-        const preferencesSection = this.preferences.querySelector('#stcm-form');
+        const preferencesSection = this.preferences.querySelector("#stcm-form");
         const checkboxes = preferencesSection.querySelectorAll('input[type="checkbox"]');
         const consentStates = {};
 
         checkboxes.forEach(checkbox => {
-          const [, consentId] = checkbox.id.split('consent-');
+          const [, consentId] = checkbox.id.split("consent-");
           consentStates[consentId] = checkbox.checked;
         });
 
@@ -1328,18 +1344,18 @@ class SilktideConsentManager {
       });
 
       // Reject All button - sets required to true, all others to false, then batch updates
-      rejectAllButton?.addEventListener('click', () => {
+      rejectAllButton?.addEventListener("click", () => {
         // We set that an initial choice was made
         this.setHasConsented();
 
         // First, update the checkbox UI to reflect rejection
-        const preferencesSection = this.preferences.querySelector('#stcm-form');
+        const preferencesSection = this.preferences.querySelector("#stcm-form");
         const checkboxes = preferencesSection.querySelectorAll('input[type="checkbox"]');
-        
+
         checkboxes.forEach(checkbox => {
-          const [, consentId] = checkbox.id.split('consent-');
+          const [, consentId] = checkbox.id.split("consent-");
           const consentType = this.config.consentTypes.find(type => type.id === consentId);
-          
+
           if (consentType && !consentType.required) {
             checkbox.checked = false;
           }
@@ -1347,7 +1363,7 @@ class SilktideConsentManager {
 
         // Build consent states: required = true, optional = false
         const consentStates = {};
-        this.config.consentTypes.forEach((type) => {
+        this.config.consentTypes.forEach(type => {
           consentStates[type.id] = type.required ? true : false;
         });
 
@@ -1366,8 +1382,8 @@ class SilktideConsentManager {
       const firstFocusableEl = focusableElements[0];
       const lastFocusableEl = focusableElements[focusableElements.length - 1];
 
-      this.preferences.addEventListener('keydown', (e) => {
-        if (e.key === 'Tab') {
+      this.preferences.addEventListener("keydown", e => {
+        if (e.key === "Tab") {
           if (e.shiftKey) {
             if (document.activeElement === firstFocusableEl) {
               lastFocusableEl.focus();
@@ -1380,7 +1396,7 @@ class SilktideConsentManager {
             }
           }
         }
-        if (e.key === 'Escape') {
+        if (e.key === "Escape") {
           this.toggleModal(false);
         }
       });
@@ -1393,7 +1409,7 @@ class SilktideConsentManager {
 
     // Check Icon exists before trying to add event listeners
     if (this.icon) {
-      this.icon.addEventListener('click', () => {
+      this.icon.addEventListener("click", () => {
         // If preferences is not found, create it
         if (!this.preferences) {
           this.createModal();
@@ -1401,7 +1417,10 @@ class SilktideConsentManager {
           this.hideCookieIcon();
         }
         // If preferences is hidden, show it
-        else if (this.preferences.style.display === 'none' || this.preferences.style.display === '') {
+        else if (
+          this.preferences.style.display === "none" ||
+          this.preferences.style.display === ""
+        ) {
           this.toggleModal(true);
           this.hideCookieIcon();
         }
@@ -1414,16 +1433,16 @@ class SilktideConsentManager {
   }
 
   preventBodyScroll() {
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
     // Prevent iOS Safari scrolling
-    document.body.style.position = 'fixed';
-    document.body.style.width = '100%';
+    document.body.style.position = "fixed";
+    document.body.style.width = "100%";
   }
 
   allowBodyScroll() {
-    document.body.style.overflow = '';
-    document.body.style.position = '';
-    document.body.style.width = '';
+    document.body.style.overflow = "";
+    document.body.style.position = "";
+    document.body.style.width = "";
   }
 }
 
@@ -1440,7 +1459,7 @@ class SilktideConsentManager {
   /**
    * Initialize the consent manager with the given configuration
    * Destroys any existing instance and creates a new one.
-   * 
+   *
    * @param {Object} config - Configuration object
    */
   function init(config = {}) {
@@ -1460,26 +1479,28 @@ class SilktideConsentManager {
     if (document.body) {
       create();
     } else {
-      document.addEventListener('DOMContentLoaded', create, {once: true});
+      document.addEventListener("DOMContentLoaded", create, { once: true });
     }
   }
 
   /**
    * Update the configuration by deep merging with existing config
    * Requires an existing instance to be initialized first.
-   * 
+   *
    * @param {Object} newConfig - Partial configuration object to merge with existing config
    */
   function update(newConfig = {}) {
     if (!consentManager) {
-      console.error('Silktide Consent Manager: Cannot update - no instance initialized. Call init() first.');
+      console.error(
+        "Silktide Consent Manager: Cannot update - no instance initialized. Call init() first."
+      );
       return;
     }
 
     function deepMerge(target, source) {
       const output = { ...target };
       for (const key in source) {
-        if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+        if (source[key] && typeof source[key] === "object" && !Array.isArray(source[key])) {
           output[key] = deepMerge(target[key] || {}, source[key]);
         } else {
           output[key] = source[key];
@@ -1492,14 +1513,14 @@ class SilktideConsentManager {
     const mergedConfig = deepMerge(consentManager.config, newConfig);
     init(mergedConfig);
   }
-  
+
   /**
    * Reset all consent choices and show the prompt again
    * Clears all localStorage entries and reinitializes as if fresh page load
    */
   function resetConsent() {
     if (!consentManager) {
-      console.error('Silktide Consent Manager: Cannot reset - no instance initialized.');
+      console.error("Silktide Consent Manager: Cannot reset - no instance initialized.");
       return;
     }
 
