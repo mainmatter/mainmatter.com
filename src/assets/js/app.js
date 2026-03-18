@@ -40,7 +40,7 @@ window.silktideConsentManager.init({
   },
   text: {
     prompt: {
-      description: "<p>We use cookies to enhance your experience.</p>",
+      description: "<p>We use cookies.</p>",
       acceptAllButtonText: "Accept all",
       acceptAllButtonAccessibleLabel: "Accept all cookies",
       rejectNonEssentialButtonText: "Reject non-essential",
