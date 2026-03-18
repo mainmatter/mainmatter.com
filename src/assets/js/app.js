@@ -4,6 +4,9 @@ import { Nav } from "./nav";
 import { ContactForm } from "./contact-form";
 import { LogoList } from "./logo-list";
 import bindSelectDropdowns from "./select";
+import "./utils/silktide-consent-manager.js";
+
+/* global dataLayer */
 
 if (window.location.host === "mainmatter.com" || window.location.host.includes("deploy-preview")) {
   Sentry.init({
@@ -29,3 +32,64 @@ const logoList = document.getElementById("logo-list");
 if (logoList) new LogoList(logoList);
 
 bindSelectDropdowns();
+
+//Silktide consent manager
+window.silktideConsentManager.init({
+  prompt: {
+    position: "bottomLeft",
+  },
+  text: {
+    prompt: {
+      description: "<p>We use cookies.</p>",
+      acceptAllButtonText: "Accept all",
+      acceptAllButtonAccessibleLabel: "Accept all cookies",
+      rejectNonEssentialButtonText: "Reject non-essential",
+      rejectNonEssentialButtonAccessibleLabel: "Reject all non-essential cookies",
+      preferencesButtonText: "Preferences",
+      preferencesButtonAccessibleLabel: "Manage cookie preferences",
+    },
+    preferences: {
+      title: "Customize your preferences",
+      description: "<p>Choose which cookies you want to accept.</p>",
+      saveButtonText: "Save and close",
+      saveButtonAccessibleLabel: "Save your cookie preferences",
+      creditLinkText: " ",
+      creditLinkAccessibleLabel: " ",
+    },
+  },
+  consentTypes: [
+    {
+      id: "analytics",
+      label: "Analytics",
+      description: "Help us understand how visitors use the site.",
+      defaultValue: true,
+      scripts: [
+        {
+          url: "https://t.contentsquare.net/uxa/d631f9850485f.js",
+          load: "async",
+        },
+      ],
+    },
+    {
+      id: "marketing",
+      label: "Marketing",
+      description: "Used to deliver personalised ads.",
+      defaultValue: true,
+      gtag: ["ad_storage", "ad_user_data", "ad_personalization"],
+      scripts: [
+        {
+          url: "https://www.googletagmanager.com/gtag/js?id=AW-962403954",
+          load: "async",
+        },
+      ],
+      onAccept: function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "AW-962403954");
+      },
+    },
+  ],
+});
