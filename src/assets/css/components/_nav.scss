@@ -226,10 +226,10 @@
 }
 
 @media (min-width: $breakpoint-m) {
-   .nav {
+  .nav {
     position: fixed;
   }
-  
+
   .nav__item,
   .nav__cta {
     font-size: 0.85rem;
