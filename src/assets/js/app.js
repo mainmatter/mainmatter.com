@@ -1,6 +1,6 @@
 import * as Sentry from "@sentry/browser";
 import "wicg-inert";
-import "./nav.js";
+import { Nav } from "./nav";
 import { ContactForm } from "./contact-form";
 import { LogoList } from "./logo-list";
 import bindSelectDropdowns from "./select";
@@ -20,6 +20,9 @@ if (window.location.host === "mainmatter.com" || window.location.host.includes("
     tracesSampleRate: 1.0,
   });
 }
+
+const navElement = document.getElementById("nav");
+new Nav(navElement);
 
 for (const form of document.querySelectorAll("[data-contact-form]")) {
   new ContactForm(form);
