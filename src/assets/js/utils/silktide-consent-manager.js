@@ -1,4 +1,5 @@
 "use strict";
+/* global gtag, dataLayer */
 
 /**
  * Silktide Consent Manager v2.0
@@ -194,7 +195,7 @@ class SilktideConsentManager {
       }
 
       keysToRemove.forEach(key => this._removeLocalStorageItem(key));
-    } catch (e) {
+    } catch (_) {
       // Ignore errors
     }
   }
