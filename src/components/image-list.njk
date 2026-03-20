@@ -17,7 +17,7 @@ Example usage:
 
   <li class="logo-list__item">
     <div
-      class="logo-list__image image-list__image"
+      class="logo-list__image image-list__image image-list__image--{{ fileName | slug }}"
       aria-label="{{ fileName | replace('-', ' ') | title }}"
     >
       {% if fileExt == 'svg' %}
@@ -29,7 +29,7 @@ Example usage:
         <img
           src="/assets/images{{ imagePath }}"
           alt="{{ fileName | replace('-', ' ') | title }}"
-          loading="lazy"
+          {% if not eager %}loading="lazy"{% endif %}
         />
       {% endif %}
     </div>
@@ -62,7 +62,7 @@ Example usage:
         </ul>
         <ul class="logo-list__list logo-list__list--duplicate" aria-hidden="true">
           {% for image in images %}
-            {{ listItem(image) }}
+            {{ listItem(image, eager=true) }}
           {% endfor %}
         </ul>
       </div>
