@@ -1,11 +1,54 @@
+@use "../base/breakpoints" as *;
+
 .image-list__image {
   text-align: center;
 
   img,
   svg {
-    max-height: 10rem;
-    max-width: 10rem;
+    height: 10rem;
+    width: 10rem;
+    object-fit: contain;
     margin: 0 auto;
     display: block;
+  }
+
+  &--100-exercises-to-learn-rust {
+    img {
+      max-height: 15rem;
+    }
+  }
+}
+
+#image-list {
+  .logo-list__list {
+    width: auto;
+    gap: 0;
+  }
+
+  .logo-list__inner {
+    gap: 0;
+    width: max-content;
+  }
+
+  .logo-list__list--duplicate {
+    margin-left: 0;
+  }
+
+  .logo-list__item {
+    flex-shrink: 0;
+    flex-grow: 0;
+    padding-left: 6rem;
+  }
+
+  @media (min-width: $breakpoint-s) {
+    .logo-list__item {
+      padding-left: 6rem;
+    }
+  }
+
+  @media (min-width: $breakpoint-l) {
+    .logo-list__item {
+      padding-left: 8rem;
+    }
   }
 }

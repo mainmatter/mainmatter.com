@@ -19,14 +19,15 @@ const throttle = (fn, delay) => {
   };
 };
 
-window.addEventListener(
-  "scroll",
-  throttle(() => {
-    if (window.scrollY > 10) {
-      nav.classList.add("nav__scrolled");
-    } else {
-      nav.classList.remove("nav__scrolled");
-    }
-  }, 100),
-  { passive: true }
-);
+const handleScroll = () => {
+  if (window.scrollY > 10) {
+    nav.classList.add("nav__scrolled");
+  } else {
+    nav.classList.remove("nav__scrolled");
+  }
+};
+
+// Run once immediately to handle reloads mid-page
+handleScroll();
+
+window.addEventListener("scroll", throttle(handleScroll, 100), { passive: true });
