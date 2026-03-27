@@ -12,6 +12,10 @@ autoOg: true
 
 [MirageJS](https://miragejs.com) is the core library. At some point in the past this was extracted from ember-cli-mirage to its own library for framework independent use. [ember-mirage](https://github.com/bgantzler/ember-mirage) is a set of utilities that brings some of the benefits ember-cli-mirage provided. This means that for basic setup, you may not actually need it, but it provides some features that ember-cli-mirage used to provide that might make migrating a little easier.
 
+## Prerequisites
+This blog post assumes you already have a working Vite setup as we'll make use of `import.meta.glob`. This is a feature provided by Vite to allow glob imports of files. If you're still on a Webpack/ember-auto-import based setup, you can use Webpack's [`require.context`](https://webpack.js.org/guides/dependency-management/#requirecontext) combined with [ember-auto-import's `allowAppImports`](https://github.com/embroider-build/ember-auto-import?tab=readme-ov-file#app-imports) feature instead.
+
+## Let's get going
 The first thing we'll do is add MirageJS and ember-mirage as dependencies.
 
 ```
@@ -183,10 +187,6 @@ export default class ApplicationRoute extends Route {
 The `macroCondition` with `isDevelopingApp() && !isTesting()` ensures the entire block is tree-shaken from the production build. The dynamic `await import()` of the server configuration means none of your Mirage code will be bundled in production either. The additional `config.useMirage` flag gives you a way to toggle Mirage on and off during development via your environment configuration.
 
 We pass the ember-data `store` to `makeServer` so that Mirage can generate its models from your ember-data models. We also import a scenarios module, which is simply a function that seeds the Mirage database with development data. Finally, enabling `server.logging` will log all intercepted requests and responses to the browser console, which is useful for debugging.
-
-## Caveats
-
-ember-mirage is still under active development. The setup described in this post is specific to Ember apps using Vite. If you're still on a classic build (without Vite), the setup will differ slightly. In particular, `import.meta.glob` is not available in classic builds. In that case you can use `ember-auto-import`'s `allowAppImports` combined with Webpack's `require.context` as an alternative for auto-importing your Mirage modules.
 
 ## Wrapping up
 
