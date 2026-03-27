@@ -10,7 +10,7 @@ autoOg: true
 
 # MirageJS & ember-mirage
 
-MirageJS is the core library. At some point in the past this was extracted from ember-cli-mirage to its own library for framework independent use. Ember-mirage is a set of utilities that brings some of the benefits ember-cli-mirage provided. This means that for basic setup, you may not actually need it, but it provides some features that ember-cli-mirage used to provide that might make migrating a little easier.
+[MirageJS](https://miragejs.com) is the core library. At some point in the past this was extracted from ember-cli-mirage to its own library for framework independent use. [ember-mirage](https://github.com/bgantzler/ember-mirage) is a set of utilities that brings some of the benefits ember-cli-mirage provided. This means that for basic setup, you may not actually need it, but it provides some features that ember-cli-mirage used to provide that might make migrating a little easier.
 
 The first thing we'll do is add MirageJS and ember-mirage as dependencies.
 
@@ -57,7 +57,7 @@ export async function makeServer(config) {
 
 ## Loading ember-data models
 
-Another feature ember-cli-mirage provided was automatically inferring Mirage models from ember-data models, meaning MirageJS will infer model names and their relationships from the ember-data models. The configuration roughly matches the previous one.
+Another feature ember-cli-mirage provided was automatically inferring Mirage models from ember-data models, meaning MirageJS will infer model names and their relationships from the ember-data models. The configuration roughly matches the previous one. Note that `makeServer` accepts an optional `store` parameter to pass an ember-data store instance. When called from the application route during development, we pass the store directly. In tests, the store is looked up automatically from the test context.
 
 ```javascript
 // mirage/servers/default.js
@@ -65,7 +65,7 @@ import { importEmberDataModels } from "ember-mirage/ember-data";
 const emberDataModels = import.meta.glob("../../app/models/**/*");
 
 export async function makeServer(config, _store) {
-  // Don't attempt to import from test-helpers when running in the app
+  // Look up the store from the test context if not provided
   let store =
     _store ??
     (await import("@ember/test-helpers"))
