@@ -256,7 +256,7 @@ This implementation is now in production in the Redis Query Engine! We can note 
 |Microbenchmarks|❌|✅|
 |Performance|(baseline)|25% to 100% improvement in core operations|
 
-The codebase did double in size, but with a move to a Rust codebase the unsafe operations have been confined to a small fraction of the original C codebase, where unsafe operations could have been happening anywhere.
+The codebase did double in size, but with a move to a Rust codebase the unsafe operations have been confined to an area of the code a fraction of the size of the C codebase, where unsafe operations could have been happening anywhere.
 
 Test coverage was greatly improved, the last percentage points in coverage are in unreachable areas.
 
