@@ -4,25 +4,9 @@
 
 Redis wants to migrate the Redis Query Engine from C to Rust, and Mainmatter has been working with them on this project. They've rewritten some of their code to rust already, but this kind of work requires good strategy for both choosing candidates for rewrites and for matching the complex behavior and performance characteristics of the original C code.
 
-## Choosing a Candidate & Real World Mess
+## Case Study: Porting the Trie Map
 
-TODO: Ideal module graph
-
-Module graph decomposition lets us pick at leaf modules that have no dependencies (that haven't yet been ported) and pick them as candidates for easy rewrites.
-
-This lets us rewrite one module at a time and export a C FFI for the C code that will depend on it, and depend on the already rewritten stuff as rust modules.
-
-But real world code is messier!
-
-TODO: Real-world module graph
-
-The module dependency of a real-world codebase makes it near impossible to untangle. We run out of viable leaf nodes very quickly, if we even start with them.
-
-To rewrite something in situ we will need to hook into the C FFI for exporting **and** importing functionality.
-
-## Case Study: Triemap
-
-A triemap is a data structure that has a similar API as a hash map / btree map but is optimized for key prefix compression and the ability to do key searches.
+A Trie Map is a key-value data structure that has a similar API as a Hash Map / Binary Tree Map, but optimized for compressing keys by their shared prefixes.
 
 <!-- Diagram -->
 
@@ -32,13 +16,15 @@ We can imagine how to do this easily in Rust, we just need to store a data struc
 struct TrieMapNode<T> {
     label: Vec<u8>,
     children: Vec<TrieMapNode<T>,
+    // The data that the label "maps" to.
+    // This is optional, because not all nodes have complete keys with associated data.
     data: Option<T>,
 }
 ```
 
-Very simple stuff! We can cascade down nodes from the root to complete the labels of leaves, the data field is optional as labels can branch without having an appropriate piece of data at the branch point. A map with only "Scarborough" and "Scaffolding" in it doesn't have data for "Sca".
+Very simple stuff! We can "cascade" down nodes from the root to complete the labels of leaves. The data field is optional as labels can branch without having an appropriate piece of data at the branch point: a map with only the key-value pairs `"Scarborough": 42` and `"Scaffolding": 451` doesn't have associated data for their shared parent `"Sca"`.
 
-Let's have a look at the C implementation:
+Let's take a look at the C implementation:
 
 ```c
 #pragma pack(1)
@@ -92,7 +78,7 @@ This first step in the porting strategy left us with 1. Total test coverage of w
 
 TODO: Diagram of performance, violin chart.
 
-Our implementation was twice as slow as the original C implementation, but about half as slow as an off-the-shelf crate from crates.io. Our implementation was also far less consistent in its speed, whereas the C implementation had very little variance. All of the Vecs we used also meant the memory usage of the naive implementation was double that of the original.
+Our implementation was twice as slow as the original C implementation, but about half as slow as an off-the-shelf crate from crates.io. Our implementation was also far less consistent in its speed, whereas the C implementation had very little variance. All the `Vec`s we used also meant the memory usage of the naive implementation was double that of the original.
 
 ## Porting Strategy: Iterating for Performance
 
@@ -100,7 +86,7 @@ Having learnt as much as we could from the naive implementation, we can now star
 
 We established that the core characteristic of the original TrieMap implementation is how each node occupies _a single heap allocation_. The label, array of pointers to children, and field data occupy the same contiguous space in memory.
 
-We want to get as close to this original implementation as possible, but if we can make it simpler to maintain then we should. To this end, we decided to abandon the `pack` pragma to avoid dealing with unaligned accesses. CPUs are are optimized for aligned access, so this should mean a negligible trade-off in memory footprint in exchange for speed. 
+We want to get as close to this original implementation as possible, but if we can make it simpler to maintain then we should. To this end, we decided to abandon the `pack` pragma to avoid dealing with unaligned accesses. CPUs are optimized for aligned access, so this should mean a negligible trade-off in memory footprint in exchange for speed. 
 
 We want our implementation to have the following properties:
 
@@ -111,7 +97,9 @@ We designed out layout to be as follows:
 
 TODO: Show the Rust Layout
 
-TODO: Explain differences in layout
+There are some differences between our Rust layout and the original C layout:
+
+1. Our optional leaf data sits at the end of the struct, rather than before the label and children.
 
 ### DIY Dynamically Sized Types
 
@@ -131,7 +119,7 @@ struct IdealNode<T> {
 }
 ```
 
-but we cannot express this in rust's type system. So instead, we split up the implementation into a stack type and a heap type. The stack type `Node<T>` stores the pointer, and the heap type `NodeHeader` stores our data as if it were `IdealNode<T>`.
+But we cannot express this in rust's type system. So instead, we split up the implementation into a stack type and a heap type. The stack type `Node<T>` stores the pointer, and the heap type `NodeHeader` stores our data as if it were `IdealNode<T>`.
 
 ```rust
 // Stack
@@ -172,7 +160,7 @@ This composable API of `Layout` means it's fairly easy to build the `Layout` we 
 
 ## Porting Strategy: Managing Necessary Unsafe
 
-Once we have our `Layout`, we can call `alloc` to get our pointer. This memory is uninitialized, but we can initialize it manually. Managing this memory manually only gets gnarly once we want to split or merge nodes.s
+Once we have our `Layout`, we can call `alloc` to get our pointer. This memory is uninitialized, but we can initialize it manually. Managing this memory manually only gets gnarly once we want to split or merge nodes.
 
 In the final codebase we were finally left with **128** unsafe blocks and **21** unsafe methods.
 
@@ -182,27 +170,29 @@ On top of all this, the client is moving to rust to minimize issues related to m
 
 To deal with these constraints, we have a core axiom of **no `unsafe` in the public API**, on top of trying to rely on tooling as much as possible.
 
-### Tooling & Patterns 
+### Tooling & Patterns
 
-1. Miri
+Our management of the unsafe code is a mix of good documentation practices for critical areas & automated tooling. We can't fully automate this process, otherwise it wouldn't be `unsafe`, but we can do our best to build and maintain certainty.
+
+1. **Miri**
 
 Miri runs your rust code in an interpreter against different memory models, checking for undefined behavior as it comes up. A great help when we're writing lots of unsafe code. 
 
 This only works on Rust code, so we can't apply this in other parts of Rust Redis where we cross FFI boundaries into C libraries, but we can use it here and anywhere else where all dependencies are rust.
 
-2. Debug assertions
+2. **Debug assertions**
 
 Debug assertions are checks that only run in debug builds, release builds do not pay the performance cost of them. Debug assertions let us check the invariants we want to build our API around at runtime and give good errors when those assertions fail.
 
 Heavy use of debug assertions ties nicely with our use of Miri, whose errors can be overly esoteric or academic. Rust assertions are much easier to contextualize.
 
-3. Clippy Lints
+3. **Clippy Lints**
 
 Following [Jack Wrenn's guidance](https://jack.wrenn.fyi/blog/safety-hygiene/) we're using clippy lints to enforce two soft invariants:
 
-3.1: `undocumented_unsafe_blocks`: If an unsafe block does not have comments surrounding it, there will be a warning.
+- 3.1: `undocumented_unsafe_blocks`: If an unsafe block does not have comments surrounding it, there will be a warning.
 
-3.2: `multiple_unsafe_ops_per_block`: If an unsafe block contains more than one unsafe operation, there will be a warning.
+- 3.2: `multiple_unsafe_ops_per_block`: If an unsafe block contains more than one unsafe operation, there will be a warning.
 
 This pushes developers in the direction of properly documenting the unsafe code they do right, operation by operation, to assure all invariants are documented.
 
@@ -228,15 +218,15 @@ unsafe {
 };
 ```
 
-Note how long this safety comment is, with 128 unsafe blocks in the codebase this could become an overwhelming amount of information very quickly. This is where the following component of our unsafe management strategy comes in.
+Note how long this safety comment is, with 128 unsafe blocks in the codebase this could become an overwhelming amount of information very quickly. This is where the next component of our unsafe management strategy comes in.
 
-### Hard to Misuse Abstractions
+### Abstractions that are Hard to Misuse
 
-We build a hierarchy of abstractions to make sure that the further away from the raw allocation APIs we are, the fewer mistakes we can make.
+Unsafe doesn't let users or maintainers do "anything", but it does let them get away with misusing the tools they're given in ways that make software systems unpredictable.
 
-To do this, we want to make sure that there are as few invariants as possible for a maintainer to uphold at any point with few-to-zero ways to unknowingly break those invariants.
+To strengthen systems built on unsafe foundations, we start by **Layering Abstractions** in a way that gradually reduces the concerns of a maintainer.
 
-We do this by **Layering Abstractions** in a way that gradually reduces the concerns of a maintainer.
+The end goal is to have a outwardly safe API, and a internal implementation that restricts what mistakes a maintainer to specific areas of the code. Core, most-unsafe operations are built upon by still-unsafe abstractions that limit the operations the maintainer can perform, and those abstractions are built upon by more-safe abstractions.
 
 **Bottom**: `alloc`, `Layout`, and pointers.
 
@@ -256,9 +246,21 @@ Finally, we have the safe API surrounding the data structure that we want end us
 
 ## Conclusion
 
-This implementation is now in production in the Redis Query Engine!
+This implementation is now in production in the Redis Query Engine! We can note & measure some key changes in the codebase from this transition.
 
-TODO Details on how the final implementation differed in performance.
+|| C | Rust |
+|-|-|-|
+|Lines of Code|~1k|~1.9k|
+|Unsafe expressions|-|128|
+|Coverage|82.8%|95.6%|
+|Microbenchmarks|❌|✅|
+|Performance|(baseline)|25% to 100% improvement in core operations|
+
+The codebase did double in size, but with a move to a Rust codebase the unsafe operations have been confined to a small fraction of the original C codebase, where unsafe operations could have been happening anywhere.
+
+Test coverage was greatly improved, the only areas where tests are lacking in the Rust codebase are in 
+
+Performance was also greatly improved, in part from changing the layout from Packed to Unpacked.
 
 Real-world codebases on the level of complexity of the Redis Query Engine require looking carefully into how complex components can be replaced with alternative implementations that better fit the needs of maintainers and users.
 
