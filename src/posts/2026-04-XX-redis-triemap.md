@@ -258,7 +258,7 @@ This implementation is now in production in the Redis Query Engine! We can note 
 
 The codebase did double in size, but with a move to a Rust codebase the unsafe operations have been confined to a small fraction of the original C codebase, where unsafe operations could have been happening anywhere.
 
-Test coverage was greatly improved, the only areas where tests are lacking in the Rust codebase are in 
+Test coverage was greatly improved, the last percentage points in coverage are in unreachable areas.
 
 Performance was also greatly improved, in part from changing the layout from Packed to Unpacked.
 
