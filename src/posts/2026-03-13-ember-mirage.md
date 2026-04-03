@@ -194,4 +194,6 @@ We pass the ember-data `store` to `makeServer` so that Mirage can generate its m
 
 Migrating from ember-cli-mirage to ember-mirage requires a bit more manual setup, but the result is a Vite and Embroider compatible MirageJS configuration that stays close to the native MirageJS experience, with ember-mirage providing utilities to make migration easier for situations where there was a reliance on ember-cli-mirage.
 
+It's worth stepping back and noticing what's happening here: we're using standard JavaScript features like dynamic `await import()`, top-level `await`, and Vite's `import.meta.glob` instead of legacy Ember-specific magic. The old ember-cli-mirage relied heavily on Ember conventions and build pipeline hooks to auto-discover files. The new setup replaces those "Emberisms" with vanilla JS and standard build tool features. This is only possible thanks to the significant progress the Ember ecosystem has made over the last couple of years with Embroider and the move to Vite. Modern Ember applications are much more aligned with the broader JavaScript ecosystem, making it easier to leverage standard tooling and reducing the framework-specific knowledge needed to be productive.
+
 For more details, check out the [ember-mirage repository](https://github.com/bgantzler/ember-mirage).
