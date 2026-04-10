@@ -1,12 +1,11 @@
 ---
-title: "Learn Rust, starting from scratch"
+title: "Migrating C to Rust"
 tags: "rust"
-format: "Workshop: 4 days"
+format: "Workshop: 1 day"
 subtext: "Bookable for teams – on-site or remote"
-description: This 4-days workshop helps you get started with Rust, assuming no prior knowledge of the language. The workshop starts from the absolute basics and gradually builds up to more advanced topics.
+description: This 1-day workshop gives C/C++ developers a clear, practical path to migrating real code to Rust, covering FFI boundaries, safe abstractions, and testing.
 introduction: |
-  <p>Migrating C code to Rust is rarely a single “rewrite” step.</p>
-  <p>It’s a process that forces you to weave together these two very different systems. Calling conventions, memory management, 
+  <p>Migrating C code to Rust is rarely a single “rewrite” step. It’s a process that forces you to weave together these two very different systems. Calling conventions, memory management, 
     tooling, and (most importantly) how you structure and test your code. These things can quickly explode in complexity if 
     not understand and manage correctly.</p>
   <p>We designed this workshop to give your team a coherent path from “I can write Rust” to “I can ship Rust in a C codebase” 
@@ -37,13 +36,14 @@ topics:
     text: >
       We will translate common C idioms into idiomatic Rust. Iterators instead of manual loops. Return values vs out-parameters. Vtables vs traits (and when to keep the C shape). Strings and encodings (<code>CStr</code> vs <code>str</code>). Return codes vs errors. bitflags.
 
+
   - heading: Testing, Benchmarks, and Sanitizers
     text: >
       Testing, benchmarks, sanitizers, and more. We will put our FFI code on solid foundations. We will learn how to effectively use tools like Valgrind, sanitizers, and Miri. We will discover their limitations and when to reach for which tool.
+
 
 leads:
   - handle: algo_luca
 
 quotes:
-
 ---
