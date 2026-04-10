@@ -7,7 +7,7 @@ description: This 1-day workshop gives C/C++ developers a clear, practical path 
 introduction: |
   <p>Migrating C code to Rust is rarely a single “rewrite” step. It’s a process that forces you to weave together these two very different systems. Calling conventions, memory management, 
     tooling, and (most importantly) how you structure and test your code. These things can quickly explode in complexity if 
-    not understand and manage correctly.</p>
+    misunderstood or incorrectly managed.</p>
   <p>We designed this workshop to give your team a coherent path from “I can write Rust” to “I can ship Rust in a C codebase” 
     without hand-waving over these complexities.</p>
   <p>We start from the fundamentals of C/Rust interoperability and gradually build up to a pragmatic module rewrite process, 
@@ -29,7 +29,7 @@ topics:
 
   - heading: Building and Linking
     text: >
-      We will look at how Rust links C code in practice: the <code>-sys</code> crate pattern, using <code>build.rs</code>, integrating with existing build systems, and generating bindings with bindgen—followed by how to build safe abstractions on top of unsafe bindings.
+      We will look at how Rust links C code in practice: the <code>-sys</code> crate pattern, using <code>build.rs</code>, integrating with existing build systems, and generating bindings with bindgen — followed by how to build safe abstractions on top of unsafe bindings.
 
 
   - heading: Idiomatic FFI
