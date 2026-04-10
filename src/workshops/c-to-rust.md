@@ -24,7 +24,7 @@ og:
 topics:
   - heading: The basics
     text: >
-      We will cover the essentials of FFI-safe Rust: <code>extern "C"</code>, ABI considerations, name mangling, <code>#[no_mangle]</code>, and when to use <code>repr(C)</code>.
+      We will cover the essentials of FFI-safe Rust: <code>extern "C"</code>, ABI considerations, <code>#[no_mangle]</code>, and when to use <code>repr(C)</code>.
 
 
   - heading: Building and Linking
@@ -34,7 +34,7 @@ topics:
 
   - heading: Idiomatic FFI
     text: >
-      We will translate common C idioms into idiomatic Rust. Iterators instead of manual loops. Return values vs out-parameters. Vtables vs traits (and when to keep the C shape). Strings and encodings (<code>CStr</code> vs <code>str</code>). Return codes vs errors. bitflags.
+      We will translate common C idioms into idiomatic Rust: iterators instead of manual loops, return values vs out-parameters, vtables vs traits (and when to keep the C shape), strings and encodings (<code>CStr</code> vs <code>str</code>), return codes vs errors, as well as bitflags.
 
 
   - heading: Testing, Benchmarks, and Sanitizers
