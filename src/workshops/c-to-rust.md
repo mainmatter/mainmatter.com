@@ -17,8 +17,8 @@ introduction: |
   <p>The workshop is designed for software developers working in or around C/C++ codebases. Familiarity with Rust basics is helpful, 
     but we’ll introduce the concepts you need as we go.</p>
 hero:
-  image: "/assets/images/workshops/an-introduction-to-testing-in-rust/header-background.jpg"
-  imageAlt: "A drawing of a giant crab standing in a village."
+  image: "/assets/images/workshops/c-to-rust/header-background.jpg"
+  imageAlt: "A cable-stayed bridge under construction, with two towers and a gap in the middle where the two halves of the deck have not yet been joined."
 og:
   image: /assets/images/workshops/learn-rust-starting-from-scratch/og-image.jpg
 topics:
