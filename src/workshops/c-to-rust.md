@@ -1,9 +1,9 @@
 ---
 title: "Migrating C to Rust"
 tags: "rust"
-format: "Workshop: 1 day"
+format: "Workshop: 3 days"
 subtext: "Bookable for teams – on-site or remote"
-description: This 1-day workshop gives C/C++ developers a clear, practical path to migrating real C code to Rust, covering FFI boundaries, safe abstractions, and testing.
+description: This 3-day workshop gives C/C++ developers a clear, practical path to migrating real C code to Rust, covering FFI boundaries, safe abstractions, and testing.
 introduction: |
   <p>Migrating C code to Rust is rarely a single “rewrite” step. It’s a process that forces you to weave together these two very different systems. Calling conventions, memory management, 
     tooling, and (most importantly) how you structure and test your code. These things can quickly explode in complexity if 
