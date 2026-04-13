@@ -6,9 +6,9 @@ Redis wants to migrate the Redis Query Engine from C to Rust, and Mainmatter has
 
 ## Case Study: Porting the Trie Map
 
-A Trie Map is a key-value data structure that has a similar API as a Hash Map / Binary Tree Map, but optimized for compressing keys by their shared prefixes.
+A Trie Map is a key-value data structure that has a similar API as a Hashmap / Binary Tree Map, but optimized for compressing keys by their shared prefixes.
 
-<!-- Diagram -->
+![Diagram showing how a set of tuples are represented in a Triemap.](/assets/images/posts/2026-04-XX-redis-triemap/trie.svg)
 
 We can imagine how to do this easily in Rust, we just need to store a data structure in the form:
 
@@ -43,7 +43,7 @@ typedef struct {
 
 The core property of this type is that the fields, label, and the array of pointers to children take up a **single heap allocation**. This is really important for cache locality and minimizing pointer dereferences, but it also means the size of the type and some of the offsets of the fields of that type are not known at compile time.
 
-TODO: Diagram of the C memory layout, or pointing to the video.
+![](/assets/images/posts/2026-04-XX-redis-triemap/c-layout.svg)
 
 This is a complex type, and translating it to Rust is difficult. Translating it to safe Rust is impossible, but that doesn't mean we can't translate it _safely_.
 
@@ -76,7 +76,8 @@ This working, tested, naive version and refresh of what the original was doing l
 
 This first step in the porting strategy left us with 1. Total test coverage of what we were working on and 2. Knowledge of how subpar the performance of this naive TrieMap implementation.
 
-TODO: Diagram of performance, violin chart.
+
+![](/assets/images/posts/2026-04-XX-redis-triemap/violin-chart.svg)
 
 Our implementation was twice as slow as the original C implementation, but about half as slow as an off-the-shelf crate from crates.io. Our implementation was also far less consistent in its speed, whereas the C implementation had very little variance. All the `Vec`s we used also meant the memory usage of the naive implementation was double that of the original.
 
@@ -95,7 +96,7 @@ We want our implementation to have the following properties:
 
 We designed out layout to be as follows:
 
-TODO: Show the Rust Layout
+![](/assets/images/posts/2026-04-XX-redis-triemap/rust-layout.svg)
 
 There are some differences between our Rust layout and the original C layout:
 
