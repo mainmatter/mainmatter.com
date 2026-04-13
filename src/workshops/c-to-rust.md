@@ -20,7 +20,7 @@ hero:
   image: "/assets/images/workshops/c-to-rust/header-background.jpg"
   imageAlt: "A cable-stayed bridge under construction, with two towers and a gap in the middle where the two halves of the deck have not yet been joined."
 og:
-  image: /assets/images/workshops/learn-rust-starting-from-scratch/og-image.jpg
+  image: /assets/images/workshops/c-to-rust/og-image.jpg
 topics:
   - heading: The basics
     text: >
