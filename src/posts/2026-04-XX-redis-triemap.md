@@ -98,9 +98,12 @@ We designed out layout to be as follows:
 
 ![](/assets/images/posts/2026-04-XX-redis-triemap/rust-layout.svg)
 
-There are some differences between our Rust layout and the original C layout:
+There are a couple of differences between our Rust layout and the original C layout:
 
-1. Our optional leaf data sits at the end of the struct, rather than before the label and children.
+1. The data structure is padded, so depending on the number of children there may be unused space between the end of `children_first_bytes` and `children`.
+2. Our optional leaf data sits at the end of the struct, rather than before the label and children.
+
+How are we supposed to implement this in Rust? We do it with designing our own Dynamically Sized Types.
 
 ### DIY Dynamically Sized Types
 
@@ -139,7 +142,7 @@ pub(super) struct NodeHeader {
 }
 ```
 
-Note that in `NodeHeader` we can't express everything we want to in the type system. Instead, we avoid defining them directly and make sure to manually allocate them ourselves.
+Note that in `NodeHeader`, just like in the C implementation, we can't express everything we want to in the type system. Instead, we avoid defining them directly and make sure to manually allocate them ourselves.
 
 ### Allocating a Dynamically Sized Type
 
@@ -155,7 +158,7 @@ Rather than C's `malloc` which takes a length in bytes, `alloc` takes a `Layout`
 
 1. `Layout::new` produces a layout for a sized type.
 2. `Layout::array` produces a layout for an array of a sized type, with a runtime-or-const `n` elements. 
-2. `Layout::extend` allows us to compose layouts together.
+3. `Layout::extend` allows us to compose layouts together.
 
 This composable API of `Layout` means it's fairly easy to build the `Layout` we need for our custom Dynamically Sized Type.
 
@@ -183,7 +186,7 @@ This only works on Rust code, so we can't apply this in other parts of Rust Redi
 
 2. **Debug assertions**
 
-Debug assertions are checks that only run in debug builds, release builds do not pay the performance cost of them. Debug assertions let us check the invariants we want to build our API around at runtime and give good errors when those assertions fail.
+Debug assertions are checks that only run in debug builds, release builds do not pay the performance cost of them. Debug assertions let us both specify and check the invariants we want to build our API around at runtime, and give good errors when those assertions fail.
 
 Heavy use of debug assertions ties nicely with our use of Miri, whose errors can be overly esoteric or academic. Rust assertions are much easier to contextualize.
 
