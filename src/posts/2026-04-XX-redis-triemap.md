@@ -2,7 +2,7 @@
 
 ---
 
-Redis wants to migrate the Redis Query Engine from C to Rust, and Mainmatter has been working with them on this project. They've rewritten some of their code to rust already, but this kind of work requires good strategy for both choosing candidates for rewrites and for matching the complex behavior and performance characteristics of the original C code.
+Redis wants to migrate the Redis Query Engine from C to Rust, and Mainmatter has been working with them on this project. They've rewritten some of their code to Rust already, but this kind of work requires good strategy both for choosing rewrite candidates and matching the complex behavior and performance characteristics of the original C code.
 
 ## Case Study: Porting the Trie Map
 
@@ -45,7 +45,7 @@ The core property of this type is that the fields, label, and the array of point
 
 ![](/assets/images/posts/2026-04-XX-redis-triemap/c-layout.svg)
 
-This is a complex type, and translating it to Rust is difficult. Translating it to safe Rust is impossible, but that doesn't mean we can't translate it _safely_.
+This is a complex type, and translating it to Rust is difficult. It cannot even be fully specified in C. Translating it to safe Rust is impossible, but that doesn't mean we can't translate it _safely_.
 
 ## Porting Strategy: Establish a Baseline
 
@@ -70,7 +70,7 @@ struct ChildRef<T> {
 
 This implementation makes no attempt to match the performance characteristics of the C original. We have extra heap allocations for labels and children.
 
-What we get from this baseline is code that works correctly, knowledge of performance characteristics, and a team that has a deeper understanding of the original implementation. 
+What we get from this baseline is code that works correctly, a well thought out external API, knowledge of performance characteristics, and a team that has a deeper understanding of the original implementation. 
 
 This working, tested, naive version and refresh of what the original was doing lowers the cognitive load when it comes to the team implementing a later version.
 
@@ -106,7 +106,7 @@ There are some differences between our Rust layout and the original C layout:
 
 We want nodes to be a Dynamically Sized Type, like `&str` or `&[u8]`. Something whose size is not known at compile-time.
 
-Our ideal rust implementation would look something like this:
+Our ideal Rust implementation would look something like this:
 
 ```rust
 #[repr(C)]
@@ -120,7 +120,7 @@ struct IdealNode<T> {
 }
 ```
 
-But we cannot express this in rust's type system. So instead, we split up the implementation into a stack type and a heap type. The stack type `Node<T>` stores the pointer, and the heap type `NodeHeader` stores our data as if it were `IdealNode<T>`.
+But we cannot express this in Rust's type system. So instead, we split up the implementation into a stack type and a heap type. The stack type `Node<T>` stores the pointer, and the heap type `NodeHeader` stores our data as if it were `IdealNode<T>`.
 
 ```rust
 // Stack
@@ -143,7 +143,7 @@ Note that in `NodeHeader` we can't express everything we want to in the type sys
 
 ### Allocating a Dynamically Sized Type
 
-The `alloc` function has the signature:
+The `std::alloc::alloc` function has the signature:
 
 ```rust
 pub unsafe fn alloc(layout: Layout) -> *mut u8
@@ -167,13 +167,13 @@ In the final codebase we were finally left with **128** unsafe blocks and **21**
 
 Managing this unsafe code requires care and understanding for how developers will interact with it. Preferably a developer won't interact with it at all unless they're a maintainer. 
 
-On top of all this, the client is moving to rust to minimize issues related to memory safety so it is important to build an API that can be trusted and can't be misused.
+On top of all this, the client is moving to Rust to minimize issues related to memory safety so it is important to build an API that can be trusted and can't be misused.
 
 To deal with these constraints, we have a core axiom of **no `unsafe` in the public API**, on top of trying to rely on tooling as much as possible.
 
 ### Tooling & Patterns
 
-Our management of the unsafe code is a mix of good documentation practices for critical areas & automated tooling. We can't fully automate this process, otherwise it wouldn't be `unsafe`, but we can do our best to build and maintain certainty.
+Our management of the unsafe code is a mix of good documentation practices for critical areas & automated tooling. We can't fully automate this process, which is why we have to resort to `unsafe`, but we can do our best to build and maintain certainty.
 
 1. **Miri**
 
@@ -261,7 +261,7 @@ The codebase did double in size, but with a move to a Rust codebase the unsafe o
 
 Test coverage was greatly improved, the last percentage points in coverage are in unreachable areas.
 
-Performance was also greatly improved, in part from changing the layout from Packed to Unpacked.
+Performance was also greatly improved, in part from moving away from the packed layout.
 
 Real-world codebases on the level of complexity of the Redis Query Engine require looking carefully into how complex components can be replaced with alternative implementations that better fit the needs of maintainers and users.
 
