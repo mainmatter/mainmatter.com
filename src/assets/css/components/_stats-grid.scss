@@ -1,0 +1,25 @@
+@use "../base/breakpoints" as *;
+
+.stats-grid__wrapper {
+  padding: 2rem 0 3rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 3rem;
+}
+
+.stats-grid__content {
+  text-align: center;
+}
+
+.stats-grid__stat {
+  color: var(--color-purple);
+}
+
+.stats-grid__explanation {
+  line-height: 1.5;
+  text-wrap: balance;
+}
+
+.stats-grid__addnl-text {
+  font-size: clamp(1.125rem,-0.125rem + 2.604vw,1.75rem)
+}
