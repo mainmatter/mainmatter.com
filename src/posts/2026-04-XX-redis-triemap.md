@@ -236,7 +236,7 @@ At this level, maintainer error is at its most possible. Invariants need to be m
 
 **Near-Bottom**: `PtrMetadata<T>` + `PtrWithMetadata<T>`
 
-At this level, we have the metadata needed to construct a pointer (`PtrMetadata`, which holds a `Layout` and the offsets of the fields not tracked by the ), as well as a version of the constructed pointer that is paired with its metadata. This pairing means a proof of the relationship between the pointer and the metadata of that pointer only needs to happen once, when `PtrWithMetadata` is constructed using the unsafe methods that construct it.
+At this level, we have the metadata needed to construct a pointer (`PtrMetadata`, which holds a `Layout` and the offsets of the fields not able to be tracked directly by the type system), as well as a version of the constructed pointer that is paired with its metadata. This pairing means a proof of the relationship between the pointer and the metadata of that pointer only needs to happen once, when `PtrWithMetadata` is constructed using the unsafe methods that construct it.
 
 **Mid-Level**: Unsafe methods and functions.
 
