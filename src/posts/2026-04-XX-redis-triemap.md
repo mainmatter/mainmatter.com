@@ -2,15 +2,17 @@
 
 ---
 
-Redis wants to migrate the Redis Query Engine from C to Rust, and Mainmatter has been working with them on this project. They've rewritten some of their code to Rust already, but this kind of work requires good strategy both for choosing rewrite candidates and matching the complex behavior and performance characteristics of the original C code.
+At Mainmatter we've been working to help Redis migrate the Redis Query Engine from C to Rust. They've ported some of their existing query engine code already, but this kind of work requires good strategy in both choosing good rewrite candidates and matching the complex behavior and performance characteristics of the original C code.
 
-## Case Study: Porting the Trie Map
+This blog post covers 
 
-A Trie Map is a key-value data structure that has a similar API as a Hashmap / Binary Tree Map, but optimized for compressing keys by their shared prefixes.
+## Case Study: Porting the TrieMap
 
-![Diagram showing how a set of tuples are represented in a Triemap.](/assets/images/posts/2026-04-XX-redis-triemap/trie.svg)
+A TrieMap is a key-value data structure that has a similar API as a Hashmap / Binary Tree Map, but optimized for compressing keys by their shared prefixes.
 
-We can imagine how to do this easily in Rust, we just need to store a data structure in the form:
+![Diagram showing how a set of tuples are represented in a TrieMap.](/assets/images/posts/2026-04-XX-redis-triemap/trie.svg)
+
+We can easily imagine how to do this in Rust, we just need to store a data structure in the form:
 
 ```rust
 struct TrieMapNode<T> {
@@ -24,7 +26,7 @@ struct TrieMapNode<T> {
 
 Very simple stuff! We can "cascade" down nodes from the root to complete the labels of leaves. The data field is optional as labels can branch without having an appropriate piece of data at the branch point: a map with only the key-value pairs `"Scarborough": 42` and `"Scaffolding": 451` doesn't have associated data for their shared parent `"Sca"`.
 
-Let's take a look at the C implementation:
+Let's take a look at the preexisting C implementation:
 
 ```c
 #pragma pack(1)
@@ -43,9 +45,11 @@ typedef struct {
 
 The core property of this type is that the fields, label, and the array of pointers to children take up a **single heap allocation**. This is really important for cache locality and minimizing pointer dereferences, but it also means the size of the type and some of the offsets of the fields of that type are not known at compile time.
 
+Note how this type is not fully definable in C's type system, the two lines of comments here are fields that we can't define in a C struct definition and need to compute how to access at runtime. `labelLen` and `numChildren` let us do these computations.
+
 ![](/assets/images/posts/2026-04-XX-redis-triemap/c-layout.svg)
 
-This is a complex type, and translating it to Rust is difficult. It cannot even be fully specified in C. Translating it to safe Rust is impossible, but that doesn't mean we can't translate it _safely_.
+This is a complex type, and translating it to Rust is difficult. As we've said already, it can't even be fully specified in C's type system. Translating it to safe Rust is impossible, but that doesn't mean we can't translate it _safely_.
 
 ## Porting Strategy: Establish a Baseline
 
@@ -68,33 +72,27 @@ struct ChildRef<T> {
 }
 ```
 
-This implementation makes no attempt to match the performance characteristics of the C original. We have extra heap allocations for labels and children.
+This implementation makes no attempt to match the performance characteristics of the C original, so we have extra heap allocations for labels and children to maintain the simplicity.
 
-What we get from this baseline is code that works correctly, a well thought out external API, knowledge of performance characteristics, and a team that has a deeper understanding of the original implementation. 
+Building off of this naive implementation, we can design an external API that can be tested and benchmarked. This working, tested, naive version and refresh of what the original was doing lowers the cognitive load when it comes to the team implementing a later version.
 
-This working, tested, naive version and refresh of what the original was doing lowers the cognitive load when it comes to the team implementing a later version.
-
-This first step in the porting strategy left us with 1. Total test coverage of what we were working on and 2. Knowledge of how subpar the performance of this naive TrieMap implementation.
-
+We didn't focus on performance, because that wasn't what this initial information-gathering pass was about. But we might as well make the comparisons we can so we know how important the optimization work will be:
 
 ![](/assets/images/posts/2026-04-XX-redis-triemap/violin-chart.svg)
 
-Our implementation was twice as slow as the original C implementation, but about half as slow as an off-the-shelf crate from crates.io. Our implementation was also far less consistent in its speed, whereas the C implementation had very little variance. All the `Vec`s we used also meant the memory usage of the naive implementation was double that of the original.
+Our implementation was twice as slow as the original C implementation, but about half as slow as an off-the-shelf crate from crates.io. Our implementation was also far less consistent in its speed, whereas the C implementation had very little variance. All the instances of `Vec` we used also meant the memory usage of the naive implementation was double that of the original.
+
+This first step in the porting strategy left us with 1. Total test coverage of what we were working on 2. Knowledge of how subpar the performance of this naive TrieMap implementation and 3. A team that has a deeper understanding of the original implementation and the decisions behind it.
 
 ## Porting Strategy: Iterating for Performance
 
-Having learnt as much as we could from the naive implementation, we can now start working to match the original.
+Having learnt as much as we could from the naive implementation, we can now start working to match the original in performance.
 
 We established that the core characteristic of the original TrieMap implementation is how each node occupies _a single heap allocation_. The label, array of pointers to children, and field data occupy the same contiguous space in memory.
 
 We want to get as close to this original implementation as possible, but if we can make it simpler to maintain then we should. To this end, we decided to abandon the `pack` pragma to avoid dealing with unaligned accesses. CPUs are optimized for aligned access, so this should mean a negligible trade-off in memory footprint in exchange for speed. 
 
-We want our implementation to have the following properties:
-
-1. Each node takes up a single heap allocation.
-2. The layout is padded, unlike the packed original.
-
-We designed out layout to be as follows:
+The layout we ended up designing is as follows:
 
 ![](/assets/images/posts/2026-04-XX-redis-triemap/rust-layout.svg)
 
@@ -107,7 +105,7 @@ How are we supposed to implement this in Rust? We do it with designing our own D
 
 ### DIY Dynamically Sized Types
 
-We want nodes to be a Dynamically Sized Type, like `&str` or `&[u8]`. Something whose size is not known at compile-time.
+We want nodes to be a Dynamically Sized Type, like `str` or `[u8]` (note the lack of `&`). Something whose size is not known at compile-time.
 
 Our ideal Rust implementation would look something like this:
 
@@ -123,7 +121,7 @@ struct IdealNode<T> {
 }
 ```
 
-But we cannot express this in Rust's type system. So instead, we split up the implementation into a stack type and a heap type. The stack type `Node<T>` stores the pointer, and the heap type `NodeHeader` stores our data as if it were `IdealNode<T>`.
+But we cannot express this in Rust's type system. So instead, we split up the implementation into a stack type and a heap type. The stack type `Node<T>` stores the pointer so we can get our `IdealNode<T>`-like API, and the heap type `NodeHeader` stores our dynamically-sized heap-allocated data.
 
 ```rust
 // Stack
@@ -180,7 +178,7 @@ Our management of the unsafe code is a mix of good documentation practices for c
 
 1. **Miri**
 
-Miri runs your rust code in an interpreter against different memory models, checking for undefined behavior as it comes up. A great help when we're writing lots of unsafe code. 
+Miri runs your rust code in an interpreter against different memory models, checking for undefined behavior as it comes up. A great help when we're writing lots of unsafe code.
 
 This only works on Rust code, so we can't apply this in other parts of Rust Redis where we cross FFI boundaries into C libraries, but we can use it here and anywhere else where all dependencies are rust.
 
@@ -198,7 +196,7 @@ Following [Jack Wrenn's guidance](https://jack.wrenn.fyi/blog/safety-hygiene/) w
 
 - 3.2: `multiple_unsafe_ops_per_block`: If an unsafe block contains more than one unsafe operation, there will be a warning.
 
-This pushes developers in the direction of properly documenting the unsafe code they do right, operation by operation, to assure all invariants are documented.
+This pushes developers in the direction of properly documenting the unsafe code they do write, operation by operation, to assure all invariants are documented.
 
 ### Safety Comments
 
@@ -224,7 +222,7 @@ unsafe {
 
 Note how long this safety comment is, with 128 unsafe blocks in the codebase this could become an overwhelming amount of information very quickly. This is where the next component of our unsafe management strategy comes in.
 
-### Abstractions that are Hard to Misuse
+### Abstractions That Are Hard to Misuse
 
 Unsafe doesn't let users or maintainers do "anything", but it does let them get away with misusing the tools they're given in ways that make software systems unpredictable.
 
@@ -234,7 +232,7 @@ The end goal is to have a outwardly safe API, and a internal implementation that
 
 **Bottom**: `alloc`, `Layout`, and pointers.
 
-This is the information we get from naive use of `alloc`. Invariants need to be manually upheld for all operations at this level. At this level, many different 
+At this level, maintainer error is at its most possible. Invariants need to be manually upheld for all operations at this level. We want to minimize the amount of code that uses these tools directly.
 
 **Near-Bottom**: `PtrMetadata<T>` + `PtrWithMetadata<T>`
 
@@ -242,11 +240,11 @@ At this level, we have the metadata needed to construct a pointer (`PtrMetadata`
 
 **Mid-Level**: Unsafe methods and functions.
 
-At this layer we're developing methods and functions that perform unsafe operations but have API surfaces which are much more specialized for the tasks we're using them for.  
+At this layer we're developing methods and functions that perform unsafe operations but have API surfaces which are much more specialized for the tasks we're using them for. This is where we try to keep most of the internal API of the TrieMap.  
 
 **Top**: The Safe API
 
-Finally, we have the safe API surrounding the data structure that we want end users to actually use.
+Finally, we have the safe API surrounding the data structure that we want end users to actually use. This doesn't expose any `unsafe`, as per our requirements.
 
 ## Conclusion
 
@@ -260,7 +258,7 @@ This implementation is now in production in the Redis Query Engine! We can note 
 |Microbenchmarks|❌|✅|
 |Performance|(baseline)|25% to 100% improvement in core operations|
 
-The codebase did double in size, but with a move to a Rust codebase the unsafe operations have been confined to an area of the code a fraction of the size of the C codebase, where unsafe operations could have been happening anywhere.
+One interesting part of this is how the codebase doubled in size. Moving to a rust codebase sometimes comes with the expectation of a more expressive, smaller codebase. With a move to a Rust codebase the unsafe operations have been confined to an area of the code a fraction of the size of the C codebase, where unsafe operations could have been happening anywhere. But expressing that 
 
 Test coverage was greatly improved, the last percentage points in coverage are in unreachable areas.
 
@@ -274,4 +272,4 @@ A rewrite is also an opportunity to reassess assumptions. In the original implem
 
 We could have stopped at our naive implementation, failing the client on performance. We could have wrapped large areas of the codebase in unsafe, failing the client on maintainability. We could have come in with a new data structure entirely, failing the client on the performance assumptions made in the rest of their codebase.
 
-The success of this rewrite in terms of speed, performance, and future maintainability is a consequence of taking the client's needs seriously and keeping an open mind on digesting the problems current code solved.
+The success of this rewrite in terms of speed, performance, and future maintainability is a consequence of taking the client's needs seriously and keeping an open mind while digesting the problems existing code solved.
