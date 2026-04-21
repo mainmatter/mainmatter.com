@@ -1,5 +1,9 @@
 @use "../mixins/rem-calc" as *;
 
+* {
+  text-wrap: balance;
+}
+
 h1,
 .h1 {
   margin: 0;
@@ -101,15 +105,4 @@ h4.medium {
   font-size: clamp(1.3rem, 0.94rem + 0.78vw, 1.5rem);
   font-weight: 700;
   line-height: 1.5;
-}
-
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4 {
-  text-wrap: balance; 
 }
