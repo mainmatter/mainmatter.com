@@ -6,15 +6,18 @@
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
   gap: 25px;
-  .photo-grid__img-1 { grid-column: 1 / 4; grid-row: 1 / 3; } 
-  .photo-grid__img-2 { display: none } 
-  .photo-grid__img-3 { grid-column: 4 / 6; grid-row: 1 / 4;; }
-  .photo-grid__img-4 { grid-column: 4 / 6; grid-row: 4 / 6; } 
-  .photo-grid__img-5 { grid-column: 1 / 4; grid-row: 3 / 6; }
-
+  
   img {
     width: 100%; height: 100%; object-fit: cover;
   }
+
+  .photo-grid__img-1 { grid-column: 1 / 4; grid-row: 1 / 3; } 
+  .photo-grid__img-2 { display: none; } 
+  .photo-grid__img-3 { grid-column: 1 / 4; grid-row: 3 / 6; object-position: bottom center; }
+  .photo-grid__img-4 { grid-column: 4 / 6; grid-row: 4 / 6; } 
+  .photo-grid__img-5 { grid-column: 4 / 6; grid-row: 1 / 4; }
+
+
 
   @media (min-width: $breakpoint-s) {
     aspect-ratio: 1.85;
