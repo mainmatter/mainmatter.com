@@ -102,3 +102,14 @@ h4.medium {
   font-weight: 700;
   line-height: 1.5;
 }
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  text-wrap: balance; 
+}
