@@ -21,9 +21,8 @@ og:
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "image-aspect-ratio-with-button.njk" import imageAspectRatioWithButton %}
 {% from "quote.njk" import quote %}
-{% from 'featured-case-study.njk' import featuredCaseStudy %}
-{% from "featured-case-studies.njk" import featuredCaseStudies %}
 {% from "contact-form-LP.njk" import contactFormLP %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
 
 {%
   set toc = {
@@ -109,11 +108,11 @@ og:
 <section class="pt-7" id="how-we-work">
   <div class="container container--lg">
     <div class="photo-grid">
-      <img class="img-1" src="/assets/images/photos/balloons-top.jpeg">
-      <img class="img-2" src="/assets/images/photos/balloons-top.jpeg">
-      <img class="img-3" src="/assets/images/photos/balloons-top.jpeg">
-      <img class="img-4" src="/assets/images/photos/balloons-top.jpeg">
-      <img class="img-5" src="/assets/images/photos/balloons-top.jpeg">
+      <img class="photo-grid__img-1" src="/assets/images/photos/balloons-top.jpeg">
+      <img class="photo-grid__img-2" src="/assets/images/photos/balloons-top.jpeg">
+      <img class="photo-grid__img-3" src="/assets/images/photos/balloons-top.jpeg">
+      <img class="photo-grid__img-4" src="/assets/images/photos/balloons-top.jpeg">
+      <img class="photo-grid__img-5" src="/assets/images/photos/balloons-top.jpeg">
     </div>
     <h1 class="mb-2 mt-2">How We Work</h1>
     <p class="medium">
@@ -155,75 +154,15 @@ og:
 
 {{ contactFormLP(null) }}
 
-<section class="container container--lg opensource-list py-7 image-max-width-32" id="open-source">
-  <div class="">
-    <h1 class="opensource-list__title">You Might Like...</h1>
-    <ul class="opensource-list__list opensource-list__list-redesigned">
-      <li class="opensource-list__project">
-        <div>
-          <div class="opensource-list__project-image">
-            <img
-              src="/assets/images/rust/redis-youtube-talk.webp"
-              alt="Luca Palmieri presenting Mainmatter's Redis contributions on stage"
-            />
-          </div>
-          <div class="opensource-list__project-text">
-            <h4 class="mb-015 medium">A deep-dive into our work for Redis at EuroRust 2025</h4>
-          </div>
-        </div>
-        <div class="opensource-list__project-link">
-          {%
-            set link = {
-            "label": 'Watch on YouTube',
-            "url": 'https://youtube.com/watch?v=XklFGy3aUX4'
-            }
-          %}
-          {{ btnSecondary( link, 'link-purple' ) }}
-        </div>
-      </li>
-      <li class="opensource-list__project">
-        <div>
-          <div class="opensource-list__project-image">
-            <img src="/assets/images/rust/eserde-blog-post.webp" alt="Rust logo" />
-          </div>
-          <div class="opensource-list__project-text">
-            <h4 class="mb-015 medium">
-              Blog post: eserde: Don't stop at the first deserialization error
-            </h4>
-          </div>
-        </div>
-        <div class="opensource-list__project-link">
-          {%
-            set link = {
-            "label": 'Read Blog Post',
-            "url": '/blog/2025/02/13/eserde/'
-            }
-          %}
-          {{ btnSecondary( link, 'link-purple' ) }}
-        </div>
-      </li>
-      <li class="opensource-list__project">
-        <div>
-          <div class="opensource-list__project-image">
-            <img
-              src="/assets/images/rust/rust-handbook.webp"
-              alt="Hand reaching out to a crab-shaped toy"
-            />
-          </div>
-          <div class="opensource-list__project-text">
-            <h4 class="mb-015 medium">The Rust Adoption Handbook</h4>
-          </div>
-        </div>
-        <div class="opensource-list__project-link">
-          {%
-            set link = {
-            "label": 'Download Handbook',
-            "url": '/rust-adoption-handbook/'
-            }
-          %}
-          {{ btnSecondary( link, 'link-purple' ) }}
-        </div>
-      </li>
-    </ul>
-  </div>
+<section>
+  {%
+    set imageData = {
+    "imgPath": "/assets/images/services/launch-your-idea.jpeg",
+    "alt": "Map of Europe highlighting locations Mainmatter team members work",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+    }
+  %}
+  {{ imageAspectRatio(imageData, "3/2", "1/1") }}
 </section>
