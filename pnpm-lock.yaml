@@ -41,7 +41,7 @@ importers:
         version: 1.31.12(typescript@6.0.3)
       '@quasibit/eleventy-plugin-schema':
         specifier: github:mainmatter/eleventy-plugin-schema#custom
-        version: https://codeload.github.com/mainmatter/eleventy-plugin-schema/tar.gz/1b033a2cab7c9bd652f75264a069207a59f30ea2(@11ty/eleventy@3.1.5)
+        version: https://codeload.github.com/mainmatter/eleventy-plugin-schema/tar.gz/3f7fe3299fe985f5636b97e05ac49ddeabb579b9(@11ty/eleventy@3.1.5)
       '@rollup/plugin-commonjs':
         specifier: ^28.0.9
         version: 28.0.9(rollup@4.60.2)
@@ -710,8 +710,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@quasibit/eleventy-plugin-schema@https://codeload.github.com/mainmatter/eleventy-plugin-schema/tar.gz/1b033a2cab7c9bd652f75264a069207a59f30ea2':
-    resolution: {tarball: https://codeload.github.com/mainmatter/eleventy-plugin-schema/tar.gz/1b033a2cab7c9bd652f75264a069207a59f30ea2}
+  '@quasibit/eleventy-plugin-schema@https://codeload.github.com/mainmatter/eleventy-plugin-schema/tar.gz/3f7fe3299fe985f5636b97e05ac49ddeabb579b9':
+    resolution: {tarball: https://codeload.github.com/mainmatter/eleventy-plugin-schema/tar.gz/3f7fe3299fe985f5636b97e05ac49ddeabb579b9}
     version: 1.13.0
     engines: {node: '>=18.0.0'}
     peerDependencies:
@@ -4605,7 +4605,7 @@ snapshots:
       - react-native-b4a
       - supports-color
 
-  '@quasibit/eleventy-plugin-schema@https://codeload.github.com/mainmatter/eleventy-plugin-schema/tar.gz/1b033a2cab7c9bd652f75264a069207a59f30ea2(@11ty/eleventy@3.1.5)':
+  '@quasibit/eleventy-plugin-schema@https://codeload.github.com/mainmatter/eleventy-plugin-schema/tar.gz/3f7fe3299fe985f5636b97e05ac49ddeabb579b9(@11ty/eleventy@3.1.5)':
     dependencies:
       '@11ty/eleventy': 3.1.5
 
