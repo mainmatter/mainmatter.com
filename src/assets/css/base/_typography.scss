@@ -1,9 +1,5 @@
 @use "../mixins/rem-calc" as *;
 
-* {
-  text-wrap: balance;
-}
-
 h1,
 .h1 {
   margin: 0;
