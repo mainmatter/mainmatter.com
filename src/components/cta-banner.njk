@@ -9,8 +9,11 @@
     data-background-color="{{ color }}"
   >
     <div
-      class="cta-banner__wrapper {% if width == 'full' %}container container--xl{% elif width == 'medium' %}cta-banner-medium__wrapper
-      container container--lg{% endif %}"
+      class="cta-banner__wrapper {% if width == 'full' %}
+        container container--xl
+      {% elif width == 'medium' %}
+        cta-banner-medium__wrapper container container--lg
+      {% endif %}"
     >
       <div class="cta-banner__main">
         {% if content.eyebrow %}
