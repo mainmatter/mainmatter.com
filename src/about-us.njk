@@ -49,44 +49,48 @@ og:
 <section class="py-7 background-aqua">
   <h1 class="container container--lg mb-2 color-white" id="team-stats">What Sets Us Apart</h1>
   <div class="container container--lg p-2 p-3 background-white">
-      <div class="stats-grid">
-        <div class="stats-grid__wrapper">
-          <div class="stats-grid__content">
-            <h2 class="stats-grid__stat">28</h2>
-            <p class="stats-grid__explanation medium">team members</p>
-          </div>
-          <div class="stats-grid__content">
-            <h2 class="stats-grid__stat">20%</h2>
-            <p class="stats-grid__explanation medium">of our time dedicated to open source work</p>
-          </div>
-          <div class="stats-grid__content">
-            <h2 class="stats-grid__stat">X</h2>
-            <p class="stats-grid__explanation medium">projects delivered</p>
-          </div>
-          <div class="stats-grid__content">
-            <h2 class="stats-grid__stat">X+<span class="stats-grid__addnl-text"> years</span></h2>
-            <p class="stats-grid__explanation medium">of coding experience</p>
-          </div>
-          <div class="stats-grid__content">
-            <h2 class="stats-grid__stat">X<span class="stats-grid__addnl-text"> years</span></h2>
-            <p class="stats-grid__explanation medium">average client retention</p>
-          </div>
-          <div class="stats-grid__content">
-            <h2 class="stats-grid__stat">X</h2>
-            <p class="stats-grid__explanation medium">events hosted</p>
-          </div>
+    <div class="stats-grid">
+      <div class="stats-grid__wrapper">
+        <div class="stats-grid__content">
+          <h2 class="stats-grid__stat">28</h2>
+          <p class="stats-grid__explanation medium">team members</p>
+        </div>
+        <div class="stats-grid__content">
+          <h2 class="stats-grid__stat">20%</h2>
+          <p class="stats-grid__explanation medium">of our time dedicated to open source work</p>
+        </div>
+        <div class="stats-grid__content">
+          <h2 class="stats-grid__stat">X</h2>
+          <p class="stats-grid__explanation medium">projects delivered</p>
+        </div>
+        <div class="stats-grid__content">
+          <h2 class="stats-grid__stat">X+<span class="stats-grid__addnl-text"> years</span></h2>
+          <p class="stats-grid__explanation medium">of coding experience</p>
+        </div>
+        <div class="stats-grid__content">
+          <h2 class="stats-grid__stat">X<span class="stats-grid__addnl-text"> years</span></h2>
+          <p class="stats-grid__explanation medium">average client retention</p>
+        </div>
+        <div class="stats-grid__content">
+          <h2 class="stats-grid__stat">X</h2>
+          <p class="stats-grid__explanation medium">events hosted</p>
+        </div>
       </div>
-      <p class="medium">
-        We invest deeply in the technologies we work with. We build teams around industry leaders, maintainers, authors, and long-time contributors — people who don't just use the technology, but help shape it. We dedicate 20% of everyone’s time to open source work and run conferences like EuroRust, EmberFest and Svelte Summit. We are driven by a genuine curiosity for our core technologies and a passion for doing the work well. 
-      </p>
-      {%
-        set link = {
-        "label": 'View our work',
-        "url": '/work/'
-        }
-      %}
-      {{ btnSecondary( link, 'mt-2' ) }}
     </div>
+    <p class="medium">
+      We invest deeply in the technologies we work with. We build teams around industry leaders,
+      maintainers, authors, and long-time contributors — people who don't just use the technology,
+      but help shape it. We dedicate 20% of everyone’s time to open source work and run conferences
+      like EuroRust, EmberFest and Svelte Summit. We are driven by a genuine curiosity for our core
+      technologies and a passion for doing the work well.
+    </p>
+    {%
+      set link = {
+      "label": 'View our work',
+      "url": '/work/'
+      }
+    %}
+    {{ btnSecondary( link, 'mt-2' ) }}
   </div>
 </section>
 
@@ -109,15 +113,36 @@ og:
 <section class="pt-7" id="how-we-work">
   <div class="container container--lg">
     <div class="photo-grid">
-      <img class="photo-grid__img-1" src="/assets/images/about-us/team.webp" alt="Team photo">
-      <img class="photo-grid__img-2" src="/assets/images/about-us/workshop.webp" alt="Team workshop">
-      <img class="photo-grid__img-3" src="/assets/images/about-us/venice.webp" alt="A boat in a Venice canal">
-      <img class="photo-grid__img-4" src="/assets/images/about-us/hike.webp" alt="A group photo of the team on a hike, next to some goats">
-      <img class="photo-grid__img-5" src="/assets/images/about-us/bowling.jpg" alt="Team member bowling">
+      <img class="photo-grid__img-1" src="/assets/images/about-us/team.webp" alt="Team photo" />
+      <img
+        class="photo-grid__img-2"
+        src="/assets/images/about-us/workshop.webp"
+        alt="Team workshop"
+      />
+      <img
+        class="photo-grid__img-3"
+        src="/assets/images/about-us/venice.webp"
+        alt="A boat in a Venice canal"
+      />
+      <img
+        class="photo-grid__img-4"
+        src="/assets/images/about-us/hike.webp"
+        alt="A group photo of the team on a hike, next to some goats"
+      />
+      <img
+        class="photo-grid__img-5"
+        src="/assets/images/about-us/bowling.jpg"
+        alt="Team member bowling"
+      />
     </div>
     <h1 class="mb-2 mt-2">How We Work</h1>
     <p class="medium">
-      We are a fully remote team, spread across Europe and beyond. Remote-first is not a compromise for us, it’s a deliberate choice and investment into our team. For us, team culture is a top priority. Twice a year we all meet up in person, for workshops and exploring new European cities. Past trips include Venice, Strasbourg and Munich. These meetups matter deeply to us and are where we reflect on where we are heading, invest in relationships and simply enjoy each other's company.
+      We are a fully remote team, spread across Europe and beyond. Remote-first is not a compromise
+      for us, it’s a deliberate choice and investment into our team. For us, team culture is a top
+      priority. Twice a year we all meet up in person, for workshops and exploring new European
+      cities. Past trips include Venice, Strasbourg and Munich. These meetups matter deeply to us
+      and are where we reflect on where we are heading, invest in relationships and simply enjoy
+      each other's company.
     </p>
   </div>
 </section>
@@ -151,6 +176,7 @@ og:
       }
     %}
     {{ btnSecondary( link, 'mt-2' ) }}
+  </div>
 </section>
 
 {{ contactFormLP(null) }}
