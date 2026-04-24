@@ -12,7 +12,7 @@ A TrieMap is a key-value data structure that has a similar API as a Hashmap / Bi
 
 ![Diagram showing how a set of tuples are represented in a TrieMap.](/assets/images/posts/2026-04-XX-redis-triemap/trie.svg)
 
-We can easily imagine how to do this in Rust, we just need to store a data structure in the form:
+We can sketch this out in Rust:
 
 ```rust
 struct TrieMapNode<T> {
@@ -24,7 +24,7 @@ struct TrieMapNode<T> {
 }
 ```
 
-Very simple stuff! We can "cascade" down nodes from the root to complete the labels of leaves. The data field is optional as labels can branch without having an appropriate piece of data at the branch point: a map with only the key-value pairs `"Scarborough": 42` and `"Scaffolding": 451` doesn't have associated data for their shared parent `"Sca"`.
+We can "cascade" down nodes from the root to complete the labels of leaves. The data field is optional as labels can branch without having an appropriate piece of data at the branch point: a map with only the key-value pairs `"Scarborough": 42` and `"Scaffolding": 451` doesn't have associated data for their shared parent `"Sca"`.
 
 Let's take a look at the preexisting C implementation:
 
@@ -155,7 +155,7 @@ Rather than C's `malloc` which takes a length in bytes, `alloc` takes a `Layout`
 `Layout` exposes a fairly simple API, and we can define a layout to suit our complex needs at runtime.
 
 1. `Layout::new` produces a layout for a sized type.
-2. `Layout::array` produces a layout for an array of a sized type, with a runtime-or-const `n` elements. 
+2. `Layout::array` produces a layout for an array of a sized type, with `n` elements. 
 3. `Layout::extend` allows us to compose layouts together.
 
 This composable API of `Layout` means it's fairly easy to build the `Layout` we need for our custom Dynamically Sized Type.
@@ -248,7 +248,7 @@ Finally, we have the safe API surrounding the data structure that we want end us
 
 ## Conclusion
 
-This implementation is now in production in the Redis Query Engine! We can note & measure some key changes in the codebase from this transition.
+This implementation is now in production in Redis Query Engine! We can note and measure some key changes in the codebase from this transition.
 
 || C | Rust |
 |-|-|-|
