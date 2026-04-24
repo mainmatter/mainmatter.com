@@ -14,6 +14,7 @@ og:
 {% from "strategy-list.njk" import strategyList %}
 {% from "workshops-list.njk" import workshopsList %}
 {% from "cta-banner.njk" import ctaBanner %}
+{% from "global/default-newsletter-cta.njk" import defaultNewsletterCta %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {%
   set 'content' = {
@@ -62,7 +63,7 @@ og:
     }
   %}
   {{ ctaBanner('purple', 'default', content) }}
-  {% include "global/default-newsletter-cta.njk" %}
+{{ defaultNewsletterCta() }}
   {%
     set 'content' = {
     "title": "Team up with us to go further!",

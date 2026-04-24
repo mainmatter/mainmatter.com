@@ -13,6 +13,7 @@ og:
 {% from "image-banner-with-text.njk" import imageBannerWithText %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "global/default-newsletter-cta.njk" import defaultNewsletterCta %}
 {% from "quote.njk" import quote %}
 {% from "tech-cards.njk" import techCards %}
 {% from "btn-secondary.njk" import btnSecondary %}
@@ -211,7 +212,8 @@ og:
   {{ imageAspectRatio(imageData, "32/13", "35/19") }}
 </section>
 
-{% include "global/default-newsletter-cta.njk" %}
+{{ defaultNewsletterCta() }}
+
 {%
   set 'content' = {
   "title": "Team up with us for better tech!",

@@ -17,6 +17,7 @@ eleventyNavigation:
 {% from "cta-link.njk" import ctaLink %}
 {% from "btn-primary.njk" import btnPrimary %}
 {% from "btn-secondary.njk" import btnSecondary %}
+{% from "global/default-newsletter-cta.njk" import defaultNewsletterCta %}
 {% from "cta-banner.njk" import ctaBanner %}
 {%
   set 'content' = {
@@ -81,7 +82,8 @@ eleventyNavigation:
   </div>
 </section>
 
-{% include "global/default-newsletter-cta.njk" %}
+{{ defaultNewsletterCta() }}
+
 {%
   set 'content' = {
   "title": "Team up with us to go further!",
