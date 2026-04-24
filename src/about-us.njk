@@ -22,6 +22,7 @@ og:
 {% from "image-aspect-ratio-with-button.njk" import imageAspectRatioWithButton %}
 {% from "quote.njk" import quote %}
 {% from "contact-form-LP.njk" import contactFormLP %}
+{% from "global/default-newsletter-cta.njk" import defaultNewsletterCta %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 
 {%
@@ -35,7 +36,7 @@ og:
 {%
   set 'content' = {
   "title": "About Mainmatter",
-  "text": "We are a team of developers, inventors, designers, strategists, artists and storytellers. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et diam quis nulla malesuada pulvinar. Nam ac odio sapien. Nam consequat ex convallis eros placerat cursus. Morbi et vulputate metus. Aenean sagittis ultrices nibh, quis aliquam dui porttitor non. Proin sit amet consectetur neque, sed aliquet turpis. Duis placerat neque accumsan ipsum viverra, ac varius massa dapibus. Sed tempus aliquet molestie. Pellentesque id diam vel odio tempor commodo et nec turpis. Vestibulum eget nibh risus.",
+  "text": "We are a team of engineers, designers, strategists, and technology leaders. Fully remote, we are spread across Europe and work with clients around the world. We partner with clients for the long term, working like teammates and not just vendors. Our goal is to challenge thinking, build expertise and deliver truly sustainable solutions.",
   "image": "/assets/images/about-us/hero.webp",
   "alt": "Writing utencils",
   "loading": "eager",
@@ -51,32 +52,32 @@ og:
       <div class="stats-grid">
         <div class="stats-grid__wrapper">
           <div class="stats-grid__content">
-            <h2 class="stats-grid__stat">26</h2>
-            <p class="stats-grid__explanation medium">engineers, designers, and strategists</p>
+            <h2 class="stats-grid__stat">28</h2>
+            <p class="stats-grid__explanation medium">team members</p>
           </div>
           <div class="stats-grid__content">
-            <h2 class="stats-grid__stat">172</h2>
-            <p class="stats-grid__explanation medium">clients served since 2005</p>
+            <h2 class="stats-grid__stat">20%</h2>
+            <p class="stats-grid__explanation medium">of our time dedicated to open source work</p>
           </div>
           <div class="stats-grid__content">
-            <h2 class="stats-grid__stat">250</h2>
+            <h2 class="stats-grid__stat">X</h2>
             <p class="stats-grid__explanation medium">projects delivered</p>
           </div>
           <div class="stats-grid__content">
-            <h2 class="stats-grid__stat">10<span class="stats-grid__addnl-text"> years</span></h2>
-            <p class="stats-grid__explanation medium">longest client relationship</p>
+            <h2 class="stats-grid__stat">X+<span class="stats-grid__addnl-text"> years</span></h2>
+            <p class="stats-grid__explanation medium">of coding experience</p>
           </div>
           <div class="stats-grid__content">
-            <h2 class="stats-grid__stat">3.4<span class="stats-grid__addnl-text"> years</span></h2>
+            <h2 class="stats-grid__stat">X<span class="stats-grid__addnl-text"> years</span></h2>
             <p class="stats-grid__explanation medium">average client retention</p>
           </div>
           <div class="stats-grid__content">
-            <h2 class="stats-grid__stat">100%</h2>
-            <p class="stats-grid__explanation medium">US-based team</p>
+            <h2 class="stats-grid__stat">X</h2>
+            <p class="stats-grid__explanation medium">events hosted</p>
           </div>
       </div>
       <p class="medium">
-        Paragraph on how we work.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et diam quis nulla malesuada pulvinar. Nam ac odio sapien. Nam consequat ex convallis eros placerat cursus. Morbi et vulputate metus. Aenean sagittis ultrices nibh, quis aliquam dui porttitor non. Proin sit amet consectetur neque, sed aliquet turpis. Duis placerat neque accumsan ipsum viverra, ac varius massa dapibus. Sed tempus aliquet molestie. Pellentesque id diam vel odio tempor commodo et nec turpis. Vestibulum eget nibh risus.
+        We invest deeply in the technologies we work with. We build teams around industry leaders, maintainers, authors, and long-time contributors — people who don't just use the technology, but help shape it. We dedicate 20% of everyone’s time to open source work and run conferences like EuroRust, EmberFest and Svelte Summit. We are driven by a genuine curiosity for our core technologies and a passion for doing the work well. 
       </p>
       {%
         set link = {
@@ -93,7 +94,7 @@ og:
   {%
     set 'content' = {
       "imgPath": "/assets/images/photos/balloons-top.jpeg",
-      "alt": "Colorful crab",
+      "alt": "Colorful balloons",
       "sizes": "100vw",
       "loading": "lazy",
       "sizesArray": [760, 1440, 1920],
@@ -116,7 +117,7 @@ og:
     </div>
     <h1 class="mb-2 mt-2">How We Work</h1>
     <p class="medium">
-      Paragraph on how we work.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et diam quis nulla malesuada pulvinar. Nam ac odio sapien. Nam consequat ex convallis eros placerat cursus. Morbi et vulputate metus. Aenean sagittis ultrices nibh, quis aliquam dui porttitor non. Proin sit amet consectetur neque, sed aliquet turpis. Duis placerat neque accumsan ipsum viverra, ac varius massa dapibus. Sed tempus aliquet molestie. Pellentesque id diam vel odio tempor commodo et nec turpis. Vestibulum eget nibh risus.
+      We are a fully remote team, spread across Europe and beyond. Remote-first is not a compromise for us, it’s a deliberate choice and investment into our team. For us, team culture is a top priority. Twice a year we all meet up in person, for workshops and exploring new European cities. Past trips include Venice, Strasbourg and Munich. These meetups matter deeply to us and are where we reflect on where we are heading, invest in relationships and simply enjoy each other's company.
     </p>
   </div>
 </section>
@@ -154,17 +155,17 @@ og:
 
 {{ contactFormLP(null) }}
 
-{% include "global/default-newsletter-cta.njk" %}
+{{ defaultNewsletterCta('medium') }}
 
 <section>
   {%
     set imageData = {
-    "imgPath": "/assets/images/services/launch-your-idea.jpeg",
+    "imgPath": "/assets/images/about-us/team-map.png",
     "alt": "Map of Europe highlighting locations Mainmatter team members work",
     "sizes": "100vw",
     "loading": "lazy",
     "sizesArray": [760, 1440, 1920]
     }
   %}
-  {{ imageAspectRatio(imageData, "3/2", "1/1") }}
+  {{ imageAspectRatio(imageData, "2/1", "2.5/1") }}
 </section>
