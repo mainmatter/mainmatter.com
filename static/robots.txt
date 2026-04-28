@@ -1,4 +1,4 @@
-# http://www.robotstxt.org
 User-agent: *
-Disallow:
+Allow: /
 Sitemap: https://mainmatter.com/sitemap.xml
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
