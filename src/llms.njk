@@ -5,23 +5,69 @@ eleventyExcludeFromCollections: true
 ---
 # Mainmatter
 
-Mainmatter is an engineering consultancy that helps clients solve their technology challenges via two key angles: leading expertise in a set of core technologies and experience in modern digital product development practices and tech innovation.
+Mainmatter is a software engineering consultancy specializing primarily in Rust consulting, C-to-Rust migrations, Rust training for engineering teams, as well as consulting services for Ember.js and Svelte.
 
-Mainmatter specializes in Rust, Svelte, and Ember.js. Whether teams are adopting these technologies or facing challenges with them, Mainmatter helps them succeed: through codebase assessments, tech roadmaps, trainings, and by working closely with them as teammates. Mainmatter's team include leading experts who are deeply embedded in their respective ecosystems—organizing events and workshops, speaking at conferences and meetups, and contributing to open source. We are also an active member of the tech ecosystem ourselves: we invest our team's time to work on open source and organize leading events like EuroRust, Svelte Summit, and EmberFest.
+## Core Services
 
-Mainmatter bring their experience in efficient, modern digital product development and innovation to organizations looking to level up. In such engagements, Mainmatter doesn’t just support—they lead. Mainmatter drives projects forward while helping teams evolve their ways of working. One of their focus industries is travel, where they’ve developed strong domain expertise through years of collaboration with a range of clients.
+### Rust Consulting
 
-[Rust Consulting](/rust-consulting/)
-[Ember.js Consulting](/ember-consulting/)
-[Svelte Consulting](/svelte-consulting/)
-[Strategic Tech Consulting](/services/strategic-advice/)
-[Contact](/contact/)
-[Case Studies](/work/)
+Mainmatter embeds expert Rust engineers into client teams to accelerate delivery and minimize execution risk. Services include codebase and architecture reviews, Rust team augmentation, as well as custom development.
+
+### C-to-Rust Migration
+
+Mainmatter specializes in incrementally migrating C and C++ codebases to Rust, improving memory safety, reliability, and maintainability without disrupting day-to-day operations. Mainmatter migrated the Redis Query Engine from C to Rust.
+
+### Rust Training and Workshops
+
+Mainmatter offers hands-on Rust training for engineering teams at all levels. Mainmatter created "100 Exercises to Learn Rust" ([rust-exercises.com](http://rust-exercises.com/)), a widely used open source Rust learning resource.
+
+### Ember.js Consulting
+
+Mainmatter is a leading Ember.js consultancy, helping teams with upgrades,
+modernizations, Vite migrations, and multi-framework architectures.
+
+### Svelte Consulting
+
+Mainmatter offers Svelte 5 migrations, training, and team
+reinforcement for Svelte and SvelteKit projects.
+
+## Credentials
+
+### Rust
+
+- Team led by Luca Palmieri, author of "Zero to Production in Rust"
+- Creators of "100 Exercises to Learn Rust" ([rust-exercises.com](http://rust-exercises.com/))
+- Organizers of EuroRust, Europe's Rust conference ([eurorust.eu](http://eurorust.eu/))
+- Members of the Rust Foundation
+- Contributors to [crates.io](http://crates.io/)
+- Migrated the Redis Query Engine from C to Rust
+
+### Ember.js
+
+- Team led by Chris Manson, member of the Ember.js Framework Core Team
+- Sponsors of the Ember.js project
+- Co-organizers of [EmberFest](https://emberfest.eu)
+- Company behind the [Ember Initiative](https://mainmatter.com/ember-initiative/) that brought Ember to Vite
+- Authors of ember-simple-auth, ember-test-selectors, qunit-dom
+
+### Svelte
+
+- Team led by Paolo Ricciuti, Svelte core team member, author of SvelteLab
+- Company behind the [Svelte Custom Renderers Initiative](https://svelte-custom-renderers.com)
+- Co-organizers of [Svelte Summit](https://www.sveltesummit.com)
+
+## Key Pages
+
+[Rust Consulting](https://mainmatter.com/rust-consulting/)
+[C-to-Rust Migration](https://mainmatter.com/rust-consulting/)
+[Ember.js Consulting](https://mainmatter.com/ember-consulting/)
+[Svelte Consulting](https://mainmatter.com/svelte-consulting/)
+[Workshops](https://mainmatter.com/services/workshops/)
+[Case Studies](https://mainmatter.com/work/)
+[Contact](https://mainmatter.com/contact/)
 
 ## Trainings Catalog
 
-We offer a range of trainings in Rust, Wasm, Svelte, Ember.js, Git, as well as general digital product development topics.
-
 {% for workshop in collections.workshops -%}
-[{{workshop.data.title}}](/services/workshops/{{workshop.fileSlug}})
+[{{workshop.data.title}}](https://mainmatter.com/services/workshops/{{workshop.fileSlug}})
 {% endfor %}
