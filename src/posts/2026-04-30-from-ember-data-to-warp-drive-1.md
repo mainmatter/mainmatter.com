@@ -70,4 +70,4 @@ Initially, when you start creating `Schema` classes, the simplest approach is to
 
 A codemod is currently under development to migrate Ember applications to WarpDrive LegacyMode. This codemod is expected to include adding WarpDrive packages, configuring them for use, and migrating `Model` classes to `Schema`.
 
-In the next blog post of the "From EmberData to WarpDrive" series, we will see how Super Rentals tutorial was migrated to WarpDrive in practice.
+In [the next blog post of the "From EmberData to WarpDrive" series](/blog/2026/04/30/from-ember-data-to-warp-drive-2/), we will see how Super Rentals tutorial was migrated to WarpDrive in practice.

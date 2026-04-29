@@ -38,9 +38,7 @@ Since we have managed our deprecations correctly, then we have an explicit `Stor
 
 When updating from `ember-data 5.3` to `ember-data 5.8`, EmberData internals now rely on WarpDrive packages, and a bunch of new deprecations appear. This one was introduced in EmberData 5.5:
 
-
 ⚠️ _Using WarpDrive with EmberJS requires configuring it to use Ember's reactivity system. (...)_
-
 
 It essentially asks us to setup WarpDrive. To do so, we need to install new dependencies and change two files:
 
