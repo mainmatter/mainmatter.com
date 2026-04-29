@@ -1,0 +1,36 @@
+@use "../base/breakpoints" as *;
+
+.stats-grid__wrapper {
+  padding: 0 0 4rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  @media (min-width: $breakpoint-s) {
+    padding: 2rem 0 3rem 0;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 3rem;
+  }
+}
+
+.stats-grid__content {
+  text-align: center;
+}
+
+.stats-grid__stat {
+  color: var(--color-purple);
+  line-height: 1;
+}
+
+.stats-grid__explanation {
+  line-height: 1.5;
+  text-wrap: balance;
+}
+
+.stats-grid__addnl-text {
+  font-size: 1.125rem;
+
+  @media (min-width: $breakpoint-s) {
+    font-size: clamp(1.125rem, -0.125rem + 2.604vw, 1.75rem);
+  }
+}

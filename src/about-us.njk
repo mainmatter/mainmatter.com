@@ -1,0 +1,192 @@
+---
+layout: base
+title: "About Mainmatter "
+description: Mainmatter's experts join your team to accelerate your efforts and minimize execution risk. We focus on C-to-Rust migrations, backends, and training.
+eleventyNavigation:
+  key: blog
+  order: 8
+  title: About us
+permalink: /about-us/
+---
+
+{% from "image-banner-with-text.njk" import imageBannerWithText %}
+{% from "service-cards.njk" import serviceCards %}
+{% from "recent-posts.njk" import recentPosts %}
+{% from "logo-list.njk" import logoList %}
+{% from "cta-link.njk" import ctaLink %}
+{% from "color-hero.njk" import colorHero %}
+{% from "btn-secondary.njk" import btnSecondary %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "image-aspect-ratio-with-button.njk" import imageAspectRatioWithButton %}
+{% from "quote.njk" import quote %}
+{% from "contact-form-LP.njk" import contactFormLP %}
+{% from "global/default-newsletter-cta.njk" import defaultNewsletterCta %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+
+{%
+  set toc = {
+    'What Sets Us Apart': '#team-stats',
+    'How We Work': '#how-we-work',
+    'Open Positions': '#hiring',
+    'Let’s Talk': '#contact'
+  }
+%}
+{%
+  set 'content' = {
+  "title": "About Mainmatter",
+  "text": "We're a team of tech leaders, designers, and strategists with deep roots in the tech community. Distributed across Europe, we partner with clients worldwide, embedding with their teams to challenge assumptions, grow in-house capability, and deliver solutions built to last.",
+  "image": "/assets/images/about-us/hero.webp",
+  "alt": "Writing utencils",
+  "loading": "eager",
+    "containerType": "lp",
+  "toc": toc
+  }
+%}
+{{ colorHero('purple', content) }}
+
+<section class="py-7 background-aqua">
+  <h1 class="container container--lg mb-2 color-white" id="team-stats">What Sets Us Apart</h1>
+  <div class="container container--lg p-2 p-3 background-white">
+    <div class="stats-grid">
+      <div class="stats-grid__wrapper">
+        <div class="stats-grid__content">
+          <h2 class="stats-grid__stat">28</h2>
+          <p class="stats-grid__explanation medium">team members</p>
+        </div>
+        <div class="stats-grid__content">
+          <h2 class="stats-grid__stat">20%</h2>
+          <p class="stats-grid__explanation medium">of our time dedicated to open source work</p>
+        </div>
+        <div class="stats-grid__content">
+          <h2 class="stats-grid__stat">49</h2>
+          <p class="stats-grid__explanation medium">teams partnered with</p>
+        </div>
+        <div class="stats-grid__content">
+          <h2 class="stats-grid__stat">2015</h2>
+          <p class="stats-grid__explanation medium">year we were founded</p>
+        </div>
+        <div class="stats-grid__content">
+          <h2 class="stats-grid__stat">6</h2>
+          <p class="stats-grid__explanation medium">years, our longest client partnership</p>
+        </div>
+        <div class="stats-grid__content">
+          <h2 class="stats-grid__stat">14</h2>
+          <p class="stats-grid__explanation medium">conferences organized</p>
+        </div>
+      </div>
+    </div>
+    <p class="medium">
+      We invest deeply in the technologies we work with. We build teams around industry leaders,
+      maintainers, authors, and long-time contributors — people who don't just use the technology,
+      but help shape it. We dedicate 20% of everyone’s time to open source work and run conferences
+      like EuroRust, EmberFest and Svelte Summit. We are driven by a genuine curiosity for tech and
+      a passion for our core technologies.
+    </p>
+    {%
+      set link = {
+      "label": 'See our work',
+      "url": '/work/'
+      }
+    %}
+    {{ btnSecondary( link, 'mt-2' ) }}
+  </div>
+</section>
+
+<section class="mobile-hidden">
+  {%
+    set 'content' = {
+      "imgPath": "/assets/images/photos/balloons-top.jpeg",
+      "alt": "Colorful balloons",
+      "sizes": "100vw",
+      "loading": "lazy",
+      "sizesArray": [760, 1440, 1920],
+      "aspectRatioDesktop": "32/6",
+      "linkUrl": "#contact",
+      "linkText": "Have a Project for Us?"
+    }
+  %}
+  {{ imageAspectRatioWithButton(content) }}
+</section>
+
+<section class="pt-7" id="how-we-work">
+  <div class="container container--lg">
+    <div class="photo-grid">
+      <img class="photo-grid__img-1" src="/assets/images/about-us/team.webp" alt="Team photo" />
+      <img
+        class="photo-grid__img-2"
+        src="/assets/images/about-us/venice.webp"
+        alt="A boat in a Venice canal"
+      />
+      <img
+        class="photo-grid__img-3"
+        src="/assets/images/about-us/eurorust.webp"
+        alt="People celebrating at the tech conference EuroRust"
+      />
+      <img
+        class="photo-grid__img-4"
+        src="/assets/images/about-us/hike.webp"
+        alt="A group photo of the team on a hike, next to some goats"
+      />
+      <img
+        class="photo-grid__img-5"
+        src="/assets/images/about-us/bowling.jpg"
+        alt="Team member bowling"
+      />
+    </div>
+    <h1 class="mb-2 mt-2">How We Work</h1>
+    <p class="medium">
+      We are a fully remote team spread across Europe, so for us team culture is a top priority.
+      Twice a year we all meet up in person, for workshops and to explore European cities such as
+      Venice, Strasbourg and Munich. These trips are where we reflect on the road ahead, build real
+      relationships, and enjoy each other's company.
+    </p>
+  </div>
+</section>
+
+<section class="mt-7 mb-5" id="hiring">
+  <div class="container container--lg mb-6">
+    <h1>Join Our Team</h1>
+    {# {%
+        set 'content' = {
+        "text": "Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way.”",
+        "source": "Andreas Hartel",
+        "position": "Senior Engineer at Aleph Alpha",
+        "styling": "redesigned"
+        }
+      %}
+      {{ quote(content) }}
+    #}
+    {%
+      set link = {
+      "label": 'See open positions',
+      "url": 'https://www.linkedin.com/company/mainmatter/jobs/'
+      }
+    %}
+    {{ btnSecondary( link, 'mt-2' ) }}
+
+    {%
+      set link = {
+      "label": 'Submit a speculative application',
+      "url": 'mailto:jobs@mainmatter.com'
+      }
+    %}
+    {{ btnSecondary( link, 'mt-2' ) }}
+  </div>
+</section>
+
+{{ contactFormLP(null) }}
+
+{{ defaultNewsletterCta('medium') }}
+
+<section>
+  {%
+    set imageData = {
+    "imgPath": "/assets/images/about-us/team-map.png",
+    "alt": "Map of Europe highlighting locations Mainmatter team members work",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+    }
+  %}
+  {{ imageAspectRatio(imageData, "2/1", "2.5/1") }}
+</section>

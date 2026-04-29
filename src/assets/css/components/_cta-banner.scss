@@ -51,6 +51,10 @@
   padding: 2rem;
 }
 
+.cta-banner-medium__wrapper {
+  padding: 2rem 0;
+}
+
 .cta-banner__main {
   display: flex;
   flex-direction: column;
@@ -63,6 +67,10 @@
     display: flex;
     position: relative;
     padding: 6rem;
+  }
+
+  .cta-banner-medium__wrapper {
+    padding: 6rem 0;
   }
 
   .cta-banner__main {

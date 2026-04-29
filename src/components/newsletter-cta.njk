@@ -1,3 +1,5 @@
+{% from "global/default-newsletter-cta.njk" import defaultNewsletterCta %}
+
 {%- macro newsletterCta(tags) -%}
   {% if tags %}
     {% for tag in tags %}
@@ -6,7 +8,7 @@
       {% elif tag === "svelte" %}
         {% include "global/svelte-newsletter-cta.njk" %}
       {% else %}
-        {% include "global/default-newsletter-cta.njk" %}
+        {{ defaultNewsletterCta() }}
       {% endif %}
     {% endfor %}
   {% endif %}
