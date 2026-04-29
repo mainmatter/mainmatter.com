@@ -8,19 +8,19 @@ autoOg: true
 customCta: "global/ember-cta.njk"
 tagline: |
   <p>
-  Managing data coming from the backend is a common challenge for any modern web app, regardless of the underlying technology. The Ember framework has long relied on EmberData, whose efficiency enables the development of ambitious apps. However, for some time now, the Ember community has been hearing about WarpDrive as "the new data management layer that will replace EmberData—for the better.
+  Managing data coming from the backend is a common challenge for any modern web app, regardless of the underlying technology. The Ember framework has long relied on EmberData, whose efficiency enables the development of ambitious apps. However, for some time now, the Ember community has been hearing about WarpDrive as "the new data management layer that will replace EmberData—for the better".
   <br>
   This blog post is the first one of the "From Ember Data to WarpDrive" series. It aims to present an overview of what migrating to WarpDrive means for Ember developers.
   </p>
 ---
 
-Understanding the relationship between EmberData and WarpDrive isn’t straightforward. Number of packages exist that enable number of possible "intermediate states" between what used to be an application using EmberData before WarpDrive exist, and what a brand new app using WarpDrive can be now. This can be explained by an effort to open enough paths for developers to upgrade gradually and not let anyone behind—that's Ember's philosophy.
+Understanding the relationship between EmberData and WarpDrive isn’t straightforward. A number of packages exist that enable possible "intermediate states" between what used to be an application using EmberData before WarpDrive existed, and what a brand new app using WarpDrive can be now. This can be explained by an effort to open enough paths for developers to upgrade gradually and not leave anyone behind—that's Ember's philosophy.
 
 The purpose of this blog post is **NOT** to help you understand all the subtleties of WarpDrive in accurate terms, like the documentation should do after a few more iterations. My goal as the author is rather to picture a **simplified** version, and roughly illustrate the different **key stages** in the modernization of your Ember application's data layer to clarify your migration path.
 
 ## What is WarpDrive?
 
-WarpDrive is EmberData. It's not a new library, it's a rebranding. If you go to [npmjs.com](npmjs.com) and looks for [`ember-data`](https://www.npmjs.com/package/ember-data) package, you can see the corresponding GitHub repository is [warp-drive-data/warp-drive](https://github.com/warp-drive-data/warp-drive).
+WarpDrive is EmberData. It's not a new library, it's a rebranding. If you go to [npmjs.com](npmjs.com) and look for the [`ember-data`](https://www.npmjs.com/package/ember-data) package, you will see the corresponding GitHub repository is [warp-drive-data/warp-drive](https://github.com/warp-drive-data/warp-drive).
 
 ## Why a rebranding?
 
@@ -44,9 +44,9 @@ There are other differences between EmberData and WarpDrive, particularly around
 
 ### A transitional mode
 
-Imagine you have hundreds of `Model` classes in your codebase. It’s impossible to convert all of them to `Schema` in a single major update. Fortunately, WarpDrive’s development includes a cautious approach to untangling Ember: the LegacyMode, which allows WarpDrive to continue handling EmberData’s features and enables. For instance, LegacyMode enables coexisting `Model` and `Schema`.
+Imagine you have hundreds of `Model` classes in your codebase. It’s impossible to convert all of them to `Schema` in a single major update. Fortunately, WarpDrive’s development includes a cautious approach to untangling Ember: the LegacyMode, which allows WarpDrive to continue handling EmberData’s features. For instance, LegacyMode enables coexisting `Model` and `Schema`.
 
-You can think of LegacyMode as a key transitional phase where you can **"use WarpDrive as you used EmberData."**
+You can think of LegacyMode as a key transitional phase where you can **"use WarpDrive as you used EmberData".**
 
 ### An easy-to-reason-about definition
 

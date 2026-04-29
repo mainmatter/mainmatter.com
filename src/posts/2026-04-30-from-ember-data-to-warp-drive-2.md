@@ -8,13 +8,13 @@ autoOg: true
 customCta: "global/ember-cta.njk"
 tagline: |
   <p>
-  Managing data coming from the backend is a common challenge for any modern web app, regardless of the underlying technology. The Ember framework has long relied on EmberData, whose efficiency enables the development of ambitious apps. However, for some time now, the Ember community has been hearing about WarpDrive as "the new data management layer that will replace EmberData—for the better.
+  Managing data coming from the backend is a common challenge for any modern web app, regardless of the underlying technology. The Ember framework has long relied on EmberData, whose efficiency enables the development of ambitious apps. However, for some time now, the Ember community has been hearing about WarpDrive as "the new data management layer that will replace EmberData—for the better".
   <br>
   This blog post is the second one of the "Ember Data to WarpDrive" series. It aims to present how Super Rentals tutorial moved to WarpDrive LegacyMode.
   </p>
 ---
 
-Ember 6.10 has been out for a couple of weeks now! The documentation for this version has one particularity: it's the first time the tutorial relies on `@warp-drive` packages to implement Super Rentals' data layer. To be more specific, Super Rentals now relies on WarpDrive "LegacyMode". In simple words, WarpDrive LegacyMode allows you to _use WarpDrive the way you used EmberData_. For instance, you can still have your `Model` classes as they used to be—only the import changes—, and WarpDrive is able to handle them correctly. This is why this is a very interesting step to reach to move from EmberData to WarpDrive.
+Ember 6.10 has been out since February 6! The documentation for this version has one particularity: it's the first time the tutorial relies on `@warp-drive` packages to implement Super Rentals' data layer. To be more specific, Super Rentals now relies on WarpDrive "LegacyMode". In simple words, WarpDrive LegacyMode allows you to _use WarpDrive the way you used EmberData_. For instance, you can still have your `Model` classes as they used to be—only the import changes—, and WarpDrive is able to handle them correctly. This is why this is a very interesting step to reach to move from EmberData to WarpDrive.
 
 Some of the changes between 6.9 and 6.10 tutorials are hidden in the new 6.10 blueprint though, so to be sure you don't miss anything and know how to perform this update in your own application, this blog post will guide you through updating Super Rentals to WarpDrive LegacyMode.
 
@@ -38,9 +38,9 @@ Since we have managed our deprecations correctly, then we have an explicit `Stor
 
 When updating from `ember-data 5.3` to `ember-data 5.8`, EmberData internals now rely on WarpDrive packages, and a bunch of new deprecations appear. This one was introduced in EmberData 5.5:
 
-```
-⚠️ Using WarpDrive with EmberJS requires configuring it to use Ember's reactivity system. (...)
-```
+
+⚠️ _Using WarpDrive with EmberJS requires configuring it to use Ember's reactivity system. (...)_
+
 
 It essentially asks us to setup WarpDrive. To do so, we need to install new dependencies and change two files:
 
@@ -76,9 +76,7 @@ In `ember-cli-build.js`:
 
 Another type of deprecation was introduced in EmberData 5.7. This one is about the store APIs:
 
-```
-⚠️ store.[findAll|adapterFor|serializerFor...] is deprecated. Use store.request instead. (...) See https://docs.warp-drive.io/api/@warp-drive/core/build-config/deprecations/variables/ENABLE_LEGACY_REQUEST_METHODS for more details.
-```
+⚠️ _store.[findAll|adapterFor|serializerFor...] is deprecated. Use store.request instead. (...) See_ https://docs.warp-drive.io/api/@warp-drive/core/build-config/deprecations/variables/ENABLE_LEGACY_REQUEST_METHODS _for more details._
 
 The right way to fix this deprecation is to replace the old store APIs with the new API `store.request`, as described in the following [cheat sheet](https://request-service-cheat-sheet.netlify.app/).
 
@@ -253,7 +251,7 @@ Now all our legacy features are imported from `@warp-drive/legacy` rather that `
 
 ## Next steps & codemod
 
-Relying entirely on WarpDrive with all the deprecation fixed is a great migration step to move from EmberData to WarpDrive.
+Relying entirely on WarpDrive with all the deprecations fixed is a great migration step to move from EmberData to WarpDrive.
 
 To go further and implement WarpDrive LegacyMode in the strictest sense, we could replace our `Model` classes with new WarpDrive `Schema`, relying on `@warp-drive/legacy/model/migration-support`.
 
