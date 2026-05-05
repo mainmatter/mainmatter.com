@@ -2,31 +2,44 @@
 
 ---
 
-At Mainmatter we've been working to help Redis migrate the Redis Query Engine from C to Rust. They've ported some of their existing query engine code already, but this kind of work requires good strategy in both choosing good rewrite candidates and matching the complex behavior and performance characteristics of the original C code.
+At Mainmatter we've been working to help Redis migrate the Redis Query Engine from C to Rust. This kind of work requires good strategy in both choosing good rewrite candidates and matching the complex behavior and performance characteristics of the original C code.
 
-This blog post covers 
+This blog post covers the process of porting the Redis Query Engine's TrieMap implementation to Rust, including the challenges faced with making unsafe code maintainable and designing our own Dynamically Sized Type.
 
-## Case Study: Porting the TrieMap
+## What Is a TrieMap
 
-A TrieMap is a key-value data structure that has a similar API as a Hashmap / Binary Tree Map, but optimized for compressing keys by their shared prefixes.
+A TrieMap is a key-value data structure that has a similar API to a Hashmap / Binary Tree Map, but optimized for compressing keys by their shared prefixes.
 
 ![Diagram showing how a set of tuples are represented in a TrieMap.](/assets/images/posts/2026-04-XX-redis-triemap/trie.svg)
 
-We can sketch this out in Rust:
+In the above diagram, taken from [the talk this blog post is based on](https://www.youtube.com/watch?v=XklFGy3aUX4), we can see that each node has:
+
+1. A prefix label that this node and all its children share.
+2. Optional data (emoji, here).
+3. Child nodes (each with an associated first character.).
+
+We can "cascade" down nodes from the root to complete the labels of leaves. The data field is optional as labels can branch without having an appropriate piece of data at the branch point: a map with only the key-value pairs `"Scarborough": 42` and `"Scaffolding": 451` doesn't have associated data for their shared parent `"Sca"`.
+
+We hold onto the first byte of each child's label because, by nature of how shared prefixes are always consolidated by the ancestors of a node, each child is guaranteed to have a unique first byte. This can be leveraged for faster searches within the data structure.
+
+We can easily imagine how to do this in Rust, we just need to store a data structure in the form:
 
 ```rust
 struct TrieMapNode<T> {
     label: Vec<u8>,
-    children: Vec<TrieMapNode<T>,
+    children_first_bytes: Vec<u8>,
+    children: Vec<TrieMapNode<T>>,
     // The data that the label "maps" to.
     // This is optional, because not all nodes have complete keys with associated data.
     data: Option<T>,
 }
 ```
 
-We can "cascade" down nodes from the root to complete the labels of leaves. The data field is optional as labels can branch without having an appropriate piece of data at the branch point: a map with only the key-value pairs `"Scarborough": 42` and `"Scaffolding": 451` doesn't have associated data for their shared parent `"Sca"`.
+This does what we need it to, at least structurally, so maybe we can stop here? End of the blog post everyone, we can all can go home! Not so fast. A trained eye can see how this formulation of a TrieMap can cause problems. Let's take a step into the real world, where this TrieMap doesn't meet the performance requirements of the Redis Query Engine.
 
-Let's take a look at the preexisting C implementation:
+## Porting Redis Query Engine's TrieMap
+
+Redis Query Engine has its own C implementation of a TrieMap designed around the performance characteristics required for the real world. Let's take a look at it:
 
 ```c
 #pragma pack(1)
@@ -45,7 +58,27 @@ typedef struct {
 
 The core property of this type is that the fields, label, and the array of pointers to children take up a **single heap allocation**. This is really important for cache locality and minimizing pointer dereferences, but it also means the size of the type and some of the offsets of the fields of that type are not known at compile time.
 
-Note how this type is not fully definable in C's type system, the two lines of comments here are fields that we can't define in a C struct definition and need to compute how to access at runtime. `labelLen` and `numChildren` let us do these computations.
+Note how this type is not fully definable in C's type system, the two lines of comments after `label` are fields that we can't define in a C struct definition and need to compute how to access at runtime. `labelLen` and `numChildren` let us do these computations.
+
+```c
+// Simplified, illustrative dynamic field access logic.
+TrieMapNode** accessChildren(TrieMapNode* node) {
+    if (node->numChildren == 0) {
+        return NULL;
+    }
+    // `label` is the final field in the struct, so we know that
+    // all dynamically located fields are at or past that point.
+    //
+    // Add the lengths of the data before the children list.
+    // Because the labelLen and first letters of each child
+    // are all `char` (1 byte long) we don't need to multiply 
+    // them by a scalar of the size of those types.
+    int dynamic_offset_b = node->labelLen + node->numChildren;
+    return (TrieMapNode**) ((void*)&node->label + dynamic_offset_b);
+}
+```
+
+The above is an example of how we might access the children of a type like this. We know the lengths of each dynamic part of the datatype, so we can compute the offset.
 
 ![](/assets/images/posts/2026-04-XX-redis-triemap/c-layout.svg)
 
@@ -152,13 +185,48 @@ pub unsafe fn alloc(layout: Layout) -> *mut u8
 
 Rather than C's `malloc` which takes a length in bytes, `alloc` takes a `Layout` type that represents the size and alignment of an allocation.
 
-`Layout` exposes a fairly simple API, and we can define a layout to suit our complex needs at runtime.
+A trivial `Layout` for a sized type `T` can be generated via `Layout::new::<T>()`, but `Layout` also exposes a relatively simple to use API:
 
-1. `Layout::new` produces a layout for a sized type.
+1. `Layout::new` produces a layout for a sized type (as already stated).
 2. `Layout::array` produces a layout for an array of a sized type, with `n` elements. 
-3. `Layout::extend` allows us to compose layouts together.
+3. `Layout::extend` lets us "add" one layout to another, returning that composed layout and an offset for the rhs layout relative to the original layout. Order matters here.
 
-This composable API of `Layout` means it's fairly easy to build the `Layout` we need for our custom Dynamically Sized Type.
+We can use this to manually build a runtime-defined layout that suits our Dynamically Sized Type's needs. If we look at our DST's layout needs again:
+
+1. `label_len` (static size, `u16`)
+2. `n_children` (static size, `u8`)
+3. `label` (non-static size, `label_len` * `u8`)
+4. `children_first_bytes` (non-static size, `n_children` * `u8`)
+5. `children` (non-static size, `n_children` * `Node<T>`)
+6. `data` (static size, `Option<T>`)
+
+We have 3 non-static fields and 3 static fields. So to build up our layout we can do the following:
+
+```rust
+/// Simplified layout creation function. In reality we may want to track some
+/// of the offsets generated with `extend`, or have more descriptive errors
+/// than what is provided by `LayoutError`, or use a `data_present` bool to
+/// only allocate the `data` field if it is present.
+fn create_triemap_layout<T>(label_len: u16, n_children: u8) -> Result<Layout, LayoutError> {
+    let layout = 
+        // layout starts with `label_len`
+        Layout::new::<u16>()
+        // `n_children`
+        .extend(Layout::new::<u8>())?.0
+        // dynamic size for `label`
+        .extend(Layout::array::<u8>(label_len as usize)?)?.0
+        // dynamic size for `children_first_bytes`
+        .extend(Layout::array::<u8>(n_children as usize)?)?.0
+        // dynamic size for `children`
+        // size_of::<Node<T>>() == size_of::<NonNull<NodeHeader>>()
+        .extend(Layout::array::<Node<T>>(n_children as usize)?)?.0
+        // `data`
+        .extend(Layout::new::<Option<T>>())?.0;
+    Ok(layout)
+}
+```
+
+And now that we have a way to express our layout needs at runtime, we can manually call `alloc` to retrieve a pointer.
 
 ## Porting Strategy: Managing Necessary Unsafe
 
@@ -170,31 +238,31 @@ Managing this unsafe code requires care and understanding for how developers wil
 
 On top of all this, the client is moving to Rust to minimize issues related to memory safety so it is important to build an API that can be trusted and can't be misused.
 
-To deal with these constraints, we have a core axiom of **no `unsafe` in the public API**, on top of trying to rely on tooling as much as possible.
+To deal with these constraints, we have a normative value of **as little `unsafe` in the public API as possible**, on top of trying to rely on automated tooling as much as possible.
 
 ### Tooling & Patterns
 
-Our management of the unsafe code is a mix of good documentation practices for critical areas & automated tooling. We can't fully automate this process, which is why we have to resort to `unsafe`, but we can do our best to build and maintain certainty.
+Our management of the unsafe code is a mix of good documentation practices for critical areas & automated tooling. We can't fully automate the unsafe code management process, if we could then it wouldn't be unsafe, but we can do our best to build and maintain certainty through what tools and practices we can bring together.
 
 1. **Miri**
 
-Miri runs your rust code in an interpreter against different memory models, checking for undefined behavior as it comes up. A great help when we're writing lots of unsafe code.
+Miri runs your Rust code in an interpreter against different memory models, checking for undefined behavior as it comes up. A great help when we're writing lots of unsafe code.
 
-This only works on Rust code, so we can't apply this in other parts of Rust Redis where we cross FFI boundaries into C libraries, but we can use it here and anywhere else where all dependencies are rust.
+This only works on Rust code, so we can't apply this in other parts of the Redis Query Engine porting effort where we cross FFI boundaries into C libraries. Still, we can use it here and anywhere else where all dependencies are Rust alone.
 
 2. **Debug assertions**
 
-Debug assertions are checks that only run in debug builds, release builds do not pay the performance cost of them. Debug assertions let us both specify and check the invariants we want to build our API around at runtime, and give good errors when those assertions fail.
+Debug assertions are checks that only run in debug artefacts (debug builds, tests that otherwise run with optimized build settings). Release artefacts (binaries shipped to the user) do not pay the performance cost of these assertions. Debug assertions let us both specify and check the invariants we want to build our API around at runtime, and give good errors when those assertions fail.
 
 Heavy use of debug assertions ties nicely with our use of Miri, whose errors can be overly esoteric or academic. Rust assertions are much easier to contextualize.
 
 3. **Clippy Lints**
 
-Following [Jack Wrenn's guidance](https://jack.wrenn.fyi/blog/safety-hygiene/) we're using clippy lints to enforce two soft invariants:
+Following [Jack Wrenn's guidance](https://jack.wrenn.fyi/blog/safety-hygiene/) we're using clippy lints to enforce two invariants:
 
-- 3.1: `undocumented_unsafe_blocks`: If an unsafe block does not have comments surrounding it, there will be a warning.
+- 3.1: `undocumented_unsafe_blocks`: every `unsafe` block must have a dedicated `// SAFETY` comment attached to it.
 
-- 3.2: `multiple_unsafe_ops_per_block`: If an unsafe block contains more than one unsafe operation, there will be a warning.
+- 3.2: `multiple_unsafe_ops_per_block`: If an `unsafe` block contains more than one `unsafe` operation, there will be a warning.
 
 This pushes developers in the direction of properly documenting the unsafe code they do write, operation by operation, to assure all invariants are documented.
 
@@ -203,6 +271,8 @@ This pushes developers in the direction of properly documenting the unsafe code 
 Following more of Wrenn's guidance, we're also making sure that each safety comment mentions invariants as a list for easy comparison. 
 
 Enumerated safety comments differ between call sites and declaration sites. Declaration sites need to show the assumptions made (invariants) about inputs and context. Call sites need to explain how those invariants are met, one by one.
+
+[An RFC to formalize this pattern](https://github.com/rust-lang/rfcs/pull/3842) exists, but for now this is a check that maintainers will have to perform through manual comparison.
 
 ```rust
 // SAFETY:
@@ -236,7 +306,7 @@ At this level, maintainer error is at its most possible. Invariants need to be m
 
 **Near-Bottom**: `PtrMetadata<T>` + `PtrWithMetadata<T>`
 
-At this level, we have the metadata needed to construct a pointer (`PtrMetadata`, which holds a `Layout` and the offsets of the fields not able to be tracked directly by the type system), as well as a version of the constructed pointer that is paired with its metadata. This pairing means a proof of the relationship between the pointer and the metadata of that pointer only needs to happen once, when `PtrWithMetadata` is constructed using the unsafe methods that construct it.
+At this level, we have the metadata needed to construct a pointer (`PtrMetadata`, which holds a `Layout` and the offsets of the fields not able to be tracked directly by the type system), as well as a version of the constructed pointer that is paired with its metadata. This pairing means a proof of the relationship between the pointer and the metadata of that pointer only needs be provided once, when `PtrWithMetadata` is constructed using the unsafe methods that construct it.
 
 **Mid-Level**: Unsafe methods and functions.
 
@@ -244,7 +314,7 @@ At this layer we're developing methods and functions that perform unsafe operati
 
 **Top**: The Safe API
 
-Finally, we have the safe API surrounding the data structure that we want end users to actually use. This doesn't expose any `unsafe`, as per our requirements.
+Finally, we have the safe API surrounding the data structure that we want end users to actually use. This exposes as little `unsafe` as possible, as per our requirements.
 
 ## Conclusion
 
@@ -256,13 +326,20 @@ This implementation is now in production in Redis Query Engine! We can note and 
 |Unsafe expressions|-|128|
 |Coverage|82.8%|95.6%|
 |Microbenchmarks|❌|✅|
-|Performance|(baseline)|25% to 100% improvement in core operations|
+|Performance|(Baseline)|Execution time of ~0.88x to 0.33x original (13% to 200% speedup)|
 
-One interesting part of this is how the codebase doubled in size. Moving to a rust codebase sometimes comes with the expectation of a more expressive, smaller codebase. With a move to a Rust codebase the unsafe operations have been confined to an area of the code a fraction of the size of the C codebase, where unsafe operations could have been happening anywhere. But expressing that 
+<details>
+<summary>Performance details</summary>
+
+![List of microbenchmark results, showing an across the board improvement in execution times. Lowest increase is the loading function, at 0.88 original speed. Largest increase is leaf insertion, at 0.33 original speed. Most results sit around 0.45-0.75 times original speed.](/assets/images/posts/2026-04-XX-redis-triemap/speedup.svg)
+
+</details>
+
+One thing that stands out is how the codebase doubled in size. Moving to a rust codebase sometimes comes with the expectation of a more expressive, smaller codebase. With the move to Rust the unsafe operations have been confined to an area of the code a fraction of the size of the original C codebase, where unsafe operations could have been happening anywhere. The abstractions built to confine the unsafe operations mean there has been a bulking out of the module in terms of lines of code, but the payoff is that only ~128 of those lines need to be kept under extra scrutiny. 
 
 Test coverage was greatly improved, the last percentage points in coverage are in unreachable areas.
 
-Performance was also greatly improved, in part from moving away from the packed layout.
+Performance was also greatly improved, in part by moving away from the packed layout.
 
 Real-world codebases on the level of complexity of the Redis Query Engine require looking carefully into how complex components can be replaced with alternative implementations that better fit the needs of maintainers and users.
 
