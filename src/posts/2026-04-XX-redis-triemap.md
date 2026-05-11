@@ -18,9 +18,11 @@ In the above diagram, taken from [the talk this blog post is based on](https://w
 2. Optional data (emoji, here).
 3. Child nodes (each with an associated first character.).
 
-We can "cascade" down nodes from the root to complete the labels of leaves. The data field is optional as labels can branch without having an appropriate piece of data at the branch point: a map with only the key-value pairs `"Scarborough": 42` and `"Scaffolding": 451` doesn't have associated data for their shared parent `"Sca"`.
+We can "cascade" down nodes from the root to recover the labels of leaves, as in the above diagram we recover `"bike": 🚲` from the empty root, the "bi" node, and the "ke" node. 
 
-We hold onto the first byte of each child’s label as a performance optimisation: when performing searches (e.g. find all the keys with a given prefix), we can determine which children to visit with minimal pointer chasing.
+The data field for each node is optional as labels can branch without having an appropriate piece of data at the branch point: a map with only the key-value pairs `"Scarborough": 42` and `"Scaffolding": 451` doesn't have associated data for their shared parent `"Sca"`.
+
+We hold onto the first byte of each child’s label as a performance optimization: when performing searches (e.g. find all the keys with a given prefix), we can determine which children to visit with minimal pointer chasing.
 
 We can easily imagine how to do this in Rust, we just need to store a data structure in the form:
 
@@ -195,12 +197,12 @@ We can use this to manually build a runtime-defined layout that suits our Dynami
 
 1. `label_len` (static size, `u16`)
 2. `n_children` (static size, `u8`)
-3. `label` (non-static size, `label_len` * `u8`)
-4. `children_first_bytes` (non-static size, `n_children` * `u8`)
-5. `children` (non-static size, `n_children` * `Node<T>`)
+3. `label` (dynamic size, `label_len` * `u8`)
+4. `children_first_bytes` (dynamic size, `n_children` * `u8`)
+5. `children` (dynamic size, `n_children` * `Node<T>`)
 6. `data` (static size, `Option<T>`)
 
-We have 3 non-static fields and 3 static fields. So to build up our layout we can do the following:
+We have 3 dynamically-sized fields and 3 statically-sized fields (note that by "static" we mean "known at compile-time" not the `'static` lifetime or the `static` keyword). So to build up our layout we can do the following:
 
 ```rust
 /// Simplified layout creation function. In reality we may want to track some
@@ -234,9 +236,7 @@ Once we have our `Layout`, we can call `alloc` to get our pointer. This memory i
 
 In the final codebase we were finally left with **128** unsafe blocks and **21** unsafe methods.
 
-Managing this unsafe code requires care and understanding for how developers will interact with it. Preferably a developer won't interact with it at all unless they're a maintainer. 
-
-On top of all this, the client is moving to Rust to minimize issues related to memory safety so it is important to build an API that can be trusted and can't be misused.
+Managing this unsafe code requires care and understanding for how maintainers will interact with it. On top of all this, the client is moving to Rust to minimize issues related to memory safety so it is important to build an API that can be trusted and can't be misused.
 
 To deal with these constraints, we have a normative value of **as little `unsafe` in the public API as possible**, on top of trying to rely on automated tooling as much as possible.
 
@@ -298,7 +298,7 @@ Unsafe doesn't let users or maintainers do "anything", but it does let them get 
 
 To strengthen systems built on unsafe foundations, we start by **Layering Abstractions** in a way that gradually reduces the concerns of a maintainer.
 
-The end goal is to have a outwardly safe API, and a internal implementation that restricts what mistakes a maintainer to specific areas of the code. Core, most-unsafe operations are built upon by still-unsafe abstractions that limit the operations the maintainer can perform, and those abstractions are built upon by more-safe abstractions.
+Our end goal is to have an API that has a safe surface for developers to use. For developers tasked with maintaining this TrieMap implementation we want there to be different levels of unsafe that have different responsibilities. By splitting up and layering the roles of different unsafe APIs within the crate, maintainers don't have to worry about a combinatorial explosion of potential unsafe interactions.
 
 **Bottom**: `alloc`, `Layout`, and pointers.
 
@@ -306,7 +306,7 @@ At this level, maintainer error is at its most possible. Invariants need to be m
 
 **Near-Bottom**: `PtrMetadata<T>` + `PtrWithMetadata<T>`
 
-At this level, we have the metadata needed to construct a pointer (`PtrMetadata`, which holds a `Layout` and the offsets of the fields not able to be tracked directly by the type system), as well as a version of the constructed pointer that is paired with its metadata. This pairing means a proof of the relationship between the pointer and the metadata of that pointer only needs be provided once, when `PtrWithMetadata` is constructed using the unsafe methods that construct it.
+At this level, we have the metadata needed to construct a pointer (`PtrMetadata`, which holds a `Layout` and the offsets of the fields not able to be tracked directly by the type system), as well as a version of the constructed pointer that is paired with its metadata. This pairing means a proof of the relationship between the pointer and the metadata of that pointer only needs to be provided once, when `PtrWithMetadata` is constructed using the unsafe methods that construct it.
 
 **Mid-Level**: Unsafe methods and functions.
 
@@ -339,7 +339,7 @@ One thing that stands out is how the codebase doubled in size. Moving to a rust 
 
 Test coverage was greatly improved, the last percentage points in coverage are in unreachable areas.
 
-Performance was also greatly improved, in part by moving away from the packed layout.
+Performance improved as well, in part by moving away from the packed layout (expand the "Performance details" section above for detailed numbers).
 
 Real-world codebases on the level of complexity of the Redis Query Engine require looking carefully into how complex components can be replaced with alternative implementations that better fit the needs of maintainers and users.
 
