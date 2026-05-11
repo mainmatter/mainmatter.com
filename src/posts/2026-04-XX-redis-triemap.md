@@ -63,24 +63,23 @@ All node components are laid out next to each other, in a single heap allocation
 Note how this type is not fully definable in C's type system, the two lines of comments after `label` are fields that we can't define in a C struct definition and need to compute how to access at runtime. `labelLen` and `numChildren` let us do these computations.
 
 ```c
-// Simplified, illustrative dynamic field access logic.
+// Illustrative dynamic field access logic.
 TrieMapNode** accessChildren(TrieMapNode* node) {
-    if (node->numChildren == 0) {
-        return NULL;
-    }
-    // `label` is the final field in the struct, so we know that
-    // all dynamically located fields are at or past that point.
-    //
-    // Add the lengths of the data before the children list.
-    // Because the labelLen and first letters of each child
-    // are all `char` (1 byte long) we don't need to multiply 
-    // them by a scalar of the size of those types.
-    int dynamic_offset_b = node->labelLen + node->numChildren;
-    return (TrieMapNode**) ((void*)&node->label + dynamic_offset_b);
+    return ((TrieMapNode **)(
+        // Address of the node.
+        (void *)n
+        // Initial offset is size of the type according to the compiler.
+        + sizeof(TrieMapNode)
+        // The label will be a null-term string, so we always advance by at least one past.
+        + (n->labelLen + 1) 
+        // We also need to skip past the 'first character of each child' data.
+        + n->numChildren
+        // And now we have the address of the children, which we typecast to 'TrieMapNode **'
+    ));
 }
 ```
 
-The above is an example of how we might access the children of a type like this. We know the lengths of each dynamic part of the datatype, so we can compute the offset.
+The above is an example of how we might access the children of a type like this. We know the lengths of each dynamic part of the datatype, so we can compute the offset. The original, pre-rust implementation of this can be found [here](https://github.com/RediSearch/RediSearch/blob/dcf009a2327240b24d6efcf100fed577b8a5eef0/deps/triemap/triemap.c#L18).
 
 ![](/assets/images/posts/2026-04-XX-redis-triemap/c-layout.svg)
 
@@ -262,7 +261,7 @@ Following [Jack Wrenn's guidance](https://jack.wrenn.fyi/blog/safety-hygiene/) w
 
 - 3.1: `undocumented_unsafe_blocks`: every `unsafe` block must have a dedicated `// SAFETY` comment attached to it.
 
-- 3.2: `multiple_unsafe_ops_per_block`: If an `unsafe` block contains more than one `unsafe` operation, there will be a warning.
+- 3.2: `multiple_unsafe_ops_per_block`: every `unsafe` block can only contain a single `unsafe` operation.
 
 This pushes developers in the direction of properly documenting the unsafe code they do write, operation by operation, to assure all invariants are documented.
 
