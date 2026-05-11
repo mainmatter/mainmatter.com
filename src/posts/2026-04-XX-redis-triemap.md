@@ -24,7 +24,7 @@ The data field for each node is optional as labels can branch without having an 
 
 We hold onto the first byte of each child’s label as a performance optimization: when performing searches (e.g. find all the keys with a given prefix), we can determine which children to visit with minimal pointer chasing.
 
-We can easily imagine how to do this in Rust, we just need to store a data structure in the form:
+We can sketch this out in Rust:
 
 ```rust
 struct TrieMapNode<T> {
@@ -242,7 +242,7 @@ To deal with these constraints, we have a normative value of **as little `unsafe
 
 ### Tooling & Patterns
 
-Our management of the unsafe code is a mix of good documentation practices for critical areas & automated tooling. We can't fully automate the unsafe code management process, if we could then it wouldn't be unsafe, but we can do our best to build and maintain certainty through what tools and practices we can bring together.
+Our management of the unsafe code is a mix of good documentation practices for critical areas and automated tooling. We can't fully automate the unsafe code management process, if we could then it wouldn't be unsafe, but we can do our best to build and maintain certainty through what tools and practices we can bring together.
 
 1. **Miri**
 
