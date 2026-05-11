@@ -2,13 +2,13 @@
 
 ---
 
-At Mainmatter we've been working to help Redis migrate the Redis Query Engine from C to Rust. This kind of work requires good strategy in both choosing good rewrite candidates and matching the complex behavior and performance characteristics of the original C code.
+Mainmatter has been working with Redis to migrate Redis Query Engine from C to Rust, module by module. Matching the performance characteristics of the original C code is a non-negotiable requirement: no one likes a slower database, even if it's written in Rust.
 
-This blog post covers the process of porting the Redis Query Engine's TrieMap implementation to Rust, including the challenges faced with making unsafe code maintainable and designing our own Dynamically Sized Type.
+This blog post focuses on Redis Query Engine's TrieMap, one of the first C modules we ported over to Rust. In particular, we go over the implementation challenges of designing a custom Dynamically Sized Type (DST) and the maintenance approach we picked for the unsafe code required by a custom DST.
 
 ## What Is a TrieMap
 
-A TrieMap is a key-value data structure that has a similar API to a Hashmap / Binary Tree Map, but optimized for compressing keys by their shared prefixes.
+A TrieMap is a key-value data structure with an API similar to that of a Hashmap. Keys must be sequence-like types (in our case, byte slices); values can be arbitrary types. TrieMap leverages shared key prefixes to reduce its memory footprint, de facto compressing the key set.
 
 ![Diagram showing how a set of tuples are represented in a TrieMap.](/assets/images/posts/2026-04-XX-redis-triemap/trie.svg)
 
@@ -20,7 +20,7 @@ In the above diagram, taken from [the talk this blog post is based on](https://w
 
 We can "cascade" down nodes from the root to complete the labels of leaves. The data field is optional as labels can branch without having an appropriate piece of data at the branch point: a map with only the key-value pairs `"Scarborough": 42` and `"Scaffolding": 451` doesn't have associated data for their shared parent `"Sca"`.
 
-We hold onto the first byte of each child's label because, by nature of how shared prefixes are always consolidated by the ancestors of a node, each child is guaranteed to have a unique first byte. This can be leveraged for faster searches within the data structure.
+We hold onto the first byte of each child’s label as a performance optimisation: when performing searches (e.g. find all the keys with a given prefix), we can determine which children to visit with minimal pointer chasing.
 
 We can easily imagine how to do this in Rust, we just need to store a data structure in the form:
 
@@ -39,7 +39,7 @@ This does what we need it to, at least structurally, so maybe we can stop here? 
 
 ## Porting Redis Query Engine's TrieMap
 
-Redis Query Engine has its own C implementation of a TrieMap designed around the performance characteristics required for the real world. Let's take a look at it:
+Let’s take a look at the node layout of the C implementation we’re trying to replace:
 
 ```c
 #pragma pack(1)
@@ -56,7 +56,7 @@ typedef struct {
 #pragma pack()
 ```
 
-The core property of this type is that the fields, label, and the array of pointers to children take up a **single heap allocation**. This is really important for cache locality and minimizing pointer dereferences, but it also means the size of the type and some of the offsets of the fields of that type are not known at compile time.
+All node components are laid out next to each other, in a single heap allocation. There is no further indirection. This helps with cache locality and minimizes the number of pointer dereferences, but it also implies that the size of the type and the offsets of some of its fields are not known at compile time.
 
 Note how this type is not fully definable in C's type system, the two lines of comments after `label` are fields that we can't define in a C struct definition and need to compute how to access at runtime. `labelLen` and `numChildren` let us do these computations.
 
