@@ -347,6 +347,6 @@ What we get from a rewrite is more than just a codebase translated to a new lang
 
 A rewrite is also an opportunity to reassess assumptions. In the original implementation we had a packed layout, we questioned that assumption and went with a different direction, as well as making other small changes in the memory layout of the data structure. Challenging these assumptions paid off, as our new implementation is faster and has a negligible increase in memory use.
 
-We could have stopped at our naive implementation, failing the client on performance. We could have wrapped large areas of the codebase in unsafe, failing the client on maintainability. We could have come in with a new data structure entirely, failing the client on the performance assumptions made in the rest of their codebase.
+We could have stopped at our naive implementation, failing the client on performance. We could have wrapped large areas of the codebase in unsafe, failing the client on maintainability. 
 
 The success of this rewrite in terms of speed, performance, and future maintainability is a consequence of taking the client's needs seriously and keeping an open mind while digesting the problems existing code solved.
