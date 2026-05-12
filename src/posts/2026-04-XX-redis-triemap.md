@@ -4,11 +4,11 @@
 
 Mainmatter has been working with Redis to migrate Redis Query Engine from C to Rust, module by module. Matching the performance characteristics of the original C code is a non-negotiable requirement: no one likes a slower database, even if it's written in Rust.
 
-This blog post focuses on Redis Query Engine's TrieMap, one of the first C modules we ported over to Rust. In particular, we go over the implementation challenges of designing a custom Dynamically Sized Type (DST) and the maintenance approach we picked for the unsafe code required by a custom DST.
+This blog post focuses on [Redis Query Engine's TrieMap](https://github.com/RediSearch/RediSearch/tree/c8785e670af0c8ce9d48ad4d6b5596c2078f9420/src/redisearch_rs/trie_rs), one of the first C modules we ported over to Rust. In particular, we go over the implementation challenges of designing a custom Dynamically Sized Type (DST) and the maintenance approach we picked for the unsafe code required by a custom DST.
 
 ## What Is a TrieMap
 
-A TrieMap is a key-value data structure with an API similar to that of a Hashmap. Keys must be sequence-like types (in our case, byte slices); values can be arbitrary types. TrieMap leverages shared key prefixes to reduce its memory footprint, de facto compressing the key set.
+A TrieMap is a key-value data structure with an API similar to that of a [Hashmap](https://doc.rust-lang.org/std/collections/struct.HashMap.html). Keys must be sequence-like types (in our case, byte slices); values can be arbitrary types. TrieMap leverages shared key prefixes to reduce its memory footprint, de facto compressing the key set.
 
 ![Diagram showing how a set of tuples are represented in a TrieMap.](/assets/images/posts/2026-04-XX-redis-triemap/trie.svg)
 
@@ -232,23 +232,23 @@ fn create_triemap_layout<T>(label_len: u16, n_children: u8) -> Result<Layout, La
 
 And now that we have a way to express our layout needs at runtime, we can manually call `alloc` to retrieve a pointer.
 
-## Porting Strategy: Managing Necessary Unsafe
+## Porting Strategy: Managing Necessary `unsafe`
 
 Once we have our `Layout`, we can call `alloc` to get our pointer. This memory is uninitialized, but we can initialize it manually. Managing this memory manually only gets gnarly once we want to split or merge nodes.
 
-In the final codebase we were finally left with **128** unsafe blocks and **21** unsafe methods.
+In the final codebase we were finally left with **128** `unsafe` blocks and **21** `unsafe` methods.
 
-Managing this unsafe code requires care and understanding for how maintainers will interact with it. On top of all this, the client is moving to Rust to minimize issues related to memory safety so it is important to build an API that can be trusted and can't be misused.
+Managing this `unsafe` code requires care and understanding for how maintainers will interact with it. On top of all this, the client is moving to Rust to minimize issues related to memory safety so it is important to build an API that can be trusted and can't be misused.
 
 To deal with these constraints, we have a normative value of **as little `unsafe` in the public API as possible**, on top of trying to rely on automated tooling as much as possible.
 
 ### Tooling & Patterns
 
-Our management of the unsafe code is a mix of good documentation practices for critical areas and automated tooling. We can't fully automate the unsafe code management process, if we could then it wouldn't be unsafe, but we can do our best to build and maintain certainty through what tools and practices we can bring together.
+Our management of the `unsafe` code is a mix of good documentation practices for critical areas and automated tooling. We can't fully automate the `unsafe` code management process, if we could then it wouldn't be `unsafe`, but we can do our best to build and maintain certainty through what tools and practices we can bring together.
 
 1. **Miri**
 
-Miri runs your Rust code in an interpreter against different memory models, checking for undefined behavior as it comes up. A great help when we're writing lots of unsafe code.
+Miri runs your Rust code in an interpreter against different memory models, checking for undefined behavior as it comes up. A great help when we're writing lots of `unsafe` code.
 
 This only works on Rust code, so we can't apply this in other parts of the Redis Query Engine porting effort where we cross FFI boundaries into C libraries. Still, we can use it here and anywhere else where all dependencies are Rust alone.
 
@@ -266,7 +266,7 @@ Following [Jack Wrenn's guidance](https://jack.wrenn.fyi/blog/safety-hygiene/) w
 
 - 3.2: `multiple_unsafe_ops_per_block`: every `unsafe` block can only contain a single `unsafe` operation.
 
-This pushes developers in the direction of properly documenting the unsafe code they do write, operation by operation, to assure all invariants are documented.
+This pushes developers in the direction of properly documenting the `unsafe` code they do write, operation by operation, to assure all invariants are documented.
 
 ### Safety Comments
 
@@ -292,15 +292,15 @@ unsafe {
 };
 ```
 
-Note how long this safety comment is, with 128 unsafe blocks in the codebase this could become an overwhelming amount of information very quickly. This is where the next component of our unsafe management strategy comes in.
+Note how long this safety comment is, with 128 `unsafe` blocks in the codebase this could become an overwhelming amount of information very quickly. This is where the next component of our `unsafe` management strategy comes in.
 
 ### Abstractions That Are Hard to Misuse
 
-Unsafe doesn't let users or maintainers do "anything", but it does let them get away with misusing the tools they're given in ways that make software systems unpredictable.
+`unsafe` doesn't let users or maintainers do "anything", but it does let them get away with misusing the tools they're given in ways that make software systems unpredictable.
 
-To strengthen systems built on unsafe foundations, we start by **Layering Abstractions** in a way that gradually reduces the concerns of a maintainer.
+To strengthen systems built on `unsafe` foundations, we start by **Layering Abstractions** in a way that gradually reduces the concerns of a maintainer.
 
-Our end goal is to have an API that has a safe surface for developers to use. For developers tasked with maintaining this TrieMap implementation we want there to be different levels of unsafe that have different responsibilities. By splitting up and layering the roles of different unsafe APIs within the crate, maintainers don't have to worry about a combinatorial explosion of potential unsafe interactions.
+Our end goal is to have an API that has a safe surface for developers to use. For developers tasked with maintaining this TrieMap implementation we want there to be different levels of `unsafe` that have different responsibilities. By splitting up and layering the roles of different `unsafe` APIs within the crate, maintainers don't have to worry about a combinatorial explosion of potential `unsafe` interactions.
 
 **Bottom**: `alloc`, `Layout`, and pointers.
 
@@ -308,11 +308,11 @@ At this level, maintainer error is at its most possible. Invariants need to be m
 
 **Near-Bottom**: `PtrMetadata<T>` + `PtrWithMetadata<T>`
 
-At this level, we have the metadata needed to construct a pointer (`PtrMetadata`, which holds a `Layout` and the offsets of the fields not able to be tracked directly by the type system), as well as a version of the constructed pointer that is paired with its metadata. This pairing means a proof of the relationship between the pointer and the metadata of that pointer only needs to be provided once, when `PtrWithMetadata` is constructed using the unsafe methods that construct it.
+At this level, we have the metadata needed to construct a pointer (`PtrMetadata`, which holds a `Layout` and the offsets of the fields not able to be tracked directly by the type system), as well as a version of the constructed pointer that is paired with its metadata. This pairing means a proof of the relationship between the pointer and the metadata of that pointer only needs to be provided once, when `PtrWithMetadata` is constructed using the `unsafe` methods that construct it.
 
-**Mid-Level**: Unsafe methods and functions.
+**Mid-Level**: `unsafe` methods and functions.
 
-At this layer we're developing methods and functions that perform unsafe operations but have API surfaces which are much more specialized for the tasks we're using them for. This is where we try to keep most of the internal API of the TrieMap.  
+At this layer we're developing methods and functions that perform `unsafe` operations but have API surfaces which are much more specialized for the tasks we're using them for. This is where we try to keep most of the internal API of the TrieMap.  
 
 **Top**: The Safe API
 
@@ -325,7 +325,7 @@ This implementation is now in production in Redis Query Engine! We can note and 
 || C | Rust |
 |-|-|-|
 |Lines of Code|~1k|~1.9k|
-|Unsafe expressions|-|128|
+|`unsafe` expressions|-|128|
 |Coverage|82.8%|95.6%|
 |Microbenchmarks|❌|✅|
 |Performance|(Baseline)|Execution time of ~0.88x to 0.33x original (13% to 200% speedup)|
@@ -337,7 +337,7 @@ This implementation is now in production in Redis Query Engine! We can note and 
 
 </details>
 
-One thing that stands out is how the codebase doubled in size. Moving to a rust codebase sometimes comes with the expectation of a more expressive, smaller codebase. With the move to Rust the unsafe operations have been confined to an area of the code a fraction of the size of the original C codebase, where unsafe operations could have been happening anywhere. The abstractions built to confine the unsafe operations mean there has been a bulking out of the module in terms of lines of code, but the payoff is that only ~128 of those lines need to be kept under extra scrutiny. 
+One thing that stands out is how the codebase doubled in size. Moving to a rust codebase sometimes comes with the expectation of a more expressive, smaller codebase. With the move to Rust the `unsafe`-equivalent operations have been confined to an area of the code a fraction of the size of the original C codebase, where `unsafe`-equivalent operations could have been happening anywhere. The abstractions built to confine the `unsafe` operations mean there has been a bulking out of the module in terms of lines of code, but the payoff is that only ~128 of those lines need to be kept under extra scrutiny. 
 
 Test coverage was greatly improved, the last percentage points in coverage are in unreachable areas.
 
@@ -349,6 +349,6 @@ What we get from a rewrite is more than just a codebase translated to a new lang
 
 A rewrite is also an opportunity to reassess assumptions. In the original implementation we had a packed layout, we questioned that assumption and went with a different direction, as well as making other small changes in the memory layout of the data structure. Challenging these assumptions paid off, as our new implementation is faster and has a negligible increase in memory use.
 
-We could have stopped at our naive implementation, failing the client on performance. We could have wrapped large areas of the codebase in unsafe, failing the client on maintainability. 
+We could have stopped at our naive implementation, failing the client on performance. We could have wrapped large areas of the codebase in `unsafe`, failing the client on maintainability. 
 
 The success of this rewrite in terms of speed, performance, and future maintainability is a consequence of taking the client's needs seriously and keeping an open mind while digesting the problems existing code solved.
