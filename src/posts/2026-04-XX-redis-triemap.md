@@ -20,7 +20,7 @@ In the above diagram, taken from [the talk this blog post is based on](https://w
 
 We can "cascade" down nodes from the root to recover the labels of leaves, as in the above diagram we recover `"bike": 🚲` from the empty root, the "bi" node, and the "ke" node. 
 
-The data field for each node is optional as labels can branch without having an appropriate piece of data at the branch point: a map with only the key-value pairs `"Scarborough": 42` and `"Scaffolding": 451` doesn't have associated data for their shared parent `"Sca"`.
+The data field for each node is optional as labels can branch without having an associated payload at the branch point: a map with only the key-value pairs `"Scarborough": 42` and `"Scaffolding": 451` doesn't have associated data for their shared parent `"Sca"`.
 
 We hold onto the first byte of each child’s label as a performance optimization: when performing searches (e.g. find all the keys with a given prefix), we can determine which children to visit with minimal pointer chasing.
 
@@ -37,7 +37,7 @@ struct TrieMapNode<T> {
 }
 ```
 
-This does what we need it to, at least structurally, so maybe we can stop here? End of the blog post everyone, we can all can go home! Not so fast. A trained eye can see how this formulation of a TrieMap can cause problems. Let's take a step into the real world, where this TrieMap doesn't meet the performance requirements of the Redis Query Engine.
+This does what we need it to, at least structurally, so maybe we can stop here? End of the blog post everyone, we can all can go home! Not so fast. A trained eye can see how this formulation of a TrieMap can cause problems. Let's take a step into the real world, where this TrieMap doesn't meet the performance requirements of Redis Query Engine.
 
 ## Porting Redis Query Engine's TrieMap
 
@@ -79,7 +79,7 @@ TrieMapNode** accessChildren(TrieMapNode* node) {
 }
 ```
 
-The above is an example of how we might access the children of a type like this. We know the lengths of each dynamic part of the datatype, so we can compute the offset. The original, pre-rust implementation of this can be found [here](https://github.com/RediSearch/RediSearch/blob/dcf009a2327240b24d6efcf100fed577b8a5eef0/deps/triemap/triemap.c#L18).
+The above is an example of how we might access the children of a type like this. We know the lengths of each dynamic part of the datatype, so we can compute the offset. The original, pre-Rust implementation of this can be found [here](https://github.com/RediSearch/RediSearch/blob/dcf009a2327240b24d6efcf100fed577b8a5eef0/deps/triemap/triemap.c#L18).
 
 ![](/assets/images/posts/2026-04-XX-redis-triemap/c-layout.svg)
 
@@ -106,17 +106,20 @@ struct ChildRef<T> {
 }
 ```
 
-This implementation makes no attempt to match the performance characteristics of the C original, so we have extra heap allocations for labels and children to maintain the simplicity.
+This implementation makes no attempt to match the performance characteristics of the C original, so we have extra heap allocations for labels and children to keep things simple.
 
-Building off of this naive implementation, we can design an external API that can be tested and benchmarked. This working, tested, naive version and refresh of what the original was doing lowers the cognitive load when it comes to the team implementing a later version.
+Building off of this naive implementation, we can design an external API that can be tested and benchmarked. This working, tested, naive version reduces cognitive load for the team when implementing a more optimized version later on.
 
-We didn't focus on performance, because that wasn't what this initial information-gathering pass was about. But we might as well make the comparisons we can so we know how important the optimization work will be:
+We didn't focus on performance, because that wasn't what this initial information-gathering pass was about. But we might as well make the comparisons so we know how important the optimization work will be:
 
 ![](/assets/images/posts/2026-04-XX-redis-triemap/violin-chart.svg)
 
-Our implementation was twice as slow as the original C implementation, but about half as slow as an off-the-shelf crate from crates.io. Our implementation was also far less consistent in its speed, whereas the C implementation had very little variance. All the instances of `Vec` we used also meant the memory usage of the naive implementation was double that of the original.
+Our implementation was twice as slow as the original C implementation but about twice as fast as an off-the-shelf implementation from crates.io. Our implementation was also far less consistent in its speed, whereas the C implementation had very little variance. All the instances of `Vec` we used also showed that the naive implementation's memory usage was double that of the C original.
 
-This first step in the porting strategy left us with 1. Total test coverage of what we were working on 2. Knowledge of how subpar the performance of this naive TrieMap implementation and 3. A team that has a deeper understanding of the original implementation and the decisions behind it.
+This first step in the porting strategy left us with:
+1. Total test coverage of what we were working on 
+2. Knowledge of how subpar the performance of this naive TrieMap implementation is
+3. A team that has a deeper understanding of the original implementation and the decisions behind it.
 
 ## Porting Strategy: Iterating for Performance
 
@@ -135,11 +138,11 @@ There are a couple of differences between our Rust layout and the original C lay
 1. The data structure is padded, so depending on the number of children there may be unused space between the end of `children_first_bytes` and `children`.
 2. Our optional leaf data sits at the end of the struct, rather than before the label and children.
 
-How are we supposed to implement this in Rust? We do it with designing our own Dynamically Sized Types.
+How are we supposed to implement this in Rust? We do it with designing our own Dynamically Sized Type (DST).
 
 ### DIY Dynamically Sized Types
 
-We want nodes to be a Dynamically Sized Type, like `str` or `[u8]` (note the lack of `&`). Something whose size is not known at compile-time.
+We want nodes to be a DST, like `str` or `[u8]` (note the lack of `&`). Something whose size is not known at compile-time.
 
 Our ideal Rust implementation would look something like this:
 
@@ -190,18 +193,18 @@ A trivial `Layout` for a sized type `T` can be generated via `Layout::new::<T>()
 
 1. `Layout::new` produces a layout for a sized type (as already stated).
 2. `Layout::array` produces a layout for an array of a sized type, with `n` elements. 
-3. `Layout::extend` lets us "add" one layout to another, returning that composed layout and an offset for the rhs layout relative to the original layout. Order matters here.
+3. `Layout::extend` lets us "add" one layout to another, returning that composed layout and an offset for the right-hand side layout relative to the original layout. Order matters here.
 
-We can use this to manually build a runtime-defined layout that suits our Dynamically Sized Type's needs. If we look at our DST's layout needs again:
+We can use this to manually build a runtime-defined layout that suits our DST. If we look at what our DST layout needs again:
 
-1. `label_len` (static size, `u16`)
-2. `n_children` (static size, `u8`)
+1. `label_len` (known size, `u16`)
+2. `n_children` (known size, `u8`)
 3. `label` (dynamic size, `label_len` * `u8`)
 4. `children_first_bytes` (dynamic size, `n_children` * `u8`)
 5. `children` (dynamic size, `n_children` * `Node<T>`)
-6. `data` (static size, `Option<T>`)
+6. `data` (known size, dynamic offset, `Option<T>`)
 
-We have 3 dynamically-sized fields and 3 statically-sized fields (note that by "static" we mean "known at compile-time" not the `'static` lifetime or the `static` keyword). So to build up our layout we can do the following:
+We have 3 dynamically-sized fields and 3 fields with sizes known at compile-time. So to build up our layout we can do the following:
 
 ```rust
 /// Simplified layout creation function. In reality we may want to track some
