@@ -588,6 +588,53 @@ What can you do? Well, since you're asking...
 
 Mainmatter is currently sponsoring my work on Svelte to bring you the custom renderer API. However, as you can see, there's still a lot to do, and even more to make this production-ready. So if you or your company are interested in building truly native apps with Svelte and want to support us getting this ready to use, please [reach out](/contact/)!
 
+## Updates from the Future
+
+It's been almost one year since this blog post was published and a few things have changed. Firstly we got some sponsors! 🥳
+
+[SuppCo](https://supp.co/) and [Syntax](https://syntax.fm/) both decided to sponsor the development of this feature. Svelte codebase also changed a lot: we released `async` Svelte under an experimental flag, a very complex feature that spans over both the compiler and the runtime code. That obviously required a substantial restructure of the codebase which also meant that my `custom-renderer-api` branch had a lot of conflicts.
+
+Luckily, thanks to our sponsors, I had a few days to work full time on it so I was able to bring it up to speed relatively quickly.
+
+After bringing the branch up to speed I started working on the [simpler runtime](#a-simpler-runtime). Unfortunately we quickly realized that, while having a completely separate runtime would've helped with the _separation of concerns_ it would've also increased the maintainability burden to an unprecedented level: imagine duplicating the code that handles every single block, in a completely different folder, with some very subtle variation here and there. And so we pivoted:
+
+1. **Centralized DOM access**: the first step of the plan was to scout the codebase for every single instance where the runtime accessed the DOM. Instead of doing it inline we replaced it with a function that was exported by the `operations.js` module. This meant that the branching needed to invoke the custom renderer is mostly centralized in a single file.
+2. **One runtime**: instead of duplicating the code in multiple folders we now have one single runtime. Fixing a bug for "DOM Svelte" will mean fixing it for "Custom Render Svelte". This does mean we need to pay a bit more attention when merging a PR that access the DOM directly but we do have a decent "Custom Render" test suite that runs in a pure node environment and should catch DOM access fairly easily.
+
+While working on the feature I was also working on a few custom renderers to bikeshed the API which meant adding a few more "required methods" to the `createRenderer` function:
+
+```ts
+import { createRenderer } from "svelte/renderer";
+
+const renderer = createRenderer({
+  createFragment() {},
+  createElement(name) {},
+  createTextNode(data) {},
+  createComment(data) {},
+  nodeType(node) {},
+  getNodeValue(node) {},
+  getAttribute(el, name) {},
+  setAttribute(el, key, value) {},
+  removeAttribute(el, name) {},
+  hasAttribute(el, name) {},
+  setText(node, text) {},
+  getFirstChild(el) {},
+  getLastChild(el) {},
+  getNextSibling(node) {},
+  insert(parent, node, anchor) {},
+  remove(node) {},
+  getParent(node) {},
+  addEventListener(target, type, handler, options) {},
+  removeEventListener(target, type, handler, options) {},
+});
+```
+
+Despite being a fairly low level API from my experience is quite easy to build a custom renderer (in fact the Svelte Native team [built one](https://github.com/nativescript-community/svelte-native/pull/4) using the experimental package in one day).
+
+We are getting closer and closer to the release of this feature and I couldn't be more excited. You can follow the progress on [this PR](https://github.com/sveltejs/svelte/pull/18042/) and if you want to experiment with it before it get's merged and released you can use `pnpm i https://pkg.pr.new/svelte@18042` (there's a custom renderer used for tests in the PR you can use as an inspiration).
+
+We will update this post once again once the feature is reviewed and merged!
+
 ## Conclusion
 
 Well... this was a long one. I hope I didn't bore you (I guess if you're still here, maybe I managed to keep you interested enough), and I hope you leave this blog post with the same excitement I have for what this feature will unlock for the future.
