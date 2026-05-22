@@ -14,7 +14,9 @@ autoOg: true
 
 ## Prerequisites
 
-This blog post assumes you already have a working Vite setup as we'll make use of `import.meta.glob`. This is a feature provided by Vite to allow glob imports of files. If you're still on a Webpack/ember-auto-import based setup, you can use Webpack's [`require.context`](https://webpack.js.org/guides/dependency-management/#requirecontext) combined with [ember-auto-import's `allowAppImports`](https://github.com/embroider-build/ember-auto-import?tab=readme-ov-file#app-imports) feature instead.
+The blog post is written from a fresh-app perspective to make it very clear what each part of the config does. Most of your actual Mirage related files can stay where they are and like they are. We're mostly going to rewrite the configuration. We do expect you already have a working Vite setup as we'll make use of `import.meta.glob`. This is a feature provided by Vite to allow glob imports of files.
+
+If you're still on a Webpack/ember-auto-import based setup, there is an alternative migration path you could take. This, however, does require you to move all mirage files into the `app` folder, rather than the location in `/mirage` where it used to be with ember-cli-mirage. Webpack also does not support `import.meta.glob`, you can use Webpack's [`require.context`](https://webpack.js.org/guides/dependency-management/#requirecontext) combined with [ember-auto-import's `allowAppImports`](https://github.com/embroider-build/ember-auto-import?tab=readme-ov-file#app-imports) feature instead. If your goal is to migrate to a Vite app, this could be a way to get your updated configuration done and in place before the Vite migration, but know that you do need to at least replace all `require.context` statements with `import.meta.glob` instead.
 
 ## Let's get going
 
