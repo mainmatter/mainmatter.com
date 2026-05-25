@@ -1,62 +1,37 @@
 ---
 name: mainmatter-content-review
 description: >
-  Review Mainmatter-authored content (blog posts, case studies, marketing pages,
-  landing pages, white papers, workshop materials, conference talks, newsletters,
-  social posts) for typos, grammatical errors, English correctness, and alignment
-  with the Mainmatter voice. Use this skill whenever anyone at Mainmatter asks to
-  proofread, review, copy-edit, check, fix, polish, or improve a piece of written
-  content, or shares a GitHub PR, Notion page, markdown file, or raw text for
-  review. Trigger on phrases like "review this post", "check this for typos",
-  "is this in Mainmatter voice", "copy-edit this", "proofread the PR", "look
-  over this draft", "does this read right", "tone check", "how does this sound",
-  or "fix the English". Also trigger on Notion URLs referencing drafts, case
-  studies, blog outlines, SEO or content pages, and on GitHub PRs touching
-  src/*.njk files, blog markdown files, cases/*, or other prose-heavy files.
-  This skill reviews prose only, never code.
+  Review Mainmatter-authored content (blog posts, case studies, marketing pages, landing pages, white papers, workshop materials, conference talks, newsletters, social posts) for typos, grammatical errors, English correctness, and alignment with the Mainmatter voice. Use this skill whenever anyone at Mainmatter asks to proofread, review, copy-edit, check, fix, polish, or improve a piece of written content, or shares a GitHub PR, Notion page, markdown file, or raw text for review. Trigger on phrases like "review this post", "check this for typos", "is this in Mainmatter voice", "copy-edit this", "proofread the PR", "look over this draft", "does this read right", "tone check", "how does this sound", or "fix the English". Also trigger on Notion URLs referencing drafts, case studies, blog outlines, SEO or content pages, and on GitHub PRs touching src/*.njk files, blog markdown files, cases/*, or other prose-heavy files. This skill reviews prose only, never code.
 ---
 
 # Mainmatter content review
 
-Review Mainmatter content for language correctness and voice fit. The team is
-international, so English is most authors' second language: the skill is tuned
-to catch translation smells and L2 patterns without being precious about
-US-vs-UK preferences. The skill reads international English — either US or UK
-spelling is fine, as long as one document is consistent.
+Review Mainmatter content for language correctness and voice fit. The team is international, so English is most authors' second language: the skill is tuned to catch translation smells and L2 patterns without being precious about US-vs-UK preferences. The skill reads international English — either US or UK spelling is fine, as long as one document is consistent.
 
-The skill's job is to help a writer find the balance between their own voice
-and the Mainmatter writing standard. It is not a style police. It surfaces
-concrete, actionable suggestions with a clear before/after, so the writer can
-accept or reject each one fast.
+The skill's job is to help a writer find the balance between their own voice and the Mainmatter writing standard. It is not a style police. It surfaces concrete, actionable suggestions with a clear before/after, so the writer can accept or reject each one fast.
 
 ## Inputs
 
 Accept any of:
-- **GitHub PR URL** (e.g. `https://github.com/mainmatter/mainmatter.com/pull/2857`) —
-  diff the PR branch against master, isolate prose changes, review those.
+
+- **GitHub PR URL** (e.g. `https://github.com/mainmatter/mainmatter.com/pull/2857`) — diff the PR branch against master, isolate prose changes, review those.
 - **Notion page URL** — fetch via Notion MCP, review the page content.
-- **Markdown, .txt, or .docx file** uploaded or passed by path — review the full
-  document.
+- **Markdown, .txt, or .docx file** uploaded or passed by path — review the full document.
 - **Raw text** pasted into the chat — review in-place.
 
-If the input is ambiguous (e.g. a repo URL without a PR number), ask what to
-review. If the PR or page is large and mixes code with prose, make clear which
-parts were reviewed and which were skipped.
+If the input is ambiguous (e.g. a repo URL without a PR number), ask what to review. If the PR or page is large and mixes code with prose, make clear which parts were reviewed and which were skipped.
 
 ## What this skill reviews (and doesn't)
 
 Reviews:
-- Prose in blog posts, case studies, landing page copy, marketing pages,
-  workshop and talk outlines, newsletters, social posts, SEO metadata (title,
-  description, name), and the prose portions of `.njk`, `.md`, `.mdx` files.
-- Human-readable fields in structured files: `title`, `description`, `name`,
-  `og:*` text, schema.org text fields.
+
+- Prose in blog posts, case studies, landing page copy, marketing pages, workshop and talk outlines, newsletters, social posts, SEO metadata (title, description, name), and the prose portions of `.njk`, `.md`, `.mdx` files.
+- Human-readable fields in structured files: `title`, `description`, `name`, `og:*` text, schema.org text fields.
 
 Does not review:
-- Source code, code blocks, shell commands, configuration values, dependency
-  versions, imports, exports, or the technical correctness of anything.
-- Auto-generated content (lockfiles, build output, transcripts) unless the user
-  explicitly asks.
+
+- Source code, code blocks, shell commands, configuration values, dependency versions, imports, exports, or the technical correctness of anything.
+- Auto-generated content (lockfiles, build output, transcripts) unless the user explicitly asks.
 
 When in doubt, skip and note it at the top of the output.
 
@@ -64,10 +39,7 @@ When in doubt, skip and note it at the top of the output.
 
 ### Step 1: Fetch the content
 
-- **GitHub PR**: clone the PR branch shallowly and diff against `master`.
-  Use the clone tool when `web_fetch` is rate-limited — the `github.com` domain
-  is allowed for bash. The repo is generally `mainmatter/mainmatter.com` but
-  can be any Mainmatter repo.
+- **GitHub PR**: clone the PR branch shallowly and diff against `master`. Use the clone tool when `web_fetch` is rate-limited — the `github.com` domain is allowed for bash. The repo is generally `mainmatter/mainmatter.com` but can be any Mainmatter repo.
 
   ```bash
   git clone --depth 50 --branch <branch> https://github.com/<org>/<repo>.git /home/claude/review
@@ -76,38 +48,28 @@ When in doubt, skip and note it at the top of the output.
   git diff master..<branch> -- <prose-files>
   ```
 
-  Prose-file filter (rough heuristic): `*.md`, `*.mdx`, `*.njk`, `*.html`,
-  `*.txt`, plus text fields within `*.yaml`, `*.json` when they are clearly
-  human-facing (title, description, name, body, content).
+  Prose-file filter (rough heuristic): `*.md`, `*.mdx`, `*.njk`, `*.html`, `*.txt`, plus text fields within `*.yaml`, `*.json` when they are clearly human-facing (title, description, name, body, content).
 
-- **Notion page**: call `Notion:notion-fetch` on the page URL. Extract plain
-  text content and preserve section structure so location references are
-  meaningful.
+- **Notion page**: call `Notion:notion-fetch` on the page URL. Extract plain text content and preserve section structure so location references are meaningful.
 
-- **Uploaded file**: read from `/mnt/user-data/uploads/`. For `.docx`, follow
-  `/mnt/skills/public/docx/SKILL.md` to extract text.
+- **Uploaded file**: read from `/mnt/user-data/uploads/`. For `.docx`, follow `/mnt/skills/public/docx/SKILL.md` to extract text.
 
 - **Raw text**: take it as-is.
 
 ### Step 2: Identify prose spans
 
 Separate prose from non-prose before reviewing:
-- Skip fenced code blocks (```), inline code (`` ` ``), YAML keys and non-text
-  values, shell output, HTML tag names/attributes (review attribute **values**
-  only when they are user-facing text like `alt`, `title`, `aria-label`,
-  `<meta content="...">`).
-- In `.njk` frontmatter, review values for keys: `title`, `description`,
-  `name`, `og:*` text, `description`, schema.org text fields. Skip: permalinks,
-  image paths, type enums, booleans, arrays of tech keywords.
-- In Notion pages, skip property values that are enums, dates, or IDs. Review
-  rich text content.
+
+- Skip fenced code blocks (``), inline code (` ` ``), YAML keys and non-text values, shell output, HTML tag names/attributes (review attribute **values** only when they are user-facing text like `alt`, `title`, `aria-label`, `<meta content="...">`).
+- In `.njk` frontmatter, review values for keys: `title`, `description`, `name`, `og:*` text, `description`, schema.org text fields. Skip: permalinks, image paths, type enums, booleans, arrays of tech keywords.
+- In Notion pages, skip property values that are enums, dates, or IDs. Review rich text content.
 
 ### Step 3: Run the review
 
 Run the six checks below against the prose spans. For each finding, capture:
+
 - **Location** — file + line, or section heading for Notion.
-- **Category** — one of: Typo, Grammar, Punctuation, Consistency, Voice,
-  Clarity.
+- **Category** — one of: Typo, Grammar, Punctuation, Consistency, Voice, Clarity.
 - **Severity** — `must-fix`, `should-fix`, `nice-to-have`.
 - **Before / After** — exact text.
 - **Why** — one short sentence.
@@ -115,113 +77,71 @@ Run the six checks below against the prose spans. For each finding, capture:
 #### Check 1: Spelling and typos
 
 - Flag misspellings.
-- Pay special attention to product, framework, and person names:
-  Mainmatter (one word, capital M only at the start), Svelte, SvelteKit,
-  Ember.js (with `.js`), Rust, EuroRust, EmberFest, Svelte Summit, Embroider,
-  Vite, TypeScript, JavaScript.
-- Flag capitalization errors in product names (e.g. `svelte`, `ember`,
-  `Typescript`, `Javascript` — all wrong in prose).
-- Flag Mainmatter engineers' names when misspelled: Luca Palmieri,
-  Chris Manson, Paolo Ricciuti, Marco Otte-Witte, Marine Dunstetter, etc.
-  If unsure about a name spelling, note it as uncertain rather than silently
-  correcting.
+- Pay special attention to product, framework, and person names: Mainmatter (one word, capital M only at the start), Svelte, SvelteKit, Ember.js (with `.js`), Rust, EuroRust, EmberFest, Svelte Summit, Embroider, Vite, TypeScript, JavaScript.
+- Flag capitalization errors in product names (e.g. `svelte`, `ember`, `Typescript`, `Javascript` — all wrong in prose).
+- Flag Mainmatter engineers' names when misspelled: Luca Palmieri, Chris Manson, Paolo Ricciuti, Marco Otte-Witte, Marine Dunstetter, etc. If unsure about a name spelling, note it as uncertain rather than silently correcting.
 
 #### Check 2: Grammar
 
-Subject-verb agreement, article usage (`a/an/the`), preposition choice, tense
-consistency, pronoun reference, dangling modifiers, sentence fragments.
+Subject-verb agreement, article usage (`a/an/the`), preposition choice, tense consistency, pronoun reference, dangling modifiers, sentence fragments.
 
-Treat "Mainmatter" as singular in prose ("Mainmatter is", "Mainmatter offers"),
-not plural ("Mainmatter are"). Published Mainmatter content is consistent on
-this — flag inconsistencies when one document mixes both.
+Treat "Mainmatter" as singular in prose ("Mainmatter is", "Mainmatter offers"), not plural ("Mainmatter are"). Published Mainmatter content is consistent on this — flag inconsistencies when one document mixes both.
 
 #### Check 3: Punctuation
 
-Comma splices, missing commas before conjunctions in long sentences, run-on
-sentences, mismatched quotes, inconsistent use of em dashes vs. hyphens vs.
-en dashes. Em dashes are fine in Mainmatter content (`—`, not `--`).
+Comma splices, missing commas before conjunctions in long sentences, run-on sentences, mismatched quotes, inconsistent use of em dashes vs. hyphens vs. en dashes. Em dashes are fine in Mainmatter content (`—`, not `--`).
 
 #### Check 4: Consistency
 
 Within a single document:
-- US vs. UK spelling — pick one and stick to it (flag mixes like "organize"
-  alongside "optimisation").
+
+- US vs. UK spelling — pick one and stick to it (flag mixes like "organize" alongside "optimisation").
 - Title Case vs. sentence case in headings — pick one.
-- Product names: always `Ember.js` (not `Ember` inconsistently, though
-  `Ember` alone is fine when the context is clear).
-- Hyphenation of compounds: `open source` (noun) vs. `open-source` (adjective);
-  `cloud native` vs. `cloud-native`. Match the doc's chosen style.
+- Product names: always `Ember.js` (not `Ember` inconsistently, though `Ember` alone is fine when the context is clear).
+- Hyphenation of compounds: `open source` (noun) vs. `open-source` (adjective); `cloud native` vs. `cloud-native`. Match the doc's chosen style.
 
 #### Check 5: Voice and tone (Mainmatter voice)
 
-Read `references/mainmatter-voice.md` for the full voice guide and a checklist
-of patterns to reinforce and to flag. Core tests:
+Read `references/mainmatter-voice.md` for the full voice guide and a checklist of patterns to reinforce and to flag. Core tests:
 
-- **Confident without bluster.** Flag empty marketing language
-  ("cutting-edge", "world-class", "best-in-class", "next-generation",
-  "revolutionary") unless backed by specific, falsifiable evidence. Flag
-  over-hedging too ("we might possibly be able to perhaps").
-- **Technical and concrete.** Flag claims that don't land in specifics.
-  "We improved performance" is weak; "We cut p95 latency from 420 ms to
-  110 ms" is Mainmatter-shaped.
-- **Approachable to both devs and decision-makers.** Flag walls of jargon
-  unexplained (a manager skims off), and flag empty business-speak a
-  developer would roll their eyes at ("synergize", "stakeholder alignment",
-  "holistic solution").
+- **Confident without bluster.** Flag empty marketing language ("cutting-edge", "world-class", "best-in-class", "next-generation", "revolutionary") unless backed by specific, falsifiable evidence. Flag over-hedging too ("we might possibly be able to perhaps").
+- **Technical and concrete.** Flag claims that don't land in specifics. "We improved performance" is weak; "We cut p95 latency from 420 ms to 110 ms" is Mainmatter-shaped.
+- **Approachable to both devs and decision-makers.** Flag walls of jargon unexplained (a manager skims off), and flag empty business-speak a developer would roll their eyes at ("synergize", "stakeholder alignment", "holistic solution").
 - **Active voice.** Flag passive where active works.
-- **No AI slop.** Flag "It's not just X — it's Y", "Let's dive in", "In
-  today's fast-paced world", "It's worth noting that", "Navigate the
-  complexities of", and similar LLM tics.
-- **No filler.** Flag "very", "really", "quite", "simply", "just" when they
-  add nothing. Flag "In order to" when "to" works.
+- **No AI slop.** Flag "It's not just X — it's Y", "Let's dive in", "In today's fast-paced world", "It's worth noting that", "Navigate the complexities of", and similar LLM tics.
+- **No filler.** Flag "very", "really", "quite", "simply", "just" when they add nothing. Flag "In order to" when "to" works.
 
-Voice findings are usually `should-fix` or `nice-to-have`, not `must-fix` —
-the author's own voice matters. Suggest, don't mandate.
+Voice findings are usually `should-fix` or `nice-to-have`, not `must-fix` — the author's own voice matters. Suggest, don't mandate.
 
 #### Check 6: Translation smells and L2 patterns
 
-Read `references/l2-english-patterns.md` for the full list. Most common ones
-to scan for:
+Read `references/l2-english-patterns.md` for the full list. Most common ones to scan for:
 
-- **Article errors**: missing or extra `the`, `a`, `an`. L2 speakers from
-  German, Slavic, or Romance backgrounds frequently miss or over-use
-  articles.
-- **Preposition errors**: "discuss about", "depend of", "consist in",
-  "suffer of", "on the internet" vs. "in the internet".
-- **False friends** from German, French, Italian, Spanish: e.g.
-  "actually" (should be "currently" from German "aktuell"),
-  "eventually" (not "possibly"), "sensible" (not "sensitive"),
-  "deliver in time" (should be "on time").
+- **Article errors**: missing or extra `the`, `a`, `an`. L2 speakers from German, Slavic, or Romance backgrounds frequently miss or over-use articles.
+- **Preposition errors**: "discuss about", "depend of", "consist in", "suffer of", "on the internet" vs. "in the internet".
+- **False friends** from German, French, Italian, Spanish: e.g. "actually" (should be "currently" from German "aktuell"), "eventually" (not "possibly"), "sensible" (not "sensitive"), "deliver in time" (should be "on time").
 - **Word-order calques**: adverb placement, adjective order.
-- **Over-literal translations**: "in the last time" (recently), "since
-  long time" (for a long time).
-- **Verb pattern errors**: "help them deliver" (correct) vs. "support them
-  deliver" (ungrammatical).
+- **Over-literal translations**: "in the last time" (recently), "since long time" (for a long time).
+- **Verb pattern errors**: "help them deliver" (correct) vs. "support them deliver" (ungrammatical).
 
 ### Step 4: Write the output
 
-Create a markdown file at `/mnt/user-data/outputs/content-review-<slug>-<YYYY-MM-DD>.md`
-where `<slug>` is a short identifier (PR number, page name, filename).
+Create a markdown file at `/mnt/user-data/outputs/content-review-<slug>-<YYYY-MM-DD>.md` where `<slug>` is a short identifier (PR number, page name, filename).
 
-For short reviews (< 8 findings) and when the source was a chat paste, respond
-inline in the chat instead of creating a file.
+For short reviews (< 8 findings) and when the source was a chat paste, respond inline in the chat instead of creating a file.
 
 Follow the output format below exactly.
 
 ## Output format
 
-```markdown
+````markdown
 # Content review: <source title or PR number>
 
-**Source:** <URL or filename>
-**Reviewed:** <date>
-**Files checked:** <list>
-**Scope note:** <one line on what was reviewed / skipped>
+**Source:** <URL or filename> **Reviewed:** <date> **Files checked:** <list> **Scope note:** <one line on what was reviewed / skipped>
 
 ## Summary
 
-<2–3 sentence overview: how many findings by category, overall voice read,
-anything the author nailed particularly well.>
+<2–3 sentence overview: how many findings by category, overall voice read, anything the author nailed particularly well.>
 
 ## Must-fix
 
@@ -233,32 +153,34 @@ anything the author nailed particularly well.>
 - Mainmtter offers hands-on Rust training for engineering teams.
 + Mainmatter offers hands-on Rust training for engineering teams.
 ```
+````
 
 **Why:** Company name is misspelled.
 
 ---
 
 ### 2. <Category>: <short description>
+
 ...
 
 ## Should-fix
 
 ### 3. <Category>: <short description>
+
 ...
 
 ## Nice-to-have
 
 ### 4. <Category>: <short description>
+
 ...
 
 ## Voice notes (not line-level)
 
-<Only include this section if there are document-level voice observations
-that don't fit a single line change. Keep to 1–4 short bullets.>
+<Only include this section if there are document-level voice observations that don't fit a single line change. Keep to 1–4 short bullets.>
 
-- <Observation, e.g. "Opening paragraph is strong on specifics; middle third
-  drifts into generic SaaS language — consider re-anchoring with a concrete
-  example from the engagement.">
+- <Observation, e.g. "Opening paragraph is strong on specifics; middle third drifts into generic SaaS language — consider re-anchoring with a concrete example from the engagement.">
+
 ```
 
 Rules for the output:
@@ -324,3 +246,4 @@ writer to ignore the review.
 
 Read these references when the inline guidance above isn't enough to decide
 a specific case.
+```
