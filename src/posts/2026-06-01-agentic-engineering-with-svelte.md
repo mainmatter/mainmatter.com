@@ -51,7 +51,7 @@ As we explained earlier, Vibe Coding is ALL about embracing the vibes: a true Vi
 
 That's also true with agentic engineering and that's what makes the two so similar: to really boost your productivity you should let the agent do what it does best... write code at the speed of light. What changes is mostly around the code. In this case you do look at the code, you carefully review it, you put systems in place that can test your whole app for you at every change, and you force the agent to check its work before completing a task.
 
-You are basically graduating your agent from "kid in his room writing its first game" to "serious professional building production-grade applications".
+You are basically graduating your agent from "kid in their room writing their first game" to "serious professional building production-grade applications".
 
 ## Where does Svelte fit in this?
 
@@ -160,7 +160,7 @@ However, even if your model had an infinite token window, the quality of the mod
 
 This also led to a series of tools and techniques to reduce the amount of tokens the agent produces.
 
-This seems to somewhat counter the benefit of the Svelte MCP/CLI: reading the docs and getting suggestions from the autofixer both consume tokens. However, we have a secret weapon in our quiver: since updating a Svelte component is generally a very atomic operation, we can use another tool that harnesses generally provide. **SUBAGENTS**!
+This seems to somewhat counter the benefit of the Svelte MCP/CLI: reading the docs and getting suggestions from the autofixer both consume tokens. However, we have a secret weapon in our quiver: since updating a Svelte component is generally a very atomic operation, we can use another tool that agent harnesses generally provide: **SUBAGENTS**!
 
 The idea is that your agent can simply spawn another version of itself with a custom, laser-focused prompt for a single task (like for example "update this Svelte component"). And so we did: we created the [`svelte-file-editor`](https://svelte.dev/docs/ai/subagent) subagent (which also has extra instructions on how to best use the MCP/CLI).
 
@@ -229,7 +229,7 @@ Regardless of whether you let your agents write your tests or not, having a soli
 
 As we repeatedly said during this article, nowadays code is produced at unprecedented rates. And as we said already, if you are doing agentic engineering you do care deeply about the quality of the code. This means that most of your time you'll actually be reviewing code.
 
-Now, someone might prefer reviewing to writing but judging from the number of conflicting PRs left in the average project we can assume developers tend to like coding more than reviewing. It is a bit of a shame that AI is stealing the fun part from us and not helping us with the boring part.
+Now, someone might prefer reviewing to writing, but judging from the number of conflicting PRs left in the average project we can assume developers tend to like coding more than reviewing. It is a bit of a shame that AI is stealing the fun part from us and not helping us with the boring part.
 
 _Or is it?_
 
@@ -237,8 +237,38 @@ That's right, AI can also help us review the code!
 
 I can see your skeptical face from here (which also means I can see in the future, that's impressive): if the AI is able to figure out that something is a bug why not prevent it from writing the bug in the first place?
 
-Well, first, this happens to the best of us too: did you ever write a PR, come back to it the day after and notice a blatant bug? Secondly, since every time you restart the chat the AI has its memory wiped, it's just like if another person looks at the code and, when instructed to look for bugs, they generally do an even better job at it. Thirdly, we can use a different model, with a different system prompt, optimized for reviews, which will give us an even better result.
+Well, first, this happens to the best of us too: did you ever write a PR, come back to it the day after and notice a blatant bug? Secondly, since every time you restart the chat the AI has its memory wiped, it's just like having another person look at the code and, when instructed to look for bugs, they generally do an even better job at it. Thirdly, we can use a different model, with a different system prompt, optimized for reviews, which will give us an even better result.
 
 Once we know this, it is just a matter of creating a GitHub workflow that runs on every PR and reports the findings in a comment. And if this feels like a business opportunity, you are right: there are dozens of tools that offer this functionality.
 
 Personally I really like [Greptile](https://www.greptile.com), it's free for open source, it has a lot of nice features and customizations, and also gives you analytics on your reviews.
+
+### The world after Production
+
+During development it's all fun and games. But how can AI help you in Production? That's where another important tool comes into place: observability (have you realized how everything that helps big teams of engineers is also table stakes to work with agents... how curious).
+
+Setting up a good observability platform is key to allow AI to help you in production. Regardless of whether you review your code or run tests on CI, bugs will inevitably ship to Production. The goal is to be able to detect them, know precisely where they are and fix them as quickly as possible.
+
+SvelteKit makes this super easy with the [experimental tracing/instrumentation option](https://svelte.dev/docs/kit/observability): you can just enable it in your config, create a `src/instrumentation.server.ts` and you will be able to collect information about every request as granularly as a single load/remote function.
+
+When it comes to the choice of your observability platform anything will do but, obviously, the more the platform allows you to integrate with AI the better. That's why personally I really like [Sentry](https://sentry.io/welcome/):
+
+- They have a very good integration with SvelteKit (in fact they actually contributed on the PR that allowed tracing/instrumentation)
+- They are very on the bleeding edge of AI: they have an MCP server and a Skill+CLI that allows you to bring all the tracing information to your agent in no time
+- They even wrote their own [cloud agent](https://docs.sentry.io/integrations/integration-platform/webhooks/seer/) that allows you to fix the issues in production from everywhere by clicking on a button and writing a quick prompt.
+
+## How all of this applies in the real world?
+
+Words are easy to write...but when it comes to real software is this actually feasible? Could you actually build a good application solely using agents?
+
+Good news, we put that to the test!
+
+We are releasing a mini-series (9 episodes) where I will be setting up the environment and building an application using the principles of agentic engineering (if you are reading this in the future the series might be already fully out...isn't that nice?).
+
+You can watch it [here](https://youtube.com), during the series we are gonna build [DayRelay](https://dayrelay.ai): a news aggregator where you can pick the sources of your news and every day let AI visit them and find the best news for you so you can have your personalized newsletter!
+
+The project is Open Source and you can find the code on [our GitHub](https://github.com/mainmatter/news-aggregator) and you can follow along with the series to see how we kept our agent in check so that it could write code we are not scared to look at!
+
+## Conclusions
+
+There's no doubt that LLMs changed the name of the game for software development...and yet as we've seen the same techniques that we've used to help our clients ship faster without compromising on code quality can, today, help an agent roam free in our codebases without risking a catastrophic spaghetti-code mess.
