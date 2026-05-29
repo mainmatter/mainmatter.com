@@ -4,9 +4,9 @@ authorHandle: paoloricciuti
 tags: [svelte]
 customCta: "global/svelte-cta.njk"
 bio: "Paolo Ricciuti, Senior Software Engineer"
-description: "Agents can boost your productivity to unprecedented levels... but how do you get the best out of them? And what are the best practices for doing it with Svelte?"
+description: "Agents can boost your productivity to unprecedented levels... but how do you get the best out of them? And what are the best practices for agentic engineering with Svelte? In this article we will explore what agentic coding is, how it evolved and how to approach it without turning your codebase into a spaghetti-mess (with a very practical example 👀)."
 autoOg: true
-tagline: <p>Agents can boost your productivity to unprecedented levels... but how do you get the best out of them? And what are the best practices for doing it with Svelte?</p>
+tagline: <p>Agents can boost your productivity to unprecedented levels... but how do you get the best out of them? And what are the best practices for agentic engineering with Svelte? In this article we will explore what agentic coding is, how it evolved and how to approach it without turning your codebase into a spaghetti-mess (with a very practical example 👀).</p>
 ---
 
 Unless you've been living under a rock for the past four years, you probably know that something called Large Language Models revolutionized the whole tech industry. It all started with the release of ChatGPT, a chat interface that allowed anyone to access the underlying Large Language Model: GPT 3.0.
@@ -259,16 +259,12 @@ When it comes to the choice of your observability platform anything will do but,
 
 ## How all of this applies in the real world?
 
-Words are easy to write...but when it comes to real software is this actually feasible? Could you actually build a good application solely using agents?
+There's no doubt that LLMs changed the name of the game for software development...today we have new tools and workflows to learn, especially when building with Svelte, but the engineering practices we've always relied on and that we've used to help our clients haven't gone away. In fact, the same principles that help teams ship quickly without sacrificing code quality can also help AI agents work effectively in a codebase without turning it into a spaghetti-code nightmare. But words are easy to write...when it comes to real software is this actually feasible? Could you actually build a good application solely using agents?
 
 Good news, we put that to the test!
 
-We are releasing a mini-series (9 episodes) where I will be setting up the environment and building an application using the principles of agentic engineering (if you are reading this in the future the series might be already fully out...isn't that nice?).
+We are releasing a mini-series where I will be setting up the environment and building an application using the principles of agentic engineering (if you are reading this in the future the series might be already fully out...isn't that nice?).
 
-You can watch it [here](https://youtube.com), during the series we are gonna build [DayRelay](https://dayrelay.ai): a news aggregator where you can pick the sources of your news and every day let AI visit them and find the best news for you so you can have your personalized newsletter!
+You can watch it [here](#actual-youtube-playlist-so-we-dont-forget), during the series we are gonna build [DayRelay](https://dayrelay.ai): a news aggregator where you can pick the sources of your news and every day let AI visit them and find the best news for you so you can have your personalized newsletter!
 
-The project is Open Source and you can find the code on [our GitHub](https://github.com/mainmatter/news-aggregator) and you can follow along with the series to see how we kept our agent in check so that it could write code we are not scared to look at!
-
-## Conclusions
-
-There's no doubt that LLMs changed the name of the game for software development...and yet as we've seen the same techniques that we've used to help our clients ship faster without compromising on code quality can, today, help an agent roam free in our codebases without risking a catastrophic spaghetti-code mess.
+And if you want to get the most out of your agents without risking the quality of your codebase you can visit https://mainmatter.com/svelte to learn more about how we can help you.
