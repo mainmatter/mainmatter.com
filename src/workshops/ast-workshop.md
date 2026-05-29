@@ -7,10 +7,10 @@ description: "Have you ever wondered what kinds of fruits grow on Abstract Synta
 introduction: <p>Have you ever wondered what kinds of fruits grow on Abstract Syntax Trees or how to grow them in your own backyard? In this workshop you'll learn all the basic concepts of ASTs and how to work with them. We will cover tools like codemods, ember-template-lint and Babel, and at the end you will have a good understanding of how they work and how you can extend them to meet your needs.</p><p>This workshop is designed for JavaScript developers who are comfortable with Node.js and want to understand the tooling layer beneath their linters, build pipelines, and migration scripts.</p>
 hero:
   color: purple
-  image: "/assets/images/workshops/modernising-ember-development/modernising-ember-development-hero.jpg"
-  imageAlt: "Hamster sitting behind a hamster-sized desk"
+  image: "/assets/images/workshops/abstract-syntax-trees/abstract-syntax-trees-hero.jpg"
+  imageAlt: "Branching tree structures"
 og:
-  image: /assets/images/workshops/modernising-ember-development/og-image.jpg
+  image: /assets/images/workshops/abstract-syntax-trees/og-image.jpg
 topics:
   - title: Introduction to Abstract Syntax Trees
     text: >
