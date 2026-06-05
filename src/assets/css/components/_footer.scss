@@ -57,10 +57,27 @@
   text-transform: lowercase;
 }
 
+.footer--minimal {
+  min-height: 8rem;
+  padding: 2rem 0;
+  background-color: var(--color-black);
+
+  .footer__container {
+    align-items: center;
+  }
+}
+
+.footer--minimal .footer__socials {
+  margin-top: 1.5rem;
+}
+
 @media (min-width: $breakpoint-s) {
   .footer {
     padding: 4.5rem 0 1.75rem;
   }
+
+  .footer--minimal {
+    min-height: 12rem;  }
 
   .footer__logo {
     margin: 0 0 3.25rem;
@@ -117,5 +134,11 @@
     flex: 1 1 50%;
     margin-top: rem-calc(120);
     order: 0;
+  }
+
+  .footer--minimal .footer__secondary,
+  .footer--minimal .footer__socials {
+    flex: 0 1 auto;
+    margin-top: 0;
   }
 }
