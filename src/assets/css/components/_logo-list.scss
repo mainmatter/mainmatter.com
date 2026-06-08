@@ -1,6 +1,8 @@
 @use "../base/breakpoints" as *;
 
 .logo-list {
+  --logo-list-gap: 4rem;
+
   padding: 2.5rem 0;
   position: relative;
   text-align: center;
@@ -18,8 +20,9 @@
 }
 
 .logo-list__inner {
-  width: calc(var(--marquee-logo-count) * 100%);
   display: flex;
+  gap: var(--logo-list-gap);
+  width: max-content;
   animation: infinite-scroll 36s linear infinite;
   animation-play-state: running;
 
@@ -37,17 +40,12 @@
   padding: 0;
   display: flex;
   align-items: center;
-  width: 100%;
-  gap: 4rem;
-}
-
-.logo-list__list--duplicate {
-  margin-left: 4rem;
+  gap: var(--logo-list-gap);
+  width: max-content;
 }
 
 .logo-list__item {
-  flex-shrink: 0;
-  flex-grow: 1;
+  flex: 0 0 8rem;
 }
 
 .logo-list__image {
@@ -55,7 +53,7 @@
 
   img,
   svg {
-    max-height: 5rem;
+    max-height: 4rem;
     margin: 0 auto;
     display: block;
   }
@@ -80,51 +78,28 @@
   }
 }
 
-@media (min-width: 30em) {
-  .logo-list__inner {
-    width: calc(var(--marquee-logo-count) * 70%);
-  }
-}
-
 @media (min-width: $breakpoint-s) {
-  .logo-list__inner {
-    width: calc(var(--marquee-logo-count) * 60%);
-  }
-
   .logo-list {
+    --logo-list-gap: 6rem;
+
     padding: 5rem 0;
   }
 
-  .logo-list__list {
-    gap: 6rem;
+  .logo-list__item {
+    flex-basis: 10rem;
   }
 
-  .logo-list__list--duplicate {
-    margin-left: 6rem;
-  }
-
-  .logo-list__inner {
-    width: 400%;
-  }
-}
-
-@media (min-width: $breakpoint-s) {
-  .logo-list__inner {
-    width: calc(var(--marquee-logo-count) * 50%);
+  .logo-list__image {
+    img,
+    svg {
+      max-height: 5rem;
+    }
   }
 }
 
 @media (min-width: $breakpoint-l) {
-  .logo-list__inner {
-    width: calc(var(--marquee-logo-count) * 35%);
-  }
-
-  .logo-list__list {
-    gap: 8rem;
-  }
-
-  .logo-list__list--duplicate {
-    margin-left: 8rem;
+  .logo-list {
+    --logo-list-gap: 8rem;
   }
 }
 
@@ -134,15 +109,11 @@
   }
 
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-50% - var(--logo-list-gap) / 2));
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .logo-list__inner {
-    width: 150%;
-  }
-
   .logo-list__wrapper {
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
@@ -155,11 +126,5 @@
   .logo-list__list--duplicate {
     display: none;
     visibility: hidden;
-  }
-
-  @media (min-width: $breakpoint-xl) {
-    .logo-list__inner {
-      width: 100%;
-    }
   }
 }
