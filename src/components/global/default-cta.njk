@@ -1,0 +1,13 @@
+{#
+A call-to-action meant to be displayed at the beginning of a blog post.
+#}
+{% from "cta-banner.njk" import ctaBanner %}
+{%
+  set content = {
+  "title": "Are you facing challenges with <a href='/rust-consulting/' class='plausible-event-name=Rust+Consulting'>Rust</a>, <a href='/ember-consulting/' class='plausible-event-name=Ember+Consulting'>Ember</a>, or <a href='/svelte-consulting/' class='plausible-event-name=Svelte+Consulting'>Svelte</a>, and need a helping hand?",
+  "text": "We know the tools and practices required for successful development. We partner with you to solve your toughest tech challenges as teammates.",
+  "linkUrl": "/contact",
+  "linkText": "Contact us today"
+  }
+%}
+{{ ctaBanner('purple', 'default', content) }}
