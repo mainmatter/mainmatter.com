@@ -1,28 +1,14 @@
-// Scrolling event listener for the sticky nav bar. Only appiles class="nav__scrolled" on breakpoints larger than breakpoint-m
+// Scrolling event listener for the sticky nav bar.
 
 const nav = document.querySelector(".nav");
-
-const throttle = (fn, delay) => {
-  let now = Date.now();
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    if (now + delay - Date.now() <= 0) {
-      fn.call(null, ...args);
-      now = Date.now();
-    } else {
-      timer = setTimeout(() => {
-        fn.call(null, ...args);
-        now = Date.now();
-      }, delay);
-    }
-  };
-};
+const scrollEnterThreshold = 24;
+const scrollExitThreshold = 4;
+let isScrollFramePending = false;
 
 const handleScroll = () => {
-  if (window.scrollY > 10) {
+  if (window.scrollY > scrollEnterThreshold) {
     nav.classList.add("nav__scrolled");
-  } else {
+  } else if (window.scrollY <= scrollExitThreshold) {
     nav.classList.remove("nav__scrolled");
   }
 };
@@ -30,4 +16,18 @@ const handleScroll = () => {
 // Run once immediately to handle reloads mid-page
 handleScroll();
 
-window.addEventListener("scroll", throttle(handleScroll, 100), { passive: true });
+window.addEventListener(
+  "scroll",
+  () => {
+    if (isScrollFramePending) {
+      return;
+    }
+
+    isScrollFramePending = true;
+    window.requestAnimationFrame(() => {
+      handleScroll();
+      isScrollFramePending = false;
+    });
+  },
+  { passive: true }
+);
