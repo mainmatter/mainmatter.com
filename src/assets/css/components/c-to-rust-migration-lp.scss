@@ -133,24 +133,21 @@
   }
 }
 
-
-
-.c-to-rust-migration-eurorust__wrapper {
-   background-color: var(--color-aqua);
-   padding: 1rem 0;
+.mainmatter-section {
+  background-color: var(--color-white);
+  padding: 4rem 6rem;
 }
 
 .c-to-rust-migration-eurorust {
   display: grid;
   overflow: hidden;
-
-  color: var(--color-black);
+  color: var(--color-white);
 }
 
 .c-to-rust-migration-eurorust__content {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-white);
+  background-color: var(--color-purple);
   align-items: flex-start;
   align-self: center;
   width: 100%;
