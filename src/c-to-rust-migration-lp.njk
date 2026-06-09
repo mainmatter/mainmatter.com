@@ -13,7 +13,37 @@ og:
 {% from "btn-secondary.njk" import btnSecondary %}
 {% from "strategy-list.njk" import strategyList %}
 {% from "author-socials.njk" import authorSocials %}
+{% from "color-hero.njk" import colorHero %}
 
+
+{%
+  set toc = {
+    'Overview': '#overview',
+    'Free Course': '#course',
+    'Curriculum': '#curriculum',
+    'Your Author': '#author',
+    'Mainmatter': '#support'
+  }
+%}
+
+  <a href="/" class="c-to-rust-migration-logo">
+    {% include 'svg/logo.njk' %}
+    <span class="screenreader">Mainmatter</span>
+  </a>
+
+{%
+  set 'heroContent' = {
+  "title": "C to Rust Migration",
+  "image": "/assets/images/hero/c-to-rust-lp.jpg",
+  "alt": "A close up view of a machine with gears",
+  "loading": "eager",
+  "class": "c-to-rust-migration-hero",
+  "toc": toc
+  }
+%}
+{{ colorHero('purple', heroContent) }}
+
+{#
 <div class="c-to-rust-migration-hero">
   <a href="/" class="c-to-rust-migration-logo">
     {% include 'svg/logo.njk' %}
@@ -31,9 +61,10 @@ og:
     </div>
   </div>
 </div>
+#}
 
 <main class="c-to-rust-migration">
-  <section class="container container--lg my-10">
+  <section id="overview" class="container container--lg my-10">
     <h3 class="mb-2">You don't have to rewrite everything</h3>
     <p>
       Most Rust migration guides tell you to start fresh. That's not how it works in practice. Real
@@ -47,7 +78,7 @@ og:
     </p>
   </section>
 
-  <section class="c-to-rust-migration-feature container container--xl my-10">
+  <section id="course" class="c-to-rust-migration-feature container container--xl my-10">
     <div class="c-to-rust-migration-feature__content">
       <p class="c-to-rust-migration-feature__eyebrow">Free course</p>
       <h3>C to Rust Migration</h3>
@@ -102,10 +133,12 @@ og:
     "text": "The final module ties everything together. You'll document FFI functions using Rust's <code>/// # Safety</code> convention with numbered invariants, so every unsafe contract is explicit and surfaces as C doc comments in the generated headers via <code>cbindgen</code>. We cover build integration, automated checks, and the mindset of treating your FFI surface as an API you'll maintain forever."
     }]
   %}
-  {{ strategyList('course-topic', '', topics) }}
+  <div id="curriculum">
+    {{ strategyList('course-topic', '', topics) }}
+  </div>
 
   {% set mentor = 'JonasKruckenberg' | findBySlug %}
-  <section class="workshop-authors container container--lg">
+  <section id="author" class="workshop-authors container container--lg">
     <div class="workshop__content post__content--workshop">
       <h3 class="workshop-topics__heading">Your author</h3>
       <div class="author__wrapper">
@@ -128,7 +161,7 @@ og:
     </div>
   </section>
 
-  <section class="container container--lg my-10">
+  <section id="support" class="container container--lg my-10">
     <h3 class="mb-2">Need more than a guide?</h3>
     <p>
       <a href="https://mainmatter.com/">Mainmatter</a> is a software consulting company that
@@ -148,6 +181,7 @@ og:
     {{ btnSecondary(link, "mt-2") }}
   </section>
 
+  <div class="c-to-rust-migration-eurorust__wrapper">
   <section class="c-to-rust-migration-eurorust container container--xl my-10">
     <div class="c-to-rust-migration-eurorust__image">
       {% image "/assets/images/rust/eurorust-2026.png", "EuroRust 2026 logo", "36rem", "lazy", "", [760, 1440] %}
@@ -168,4 +202,5 @@ og:
       }}
     </div>
   </section>
+  </div>
 </main>

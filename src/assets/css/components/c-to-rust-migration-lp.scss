@@ -5,7 +5,20 @@
   overflow: hidden;
   background-color: var(--color-black);
   color: var(--color-white);
+  min-height: 10vh;
 }
+
+.c-to-rust-migration-hero {
+  .table-of-contents__list {
+    @media (min-width: $breakpoint-m) {
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 1.5rem 3rem;
+    }
+  }
+}
+
 
 .c-to-rust-migration-logo {
   position: absolute;
@@ -120,16 +133,24 @@
   }
 }
 
+
+
+.c-to-rust-migration-eurorust__wrapper {
+   background-color: var(--color-aqua);
+   padding: 1rem 0;
+}
+
 .c-to-rust-migration-eurorust {
   display: grid;
   overflow: hidden;
-  background-color: var(--color-black);
-  color: var(--color-white);
+
+  color: var(--color-black);
 }
 
 .c-to-rust-migration-eurorust__content {
   display: flex;
   flex-direction: column;
+  background-color: var(--color-white);
   align-items: flex-start;
   align-self: center;
   width: 100%;
