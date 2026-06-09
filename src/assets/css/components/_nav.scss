@@ -45,13 +45,22 @@
 
 .nav__item {
   color: var(--color-white);
-  transition: color 0.4s ease;
+  transition:
+    color 0.4s ease,
+    line-height 0.4s ease;
 }
 
 .nav__item,
 .nav__cta {
   font-size: inherit;
-  transition: line-height 0.4s ease;
+}
+
+.nav__cta {
+  transition:
+    color 0.5s ease,
+    line-height 0.4s ease,
+    margin 0.4s ease,
+    padding 0.4s ease;
 }
 
 .nav__item a,
@@ -319,7 +328,7 @@
       line-height: 1.5rem;
     }
 
-       .nav__cta {
+    .nav__cta {
       margin: 0.2rem 0;
       padding: 0.7rem 1.75rem;
     }
@@ -349,6 +358,10 @@
   .nav__wrapper,
   .nav__logo svg,
   .nav__item,
+  .nav__item a,
+  .nav__item button,
+  .nav__link-text,
+  .nav__cta,
   .nav__list--pinned,
   .nav__list--pinned .nav__item,
   .nav__list--pinned .nav__item svg path,
