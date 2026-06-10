@@ -133,6 +133,11 @@
 
     .cta-banner__text {
       margin-top: 0.75rem;
+
+      a {
+        text-decoration: underline;
+        font-weight: 400;
+      }
     }
 
     .btn-primary {
