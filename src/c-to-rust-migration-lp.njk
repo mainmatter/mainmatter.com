@@ -15,7 +15,6 @@ og:
 {% from "author-socials.njk" import authorSocials %}
 {% from "color-hero.njk" import colorHero %}
 
-
 {%
   set toc = {
     'Overview': '#overview',
@@ -26,10 +25,10 @@ og:
   }
 %}
 
-  <a href="/" class="c-to-rust-migration-logo">
-    {% include 'svg/logo.njk' %}
-    <span class="screenreader">Mainmatter</span>
-  </a>
+<a href="/" class="c-to-rust-migration-logo">
+  {% include 'svg/logo.njk' %}
+  <span class="screenreader">Mainmatter</span>
+</a>
 
 {%
   set 'heroContent' = {
@@ -97,10 +96,10 @@ og:
 
   <section class="container container--lg my-10">
     <p>
-      Go through <a href="https://rust-exercises.com/">"The C to Rust Migration Book"</a> and learn how to
-      bridge C and Rust through FFI, one concept at a time. You'll learn how languages communicate
-      at the binary level, how to make that boundary safe and maintainable, and how to expose clean
-      Rust APIs to existing C consumers.
+      Go through <a href="https://rust-exercises.com/">"The C to Rust Migration Book"</a> and learn
+      how to bridge C and Rust through FFI, one concept at a time. You'll learn how languages
+      communicate at the binary level, how to make that boundary safe and maintainable, and how to
+      expose clean Rust APIs to existing C consumers.
     </p>
     <p>
       The guide assumes basic familiarity with both C and Rust. No prior FFI experience required;
@@ -134,9 +133,7 @@ og:
     "text": "The final module ties everything together. You'll document FFI functions using Rust's <code>/// # Safety</code> convention with numbered invariants, so every unsafe contract is explicit and surfaces as C doc comments in the generated headers via <code>cbindgen</code>. We cover build integration, automated checks, and the mindset of treating your FFI surface as an API you'll maintain forever."
     }]
   %}
-  <div id="curriculum">
-    {{ strategyList('course-topic', 'Curriculum', topics) }}
-  </div>
+  <div id="curriculum">{{ strategyList('course-topic', 'Curriculum', topics) }}</div>
 
   {% set mentor = 'JonasKruckenberg' | findBySlug %}
   <section id="author" class="workshop-authors container container--lg">
@@ -163,24 +160,24 @@ og:
   </section>
 
   <section id="support" class="py-7 background-aqua">
-  <div class="container mainmatter-section container--xl">
-    <h3 class="mb-2">Need more than a guide?</h3>
-    <p>
-      <a href="https://mainmatter.com/">Mainmatter</a> is a software consulting company that
-      specializes in Rust. We offer consulting services, training, and mentorship to companies that
-      want to migrate from C to Rust or introduce Rust into an existing codebase.
-    </p>
-    <p>
-      <a href="/contact/?utm_source=C+To+Rust+Migration+Guide">Get in touch</a>
-      if you are working on a C to Rust migration and need hands-on support.
-    </p>
-    {%
-      set link = {
-      "label": "Team Up With Us for Rust!",
-      "url": "/rust-consulting/"
-      }
-    %}
-    {{ btnSecondary(link, "mt-2") }}
+    <div class="container mainmatter-section container--xl">
+      <h3 class="mb-2">Need more than a guide?</h3>
+      <p>
+        <a href="https://mainmatter.com/">Mainmatter</a> is a software consulting company that
+        specializes in Rust. We offer consulting services, training, and mentorship to companies
+        that want to migrate from C to Rust or introduce Rust into an existing codebase.
+      </p>
+      <p>
+        <a href="/contact/?utm_source=C+To+Rust+Migration+Guide">Get in touch</a>
+        if you are working on a C to Rust migration and need hands-on support.
+      </p>
+      {%
+        set link = {
+        "label": "Team Up With Us for Rust!",
+        "url": "/rust-consulting/"
+        }
+      %}
+      {{ btnSecondary(link, "mt-2") }}
     </div>
   </section>
 
