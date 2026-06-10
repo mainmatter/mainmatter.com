@@ -1,6 +1,6 @@
 ---
 layout: base
-title: "C to Rust Migration"
+title: "The C to Rust Migration Book"
 description: "Learn how to migrate a production C codebase to safe, idiomatic Rust one component at a time."
 permalink: /c-to-rust-migration/
 hideNav: true
@@ -33,8 +33,9 @@ og:
 
 {%
   set 'heroContent' = {
-  "title": "C to Rust Migration",
+  "title": "The C to Rust Migration Book",
   "image": "/assets/images/hero/c-to-rust-lp.jpg",
+  "text": "By Mainmatter",
   "alt": "A close up view of a machine with gears",
   "loading": "eager",
   "class": "c-to-rust-migration-hero",
@@ -81,7 +82,7 @@ og:
   <section id="course" class="c-to-rust-migration-feature container container--xl my-10">
     <div class="c-to-rust-migration-feature__content">
       <p class="c-to-rust-migration-feature__eyebrow">Free course</p>
-      <h3>C to Rust Migration</h3>
+      <h3>The C to Rust Migration Book</h3>
       {{
         btnPrimary({
           "label": "Start the course",
@@ -96,7 +97,7 @@ og:
 
   <section class="container container--lg my-10">
     <p>
-      Go through <a href="https://rust-exercises.com/">"C to Rust Migration"</a> and learn how to
+      Go through <a href="https://rust-exercises.com/">"The C to Rust Migration Book"</a> and learn how to
       bridge C and Rust through FFI, one concept at a time. You'll learn how languages communicate
       at the binary level, how to make that boundary safe and maintainable, and how to expose clean
       Rust APIs to existing C consumers.
@@ -134,7 +135,7 @@ og:
     }]
   %}
   <div id="curriculum">
-    {{ strategyList('course-topic', '', topics) }}
+    {{ strategyList('course-topic', 'Curriculum', topics) }}
   </div>
 
   {% set mentor = 'JonasKruckenberg' | findBySlug %}
