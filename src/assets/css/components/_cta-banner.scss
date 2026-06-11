@@ -115,6 +115,11 @@
 
   .cta-banner__text {
     margin-top: 1rem;
+
+    a {
+      text-decoration: underline;
+      font-weight: 400;
+    }
   }
 
   @media (min-width: $breakpoint-l) {
@@ -129,15 +134,6 @@
     .cta-banner__title,
     .cta-banner__text {
       grid-column: 1;
-    }
-
-    .cta-banner__text {
-      margin-top: 0.75rem;
-
-      a {
-        text-decoration: underline;
-        font-weight: 400;
-      }
     }
 
     .btn-primary {
