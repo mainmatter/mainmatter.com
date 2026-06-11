@@ -114,6 +114,15 @@
   }
 
   .cta-banner__text {
+    margin-top: 0.75rem;
+
+    a {
+      text-decoration: underline;
+      font-weight: 400;
+    }
+  }
+
+  .cta-banner__text {
     margin-top: 1rem;
   }
 
@@ -129,15 +138,6 @@
     .cta-banner__title,
     .cta-banner__text {
       grid-column: 1;
-    }
-
-    .cta-banner__text {
-      margin-top: 0.75rem;
-
-      a {
-        text-decoration: underline;
-        font-weight: 400;
-      }
     }
 
     .btn-primary {
