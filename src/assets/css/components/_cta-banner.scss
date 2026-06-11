@@ -114,16 +114,12 @@
   }
 
   .cta-banner__text {
-    margin-top: 0.75rem;
+    margin-top: 1rem;
 
     a {
       text-decoration: underline;
       font-weight: 400;
     }
-  }
-
-  .cta-banner__text {
-    margin-top: 1rem;
   }
 
   @media (min-width: $breakpoint-l) {
