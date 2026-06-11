@@ -95,6 +95,60 @@
   margin-bottom: 1.5rem;
 }
 
+.service-cta--blog {
+  .cta-banner__wrapper {
+    padding: 4rem 6rem;
+  }
+
+  .cta-banner__main {
+    max-width: none;
+    padding: 0;
+  }
+
+  .cta-banner__title {
+    font-size: 2.7rem;
+
+    a {
+      color: var(--color-white);
+    }
+  }
+
+  .cta-banner__text {
+    margin-top: 1rem;
+  }
+
+  @media (min-width: $breakpoint-l) {
+    .cta-banner__main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      column-gap: 3rem;
+      align-items: center;
+      width: 100%;
+    }
+
+    .cta-banner__title,
+    .cta-banner__text {
+      grid-column: 1;
+    }
+
+    .cta-banner__text {
+      margin-top: 0.75rem;
+
+      a {
+        text-decoration: underline;
+        font-weight: 400;
+      }
+    }
+
+    .btn-primary {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      margin-top: 0;
+      white-space: nowrap;
+    }
+  }
+}
+
 .cta-banner__whirlwind {
   background-color: #fdfebc;
   box-shadow:

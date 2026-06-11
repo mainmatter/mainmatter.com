@@ -1,28 +1,21 @@
 {%- macro serviceCta(tags, customCta) -%}
-  {% if customCta %}
-    {% include customCta %}
-  {% else %}
-    {% if tags %}
-      {% for tag in tags %}
-        {% if tag === "rust" %}
-          {% include "global/rust-cta.njk" %}
-        {% endif %}
-        {% if tag === "svelte" %}
-          {% include "global/svelte-cta.njk" %}
-        {% endif %}
-        {% if tag === "ember" %}
-          {% include "global/ember-cta.njk" %}
-        {% endif %}
-        {% if tag === "git" %}
-          {% include "global/git-workshop-cta.njk" %}
-        {% endif %}
-        {% if tag === "design" %}
-          {% include "global/interface-inventory-workshop-cta.njk" %}
-        {% endif %}
-        {% if tag === "gravity" %}
-          {% include "global/gravity-cta.njk" %}
-        {% endif %}
-      {% endfor %}
+  <div class="service-cta service-cta--blog">
+    {% if customCta %}
+      {% include customCta %}
+    {% elif "rust" in tags %}
+      {% include "global/rust-cta.njk" %}
+    {% elif "svelte" in tags %}
+      {% include "global/svelte-cta.njk" %}
+    {% elif "ember" in tags %}
+      {% include "global/ember-cta.njk" %}
+    {% elif "git" in tags %}
+      {% include "global/git-workshop-cta.njk" %}
+    {% elif "design" in tags %}
+      {% include "global/interface-inventory-workshop-cta.njk" %}
+    {% elif "gravity" in tags %}
+      {% include "global/gravity-cta.njk" %}
+    {% else %}
+      {% include "global/default-cta.njk" %}
     {% endif %}
-  {% endif %}
+  </div>
 {%- endmacro -%}
