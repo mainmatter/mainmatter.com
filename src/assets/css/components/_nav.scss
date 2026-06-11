@@ -7,9 +7,10 @@
   width: 100%;
   anchor-scope: --nav-overflow;
   transition:
-    background 0.3s ease,
-    padding 0.3s ease;
-  background: transparent;
+    background-color 0.4s ease,
+    box-shadow 0.4s ease;
+  background-color: transparent;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
   --nav-underline-weight: 0.125rem;
   --nav-underline-offset: 0.55rem;
 }
@@ -28,6 +29,9 @@
   color: var(--color-white);
   position: relative;
   top: -0.15em;
+  transition:
+    color 0.4s ease,
+    height 0.4s ease;
 }
 
 .nav button {
@@ -41,11 +45,20 @@
 
 .nav__item {
   color: var(--color-white);
+  transition: line-height 0.4s ease;
 }
 
 .nav__item,
 .nav__cta {
   font-size: inherit;
+}
+
+.nav__cta {
+  transition:
+    color 0.5s ease,
+    line-height 0.4s ease,
+    margin 0.4s ease,
+    padding 0.4s ease;
 }
 
 .nav__item a,
@@ -65,12 +78,13 @@
   white-space: nowrap;
 }
 
-.nav__list--pinned {
-  color: var(--color-aqua);
+.nav__list--pinned .nav__item {
+  color: var(--color-white);
 }
 
 .nav__list--pinned .nav__item svg path {
   fill: var(--color-aqua);
+  transition: fill 0.4s ease;
 }
 
 .nav__item svg {
@@ -116,8 +130,9 @@
 .nav__wrapper {
   display: grid;
   align-items: stretch;
-  margin: 0.75rem 5%;
-  min-width: 90%;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  transition: margin 0.4s ease;
 }
 
 .nav__link-text {
@@ -271,20 +286,26 @@
     border-left: 2px solid var(--color-aqua);
     margin-left: 1.5rem;
     padding-left: 1.5rem;
+    transition: border-color 0.4s ease;
   }
 
   .nav__scrolled {
     position: fixed;
-    background: var(--color-white);
+    background-color: var(--color-white);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    .nav__wrapper {
+      margin-top: 0.125rem;
+      margin-bottom: 0.125rem;
+    }
 
     & :has(#nav-overflow:popover-open) .nav__expandable {
       text-decoration-color: var(--color-purple);
       color: var(--color-purple);
     }
 
-    .nav__list--pinned {
-      color: var(--color-purple);
+    .nav__list--pinned .nav__item {
+      color: var(--color-black);
     }
 
     .nav__list--pinned .nav__item svg path {
@@ -293,10 +314,21 @@
 
     .nav__logo svg {
       color: var(--color-purple);
+      height: 1.5rem;
     }
 
     .nav__item {
       color: var(--color-black);
+    }
+
+    .nav__item,
+    .nav__cta {
+      line-height: 1.5rem;
+    }
+
+    .nav__cta {
+      margin: 0.2rem 0;
+      padding: 0.7rem 1.75rem;
     }
 
     .nav__expandable {
@@ -316,6 +348,23 @@
       color: var(--color-purple);
       text-decoration-color: var(--color-purple);
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav,
+  .nav__wrapper,
+  .nav__logo svg,
+  .nav__item,
+  .nav__item a,
+  .nav__item button,
+  .nav__link-text,
+  .nav__cta,
+  .nav__list--pinned,
+  .nav__list--pinned .nav__item,
+  .nav__list--pinned .nav__item svg path,
+  .nav__list--pinned + .nav__list .nav__item:first-child {
+    transition-duration: 0.01ms;
   }
 }
 
