@@ -68,6 +68,12 @@
   font-weight: normal;
 }
 
+.c-to-rust-migration {
+  .cta-banner__title {
+    font-size: clamp(2rem, 0rem + 4.1667vw, 3rem);
+  }
+}
+
 .c-to-rust-migration-feature {
   display: grid;
   overflow: hidden;

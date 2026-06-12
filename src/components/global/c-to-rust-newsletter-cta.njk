@@ -1,0 +1,11 @@
+{% from "cta-banner.njk" import ctaBanner %}
+{%
+  set content = {
+  "id": "newsletter",
+  "title": "Get notified about new content",
+  "text": "We're actively working on new chapters for <span class='strong'>The C to Rust Migration Book</span>. Subscribe to get notified when new content is published.",
+  "newsletterSignupAction": "//mainmatter.us13.list-manage.com/subscribe?u=50bd3378ab1da4988aa174d0b&id=f4b3a4ff26",
+  "newsletterSignup": true
+  }
+%}
+{{ ctaBanner('purple', 'medium', content) }}
