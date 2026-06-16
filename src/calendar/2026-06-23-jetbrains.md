@@ -10,4 +10,4 @@ hero:
   imageAlt: "Desk with a computer"
 ---
 
-Copy goes here
+Our Rust lead Luca Palmieri will sit down with Jerbrains' Vitaly Bragilevsky for a live-streamed conversation about the practical realities of incremental C/C++ to Rust migrations.
