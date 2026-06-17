@@ -1,0 +1,73 @@
+{% from "btn-primary.njk" import btnPrimary %}
+
+{%- macro rustWorkshopCard(workshop) -%}
+  {% set data = workshop.data %}
+  {% set duration = data.duration or data.format | replace("Workshop: ", "") %}
+  {% set description = data.shortDescription or data.description %}
+  {% set price = data.individualTicketPrice or data.price %}
+  {% set dates = data.dates %}
+
+  <article class="rust-workshop-card">
+    <div class="rust-workshop-card__main">
+      <h3 class="rust-workshop-card__title h3">{{ data.title }}</h3>
+
+      {% if duration %}
+        <p class="rust-workshop-card__meta">
+          <img
+            class="rust-workshop-card__meta-icon"
+            src="/assets/images/icons/calendar.svg"
+            alt=""
+            loading="lazy"
+          />
+          {{ duration }}
+        </p>
+      {% endif %}
+
+      {% if description %}
+        <p class="rust-workshop-card__description">{{ description | safe }}</p>
+      {% endif %}
+
+      {%
+        set link = {
+        "label": "Learn More",
+        "url": "/services/workshops/" + workshop.fileSlug + "/"
+        }
+      %}
+      {{ btnPrimary(link, 'purple', 'rust-workshop-card__link') }}
+    </div>
+
+    {% if price or dates %}
+      <aside class="rust-workshop-card__details" aria-label="Public workshop details">
+        {% if price %}
+          <div class="rust-workshop-card__detail">
+            <img
+              class="rust-workshop-card__detail-icon"
+              src="/assets/images/icons/bills.svg"
+              alt=""
+              loading="lazy"
+            />
+            <div>
+              <h4 class="rust-workshop-card__detail-title">Individual tickets</h4>
+              <p class="rust-workshop-card__detail-text">{{ price | safe }}</p>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if dates %}
+          <div class="rust-workshop-card__detail">
+            <img
+              class="rust-workshop-card__detail-icon"
+              src="/assets/images/icons/calendar.svg"
+              alt=""
+              loading="lazy"
+            />
+            <div>
+              <h4 class="rust-workshop-card__detail-title">Dates</h4>
+              <p class="rust-workshop-card__detail-text">{{ dates | safe }}</p>
+            </div>
+          </div>
+        {% endif %}
+      </aside>
+    {% endif %}
+  </article>
+{%- endmacro -%}

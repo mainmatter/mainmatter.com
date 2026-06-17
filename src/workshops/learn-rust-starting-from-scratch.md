@@ -3,6 +3,7 @@ title: "Learn Rust, starting from scratch"
 tags: "rust"
 format: "Workshop: 4 days"
 subtext: "Bookable for teams – on-site or remote"
+shortDescription: "Start your Rust journey from the absolute basics and build toward practical fluency. Learn the language, standard library, testing, and async programming through a coherent hands-on path."
 description: This 4-days workshop helps you get started with Rust, assuming no prior knowledge of the language. The workshop starts from the absolute basics and gradually builds up to more advanced topics.
 introduction: |
   <p>Rust is a general-purpose programming languages that's been growing in popularity over the past few years.
