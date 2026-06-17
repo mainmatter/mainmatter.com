@@ -18,10 +18,10 @@ og:
 {%
   set toc = {
     'Overview': '#overview',
-    'Free Course': '#course',
-    'Curriculum': '#curriculum',
-    'The Author': '#author',
-    'Mainmatter': '#support'
+    'The Book': '#course',
+    'Table of contents': '#toc',
+    'About the Author': '#author',
+    'About Mainmatter': '#mainmatter'
   }
 %}
 
@@ -80,11 +80,10 @@ og:
 
   <section id="course" class="c-to-rust-migration-feature container container--xl my-10">
     <div class="c-to-rust-migration-feature__content">
-      <p class="c-to-rust-migration-feature__eyebrow">Free course</p>
       <h3>The C to Rust Migration Book</h3>
       {{
         btnPrimary({
-          "label": "Start the course",
+          "label": "Read the book",
           "url": "https://rust-exercises.com/"
         }, "white", "mt-2")
       }}
@@ -135,12 +134,13 @@ og:
     "text": "The final module ties everything together. You'll document FFI functions using Rust's <code>/// # Safety</code> convention with numbered invariants, so every unsafe contract is explicit and surfaces as C doc comments in the generated headers via <code>cbindgen</code>. We cover build integration, automated checks, and the mindset of treating your FFI surface as an API you'll maintain forever."
     }]
   %}
-  <div id="curriculum">{{ strategyList('course-topic', 'Curriculum', topics) }}</div>
+  <div id="toc">{{ strategyList('course-topic', 'Table of contents', topics) }}</div>
 
   {% set mentor = 'JonasKruckenberg' | findBySlug %}
+  {% set mentorBio = "Jonas Kruckenberg is an engineer at Mainmatter and creator of the k23 operating system. He has helped people to build fast, secure, cross-platform desktop apps through his work on Tauri and is deeply involved in open-source, local-first, and humane software. Outside of code, he sings in classical ensembles and enjoys hiking." %}
   <section id="author" class="workshop-authors container container--lg">
     <div class="workshop__content post__content--workshop">
-      <h3 class="workshop-topics__heading">The author</h3>
+      <h3 class="workshop-topics__heading">About the author</h3>
       <div class="author__wrapper">
         <div class="author">
           <div class="workshop-authors__image-wrapper author__image-wrapper">
@@ -155,28 +155,27 @@ og:
           </div>
         </div>
         <div class="author__details mt-3 author__details--full-width">
-          <p>{{ mentor.data.longBio }}</p>
+          <p>{{ mentorBio or mentor.data.longBio }}</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="support" class="py-7 background-aqua">
+  <section id="mainmatter" class="py-7 background-aqua">
     <div class="container mainmatter-section container--xl">
-      <h3 class="mb-2">Need more than a guide?</h3>
+      <h3 class="mb-2">If you're facing challenges with Rust and need a helping hand, reach out!</h3>
       <p>
-        <a href="https://mainmatter.com/">Mainmatter</a> is a software consulting company that
+        <a href="/">Mainmatter</a> is a software consulting company that
         specializes in Rust. We offer consulting services, training, and mentorship to companies
         that want to migrate from C to Rust or introduce Rust into an existing codebase.
       </p>
       <p>
-        <a href="/contact/?utm_source=C+To+Rust+Migration+Guide">Get in touch</a>
-        if you are working on a C to Rust migration and need hands-on support.
+        We can help with <a href="/rust-consulting/">complex C-to-Rust migrations, reliability issues, training, and skill gaps.</a>
       </p>
       {%
         set link = {
-        "label": "Team Up With Us for Rust!",
-        "url": "/rust-consulting/"
+        "label": "Contact us",
+        "url": "/contact/?utm_source=C+Rust+Book"
         }
       %}
       {{ btnSecondary(link, "mt-2") }}
@@ -189,16 +188,14 @@ og:
     </div>
     <div class="c-to-rust-migration-eurorust__content">
       <p class="text--accent">Community</p>
-      <h3 class="h3">Meet other Rust enthusiasts at EuroRust</h3>
+      <h3 class="h3">EuroRust 2026</h3>
       <p>
-        Mainmatter organizes EuroRust, a two-day conference covering Rust patterns, systems
-        programming, CLI tooling, servers, WebAssembly, and embedded systems. Join us in Barcelona
-        in October 2026!
+        EuroRust is a two-day conference for all things Rust. Two full conference days and two days of fun side activities, workshops, hackathons and more. Join us in October in Barcelona!
       </p>
       {{
         btnPrimary({
-          "label": "Visit EuroRust",
-          "url": "https://eurorust.eu/"
+          "label": "Get your ticket",
+          "url": "https://www.tickettailor.com/events/eurorust/2022388"
         }, "white", "mt-2")
       }}
     </div>
