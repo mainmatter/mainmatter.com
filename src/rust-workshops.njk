@@ -1,0 +1,152 @@
+---
+layout: "base"
+title: Rust Workshops
+description: "Public and team Rust workshops by Mainmatter."
+og:
+  image: "/assets/images/workshops/rust-og-image.jpg"
+eleventyImport:
+  collections: ["workshops"]
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "rust-workshop-card.njk" import rustWorkshopCard %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "quote.njk" import quote %}
+{% from "logo-list.njk" import logoList %}
+{% from "contact-form-LP.njk" import contactFormLP %}
+{% from "tech-cards.njk" import techCards %}
+{% from "secondary-feature.njk" import secondaryFeature %}
+
+{%
+  set heroContent = {
+  "title": "Rust Workshops",
+  "image": "/assets/images/hero/rust.jpg",
+  "alt": "Crabs climbing a rock on a beach",
+  "loading": "eager",
+  "toc": [
+    ["Overview", "#overview"],
+    ["Workshops", "#workshops"],
+    ["Instructor", "#instructor"],
+    ["Others Say", "#others-say"]
+  ],
+  "loading": "eager",
+  "containerType": "lp"
+  }
+%}
+{{ colorHero('purple', heroContent) }}
+
+{% set rustWorkshops = collections.workshops | filterByCollectionTag("rust") %}
+
+<div class="rust-workshops">
+  <section class="container container--xl my-10" id="workshops">
+    <div class="rust-workshops__intro">
+      <div class="rust-workshops__intro-text">
+        <h2 class="mb-2">Rust Workshops</h2>
+        <p>
+          We offer a range of workshops bookable for teams that want to grow – on-site or remote. 
+          We're also happy to prepare custom workshops – <a href="/rust-workshops">get in touch with us</a> to talk about what curriculum fits your team best!
+        </p>
+      </div>
+      <div class="rust-workshops__certificate-container">
+        <span>We are <strong class="strong">fully accredited</strong> by the Rust Foundation as <strong class="strong">Certified Rust Trainers</strong></span>
+        <img
+          class="rust-workshops__certificate"
+          src="/assets/images/rust/rust-foundation-certificate.svg"
+          alt="Rust Foundation Silver Member"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <ul class="rust-workshops__list">
+      {% for workshop in rustWorkshops %}
+        <li>{{ rustWorkshopCard(workshop) }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  {%
+    set teamCta = {
+    "title": "Want to Book a Workshop for Your Team?",
+    "text": "We can run any workshop remotely or onsite, and tailor the material to your team's needs.",
+    "linkUrl": "/contact/",
+    "linkText": "Get in touch"
+    }
+  %}
+  {{ ctaBanner('purple', 'medium', teamCta) }}
+
+  <section class="container container--lg my-10" id="instructor">
+    <div class="split-content no-link">
+      <div class="split-content__wrapper">
+        <div class="split-content__content">
+          <h5 class="mb-015">Your workshop instructor</h5>
+          <h3 class="mb-2">Luca Palmieri</h3>
+          <p>
+            Luca Palmieri leads Mainmatter's Rust training. He is the author of
+            <a href="https://zero2prod.com/">Zero To Production In Rust</a> and helps teams adopt
+            Rust for production systems.
+          </p>
+        </div>
+        <div class="split-content__feature">
+          {%
+            set instructorImage = {
+            "image": "/assets/images/authors/algo_luca.jpg",
+            "alt": "Luca Palmieri",
+            "loading": "lazy"
+            }
+          %}
+          {{ secondaryFeature(instructorImage, 'split-content__author') }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container container--lg my-10" id="others-say">
+    {%
+      set quoteContent = {
+      "text": "The individual exercises build on each other very well. Direct practice makes it easier to understand the topics.",
+      "source": "Remote attendee",
+      "position": "Rust workshop participant"
+      }
+    %}
+    {{ quote(quoteContent) }}
+  </section>
+
+  {%
+    set trainingMaterials = [
+    {
+      "title": "Rust Handbook",
+      "link": "rust-adoption-handbook/",
+      "logo": "rust"
+    },
+    {
+      "title": "C to Rust Migration",
+      "link": "services/workshops/c-to-rust/",
+      "logo": "rust"
+    },
+    {
+      "title": "Edge Computing With WebAssembly",
+      "link": "services/workshops/edge-computing-with-webassembly/",
+      "logo": "rust"
+    }
+    ]
+  %}
+  {{ techCards('rust-workshops-materials', 'Explore Our Other Training Materials', '', trainingMaterials) }}
+
+  {%
+    set logoCompanies = [
+    'Redis',
+    'Robin Hood',
+    'Google',
+    'AIS',
+    'HashiCorp',
+    'Faculty',
+    'Keyrock',
+    'BMW Car IT',
+    'CERN'
+    ]
+  %}
+  {{ logoList(logoCompanies, "We Have Trained Teams at", "h2", "h3") }}
+
+  {{ contactFormLP("Rust Workshops") }}
+</div>

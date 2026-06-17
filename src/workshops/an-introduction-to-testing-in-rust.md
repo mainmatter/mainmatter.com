@@ -3,6 +3,7 @@ title: "Testing in Rust: an introduction"
 tags: "rust"
 format: "Workshop: 4 hours"
 subtext: "Bookable for teams – on-site or remote"
+shortDescription: "Build a solid foundation for testing Rust applications from your first unit test onward. Learn the available test types, where to put helpers, and how to choose the right testing technique."
 description: This half-day workshop will build up your Rust's testing toolkit. We will start from scratch, with your first unit test. By the end, you will have a comprehensive understanding of the available test types, the best practices in terms of test organization as well as their runtime implications.
 introduction: |
   <p>Rust's type system is great, but it's not enough on its own to ensure correctness: 
