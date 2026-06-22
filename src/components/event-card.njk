@@ -24,7 +24,8 @@ event: A event object
         <div class="event-card__meta">
           <p class="event-card__date small">
             {% if event.data.endDate %}
-              {{ event.date | monthDay }} – {{ event.data.endDate | monthDayYear }}
+              {{ event.date | monthDay }}
+              – {{ event.data.endDate | monthDayYear }}
             {% else %}
               {{ event.date | monthDayYear }}
             {% endif %}
