@@ -65,16 +65,18 @@ og:
 
 <main class="c-to-rust-migration">
   <section id="overview" class="container container--lg my-10">
-    <h3 class="mb-2">You don't have to rewrite everything</h3>
+    <h3 class="mb-2">Migrate from C to Rust without stopping the world</h3>
     <p>
-      Most Rust migration guides tell you to start fresh. That's not how it works in practice. Real
-      codebases are large, deployed, and depended on. You need a strategy that lets C and Rust
-      coexist while you migrate piece by piece.
+      You have a C codebase you’d like to migrate to Rust, but you’re not sure where to start.
+      Worse, you can't just stop the world but need to migrate a moving target while the C engineers
+      continue to ship new features. Thus, you need to follow an incremental migration path with C
+      and Rust coexisting in the same codebase temporarily.
     </p>
     <p>
-      That's what this guide covers. You'll learn how to bridge C and Rust through FFI, expose clean
-      Rust APIs to existing C consumers, and progressively replace C with safe, idiomatic Rust,
-      without breaking anything along the way.
+      With this book, you'll learn techniques for migrating C codebases to Rust by solving
+      exercises. You'll learn how to maintain a safe mixed C-Rust codebase, incrementally migrate
+      modules, translate common C idioms to Rust, and use the debugging tools you'll need when
+      things inevitably break — one exercise at a time.
     </p>
   </section>
 
