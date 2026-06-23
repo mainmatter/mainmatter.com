@@ -10,6 +10,38 @@
   align-items: start;
 }
 
+.rust-workshops-hero .color-hero__main {
+  width: 100%;
+}
+
+.rust-workshops-hero .color-hero__eyebrow .rust-workshops-hero__eyebrow-link {
+  --icon-arrow-size: 1rem;
+  --icon-arrow-margin: 0 0.5rem 0 0;
+  --icon-arrow-color: var(--color-white);
+  --icon-arrow-rotate: 90deg;
+
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--color-white);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    --icon-arrow-transform: translate3d(-0.5rem, 0, 0);
+    color: var(--color-white);
+
+    .rust-workshops-hero__eyebrow-text {
+      text-decoration: underline;
+      text-underline-offset: 0.25rem;
+    }
+  }
+}
+
+.rust-workshops-hero__eyebrow-arrow {
+  display: inline-flex;
+}
+
 .rust-workshops__intro-text {
   max-width: 58rem;
 }
@@ -25,7 +57,18 @@
 
 .rust-workshops__certificate {
   max-width: 100%;
-   width: 5rem;
+  width: 5rem;
+}
+
+.rust-workshops__instructor-eyebrow {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  img {
+    width: 1.375rem;
+    height: 1.125rem;
+  }
 }
 
 .rust-workshops__list {
@@ -37,12 +80,46 @@
 }
 
 .rust-workshop-card {
+  position: relative;
   display: grid;
   gap: 2rem;
+  padding: 1rem;
+  margin: -1rem;
+  transition: background-color 0.12s ease-out;
+
+  &:hover,
+  &:focus-within {
+    background-color: color-mix(in srgb, var(--color-purple) 5%, transparent);
+    transition-duration: 0.24s;
+    transition-timing-function: ease-in;
+  }
+}
+
+.rust-workshop-card__overlay-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.rust-workshop-card__main,
+.rust-workshop-card__details {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.rust-workshop-card__link,
+.rust-workshop-card__date {
+  pointer-events: auto;
 }
 
 .rust-workshop-card__main {
   max-width: var(--rust-workshops-content-width);
+}
+
+.rust-workshop-card--full .rust-workshop-card__main,
+.rust-workshop-card--full .rust-workshop-card__description {
+  max-width: none;
 }
 
 .rust-workshop-card__title {
@@ -93,13 +170,45 @@
 
 .rust-workshop-card__detail-title {
   margin-bottom: 0.25rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
-.rust-workshop-card__detail-text {
+.rust-workshop-card__price {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
   margin: 0;
-  color: var(--color-purple);
+  color: var(--color-black);
   font-weight: 700;
+}
+
+.rust-workshop-card__dates {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  color: var(--color-purple);
+  font-size: 1.25rem;
+  font-weight: 700;
+  list-style: none;
+}
+
+.rust-workshop-card__date {
+  --icon-arrow-size: 1rem;
+  --icon-arrow-margin: 0 0 0 0.5rem;
+  --icon-arrow-color: var(--color-purple);
+
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+  text-decoration-thickness: 0.0625rem;
+
+  &:hover,
+  &:focus {
+    --icon-arrow-transform: translate3d(0.5rem, 0, 0);
+  }
 }
 
 @media (min-width: $breakpoint-m) {
@@ -109,5 +218,9 @@
 
   .rust-workshop-card {
     grid-template-columns: minmax(0, 1fr) 18rem;
+  }
+
+  .rust-workshop-card--full {
+    grid-template-columns: 1fr;
   }
 }

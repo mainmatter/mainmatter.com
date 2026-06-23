@@ -7,9 +7,18 @@
   {% set price = data.individualTicketPrice or data.price %}
   {% set dates = data.dates %}
 
-  <article class="rust-workshop-card">
+  <article
+    class="rust-workshop-card {% if not price and not dates %}rust-workshop-card--full{% endif %}"
+  >
+    <a
+      class="rust-workshop-card__overlay-link"
+      href="/services/workshops/{{ workshop.fileSlug }}/"
+      aria-label="Learn more about {{ data.title }}"
+      tabindex="-1"
+    ></a>
+
     <div class="rust-workshop-card__main">
-      <h3 class="rust-workshop-card__title h3">{{ data.title }}</h3>
+      <h4 class="rust-workshop-card__title h4">{{ data.title }}</h4>
 
       {% if duration %}
         <p class="rust-workshop-card__meta">
@@ -39,33 +48,39 @@
     {% if price or dates %}
       <aside class="rust-workshop-card__details" aria-label="Public workshop details">
         {% if price %}
-          <div class="rust-workshop-card__detail">
-            <img
-              class="rust-workshop-card__detail-icon"
-              src="/assets/images/icons/bills.svg"
-              alt=""
-              loading="lazy"
-            />
-            <div>
-              <h4 class="rust-workshop-card__detail-title">Individual tickets</h4>
-              <p class="rust-workshop-card__detail-text">{{ price | safe }}</p>
-            </div>
+          <div class="rust-workshop-card__ticket">
+            <h4 class="rust-workshop-card__detail-title">Individual tickets</h4>
+            <p class="rust-workshop-card__price">
+              <img
+                class="rust-workshop-card__detail-icon"
+                src="/assets/images/icons/bills.svg"
+                alt=""
+                loading="lazy"
+              />
+              {{ price | safe }}
+            </p>
           </div>
         {% endif %}
 
         {% if dates %}
-          <div class="rust-workshop-card__detail">
-            <img
-              class="rust-workshop-card__detail-icon"
-              src="/assets/images/icons/calendar.svg"
-              alt=""
-              loading="lazy"
-            />
-            <div>
-              <h4 class="rust-workshop-card__detail-title">Dates</h4>
-              <p class="rust-workshop-card__detail-text">{{ dates | safe }}</p>
-            </div>
-          </div>
+          <ul class="rust-workshop-card__dates">
+            {% for date in dates %}
+              {% set workshopDate = date.date or date %}
+              <li>
+                {% if date.url %}
+                  <a class="rust-workshop-card__date" href="{{ date.url }}">
+                    <span>{{ workshopDate | monthDayYear }}</span>
+                    {% include 'svg/arrow.njk' %}
+                  </a>
+                {% else %}
+                  <span class="rust-workshop-card__date">
+                    <span>{{ workshopDate | monthDayYear }}</span>
+                    {% include 'svg/arrow.njk' %}
+                  </span>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
         {% endif %}
       </aside>
     {% endif %}

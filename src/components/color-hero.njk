@@ -33,10 +33,17 @@ Example usage:
 {% from "tech-cards-homepage.njk" import techCardsHomepage %}
 
 {%- macro colorHero(color, content) -%}
-  <section
-    class="color-hero color-hero--{{ color }} {% if content.class %}{{ content.class }}{% endif %}{% if content.logo %}{{ content.logo }}{% elseif content.background %}{{ content.background }}{% endif %}{% if content.containerType == "lp" %}color-hero__LP{% endif %}"
-    data-background-color="{{ color }}"
-  >
+  {%
+    set heroClasses = [
+    "color-hero",
+    "color-hero--" + color,
+    content.class,
+    content.logo,
+    content.background,
+    "color-hero__LP" if content.containerType == "lp"
+    ] | join(" ")
+  %}
+  <section class="{{ heroClasses }}" data-background-color="{{ color }}">
     {% if content.image %}
       <div class="color-hero__image-wrapper">
         {% image content.image, content.alt, '100vw', content.loading, 'color-hero__image', [760, 1440, 1920, 2048] %}
