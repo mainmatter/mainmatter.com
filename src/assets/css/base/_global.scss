@@ -134,7 +134,7 @@ table {
 html,
 body {
   min-height: 100%;
-  line-height: 2;
+  line-height: 1.6;
   font-family: var(--font-base);
   font-size: 1rem;
   color: var(--color-body-text);
@@ -149,7 +149,7 @@ html {
 
 body {
   font-size: 1rem;
-  line-height: 2;
+  line-height: 1.6;
 
   &.menu-open {
     overflow: hidden;
@@ -226,7 +226,7 @@ button {
 
 @media (min-width: $breakpoint-l) {
   body {
-    line-height: 2;
+    line-height: 1.6;
     font-size: 1.125rem;
   }
 }
