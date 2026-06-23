@@ -49,7 +49,7 @@ So how do the two compare? And how do they differ? They couldn't be more similar
 
 As we explained earlier, Vibe Coding is ALL about embracing the vibes: a true Vibe Coder doesn't even open the editor to code. They just talk to an agent in what could be compared to the narrative technique known as _stream of consciousness_, then look at the end result, check if what they are working on works, and, if not, ask the agent to fix it. There's rarely full coverage of the application's capabilities because a single person can't possibly check every single edge case of every single feature. The agent is the real owner of the code.
 
-That's also true with agentic engineering and that's what makes the two so similar: to really boost your productivity you should let the agent do what it does best... write code at the speed of light. What changes is mostly around the code. In this case you do look at the code, you carefully review it, you put systems in place that can test your whole app for you at every change, and you force the agent to check its work before completing a task.
+That's also true with agentic engineering and that's what makes the two so similar: to really boost your productivity you should let the agent do what it does best... write code at the speed of light. What changes is mostly around the code. In this case you do look at the code, you carefully review it, you put systems in place that can test your whole app for you at every change to guarantee robustness and soundness (making sure to use tools that make information flow back into the agent without wasting context), and you force the agent to check its work before completing a task.
 
 You are basically graduating your agent from "kid in their room writing their first game" to "serious professional building production-grade applications".
 
@@ -111,7 +111,7 @@ One example... I've seen LLMs generate code like this
 </button>
 ```
 
-You would never point out to a human that accessing `.$` on a variable to read its value is a mistake because, in this case, it might not even be a mistake. We can't know if it is.
+You would never write an official lint rule that prevents accessing the `$` property on a variable. Humans tend to knows the shape of their objects and there nothing really special in a property named `$`.
 
 But we know LLMs tend to do this because their knowledge is poisoned by the store reactivity of Svelte 4. And so we warn on code like this.
 
@@ -259,7 +259,7 @@ When it comes to the choice of your observability platform anything will do but,
 
 ## How all of this applies in the real world?
 
-There's no doubt that LLMs changed the name of the game for software development...today we have new tools and workflows to learn, especially when building with Svelte, but the engineering practices we've always relied on and that we've used to help our clients haven't gone away. In fact, the same principles that help teams ship quickly without sacrificing code quality can also help AI agents work effectively in a codebase without turning it into a spaghetti-code nightmare. But words are easy to write...when it comes to real software is this actually feasible? Could you actually build a good application solely using agents?
+There's no doubt that LLMs changed the name of the game for software development...today we have new tools and workflows to learn, especially when building with Svelte, but the engineering practices we've always relied on and that we've used to help our clients haven't gone away. In fact, the same principles that help teams ship quickly without sacrificing code quality can (and to be fair, should) also help AI agents work effectively in a codebase without turning it into a spaghetti-code nightmare. But words are easy to write...when it comes to real software is this actually feasible? Could you actually build a good application solely using agents?
 
 Good news, we put that to the test!
 
