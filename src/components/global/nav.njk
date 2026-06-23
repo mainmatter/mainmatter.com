@@ -50,6 +50,35 @@
         </li>
       {%- endmacro %}
 
+      {% macro learningMaterialsNavItem() -%}
+        <li class="nav__item nav__item--nested">
+          <details class="nav__nested">
+            <summary class="nav__nested-summary">
+              <span>Learning material</span>
+              {% include 'svg/caret.njk' %}
+            </summary>
+            <ul class="nav__nested-list">
+              <li>
+                <a
+                  href="/c-to-rust-migration-book/"
+                  class="nav__link-text {% if page.url == '/c-to-rust-migration-book/' %}nav__link-text--active{% endif %}"
+                  target="_blank"
+                  rel="noopener"
+                  {% if page.url == '/c-to-rust-migration-book/' %}aria-current="page"{% endif %}
+                >
+                  <span>C to Rust Migration Book</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://rust-exercises.com/" class="nav__link-text">
+                  <span>Rust Exercises</span>
+                </a>
+              </li>
+            </ul>
+          </details>
+        </li>
+      {%- endmacro %}
+
       <ul class="nav__list nav__list--pinned">
         <!-- Pinned entries with icon -->
         {%- for entry in navPages -%}
@@ -80,7 +109,15 @@
 
         <ul class="nav__list nav__list--overflow">
           {%- for entry in navPages -%}
-            {%- if not entry.pinned -%}
+            {%- if not entry.pinned and entry.order <= 7 -%}
+              {{ navListItem(entry) }}
+            {%- endif -%}
+          {%- endfor -%}
+
+          {{ learningMaterialsNavItem() }}
+
+          {%- for entry in navPages -%}
+            {%- if not entry.pinned and entry.order > 7 -%}
               {{ navListItem(entry) }}
             {%- endif -%}
           {%- endfor -%}

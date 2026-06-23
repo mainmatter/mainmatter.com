@@ -102,6 +102,49 @@
   }
 }
 
+.nav__nested {
+  color: inherit;
+}
+
+.nav__nested-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.3s ease;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &:hover {
+    color: var(--color-purple);
+    text-decoration: underline;
+    text-decoration-thickness: var(--nav-underline-weight);
+    text-underline-offset: var(--nav-underline-offset);
+    text-decoration-color: var(--color-purple);
+  }
+}
+
+.nav__nested[open] .nav__nested-summary {
+  --icon-caret-transform: rotate(180deg);
+  color: var(--color-purple);
+  text-decoration: underline;
+  text-decoration-thickness: var(--nav-underline-weight);
+  text-underline-offset: var(--nav-underline-offset);
+  text-decoration-color: var(--color-purple);
+}
+
+.nav__nested-list {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0.5rem 0 0;
+  padding: 0 0 0 1rem;
+  list-style: none;
+}
+
 @supports (anchor-name: --n) and (position-anchor: --n) and (position-area: none) {
   #nav-overflow {
     position-anchor: --nav-overflow;
