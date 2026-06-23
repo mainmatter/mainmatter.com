@@ -243,7 +243,7 @@ Once we know this, it is just a matter of creating a GitHub workflow that runs o
 
 Personally I really like [Greptile](https://www.greptile.com), it's free for open source, it has a lot of nice features and customizations, and also gives you analytics on your reviews.
 
-### The world after Production
+### The world after Deployment
 
 During development it's all fun and games. But how can AI help you in Production? That's where another important tool comes into place: observability (have you realized how everything that helps big teams of engineers is also table stakes to work with agents... how curious).
 
