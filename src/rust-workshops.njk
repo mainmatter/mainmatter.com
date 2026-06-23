@@ -16,20 +16,32 @@ eleventyImport:
 {% from "contact-form-LP.njk" import contactFormLP %}
 {% from "tech-cards.njk" import techCards %}
 {% from "secondary-feature.njk" import secondaryFeature %}
+{% from "service-cta.njk" import serviceCta %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+
+
+{% set heroEyebrow %}
+  <a class="rust-workshops-hero__eyebrow-link" href="/services/workshops/">
+    <span class="rust-workshops-hero__eyebrow-arrow">{% include 'svg/arrow.njk' %}</span>
+    <span class="rust-workshops-hero__eyebrow-text">All workshops</span>
+  </a>
+{% endset %}
 
 {%
   set heroContent = {
+  "eyebrow": heroEyebrow,
   "title": "Rust Workshops",
-  "image": "/assets/images/hero/rust.jpg",
+  "text": "Placeholder copy for the Rust workshops overview. Add a concise value proposition here for teams and individual learners. Use this space to explain the format, outcomes, and why Mainmatter is the right training partner.",
+  "image": "/assets/images/hero/rust-workshops.jpg",
   "alt": "Crabs climbing a rock on a beach",
   "loading": "eager",
+  "class": "rust-workshops-hero",
   "toc": [
     ["Overview", "#overview"],
     ["Workshops", "#workshops"],
     ["Instructor", "#instructor"],
     ["Others Say", "#others-say"]
   ],
-  "loading": "eager",
   "containerType": "lp"
   }
 %}
@@ -43,12 +55,17 @@ eleventyImport:
       <div class="rust-workshops__intro-text">
         <h2 class="mb-2">Rust Workshops</h2>
         <p>
-          We offer a range of workshops bookable for teams that want to grow – on-site or remote. 
-          We're also happy to prepare custom workshops – <a href="/rust-workshops">get in touch with us</a> to talk about what curriculum fits your team best!
+          We offer a range of workshops bookable for teams that want to grow – on-site or remote.
+          We're also happy to prepare custom workshops – <a href="/rust-workshops"
+            >get in touch with us</a
+          > to talk about what curriculum fits your team best!
         </p>
       </div>
       <div class="rust-workshops__certificate-container">
-        <span>We are <strong class="strong">fully accredited</strong> by the Rust Foundation as <strong class="strong">Certified Rust Trainers</strong></span>
+        <span
+          >We are <strong class="strong">fully accredited</strong> by the Rust Foundation as
+          <strong class="strong">Certified Rust Trainers</strong></span
+        >
         <img
           class="rust-workshops__certificate"
           src="/assets/images/rust/rust-foundation-certificate.svg"
@@ -68,18 +85,36 @@ eleventyImport:
   {%
     set teamCta = {
     "title": "Want to Book a Workshop for Your Team?",
-    "text": "We can run any workshop remotely or onsite, and tailor the material to your team's needs.",
+    "text": "We are happy to tailor the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as develop new content if desired.",
     "linkUrl": "/contact/",
     "linkText": "Get in touch"
     }
   %}
   {{ ctaBanner('purple', 'medium', teamCta) }}
 
+  {%
+    set logoCompanies = [
+    'Redis',
+    'Robin Hood',
+    'Google',
+    'AIS',
+    'HashiCorp',
+    'Faculty',
+    'Keyrock',
+    'BMW Car IT',
+    'CERN'
+    ]
+  %}
+  {{ logoList(logoCompanies, "We Have Trained Teams at", "h2", "h3") }}
+
   <section class="container container--lg my-10" id="instructor">
     <div class="split-content no-link">
       <div class="split-content__wrapper">
         <div class="split-content__content">
-          <h5 class="mb-015">Your workshop instructor</h5>
+          <h5 class="rust-workshops__instructor-eyebrow mb-015">
+            <img src="/assets/images/icons/instructor.svg" alt="" loading="lazy" />
+            <span>Our Expert Instructor</span>
+          </h5>
           <h3 class="mb-2">Luca Palmieri</h3>
           <p>
             Luca Palmieri leads Mainmatter's Rust training. He is the author of
@@ -102,11 +137,33 @@ eleventyImport:
   </section>
 
   <section class="container container--lg my-10" id="others-say">
+    <h2 class="mb-4">Our Attendees Say...</h2>
     {%
       set quoteContent = {
-      "text": "The individual exercises build on each other very well. Direct practice makes it easier to understand the topics.",
-      "source": "Remote attendee",
-      "position": "Rust workshop participant"
+      "text": "The work remains mysterious to me, but its importance becomes clearer with every passing day. The structure, guidance, and sense of purpose have exceeded all expectations.",
+      "source": "Mark Scout",
+      "position": "Department Chief, Macrodata Refinement @Lumon Industries",
+      "styling": "redesigned"
+      }
+    %}
+    {{ quote(quoteContent) }}
+
+    {%
+      set quoteContent = {
+      "text": "Few people have the privilege of participating in work of this magnitude. While its full scope remains mysterious, the value of the mission becomes more apparent with every refinement.",
+      "source": "Dylan G.",
+      "position": "Macrodata Refiner @Lumon Industries",
+      "styling": "redesigned"
+      }
+    %}
+    {{ quote(quoteContent) }}
+
+    {%
+      set quoteContent = {
+      "text": "Each refinement brings a sense of accomplishment that is difficult to describe. There is comfort in knowing that the work matters, even when its purpose remains beyond view.",
+      "source": "Helly R.",
+      "position": "Macrodata Refiner @Lumon Industries",
+      "styling": "redesigned"
       }
     %}
     {{ quote(quoteContent) }}
@@ -132,21 +189,20 @@ eleventyImport:
     ]
   %}
   {{ techCards('rust-workshops-materials', 'Explore Our Other Training Materials', '', trainingMaterials) }}
-
-  {%
-    set logoCompanies = [
-    'Redis',
-    'Robin Hood',
-    'Google',
-    'AIS',
-    'HashiCorp',
-    'Faculty',
-    'Keyrock',
-    'BMW Car IT',
-    'CERN'
-    ]
-  %}
-  {{ logoList(logoCompanies, "We Have Trained Teams at", "h2", "h3") }}
+  {{ serviceCta(["rust"]) }}
 
   {{ contactFormLP("Rust Workshops") }}
+
+  <section>
+    {%
+      set imageData = {
+      "imgPath": "/assets/images/photos/rust-workshops-footer.jpg",
+      "alt": "Rust workshop materials",
+      "sizes": "100vw",
+      "loading": "lazy",
+      "sizesArray": [760, 1440, 1920]
+      }
+    %}
+    {{ imageAspectRatio(imageData, "4/1", "35/19") }}
+  </section>
 </div>
