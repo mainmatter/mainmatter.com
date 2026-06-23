@@ -130,6 +130,17 @@
   width: 8rem;
 }
 
+.c-to-rust-migration .mainmatter-section .btn-secondary {
+  .btn-secondary__text {
+    order: 1;
+  }
+
+  .icon-arrow {
+    order: 2;
+    --icon-arrow-margin: 0 0 0 1.5rem;
+  }
+}
+
 .c-to-rust-migration-eurorust__image {
   display: flex;
   align-items: center;
