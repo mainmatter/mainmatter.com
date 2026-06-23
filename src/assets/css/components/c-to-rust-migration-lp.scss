@@ -6,6 +6,11 @@
   background-color: var(--color-black);
   color: var(--color-white);
   min-height: 10vh;
+
+  .color-hero__text {
+    font-size: 1.4rem;
+    margin-top: 0rem;
+  }
 }
 
 .c-to-rust-migration-hero {
@@ -14,7 +19,13 @@
       flex-direction: row;
       justify-content: flex-start;
       flex-wrap: wrap;
-      gap: 1.5rem 3rem;
+      gap: 1.5rem 1rem;
+      .btn-secondary {
+        font-size: 1.4rem;
+        .icon-arrow {
+          --icon-arrow-size: 1.4rem;
+        }
+      }
     }
   }
 }
