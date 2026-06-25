@@ -11,66 +11,164 @@ og:
 ---
 
 {% from "color-hero.njk" import colorHero %}
-{% from "strategy-list.njk" import strategyList %}
-{% from "workshops-list.njk" import workshopsList %}
+{% from "logo-list.njk" import logoList %}
+{% from "quote.njk" import quote %}
+{% from "tech-cards.njk" import techCards %}
 {% from "cta-banner.njk" import ctaBanner %}
-{% from "global/default-newsletter-cta.njk" import defaultNewsletterCta %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
+
 {%
-  set 'content' = {
-  "title": "We teach teams like yours how to build sustainable products that work well today and keep working well tomorrow",
-  "image": "/assets/images/hero/workshops.jpg",
-  "alt": "Paperbacks stacked together in a small space",
-  "loading": "eager"
+  set rustWorkshop = {
+  "logo": "rust",
+  "link": "services/workshops/rust/",
+  "linkText": "Rust Workshops"
   }
 %}
-{{ colorHero('purple', content) }}
 {%
-  set workshops = [
-  collections.workshops | findByCollectionSlug("design-system-kickoff-interface-inventory"),
-  collections.workshops | findByCollectionSlug("digital-product-strategy"),
-  collections.workshops | findByCollectionSlug("svelte-and-sveltekit"),
-  collections.workshops | findByCollectionSlug("modernising-ember-development"),
-  collections.workshops | findByCollectionSlug("learn-rust-starting-from-scratch"),
-  collections.workshops | findByCollectionSlug("introduction-to-rust-for-web-developers"),
-  collections.workshops | findByCollectionSlug("edge-computing-with-webassembly"),
-  collections.workshops | findByCollectionSlug("build-production-ready-apis-in-rust"),
-  collections.workshops | findByCollectionSlug("telemetry-for-rust-apis"),
-  collections.workshops | findByCollectionSlug("an-introduction-to-testing-in-rust"),
-  collections.workshops | findByCollectionSlug("advanced-testing-in-rust"),
-  collections.workshops | findByCollectionSlug("hands-on-ember"),
-  collections.workshops | findByCollectionSlug("progressive-enhancement-with-sveltekit"),
-  collections.workshops | findByCollectionSlug("testing-svelte-sveltekit-applications"),
-  collections.workshops | findByCollectionSlug("svelte-5-runes"),
-  collections.workshops | findByCollectionSlug("practical-typescript"),
-  collections.workshops | findByCollectionSlug("authentication-for-svelte-sveltekit"),
-  collections.workshops | findByCollectionSlug("rust-python-interoperability"),
-  collections.workshops | findByCollectionSlug("foundations-of-embedded-rust"),
-  collections.workshops | findByCollectionSlug("svelte-without-svelte"),
-  collections.workshops | findByCollectionSlug("effective-git"),
-  collections.workshops | findByCollectionSlug("building-mcp-servers"),
-  collections.workshops | findByCollectionSlug("c-to-rust")
+  set svelteWorkshop = {
+  "logo": "svelte",
+  "link": "services/workshops/svelte/",
+  "linkText": "Svelte Workshops"
+  }
+%}
+{%
+  set emberWorkshop = {
+  "logo": "ember",
+  "link": "services/workshops/ember/",
+  "linkText": "Ember Workshops"
+  }
+%}
+
+{%
+  set hero = {
+  "title": "General Workshop Title",
+  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in nisi sed eros eleifend scelerisque a eu nisl. Ut eu sollicitudin magna. Nullam varius neque ante, a pulvinar ipsum luctus id. Maecenas diam lorem, molestie et consectetur eu, commodo quis dolor.",
+  "image": "/assets/images/hero/workshops-hero.jpg",
+  "alt": "Paperbacks stacked together in a small space",
+  "loading": "eager",
+  "class": "workshops-landing-hero",
+  "technologies": [rustWorkshop, svelteWorkshop, emberWorkshop]
+  }
+%}
+{{ colorHero('purple', hero) }}
+
+{%
+  set logoCompanies = [
+  'Redis',
+  'Robin Hood',
+  'Generali',
+  'Google',
+  'AIS',
+  'HashiCorp',
+  'faculty',
+  'Rail Europe'
   ]
 %}
-{{
-  workshopsList('Workshops Catalog', 'We offer a range of workshops bookable for teams that want to grow – on-site or remote. We\'re also happy to prepare custom workshops – <a href="/contact/">get in touch with us</a> to talk about what curriculum fits your team best!', workshops) }}
-    {%
-      set 'content' = {
-      "title": "Can't find the right workshops for your team?",
-      "text": "We are happy to tailor the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as develop new content if desired.",
-      "linkUrl": "/contact/?service=workshops",
-      "linkText": "Get in touch"
+<div class="workshops-landing__logos">
+  {{ logoList(logoCompanies, 'We Have Trained Teams at', 'h2', 'h2') }}
+</div>
+
+<section class="workshops-landing__quotes pt-7" id="our-attendees-say">
+  <div class="container container--lg">
+    <h2 class="mb-4">Our Attendees Say...</h2>
+      {%
+      set quoteContent = {
+      "text": "The work remains mysterious to me, but its importance becomes clearer with every passing day. The structure, guidance, and sense of purpose have exceeded all expectations.",
+      "source": "Mark Scout",
+      "position": "Department Chief, Macrodata Refinement @Lumon Industries",
+      "styling": "redesigned"
       }
     %}
-    {{ ctaBanner('purple', 'default', content) }}
-  {{ defaultNewsletterCta() }}
+    {{ quote(quoteContent) }}
+
     {%
-      set 'content' = {
-      "title": "Team up with us to go further!",
-      "text": "Our experts are ready to guide you through your next big move. Let us know how we can help.",
-      "linkUrl": "/contact/?service=workshops",
-      "linkText": "Get in touch"
+      set quoteContent = {
+      "text": "Few people have the privilege of participating in work of this magnitude. While its full scope remains mysterious, the value of the mission becomes more apparent with every refinement.",
+      "source": "Dylan G.",
+      "position": "Macrodata Refiner @Lumon Industries",
+      "styling": "redesigned"
       }
     %}
-    {{ ctaBanner('purple', 'full', content)
-}}
+    {{ quote(quoteContent) }}
+  </div>
+</section>
+
+<section class="workshops-landing__photos mt-10" aria-label="Workshop photos">
+  <div class="container container--lg">
+    <div class="photo-grid">
+      <img
+        class="photo-grid__img-1"
+        src="/assets/images/photos/tutoring@1200.jpg"
+        alt="Workshop attendees around a table"
+      />
+      <img
+        class="photo-grid__img-2"
+        src="/assets/images/photos/mainmatter-team-workshop.jpg"
+        alt="Team working together at a table"
+      />
+      <img
+        class="photo-grid__img-3"
+        src="/assets/images/rust-telemetry-workshop/rust-telemetry-workshop-eurorust-2023.jpg"
+        alt="Workshop talk in a classroom"
+      />
+      <img
+        class="photo-grid__img-4"
+        src="/assets/images/photos/events.jpg"
+        alt="Speaker on stage"
+      />
+      <img
+        class="photo-grid__img-5"
+        src="/assets/images/photos/whiteboard@1200.jpg"
+        alt="Workshop group at a whiteboard"
+      />
+    </div>
+  </div>
+</section>
+
+{%
+  set workshopCards = [
+  {
+  "logo": "rust",
+  "title": "Rust Workshops",
+  "link": "services/workshops/rust/"
+  },
+  {
+  "logo": "svelte",
+  "title": "Svelte Workshops",
+  "link": "services/workshops/svelte/"
+  },
+  {
+  "logo": "ember",
+  "title": "Ember Workshops",
+  "link": "services/workshops/ember/"
+  }
+  ]
+%}
+<div class="workshops-landing__catalog">
+  {{ techCards('workshops-landing-catalog', 'Explore Our Workshops', null, workshopCards) }}
+</div>
+
+<div class="service-cta service-cta--blog workshops-landing__cta">
+  {%
+    set cta = {
+    "title": "Are you facing challenges with Rust, Ember, or Svelte, and need a helping hand?",
+    "text": "We know the tools and practices required for successful development. We partner with you to solve your toughest tech challenges as teammates.",
+    "linkUrl": "/contact/?service=workshops",
+    "linkText": "Contact us"
+    }
+  %}
+  {{ ctaBanner('purple', 'default', cta) }}
+</div>
+
+<section>
+  {%
+    set imageData = {
+    "imgPath": "/assets/images/photos/notebook-list.jpg",
+    "alt": "Colorful notebooks",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+    }
+  %}
+  {{ imageAspectRatio(imageData, "4/1", "35/19") }}
+</section>

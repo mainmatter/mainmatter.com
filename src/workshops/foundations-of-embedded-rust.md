@@ -3,7 +3,6 @@ title: "Foundations of Embedded Rust"
 tags: "rust"
 format: "Workshop: 3 days"
 subtext: "Bookable for teams – on-site or remote"
-shortDescription: "Apply your embedded engineering skills to Rust using real hardware. Learn the embedded ecosystem, tooling, device drivers, async applications, IoT communication, Zephyr integration, and safety-critical considerations."
 price: "450 €"
 dates:
   - date: 2027-05-20

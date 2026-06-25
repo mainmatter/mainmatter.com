@@ -1,0 +1,422 @@
+@use "../base/breakpoints" as *;
+
+.workshops-page {
+  --workshops-page-content-width: 64rem;
+}
+
+.workshops-page__intro {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+.workshops-page-hero .color-hero__main {
+  width: 100%;
+}
+
+.workshops-page-hero .color-hero__eyebrow .workshops-page-hero__eyebrow-link {
+  --icon-arrow-size: 1rem;
+  --icon-arrow-margin: 0 0.5rem 0 0;
+  --icon-arrow-color: var(--color-white);
+  --icon-arrow-rotate: 90deg;
+
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--color-white);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    --icon-arrow-transform: translate3d(-0.5rem, 0, 0);
+    color: var(--color-white);
+
+    .workshops-page-hero__eyebrow-text {
+      text-decoration: underline;
+      text-underline-offset: 0.25rem;
+    }
+  }
+}
+
+.workshops-page-hero__eyebrow-arrow {
+  display: inline-flex;
+}
+
+.workshops-page__intro-text {
+  max-width: 58rem;
+}
+
+.workshops-page__certificate-container {
+  width: 24rem;
+  display: flex;
+  font-size: 1rem;
+  text-align: right;
+  gap: 12px;
+  align-items: center;
+}
+
+.workshops-page__certificate {
+  max-width: 100%;
+  width: 5rem;
+}
+
+.workshops-page__instructor-eyebrow {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  img {
+    width: 1.375rem;
+    height: 1.125rem;
+  }
+}
+
+.workshops-page__list {
+  display: grid;
+  gap: 4rem;
+  margin: 4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workshop-card {
+  position: relative;
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+  margin: -1rem;
+  transition: background-color 0.12s ease-out;
+
+  &:hover,
+  &:focus-within {
+    background-color: color-mix(in srgb, var(--color-purple) 5%, transparent);
+    transition-duration: 0.24s;
+    transition-timing-function: ease-in;
+  }
+}
+
+.workshop-card__overlay-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.workshop-card__main,
+.workshop-card__details {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.workshop-card__main {
+  display: flex;
+  flex-direction: column;
+  max-width: var(--workshops-page-content-width);
+}
+
+.workshop-card__link,
+.workshop-card__date,
+.workshop-card__mobile-details {
+  pointer-events: auto;
+}
+
+.workshop-card--full .workshop-card__main,
+.workshop-card--full .workshop-card__description {
+  max-width: none;
+}
+
+.workshop-card__title {
+  order: 2;
+  margin-bottom: 1rem;
+}
+
+.workshop-card__meta {
+  display: flex;
+  order: 1;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.workshop-card__duration {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.workshop-card__meta-icon {
+  width: 1.125rem;
+  height: 1.25rem;
+}
+
+.workshop-card__ticket-availability {
+  color: var(--color-purple);
+  font-size: 1rem;
+  text-align: right;
+}
+
+.workshop-card__description {
+  max-width: var(--workshops-page-content-width);
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.workshop-card__description--desktop {
+  display: none;
+}
+
+.workshop-card__mobile-details {
+  order: 3;
+  margin-bottom: 1.5rem;
+}
+
+.workshop-card__mobile-summary {
+  display: block;
+  list-style: none;
+  cursor: pointer;
+
+  &::marker,
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.workshop-card__mobile-description {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 1.25rem;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.workshop-card__mobile-summary-text {
+  display: inline-block;
+  margin-top: 0.25rem;
+  color: var(--color-purple);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+  text-decoration-thickness: 0.0625rem;
+}
+
+.workshop-card__mobile-details[open] {
+  .workshop-card__mobile-description {
+    display: block;
+    overflow: visible;
+  }
+
+  .workshop-card__mobile-summary-text {
+    display: none;
+  }
+}
+
+.workshop-card__mobile-dates {
+  margin-top: 1.5rem;
+}
+
+.workshop-card__link {
+  order: 4;
+  justify-content: center;
+  width: min(100%, calc(100vw - 4rem));
+}
+
+.workshop-card__details {
+  display: none;
+  gap: 1.5rem;
+  align-content: start;
+}
+
+.workshop-card__detail-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.workshop-card__detail-title {
+  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+}
+
+.workshop-card__price {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 0;
+  color: var(--color-black);
+  font-weight: 700;
+}
+
+.workshop-card__dates {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  color: var(--color-purple);
+  font-size: 1.25rem;
+  font-weight: 700;
+  list-style: none;
+}
+
+.workshop-card__date {
+  --icon-arrow-size: 1rem;
+  --icon-arrow-margin: 0 0 0 0.5rem;
+  --icon-arrow-color: var(--color-purple);
+
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+  text-decoration-thickness: 0.0625rem;
+
+  &:hover,
+  &:focus {
+    --icon-arrow-transform: translate3d(0.5rem, 0, 0);
+  }
+}
+
+.workshops-landing-hero {
+  min-height: auto;
+
+  .color-hero__container {
+    align-items: center;
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+  }
+
+  .color-hero__main {
+    width: 100%;
+  }
+
+  .color-hero__title,
+  .color-hero__text {
+    max-width: 48rem;
+  }
+
+  .tech-cards {
+    margin-top: 3rem;
+    margin-bottom: 0;
+  }
+
+  .tech-cards__title {
+    display: none;
+  }
+
+  .cards__grid {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.workshops-landing__logos {
+  .logo-list__title {
+    max-width: 54rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: left;
+  }
+}
+
+.workshops-landing__quotes {
+  .container {
+    max-width: 54rem;
+  }
+
+  .quote + .quote {
+    margin-top: 3rem;
+  }
+}
+
+.workshops-landing__photos {
+  margin-top: 3rem;
+
+  .container {
+    max-width: 64rem;
+  }
+}
+
+.workshops-landing__catalog {
+  .card__grid-element {
+    min-height: 20rem;
+  }
+}
+
+.workshops-landing__cta {
+  margin: 4rem 0 6rem;
+
+  .cta-banner {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: $breakpoint-s) {
+  .workshops-landing-hero {
+    .color-hero__container {
+      min-height: 38rem;
+    }
+
+    .cards__grid {
+      max-width: 58rem;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-m) {
+  .workshops-page__intro {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .workshop-card {
+    grid-template-columns: minmax(0, 1fr) 18rem;
+  }
+
+  .workshop-card--full {
+    grid-template-columns: 1fr;
+  }
+
+  .workshop-card__title {
+    order: 1;
+  }
+
+  .workshop-card__meta {
+    order: 2;
+    justify-content: flex-start;
+  }
+
+  .workshop-card__ticket-availability {
+    display: none;
+  }
+
+  .workshop-card__description--desktop {
+    display: block;
+    order: 3;
+  }
+
+  .workshop-card__mobile-details {
+    display: none;
+  }
+
+  .workshop-card__link {
+    order: 4;
+    justify-content: flex-start;
+    width: fit-content;
+  }
+
+  .workshop-card__details {
+    display: grid;
+  }
+
+  .workshops-landing-hero {
+    min-height: auto;
+
+    .color-hero__container {
+      padding-top: 12rem;
+      padding-bottom: 5rem;
+    }
+  }
+}

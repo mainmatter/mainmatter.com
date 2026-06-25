@@ -1,231 +1,211 @@
 ---
 layout: "base"
-title: Rust Workshops | Our Services
-description: "We offer workshops to enable teams to succeed with Rust – covering a wide range from basics to advanced topics, onsite or remote."
+title: Rust Workshops
+description: "Public and team Rust workshops by Mainmatter."
 og:
-image: "/assets/images/workshops/rust-og-image.jpg"
+  image: "/assets/images/workshops/rust-og-image.jpg"
+eleventyImport:
+  collections: ["workshops"]
 ---
 
 {% from "color-hero.njk" import colorHero %}
-{% from "tech-cards.njk" import techCards %}
+{% from "workshop-card.njk" import workshopCard %}
 {% from "cta-banner.njk" import ctaBanner %}
-{% from "image-aspect-ratio.njk" import imageAspectRatio %}
-{% from "public-workshops.njk" import publicWorkshops %}
-{% from "btn-secondary.njk" import btnSecondary %}
-{% from "featured-services.njk" import featuredServices %}
+{% from "quote.njk" import quote %}
 {% from "logo-list.njk" import logoList %}
-{% from "workshops-list.njk" import workshopsList %}
+{% from "contact-form-LP.njk" import contactFormLP %}
+{% from "tech-cards.njk" import techCards %}
+{% from "secondary-feature.njk" import secondaryFeature %}
+{% from "service-cta.njk" import serviceCta %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+
+
+{% set heroEyebrow %}
+  <a class="workshops-page-hero__eyebrow-link" href="/services/workshops/">
+    <span class="workshops-page-hero__eyebrow-arrow">{% include 'svg/arrow.njk' %}</span>
+    <span class="workshops-page-hero__eyebrow-text">All workshops</span>
+  </a>
+{% endset %}
+
 {%
-  set 'content' = {
-  "title": "We teach teams like yours how to adopt and succeed with Rust",
-  "image": "/assets/images/hero/rust.jpg",
+  set heroContent = {
+  "eyebrow": heroEyebrow,
+  "title": "Rust Workshops",
+  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in nisi sed eros eleifend scelerisque a eu nisl. Ut eu sollicitudin magna. Nullam varius neque ante, a pulvinar ipsum luctus id.",
+  "image": "/assets/images/hero/rust-workshops.jpg",
   "alt": "Crabs climbing a rock on a beach",
-  "loading": "eager"
+  "loading": "eager",
+  "class": "workshops-page-hero",
+  "toc": [
+    ["Overview", "#overview"],
+    ["Workshops", "#workshops"],
+    ["Instructor", "#instructor"],
+    ["Others Say", "#others-say"]
+  ],
+  "containerType": "lp"
   }
 %}
-{{ colorHero('aqua', content) }}
-{%
-  set workshops = [
-    collections.workshops | findByCollectionSlug("learn-rust-starting-from-scratch"),
-    collections.workshops | findByCollectionSlug("rust-python-interoperability"),
-    collections.workshops | findByCollectionSlug("c-to-rust"),
-    collections.workshops | findByCollectionSlug("edge-computing-with-webassembly"),
-    collections.workshops | findByCollectionSlug("an-introduction-to-testing-in-rust"),
-    collections.workshops | findByCollectionSlug("advanced-testing-in-rust"),
-    collections.workshops | findByCollectionSlug("telemetry-for-rust-apis"),
-    collections.workshops | findByCollectionSlug("foundations-of-embedded-rust"),
-    collections.workshops | findByCollectionSlug("introduction-to-rust-for-web-developers"),
-    collections.workshops | findByCollectionSlug("build-production-ready-apis-in-rust")
-  ]
-%}
-{{
-  workshopsList('Our training offering', 'We teach Rust across a range of use-cases: API services, workers, data pipelines, native extensions, WASM, and more.
-  We can walk alongside you on a journey from zero to hero,
-  starting from the basics of the language all the way to advanced testing techniques and comprehensive
-  telemetry instrumentation.
-  <h2 class="tech-cards__title">Workshops Catalog</h2>', workshops)
-}}
-{% set futurePublicWorkshops = publicRustWorkshops.workshops | upcoming %}
-{{ publicWorkshops(futurePublicWorkshops) }}
+{{ colorHero('purple', heroContent) }}
 
-<section class="my-10">
-  <div class="container container--lg">
-    <div class="mb-4">
-      <h3 class="mb-2">Our methodology</h3>
-      <p class="body">
-        All our workshops are hands-on. We believe that the best way to learn is by doing. Workshop
-        attendees spend most of their time writing code, working through exercises with automated
-        solution-checking. This structure allows our trainers to spend most of their time in 1:1
-        conversations with attendees, providing tailored feedback and guidance.
-      </p>
-    </div>
-    <div class="mb-4">
-      <h3 class="mb-2">Logistics</h3>
-      <p class="body">
-        All our workshops can be held in-person or remotely. If you decide to organise a workshop at
-        your company, we are happy to tailor the curriculum to your needs. We can combine multiple
-        workshops, pick and choose modules, as well as develop new content if desired.<br />
-        <a href="https://calendly.com/luca-palmieri/is-rust-the-right-choice-for-us"
-          >Get in touch with us</a
-        >
-        to discuss further!
-      </p>
-    </div>
-  </div>
-</section>
+{% set rustWorkshops = collections.workshops | filterByCollectionTag("rust") %}
 
-<section class="quotes-list">
-  <div class="container container--lg">
-    <h2 class="quotes-list__title h2">Listen to our students</h2>
-    <ul class="quotes-list__list" style="grid-template-columns: repeat(2, 1fr);">
-      <li class="quotes-list__quote">
-        <div class="quotes-list__quote-text text--sm">
-          <blockquote>
-            ”The individual exercises build on each other very well. Direct practice makes it easier
-            to understand the topics. I have rarely taken part in such a good practical workshop!”
-          </blockquote>
-          <figcaption class="quotes-list__quote-source">
-            Remote attendee<span class="quotes-list__quote-source--separator"></span>
-          </figcaption>
-        </div>
-      </li>
-      <li class="quotes-list__quote">
-        <div class="quotes-list__quote-text text--sm">
-          <blockquote>
-            ”I usually avoid workshops. The pace of more than 3 people is hard to sync: I always
-            feel rushed in some bits, slowed down in others. You fixed that with your code-centric
-            approach: I was able to fully use the time and the knowledge of the trainer!”
-          </blockquote>
-          <figcaption class="quotes-list__quote-source">
-            Onsite attendee<span class="quotes-list__quote-source--separator"></span>
-          </figcaption>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
-
-{%
-  set logoCompanies = [
-  'Keyrock',
-  'BMW Car IT',
-  'CERN',
-  'Lego',
-  'Redis',
-  'Canonical',
-  'Thales',
-  'Ystorian',
-  'Change Healthcare',
-  'NTT Data',
-  'Faculty',
-  'Süddeutsche Zeitung',
-  'Truelayer'
-  ]
-%}
-{% set title = "We've trained engineers in Rust, from startups to Fortune Global 500 companies." %}
-{{ logoList(logoCompanies, title, "h4", "h5") }}
-
-<section class="mb-10">
-  {%
-    set imageData = {
-    "imgPath": "/assets/images/rust/eurorust.jpeg",
-    "alt": "Server room",
-    "sizes": "100vw",
-    "loading": "lazy",
-    "sizesArray": [760, 1440, 1920]
-    }
-  %}
-  {{ imageAspectRatio(imageData, "32/13", "35/19") }}
-</section>
-
-<section class="my-10 container container--lg">
-  <div class="">
-    <div class="mb-4">
-      <h5 class="mb-015">Rust & Mainmatter</h5>
-      <h3 class="mb-2">A unique skillset</h3>
-      <p>
-        We’re experts - our Rust team is led by Luca Palmieri, author of
-        <a href="http://zero2prod.com">"Zero to Production in Rust"</a>, and we have been part of
-        the Rust ecosystem for years, helping out the
-        <a href="https://crates.io">crates.io</a> project.
-      </p>
-      <p>
-        But we don't stop at Rust – we have developed big web apps and mentored teams on backend,
-        frontend, design, as well as process and developer infrastructure for years. We know what it
-        takes to connect everything together and deliver a delightful end-to-end experience.
-      </p>
-    </div>
-  </div>
-  <div class="split-content">
-    <a href="https://foundation.rust-lang.org/" class="split-content__link"></a>
-    <div class="split-content__wrapper">
-      <div class="split-content__content">
-        <h4>Mainmatter is a Silver Member of the Rust Foundation</h4>
-        {%
-          set link = {
-          "label": 'Learn more',
-          "url": 'https://foundation.rust-lang.org/'
-          }
-        %}
-        {{ btnSecondary( link, 'mt-2' ) }}
-      </div>
-      <div class="split-content__feature">{% include 'content/secondary-feature-rust.njk' %}</div>
-    </div>
-  </div>
-</section>
-
-<section class="my-10 container container--lg">
-  <div class="">
-    <div class="mb-4">
-      <h5 class="mb-015">EuroRust</h5>
-      <h3 class="mb-2">We run EuroRust</h3>
-      <p>
-        In 2024, EuroRust will be back on October 10th and 11th in Vienna, Austria as well as
-        online. We'll have 2 days of talks with a main track as well as a side track for the first
-        time this year. Plus, there'll be workshops on the day before the main conference, room for
-        people to get together and hack on their favorite projects during the conference, as well as
-        an after party on Friday night.
-      </p>
-    </div>
-  </div>
-  <div class="split-content">
-    <a href="https://www.youtube.com/@eurorust" class="split-content__link"></a>
-    <div class="split-content__wrapper">
-      <div class="split-content__content">
-        <h4>All the talks from the previous editions are available on YouTube</h4>
-        {%
-          set link = {
-          "label": 'Learn more',
-          "url": 'https://www.youtube.com/@eurorust'
-          }
-        %}
-        {{ btnSecondary( link, 'mt-2' ) }}
-      </div>
-      <div class="split-content__feature">
-        {% include 'content/secondary-feature-eurorust.njk' %}
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="my-10 container container--lg">
-  <div class="split-content no-link">
-    <div class="split-content__wrapper">
-      <div class="split-content__content">
-        <h2 class="split-content__subheading">Your mentor</h2>
+<div class="workshops-page">
+  <section class="container container--xl my-10" id="workshops">
+    <div class="workshops-page__intro">
+      <div class="workshops-page__intro-text">
+        <h2 class="mb-2">Rust Workshops</h2>
         <p>
-          Luca Palmieri is a Principal Engineering Consultant at Mainmatter and builds technology
-          products for a living. His current focus is on backend development, software architecture
-          and the Rust programming language. He is the author of
-          <a href="https://zero2prod.com">"Zero to Production in Rust"</a>.
+          We offer a range of workshops bookable for teams that want to grow – on-site or remote.
+          We're also happy to prepare custom workshops – <a href="/contact/?service=workshops"
+            >get in touch with us</a
+          > to talk about what curriculum fits your team best!
         </p>
       </div>
-      <div class="split-content__feature">
-        {% include 'content/secondary-feature-rust-consulting.njk' %}
+      <div class="workshops-page__certificate-container">
+        <span
+          >We are <strong class="strong">fully accredited</strong> by the Rust Foundation as
+          <strong class="strong">Certified Rust Trainers</strong></span
+        >
+        <img
+          class="workshops-page__certificate"
+          src="/assets/images/rust/rust-foundation-certificate.svg"
+          alt="Rust Foundation Silver Member"
+          loading="lazy"
+        />
       </div>
     </div>
-  </div>
-</section>
 
-{% include "global/rust-cta.njk" %}
-{% include "global/rust-newsletter-cta.njk" %}
+    <ul class="workshops-page__list">
+      {% for workshop in rustWorkshops %}
+        <li>{{ workshopCard(workshop) }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  {%
+    set teamCta = {
+    "title": "Want to Book a Workshop for Your Team?",
+    "text": "We are happy to tailor the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as develop new content if desired.",
+    "linkUrl": "/contact/",
+    "linkText": "Get in touch"
+    }
+  %}
+  {{ ctaBanner('purple', 'medium', teamCta) }}
+
+  {%
+    set logoCompanies = [
+    'Redis',
+    'Robin Hood',
+    'Google',
+    'AIS',
+    'HashiCorp',
+    'Faculty',
+    'Keyrock',
+    'BMW Car IT',
+    'CERN'
+    ]
+  %}
+  {{ logoList(logoCompanies, "We Have Trained Teams at", "h2", "h3") }}
+
+  <section class="container container--lg my-10" id="instructor">
+    <div class="split-content no-link">
+      <div class="split-content__wrapper">
+        <div class="split-content__content">
+          <h5 class="workshops-page__instructor-eyebrow mb-015">
+            <img src="/assets/images/icons/instructor.svg" alt="" loading="lazy" />
+            <span>Our Expert Instructor</span>
+          </h5>
+          <h3 class="mb-2">Luca Palmieri</h3>
+          <p>
+            Luca Palmieri is a Principal Engineering Consultant at Mainmatter and builds technology
+            products for a living. His current focus is on backend development, software
+            architecture and the Rust programming language. He is the author of
+            <a href="https://zero2prod.com">"Zero to Production in Rust"</a>.
+          </p>
+        </div>
+        <div class="split-content__feature">
+          {%
+            set instructorImage = {
+            "image": "/assets/images/authors/algo_luca.jpg",
+            "alt": "Luca Palmieri",
+            "loading": "lazy"
+            }
+          %}
+          {{ secondaryFeature(instructorImage, 'split-content__author') }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container container--lg my-10" id="others-say">
+    <h2 class="mb-4">Our Attendees Say...</h2>
+    {%
+      set quoteContent = {
+      "text": "The work remains mysterious to me, but its importance becomes clearer with every passing day. The structure, guidance, and sense of purpose have exceeded all expectations.",
+      "source": "Mark Scout",
+      "position": "Department Chief, Macrodata Refinement @Lumon Industries",
+      "styling": "redesigned"
+      }
+    %}
+    {{ quote(quoteContent) }}
+
+    {%
+      set quoteContent = {
+      "text": "Few people have the privilege of participating in work of this magnitude. While its full scope remains mysterious, the value of the mission becomes more apparent with every refinement.",
+      "source": "Dylan G.",
+      "position": "Macrodata Refiner @Lumon Industries",
+      "styling": "redesigned"
+      }
+    %}
+    {{ quote(quoteContent) }}
+
+    {%
+      set quoteContent = {
+      "text": "Each refinement brings a sense of accomplishment that is difficult to describe. There is comfort in knowing that the work matters, even when its purpose remains beyond view.",
+      "source": "Helly R.",
+      "position": "Macrodata Refiner @Lumon Industries",
+      "styling": "redesigned"
+      }
+    %}
+    {{ quote(quoteContent) }}
+  </section>
+
+  {%
+    set trainingMaterials = [
+    {
+      "title": "Rust Handbook",
+      "link": "rust-adoption-handbook/",
+      "logo": "rust"
+    },
+    {
+      "title": "C to Rust Migration",
+      "link": "services/workshops/c-to-rust/",
+      "logo": "rust"
+    },
+    {
+      "title": "Edge Computing With WebAssembly",
+      "link": "services/workshops/edge-computing-with-webassembly/",
+      "logo": "rust"
+    }
+    ]
+  %}
+
+  {{ techCards('workshops-page-materials', 'Explore Our Other Training Materials', '', trainingMaterials) }}
+
+  {{ serviceCta(["rust"]) }}
+
+  {{ contactFormLP("Rust Workshops") }}
+
+  <section>
+    {%
+      set imageData = {
+      "imgPath": "/assets/images/photos/rust-workshops-footer.jpg",
+      "alt": "Rust workshop materials",
+      "sizes": "100vw",
+      "loading": "lazy",
+      "sizesArray": [760, 1440, 1920]
+      }
+    %}
+    {{ imageAspectRatio(imageData, "4/1", "35/19") }}
+  </section>
+</div>

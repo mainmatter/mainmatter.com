@@ -1,9 +1,8 @@
 ---
 title: "Testing in Rust: going beyond the basics"
 tags: "rust"
-format: "Workshop: 1 day"
-subtext: "Bookable for teams – on-site or remote"
-shortDescription: "Move beyond Rust's built-in testing toolkit for complex applications. Learn better assertions, snapshot testing, filesystem and database isolation, HTTP mocking, fakes, and custom test runners."
+format: "1 day"
+subtext: "On-site or remote"
 description: A 1-day workshop designed for software developers who have a good understanding of Rust's basic concepts and want to move beyond the built-in testing toolkit.
 price: "450 €"
 dates:
