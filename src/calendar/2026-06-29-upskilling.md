@@ -5,7 +5,7 @@ image: "/assets/images/calendar/2026-06-29-upskilling/mwcb-logo.svg"
 location: "Barcelona, Spain"
 url: https://mobileworldcapital.com/en/agenda/upskilling-week/
 kind: conference
-color: aqua
+color: purple
 hero:
   image: "/assets/images/calendar/2026-06-29-upskilling/barcelona.webp"
   imageAlt: "View of a Barcelona street"

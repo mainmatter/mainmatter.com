@@ -4,7 +4,7 @@ image: "/assets/images/calendar/2026-07-07-jetbrains/jetbrains-logo.svg"
 location: "Online"
 url: https://info.jetbrains.com/rustrover-livestream-june23-2026.html
 kind: livestream
-color: aqua
+color: purple
 hero:
   image: "/assets/images/calendar/2026-07-07-jetbrains/remote.jpg"
   imageAlt: "Desk with a computer"
