@@ -1,0 +1,126 @@
+{% from "btn-primary.njk" import btnPrimary %}
+
+{%- macro workshopCard(workshop) -%}
+  {% set data = workshop.data %}
+  {% set duration = data.duration or data.format | replace("Workshop: ", "") %}
+  {% set description = data.description %}
+  {% set price = data.individualTicketPrice or data.price %}
+  {% set dates = data.dates %}
+
+  <article class="workshop-card {% if not price and not dates %}workshop-card--full{% endif %}">
+    <a
+      class="workshop-card__overlay-link"
+      href="/services/workshops/{{ workshop.fileSlug }}/"
+      aria-label="Learn more about {{ data.title }}"
+      tabindex="-1"
+    ></a>
+
+    <div class="workshop-card__main">
+      {% if duration or price %}
+        <p class="workshop-card__meta">
+          {% if duration %}
+            <span class="workshop-card__duration">
+              <img
+                class="workshop-card__meta-icon"
+                src="/assets/images/icons/calendar.svg"
+                alt=""
+                loading="lazy"
+              />
+              {{ duration }}
+            </span>
+          {% endif %}
+          {% if price %}
+            <span class="workshop-card__ticket-availability"> Individual tickets available </span>
+          {% endif %}
+        </p>
+      {% endif %}
+
+      <h4 class="workshop-card__title h4">{{ data.title }}</h4>
+
+      {% if description %}
+        <p class="workshop-card__description workshop-card__description--desktop">
+          {{ description | safe }}
+        </p>
+      {% endif %}
+
+      {% if description or dates %}
+        <details class="workshop-card__mobile-details">
+          <summary class="workshop-card__mobile-summary">
+            {% if description %}
+              <span class="workshop-card__mobile-description"> {{ description | safe }} </span>
+            {% endif %}
+            <span class="workshop-card__mobile-summary-text"> View details </span>
+          </summary>
+          {% if dates %}
+            <ul class="workshop-card__dates workshop-card__mobile-dates">
+              {% for date in dates %}
+                {% set workshopDate = date.date or date %}
+                <li>
+                  {% if date.url %}
+                    <a class="workshop-card__date" href="{{ date.url }}">
+                      <span>{{ workshopDate | monthDayYear }}</span>
+                      {% include 'svg/arrow.njk' %}
+                    </a>
+                  {% else %}
+                    <span class="workshop-card__date">
+                      <span>{{ workshopDate | monthDayYear }}</span>
+                      {% include 'svg/arrow.njk' %}
+                    </span>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </details>
+      {% endif %}
+
+      {%
+        set link = {
+        "label": "Learn More",
+        "url": "/services/workshops/" + workshop.fileSlug + "/"
+        }
+      %}
+      {{ btnPrimary(link, 'purple', 'workshop-card__link') }}
+    </div>
+
+    {% if price or dates %}
+      <aside class="workshop-card__details" aria-label="Public workshop details">
+        {% if price %}
+          <div class="workshop-card__ticket">
+            <h4 class="workshop-card__detail-title">Individual tickets</h4>
+            <p class="workshop-card__price">
+              <img
+                class="workshop-card__detail-icon"
+                src="/assets/images/icons/bills.svg"
+                alt=""
+                loading="lazy"
+              />
+              {{ price | safe }}
+            </p>
+          </div>
+        {% endif %}
+
+        {% if dates %}
+          <ul class="workshop-card__dates">
+            {% for date in dates %}
+              {% set workshopDate = date.date or date %}
+              <li>
+                {% if date.url %}
+                  <a class="workshop-card__date" href="{{ date.url }}">
+                    <span>{{ workshopDate | monthDayYear }}</span>
+                    {% include 'svg/arrow.njk' %}
+                  </a>
+                {% else %}
+                  <span class="workshop-card__date">
+                    <span>{{ workshopDate | monthDayYear }}</span>
+                    {% include 'svg/arrow.njk' %}
+                  </span>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </aside>
+    {% endif %}
+  </article>
+{%- endmacro -%}

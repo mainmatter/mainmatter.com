@@ -2,7 +2,6 @@
 title: "Build production-ready API services in Rust"
 tags: "rust"
 format: "Workshop: 3 days, on-site or remote"
-shortDescription: "Go from basic Rust knowledge to a production-ready HTTP API using Axum. Learn how to structure, configure, test, instrument, and prepare a Rust backend service for deployment."
 description: This 3-day workshop is designed for developers who know the basics of Rust and want to learn more about backend development using Rust. Having written Rust in a production environment is not a requirement.
 introduction:
   <p>Rust is an excellent programming language for developing API services. You can build applications that are fast, reliable, and cost-effective. In fact, using Rust to write services can tremendously reduce your operating costs. However, the main challenge is knowing where to start. This workshop guides you through the process. At the end of the journey, you'll know enough to set up a production-ready HTTP API using the Axum framework.</p>

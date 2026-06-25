@@ -1,119 +1,197 @@
 ---
 layout: "base"
-title: Svelte Workshops | Our Services
-description: "We offer workshops to enable teams to succeed with Svelte & SvelteKit – covering a wide range from basics to advanced topics, onsite or remote."
+title: Svelte Workshops
+description: "Public and team Svelte workshops by Mainmatter."
 og:
   image: "/assets/images/workshops/svelte-workshops-og-image.jpg"
+eleventyImport:
+  collections: ["workshops"]
 ---
 
 {% from "color-hero.njk" import colorHero %}
+{% from "workshop-card.njk" import workshopCard %}
 {% from "cta-banner.njk" import ctaBanner %}
-{% from "image-aspect-ratio.njk" import imageAspectRatio %}
-{% from "public-workshops.njk" import publicWorkshops %}
-{% from "btn-secondary.njk" import btnSecondary %}
-{% from "featured-services.njk" import featuredServices %}
+{% from "quote.njk" import quote %}
 {% from "logo-list.njk" import logoList %}
-{% from "workshops-list.njk" import workshopsList %}
+{% from "contact-form-LP.njk" import contactFormLP %}
+{% from "tech-cards.njk" import techCards %}
 {% from "secondary-feature.njk" import secondaryFeature %}
+{% from "service-cta.njk" import serviceCta %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+
+
+{% set heroEyebrow %}
+  <a class="workshops-page-hero__eyebrow-link" href="/services/workshops/">
+    <span class="workshops-page-hero__eyebrow-arrow">{% include 'svg/arrow.njk' %}</span>
+    <span class="workshops-page-hero__eyebrow-text">All workshops</span>
+  </a>
+{% endset %}
+
 {%
-  set 'content' = {
-  "title": "We teach teams like yours how to succeed with Svelte and SvelteKit",
+  set heroContent = {
+  "eyebrow": heroEyebrow,
+  "title": "Svelte Workshops",
+  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in nisi sed eros eleifend scelerisque a eu nisl. Ut eu sollicitudin magna. Nullam varius neque ante, a pulvinar ipsum luctus id.",
   "image": "/assets/images/hero/table-soccer.jpg",
-  "alt": "A close-up photo of the figures on a table soccer table",
-  "loading": "eager"
+  "alt": "Close-up photo of table soccer figures",
+  "loading": "eager",
+  "class": "workshops-page-hero",
+  "toc": [
+    ["Overview", "#overview"],
+    ["Workshops", "#workshops"],
+    ["Instructor", "#instructor"],
+    ["Others Say", "#others-say"]
+  ],
+  "containerType": "lp"
   }
 %}
-{{ colorHero('purple', content) }}
-{%
-  set workshops = [
-  collections.workshops | findByCollectionSlug("svelte-and-sveltekit"),
-  collections.workshops | findByCollectionSlug("progressive-enhancement-with-sveltekit"),
-  collections.workshops | findByCollectionSlug("testing-svelte-sveltekit-applications"),
-  collections.workshops | findByCollectionSlug("svelte-5-runes"),
-  collections.workshops | findByCollectionSlug("authentication-for-svelte-sveltekit"),
-  collections.workshops | findByCollectionSlug("svelte-without-svelte"),
-  collections.workshops | findByCollectionSlug("practical-typescript")
-  ]
-%}
-{{
-  workshopsList('Our training offering', "We are Svelte experts and want others to get the most of it as well. That's why we provide a range of trainings on Svelte and SvelteKit.
-  We can get teams up to speed with Svelte from scratch,
-  or help them tackle a range of specific topics.
-  <h2 class=\"tech-cards__title\">Workshops Catalog</h2>", workshops)
-}}
-{% set futurePublicWorkshops = publicSvelteWorkshops.workshops | upcoming %}
-{{ publicWorkshops(futurePublicWorkshops) }}
+{{ colorHero('purple', heroContent) }}
 
-<section class="my-10">
-  <div class="container container--lg">
-    <div class="mb-4">
-      <h3 class="mb-2">Our methodology</h3>
-      <p class="body">
-        All our workshops are hands-on. We believe that the best way to learn is by doing. Our
-        trainers introduce concepts and patterns but attendees spend the majority of their time
-        during the workshops writing code, and applying those concepts in practical examples. This
-        structure allows our trainers to spend most of their time in 1:1 conversations with
-        attendees, providing tailored feedback and guidance.
-      </p>
-    </div>
-    <div class="mb-4">
-      <h3 class="mb-2">Logistics</h3>
-      <p class="body">
-        All our workshops can be held in-person or remotely. If you decide to organise a workshop at
-        your company, we are happy to tailor the curriculum to your needs. We can combine multiple
-        workshops, pick and choose modules, as well as develop new content if desired.<br />
-        <a href="/contact/">Get in touch with us</a>
-        to discuss further!
-      </p>
-    </div>
-  </div>
-</section>
+{% set svelteWorkshops = collections.workshops | filterByCollectionTag("svelte") %}
 
-<section class="my-10 container container--lg">
-  <div class="">
-    <div class="mb-4">
-      <h5 class="mb-015">Svelte & Mainmatter</h5>
-      <h3 class="mb-2">A unique skillset</h3>
-      <p>
-        We’re frontend experts – our team speaks at international events, is
-        <a href="/this-week-in-open-source/"
-          >actively contributing to a number of open source projects</a
-        >
-        and our Svelte expert Paolo Ricciuti is a Svelte maintainer and the co-author of
-        <a href="https://www.sveltelab.dev/">SvelteLab</a>.
-      </p>
-      <p>
-        Mainmatter has been developing big web apps and mentored international teams around backend,
-        frontend, design, as well as process and developer infrastructure for years. We know what it
-        takes to connect everything together and deliver a delightful end-to-end experience.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="my-10 container container--lg">
-  <div class="split-content no-link">
-    <div class="split-content__wrapper">
-      <div class="split-content__content">
-        <h2 class="split-content__subheading">Your mentor</h2>
+<div class="workshops-page">
+  <section class="container container--xl my-10" id="workshops">
+    <div class="workshops-page__intro">
+      <div class="workshops-page__intro-text">
+        <h2 class="mb-2">Svelte Workshops</h2>
         <p>
-          Paolo Ricciuti is a huge nerd and Svelte maintainer. He's also one of the creators of
-          <a href="https://sveltelab.dev">sveltelab.dev</a> - a REPL for SvelteKit.
+          We offer a range of workshops bookable for teams that want to grow – on-site or remote.
+          We're also happy to prepare custom workshops – <a href="/contact/?service=workshops"
+            >get in touch with us</a
+          > to talk about what curriculum fits your team best!
         </p>
       </div>
-      <div class="split-content__feature">
-        {%
-          set 'content' = {
-          "image": "/assets/images/authors/paoloricciuti.jpg",
-          "alt": "Paolo Ricciuti",
-          "loading": "lazy"
-          }
-        %}
-        {{ secondaryFeature(content, 'split-content__author') }}
+    </div>
+
+    <ul class="workshops-page__list">
+      {% for workshop in svelteWorkshops %}
+        <li>{{ workshopCard(workshop) }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  {%
+    set teamCta = {
+    "title": "Want to Book a Workshop for Your Team?",
+    "text": "We are happy to tailor the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as develop new content if desired.",
+    "linkUrl": "/contact/",
+    "linkText": "Get in touch"
+    }
+  %}
+  {{ ctaBanner('purple', 'medium', teamCta) }}
+
+  {%
+    set logoCompanies = [
+    'Redis',
+    'Robin Hood',
+    'Google',
+    'AIS',
+    'HashiCorp',
+    'Faculty',
+    'Keyrock',
+    'BMW Car IT',
+    'CERN'
+    ]
+  %}
+  {{ logoList(logoCompanies, "We Have Trained Teams at", "h2", "h3") }}
+
+  <section class="container container--lg my-10" id="instructor">
+    <div class="split-content no-link">
+      <div class="split-content__wrapper">
+        <div class="split-content__content">
+          <h5 class="workshops-page__instructor-eyebrow mb-015">
+            <img src="/assets/images/icons/instructor.svg" alt="" loading="lazy" />
+            <span>Our Expert Instructor</span>
+          </h5>
+          <h3 class="mb-2">Paolo Ricciuti</h3>
+          <p>
+            Paolo Ricciuti is a Svelte maintainer and one of the creators of
+            <a href="https://sveltelab.dev">sveltelab.dev</a>, a REPL for SvelteKit.
+          </p>
+        </div>
+        <div class="split-content__feature">
+          {%
+            set instructorImage = {
+            "image": "/assets/images/authors/paoloricciuti.jpg",
+            "alt": "Paolo Ricciuti",
+            "loading": "lazy"
+            }
+          %}
+          {{ secondaryFeature(instructorImage, 'split-content__author') }}
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-{% include "global/svelte-cta.njk" %}
-{% include "global/svelte-newsletter-cta.njk" %}
+  <section class="container container--lg my-10" id="others-say">
+    <h2 class="mb-4">Our Attendees Say...</h2>
+    {%
+      set quoteContent = {
+      "text": "The work remains mysterious to me, but its importance becomes clearer with every passing day. The structure, guidance, and sense of purpose have exceeded all expectations.",
+      "source": "Mark Scout",
+      "position": "Department Chief, Macrodata Refinement @Lumon Industries",
+      "styling": "redesigned"
+      }
+    %}
+    {{ quote(quoteContent) }}
+
+    {%
+      set quoteContent = {
+      "text": "Few people have the privilege of participating in work of this magnitude. While its full scope remains mysterious, the value of the mission becomes more apparent with every refinement.",
+      "source": "Dylan G.",
+      "position": "Macrodata Refiner @Lumon Industries",
+      "styling": "redesigned"
+      }
+    %}
+    {{ quote(quoteContent) }}
+
+    {%
+      set quoteContent = {
+      "text": "Each refinement brings a sense of accomplishment that is difficult to describe. There is comfort in knowing that the work matters, even when its purpose remains beyond view.",
+      "source": "Helly R.",
+      "position": "Macrodata Refiner @Lumon Industries",
+      "styling": "redesigned"
+      }
+    %}
+    {{ quote(quoteContent) }}
+  </section>
+
+  {%
+    set trainingMaterials = [
+    {
+      "title": "Svelte and SvelteKit",
+      "link": "services/workshops/svelte-and-sveltekit/",
+      "logo": "svelte"
+    },
+    {
+      "title": "Progressive Enhancement With SvelteKit",
+      "link": "services/workshops/progressive-enhancement-with-sveltekit/",
+      "logo": "svelte"
+    },
+    {
+      "title": "Testing Svelte and SvelteKit Applications",
+      "link": "services/workshops/testing-svelte-sveltekit-applications/",
+      "logo": "svelte"
+    }
+    ]
+  %}
+
+  {{ techCards('workshops-page-materials', 'Explore Our Other Training Materials', '', trainingMaterials) }}
+
+  {{ serviceCta(["svelte"]) }}
+
+  {{ contactFormLP("Svelte Workshops") }}
+
+  <section>
+    {%
+      set imageData = {
+      "imgPath": "/assets/images/photos/notebook-list.jpg",
+      "alt": "Svelte workshop materials",
+      "sizes": "100vw",
+      "loading": "lazy",
+      "sizesArray": [760, 1440, 1920]
+      }
+    %}
+    {{ imageAspectRatio(imageData, "4/1", "35/19") }}
+  </section>
+</div>

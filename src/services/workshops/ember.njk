@@ -1,7 +1,7 @@
 ---
 layout: "base"
-title: Ember Workshops | Our Services
-description: "We offer workshops to enable teams to succeed with Ember.js – covering a wide range from basics to advanced topics, onsite or remote."
+title: Ember Workshops
+description: "Public and team Ember workshops by Mainmatter."
 og:
   image: "/assets/images/workshops/ember-workshops-og-image.jpg"
 eleventyImport:
@@ -9,103 +9,189 @@ eleventyImport:
 ---
 
 {% from "color-hero.njk" import colorHero %}
+{% from "workshop-card.njk" import workshopCard %}
 {% from "cta-banner.njk" import ctaBanner %}
-{% from "image-aspect-ratio.njk" import imageAspectRatio %}
-{% from "public-workshops.njk" import publicWorkshops %}
-{% from "btn-secondary.njk" import btnSecondary %}
-{% from "featured-services.njk" import featuredServices %}
+{% from "quote.njk" import quote %}
 {% from "logo-list.njk" import logoList %}
-{% from "workshops-list.njk" import workshopsList %}
+{% from "contact-form-LP.njk" import contactFormLP %}
+{% from "tech-cards.njk" import techCards %}
 {% from "secondary-feature.njk" import secondaryFeature %}
+{% from "service-cta.njk" import serviceCta %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+
+
+{% set heroEyebrow %}
+  <a class="workshops-page-hero__eyebrow-link" href="/services/workshops/">
+    <span class="workshops-page-hero__eyebrow-arrow">{% include 'svg/arrow.njk' %}</span>
+    <span class="workshops-page-hero__eyebrow-text">All workshops</span>
+  </a>
+{% endset %}
+
 {%
-  set 'content' = {
-  "title": "We teach teams like yours how to succeed with Ember.js",
-  "image": "/assets/images/hero/curious-hamster.jpg",
-  "alt": "A close-up photo of a hamster",
-  "loading": "eager"
+  set heroContent = {
+  "eyebrow": heroEyebrow,
+  "title": "Ember Workshops",
+  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in nisi sed eros eleifend scelerisque a eu nisl. Ut eu sollicitudin magna. Nullam varius neque ante, a pulvinar ipsum luctus id.",
+  "image": "/assets/images/hero/ember.jpg",
+  "alt": "Abstract Ember workshop hero image",
+  "loading": "eager",
+  "class": "workshops-page-hero",
+  "toc": [
+    ["Overview", "#overview"],
+    ["Workshops", "#workshops"],
+    ["Instructor", "#instructor"],
+    ["Others Say", "#others-say"]
+  ],
+  "containerType": "lp"
   }
 %}
-{{ colorHero('purple', content) }}
-{% set workshops = collections.workshops | filterByCollectionTag("ember") %}
-{{
-  workshopsList('Our training offering', "We are long-time Ember experts and are best placed to train your team, no matter what level they are at.
-  If you have an existing Ember.js codebase and need to onboard new developers, or if your existing team want to level up their understanding of modern Ember techniques, we have the workshops that you need.
-  <h2 class=\"tech-cards__title\">Workshops Catalog</h2>", workshops)
-}}
-{% set futurePublicWorkshops = publicSvelteWorkshops.workshops | upcoming %}
-{{ publicWorkshops(futurePublicWorkshops) }}
+{{ colorHero('purple', heroContent) }}
 
-<section class="my-10">
-  <div class="container container--lg">
-    <div class="mb-4">
-      <h3 class="mb-2">Our methodology</h3>
-      <p class="body">
-        All our workshops are hands-on. We believe that the best way to learn is by doing. Our
-        trainers introduce concepts and patterns but attendees spend the majority of their time
-        during the workshops writing code, and applying those concepts in practical examples. This
-        structure allows our trainers to spend most of their time in 1:1 conversations with
-        attendees, providing tailored feedback and guidance.
-      </p>
-    </div>
-    <div class="mb-4">
-      <h3 class="mb-2">Logistics</h3>
-      <p class="body">
-        All our workshops can be held in-person or remotely. If you decide to organise a workshop at
-        your company, we are happy to tailor the curriculum to your needs. We can combine multiple
-        workshops, pick and choose modules, as well as develop new content if desired.<br />
-        <a href="/contact/">Get in touch with us</a>
-        to discuss further!
-      </p>
-    </div>
-  </div>
-</section>
+{% set emberWorkshops = collections.workshops | filterByCollectionTag("ember") %}
 
-<section class="my-10 container container--lg">
-  <div class="">
-    <div class="mb-4">
-      <h5 class="mb-015">Ember & Mainmatter</h5>
-      <h3 class="mb-2">A unique skillset</h3>
-      <p>
-        We’re the foremost experts in Ember.js – our team has regularly spoken at
-        <a href="https://emberfest.eu/" target="_blank">EmberFest</a> and
-        <a href="https://www.emberconf.com/">EmberConf</a>, we are
-        <a href="/this-week-in-open-source/"
-          >actively contributing to a number of open source projects across the Ember Ecosystem,
-        </a>
-        and our Ember expert Chris Manson is a Member of multiple Ember Core teams and the creator
-        of <a href="https://github.com/empress" target="_blank">Empress</a>.
-      </p>
-      <p>
-        Mainmatter has been developing big web apps and mentored international teams around backend,
-        frontend, design, as well as process and developer infrastructure for years. We know what it
-        takes to connect everything together and deliver a delightful end-to-end experience.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="my-10 container container--lg">
-  <div class="split-content no-link">
-    <div class="split-content__wrapper">
-      <div class="split-content__content">
-        <h2 class="split-content__subheading">Your mentor</h2>
+<div class="workshops-page">
+  <section class="container container--xl my-10" id="workshops">
+    <div class="workshops-page__intro">
+      <div class="workshops-page__intro-text">
+        <h2 class="mb-2">Ember Workshops</h2>
         <p>
-          Chris Manson is a member of the Ember Core team and a long-time Ember user, building his
-          first Ember app in 2011.
+          We offer a range of workshops bookable for teams that want to grow – on-site or remote.
+          We're also happy to prepare custom workshops – <a href="/contact/?service=workshops"
+            >get in touch with us</a
+          > to talk about what curriculum fits your team best!
         </p>
       </div>
-      <div class="split-content__feature">
-        {%
-          set 'content' = {
-          "image": "/assets/images/authors/real_ate.jpg",
-          "alt": "Chris Manson",
-          "loading": "lazy"
-          }
-        %}
-        {{ secondaryFeature(content, 'split-content__author') }}
+    </div>
+
+    <ul class="workshops-page__list">
+      {% for workshop in emberWorkshops %}
+        <li>{{ workshopCard(workshop) }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  {%
+    set teamCta = {
+    "title": "Want to Book a Workshop for Your Team?",
+    "text": "We are happy to tailor the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as develop new content if desired.",
+    "linkUrl": "/contact/",
+    "linkText": "Get in touch"
+    }
+  %}
+  {{ ctaBanner('purple', 'medium', teamCta) }}
+
+  {%
+    set logoCompanies = [
+    'Redis',
+    'Robin Hood',
+    'Google',
+    'AIS',
+    'HashiCorp',
+    'Faculty',
+    'Keyrock',
+    'BMW Car IT',
+    'CERN'
+    ]
+  %}
+  {{ logoList(logoCompanies, "We Have Trained Teams at", "h2", "h3") }}
+
+  <section class="container container--lg my-10" id="instructor">
+    <div class="split-content no-link">
+      <div class="split-content__wrapper">
+        <div class="split-content__content">
+          <h5 class="workshops-page__instructor-eyebrow mb-015">
+            <img src="/assets/images/icons/instructor.svg" alt="" loading="lazy" />
+            <span>Our Expert Instructor</span>
+          </h5>
+          <h3 class="mb-2">Chris Manson</h3>
+          <p>
+            Chris Manson is a member of the Ember Core team and a long-time Ember user, building his
+            first Ember app in 2011.
+          </p>
+        </div>
+        <div class="split-content__feature">
+          {%
+            set instructorImage = {
+            "image": "/assets/images/authors/real_ate.jpg",
+            "alt": "Chris Manson",
+            "loading": "lazy"
+            }
+          %}
+          {{ secondaryFeature(instructorImage, 'split-content__author') }}
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-{% include "global/ember-cta.njk" %}
+  <section class="container container--lg my-10" id="others-say">
+    <h2 class="mb-4">Our Attendees Say...</h2>
+    {%
+      set quoteContent = {
+      "text": "The work remains mysterious to me, but its importance becomes clearer with every passing day. The structure, guidance, and sense of purpose have exceeded all expectations.",
+      "source": "Mark Scout",
+      "position": "Department Chief, Macrodata Refinement @Lumon Industries",
+      "styling": "redesigned"
+      }
+    %}
+    {{ quote(quoteContent) }}
+
+    {%
+      set quoteContent = {
+      "text": "Few people have the privilege of participating in work of this magnitude. While its full scope remains mysterious, the value of the mission becomes more apparent with every refinement.",
+      "source": "Dylan G.",
+      "position": "Macrodata Refiner @Lumon Industries",
+      "styling": "redesigned"
+      }
+    %}
+    {{ quote(quoteContent) }}
+
+    {%
+      set quoteContent = {
+      "text": "Each refinement brings a sense of accomplishment that is difficult to describe. There is comfort in knowing that the work matters, even when its purpose remains beyond view.",
+      "source": "Helly R.",
+      "position": "Macrodata Refiner @Lumon Industries",
+      "styling": "redesigned"
+      }
+    %}
+    {{ quote(quoteContent) }}
+  </section>
+
+  {%
+    set trainingMaterials = [
+    {
+      "title": "Ember Initiative",
+      "link": "ember-initiative/",
+      "logo": "ember"
+    },
+    {
+      "title": "Modernising Ember Development",
+      "link": "services/workshops/modernising-ember-development/",
+      "logo": "ember"
+    },
+    {
+      "title": "Hands-on Ember",
+      "link": "services/workshops/hands-on-ember/",
+      "logo": "ember"
+    }
+    ]
+  %}
+
+  {{ techCards('workshops-page-materials', 'Explore Our Other Training Materials', '', trainingMaterials) }}
+
+  {{ serviceCta(["ember"]) }}
+
+  {{ contactFormLP("Ember Workshops") }}
+
+  <section>
+    {%
+      set imageData = {
+      "imgPath": "/assets/images/photos/notebook-list.jpg",
+      "alt": "Ember workshop materials",
+      "sizes": "100vw",
+      "loading": "lazy",
+      "sizesArray": [760, 1440, 1920]
+      }
+    %}
+    {{ imageAspectRatio(imageData, "4/1", "35/19") }}
+  </section>
+</div>
