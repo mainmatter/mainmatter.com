@@ -18,7 +18,7 @@ og:
 {%
   set toc = {
     'Overview': '#overview',
-    'The Book': '#course',
+    'The Course': '#course',
     'Table of contents': '#toc',
     'About the Author': '#author',
     'About Mainmatter': '#mainmatter'
@@ -65,18 +65,19 @@ og:
 
 <main class="c-to-rust-migration">
   <section id="overview" class="container container--lg my-10">
-    <h3 class="mb-2">Migrate from C to Rust without stopping the world</h3>
+    <h3 class="mb-2">Migrate from C to Rust without breaking the world</h3>
     <p>
-      You have a C codebase you’d like to migrate to Rust, but you’re not sure where to start.
-      Worse, you can't just stop the world but need to migrate a moving target while the C engineers
-      continue to ship new features. Thus, you need to follow an incremental migration path with C
-      and Rust coexisting in the same codebase temporarily.
+      Securing & modernizing software is a top priority nowadays. Seeing as memory-safety bugs and lingerning
+      tech-debt are the largest sources of security vulnerabilities teams increasingly turn to Rust for its
+      memory safety and reliability. But rewrites are hard, scary and carry a lot of risk. We at Mainmatter
+      assembled our experience helping clients successfully modernize some of the worlds most important software
+      into this workshop:
     </p>
     <p>
-      With this book, you'll learn techniques for migrating C codebases to Rust by solving
-      exercises. You'll learn how to maintain a safe mixed C-Rust codebase, incrementally migrate
-      modules, translate common C idioms to Rust, and use the debugging tools you'll need when
-      things inevitably break — one exercise at a time.
+      Whether you rewrite a self-contained library from scratch or incrementally migrate a large, complex codebase
+      that keeps changing while you work, this course teaches the techniques that help:
+      how to maintain a safe mixed C-Rust codebase, design and structure clean APIs, and translate common C idioms
+      into idiomatic Rust.
     </p>
   </section>
 
@@ -85,8 +86,8 @@ og:
       <h3>The C to Rust Migration Book</h3>
       {{
         btnPrimary({
-          "label": "Read the book",
-          "url": "/c-to-rust-migration-book/course"
+          "label": "Start the course",
+          "url": "https://rust-exercises.com/"
         }, "white", "mt-2")
       }}
     </div>
@@ -97,14 +98,16 @@ og:
 
   <section class="container container--lg my-10">
     <p>
-      Learn how to bridge C and Rust through FFI, one concept at a time. You'll discover how
-      languages communicate at the binary level, how to make that boundary safe and maintainable,
-      and how to expose clean Rust APIs to existing C consumers.
+      <a href="https://rust-exercises.com/">This workshop</a> is built around our philosophy of
+      self-paced exercises. Each concept is paired with an exercise you solve in a real Rust
+      package, with a test suite that checks your solution.
     </p>
     <p>
-      This guide assumes basic familiarity with C and Rust, but no prior FFI experience. You'll
-      build your knowledge in small, manageable steps, and by the end you'll have the tools and
-      confidence to migrate a production C codebase to Rust incrementally, without disruption.
+      It assumes prior knowledge of Rust and some C. No prior FFI experience required. That's what
+      the course teaches.
+    </p>
+    <p>
+      By the end you'll be ready to introduce Rust into a C codebase in a productive way.
     </p>
   </section>
 
@@ -113,22 +116,22 @@ og:
   {%
     set topics = [{
     "title": "Foreign Function Interfaces",
-    "text": "We kick off with the fundamentals of FFI: how C and Rust communicate at the binary level through the C ABI, symbol tables, and the linker. You'll learn why C became the universal standard for language interoperability and write your first <code>extern \"C\"</code> blocks by hand. You'll understand exactly what you're promising the compiler when you declare a binding — and what happens when you get the signature wrong."
+    "text": "The fundamentals of FFI: how C and Rust communicate at the binary level through the C ABI, symbol tables, and the linker. You'll write your first <code>extern \"C\"</code> blocks by hand and see what you're promising the compiler when you declare a binding, and what goes wrong when the signature doesn't match."
     },{
     "title": "Types and Data Across the Boundary",
-    "text": "This module covers how to safely move primitive values, strings, structs, and collections across the language boundary while preserving clear ownership semantics. You'll use <code>bindgen</code> to automate the generation of Rust bindings from C headers, and <code>cbindgen</code> to generate C headers from your Rust code, and learn how to configure both for a real codebase with non-trivial types."
+    "text": "How to move primitive values, strings, structs, and collections across the language boundary while keeping ownership clear. You'll use <code>bindgen</code> to generate Rust bindings from C headers, and <code>cheadergen</code>, Mainmatter's tool for the reverse direction, to generate C headers from your Rust code, and configure both for non-trivial types."
     },{
     "title": "FFI-Safe Types",
-    "text": "Raw pointers and untyped primitives are the biggest source of bugs at the FFI boundary. This module introduces safer alternatives: <code>NonNull</code>, <code>Option</code>, newtype wrappers, and enum-based discriminants that carry meaning instead of just values. You'll learn to design types that make invalid states unrepresentable, even when talking to C code that has no type safety of its own."
+    "text": "Raw pointers and untyped primitives are a major source of bugs at the FFI boundary. You'll learn safer alternatives: <code>NonNull</code>, <code>Option</code>, newtype wrappers, and enum discriminants that carry meaning instead of bare values, and how to design types that make invalid states unrepresentable even when talking to C code that has no type safety of its own."
     },{
-    "title": "Validation and Narrowing",
-    "text": "Every FFI function is a trust boundary. C callers can pass null pointers, out-of-range values, or invalid UTF-8 — and Rust has no way to know at compile time. This module builds a discipline around validating and narrowing inputs at the boundary before they reach safe Rust, so that garbage data from C can never propagate into your business logic."
+    "title": "FFI validation",
+    "text": "Every FFI function is a trust boundary. C callers can pass null pointers, out-of-range values, or invalid UTF-8, and Rust can't catch that at compile time. You'll build the discipline of validating and narrowing inputs at the boundary, so invalid data from C never reaches safe Rust or your business logic."
     },{
     "title": "Error Handling and API Design",
-    "text": "Rust's <code>Result</code> and <code>?</code> stop at <code>extern \"C\"</code>. This module covers how to convert Rust's error types into C-compatible results: error code enums, out-parameters, and how to surface meaningful failure information without leaking Rust internals. You'll also learn to expose coarse operations rather than fine-grained setters and keep your API surface intentionally small."
+    "text": "Rust's <code>Result</code> and <code>?</code> stop at <code>extern \"C\"</code>. You'll convert Rust error types into C-compatible results with error-code enums and out-parameters, and surface failure information without leaking Rust internals. You'll also learn to expose coarse operations rather than per-field setters and keep your API surface small."
     },{
     "title": "Production-Quality FFI",
-    "text": "The final module ties everything together. You'll document FFI functions using Rust's <code>/// # Safety</code> convention with numbered invariants, so every unsafe contract is explicit and surfaces as C doc comments in the generated headers via <code>cbindgen</code>. We cover build integration, automated checks, and the mindset of treating your FFI surface as an API you'll maintain forever."
+    "text": "You'll document FFI functions with Rust's <code>/// # Safety</code> convention and numbered invariants, so every unsafe contract is explicit and surfaces as C doc comments in the generated headers via <code>cheadergen</code>. We cover build integration, automated checks, and treating your FFI surface as an API you'll maintain forever."
     }]
   %}
   <div id="toc">{{ strategyList('course-topic', 'Table of contents', topics) }}</div>
@@ -141,7 +144,7 @@ og:
       <div class="author__wrapper">
         <div class="author">
           <div class="workshop-authors__image-wrapper author__image-wrapper">
-            {% image "/assets/images/authors/JonasKruckenberg.jpg", mentor.data.name, '8rem', 'eager', 'author__lead-image', [160, 240, 320] %}
+            {% image "/assets/images/authors/JonasKruckenberg.jpg", mentor.data.name, '3.75rem', 'eager', 'author__lead-image', [120] %}
           </div>
           <div class="author__text-wrapper">
             <div class="author__name-wrapper">
@@ -160,7 +163,9 @@ og:
 
   <section id="mainmatter" class="py-7 background-aqua">
     <div class="container mainmatter-section container--xl">
-      <h3 class="mb-2">Need help with your Rust challenges? Reach out!</h3>
+      <h3 class="mb-2">
+        If you're facing challenges with Rust and need a helping hand, reach out!
+      </h3>
       <p>
         <a href="/">Mainmatter</a> is a software consulting company that specializes in Rust. We
         offer consulting services, training, and mentorship to companies that want to migrate from C
@@ -190,8 +195,8 @@ og:
       <p class="text--accent">Community</p>
       <h3 class="h3">EuroRust 2026</h3>
       <p>
-        EuroRust is a two-day conference for all things Rust: two full conference days and two days
-        of fun side activities, workshops, hackathons and more. Join us in October in Barcelona!
+        EuroRust is a two-day conference for all things Rust, plus two more days of side activities,
+        workshops, and hackathons. Join us in October in Barcelona.
       </p>
       {{
         btnPrimary({
