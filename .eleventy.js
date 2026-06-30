@@ -68,6 +68,10 @@ module.exports = async function (eleventyConfig) {
    */
   dayjs.extend(customParseFormat);
 
+  eleventyConfig.addFilter("monthDay", function (date) {
+    return dayjs(date).format("MMMM D");
+  });
+
   eleventyConfig.addFilter("monthDayYear", function (date) {
     return dayjs(date).format("MMMM D, YYYY");
   });

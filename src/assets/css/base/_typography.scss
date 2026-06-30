@@ -55,12 +55,12 @@ h5,
 
 body {
   font-size: 1.5rem;
-  line-height: 2;
+  line-height: 1.6;
 }
 
 .large {
   font-size: clamp(1.5rem, 1rem + 1.0417vw, 1.75rem);
-  line-height: 2;
+  line-height: 1.6;
 }
 
 .strong {
@@ -69,20 +69,20 @@ body {
 
 .medium {
   font-size: 1.2rem;
-  line-height: 2;
+  line-height: 1.6;
   font-weight: 400;
 }
 
 .small {
   font-size: 1rem;
   font-weight: 700;
-  line-height: 2;
+  line-height: 1.6;
 }
 
 .caption {
   font-size: 1.5rem;
   font-weight: 700;
-  line-height: 2;
+  line-height: 1.6;
 }
 
 .text--accent {
