@@ -93,6 +93,7 @@
 
 #nav-overflow {
   inset: 6rem auto auto calc(50% + 6rem);
+  min-width: 20rem;
   padding: 2rem;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
   font-size: 1.25rem;
@@ -114,6 +115,7 @@
   cursor: pointer;
   list-style: none;
   transition: color 0.3s ease;
+  user-select: none;
 
   &::-webkit-details-marker {
     display: none;
@@ -143,6 +145,36 @@
   margin: 0.5rem 0 0;
   padding: 0 0 0 1rem;
   list-style: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .nav__nested {
+    interpolate-size: allow-keywords;
+  }
+
+  .nav__nested::details-content {
+    block-size: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+      block-size 0.2s ease,
+      opacity 0.2s ease,
+      content-visibility 0.2s ease allow-discrete;
+  }
+
+  .nav__nested-list {
+    transform: translateY(-0.25rem);
+    transition: transform 0.2s ease;
+  }
+
+  .nav__nested[open]::details-content {
+    block-size: auto;
+    opacity: 1;
+  }
+
+  .nav__nested[open] .nav__nested-list {
+    transform: translateY(0);
+  }
 }
 
 @supports (anchor-name: --n) and (position-anchor: --n) and (position-area: none) {
