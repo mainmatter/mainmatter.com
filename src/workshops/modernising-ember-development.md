@@ -1,7 +1,7 @@
 ---
 title: "Modernising your Ember App Development with GJS and Vite"
 tags: "ember"
-format: "Workshop: 2–5 days"
+format: "2–5 days"
 subtext: "Bookable for teams – on-site or remote"
 description: A 2–5 day workshop in which we teach you how to upgrade any Ember app to the most modern techiques in the Polaris Edition. We introduce you to single-file-components (GJS) and in which we go through a series of stages that each build on one another. Each topic is introduced via an in-depth presentation as well as a small, focussed demo application that illustrates the respective concept in practice.
 introduction:

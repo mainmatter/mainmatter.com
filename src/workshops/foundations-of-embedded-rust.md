@@ -1,16 +1,9 @@
 ---
 title: "Foundations of Embedded Rust"
 tags: "rust"
-format: "Workshop: 3 days"
+format: "3 days"
 subtext: "Bookable for teams – on-site or remote"
-price: "450 €"
-dates:
-  - date: 2027-05-20
-    url: https://www.tickettailor.com/events/mainmatter/foundations-of-embedded-rust-may-2027
-  - date: 2027-08-26
-    url: https://www.tickettailor.com/events/mainmatter/foundations-of-embedded-rust-august-2027
-  - date: 2027-11-18
-    url: https://www.tickettailor.com/events/mainmatter/foundations-of-embedded-rust-november-2027
+shortDescription: "Apply your embedded engineering skills to Rust using real hardware. Learn the embedded ecosystem, tooling, device drivers, async applications, IoT communication, Zephyr integration, and safety-critical considerations."
 description: >
   <p>Rust is the future of embedded software. No matter if you’re developing robust embedded systems, creating low-power, secure IoT products, or taking your device to space, Rust revolutionizes embedded software engineering. In this workshop, you’ll learn to apply your embedded engineering skills to the modern, ergonomic, performant, and memory safe programming language that is Rust. You’ll get acquainted with Rust’s embedded ecosystem, widely used tooling, and work your way from the basics to writing complex, multitasking applications.</p> <p>Furthermore, this workshops covers the current state of art when it comes to using Rust in safety-critical systems with real-time requirements.</p> <p>At the end of this workshop, you will be able to build robust and secure (asynchronous) embedded applications in Rust, write platform-agnostic device drivers, and work with tools and frameworks that are widely used in Rust's embedded ecosystem. On top of that, you know what to consider when it comes to using Rust in safety-critical systems.</p> <p>This workshop is targeted at experienced embedded developers that want to learn embedded development in Rust. Limited knowledge of Rust is assumed, but you are assumed to be proficient in low-level embedded software engineering in C or C++.</p><p>We will work with real hardware during this workshop.</p>
 

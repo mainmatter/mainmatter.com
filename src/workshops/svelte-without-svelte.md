@@ -1,7 +1,7 @@
 ---
 title: "Svelte without Svelte"
 tags: "svelte"
-format: "Workshop: 1 day"
+format: "1 day"
 subtext: "Bookable for teams – on-site or remote"
 description: Can't wait to use Svelte in your day-to-day job but stuck with a legacy React codebase? Worry not! This 1-day workshop will teach you everything you need to know to start using Svelte today!
 introduction: "<p>If you've tried Svelte, you most likely love it and can't wait to start using it in your day-to-day job. But if you're stuck in a React codebase, it may seem impossible to convince your colleagues to migrate the whole project. There's another way! Svelte is very flexible, and Vite even more so. Combined, they can bring Svelte into your life now!</p>"

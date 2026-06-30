@@ -1,7 +1,7 @@
 ---
 title: "Testing in Rust: an introduction"
 tags: "rust"
-format: "Workshop: 4 hours"
+format: "4 hours"
 subtext: "Bookable for teams – on-site or remote"
 description: This half-day workshop will build up your Rust's testing toolkit. We will start from scratch, with your first unit test. By the end, you will have a comprehensive understanding of the available test types, the best practices in terms of test organization as well as their runtime implications.
 introduction: |

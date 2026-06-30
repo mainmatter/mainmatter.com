@@ -1,7 +1,7 @@
 ---
 title: "You can't fix what you can't see: telemetry for Rust APIs"
 tags: "rust"
-format: "Workshop: 1 day"
+format: "1 day"
 subtext: "Bookable for teams – on-site or remote"
 description: "This 1-day workshop will introduce you to a comprehensive toolkit to detect, troubleshoot and resolve issues in your Rust APIs. The workshop is designed for developers who are operating Rust services in production-like environments, or are preparing to do so."
 introduction: <p>Your Rust application has finally been deployed to production! Nice! But is it working? This workshop will introduce you to a comprehensive toolkit to detect, troubleshoot and resolve issues in your Rust APIs.</p> <p>This workshop is designed for developers who are operating Rust services in production-like environments, or are preparing to do so.</p>

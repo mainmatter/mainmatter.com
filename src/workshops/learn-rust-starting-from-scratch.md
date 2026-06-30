@@ -1,7 +1,7 @@
 ---
 title: "Learn Rust, starting from scratch"
 tags: "rust"
-format: "Workshop: 4 days"
+format: "4 days"
 subtext: "Bookable for teams – on-site or remote"
 description: This 4-days workshop helps you get started with Rust, assuming no prior knowledge of the language. The workshop starts from the absolute basics and gradually builds up to more advanced topics.
 introduction: |

@@ -47,7 +47,22 @@ eleventyImport:
 %}
 {{ colorHero('purple', heroContent) }}
 
-{% set rustWorkshops = collections.workshops | filterByCollectionTag("rust") %}
+{%
+  set rustWorkshops = [
+    collections.workshops | findByCollectionSlug("learn-rust-starting-from-scratch"),
+    collections.workshops | findByCollectionSlug("test-rust-workshop-with-public-dates"),
+    collections.workshops | findByCollectionSlug("rust-python-interoperability"),
+    collections.workshops | findByCollectionSlug("c-to-rust"),
+    collections.workshops | findByCollectionSlug("test-rust-workshop-with-team-and-ticket-options"),
+    collections.workshops | findByCollectionSlug("edge-computing-with-webassembly"),
+    collections.workshops | findByCollectionSlug("an-introduction-to-testing-in-rust"),
+    collections.workshops | findByCollectionSlug("advanced-testing-in-rust"),
+    collections.workshops | findByCollectionSlug("telemetry-for-rust-apis"),
+    collections.workshops | findByCollectionSlug("foundations-of-embedded-rust"),
+    collections.workshops | findByCollectionSlug("introduction-to-rust-for-web-developers"),
+    collections.workshops | findByCollectionSlug("build-production-ready-apis-in-rust")
+  ]
+%}
 
 <div class="workshops-page">
   <section class="container container--xl my-10" id="workshops">

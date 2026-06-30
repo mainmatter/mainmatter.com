@@ -1,7 +1,7 @@
 ---
 title: "Building MCP Servers"
 tags: "mcp"
-format: "Workshop: 2 days"
+format: "2 days"
 subtext: "Bookable for teams – on-site or remote"
 description: Learn to build powerful Model Context Protocol (MCP) servers that extend AI capabilities with custom tools, resources, and integrations. This comprehensive workshop covers MCP fundamentals through advanced deployment strategies.
 introduction: "<p>The Model Context Protocol (MCP) is revolutionizing how AI systems interact with external data and services. This hands-on workshop teaches you to build sophisticated MCP servers that can provide AI models with custom tools, dynamic resources, and contextual information. From basic server setup to advanced features like authorization and deployment, you'll gain the skills to create MCP servers that unlock new possibilities for AI-powered applications.</p>"

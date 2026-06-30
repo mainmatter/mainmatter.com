@@ -1,7 +1,7 @@
 ---
 title: "Design system kickoff (interface inventory)"
 tags: "design"
-format: "Workshop: 2-3 days"
+format: "2-3 days"
 subtext: Bookable on request – onsite or remote
 description: A 2-3 day workshop during which we create an interface inventory of your digital product, and align with your team on how to prioritize refactoring using a design systems methodology.
 introduction: <p>Create an interface inventory of your digital product, and align with your team on how to prioritize refactoring using a design systems methodology.</p>

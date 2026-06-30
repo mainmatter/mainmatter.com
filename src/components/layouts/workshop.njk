@@ -13,21 +13,24 @@ layout: "base"
 {% from "quote.njk" import quote %}
 
 {% macro workshopTicketPanels() %}
-  <div class="workshop-detail__ticket-panels">
-    <section class="workshop-detail__ticket-panel">
-      <h3 class="h4">Bookable for teams</h3>
-      {% if format %}
-        <p class="workshop-detail__ticket-meta">
-          <img src="/assets/images/icons/calendar.svg" alt="" loading="lazy" />
-          {{ format }}
-        </p>
-      {% endif %}
-      {% if subtext %}
+  {% set hasIndividualTickets = price or dates %}
+  <div
+    class="workshop-detail__ticket-panels {% if not hasIndividualTickets %}workshop-detail__ticket-panels--team-only{% endif %}"
+  >
+    <section class="workshop-detail__ticket-panel workshop-detail__ticket-panel--team">
+      <div>
+        <h3 class="h4">Bookable for teams</h3>
+        {% if format %}
+          <p class="workshop-detail__ticket-meta">
+            <img src="/assets/images/icons/calendar.svg" alt="" loading="lazy" />
+            {{ format }}
+          </p>
+        {% endif %}
         <p class="workshop-detail__ticket-meta">
           <img src="/assets/images/icons/map.svg" alt="" loading="lazy" />
-          {{ subtext }}
+          On-site or remote
         </p>
-      {% endif %}
+      </div>
       {%
         set teamLink = {
         "label": "Book for your team",
@@ -37,40 +40,38 @@ layout: "base"
       {{ btnPrimary(teamLink, 'aqua', 'workshop-detail__ticket-link') }}
     </section>
 
-    <section class="workshop-detail__ticket-panel">
-      <h3 class="h4">Individual tickets</h3>
-      {% if price %}
-        <p class="workshop-detail__ticket-price">
-          <img src="/assets/images/icons/bills.svg" alt="" loading="lazy" />
-          {{ price | safe }}
-        </p>
-      {% else %}
-        <p class="workshop-detail__ticket-meta">Lorem ipsum dolor sit amet.</p>
-      {% endif %}
+    {% if hasIndividualTickets %}
+      <section class="workshop-detail__ticket-panel">
+        <h3 class="h4">Individual tickets</h3>
+        {% if price %}
+          <p class="workshop-detail__ticket-price">
+            <img src="/assets/images/icons/bills.svg" alt="" loading="lazy" />
+            {{ price | safe }}
+          </p>
+        {% endif %}
 
-      {% if dates %}
-        <ul class="workshop-detail__dates">
-          {% for date in dates %}
-            {% set workshopDate = date.date or date %}
-            <li>
-              {% if date.url %}
-                <a href="{{ date.url }}">
-                  <span>{{ workshopDate | monthDayYear }}</span>
-                  {% include 'svg/arrow.njk' %}
-                </a>
-              {% else %}
-                <span>
-                  <span>{{ workshopDate | monthDayYear }}</span>
-                  {% include 'svg/arrow.njk' %}
-                </span>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      {% else %}
-        <p class="workshop-detail__ticket-meta">Lorem ipsum dolor sit amet.</p>
-      {% endif %}
-    </section>
+        {% if dates %}
+          <ul class="workshop-detail__dates">
+            {% for date in dates %}
+              {% set workshopDate = date.date or date %}
+              <li>
+                {% if date.url %}
+                  <a href="{{ date.url }}">
+                    <span>{{ workshopDate | monthDayYear }}</span>
+                    {% include 'svg/arrow.njk' %}
+                  </a>
+                {% else %}
+                  <span>
+                    <span>{{ workshopDate | monthDayYear }}</span>
+                    {% include 'svg/arrow.njk' %}
+                  </span>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </section>
+    {% endif %}
   </div>
 {% endmacro %}
 
