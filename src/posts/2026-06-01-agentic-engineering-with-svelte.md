@@ -259,7 +259,7 @@ When it comes to the choice of your observability platform anything will do but,
 
 ## How all of this applies in the real world?
 
-There's no doubt that LLMs changed the name of the game for software development...today we have new tools and workflows to learn, especially when building with Svelte, but the engineering practices we've always relied on and that we've used to help our clients haven't gone away. In fact, the same principles that help teams ship quickly without sacrificing code quality can (and to be fair, should) also help AI agents work effectively in a codebase without turning it into a spaghetti-code nightmare. But words are easy to write...when it comes to real software is this actually feasible? Could you actually build a good application solely using agents?
+There's no doubt that LLMs changed the name of the game for software development...today we have new tools and workflows to learn, especially when building with Svelte, but the engineering practices we've always relied on and that we've used to help our clients haven't gone away. In fact, the same principles that help teams ship quickly without sacrificing code quality are, today, effectively a requirement to help AI agents work effectively in a codebase without turning it into a spaghetti-code nightmare. But words are easy to write...when it comes to real software is this actually feasible? Could you actually build a good application solely using agents?
 
 Good news, we put that to the test!
 
