@@ -23,8 +23,7 @@ class MDBookSidebarScrollbox extends HTMLElement {
                 link.href = path_to_root + href;
             }
             // The 'index' page is supposed to alias the first chapter in the book.
-            // Check both with and without the '.html' suffix to be robust against pretty URLs
-            if (link.href.replace(/\.html$/, '') === current_page.replace(/\.html$/, '')
+            if (link.href === current_page
                 || i === 0
                 && path_to_root === ''
                 && current_page.endsWith('/index.html')) {
@@ -105,7 +104,7 @@ window.customElements.define('mdbook-sidebar-scrollbox', MDBookSidebarScrollbox)
     let headers;
     // Array of li elements that are initially collapsed headers in the sidebar.
     // I'm not sure why eslint seems to have a false positive here.
-     
+    // eslint-disable-next-line prefer-const
     let headerToggles = [];
     // This is a debugging tool for the threshold which you can enable in the console.
     let thresholdDebug = false;

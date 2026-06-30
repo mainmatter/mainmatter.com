@@ -7,7 +7,7 @@
 }
 
 html {
-    font-family: "Core Sans A", sans-serif;
+    font-family: "Open Sans", sans-serif;
     color: var(--fg);
     background-color: var(--bg);
     text-size-adjust: none;
@@ -18,22 +18,6 @@ body {
     margin: 0;
     font-size: 1.6rem;
     overflow-x: hidden;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong,
-b,
-th,
-dt,
-.chapter li.part-title,
-.blockquote-tag-title,
-.searchresults-header {
-    font-family: "Core Sans A Bold", "Core Sans A", sans-serif;
 }
 
 code {
@@ -97,6 +81,7 @@ dt:target::before {
 .page {
     outline: 0;
     padding: 0 var(--page-padding);
+    margin-block-start: calc(0px - var(--menu-bar-height)); /* Compensate for the #mdbook-menu-bar-hover-placeholder */
 }
 .page-wrapper {
     box-sizing: border-box;
@@ -386,23 +371,23 @@ dd > p {
     border-inline-start-color: var(--blockquote-caution-color);
 }
 
-.blockquote-tag-note > .blockquote-tag-title {
+.blockquote-tag-note .blockquote-tag-title {
     color: var(--blockquote-note-color);
 }
 
-.blockquote-tag-tip > .blockquote-tag-title {
+.blockquote-tag-tip .blockquote-tag-title {
     color: var(--blockquote-tip-color);
 }
 
-.blockquote-tag-important > .blockquote-tag-title {
+.blockquote-tag-important .blockquote-tag-title {
     color: var(--blockquote-important-color);
 }
 
-.blockquote-tag-warning > .blockquote-tag-title {
+.blockquote-tag-warning .blockquote-tag-title {
     color: var(--blockquote-warning-color);
 }
 
-.blockquote-tag-caution > .blockquote-tag-title {
+.blockquote-tag-caution .blockquote-tag-title {
     color: var(--blockquote-caution-color);
 }
 

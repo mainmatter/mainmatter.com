@@ -31,7 +31,7 @@ pre > .buttons {
 }
 
 a, a:visited, a:active, a:hover {
-    color: var(--links);
+    color: #4183c4;
     text-decoration: none;
 }
 
