@@ -1,7 +1,7 @@
 ---
 title: "Migrating C to Rust"
 tags: "rust"
-format: "Workshop: 3 days"
+format: "3 days"
 subtext: "Bookable for teams – on-site or remote"
 description: This 3-day workshop gives C/C++ developers a clear, practical path to migrating real C code to Rust, covering FFI boundaries, safe abstractions, and testing.
 introduction: |

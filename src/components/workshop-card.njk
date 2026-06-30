@@ -2,9 +2,9 @@
 
 {%- macro workshopCard(workshop) -%}
   {% set data = workshop.data %}
-  {% set duration = data.duration or data.format | replace("Workshop: ", "") %}
+  {% set duration = data.duration or data.format %}
   {% set description = data.description %}
-  {% set price = data.individualTicketPrice or data.price %}
+  {% set price = data.price %}
   {% set dates = data.dates %}
 
   <article class="workshop-card {% if not price and not dates %}workshop-card--full{% endif %}">
@@ -30,7 +30,15 @@
             </span>
           {% endif %}
           {% if price %}
-            <span class="workshop-card__ticket-availability"> Individual tickets available </span>
+            <span class="workshop-card__ticket-availability">
+              <img
+                class="workshop-card__meta-icon"
+                src="/assets/images/icons/ticket.svg"
+                alt=""
+                loading="lazy"
+              />
+              Individual tickets available
+            </span>
           {% endif %}
         </p>
       {% endif %}
@@ -38,20 +46,46 @@
       <h4 class="workshop-card__title h4">{{ data.title }}</h4>
 
       {% if description %}
-        <p class="workshop-card__description workshop-card__description--desktop">
+        <div class="workshop-card__description workshop-card__description--desktop">
           {{ description | safe }}
-        </p>
+        </div>
       {% endif %}
 
       {% if description or dates %}
-        <details class="workshop-card__mobile-details">
+        <details
+          class="workshop-card__mobile-details"
+          data-workshop-card-mobile-details
+          data-has-dates="{% if dates %}true{% else %}false{% endif %}"
+        >
           <summary class="workshop-card__mobile-summary">
             {% if description %}
-              <span class="workshop-card__mobile-description"> {{ description | safe }} </span>
+              <div class="workshop-card__mobile-description">{{ description | safe }}</div>
             {% endif %}
-            <span class="workshop-card__mobile-summary-text"> View details </span>
+            <span class="workshop-card__mobile-summary-text">
+              <span class="workshop-card__mobile-summary-text-closed">View details</span>
+              <span class="workshop-card__mobile-summary-text-open">Hide details</span>
+            </span>
           </summary>
           {% if dates %}
+            <div class="workshop-card__mobile-ticket-details">
+              <div class="workshop-card__mobile-ticket-header">
+                <h5 class="workshop-card__mobile-ticket-title">Individual tickets</h5>
+                <button class="workshop-card__mobile-ticket-hide" type="button">
+                  Hide details
+                </button>
+              </div>
+              {% if price %}
+                <p class="workshop-card__mobile-ticket-price">
+                  <img
+                    class="workshop-card__detail-icon"
+                    src="/assets/images/icons/bills.svg"
+                    alt=""
+                    loading="lazy"
+                  />
+                  {{ price | safe }}
+                </p>
+              {% endif %}
+            </div>
             <ul class="workshop-card__dates workshop-card__mobile-dates">
               {% for date in dates %}
                 {% set workshopDate = date.date or date %}

@@ -1,7 +1,7 @@
 ---
 title: "Svelte & SvelteKit"
 tags: "svelte"
-format: "Workshop: 2-3 days"
+format: "2-3 days"
 subtext: "Bookable for teams – on-site or remote"
 description: This 2-3days workshop takes participants through the entire process of building a complete, real-world application and teaches the theoretical concepts along the way. Each topic is introduced via an in-depth presentation followed by a practice exercise.
 introduction:

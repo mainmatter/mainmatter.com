@@ -1,7 +1,7 @@
 ---
 title: "Practical TypeScript"
 tags: "typescript"
-format: "Workshop: 2 days"
+format: "2 days"
 subtext: "Bookable for teams – on-site or remote"
 description: This comprehensive 2-day workshop covers TypeScript from basics to advanced concepts, providing hands-on experience with type safety, modern development patterns, and best practices for building robust applications.
 introduction: "<p>TypeScript has become the de facto standard for building scalable JavaScript applications, offering powerful type safety and developer experience improvements. This workshop takes you from the fundamentals of TypeScript to advanced patterns and techniques used in production applications. Whether you're new to TypeScript or looking to deepen your understanding of advanced features like generics, conditional types, and branded types, this workshop provides comprehensive coverage with practical, hands-on exercises.</p>"
