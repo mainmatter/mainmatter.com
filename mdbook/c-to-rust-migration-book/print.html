@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-fe43f3a9.js";
+            window.path_to_searchindex_js = "searchindex-321107b2.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-6e5a550c.js"></script>
+        <script src="toc-ac90ec63.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -231,7 +231,7 @@ recommend one of the following:
 <ul>
 <li><a href="https://www.jetbrains.com/rust/">RustRover</a>;</li>
 <li><a href="https://code.visualstudio.com">Visual Studio Code</a> with the
-<a href="https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer"><code>rust-analyzer</code></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer"><code>rust-analyzer</code></a>
 extension.</li>
 </ul>
 </li>
@@ -269,8 +269,6 @@ language standardization.</p>
 use it to interoperate between C and Rust, see common pitfalls and more!</p>
 <h2 id="exercises"><a class="header" href="#exercises">Exercises</a></h2>
 <p>The exercises for this section are located in <code>exercises/01_intro</code></p>
-<h2 id="exercise"><a class="header" href="#exercise">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/00_README"><code>01_intro/00_README</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="what-is-ffi-how-do-languages-communicate"><a class="header" href="#what-is-ffi-how-do-languages-communicate">What Is FFI? How Do Languages Communicate?</a></h1>
 <p>Programming language design has taken many different paths over the years. We
@@ -338,8 +336,6 @@ exercises we will see how to make this much safer and more ergonomic.</p>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
 <p>Head to the exercise, where you’ll write this block for a <code>bm_add</code> function
 implemented in C.</p>
-<h2 id="exercise-1"><a class="header" href="#exercise-1">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/01_what_is_ffi"><code>01_intro/01_what_is_ffi</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1">
@@ -459,8 +455,6 @@ troubleshoot in the worst case.</p>
 <code>bm_add</code>, see what happens on your machine. Feel free to also play around a bit
 with the Compiler Explorer playgrounds to see how different miscompilations
 manifest in the generated assembly.</p>
-<h2 id="exercise-2"><a class="header" href="#exercise-2">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/02_drift"><code>01_intro/02_drift</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-1">
@@ -520,8 +514,6 @@ in <code>build.rs</code>. Safe wrappers and tests stay identical.</p>
 <p><code>cargo expand -p bm_bindgen</code> shows what <code>bindgen</code> produced. Requires
 <a href="https://github.com/dtolnay/cargo-expand"><code>cargo-expand</code></a>.</p>
 </details>
-<h2 id="exercise-3"><a class="header" href="#exercise-3">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/03_bindgen"><code>01_intro/03_bindgen</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="exposing-rust-to-c-with-cheadergen"><a class="header" href="#exposing-rust-to-c-with-cheadergen">Exposing Rust to C with <code>cheadergen</code></a></h1>
 <p>So far, we’ve always called C from Rust. Now we flip. Remember that our goal is
@@ -589,8 +581,6 @@ us build something with better diagnostics and fewer surprises.</p>
 <p>You’ll port the <code>bm_strlower</code> function to Rust and call
 <code>cheadergen generate --lang c --output-dir c_test -p cheadergen</code> to generate the
 header automatically.</p>
-<h2 id="exercise-4"><a class="header" href="#exercise-4">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/04_cheadergen"><code>01_intro/04_cheadergen</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="extern-c-and-ffi-safe-types"><a class="header" href="#extern-c-and-ffi-safe-types"><code>extern "C"</code> And FFI-Safe Types</a></h1>
 <p>We have passed data from C to Rust and from Rust to C in the previous exercises.
@@ -716,8 +706,6 @@ represents generics.</p>
 <p>Head to the exercise. There you will find an FFI function that attempts to pass
 types that are not FFI-safe. Notice the compiler-generated warnings! It is your
 job to fix this by using FFI-safe types.</p>
-<h2 id="exercise-5"><a class="header" href="#exercise-5">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/05_ffi_safe_types"><code>01_intro/05_ffi_safe_types</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-2">
@@ -808,8 +796,6 @@ translation: a naïve transliteration from C to Rust that has a number of issues
 <p>Let’s apply what we learned above and fix the implementation!</p>
 <p>Hint: check the exercises tests to check the expected behaviour of
 <code>bm_normalize_url</code></p>
-<h2 id="exercise-6"><a class="header" href="#exercise-6">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/06_validate_and_narrow"><code>01_intro/06_validate_and_narrow</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-3">
@@ -882,8 +868,6 @@ as a small set of verbs, not a mirror of your internal struct.</p>
 <h2 id="head-to-the-exercise-6"><a class="header" href="#head-to-the-exercise-6">Head to the exercise</a></h2>
 <p>Head to the exercise where we will update our exercise 06 solution with the new
 rule(s) we have learned.</p>
-<h2 id="exercise-7"><a class="header" href="#exercise-7">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/07_high_quality_ffi_apis"><code>01_intro/07_high_quality_ffi_apis</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-4">
@@ -909,8 +893,6 @@ CLI. We will learn how to approach real-world codebases, structure our approach,
 and debug our code when it breaks.</p>
 <h2 id="exercises-1"><a class="header" href="#exercises-1">Exercises</a></h2>
 <p>The exercises for this section are located in <code>exercises/02_intermediate</code></p>
-<h2 id="exercise-8"><a class="header" href="#exercise-8">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/00_README"><code>02_intermediate/00_README</code></a></p>
 
                     </main>
 
