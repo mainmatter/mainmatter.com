@@ -18,9 +18,9 @@ og:
 {%
   set toc = {
     'Overview': '#overview',
-    'The Course': '#course',
+    'The course': '#course',
     'Table of contents': '#toc',
-    'About the Author': '#author',
+    'About the author': '#author',
     'About Mainmatter': '#mainmatter'
   }
 %}
@@ -66,7 +66,7 @@ og:
       <h3>The C to Rust Migration Book</h3>
       {{
         btnPrimary({
-          "label": "Start the course",
+          "label": "Start learning",
           "url": "/c-to-rust-migration-book/course/"
         }, "white", "mt-2")
       }}
@@ -78,7 +78,7 @@ og:
 
   <section class="container container--lg my-10">
     <p>
-      <a href="/c-to-rust-migration-book/course/">This workshop</a> is built around our philosophy
+      <a href="/c-to-rust-migration-book/course/">This course</a> is built around our philosophy
       of self-paced exercises. Each concept is paired with an exercise you solve in a real Rust
       package, with a test suite that checks your solution.
     </p>
@@ -115,7 +115,7 @@ og:
   <div id="toc">{{ strategyList('course-topic', 'Table of contents', topics) }}</div>
 
   {% set mentor = 'JonasKruckenberg' | findBySlug %}
-  {% set mentorBio = "Jonas Kruckenberg is an engineer at Mainmatter and creator of the k23 operating system. He has helped people to build fast, secure, cross-platform desktop apps through his work on Tauri and is deeply involved in open-source, local-first, and humane software. Outside of code, he sings in classical ensembles and enjoys hiking." %}
+  {% set mentorBio = "Jonas Kruckenberg is a systems engineer and technologist focused on next-generation computing infrastructure. He is the lead author of k23, an experimental high-reliability operating system. As a TC39 Invited Expert, he helps shape the future of web by bringing non-browser perspectives to JavaScript language standardization." %}
   <section id="author" class="workshop-authors container container--lg">
     <div class="workshop__content post__content--workshop">
       <h3 class="workshop-topics__heading">About the author</h3>
