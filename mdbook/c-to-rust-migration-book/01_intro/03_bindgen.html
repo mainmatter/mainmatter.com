@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-321107b2.js";
+            window.path_to_searchindex_js = "../searchindex-65aa6a29.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-ac90ec63.js"></script>
@@ -216,7 +216,7 @@ will not silently corrupt our Rust code. But remember these bindings are as
 <code>-sys</code> crate pattern: a <code>&lt;crate&gt;-sys</code> crate holds the raw bindings, while the
 <code>&lt;crate&gt;</code> crate on top exposes the safe abstractions.</p>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
-<p>Replace the hand-written <code>extern</code> block from the previous chapter with <code>bindgen</code>
+<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/03_bindgen">the exercise</a>. Replace the hand-written <code>extern</code> block from the previous chapter with <code>bindgen</code>
 in <code>build.rs</code>. Safe wrappers and tests stay identical.</p>
 <details><summary><b>Tip</b></summary>
 <p><code>cargo expand -p bm_bindgen</code> shows what <code>bindgen</code> produced. Requires

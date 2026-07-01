@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-321107b2.js";
+            window.path_to_searchindex_js = "searchindex-65aa6a29.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-ac90ec63.js"></script>
@@ -268,7 +268,7 @@ language standardization.</p>
 <p>In this chapter we’ll learn the FFI foundations. We’ll learn what FFI is, how we
 use it to interoperate between C and Rust, see common pitfalls and more!</p>
 <h2 id="exercises"><a class="header" href="#exercises">Exercises</a></h2>
-<p>The exercises for this section are located in <code>exercises/01_intro</code></p>
+<p>The exercises for this section are located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro"><code>exercises/01_intro</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="what-is-ffi-how-do-languages-communicate"><a class="header" href="#what-is-ffi-how-do-languages-communicate">What Is FFI? How Do Languages Communicate?</a></h1>
 <p>Programming language design has taken many different paths over the years. We
@@ -334,7 +334,7 @@ ensure signatures are correct.</p>
 <p>This is the foundation of all Foreign Function Interfaces in Rust. In later
 exercises we will see how to make this much safer and more ergonomic.</p>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
-<p>Head to the exercise, where you’ll write this block for a <code>bm_add</code> function
+<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/01_what_is_ffi">the exercise</a>, where you’ll write this block for a <code>bm_add</code> function
 implemented in C.</p>
 <hr>
 <ol class="footnote-definition">
@@ -445,13 +445,7 @@ deployment target is different, <em>or you add code that will make the compiler
 change the generated code even a bit</em> this will be a bug that takes you weeks to
 troubleshoot in the worst case.</p>
 <h2 id="head-to-the-exercise-1"><a class="header" href="#head-to-the-exercise-1">Head to the exercise</a></h2>
-<!-- BRIDGE GAP (Jonas): the prose above frames drift as the hand-written *Rust
-     binding* going stale. The exercise inverts this: the binding stays fixed
-     and correct-looking while the *C implementation* drifts underneath it.
-     Consider a sentence here noting the mismatch (and thus the bug) is
-     identical either way -- doing it from the C side just keeps the Rust crate
-     compiling so you can actually run it and watch the fallout. -->
-<p>Head to the exercise and play with the different “drifted” C implementations of
+<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/02_drift">the exercise</a> and play with the different “drifted” C implementations of
 <code>bm_add</code>, see what happens on your machine. Feel free to also play around a bit
 with the Compiler Explorer playgrounds to see how different miscompilations
 manifest in the generated assembly.</p>
@@ -508,7 +502,7 @@ will not silently corrupt our Rust code. But remember these bindings are as
 <code>-sys</code> crate pattern: a <code>&lt;crate&gt;-sys</code> crate holds the raw bindings, while the
 <code>&lt;crate&gt;</code> crate on top exposes the safe abstractions.</p>
 <h2 id="head-to-the-exercise-2"><a class="header" href="#head-to-the-exercise-2">Head to the exercise</a></h2>
-<p>Replace the hand-written <code>extern</code> block from the previous chapter with <code>bindgen</code>
+<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/03_bindgen">the exercise</a>. Replace the hand-written <code>extern</code> block from the previous chapter with <code>bindgen</code>
 in <code>build.rs</code>. Safe wrappers and tests stay identical.</p>
 <details><summary><b>Tip</b></summary>
 <p><code>cargo expand -p bm_bindgen</code> shows what <code>bindgen</code> produced. Requires
@@ -578,7 +572,7 @@ why. None of this is a knock on <code>cbindgen</code>: it’s what the constrain
 allowed. <code>cheadergen</code> exists because those constraints have since eased, letting
 us build something with better diagnostics and fewer surprises.</p>
 <h2 id="head-to-the-exercise-3"><a class="header" href="#head-to-the-exercise-3">Head to the exercise</a></h2>
-<p>You’ll port the <code>bm_strlower</code> function to Rust and call
+<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/04_cheadergen">the exercise</a>. You’ll port the <code>bm_strlower</code> function to Rust and call
 <code>cheadergen generate --lang c --output-dir c_test -p cheadergen</code> to generate the
 header automatically.</p>
 <div style="break-before: page; page-break-before: always;"></div>
@@ -703,7 +697,7 @@ across the FFI boundary the C compiler (which does not know about
 monomorphization) would not know which version to pick! There exists no ABI that
 represents generics.</p>
 <h2 id="head-to-the-exercise-4"><a class="header" href="#head-to-the-exercise-4">Head to the exercise</a></h2>
-<p>Head to the exercise. There you will find an FFI function that attempts to pass
+<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/05_ffi_safe_types">the exercise</a>. There you will find an FFI function that attempts to pass
 types that are not FFI-safe. Notice the compiler-generated warnings! It is your
 job to fix this by using FFI-safe types.</p>
 <hr>
@@ -788,7 +782,7 @@ pub enum BmReadStatus { Ok, Eof, IoError }
 
 pub extern "C" fn bm_read(/* … */, out_bytes: Option&lt;NonNull&lt;usize&gt;&gt;) -&gt; BmReadStatus;</code></pre>
 <h2 id="head-to-the-exercise-5"><a class="header" href="#head-to-the-exercise-5">Head to the exercise</a></h2>
-<p>Head to the exercise. We’ll continue with the porting work by taking a look at
+<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/06_validate_and_narrow">the exercise</a>. We’ll continue with the porting work by taking a look at
 <code>bm_normalize_url</code>, found here <code>exercises/_bm/src/bookmark.c</code>. It will normalize
 a given URL by lowercasing it and writing the normalized string into the
 provided buffer. The exercise already contains our <em>“first draft”</em> Rust
@@ -866,7 +860,7 @@ cheapest FFI function is the one you didn’t expose. Expose coarse operations �
 <code>bm_thing_update_with(...)</code> over one setter per field — and treat the boundary
 as a small set of verbs, not a mirror of your internal struct.</p>
 <h2 id="head-to-the-exercise-6"><a class="header" href="#head-to-the-exercise-6">Head to the exercise</a></h2>
-<p>Head to the exercise where we will update our exercise 06 solution with the new
+<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/07_high_quality_ffi_apis">the exercise</a> where we will update our exercise 06 solution with the new
 rule(s) we have learned.</p>
 <hr>
 <ol class="footnote-definition">

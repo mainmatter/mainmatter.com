@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-321107b2.js";
+            window.path_to_searchindex_js = "../searchindex-65aa6a29.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-ac90ec63.js"></script>
@@ -264,13 +264,7 @@ deployment target is different, <em>or you add code that will make the compiler
 change the generated code even a bit</em> this will be a bug that takes you weeks to
 troubleshoot in the worst case.</p>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
-<!-- BRIDGE GAP (Jonas): the prose above frames drift as the hand-written *Rust
-     binding* going stale. The exercise inverts this: the binding stays fixed
-     and correct-looking while the *C implementation* drifts underneath it.
-     Consider a sentence here noting the mismatch (and thus the bug) is
-     identical either way -- doing it from the C side just keeps the Rust crate
-     compiling so you can actually run it and watch the fallout. -->
-<p>Head to the exercise and play with the different “drifted” C implementations of
+<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/02_drift">the exercise</a> and play with the different “drifted” C implementations of
 <code>bm_add</code>, see what happens on your machine. Feel free to also play around a bit
 with the Compiler Explorer playgrounds to see how different miscompilations
 manifest in the generated assembly.</p>

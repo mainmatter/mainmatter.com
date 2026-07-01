@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-321107b2.js";
+            window.path_to_searchindex_js = "../searchindex-65aa6a29.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-ac90ec63.js"></script>
@@ -247,7 +247,7 @@ pub enum BmReadStatus { Ok, Eof, IoError }
 
 pub extern "C" fn bm_read(/* … */, out_bytes: Option&lt;NonNull&lt;usize&gt;&gt;) -&gt; BmReadStatus;</code></pre>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
-<p>Head to the exercise. We’ll continue with the porting work by taking a look at
+<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/06_validate_and_narrow">the exercise</a>. We’ll continue with the porting work by taking a look at
 <code>bm_normalize_url</code>, found here <code>exercises/_bm/src/bookmark.c</code>. It will normalize
 a given URL by lowercasing it and writing the normalized string into the
 provided buffer. The exercise already contains our <em>“first draft”</em> Rust
