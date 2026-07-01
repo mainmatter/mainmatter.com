@@ -153,7 +153,9 @@ meta:
   </head>
   <body data-js-enabled="false">
     <a class="skip-link" href="#main"> Skip to main content </a>
-    {% include "global/nav.njk" %}
+    {% if not hideNav %}
+      {% include "global/nav.njk" %}
+    {% endif %}
     <main id="main">{% block content %}{{ content | safe }}{% endblock content %}</main>
     {% include "global/footer.njk" %}
     <div aria-live="polite" id="live-region" class="screenreader"></div>
