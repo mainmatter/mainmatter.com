@@ -44,7 +44,7 @@ topics:
 
   - title: Development workflow
     text: >
-      We'll establish a Git workflow for reviewing AI-generated changes, practice Test-Driven Development with AI agents, build reusable components following TDD principles, and explain why tests are essential for both engineers and agents.
+      We'll establish a Git workflow for reviewing AI-generated changes, practice Test-Driven Development with AI agents, build reusable components following TDD principles, and explain why extensive testing and validation are essential for both engineers and agents.
 
 
   - title: Prompting strategies
@@ -54,7 +54,7 @@ topics:
 
   - title: Kanban board implementation
     text: >
-      We'll kick off a Kanban board implementation using the established AI-driven workflow, including when to update <code>AGENTS.md</code>, what belongs there, how to create codebase-specific skills, and how to write ad hoc ESLint rules that keep the agent on track.
+      We'll kick off a Kanban board implementation using the established AI-driven workflow. Along the way, we will update <code>AGENTS.md</code> when necessary, discuss what belongs there vs. more specialized documentation, create codebase-specific skills, and write ad hoc ESLint rules that keep the agent on track.
 
 
   - title: Code review with AI
