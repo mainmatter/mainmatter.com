@@ -97,7 +97,7 @@ og:
     "text": "The fundamentals of FFI: how C and Rust communicate at the binary level through the C ABI, symbol tables, and the linker. You'll write your first <code>extern \"C\"</code> blocks by hand and see what you're promising the compiler when you declare a binding, and what goes wrong when the signature doesn't match."
     },{
     "title": "Types and Data Across the Boundary",
-    "text": "How to move primitive values, strings, structs, and collections across the language boundary while keeping ownership clear. You'll use <code>bindgen</code> to generate Rust bindings from C headers, and <code>cheadergen</code>, Mainmatter's tool for the reverse direction, to generate C headers from your Rust code, and configure both for non-trivial types."
+    "text": "How to move primitive values, strings, structs, and collections across the language boundary while keeping ownership clear. You'll use <code>bindgen</code> to generate Rust bindings from C headers, and <code>cheadergen</code>, the tool for the reverse direction, to generate C headers from your Rust code, and configure both for non-trivial types."
     },{
     "title": "FFI-Safe Types",
     "text": "Raw pointers and untyped primitives are a major source of bugs at the FFI boundary. You'll learn safer alternatives: <code>NonNull</code>, <code>Option</code>, newtype wrappers, and enum discriminants that carry meaning instead of bare values, and how to design types that make invalid states unrepresentable even when talking to C code that has no type safety of its own."
