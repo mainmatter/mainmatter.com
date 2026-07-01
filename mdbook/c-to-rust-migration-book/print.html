@@ -1,0 +1,940 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The C to Rust Migration Book</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-65aa6a29.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-ac90ec63.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The C to Rust Migration Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/mainmatter/migrating-c-to-rust" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="welcome"><a class="header" href="#welcome">Welcome</a></h1>
+<p>Welcome to the <strong>“C to Rust Migration Book”</strong>!</p>
+<p>This course will teach you techniques for migration C codebases to Rust.<br>You’ll learn how to maintain a safe mixed C-Rust codebase, incrementally migrate
+modules, translate common C idioms to Rust and learn the debugging tools to use
+when things inevitably break.</p>
+<p>We assume prior knowledge of Rust and some C.</p>
+<p>You’ll build up your knowledge in small, manageable steps. By the end of the
+course, you will have solved many exercises, and should be prepared to migrate
+even larger C codebases to Rust.</p>
+<h2 id="methodology"><a class="header" href="#methodology">Methodology</a></h2>
+<p>This course is based on the “learn by doing” principle.<br>It has been designed to be interactive and hands-on.</p>
+<p><a href="https://mainmatter.com/rust-consulting/">Mainmatter</a> developed this course to
+be delivered in a classroom setting, over 4 days: each attendee advances through
+the lessons at their own pace, with an experienced instructor providing
+guidance, answering questions and diving deeper into the topics as needed.<br>If you’d like to organize a private session for your company, please
+<a href="https://mainmatter.com/contact/">get in touch</a>.</p>
+<p>You can also take the course on your own, but we recommend you find a friend or
+a mentor to help you along the way should you get stuck.</p>
+<!--You can find solutions for all exercises in the
+[`solutions` branch of the GitHub repository](https://github.com/mainmatter/migrating-c-to-rust/tree/solutions).-->
+<h2 id="formats"><a class="header" href="#formats">Formats</a></h2>
+<p>You can go through the course material [in the browser]([TODO: insert URL]) or
+[download it as a PDF file]([TODO: insert URL]), for offline reading.</p>
+<h2 id="structure"><a class="header" href="#structure">Structure</a></h2>
+<p>On the left side of the screen, you can see that the course is divided into
+sections. To verify your understanding, each section is paired with an exercise
+that you need to solve.</p>
+<p>You can find the exercises in the
+<a href="https://github.com/mainmatter/migrating-c-to-rust">companion GitHub repository</a>.<br>Before starting the course, make sure to clone the repository to your local
+machine:</p>
+<pre><code class="language-bash">git clone https://github.com/mainmatter/migrating-c-to-rust
+</code></pre>
+<p>We also recommend you work on a branch, so you can easily track your progress
+and pull in updates from the main repository, if needed:</p>
+<pre><code class="language-bash">cd c-to-rust-migration-book
+git checkout -b my-solutions
+</code></pre>
+<p>All exercises are located in the <code>exercises</code> folder. Each exercise is structured
+as a Rust package. The package contains the exercise itself, instructions on
+what to do (in <code>src/lib.rs</code>), and a test suite to automatically verify your
+solution.</p>
+<h3 id="tools"><a class="header" href="#tools">Tools</a></h3>
+<p>To work through this course, you’ll need:</p>
+<ul>
+<li><a href="https://www.rust-lang.org/tools/install"><strong>Rust</strong></a>. If <code>rustup</code> is already
+installed on your system, run <code>rustup update</code> (or another appropriate command
+depending on how you installed Rust on your system) to ensure you’re running
+on the latest stable version.</li>
+<li><em>(Optional but recommended)</em> An IDE with Rust autocompletion support. We
+recommend one of the following:
+<ul>
+<li><a href="https://www.jetbrains.com/rust/">RustRover</a>;</li>
+<li><a href="https://code.visualstudio.com">Visual Studio Code</a> with the
+<a href="https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer"><code>rust-analyzer</code></a>
+extension.</li>
+</ul>
+</li>
+<li>A C compiler. The one provided by your Operating System will be good enough.</li>
+</ul>
+<h3 id="workshop-runner"><a class="header" href="#workshop-runner">Workshop runner</a></h3>
+<p>To verify your solutions, we’ve also provided a tool to guide you through the
+course: the <code>wr</code> CLI, short for “workshop runner”. Install <code>wr</code> by following the
+instructions on
+<a href="https://mainmatter.github.io/rust-workshop-runner/">its website</a>.</p>
+<p>Once you have <code>wr</code> installed, open a new terminal and navigate to the top-level
+folder of the repository. Run the <code>wr</code> command to start the course:</p>
+<pre><code class="language-bash">wr
+</code></pre>
+<p><code>wr</code> will verify the solution to the current exercise.<br>Don’t move on to the next section until you’ve solved the exercise for the
+current one.</p>
+<blockquote>
+<p>We recommend committing your solutions to Git as you progress through the
+course, so you can easily track your progress and “restart” from a known point
+if needed.</p>
+</blockquote>
+<p>Enjoy the course!</p>
+<h2 id="author"><a class="header" href="#author">Author</a></h2>
+<p>This course was written by <a href="https://jonaskruckenberg.de">Jonas Kruckenberg</a>,
+Engineering Consultant at
+<a href="https://mainmatter.com/rust-consulting/">Mainmatter</a>.<br>Jonas Kruckenberg is a systems engineer and technologist focused on
+next-generation computing infrastructure. He is the lead author of k23, an
+experimental high-reliability operating system. As a TC39 Invited Expert, he
+helps shape the future of web by bringing non-browser perspectives to JavaScript
+language standardization.</p>
+<p><a href="https://mainmatter.com/rust-consulting/">Mainmatter</a> is an engineering consultancy specializing in Rust. We offer engineering services, training, and mentorship to companies that aim to migrate from C to Rust or introduce Rust into an existing codebase.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="chapter-1-basics"><a class="header" href="#chapter-1-basics">Chapter 1: Basics</a></h1>
+<p>In this chapter we’ll learn the FFI foundations. We’ll learn what FFI is, how we
+use it to interoperate between C and Rust, see common pitfalls and more!</p>
+<h2 id="exercises"><a class="header" href="#exercises">Exercises</a></h2>
+<p>The exercises for this section are located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro"><code>exercises/01_intro</code></a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="what-is-ffi-how-do-languages-communicate"><a class="header" href="#what-is-ffi-how-do-languages-communicate">What Is FFI? How Do Languages Communicate?</a></h1>
+<p>Programming language design has taken many different paths over the years. We
+have C-like languages that are compiled all the way down to machine code, but we
+also have interpreted languages, lazy languages, languages that compile to a
+portable bytecode, garbage collected languages, and so much more.</p>
+<p>As software engineers we do not want to duplicate work unnecessarily. So what
+happens when work exists in a language other than the one you’re using?</p>
+<p>When developing in - for example - Python, we don’t want to port all the code we
+need to Python just to use it. Instead, we rely on infrastructure that lets us
+call functions and use types from other programming languages.</p>
+<p>This infrastructure, which bridges different type systems (or lack of type
+systems), execution models, and code-organization concepts, is called a <em>Foreign
+Function Interface</em> (abbreviated <em>FFI</em> from here on out). Most modern languages
+have some way to interoperate with others through FFI. The exact syntax and
+options vary by language, but they almost always have one thing in common: they
+represent functions as if they were C functions.</p>
+<p>This is called the “C ABI” (C Application Binary Interface) or “C Calling
+Convention” and as the name suggests is a convention on how to call functions
+(which CPU registers hold what arguments, which register(s) hold return values,
+when to spill to the stack, etc.)<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>. Notice that this is just a convention
+that the industry agreed on over time. The C ABI is predictable, simple, and has
+been stable for decades and therefore became the de-facto standard for language
+interoperability.</p>
+<h2 id="calling-an-ffi-function"><a class="header" href="#calling-an-ffi-function">Calling an FFI Function</a></h2>
+<p>Let’s say for example we have a Rust program that needs to call the <code>time</code>
+function from <code>libc</code> (a C static library)<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup>. We would use the following
+construct:</p>
+<pre><code class="language-rust">unsafe extern "C" {
+    fn time(time: *mut time_t) -&gt; time_t
+}</code></pre>
+<p>Before we dissect the syntax though: you may have already noticed that nowhere
+in this snippet do we ask for <code>libc</code>. Why is that?</p>
+<p>This is because object file formats (ELF on Linux, Mach-O on macOS, PE on
+Windows) are all quite old and therefore quite simplistic. They have <em>one global
+namespace</em> called a <em>Symbol Table</em> that all functions (and statics) share. So
+you cannot say “call <code>time</code> from <code>libc</code>”, you can only say “call a function
+named <code>time</code>”.</p>
+<p>When a compiler builds a program, all function calls reference the function <em>by
+symbol</em> (“call function named <code>X</code>”). To make this actually executable, we need
+to replace every symbol reference with the actual address of the function. This
+happens <em>after</em> compilation during the <em>linking</em> step, where a separate program
+called the <em>Linker</em> will aggregate all object files that make up your final
+program, lay them out on disk and then resolve these symbol names.</p>
+<p>To call <code>time</code> from <code>libc</code> we therefore need Rust to emit a reference to the
+<code>time</code> symbol and make sure the <code>libc</code> file is also passed to the linker.</p>
+<p>This solves the problem of <em>what</em> to call, but we still need to figure out <em>how</em>
+to call that function: How many parameters does the function accept? What are
+the types of these parameters? How many return values does it return? Remember
+the symbol references above are plain string names. They do not carry any
+information about the function’s argument types or return types so Rustc has no
+way of figuring out the types itself.</p>
+<p>This is why we need to tell it about <code>time</code>’s signature through a so-called
+“extern block” (or sometimes an “extern C block”) above. This block <em>declares</em>
+items that are not <em>defined</em> in the current crate. Each item we declare is a
+promise to the compiler: “this is the correct signature of this symbol, trust
+me”. We commonly refer to it as a <strong>binding</strong>.</p>
+<p>Get the signature wrong and your Rust program will pass garbage to the FFI
+function without any way to check this at compile-time. The exact implementation
+won’t be known until link-time, much later than the compiler’s type-checking
+pass. This is why bindings are marked <code>unsafe</code>: you as the programmer have to
+ensure signatures are correct.</p>
+<p>This is the foundation of all Foreign Function Interfaces in Rust. In later
+exercises we will see how to make this much safer and more ergonomic.</p>
+<h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
+<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/01_what_is_ffi">the exercise</a>, where you’ll write this block for a <code>bm_add</code> function
+implemented in C.</p>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<p>Technically, there is no “single” calling convention. Every architecture
+defines its own “C Calling Convention”. For example, the RISC-V C Calling
+Convention is defined
+<a href="https://riscv.org/wp-content/uploads/2024/12/riscv-calling.pdf">here</a> and
+lays out the sizes of C primitives and how arguments and return values are
+passed from and to functions. x86 architectures have <em>many</em> different
+calling conventions: the Microsoft x64 calling convention and the System V
+ABI are the most common, but many calling conventions exist to e.g. improve
+calling performance (<code>fastcall</code>, <code>regcall</code>, and more). When we say “the C
+calling convention” we usually mean “the C calling convention commonly used
+on this OS+architecture combination”. <a href="#fr-1-1">↩</a></p>
+</li>
+<li id="footnote-2">
+<p>Yes, generally speaking <code>libc</code> is distributed not as a static but as a
+<em>dynamic</em> library which is a completely different way of linking and calling
+functions. We’ll cover this in a later chapter in detail. <a href="#fr-2-1">↩</a></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="when-hand-written-bindings-drift"><a class="header" href="#when-hand-written-bindings-drift">When hand-written bindings drift</a></h1>
+<p>In the previous exercise you wrote an <code>extern "C"</code> block binding to C code. It
+worked great, but can you imagine yourself doing that for <em>hundreds</em>, maybe
+<em>thousands</em>, of functions and types? Of course not! There’s a subtler problem,
+too. Hand-written bindings will <em>inevitably</em> drift out of sync with the C
+header, especially at scale.</p>
+<p>Neither the C nor Rust compiler can detect this because each operate in their
+own small universe called a <em>compilation unit</em>. A compilation unit is the single
+chunk of work that flows through the various stages of the compiler. In C/C++
+this would typically be a <code>.c/.cpp</code> file and in Rust that is typically a single
+crate. The compiler will parse, typecheck, optimize the compilation unit and
+produce an <em>intermediate</em> object file. Once all the compilation units that make
+up your project are built, the intermediate object files are gathered and passed
+to the <em>linker</em>, which produces the final executable or library.</p>
+<pre><code class="language-text">┌─────────────────────┐          ┌─────────────────────┐
+│   Rust source       │          │   C source          │
+└──────────┬──────────┘          └──────────┬──────────┘
+           │ rustc                          │ cc
+           ▼                                ▼
+┌───────────────────────┐        ┌───────────────────────┐
+│ compile               │        │ compile               │
+│ (parse → typecheck →  │        │ (parse → typecheck →  │
+│  optimize  → codegen) │        │  optimize  → codegen) │
+└──────────┬────────────┘        └──────────┬────────────┘
+           │ object file                    │ object file
+           └───────────────┬────────────────┘
+                           ▼
+                ┌─────────────────────┐
+                │   link              │
+                │   (ld / lld)        │
+                └──────────┬──────────┘
+                           ▼
+                ┌─────────────────────┐
+                │   final binary      │
+                └─────────────────────┘
+</code></pre>
+<p>This model is great for compilation performance because we can process many of
+these compilation units <em>in parallel</em>! There is a catch, though: compilation
+units <em>must not</em> share information since that would destroy our ability to
+process them in parallel! Each compilation <em>must</em> be its own self-contained
+universe.</p>
+<p>And even if we had a mechanism to share information between compilation units,
+we would need to make that language agnostic so that a C compilation unit and a
+Rust compilation unit can interoperate. How would that even work with wildly
+different type systems? <sup class="footnote-reference" id="fr-1-1-1"><a href="#footnote-1-1">1</a></sup></p>
+<p>So compilers have resorted to <em>manual escape hatches</em> like the <code>extern "C"</code>
+block you wrote. You as the programmer promise to the compiler that a function
+with given name and given signature will exist at link-time and the compiler
+takes your word for it.</p>
+<h2 id="possible-consequences"><a class="header" href="#possible-consequences">Possible Consequences</a></h2>
+<p>The consequences of drift between the two versions can be dire: If C expects
+<code>int</code> but Rust expects <code>float</code> the integer bit patterns are being reinterpreted
+as floats. The result is almost always nonsensical.</p>
+<p>It can be worse though: passing too many or too few arguments can result in
+either overwriting important information on the stack or reading garbage from
+the stack!</p>
+<p>Here is an especially insidious case; the function as we have established is the
+following:</p>
+<pre><code class="language-c">int bm_add(int a, int b);
+</code></pre>
+<p>but now in the Rust code, we expect it to return 64-bit integers instead of
+32-bit integers:</p>
+<pre><code class="language-rust">unsafe extern "C" {
+    fn bm_add(a: c_longlong, b: c_longlong) -&gt; c_longlong;
+}</code></pre>
+<p>How will this example fail? If you try this yourself you will notice: It
+doesn’t! The reason is that modern CPUs pass function arguments in registers and
+these registers are always <em>word-sized</em>, meaning 64-bit on 64-bit machines. This
+means that internally even 32-bit ints are passed as 64-bit integers instead.</p>
+<p>You can see this in Compiler Explorer here:
+<a href="https://godbolt.org/z/PzrM4a575">The correct version</a> passes <code>a</code> and <code>b</code> in the
+<code>a0</code> and <code>a1</code> registers (the <code>li a0, 1</code> and <code>li a1, 2</code> lines do the loading) and
+passes the return value in the <code>a0</code> register. Those registers are 64-bit
+registers though and so you can see the
+<a href="https://godbolt.org/z/E97EeoEP6">incorrect <code>c_longlong</code>-expecting version</a>
+<strong>just works</strong> because the registers were 64-bit anyway.</p>
+<p>Now, if your 64-bit numbers stay below the 32-bit max value, everything just
+happens to work. But it is <em>very</em> fragile. As you can see here,
+<a href="https://godbolt.org/z/bGfocb43f">when we compile to 32-bit target instead</a>,
+everything breaks and we end up adding <code>0</code> to <code>a</code> instead.</p>
+<p>I find this example particularly scary, because for 99% of inputs and deployment
+configurations this mistake will be virtually consequence-free. The addition
+will continue to work as expected. But as soon as the input is unusual, the
+deployment target is different, <em>or you add code that will make the compiler
+change the generated code even a bit</em> this will be a bug that takes you weeks to
+troubleshoot in the worst case.</p>
+<h2 id="head-to-the-exercise-1"><a class="header" href="#head-to-the-exercise-1">Head to the exercise</a></h2>
+<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/02_drift">the exercise</a> and play with the different “drifted” C implementations of
+<code>bm_add</code>, see what happens on your machine. Feel free to also play around a bit
+with the Compiler Explorer playgrounds to see how different miscompilations
+manifest in the generated assembly.</p>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1-1">
+<p>Yes the LLVM bitcode embedded by toolchains for LTO (Rust’s
+<code>-Clto=thin -Cembed-bitcode=yes</code> and Clang’s <code>-flto=thin</code>) <em>does</em> carry the
+information to catch problems like this at link-time and it <em>is</em>
+cross-language, but linkers do not generally validate it (the <code>wasm-ld</code>
+linker does, but only for Wasm!). The reasons are manifold but most
+importantly because it would break existing compiler optimizations. You
+<em>could</em> write custom LLVM-bitcode parsing tooling to check this if you
+wanted. <a href="#fr-1-1-1">↩</a></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="generating-rust-bindings-with-bindgen"><a class="header" href="#generating-rust-bindings-with-bindgen">Generating Rust bindings with <code>bindgen</code></a></h1>
+<p>In the previous exercise you saw how easy it is for manual bindings to go out of
+sync, and the scary silent corruption that can cause. In this chapter we’ll
+introduce a tool to avoid all of this called <strong><a href="https://github.com/rust-lang/rust-bindgen"><code>bindgen</code></a></strong>. It’s a
+library you call in your Rust build script to automatically generate Rust
+bindings to C code based in C header files. It runs libclang on a C header and
+emits matching Rust declarations: <code>extern</code> blocks, <code>#[repr(C)]</code> structs, integer
+constants. The header remains the single source of truth, with the Rust bindings
+being generated on every build.</p>
+<p>You call <code>bindgen</code> from your build script like so:</p>
+<pre><code class="language-rust">let bindings = bindgen::Builder::default()
+    .header("c_src/bm_legacy.h")
+    // tell Cargo to re-run when headers change
+    .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
+    .generate()
+    .expect("bindgen failed");
+
+let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
+bindings.write_to_file(out_path.join("bindings.rs")).unwrap();</code></pre>
+<p>This writes the generated file into the crate’s <code>OUT_DIR</code> (usually
+<code>target/&lt;debug or release&gt;/build/&lt;crate name and hash&gt;/out</code>). Inspecting the
+generated file, you will see something like this:</p>
+<pre><code class="language-rust">/* automatically generated by rust-bindgen 0.72.1 */
+
+unsafe extern "C" {
+    pub fn bm_add(a: ::std::os::raw::c_int, b: ::std::os::raw::c_int) -&gt; ::std::os::raw::c_int;
+}</code></pre>
+<p>You can then pull in this generated file into your crate by using the <code>include!</code>
+macro like so:</p>
+<pre><code class="language-rust">mod sys {
+    include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
+}</code></pre>
+<p>This is great, we’ve gained end-to-end type checking. A change in the C header
+will not silently corrupt our Rust code. But remember these bindings are as
+<code>unsafe</code> as the C code itself. It’s your responsibility to use them correctly.</p>
+<p>You would typically wrap them in a safe, idiomatic API. This is the common
+<code>-sys</code> crate pattern: a <code>&lt;crate&gt;-sys</code> crate holds the raw bindings, while the
+<code>&lt;crate&gt;</code> crate on top exposes the safe abstractions.</p>
+<h2 id="head-to-the-exercise-2"><a class="header" href="#head-to-the-exercise-2">Head to the exercise</a></h2>
+<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/03_bindgen">the exercise</a>. Replace the hand-written <code>extern</code> block from the previous chapter with <code>bindgen</code>
+in <code>build.rs</code>. Safe wrappers and tests stay identical.</p>
+<details><summary><b>Tip</b></summary>
+<p><code>cargo expand -p bm_bindgen</code> shows what <code>bindgen</code> produced. Requires
+<a href="https://github.com/dtolnay/cargo-expand"><code>cargo-expand</code></a>.</p>
+</details>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="exposing-rust-to-c-with-cheadergen"><a class="header" href="#exposing-rust-to-c-with-cheadergen">Exposing Rust to C with <code>cheadergen</code></a></h1>
+<p>So far, we’ve always called C from Rust. Now we flip. Remember that our goal is
+to <em>migrate</em> C code to Rust. We’ll eventually need C to call into our new Rust
+code!</p>
+<p>To make a Rust function callable from C we’ll need to first annotate it
+correctly:</p>
+<pre><code class="language-rust">use std::ffi::c_char;
+
+#[unsafe(no_mangle)]
+pub extern "C" fn bm_strlower(s: *mut c_char) {
+    // ...
+}</code></pre>
+<p>Much like the FFI function declaration we saw in the first exercise, we instruct
+rustc to use a C-compatible calling convention through <code>extern "C" fn</code> (without
+it, Rust uses its own ABI that of course C knows nothing about).</p>
+<p><code>#[unsafe(no_mangle)]</code> keeps the symbol name verbatim in the compiled object.
+Otherwise Rust would emit a so-called <em>mangled</em> symbol name, a pseudo-random
+identifier that in regular Rust code prevents two equally named types or
+functions from causing “duplicate symbol” linking errors.</p>
+<p>In this case we do want the symbol name to be the same plain identifier we gave
+it, so the C code linking to us can actually find the function.</p>
+<p>The second piece is the header file that allows the C compiler to understand the
+API. You could write it by hand, but you’d be maintaining two sources of truth.
+<strong><a href="https://github.com/LukeMathWalker/cheadergen"><code>cheadergen</code></a></strong> (the inverse of <a href="https://rust-lang.github.io/rust-bindgen/"><code>bindgen</code></a>) generates C
+headers from Rust code.</p>
+<p><code>cheadergen</code> (created and maintained by fellow Mainmatter engineer Luca
+Palmieri) will read your Rust code and automatically generate a C header for the
+relevant FFI-visible symbols.</p>
+<p>Install the CLI by following the instructions here
+<a href="https://github.com/LukeMathWalker/cheadergen/releases">https://github.com/LukeMathWalker/cheadergen/releases</a>.</p>
+<p>Then you can run the following command in your crate root (e.g. the current
+exercise crate):</p>
+<pre><code class="language-sh">cheadergen generate
+</code></pre>
+<p>and a header will appear:</p>
+<pre><code class="language-c">/* Generated by cheadergen — do not edit */
+
+void bm_strlower(char *s);
+</code></pre>
+<p><code>cheadergen</code> comes with two ways to configure its output. The first is a
+project-wide <code>cheadergen.toml</code> file. Here you can tweak the style of the
+generated headers, include custom preamble text, and more. See the full
+documentation <a href="https://docs.rs/cheadergen/latest/cheadergen/config_reference/index.html">here</a>.</p>
+<p>The second configuration option is the <code>#[cheadergen::config(...)]</code> attribute.
+You can apply this attribute to any Rust type. It lets you configure per-type
+options such as renaming fields, skipping exporting, forcing exporting, and
+more. See the full documentation <a href="https://docs.rs/cheadergen/latest/cheadergen/index.html">here</a>.</p>
+<h3 id="a-note-on-cbindgen"><a class="header" href="#a-note-on-cbindgen">A note on <code>cbindgen</code></a></h3>
+<p>If you’ve been researching Rust FFI tooling, you undoubtedly came across
+<a href="https://github.com/mozilla/cbindgen"><code>cbindgen</code></a>, a <em>very similar</em> tool maintained by Mozilla, and you may
+ask yourself: “Why did you just introduce me to this custom tool instead?”</p>
+<p>Well, we wouldn’t have built a new tool if the existing one fit. <code>cbindgen</code>
+dates back to 2017, when the Rust ecosystem looked very different. To read your
+Rust and emit headers, it had to parse the source itself with a custom
+<code>syn</code>-based parser. At the time, that was the only way, since the compiler
+didn’t expose enough information.</p>
+<p>But the technique has real limits. The custom parser doesn’t always agree with
+rustc, it often needs manual steering and fixups, and when it hits something it
+can’t handle it tends to silently skip generating a header rather than tell you
+why. None of this is a knock on <code>cbindgen</code>: it’s what the constraints of the era
+allowed. <code>cheadergen</code> exists because those constraints have since eased, letting
+us build something with better diagnostics and fewer surprises.</p>
+<h2 id="head-to-the-exercise-3"><a class="header" href="#head-to-the-exercise-3">Head to the exercise</a></h2>
+<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/04_cheadergen">the exercise</a>. You’ll port the <code>bm_strlower</code> function to Rust and call
+<code>cheadergen generate --lang c --output-dir c_test -p cheadergen</code> to generate the
+header automatically.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="extern-c-and-ffi-safe-types"><a class="header" href="#extern-c-and-ffi-safe-types"><code>extern "C"</code> And FFI-Safe Types</a></h1>
+<p>We have passed data from C to Rust and from Rust to C in the previous exercises.
+In doing so we have mostly constrained ourselves to pointers or <code>c_</code>-prefixed
+primitives. At this point you may wonder though: “What if I want to pass a
+<code>struct</code>? or a <code>String</code>?”</p>
+<h2 id="primitives"><a class="header" href="#primitives">Primitives</a></h2>
+<p>All primitives (i.e. <code>i8</code>..<code>i64</code>, <code>u8</code>..<code>u64</code>, <code>f32</code>, <code>f64</code>, <code>bool</code>, pointers)
+are always safe to share across an FFI interface since these correspond 1:1 with
+C types. <code>Option&lt;NonNull&lt;T&gt;&gt;</code> deserves special mention because it is <em>also</em> FFI
+safe and guaranteed to have the same representation as <code>*mut T</code>.</p>
+<p>Note that C’s <code>int</code> type and Rust’s <code>i32</code>, for example, <em>almost always</em> mean the
+same thing. But because the C standard’s definition of these types is quite
+loose there exist architectures for which this is not true. This is rare enough
+that the Rust team decided Rust’s integer types are FFI-safe. If you want to be
+absolutely sure though, you can use the <code>std::ffi::c_*</code> types such as <code>c_int</code> or
+<code>c_longlong</code>.</p>
+<h2 id="reprc"><a class="header" href="#reprc"><code>repr(C)</code></a></h2>
+<p>Much like we need to use the C calling convention to make our Rust functions
+interoperable, we need to use the <code>C</code> struct layout to make our structs
+interoperable. This is because (just like functions) Rust reserves the right to
+change the struct layout at any time (it is “undefined”)<sup class="footnote-reference" id="fr-1-1-2"><a href="#footnote-1-2">1</a></sup>. In order to have a
+stable layout that other languages can understand though we need to mark our
+structs using the <code>repr(C)</code> attribute.</p>
+<pre><code class="language-rust">// we know the layout of this struct is always:
+// - `a` - 8 bytes
+// - `b` - 1 byte
+// - 1 byte padding
+// - `c` two bytes
+#[repr(C)]
+struct Foo {
+    a: usize,
+    b: u8,
+    c: u16,
+}
+
+// we DO NOT know the layout of this struct!
+struct Bar {
+    a: usize,
+    b: u8,
+    c: u16,
+}</code></pre>
+<p><code>repr(C)</code> also applies to <em>tuple structs</em> where the layout is exactly the same
+except the fields don’t have names.</p>
+<p>The <code>repr(..)</code> attribute can also be used on <code>enum</code>s:</p>
+<pre><code class="language-rust">// This corresponds to named u8 constants, where A = 0, B = 1, C = 2
+#[repr(u8)]
+enum Foo {
+    A,
+    B,
+    C,
+}
+
+// You can of course also assign explicit tags
+#[repr(u8)]
+enum Foo {
+    A = 5,
+    B = 2,
+    C = 8,
+}
+
+// repr(C) also works and uses the "default enum size and sign for the target platform's C ABI"
+#[repr(C)]
+enum Foo {
+    A,
+    B,
+    C,
+}</code></pre>
+<p>You can use enums with fields even though they don’t have an inherent C
+equivalent. Rust defines a stable mapping
+<a href="https://github.com/rust-lang/rfcs/blob/master/text/2195-really-tagged-unions.md">here</a>.</p>
+<pre><code class="language-rust">// A definition like this...
+#[repr(u8)]
+enum TwoCases {
+    A(u8, u16),
+    B(u16),
+}
+
+//...is in essence just syntax sugar for this:
+union TwoCasesRepr {
+    A: TwoCasesVariantA,
+    B: TwoCasesVariantB,
+}
+
+#[repr(u8)]
+enum TwoCasesTag {
+    A,
+    B,
+}
+
+#[repr(C)]
+struct TwoCasesVariantA(TwoCasesTag, u8, u16);
+
+#[repr(C)]
+struct TwoCasesVariantB(TwoCasesTag, u16);</code></pre>
+<p>So essentially an enum with fields decomposes to a tag enum and a union of its
+fields.</p>
+<h3 id="reprtransparent"><a class="header" href="#reprtransparent"><code>repr(transparent)</code></a></h3>
+<p><code>repr(transparent)</code> doesn’t appear as often but warrants special mention. It is
+an attribute that can only be used on types with a single sized field. It
+guarantees that the layout of the outer type will be exactly the same as that of
+the inner type.</p>
+<pre><code class="language-rust">// Foo is guaranteed to have the same representation as `*const u8`!
+#[repr(transparent)]
+struct Foo(*const u8);
+
+// because this is concerned with _sized_ fields (fields that have a size)
+// fields that have no size such as PhantomData can still be used!
+#[repr(transparent)]
+struct Foo&lt;T&gt;(*const u8, PhantomData&lt;T&gt;);</code></pre>
+<p><code>repr(transparent)</code> comes in handy if you need to cast pointers or <code>transmute</code>
+between types.</p>
+<h2 id="types-that-cannot-cross-the-ffi-boundary"><a class="header" href="#types-that-cannot-cross-the-ffi-boundary">Types that cannot cross the FFI boundary</a></h2>
+<p>This list is long, but as a general rule of thumb: Any type with <em>generics</em> or
+more complex Rust structs that are not explicitly FFI-safe (such as <code>String</code>)
+cannot be shared.</p>
+<p><em>Generics</em> are not FFI-safe because the compiler will monomorphize a concrete
+version of the struct for each type passed into the generic. If we pass the type
+across the FFI boundary the C compiler (which does not know about
+monomorphization) would not know which version to pick! There exists no ABI that
+represents generics.</p>
+<h2 id="head-to-the-exercise-4"><a class="header" href="#head-to-the-exercise-4">Head to the exercise</a></h2>
+<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/05_ffi_safe_types">the exercise</a>. There you will find an FFI function that attempts to pass
+types that are not FFI-safe. Notice the compiler-generated warnings! It is your
+job to fix this by using FFI-safe types.</p>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1-2">
+<p>The compiler does this to be smart and optimize things. For example,
+<a href="https://godbolt.org/z/bxh5eqM8z">here</a> is the code snippet you saw above in
+Compiler Explorer again. If you look at the rightmost “Compiler Output” pane
+you will see the actual layout of each struct. You can see that for <code>Bar</code>
+the compiler smartly reordered the fields to remove the interior padding
+byte! <a href="#fr-1-1-2">↩</a></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="the-ffi-boundary-as-a-firewall-validate-and-narrow"><a class="header" href="#the-ffi-boundary-as-a-firewall-validate-and-narrow">The FFI boundary as a firewall: validate and narrow</a></h1>
+<p>By now you’ve written <code>extern "C"</code> functions in both directions, seen <code>bindgen</code>
+generate Rust code and <code>cheadergen</code> generate C headers.</p>
+<p>On paper that is everything you need and it’s tempting to just go ahead and
+rewrite your project now. Take your C API and translate it one-for-one into
+Rust.</p>
+<p>The problem is: often you can’t — and just as often, you shouldn’t. Real-world C
+is complicated, idiosyncratic, and (let’s admit it!) full of skeletons. You’re
+likely thinking about a Rust rewrite not just to address security problems or
+performance issues; rewriting in Rust is a chance to clean up your codebase:
+re-establish module boundaries, drop the legacy assumptions, write the module
+you wished you had.</p>
+<p>At the same time big-bang rewrites (where you replace the entire codebase at
+once) famously never work. Which leaves a problem: you have a clean Rust
+codebase, a messy legacy codebase, and a need to keep both working together for
+<em>some time</em><sup class="footnote-reference" id="fr-1-1-3"><a href="#footnote-1-3">1</a></sup>.</p>
+<p>During this transitionary period the FFI layer is where those worlds meet. It
+has to bridge unsafe-everything-goes C and the borrow checker — <em>and</em> bridge
+your new design and the old one.</p>
+<p>One major misconception many people have is that FFI is about <em>type
+translation</em>. That is correct, of course, but it’s like saying programming is
+about typing words into a computer; it is missing the point. The <em>main</em> job of
+your FFI interface is <strong>establishing confidence</strong>. In a legacy codebase you
+rarely know with 100% certainty that reality matches your assumptions: some
+caller might actually pass a nullptr, the <code>*const c_char</code> that used to be UTF-8
+might now hold binary data.</p>
+<p>The FFI boundary is your chance to turn legacy uncertainty into known-good state
+before it crosses into your new system. Uncertainty leaks. Your FFI must be a
+vigilant firewall against it.</p>
+<p>To this end we at Mainmatter have identified a number of rules that we nowadays
+live by.</p>
+<h2 id="always-validate-your-inputs"><a class="header" href="#always-validate-your-inputs">Always validate your inputs</a></h2>
+<p>Validate every assumption at the FFI boundary. Null checks, length checks, UTF-8
+checks. Panic or return an error if anything is even slightly off. In web
+servers the HTTP handler function is your primary interface to the “chaos world”
+of the internet, think of FFI functions the same way: they are your primary
+interface to the legacy-C “chaos world”.</p>
+<p>You should also lean on Rust’s type system so “forgot to check” isn’t even an
+option. For example: at Mainmatter, we encourage contributors to use
+<code>Option&lt;NonNull&lt;T&gt;&gt;</code> instead of <code>*mut T</code> as much as possible, for the simple
+reason that a <code>*mut T</code> can be dereferenced directly (<code>*ptr</code>), which triggers UB
+if the pointer is null. You would have to add a manual <code>if ptr.is_null() {}</code>
+check before every pointer dereference. With <code>Option&lt;NonNull&lt;T&gt;&gt;</code> on the other
+hand, the type system <em>forces</em> you to handle the <code>None</code> case explicitly. Even
+the laziest <code>.unwrap()</code> will result in a loud panic instead of potentially
+silent UB.</p>
+<pre><code class="language-rust">// `*mut T` silently accepts null. You'll remember to check. Until you don't.
+pub extern "C" fn bm_do_thing(input: *mut Thing) -&gt; BmResult { /* … */
+}
+
+// `Option&lt;NonNull&lt;T&gt;&gt;` encodes null as `None` — the compiler forces the branch.
+pub extern "C" fn bm_do_thing(input: Option&lt;NonNull&lt;Thing&gt;&gt;) -&gt; BmResult {
+    let Some(input) = input else {
+        return BmResult::ErrInvalid;
+    };
+    // `input: NonNull&lt;Thing&gt;`, statically non-null.
+    /* … */
+}</code></pre>
+<h2 id="dont-overload-primitives"><a class="header" href="#dont-overload-primitives">Don’t overload primitives</a></h2>
+<p>Legacy C code has a habit of packing several meanings into one return type.
+POSIX <code>read()</code> is a good example: <code>-1</code> means error (check <code>errno</code>), <code>0</code> means
+end-of-file, anything positive is the byte count. It is <em>very easy</em> to mess this
+up. Rust gives you better tools — <code>bool</code> for yes/no, an enum for branching
+outcomes, an out-parameter for the count. These types usually translate quite
+well into C headers too, so use them!</p>
+<pre><code class="language-rust">#[repr(C)]
+pub enum BmReadStatus { Ok, Eof, IoError }
+
+pub extern "C" fn bm_read(/* … */, out_bytes: Option&lt;NonNull&lt;usize&gt;&gt;) -&gt; BmReadStatus;</code></pre>
+<h2 id="head-to-the-exercise-5"><a class="header" href="#head-to-the-exercise-5">Head to the exercise</a></h2>
+<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/06_validate_and_narrow">the exercise</a>. We’ll continue with the porting work by taking a look at
+<code>bm_normalize_url</code>, found here <code>exercises/_bm/src/bookmark.c</code>. It will normalize
+a given URL by lowercasing it and writing the normalized string into the
+provided buffer. The exercise already contains our <em>“first draft”</em> Rust
+translation: a naïve transliteration from C to Rust that has a number of issues.</p>
+<p>Let’s apply what we learned above and fix the implementation!</p>
+<p>Hint: check the exercises tests to check the expected behaviour of
+<code>bm_normalize_url</code></p>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1-3">
+<p>The exact amount of time of course varies with the scale of your codebase,
+but let me tell you from hard-won experience: measure this in years. C
+codebase migrations have a funny habit of taking much, much longer than you
+think. As a rule of thumb: take your worst case estimate, double that and
+add a year. Really. <a href="#fr-1-1-3">↩</a></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="high-quality-ffi-apis"><a class="header" href="#high-quality-ffi-apis">High-quality FFI APIs</a></h1>
+<p>We previously introduced two “mechanical” rules: always validating your input
+and not overloading primitives. Now we will introduce two more rules that are a
+bit more conceptual but have proven themselves <em>very</em> useful.</p>
+<p>But don’t let that fool you, the following rules are just as important as the
+previous two, if not more so.</p>
+<h2 id="documentation-documentation-documentation"><a class="header" href="#documentation-documentation-documentation">Documentation, documentation, documentation</a></h2>
+<p>Some invariants you can check at runtime. Many you can’t — who owns this
+pointer, whether the string is copied or borrowed, whether <code>free</code> has run
+before, what each error variant means. Write them all down.<sup class="footnote-reference" id="fr-1-1-4"><a href="#footnote-1-4">1</a></sup> Rust’s
+<code># Safety</code> convention (being just a comment) works with <code>extern "C"</code> functions
+too! <code>cheadergen</code> will emit them as C doc comments in the header files:</p>
+<pre><code class="language-rust">/// Normalize a URL into the caller's buffer.
+///
+/// # Ownership
+/// `url` and `out` are borrowed for the call; the caller continues to own both.
+///
+/// # Safety
+/// 1. `url`, if non-null, must be a [valid] pointer to a NUL-terminated UTF-8 byte sequence.
+/// 2. `out`, must be a [valid], non-null pointer to a writable buffer of at least `out_len` bytes.
+///
+/// # Errors
+/// - `BmResult::ErrInvalidUrl` if `url` is null or not valid UTF-8.
+/// - `BmResult::ErrBufferTooSmall` if the result wouldn't fit in `out_len` bytes.
+///
+/// [valid]:
+#[no_mangle]
+pub unsafe extern "C" fn bm_normalize_url(
+    url: Option&lt;NonNull&lt;c_char&gt;&gt;,
+    out: Option&lt;NonNull&lt;c_char&gt;&gt;,
+    out_len: usize,
+) -&gt; BmResult {
+    let Some(out) = out else {
+        //...
+    };
+
+    // Safety: caller ensured `out` points to at least `out_len` bytes (2.)
+    unsafe { slice::from_raw_parts_mut(out.as_ptr(), out_len) };
+}</code></pre>
+<p>Note how we number safety invariants and force every inline safety comment to
+either:</p>
+<ul>
+<li>Delegate upholding its local invariant to the surrounding function’s safety
+comment. In this case it MUST reference a numbered invariant</li>
+<li>OR it must exhaustively explain why the local invariant is upheld by the code
+itself.</li>
+</ul>
+<p>This way we make sure that all invariants are either upheld by the function
+itself or correctly documented as a responsibility of the caller.</p>
+<p>At the moment this is checked by discipline and PR reviews but in the future
+this may soon find its way into Rust/Clippy proper.<sup class="footnote-reference" id="fr-2-1-1"><a href="#footnote-2-1">2</a></sup></p>
+<h2 id="mind-the-ffi-tax"><a class="header" href="#mind-the-ffi-tax">Mind the FFI tax</a></h2>
+<p>Every exposed function is API surface you’ll maintain forever, an <code>unsafe</code>
+contract to keep correct, and a per-call cost the compiler can’t optimise away.
+Cross-language LTO can inline across, at the cost of a real setup burden. The
+cheapest FFI function is the one you didn’t expose. Expose coarse operations —
+<code>bm_thing_update_with(...)</code> over one setter per field — and treat the boundary
+as a small set of verbs, not a mirror of your internal struct.</p>
+<h2 id="head-to-the-exercise-6"><a class="header" href="#head-to-the-exercise-6">Head to the exercise</a></h2>
+<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/07_high_quality_ffi_apis">the exercise</a> where we will update our exercise 06 solution with the new
+rule(s) we have learned.</p>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1-4">
+<p>You may (jadedly) say that no one ever reads comments and you may actually
+be correct. BUT, with the rise of LLMs <em>something</em> does actually “read”
+them. We’ve found that LLMs unsurprisingly struggle quite a bit with the
+nuanced, unspoken invariants of FFI code. Turning as many of these unspoken
+invariants into spoken ones helps you get better mileage out of these tools. <a href="#fr-1-1-4">↩</a></p>
+</li>
+<li id="footnote-2-1">
+<p>There are a couple of related proposals, all in the “pre-RFC” stage. The
+most interesting one being
+https://github.com/safer-rust/safety-tags/blob/main/pre-RFC.md <a href="#fr-2-1-1">↩</a></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="chapter-2-intermediate"><a class="header" href="#chapter-2-intermediate">Chapter 2: Intermediate</a></h1>
+<blockquote>
+<p><strong>New chapters are on the way.</strong> <a href="https://mainmatter.com/c-to-rust-migration-book/#newsletter">Subscribe to our newsletter</a> to be the first to find out.</p>
+</blockquote>
+<p>From now on we will be porting a “real” C application: the <code>bm</code> bookmark manager
+CLI. We will learn how to approach real-world codebases, structure our approach,
+and debug our code when it breaks.</p>
+<h2 id="exercises-1"><a class="header" href="#exercises-1">Exercises</a></h2>
+<p>The exercises for this section are located in <code>exercises/02_intermediate</code></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>

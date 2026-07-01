@@ -33,6 +33,9 @@ module.exports = async function (eleventyConfig) {
    * https://github.com/11ty/eleventy/issues/1299
    */
   eleventyConfig.addPassthroughCopy({ static: "/" });
+  eleventyConfig.addPassthroughCopy({
+    "mdbook/c-to-rust-migration-book": "c-to-rust-migration-book/course",
+  });
 
   /**
    * Create custom data collections

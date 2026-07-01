@@ -8,7 +8,7 @@ module.exports = [
   js.configs.recommended,
   eslintConfigPrettier,
   {
-    ignores: ["dist/", "assets/"],
+    ignores: ["dist/", "assets/", "mdbook/"],
   },
   {
     languageOptions: {
