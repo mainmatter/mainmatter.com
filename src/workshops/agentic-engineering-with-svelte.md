@@ -69,7 +69,7 @@ topics:
 
   - title: Loop engineering
     text: >
-      We'll direct agents to validate their work in a loop, extending the maximum useful duration of tasks by combining code changes, validation, pull requests, review feedback, fixes, and repetition.
+      We'll direct agents to own all of their work from start to end, fully automating the development cycle from code change, validation, pull request, review feedback, fixes, and eventually merge and deployment.
 
 
   - title: Observability and debugging
