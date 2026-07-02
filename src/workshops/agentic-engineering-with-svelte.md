@@ -74,7 +74,7 @@ topics:
 
   - title: Loop engineering
     text: >
-      We'll direct agents to own all of their work from start to end, fully automating the development cycle from code change, validation, pull request, review feedback, fixes, and eventually merge and deployment.
+      We'll end the workshop exploring what's every manager's dream: exploring giving the agent full autonomy to own the full development cycle from making a code change to merging the PR, deploying, and smoke-testing. We'll set up the necessary tools and infrastructure and uncover where the limits are.
 
 
 leads:
