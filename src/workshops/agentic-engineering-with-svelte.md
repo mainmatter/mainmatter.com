@@ -67,14 +67,14 @@ topics:
       We'll set up repository automations that automatically triage issues and improve CI workflows.
 
 
-  - title: Loop engineering
-    text: >
-      We'll direct agents to own all of their work from start to end, fully automating the development cycle from code change, validation, pull request, review feedback, fixes, and eventually merge and deployment.
-
-
   - title: Observability and debugging
     text: >
       We'll integrate Sentry into the application and use it to diagnose, debug, and fix runtime issues in an AI-assisted development workflow.
+
+
+  - title: Loop engineering
+    text: >
+      We'll direct agents to own all of their work from start to end, fully automating the development cycle from code change, validation, pull request, review feedback, fixes, and eventually merge and deployment.
 
 
 leads:
