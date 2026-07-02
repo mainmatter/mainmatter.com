@@ -4,7 +4,7 @@ image: "/assets/images/calendar/2026-06-23-vir-innovationstage/vir-logo.webp"
 location: "Berlin, Germany"
 url: https://v-i-r.de/events/vir-online-innovationstage/
 kind: conference
-color: aqua
+color: purple
 hero:
   image: "/assets/images/calendar/2026-06-23-vir-innovationstage/Berlin.png"
   imageAlt: "View of a Berlin street"

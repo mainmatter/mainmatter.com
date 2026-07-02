@@ -1,0 +1,186 @@
+---
+layout: base
+title: "The C to Rust Migration Book"
+description: "Learn how to migrate production C codebases to safe, idiomatic Rust one module at a time."
+permalink: /c-to-rust-migration-book/
+hideNav: true
+minimalFooter: true
+og:
+  image: /assets/images/rust/c-to-rust-migration-book/og-image.jpg
+---
+
+{% from "btn-primary.njk" import btnPrimary %}
+{% from "btn-secondary.njk" import btnSecondary %}
+{% from "strategy-list.njk" import strategyList %}
+{% from "author-socials.njk" import authorSocials %}
+{% from "color-hero.njk" import colorHero %}
+
+{%
+  set toc = {
+    'Overview': '#overview',
+    'The course': '#course',
+    'Table of contents': '#toc',
+    'About the author': '#author',
+    'About Mainmatter': '#author'
+  }
+%}
+
+<a href="/" class="c-to-rust-migration-logo">
+  {% include 'svg/logo.njk' %}
+  <span class="screenreader">Mainmatter</span>
+</a>
+
+{%
+  set 'heroContent' = {
+  "title": "The C to Rust Migration Book",
+  "image": "/assets/images/hero/c-to-rust-lp.jpg",
+  "text": "By Mainmatter",
+  "alt": "A close up view of a machine with gears",
+  "loading": "eager",
+  "class": "c-to-rust-migration-hero",
+  "toc": toc
+  }
+%}
+{{ colorHero('purple', heroContent) }}
+
+<main class="c-to-rust-migration">
+  <section id="overview" class="container container--lg my-10">
+    <h3 class="mb-2">Migrate from C to Rust without breaking the world</h3>
+    <p>
+      Securing and modernizing software is a top priority today. Tech debt and memory-safety bugs
+      remain the largest sources of vulnerabilities, which is why teams increasingly turn to Rust
+      for its reliability and memory safety. But rewrites are hard, scary, and carry a lot of risk.
+      Mainmatter assembled our experience from helping clients successfully modernize some of the
+      worlds most important software into this book.
+    </p>
+    <p>
+      Whether you rewrite a self-contained library from scratch or incrementally migrate a large,
+      complex codebase that keeps changing, this book teaches you the techniques to succeed. You
+      will learn how to maintain a safe mixed C-Rust codebase, design and structure clean APIs, and
+      translate common C idioms into idiomatic Rust.
+    </p>
+  </section>
+
+  <section id="course" class="c-to-rust-migration-feature container container--xl my-10">
+    <div class="c-to-rust-migration-feature__content">
+      <h3>The C to Rust Migration Book</h3>
+      {{
+        btnPrimary({
+          "label": "Start learning",
+          "url": "/c-to-rust-migration-book/course/"
+        }, "white", "mt-2")
+      }}
+    </div>
+    <div class="c-to-rust-migration-feature__image">
+      {% image "/assets/images/rust/c-to-rust-migration-book/c-to-rust-books.webp", "C to Rust migration books", "(min-width: 62em) 45vw, 90vw", "lazy", "c-to-rust-migration-feature__media", [760, 1440, 1920] %}
+    </div>
+  </section>
+
+  <section class="container container--lg my-10">
+    <p>
+      <a href="/c-to-rust-migration-book/course/">This course</a> is built around our philosophy of
+      self-paced exercises. Each concept is paired with an exercise you solve in a real Rust
+      package, with a test suite that checks your solution.
+    </p>
+    <p>
+      It assumes prior knowledge of Rust and some C. No prior FFI experience required. That's what
+      the course teaches.
+    </p>
+    <p>By the end you'll be ready to introduce Rust into a C codebase in a productive way.</p>
+  </section>
+
+  {% include "global/c-to-rust-newsletter-cta.njk" %}
+
+  {%
+    set topics = [{
+    "title": "Foreign Function Interfaces",
+    "text": "The fundamentals of FFI: how C and Rust communicate at the binary level through the C ABI, symbol tables, and the linker. You'll write your first <code>extern \"C\"</code> blocks by hand and see what you're promising the compiler when you declare a binding, and what goes wrong when the signature doesn't match."
+    },{
+    "title": "Types and Data Across the Boundary",
+    "text": "How to move primitive values, strings, structs, and collections across the language boundary while keeping ownership clear. You'll use <code>bindgen</code> to generate Rust bindings from C headers, and <code>cheadergen</code>, the tool for the reverse direction, to generate C headers from your Rust code, and configure both for non-trivial types."
+    },{
+    "title": "FFI-Safe Types",
+    "text": "Raw pointers and untyped primitives are a major source of bugs at the FFI boundary. You'll learn safer alternatives: <code>NonNull</code>, <code>Option</code>, newtype wrappers, and enum discriminants that carry meaning instead of bare values, and how to design types that make invalid states unrepresentable even when talking to C code that has no type safety of its own."
+    },{
+    "title": "FFI validation",
+    "text": "Every FFI function is a trust boundary. C callers can pass null pointers, out-of-range values, or invalid UTF-8, and Rust can't catch that at compile time. You'll build the discipline of validating and narrowing inputs at the boundary, so invalid data from C never reaches safe Rust or your business logic."
+    },{
+    "title": "Error Handling and API Design",
+    "text": "Rust's <code>Result</code> and <code>?</code> stop at <code>extern \"C\"</code>. You'll convert Rust error types into C-compatible results with error-code enums and out-parameters, and surface failure information without leaking Rust internals. You'll also learn to expose coarse operations rather than per-field setters and keep your API surface small."
+    },{
+    "title": "Production-Quality FFI",
+    "text": "You'll document FFI functions with Rust's <code>/// # Safety</code> convention and numbered invariants, so every unsafe contract is explicit and surfaces as C doc comments in the generated headers via <code>cheadergen</code>. We cover build integration, automated checks, and treating your FFI surface as an API you'll maintain forever."
+    }]
+  %}
+  <div id="toc">{{ strategyList('course-topic', 'Table of contents', topics) }}</div>
+
+  {% set mentor = 'JonasKruckenberg' | findBySlug %}
+  {% set mentorBio = "Jonas Kruckenberg is a systems engineer and technologist focused on next-generation computing infrastructure. He is the lead author of k23, an experimental high-reliability operating system. As a TC39 Invited Expert, he helps shape the future of web by bringing non-browser perspectives to JavaScript language standardization." %}
+  <section id="author" class="workshop-authors container container--lg">
+    <div class="workshop__content post__content--workshop">
+      <h3 class="workshop-topics__heading">About the author</h3>
+      <div class="author__wrapper">
+        <div class="author">
+          <div class="workshop-authors__image-wrapper author__image-wrapper">
+            {% image "/assets/images/authors/JonasKruckenberg.jpg", mentor.data.name, '3.75rem', 'eager', 'author__lead-image', [120] %}
+          </div>
+          <div class="author__text-wrapper">
+            <div class="author__name-wrapper">
+              <h4 class="author__name">{{ mentor.data.name }}</h4>
+              {{ authorSocials('JonasKruckenberg') }}
+            </div>
+            <p class="author__title large">{{ mentor.data.title }} @Mainmatter</p>
+          </div>
+        </div>
+        <div class="author__details mt-3 author__details--full-width">
+          <p>{{ mentorBio or mentor.data.longBio }}</p>
+          <p>
+            <a href="/rust-consulting/">Mainmatter</a> is an engineering consultancy specializing in
+            Rust. We offer engineering services, training, and mentorship to companies that aim to
+            migrate from C to Rust or introduce Rust into an existing codebase.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mainmatter" class="py-7 background-aqua">
+    <div class="container mainmatter-section container--xl">
+      <h3 class="mb-2">Facing Rust challenges and need a helping hand?</h3>
+
+      <p>
+        We can help with
+        <a href="/rust-consulting/"
+          >complex C-to-Rust migrations, reliability issues, training, and skill gaps.</a
+        >
+      </p>
+      {%
+        set link = {
+        "label": "Contact us",
+        "url": "/contact/?utm_source=C+Rust+Book"
+        }
+      %}
+      {{ btnSecondary(link, "mt-2") }}
+    </div>
+  </section>
+
+  <section class="c-to-rust-migration-eurorust container container--xl my-10">
+    <div class="c-to-rust-migration-eurorust__image">
+      {% image "/assets/images/rust/eurorust-2026.webp", "EuroRust 2026 logo", "36rem", "lazy", "", [760, 1440] %}
+    </div>
+    <div class="c-to-rust-migration-eurorust__content">
+      <p class="text--accent">Community</p>
+      <h3 class="h3">EuroRust 2026</h3>
+      <p>
+        EuroRust is a two-day conference for all things Rust, plus two more days of side activities,
+        workshops, and hackathons. Join us in October in Barcelona.
+      </p>
+      {{
+        btnPrimary({
+          "label": "Get your ticket",
+          "url": "https://eurorust.eu"
+        }, "white", "mt-2")
+      }}
+    </div>
+  </section>
+</main>

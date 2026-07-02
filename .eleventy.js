@@ -33,6 +33,9 @@ module.exports = async function (eleventyConfig) {
    * https://github.com/11ty/eleventy/issues/1299
    */
   eleventyConfig.addPassthroughCopy({ static: "/" });
+  eleventyConfig.addPassthroughCopy({
+    "mdbook/c-to-rust-migration-book": "c-to-rust-migration-book/course",
+  });
 
   /**
    * Create custom data collections
@@ -64,6 +67,10 @@ module.exports = async function (eleventyConfig) {
    * @link https://www.11ty.io/docs/filters/
    */
   dayjs.extend(customParseFormat);
+
+  eleventyConfig.addFilter("monthDay", function (date) {
+    return dayjs(date).format("MMMM D");
+  });
 
   eleventyConfig.addFilter("monthDayYear", function (date) {
     return dayjs(date).format("MMMM D, YYYY");
