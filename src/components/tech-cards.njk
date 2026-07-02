@@ -9,8 +9,9 @@
       {% endif %}
       <div class="cards__grid">
         {% for card in cards %}
+          {% set href = card.link if '://' in card.link else '/' + card.link %}
           <div class="tech-cards__grid-element card__grid-element">
-            <a href="/{{ card.link }}" class="card__link">
+            <a href="{{ href }}" class="card__link">
               <h3 class="screenreader">{{ card.title }}</h3>
             </a>
             <div class="tech-cards__logo {{ card.logo }}">
