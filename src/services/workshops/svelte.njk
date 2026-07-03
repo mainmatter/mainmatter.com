@@ -1,7 +1,7 @@
 ---
 layout: "base"
-title: Svelte Workshops
-description: "Public and team Svelte workshops by Mainmatter."
+title: Svelte Workshops | Our Services
+description: "We offer workshops to enable teams to succeed with Svelte & SvelteKit – covering a wide range from basics to advanced topics, onsite or remote."
 og:
   image: "/assets/images/workshops/svelte-workshops-og-image.jpg"
 eleventyImport:
@@ -47,7 +47,17 @@ eleventyImport:
 %}
 {{ colorHero('purple', heroContent) }}
 
-{% set svelteWorkshops = collections.workshops | filterByCollectionTag("svelte") %}
+{%
+  set svelteWorkshops = [
+  collections.workshops | findByCollectionSlug("svelte-and-sveltekit"),
+  collections.workshops | findByCollectionSlug("progressive-enhancement-with-sveltekit"),
+  collections.workshops | findByCollectionSlug("testing-svelte-sveltekit-applications"),
+  collections.workshops | findByCollectionSlug("svelte-5-runes"),
+  collections.workshops | findByCollectionSlug("authentication-for-svelte-sveltekit"),
+  collections.workshops | findByCollectionSlug("svelte-without-svelte"),
+  collections.workshops | findByCollectionSlug("practical-typescript")
+  ]
+%}
 
 <div class="workshops-page">
   <section class="container container--xl my-10" id="workshops">
