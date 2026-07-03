@@ -1,5 +1,5 @@
 ---
-title: "TEST Rust Workshop With Public Dates"
+title: "TEST Rust Workshop with individual tickets"
 tags: "rust"
 format: "1 day"
 subtext: "Bookable for teams – on-site or remote"

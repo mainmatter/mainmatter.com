@@ -20,7 +20,9 @@
             </div>
             <div class="card__content">
               {% if card.title %}
-                <p class="tech-cards__title mb-015 h4">{{ card.title }}</p>
+                <p class="tech-cards__title mb-015 h4">
+                  {{ card.titleHtml | safe if card.titleHtml else card.title }}
+                </p>
               {% endif %}
               {% if card.link %}
                 <div class="card__link-wrapper">

@@ -1,9 +1,9 @@
 ---
-title: "TEST Rust Workshop With Team and Ticket Options"
+title: "TEST Rust Workshop with individual tickets and a very very very very very very very very very very very long title"
 tags: "rust"
 format: "2 days"
 subtext: "Bookable for teams – on-site or remote"
-description: "Placeholder test workshop with a longer description to verify truncation, ticket pricing, and public date rendering across responsive workshop cards. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+description: "Placeholder test workshop with a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long description to verify truncation, ticket pricing, and public date rendering across responsive workshop cards. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
 price: "450 €"
 dates:
   - date: 2027-04-14
