@@ -273,16 +273,19 @@ layout: "base"
     {% if quotes and quotes.length %}
       <section class="workshop-detail__quote container container--lg my-10" id="attendees-say">
         <h2 class="mb-4">Our Attendees Say...</h2>
-        {% set firstQuote = quotes[0] %}
-        {%
-          set quoteContent = {
-          "text": firstQuote.text,
-          "source": firstQuote.source,
-          "position": firstQuote.position or "",
-          "styling": "redesigned"
-          }
-        %}
-        {{ quote(quoteContent) }}
+        <div class="workshop-detail__quote-list">
+          {% for workshopQuote in quotes %}
+            {%
+              set quoteContent = {
+              "text": workshopQuote.text,
+              "source": workshopQuote.source,
+              "position": workshopQuote.position or "",
+              "styling": "redesigned"
+              }
+            %}
+            {{ quote(quoteContent) }}
+          {% endfor %}
+        </div>
       </section>
     {% endif %}
 
