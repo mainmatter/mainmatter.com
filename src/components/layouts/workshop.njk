@@ -143,22 +143,32 @@ layout: "base"
           </p>
         {% endif %}
 
-        <h4 class="mt-2">Prerequisites</h4>
-        <ul>
-          <li>Placeholder! Prerequisite to be added.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-        </ul>
+        {% if prerequisites %}
+          <h4 class="mt-2">Prerequisites</h4>
+          <ul>
+            {% for prerequisite in prerequisites %}
+              <li>{{ prerequisite | safe }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
 
-        <h4 class="mt-2">Outcomes</h4>
-        <ul>
-          <li>Placeholder! New capabilities to be added.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-        </ul>
+        {% if outcomes %}
+          <h4 class="mt-2">Outcomes</h4>
+          <ul>
+            {% for outcome in outcomes %}
+              <li>{{ outcome | safe }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
 
-        <h4 class="mt-2">Certifications</h4>
-        <ul>
-          <li>Placeholder! Certified by the Rust Foundation.</li>
-        </ul>
+        {% if certifications %}
+          <h4 class="mt-2">Certifications</h4>
+          <ul>
+            {% for certification in certifications %}
+              <li>{{ certification | safe }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
       </div>
     </section>
 
@@ -225,7 +235,7 @@ layout: "base"
     </section>
 
     {% if leads %}
-      <section class="workshop-authors container container--lg" id="mentor">
+      <section class="workshop-authors workshop-detail__mentor container container--lg" id="mentor">
         <div class="workshop__content post__content--workshop">
           <h2 class="workshop-topics__heading">
             Your mentor{%- if (leads | default([])).length > 1 -%}s{%- endif -%}
@@ -260,9 +270,9 @@ layout: "base"
       </section>
     {% endif %}
 
-    <section class="workshop-detail__quote container container--lg my-10" id="attendees-say">
-      <h2 class="mb-4">Our Attendees Say...</h2>
-      {% if quotes and quotes.length %}
+    {% if quotes and quotes.length %}
+      <section class="workshop-detail__quote container container--lg my-10" id="attendees-say">
+        <h2 class="mb-4">Our Attendees Say...</h2>
         {% set firstQuote = quotes[0] %}
         {%
           set quoteContent = {
@@ -272,18 +282,9 @@ layout: "base"
           "styling": "redesigned"
           }
         %}
-      {% else %}
-        {%
-          set quoteContent = {
-          "text": "Quote from someone who took the workshop and loved it. Sed tempus aliquet molestie. Pellentesque id diam vel odio tempor commodo et nec turpis.",
-          "source": "Andreas Hartel",
-          "position": "Senior Engineer at Aleph Alpha",
-          "styling": "redesigned"
-          }
-        %}
-      {% endif %}
-      {{ quote(quoteContent) }}
-    </section>
+        {{ quote(quoteContent) }}
+      </section>
+    {% endif %}
 
     <section class="container container--lg my-10">
       <div class="workshop-detail__who-we-are">
@@ -291,8 +292,11 @@ layout: "base"
           <h2 class="mb-2">Who we are</h2>
           <p>
             We are Mainmatter and we Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+            in nisi sed eros eleifend scelerisque a eu nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
             in nisi sed eros eleifend scelerisque a eu nisl.
           </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+            in nisi sed eros eleifend scelerisque a eu nisl.</p>
         </div>
         <img
           class="workshop-detail__brand-mark"
