@@ -1,10 +1,10 @@
 ---
 title: "Agentic Engineering with Svelte"
 tags: "svelte"
-format: "Workshop: 2 days"
+format: "Workshop: 3 days"
 subtext: "Bookable for teams - on-site or remote"
-description: "Learn how to use AI agents effectively in Svelte 5 and SvelteKit projects, from setup and MCP integration to test-driven workflows, code review, automations, and production debugging."
-introduction: "<p>This hands-on workshop teaches teams how to use AI agents as effective engineering collaborators when building Svelte 5 and SvelteKit applications. Participants learn how to set up a production-ready project, use the Svelte MCP server, skills, subagents, validate generated changes, and combine TDD, code review, repository automations, and observability into a reliable AI-assisted workflow.</p>"
+description: "Learn how to use AI agents effectively in Svelte and SvelteKit projects, from setup and MCP integration to test-driven workflows, code review, automations, and production debugging."
+introduction: "<p>AI is changing how software gets built. But faster delivery doesn't follow automatically from handing everyone a Claude license. Agents need to be steered in the right direction, and everything they produce has to be validated thoroughly — otherwise the time saved writing code is spent again reviewing and fixing it. Getting that balance right and adapting the software development lifecycle (SDLC) to this new way of development is what turns AI into a real velocity booster.</p><p>This hands-on workshop teaches teams how to use AI agents as effective engineering collaborators when building Svelte 5 and SvelteKit applications. Participants learn how to use the Svelte MCP server, skills, subagents, validate generated changes, and combine TDD, code review, repository automations, and observability to allow for a reliable agentic workflow.</p>"
 hero:
   color: purple
   image: "/assets/images/workshops/agentic-engineering-with-svelte/hero.jpg"
@@ -14,7 +14,7 @@ og:
 topics:
   - title: Introduction to Agentic Engineering
     text: >
-      We'll introduce agentic engineering and the current challenges of using AI effectively with Svelte 5 applications.
+      We'll introduce agentic engineering and the current challenges of using AI effectively with Svelte applications.
 
 
   - title: Project setup
@@ -39,7 +39,7 @@ topics:
 
   - title: AI-assisted UI/UX workflow
     text: >
-      We'll explore how to convert a design from Figma into code and how to use agents without losing design intent or implementation quality.
+      We'll explore how to convert a Figma design into code and how to use agents without losing design intent or implementation quality.
 
 
   - title: Development workflow
@@ -74,7 +74,7 @@ topics:
 
   - title: Loop engineering
     text: >
-      We'll end the workshop exploring what's every manager's dream: exploring giving the agent full autonomy to own the full development cycle from making a code change to merging the PR, deploying, and smoke-testing. We'll set up the necessary tools and infrastructure and uncover where the limits are.
+      We'll end the workshop exploring what's every manager's dream: giving the agent full autonomy to own the complete development cycle from making a code change to merging the PR, and deploying. We'll set up the necessary tools and infrastructure and uncover where the limits are.
 
 
 leads:
