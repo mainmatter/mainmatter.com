@@ -28,8 +28,11 @@
 
   &:hover,
   &:focus {
-    --icon-arrow-transform: translate3d(-0.5rem, 0, 0);
     color: var(--color-white);
+
+    .icon-arrow {
+      transform: translate3d(-0.5rem, 0, 0);
+    }
 
     .workshops-page-hero__eyebrow-text {
       text-decoration: underline;
@@ -351,8 +354,11 @@
 
   &:hover,
   &:focus {
-    --icon-arrow-transform: translate3d(0.5rem, 0, 0);
     color: var(--color-purple);
+
+    .icon-arrow {
+      transform: translate3d(0.5rem, 0, 0);
+    }
   }
 }
 
@@ -410,7 +416,9 @@
 
   &:hover,
   &:focus {
-    --icon-arrow-transform: translate3d(0.5rem, 0, 0);
+    .icon-arrow {
+      transform: translate3d(0.5rem, 0, 0);
+    }
   }
 }
 
