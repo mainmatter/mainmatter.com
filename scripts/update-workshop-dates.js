@@ -6,6 +6,7 @@ import got from "got";
 const workshops = globSync("src/workshops/**/*.md");
 
 const TICKET_TAILOR_API_KEY = Buffer.from(process.env.TICKET_TAILOR_API_KEY).toString("base64");
+const TODAY = new Date();
 
 (async () => {
   for (const workshop of workshops) {
@@ -13,7 +14,7 @@ const TICKET_TAILOR_API_KEY = Buffer.from(process.env.TICKET_TAILOR_API_KEY).toS
     const { content, data } = matter(raw);
     const { ticket_tailor_event_series_id: ticketTailorEventSeriesId } = data;
     if (ticketTailorEventSeriesId) {
-      const events = await getEventOccurences(ticketTailorEventSeriesId);
+      const events = await getUpcomingEventOccurences(ticketTailorEventSeriesId);
 
       data.upcomingDates = events.map(e => {
         return {
@@ -28,7 +29,7 @@ const TICKET_TAILOR_API_KEY = Buffer.from(process.env.TICKET_TAILOR_API_KEY).toS
   }
 })();
 
-async function getEventOccurences(eventSeriesId) {
+async function getUpcomingEventOccurences(eventSeriesId) {
   const url = `https://api.tickettailor.com/v1/event_series/${eventSeriesId}/events`;
   const data = await got(url, {
     headers: {
@@ -43,7 +44,8 @@ async function getEventOccurences(eventSeriesId) {
         end: new Date(e.end.iso),
         url: e.url,
       };
-    });
+    })
+    .filter(e => e.start > TODAY);
 }
 
 function formatDateForMetadata(date) {
