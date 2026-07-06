@@ -6,6 +6,7 @@ subtext: Bookable for teams – on-site or remote
 description: >-
   This 4-days workshop helps you get started with Rust, assuming no prior knowledge of the language. The workshop starts from the absolute basics and gradually builds up to more advanced topics.
 
+
 ticket_tailor_event_series_id: es_2299344
 introduction: >
   <p>Rust is a general-purpose programming languages that's been growing in popularity over the past few years.
@@ -24,9 +25,11 @@ introduction: >
   
   it assumes you're familiar with at least another programming language.</p>
 
+
 hero:
   image: >-
     /assets/images/workshops/an-introduction-to-testing-in-rust/header-background.jpg
+
 
   imageAlt: A drawing of a giant crab standing in a village.
 og:
@@ -36,21 +39,26 @@ topics:
     text: >
       We will cover the tools that every Rust developer should have in their toolbox: <code>rustup</code> (toolchain management), <code>cargo</code> (build system and package manager),  <code>clippy</code> (linter), <code>rustfmt</code> (formatter), and <code>rustdoc</code> (documentation generator).
 
+
   - heading: The language
     text: >
       We will cover in detail the core constructs of the Rust language: syntax, control flow, pattern matching, type system (traits), ownership and borrowing, polymorphism (generics and trait objects), closures and `Fn*` traits, and panics.
+
 
   - heading: The standard library
     text: >
       Writing Rust programs is significantly easier if you have mastered the standard library. We will cover the most important parts of the standard library, including: primitive types, strings and string slices, collections and iterators, conversion traits, smart pointers (<code>Box</code>, <code>Arc</code>, <code>Rc</code>), nullability handling (<code>Option</code>), error handling (<code>Result</code>), and concurrency primitives (threads, channels, locks).
 
+
   - heading: Testing
     text: >
       We will build up your Rust's testing toolkit. We will start from scratch, with your first unit test. By the end, you will have a comprehensive understanding of the available  test types, the best practices in terms of test organization as well as their runtime implications. You will be well equipped for the testing challenges ahead of you!
 
+
   - heading: Async Rust
     text: >
       We will cover the basics of asynchronous programming in Rust, including:  the <code>Future</code> trait, <code>async</code> functions, the <code>.await</code> operator, spawning tasks, an overview of <code>tokio</code> (the most popular async runtime in Rust), as well as common pitfalls.
+
 
 leads:
   - handle: algo_luca
@@ -58,13 +66,16 @@ quotes:
   - text: >-
       Amazing support from Luca! Detailed explanation of different topics whenever requested.
 
+
     source: Onsite attendee
   - text: >-
       Great format to allow people to go at their own pace. Like that we're building towards a bigger structure.
 
+
     source: Onsite attendee
   - text: >-
       The flow of the exercises is very good and easy to follow, even for one who has never used Rust before. The companion book is also useful.
+
 
     source: Onsite attendee
 upcomingDates:
@@ -72,6 +83,7 @@ upcomingDates:
     endDate: "2026-09-15"
     url: >-
       https://www.tickettailor.com/checkout/view-event/id/8648595/chk/92d3092df2934adac875cab889c932d1/
+
 
   - date: "2026-11-10"
     endDate: "2026-11-17"

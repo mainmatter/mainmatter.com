@@ -1,0 +1,42 @@
+name: Workshops
+
+on:
+  schedule:
+    - cron:  '0 1 * * *' # daily, at 1am
+
+jobs:
+  update_dates:
+    name: Update Upcoming Workshop Dates
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: actions/setup-node@v4
+        with:
+          registry-url: "https://registry.npmjs.org"
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+
+      - name: install dependencies
+        run: pnpm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: update
+        run: pnpm update-workshop-dates
+        env:
+          TICKET_TAILOR_API_KEY: ${{ secrets.TICKET_TAILOR_API_KEY }}
+
+      - name: format
+        run: pnpm lint:md:fix
+
+      - name: check diff
+        run: git diff --exit-code -- ":(exclude)src/workshops/*.md" # ensure nothing but the workshop files changed
+
+      - name: commit and push
+        run: |
+          git config --global user.email "marco.otte-witte@mainmatter.com"
+          git config --global user.name "Marco Otte-Witte"
+          git add src/workshops
+          git commit -m "update upcoming workshop dates"
+          git push
