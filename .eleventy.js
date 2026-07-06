@@ -75,6 +75,31 @@ module.exports = async function (eleventyConfig) {
   eleventyConfig.addFilter("monthDayYear", function (date) {
     return dayjs(date).format("MMMM D, YYYY");
   });
+
+  eleventyConfig.addFilter("dateRange", function (startDate, endDate) {
+    const start = dayjs(startDate);
+
+    if (!endDate) {
+      return start.format("MMMM D, YYYY");
+    }
+
+    const end = dayjs(endDate);
+
+    if (start.isSame(end, "day")) {
+      return start.format("MMMM D, YYYY");
+    }
+
+    if (start.isSame(end, "month")) {
+      return `${start.format("MMMM D")} – ${end.format("D, YYYY")}`;
+    }
+
+    if (start.isSame(end, "year")) {
+      return `${start.format("MMMM D")} – ${end.format("MMMM D, YYYY")}`;
+    }
+
+    return `${start.format("MMMM D, YYYY")} – ${end.format("MMMM D, YYYY")}`;
+  });
+
   // robot friendly date format for crawlers
   eleventyConfig.addFilter("htmlDate", function (date) {
     return dayjs(date).format();

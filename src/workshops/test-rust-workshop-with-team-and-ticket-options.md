@@ -1,18 +1,22 @@
 ---
 title: "TEST Rust Workshop with individual tickets and a very very very very very very very long title"
 tags: "rust"
-format: "2 days"
+format: "3 days"
 subtext: "On-site or remote"
 description: "Placeholder test workshop used to verify price and date rendering on workshop cards. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. <br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
 price: "450 €"
 dates:
   - date: 2027-04-14
+    endDate: 2027-04-16
     url: https://www.tickettailor.com/
-  - date: 2027-07-08
+  - date: 2027-07-30
+    endDate: 2027-08-01
     url: https://www.tickettailor.com/
   - date: 2027-10-21
+    endDate: 2027-10-23
     url: https://www.tickettailor.com/
   - date: 2027-12-02
+    endDate: 2027-12-04
     url: https://www.tickettailor.com/
 hero:
   color: purple

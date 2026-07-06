@@ -5,12 +5,47 @@ layout: "base"
 {% from "btn-primary.njk" import btnPrimary %}
 {% from "author-socials.njk" import authorSocials %}
 {% from "color-hero.njk" import colorHero %}
+{% from "cta-link.njk" import ctaLink %}
 {% from "cta-banner.njk" import ctaBanner %}
 {% from "global/invisible-captcha.njk" import invisibleCaptcha %}
 {% from "global/li-fat-id.njk" import liFatId %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 {% from "logo-list.njk" import logoList %}
 {% from "quote.njk" import quote %}
+
+{% macro workshopIndividualTickets(modifier = "") %}
+  <section class="workshop-detail__ticket-panel {{ modifier }}">
+    <h3 class="h4">Individual tickets</h3>
+    {% if price %}
+      <p class="workshop-detail__ticket-price">
+        <img src="/assets/images/icons/bills.svg" alt="" loading="lazy" />
+        {{ price | safe }}
+      </p>
+    {% endif %}
+
+    {% if dates %}
+      <ul class="workshop-detail__dates">
+        {% for date in dates %}
+          {% set workshopDate = date.date or date %}
+          {% set workshopEndDate = date.endDate or date.end %}
+          <li>
+            {% if date.url %}
+              <a href="{{ date.url }}">
+                <span>{{ workshopDate | dateRange(workshopEndDate) }}</span>
+                {% include 'svg/arrow.njk' %}
+              </a>
+            {% else %}
+              <span>
+                <span>{{ workshopDate | dateRange(workshopEndDate) }}</span>
+                {% include 'svg/arrow.njk' %}
+              </span>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+{% endmacro %}
 
 {% macro workshopTicketPanels() %}
   {% set hasIndividualTickets = price or dates %}
@@ -41,36 +76,7 @@ layout: "base"
     </section>
 
     {% if hasIndividualTickets %}
-      <section class="workshop-detail__ticket-panel">
-        <h3 class="h4">Individual tickets</h3>
-        {% if price %}
-          <p class="workshop-detail__ticket-price">
-            <img src="/assets/images/icons/bills.svg" alt="" loading="lazy" />
-            {{ price | safe }}
-          </p>
-        {% endif %}
-
-        {% if dates %}
-          <ul class="workshop-detail__dates">
-            {% for date in dates %}
-              {% set workshopDate = date.date or date %}
-              <li>
-                {% if date.url %}
-                  <a href="{{ date.url }}">
-                    <span>{{ workshopDate | monthDayYear }}</span>
-                    {% include 'svg/arrow.njk' %}
-                  </a>
-                {% else %}
-                  <span>
-                    <span>{{ workshopDate | monthDayYear }}</span>
-                    {% include 'svg/arrow.njk' %}
-                  </span>
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </section>
+      {{ workshopIndividualTickets() }}
     {% endif %}
   </div>
 {% endmacro %}
@@ -103,6 +109,12 @@ layout: "base"
         </strong>
       {% endif %}
     </span>
+    <div class="workshop-detail-hero__actions">
+      {{ ctaLink("#book-workshop", "Book for your team", "color-hero__link") }}
+      {% if price or dates %}
+        {{ workshopIndividualTickets("workshop-detail__ticket-panel--hero") }}
+      {% endif %}
+    </div>
   {% endset %}
   {% set heroEyebrow %}
     <a class="workshop-detail-hero__eyebrow-link" href="{{ workshopCategoryUrl }}">
@@ -118,8 +130,6 @@ layout: "base"
     "image": hero.image,
     "alt": hero.imageAlt,
     "loading": "eager",
-    "linkUrl": "#book-workshop",
-    "linkText": "Book for your team",
     "class": "workshop-detail-hero",
     "containerType": "lp"
     }
@@ -184,10 +194,6 @@ layout: "base"
             <li>
               <div>
                 <h4 class="h4">{{ topic.heading or topic.title }}</h4>
-                <p class="workshop-detail__topic-duration">
-                  <img src="/assets/images/icons/clock.svg" alt="" loading="lazy" />
-                  {{ topic.duration or "1 hour" }}
-                </p>
                 <div class="workshop-detail__topic-text">{{ topic.text | safe }}</div>
               </div>
             </li>
@@ -295,11 +301,13 @@ layout: "base"
           <h2 class="mb-2">Who we are</h2>
           <p>
             We are Mainmatter and we Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-            in nisi sed eros eleifend scelerisque a eu nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-            in nisi sed eros eleifend scelerisque a eu nisl.
+            in nisi sed eros eleifend scelerisque a eu nisl. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Etiam in nisi sed eros eleifend scelerisque a eu nisl.
           </p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-            in nisi sed eros eleifend scelerisque a eu nisl.</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in nisi sed eros eleifend
+            scelerisque a eu nisl.
+          </p>
         </div>
         <img
           class="workshop-detail__brand-mark"

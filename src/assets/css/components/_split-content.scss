@@ -55,6 +55,10 @@
     align-items: center;
   }
 
+  .split-content--reversed .split-content__wrapper {
+    flex-direction: row-reverse;
+  }
+
   .split-content__content {
     flex-wrap: nowrap;
   }

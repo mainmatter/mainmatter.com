@@ -122,34 +122,50 @@ eleventyImport:
   %}
   {{ logoList(logoCompanies, "We Have Trained Teams at", "h2", "h3") }}
 
+  {%
+    set instructors = [
+    {
+    "name": "Luca Palmieri",
+    "bio": "Luca Palmieri is a Principal Engineering Consultant at Mainmatter and builds technology products for a living. His current focus is on backend development, software architecture and the Rust programming language. He is the author of <a href=\"https://zero2prod.com\">\"Zero to Production in Rust\"</a>.",
+    "image": "/assets/images/authors/algo_luca.jpg"
+    },
+    {
+    "name": "Jonas Kruckenberg",
+    "bio": "Jonas Kruckenberg is a systems engineer and technologist focused on next-generation computing infrastructure, including k23 - an experimental operating system. As a TC39 Invited Expert, he helps shape the future of web standards by bringing non-browser WebAssembly perspectives to language standardization.",
+    "image": "/assets/images/authors/JonasKruckenberg.jpg"
+    }
+    ]
+  %}
+
   <section class="container container--lg my-10" id="instructor">
-    <div class="split-content no-link">
-      <div class="split-content__wrapper">
-        <div class="split-content__content">
-          <h5 class="workshops-page__instructor-eyebrow mb-015">
-            <img src="/assets/images/icons/instructor.svg" alt="" loading="lazy" />
-            <span>Our Expert Instructor</span>
-          </h5>
-          <h3 class="mb-2">Luca Palmieri</h3>
-          <p>
-            Luca Palmieri is a Principal Engineering Consultant at Mainmatter and builds technology
-            products for a living. His current focus is on backend development, software
-            architecture and the Rust programming language. He is the author of
-            <a href="https://zero2prod.com">"Zero to Production in Rust"</a>.
-          </p>
-        </div>
-        <div class="split-content__feature">
-          {%
-            set instructorImage = {
-            "image": "/assets/images/authors/algo_luca.jpg",
-            "alt": "Luca Palmieri",
-            "loading": "lazy"
-            }
-          %}
-          {{ secondaryFeature(instructorImage, 'split-content__author') }}
+    {% for instructor in instructors %}
+      <div
+        class="split-content no-link {% if loop.index is even %}split-content--reversed{% endif %}"
+      >
+        <div class="split-content__wrapper">
+          <div class="split-content__content">
+            {% if loop.first %}
+              <h5 class="workshops-page__instructor-eyebrow mb-015">
+                <img src="/assets/images/icons/instructor.svg" alt="" loading="lazy" />
+                <span> Our Expert Instructor{% if instructors.length > 1 %}s{% endif %} </span>
+              </h5>
+            {% endif %}
+            <h3 class="mb-2">{{ instructor.name }}</h3>
+            <p>{{ instructor.bio | safe }}</p>
+          </div>
+          <div class="split-content__feature">
+            {%
+              set instructorImage = {
+              "image": instructor.image,
+              "alt": instructor.name,
+              "loading": "lazy"
+              }
+            %}
+            {{ secondaryFeature(instructorImage, 'split-content__author') }}
+          </div>
         </div>
       </div>
-    </div>
+    {% endfor %}
   </section>
 
   <section class="container container--lg my-10" id="others-say">
@@ -187,7 +203,7 @@ eleventyImport:
 
   {%
     set trainingMaterials = [
-    
+
     {
       "title": "C to Rust Migration Book",
       "titleHtml": "C to Rust<br>Migration Book",
