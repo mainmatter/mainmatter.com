@@ -23,9 +23,9 @@ layout: "base"
       </p>
     {% endif %}
 
-    {% if dates %}
+    {% if upcomingDates %}
       <ul class="workshop-detail__dates">
-        {% for date in dates %}
+        {% for date in upcomingDates %}
           {% set workshopDate = date.date or date %}
           {% set workshopEndDate = date.endDate or date.end %}
           <li>
@@ -48,7 +48,7 @@ layout: "base"
 {% endmacro %}
 
 {% macro workshopTicketPanels() %}
-  {% set hasIndividualTickets = price or dates %}
+  {% set hasIndividualTickets = price or upcomingDates %}
   <div
     class="workshop-detail__ticket-panels {% if not hasIndividualTickets %}workshop-detail__ticket-panels--team-only{% endif %}"
   >
@@ -108,7 +108,7 @@ layout: "base"
           {{ subtext }}
         </strong>
       {% endif %}
-      {% if price or dates %}
+      {% if price or upcomingDates %}
         <a class="workshop-detail-hero__ticket-link" href="#workshop-tickets">
           <img src="/assets/images/icons/ticket.svg" alt="" loading="lazy" />
           <span>Individual tickets available</span>

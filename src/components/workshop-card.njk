@@ -3,7 +3,7 @@
   {% set duration = data.duration or data.format %}
   {% set description = data.description %}
   {% set price = data.price %}
-  {% set dates = data.dates %}
+  {% set dates = data.upcomingDates %}
 
   <article class="workshop-card {% if not price and not dates %}workshop-card--full{% endif %}">
     <a

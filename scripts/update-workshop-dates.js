@@ -21,6 +21,7 @@ const TODAY = new Date();
           date: formatDateForMetadata(e.start),
           endDate: formatDateForMetadata(e.end),
           url: e.url,
+          price: e.price,
         };
       });
       const output = matter.stringify(content, data);
@@ -39,10 +40,13 @@ async function getUpcomingEventOccurences(eventSeriesId) {
   return data.data
     .filter(o => o.object === "event")
     .map(e => {
+      const price = e.ticket_types.find(t => t.type === "GA").price;
+
       return {
         start: new Date(e.start.iso),
         end: new Date(e.end.iso),
         url: e.url,
+        price,
       };
     })
     .filter(e => e.start > TODAY);
