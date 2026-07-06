@@ -13,8 +13,8 @@ layout: "base"
 {% from "logo-list.njk" import logoList %}
 {% from "quote.njk" import quote %}
 
-{% macro workshopIndividualTickets(modifier = "") %}
-  <section class="workshop-detail__ticket-panel {{ modifier }}">
+{% macro workshopIndividualTickets(className = "") %}
+  <section class="workshop-detail__ticket-panel {{ className }}">
     <h3 class="h4">Individual tickets</h3>
     {% if price %}
       <p class="workshop-detail__ticket-price">
@@ -108,12 +108,16 @@ layout: "base"
           {{ subtext }}
         </strong>
       {% endif %}
+      {% if price or dates %}
+        <a class="workshop-detail-hero__ticket-link" href="#workshop-tickets">
+          <img src="/assets/images/icons/ticket.svg" alt="" loading="lazy" />
+          <span>Individual tickets available</span>
+          {% include 'svg/arrow.njk' %}
+        </a>
+      {% endif %}
     </span>
     <div class="workshop-detail-hero__actions">
       {{ ctaLink("#book-workshop", "Book for your team", "color-hero__link") }}
-      {% if price or dates %}
-        {{ workshopIndividualTickets("workshop-detail__ticket-panel--hero") }}
-      {% endif %}
     </div>
   {% endset %}
   {% set heroEyebrow %}
@@ -182,7 +186,11 @@ layout: "base"
       </div>
     </section>
 
-    <section class="container container--xl my-10" aria-label="Workshop booking options">
+    <section
+      class="container container--xl my-10"
+      id="workshop-tickets"
+      aria-label="Workshop booking options"
+    >
       {{ workshopTicketPanels() }}
     </section>
 
