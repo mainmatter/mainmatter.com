@@ -92,49 +92,49 @@
 
 [[redirects]]
   from = "https://ember-basics-workshop.simplabs.com/*"
-  to = "https://mainmatter.com/services/workshops/hands-on-ember/"
+  to = "https://mainmatter.com/training/hands-on-ember/"
   force = true
 
 [[redirects]]
   from = "https://ember-pro-workshop.simplabs.com/*"
-  to = "https://mainmatter.com/services/workshops/hands-on-ember/"
+  to = "https://mainmatter.com/training/hands-on-ember/"
   force = true
 
 [[redirects]]
   from = "https://ember-workshop.simplabs.com/*"
-  to = "https://mainmatter.com/services/workshops/hands-on-ember/"
+  to = "https://mainmatter.com/training/hands-on-ember/"
   force = true
 
 [[redirects]]
   from = "https://ember-workshops.simplabs.com/*"
-  to = "https://mainmatter.com/services/workshops/hands-on-ember/"
+  to = "https://mainmatter.com/training/hands-on-ember/"
   force = true
 
 [[redirects]]
   from = "https://git-workshop.simplabs.com/*"
-  to = "https://mainmatter.com/services/workshops/effective-git/"
+  to = "https://mainmatter.com/training/effective-git/"
   force = true
 
 # redirect old simplabs.com URLs
 [[redirects]]
   from = "/resources/workshop/digital-product-strategy"
-  to = "/services/workshops/digital-product-strategy/"
+  to = "/training/digital-product-strategy/"
 
 [[redirects]]
   from = "/resources/workshop/digital-product-strategy"
-  to = "/services/workshops/digital-product-strategy/"
+  to = "/training/digital-product-strategy/"
 
 [[redirects]]
   from = "/resources/workshop/design-system-kickoff-interface-inventory"
-  to = "/services/workshops/design-system-kickoff-interface-inventory/"
+  to = "/training/design-system-kickoff-interface-inventory/"
 
 [[redirects]]
   from = "/resources/workshop/hands-on-ember"
-  to = "/services/workshops/hands-on-ember/"
+  to = "/training/hands-on-ember/"
 
 [[redirects]]
   from = "/resources/workshop/effective-git"
-  to = "/services/workshops/hands-on-ember/"
+  to = "/training/hands-on-ember/"
 
 [[redirects]]
   from = "/resources"
@@ -170,11 +170,15 @@
 
 [[redirects]]
   from = "/services/training"
-  to = "/services/workshops/"
+  to = "/training/"
 
 [[redirects]]
-  from = "/workshops"
-  to = "/services/workshops/"
+  from = "/workshops/"
+  to = "/training/"
+
+[[redirects]]
+  from = "/services/workshops/*"
+  to = "/training/:splat"
 
 [[redirects]]
   from = "/services/team-augmentation-and-training"
@@ -229,24 +233,24 @@
 # redirect old "Web-based Services in Rust" landing page to regular workshop
 [[redirects]]
   from = "https://rust-web-services-workshop.mainmatter.com/*"
-  to = "https://mainmatter.com/services/workshops/build-production-ready-apis-in-rust/"
+  to = "https://mainmatter.com/training/build-production-ready-apis-in-rust/"
   force = true
 
 # redirect old "Web-based Servides in Rust" workshop to new one
 [[redirects]]
-  from = "/services/workshops/web-based-services-in-rust"
-  to = "/services/workshops/build-production-ready-apis-in-rust/"
+  from = "/training/web-based-services-in-rust"
+  to = "/training/build-production-ready-apis-in-rust/"
 
 # redirect old "Svelte & SvelteKit" landing page to regular workshop
 [[redirects]]
   from = "https://svelte-sveltekit-workshop.mainmatter.com/*"
-  to = "https://mainmatter.com/services/workshops/svelte-and-sveltekit/"
+  to = "https://mainmatter.com/training/svelte-and-sveltekit/"
   force = true
 
 # redirect "Telemetry for Rust applications" landing page to regular workshop
 [[redirects]]
   from = "https://rust-telemetry-workshop.mainmatter.com/*"
-  to = "https://mainmatter.com/services/workshops/telemetry-for-rust-apis/"
+  to = "https://mainmatter.com/training/telemetry-for-rust-apis/"
   force = true
 
 # redirect wrongly published "Global state in svelte 5" post to new post

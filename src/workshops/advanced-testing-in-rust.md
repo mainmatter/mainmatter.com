@@ -13,7 +13,7 @@ introduction: |
   <p>The workshop is designed for software developers who have a good understanding of Rust's basic
   concepts and want to move beyond the built-in testing toolkit.</p>
   <p>If you are new to Rust instead, you might be interested instead in our 
-  <a href="/services/workshops/an-introduction-to-testing-in-rust/">introductory testing workshop</a>.</p>
+  <a href="/training/an-introduction-to-testing-in-rust/">introductory testing workshop</a>.</p>
 hero:
   color: purple
   image: "/assets/images/workshops/advanced-testing-in-rust/header-background.jpg"

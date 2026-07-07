@@ -12,7 +12,7 @@
   <article class="workshop-card {% if not price and not dates %}workshop-card--full{% endif %}">
     <a
       class="workshop-card__overlay-link"
-      href="/services/workshops/{{ workshop.fileSlug }}/"
+      href="/training/{{ workshop.fileSlug }}/"
       aria-label="Learn more about {{ data.title }}"
       tabindex="-1"
     ></a>
@@ -111,7 +111,7 @@
         </details>
       {% endif %}
 
-      <a class="workshop-card__link" href="/services/workshops/{{ workshop.fileSlug }}/">
+      <a class="workshop-card__link" href="/training/{{ workshop.fileSlug }}/">
         <span>Learn More</span>
         {% include 'svg/arrow.njk' %}
       </a>

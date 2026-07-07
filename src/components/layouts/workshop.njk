@@ -86,16 +86,16 @@ layout: "base"
 {% endmacro %}
 
 {%- block content -%}
-  {% set workshopCategoryUrl = "/services/workshops/" %}
+  {% set workshopCategoryUrl = "/training/" %}
   {% set workshopCategoryLabel = "Workshops" %}
   {% if "rust" in tags %}
-    {% set workshopCategoryUrl = "/services/workshops/rust/" %}
+    {% set workshopCategoryUrl = "/training/rust/" %}
     {% set workshopCategoryLabel = "Rust Workshops" %}
     {% elseif "svelte" in tags %}
-    {% set workshopCategoryUrl = "/services/workshops/svelte/" %}
+    {% set workshopCategoryUrl = "/training/svelte/" %}
     {% set workshopCategoryLabel = "Svelte Workshops" %}
     {% elseif "ember" in tags %}
-    {% set workshopCategoryUrl = "/services/workshops/ember/" %}
+    {% set workshopCategoryUrl = "/training/ember/" %}
     {% set workshopCategoryLabel = "Ember Workshops" %}
   {% endif %}
   {% set heroText %}
