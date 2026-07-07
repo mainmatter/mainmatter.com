@@ -15,7 +15,7 @@ introduction: >
   
   <p>The workshop starts from the absolute basics and gradually builds up to more advanced topics, interleaving theory with practice.</p>
   
-  The goal is to offer you a coherent learning path that provides the right level of challenge at every step, 
+  <p>The goal is to offer you a coherent learning path that provides the right level of challenge at every step, 
   
   without being overwhelming.</p>
   

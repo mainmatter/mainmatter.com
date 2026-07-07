@@ -311,11 +311,13 @@ layout: "base"
             <p class="medium">
               Mainmatter has been active in the Rust ecosystem for years, creating the
               <a href="https://rust-exercises.com">100 Exercises to Learn Rust</a>
-              course, the <a href="/c-to-rust-migration-book/">C to Rust Migration Book</a> organizing <a href="https://www.eurorust.eu">EuroRust</a>, and
-              contributing to open source.
+              course, the
+              <a href="/c-to-rust-migration-book/">C to Rust Migration Book</a> organizing
+              <a href="https://www.eurorust.eu">EuroRust</a>, and contributing to open source.
             </p>
             <p>
-              We help teams adopt and build on Rust with confidence via trainings and workshops, hands-on team reinforcement, codebase assessments, and more.
+              We help teams adopt and build on Rust with confidence via trainings and workshops,
+              hands-on team reinforcement, codebase assessments, and more.
             </p>
           </div>
           <img
@@ -327,21 +329,26 @@ layout: "base"
           />
         </div>
       </section>
-    {% endif %}
 
-    {%
-      set logoCompanies = [
-      'Redis',
-      'Robin Hood',
-      'Generali',
-      'Google',
-      'AIS',
-      'HashiCorp',
-      'faculty',
-      'Rail Europe'
-      ]
-    %}
-    {{ logoList(logoCompanies, "We are Trusted by", "h2", "h3") }}
+      {%
+        set logoCompanies = [
+        'Redis',
+        'Keyrock',
+        'CERN',
+        'Thales',
+        'Süddeutsche Zeitung',
+        'faculty',
+        'CERN',
+        'Canonical',
+        'NTT Data',
+        'Truelayer',
+        'Lego',
+        'BMW Car IT',
+        'Change Healthcare'
+        ]
+      %}
+      {{ logoList(logoCompanies, 'We have trained developers at', 'h2', 'h3') }}
+    {% endif %}
 
     <section class="container container--xl my-10" aria-label="Workshop booking options">
       {{ workshopTicketPanels() }}
