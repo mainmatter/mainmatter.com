@@ -1,4 +1,5 @@
 @use "../base/breakpoints" as *;
+@use "../mixins/stable-underline-hover" as *;
 
 .workshop-detail-hero {
   .color-hero__main {
@@ -33,11 +34,8 @@
 
     &:hover,
     &:focus {
+      --icon-arrow-transform: translate3d(0.35rem, 0, 0);
       color: var(--color-white);
-
-      .icon-arrow {
-        transform: translate3d(0.35rem, 0, 0);
-      }
     }
   }
 }
@@ -67,11 +65,8 @@
 
   &:hover,
   &:focus {
+    --icon-arrow-transform: translate3d(-0.5rem, 0, 0);
     color: var(--color-white);
-
-    .icon-arrow {
-      transform: translate3d(-0.5rem, 0, 0);
-    }
 
     .workshop-detail-hero__eyebrow-text {
       text-decoration: underline;
@@ -109,19 +104,16 @@
   --icon-arrow-margin: 0 0 0 0.4rem;
   --icon-arrow-color: var(--color-white);
 
-  flex-basis: 100%;
+  flex: 0 0 auto;
+  width: fit-content;
   color: var(--color-white);
   font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 0.25rem;
+  @include stable-underline-hover;
 
   &:hover,
   &:focus {
+    --icon-arrow-transform: translate3d(0.35rem, 0, 0);
     color: var(--color-white);
-
-    .icon-arrow {
-      transform: translate3d(0.35rem, 0, 0);
-    }
   }
 }
 
@@ -216,15 +208,12 @@
     align-items: center;
     width: fit-content;
     color: var(--color-white);
-    text-decoration: underline;
-    text-underline-offset: 0.25rem;
+    @include stable-underline-hover;
   }
 
   a:hover,
   a:focus {
-    .icon-arrow {
-      transform: translate3d(0.35rem, 0, 0);
-    }
+    --icon-arrow-transform: translate3d(0.35rem, 0, 0);
   }
 }
 
