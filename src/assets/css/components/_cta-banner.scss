@@ -1,4 +1,5 @@
 @use "../base/breakpoints" as *;
+@use "../mixins/stable-underline-hover" as *;
 
 .cta-banner {
   z-index: 50;
@@ -88,6 +89,14 @@
 
   a {
     color: var(--color-white);
+  }
+}
+
+.cta-banner__text,
+.cta-banner__title,
+.service-cta--blog .cta-banner__text {
+  a {
+    @include stable-underline-hover;
   }
 }
 
@@ -242,7 +251,6 @@
     font-size: clamp(1.125rem, 1.0214rem + 0.442vw, 1.375rem);
 
     a {
-      text-decoration: underline;
       font-weight: 400;
     }
   }

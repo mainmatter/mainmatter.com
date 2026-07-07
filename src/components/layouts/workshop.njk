@@ -14,12 +14,16 @@ layout: "base"
 {% from "quote.njk" import quote %}
 
 {% macro workshopIndividualTickets(className = "") %}
+  {% set ticketPrice = null %}
+  {% if upcomingDates and upcomingDates[0].price %}
+    {% set ticketPrice = upcomingDates[0].price %}
+  {% endif %}
   <section class="workshop-detail__ticket-panel {{ className }}">
     <h3 class="h4">Individual tickets</h3>
-    {% if price %}
+    {% if ticketPrice %}
       <p class="workshop-detail__ticket-price">
         <img src="/assets/images/icons/bills.svg" alt="" loading="lazy" />
-        {{ price | safe }}
+        {{ ticketPrice | euroCents }}
       </p>
     {% endif %}
 

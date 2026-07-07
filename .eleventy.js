@@ -100,6 +100,23 @@ module.exports = async function (eleventyConfig) {
     return `${start.format("MMMM D, YYYY")} – ${end.format("MMMM D, YYYY")}`;
   });
 
+  eleventyConfig.addFilter("euroCents", function (price) {
+    if (price === undefined || price === null || price === "") {
+      return "";
+    }
+
+    const cents = Number(price);
+
+    if (Number.isNaN(cents)) {
+      return price;
+    }
+
+    return new Intl.NumberFormat("de-DE", {
+      style: "currency",
+      currency: "EUR",
+    }).format(cents / 100);
+  });
+
   // robot friendly date format for crawlers
   eleventyConfig.addFilter("htmlDate", function (date) {
     return dayjs(date).format();

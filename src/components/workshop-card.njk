@@ -4,6 +4,10 @@
   {% set description = data.description %}
   {% set price = data.price %}
   {% set dates = data.upcomingDates %}
+  {% set ticketPrice = null %}
+  {% if dates and dates[0].price %}
+    {% set ticketPrice = dates[0].price %}
+  {% endif %}
 
   <article class="workshop-card {% if not price and not dates %}workshop-card--full{% endif %}">
     <a
@@ -14,7 +18,7 @@
     ></a>
 
     <div class="workshop-card__main">
-      {% if duration or price %}
+      {% if duration or ticketPrice or dates %}
         <p class="workshop-card__meta">
           {% if duration %}
             <span class="workshop-card__duration">
@@ -27,7 +31,7 @@
               {{ duration }}
             </span>
           {% endif %}
-          {% if price %}
+          {% if ticketPrice or dates %}
             <span class="workshop-card__ticket-availability">
               <img
                 class="workshop-card__meta-icon"
@@ -72,7 +76,7 @@
                   Hide details
                 </button>
               </div>
-              {% if price %}
+              {% if ticketPrice %}
                 <p class="workshop-card__mobile-ticket-price">
                   <img
                     class="workshop-card__detail-icon"
@@ -80,7 +84,7 @@
                     alt=""
                     loading="lazy"
                   />
-                  {{ price | safe }}
+                  {{ ticketPrice | euroCents }}
                 </p>
               {% endif %}
             </div>
@@ -113,20 +117,22 @@
       </a>
     </div>
 
-    {% if price or dates %}
+    {% if ticketPrice or dates %}
       <aside class="workshop-card__details" aria-label="Public workshop details">
-        {% if price %}
+        {% if ticketPrice or dates %}
           <div class="workshop-card__ticket">
             <h4 class="workshop-card__detail-title">Individual tickets</h4>
-            <p class="workshop-card__price">
-              <img
-                class="workshop-card__detail-icon"
-                src="/assets/images/icons/bills.svg"
-                alt=""
-                loading="lazy"
-              />
-              {{ price | safe }}
-            </p>
+            {% if ticketPrice %}
+              <p class="workshop-card__price">
+                <img
+                  class="workshop-card__detail-icon"
+                  src="/assets/images/icons/bills.svg"
+                  alt=""
+                  loading="lazy"
+                />
+                {{ ticketPrice | euroCents }}
+              </p>
+            {% endif %}
           </div>
         {% endif %}
 
