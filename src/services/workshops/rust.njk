@@ -108,17 +108,21 @@ eleventyImport:
   {%
     set logoCompanies = [
     'Redis',
-    'Robin Hood',
-    'Google',
-    'AIS',
-    'HashiCorp',
-    'Faculty',
     'Keyrock',
+    'CERN',
+    'Thales',
+    'Süddeutsche Zeitung',
+    'faculty',
+    'CERN',
+    'Canonical',
+    'NTT Data',
+    'Truelayer',
+    'Lego',
     'BMW Car IT',
-    'CERN'
+    'Change Healthcare'
     ]
   %}
-  {{ logoList(logoCompanies, "We Have Trained Teams at", "h2", "h3") }}
+  {{ logoList(logoCompanies, 'We have trained developers at', 'h2', 'h3') }}
 
   {%
     set instructors = [
@@ -176,7 +180,7 @@ eleventyImport:
     {
       "title": "C to Rust Migration Book",
       "titleHtml": "C to Rust<br>Migration Book",
-      "link": "c-to-rust-migration-book/",
+      "link": "/c-to-rust-migration-book/",
       "logo": "rust"
     },
     {
@@ -186,8 +190,8 @@ eleventyImport:
       "logo": "rust"
     },
      {
-      "title": "Rust Handbook",
-      "link": "rust-adoption-handbook/",
+      "title": "Rust Adoption Handbook",
+      "link": "/rust-adoption-handbook/",
       "logo": "rust"
     }
     ]

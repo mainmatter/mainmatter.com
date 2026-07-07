@@ -10,7 +10,7 @@
       <div class="cards__grid">
         {% for card in cards %}
           <div class="tech-cards-homepage__grid-element card__grid-element">
-            <a href="/{{ card.link }}" class="card__link"> </a>
+            <a href="{{ card.link }}" class="card__link"> </a>
             <div class="tech-cards__logo tech-cards-homepage__logo {{ card.logo }}">
               {% set link='svg/'+ card.logo + '.njk' %}
               {% include link %}

@@ -1,6 +1,6 @@
 ---
 layout: "base"
-title: Workshops | Our Services
+title: Training
 description: "We teach teams like yours how to build sustainable products that work well today and keep working well tomorrow"
 eleventyNavigation:
   key: workshops
@@ -41,8 +41,8 @@ og:
 
 {%
   set hero = {
-  "title": "Workshop Landing Page",
-  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in nisi sed eros eleifend scelerisque a eu nisl. Ut eu sollicitudin magna. Nullam varius neque ante, a pulvinar ipsum luctus id. Maecenas diam lorem, molestie et consectetur eu, commodo quis dolor.",
+  "title": "Training",
+  "text": "We offer a range of workshops bookable for teams that want to grow – on-site or remote. We're also happy to prepare custom workshops – <a href='/contact/?service=Training'>get in touch</a> with us to talk about what curriculum fits your team best!",
   "image": "/assets/images/hero/workshops-hero.jpg",
   "alt": "Paperbacks stacked together in a small space",
   "loading": "eager",
@@ -55,17 +55,24 @@ og:
 {%
   set logoCompanies = [
   'Redis',
-  'Robin Hood',
+  'Keyrock',
   'Generali',
-  'Google',
-  'AIS',
-  'HashiCorp',
+  'CERN',
+  'Thales',
+  'Süddeutsche Zeitung',
   'faculty',
+  'CERN',
+  'Canonical',
+  'NTT Data',
+  'Truelayer',
+  'Lego',
+  'BMW Car IT',
+  'Change Healthcare',
   'Rail Europe'
   ]
 %}
 <div class="workshops-landing__logos">
-  {{ logoList(logoCompanies, 'We Have Trained Teams at', 'h2', 'h2') }}
+  {{ logoList(logoCompanies, 'We have trained developers at', 'h2', 'h2') }}
 </div>
 
 <section class="workshops-landing__quotes pt-7" id="our-attendees-say">
@@ -130,17 +137,17 @@ og:
   {
   "logo": "rust",
   "title": "Rust Workshops",
-  "link": "services/workshops/rust/"
+  "link": "/services/workshops/rust/"
   },
   {
   "logo": "svelte",
   "title": "Svelte Workshops",
-  "link": "services/workshops/svelte/"
+  "link": "/services/workshops/svelte/"
   },
   {
   "logo": "ember",
   "title": "Ember Workshops",
-  "link": "services/workshops/ember/"
+  "link": "/services/workshops/ember/"
   }
   ]
 %}
