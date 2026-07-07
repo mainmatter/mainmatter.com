@@ -334,7 +334,6 @@ layout: "base"
         set logoCompanies = [
         'Redis',
         'Keyrock',
-        'CERN',
         'Thales',
         'Süddeutsche Zeitung',
         'faculty',
@@ -348,6 +347,48 @@ layout: "base"
         ]
       %}
       {{ logoList(logoCompanies, 'We have trained developers at', 'h2', 'h3') }}
+    {% elif "svelte" in tags %}
+      <section class="container container--lg my-10">
+        <div class="workshop-detail__who-we-are">
+          <div>
+            <h2 class="mb-2">Who we are</h2>
+            <p class="medium">
+              Our team is led by Paolo Ricciuti, Svelte maintainer and co-author of SvelteLab.
+              Mainmatter is also the driving force behind the
+              <a href="https://svelte-custom-renderers.com/">Svelte Custom Renderers initiative</a>,
+              an active contributor to a number of open source projects and co-organizer of
+              <a href="https://www.sveltesummit.com/">Svelte Summit</a>.
+            </p>
+            <p>
+              We help teams adopt and build on Svelte with confidence via trainings and workshops,
+              hands-on team reinforcement, codebase assessments, and more.
+            </p>
+          </div>
+          <img
+            class="workshop-detail__brand-mark"
+            src="/icon-512.png"
+            alt=""
+            loading="lazy"
+            aria-hidden="true"
+          />
+        </div>
+      </section>
+
+      {%
+        set logoCompanies = [
+        'Rail Europe',
+        'Keyrock',
+        'Strabag',
+        'Thales',
+        'Google',
+        'faculty',
+        'Canonical',
+        'Hyland',
+        'Lego',
+        'Rillet'
+        ]
+      %}
+      {{ logoList(logoCompanies, "We are trusted by startups and Fortune Global 500 compaies", "h4", "h5") }}
     {% endif %}
 
     <section class="container container--xl my-10" aria-label="Workshop booking options">
