@@ -303,39 +303,31 @@ layout: "base"
       </section>
     {% endif %}
 
-    <section class="container container--lg my-10">
-      <div class="workshop-detail__who-we-are">
-        <div>
-          <h2 class="mb-2">Who we are</h2>
-          <p>
-            We are Mainmatter and we Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-            in nisi sed eros eleifend scelerisque a eu nisl. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Etiam in nisi sed eros eleifend scelerisque a eu nisl.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in nisi sed eros eleifend
-            scelerisque a eu nisl.
-          </p>
+    {% if "rust" in tags %}
+      <section class="container container--lg my-10">
+        <div class="workshop-detail__who-we-are">
+          <div>
+            <h2 class="mb-2">Who we are</h2>
+            <p class="medium">
+              Mainmatter has been active in the Rust ecosystem for years, creating the
+              <a href="https://rust-exercises.com">100 Exercises to Learn Rust</a>
+              course, the <a href="/c-to-rust-migration-book/">C to Rust Migration Book</a> organizing <a href="https://www.eurorust.eu">EuroRust</a>, and
+              contributing to open source.
+            </p>
+            <p>
+              We help teams adopt and build on Rust with confidence via trainings and workshops, hands-on team reinforcement, codebase assessments, and more.
+            </p>
+          </div>
+          <img
+            class="workshop-detail__brand-mark"
+            src="/icon-512.png"
+            alt=""
+            loading="lazy"
+            aria-hidden="true"
+          />
         </div>
-        <img
-          class="workshop-detail__brand-mark"
-          src="/icon-512.png"
-          alt=""
-          loading="lazy"
-          aria-hidden="true"
-        />
-      </div>
-
-      <div class="workshop-detail__workshops-text workshop-detail__richtext">
-        <h2 class="mb-2">{{ workshopCategoryLabel }}</h2>
-        <p>
-          We offer a range of workshops bookable for teams that want to grow – on-site or remote.
-          We're also happy to prepare custom workshops –
-          <a href="/contact/?service=workshops">get in touch with us</a> to talk about what
-          curriculum fits your team best!
-        </p>
-      </div>
-    </section>
+      </section>
+    {% endif %}
 
     {%
       set logoCompanies = [
@@ -359,7 +351,7 @@ layout: "base"
       set moreWorkshops = {
       "title": "Can't Find the Right Workshops for Your Team?",
       "text": "We are happy to tailor the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as develop new content if desired.",
-      "linkUrl": "/contact/?service=workshops",
+      "linkUrl": "/contact/?service=Training",
       "linkText": "Get in Touch",
       "class": "workshop-detail__more-workshops-cta"
       }

@@ -18,24 +18,24 @@ og:
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 
 {%
-  set rustWorkshop = {
+  set rustTraining = {
   "logo": "rust",
-  "link": "services/workshops/rust/",
-  "linkText": "Rust Workshops"
+  "link": "/services/workshops/rust/",
+  "linkText": "Rust Training"
   }
 %}
 {%
-  set svelteWorkshop = {
+  set svelteTraining = {
   "logo": "svelte",
-  "link": "services/workshops/svelte/",
-  "linkText": "Svelte Workshops"
+  "link": "/services/workshops/svelte/",
+  "linkText": "Svelte Training"
   }
 %}
 {%
-  set emberWorkshop = {
+  set emberTraining = {
   "logo": "ember",
-  "link": "services/workshops/ember/",
-  "linkText": "Ember Workshops"
+  "link": "/services/workshops/ember/",
+  "linkText": "Ember Training"
   }
 %}
 
@@ -46,8 +46,8 @@ og:
   "image": "/assets/images/hero/workshops-hero.jpg",
   "alt": "Paperbacks stacked together in a small space",
   "loading": "eager",
-  "class": "workshops-landing-hero",
-  "technologies": [rustWorkshop, svelteWorkshop, emberWorkshop]
+  "class": "training-landing-hero",
+  "technologies": [rustTraining, svelteTraining, emberTraining]
   }
 %}
 {{ colorHero('purple', hero) }}
@@ -77,7 +77,7 @@ og:
 
 <section class="workshops-landing__quotes pt-7" id="our-attendees-say">
   <div class="container container--lg">
-    <h2 class="mb-4">Our Attendees Say...</h2>
+    <h2 class="mb-4">Our attendees say</h2>
     {%
       set quoteContent = {
       "text": "The work remains mysterious to me, but its importance becomes clearer with every passing day. The structure, guidance, and sense of purpose have exceeded all expectations.",
@@ -136,23 +136,23 @@ og:
   set workshopCards = [
   {
   "logo": "rust",
-  "title": "Rust Workshops",
+  "title": "Rust Training",
   "link": "/services/workshops/rust/"
   },
   {
   "logo": "svelte",
-  "title": "Svelte Workshops",
+  "title": "Svelte Training",
   "link": "/services/workshops/svelte/"
   },
   {
   "logo": "ember",
-  "title": "Ember Workshops",
+  "title": "Ember Training",
   "link": "/services/workshops/ember/"
   }
   ]
 %}
 <div class="workshops-landing__catalog">
-  {{ techCards('workshops-landing-catalog', 'Explore Our Workshops', null, workshopCards) }}
+  {{ techCards('workshops-landing-catalog', 'Explore our training offering', null, workshopCards) }}
 </div>
 
 <section>
