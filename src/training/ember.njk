@@ -47,7 +47,13 @@ eleventyImport:
 %}
 {{ colorHero('purple', heroContent) }}
 
-{% set emberWorkshops = collections.workshops | filterByCollectionTag("ember") %}
+{%
+  set emberWorkshops = [
+  collections.workshops | findByCollectionSlug("modernising-ember-development"),
+  collections.workshops | findByCollectionSlug("hands-on-ember"),
+  collections.workshops | findByCollectionSlug("practical-typescript")
+  ]
+%}
 
 <div class="workshops-page">
   <section class="container container--xl my-10" id="workshops">
