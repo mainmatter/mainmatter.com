@@ -31,8 +31,20 @@ const TODAY = new Date();
 })();
 
 async function getUpcomingEventOccurences(eventSeriesId) {
-  const url = `https://api.tickettailor.com/v1/event_series/${eventSeriesId}/events`;
-  const data = await got(url, {
+  let url = `https://api.tickettailor.com/v1/event_series/${eventSeriesId}`;
+  let data = await got(url, {
+    headers: {
+      authorization: `Basic ${TICKET_TAILOR_API_KEY}`,
+    },
+  }).json();
+
+  const { status } = data;
+  if (status !== "published") {
+    return [];
+  }
+
+  url = `https://api.tickettailor.com/v1/event_series/${eventSeriesId}/events`;
+  data = await got(url, {
     headers: {
       authorization: `Basic ${TICKET_TAILOR_API_KEY}`,
     },
