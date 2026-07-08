@@ -76,7 +76,9 @@ Example usage:
         {% if content.toc %}
           <div class="table-of-contents__list container--xl mt-2">
             {% for text, anchor in content.toc %}
-              <div class="{% if loop.index == 1 %}desktop-hidden{% endif %}">
+              <div
+                class="{% if loop.index == 1 and content.hideFirstTocItemOnDesktop !== false %}desktop-hidden{% endif %}"
+              >
                 {%-
                   set link = {
                   "label": text,
