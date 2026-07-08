@@ -38,9 +38,15 @@ async function getUpcomingEventOccurences(eventSeriesId) {
     },
   }).json();
   return data.data
-    .filter(o => o.object === "event")
+    .filter(
+      o =>
+        o.object === "event" &&
+        o.hidden === "false" &&
+        o.tickets_available === "true" &&
+        o.unavailable === "false"
+    )
     .map(e => {
-      const price = e.ticket_types.find(t => t.type === "GA").price;
+      const price = e.ticket_types.find(t => t.type === "GA" && t.status === "on_sale").price;
 
       return {
         start: new Date(e.start.iso),

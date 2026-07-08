@@ -6,7 +6,7 @@ subtext: Bookable for teams – on-site or remote
 description: >-
   This 4-days workshop helps you get started with Rust, assuming no prior knowledge of the language. The workshop starts from the absolute basics and gradually builds up to more advanced topics.
 
-ticket_tailor_event_series_id: es_2299344
+ticket_tailor_event_series_id: es_2298521
 introduction: >
   <p>Rust is a general-purpose programming languages that's been growing in popularity over the past few years.
     It's known for its strong type system, its focus on safety and performance, and its modern tooling.</p>
@@ -68,16 +68,16 @@ quotes:
 
     source: Onsite attendee
 upcomingDates:
-  - date: "2026-09-08"
-    endDate: "2026-09-15"
+  - date: "2026-09-21"
+    endDate: "2026-10-01"
     url: >-
-      https://www.tickettailor.com/checkout/view-event/id/8648595/chk/92d3092df2934adac875cab889c932d1/
+      https://www.tickettailor.com/checkout/view-event/id/8648534/chk/2d918faa5d55567d4c8cc0adb38878b3/
 
-    price: 140000
-  - date: "2026-11-10"
-    endDate: "2026-11-17"
+    price: 160000
+  - date: "2026-11-24"
+    endDate: "2026-12-04"
     url: >-
-      https://www.tickettailor.com/checkout/view-event/id/8648597/chk/e7616855eb9e53e9e57cd05f61e9face/
+      https://www.tickettailor.com/checkout/view-event/id/8648536/chk/487c899c40804b271575e58ac8b1129a/
 
-    price: 140000
+    price: 160000
 ---
