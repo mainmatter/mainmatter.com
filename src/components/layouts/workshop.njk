@@ -147,7 +147,7 @@ layout: "base"
   <div class="workshop-detail">
     <section class="container container--lg my-10" id="about">
       <div class="workshop-detail__richtext">
-        <h2 class="mb-4">About This Workshop</h2>
+        <h2 class="mb-4">About this workshop</h2>
         {% if tagline %}
           {{ tagline | safe }}
           {% elseif introduction %}
@@ -295,24 +295,6 @@ layout: "base"
           />
         </div>
       </section>
-
-      {%
-        set logoCompanies = [
-        'Redis',
-        'Keyrock',
-        'Thales',
-        'Süddeutsche Zeitung',
-        'faculty',
-        'CERN',
-        'Canonical',
-        'NTT Data',
-        'Truelayer',
-        'Lego',
-        'BMW Car IT',
-        'Change Healthcare'
-        ]
-      %}
-      {{ logoList(logoCompanies, 'We have trained developers at', 'h2', 'h3') }}
     {% elif "svelte" in tags %}
       <section class="container container--lg my-10">
         <div class="workshop-detail__who-we-are">
@@ -339,7 +321,53 @@ layout: "base"
           />
         </div>
       </section>
+    {% elif "ember" in tags %}
+      <section class="container container--lg my-10">
+        <div class="workshop-detail__who-we-are">
+          <div>
+            <h2 class="mb-2">Who we are</h2>
+            <p class="medium">
+              Mainmatter has been actively involved in shaping Ember for years. We’re behind The
+              <a href="/ember-initiative/">Ember Initiative</a> that supports the Ember ecosystem.
+              We also maintain key add-ons such as Ember Simple Auth, QUnit Dom, and Ember Test
+              Selectors.
+            </p>
+            <p>
+              Our team includes many experienced engineers, including Chris Manson (Ember Core Team
+              member, Ember Initiative lead), Nick Schot (long-time open-source contributor) and
+              Marine Dunstetter (Ember Initiative team member).
+            </p>
+          </div>
+          <img
+            class="workshop-detail__brand-mark"
+            src="/icon-512.png"
+            alt=""
+            loading="lazy"
+            aria-hidden="true"
+          />
+        </div>
+      </section>
+    {% endif %}
 
+    {% if "rust" in tags %}
+      {%
+        set logoCompanies = [
+        'Redis',
+        'Keyrock',
+        'Thales',
+        'Süddeutsche Zeitung',
+        'faculty',
+        'CERN',
+        'Canonical',
+        'NTT Data',
+        'Truelayer',
+        'Lego',
+        'BMW Car IT',
+        'Change Healthcare'
+        ]
+      %}
+      {{ logoList(logoCompanies, 'We have trained developers at', 'h2', 'h3') }}
+    {% else %}
       {%
         set logoCompanies = [
         'Rail Europe',
@@ -351,7 +379,11 @@ layout: "base"
         'Canonical',
         'Hyland',
         'Lego',
-        'Rillet'
+        'Rillet',
+        'Qonto',
+        'Trainline',
+        'HashiCorp',
+        'Intercom'
         ]
       %}
       {{ logoList(logoCompanies, "We are trusted by startups and Fortune Global 500 compaies", "h4", "h5") }}

@@ -63,7 +63,7 @@ eleventyImport:
   <section class="container container--xl my-10" id="workshops">
     <div class="workshops-page__intro">
       <div class="workshops-page__intro-text">
-        <h2 class="mb-2">Svelte Workshops</h2>
+        <h2 class="mb-2">Svelte workshops</h2>
         <p>
           We offer a range of workshops bookable for teams that want to grow – on-site or remote. We
           can get teams up to speed with Svelte from scratch, or help them tackle a range of
@@ -157,28 +157,6 @@ eleventyImport:
     %}
     {{ quote(quoteContent) }}
   </section>
-
-  {%
-    set trainingMaterials = [
-    {
-      "title": "Svelte and SvelteKit",
-      "link": "/training/svelte-and-sveltekit/",
-      "logo": "svelte"
-    },
-    {
-      "title": "Progressive Enhancement With SvelteKit",
-      "link": "/training/progressive-enhancement-with-sveltekit/",
-      "logo": "svelte"
-    },
-    {
-      "title": "Testing Svelte and SvelteKit Applications",
-      "link": "/training/testing-svelte-sveltekit-applications/",
-      "logo": "svelte"
-    }
-    ]
-  %}
-
-  {{ techCards('workshops-page-materials', 'Explore Our Other Training Materials', '', trainingMaterials) }}
 
   {{ serviceCta(["svelte"]) }}
 

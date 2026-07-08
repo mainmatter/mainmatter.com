@@ -55,9 +55,9 @@ eleventyImport:
     collections.workshops | findByCollectionSlug("advanced-testing-in-rust"),
     collections.workshops | findByCollectionSlug("edge-computing-with-webassembly"),
     collections.workshops | findByCollectionSlug("rust-python-interoperability"),
-    collections.workshops | findByCollectionSlug("build-production-ready-apis-in-rust")
+    collections.workshops | findByCollectionSlug("build-production-ready-apis-in-rust"),
     collections.workshops | findByCollectionSlug("telemetry-for-rust-apis"),
-    collections.workshops | findByCollectionSlug("foundations-of-embedded-rust"),
+    collections.workshops | findByCollectionSlug("foundations-of-embedded-rust")
   ]
 %}
 
@@ -65,7 +65,7 @@ eleventyImport:
   <section class="container container--xl my-10" id="workshops">
     <div class="workshops-page__intro">
       <div class="workshops-page__intro-text">
-        <h2 class="mb-2">Rust Workshops</h2>
+        <h2 class="mb-2">Rust workshops</h2>
         <p>
           We teach Rust across a range of use-cases: API services, workers, data pipelines, native
           extensions, WASM, and more. We can walk alongside you on a journey from zero to hero,
@@ -213,7 +213,7 @@ eleventyImport:
     ]
   %}
 
-  {{ techCards('workshops-page-materials', 'Explore Our Other Training Materials', '', trainingMaterials) }}
+  {{ techCards('workshops-page-materials', 'Explore our other training materials', '', trainingMaterials) }}
 
   {{ serviceCta(["rust"]) }}
 
