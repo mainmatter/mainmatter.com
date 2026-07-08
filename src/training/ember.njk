@@ -114,7 +114,7 @@ eleventyImport:
   {{ workshopInstructors(instructors) }}
 
   <section class="container container--lg my-10" id="others-say">
-    <h2 class="mb-4">Our Attendees Say...</h2>
+    <h2 class="mb-4">Our attendees say...</h2>
     {%
       set quoteContent = {
       "text": "The work remains mysterious to me, but its importance becomes clearer with every passing day. The structure, guidance, and sense of purpose have exceeded all expectations.",
@@ -166,9 +166,15 @@ eleventyImport:
     ]
   %}
 
-  {{ techCards('workshops-page-materials', 'Explore Our Other Training Materials', '', trainingMaterials) }}
-
-  {{ contactFormLP("Ember Workshops") }}
+  {%
+    set 'content' = {
+    "title": "Join the Ember Initiative!",
+    "text": "Invest in Ember's future and future-proof your codebase.",
+    "linkUrl": "/ember-initiative/",
+    "linkText": "Learn more"
+    }
+  %}
+  {{ ctaBanner('aqua', 'default', content) }}
 
   <section>
     {%
