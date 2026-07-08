@@ -120,61 +120,6 @@ eleventyImport:
 
   {{ workshopInstructors(instructors) }}
 
-  <section class="container container--lg my-10" id="others-say">
-    <h2 class="mb-4">Our attendees say...</h2>
-    <div class="training-quotes">
-      {%
-        set quoteContent = {
-        "text": "The work remains mysterious to me, but its importance becomes clearer with every passing day. The structure, guidance, and sense of purpose have exceeded all expectations.",
-        "source": "Mark Scout",
-        "position": "Department Chief, Macrodata Refinement @Lumon Industries",
-        "styling": "redesigned"
-        }
-      %}
-      {{ quote(quoteContent) }}
-
-      {%
-        set quoteContent = {
-        "text": "Few people have the privilege of participating in work of this magnitude. While its full scope remains mysterious, the value of the mission becomes more apparent with every refinement.",
-        "source": "Dylan G.",
-        "position": "Macrodata Refiner @Lumon Industries",
-        "styling": "redesigned"
-        }
-      %}
-      {{ quote(quoteContent) }}
-
-      {%
-        set quoteContent = {
-        "text": "Each refinement brings a sense of accomplishment that is difficult to describe. There is comfort in knowing that the work matters, even when its purpose remains beyond view.",
-        "source": "Helly R.",
-        "position": "Macrodata Refiner @Lumon Industries",
-        "styling": "redesigned"
-        }
-      %}
-      {{ quote(quoteContent) }}
-    </div>
-  </section>
-
-  {%
-    set trainingMaterials = [
-    {
-      "title": "Ember Initiative",
-      "link": "/ember-initiative/",
-      "logo": "ember"
-    },
-    {
-      "title": "Modernising Ember Development",
-      "link": "/training/modernising-ember-development/",
-      "logo": "ember"
-    },
-    {
-      "title": "Hands-on Ember",
-      "link": "/training/hands-on-ember/",
-      "logo": "ember"
-    }
-    ]
-  %}
-
   {%
     set 'content' = {
     "title": "Join the Ember Initiative!",
